@@ -4,15 +4,15 @@ namespace NativeAOTLibraryTest;
 
 internal static class Company_Native
 {
-     #region Private Helpers
-    private static Company? GetCompanyFromHandleAddress(nint handleAddress)
+    #region Helpers
+    internal static Company? GetCompanyFromHandleAddress(nint handleAddress)
     {
         GCHandle? handle = handleAddress.ToGCHandle();
         Company? @object = handle?.Target as Company;
 
         return @object;
     }
-    #endregion Private Helpers
+    #endregion Helpers
 
     #region Public API
     [UnmanagedCallersOnly(EntryPoint="nativeaotlibrarytest_company_create")]
@@ -68,6 +68,24 @@ internal static class Company_Native
         int numberOfEmployees = company.NumberOfEmployees;
 
         return numberOfEmployees;
+    }
+
+    [UnmanagedCallersOnly(EntryPoint="nativeaotlibrarytest_company_addemployee")]
+    internal static void AddEmployee(nint handleAddress, nint employeeHandleAddress)
+    {
+        Company? company = GetCompanyFromHandleAddress(handleAddress);
+
+        if (company == null) {
+            return;
+        }
+
+        Person? employee = Person_Native.GetPersonFromHandleAddress(employeeHandleAddress);
+
+        if (employee == null) {
+            return;
+        }
+
+        company.AddEmployee(employee);
     }
     #endregion Public API
 }

@@ -1,7 +1,7 @@
 import Foundation
 
 public class Person {
-    private let handle: nativeaotlibrarytest_person_t
+    internal let handle: nativeaotlibrarytest_person_t
     
     public init(firstName: String,
                 lastName: String,

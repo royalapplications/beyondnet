@@ -23,6 +23,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         let company = Company(name: "Royal Apps GmbH")
         
+        company.addEmployee(person)
+        
         let companyName = company.name
         let numberOfEmployees = company.numberOfEmployees
         

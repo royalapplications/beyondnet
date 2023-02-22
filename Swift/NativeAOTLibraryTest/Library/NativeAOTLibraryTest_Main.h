@@ -1,7 +1,7 @@
 #ifndef NativeAOTLibraryTest_h
 #define NativeAOTLibraryTest_h
 
-#include <stdlib.h>
+#import <stdlib.h>
 
 void nativeaotlibrarytest_main_write_to_console(void);
 

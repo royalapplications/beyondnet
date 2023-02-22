@@ -2,8 +2,7 @@
 #define NativeAOTLibraryTest_Person_h
 
 #include <stdlib.h>
-
-typedef void* nativeaotlibrarytest_person_t;
+#import "NativeAOTLibraryTest_TypeDefs.h"
 
 nativeaotlibrarytest_person_t nativeaotlibrarytest_person_create(const char* firstName,
                                                                  const char* lastName,

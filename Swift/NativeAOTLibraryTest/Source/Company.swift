@@ -1,7 +1,7 @@
 import Foundation
 
 public class Company {
-    private let handle: nativeaotlibrarytest_person_t
+    internal let handle: nativeaotlibrarytest_person_t
     
     public init(name: String) {
         let nameC = name.cString(using: .utf8)
@@ -45,6 +45,14 @@ public class Company {
         Self.logDebug("Did get numberOfEmployees of Company")
         
         return value
+    }
+    
+    public func addEmployee(_ employee: Person) {
+        Self.logDebug("Will add employee to Company")
+        
+        nativeaotlibrarytest_company_addemployee(handle, employee.handle)
+        
+        Self.logDebug("Did add employee to Company")
     }
 }
 

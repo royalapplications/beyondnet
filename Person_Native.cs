@@ -4,15 +4,15 @@ namespace NativeAOTLibraryTest;
 
 internal static class Person_Native
 {
-    #region Private Helpers
-    private static Person? GetPersonFromHandleAddress(nint handleAddress)
+    #region Helpers
+    internal static Person? GetPersonFromHandleAddress(nint handleAddress)
     {
         GCHandle? handle = handleAddress.ToGCHandle();
         Person? @object = handle?.Target as Person;
 
         return @object;
     }
-    #endregion Private Helpers
+    #endregion Helpers
 
     #region Public API
     [UnmanagedCallersOnly(EntryPoint="nativeaotlibrarytest_person_create")]
