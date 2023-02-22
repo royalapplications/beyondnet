@@ -63,7 +63,7 @@ internal static class Person_Native
         Person? person = GetPersonFromHandleAddress(handleAddress);
 
         if (person == null) {
-            return InteropUtils.STATUS_FAILURE;
+            return (int)CStatus.Failure;
         }
 
         int age = person.Age;

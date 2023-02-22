@@ -2,14 +2,20 @@ using System.Runtime.InteropServices;
 
 namespace NativeAOTLibraryTest;
 
+internal enum CStatus: int
+{
+    Success = 1,
+    Failure = -1
+}
+
+internal enum CBool: int
+{
+    True = 1,
+    False = 0
+}
+
 internal static class InteropUtils 
 {
-    internal const int STATUS_SUCCESS = 1;
-    internal const int STATUS_FAILURE = -1;
-
-    internal const int BOOL_TRUE = 1;
-    internal const int BOOL_FALSE = 0;
-
     internal static GCHandle AllocateGCHandle(this object @object, GCHandleType handleType)
     {
         GCHandle handle = GCHandle.Alloc(@object, handleType);
@@ -61,9 +67,9 @@ internal static class InteropUtils
     internal static int ToCBool(this bool @bool)
     {
         if (@bool) {
-            return BOOL_TRUE;
+            return (int)CBool.True;
         } else {
-            return BOOL_FALSE;
+            return (int)CBool.False;
         }
     }
 }

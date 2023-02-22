@@ -60,7 +60,7 @@ public class Company {
         Debug.log("Will add employee to Company")
         
         let result = nativeaotlibrarytest_company_addemployee(handle, employee.handle)
-        let success = result == STATUS_SUCCESS
+        let success = result == .success
         
         Debug.log("Did add employee to Company")
         
@@ -72,7 +72,7 @@ public class Company {
         Debug.log("Will remove employee from Company")
         
         let result = nativeaotlibrarytest_company_removeemployee(handle, employee.handle)
-        let success = result == STATUS_SUCCESS
+        let success = result == .success
         
         Debug.log("Did remove employee from Company")
         
@@ -83,7 +83,7 @@ public class Company {
         Debug.log("Will check if Company contains employee")
         
         let boolResult = nativeaotlibrarytest_company_containsemployee(handle, employee.handle)
-        let value = boolResult == BOOL_TRUE
+        let value = boolResult == .yes
         
         Debug.log("Did check if Company contains employee")
         

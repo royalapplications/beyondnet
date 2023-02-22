@@ -69,7 +69,7 @@ internal static class Company_Native
         Company? company = GetCompanyFromHandleAddress(handleAddress);
 
         if (company == null) {
-            return InteropUtils.STATUS_FAILURE;
+            return (int)CStatus.Failure;
         }
 
         int numberOfEmployees = company.NumberOfEmployees;
@@ -83,22 +83,22 @@ internal static class Company_Native
         Company? company = GetCompanyFromHandleAddress(handleAddress);
 
         if (company == null) {
-            return InteropUtils.STATUS_FAILURE;
+            return (int)CStatus.Failure;
         }
 
         Person? employee = Person_Native.GetPersonFromHandleAddress(employeeHandleAddress);
 
         if (employee == null) {
-            return InteropUtils.STATUS_FAILURE;
+            return (int)CStatus.Failure;
         }
 
         try {
             company.AddEmployee(employee);
         } catch {
-            return InteropUtils.STATUS_FAILURE;
+            return (int)CStatus.Failure;
         }
 
-        return InteropUtils.STATUS_SUCCESS;
+        return (int)CStatus.Success;
     }
 
     [UnmanagedCallersOnly(EntryPoint="nativeaotlibrarytest_company_removeemployee")]
@@ -107,22 +107,22 @@ internal static class Company_Native
         Company? company = GetCompanyFromHandleAddress(handleAddress);
 
         if (company == null) {
-            return InteropUtils.STATUS_FAILURE;
+            return (int)CStatus.Failure;
         }
 
         Person? employee = Person_Native.GetPersonFromHandleAddress(employeeHandleAddress);
 
         if (employee == null) {
-            return InteropUtils.STATUS_FAILURE;
+            return (int)CStatus.Failure;
         }
 
         try {
             company.RemoveEmployee(employee);
         } catch {
-            return InteropUtils.STATUS_FAILURE;
+            return (int)CStatus.Failure;
         }
 
-        return InteropUtils.STATUS_SUCCESS;
+        return (int)CStatus.Success;
     }
 
     [UnmanagedCallersOnly(EntryPoint="nativeaotlibrarytest_company_containsemployee")]
@@ -131,21 +131,21 @@ internal static class Company_Native
         Company? company = GetCompanyFromHandleAddress(handleAddress);
 
         if (company == null) {
-            return InteropUtils.BOOL_FALSE;
+            return false.ToCBool();
         }
 
         Person? employee = Person_Native.GetPersonFromHandleAddress(employeeHandleAddress);
 
         if (employee == null) {
-            return InteropUtils.BOOL_FALSE;
+            return false.ToCBool();
         }
 
         bool contains = company.ContainsEmployee(employee);
 
         if (contains) {
-            return InteropUtils.BOOL_TRUE;
+            return true.ToCBool();
         } else {
-            return InteropUtils.BOOL_FALSE;
+            return false.ToCBool();
         }
     }
 
@@ -155,7 +155,7 @@ internal static class Company_Native
         Company? company = GetCompanyFromHandleAddress(handleAddress);
 
         if (company == null) {
-            return InteropUtils.STATUS_FAILURE;
+            return IntPtr.Zero;
         }
 
         Person? employee = company.GetEmployeeAtIndex(index);
