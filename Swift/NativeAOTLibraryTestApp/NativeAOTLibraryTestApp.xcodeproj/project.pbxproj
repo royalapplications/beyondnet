@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E716200429A6819C00D45FCD /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E716200329A6819C00D45FCD /* Tests.swift */; };
 		E7AACF5A29A629E500846A75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AACF5929A629E500846A75 /* AppDelegate.swift */; };
 		E7AACF5C29A629E600846A75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7AACF5B29A629E600846A75 /* Assets.xcassets */; };
 		E7AACF5F29A629E600846A75 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7AACF5D29A629E600846A75 /* MainMenu.xib */; };
@@ -29,6 +30,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E716200329A6819C00D45FCD /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		E7AACF5629A629E500846A75 /* NativeAOTLibraryTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NativeAOTLibraryTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7AACF5929A629E500846A75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7AACF5B29A629E600846A75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				E7AACF5929A629E500846A75 /* AppDelegate.swift */,
+				E716200329A6819C00D45FCD /* Tests.swift */,
 				E7AACF5D29A629E600846A75 /* MainMenu.xib */,
 				E7AACF5B29A629E600846A75 /* Assets.xcassets */,
 				E7AACF6029A629E600846A75 /* NativeAOTLibraryTestApp.entitlements */,
@@ -157,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7AACF5A29A629E500846A75 /* AppDelegate.swift in Sources */,
+				E716200429A6819C00D45FCD /* Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
