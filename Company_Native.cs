@@ -29,7 +29,7 @@ internal static class Company_Native
         string? nameDn = name.ToDotNetString();
 
         if (nameDn == null) {
-            return IntPtr.Zero;
+            return nint.Zero;
         }
 
         Company @object = new(
@@ -55,7 +55,7 @@ internal static class Company_Native
         Company? company = GetCompanyFromHandleAddress(handleAddress);
 
         if (company == null) {
-            return IntPtr.Zero;
+            return nint.Zero;
         }
 
         nint nameC = company.Name.ToCString();
@@ -155,7 +155,7 @@ internal static class Company_Native
         Company? company = GetCompanyFromHandleAddress(handleAddress);
 
         if (company == null) {
-            return IntPtr.Zero;
+            return nint.Zero;
         }
 
         Person? employee = company.GetEmployeeAtIndex(index);

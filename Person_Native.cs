@@ -29,13 +29,13 @@ internal static class Person_Native
         string? firstNameDn = firstName.ToDotNetString();
 
         if (firstNameDn == null) {
-            return IntPtr.Zero;
+            return nint.Zero;
         }
 
         string? lastNameDn = lastName.ToDotNetString();
 
         if (lastNameDn == null) {
-            return IntPtr.Zero;
+            return nint.Zero;
         }
 
         Person @object = new(
@@ -89,7 +89,7 @@ internal static class Person_Native
         Person? person = GetPersonFromHandleAddress(handleAddress);
 
         if (person == null) {
-            return IntPtr.Zero;
+            return nint.Zero;
         }
 
         nint firstNameC = person.FirstName.ToCString();
@@ -121,7 +121,7 @@ internal static class Person_Native
         Person? person = GetPersonFromHandleAddress(handleAddress);
 
         if (person == null) {
-            return IntPtr.Zero;
+            return nint.Zero;
         }
 
         nint lastNameC = person.LastName.ToCString();
@@ -153,7 +153,7 @@ internal static class Person_Native
         Person? person = GetPersonFromHandleAddress(handleAddress);
 
         if (person == null) {
-            return IntPtr.Zero;
+            return nint.Zero;
         }
 
         nint fullNameC = person.FullName.ToCString();
