@@ -1,7 +1,7 @@
 import Foundation
 
 public class Person {
-    internal let handle: nativeaotlibrarytest_person_t
+    internal let handle: NativeAOTLibraryTest_Person_t
     
     public convenience init(firstName: String,
                             lastName: String,
@@ -11,7 +11,7 @@ public class Person {
         
         Debug.log("Will create Person")
         
-        guard let handle = nativeaotlibrarytest_person_create(firstNameC,
+        guard let handle = NativeAOTLibraryTest_Person_Create(firstNameC,
                                                               lastNameC,
                                                               age) else {
             fatalError("Failed to create person")
@@ -22,14 +22,14 @@ public class Person {
         Debug.log("Did create Person")
     }
     
-    internal init(handle: nativeaotlibrarytest_person_t) {
+    internal init(handle: NativeAOTLibraryTest_Person_t) {
         self.handle = handle
     }
     
     deinit {
         Debug.log("Will destroy Person")
         
-        nativeaotlibrarytest_person_destroy(handle)
+        NativeAOTLibraryTest_Person_Destroy(handle)
         
         Debug.log("Did destroy Person")
     }
@@ -38,7 +38,7 @@ public class Person {
         get {
             Debug.log("Will get age of Person")
             
-            let value = nativeaotlibrarytest_person_age_get(handle)
+            let value = NativeAOTLibraryTest_Person_Age_Get(handle)
             
             Debug.log("Did get age of Person")
             
@@ -47,7 +47,7 @@ public class Person {
         set {
             Debug.log("Will set age of Person")
             
-            nativeaotlibrarytest_person_age_set(handle, newValue)
+            NativeAOTLibraryTest_Person_Age_Set(handle, newValue)
             
             Debug.log("Did set age of Person")
         }
@@ -57,7 +57,7 @@ public class Person {
         get {
             Debug.log("Will get firstName of Person")
             
-            guard let valueC = nativeaotlibrarytest_person_firstname_get(handle) else {
+            guard let valueC = NativeAOTLibraryTest_Person_FirstName_Get(handle) else {
                 fatalError("Failed to get firstName")
             }
             
@@ -73,7 +73,7 @@ public class Person {
             Debug.log("Will set firstName of Person")
             
             let newValueC = newValue.cString(using: .utf8)
-            nativeaotlibrarytest_person_firstname_set(handle, newValueC)
+            NativeAOTLibraryTest_Person_FirstName_Set(handle, newValueC)
             
             Debug.log("Did set firstName of Person")
         }
@@ -83,7 +83,7 @@ public class Person {
         get {
             Debug.log("Will get lastName of Person")
             
-            guard let valueC = nativeaotlibrarytest_person_lastname_get(handle) else {
+            guard let valueC = NativeAOTLibraryTest_Person_LastName_Get(handle) else {
                 fatalError("Failed to get lastName")
             }
             
@@ -99,7 +99,7 @@ public class Person {
             Debug.log("Will set lastName of Person")
             
             let newValueC = newValue.cString(using: .utf8)
-            nativeaotlibrarytest_person_lastname_set(handle, newValueC)
+            NativeAOTLibraryTest_Person_LastName_Set(handle, newValueC)
             
             Debug.log("Did set lastName of Person")
         }
@@ -108,7 +108,7 @@ public class Person {
     public var fullName: String {
         Debug.log("Will get fullName of Person")
         
-        guard let valueC = nativeaotlibrarytest_person_fullname_get(handle) else {
+        guard let valueC = NativeAOTLibraryTest_Person_FullName_Get(handle) else {
             fatalError("Failed to get fullName")
         }
         

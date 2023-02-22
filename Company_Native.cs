@@ -4,6 +4,13 @@ namespace NativeAOTLibraryTest;
 
 internal static class Company_Native
 {
+    #region Constants
+    private const string NAMESPACE = nameof(NativeAOTLibraryTest);
+    private const string CLASS_NAME = nameof(Company);
+    private const string FULL_CLASS_NAME = NAMESPACE + "_" + CLASS_NAME;
+    private const string ENTRYPOINT_PREFIX = FULL_CLASS_NAME + "_";
+    #endregion Constants
+
     #region Helpers
     internal static Company? GetCompanyFromHandleAddress(nint handleAddress)
     {
@@ -23,7 +30,7 @@ internal static class Company_Native
     #endregion Helpers
 
     #region Public API
-    [UnmanagedCallersOnly(EntryPoint="nativeaotlibrarytest_company_create")]
+    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Create")]
     internal static nint Create(nint name)
     {
         string? nameDn = name.ToDotNetString();
@@ -41,7 +48,7 @@ internal static class Company_Native
         return handleAddress;
     }
 
-    [UnmanagedCallersOnly(EntryPoint="nativeaotlibrarytest_company_destroy")]
+    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Destroy")]
     internal static void Destroy(nint handleAddress)
     {
         GCHandle? handle = handleAddress.ToGCHandle();
@@ -49,7 +56,7 @@ internal static class Company_Native
         handle?.FreeIfAllocated();
     }
 
-    [UnmanagedCallersOnly(EntryPoint="nativeaotlibrarytest_company_name_get")]
+    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Name_Get")]
     internal static nint Name_Get(nint handleAddress)
     {
         Company? company = GetCompanyFromHandleAddress(handleAddress);
@@ -63,7 +70,7 @@ internal static class Company_Native
         return nameC;
     }
 
-    [UnmanagedCallersOnly(EntryPoint="nativeaotlibrarytest_company_numberofemployees_get")]
+    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "NumberOfEmployees_Get")]
     internal static int NumberOfEmployees_Get(nint handleAddress)
     {
         Company? company = GetCompanyFromHandleAddress(handleAddress);
@@ -77,7 +84,7 @@ internal static class Company_Native
         return numberOfEmployees;
     }
 
-    [UnmanagedCallersOnly(EntryPoint="nativeaotlibrarytest_company_addemployee")]
+    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "AddEmployee")]
     internal static int AddEmployee(nint handleAddress, nint employeeHandleAddress)
     {
         Company? company = GetCompanyFromHandleAddress(handleAddress);
@@ -101,7 +108,7 @@ internal static class Company_Native
         return (int)CStatus.Success;
     }
 
-    [UnmanagedCallersOnly(EntryPoint="nativeaotlibrarytest_company_removeemployee")]
+    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "RemoveEmployee")]
     internal static int RemoveEmployee(nint handleAddress, nint employeeHandleAddress)
     {
         Company? company = GetCompanyFromHandleAddress(handleAddress);
@@ -125,7 +132,7 @@ internal static class Company_Native
         return (int)CStatus.Success;
     }
 
-    [UnmanagedCallersOnly(EntryPoint="nativeaotlibrarytest_company_containsemployee")]
+    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "ContainsEmployee")]
     internal static int ContainsEmployee(nint handleAddress, nint employeeHandleAddress)
     {
         Company? company = GetCompanyFromHandleAddress(handleAddress);
@@ -149,7 +156,7 @@ internal static class Company_Native
         }
     }
 
-    [UnmanagedCallersOnly(EntryPoint="nativeaotlibrarytest_company_getemployeeatindex")]
+    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "GetEmployeeAtIndex")]
     internal static nint GetEmployeeAtIndex(nint handleAddress, int index)
     {
         Company? company = GetCompanyFromHandleAddress(handleAddress);

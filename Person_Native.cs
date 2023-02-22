@@ -4,6 +4,13 @@ namespace NativeAOTLibraryTest;
 
 internal static class Person_Native
 {
+    #region Constants
+    private const string NAMESPACE = nameof(NativeAOTLibraryTest);
+    private const string CLASS_NAME = nameof(Person);
+    private const string FULL_CLASS_NAME = NAMESPACE + "_" + CLASS_NAME;
+    private const string ENTRYPOINT_PREFIX = FULL_CLASS_NAME + "_";
+    #endregion Constants
+
     #region Helpers
     internal static Person? GetPersonFromHandleAddress(nint handleAddress)
     {
@@ -23,7 +30,7 @@ internal static class Person_Native
     #endregion Helpers
 
     #region Public API
-    [UnmanagedCallersOnly(EntryPoint="nativeaotlibrarytest_person_create")]
+    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Create")]
     internal static nint Create(nint firstName, nint lastName, int age)
     {
         string? firstNameDn = firstName.ToDotNetString();
@@ -49,7 +56,7 @@ internal static class Person_Native
         return handleAddress;
     }
 
-    [UnmanagedCallersOnly(EntryPoint="nativeaotlibrarytest_person_destroy")]
+    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Destroy")]
     internal static void Destroy(nint handleAddress)
     {
         GCHandle? handle = handleAddress.ToGCHandle();
@@ -57,7 +64,7 @@ internal static class Person_Native
         handle?.FreeIfAllocated();
     }
 
-    [UnmanagedCallersOnly(EntryPoint="nativeaotlibrarytest_person_age_get")]
+    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Age_Get")]
     internal static int Age_Get(nint handleAddress)
     {
         Person? person = GetPersonFromHandleAddress(handleAddress);
@@ -71,7 +78,7 @@ internal static class Person_Native
         return age;
     }
 
-    [UnmanagedCallersOnly(EntryPoint="nativeaotlibrarytest_person_age_set")]
+    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Age_Set")]
     internal static void Age_Set(nint handleAddress, int age)
     {
         Person? person = GetPersonFromHandleAddress(handleAddress);
@@ -83,7 +90,7 @@ internal static class Person_Native
         person.Age = age;
     }
 
-    [UnmanagedCallersOnly(EntryPoint="nativeaotlibrarytest_person_firstname_get")]
+    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "FirstName_Get")]
     internal static nint FirstName_Get(nint handleAddress)
     {
         Person? person = GetPersonFromHandleAddress(handleAddress);
@@ -97,7 +104,7 @@ internal static class Person_Native
         return firstNameC;
     }
 
-    [UnmanagedCallersOnly(EntryPoint="nativeaotlibrarytest_person_firstname_set")]
+    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "FirstName_Set")]
     internal static void FirstName_Set(nint handleAddress, nint firstName)
     {
         Person? person = GetPersonFromHandleAddress(handleAddress);
@@ -115,7 +122,7 @@ internal static class Person_Native
         person.FirstName = firstNameDotNet;
     }
 
-    [UnmanagedCallersOnly(EntryPoint="nativeaotlibrarytest_person_lastname_get")]
+    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "LastName_Get")]
     internal static nint LastName_Get(nint handleAddress)
     {
         Person? person = GetPersonFromHandleAddress(handleAddress);
@@ -129,7 +136,7 @@ internal static class Person_Native
         return lastNameC;
     }
 
-    [UnmanagedCallersOnly(EntryPoint="nativeaotlibrarytest_person_lastname_set")]
+    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "LastName_Set")]
     internal static void LastName_Set(nint handleAddress, nint lastName)
     {
         Person? person = GetPersonFromHandleAddress(handleAddress);
@@ -147,7 +154,7 @@ internal static class Person_Native
         person.LastName = lastNameDotNet;
     }
 
-    [UnmanagedCallersOnly(EntryPoint="nativeaotlibrarytest_person_fullname_get")]
+    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "FullName_Get")]
     internal static nint FullName_Get(nint handleAddress)
     {
         Person? person = GetPersonFromHandleAddress(handleAddress);

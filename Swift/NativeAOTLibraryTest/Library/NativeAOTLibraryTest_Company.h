@@ -4,17 +4,24 @@
 #import <stdlib.h>
 #import "NativeAOTLibraryTest_TypeDefs.h"
 
-nativeaotlibrarytest_company_t nativeaotlibrarytest_company_create(const char* name);
+NativeAOTLibraryTest_Company_t NativeAOTLibraryTest_Company_Create(const char* name);
 
-void nativeaotlibrarytest_company_destroy(nativeaotlibrarytest_company_t company);
+void NativeAOTLibraryTest_Company_Destroy(NativeAOTLibraryTest_Company_t company);
 
-char* nativeaotlibrarytest_company_name_get(nativeaotlibrarytest_company_t company);
+char* NativeAOTLibraryTest_Company_Name_Get(NativeAOTLibraryTest_Company_t company);
 
-int32_t nativeaotlibrarytest_company_numberofemployees_get(nativeaotlibrarytest_company_t company);
+int32_t NativeAOTLibraryTest_Company_NumberOfEmployees_Get(NativeAOTLibraryTest_Company_t company);
 
-CStatus nativeaotlibrarytest_company_addemployee(nativeaotlibrarytest_company_t company, nativeaotlibrarytest_person_t employee);
-CStatus nativeaotlibrarytest_company_removeemployee(nativeaotlibrarytest_company_t company, nativeaotlibrarytest_person_t employee);
-CBool nativeaotlibrarytest_company_containsemployee(nativeaotlibrarytest_company_t company, nativeaotlibrarytest_person_t employee);
-nativeaotlibrarytest_company_t nativeaotlibrarytest_company_getemployeeatindex(nativeaotlibrarytest_company_t company, const int32_t index);
+CStatus NativeAOTLibraryTest_Company_AddEmployee(NativeAOTLibraryTest_Company_t company,
+                                                 NativeAOTLibraryTest_Person_t employee);
+
+CStatus NativeAOTLibraryTest_Company_RemoveEmployee(NativeAOTLibraryTest_Company_t company,
+                                                    NativeAOTLibraryTest_Person_t employee);
+
+CBool NativeAOTLibraryTest_Company_ContainsEmployee(NativeAOTLibraryTest_Company_t company,
+                                                    NativeAOTLibraryTest_Person_t employee);
+
+NativeAOTLibraryTest_Company_t NativeAOTLibraryTest_Company_GetEmployeeAtIndex(NativeAOTLibraryTest_Company_t company,
+                                                                               const int32_t index);
 
 #endif /* NativeAOTLibraryTest_Company_h */

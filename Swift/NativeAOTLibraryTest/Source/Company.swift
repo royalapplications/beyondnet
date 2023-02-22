@@ -1,14 +1,14 @@
 import Foundation
 
 public class Company {
-    internal let handle: nativeaotlibrarytest_person_t
+    internal let handle: NativeAOTLibraryTest_Company_t
     
     public convenience init(name: String) {
         let nameC = name.cString(using: .utf8)
 
         Debug.log("Will create Company")
 
-        guard let handle = nativeaotlibrarytest_company_create(nameC) else {
+        guard let handle = NativeAOTLibraryTest_Company_Create(nameC) else {
             fatalError("Failed to create Company")
         }
         
@@ -17,14 +17,14 @@ public class Company {
         Debug.log("Did create Company")
     }
     
-    internal init(handle: nativeaotlibrarytest_person_t) {
+    internal init(handle: NativeAOTLibraryTest_Company_t) {
         self.handle = handle
     }
     
     deinit {
         Debug.log("Will destroy Company")
 
-        nativeaotlibrarytest_company_destroy(handle)
+        NativeAOTLibraryTest_Company_Destroy(handle)
 
         Debug.log("Did destroy Company")
     }
@@ -32,7 +32,7 @@ public class Company {
     public var name: String {
         Debug.log("Will get name of Company")
 
-        guard let valueC = nativeaotlibrarytest_company_name_get(handle) else {
+        guard let valueC = NativeAOTLibraryTest_Company_Name_Get(handle) else {
             fatalError("Failed to get name of Company")
         }
 
@@ -48,7 +48,7 @@ public class Company {
     public var numberOfEmployees: Int32 {
         Debug.log("Will get numberOfEmployees of Company")
         
-        let value = nativeaotlibrarytest_company_numberofemployees_get(handle)
+        let value = NativeAOTLibraryTest_Company_NumberOfEmployees_Get(handle)
         
         Debug.log("Did get numberOfEmployees of Company")
         
@@ -59,7 +59,9 @@ public class Company {
     public func addEmployee(_ employee: Person) -> Bool {
         Debug.log("Will add employee to Company")
         
-        let result = nativeaotlibrarytest_company_addemployee(handle, employee.handle)
+        let result = NativeAOTLibraryTest_Company_AddEmployee(handle,
+                                                              employee.handle)
+        
         let success = result == .success
         
         Debug.log("Did add employee to Company")
@@ -71,7 +73,9 @@ public class Company {
     public func removeEmployee(_ employee: Person) -> Bool {
         Debug.log("Will remove employee from Company")
         
-        let result = nativeaotlibrarytest_company_removeemployee(handle, employee.handle)
+        let result = NativeAOTLibraryTest_Company_RemoveEmployee(handle,
+                                                                 employee.handle)
+        
         let success = result == .success
         
         Debug.log("Did remove employee from Company")
@@ -82,7 +86,9 @@ public class Company {
     public func containsEmployee(_ employee: Person) -> Bool {
         Debug.log("Will check if Company contains employee")
         
-        let boolResult = nativeaotlibrarytest_company_containsemployee(handle, employee.handle)
+        let boolResult = NativeAOTLibraryTest_Company_ContainsEmployee(handle,
+                                                                       employee.handle)
+        
         let value = boolResult == .yes
         
         Debug.log("Did check if Company contains employee")
@@ -95,7 +101,8 @@ public class Company {
         
         let employee: Person?
         
-        if let employeeHandle = nativeaotlibrarytest_company_getemployeeatindex(handle, index) {
+        if let employeeHandle = NativeAOTLibraryTest_Company_GetEmployeeAtIndex(handle,
+                                                                                index) {
             employee = .init(handle: employeeHandle)
         } else {
             employee = nil

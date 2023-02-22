@@ -4,8 +4,8 @@
 #import <stdlib.h>
 #import <CoreFoundation/CFAvailability.h>
 
-typedef void* nativeaotlibrarytest_person_t;
-typedef void* nativeaotlibrarytest_company_t;
+typedef void* NativeAOTLibraryTest_Person_t;
+typedef void* NativeAOTLibraryTest_Company_t;
 
 typedef CF_ENUM(int32_t, CStatus) {
     success = 1,

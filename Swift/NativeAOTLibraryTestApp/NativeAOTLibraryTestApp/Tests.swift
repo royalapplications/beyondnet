@@ -4,8 +4,6 @@ import NativeAOTLibraryTest
 
 struct Tests {
     func run() {
-        Main.writeToConsole()
-        
         let johnDoe = Person(firstName: "TODO",
                              lastName: "TODO",
                              age: 17)
