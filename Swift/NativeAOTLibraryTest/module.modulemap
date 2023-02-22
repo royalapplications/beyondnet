@@ -1,0 +1,8 @@
+framework module NativeAOTLibraryTest {
+    umbrella header "NativeAOTLibraryTest.h"
+
+    private header "NativeAOTLibraryTest_Main.h"
+    
+    export *
+    module * { export * }
+}
