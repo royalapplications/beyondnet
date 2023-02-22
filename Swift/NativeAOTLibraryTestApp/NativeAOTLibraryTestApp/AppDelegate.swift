@@ -20,5 +20,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let age = person.age
         
         print("\(fullName) is \(age) years old.")
+        
+        let company = Company(name: "Royal Apps GmbH")
+        
+        let companyName = company.name
+        let numberOfEmployees = company.numberOfEmployees
+        
+        print("\(companyName) has \(numberOfEmployees) employees")
     }
 }
