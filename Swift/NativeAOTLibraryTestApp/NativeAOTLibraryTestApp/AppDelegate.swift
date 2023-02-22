@@ -7,5 +7,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         Main.writeToConsole()
+        
+        let person = Person(age: 18)
+        
+        print("Person is \(person.age) years old.")
     }
 }

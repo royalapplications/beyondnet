@@ -12,6 +12,8 @@
 		E7AACF4129A6282C00846A75 /* NativeAOTLibraryTest.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = E7AACF3F29A6282400846A75 /* NativeAOTLibraryTest.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		E7AACF4429A628FD00846A75 /* NativeAOTLibraryTest_Main.h in Headers */ = {isa = PBXBuildFile; fileRef = E7AACF4329A628E500846A75 /* NativeAOTLibraryTest_Main.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		E7AACF4729A6293300846A75 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AACF4629A6293300846A75 /* Main.swift */; };
+		E7E26AC429A62FBD005334CF /* NativeAOTLibraryTest_Person.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E26AC329A62FB8005334CF /* NativeAOTLibraryTest_Person.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		E7E26AC629A63147005334CF /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E26AC529A63147005334CF /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +37,8 @@
 		E7AACF4329A628E500846A75 /* NativeAOTLibraryTest_Main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeAOTLibraryTest_Main.h; sourceTree = "<group>"; };
 		E7AACF4629A6293300846A75 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		E7AACF4C29A6296E00846A75 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		E7E26AC329A62FB8005334CF /* NativeAOTLibraryTest_Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeAOTLibraryTest_Person.h; sourceTree = "<group>"; };
+		E7E26AC529A63147005334CF /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +74,8 @@
 		E7AACF3629A6278E00846A75 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				E7AACF4529A6292B00846A75 /* Main */,
+				E7AACF4629A6293300846A75 /* Main.swift */,
+				E7E26AC529A63147005334CF /* Person.swift */,
 				E7AACF3729A6278E00846A75 /* NativeAOTLibraryTest.h */,
 			);
 			path = Source;
@@ -81,16 +86,9 @@
 			children = (
 				E7AACF3F29A6282400846A75 /* NativeAOTLibraryTest.dylib */,
 				E7AACF4329A628E500846A75 /* NativeAOTLibraryTest_Main.h */,
+				E7E26AC329A62FB8005334CF /* NativeAOTLibraryTest_Person.h */,
 			);
 			path = Library;
-			sourceTree = "<group>";
-		};
-		E7AACF4529A6292B00846A75 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				E7AACF4629A6293300846A75 /* Main.swift */,
-			);
-			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -101,6 +99,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7AACF3829A6278E00846A75 /* NativeAOTLibraryTest.h in Headers */,
+				E7E26AC429A62FBD005334CF /* NativeAOTLibraryTest_Person.h in Headers */,
 				E7AACF4429A628FD00846A75 /* NativeAOTLibraryTest_Main.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7E26AC629A63147005334CF /* Person.swift in Sources */,
 				E7AACF4729A6293300846A75 /* Main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
