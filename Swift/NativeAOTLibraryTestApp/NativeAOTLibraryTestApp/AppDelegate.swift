@@ -8,15 +8,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         Main.writeToConsole()
         
-        let person = Person(firstName: "John",
-                            lastName: "Doe",
+        let person = Person(firstName: "TODO",
+                            lastName: "TODO",
                             age: 17)
         
         person.age += 1
+        person.firstName = "John"
+        person.lastName = "Doe"
         
         let fullName = person.fullName
         let age = person.age
         
-        print("\(fullName) is \(person.age) years old.")
+        print("\(fullName) is \(age) years old.")
     }
 }

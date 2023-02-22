@@ -90,6 +90,24 @@ public static class Person_Native
         return firstNameC;
     }
 
+    [UnmanagedCallersOnly(EntryPoint="nativeaotlibrarytest_person_firstname_set")]
+    public static void Person_FirstName_Set(nint personHandleAddress, nint firstName)
+    {
+        Person? person = GetPersonFromHandleAddress(personHandleAddress);
+
+        if (person == null) {
+            return;
+        }
+
+        string? firstNameDotNet = firstName.ToDotNetString();
+
+        if (firstNameDotNet == null) {
+            return;
+        }
+
+        person.FirstName = firstNameDotNet;
+    }
+
     [UnmanagedCallersOnly(EntryPoint="nativeaotlibrarytest_person_lastname_get")]
     public static nint Person_LastName_Get(nint personHandleAddress)
     {
@@ -102,6 +120,24 @@ public static class Person_Native
         nint lastNameC = person.LastName.ToCString();
 
         return lastNameC;
+    }
+
+    [UnmanagedCallersOnly(EntryPoint="nativeaotlibrarytest_person_lastname_set")]
+    public static void Person_LastName_Set(nint personHandleAddress, nint lastName)
+    {
+        Person? person = GetPersonFromHandleAddress(personHandleAddress);
+
+        if (person == null) {
+            return;
+        }
+
+        string? lastNameDotNet = lastName.ToDotNetString();
+
+        if (lastNameDotNet == null) {
+            return;
+        }
+
+        person.LastName = lastNameDotNet;
     }
 
     [UnmanagedCallersOnly(EntryPoint="nativeaotlibrarytest_person_fullname_get")]

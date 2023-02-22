@@ -46,51 +46,71 @@ public class Person {
     }
     
     public var firstName: String {
-        Self.logDebug("Will get firstName of Person")
-        
-        guard let cString = nativeaotlibrarytest_person_firstname_get(personHandle) else {
-            fatalError("Failed to get firstName")
+        get {
+            Self.logDebug("Will get firstName of Person")
+            
+            guard let valueC = nativeaotlibrarytest_person_firstname_get(personHandle) else {
+                fatalError("Failed to get firstName")
+            }
+            
+            defer { valueC.deallocate() }
+            
+            Self.logDebug("Did get firstName of Person")
+            
+            let value = String(cString: valueC)
+            
+            return value
         }
-        
-        defer { cString.deallocate() }
-        
-        Self.logDebug("Did get firstName of Person")
-        
-        let string = String(cString: cString)
-        
-        return string
+        set {
+            Self.logDebug("Will set firstName of Person")
+            
+            let newValueC = newValue.cString(using: .utf8)
+            nativeaotlibrarytest_person_firstname_set(personHandle, newValueC)
+            
+            Self.logDebug("Did set firstName of Person")
+        }
     }
     
     public var lastName: String {
-        Self.logDebug("Will get lastName of Person")
-        
-        guard let cString = nativeaotlibrarytest_person_lastname_get(personHandle) else {
-            fatalError("Failed to get lastName")
+        get {
+            Self.logDebug("Will get lastName of Person")
+            
+            guard let valueC = nativeaotlibrarytest_person_lastname_get(personHandle) else {
+                fatalError("Failed to get lastName")
+            }
+            
+            defer { valueC.deallocate() }
+            
+            Self.logDebug("Did get lastName of Person")
+            
+            let value = String(cString: valueC)
+            
+            return value
         }
-        
-        defer { cString.deallocate() }
-        
-        Self.logDebug("Did get lastName of Person")
-        
-        let string = String(cString: cString)
-        
-        return string
+        set {
+            Self.logDebug("Will set lastName of Person")
+            
+            let newValueC = newValue.cString(using: .utf8)
+            nativeaotlibrarytest_person_lastname_set(personHandle, newValueC)
+            
+            Self.logDebug("Did set lastName of Person")
+        }
     }
     
     public var fullName: String {
         Self.logDebug("Will get fullName of Person")
         
-        guard let cString = nativeaotlibrarytest_person_fullname_get(personHandle) else {
+        guard let valueC = nativeaotlibrarytest_person_fullname_get(personHandle) else {
             fatalError("Failed to get fullName")
         }
         
-        defer { cString.deallocate() }
+        defer { valueC.deallocate() }
         
         Self.logDebug("Did get fullName of Person")
         
-        let string = String(cString: cString)
+        let value = String(cString: valueC)
         
-        return string
+        return value
     }
 }
 
