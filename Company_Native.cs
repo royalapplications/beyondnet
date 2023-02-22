@@ -131,21 +131,21 @@ internal static class Company_Native
         Company? company = GetCompanyFromHandleAddress(handleAddress);
 
         if (company == null) {
-            return InteropUtils.STATUS_FAILURE;
+            return InteropUtils.BOOL_FALSE;
         }
 
         Person? employee = Person_Native.GetPersonFromHandleAddress(employeeHandleAddress);
 
         if (employee == null) {
-            return InteropUtils.STATUS_FAILURE;
+            return InteropUtils.BOOL_FALSE;
         }
 
         bool contains = company.ContainsEmployee(employee);
 
         if (contains) {
-            return InteropUtils.STATUS_SUCCESS;
+            return InteropUtils.BOOL_TRUE;
         } else {
-            return InteropUtils.STATUS_FAILURE;
+            return InteropUtils.BOOL_FALSE;
         }
     }
 
@@ -160,7 +160,7 @@ internal static class Company_Native
 
         Person? employee = company.GetEmployeeAtIndex(index);
         nint employeeHandleAddress = employee?.AllocateHandleAndGetAddress() ?? IntPtr.Zero;
-        
+
         return employeeHandleAddress;
     }
     #endregion Public API

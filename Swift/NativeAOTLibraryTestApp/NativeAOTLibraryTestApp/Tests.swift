@@ -17,6 +17,10 @@ struct Tests {
         let fullName = johnDoe.fullName
         let age = johnDoe.age
         
+        guard fullName == "John Doe" else {
+            fatalError("The person's name should be John Doe")
+        }
+        
         print("\(fullName) is \(age) years old.")
         
         let elliSmith = Person(firstName: "Elli",
@@ -33,15 +37,19 @@ struct Tests {
         company.addEmployee(elliSmith)
         
         if !company.containsEmployee(elliSmith) {
-            print("WARNING: The company should contain employee Elli Smith")
+            fatalError("The company should contain employee Elli Smith")
         }
         
         if company.containsEmployee(aGhost) {
-            print("WARNING: The company should not contain employee A Ghost")
+            fatalError("The company should not contain employee A Ghost")
         }
         
         let companyName = company.name
         let numberOfEmployees = company.numberOfEmployees
+        
+        guard numberOfEmployees == 2 else {
+            fatalError("The company should contain 2 employees")
+        }
         
         print("\(companyName) has \(numberOfEmployees) employees")
         
