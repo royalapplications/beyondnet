@@ -2,8 +2,8 @@ namespace NativeAOTLibraryTest;
 
 public class Person
 {
-    public string FirstName { get; }
-    public string LastName { get; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
 
     public string FullName { 
         get {
@@ -11,7 +11,7 @@ public class Person
         }
     }
 
-    public int Age { get; }
+    public int Age { get; set; }
 
     public Person(
         string firstName,

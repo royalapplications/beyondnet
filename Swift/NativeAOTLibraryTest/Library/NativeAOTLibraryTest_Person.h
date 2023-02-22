@@ -12,6 +12,7 @@ nativeaotlibrarytest_person_t nativeaotlibrarytest_person_create(const char* fir
 void nativeaotlibrarytest_person_destroy(nativeaotlibrarytest_person_t person);
 
 int32_t nativeaotlibrarytest_person_age_get(nativeaotlibrarytest_person_t person);
+void nativeaotlibrarytest_person_age_set(nativeaotlibrarytest_person_t person, int32_t age);
 
 const char* nativeaotlibrarytest_person_firstname_get(nativeaotlibrarytest_person_t person);
 const char* nativeaotlibrarytest_person_lastname_get(nativeaotlibrarytest_person_t person);

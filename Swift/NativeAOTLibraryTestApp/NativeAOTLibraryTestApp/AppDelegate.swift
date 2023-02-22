@@ -10,7 +10,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         let person = Person(firstName: "John",
                             lastName: "Doe",
-                            age: 18)
+                            age: 17)
+        
+        person.age += 1
         
         let fullName = person.fullName
         let age = person.age

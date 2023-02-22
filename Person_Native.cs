@@ -7,21 +7,10 @@ public static class Person_Native
     #region Private Helpers
     private static Person? GetPersonFromHandleAddress(nint personHandleAddress)
     {
-        GCHandle? handle = GetGCHandleFromPersonHandleAddress(personHandleAddress);
+        GCHandle? handle = personHandleAddress.ToGCHandle();
         Person? person = handle?.Target as Person;
 
         return person;
-    }
-
-    private static GCHandle? GetGCHandleFromPersonHandleAddress(nint personHandleAddress)
-    {
-        if (personHandleAddress == IntPtr.Zero) {
-            return null;
-        }
-
-        GCHandle handle = GCHandle.FromIntPtr(personHandleAddress);
-
-        return handle;
     }
     #endregion Private Helpers
 
@@ -29,13 +18,13 @@ public static class Person_Native
     [UnmanagedCallersOnly(EntryPoint="nativeaotlibrarytest_person_create")]
     public static nint Person_Create(nint firstName, nint lastName, int age)
     {
-        string? firstNameDn = Marshal.PtrToStringAuto(firstName);
+        string? firstNameDn = firstName.ToDotNetString();
 
         if (firstNameDn == null) {
             return IntPtr.Zero;
         }
 
-        string? lastNameDn = Marshal.PtrToStringAuto(lastName);
+        string? lastNameDn = lastName.ToDotNetString();
 
         if (lastNameDn == null) {
             return IntPtr.Zero;
@@ -47,13 +36,8 @@ public static class Person_Native
             age
         );
 
-        GCHandle handle = GCHandle.Alloc(person, GCHandleType.Normal);
-
-        if (!handle.IsAllocated) {
-            return IntPtr.Zero;
-        }
-
-        nint handleAddress = GCHandle.ToIntPtr(handle);
+        GCHandle handle = person.AllocateGCHandle(GCHandleType.Normal);
+        nint handleAddress = handle.ToHandleAddress();
 
         return handleAddress;
     }
@@ -61,13 +45,9 @@ public static class Person_Native
     [UnmanagedCallersOnly(EntryPoint="nativeaotlibrarytest_person_destroy")]
     public static void Person_Destroy(nint personHandleAddress)
     {
-        GCHandle? personHandle = GetGCHandleFromPersonHandleAddress(personHandleAddress);
+        GCHandle? personHandle = personHandleAddress.ToGCHandle();
 
-        if (!(personHandle?.IsAllocated ?? false)) {
-            return;
-        }
-
-        personHandle?.Free();
+        personHandle?.FreeIfAllocated();
     }
 
     [UnmanagedCallersOnly(EntryPoint="nativeaotlibrarytest_person_age_get")]
@@ -84,6 +64,18 @@ public static class Person_Native
         return age;
     }
 
+    [UnmanagedCallersOnly(EntryPoint="nativeaotlibrarytest_person_age_set")]
+    public static void Person_Age_Set(nint personHandleAddress, int age)
+    {
+        Person? person = GetPersonFromHandleAddress(personHandleAddress);
+
+        if (person == null) {
+            return;
+        }
+
+        person.Age = age;
+    }
+
     [UnmanagedCallersOnly(EntryPoint="nativeaotlibrarytest_person_firstname_get")]
     public static nint Person_FirstName_Get(nint personHandleAddress)
     {
@@ -93,9 +85,7 @@ public static class Person_Native
             return IntPtr.Zero;
         }
 
-        string firstName = person.FirstName;
-
-        nint firstNameC = Marshal.StringToHGlobalAuto(firstName);
+        nint firstNameC = person.FirstName.ToCString();
 
         return firstNameC;
     }
@@ -109,9 +99,7 @@ public static class Person_Native
             return IntPtr.Zero;
         }
 
-        string lastName = person.LastName;
-
-        nint lastNameC = Marshal.StringToHGlobalAuto(lastName);
+        nint lastNameC = person.LastName.ToCString();
 
         return lastNameC;
     }
@@ -125,9 +113,7 @@ public static class Person_Native
             return IntPtr.Zero;
         }
 
-        string fullName = person.FullName;
-
-        nint fullNameC = Marshal.StringToHGlobalAuto(fullName);
+        nint fullNameC = person.FullName.ToCString();
 
         return fullNameC;
     }
