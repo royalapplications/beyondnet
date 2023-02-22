@@ -9,7 +9,7 @@ public class Person {
         let firstNameC = firstName.cString(using: .utf8)
         let lastNameC = lastName.cString(using: .utf8)
         
-        Self.logDebug("Will create Person")
+        Debug.log("Will create Person")
         
         guard let handle = nativeaotlibrarytest_person_create(firstNameC,
                                                               lastNameC,
@@ -19,7 +19,7 @@ public class Person {
         
         self.init(handle: handle)
         
-        Self.logDebug("Did create Person")
+        Debug.log("Did create Person")
     }
     
     internal init(handle: nativeaotlibrarytest_person_t) {
@@ -27,35 +27,35 @@ public class Person {
     }
     
     deinit {
-        Self.logDebug("Will destroy Person")
+        Debug.log("Will destroy Person")
         
         nativeaotlibrarytest_person_destroy(handle)
         
-        Self.logDebug("Did destroy Person")
+        Debug.log("Did destroy Person")
     }
     
     public var age: Int32 {
         get {
-            Self.logDebug("Will get age of Person")
+            Debug.log("Will get age of Person")
             
             let value = nativeaotlibrarytest_person_age_get(handle)
             
-            Self.logDebug("Did get age of Person")
+            Debug.log("Did get age of Person")
             
             return value
         }
         set {
-            Self.logDebug("Will set age of Person")
+            Debug.log("Will set age of Person")
             
             nativeaotlibrarytest_person_age_set(handle, newValue)
             
-            Self.logDebug("Did set age of Person")
+            Debug.log("Did set age of Person")
         }
     }
     
     public var firstName: String {
         get {
-            Self.logDebug("Will get firstName of Person")
+            Debug.log("Will get firstName of Person")
             
             guard let valueC = nativeaotlibrarytest_person_firstname_get(handle) else {
                 fatalError("Failed to get firstName")
@@ -63,25 +63,25 @@ public class Person {
             
             defer { valueC.deallocate() }
             
-            Self.logDebug("Did get firstName of Person")
+            Debug.log("Did get firstName of Person")
             
             let value = String(cString: valueC)
             
             return value
         }
         set {
-            Self.logDebug("Will set firstName of Person")
+            Debug.log("Will set firstName of Person")
             
             let newValueC = newValue.cString(using: .utf8)
             nativeaotlibrarytest_person_firstname_set(handle, newValueC)
             
-            Self.logDebug("Did set firstName of Person")
+            Debug.log("Did set firstName of Person")
         }
     }
     
     public var lastName: String {
         get {
-            Self.logDebug("Will get lastName of Person")
+            Debug.log("Will get lastName of Person")
             
             guard let valueC = nativeaotlibrarytest_person_lastname_get(handle) else {
                 fatalError("Failed to get lastName")
@@ -89,24 +89,24 @@ public class Person {
             
             defer { valueC.deallocate() }
             
-            Self.logDebug("Did get lastName of Person")
+            Debug.log("Did get lastName of Person")
             
             let value = String(cString: valueC)
             
             return value
         }
         set {
-            Self.logDebug("Will set lastName of Person")
+            Debug.log("Will set lastName of Person")
             
             let newValueC = newValue.cString(using: .utf8)
             nativeaotlibrarytest_person_lastname_set(handle, newValueC)
             
-            Self.logDebug("Did set lastName of Person")
+            Debug.log("Did set lastName of Person")
         }
     }
     
     public var fullName: String {
-        Self.logDebug("Will get fullName of Person")
+        Debug.log("Will get fullName of Person")
         
         guard let valueC = nativeaotlibrarytest_person_fullname_get(handle) else {
             fatalError("Failed to get fullName")
@@ -114,19 +114,10 @@ public class Person {
         
         defer { valueC.deallocate() }
         
-        Self.logDebug("Did get fullName of Person")
+        Debug.log("Did get fullName of Person")
         
         let value = String(cString: valueC)
         
         return value
-    }
-}
-
-private extension Person {
-    static func logDebug(_ message: String) {
-        #if DEBUG
-        let fullMessage = "[DEBUG] \(message)"
-        print(fullMessage)
-        #endif
     }
 }

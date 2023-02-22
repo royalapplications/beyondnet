@@ -6,7 +6,7 @@ public class Company {
     public convenience init(name: String) {
         let nameC = name.cString(using: .utf8)
 
-        Self.logDebug("Will create Company")
+        Debug.log("Will create Company")
 
         guard let handle = nativeaotlibrarytest_company_create(nameC) else {
             fatalError("Failed to create Company")
@@ -14,7 +14,7 @@ public class Company {
         
         self.init(handle: handle)
 
-        Self.logDebug("Did create Company")
+        Debug.log("Did create Company")
     }
     
     internal init(handle: nativeaotlibrarytest_person_t) {
@@ -22,15 +22,15 @@ public class Company {
     }
     
     deinit {
-        Self.logDebug("Will destroy Company")
+        Debug.log("Will destroy Company")
 
         nativeaotlibrarytest_company_destroy(handle)
 
-        Self.logDebug("Did destroy Company")
+        Debug.log("Did destroy Company")
     }
     
     public var name: String {
-        Self.logDebug("Will get name of Company")
+        Debug.log("Will get name of Company")
 
         guard let valueC = nativeaotlibrarytest_company_name_get(handle) else {
             fatalError("Failed to get name of Company")
@@ -38,7 +38,7 @@ public class Company {
 
         defer { valueC.deallocate() }
 
-        Self.logDebug("Did get name of Company")
+        Debug.log("Did get name of Company")
 
         let value = String(cString: valueC)
 
@@ -46,52 +46,52 @@ public class Company {
     }
     
     public var numberOfEmployees: Int32 {
-        Self.logDebug("Will get numberOfEmployees of Company")
+        Debug.log("Will get numberOfEmployees of Company")
         
         let value = nativeaotlibrarytest_company_numberofemployees_get(handle)
         
-        Self.logDebug("Did get numberOfEmployees of Company")
+        Debug.log("Did get numberOfEmployees of Company")
         
         return value
     }
     
     @discardableResult
     public func addEmployee(_ employee: Person) -> Bool {
-        Self.logDebug("Will add employee to Company")
+        Debug.log("Will add employee to Company")
         
         let result = nativeaotlibrarytest_company_addemployee(handle, employee.handle)
         let success = result == STATUS_SUCCESS
         
-        Self.logDebug("Did add employee to Company")
+        Debug.log("Did add employee to Company")
         
         return success
     }
     
     @discardableResult
     public func removeEmployee(_ employee: Person) -> Bool {
-        Self.logDebug("Will remove employee from Company")
+        Debug.log("Will remove employee from Company")
         
         let result = nativeaotlibrarytest_company_removeemployee(handle, employee.handle)
         let success = result == STATUS_SUCCESS
         
-        Self.logDebug("Did remove employee from Company")
+        Debug.log("Did remove employee from Company")
         
         return success
     }
     
     public func containsEmployee(_ employee: Person) -> Bool {
-        Self.logDebug("Will check if Company contains employee")
+        Debug.log("Will check if Company contains employee")
         
         let boolResult = nativeaotlibrarytest_company_containsemployee(handle, employee.handle)
         let value = boolResult == BOOL_TRUE
         
-        Self.logDebug("Did check if Company contains employee")
+        Debug.log("Did check if Company contains employee")
         
         return value
     }
     
     public func employee(at index: Int32) -> Person? {
-        Self.logDebug("Will get employee at index of Company")
+        Debug.log("Will get employee at index of Company")
         
         let employee: Person?
         
@@ -101,17 +101,8 @@ public class Company {
             employee = nil
         }
         
-        Self.logDebug("Did get employee at index of Company")
+        Debug.log("Did get employee at index of Company")
         
         return employee
-    }
-}
-
-private extension Company {
-    static func logDebug(_ message: String) {
-        #if DEBUG
-        let fullMessage = "[DEBUG] \(message)"
-        print(fullMessage)
-        #endif
     }
 }

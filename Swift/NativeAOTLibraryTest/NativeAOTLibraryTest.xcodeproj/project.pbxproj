@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E716200029A66CC000D45FCD /* NativeAOTLibraryTest_TypeDefs.h in Headers */ = {isa = PBXBuildFile; fileRef = E7161FFF29A66CBB00D45FCD /* NativeAOTLibraryTest_TypeDefs.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		E716200229A6795D00D45FCD /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = E716200129A6795D00D45FCD /* Debug.swift */; };
 		E7AACF3829A6278E00846A75 /* NativeAOTLibraryTest.h in Headers */ = {isa = PBXBuildFile; fileRef = E7AACF3729A6278E00846A75 /* NativeAOTLibraryTest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7AACF4029A6282400846A75 /* NativeAOTLibraryTest.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E7AACF3F29A6282400846A75 /* NativeAOTLibraryTest.dylib */; };
 		E7AACF4129A6282C00846A75 /* NativeAOTLibraryTest.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = E7AACF3F29A6282400846A75 /* NativeAOTLibraryTest.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		E7161FFF29A66CBB00D45FCD /* NativeAOTLibraryTest_TypeDefs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeAOTLibraryTest_TypeDefs.h; sourceTree = "<group>"; };
+		E716200129A6795D00D45FCD /* Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
 		E7AACF3429A6278E00846A75 /* NativeAOTLibraryTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NativeAOTLibraryTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7AACF3729A6278E00846A75 /* NativeAOTLibraryTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeAOTLibraryTest.h; sourceTree = "<group>"; };
 		E7AACF3F29A6282400846A75 /* NativeAOTLibraryTest.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = NativeAOTLibraryTest.dylib; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				E7AACF3729A6278E00846A75 /* NativeAOTLibraryTest.h */,
+				E716200129A6795D00D45FCD /* Debug.swift */,
 				E7AACF4629A6293300846A75 /* Main.swift */,
 				E7E26AC529A63147005334CF /* Person.swift */,
 				E7E26AC829A668F8005334CF /* Company.swift */,
@@ -210,6 +213,7 @@
 			files = (
 				E7E26AC629A63147005334CF /* Person.swift in Sources */,
 				E7AACF4729A6293300846A75 /* Main.swift in Sources */,
+				E716200229A6795D00D45FCD /* Debug.swift in Sources */,
 				E7E26AC929A668F8005334CF /* Company.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
