@@ -3,14 +3,22 @@ import Foundation
 public class Company {
     internal let handle: nativeaotlibrarytest_person_t
     
-    public init(name: String) {
+    public convenience init(name: String) {
         let nameC = name.cString(using: .utf8)
 
         Self.logDebug("Will create Company")
 
-        handle = nativeaotlibrarytest_company_create(nameC)
+        guard let handle = nativeaotlibrarytest_company_create(nameC) else {
+            fatalError("Failed to create Company")
+        }
+        
+        self.init(handle: handle)
 
         Self.logDebug("Did create Company")
+    }
+    
+    internal init(handle: nativeaotlibrarytest_person_t) {
+        self.handle = handle
     }
     
     deinit {
@@ -80,6 +88,22 @@ public class Company {
         Self.logDebug("Did check if Company contains employee")
         
         return value
+    }
+    
+    public func employee(at index: Int32) -> Person? {
+        Self.logDebug("Will get employee at index of Company")
+        
+        let employee: Person?
+        
+        if let employeeHandle = nativeaotlibrarytest_company_getemployeeatindex(handle, index) {
+            employee = .init(handle: employeeHandle)
+        } else {
+            employee = nil
+        }
+        
+        Self.logDebug("Did get employee at index of Company")
+        
+        return employee
     }
 }
 

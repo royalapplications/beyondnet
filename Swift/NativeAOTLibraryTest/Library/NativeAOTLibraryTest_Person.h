@@ -11,14 +11,14 @@ nativeaotlibrarytest_person_t nativeaotlibrarytest_person_create(const char* fir
 void nativeaotlibrarytest_person_destroy(nativeaotlibrarytest_person_t person);
 
 int32_t nativeaotlibrarytest_person_age_get(nativeaotlibrarytest_person_t person);
-void nativeaotlibrarytest_person_age_set(nativeaotlibrarytest_person_t person, int32_t age);
+void nativeaotlibrarytest_person_age_set(nativeaotlibrarytest_person_t person, const int32_t age);
 
-const char* nativeaotlibrarytest_person_firstname_get(nativeaotlibrarytest_person_t person);
+char* nativeaotlibrarytest_person_firstname_get(nativeaotlibrarytest_person_t person);
 void nativeaotlibrarytest_person_firstname_set(nativeaotlibrarytest_person_t person, const char* firstName);
 
-const char* nativeaotlibrarytest_person_lastname_get(nativeaotlibrarytest_person_t person);
+char* nativeaotlibrarytest_person_lastname_get(nativeaotlibrarytest_person_t person);
 void nativeaotlibrarytest_person_lastname_set(nativeaotlibrarytest_person_t person, const char* lastName);
 
-const char* nativeaotlibrarytest_person_fullname_get(nativeaotlibrarytest_person_t person);
+char* nativeaotlibrarytest_person_fullname_get(nativeaotlibrarytest_person_t person);
 
 #endif /* NativeAOTLibraryTest_Person_h */

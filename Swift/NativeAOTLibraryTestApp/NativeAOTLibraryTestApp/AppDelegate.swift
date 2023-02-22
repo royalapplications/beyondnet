@@ -46,5 +46,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let numberOfEmployees = company.numberOfEmployees
         
         print("\(companyName) has \(numberOfEmployees) employees")
+        
+        if numberOfEmployees > 0 {
+            for index in 0..<numberOfEmployees {
+                guard let employee = company.employee(at: index) else {
+                    fatalError("Failed to get employee at index \(index)")
+                }
+                
+                print("Employee No. \(index + 1): \(employee.fullName)")
+            }
+        }
     }
 }

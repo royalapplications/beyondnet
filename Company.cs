@@ -32,4 +32,16 @@ public class Company
     {
         return m_employees.Contains(employee);
     }
+
+    public Person? GetEmployeeAtIndex(int index)
+    {
+        if (index < 0 ||
+            index >= m_employees.Count) {
+            return null;
+        }
+
+        Person employee = m_employees[index];
+
+        return employee;
+    }
 }

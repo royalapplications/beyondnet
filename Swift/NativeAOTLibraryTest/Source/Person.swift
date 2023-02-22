@@ -3,19 +3,27 @@ import Foundation
 public class Person {
     internal let handle: nativeaotlibrarytest_person_t
     
-    public init(firstName: String,
-                lastName: String,
-                age: Int32) {
+    public convenience init(firstName: String,
+                            lastName: String,
+                            age: Int32) {
         let firstNameC = firstName.cString(using: .utf8)
         let lastNameC = lastName.cString(using: .utf8)
         
         Self.logDebug("Will create Person")
         
-        handle = nativeaotlibrarytest_person_create(firstNameC,
-                                                    lastNameC,
-                                                    age)
+        guard let handle = nativeaotlibrarytest_person_create(firstNameC,
+                                                              lastNameC,
+                                                              age) else {
+            fatalError("Failed to create person")
+        }
+        
+        self.init(handle: handle)
         
         Self.logDebug("Did create Person")
+    }
+    
+    internal init(handle: nativeaotlibrarytest_person_t) {
+        self.handle = handle
     }
     
     deinit {
