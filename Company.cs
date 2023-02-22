@@ -2,7 +2,7 @@ namespace NativeAOTLibraryTest;
 
 public class Company
 {
-    private List<Person> m_employees = new();
+    private readonly List<Person> m_employees = new();
 
     public string Name { get; }
 
@@ -26,5 +26,10 @@ public class Company
     public void RemoveEmployee(Person employee)
     {
         m_employees.Remove(employee);
+    }
+
+    public bool ContainsEmployee(Person employee)
+    {
+        return m_employees.Contains(employee);
     }
 }

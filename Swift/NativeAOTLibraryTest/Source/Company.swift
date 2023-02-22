@@ -47,12 +47,39 @@ public class Company {
         return value
     }
     
-    public func addEmployee(_ employee: Person) {
+    @discardableResult
+    public func addEmployee(_ employee: Person) -> Bool {
         Self.logDebug("Will add employee to Company")
         
-        nativeaotlibrarytest_company_addemployee(handle, employee.handle)
+        let result = nativeaotlibrarytest_company_addemployee(handle, employee.handle)
+        let success = result == STATUS_SUCCESS
         
         Self.logDebug("Did add employee to Company")
+        
+        return success
+    }
+    
+    @discardableResult
+    public func removeEmployee(_ employee: Person) -> Bool {
+        Self.logDebug("Will remove employee from Company")
+        
+        let result = nativeaotlibrarytest_company_removeemployee(handle, employee.handle)
+        let success = result == STATUS_SUCCESS
+        
+        Self.logDebug("Did remove employee from Company")
+        
+        return success
+    }
+    
+    public func containsEmployee(_ employee: Person) -> Bool {
+        Self.logDebug("Will check if Company contains employee")
+        
+        let boolResult = nativeaotlibrarytest_company_containsemployee(handle, employee.handle)
+        let value = boolResult == BOOL_TRUE
+        
+        Self.logDebug("Did check if Company contains employee")
+        
+        return value
     }
 }
 

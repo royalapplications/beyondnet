@@ -12,6 +12,8 @@ const char* nativeaotlibrarytest_company_name_get(nativeaotlibrarytest_company_t
 
 int32_t nativeaotlibrarytest_company_numberofemployees_get(nativeaotlibrarytest_company_t company);
 
-void nativeaotlibrarytest_company_addemployee(nativeaotlibrarytest_company_t company, nativeaotlibrarytest_person_t employee);
+int32_t nativeaotlibrarytest_company_addemployee(nativeaotlibrarytest_company_t company, nativeaotlibrarytest_person_t employee);
+int32_t nativeaotlibrarytest_company_removeemployee(nativeaotlibrarytest_company_t company, nativeaotlibrarytest_person_t employee);
+int32_t nativeaotlibrarytest_company_containsemployee(nativeaotlibrarytest_company_t company, nativeaotlibrarytest_person_t employee);
 
 #endif /* NativeAOTLibraryTest_Company_h */

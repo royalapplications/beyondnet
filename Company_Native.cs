@@ -62,7 +62,7 @@ internal static class Company_Native
         Company? company = GetCompanyFromHandleAddress(handleAddress);
 
         if (company == null) {
-            return -1;
+            return InteropUtils.STATUS_FAILURE;
         }
 
         int numberOfEmployees = company.NumberOfEmployees;
@@ -71,21 +71,75 @@ internal static class Company_Native
     }
 
     [UnmanagedCallersOnly(EntryPoint="nativeaotlibrarytest_company_addemployee")]
-    internal static void AddEmployee(nint handleAddress, nint employeeHandleAddress)
+    internal static int AddEmployee(nint handleAddress, nint employeeHandleAddress)
     {
         Company? company = GetCompanyFromHandleAddress(handleAddress);
 
         if (company == null) {
-            return;
+            return InteropUtils.STATUS_FAILURE;
         }
 
         Person? employee = Person_Native.GetPersonFromHandleAddress(employeeHandleAddress);
 
         if (employee == null) {
-            return;
+            return InteropUtils.STATUS_FAILURE;
         }
 
-        company.AddEmployee(employee);
+        try {
+            company.AddEmployee(employee);
+        } catch {
+            return InteropUtils.STATUS_FAILURE;
+        }
+
+        return InteropUtils.STATUS_SUCCESS;
+    }
+
+    [UnmanagedCallersOnly(EntryPoint="nativeaotlibrarytest_company_removeemployee")]
+    internal static int RemoveEmployee(nint handleAddress, nint employeeHandleAddress)
+    {
+        Company? company = GetCompanyFromHandleAddress(handleAddress);
+
+        if (company == null) {
+            return InteropUtils.STATUS_FAILURE;
+        }
+
+        Person? employee = Person_Native.GetPersonFromHandleAddress(employeeHandleAddress);
+
+        if (employee == null) {
+            return InteropUtils.STATUS_FAILURE;
+        }
+
+        try {
+            company.RemoveEmployee(employee);
+        } catch {
+            return InteropUtils.STATUS_FAILURE;
+        }
+
+        return InteropUtils.STATUS_SUCCESS;
+    }
+
+    [UnmanagedCallersOnly(EntryPoint="nativeaotlibrarytest_company_containsemployee")]
+    internal static int ContainsEmployee(nint handleAddress, nint employeeHandleAddress)
+    {
+        Company? company = GetCompanyFromHandleAddress(handleAddress);
+
+        if (company == null) {
+            return InteropUtils.STATUS_FAILURE;
+        }
+
+        Person? employee = Person_Native.GetPersonFromHandleAddress(employeeHandleAddress);
+
+        if (employee == null) {
+            return InteropUtils.STATUS_FAILURE;
+        }
+
+        bool contains = company.ContainsEmployee(employee);
+
+        if (contains) {
+            return InteropUtils.STATUS_SUCCESS;
+        } else {
+            return InteropUtils.STATUS_FAILURE;
+        }
     }
     #endregion Public API
 }

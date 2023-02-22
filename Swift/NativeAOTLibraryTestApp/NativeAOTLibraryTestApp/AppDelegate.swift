@@ -8,22 +8,39 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         Main.writeToConsole()
         
-        let person = Person(firstName: "TODO",
-                            lastName: "TODO",
-                            age: 17)
+        let johnDoe = Person(firstName: "TODO",
+                             lastName: "TODO",
+                             age: 17)
         
-        person.age += 1
-        person.firstName = "John"
-        person.lastName = "Doe"
+        johnDoe.age += 1
+        johnDoe.firstName = "John"
+        johnDoe.lastName = "Doe"
         
-        let fullName = person.fullName
-        let age = person.age
+        let fullName = johnDoe.fullName
+        let age = johnDoe.age
         
         print("\(fullName) is \(age) years old.")
         
+        let elliSmith = Person(firstName: "Elli",
+                               lastName: "Smith",
+                               age: 2)
+        
+        let aGhost = Person(firstName: "A",
+                            lastName: "Ghost",
+                            age: 500)
+        
         let company = Company(name: "Royal Apps GmbH")
         
-        company.addEmployee(person)
+        company.addEmployee(johnDoe)
+        company.addEmployee(elliSmith)
+        
+        if !company.containsEmployee(elliSmith) {
+            print("WARNING: The company should contain employee Elli Smith")
+        }
+        
+        if company.containsEmployee(aGhost) {
+            print("WARNING: The company should not contain employee A Ghost")
+        }
         
         let companyName = company.name
         let numberOfEmployees = company.numberOfEmployees

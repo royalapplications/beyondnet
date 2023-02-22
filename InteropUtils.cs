@@ -4,6 +4,12 @@ namespace NativeAOTLibraryTest;
 
 internal static class InteropUtils 
 {
+    internal const int STATUS_SUCCESS = 1;
+    internal const int STATUS_FAILURE = -1;
+
+    internal const int BOOL_TRUE = 1;
+    internal const int BOOL_FALSE = 0;
+
     internal static GCHandle AllocateGCHandle(this object @object, GCHandleType handleType)
     {
         GCHandle handle = GCHandle.Alloc(@object, handleType);
@@ -50,5 +56,14 @@ internal static class InteropUtils
         string? @string = Marshal.PtrToStringAuto(cString);
 
         return @string;
+    }
+
+    internal static int ToCBool(this bool @bool)
+    {
+        if (@bool) {
+            return BOOL_TRUE;
+        } else {
+            return BOOL_FALSE;
+        }
     }
 }
