@@ -54,7 +54,8 @@
 		E7AACF4D29A629E500846A75 = {
 			isa = PBXGroup;
 			children = (
-				E7AACF5829A629E500846A75 /* NativeAOTLibraryTestApp */,
+				E7AACF5829A629E500846A75 /* Source */,
+				E7BC393C29A797B700806ADD /* Resources */,
 				E7AACF5729A629E500846A75 /* Products */,
 				E7AACF6629A629FF00846A75 /* Frameworks */,
 			);
@@ -68,16 +69,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E7AACF5829A629E500846A75 /* NativeAOTLibraryTestApp */ = {
+		E7AACF5829A629E500846A75 /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				E7AACF5929A629E500846A75 /* AppDelegate.swift */,
 				E716200329A6819C00D45FCD /* Tests.swift */,
 				E7AACF5D29A629E600846A75 /* MainMenu.xib */,
-				E7AACF5B29A629E600846A75 /* Assets.xcassets */,
-				E7AACF6029A629E600846A75 /* NativeAOTLibraryTestApp.entitlements */,
 			);
-			path = NativeAOTLibraryTestApp;
+			path = Source;
 			sourceTree = "<group>";
 		};
 		E7AACF6629A629FF00846A75 /* Frameworks */ = {
@@ -86,6 +85,15 @@
 				E7AACF6729A62A0000846A75 /* NativeAOTLibraryTest.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E7BC393C29A797B700806ADD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E7AACF5B29A629E600846A75 /* Assets.xcassets */,
+				E7AACF6029A629E600846A75 /* NativeAOTLibraryTestApp.entitlements */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,7 +304,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = NativeAOTLibraryTestApp/NativeAOTLibraryTestApp.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Resources/NativeAOTLibraryTestApp.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -324,7 +332,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = NativeAOTLibraryTestApp/NativeAOTLibraryTestApp.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Resources/NativeAOTLibraryTestApp.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
