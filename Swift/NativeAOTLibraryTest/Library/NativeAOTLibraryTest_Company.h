@@ -2,7 +2,7 @@
 #define NativeAOTLibraryTest_Company_h
 
 #import <stdlib.h>
-#import "NativeAOTLibraryTest_TypeDefs.h"
+#import "TypeDefs.h"
 
 NativeAOTLibraryTest_Company_t NativeAOTLibraryTest_Company_Create(const char* name);
 

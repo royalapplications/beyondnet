@@ -6,6 +6,9 @@ final class CompanyTests: XCTestCase {
         let companyName = "Fancy Company GmbH"
         
         let company = Company(name: companyName)
+		
+		XCTAssertEqual("Company", company.type.name)
+		XCTAssertEqual("NativeAOTLibraryTest.Company", company.type.fullName)
         
         XCTAssertEqual(companyName, company.name)
         XCTAssertEqual(0, company.numberOfEmployees)

@@ -11,6 +11,9 @@ final class PersonTests: XCTestCase {
         let person = Person(firstName: initialFirstName,
                             lastName: initialLastName,
                             age: initialAge)
+		
+		XCTAssertEqual("Person", person.type.name)
+		XCTAssertEqual("NativeAOTLibraryTest.Person", person.type.fullName)
         
         XCTAssertEqual(initialFirstName, person.firstName)
         XCTAssertEqual(initialLastName, person.lastName)

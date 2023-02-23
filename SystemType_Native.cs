@@ -23,18 +23,10 @@ internal static class System_Type
 
     internal static nint Create(Type type)
     {
-        GCHandle handle = InteropUtils.AllocateGCHandle(type, GCHandleType.Normal);
+        GCHandle handle = type.AllocateGCHandle(GCHandleType.Normal);
         nint handleAddress = handle.ToHandleAddress();
 
         return handleAddress;
-    }
-
-    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Destroy")]
-    internal static void Destroy(nint handleAddress)
-    {
-        GCHandle? handle = handleAddress.ToGCHandle();
-
-        handle?.FreeIfAllocated();
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Name_Get")]
@@ -47,6 +39,20 @@ internal static class System_Type
         }
 
         nint nameC = type.Name.ToCString();
+
+        return nameC;
+    }
+    
+    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "FullName_Get")]
+    internal static nint FullName_Get(nint handleAddress)
+    {
+        Type? type = GetTypeFromHandleAddress(handleAddress);
+
+        if (type == null) {
+            return nint.Zero;
+        }
+
+        nint nameC = type.FullName?.ToCString() ?? nint.Zero;
 
         return nameC;
     }

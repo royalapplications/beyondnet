@@ -1,8 +1,9 @@
 framework module NativeAOTLibraryTest {
     umbrella header "NativeAOTLibraryTest.h"
 
-    private header "NativeAOTLibraryTest_TypeDefs.h"
+    private header "TypeDefs.h"
     private header "System_Object.h"
+	private header "System_Type.h"
     private header "NativeAOTLibraryTest_Person.h"
     private header "NativeAOTLibraryTest_Company.h"
     
