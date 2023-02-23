@@ -18,4 +18,9 @@
     <DefaultItemExcludes>$(DefaultItemExcludes);Swift\**\*;.gitignore;publish</DefaultItemExcludes>
   </PropertyGroup>
 
+  <ItemGroup>
+	<!-- This works around a bug in .NET 8 Preview 1 that causes the required package to not be resolved automatically when cross-compiling to ARM64 from x64 -->
+	<PackageReference Include="runtime.osx-arm64.Microsoft.DotNet.ILCompiler" Version="8.0.0-preview.1.23110.8" />
+  </ItemGroup>
+
 </Project>
