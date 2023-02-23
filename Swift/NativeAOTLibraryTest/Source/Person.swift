@@ -1,8 +1,6 @@
 import Foundation
 
-public class Person {
-    internal let handle: NativeAOTLibraryTest_Person_t
-    
+public class Person: SystemObject {
     public convenience init(firstName: String,
                             lastName: String,
                             age: Int32) {
@@ -20,18 +18,6 @@ public class Person {
         self.init(handle: handle)
         
         Debug.log("Did create Person")
-    }
-    
-    internal init(handle: NativeAOTLibraryTest_Person_t) {
-        self.handle = handle
-    }
-    
-    deinit {
-        Debug.log("Will destroy Person")
-        
-        NativeAOTLibraryTest_Person_Destroy(handle)
-        
-        Debug.log("Did destroy Person")
     }
     
     public var age: Int32 {
@@ -119,13 +105,5 @@ public class Person {
         let value = String(cString: valueC)
         
         return value
-    }
-}
-
-extension Person: Equatable {
-    public static func == (lhs: Person,
-                           rhs: Person) -> Bool {
-        SystemObject.equals(lhs.handle,
-                            rhs.handle)
     }
 }

@@ -6,8 +6,6 @@
 
 NativeAOTLibraryTest_Company_t NativeAOTLibraryTest_Company_Create(const char* name);
 
-void NativeAOTLibraryTest_Company_Destroy(NativeAOTLibraryTest_Company_t company);
-
 char* NativeAOTLibraryTest_Company_Name_Get(NativeAOTLibraryTest_Company_t company);
 
 int32_t NativeAOTLibraryTest_Company_NumberOfEmployees_Get(NativeAOTLibraryTest_Company_t company);

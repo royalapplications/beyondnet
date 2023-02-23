@@ -41,4 +41,12 @@ internal static class System_Object
         
         return cBool;
     }
+    
+    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Destroy")]
+    internal static void Destroy(nint handleAddress)
+    {
+        GCHandle? handle = handleAddress.ToGCHandle();
+
+        handle?.FreeIfAllocated();
+    }
 }

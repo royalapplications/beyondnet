@@ -1,8 +1,6 @@
 import Foundation
 
-public class Company {
-    internal let handle: NativeAOTLibraryTest_Company_t
-    
+public class Company: SystemObject {
     public convenience init(name: String) {
         let nameC = name.cString(using: .utf8)
 
@@ -15,18 +13,6 @@ public class Company {
         self.init(handle: handle)
 
         Debug.log("Did create Company")
-    }
-    
-    internal init(handle: NativeAOTLibraryTest_Company_t) {
-        self.handle = handle
-    }
-    
-    deinit {
-        Debug.log("Will destroy Company")
-
-        NativeAOTLibraryTest_Company_Destroy(handle)
-
-        Debug.log("Did destroy Company")
     }
     
     public var name: String {
@@ -111,13 +97,5 @@ public class Company {
         Debug.log("Did get employee at index of Company")
         
         return employee
-    }
-}
-
-extension Company: Equatable {
-    public static func == (lhs: Company,
-                           rhs: Company) -> Bool {
-        SystemObject.equals(lhs.handle,
-                            rhs.handle)
     }
 }

@@ -56,14 +56,6 @@ internal static class Person_Native
         return handleAddress;
     }
 
-    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Destroy")]
-    internal static void Destroy(nint handleAddress)
-    {
-        GCHandle? handle = handleAddress.ToGCHandle();
-
-        handle?.FreeIfAllocated();
-    }
-
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Age_Get")]
     internal static int Age_Get(nint handleAddress)
     {

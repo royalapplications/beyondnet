@@ -8,8 +8,6 @@ NativeAOTLibraryTest_Person_t NativeAOTLibraryTest_Person_Create(const char* fir
                                                                  const char* lastName,
                                                                  const int32_t age);
 
-void NativeAOTLibraryTest_Person_Destroy(NativeAOTLibraryTest_Person_t person);
-
 int32_t NativeAOTLibraryTest_Person_Age_Get(NativeAOTLibraryTest_Person_t person);
 void NativeAOTLibraryTest_Person_Age_Set(NativeAOTLibraryTest_Person_t person, const int32_t age);
 

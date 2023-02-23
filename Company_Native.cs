@@ -48,14 +48,6 @@ internal static class Company_Native
         return handleAddress;
     }
 
-    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Destroy")]
-    internal static void Destroy(nint handleAddress)
-    {
-        GCHandle? handle = handleAddress.ToGCHandle();
-
-        handle?.FreeIfAllocated();
-    }
-
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Name_Get")]
     internal static nint Name_Get(nint handleAddress)
     {
