@@ -1,5 +1,5 @@
 import XCTest
-import NativeAOTLibraryTest
+@testable import NativeAOTLibraryTest
 
 final class PersonTests: XCTestCase {
     func testPerson() {
@@ -54,11 +54,46 @@ final class PersonTests: XCTestCase {
 		} catch {
 			XCTAssertEqual(0, secondPerson.age)
 			
-			let nsError = error as NSError
-			let stackTrace = nsError.userInfo[SystemException.stackTraceKey]
+			guard let systemExceptionError = error as? SystemException.Error else {
+				XCTFail("Error should be of type \(String(describing: SystemException.Error.self)) but is not")
+				
+				return
+			}
 			
-			XCTAssertEqual("Age cannot be negative.", error.localizedDescription)
+			let errorDescription = error.localizedDescription
+			let stackTrace = systemExceptionError.stackTrace
+			
+			XCTAssertEqual("Age cannot be negative.", errorDescription)
 			XCTAssertNotNil(stackTrace)
 		}
     }
+	
+	func testPersonExceptionPerformance() {
+		Debug.isLoggingEnabled = false
+		defer { Debug.isLoggingEnabled = true }
+		
+		let iterations = 10_000
+		
+		let firstName = "First Name"
+		let lastName = "Last Name"
+		let age: Int32 = 0
+		
+		var persons = [Person]()
+		
+		for _ in 0..<iterations {
+			persons.append(.init(firstName: firstName,
+								 lastName: lastName,
+								 age: age))
+		}
+		
+		measure {
+			for person in persons {
+				do {
+					try person.reduceAge(byYears: 1)
+					
+					XCTFail("reduceAge should throw here but did not")
+				} catch { }
+			}
+		}
+	}
 }

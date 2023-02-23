@@ -97,7 +97,7 @@ final class CompanyTests: XCTestCase {
 		var companies = [Company]()
 		
 		for _ in 0..<iterations {
-			companies.append(Company(name: companyName))
+			companies.append(.init(name: companyName))
 		}
 		
 		measure {

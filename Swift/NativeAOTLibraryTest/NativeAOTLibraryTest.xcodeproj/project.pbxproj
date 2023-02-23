@@ -16,6 +16,7 @@
 		E7BC394329A7A27600806ADD /* SystemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC394229A7A27600806ADD /* SystemType.swift */; };
 		E7BC394C29A7A87600806ADD /* System_Exception.h in Headers */ = {isa = PBXBuildFile; fileRef = E7BC394B29A7A87600806ADD /* System_Exception.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		E7BC394E29A7A8BC00806ADD /* SystemException.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC394D29A7A8BC00806ADD /* SystemException.swift */; };
+		E7BC395429A7B95200806ADD /* SystemException.Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC395329A7B95200806ADD /* SystemException.Error.swift */; };
 		E7E26AC429A62FBD005334CF /* NativeAOTLibraryTest_Person.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E26AC329A62FB8005334CF /* NativeAOTLibraryTest_Person.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		E7E26AC629A63147005334CF /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E26AC529A63147005334CF /* Person.swift */; };
 		E7E26AC929A668F8005334CF /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E26AC829A668F8005334CF /* Company.swift */; };
@@ -62,6 +63,7 @@
 		E7BC394229A7A27600806ADD /* SystemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemType.swift; sourceTree = "<group>"; };
 		E7BC394B29A7A87600806ADD /* System_Exception.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = System_Exception.h; sourceTree = "<group>"; };
 		E7BC394D29A7A8BC00806ADD /* SystemException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemException.swift; sourceTree = "<group>"; };
+		E7BC395329A7B95200806ADD /* SystemException.Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemException.Error.swift; sourceTree = "<group>"; };
 		E7E26AC329A62FB8005334CF /* NativeAOTLibraryTest_Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeAOTLibraryTest_Person.h; sourceTree = "<group>"; };
 		E7E26AC529A63147005334CF /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		E7E26AC729A668CD005334CF /* NativeAOTLibraryTest_Company.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeAOTLibraryTest_Company.h; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				E7E9D57E29A77714002C3834 /* SystemObject.swift */,
 				E7BC394229A7A27600806ADD /* SystemType.swift */,
 				E7BC394D29A7A8BC00806ADD /* SystemException.swift */,
+				E7BC395329A7B95200806ADD /* SystemException.Error.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7BC395429A7B95200806ADD /* SystemException.Error.swift in Sources */,
 				E7BC394E29A7A8BC00806ADD /* SystemException.swift in Sources */,
 				E7E26AC629A63147005334CF /* Person.swift in Sources */,
 				E7E9D58029A77776002C3834 /* SystemObject.swift in Sources */,

@@ -47,23 +47,7 @@ public extension SystemException {
 		return value
 	}
 	
-	var error: Error {
-		let message = self.message
-		let hResult = self.hResult
-		let stackTrace = self.stackTrace
-		
-		var userInfo: [String: Any] = [
-			NSLocalizedDescriptionKey: message
-		]
-		
-		if let stackTrace {
-			userInfo[Self.stackTraceKey] = stackTrace
-		}
-		
-		let nsError = NSError(domain: "SystemException",
-							  code: .init(hResult),
-							  userInfo: userInfo)
-		
-		return nsError
+	var error: SystemException.Error {
+		.init(exception: self)
 	}
 }
