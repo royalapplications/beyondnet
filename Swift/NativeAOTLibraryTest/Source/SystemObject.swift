@@ -7,13 +7,9 @@ public class SystemObject {
         self.handle = handle
     }
     
-    private var typeName: String {
+    private lazy var typeName: String = {
         String(describing: type(of: self))
-    }
-    
-    private static var typeName: String {
-        String(describing: type(of: Self.self))
-    }
+    }()
     
     deinit {
         Debug.log("Will destroy \(typeName)")
@@ -34,12 +30,15 @@ public class SystemObject {
 extension SystemObject: Equatable {
     public static func == (lhs: SystemObject,
                            rhs: SystemObject) -> Bool {
-        Debug.log("Will check equality of \(lhs.typeName) and \(rhs.typeName)")
+		let lhsTypeName = lhs.typeName
+		let rhsTypeName = rhs.typeName
+		
+        Debug.log("Will check equality of \(lhsTypeName) and \(rhsTypeName)")
         
         let equal = Self.equals(lhs.handle,
                                 rhs.handle)
         
-        Debug.log("Did check equality of \(lhs.typeName) and \(rhs.typeName)")
+        Debug.log("Did check equality of \(lhsTypeName) and \(rhsTypeName)")
         
         return equal
     }
