@@ -24,4 +24,15 @@ public class Person
         LastName = lastName;
         Age = age;
     }
+
+    public void ReduceAge(int byYears)
+    {
+        int newAge = Age - byYears;
+
+        if (newAge < 0) {
+            throw new Exception("Age cannot be negative.");
+        }
+
+        Age = newAge;
+    }
 }

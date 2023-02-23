@@ -109,4 +109,15 @@ public extension Person {
 		
 		return value
 	}
+	
+	func reduceAge(byYears: Int32) -> Bool {
+		Debug.log("Will reduce age of \(swiftTypeName)")
+		
+		let success = NativeAOTLibraryTest_Person_ReduceAge(handle,
+															byYears) == .success
+		
+		Debug.log("Did reduce age of \(swiftTypeName)")
+		
+		return success
+	}
 }

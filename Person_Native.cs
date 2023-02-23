@@ -159,5 +159,23 @@ internal static class Person_Native
 
         return fullNameC;
     }
+
+    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "ReduceAge")]
+    internal static int ReduceAge(nint handleAddress, int byYears)
+    {
+        Person? person = GetPersonFromHandleAddress(handleAddress);
+
+        if (person == null) {
+            return (int)CStatus.Failure;
+        }
+
+        try {
+            person.ReduceAge(byYears);
+            
+            return (int)CStatus.Success;
+        } catch (Exception ex) {
+            return (int)CStatus.Failure;
+        }
+    }
     #endregion Public API
 }

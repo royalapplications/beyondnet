@@ -19,4 +19,6 @@ void NativeAOTLibraryTest_Person_LastName_Set(NativeAOTLibraryTest_Person_t pers
 
 char* NativeAOTLibraryTest_Person_FullName_Get(NativeAOTLibraryTest_Person_t person);
 
+CStatus NativeAOTLibraryTest_Person_ReduceAge(NativeAOTLibraryTest_Person_t person, int32_t byYears);
+
 #endif /* NativeAOTLibraryTest_Person_h */

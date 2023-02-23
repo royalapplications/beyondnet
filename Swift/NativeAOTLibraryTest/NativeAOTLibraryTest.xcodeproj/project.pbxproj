@@ -14,6 +14,8 @@
 		E7AACF4129A6282C00846A75 /* NativeAOTLibraryTest.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = E7AACF3F29A6282400846A75 /* NativeAOTLibraryTest.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		E7BC393E29A7A17400806ADD /* System_Type.h in Headers */ = {isa = PBXBuildFile; fileRef = E7BC393D29A7A17400806ADD /* System_Type.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		E7BC394329A7A27600806ADD /* SystemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC394229A7A27600806ADD /* SystemType.swift */; };
+		E7BC394C29A7A87600806ADD /* System_Exception.h in Headers */ = {isa = PBXBuildFile; fileRef = E7BC394B29A7A87600806ADD /* System_Exception.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		E7BC394E29A7A8BC00806ADD /* SystemException.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC394D29A7A8BC00806ADD /* SystemException.swift */; };
 		E7E26AC429A62FBD005334CF /* NativeAOTLibraryTest_Person.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E26AC329A62FB8005334CF /* NativeAOTLibraryTest_Person.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		E7E26AC629A63147005334CF /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E26AC529A63147005334CF /* Person.swift */; };
 		E7E26AC929A668F8005334CF /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E26AC829A668F8005334CF /* Company.swift */; };
@@ -58,6 +60,8 @@
 		E7AACF4C29A6296E00846A75 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		E7BC393D29A7A17400806ADD /* System_Type.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = System_Type.h; sourceTree = "<group>"; };
 		E7BC394229A7A27600806ADD /* SystemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemType.swift; sourceTree = "<group>"; };
+		E7BC394B29A7A87600806ADD /* System_Exception.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = System_Exception.h; sourceTree = "<group>"; };
+		E7BC394D29A7A8BC00806ADD /* SystemException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemException.swift; sourceTree = "<group>"; };
 		E7E26AC329A62FB8005334CF /* NativeAOTLibraryTest_Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeAOTLibraryTest_Person.h; sourceTree = "<group>"; };
 		E7E26AC529A63147005334CF /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		E7E26AC729A668CD005334CF /* NativeAOTLibraryTest_Company.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeAOTLibraryTest_Company.h; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 				E7161FFF29A66CBB00D45FCD /* TypeDefs.h */,
 				E7E9D57C29A76DB4002C3834 /* System_Object.h */,
 				E7BC393D29A7A17400806ADD /* System_Type.h */,
+				E7BC394B29A7A87600806ADD /* System_Exception.h */,
 				E7E26AC329A62FB8005334CF /* NativeAOTLibraryTest_Person.h */,
 				E7E26AC729A668CD005334CF /* NativeAOTLibraryTest_Company.h */,
 			);
@@ -145,6 +150,7 @@
 			children = (
 				E7E9D57E29A77714002C3834 /* SystemObject.swift */,
 				E7BC394229A7A27600806ADD /* SystemType.swift */,
+				E7BC394D29A7A8BC00806ADD /* SystemException.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -171,6 +177,7 @@
 				E7BC393E29A7A17400806ADD /* System_Type.h in Headers */,
 				E716200029A66CC000D45FCD /* TypeDefs.h in Headers */,
 				E7E9D57D29A76DB4002C3834 /* System_Object.h in Headers */,
+				E7BC394C29A7A87600806ADD /* System_Exception.h in Headers */,
 				E7E26AC429A62FBD005334CF /* NativeAOTLibraryTest_Person.h in Headers */,
 				E7E26ACA29A6696B005334CF /* NativeAOTLibraryTest_Company.h in Headers */,
 			);
@@ -340,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7BC394E29A7A8BC00806ADD /* SystemException.swift in Sources */,
 				E7E26AC629A63147005334CF /* Person.swift in Sources */,
 				E7E9D58029A77776002C3834 /* SystemObject.swift in Sources */,
 				E716200229A6795D00D45FCD /* Debug.swift in Sources */,
