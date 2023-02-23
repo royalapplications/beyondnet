@@ -54,5 +54,31 @@ internal static class System_Exception
 
         return messageC;
     }
+    
+    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "HResult_Get")]
+    internal static int HResult_Get(nint handleAddress)
+    {
+        Exception? exception = GetExceptionFromHandleAddress(handleAddress);
+
+        if (exception == null) {
+            return 0;
+        }
+
+        return exception.HResult;
+    }
+    
+    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "StackTrace_Get")]
+    internal static nint StackTrace_Get(nint handleAddress)
+    {
+        Exception? exception = GetExceptionFromHandleAddress(handleAddress);
+
+        if (exception == null) {
+            return nint.Zero;
+        }
+        
+        nint stackTraceC = exception.StackTrace?.ToCString() ?? nint.Zero;
+
+        return stackTraceC;
+    }
     #endregion Public API
 }

@@ -42,9 +42,10 @@ final class PersonTests: XCTestCase {
         
         XCTAssertNotEqual(person, secondPerson)
 		
-		let firstReduceAgeSuccess = secondPerson.reduceAge(byYears: 1)
+		XCTAssertNoThrow(try secondPerson.reduceAge(byYears: 1))
+		XCTAssertEqual(0, secondPerson.age)
 		
-		XCTAssertTrue(firstReduceAgeSuccess)
+		XCTAssertThrowsError(try secondPerson.reduceAge(byYears: 1))
 		XCTAssertEqual(0, secondPerson.age)
     }
 }

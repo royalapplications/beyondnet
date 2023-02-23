@@ -110,14 +110,26 @@ public extension Person {
 		return value
 	}
 	
-	func reduceAge(byYears: Int32) -> Bool {
+	func reduceAge(byYears: Int32) throws {
 		Debug.log("Will reduce age of \(swiftTypeName)")
 		
+		var exceptionHandle: System_Exception_t?
+		
 		let success = NativeAOTLibraryTest_Person_ReduceAge(handle,
-															byYears) == .success
+															byYears,
+															&exceptionHandle) == .success
 		
-		Debug.log("Did reduce age of \(swiftTypeName)")
-		
-		return success
+		if success {
+			Debug.log("Did reduce age of \(swiftTypeName)")
+		} else if let exceptionHandle {
+			Debug.log("Reduce age of \(swiftTypeName) threw an exception")
+			
+			let exception = SystemException(handle: exceptionHandle)
+			let error = exception.error
+			
+			throw error
+		} else {
+			fatalError("Reduce age of \(swiftTypeName) failed but didn't throw an exception. This is unexpected.")
+		}
 	}
 }
