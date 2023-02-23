@@ -45,7 +45,20 @@ final class PersonTests: XCTestCase {
 		XCTAssertNoThrow(try secondPerson.reduceAge(byYears: 1))
 		XCTAssertEqual(0, secondPerson.age)
 		
-		XCTAssertThrowsError(try secondPerson.reduceAge(byYears: 1))
-		XCTAssertEqual(0, secondPerson.age)
+		do {
+			try secondPerson.reduceAge(byYears: 1)
+			
+			XCTFail("Calling reduceAge should throw here but did not")
+			
+			return
+		} catch {
+			XCTAssertEqual(0, secondPerson.age)
+			
+			let nsError = error as NSError
+			let stackTrace = nsError.userInfo[SystemException.stackTraceKey]
+			
+			XCTAssertEqual("Age cannot be negative.", error.localizedDescription)
+			XCTAssertNotNil(stackTrace)
+		}
     }
 }
