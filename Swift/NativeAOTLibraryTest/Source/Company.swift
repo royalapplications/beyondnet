@@ -113,3 +113,9 @@ public class Company {
         return employee
     }
 }
+
+extension Company: Equatable {
+    public static func == (lhs: Company, rhs: Company) -> Bool {
+        lhs.handle == rhs.handle
+    }
+}

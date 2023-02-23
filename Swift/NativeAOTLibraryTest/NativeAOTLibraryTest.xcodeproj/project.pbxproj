@@ -16,7 +16,20 @@
 		E7E26AC629A63147005334CF /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E26AC529A63147005334CF /* Person.swift */; };
 		E7E26AC929A668F8005334CF /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E26AC829A668F8005334CF /* Company.swift */; };
 		E7E26ACA29A6696B005334CF /* NativeAOTLibraryTest_Company.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E26AC729A668CD005334CF /* NativeAOTLibraryTest_Company.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		E7E9D57229A76683002C3834 /* NativeAOTLibraryTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7AACF3429A6278E00846A75 /* NativeAOTLibraryTest.framework */; };
+		E7E9D57929A766A2002C3834 /* Person_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E9D57829A766A2002C3834 /* Person_Tests.swift */; };
+		E7E9D57B29A768F7002C3834 /* Company_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E9D57A29A768F7002C3834 /* Company_Tests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E7E9D57329A76683002C3834 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E7AACF2B29A6278E00846A75 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E7AACF3329A6278E00846A75;
+			remoteInfo = NativeAOTLibraryTest;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		E7AACF4229A6282C00846A75 /* Embed Libraries */ = {
@@ -43,6 +56,9 @@
 		E7E26AC529A63147005334CF /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		E7E26AC729A668CD005334CF /* NativeAOTLibraryTest_Company.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeAOTLibraryTest_Company.h; sourceTree = "<group>"; };
 		E7E26AC829A668F8005334CF /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		E7E9D56E29A76683002C3834 /* NativeAOTLibraryTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NativeAOTLibraryTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7E9D57829A766A2002C3834 /* Person_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person_Tests.swift; sourceTree = "<group>"; };
+		E7E9D57A29A768F7002C3834 /* Company_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company_Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +67,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7AACF4029A6282400846A75 /* NativeAOTLibraryTest.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7E9D56B29A76683002C3834 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7E9D57229A76683002C3834 /* NativeAOTLibraryTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				E7AACF3429A6278E00846A75 /* NativeAOTLibraryTest.framework */,
+				E7E9D56E29A76683002C3834 /* NativeAOTLibraryTestTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,7 +106,9 @@
 				E7AACF3729A6278E00846A75 /* NativeAOTLibraryTest.h */,
 				E716200129A6795D00D45FCD /* Debug.swift */,
 				E7E26AC529A63147005334CF /* Person.swift */,
+				E7E9D57829A766A2002C3834 /* Person_Tests.swift */,
 				E7E26AC829A668F8005334CF /* Company.swift */,
+				E7E9D57A29A768F7002C3834 /* Company_Tests.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -134,6 +161,24 @@
 			productReference = E7AACF3429A6278E00846A75 /* NativeAOTLibraryTest.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		E7E9D56D29A76683002C3834 /* NativeAOTLibraryTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E7E9D57729A76683002C3834 /* Build configuration list for PBXNativeTarget "NativeAOTLibraryTestTests" */;
+			buildPhases = (
+				E7E9D56A29A76683002C3834 /* Sources */,
+				E7E9D56B29A76683002C3834 /* Frameworks */,
+				E7E9D56C29A76683002C3834 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E7E9D57429A76683002C3834 /* PBXTargetDependency */,
+			);
+			name = NativeAOTLibraryTestTests;
+			productName = NativeAOTLibraryTestTests;
+			productReference = E7E9D56E29A76683002C3834 /* NativeAOTLibraryTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -141,9 +186,14 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					E7AACF3329A6278E00846A75 = {
+						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
+					};
+					E7E9D56D29A76683002C3834 = {
 						CreatedOnToolsVersion = 14.2;
 						LastSwiftMigration = 1420;
 					};
@@ -163,12 +213,20 @@
 			projectRoot = "";
 			targets = (
 				E7AACF3329A6278E00846A75 /* NativeAOTLibraryTest */,
+				E7E9D56D29A76683002C3834 /* NativeAOTLibraryTestTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		E7AACF3229A6278E00846A75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7E9D56C29A76683002C3834 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -210,7 +268,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E7E9D56A29A76683002C3834 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7E9D57929A766A2002C3834 /* Person_Tests.swift in Sources */,
+				E7E9D57B29A768F7002C3834 /* Company_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E7E9D57429A76683002C3834 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E7AACF3329A6278E00846A75 /* NativeAOTLibraryTest */;
+			targetProxy = E7E9D57329A76683002C3834 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		E7AACF3929A6278E00846A75 /* Debug */ = {
@@ -403,6 +478,51 @@
 			};
 			name = Release;
 		};
+		E7E9D57529A76683002C3834 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VXP8K9EDP6;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.royalapps.NativeAOTLibraryTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		E7E9D57629A76683002C3834 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VXP8K9EDP6;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.royalapps.NativeAOTLibraryTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -420,6 +540,15 @@
 			buildConfigurations = (
 				E7AACF3C29A6278E00846A75 /* Debug */,
 				E7AACF3D29A6278E00846A75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E7E9D57729A76683002C3834 /* Build configuration list for PBXNativeTarget "NativeAOTLibraryTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7E9D57529A76683002C3834 /* Debug */,
+				E7E9D57629A76683002C3834 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

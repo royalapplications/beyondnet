@@ -121,3 +121,9 @@ public class Person {
         return value
     }
 }
+
+extension Person: Equatable {
+    public static func == (lhs: Person, rhs: Person) -> Bool {
+        lhs.handle == rhs.handle
+    }
+}
