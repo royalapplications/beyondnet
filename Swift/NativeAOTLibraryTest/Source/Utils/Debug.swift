@@ -1,9 +1,9 @@
 import Foundation
 
-struct Debug {
-	static var isLoggingEnabled = true
+public struct Debug {
+	public static var isLoggingEnabled = false
 	
-    static func log(_ message: String) {
+	public static func log(_ message: String) {
 #if DEBUG
 		guard isLoggingEnabled else { return }
 		

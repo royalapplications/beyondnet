@@ -14,6 +14,7 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="NativeAOTLibraryTestApp" customModuleProvider="target">
             <connections>
+                <outlet property="checkBoxDebugLogging" destination="cG3-BT-lQm" id="olm-2Z-jI1"/>
                 <outlet property="textFieldNumberOfObjects" destination="v84-lr-OsM" id="IDU-jX-XL2"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
@@ -691,7 +692,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NuA-io-0k8">
-                        <rect key="frame" x="18" y="313" width="123" height="16"/>
+                        <rect key="frame" x="18" y="277" width="123" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" title="Number of Objects:" id="dah-v2-xJD">
                             <font key="font" usesAppearanceFont="YES"/>
@@ -700,9 +701,9 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v84-lr-OsM">
-                        <rect key="frame" x="147" y="310" width="96" height="21"/>
+                        <rect key="frame" x="147" y="274" width="96" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="1000" drawsBackground="YES" id="Xx2-hF-aKT">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="10000" drawsBackground="YES" id="Xx2-hF-aKT">
                             <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" formatWidth="-1" groupingSize="0" minimumIntegerDigits="1" maximumIntegerDigits="42" id="ma0-1d-qHH">
                                 <real key="minimum" value="1"/>
                             </numberFormatter>
@@ -712,7 +713,7 @@
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EJ3-qs-6eF">
-                        <rect key="frame" x="244" y="303" width="75" height="32"/>
+                        <rect key="frame" x="244" y="267" width="75" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Create" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="GKx-k4-1dL">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -723,7 +724,7 @@
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZU7-zI-sQS">
-                        <rect key="frame" x="317" y="303" width="82" height="32"/>
+                        <rect key="frame" x="317" y="267" width="82" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Destroy" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pEJ-1k-lgm">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -731,6 +732,17 @@
                         </buttonCell>
                         <connections>
                             <action selector="buttonDestroyObjects_action:" target="Voe-Tx-rLC" id="20x-cq-FTz"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cG3-BT-lQm">
+                        <rect key="frame" x="18" y="312" width="119" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="check" title="Debug Logging" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="eEC-4d-Y8P">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="checkBoxDebugLogging_action:" target="Voe-Tx-rLC" id="izy-Rr-0lb"/>
                         </connections>
                     </button>
                 </subviews>

@@ -69,8 +69,9 @@ final class PersonTests: XCTestCase {
     }
 	
 	func testPersonExceptionPerformance() {
+		let debugLoggingWasEnabled = Debug.isLoggingEnabled
 		Debug.isLoggingEnabled = false
-		defer { Debug.isLoggingEnabled = true }
+		defer { Debug.isLoggingEnabled = debugLoggingWasEnabled }
 		
 		let iterations = 10_000
 		

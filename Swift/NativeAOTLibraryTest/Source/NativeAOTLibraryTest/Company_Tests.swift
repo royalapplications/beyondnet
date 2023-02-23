@@ -74,8 +74,9 @@ final class CompanyTests: XCTestCase {
     }
 	
 	func testCompanyCreationAndNameAccessPerformance() {
+		let debugLoggingWasEnabled = Debug.isLoggingEnabled
 		Debug.isLoggingEnabled = false
-		defer { Debug.isLoggingEnabled = true }
+		defer { Debug.isLoggingEnabled = debugLoggingWasEnabled }
 		
 		let iterations = 100_000
 		let companyName = "Fancy Company"
@@ -88,8 +89,9 @@ final class CompanyTests: XCTestCase {
 	}
 	
 	func testCompanyNameAccessPerformance() {
+		let debugLoggingWasEnabled = Debug.isLoggingEnabled
 		Debug.isLoggingEnabled = false
-		defer { Debug.isLoggingEnabled = true }
+		defer { Debug.isLoggingEnabled = debugLoggingWasEnabled }
 		
 		let iterations = 100_000
 		let companyName = "Fancy Company"
