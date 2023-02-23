@@ -15,7 +15,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <DefaultItemExcludes>$(DefaultItemExcludes);Swift\**\*</DefaultItemExcludes>
+    <DefaultItemExcludes>$(DefaultItemExcludes);Swift\**\*;.gitignore;publish</DefaultItemExcludes>
   </PropertyGroup>
 
 </Project>
