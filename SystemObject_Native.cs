@@ -28,7 +28,7 @@ internal static class System_Object
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Equals")]
-    internal static int Equals(nint firstHandleAddress, nint secondHandleAddress)
+    internal static CBool Equals(nint firstHandleAddress, nint secondHandleAddress)
     {
         GCHandle? firstHandle = firstHandleAddress.ToGCHandle();
         object? firstObject = firstHandle?.Target;
@@ -37,9 +37,8 @@ internal static class System_Object
         object? secondObject = secondHandle?.Target;
 
         bool equals = firstObject == secondObject;
-        int cBool = equals ? (int)CBool.True : (int)CBool.False;
-        
-        return cBool;
+
+        return equals.ToCBool();
     }
     
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Destroy")]

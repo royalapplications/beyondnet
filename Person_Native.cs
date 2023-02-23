@@ -161,7 +161,7 @@ internal static class Person_Native
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "ReduceAge")]
-    internal static unsafe int ReduceAge(
+    internal static unsafe CStatus ReduceAge(
         nint handleAddress,
         int byYears,
         nint* exception
@@ -174,7 +174,7 @@ internal static class Person_Native
                 *exception = nint.Zero;
             }
             
-            return (int)CStatus.Failure;
+            return CStatus.Failure;
         }
 
         try {
@@ -184,7 +184,7 @@ internal static class Person_Native
                 *exception = nint.Zero;
             }
             
-            return (int)CStatus.Success;
+            return CStatus.Success;
         } catch (Exception ex) {
             if (exception != null) {
                 nint exceptionHandleAddress = System_Exception.Create(ex);
@@ -192,7 +192,7 @@ internal static class Person_Native
                 *exception = exceptionHandleAddress;
             }
             
-            return (int)CStatus.Failure;
+            return CStatus.Failure;
         }
     }
     #endregion Public API

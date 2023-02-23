@@ -77,55 +77,55 @@ internal static class Company_Native
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "AddEmployee")]
-    internal static int AddEmployee(nint handleAddress, nint employeeHandleAddress)
+    internal static CStatus AddEmployee(nint handleAddress, nint employeeHandleAddress)
     {
         Company? company = GetCompanyFromHandleAddress(handleAddress);
 
         if (company == null) {
-            return (int)CStatus.Failure;
+            return CStatus.Failure;
         }
 
         Person? employee = Person_Native.GetPersonFromHandleAddress(employeeHandleAddress);
 
         if (employee == null) {
-            return (int)CStatus.Failure;
+            return CStatus.Failure;
         }
 
         try {
             company.AddEmployee(employee);
         } catch {
-            return (int)CStatus.Failure;
+            return CStatus.Failure;
         }
 
-        return (int)CStatus.Success;
+        return CStatus.Success;
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "RemoveEmployee")]
-    internal static int RemoveEmployee(nint handleAddress, nint employeeHandleAddress)
+    internal static CStatus RemoveEmployee(nint handleAddress, nint employeeHandleAddress)
     {
         Company? company = GetCompanyFromHandleAddress(handleAddress);
 
         if (company == null) {
-            return (int)CStatus.Failure;
+            return CStatus.Failure;
         }
 
         Person? employee = Person_Native.GetPersonFromHandleAddress(employeeHandleAddress);
 
         if (employee == null) {
-            return (int)CStatus.Failure;
+            return CStatus.Failure;
         }
 
         try {
             company.RemoveEmployee(employee);
         } catch {
-            return (int)CStatus.Failure;
+            return CStatus.Failure;
         }
 
-        return (int)CStatus.Success;
+        return CStatus.Success;
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "ContainsEmployee")]
-    internal static int ContainsEmployee(nint handleAddress, nint employeeHandleAddress)
+    internal static CBool ContainsEmployee(nint handleAddress, nint employeeHandleAddress)
     {
         Company? company = GetCompanyFromHandleAddress(handleAddress);
 

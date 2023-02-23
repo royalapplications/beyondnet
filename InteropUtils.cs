@@ -64,12 +64,12 @@ internal static class InteropUtils
         return @string;
     }
 
-    internal static int ToCBool(this bool @bool)
+    internal static CBool ToCBool(this bool @bool)
     {
         if (@bool) {
-            return (int)CBool.True;
+            return CBool.True;
         } else {
-            return (int)CBool.False;
+            return CBool.False;
         }
     }
 }
