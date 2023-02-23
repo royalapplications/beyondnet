@@ -1,5 +1,6 @@
 import XCTest
-import NativeAOTLibraryTest
+
+@testable import NativeAOTLibraryTest
 
 final class CompanyTests: XCTestCase {
     func testCompany() {
@@ -71,4 +72,38 @@ final class CompanyTests: XCTestCase {
         company.removeEmployee(employeeAtIndex0)
         XCTAssertEqual(0, company.numberOfEmployees)
     }
+	
+	func testCompanyCreationAndNameAccessPerformance() {
+		Debug.isLoggingEnabled = false
+		defer { Debug.isLoggingEnabled = true }
+		
+		let iterations = 100_000
+		let companyName = "Fancy Company"
+		
+		measure {
+			for _ in 0..<iterations {
+				_ = Company(name: companyName)
+			}
+		}
+	}
+	
+	func testCompanyNameAccessPerformance() {
+		Debug.isLoggingEnabled = false
+		defer { Debug.isLoggingEnabled = true }
+		
+		let iterations = 100_000
+		let companyName = "Fancy Company"
+		
+		var companies = [Company]()
+		
+		for _ in 0..<iterations {
+			companies.append(Company(name: companyName))
+		}
+		
+		measure {
+			for company in companies {
+				_ = company.name
+			}
+		}
+	}
 }
