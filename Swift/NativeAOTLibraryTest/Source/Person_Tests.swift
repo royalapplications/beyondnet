@@ -30,5 +30,13 @@ final class PersonTests: XCTestCase {
         XCTAssertEqual(adjustedLastName, person.lastName)
         XCTAssertEqual(adjustedFullName, person.fullName)
         XCTAssertEqual(adjustedAge, person.age)
+        
+        XCTAssertEqual(person, person)
+        
+        let secondPerson = Person(firstName: "a",
+                                  lastName: "b",
+                                  age: 0)
+        
+        XCTAssertNotEqual(person, secondPerson)
     }
 }

@@ -123,7 +123,9 @@ public class Person {
 }
 
 extension Person: Equatable {
-    public static func == (lhs: Person, rhs: Person) -> Bool {
-        lhs.handle == rhs.handle
+    public static func == (lhs: Person,
+                           rhs: Person) -> Bool {
+        SystemObject.equals(lhs.handle,
+                            rhs.handle)
     }
 }

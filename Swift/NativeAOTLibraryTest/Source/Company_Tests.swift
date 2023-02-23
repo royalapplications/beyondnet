@@ -32,8 +32,7 @@ final class CompanyTests: XCTestCase {
         XCTAssertTrue(company.containsEmployee(employee0))
         XCTAssertTrue(company.containsEmployee(employeeAtIndex0))
         
-        // TODO: Must fix in C#
-//        XCTAssertEqual(employee0, employeeAtIndex0)
+        XCTAssertEqual(employee0, employeeAtIndex0)
         
         XCTAssertEqual(employee0.firstName, employeeAtIndex0.firstName)
         XCTAssertEqual(employee0.lastName, employeeAtIndex0.lastName)
@@ -55,8 +54,7 @@ final class CompanyTests: XCTestCase {
             return
         }
         
-        // TODO: Must fix in C#
-//        XCTAssertEqual(employee1, employeeAtIndex1)
+        XCTAssertEqual(employee1, employeeAtIndex1)
         
         XCTAssertEqual(employee1.firstName, employeeAtIndex1.firstName)
         XCTAssertEqual(employee1.lastName, employeeAtIndex1.lastName)

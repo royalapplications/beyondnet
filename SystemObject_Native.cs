@@ -26,4 +26,19 @@ internal static class System_Object
 
         return nativeType;
     }
+
+    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Equals")]
+    internal static int Equals(nint firstHandleAddress, nint secondHandleAddress)
+    {
+        GCHandle? firstHandle = firstHandleAddress.ToGCHandle();
+        object? firstObject = firstHandle?.Target;
+        
+        GCHandle? secondHandle = secondHandleAddress.ToGCHandle();
+        object? secondObject = secondHandle?.Target;
+
+        bool equals = firstObject == secondObject;
+        int cBool = equals ? (int)CBool.True : (int)CBool.False;
+        
+        return cBool;
+    }
 }

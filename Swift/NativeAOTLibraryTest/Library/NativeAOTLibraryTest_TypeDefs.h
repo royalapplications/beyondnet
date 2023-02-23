@@ -4,6 +4,8 @@
 #import <stdlib.h>
 #import <CoreFoundation/CFAvailability.h>
 
+typedef void* System_Object_t;
+
 typedef void* NativeAOTLibraryTest_Person_t;
 typedef void* NativeAOTLibraryTest_Company_t;
 

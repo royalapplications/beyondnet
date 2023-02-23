@@ -19,6 +19,8 @@
 		E7E9D57229A76683002C3834 /* NativeAOTLibraryTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7AACF3429A6278E00846A75 /* NativeAOTLibraryTest.framework */; };
 		E7E9D57929A766A2002C3834 /* Person_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E9D57829A766A2002C3834 /* Person_Tests.swift */; };
 		E7E9D57B29A768F7002C3834 /* Company_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E9D57A29A768F7002C3834 /* Company_Tests.swift */; };
+		E7E9D57D29A76DB4002C3834 /* System_Object.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E9D57C29A76DB4002C3834 /* System_Object.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		E7E9D58029A77776002C3834 /* SystemObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E9D57E29A77714002C3834 /* SystemObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		E7E9D56E29A76683002C3834 /* NativeAOTLibraryTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NativeAOTLibraryTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7E9D57829A766A2002C3834 /* Person_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person_Tests.swift; sourceTree = "<group>"; };
 		E7E9D57A29A768F7002C3834 /* Company_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company_Tests.swift; sourceTree = "<group>"; };
+		E7E9D57C29A76DB4002C3834 /* System_Object.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = System_Object.h; sourceTree = "<group>"; };
+		E7E9D57E29A77714002C3834 /* SystemObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,7 @@
 			children = (
 				E7AACF3729A6278E00846A75 /* NativeAOTLibraryTest.h */,
 				E716200129A6795D00D45FCD /* Debug.swift */,
+				E7E9D57E29A77714002C3834 /* SystemObject.swift */,
 				E7E26AC529A63147005334CF /* Person.swift */,
 				E7E9D57829A766A2002C3834 /* Person_Tests.swift */,
 				E7E26AC829A668F8005334CF /* Company.swift */,
@@ -118,6 +123,7 @@
 			children = (
 				E7AACF3F29A6282400846A75 /* NativeAOTLibraryTest.dylib */,
 				E7161FFF29A66CBB00D45FCD /* NativeAOTLibraryTest_TypeDefs.h */,
+				E7E9D57C29A76DB4002C3834 /* System_Object.h */,
 				E7E26AC329A62FB8005334CF /* NativeAOTLibraryTest_Person.h */,
 				E7E26AC729A668CD005334CF /* NativeAOTLibraryTest_Company.h */,
 			);
@@ -133,6 +139,7 @@
 			files = (
 				E7AACF3829A6278E00846A75 /* NativeAOTLibraryTest.h in Headers */,
 				E716200029A66CC000D45FCD /* NativeAOTLibraryTest_TypeDefs.h in Headers */,
+				E7E9D57D29A76DB4002C3834 /* System_Object.h in Headers */,
 				E7E26AC429A62FBD005334CF /* NativeAOTLibraryTest_Person.h in Headers */,
 				E7E26ACA29A6696B005334CF /* NativeAOTLibraryTest_Company.h in Headers */,
 			);
@@ -263,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7E26AC629A63147005334CF /* Person.swift in Sources */,
+				E7E9D58029A77776002C3834 /* SystemObject.swift in Sources */,
 				E716200229A6795D00D45FCD /* Debug.swift in Sources */,
 				E7E26AC929A668F8005334CF /* Company.swift in Sources */,
 			);

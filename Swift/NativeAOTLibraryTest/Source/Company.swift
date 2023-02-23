@@ -115,7 +115,9 @@ public class Company {
 }
 
 extension Company: Equatable {
-    public static func == (lhs: Company, rhs: Company) -> Bool {
-        lhs.handle == rhs.handle
+    public static func == (lhs: Company,
+                           rhs: Company) -> Bool {
+        SystemObject.equals(lhs.handle,
+                            rhs.handle)
     }
 }
