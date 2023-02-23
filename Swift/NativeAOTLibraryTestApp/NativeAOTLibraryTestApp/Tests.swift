@@ -57,6 +57,19 @@ struct Tests {
                     fatalError("Failed to get employee at index \(index)")
                 }
                 
+                switch index {
+                case 0:
+                    guard employee == johnDoe else {
+                        fatalError("Employee at index 0 should be John Doe")
+                    }
+                case 1:
+                    guard employee == elliSmith else {
+                        fatalError("Employee at index 1 should be Elli Smith")
+                    }
+                default:
+                    fatalError("We should only have two employees")
+                }
+                
                 print("Employee No. \(index + 1): \(employee.fullName)")
             }
         }
