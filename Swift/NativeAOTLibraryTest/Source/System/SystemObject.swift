@@ -11,6 +11,7 @@ public class SystemObject {
 		Self.swiftTypeName
     }()
 	
+	// TODO: This is very, very expensive and only aids in debugging !!!
 	public static var swiftTypeName: String {
 		String(describing: Self.self)
 	}
