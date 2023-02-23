@@ -7,16 +7,20 @@ public class SystemObject {
         self.handle = handle
     }
     
-    private lazy var typeName: String = {
-        String(describing: type(of: self))
+    public lazy var swiftTypeName: String = {
+		Self.swiftTypeName
     }()
+	
+	public static var swiftTypeName: String {
+		String(describing: Self.self)
+	}
     
     deinit {
-        Debug.log("Will destroy \(typeName)")
+        Debug.log("Will destroy \(swiftTypeName)")
         
         System_Object_Destroy(handle)
         
-        Debug.log("Did destroy \(typeName)")
+        Debug.log("Did destroy \(swiftTypeName)")
     }
     
     internal static func equals(_ lhs: System_Object_t,
@@ -30,8 +34,8 @@ public class SystemObject {
 extension SystemObject: Equatable {
     public static func == (lhs: SystemObject,
                            rhs: SystemObject) -> Bool {
-		let lhsTypeName = lhs.typeName
-		let rhsTypeName = rhs.typeName
+		let lhsTypeName = lhs.swiftTypeName
+		let rhsTypeName = rhs.swiftTypeName
 		
         Debug.log("Will check equality of \(lhsTypeName) and \(rhsTypeName)")
         

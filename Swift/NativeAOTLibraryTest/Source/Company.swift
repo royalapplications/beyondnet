@@ -4,27 +4,27 @@ public class Company: SystemObject {
     public convenience init(name: String) {
         let nameC = name.cString(using: .utf8)
 
-        Debug.log("Will create Company")
+		Debug.log("Will create \(Self.swiftTypeName)")
 
         guard let handle = NativeAOTLibraryTest_Company_Create(nameC) else {
-            fatalError("Failed to create Company")
+			fatalError("Failed to create \(Self.swiftTypeName)")
         }
         
         self.init(handle: handle)
 
-        Debug.log("Did create Company")
+		Debug.log("Did create \(Self.swiftTypeName)")
     }
     
     public var name: String {
-        Debug.log("Will get name of Company")
+        Debug.log("Will get name of \(swiftTypeName)")
 
         guard let valueC = NativeAOTLibraryTest_Company_Name_Get(handle) else {
-            fatalError("Failed to get name of Company")
+            fatalError("Failed to get name of \(swiftTypeName)")
         }
 
         defer { valueC.deallocate() }
 
-        Debug.log("Did get name of Company")
+        Debug.log("Did get name of \(swiftTypeName)")
 
         let value = String(cString: valueC)
 
@@ -32,58 +32,58 @@ public class Company: SystemObject {
     }
     
     public var numberOfEmployees: Int32 {
-        Debug.log("Will get numberOfEmployees of Company")
+        Debug.log("Will get numberOfEmployees of \(swiftTypeName)")
         
         let value = NativeAOTLibraryTest_Company_NumberOfEmployees_Get(handle)
         
-        Debug.log("Did get numberOfEmployees of Company")
+        Debug.log("Did get numberOfEmployees of \(swiftTypeName)")
         
         return value
     }
     
     @discardableResult
     public func addEmployee(_ employee: Person) -> Bool {
-        Debug.log("Will add employee to Company")
+        Debug.log("Will add employee to \(swiftTypeName)")
         
         let result = NativeAOTLibraryTest_Company_AddEmployee(handle,
                                                               employee.handle)
         
         let success = result == .success
         
-        Debug.log("Did add employee to Company")
+        Debug.log("Did add employee to \(swiftTypeName)")
         
         return success
     }
     
     @discardableResult
     public func removeEmployee(_ employee: Person) -> Bool {
-        Debug.log("Will remove employee from Company")
+        Debug.log("Will remove employee from \(swiftTypeName)")
         
         let result = NativeAOTLibraryTest_Company_RemoveEmployee(handle,
                                                                  employee.handle)
         
         let success = result == .success
         
-        Debug.log("Did remove employee from Company")
+        Debug.log("Did remove employee from \(swiftTypeName)")
         
         return success
     }
     
     public func containsEmployee(_ employee: Person) -> Bool {
-        Debug.log("Will check if Company contains employee")
+        Debug.log("Will check if \(swiftTypeName) contains employee")
         
         let boolResult = NativeAOTLibraryTest_Company_ContainsEmployee(handle,
                                                                        employee.handle)
         
         let value = boolResult == .yes
         
-        Debug.log("Did check if Company contains employee")
+        Debug.log("Did check if \(swiftTypeName) contains employee")
         
         return value
     }
     
     public func employee(at index: Int32) -> Person? {
-        Debug.log("Will get employee at index of Company")
+        Debug.log("Will get employee at index of \(swiftTypeName)")
         
         let employee: Person?
         
@@ -94,7 +94,7 @@ public class Company: SystemObject {
             employee = nil
         }
         
-        Debug.log("Did get employee at index of Company")
+        Debug.log("Did get employee at index of \(swiftTypeName)")
         
         return employee
     }
