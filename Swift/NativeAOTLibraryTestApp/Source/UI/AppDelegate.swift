@@ -145,11 +145,20 @@ private extension AppDelegate {
 	func createCompany(name companyName: String,
 					   numberOfEmployees: Int) -> Company {
 		let randomDataStartDate = Date()
-		let employeesData = createRandomEmployeesData(numberOfEmployees: numberOfEmployees)
+		
+		var randomFirstNames = Person.randomFirstNames(count: numberOfEmployees)
+		var randomLastNames = Person.randomLastNames(count: numberOfEmployees)
+		var randomAges = Person.randomAges(count: numberOfEmployees)
+		
 		let randomDataDelta = formattedDateDelta(startDate: randomDataStartDate)
 		
 		let creationStartDate = Date()
-		let company = createCompany(name: companyName, employeesData: employeesData)
+		
+		let company = createCompany(name: companyName,
+									employeeFirstNames: &randomFirstNames,
+									employeeLastNames: &randomLastNames,
+									employeeAges: &randomAges)
+		
 		let creationDelta = formattedDateDelta(startDate: creationStartDate)
 
 		DispatchQueue.main.async { [weak window] in
@@ -166,26 +175,16 @@ private extension AppDelegate {
 		return company
 	}
 	
-	func createRandomEmployeesData(numberOfEmployees: Int) -> RandomEmployeesData {
-		let randomFirstNames = Person.randomFirstNames(count: numberOfEmployees)
-		let randomLastNames = Person.randomLastNames(count: numberOfEmployees)
-		let randomAges = Person.randomAges(count: numberOfEmployees)
-		
-		let employeesData = RandomEmployeesData(firstNames: randomFirstNames,
-												lastNames: randomLastNames,
-												ages: randomAges)
-		
-		return employeesData
-	}
-	
 	func createCompany(name companyName: String,
-					   employeesData: RandomEmployeesData) -> Company {
+					   employeeFirstNames: inout [String],
+					   employeeLastNames: inout [String],
+					   employeeAges: inout [Int32]) -> Company {
 		let company = Company(name: companyName)
 		
-		for idx in 0..<employeesData.firstNames.count {
-			let firstName = employeesData.firstNames[idx]
-			let lastName = employeesData.lastNames[idx]
-			let age = employeesData.ages[idx]
+		for idx in 0..<employeeFirstNames.count {
+			let firstName = employeeFirstNames[idx]
+			let lastName = employeeLastNames[idx]
+			let age = employeeAges[idx]
 			
 			let employee = Person(firstName: firstName,
 								  lastName: lastName,
