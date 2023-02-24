@@ -4,7 +4,7 @@ public class Company
 {
     private readonly List<Person> m_employees = new();
 
-    public string Name { get; }
+    public string Name { get; set; }
 
     public int NumberOfEmployees
     {

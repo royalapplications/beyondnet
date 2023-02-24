@@ -21,19 +21,30 @@ public extension Company {
 	}
 	
 	var name: String {
-		Debug.log { "Will get name of \(swiftTypeName)" }
-
-		guard let valueC = NativeAOTLibraryTest_Company_Name_Get(handle) else {
-			fatalError("Failed to get name of \(swiftTypeName)")
+		get {
+			Debug.log { "Will get name of \(swiftTypeName)" }
+			
+			guard let valueC = NativeAOTLibraryTest_Company_Name_Get(handle) else {
+				fatalError("Failed to get name of \(swiftTypeName)")
+			}
+			
+			defer { valueC.deallocate() }
+			
+			Debug.log { "Did get name of \(swiftTypeName)" }
+			
+			let value = String(cString: valueC)
+			
+			return value
 		}
-
-		defer { valueC.deallocate() }
-
-		Debug.log { "Did get name of \(swiftTypeName)" }
-
-		let value = String(cString: valueC)
-
-		return value
+		set {
+			Debug.log { "Will set name of \(swiftTypeName)" }
+			
+			newValue.withCString {
+				NativeAOTLibraryTest_Company_Name_Set(handle, $0)
+			}
+			
+			Debug.log { "Did set name of \(swiftTypeName)" }
+		}
 	}
 	
 	var numberOfEmployees: Int32 {

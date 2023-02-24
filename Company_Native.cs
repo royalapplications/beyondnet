@@ -61,6 +61,24 @@ internal static class Company_Native
 
         return nameC;
     }
+    
+    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Name_Set")]
+    internal static void Name_Set(nint handleAddress, nint name)
+    {
+        Company? company = GetCompanyFromHandleAddress(handleAddress);
+
+        if (company == null) {
+            return;
+        }
+
+        string? nameDotNet = name.ToDotNetString();
+
+        if (nameDotNet == null) {
+            return;
+        }
+
+        company.Name = nameDotNet;
+    }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "NumberOfEmployees_Get")]
     internal static int NumberOfEmployees_Get(nint handleAddress)
