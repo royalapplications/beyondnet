@@ -15,7 +15,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <DefaultItemExcludes>$(DefaultItemExcludes);Swift\**\*;.gitignore;publish;*.sln.DotSettings;</DefaultItemExcludes>
+    <DefaultItemExcludes>$(DefaultItemExcludes);Swift\**\*;.gitignore;*.sln.DotSettings;</DefaultItemExcludes>
   </PropertyGroup>
 
   <ItemGroup>
