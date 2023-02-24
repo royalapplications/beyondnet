@@ -70,10 +70,16 @@ private extension AppDelegate {
 	
 	func createCompany(name companyName: String,
 					   numberOfEmployees: Int) {
+		let randomFirstNames = Person.randomFirstNames(count: numberOfEmployees)
+		let randomLastNames = Person.randomLastNames(count: numberOfEmployees)
+		let randomAges = Person.randomAges(count: numberOfEmployees)
+		
 		let startDate = Date()
 		
-		let company = Company.createRandom(companyName: companyName,
-										   numberOfEmployees: numberOfEmployees)
+		let company = Company(companyName: companyName,
+							  employeeFirstNames: randomFirstNames,
+							  employeeLastNames: randomLastNames,
+							  employeeAges: randomAges)
 		
 		let formattedDelta = formattedDateDelta(startDate: startDate)
 		
@@ -116,9 +122,9 @@ private extension AppDelegate {
 			let tabViewItemLabel: String
 			
 			if let company {
-				tabViewItemLabel = "Company: \(company.name)"
+				tabViewItemLabel = "\(company.name) - \(company.numberOfEmployees) employees"
 			} else {
-				tabViewItemLabel = "Company"
+				tabViewItemLabel = "No Company"
 			}
 			
 			self.tabViewItemCompany.label = tabViewItemLabel

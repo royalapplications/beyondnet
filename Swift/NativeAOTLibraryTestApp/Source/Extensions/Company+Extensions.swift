@@ -13,15 +13,37 @@ extension Company {
 	
 	static func createRandom(companyName: String,
 							 numberOfEmployees: Int) -> Company {
-		let company = Company(name: companyName)
+		let employeeFirstNames = Person.randomFirstNames(count: numberOfEmployees)
+		let employeeLastNames = Person.randomLastNames(count: numberOfEmployees)
+		let employeeAges = Person.randomAges(count: numberOfEmployees)
 		
-		for _ in 0..<numberOfEmployees {
-			let employee = Person.createRandom()
-			
-			company.addEmployee(employee)
-		}
+		let company = Company(companyName: companyName,
+							  employeeFirstNames: employeeFirstNames,
+							  employeeLastNames: employeeLastNames,
+							  employeeAges: employeeAges)
 		
 		return company
+	}
+	
+	convenience init(companyName: String,
+					 employeeFirstNames: [String],
+					 employeeLastNames: [String],
+					 employeeAges: [Int32]) {
+		self.init(name: companyName)
+		
+		let numberOfEmployeesToCreate = employeeFirstNames.count
+		
+		for idx in 0..<numberOfEmployeesToCreate {
+			let firstName = employeeFirstNames[idx]
+			let lastName = employeeLastNames[idx]
+			let age = employeeAges[idx]
+			
+			let employee = Person(firstName: firstName,
+								  lastName: lastName,
+								  age: age)
+			
+			addEmployee(employee)
+		}
 	}
 }
 
