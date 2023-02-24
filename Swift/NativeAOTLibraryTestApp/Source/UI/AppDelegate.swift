@@ -20,6 +20,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	
 	private let companyViewController = CompanyViewController()
 	
+	private lazy var spellOutNumberFormatter: NumberFormatter = {
+		let numberFormatter = NumberFormatter()
+		numberFormatter.numberStyle = .spellOut
+		
+		return numberFormatter
+	}()
+	
 	private var company: Company? {
 		didSet {
 			didUpdateCompany()
@@ -88,6 +95,10 @@ private extension AppDelegate {
 		return formattedDelta
 	}
 	
+	func spellOutFormattedNumber(_ number: Int) -> String {
+		spellOutNumberFormatter.string(for: number) ?? .init(number)
+	}
+	
 	func didUpdateCompany() {
 		DispatchQueue.main.async { [weak self] in
 			guard let self else { return }
@@ -96,7 +107,11 @@ private extension AppDelegate {
 			let tabViewItemLabel: String
 			
 			if let company {
-				tabViewItemLabel = "\(company.name) - \(company.numberOfEmployees) employees"
+				let companyName = company.name
+				let numberOfEmployees = company.numberOfEmployees
+				let formattedNumberOfEmployees = self.spellOutFormattedNumber(.init(numberOfEmployees))
+				
+				tabViewItemLabel = "\(companyName) (\(formattedNumberOfEmployees) employees)"
 			} else {
 				tabViewItemLabel = "No Company"
 			}
@@ -144,6 +159,8 @@ private extension AppDelegate {
 	
 	func createCompany(name companyName: String,
 					   numberOfEmployees: Int) -> Company {
+		let formattedNumberOfEmployees = spellOutFormattedNumber(numberOfEmployees)
+		
 		let randomDataStartDate = Date()
 		
 		var randomFirstNames = Person.randomFirstNames(count: numberOfEmployees)
@@ -160,13 +177,13 @@ private extension AppDelegate {
 									employeeAges: &randomAges)
 		
 		let creationDelta = formattedDateDelta(startDate: creationStartDate)
-
+		
 		DispatchQueue.main.async { [weak window] in
 			guard let window else { return }
 			
 			let alert = NSAlert()
 			alert.messageText = "\(companyName) was created"
-			alert.informativeText = "Company \"\(companyName)\" was created with \(numberOfEmployees) random employees.\n\nRandom data generation took \(randomDataDelta) seconds.\nActual object creation took \(creationDelta) seconds."
+			alert.informativeText = "Company \"\(companyName)\" was created with \(formattedNumberOfEmployees) random employees.\n\nRandom data generation took \(randomDataDelta) seconds.\nActual object creation took \(creationDelta) seconds."
 			alert.addButton(withTitle: "OK")
 
 			alert.beginSheetModal(for: window)
@@ -204,6 +221,7 @@ private extension AppDelegate {
 		
 		let companyName = company.name
 		let numberOfEmployees = company.numberOfEmployees
+		let formattedNumberOfEmployees = spellOutFormattedNumber(.init(numberOfEmployees))
 		
 		let startDate = Date()
 		
@@ -214,7 +232,7 @@ private extension AppDelegate {
 		
 		let alert = NSAlert()
 		alert.messageText = "\(companyName) was destroyed"
-		alert.informativeText = "Company \"\(companyName)\" was destroyed with \(numberOfEmployees) employees and garbage has been collected.\nIt took \(formattedDelta) seconds."
+		alert.informativeText = "Company \"\(companyName)\" was destroyed with \(formattedNumberOfEmployees) employees and garbage has been collected.\nIt took \(formattedDelta) seconds."
 		alert.addButton(withTitle: "OK")
 		
 		alert.beginSheetModal(for: window)
