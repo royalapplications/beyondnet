@@ -9,6 +9,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	
 	@IBOutlet private weak var textFieldCompanyName: NSTextField!
 	@IBOutlet private weak var textFieldNumberOfEmployees: NSTextField!
+	@IBOutlet private weak var textFieldNumberOfEmployeesSpelledOut: NSTextField!
 	
 	@IBOutlet private weak var progressIndicatorMain: NSProgressIndicator!
 	@IBOutlet private weak var buttonCreate: NSButton!
@@ -36,6 +37,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
 		isDebugLoggingEnabled = Debug.isLoggingEnabled
 		
+		textFieldNumberOfEmployees.delegate = self
+		didUpdateNumberOfEmployees()
+		
 		let companyView = companyViewController.view
 		companyView.frame = tabViewCompany.bounds
 		
@@ -57,6 +61,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 }
 
+// MARK: - Text Field Delegate
+extension AppDelegate: NSTextFieldDelegate {
+	func controlTextDidChange(_ obj: Notification) {
+		guard obj.object as? NSTextField == textFieldNumberOfEmployees else { return }
+		
+		didUpdateNumberOfEmployees()
+	}
+}
+
+// MARK: - UI stuff
 private extension AppDelegate {
 	var isDebugLoggingEnabled: Bool {
 		get {
@@ -97,6 +111,12 @@ private extension AppDelegate {
 	
 	func spellOutFormattedNumber(_ number: Int) -> String {
 		spellOutNumberFormatter.string(for: number) ?? .init(number)
+	}
+	
+	func didUpdateNumberOfEmployees() {
+		let numberOfEmployees = textFieldNumberOfEmployees.integerValue
+		
+		textFieldNumberOfEmployeesSpelledOut.stringValue = spellOutFormattedNumber(numberOfEmployees)
 	}
 	
 	func didUpdateCompany() {

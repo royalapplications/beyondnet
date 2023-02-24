@@ -23,6 +23,7 @@
                 <outlet property="tabViewMain" destination="M7U-07-z8u" id="yg3-jt-1L4"/>
                 <outlet property="textFieldCompanyName" destination="5yf-XK-yuO" id="cQX-Bc-bDY"/>
                 <outlet property="textFieldNumberOfEmployees" destination="v84-lr-OsM" id="Qkk-Fj-80A"/>
+                <outlet property="textFieldNumberOfEmployeesSpelledOut" destination="Oge-NU-3es" id="Pzf-dd-JMR"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -694,6 +695,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <rect key="contentRect" x="335" y="390" width="586" height="349"/>
             <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1415"/>
+            <value key="minSize" type="size" width="500" height="300"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="586" height="349"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -708,9 +710,9 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v84-lr-OsM">
-                        <rect key="frame" x="182" y="249" width="384" height="21"/>
+                        <rect key="frame" x="182" y="249" width="198" height="21"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="100000" drawsBackground="YES" id="Xx2-hF-aKT">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="100000" drawsBackground="YES" usesSingleLineMode="YES" id="Xx2-hF-aKT">
                             <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" formatWidth="-1" groupingSize="0" minimumIntegerDigits="1" maximumIntegerDigits="42" id="ma0-1d-qHH">
                                 <real key="minimum" value="1"/>
                             </numberFormatter>
@@ -787,6 +789,15 @@
                             <action selector="buttonDestroy_action:" target="Voe-Tx-rLC" id="GOg-6e-230"/>
                         </connections>
                     </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oge-NU-3es">
+                        <rect key="frame" x="386" y="253" width="181" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" allowsUndo="NO" title="one hundred thousand" usesSingleLineMode="YES" id="naV-uI-fWt">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
             </view>
             <point key="canvasLocation" x="253" y="394.5"/>
