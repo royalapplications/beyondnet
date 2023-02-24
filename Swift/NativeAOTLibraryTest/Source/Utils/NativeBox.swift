@@ -1,6 +1,5 @@
 import Foundation
 
-// TODO: Memory management
 class NativeBox<T> {
     let value: T
     
@@ -8,15 +7,15 @@ class NativeBox<T> {
         self.value = value
     }
     
-    func retainedPointer() -> UnsafeRawPointer {
-        let unmanaged = Unmanaged.passRetained(self)
+    func unretainedPointer() -> UnsafeRawPointer {
+        let unmanaged = Unmanaged.passUnretained(self)
         let opaque = unmanaged.toOpaque()
         let pointer = UnsafeRawPointer(opaque)
         
         return pointer
     }
     
-    static func fromRetainedPointer(_ pointer: UnsafeRawPointer) -> Self {
+    static func fromUnretainedPointer(_ pointer: UnsafeRawPointer) -> Self {
         let unmanaged = Unmanaged<Self>.fromOpaque(pointer)
         
         let box = unmanaged.takeUnretainedValue()

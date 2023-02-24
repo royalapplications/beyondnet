@@ -1,6 +1,8 @@
 import Foundation
 
-public class Company: SystemObject { }
+public class Company: SystemObject {
+    private var _numberOfEmployeesChanged: NativeBox<() -> Void>?
+}
 
 // MARK: - Public API
 public extension Company {
@@ -122,6 +124,8 @@ public extension Company {
 		}
 		set {
             guard let newValue else {
+                _numberOfEmployeesChanged = nil
+                
                 NativeAOTLibraryTest_Company_NumberOfEmployeesChanged_Set(handle,
                                                                           nil,
                                                                           nil)
@@ -129,12 +133,16 @@ public extension Company {
                 return
             }
             
-            let outerContext = NativeBox(value: newValue).retainedPointer()
+            let outerBox = NativeBox(value: newValue)
+            
+            _numberOfEmployeesChanged = outerBox
+            
+            let outerContext = outerBox.unretainedPointer()
             
             NativeAOTLibraryTest_Company_NumberOfEmployeesChanged_Set(handle, outerContext) { innerContext in
                 guard let innerContext else { return }
                 
-                let innerContextBox = NativeBox<() -> Void>.fromRetainedPointer(innerContext)
+                let innerContextBox = NativeBox<() -> Void>.fromUnretainedPointer(innerContext)
                 let innerClosure = innerContextBox.value
                 
                 innerClosure()
