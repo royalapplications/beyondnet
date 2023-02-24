@@ -176,7 +176,7 @@ internal static class Company_Native
         }
 
         Person? employee = company.GetEmployeeAtIndex(index);
-        nint employeeHandleAddress = employee?.AllocateHandleAndGetAddress() ?? IntPtr.Zero;
+        nint employeeHandleAddress = employee?.AllocateHandleAndGetAddress() ?? nint.Zero;
 
         return employeeHandleAddress;
     }

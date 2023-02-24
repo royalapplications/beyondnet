@@ -1,3 +1,5 @@
+using System;
+
 namespace NativeAOTLibraryTest;
 
 public class Person
