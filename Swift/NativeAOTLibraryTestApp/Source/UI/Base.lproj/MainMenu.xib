@@ -16,6 +16,7 @@
             <connections>
                 <outlet property="checkBoxDebugLogging" destination="cG3-BT-lQm" id="olm-2Z-jI1"/>
                 <outlet property="tabViewCompany" destination="BJ0-tR-1X5" id="K1O-ok-Vsx"/>
+                <outlet property="tabViewItemCompany" destination="6Vp-dM-mIH" id="p0k-Ba-EDI"/>
                 <outlet property="tabViewMain" destination="M7U-07-z8u" id="yg3-jt-1L4"/>
                 <outlet property="textFieldCompanyName" destination="5yf-XK-yuO" id="cQX-Bc-bDY"/>
                 <outlet property="textFieldNumberOfEmployees" destination="v84-lr-OsM" id="Qkk-Fj-80A"/>

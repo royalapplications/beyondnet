@@ -11,9 +11,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	@IBOutlet private weak var textFieldNumberOfEmployees: NSTextField!
 	
 	@IBOutlet private weak var tabViewMain: NSTabView!
+	@IBOutlet private weak var tabViewItemCompany: NSTabViewItem!
 	@IBOutlet private weak var tabViewCompany: NSView!
 	
-	let companyViewController = CompanyViewController()
+	private let companyViewController = CompanyViewController()
 	
 	private var company: Company? {
 		didSet {
@@ -111,7 +112,17 @@ private extension AppDelegate {
 		DispatchQueue.main.async { [weak self] in
 			guard let self else { return }
 			
-			self.companyViewController.company = self.company
+			let company = self.company
+			let tabViewItemLabel: String
+			
+			if let company {
+				tabViewItemLabel = "Company: \(company.name)"
+			} else {
+				tabViewItemLabel = "Company"
+			}
+			
+			self.tabViewItemCompany.label = tabViewItemLabel
+			self.companyViewController.company = company
 		}
 	}
 }
