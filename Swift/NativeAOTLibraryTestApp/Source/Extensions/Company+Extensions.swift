@@ -2,41 +2,22 @@ import Foundation
 import NativeAOTLibraryTest
 
 extension Company {
-	static func createRandom(numberOfEmployees: Int) -> Company {
-		let name = randomName()
-		
-		let company = createRandom(companyName: name,
-								   numberOfEmployees: numberOfEmployees)
-		
-		return company
-	}
-	
-	static func createRandom(companyName: String,
-							 numberOfEmployees: Int) -> Company {
-		let employeeFirstNames = Person.randomFirstNames(count: numberOfEmployees)
-		let employeeLastNames = Person.randomLastNames(count: numberOfEmployees)
-		let employeeAges = Person.randomAges(count: numberOfEmployees)
-		
-		let company = Company(companyName: companyName,
-							  employeeFirstNames: employeeFirstNames,
-							  employeeLastNames: employeeLastNames,
-							  employeeAges: employeeAges)
-		
-		return company
+	struct Employees {
+		let firstNames: [String]
+		let lastNames: [String]
+		let ages: [Int32]
 	}
 	
 	convenience init(companyName: String,
-					 employeeFirstNames: [String],
-					 employeeLastNames: [String],
-					 employeeAges: [Int32]) {
+					 employees: Employees) {
 		self.init(name: companyName)
 		
-		let numberOfEmployeesToCreate = employeeFirstNames.count
+		let numberOfEmployeesToCreate = employees.firstNames.count
 		
 		for idx in 0..<numberOfEmployeesToCreate {
-			let firstName = employeeFirstNames[idx]
-			let lastName = employeeLastNames[idx]
-			let age = employeeAges[idx]
+			let firstName = employees.firstNames[idx]
+			let lastName = employees.lastNames[idx]
+			let age = employees.ages[idx]
 			
 			let employee = Person(firstName: firstName,
 								  lastName: lastName,
@@ -44,11 +25,5 @@ extension Company {
 			
 			addEmployee(employee)
 		}
-	}
-}
-
-private extension Company {
-	static func randomName() -> String {
-		return "TODO"
 	}
 }

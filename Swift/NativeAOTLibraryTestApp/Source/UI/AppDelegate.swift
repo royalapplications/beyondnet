@@ -10,6 +10,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	@IBOutlet private weak var textFieldCompanyName: NSTextField!
 	@IBOutlet private weak var textFieldNumberOfEmployees: NSTextField!
 	
+	@IBOutlet private weak var progressIndicatorMain: NSProgressIndicator!
+	@IBOutlet private weak var buttonCreate: NSButton!
+	@IBOutlet private weak var buttonDestroy: NSButton!
+	
 	@IBOutlet private weak var tabViewMain: NSTabView!
 	@IBOutlet private weak var tabViewItemCompany: NSTabViewItem!
 	@IBOutlet private weak var tabViewCompany: NSView!
@@ -41,8 +45,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		let companyName = textFieldCompanyName.stringValue
 		let numberOfEmployees = textFieldNumberOfEmployees.integerValue
 		
-		createCompany(name: companyName,
-					  numberOfEmployees: numberOfEmployees)
+		Task {
+			showProgress()
+			
+			let company = await createCompany(name: companyName,
+											  numberOfEmployees: numberOfEmployees)
+			
+			hideProgress()
+			
+			self.company = company
+		}
 	}
 	
 	@IBAction private func buttonDestroy_action(_ sender: Any) {
@@ -60,6 +72,26 @@ private extension AppDelegate {
 		}
 	}
 	
+	func showProgress() {
+		DispatchQueue.main.async { [weak self] in
+			guard let self else { return }
+	
+			self.buttonCreate.isEnabled = false
+			self.buttonDestroy.isEnabled = false
+			self.progressIndicatorMain.startAnimation(nil)
+		}
+	}
+	
+	func hideProgress() {
+		DispatchQueue.main.async { [weak self] in
+			guard let self else { return }
+	
+			self.buttonCreate.isEnabled = true
+			self.buttonDestroy.isEnabled = true
+			self.progressIndicatorMain.stopAnimation(nil)
+		}
+	}
+	
 	func formattedDateDelta(startDate: Date) -> String {
 		let endDate = Date()
 		let delta = startDate.distance(to: endDate)
@@ -69,28 +101,38 @@ private extension AppDelegate {
 	}
 	
 	func createCompany(name companyName: String,
-					   numberOfEmployees: Int) {
-		let randomFirstNames = Person.randomFirstNames(count: numberOfEmployees)
-		let randomLastNames = Person.randomLastNames(count: numberOfEmployees)
-		let randomAges = Person.randomAges(count: numberOfEmployees)
+					   numberOfEmployees: Int) async -> Company {
+		let randomDataStartDate = Date()
 		
-		let startDate = Date()
+		async let randomFirstNames = Person.randomFirstNames(count: numberOfEmployees)
+		async let randomLastNames = Person.randomLastNames(count: numberOfEmployees)
+		async let randomAges = Person.randomAges(count: numberOfEmployees)
+		
+		let employees = await Company.Employees(firstNames: randomFirstNames,
+												lastNames: randomLastNames,
+												ages: randomAges)
+		
+		let randomDataDelta = formattedDateDelta(startDate: randomDataStartDate)
+		
+		let creationStartDate = Date()
 		
 		let company = Company(companyName: companyName,
-							  employeeFirstNames: randomFirstNames,
-							  employeeLastNames: randomLastNames,
-							  employeeAges: randomAges)
-		
-		let formattedDelta = formattedDateDelta(startDate: startDate)
-		
-		let alert = NSAlert()
-		alert.messageText = "\(companyName) was created"
-		alert.informativeText = "Company \"\(company.name)\" was created with \(company.numberOfEmployees) random employees.\nIt took \(formattedDelta) seconds."
-		alert.addButton(withTitle: "OK")
+							  employees: employees)
 
-		alert.beginSheetModal(for: window)
+		let creationDelta = formattedDateDelta(startDate: creationStartDate)
+
+		DispatchQueue.main.async { [weak window] in
+			guard let window else { return }
+			
+			let alert = NSAlert()
+			alert.messageText = "\(companyName) was created"
+			alert.informativeText = "Company \"\(companyName)\" was created with \(numberOfEmployees) random employees.\n\nRandom data generation took \(randomDataDelta) seconds.\nActual object creation took \(creationDelta) seconds."
+			alert.addButton(withTitle: "OK")
+
+			alert.beginSheetModal(for: window)
+		}
 		
-		self.company = company
+		return company
 	}
 	
 	func destroyCompany() {

@@ -14,7 +14,10 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="NativeAOTLibraryTestApp" customModuleProvider="target">
             <connections>
+                <outlet property="buttonCreate" destination="EJ3-qs-6eF" id="naa-2Q-QmU"/>
+                <outlet property="buttonDestroy" destination="ZU7-zI-sQS" id="HdP-I0-Byr"/>
                 <outlet property="checkBoxDebugLogging" destination="cG3-BT-lQm" id="olm-2Z-jI1"/>
+                <outlet property="progressIndicatorMain" destination="9nf-Aj-ind" id="Ctv-Pd-hRY"/>
                 <outlet property="tabViewCompany" destination="BJ0-tR-1X5" id="K1O-ok-Vsx"/>
                 <outlet property="tabViewItemCompany" destination="6Vp-dM-mIH" id="p0k-Ba-EDI"/>
                 <outlet property="tabViewMain" destination="M7U-07-z8u" id="yg3-jt-1L4"/>
@@ -758,6 +761,10 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <progressIndicator fixedFrame="YES" maxValue="100" displayedWhenStopped="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="9nf-Aj-ind">
+                        <rect key="frame" x="401" y="223" width="16" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    </progressIndicator>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EJ3-qs-6eF">
                         <rect key="frame" x="418" y="214" width="75" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
