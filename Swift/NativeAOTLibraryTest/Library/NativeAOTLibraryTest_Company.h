@@ -23,4 +23,6 @@ CBool NativeAOTLibraryTest_Company_ContainsEmployee(NativeAOTLibraryTest_Company
 NativeAOTLibraryTest_Company_t NativeAOTLibraryTest_Company_GetEmployeeAtIndex(NativeAOTLibraryTest_Company_t company,
                                                                                const int32_t index);
 
+void NativeAOTLibraryTest_Company_NumberOfEmployeesChanged_Set(NativeAOTLibraryTest_Company_t company, VoidDelegate_t delegate);
+
 #endif /* NativeAOTLibraryTest_Company_h */

@@ -180,5 +180,21 @@ internal static class Company_Native
 
         return employeeHandleAddress;
     }
+
+    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "NumberOfEmployeesChanged_Set")]
+    internal static unsafe void NumberOfEmployeesChanged_Set(nint handleAddress, delegate* unmanaged<void*> functionPointer)
+    {
+        Company? company = GetCompanyFromHandleAddress(handleAddress);
+
+        if (company == null) {
+            return;
+        }
+
+        nint functionPointerInt = (nint)functionPointer;
+
+        Company.NumberOfEmployeesChangedDelegate @delegate = Marshal.GetDelegateForFunctionPointer<Company.NumberOfEmployeesChangedDelegate>(functionPointerInt);
+
+        company.NumberOfEmployeesChanged = @delegate;
+    }
     #endregion Public API
 }

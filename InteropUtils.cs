@@ -16,6 +16,9 @@ internal enum CBool: int
 
 internal static class InteropUtils 
 {
+    internal delegate void VoidDelegate();
+    internal unsafe delegate void ContextDelegate(void* context);
+    
     internal static GCHandle AllocateGCHandle(this object @object, GCHandleType handleType)
     {
         GCHandle handle = GCHandle.Alloc(@object, handleType);

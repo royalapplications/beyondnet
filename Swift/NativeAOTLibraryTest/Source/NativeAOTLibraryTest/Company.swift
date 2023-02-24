@@ -114,4 +114,19 @@ public extension Company {
 		
 		return employee
 	}
+	
+	var numberOfEmployeesChanged: ((@convention(block) () -> Void)?) {
+		get {
+			// TODO
+			return nil
+		}
+		set {
+			// TODO: Add context
+//			let context = bridge(object: unsafeBitCast(newValue, to: AnyObject.self))
+			
+			NativeAOTLibraryTest_Company_NumberOfEmployeesChanged_Set(handle) {
+				print("TODO: numberOfEmployeesChanged called")
+			}
+		}
+	}
 }

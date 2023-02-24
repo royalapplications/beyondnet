@@ -5,6 +5,10 @@ namespace NativeAOTLibraryTest;
 public class Company
 {
     private readonly List<Person> m_employees = new();
+    
+    public delegate void NumberOfEmployeesChangedDelegate();
+
+    public NumberOfEmployeesChangedDelegate? NumberOfEmployeesChanged { get; set; }
 
     public string Name { get; set; }
 
@@ -23,11 +27,15 @@ public class Company
     public void AddEmployee(Person employee)
     {
         m_employees.Add(employee);
+        
+        NumberOfEmployeesChanged?.Invoke();
     }
 
     public void RemoveEmployee(Person employee)
     {
         m_employees.Remove(employee);
+        
+        NumberOfEmployeesChanged?.Invoke();
     }
 
     public bool ContainsEmployee(Person employee)

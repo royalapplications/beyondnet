@@ -8,6 +8,9 @@ typedef void* System_Object_t;
 typedef void* System_Exception_t;
 typedef void* System_Type_t;
 
+typedef void (*VoidDelegate_t)(void);
+typedef void (*ContextDelegate_t)(void* context);
+
 typedef void* NativeAOTLibraryTest_Person_t;
 typedef void* NativeAOTLibraryTest_Company_t;
 
