@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E716200029A66CC000D45FCD /* TypeDefs.h in Headers */ = {isa = PBXBuildFile; fileRef = E7161FFF29A66CBB00D45FCD /* TypeDefs.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		E716200229A6795D00D45FCD /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = E716200129A6795D00D45FCD /* Debug.swift */; };
+		E71625CE29A942D900F47651 /* NativeBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71625CD29A942D900F47651 /* NativeBox.swift */; };
 		E7AACF3829A6278E00846A75 /* NativeAOTLibraryTest.h in Headers */ = {isa = PBXBuildFile; fileRef = E7AACF3729A6278E00846A75 /* NativeAOTLibraryTest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7AACF4029A6282400846A75 /* NativeAOTLibraryTest.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E7AACF3F29A6282400846A75 /* NativeAOTLibraryTest.dylib */; };
 		E7AACF4129A6282C00846A75 /* NativeAOTLibraryTest.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = E7AACF3F29A6282400846A75 /* NativeAOTLibraryTest.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -28,7 +29,6 @@
 		E7E9D57B29A768F7002C3834 /* Company_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E9D57A29A768F7002C3834 /* Company_Tests.swift */; };
 		E7E9D57D29A76DB4002C3834 /* System_Object.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E9D57C29A76DB4002C3834 /* System_Object.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		E7E9D58029A77776002C3834 /* SystemObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E9D57E29A77714002C3834 /* SystemObject.swift */; };
-		E7F3C64629A90EB200ADBEBA /* Interop.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F3C64529A90EB200ADBEBA /* Interop.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +58,7 @@
 /* Begin PBXFileReference section */
 		E7161FFF29A66CBB00D45FCD /* TypeDefs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TypeDefs.h; sourceTree = "<group>"; };
 		E716200129A6795D00D45FCD /* Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
+		E71625CD29A942D900F47651 /* NativeBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeBox.swift; sourceTree = "<group>"; };
 		E7AACF3429A6278E00846A75 /* NativeAOTLibraryTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NativeAOTLibraryTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7AACF3729A6278E00846A75 /* NativeAOTLibraryTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeAOTLibraryTest.h; sourceTree = "<group>"; };
 		E7AACF3F29A6282400846A75 /* NativeAOTLibraryTest.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = NativeAOTLibraryTest.dylib; sourceTree = "<group>"; };
@@ -78,7 +79,6 @@
 		E7E9D57A29A768F7002C3834 /* Company_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company_Tests.swift; sourceTree = "<group>"; };
 		E7E9D57C29A76DB4002C3834 /* System_Object.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = System_Object.h; sourceTree = "<group>"; };
 		E7E9D57E29A77714002C3834 /* SystemObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemObject.swift; sourceTree = "<group>"; };
-		E7F3C64529A90EB200ADBEBA /* Interop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interop.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,7 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				E716200129A6795D00D45FCD /* Debug.swift */,
-				E7F3C64529A90EB200ADBEBA /* Interop.swift */,
+				E71625CD29A942D900F47651 /* NativeBox.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -362,8 +362,8 @@
 			files = (
 				E7BC395829A7BEF500806ADD /* SystemGC.swift in Sources */,
 				E7BC395429A7B95200806ADD /* SystemException.Error.swift in Sources */,
-				E7F3C64629A90EB200ADBEBA /* Interop.swift in Sources */,
 				E7BC394E29A7A8BC00806ADD /* SystemException.swift in Sources */,
+				E71625CE29A942D900F47651 /* NativeBox.swift in Sources */,
 				E7E26AC629A63147005334CF /* Person.swift in Sources */,
 				E7E9D58029A77776002C3834 /* SystemObject.swift in Sources */,
 				E716200229A6795D00D45FCD /* Debug.swift in Sources */,

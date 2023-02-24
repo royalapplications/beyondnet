@@ -182,7 +182,11 @@ internal static class Company_Native
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "NumberOfEmployeesChanged_Set")]
-    internal static unsafe void NumberOfEmployeesChanged_Set(nint handleAddress, delegate* unmanaged<void*> functionPointer)
+    internal static unsafe void NumberOfEmployeesChanged_Set(
+        nint handleAddress,
+        void* context,
+        delegate* unmanaged<void*, void> functionPointer
+    )
     {
         Company? company = GetCompanyFromHandleAddress(handleAddress);
 
@@ -190,9 +194,15 @@ internal static class Company_Native
             return;
         }
 
-        nint functionPointerInt = (nint)functionPointer;
+        Company.NumberOfEmployeesChangedDelegate? @delegate;
 
-        Company.NumberOfEmployeesChangedDelegate @delegate = Marshal.GetDelegateForFunctionPointer<Company.NumberOfEmployeesChangedDelegate>(functionPointerInt);
+        if ((nint)functionPointer != nint.Zero) {
+            @delegate = () => {
+                functionPointer(context);
+            };
+        } else {
+            @delegate = null;
+        }
 
         company.NumberOfEmployeesChanged = @delegate;
     }

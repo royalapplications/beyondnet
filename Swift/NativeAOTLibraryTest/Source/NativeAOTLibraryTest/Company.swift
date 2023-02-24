@@ -114,19 +114,31 @@ public extension Company {
 		
 		return employee
 	}
-	
-	var numberOfEmployeesChanged: ((@convention(block) () -> Void)?) {
+    
+	var numberOfEmployeesChanged: (() -> Void)? {
 		get {
 			// TODO
 			return nil
 		}
 		set {
-			// TODO: Add context
-//			let context = bridge(object: unsafeBitCast(newValue, to: AnyObject.self))
-			
-			NativeAOTLibraryTest_Company_NumberOfEmployeesChanged_Set(handle) {
-				print("TODO: numberOfEmployeesChanged called")
-			}
+            guard let newValue else {
+                NativeAOTLibraryTest_Company_NumberOfEmployeesChanged_Set(handle,
+                                                                          nil,
+                                                                          nil)
+                
+                return
+            }
+            
+            let outerContext = NativeBox(value: newValue).retainedPointer()
+            
+            NativeAOTLibraryTest_Company_NumberOfEmployeesChanged_Set(handle, outerContext) { innerContext in
+                guard let innerContext else { return }
+                
+                let innerContextBox = NativeBox<() -> Void>.fromRetainedPointer(innerContext)
+                let innerClosure = innerContextBox.value
+                
+                innerClosure()
+            }
 		}
 	}
 }
