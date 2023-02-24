@@ -43,15 +43,15 @@ internal static class System_Exception
 
     #region Public API
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Message_Get")]
-    internal static nint Message_Get(nint handleAddress)
+    internal static unsafe char* Message_Get(nint handleAddress)
     {
         Exception? exception = GetExceptionFromHandleAddress(handleAddress);
 
         if (exception == null) {
-            return nint.Zero;
+            return null;
         }
         
-        nint messageC = exception.Message.ToCString();
+        char* messageC = exception.Message.ToCString();
 
         return messageC;
     }
@@ -69,15 +69,21 @@ internal static class System_Exception
     }
     
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "StackTrace_Get")]
-    internal static nint StackTrace_Get(nint handleAddress)
+    internal static unsafe char* StackTrace_Get(nint handleAddress)
     {
         Exception? exception = GetExceptionFromHandleAddress(handleAddress);
 
         if (exception == null) {
-            return nint.Zero;
+            return null;
+        }
+
+        string? stackTrace = exception.StackTrace;
+
+        if (stackTrace == null) {
+            return null;
         }
         
-        nint stackTraceC = exception.StackTrace?.ToCString() ?? nint.Zero;
+        char* stackTraceC = stackTrace.ToCString();
 
         return stackTraceC;
     }

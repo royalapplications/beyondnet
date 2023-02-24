@@ -32,15 +32,15 @@ internal static class Person_Native
 
     #region Public API
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Create")]
-    internal static nint Create(nint firstName, nint lastName, int age)
+    internal static unsafe nint Create(char* firstName, char* lastName, int age)
     {
-        string? firstNameDn = firstName.ToDotNetString();
+        string? firstNameDn = InteropUtils.ToDotNetString(firstName);
 
         if (firstNameDn == null) {
             return nint.Zero;
         }
 
-        string? lastNameDn = lastName.ToDotNetString();
+        string? lastNameDn = InteropUtils.ToDotNetString(lastName);
 
         if (lastNameDn == null) {
             return nint.Zero;
@@ -84,21 +84,21 @@ internal static class Person_Native
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "FirstName_Get")]
-    internal static nint FirstName_Get(nint handleAddress)
+    internal static unsafe char* FirstName_Get(nint handleAddress)
     {
         Person? person = GetPersonFromHandleAddress(handleAddress);
 
         if (person == null) {
-            return nint.Zero;
+            return null;
         }
 
-        nint firstNameC = person.FirstName.ToCString();
+        char* firstNameC = person.FirstName.ToCString();
 
         return firstNameC;
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "FirstName_Set")]
-    internal static void FirstName_Set(nint handleAddress, nint firstName)
+    internal static unsafe void FirstName_Set(nint handleAddress, char* firstName)
     {
         Person? person = GetPersonFromHandleAddress(handleAddress);
 
@@ -106,7 +106,7 @@ internal static class Person_Native
             return;
         }
 
-        string? firstNameDotNet = firstName.ToDotNetString();
+        string? firstNameDotNet = InteropUtils.ToDotNetString(firstName);
 
         if (firstNameDotNet == null) {
             return;
@@ -116,21 +116,21 @@ internal static class Person_Native
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "LastName_Get")]
-    internal static nint LastName_Get(nint handleAddress)
+    internal static unsafe char* LastName_Get(nint handleAddress)
     {
         Person? person = GetPersonFromHandleAddress(handleAddress);
 
         if (person == null) {
-            return nint.Zero;
+            return null;
         }
 
-        nint lastNameC = person.LastName.ToCString();
+        char* lastNameC = person.LastName.ToCString();
 
         return lastNameC;
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "LastName_Set")]
-    internal static void LastName_Set(nint handleAddress, nint lastName)
+    internal static unsafe void LastName_Set(nint handleAddress, char* lastName)
     {
         Person? person = GetPersonFromHandleAddress(handleAddress);
 
@@ -138,7 +138,7 @@ internal static class Person_Native
             return;
         }
 
-        string? lastNameDotNet = lastName.ToDotNetString();
+        string? lastNameDotNet = InteropUtils.ToDotNetString(lastName);
 
         if (lastNameDotNet == null) {
             return;
@@ -148,15 +148,15 @@ internal static class Person_Native
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "FullName_Get")]
-    internal static nint FullName_Get(nint handleAddress)
+    internal static unsafe char* FullName_Get(nint handleAddress)
     {
         Person? person = GetPersonFromHandleAddress(handleAddress);
 
         if (person == null) {
-            return nint.Zero;
+            return null;
         }
 
-        nint fullNameC = person.FullName.ToCString();
+        char* fullNameC = person.FullName.ToCString();
 
         return fullNameC;
     }

@@ -50,16 +50,28 @@ internal static class InteropUtils
         return handle;
     }
 
-    internal static nint ToCString(this string? @string)
+    internal static unsafe char* ToCString(this string? @string)
     {
+        if (@string == null) {
+            return null;
+        }
+        
         nint cString = Marshal.StringToHGlobalAuto(@string);
 
-        return cString;
+        if (cString == nint.Zero) {
+            return null;
+        }
+
+        return (char*)cString;
     }
 
-    internal static string? ToDotNetString(this nint cString)
+    internal static unsafe string? ToDotNetString(char* cString)
     {
-        string? @string = Marshal.PtrToStringAuto(cString);
+        if (cString == null) {
+            return null;
+        }
+        
+        string? @string = Marshal.PtrToStringAuto((nint)cString);
 
         return @string;
     }

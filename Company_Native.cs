@@ -31,9 +31,9 @@ internal static class Company_Native
 
     #region Public API
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Create")]
-    internal static nint Create(nint name)
+    internal static unsafe nint Create(char* name)
     {
-        string? nameDn = name.ToDotNetString();
+        string? nameDn = InteropUtils.ToDotNetString(name);
 
         if (nameDn == null) {
             return nint.Zero;
@@ -49,21 +49,21 @@ internal static class Company_Native
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Name_Get")]
-    internal static nint Name_Get(nint handleAddress)
+    internal static unsafe char* Name_Get(nint handleAddress)
     {
         Company? company = GetCompanyFromHandleAddress(handleAddress);
 
         if (company == null) {
-            return nint.Zero;
+            return null;
         }
 
-        nint nameC = company.Name.ToCString();
+        char* nameC = company.Name.ToCString();
 
         return nameC;
     }
     
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Name_Set")]
-    internal static void Name_Set(nint handleAddress, nint name)
+    internal static unsafe void Name_Set(nint handleAddress, char* name)
     {
         Company? company = GetCompanyFromHandleAddress(handleAddress);
 
@@ -71,7 +71,7 @@ internal static class Company_Native
             return;
         }
 
-        string? nameDotNet = name.ToDotNetString();
+        string? nameDotNet = InteropUtils.ToDotNetString(name);
 
         if (nameDotNet == null) {
             return;
