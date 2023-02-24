@@ -42,19 +42,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 	
 	@IBAction private func buttonCreate_action(_ sender: Any) {
-		let companyName = textFieldCompanyName.stringValue
-		let numberOfEmployees = textFieldNumberOfEmployees.integerValue
-		
-		Task {
-			showProgress()
-			
-			let company = await createCompany(name: companyName,
-											  numberOfEmployees: numberOfEmployees)
-			
-			hideProgress()
-			
-			self.company = company
-		}
+		createCompany(onMainThread: false)
 	}
 	
 	@IBAction private func buttonDestroy_action(_ sender: Any) {
@@ -100,25 +88,68 @@ private extension AppDelegate {
 		return formattedDelta
 	}
 	
+	func didUpdateCompany() {
+		DispatchQueue.main.async { [weak self] in
+			guard let self else { return }
+			
+			let company = self.company
+			let tabViewItemLabel: String
+			
+			if let company {
+				tabViewItemLabel = "\(company.name) - \(company.numberOfEmployees) employees"
+			} else {
+				tabViewItemLabel = "No Company"
+			}
+			
+			self.tabViewItemCompany.label = tabViewItemLabel
+			self.companyViewController.company = company
+		}
+	}
+}
+
+// MARK: - Create Company
+private extension AppDelegate {
+	struct RandomEmployeesData {
+		let firstNames: [String]
+		let lastNames: [String]
+		let ages: [Int32]
+	}
+	
+	func createCompany(onMainThread: Bool) {
+		let companyName = textFieldCompanyName.stringValue
+		let numberOfEmployees = textFieldNumberOfEmployees.integerValue
+		
+		if onMainThread {
+			createCompanyWithUISynchronization(name: companyName,
+											   numberOfEmployees: numberOfEmployees)
+		} else {
+			DispatchQueue.global().async { [weak self] in
+				self?.createCompanyWithUISynchronization(name: companyName,
+														 numberOfEmployees: numberOfEmployees)
+			}
+		}
+	}
+	
+	func createCompanyWithUISynchronization(name companyName: String,
+											numberOfEmployees: Int) {
+		showProgress()
+		
+		let company = createCompany(name: companyName,
+									numberOfEmployees: numberOfEmployees)
+		
+		hideProgress()
+		
+		self.company = company
+	}
+	
 	func createCompany(name companyName: String,
-					   numberOfEmployees: Int) async -> Company {
+					   numberOfEmployees: Int) -> Company {
 		let randomDataStartDate = Date()
-		
-		async let randomFirstNames = Person.randomFirstNames(count: numberOfEmployees)
-		async let randomLastNames = Person.randomLastNames(count: numberOfEmployees)
-		async let randomAges = Person.randomAges(count: numberOfEmployees)
-		
-		let employees = await Company.Employees(firstNames: randomFirstNames,
-												lastNames: randomLastNames,
-												ages: randomAges)
-		
+		let employeesData = createRandomEmployeesData(numberOfEmployees: numberOfEmployees)
 		let randomDataDelta = formattedDateDelta(startDate: randomDataStartDate)
 		
 		let creationStartDate = Date()
-		
-		let company = Company(companyName: companyName,
-							  employees: employees)
-
+		let company = createCompany(name: companyName, employeesData: employeesData)
 		let creationDelta = formattedDateDelta(startDate: creationStartDate)
 
 		DispatchQueue.main.async { [weak window] in
@@ -135,6 +166,40 @@ private extension AppDelegate {
 		return company
 	}
 	
+	func createRandomEmployeesData(numberOfEmployees: Int) -> RandomEmployeesData {
+		let randomFirstNames = Person.randomFirstNames(count: numberOfEmployees)
+		let randomLastNames = Person.randomLastNames(count: numberOfEmployees)
+		let randomAges = Person.randomAges(count: numberOfEmployees)
+		
+		let employeesData = RandomEmployeesData(firstNames: randomFirstNames,
+												lastNames: randomLastNames,
+												ages: randomAges)
+		
+		return employeesData
+	}
+	
+	func createCompany(name companyName: String,
+					   employeesData: RandomEmployeesData) -> Company {
+		let company = Company(name: companyName)
+		
+		for idx in 0..<employeesData.firstNames.count {
+			let firstName = employeesData.firstNames[idx]
+			let lastName = employeesData.lastNames[idx]
+			let age = employeesData.ages[idx]
+			
+			let employee = Person(firstName: firstName,
+								  lastName: lastName,
+								  age: age)
+			
+			company.addEmployee(employee)
+		}
+		
+		return company
+	}
+}
+
+// MARK: - Destroy Company
+private extension AppDelegate {
 	func destroyCompany() {
 		guard let company else { return }
 		
@@ -154,23 +219,5 @@ private extension AppDelegate {
 		alert.addButton(withTitle: "OK")
 		
 		alert.beginSheetModal(for: window)
-	}
-	
-	func didUpdateCompany() {
-		DispatchQueue.main.async { [weak self] in
-			guard let self else { return }
-			
-			let company = self.company
-			let tabViewItemLabel: String
-			
-			if let company {
-				tabViewItemLabel = "\(company.name) - \(company.numberOfEmployees) employees"
-			} else {
-				tabViewItemLabel = "No Company"
-			}
-			
-			self.tabViewItemCompany.label = tabViewItemLabel
-			self.companyViewController.company = company
-		}
 	}
 }

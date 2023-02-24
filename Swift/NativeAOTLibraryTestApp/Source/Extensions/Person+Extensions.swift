@@ -64,7 +64,7 @@ extension Person {
 		RandomData.firstNames.randomElement() ?? "Unnamed"
 	}
 	
-	static func randomFirstNames(count: Int) async -> [String] {
+	static func randomFirstNames(count: Int) -> [String] {
 		(0..<count).map({ _ in randomFirstName() })
 	}
 	
@@ -72,7 +72,7 @@ extension Person {
 		RandomData.lastNames.randomElement() ?? "Unnamed"
 	}
 	
-	static func randomLastNames(count: Int) async -> [String] {
+	static func randomLastNames(count: Int) -> [String] {
 		(0..<count).map({ _ in randomLastName() })
 	}
 	
@@ -80,7 +80,7 @@ extension Person {
 		RandomData.ages.randomElement() ?? 0
 	}
 	
-	static func randomAges(count: Int) async -> [Int32] {
+	static func randomAges(count: Int) -> [Int32] {
 		(0..<count).map({ _ in randomAge() })
 	}
 }
