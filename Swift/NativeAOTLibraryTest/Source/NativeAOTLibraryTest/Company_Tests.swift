@@ -73,7 +73,7 @@ final class CompanyTests: XCTestCase {
         XCTAssertEqual(0, company.numberOfEmployees)
     }
 	
-	func testCompanyCreationAndNameAccessPerformance() {
+	func testCompanyCreationPerformance() {
 		let debugLoggingWasEnabled = Debug.isLoggingEnabled
 		Debug.isLoggingEnabled = false
 		defer { Debug.isLoggingEnabled = debugLoggingWasEnabled }
