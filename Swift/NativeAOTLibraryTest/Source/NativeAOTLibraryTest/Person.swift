@@ -7,14 +7,17 @@ public extension Person {
 	convenience init(firstName: String,
 					 lastName: String,
 					 age: Int32) {
-		let firstNameC = firstName.cString(using: .utf8)
-		let lastNameC = lastName.cString(using: .utf8)
-		
 		Debug.log { "Will create \(Self.swiftTypeName)" }
 		
-		guard let handle = NativeAOTLibraryTest_Person_Create(firstNameC,
-															  lastNameC,
-															  age) else {
+		let handle = firstName.withCString { firstNameC in
+			lastName.withCString { lastNameC in
+				NativeAOTLibraryTest_Person_Create(firstNameC,
+												   lastNameC,
+												   age)
+			}
+		}
+		
+		guard let handle else {
 			fatalError("Failed to create \(Self.swiftTypeName)")
 		}
 		
@@ -61,8 +64,9 @@ public extension Person {
 		set {
 			Debug.log { "Will set firstName of \(swiftTypeName)" }
 			
-			let newValueC = newValue.cString(using: .utf8)
-			NativeAOTLibraryTest_Person_FirstName_Set(handle, newValueC)
+			newValue.withCString {
+				NativeAOTLibraryTest_Person_FirstName_Set(handle, $0)
+			}
 			
 			Debug.log { "Did set firstName of \(swiftTypeName)" }
 		}
@@ -87,8 +91,9 @@ public extension Person {
 		set {
 			Debug.log { "Will set lastName of \(swiftTypeName)" }
 			
-			let newValueC = newValue.cString(using: .utf8)
-			NativeAOTLibraryTest_Person_LastName_Set(handle, newValueC)
+			newValue.withCString {
+				NativeAOTLibraryTest_Person_LastName_Set(handle, $0)
+			}
 			
 			Debug.log { "Did set lastName of \(swiftTypeName)" }
 		}

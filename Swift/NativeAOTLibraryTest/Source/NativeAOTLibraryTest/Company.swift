@@ -5,14 +5,16 @@ public class Company: SystemObject { }
 // MARK: - Public API
 public extension Company {
 	convenience init(name: String) {
-		let nameC = name.cString(using: .utf8)
-
 		Debug.log { "Will create \(Self.swiftTypeName)" }
 
-		guard let handle = NativeAOTLibraryTest_Company_Create(nameC) else {
+		let handle = name.withCString {
+			NativeAOTLibraryTest_Company_Create($0)
+		}
+
+		guard let handle else {
 			fatalError("Failed to create \(Self.swiftTypeName)")
 		}
-		
+
 		self.init(handle: handle)
 
 		Debug.log { "Did create \(Self.swiftTypeName)" }
