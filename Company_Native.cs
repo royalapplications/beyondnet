@@ -1,3 +1,4 @@
+using System.Collections.Concurrent;
 using System.Runtime.InteropServices;
 
 namespace NativeAOTLibraryTest;
@@ -10,6 +11,28 @@ internal static class Company_Native
     private const string FULL_CLASS_NAME = NAMESPACE + "_" + CLASS_NAME;
     private const string ENTRYPOINT_PREFIX = FULL_CLASS_NAME + "_";
     #endregion Constants
+
+    #region Variables
+    private unsafe class NumberOfEmployeesChangedHandler
+    {
+        internal Company.NumberOfEmployeesChangedDelegate Trampoline { get; }
+        internal void* Context { get; }
+        internal delegate* unmanaged<void*, void> FunctionPointer { get; }
+
+        internal NumberOfEmployeesChangedHandler(
+            Company.NumberOfEmployeesChangedDelegate trampoline,
+            void* context,
+            delegate* unmanaged<void*, void> functionPointer
+        )
+        {
+            Trampoline = trampoline;
+            Context = context;
+            FunctionPointer = functionPointer;
+        }
+    }
+    
+    private static readonly ConcurrentDictionary<Company, NumberOfEmployeesChangedHandler> m_numberOfEmployeesChangedHandlers = new();
+    #endregion Variables
 
     #region Helpers
     internal static Company? GetCompanyFromHandleAddress(nint handleAddress)
@@ -181,6 +204,58 @@ internal static class Company_Native
         return employeeHandleAddress;
     }
 
+    [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "NumberOfEmployeesChanged_Get")]
+    internal static unsafe CStatus NumberOfEmployeesChanged_Get(
+        nint handleAddress,
+        void** outContext,
+        delegate* unmanaged<void*, void>* outFunctionPointer
+    )
+    {
+        Company? company = GetCompanyFromHandleAddress(handleAddress);
+
+        if (company == null) {
+            return CStatus.Failure;
+        }
+
+        NumberOfEmployeesChangedHandler? handler;
+
+        Company.NumberOfEmployeesChangedDelegate? storedDelegate = company.NumberOfEmployeesChanged;
+
+        if (storedDelegate != null) {
+            if (m_numberOfEmployeesChangedHandlers.TryGetValue(company, out NumberOfEmployeesChangedHandler? tempHandler) &&
+                tempHandler.Trampoline == storedDelegate) {
+                handler = tempHandler;
+            } else {
+                handler = null;
+            }
+        } else {
+            handler = null;
+        }
+
+        if (handler != null) {
+            void* context = handler.Context;
+            delegate* unmanaged<void*, void> functionPointer = handler.FunctionPointer;
+
+            if (outContext != null) {
+                *outContext = context;
+            }
+            
+            if (outFunctionPointer != null) {
+                *outFunctionPointer = functionPointer;
+            }
+        } else {
+            if (outContext != null) {
+                *outContext = null;
+            }
+            
+            if (outFunctionPointer != null) {
+                *outFunctionPointer = null;
+            }
+        }
+        
+        return CStatus.Success;
+    }
+
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "NumberOfEmployeesChanged_Set")]
     internal static unsafe void NumberOfEmployeesChanged_Set(
         nint handleAddress,
@@ -194,17 +269,25 @@ internal static class Company_Native
             return;
         }
 
-        Company.NumberOfEmployeesChangedDelegate? @delegate;
+        Company.NumberOfEmployeesChangedDelegate? trampoline;
 
         if ((nint)functionPointer != nint.Zero) {
-            @delegate = () => {
+            trampoline = () => {
                 functionPointer(context);
             };
+
+            m_numberOfEmployeesChangedHandlers[company] = new NumberOfEmployeesChangedHandler(
+                trampoline,
+                context,
+                functionPointer
+            );
         } else {
-            @delegate = null;
+            trampoline = null;
+
+            m_numberOfEmployeesChangedHandlers.TryRemove(company, out _);
         }
 
-        company.NumberOfEmployeesChanged = @delegate;
+        company.NumberOfEmployeesChanged = trampoline;
     }
     #endregion Public API
 }

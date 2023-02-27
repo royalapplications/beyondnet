@@ -2,7 +2,6 @@ import Foundation
 
 public class Company: SystemObject {
 	public typealias NumberOfEmployeesChangedHandler = () -> Void
-    private var _numberOfEmployeesChanged: NativeBox<NumberOfEmployeesChangedHandler>?
 }
 
 // MARK: - Public API
@@ -120,8 +119,20 @@ public extension Company {
     
 	var numberOfEmployeesChanged: NumberOfEmployeesChangedHandler? {
 		get {
-			// TODO
-			return nil
+			var context: UnsafeRawPointer?
+			var handler: ContextDelegate_t?
+			
+			guard NativeAOTLibraryTest_Company_NumberOfEmployeesChanged_Get(handle,
+																			&context,
+																			&handler) == .success,
+				  let context,
+				  handler != nil else {
+				return nil
+			}
+			
+			let closure = NativeBox<NumberOfEmployeesChangedHandler>.fromPointerUnretained(context).value
+			
+			return closure
 		}
 		set {
 			let closureBox: NativeBox<NumberOfEmployeesChangedHandler>?
@@ -133,7 +144,7 @@ public extension Company {
 				handler = { context in
 					guard let context else { return }
 					
-					let closure = NativeBox<NumberOfEmployeesChangedHandler>.valueFromUnretainedPointer(context)
+					let closure = NativeBox<NumberOfEmployeesChangedHandler>.fromPointerUnretained(context).value
 					
 					closure()
 				}
@@ -141,12 +152,23 @@ public extension Company {
 				closureBox = nil
 				handler = nil
 			}
-            
+			
+			var currentContext: UnsafeRawPointer?
+			var currentHandler: ContextDelegate_t?
+			
+			let currentSuccess = NativeAOTLibraryTest_Company_NumberOfEmployeesChanged_Get(handle,
+																						   &currentContext,
+																						   &currentHandler) == .success
+			
 			NativeAOTLibraryTest_Company_NumberOfEmployeesChanged_Set(handle,
-																	  closureBox?.unretainedPointer(),
+																	  closureBox?.retainedPointer(),
 																	  handler)
 			
-			_numberOfEmployeesChanged = closureBox
+			if currentSuccess,
+			   let currentContext,
+			   currentHandler != nil {
+				NativeBox<NumberOfEmployeesChangedHandler>.releaseRetainedPointer(currentContext)
+			}
 		}
 	}
 }

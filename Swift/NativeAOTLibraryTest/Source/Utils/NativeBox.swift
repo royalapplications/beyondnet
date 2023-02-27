@@ -9,6 +9,12 @@ class NativeBox<T> {
 }
 
 extension NativeBox {
+	static func releaseRetainedPointer(_ pointer: UnsafeRawPointer) {
+		let unmanaged = Unmanaged<Self>.fromOpaque(pointer)
+		
+		unmanaged.release()
+	}
+	
 	func unretainedPointer() -> UnsafeRawPointer {
 		let unmanaged = Unmanaged.passUnretained(self)
 		let opaque = unmanaged.toOpaque()
@@ -17,7 +23,15 @@ extension NativeBox {
 		return pointer
 	}
 	
-	static func fromUnretainedPointer(_ pointer: UnsafeRawPointer) -> Self {
+	func retainedPointer() -> UnsafeRawPointer {
+		let unmanaged = Unmanaged.passRetained(self)
+		let opaque = unmanaged.toOpaque()
+		let pointer = UnsafeRawPointer(opaque)
+		
+		return pointer
+	}
+	
+	static func fromPointerUnretained(_ pointer: UnsafeRawPointer) -> Self {
 		let unmanaged = Unmanaged<Self>.fromOpaque(pointer)
 		
 		let box = unmanaged.takeUnretainedValue()
@@ -25,10 +39,11 @@ extension NativeBox {
 		return box
 	}
 	
-	static func valueFromUnretainedPointer(_ pointer: UnsafeRawPointer) -> T {
-		let box = fromUnretainedPointer(pointer)
-		let value = box.value
+	static func fromPointerRetained(_ pointer: UnsafeRawPointer) -> Self {
+		let unmanaged = Unmanaged<Self>.fromOpaque(pointer)
 		
-		return value
+		let box = unmanaged.takeRetainedValue()
+		
+		return box
 	}
 }

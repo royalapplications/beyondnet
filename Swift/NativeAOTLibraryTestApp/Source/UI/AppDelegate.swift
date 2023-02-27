@@ -218,11 +218,6 @@ private extension AppDelegate {
 					   employeeAges: inout [Int32]) -> Company {
 		let company = Company(name: companyName)
 		
-		// TODO: Just for testing
-		company.numberOfEmployeesChanged = {
-			print("TODO: numberOfEmployeesChanged called")
-		}
-		
 		for idx in 0..<employeeFirstNames.count {
 			let firstName = employeeFirstNames[idx]
 			let lastName = employeeLastNames[idx]
@@ -250,6 +245,7 @@ private extension AppDelegate {
 		
 		let startDate = Date()
 		
+		company.numberOfEmployeesChanged = nil
 		self.company = nil
 		SystemGC.collect()
 		
