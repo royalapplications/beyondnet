@@ -1,6 +1,8 @@
 import Foundation
 
-public class SystemAppDomain: SystemObject { }
+public class SystemAppDomain: SystemObject {
+	public typealias UnhandledExceptionHandler = (_ sender: SystemObject, _ eventArgs: SystemUnhandledExceptionEventArgs) -> Void
+}
 
 // MARK: - Public API
 public extension SystemAppDomain {
@@ -48,5 +50,56 @@ public extension SystemAppDomain {
 		let value = String(cString: valueC)
 		
 		return value
+	}
+	
+	struct UnhandledExceptionHandlerToken {
+		internal let closureBox: NativeBox<UnhandledExceptionHandler>
+		internal let handler: UnhandledExceptionEventHandler_t
+	}
+	
+	@discardableResult
+	func addUnhandledExceptionHandler(_ handler: @escaping UnhandledExceptionHandler) -> UnhandledExceptionHandlerToken {
+		Debug.log("Will add unhandled exception event handler to \(swiftTypeName)")
+		
+		let newClosureBox = NativeBox(value: handler)
+		
+		let newHandler: UnhandledExceptionEventHandler_t = { innerContext, senderHandle, eventArgsHandle in
+			guard let innerContext,
+				  let senderHandle,
+				  let eventArgsHandle else {
+				return
+			}
+			
+			let closure = NativeBox<UnhandledExceptionHandler>.fromPointerUnretained(innerContext).value
+			
+			let sender = SystemObject(handle: senderHandle)
+			let eventArgs = SystemUnhandledExceptionEventArgs(handle: eventArgsHandle)
+			
+			closure(sender, eventArgs)
+		}
+		
+		System_AppDomain_UnhandledException_Add(handle,
+												newClosureBox.retainedPointer(),
+												newHandler)
+		
+		let token = UnhandledExceptionHandlerToken(closureBox: newClosureBox,
+												   handler: newHandler)
+		
+		Debug.log("Did add unhandled exception event handler to \(swiftTypeName)")
+		
+		return token
+	}
+	
+	@discardableResult
+	func removeUnhandledExceptionHandler(_ handlerToken: UnhandledExceptionHandlerToken) -> Bool {
+		Debug.log("Will remove unhandled exception event handler to \(swiftTypeName)")
+		
+		let result = System_AppDomain_UnhandledException_Remove(handle,
+																handlerToken.closureBox.unretainedPointer(),
+																handlerToken.handler) == .success
+		
+		Debug.log("Did remove unhandled exception event handler to \(swiftTypeName)")
+		
+		return result
 	}
 }

@@ -15,6 +15,8 @@
 		E738716229ACD50700BEA7DA /* SystemAppDomain_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E738716129ACD50700BEA7DA /* SystemAppDomain_Tests.swift */; };
 		E738716529ACD9CB00BEA7DA /* System_UnhandledExceptionEventArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = E738716429ACD98C00BEA7DA /* System_UnhandledExceptionEventArgs.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		E738716729ACDA1200BEA7DA /* SystemUnhandledExceptionEventArgs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E738716629ACDA1200BEA7DA /* SystemUnhandledExceptionEventArgs.swift */; };
+		E738716929ACE3D100BEA7DA /* NativeAOTLibraryTest_UnhandledExceptionTest.h in Headers */ = {isa = PBXBuildFile; fileRef = E738716829ACE3D100BEA7DA /* NativeAOTLibraryTest_UnhandledExceptionTest.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		E738716B29ACE41600BEA7DA /* UnhandledExceptionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E738716A29ACE41600BEA7DA /* UnhandledExceptionTest.swift */; };
 		E7AACF3829A6278E00846A75 /* NativeAOTLibraryTest.h in Headers */ = {isa = PBXBuildFile; fileRef = E7AACF3729A6278E00846A75 /* NativeAOTLibraryTest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7AACF4029A6282400846A75 /* NativeAOTLibraryTest.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E7AACF3F29A6282400846A75 /* NativeAOTLibraryTest.dylib */; };
 		E7AACF4129A6282C00846A75 /* NativeAOTLibraryTest.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = E7AACF3F29A6282400846A75 /* NativeAOTLibraryTest.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -69,6 +71,8 @@
 		E738716129ACD50700BEA7DA /* SystemAppDomain_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAppDomain_Tests.swift; sourceTree = "<group>"; };
 		E738716429ACD98C00BEA7DA /* System_UnhandledExceptionEventArgs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = System_UnhandledExceptionEventArgs.h; sourceTree = "<group>"; };
 		E738716629ACDA1200BEA7DA /* SystemUnhandledExceptionEventArgs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemUnhandledExceptionEventArgs.swift; sourceTree = "<group>"; };
+		E738716829ACE3D100BEA7DA /* NativeAOTLibraryTest_UnhandledExceptionTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeAOTLibraryTest_UnhandledExceptionTest.h; sourceTree = "<group>"; };
+		E738716A29ACE41600BEA7DA /* UnhandledExceptionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnhandledExceptionTest.swift; sourceTree = "<group>"; };
 		E7AACF3429A6278E00846A75 /* NativeAOTLibraryTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NativeAOTLibraryTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7AACF3729A6278E00846A75 /* NativeAOTLibraryTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeAOTLibraryTest.h; sourceTree = "<group>"; };
 		E7AACF3F29A6282400846A75 /* NativeAOTLibraryTest.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = NativeAOTLibraryTest.dylib; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 				E7BC395529A7BECC00806ADD /* System_GC.h */,
 				E7E26AC329A62FB8005334CF /* NativeAOTLibraryTest_Person.h */,
 				E7E26AC729A668CD005334CF /* NativeAOTLibraryTest_Company.h */,
+				E738716829ACE3D100BEA7DA /* NativeAOTLibraryTest_UnhandledExceptionTest.h */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -189,6 +194,7 @@
 				E7E9D57829A766A2002C3834 /* Person_Tests.swift */,
 				E7E26AC829A668F8005334CF /* Company.swift */,
 				E7E9D57A29A768F7002C3834 /* Company_Tests.swift */,
+				E738716A29ACE41600BEA7DA /* UnhandledExceptionTest.swift */,
 			);
 			path = NativeAOTLibraryTest;
 			sourceTree = "<group>";
@@ -209,6 +215,7 @@
 				E7BC394C29A7A87600806ADD /* System_Exception.h in Headers */,
 				E7E26AC429A62FBD005334CF /* NativeAOTLibraryTest_Person.h in Headers */,
 				E7E26ACA29A6696B005334CF /* NativeAOTLibraryTest_Company.h in Headers */,
+				E738716929ACE3D100BEA7DA /* NativeAOTLibraryTest_UnhandledExceptionTest.h in Headers */,
 				E7BC395629A7BECC00806ADD /* System_GC.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,6 +389,7 @@
 				E7BC394E29A7A8BC00806ADD /* SystemException.swift in Sources */,
 				E71625CE29A942D900F47651 /* NativeBox.swift in Sources */,
 				E7E26AC629A63147005334CF /* Person.swift in Sources */,
+				E738716B29ACE41600BEA7DA /* UnhandledExceptionTest.swift in Sources */,
 				E7E9D58029A77776002C3834 /* SystemObject.swift in Sources */,
 				E716200229A6795D00D45FCD /* Debug.swift in Sources */,
 				E7E26AC929A668F8005334CF /* Company.swift in Sources */,

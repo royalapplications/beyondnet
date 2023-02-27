@@ -12,6 +12,7 @@ framework module NativeAOTLibraryTest {
 	
     private header "NativeAOTLibraryTest_Person.h"
     private header "NativeAOTLibraryTest_Company.h"
+	private header "NativeAOTLibraryTest_UnhandledExceptionTest.h"
     
     export *
     module * { export * }

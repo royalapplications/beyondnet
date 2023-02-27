@@ -169,13 +169,13 @@ internal static unsafe class Company_Native
         return employeeHandleAddress;
     }
     
-    private class NumberOfEmployeesChangedHandler
+    private class NumberOfEmployeesChangedHandler_Native
     {
         internal Company.NumberOfEmployeesChangedDelegate Trampoline { get; }
         internal void* Context { get; }
         internal delegate* unmanaged<void*, void> FunctionPointer { get; }
 
-        internal NumberOfEmployeesChangedHandler(
+        internal NumberOfEmployeesChangedHandler_Native(
             Company.NumberOfEmployeesChangedDelegate trampoline,
             void* context,
             delegate* unmanaged<void*, void> functionPointer
@@ -187,7 +187,7 @@ internal static unsafe class Company_Native
         }
     }
     
-    private static readonly ConcurrentDictionary<Company, NumberOfEmployeesChangedHandler> m_numberOfEmployeesChangedHandlers = new();
+    private static readonly ConcurrentDictionary<Company, NumberOfEmployeesChangedHandler_Native> m_numberOfEmployeesChangedNativeHandlers = new();
 
     [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "NumberOfEmployeesChanged_Get")]
     internal static CStatus NumberOfEmployeesChanged_Get(
@@ -196,18 +196,18 @@ internal static unsafe class Company_Native
         delegate* unmanaged<void*, void>* outFunctionPointer
     )
     {
-        Company? company = InteropUtils.GetInstance<Company>(handleAddress);
+        Company? instance = InteropUtils.GetInstance<Company>(handleAddress);
 
-        if (company == null) {
+        if (instance == null) {
             return CStatus.Failure;
         }
 
-        NumberOfEmployeesChangedHandler? handler;
+        NumberOfEmployeesChangedHandler_Native? handler;
 
-        Company.NumberOfEmployeesChangedDelegate? storedDelegate = company.NumberOfEmployeesChanged;
+        Company.NumberOfEmployeesChangedDelegate? storedDelegate = instance.NumberOfEmployeesChanged;
 
         if (storedDelegate != null) {
-            if (m_numberOfEmployeesChangedHandlers.TryGetValue(company, out NumberOfEmployeesChangedHandler? tempHandler) &&
+            if (m_numberOfEmployeesChangedNativeHandlers.TryGetValue(instance, out NumberOfEmployeesChangedHandler_Native? tempHandler) &&
                 tempHandler.Trampoline == storedDelegate) {
                 handler = tempHandler;
             } else {
@@ -248,9 +248,9 @@ internal static unsafe class Company_Native
         delegate* unmanaged<void*, void> functionPointer
     )
     {
-        Company? company = InteropUtils.GetInstance<Company>(handleAddress);
+        Company? instance = InteropUtils.GetInstance<Company>(handleAddress);
 
-        if (company == null) {
+        if (instance == null) {
             return;
         }
 
@@ -261,7 +261,7 @@ internal static unsafe class Company_Native
                 functionPointer(context);
             };
 
-            m_numberOfEmployeesChangedHandlers[company] = new NumberOfEmployeesChangedHandler(
+            m_numberOfEmployeesChangedNativeHandlers[instance] = new NumberOfEmployeesChangedHandler_Native(
                 trampoline,
                 context,
                 functionPointer
@@ -269,10 +269,10 @@ internal static unsafe class Company_Native
         } else {
             trampoline = null;
 
-            m_numberOfEmployeesChangedHandlers.TryRemove(company, out _);
+            m_numberOfEmployeesChangedNativeHandlers.TryRemove(instance, out _);
         }
 
-        company.NumberOfEmployeesChanged = trampoline;
+        instance.NumberOfEmployeesChanged = trampoline;
     }
     #endregion Public API
 }

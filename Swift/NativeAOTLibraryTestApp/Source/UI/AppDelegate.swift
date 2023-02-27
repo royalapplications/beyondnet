@@ -46,6 +46,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		tabViewCompany.addSubview(companyView)
 		
 		company = nil
+		
+		setUpUnhandledExceptionHandler()
+		
+		// Only for testing!
+		UnhandledExceptionTest.throwUnhandledException()
     }
 	
 	@IBAction private func checkBoxDebugLogging_action(_ sender: Any) {
@@ -58,6 +63,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	
 	@IBAction private func buttonDestroy_action(_ sender: Any) {
 		destroyCompany()
+	}
+}
+
+private extension AppDelegate {
+	func setUpUnhandledExceptionHandler() {
+		let appDomain = SystemAppDomain.current()
+		
+		appDomain.addUnhandledExceptionHandler { _, eventArgs in
+			// TODO: Try to cast eventArgs.exceptionObject to an SystemException object
+			
+			let exceptionObject = eventArgs.exceptionObject
+//			let exception = SystemException(
+			
+			// We can't recover from unhandled exceptions that are thrown from NativeAOT, so let's crash here.
+			let exceptionObjectTypeName = exceptionObject.type.fullName ?? exceptionObject.type.name
+			
+			fatalError("An unhandled .NET exception occurred. Exception Type: \"\(exceptionObjectTypeName)\"")
+		}
 	}
 }
 

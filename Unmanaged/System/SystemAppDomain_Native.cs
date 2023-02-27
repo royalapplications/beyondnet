@@ -1,9 +1,10 @@
 using System;
+using System.Collections.Concurrent;
 using System.Runtime.InteropServices;
 
 namespace NativeAOTLibraryTest;
 
-internal static class System_AppDomain
+internal static unsafe class System_AppDomain
 {
     #region Constants
     private const string NAMESPACE = nameof(System);
@@ -14,7 +15,7 @@ internal static class System_AppDomain
     
     #region Public API
     [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "CurrentDomain_Get")]
-    internal static unsafe void* CurrentDomain_Get()
+    internal static void* CurrentDomain_Get()
     {
         AppDomain instance = AppDomain.CurrentDomain;
         void* handleAddress = instance.AllocateGCHandleAndGetAddress();
@@ -23,7 +24,7 @@ internal static class System_AppDomain
     }
     
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Id_Get")]
-    internal static unsafe int Id_Get(void* handleAddress)
+    internal static int Id_Get(void* handleAddress)
     {
         AppDomain? instance = InteropUtils.GetInstance<AppDomain>(handleAddress);
 
@@ -35,7 +36,7 @@ internal static class System_AppDomain
     }
     
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "IsDefaultAppDomain")]
-    internal static unsafe CBool IsDefaultAppDomain(void* handleAddress)
+    internal static CBool IsDefaultAppDomain(void* handleAddress)
     {
         AppDomain? instance = InteropUtils.GetInstance<AppDomain>(handleAddress);
 
@@ -47,7 +48,7 @@ internal static class System_AppDomain
     }
     
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "BaseDirectory_Get")]
-    internal static unsafe char* BaseDirectory(void* handleAddress)
+    internal static char* BaseDirectory(void* handleAddress)
     {
         AppDomain? instance = InteropUtils.GetInstance<AppDomain>(handleAddress);
 
@@ -59,6 +60,103 @@ internal static class System_AppDomain
         char* baseDirectoryC = baseDirectory.ToCString();
 
         return baseDirectoryC;
+    }
+    
+    private class UnhandledExceptionHandler_Native
+    {
+        internal UnhandledExceptionEventHandler Trampoline { get; }
+        internal void* Context { get; }
+        internal delegate* unmanaged<void*, void*, void*, void> FunctionPointer { get; }
+
+        internal UnhandledExceptionHandler_Native(
+            UnhandledExceptionEventHandler trampoline,
+            void* context,
+            delegate* unmanaged<void*, void*, void*, void> functionPointer
+        )
+        {
+            Trampoline = trampoline;
+            Context = context;
+            FunctionPointer = functionPointer;
+        }
+    }
+    
+    private static readonly ConcurrentDictionary<AppDomain, UnhandledExceptionHandler_Native[]> m_unhandledExceptionHandlersNative = new();
+    
+    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "UnhandledException_Add")]
+    internal static void UnhandledException_Add(
+        void* handleAddress,
+        void* context,
+        delegate* unmanaged<void*, void*, void*, void> functionPointer
+    )
+    {
+        AppDomain? instance = InteropUtils.GetInstance<AppDomain>(handleAddress);
+
+        if (instance == null) {
+            return;
+        }
+
+        if ((nint)functionPointer == nint.Zero) {
+            return;
+        }
+
+        List<UnhandledExceptionHandler_Native> newNativeHandlers = m_unhandledExceptionHandlersNative.TryGetValue(instance, out UnhandledExceptionHandler_Native[]? currentNativeHandlers)
+            ? currentNativeHandlers.ToList()
+            : new();
+
+        void Trampoline(object sender, UnhandledExceptionEventArgs eventArgs) 
+        {
+            void* senderHandleAddress = sender.AllocateGCHandleAndGetAddress();
+            void* eventArgsHandleAddress = eventArgs.AllocateGCHandleAndGetAddress();
+
+            functionPointer(context, senderHandleAddress, eventArgsHandleAddress);
+        }
+            
+        newNativeHandlers.Add(new UnhandledExceptionHandler_Native(
+            Trampoline,
+            context,
+            functionPointer
+        ));
+
+        m_unhandledExceptionHandlersNative[instance] = newNativeHandlers.ToArray();
+
+        instance.UnhandledException += Trampoline;
+    }
+
+    [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "UnhandledException_Remove")]
+    internal static CStatus UnhandledException_Remove(
+        void* handleAddress,
+        void* context,
+        delegate* unmanaged<void*, void*, void*, void> functionPointer
+    )
+    {
+        AppDomain? instance = InteropUtils.GetInstance<AppDomain>(handleAddress);
+
+        if (instance == null) {
+            return CStatus.Failure;
+        }
+
+        if ((nint)functionPointer == nint.Zero) {
+            return CStatus.Failure;
+        }
+
+        if (!m_unhandledExceptionHandlersNative.TryGetValue(instance, out UnhandledExceptionHandler_Native[]? currentNativeHandlers)) {
+            return CStatus.Failure;
+        }
+        
+        UnhandledExceptionHandler_Native? nativeHandler = currentNativeHandlers.FirstOrDefault(h => 
+            h.FunctionPointer == functionPointer && 
+            h.Context == context
+        );
+
+        if (nativeHandler == null) {
+            return CStatus.Failure;
+        }
+
+        UnhandledExceptionEventHandler trampoline = nativeHandler.Trampoline;
+
+        instance.UnhandledException -= trampoline;
+
+        return CStatus.Success;
     }
     #endregion Public API
 }
