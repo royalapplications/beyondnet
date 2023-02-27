@@ -88,15 +88,12 @@ internal extension SystemObject {
 extension SystemObject: Equatable {
     public static func == (lhs: SystemObject,
                            rhs: SystemObject) -> Bool {
-		let lhsTypeName = lhs.swiftTypeName
-		let rhsTypeName = rhs.swiftTypeName
-		
-		Debug.log("Will check equality of \(lhsTypeName) and \(rhsTypeName)")
+		Debug.log("Will check equality of \(lhs.swiftTypeName) and \(rhs.swiftTypeName)")
         
         let equal = Self.equals(lhs.handle,
                                 rhs.handle)
         
-		Debug.log("Did check equality of \(lhsTypeName) and \(rhsTypeName)")
+		Debug.log("Did check equality of \(lhs.swiftTypeName) and \(rhs.swiftTypeName)")
         
         return equal
     }
