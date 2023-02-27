@@ -12,28 +12,6 @@ internal static class Company_Native
     private const string ENTRYPOINT_PREFIX = FULL_CLASS_NAME + "_";
     #endregion Constants
 
-    #region Variables
-    private unsafe class NumberOfEmployeesChangedHandler
-    {
-        internal Company.NumberOfEmployeesChangedDelegate Trampoline { get; }
-        internal void* Context { get; }
-        internal delegate* unmanaged<void*, void> FunctionPointer { get; }
-
-        internal NumberOfEmployeesChangedHandler(
-            Company.NumberOfEmployeesChangedDelegate trampoline,
-            void* context,
-            delegate* unmanaged<void*, void> functionPointer
-        )
-        {
-            Trampoline = trampoline;
-            Context = context;
-            FunctionPointer = functionPointer;
-        }
-    }
-    
-    private static readonly ConcurrentDictionary<Company, NumberOfEmployeesChangedHandler> m_numberOfEmployeesChangedHandlers = new();
-    #endregion Variables
-
     #region Helpers
     internal static Company? GetCompanyFromHandleAddress(nint handleAddress)
     {
@@ -203,6 +181,26 @@ internal static class Company_Native
 
         return employeeHandleAddress;
     }
+    
+    private unsafe class NumberOfEmployeesChangedHandler
+    {
+        internal Company.NumberOfEmployeesChangedDelegate Trampoline { get; }
+        internal void* Context { get; }
+        internal delegate* unmanaged<void*, void> FunctionPointer { get; }
+
+        internal NumberOfEmployeesChangedHandler(
+            Company.NumberOfEmployeesChangedDelegate trampoline,
+            void* context,
+            delegate* unmanaged<void*, void> functionPointer
+        )
+        {
+            Trampoline = trampoline;
+            Context = context;
+            FunctionPointer = functionPointer;
+        }
+    }
+    
+    private static readonly ConcurrentDictionary<Company, NumberOfEmployeesChangedHandler> m_numberOfEmployeesChangedHandlers = new();
 
     [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "NumberOfEmployeesChanged_Get")]
     internal static unsafe CStatus NumberOfEmployeesChanged_Get(

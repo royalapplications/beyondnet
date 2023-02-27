@@ -135,24 +135,6 @@ public extension Company {
 			return closure
 		}
 		set {
-			let closureBox: NativeBox<NumberOfEmployeesChangedHandler>?
-			let handler: ContextDelegate_t?
-			
-			if let newValue {
-				closureBox = .init(value: newValue)
-				
-				handler = { context in
-					guard let context else { return }
-					
-					let closure = NativeBox<NumberOfEmployeesChangedHandler>.fromPointerUnretained(context).value
-					
-					closure()
-				}
-			} else {
-				closureBox = nil
-				handler = nil
-			}
-			
 			var currentContext: UnsafeRawPointer?
 			var currentHandler: ContextDelegate_t?
 			
@@ -160,9 +142,27 @@ public extension Company {
 																						   &currentContext,
 																						   &currentHandler) == .success
 			
+			let newClosureBox: NativeBox<NumberOfEmployeesChangedHandler>?
+			let newHandler: ContextDelegate_t?
+			
+			if let newValue {
+				newClosureBox = .init(value: newValue)
+				
+				newHandler = { innerContext in
+					guard let innerContext else { return }
+					
+					let closure = NativeBox<NumberOfEmployeesChangedHandler>.fromPointerUnretained(innerContext).value
+					
+					closure()
+				}
+			} else {
+				newClosureBox = nil
+				newHandler = nil
+			}
+			
 			NativeAOTLibraryTest_Company_NumberOfEmployeesChanged_Set(handle,
-																	  closureBox?.retainedPointer(),
-																	  handler)
+																	  newClosureBox?.retainedPointer(),
+																	  newHandler)
 			
 			if currentSuccess,
 			   let currentContext,
