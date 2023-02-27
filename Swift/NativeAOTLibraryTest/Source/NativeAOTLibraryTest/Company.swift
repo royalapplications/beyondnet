@@ -119,22 +119,29 @@ public extension Company {
     
 	var numberOfEmployeesChanged: NumberOfEmployeesChangedHandler? {
 		get {
+			Debug.log("Will get closure for numberOfEmployeesChanged of \(swiftTypeName)")
+			
 			var context: UnsafeRawPointer?
 			var handler: ContextDelegate_t?
+			let closure: NumberOfEmployeesChangedHandler?
 			
-			guard NativeAOTLibraryTest_Company_NumberOfEmployeesChanged_Get(handle,
-																			&context,
-																			&handler) == .success,
-				  let context,
-				  handler != nil else {
-				return nil
+			if NativeAOTLibraryTest_Company_NumberOfEmployeesChanged_Get(handle,
+																		 &context,
+																		 &handler) == .success,
+			   let context,
+			   handler != nil {
+				closure = NativeBox<NumberOfEmployeesChangedHandler>.fromPointerUnretained(context).value
+			} else {
+				closure = nil
 			}
 			
-			let closure = NativeBox<NumberOfEmployeesChangedHandler>.fromPointerUnretained(context).value
+			Debug.log("Did get closure for numberOfEmployeesChanged of \(swiftTypeName)")
 			
 			return closure
 		}
 		set {
+			Debug.log("Will set closure for numberOfEmployeesChanged of \(swiftTypeName)")
+			
 			var currentContext: UnsafeRawPointer?
 			var currentHandler: ContextDelegate_t?
 			
@@ -169,6 +176,8 @@ public extension Company {
 			   currentHandler != nil {
 				NativeBox<NumberOfEmployeesChangedHandler>.releaseRetainedPointer(currentContext)
 			}
+			
+			Debug.log("Did set closure for numberOfEmployeesChanged of \(swiftTypeName)")
 		}
 	}
 }

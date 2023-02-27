@@ -73,6 +73,43 @@ final class CompanyTests: XCTestCase {
         XCTAssertEqual(0, company.numberOfEmployees)
     }
 	
+	func testCompanyDelegates() {
+		let company = Company(name: "Fancy Company")
+		
+		var numberOfTimesClosureWasCalled = 0
+		
+		company.numberOfEmployeesChanged = {
+			numberOfTimesClosureWasCalled += 1
+		}
+		
+		XCTAssertNotNil(company.numberOfEmployeesChanged)
+		
+		let numberOfEmployees = 100
+		
+		for idx in 0..<numberOfEmployees {
+			let employee = Person(firstName: "Employee No.",
+								  lastName: .init(idx + 1),
+								  age: 0)
+			
+			company.addEmployee(employee)
+		}
+		
+		XCTAssertEqual(numberOfEmployees, Int(company.numberOfEmployees))
+		XCTAssertEqual(numberOfEmployees, numberOfTimesClosureWasCalled)
+		
+		company.numberOfEmployeesChanged = nil
+		XCTAssertNil(company.numberOfEmployeesChanged)
+		
+		let lastEmployee = Person(firstName: "Last",
+								  lastName: "Employee",
+								  age: 0)
+		
+		company.addEmployee(lastEmployee)
+		
+		XCTAssertEqual(numberOfEmployees + 1, Int(company.numberOfEmployees))
+		XCTAssertEqual(numberOfEmployees, numberOfTimesClosureWasCalled)
+	}
+	
 	func testCompanyCreationPerformance() {
 		let debugLoggingWasEnabled = Debug.isLoggingEnabled
 		Debug.isLoggingEnabled = false
