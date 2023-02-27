@@ -7,21 +7,22 @@ internal static unsafe class System_Type
 {
     #region Constants
     private const string NAMESPACE = nameof(System);
-    private const string CLASS_NAME = nameof(Type);
-    private const string FULL_CLASS_NAME = NAMESPACE + "_" + CLASS_NAME;
-    private const string ENTRYPOINT_PREFIX = FULL_CLASS_NAME + "_";
+    private const string TYPE_NAME = nameof(Type);
+    private const string FULL_TYPE_NAME = NAMESPACE + "_" + TYPE_NAME;
+    private const string ENTRYPOINT_PREFIX = FULL_TYPE_NAME + "_";
     #endregion Constants
 
+    #region Public APIs
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Name_Get")]
     internal static char* Name_Get(void* handleAddress)
     {
-        Type? type = InteropUtils.GetInstance<Type>(handleAddress);
+        Type? instance = InteropUtils.GetInstance<Type>(handleAddress);
 
-        if (type == null) {
+        if (instance == null) {
             return null;
         }
 
-        char* nameC = type.Name.ToCString();
+        char* nameC = instance.Name.ToCString();
 
         return nameC;
     }
@@ -29,13 +30,13 @@ internal static unsafe class System_Type
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "FullName_Get")]
     internal static char* FullName_Get(void* handleAddress)
     {
-        Type? type = InteropUtils.GetInstance<Type>(handleAddress);
+        Type? instance = InteropUtils.GetInstance<Type>(handleAddress);
 
-        if (type == null) {
+        if (instance == null) {
             return null;
         }
 
-        string? fullName = type.FullName;
+        string? fullName = instance.FullName;
 
         if (fullName == null) {
             return null;
@@ -45,4 +46,5 @@ internal static unsafe class System_Type
 
         return nameC;
     }
+    #endregion Public API
 }

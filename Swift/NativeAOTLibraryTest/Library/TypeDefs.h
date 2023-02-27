@@ -8,6 +8,7 @@ typedef void* System_Object_t;
 typedef void* System_Type_t;
 typedef void* System_AppDomain_t;
 typedef void* System_Exception_t;
+typedef void* System_UnhandledExceptionEventArgs_t;
 
 typedef void (*VoidDelegate_t)(void);
 typedef void (*ContextDelegate_t)(void* context);

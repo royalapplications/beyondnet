@@ -7,9 +7,9 @@ internal static unsafe class Company_Native
 {
     #region Constants
     private const string NAMESPACE = nameof(NativeAOTLibraryTest);
-    private const string CLASS_NAME = nameof(Company);
-    private const string FULL_CLASS_NAME = NAMESPACE + "_" + CLASS_NAME;
-    private const string ENTRYPOINT_PREFIX = FULL_CLASS_NAME + "_";
+    private const string TYPE_NAME = nameof(Company);
+    private const string FULL_TYPE_NAME = NAMESPACE + "_" + TYPE_NAME;
+    private const string ENTRYPOINT_PREFIX = FULL_TYPE_NAME + "_";
     #endregion Constants
 
     #region Public API

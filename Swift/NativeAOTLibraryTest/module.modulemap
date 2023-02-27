@@ -8,6 +8,7 @@ framework module NativeAOTLibraryTest {
 	private header "System_Exception.h"
 	private header "System_AppDomain.h"
 	private header "System_GC.h"
+	private header "System_UnhandledExceptionEventArgs.h"
 	
     private header "NativeAOTLibraryTest_Person.h"
     private header "NativeAOTLibraryTest_Company.h"

@@ -7,13 +7,12 @@ internal static class System_AppDomain
 {
     #region Constants
     private const string NAMESPACE = nameof(System);
-    private const string CLASS_NAME = nameof(AppDomain);
-    private const string FULL_CLASS_NAME = NAMESPACE + "_" + CLASS_NAME;
-    private const string ENTRYPOINT_PREFIX = FULL_CLASS_NAME + "_";
+    private const string TYPE_NAME = nameof(AppDomain);
+    private const string FULL_TYPE_NAME = NAMESPACE + "_" + TYPE_NAME;
+    private const string ENTRYPOINT_PREFIX = FULL_TYPE_NAME + "_";
     #endregion Constants
     
     #region Public API
-
     [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "CurrentDomain_Get")]
     internal static unsafe void* CurrentDomain_Get()
     {
