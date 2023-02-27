@@ -1,7 +1,8 @@
 import Foundation
 
 public class Company: SystemObject {
-    private var _numberOfEmployeesChanged: NativeBox<() -> Void>?
+	public typealias NumberOfEmployeesChangedHandler = () -> Void
+    private var _numberOfEmployeesChanged: NativeBox<NumberOfEmployeesChangedHandler>?
 }
 
 // MARK: - Public API
@@ -117,36 +118,35 @@ public extension Company {
 		return employee
 	}
     
-	var numberOfEmployeesChanged: (() -> Void)? {
+	var numberOfEmployeesChanged: NumberOfEmployeesChangedHandler? {
 		get {
 			// TODO
 			return nil
 		}
 		set {
-            guard let newValue else {
-                _numberOfEmployeesChanged = nil
-                
-                NativeAOTLibraryTest_Company_NumberOfEmployeesChanged_Set(handle,
-                                                                          nil,
-                                                                          nil)
-                
-                return
-            }
+			let closureBox: NativeBox<NumberOfEmployeesChangedHandler>?
+			let handler: ContextDelegate_t?
+			
+			if let newValue {
+				closureBox = .init(value: newValue)
+				
+				handler = { context in
+					guard let context else { return }
+					
+					let closure = NativeBox<NumberOfEmployeesChangedHandler>.valueFromUnretainedPointer(context)
+					
+					closure()
+				}
+			} else {
+				closureBox = nil
+				handler = nil
+			}
             
-            let outerBox = NativeBox(value: newValue)
-            
-            _numberOfEmployeesChanged = outerBox
-            
-            let outerContext = outerBox.unretainedPointer()
-            
-            NativeAOTLibraryTest_Company_NumberOfEmployeesChanged_Set(handle, outerContext) { innerContext in
-                guard let innerContext else { return }
-                
-                let innerContextBox = NativeBox<() -> Void>.fromUnretainedPointer(innerContext)
-                let innerClosure = innerContextBox.value
-                
-                innerClosure()
-            }
+			NativeAOTLibraryTest_Company_NumberOfEmployeesChanged_Set(handle,
+																	  closureBox?.unretainedPointer(),
+																	  handler)
+			
+			_numberOfEmployeesChanged = closureBox
 		}
 	}
 }
