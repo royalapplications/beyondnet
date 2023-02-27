@@ -70,5 +70,51 @@ internal static unsafe class System_Type
 
         return nameC;
     }
+
+    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "IsAssignableFrom")]
+    internal static CBool IsAssignableFrom(
+        void* handleAddress, 
+        void* targetTypeHandleAddress
+    )
+    {
+        Type? instance = InteropUtils.GetInstance<Type>(handleAddress);
+
+        if (instance == null) {
+            return false.ToCBool();
+        }
+        
+        Type? targetType = InteropUtils.GetInstance<Type>(targetTypeHandleAddress);
+
+        if (targetType == null) {
+            return false.ToCBool();
+        }
+
+        bool result = instance.IsAssignableFrom(targetType);
+
+        return result.ToCBool();
+    }
+    
+    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "IsAssignableTo")]
+    internal static CBool IsAssignableTo(
+        void* handleAddress, 
+        void* targetTypeHandleAddress
+    )
+    {
+        Type? instance = InteropUtils.GetInstance<Type>(handleAddress);
+
+        if (instance == null) {
+            return false.ToCBool();
+        }
+        
+        Type? targetType = InteropUtils.GetInstance<Type>(targetTypeHandleAddress);
+
+        if (targetType == null) {
+            return false.ToCBool();
+        }
+
+        bool result = instance.IsAssignableTo(targetType);
+
+        return result.ToCBool();
+    }
     #endregion Public API
 }

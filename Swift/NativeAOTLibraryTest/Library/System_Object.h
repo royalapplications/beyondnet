@@ -13,8 +13,7 @@ void System_Object_Destroy(System_Object_t instance);
 
 const char* System_Object_ToString(System_Object_t instance);
 
-System_Object_t System_Object_CastTo(System_Object_t instance,
-									 System_Type_t targetType,
-									 System_Exception_t* outException);
+System_Object_t System_Object_CastAs(System_Object_t instance,
+									 System_Type_t targetType);
 
 #endif /* System_Object_h */

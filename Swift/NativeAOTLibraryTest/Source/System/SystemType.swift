@@ -55,4 +55,24 @@ public extension SystemType {
 		
 		return value
 	}
+	
+	func isAssignableFrom(_ targetType: SystemType) -> Bool {
+		Debug.log("Will call isAssignableFrom of \(swiftTypeName)")
+		
+		let result = System_Type_IsAssignableFrom(handle, targetType.handle) == .yes
+		
+		Debug.log("Did call isAssignableFrom of \(swiftTypeName)")
+		
+		return result
+	}
+	
+	func isAssignableTo(_ targetType: SystemType) -> Bool {
+		Debug.log("Will call isAssignableTo of \(swiftTypeName)")
+		
+		let result = System_Type_IsAssignableTo(handle, targetType.handle) == .yes
+		
+		Debug.log("Did call isAssignableTo of \(swiftTypeName)")
+		
+		return result
+	}
 }

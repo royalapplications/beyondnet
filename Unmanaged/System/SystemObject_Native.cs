@@ -70,41 +70,32 @@ internal static unsafe class System_Object
 
         return cString;
     }
-
-    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "CastTo")]
-    internal static void* CastTo(
+    
+    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "CastAs")]
+    internal static void* CastAs(
         void* handleAddress,
-        void* targetTypeHandleAddress,
-        void** outException
+        void* targetTypeHandleAddress
     )
     {
         object? instance = InteropUtils.GetInstance<object>(handleAddress);
 
-        try {
-            if (instance == null) {
-                throw new ArgumentNullException(nameof(instance));
-            }
-            
-            Type? targetType = InteropUtils.GetInstance<Type>(targetTypeHandleAddress);
-
-            if (targetType == null) {
-                throw new ArgumentNullException(nameof(targetType));
-            }
-
-            object instanceOfTargetType = Convert.ChangeType(instance, targetType);
-            
-            if (outException != null) {
-                *outException = null;
-            }
-            
-            return instanceOfTargetType.AllocateGCHandleAndGetAddress();
-        } catch (Exception ex) {
-            if (outException != null) {
-                *outException = ex.AllocateGCHandleAndGetAddress();
-            }
-            
+        if (instance == null) {
             return null;
         }
+        
+        Type? targetType = InteropUtils.GetInstance<Type>(targetTypeHandleAddress);
+
+        if (targetType == null) {
+            return null;
+        }
+
+        Type sourceType = instance.GetType();
+
+        if (!sourceType.IsAssignableTo(targetType)) {
+            return null;
+        }
+
+        return instance.AllocateGCHandleAndGetAddress();
     }
     #endregion Public API
 }

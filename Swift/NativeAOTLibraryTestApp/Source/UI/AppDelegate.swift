@@ -50,7 +50,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		setUpUnhandledExceptionHandler()
 		
 		// Only for testing!
-		UnhandledExceptionTest.throwUnhandledException()
+//		UnhandledExceptionTest.throwUnhandledException()
     }
 	
 	@IBAction private func checkBoxDebugLogging_action(_ sender: Any) {
@@ -74,8 +74,8 @@ private extension AppDelegate {
 			let exceptionObject = eventArgs.exceptionObject
 			let exceptionString: String
 			
-			if let exception = try? exceptionObject.cast() as SystemException {
-				exceptionString = exception.toString() ?? "\(exception.message)"
+			if let exception = exceptionObject.cast(as: SystemException.self) {
+				exceptionString = "\(exception.message)\n\(exception.stackTrace ?? "")"
 			} else {
 				let objectAsString = exceptionObject.toString() ?? ""
 				

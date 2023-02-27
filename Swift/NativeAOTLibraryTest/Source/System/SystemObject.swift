@@ -31,10 +31,6 @@ public class SystemObject {
 
 // MARK: - Public API
 public extension SystemObject {
-	enum TypeConversionError: Error {
-		case unknownCastToError
-	}
-	
 	var type: SystemType {
 		guard let typeHandle = System_Object_GetType(handle) else {
 			fatalError("Failed to get type of \(swiftTypeName)")
@@ -61,30 +57,22 @@ public extension SystemObject {
 		return value
 	}
 	
-	func cast<T>() throws -> T where T: SystemObject {
+	func cast<T>(as _: T.Type) -> T? where T: SystemObject {
 		let targetType = T.type
-		var exceptionHandle: System_Exception_t?
-
-		let instanceHandleOfTargetType = System_Object_CastTo(handle,
-															  targetType.handle,
-															  &exceptionHandle)
-
-		guard let instanceHandleOfTargetType else {
-			let error: Error
-
-			if let exceptionHandle {
-				let exception = SystemException(handle: exceptionHandle)
-				error = exception.error
-			} else {
-				error = TypeConversionError.unknownCastToError
-			}
-
-			throw error
+		
+		Debug.log("Will cast \(self.type.name) as \(targetType.name)")
+		
+		let castedInstance: T?
+		
+		if let castedInstanceHandle = System_Object_CastAs(handle, targetType.handle) {
+			castedInstance = .init(handle: castedInstanceHandle)
+		} else {
+			castedInstance = nil
 		}
-
-		let instanceOfTargetType = T(handle: instanceHandleOfTargetType)
-
-		return instanceOfTargetType
+		
+		Debug.log("Did cast \(self.type.name) as \(targetType.name)")
+		
+		return castedInstance
 	}
 }
 
