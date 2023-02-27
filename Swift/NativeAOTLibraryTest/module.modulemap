@@ -6,6 +6,7 @@ framework module NativeAOTLibraryTest {
 	private header "System_Object.h"
 	private header "System_Type.h"
 	private header "System_Exception.h"
+	private header "System_AppDomain.h"
 	private header "System_GC.h"
 	
     private header "NativeAOTLibraryTest_Person.h"
