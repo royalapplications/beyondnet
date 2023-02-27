@@ -12,6 +12,12 @@ internal static unsafe class SystemUnhandledExceptionEventArgs_Native
     #endregion Constants
 
     #region Public API
+    [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "TypeOf")]
+    internal static void* TypeOf()
+    {
+        return typeof(UnhandledExceptionEventArgs).AllocateGCHandleAndGetAddress();
+    }
+    
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "ExceptionObject_Get")]
     internal static void* ExceptionObject_Get(void* handleAddress)
     {

@@ -4,6 +4,8 @@
 #import <stdlib.h>
 #import "TypeDefs.h"
 
+System_Type_t NativeAOTLibraryTest_Company_TypeOf(void);
+
 NativeAOTLibraryTest_Company_t NativeAOTLibraryTest_Company_Create(const char* name);
 
 char* NativeAOTLibraryTest_Company_Name_Get(NativeAOTLibraryTest_Company_t instance);

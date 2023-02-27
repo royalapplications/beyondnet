@@ -13,11 +13,35 @@ internal static unsafe class System_Type
     #endregion Constants
 
     #region Public APIs
+    [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "TypeOf")]
+    internal static void* TypeOf()
+    {
+        return typeof(Type).AllocateGCHandleAndGetAddress();
+    }
+    
+    [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "GetType")]
+    internal static void* GetType(char* typeName)
+    {
+        string? typeNameDn = InteropUtils.ToDotNetString(typeName);
+
+        if (typeNameDn == null) {
+            return null;
+        }
+
+        Type? type = Type.GetType(typeNameDn, false);
+
+        if (type != null) {
+            return type.AllocateGCHandleAndGetAddress();
+        } else {
+            return null;
+        }
+    }
+    
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Name_Get")]
     internal static char* Name_Get(void* handleAddress)
     {
         Type? instance = InteropUtils.GetInstance<Type>(handleAddress);
-
+        
         if (instance == null) {
             return null;
         }

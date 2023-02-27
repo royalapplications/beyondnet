@@ -14,6 +14,12 @@ internal static unsafe class System_AppDomain
     #endregion Constants
     
     #region Public API
+    [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "TypeOf")]
+    internal static void* TypeOf()
+    {
+        return typeof(AppDomain).AllocateGCHandleAndGetAddress();
+    }
+    
     [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "CurrentDomain_Get")]
     internal static void* CurrentDomain_Get()
     {

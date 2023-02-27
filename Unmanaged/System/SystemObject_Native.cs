@@ -13,6 +13,12 @@ internal static unsafe class System_Object
     #endregion Constants
 
     #region Public API
+    [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "TypeOf")]
+    internal static void* TypeOf()
+    {
+        return typeof(object).AllocateGCHandleAndGetAddress();
+    }
+    
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "GetType")]
     internal static void* GetType(void* handleAddress)
     {
@@ -43,6 +49,62 @@ internal static unsafe class System_Object
     internal static void Destroy(void* handleAddress)
     {
         InteropUtils.FreeIfAllocated(handleAddress);
+    }
+
+    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "ToString")]
+    internal static char* ToString(void* handleAddress)
+    {
+        object? instance = InteropUtils.GetInstance<object>(handleAddress);
+
+        if (instance == null) {
+            return null;
+        }
+
+        string? @string = instance.ToString();
+
+        if (@string == null) {
+            return null;
+        }
+        
+        char* cString = @string.ToCString();
+
+        return cString;
+    }
+
+    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "CastTo")]
+    internal static void* CastTo(
+        void* handleAddress,
+        void* targetTypeHandleAddress,
+        void** outException
+    )
+    {
+        object? instance = InteropUtils.GetInstance<object>(handleAddress);
+
+        try {
+            if (instance == null) {
+                throw new ArgumentNullException(nameof(instance));
+            }
+            
+            Type? targetType = InteropUtils.GetInstance<Type>(targetTypeHandleAddress);
+
+            if (targetType == null) {
+                throw new ArgumentNullException(nameof(targetType));
+            }
+
+            object instanceOfTargetType = Convert.ChangeType(instance, targetType);
+            
+            if (outException != null) {
+                *outException = null;
+            }
+            
+            return instanceOfTargetType.AllocateGCHandleAndGetAddress();
+        } catch (Exception ex) {
+            if (outException != null) {
+                *outException = ex.AllocateGCHandleAndGetAddress();
+            }
+            
+            return null;
+        }
     }
     #endregion Public API
 }

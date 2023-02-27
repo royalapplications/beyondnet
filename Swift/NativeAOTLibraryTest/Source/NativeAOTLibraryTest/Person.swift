@@ -1,6 +1,10 @@
 import Foundation
 
-public class Person: SystemObject { }
+public class Person: SystemObject {
+	override class var type: SystemType {
+		.init(handle: NativeAOTLibraryTest_Person_TypeOf())
+	}
+}
 
 // MARK: - Public API
 public extension Person {

@@ -13,6 +13,12 @@ internal static unsafe class Person_Native
     #endregion Constants
 
     #region Public API
+    [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "TypeOf")]
+    internal static void* TypeOf()
+    {
+        return typeof(Person).AllocateGCHandleAndGetAddress();
+    }
+    
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Create")]
     internal static void* Create(
         char* firstName, 

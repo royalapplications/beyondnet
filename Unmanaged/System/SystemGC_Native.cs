@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace NativeAOTLibraryTest;
 
-internal static class System_GC
+internal static unsafe class System_GC
 {
     #region Constants
     private const string NAMESPACE = nameof(System);
@@ -13,6 +13,12 @@ internal static class System_GC
     #endregion Constants
     
     #region Public API
+    [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "TypeOf")]
+    internal static void* TypeOf()
+    {
+        return typeof(GC).AllocateGCHandleAndGetAddress();
+    }
+    
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Collect")]
     internal static void Collect()
     {

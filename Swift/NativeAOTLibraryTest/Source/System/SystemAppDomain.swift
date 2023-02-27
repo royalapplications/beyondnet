@@ -2,6 +2,10 @@ import Foundation
 
 public class SystemAppDomain: SystemObject {
 	public typealias UnhandledExceptionHandler = (_ sender: SystemObject, _ eventArgs: SystemUnhandledExceptionEventArgs) -> Void
+	
+	override class var type: SystemType {
+		.init(handle: System_AppDomain_TypeOf())
+	}
 }
 
 // MARK: - Public API

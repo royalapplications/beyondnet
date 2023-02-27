@@ -1,6 +1,10 @@
 import Foundation
 
-public class SystemGC: SystemObject { }
+public class SystemGC: SystemObject {
+	override class var type: SystemType {
+		.init(handle: System_GC_TypeOf())
+	}
+}
 
 public extension SystemGC {
 	static func collect() {

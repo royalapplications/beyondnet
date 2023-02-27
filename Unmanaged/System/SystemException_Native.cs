@@ -13,6 +13,12 @@ internal static unsafe class System_Exception
     #endregion Constants
     
     #region Public API
+    [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "TypeOf")]
+    internal static void* TypeOf()
+    {
+        return typeof(Exception).AllocateGCHandleAndGetAddress();
+    }
+    
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Message_Get")]
     internal static char* Message_Get(void* handleAddress)
     {

@@ -3,7 +3,7 @@ import Foundation
 public class SystemObject {
     internal let handle: System_Object_t
     
-    internal init(handle: System_Object_t) {
+    internal required init(handle: System_Object_t) {
         self.handle = handle
     }
     
@@ -14,6 +14,10 @@ public class SystemObject {
 	// NOTE: This is very, very expensive and should only be used for debugging purposes
 	public static var swiftTypeName: String {
 		String(describing: Self.self)
+	}
+	
+	class var type: SystemType {
+		.init(handle: System_Object_TypeOf())
 	}
     
     deinit {
@@ -27,6 +31,10 @@ public class SystemObject {
 
 // MARK: - Public API
 public extension SystemObject {
+	enum TypeConversionError: Error {
+		case unknownCastToError
+	}
+	
 	var type: SystemType {
 		guard let typeHandle = System_Object_GetType(handle) else {
 			fatalError("Failed to get type of \(swiftTypeName)")
@@ -35,6 +43,48 @@ public extension SystemObject {
 		let type = SystemType(handle: typeHandle)
 		
 		return type
+	}
+	
+	func toString() -> String? {
+		Debug.log("Will call toString of \(swiftTypeName)")
+		
+		guard let valueC = System_Object_ToString(handle) else {
+			return nil
+		}
+		
+		defer { valueC.deallocate() }
+		
+		Debug.log("Did call toString of \(swiftTypeName)")
+		
+		let value = String(cString: valueC)
+		
+		return value
+	}
+	
+	func cast<T>() throws -> T where T: SystemObject {
+		let targetType = T.type
+		var exceptionHandle: System_Exception_t?
+
+		let instanceHandleOfTargetType = System_Object_CastTo(handle,
+															  targetType.handle,
+															  &exceptionHandle)
+
+		guard let instanceHandleOfTargetType else {
+			let error: Error
+
+			if let exceptionHandle {
+				let exception = SystemException(handle: exceptionHandle)
+				error = exception.error
+			} else {
+				error = TypeConversionError.unknownCastToError
+			}
+
+			throw error
+		}
+
+		let instanceOfTargetType = T(handle: instanceHandleOfTargetType)
+
+		return instanceOfTargetType
 	}
 }
 

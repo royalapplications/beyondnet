@@ -2,6 +2,10 @@ import Foundation
 
 public class SystemException: SystemObject {
 	public static let stackTraceKey = "stackTrace"
+	
+	override class var type: SystemType {
+		.init(handle: System_Exception_TypeOf())
+	}
 }
 
 public extension SystemException {

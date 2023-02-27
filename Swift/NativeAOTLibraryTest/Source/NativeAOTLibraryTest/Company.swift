@@ -2,6 +2,10 @@ import Foundation
 
 public class Company: SystemObject {
 	public typealias NumberOfEmployeesChangedHandler = () -> Void
+	
+	override class var type: SystemType {
+		.init(handle: NativeAOTLibraryTest_Company_TypeOf())
+	}
 }
 
 // MARK: - Public API

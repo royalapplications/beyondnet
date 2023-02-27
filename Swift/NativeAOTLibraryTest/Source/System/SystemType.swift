@@ -1,9 +1,29 @@
 import Foundation
 
-public class SystemType: SystemObject { }
+public class SystemType: SystemObject {
+	override class var type: SystemType {
+		.init(handle: System_Type_TypeOf())
+	}
+}
 
 // MARK: - Public API
 public extension SystemType {
+	convenience init?(typeName: String) {
+		Debug.log("Will call GetType of \(Self.swiftTypeName)")
+		
+		let handle = typeName.withCString { typeNameC in
+			System_Type_GetType(typeNameC)
+		}
+		
+		Debug.log("Did call GetType of \(Self.swiftTypeName)")
+		
+		guard let handle else {
+			return nil
+		}
+		
+		self.init(handle: handle)
+	}
+	
 	var name: String {
 		Debug.log("Will get name of \(swiftTypeName)")
 		

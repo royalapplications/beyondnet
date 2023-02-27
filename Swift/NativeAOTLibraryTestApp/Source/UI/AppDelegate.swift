@@ -71,15 +71,19 @@ private extension AppDelegate {
 		let appDomain = SystemAppDomain.current()
 		
 		appDomain.addUnhandledExceptionHandler { _, eventArgs in
-			// TODO: Try to cast eventArgs.exceptionObject to an SystemException object
-			
 			let exceptionObject = eventArgs.exceptionObject
-//			let exception = SystemException(
+			let exceptionString: String
+			
+			if let exception = try? exceptionObject.cast() as SystemException {
+				exceptionString = exception.toString() ?? "\(exception.message)"
+			} else {
+				let objectAsString = exceptionObject.toString() ?? ""
+				
+				exceptionString = "Not an exception object: \(objectAsString)"
+			}
 			
 			// We can't recover from unhandled exceptions that are thrown from NativeAOT, so let's crash here.
-			let exceptionObjectTypeName = exceptionObject.type.fullName ?? exceptionObject.type.name
-			
-			fatalError("An unhandled .NET exception occurred. Exception Type: \"\(exceptionObjectTypeName)\"")
+			fatalError("An unhandled .NET exception occurred:\n\"\(exceptionString)\"")
 		}
 	}
 }

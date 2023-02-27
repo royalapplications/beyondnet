@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #import "TypeDefs.h"
 
+System_Type_t NativeAOTLibraryTest_Person_TypeOf(void);
+
 NativeAOTLibraryTest_Person_t NativeAOTLibraryTest_Person_Create(const char* firstName,
                                                                  const char* lastName,
                                                                  const int32_t age);

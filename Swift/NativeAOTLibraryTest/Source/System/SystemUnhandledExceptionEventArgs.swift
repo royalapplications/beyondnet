@@ -1,6 +1,10 @@
 import Foundation
 
-public class SystemUnhandledExceptionEventArgs: SystemObject { }
+public class SystemUnhandledExceptionEventArgs: SystemObject {
+	override class var type: SystemType {
+		.init(handle: System_UnhandledExceptionEventArgs_TypeOf())
+	}
+}
 
 // MARK: - Public API
 public extension SystemUnhandledExceptionEventArgs {

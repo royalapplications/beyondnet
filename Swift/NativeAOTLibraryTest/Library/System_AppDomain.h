@@ -8,6 +8,7 @@ typedef void (*UnhandledExceptionEventHandler_t)(void* context,
 												 System_Object_t sender,
 												 System_UnhandledExceptionEventArgs_t eventArgs);
 
+System_Type_t System_AppDomain_TypeOf(void);
 System_AppDomain_t System_AppDomain_CurrentDomain_Get(void);
 int32_t System_AppDomain_Id_Get(System_AppDomain_t instance);
 CBool System_AppDomain_IsDefaultAppDomain(System_AppDomain_t instance);
