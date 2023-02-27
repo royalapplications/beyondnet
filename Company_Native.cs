@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace NativeAOTLibraryTest;
 
-internal static class Company_Native
+internal static unsafe class Company_Native
 {
     #region Constants
     private const string NAMESPACE = nameof(NativeAOTLibraryTest);
@@ -13,18 +13,18 @@ internal static class Company_Native
     #endregion Constants
 
     #region Helpers
-    internal static Company? GetCompanyFromHandleAddress(nint handleAddress)
+    internal static Company? GetInstanceFromHandleAddress(void* handleAddress)
     {
-        GCHandle? handle = handleAddress.ToGCHandle();
-        Company? @object = handle?.Target as Company;
+        GCHandle? handle = InteropUtils.GetGCHandle(handleAddress);
+        Company? instance = handle?.Target as Company;
 
-        return @object;
+        return instance;
     }
 
-    internal static nint AllocateHandleAndGetAddress(this Company @object)
+    internal static void* AllocateHandleAndGetAddress(this Company @object)
     {
         GCHandle handle = @object.AllocateGCHandle(GCHandleType.Normal);
-        nint handleAddress = handle.ToHandleAddress();
+        void* handleAddress = handle.ToHandleAddress();
 
         return handleAddress;
     }
@@ -32,43 +32,43 @@ internal static class Company_Native
 
     #region Public API
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Create")]
-    internal static unsafe nint Create(char* name)
+    internal static void* Create(char* name)
     {
         string? nameDn = InteropUtils.ToDotNetString(name);
 
         if (nameDn == null) {
-            return nint.Zero;
+            return null;
         }
 
-        Company @object = new(
+        Company instance = new(
             nameDn
         );
 
-        nint handleAddress = @object.AllocateHandleAndGetAddress();
+        void* handleAddress = instance.AllocateHandleAndGetAddress();
 
         return handleAddress;
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Name_Get")]
-    internal static unsafe char* Name_Get(nint handleAddress)
+    internal static char* Name_Get(void* handleAddress)
     {
-        Company? company = GetCompanyFromHandleAddress(handleAddress);
+        Company? instance = GetInstanceFromHandleAddress(handleAddress);
 
-        if (company == null) {
+        if (instance == null) {
             return null;
         }
 
-        char* nameC = company.Name.ToCString();
+        char* nameC = instance.Name.ToCString();
 
         return nameC;
     }
     
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Name_Set")]
-    internal static unsafe void Name_Set(nint handleAddress, char* name)
+    internal static void Name_Set(void* handleAddress, char* name)
     {
-        Company? company = GetCompanyFromHandleAddress(handleAddress);
+        Company? instance = GetInstanceFromHandleAddress(handleAddress);
 
-        if (company == null) {
+        if (instance == null) {
             return;
         }
 
@@ -78,40 +78,40 @@ internal static class Company_Native
             return;
         }
 
-        company.Name = nameDotNet;
+        instance.Name = nameDotNet;
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "NumberOfEmployees_Get")]
-    internal static int NumberOfEmployees_Get(nint handleAddress)
+    internal static int NumberOfEmployees_Get(void* handleAddress)
     {
-        Company? company = GetCompanyFromHandleAddress(handleAddress);
+        Company? instance = GetInstanceFromHandleAddress(handleAddress);
 
-        if (company == null) {
+        if (instance == null) {
             return (int)CStatus.Failure;
         }
 
-        int numberOfEmployees = company.NumberOfEmployees;
+        int numberOfEmployees = instance.NumberOfEmployees;
 
         return numberOfEmployees;
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "AddEmployee")]
-    internal static CStatus AddEmployee(nint handleAddress, nint employeeHandleAddress)
+    internal static CStatus AddEmployee(void* handleAddress, void* employeeHandleAddress)
     {
-        Company? company = GetCompanyFromHandleAddress(handleAddress);
+        Company? instance = GetInstanceFromHandleAddress(handleAddress);
 
-        if (company == null) {
+        if (instance == null) {
             return CStatus.Failure;
         }
 
-        Person? employee = Person_Native.GetPersonFromHandleAddress(employeeHandleAddress);
+        Person? employee = Person_Native.GetInstanceFromHandleAddress(employeeHandleAddress);
 
         if (employee == null) {
             return CStatus.Failure;
         }
 
         try {
-            company.AddEmployee(employee);
+            instance.AddEmployee(employee);
         } catch {
             return CStatus.Failure;
         }
@@ -120,22 +120,22 @@ internal static class Company_Native
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "RemoveEmployee")]
-    internal static CStatus RemoveEmployee(nint handleAddress, nint employeeHandleAddress)
+    internal static CStatus RemoveEmployee(void* handleAddress, void* employeeHandleAddress)
     {
-        Company? company = GetCompanyFromHandleAddress(handleAddress);
+        Company? instance = GetInstanceFromHandleAddress(handleAddress);
 
-        if (company == null) {
+        if (instance == null) {
             return CStatus.Failure;
         }
 
-        Person? employee = Person_Native.GetPersonFromHandleAddress(employeeHandleAddress);
+        Person? employee = Person_Native.GetInstanceFromHandleAddress(employeeHandleAddress);
 
         if (employee == null) {
             return CStatus.Failure;
         }
 
         try {
-            company.RemoveEmployee(employee);
+            instance.RemoveEmployee(employee);
         } catch {
             return CStatus.Failure;
         }
@@ -144,21 +144,21 @@ internal static class Company_Native
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "ContainsEmployee")]
-    internal static CBool ContainsEmployee(nint handleAddress, nint employeeHandleAddress)
+    internal static CBool ContainsEmployee(void* handleAddress, void* employeeHandleAddress)
     {
-        Company? company = GetCompanyFromHandleAddress(handleAddress);
+        Company? instance = GetInstanceFromHandleAddress(handleAddress);
 
-        if (company == null) {
+        if (instance == null) {
             return false.ToCBool();
         }
 
-        Person? employee = Person_Native.GetPersonFromHandleAddress(employeeHandleAddress);
+        Person? employee = Person_Native.GetInstanceFromHandleAddress(employeeHandleAddress);
 
         if (employee == null) {
             return false.ToCBool();
         }
 
-        bool contains = company.ContainsEmployee(employee);
+        bool contains = instance.ContainsEmployee(employee);
 
         if (contains) {
             return true.ToCBool();
@@ -168,21 +168,27 @@ internal static class Company_Native
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "GetEmployeeAtIndex")]
-    internal static nint GetEmployeeAtIndex(nint handleAddress, int index)
+    internal static void* GetEmployeeAtIndex(void* handleAddress, int index)
     {
-        Company? company = GetCompanyFromHandleAddress(handleAddress);
+        Company? instance = GetInstanceFromHandleAddress(handleAddress);
 
-        if (company == null) {
-            return nint.Zero;
+        if (instance == null) {
+            return null;
         }
 
-        Person? employee = company.GetEmployeeAtIndex(index);
-        nint employeeHandleAddress = employee?.AllocateHandleAndGetAddress() ?? nint.Zero;
+        Person? employee = instance.GetEmployeeAtIndex(index);
+        void* employeeHandleAddress;
+
+        if (employee != null) {
+            employeeHandleAddress = employee.AllocateHandleAndGetAddress();
+        } else {
+            employeeHandleAddress = null;
+        }
 
         return employeeHandleAddress;
     }
     
-    private unsafe class NumberOfEmployeesChangedHandler
+    private class NumberOfEmployeesChangedHandler
     {
         internal Company.NumberOfEmployeesChangedDelegate Trampoline { get; }
         internal void* Context { get; }
@@ -203,13 +209,13 @@ internal static class Company_Native
     private static readonly ConcurrentDictionary<Company, NumberOfEmployeesChangedHandler> m_numberOfEmployeesChangedHandlers = new();
 
     [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "NumberOfEmployeesChanged_Get")]
-    internal static unsafe CStatus NumberOfEmployeesChanged_Get(
-        nint handleAddress,
+    internal static CStatus NumberOfEmployeesChanged_Get(
+        void* handleAddress,
         void** outContext,
         delegate* unmanaged<void*, void>* outFunctionPointer
     )
     {
-        Company? company = GetCompanyFromHandleAddress(handleAddress);
+        Company? company = GetInstanceFromHandleAddress(handleAddress);
 
         if (company == null) {
             return CStatus.Failure;
@@ -255,13 +261,13 @@ internal static class Company_Native
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "NumberOfEmployeesChanged_Set")]
-    internal static unsafe void NumberOfEmployeesChanged_Set(
-        nint handleAddress,
+    internal static void NumberOfEmployeesChanged_Set(
+        void* handleAddress,
         void* context,
         delegate* unmanaged<void*, void> functionPointer
     )
     {
-        Company? company = GetCompanyFromHandleAddress(handleAddress);
+        Company? company = GetInstanceFromHandleAddress(handleAddress);
 
         if (company == null) {
             return;

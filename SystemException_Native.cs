@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace NativeAOTLibraryTest;
 
-internal static class System_Exception
+internal static unsafe class System_Exception
 {
     #region Constants
     private const string NAMESPACE = nameof(System);
@@ -13,29 +13,29 @@ internal static class System_Exception
     #endregion Constants
     
     #region Helpers
-    internal static Exception? GetExceptionFromHandleAddress(nint handleAddress)
+    internal static Exception? GetInstanceFromHandleAddress(void* handleAddress)
     {
-        GCHandle? handle = handleAddress.ToGCHandle();
-        Exception? @object = handle?.Target as Exception;
+        GCHandle? handle = InteropUtils.GetGCHandle(handleAddress);
+        Exception? instance = handle?.Target as Exception;
 
-        return @object;
+        return instance;
     }
 
-    internal static nint AllocateHandleAndGetAddress(this Exception @object)
+    internal static void* AllocateHandleAndGetAddress(this Exception instance)
     {
-        GCHandle handle = @object.AllocateGCHandle(GCHandleType.Normal);
-        nint handleAddress = handle.ToHandleAddress();
+        GCHandle handle = instance.AllocateGCHandle(GCHandleType.Normal);
+        void* handleAddress = handle.ToHandleAddress();
 
         return handleAddress;
     }
     
-    internal static nint Create(Exception? exception)
+    internal static void* Create(Exception? instance)
     {
-        if (exception == null) {
-            return nint.Zero;
+        if (instance == null) {
+            return null;
         }
         
-        nint handleAddress = AllocateHandleAndGetAddress(exception);
+        void* handleAddress = AllocateHandleAndGetAddress(instance);
 
         return handleAddress;
     }
@@ -43,9 +43,9 @@ internal static class System_Exception
 
     #region Public API
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Message_Get")]
-    internal static unsafe char* Message_Get(nint handleAddress)
+    internal static char* Message_Get(void* handleAddress)
     {
-        Exception? exception = GetExceptionFromHandleAddress(handleAddress);
+        Exception? exception = GetInstanceFromHandleAddress(handleAddress);
 
         if (exception == null) {
             return null;
@@ -57,9 +57,9 @@ internal static class System_Exception
     }
     
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "HResult_Get")]
-    internal static int HResult_Get(nint handleAddress)
+    internal static int HResult_Get(void* handleAddress)
     {
-        Exception? exception = GetExceptionFromHandleAddress(handleAddress);
+        Exception? exception = GetInstanceFromHandleAddress(handleAddress);
 
         if (exception == null) {
             return 0;
@@ -69,9 +69,9 @@ internal static class System_Exception
     }
     
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "StackTrace_Get")]
-    internal static unsafe char* StackTrace_Get(nint handleAddress)
+    internal static char* StackTrace_Get(void* handleAddress)
     {
-        Exception? exception = GetExceptionFromHandleAddress(handleAddress);
+        Exception? exception = GetInstanceFromHandleAddress(handleAddress);
 
         if (exception == null) {
             return null;

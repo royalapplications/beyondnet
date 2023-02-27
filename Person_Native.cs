@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace NativeAOTLibraryTest;
 
-internal static class Person_Native
+internal static unsafe class Person_Native
 {
     #region Constants
     private const string NAMESPACE = nameof(NativeAOTLibraryTest);
@@ -13,18 +13,18 @@ internal static class Person_Native
     #endregion Constants
 
     #region Helpers
-    internal static Person? GetPersonFromHandleAddress(nint handleAddress)
+    internal static Person? GetInstanceFromHandleAddress(void* handleAddress)
     {
-        GCHandle? handle = handleAddress.ToGCHandle();
-        Person? @object = handle?.Target as Person;
+        GCHandle? handle = InteropUtils.GetGCHandle(handleAddress);
+        Person? instance = handle?.Target as Person;
 
-        return @object;
+        return instance;
     }
 
-    internal static nint AllocateHandleAndGetAddress(this Person @object)
+    internal static void* AllocateHandleAndGetAddress(this Person instance)
     {
-        GCHandle handle = @object.AllocateGCHandle(GCHandleType.Normal);
-        nint handleAddress = handle.ToHandleAddress();
+        GCHandle handle = instance.AllocateGCHandle(GCHandleType.Normal);
+        void* handleAddress = handle.ToHandleAddress();
 
         return handleAddress;
     }
@@ -32,77 +32,81 @@ internal static class Person_Native
 
     #region Public API
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Create")]
-    internal static unsafe nint Create(char* firstName, char* lastName, int age)
+    internal static void* Create(
+        char* firstName, 
+        char* lastName,
+        int age
+    )
     {
         string? firstNameDn = InteropUtils.ToDotNetString(firstName);
 
         if (firstNameDn == null) {
-            return nint.Zero;
+            return null;
         }
 
         string? lastNameDn = InteropUtils.ToDotNetString(lastName);
 
         if (lastNameDn == null) {
-            return nint.Zero;
+            return null;
         }
 
-        Person @object = new(
+        Person instance = new(
             firstNameDn,
             lastNameDn,
             age
         );
 
-        nint handleAddress = @object.AllocateHandleAndGetAddress();
+        void* handleAddress = instance.AllocateHandleAndGetAddress();
 
         return handleAddress;
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Age_Get")]
-    internal static int Age_Get(nint handleAddress)
+    internal static int Age_Get(void* handleAddress)
     {
-        Person? person = GetPersonFromHandleAddress(handleAddress);
+        Person? instance = GetInstanceFromHandleAddress(handleAddress);
 
-        if (person == null) {
+        if (instance == null) {
             return (int)CStatus.Failure;
         }
 
-        int age = person.Age;
+        int age = instance.Age;
 
         return age;
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Age_Set")]
-    internal static void Age_Set(nint handleAddress, int age)
+    internal static void Age_Set(void* handleAddress, int age)
     {
-        Person? person = GetPersonFromHandleAddress(handleAddress);
+        Person? instance = GetInstanceFromHandleAddress(handleAddress);
 
-        if (person == null) {
+        if (instance == null) {
             return;
         }
 
-        person.Age = age;
+        instance.Age = age;
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "FirstName_Get")]
-    internal static unsafe char* FirstName_Get(nint handleAddress)
+    internal static char* FirstName_Get(void* handleAddress)
     {
-        Person? person = GetPersonFromHandleAddress(handleAddress);
+        Person? instance = GetInstanceFromHandleAddress(handleAddress);
 
-        if (person == null) {
+        if (instance == null) {
             return null;
         }
 
-        char* firstNameC = person.FirstName.ToCString();
+        char* firstNameC = instance.FirstName.ToCString();
 
         return firstNameC;
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "FirstName_Set")]
-    internal static unsafe void FirstName_Set(nint handleAddress, char* firstName)
+    internal static void FirstName_Set(void* handleAddress, char* firstName)
     {
-        Person? person = GetPersonFromHandleAddress(handleAddress);
+        Person? instance = GetInstanceFromHandleAddress(handleAddress);
 
-        if (person == null) {
+        if (instance == null) {
             return;
         }
 
@@ -112,29 +116,29 @@ internal static class Person_Native
             return;
         }
 
-        person.FirstName = firstNameDotNet;
+        instance.FirstName = firstNameDotNet;
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "LastName_Get")]
-    internal static unsafe char* LastName_Get(nint handleAddress)
+    internal static char* LastName_Get(void* handleAddress)
     {
-        Person? person = GetPersonFromHandleAddress(handleAddress);
+        Person? instance = GetInstanceFromHandleAddress(handleAddress);
 
-        if (person == null) {
+        if (instance == null) {
             return null;
         }
 
-        char* lastNameC = person.LastName.ToCString();
+        char* lastNameC = instance.LastName.ToCString();
 
         return lastNameC;
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "LastName_Set")]
-    internal static unsafe void LastName_Set(nint handleAddress, char* lastName)
+    internal static void LastName_Set(void* handleAddress, char* lastName)
     {
-        Person? person = GetPersonFromHandleAddress(handleAddress);
+        Person? instance = GetInstanceFromHandleAddress(handleAddress);
 
-        if (person == null) {
+        if (instance == null) {
             return;
         }
 
@@ -144,53 +148,53 @@ internal static class Person_Native
             return;
         }
 
-        person.LastName = lastNameDotNet;
+        instance.LastName = lastNameDotNet;
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "FullName_Get")]
-    internal static unsafe char* FullName_Get(nint handleAddress)
+    internal static char* FullName_Get(void* handleAddress)
     {
-        Person? person = GetPersonFromHandleAddress(handleAddress);
+        Person? instance = GetInstanceFromHandleAddress(handleAddress);
 
-        if (person == null) {
+        if (instance == null) {
             return null;
         }
 
-        char* fullNameC = person.FullName.ToCString();
+        char* fullNameC = instance.FullName.ToCString();
 
         return fullNameC;
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "ReduceAge")]
-    internal static unsafe CStatus ReduceAge(
-        nint handleAddress,
+    internal static CStatus ReduceAge(
+        void* handleAddress,
         int byYears,
-        nint* exception
+        void** outException
     )
     {
-        Person? person = GetPersonFromHandleAddress(handleAddress);
+        Person? instance = GetInstanceFromHandleAddress(handleAddress);
 
-        if (person == null) {
-            if (exception != null) {
-                *exception = nint.Zero;
+        if (instance == null) {
+            if (outException != null) {
+                *outException = null;
             }
             
             return CStatus.Failure;
         }
 
         try {
-            person.ReduceAge(byYears);
+            instance.ReduceAge(byYears);
 
-            if (exception != null) {
-                *exception = nint.Zero;
+            if (outException != null) {
+                *outException = null;
             }
             
             return CStatus.Success;
         } catch (Exception ex) {
-            if (exception != null) {
-                nint exceptionHandleAddress = System_Exception.Create(ex);
+            if (outException != null) {
+                void* exceptionHandleAddress = System_Exception.Create(ex);
                 
-                *exception = exceptionHandleAddress;
+                *outException = exceptionHandleAddress;
             }
             
             return CStatus.Failure;

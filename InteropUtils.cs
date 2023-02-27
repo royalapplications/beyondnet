@@ -14,11 +14,8 @@ internal enum CBool: int
     False = 0
 }
 
-internal static class InteropUtils 
+internal static unsafe class InteropUtils 
 {
-    internal delegate void VoidDelegate();
-    internal unsafe delegate void ContextDelegate(void* context);
-    
     internal static GCHandle AllocateGCHandle(this object @object, GCHandleType handleType)
     {
         GCHandle handle = GCHandle.Alloc(@object, handleType);
@@ -35,25 +32,25 @@ internal static class InteropUtils
         handle.Free();
     }
 
-    internal static nint ToHandleAddress(this GCHandle handle)
+    internal static void* ToHandleAddress(this GCHandle handle)
     {
-        nint handleAddress = GCHandle.ToIntPtr(handle);
+        void* handleAddress = (void*)GCHandle.ToIntPtr(handle);
 
         return handleAddress;
     }
 
-    internal static GCHandle? ToGCHandle(this nint handleAddress)
+    internal static GCHandle? GetGCHandle(void* handleAddress)
     {
-        if (handleAddress == nint.Zero) {
+        if (handleAddress == null) {
             return null;
         }
-
-        GCHandle handle = GCHandle.FromIntPtr(handleAddress);
+        
+        GCHandle handle = GCHandle.FromIntPtr((nint)handleAddress);
 
         return handle;
     }
 
-    internal static unsafe char* ToCString(this string? @string)
+    internal static char* ToCString(this string? @string)
     {
         if (@string == null) {
             return null;
@@ -68,7 +65,7 @@ internal static class InteropUtils
         return (char*)cString;
     }
 
-    internal static unsafe string? ToDotNetString(char* cString)
+    internal static string? ToDotNetString(char* cString)
     {
         if (cString == null) {
             return null;

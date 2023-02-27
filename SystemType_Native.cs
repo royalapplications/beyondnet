@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace NativeAOTLibraryTest;
 
-internal static class System_Type
+internal static unsafe class System_Type
 {
     #region Constants
     private const string NAMESPACE = nameof(System);
@@ -13,27 +13,27 @@ internal static class System_Type
     #endregion Constants
 
     #region Helpers
-    internal static Type? GetTypeFromHandleAddress(nint handleAddress)
+    internal static Type? GetInstanceFromHandleAddress(void* handleAddress)
     {
-        GCHandle? handle = handleAddress.ToGCHandle();
-        Type? @object = handle?.Target as Type;
+        GCHandle? handle = InteropUtils.GetGCHandle(handleAddress);
+        Type? instance = handle?.Target as Type;
 
-        return @object;
+        return instance;
     }
     #endregion Helpers
 
-    internal static nint Create(Type type)
+    internal static void* Create(Type instance)
     {
-        GCHandle handle = type.AllocateGCHandle(GCHandleType.Normal);
-        nint handleAddress = handle.ToHandleAddress();
+        GCHandle handle = instance.AllocateGCHandle(GCHandleType.Normal);
+        void* handleAddress = handle.ToHandleAddress();
 
         return handleAddress;
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Name_Get")]
-    internal static unsafe char* Name_Get(nint handleAddress)
+    internal static char* Name_Get(void* handleAddress)
     {
-        Type? type = GetTypeFromHandleAddress(handleAddress);
+        Type? type = GetInstanceFromHandleAddress(handleAddress);
 
         if (type == null) {
             return null;
@@ -45,9 +45,9 @@ internal static class System_Type
     }
     
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "FullName_Get")]
-    internal static unsafe char* FullName_Get(nint handleAddress)
+    internal static char* FullName_Get(void* handleAddress)
     {
-        Type? type = GetTypeFromHandleAddress(handleAddress);
+        Type? type = GetInstanceFromHandleAddress(handleAddress);
 
         if (type == null) {
             return null;

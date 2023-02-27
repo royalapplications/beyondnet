@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace NativeAOTLibraryTest;
 
-internal static class System_Object
+internal static unsafe class System_Object
 {
     #region Constants
     private const string NAMESPACE = nameof(System);
@@ -13,28 +13,28 @@ internal static class System_Object
     #endregion Constants
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "GetType")]
-    internal static nint GetType(nint handleAddress)
+    internal static void* GetType(void* handleAddress)
     {
-        GCHandle? handle = handleAddress.ToGCHandle();
-        object? @object = handle?.Target;
-        Type? type = @object?.GetType();
+        GCHandle? handle = InteropUtils.GetGCHandle(handleAddress);
+        object? instance = handle?.Target;
+        Type? type = instance?.GetType();
 
         if (type == null) {
-            return nint.Zero;
+            return null;
         }
 
-        nint nativeType = System_Type.Create(type);
+        void* nativeType = System_Type.Create(type);
 
         return nativeType;
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Equals")]
-    internal static CBool Equals(nint firstHandleAddress, nint secondHandleAddress)
+    internal static CBool Equals(void* firstHandleAddress, void* secondHandleAddress)
     {
-        GCHandle? firstHandle = firstHandleAddress.ToGCHandle();
+        GCHandle? firstHandle = InteropUtils.GetGCHandle(firstHandleAddress);
         object? firstObject = firstHandle?.Target;
         
-        GCHandle? secondHandle = secondHandleAddress.ToGCHandle();
+        GCHandle? secondHandle = InteropUtils.GetGCHandle(secondHandleAddress);
         object? secondObject = secondHandle?.Target;
 
         bool equals = firstObject == secondObject;
@@ -43,10 +43,10 @@ internal static class System_Object
     }
     
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Destroy")]
-    internal static void Destroy(nint handleAddress)
+    internal static void Destroy(void* handleAddress)
     {
-        GCHandle? handle = handleAddress.ToGCHandle();
+        GCHandle? instance = InteropUtils.GetGCHandle(handleAddress);
 
-        handle?.FreeIfAllocated();
+        instance?.FreeIfAllocated();
     }
 }
