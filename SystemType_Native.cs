@@ -12,28 +12,10 @@ internal static unsafe class System_Type
     private const string ENTRYPOINT_PREFIX = FULL_CLASS_NAME + "_";
     #endregion Constants
 
-    #region Helpers
-    internal static Type? GetInstanceFromHandleAddress(void* handleAddress)
-    {
-        GCHandle? handle = InteropUtils.GetGCHandle(handleAddress);
-        Type? instance = handle?.Target as Type;
-
-        return instance;
-    }
-    #endregion Helpers
-
-    internal static void* Create(Type instance)
-    {
-        GCHandle handle = instance.AllocateGCHandle(GCHandleType.Normal);
-        void* handleAddress = handle.ToHandleAddress();
-
-        return handleAddress;
-    }
-
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Name_Get")]
     internal static char* Name_Get(void* handleAddress)
     {
-        Type? type = GetInstanceFromHandleAddress(handleAddress);
+        Type? type = InteropUtils.GetInstance<Type>(handleAddress);
 
         if (type == null) {
             return null;
@@ -47,7 +29,7 @@ internal static unsafe class System_Type
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "FullName_Get")]
     internal static char* FullName_Get(void* handleAddress)
     {
-        Type? type = GetInstanceFromHandleAddress(handleAddress);
+        Type? type = InteropUtils.GetInstance<Type>(handleAddress);
 
         if (type == null) {
             return null;

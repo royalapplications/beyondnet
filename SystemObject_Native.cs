@@ -15,15 +15,14 @@ internal static unsafe class System_Object
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "GetType")]
     internal static void* GetType(void* handleAddress)
     {
-        GCHandle? handle = InteropUtils.GetGCHandle(handleAddress);
-        object? instance = handle?.Target;
+        object? instance = InteropUtils.GetInstance<object>(handleAddress);
         Type? type = instance?.GetType();
 
         if (type == null) {
             return null;
         }
 
-        void* nativeType = System_Type.Create(type);
+        void* nativeType = type.AllocateGCHandleAndGetAddress();
 
         return nativeType;
     }
@@ -31,11 +30,8 @@ internal static unsafe class System_Object
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Equals")]
     internal static CBool Equals(void* firstHandleAddress, void* secondHandleAddress)
     {
-        GCHandle? firstHandle = InteropUtils.GetGCHandle(firstHandleAddress);
-        object? firstObject = firstHandle?.Target;
-        
-        GCHandle? secondHandle = InteropUtils.GetGCHandle(secondHandleAddress);
-        object? secondObject = secondHandle?.Target;
+        object? firstObject = InteropUtils.GetInstance<object>(firstHandleAddress);
+        object? secondObject = InteropUtils.GetInstance<object>(secondHandleAddress);
 
         bool equals = firstObject == secondObject;
 
@@ -45,8 +41,6 @@ internal static unsafe class System_Object
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Destroy")]
     internal static void Destroy(void* handleAddress)
     {
-        GCHandle? instance = InteropUtils.GetGCHandle(handleAddress);
-
-        instance?.FreeIfAllocated();
+        InteropUtils.FreeIfAllocated(handleAddress);
     }
 }

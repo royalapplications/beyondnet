@@ -12,24 +12,6 @@ internal static unsafe class Person_Native
     private const string ENTRYPOINT_PREFIX = FULL_CLASS_NAME + "_";
     #endregion Constants
 
-    #region Helpers
-    internal static Person? GetInstanceFromHandleAddress(void* handleAddress)
-    {
-        GCHandle? handle = InteropUtils.GetGCHandle(handleAddress);
-        Person? instance = handle?.Target as Person;
-
-        return instance;
-    }
-
-    internal static void* AllocateHandleAndGetAddress(this Person instance)
-    {
-        GCHandle handle = instance.AllocateGCHandle(GCHandleType.Normal);
-        void* handleAddress = handle.ToHandleAddress();
-
-        return handleAddress;
-    }
-    #endregion Helpers
-
     #region Public API
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Create")]
     internal static void* Create(
@@ -56,7 +38,7 @@ internal static unsafe class Person_Native
             age
         );
 
-        void* handleAddress = instance.AllocateHandleAndGetAddress();
+        void* handleAddress = instance.AllocateGCHandleAndGetAddress();
 
         return handleAddress;
     }
@@ -64,7 +46,7 @@ internal static unsafe class Person_Native
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Age_Get")]
     internal static int Age_Get(void* handleAddress)
     {
-        Person? instance = GetInstanceFromHandleAddress(handleAddress);
+        Person? instance = InteropUtils.GetInstance<Person>(handleAddress);
 
         if (instance == null) {
             return (int)CStatus.Failure;
@@ -78,7 +60,7 @@ internal static unsafe class Person_Native
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Age_Set")]
     internal static void Age_Set(void* handleAddress, int age)
     {
-        Person? instance = GetInstanceFromHandleAddress(handleAddress);
+        Person? instance = InteropUtils.GetInstance<Person>(handleAddress);
 
         if (instance == null) {
             return;
@@ -90,7 +72,7 @@ internal static unsafe class Person_Native
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "FirstName_Get")]
     internal static char* FirstName_Get(void* handleAddress)
     {
-        Person? instance = GetInstanceFromHandleAddress(handleAddress);
+        Person? instance = InteropUtils.GetInstance<Person>(handleAddress);
 
         if (instance == null) {
             return null;
@@ -104,7 +86,7 @@ internal static unsafe class Person_Native
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "FirstName_Set")]
     internal static void FirstName_Set(void* handleAddress, char* firstName)
     {
-        Person? instance = GetInstanceFromHandleAddress(handleAddress);
+        Person? instance = InteropUtils.GetInstance<Person>(handleAddress);
 
         if (instance == null) {
             return;
@@ -122,7 +104,7 @@ internal static unsafe class Person_Native
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "LastName_Get")]
     internal static char* LastName_Get(void* handleAddress)
     {
-        Person? instance = GetInstanceFromHandleAddress(handleAddress);
+        Person? instance = InteropUtils.GetInstance<Person>(handleAddress);
 
         if (instance == null) {
             return null;
@@ -136,7 +118,7 @@ internal static unsafe class Person_Native
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "LastName_Set")]
     internal static void LastName_Set(void* handleAddress, char* lastName)
     {
-        Person? instance = GetInstanceFromHandleAddress(handleAddress);
+        Person? instance = InteropUtils.GetInstance<Person>(handleAddress);
 
         if (instance == null) {
             return;
@@ -154,7 +136,7 @@ internal static unsafe class Person_Native
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "FullName_Get")]
     internal static char* FullName_Get(void* handleAddress)
     {
-        Person? instance = GetInstanceFromHandleAddress(handleAddress);
+        Person? instance = InteropUtils.GetInstance<Person>(handleAddress);
 
         if (instance == null) {
             return null;
@@ -172,7 +154,7 @@ internal static unsafe class Person_Native
         void** outException
     )
     {
-        Person? instance = GetInstanceFromHandleAddress(handleAddress);
+        Person? instance = InteropUtils.GetInstance<Person>(handleAddress);
 
         if (instance == null) {
             if (outException != null) {
@@ -192,7 +174,7 @@ internal static unsafe class Person_Native
             return CStatus.Success;
         } catch (Exception ex) {
             if (outException != null) {
-                void* exceptionHandleAddress = System_Exception.Create(ex);
+                void* exceptionHandleAddress = ex.AllocateGCHandleAndGetAddress();
                 
                 *outException = exceptionHandleAddress;
             }

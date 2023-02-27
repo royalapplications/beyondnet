@@ -2,27 +2,37 @@ using System.Runtime.InteropServices;
 
 namespace NativeAOTLibraryTest;
 
-internal enum CStatus: int
+internal static unsafe class InteropUtils
 {
-    Success = 1,
-    Failure = -1
-}
-
-internal enum CBool: int
-{
-    True = 1,
-    False = 0
-}
-
-internal static unsafe class InteropUtils 
-{
-    internal static GCHandle AllocateGCHandle(this object @object, GCHandleType handleType)
+    #region Allocation
+    internal static GCHandle AllocateGCHandle(this object instance, GCHandleType handleType)
     {
-        GCHandle handle = GCHandle.Alloc(@object, handleType);
+        GCHandle handle = GCHandle.Alloc(instance, handleType);
 
         return handle;
     }
+    
+    internal static void* AllocateGCHandleAndGetAddress(this object instance)
+    {
+        GCHandle handle = instance.AllocateGCHandle(GCHandleType.Normal);
+        void* handleAddress = handle.ToHandleAddress();
 
+        return handleAddress;
+    }
+    #endregion Allocation
+
+    #region Free
+    internal static void FreeIfAllocated(void* handleAddress)
+    {
+        if (handleAddress == null) {
+            return;
+        }
+
+        GCHandle? handle = GetGCHandle(handleAddress);
+        
+        handle?.FreeIfAllocated();
+    }
+    
     internal static void FreeIfAllocated(this GCHandle handle)
     {
         if (!handle.IsAllocated) {
@@ -31,7 +41,9 @@ internal static unsafe class InteropUtils
 
         handle.Free();
     }
+    #endregion Free
 
+    #region Handle Address/GCHandle <-> Object Conversion
     internal static void* ToHandleAddress(this GCHandle handle)
     {
         void* handleAddress = (void*)GCHandle.ToIntPtr(handle);
@@ -50,6 +62,17 @@ internal static unsafe class InteropUtils
         return handle;
     }
 
+    internal static T? GetInstance<T>(void* handleAddress) where T : class
+    {
+        GCHandle? handle = GetGCHandle(handleAddress);
+
+        T? instance = handle?.Target as T;
+
+        return instance;
+    }
+    #endregion Handle Address/GCHandle <-> Object Conversion
+
+    #region Strings
     internal static char* ToCString(this string? @string)
     {
         if (@string == null) {
@@ -75,7 +98,9 @@ internal static unsafe class InteropUtils
 
         return @string;
     }
+    #endregion Strings
 
+    #region Bools
     internal static CBool ToCBool(this bool @bool)
     {
         if (@bool) {
@@ -84,4 +109,5 @@ internal static unsafe class InteropUtils
             return CBool.False;
         }
     }
+    #endregion Bools
 }

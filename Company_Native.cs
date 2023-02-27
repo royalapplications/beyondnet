@@ -12,24 +12,6 @@ internal static unsafe class Company_Native
     private const string ENTRYPOINT_PREFIX = FULL_CLASS_NAME + "_";
     #endregion Constants
 
-    #region Helpers
-    internal static Company? GetInstanceFromHandleAddress(void* handleAddress)
-    {
-        GCHandle? handle = InteropUtils.GetGCHandle(handleAddress);
-        Company? instance = handle?.Target as Company;
-
-        return instance;
-    }
-
-    internal static void* AllocateHandleAndGetAddress(this Company @object)
-    {
-        GCHandle handle = @object.AllocateGCHandle(GCHandleType.Normal);
-        void* handleAddress = handle.ToHandleAddress();
-
-        return handleAddress;
-    }
-    #endregion Helpers
-
     #region Public API
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Create")]
     internal static void* Create(char* name)
@@ -44,7 +26,7 @@ internal static unsafe class Company_Native
             nameDn
         );
 
-        void* handleAddress = instance.AllocateHandleAndGetAddress();
+        void* handleAddress = instance.AllocateGCHandleAndGetAddress();
 
         return handleAddress;
     }
@@ -52,7 +34,7 @@ internal static unsafe class Company_Native
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Name_Get")]
     internal static char* Name_Get(void* handleAddress)
     {
-        Company? instance = GetInstanceFromHandleAddress(handleAddress);
+        Company? instance = InteropUtils.GetInstance<Company>(handleAddress);
 
         if (instance == null) {
             return null;
@@ -66,7 +48,7 @@ internal static unsafe class Company_Native
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Name_Set")]
     internal static void Name_Set(void* handleAddress, char* name)
     {
-        Company? instance = GetInstanceFromHandleAddress(handleAddress);
+        Company? instance = InteropUtils.GetInstance<Company>(handleAddress);
 
         if (instance == null) {
             return;
@@ -84,7 +66,7 @@ internal static unsafe class Company_Native
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "NumberOfEmployees_Get")]
     internal static int NumberOfEmployees_Get(void* handleAddress)
     {
-        Company? instance = GetInstanceFromHandleAddress(handleAddress);
+        Company? instance = InteropUtils.GetInstance<Company>(handleAddress);
 
         if (instance == null) {
             return (int)CStatus.Failure;
@@ -98,13 +80,13 @@ internal static unsafe class Company_Native
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "AddEmployee")]
     internal static CStatus AddEmployee(void* handleAddress, void* employeeHandleAddress)
     {
-        Company? instance = GetInstanceFromHandleAddress(handleAddress);
+        Company? instance = InteropUtils.GetInstance<Company>(handleAddress);
 
         if (instance == null) {
             return CStatus.Failure;
         }
 
-        Person? employee = Person_Native.GetInstanceFromHandleAddress(employeeHandleAddress);
+        Person? employee = InteropUtils.GetInstance<Person>(employeeHandleAddress);
 
         if (employee == null) {
             return CStatus.Failure;
@@ -122,13 +104,13 @@ internal static unsafe class Company_Native
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "RemoveEmployee")]
     internal static CStatus RemoveEmployee(void* handleAddress, void* employeeHandleAddress)
     {
-        Company? instance = GetInstanceFromHandleAddress(handleAddress);
+        Company? instance = InteropUtils.GetInstance<Company>(handleAddress);
 
         if (instance == null) {
             return CStatus.Failure;
         }
 
-        Person? employee = Person_Native.GetInstanceFromHandleAddress(employeeHandleAddress);
+        Person? employee = InteropUtils.GetInstance<Person>(employeeHandleAddress);
 
         if (employee == null) {
             return CStatus.Failure;
@@ -146,13 +128,13 @@ internal static unsafe class Company_Native
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "ContainsEmployee")]
     internal static CBool ContainsEmployee(void* handleAddress, void* employeeHandleAddress)
     {
-        Company? instance = GetInstanceFromHandleAddress(handleAddress);
+        Company? instance = InteropUtils.GetInstance<Company>(handleAddress);
 
         if (instance == null) {
             return false.ToCBool();
         }
 
-        Person? employee = Person_Native.GetInstanceFromHandleAddress(employeeHandleAddress);
+        Person? employee = InteropUtils.GetInstance<Person>(employeeHandleAddress);
 
         if (employee == null) {
             return false.ToCBool();
@@ -170,20 +152,19 @@ internal static unsafe class Company_Native
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "GetEmployeeAtIndex")]
     internal static void* GetEmployeeAtIndex(void* handleAddress, int index)
     {
-        Company? instance = GetInstanceFromHandleAddress(handleAddress);
+        Company? instance = InteropUtils.GetInstance<Company>(handleAddress);
 
         if (instance == null) {
             return null;
         }
 
         Person? employee = instance.GetEmployeeAtIndex(index);
-        void* employeeHandleAddress;
 
-        if (employee != null) {
-            employeeHandleAddress = employee.AllocateHandleAndGetAddress();
-        } else {
-            employeeHandleAddress = null;
+        if (employee == null) {
+            return null;
         }
+
+        void* employeeHandleAddress = employee.AllocateGCHandleAndGetAddress();
 
         return employeeHandleAddress;
     }
@@ -215,7 +196,7 @@ internal static unsafe class Company_Native
         delegate* unmanaged<void*, void>* outFunctionPointer
     )
     {
-        Company? company = GetInstanceFromHandleAddress(handleAddress);
+        Company? company = InteropUtils.GetInstance<Company>(handleAddress);
 
         if (company == null) {
             return CStatus.Failure;
@@ -267,7 +248,7 @@ internal static unsafe class Company_Native
         delegate* unmanaged<void*, void> functionPointer
     )
     {
-        Company? company = GetInstanceFromHandleAddress(handleAddress);
+        Company? company = InteropUtils.GetInstance<Company>(handleAddress);
 
         if (company == null) {
             return;
