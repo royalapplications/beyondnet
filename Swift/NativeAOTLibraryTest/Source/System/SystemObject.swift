@@ -17,11 +17,11 @@ public class SystemObject {
 	}
     
     deinit {
-		Debug.log { "Will destroy \(swiftTypeName)" }
+		Debug.log("Will destroy \(swiftTypeName)")
         
         System_Object_Destroy(handle)
         
-		Debug.log { "Did destroy \(swiftTypeName)" }
+		Debug.log("Did destroy \(swiftTypeName)")
     }
 }
 
@@ -53,12 +53,12 @@ extension SystemObject: Equatable {
 		let lhsTypeName = lhs.swiftTypeName
 		let rhsTypeName = rhs.swiftTypeName
 		
-		Debug.log { "Will check equality of \(lhsTypeName) and \(rhsTypeName)" }
+		Debug.log("Will check equality of \(lhsTypeName) and \(rhsTypeName)")
         
         let equal = Self.equals(lhs.handle,
                                 rhs.handle)
         
-		Debug.log { "Did check equality of \(lhsTypeName) and \(rhsTypeName)" }
+		Debug.log("Did check equality of \(lhsTypeName) and \(rhsTypeName)")
         
         return equal
     }

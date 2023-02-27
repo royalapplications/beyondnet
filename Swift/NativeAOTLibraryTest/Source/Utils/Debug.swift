@@ -5,11 +5,11 @@ public struct Debug {
 	
 	public static var isLoggingEnabled = false
 	
-	public static func log(_ logMessageCallback: (() -> String)) {
+	public static func log(_ logMessageProvider: @autoclosure () -> String) {
 #if DEBUG
 		guard isLoggingEnabled else { return }
 		
-		let message = logMessageCallback()
+		let message = logMessageProvider()
 		
         let fullMessage = "\(debugPrefix)\(message)"
         print(fullMessage)
