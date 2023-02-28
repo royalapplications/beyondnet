@@ -28,5 +28,7 @@ final class SystemTypeTests: XCTestCase {
 		
 		XCTAssertFalse(systemTypeType.isAssignableFrom(systemObjectType))
 		XCTAssertTrue(systemTypeType.isAssignableTo(systemObjectType))
+		
+		XCTAssertTrue(systemObjectType.is(of: SystemObject.self))
 	}
 }

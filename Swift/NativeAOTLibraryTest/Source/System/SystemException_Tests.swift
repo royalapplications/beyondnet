@@ -27,6 +27,9 @@ final class SystemExceptionTests: XCTestCase {
 		XCTAssertTrue(exception.type == systemExceptionType)
 		XCTAssertEqual(exceptionMessage, exception.message)
 		XCTAssertNil(exception.stackTrace)
+		XCTAssertTrue(exception.is(of: SystemException.self))
+		XCTAssertTrue(exception.is(of: SystemObject.self))
+		XCTAssertFalse(exception.is(of: SystemType.self))
 		
 		let exceptionWithoutMessage = SystemException(message: nil)
 		

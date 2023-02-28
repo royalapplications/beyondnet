@@ -105,5 +105,32 @@ internal static unsafe class System_Object
 
         return instance.AllocateGCHandleAndGetAddress();
     }
+    
+    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Is")]
+    internal static CBool Is(
+        void* handleAddress,
+        void* targetTypeHandleAddress
+    )
+    {
+        object? instance = InteropUtils.GetInstance<object>(handleAddress);
+
+        if (instance == null) {
+            return CBool.False;
+        }
+        
+        Type? targetType = InteropUtils.GetInstance<Type>(targetTypeHandleAddress);
+
+        if (targetType == null) {
+            return CBool.False;
+        }
+
+        Type sourceType = instance.GetType();
+
+        if (!sourceType.IsAssignableTo(targetType)) {
+            return CBool.False;
+        }
+
+        return CBool.True;
+    }
     #endregion Public API
 }

@@ -18,4 +18,7 @@ const char* System_Object_ToString(System_Object_t instance);
 System_Object_t System_Object_CastAs(System_Object_t instance,
 									 System_Type_t targetType);
 
+CBool System_Object_Is(System_Object_t instance,
+					   System_Type_t targetType);
+
 #endif /* System_Object_h */

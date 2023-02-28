@@ -22,5 +22,11 @@ final class SystemObjectTests: XCTestCase {
 		let object1AsSystemObject = object1.cast(as: SystemObject.self)
 		XCTAssertNotNil(object1AsSystemObject)
 		XCTAssertTrue(object1 == object1AsSystemObject)
+		
+		XCTAssertTrue(object1.is(of: SystemObject.self))
+		XCTAssertFalse(object1.is(of: SystemType.self))
+		
+		XCTAssertTrue(systemObjectType.is(of: SystemObject.self))
+		XCTAssertTrue(systemObjectType.is(of: SystemType.self))
 	}
 }

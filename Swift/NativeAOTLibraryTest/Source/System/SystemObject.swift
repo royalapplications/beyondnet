@@ -86,6 +86,18 @@ public extension SystemObject {
 		
 		return castedInstance
 	}
+	
+	func `is`<T>(of _: T.Type) -> Bool where T: SystemObject {
+		let targetType = T.type
+		
+		Debug.log("Will check if \(self.type.name) is of \(targetType.name)")
+		
+		let result = System_Object_Is(handle, targetType.handle) == .yes
+		
+		Debug.log("Did check if \(self.type.name) is of \(targetType.name)")
+		
+		return result
+	}
 }
 
 internal extension SystemObject {
