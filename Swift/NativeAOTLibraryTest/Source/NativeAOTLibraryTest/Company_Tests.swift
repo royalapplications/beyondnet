@@ -125,6 +125,21 @@ final class CompanyTests: XCTestCase {
 		}
 	}
 	
+	func testSwiftCompanyCreationPerformance() {
+		let debugLoggingWasEnabled = Debug.isLoggingEnabled
+		Debug.isLoggingEnabled = false
+		defer { Debug.isLoggingEnabled = debugLoggingWasEnabled }
+		
+		let iterations = 100_000
+		let companyName = "Fancy Company"
+		
+		measure {
+			for _ in 0..<iterations {
+				_ = SwiftCompany(name: companyName)
+			}
+		}
+	}
+	
 	func testCompanyNameAccessPerformance() {
 		let debugLoggingWasEnabled = Debug.isLoggingEnabled
 		Debug.isLoggingEnabled = false
@@ -143,6 +158,37 @@ final class CompanyTests: XCTestCase {
 			for company in companies {
 				_ = company.name
 			}
+		}
+	}
+	
+	func testSwiftCompanyNameAccessPerformance() {
+		let debugLoggingWasEnabled = Debug.isLoggingEnabled
+		Debug.isLoggingEnabled = false
+		defer { Debug.isLoggingEnabled = debugLoggingWasEnabled }
+		
+		let iterations = 100_000
+		let companyName = "Fancy Company"
+		
+		var companies = [SwiftCompany]()
+		
+		for _ in 0..<iterations {
+			companies.append(.init(name: companyName))
+		}
+		
+		measure {
+			for company in companies {
+				_ = company.name
+			}
+		}
+	}
+}
+
+private extension CompanyTests {
+	class SwiftCompany {
+		var name: String
+		
+		init(name: String) {
+			self.name = name
 		}
 	}
 }
