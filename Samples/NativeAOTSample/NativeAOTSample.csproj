@@ -21,10 +21,12 @@
   <PropertyGroup>
     <DefaultItemExcludes>$(DefaultItemExcludes);Swift\**\*;.gitignore;*.sln.DotSettings;</DefaultItemExcludes>
   </PropertyGroup>
-
-  <!-- Project References -->
+  
+  <!-- Source Generator References -->
   <ItemGroup>
-    <ProjectReference Include="..\..\NativeAOT.Core\NativeAOT.Core.csproj" />
+    <ProjectReference Include="..\..\NativeAOT.Generator\NativeAOT.Generator.csproj"
+                      ReferenceOutputAssembly="false"
+                      OutputItemType="Analyzer" />
   </ItemGroup>
   
   <!-- This works around a bug in .NET 8 Preview 1 that causes the required package to not be resolved automatically when cross-compiling -->
@@ -35,6 +37,9 @@
   
   <!-- Compile Links -->
   <ItemGroup>
+    <Compile Include="..\..\NativeAOT.Core\Source\**\*.cs">
+      <Link>Links\NativeAOT.Core\%(RecursiveDir)%(Filename)%(Extension)</Link>
+    </Compile>
     <Compile Include="..\..\NativeAOT.Bindings.System\Source\**\*.cs">
       <Link>Links\NativeAOT.Bindings.System\%(RecursiveDir)%(Filename)%(Extension)</Link>
     </Compile>

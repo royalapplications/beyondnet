@@ -2,8 +2,6 @@
 
 set -e
 
-export
-
 DOTNET_PATH="/usr/local/share/dotnet/dotnet"
 
 VERBOSITY_LEVEL="normal"
