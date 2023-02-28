@@ -17,6 +17,9 @@
 		E738716729ACDA1200BEA7DA /* SystemUnhandledExceptionEventArgs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E738716629ACDA1200BEA7DA /* SystemUnhandledExceptionEventArgs.swift */; };
 		E738716929ACE3D100BEA7DA /* NativeAOTLibraryTest_UnhandledExceptionTest.h in Headers */ = {isa = PBXBuildFile; fileRef = E738716829ACE3D100BEA7DA /* NativeAOTLibraryTest_UnhandledExceptionTest.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		E738716B29ACE41600BEA7DA /* UnhandledExceptionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E738716A29ACE41600BEA7DA /* UnhandledExceptionTest.swift */; };
+		E797ABB829AE0ECE006F9849 /* SystemObject_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797ABB729AE0ECE006F9849 /* SystemObject_Tests.swift */; };
+		E797ABBA29AE112D006F9849 /* SystemType_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797ABB929AE112D006F9849 /* SystemType_Tests.swift */; };
+		E797ABBC29AE14E6006F9849 /* SystemException_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797ABBB29AE14E6006F9849 /* SystemException_Tests.swift */; };
 		E7AACF3829A6278E00846A75 /* NativeAOTLibraryTest.h in Headers */ = {isa = PBXBuildFile; fileRef = E7AACF3729A6278E00846A75 /* NativeAOTLibraryTest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7AACF4029A6282400846A75 /* NativeAOTLibraryTest.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E7AACF3F29A6282400846A75 /* NativeAOTLibraryTest.dylib */; };
 		E7AACF4129A6282C00846A75 /* NativeAOTLibraryTest.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = E7AACF3F29A6282400846A75 /* NativeAOTLibraryTest.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -73,6 +76,9 @@
 		E738716629ACDA1200BEA7DA /* SystemUnhandledExceptionEventArgs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemUnhandledExceptionEventArgs.swift; sourceTree = "<group>"; };
 		E738716829ACE3D100BEA7DA /* NativeAOTLibraryTest_UnhandledExceptionTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeAOTLibraryTest_UnhandledExceptionTest.h; sourceTree = "<group>"; };
 		E738716A29ACE41600BEA7DA /* UnhandledExceptionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnhandledExceptionTest.swift; sourceTree = "<group>"; };
+		E797ABB729AE0ECE006F9849 /* SystemObject_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemObject_Tests.swift; sourceTree = "<group>"; };
+		E797ABB929AE112D006F9849 /* SystemType_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemType_Tests.swift; sourceTree = "<group>"; };
+		E797ABBB29AE14E6006F9849 /* SystemException_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemException_Tests.swift; sourceTree = "<group>"; };
 		E7AACF3429A6278E00846A75 /* NativeAOTLibraryTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NativeAOTLibraryTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7AACF3729A6278E00846A75 /* NativeAOTLibraryTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeAOTLibraryTest.h; sourceTree = "<group>"; };
 		E7AACF3F29A6282400846A75 /* NativeAOTLibraryTest.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = NativeAOTLibraryTest.dylib; sourceTree = "<group>"; };
@@ -176,8 +182,11 @@
 			isa = PBXGroup;
 			children = (
 				E7E9D57E29A77714002C3834 /* SystemObject.swift */,
+				E797ABB729AE0ECE006F9849 /* SystemObject_Tests.swift */,
 				E7BC394229A7A27600806ADD /* SystemType.swift */,
+				E797ABB929AE112D006F9849 /* SystemType_Tests.swift */,
 				E7BC394D29A7A8BC00806ADD /* SystemException.swift */,
+				E797ABBB29AE14E6006F9849 /* SystemException_Tests.swift */,
 				E7BC395329A7B95200806ADD /* SystemException.Error.swift */,
 				E738715F29ACD3AF00BEA7DA /* SystemAppDomain.swift */,
 				E738716129ACD50700BEA7DA /* SystemAppDomain_Tests.swift */,
@@ -404,7 +413,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7E9D57929A766A2002C3834 /* Person_Tests.swift in Sources */,
+				E797ABB829AE0ECE006F9849 /* SystemObject_Tests.swift in Sources */,
+				E797ABBA29AE112D006F9849 /* SystemType_Tests.swift in Sources */,
 				E738716229ACD50700BEA7DA /* SystemAppDomain_Tests.swift in Sources */,
+				E797ABBC29AE14E6006F9849 /* SystemException_Tests.swift in Sources */,
 				E7E9D57B29A768F7002C3834 /* Company_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

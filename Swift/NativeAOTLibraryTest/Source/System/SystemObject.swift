@@ -6,6 +6,18 @@ public class SystemObject {
     internal required init(handle: System_Object_t) {
         self.handle = handle
     }
+	
+	public convenience init() {
+		Debug.log("Will create instance of \(Self.swiftTypeName)")
+		
+		guard let handle = System_Object_Create() else {
+			fatalError("Failed to create instance of System.Object")
+		}
+		
+		Debug.log("Did create instance of \(Self.swiftTypeName)")
+		
+		self.init(handle: handle)
+	}
     
     public lazy var swiftTypeName: String = {
 		Self.swiftTypeName

@@ -18,6 +18,22 @@ internal static unsafe class System_Exception
     {
         return typeof(Exception).AllocateGCHandleAndGetAddress();
     }
+
+    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Create")]
+    internal static void* Create(char* message)
+    {
+        string? messageDn;
+
+        if (message != null) {
+            messageDn = InteropUtils.ToDotNetString(message);
+        } else {
+            messageDn = null;
+        }
+        
+        Exception instance = new(messageDn);
+
+        return instance.AllocateGCHandleAndGetAddress();
+    }
     
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Message_Get")]
     internal static char* Message_Get(void* handleAddress)

@@ -6,6 +6,28 @@ public class SystemException: SystemObject {
 	override class var type: SystemType {
 		.init(handle: System_Exception_TypeOf())
 	}
+	
+	convenience init(message: String?) {
+		Debug.log("Will create \(Self.swiftTypeName)")
+		
+		var handle: System_Exception_t?
+		
+		if let message {
+			handle = message.withCString { messageC in
+				System_Exception_Create(messageC)
+			}
+		} else {
+			handle = System_Exception_Create(nil)
+		}
+		
+		guard let handle else {
+			fatalError("Failed to create \(Self.swiftTypeName)")
+		}
+		
+		Debug.log("Did create \(Self.swiftTypeName)")
+		
+		self.init(handle: handle)
+	}
 }
 
 public extension SystemException {

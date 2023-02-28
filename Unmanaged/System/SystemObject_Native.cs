@@ -18,6 +18,20 @@ internal static unsafe class System_Object
     {
         return typeof(object).AllocateGCHandleAndGetAddress();
     }
+
+    [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "Create")]
+    internal static void* Create()
+    {
+        object instance = new();
+
+        return instance.AllocateGCHandleAndGetAddress();
+    }
+    
+    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Destroy")]
+    internal static void Destroy(void* handleAddress)
+    {
+        InteropUtils.FreeIfAllocated(handleAddress);
+    }
     
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "GetType")]
     internal static void* GetType(void* handleAddress)
@@ -43,12 +57,6 @@ internal static unsafe class System_Object
         bool equals = firstObject == secondObject;
 
         return equals.ToCBool();
-    }
-    
-    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Destroy")]
-    internal static void Destroy(void* handleAddress)
-    {
-        InteropUtils.FreeIfAllocated(handleAddress);
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "ToString")]
