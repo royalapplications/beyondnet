@@ -1,3 +1,5 @@
+using System;
+
 namespace NativeAOTSample;
 
 public class Person
