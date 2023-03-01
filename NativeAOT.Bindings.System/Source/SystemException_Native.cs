@@ -26,7 +26,7 @@ internal static unsafe class System_Exception
     {
         string? messageDn;
 
-        if (message != null) {
+        if (message is not null) {
             messageDn = InteropUtils.ToDotNetString(message);
         } else {
             messageDn = null;
@@ -42,7 +42,7 @@ internal static unsafe class System_Exception
     {
         Exception? instance = InteropUtils.GetInstance<Exception>(handleAddress);
 
-        if (instance == null) {
+        if (instance is null) {
             return null;
         }
         
@@ -56,7 +56,7 @@ internal static unsafe class System_Exception
     {
         Exception? instance = InteropUtils.GetInstance<Exception>(handleAddress);
 
-        if (instance == null) {
+        if (instance is null) {
             return 0;
         }
 
@@ -68,13 +68,13 @@ internal static unsafe class System_Exception
     {
         Exception? instance = InteropUtils.GetInstance<Exception>(handleAddress);
 
-        if (instance == null) {
+        if (instance is null) {
             return null;
         }
 
         string? stackTrace = instance.StackTrace;
 
-        if (stackTrace == null) {
+        if (stackTrace is null) {
             return null;
         }
         

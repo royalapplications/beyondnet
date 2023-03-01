@@ -30,13 +30,13 @@ internal static unsafe class Person_Native
     {
         string? firstNameDn = InteropUtils.ToDotNetString(firstName);
 
-        if (firstNameDn == null) {
+        if (firstNameDn is null) {
             return null;
         }
 
         string? lastNameDn = InteropUtils.ToDotNetString(lastName);
 
-        if (lastNameDn == null) {
+        if (lastNameDn is null) {
             return null;
         }
 
@@ -56,7 +56,7 @@ internal static unsafe class Person_Native
     {
         Person? instance = InteropUtils.GetInstance<Person>(handleAddress);
 
-        if (instance == null) {
+        if (instance is null) {
             return (int)CStatus.Failure;
         }
 
@@ -70,7 +70,7 @@ internal static unsafe class Person_Native
     {
         Person? instance = InteropUtils.GetInstance<Person>(handleAddress);
 
-        if (instance == null) {
+        if (instance is null) {
             return;
         }
 
@@ -82,7 +82,7 @@ internal static unsafe class Person_Native
     {
         Person? instance = InteropUtils.GetInstance<Person>(handleAddress);
 
-        if (instance == null) {
+        if (instance is null) {
             return null;
         }
 
@@ -96,13 +96,13 @@ internal static unsafe class Person_Native
     {
         Person? instance = InteropUtils.GetInstance<Person>(handleAddress);
 
-        if (instance == null) {
+        if (instance is null) {
             return;
         }
 
         string? firstNameDotNet = InteropUtils.ToDotNetString(firstName);
 
-        if (firstNameDotNet == null) {
+        if (firstNameDotNet is null) {
             return;
         }
 
@@ -114,7 +114,7 @@ internal static unsafe class Person_Native
     {
         Person? instance = InteropUtils.GetInstance<Person>(handleAddress);
 
-        if (instance == null) {
+        if (instance is null) {
             return null;
         }
 
@@ -128,13 +128,13 @@ internal static unsafe class Person_Native
     {
         Person? instance = InteropUtils.GetInstance<Person>(handleAddress);
 
-        if (instance == null) {
+        if (instance is null) {
             return;
         }
 
         string? lastNameDotNet = InteropUtils.ToDotNetString(lastName);
 
-        if (lastNameDotNet == null) {
+        if (lastNameDotNet is null) {
             return;
         }
 
@@ -146,7 +146,7 @@ internal static unsafe class Person_Native
     {
         Person? instance = InteropUtils.GetInstance<Person>(handleAddress);
 
-        if (instance == null) {
+        if (instance is null) {
             return null;
         }
 
@@ -164,8 +164,8 @@ internal static unsafe class Person_Native
     {
         Person? instance = InteropUtils.GetInstance<Person>(handleAddress);
 
-        if (instance == null) {
-            if (outException != null) {
+        if (instance is null) {
+            if (outException is not null) {
                 *outException = null;
             }
             
@@ -175,13 +175,13 @@ internal static unsafe class Person_Native
         try {
             instance.ReduceAge(byYears);
 
-            if (outException != null) {
+            if (outException is not null) {
                 *outException = null;
             }
             
             return CStatus.Success;
         } catch (Exception ex) {
-            if (outException != null) {
+            if (outException is not null) {
                 void* exceptionHandleAddress = ex.AllocateGCHandleAndGetAddress();
                 
                 *outException = exceptionHandleAddress;

@@ -114,7 +114,7 @@ public class NativeAOTGenerator: IIncrementalGenerator
         // Get the semantic representation of our marker attribute 
         INamedTypeSymbol? nativeExportAttribute = compilation.GetTypeByMetadataName(NativeExportAttributeFullName);
 
-        if (nativeExportAttribute == null) {
+        if (nativeExportAttribute is null) {
             // If this is null, the compilation couldn't find the marker attribute type
             // which suggests there's something very wrong! Bail out..
             

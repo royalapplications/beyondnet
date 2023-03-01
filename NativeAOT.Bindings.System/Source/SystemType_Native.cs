@@ -26,13 +26,13 @@ internal static unsafe class System_Type
     {
         string? typeNameDn = InteropUtils.ToDotNetString(typeName);
 
-        if (typeNameDn == null) {
+        if (typeNameDn is null) {
             return null;
         }
 
         Type? type = Type.GetType(typeNameDn, false);
 
-        if (type != null) {
+        if (type is not null) {
             return type.AllocateGCHandleAndGetAddress();
         } else {
             return null;
@@ -44,7 +44,7 @@ internal static unsafe class System_Type
     {
         Type? instance = InteropUtils.GetInstance<Type>(handleAddress);
         
-        if (instance == null) {
+        if (instance is null) {
             return null;
         }
 
@@ -58,13 +58,13 @@ internal static unsafe class System_Type
     {
         Type? instance = InteropUtils.GetInstance<Type>(handleAddress);
 
-        if (instance == null) {
+        if (instance is null) {
             return null;
         }
 
         string? fullName = instance.FullName;
 
-        if (fullName == null) {
+        if (fullName is null) {
             return null;
         }
         
@@ -81,14 +81,14 @@ internal static unsafe class System_Type
     {
         Type? instance = InteropUtils.GetInstance<Type>(handleAddress);
 
-        if (instance == null) {
-            return false.ToCBool();
+        if (instance is null) {
+            return CBool.False;
         }
         
         Type? targetType = InteropUtils.GetInstance<Type>(targetTypeHandleAddress);
 
-        if (targetType == null) {
-            return false.ToCBool();
+        if (targetType is null) {
+            return CBool.False;
         }
 
         bool result = instance.IsAssignableFrom(targetType);
@@ -104,14 +104,14 @@ internal static unsafe class System_Type
     {
         Type? instance = InteropUtils.GetInstance<Type>(handleAddress);
 
-        if (instance == null) {
-            return false.ToCBool();
+        if (instance is null) {
+            return CBool.False;
         }
         
         Type? targetType = InteropUtils.GetInstance<Type>(targetTypeHandleAddress);
 
-        if (targetType == null) {
-            return false.ToCBool();
+        if (targetType is null) {
+            return CBool.False;
         }
 
         bool result = instance.IsAssignableTo(targetType);

@@ -26,7 +26,7 @@ internal static unsafe class Company_Native
     {
         string? nameDn = InteropUtils.ToDotNetString(name);
 
-        if (nameDn == null) {
+        if (nameDn is null) {
             return null;
         }
 
@@ -44,7 +44,7 @@ internal static unsafe class Company_Native
     {
         Company? instance = InteropUtils.GetInstance<Company>(handleAddress);
 
-        if (instance == null) {
+        if (instance is null) {
             return null;
         }
 
@@ -58,13 +58,13 @@ internal static unsafe class Company_Native
     {
         Company? instance = InteropUtils.GetInstance<Company>(handleAddress);
 
-        if (instance == null) {
+        if (instance is null) {
             return;
         }
 
         string? nameDotNet = InteropUtils.ToDotNetString(name);
 
-        if (nameDotNet == null) {
+        if (nameDotNet is null) {
             return;
         }
 
@@ -76,7 +76,7 @@ internal static unsafe class Company_Native
     {
         Company? instance = InteropUtils.GetInstance<Company>(handleAddress);
 
-        if (instance == null) {
+        if (instance is null) {
             return (int)CStatus.Failure;
         }
 
@@ -90,13 +90,13 @@ internal static unsafe class Company_Native
     {
         Company? instance = InteropUtils.GetInstance<Company>(handleAddress);
 
-        if (instance == null) {
+        if (instance is null) {
             return CStatus.Failure;
         }
 
         Person? employee = InteropUtils.GetInstance<Person>(employeeHandleAddress);
 
-        if (employee == null) {
+        if (employee is null) {
             return CStatus.Failure;
         }
 
@@ -114,13 +114,13 @@ internal static unsafe class Company_Native
     {
         Company? instance = InteropUtils.GetInstance<Company>(handleAddress);
 
-        if (instance == null) {
+        if (instance is null) {
             return CStatus.Failure;
         }
 
         Person? employee = InteropUtils.GetInstance<Person>(employeeHandleAddress);
 
-        if (employee == null) {
+        if (employee is null) {
             return CStatus.Failure;
         }
 
@@ -138,13 +138,13 @@ internal static unsafe class Company_Native
     {
         Company? instance = InteropUtils.GetInstance<Company>(handleAddress);
 
-        if (instance == null) {
+        if (instance is null) {
             return false.ToCBool();
         }
 
         Person? employee = InteropUtils.GetInstance<Person>(employeeHandleAddress);
 
-        if (employee == null) {
+        if (employee is null) {
             return false.ToCBool();
         }
 
@@ -162,13 +162,13 @@ internal static unsafe class Company_Native
     {
         Company? instance = InteropUtils.GetInstance<Company>(handleAddress);
 
-        if (instance == null) {
+        if (instance is null) {
             return null;
         }
 
         Person? employee = instance.GetEmployeeAtIndex(index);
 
-        if (employee == null) {
+        if (employee is null) {
             return null;
         }
 
@@ -206,7 +206,7 @@ internal static unsafe class Company_Native
     {
         Company? instance = InteropUtils.GetInstance<Company>(handleAddress);
 
-        if (instance == null) {
+        if (instance is null) {
             return CStatus.Failure;
         }
 
@@ -214,7 +214,7 @@ internal static unsafe class Company_Native
 
         Company.NumberOfEmployeesChangedDelegate? storedDelegate = instance.NumberOfEmployeesChanged;
 
-        if (storedDelegate != null) {
+        if (storedDelegate is not null) {
             if (m_numberOfEmployeesChangedNativeHandlers.TryGetValue(instance, out NumberOfEmployeesChangedHandler_Native? tempHandler) &&
                 tempHandler.Trampoline == storedDelegate) {
                 handler = tempHandler;
@@ -225,23 +225,23 @@ internal static unsafe class Company_Native
             handler = null;
         }
 
-        if (handler != null) {
+        if (handler is not null) {
             void* context = handler.Context;
             delegate* unmanaged<void*, void> functionPointer = handler.FunctionPointer;
 
-            if (outContext != null) {
+            if (outContext is not null) {
                 *outContext = context;
             }
             
-            if (outFunctionPointer != null) {
+            if (outFunctionPointer is not null) {
                 *outFunctionPointer = functionPointer;
             }
         } else {
-            if (outContext != null) {
+            if (outContext is not null) {
                 *outContext = null;
             }
             
-            if (outFunctionPointer != null) {
+            if (outFunctionPointer is not null) {
                 *outFunctionPointer = null;
             }
         }
@@ -258,7 +258,7 @@ internal static unsafe class Company_Native
     {
         Company? instance = InteropUtils.GetInstance<Company>(handleAddress);
 
-        if (instance == null) {
+        if (instance is null) {
             return;
         }
 

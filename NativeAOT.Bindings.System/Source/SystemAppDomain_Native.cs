@@ -38,7 +38,7 @@ internal static unsafe class System_AppDomain
     {
         AppDomain? instance = InteropUtils.GetInstance<AppDomain>(handleAddress);
 
-        if (instance == null) {
+        if (instance is null) {
             return (int)CStatus.Failure;
         }
 
@@ -50,7 +50,7 @@ internal static unsafe class System_AppDomain
     {
         AppDomain? instance = InteropUtils.GetInstance<AppDomain>(handleAddress);
 
-        if (instance == null) {
+        if (instance is null) {
             return CBool.False;
         }
 
@@ -62,7 +62,7 @@ internal static unsafe class System_AppDomain
     {
         AppDomain? instance = InteropUtils.GetInstance<AppDomain>(handleAddress);
 
-        if (instance == null) {
+        if (instance is null) {
             return null;
         }
 
@@ -101,7 +101,7 @@ internal static unsafe class System_AppDomain
     {
         AppDomain? instance = InteropUtils.GetInstance<AppDomain>(handleAddress);
 
-        if (instance == null) {
+        if (instance is null) {
             return;
         }
 
@@ -141,7 +141,7 @@ internal static unsafe class System_AppDomain
     {
         AppDomain? instance = InteropUtils.GetInstance<AppDomain>(handleAddress);
 
-        if (instance == null) {
+        if (instance is null) {
             return CStatus.Failure;
         }
 
@@ -158,7 +158,7 @@ internal static unsafe class System_AppDomain
             h.Context == context
         );
 
-        if (nativeHandler == null) {
+        if (nativeHandler is null) {
             return CStatus.Failure;
         }
 

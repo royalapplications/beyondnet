@@ -26,7 +26,7 @@ internal static unsafe class SystemUnhandledExceptionEventArgs_Native
     {
         UnhandledExceptionEventArgs? instance = InteropUtils.GetInstance<UnhandledExceptionEventArgs>(handleAddress);
 
-        if (instance == null) {
+        if (instance is null) {
             return null;
         }
 
@@ -41,7 +41,7 @@ internal static unsafe class SystemUnhandledExceptionEventArgs_Native
     {
         UnhandledExceptionEventArgs? instance = InteropUtils.GetInstance<UnhandledExceptionEventArgs>(handleAddress);
 
-        if (instance == null) {
+        if (instance is null) {
             return CBool.False;
         }
 

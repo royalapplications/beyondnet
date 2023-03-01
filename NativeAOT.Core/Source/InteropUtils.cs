@@ -24,7 +24,7 @@ public static unsafe class InteropUtils
     #region Free
     public static void FreeIfAllocated(void* handleAddress)
     {
-        if (handleAddress == null) {
+        if (handleAddress is null) {
             return;
         }
 
@@ -53,7 +53,7 @@ public static unsafe class InteropUtils
 
     public static GCHandle? GetGCHandle(void* handleAddress)
     {
-        if (handleAddress == null) {
+        if (handleAddress is null) {
             return null;
         }
         
@@ -75,7 +75,7 @@ public static unsafe class InteropUtils
     #region Strings
     public static char* ToCString(this string? @string)
     {
-        if (@string == null) {
+        if (@string is null) {
             return null;
         }
         
@@ -86,7 +86,7 @@ public static unsafe class InteropUtils
 
     public static string? ToDotNetString(char* cString)
     {
-        if (cString == null) {
+        if (cString is null) {
             return null;
         }
         

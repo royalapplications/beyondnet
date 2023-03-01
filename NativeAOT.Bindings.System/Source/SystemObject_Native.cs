@@ -41,7 +41,7 @@ internal static unsafe class System_Object
         object? instance = InteropUtils.GetInstance<object>(handleAddress);
         Type? type = instance?.GetType();
 
-        if (type == null) {
+        if (type is null) {
             return null;
         }
 
@@ -66,13 +66,13 @@ internal static unsafe class System_Object
     {
         object? instance = InteropUtils.GetInstance<object>(handleAddress);
 
-        if (instance == null) {
+        if (instance is null) {
             return null;
         }
 
         string? @string = instance.ToString();
 
-        if (@string == null) {
+        if (@string is null) {
             return null;
         }
         
@@ -89,13 +89,13 @@ internal static unsafe class System_Object
     {
         object? instance = InteropUtils.GetInstance<object>(handleAddress);
 
-        if (instance == null) {
+        if (instance is null) {
             return null;
         }
         
         Type? targetType = InteropUtils.GetInstance<Type>(targetTypeHandleAddress);
 
-        if (targetType == null) {
+        if (targetType is null) {
             return null;
         }
 
@@ -116,13 +116,13 @@ internal static unsafe class System_Object
     {
         object? instance = InteropUtils.GetInstance<object>(handleAddress);
 
-        if (instance == null) {
+        if (instance is null) {
             return CBool.False;
         }
         
         Type? targetType = InteropUtils.GetInstance<Type>(targetTypeHandleAddress);
 
-        if (targetType == null) {
+        if (targetType is null) {
             return CBool.False;
         }
 
