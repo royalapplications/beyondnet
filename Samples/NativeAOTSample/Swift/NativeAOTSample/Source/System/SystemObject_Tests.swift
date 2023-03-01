@@ -29,4 +29,18 @@ final class SystemObjectTests: XCTestCase {
 		XCTAssertTrue(systemObjectType.is(of: SystemObject.self))
 		XCTAssertTrue(systemObjectType.is(of: SystemType.self))
 	}
+	
+	func testSystemObjectCreationPerformance() {
+		let debugLoggingWasEnabled = Debug.isLoggingEnabled
+		Debug.isLoggingEnabled = false
+		defer { Debug.isLoggingEnabled = debugLoggingWasEnabled }
+		
+		let iterations = 100_000
+		
+		measure {
+			for _ in 0..<iterations {
+				_ = SystemObject()
+			}
+		}
+	}
 }

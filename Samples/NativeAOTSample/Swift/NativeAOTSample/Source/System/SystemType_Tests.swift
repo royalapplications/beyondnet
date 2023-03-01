@@ -31,4 +31,24 @@ final class SystemTypeTests: XCTestCase {
 		
 		XCTAssertTrue(systemObjectType.is(of: SystemObject.self))
 	}
+	
+	func testSystemTypeCreationPerformance() {
+		let debugLoggingWasEnabled = Debug.isLoggingEnabled
+		Debug.isLoggingEnabled = false
+		defer { Debug.isLoggingEnabled = debugLoggingWasEnabled }
+		
+		let iterations = 10_000
+		
+		guard let typeName = SystemType.type.fullName else {
+			XCTFail("Failed to get type of System.Type")
+			
+			return
+		}
+		
+		measure {
+			for _ in 0..<iterations {
+				_ = SystemType(typeName: typeName)
+			}
+		}
+	}
 }

@@ -37,4 +37,20 @@ final class SystemExceptionTests: XCTestCase {
 		XCTAssertEqual("Exception of type 'System.Exception' was thrown.", exceptionWithoutMessage.message)
 		XCTAssertNil(exceptionWithoutMessage.stackTrace)
 	}
+	
+	func testSystemExceptionCreationPerformance() {
+		let debugLoggingWasEnabled = Debug.isLoggingEnabled
+		Debug.isLoggingEnabled = false
+		defer { Debug.isLoggingEnabled = debugLoggingWasEnabled }
+		
+		let iterations = 10_000
+		
+		let message = "Oh no!"
+		
+		measure {
+			for _ in 0..<iterations {
+				_ = SystemException(message: message)
+			}
+		}
+	}
 }
