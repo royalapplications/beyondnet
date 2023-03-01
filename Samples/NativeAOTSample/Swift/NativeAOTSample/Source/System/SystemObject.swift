@@ -92,7 +92,7 @@ public extension SystemObject {
 		
 		Debug.log("Will check if \(self.type.name) is of \(targetType.name)")
 		
-		let result = System_Object_Is(handle, targetType.handle) == .yes
+		let result = System_Object_Is(handle, targetType.handle).boolValue
 		
 		Debug.log("Did check if \(self.type.name) is of \(targetType.name)")
 		
@@ -103,7 +103,7 @@ public extension SystemObject {
 internal extension SystemObject {
 	static func equals(_ lhs: System_Object_t,
 					   _ rhs: System_Object_t) -> Bool {
-		let result = System_Object_Equals(lhs, rhs) == .yes
+		let result = System_Object_Equals(lhs, rhs).boolValue
 		
 		return result
 	}

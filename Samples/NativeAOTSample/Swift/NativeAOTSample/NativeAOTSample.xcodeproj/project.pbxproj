@@ -10,6 +10,7 @@
 		E716200029A66CC000D45FCD /* TypeDefs.h in Headers */ = {isa = PBXBuildFile; fileRef = E7161FFF29A66CBB00D45FCD /* TypeDefs.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		E716200229A6795D00D45FCD /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = E716200129A6795D00D45FCD /* Debug.swift */; };
 		E71625CE29A942D900F47651 /* NativeBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71625CD29A942D900F47651 /* NativeBox.swift */; };
+		E716C71429AF71470099E179 /* CBool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E716C71329AF71470099E179 /* CBool.swift */; };
 		E738715E29ACD36C00BEA7DA /* System_AppDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = E738715D29ACD36500BEA7DA /* System_AppDomain.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		E738716029ACD3AF00BEA7DA /* SystemAppDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E738715F29ACD3AF00BEA7DA /* SystemAppDomain.swift */; };
 		E738716229ACD50700BEA7DA /* SystemAppDomain_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E738716129ACD50700BEA7DA /* SystemAppDomain_Tests.swift */; };
@@ -69,6 +70,7 @@
 		E7161FFF29A66CBB00D45FCD /* TypeDefs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TypeDefs.h; sourceTree = "<group>"; };
 		E716200129A6795D00D45FCD /* Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
 		E71625CD29A942D900F47651 /* NativeBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeBox.swift; sourceTree = "<group>"; };
+		E716C71329AF71470099E179 /* CBool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBool.swift; sourceTree = "<group>"; };
 		E738715D29ACD36500BEA7DA /* System_AppDomain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = System_AppDomain.h; sourceTree = "<group>"; };
 		E738715F29ACD3AF00BEA7DA /* SystemAppDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAppDomain.swift; sourceTree = "<group>"; };
 		E738716129ACD50700BEA7DA /* SystemAppDomain_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAppDomain_Tests.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			children = (
 				E716200129A6795D00D45FCD /* Debug.swift */,
 				E71625CD29A942D900F47651 /* NativeBox.swift */,
+				E716C71329AF71470099E179 /* CBool.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7BC395829A7BEF500806ADD /* SystemGC.swift in Sources */,
+				E716C71429AF71470099E179 /* CBool.swift in Sources */,
 				E7BC395429A7B95200806ADD /* SystemException.Error.swift in Sources */,
 				E7BC394E29A7A8BC00806ADD /* SystemException.swift in Sources */,
 				E71625CE29A942D900F47651 /* NativeBox.swift in Sources */,

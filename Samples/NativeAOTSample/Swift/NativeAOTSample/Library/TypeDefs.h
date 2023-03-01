@@ -21,7 +21,7 @@ typedef CF_ENUM(int32_t, CStatus) {
     failure = -1
 };
 
-typedef CF_ENUM(int32_t, CBool) {
+typedef CF_ENUM(uint8_t, CBool) {
     yes = 1,
     no = 0
 };

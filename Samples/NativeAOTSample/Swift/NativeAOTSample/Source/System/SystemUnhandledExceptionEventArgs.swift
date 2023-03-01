@@ -21,7 +21,7 @@ public extension SystemUnhandledExceptionEventArgs {
 	var isTerminating: Bool {
 		Debug.log("Will get isTerminating of \(swiftTypeName)")
 		
-		let value = System_UnhandledExceptionEventArgs_IsTerminating_Get(handle) == .yes
+		let value = System_UnhandledExceptionEventArgs_IsTerminating_Get(handle).boolValue
 		
 		Debug.log("Did get isTerminating of \(swiftTypeName)")
 		

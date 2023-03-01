@@ -92,10 +92,8 @@ public extension Company {
 	func containsEmployee(_ employee: Person) -> Bool {
 		Debug.log("Will check if \(swiftTypeName) contains employee")
 		
-		let boolResult = NativeAOTSample_Company_ContainsEmployee(handle,
-																  employee.handle)
-		
-		let value = boolResult == .yes
+		let value = NativeAOTSample_Company_ContainsEmployee(handle,
+															 employee.handle).boolValue
 		
 		Debug.log("Did check if \(swiftTypeName) contains employee")
 		

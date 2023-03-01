@@ -33,7 +33,7 @@ public extension SystemAppDomain {
 	func isDefault() -> Bool {
 		Debug.log("Will get isDefault of \(swiftTypeName)")
 		
-		let value = System_AppDomain_IsDefaultAppDomain(handle) == .yes
+		let value = System_AppDomain_IsDefaultAppDomain(handle).boolValue
 		
 		Debug.log("Did get isDefault of \(swiftTypeName)")
 		
