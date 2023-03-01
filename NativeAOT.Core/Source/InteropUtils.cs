@@ -82,8 +82,8 @@ public static unsafe class InteropUtils
         if (@string is null) {
             return null;
         }
-        
-        char* cString = (char*)Marshal.StringToHGlobalAuto(@string);
+
+        char* cString = (char*)Marshal.StringToHGlobalAnsi(@string);
         
         return cString;
     }
@@ -97,7 +97,7 @@ public static unsafe class InteropUtils
             return null;
         }
         
-        string? @string = Marshal.PtrToStringAuto((nint)cString);
+        string? @string = Marshal.PtrToStringAnsi((nint)cString);
 
         return @string;
     }
