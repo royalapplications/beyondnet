@@ -5,8 +5,6 @@ using NativeAOT.Core;
 
 namespace NativeAOTSample;
 
-public class Test { }
-
 [NativeExport]
 public class Company
 {
@@ -33,6 +31,11 @@ public class Company
     {
         Name = name;
     }
+    
+    // Uncomment for debugging
+    // ~Company() {
+    //     Console.WriteLine($"Did call finalizer of {nameof(Company)}.");
+    // }
 
     [NativeExport]
     public void AddEmployee(Person employee)

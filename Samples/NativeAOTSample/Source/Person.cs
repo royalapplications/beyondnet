@@ -34,6 +34,11 @@ public class Person
         LastName = lastName;
         Age = age;
     }
+    
+    // Uncomment for debugging
+    // ~Person() {
+    //     Console.WriteLine($"Did call finalizer of {nameof(Person)}.");
+    // }
 
     [NativeExport]
     public void ReduceAge(int byYears)
