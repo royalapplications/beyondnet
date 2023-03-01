@@ -181,17 +181,17 @@ internal static unsafe class NativeAOTSample_Company_t
     #region NumberOfEmployeesChanged
     private class NumberOfEmployeesChangedHandler_Native
     {
-        internal Company.NumberOfEmployeesChangedDelegate Trampoline { get; }
+        internal int TrampolineHash { get; }
         internal void* Context { get; }
         internal delegate* unmanaged<void*, void> FunctionPointer { get; }
 
         internal NumberOfEmployeesChangedHandler_Native(
-            Company.NumberOfEmployeesChangedDelegate trampoline,
+            int trampolineHash,
             void* context,
             delegate* unmanaged<void*, void> functionPointer
         )
         {
-            Trampoline = trampoline;
+            TrampolineHash = trampolineHash;
             Context = context;
             FunctionPointer = functionPointer;
         }
@@ -218,7 +218,7 @@ internal static unsafe class NativeAOTSample_Company_t
 
         if (storedDelegate is not null) {
             if (m_numberOfEmployeesChangedNativeHandlers.TryGetValue(instance, out NumberOfEmployeesChangedHandler_Native? tempHandler) &&
-                tempHandler.Trampoline == storedDelegate) {
+                tempHandler.TrampolineHash == storedDelegate.GetHashCode()) {
                 handler = tempHandler;
             } else {
                 handler = null;
@@ -272,7 +272,7 @@ internal static unsafe class NativeAOTSample_Company_t
             };
 
             m_numberOfEmployeesChangedNativeHandlers[instance] = new NumberOfEmployeesChangedHandler_Native(
-                trampoline,
+                trampoline.GetHashCode(),
                 context,
                 functionPointer
             );
