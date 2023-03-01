@@ -44,6 +44,19 @@ final class PersonTests: XCTestCase {
 		XCTAssertFalse(person == secondPerson)
     }
 	
+	func testPersonUnicode() {
+		let firstName = "First 👍 Name"
+		let lastName = "Last 👎 Name"
+		
+		let person = Person(firstName: firstName,
+							lastName: lastName,
+							age: 0)
+		
+		XCTAssertEqual(firstName, person.firstName)
+		XCTAssertEqual(lastName, person.lastName)
+		XCTAssertEqual("\(firstName) \(lastName)", person.fullName)
+	}
+	
 	func testPersonExceptions() {
 		let person = Person(firstName: "a",
 							lastName: "b",
