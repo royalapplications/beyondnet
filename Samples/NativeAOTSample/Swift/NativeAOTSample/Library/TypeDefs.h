@@ -2,7 +2,6 @@
 #define NativeAOTSample_TypeDefs_h
 
 #import <stdlib.h>
-#import <CoreFoundation/CFAvailability.h>
 
 typedef void* System_Object_t;
 typedef void* System_Type_t;
@@ -16,14 +15,14 @@ typedef void (*ContextDelegate_t)(void* context);
 typedef void* NativeAOTSample_Person_t;
 typedef void* NativeAOTSample_Company_t;
 
-typedef CF_ENUM(int32_t, CStatus) {
-    success = 1,
-    failure = -1
-};
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	CStatusSuccess = 1,
+	CStatusFailure = -1
+} CStatus;
 
-typedef CF_ENUM(uint8_t, CBool) {
-    yes = 1,
-    no = 0
-};
+typedef enum __attribute__((enum_extensibility(open))): uint8_t {
+	CBoolYes = 1,
+	CBoolNo = 0
+} CBool;
 
 #endif /* NativeAOTSample_TypeDefs_h */
