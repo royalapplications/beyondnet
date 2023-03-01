@@ -20,7 +20,7 @@ public class NativeAOTGenerator: IIncrementalGenerator
         // Uncomment to wait for debugger
         // SpinWait.SpinUntil(() => Debugger.IsAttached);
 
-        // Do a simple filter for enums
+        // Do a simple filter for classes
         IncrementalValuesProvider<ClassDeclarationSyntax> classDeclarations = context.SyntaxProvider
             .CreateSyntaxProvider(
                 predicate: static (s, _) => IsSyntaxTargetForGeneration(s), // select classes with attributes
