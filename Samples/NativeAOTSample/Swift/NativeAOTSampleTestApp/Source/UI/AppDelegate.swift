@@ -12,6 +12,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	@IBOutlet private weak var textFieldNumberOfEmployeesSpelledOut: NSTextField!
 	
 	@IBOutlet private weak var progressIndicatorMain: NSProgressIndicator!
+	
+	@IBOutlet private weak var buttonChangeAgeOfEmployees: NSButton!
 	@IBOutlet private weak var buttonCreate: NSButton!
 	@IBOutlet private weak var buttonDestroy: NSButton!
 	
@@ -64,6 +66,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	@IBAction private func buttonDestroy_action(_ sender: Any) {
 		destroyCompany()
 	}
+	
+	@IBAction private func buttonChangeAgeOfEmployees_action(_ sender: Any) {
+		changeAgeOfEmployees()
+	}
 }
 
 private extension AppDelegate {
@@ -114,6 +120,8 @@ private extension AppDelegate {
 	
 			self.buttonCreate.isEnabled = false
 			self.buttonDestroy.isEnabled = false
+			self.buttonChangeAgeOfEmployees.isEnabled = false
+			
 			self.progressIndicatorMain.startAnimation(nil)
 		}
 	}
@@ -124,6 +132,8 @@ private extension AppDelegate {
 	
 			self.buttonCreate.isEnabled = true
 			self.buttonDestroy.isEnabled = true
+			self.buttonChangeAgeOfEmployees.isEnabled = true
+			
 			self.progressIndicatorMain.stopAnimation(nil)
 		}
 	}
@@ -258,6 +268,66 @@ private extension AppDelegate {
 		}
 		
 		return company
+	}
+}
+
+// MARK: - Change Company
+private extension AppDelegate {
+	func changeAgeOfEmployees() {
+		DispatchQueue.global().async { [weak self] in
+			self?.changeAgeOfEmployeesWithUISynchronization()
+		}
+	}
+	
+	func changeAgeOfEmployeesWithUISynchronization() {
+		showProgress()
+		
+		_changeAgeOfEmployees()
+		
+		hideProgress()
+	}
+	
+	func _changeAgeOfEmployees() {
+		guard let company else { return }
+		
+		let newAge: Int32 = 10
+		
+		let newAgeProvider: Person.ChangeAgeNewAgeProvider = {
+			newAge
+		}
+		
+		let companyName = company.name
+		let numberOfEmployees = company.numberOfEmployees
+		let formattedNumberOfEmployees = spellOutFormattedNumber(.init(numberOfEmployees))
+		
+		let startDate = Date()
+		
+		for idx in 0..<numberOfEmployees {
+			guard let employee = company.employee(at: idx) else {
+				fatalError("Failed to get employee")
+			}
+			
+			do {
+				try employee.changeAge(newAgeProvider)
+			} catch {
+				fatalError("An error occurred while changing the age of an employee: \(error)")
+			}
+		}
+		
+		let formattedDelta = formattedDateDelta(startDate: startDate)
+		
+		DispatchQueue.main.async { [weak self] in
+			guard let self else { return }
+			
+			let alert = NSAlert()
+			alert.messageText = "The age of \(companyName)'s employees was changed"
+			alert.informativeText = "The age of all \(formattedNumberOfEmployees) employees of the company \"\(companyName)\" was changed.\nIt took \(formattedDelta) seconds."
+			alert.addButton(withTitle: "OK")
+			
+			alert.beginSheetModal(for: self.window)
+			
+			self.companyViewController.reloadData()
+		}
 	}
 }
 

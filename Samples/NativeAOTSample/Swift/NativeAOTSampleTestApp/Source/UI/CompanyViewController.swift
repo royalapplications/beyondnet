@@ -8,14 +8,14 @@ class CompanyViewController: NSViewController {
 	
 	var company: Company? {
 		willSet {
-			tableView.dataSource = nil
-			tableView.delegate = nil
+			tableView?.dataSource = nil
+			tableView?.delegate = nil
 		}
 		didSet {
-			tableView.dataSource = self
-			tableView.delegate = self
+			tableView?.dataSource = self
+			tableView?.delegate = self
 			
-			tableView.reloadData()
+			reloadData()
 		}
 	}
 	
@@ -31,7 +31,9 @@ class CompanyViewController: NSViewController {
 }
 
 extension CompanyViewController {
-	
+	func reloadData() {
+		tableView?.reloadData()
+	}
 }
 
 private extension CompanyViewController {

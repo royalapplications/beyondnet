@@ -12,8 +12,9 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="NativeAOTLibraryTestApp" customModuleProvider="target">
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="NativeAOTSampleTestApp" customModuleProvider="target">
             <connections>
+                <outlet property="buttonChangeAgeOfEmployees" destination="OZP-Vb-CfD" id="Pua-5f-X9h"/>
                 <outlet property="buttonCreate" destination="EJ3-qs-6eF" id="naa-2Q-QmU"/>
                 <outlet property="buttonDestroy" destination="ZU7-zI-sQS" id="HdP-I0-Byr"/>
                 <outlet property="checkBoxDebugLogging" destination="cG3-BT-lQm" id="olm-2Z-jI1"/>
@@ -798,6 +799,17 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OZP-Vb-CfD">
+                        <rect key="frame" x="13" y="212" width="193" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Change Age of Employees" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="iie-Hh-hDe">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="buttonChangeAgeOfEmployees_action:" target="Voe-Tx-rLC" id="ETE-r8-YZg"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <point key="canvasLocation" x="253" y="394.5"/>
