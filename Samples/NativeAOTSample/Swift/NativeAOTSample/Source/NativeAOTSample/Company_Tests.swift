@@ -146,13 +146,8 @@ final class CompanyTests: XCTestCase {
 		defer { Debug.isLoggingEnabled = debugLoggingWasEnabled }
 		
 		let iterations = 100_000
-		let companyName = "Fancy Company"
 		
-		var companies = [Company]()
-		
-		for _ in 0..<iterations {
-			companies.append(.init(name: companyName))
-		}
+		let companies = createCompanies(count: iterations)
 		
 		measure {
 			for company in companies {
@@ -167,13 +162,8 @@ final class CompanyTests: XCTestCase {
 		defer { Debug.isLoggingEnabled = debugLoggingWasEnabled }
 		
 		let iterations = 100_000
-		let companyName = "Fancy Company"
 		
-		var companies = [SwiftCompany]()
-		
-		for _ in 0..<iterations {
-			companies.append(.init(name: companyName))
-		}
+		let companies = createSwiftCompanies(count: iterations)
 		
 		measure {
 			for company in companies {
@@ -190,5 +180,31 @@ private extension CompanyTests {
 		init(name: String) {
 			self.name = name
 		}
+	}
+	
+	func createCompanies(count: Int,
+						 name: String = "Fancy Company") -> [Company] {
+		var companies = [Company]()
+		
+		for _ in 0..<count {
+			let company = Company(name: name)
+			
+			companies.append(company)
+		}
+		
+		return companies
+	}
+	
+	func createSwiftCompanies(count: Int,
+							  name: String = "Fancy Company") -> [SwiftCompany] {
+		var companies = [SwiftCompany]()
+		
+		for _ in 0..<count {
+			let company = SwiftCompany(name: name)
+			
+			companies.append(company)
+		}
+		
+		return companies
 	}
 }

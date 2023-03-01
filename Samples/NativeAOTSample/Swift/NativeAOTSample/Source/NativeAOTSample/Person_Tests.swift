@@ -99,6 +99,30 @@ final class PersonTests: XCTestCase {
 		XCTAssertEqual(newAge, person.age)
 	}
 	
+	func testPersonClosurePerformance() {
+		let debugLoggingWasEnabled = Debug.isLoggingEnabled
+		Debug.isLoggingEnabled = false
+		defer { Debug.isLoggingEnabled = debugLoggingWasEnabled }
+		
+		let iterations = 100_000
+		
+		let persons = createPersons(count: iterations)
+		let newAge: Int32 = 5
+		let newAgeProvider: Person.ChangeAgeNewAgeProvider = { newAge }
+		
+		measure {
+			for person in persons {
+				do {
+					try person.changeAge(newAgeProvider)
+				} catch {
+					XCTFail("changeAge should not throw here")
+					
+					return
+				}
+			}
+		}
+	}
+	
 	func testPersonExceptionPerformance() {
 		let debugLoggingWasEnabled = Debug.isLoggingEnabled
 		Debug.isLoggingEnabled = false
@@ -106,26 +130,40 @@ final class PersonTests: XCTestCase {
 		
 		let iterations = 10_000
 		
-		let firstName = "First Name"
-		let lastName = "Last Name"
-		let age: Int32 = 0
+		let yearsToReduceBy: Int32 = 1
 		
-		var persons = [Person]()
-		
-		for _ in 0..<iterations {
-			persons.append(.init(firstName: firstName,
-								 lastName: lastName,
-								 age: age))
-		}
+		let persons = createPersons(count: iterations,
+									firstName: "First Name",
+									lastName: "Last Name",
+									age: 0)
 		
 		measure {
 			for person in persons {
 				do {
-					try person.reduceAge(byYears: 1)
+					try person.reduceAge(byYears: yearsToReduceBy)
 					
 					XCTFail("reduceAge should throw here but did not")
 				} catch { }
 			}
 		}
+	}
+}
+
+private extension PersonTests {
+	func createPersons(count: Int,
+					   firstName: String = "First Name",
+					   lastName: String = "Last Name",
+					   age: Int32 = 0) -> [Person] {
+		var persons = [Person]()
+		
+		for _ in 0..<count {
+			let person = Person(firstName: firstName,
+								lastName: lastName,
+								age: age)
+			
+			persons.append(person)
+		}
+		
+		return persons
 	}
 }
