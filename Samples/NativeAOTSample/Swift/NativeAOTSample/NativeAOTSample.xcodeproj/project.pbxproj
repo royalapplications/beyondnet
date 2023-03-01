@@ -11,6 +11,7 @@
 		E716200229A6795D00D45FCD /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = E716200129A6795D00D45FCD /* Debug.swift */; };
 		E71625CE29A942D900F47651 /* NativeBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71625CD29A942D900F47651 /* NativeBox.swift */; };
 		E716C71429AF71470099E179 /* CBool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E716C71329AF71470099E179 /* CBool.swift */; };
+		E716C71629AF74DF0099E179 /* CStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E716C71529AF74DF0099E179 /* CStatus.swift */; };
 		E738715E29ACD36C00BEA7DA /* System_AppDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = E738715D29ACD36500BEA7DA /* System_AppDomain.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		E738716029ACD3AF00BEA7DA /* SystemAppDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E738715F29ACD3AF00BEA7DA /* SystemAppDomain.swift */; };
 		E738716229ACD50700BEA7DA /* SystemAppDomain_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E738716129ACD50700BEA7DA /* SystemAppDomain_Tests.swift */; };
@@ -71,6 +72,7 @@
 		E716200129A6795D00D45FCD /* Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
 		E71625CD29A942D900F47651 /* NativeBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeBox.swift; sourceTree = "<group>"; };
 		E716C71329AF71470099E179 /* CBool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBool.swift; sourceTree = "<group>"; };
+		E716C71529AF74DF0099E179 /* CStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CStatus.swift; sourceTree = "<group>"; };
 		E738715D29ACD36500BEA7DA /* System_AppDomain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = System_AppDomain.h; sourceTree = "<group>"; };
 		E738715F29ACD3AF00BEA7DA /* SystemAppDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAppDomain.swift; sourceTree = "<group>"; };
 		E738716129ACD50700BEA7DA /* SystemAppDomain_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAppDomain_Tests.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				E716200129A6795D00D45FCD /* Debug.swift */,
 				E71625CD29A942D900F47651 /* NativeBox.swift */,
 				E716C71329AF71470099E179 /* CBool.swift */,
+				E716C71529AF74DF0099E179 /* CStatus.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				E71625CE29A942D900F47651 /* NativeBox.swift in Sources */,
 				E7E26AC629A63147005334CF /* Person.swift in Sources */,
 				E738716B29ACE41600BEA7DA /* UnhandledExceptionTest.swift in Sources */,
+				E716C71629AF74DF0099E179 /* CStatus.swift in Sources */,
 				E7E9D58029A77776002C3834 /* SystemObject.swift in Sources */,
 				E716200229A6795D00D45FCD /* Debug.swift in Sources */,
 				E7E26AC929A668F8005334CF /* Company.swift in Sources */,

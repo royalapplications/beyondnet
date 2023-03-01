@@ -68,7 +68,7 @@ public extension Company {
 		let result = NativeAOTSample_Company_AddEmployee(handle,
 														 employee.handle)
 		
-		let success = result == .success
+		let success = result.boolValue
 		
 		Debug.log("Did add employee to \(swiftTypeName)")
 		
@@ -82,7 +82,7 @@ public extension Company {
 		let result = NativeAOTSample_Company_RemoveEmployee(handle,
 															employee.handle)
 		
-		let success = result == .success
+		let success = result.boolValue
 		
 		Debug.log("Did remove employee from \(swiftTypeName)")
 		
@@ -130,7 +130,7 @@ public extension Company {
 			
 			if NativeAOTSample_Company_NumberOfEmployeesChanged_Get(handle,
 																	&context,
-																	&handler) == .success,
+																	&handler).boolValue,
 			   let context,
 			   handler != nil {
 				closure = NativeBox<NumberOfEmployeesChangedHandler>.fromPointerUnretained(context).value
@@ -150,7 +150,7 @@ public extension Company {
 			
 			let currentSuccess = NativeAOTSample_Company_NumberOfEmployeesChanged_Get(handle,
 																					  &currentContext,
-																					  &currentHandler) == .success
+																					  &currentHandler).boolValue
 			
 			let newClosureBox: NativeBox<NumberOfEmployeesChangedHandler>?
 			let newHandler: ContextDelegate_t?

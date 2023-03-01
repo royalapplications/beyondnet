@@ -126,7 +126,7 @@ public extension Person {
 		
 		let success = NativeAOTSample_Person_ReduceAge(handle,
 													   byYears,
-													   &exceptionHandle) == .success
+													   &exceptionHandle).boolValue
 		
 		if success {
 			Debug.log("Did reduce age of \(swiftTypeName)")
@@ -177,7 +177,7 @@ public extension Person {
 		let success = NativeAOTSample_Person_ChangeAge(handle,
 													   context,
 													   handler,
-													   &exceptionHandle) == .success
+													   &exceptionHandle).boolValue
 		
 		if success {
 			Debug.log("Did change age of \(swiftTypeName)")

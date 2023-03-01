@@ -100,7 +100,7 @@ public extension SystemAppDomain {
 		
 		let result = System_AppDomain_UnhandledException_Remove(handle,
 																handlerToken.closureBox.unretainedPointer(),
-																handlerToken.handler) == .success
+																handlerToken.handler).boolValue
 		
 		Debug.log("Did remove unhandled exception event handler to \(swiftTypeName)")
 		
