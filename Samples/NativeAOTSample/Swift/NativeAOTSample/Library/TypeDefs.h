@@ -20,7 +20,7 @@ typedef enum __attribute__((enum_extensibility(open))): int32_t {
 	CStatusFailure = -1
 } CStatus;
 
-typedef enum __attribute__((enum_extensibility(open))): uint8_t {
+typedef enum __attribute__((enum_extensibility(closed))): uint8_t {
 	CBoolYes = 1,
 	CBoolNo = 0
 } CBool;
