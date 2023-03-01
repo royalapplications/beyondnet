@@ -148,6 +148,16 @@
 			path = NativeAOTSample;
 			sourceTree = "<group>";
 		};
+		E716C71929AF78100099E179 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				E7161FFF29A66CBB00D45FCD /* TypeDefs.h */,
+				E716C71729AF77C20099E179 /* System */,
+				E716C71829AF77D30099E179 /* NativeAOTSample */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
 		E7AACF2A29A6278E00846A75 = {
 			isa = PBXGroup;
 			children = (
@@ -182,9 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				E797ABBD29AE3282006F9849 /* NativeAOTSample.dylib */,
-				E7161FFF29A66CBB00D45FCD /* TypeDefs.h */,
-				E716C71729AF77C20099E179 /* System */,
-				E716C71829AF77D30099E179 /* NativeAOTSample */,
+				E716C71929AF78100099E179 /* Headers */,
 			);
 			path = Library;
 			sourceTree = "<group>";
