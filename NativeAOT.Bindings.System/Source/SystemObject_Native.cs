@@ -76,7 +76,7 @@ internal static unsafe class System_Object
             return null;
         }
         
-        char* cString = @string.ToCString();
+        char* cString = @string.CopyToCString();
 
         return cString;
     }

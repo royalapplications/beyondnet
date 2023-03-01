@@ -86,7 +86,7 @@ internal static unsafe class Person_Native
             return null;
         }
 
-        char* firstNameC = instance.FirstName.ToCString();
+        char* firstNameC = instance.FirstName.CopyToCString();
 
         return firstNameC;
     }
@@ -118,7 +118,7 @@ internal static unsafe class Person_Native
             return null;
         }
 
-        char* lastNameC = instance.LastName.ToCString();
+        char* lastNameC = instance.LastName.CopyToCString();
 
         return lastNameC;
     }
@@ -150,7 +150,7 @@ internal static unsafe class Person_Native
             return null;
         }
 
-        char* fullNameC = instance.FullName.ToCString();
+        char* fullNameC = instance.FullName.CopyToCString();
 
         return fullNameC;
     }

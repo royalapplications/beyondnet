@@ -48,7 +48,7 @@ internal static unsafe class Company_Native
             return null;
         }
 
-        char* nameC = instance.Name.ToCString();
+        char* nameC = instance.Name.CopyToCString();
 
         return nameC;
     }

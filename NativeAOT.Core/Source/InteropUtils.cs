@@ -73,7 +73,11 @@ public static unsafe class InteropUtils
     #endregion Handle Address/GCHandle <-> Object Conversion
 
     #region Strings
-    public static char* ToCString(this string? @string)
+    /// <summary>
+    /// This allocates a native char* and copies the contents of the managed string into it.
+    /// The allocated native string must be freed when not needed anymore!
+    /// </summary>
+    public static char* CopyToCString(this string? @string)
     {
         if (@string is null) {
             return null;
@@ -84,6 +88,9 @@ public static unsafe class InteropUtils
         return cString;
     }
 
+    /// <summary>
+    /// This allocates a managed string and copies the contents of the native char* into it.
+    /// </summary>
     public static string? ToDotNetString(char* cString)
     {
         if (cString is null) {

@@ -46,7 +46,7 @@ internal static unsafe class System_Exception
             return null;
         }
         
-        char* messageC = instance.Message.ToCString();
+        char* messageC = instance.Message.CopyToCString();
 
         return messageC;
     }
@@ -78,7 +78,7 @@ internal static unsafe class System_Exception
             return null;
         }
         
-        char* stackTraceC = stackTrace.ToCString();
+        char* stackTraceC = stackTrace.CopyToCString();
 
         return stackTraceC;
     }

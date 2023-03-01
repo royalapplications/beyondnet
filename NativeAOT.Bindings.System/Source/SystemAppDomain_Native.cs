@@ -67,7 +67,7 @@ internal static unsafe class System_AppDomain
         }
 
         string baseDirectory = instance.BaseDirectory;
-        char* baseDirectoryC = baseDirectory.ToCString();
+        char* baseDirectoryC = baseDirectory.CopyToCString();
 
         return baseDirectoryC;
     }

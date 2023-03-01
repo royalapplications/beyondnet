@@ -48,7 +48,7 @@ internal static unsafe class System_Type
             return null;
         }
 
-        char* nameC = instance.Name.ToCString();
+        char* nameC = instance.Name.CopyToCString();
 
         return nameC;
     }
@@ -68,7 +68,7 @@ internal static unsafe class System_Type
             return null;
         }
         
-        char* nameC = fullName.ToCString();
+        char* nameC = fullName.CopyToCString();
 
         return nameC;
     }
