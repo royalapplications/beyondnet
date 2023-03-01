@@ -24,6 +24,8 @@ internal static unsafe class NativeAOTSample_UnhandledExceptionTest_t
     [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "ThrowUnhandledException")]
     internal static void ThrowUnhandledException()
     {
+        Console.WriteLine("Will throw an unhandled exception");
+        
         throw new Exception("Oh no!");
     }
     #endregion Public API

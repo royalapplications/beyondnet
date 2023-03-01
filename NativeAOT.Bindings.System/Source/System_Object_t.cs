@@ -56,10 +56,13 @@ internal static unsafe class System_Object_t
         object? firstObject = InteropUtils.GetInstance<object>(firstHandleAddress);
         object? secondObject = InteropUtils.GetInstance<object>(secondHandleAddress);
 
-        bool equals = firstObject == secondObject;
+        // TODO: Is this really what we want here?
+        bool equals = firstObject?.Equals(secondObject) ?? false;
 
         return equals.ToCBool();
     }
+    
+    // TODO: Maybe wrap object.ReferenceEquals
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "ToString")]
     internal static char* ToString(void* handleAddress)
