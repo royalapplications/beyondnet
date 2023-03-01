@@ -5,7 +5,7 @@ using NativeAOT.Core;
 
 namespace NativeAOT.Bindings.System;
 
-internal static unsafe class System_GC
+internal static unsafe class System_GC_t
 {
     #region Constants
     private const string NAMESPACE = nameof(System);

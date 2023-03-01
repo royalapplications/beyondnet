@@ -5,7 +5,7 @@ using NativeAOT.Core;
 
 namespace NativeAOTSample;
 
-internal static unsafe class Person_Native
+internal static unsafe class NativeAOTSample_Person_t
 {
     #region Constants
     private const string NAMESPACE = nameof(NativeAOTSample);

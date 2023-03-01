@@ -24,9 +24,7 @@
   
   <!-- Source Generator References -->
   <ItemGroup>
-    <ProjectReference Include="..\..\NativeAOT.Generator\NativeAOT.Generator.csproj"
-                      ReferenceOutputAssembly="false"
-                      OutputItemType="Analyzer" />
+    <ProjectReference Include="..\..\NativeAOT.Generator\NativeAOT.Generator.csproj" ReferenceOutputAssembly="false" OutputItemType="Analyzer" />
   </ItemGroup>
   
   <!-- This works around a bug in .NET 8 Preview 1 that causes the required package to not be resolved automatically when cross-compiling -->

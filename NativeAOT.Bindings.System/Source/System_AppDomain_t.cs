@@ -1,14 +1,12 @@
 using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
 
 using NativeAOT.Core;
 
 namespace NativeAOT.Bindings.System;
 
-internal static unsafe class System_AppDomain
+internal static unsafe class System_AppDomain_t
 {
     #region Constants
     private const string NAMESPACE = nameof(System);

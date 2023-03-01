@@ -5,7 +5,7 @@ using NativeAOT.Core;
 
 namespace NativeAOT.Bindings.System;
 
-internal static unsafe class SystemUnhandledExceptionEventArgs_Native
+internal static unsafe class System_UnhandledExceptionEventArgs_t
 {
     #region Constants
     private const string NAMESPACE = nameof(System);

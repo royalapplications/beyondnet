@@ -5,7 +5,7 @@ using NativeAOT.Core;
 
 namespace NativeAOTSample;
 
-internal static unsafe class UnhandledExceptionTest_Native
+internal static unsafe class NativeAOTSample_UnhandledExceptionTest_t
 {
     #region Constants
     private const string NAMESPACE = nameof(NativeAOTSample);
@@ -18,7 +18,7 @@ internal static unsafe class UnhandledExceptionTest_Native
     [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "TypeOf")]
     internal static void* TypeOf()
     {
-        return typeof(UnhandledExceptionTest_Native).AllocateGCHandleAndGetAddress();
+        return typeof(NativeAOTSample_UnhandledExceptionTest_t).AllocateGCHandleAndGetAddress();
     }
     
     [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "ThrowUnhandledException")]
