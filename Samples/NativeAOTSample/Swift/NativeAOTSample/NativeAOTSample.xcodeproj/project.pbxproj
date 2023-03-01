@@ -125,6 +125,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E716C71729AF77C20099E179 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				E7E9D57C29A76DB4002C3834 /* System_Object.h */,
+				E7BC393D29A7A17400806ADD /* System_Type.h */,
+				E7BC394B29A7A87600806ADD /* System_Exception.h */,
+				E738715D29ACD36500BEA7DA /* System_AppDomain.h */,
+				E738716429ACD98C00BEA7DA /* System_UnhandledExceptionEventArgs.h */,
+				E7BC395529A7BECC00806ADD /* System_GC.h */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		E716C71829AF77D30099E179 /* NativeAOTSample */ = {
+			isa = PBXGroup;
+			children = (
+				E7E26AC329A62FB8005334CF /* NativeAOTSample_Person.h */,
+				E7E26AC729A668CD005334CF /* NativeAOTSample_Company.h */,
+				E738716829ACE3D100BEA7DA /* NativeAOTSample_UnhandledExceptionTest.h */,
+			);
+			path = NativeAOTSample;
+			sourceTree = "<group>";
+		};
 		E7AACF2A29A6278E00846A75 = {
 			isa = PBXGroup;
 			children = (
@@ -160,15 +183,8 @@
 			children = (
 				E797ABBD29AE3282006F9849 /* NativeAOTSample.dylib */,
 				E7161FFF29A66CBB00D45FCD /* TypeDefs.h */,
-				E7E9D57C29A76DB4002C3834 /* System_Object.h */,
-				E7BC393D29A7A17400806ADD /* System_Type.h */,
-				E7BC394B29A7A87600806ADD /* System_Exception.h */,
-				E738715D29ACD36500BEA7DA /* System_AppDomain.h */,
-				E738716429ACD98C00BEA7DA /* System_UnhandledExceptionEventArgs.h */,
-				E7BC395529A7BECC00806ADD /* System_GC.h */,
-				E7E26AC329A62FB8005334CF /* NativeAOTSample_Person.h */,
-				E7E26AC729A668CD005334CF /* NativeAOTSample_Company.h */,
-				E738716829ACE3D100BEA7DA /* NativeAOTSample_UnhandledExceptionTest.h */,
+				E716C71729AF77C20099E179 /* System */,
+				E716C71829AF77D30099E179 /* NativeAOTSample */,
 			);
 			path = Library;
 			sourceTree = "<group>";
