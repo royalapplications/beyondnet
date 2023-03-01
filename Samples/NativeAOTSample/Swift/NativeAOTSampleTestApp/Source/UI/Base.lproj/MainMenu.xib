@@ -701,7 +701,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="586" height="349"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NuA-io-0k8">
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" id="NuA-io-0k8">
                         <rect key="frame" x="18" y="252" width="158" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Number of Employees:" usesSingleLineMode="YES" id="dah-v2-xJD">
@@ -710,7 +710,7 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v84-lr-OsM">
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" id="v84-lr-OsM">
                         <rect key="frame" x="182" y="249" width="198" height="21"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="100000" drawsBackground="YES" usesSingleLineMode="YES" id="Xx2-hF-aKT">
@@ -722,7 +722,7 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cG3-BT-lQm">
+                    <button verticalHuggingPriority="750" fixedFrame="YES" id="cG3-BT-lQm">
                         <rect key="frame" x="18" y="312" width="119" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="Debug Logging" bezelStyle="regularSquare" imagePosition="left" inset="2" id="eEC-4d-Y8P">
@@ -733,7 +733,7 @@
                             <action selector="checkBoxDebugLogging_action:" target="Voe-Tx-rLC" id="izy-Rr-0lb"/>
                         </connections>
                     </button>
-                    <tabView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M7U-07-z8u">
+                    <tabView fixedFrame="YES" id="M7U-07-z8u">
                         <rect key="frame" x="13" y="2" width="560" height="217"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <font key="font" metaFont="system"/>
@@ -746,7 +746,7 @@
                             </tabViewItem>
                         </tabViewItems>
                     </tabView>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0uS-Sy-Yzw">
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" id="0uS-Sy-Yzw">
                         <rect key="frame" x="18" y="276" width="158" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Company Name:" usesSingleLineMode="YES" id="VVg-du-t1J">
@@ -755,7 +755,7 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5yf-XK-yuO">
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" id="5yf-XK-yuO">
                         <rect key="frame" x="182" y="273" width="384" height="21"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" title="Fancy Company Inc." drawsBackground="YES" usesSingleLineMode="YES" id="MUQ-fq-IGm">
@@ -764,11 +764,11 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <progressIndicator fixedFrame="YES" maxValue="100" displayedWhenStopped="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="9nf-Aj-ind">
+                    <progressIndicator fixedFrame="YES" maxValue="100" displayedWhenStopped="NO" indeterminate="YES" controlSize="small" style="spinning" id="9nf-Aj-ind">
                         <rect key="frame" x="401" y="223" width="16" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                     </progressIndicator>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EJ3-qs-6eF">
+                    <button verticalHuggingPriority="750" fixedFrame="YES" id="EJ3-qs-6eF">
                         <rect key="frame" x="418" y="214" width="75" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Create" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="GKx-k4-1dL">
@@ -779,7 +779,7 @@
                             <action selector="buttonCreate_action:" target="Voe-Tx-rLC" id="rf9-NN-v0O"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZU7-zI-sQS">
+                    <button verticalHuggingPriority="750" fixedFrame="YES" id="ZU7-zI-sQS">
                         <rect key="frame" x="490" y="214" width="82" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Destroy" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pEJ-1k-lgm">
@@ -790,7 +790,7 @@
                             <action selector="buttonDestroy_action:" target="Voe-Tx-rLC" id="GOg-6e-230"/>
                         </connections>
                     </button>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oge-NU-3es">
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" id="Oge-NU-3es">
                         <rect key="frame" x="386" y="253" width="181" height="14"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" allowsUndo="NO" title="one hundred thousand" usesSingleLineMode="YES" id="naV-uI-fWt">
@@ -799,7 +799,7 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OZP-Vb-CfD">
+                    <button verticalHuggingPriority="750" fixedFrame="YES" id="OZP-Vb-CfD">
                         <rect key="frame" x="13" y="212" width="193" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Change Age of Employees" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="iie-Hh-hDe">
