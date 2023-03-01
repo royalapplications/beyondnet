@@ -46,4 +46,20 @@ public class Person
 
         Age = newAge;
     }
+    
+    [NativeExport]
+    public void ChangeAge(Func<int>? newAgeProvider)
+    {
+        if (newAgeProvider == null) {
+            return;
+        }
+        
+        int newAge = newAgeProvider();
+
+        if (newAge < 0) {
+            throw new Exception("Age cannot be negative.");
+        }
+
+        Age = newAge;
+    }
 }

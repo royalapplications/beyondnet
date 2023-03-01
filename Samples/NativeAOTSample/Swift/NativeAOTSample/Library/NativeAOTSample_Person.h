@@ -25,4 +25,14 @@ CStatus NativeAOTSample_Person_ReduceAge(NativeAOTSample_Person_t instance,
 										 int32_t byYears,
 										 System_Exception_t* exception);
 
+
+// Sample API for demonstrating non-escaping closures
+typedef int32_t (*NativeAOTSample_Person_ChangeAge_NewAgeProvider_t)(const void* context);
+
+// Sample API for demonstrating non-escaping closures
+CStatus NativeAOTSample_Person_ChangeAge(NativeAOTSample_Person_t instance,
+										 const void* context,
+										 NativeAOTSample_Person_ChangeAge_NewAgeProvider_t newAgeProvider,
+										 System_Exception_t* exception);
+
 #endif /* NativeAOTSample_Person_h */

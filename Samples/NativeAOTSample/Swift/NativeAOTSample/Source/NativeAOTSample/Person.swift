@@ -141,4 +141,55 @@ public extension Person {
 			fatalError("Reduce age of \(swiftTypeName) failed but didn't throw an exception. This is unexpected.")
 		}
 	}
+	
+	// Sample API for demonstrating non-escaping closures
+	typealias ChangeAgeNewAgeProvider = () -> Int32
+	
+	// Sample API for demonstrating non-escaping closures
+	func changeAge(_ newAgeProvider: ChangeAgeNewAgeProvider?) throws {
+		Debug.log("Will change age of \(swiftTypeName)")
+		
+		var exceptionHandle: System_Exception_t?
+		
+		let closureBox: NativeBox<ChangeAgeNewAgeProvider>?
+		let handler: NativeAOTSample_Person_ChangeAge_NewAgeProvider_t?
+		
+		if let newAgeProvider {
+			closureBox = .init(value: newAgeProvider)
+			
+			handler = { innerContext in
+				guard let innerContext else {
+					fatalError("No context")
+				}
+				
+				let closure = NativeBox<ChangeAgeNewAgeProvider>.fromPointerUnretained(innerContext).value
+				let result = closure()
+				
+				return result
+			}
+		} else {
+			closureBox = nil
+			handler = nil
+		}
+		
+		let context = closureBox?.unretainedPointer()
+		
+		let success = NativeAOTSample_Person_ChangeAge(handle,
+													   context,
+													   handler,
+													   &exceptionHandle) == .success
+		
+		if success {
+			Debug.log("Did change age of \(swiftTypeName)")
+		} else if let exceptionHandle {
+			Debug.log("Change age of \(swiftTypeName) threw an exception")
+			
+			let exception = SystemException(handle: exceptionHandle)
+			let error = exception.error
+			
+			throw error
+		} else {
+			fatalError("Change age of \(swiftTypeName) failed but didn't throw an exception. This is unexpected.")
+		}
+	}
 }

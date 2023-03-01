@@ -34,25 +34,32 @@ final class PersonTests: XCTestCase {
         XCTAssertEqual(adjustedFullName, person.fullName)
         XCTAssertEqual(adjustedAge, person.age)
         
-        XCTAssertEqual(person, person)
-        
-        let secondPerson = Person(firstName: "a",
-                                  lastName: "b",
-                                  age: 1)
-        
-        XCTAssertNotEqual(person, secondPerson)
+		// swiftlint:disable:next identical_operands
+		XCTAssertTrue(person == person)
 		
-		XCTAssertNoThrow(try secondPerson.reduceAge(byYears: 1))
-		XCTAssertEqual(0, secondPerson.age)
+		let secondPerson = Person(firstName: "a",
+								  lastName: "b",
+								  age: 1)
+	
+		XCTAssertFalse(person == secondPerson)
+    }
+	
+	func testPersonExceptions() {
+		let person = Person(firstName: "a",
+							lastName: "b",
+							age: 1)
+		
+		XCTAssertNoThrow(try person.reduceAge(byYears: 1))
+		XCTAssertEqual(0, person.age)
 		
 		do {
-			try secondPerson.reduceAge(byYears: 1)
+			try person.reduceAge(byYears: 1)
 			
 			XCTFail("Calling reduceAge should throw here but did not")
 			
 			return
 		} catch {
-			XCTAssertEqual(0, secondPerson.age)
+			XCTAssertEqual(0, person.age)
 			
 			guard let systemExceptionError = error as? SystemException.Error else {
 				XCTFail("Error should be of type \(String(describing: SystemException.Error.self)) but is not")
@@ -66,7 +73,31 @@ final class PersonTests: XCTestCase {
 			XCTAssertEqual("Age cannot be negative.", errorDescription)
 			XCTAssertNotNil(stackTrace)
 		}
-    }
+	}
+	
+	func testPersonClosures() {
+		let initialAge: Int32 = 0
+		let newAge: Int32 = 5
+		let invalidAge: Int32 = -5
+		
+		let person = Person(firstName: "A",
+							lastName: "B",
+							age: initialAge)
+		
+		XCTAssertEqual(initialAge, person.age)
+		
+		// Test without a newAgeProvider
+		XCTAssertNoThrow(try person.changeAge(nil))
+		XCTAssertEqual(initialAge, person.age)
+		
+		// Test with a newAgeProvider that changes the age to a valid value
+		XCTAssertNoThrow(try person.changeAge { newAge })
+		XCTAssertEqual(newAge, person.age)
+		
+		// Test with a newAgeProvider that fails because it tries to change the age to an invalid value
+		XCTAssertThrowsError(try person.changeAge { invalidAge })
+		XCTAssertEqual(newAge, person.age)
+	}
 	
 	func testPersonExceptionPerformance() {
 		let debugLoggingWasEnabled = Debug.isLoggingEnabled

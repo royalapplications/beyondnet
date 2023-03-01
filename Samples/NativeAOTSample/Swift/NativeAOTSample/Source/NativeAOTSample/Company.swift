@@ -1,8 +1,6 @@
 import Foundation
 
 public class Company: SystemObject {
-	public typealias NumberOfEmployeesChangedHandler = () -> Void
-	
 	override class var type: SystemType {
 		.init(handle: NativeAOTSample_Company_TypeOf())
 	}
@@ -120,6 +118,9 @@ public extension Company {
 		
 		return employee
 	}
+	
+	// Sample API for demonstrating escaping closures
+	typealias NumberOfEmployeesChangedHandler = () -> Void
 	
 	var numberOfEmployeesChanged: NumberOfEmployeesChangedHandler? {
 		get {

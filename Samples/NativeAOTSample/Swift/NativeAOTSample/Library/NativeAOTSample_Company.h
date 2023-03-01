@@ -25,10 +25,12 @@ CBool NativeAOTSample_Company_ContainsEmployee(NativeAOTSample_Company_t instanc
 NativeAOTSample_Company_t NativeAOTSample_Company_GetEmployeeAtIndex(NativeAOTSample_Company_t instance,
 																	 const int32_t index);
 
+// Sample API for demonstrating escaping closures
 CStatus NativeAOTSample_Company_NumberOfEmployeesChanged_Get(NativeAOTSample_Company_t instance,
 															 const void** outContext,
 															 ContextDelegate_t* outDelegate);
 
+// Sample API for demonstrating escaping closures
 void NativeAOTSample_Company_NumberOfEmployeesChanged_Set(NativeAOTSample_Company_t instance,
 														  const void* context,
 														  ContextDelegate_t delegate);

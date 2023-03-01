@@ -176,7 +176,9 @@ internal static unsafe class Company_Native
 
         return employeeHandleAddress;
     }
-    
+
+    // Sample API for demonstrating escaping closures
+    #region NumberOfEmployeesChanged
     private class NumberOfEmployeesChangedHandler_Native
     {
         internal Company.NumberOfEmployeesChangedDelegate Trampoline { get; }
@@ -282,5 +284,6 @@ internal static unsafe class Company_Native
 
         instance.NumberOfEmployeesChanged = trampoline;
     }
+    #endregion NumberOfEmployeesChanged
     #endregion Public API
 }
