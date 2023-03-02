@@ -1,8 +1,12 @@
 #ifndef System_AppDomain_h
 #define System_AppDomain_h
 
-#import <stdlib.h>
-#import "TypeDefs.h"
+#import "CommonTypes.h"
+#import "System_Object.h"
+#import "System_Type.h"
+#import "System_UnhandledExceptionEventArgs.h"
+
+typedef void* System_AppDomain_t;
 
 typedef void (*UnhandledExceptionEventHandler_t)(void* context,
 												 System_Object_t sender,

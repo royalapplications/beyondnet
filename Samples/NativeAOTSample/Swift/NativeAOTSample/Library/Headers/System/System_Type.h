@@ -1,8 +1,10 @@
 #ifndef System_Type_h
 #define System_Type_h
 
-#import <stdlib.h>
-#import "TypeDefs.h"
+#import "CommonTypes.h"
+#import "System_Object.h"
+
+typedef void* System_Type_t;
 
 System_Type_t System_Type_TypeOf(void);
 System_Type_t System_Type_GetType(const char* typeName);

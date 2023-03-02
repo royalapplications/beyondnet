@@ -1,8 +1,11 @@
 #ifndef System_Exception_h
 #define System_Exception_h
 
-#import <stdlib.h>
-#import "TypeDefs.h"
+#import "CommonTypes.h"
+#import "System_Object.h"
+#import "System_Type.h"
+
+typedef void* System_Exception_t;
 
 System_Type_t System_Exception_TypeOf(void);
 System_Exception_t System_Exception_Create(const char* message);

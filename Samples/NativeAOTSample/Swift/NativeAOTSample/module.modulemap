@@ -1,7 +1,7 @@
 framework module NativeAOTSample {
     umbrella header "NativeAOTSample.h"
 
-    private header "TypeDefs.h"
+    private header "CommonTypes.h"
     
 	private header "System_Object.h"
 	private header "System_Type.h"

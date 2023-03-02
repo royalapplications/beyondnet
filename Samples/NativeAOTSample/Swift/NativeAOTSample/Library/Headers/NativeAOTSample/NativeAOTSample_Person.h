@@ -1,8 +1,11 @@
 #ifndef NativeAOTSample_Person_h
 #define NativeAOTSample_Person_h
 
-#include <stdlib.h>
-#import "TypeDefs.h"
+#import "CommonTypes.h"
+#import "System_Object.h"
+#import "System_Type.h"
+
+typedef void* NativeAOTSample_Person_t;
 
 System_Type_t NativeAOTSample_Person_TypeOf(void);
 

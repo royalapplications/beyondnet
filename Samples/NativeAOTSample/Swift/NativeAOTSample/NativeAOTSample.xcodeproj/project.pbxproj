@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E716200029A66CC000D45FCD /* TypeDefs.h in Headers */ = {isa = PBXBuildFile; fileRef = E7161FFF29A66CBB00D45FCD /* TypeDefs.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		E716200029A66CC000D45FCD /* CommonTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = E7161FFF29A66CBB00D45FCD /* CommonTypes.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		E716200229A6795D00D45FCD /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = E716200129A6795D00D45FCD /* Debug.swift */; };
 		E71625CE29A942D900F47651 /* NativeBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71625CD29A942D900F47651 /* NativeBox.swift */; };
 		E716C71429AF71470099E179 /* CBool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E716C71329AF71470099E179 /* CBool.swift */; };
@@ -69,7 +69,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E7161FFF29A66CBB00D45FCD /* TypeDefs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TypeDefs.h; sourceTree = "<group>"; };
+		E7161FFF29A66CBB00D45FCD /* CommonTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonTypes.h; sourceTree = "<group>"; };
 		E716200129A6795D00D45FCD /* Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
 		E71625CD29A942D900F47651 /* NativeBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeBox.swift; sourceTree = "<group>"; };
 		E716C71329AF71470099E179 /* CBool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBool.swift; sourceTree = "<group>"; };
@@ -153,7 +153,7 @@
 		E716C71929AF78100099E179 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
-				E7161FFF29A66CBB00D45FCD /* TypeDefs.h */,
+				E7161FFF29A66CBB00D45FCD /* CommonTypes.h */,
 				E716C71729AF77C20099E179 /* System */,
 				E716C71829AF77D30099E179 /* NativeAOTSample */,
 			);
@@ -252,7 +252,7 @@
 				E738716529ACD9CB00BEA7DA /* System_UnhandledExceptionEventArgs.h in Headers */,
 				E738715E29ACD36C00BEA7DA /* System_AppDomain.h in Headers */,
 				E7BC393E29A7A17400806ADD /* System_Type.h in Headers */,
-				E716200029A66CC000D45FCD /* TypeDefs.h in Headers */,
+				E716200029A66CC000D45FCD /* CommonTypes.h in Headers */,
 				E7E9D57D29A76DB4002C3834 /* System_Object.h in Headers */,
 				E7BC394C29A7A87600806ADD /* System_Exception.h in Headers */,
 				E7E26AC429A62FBD005334CF /* NativeAOTSample_Person.h in Headers */,
