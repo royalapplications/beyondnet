@@ -4,6 +4,14 @@ public class ClosureToken<SwiftHandler, NativeHandler> {
 	internal var closureBox: NativeBox<SwiftHandler>?
 	internal var handler: NativeHandler?
 	
+	internal func retainedPointerToClosureBox() -> UnsafeRawPointer? {
+		closureBox?.retainedPointer()
+	}
+	
+	internal func unretainedPointerToClosureBox() -> UnsafeRawPointer? {
+		closureBox?.unretainedPointer()
+	}
+	
 	public var isValid: Bool {
 		closureBox != nil &&
 		handler != nil

@@ -62,7 +62,8 @@ public extension SystemAppDomain {
 	func addUnhandledExceptionHandler(_ handler: @escaping UnhandledExceptionHandler) -> UnhandledExceptionHandlerToken {
 		Debug.log("Will add unhandled exception event handler to \(swiftTypeName)")
 		
-		let newHandler: UnhandledExceptionEventHandler_t = { innerContext, senderHandle, eventArgsHandle in
+		let token = UnhandledExceptionHandlerToken(closureBox: .init(value: handler),
+												   handler: { innerContext, senderHandle, eventArgsHandle in
 			guard let innerContext,
 				  let senderHandle,
 				  let eventArgsHandle else {
@@ -73,19 +74,20 @@ public extension SystemAppDomain {
 			
 			closure(.init(handle: senderHandle),
 					.init(handle: eventArgsHandle))
+		})
+		
+		guard let context = token.retainedPointerToClosureBox(),
+			  let handler = token.handler else {
+			fatalError("context and handler should not be nil here")
 		}
 		
-		let newClosureBox = NativeBox(value: handler)
-		let outerContext = newClosureBox.retainedPointer()
-		
 		System_AppDomain_UnhandledException_Add(handle,
-												outerContext,
-												newHandler)
+												context,
+												handler)
 		
 		Debug.log("Did add unhandled exception event handler to \(swiftTypeName)")
 		
-		return .init(closureBox: newClosureBox,
-					 handler: newHandler)
+		return token
 	}
 	
 	@discardableResult
