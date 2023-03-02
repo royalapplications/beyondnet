@@ -62,7 +62,7 @@ public extension SystemAppDomain {
 	func addUnhandledExceptionHandler(_ handler: @escaping UnhandledExceptionHandler) -> UnhandledExceptionHandlerToken {
 		Debug.log("Will add unhandled exception event handler to \(swiftTypeName)")
 		
-		let token = UnhandledExceptionHandlerToken(closureBox: .init(value: handler),
+		let token = UnhandledExceptionHandlerToken(closure: handler,
 												   handler: { innerContext, senderHandle, eventArgsHandle in
 			guard let innerContext,
 				  let senderHandle,

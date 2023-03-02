@@ -154,7 +154,7 @@ public extension Person {
 		let token: ClosureToken<ChangeAgeNewAgeProvider, NativeAOTSample_Person_ChangeAge_NewAgeProvider_t>?
 		
 		if let newAgeProvider {
-			token = .init(closureBox: .init(value: newAgeProvider),
+			token = .init(closure: newAgeProvider,
 						  handler: { innerContext in
 				guard let innerContext else {
 					fatalError("No context")

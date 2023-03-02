@@ -1,6 +1,6 @@
 import Foundation
 
-public class ClosureToken<SwiftHandler, NativeHandler> {
+public final class ClosureToken<SwiftHandler, NativeHandler> {
 	internal var closureBox: NativeBox<SwiftHandler>?
 	internal var handler: NativeHandler?
 	
@@ -17,10 +17,16 @@ public class ClosureToken<SwiftHandler, NativeHandler> {
 		handler != nil
 	}
 	
-	internal init(closureBox: NativeBox<SwiftHandler>,
-				  handler: NativeHandler) {
+	private init(closureBox: NativeBox<SwiftHandler>,
+				 handler: NativeHandler) {
 		self.closureBox = closureBox
 		self.handler = handler
+	}
+	
+	internal convenience init(closure: SwiftHandler,
+							  handler: NativeHandler) {
+		self.init(closureBox: .init(value: closure),
+				  handler: handler)
 	}
 	
 	internal func invalidate(andReleasePointerToClosureBox pointerToClosureBox: UnsafeRawPointer?) {

@@ -1,6 +1,6 @@
 import Foundation
 
-class NativeBox<T> {
+final class NativeBox<T> {
     let value: T
     
     init(value: T) {
