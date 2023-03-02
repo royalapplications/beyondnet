@@ -15,7 +15,6 @@ typedef enum __attribute__((enum_extensibility(closed))): uint8_t {
 } CBool;
 
 #pragma mark - Common Function Pointer Signatures
-typedef void (*VoidDelegate_t)(void);
 typedef void (*ContextDelegate_t)(void* context);
 
 #pragma mark - System
