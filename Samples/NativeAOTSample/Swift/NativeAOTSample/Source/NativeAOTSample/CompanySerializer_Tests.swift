@@ -23,7 +23,7 @@ final class CompanySerializerTests: XCTestCase {
 		XCTAssertFalse(json.isEmpty)
 		
 		// For debugging
-		print(json)
+//		print(json)
 		
 		let deserializedCompany: Company
 		

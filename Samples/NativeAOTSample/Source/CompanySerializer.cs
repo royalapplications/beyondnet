@@ -6,11 +6,8 @@ namespace NativeAOTSample;
 
 [JsonSerializable(typeof(Company))]
 [JsonSerializable(typeof(Person))]
-[JsonSourceGenerationOptions(
-    GenerationMode = JsonSourceGenerationMode.Metadata,
-    WriteIndented = true
-)]
-internal partial class MetadataOnlyContext : JsonSerializerContext { }
+[JsonSourceGenerationOptions(GenerationMode = JsonSourceGenerationMode.Metadata, WriteIndented = true)]
+internal partial class CompanyMetadataOnlyContext : JsonSerializerContext { }
 
 [NativeExport]
 public class CompanySerializer
@@ -18,7 +15,7 @@ public class CompanySerializer
     [NativeExport]
     public string SerializeToJson(Company company)
     {
-        string jsonString = JsonSerializer.Serialize(company, MetadataOnlyContext.Default.Company);
+        string jsonString = JsonSerializer.Serialize(company, CompanyMetadataOnlyContext.Default.Company);
 
         return jsonString;
 
@@ -28,7 +25,7 @@ public class CompanySerializer
     [NativeExport(Throwing = true)]
     public Company DeserializeFromJson(string jsonString)
     {
-        Company? company = JsonSerializer.Deserialize<Company>(jsonString, MetadataOnlyContext.Default.Company);
+        Company? company = JsonSerializer.Deserialize(jsonString, CompanyMetadataOnlyContext.Default.Company);
 
         if (company == null) {
             throw new Exception("An unknown error occured while deserializing JSON.");
