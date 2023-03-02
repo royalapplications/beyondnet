@@ -344,15 +344,21 @@ private extension AppDelegate {
 		
 		company.numberOfEmployeesChanged = nil
 		self.company = nil
-		SystemGC.collect()
 		
-		let formattedDelta = formattedDateDelta(startDate: startDate)
-		
-		let alert = NSAlert()
-		alert.messageText = "\(companyName) was destroyed"
-		alert.informativeText = "Company \"\(companyName)\" was destroyed with \(formattedNumberOfEmployees) employees and garbage has been collected.\nIt took \(formattedDelta) seconds."
-		alert.addButton(withTitle: "OK")
-		
-		alert.beginSheetModal(for: window)
+		// Making this async ensures that the deinitializer of Company gets called before we call SystemGC.collect
+		DispatchQueue.main.async { [weak self] in
+			guard let self else { return }
+			
+			SystemGC.collect()
+			
+			let formattedDelta = self.formattedDateDelta(startDate: startDate)
+			
+			let alert = NSAlert()
+			alert.messageText = "\(companyName) was destroyed"
+			alert.informativeText = "Company \"\(companyName)\" was destroyed with \(formattedNumberOfEmployees) employees and garbage has been collected.\nIt took \(formattedDelta) seconds."
+			alert.addButton(withTitle: "OK")
+			
+			alert.beginSheetModal(for: self.window)
+		}
 	}
 }
