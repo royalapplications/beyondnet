@@ -19,6 +19,10 @@ extension NativeBox {
 		unmanaged.release()
 	}
 	
+	func releaseRetainedPointer(_ pointer: UnsafeRawPointer) {
+		Self.releaseRetainedPointer(pointer)
+	}
+	
 	func unretainedPointer() -> UnsafeRawPointer {
 		let unmanaged = Unmanaged.passUnretained(self)
 		let opaque = unmanaged.toOpaque()

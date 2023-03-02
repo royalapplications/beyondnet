@@ -74,10 +74,10 @@ public extension SystemAppDomain {
 				return
 			}
 			
-			let closure = NativeBox<UnhandledExceptionHandler>.fromPointerUnretained(innerContext).value
-			
 			let sender = SystemObject(handle: senderHandle)
 			let eventArgs = SystemUnhandledExceptionEventArgs(handle: eventArgsHandle)
+			
+			let closure = NativeBox<UnhandledExceptionHandler>.fromPointerUnretained(innerContext).value
 			
 			closure(sender, eventArgs)
 		}
@@ -98,9 +98,15 @@ public extension SystemAppDomain {
 	func removeUnhandledExceptionHandler(_ handlerToken: UnhandledExceptionHandlerToken) -> Bool {
 		Debug.log("Will remove unhandled exception event handler to \(swiftTypeName)")
 		
+		let closureBox = handlerToken.closureBox
+		let context = closureBox.unretainedPointer()
+		let handler = handlerToken.handler
+		
 		let result = System_AppDomain_UnhandledException_Remove(handle,
-																handlerToken.closureBox.unretainedPointer(),
-																handlerToken.handler).boolValue
+																context,
+																handler).boolValue
+		
+		closureBox.releaseRetainedPointer(context)
 		
 		Debug.log("Did remove unhandled exception event handler to \(swiftTypeName)")
 		
