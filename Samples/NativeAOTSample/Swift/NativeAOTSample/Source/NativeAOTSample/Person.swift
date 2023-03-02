@@ -151,11 +151,13 @@ public extension Person {
 		
 		var exceptionHandle: System_Exception_t?
 		
-		let token: ClosureToken<ChangeAgeNewAgeProvider, NativeAOTSample_Person_ChangeAge_NewAgeProvider_t>?
+		let closureBox: NativeBox<ChangeAgeNewAgeProvider>?
+		var handler: NativeAOTSample_Person_ChangeAge_NewAgeProvider_t?
 		
 		if let newAgeProvider {
-			token = .init(closure: newAgeProvider,
-						  handler: { innerContext in
+			closureBox = .init(value: newAgeProvider)
+			
+			handler = { innerContext in
 				guard let innerContext else {
 					fatalError("No context")
 				}
@@ -164,13 +166,13 @@ public extension Person {
 				let result = closure()
 				
 				return result
-			})
+			}
 		} else {
-			token = nil
+			closureBox = nil
+			handler = nil
 		}
 		
-		let context = token?.unretainedPointerToClosureBox()
-		let handler = token?.handler
+		let context = closureBox?.unretainedPointer()
 		
 		let success = NativeAOTSample_Person_ChangeAge(handle,
 													   context,
