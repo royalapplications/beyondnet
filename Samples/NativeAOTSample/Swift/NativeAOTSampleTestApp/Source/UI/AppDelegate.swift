@@ -207,12 +207,6 @@ private extension AppDelegate {
 
 // MARK: - Create Company
 private extension AppDelegate {
-	struct RandomEmployeesData {
-		let firstNames: [String]
-		let lastNames: [String]
-		let ages: [Int32]
-	}
-	
 	func createCompany(onMainThread: Bool) {
 		let companyName = textFieldCompanyName.stringValue
 		let numberOfEmployees = textFieldNumberOfEmployees.integerValue
@@ -255,6 +249,7 @@ private extension AppDelegate {
 		let creationStartDate = Date()
 		
 		let company = createCompany(name: companyName,
+									numberOfEmployees: numberOfEmployees,
 									employeeFirstNames: &randomFirstNames,
 									employeeLastNames: &randomLastNames,
 									employeeAges: &randomAges)
@@ -276,12 +271,13 @@ private extension AppDelegate {
 	}
 	
 	func createCompany(name companyName: String,
+					   numberOfEmployees: Int,
 					   employeeFirstNames: inout [String],
 					   employeeLastNames: inout [String],
 					   employeeAges: inout [Int32]) -> Company {
 		let company = Company(name: companyName)
 		
-		for idx in 0..<employeeFirstNames.count {
+		for idx in 0..<numberOfEmployees {
 			let firstName = employeeFirstNames[idx]
 			let lastName = employeeLastNames[idx]
 			let age = employeeAges[idx]
