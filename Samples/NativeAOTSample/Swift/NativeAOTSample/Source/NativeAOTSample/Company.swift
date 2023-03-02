@@ -133,7 +133,7 @@ public extension Company {
 																	&handler).boolValue,
 			   let context,
 			   handler != nil {
-				closure = NativeBox<NumberOfEmployeesChangedHandler>.fromPointerUnretained(context).value
+				closure = NativeBox<NumberOfEmployeesChangedHandler>.fromPointer(context).value
 			} else {
 				closure = nil
 			}
@@ -161,7 +161,7 @@ public extension Company {
 				newHandler = { innerContext in
 					guard let innerContext else { return }
 					
-					let closure = NativeBox<NumberOfEmployeesChangedHandler>.fromPointerUnretained(innerContext).value
+					let closure = NativeBox<NumberOfEmployeesChangedHandler>.fromPointer(innerContext).value
 					
 					closure()
 				}
@@ -177,7 +177,7 @@ public extension Company {
 			if currentSuccess,
 			   let currentContext,
 			   currentHandler != nil {
-				NativeBox<NumberOfEmployeesChangedHandler>.releaseRetainedPointer(currentContext)
+				NativeBox<NumberOfEmployeesChangedHandler>.release(currentContext)
 			}
 			
 			Debug.log("Did set closure for numberOfEmployeesChanged of \(swiftTypeName)")

@@ -162,7 +162,7 @@ public extension Person {
 					fatalError("No context")
 				}
 				
-				let closure = NativeBox<ChangeAgeNewAgeProvider>.fromPointerUnretained(innerContext).value
+				let closure = NativeBox<ChangeAgeNewAgeProvider>.fromPointer(innerContext).value
 				let result = closure()
 				
 				return result

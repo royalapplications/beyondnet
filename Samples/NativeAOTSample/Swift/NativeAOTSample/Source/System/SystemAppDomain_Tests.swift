@@ -50,4 +50,19 @@ final class SystemAppDomainTests: XCTestCase {
 		
 		XCTAssertEqual(appDomain.type, castedAppDomain.type)
 	}
+	
+	func testAppDomainClosures() {
+		let appDomain = SystemAppDomain.current()
+		
+		let token = appDomain.addUnhandledExceptionHandler { _, _ in }
+		let removeSuccess = appDomain.removeUnhandledExceptionHandler(token)
+
+		XCTAssertTrue(removeSuccess)
+
+		let removeAgainSuccess = appDomain.removeUnhandledExceptionHandler(token)
+		XCTAssertFalse(removeAgainSuccess)
+		
+		let removeOnceAgainSuccess = appDomain.removeUnhandledExceptionHandler(token)
+		XCTAssertFalse(removeOnceAgainSuccess)
+	}
 }

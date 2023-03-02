@@ -164,6 +164,11 @@ internal static unsafe class System_AppDomain_t
 
         instance.UnhandledException -= trampoline;
 
+        List<UnhandledExceptionHandler_Native> newNativeHandlers = currentNativeHandlers.ToList();
+        newNativeHandlers.Remove(nativeHandler);
+
+        m_unhandledExceptionHandlersNative[instance] = newNativeHandlers.ToArray();
+
         return CStatus.Success;
     }
     #endregion Public API

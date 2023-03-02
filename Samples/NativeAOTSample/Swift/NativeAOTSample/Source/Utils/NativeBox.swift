@@ -12,46 +12,55 @@ class NativeBox<T> {
 	}
 }
 
+// MARK: - To Pointer
 extension NativeBox {
-	static func releaseRetainedPointer(_ pointer: UnsafeRawPointer) {
-		let unmanaged = Unmanaged<Self>.fromOpaque(pointer)
-		
-		unmanaged.release()
-	}
-	
-	func releaseRetainedPointer(_ pointer: UnsafeRawPointer) {
-		Self.releaseRetainedPointer(pointer)
-	}
-	
 	func unretainedPointer() -> UnsafeRawPointer {
-		let unmanaged = Unmanaged.passUnretained(self)
-		let opaque = unmanaged.toOpaque()
-		let pointer = UnsafeRawPointer(opaque)
-		
-		return pointer
+		pointer(retained: false)
 	}
 	
 	func retainedPointer() -> UnsafeRawPointer {
-		let unmanaged = Unmanaged.passRetained(self)
+		pointer(retained: true)
+	}
+}
+
+private extension NativeBox {
+	func pointer(retained: Bool) -> UnsafeRawPointer {
+		let unmanaged: Unmanaged<NativeBox<T>>
+		
+		if retained {
+			unmanaged = Unmanaged.passRetained(self)
+		} else {
+			unmanaged = Unmanaged.passUnretained(self)
+		}
+		
 		let opaque = unmanaged.toOpaque()
+		
 		let pointer = UnsafeRawPointer(opaque)
 		
 		return pointer
 	}
-	
-	static func fromPointerUnretained(_ pointer: UnsafeRawPointer) -> Self {
+}
+
+// MARK: - From Pointer
+extension NativeBox {
+	static func fromPointer(_ pointer: UnsafeRawPointer) -> Self {
 		let unmanaged = Unmanaged<Self>.fromOpaque(pointer)
 		
 		let box = unmanaged.takeUnretainedValue()
 		
 		return box
 	}
-	
-	static func fromPointerRetained(_ pointer: UnsafeRawPointer) -> Self {
+}
+
+// MARK: - Release
+extension NativeBox {
+	static func release(_ pointer: UnsafeRawPointer) {
 		let unmanaged = Unmanaged<Self>.fromOpaque(pointer)
 		
-		let box = unmanaged.takeRetainedValue()
-		
-		return box
+		unmanaged.release()
+	}
+	
+	func release(_ pointer: UnsafeRawPointer) {
+		Self.release(pointer)
 	}
 }
