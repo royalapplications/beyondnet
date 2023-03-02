@@ -10,9 +10,13 @@ public class DelegateToken<SwiftHandler, NativeHandler> {
 		self.handler = handler
 	}
 	
-	internal func invalidate() {
-		closureBox = nil
-		handler = nil
+	internal func invalidate(andReleasePointerToClosureBox pointerToClosureBox: UnsafeRawPointer?) {
+		if let pointerToClosureBox {
+			closureBox?.release(pointerToClosureBox)
+		}
+		
+		self.closureBox = nil
+		self.handler = nil
 	}
 	
 	deinit {

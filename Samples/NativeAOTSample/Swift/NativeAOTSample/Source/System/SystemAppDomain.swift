@@ -103,8 +103,7 @@ public extension SystemAppDomain {
 																context,
 																handler).boolValue
 		
-		closureBox.release(context)
-		handlerToken.invalidate()
+		handlerToken.invalidate(andReleasePointerToClosureBox: context)
 		
 		Debug.log("Did remove unhandled exception event handler to \(swiftTypeName)")
 		
