@@ -56,7 +56,7 @@ public extension SystemAppDomain {
 		return value
 	}
 	
-	typealias UnhandledExceptionHandlerToken = DelegateToken<UnhandledExceptionHandler, UnhandledExceptionEventHandler_t>
+	typealias UnhandledExceptionHandlerToken = ClosureToken<UnhandledExceptionHandler, UnhandledExceptionEventHandler_t>
 	
 	@discardableResult
 	func addUnhandledExceptionHandler(_ handler: @escaping UnhandledExceptionHandler) -> UnhandledExceptionHandlerToken {

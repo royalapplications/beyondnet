@@ -55,14 +55,18 @@ final class SystemAppDomainTests: XCTestCase {
 		let appDomain = SystemAppDomain.current()
 		
 		let token = appDomain.addUnhandledExceptionHandler { _, _ in }
+		XCTAssertTrue(token.isValid)
+		
 		let removeSuccess = appDomain.removeUnhandledExceptionHandler(token)
-
 		XCTAssertTrue(removeSuccess)
+		XCTAssertFalse(token.isValid)
 
 		let removeAgainSuccess = appDomain.removeUnhandledExceptionHandler(token)
 		XCTAssertFalse(removeAgainSuccess)
+		XCTAssertFalse(token.isValid)
 		
 		let removeOnceAgainSuccess = appDomain.removeUnhandledExceptionHandler(token)
 		XCTAssertFalse(removeOnceAgainSuccess)
+		XCTAssertFalse(token.isValid)
 	}
 }

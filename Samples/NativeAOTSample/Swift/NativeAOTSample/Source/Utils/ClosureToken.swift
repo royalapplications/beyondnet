@@ -1,8 +1,13 @@
 import Foundation
 
-public class DelegateToken<SwiftHandler, NativeHandler> {
+public class ClosureToken<SwiftHandler, NativeHandler> {
 	internal var closureBox: NativeBox<SwiftHandler>?
 	internal var handler: NativeHandler?
+	
+	public var isValid: Bool {
+		closureBox != nil &&
+		handler != nil
+	}
 	
 	internal init(closureBox: NativeBox<SwiftHandler>,
 				  handler: NativeHandler) {
