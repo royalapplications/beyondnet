@@ -695,15 +695,15 @@
         </menu>
         <window title="NativeAOTSampleTestApp" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-            <rect key="contentRect" x="335" y="390" width="586" height="349"/>
+            <rect key="contentRect" x="335" y="390" width="586" height="390"/>
             <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1415"/>
             <value key="minSize" type="size" width="500" height="300"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="586" height="349"/>
+                <rect key="frame" x="0.0" y="0.0" width="586" height="390"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="NuA-io-0k8">
-                        <rect key="frame" x="18" y="252" width="158" height="16"/>
+                        <rect key="frame" x="18" y="253" width="158" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Number of Employees:" usesSingleLineMode="YES" id="dah-v2-xJD">
                             <font key="font" usesAppearanceFont="YES"/>
@@ -712,7 +712,7 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" id="v84-lr-OsM">
-                        <rect key="frame" x="182" y="249" width="198" height="21"/>
+                        <rect key="frame" x="182" y="250" width="198" height="21"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="100000" drawsBackground="YES" usesSingleLineMode="YES" id="Xx2-hF-aKT">
                             <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" formatWidth="-1" groupingSize="0" minimumIntegerDigits="1" maximumIntegerDigits="42" id="ma0-1d-qHH">
@@ -724,7 +724,7 @@
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" id="cG3-BT-lQm">
-                        <rect key="frame" x="18" y="312" width="119" height="18"/>
+                        <rect key="frame" x="18" y="353" width="119" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="Debug Logging" bezelStyle="regularSquare" imagePosition="left" inset="2" id="eEC-4d-Y8P">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -735,20 +735,20 @@
                         </connections>
                     </button>
                     <tabView id="M7U-07-z8u">
-                        <rect key="frame" x="13" y="2" width="560" height="217"/>
+                        <rect key="frame" x="13" y="2" width="560" height="216"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <font key="font" metaFont="system"/>
                         <tabViewItems>
                             <tabViewItem label="Company" identifier="" id="6Vp-dM-mIH">
                                 <view key="view" id="BJ0-tR-1X5">
-                                    <rect key="frame" x="10" y="33" width="540" height="171"/>
+                                    <rect key="frame" x="10" y="33" width="540" height="170"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                             </tabViewItem>
                         </tabViewItems>
                     </tabView>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="0uS-Sy-Yzw">
-                        <rect key="frame" x="18" y="276" width="158" height="16"/>
+                        <rect key="frame" x="18" y="277" width="158" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Company Name:" usesSingleLineMode="YES" id="VVg-du-t1J">
                             <font key="font" metaFont="system"/>
@@ -757,7 +757,7 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" id="5yf-XK-yuO">
-                        <rect key="frame" x="182" y="273" width="384" height="21"/>
+                        <rect key="frame" x="182" y="274" width="384" height="21"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" title="Fancy Company Inc." drawsBackground="YES" usesSingleLineMode="YES" id="MUQ-fq-IGm">
                             <font key="font" metaFont="system"/>
@@ -766,11 +766,11 @@
                         </textFieldCell>
                     </textField>
                     <progressIndicator maxValue="100" displayedWhenStopped="NO" indeterminate="YES" controlSize="small" style="spinning" id="9nf-Aj-ind">
-                        <rect key="frame" x="401" y="223" width="16" height="16"/>
+                        <rect key="frame" x="401" y="224" width="16" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                     </progressIndicator>
                     <button verticalHuggingPriority="750" id="EJ3-qs-6eF">
-                        <rect key="frame" x="418" y="214" width="75" height="32"/>
+                        <rect key="frame" x="418" y="215" width="75" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Create" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="GKx-k4-1dL">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -781,7 +781,7 @@
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" id="ZU7-zI-sQS">
-                        <rect key="frame" x="490" y="214" width="82" height="32"/>
+                        <rect key="frame" x="490" y="215" width="82" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Destroy" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pEJ-1k-lgm">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -792,7 +792,7 @@
                         </connections>
                     </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsExpansionToolTips="YES" id="Oge-NU-3es">
-                        <rect key="frame" x="386" y="253" width="181" height="14"/>
+                        <rect key="frame" x="386" y="254" width="181" height="14"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" allowsUndo="NO" title="one hundred thousand" usesSingleLineMode="YES" id="naV-uI-fWt">
                             <font key="font" metaFont="smallSystem"/>
@@ -801,7 +801,7 @@
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" id="OZP-Vb-CfD">
-                        <rect key="frame" x="13" y="212" width="193" height="32"/>
+                        <rect key="frame" x="13" y="213" width="193" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Change Age of Employees" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="iie-Hh-hDe">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -811,8 +811,8 @@
                             <action selector="buttonChangeAgeOfEmployees_action:" target="Voe-Tx-rLC" id="ETE-r8-YZg"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" id="9ux-MG-Wkw">
-                        <rect key="frame" x="146" y="304" width="294" height="32"/>
+                    <button verticalHuggingPriority="750" id="9ux-MG-Wkw">
+                        <rect key="frame" x="13" y="307" width="294" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Add/Remove Unhandled Exception Handler" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mB7-08-doO">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -822,9 +822,20 @@
                             <action selector="buttonAddOrRemoveUnhandledExceptionHandler_action:" target="Voe-Tx-rLC" id="gQA-CU-gL8"/>
                         </connections>
                     </button>
+                    <button verticalHuggingPriority="750" id="3hf-st-lY0">
+                        <rect key="frame" x="305" y="307" width="204" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Throw Unhandled Exception" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="125-jt-QWl">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="buttonThrowUnhandledException_action:" target="Voe-Tx-rLC" id="Uow-0T-YNo"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="253" y="394.5"/>
+            <point key="canvasLocation" x="253" y="415"/>
         </window>
     </objects>
 </document>

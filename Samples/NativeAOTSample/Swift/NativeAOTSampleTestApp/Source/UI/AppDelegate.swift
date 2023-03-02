@@ -54,9 +54,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		
 		unhandledExceptionHandlerToken = addUnhandledExceptionHandler()
 		buttonAddOrRemoveUnhandledExceptionHandler.title = "Remove Unhandled Exception Handler"
-		
-		// Only for testing!
-//		UnhandledExceptionTest.throwUnhandledException()
     }
 	
 	@IBAction private func checkBoxDebugLogging_action(_ sender: Any) {
@@ -86,6 +83,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			
 			buttonAddOrRemoveUnhandledExceptionHandler.title = "Remove Unhandled Exception Handler"
 		}
+	}
+	
+	@IBAction private func buttonThrowUnhandledException_action(_ sender: Any) {
+		UnhandledExceptionTest.throwUnhandledException()
 	}
 }
 

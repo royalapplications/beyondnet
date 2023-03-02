@@ -19,6 +19,7 @@
 		E738716729ACDA1200BEA7DA /* SystemUnhandledExceptionEventArgs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E738716629ACDA1200BEA7DA /* SystemUnhandledExceptionEventArgs.swift */; };
 		E738716929ACE3D100BEA7DA /* NativeAOTSample_UnhandledExceptionTest.h in Headers */ = {isa = PBXBuildFile; fileRef = E738716829ACE3D100BEA7DA /* NativeAOTSample_UnhandledExceptionTest.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		E738716B29ACE41600BEA7DA /* UnhandledExceptionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E738716A29ACE41600BEA7DA /* UnhandledExceptionTest.swift */; };
+		E78E02A529B0AB65003604E3 /* DelegateToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78E02A429B0AB65003604E3 /* DelegateToken.swift */; };
 		E797ABB829AE0ECE006F9849 /* SystemObject_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797ABB729AE0ECE006F9849 /* SystemObject_Tests.swift */; };
 		E797ABBA29AE112D006F9849 /* SystemType_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797ABB929AE112D006F9849 /* SystemType_Tests.swift */; };
 		E797ABBC29AE14E6006F9849 /* SystemException_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797ABBB29AE14E6006F9849 /* SystemException_Tests.swift */; };
@@ -80,6 +81,7 @@
 		E738716629ACDA1200BEA7DA /* SystemUnhandledExceptionEventArgs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemUnhandledExceptionEventArgs.swift; sourceTree = "<group>"; };
 		E738716829ACE3D100BEA7DA /* NativeAOTSample_UnhandledExceptionTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeAOTSample_UnhandledExceptionTest.h; sourceTree = "<group>"; };
 		E738716A29ACE41600BEA7DA /* UnhandledExceptionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnhandledExceptionTest.swift; sourceTree = "<group>"; };
+		E78E02A429B0AB65003604E3 /* DelegateToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateToken.swift; sourceTree = "<group>"; };
 		E797ABB729AE0ECE006F9849 /* SystemObject_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemObject_Tests.swift; sourceTree = "<group>"; };
 		E797ABB929AE112D006F9849 /* SystemType_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemType_Tests.swift; sourceTree = "<group>"; };
 		E797ABBB29AE14E6006F9849 /* SystemException_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemException_Tests.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				E71625CD29A942D900F47651 /* NativeBox.swift */,
 				E716C71329AF71470099E179 /* CBool.swift */,
 				E716C71529AF74DF0099E179 /* CStatus.swift */,
+				E78E02A429B0AB65003604E3 /* DelegateToken.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				E7E26AC629A63147005334CF /* Person.swift in Sources */,
 				E738716B29ACE41600BEA7DA /* UnhandledExceptionTest.swift in Sources */,
 				E716C71629AF74DF0099E179 /* CStatus.swift in Sources */,
+				E78E02A529B0AB65003604E3 /* DelegateToken.swift in Sources */,
 				E7E9D58029A77776002C3834 /* SystemObject.swift in Sources */,
 				E716200229A6795D00D45FCD /* Debug.swift in Sources */,
 				E7E26AC929A668F8005334CF /* Company.swift in Sources */,

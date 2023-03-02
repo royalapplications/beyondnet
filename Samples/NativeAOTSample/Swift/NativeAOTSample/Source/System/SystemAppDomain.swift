@@ -56,25 +56,7 @@ public extension SystemAppDomain {
 		return value
 	}
 	
-	class UnhandledExceptionHandlerToken {
-		fileprivate var closureBox: NativeBox<UnhandledExceptionHandler>?
-		fileprivate var handler: UnhandledExceptionEventHandler_t?
-		
-		fileprivate init(closureBox: NativeBox<UnhandledExceptionHandler>,
-						 handler: UnhandledExceptionEventHandler_t) {
-			self.closureBox = closureBox
-			self.handler = handler
-		}
-		
-		fileprivate func invalidate() {
-			closureBox = nil
-			handler = nil
-		}
-		
-		deinit {
-			Debug.log("Deinitializing \(Self.self)")
-		}
-	}
+	typealias UnhandledExceptionHandlerToken = DelegateToken<UnhandledExceptionHandler, UnhandledExceptionEventHandler_t>
 	
 	@discardableResult
 	func addUnhandledExceptionHandler(_ handler: @escaping UnhandledExceptionHandler) -> UnhandledExceptionHandlerToken {
@@ -87,19 +69,14 @@ public extension SystemAppDomain {
 				return
 			}
 			
-			let sender = SystemObject(handle: senderHandle)
-			let eventArgs = SystemUnhandledExceptionEventArgs(handle: eventArgsHandle)
-			
 			let closure = NativeBox<UnhandledExceptionHandler>.fromPointer(innerContext).value
 			
-			closure(sender, eventArgs)
+			closure(.init(handle: senderHandle),
+					.init(handle: eventArgsHandle))
 		}
 		
 		let newClosureBox = NativeBox(value: handler)
 		let outerContext = newClosureBox.retainedPointer()
-		
-		let token = UnhandledExceptionHandlerToken(closureBox: newClosureBox,
-												   handler: newHandler)
 		
 		System_AppDomain_UnhandledException_Add(handle,
 												outerContext,
@@ -107,7 +84,8 @@ public extension SystemAppDomain {
 		
 		Debug.log("Did add unhandled exception event handler to \(swiftTypeName)")
 		
-		return token
+		return .init(closureBox: newClosureBox,
+					 handler: newHandler)
 	}
 	
 	@discardableResult
