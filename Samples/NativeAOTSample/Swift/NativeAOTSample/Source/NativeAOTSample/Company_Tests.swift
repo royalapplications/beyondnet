@@ -199,9 +199,9 @@ final class CompanyTests: XCTestCase {
 				
 				numberOfAddedEmployee += 1
 			}
+			
+			company.numberOfEmployeesChanged = nil
 		}
-		
-		company.numberOfEmployeesChanged = nil
 		
 		XCTAssertEqual(numberOfAddedEmployee, numberOfTimesNumberOfEmployeesChangedWasCalled)
 	}

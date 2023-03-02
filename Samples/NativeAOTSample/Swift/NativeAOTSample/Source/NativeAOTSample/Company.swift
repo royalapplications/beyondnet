@@ -152,31 +152,27 @@ public extension Company {
 																					  &currentContext,
 																					  &currentHandler).boolValue
 			
-			let newClosureBox: NativeBox<NumberOfEmployeesChangedHandler>?
-			let newHandler: ContextDelegate_t?
+			let newToken: ClosureToken<NumberOfEmployeesChangedHandler, ContextDelegate_t>?
 			
 			if let newValue {
-				newClosureBox = .init(value: newValue)
-				
-				newHandler = { innerContext in
+				newToken = .init(closure: newValue,
+								 handler: { innerContext in
 					guard let innerContext else { return }
 					
 					let closure = NativeBox<NumberOfEmployeesChangedHandler>.fromPointer(innerContext).value
 					
 					closure()
-				}
+				})
 			} else {
-				newClosureBox = nil
-				newHandler = nil
+				newToken = nil
 			}
 			
 			NativeAOTSample_Company_NumberOfEmployeesChanged_Set(handle,
-																 newClosureBox?.retainedPointer(),
-																 newHandler)
+																 newToken?.retainedPointerToClosureBox(),
+																 newToken?.handler)
 			
 			if currentSuccess,
-			   let currentContext,
-			   currentHandler != nil {
+			   let currentContext {
 				NativeBox<NumberOfEmployeesChangedHandler>.release(currentContext)
 			}
 			
