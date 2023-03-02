@@ -12,6 +12,7 @@ void System_Object_Destroy(System_Object_t instance);
 System_Type_t System_Object_GetType(System_Object_t instance);
 
 CBool System_Object_Equals(System_Object_t firstObject, System_Object_t secondObject);
+CBool System_Object_ReferenceEquals(System_Object_t firstObject, System_Object_t secondObject);
 
 const char* System_Object_ToString(System_Object_t instance);
 

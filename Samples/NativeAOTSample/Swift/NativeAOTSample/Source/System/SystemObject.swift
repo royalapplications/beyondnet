@@ -107,6 +107,13 @@ internal extension SystemObject {
 		
 		return result
 	}
+	
+	static func referenceEquals(_ lhs: System_Object_t,
+								_ rhs: System_Object_t) -> Bool {
+		let result = System_Object_ReferenceEquals(lhs, rhs).boolValue
+		
+		return result
+	}
 }
 
 extension SystemObject: Equatable {
@@ -121,4 +128,16 @@ extension SystemObject: Equatable {
         
         return equal
     }
+	
+	public static func === (lhs: SystemObject,
+							rhs: SystemObject) -> Bool {
+		Debug.log("Will check reference equality of \(lhs.swiftTypeName) and \(rhs.swiftTypeName)")
+		
+		let equal = Self.referenceEquals(lhs.handle,
+										 rhs.handle)
+		
+		Debug.log("Did check reference equality of \(lhs.swiftTypeName) and \(rhs.swiftTypeName)")
+		
+		return equal
+	}
 }

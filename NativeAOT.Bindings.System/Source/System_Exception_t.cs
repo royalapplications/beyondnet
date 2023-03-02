@@ -22,7 +22,7 @@ internal static unsafe class System_Exception_t
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Create")]
-    internal static void* Create(char* message)
+    internal static void* Create(byte* message)
     {
         string? messageDn;
 
@@ -38,7 +38,7 @@ internal static unsafe class System_Exception_t
     }
     
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Message_Get")]
-    internal static char* Message_Get(void* handleAddress)
+    internal static byte* Message_Get(void* handleAddress)
     {
         Exception? instance = InteropUtils.GetInstance<Exception>(handleAddress);
 
@@ -46,7 +46,7 @@ internal static unsafe class System_Exception_t
             return null;
         }
         
-        char* messageC = instance.Message.CopyToCString();
+        byte* messageC = instance.Message.CopyToCString();
 
         return messageC;
     }
@@ -64,7 +64,7 @@ internal static unsafe class System_Exception_t
     }
     
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "StackTrace_Get")]
-    internal static char* StackTrace_Get(void* handleAddress)
+    internal static byte* StackTrace_Get(void* handleAddress)
     {
         Exception? instance = InteropUtils.GetInstance<Exception>(handleAddress);
 
@@ -78,7 +78,7 @@ internal static unsafe class System_Exception_t
             return null;
         }
         
-        char* stackTraceC = stackTrace.CopyToCString();
+        byte* stackTraceC = stackTrace.CopyToCString();
 
         return stackTraceC;
     }

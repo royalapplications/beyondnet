@@ -23,8 +23,8 @@ internal static unsafe class NativeAOTSample_Person_t
     
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Create")]
     internal static void* Create(
-        char* firstName, 
-        char* lastName,
+        byte* firstName, 
+        byte* lastName,
         int age
     )
     {
@@ -78,7 +78,7 @@ internal static unsafe class NativeAOTSample_Person_t
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "FirstName_Get")]
-    internal static char* FirstName_Get(void* handleAddress)
+    internal static byte* FirstName_Get(void* handleAddress)
     {
         Person? instance = InteropUtils.GetInstance<Person>(handleAddress);
 
@@ -86,13 +86,13 @@ internal static unsafe class NativeAOTSample_Person_t
             return null;
         }
 
-        char* firstNameC = instance.FirstName.CopyToCString();
+        byte* firstNameC = instance.FirstName.CopyToCString();
 
         return firstNameC;
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "FirstName_Set")]
-    internal static void FirstName_Set(void* handleAddress, char* firstName)
+    internal static void FirstName_Set(void* handleAddress, byte* firstName)
     {
         Person? instance = InteropUtils.GetInstance<Person>(handleAddress);
 
@@ -110,7 +110,7 @@ internal static unsafe class NativeAOTSample_Person_t
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "LastName_Get")]
-    internal static char* LastName_Get(void* handleAddress)
+    internal static byte* LastName_Get(void* handleAddress)
     {
         Person? instance = InteropUtils.GetInstance<Person>(handleAddress);
 
@@ -118,13 +118,13 @@ internal static unsafe class NativeAOTSample_Person_t
             return null;
         }
 
-        char* lastNameC = instance.LastName.CopyToCString();
+        byte* lastNameC = instance.LastName.CopyToCString();
 
         return lastNameC;
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "LastName_Set")]
-    internal static void LastName_Set(void* handleAddress, char* lastName)
+    internal static void LastName_Set(void* handleAddress, byte* lastName)
     {
         Person? instance = InteropUtils.GetInstance<Person>(handleAddress);
 
@@ -142,7 +142,7 @@ internal static unsafe class NativeAOTSample_Person_t
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "FullName_Get")]
-    internal static char* FullName_Get(void* handleAddress)
+    internal static byte* FullName_Get(void* handleAddress)
     {
         Person? instance = InteropUtils.GetInstance<Person>(handleAddress);
 
@@ -150,7 +150,7 @@ internal static unsafe class NativeAOTSample_Person_t
             return null;
         }
 
-        char* fullNameC = instance.FullName.CopyToCString();
+        byte* fullNameC = instance.FullName.CopyToCString();
 
         return fullNameC;
     }

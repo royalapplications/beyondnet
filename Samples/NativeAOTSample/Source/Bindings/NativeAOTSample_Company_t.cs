@@ -22,7 +22,7 @@ internal static unsafe class NativeAOTSample_Company_t
     }
     
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Create")]
-    internal static void* Create(char* name)
+    internal static void* Create(byte* name)
     {
         string? nameDn = InteropUtils.ToDotNetString(name);
 
@@ -40,7 +40,7 @@ internal static unsafe class NativeAOTSample_Company_t
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Name_Get")]
-    internal static char* Name_Get(void* handleAddress)
+    internal static byte* Name_Get(void* handleAddress)
     {
         Company? instance = InteropUtils.GetInstance<Company>(handleAddress);
 
@@ -48,13 +48,13 @@ internal static unsafe class NativeAOTSample_Company_t
             return null;
         }
 
-        char* nameC = instance.Name.CopyToCString();
+        byte* nameC = instance.Name.CopyToCString();
 
         return nameC;
     }
     
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Name_Set")]
-    internal static void Name_Set(void* handleAddress, char* name)
+    internal static void Name_Set(void* handleAddress, byte* name)
     {
         Company? instance = InteropUtils.GetInstance<Company>(handleAddress);
 

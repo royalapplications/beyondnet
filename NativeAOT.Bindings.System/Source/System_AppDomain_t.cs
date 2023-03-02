@@ -56,7 +56,7 @@ internal static unsafe class System_AppDomain_t
     }
     
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "BaseDirectory_Get")]
-    internal static char* BaseDirectory(void* handleAddress)
+    internal static byte* BaseDirectory(void* handleAddress)
     {
         AppDomain? instance = InteropUtils.GetInstance<AppDomain>(handleAddress);
 
@@ -65,7 +65,7 @@ internal static unsafe class System_AppDomain_t
         }
 
         string baseDirectory = instance.BaseDirectory;
-        char* baseDirectoryC = baseDirectory.CopyToCString();
+        byte* baseDirectoryC = baseDirectory.CopyToCString();
 
         return baseDirectoryC;
     }

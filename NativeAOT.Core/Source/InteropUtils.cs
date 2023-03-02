@@ -77,13 +77,13 @@ public static unsafe class InteropUtils
     /// This allocates a native char* and copies the contents of the managed string into it.
     /// The allocated native string must be freed when not needed anymore!
     /// </summary>
-    public static char* CopyToCString(this string? @string)
+    public static byte* CopyToCString(this string? @string)
     {
         if (@string is null) {
             return null;
         }
 
-        char* cString = (char*)Marshal.StringToHGlobalAnsi(@string);
+        byte* cString = (byte*)Marshal.StringToHGlobalAuto(@string);
         
         return cString;
     }
@@ -91,13 +91,13 @@ public static unsafe class InteropUtils
     /// <summary>
     /// This allocates a managed string and copies the contents of the native char* into it.
     /// </summary>
-    public static string? ToDotNetString(char* cString)
+    public static string? ToDotNetString(byte* cString)
     {
         if (cString is null) {
             return null;
         }
         
-        string? @string = Marshal.PtrToStringAnsi((nint)cString);
+        string? @string = Marshal.PtrToStringAuto((nint)cString);
 
         return @string;
     }

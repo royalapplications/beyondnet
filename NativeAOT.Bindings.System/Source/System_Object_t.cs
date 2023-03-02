@@ -56,16 +56,24 @@ internal static unsafe class System_Object_t
         object? firstObject = InteropUtils.GetInstance<object>(firstHandleAddress);
         object? secondObject = InteropUtils.GetInstance<object>(secondHandleAddress);
 
-        // TODO: Is this really what we want here?
-        bool equals = firstObject?.Equals(secondObject) ?? false;
+        bool equals = Object.Equals(firstObject, secondObject);
 
         return equals.ToCBool();
     }
     
-    // TODO: Maybe wrap object.ReferenceEquals
+    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "ReferenceEquals")]
+    internal static CBool ReferenceEquals(void* firstHandleAddress, void* secondHandleAddress)
+    {
+        object? firstObject = InteropUtils.GetInstance<object>(firstHandleAddress);
+        object? secondObject = InteropUtils.GetInstance<object>(secondHandleAddress);
 
+        bool equals = Object.ReferenceEquals(firstObject, secondObject);
+
+        return equals.ToCBool();
+    }
+    
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "ToString")]
-    internal static char* ToString(void* handleAddress)
+    internal static byte* ToString(void* handleAddress)
     {
         object? instance = InteropUtils.GetInstance<object>(handleAddress);
 
@@ -79,7 +87,7 @@ internal static unsafe class System_Object_t
             return null;
         }
         
-        char* cString = @string.CopyToCString();
+        byte* cString = @string.CopyToCString();
 
         return cString;
     }

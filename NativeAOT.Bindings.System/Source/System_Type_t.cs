@@ -22,7 +22,7 @@ internal static unsafe class System_Type_t
     }
     
     [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "GetType")]
-    internal static void* GetType(char* typeName)
+    internal static void* GetType(byte* typeName)
     {
         string? typeNameDn = InteropUtils.ToDotNetString(typeName);
 
@@ -40,7 +40,7 @@ internal static unsafe class System_Type_t
     }
     
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "Name_Get")]
-    internal static char* Name_Get(void* handleAddress)
+    internal static byte* Name_Get(void* handleAddress)
     {
         Type? instance = InteropUtils.GetInstance<Type>(handleAddress);
         
@@ -48,13 +48,13 @@ internal static unsafe class System_Type_t
             return null;
         }
 
-        char* nameC = instance.Name.CopyToCString();
+        byte* nameC = instance.Name.CopyToCString();
 
         return nameC;
     }
     
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "FullName_Get")]
-    internal static char* FullName_Get(void* handleAddress)
+    internal static byte* FullName_Get(void* handleAddress)
     {
         Type? instance = InteropUtils.GetInstance<Type>(handleAddress);
 
@@ -68,7 +68,7 @@ internal static unsafe class System_Type_t
             return null;
         }
         
-        char* nameC = fullName.CopyToCString();
+        byte* nameC = fullName.CopyToCString();
 
         return nameC;
     }
