@@ -2,8 +2,10 @@
 #define NativeAOTSample_Company_h
 
 #import "CommonTypes.h"
+
 #import "System_Object.h"
 #import "System_Type.h"
+
 #import "NativeAOTSample_Person.h"
 
 typedef void* NativeAOTSample_Company_t;

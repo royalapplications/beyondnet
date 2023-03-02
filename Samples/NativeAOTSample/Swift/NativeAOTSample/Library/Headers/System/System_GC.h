@@ -2,6 +2,7 @@
 #define System_GC_h
 
 #import "CommonTypes.h"
+
 #import "System_Object.h"
 #import "System_Type.h"
 

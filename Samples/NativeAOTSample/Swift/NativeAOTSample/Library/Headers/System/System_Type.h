@@ -2,6 +2,7 @@
 #define System_Type_h
 
 #import "CommonTypes.h"
+
 #import "System_Object.h"
 
 typedef void* System_Type_t;
