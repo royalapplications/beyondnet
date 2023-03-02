@@ -6,6 +6,10 @@ class NativeBox<T> {
     init(value: T) {
         self.value = value
     }
+	
+	deinit {
+		Debug.log("Deinitializing \(Self.self)")
+	}
 }
 
 extension NativeBox {

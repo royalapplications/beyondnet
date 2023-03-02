@@ -14,6 +14,7 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="NativeAOTSampleTestApp" customModuleProvider="target">
             <connections>
+                <outlet property="buttonAddOrRemoveUnhandledExceptionHandler" destination="9ux-MG-Wkw" id="45S-cd-peG"/>
                 <outlet property="buttonChangeAgeOfEmployees" destination="OZP-Vb-CfD" id="Pua-5f-X9h"/>
                 <outlet property="buttonCreate" destination="EJ3-qs-6eF" id="naa-2Q-QmU"/>
                 <outlet property="buttonDestroy" destination="ZU7-zI-sQS" id="HdP-I0-Byr"/>
@@ -701,7 +702,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="586" height="349"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" id="NuA-io-0k8">
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="NuA-io-0k8">
                         <rect key="frame" x="18" y="252" width="158" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Number of Employees:" usesSingleLineMode="YES" id="dah-v2-xJD">
@@ -710,7 +711,7 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" id="v84-lr-OsM">
+                    <textField verticalHuggingPriority="750" id="v84-lr-OsM">
                         <rect key="frame" x="182" y="249" width="198" height="21"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="100000" drawsBackground="YES" usesSingleLineMode="YES" id="Xx2-hF-aKT">
@@ -722,7 +723,7 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" id="cG3-BT-lQm">
+                    <button verticalHuggingPriority="750" id="cG3-BT-lQm">
                         <rect key="frame" x="18" y="312" width="119" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="Debug Logging" bezelStyle="regularSquare" imagePosition="left" inset="2" id="eEC-4d-Y8P">
@@ -733,7 +734,7 @@
                             <action selector="checkBoxDebugLogging_action:" target="Voe-Tx-rLC" id="izy-Rr-0lb"/>
                         </connections>
                     </button>
-                    <tabView fixedFrame="YES" id="M7U-07-z8u">
+                    <tabView id="M7U-07-z8u">
                         <rect key="frame" x="13" y="2" width="560" height="217"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <font key="font" metaFont="system"/>
@@ -746,7 +747,7 @@
                             </tabViewItem>
                         </tabViewItems>
                     </tabView>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" id="0uS-Sy-Yzw">
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="0uS-Sy-Yzw">
                         <rect key="frame" x="18" y="276" width="158" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Company Name:" usesSingleLineMode="YES" id="VVg-du-t1J">
@@ -755,7 +756,7 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" id="5yf-XK-yuO">
+                    <textField verticalHuggingPriority="750" id="5yf-XK-yuO">
                         <rect key="frame" x="182" y="273" width="384" height="21"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" title="Fancy Company Inc." drawsBackground="YES" usesSingleLineMode="YES" id="MUQ-fq-IGm">
@@ -764,11 +765,11 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <progressIndicator fixedFrame="YES" maxValue="100" displayedWhenStopped="NO" indeterminate="YES" controlSize="small" style="spinning" id="9nf-Aj-ind">
+                    <progressIndicator maxValue="100" displayedWhenStopped="NO" indeterminate="YES" controlSize="small" style="spinning" id="9nf-Aj-ind">
                         <rect key="frame" x="401" y="223" width="16" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                     </progressIndicator>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" id="EJ3-qs-6eF">
+                    <button verticalHuggingPriority="750" id="EJ3-qs-6eF">
                         <rect key="frame" x="418" y="214" width="75" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Create" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="GKx-k4-1dL">
@@ -779,7 +780,7 @@
                             <action selector="buttonCreate_action:" target="Voe-Tx-rLC" id="rf9-NN-v0O"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" id="ZU7-zI-sQS">
+                    <button verticalHuggingPriority="750" id="ZU7-zI-sQS">
                         <rect key="frame" x="490" y="214" width="82" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Destroy" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pEJ-1k-lgm">
@@ -790,7 +791,7 @@
                             <action selector="buttonDestroy_action:" target="Voe-Tx-rLC" id="GOg-6e-230"/>
                         </connections>
                     </button>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" id="Oge-NU-3es">
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsExpansionToolTips="YES" id="Oge-NU-3es">
                         <rect key="frame" x="386" y="253" width="181" height="14"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" allowsUndo="NO" title="one hundred thousand" usesSingleLineMode="YES" id="naV-uI-fWt">
@@ -799,7 +800,7 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" id="OZP-Vb-CfD">
+                    <button verticalHuggingPriority="750" id="OZP-Vb-CfD">
                         <rect key="frame" x="13" y="212" width="193" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Change Age of Employees" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="iie-Hh-hDe">
@@ -808,6 +809,17 @@
                         </buttonCell>
                         <connections>
                             <action selector="buttonChangeAgeOfEmployees_action:" target="Voe-Tx-rLC" id="ETE-r8-YZg"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" id="9ux-MG-Wkw">
+                        <rect key="frame" x="146" y="304" width="294" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Add/Remove Unhandled Exception Handler" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mB7-08-doO">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="buttonAddOrRemoveUnhandledExceptionHandler_action:" target="Voe-Tx-rLC" id="gQA-CU-gL8"/>
                         </connections>
                     </button>
                 </subviews>

@@ -6,6 +6,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet private var window: NSWindow!
 	
 	@IBOutlet private weak var checkBoxDebugLogging: NSButton!
+	@IBOutlet private weak var buttonAddOrRemoveUnhandledExceptionHandler: NSButton!
 	
 	@IBOutlet private weak var textFieldCompanyName: NSTextField!
 	@IBOutlet private weak var textFieldNumberOfEmployees: NSTextField!
@@ -30,6 +31,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		return numberFormatter
 	}()
 	
+	private var unhandledExceptionHandlerToken: SystemAppDomain.UnhandledExceptionHandlerToken?
+	
 	private var company: Company? {
 		didSet {
 			didUpdateCompany()
@@ -49,7 +52,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		
 		company = nil
 		
-		setUpUnhandledExceptionHandler()
+		unhandledExceptionHandlerToken = addUnhandledExceptionHandler()
+		buttonAddOrRemoveUnhandledExceptionHandler.title = "Remove Unhandled Exception Handler"
 		
 		// Only for testing!
 //		UnhandledExceptionTest.throwUnhandledException()
@@ -70,13 +74,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	@IBAction private func buttonChangeAgeOfEmployees_action(_ sender: Any) {
 		changeAgeOfEmployees()
 	}
+	
+	@IBAction private func buttonAddOrRemoveUnhandledExceptionHandler_action(_ sender: Any) {
+		if let unhandledExceptionHandlerToken {
+			removeUnhandledExceptionHandler(token: unhandledExceptionHandlerToken)
+			self.unhandledExceptionHandlerToken = nil
+			
+			buttonAddOrRemoveUnhandledExceptionHandler.title = "Add Unhandled Exception Handler"
+		} else {
+			unhandledExceptionHandlerToken = addUnhandledExceptionHandler()
+			
+			buttonAddOrRemoveUnhandledExceptionHandler.title = "Remove Unhandled Exception Handler"
+		}
+	}
 }
 
 private extension AppDelegate {
-	func setUpUnhandledExceptionHandler() {
+	func addUnhandledExceptionHandler() -> SystemAppDomain.UnhandledExceptionHandlerToken {
 		let appDomain = SystemAppDomain.current()
 		
-		appDomain.addUnhandledExceptionHandler { _, eventArgs in
+		let token = appDomain.addUnhandledExceptionHandler { _, eventArgs in
 			let exceptionObject = eventArgs.exceptionObject
 			let exceptionString: String
 			
@@ -91,6 +108,14 @@ private extension AppDelegate {
 			// We can't recover from unhandled exceptions that are thrown from NativeAOT, so let's crash here.
 			fatalError("An unhandled .NET exception occurred:\n\"\(exceptionString)\"")
 		}
+		
+		return token
+	}
+	
+	func removeUnhandledExceptionHandler(token: SystemAppDomain.UnhandledExceptionHandlerToken) {
+		let appDomain = SystemAppDomain.current()
+		
+		appDomain.removeUnhandledExceptionHandler(token)
 	}
 }
 
