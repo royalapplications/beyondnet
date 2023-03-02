@@ -1,4 +1,5 @@
 using System.Collections.Concurrent;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 using NativeAOT.Core;
@@ -179,7 +180,7 @@ internal static unsafe class NativeAOTSample_Company_t
 
     // Sample API for demonstrating escaping closures
     #region NumberOfEmployeesChanged
-    private static readonly ConcurrentDictionary<Company, NativeDelegateBox<Company.NumberOfEmployeesChangedDelegate, nint>> m_numberOfEmployeesChangedNativeHandlers = new();
+    private static readonly ConditionalWeakTable<Company, NativeDelegateBox<Company.NumberOfEmployeesChangedDelegate, nint>> m_numberOfEmployeesChangedNativeHandlers = new();
 
     [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "NumberOfEmployeesChanged_Get")]
     internal static CStatus NumberOfEmployeesChanged_Get(
@@ -249,15 +250,15 @@ internal static unsafe class NativeAOTSample_Company_t
                 functionPointer(context);
             };
 
-            m_numberOfEmployeesChangedNativeHandlers[instance] = new(
+            m_numberOfEmployeesChangedNativeHandlers.AddOrUpdate(instance, new(
                 trampoline,
                 context,
                 (nint)functionPointer
-            );
+            ));
         } else {
             trampoline = null;
 
-            m_numberOfEmployeesChangedNativeHandlers.TryRemove(instance, out _);
+            m_numberOfEmployeesChangedNativeHandlers.Remove(instance);
         }
 
         instance.NumberOfEmployeesChanged = trampoline;

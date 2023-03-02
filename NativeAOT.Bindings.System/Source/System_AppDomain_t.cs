@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Concurrent;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 using NativeAOT.Core;
@@ -70,7 +71,7 @@ internal static unsafe class System_AppDomain_t
         return baseDirectoryC;
     }
     
-    private static readonly ConcurrentDictionary<AppDomain, NativeDelegateBox<UnhandledExceptionEventHandler, nint>[]> m_unhandledExceptionHandlersNative = new();
+    private static readonly ConditionalWeakTable<AppDomain, NativeDelegateBox<UnhandledExceptionEventHandler, nint>[]> m_unhandledExceptionHandlersNative = new();
     
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "UnhandledException_Add")]
     internal static void UnhandledException_Add(
@@ -107,8 +108,8 @@ internal static unsafe class System_AppDomain_t
             context,
             (nint)functionPointer
         ));
-
-        m_unhandledExceptionHandlersNative[instance] = newNativeHandlers.ToArray();
+        
+        m_unhandledExceptionHandlersNative.AddOrUpdate(instance, newNativeHandlers.ToArray());
 
         instance.UnhandledException += Trampoline;
     }
@@ -150,7 +151,7 @@ internal static unsafe class System_AppDomain_t
         List<NativeDelegateBox<UnhandledExceptionEventHandler, nint>> newNativeHandlers = currentNativeHandlers.ToList();
         newNativeHandlers.Remove(nativeHandler);
 
-        m_unhandledExceptionHandlersNative[instance] = newNativeHandlers.ToArray();
+        m_unhandledExceptionHandlersNative.AddOrUpdate(instance, newNativeHandlers.ToArray());
 
         return CStatus.Success;
     }
