@@ -26,6 +26,9 @@
 		E797ABBE29AE3282006F9849 /* NativeAOTSample.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E797ABBD29AE3282006F9849 /* NativeAOTSample.dylib */; };
 		E797ABBF29AE3286006F9849 /* NativeAOTSample.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = E797ABBD29AE3282006F9849 /* NativeAOTSample.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		E7AACF3829A6278E00846A75 /* NativeAOTSample.h in Headers */ = {isa = PBXBuildFile; fileRef = E7AACF3729A6278E00846A75 /* NativeAOTSample.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7BBE57629B0DE8900394855 /* NativeAOTSample_CompanySerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = E7BBE57529B0DE8900394855 /* NativeAOTSample_CompanySerializer.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		E7BBE57829B0DF3000394855 /* CompanySerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BBE57729B0DF3000394855 /* CompanySerializer.swift */; };
+		E7BBE57A29B0E0EB00394855 /* CompanySerializer_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BBE57929B0E0EB00394855 /* CompanySerializer_Tests.swift */; };
 		E7BC393E29A7A17400806ADD /* System_Type.h in Headers */ = {isa = PBXBuildFile; fileRef = E7BC393D29A7A17400806ADD /* System_Type.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		E7BC394329A7A27600806ADD /* SystemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC394229A7A27600806ADD /* SystemType.swift */; };
 		E7BC394C29A7A87600806ADD /* System_Exception.h in Headers */ = {isa = PBXBuildFile; fileRef = E7BC394B29A7A87600806ADD /* System_Exception.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -89,6 +92,9 @@
 		E7AACF3429A6278E00846A75 /* NativeAOTSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NativeAOTSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7AACF3729A6278E00846A75 /* NativeAOTSample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeAOTSample.h; sourceTree = "<group>"; };
 		E7AACF4C29A6296E00846A75 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		E7BBE57529B0DE8900394855 /* NativeAOTSample_CompanySerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeAOTSample_CompanySerializer.h; sourceTree = "<group>"; };
+		E7BBE57729B0DF3000394855 /* CompanySerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanySerializer.swift; sourceTree = "<group>"; };
+		E7BBE57929B0E0EB00394855 /* CompanySerializer_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanySerializer_Tests.swift; sourceTree = "<group>"; };
 		E7BC393D29A7A17400806ADD /* System_Type.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = System_Type.h; sourceTree = "<group>"; };
 		E7BC394229A7A27600806ADD /* SystemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemType.swift; sourceTree = "<group>"; };
 		E7BC394B29A7A87600806ADD /* System_Exception.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = System_Exception.h; sourceTree = "<group>"; };
@@ -145,6 +151,7 @@
 			children = (
 				E7E26AC329A62FB8005334CF /* NativeAOTSample_Person.h */,
 				E7E26AC729A668CD005334CF /* NativeAOTSample_Company.h */,
+				E7BBE57529B0DE8900394855 /* NativeAOTSample_CompanySerializer.h */,
 				E738716829ACE3D100BEA7DA /* NativeAOTSample_UnhandledExceptionTest.h */,
 			);
 			path = NativeAOTSample;
@@ -236,6 +243,8 @@
 				E7E9D57829A766A2002C3834 /* Person_Tests.swift */,
 				E7E26AC829A668F8005334CF /* Company.swift */,
 				E7E9D57A29A768F7002C3834 /* Company_Tests.swift */,
+				E7BBE57729B0DF3000394855 /* CompanySerializer.swift */,
+				E7BBE57929B0E0EB00394855 /* CompanySerializer_Tests.swift */,
 				E738716A29ACE41600BEA7DA /* UnhandledExceptionTest.swift */,
 			);
 			path = NativeAOTSample;
@@ -250,6 +259,7 @@
 			files = (
 				E7AACF3829A6278E00846A75 /* NativeAOTSample.h in Headers */,
 				E738716529ACD9CB00BEA7DA /* System_UnhandledExceptionEventArgs.h in Headers */,
+				E7BBE57629B0DE8900394855 /* NativeAOTSample_CompanySerializer.h in Headers */,
 				E738715E29ACD36C00BEA7DA /* System_AppDomain.h in Headers */,
 				E7BC393E29A7A17400806ADD /* System_Type.h in Headers */,
 				E716200029A66CC000D45FCD /* CommonTypes.h in Headers */,
@@ -429,6 +439,7 @@
 				E7BC395829A7BEF500806ADD /* SystemGC.swift in Sources */,
 				E716C71429AF71470099E179 /* CBool.swift in Sources */,
 				E7BC395429A7B95200806ADD /* SystemException.Error.swift in Sources */,
+				E7BBE57829B0DF3000394855 /* CompanySerializer.swift in Sources */,
 				E7BC394E29A7A8BC00806ADD /* SystemException.swift in Sources */,
 				E71625CE29A942D900F47651 /* NativeBox.swift in Sources */,
 				E7E26AC629A63147005334CF /* Person.swift in Sources */,
@@ -448,6 +459,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7BBE57A29B0E0EB00394855 /* CompanySerializer_Tests.swift in Sources */,
 				E7E9D57929A766A2002C3834 /* Person_Tests.swift in Sources */,
 				E797ABB829AE0ECE006F9849 /* SystemObject_Tests.swift in Sources */,
 				E797ABBA29AE112D006F9849 /* SystemType_Tests.swift in Sources */,

@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-
+using System.Text.Json.Serialization;
 using NativeAOT.Core;
 
 namespace NativeAOTSample;
@@ -8,17 +8,31 @@ namespace NativeAOTSample;
 [NativeExport]
 public class Company
 {
-    private readonly List<Person> m_employees = new();
-    
+    private List<Person> m_employees = new();
+
+    // This is only for JSON serialization
+    [JsonPropertyName("Employees")]
+    public Person[] _Employees
+    {
+        get {
+            return m_employees.ToArray();
+        }
+        set {
+            m_employees = value.ToList();
+        }
+    }
+
     public delegate void NumberOfEmployeesChangedDelegate();
 
     [NativeExport]
+    [JsonIgnore]
     public NumberOfEmployeesChangedDelegate? NumberOfEmployeesChanged { get; set; }
 
     [NativeExport]
     public string Name { get; set; }
 
     [NativeExport]
+    [JsonIgnore]
     public int NumberOfEmployees
     {
         get {

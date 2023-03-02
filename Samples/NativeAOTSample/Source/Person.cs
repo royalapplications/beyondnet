@@ -1,4 +1,5 @@
 using System;
+using System.Text.Json.Serialization;
 using NativeAOT.Core;
 
 namespace NativeAOTSample;
@@ -13,6 +14,7 @@ public class Person
     public string LastName { get; set; }
 
     [NativeExport]
+    [JsonIgnore]
     public string FullName 
     {
         get {
@@ -40,7 +42,7 @@ public class Person
     //     Console.WriteLine($"Did call finalizer of {nameof(Person)}.");
     // }
 
-    [NativeExport]
+    [NativeExport(Throwing = true)]
     public void ReduceAge(int byYears)
     {
         int newAge = Age - byYears;
@@ -52,7 +54,7 @@ public class Person
         Age = newAge;
     }
     
-    [NativeExport]
+    [NativeExport(Throwing = true)]
     public void ChangeAge(Func<int>? newAgeProvider)
     {
         if (newAgeProvider is null) {

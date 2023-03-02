@@ -13,6 +13,8 @@ namespace NativeAOT.Core;
     AttributeTargets.Interface)]
 public class NativeExport: Attribute
 {
+    public bool Throwing { get; set; }
+    
     // public string Name { get; set; }
 
     // public CExport(string name)

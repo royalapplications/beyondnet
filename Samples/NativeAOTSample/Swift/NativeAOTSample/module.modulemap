@@ -12,6 +12,7 @@ framework module NativeAOTSample {
 	
     private header "NativeAOTSample_Person.h"
     private header "NativeAOTSample_Company.h"
+	private header "NativeAOTSample_CompanySerializer.h"
 	private header "NativeAOTSample_UnhandledExceptionTest.h"
     
     export *
