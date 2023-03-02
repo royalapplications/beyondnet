@@ -179,25 +179,7 @@ internal static unsafe class NativeAOTSample_Company_t
 
     // Sample API for demonstrating escaping closures
     #region NumberOfEmployeesChanged
-    private class NumberOfEmployeesChangedHandler_Native
-    {
-        internal int TrampolineHash { get; }
-        internal void* Context { get; }
-        internal delegate* unmanaged<void*, void> FunctionPointer { get; }
-
-        internal NumberOfEmployeesChangedHandler_Native(
-            int trampolineHash,
-            void* context,
-            delegate* unmanaged<void*, void> functionPointer
-        )
-        {
-            TrampolineHash = trampolineHash;
-            Context = context;
-            FunctionPointer = functionPointer;
-        }
-    }
-    
-    private static readonly ConcurrentDictionary<Company, NumberOfEmployeesChangedHandler_Native> m_numberOfEmployeesChangedNativeHandlers = new();
+    private static readonly ConcurrentDictionary<Company, NativeDelegateBox<Company.NumberOfEmployeesChangedDelegate, nint>> m_numberOfEmployeesChangedNativeHandlers = new();
 
     [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "NumberOfEmployeesChanged_Get")]
     internal static CStatus NumberOfEmployeesChanged_Get(
@@ -212,24 +194,20 @@ internal static unsafe class NativeAOTSample_Company_t
             return CStatus.Failure;
         }
 
-        NumberOfEmployeesChangedHandler_Native? handler;
-
+        NativeDelegateBox<Company.NumberOfEmployeesChangedDelegate, nint>? handler;
         Company.NumberOfEmployeesChangedDelegate? storedDelegate = instance.NumberOfEmployeesChanged;
 
-        if (storedDelegate is not null) {
-            if (m_numberOfEmployeesChangedNativeHandlers.TryGetValue(instance, out NumberOfEmployeesChangedHandler_Native? tempHandler) &&
-                tempHandler.TrampolineHash == storedDelegate.GetHashCode()) {
-                handler = tempHandler;
-            } else {
-                handler = null;
-            }
+        if (storedDelegate is not null &&
+            m_numberOfEmployeesChangedNativeHandlers.TryGetValue(instance, out NativeDelegateBox<Company.NumberOfEmployeesChangedDelegate, nint>? tempHandler) &&
+            tempHandler.Trampoline == storedDelegate) {
+            handler = tempHandler;
         } else {
             handler = null;
         }
 
         if (handler is not null) {
             void* context = handler.Context;
-            delegate* unmanaged<void*, void> functionPointer = handler.FunctionPointer;
+            delegate* unmanaged<void*, void> functionPointer = (delegate* unmanaged<void*, void>)handler.FunctionPointer;
 
             if (outContext is not null) {
                 *outContext = context;
@@ -271,10 +249,10 @@ internal static unsafe class NativeAOTSample_Company_t
                 functionPointer(context);
             };
 
-            m_numberOfEmployeesChangedNativeHandlers[instance] = new NumberOfEmployeesChangedHandler_Native(
-                trampoline.GetHashCode(),
+            m_numberOfEmployeesChangedNativeHandlers[instance] = new(
+                trampoline,
                 context,
-                functionPointer
+                (nint)functionPointer
             );
         } else {
             trampoline = null;

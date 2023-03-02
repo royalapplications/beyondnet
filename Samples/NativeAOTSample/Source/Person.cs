@@ -55,7 +55,7 @@ public class Person
     [NativeExport]
     public void ChangeAge(Func<int>? newAgeProvider)
     {
-        if (newAgeProvider == null) {
+        if (newAgeProvider is null) {
             return;
         }
         
@@ -73,7 +73,7 @@ public class Person
     {
         Person? otherPerson = other as Person;
 
-        if (otherPerson == null) {
+        if (otherPerson is null) {
             return false;
         }
 

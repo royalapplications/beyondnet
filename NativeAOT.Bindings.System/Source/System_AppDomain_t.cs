@@ -70,25 +70,7 @@ internal static unsafe class System_AppDomain_t
         return baseDirectoryC;
     }
     
-    private class UnhandledExceptionHandler_Native
-    {
-        internal UnhandledExceptionEventHandler Trampoline { get; }
-        internal void* Context { get; }
-        internal delegate* unmanaged<void*, void*, void*, void> FunctionPointer { get; }
-
-        internal UnhandledExceptionHandler_Native(
-            UnhandledExceptionEventHandler trampoline,
-            void* context,
-            delegate* unmanaged<void*, void*, void*, void> functionPointer
-        )
-        {
-            Trampoline = trampoline;
-            Context = context;
-            FunctionPointer = functionPointer;
-        }
-    }
-    
-    private static readonly ConcurrentDictionary<AppDomain, UnhandledExceptionHandler_Native[]> m_unhandledExceptionHandlersNative = new();
+    private static readonly ConcurrentDictionary<AppDomain, NativeDelegateBox<UnhandledExceptionEventHandler, nint>[]> m_unhandledExceptionHandlersNative = new();
     
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "UnhandledException_Add")]
     internal static void UnhandledException_Add(
@@ -107,9 +89,10 @@ internal static unsafe class System_AppDomain_t
             return;
         }
 
-        List<UnhandledExceptionHandler_Native> newNativeHandlers = m_unhandledExceptionHandlersNative.TryGetValue(instance, out UnhandledExceptionHandler_Native[]? currentNativeHandlers)
-            ? currentNativeHandlers.ToList()
-            : new();
+        List<NativeDelegateBox<UnhandledExceptionEventHandler, nint>> newNativeHandlers = m_unhandledExceptionHandlersNative.TryGetValue(
+            instance,
+            out NativeDelegateBox<UnhandledExceptionEventHandler, nint>[]? currentNativeHandlers
+        ) ? currentNativeHandlers.ToList() : new();
 
         void Trampoline(object sender, UnhandledExceptionEventArgs eventArgs) 
         {
@@ -118,11 +101,11 @@ internal static unsafe class System_AppDomain_t
 
             functionPointer(context, senderHandleAddress, eventArgsHandleAddress);
         }
-            
-        newNativeHandlers.Add(new UnhandledExceptionHandler_Native(
+        
+        newNativeHandlers.Add(new(
             Trampoline,
             context,
-            functionPointer
+            (nint)functionPointer
         ));
 
         m_unhandledExceptionHandlersNative[instance] = newNativeHandlers.ToArray();
@@ -147,12 +130,12 @@ internal static unsafe class System_AppDomain_t
             return CStatus.Failure;
         }
 
-        if (!m_unhandledExceptionHandlersNative.TryGetValue(instance, out UnhandledExceptionHandler_Native[]? currentNativeHandlers)) {
+        if (!m_unhandledExceptionHandlersNative.TryGetValue(instance, out NativeDelegateBox<UnhandledExceptionEventHandler, nint>[]? currentNativeHandlers)) {
             return CStatus.Failure;
         }
         
-        UnhandledExceptionHandler_Native? nativeHandler = currentNativeHandlers.FirstOrDefault(h => 
-            h.FunctionPointer == functionPointer && 
+        NativeDelegateBox<UnhandledExceptionEventHandler, nint>? nativeHandler = currentNativeHandlers.FirstOrDefault(h => 
+            h.FunctionPointer == (nint)functionPointer && 
             h.Context == context
         );
 
@@ -164,7 +147,7 @@ internal static unsafe class System_AppDomain_t
 
         instance.UnhandledException -= trampoline;
 
-        List<UnhandledExceptionHandler_Native> newNativeHandlers = currentNativeHandlers.ToList();
+        List<NativeDelegateBox<UnhandledExceptionEventHandler, nint>> newNativeHandlers = currentNativeHandlers.ToList();
         newNativeHandlers.Remove(nativeHandler);
 
         m_unhandledExceptionHandlersNative[instance] = newNativeHandlers.ToArray();
