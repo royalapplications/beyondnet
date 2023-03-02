@@ -67,4 +67,30 @@ public class Person
 
         Age = newAge;
     }
+
+    #region Equality
+    public override bool Equals(object? other)
+    {
+        Person? otherPerson = other as Person;
+
+        if (otherPerson == null) {
+            return false;
+        }
+
+        bool isEqual = FirstName == otherPerson.FirstName &&
+                       LastName == otherPerson.LastName &&
+                       Age == otherPerson.Age;
+
+        return isEqual;
+    }
+
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(
+            FirstName,
+            LastName,
+            Age
+        );
+    }
+    #endregion Equality
 }

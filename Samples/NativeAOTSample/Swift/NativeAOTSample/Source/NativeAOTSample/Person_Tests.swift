@@ -57,6 +57,37 @@ final class PersonTests: XCTestCase {
 		XCTAssertEqual("\(firstName) \(lastName)", person.fullName)
 	}
 	
+	func testPersonEquality() {
+		let firstName = "First Name"
+		let lastName = "Last Name"
+		let age: Int32 = 100
+		
+		let firstPerson = Person(firstName: firstName,
+								 lastName: lastName,
+								 age: age)
+		
+		let secondPerson = Person(firstName: firstName,
+								  lastName: lastName,
+								  age: age)
+		
+		// Equals Checks
+		
+		// This should yield true because Person implements Equals and has the same values
+		XCTAssertTrue(firstPerson == secondPerson)
+		
+		// swiftlint:disable:next identical_operands
+		XCTAssertTrue(firstPerson == firstPerson)
+		
+		// Reference Equals Checks
+		
+		// This should yield false because we're comparing two distinct Person instances
+		XCTAssertFalse(firstPerson === secondPerson)
+		
+		// This should yield true because we're comparing the very same Person instance
+		// swiftlint:disable:next identical_operands
+		XCTAssertTrue(firstPerson === firstPerson)
+	}
+	
 	func testPersonExceptions() {
 		let person = Person(firstName: "a",
 							lastName: "b",
