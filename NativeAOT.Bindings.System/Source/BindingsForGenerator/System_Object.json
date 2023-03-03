@@ -1,0 +1,40 @@
+{
+  "types": [
+    {
+      "name": "System.Object",
+      
+      "exportedNames": {
+        "C": "System_Object_t",
+        "Swift": "SystemObject"
+      },
+      
+      "members": [
+        {
+          "name": "ctor",
+          
+          "exportedNames": {
+            "C": "Create"
+          }
+        },
+
+        {
+          "name": "GetType",
+          
+          "exportedNames": {
+            "C": "GetType",
+            "Swift": "type"
+          }
+        },
+        
+        {
+          "name": "ToString",
+          
+          "exportedNames": {
+            "C": "ToString",
+            "Swift": "toString"
+          }
+        }
+      ]
+    }
+  ]
+}
