@@ -13,8 +13,12 @@ namespace NativeAOT.Core;
     AttributeTargets.Interface)]
 public class NativeExport: Attribute
 {
+    public Type ManagedType { get; set; }
+    public string NameOfManagedMember { get; set; }
     public bool Throwing { get; set; }
-    
+
+    public string CName { get; set; }
+
     // public string Name { get; set; }
 
     // public CExport(string name)
