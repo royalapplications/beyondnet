@@ -7,7 +7,7 @@ namespace NativeAOT.CodeGenerator;
 public class ManagedCodeGenerator
 {
     private readonly Type m_type;
-    
+
     public ManagedCodeGenerator(Type type)
     {
         m_type = type;
@@ -48,9 +48,18 @@ namespace {generatedNamespace};
                     
                     break;
                 case MemberTypes.Method:
-                    string methodNameC = memberInfo.Name;
+                    MethodInfo? methodInfo = (MethodInfo)memberInfo;
+                    
+                    string methodNameC = methodInfo.Name;
+                    
+                    Type returnType = methodInfo.ReturnType;
+                    WellKnownType? wellKnownReturnType = WellKnownType.GetWellKnownType(returnType);
                     
                     sb.AppendLine($"\t// TODO: {methodNameC}");
+
+                    if (wellKnownReturnType != null) {
+                        sb.AppendLine($"\t// Well known return type: {wellKnownReturnType.ExportedTypeNames[CodeLanguage.CSharpUnmanaged]}");
+                    }
 
                     break;
                 default:
