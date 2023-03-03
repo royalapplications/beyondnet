@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NativeAOT.CodeGenerator", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NativeAOT.CodeGenerator.CLI", "NativeAOT.CodeGenerator.CLI\NativeAOT.CodeGenerator.CLI.csproj", "{A8C40548-DEAB-413E-A58A-EADD7519FB1A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NativeAOT.CodeGeneratorInputSample", "Samples\NativeAOT.CodeGeneratorInputSample\NativeAOT.CodeGeneratorInputSample.csproj", "{5B858977-4D1C-49E2-A235-377FCC8B7176}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,8 +46,13 @@ Global
 		{A8C40548-DEAB-413E-A58A-EADD7519FB1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8C40548-DEAB-413E-A58A-EADD7519FB1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8C40548-DEAB-413E-A58A-EADD7519FB1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B858977-4D1C-49E2-A235-377FCC8B7176}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B858977-4D1C-49E2-A235-377FCC8B7176}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B858977-4D1C-49E2-A235-377FCC8B7176}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B858977-4D1C-49E2-A235-377FCC8B7176}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{859752E4-4834-4673-8735-2229711D4BB8} = {CF88563D-5990-4B38-B18C-4203D57465F9}
+		{5B858977-4D1C-49E2-A235-377FCC8B7176} = {CF88563D-5990-4B38-B18C-4203D57465F9}
 	EndGlobalSection
 EndGlobal

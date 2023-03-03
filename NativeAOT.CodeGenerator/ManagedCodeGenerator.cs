@@ -6,19 +6,19 @@ namespace NativeAOT.CodeGenerator;
 
 public class ManagedCodeGenerator
 {
-    private readonly ExportedType m_exportedType;
+    private readonly Type m_type;
     
-    public ManagedCodeGenerator(ExportedType exportedType)
+    public ManagedCodeGenerator(Type type)
     {
-        m_exportedType = exportedType;
+        m_type = type;
     }
 
     public string Generate()
     {
         StringBuilder sb = new();
 
-        string generatedNamespace = $"{m_exportedType.ManagedType.Namespace}.NativeBindings";
-        string cTypeName = m_exportedType.NativeExportAttribute.CName;
+        string generatedNamespace = $"{m_type.Namespace}.NativeBindings";
+        string cTypeName = m_type.FullName.Replace(".", "_");
 
         sb.AppendLine($"""
 using System;
@@ -32,30 +32,25 @@ namespace {generatedNamespace};
         sb.AppendLine($"internal static unsafe class {cTypeName}");
         sb.AppendLine("{");
 
-        foreach (var memberInfo in m_exportedType.ManagedType.GetMembers()) {
-            NativeExport? memberNativeExport = memberInfo.GetCustomAttribute<NativeExport>();
-
-            if (memberNativeExport == null) {
-                continue;
-            }
-
-            string memberCName = memberNativeExport.CName;
-            
-
+        foreach (var memberInfo in m_type.GetMembers()) {
             var memberType = memberInfo.MemberType;
 
             switch (memberType) {
                 case MemberTypes.Constructor:
-                    sb.AppendLine($"\t[UnmanagedCallersOnly(EntryPoint = \"{memberCName}\")]");
-                    sb.AppendLine($"\tinternal static void* {memberCName}()");
+                    string constructorNameC = "Create";
+                    
+                    sb.AppendLine($"\t[UnmanagedCallersOnly(EntryPoint = \"{constructorNameC}\")]");
+                    sb.AppendLine($"\tinternal static void* {constructorNameC}()");
                     sb.AppendLine("\t{");
-                    sb.AppendLine($"\t\t{m_exportedType.NativeExportAttribute.ManagedType.FullName} instance = new();");
+                    sb.AppendLine($"\t\t{m_type.FullName} instance = new();");
                     sb.AppendLine("\t\treturn instance.AllocateGCHandleAndGetAddress();");
                     sb.AppendLine("\t}");
                     
                     break;
                 case MemberTypes.Method:
-                    sb.AppendLine($"\t// TODO: {memberCName}");
+                    string methodNameC = memberInfo.Name;
+                    
+                    sb.AppendLine($"\t// TODO: {methodNameC}");
 
                     break;
                 default:

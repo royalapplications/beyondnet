@@ -12,23 +12,22 @@ public class ManagedTypeCollector
         m_assembly = assembly;
     }
 
-    public List<ExportedType> CollectExportedTypes()
+    public List<Type> CollectPublicTypes()
     {
         var allTypeInfos = m_assembly.DefinedTypes;
 
-        List<ExportedType> exportedTypes = new();
+        List<Type> publicTypes = new();
         
         foreach (var typeInfo in allTypeInfos) {
             Type type = typeInfo.AsType();
-            NativeExport? nativeExportAttribute = type.GetCustomAttribute<NativeExport>();
 
-            if (nativeExportAttribute != null) {
-                ExportedType exportedType = new(type, nativeExportAttribute);
-                
-                exportedTypes.Add(exportedType);
+            if (!type.IsVisible) {
+                continue;
             }
+            
+            publicTypes.Add(type);
         }
 
-        return exportedTypes;
+        return publicTypes;
     }
 }

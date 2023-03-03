@@ -24,9 +24,9 @@ static class Program
 
         ManagedTypeCollector managedTypeCollector = new(assembly);
 
-        var exportedTypes = managedTypeCollector.CollectExportedTypes();
+        var publicTypes = managedTypeCollector.CollectPublicTypes();
 
-        foreach (var exportedType in exportedTypes) {
+        foreach (var exportedType in publicTypes) {
             var managedCodeGenerator = new ManagedCodeGenerator(exportedType);
 
             string generatedManagedCodeForExportedType = managedCodeGenerator.Generate();
