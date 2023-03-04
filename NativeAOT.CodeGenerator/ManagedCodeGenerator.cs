@@ -60,7 +60,7 @@ namespace {generatedNamespace};
                     sb.AppendLine($"\t// TODO: {methodNameC}");
 
                     if (typeDescriptor != null) {
-                        sb.AppendLine($"\t// return type: {typeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged)}");
+                        sb.AppendLine($"\t// Unmanaged C# Return Type: {typeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged)}");
                     }
 
                     break;

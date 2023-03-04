@@ -6,6 +6,13 @@ public class TypeDescriptor
 {
     public Type ManagedType { get; }
 
+    public bool IsReferenceType
+    {
+        get {
+            return ManagedType.IsByRef;
+        }
+    }
+
     private readonly Dictionary<CodeLanguage, string> m_typeNames;
 
     public TypeDescriptor(Type managedType)

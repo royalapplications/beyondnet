@@ -8,8 +8,8 @@ public partial class BuiltInTypeDescriptors
     {
         get {
             var descriptor = new TypeDescriptor(typeof(string));
-            descriptor.SetTypeName("byte*", CodeLanguage.CSharpUnmanaged);
-            descriptor.SetTypeName("char*", CodeLanguage.C);
+            descriptor.SetTypeName("byte", CodeLanguage.CSharpUnmanaged);
+            descriptor.SetTypeName("char", CodeLanguage.C);
             descriptor.SetTypeName("String", CodeLanguage.Swift);
     
             return descriptor;
