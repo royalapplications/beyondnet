@@ -15,6 +15,8 @@ public class ManagedCodeGenerator
 
     public string Generate()
     {
+        TypeDescriptorRegistry typeDescriptorRegistry = new();
+        
         StringBuilder sb = new();
 
         string generatedNamespace = $"{m_type.Namespace}.NativeBindings";
@@ -53,12 +55,12 @@ namespace {generatedNamespace};
                     string methodNameC = methodInfo.Name;
                     
                     Type returnType = methodInfo.ReturnType;
-                    WellKnownType? wellKnownReturnType = WellKnownType.GetWellKnownType(returnType);
+                    TypeDescriptor? typeDescriptor = typeDescriptorRegistry.GetTypeDescriptor(returnType);
                     
                     sb.AppendLine($"\t// TODO: {methodNameC}");
 
-                    if (wellKnownReturnType != null) {
-                        sb.AppendLine($"\t// Well known return type: {wellKnownReturnType.ExportedTypeNames[CodeLanguage.CSharpUnmanaged]}");
+                    if (typeDescriptor != null) {
+                        sb.AppendLine($"\t// return type: {typeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged)}");
                     }
 
                     break;
