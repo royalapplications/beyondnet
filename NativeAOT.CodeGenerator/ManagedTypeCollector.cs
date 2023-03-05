@@ -12,11 +12,11 @@ public class ManagedTypeCollector
         m_assembly = assembly;
     }
 
-    public List<Type> CollectPublicTypes()
+    public HashSet<Type> CollectPublicTypes()
     {
         var allTypeInfos = m_assembly.DefinedTypes;
 
-        List<Type> publicTypes = new();
+        HashSet<Type> publicTypes = new();
         
         foreach (var typeInfo in allTypeInfos) {
             Type type = typeInfo.AsType();
@@ -29,5 +29,10 @@ public class ManagedTypeCollector
         }
 
         return publicTypes;
+    }
+
+    private void CollectPublicTypesRecursively()
+    {
+        
     }
 }
