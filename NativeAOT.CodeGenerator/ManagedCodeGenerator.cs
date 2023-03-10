@@ -19,19 +19,30 @@ public class ManagedCodeGenerator
         
         StringBuilder sb = new();
 
+        bool shouldSkip = false;
+        string? skipReason = null;
+
         if (m_type.IsGenericType) {
-            // Console.WriteLine($"Skipping generic type: \"{m_type.Name}\"");
+            shouldSkip = true;
+            skipReason = "Is Generic";
+        } else if (m_type.IsArray) {
+            shouldSkip = true;
+            skipReason = "Is Array";
+        }
+
+        if (shouldSkip) {
+            sb.AppendLine($"// Type \"{m_type.Name}\" was skipped. Reason: {skipReason ?? "N/A"}");
             
-            return string.Empty;
+            return sb.ToString();
         }
 
         string generatedNamespace = $"{m_type.Namespace}.NativeBindings";
         string? fullTypeName = m_type.FullName;
 
         if (fullTypeName == null) {
-            // Console.WriteLine($"Skipping type which has no full name: \"{m_type.Name}\"");
+            sb.AppendLine($"// Type \"{m_type.Name}\" was skipped. Reason: It has no full name");
             
-            return string.Empty;
+            return sb.ToString();
         }
         
         string cTypeName = fullTypeName.Replace(".", "_");
