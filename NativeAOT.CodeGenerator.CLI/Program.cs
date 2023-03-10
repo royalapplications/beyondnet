@@ -22,9 +22,9 @@ static class Program
 
         Assembly assembly = Assembly.LoadFrom(assemblyPath);
 
-        ManagedTypeCollector managedTypeCollector = new(assembly);
+        TypeCollector typeCollector = new(assembly);
 
-        var publicTypes = managedTypeCollector.CollectPublicTypes();
+        var publicTypes = typeCollector.Collect();
 
         foreach (var exportedType in publicTypes) {
             var managedCodeGenerator = new ManagedCodeGenerator(exportedType);
