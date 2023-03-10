@@ -19,8 +19,22 @@ public class ManagedCodeGenerator
         
         StringBuilder sb = new();
 
+        if (m_type.IsGenericType) {
+            // Console.WriteLine($"Skipping generic type: \"{m_type.Name}\"");
+            
+            return string.Empty;
+        }
+
         string generatedNamespace = $"{m_type.Namespace}.NativeBindings";
-        string cTypeName = m_type.FullName.Replace(".", "_");
+        string? fullTypeName = m_type.FullName;
+
+        if (fullTypeName == null) {
+            // Console.WriteLine($"Skipping type which has no full name: \"{m_type.Name}\"");
+            
+            return string.Empty;
+        }
+        
+        string cTypeName = fullTypeName.Replace(".", "_");
 
         sb.AppendLine($"""
 using System;
@@ -33,8 +47,13 @@ namespace {generatedNamespace};
 
         sb.AppendLine($"internal static unsafe class {cTypeName}");
         sb.AppendLine("{");
+        
+        BindingFlags getMembersFlags = BindingFlags.Public | 
+                                       BindingFlags.DeclaredOnly |
+                                       BindingFlags.Instance |
+                                       BindingFlags.Static;
 
-        foreach (var memberInfo in m_type.GetMembers()) {
+        foreach (var memberInfo in m_type.GetMembers(getMembersFlags)) {
             var memberType = memberInfo.MemberType;
 
             switch (memberType) {
@@ -50,22 +69,48 @@ namespace {generatedNamespace};
                     
                     break;
                 case MemberTypes.Method:
-                    MethodInfo? methodInfo = (MethodInfo)memberInfo;
+                    MethodInfo methodInfo = (MethodInfo)memberInfo;
                     
                     string methodNameC = methodInfo.Name;
                     
                     Type returnType = methodInfo.ReturnType;
                     TypeDescriptor? typeDescriptor = typeDescriptorRegistry.GetTypeDescriptor(returnType);
                     
-                    sb.AppendLine($"\t// TODO: {methodNameC}");
+                    sb.AppendLine($"\t// TODO (Method): {methodNameC}");
 
                     if (typeDescriptor != null) {
                         sb.AppendLine($"\t// Unmanaged C# Return Type: {typeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged)}");
                     }
 
                     break;
+                case MemberTypes.Property:
+                    PropertyInfo propertyInfo = (PropertyInfo)memberInfo;
+                    
+                    string propertyNameC = propertyInfo.Name;
+                    
+                    sb.AppendLine($"\t// TODO (Property): {propertyNameC}");
+                    
+                    break;
+                case MemberTypes.Field:
+                    FieldInfo fieldInfo = (FieldInfo)memberInfo;
+                    
+                    string fieldNameC = fieldInfo.Name;
+                    
+                    sb.AppendLine($"\t// TODO (Field): {fieldNameC}");
+                    
+                    break;
+                case MemberTypes.Event:
+                    EventInfo eventInfo = (EventInfo)memberInfo;
+                    
+                    string eventNameC = eventInfo.Name;
+                    
+                    sb.AppendLine($"\t// TODO (Event): {eventNameC}");
+                    
+                    break;
                 default:
-                    throw new NotSupportedException("Unknown member type");
+                    sb.AppendLine($"\t// TODO: Unsupported Member Type \"{memberType}\"");
+                    
+                    break;
             }
         }
         

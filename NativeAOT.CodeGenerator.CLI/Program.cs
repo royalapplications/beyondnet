@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using System.Text;
 
 namespace NativeAOT.CodeGenerator.CLI;
 
@@ -20,20 +21,40 @@ static class Program
             return 1;
         }
 
+        string? outputPath;
+        
+        if (args.Length > 1) {
+            outputPath = args[1];
+        } else {
+            outputPath = null;
+        }
+
         Assembly assembly = Assembly.LoadFrom(assemblyPath);
 
         TypeCollector typeCollector = new(assembly);
 
         var publicTypes = typeCollector.Collect();
 
+        StringBuilder sb = new();
+
         foreach (var exportedType in publicTypes) {
             var managedCodeGenerator = new ManagedCodeGenerator(exportedType);
 
             string generatedManagedCodeForExportedType = managedCodeGenerator.Generate();
-            
-            Console.WriteLine("---");
-            Console.WriteLine(generatedManagedCodeForExportedType);
-            Console.WriteLine("---");
+
+            if (!string.IsNullOrEmpty(generatedManagedCodeForExportedType)) {
+                sb.AppendLine("---");
+                sb.AppendLine(generatedManagedCodeForExportedType);
+                sb.AppendLine("---");
+            }
+        }
+
+        string outputString = sb.ToString();
+
+        if (!string.IsNullOrEmpty(outputPath)) {
+            File.WriteAllText(outputPath, outputString);
+        } else {
+            Console.WriteLine(outputString);
         }
 
         return 0;
@@ -41,6 +62,6 @@ static class Program
     
     static void ShowUsage()
     {
-        Console.WriteLine("Usage: NativeAOT.CodeGenerator.CLI <PathToAssembly.dll>");    
+        Console.WriteLine("Usage: NativeAOT.CodeGenerator.CLI <PathToAssembly.dll> [<PathToOutput.cs>]");    
     }
 }

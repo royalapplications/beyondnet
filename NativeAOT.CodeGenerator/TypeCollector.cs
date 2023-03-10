@@ -31,7 +31,13 @@ public class TypeCollector
             return;
         }
 
-        collectedTypes.Add(type);
+        bool added = collectedTypes.Add(type);
+
+        if (!added) {
+            // Already added, so skip this type
+            
+            return;
+        }
 
         Type? baseType = type.BaseType;
 
@@ -79,12 +85,24 @@ public class TypeCollector
 
     private void CollectConstructor(ConstructorInfo constructorInfo, HashSet<Type> collectedTypes)
     {
-        // TODO
+        var parameterInfos = constructorInfo.GetParameters();
+
+        foreach (var parameterInfo in parameterInfos) {
+            CollectParameter(parameterInfo, collectedTypes);
+        }
     }
     
     private void CollectMethod(MethodInfo methodInfo, HashSet<Type> collectedTypes)
     {
-        // TODO
+        Type returnType = methodInfo.ReturnType;
+
+        Collect(returnType, collectedTypes);
+        
+        var parameterInfos = methodInfo.GetParameters();
+
+        foreach (var parameterInfo in parameterInfos) {
+            CollectParameter(parameterInfo, collectedTypes);
+        }
     }
     
     private void CollectProperty(PropertyInfo propertyInfo, HashSet<Type> collectedTypes)
@@ -100,5 +118,12 @@ public class TypeCollector
     private void CollectEvent(EventInfo eventInfo, HashSet<Type> collectedTypes)
     {
         // TODO
+    }
+
+    private void CollectParameter(ParameterInfo parameterInfo, HashSet<Type> collectedTypes)
+    {
+        Type parameterType = parameterInfo.ParameterType;
+
+        Collect(parameterType, collectedTypes);
     }
 }
