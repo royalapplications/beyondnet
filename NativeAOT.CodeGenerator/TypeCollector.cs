@@ -107,17 +107,25 @@ public class TypeCollector
     
     private void CollectProperty(PropertyInfo propertyInfo, HashSet<Type> collectedTypes)
     {
-        // TODO
+        Type propertyType = propertyInfo.PropertyType;
+
+        Collect(propertyType, collectedTypes);
     }
     
     private void CollectField(FieldInfo fieldInfo, HashSet<Type> collectedTypes)
     {
-        // TODO
+        Type fieldType = fieldInfo.FieldType;
+
+        Collect(fieldType, collectedTypes);
     }
     
     private void CollectEvent(EventInfo eventInfo, HashSet<Type> collectedTypes)
     {
-        // TODO
+        Type? eventHandlerType = eventInfo.EventHandlerType;
+
+        if (eventHandlerType != null) {
+            Collect(eventHandlerType, collectedTypes);
+        }
     }
 
     private void CollectParameter(ParameterInfo parameterInfo, HashSet<Type> collectedTypes)
