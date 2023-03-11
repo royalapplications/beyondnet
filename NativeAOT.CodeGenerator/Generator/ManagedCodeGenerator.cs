@@ -43,25 +43,18 @@ public class ManagedCodeGenerator
 
             writer.Write($"// Unsupported Member \"{memberName}\": {reason}", sectionName);
             writer.Write("", sectionName);
-        }
+        } 
+        
+        CSharpUnmanagedConstructorSyntaxWriter constructorSyntaxWriter = new();
 
         foreach (var member in members) {
             var memberType = member.MemberType;
 
             switch (memberType) {
                 case MemberTypes.Constructor:
-                    StringBuilder ctorCode = new();
+                    string ctorCode = constructorSyntaxWriter.Write((ConstructorInfo)member);
                     
-                    string constructorNameC = "Create";
-
-                    ctorCode.AppendLine($"\t[UnmanagedCallersOnly(EntryPoint = \"{constructorNameC}\")]");
-                    ctorCode.AppendLine($"\tinternal static void* {constructorNameC}()");
-                    ctorCode.AppendLine("\t{");
-                    ctorCode.AppendLine($"\t\t{m_type.FullName} instance = new();");
-                    ctorCode.AppendLine("\t\treturn instance.AllocateGCHandleAndGetAddress();");
-                    ctorCode.AppendLine("\t}");
-                    
-                    writer.Write(ctorCode.ToString(), sectionName);
+                    writer.Write(ctorCode, sectionName);
 
                     break;
                 case MemberTypes.Method:
