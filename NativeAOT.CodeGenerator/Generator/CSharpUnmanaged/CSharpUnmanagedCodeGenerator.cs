@@ -13,7 +13,11 @@ public class CSharpUnmanagedCodeGenerator: CodeGenerator
 {
     public void Generate(IEnumerable<Type> types, Dictionary<Type, string> unsupportedTypes, SourceCodeWriter writer)
     {
-        string namespaceForGeneratedCode = $"GeneratedNativeBindings";
+        SourceCodeSection headerSection = writer.AddSection("Header");
+        SourceCodeSection unsupportedTypesSection = writer.AddSection("Unsupported Types");
+        SourceCodeSection apisSection = writer.AddSection("APIs");
+        
+        string namespaceForGeneratedCode = "GeneratedNativeBindings";
 
         string header = $"""
 using System;
@@ -23,44 +27,39 @@ using NativeAOT.Core;
 namespace {namespaceForGeneratedCode};
 
 """;
-        
-        writer.Write(header, "Header");
+
+        headerSection.Code.AppendLine(header);
 
         foreach (var kvp in unsupportedTypes) {
             Type type = kvp.Key;
             string reason = kvp.Value;
 
             string typeName = type.FullName ?? type.Name;
-            
-            writer.Write(
-                $"// Unsupported Type \"{typeName}\": {reason}\n", 
-                "Unsupported Types"
-            );
-        }
 
+            unsupportedTypesSection.Code.AppendLine($"// Unsupported Type \"{typeName}\": {reason}");
+        }
+        
         foreach (var type in types) {
-            Generate(type, writer);
+            Generate(type, apisSection.Code);
         }
     }
 
-    private void Generate(Type type, SourceCodeWriter writer)
+    private void Generate(Type type, StringBuilder sb)
     {
-        const string sectionName = "APIs";
-        
         TypeDescriptorRegistry typeDescriptorRegistry = new();
         
         string? fullTypeName = type.FullName;
 
         if (fullTypeName == null) {
-            writer.Write($"// Type \"{type.Name}\" was skipped. Reason: It has no full name", sectionName);
+            sb.AppendLine($"// Type \"{type.Name}\" was skipped. Reason: It has no full name");
             
             return;
         }
         
         string cTypeName = fullTypeName.Replace(".", "_");
 
-        writer.Write($"internal static unsafe class {cTypeName}", sectionName);
-        writer.Write("{", sectionName);
+        sb.AppendLine($"internal static unsafe class {cTypeName}");
+        sb.AppendLine("{");
 
         var memberCollector = new MemberCollector(type);
         var members = memberCollector.Collect(out Dictionary<MemberInfo, string> unsupportedMembers);
@@ -71,8 +70,8 @@ namespace {namespaceForGeneratedCode};
 
             string memberName = member.Name;
 
-            writer.Write($"// Unsupported Member \"{memberName}\": {reason}", sectionName);
-            writer.Write("", sectionName);
+            sb.AppendLine($"\t// Unsupported Member \"{memberName}\": {reason}");
+            sb.AppendLine();
         } 
         
         CSharpUnmanagedConstructorSyntaxWriter constructorSyntaxWriter = new();
@@ -84,7 +83,7 @@ namespace {namespaceForGeneratedCode};
                 case MemberTypes.Constructor:
                     string ctorCode = constructorSyntaxWriter.Write((ConstructorInfo)member);
                     
-                    writer.Write(ctorCode, sectionName);
+                    sb.AppendLine(ctorCode);
 
                     break;
                 case MemberTypes.Method:
@@ -103,7 +102,7 @@ namespace {namespaceForGeneratedCode};
                         methodCode.AppendLine($"\t// Unmanaged C# Return Type: {typeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged)}");
                     }
                     
-                    writer.Write(methodCode.ToString(), sectionName);
+                    sb.AppendLine(methodCode.ToString());
 
                     break;
                 case MemberTypes.Property:
@@ -114,7 +113,7 @@ namespace {namespaceForGeneratedCode};
 
                     propertyCode.AppendLine($"\t// TODO (Property): {propertyNameC}");
                     
-                    writer.Write(propertyCode.ToString(), sectionName);
+                    sb.AppendLine(propertyCode.ToString());
                     
                     break;
                 case MemberTypes.Field:
@@ -125,7 +124,7 @@ namespace {namespaceForGeneratedCode};
                     
                     fieldCode.AppendLine($"\t// TODO (Field): {fieldNameC}");
                     
-                    writer.Write(fieldCode.ToString(), sectionName);
+                    sb.AppendLine(fieldCode.ToString());
                     
                     break;
                 case MemberTypes.Event:
@@ -137,16 +136,17 @@ namespace {namespaceForGeneratedCode};
                     
                     eventCode.AppendLine($"\t// TODO (Event): {eventNameC}");
                     
-                    writer.Write(eventCode.ToString(), sectionName);
+                    sb.AppendLine(eventCode.ToString());
                     
                     break;
                 default:
-                    writer.Write($"\t// TODO: Unsupported Member Type \"{memberType}\"", sectionName);
+                    sb.AppendLine($"\t// TODO: Unsupported Member Type \"{memberType}\"");
                     
                     break;
             }
         }
         
-        writer.Write("}", sectionName);
+        sb.AppendLine("}");
+        sb.AppendLine();
     }
 }

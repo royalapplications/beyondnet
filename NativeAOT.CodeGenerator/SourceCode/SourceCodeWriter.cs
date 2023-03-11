@@ -24,22 +24,27 @@ public class SourceCodeWriter
 
         section.Code.AppendLine(code);
     }
+    
+    public SourceCodeSection AddSection(string sectionName)
+    {
+        var tempSection = new SourceCodeSection(sectionName);
+        var actualSection = AddSection(tempSection);
+
+        return actualSection;
+    }
     #endregion API
 
     #region Private Helpers
-    private SourceCodeSection AddSection(string sectionName)
+    private SourceCodeSection AddSection(SourceCodeSection section)
     {
-        var section = new SourceCodeSection(sectionName);
-
-        AddSection(section);
-
-        return section;
-    }
-    
-    private void AddSection(SourceCodeSection section)
-    {
+        if (m_sectionsDict.TryGetValue(section.Name, out SourceCodeSection? existingSection)) {
+            return existingSection;
+        }
+        
         m_sections.Add(section);
         m_sectionsDict[section.Name] = section;
+
+        return section;
     }
 
     private SourceCodeSection? GetSection(string? name)
