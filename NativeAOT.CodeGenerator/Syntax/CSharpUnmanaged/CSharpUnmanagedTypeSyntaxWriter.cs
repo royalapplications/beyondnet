@@ -9,8 +9,8 @@ public class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITyp
 {
     private readonly Dictionary<MemberTypes, ICSharpUnmanagedSyntaxWriter> m_syntaxWriters = new() {
         { MemberTypes.Constructor, new CSharpUnmanagedConstructorSyntaxWriter() },
-        { MemberTypes.Method, new CSharpUnmanagedMethodSyntaxWriter() },
         { MemberTypes.Property, new CSharpUnmanagedPropertySyntaxWriter() },
+        { MemberTypes.Method, new CSharpUnmanagedMethodSyntaxWriter() },
         { MemberTypes.Field, new CSharpUnmanagedFieldSyntaxWriter() },
         { MemberTypes.Event, new CSharpUnmanagedEventSyntaxWriter() }
     };

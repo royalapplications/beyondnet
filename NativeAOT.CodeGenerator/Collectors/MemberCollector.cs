@@ -95,6 +95,18 @@ public class MemberCollector
 
     private void CollectMethod(MethodInfo methodInfo, HashSet<MemberInfo> collectedMembers, Dictionary<MemberInfo, string> unsupportedMembers)
     {
+        BindingFlags flags = BindingFlags.Public | 
+                             BindingFlags.DeclaredOnly |
+                             BindingFlags.Instance |
+                             BindingFlags.Static;
+
+        bool isPropertyAccessor = methodInfo.DeclaringType?.GetProperties(flags)
+            .Any(prop => prop.GetGetMethod() == methodInfo || prop.GetSetMethod() == methodInfo) ?? false;
+
+        if (isPropertyAccessor) {
+            return;
+        }
+            
         Type returnType = methodInfo.ReturnType;
 
         if (!TypeCollector.IsSupportedType(returnType)) {
