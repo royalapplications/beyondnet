@@ -1,6 +1,6 @@
 using NativeAOT.Core;
 
-namespace NativeAOT.CodeGenerator;
+namespace NativeAOT.CodeGenerator.Types.BuiltIn;
 
 public partial class BuiltInTypeDescriptors
 {

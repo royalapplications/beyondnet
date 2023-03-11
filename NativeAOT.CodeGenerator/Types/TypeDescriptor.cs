@@ -1,6 +1,6 @@
 using NativeAOT.Core;
 
-namespace NativeAOT.CodeGenerator;
+namespace NativeAOT.CodeGenerator.Types;
 
 public class TypeDescriptor
 {

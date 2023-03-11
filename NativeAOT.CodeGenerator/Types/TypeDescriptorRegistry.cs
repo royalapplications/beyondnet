@@ -1,4 +1,4 @@
-namespace NativeAOT.CodeGenerator;
+namespace NativeAOT.CodeGenerator.Types;
 
 public class TypeDescriptorRegistry
 {
@@ -30,9 +30,9 @@ public class TypeDescriptorRegistry
     private static HashSet<TypeDescriptor> GetBuiltInTypeDescriptors()
     {
         HashSet<TypeDescriptor> descriptors = new() {
-            BuiltInTypeDescriptors.VoidTypeDescriptor,
-            BuiltInTypeDescriptors.Int32TypeDescriptor,
-            BuiltInTypeDescriptors.StringTypeDescriptor
+            BuiltIn.BuiltInTypeDescriptors.VoidTypeDescriptor,
+            BuiltIn.BuiltInTypeDescriptors.Int32TypeDescriptor,
+            BuiltIn.BuiltInTypeDescriptors.StringTypeDescriptor
         };
 
         return descriptors;

@@ -5,8 +5,6 @@ using NativeAOT.CodeGenerator.Collectors;
 using NativeAOT.CodeGenerator.SourceCode;
 using NativeAOT.CodeGenerator.Syntax.CSharpUnmanaged;
 
-using NativeAOT.Core;
-
 namespace NativeAOT.CodeGenerator.Generator.CSharpUnmanaged;
 
 public class CSharpUnmanagedCodeGenerator: CodeGenerator
@@ -46,8 +44,6 @@ namespace {namespaceForGeneratedCode};
 
     private void Generate(Type type, StringBuilder sb)
     {
-        TypeDescriptorRegistry typeDescriptorRegistry = new();
-        
         string? fullTypeName = type.FullName;
 
         if (fullTypeName == null) {
@@ -75,6 +71,10 @@ namespace {namespaceForGeneratedCode};
         } 
         
         CSharpUnmanagedConstructorSyntaxWriter constructorSyntaxWriter = new();
+        CSharpUnmanagedMethodSyntaxWriter methodSyntaxWriter = new();
+        CSharpUnmanagedPropertySyntaxWriter propertySyntaxWriter = new();
+        CSharpUnmanagedFieldSyntaxWriter fieldSyntaxWriter = new();
+        CSharpUnmanagedEventSyntaxWriter eventSyntaxWriter = new();
 
         foreach (var member in members) {
             var memberType = member.MemberType;
@@ -87,56 +87,27 @@ namespace {namespaceForGeneratedCode};
 
                     break;
                 case MemberTypes.Method:
-                    StringBuilder methodCode = new();
+                    string methodCode = methodSyntaxWriter.Write((MethodInfo)member);
                     
-                    MethodInfo methodInfo = (MethodInfo)member;
-                    
-                    string methodNameC = methodInfo.Name;
-                    
-                    Type returnType = methodInfo.ReturnType;
-                    TypeDescriptor? typeDescriptor = typeDescriptorRegistry.GetTypeDescriptor(returnType);
-
-                    methodCode.AppendLine($"\t// TODO (Method): {methodNameC}");
-
-                    if (typeDescriptor != null) {
-                        methodCode.AppendLine($"\t// Unmanaged C# Return Type: {typeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged)}");
-                    }
-                    
-                    sb.AppendLine(methodCode.ToString());
+                    sb.AppendLine(methodCode);
 
                     break;
                 case MemberTypes.Property:
-                    StringBuilder propertyCode = new();
+                    string propertyCode = propertySyntaxWriter.Write((PropertyInfo)member);
                     
-                    PropertyInfo propertyInfo = (PropertyInfo)member;
-                    string propertyNameC = propertyInfo.Name;
-
-                    propertyCode.AppendLine($"\t// TODO (Property): {propertyNameC}");
-                    
-                    sb.AppendLine(propertyCode.ToString());
+                    sb.AppendLine(propertyCode);
                     
                     break;
                 case MemberTypes.Field:
-                    StringBuilder fieldCode = new();
+                    string fieldCode = fieldSyntaxWriter.Write((FieldInfo)member);
                     
-                    FieldInfo fieldInfo = (FieldInfo)member;
-                    string fieldNameC = fieldInfo.Name;
-                    
-                    fieldCode.AppendLine($"\t// TODO (Field): {fieldNameC}");
-                    
-                    sb.AppendLine(fieldCode.ToString());
+                    sb.AppendLine(fieldCode);
                     
                     break;
                 case MemberTypes.Event:
-                    StringBuilder eventCode = new();
+                    string eventCode = eventSyntaxWriter.Write((EventInfo)member);
                     
-                    EventInfo eventInfo = (EventInfo)member;
-                    
-                    string eventNameC = eventInfo.Name;
-                    
-                    eventCode.AppendLine($"\t// TODO (Event): {eventNameC}");
-                    
-                    sb.AppendLine(eventCode.ToString());
+                    sb.AppendLine(eventCode);
                     
                     break;
                 default:
