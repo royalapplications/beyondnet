@@ -2,9 +2,14 @@
 
 public class TestClass
 {
-    public void Hello()
+    public void SayHello()
     {
-        Console.WriteLine("Hello");
+        Console.WriteLine(GetHello());
+    }
+
+    public string GetHello()
+    {
+        return "Hello";
     }
 
     public int Add(int number1, int number2)

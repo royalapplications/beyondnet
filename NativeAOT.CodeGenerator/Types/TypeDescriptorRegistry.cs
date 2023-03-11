@@ -2,7 +2,9 @@ namespace NativeAOT.CodeGenerator.Types;
 
 public class TypeDescriptorRegistry
 {
-    public TypeDescriptorRegistry()
+    public static TypeDescriptorRegistry Shared { get; } = new();
+    
+    private TypeDescriptorRegistry()
     {
         var builtInDescriptors = GetBuiltInTypeDescriptors();
 
@@ -16,6 +18,20 @@ public class TypeDescriptorRegistry
     public void AddTypeDescriptor(TypeDescriptor typeDescriptor)
     {
         Descriptors[typeDescriptor.ManagedType] = typeDescriptor;
+    }
+
+    public TypeDescriptor GetOrCreateTypeDescriptor(Type managedType)
+    {
+        TypeDescriptor? typeDescriptor = GetTypeDescriptor(managedType);
+
+        if (typeDescriptor == null) {
+            // TODO
+            typeDescriptor = new(managedType);
+            
+            Descriptors[managedType] = typeDescriptor;
+        }
+
+        return typeDescriptor;
     }
 
     public TypeDescriptor? GetTypeDescriptor(Type managedType)

@@ -37,12 +37,66 @@ public class TypeDescriptor
         m_typeNames[language] = typeName;
     }
 
-    public string? GetTypeName(CodeLanguage language)
+    public string GetTypeName(CodeLanguage language, bool includeModifiers)
     {
-        if (m_typeNames.TryGetValue(language, out string? typeName)) {
-            return typeName;
+        string typeName;
+        
+        if (m_typeNames.TryGetValue(language, out string? tempTypeName)) {
+            typeName = tempTypeName;
         } else {
-            return null;
+            typeName = GenerateTypeName(language);
+
+            m_typeNames[language] = typeName;
+        }
+
+        if (includeModifiers &&
+            IsReferenceType &&
+            !IsVoid) {
+            typeName = AddModifiersToTypeName(typeName, language);
+        }
+
+        return typeName;
+    }
+
+    private string AddModifiersToTypeName(string typeName, CodeLanguage language)
+    {
+        if (!IsReferenceType ||
+            IsVoid) {
+            return typeName;
+        }
+
+        string typeNameWithModifiers;
+
+        switch (language) {
+            case CodeLanguage.CSharpUnmanaged:
+                typeNameWithModifiers = $"{typeName}*";
+                
+                break;
+            case CodeLanguage.C:
+                typeNameWithModifiers = $"{typeName}*";
+                
+                break;
+            default:
+                throw new NotImplementedException();
+        }
+
+        return typeNameWithModifiers;
+    }
+
+    private string GenerateTypeName(CodeLanguage language)
+    {
+        switch (language) {
+            case CodeLanguage.CSharpUnmanaged:
+                if (IsReferenceType) {
+                    return "void";
+                } else {
+                    // TODO: Why?
+                    return ManagedType.Name;
+                }
+            case CodeLanguage.C:
+                return $"{ManagedType.Name}_t";
+            default:
+                throw new NotImplementedException();
         }
     }
 }
