@@ -37,32 +37,43 @@ static class Program
         
         string namespaceForGeneratedCode = $"GeneratedNativeBindings";
 
-        StringBuilder sb = new();
-        
-        sb.AppendLine($"""
+        SourceCodeWriter writer = new();
+
+        string header = $"""
 using System;
 using System.Runtime.InteropServices;
 using NativeAOT.Core;
 
 namespace {namespaceForGeneratedCode};
 
-""");
+""";
+        
+        writer.Write(header, "Header");
 
         foreach (var kvp in unsupportedTypes) {
             Type type = kvp.Key;
             string reason = kvp.Value;
 
             string typeName = type.FullName ?? type.Name;
-
-            sb.AppendLine($"// Unsupported Type \"{typeName}\": {reason}");
-            sb.AppendLine();
+            
+            writer.Write(
+                $"// Unsupported Type \"{typeName}\": {reason}\n", 
+                "Unsupported Types"
+            );
         }
 
         foreach (var type in types) {
             var managedCodeGenerator = new ManagedCodeGenerator(type);
 
-            managedCodeGenerator.Generate(sb);
-            sb.AppendLine();
+            managedCodeGenerator.Generate(writer);
+        }
+
+        StringBuilder sb = new();
+
+        foreach (var section in writer.Sections) {
+            sb.AppendLine($"// <{section.Name}>");
+            sb.AppendLine(section.Code.ToString());
+            sb.AppendLine($"// </{section.Name}>");
         }
 
         string outputString = sb.ToString();
