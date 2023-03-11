@@ -1,6 +1,7 @@
 using System.Reflection;
 using System.Text;
 using NativeAOT.CodeGenerator.Collectors;
+using NativeAOT.CodeGenerator.Extensions;
 
 namespace NativeAOT.CodeGenerator.Syntax.CSharpUnmanaged;
 
@@ -36,6 +37,7 @@ public class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITyp
             return $"// Type \"{type.Name}\" was skipped. Reason: It has no full name.";
         }
         
+        // TODO: Move out
         string cTypeName = fullTypeName.Replace(".", "_");
         
         StringBuilder sb = new();
@@ -67,16 +69,10 @@ public class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITyp
                 continue;
             }
 
-            string memberCode = syntaxWriter.Write(member);
-            StringBuilder indentedMemberCode = new();
+            string memberCode = syntaxWriter.Write(member)
+                .IndentAllLines(1);
 
-            foreach (var line in memberCode.Split(Environment.NewLine)) {
-                string indentedLine = "\t" + line;
-
-                indentedMemberCode.AppendLine(indentedLine);
-            }
-
-            sb.AppendLine(indentedMemberCode.ToString());
+            sb.AppendLine(memberCode);
         }
         
         sb.AppendLine("}");
