@@ -2,7 +2,7 @@ using System.Reflection;
 
 namespace NativeAOT.CodeGenerator.Syntax;
 
-public interface ConstructorSyntaxWriter: SyntaxWriter
+public interface IConstructorSyntaxWriter: ISyntaxWriter
 {
     string Write(ConstructorInfo constructor);
 }

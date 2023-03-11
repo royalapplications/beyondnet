@@ -3,8 +3,13 @@ using System.Text;
 
 namespace NativeAOT.CodeGenerator.Syntax.CSharpUnmanaged;
 
-public class CSharpUnmanagedConstructorSyntaxWriter: ConstructorSyntaxWriter
+public class CSharpUnmanagedConstructorSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IConstructorSyntaxWriter
 {
+    public string Write(object @object)
+    {
+        return Write((ConstructorInfo)@object);
+    }
+    
     public string Write(ConstructorInfo constructor)
     {
         StringBuilder ctorCode = new();
@@ -13,12 +18,12 @@ public class CSharpUnmanagedConstructorSyntaxWriter: ConstructorSyntaxWriter
         
         string constructorNameC = "Create";
 
-        ctorCode.AppendLine($"\t[UnmanagedCallersOnly(EntryPoint = \"{constructorNameC}\")]");
-        ctorCode.AppendLine($"\tinternal static void* {constructorNameC}()");
-        ctorCode.AppendLine("\t{");
-        ctorCode.AppendLine($"\t\t{declaringType.FullName ?? declaringType.Name} instance = new();");
-        ctorCode.AppendLine("\t\treturn instance.AllocateGCHandleAndGetAddress();");
-        ctorCode.AppendLine("\t}");
+        ctorCode.AppendLine($"[UnmanagedCallersOnly(EntryPoint = \"{constructorNameC}\")]");
+        ctorCode.AppendLine($"internal static void* {constructorNameC}()");
+        ctorCode.AppendLine("{");
+        ctorCode.AppendLine($"\t{declaringType.FullName ?? declaringType.Name} instance = new();");
+        ctorCode.AppendLine("\treturn instance.AllocateGCHandleAndGetAddress();");
+        ctorCode.AppendLine("}");
 
         return ctorCode.ToString();
     }

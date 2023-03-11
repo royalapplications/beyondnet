@@ -1,6 +1,6 @@
 namespace NativeAOT.CodeGenerator.Syntax;
 
-public interface TypeSyntaxWriter: SyntaxWriter
+public interface ITypeSyntaxWriter: ISyntaxWriter
 {
     string Write(Type type);
 }

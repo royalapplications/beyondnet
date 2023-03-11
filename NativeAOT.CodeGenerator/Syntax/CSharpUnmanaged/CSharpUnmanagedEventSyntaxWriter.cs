@@ -3,15 +3,20 @@ using System.Text;
 
 namespace NativeAOT.CodeGenerator.Syntax.CSharpUnmanaged;
 
-public class CSharpUnmanagedEventSyntaxWriter: EventSyntaxWriter
+public class CSharpUnmanagedEventSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IEventSyntaxWriter
 {
+    public string Write(object @object)
+    {
+        return Write((EventInfo)@object);
+    }
+    
     public string Write(EventInfo @event)
     {
         StringBuilder sb = new();
         
         string eventNameC = @event.Name;
                     
-        sb.AppendLine($"\t// TODO (Event): {eventNameC}");
+        sb.AppendLine($"// TODO (Event): {eventNameC}");
 
         return sb.ToString();
     }

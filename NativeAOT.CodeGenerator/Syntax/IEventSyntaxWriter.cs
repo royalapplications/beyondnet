@@ -2,7 +2,7 @@ using System.Reflection;
 
 namespace NativeAOT.CodeGenerator.Syntax;
 
-public interface EventSyntaxWriter: SyntaxWriter
+public interface IEventSyntaxWriter: ISyntaxWriter
 {
     string Write(EventInfo @event);
 }

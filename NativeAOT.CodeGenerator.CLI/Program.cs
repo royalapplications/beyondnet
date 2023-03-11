@@ -39,7 +39,13 @@ static class Program
 
         var types = typeCollector.Collect(out Dictionary<Type, string> unsupportedTypes);
 
-        string cSharpUnmanagedCode = GenerateCSharpUnmanagedCode(types, unsupportedTypes);
+        const string namespaceForCSharpUnamangedCode = "NativeGeneratedCode";
+
+        string cSharpUnmanagedCode = GenerateCSharpUnmanagedCode(
+            types,
+            unsupportedTypes,
+            namespaceForCSharpUnamangedCode
+        );
 
         if (!string.IsNullOrEmpty(outputPath)) {
             File.WriteAllText(outputPath, cSharpUnmanagedCode);
@@ -50,10 +56,14 @@ static class Program
         return 0;
     }
 
-    private static string GenerateCSharpUnmanagedCode(HashSet<Type> types, Dictionary<Type, string> unsupportedTypes)
+    private static string GenerateCSharpUnmanagedCode(
+        HashSet<Type> types,
+        Dictionary<Type, string> unsupportedTypes,
+        string namespaceForGeneratedCode
+    )
     {
         SourceCodeWriter writer = new();
-        CSharpUnmanagedCodeGenerator cSharpUnmanagedCodeGenerator = new();
+        CSharpUnmanagedCodeGenerator cSharpUnmanagedCodeGenerator = new(namespaceForGeneratedCode);
         
         cSharpUnmanagedCodeGenerator.Generate(types, unsupportedTypes, writer);
         

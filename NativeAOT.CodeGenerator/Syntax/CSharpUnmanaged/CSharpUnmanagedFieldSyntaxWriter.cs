@@ -3,15 +3,20 @@ using System.Text;
 
 namespace NativeAOT.CodeGenerator.Syntax.CSharpUnmanaged;
 
-public class CSharpUnmanagedFieldSyntaxWriter: FieldSyntaxWriter
+public class CSharpUnmanagedFieldSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IFieldSyntaxWriter
 {
+    public string Write(object @object)
+    {
+        return Write((FieldInfo)@object);
+    }
+    
     public string Write(FieldInfo field)
     {
         StringBuilder sb = new();
         
         string fieldNameC = field.Name;
                     
-        sb.AppendLine($"\t// TODO (Field): {fieldNameC}");
+        sb.AppendLine($"// TODO (Field): {fieldNameC}");
 
         return sb.ToString();
     }

@@ -2,7 +2,7 @@ using System.Reflection;
 
 namespace NativeAOT.CodeGenerator.Syntax;
 
-public interface MethodSyntaxWriter: SyntaxWriter
+public interface IMethodSyntaxWriter: ISyntaxWriter
 {
     string Write(MethodInfo method);
 }

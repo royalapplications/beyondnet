@@ -2,7 +2,7 @@ using System.Reflection;
 
 namespace NativeAOT.CodeGenerator.Syntax;
 
-public interface PropertySyntaxWriter: SyntaxWriter
+public interface IPropertySyntaxWriter: ISyntaxWriter
 {
     string Write(PropertyInfo property);
 }
