@@ -39,14 +39,11 @@ static class Program
 
         var types = typeCollector.Collect(out Dictionary<Type, string> unsupportedTypes);
 
-        SourceCodeWriter writer = new();
-        CSharpUnmanagedCodeGenerator cSharpUnmanagedCodeGenerator = new();
-        
-        cSharpUnmanagedCodeGenerator.Generate(types, unsupportedTypes, writer);
+        SourceCodeWriter cSharpUnmanagedWriter = GenerateCSharpUnmanagedCode(types, unsupportedTypes);
 
         StringBuilder sb = new();
 
-        foreach (var section in writer.Sections) {
+        foreach (var section in cSharpUnmanagedWriter.Sections) {
             sb.AppendLine($"// <{section.Name}>");
             sb.AppendLine(section.Code.ToString());
             sb.AppendLine($"// </{section.Name}>");
@@ -62,8 +59,18 @@ static class Program
 
         return 0;
     }
+
+    private static SourceCodeWriter GenerateCSharpUnmanagedCode(HashSet<Type> types, Dictionary<Type, string> unsupportedTypes)
+    {
+        SourceCodeWriter writer = new();
+        CSharpUnmanagedCodeGenerator cSharpUnmanagedCodeGenerator = new();
+        
+        cSharpUnmanagedCodeGenerator.Generate(types, unsupportedTypes, writer);
+
+        return writer;
+    }
     
-    static void ShowUsage()
+    private static void ShowUsage()
     {
         Console.WriteLine("Usage: NativeAOT.CodeGenerator.CLI <PathToAssembly.dll> [<PathToOutput.cs>]");    
     }
