@@ -13,59 +13,38 @@ public class ManagedCodeGenerator
         m_type = type;
     }
 
-    public string Generate()
+    public void Generate(StringBuilder sb)
     {
         TypeDescriptorRegistry typeDescriptorRegistry = new();
         
-        StringBuilder sb = new();
-
-        bool shouldSkip = false;
-        string? skipReason = null;
-
-        if (m_type.IsGenericType) {
-            shouldSkip = true;
-            skipReason = "Is Generic";
-        } else if (m_type.IsArray) {
-            shouldSkip = true;
-            skipReason = "Is Array";
-        }
-
-        if (shouldSkip) {
-            sb.AppendLine($"// Type \"{m_type.Name}\" was skipped. Reason: {skipReason ?? "N/A"}");
-            
-            return sb.ToString();
-        }
-
-        string generatedNamespace = $"{m_type.Namespace}.NativeBindings";
         string? fullTypeName = m_type.FullName;
 
         if (fullTypeName == null) {
             sb.AppendLine($"// Type \"{m_type.Name}\" was skipped. Reason: It has no full name");
             
-            return sb.ToString();
+            return;
         }
         
         string cTypeName = fullTypeName.Replace(".", "_");
 
-        sb.AppendLine($"""
-using System;
-using System.Runtime.InteropServices;
-using NativeAOT.Core;
-
-namespace {generatedNamespace};
-
-""");
-
         sb.AppendLine($"internal static unsafe class {cTypeName}");
         sb.AppendLine("{");
-        
-        BindingFlags getMembersFlags = BindingFlags.Public | 
-                                       BindingFlags.DeclaredOnly |
-                                       BindingFlags.Instance |
-                                       BindingFlags.Static;
 
-        foreach (var memberInfo in m_type.GetMembers(getMembersFlags)) {
-            var memberType = memberInfo.MemberType;
+        var memberCollector = new MemberCollector(m_type);
+        var members = memberCollector.Collect(out Dictionary<MemberInfo, string> unsupportedMembers);
+        
+        foreach (var kvp in unsupportedMembers) {
+            MemberInfo member = kvp.Key;
+            string reason = kvp.Value;
+
+            string memberName = member.Name;
+
+            sb.AppendLine($"// Unsupported Member \"{memberName}\": {reason}");
+            sb.AppendLine();
+        }
+
+        foreach (var member in members) {
+            var memberType = member.MemberType;
 
             switch (memberType) {
                 case MemberTypes.Constructor:
@@ -80,7 +59,7 @@ namespace {generatedNamespace};
                     
                     break;
                 case MemberTypes.Method:
-                    MethodInfo methodInfo = (MethodInfo)memberInfo;
+                    MethodInfo methodInfo = (MethodInfo)member;
                     
                     string methodNameC = methodInfo.Name;
                     
@@ -95,7 +74,7 @@ namespace {generatedNamespace};
 
                     break;
                 case MemberTypes.Property:
-                    PropertyInfo propertyInfo = (PropertyInfo)memberInfo;
+                    PropertyInfo propertyInfo = (PropertyInfo)member;
                     
                     string propertyNameC = propertyInfo.Name;
                     
@@ -103,7 +82,7 @@ namespace {generatedNamespace};
                     
                     break;
                 case MemberTypes.Field:
-                    FieldInfo fieldInfo = (FieldInfo)memberInfo;
+                    FieldInfo fieldInfo = (FieldInfo)member;
                     
                     string fieldNameC = fieldInfo.Name;
                     
@@ -111,7 +90,7 @@ namespace {generatedNamespace};
                     
                     break;
                 case MemberTypes.Event:
-                    EventInfo eventInfo = (EventInfo)memberInfo;
+                    EventInfo eventInfo = (EventInfo)member;
                     
                     string eventNameC = eventInfo.Name;
                     
@@ -126,7 +105,5 @@ namespace {generatedNamespace};
         }
         
         sb.AppendLine("}");
-        
-        return sb.ToString();
     }
 }

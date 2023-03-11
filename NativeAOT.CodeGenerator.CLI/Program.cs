@@ -33,20 +33,36 @@ static class Program
 
         TypeCollector typeCollector = new(assembly);
 
-        var publicTypes = typeCollector.Collect();
+        var types = typeCollector.Collect(out Dictionary<Type, string> unsupportedTypes);
+        
+        string namespaceForGeneratedCode = $"GeneratedNativeBindings";
 
         StringBuilder sb = new();
+        
+        sb.AppendLine($"""
+using System;
+using System.Runtime.InteropServices;
+using NativeAOT.Core;
 
-        foreach (var exportedType in publicTypes) {
-            var managedCodeGenerator = new ManagedCodeGenerator(exportedType);
+namespace {namespaceForGeneratedCode};
 
-            string generatedManagedCodeForExportedType = managedCodeGenerator.Generate();
+""");
 
-            if (!string.IsNullOrEmpty(generatedManagedCodeForExportedType)) {
-                sb.AppendLine("---");
-                sb.AppendLine(generatedManagedCodeForExportedType);
-                sb.AppendLine("---");
-            }
+        foreach (var kvp in unsupportedTypes) {
+            Type type = kvp.Key;
+            string reason = kvp.Value;
+
+            string typeName = type.FullName ?? type.Name;
+
+            sb.AppendLine($"// Unsupported Type \"{typeName}\": {reason}");
+            sb.AppendLine();
+        }
+
+        foreach (var type in types) {
+            var managedCodeGenerator = new ManagedCodeGenerator(type);
+
+            managedCodeGenerator.Generate(sb);
+            sb.AppendLine();
         }
 
         string outputString = sb.ToString();

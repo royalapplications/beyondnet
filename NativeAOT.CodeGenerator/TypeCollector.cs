@@ -1,5 +1,4 @@
 using System.Reflection;
-using NativeAOT.Core;
 
 namespace NativeAOT.CodeGenerator;
 
@@ -9,25 +8,28 @@ public class TypeCollector
     
     public TypeCollector(Assembly assembly)
     {
-        m_assembly = assembly;
+        m_assembly = assembly ?? throw new ArgumentNullException(nameof(assembly));
     }
 
-    public HashSet<Type> Collect()
+    public HashSet<Type> Collect(out Dictionary<Type, string> unsupportedTypes)
     {
+        HashSet<Type> collectedTypes = new();
+        unsupportedTypes = new();
+        
         var assemblyTypes = m_assembly.ExportedTypes;
 
-        HashSet<Type> collectedTypes = new();
-        
         foreach (var type in assemblyTypes) {
-            Collect(type, collectedTypes);
+            CollectType(type, collectedTypes, unsupportedTypes);
         }
 
         return collectedTypes;
     }
 
-    private void Collect(Type type, HashSet<Type> collectedTypes)
+    private void CollectType(Type type, HashSet<Type> collectedTypes, Dictionary<Type, string> unsupportedTypes)
     {
-        if (!type.IsVisible) {
+        if (!IsSupportedType(type, out string? unsupportedReason)) {
+            unsupportedTypes[type] = unsupportedReason ?? string.Empty;
+            
             return;
         }
 
@@ -42,7 +44,7 @@ public class TypeCollector
         Type? baseType = type.BaseType;
 
         if (baseType != null) {
-            Collect(baseType, collectedTypes);
+            CollectType(baseType, collectedTypes, unsupportedTypes);
         }
 
         BindingFlags getMembersFlags = BindingFlags.Public | 
@@ -53,85 +55,145 @@ public class TypeCollector
         var memberInfos = type.GetMembers(getMembersFlags);
 
         foreach (var memberInfo in memberInfos) {
-            Collect(memberInfo, collectedTypes);
+            CollectMember(memberInfo, collectedTypes, unsupportedTypes);
         }
     }
 
-    private void Collect(MemberInfo memberInfo, HashSet<Type> collectedTypes)
+    private void CollectMember(MemberInfo memberInfo, HashSet<Type> collectedTypes, Dictionary<Type, string> unsupportedTypes)
     {
         switch (memberInfo.MemberType) {
             case MemberTypes.Constructor:
-                CollectConstructor((ConstructorInfo)memberInfo, collectedTypes);
+                CollectConstructor((ConstructorInfo)memberInfo, collectedTypes, unsupportedTypes);
                 
                 break;
             case MemberTypes.Method:
-                CollectMethod((MethodInfo)memberInfo, collectedTypes);
+                CollectMethod((MethodInfo)memberInfo, collectedTypes, unsupportedTypes);
                 
                 break;
             case MemberTypes.Property:
-                CollectProperty((PropertyInfo)memberInfo, collectedTypes);
+                CollectProperty((PropertyInfo)memberInfo, collectedTypes, unsupportedTypes);
                 
                 break;
             case MemberTypes.Field:
-                CollectField((FieldInfo)memberInfo, collectedTypes);
+                CollectField((FieldInfo)memberInfo, collectedTypes, unsupportedTypes);
                 
                 break;
             case MemberTypes.Event:
-                CollectEvent((EventInfo)memberInfo, collectedTypes);
+                CollectEvent((EventInfo)memberInfo, collectedTypes, unsupportedTypes);
                 
                 break;
         }
     }
 
-    private void CollectConstructor(ConstructorInfo constructorInfo, HashSet<Type> collectedTypes)
+    private void CollectConstructor(ConstructorInfo constructorInfo, HashSet<Type> collectedTypes, Dictionary<Type, string> unsupportedTypes)
     {
         var parameterInfos = constructorInfo.GetParameters();
 
         foreach (var parameterInfo in parameterInfos) {
-            CollectParameter(parameterInfo, collectedTypes);
+            CollectParameter(parameterInfo, collectedTypes, unsupportedTypes);
         }
     }
     
-    private void CollectMethod(MethodInfo methodInfo, HashSet<Type> collectedTypes)
+    private void CollectMethod(MethodInfo methodInfo, HashSet<Type> collectedTypes, Dictionary<Type, string> unsupportedTypes)
     {
         Type returnType = methodInfo.ReturnType;
 
-        Collect(returnType, collectedTypes);
+        CollectType(returnType, collectedTypes, unsupportedTypes);
         
         var parameterInfos = methodInfo.GetParameters();
 
         foreach (var parameterInfo in parameterInfos) {
-            CollectParameter(parameterInfo, collectedTypes);
+            CollectParameter(parameterInfo, collectedTypes, unsupportedTypes);
         }
     }
     
-    private void CollectProperty(PropertyInfo propertyInfo, HashSet<Type> collectedTypes)
+    private void CollectProperty(PropertyInfo propertyInfo, HashSet<Type> collectedTypes, Dictionary<Type, string> unsupportedTypes)
     {
         Type propertyType = propertyInfo.PropertyType;
 
-        Collect(propertyType, collectedTypes);
+        CollectType(propertyType, collectedTypes, unsupportedTypes);
     }
     
-    private void CollectField(FieldInfo fieldInfo, HashSet<Type> collectedTypes)
+    private void CollectField(FieldInfo fieldInfo, HashSet<Type> collectedTypes, Dictionary<Type, string> unsupportedTypes)
     {
         Type fieldType = fieldInfo.FieldType;
 
-        Collect(fieldType, collectedTypes);
+        CollectType(fieldType, collectedTypes, unsupportedTypes);
     }
     
-    private void CollectEvent(EventInfo eventInfo, HashSet<Type> collectedTypes)
+    private void CollectEvent(EventInfo eventInfo, HashSet<Type> collectedTypes, Dictionary<Type, string> unsupportedTypes)
     {
         Type? eventHandlerType = eventInfo.EventHandlerType;
 
         if (eventHandlerType != null) {
-            Collect(eventHandlerType, collectedTypes);
+            CollectType(eventHandlerType, collectedTypes, unsupportedTypes);
         }
     }
 
-    private void CollectParameter(ParameterInfo parameterInfo, HashSet<Type> collectedTypes)
+    private void CollectParameter(ParameterInfo parameterInfo, HashSet<Type> collectedTypes, Dictionary<Type, string> unsupportedTypes)
     {
         Type parameterType = parameterInfo.ParameterType;
 
-        Collect(parameterType, collectedTypes);
+        CollectType(parameterType, collectedTypes, unsupportedTypes);
     }
+
+    public static bool IsSupportedType(Type type)
+    {
+        return IsSupportedType(type, out _);
+    }
+    
+    public static bool IsSupportedType(Type type, out string? unsupportedReason)
+    {
+        unsupportedReason = null;
+
+        if (!type.IsVisible) {
+            unsupportedReason = "Is not visible (public)";
+            
+            return false;
+        }
+
+        if (type.IsArray) {
+            unsupportedReason = "Is Array";
+            
+            return false;
+        }
+        
+        if (type.IsGenericType) {
+            unsupportedReason = "Is Generic Type";
+            
+            return false;
+        }
+        
+        if (type.IsGenericParameter) {
+            unsupportedReason = "Is Generic Parameter";
+            
+            return false;
+        }
+        
+        if (type.IsGenericMethodParameter) {
+            unsupportedReason = "Is Generic Method Parameter";
+            
+            return false;
+        }
+        
+        if (type.IsGenericTypeDefinition) {
+            unsupportedReason = "Is Generic Type Definition";
+            
+            return false;
+        }
+        
+        if (type.IsGenericTypeParameter) {
+            unsupportedReason = "Is Generic Type Parameter";
+            
+            return false;
+        }
+        
+        if (type.IsConstructedGenericType) {
+            unsupportedReason = "Is Constructed Generic Type";
+            
+            return false;
+        }
+
+        return true;
+    } 
 }
