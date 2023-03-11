@@ -26,7 +26,49 @@ internal static unsafe class NativeAOTSample_UnhandledExceptionTest_t
     {
         Console.WriteLine("Will throw an unhandled exception");
         
-        throw new Exception("Oh no!");
+        Some();
     }
     #endregion Public API
+
+    #region Private Helpers
+    private static void Some()
+    {
+        Nesting();
+    }
+    
+    private static void Nesting()
+    {
+        To();
+    }
+    
+    private static void To()
+    {
+        Make();
+    }
+    
+    private static void Make()
+    {
+        The();
+    }
+    
+    private static void The()
+    {
+        Stack();
+    }
+    
+    private static void Stack()
+    {
+        Trace();
+    }
+    
+    private static void Trace()
+    {
+        Interesting();
+    }
+    
+    private static void Interesting()
+    {
+        throw new Exception("Oh no!");        
+    }
+    #endregion Private Helpers
 }
