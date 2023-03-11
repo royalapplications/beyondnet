@@ -4,16 +4,11 @@ using NativeAOT.Core;
 
 namespace NativeAOTSample;
 
-[NativeExport]
 public class Person
 {
-    [NativeExport]
     public string FirstName { get; set; }
-    
-    [NativeExport]
     public string LastName { get; set; }
 
-    [NativeExport]
     [JsonIgnore]
     public string FullName 
     {
@@ -22,10 +17,8 @@ public class Person
         }
     }
 
-    [NativeExport]
     public int Age { get; set; }
 
-    [NativeExport]
     public Person(
         string firstName,
         string lastName,
@@ -42,7 +35,6 @@ public class Person
     //     Console.WriteLine($"Did call finalizer of {nameof(Person)}.");
     // }
 
-    [NativeExport(Throwing = true)]
     public void ReduceAge(int byYears)
     {
         int newAge = Age - byYears;
@@ -54,7 +46,6 @@ public class Person
         Age = newAge;
     }
     
-    [NativeExport(Throwing = true)]
     public void ChangeAge(Func<int>? newAgeProvider)
     {
         if (newAgeProvider is null) {

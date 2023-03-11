@@ -1,4 +1,4 @@
-namespace NativeAOT.Core;
+namespace NativeAOT.CodeGenerator;
 
 public enum CodeLanguage
 {

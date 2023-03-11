@@ -5,7 +5,6 @@ using NativeAOT.Core;
 
 namespace NativeAOTSample;
 
-[NativeExport]
 public class Company
 {
     private List<Person> m_employees = new();
@@ -24,14 +23,11 @@ public class Company
 
     public delegate void NumberOfEmployeesChangedDelegate();
 
-    [NativeExport]
     [JsonIgnore]
     public NumberOfEmployeesChangedDelegate? NumberOfEmployeesChanged { get; set; }
 
-    [NativeExport]
     public string Name { get; set; }
 
-    [NativeExport]
     [JsonIgnore]
     public int NumberOfEmployees
     {
@@ -40,7 +36,6 @@ public class Company
         }
     }
 
-    [NativeExport]
     public Company(string name)
     {
         Name = name;
@@ -51,7 +46,6 @@ public class Company
     //     Console.WriteLine($"Did call finalizer of {nameof(Company)}.");
     // }
 
-    [NativeExport]
     public void AddEmployee(Person employee)
     {
         m_employees.Add(employee);
@@ -59,7 +53,6 @@ public class Company
         NumberOfEmployeesChanged?.Invoke();
     }
 
-    [NativeExport]
     public void RemoveEmployee(Person employee)
     {
         m_employees.Remove(employee);
@@ -67,13 +60,11 @@ public class Company
         NumberOfEmployeesChanged?.Invoke();
     }
 
-    [NativeExport]
     public bool ContainsEmployee(Person employee)
     {
         return m_employees.Contains(employee);
     }
 
-    [NativeExport]
     public Person? GetEmployeeAtIndex(int index)
     {
         if (index < 0 ||

@@ -9,10 +9,8 @@ namespace NativeAOTSample;
 [JsonSourceGenerationOptions(GenerationMode = JsonSourceGenerationMode.Metadata, WriteIndented = true)]
 internal partial class CompanyMetadataOnlyContext : JsonSerializerContext { }
 
-[NativeExport]
 public class CompanySerializer
 {
-    [NativeExport]
     public string SerializeToJson(Company company)
     {
         string jsonString = JsonSerializer.Serialize(company, CompanyMetadataOnlyContext.Default.Company);
@@ -22,7 +20,6 @@ public class CompanySerializer
         // return null;
     }
 
-    [NativeExport(Throwing = true)]
     public Company DeserializeFromJson(string jsonString)
     {
         Company? company = JsonSerializer.Deserialize(jsonString, CompanyMetadataOnlyContext.Default.Company);
