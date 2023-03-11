@@ -39,35 +39,33 @@ static class Program
 
         var types = typeCollector.Collect(out Dictionary<Type, string> unsupportedTypes);
 
-        SourceCodeWriter cSharpUnmanagedWriter = GenerateCSharpUnmanagedCode(types, unsupportedTypes);
-
-        StringBuilder sb = new();
-
-        foreach (var section in cSharpUnmanagedWriter.Sections) {
-            sb.AppendLine($"// <{section.Name}>");
-            sb.AppendLine(section.Code.ToString());
-            sb.AppendLine($"// </{section.Name}>");
-        }
-
-        string outputString = sb.ToString();
+        string cSharpUnmanagedCode = GenerateCSharpUnmanagedCode(types, unsupportedTypes);
 
         if (!string.IsNullOrEmpty(outputPath)) {
-            File.WriteAllText(outputPath, outputString);
+            File.WriteAllText(outputPath, cSharpUnmanagedCode);
         } else {
-            Console.WriteLine(outputString);
+            Console.WriteLine(cSharpUnmanagedCode);
         }
 
         return 0;
     }
 
-    private static SourceCodeWriter GenerateCSharpUnmanagedCode(HashSet<Type> types, Dictionary<Type, string> unsupportedTypes)
+    private static string GenerateCSharpUnmanagedCode(HashSet<Type> types, Dictionary<Type, string> unsupportedTypes)
     {
         SourceCodeWriter writer = new();
         CSharpUnmanagedCodeGenerator cSharpUnmanagedCodeGenerator = new();
         
         cSharpUnmanagedCodeGenerator.Generate(types, unsupportedTypes, writer);
+        
+        StringBuilder sb = new();
 
-        return writer;
+        foreach (var section in writer.Sections) {
+            sb.AppendLine($"// <{section.Name}>");
+            sb.AppendLine(section.Code.ToString());
+            sb.AppendLine($"// </{section.Name}>");
+        }
+
+        return sb.ToString();
     }
     
     private static void ShowUsage()
