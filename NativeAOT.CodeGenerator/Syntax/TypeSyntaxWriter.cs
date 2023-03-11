@@ -1,4 +1,4 @@
-namespace NativeAOT.CodeGenerator;
+namespace NativeAOT.CodeGenerator.Syntax;
 
 public interface TypeSyntaxWriter: SyntaxWriter
 {

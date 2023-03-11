@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace NativeAOT.CodeGenerator;
+namespace NativeAOT.CodeGenerator.Syntax;
 
 public interface PropertySyntaxWriter: SyntaxWriter
 {

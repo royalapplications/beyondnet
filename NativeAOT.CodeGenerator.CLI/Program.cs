@@ -1,6 +1,10 @@
 ﻿using System.Reflection;
 using System.Text;
 
+using NativeAOT.CodeGenerator.Collectors;
+using NativeAOT.CodeGenerator.Generator.CSharpUnmanaged;
+using NativeAOT.CodeGenerator.SourceCode;
+
 namespace NativeAOT.CodeGenerator.CLI;
 
 static class Program
@@ -34,39 +38,11 @@ static class Program
         TypeCollector typeCollector = new(assembly);
 
         var types = typeCollector.Collect(out Dictionary<Type, string> unsupportedTypes);
-        
-        string namespaceForGeneratedCode = $"GeneratedNativeBindings";
 
         SourceCodeWriter writer = new();
-
-        string header = $"""
-using System;
-using System.Runtime.InteropServices;
-using NativeAOT.Core;
-
-namespace {namespaceForGeneratedCode};
-
-""";
+        CSharpUnmanagedCodeGenerator cSharpUnmanagedCodeGenerator = new();
         
-        writer.Write(header, "Header");
-
-        foreach (var kvp in unsupportedTypes) {
-            Type type = kvp.Key;
-            string reason = kvp.Value;
-
-            string typeName = type.FullName ?? type.Name;
-            
-            writer.Write(
-                $"// Unsupported Type \"{typeName}\": {reason}\n", 
-                "Unsupported Types"
-            );
-        }
-
-        foreach (var type in types) {
-            var managedCodeGenerator = new ManagedCodeGenerator(type);
-
-            managedCodeGenerator.Generate(writer);
-        }
+        cSharpUnmanagedCodeGenerator.Generate(types, unsupportedTypes, writer);
 
         StringBuilder sb = new();
 

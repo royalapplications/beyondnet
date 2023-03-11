@@ -1,7 +1,7 @@
 using System.Reflection;
 using System.Text;
 
-namespace NativeAOT.CodeGenerator;
+namespace NativeAOT.CodeGenerator.Syntax.CSharpUnmanaged;
 
 public class CSharpUnmanagedConstructorSyntaxWriter: ConstructorSyntaxWriter
 {

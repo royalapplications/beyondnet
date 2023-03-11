@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace NativeAOT.CodeGenerator;
+namespace NativeAOT.CodeGenerator.SourceCode;
 
 public class SourceCodeSection
 {

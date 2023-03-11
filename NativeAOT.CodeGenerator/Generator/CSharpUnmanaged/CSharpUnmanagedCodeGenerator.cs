@@ -1,28 +1,58 @@
 using System.Reflection;
 using System.Text;
+
+using NativeAOT.CodeGenerator.Collectors;
+using NativeAOT.CodeGenerator.SourceCode;
+using NativeAOT.CodeGenerator.Syntax.CSharpUnmanaged;
+
 using NativeAOT.Core;
 
-namespace NativeAOT.CodeGenerator;
+namespace NativeAOT.CodeGenerator.Generator.CSharpUnmanaged;
 
-public class ManagedCodeGenerator
+public class CSharpUnmanagedCodeGenerator: CodeGenerator
 {
-    private readonly Type m_type;
-
-    public ManagedCodeGenerator(Type type)
+    public void Generate(IEnumerable<Type> types, Dictionary<Type, string> unsupportedTypes, SourceCodeWriter writer)
     {
-        m_type = type;
+        string namespaceForGeneratedCode = $"GeneratedNativeBindings";
+
+        string header = $"""
+using System;
+using System.Runtime.InteropServices;
+using NativeAOT.Core;
+
+namespace {namespaceForGeneratedCode};
+
+""";
+        
+        writer.Write(header, "Header");
+
+        foreach (var kvp in unsupportedTypes) {
+            Type type = kvp.Key;
+            string reason = kvp.Value;
+
+            string typeName = type.FullName ?? type.Name;
+            
+            writer.Write(
+                $"// Unsupported Type \"{typeName}\": {reason}\n", 
+                "Unsupported Types"
+            );
+        }
+
+        foreach (var type in types) {
+            Generate(type, writer);
+        }
     }
 
-    public void Generate(SourceCodeWriter writer)
+    private void Generate(Type type, SourceCodeWriter writer)
     {
         const string sectionName = "APIs";
         
         TypeDescriptorRegistry typeDescriptorRegistry = new();
         
-        string? fullTypeName = m_type.FullName;
+        string? fullTypeName = type.FullName;
 
         if (fullTypeName == null) {
-            writer.Write($"// Type \"{m_type.Name}\" was skipped. Reason: It has no full name", sectionName);
+            writer.Write($"// Type \"{type.Name}\" was skipped. Reason: It has no full name", sectionName);
             
             return;
         }
@@ -32,7 +62,7 @@ public class ManagedCodeGenerator
         writer.Write($"internal static unsafe class {cTypeName}", sectionName);
         writer.Write("{", sectionName);
 
-        var memberCollector = new MemberCollector(m_type);
+        var memberCollector = new MemberCollector(type);
         var members = memberCollector.Collect(out Dictionary<MemberInfo, string> unsupportedMembers);
         
         foreach (var kvp in unsupportedMembers) {

@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace NativeAOT.CodeGenerator;
+namespace NativeAOT.CodeGenerator.Collectors;
 
 public class TypeCollector
 {

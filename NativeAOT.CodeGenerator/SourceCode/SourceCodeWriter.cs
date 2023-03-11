@@ -1,4 +1,4 @@
-namespace NativeAOT.CodeGenerator;
+namespace NativeAOT.CodeGenerator.SourceCode;
 
 public class SourceCodeWriter
 {
