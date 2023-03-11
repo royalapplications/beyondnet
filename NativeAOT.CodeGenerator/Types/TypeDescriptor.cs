@@ -6,24 +6,30 @@ public class TypeDescriptor
 {
     public Type ManagedType { get; }
 
-    public bool IsReferenceType
-    {
-        get {
-            return ManagedType.IsByRef;
-        }
-    }
+    public bool IsReferenceType => !IsValueType;
+    public bool IsValueType => ManagedType.IsValueType;
+    public bool IsVoid => ManagedType.Name == "void";
 
     private readonly Dictionary<CodeLanguage, string> m_typeNames;
 
-    public TypeDescriptor(Type managedType)
+    public TypeDescriptor(Type managedType) : this(managedType, null) { }
+    
+    public TypeDescriptor(Type managedType, Dictionary<CodeLanguage, string>? typeNames)
     {
         ManagedType = managedType;
 
-        string csharpTypeName = managedType.FullName ?? managedType.Name;
-        
-        m_typeNames = new() {
-            { CodeLanguage.CSharp, csharpTypeName }
-        };
+
+        if (typeNames == null) {
+            typeNames = new();
+        }
+
+        if (!typeNames.ContainsKey(CodeLanguage.CSharp)) {
+            string csharpTypeName = managedType.FullName ?? managedType.Name;
+            
+            typeNames[CodeLanguage.CSharp] = csharpTypeName;
+        }
+
+        m_typeNames = typeNames;
     }
 
     public void SetTypeName(string typeName, CodeLanguage language)

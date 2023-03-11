@@ -7,10 +7,11 @@ public partial class BuiltInTypeDescriptors
     public static TypeDescriptor VoidTypeDescriptor
     {
         get {
-            var descriptor = new TypeDescriptor(typeof(void));
-            descriptor.SetTypeName("void", CodeLanguage.CSharpUnmanaged);
-            descriptor.SetTypeName("void", CodeLanguage.C);
-            descriptor.SetTypeName("Void", CodeLanguage.Swift);
+            var descriptor = new TypeDescriptor(typeof(void), new() {
+                { CodeLanguage.CSharpUnmanaged, "void" },
+                { CodeLanguage.C, "void" },
+                { CodeLanguage.Swift, "Void" }
+            });
         
             return descriptor;
         }
