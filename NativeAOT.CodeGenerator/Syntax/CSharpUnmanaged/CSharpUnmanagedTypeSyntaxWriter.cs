@@ -21,18 +21,25 @@ public class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITyp
     
     public string Write(Type type)
     {
-        StringBuilder sb = new();
+        if (type.IsPrimitive ||
+            type.IsEnum ||
+            type.IsPointer ||
+            type.IsByRef) {
+            // No need to generate C# Unmanaged code for those kinds of types
+
+            return string.Empty;
+        }
         
         string? fullTypeName = type.FullName;
 
         if (fullTypeName == null) {
-            sb.AppendLine($"// Type \"{type.Name}\" was skipped. Reason: It has no full name");
-            
-            return sb.ToString();
+            return $"// Type \"{type.Name}\" was skipped. Reason: It has no full name.";
         }
         
         string cTypeName = fullTypeName.Replace(".", "_");
-
+        
+        StringBuilder sb = new();
+        
         sb.AppendLine($"internal static unsafe class {cTypeName}");
         sb.AppendLine("{");
 
