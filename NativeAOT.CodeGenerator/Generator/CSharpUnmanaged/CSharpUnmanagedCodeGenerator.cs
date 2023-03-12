@@ -5,11 +5,11 @@ namespace NativeAOT.CodeGenerator.Generator.CSharpUnmanaged;
 
 public class CSharpUnmanagedCodeGenerator: ICodeGenerator
 {
-    public string NamespaceForGeneratedCode { get; }
+    public Settings Settings { get; }
     
-    public CSharpUnmanagedCodeGenerator(string namespaceForGeneratedCode)
+    public CSharpUnmanagedCodeGenerator(Settings settings)
     {
-        NamespaceForGeneratedCode = namespaceForGeneratedCode ?? throw new ArgumentNullException(nameof(namespaceForGeneratedCode));
+        Settings = settings ?? throw new ArgumentNullException(nameof(settings));
     }
     
     public void Generate(
@@ -28,22 +28,24 @@ using System.Runtime.InteropServices;
 
 using NativeAOT.Core;
 
-namespace {NamespaceForGeneratedCode};
+namespace {Settings.NamespaceForGeneratedCode};
 
 """;
 
         headerSection.Code.AppendLine(header);
 
-        foreach (var kvp in unsupportedTypes) {
-            Type type = kvp.Key;
-            string reason = kvp.Value;
-
-            string typeName = type.FullName ?? type.Name;
-
-            unsupportedTypesSection.Code.AppendLine($"// Unsupported Type \"{typeName}\": {reason}");
+        if (Settings.EmitUnsupported) {
+            foreach (var kvp in unsupportedTypes) {
+                Type type = kvp.Key;
+                string reason = kvp.Value;
+    
+                string typeName = type.FullName ?? type.Name;
+    
+                unsupportedTypesSection.Code.AppendLine($"// Unsupported Type \"{typeName}\": {reason}");
+            }
         }
 
-        CSharpUnmanagedTypeSyntaxWriter typeSyntaxWriter = new();
+        CSharpUnmanagedTypeSyntaxWriter typeSyntaxWriter = new(Settings);
         
         foreach (var type in types) {
             string typeCode = typeSyntaxWriter.Write(type);

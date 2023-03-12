@@ -63,7 +63,12 @@ static class Program
     )
     {
         SourceCodeWriter writer = new();
-        CSharpUnmanagedCodeGenerator cSharpUnmanagedCodeGenerator = new(namespaceForGeneratedCode);
+        
+        Settings settings = new(namespaceForGeneratedCode) {
+            EmitUnsupported = false
+        };
+        
+        CSharpUnmanagedCodeGenerator cSharpUnmanagedCodeGenerator = new(settings);
         
         cSharpUnmanagedCodeGenerator.Generate(types, unsupportedTypes, writer);
         

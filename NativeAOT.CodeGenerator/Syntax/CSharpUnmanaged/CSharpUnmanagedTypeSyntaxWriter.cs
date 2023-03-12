@@ -2,11 +2,14 @@ using System.Reflection;
 using System.Text;
 using NativeAOT.CodeGenerator.Collectors;
 using NativeAOT.CodeGenerator.Extensions;
+using NativeAOT.CodeGenerator.Generator.CSharpUnmanaged;
 
 namespace NativeAOT.CodeGenerator.Syntax.CSharpUnmanaged;
 
 public class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITypeSyntaxWriter
 {
+    public Settings Settings { get; }
+    
     private readonly Dictionary<MemberTypes, ICSharpUnmanagedSyntaxWriter> m_syntaxWriters = new() {
         { MemberTypes.Constructor, new CSharpUnmanagedConstructorSyntaxWriter() },
         { MemberTypes.Property, new CSharpUnmanagedPropertySyntaxWriter() },
@@ -14,6 +17,11 @@ public class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITyp
         { MemberTypes.Field, new CSharpUnmanagedFieldSyntaxWriter() },
         { MemberTypes.Event, new CSharpUnmanagedEventSyntaxWriter() }
     };
+
+    public CSharpUnmanagedTypeSyntaxWriter(Settings settings)
+    {
+        Settings = settings ?? throw new ArgumentNullException(nameof(settings));
+    }
     
     public string Write(object @object)
     {
@@ -47,15 +55,17 @@ public class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITyp
 
         var memberCollector = new MemberCollector(type);
         var members = memberCollector.Collect(out Dictionary<MemberInfo, string> unsupportedMembers);
-        
-        foreach (var kvp in unsupportedMembers) {
-            MemberInfo member = kvp.Key;
-            string reason = kvp.Value;
 
-            string memberName = member.Name;
-
-            sb.AppendLine($"\t// Unsupported Member \"{memberName}\": {reason}");
-            sb.AppendLine();
+        if (Settings.EmitUnsupported) {
+            foreach (var kvp in unsupportedMembers) {
+                MemberInfo member = kvp.Key;
+                string reason = kvp.Value;
+    
+                string memberName = member.Name;
+    
+                sb.AppendLine($"\t// Unsupported Member \"{memberName}\": {reason}");
+                sb.AppendLine();
+            }
         }
         
         foreach (var member in members) {
@@ -64,7 +74,9 @@ public class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITyp
             ICSharpUnmanagedSyntaxWriter? syntaxWriter = GetSyntaxWriter(memberType);
 
             if (syntaxWriter == null) {
-                sb.AppendLine($"\t// TODO: Unsupported Member Type \"{memberType}\"");
+                if (Settings.EmitUnsupported) {
+                    sb.AppendLine($"\t// TODO: Unsupported Member Type \"{memberType}\"");
+                }
                     
                 continue;
             }
