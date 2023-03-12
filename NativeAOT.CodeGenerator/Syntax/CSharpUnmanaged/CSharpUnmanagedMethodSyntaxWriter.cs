@@ -15,23 +15,66 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
     
     public string Write(MethodInfo method)
     {
-        const bool mayThrow = true;
-        
-        StringBuilder sb = new();
-        
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
+        
+        const bool mayThrow = true;
+        const bool isConstructor = false;
+
+        bool isStaticMethod = method.IsStatic;
+        string methodName = method.Name;
 
         Type declaringType = method.DeclaringType ?? throw new Exception("No declaring type");;
-        TypeDescriptor declaringTypeDescriptor = declaringType.GetTypeDescriptor(typeDescriptorRegistry);
-
-        string methodNameC = $"{declaringType.GetFullNameOrName().Replace('.', '_')}_{method.Name}";
-                    
         Type returnType = method.ReturnType;
+        IEnumerable<ParameterInfo> parameters = method.GetParameters();
+
+        string methodCode = WriteMethod(
+            methodName,
+            isStaticMethod,
+            isConstructor,
+            mayThrow,
+            declaringType,
+            returnType,
+            parameters,
+            typeDescriptorRegistry
+        );
+
+        return methodCode;
+    }
+
+    protected string WriteMethod(
+        string methodName,
+        bool isStaticMethod,
+        bool isConstructor,
+        bool mayThrow,
+        Type declaringType,
+        Type returnType,
+        IEnumerable<ParameterInfo> parameters,
+        TypeDescriptorRegistry typeDescriptorRegistry
+    )
+    {
+        string methodNameC;
+
+        if (isConstructor) {
+            methodNameC = $"{declaringType.GetFullNameOrName().Replace('.', '_')}_Create";
+        } else {
+            methodNameC = $"{declaringType.GetFullNameOrName().Replace('.', '_')}_{methodName}";
+        }
+        
+        TypeDescriptor declaringTypeDescriptor = declaringType.GetTypeDescriptor(typeDescriptorRegistry);
+        
         TypeDescriptor returnTypeDescriptor = returnType.GetTypeDescriptor(typeDescriptorRegistry);
         string unmanagedReturnTypeName = returnTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
         string unmanagedReturnTypeNameWithComment = $"{unmanagedReturnTypeName} /* {returnType.GetFullNameOrName()} */";
 
-        string methodSignatureParameters = WriteParameters(method, mayThrow, typeDescriptorRegistry);
+        string methodSignatureParameters = WriteParameters(
+            mayThrow,
+            isStaticMethod,
+            declaringType,
+            parameters,
+            typeDescriptorRegistry
+        );
+        
+        StringBuilder sb = new();
         
         sb.AppendLine($"[UnmanagedCallersOnly(EntryPoint = \"{methodNameC}\")]");
         sb.AppendLine($"internal static {unmanagedReturnTypeNameWithComment} {methodNameC}({methodSignatureParameters})");
@@ -39,30 +82,23 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
         string? convertedSelfParameterName = null;
 
-        if (!method.IsStatic) {
-            string parameterName = "self";
-            convertedSelfParameterName = parameterName;
-                
-            string? typeConversion = declaringTypeDescriptor.GetTypeConversion(CodeLanguage.CSharpUnmanaged, CodeLanguage.CSharp);
-            
-            if (typeConversion != null) {
-                string convertedParameterName = $"{parameterName}DotNet";
-                
-                string fullTypeConversion = string.Format(typeConversion, parameterName);
+        if (!isStaticMethod) {
+            string selfConversionCode = WriteSelfConversion(
+                declaringType,
+                declaringTypeDescriptor,
+                out convertedSelfParameterName
+            );
 
-                bool isSelfPointer = declaringTypeDescriptor.IsPointer;
-                string throwPart = isSelfPointer ? $" ?? throw new ArgumentNullException(nameof({parameterName}))" : string.Empty;
-                string typeConversionCode = $"{declaringType.GetFullNameOrName()} {convertedParameterName} = {fullTypeConversion}{throwPart};";
-
-                sb.AppendLine($"\t{typeConversionCode}");
-
-                convertedSelfParameterName = convertedParameterName;
-            }
+            sb.AppendLine(selfConversionCode);
         }
 
-        IEnumerable<string> convertedParameterNames = WriteParameterConversions(method, sb, typeDescriptorRegistry);
+        string parameterConversions = WriteParameterConversions(
+            parameters,
+            typeDescriptorRegistry,
+            out List<string> convertedParameterNames
+        );
 
-        sb.AppendLine();
+        sb.AppendLine(parameterConversions);
 
         if (mayThrow) {
             sb.AppendLine("""
@@ -70,9 +106,11 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 """);
         }
 
-        string implPrefix = mayThrow ? "\t\t" : "\t";
+        string implPrefix = mayThrow 
+            ? "\t\t" 
+            : "\t";
         
-        string methodTarget = method.IsStatic
+        string methodTarget = isStaticMethod
             ? declaringType.GetFullNameOrName()
             : convertedSelfParameterName ?? string.Empty;
 
@@ -85,12 +123,15 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             returnValuePrefix = $"{returnType.GetFullNameOrName()} {returnValueName} = ";
         }
         
-        sb.AppendLine($"{implPrefix}{returnValuePrefix}{methodTarget}.{method.Name}({convertedParameterNamesString})");
+        sb.AppendLine($"{implPrefix}{returnValuePrefix}{methodTarget}.{methodName}({convertedParameterNamesString})");
 
         string? convertedReturnValueName = null;
 
         if (!returnTypeDescriptor.IsVoid) {
-            string? returnValueTypeConversion = returnTypeDescriptor.GetTypeConversion(CodeLanguage.CSharp, CodeLanguage.CSharpUnmanaged);
+            string? returnValueTypeConversion = returnTypeDescriptor.GetTypeConversion(
+                CodeLanguage.CSharp,
+                CodeLanguage.CSharpUnmanaged
+            );
 
             if (returnValueTypeConversion != null) {
                 string fullReturnValueTypeConversion = string.Format(returnValueTypeConversion, returnValueName);
@@ -127,8 +168,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 """);
 
             if (!returnTypeDescriptor.IsVoid) {
-                string? returnValue = returnTypeDescriptor.GetReturnValueOnException()
-                                      ?? $"default({returnType.GetFullNameOrName()})";
+                string returnValue = returnTypeDescriptor.GetReturnValueOnException()
+                                     ?? $"default({returnType.GetFullNameOrName()})";
 
                 sb.AppendLine($"{implPrefix}return {returnValue};");
             }
@@ -145,25 +186,52 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         return sb.ToString();
     }
 
-    private string WriteParameters(MethodInfo method, bool mayThrow, TypeDescriptorRegistry typeDescriptorRegistry)
+    protected string WriteSelfConversion(
+        Type type,
+        TypeDescriptor typeDescriptor,
+        out string convertedSelfParameterName
+    )
+    {
+        StringBuilder sb = new();
+        string parameterName = "self";
+        convertedSelfParameterName = parameterName;
+                
+        string? typeConversion = typeDescriptor.GetTypeConversion(CodeLanguage.CSharpUnmanaged, CodeLanguage.CSharp);
+            
+        if (typeConversion != null) {
+            string convertedParameterName = $"{parameterName}DotNet";
+                
+            string fullTypeConversion = string.Format(typeConversion, parameterName);
+
+            bool isSelfPointer = typeDescriptor.IsPointer;
+            string throwPart = isSelfPointer ? $" ?? throw new ArgumentNullException(nameof({parameterName}))" : string.Empty;
+            string typeConversionCode = $"{type.GetFullNameOrName()} {convertedParameterName} = {fullTypeConversion}{throwPart};";
+
+            sb.AppendLine($"\t{typeConversionCode}");
+
+            convertedSelfParameterName = convertedParameterName;
+        }
+
+        return sb.ToString();
+    }
+
+    protected string WriteParameters(
+        bool mayThrow,
+        bool isStatic,
+        Type declaringType,
+        IEnumerable<ParameterInfo> parameters,
+        TypeDescriptorRegistry typeDescriptorRegistry
+    )
     {
         List<string> parameterList = new();
 
-        if (!method.IsStatic) {
-            Type? declaringType = method.DeclaringType;
-
-            if (declaringType == null) {
-                throw new Exception("No declaring type");
-            }
-
+        if (!isStatic) {
             TypeDescriptor declaringTypeDescriptor = declaringType.GetTypeDescriptor(typeDescriptorRegistry);
             string declaringTypeName = declaringTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
             string parameterString = $"{declaringTypeName} /* {declaringType.GetFullNameOrName()} */ self";
 
             parameterList.Add(parameterString);
         }
-        
-        var parameters = method.GetParameters();
 
         foreach (var parameter in parameters) {
             Type parameterType = parameter.ParameterType;
@@ -188,10 +256,14 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         return parametersString;
     }
 
-    private IEnumerable<string> WriteParameterConversions(MethodInfo method, StringBuilder sb, TypeDescriptorRegistry typeDescriptorRegistry)
+    protected string WriteParameterConversions(
+        IEnumerable<ParameterInfo> parameters,
+        TypeDescriptorRegistry typeDescriptorRegistry,
+        out List<string> convertedParameterNames
+    )
     {
-        var parameters = method.GetParameters();
-        List<string> convertedParameterNames = new();
+        StringBuilder sb = new();
+        convertedParameterNames = new();
         
         foreach (var parameter in parameters) {
             string parameterName = parameter.Name ?? throw new Exception("Parameter has no name");
@@ -199,7 +271,10 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             Type parameterType = parameter.ParameterType;
             TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
 
-            string? typeConversion = parameterTypeDescriptor.GetTypeConversion(CodeLanguage.CSharpUnmanaged, CodeLanguage.CSharp);
+            string? typeConversion = parameterTypeDescriptor.GetTypeConversion(
+                CodeLanguage.CSharpUnmanaged, 
+                CodeLanguage.CSharp
+            );
             
             if (typeConversion != null) {
                 string convertedParameterName = $"{parameterName}DotNet";
@@ -215,6 +290,6 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             }
         }
 
-        return convertedParameterNames;
+        return sb.ToString();
     }
 }
