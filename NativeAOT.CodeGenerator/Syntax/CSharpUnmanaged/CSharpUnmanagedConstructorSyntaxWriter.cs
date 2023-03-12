@@ -1,33 +1,41 @@
 using System.Reflection;
-using System.Text;
 
-using NativeAOT.CodeGenerator.Extensions;
+using NativeAOT.CodeGenerator.Types;
 
 namespace NativeAOT.CodeGenerator.Syntax.CSharpUnmanaged;
 
-public class CSharpUnmanagedConstructorSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IConstructorSyntaxWriter
+public class CSharpUnmanagedConstructorSyntaxWriter: CSharpUnmanagedMethodSyntaxWriter, IConstructorSyntaxWriter
 {
-    public string Write(object @object)
+    public new string Write(object @object)
     {
         return Write((ConstructorInfo)@object);
     }
     
     public string Write(ConstructorInfo constructor)
     {
-        StringBuilder ctorCode = new();
+        TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
+        
+        const bool mayThrow = true;
+        const bool isConstructor = true;
 
-        Type declaringType = constructor.DeclaringType ?? throw new Exception("No declaring type");
+        bool isStaticMethod = true;
+        string methodName = constructor.Name;
 
-        string constructorNameWithIndex = "Create"; // TODO
-        string constructorNameC = $"{declaringType.GetFullNameOrName().Replace('.', '_')}_{constructorNameWithIndex}";
+        Type declaringType = constructor.DeclaringType ?? throw new Exception("No declaring type");;
+        Type returnType = declaringType;
+        IEnumerable<ParameterInfo> parameters = constructor.GetParameters();
 
-        ctorCode.AppendLine($"[UnmanagedCallersOnly(EntryPoint = \"{constructorNameC}\")]");
-        ctorCode.AppendLine($"internal static void* {constructorNameC}()");
-        ctorCode.AppendLine("{");
-        ctorCode.AppendLine($"\t{declaringType.FullName ?? declaringType.Name} instance = new();");
-        ctorCode.AppendLine("\treturn instance.AllocateGCHandleAndGetAddress();");
-        ctorCode.AppendLine("}");
+        string ctorCode = WriteMethod(
+            methodName,
+            isStaticMethod,
+            isConstructor,
+            mayThrow,
+            declaringType,
+            returnType,
+            parameters,
+            typeDescriptorRegistry
+        );
 
-        return ctorCode.ToString();
+        return ctorCode;
     }
 }

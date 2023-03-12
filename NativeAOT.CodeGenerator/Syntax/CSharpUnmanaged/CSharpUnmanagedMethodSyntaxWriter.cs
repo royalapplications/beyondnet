@@ -111,13 +111,12 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             : "\t";
         
         string methodTarget = isStaticMethod
-            ? declaringType.GetFullNameOrName()
+            ? (isConstructor ? "new " : string.Empty) + declaringType.GetFullNameOrName()
             : convertedSelfParameterName ?? string.Empty;
 
         string convertedParameterNamesString = string.Join(", ", convertedParameterNames);
 
-        bool isReturning = !returnTypeDescriptor.IsVoid &&
-                           !isConstructor;
+        bool isReturning = !returnTypeDescriptor.IsVoid;
 
         string returnValuePrefix = string.Empty;
         string returnValueName = "returnValue";
@@ -125,8 +124,12 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         if (isReturning) {
             returnValuePrefix = $"{returnType.GetFullNameOrName()} {returnValueName} = ";
         }
+
+        string methodNameForInvocation = isConstructor
+            ? string.Empty
+            : $".{methodName}";
         
-        sb.AppendLine($"{implPrefix}{returnValuePrefix}{methodTarget}.{methodName}({convertedParameterNamesString})");
+        sb.AppendLine($"{implPrefix}{returnValuePrefix}{methodTarget}{methodNameForInvocation}({convertedParameterNamesString})");
 
         string? convertedReturnValueName = null;
 
