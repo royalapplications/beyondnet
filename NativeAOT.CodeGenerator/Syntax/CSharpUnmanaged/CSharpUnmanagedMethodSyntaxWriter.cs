@@ -20,6 +20,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
 
         Type declaringType = method.DeclaringType ?? throw new Exception("No declaring type");;
+        TypeDescriptor declaringTypeDescriptor = declaringType.GetTypeDescriptor(typeDescriptorRegistry);
 
         string methodNameC = $"{declaringType.GetFullNameOrName().Replace('.', '_')}_{method.Name}";
                     
@@ -33,6 +34,21 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         sb.AppendLine($"[UnmanagedCallersOnly(EntryPoint = \"{methodNameC}\")]");
         sb.AppendLine($"internal static {unmanagedReturnTypeNameWithComment} {methodNameC}({methodSignatureParameters})");
         sb.AppendLine("{");
+
+        if (!method.IsStatic) {
+            string? typeConversion = declaringTypeDescriptor.GetTypeConversion(CodeLanguage.CSharpUnmanaged, CodeLanguage.CSharp);
+            
+            if (typeConversion != null) {
+                string parameterName = "self";
+                string convertedParameterName = $"{parameterName}DotNet";
+                
+                string fullTypeConversion = string.Format(typeConversion, parameterName);
+                string typeConversionCode = $"{declaringType.GetFullNameOrName()} {convertedParameterName} = {fullTypeConversion};";
+
+                sb.AppendLine($"\t{typeConversionCode}");
+            }
+        }
+        
         sb.AppendLine("\t// TODO: Implementation");
         
         var parameters = method.GetParameters();

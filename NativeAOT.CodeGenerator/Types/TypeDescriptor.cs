@@ -146,11 +146,40 @@ public class TypeDescriptor
         CodeLanguage targetLanguage
     )
     {
+        LanguagePair languagePair = new(sourceLanguage, targetLanguage);
+        
         m_typeConversions.TryGetValue(
-            new LanguagePair(sourceLanguage, targetLanguage),
+            languagePair,
             out string? typeConversion
         );
 
+        if (typeConversion == null) {
+            typeConversion = GenerateTypeConversion(sourceLanguage, targetLanguage);
+
+            if (typeConversion != null) {
+                m_typeConversions[languagePair] = typeConversion;
+            }
+        }
+
         return typeConversion;
+    }
+
+    private string? GenerateTypeConversion(
+        CodeLanguage sourceLanguage,
+        CodeLanguage targetLanguage
+    )
+    {
+        if (!IsPointer) {
+            return null;
+        }
+
+        if (sourceLanguage == CodeLanguage.CSharpUnmanaged &&
+            targetLanguage == CodeLanguage.CSharp) {
+            string conversion = "InteropUtils.GetInstance<" + ManagedType.GetFullNameOrName() + ">({0}) ?? throw new ArgumentNullException(nameof({0}))";
+
+            return conversion;
+        } else {
+            throw new Exception("Unknown language pair");
+        }
     }
 }
