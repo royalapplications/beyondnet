@@ -1,5 +1,3 @@
-using NativeAOT.Core;
-
 namespace NativeAOT.CodeGenerator.Types;
 
 public class TypeDescriptor
@@ -10,7 +8,9 @@ public class TypeDescriptor
     public bool IsReferenceType => !IsValueType;
     public bool IsValueType => ManagedType.IsValueType;
     public bool IsEnum => ManagedType.IsEnum;
+    public bool IsBool => ManagedType == typeof(bool);
     public bool IsVoid => ManagedType.Name == "void";
+    public bool IsPointer => !IsVoid && !IsEnum && !IsPrimitive && !IsBool; 
 
     private readonly Dictionary<CodeLanguage, string> m_typeNames;
 
@@ -19,7 +19,6 @@ public class TypeDescriptor
     public TypeDescriptor(Type managedType, Dictionary<CodeLanguage, string>? typeNames)
     {
         ManagedType = managedType;
-
 
         if (typeNames == null) {
             typeNames = new();
@@ -65,9 +64,8 @@ public class TypeDescriptor
 
     private string AddModifiersToTypeName(string typeName, CodeLanguage language, bool isOutParameter)
     {
-        if (IsVoid ||
-            IsPrimitive ||
-            IsEnum) {
+        if (!IsPointer &&
+            !isOutParameter) {
             return typeName;
         }
 
@@ -75,7 +73,8 @@ public class TypeDescriptor
 
         switch (language) {
             case CodeLanguage.CSharpUnmanaged:
-                if (isOutParameter) {
+                if (IsPointer && 
+                    isOutParameter) {
                     typeNameWithModifiers = $"{typeName}**";
                 } else {
                     typeNameWithModifiers = $"{typeName}*";
@@ -83,7 +82,8 @@ public class TypeDescriptor
                 
                 break;
             case CodeLanguage.C:
-                if (isOutParameter) {
+                if (IsPointer && 
+                    isOutParameter) {
                     typeNameWithModifiers = $"{typeName}**";
                 } else {
                     typeNameWithModifiers = $"{typeName}*";
@@ -101,11 +101,10 @@ public class TypeDescriptor
     {
         switch (language) {
             case CodeLanguage.CSharpUnmanaged:
-                if (IsPrimitive ||
-                    IsEnum) {
-                    return ManagedType.FullName ?? ManagedType.Name;
-                } else {
+                if (IsPointer) {
                     return "void";
+                } else {
+                    return ManagedType.FullName ?? ManagedType.Name;
                 }
             case CodeLanguage.C:
                 string typeName = ManagedType.FullName ?? ManagedType.Name;
