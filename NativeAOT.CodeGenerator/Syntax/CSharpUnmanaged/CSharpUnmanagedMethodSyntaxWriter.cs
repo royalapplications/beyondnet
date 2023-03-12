@@ -1,8 +1,8 @@
 using System.Reflection;
 using System.Text;
+
 using NativeAOT.CodeGenerator.Extensions;
 using NativeAOT.CodeGenerator.Types;
-using NativeAOT.Core;
 
 namespace NativeAOT.CodeGenerator.Syntax.CSharpUnmanaged;
 
@@ -41,6 +41,20 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         const bool mayThrow = true;
         
         List<string> parameterList = new();
+
+        if (!method.IsStatic) {
+            Type? declaringType = method.DeclaringType;
+
+            if (declaringType == null) {
+                throw new Exception("No declaring type");
+            }
+
+            TypeDescriptor declaringTypeDescriptor = declaringType.GetTypeDescriptor(typeDescriptorRegistry);
+            string declaringTypeName = declaringTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
+            string parameterString = $"{declaringTypeName} self";
+
+            parameterList.Add(parameterString);
+        }
         
         var parameters = method.GetParameters();
 
