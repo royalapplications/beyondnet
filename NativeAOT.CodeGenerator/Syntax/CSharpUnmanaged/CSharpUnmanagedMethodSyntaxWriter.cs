@@ -27,8 +27,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         string methodNameC = $"{declaringType.GetFullNameOrName().Replace('.', '_')}_{method.Name}";
                     
         Type returnType = method.ReturnType;
-        TypeDescriptor typeDescriptor = returnType.GetTypeDescriptor(typeDescriptorRegistry);
-        string unmanagedReturnTypeName = typeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
+        TypeDescriptor returnTypeDescriptor = returnType.GetTypeDescriptor(typeDescriptorRegistry);
+        string unmanagedReturnTypeName = returnTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
         string unmanagedReturnTypeNameWithComment = $"{unmanagedReturnTypeName} /* {returnType.GetFullNameOrName()} */";
 
         string methodSignatureParameters = WriteParameters(method, mayThrow, typeDescriptorRegistry);
@@ -100,8 +100,11 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             : convertedSelfParameterName ?? string.Empty;
 
         string convertedParameterNamesString = string.Join(", ", convertedParameterNames);
+
+        if (!returnTypeDescriptor.IsVoid) {
+            sb.AppendLine($"{implPrefix}// TODO: Return value");
+        }
         
-        // TODO: Return value
         sb.AppendLine($"{implPrefix}{methodTarget}.{method.Name}({convertedParameterNamesString})");
 
         if (mayThrow) {
