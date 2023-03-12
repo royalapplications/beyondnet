@@ -13,4 +13,9 @@ internal static class TypeExtensions
     {
         return typeDescriptorRegistry.GetOrCreateTypeDescriptor(type);
     }
+
+    internal static string GetFullNameOrName(this Type type)
+    {
+        return type.FullName ?? type.Name;
+    }
 }

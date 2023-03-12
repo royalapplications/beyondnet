@@ -1,3 +1,5 @@
+using NativeAOT.CodeGenerator.Extensions;
+
 namespace NativeAOT.CodeGenerator.Types;
 
 public class TypeDescriptor
@@ -25,7 +27,7 @@ public class TypeDescriptor
         }
 
         if (!typeNames.ContainsKey(CodeLanguage.CSharp)) {
-            string csharpTypeName = managedType.FullName ?? managedType.Name;
+            string csharpTypeName = managedType.GetFullNameOrName();
             
             typeNames[CodeLanguage.CSharp] = csharpTypeName;
         }
@@ -104,10 +106,10 @@ public class TypeDescriptor
                 if (IsPointer) {
                     return "void";
                 } else {
-                    return ManagedType.FullName ?? ManagedType.Name;
+                    return ManagedType.GetFullNameOrName();
                 }
             case CodeLanguage.C:
-                string typeName = ManagedType.FullName ?? ManagedType.Name;
+                string typeName = ManagedType.GetFullNameOrName();
                 string cTypeName = $"{typeName.Replace('.', '_')}_t"; 
                 
                 return cTypeName;
