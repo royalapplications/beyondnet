@@ -18,8 +18,10 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         StringBuilder sb = new();
         
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
-        
-        string methodNameC = method.Name;
+
+        Type declaringType = method.DeclaringType ?? throw new Exception("No declaring type");;
+
+        string methodNameC = $"{declaringType.GetFullNameOrName().Replace('.', '_')}_{method.Name}";
                     
         Type returnType = method.ReturnType;
         TypeDescriptor typeDescriptor = returnType.GetTypeDescriptor(typeDescriptorRegistry);
