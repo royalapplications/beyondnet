@@ -60,30 +60,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             }
         }
 
-        var parameters = method.GetParameters();
-        List<string> convertedParameterNames = new();
-        
-        foreach (var parameter in parameters) {
-            string parameterName = parameter.Name ?? throw new Exception("Parameter has no name");
-            
-            Type parameterType = parameter.ParameterType;
-            TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
-
-            string? typeConversion = parameterTypeDescriptor.GetTypeConversion(CodeLanguage.CSharpUnmanaged, CodeLanguage.CSharp);
-            
-            if (typeConversion != null) {
-                string convertedParameterName = $"{parameterName}DotNet";
-                
-                string fullTypeConversion = string.Format(typeConversion, parameterName);
-                string typeConversionCode = $"{parameterType.GetFullNameOrName()} {convertedParameterName} = {fullTypeConversion};";
-
-                sb.AppendLine($"\t{typeConversionCode}");
-                
-                convertedParameterNames.Add(convertedParameterName);
-            } else {
-                convertedParameterNames.Add(parameterName);
-            }
-        }
+        IEnumerable<string> convertedParameterNames = WriteParameterConversions(method, sb, typeDescriptorRegistry);
 
         sb.AppendLine();
 
@@ -209,5 +186,35 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         string parametersString = string.Join(", ", parameterList);
 
         return parametersString;
+    }
+
+    private IEnumerable<string> WriteParameterConversions(MethodInfo method, StringBuilder sb, TypeDescriptorRegistry typeDescriptorRegistry)
+    {
+        var parameters = method.GetParameters();
+        List<string> convertedParameterNames = new();
+        
+        foreach (var parameter in parameters) {
+            string parameterName = parameter.Name ?? throw new Exception("Parameter has no name");
+            
+            Type parameterType = parameter.ParameterType;
+            TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
+
+            string? typeConversion = parameterTypeDescriptor.GetTypeConversion(CodeLanguage.CSharpUnmanaged, CodeLanguage.CSharp);
+            
+            if (typeConversion != null) {
+                string convertedParameterName = $"{parameterName}DotNet";
+                
+                string fullTypeConversion = string.Format(typeConversion, parameterName);
+                string typeConversionCode = $"{parameterType.GetFullNameOrName()} {convertedParameterName} = {fullTypeConversion};";
+
+                sb.AppendLine($"\t{typeConversionCode}");
+                
+                convertedParameterNames.Add(convertedParameterName);
+            } else {
+                convertedParameterNames.Add(parameterName);
+            }
+        }
+
+        return convertedParameterNames;
     }
 }
