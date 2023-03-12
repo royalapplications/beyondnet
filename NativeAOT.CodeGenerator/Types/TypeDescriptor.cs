@@ -56,8 +56,7 @@ public class TypeDescriptor
             m_typeNames[language] = typeName;
         }
 
-        if (includeModifiers &&
-            !IsVoid) {
+        if (includeModifiers) {
             typeName = AddModifiersToTypeName(typeName, language, isOutParameter);
         }
 
@@ -66,7 +65,9 @@ public class TypeDescriptor
 
     private string AddModifiersToTypeName(string typeName, CodeLanguage language, bool isOutParameter)
     {
-        if (IsVoid) {
+        if (IsVoid ||
+            IsPrimitive ||
+            IsEnum) {
             return typeName;
         }
 
