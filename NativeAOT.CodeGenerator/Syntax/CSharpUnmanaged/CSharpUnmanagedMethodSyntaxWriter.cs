@@ -15,6 +15,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
     
     public string Write(MethodInfo method)
     {
+        const bool mayThrow = true;
+        
         StringBuilder sb = new();
         
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
@@ -29,29 +31,37 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         string unmanagedReturnTypeName = typeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
         string unmanagedReturnTypeNameWithComment = $"{unmanagedReturnTypeName} /* {returnType.GetFullNameOrName()} */";
 
-        string methodSignatureParameters = WriteParameters(method, typeDescriptorRegistry);
+        string methodSignatureParameters = WriteParameters(method, mayThrow, typeDescriptorRegistry);
         
         sb.AppendLine($"[UnmanagedCallersOnly(EntryPoint = \"{methodNameC}\")]");
         sb.AppendLine($"internal static {unmanagedReturnTypeNameWithComment} {methodNameC}({methodSignatureParameters})");
         sb.AppendLine("{");
 
+        string? convertedSelfParameterName = null;
+
         if (!method.IsStatic) {
+            string parameterName = "self";
+            convertedSelfParameterName = parameterName;
+                
             string? typeConversion = declaringTypeDescriptor.GetTypeConversion(CodeLanguage.CSharpUnmanaged, CodeLanguage.CSharp);
             
             if (typeConversion != null) {
-                string parameterName = "self";
                 string convertedParameterName = $"{parameterName}DotNet";
                 
                 string fullTypeConversion = string.Format(typeConversion, parameterName);
-                string typeConversionCode = $"{declaringType.GetFullNameOrName()} {convertedParameterName} = {fullTypeConversion};";
+
+                bool isSelfPointer = declaringTypeDescriptor.IsPointer;
+                string throwPart = isSelfPointer ? $" ?? throw new ArgumentNullException(nameof({parameterName}))" : string.Empty;
+                string typeConversionCode = $"{declaringType.GetFullNameOrName()} {convertedParameterName} = {fullTypeConversion}{throwPart};";
 
                 sb.AppendLine($"\t{typeConversionCode}");
+
+                convertedSelfParameterName = convertedParameterName;
             }
         }
-        
-        sb.AppendLine("\t// TODO: Implementation");
-        
+
         var parameters = method.GetParameters();
+        List<string> convertedParameterNames = new();
         
         foreach (var parameter in parameters) {
             string parameterName = parameter.Name ?? throw new Exception("Parameter has no name");
@@ -60,26 +70,62 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
 
             string? typeConversion = parameterTypeDescriptor.GetTypeConversion(CodeLanguage.CSharpUnmanaged, CodeLanguage.CSharp);
-
-            string convertedParameterName = $"{parameterName}DotNet";
             
             if (typeConversion != null) {
+                string convertedParameterName = $"{parameterName}DotNet";
+                
                 string fullTypeConversion = string.Format(typeConversion, parameterName);
                 string typeConversionCode = $"{parameterType.GetFullNameOrName()} {convertedParameterName} = {fullTypeConversion};";
 
                 sb.AppendLine($"\t{typeConversionCode}");
+                
+                convertedParameterNames.Add(convertedParameterName);
+            } else {
+                convertedParameterNames.Add(parameterName);
             }
         }
+
+        sb.AppendLine();
+
+        if (mayThrow) {
+            sb.AppendLine("""
+    try {
+""");
+        }
+
+        string implPrefix = mayThrow ? "\t\t" : "\t";
         
+        string methodTarget = method.IsStatic
+            ? declaringType.GetFullNameOrName()
+            : convertedSelfParameterName ?? string.Empty;
+
+        string convertedParameterNamesString = string.Join(", ", convertedParameterNames);
+        
+        sb.AppendLine($"{implPrefix}{methodTarget}.{method.Name}({convertedParameterNamesString})");
+
+        if (mayThrow) {
+            sb.AppendLine("""
+
+        if (outException is not null) {
+            *outException = null;
+        }
+    } catch (Exception exception) {
+        if (outException is not null) {
+            void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
+                
+            *outException = exceptionHandleAddress;
+        }
+    }
+""");
+        }
+
         sb.AppendLine("}");
 
         return sb.ToString();
     }
 
-    private string WriteParameters(MethodInfo method, TypeDescriptorRegistry typeDescriptorRegistry)
+    private string WriteParameters(MethodInfo method, bool mayThrow, TypeDescriptorRegistry typeDescriptorRegistry)
     {
-        const bool mayThrow = true;
-        
         List<string> parameterList = new();
 
         if (!method.IsStatic) {

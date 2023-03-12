@@ -175,7 +175,7 @@ public class TypeDescriptor
 
         if (sourceLanguage == CodeLanguage.CSharpUnmanaged &&
             targetLanguage == CodeLanguage.CSharp) {
-            string conversion = "InteropUtils.GetInstance<" + ManagedType.GetFullNameOrName() + ">({0}) ?? throw new ArgumentNullException(nameof({0}))";
+            string conversion = "InteropUtils.GetInstance<" + ManagedType.GetFullNameOrName() + ">({0})";
 
             return conversion;
         } else {
