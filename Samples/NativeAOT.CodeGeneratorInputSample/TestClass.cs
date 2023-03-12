@@ -12,6 +12,11 @@ public class TestClass
         return "Hello";
     }
 
+    public DateTime GetDate()
+    {
+        return DateTime.Now;
+    }
+
     public int Add(int number1, int number2)
     {
         return number1 + number2;

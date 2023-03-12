@@ -6,8 +6,10 @@ public class TypeDescriptor
 {
     public Type ManagedType { get; }
 
+    public bool IsPrimitive => ManagedType.IsPrimitive;
     public bool IsReferenceType => !IsValueType;
     public bool IsValueType => ManagedType.IsValueType;
+    public bool IsEnum => ManagedType.IsEnum;
     public bool IsVoid => ManagedType.Name == "void";
 
     private readonly Dictionary<CodeLanguage, string> m_typeNames;
@@ -55,7 +57,6 @@ public class TypeDescriptor
         }
 
         if (includeModifiers &&
-            IsReferenceType &&
             !IsVoid) {
             typeName = AddModifiersToTypeName(typeName, language, isOutParameter);
         }
@@ -65,8 +66,7 @@ public class TypeDescriptor
 
     private string AddModifiersToTypeName(string typeName, CodeLanguage language, bool isOutParameter)
     {
-        if (!IsReferenceType ||
-            IsVoid) {
+        if (IsVoid) {
             return typeName;
         }
 
@@ -100,14 +100,17 @@ public class TypeDescriptor
     {
         switch (language) {
             case CodeLanguage.CSharpUnmanaged:
-                if (IsReferenceType) {
-                    return "void";
+                if (IsPrimitive ||
+                    IsEnum) {
+                    return ManagedType.FullName ?? ManagedType.Name;
                 } else {
-                    // TODO: Why?
-                    return ManagedType.Name;
+                    return "void";
                 }
             case CodeLanguage.C:
-                return $"{ManagedType.Name}_t";
+                string typeName = ManagedType.FullName ?? ManagedType.Name;
+                string cTypeName = $"{typeName.Replace('.', '_')}_t"; 
+                
+                return cTypeName;
             default:
                 throw new NotImplementedException();
         }
