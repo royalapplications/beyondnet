@@ -39,6 +39,11 @@ public class TypeDescriptor
 
     public string GetTypeName(CodeLanguage language, bool includeModifiers)
     {
+        return GetTypeName(language, includeModifiers, false);
+    }
+    
+    public string GetTypeName(CodeLanguage language, bool includeModifiers, bool isOutParameter)
+    {
         string typeName;
         
         if (m_typeNames.TryGetValue(language, out string? tempTypeName)) {
@@ -52,13 +57,13 @@ public class TypeDescriptor
         if (includeModifiers &&
             IsReferenceType &&
             !IsVoid) {
-            typeName = AddModifiersToTypeName(typeName, language);
+            typeName = AddModifiersToTypeName(typeName, language, isOutParameter);
         }
 
         return typeName;
     }
 
-    private string AddModifiersToTypeName(string typeName, CodeLanguage language)
+    private string AddModifiersToTypeName(string typeName, CodeLanguage language, bool isOutParameter)
     {
         if (!IsReferenceType ||
             IsVoid) {
@@ -69,11 +74,19 @@ public class TypeDescriptor
 
         switch (language) {
             case CodeLanguage.CSharpUnmanaged:
-                typeNameWithModifiers = $"{typeName}*";
+                if (isOutParameter) {
+                    typeNameWithModifiers = $"{typeName}**";
+                } else {
+                    typeNameWithModifiers = $"{typeName}*";
+                }
                 
                 break;
             case CodeLanguage.C:
-                typeNameWithModifiers = $"{typeName}*";
+                if (isOutParameter) {
+                    typeNameWithModifiers = $"{typeName}**";
+                } else {
+                    typeNameWithModifiers = $"{typeName}*";
+                }
                 
                 break;
             default:

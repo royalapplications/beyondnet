@@ -1,6 +1,6 @@
 using System.Reflection;
 using System.Text;
-
+using NativeAOT.CodeGenerator.Extensions;
 using NativeAOT.CodeGenerator.Types;
 using NativeAOT.Core;
 
@@ -22,7 +22,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         string methodNameC = method.Name;
                     
         Type returnType = method.ReturnType;
-        TypeDescriptor typeDescriptor = typeDescriptorRegistry.GetOrCreateTypeDescriptor(returnType);
+        TypeDescriptor typeDescriptor = returnType.GetTypeDescriptor(typeDescriptorRegistry);
         string unmanagedReturnTypeName = typeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
 
         string parameters = WriteParameters(method, typeDescriptorRegistry);
@@ -38,17 +38,28 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
     private string WriteParameters(MethodInfo method, TypeDescriptorRegistry typeDescriptorRegistry)
     {
+        const bool mayThrow = true;
+        
         List<string> parameterList = new();
         
         var parameters = method.GetParameters();
 
         foreach (var parameter in parameters) {
             Type parameterType = parameter.ParameterType;
-            TypeDescriptor parameterTypeDescriptor = typeDescriptorRegistry.GetOrCreateTypeDescriptor(parameterType);
+            TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
             string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
 
             string parameterString = $"{unmanagedParameterTypeName} {parameter.Name}";
             parameterList.Add(parameterString);
+        }
+
+        if (mayThrow) {
+            Type exceptionType = typeof(Exception);
+            TypeDescriptor outExceptionTypeDescriptor = exceptionType.GetTypeDescriptor(typeDescriptorRegistry);
+            string outExceptionTypeName = outExceptionTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true, true);
+
+            string outExceptionParameterString = $"{outExceptionTypeName} outException"; 
+            parameterList.Add(outExceptionParameterString);
         }
 
         string parametersString = string.Join(", ", parameterList);
