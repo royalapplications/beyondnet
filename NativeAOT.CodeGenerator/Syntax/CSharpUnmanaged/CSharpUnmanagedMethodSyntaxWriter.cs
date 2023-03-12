@@ -24,11 +24,12 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         Type returnType = method.ReturnType;
         TypeDescriptor typeDescriptor = returnType.GetTypeDescriptor(typeDescriptorRegistry);
         string unmanagedReturnTypeName = typeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
+        string unmanagedReturnTypeNameWithComment = $"{unmanagedReturnTypeName} /* {returnType.FullName ?? returnType.Name} */";
 
         string parameters = WriteParameters(method, typeDescriptorRegistry);
         
         sb.AppendLine($"[UnmanagedCallersOnly(EntryPoint = \"{methodNameC}\")]");
-        sb.AppendLine($"internal static {unmanagedReturnTypeName} {methodNameC}({parameters})");
+        sb.AppendLine($"internal static {unmanagedReturnTypeNameWithComment} {methodNameC}({parameters})");
         sb.AppendLine("{");
         sb.AppendLine("\t// TODO: Implementation");
         sb.AppendLine("}");
@@ -51,7 +52,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
             TypeDescriptor declaringTypeDescriptor = declaringType.GetTypeDescriptor(typeDescriptorRegistry);
             string declaringTypeName = declaringTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
-            string parameterString = $"{declaringTypeName} self";
+            string parameterString = $"{declaringTypeName} /* {declaringType.FullName ?? declaringType.Name} */ self";
 
             parameterList.Add(parameterString);
         }
@@ -63,7 +64,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
             string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
 
-            string parameterString = $"{unmanagedParameterTypeName} {parameter.Name}";
+            string parameterString = $"{unmanagedParameterTypeName} /* {parameterType.FullName ?? parameterType.Name} */ {parameter.Name}";
             parameterList.Add(parameterString);
         }
 
@@ -72,7 +73,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             TypeDescriptor outExceptionTypeDescriptor = exceptionType.GetTypeDescriptor(typeDescriptorRegistry);
             string outExceptionTypeName = outExceptionTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true, true);
 
-            string outExceptionParameterString = $"{outExceptionTypeName} outException"; 
+            string outExceptionParameterString = $"{outExceptionTypeName} /* {exceptionType.FullName ?? exceptionType.Name} */ outException"; 
             parameterList.Add(outExceptionParameterString);
         }
 
