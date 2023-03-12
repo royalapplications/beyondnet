@@ -11,34 +11,24 @@ public class TypeDescriptor
     public bool IsValueType => ManagedType.IsValueType;
     public bool IsEnum => ManagedType.IsEnum;
     public bool IsBool => ManagedType == typeof(bool);
-    public bool IsVoid => ManagedType.Name == "void";
+    public bool IsVoid => ManagedType == typeof(void);
     public bool IsPointer => !IsVoid && !IsEnum && !IsPrimitive && !IsBool; 
 
     private readonly Dictionary<CodeLanguage, string> m_typeNames;
     private readonly Dictionary<LanguagePair, string> m_typeConversions;
-
-    public TypeDescriptor(Type managedType) : this(
-        managedType,
-        null
-    ) { }
+    private readonly string? m_returnValueOnException;
 
     public TypeDescriptor(
         Type managedType,
-        Dictionary<CodeLanguage, string>? typeNames
-    ) : this(
-        managedType,
-        typeNames,
-        null
-    ) { }
-    
-    public TypeDescriptor(
-        Type managedType,
-        Dictionary<CodeLanguage, string>? typeNames,
-        Dictionary<LanguagePair, string>? typeConversions
+        string? returnValueOnException = null,
+        Dictionary<CodeLanguage, string>? typeNames = null,
+        Dictionary<LanguagePair, string>? typeConversions = null
     )
     {
         ManagedType = managedType;
 
+        m_returnValueOnException = returnValueOnException;
+        
         if (typeNames == null) {
             typeNames = new();
         }
@@ -178,8 +168,26 @@ public class TypeDescriptor
             string conversion = "InteropUtils.GetInstance<" + ManagedType.GetFullNameOrName() + ">({0})";
 
             return conversion;
+        } else if (sourceLanguage == CodeLanguage.CSharp &&
+                   targetLanguage == CodeLanguage.CSharpUnmanaged) {
+            string conversion = "{0}.AllocateGCHandleAndGetAddress()";
+
+            return conversion;
         } else {
             throw new Exception("Unknown language pair");
         }
+    }
+
+    public string? GetReturnValueOnException()
+    {
+        if (m_returnValueOnException != null) {
+            return m_returnValueOnException;
+        }
+
+        if (IsPointer) {
+            return "null";
+        }
+
+        return null;
     }
 }

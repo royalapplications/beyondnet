@@ -7,6 +7,7 @@ public partial class BuiltInTypeDescriptors
         get {
             var descriptor = new TypeDescriptor(
                 typeof(bool),
+                "false",
                 new() {
                     { CodeLanguage.CSharpUnmanaged, "CBool" },
                     { CodeLanguage.C, "CBool" },

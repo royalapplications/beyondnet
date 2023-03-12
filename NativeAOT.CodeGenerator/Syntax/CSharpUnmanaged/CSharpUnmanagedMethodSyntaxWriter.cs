@@ -101,11 +101,30 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
         string convertedParameterNamesString = string.Join(", ", convertedParameterNames);
 
+        string returnValuePrefix = string.Empty;
+        string returnValueName = "returnValue";
+
         if (!returnTypeDescriptor.IsVoid) {
-            sb.AppendLine($"{implPrefix}// TODO: Return value");
+            returnValuePrefix = $"{returnType.GetFullNameOrName()} {returnValueName} = ";
         }
         
-        sb.AppendLine($"{implPrefix}{methodTarget}.{method.Name}({convertedParameterNamesString})");
+        sb.AppendLine($"{implPrefix}{returnValuePrefix}{methodTarget}.{method.Name}({convertedParameterNamesString})");
+
+        string? convertedReturnValueName = null;
+
+        if (!returnTypeDescriptor.IsVoid) {
+            string? returnValueTypeConversion = returnTypeDescriptor.GetTypeConversion(CodeLanguage.CSharp, CodeLanguage.CSharpUnmanaged);
+
+            if (returnValueTypeConversion != null) {
+                string fullReturnValueTypeConversion = string.Format(returnValueTypeConversion, returnValueName);
+                
+                convertedReturnValueName = "returnValueNative";
+                
+                sb.AppendLine($"{implPrefix}{returnTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true)} {convertedReturnValueName} = {fullReturnValueTypeConversion};");
+            } else {
+                convertedReturnValueName = returnValueName;
+            }
+        }
 
         if (mayThrow) {
             sb.AppendLine("""
@@ -113,14 +132,35 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         if (outException is not null) {
             *outException = null;
         }
+
+""");
+            
+            if (!returnTypeDescriptor.IsVoid) {
+                sb.AppendLine($"{implPrefix}return {convertedReturnValueName};");
+            }
+            
+            sb.AppendLine("""
     } catch (Exception exception) {
         if (outException is not null) {
             void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
                 
             *outException = exceptionHandleAddress;
         }
-    }
+
 """);
+
+            if (!returnTypeDescriptor.IsVoid) {
+                string? returnValue = returnTypeDescriptor.GetReturnValueOnException()
+                                      ?? $"default({returnType.GetFullNameOrName()})";
+
+                sb.AppendLine($"{implPrefix}return {returnValue};");
+            }
+            
+            sb.AppendLine("\t}");
+        } else {
+            if (!returnTypeDescriptor.IsVoid) {
+                sb.AppendLine($"\treturn {convertedReturnValueName};");
+            }
         }
 
         sb.AppendLine("}");

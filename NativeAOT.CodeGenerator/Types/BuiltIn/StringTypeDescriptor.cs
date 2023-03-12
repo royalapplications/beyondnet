@@ -7,6 +7,7 @@ public partial class BuiltInTypeDescriptors
         get {
             var descriptor = new TypeDescriptor(
                 typeof(string),
+                "null",
                 new() {
                     { CodeLanguage.CSharpUnmanaged, "byte" },
                     { CodeLanguage.C, "char" },
