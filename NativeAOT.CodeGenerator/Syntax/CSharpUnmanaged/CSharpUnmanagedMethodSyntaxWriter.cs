@@ -116,10 +116,13 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
         string convertedParameterNamesString = string.Join(", ", convertedParameterNames);
 
+        bool isReturning = !returnTypeDescriptor.IsVoid &&
+                           !isConstructor;
+
         string returnValuePrefix = string.Empty;
         string returnValueName = "returnValue";
 
-        if (!returnTypeDescriptor.IsVoid) {
+        if (isReturning) {
             returnValuePrefix = $"{returnType.GetFullNameOrName()} {returnValueName} = ";
         }
         
@@ -127,7 +130,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
         string? convertedReturnValueName = null;
 
-        if (!returnTypeDescriptor.IsVoid) {
+        if (isReturning) {
             string? returnValueTypeConversion = returnTypeDescriptor.GetTypeConversion(
                 CodeLanguage.CSharp,
                 CodeLanguage.CSharpUnmanaged
@@ -153,7 +156,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
 """);
             
-            if (!returnTypeDescriptor.IsVoid) {
+            if (isReturning) {
                 sb.AppendLine($"{implPrefix}return {convertedReturnValueName};");
             }
             
@@ -167,7 +170,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
 """);
 
-            if (!returnTypeDescriptor.IsVoid) {
+            if (isReturning) {
                 string returnValue = returnTypeDescriptor.GetReturnValueOnException()
                                      ?? $"default({returnType.GetFullNameOrName()})";
 
@@ -176,7 +179,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             
             sb.AppendLine("\t}");
         } else {
-            if (!returnTypeDescriptor.IsVoid) {
+            if (isReturning) {
                 sb.AppendLine($"\treturn {convertedReturnValueName};");
             }
         }
