@@ -101,6 +101,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
         string convertedParameterNamesString = string.Join(", ", convertedParameterNames);
         
+        // TODO: Return value
         sb.AppendLine($"{implPrefix}{methodTarget}.{method.Name}({convertedParameterNamesString})");
 
         if (mayThrow) {
