@@ -112,5 +112,10 @@ public static unsafe class InteropUtils
             return CBool.False;
         }
     }
+
+    public static bool ToBool(this CBool cBool)
+    {
+        return cBool == CBool.True;
+    }
     #endregion Bools
 }

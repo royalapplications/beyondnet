@@ -28,12 +28,33 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         string unmanagedReturnTypeName = typeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
         string unmanagedReturnTypeNameWithComment = $"{unmanagedReturnTypeName} /* {returnType.GetFullNameOrName()} */";
 
-        string parameters = WriteParameters(method, typeDescriptorRegistry);
+        string methodSignatureParameters = WriteParameters(method, typeDescriptorRegistry);
         
         sb.AppendLine($"[UnmanagedCallersOnly(EntryPoint = \"{methodNameC}\")]");
-        sb.AppendLine($"internal static {unmanagedReturnTypeNameWithComment} {methodNameC}({parameters})");
+        sb.AppendLine($"internal static {unmanagedReturnTypeNameWithComment} {methodNameC}({methodSignatureParameters})");
         sb.AppendLine("{");
         sb.AppendLine("\t// TODO: Implementation");
+        
+        var parameters = method.GetParameters();
+        
+        foreach (var parameter in parameters) {
+            string parameterName = parameter.Name ?? throw new Exception("Parameter has no name");
+            
+            Type parameterType = parameter.ParameterType;
+            TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
+
+            string? typeConversion = parameterTypeDescriptor.GetTypeConversion(CodeLanguage.CSharpUnmanaged, CodeLanguage.CSharp);
+
+            string convertedParameterName = $"{parameterName}DotNet";
+            
+            if (typeConversion != null) {
+                string fullTypeConversion = string.Format(typeConversion, parameterName);
+                string typeConversionCode = $"{parameterType.GetFullNameOrName()} {convertedParameterName} = {fullTypeConversion};";
+
+                sb.AppendLine($"\t{typeConversionCode}");
+            }
+        }
+        
         sb.AppendLine("}");
 
         return sb.ToString();

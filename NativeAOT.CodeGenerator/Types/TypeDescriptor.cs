@@ -15,10 +15,27 @@ public class TypeDescriptor
     public bool IsPointer => !IsVoid && !IsEnum && !IsPrimitive && !IsBool; 
 
     private readonly Dictionary<CodeLanguage, string> m_typeNames;
+    private readonly Dictionary<LanguagePair, string> m_typeConversions;
 
-    public TypeDescriptor(Type managedType) : this(managedType, null) { }
+    public TypeDescriptor(Type managedType) : this(
+        managedType,
+        null
+    ) { }
+
+    public TypeDescriptor(
+        Type managedType,
+        Dictionary<CodeLanguage, string>? typeNames
+    ) : this(
+        managedType,
+        typeNames,
+        null
+    ) { }
     
-    public TypeDescriptor(Type managedType, Dictionary<CodeLanguage, string>? typeNames)
+    public TypeDescriptor(
+        Type managedType,
+        Dictionary<CodeLanguage, string>? typeNames,
+        Dictionary<LanguagePair, string>? typeConversions
+    )
     {
         ManagedType = managedType;
 
@@ -33,6 +50,12 @@ public class TypeDescriptor
         }
 
         m_typeNames = typeNames;
+
+        if (typeConversions == null) {
+            typeConversions = new();
+        }
+        
+        m_typeConversions = typeConversions;
     }
 
     public void SetTypeName(string typeName, CodeLanguage language)
@@ -116,5 +139,18 @@ public class TypeDescriptor
             default:
                 throw new NotImplementedException();
         }
+    }
+
+    public string? GetTypeConversion(
+        CodeLanguage sourceLanguage,
+        CodeLanguage targetLanguage
+    )
+    {
+        m_typeConversions.TryGetValue(
+            new LanguagePair(sourceLanguage, targetLanguage),
+            out string? typeConversion
+        );
+
+        return typeConversion;
     }
 }
