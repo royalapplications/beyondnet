@@ -19,6 +19,8 @@ public class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITyp
         { MemberTypes.Event, new CSharpUnmanagedEventSyntaxWriter() }
     };
 
+    private IDestructorSyntaxWriter m_destructorSyntaxWriter = new CSharpUnmanagedDestructorSyntaxWriter();
+
     public CSharpUnmanagedTypeSyntaxWriter(Settings settings)
     {
         Settings = settings ?? throw new ArgumentNullException(nameof(settings));
@@ -87,6 +89,11 @@ public class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITyp
 
             sb.AppendLine(memberCode);
         }
+
+        string destructorCode = m_destructorSyntaxWriter.Write(type, state)
+            .IndentAllLines(1);
+
+        sb.AppendLine(destructorCode);
         
         sb.AppendLine("}");
         sb.AppendLine();
