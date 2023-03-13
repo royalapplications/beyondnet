@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		E70D116129BF9F2600B4E738 /* NativeAOTCodeGeneratorOutputSample.h in Headers */ = {isa = PBXBuildFile; fileRef = E70D116029BF9F2600B4E738 /* NativeAOTCodeGeneratorOutputSample.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E70D116929BF9F8000B4E738 /* NativeAOTCodeGeneratorOutputSample_Types.h in Headers */ = {isa = PBXBuildFile; fileRef = E70D116829BF9F7E00B4E738 /* NativeAOTCodeGeneratorOutputSample_Types.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		E70D116929BF9F8000B4E738 /* NativeAOTCodeGeneratorOutputSample_Types.h in Headers */ = {isa = PBXBuildFile; fileRef = E70D116829BF9F7E00B4E738 /* NativeAOTCodeGeneratorOutputSample_Types.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E70D116B29BF9FCD00B4E738 /* NativeAOT.CodeGeneratorOutputSample.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E70D116A29BF9FCC00B4E738 /* NativeAOT.CodeGeneratorOutputSample.dylib */; };
 		E70D117629BF9FEC00B4E738 /* NativeAOTCodeGeneratorOutputSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E70D115D29BF9F2600B4E738 /* NativeAOTCodeGeneratorOutputSample.framework */; };
-		E70D117D29BFA01300B4E738 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70D117429BF9FEC00B4E738 /* Tests.swift */; };
+		E70D117D29BFA01300B4E738 /* TestClassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70D117429BF9FEC00B4E738 /* TestClassTests.swift */; };
+		E736639329BFCB2600B6DEE2 /* NativeAOT.CodeGeneratorOutputSample.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = E70D116A29BF9FCC00B4E738 /* NativeAOT.CodeGeneratorOutputSample.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		E736639629BFCB9700B6DEE2 /* TestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E736639529BFCB9700B6DEE2 /* TestClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,6 +26,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E736639429BFCB2600B6DEE2 /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E736639329BFCB2600B6DEE2 /* NativeAOT.CodeGeneratorOutputSample.dylib in Embed Libraries */,
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		E70D115D29BF9F2600B4E738 /* NativeAOTCodeGeneratorOutputSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NativeAOTCodeGeneratorOutputSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E70D116029BF9F2600B4E738 /* NativeAOTCodeGeneratorOutputSample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeAOTCodeGeneratorOutputSample.h; sourceTree = "<group>"; };
@@ -31,7 +47,8 @@
 		E70D116829BF9F7E00B4E738 /* NativeAOTCodeGeneratorOutputSample_Types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeAOTCodeGeneratorOutputSample_Types.h; sourceTree = "<group>"; };
 		E70D116A29BF9FCC00B4E738 /* NativeAOT.CodeGeneratorOutputSample.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = NativeAOT.CodeGeneratorOutputSample.dylib; sourceTree = "<group>"; };
 		E70D117229BF9FEC00B4E738 /* NativeAOTCodeGeneratorOutputSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NativeAOTCodeGeneratorOutputSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E70D117429BF9FEC00B4E738 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		E70D117429BF9FEC00B4E738 /* TestClassTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClassTests.swift; sourceTree = "<group>"; };
+		E736639529BFCB9700B6DEE2 /* TestClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,9 +93,10 @@
 		E70D115F29BF9F2600B4E738 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				E70D117429BF9FEC00B4E738 /* Tests.swift */,
 				E70D116029BF9F2600B4E738 /* NativeAOTCodeGeneratorOutputSample.h */,
 				E70D116829BF9F7E00B4E738 /* NativeAOTCodeGeneratorOutputSample_Types.h */,
+				E736639529BFCB9700B6DEE2 /* TestClass.swift */,
+				E70D117429BF9FEC00B4E738 /* TestClassTests.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -102,10 +120,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E70D116429BF9F2600B4E738 /* Build configuration list for PBXNativeTarget "NativeAOTCodeGeneratorOutputSample" */;
 			buildPhases = (
+				E736639229BFCA1300B6DEE2 /* Build .NET Library */,
 				E70D115829BF9F2600B4E738 /* Headers */,
 				E70D115929BF9F2600B4E738 /* Sources */,
 				E70D115A29BF9F2600B4E738 /* Frameworks */,
 				E70D115B29BF9F2600B4E738 /* Resources */,
+				E736639429BFCB2600B6DEE2 /* Embed Libraries */,
 			);
 			buildRules = (
 			);
@@ -189,11 +209,34 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E736639229BFCA1300B6DEE2 /* Build .NET Library */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Build .NET Library";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\n# Important: This variable is set by Xcode but messes with msbuild/dotnet publish \nTARGETNAME=\"\"\n\ncd \"${PROJECT_DIR}/../../\"\n\n./publish\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E70D115929BF9F2600B4E738 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E736639629BFCB9700B6DEE2 /* TestClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E70D117D29BFA01300B4E738 /* Tests.swift in Sources */,
+				E70D117D29BFA01300B4E738 /* TestClassTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +450,7 @@
 		E70D117A29BF9FEC00B4E738 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VXP8K9EDP6;
@@ -422,6 +466,7 @@
 		E70D117B29BF9FEC00B4E738 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VXP8K9EDP6;
