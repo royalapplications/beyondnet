@@ -19,7 +19,7 @@ public partial class BuiltInTypeDescriptors
                         "{0}.CopyToCString()"
                     }, {
                         new(CodeLanguage.CSharpUnmanaged, CodeLanguage.CSharp), 
-                        "{0}.ToDotNetString()"
+                        "InteropUtils.ToDotNetString({0})"
                     }
                 }
             );

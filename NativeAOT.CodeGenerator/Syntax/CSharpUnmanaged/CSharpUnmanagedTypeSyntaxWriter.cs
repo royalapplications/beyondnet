@@ -49,7 +49,9 @@ public class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITyp
         }
         
         // TODO: Move out
-        string cTypeName = fullTypeName.Replace(".", "_");
+        string cTypeName = fullTypeName
+            .Replace(".", "_")
+            .Replace("+", "_");
         
         StringBuilder sb = new();
         

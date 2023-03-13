@@ -148,7 +148,12 @@ public class TypeCollector
         unsupportedReason = null;
 
         if (!type.IsVisible) {
-            unsupportedReason = "Is not visible (public)";
+            unsupportedReason = "Is Not Visible (public)";
+            return false;
+        }
+        
+        if (type.IsByRef) {
+            unsupportedReason = "Is By Ref Type";
             return false;
         }
 

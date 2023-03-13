@@ -16,7 +16,12 @@ internal static class TypeExtensions
 
     internal static string GetFullNameOrName(this Type type)
     {
-        return type.FullName ?? type.Name;
+        string name = type.FullName ?? type.Name;
+
+        // TODO: Is this correct? Why is there even a "+" in some types (ie. System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable+ConfiguredValueTaskAwaiter)
+        name = name.Replace("+", ".");
+        
+        return name;
     }
 
     internal static bool IsReferenceType(this Type type)

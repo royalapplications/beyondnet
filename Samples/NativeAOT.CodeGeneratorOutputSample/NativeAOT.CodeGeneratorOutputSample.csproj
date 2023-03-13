@@ -28,4 +28,11 @@
     <PackageReference Include="runtime.osx-x64.Microsoft.DotNet.ILCompiler" Version="8.0.0-preview.1.23110.8" />
   </ItemGroup>
 
+  <!-- Compile Links -->
+  <ItemGroup>
+    <Compile Include="..\NativeAOT.CodeGeneratorInputSample\Source\**\*.cs">
+      <Link>Links\NativeAOT.CodeGeneratorInputSample\%(RecursiveDir)%(Filename)%(Extension)</Link>
+    </Compile>
+  </ItemGroup>
+
 </Project>
