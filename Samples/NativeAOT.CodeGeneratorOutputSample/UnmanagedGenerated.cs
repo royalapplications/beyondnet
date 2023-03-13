@@ -1,5 +1,5 @@
 // Number of generated types: 124
-// Number of generated members: 708
+// Number of generated members: 677
 
 // <Header>
 using System;
@@ -1646,60 +1646,6 @@ internal static unsafe class System_Type
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint = "System_Type_op_Equality")]
-	internal static CBool /* System.Boolean */ System_Type_op_Equality(void* /* System.Type */ left, void* /* System.Type */ right, void** /* System.Exception */ __outException)
-	{
-		System.Type leftDotNet = InteropUtils.GetInstance<System.Type>(left);
-		System.Type rightDotNet = InteropUtils.GetInstance<System.Type>(right);
-	
-	    try {
-			System.Boolean __returnValue = System.Type.op_Equality(leftDotNet, rightDotNet);
-			CBool _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return false.ToCBool();
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Type_op_Inequality")]
-	internal static CBool /* System.Boolean */ System_Type_op_Inequality(void* /* System.Type */ left, void* /* System.Type */ right, void** /* System.Exception */ __outException)
-	{
-		System.Type leftDotNet = InteropUtils.GetInstance<System.Type>(left);
-		System.Type rightDotNet = InteropUtils.GetInstance<System.Type>(right);
-	
-	    try {
-			System.Boolean __returnValue = System.Type.op_Inequality(leftDotNet, rightDotNet);
-			CBool _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return false.ToCBool();
-		}
-	}
-	
-
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_ReflectionOnlyGetType")]
 	internal static void* /* System.Type */ System_Type_ReflectionOnlyGetType(byte* /* System.String */ typeName, CBool /* System.Boolean */ throwIfNotFound, CBool /* System.Boolean */ ignoreCase, void** /* System.Exception */ __outException)
 	{
@@ -2158,60 +2104,6 @@ internal static unsafe class System_Reflection_MemberInfo
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MemberInfo_op_Equality")]
-	internal static CBool /* System.Boolean */ System_Reflection_MemberInfo_op_Equality(void* /* System.Reflection.MemberInfo */ left, void* /* System.Reflection.MemberInfo */ right, void** /* System.Exception */ __outException)
-	{
-		System.Reflection.MemberInfo leftDotNet = InteropUtils.GetInstance<System.Reflection.MemberInfo>(left);
-		System.Reflection.MemberInfo rightDotNet = InteropUtils.GetInstance<System.Reflection.MemberInfo>(right);
-	
-	    try {
-			System.Boolean __returnValue = System.Reflection.MemberInfo.op_Equality(leftDotNet, rightDotNet);
-			CBool _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return false.ToCBool();
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MemberInfo_op_Inequality")]
-	internal static CBool /* System.Boolean */ System_Reflection_MemberInfo_op_Inequality(void* /* System.Reflection.MemberInfo */ left, void* /* System.Reflection.MemberInfo */ right, void** /* System.Exception */ __outException)
-	{
-		System.Reflection.MemberInfo leftDotNet = InteropUtils.GetInstance<System.Reflection.MemberInfo>(left);
-		System.Reflection.MemberInfo rightDotNet = InteropUtils.GetInstance<System.Reflection.MemberInfo>(right);
-	
-	    try {
-			System.Boolean __returnValue = System.Reflection.MemberInfo.op_Inequality(leftDotNet, rightDotNet);
-			CBool _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return false.ToCBool();
-		}
-	}
-	
-
 	// TODO (Property): MemberType
 	
 
@@ -2326,32 +2218,7 @@ internal static unsafe class System_Enum
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Enum_GetValuesAsUnderlyingType")]
-	internal static void* /* System.Array */ System_Enum_GetValuesAsUnderlyingType(void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Array __returnValue = System.Enum.GetValuesAsUnderlyingType();
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Enum_GetValuesAsUnderlyingType1")]
-	internal static void* /* System.Array */ System_Enum_GetValuesAsUnderlyingType1(void* /* System.Type */ enumType, void** /* System.Exception */ __outException)
+	internal static void* /* System.Array */ System_Enum_GetValuesAsUnderlyingType(void* /* System.Type */ enumType, void** /* System.Exception */ __outException)
 	{
 		System.Type enumTypeDotNet = InteropUtils.GetInstance<System.Type>(enumType);
 	
@@ -3733,60 +3600,6 @@ internal static unsafe class System_String
 	
 	    try {
 			System.Boolean __returnValue = System.String.Equals(aDotNet, bDotNet, comparisonType);
-			CBool _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return false.ToCBool();
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_String_op_Equality")]
-	internal static CBool /* System.Boolean */ System_String_op_Equality(byte* /* System.String */ a, byte* /* System.String */ b, void** /* System.Exception */ __outException)
-	{
-		System.String aDotNet = InteropUtils.ToDotNetString(a);
-		System.String bDotNet = InteropUtils.ToDotNetString(b);
-	
-	    try {
-			System.Boolean __returnValue = System.String.op_Equality(aDotNet, bDotNet);
-			CBool _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return false.ToCBool();
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_String_op_Inequality")]
-	internal static CBool /* System.Boolean */ System_String_op_Inequality(byte* /* System.String */ a, byte* /* System.String */ b, void** /* System.Exception */ __outException)
-	{
-		System.String aDotNet = InteropUtils.ToDotNetString(a);
-		System.String bDotNet = InteropUtils.ToDotNetString(b);
-	
-	    try {
-			System.Boolean __returnValue = System.String.op_Inequality(aDotNet, bDotNet);
 			CBool _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
@@ -8525,60 +8338,6 @@ internal static unsafe class System_Reflection_Assembly
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Assembly_op_Equality")]
-	internal static CBool /* System.Boolean */ System_Reflection_Assembly_op_Equality(void* /* System.Reflection.Assembly */ left, void* /* System.Reflection.Assembly */ right, void** /* System.Exception */ __outException)
-	{
-		System.Reflection.Assembly leftDotNet = InteropUtils.GetInstance<System.Reflection.Assembly>(left);
-		System.Reflection.Assembly rightDotNet = InteropUtils.GetInstance<System.Reflection.Assembly>(right);
-	
-	    try {
-			System.Boolean __returnValue = System.Reflection.Assembly.op_Equality(leftDotNet, rightDotNet);
-			CBool _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return false.ToCBool();
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Assembly_op_Inequality")]
-	internal static CBool /* System.Boolean */ System_Reflection_Assembly_op_Inequality(void* /* System.Reflection.Assembly */ left, void* /* System.Reflection.Assembly */ right, void** /* System.Exception */ __outException)
-	{
-		System.Reflection.Assembly leftDotNet = InteropUtils.GetInstance<System.Reflection.Assembly>(left);
-		System.Reflection.Assembly rightDotNet = InteropUtils.GetInstance<System.Reflection.Assembly>(right);
-	
-	    try {
-			System.Boolean __returnValue = System.Reflection.Assembly.op_Inequality(leftDotNet, rightDotNet);
-			CBool _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return false.ToCBool();
-		}
-	}
-	
-
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Assembly_CreateQualifiedName")]
 	internal static byte* /* System.String */ System_Reflection_Assembly_CreateQualifiedName(byte* /* System.String */ assemblyName, byte* /* System.String */ typeName, void** /* System.Exception */ __outException)
 	{
@@ -9314,168 +9073,6 @@ internal static unsafe class System_Version
 	        }
 	
 			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Version_op_Equality")]
-	internal static CBool /* System.Boolean */ System_Version_op_Equality(void* /* System.Version */ v1, void* /* System.Version */ v2, void** /* System.Exception */ __outException)
-	{
-		System.Version v1DotNet = InteropUtils.GetInstance<System.Version>(v1);
-		System.Version v2DotNet = InteropUtils.GetInstance<System.Version>(v2);
-	
-	    try {
-			System.Boolean __returnValue = System.Version.op_Equality(v1DotNet, v2DotNet);
-			CBool _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return false.ToCBool();
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Version_op_Inequality")]
-	internal static CBool /* System.Boolean */ System_Version_op_Inequality(void* /* System.Version */ v1, void* /* System.Version */ v2, void** /* System.Exception */ __outException)
-	{
-		System.Version v1DotNet = InteropUtils.GetInstance<System.Version>(v1);
-		System.Version v2DotNet = InteropUtils.GetInstance<System.Version>(v2);
-	
-	    try {
-			System.Boolean __returnValue = System.Version.op_Inequality(v1DotNet, v2DotNet);
-			CBool _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return false.ToCBool();
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Version_op_LessThan")]
-	internal static CBool /* System.Boolean */ System_Version_op_LessThan(void* /* System.Version */ v1, void* /* System.Version */ v2, void** /* System.Exception */ __outException)
-	{
-		System.Version v1DotNet = InteropUtils.GetInstance<System.Version>(v1);
-		System.Version v2DotNet = InteropUtils.GetInstance<System.Version>(v2);
-	
-	    try {
-			System.Boolean __returnValue = System.Version.op_LessThan(v1DotNet, v2DotNet);
-			CBool _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return false.ToCBool();
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Version_op_LessThanOrEqual")]
-	internal static CBool /* System.Boolean */ System_Version_op_LessThanOrEqual(void* /* System.Version */ v1, void* /* System.Version */ v2, void** /* System.Exception */ __outException)
-	{
-		System.Version v1DotNet = InteropUtils.GetInstance<System.Version>(v1);
-		System.Version v2DotNet = InteropUtils.GetInstance<System.Version>(v2);
-	
-	    try {
-			System.Boolean __returnValue = System.Version.op_LessThanOrEqual(v1DotNet, v2DotNet);
-			CBool _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return false.ToCBool();
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Version_op_GreaterThan")]
-	internal static CBool /* System.Boolean */ System_Version_op_GreaterThan(void* /* System.Version */ v1, void* /* System.Version */ v2, void** /* System.Exception */ __outException)
-	{
-		System.Version v1DotNet = InteropUtils.GetInstance<System.Version>(v1);
-		System.Version v2DotNet = InteropUtils.GetInstance<System.Version>(v2);
-	
-	    try {
-			System.Boolean __returnValue = System.Version.op_GreaterThan(v1DotNet, v2DotNet);
-			CBool _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return false.ToCBool();
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Version_op_GreaterThanOrEqual")]
-	internal static CBool /* System.Boolean */ System_Version_op_GreaterThanOrEqual(void* /* System.Version */ v1, void* /* System.Version */ v2, void** /* System.Exception */ __outException)
-	{
-		System.Version v1DotNet = InteropUtils.GetInstance<System.Version>(v1);
-		System.Version v2DotNet = InteropUtils.GetInstance<System.Version>(v2);
-	
-	    try {
-			System.Boolean __returnValue = System.Version.op_GreaterThanOrEqual(v1DotNet, v2DotNet);
-			CBool _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return false.ToCBool();
 		}
 	}
 	
@@ -11733,60 +11330,6 @@ internal static unsafe class System_Reflection_MethodBase
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodBase_op_Equality")]
-	internal static CBool /* System.Boolean */ System_Reflection_MethodBase_op_Equality(void* /* System.Reflection.MethodBase */ left, void* /* System.Reflection.MethodBase */ right, void** /* System.Exception */ __outException)
-	{
-		System.Reflection.MethodBase leftDotNet = InteropUtils.GetInstance<System.Reflection.MethodBase>(left);
-		System.Reflection.MethodBase rightDotNet = InteropUtils.GetInstance<System.Reflection.MethodBase>(right);
-	
-	    try {
-			System.Boolean __returnValue = System.Reflection.MethodBase.op_Equality(leftDotNet, rightDotNet);
-			CBool _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return false.ToCBool();
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodBase_op_Inequality")]
-	internal static CBool /* System.Boolean */ System_Reflection_MethodBase_op_Inequality(void* /* System.Reflection.MethodBase */ left, void* /* System.Reflection.MethodBase */ right, void** /* System.Exception */ __outException)
-	{
-		System.Reflection.MethodBase leftDotNet = InteropUtils.GetInstance<System.Reflection.MethodBase>(left);
-		System.Reflection.MethodBase rightDotNet = InteropUtils.GetInstance<System.Reflection.MethodBase>(right);
-	
-	    try {
-			System.Boolean __returnValue = System.Reflection.MethodBase.op_Inequality(leftDotNet, rightDotNet);
-			CBool _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return false.ToCBool();
-		}
-	}
-	
-
 	// TODO (Property): Attributes
 	
 
@@ -11985,60 +11528,6 @@ internal static unsafe class System_Reflection_FieldInfo
 	        }
 	
 			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_FieldInfo_op_Equality")]
-	internal static CBool /* System.Boolean */ System_Reflection_FieldInfo_op_Equality(void* /* System.Reflection.FieldInfo */ left, void* /* System.Reflection.FieldInfo */ right, void** /* System.Exception */ __outException)
-	{
-		System.Reflection.FieldInfo leftDotNet = InteropUtils.GetInstance<System.Reflection.FieldInfo>(left);
-		System.Reflection.FieldInfo rightDotNet = InteropUtils.GetInstance<System.Reflection.FieldInfo>(right);
-	
-	    try {
-			System.Boolean __returnValue = System.Reflection.FieldInfo.op_Equality(leftDotNet, rightDotNet);
-			CBool _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return false.ToCBool();
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_FieldInfo_op_Inequality")]
-	internal static CBool /* System.Boolean */ System_Reflection_FieldInfo_op_Inequality(void* /* System.Reflection.FieldInfo */ left, void* /* System.Reflection.FieldInfo */ right, void** /* System.Exception */ __outException)
-	{
-		System.Reflection.FieldInfo leftDotNet = InteropUtils.GetInstance<System.Reflection.FieldInfo>(left);
-		System.Reflection.FieldInfo rightDotNet = InteropUtils.GetInstance<System.Reflection.FieldInfo>(right);
-	
-	    try {
-			System.Boolean __returnValue = System.Reflection.FieldInfo.op_Inequality(leftDotNet, rightDotNet);
-			CBool _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return false.ToCBool();
 		}
 	}
 	
@@ -12491,60 +11980,6 @@ internal static unsafe class System_Reflection_PropertyInfo
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_PropertyInfo_op_Equality")]
-	internal static CBool /* System.Boolean */ System_Reflection_PropertyInfo_op_Equality(void* /* System.Reflection.PropertyInfo */ left, void* /* System.Reflection.PropertyInfo */ right, void** /* System.Exception */ __outException)
-	{
-		System.Reflection.PropertyInfo leftDotNet = InteropUtils.GetInstance<System.Reflection.PropertyInfo>(left);
-		System.Reflection.PropertyInfo rightDotNet = InteropUtils.GetInstance<System.Reflection.PropertyInfo>(right);
-	
-	    try {
-			System.Boolean __returnValue = System.Reflection.PropertyInfo.op_Equality(leftDotNet, rightDotNet);
-			CBool _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return false.ToCBool();
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_PropertyInfo_op_Inequality")]
-	internal static CBool /* System.Boolean */ System_Reflection_PropertyInfo_op_Inequality(void* /* System.Reflection.PropertyInfo */ left, void* /* System.Reflection.PropertyInfo */ right, void** /* System.Exception */ __outException)
-	{
-		System.Reflection.PropertyInfo leftDotNet = InteropUtils.GetInstance<System.Reflection.PropertyInfo>(left);
-		System.Reflection.PropertyInfo rightDotNet = InteropUtils.GetInstance<System.Reflection.PropertyInfo>(right);
-	
-	    try {
-			System.Boolean __returnValue = System.Reflection.PropertyInfo.op_Inequality(leftDotNet, rightDotNet);
-			CBool _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return false.ToCBool();
-		}
-	}
-	
-
 	// TODO (Property): MemberType
 	
 
@@ -12686,60 +12121,6 @@ internal static unsafe class System_Reflection_MethodInfo
 	        }
 	
 			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodInfo_op_Equality")]
-	internal static CBool /* System.Boolean */ System_Reflection_MethodInfo_op_Equality(void* /* System.Reflection.MethodInfo */ left, void* /* System.Reflection.MethodInfo */ right, void** /* System.Exception */ __outException)
-	{
-		System.Reflection.MethodInfo leftDotNet = InteropUtils.GetInstance<System.Reflection.MethodInfo>(left);
-		System.Reflection.MethodInfo rightDotNet = InteropUtils.GetInstance<System.Reflection.MethodInfo>(right);
-	
-	    try {
-			System.Boolean __returnValue = System.Reflection.MethodInfo.op_Equality(leftDotNet, rightDotNet);
-			CBool _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return false.ToCBool();
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodInfo_op_Inequality")]
-	internal static CBool /* System.Boolean */ System_Reflection_MethodInfo_op_Inequality(void* /* System.Reflection.MethodInfo */ left, void* /* System.Reflection.MethodInfo */ right, void** /* System.Exception */ __outException)
-	{
-		System.Reflection.MethodInfo leftDotNet = InteropUtils.GetInstance<System.Reflection.MethodInfo>(left);
-		System.Reflection.MethodInfo rightDotNet = InteropUtils.GetInstance<System.Reflection.MethodInfo>(right);
-	
-	    try {
-			System.Boolean __returnValue = System.Reflection.MethodInfo.op_Inequality(leftDotNet, rightDotNet);
-			CBool _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return false.ToCBool();
 		}
 	}
 	
@@ -17100,60 +16481,6 @@ internal static unsafe class System_Reflection_Module
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Module_op_Equality")]
-	internal static CBool /* System.Boolean */ System_Reflection_Module_op_Equality(void* /* System.Reflection.Module */ left, void* /* System.Reflection.Module */ right, void** /* System.Exception */ __outException)
-	{
-		System.Reflection.Module leftDotNet = InteropUtils.GetInstance<System.Reflection.Module>(left);
-		System.Reflection.Module rightDotNet = InteropUtils.GetInstance<System.Reflection.Module>(right);
-	
-	    try {
-			System.Boolean __returnValue = System.Reflection.Module.op_Equality(leftDotNet, rightDotNet);
-			CBool _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return false.ToCBool();
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Module_op_Inequality")]
-	internal static CBool /* System.Boolean */ System_Reflection_Module_op_Inequality(void* /* System.Reflection.Module */ left, void* /* System.Reflection.Module */ right, void** /* System.Exception */ __outException)
-	{
-		System.Reflection.Module leftDotNet = InteropUtils.GetInstance<System.Reflection.Module>(left);
-		System.Reflection.Module rightDotNet = InteropUtils.GetInstance<System.Reflection.Module>(right);
-	
-	    try {
-			System.Boolean __returnValue = System.Reflection.Module.op_Inequality(leftDotNet, rightDotNet);
-			CBool _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return false.ToCBool();
-		}
-	}
-	
-
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Module_ToString")]
 	internal static byte* /* System.String */ System_Reflection_Module_ToString(void* /* System.Reflection.Module */ __self, void** /* System.Exception */ __outException)
 	{
@@ -17413,60 +16740,6 @@ internal static unsafe class System_Globalization_SortVersion
 	        }
 	
 			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_SortVersion_op_Equality")]
-	internal static CBool /* System.Boolean */ System_Globalization_SortVersion_op_Equality(void* /* System.Globalization.SortVersion */ left, void* /* System.Globalization.SortVersion */ right, void** /* System.Exception */ __outException)
-	{
-		System.Globalization.SortVersion leftDotNet = InteropUtils.GetInstance<System.Globalization.SortVersion>(left);
-		System.Globalization.SortVersion rightDotNet = InteropUtils.GetInstance<System.Globalization.SortVersion>(right);
-	
-	    try {
-			System.Boolean __returnValue = System.Globalization.SortVersion.op_Equality(leftDotNet, rightDotNet);
-			CBool _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return false.ToCBool();
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_SortVersion_op_Inequality")]
-	internal static CBool /* System.Boolean */ System_Globalization_SortVersion_op_Inequality(void* /* System.Globalization.SortVersion */ left, void* /* System.Globalization.SortVersion */ right, void** /* System.Exception */ __outException)
-	{
-		System.Globalization.SortVersion leftDotNet = InteropUtils.GetInstance<System.Globalization.SortVersion>(left);
-		System.Globalization.SortVersion rightDotNet = InteropUtils.GetInstance<System.Globalization.SortVersion>(right);
-	
-	    try {
-			System.Boolean __returnValue = System.Globalization.SortVersion.op_Inequality(leftDotNet, rightDotNet);
-			CBool _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return false.ToCBool();
 		}
 	}
 	
@@ -20838,60 +20111,6 @@ internal static unsafe class System_Reflection_ConstructorInfo
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ConstructorInfo_op_Equality")]
-	internal static CBool /* System.Boolean */ System_Reflection_ConstructorInfo_op_Equality(void* /* System.Reflection.ConstructorInfo */ left, void* /* System.Reflection.ConstructorInfo */ right, void** /* System.Exception */ __outException)
-	{
-		System.Reflection.ConstructorInfo leftDotNet = InteropUtils.GetInstance<System.Reflection.ConstructorInfo>(left);
-		System.Reflection.ConstructorInfo rightDotNet = InteropUtils.GetInstance<System.Reflection.ConstructorInfo>(right);
-	
-	    try {
-			System.Boolean __returnValue = System.Reflection.ConstructorInfo.op_Equality(leftDotNet, rightDotNet);
-			CBool _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return false.ToCBool();
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ConstructorInfo_op_Inequality")]
-	internal static CBool /* System.Boolean */ System_Reflection_ConstructorInfo_op_Inequality(void* /* System.Reflection.ConstructorInfo */ left, void* /* System.Reflection.ConstructorInfo */ right, void** /* System.Exception */ __outException)
-	{
-		System.Reflection.ConstructorInfo leftDotNet = InteropUtils.GetInstance<System.Reflection.ConstructorInfo>(left);
-		System.Reflection.ConstructorInfo rightDotNet = InteropUtils.GetInstance<System.Reflection.ConstructorInfo>(right);
-	
-	    try {
-			System.Boolean __returnValue = System.Reflection.ConstructorInfo.op_Inequality(leftDotNet, rightDotNet);
-			CBool _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return false.ToCBool();
-		}
-	}
-	
-
 	// TODO (Property): MemberType
 	
 
@@ -21122,60 +20341,6 @@ internal static unsafe class System_Reflection_EventInfo
 	        }
 	
 			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_EventInfo_op_Equality")]
-	internal static CBool /* System.Boolean */ System_Reflection_EventInfo_op_Equality(void* /* System.Reflection.EventInfo */ left, void* /* System.Reflection.EventInfo */ right, void** /* System.Exception */ __outException)
-	{
-		System.Reflection.EventInfo leftDotNet = InteropUtils.GetInstance<System.Reflection.EventInfo>(left);
-		System.Reflection.EventInfo rightDotNet = InteropUtils.GetInstance<System.Reflection.EventInfo>(right);
-	
-	    try {
-			System.Boolean __returnValue = System.Reflection.EventInfo.op_Equality(leftDotNet, rightDotNet);
-			CBool _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return false.ToCBool();
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_EventInfo_op_Inequality")]
-	internal static CBool /* System.Boolean */ System_Reflection_EventInfo_op_Inequality(void* /* System.Reflection.EventInfo */ left, void* /* System.Reflection.EventInfo */ right, void** /* System.Exception */ __outException)
-	{
-		System.Reflection.EventInfo leftDotNet = InteropUtils.GetInstance<System.Reflection.EventInfo>(left);
-		System.Reflection.EventInfo rightDotNet = InteropUtils.GetInstance<System.Reflection.EventInfo>(right);
-	
-	    try {
-			System.Boolean __returnValue = System.Reflection.EventInfo.op_Inequality(leftDotNet, rightDotNet);
-			CBool _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return false.ToCBool();
 		}
 	}
 	

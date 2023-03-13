@@ -107,18 +107,31 @@ public class MemberCollector
         Dictionary<MemberInfo, string> unsupportedMembers
     )
     {
-        BindingFlags flags = BindingFlags.Public | 
-                             BindingFlags.DeclaredOnly |
-                             BindingFlags.Instance |
-                             BindingFlags.Static;
-
-        bool isPropertyAccessor = methodInfo.DeclaringType?.GetProperties(flags)
-            .Any(prop => prop.GetGetMethod() == methodInfo || prop.GetSetMethod() == methodInfo) ?? false;
-
-        if (isPropertyAccessor) {
+        if (methodInfo.IsGenericMethod ||
+            methodInfo.IsGenericMethodDefinition ||
+            methodInfo.IsConstructedGenericMethod ||
+            methodInfo.ContainsGenericParameters) {
+            unsupportedMembers[methodInfo] = "Is Generic";
+            
             return;
         }
+        
+        // This filters out getters/setters and operator overloading methods
+        bool isSpecialName = methodInfo.IsSpecialName;
+
+        if (isSpecialName) {
+            unsupportedMembers[methodInfo] = "Is Special Name";
             
+            return;
+        }
+        
+        // bool isPropertyAccessor = methodInfo.DeclaringType?.GetProperties(flags)
+        //     .Any(prop => prop.GetGetMethod() == methodInfo || prop.GetSetMethod() == methodInfo) ?? false;
+        //
+        // if (isPropertyAccessor) {
+        //     return;
+        // }
+
         Type returnType = methodInfo.ReturnType;
 
         if (!TypeCollector.IsSupportedType(returnType)) {
