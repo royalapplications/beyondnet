@@ -59,9 +59,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         } else {
             methodNameC = $"{declaringType.GetFullNameOrName().Replace('.', '_')}_{methodName}";
         }
-        
-        TypeDescriptor declaringTypeDescriptor = declaringType.GetTypeDescriptor(typeDescriptorRegistry);
-        
+
         TypeDescriptor returnTypeDescriptor = returnType.GetTypeDescriptor(typeDescriptorRegistry);
         string unmanagedReturnTypeName = returnTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
         string unmanagedReturnTypeNameWithComment = $"{unmanagedReturnTypeName} /* {returnType.GetFullNameOrName()} */";
@@ -85,7 +83,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         if (!isStaticMethod) {
             string selfConversionCode = WriteSelfConversion(
                 declaringType,
-                declaringTypeDescriptor,
+                typeDescriptorRegistry,
                 out convertedSelfParameterName
             );
 
@@ -194,10 +192,12 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
     protected string WriteSelfConversion(
         Type type,
-        TypeDescriptor typeDescriptor,
+        TypeDescriptorRegistry typeDescriptorRegistry,
         out string convertedSelfParameterName
     )
     {
+        TypeDescriptor typeDescriptor = type.GetTypeDescriptor(typeDescriptorRegistry);
+        
         StringBuilder sb = new();
         string parameterName = "__self";
         convertedSelfParameterName = parameterName;
