@@ -74,7 +74,15 @@ static class Program
         
         StringBuilder sb = new();
 
-        sb.AppendLine($"// Number of generated types: {result.GeneratedTypes.Count}");
+        int generatedTypesCount = result.GeneratedTypes.Count;
+        int generatedMembersCount = 0;
+
+        foreach (var generatedMembers in result.GeneratedTypes.Values) {
+            generatedMembersCount += generatedMembers.Count();
+        }
+
+        sb.AppendLine($"// Number of generated types: {generatedTypesCount}");
+        sb.AppendLine($"// Number of generated members: {generatedMembersCount}");
         sb.AppendLine();
 
         foreach (var section in writer.Sections) {
