@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PublishTrimmed>true</PublishTrimmed>
+    <PublishAot>true</PublishAot>
+    <RuntimeIdentifiers>osx-x64;osx-arm64</RuntimeIdentifiers>
+  </PropertyGroup>
+
+  <!-- Strip Symbols in Release Builds -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <StripSymbols>true</StripSymbols>
+  </PropertyGroup>
+
+  <!-- Item Excludes -->
+  <PropertyGroup>
+    <DefaultItemExcludes>$(DefaultItemExcludes);Swift\**\*;.gitignore;*.sln.DotSettings;</DefaultItemExcludes>
+  </PropertyGroup>
+
+  <!-- This works around a bug in .NET 8 Preview 1 that causes the required package to not be resolved automatically when cross-compiling -->
+  <ItemGroup>
+    <PackageReference Include="runtime.osx-arm64.Microsoft.DotNet.ILCompiler" Version="8.0.0-preview.1.23110.8" />
+    <PackageReference Include="runtime.osx-x64.Microsoft.DotNet.ILCompiler" Version="8.0.0-preview.1.23110.8" />
+  </ItemGroup>
+
+</Project>

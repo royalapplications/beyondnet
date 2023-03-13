@@ -139,7 +139,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             ? string.Empty
             : $".{methodName}";
         
-        sb.AppendLine($"{implPrefix}{returnValuePrefix}{methodTarget}{methodNameForInvocation}({convertedParameterNamesString})");
+        sb.AppendLine($"{implPrefix}{returnValuePrefix}{methodTarget}{methodNameForInvocation}({convertedParameterNamesString});");
 
         string? convertedReturnValueName = null;
 
