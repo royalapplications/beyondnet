@@ -43,4 +43,12 @@ internal static class TypeExtensions
     {
         return type.IsAssignableTo(typeof(Delegate));
     }
+    
+    internal static bool IsStruct(this Type type)
+    {
+        return type.IsValueType &&
+               !type.IsVoid() &&
+               !type.IsEnum &&
+               !type.IsPrimitive;
+    }
 }

@@ -157,8 +157,8 @@ public class TypeCollector
             return false;
         }
 
-        if (type.IsValueType) {
-            unsupportedReason = "Is Value Type";
+        if (type.IsStruct()) {
+            unsupportedReason = "Is Struct Type";
             return false;
         }
 
