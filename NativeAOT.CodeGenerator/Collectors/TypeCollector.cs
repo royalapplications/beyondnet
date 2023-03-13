@@ -157,6 +157,11 @@ public class TypeCollector
             return false;
         }
 
+        if (type.IsValueType) {
+            unsupportedReason = "Is Value Type";
+            return false;
+        }
+
         if (type.IsArray) {
             unsupportedReason = "Is Array";
             return false;

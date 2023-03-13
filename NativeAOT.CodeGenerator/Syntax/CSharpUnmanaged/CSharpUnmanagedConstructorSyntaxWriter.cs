@@ -22,6 +22,11 @@ public class CSharpUnmanagedConstructorSyntaxWriter: CSharpUnmanagedMethodSyntax
         string methodName = constructor.Name;
 
         Type declaringType = constructor.DeclaringType ?? throw new Exception("No declaring type");;
+
+        if (declaringType.IsAbstract) {
+            return string.Empty;
+        }
+        
         Type returnType = declaringType;
         IEnumerable<ParameterInfo> parameters = constructor.GetParameters();
 
