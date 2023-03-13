@@ -47,13 +47,21 @@ public class TypeDescriptorRegistry
     {
         HashSet<TypeDescriptor> descriptors = new() {
             BuiltIn.BuiltInTypeDescriptors.VoidTypeDescriptor,
+            
             BuiltIn.BuiltInTypeDescriptors.BoolTypeDescriptor,
+            
             BuiltIn.BuiltInTypeDescriptors.Int8TypeDescriptor,
             BuiltIn.BuiltInTypeDescriptors.UInt8TypeDescriptor,
             BuiltIn.BuiltInTypeDescriptors.Int16TypeDescriptor,
             BuiltIn.BuiltInTypeDescriptors.UInt16TypeDescriptor,
             BuiltIn.BuiltInTypeDescriptors.Int32TypeDescriptor,
             BuiltIn.BuiltInTypeDescriptors.UInt32TypeDescriptor,
+            BuiltIn.BuiltInTypeDescriptors.Int64TypeDescriptor,
+            BuiltIn.BuiltInTypeDescriptors.UInt64TypeDescriptor,
+            
+            BuiltIn.BuiltInTypeDescriptors.FloatTypeDescriptor,
+            BuiltIn.BuiltInTypeDescriptors.DoubleTypeDescriptor,
+            
             BuiltIn.BuiltInTypeDescriptors.StringTypeDescriptor
         };
 
