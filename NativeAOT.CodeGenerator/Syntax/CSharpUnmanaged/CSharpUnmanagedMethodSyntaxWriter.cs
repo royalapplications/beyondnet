@@ -209,7 +209,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 
             string fullTypeConversion = string.Format(typeConversion, parameterName);
 
-            bool isSelfPointer = typeDescriptor.IsPointer;
+            bool isSelfPointer = typeDescriptor.RequiresNativePointer;
             string throwPart = isSelfPointer ? $" ?? throw new ArgumentNullException(nameof({parameterName}))" : string.Empty;
             string typeConversionCode = $"{type.GetFullNameOrName()} {convertedParameterName} = {fullTypeConversion}{throwPart};";
 

@@ -194,6 +194,12 @@ public class TypeCollector
             return false;
         }
 
+        if (type.IsPointer) {
+            unsupportedReason = "Is Managed Pointer Type";
+
+            return false;
+        }
+
         return true;
     } 
 }

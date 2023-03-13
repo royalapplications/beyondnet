@@ -12,7 +12,8 @@ public class TypeDescriptor
     public bool IsEnum => ManagedType.IsEnum;
     public bool IsBool => ManagedType == typeof(bool);
     public bool IsVoid => ManagedType == typeof(void);
-    public bool IsPointer => !IsVoid && !IsEnum && !IsPrimitive && !IsBool; 
+    public bool IsManagedPointer => ManagedType.IsPointer;
+    public bool RequiresNativePointer => !IsVoid && !IsEnum && !IsPrimitive && !IsBool; 
 
     private readonly Dictionary<CodeLanguage, string> m_typeNames;
     private readonly Dictionary<LanguagePair, string> m_typeConversions;
@@ -79,7 +80,7 @@ public class TypeDescriptor
 
     private string AddModifiersToTypeName(string typeName, CodeLanguage language, bool isOutParameter)
     {
-        if (!IsPointer &&
+        if (!RequiresNativePointer &&
             !isOutParameter) {
             return typeName;
         }
@@ -88,7 +89,7 @@ public class TypeDescriptor
 
         switch (language) {
             case CodeLanguage.CSharpUnmanaged:
-                if (IsPointer && 
+                if (RequiresNativePointer && 
                     isOutParameter) {
                     typeNameWithModifiers = $"{typeName}**";
                 } else {
@@ -97,7 +98,7 @@ public class TypeDescriptor
                 
                 break;
             case CodeLanguage.C:
-                if (IsPointer && 
+                if (RequiresNativePointer && 
                     isOutParameter) {
                     typeNameWithModifiers = $"{typeName}**";
                 } else {
@@ -116,7 +117,7 @@ public class TypeDescriptor
     {
         switch (language) {
             case CodeLanguage.CSharpUnmanaged:
-                if (IsPointer) {
+                if (RequiresNativePointer) {
                     return "void";
                 } else {
                     return ManagedType.GetFullNameOrName();
@@ -159,7 +160,7 @@ public class TypeDescriptor
         CodeLanguage targetLanguage
     )
     {
-        if (!IsPointer) {
+        if (!RequiresNativePointer) {
             return null;
         }
 
@@ -184,7 +185,7 @@ public class TypeDescriptor
             return m_returnValueOnException;
         }
 
-        if (IsPointer) {
+        if (RequiresNativePointer) {
             return "null";
         }
 
