@@ -6,12 +6,12 @@ namespace NativeAOT.CodeGenerator.Syntax.CSharpUnmanaged;
 
 public class CSharpUnmanagedConstructorSyntaxWriter: CSharpUnmanagedMethodSyntaxWriter, IConstructorSyntaxWriter
 {
-    public new string Write(object @object)
+    public new string Write(object @object, State state)
     {
-        return Write((ConstructorInfo)@object);
+        return Write((ConstructorInfo)@object, state);
     }
     
-    public string Write(ConstructorInfo constructor)
+    public string Write(ConstructorInfo constructor, State state)
     {
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
@@ -26,6 +26,7 @@ public class CSharpUnmanagedConstructorSyntaxWriter: CSharpUnmanagedMethodSyntax
         IEnumerable<ParameterInfo> parameters = constructor.GetParameters();
 
         string ctorCode = WriteMethod(
+            constructor,
             methodName,
             isStaticMethod,
             isConstructor,
@@ -33,7 +34,8 @@ public class CSharpUnmanagedConstructorSyntaxWriter: CSharpUnmanagedMethodSyntax
             declaringType,
             returnType,
             parameters,
-            typeDescriptorRegistry
+            typeDescriptorRegistry,
+            state
         );
 
         return ctorCode;

@@ -5,12 +5,12 @@ namespace NativeAOT.CodeGenerator.Syntax.CSharpUnmanaged;
 
 public class CSharpUnmanagedFieldSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IFieldSyntaxWriter
 {
-    public string Write(object @object)
+    public string Write(object @object, State state)
     {
-        return Write((FieldInfo)@object);
+        return Write((FieldInfo)@object, state);
     }
     
-    public string Write(FieldInfo field)
+    public string Write(FieldInfo field, State state)
     {
         StringBuilder sb = new();
         

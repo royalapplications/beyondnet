@@ -12,7 +12,7 @@ public class CSharpUnmanagedCodeGenerator: ICodeGenerator
         Settings = settings ?? throw new ArgumentNullException(nameof(settings));
     }
     
-    public void Generate(
+    public Result Generate(
         IEnumerable<Type> types,
         Dictionary<Type, string> unsupportedTypes,
         SourceCodeWriter writer
@@ -43,12 +43,23 @@ public class CSharpUnmanagedCodeGenerator: ICodeGenerator
         }
 
         CSharpUnmanagedTypeSyntaxWriter typeSyntaxWriter = new(Settings);
+
+        Result result = new();
         
-        foreach (var type in types) {
-            string typeCode = typeSyntaxWriter.Write(type);
+        foreach (Type type in types) {
+            Syntax.State state = new();
+            
+            string typeCode = typeSyntaxWriter.Write(type, state);
             
             apisSection.Code.AppendLine(typeCode);
+            
+            result.AddGeneratedType(
+                type,
+                state.GeneratedMembers
+            );
         }
+
+        return result;
     }
 
     private string GetHeaderCode()

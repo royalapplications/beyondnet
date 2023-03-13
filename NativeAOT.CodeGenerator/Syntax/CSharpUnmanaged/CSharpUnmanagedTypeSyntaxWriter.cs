@@ -1,5 +1,6 @@
 using System.Reflection;
 using System.Text;
+
 using NativeAOT.CodeGenerator.Collectors;
 using NativeAOT.CodeGenerator.Extensions;
 using NativeAOT.CodeGenerator.Generator.CSharpUnmanaged;
@@ -23,12 +24,12 @@ public class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITyp
         Settings = settings ?? throw new ArgumentNullException(nameof(settings));
     }
     
-    public string Write(object @object)
+    public string Write(object @object, State state)
     {
-        return Write((Type)@object);
+        return Write((Type)@object, state);
     }
     
-    public string Write(Type type)
+    public string Write(Type type, State state)
     {
         if (type.IsPrimitive ||
             type.IsEnum ||
@@ -81,7 +82,7 @@ public class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITyp
                 continue;
             }
 
-            string memberCode = syntaxWriter.Write(member)
+            string memberCode = syntaxWriter.Write(member, state)
                 .IndentAllLines(1);
 
             sb.AppendLine(memberCode);

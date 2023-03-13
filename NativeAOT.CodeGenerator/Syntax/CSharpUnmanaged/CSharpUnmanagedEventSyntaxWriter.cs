@@ -5,12 +5,12 @@ namespace NativeAOT.CodeGenerator.Syntax.CSharpUnmanaged;
 
 public class CSharpUnmanagedEventSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IEventSyntaxWriter
 {
-    public string Write(object @object)
+    public string Write(object @object, State state)
     {
-        return Write((EventInfo)@object);
+        return Write((EventInfo)@object, state);
     }
     
-    public string Write(EventInfo @event)
+    public string Write(EventInfo @event, State state)
     {
         StringBuilder sb = new();
         

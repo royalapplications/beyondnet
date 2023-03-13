@@ -13,6 +13,11 @@ public class TestClass
     {
         Console.WriteLine(GetHello());
     }
+    
+    public void SayHello(string name)
+    {
+        Console.WriteLine(GetHello() + " " + name);
+    }
 
     public string GetHello()
     {

@@ -4,7 +4,7 @@ namespace NativeAOT.CodeGenerator.Generator;
 
 public interface ICodeGenerator
 {
-    void Generate(
+    Result Generate(
         IEnumerable<Type> types,
         Dictionary<Type, string> unsupportedTypes,
         SourceCodeWriter writer

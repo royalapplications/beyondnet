@@ -70,9 +70,12 @@ static class Program
         
         CSharpUnmanagedCodeGenerator cSharpUnmanagedCodeGenerator = new(settings);
         
-        cSharpUnmanagedCodeGenerator.Generate(types, unsupportedTypes, writer);
+        Generator.Result result = cSharpUnmanagedCodeGenerator.Generate(types, unsupportedTypes, writer);
         
         StringBuilder sb = new();
+
+        sb.AppendLine($"// Number of generated types: {result.GeneratedTypes.Count}");
+        sb.AppendLine();
 
         foreach (var section in writer.Sections) {
             sb.AppendLine($"// <{section.Name}>");

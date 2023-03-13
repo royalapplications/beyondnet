@@ -5,12 +5,12 @@ namespace NativeAOT.CodeGenerator.Syntax.CSharpUnmanaged;
 
 public class CSharpUnmanagedPropertySyntaxWriter: ICSharpUnmanagedSyntaxWriter, IPropertySyntaxWriter
 {
-    public string Write(object @object)
+    public string Write(object @object, State state)
     {
-        return Write((PropertyInfo)@object);
+        return Write((PropertyInfo)@object, state);
     }
     
-    public string Write(PropertyInfo property)
+    public string Write(PropertyInfo property, State state)
     {
         StringBuilder sb = new();
         

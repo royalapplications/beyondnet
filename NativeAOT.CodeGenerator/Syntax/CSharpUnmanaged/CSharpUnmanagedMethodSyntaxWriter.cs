@@ -8,12 +8,12 @@ namespace NativeAOT.CodeGenerator.Syntax.CSharpUnmanaged;
 
 public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IMethodSyntaxWriter
 {
-    public string Write(object @object)
+    public string Write(object @object, State state)
     {
-        return Write((MethodInfo)@object);
+        return Write((MethodInfo)@object, state);
     }
     
-    public string Write(MethodInfo method)
+    public string Write(MethodInfo method, State state)
     {
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
@@ -28,6 +28,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         IEnumerable<ParameterInfo> parameters = method.GetParameters();
 
         string methodCode = WriteMethod(
+            method,
             methodName,
             isStaticMethod,
             isConstructor,
@@ -35,13 +36,15 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             declaringType,
             returnType,
             parameters,
-            typeDescriptorRegistry
+            typeDescriptorRegistry,
+            state
         );
 
         return methodCode;
     }
 
     protected string WriteMethod(
+        MemberInfo memberInfo,
         string methodName,
         bool isStaticMethod,
         bool isConstructor,
@@ -49,17 +52,26 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         Type declaringType,
         Type returnType,
         IEnumerable<ParameterInfo> parameters,
-        TypeDescriptorRegistry typeDescriptorRegistry
+        TypeDescriptorRegistry typeDescriptorRegistry,
+        State state
     )
     {
         string methodNameC;
-
+        
         if (isConstructor) {
             methodNameC = $"{declaringType.GetFullNameOrName().Replace('.', '_')}_Create";
         } else {
             methodNameC = $"{declaringType.GetFullNameOrName().Replace('.', '_')}_{methodName}";
         }
 
+        methodNameC = state.UniqueGeneratedName(methodNameC, CodeLanguage.CSharpUnmanaged);
+        
+        state.AddGeneratedMember(
+            memberInfo,
+            methodNameC,
+            CodeLanguage.CSharpUnmanaged
+        );
+        
         TypeDescriptor returnTypeDescriptor = returnType.GetTypeDescriptor(typeDescriptorRegistry);
         string unmanagedReturnTypeName = returnTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
         string unmanagedReturnTypeNameWithComment = $"{unmanagedReturnTypeName} /* {returnType.GetFullNameOrName()} */";
