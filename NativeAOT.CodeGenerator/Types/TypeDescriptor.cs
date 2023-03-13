@@ -12,6 +12,7 @@ public class TypeDescriptor
     public bool IsEnum => ManagedType.IsEnum;
     public bool IsBool => ManagedType == typeof(bool);
     public bool IsVoid => ManagedType == typeof(void);
+    public bool IsDelegate => ManagedType.IsAssignableTo(typeof(Delegate));
     public bool IsManagedPointer => ManagedType.IsPointer;
     public bool RequiresNativePointer => !IsVoid && !IsEnum && !IsPrimitive && !IsBool; 
 
