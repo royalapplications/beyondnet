@@ -1,4 +1,5 @@
 using System.Reflection;
+using NativeAOT.CodeGenerator.Extensions;
 
 namespace NativeAOT.CodeGenerator.Collectors;
 
@@ -148,55 +149,51 @@ public class TypeCollector
 
         if (!type.IsVisible) {
             unsupportedReason = "Is not visible (public)";
-            
             return false;
         }
 
         if (type.IsArray) {
             unsupportedReason = "Is Array";
-            
             return false;
         }
         
         if (type.IsGenericType) {
             unsupportedReason = "Is Generic Type";
-            
             return false;
         }
         
         if (type.IsGenericParameter) {
             unsupportedReason = "Is Generic Parameter";
-            
             return false;
         }
         
         if (type.IsGenericMethodParameter) {
             unsupportedReason = "Is Generic Method Parameter";
-            
             return false;
         }
         
         if (type.IsGenericTypeDefinition) {
             unsupportedReason = "Is Generic Type Definition";
-            
             return false;
         }
         
         if (type.IsGenericTypeParameter) {
             unsupportedReason = "Is Generic Type Parameter";
-            
             return false;
         }
         
         if (type.IsConstructedGenericType) {
             unsupportedReason = "Is Constructed Generic Type";
-            
             return false;
         }
 
         if (type.IsPointer) {
             unsupportedReason = "Is Managed Pointer Type";
+            return false;
+        }
 
+        if (type.IsDelegate()) {
+            unsupportedReason = "Is Delegate Type";
             return false;
         }
 

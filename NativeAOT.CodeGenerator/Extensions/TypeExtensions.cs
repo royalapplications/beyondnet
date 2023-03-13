@@ -18,4 +18,24 @@ internal static class TypeExtensions
     {
         return type.FullName ?? type.Name;
     }
+
+    internal static bool IsReferenceType(this Type type)
+    {
+        return !type.IsValueType;
+    }
+
+    internal static bool IsBoolean(this Type type)
+    {
+        return type == typeof(bool);
+    }
+    
+    internal static bool IsVoid(this Type type)
+    {
+        return type == typeof(void);
+    }
+
+    internal static bool IsDelegate(this Type type)
+    {
+        return type.IsAssignableTo(typeof(Delegate));
+    }
 }

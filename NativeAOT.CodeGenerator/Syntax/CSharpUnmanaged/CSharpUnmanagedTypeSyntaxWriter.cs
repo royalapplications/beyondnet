@@ -95,7 +95,10 @@ public class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITyp
 
     private ICSharpUnmanagedSyntaxWriter? GetSyntaxWriter(MemberTypes memberType)
     {
-        m_syntaxWriters.TryGetValue(memberType, out ICSharpUnmanagedSyntaxWriter? syntaxWriter);
+        m_syntaxWriters.TryGetValue(
+            memberType,
+            out ICSharpUnmanagedSyntaxWriter? syntaxWriter
+        );
 
         return syntaxWriter;
     }

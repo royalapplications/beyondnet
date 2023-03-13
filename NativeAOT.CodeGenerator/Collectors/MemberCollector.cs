@@ -32,7 +32,11 @@ public class MemberCollector
         return collectedMembers;
     }
 
-    private void CollectMember(MemberInfo memberInfo, HashSet<MemberInfo> collectedMembers, Dictionary<MemberInfo, string> unsupportedMembers)
+    private void CollectMember(
+        MemberInfo memberInfo, 
+        HashSet<MemberInfo> collectedMembers,
+        Dictionary<MemberInfo, string> unsupportedMembers
+    )
     {
         var memberType = memberInfo.MemberType;
         
@@ -64,7 +68,11 @@ public class MemberCollector
         }
     }
     
-    private void CollectConstructor(ConstructorInfo constructorInfo, HashSet<MemberInfo> collectedMembers, Dictionary<MemberInfo, string> unsupportedMembers)
+    private void CollectConstructor(
+        ConstructorInfo constructorInfo,
+        HashSet<MemberInfo> collectedMembers,
+        Dictionary<MemberInfo, string> unsupportedMembers
+    )
     {
         if (constructorInfo.IsGenericMethod ||
             constructorInfo.IsGenericMethodDefinition ||
@@ -93,7 +101,11 @@ public class MemberCollector
         }
     }
 
-    private void CollectMethod(MethodInfo methodInfo, HashSet<MemberInfo> collectedMembers, Dictionary<MemberInfo, string> unsupportedMembers)
+    private void CollectMethod(
+        MethodInfo methodInfo,
+        HashSet<MemberInfo> collectedMembers,
+        Dictionary<MemberInfo, string> unsupportedMembers
+    )
     {
         BindingFlags flags = BindingFlags.Public | 
                              BindingFlags.DeclaredOnly |
@@ -134,7 +146,11 @@ public class MemberCollector
         }
     }
     
-    private void CollectProperty(PropertyInfo propertyInfo, HashSet<MemberInfo> collectedMembers, Dictionary<MemberInfo, string> unsupportedMembers)
+    private void CollectProperty(
+        PropertyInfo propertyInfo,
+        HashSet<MemberInfo> collectedMembers,
+        Dictionary<MemberInfo, string> unsupportedMembers
+    )
     {
         Type propertyType = propertyInfo.PropertyType;
 
@@ -147,7 +163,11 @@ public class MemberCollector
         collectedMembers.Add(propertyInfo);
     }
     
-    private void CollectField(FieldInfo fieldInfo, HashSet<MemberInfo> collectedMembers, Dictionary<MemberInfo, string> unsupportedMembers)
+    private void CollectField(
+        FieldInfo fieldInfo,
+        HashSet<MemberInfo> collectedMembers,
+        Dictionary<MemberInfo, string> unsupportedMembers
+    )
     {
         Type fieldType = fieldInfo.FieldType;
 
@@ -160,7 +180,11 @@ public class MemberCollector
         collectedMembers.Add(fieldType);
     }
     
-    private void CollectEvent(EventInfo eventInfo, HashSet<MemberInfo> collectedMembers, Dictionary<MemberInfo, string> unsupportedMembers)
+    private void CollectEvent(
+        EventInfo eventInfo,
+        HashSet<MemberInfo> collectedMembers,
+        Dictionary<MemberInfo, string> unsupportedMembers
+    )
     {
         Type? eventHandlerType = eventInfo.EventHandlerType;
 
