@@ -119,7 +119,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         bool isReturning = !returnTypeDescriptor.IsVoid;
 
         string returnValuePrefix = string.Empty;
-        string returnValueName = "returnValue";
+        string returnValueName = "__returnValue";
 
         if (isReturning) {
             returnValuePrefix = $"{returnType.GetFullNameOrName()} {returnValueName} = ";
@@ -142,7 +142,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             if (returnValueTypeConversion != null) {
                 string fullReturnValueTypeConversion = string.Format(returnValueTypeConversion, returnValueName);
                 
-                convertedReturnValueName = "returnValueNative";
+                convertedReturnValueName = "_returnValueNative";
                 
                 sb.AppendLine($"{implPrefix}{returnTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true)} {convertedReturnValueName} = {fullReturnValueTypeConversion};");
             } else {
@@ -153,8 +153,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         if (mayThrow) {
             sb.AppendLine("""
 
-        if (outException is not null) {
-            *outException = null;
+        if (__outException is not null) {
+            *__outException = null;
         }
 
 """);
@@ -164,11 +164,11 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             }
             
             sb.AppendLine("""
-    } catch (Exception exception) {
-        if (outException is not null) {
-            void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
+    } catch (Exception __exception) {
+        if (__outException is not null) {
+            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
                 
-            *outException = exceptionHandleAddress;
+            *__outException = __exceptionHandleAddress;
         }
 
 """);
@@ -199,7 +199,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
     )
     {
         StringBuilder sb = new();
-        string parameterName = "self";
+        string parameterName = "__self";
         convertedSelfParameterName = parameterName;
                 
         string? typeConversion = typeDescriptor.GetTypeConversion(CodeLanguage.CSharpUnmanaged, CodeLanguage.CSharp);
@@ -234,7 +234,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         if (!isStatic) {
             TypeDescriptor declaringTypeDescriptor = declaringType.GetTypeDescriptor(typeDescriptorRegistry);
             string declaringTypeName = declaringTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
-            string parameterString = $"{declaringTypeName} /* {declaringType.GetFullNameOrName()} */ self";
+            string selfParameterName = "__self";
+            string parameterString = $"{declaringTypeName} /* {declaringType.GetFullNameOrName()} */ {selfParameterName}";
 
             parameterList.Add(parameterString);
         }
@@ -252,8 +253,9 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             Type exceptionType = typeof(Exception);
             TypeDescriptor outExceptionTypeDescriptor = exceptionType.GetTypeDescriptor(typeDescriptorRegistry);
             string outExceptionTypeName = outExceptionTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true, true);
+            string outExceptionParameterName = "__outException";
 
-            string outExceptionParameterString = $"{outExceptionTypeName} /* {exceptionType.GetFullNameOrName()} */ outException"; 
+            string outExceptionParameterString = $"{outExceptionTypeName} /* {exceptionType.GetFullNameOrName()} */ {outExceptionParameterName}"; 
             parameterList.Add(outExceptionParameterString);
         }
 
