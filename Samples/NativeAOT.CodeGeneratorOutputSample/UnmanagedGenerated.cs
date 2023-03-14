@@ -1,5 +1,5 @@
 // Number of generated types: 162
-// Number of generated members: 1436
+// Number of generated members: 1435
 
 // <Header>
 using System;
@@ -6368,37 +6368,6 @@ internal static unsafe class System_String
 			return null;
 		}
 	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_String_Chars_Get")]
-	internal static char /* System.Char */ System_String_Chars_Get(byte* /* System.String */ __self, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.String __selfDotNet = InteropUtils.ToDotNetString(__self);
-	
-	
-	    try {
-			System.Char __returnValue = __selfDotNet.Chars;
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return (char)0;
-		}
-	}
-	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Length_Get")]
@@ -29887,8 +29856,6 @@ internal static unsafe class System_Collections_IDictionary
 	
 		}
 	}
-	
-
 	
 
 	

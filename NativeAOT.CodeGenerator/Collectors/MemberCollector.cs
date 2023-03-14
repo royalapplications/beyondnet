@@ -173,6 +173,14 @@ public class MemberCollector
             return;
         }
 
+        bool hasIndexParameters = propertyInfo.GetIndexParameters().Length > 0;
+
+        if (hasIndexParameters) {
+            unsupportedMembers[propertyInfo] = "Has index parameter(s)";
+            
+            return;
+        }
+
         collectedMembers.Add(propertyInfo);
     }
     

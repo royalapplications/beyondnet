@@ -2352,8 +2352,6 @@ System_String_Create(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): Chars
-
 // TODO (Property): Length
 
 void /* System.Void */
