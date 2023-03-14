@@ -1,4 +1,5 @@
 using System.Reflection;
+using NativeAOT.CodeGenerator.Generator;
 
 namespace NativeAOT.CodeGenerator.Syntax;
 
@@ -11,6 +12,15 @@ public class State
         get {
             return m_generatedMembers;
         }
+    }
+    
+    public Result? CSharpUnmanagedResult { get; }
+
+    public State() { }
+
+    public State(Result cSharpUnmanagedResult)
+    {
+        CSharpUnmanagedResult = cSharpUnmanagedResult ?? throw new ArgumentNullException(nameof(cSharpUnmanagedResult));
     }
 
     public GeneratedMember AddGeneratedMember(MemberInfo member)

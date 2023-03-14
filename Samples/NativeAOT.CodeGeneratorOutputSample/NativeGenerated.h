@@ -1,19 +1,26 @@
 // Number of generated types: 159
 // Number of generated members: 0
 
-// <Header>
-// TODO (Header Code)
+#pragma mark - BEGIN Header
+#ifndef TypeDefinitions_h
+#define TypeDefinitions_h
 
-// </Header>
-// <Shared Code>
-// TODO (Shared Code)
+#import <stdlib.h>
 
-// </Shared Code>
-// <Unsupported Types>
+#pragma mark - END Header
+#pragma mark - BEGIN Shared Code
+#pragma mark - Common Enums
+typedef enum __attribute__((enum_extensibility(closed))): uint8_t {
+    CBoolYes = 1,
+    CBoolNo = 0
+} CBool;
+
+#pragma mark - END Shared Code
+#pragma mark - BEGIN Unsupported Types
 // Omitted due to settings
 
-// </Unsupported Types>
-// <APIs>
+#pragma mark - END Unsupported Types
+#pragma mark - BEGIN APIs
 // TODO (Type)
 // TODO (Type)
 // TODO (Type)
@@ -174,4 +181,8 @@
 // TODO (Type)
 // TODO (Type)
 
-// </APIs>
+#pragma mark - END APIs
+#pragma mark - BEGIN Footer
+#endif /* TypeDefinitions_h */
+
+#pragma mark - END Footer

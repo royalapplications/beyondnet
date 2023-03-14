@@ -164,9 +164,9 @@ static class Program
         sb.AppendLine();
 
         foreach (var section in writer.Sections) {
-            sb.AppendLine($"// <{section.Name}>");
+            sb.AppendLine($"#pragma mark - BEGIN {section.Name}");
             sb.AppendLine(section.Code.ToString());
-            sb.AppendLine($"// </{section.Name}>");
+            sb.AppendLine($"#pragma mark - END {section.Name}");
         }
 
         return new(result, sb.ToString());

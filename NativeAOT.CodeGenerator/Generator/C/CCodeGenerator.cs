@@ -24,6 +24,7 @@ public class CCodeGenerator: ICodeGenerator
         SourceCodeSection sharedCodeSection = writer.AddSection("Shared Code");
         SourceCodeSection unsupportedTypesSection = writer.AddSection("Unsupported Types");
         SourceCodeSection apisSection = writer.AddSection("APIs");
+        SourceCodeSection footerSection = writer.AddSection("Footer");
         
         string header = GetHeaderCode();
         headerSection.Code.AppendLine(header);
@@ -49,7 +50,7 @@ public class CCodeGenerator: ICodeGenerator
         Result result = new();
         
         foreach (Type type in types) {
-            Syntax.State state = new();
+            Syntax.State state = new(CSharpUnmanagedResult);
             
             string typeCode = typeSyntaxWriter.Write(type, state);
             
@@ -61,20 +62,37 @@ public class CCodeGenerator: ICodeGenerator
             );
         }
 
+        string footerCode = GetFooterCode();
+        footerSection.Code.AppendLine(footerCode);
+
         return result;
     }
     
     private string GetHeaderCode()
     {
-        return $"""
-// TODO (Header Code)
+        return """
+#ifndef TypeDefinitions_h
+#define TypeDefinitions_h
+
+#import <stdlib.h>
 """;
     }
 
     private string GetSharedCode()
     {
-        return $"""
-// TODO (Shared Code)
+        return """
+#pragma mark - Common Enums
+typedef enum __attribute__((enum_extensibility(closed))): uint8_t {
+    CBoolYes = 1,
+    CBoolNo = 0
+} CBool;
 """;
+    }
+
+    private string GetFooterCode()
+    {
+        return """
+#endif /* TypeDefinitions_h */
+""";        
     }
 }

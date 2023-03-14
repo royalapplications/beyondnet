@@ -1,6 +1,6 @@
 using System.Reflection;
-
-using NativeAOT.CodeGenerator.Generator.C;
+using NativeAOT.CodeGenerator.Generator;
+using Settings = NativeAOT.CodeGenerator.Generator.C.Settings;
 
 namespace NativeAOT.CodeGenerator.Syntax.C;
 
@@ -8,16 +8,15 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
 {
     public Settings Settings { get; }
     
-    // TODO
     private readonly Dictionary<MemberTypes, ICSyntaxWriter> m_syntaxWriters = new() {
-        // { MemberTypes.Constructor, new CConstructorSyntaxWriter() },
-        // { MemberTypes.Property, new CPropertySyntaxWriter() },
-        // { MemberTypes.Method, new CMethodSyntaxWriter() },
-        // { MemberTypes.Field, new CFieldSyntaxWriter() },
-        // { MemberTypes.Event, new CEventSyntaxWriter() }
+        { MemberTypes.Constructor, new CConstructorSyntaxWriter() },
+        { MemberTypes.Property, new CPropertySyntaxWriter() },
+        { MemberTypes.Method, new CMethodSyntaxWriter() },
+        { MemberTypes.Field, new CFieldSyntaxWriter() },
+        { MemberTypes.Event, new CEventSyntaxWriter() }
     };
-    //
-    // private IDestructorSyntaxWriter m_destructorSyntaxWriter = new CDestructorSyntaxWriter();
+    
+    private IDestructorSyntaxWriter m_destructorSyntaxWriter = new CDestructorSyntaxWriter();
     
     public CTypeSyntaxWriter(Settings settings)
     {
@@ -31,6 +30,8 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
 
     public string Write(Type type, State state)
     {
+        Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
+        
         return "// TODO (Type)";
     }
     
