@@ -9,14 +9,14 @@
 
 #pragma mark - END Header
 #pragma mark - BEGIN Shared Code
-#pragma mark - Common Types
+#pragma mark - BEGIN Common Types
 typedef const char* CString;
 
-#pragma mark - Common Enums
 typedef enum __attribute__((enum_extensibility(closed))): uint8_t {
     CBoolYes = 1,
     CBoolNo = 0
 } CBool;
+#pragma mark - END Common Types
 
 #pragma mark - END Shared Code
 #pragma mark - BEGIN Unsupported Types
@@ -844,9 +844,12 @@ typedef void* NativeAOT_CodeGeneratorInputSample_TestClass_t;
 
 #pragma mark - END Type Definitions
 #pragma mark - BEGIN APIs
+#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.NiceLevels
 
 
+#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.NiceLevels
 
+#pragma mark - BEGIN APIs of System.Enum
 CString /* System.String */
 System_Enum_GetName(
 	System_Type_t /* System.Type */ enumType,
@@ -1032,7 +1035,9 @@ System_Enum_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Enum
 
+#pragma mark - BEGIN APIs of System.ValueType
 CBool /* System.Boolean */
 System_ValueType_Equals(
 	System_ValueType_t /* System.ValueType */ self,
@@ -1058,7 +1063,9 @@ System_ValueType_Destroy(
 );
 
 
+#pragma mark - END APIs of System.ValueType
 
+#pragma mark - BEGIN APIs of System.Object
 System_Type_t /* System.Type */
 System_Object_GetType(
 	System_Object_t /* System.Object */ self,
@@ -1109,7 +1116,9 @@ System_Object_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Object
 
+#pragma mark - BEGIN APIs of System.Type
 System_Type_t /* System.Type */
 System_Type_GetType(
 	CString /* System.String */ typeName,
@@ -1479,7 +1488,9 @@ System_Type_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Type
 
+#pragma mark - BEGIN APIs of System.Reflection.MemberInfo
 CBool /* System.Boolean */
 System_Reflection_MemberInfo_HasSameMetadataDefinitionAs(
 	System_Reflection_MemberInfo_t /* System.Reflection.MemberInfo */ self,
@@ -1514,12 +1525,16 @@ System_Reflection_MemberInfo_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Reflection.MemberInfo
+
+#pragma mark - BEGIN APIs of System.Reflection.MemberTypes
+
+
+#pragma mark - END APIs of System.Reflection.MemberTypes
 
 
 
-
-
-
+#pragma mark - BEGIN APIs of System.String
 CString /* System.String */
 System_String_Intern(
 	CString /* System.String */ str,
@@ -2343,10 +2358,14 @@ System_String_Destroy(
 );
 
 
+#pragma mark - END APIs of System.String
+
+#pragma mark - BEGIN APIs of System.StringComparison
 
 
+#pragma mark - END APIs of System.StringComparison
 
-
+#pragma mark - BEGIN APIs of System.Globalization.CultureInfo
 System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */
 System_Globalization_CultureInfo_CreateSpecificCulture(
 	CString /* System.String */ name,
@@ -2467,13 +2486,19 @@ System_Globalization_CultureInfo_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Globalization.CultureInfo
+
+#pragma mark - BEGIN APIs of System.Void
 
 
+#pragma mark - END APIs of System.Void
+
+#pragma mark - BEGIN APIs of System.Globalization.CultureTypes
 
 
+#pragma mark - END APIs of System.Globalization.CultureTypes
 
-
-
+#pragma mark - BEGIN APIs of System.Globalization.CompareInfo
 System_Globalization_CompareInfo_t /* System.Globalization.CompareInfo */
 System_Globalization_CompareInfo_GetCompareInfo(
 	int32_t /* System.Int32 */ culture,
@@ -2891,7 +2916,9 @@ System_Globalization_CompareInfo_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Globalization.CompareInfo
 
+#pragma mark - BEGIN APIs of System.Reflection.Assembly
 System_Reflection_Assembly_t /* System.Reflection.Assembly */
 System_Reflection_Assembly_Load(
 	CString /* System.String */ assemblyString,
@@ -3112,7 +3139,9 @@ System_Reflection_Assembly_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Reflection.Assembly
 
+#pragma mark - BEGIN APIs of System.Reflection.AssemblyName
 System_Object_t /* System.Object */
 System_Reflection_AssemblyName_Clone(
 	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
@@ -3170,7 +3199,9 @@ System_Reflection_AssemblyName_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Reflection.AssemblyName
 
+#pragma mark - BEGIN APIs of System.Version
 System_Object_t /* System.Object */
 System_Version_Clone(
 	System_Version_t /* System.Version */ self,
@@ -3271,8 +3302,10 @@ System_Version_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Version
 
 
+#pragma mark - BEGIN APIs of System.IFormatProvider
 System_Object_t /* System.Object */
 System_IFormatProvider_GetFormat(
 	System_IFormatProvider_t /* System.IFormatProvider */ self,
@@ -3286,28 +3319,44 @@ System_IFormatProvider_Destroy(
 );
 
 
+#pragma mark - END APIs of System.IFormatProvider
+
+#pragma mark - BEGIN APIs of System.Globalization.NumberStyles
 
 
+#pragma mark - END APIs of System.Globalization.NumberStyles
+
+#pragma mark - BEGIN APIs of System.TypeCode
 
 
+#pragma mark - END APIs of System.TypeCode
+
+#pragma mark - BEGIN APIs of System.Reflection.ProcessorArchitecture
 
 
+#pragma mark - END APIs of System.Reflection.ProcessorArchitecture
+
+#pragma mark - BEGIN APIs of System.Reflection.AssemblyContentType
 
 
+#pragma mark - END APIs of System.Reflection.AssemblyContentType
+
+#pragma mark - BEGIN APIs of System.Reflection.AssemblyNameFlags
 
 
+#pragma mark - END APIs of System.Reflection.AssemblyNameFlags
+
+#pragma mark - BEGIN APIs of System.Configuration.Assemblies.AssemblyHashAlgorithm
 
 
+#pragma mark - END APIs of System.Configuration.Assemblies.AssemblyHashAlgorithm
+
+#pragma mark - BEGIN APIs of System.Configuration.Assemblies.AssemblyVersionCompatibility
 
 
+#pragma mark - END APIs of System.Configuration.Assemblies.AssemblyVersionCompatibility
 
-
-
-
-
-
-
-
+#pragma mark - BEGIN APIs of System.Reflection.StrongNameKeyPair
 System_Reflection_StrongNameKeyPair_t /* System.Reflection.StrongNameKeyPair */
 System_Reflection_StrongNameKeyPair_Create(
 	System_IO_FileStream_t /* System.IO.FileStream */ keyPairFile,
@@ -3326,7 +3375,9 @@ System_Reflection_StrongNameKeyPair_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Reflection.StrongNameKeyPair
 
+#pragma mark - BEGIN APIs of System.IO.FileStream
 void /* System.Void */
 System_IO_FileStream_Lock(
 	System_IO_FileStream_t /* System.IO.FileStream */ self,
@@ -3555,7 +3606,9 @@ System_IO_FileStream_Destroy(
 );
 
 
+#pragma mark - END APIs of System.IO.FileStream
 
+#pragma mark - BEGIN APIs of System.IO.Stream
 void /* System.Void */
 System_IO_Stream_CopyTo(
 	System_IO_Stream_t /* System.IO.Stream */ self,
@@ -3694,7 +3747,9 @@ System_IO_Stream_Destroy(
 );
 
 
+#pragma mark - END APIs of System.IO.Stream
 
+#pragma mark - BEGIN APIs of System.MarshalByRefObject
 System_Object_t /* System.Object */
 System_MarshalByRefObject_GetLifetimeService(
 	System_MarshalByRefObject_t /* System.MarshalByRefObject */ self,
@@ -3713,8 +3768,10 @@ System_MarshalByRefObject_Destroy(
 );
 
 
+#pragma mark - END APIs of System.MarshalByRefObject
 
 
+#pragma mark - BEGIN APIs of System.Threading.Tasks.Task
 void /* System.Void */
 System_Threading_Tasks_Task_Start(
 	System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */ self,
@@ -3874,7 +3931,9 @@ System_Threading_Tasks_Task_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Threading.Tasks.Task
 
+#pragma mark - BEGIN APIs of System.Threading.Tasks.TaskScheduler
 System_Threading_Tasks_TaskScheduler_t /* System.Threading.Tasks.TaskScheduler */
 System_Threading_Tasks_TaskScheduler_FromCurrentSynchronizationContext(
 	System_Exception_t* /* System.Exception */ outException
@@ -3886,7 +3945,9 @@ System_Threading_Tasks_TaskScheduler_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Threading.Tasks.TaskScheduler
 
+#pragma mark - BEGIN APIs of System.AggregateException
 void /* System.Void */
 System_AggregateException_GetObjectData(
 	System_AggregateException_t /* System.AggregateException */ self,
@@ -3937,7 +3998,9 @@ System_AggregateException_Destroy(
 );
 
 
+#pragma mark - END APIs of System.AggregateException
 
+#pragma mark - BEGIN APIs of System.Exception
 System_Exception_t /* System.Exception */
 System_Exception_GetBaseException(
 	System_Exception_t /* System.Exception */ self,
@@ -3988,7 +4051,9 @@ System_Exception_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Exception
 
+#pragma mark - BEGIN APIs of System.Reflection.MethodBase
 System_Reflection_MethodBase_t /* System.Reflection.MethodBase */
 System_Reflection_MethodBase_GetMethodFromHandle(
 	System_RuntimeMethodHandle_t /* System.RuntimeMethodHandle */ handle,
@@ -4038,7 +4103,9 @@ System_Reflection_MethodBase_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Reflection.MethodBase
 
+#pragma mark - BEGIN APIs of System.RuntimeMethodHandle
 void /* System.Void */
 System_RuntimeMethodHandle_GetObjectData(
 	System_RuntimeMethodHandle_t /* System.RuntimeMethodHandle */ self,
@@ -4091,7 +4158,9 @@ System_RuntimeMethodHandle_Destroy(
 );
 
 
+#pragma mark - END APIs of System.RuntimeMethodHandle
 
+#pragma mark - BEGIN APIs of System.Runtime.Serialization.SerializationInfo
 void /* System.Void */
 System_Runtime_Serialization_SerializationInfo_SetType(
 	System_Runtime_Serialization_SerializationInfo_t /* System.Runtime.Serialization.SerializationInfo */ self,
@@ -4368,7 +4437,9 @@ System_Runtime_Serialization_SerializationInfo_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Runtime.Serialization.SerializationInfo
 
+#pragma mark - BEGIN APIs of System.Runtime.Serialization.SerializationInfoEnumerator
 CBool /* System.Boolean */
 System_Runtime_Serialization_SerializationInfoEnumerator_MoveNext(
 	System_Runtime_Serialization_SerializationInfoEnumerator_t /* System.Runtime.Serialization.SerializationInfoEnumerator */ self,
@@ -4387,13 +4458,28 @@ System_Runtime_Serialization_SerializationInfoEnumerator_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Runtime.Serialization.SerializationInfoEnumerator
 
+#pragma mark - BEGIN APIs of System.Runtime.Serialization.SerializationEntry
 void /* System.Void */
 System_Runtime_Serialization_SerializationEntry_Destroy(
 	System_Runtime_Serialization_SerializationEntry_t /* System.Runtime.Serialization.SerializationEntry */ self
 );
 
 
+#pragma mark - END APIs of System.Runtime.Serialization.SerializationEntry
+
+
+#pragma mark - BEGIN APIs of System.Globalization.UnicodeCategory
+
+
+#pragma mark - END APIs of System.Globalization.UnicodeCategory
+
+
+#pragma mark - BEGIN APIs of System.MidpointRounding
+
+
+#pragma mark - END APIs of System.MidpointRounding
 
 
 
@@ -4401,14 +4487,7 @@ System_Runtime_Serialization_SerializationEntry_Destroy(
 
 
 
-
-
-
-
-
-
-
-
+#pragma mark - BEGIN APIs of System.Decimal
 System_Decimal_t /* System.Decimal */
 System_Decimal_FromOACurrency(
 	int64_t /* System.Int64 */ cy,
@@ -4821,7 +4900,9 @@ System_Decimal_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Decimal
 
+#pragma mark - BEGIN APIs of System.DateTime
 System_DateTime_t /* System.DateTime */
 System_DateTime_Add(
 	System_DateTime_t /* System.DateTime */ self,
@@ -5330,7 +5411,9 @@ System_DateTime_Destroy(
 );
 
 
+#pragma mark - END APIs of System.DateTime
 
+#pragma mark - BEGIN APIs of System.TimeSpan
 System_TimeSpan_t /* System.TimeSpan */
 System_TimeSpan_Add(
 	System_TimeSpan_t /* System.TimeSpan */ self,
@@ -5569,19 +5652,29 @@ System_TimeSpan_Destroy(
 );
 
 
+#pragma mark - END APIs of System.TimeSpan
+
+#pragma mark - BEGIN APIs of System.Globalization.TimeSpanStyles
 
 
+#pragma mark - END APIs of System.Globalization.TimeSpanStyles
+
+#pragma mark - BEGIN APIs of System.DateTimeKind
 
 
+#pragma mark - END APIs of System.DateTimeKind
+
+#pragma mark - BEGIN APIs of System.DayOfWeek
 
 
+#pragma mark - END APIs of System.DayOfWeek
+
+#pragma mark - BEGIN APIs of System.Globalization.DateTimeStyles
 
 
+#pragma mark - END APIs of System.Globalization.DateTimeStyles
 
-
-
-
-
+#pragma mark - BEGIN APIs of System.DateOnly
 System_DateOnly_t /* System.DateOnly */
 System_DateOnly_FromDayNumber(
 	int32_t /* System.Int32 */ dayNumber,
@@ -5764,7 +5857,9 @@ System_DateOnly_Destroy(
 );
 
 
+#pragma mark - END APIs of System.DateOnly
 
+#pragma mark - BEGIN APIs of System.TimeOnly
 System_TimeOnly_t /* System.TimeOnly */
 System_TimeOnly_Add(
 	System_TimeOnly_t /* System.TimeOnly */ self,
@@ -5969,7 +6064,9 @@ System_TimeOnly_Destroy(
 );
 
 
+#pragma mark - END APIs of System.TimeOnly
 
+#pragma mark - BEGIN APIs of System.Globalization.Calendar
 System_Object_t /* System.Object */
 System_Globalization_Calendar_Clone(
 	System_Globalization_Calendar_t /* System.Globalization.Calendar */ self,
@@ -6278,13 +6375,19 @@ System_Globalization_Calendar_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Globalization.Calendar
+
+#pragma mark - BEGIN APIs of System.Globalization.CalendarAlgorithmType
 
 
+#pragma mark - END APIs of System.Globalization.CalendarAlgorithmType
+
+#pragma mark - BEGIN APIs of System.Globalization.CalendarWeekRule
 
 
+#pragma mark - END APIs of System.Globalization.CalendarWeekRule
 
-
-
+#pragma mark - BEGIN APIs of System.Runtime.Serialization.IFormatterConverter
 System_Object_t /* System.Object */
 System_Runtime_Serialization_IFormatterConverter_Convert(
 	System_Runtime_Serialization_IFormatterConverter_t /* System.Runtime.Serialization.IFormatterConverter */ self,
@@ -6412,7 +6515,9 @@ System_Runtime_Serialization_IFormatterConverter_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Runtime.Serialization.IFormatterConverter
 
+#pragma mark - BEGIN APIs of System.Runtime.Serialization.StreamingContext
 CBool /* System.Boolean */
 System_Runtime_Serialization_StreamingContext_Equals(
 	System_Runtime_Serialization_StreamingContext_t /* System.Runtime.Serialization.StreamingContext */ self,
@@ -6445,11 +6550,15 @@ System_Runtime_Serialization_StreamingContext_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Runtime.Serialization.StreamingContext
+
+#pragma mark - BEGIN APIs of System.Runtime.Serialization.StreamingContextStates
 
 
+#pragma mark - END APIs of System.Runtime.Serialization.StreamingContextStates
 
 
-
+#pragma mark - BEGIN APIs of System.RuntimeTypeHandle
 System_RuntimeTypeHandle_t /* System.RuntimeTypeHandle */
 System_RuntimeTypeHandle_FromIntPtr(
 	int /* System.IntPtr */ value,
@@ -6502,7 +6611,9 @@ System_RuntimeTypeHandle_Destroy(
 );
 
 
+#pragma mark - END APIs of System.RuntimeTypeHandle
 
+#pragma mark - BEGIN APIs of System.ModuleHandle
 int32_t /* System.Int32 */
 System_ModuleHandle_GetHashCode(
 	System_ModuleHandle_t /* System.ModuleHandle */ self,
@@ -6571,7 +6682,9 @@ System_ModuleHandle_Destroy(
 );
 
 
+#pragma mark - END APIs of System.ModuleHandle
 
+#pragma mark - BEGIN APIs of System.RuntimeFieldHandle
 int32_t /* System.Int32 */
 System_RuntimeFieldHandle_GetHashCode(
 	System_RuntimeFieldHandle_t /* System.RuntimeFieldHandle */ self,
@@ -6618,26 +6731,38 @@ System_RuntimeFieldHandle_Destroy(
 );
 
 
+#pragma mark - END APIs of System.RuntimeFieldHandle
+
+#pragma mark - BEGIN APIs of System.Reflection.MethodAttributes
 
 
+#pragma mark - END APIs of System.Reflection.MethodAttributes
+
+#pragma mark - BEGIN APIs of System.Reflection.MethodImplAttributes
 
 
+#pragma mark - END APIs of System.Reflection.MethodImplAttributes
 
-
-
+#pragma mark - BEGIN APIs of System.Reflection.MethodBody
 void /* System.Void */
 System_Reflection_MethodBody_Destroy(
 	System_Reflection_MethodBody_t /* System.Reflection.MethodBody */ self
 );
 
 
+#pragma mark - END APIs of System.Reflection.MethodBody
+
+#pragma mark - BEGIN APIs of System.Reflection.CallingConventions
 
 
+#pragma mark - END APIs of System.Reflection.CallingConventions
+
+#pragma mark - BEGIN APIs of System.Reflection.BindingFlags
 
 
+#pragma mark - END APIs of System.Reflection.BindingFlags
 
-
-
+#pragma mark - BEGIN APIs of System.Reflection.Binder
 System_Object_t /* System.Object */
 System_Reflection_Binder_ChangeType(
 	System_Reflection_Binder_t /* System.Reflection.Binder */ self,
@@ -6653,7 +6778,9 @@ System_Reflection_Binder_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Reflection.Binder
 
+#pragma mark - BEGIN APIs of System.Reflection.FieldInfo
 System_Reflection_FieldInfo_t /* System.Reflection.FieldInfo */
 System_Reflection_FieldInfo_GetFieldFromHandle(
 	System_RuntimeFieldHandle_t /* System.RuntimeFieldHandle */ handle,
@@ -6718,10 +6845,14 @@ System_Reflection_FieldInfo_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Reflection.FieldInfo
+
+#pragma mark - BEGIN APIs of System.Reflection.FieldAttributes
 
 
+#pragma mark - END APIs of System.Reflection.FieldAttributes
 
-
+#pragma mark - BEGIN APIs of System.Reflection.PropertyInfo
 System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
 System_Reflection_PropertyInfo_GetGetMethod(
 	System_Reflection_PropertyInfo_t /* System.Reflection.PropertyInfo */ self,
@@ -6794,10 +6925,14 @@ System_Reflection_PropertyInfo_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Reflection.PropertyInfo
+
+#pragma mark - BEGIN APIs of System.Reflection.PropertyAttributes
 
 
+#pragma mark - END APIs of System.Reflection.PropertyAttributes
 
-
+#pragma mark - BEGIN APIs of System.Reflection.MethodInfo
 System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
 System_Reflection_MethodInfo_GetGenericMethodDefinition(
 	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
@@ -6829,7 +6964,9 @@ System_Reflection_MethodInfo_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Reflection.MethodInfo
 
+#pragma mark - BEGIN APIs of System.Reflection.ParameterInfo
 CBool /* System.Boolean */
 System_Reflection_ParameterInfo_IsDefined(
 	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ self,
@@ -6857,10 +6994,14 @@ System_Reflection_ParameterInfo_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Reflection.ParameterInfo
+
+#pragma mark - BEGIN APIs of System.Reflection.ParameterAttributes
 
 
+#pragma mark - END APIs of System.Reflection.ParameterAttributes
 
-
+#pragma mark - BEGIN APIs of System.Reflection.ICustomAttributeProvider
 CBool /* System.Boolean */
 System_Reflection_ICustomAttributeProvider_IsDefined(
 	System_Reflection_ICustomAttributeProvider_t /* System.Reflection.ICustomAttributeProvider */ self,
@@ -6875,7 +7016,9 @@ System_Reflection_ICustomAttributeProvider_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Reflection.ICustomAttributeProvider
 
+#pragma mark - BEGIN APIs of System.Collections.IDictionary
 CBool /* System.Boolean */
 System_Collections_IDictionary_Contains(
 	System_Collections_IDictionary_t /* System.Collections.IDictionary */ self,
@@ -6916,7 +7059,9 @@ System_Collections_IDictionary_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Collections.IDictionary
 
+#pragma mark - BEGIN APIs of System.Collections.ICollection
 void /* System.Void */
 System_Collections_ICollection_CopyTo(
 	System_Collections_ICollection_t /* System.Collections.ICollection */ self,
@@ -6931,7 +7076,9 @@ System_Collections_ICollection_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Collections.ICollection
 
+#pragma mark - BEGIN APIs of System.Array
 void /* System.Void */
 System_Array_Copy(
 	System_Array_t /* System.Array */ sourceArray,
@@ -7346,7 +7493,9 @@ System_Array_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Array
 
+#pragma mark - BEGIN APIs of System.Collections.IComparer
 int32_t /* System.Int32 */
 System_Collections_IComparer_Compare(
 	System_Collections_IComparer_t /* System.Collections.IComparer */ self,
@@ -7361,7 +7510,9 @@ System_Collections_IComparer_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Collections.IComparer
 
+#pragma mark - BEGIN APIs of System.Collections.IEnumerator
 CBool /* System.Boolean */
 System_Collections_IEnumerator_MoveNext(
 	System_Collections_IEnumerator_t /* System.Collections.IEnumerator */ self,
@@ -7380,14 +7531,18 @@ System_Collections_IEnumerator_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Collections.IEnumerator
 
+#pragma mark - BEGIN APIs of System.Collections.IDictionaryEnumerator
 void /* System.Void */
 System_Collections_IDictionaryEnumerator_Destroy(
 	System_Collections_IDictionaryEnumerator_t /* System.Collections.IDictionaryEnumerator */ self
 );
 
 
+#pragma mark - END APIs of System.Collections.IDictionaryEnumerator
 
+#pragma mark - BEGIN APIs of System.Collections.DictionaryEntry
 CString /* System.String */
 System_Collections_DictionaryEntry_ToString(
 	System_Collections_DictionaryEntry_t /* System.Collections.DictionaryEntry */ self,
@@ -7407,13 +7562,19 @@ System_Collections_DictionaryEntry_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Collections.DictionaryEntry
+
+#pragma mark - BEGIN APIs of System.Threading.Tasks.TaskStatus
 
 
+#pragma mark - END APIs of System.Threading.Tasks.TaskStatus
+
+#pragma mark - BEGIN APIs of System.Threading.Tasks.TaskCreationOptions
 
 
+#pragma mark - END APIs of System.Threading.Tasks.TaskCreationOptions
 
-
-
+#pragma mark - BEGIN APIs of System.Threading.Tasks.TaskFactory
 System_Threading_Tasks_TaskFactory_t /* System.Threading.Tasks.TaskFactory */
 System_Threading_Tasks_TaskFactory_Create(
 	System_Exception_t* /* System.Exception */ outException
@@ -7453,7 +7614,9 @@ System_Threading_Tasks_TaskFactory_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Threading.Tasks.TaskFactory
 
+#pragma mark - BEGIN APIs of System.Threading.CancellationToken
 CBool /* System.Boolean */
 System_Threading_CancellationToken_Equals(
 	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ self,
@@ -7492,7 +7655,9 @@ System_Threading_CancellationToken_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Threading.CancellationToken
 
+#pragma mark - BEGIN APIs of System.Threading.WaitHandle
 void /* System.Void */
 System_Threading_WaitHandle_Close(
 	System_Threading_WaitHandle_t /* System.Threading.WaitHandle */ self,
@@ -7572,7 +7737,9 @@ System_Threading_WaitHandle_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Threading.WaitHandle
 
+#pragma mark - BEGIN APIs of Microsoft.Win32.SafeHandles.SafeWaitHandle
 Microsoft_Win32_SafeHandles_SafeWaitHandle_t /* Microsoft.Win32.SafeHandles.SafeWaitHandle */
 Microsoft_Win32_SafeHandles_SafeWaitHandle_Create(
 	System_Exception_t* /* System.Exception */ outException
@@ -7591,14 +7758,18 @@ Microsoft_Win32_SafeHandles_SafeWaitHandle_Destroy(
 );
 
 
+#pragma mark - END APIs of Microsoft.Win32.SafeHandles.SafeWaitHandle
 
+#pragma mark - BEGIN APIs of Microsoft.Win32.SafeHandles.SafeHandleZeroOrMinusOneIsInvalid
 void /* System.Void */
 Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid_Destroy(
 	Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid_t /* Microsoft.Win32.SafeHandles.SafeHandleZeroOrMinusOneIsInvalid */ self
 );
 
 
+#pragma mark - END APIs of Microsoft.Win32.SafeHandles.SafeHandleZeroOrMinusOneIsInvalid
 
+#pragma mark - BEGIN APIs of System.Runtime.InteropServices.SafeHandle
 int /* System.IntPtr */
 System_Runtime_InteropServices_SafeHandle_DangerousGetHandle(
 	System_Runtime_InteropServices_SafeHandle_t /* System.Runtime.InteropServices.SafeHandle */ self,
@@ -7635,14 +7806,18 @@ System_Runtime_InteropServices_SafeHandle_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Runtime.InteropServices.SafeHandle
 
+#pragma mark - BEGIN APIs of System.Runtime.ConstrainedExecution.CriticalFinalizerObject
 void /* System.Void */
 System_Runtime_ConstrainedExecution_CriticalFinalizerObject_Destroy(
 	System_Runtime_ConstrainedExecution_CriticalFinalizerObject_t /* System.Runtime.ConstrainedExecution.CriticalFinalizerObject */ self
 );
 
 
+#pragma mark - END APIs of System.Runtime.ConstrainedExecution.CriticalFinalizerObject
 
+#pragma mark - BEGIN APIs of System.Threading.CancellationTokenRegistration
 void /* System.Void */
 System_Threading_CancellationTokenRegistration_Dispose(
 	System_Threading_CancellationTokenRegistration_t /* System.Threading.CancellationTokenRegistration */ self,
@@ -7687,7 +7862,9 @@ System_Threading_CancellationTokenRegistration_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Threading.CancellationTokenRegistration
 
+#pragma mark - BEGIN APIs of System.Threading.Tasks.ValueTask
 System_Threading_Tasks_ValueTask_t /* System.Threading.Tasks.ValueTask */
 System_Threading_Tasks_ValueTask_FromCanceled(
 	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
@@ -7764,7 +7941,9 @@ System_Threading_Tasks_ValueTask_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Threading.Tasks.ValueTask
 
+#pragma mark - BEGIN APIs of System.Runtime.CompilerServices.ValueTaskAwaiter
 void /* System.Void */
 System_Runtime_CompilerServices_ValueTaskAwaiter_GetResult(
 	System_Runtime_CompilerServices_ValueTaskAwaiter_t /* System.Runtime.CompilerServices.ValueTaskAwaiter */ self,
@@ -7777,7 +7956,9 @@ System_Runtime_CompilerServices_ValueTaskAwaiter_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Runtime.CompilerServices.ValueTaskAwaiter
 
+#pragma mark - BEGIN APIs of System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable
 System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_t /* System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter */
 System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_GetAwaiter(
 	System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_t /* System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable */ self,
@@ -7790,7 +7971,9 @@ System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable
 
+#pragma mark - BEGIN APIs of System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter
 void /* System.Void */
 System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_GetResult(
 	System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_t /* System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter */ self,
@@ -7803,7 +7986,9 @@ System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTask
 );
 
 
+#pragma mark - END APIs of System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter
 
+#pragma mark - BEGIN APIs of System.Threading.Tasks.Sources.IValueTaskSource
 System_Threading_Tasks_Sources_ValueTaskSourceStatus /* System.Threading.Tasks.Sources.ValueTaskSourceStatus */
 System_Threading_Tasks_Sources_IValueTaskSource_GetStatus(
 	System_Threading_Tasks_Sources_IValueTaskSource_t /* System.Threading.Tasks.Sources.IValueTaskSource */ self,
@@ -7824,23 +8009,33 @@ System_Threading_Tasks_Sources_IValueTaskSource_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Threading.Tasks.Sources.IValueTaskSource
+
+#pragma mark - BEGIN APIs of System.Threading.Tasks.Sources.ValueTaskSourceStatus
 
 
+#pragma mark - END APIs of System.Threading.Tasks.Sources.ValueTaskSourceStatus
+
+#pragma mark - BEGIN APIs of System.Threading.Tasks.Sources.ValueTaskSourceOnCompletedFlags
 
 
+#pragma mark - END APIs of System.Threading.Tasks.Sources.ValueTaskSourceOnCompletedFlags
+
+#pragma mark - BEGIN APIs of System.Threading.Tasks.TaskContinuationOptions
 
 
+#pragma mark - END APIs of System.Threading.Tasks.TaskContinuationOptions
 
-
-
-
+#pragma mark - BEGIN APIs of System.IAsyncResult
 void /* System.Void */
 System_IAsyncResult_Destroy(
 	System_IAsyncResult_t /* System.IAsyncResult */ self
 );
 
 
+#pragma mark - END APIs of System.IAsyncResult
 
+#pragma mark - BEGIN APIs of System.Runtime.CompilerServices.TaskAwaiter
 void /* System.Void */
 System_Runtime_CompilerServices_TaskAwaiter_GetResult(
 	System_Runtime_CompilerServices_TaskAwaiter_t /* System.Runtime.CompilerServices.TaskAwaiter */ self,
@@ -7853,7 +8048,9 @@ System_Runtime_CompilerServices_TaskAwaiter_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Runtime.CompilerServices.TaskAwaiter
 
+#pragma mark - BEGIN APIs of System.Runtime.CompilerServices.ConfiguredTaskAwaitable
 System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_t /* System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter */
 System_Runtime_CompilerServices_ConfiguredTaskAwaitable_GetAwaiter(
 	System_Runtime_CompilerServices_ConfiguredTaskAwaitable_t /* System.Runtime.CompilerServices.ConfiguredTaskAwaitable */ self,
@@ -7866,7 +8063,9 @@ System_Runtime_CompilerServices_ConfiguredTaskAwaitable_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Runtime.CompilerServices.ConfiguredTaskAwaitable
 
+#pragma mark - BEGIN APIs of System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter
 void /* System.Void */
 System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_GetResult(
 	System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_t /* System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter */ self,
@@ -7879,7 +8078,9 @@ System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_De
 );
 
 
+#pragma mark - END APIs of System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter
 
+#pragma mark - BEGIN APIs of System.Runtime.CompilerServices.YieldAwaitable
 System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_t /* System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter */
 System_Runtime_CompilerServices_YieldAwaitable_GetAwaiter(
 	System_Runtime_CompilerServices_YieldAwaitable_t /* System.Runtime.CompilerServices.YieldAwaitable */ self,
@@ -7892,7 +8093,9 @@ System_Runtime_CompilerServices_YieldAwaitable_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Runtime.CompilerServices.YieldAwaitable
 
+#pragma mark - BEGIN APIs of System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter
 void /* System.Void */
 System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_GetResult(
 	System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_t /* System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter */ self,
@@ -7905,10 +8108,14 @@ System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter
+
+#pragma mark - BEGIN APIs of System.IO.SeekOrigin
 
 
+#pragma mark - END APIs of System.IO.SeekOrigin
 
-
+#pragma mark - BEGIN APIs of Microsoft.Win32.SafeHandles.SafeFileHandle
 Microsoft_Win32_SafeHandles_SafeFileHandle_t /* Microsoft.Win32.SafeHandles.SafeFileHandle */
 Microsoft_Win32_SafeHandles_SafeFileHandle_Create(
 	int /* System.IntPtr */ preexistingHandle,
@@ -7927,19 +8134,29 @@ Microsoft_Win32_SafeHandles_SafeFileHandle_Destroy(
 );
 
 
+#pragma mark - END APIs of Microsoft.Win32.SafeHandles.SafeFileHandle
+
+#pragma mark - BEGIN APIs of System.IO.FileAccess
 
 
+#pragma mark - END APIs of System.IO.FileAccess
+
+#pragma mark - BEGIN APIs of System.IO.FileMode
 
 
+#pragma mark - END APIs of System.IO.FileMode
+
+#pragma mark - BEGIN APIs of System.IO.FileShare
 
 
+#pragma mark - END APIs of System.IO.FileShare
+
+#pragma mark - BEGIN APIs of System.IO.FileOptions
 
 
+#pragma mark - END APIs of System.IO.FileOptions
 
-
-
-
-
+#pragma mark - BEGIN APIs of System.IO.FileStreamOptions
 System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */
 System_IO_FileStreamOptions_Create(
 	System_Exception_t* /* System.Exception */ outException
@@ -7951,7 +8168,9 @@ System_IO_FileStreamOptions_Destroy(
 );
 
 
+#pragma mark - END APIs of System.IO.FileStreamOptions
 
+#pragma mark - BEGIN APIs of System.Reflection.ManifestResourceInfo
 System_Reflection_ManifestResourceInfo_t /* System.Reflection.ManifestResourceInfo */
 System_Reflection_ManifestResourceInfo_Create(
 	System_Reflection_Assembly_t /* System.Reflection.Assembly */ containingAssembly,
@@ -7966,10 +8185,14 @@ System_Reflection_ManifestResourceInfo_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Reflection.ManifestResourceInfo
+
+#pragma mark - BEGIN APIs of System.Reflection.ResourceLocation
 
 
+#pragma mark - END APIs of System.Reflection.ResourceLocation
 
-
+#pragma mark - BEGIN APIs of System.Reflection.Module
 CBool /* System.Boolean */
 System_Reflection_Module_IsResource(
 	System_Reflection_Module_t /* System.Reflection.Module */ self,
@@ -8098,7 +8321,9 @@ System_Reflection_Module_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Reflection.Module
 
+#pragma mark - BEGIN APIs of System.Guid
 System_Guid_t /* System.Guid */
 System_Guid_Parse(
 	CString /* System.String */ input,
@@ -8223,10 +8448,14 @@ System_Guid_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Guid
+
+#pragma mark - BEGIN APIs of System.Security.SecurityRuleSet
 
 
+#pragma mark - END APIs of System.Security.SecurityRuleSet
 
-
+#pragma mark - BEGIN APIs of System.Text.Rune
 int32_t /* System.Int32 */
 System_Text_Rune_CompareTo(
 	System_Text_Rune_t /* System.Text.Rune */ self,
@@ -8414,13 +8643,19 @@ System_Text_Rune_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Text.Rune
+
+#pragma mark - BEGIN APIs of System.Buffers.OperationStatus
 
 
+#pragma mark - END APIs of System.Buffers.OperationStatus
+
+#pragma mark - BEGIN APIs of System.Globalization.CompareOptions
 
 
+#pragma mark - END APIs of System.Globalization.CompareOptions
 
-
-
+#pragma mark - BEGIN APIs of System.Globalization.SortKey
 int32_t /* System.Int32 */
 System_Globalization_SortKey_Compare(
 	System_Globalization_SortKey_t /* System.Globalization.SortKey */ sortkey1,
@@ -8453,7 +8688,9 @@ System_Globalization_SortKey_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Globalization.SortKey
 
+#pragma mark - BEGIN APIs of System.Globalization.SortVersion
 CBool /* System.Boolean */
 System_Globalization_SortVersion_Equals(
 	System_Globalization_SortVersion_t /* System.Globalization.SortVersion */ self,
@@ -8487,7 +8724,9 @@ System_Globalization_SortVersion_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Globalization.SortVersion
 
+#pragma mark - BEGIN APIs of System.Globalization.TextInfo
 System_Object_t /* System.Object */
 System_Globalization_TextInfo_Clone(
 	System_Globalization_TextInfo_t /* System.Globalization.TextInfo */ self,
@@ -8560,7 +8799,9 @@ System_Globalization_TextInfo_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Globalization.TextInfo
 
+#pragma mark - BEGIN APIs of System.Globalization.NumberFormatInfo
 System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */
 System_Globalization_NumberFormatInfo_GetInstance(
 	System_IFormatProvider_t /* System.IFormatProvider */ formatProvider,
@@ -8597,10 +8838,14 @@ System_Globalization_NumberFormatInfo_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Globalization.NumberFormatInfo
+
+#pragma mark - BEGIN APIs of System.Globalization.DigitShapes
 
 
+#pragma mark - END APIs of System.Globalization.DigitShapes
 
-
+#pragma mark - BEGIN APIs of System.Globalization.DateTimeFormatInfo
 System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */
 System_Globalization_DateTimeFormatInfo_GetInstance(
 	System_IFormatProvider_t /* System.IFormatProvider */ provider,
@@ -8693,7 +8938,9 @@ System_Globalization_DateTimeFormatInfo_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Globalization.DateTimeFormatInfo
 
+#pragma mark - BEGIN APIs of System.CharEnumerator
 System_Object_t /* System.Object */
 System_CharEnumerator_Clone(
 	System_CharEnumerator_t /* System.CharEnumerator */ self,
@@ -8724,7 +8971,9 @@ System_CharEnumerator_Destroy(
 );
 
 
+#pragma mark - END APIs of System.CharEnumerator
 
+#pragma mark - BEGIN APIs of System.Text.StringRuneEnumerator
 System_Text_StringRuneEnumerator_t /* System.Text.StringRuneEnumerator */
 System_Text_StringRuneEnumerator_GetEnumerator(
 	System_Text_StringRuneEnumerator_t /* System.Text.StringRuneEnumerator */ self,
@@ -8743,10 +8992,14 @@ System_Text_StringRuneEnumerator_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Text.StringRuneEnumerator
+
+#pragma mark - BEGIN APIs of System.Text.NormalizationForm
 
 
+#pragma mark - END APIs of System.Text.NormalizationForm
 
-
+#pragma mark - BEGIN APIs of System.Text.CompositeFormat
 System_Text_CompositeFormat_t /* System.Text.CompositeFormat */
 System_Text_CompositeFormat_Parse(
 	CString /* System.String */ format,
@@ -8759,10 +9012,14 @@ System_Text_CompositeFormat_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Text.CompositeFormat
+
+#pragma mark - BEGIN APIs of System.StringSplitOptions
 
 
+#pragma mark - END APIs of System.StringSplitOptions
 
-
+#pragma mark - BEGIN APIs of System.Text.Encoding
 void /* System.Void */
 System_Text_Encoding_RegisterProvider(
 	System_Text_EncodingProvider_t /* System.Text.EncodingProvider */ provider,
@@ -8886,7 +9143,9 @@ System_Text_Encoding_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Text.Encoding
 
+#pragma mark - BEGIN APIs of System.Text.EncodingProvider
 System_Text_Encoding_t /* System.Text.Encoding */
 System_Text_EncodingProvider_GetEncoding(
 	System_Text_EncodingProvider_t /* System.Text.EncodingProvider */ self,
@@ -8925,7 +9184,9 @@ System_Text_EncodingProvider_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Text.EncodingProvider
 
+#pragma mark - BEGIN APIs of System.Text.EncoderFallback
 System_Text_EncoderFallbackBuffer_t /* System.Text.EncoderFallbackBuffer */
 System_Text_EncoderFallback_CreateFallbackBuffer(
 	System_Text_EncoderFallback_t /* System.Text.EncoderFallback */ self,
@@ -8938,7 +9199,9 @@ System_Text_EncoderFallback_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Text.EncoderFallback
 
+#pragma mark - BEGIN APIs of System.Text.EncoderFallbackBuffer
 CBool /* System.Boolean */
 System_Text_EncoderFallbackBuffer_Fallback(
 	System_Text_EncoderFallbackBuffer_t /* System.Text.EncoderFallbackBuffer */ self,
@@ -8980,7 +9243,9 @@ System_Text_EncoderFallbackBuffer_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Text.EncoderFallbackBuffer
 
+#pragma mark - BEGIN APIs of System.Text.DecoderFallback
 System_Text_DecoderFallbackBuffer_t /* System.Text.DecoderFallbackBuffer */
 System_Text_DecoderFallback_CreateFallbackBuffer(
 	System_Text_DecoderFallback_t /* System.Text.DecoderFallback */ self,
@@ -8993,7 +9258,9 @@ System_Text_DecoderFallback_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Text.DecoderFallback
 
+#pragma mark - BEGIN APIs of System.Text.DecoderFallbackBuffer
 uint8_t /* System.Char */
 System_Text_DecoderFallbackBuffer_GetNextChar(
 	System_Text_DecoderFallbackBuffer_t /* System.Text.DecoderFallbackBuffer */ self,
@@ -9018,7 +9285,9 @@ System_Text_DecoderFallbackBuffer_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Text.DecoderFallbackBuffer
 
+#pragma mark - BEGIN APIs of System.Text.Decoder
 void /* System.Void */
 System_Text_Decoder_Reset(
 	System_Text_Decoder_t /* System.Text.Decoder */ self,
@@ -9031,7 +9300,9 @@ System_Text_Decoder_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Text.Decoder
 
+#pragma mark - BEGIN APIs of System.Text.Encoder
 void /* System.Void */
 System_Text_Encoder_Reset(
 	System_Text_Encoder_t /* System.Text.Encoder */ self,
@@ -9044,13 +9315,19 @@ System_Text_Encoder_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Text.Encoder
+
+#pragma mark - BEGIN APIs of System.Reflection.GenericParameterAttributes
 
 
+#pragma mark - END APIs of System.Reflection.GenericParameterAttributes
+
+#pragma mark - BEGIN APIs of System.Reflection.TypeAttributes
 
 
+#pragma mark - END APIs of System.Reflection.TypeAttributes
 
-
-
+#pragma mark - BEGIN APIs of System.Runtime.InteropServices.StructLayoutAttribute
 System_Runtime_InteropServices_StructLayoutAttribute_t /* System.Runtime.InteropServices.StructLayoutAttribute */
 System_Runtime_InteropServices_StructLayoutAttribute_Create(
 	System_Runtime_InteropServices_LayoutKind /* System.Runtime.InteropServices.LayoutKind */ layoutKind,
@@ -9069,7 +9346,9 @@ System_Runtime_InteropServices_StructLayoutAttribute_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Runtime.InteropServices.StructLayoutAttribute
 
+#pragma mark - BEGIN APIs of System.Attribute
 CBool /* System.Boolean */
 System_Attribute_IsDefined(
 	System_Reflection_MemberInfo_t /* System.Reflection.MemberInfo */ element,
@@ -9222,13 +9501,19 @@ System_Attribute_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Attribute
+
+#pragma mark - BEGIN APIs of System.Runtime.InteropServices.LayoutKind
 
 
+#pragma mark - END APIs of System.Runtime.InteropServices.LayoutKind
+
+#pragma mark - BEGIN APIs of System.Runtime.InteropServices.CharSet
 
 
+#pragma mark - END APIs of System.Runtime.InteropServices.CharSet
 
-
-
+#pragma mark - BEGIN APIs of System.Reflection.ConstructorInfo
 CBool /* System.Boolean */
 System_Reflection_ConstructorInfo_Equals(
 	System_Reflection_ConstructorInfo_t /* System.Reflection.ConstructorInfo */ self,
@@ -9248,7 +9533,9 @@ System_Reflection_ConstructorInfo_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Reflection.ConstructorInfo
 
+#pragma mark - BEGIN APIs of System.Reflection.EventInfo
 System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
 System_Reflection_EventInfo_GetAddMethod(
 	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
@@ -9307,17 +9594,23 @@ System_Reflection_EventInfo_Destroy(
 );
 
 
+#pragma mark - END APIs of System.Reflection.EventInfo
+
+#pragma mark - BEGIN APIs of System.Reflection.EventAttributes
 
 
+#pragma mark - END APIs of System.Reflection.EventAttributes
 
-
+#pragma mark - BEGIN APIs of System.Reflection.InterfaceMapping
 void /* System.Void */
 System_Reflection_InterfaceMapping_Destroy(
 	System_Reflection_InterfaceMapping_t /* System.Reflection.InterfaceMapping */ self
 );
 
 
+#pragma mark - END APIs of System.Reflection.InterfaceMapping
 
+#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Person
 CString /* System.String */
 NativeAOT_CodeGeneratorInputSample_Person_GetFirstName(
 	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
@@ -9402,10 +9695,14 @@ NativeAOT_CodeGeneratorInputSample_Person_Destroy(
 );
 
 
+#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.Person
+
+#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.TestEnum
 
 
+#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.TestEnum
 
-
+#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.TestClass
 void /* System.Void */
 NativeAOT_CodeGeneratorInputSample_TestClass_SayHello(
 	NativeAOT_CodeGeneratorInputSample_TestClass_t /* NativeAOT.CodeGeneratorInputSample.TestClass */ self,
@@ -9464,6 +9761,7 @@ NativeAOT_CodeGeneratorInputSample_TestClass_Destroy(
 );
 
 
+#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.TestClass
 
 
 #pragma mark - END APIs

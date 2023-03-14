@@ -84,14 +84,14 @@ public class CCodeGenerator: ICodeGenerator
     private string GetSharedCode()
     {
         return """
-#pragma mark - Common Types
+#pragma mark - BEGIN Common Types
 typedef const char* CString;
 
-#pragma mark - Common Enums
 typedef enum __attribute__((enum_extensibility(closed))): uint8_t {
     CBoolYes = 1,
     CBoolNo = 0
 } CBool;
+#pragma mark - END Common Types
 """;
     }
 

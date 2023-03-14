@@ -133,6 +133,10 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
 
         StringBuilder sb = new();
 
+        string fullTypeName = type.GetFullNameOrName();
+
+        sb.AppendLine($"#pragma mark - BEGIN APIs of {fullTypeName}");
+
         foreach (var cSharpMember in cSharpMembers) {
             var member = cSharpMember.Member;
             var memberType = member.MemberType;
@@ -156,6 +160,8 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
 
         sb.AppendLine(destructorCode);
         sb.AppendLine();
+        
+        sb.AppendLine($"#pragma mark - END APIs of {fullTypeName}");
 
         return sb.ToString();
     }
