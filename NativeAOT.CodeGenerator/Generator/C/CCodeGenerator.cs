@@ -84,6 +84,9 @@ public class CCodeGenerator: ICodeGenerator
     private string GetSharedCode()
     {
         return """
+#pragma mark - Common Types
+typedef char* CString;
+
 #pragma mark - Common Enums
 typedef enum __attribute__((enum_extensibility(closed))): uint8_t {
     CBoolYes = 1,

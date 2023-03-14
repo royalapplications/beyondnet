@@ -68,6 +68,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         
         state.AddGeneratedMember(
             memberInfo,
+            mayThrow,
             methodNameC,
             CodeLanguage.CSharpUnmanaged
         );

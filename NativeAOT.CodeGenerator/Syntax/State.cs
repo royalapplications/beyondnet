@@ -1,4 +1,5 @@
 using System.Reflection;
+
 using NativeAOT.CodeGenerator.Generator;
 
 namespace NativeAOT.CodeGenerator.Syntax;
@@ -23,9 +24,15 @@ public class State
         CSharpUnmanagedResult = cSharpUnmanagedResult ?? throw new ArgumentNullException(nameof(cSharpUnmanagedResult));
     }
 
-    public GeneratedMember AddGeneratedMember(MemberInfo member)
+    public GeneratedMember AddGeneratedMember(
+        MemberInfo member,
+        bool mayThrow
+    )
     {
-        GeneratedMember generatedMember = new(member);
+        GeneratedMember generatedMember = new(
+            member,
+            mayThrow
+        );
         
         m_generatedMembers.Add(generatedMember);
 
@@ -34,11 +41,15 @@ public class State
 
     public GeneratedMember AddGeneratedMember(
         MemberInfo member,
+        bool mayThrow,
         string generatedName,
         CodeLanguage generatedNameLanguage
     )
     {
-        GeneratedMember generatedMember = AddGeneratedMember(member);
+        GeneratedMember generatedMember = AddGeneratedMember(
+            member,
+            mayThrow
+        );
         
         generatedMember.SetGeneratedName(generatedName, generatedNameLanguage);
         

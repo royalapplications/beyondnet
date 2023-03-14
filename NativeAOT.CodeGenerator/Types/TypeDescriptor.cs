@@ -8,6 +8,7 @@ public class TypeDescriptor
 
     public bool IsPrimitive => ManagedType.IsPrimitive;
     public bool IsReferenceType => ManagedType.IsReferenceType();
+    public bool IsStruct => ManagedType.IsStruct();
     public bool IsValueType => ManagedType.IsValueType;
     public bool IsEnum => ManagedType.IsEnum;
     public bool IsBool => ManagedType.IsBoolean();
@@ -73,13 +74,21 @@ public class TypeDescriptor
         }
 
         if (includeModifiers) {
-            typeName = AddModifiersToTypeName(typeName, language, isOutParameter);
+            typeName = AddModifiersToTypeName(
+                typeName,
+                language,
+                isOutParameter
+            );
         }
 
         return typeName;
     }
 
-    private string AddModifiersToTypeName(string typeName, CodeLanguage language, bool isOutParameter)
+    private string AddModifiersToTypeName(
+        string typeName,
+        CodeLanguage language,
+        bool isOutParameter
+    )
     {
         if (!RequiresNativePointer &&
             !isOutParameter) {
@@ -101,9 +110,9 @@ public class TypeDescriptor
             case CodeLanguage.C:
                 if (RequiresNativePointer && 
                     isOutParameter) {
-                    typeNameWithModifiers = $"{typeName}**";
-                } else {
                     typeNameWithModifiers = $"{typeName}*";
+                } else {
+                    typeNameWithModifiers = $"{typeName}";
                 }
                 
                 break;
@@ -125,8 +134,17 @@ public class TypeDescriptor
                 }
             case CodeLanguage.C:
                 string typeName = ManagedType.GetFullNameOrName();
-                string cTypeName = $"{typeName.Replace('.', '_')}_t"; 
+                string cTypeName;
                 
+                if (IsReferenceType ||
+                    IsStruct) {
+                    cTypeName = $"{typeName.Replace('.', '_')}_t";    
+                } else if (IsEnum) {
+                    cTypeName = typeName.Replace('.', '_');
+                } else {
+                    throw new Exception("Unknown kind of type");
+                }
+
                 return cTypeName;
             default:
                 throw new NotImplementedException();

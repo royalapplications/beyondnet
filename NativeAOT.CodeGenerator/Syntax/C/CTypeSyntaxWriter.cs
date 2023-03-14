@@ -55,7 +55,7 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         if (type.IsEnum) {
             sb.AppendLine($"// TODO: Enum definition ({cTypeName})");
         } else {
-            sb.AppendLine($"typedef void* {cTypeName};");
+            sb.AppendLine($"typedef void* {cTypeName}_t;");
         }
         
         return sb.ToString();

@@ -49,6 +49,8 @@ public class TypeDescriptorRegistry
             BuiltIn.BuiltInTypeDescriptors.VoidTypeDescriptor,
             
             BuiltIn.BuiltInTypeDescriptors.BoolTypeDescriptor,
+            BuiltIn.BuiltInTypeDescriptors.CharTypeDescriptor,
+            BuiltIn.BuiltInTypeDescriptors.NintTypeDescriptor,
             
             BuiltIn.BuiltInTypeDescriptors.Int8TypeDescriptor,
             BuiltIn.BuiltInTypeDescriptors.UInt8TypeDescriptor,
