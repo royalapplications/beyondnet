@@ -265,6 +265,44 @@ final class NativeAOTCodeGeneratorOutputSampleTests: XCTestCase {
         guidCString.deallocate()
         
         XCTAssertEqual(uuidString.lowercased(), guidString.lowercased())
+        
+        let guidTypeName = "System.Guid"
+        
+        var guidType: System_Type_t?
+        
+        guidTypeName.withCString { guidTypeNameC in
+            guidType = System_Type_GetType2(guidTypeNameC,
+                                            &exception)
+        }
+        
+        guard let guidType,
+              exception == nil else {
+            XCTFail("GetType should not throw and return something")
+            
+            return
+        }
+        
+        let guidTypeFromInstance = System_Object_GetType(guid,
+                                                         &exception)
+        
+        guard let guidTypeFromInstance,
+              exception == nil else {
+            XCTFail("GetType should not throw and return something")
+            
+            return
+        }
+        
+        let equals = System_Object_Equals(guidType,
+                                          guidTypeFromInstance,
+                                          &exception)
+        
+        guard exception == nil else {
+            XCTFail("Equals should not throw")
+            
+            return
+        }
+        
+        XCTAssertEqual(equals, .yes)
     }
     
     func testEnum() {
@@ -295,63 +333,4 @@ final class NativeAOTCodeGeneratorOutputSampleTests: XCTestCase {
         
         XCTAssertEqual("SecondCase", enumName)
     }
-    
-    // TODO: Does not work. Not sure why...
-//    func testSystemType() {
-//        var exception: System_Exception_t?
-//
-//        let systemObjectTypeName = "System.Object"
-//
-//        var systemObjectType: System_Type_t?
-//
-//        systemObjectTypeName.withCString { systemObjectTypeNameC in
-//            systemObjectType = System_Type_GetType(systemObjectTypeNameC,
-//                                                   .yes,
-//                                                   .no,
-//                                                   &exception)
-//        }
-//
-//        guard exception == nil else {
-//            XCTFail("System.Type.GetType should not throw")
-//
-//            return
-//        }
-//
-//        guard let systemObjectType else {
-//            XCTFail("System.Type.GetType should return an instance of System.Type")
-//
-//            return
-//        }
-//
-//        let namePropertyString = "FullName"
-//
-//        var nameProperty: System_Reflection_PropertyInfo_t?
-//
-//        guard let bindingFlags = System_Reflection_BindingFlags(rawValue: 0) else {
-//            XCTFail("Failed to create System.Reflection.BindingFlags")
-//
-//            return
-//        }
-//
-//        namePropertyString.withCString { namePropertyStringC in
-//            nameProperty = System_Type_GetProperty1(systemObjectType,
-//                                                    namePropertyStringC,
-//                                                    bindingFlags,
-//                                                    &exception)
-//        }
-//
-//        guard exception == nil else {
-//            XCTFail("System.Type.GetProperty should not throw")
-//
-//            return
-//        }
-//
-//        guard let nameProperty else {
-//            XCTFail("System.Type.GetProperty should return an instance of System.Reflection.PropertyInfo")
-//
-//            return
-//        }
-//
-//        System_Reflection_PropertyInfo_Destroy(nameProperty)
-//    }
 }
