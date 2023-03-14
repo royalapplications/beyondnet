@@ -1,5 +1,5 @@
-// Number of generated types: 159
-// Number of generated members: 1077
+// Number of generated types: 160
+// Number of generated members: 1078
 
 // <Header>
 using System;
@@ -194,77 +194,17 @@ internal static unsafe class InteropUtils
 
 // </Unsupported Types>
 // <APIs>
-internal static unsafe class NativeAOT_CodeGeneratorInputSample_TestClass
+
+internal static unsafe class System_Enum
 {
-	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_SayHello")]
-	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_TestClass_SayHello(void* /* NativeAOT.CodeGeneratorInputSample.TestClass */ __self, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_GetName")]
+	internal static byte* /* System.String */ System_Enum_GetName(void* /* System.Type */ enumType, void* /* System.Object */ value, void** /* System.Exception */ __outException)
 	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		NativeAOT.CodeGeneratorInputSample.TestClass __selfDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.TestClass>(__self);
-	
+		System.Type enumTypeDotNet = InteropUtils.GetInstance<System.Type>(enumType);
+		System.Object valueDotNet = InteropUtils.GetInstance<System.Object>(value);
 	
 	    try {
-			__selfDotNet.SayHello();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_SayHello1")]
-	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_TestClass_SayHello1(void* /* NativeAOT.CodeGeneratorInputSample.TestClass */ __self, byte* /* System.String */ name, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		NativeAOT.CodeGeneratorInputSample.TestClass __selfDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.TestClass>(__self);
-	
-		System.String nameDotNet = InteropUtils.ToDotNetString(name);
-	
-	    try {
-			__selfDotNet.SayHello(nameDotNet);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_GetHello")]
-	internal static byte* /* System.String */ NativeAOT_CodeGeneratorInputSample_TestClass_GetHello(void* /* NativeAOT.CodeGeneratorInputSample.TestClass */ __self, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		NativeAOT.CodeGeneratorInputSample.TestClass __selfDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.TestClass>(__self);
-	
-	
-	    try {
-			System.String __returnValue = __selfDotNet.GetHello();
+			System.String __returnValue = System.Enum.GetName(enumTypeDotNet, valueDotNet);
 			byte* _returnValueNative = __returnValue.CopyToCString();
 	
 	        if (__outException is not null) {
@@ -284,18 +224,13 @@ internal static unsafe class NativeAOT_CodeGeneratorInputSample_TestClass
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_GetDate")]
-	internal static void* /* System.DateTime */ NativeAOT_CodeGeneratorInputSample_TestClass_GetDate(void* /* NativeAOT.CodeGeneratorInputSample.TestClass */ __self, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_GetUnderlyingType")]
+	internal static void* /* System.Type */ System_Enum_GetUnderlyingType(void* /* System.Type */ enumType, void** /* System.Exception */ __outException)
 	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		NativeAOT.CodeGeneratorInputSample.TestClass __selfDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.TestClass>(__self);
-	
+		System.Type enumTypeDotNet = InteropUtils.GetInstance<System.Type>(enumType);
 	
 	    try {
-			System.DateTime __returnValue = __selfDotNet.GetDate();
+			System.Type __returnValue = System.Enum.GetUnderlyingType(enumTypeDotNet);
 			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -315,72 +250,13 @@ internal static unsafe class NativeAOT_CodeGeneratorInputSample_TestClass
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_Add")]
-	internal static int /* System.Int32 */ NativeAOT_CodeGeneratorInputSample_TestClass_Add(void* /* NativeAOT.CodeGeneratorInputSample.TestClass */ __self, int /* System.Int32 */ number1, int /* System.Int32 */ number2, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_GetValues")]
+	internal static void* /* System.Array */ System_Enum_GetValues(void* /* System.Type */ enumType, void** /* System.Exception */ __outException)
 	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		NativeAOT.CodeGeneratorInputSample.TestClass __selfDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.TestClass>(__self);
-	
+		System.Type enumTypeDotNet = InteropUtils.GetInstance<System.Type>(enumType);
 	
 	    try {
-			System.Int32 __returnValue = __selfDotNet.Add(number1, number2);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_Divide")]
-	internal static int /* System.Int32 */ NativeAOT_CodeGeneratorInputSample_TestClass_Divide(void* /* NativeAOT.CodeGeneratorInputSample.TestClass */ __self, int /* System.Int32 */ number1, int /* System.Int32 */ number2, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		NativeAOT.CodeGeneratorInputSample.TestClass __selfDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.TestClass>(__self);
-	
-	
-	    try {
-			System.Int32 __returnValue = __selfDotNet.Divide(number1, number2);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_Create")]
-	internal static void* /* NativeAOT.CodeGeneratorInputSample.TestClass */ NativeAOT_CodeGeneratorInputSample_TestClass_Create(void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			NativeAOT.CodeGeneratorInputSample.TestClass __returnValue = new NativeAOT.CodeGeneratorInputSample.TestClass();
+			System.Array __returnValue = System.Enum.GetValues(enumTypeDotNet);
 			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -400,8 +276,767 @@ internal static unsafe class NativeAOT_CodeGeneratorInputSample_TestClass
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint="NativeAOT_CodeGeneratorInputSample_TestClass_Destroy")]
-	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_TestClass_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.TestClass */ __self)
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_GetValuesAsUnderlyingType")]
+	internal static void* /* System.Array */ System_Enum_GetValuesAsUnderlyingType(void* /* System.Type */ enumType, void** /* System.Exception */ __outException)
+	{
+		System.Type enumTypeDotNet = InteropUtils.GetInstance<System.Type>(enumType);
+	
+	    try {
+			System.Array __returnValue = System.Enum.GetValuesAsUnderlyingType(enumTypeDotNet);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_HasFlag")]
+	internal static CBool /* System.Boolean */ System_Enum_HasFlag(void* /* System.Enum */ __self, void* /* System.Enum */ flag, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Enum __selfDotNet = InteropUtils.GetInstance<System.Enum>(__self);
+	
+		System.Enum flagDotNet = InteropUtils.GetInstance<System.Enum>(flag);
+	
+	    try {
+			System.Boolean __returnValue = __selfDotNet.HasFlag(flagDotNet);
+			CBool _returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return false.ToCBool();
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_IsDefined")]
+	internal static CBool /* System.Boolean */ System_Enum_IsDefined(void* /* System.Type */ enumType, void* /* System.Object */ value, void** /* System.Exception */ __outException)
+	{
+		System.Type enumTypeDotNet = InteropUtils.GetInstance<System.Type>(enumType);
+		System.Object valueDotNet = InteropUtils.GetInstance<System.Object>(value);
+	
+	    try {
+			System.Boolean __returnValue = System.Enum.IsDefined(enumTypeDotNet, valueDotNet);
+			CBool _returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return false.ToCBool();
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_Parse")]
+	internal static void* /* System.Object */ System_Enum_Parse(void* /* System.Type */ enumType, byte* /* System.String */ value, void** /* System.Exception */ __outException)
+	{
+		System.Type enumTypeDotNet = InteropUtils.GetInstance<System.Type>(enumType);
+		System.String valueDotNet = InteropUtils.ToDotNetString(value);
+	
+	    try {
+			System.Object __returnValue = System.Enum.Parse(enumTypeDotNet, valueDotNet);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_Parse1")]
+	internal static void* /* System.Object */ System_Enum_Parse1(void* /* System.Type */ enumType, byte* /* System.String */ value, CBool /* System.Boolean */ ignoreCase, void** /* System.Exception */ __outException)
+	{
+		System.Type enumTypeDotNet = InteropUtils.GetInstance<System.Type>(enumType);
+		System.String valueDotNet = InteropUtils.ToDotNetString(value);
+		System.Boolean ignoreCaseDotNet = ignoreCase.ToBool();
+	
+	    try {
+			System.Object __returnValue = System.Enum.Parse(enumTypeDotNet, valueDotNet, ignoreCaseDotNet);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_Equals")]
+	internal static CBool /* System.Boolean */ System_Enum_Equals(void* /* System.Enum */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Enum __selfDotNet = InteropUtils.GetInstance<System.Enum>(__self);
+	
+		System.Object objDotNet = InteropUtils.GetInstance<System.Object>(obj);
+	
+	    try {
+			System.Boolean __returnValue = __selfDotNet.Equals(objDotNet);
+			CBool _returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return false.ToCBool();
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_GetHashCode")]
+	internal static int /* System.Int32 */ System_Enum_GetHashCode(void* /* System.Enum */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Enum __selfDotNet = InteropUtils.GetInstance<System.Enum>(__self);
+	
+	
+	    try {
+			System.Int32 __returnValue = __selfDotNet.GetHashCode();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_CompareTo")]
+	internal static int /* System.Int32 */ System_Enum_CompareTo(void* /* System.Enum */ __self, void* /* System.Object */ target, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Enum __selfDotNet = InteropUtils.GetInstance<System.Enum>(__self);
+	
+		System.Object targetDotNet = InteropUtils.GetInstance<System.Object>(target);
+	
+	    try {
+			System.Int32 __returnValue = __selfDotNet.CompareTo(targetDotNet);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_ToString")]
+	internal static byte* /* System.String */ System_Enum_ToString(void* /* System.Enum */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Enum __selfDotNet = InteropUtils.GetInstance<System.Enum>(__self);
+	
+	
+	    try {
+			System.String __returnValue = __selfDotNet.ToString();
+			byte* _returnValueNative = __returnValue.CopyToCString();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_ToString1")]
+	internal static byte* /* System.String */ System_Enum_ToString1(void* /* System.Enum */ __self, byte* /* System.String */ format, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Enum __selfDotNet = InteropUtils.GetInstance<System.Enum>(__self);
+	
+		System.String formatDotNet = InteropUtils.ToDotNetString(format);
+	
+	    try {
+			System.String __returnValue = __selfDotNet.ToString(formatDotNet);
+			byte* _returnValueNative = __returnValue.CopyToCString();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_ToString2")]
+	internal static byte* /* System.String */ System_Enum_ToString2(void* /* System.Enum */ __self, void* /* System.IFormatProvider */ provider, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Enum __selfDotNet = InteropUtils.GetInstance<System.Enum>(__self);
+	
+		System.IFormatProvider providerDotNet = InteropUtils.GetInstance<System.IFormatProvider>(provider);
+	
+	    try {
+			System.String __returnValue = __selfDotNet.ToString(providerDotNet);
+			byte* _returnValueNative = __returnValue.CopyToCString();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_ToString3")]
+	internal static byte* /* System.String */ System_Enum_ToString3(void* /* System.Enum */ __self, byte* /* System.String */ format, void* /* System.IFormatProvider */ provider, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Enum __selfDotNet = InteropUtils.GetInstance<System.Enum>(__self);
+	
+		System.String formatDotNet = InteropUtils.ToDotNetString(format);
+		System.IFormatProvider providerDotNet = InteropUtils.GetInstance<System.IFormatProvider>(provider);
+	
+	    try {
+			System.String __returnValue = __selfDotNet.ToString(formatDotNet, providerDotNet);
+			byte* _returnValueNative = __returnValue.CopyToCString();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_Format")]
+	internal static byte* /* System.String */ System_Enum_Format(void* /* System.Type */ enumType, void* /* System.Object */ value, byte* /* System.String */ format, void** /* System.Exception */ __outException)
+	{
+		System.Type enumTypeDotNet = InteropUtils.GetInstance<System.Type>(enumType);
+		System.Object valueDotNet = InteropUtils.GetInstance<System.Object>(value);
+		System.String formatDotNet = InteropUtils.ToDotNetString(format);
+	
+	    try {
+			System.String __returnValue = System.Enum.Format(enumTypeDotNet, valueDotNet, formatDotNet);
+			byte* _returnValueNative = __returnValue.CopyToCString();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_GetTypeCode")]
+	internal static System.TypeCode /* System.TypeCode */ System_Enum_GetTypeCode(void* /* System.Enum */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Enum __selfDotNet = InteropUtils.GetInstance<System.Enum>(__self);
+	
+	
+	    try {
+			System.TypeCode __returnValue = __selfDotNet.GetTypeCode();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return default(System.TypeCode);
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_ToObject")]
+	internal static void* /* System.Object */ System_Enum_ToObject(void* /* System.Type */ enumType, void* /* System.Object */ value, void** /* System.Exception */ __outException)
+	{
+		System.Type enumTypeDotNet = InteropUtils.GetInstance<System.Type>(enumType);
+		System.Object valueDotNet = InteropUtils.GetInstance<System.Object>(value);
+	
+	    try {
+			System.Object __returnValue = System.Enum.ToObject(enumTypeDotNet, valueDotNet);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_ToObject1")]
+	internal static void* /* System.Object */ System_Enum_ToObject1(void* /* System.Type */ enumType, sbyte /* System.SByte */ value, void** /* System.Exception */ __outException)
+	{
+		System.Type enumTypeDotNet = InteropUtils.GetInstance<System.Type>(enumType);
+	
+	    try {
+			System.Object __returnValue = System.Enum.ToObject(enumTypeDotNet, value);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_ToObject2")]
+	internal static void* /* System.Object */ System_Enum_ToObject2(void* /* System.Type */ enumType, short /* System.Int16 */ value, void** /* System.Exception */ __outException)
+	{
+		System.Type enumTypeDotNet = InteropUtils.GetInstance<System.Type>(enumType);
+	
+	    try {
+			System.Object __returnValue = System.Enum.ToObject(enumTypeDotNet, value);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_ToObject3")]
+	internal static void* /* System.Object */ System_Enum_ToObject3(void* /* System.Type */ enumType, int /* System.Int32 */ value, void** /* System.Exception */ __outException)
+	{
+		System.Type enumTypeDotNet = InteropUtils.GetInstance<System.Type>(enumType);
+	
+	    try {
+			System.Object __returnValue = System.Enum.ToObject(enumTypeDotNet, value);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_ToObject4")]
+	internal static void* /* System.Object */ System_Enum_ToObject4(void* /* System.Type */ enumType, byte /* System.Byte */ value, void** /* System.Exception */ __outException)
+	{
+		System.Type enumTypeDotNet = InteropUtils.GetInstance<System.Type>(enumType);
+	
+	    try {
+			System.Object __returnValue = System.Enum.ToObject(enumTypeDotNet, value);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_ToObject5")]
+	internal static void* /* System.Object */ System_Enum_ToObject5(void* /* System.Type */ enumType, ushort /* System.UInt16 */ value, void** /* System.Exception */ __outException)
+	{
+		System.Type enumTypeDotNet = InteropUtils.GetInstance<System.Type>(enumType);
+	
+	    try {
+			System.Object __returnValue = System.Enum.ToObject(enumTypeDotNet, value);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_ToObject6")]
+	internal static void* /* System.Object */ System_Enum_ToObject6(void* /* System.Type */ enumType, uint /* System.UInt32 */ value, void** /* System.Exception */ __outException)
+	{
+		System.Type enumTypeDotNet = InteropUtils.GetInstance<System.Type>(enumType);
+	
+	    try {
+			System.Object __returnValue = System.Enum.ToObject(enumTypeDotNet, value);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_ToObject7")]
+	internal static void* /* System.Object */ System_Enum_ToObject7(void* /* System.Type */ enumType, long /* System.Int64 */ value, void** /* System.Exception */ __outException)
+	{
+		System.Type enumTypeDotNet = InteropUtils.GetInstance<System.Type>(enumType);
+	
+	    try {
+			System.Object __returnValue = System.Enum.ToObject(enumTypeDotNet, value);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_ToObject8")]
+	internal static void* /* System.Object */ System_Enum_ToObject8(void* /* System.Type */ enumType, ulong /* System.UInt64 */ value, void** /* System.Exception */ __outException)
+	{
+		System.Type enumTypeDotNet = InteropUtils.GetInstance<System.Type>(enumType);
+	
+	    try {
+			System.Object __returnValue = System.Enum.ToObject(enumTypeDotNet, value);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint="System_Enum_Destroy")]
+	internal static void /* System.Void */ System_Enum_Destroy(void* /* System.Enum */ __self)
+	{
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+
+}
+
+
+internal static unsafe class System_ValueType
+{
+	[UnmanagedCallersOnly(EntryPoint = "System_ValueType_Equals")]
+	internal static CBool /* System.Boolean */ System_ValueType_Equals(void* /* System.ValueType */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.ValueType __selfDotNet = InteropUtils.GetInstance<System.ValueType>(__self);
+	
+		System.Object objDotNet = InteropUtils.GetInstance<System.Object>(obj);
+	
+	    try {
+			System.Boolean __returnValue = __selfDotNet.Equals(objDotNet);
+			CBool _returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return false.ToCBool();
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_ValueType_GetHashCode")]
+	internal static int /* System.Int32 */ System_ValueType_GetHashCode(void* /* System.ValueType */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.ValueType __selfDotNet = InteropUtils.GetInstance<System.ValueType>(__self);
+	
+	
+	    try {
+			System.Int32 __returnValue = __selfDotNet.GetHashCode();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_ValueType_ToString")]
+	internal static byte* /* System.String */ System_ValueType_ToString(void* /* System.ValueType */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.ValueType __selfDotNet = InteropUtils.GetInstance<System.ValueType>(__self);
+	
+	
+	    try {
+			System.String __returnValue = __selfDotNet.ToString();
+			byte* _returnValueNative = __returnValue.CopyToCString();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint="System_ValueType_Destroy")]
+	internal static void /* System.Void */ System_ValueType_Destroy(void* /* System.ValueType */ __self)
 	{
 		InteropUtils.FreeIfAllocated(__self);
 	}
@@ -2595,856 +3230,6 @@ internal static unsafe class System_Reflection_MemberInfo
 
 }
 
-
-
-internal static unsafe class System_Enum
-{
-	[UnmanagedCallersOnly(EntryPoint = "System_Enum_GetName")]
-	internal static byte* /* System.String */ System_Enum_GetName(void* /* System.Type */ enumType, void* /* System.Object */ value, void** /* System.Exception */ __outException)
-	{
-		System.Type enumTypeDotNet = InteropUtils.GetInstance<System.Type>(enumType);
-		System.Object valueDotNet = InteropUtils.GetInstance<System.Object>(value);
-	
-	    try {
-			System.String __returnValue = System.Enum.GetName(enumTypeDotNet, valueDotNet);
-			byte* _returnValueNative = __returnValue.CopyToCString();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Enum_GetUnderlyingType")]
-	internal static void* /* System.Type */ System_Enum_GetUnderlyingType(void* /* System.Type */ enumType, void** /* System.Exception */ __outException)
-	{
-		System.Type enumTypeDotNet = InteropUtils.GetInstance<System.Type>(enumType);
-	
-	    try {
-			System.Type __returnValue = System.Enum.GetUnderlyingType(enumTypeDotNet);
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Enum_GetValues")]
-	internal static void* /* System.Array */ System_Enum_GetValues(void* /* System.Type */ enumType, void** /* System.Exception */ __outException)
-	{
-		System.Type enumTypeDotNet = InteropUtils.GetInstance<System.Type>(enumType);
-	
-	    try {
-			System.Array __returnValue = System.Enum.GetValues(enumTypeDotNet);
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Enum_GetValuesAsUnderlyingType")]
-	internal static void* /* System.Array */ System_Enum_GetValuesAsUnderlyingType(void* /* System.Type */ enumType, void** /* System.Exception */ __outException)
-	{
-		System.Type enumTypeDotNet = InteropUtils.GetInstance<System.Type>(enumType);
-	
-	    try {
-			System.Array __returnValue = System.Enum.GetValuesAsUnderlyingType(enumTypeDotNet);
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Enum_HasFlag")]
-	internal static CBool /* System.Boolean */ System_Enum_HasFlag(void* /* System.Enum */ __self, void* /* System.Enum */ flag, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.Enum __selfDotNet = InteropUtils.GetInstance<System.Enum>(__self);
-	
-		System.Enum flagDotNet = InteropUtils.GetInstance<System.Enum>(flag);
-	
-	    try {
-			System.Boolean __returnValue = __selfDotNet.HasFlag(flagDotNet);
-			CBool _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return false.ToCBool();
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Enum_IsDefined")]
-	internal static CBool /* System.Boolean */ System_Enum_IsDefined(void* /* System.Type */ enumType, void* /* System.Object */ value, void** /* System.Exception */ __outException)
-	{
-		System.Type enumTypeDotNet = InteropUtils.GetInstance<System.Type>(enumType);
-		System.Object valueDotNet = InteropUtils.GetInstance<System.Object>(value);
-	
-	    try {
-			System.Boolean __returnValue = System.Enum.IsDefined(enumTypeDotNet, valueDotNet);
-			CBool _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return false.ToCBool();
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Enum_Parse")]
-	internal static void* /* System.Object */ System_Enum_Parse(void* /* System.Type */ enumType, byte* /* System.String */ value, void** /* System.Exception */ __outException)
-	{
-		System.Type enumTypeDotNet = InteropUtils.GetInstance<System.Type>(enumType);
-		System.String valueDotNet = InteropUtils.ToDotNetString(value);
-	
-	    try {
-			System.Object __returnValue = System.Enum.Parse(enumTypeDotNet, valueDotNet);
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Enum_Parse1")]
-	internal static void* /* System.Object */ System_Enum_Parse1(void* /* System.Type */ enumType, byte* /* System.String */ value, CBool /* System.Boolean */ ignoreCase, void** /* System.Exception */ __outException)
-	{
-		System.Type enumTypeDotNet = InteropUtils.GetInstance<System.Type>(enumType);
-		System.String valueDotNet = InteropUtils.ToDotNetString(value);
-		System.Boolean ignoreCaseDotNet = ignoreCase.ToBool();
-	
-	    try {
-			System.Object __returnValue = System.Enum.Parse(enumTypeDotNet, valueDotNet, ignoreCaseDotNet);
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Enum_Equals")]
-	internal static CBool /* System.Boolean */ System_Enum_Equals(void* /* System.Enum */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.Enum __selfDotNet = InteropUtils.GetInstance<System.Enum>(__self);
-	
-		System.Object objDotNet = InteropUtils.GetInstance<System.Object>(obj);
-	
-	    try {
-			System.Boolean __returnValue = __selfDotNet.Equals(objDotNet);
-			CBool _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return false.ToCBool();
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Enum_GetHashCode")]
-	internal static int /* System.Int32 */ System_Enum_GetHashCode(void* /* System.Enum */ __self, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.Enum __selfDotNet = InteropUtils.GetInstance<System.Enum>(__self);
-	
-	
-	    try {
-			System.Int32 __returnValue = __selfDotNet.GetHashCode();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Enum_CompareTo")]
-	internal static int /* System.Int32 */ System_Enum_CompareTo(void* /* System.Enum */ __self, void* /* System.Object */ target, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.Enum __selfDotNet = InteropUtils.GetInstance<System.Enum>(__self);
-	
-		System.Object targetDotNet = InteropUtils.GetInstance<System.Object>(target);
-	
-	    try {
-			System.Int32 __returnValue = __selfDotNet.CompareTo(targetDotNet);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Enum_ToString")]
-	internal static byte* /* System.String */ System_Enum_ToString(void* /* System.Enum */ __self, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.Enum __selfDotNet = InteropUtils.GetInstance<System.Enum>(__self);
-	
-	
-	    try {
-			System.String __returnValue = __selfDotNet.ToString();
-			byte* _returnValueNative = __returnValue.CopyToCString();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Enum_ToString1")]
-	internal static byte* /* System.String */ System_Enum_ToString1(void* /* System.Enum */ __self, byte* /* System.String */ format, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.Enum __selfDotNet = InteropUtils.GetInstance<System.Enum>(__self);
-	
-		System.String formatDotNet = InteropUtils.ToDotNetString(format);
-	
-	    try {
-			System.String __returnValue = __selfDotNet.ToString(formatDotNet);
-			byte* _returnValueNative = __returnValue.CopyToCString();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Enum_ToString2")]
-	internal static byte* /* System.String */ System_Enum_ToString2(void* /* System.Enum */ __self, void* /* System.IFormatProvider */ provider, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.Enum __selfDotNet = InteropUtils.GetInstance<System.Enum>(__self);
-	
-		System.IFormatProvider providerDotNet = InteropUtils.GetInstance<System.IFormatProvider>(provider);
-	
-	    try {
-			System.String __returnValue = __selfDotNet.ToString(providerDotNet);
-			byte* _returnValueNative = __returnValue.CopyToCString();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Enum_ToString3")]
-	internal static byte* /* System.String */ System_Enum_ToString3(void* /* System.Enum */ __self, byte* /* System.String */ format, void* /* System.IFormatProvider */ provider, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.Enum __selfDotNet = InteropUtils.GetInstance<System.Enum>(__self);
-	
-		System.String formatDotNet = InteropUtils.ToDotNetString(format);
-		System.IFormatProvider providerDotNet = InteropUtils.GetInstance<System.IFormatProvider>(provider);
-	
-	    try {
-			System.String __returnValue = __selfDotNet.ToString(formatDotNet, providerDotNet);
-			byte* _returnValueNative = __returnValue.CopyToCString();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Enum_Format")]
-	internal static byte* /* System.String */ System_Enum_Format(void* /* System.Type */ enumType, void* /* System.Object */ value, byte* /* System.String */ format, void** /* System.Exception */ __outException)
-	{
-		System.Type enumTypeDotNet = InteropUtils.GetInstance<System.Type>(enumType);
-		System.Object valueDotNet = InteropUtils.GetInstance<System.Object>(value);
-		System.String formatDotNet = InteropUtils.ToDotNetString(format);
-	
-	    try {
-			System.String __returnValue = System.Enum.Format(enumTypeDotNet, valueDotNet, formatDotNet);
-			byte* _returnValueNative = __returnValue.CopyToCString();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Enum_GetTypeCode")]
-	internal static System.TypeCode /* System.TypeCode */ System_Enum_GetTypeCode(void* /* System.Enum */ __self, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.Enum __selfDotNet = InteropUtils.GetInstance<System.Enum>(__self);
-	
-	
-	    try {
-			System.TypeCode __returnValue = __selfDotNet.GetTypeCode();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return default(System.TypeCode);
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Enum_ToObject")]
-	internal static void* /* System.Object */ System_Enum_ToObject(void* /* System.Type */ enumType, void* /* System.Object */ value, void** /* System.Exception */ __outException)
-	{
-		System.Type enumTypeDotNet = InteropUtils.GetInstance<System.Type>(enumType);
-		System.Object valueDotNet = InteropUtils.GetInstance<System.Object>(value);
-	
-	    try {
-			System.Object __returnValue = System.Enum.ToObject(enumTypeDotNet, valueDotNet);
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Enum_ToObject1")]
-	internal static void* /* System.Object */ System_Enum_ToObject1(void* /* System.Type */ enumType, sbyte /* System.SByte */ value, void** /* System.Exception */ __outException)
-	{
-		System.Type enumTypeDotNet = InteropUtils.GetInstance<System.Type>(enumType);
-	
-	    try {
-			System.Object __returnValue = System.Enum.ToObject(enumTypeDotNet, value);
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Enum_ToObject2")]
-	internal static void* /* System.Object */ System_Enum_ToObject2(void* /* System.Type */ enumType, short /* System.Int16 */ value, void** /* System.Exception */ __outException)
-	{
-		System.Type enumTypeDotNet = InteropUtils.GetInstance<System.Type>(enumType);
-	
-	    try {
-			System.Object __returnValue = System.Enum.ToObject(enumTypeDotNet, value);
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Enum_ToObject3")]
-	internal static void* /* System.Object */ System_Enum_ToObject3(void* /* System.Type */ enumType, int /* System.Int32 */ value, void** /* System.Exception */ __outException)
-	{
-		System.Type enumTypeDotNet = InteropUtils.GetInstance<System.Type>(enumType);
-	
-	    try {
-			System.Object __returnValue = System.Enum.ToObject(enumTypeDotNet, value);
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Enum_ToObject4")]
-	internal static void* /* System.Object */ System_Enum_ToObject4(void* /* System.Type */ enumType, byte /* System.Byte */ value, void** /* System.Exception */ __outException)
-	{
-		System.Type enumTypeDotNet = InteropUtils.GetInstance<System.Type>(enumType);
-	
-	    try {
-			System.Object __returnValue = System.Enum.ToObject(enumTypeDotNet, value);
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Enum_ToObject5")]
-	internal static void* /* System.Object */ System_Enum_ToObject5(void* /* System.Type */ enumType, ushort /* System.UInt16 */ value, void** /* System.Exception */ __outException)
-	{
-		System.Type enumTypeDotNet = InteropUtils.GetInstance<System.Type>(enumType);
-	
-	    try {
-			System.Object __returnValue = System.Enum.ToObject(enumTypeDotNet, value);
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Enum_ToObject6")]
-	internal static void* /* System.Object */ System_Enum_ToObject6(void* /* System.Type */ enumType, uint /* System.UInt32 */ value, void** /* System.Exception */ __outException)
-	{
-		System.Type enumTypeDotNet = InteropUtils.GetInstance<System.Type>(enumType);
-	
-	    try {
-			System.Object __returnValue = System.Enum.ToObject(enumTypeDotNet, value);
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Enum_ToObject7")]
-	internal static void* /* System.Object */ System_Enum_ToObject7(void* /* System.Type */ enumType, long /* System.Int64 */ value, void** /* System.Exception */ __outException)
-	{
-		System.Type enumTypeDotNet = InteropUtils.GetInstance<System.Type>(enumType);
-	
-	    try {
-			System.Object __returnValue = System.Enum.ToObject(enumTypeDotNet, value);
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Enum_ToObject8")]
-	internal static void* /* System.Object */ System_Enum_ToObject8(void* /* System.Type */ enumType, ulong /* System.UInt64 */ value, void** /* System.Exception */ __outException)
-	{
-		System.Type enumTypeDotNet = InteropUtils.GetInstance<System.Type>(enumType);
-	
-	    try {
-			System.Object __returnValue = System.Enum.ToObject(enumTypeDotNet, value);
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint="System_Enum_Destroy")]
-	internal static void /* System.Void */ System_Enum_Destroy(void* /* System.Enum */ __self)
-	{
-		InteropUtils.FreeIfAllocated(__self);
-	}
-	
-
-}
-
-
-internal static unsafe class System_ValueType
-{
-	[UnmanagedCallersOnly(EntryPoint = "System_ValueType_Equals")]
-	internal static CBool /* System.Boolean */ System_ValueType_Equals(void* /* System.ValueType */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.ValueType __selfDotNet = InteropUtils.GetInstance<System.ValueType>(__self);
-	
-		System.Object objDotNet = InteropUtils.GetInstance<System.Object>(obj);
-	
-	    try {
-			System.Boolean __returnValue = __selfDotNet.Equals(objDotNet);
-			CBool _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return false.ToCBool();
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_ValueType_GetHashCode")]
-	internal static int /* System.Int32 */ System_ValueType_GetHashCode(void* /* System.ValueType */ __self, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.ValueType __selfDotNet = InteropUtils.GetInstance<System.ValueType>(__self);
-	
-	
-	    try {
-			System.Int32 __returnValue = __selfDotNet.GetHashCode();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_ValueType_ToString")]
-	internal static byte* /* System.String */ System_ValueType_ToString(void* /* System.ValueType */ __self, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.ValueType __selfDotNet = InteropUtils.GetInstance<System.ValueType>(__self);
-	
-	
-	    try {
-			System.String __returnValue = __selfDotNet.ToString();
-			byte* _returnValueNative = __returnValue.CopyToCString();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint="System_ValueType_Destroy")]
-	internal static void /* System.Void */ System_ValueType_Destroy(void* /* System.ValueType */ __self)
-	{
-		InteropUtils.FreeIfAllocated(__self);
-	}
-	
-
-}
 
 
 
@@ -34380,6 +34165,247 @@ internal static unsafe class System_Reflection_InterfaceMapping
 {
 	[UnmanagedCallersOnly(EntryPoint="System_Reflection_InterfaceMapping_Destroy")]
 	internal static void /* System.Void */ System_Reflection_InterfaceMapping_Destroy(void* /* System.Reflection.InterfaceMapping */ __self)
+	{
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+
+}
+
+
+internal static unsafe class NativeAOT_CodeGeneratorInputSample_TestClass
+{
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_SayHello")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_TestClass_SayHello(void* /* NativeAOT.CodeGeneratorInputSample.TestClass */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.TestClass __selfDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.TestClass>(__self);
+	
+	
+	    try {
+			__selfDotNet.SayHello();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_SayHello1")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_TestClass_SayHello1(void* /* NativeAOT.CodeGeneratorInputSample.TestClass */ __self, byte* /* System.String */ name, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.TestClass __selfDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.TestClass>(__self);
+	
+		System.String nameDotNet = InteropUtils.ToDotNetString(name);
+	
+	    try {
+			__selfDotNet.SayHello(nameDotNet);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_GetHello")]
+	internal static byte* /* System.String */ NativeAOT_CodeGeneratorInputSample_TestClass_GetHello(void* /* NativeAOT.CodeGeneratorInputSample.TestClass */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.TestClass __selfDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.TestClass>(__self);
+	
+	
+	    try {
+			System.String __returnValue = __selfDotNet.GetHello();
+			byte* _returnValueNative = __returnValue.CopyToCString();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_GetDate")]
+	internal static void* /* System.DateTime */ NativeAOT_CodeGeneratorInputSample_TestClass_GetDate(void* /* NativeAOT.CodeGeneratorInputSample.TestClass */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.TestClass __selfDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.TestClass>(__self);
+	
+	
+	    try {
+			System.DateTime __returnValue = __selfDotNet.GetDate();
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_Add")]
+	internal static int /* System.Int32 */ NativeAOT_CodeGeneratorInputSample_TestClass_Add(void* /* NativeAOT.CodeGeneratorInputSample.TestClass */ __self, int /* System.Int32 */ number1, int /* System.Int32 */ number2, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.TestClass __selfDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.TestClass>(__self);
+	
+	
+	    try {
+			System.Int32 __returnValue = __selfDotNet.Add(number1, number2);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_Divide")]
+	internal static int /* System.Int32 */ NativeAOT_CodeGeneratorInputSample_TestClass_Divide(void* /* NativeAOT.CodeGeneratorInputSample.TestClass */ __self, int /* System.Int32 */ number1, int /* System.Int32 */ number2, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.TestClass __selfDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.TestClass>(__self);
+	
+	
+	    try {
+			System.Int32 __returnValue = __selfDotNet.Divide(number1, number2);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_GetTestEnumName")]
+	internal static byte* /* System.String */ NativeAOT_CodeGeneratorInputSample_TestClass_GetTestEnumName(NativeAOT.CodeGeneratorInputSample.TestEnum /* NativeAOT.CodeGeneratorInputSample.TestEnum */ testEnum, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.String __returnValue = NativeAOT.CodeGeneratorInputSample.TestClass.GetTestEnumName(testEnum);
+			byte* _returnValueNative = __returnValue.CopyToCString();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_Create")]
+	internal static void* /* NativeAOT.CodeGeneratorInputSample.TestClass */ NativeAOT_CodeGeneratorInputSample_TestClass_Create(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			NativeAOT.CodeGeneratorInputSample.TestClass __returnValue = new NativeAOT.CodeGeneratorInputSample.TestClass();
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint="NativeAOT_CodeGeneratorInputSample_TestClass_Destroy")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_TestClass_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.TestClass */ __self)
 	{
 		InteropUtils.FreeIfAllocated(__self);
 	}

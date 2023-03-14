@@ -1,5 +1,11 @@
 ﻿namespace NativeAOT.CodeGeneratorInputSample;
 
+public enum TestEnum
+{
+    FirstCase,
+    SecondCase
+}
+
 public class TestClass
 {
     public delegate void SimpleDelegate();
@@ -37,5 +43,10 @@ public class TestClass
     public int Divide(int number1, int number2)
     {
         return number1 / number2;
+    }
+
+    public static string GetTestEnumName(TestEnum testEnum)
+    {
+        return testEnum.ToString();
     }
 }
