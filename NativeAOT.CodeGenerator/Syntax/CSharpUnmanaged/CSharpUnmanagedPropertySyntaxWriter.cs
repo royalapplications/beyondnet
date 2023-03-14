@@ -1,22 +1,65 @@
 using System.Reflection;
 using System.Text;
+using NativeAOT.CodeGenerator.Extensions;
+using NativeAOT.CodeGenerator.Types;
 
 namespace NativeAOT.CodeGenerator.Syntax.CSharpUnmanaged;
 
-public class CSharpUnmanagedPropertySyntaxWriter: ICSharpUnmanagedSyntaxWriter, IPropertySyntaxWriter
+public class CSharpUnmanagedPropertySyntaxWriter: CSharpUnmanagedMethodSyntaxWriter, IPropertySyntaxWriter
 {
-    public string Write(object @object, State state)
+    public new string Write(object @object, State state)
     {
         return Write((PropertyInfo)@object, state);
     }
     
     public string Write(PropertyInfo property, State state)
     {
-        StringBuilder sb = new();
+        TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
-        string propertyNameC = property.Name;
+        const bool mayThrow = true;
 
-        sb.AppendLine($"// TODO (Property): {propertyNameC}");
+        string propertyName = property.Name;
+
+        Type declaringType = property.DeclaringType ?? throw new Exception("No declaring type");;
+
+        if (declaringType.IsAbstract) {
+            return string.Empty;
+        }
+        
+        IEnumerable<ParameterInfo> parameters = Array.Empty<ParameterInfo>();
+
+        var accessors = property.GetAccessors();
+
+        StringBuilder sb = new();
+
+        Type setterType = declaringType;
+
+        foreach (var accessor in accessors) {
+            bool isSetter = !accessor.ReturnType.IsVoid();
+            bool isGetter = !isSetter;
+            bool isStaticMethod = accessor.IsStatic;
+
+            MethodKind methodKind = isGetter 
+                ? MethodKind.PropertyGetter
+                : MethodKind.PropertySetter;
+
+            // string accessorMethodName = accessor.Name;
+            
+            string accessorCode = WriteMethod(
+                property,
+                methodKind,
+                propertyName,
+                isStaticMethod,
+                mayThrow,
+                declaringType,
+                setterType,
+                parameters,
+                typeDescriptorRegistry,
+                state
+            );
+
+            sb.AppendLine(accessorCode);
+        }
 
         return sb.ToString();
     }

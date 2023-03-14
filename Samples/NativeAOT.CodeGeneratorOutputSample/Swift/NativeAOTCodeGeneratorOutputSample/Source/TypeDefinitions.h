@@ -2352,6 +2352,10 @@ System_String_Create(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+// TODO (Property): Chars
+
+// TODO (Property): Length
+
 void /* System.Void */
 System_String_Destroy(
 	CString /* System.String */ self
@@ -2479,6 +2483,70 @@ System_Globalization_CultureInfo_Create4(
 	CBool /* System.Boolean */ useUserOverride,
 	System_Exception_t* /* System.Exception */ outException
 );
+
+// TODO (Property): CurrentCulture
+
+// TODO (Property): CurrentCulture
+
+// TODO (Property): CurrentUICulture
+
+// TODO (Property): CurrentUICulture
+
+// TODO (Property): InstalledUICulture
+
+// TODO (Property): DefaultThreadCurrentCulture
+
+// TODO (Property): DefaultThreadCurrentCulture
+
+// TODO (Property): DefaultThreadCurrentUICulture
+
+// TODO (Property): DefaultThreadCurrentUICulture
+
+// TODO (Property): InvariantCulture
+
+// TODO (Property): Parent
+
+// TODO (Property): LCID
+
+// TODO (Property): KeyboardLayoutId
+
+// TODO (Property): Name
+
+// TODO (Property): IetfLanguageTag
+
+// TODO (Property): DisplayName
+
+// TODO (Property): NativeName
+
+// TODO (Property): EnglishName
+
+// TODO (Property): TwoLetterISOLanguageName
+
+// TODO (Property): ThreeLetterISOLanguageName
+
+// TODO (Property): ThreeLetterWindowsLanguageName
+
+// TODO (Property): CompareInfo
+
+// TODO (Property): TextInfo
+
+// TODO (Property): IsNeutralCulture
+
+// TODO (Property): CultureTypes
+
+// TODO (Property): NumberFormat
+
+// TODO (Property): NumberFormat
+
+// TODO (Property): DateTimeFormat
+
+// TODO (Property): DateTimeFormat
+
+// TODO (Property): Calendar
+
+// TODO (Property): UseUserOverride
+
+// TODO (Property): IsReadOnly
 
 void /* System.Void */
 System_Globalization_CultureInfo_Destroy(
@@ -2910,6 +2978,12 @@ System_Globalization_CompareInfo_ToString(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+// TODO (Property): Name
+
+// TODO (Property): Version
+
+// TODO (Property): LCID
+
 void /* System.Void */
 System_Globalization_CompareInfo_Destroy(
 	System_Globalization_CompareInfo_t /* System.Globalization.CompareInfo */ self
@@ -3193,6 +3267,54 @@ System_Reflection_AssemblyName_Create1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+// TODO (Property): Name
+
+// TODO (Property): Name
+
+// TODO (Property): Version
+
+// TODO (Property): Version
+
+// TODO (Property): CultureInfo
+
+// TODO (Property): CultureInfo
+
+// TODO (Property): CultureName
+
+// TODO (Property): CultureName
+
+// TODO (Property): CodeBase
+
+// TODO (Property): CodeBase
+
+// TODO (Property): EscapedCodeBase
+
+// TODO (Property): ProcessorArchitecture
+
+// TODO (Property): ProcessorArchitecture
+
+// TODO (Property): ContentType
+
+// TODO (Property): ContentType
+
+// TODO (Property): Flags
+
+// TODO (Property): Flags
+
+// TODO (Property): HashAlgorithm
+
+// TODO (Property): HashAlgorithm
+
+// TODO (Property): VersionCompatibility
+
+// TODO (Property): VersionCompatibility
+
+// TODO (Property): KeyPair
+
+// TODO (Property): KeyPair
+
+// TODO (Property): FullName
+
 void /* System.Void */
 System_Reflection_AssemblyName_Destroy(
 	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self
@@ -3295,6 +3417,18 @@ System_Version_t /* System.Version */
 System_Version_Create4(
 	System_Exception_t* /* System.Exception */ outException
 );
+
+// TODO (Property): Major
+
+// TODO (Property): Minor
+
+// TODO (Property): Build
+
+// TODO (Property): Revision
+
+// TODO (Property): MajorRevision
+
+// TODO (Property): MinorRevision
 
 void /* System.Void */
 System_Version_Destroy(
@@ -3599,6 +3733,26 @@ System_IO_FileStream_Create13(
 	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ options,
 	System_Exception_t* /* System.Exception */ outException
 );
+
+// TODO (Property): Handle
+
+// TODO (Property): CanRead
+
+// TODO (Property): CanWrite
+
+// TODO (Property): SafeFileHandle
+
+// TODO (Property): Name
+
+// TODO (Property): IsAsync
+
+// TODO (Property): Length
+
+// TODO (Property): Position
+
+// TODO (Property): Position
+
+// TODO (Property): CanSeek
 
 void /* System.Void */
 System_IO_FileStream_Destroy(
@@ -3925,6 +4079,28 @@ System_Threading_Tasks_Task_Delay3(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+// TODO (Property): Id
+
+// TODO (Property): Exception
+
+// TODO (Property): Status
+
+// TODO (Property): IsCanceled
+
+// TODO (Property): IsCompleted
+
+// TODO (Property): IsCompletedSuccessfully
+
+// TODO (Property): CreationOptions
+
+// TODO (Property): AsyncState
+
+// TODO (Property): Factory
+
+// TODO (Property): CompletedTask
+
+// TODO (Property): IsFaulted
+
 void /* System.Void */
 System_Threading_Tasks_Task_Destroy(
 	System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */ self
@@ -3992,6 +4168,8 @@ System_AggregateException_Create2(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+// TODO (Property): Message
+
 void /* System.Void */
 System_AggregateException_Destroy(
 	System_AggregateException_t /* System.AggregateException */ self
@@ -4044,6 +4222,28 @@ System_Exception_Create2(
 	System_Exception_t /* System.Exception */ innerException,
 	System_Exception_t* /* System.Exception */ outException
 );
+
+// TODO (Property): TargetSite
+
+// TODO (Property): Message
+
+// TODO (Property): Data
+
+// TODO (Property): InnerException
+
+// TODO (Property): HelpLink
+
+// TODO (Property): HelpLink
+
+// TODO (Property): Source
+
+// TODO (Property): Source
+
+// TODO (Property): HResult
+
+// TODO (Property): HResult
+
+// TODO (Property): StackTrace
 
 void /* System.Void */
 System_Exception_Destroy(
@@ -4151,6 +4351,8 @@ System_RuntimeMethodHandle_GetFunctionPointer(
 	System_RuntimeMethodHandle_t /* System.RuntimeMethodHandle */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
+
+// TODO (Property): Value
 
 void /* System.Void */
 System_RuntimeMethodHandle_Destroy(
@@ -4431,6 +4633,22 @@ System_Runtime_Serialization_SerializationInfo_Create1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+// TODO (Property): FullTypeName
+
+// TODO (Property): FullTypeName
+
+// TODO (Property): AssemblyName
+
+// TODO (Property): AssemblyName
+
+// TODO (Property): IsFullTypeNameSetExplicit
+
+// TODO (Property): IsAssemblyNameSetExplicit
+
+// TODO (Property): MemberCount
+
+// TODO (Property): ObjectType
+
 void /* System.Void */
 System_Runtime_Serialization_SerializationInfo_Destroy(
 	System_Runtime_Serialization_SerializationInfo_t /* System.Runtime.Serialization.SerializationInfo */ self
@@ -4452,6 +4670,14 @@ System_Runtime_Serialization_SerializationInfoEnumerator_Reset(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+// TODO (Property): Current
+
+// TODO (Property): Name
+
+// TODO (Property): Value
+
+// TODO (Property): ObjectType
+
 void /* System.Void */
 System_Runtime_Serialization_SerializationInfoEnumerator_Destroy(
 	System_Runtime_Serialization_SerializationInfoEnumerator_t /* System.Runtime.Serialization.SerializationInfoEnumerator */ self
@@ -4461,6 +4687,12 @@ System_Runtime_Serialization_SerializationInfoEnumerator_Destroy(
 #pragma mark - END APIs of System.Runtime.Serialization.SerializationInfoEnumerator
 
 #pragma mark - BEGIN APIs of System.Runtime.Serialization.SerializationEntry
+// TODO (Property): Value
+
+// TODO (Property): Name
+
+// TODO (Property): ObjectType
+
 void /* System.Void */
 System_Runtime_Serialization_SerializationEntry_Destroy(
 	System_Runtime_Serialization_SerializationEntry_t /* System.Runtime.Serialization.SerializationEntry */ self
@@ -4893,6 +5125,8 @@ System_Decimal_Create6(
 	uint8_t /* System.Byte */ scale,
 	System_Exception_t* /* System.Exception */ outException
 );
+
+// TODO (Property): Scale
 
 void /* System.Void */
 System_Decimal_Destroy(
@@ -5405,6 +5639,42 @@ System_DateTime_Create16(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+// TODO (Property): Date
+
+// TODO (Property): Day
+
+// TODO (Property): DayOfWeek
+
+// TODO (Property): DayOfYear
+
+// TODO (Property): Hour
+
+// TODO (Property): Kind
+
+// TODO (Property): Millisecond
+
+// TODO (Property): Microsecond
+
+// TODO (Property): Nanosecond
+
+// TODO (Property): Minute
+
+// TODO (Property): Month
+
+// TODO (Property): Now
+
+// TODO (Property): Second
+
+// TODO (Property): Ticks
+
+// TODO (Property): TimeOfDay
+
+// TODO (Property): Today
+
+// TODO (Property): Year
+
+// TODO (Property): UtcNow
+
 void /* System.Void */
 System_DateTime_Destroy(
 	System_DateTime_t /* System.DateTime */ self
@@ -5646,6 +5916,36 @@ System_TimeSpan_Create4(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+// TODO (Property): Ticks
+
+// TODO (Property): Days
+
+// TODO (Property): Hours
+
+// TODO (Property): Milliseconds
+
+// TODO (Property): Microseconds
+
+// TODO (Property): Nanoseconds
+
+// TODO (Property): Minutes
+
+// TODO (Property): Seconds
+
+// TODO (Property): TotalDays
+
+// TODO (Property): TotalHours
+
+// TODO (Property): TotalMilliseconds
+
+// TODO (Property): TotalMicroseconds
+
+// TODO (Property): TotalNanoseconds
+
+// TODO (Property): TotalMinutes
+
+// TODO (Property): TotalSeconds
+
 void /* System.Void */
 System_TimeSpan_Destroy(
 	System_TimeSpan_t /* System.TimeSpan */ self
@@ -5850,6 +6150,22 @@ System_DateOnly_Create1(
 	System_Globalization_Calendar_t /* System.Globalization.Calendar */ calendar,
 	System_Exception_t* /* System.Exception */ outException
 );
+
+// TODO (Property): MinValue
+
+// TODO (Property): MaxValue
+
+// TODO (Property): Year
+
+// TODO (Property): Month
+
+// TODO (Property): Day
+
+// TODO (Property): DayOfWeek
+
+// TODO (Property): DayOfYear
+
+// TODO (Property): DayNumber
 
 void /* System.Void */
 System_DateOnly_Destroy(
@@ -6057,6 +6373,24 @@ System_TimeOnly_Create4(
 	int64_t /* System.Int64 */ ticks,
 	System_Exception_t* /* System.Exception */ outException
 );
+
+// TODO (Property): MinValue
+
+// TODO (Property): MaxValue
+
+// TODO (Property): Hour
+
+// TODO (Property): Minute
+
+// TODO (Property): Second
+
+// TODO (Property): Millisecond
+
+// TODO (Property): Microsecond
+
+// TODO (Property): Nanosecond
+
+// TODO (Property): Ticks
 
 void /* System.Void */
 System_TimeOnly_Destroy(
@@ -6544,6 +6878,10 @@ System_Runtime_Serialization_StreamingContext_Create1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+// TODO (Property): State
+
+// TODO (Property): Context
+
 void /* System.Void */
 System_Runtime_Serialization_StreamingContext_Destroy(
 	System_Runtime_Serialization_StreamingContext_t /* System.Runtime.Serialization.StreamingContext */ self
@@ -6604,6 +6942,8 @@ System_RuntimeTypeHandle_GetObjectData(
 	System_Runtime_Serialization_StreamingContext_t /* System.Runtime.Serialization.StreamingContext */ context,
 	System_Exception_t* /* System.Exception */ outException
 );
+
+// TODO (Property): Value
 
 void /* System.Void */
 System_RuntimeTypeHandle_Destroy(
@@ -6676,6 +7016,8 @@ System_ModuleHandle_ResolveFieldHandle(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+// TODO (Property): MDStreamVersion
+
 void /* System.Void */
 System_ModuleHandle_Destroy(
 	System_ModuleHandle_t /* System.ModuleHandle */ self
@@ -6725,6 +7067,8 @@ System_RuntimeFieldHandle_GetObjectData(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+// TODO (Property): Value
+
 void /* System.Void */
 System_RuntimeFieldHandle_Destroy(
 	System_RuntimeFieldHandle_t /* System.RuntimeFieldHandle */ self
@@ -6744,6 +7088,12 @@ System_RuntimeFieldHandle_Destroy(
 #pragma mark - END APIs of System.Reflection.MethodImplAttributes
 
 #pragma mark - BEGIN APIs of System.Reflection.MethodBody
+// TODO (Property): LocalSignatureMetadataToken
+
+// TODO (Property): MaxStackSize
+
+// TODO (Property): InitLocals
+
 void /* System.Void */
 System_Reflection_MethodBody_Destroy(
 	System_Reflection_MethodBody_t /* System.Reflection.MethodBody */ self
@@ -6987,6 +7337,34 @@ System_Reflection_ParameterInfo_ToString(
 	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
+
+// TODO (Property): Attributes
+
+// TODO (Property): Member
+
+// TODO (Property): Name
+
+// TODO (Property): ParameterType
+
+// TODO (Property): Position
+
+// TODO (Property): IsIn
+
+// TODO (Property): IsLcid
+
+// TODO (Property): IsOptional
+
+// TODO (Property): IsOut
+
+// TODO (Property): IsRetval
+
+// TODO (Property): DefaultValue
+
+// TODO (Property): RawDefaultValue
+
+// TODO (Property): HasDefaultValue
+
+// TODO (Property): MetadataToken
 
 void /* System.Void */
 System_Reflection_ParameterInfo_Destroy(
@@ -7556,6 +7934,14 @@ System_Collections_DictionaryEntry_Create(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+// TODO (Property): Key
+
+// TODO (Property): Key
+
+// TODO (Property): Value
+
+// TODO (Property): Value
+
 void /* System.Void */
 System_Collections_DictionaryEntry_Destroy(
 	System_Collections_DictionaryEntry_t /* System.Collections.DictionaryEntry */ self
@@ -7608,6 +7994,14 @@ System_Threading_Tasks_TaskFactory_Create4(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+// TODO (Property): CancellationToken
+
+// TODO (Property): Scheduler
+
+// TODO (Property): CreationOptions
+
+// TODO (Property): ContinuationOptions
+
 void /* System.Void */
 System_Threading_Tasks_TaskFactory_Destroy(
 	System_Threading_Tasks_TaskFactory_t /* System.Threading.Tasks.TaskFactory */ self
@@ -7648,6 +8042,14 @@ System_Threading_CancellationToken_Create(
 	CBool /* System.Boolean */ canceled,
 	System_Exception_t* /* System.Exception */ outException
 );
+
+// TODO (Property): None
+
+// TODO (Property): IsCancellationRequested
+
+// TODO (Property): CanBeCanceled
+
+// TODO (Property): WaitHandle
 
 void /* System.Void */
 System_Threading_CancellationToken_Destroy(
@@ -7856,6 +8258,8 @@ System_Threading_CancellationTokenRegistration_GetHashCode(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+// TODO (Property): Token
+
 void /* System.Void */
 System_Threading_CancellationTokenRegistration_Destroy(
 	System_Threading_CancellationTokenRegistration_t /* System.Threading.CancellationTokenRegistration */ self
@@ -7935,6 +8339,16 @@ System_Threading_Tasks_ValueTask_Create1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+// TODO (Property): CompletedTask
+
+// TODO (Property): IsCompleted
+
+// TODO (Property): IsCompletedSuccessfully
+
+// TODO (Property): IsFaulted
+
+// TODO (Property): IsCanceled
+
 void /* System.Void */
 System_Threading_Tasks_ValueTask_Destroy(
 	System_Threading_Tasks_ValueTask_t /* System.Threading.Tasks.ValueTask */ self
@@ -7949,6 +8363,8 @@ System_Runtime_CompilerServices_ValueTaskAwaiter_GetResult(
 	System_Runtime_CompilerServices_ValueTaskAwaiter_t /* System.Runtime.CompilerServices.ValueTaskAwaiter */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
+
+// TODO (Property): IsCompleted
 
 void /* System.Void */
 System_Runtime_CompilerServices_ValueTaskAwaiter_Destroy(
@@ -7979,6 +8395,8 @@ System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTask
 	System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_t /* System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
+
+// TODO (Property): IsCompleted
 
 void /* System.Void */
 System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_Destroy(
@@ -8042,6 +8460,8 @@ System_Runtime_CompilerServices_TaskAwaiter_GetResult(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+// TODO (Property): IsCompleted
+
 void /* System.Void */
 System_Runtime_CompilerServices_TaskAwaiter_Destroy(
 	System_Runtime_CompilerServices_TaskAwaiter_t /* System.Runtime.CompilerServices.TaskAwaiter */ self
@@ -8071,6 +8491,8 @@ System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_Ge
 	System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_t /* System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
+
+// TODO (Property): IsCompleted
 
 void /* System.Void */
 System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_Destroy(
@@ -8102,6 +8524,8 @@ System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_GetResult(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+// TODO (Property): IsCompleted
+
 void /* System.Void */
 System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_Destroy(
 	System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_t /* System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter */ self
@@ -8127,6 +8551,10 @@ Microsoft_Win32_SafeHandles_SafeFileHandle_t /* Microsoft.Win32.SafeHandles.Safe
 Microsoft_Win32_SafeHandles_SafeFileHandle_Create1(
 	System_Exception_t* /* System.Exception */ outException
 );
+
+// TODO (Property): IsAsync
+
+// TODO (Property): IsInvalid
 
 void /* System.Void */
 Microsoft_Win32_SafeHandles_SafeFileHandle_Destroy(
@@ -8162,6 +8590,30 @@ System_IO_FileStreamOptions_Create(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+// TODO (Property): Mode
+
+// TODO (Property): Mode
+
+// TODO (Property): Access
+
+// TODO (Property): Access
+
+// TODO (Property): Share
+
+// TODO (Property): Share
+
+// TODO (Property): Options
+
+// TODO (Property): Options
+
+// TODO (Property): PreallocationSize
+
+// TODO (Property): PreallocationSize
+
+// TODO (Property): BufferSize
+
+// TODO (Property): BufferSize
+
 void /* System.Void */
 System_IO_FileStreamOptions_Destroy(
 	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ self
@@ -8178,6 +8630,12 @@ System_Reflection_ManifestResourceInfo_Create(
 	System_Reflection_ResourceLocation /* System.Reflection.ResourceLocation */ resourceLocation,
 	System_Exception_t* /* System.Exception */ outException
 );
+
+// TODO (Property): ReferencedAssembly
+
+// TODO (Property): FileName
+
+// TODO (Property): ResourceLocation
 
 void /* System.Void */
 System_Reflection_ManifestResourceInfo_Destroy(
@@ -8637,6 +9095,20 @@ System_Text_Rune_Create3(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+// TODO (Property): IsAscii
+
+// TODO (Property): IsBmp
+
+// TODO (Property): Plane
+
+// TODO (Property): ReplacementChar
+
+// TODO (Property): Utf16SequenceLength
+
+// TODO (Property): Utf8SequenceLength
+
+// TODO (Property): Value
+
 void /* System.Void */
 System_Text_Rune_Destroy(
 	System_Text_Rune_t /* System.Text.Rune */ self
@@ -8682,6 +9154,8 @@ System_Globalization_SortKey_ToString(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+// TODO (Property): OriginalString
+
 void /* System.Void */
 System_Globalization_SortKey_Destroy(
 	System_Globalization_SortKey_t /* System.Globalization.SortKey */ self
@@ -8717,6 +9191,10 @@ System_Globalization_SortVersion_Create(
 	System_Guid_t /* System.Guid */ sortId,
 	System_Exception_t* /* System.Exception */ outException
 );
+
+// TODO (Property): FullVersion
+
+// TODO (Property): SortId
 
 void /* System.Void */
 System_Globalization_SortVersion_Destroy(
@@ -8793,6 +9271,26 @@ System_Globalization_TextInfo_ToTitleCase(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+// TODO (Property): ANSICodePage
+
+// TODO (Property): OEMCodePage
+
+// TODO (Property): MacCodePage
+
+// TODO (Property): EBCDICCodePage
+
+// TODO (Property): LCID
+
+// TODO (Property): CultureName
+
+// TODO (Property): IsReadOnly
+
+// TODO (Property): ListSeparator
+
+// TODO (Property): ListSeparator
+
+// TODO (Property): IsRightToLeft
+
 void /* System.Void */
 System_Globalization_TextInfo_Destroy(
 	System_Globalization_TextInfo_t /* System.Globalization.TextInfo */ self
@@ -8831,6 +9329,104 @@ System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo
 System_Globalization_NumberFormatInfo_Create(
 	System_Exception_t* /* System.Exception */ outException
 );
+
+// TODO (Property): InvariantInfo
+
+// TODO (Property): CurrencyDecimalDigits
+
+// TODO (Property): CurrencyDecimalDigits
+
+// TODO (Property): CurrencyDecimalSeparator
+
+// TODO (Property): CurrencyDecimalSeparator
+
+// TODO (Property): IsReadOnly
+
+// TODO (Property): CurrencyGroupSeparator
+
+// TODO (Property): CurrencyGroupSeparator
+
+// TODO (Property): CurrencySymbol
+
+// TODO (Property): CurrencySymbol
+
+// TODO (Property): CurrentInfo
+
+// TODO (Property): NaNSymbol
+
+// TODO (Property): NaNSymbol
+
+// TODO (Property): CurrencyNegativePattern
+
+// TODO (Property): CurrencyNegativePattern
+
+// TODO (Property): NumberNegativePattern
+
+// TODO (Property): NumberNegativePattern
+
+// TODO (Property): PercentPositivePattern
+
+// TODO (Property): PercentPositivePattern
+
+// TODO (Property): PercentNegativePattern
+
+// TODO (Property): PercentNegativePattern
+
+// TODO (Property): NegativeInfinitySymbol
+
+// TODO (Property): NegativeInfinitySymbol
+
+// TODO (Property): NegativeSign
+
+// TODO (Property): NegativeSign
+
+// TODO (Property): NumberDecimalDigits
+
+// TODO (Property): NumberDecimalDigits
+
+// TODO (Property): NumberDecimalSeparator
+
+// TODO (Property): NumberDecimalSeparator
+
+// TODO (Property): NumberGroupSeparator
+
+// TODO (Property): NumberGroupSeparator
+
+// TODO (Property): CurrencyPositivePattern
+
+// TODO (Property): CurrencyPositivePattern
+
+// TODO (Property): PositiveInfinitySymbol
+
+// TODO (Property): PositiveInfinitySymbol
+
+// TODO (Property): PositiveSign
+
+// TODO (Property): PositiveSign
+
+// TODO (Property): PercentDecimalDigits
+
+// TODO (Property): PercentDecimalDigits
+
+// TODO (Property): PercentDecimalSeparator
+
+// TODO (Property): PercentDecimalSeparator
+
+// TODO (Property): PercentGroupSeparator
+
+// TODO (Property): PercentGroupSeparator
+
+// TODO (Property): PercentSymbol
+
+// TODO (Property): PercentSymbol
+
+// TODO (Property): PerMilleSymbol
+
+// TODO (Property): PerMilleSymbol
+
+// TODO (Property): DigitSubstitution
+
+// TODO (Property): DigitSubstitution
 
 void /* System.Void */
 System_Globalization_NumberFormatInfo_Destroy(
@@ -8932,6 +9528,76 @@ System_Globalization_DateTimeFormatInfo_Create(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+// TODO (Property): InvariantInfo
+
+// TODO (Property): CurrentInfo
+
+// TODO (Property): AMDesignator
+
+// TODO (Property): AMDesignator
+
+// TODO (Property): Calendar
+
+// TODO (Property): Calendar
+
+// TODO (Property): DateSeparator
+
+// TODO (Property): DateSeparator
+
+// TODO (Property): FirstDayOfWeek
+
+// TODO (Property): FirstDayOfWeek
+
+// TODO (Property): CalendarWeekRule
+
+// TODO (Property): CalendarWeekRule
+
+// TODO (Property): FullDateTimePattern
+
+// TODO (Property): FullDateTimePattern
+
+// TODO (Property): LongDatePattern
+
+// TODO (Property): LongDatePattern
+
+// TODO (Property): LongTimePattern
+
+// TODO (Property): LongTimePattern
+
+// TODO (Property): MonthDayPattern
+
+// TODO (Property): MonthDayPattern
+
+// TODO (Property): PMDesignator
+
+// TODO (Property): PMDesignator
+
+// TODO (Property): RFC1123Pattern
+
+// TODO (Property): ShortDatePattern
+
+// TODO (Property): ShortDatePattern
+
+// TODO (Property): ShortTimePattern
+
+// TODO (Property): ShortTimePattern
+
+// TODO (Property): SortableDateTimePattern
+
+// TODO (Property): TimeSeparator
+
+// TODO (Property): TimeSeparator
+
+// TODO (Property): UniversalSortableDateTimePattern
+
+// TODO (Property): YearMonthPattern
+
+// TODO (Property): YearMonthPattern
+
+// TODO (Property): IsReadOnly
+
+// TODO (Property): NativeCalendarName
+
 void /* System.Void */
 System_Globalization_DateTimeFormatInfo_Destroy(
 	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self
@@ -8965,6 +9631,8 @@ System_CharEnumerator_Reset(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+// TODO (Property): Current
+
 void /* System.Void */
 System_CharEnumerator_Destroy(
 	System_CharEnumerator_t /* System.CharEnumerator */ self
@@ -8986,6 +9654,8 @@ System_Text_StringRuneEnumerator_MoveNext(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+// TODO (Property): Current
+
 void /* System.Void */
 System_Text_StringRuneEnumerator_Destroy(
 	System_Text_StringRuneEnumerator_t /* System.Text.StringRuneEnumerator */ self
@@ -9005,6 +9675,8 @@ System_Text_CompositeFormat_Parse(
 	CString /* System.String */ format,
 	System_Exception_t* /* System.Exception */ outException
 );
+
+// TODO (Property): Format
 
 void /* System.Void */
 System_Text_CompositeFormat_Destroy(
@@ -9339,6 +10011,8 @@ System_Runtime_InteropServices_StructLayoutAttribute_Create1(
 	int16_t /* System.Int16 */ layoutKind,
 	System_Exception_t* /* System.Exception */ outException
 );
+
+// TODO (Property): Value
 
 void /* System.Void */
 System_Runtime_InteropServices_StructLayoutAttribute_Destroy(
@@ -9688,6 +10362,24 @@ NativeAOT_CodeGeneratorInputSample_Person_Create(
 	int32_t /* System.Int32 */ age,
 	System_Exception_t* /* System.Exception */ outException
 );
+
+// TODO (Property): FirstName
+
+// TODO (Property): FirstName
+
+// TODO (Property): LastName
+
+// TODO (Property): LastName
+
+// TODO (Property): Age
+
+// TODO (Property): Age
+
+// TODO (Property): NiceLevel
+
+// TODO (Property): NiceLevel
+
+// TODO (Property): FullName
 
 void /* System.Void */
 NativeAOT_CodeGeneratorInputSample_Person_Destroy(

@@ -50,7 +50,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         bool isStaticMethod,
         bool mayThrow,
         Type declaringType,
-        Type returnType,
+        Type returnOrSetterType,
         IEnumerable<ParameterInfo> parameters,
         TypeDescriptorRegistry typeDescriptorRegistry,
         State state
@@ -66,9 +66,11 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 methodNameC = $"{declaringType.GetFullNameOrName().Replace('.', '_')}_Create";
                 break;
             case MethodKind.PropertyGetter:
-                throw new NotSupportedException();
+                methodNameC = $"{declaringType.GetFullNameOrName().Replace('.', '_')}_{methodName}_Get";
+                break;
             case MethodKind.PropertySetter:
-                throw new NotSupportedException();
+                methodNameC = $"{declaringType.GetFullNameOrName().Replace('.', '_')}_{methodName}_Set";
+                break;
             default:
                 throw new Exception("Unknown method kind");
         }
@@ -81,12 +83,14 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             methodNameC,
             CodeLanguage.CSharpUnmanaged
         );
-        
-        TypeDescriptor returnTypeDescriptor = returnType.GetTypeDescriptor(typeDescriptorRegistry);
-        string unmanagedReturnTypeName = returnTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
-        string unmanagedReturnTypeNameWithComment = $"{unmanagedReturnTypeName} /* {returnType.GetFullNameOrName()} */";
+
+        Type? setterType = methodKind == MethodKind.PropertySetter 
+            ? returnOrSetterType
+            : null;
 
         string methodSignatureParameters = WriteParameters(
+            methodKind,
+            setterType,
             mayThrow,
             isStaticMethod,
             declaringType,
@@ -94,10 +98,17 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             typeDescriptorRegistry
         );
         
+        TypeDescriptor returnOrSetterTypeDescriptor = returnOrSetterType.GetTypeDescriptor(typeDescriptorRegistry);
+        string unmanagedReturnOrSetterTypeName = returnOrSetterTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
+        
+        string unmanagedReturnOrSetterTypeNameWithComment = methodKind != MethodKind.PropertySetter 
+            ? $"{unmanagedReturnOrSetterTypeName} /* {returnOrSetterType.GetFullNameOrName()} */" 
+            : "void /* System.Void */";
+        
         StringBuilder sb = new();
         
         sb.AppendLine($"[UnmanagedCallersOnly(EntryPoint = \"{methodNameC}\")]");
-        sb.AppendLine($"internal static {unmanagedReturnTypeNameWithComment} {methodNameC}({methodSignatureParameters})");
+        sb.AppendLine($"internal static {unmanagedReturnOrSetterTypeNameWithComment} {methodNameC}({methodSignatureParameters})");
         sb.AppendLine("{");
 
         string? convertedSelfParameterName = null;
@@ -136,25 +147,36 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
         string convertedParameterNamesString = string.Join(", ", convertedParameterNames);
 
-        bool isReturning = !returnTypeDescriptor.IsVoid;
+        bool isReturning = !returnOrSetterTypeDescriptor.IsVoid;
 
         string returnValuePrefix = string.Empty;
         string returnValueName = "__returnValue";
 
         if (isReturning) {
-            returnValuePrefix = $"{returnType.GetFullNameOrName()} {returnValueName} = ";
+            returnValuePrefix = $"{returnOrSetterType.GetFullNameOrName()} {returnValueName} = ";
         }
 
         string methodNameForInvocation = methodKind == MethodKind.Constructor
             ? string.Empty
             : $".{methodName}";
+
+        bool invocationNeedsParantheses = methodKind != MethodKind.PropertyGetter &&
+                                          methodKind != MethodKind.PropertySetter;
+
+        string methodInvocationPrefix = invocationNeedsParantheses 
+            ? "("
+            : string.Empty;
         
-        sb.AppendLine($"{implPrefix}{returnValuePrefix}{methodTarget}{methodNameForInvocation}({convertedParameterNamesString});");
+        string methodInvocationSuffix = invocationNeedsParantheses 
+            ? ")"
+            : string.Empty;
+        
+        sb.AppendLine($"{implPrefix}{returnValuePrefix}{methodTarget}{methodNameForInvocation}{methodInvocationPrefix}{convertedParameterNamesString}{methodInvocationSuffix};");
 
         string? convertedReturnValueName = null;
 
         if (isReturning) {
-            string? returnValueTypeConversion = returnTypeDescriptor.GetTypeConversion(
+            string? returnValueTypeConversion = returnOrSetterTypeDescriptor.GetTypeConversion(
                 CodeLanguage.CSharp,
                 CodeLanguage.CSharpUnmanaged
             );
@@ -164,7 +186,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 
                 convertedReturnValueName = "_returnValueNative";
                 
-                sb.AppendLine($"{implPrefix}{returnTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true)} {convertedReturnValueName} = {fullReturnValueTypeConversion};");
+                sb.AppendLine($"{implPrefix}{returnOrSetterTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true)} {convertedReturnValueName} = {fullReturnValueTypeConversion};");
             } else {
                 convertedReturnValueName = returnValueName;
             }
@@ -194,8 +216,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 """);
 
             if (isReturning) {
-                string returnValue = returnTypeDescriptor.GetReturnValueOnException()
-                                     ?? $"default({returnType.GetFullNameOrName()})";
+                string returnValue = returnOrSetterTypeDescriptor.GetReturnValueOnException()
+                                     ?? $"default({returnOrSetterType.GetFullNameOrName()})";
 
                 sb.AppendLine($"{implPrefix}return {returnValue};");
             }
@@ -251,6 +273,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
     }
 
     protected string WriteParameters(
+        MethodKind methodKind,
+        Type? setterType,
         bool mayThrow,
         bool isStatic,
         Type declaringType,
@@ -269,13 +293,25 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             parameterList.Add(parameterString);
         }
 
-        foreach (var parameter in parameters) {
-            Type parameterType = parameter.ParameterType;
-            TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
-            string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
-
-            string parameterString = $"{unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */ {parameter.Name}";
+        if (methodKind == MethodKind.PropertySetter) {
+            if (setterType == null) {
+                throw new Exception("Setter Type may not be null");
+            }
+            
+            TypeDescriptor setterTypeDescriptor = setterType.GetTypeDescriptor(typeDescriptorRegistry);
+            string unmanagedSetterTypeName = setterTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
+    
+            string parameterString = $"{unmanagedSetterTypeName} /* {setterType.GetFullNameOrName()} */ __value";
             parameterList.Add(parameterString);
+        } else {
+            foreach (var parameter in parameters) {
+                Type parameterType = parameter.ParameterType;
+                TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
+                string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
+    
+                string parameterString = $"{unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */ {parameter.Name}";
+                parameterList.Add(parameterString);
+            }
         }
 
         if (mayThrow) {

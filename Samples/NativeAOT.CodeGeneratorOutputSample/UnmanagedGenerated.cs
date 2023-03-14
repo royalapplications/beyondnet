@@ -1,5 +1,5 @@
 // Number of generated types: 162
-// Number of generated members: 1090
+// Number of generated members: 1436
 
 // <Header>
 using System;
@@ -2860,205 +2860,138 @@ internal static unsafe class System_Type
 	}
 	
 
-	// TODO (Property): IsInterface
 	
 
-	// TODO (Property): MemberType
 	
 
-	// TODO (Property): Namespace
 	
 
-	// TODO (Property): AssemblyQualifiedName
 	
 
-	// TODO (Property): FullName
 	
 
-	// TODO (Property): Assembly
 	
 
-	// TODO (Property): Module
 	
 
-	// TODO (Property): IsNested
 	
 
-	// TODO (Property): DeclaringType
 	
 
-	// TODO (Property): DeclaringMethod
 	
 
-	// TODO (Property): ReflectedType
 	
 
-	// TODO (Property): UnderlyingSystemType
 	
 
-	// TODO (Property): IsTypeDefinition
 	
 
-	// TODO (Property): IsArray
 	
 
-	// TODO (Property): IsByRef
 	
 
-	// TODO (Property): IsPointer
 	
 
-	// TODO (Property): IsConstructedGenericType
 	
 
-	// TODO (Property): IsGenericParameter
 	
 
-	// TODO (Property): IsGenericTypeParameter
 	
 
-	// TODO (Property): IsGenericMethodParameter
 	
 
-	// TODO (Property): IsGenericType
 	
 
-	// TODO (Property): IsGenericTypeDefinition
 	
 
-	// TODO (Property): IsSZArray
 	
 
-	// TODO (Property): IsVariableBoundArray
 	
 
-	// TODO (Property): IsByRefLike
 	
 
-	// TODO (Property): HasElementType
 	
 
-	// TODO (Property): GenericParameterPosition
 	
 
-	// TODO (Property): GenericParameterAttributes
 	
 
-	// TODO (Property): Attributes
 	
 
-	// TODO (Property): IsAbstract
 	
 
-	// TODO (Property): IsImport
 	
 
-	// TODO (Property): IsSealed
 	
 
-	// TODO (Property): IsSpecialName
 	
 
-	// TODO (Property): IsClass
 	
 
-	// TODO (Property): IsNestedAssembly
 	
 
-	// TODO (Property): IsNestedFamANDAssem
 	
 
-	// TODO (Property): IsNestedFamily
 	
 
-	// TODO (Property): IsNestedFamORAssem
 	
 
-	// TODO (Property): IsNestedPrivate
 	
 
-	// TODO (Property): IsNestedPublic
 	
 
-	// TODO (Property): IsNotPublic
 	
 
-	// TODO (Property): IsPublic
 	
 
-	// TODO (Property): IsAutoLayout
 	
 
-	// TODO (Property): IsExplicitLayout
 	
 
-	// TODO (Property): IsLayoutSequential
 	
 
-	// TODO (Property): IsAnsiClass
 	
 
-	// TODO (Property): IsAutoClass
 	
 
-	// TODO (Property): IsUnicodeClass
 	
 
-	// TODO (Property): IsCOMObject
 	
 
-	// TODO (Property): IsContextful
 	
 
-	// TODO (Property): IsEnum
 	
 
-	// TODO (Property): IsMarshalByRef
 	
 
-	// TODO (Property): IsPrimitive
 	
 
-	// TODO (Property): IsValueType
 	
 
-	// TODO (Property): IsSignatureType
 	
 
-	// TODO (Property): IsSecurityCritical
 	
 
-	// TODO (Property): IsSecuritySafeCritical
 	
 
-	// TODO (Property): IsSecurityTransparent
 	
 
-	// TODO (Property): StructLayoutAttribute
 	
 
-	// TODO (Property): TypeInitializer
 	
 
-	// TODO (Property): TypeHandle
 	
 
-	// TODO (Property): GUID
 	
 
-	// TODO (Property): BaseType
 	
 
-	// TODO (Property): DefaultBinder
 	
 
-	// TODO (Property): IsSerializable
 	
 
-	// TODO (Property): ContainsGenericParameters
 	
 
-	// TODO (Property): IsVisible
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Type_Destroy")]
@@ -3200,25 +3133,18 @@ internal static unsafe class System_Reflection_MemberInfo
 	}
 	
 
-	// TODO (Property): MemberType
 	
 
-	// TODO (Property): Name
 	
 
-	// TODO (Property): DeclaringType
 	
 
-	// TODO (Property): ReflectedType
 	
 
-	// TODO (Property): Module
 	
 
-	// TODO (Property): IsCollectible
 	
 
-	// TODO (Property): MetadataToken
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Reflection_MemberInfo_Destroy")]
@@ -6444,10 +6370,68 @@ internal static unsafe class System_String
 	}
 	
 
-	// TODO (Property): Chars
+	[UnmanagedCallersOnly(EntryPoint = "System_String_Chars_Set")]
+	internal static void /* System.Void */ System_String_Chars_Set(byte* /* System.String */ __self, byte* /* System.String */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfDotNet = InteropUtils.ToDotNetString(__self);
+	
+	
+	    try {
+			System.String __returnValue = __selfDotNet.Chars;
+			byte* _returnValueNative = __returnValue.CopyToCString();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Length
+	[UnmanagedCallersOnly(EntryPoint = "System_String_Length_Set")]
+	internal static void /* System.Void */ System_String_Length_Set(byte* /* System.String */ __self, byte* /* System.String */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfDotNet = InteropUtils.ToDotNetString(__self);
+	
+	
+	    try {
+			System.String __returnValue = __selfDotNet.Length;
+			byte* _returnValueNative = __returnValue.CopyToCString();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_String_Destroy")]
@@ -6965,82 +6949,956 @@ internal static unsafe class System_Globalization_CultureInfo
 	}
 	
 
-	// TODO (Property): CurrentCulture
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_CurrentCulture_Set")]
+	internal static void /* System.Void */ System_Globalization_CultureInfo_CurrentCulture_Set(void* /* System.Globalization.CultureInfo */ __value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Globalization.CultureInfo __returnValue = System.Globalization.CultureInfo.CurrentCulture;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_CurrentCulture_Get")]
+	internal static void* /* System.Globalization.CultureInfo */ System_Globalization_CultureInfo_CurrentCulture_Get(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Globalization.CultureInfo __returnValue = System.Globalization.CultureInfo.CurrentCulture;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): CurrentUICulture
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_CurrentUICulture_Set")]
+	internal static void /* System.Void */ System_Globalization_CultureInfo_CurrentUICulture_Set(void* /* System.Globalization.CultureInfo */ __value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Globalization.CultureInfo __returnValue = System.Globalization.CultureInfo.CurrentUICulture;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_CurrentUICulture_Get")]
+	internal static void* /* System.Globalization.CultureInfo */ System_Globalization_CultureInfo_CurrentUICulture_Get(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Globalization.CultureInfo __returnValue = System.Globalization.CultureInfo.CurrentUICulture;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): InstalledUICulture
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_InstalledUICulture_Set")]
+	internal static void /* System.Void */ System_Globalization_CultureInfo_InstalledUICulture_Set(void* /* System.Globalization.CultureInfo */ __value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Globalization.CultureInfo __returnValue = System.Globalization.CultureInfo.InstalledUICulture;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): DefaultThreadCurrentCulture
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_DefaultThreadCurrentCulture_Set")]
+	internal static void /* System.Void */ System_Globalization_CultureInfo_DefaultThreadCurrentCulture_Set(void* /* System.Globalization.CultureInfo */ __value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Globalization.CultureInfo __returnValue = System.Globalization.CultureInfo.DefaultThreadCurrentCulture;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_DefaultThreadCurrentCulture_Get")]
+	internal static void* /* System.Globalization.CultureInfo */ System_Globalization_CultureInfo_DefaultThreadCurrentCulture_Get(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Globalization.CultureInfo __returnValue = System.Globalization.CultureInfo.DefaultThreadCurrentCulture;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): DefaultThreadCurrentUICulture
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_DefaultThreadCurrentUICulture_Set")]
+	internal static void /* System.Void */ System_Globalization_CultureInfo_DefaultThreadCurrentUICulture_Set(void* /* System.Globalization.CultureInfo */ __value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Globalization.CultureInfo __returnValue = System.Globalization.CultureInfo.DefaultThreadCurrentUICulture;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_DefaultThreadCurrentUICulture_Get")]
+	internal static void* /* System.Globalization.CultureInfo */ System_Globalization_CultureInfo_DefaultThreadCurrentUICulture_Get(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Globalization.CultureInfo __returnValue = System.Globalization.CultureInfo.DefaultThreadCurrentUICulture;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): InvariantCulture
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_InvariantCulture_Set")]
+	internal static void /* System.Void */ System_Globalization_CultureInfo_InvariantCulture_Set(void* /* System.Globalization.CultureInfo */ __value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Globalization.CultureInfo __returnValue = System.Globalization.CultureInfo.InvariantCulture;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Parent
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_Parent_Set")]
+	internal static void /* System.Void */ System_Globalization_CultureInfo_Parent_Set(void* /* System.Globalization.CultureInfo */ __self, void* /* System.Globalization.CultureInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.CultureInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.CultureInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.CultureInfo __returnValue = __selfDotNet.Parent;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): LCID
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_LCID_Set")]
+	internal static void /* System.Void */ System_Globalization_CultureInfo_LCID_Set(void* /* System.Globalization.CultureInfo */ __self, void* /* System.Globalization.CultureInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.CultureInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.CultureInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.CultureInfo __returnValue = __selfDotNet.LCID;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): KeyboardLayoutId
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_KeyboardLayoutId_Set")]
+	internal static void /* System.Void */ System_Globalization_CultureInfo_KeyboardLayoutId_Set(void* /* System.Globalization.CultureInfo */ __self, void* /* System.Globalization.CultureInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.CultureInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.CultureInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.CultureInfo __returnValue = __selfDotNet.KeyboardLayoutId;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Name
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_Name_Set")]
+	internal static void /* System.Void */ System_Globalization_CultureInfo_Name_Set(void* /* System.Globalization.CultureInfo */ __self, void* /* System.Globalization.CultureInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.CultureInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.CultureInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.CultureInfo __returnValue = __selfDotNet.Name;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): IetfLanguageTag
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_IetfLanguageTag_Set")]
+	internal static void /* System.Void */ System_Globalization_CultureInfo_IetfLanguageTag_Set(void* /* System.Globalization.CultureInfo */ __self, void* /* System.Globalization.CultureInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.CultureInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.CultureInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.CultureInfo __returnValue = __selfDotNet.IetfLanguageTag;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): DisplayName
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_DisplayName_Set")]
+	internal static void /* System.Void */ System_Globalization_CultureInfo_DisplayName_Set(void* /* System.Globalization.CultureInfo */ __self, void* /* System.Globalization.CultureInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.CultureInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.CultureInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.CultureInfo __returnValue = __selfDotNet.DisplayName;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): NativeName
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_NativeName_Set")]
+	internal static void /* System.Void */ System_Globalization_CultureInfo_NativeName_Set(void* /* System.Globalization.CultureInfo */ __self, void* /* System.Globalization.CultureInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.CultureInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.CultureInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.CultureInfo __returnValue = __selfDotNet.NativeName;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): EnglishName
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_EnglishName_Set")]
+	internal static void /* System.Void */ System_Globalization_CultureInfo_EnglishName_Set(void* /* System.Globalization.CultureInfo */ __self, void* /* System.Globalization.CultureInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.CultureInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.CultureInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.CultureInfo __returnValue = __selfDotNet.EnglishName;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): TwoLetterISOLanguageName
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_TwoLetterISOLanguageName_Set")]
+	internal static void /* System.Void */ System_Globalization_CultureInfo_TwoLetterISOLanguageName_Set(void* /* System.Globalization.CultureInfo */ __self, void* /* System.Globalization.CultureInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.CultureInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.CultureInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.CultureInfo __returnValue = __selfDotNet.TwoLetterISOLanguageName;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): ThreeLetterISOLanguageName
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_ThreeLetterISOLanguageName_Set")]
+	internal static void /* System.Void */ System_Globalization_CultureInfo_ThreeLetterISOLanguageName_Set(void* /* System.Globalization.CultureInfo */ __self, void* /* System.Globalization.CultureInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.CultureInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.CultureInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.CultureInfo __returnValue = __selfDotNet.ThreeLetterISOLanguageName;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): ThreeLetterWindowsLanguageName
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_ThreeLetterWindowsLanguageName_Set")]
+	internal static void /* System.Void */ System_Globalization_CultureInfo_ThreeLetterWindowsLanguageName_Set(void* /* System.Globalization.CultureInfo */ __self, void* /* System.Globalization.CultureInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.CultureInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.CultureInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.CultureInfo __returnValue = __selfDotNet.ThreeLetterWindowsLanguageName;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): CompareInfo
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_CompareInfo_Set")]
+	internal static void /* System.Void */ System_Globalization_CultureInfo_CompareInfo_Set(void* /* System.Globalization.CultureInfo */ __self, void* /* System.Globalization.CultureInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.CultureInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.CultureInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.CultureInfo __returnValue = __selfDotNet.CompareInfo;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): TextInfo
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_TextInfo_Set")]
+	internal static void /* System.Void */ System_Globalization_CultureInfo_TextInfo_Set(void* /* System.Globalization.CultureInfo */ __self, void* /* System.Globalization.CultureInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.CultureInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.CultureInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.CultureInfo __returnValue = __selfDotNet.TextInfo;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): IsNeutralCulture
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_IsNeutralCulture_Set")]
+	internal static void /* System.Void */ System_Globalization_CultureInfo_IsNeutralCulture_Set(void* /* System.Globalization.CultureInfo */ __self, void* /* System.Globalization.CultureInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.CultureInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.CultureInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.CultureInfo __returnValue = __selfDotNet.IsNeutralCulture;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): CultureTypes
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_CultureTypes_Set")]
+	internal static void /* System.Void */ System_Globalization_CultureInfo_CultureTypes_Set(void* /* System.Globalization.CultureInfo */ __self, void* /* System.Globalization.CultureInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.CultureInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.CultureInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.CultureInfo __returnValue = __selfDotNet.CultureTypes;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): NumberFormat
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_NumberFormat_Set")]
+	internal static void /* System.Void */ System_Globalization_CultureInfo_NumberFormat_Set(void* /* System.Globalization.CultureInfo */ __self, void* /* System.Globalization.CultureInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.CultureInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.CultureInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.CultureInfo __returnValue = __selfDotNet.NumberFormat;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_NumberFormat_Get")]
+	internal static void* /* System.Globalization.CultureInfo */ System_Globalization_CultureInfo_NumberFormat_Get(void* /* System.Globalization.CultureInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.CultureInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.CultureInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.CultureInfo __returnValue = __selfDotNet.NumberFormat;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): DateTimeFormat
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_DateTimeFormat_Set")]
+	internal static void /* System.Void */ System_Globalization_CultureInfo_DateTimeFormat_Set(void* /* System.Globalization.CultureInfo */ __self, void* /* System.Globalization.CultureInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.CultureInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.CultureInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.CultureInfo __returnValue = __selfDotNet.DateTimeFormat;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_DateTimeFormat_Get")]
+	internal static void* /* System.Globalization.CultureInfo */ System_Globalization_CultureInfo_DateTimeFormat_Get(void* /* System.Globalization.CultureInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.CultureInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.CultureInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.CultureInfo __returnValue = __selfDotNet.DateTimeFormat;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Calendar
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_Calendar_Set")]
+	internal static void /* System.Void */ System_Globalization_CultureInfo_Calendar_Set(void* /* System.Globalization.CultureInfo */ __self, void* /* System.Globalization.CultureInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.CultureInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.CultureInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.CultureInfo __returnValue = __selfDotNet.Calendar;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): UseUserOverride
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_UseUserOverride_Set")]
+	internal static void /* System.Void */ System_Globalization_CultureInfo_UseUserOverride_Set(void* /* System.Globalization.CultureInfo */ __self, void* /* System.Globalization.CultureInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.CultureInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.CultureInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.CultureInfo __returnValue = __selfDotNet.UseUserOverride;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): IsReadOnly
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_IsReadOnly_Set")]
+	internal static void /* System.Void */ System_Globalization_CultureInfo_IsReadOnly_Set(void* /* System.Globalization.CultureInfo */ __self, void* /* System.Globalization.CultureInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.CultureInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.CultureInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.CultureInfo __returnValue = __selfDotNet.IsReadOnly;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Globalization_CultureInfo_Destroy")]
@@ -8512,13 +9370,100 @@ internal static unsafe class System_Globalization_CompareInfo
 	}
 	
 
-	// TODO (Property): Name
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_Name_Set")]
+	internal static void /* System.Void */ System_Globalization_CompareInfo_Name_Set(void* /* System.Globalization.CompareInfo */ __self, void* /* System.Globalization.CompareInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.CompareInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.CompareInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.CompareInfo __returnValue = __selfDotNet.Name;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Version
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_Version_Set")]
+	internal static void /* System.Void */ System_Globalization_CompareInfo_Version_Set(void* /* System.Globalization.CompareInfo */ __self, void* /* System.Globalization.CompareInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.CompareInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.CompareInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.CompareInfo __returnValue = __selfDotNet.Version;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): LCID
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_LCID_Set")]
+	internal static void /* System.Void */ System_Globalization_CompareInfo_LCID_Set(void* /* System.Globalization.CompareInfo */ __self, void* /* System.Globalization.CompareInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.CompareInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.CompareInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.CompareInfo __returnValue = __selfDotNet.LCID;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Globalization_CompareInfo_Destroy")]
@@ -9478,46 +10423,32 @@ internal static unsafe class System_Reflection_Assembly
 	}
 	
 
-	// TODO (Property): CodeBase
 	
 
-	// TODO (Property): EntryPoint
 	
 
-	// TODO (Property): FullName
 	
 
-	// TODO (Property): ImageRuntimeVersion
 	
 
-	// TODO (Property): IsDynamic
 	
 
-	// TODO (Property): Location
 	
 
-	// TODO (Property): ReflectionOnly
 	
 
-	// TODO (Property): IsCollectible
 	
 
-	// TODO (Property): IsFullyTrusted
 	
 
-	// TODO (Property): EscapedCodeBase
 	
 
-	// TODO (Property): ManifestModule
 	
 
-	// TODO (Property): GlobalAssemblyCache
 	
 
-	// TODO (Property): HostContext
 	
 
-	// TODO (Property): SecurityRuleSet
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Reflection_Assembly_Destroy")]
@@ -9757,43 +10688,750 @@ internal static unsafe class System_Reflection_AssemblyName
 	}
 	
 
-	// TODO (Property): Name
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_AssemblyName_Name_Set")]
+	internal static void /* System.Void */ System_Reflection_AssemblyName_Name_Set(void* /* System.Reflection.AssemblyName */ __self, void* /* System.Reflection.AssemblyName */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.AssemblyName __selfDotNet = InteropUtils.GetInstance<System.Reflection.AssemblyName>(__self);
+	
+	
+	    try {
+			System.Reflection.AssemblyName __returnValue = __selfDotNet.Name;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_AssemblyName_Name_Get")]
+	internal static void* /* System.Reflection.AssemblyName */ System_Reflection_AssemblyName_Name_Get(void* /* System.Reflection.AssemblyName */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.AssemblyName __selfDotNet = InteropUtils.GetInstance<System.Reflection.AssemblyName>(__self);
+	
+	
+	    try {
+			System.Reflection.AssemblyName __returnValue = __selfDotNet.Name;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Version
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_AssemblyName_Version_Set")]
+	internal static void /* System.Void */ System_Reflection_AssemblyName_Version_Set(void* /* System.Reflection.AssemblyName */ __self, void* /* System.Reflection.AssemblyName */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.AssemblyName __selfDotNet = InteropUtils.GetInstance<System.Reflection.AssemblyName>(__self);
+	
+	
+	    try {
+			System.Reflection.AssemblyName __returnValue = __selfDotNet.Version;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_AssemblyName_Version_Get")]
+	internal static void* /* System.Reflection.AssemblyName */ System_Reflection_AssemblyName_Version_Get(void* /* System.Reflection.AssemblyName */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.AssemblyName __selfDotNet = InteropUtils.GetInstance<System.Reflection.AssemblyName>(__self);
+	
+	
+	    try {
+			System.Reflection.AssemblyName __returnValue = __selfDotNet.Version;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): CultureInfo
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_AssemblyName_CultureInfo_Set")]
+	internal static void /* System.Void */ System_Reflection_AssemblyName_CultureInfo_Set(void* /* System.Reflection.AssemblyName */ __self, void* /* System.Reflection.AssemblyName */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.AssemblyName __selfDotNet = InteropUtils.GetInstance<System.Reflection.AssemblyName>(__self);
+	
+	
+	    try {
+			System.Reflection.AssemblyName __returnValue = __selfDotNet.CultureInfo;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_AssemblyName_CultureInfo_Get")]
+	internal static void* /* System.Reflection.AssemblyName */ System_Reflection_AssemblyName_CultureInfo_Get(void* /* System.Reflection.AssemblyName */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.AssemblyName __selfDotNet = InteropUtils.GetInstance<System.Reflection.AssemblyName>(__self);
+	
+	
+	    try {
+			System.Reflection.AssemblyName __returnValue = __selfDotNet.CultureInfo;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): CultureName
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_AssemblyName_CultureName_Set")]
+	internal static void /* System.Void */ System_Reflection_AssemblyName_CultureName_Set(void* /* System.Reflection.AssemblyName */ __self, void* /* System.Reflection.AssemblyName */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.AssemblyName __selfDotNet = InteropUtils.GetInstance<System.Reflection.AssemblyName>(__self);
+	
+	
+	    try {
+			System.Reflection.AssemblyName __returnValue = __selfDotNet.CultureName;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_AssemblyName_CultureName_Get")]
+	internal static void* /* System.Reflection.AssemblyName */ System_Reflection_AssemblyName_CultureName_Get(void* /* System.Reflection.AssemblyName */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.AssemblyName __selfDotNet = InteropUtils.GetInstance<System.Reflection.AssemblyName>(__self);
+	
+	
+	    try {
+			System.Reflection.AssemblyName __returnValue = __selfDotNet.CultureName;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): CodeBase
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_AssemblyName_CodeBase_Set")]
+	internal static void /* System.Void */ System_Reflection_AssemblyName_CodeBase_Set(void* /* System.Reflection.AssemblyName */ __self, void* /* System.Reflection.AssemblyName */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.AssemblyName __selfDotNet = InteropUtils.GetInstance<System.Reflection.AssemblyName>(__self);
+	
+	
+	    try {
+			System.Reflection.AssemblyName __returnValue = __selfDotNet.CodeBase;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_AssemblyName_CodeBase_Get")]
+	internal static void* /* System.Reflection.AssemblyName */ System_Reflection_AssemblyName_CodeBase_Get(void* /* System.Reflection.AssemblyName */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.AssemblyName __selfDotNet = InteropUtils.GetInstance<System.Reflection.AssemblyName>(__self);
+	
+	
+	    try {
+			System.Reflection.AssemblyName __returnValue = __selfDotNet.CodeBase;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): EscapedCodeBase
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_AssemblyName_EscapedCodeBase_Set")]
+	internal static void /* System.Void */ System_Reflection_AssemblyName_EscapedCodeBase_Set(void* /* System.Reflection.AssemblyName */ __self, void* /* System.Reflection.AssemblyName */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.AssemblyName __selfDotNet = InteropUtils.GetInstance<System.Reflection.AssemblyName>(__self);
+	
+	
+	    try {
+			System.Reflection.AssemblyName __returnValue = __selfDotNet.EscapedCodeBase;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): ProcessorArchitecture
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_AssemblyName_ProcessorArchitecture_Set")]
+	internal static void /* System.Void */ System_Reflection_AssemblyName_ProcessorArchitecture_Set(void* /* System.Reflection.AssemblyName */ __self, void* /* System.Reflection.AssemblyName */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.AssemblyName __selfDotNet = InteropUtils.GetInstance<System.Reflection.AssemblyName>(__self);
+	
+	
+	    try {
+			System.Reflection.AssemblyName __returnValue = __selfDotNet.ProcessorArchitecture;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_AssemblyName_ProcessorArchitecture_Get")]
+	internal static void* /* System.Reflection.AssemblyName */ System_Reflection_AssemblyName_ProcessorArchitecture_Get(void* /* System.Reflection.AssemblyName */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.AssemblyName __selfDotNet = InteropUtils.GetInstance<System.Reflection.AssemblyName>(__self);
+	
+	
+	    try {
+			System.Reflection.AssemblyName __returnValue = __selfDotNet.ProcessorArchitecture;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): ContentType
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_AssemblyName_ContentType_Set")]
+	internal static void /* System.Void */ System_Reflection_AssemblyName_ContentType_Set(void* /* System.Reflection.AssemblyName */ __self, void* /* System.Reflection.AssemblyName */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.AssemblyName __selfDotNet = InteropUtils.GetInstance<System.Reflection.AssemblyName>(__self);
+	
+	
+	    try {
+			System.Reflection.AssemblyName __returnValue = __selfDotNet.ContentType;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_AssemblyName_ContentType_Get")]
+	internal static void* /* System.Reflection.AssemblyName */ System_Reflection_AssemblyName_ContentType_Get(void* /* System.Reflection.AssemblyName */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.AssemblyName __selfDotNet = InteropUtils.GetInstance<System.Reflection.AssemblyName>(__self);
+	
+	
+	    try {
+			System.Reflection.AssemblyName __returnValue = __selfDotNet.ContentType;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Flags
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_AssemblyName_Flags_Set")]
+	internal static void /* System.Void */ System_Reflection_AssemblyName_Flags_Set(void* /* System.Reflection.AssemblyName */ __self, void* /* System.Reflection.AssemblyName */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.AssemblyName __selfDotNet = InteropUtils.GetInstance<System.Reflection.AssemblyName>(__self);
+	
+	
+	    try {
+			System.Reflection.AssemblyName __returnValue = __selfDotNet.Flags;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_AssemblyName_Flags_Get")]
+	internal static void* /* System.Reflection.AssemblyName */ System_Reflection_AssemblyName_Flags_Get(void* /* System.Reflection.AssemblyName */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.AssemblyName __selfDotNet = InteropUtils.GetInstance<System.Reflection.AssemblyName>(__self);
+	
+	
+	    try {
+			System.Reflection.AssemblyName __returnValue = __selfDotNet.Flags;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): HashAlgorithm
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_AssemblyName_HashAlgorithm_Set")]
+	internal static void /* System.Void */ System_Reflection_AssemblyName_HashAlgorithm_Set(void* /* System.Reflection.AssemblyName */ __self, void* /* System.Reflection.AssemblyName */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.AssemblyName __selfDotNet = InteropUtils.GetInstance<System.Reflection.AssemblyName>(__self);
+	
+	
+	    try {
+			System.Reflection.AssemblyName __returnValue = __selfDotNet.HashAlgorithm;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_AssemblyName_HashAlgorithm_Get")]
+	internal static void* /* System.Reflection.AssemblyName */ System_Reflection_AssemblyName_HashAlgorithm_Get(void* /* System.Reflection.AssemblyName */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.AssemblyName __selfDotNet = InteropUtils.GetInstance<System.Reflection.AssemblyName>(__self);
+	
+	
+	    try {
+			System.Reflection.AssemblyName __returnValue = __selfDotNet.HashAlgorithm;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): VersionCompatibility
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_AssemblyName_VersionCompatibility_Set")]
+	internal static void /* System.Void */ System_Reflection_AssemblyName_VersionCompatibility_Set(void* /* System.Reflection.AssemblyName */ __self, void* /* System.Reflection.AssemblyName */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.AssemblyName __selfDotNet = InteropUtils.GetInstance<System.Reflection.AssemblyName>(__self);
+	
+	
+	    try {
+			System.Reflection.AssemblyName __returnValue = __selfDotNet.VersionCompatibility;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_AssemblyName_VersionCompatibility_Get")]
+	internal static void* /* System.Reflection.AssemblyName */ System_Reflection_AssemblyName_VersionCompatibility_Get(void* /* System.Reflection.AssemblyName */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.AssemblyName __selfDotNet = InteropUtils.GetInstance<System.Reflection.AssemblyName>(__self);
+	
+	
+	    try {
+			System.Reflection.AssemblyName __returnValue = __selfDotNet.VersionCompatibility;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): KeyPair
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_AssemblyName_KeyPair_Set")]
+	internal static void /* System.Void */ System_Reflection_AssemblyName_KeyPair_Set(void* /* System.Reflection.AssemblyName */ __self, void* /* System.Reflection.AssemblyName */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.AssemblyName __selfDotNet = InteropUtils.GetInstance<System.Reflection.AssemblyName>(__self);
+	
+	
+	    try {
+			System.Reflection.AssemblyName __returnValue = __selfDotNet.KeyPair;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_AssemblyName_KeyPair_Get")]
+	internal static void* /* System.Reflection.AssemblyName */ System_Reflection_AssemblyName_KeyPair_Get(void* /* System.Reflection.AssemblyName */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.AssemblyName __selfDotNet = InteropUtils.GetInstance<System.Reflection.AssemblyName>(__self);
+	
+	
+	    try {
+			System.Reflection.AssemblyName __returnValue = __selfDotNet.KeyPair;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): FullName
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_AssemblyName_FullName_Set")]
+	internal static void /* System.Void */ System_Reflection_AssemblyName_FullName_Set(void* /* System.Reflection.AssemblyName */ __self, void* /* System.Reflection.AssemblyName */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.AssemblyName __selfDotNet = InteropUtils.GetInstance<System.Reflection.AssemblyName>(__self);
+	
+	
+	    try {
+			System.Reflection.AssemblyName __returnValue = __selfDotNet.FullName;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Reflection_AssemblyName_Destroy")]
@@ -10209,22 +11847,196 @@ internal static unsafe class System_Version
 	}
 	
 
-	// TODO (Property): Major
+	[UnmanagedCallersOnly(EntryPoint = "System_Version_Major_Set")]
+	internal static void /* System.Void */ System_Version_Major_Set(void* /* System.Version */ __self, void* /* System.Version */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Version __selfDotNet = InteropUtils.GetInstance<System.Version>(__self);
+	
+	
+	    try {
+			System.Version __returnValue = __selfDotNet.Major;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Minor
+	[UnmanagedCallersOnly(EntryPoint = "System_Version_Minor_Set")]
+	internal static void /* System.Void */ System_Version_Minor_Set(void* /* System.Version */ __self, void* /* System.Version */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Version __selfDotNet = InteropUtils.GetInstance<System.Version>(__self);
+	
+	
+	    try {
+			System.Version __returnValue = __selfDotNet.Minor;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Build
+	[UnmanagedCallersOnly(EntryPoint = "System_Version_Build_Set")]
+	internal static void /* System.Void */ System_Version_Build_Set(void* /* System.Version */ __self, void* /* System.Version */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Version __selfDotNet = InteropUtils.GetInstance<System.Version>(__self);
+	
+	
+	    try {
+			System.Version __returnValue = __selfDotNet.Build;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Revision
+	[UnmanagedCallersOnly(EntryPoint = "System_Version_Revision_Set")]
+	internal static void /* System.Void */ System_Version_Revision_Set(void* /* System.Version */ __self, void* /* System.Version */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Version __selfDotNet = InteropUtils.GetInstance<System.Version>(__self);
+	
+	
+	    try {
+			System.Version __returnValue = __selfDotNet.Revision;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): MajorRevision
+	[UnmanagedCallersOnly(EntryPoint = "System_Version_MajorRevision_Set")]
+	internal static void /* System.Void */ System_Version_MajorRevision_Set(void* /* System.Version */ __self, void* /* System.Version */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Version __selfDotNet = InteropUtils.GetInstance<System.Version>(__self);
+	
+	
+	    try {
+			System.Version __returnValue = __selfDotNet.MajorRevision;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): MinorRevision
+	[UnmanagedCallersOnly(EntryPoint = "System_Version_MinorRevision_Set")]
+	internal static void /* System.Void */ System_Version_MinorRevision_Set(void* /* System.Version */ __self, void* /* System.Version */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Version __selfDotNet = InteropUtils.GetInstance<System.Version>(__self);
+	
+	
+	    try {
+			System.Version __returnValue = __selfDotNet.MinorRevision;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Version_Destroy")]
@@ -11136,31 +12948,322 @@ internal static unsafe class System_IO_FileStream
 	}
 	
 
-	// TODO (Property): Handle
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStream_Handle_Set")]
+	internal static void /* System.Void */ System_IO_FileStream_Handle_Set(void* /* System.IO.FileStream */ __self, void* /* System.IO.FileStream */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.IO.FileStream __selfDotNet = InteropUtils.GetInstance<System.IO.FileStream>(__self);
+	
+	
+	    try {
+			System.IO.FileStream __returnValue = __selfDotNet.Handle;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): CanRead
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStream_CanRead_Set")]
+	internal static void /* System.Void */ System_IO_FileStream_CanRead_Set(void* /* System.IO.FileStream */ __self, void* /* System.IO.FileStream */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.IO.FileStream __selfDotNet = InteropUtils.GetInstance<System.IO.FileStream>(__self);
+	
+	
+	    try {
+			System.IO.FileStream __returnValue = __selfDotNet.CanRead;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): CanWrite
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStream_CanWrite_Set")]
+	internal static void /* System.Void */ System_IO_FileStream_CanWrite_Set(void* /* System.IO.FileStream */ __self, void* /* System.IO.FileStream */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.IO.FileStream __selfDotNet = InteropUtils.GetInstance<System.IO.FileStream>(__self);
+	
+	
+	    try {
+			System.IO.FileStream __returnValue = __selfDotNet.CanWrite;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): SafeFileHandle
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStream_SafeFileHandle_Set")]
+	internal static void /* System.Void */ System_IO_FileStream_SafeFileHandle_Set(void* /* System.IO.FileStream */ __self, void* /* System.IO.FileStream */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.IO.FileStream __selfDotNet = InteropUtils.GetInstance<System.IO.FileStream>(__self);
+	
+	
+	    try {
+			System.IO.FileStream __returnValue = __selfDotNet.SafeFileHandle;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Name
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStream_Name_Set")]
+	internal static void /* System.Void */ System_IO_FileStream_Name_Set(void* /* System.IO.FileStream */ __self, void* /* System.IO.FileStream */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.IO.FileStream __selfDotNet = InteropUtils.GetInstance<System.IO.FileStream>(__self);
+	
+	
+	    try {
+			System.IO.FileStream __returnValue = __selfDotNet.Name;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): IsAsync
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStream_IsAsync_Set")]
+	internal static void /* System.Void */ System_IO_FileStream_IsAsync_Set(void* /* System.IO.FileStream */ __self, void* /* System.IO.FileStream */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.IO.FileStream __selfDotNet = InteropUtils.GetInstance<System.IO.FileStream>(__self);
+	
+	
+	    try {
+			System.IO.FileStream __returnValue = __selfDotNet.IsAsync;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Length
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStream_Length_Set")]
+	internal static void /* System.Void */ System_IO_FileStream_Length_Set(void* /* System.IO.FileStream */ __self, void* /* System.IO.FileStream */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.IO.FileStream __selfDotNet = InteropUtils.GetInstance<System.IO.FileStream>(__self);
+	
+	
+	    try {
+			System.IO.FileStream __returnValue = __selfDotNet.Length;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Position
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStream_Position_Set")]
+	internal static void /* System.Void */ System_IO_FileStream_Position_Set(void* /* System.IO.FileStream */ __self, void* /* System.IO.FileStream */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.IO.FileStream __selfDotNet = InteropUtils.GetInstance<System.IO.FileStream>(__self);
+	
+	
+	    try {
+			System.IO.FileStream __returnValue = __selfDotNet.Position;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStream_Position_Get")]
+	internal static void* /* System.IO.FileStream */ System_IO_FileStream_Position_Get(void* /* System.IO.FileStream */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.IO.FileStream __selfDotNet = InteropUtils.GetInstance<System.IO.FileStream>(__self);
+	
+	
+	    try {
+			System.IO.FileStream __returnValue = __selfDotNet.Position;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): CanSeek
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStream_CanSeek_Set")]
+	internal static void /* System.Void */ System_IO_FileStream_CanSeek_Set(void* /* System.IO.FileStream */ __self, void* /* System.IO.FileStream */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.IO.FileStream __selfDotNet = InteropUtils.GetInstance<System.IO.FileStream>(__self);
+	
+	
+	    try {
+			System.IO.FileStream __returnValue = __selfDotNet.CanSeek;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_IO_FileStream_Destroy")]
@@ -11743,28 +13846,20 @@ internal static unsafe class System_IO_Stream
 	}
 	
 
-	// TODO (Property): CanRead
 	
 
-	// TODO (Property): CanWrite
 	
 
-	// TODO (Property): CanSeek
 	
 
-	// TODO (Property): CanTimeout
 	
 
-	// TODO (Property): Length
 	
 
-	// TODO (Property): Position
 	
 
-	// TODO (Property): ReadTimeout
 	
 
-	// TODO (Property): WriteTimeout
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_IO_Stream_Destroy")]
@@ -12522,37 +14617,344 @@ internal static unsafe class System_Threading_Tasks_Task
 	}
 	
 
-	// TODO (Property): Id
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_Id_Set")]
+	internal static void /* System.Void */ System_Threading_Tasks_Task_Id_Set(void* /* System.Threading.Tasks.Task */ __self, void* /* System.Threading.Tasks.Task */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.Tasks.Task __selfDotNet = InteropUtils.GetInstance<System.Threading.Tasks.Task>(__self);
+	
+	
+	    try {
+			System.Threading.Tasks.Task __returnValue = __selfDotNet.Id;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Exception
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_Exception_Set")]
+	internal static void /* System.Void */ System_Threading_Tasks_Task_Exception_Set(void* /* System.Threading.Tasks.Task */ __self, void* /* System.Threading.Tasks.Task */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.Tasks.Task __selfDotNet = InteropUtils.GetInstance<System.Threading.Tasks.Task>(__self);
+	
+	
+	    try {
+			System.Threading.Tasks.Task __returnValue = __selfDotNet.Exception;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Status
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_Status_Set")]
+	internal static void /* System.Void */ System_Threading_Tasks_Task_Status_Set(void* /* System.Threading.Tasks.Task */ __self, void* /* System.Threading.Tasks.Task */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.Tasks.Task __selfDotNet = InteropUtils.GetInstance<System.Threading.Tasks.Task>(__self);
+	
+	
+	    try {
+			System.Threading.Tasks.Task __returnValue = __selfDotNet.Status;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): IsCanceled
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_IsCanceled_Set")]
+	internal static void /* System.Void */ System_Threading_Tasks_Task_IsCanceled_Set(void* /* System.Threading.Tasks.Task */ __self, void* /* System.Threading.Tasks.Task */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.Tasks.Task __selfDotNet = InteropUtils.GetInstance<System.Threading.Tasks.Task>(__self);
+	
+	
+	    try {
+			System.Threading.Tasks.Task __returnValue = __selfDotNet.IsCanceled;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): IsCompleted
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_IsCompleted_Set")]
+	internal static void /* System.Void */ System_Threading_Tasks_Task_IsCompleted_Set(void* /* System.Threading.Tasks.Task */ __self, void* /* System.Threading.Tasks.Task */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.Tasks.Task __selfDotNet = InteropUtils.GetInstance<System.Threading.Tasks.Task>(__self);
+	
+	
+	    try {
+			System.Threading.Tasks.Task __returnValue = __selfDotNet.IsCompleted;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): IsCompletedSuccessfully
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_IsCompletedSuccessfully_Set")]
+	internal static void /* System.Void */ System_Threading_Tasks_Task_IsCompletedSuccessfully_Set(void* /* System.Threading.Tasks.Task */ __self, void* /* System.Threading.Tasks.Task */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.Tasks.Task __selfDotNet = InteropUtils.GetInstance<System.Threading.Tasks.Task>(__self);
+	
+	
+	    try {
+			System.Threading.Tasks.Task __returnValue = __selfDotNet.IsCompletedSuccessfully;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): CreationOptions
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_CreationOptions_Set")]
+	internal static void /* System.Void */ System_Threading_Tasks_Task_CreationOptions_Set(void* /* System.Threading.Tasks.Task */ __self, void* /* System.Threading.Tasks.Task */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.Tasks.Task __selfDotNet = InteropUtils.GetInstance<System.Threading.Tasks.Task>(__self);
+	
+	
+	    try {
+			System.Threading.Tasks.Task __returnValue = __selfDotNet.CreationOptions;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): AsyncState
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_AsyncState_Set")]
+	internal static void /* System.Void */ System_Threading_Tasks_Task_AsyncState_Set(void* /* System.Threading.Tasks.Task */ __self, void* /* System.Threading.Tasks.Task */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.Tasks.Task __selfDotNet = InteropUtils.GetInstance<System.Threading.Tasks.Task>(__self);
+	
+	
+	    try {
+			System.Threading.Tasks.Task __returnValue = __selfDotNet.AsyncState;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Factory
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_Factory_Set")]
+	internal static void /* System.Void */ System_Threading_Tasks_Task_Factory_Set(void* /* System.Threading.Tasks.Task */ __value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Threading.Tasks.Task __returnValue = System.Threading.Tasks.Task.Factory;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): CompletedTask
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_CompletedTask_Set")]
+	internal static void /* System.Void */ System_Threading_Tasks_Task_CompletedTask_Set(void* /* System.Threading.Tasks.Task */ __value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Threading.Tasks.Task __returnValue = System.Threading.Tasks.Task.CompletedTask;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): IsFaulted
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_IsFaulted_Set")]
+	internal static void /* System.Void */ System_Threading_Tasks_Task_IsFaulted_Set(void* /* System.Threading.Tasks.Task */ __self, void* /* System.Threading.Tasks.Task */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.Tasks.Task __selfDotNet = InteropUtils.GetInstance<System.Threading.Tasks.Task>(__self);
+	
+	
+	    try {
+			System.Threading.Tasks.Task __returnValue = __selfDotNet.IsFaulted;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Threading_Tasks_Task_Destroy")]
@@ -12592,16 +14994,12 @@ internal static unsafe class System_Threading_Tasks_TaskScheduler
 	}
 	
 
-	// TODO (Property): MaximumConcurrencyLevel
 	
 
-	// TODO (Property): Default
 	
 
-	// TODO (Property): Current
 	
 
-	// TODO (Property): Id
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Threading_Tasks_TaskScheduler_Destroy")]
@@ -12817,7 +15215,36 @@ internal static unsafe class System_AggregateException
 	}
 	
 
-	// TODO (Property): Message
+	[UnmanagedCallersOnly(EntryPoint = "System_AggregateException_Message_Set")]
+	internal static void /* System.Void */ System_AggregateException_Message_Set(void* /* System.AggregateException */ __self, void* /* System.AggregateException */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.AggregateException __selfDotNet = InteropUtils.GetInstance<System.AggregateException>(__self);
+	
+	
+	    try {
+			System.AggregateException __returnValue = __selfDotNet.Message;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_AggregateException_Destroy")]
@@ -13033,28 +15460,350 @@ internal static unsafe class System_Exception
 	}
 	
 
-	// TODO (Property): TargetSite
+	[UnmanagedCallersOnly(EntryPoint = "System_Exception_TargetSite_Set")]
+	internal static void /* System.Void */ System_Exception_TargetSite_Set(void* /* System.Exception */ __self, void* /* System.Exception */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Exception __selfDotNet = InteropUtils.GetInstance<System.Exception>(__self);
+	
+	
+	    try {
+			System.Exception __returnValue = __selfDotNet.TargetSite;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Message
+	[UnmanagedCallersOnly(EntryPoint = "System_Exception_Message_Set")]
+	internal static void /* System.Void */ System_Exception_Message_Set(void* /* System.Exception */ __self, void* /* System.Exception */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Exception __selfDotNet = InteropUtils.GetInstance<System.Exception>(__self);
+	
+	
+	    try {
+			System.Exception __returnValue = __selfDotNet.Message;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Data
+	[UnmanagedCallersOnly(EntryPoint = "System_Exception_Data_Set")]
+	internal static void /* System.Void */ System_Exception_Data_Set(void* /* System.Exception */ __self, void* /* System.Exception */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Exception __selfDotNet = InteropUtils.GetInstance<System.Exception>(__self);
+	
+	
+	    try {
+			System.Exception __returnValue = __selfDotNet.Data;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): InnerException
+	[UnmanagedCallersOnly(EntryPoint = "System_Exception_InnerException_Set")]
+	internal static void /* System.Void */ System_Exception_InnerException_Set(void* /* System.Exception */ __self, void* /* System.Exception */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Exception __selfDotNet = InteropUtils.GetInstance<System.Exception>(__self);
+	
+	
+	    try {
+			System.Exception __returnValue = __selfDotNet.InnerException;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): HelpLink
+	[UnmanagedCallersOnly(EntryPoint = "System_Exception_HelpLink_Set")]
+	internal static void /* System.Void */ System_Exception_HelpLink_Set(void* /* System.Exception */ __self, void* /* System.Exception */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Exception __selfDotNet = InteropUtils.GetInstance<System.Exception>(__self);
+	
+	
+	    try {
+			System.Exception __returnValue = __selfDotNet.HelpLink;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Exception_HelpLink_Get")]
+	internal static void* /* System.Exception */ System_Exception_HelpLink_Get(void* /* System.Exception */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Exception __selfDotNet = InteropUtils.GetInstance<System.Exception>(__self);
+	
+	
+	    try {
+			System.Exception __returnValue = __selfDotNet.HelpLink;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Source
+	[UnmanagedCallersOnly(EntryPoint = "System_Exception_Source_Set")]
+	internal static void /* System.Void */ System_Exception_Source_Set(void* /* System.Exception */ __self, void* /* System.Exception */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Exception __selfDotNet = InteropUtils.GetInstance<System.Exception>(__self);
+	
+	
+	    try {
+			System.Exception __returnValue = __selfDotNet.Source;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Exception_Source_Get")]
+	internal static void* /* System.Exception */ System_Exception_Source_Get(void* /* System.Exception */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Exception __selfDotNet = InteropUtils.GetInstance<System.Exception>(__self);
+	
+	
+	    try {
+			System.Exception __returnValue = __selfDotNet.Source;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): HResult
+	[UnmanagedCallersOnly(EntryPoint = "System_Exception_HResult_Set")]
+	internal static void /* System.Void */ System_Exception_HResult_Set(void* /* System.Exception */ __self, void* /* System.Exception */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Exception __selfDotNet = InteropUtils.GetInstance<System.Exception>(__self);
+	
+	
+	    try {
+			System.Exception __returnValue = __selfDotNet.HResult;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Exception_HResult_Get")]
+	internal static void* /* System.Exception */ System_Exception_HResult_Get(void* /* System.Exception */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Exception __selfDotNet = InteropUtils.GetInstance<System.Exception>(__self);
+	
+	
+	    try {
+			System.Exception __returnValue = __selfDotNet.HResult;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): StackTrace
+	[UnmanagedCallersOnly(EntryPoint = "System_Exception_StackTrace_Set")]
+	internal static void /* System.Void */ System_Exception_StackTrace_Set(void* /* System.Exception */ __self, void* /* System.Exception */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Exception __selfDotNet = InteropUtils.GetInstance<System.Exception>(__self);
+	
+	
+	    try {
+			System.Exception __returnValue = __selfDotNet.StackTrace;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Exception_Destroy")]
@@ -13270,76 +16019,52 @@ internal static unsafe class System_Reflection_MethodBase
 	}
 	
 
-	// TODO (Property): Attributes
 	
 
-	// TODO (Property): MethodImplementationFlags
 	
 
-	// TODO (Property): CallingConvention
 	
 
-	// TODO (Property): IsAbstract
 	
 
-	// TODO (Property): IsConstructor
 	
 
-	// TODO (Property): IsFinal
 	
 
-	// TODO (Property): IsHideBySig
 	
 
-	// TODO (Property): IsSpecialName
 	
 
-	// TODO (Property): IsStatic
 	
 
-	// TODO (Property): IsVirtual
 	
 
-	// TODO (Property): IsAssembly
 	
 
-	// TODO (Property): IsFamily
 	
 
-	// TODO (Property): IsFamilyAndAssembly
 	
 
-	// TODO (Property): IsFamilyOrAssembly
 	
 
-	// TODO (Property): IsPrivate
 	
 
-	// TODO (Property): IsPublic
 	
 
-	// TODO (Property): IsConstructedGenericMethod
 	
 
-	// TODO (Property): IsGenericMethod
 	
 
-	// TODO (Property): IsGenericMethodDefinition
 	
 
-	// TODO (Property): ContainsGenericParameters
 	
 
-	// TODO (Property): MethodHandle
 	
 
-	// TODO (Property): IsSecurityCritical
 	
 
-	// TODO (Property): IsSecuritySafeCritical
 	
 
-	// TODO (Property): IsSecurityTransparent
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Reflection_MethodBase_Destroy")]
@@ -13558,7 +16283,36 @@ internal static unsafe class System_RuntimeMethodHandle
 	}
 	
 
-	// TODO (Property): Value
+	[UnmanagedCallersOnly(EntryPoint = "System_RuntimeMethodHandle_Value_Set")]
+	internal static void /* System.Void */ System_RuntimeMethodHandle_Value_Set(void* /* System.RuntimeMethodHandle */ __self, void* /* System.RuntimeMethodHandle */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.RuntimeMethodHandle __selfDotNet = InteropUtils.GetInstance<System.RuntimeMethodHandle>(__self);
+	
+	
+	    try {
+			System.RuntimeMethodHandle __returnValue = __selfDotNet.Value;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_RuntimeMethodHandle_Destroy")]
@@ -14660,22 +17414,256 @@ internal static unsafe class System_Runtime_Serialization_SerializationInfo
 	}
 	
 
-	// TODO (Property): FullTypeName
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_SerializationInfo_FullTypeName_Set")]
+	internal static void /* System.Void */ System_Runtime_Serialization_SerializationInfo_FullTypeName_Set(void* /* System.Runtime.Serialization.SerializationInfo */ __self, void* /* System.Runtime.Serialization.SerializationInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Runtime.Serialization.SerializationInfo __selfDotNet = InteropUtils.GetInstance<System.Runtime.Serialization.SerializationInfo>(__self);
+	
+	
+	    try {
+			System.Runtime.Serialization.SerializationInfo __returnValue = __selfDotNet.FullTypeName;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_SerializationInfo_FullTypeName_Get")]
+	internal static void* /* System.Runtime.Serialization.SerializationInfo */ System_Runtime_Serialization_SerializationInfo_FullTypeName_Get(void* /* System.Runtime.Serialization.SerializationInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Runtime.Serialization.SerializationInfo __selfDotNet = InteropUtils.GetInstance<System.Runtime.Serialization.SerializationInfo>(__self);
+	
+	
+	    try {
+			System.Runtime.Serialization.SerializationInfo __returnValue = __selfDotNet.FullTypeName;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): AssemblyName
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_SerializationInfo_AssemblyName_Set")]
+	internal static void /* System.Void */ System_Runtime_Serialization_SerializationInfo_AssemblyName_Set(void* /* System.Runtime.Serialization.SerializationInfo */ __self, void* /* System.Runtime.Serialization.SerializationInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Runtime.Serialization.SerializationInfo __selfDotNet = InteropUtils.GetInstance<System.Runtime.Serialization.SerializationInfo>(__self);
+	
+	
+	    try {
+			System.Runtime.Serialization.SerializationInfo __returnValue = __selfDotNet.AssemblyName;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_SerializationInfo_AssemblyName_Get")]
+	internal static void* /* System.Runtime.Serialization.SerializationInfo */ System_Runtime_Serialization_SerializationInfo_AssemblyName_Get(void* /* System.Runtime.Serialization.SerializationInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Runtime.Serialization.SerializationInfo __selfDotNet = InteropUtils.GetInstance<System.Runtime.Serialization.SerializationInfo>(__self);
+	
+	
+	    try {
+			System.Runtime.Serialization.SerializationInfo __returnValue = __selfDotNet.AssemblyName;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): IsFullTypeNameSetExplicit
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_SerializationInfo_IsFullTypeNameSetExplicit_Set")]
+	internal static void /* System.Void */ System_Runtime_Serialization_SerializationInfo_IsFullTypeNameSetExplicit_Set(void* /* System.Runtime.Serialization.SerializationInfo */ __self, void* /* System.Runtime.Serialization.SerializationInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Runtime.Serialization.SerializationInfo __selfDotNet = InteropUtils.GetInstance<System.Runtime.Serialization.SerializationInfo>(__self);
+	
+	
+	    try {
+			System.Runtime.Serialization.SerializationInfo __returnValue = __selfDotNet.IsFullTypeNameSetExplicit;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): IsAssemblyNameSetExplicit
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_SerializationInfo_IsAssemblyNameSetExplicit_Set")]
+	internal static void /* System.Void */ System_Runtime_Serialization_SerializationInfo_IsAssemblyNameSetExplicit_Set(void* /* System.Runtime.Serialization.SerializationInfo */ __self, void* /* System.Runtime.Serialization.SerializationInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Runtime.Serialization.SerializationInfo __selfDotNet = InteropUtils.GetInstance<System.Runtime.Serialization.SerializationInfo>(__self);
+	
+	
+	    try {
+			System.Runtime.Serialization.SerializationInfo __returnValue = __selfDotNet.IsAssemblyNameSetExplicit;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): MemberCount
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_SerializationInfo_MemberCount_Set")]
+	internal static void /* System.Void */ System_Runtime_Serialization_SerializationInfo_MemberCount_Set(void* /* System.Runtime.Serialization.SerializationInfo */ __self, void* /* System.Runtime.Serialization.SerializationInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Runtime.Serialization.SerializationInfo __selfDotNet = InteropUtils.GetInstance<System.Runtime.Serialization.SerializationInfo>(__self);
+	
+	
+	    try {
+			System.Runtime.Serialization.SerializationInfo __returnValue = __selfDotNet.MemberCount;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): ObjectType
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_SerializationInfo_ObjectType_Set")]
+	internal static void /* System.Void */ System_Runtime_Serialization_SerializationInfo_ObjectType_Set(void* /* System.Runtime.Serialization.SerializationInfo */ __self, void* /* System.Runtime.Serialization.SerializationInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Runtime.Serialization.SerializationInfo __selfDotNet = InteropUtils.GetInstance<System.Runtime.Serialization.SerializationInfo>(__self);
+	
+	
+	    try {
+			System.Runtime.Serialization.SerializationInfo __returnValue = __selfDotNet.ObjectType;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Runtime_Serialization_SerializationInfo_Destroy")]
@@ -14749,16 +17737,132 @@ internal static unsafe class System_Runtime_Serialization_SerializationInfoEnume
 	}
 	
 
-	// TODO (Property): Current
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_SerializationInfoEnumerator_Current_Set")]
+	internal static void /* System.Void */ System_Runtime_Serialization_SerializationInfoEnumerator_Current_Set(void* /* System.Runtime.Serialization.SerializationInfoEnumerator */ __self, void* /* System.Runtime.Serialization.SerializationInfoEnumerator */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Runtime.Serialization.SerializationInfoEnumerator __selfDotNet = InteropUtils.GetInstance<System.Runtime.Serialization.SerializationInfoEnumerator>(__self);
+	
+	
+	    try {
+			System.Runtime.Serialization.SerializationInfoEnumerator __returnValue = __selfDotNet.Current;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Name
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_SerializationInfoEnumerator_Name_Set")]
+	internal static void /* System.Void */ System_Runtime_Serialization_SerializationInfoEnumerator_Name_Set(void* /* System.Runtime.Serialization.SerializationInfoEnumerator */ __self, void* /* System.Runtime.Serialization.SerializationInfoEnumerator */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Runtime.Serialization.SerializationInfoEnumerator __selfDotNet = InteropUtils.GetInstance<System.Runtime.Serialization.SerializationInfoEnumerator>(__self);
+	
+	
+	    try {
+			System.Runtime.Serialization.SerializationInfoEnumerator __returnValue = __selfDotNet.Name;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Value
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_SerializationInfoEnumerator_Value_Set")]
+	internal static void /* System.Void */ System_Runtime_Serialization_SerializationInfoEnumerator_Value_Set(void* /* System.Runtime.Serialization.SerializationInfoEnumerator */ __self, void* /* System.Runtime.Serialization.SerializationInfoEnumerator */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Runtime.Serialization.SerializationInfoEnumerator __selfDotNet = InteropUtils.GetInstance<System.Runtime.Serialization.SerializationInfoEnumerator>(__self);
+	
+	
+	    try {
+			System.Runtime.Serialization.SerializationInfoEnumerator __returnValue = __selfDotNet.Value;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): ObjectType
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_SerializationInfoEnumerator_ObjectType_Set")]
+	internal static void /* System.Void */ System_Runtime_Serialization_SerializationInfoEnumerator_ObjectType_Set(void* /* System.Runtime.Serialization.SerializationInfoEnumerator */ __self, void* /* System.Runtime.Serialization.SerializationInfoEnumerator */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Runtime.Serialization.SerializationInfoEnumerator __selfDotNet = InteropUtils.GetInstance<System.Runtime.Serialization.SerializationInfoEnumerator>(__self);
+	
+	
+	    try {
+			System.Runtime.Serialization.SerializationInfoEnumerator __returnValue = __selfDotNet.ObjectType;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Runtime_Serialization_SerializationInfoEnumerator_Destroy")]
@@ -14773,13 +17877,100 @@ internal static unsafe class System_Runtime_Serialization_SerializationInfoEnume
 
 internal static unsafe class System_Runtime_Serialization_SerializationEntry
 {
-	// TODO (Property): Value
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_SerializationEntry_Value_Set")]
+	internal static void /* System.Void */ System_Runtime_Serialization_SerializationEntry_Value_Set(void* /* System.Runtime.Serialization.SerializationEntry */ __self, void* /* System.Runtime.Serialization.SerializationEntry */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Runtime.Serialization.SerializationEntry __selfDotNet = InteropUtils.GetInstance<System.Runtime.Serialization.SerializationEntry>(__self);
+	
+	
+	    try {
+			System.Runtime.Serialization.SerializationEntry __returnValue = __selfDotNet.Value;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Name
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_SerializationEntry_Name_Set")]
+	internal static void /* System.Void */ System_Runtime_Serialization_SerializationEntry_Name_Set(void* /* System.Runtime.Serialization.SerializationEntry */ __self, void* /* System.Runtime.Serialization.SerializationEntry */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Runtime.Serialization.SerializationEntry __selfDotNet = InteropUtils.GetInstance<System.Runtime.Serialization.SerializationEntry>(__self);
+	
+	
+	    try {
+			System.Runtime.Serialization.SerializationEntry __returnValue = __selfDotNet.Name;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): ObjectType
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_SerializationEntry_ObjectType_Set")]
+	internal static void /* System.Void */ System_Runtime_Serialization_SerializationEntry_ObjectType_Set(void* /* System.Runtime.Serialization.SerializationEntry */ __self, void* /* System.Runtime.Serialization.SerializationEntry */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Runtime.Serialization.SerializationEntry __selfDotNet = InteropUtils.GetInstance<System.Runtime.Serialization.SerializationEntry>(__self);
+	
+	
+	    try {
+			System.Runtime.Serialization.SerializationEntry __returnValue = __selfDotNet.ObjectType;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Runtime_Serialization_SerializationEntry_Destroy")]
@@ -16466,7 +19657,36 @@ internal static unsafe class System_Decimal
 	}
 	
 
-	// TODO (Property): Scale
+	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_Scale_Set")]
+	internal static void /* System.Void */ System_Decimal_Scale_Set(void* /* System.Decimal */ __self, void* /* System.Decimal */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Decimal __selfDotNet = InteropUtils.GetInstance<System.Decimal>(__self);
+	
+	
+	    try {
+			System.Decimal __returnValue = __selfDotNet.Scale;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Decimal_Destroy")]
@@ -18306,58 +21526,562 @@ internal static unsafe class System_DateTime
 	}
 	
 
-	// TODO (Property): Date
+	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_Date_Set")]
+	internal static void /* System.Void */ System_DateTime_Date_Set(void* /* System.DateTime */ __self, void* /* System.DateTime */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.DateTime __selfDotNet = InteropUtils.GetInstance<System.DateTime>(__self);
+	
+	
+	    try {
+			System.DateTime __returnValue = __selfDotNet.Date;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Day
+	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_Day_Set")]
+	internal static void /* System.Void */ System_DateTime_Day_Set(void* /* System.DateTime */ __self, void* /* System.DateTime */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.DateTime __selfDotNet = InteropUtils.GetInstance<System.DateTime>(__self);
+	
+	
+	    try {
+			System.DateTime __returnValue = __selfDotNet.Day;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): DayOfWeek
+	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_DayOfWeek_Set")]
+	internal static void /* System.Void */ System_DateTime_DayOfWeek_Set(void* /* System.DateTime */ __self, void* /* System.DateTime */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.DateTime __selfDotNet = InteropUtils.GetInstance<System.DateTime>(__self);
+	
+	
+	    try {
+			System.DateTime __returnValue = __selfDotNet.DayOfWeek;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): DayOfYear
+	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_DayOfYear_Set")]
+	internal static void /* System.Void */ System_DateTime_DayOfYear_Set(void* /* System.DateTime */ __self, void* /* System.DateTime */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.DateTime __selfDotNet = InteropUtils.GetInstance<System.DateTime>(__self);
+	
+	
+	    try {
+			System.DateTime __returnValue = __selfDotNet.DayOfYear;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Hour
+	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_Hour_Set")]
+	internal static void /* System.Void */ System_DateTime_Hour_Set(void* /* System.DateTime */ __self, void* /* System.DateTime */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.DateTime __selfDotNet = InteropUtils.GetInstance<System.DateTime>(__self);
+	
+	
+	    try {
+			System.DateTime __returnValue = __selfDotNet.Hour;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Kind
+	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_Kind_Set")]
+	internal static void /* System.Void */ System_DateTime_Kind_Set(void* /* System.DateTime */ __self, void* /* System.DateTime */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.DateTime __selfDotNet = InteropUtils.GetInstance<System.DateTime>(__self);
+	
+	
+	    try {
+			System.DateTime __returnValue = __selfDotNet.Kind;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Millisecond
+	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_Millisecond_Set")]
+	internal static void /* System.Void */ System_DateTime_Millisecond_Set(void* /* System.DateTime */ __self, void* /* System.DateTime */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.DateTime __selfDotNet = InteropUtils.GetInstance<System.DateTime>(__self);
+	
+	
+	    try {
+			System.DateTime __returnValue = __selfDotNet.Millisecond;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Microsecond
+	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_Microsecond_Set")]
+	internal static void /* System.Void */ System_DateTime_Microsecond_Set(void* /* System.DateTime */ __self, void* /* System.DateTime */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.DateTime __selfDotNet = InteropUtils.GetInstance<System.DateTime>(__self);
+	
+	
+	    try {
+			System.DateTime __returnValue = __selfDotNet.Microsecond;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Nanosecond
+	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_Nanosecond_Set")]
+	internal static void /* System.Void */ System_DateTime_Nanosecond_Set(void* /* System.DateTime */ __self, void* /* System.DateTime */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.DateTime __selfDotNet = InteropUtils.GetInstance<System.DateTime>(__self);
+	
+	
+	    try {
+			System.DateTime __returnValue = __selfDotNet.Nanosecond;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Minute
+	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_Minute_Set")]
+	internal static void /* System.Void */ System_DateTime_Minute_Set(void* /* System.DateTime */ __self, void* /* System.DateTime */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.DateTime __selfDotNet = InteropUtils.GetInstance<System.DateTime>(__self);
+	
+	
+	    try {
+			System.DateTime __returnValue = __selfDotNet.Minute;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Month
+	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_Month_Set")]
+	internal static void /* System.Void */ System_DateTime_Month_Set(void* /* System.DateTime */ __self, void* /* System.DateTime */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.DateTime __selfDotNet = InteropUtils.GetInstance<System.DateTime>(__self);
+	
+	
+	    try {
+			System.DateTime __returnValue = __selfDotNet.Month;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Now
+	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_Now_Set")]
+	internal static void /* System.Void */ System_DateTime_Now_Set(void* /* System.DateTime */ __value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.DateTime __returnValue = System.DateTime.Now;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Second
+	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_Second_Set")]
+	internal static void /* System.Void */ System_DateTime_Second_Set(void* /* System.DateTime */ __self, void* /* System.DateTime */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.DateTime __selfDotNet = InteropUtils.GetInstance<System.DateTime>(__self);
+	
+	
+	    try {
+			System.DateTime __returnValue = __selfDotNet.Second;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Ticks
+	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_Ticks_Set")]
+	internal static void /* System.Void */ System_DateTime_Ticks_Set(void* /* System.DateTime */ __self, void* /* System.DateTime */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.DateTime __selfDotNet = InteropUtils.GetInstance<System.DateTime>(__self);
+	
+	
+	    try {
+			System.DateTime __returnValue = __selfDotNet.Ticks;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): TimeOfDay
+	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_TimeOfDay_Set")]
+	internal static void /* System.Void */ System_DateTime_TimeOfDay_Set(void* /* System.DateTime */ __self, void* /* System.DateTime */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.DateTime __selfDotNet = InteropUtils.GetInstance<System.DateTime>(__self);
+	
+	
+	    try {
+			System.DateTime __returnValue = __selfDotNet.TimeOfDay;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Today
+	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_Today_Set")]
+	internal static void /* System.Void */ System_DateTime_Today_Set(void* /* System.DateTime */ __value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.DateTime __returnValue = System.DateTime.Today;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Year
+	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_Year_Set")]
+	internal static void /* System.Void */ System_DateTime_Year_Set(void* /* System.DateTime */ __self, void* /* System.DateTime */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.DateTime __selfDotNet = InteropUtils.GetInstance<System.DateTime>(__self);
+	
+	
+	    try {
+			System.DateTime __returnValue = __selfDotNet.Year;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): UtcNow
+	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_UtcNow_Set")]
+	internal static void /* System.Void */ System_DateTime_UtcNow_Set(void* /* System.DateTime */ __value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.DateTime __returnValue = System.DateTime.UtcNow;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_DateTime_Destroy")]
@@ -19305,49 +23029,484 @@ internal static unsafe class System_TimeSpan
 	}
 	
 
-	// TODO (Property): Ticks
+	[UnmanagedCallersOnly(EntryPoint = "System_TimeSpan_Ticks_Set")]
+	internal static void /* System.Void */ System_TimeSpan_Ticks_Set(void* /* System.TimeSpan */ __self, void* /* System.TimeSpan */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.TimeSpan __selfDotNet = InteropUtils.GetInstance<System.TimeSpan>(__self);
+	
+	
+	    try {
+			System.TimeSpan __returnValue = __selfDotNet.Ticks;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Days
+	[UnmanagedCallersOnly(EntryPoint = "System_TimeSpan_Days_Set")]
+	internal static void /* System.Void */ System_TimeSpan_Days_Set(void* /* System.TimeSpan */ __self, void* /* System.TimeSpan */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.TimeSpan __selfDotNet = InteropUtils.GetInstance<System.TimeSpan>(__self);
+	
+	
+	    try {
+			System.TimeSpan __returnValue = __selfDotNet.Days;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Hours
+	[UnmanagedCallersOnly(EntryPoint = "System_TimeSpan_Hours_Set")]
+	internal static void /* System.Void */ System_TimeSpan_Hours_Set(void* /* System.TimeSpan */ __self, void* /* System.TimeSpan */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.TimeSpan __selfDotNet = InteropUtils.GetInstance<System.TimeSpan>(__self);
+	
+	
+	    try {
+			System.TimeSpan __returnValue = __selfDotNet.Hours;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Milliseconds
+	[UnmanagedCallersOnly(EntryPoint = "System_TimeSpan_Milliseconds_Set")]
+	internal static void /* System.Void */ System_TimeSpan_Milliseconds_Set(void* /* System.TimeSpan */ __self, void* /* System.TimeSpan */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.TimeSpan __selfDotNet = InteropUtils.GetInstance<System.TimeSpan>(__self);
+	
+	
+	    try {
+			System.TimeSpan __returnValue = __selfDotNet.Milliseconds;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Microseconds
+	[UnmanagedCallersOnly(EntryPoint = "System_TimeSpan_Microseconds_Set")]
+	internal static void /* System.Void */ System_TimeSpan_Microseconds_Set(void* /* System.TimeSpan */ __self, void* /* System.TimeSpan */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.TimeSpan __selfDotNet = InteropUtils.GetInstance<System.TimeSpan>(__self);
+	
+	
+	    try {
+			System.TimeSpan __returnValue = __selfDotNet.Microseconds;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Nanoseconds
+	[UnmanagedCallersOnly(EntryPoint = "System_TimeSpan_Nanoseconds_Set")]
+	internal static void /* System.Void */ System_TimeSpan_Nanoseconds_Set(void* /* System.TimeSpan */ __self, void* /* System.TimeSpan */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.TimeSpan __selfDotNet = InteropUtils.GetInstance<System.TimeSpan>(__self);
+	
+	
+	    try {
+			System.TimeSpan __returnValue = __selfDotNet.Nanoseconds;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Minutes
+	[UnmanagedCallersOnly(EntryPoint = "System_TimeSpan_Minutes_Set")]
+	internal static void /* System.Void */ System_TimeSpan_Minutes_Set(void* /* System.TimeSpan */ __self, void* /* System.TimeSpan */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.TimeSpan __selfDotNet = InteropUtils.GetInstance<System.TimeSpan>(__self);
+	
+	
+	    try {
+			System.TimeSpan __returnValue = __selfDotNet.Minutes;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Seconds
+	[UnmanagedCallersOnly(EntryPoint = "System_TimeSpan_Seconds_Set")]
+	internal static void /* System.Void */ System_TimeSpan_Seconds_Set(void* /* System.TimeSpan */ __self, void* /* System.TimeSpan */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.TimeSpan __selfDotNet = InteropUtils.GetInstance<System.TimeSpan>(__self);
+	
+	
+	    try {
+			System.TimeSpan __returnValue = __selfDotNet.Seconds;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): TotalDays
+	[UnmanagedCallersOnly(EntryPoint = "System_TimeSpan_TotalDays_Set")]
+	internal static void /* System.Void */ System_TimeSpan_TotalDays_Set(void* /* System.TimeSpan */ __self, void* /* System.TimeSpan */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.TimeSpan __selfDotNet = InteropUtils.GetInstance<System.TimeSpan>(__self);
+	
+	
+	    try {
+			System.TimeSpan __returnValue = __selfDotNet.TotalDays;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): TotalHours
+	[UnmanagedCallersOnly(EntryPoint = "System_TimeSpan_TotalHours_Set")]
+	internal static void /* System.Void */ System_TimeSpan_TotalHours_Set(void* /* System.TimeSpan */ __self, void* /* System.TimeSpan */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.TimeSpan __selfDotNet = InteropUtils.GetInstance<System.TimeSpan>(__self);
+	
+	
+	    try {
+			System.TimeSpan __returnValue = __selfDotNet.TotalHours;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): TotalMilliseconds
+	[UnmanagedCallersOnly(EntryPoint = "System_TimeSpan_TotalMilliseconds_Set")]
+	internal static void /* System.Void */ System_TimeSpan_TotalMilliseconds_Set(void* /* System.TimeSpan */ __self, void* /* System.TimeSpan */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.TimeSpan __selfDotNet = InteropUtils.GetInstance<System.TimeSpan>(__self);
+	
+	
+	    try {
+			System.TimeSpan __returnValue = __selfDotNet.TotalMilliseconds;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): TotalMicroseconds
+	[UnmanagedCallersOnly(EntryPoint = "System_TimeSpan_TotalMicroseconds_Set")]
+	internal static void /* System.Void */ System_TimeSpan_TotalMicroseconds_Set(void* /* System.TimeSpan */ __self, void* /* System.TimeSpan */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.TimeSpan __selfDotNet = InteropUtils.GetInstance<System.TimeSpan>(__self);
+	
+	
+	    try {
+			System.TimeSpan __returnValue = __selfDotNet.TotalMicroseconds;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): TotalNanoseconds
+	[UnmanagedCallersOnly(EntryPoint = "System_TimeSpan_TotalNanoseconds_Set")]
+	internal static void /* System.Void */ System_TimeSpan_TotalNanoseconds_Set(void* /* System.TimeSpan */ __self, void* /* System.TimeSpan */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.TimeSpan __selfDotNet = InteropUtils.GetInstance<System.TimeSpan>(__self);
+	
+	
+	    try {
+			System.TimeSpan __returnValue = __selfDotNet.TotalNanoseconds;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): TotalMinutes
+	[UnmanagedCallersOnly(EntryPoint = "System_TimeSpan_TotalMinutes_Set")]
+	internal static void /* System.Void */ System_TimeSpan_TotalMinutes_Set(void* /* System.TimeSpan */ __self, void* /* System.TimeSpan */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.TimeSpan __selfDotNet = InteropUtils.GetInstance<System.TimeSpan>(__self);
+	
+	
+	    try {
+			System.TimeSpan __returnValue = __selfDotNet.TotalMinutes;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): TotalSeconds
+	[UnmanagedCallersOnly(EntryPoint = "System_TimeSpan_TotalSeconds_Set")]
+	internal static void /* System.Void */ System_TimeSpan_TotalSeconds_Set(void* /* System.TimeSpan */ __self, void* /* System.TimeSpan */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.TimeSpan __selfDotNet = InteropUtils.GetInstance<System.TimeSpan>(__self);
+	
+	
+	    try {
+			System.TimeSpan __returnValue = __selfDotNet.TotalSeconds;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_TimeSpan_Destroy")]
@@ -20106,28 +24265,248 @@ internal static unsafe class System_DateOnly
 	}
 	
 
-	// TODO (Property): MinValue
+	[UnmanagedCallersOnly(EntryPoint = "System_DateOnly_MinValue_Set")]
+	internal static void /* System.Void */ System_DateOnly_MinValue_Set(void* /* System.DateOnly */ __value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.DateOnly __returnValue = System.DateOnly.MinValue;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): MaxValue
+	[UnmanagedCallersOnly(EntryPoint = "System_DateOnly_MaxValue_Set")]
+	internal static void /* System.Void */ System_DateOnly_MaxValue_Set(void* /* System.DateOnly */ __value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.DateOnly __returnValue = System.DateOnly.MaxValue;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Year
+	[UnmanagedCallersOnly(EntryPoint = "System_DateOnly_Year_Set")]
+	internal static void /* System.Void */ System_DateOnly_Year_Set(void* /* System.DateOnly */ __self, void* /* System.DateOnly */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.DateOnly __selfDotNet = InteropUtils.GetInstance<System.DateOnly>(__self);
+	
+	
+	    try {
+			System.DateOnly __returnValue = __selfDotNet.Year;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Month
+	[UnmanagedCallersOnly(EntryPoint = "System_DateOnly_Month_Set")]
+	internal static void /* System.Void */ System_DateOnly_Month_Set(void* /* System.DateOnly */ __self, void* /* System.DateOnly */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.DateOnly __selfDotNet = InteropUtils.GetInstance<System.DateOnly>(__self);
+	
+	
+	    try {
+			System.DateOnly __returnValue = __selfDotNet.Month;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Day
+	[UnmanagedCallersOnly(EntryPoint = "System_DateOnly_Day_Set")]
+	internal static void /* System.Void */ System_DateOnly_Day_Set(void* /* System.DateOnly */ __self, void* /* System.DateOnly */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.DateOnly __selfDotNet = InteropUtils.GetInstance<System.DateOnly>(__self);
+	
+	
+	    try {
+			System.DateOnly __returnValue = __selfDotNet.Day;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): DayOfWeek
+	[UnmanagedCallersOnly(EntryPoint = "System_DateOnly_DayOfWeek_Set")]
+	internal static void /* System.Void */ System_DateOnly_DayOfWeek_Set(void* /* System.DateOnly */ __self, void* /* System.DateOnly */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.DateOnly __selfDotNet = InteropUtils.GetInstance<System.DateOnly>(__self);
+	
+	
+	    try {
+			System.DateOnly __returnValue = __selfDotNet.DayOfWeek;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): DayOfYear
+	[UnmanagedCallersOnly(EntryPoint = "System_DateOnly_DayOfYear_Set")]
+	internal static void /* System.Void */ System_DateOnly_DayOfYear_Set(void* /* System.DateOnly */ __self, void* /* System.DateOnly */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.DateOnly __selfDotNet = InteropUtils.GetInstance<System.DateOnly>(__self);
+	
+	
+	    try {
+			System.DateOnly __returnValue = __selfDotNet.DayOfYear;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): DayNumber
+	[UnmanagedCallersOnly(EntryPoint = "System_DateOnly_DayNumber_Set")]
+	internal static void /* System.Void */ System_DateOnly_DayNumber_Set(void* /* System.DateOnly */ __self, void* /* System.DateOnly */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.DateOnly __selfDotNet = InteropUtils.GetInstance<System.DateOnly>(__self);
+	
+	
+	    try {
+			System.DateOnly __returnValue = __selfDotNet.DayNumber;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_DateOnly_Destroy")]
@@ -20958,31 +25337,280 @@ internal static unsafe class System_TimeOnly
 	}
 	
 
-	// TODO (Property): MinValue
+	[UnmanagedCallersOnly(EntryPoint = "System_TimeOnly_MinValue_Set")]
+	internal static void /* System.Void */ System_TimeOnly_MinValue_Set(void* /* System.TimeOnly */ __value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.TimeOnly __returnValue = System.TimeOnly.MinValue;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): MaxValue
+	[UnmanagedCallersOnly(EntryPoint = "System_TimeOnly_MaxValue_Set")]
+	internal static void /* System.Void */ System_TimeOnly_MaxValue_Set(void* /* System.TimeOnly */ __value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.TimeOnly __returnValue = System.TimeOnly.MaxValue;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Hour
+	[UnmanagedCallersOnly(EntryPoint = "System_TimeOnly_Hour_Set")]
+	internal static void /* System.Void */ System_TimeOnly_Hour_Set(void* /* System.TimeOnly */ __self, void* /* System.TimeOnly */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.TimeOnly __selfDotNet = InteropUtils.GetInstance<System.TimeOnly>(__self);
+	
+	
+	    try {
+			System.TimeOnly __returnValue = __selfDotNet.Hour;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Minute
+	[UnmanagedCallersOnly(EntryPoint = "System_TimeOnly_Minute_Set")]
+	internal static void /* System.Void */ System_TimeOnly_Minute_Set(void* /* System.TimeOnly */ __self, void* /* System.TimeOnly */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.TimeOnly __selfDotNet = InteropUtils.GetInstance<System.TimeOnly>(__self);
+	
+	
+	    try {
+			System.TimeOnly __returnValue = __selfDotNet.Minute;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Second
+	[UnmanagedCallersOnly(EntryPoint = "System_TimeOnly_Second_Set")]
+	internal static void /* System.Void */ System_TimeOnly_Second_Set(void* /* System.TimeOnly */ __self, void* /* System.TimeOnly */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.TimeOnly __selfDotNet = InteropUtils.GetInstance<System.TimeOnly>(__self);
+	
+	
+	    try {
+			System.TimeOnly __returnValue = __selfDotNet.Second;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Millisecond
+	[UnmanagedCallersOnly(EntryPoint = "System_TimeOnly_Millisecond_Set")]
+	internal static void /* System.Void */ System_TimeOnly_Millisecond_Set(void* /* System.TimeOnly */ __self, void* /* System.TimeOnly */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.TimeOnly __selfDotNet = InteropUtils.GetInstance<System.TimeOnly>(__self);
+	
+	
+	    try {
+			System.TimeOnly __returnValue = __selfDotNet.Millisecond;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Microsecond
+	[UnmanagedCallersOnly(EntryPoint = "System_TimeOnly_Microsecond_Set")]
+	internal static void /* System.Void */ System_TimeOnly_Microsecond_Set(void* /* System.TimeOnly */ __self, void* /* System.TimeOnly */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.TimeOnly __selfDotNet = InteropUtils.GetInstance<System.TimeOnly>(__self);
+	
+	
+	    try {
+			System.TimeOnly __returnValue = __selfDotNet.Microsecond;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Nanosecond
+	[UnmanagedCallersOnly(EntryPoint = "System_TimeOnly_Nanosecond_Set")]
+	internal static void /* System.Void */ System_TimeOnly_Nanosecond_Set(void* /* System.TimeOnly */ __self, void* /* System.TimeOnly */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.TimeOnly __selfDotNet = InteropUtils.GetInstance<System.TimeOnly>(__self);
+	
+	
+	    try {
+			System.TimeOnly __returnValue = __selfDotNet.Nanosecond;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Ticks
+	[UnmanagedCallersOnly(EntryPoint = "System_TimeOnly_Ticks_Set")]
+	internal static void /* System.Void */ System_TimeOnly_Ticks_Set(void* /* System.TimeOnly */ __self, void* /* System.TimeOnly */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.TimeOnly __selfDotNet = InteropUtils.GetInstance<System.TimeOnly>(__self);
+	
+	
+	    try {
+			System.TimeOnly __returnValue = __selfDotNet.Ticks;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_TimeOnly_Destroy")]
@@ -22169,19 +26797,14 @@ internal static unsafe class System_Globalization_Calendar
 	}
 	
 
-	// TODO (Property): MinSupportedDateTime
 	
 
-	// TODO (Property): MaxSupportedDateTime
 	
 
-	// TODO (Property): AlgorithmType
 	
 
-	// TODO (Property): IsReadOnly
 	
 
-	// TODO (Property): TwoDigitYearMax
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Globalization_Calendar_Destroy")]
@@ -22857,10 +27480,68 @@ internal static unsafe class System_Runtime_Serialization_StreamingContext
 	}
 	
 
-	// TODO (Property): State
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_StreamingContext_State_Set")]
+	internal static void /* System.Void */ System_Runtime_Serialization_StreamingContext_State_Set(void* /* System.Runtime.Serialization.StreamingContext */ __self, void* /* System.Runtime.Serialization.StreamingContext */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Runtime.Serialization.StreamingContext __selfDotNet = InteropUtils.GetInstance<System.Runtime.Serialization.StreamingContext>(__self);
+	
+	
+	    try {
+			System.Runtime.Serialization.StreamingContext __returnValue = __selfDotNet.State;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Context
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_StreamingContext_Context_Set")]
+	internal static void /* System.Void */ System_Runtime_Serialization_StreamingContext_Context_Set(void* /* System.Runtime.Serialization.StreamingContext */ __self, void* /* System.Runtime.Serialization.StreamingContext */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Runtime.Serialization.StreamingContext __selfDotNet = InteropUtils.GetInstance<System.Runtime.Serialization.StreamingContext>(__self);
+	
+	
+	    try {
+			System.Runtime.Serialization.StreamingContext __returnValue = __selfDotNet.Context;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Runtime_Serialization_StreamingContext_Destroy")]
@@ -23082,7 +27763,36 @@ internal static unsafe class System_RuntimeTypeHandle
 	}
 	
 
-	// TODO (Property): Value
+	[UnmanagedCallersOnly(EntryPoint = "System_RuntimeTypeHandle_Value_Set")]
+	internal static void /* System.Void */ System_RuntimeTypeHandle_Value_Set(void* /* System.RuntimeTypeHandle */ __self, void* /* System.RuntimeTypeHandle */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.RuntimeTypeHandle __selfDotNet = InteropUtils.GetInstance<System.RuntimeTypeHandle>(__self);
+	
+	
+	    try {
+			System.RuntimeTypeHandle __returnValue = __selfDotNet.Value;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_RuntimeTypeHandle_Destroy")]
@@ -23377,7 +28087,36 @@ internal static unsafe class System_ModuleHandle
 	}
 	
 
-	// TODO (Property): MDStreamVersion
+	[UnmanagedCallersOnly(EntryPoint = "System_ModuleHandle_MDStreamVersion_Set")]
+	internal static void /* System.Void */ System_ModuleHandle_MDStreamVersion_Set(void* /* System.ModuleHandle */ __self, void* /* System.ModuleHandle */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.ModuleHandle __selfDotNet = InteropUtils.GetInstance<System.ModuleHandle>(__self);
+	
+	
+	    try {
+			System.ModuleHandle __returnValue = __selfDotNet.MDStreamVersion;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_ModuleHandle_Destroy")]
@@ -23566,7 +28305,36 @@ internal static unsafe class System_RuntimeFieldHandle
 	}
 	
 
-	// TODO (Property): Value
+	[UnmanagedCallersOnly(EntryPoint = "System_RuntimeFieldHandle_Value_Set")]
+	internal static void /* System.Void */ System_RuntimeFieldHandle_Value_Set(void* /* System.RuntimeFieldHandle */ __self, void* /* System.RuntimeFieldHandle */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.RuntimeFieldHandle __selfDotNet = InteropUtils.GetInstance<System.RuntimeFieldHandle>(__self);
+	
+	
+	    try {
+			System.RuntimeFieldHandle __returnValue = __selfDotNet.Value;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_RuntimeFieldHandle_Destroy")]
@@ -23583,13 +28351,100 @@ internal static unsafe class System_RuntimeFieldHandle
 
 internal static unsafe class System_Reflection_MethodBody
 {
-	// TODO (Property): LocalSignatureMetadataToken
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodBody_LocalSignatureMetadataToken_Set")]
+	internal static void /* System.Void */ System_Reflection_MethodBody_LocalSignatureMetadataToken_Set(void* /* System.Reflection.MethodBody */ __self, void* /* System.Reflection.MethodBody */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.MethodBody __selfDotNet = InteropUtils.GetInstance<System.Reflection.MethodBody>(__self);
+	
+	
+	    try {
+			System.Reflection.MethodBody __returnValue = __selfDotNet.LocalSignatureMetadataToken;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): MaxStackSize
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodBody_MaxStackSize_Set")]
+	internal static void /* System.Void */ System_Reflection_MethodBody_MaxStackSize_Set(void* /* System.Reflection.MethodBody */ __self, void* /* System.Reflection.MethodBody */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.MethodBody __selfDotNet = InteropUtils.GetInstance<System.Reflection.MethodBody>(__self);
+	
+	
+	    try {
+			System.Reflection.MethodBody __returnValue = __selfDotNet.MaxStackSize;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): InitLocals
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodBody_InitLocals_Set")]
+	internal static void /* System.Void */ System_Reflection_MethodBody_InitLocals_Set(void* /* System.Reflection.MethodBody */ __self, void* /* System.Reflection.MethodBody */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.MethodBody __selfDotNet = InteropUtils.GetInstance<System.Reflection.MethodBody>(__self);
+	
+	
+	    try {
+			System.Reflection.MethodBody __returnValue = __selfDotNet.InitLocals;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Reflection_MethodBody_Destroy")]
@@ -23892,61 +28747,42 @@ internal static unsafe class System_Reflection_FieldInfo
 	}
 	
 
-	// TODO (Property): MemberType
 	
 
-	// TODO (Property): Attributes
 	
 
-	// TODO (Property): FieldType
 	
 
-	// TODO (Property): IsInitOnly
 	
 
-	// TODO (Property): IsLiteral
 	
 
-	// TODO (Property): IsNotSerialized
 	
 
-	// TODO (Property): IsPinvokeImpl
 	
 
-	// TODO (Property): IsSpecialName
 	
 
-	// TODO (Property): IsStatic
 	
 
-	// TODO (Property): IsAssembly
 	
 
-	// TODO (Property): IsFamily
 	
 
-	// TODO (Property): IsFamilyAndAssembly
 	
 
-	// TODO (Property): IsFamilyOrAssembly
 	
 
-	// TODO (Property): IsPrivate
 	
 
-	// TODO (Property): IsPublic
 	
 
-	// TODO (Property): IsSecurityCritical
 	
 
-	// TODO (Property): IsSecuritySafeCritical
 	
 
-	// TODO (Property): IsSecurityTransparent
 	
 
-	// TODO (Property): FieldHandle
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Reflection_FieldInfo_Destroy")]
@@ -24274,28 +29110,20 @@ internal static unsafe class System_Reflection_PropertyInfo
 	}
 	
 
-	// TODO (Property): MemberType
 	
 
-	// TODO (Property): PropertyType
 	
 
-	// TODO (Property): Attributes
 	
 
-	// TODO (Property): IsSpecialName
 	
 
-	// TODO (Property): CanRead
 	
 
-	// TODO (Property): CanWrite
 	
 
-	// TODO (Property): GetMethod
 	
 
-	// TODO (Property): SetMethod
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Reflection_PropertyInfo_Destroy")]
@@ -24435,16 +29263,12 @@ internal static unsafe class System_Reflection_MethodInfo
 	}
 	
 
-	// TODO (Property): MemberType
 	
 
-	// TODO (Property): ReturnParameter
 	
 
-	// TODO (Property): ReturnType
 	
 
-	// TODO (Property): ReturnTypeCustomAttributes
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Reflection_MethodInfo_Destroy")]
@@ -24555,46 +29379,452 @@ internal static unsafe class System_Reflection_ParameterInfo
 	}
 	
 
-	// TODO (Property): Attributes
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ParameterInfo_Attributes_Set")]
+	internal static void /* System.Void */ System_Reflection_ParameterInfo_Attributes_Set(void* /* System.Reflection.ParameterInfo */ __self, void* /* System.Reflection.ParameterInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.ParameterInfo __selfDotNet = InteropUtils.GetInstance<System.Reflection.ParameterInfo>(__self);
+	
+	
+	    try {
+			System.Reflection.ParameterInfo __returnValue = __selfDotNet.Attributes;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Member
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ParameterInfo_Member_Set")]
+	internal static void /* System.Void */ System_Reflection_ParameterInfo_Member_Set(void* /* System.Reflection.ParameterInfo */ __self, void* /* System.Reflection.ParameterInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.ParameterInfo __selfDotNet = InteropUtils.GetInstance<System.Reflection.ParameterInfo>(__self);
+	
+	
+	    try {
+			System.Reflection.ParameterInfo __returnValue = __selfDotNet.Member;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Name
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ParameterInfo_Name_Set")]
+	internal static void /* System.Void */ System_Reflection_ParameterInfo_Name_Set(void* /* System.Reflection.ParameterInfo */ __self, void* /* System.Reflection.ParameterInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.ParameterInfo __selfDotNet = InteropUtils.GetInstance<System.Reflection.ParameterInfo>(__self);
+	
+	
+	    try {
+			System.Reflection.ParameterInfo __returnValue = __selfDotNet.Name;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): ParameterType
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ParameterInfo_ParameterType_Set")]
+	internal static void /* System.Void */ System_Reflection_ParameterInfo_ParameterType_Set(void* /* System.Reflection.ParameterInfo */ __self, void* /* System.Reflection.ParameterInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.ParameterInfo __selfDotNet = InteropUtils.GetInstance<System.Reflection.ParameterInfo>(__self);
+	
+	
+	    try {
+			System.Reflection.ParameterInfo __returnValue = __selfDotNet.ParameterType;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Position
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ParameterInfo_Position_Set")]
+	internal static void /* System.Void */ System_Reflection_ParameterInfo_Position_Set(void* /* System.Reflection.ParameterInfo */ __self, void* /* System.Reflection.ParameterInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.ParameterInfo __selfDotNet = InteropUtils.GetInstance<System.Reflection.ParameterInfo>(__self);
+	
+	
+	    try {
+			System.Reflection.ParameterInfo __returnValue = __selfDotNet.Position;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): IsIn
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ParameterInfo_IsIn_Set")]
+	internal static void /* System.Void */ System_Reflection_ParameterInfo_IsIn_Set(void* /* System.Reflection.ParameterInfo */ __self, void* /* System.Reflection.ParameterInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.ParameterInfo __selfDotNet = InteropUtils.GetInstance<System.Reflection.ParameterInfo>(__self);
+	
+	
+	    try {
+			System.Reflection.ParameterInfo __returnValue = __selfDotNet.IsIn;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): IsLcid
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ParameterInfo_IsLcid_Set")]
+	internal static void /* System.Void */ System_Reflection_ParameterInfo_IsLcid_Set(void* /* System.Reflection.ParameterInfo */ __self, void* /* System.Reflection.ParameterInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.ParameterInfo __selfDotNet = InteropUtils.GetInstance<System.Reflection.ParameterInfo>(__self);
+	
+	
+	    try {
+			System.Reflection.ParameterInfo __returnValue = __selfDotNet.IsLcid;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): IsOptional
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ParameterInfo_IsOptional_Set")]
+	internal static void /* System.Void */ System_Reflection_ParameterInfo_IsOptional_Set(void* /* System.Reflection.ParameterInfo */ __self, void* /* System.Reflection.ParameterInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.ParameterInfo __selfDotNet = InteropUtils.GetInstance<System.Reflection.ParameterInfo>(__self);
+	
+	
+	    try {
+			System.Reflection.ParameterInfo __returnValue = __selfDotNet.IsOptional;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): IsOut
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ParameterInfo_IsOut_Set")]
+	internal static void /* System.Void */ System_Reflection_ParameterInfo_IsOut_Set(void* /* System.Reflection.ParameterInfo */ __self, void* /* System.Reflection.ParameterInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.ParameterInfo __selfDotNet = InteropUtils.GetInstance<System.Reflection.ParameterInfo>(__self);
+	
+	
+	    try {
+			System.Reflection.ParameterInfo __returnValue = __selfDotNet.IsOut;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): IsRetval
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ParameterInfo_IsRetval_Set")]
+	internal static void /* System.Void */ System_Reflection_ParameterInfo_IsRetval_Set(void* /* System.Reflection.ParameterInfo */ __self, void* /* System.Reflection.ParameterInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.ParameterInfo __selfDotNet = InteropUtils.GetInstance<System.Reflection.ParameterInfo>(__self);
+	
+	
+	    try {
+			System.Reflection.ParameterInfo __returnValue = __selfDotNet.IsRetval;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): DefaultValue
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ParameterInfo_DefaultValue_Set")]
+	internal static void /* System.Void */ System_Reflection_ParameterInfo_DefaultValue_Set(void* /* System.Reflection.ParameterInfo */ __self, void* /* System.Reflection.ParameterInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.ParameterInfo __selfDotNet = InteropUtils.GetInstance<System.Reflection.ParameterInfo>(__self);
+	
+	
+	    try {
+			System.Reflection.ParameterInfo __returnValue = __selfDotNet.DefaultValue;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): RawDefaultValue
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ParameterInfo_RawDefaultValue_Set")]
+	internal static void /* System.Void */ System_Reflection_ParameterInfo_RawDefaultValue_Set(void* /* System.Reflection.ParameterInfo */ __self, void* /* System.Reflection.ParameterInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.ParameterInfo __selfDotNet = InteropUtils.GetInstance<System.Reflection.ParameterInfo>(__self);
+	
+	
+	    try {
+			System.Reflection.ParameterInfo __returnValue = __selfDotNet.RawDefaultValue;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): HasDefaultValue
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ParameterInfo_HasDefaultValue_Set")]
+	internal static void /* System.Void */ System_Reflection_ParameterInfo_HasDefaultValue_Set(void* /* System.Reflection.ParameterInfo */ __self, void* /* System.Reflection.ParameterInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.ParameterInfo __selfDotNet = InteropUtils.GetInstance<System.Reflection.ParameterInfo>(__self);
+	
+	
+	    try {
+			System.Reflection.ParameterInfo __returnValue = __selfDotNet.HasDefaultValue;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): MetadataToken
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ParameterInfo_MetadataToken_Set")]
+	internal static void /* System.Void */ System_Reflection_ParameterInfo_MetadataToken_Set(void* /* System.Reflection.ParameterInfo */ __self, void* /* System.Reflection.ParameterInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.ParameterInfo __selfDotNet = InteropUtils.GetInstance<System.Reflection.ParameterInfo>(__self);
+	
+	
+	    try {
+			System.Reflection.ParameterInfo __returnValue = __selfDotNet.MetadataToken;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Reflection_ParameterInfo_Destroy")]
@@ -24805,19 +30035,14 @@ internal static unsafe class System_Collections_IDictionary
 	}
 	
 
-	// TODO (Property): Item
 	
 
-	// TODO (Property): Keys
 	
 
-	// TODO (Property): Values
 	
 
-	// TODO (Property): IsReadOnly
 	
 
-	// TODO (Property): IsFixedSize
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Collections_IDictionary_Destroy")]
@@ -24861,13 +30086,10 @@ internal static unsafe class System_Collections_ICollection
 	}
 	
 
-	// TODO (Property): Count
 	
 
-	// TODO (Property): SyncRoot
 	
 
-	// TODO (Property): IsSynchronized
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Collections_ICollection_Destroy")]
@@ -26254,28 +31476,20 @@ internal static unsafe class System_Array
 	}
 	
 
-	// TODO (Property): Length
 	
 
-	// TODO (Property): LongLength
 	
 
-	// TODO (Property): Rank
 	
 
-	// TODO (Property): SyncRoot
 	
 
-	// TODO (Property): IsReadOnly
 	
 
-	// TODO (Property): IsFixedSize
 	
 
-	// TODO (Property): IsSynchronized
 	
 
-	// TODO (Property): MaxLength
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Array_Destroy")]
@@ -26393,7 +31607,6 @@ internal static unsafe class System_Collections_IEnumerator
 	}
 	
 
-	// TODO (Property): Current
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Collections_IEnumerator_Destroy")]
@@ -26408,13 +31621,10 @@ internal static unsafe class System_Collections_IEnumerator
 
 internal static unsafe class System_Collections_IDictionaryEnumerator
 {
-	// TODO (Property): Key
 	
 
-	// TODO (Property): Value
 	
 
-	// TODO (Property): Entry
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Collections_IDictionaryEnumerator_Destroy")]
@@ -26487,10 +31697,128 @@ internal static unsafe class System_Collections_DictionaryEntry
 	}
 	
 
-	// TODO (Property): Key
+	[UnmanagedCallersOnly(EntryPoint = "System_Collections_DictionaryEntry_Key_Set")]
+	internal static void /* System.Void */ System_Collections_DictionaryEntry_Key_Set(void* /* System.Collections.DictionaryEntry */ __self, void* /* System.Collections.DictionaryEntry */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Collections.DictionaryEntry __selfDotNet = InteropUtils.GetInstance<System.Collections.DictionaryEntry>(__self);
+	
+	
+	    try {
+			System.Collections.DictionaryEntry __returnValue = __selfDotNet.Key;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Collections_DictionaryEntry_Key_Get")]
+	internal static void* /* System.Collections.DictionaryEntry */ System_Collections_DictionaryEntry_Key_Get(void* /* System.Collections.DictionaryEntry */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Collections.DictionaryEntry __selfDotNet = InteropUtils.GetInstance<System.Collections.DictionaryEntry>(__self);
+	
+	
+	    try {
+			System.Collections.DictionaryEntry __returnValue = __selfDotNet.Key;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Value
+	[UnmanagedCallersOnly(EntryPoint = "System_Collections_DictionaryEntry_Value_Set")]
+	internal static void /* System.Void */ System_Collections_DictionaryEntry_Value_Set(void* /* System.Collections.DictionaryEntry */ __self, void* /* System.Collections.DictionaryEntry */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Collections.DictionaryEntry __selfDotNet = InteropUtils.GetInstance<System.Collections.DictionaryEntry>(__self);
+	
+	
+	    try {
+			System.Collections.DictionaryEntry __returnValue = __selfDotNet.Value;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Collections_DictionaryEntry_Value_Get")]
+	internal static void* /* System.Collections.DictionaryEntry */ System_Collections_DictionaryEntry_Value_Get(void* /* System.Collections.DictionaryEntry */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Collections.DictionaryEntry __selfDotNet = InteropUtils.GetInstance<System.Collections.DictionaryEntry>(__self);
+	
+	
+	    try {
+			System.Collections.DictionaryEntry __returnValue = __selfDotNet.Value;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Collections_DictionaryEntry_Destroy")]
@@ -26636,16 +31964,132 @@ internal static unsafe class System_Threading_Tasks_TaskFactory
 	}
 	
 
-	// TODO (Property): CancellationToken
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_TaskFactory_CancellationToken_Set")]
+	internal static void /* System.Void */ System_Threading_Tasks_TaskFactory_CancellationToken_Set(void* /* System.Threading.Tasks.TaskFactory */ __self, void* /* System.Threading.Tasks.TaskFactory */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.Tasks.TaskFactory __selfDotNet = InteropUtils.GetInstance<System.Threading.Tasks.TaskFactory>(__self);
+	
+	
+	    try {
+			System.Threading.Tasks.TaskFactory __returnValue = __selfDotNet.CancellationToken;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Scheduler
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_TaskFactory_Scheduler_Set")]
+	internal static void /* System.Void */ System_Threading_Tasks_TaskFactory_Scheduler_Set(void* /* System.Threading.Tasks.TaskFactory */ __self, void* /* System.Threading.Tasks.TaskFactory */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.Tasks.TaskFactory __selfDotNet = InteropUtils.GetInstance<System.Threading.Tasks.TaskFactory>(__self);
+	
+	
+	    try {
+			System.Threading.Tasks.TaskFactory __returnValue = __selfDotNet.Scheduler;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): CreationOptions
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_TaskFactory_CreationOptions_Set")]
+	internal static void /* System.Void */ System_Threading_Tasks_TaskFactory_CreationOptions_Set(void* /* System.Threading.Tasks.TaskFactory */ __self, void* /* System.Threading.Tasks.TaskFactory */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.Tasks.TaskFactory __selfDotNet = InteropUtils.GetInstance<System.Threading.Tasks.TaskFactory>(__self);
+	
+	
+	    try {
+			System.Threading.Tasks.TaskFactory __returnValue = __selfDotNet.CreationOptions;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): ContinuationOptions
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_TaskFactory_ContinuationOptions_Set")]
+	internal static void /* System.Void */ System_Threading_Tasks_TaskFactory_ContinuationOptions_Set(void* /* System.Threading.Tasks.TaskFactory */ __self, void* /* System.Threading.Tasks.TaskFactory */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.Tasks.TaskFactory __selfDotNet = InteropUtils.GetInstance<System.Threading.Tasks.TaskFactory>(__self);
+	
+	
+	    try {
+			System.Threading.Tasks.TaskFactory __returnValue = __selfDotNet.ContinuationOptions;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Threading_Tasks_TaskFactory_Destroy")]
@@ -26808,16 +32252,126 @@ internal static unsafe class System_Threading_CancellationToken
 	}
 	
 
-	// TODO (Property): None
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationToken_None_Set")]
+	internal static void /* System.Void */ System_Threading_CancellationToken_None_Set(void* /* System.Threading.CancellationToken */ __value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Threading.CancellationToken __returnValue = System.Threading.CancellationToken.None;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): IsCancellationRequested
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationToken_IsCancellationRequested_Set")]
+	internal static void /* System.Void */ System_Threading_CancellationToken_IsCancellationRequested_Set(void* /* System.Threading.CancellationToken */ __self, void* /* System.Threading.CancellationToken */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.CancellationToken __selfDotNet = InteropUtils.GetInstance<System.Threading.CancellationToken>(__self);
+	
+	
+	    try {
+			System.Threading.CancellationToken __returnValue = __selfDotNet.IsCancellationRequested;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): CanBeCanceled
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationToken_CanBeCanceled_Set")]
+	internal static void /* System.Void */ System_Threading_CancellationToken_CanBeCanceled_Set(void* /* System.Threading.CancellationToken */ __self, void* /* System.Threading.CancellationToken */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.CancellationToken __selfDotNet = InteropUtils.GetInstance<System.Threading.CancellationToken>(__self);
+	
+	
+	    try {
+			System.Threading.CancellationToken __returnValue = __selfDotNet.CanBeCanceled;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): WaitHandle
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationToken_WaitHandle_Set")]
+	internal static void /* System.Void */ System_Threading_CancellationToken_WaitHandle_Set(void* /* System.Threading.CancellationToken */ __self, void* /* System.Threading.CancellationToken */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.CancellationToken __selfDotNet = InteropUtils.GetInstance<System.Threading.CancellationToken>(__self);
+	
+	
+	    try {
+			System.Threading.CancellationToken __returnValue = __selfDotNet.WaitHandle;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Threading_CancellationToken_Destroy")]
@@ -27131,10 +32685,8 @@ internal static unsafe class System_Threading_WaitHandle
 	}
 	
 
-	// TODO (Property): Handle
 	
 
-	// TODO (Property): SafeWaitHandle
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Threading_WaitHandle_Destroy")]
@@ -27212,7 +32764,6 @@ internal static unsafe class Microsoft_Win32_SafeHandles_SafeWaitHandle
 
 internal static unsafe class Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid
 {
-	// TODO (Property): IsInvalid
 	
 
 	[UnmanagedCallersOnly(EntryPoint="Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid_Destroy")]
@@ -27369,10 +32920,8 @@ internal static unsafe class System_Runtime_InteropServices_SafeHandle
 	}
 	
 
-	// TODO (Property): IsClosed
 	
 
-	// TODO (Property): IsInvalid
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Runtime_InteropServices_SafeHandle_Destroy")]
@@ -27583,7 +33132,36 @@ internal static unsafe class System_Threading_CancellationTokenRegistration
 	}
 	
 
-	// TODO (Property): Token
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationTokenRegistration_Token_Set")]
+	internal static void /* System.Void */ System_Threading_CancellationTokenRegistration_Token_Set(void* /* System.Threading.CancellationTokenRegistration */ __self, void* /* System.Threading.CancellationTokenRegistration */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.CancellationTokenRegistration __selfDotNet = InteropUtils.GetInstance<System.Threading.CancellationTokenRegistration>(__self);
+	
+	
+	    try {
+			System.Threading.CancellationTokenRegistration __returnValue = __selfDotNet.Token;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Threading_CancellationTokenRegistration_Destroy")]
@@ -27921,19 +33499,158 @@ internal static unsafe class System_Threading_Tasks_ValueTask
 	}
 	
 
-	// TODO (Property): CompletedTask
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_ValueTask_CompletedTask_Set")]
+	internal static void /* System.Void */ System_Threading_Tasks_ValueTask_CompletedTask_Set(void* /* System.Threading.Tasks.ValueTask */ __value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Threading.Tasks.ValueTask __returnValue = System.Threading.Tasks.ValueTask.CompletedTask;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): IsCompleted
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_ValueTask_IsCompleted_Set")]
+	internal static void /* System.Void */ System_Threading_Tasks_ValueTask_IsCompleted_Set(void* /* System.Threading.Tasks.ValueTask */ __self, void* /* System.Threading.Tasks.ValueTask */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.Tasks.ValueTask __selfDotNet = InteropUtils.GetInstance<System.Threading.Tasks.ValueTask>(__self);
+	
+	
+	    try {
+			System.Threading.Tasks.ValueTask __returnValue = __selfDotNet.IsCompleted;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): IsCompletedSuccessfully
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_ValueTask_IsCompletedSuccessfully_Set")]
+	internal static void /* System.Void */ System_Threading_Tasks_ValueTask_IsCompletedSuccessfully_Set(void* /* System.Threading.Tasks.ValueTask */ __self, void* /* System.Threading.Tasks.ValueTask */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.Tasks.ValueTask __selfDotNet = InteropUtils.GetInstance<System.Threading.Tasks.ValueTask>(__self);
+	
+	
+	    try {
+			System.Threading.Tasks.ValueTask __returnValue = __selfDotNet.IsCompletedSuccessfully;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): IsFaulted
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_ValueTask_IsFaulted_Set")]
+	internal static void /* System.Void */ System_Threading_Tasks_ValueTask_IsFaulted_Set(void* /* System.Threading.Tasks.ValueTask */ __self, void* /* System.Threading.Tasks.ValueTask */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.Tasks.ValueTask __selfDotNet = InteropUtils.GetInstance<System.Threading.Tasks.ValueTask>(__self);
+	
+	
+	    try {
+			System.Threading.Tasks.ValueTask __returnValue = __selfDotNet.IsFaulted;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): IsCanceled
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_ValueTask_IsCanceled_Set")]
+	internal static void /* System.Void */ System_Threading_Tasks_ValueTask_IsCanceled_Set(void* /* System.Threading.Tasks.ValueTask */ __self, void* /* System.Threading.Tasks.ValueTask */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.Tasks.ValueTask __selfDotNet = InteropUtils.GetInstance<System.Threading.Tasks.ValueTask>(__self);
+	
+	
+	    try {
+			System.Threading.Tasks.ValueTask __returnValue = __selfDotNet.IsCanceled;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Threading_Tasks_ValueTask_Destroy")]
@@ -27976,7 +33693,36 @@ internal static unsafe class System_Runtime_CompilerServices_ValueTaskAwaiter
 	}
 	
 
-	// TODO (Property): IsCompleted
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_ValueTaskAwaiter_IsCompleted_Set")]
+	internal static void /* System.Void */ System_Runtime_CompilerServices_ValueTaskAwaiter_IsCompleted_Set(void* /* System.Runtime.CompilerServices.ValueTaskAwaiter */ __self, void* /* System.Runtime.CompilerServices.ValueTaskAwaiter */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Runtime.CompilerServices.ValueTaskAwaiter __selfDotNet = InteropUtils.GetInstance<System.Runtime.CompilerServices.ValueTaskAwaiter>(__self);
+	
+	
+	    try {
+			System.Runtime.CompilerServices.ValueTaskAwaiter __returnValue = __selfDotNet.IsCompleted;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Runtime_CompilerServices_ValueTaskAwaiter_Destroy")]
@@ -28062,7 +33808,36 @@ internal static unsafe class System_Runtime_CompilerServices_ConfiguredValueTask
 	}
 	
 
-	// TODO (Property): IsCompleted
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_IsCompleted_Set")]
+	internal static void /* System.Void */ System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_IsCompleted_Set(void* /* System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter */ __self, void* /* System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter __selfDotNet = InteropUtils.GetInstance<System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter>(__self);
+	
+	
+	    try {
+			System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter __returnValue = __selfDotNet.IsCompleted;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_Destroy")]
@@ -28150,16 +33925,12 @@ internal static unsafe class System_Threading_Tasks_Sources_IValueTaskSource
 
 internal static unsafe class System_IAsyncResult
 {
-	// TODO (Property): IsCompleted
 	
 
-	// TODO (Property): AsyncWaitHandle
 	
 
-	// TODO (Property): AsyncState
 	
 
-	// TODO (Property): CompletedSynchronously
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_IAsyncResult_Destroy")]
@@ -28202,7 +33973,36 @@ internal static unsafe class System_Runtime_CompilerServices_TaskAwaiter
 	}
 	
 
-	// TODO (Property): IsCompleted
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_TaskAwaiter_IsCompleted_Set")]
+	internal static void /* System.Void */ System_Runtime_CompilerServices_TaskAwaiter_IsCompleted_Set(void* /* System.Runtime.CompilerServices.TaskAwaiter */ __self, void* /* System.Runtime.CompilerServices.TaskAwaiter */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Runtime.CompilerServices.TaskAwaiter __selfDotNet = InteropUtils.GetInstance<System.Runtime.CompilerServices.TaskAwaiter>(__self);
+	
+	
+	    try {
+			System.Runtime.CompilerServices.TaskAwaiter __returnValue = __selfDotNet.IsCompleted;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Runtime_CompilerServices_TaskAwaiter_Destroy")]
@@ -28288,7 +34088,36 @@ internal static unsafe class System_Runtime_CompilerServices_ConfiguredTaskAwait
 	}
 	
 
-	// TODO (Property): IsCompleted
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_IsCompleted_Set")]
+	internal static void /* System.Void */ System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_IsCompleted_Set(void* /* System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter */ __self, void* /* System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter __selfDotNet = InteropUtils.GetInstance<System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter>(__self);
+	
+	
+	    try {
+			System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter __returnValue = __selfDotNet.IsCompleted;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_Destroy")]
@@ -28374,7 +34203,36 @@ internal static unsafe class System_Runtime_CompilerServices_YieldAwaitable_Yiel
 	}
 	
 
-	// TODO (Property): IsCompleted
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_IsCompleted_Set")]
+	internal static void /* System.Void */ System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_IsCompleted_Set(void* /* System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter */ __self, void* /* System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter __selfDotNet = InteropUtils.GetInstance<System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter>(__self);
+	
+	
+	    try {
+			System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter __returnValue = __selfDotNet.IsCompleted;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_Destroy")]
@@ -28441,10 +34299,68 @@ internal static unsafe class Microsoft_Win32_SafeHandles_SafeFileHandle
 	}
 	
 
-	// TODO (Property): IsAsync
+	[UnmanagedCallersOnly(EntryPoint = "Microsoft_Win32_SafeHandles_SafeFileHandle_IsAsync_Set")]
+	internal static void /* System.Void */ Microsoft_Win32_SafeHandles_SafeFileHandle_IsAsync_Set(void* /* Microsoft.Win32.SafeHandles.SafeFileHandle */ __self, void* /* Microsoft.Win32.SafeHandles.SafeFileHandle */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		Microsoft.Win32.SafeHandles.SafeFileHandle __selfDotNet = InteropUtils.GetInstance<Microsoft.Win32.SafeHandles.SafeFileHandle>(__self);
+	
+	
+	    try {
+			Microsoft.Win32.SafeHandles.SafeFileHandle __returnValue = __selfDotNet.IsAsync;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): IsInvalid
+	[UnmanagedCallersOnly(EntryPoint = "Microsoft_Win32_SafeHandles_SafeFileHandle_IsInvalid_Set")]
+	internal static void /* System.Void */ Microsoft_Win32_SafeHandles_SafeFileHandle_IsInvalid_Set(void* /* Microsoft.Win32.SafeHandles.SafeFileHandle */ __self, void* /* Microsoft.Win32.SafeHandles.SafeFileHandle */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		Microsoft.Win32.SafeHandles.SafeFileHandle __selfDotNet = InteropUtils.GetInstance<Microsoft.Win32.SafeHandles.SafeFileHandle>(__self);
+	
+	
+	    try {
+			Microsoft.Win32.SafeHandles.SafeFileHandle __returnValue = __selfDotNet.IsInvalid;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="Microsoft_Win32_SafeHandles_SafeFileHandle_Destroy")]
@@ -28488,22 +34404,376 @@ internal static unsafe class System_IO_FileStreamOptions
 	}
 	
 
-	// TODO (Property): Mode
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStreamOptions_Mode_Set")]
+	internal static void /* System.Void */ System_IO_FileStreamOptions_Mode_Set(void* /* System.IO.FileStreamOptions */ __self, void* /* System.IO.FileStreamOptions */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.IO.FileStreamOptions __selfDotNet = InteropUtils.GetInstance<System.IO.FileStreamOptions>(__self);
+	
+	
+	    try {
+			System.IO.FileStreamOptions __returnValue = __selfDotNet.Mode;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStreamOptions_Mode_Get")]
+	internal static void* /* System.IO.FileStreamOptions */ System_IO_FileStreamOptions_Mode_Get(void* /* System.IO.FileStreamOptions */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.IO.FileStreamOptions __selfDotNet = InteropUtils.GetInstance<System.IO.FileStreamOptions>(__self);
+	
+	
+	    try {
+			System.IO.FileStreamOptions __returnValue = __selfDotNet.Mode;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Access
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStreamOptions_Access_Set")]
+	internal static void /* System.Void */ System_IO_FileStreamOptions_Access_Set(void* /* System.IO.FileStreamOptions */ __self, void* /* System.IO.FileStreamOptions */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.IO.FileStreamOptions __selfDotNet = InteropUtils.GetInstance<System.IO.FileStreamOptions>(__self);
+	
+	
+	    try {
+			System.IO.FileStreamOptions __returnValue = __selfDotNet.Access;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStreamOptions_Access_Get")]
+	internal static void* /* System.IO.FileStreamOptions */ System_IO_FileStreamOptions_Access_Get(void* /* System.IO.FileStreamOptions */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.IO.FileStreamOptions __selfDotNet = InteropUtils.GetInstance<System.IO.FileStreamOptions>(__self);
+	
+	
+	    try {
+			System.IO.FileStreamOptions __returnValue = __selfDotNet.Access;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Share
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStreamOptions_Share_Set")]
+	internal static void /* System.Void */ System_IO_FileStreamOptions_Share_Set(void* /* System.IO.FileStreamOptions */ __self, void* /* System.IO.FileStreamOptions */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.IO.FileStreamOptions __selfDotNet = InteropUtils.GetInstance<System.IO.FileStreamOptions>(__self);
+	
+	
+	    try {
+			System.IO.FileStreamOptions __returnValue = __selfDotNet.Share;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStreamOptions_Share_Get")]
+	internal static void* /* System.IO.FileStreamOptions */ System_IO_FileStreamOptions_Share_Get(void* /* System.IO.FileStreamOptions */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.IO.FileStreamOptions __selfDotNet = InteropUtils.GetInstance<System.IO.FileStreamOptions>(__self);
+	
+	
+	    try {
+			System.IO.FileStreamOptions __returnValue = __selfDotNet.Share;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Options
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStreamOptions_Options_Set")]
+	internal static void /* System.Void */ System_IO_FileStreamOptions_Options_Set(void* /* System.IO.FileStreamOptions */ __self, void* /* System.IO.FileStreamOptions */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.IO.FileStreamOptions __selfDotNet = InteropUtils.GetInstance<System.IO.FileStreamOptions>(__self);
+	
+	
+	    try {
+			System.IO.FileStreamOptions __returnValue = __selfDotNet.Options;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStreamOptions_Options_Get")]
+	internal static void* /* System.IO.FileStreamOptions */ System_IO_FileStreamOptions_Options_Get(void* /* System.IO.FileStreamOptions */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.IO.FileStreamOptions __selfDotNet = InteropUtils.GetInstance<System.IO.FileStreamOptions>(__self);
+	
+	
+	    try {
+			System.IO.FileStreamOptions __returnValue = __selfDotNet.Options;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): PreallocationSize
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStreamOptions_PreallocationSize_Set")]
+	internal static void /* System.Void */ System_IO_FileStreamOptions_PreallocationSize_Set(void* /* System.IO.FileStreamOptions */ __self, void* /* System.IO.FileStreamOptions */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.IO.FileStreamOptions __selfDotNet = InteropUtils.GetInstance<System.IO.FileStreamOptions>(__self);
+	
+	
+	    try {
+			System.IO.FileStreamOptions __returnValue = __selfDotNet.PreallocationSize;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStreamOptions_PreallocationSize_Get")]
+	internal static void* /* System.IO.FileStreamOptions */ System_IO_FileStreamOptions_PreallocationSize_Get(void* /* System.IO.FileStreamOptions */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.IO.FileStreamOptions __selfDotNet = InteropUtils.GetInstance<System.IO.FileStreamOptions>(__self);
+	
+	
+	    try {
+			System.IO.FileStreamOptions __returnValue = __selfDotNet.PreallocationSize;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): BufferSize
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStreamOptions_BufferSize_Set")]
+	internal static void /* System.Void */ System_IO_FileStreamOptions_BufferSize_Set(void* /* System.IO.FileStreamOptions */ __self, void* /* System.IO.FileStreamOptions */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.IO.FileStreamOptions __selfDotNet = InteropUtils.GetInstance<System.IO.FileStreamOptions>(__self);
+	
+	
+	    try {
+			System.IO.FileStreamOptions __returnValue = __selfDotNet.BufferSize;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStreamOptions_BufferSize_Get")]
+	internal static void* /* System.IO.FileStreamOptions */ System_IO_FileStreamOptions_BufferSize_Get(void* /* System.IO.FileStreamOptions */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.IO.FileStreamOptions __selfDotNet = InteropUtils.GetInstance<System.IO.FileStreamOptions>(__self);
+	
+	
+	    try {
+			System.IO.FileStreamOptions __returnValue = __selfDotNet.BufferSize;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_IO_FileStreamOptions_Destroy")]
@@ -28545,13 +34815,100 @@ internal static unsafe class System_Reflection_ManifestResourceInfo
 	}
 	
 
-	// TODO (Property): ReferencedAssembly
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ManifestResourceInfo_ReferencedAssembly_Set")]
+	internal static void /* System.Void */ System_Reflection_ManifestResourceInfo_ReferencedAssembly_Set(void* /* System.Reflection.ManifestResourceInfo */ __self, void* /* System.Reflection.ManifestResourceInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.ManifestResourceInfo __selfDotNet = InteropUtils.GetInstance<System.Reflection.ManifestResourceInfo>(__self);
+	
+	
+	    try {
+			System.Reflection.ManifestResourceInfo __returnValue = __selfDotNet.ReferencedAssembly;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): FileName
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ManifestResourceInfo_FileName_Set")]
+	internal static void /* System.Void */ System_Reflection_ManifestResourceInfo_FileName_Set(void* /* System.Reflection.ManifestResourceInfo */ __self, void* /* System.Reflection.ManifestResourceInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.ManifestResourceInfo __selfDotNet = InteropUtils.GetInstance<System.Reflection.ManifestResourceInfo>(__self);
+	
+	
+	    try {
+			System.Reflection.ManifestResourceInfo __returnValue = __selfDotNet.FileName;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): ResourceLocation
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ManifestResourceInfo_ResourceLocation_Set")]
+	internal static void /* System.Void */ System_Reflection_ManifestResourceInfo_ResourceLocation_Set(void* /* System.Reflection.ManifestResourceInfo */ __self, void* /* System.Reflection.ManifestResourceInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.ManifestResourceInfo __selfDotNet = InteropUtils.GetInstance<System.Reflection.ManifestResourceInfo>(__self);
+	
+	
+	    try {
+			System.Reflection.ManifestResourceInfo __returnValue = __selfDotNet.ResourceLocation;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Reflection_ManifestResourceInfo_Destroy")]
@@ -29104,28 +35461,20 @@ internal static unsafe class System_Reflection_Module
 	}
 	
 
-	// TODO (Property): Assembly
 	
 
-	// TODO (Property): FullyQualifiedName
 	
 
-	// TODO (Property): Name
 	
 
-	// TODO (Property): MDStreamVersion
 	
 
-	// TODO (Property): ModuleVersionId
 	
 
-	// TODO (Property): ScopeName
 	
 
-	// TODO (Property): ModuleHandle
 	
 
-	// TODO (Property): MetadataToken
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Reflection_Module_Destroy")]
@@ -30360,25 +36709,222 @@ internal static unsafe class System_Text_Rune
 	}
 	
 
-	// TODO (Property): IsAscii
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_IsAscii_Set")]
+	internal static void /* System.Void */ System_Text_Rune_IsAscii_Set(void* /* System.Text.Rune */ __self, void* /* System.Text.Rune */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.Rune __selfDotNet = InteropUtils.GetInstance<System.Text.Rune>(__self);
+	
+	
+	    try {
+			System.Text.Rune __returnValue = __selfDotNet.IsAscii;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): IsBmp
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_IsBmp_Set")]
+	internal static void /* System.Void */ System_Text_Rune_IsBmp_Set(void* /* System.Text.Rune */ __self, void* /* System.Text.Rune */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.Rune __selfDotNet = InteropUtils.GetInstance<System.Text.Rune>(__self);
+	
+	
+	    try {
+			System.Text.Rune __returnValue = __selfDotNet.IsBmp;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Plane
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_Plane_Set")]
+	internal static void /* System.Void */ System_Text_Rune_Plane_Set(void* /* System.Text.Rune */ __self, void* /* System.Text.Rune */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.Rune __selfDotNet = InteropUtils.GetInstance<System.Text.Rune>(__self);
+	
+	
+	    try {
+			System.Text.Rune __returnValue = __selfDotNet.Plane;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): ReplacementChar
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_ReplacementChar_Set")]
+	internal static void /* System.Void */ System_Text_Rune_ReplacementChar_Set(void* /* System.Text.Rune */ __value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Text.Rune __returnValue = System.Text.Rune.ReplacementChar;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Utf16SequenceLength
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_Utf16SequenceLength_Set")]
+	internal static void /* System.Void */ System_Text_Rune_Utf16SequenceLength_Set(void* /* System.Text.Rune */ __self, void* /* System.Text.Rune */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.Rune __selfDotNet = InteropUtils.GetInstance<System.Text.Rune>(__self);
+	
+	
+	    try {
+			System.Text.Rune __returnValue = __selfDotNet.Utf16SequenceLength;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Utf8SequenceLength
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_Utf8SequenceLength_Set")]
+	internal static void /* System.Void */ System_Text_Rune_Utf8SequenceLength_Set(void* /* System.Text.Rune */ __self, void* /* System.Text.Rune */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.Rune __selfDotNet = InteropUtils.GetInstance<System.Text.Rune>(__self);
+	
+	
+	    try {
+			System.Text.Rune __returnValue = __selfDotNet.Utf8SequenceLength;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Value
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_Value_Set")]
+	internal static void /* System.Void */ System_Text_Rune_Value_Set(void* /* System.Text.Rune */ __self, void* /* System.Text.Rune */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.Rune __selfDotNet = InteropUtils.GetInstance<System.Text.Rune>(__self);
+	
+	
+	    try {
+			System.Text.Rune __returnValue = __selfDotNet.Value;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Text_Rune_Destroy")]
@@ -30514,7 +37060,36 @@ internal static unsafe class System_Globalization_SortKey
 	}
 	
 
-	// TODO (Property): OriginalString
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_SortKey_OriginalString_Set")]
+	internal static void /* System.Void */ System_Globalization_SortKey_OriginalString_Set(void* /* System.Globalization.SortKey */ __self, void* /* System.Globalization.SortKey */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.SortKey __selfDotNet = InteropUtils.GetInstance<System.Globalization.SortKey>(__self);
+	
+	
+	    try {
+			System.Globalization.SortKey __returnValue = __selfDotNet.OriginalString;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Globalization_SortKey_Destroy")]
@@ -30649,10 +37224,68 @@ internal static unsafe class System_Globalization_SortVersion
 	}
 	
 
-	// TODO (Property): FullVersion
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_SortVersion_FullVersion_Set")]
+	internal static void /* System.Void */ System_Globalization_SortVersion_FullVersion_Set(void* /* System.Globalization.SortVersion */ __self, void* /* System.Globalization.SortVersion */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.SortVersion __selfDotNet = InteropUtils.GetInstance<System.Globalization.SortVersion>(__self);
+	
+	
+	    try {
+			System.Globalization.SortVersion __returnValue = __selfDotNet.FullVersion;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): SortId
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_SortVersion_SortId_Set")]
+	internal static void /* System.Void */ System_Globalization_SortVersion_SortId_Set(void* /* System.Globalization.SortVersion */ __self, void* /* System.Globalization.SortVersion */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.SortVersion __selfDotNet = InteropUtils.GetInstance<System.Globalization.SortVersion>(__self);
+	
+	
+	    try {
+			System.Globalization.SortVersion __returnValue = __selfDotNet.SortId;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Globalization_SortVersion_Destroy")]
@@ -30973,31 +37606,322 @@ internal static unsafe class System_Globalization_TextInfo
 	}
 	
 
-	// TODO (Property): ANSICodePage
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_TextInfo_ANSICodePage_Set")]
+	internal static void /* System.Void */ System_Globalization_TextInfo_ANSICodePage_Set(void* /* System.Globalization.TextInfo */ __self, void* /* System.Globalization.TextInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.TextInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.TextInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.TextInfo __returnValue = __selfDotNet.ANSICodePage;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): OEMCodePage
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_TextInfo_OEMCodePage_Set")]
+	internal static void /* System.Void */ System_Globalization_TextInfo_OEMCodePage_Set(void* /* System.Globalization.TextInfo */ __self, void* /* System.Globalization.TextInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.TextInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.TextInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.TextInfo __returnValue = __selfDotNet.OEMCodePage;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): MacCodePage
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_TextInfo_MacCodePage_Set")]
+	internal static void /* System.Void */ System_Globalization_TextInfo_MacCodePage_Set(void* /* System.Globalization.TextInfo */ __self, void* /* System.Globalization.TextInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.TextInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.TextInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.TextInfo __returnValue = __selfDotNet.MacCodePage;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): EBCDICCodePage
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_TextInfo_EBCDICCodePage_Set")]
+	internal static void /* System.Void */ System_Globalization_TextInfo_EBCDICCodePage_Set(void* /* System.Globalization.TextInfo */ __self, void* /* System.Globalization.TextInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.TextInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.TextInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.TextInfo __returnValue = __selfDotNet.EBCDICCodePage;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): LCID
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_TextInfo_LCID_Set")]
+	internal static void /* System.Void */ System_Globalization_TextInfo_LCID_Set(void* /* System.Globalization.TextInfo */ __self, void* /* System.Globalization.TextInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.TextInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.TextInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.TextInfo __returnValue = __selfDotNet.LCID;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): CultureName
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_TextInfo_CultureName_Set")]
+	internal static void /* System.Void */ System_Globalization_TextInfo_CultureName_Set(void* /* System.Globalization.TextInfo */ __self, void* /* System.Globalization.TextInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.TextInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.TextInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.TextInfo __returnValue = __selfDotNet.CultureName;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): IsReadOnly
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_TextInfo_IsReadOnly_Set")]
+	internal static void /* System.Void */ System_Globalization_TextInfo_IsReadOnly_Set(void* /* System.Globalization.TextInfo */ __self, void* /* System.Globalization.TextInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.TextInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.TextInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.TextInfo __returnValue = __selfDotNet.IsReadOnly;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): ListSeparator
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_TextInfo_ListSeparator_Set")]
+	internal static void /* System.Void */ System_Globalization_TextInfo_ListSeparator_Set(void* /* System.Globalization.TextInfo */ __self, void* /* System.Globalization.TextInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.TextInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.TextInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.TextInfo __returnValue = __selfDotNet.ListSeparator;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_TextInfo_ListSeparator_Get")]
+	internal static void* /* System.Globalization.TextInfo */ System_Globalization_TextInfo_ListSeparator_Get(void* /* System.Globalization.TextInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.TextInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.TextInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.TextInfo __returnValue = __selfDotNet.ListSeparator;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): IsRightToLeft
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_TextInfo_IsRightToLeft_Set")]
+	internal static void /* System.Void */ System_Globalization_TextInfo_IsRightToLeft_Set(void* /* System.Globalization.TextInfo */ __self, void* /* System.Globalization.TextInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.TextInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.TextInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.TextInfo __returnValue = __selfDotNet.IsRightToLeft;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Globalization_TextInfo_Destroy")]
@@ -31152,82 +38076,1514 @@ internal static unsafe class System_Globalization_NumberFormatInfo
 	}
 	
 
-	// TODO (Property): InvariantInfo
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_InvariantInfo_Set")]
+	internal static void /* System.Void */ System_Globalization_NumberFormatInfo_InvariantInfo_Set(void* /* System.Globalization.NumberFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = System.Globalization.NumberFormatInfo.InvariantInfo;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): CurrencyDecimalDigits
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_CurrencyDecimalDigits_Set")]
+	internal static void /* System.Void */ System_Globalization_NumberFormatInfo_CurrencyDecimalDigits_Set(void* /* System.Globalization.NumberFormatInfo */ __self, void* /* System.Globalization.NumberFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.CurrencyDecimalDigits;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_CurrencyDecimalDigits_Get")]
+	internal static void* /* System.Globalization.NumberFormatInfo */ System_Globalization_NumberFormatInfo_CurrencyDecimalDigits_Get(void* /* System.Globalization.NumberFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.CurrencyDecimalDigits;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): CurrencyDecimalSeparator
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_CurrencyDecimalSeparator_Set")]
+	internal static void /* System.Void */ System_Globalization_NumberFormatInfo_CurrencyDecimalSeparator_Set(void* /* System.Globalization.NumberFormatInfo */ __self, void* /* System.Globalization.NumberFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.CurrencyDecimalSeparator;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_CurrencyDecimalSeparator_Get")]
+	internal static void* /* System.Globalization.NumberFormatInfo */ System_Globalization_NumberFormatInfo_CurrencyDecimalSeparator_Get(void* /* System.Globalization.NumberFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.CurrencyDecimalSeparator;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): IsReadOnly
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_IsReadOnly_Set")]
+	internal static void /* System.Void */ System_Globalization_NumberFormatInfo_IsReadOnly_Set(void* /* System.Globalization.NumberFormatInfo */ __self, void* /* System.Globalization.NumberFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.IsReadOnly;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): CurrencyGroupSeparator
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_CurrencyGroupSeparator_Set")]
+	internal static void /* System.Void */ System_Globalization_NumberFormatInfo_CurrencyGroupSeparator_Set(void* /* System.Globalization.NumberFormatInfo */ __self, void* /* System.Globalization.NumberFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.CurrencyGroupSeparator;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_CurrencyGroupSeparator_Get")]
+	internal static void* /* System.Globalization.NumberFormatInfo */ System_Globalization_NumberFormatInfo_CurrencyGroupSeparator_Get(void* /* System.Globalization.NumberFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.CurrencyGroupSeparator;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): CurrencySymbol
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_CurrencySymbol_Set")]
+	internal static void /* System.Void */ System_Globalization_NumberFormatInfo_CurrencySymbol_Set(void* /* System.Globalization.NumberFormatInfo */ __self, void* /* System.Globalization.NumberFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.CurrencySymbol;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_CurrencySymbol_Get")]
+	internal static void* /* System.Globalization.NumberFormatInfo */ System_Globalization_NumberFormatInfo_CurrencySymbol_Get(void* /* System.Globalization.NumberFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.CurrencySymbol;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): CurrentInfo
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_CurrentInfo_Set")]
+	internal static void /* System.Void */ System_Globalization_NumberFormatInfo_CurrentInfo_Set(void* /* System.Globalization.NumberFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = System.Globalization.NumberFormatInfo.CurrentInfo;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): NaNSymbol
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_NaNSymbol_Set")]
+	internal static void /* System.Void */ System_Globalization_NumberFormatInfo_NaNSymbol_Set(void* /* System.Globalization.NumberFormatInfo */ __self, void* /* System.Globalization.NumberFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.NaNSymbol;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_NaNSymbol_Get")]
+	internal static void* /* System.Globalization.NumberFormatInfo */ System_Globalization_NumberFormatInfo_NaNSymbol_Get(void* /* System.Globalization.NumberFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.NaNSymbol;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): CurrencyNegativePattern
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_CurrencyNegativePattern_Set")]
+	internal static void /* System.Void */ System_Globalization_NumberFormatInfo_CurrencyNegativePattern_Set(void* /* System.Globalization.NumberFormatInfo */ __self, void* /* System.Globalization.NumberFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.CurrencyNegativePattern;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_CurrencyNegativePattern_Get")]
+	internal static void* /* System.Globalization.NumberFormatInfo */ System_Globalization_NumberFormatInfo_CurrencyNegativePattern_Get(void* /* System.Globalization.NumberFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.CurrencyNegativePattern;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): NumberNegativePattern
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_NumberNegativePattern_Set")]
+	internal static void /* System.Void */ System_Globalization_NumberFormatInfo_NumberNegativePattern_Set(void* /* System.Globalization.NumberFormatInfo */ __self, void* /* System.Globalization.NumberFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.NumberNegativePattern;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_NumberNegativePattern_Get")]
+	internal static void* /* System.Globalization.NumberFormatInfo */ System_Globalization_NumberFormatInfo_NumberNegativePattern_Get(void* /* System.Globalization.NumberFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.NumberNegativePattern;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): PercentPositivePattern
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_PercentPositivePattern_Set")]
+	internal static void /* System.Void */ System_Globalization_NumberFormatInfo_PercentPositivePattern_Set(void* /* System.Globalization.NumberFormatInfo */ __self, void* /* System.Globalization.NumberFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.PercentPositivePattern;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_PercentPositivePattern_Get")]
+	internal static void* /* System.Globalization.NumberFormatInfo */ System_Globalization_NumberFormatInfo_PercentPositivePattern_Get(void* /* System.Globalization.NumberFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.PercentPositivePattern;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): PercentNegativePattern
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_PercentNegativePattern_Set")]
+	internal static void /* System.Void */ System_Globalization_NumberFormatInfo_PercentNegativePattern_Set(void* /* System.Globalization.NumberFormatInfo */ __self, void* /* System.Globalization.NumberFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.PercentNegativePattern;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_PercentNegativePattern_Get")]
+	internal static void* /* System.Globalization.NumberFormatInfo */ System_Globalization_NumberFormatInfo_PercentNegativePattern_Get(void* /* System.Globalization.NumberFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.PercentNegativePattern;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): NegativeInfinitySymbol
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_NegativeInfinitySymbol_Set")]
+	internal static void /* System.Void */ System_Globalization_NumberFormatInfo_NegativeInfinitySymbol_Set(void* /* System.Globalization.NumberFormatInfo */ __self, void* /* System.Globalization.NumberFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.NegativeInfinitySymbol;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_NegativeInfinitySymbol_Get")]
+	internal static void* /* System.Globalization.NumberFormatInfo */ System_Globalization_NumberFormatInfo_NegativeInfinitySymbol_Get(void* /* System.Globalization.NumberFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.NegativeInfinitySymbol;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): NegativeSign
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_NegativeSign_Set")]
+	internal static void /* System.Void */ System_Globalization_NumberFormatInfo_NegativeSign_Set(void* /* System.Globalization.NumberFormatInfo */ __self, void* /* System.Globalization.NumberFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.NegativeSign;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_NegativeSign_Get")]
+	internal static void* /* System.Globalization.NumberFormatInfo */ System_Globalization_NumberFormatInfo_NegativeSign_Get(void* /* System.Globalization.NumberFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.NegativeSign;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): NumberDecimalDigits
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_NumberDecimalDigits_Set")]
+	internal static void /* System.Void */ System_Globalization_NumberFormatInfo_NumberDecimalDigits_Set(void* /* System.Globalization.NumberFormatInfo */ __self, void* /* System.Globalization.NumberFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.NumberDecimalDigits;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_NumberDecimalDigits_Get")]
+	internal static void* /* System.Globalization.NumberFormatInfo */ System_Globalization_NumberFormatInfo_NumberDecimalDigits_Get(void* /* System.Globalization.NumberFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.NumberDecimalDigits;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): NumberDecimalSeparator
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_NumberDecimalSeparator_Set")]
+	internal static void /* System.Void */ System_Globalization_NumberFormatInfo_NumberDecimalSeparator_Set(void* /* System.Globalization.NumberFormatInfo */ __self, void* /* System.Globalization.NumberFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.NumberDecimalSeparator;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_NumberDecimalSeparator_Get")]
+	internal static void* /* System.Globalization.NumberFormatInfo */ System_Globalization_NumberFormatInfo_NumberDecimalSeparator_Get(void* /* System.Globalization.NumberFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.NumberDecimalSeparator;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): NumberGroupSeparator
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_NumberGroupSeparator_Set")]
+	internal static void /* System.Void */ System_Globalization_NumberFormatInfo_NumberGroupSeparator_Set(void* /* System.Globalization.NumberFormatInfo */ __self, void* /* System.Globalization.NumberFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.NumberGroupSeparator;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_NumberGroupSeparator_Get")]
+	internal static void* /* System.Globalization.NumberFormatInfo */ System_Globalization_NumberFormatInfo_NumberGroupSeparator_Get(void* /* System.Globalization.NumberFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.NumberGroupSeparator;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): CurrencyPositivePattern
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_CurrencyPositivePattern_Set")]
+	internal static void /* System.Void */ System_Globalization_NumberFormatInfo_CurrencyPositivePattern_Set(void* /* System.Globalization.NumberFormatInfo */ __self, void* /* System.Globalization.NumberFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.CurrencyPositivePattern;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_CurrencyPositivePattern_Get")]
+	internal static void* /* System.Globalization.NumberFormatInfo */ System_Globalization_NumberFormatInfo_CurrencyPositivePattern_Get(void* /* System.Globalization.NumberFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.CurrencyPositivePattern;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): PositiveInfinitySymbol
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_PositiveInfinitySymbol_Set")]
+	internal static void /* System.Void */ System_Globalization_NumberFormatInfo_PositiveInfinitySymbol_Set(void* /* System.Globalization.NumberFormatInfo */ __self, void* /* System.Globalization.NumberFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.PositiveInfinitySymbol;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_PositiveInfinitySymbol_Get")]
+	internal static void* /* System.Globalization.NumberFormatInfo */ System_Globalization_NumberFormatInfo_PositiveInfinitySymbol_Get(void* /* System.Globalization.NumberFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.PositiveInfinitySymbol;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): PositiveSign
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_PositiveSign_Set")]
+	internal static void /* System.Void */ System_Globalization_NumberFormatInfo_PositiveSign_Set(void* /* System.Globalization.NumberFormatInfo */ __self, void* /* System.Globalization.NumberFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.PositiveSign;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_PositiveSign_Get")]
+	internal static void* /* System.Globalization.NumberFormatInfo */ System_Globalization_NumberFormatInfo_PositiveSign_Get(void* /* System.Globalization.NumberFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.PositiveSign;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): PercentDecimalDigits
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_PercentDecimalDigits_Set")]
+	internal static void /* System.Void */ System_Globalization_NumberFormatInfo_PercentDecimalDigits_Set(void* /* System.Globalization.NumberFormatInfo */ __self, void* /* System.Globalization.NumberFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.PercentDecimalDigits;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_PercentDecimalDigits_Get")]
+	internal static void* /* System.Globalization.NumberFormatInfo */ System_Globalization_NumberFormatInfo_PercentDecimalDigits_Get(void* /* System.Globalization.NumberFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.PercentDecimalDigits;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): PercentDecimalSeparator
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_PercentDecimalSeparator_Set")]
+	internal static void /* System.Void */ System_Globalization_NumberFormatInfo_PercentDecimalSeparator_Set(void* /* System.Globalization.NumberFormatInfo */ __self, void* /* System.Globalization.NumberFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.PercentDecimalSeparator;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_PercentDecimalSeparator_Get")]
+	internal static void* /* System.Globalization.NumberFormatInfo */ System_Globalization_NumberFormatInfo_PercentDecimalSeparator_Get(void* /* System.Globalization.NumberFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.PercentDecimalSeparator;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): PercentGroupSeparator
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_PercentGroupSeparator_Set")]
+	internal static void /* System.Void */ System_Globalization_NumberFormatInfo_PercentGroupSeparator_Set(void* /* System.Globalization.NumberFormatInfo */ __self, void* /* System.Globalization.NumberFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.PercentGroupSeparator;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_PercentGroupSeparator_Get")]
+	internal static void* /* System.Globalization.NumberFormatInfo */ System_Globalization_NumberFormatInfo_PercentGroupSeparator_Get(void* /* System.Globalization.NumberFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.PercentGroupSeparator;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): PercentSymbol
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_PercentSymbol_Set")]
+	internal static void /* System.Void */ System_Globalization_NumberFormatInfo_PercentSymbol_Set(void* /* System.Globalization.NumberFormatInfo */ __self, void* /* System.Globalization.NumberFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.PercentSymbol;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_PercentSymbol_Get")]
+	internal static void* /* System.Globalization.NumberFormatInfo */ System_Globalization_NumberFormatInfo_PercentSymbol_Get(void* /* System.Globalization.NumberFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.PercentSymbol;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): PerMilleSymbol
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_PerMilleSymbol_Set")]
+	internal static void /* System.Void */ System_Globalization_NumberFormatInfo_PerMilleSymbol_Set(void* /* System.Globalization.NumberFormatInfo */ __self, void* /* System.Globalization.NumberFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.PerMilleSymbol;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_PerMilleSymbol_Get")]
+	internal static void* /* System.Globalization.NumberFormatInfo */ System_Globalization_NumberFormatInfo_PerMilleSymbol_Get(void* /* System.Globalization.NumberFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.PerMilleSymbol;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): DigitSubstitution
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_DigitSubstitution_Set")]
+	internal static void /* System.Void */ System_Globalization_NumberFormatInfo_DigitSubstitution_Set(void* /* System.Globalization.NumberFormatInfo */ __self, void* /* System.Globalization.NumberFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.DigitSubstitution;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_DigitSubstitution_Get")]
+	internal static void* /* System.Globalization.NumberFormatInfo */ System_Globalization_NumberFormatInfo_DigitSubstitution_Get(void* /* System.Globalization.NumberFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.NumberFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.NumberFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.NumberFormatInfo __returnValue = __selfDotNet.DigitSubstitution;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Globalization_NumberFormatInfo_Destroy")]
@@ -31631,67 +39987,1084 @@ internal static unsafe class System_Globalization_DateTimeFormatInfo
 	}
 	
 
-	// TODO (Property): InvariantInfo
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_InvariantInfo_Set")]
+	internal static void /* System.Void */ System_Globalization_DateTimeFormatInfo_InvariantInfo_Set(void* /* System.Globalization.DateTimeFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Globalization.DateTimeFormatInfo __returnValue = System.Globalization.DateTimeFormatInfo.InvariantInfo;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): CurrentInfo
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_CurrentInfo_Set")]
+	internal static void /* System.Void */ System_Globalization_DateTimeFormatInfo_CurrentInfo_Set(void* /* System.Globalization.DateTimeFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Globalization.DateTimeFormatInfo __returnValue = System.Globalization.DateTimeFormatInfo.CurrentInfo;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): AMDesignator
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_AMDesignator_Set")]
+	internal static void /* System.Void */ System_Globalization_DateTimeFormatInfo_AMDesignator_Set(void* /* System.Globalization.DateTimeFormatInfo */ __self, void* /* System.Globalization.DateTimeFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.DateTimeFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.DateTimeFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.DateTimeFormatInfo __returnValue = __selfDotNet.AMDesignator;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_AMDesignator_Get")]
+	internal static void* /* System.Globalization.DateTimeFormatInfo */ System_Globalization_DateTimeFormatInfo_AMDesignator_Get(void* /* System.Globalization.DateTimeFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.DateTimeFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.DateTimeFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.DateTimeFormatInfo __returnValue = __selfDotNet.AMDesignator;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Calendar
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_Calendar_Set")]
+	internal static void /* System.Void */ System_Globalization_DateTimeFormatInfo_Calendar_Set(void* /* System.Globalization.DateTimeFormatInfo */ __self, void* /* System.Globalization.DateTimeFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.DateTimeFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.DateTimeFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.DateTimeFormatInfo __returnValue = __selfDotNet.Calendar;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_Calendar_Get")]
+	internal static void* /* System.Globalization.DateTimeFormatInfo */ System_Globalization_DateTimeFormatInfo_Calendar_Get(void* /* System.Globalization.DateTimeFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.DateTimeFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.DateTimeFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.DateTimeFormatInfo __returnValue = __selfDotNet.Calendar;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): DateSeparator
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_DateSeparator_Set")]
+	internal static void /* System.Void */ System_Globalization_DateTimeFormatInfo_DateSeparator_Set(void* /* System.Globalization.DateTimeFormatInfo */ __self, void* /* System.Globalization.DateTimeFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.DateTimeFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.DateTimeFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.DateTimeFormatInfo __returnValue = __selfDotNet.DateSeparator;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_DateSeparator_Get")]
+	internal static void* /* System.Globalization.DateTimeFormatInfo */ System_Globalization_DateTimeFormatInfo_DateSeparator_Get(void* /* System.Globalization.DateTimeFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.DateTimeFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.DateTimeFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.DateTimeFormatInfo __returnValue = __selfDotNet.DateSeparator;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): FirstDayOfWeek
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_FirstDayOfWeek_Set")]
+	internal static void /* System.Void */ System_Globalization_DateTimeFormatInfo_FirstDayOfWeek_Set(void* /* System.Globalization.DateTimeFormatInfo */ __self, void* /* System.Globalization.DateTimeFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.DateTimeFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.DateTimeFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.DateTimeFormatInfo __returnValue = __selfDotNet.FirstDayOfWeek;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_FirstDayOfWeek_Get")]
+	internal static void* /* System.Globalization.DateTimeFormatInfo */ System_Globalization_DateTimeFormatInfo_FirstDayOfWeek_Get(void* /* System.Globalization.DateTimeFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.DateTimeFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.DateTimeFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.DateTimeFormatInfo __returnValue = __selfDotNet.FirstDayOfWeek;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): CalendarWeekRule
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_CalendarWeekRule_Set")]
+	internal static void /* System.Void */ System_Globalization_DateTimeFormatInfo_CalendarWeekRule_Set(void* /* System.Globalization.DateTimeFormatInfo */ __self, void* /* System.Globalization.DateTimeFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.DateTimeFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.DateTimeFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.DateTimeFormatInfo __returnValue = __selfDotNet.CalendarWeekRule;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_CalendarWeekRule_Get")]
+	internal static void* /* System.Globalization.DateTimeFormatInfo */ System_Globalization_DateTimeFormatInfo_CalendarWeekRule_Get(void* /* System.Globalization.DateTimeFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.DateTimeFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.DateTimeFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.DateTimeFormatInfo __returnValue = __selfDotNet.CalendarWeekRule;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): FullDateTimePattern
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_FullDateTimePattern_Set")]
+	internal static void /* System.Void */ System_Globalization_DateTimeFormatInfo_FullDateTimePattern_Set(void* /* System.Globalization.DateTimeFormatInfo */ __self, void* /* System.Globalization.DateTimeFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.DateTimeFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.DateTimeFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.DateTimeFormatInfo __returnValue = __selfDotNet.FullDateTimePattern;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_FullDateTimePattern_Get")]
+	internal static void* /* System.Globalization.DateTimeFormatInfo */ System_Globalization_DateTimeFormatInfo_FullDateTimePattern_Get(void* /* System.Globalization.DateTimeFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.DateTimeFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.DateTimeFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.DateTimeFormatInfo __returnValue = __selfDotNet.FullDateTimePattern;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): LongDatePattern
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_LongDatePattern_Set")]
+	internal static void /* System.Void */ System_Globalization_DateTimeFormatInfo_LongDatePattern_Set(void* /* System.Globalization.DateTimeFormatInfo */ __self, void* /* System.Globalization.DateTimeFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.DateTimeFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.DateTimeFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.DateTimeFormatInfo __returnValue = __selfDotNet.LongDatePattern;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_LongDatePattern_Get")]
+	internal static void* /* System.Globalization.DateTimeFormatInfo */ System_Globalization_DateTimeFormatInfo_LongDatePattern_Get(void* /* System.Globalization.DateTimeFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.DateTimeFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.DateTimeFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.DateTimeFormatInfo __returnValue = __selfDotNet.LongDatePattern;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): LongTimePattern
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_LongTimePattern_Set")]
+	internal static void /* System.Void */ System_Globalization_DateTimeFormatInfo_LongTimePattern_Set(void* /* System.Globalization.DateTimeFormatInfo */ __self, void* /* System.Globalization.DateTimeFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.DateTimeFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.DateTimeFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.DateTimeFormatInfo __returnValue = __selfDotNet.LongTimePattern;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_LongTimePattern_Get")]
+	internal static void* /* System.Globalization.DateTimeFormatInfo */ System_Globalization_DateTimeFormatInfo_LongTimePattern_Get(void* /* System.Globalization.DateTimeFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.DateTimeFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.DateTimeFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.DateTimeFormatInfo __returnValue = __selfDotNet.LongTimePattern;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): MonthDayPattern
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_MonthDayPattern_Set")]
+	internal static void /* System.Void */ System_Globalization_DateTimeFormatInfo_MonthDayPattern_Set(void* /* System.Globalization.DateTimeFormatInfo */ __self, void* /* System.Globalization.DateTimeFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.DateTimeFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.DateTimeFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.DateTimeFormatInfo __returnValue = __selfDotNet.MonthDayPattern;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_MonthDayPattern_Get")]
+	internal static void* /* System.Globalization.DateTimeFormatInfo */ System_Globalization_DateTimeFormatInfo_MonthDayPattern_Get(void* /* System.Globalization.DateTimeFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.DateTimeFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.DateTimeFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.DateTimeFormatInfo __returnValue = __selfDotNet.MonthDayPattern;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): PMDesignator
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_PMDesignator_Set")]
+	internal static void /* System.Void */ System_Globalization_DateTimeFormatInfo_PMDesignator_Set(void* /* System.Globalization.DateTimeFormatInfo */ __self, void* /* System.Globalization.DateTimeFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.DateTimeFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.DateTimeFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.DateTimeFormatInfo __returnValue = __selfDotNet.PMDesignator;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_PMDesignator_Get")]
+	internal static void* /* System.Globalization.DateTimeFormatInfo */ System_Globalization_DateTimeFormatInfo_PMDesignator_Get(void* /* System.Globalization.DateTimeFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.DateTimeFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.DateTimeFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.DateTimeFormatInfo __returnValue = __selfDotNet.PMDesignator;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): RFC1123Pattern
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_RFC1123Pattern_Set")]
+	internal static void /* System.Void */ System_Globalization_DateTimeFormatInfo_RFC1123Pattern_Set(void* /* System.Globalization.DateTimeFormatInfo */ __self, void* /* System.Globalization.DateTimeFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.DateTimeFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.DateTimeFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.DateTimeFormatInfo __returnValue = __selfDotNet.RFC1123Pattern;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): ShortDatePattern
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_ShortDatePattern_Set")]
+	internal static void /* System.Void */ System_Globalization_DateTimeFormatInfo_ShortDatePattern_Set(void* /* System.Globalization.DateTimeFormatInfo */ __self, void* /* System.Globalization.DateTimeFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.DateTimeFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.DateTimeFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.DateTimeFormatInfo __returnValue = __selfDotNet.ShortDatePattern;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_ShortDatePattern_Get")]
+	internal static void* /* System.Globalization.DateTimeFormatInfo */ System_Globalization_DateTimeFormatInfo_ShortDatePattern_Get(void* /* System.Globalization.DateTimeFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.DateTimeFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.DateTimeFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.DateTimeFormatInfo __returnValue = __selfDotNet.ShortDatePattern;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): ShortTimePattern
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_ShortTimePattern_Set")]
+	internal static void /* System.Void */ System_Globalization_DateTimeFormatInfo_ShortTimePattern_Set(void* /* System.Globalization.DateTimeFormatInfo */ __self, void* /* System.Globalization.DateTimeFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.DateTimeFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.DateTimeFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.DateTimeFormatInfo __returnValue = __selfDotNet.ShortTimePattern;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_ShortTimePattern_Get")]
+	internal static void* /* System.Globalization.DateTimeFormatInfo */ System_Globalization_DateTimeFormatInfo_ShortTimePattern_Get(void* /* System.Globalization.DateTimeFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.DateTimeFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.DateTimeFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.DateTimeFormatInfo __returnValue = __selfDotNet.ShortTimePattern;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): SortableDateTimePattern
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_SortableDateTimePattern_Set")]
+	internal static void /* System.Void */ System_Globalization_DateTimeFormatInfo_SortableDateTimePattern_Set(void* /* System.Globalization.DateTimeFormatInfo */ __self, void* /* System.Globalization.DateTimeFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.DateTimeFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.DateTimeFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.DateTimeFormatInfo __returnValue = __selfDotNet.SortableDateTimePattern;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): TimeSeparator
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_TimeSeparator_Set")]
+	internal static void /* System.Void */ System_Globalization_DateTimeFormatInfo_TimeSeparator_Set(void* /* System.Globalization.DateTimeFormatInfo */ __self, void* /* System.Globalization.DateTimeFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.DateTimeFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.DateTimeFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.DateTimeFormatInfo __returnValue = __selfDotNet.TimeSeparator;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_TimeSeparator_Get")]
+	internal static void* /* System.Globalization.DateTimeFormatInfo */ System_Globalization_DateTimeFormatInfo_TimeSeparator_Get(void* /* System.Globalization.DateTimeFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.DateTimeFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.DateTimeFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.DateTimeFormatInfo __returnValue = __selfDotNet.TimeSeparator;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): UniversalSortableDateTimePattern
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_UniversalSortableDateTimePattern_Set")]
+	internal static void /* System.Void */ System_Globalization_DateTimeFormatInfo_UniversalSortableDateTimePattern_Set(void* /* System.Globalization.DateTimeFormatInfo */ __self, void* /* System.Globalization.DateTimeFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.DateTimeFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.DateTimeFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.DateTimeFormatInfo __returnValue = __selfDotNet.UniversalSortableDateTimePattern;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): YearMonthPattern
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_YearMonthPattern_Set")]
+	internal static void /* System.Void */ System_Globalization_DateTimeFormatInfo_YearMonthPattern_Set(void* /* System.Globalization.DateTimeFormatInfo */ __self, void* /* System.Globalization.DateTimeFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.DateTimeFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.DateTimeFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.DateTimeFormatInfo __returnValue = __selfDotNet.YearMonthPattern;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_YearMonthPattern_Get")]
+	internal static void* /* System.Globalization.DateTimeFormatInfo */ System_Globalization_DateTimeFormatInfo_YearMonthPattern_Get(void* /* System.Globalization.DateTimeFormatInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.DateTimeFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.DateTimeFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.DateTimeFormatInfo __returnValue = __selfDotNet.YearMonthPattern;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): IsReadOnly
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_IsReadOnly_Set")]
+	internal static void /* System.Void */ System_Globalization_DateTimeFormatInfo_IsReadOnly_Set(void* /* System.Globalization.DateTimeFormatInfo */ __self, void* /* System.Globalization.DateTimeFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.DateTimeFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.DateTimeFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.DateTimeFormatInfo __returnValue = __selfDotNet.IsReadOnly;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): NativeCalendarName
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_NativeCalendarName_Set")]
+	internal static void /* System.Void */ System_Globalization_DateTimeFormatInfo_NativeCalendarName_Set(void* /* System.Globalization.DateTimeFormatInfo */ __self, void* /* System.Globalization.DateTimeFormatInfo */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.DateTimeFormatInfo __selfDotNet = InteropUtils.GetInstance<System.Globalization.DateTimeFormatInfo>(__self);
+	
+	
+	    try {
+			System.Globalization.DateTimeFormatInfo __returnValue = __selfDotNet.NativeCalendarName;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Globalization_DateTimeFormatInfo_Destroy")]
@@ -31824,7 +41197,36 @@ internal static unsafe class System_CharEnumerator
 	}
 	
 
-	// TODO (Property): Current
+	[UnmanagedCallersOnly(EntryPoint = "System_CharEnumerator_Current_Set")]
+	internal static void /* System.Void */ System_CharEnumerator_Current_Set(void* /* System.CharEnumerator */ __self, void* /* System.CharEnumerator */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.CharEnumerator __selfDotNet = InteropUtils.GetInstance<System.CharEnumerator>(__self);
+	
+	
+	    try {
+			System.CharEnumerator __returnValue = __selfDotNet.Current;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_CharEnumerator_Destroy")]
@@ -31901,7 +41303,36 @@ internal static unsafe class System_Text_StringRuneEnumerator
 	}
 	
 
-	// TODO (Property): Current
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringRuneEnumerator_Current_Set")]
+	internal static void /* System.Void */ System_Text_StringRuneEnumerator_Current_Set(void* /* System.Text.StringRuneEnumerator */ __self, void* /* System.Text.StringRuneEnumerator */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.StringRuneEnumerator __selfDotNet = InteropUtils.GetInstance<System.Text.StringRuneEnumerator>(__self);
+	
+	
+	    try {
+			System.Text.StringRuneEnumerator __returnValue = __selfDotNet.Current;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Text_StringRuneEnumerator_Destroy")]
@@ -31943,7 +41374,36 @@ internal static unsafe class System_Text_CompositeFormat
 	}
 	
 
-	// TODO (Property): Format
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_CompositeFormat_Format_Set")]
+	internal static void /* System.Void */ System_Text_CompositeFormat_Format_Set(void* /* System.Text.CompositeFormat */ __self, void* /* System.Text.CompositeFormat */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.CompositeFormat __selfDotNet = InteropUtils.GetInstance<System.Text.CompositeFormat>(__self);
+	
+	
+	    try {
+			System.Text.CompositeFormat __returnValue = __selfDotNet.Format;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Text_CompositeFormat_Destroy")]
@@ -32456,70 +41916,48 @@ internal static unsafe class System_Text_Encoding
 	}
 	
 
-	// TODO (Property): Default
 	
 
-	// TODO (Property): BodyName
 	
 
-	// TODO (Property): EncodingName
 	
 
-	// TODO (Property): HeaderName
 	
 
-	// TODO (Property): WebName
 	
 
-	// TODO (Property): WindowsCodePage
 	
 
-	// TODO (Property): IsBrowserDisplay
 	
 
-	// TODO (Property): IsBrowserSave
 	
 
-	// TODO (Property): IsMailNewsDisplay
 	
 
-	// TODO (Property): IsMailNewsSave
 	
 
-	// TODO (Property): IsSingleByte
 	
 
-	// TODO (Property): EncoderFallback
 	
 
-	// TODO (Property): DecoderFallback
 	
 
-	// TODO (Property): IsReadOnly
 	
 
-	// TODO (Property): ASCII
 	
 
-	// TODO (Property): Latin1
 	
 
-	// TODO (Property): CodePage
 	
 
-	// TODO (Property): Unicode
 	
 
-	// TODO (Property): BigEndianUnicode
 	
 
-	// TODO (Property): UTF7
 	
 
-	// TODO (Property): UTF8
 	
 
-	// TODO (Property): UTF32
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Text_Encoding_Destroy")]
@@ -32709,13 +42147,10 @@ internal static unsafe class System_Text_EncoderFallback
 	}
 	
 
-	// TODO (Property): ReplacementFallback
 	
 
-	// TODO (Property): ExceptionFallback
 	
 
-	// TODO (Property): MaxCharCount
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Text_EncoderFallback_Destroy")]
@@ -32881,7 +42316,6 @@ internal static unsafe class System_Text_EncoderFallbackBuffer
 	}
 	
 
-	// TODO (Property): Remaining
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Text_EncoderFallbackBuffer_Destroy")]
@@ -32927,13 +42361,10 @@ internal static unsafe class System_Text_DecoderFallback
 	}
 	
 
-	// TODO (Property): ReplacementFallback
 	
 
-	// TODO (Property): ExceptionFallback
 	
 
-	// TODO (Property): MaxCharCount
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Text_DecoderFallback_Destroy")]
@@ -33037,7 +42468,6 @@ internal static unsafe class System_Text_DecoderFallbackBuffer
 	}
 	
 
-	// TODO (Property): Remaining
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Text_DecoderFallbackBuffer_Destroy")]
@@ -33080,10 +42510,8 @@ internal static unsafe class System_Text_Decoder
 	}
 	
 
-	// TODO (Property): Fallback
 	
 
-	// TODO (Property): FallbackBuffer
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Text_Decoder_Destroy")]
@@ -33126,10 +42554,8 @@ internal static unsafe class System_Text_Encoder
 	}
 	
 
-	// TODO (Property): Fallback
 	
 
-	// TODO (Property): FallbackBuffer
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Text_Encoder_Destroy")]
@@ -33196,7 +42622,36 @@ internal static unsafe class System_Runtime_InteropServices_StructLayoutAttribut
 	}
 	
 
-	// TODO (Property): Value
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_StructLayoutAttribute_Value_Set")]
+	internal static void /* System.Void */ System_Runtime_InteropServices_StructLayoutAttribute_Value_Set(void* /* System.Runtime.InteropServices.StructLayoutAttribute */ __self, void* /* System.Runtime.InteropServices.StructLayoutAttribute */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Runtime.InteropServices.StructLayoutAttribute __selfDotNet = InteropUtils.GetInstance<System.Runtime.InteropServices.StructLayoutAttribute>(__self);
+	
+	
+	    try {
+			System.Runtime.InteropServices.StructLayoutAttribute __returnValue = __selfDotNet.Value;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Runtime_InteropServices_StructLayoutAttribute_Destroy")]
@@ -33776,7 +43231,6 @@ internal static unsafe class System_Attribute
 	}
 	
 
-	// TODO (Property): TypeId
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Attribute_Destroy")]
@@ -33855,7 +43309,6 @@ internal static unsafe class System_Reflection_ConstructorInfo
 	}
 	
 
-	// TODO (Property): MemberType
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Reflection_ConstructorInfo_Destroy")]
@@ -34121,28 +43574,20 @@ internal static unsafe class System_Reflection_EventInfo
 	}
 	
 
-	// TODO (Property): MemberType
 	
 
-	// TODO (Property): Attributes
 	
 
-	// TODO (Property): IsSpecialName
 	
 
-	// TODO (Property): AddMethod
 	
 
-	// TODO (Property): RemoveMethod
 	
 
-	// TODO (Property): RaiseMethod
 	
 
-	// TODO (Property): IsMulticast
 	
 
-	// TODO (Property): EventHandlerType
 	
 
 	[UnmanagedCallersOnly(EntryPoint="System_Reflection_EventInfo_Destroy")]
@@ -34526,19 +43971,284 @@ internal static unsafe class NativeAOT_CodeGeneratorInputSample_Person
 	}
 	
 
-	// TODO (Property): FirstName
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_FirstName_Set")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Person_FirstName_Set(void* /* NativeAOT.CodeGeneratorInputSample.Person */ __self, void* /* NativeAOT.CodeGeneratorInputSample.Person */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.Person __selfDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Person>(__self);
+	
+	
+	    try {
+			NativeAOT.CodeGeneratorInputSample.Person __returnValue = __selfDotNet.FirstName;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_FirstName_Get")]
+	internal static void* /* NativeAOT.CodeGeneratorInputSample.Person */ NativeAOT_CodeGeneratorInputSample_Person_FirstName_Get(void* /* NativeAOT.CodeGeneratorInputSample.Person */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.Person __selfDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Person>(__self);
+	
+	
+	    try {
+			NativeAOT.CodeGeneratorInputSample.Person __returnValue = __selfDotNet.FirstName;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): LastName
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_LastName_Set")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Person_LastName_Set(void* /* NativeAOT.CodeGeneratorInputSample.Person */ __self, void* /* NativeAOT.CodeGeneratorInputSample.Person */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.Person __selfDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Person>(__self);
+	
+	
+	    try {
+			NativeAOT.CodeGeneratorInputSample.Person __returnValue = __selfDotNet.LastName;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_LastName_Get")]
+	internal static void* /* NativeAOT.CodeGeneratorInputSample.Person */ NativeAOT_CodeGeneratorInputSample_Person_LastName_Get(void* /* NativeAOT.CodeGeneratorInputSample.Person */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.Person __selfDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Person>(__self);
+	
+	
+	    try {
+			NativeAOT.CodeGeneratorInputSample.Person __returnValue = __selfDotNet.LastName;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): Age
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_Age_Set")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Person_Age_Set(void* /* NativeAOT.CodeGeneratorInputSample.Person */ __self, void* /* NativeAOT.CodeGeneratorInputSample.Person */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.Person __selfDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Person>(__self);
+	
+	
+	    try {
+			NativeAOT.CodeGeneratorInputSample.Person __returnValue = __selfDotNet.Age;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_Age_Get")]
+	internal static void* /* NativeAOT.CodeGeneratorInputSample.Person */ NativeAOT_CodeGeneratorInputSample_Person_Age_Get(void* /* NativeAOT.CodeGeneratorInputSample.Person */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.Person __selfDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Person>(__self);
+	
+	
+	    try {
+			NativeAOT.CodeGeneratorInputSample.Person __returnValue = __selfDotNet.Age;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): NiceLevel
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_NiceLevel_Set")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Person_NiceLevel_Set(void* /* NativeAOT.CodeGeneratorInputSample.Person */ __self, void* /* NativeAOT.CodeGeneratorInputSample.Person */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.Person __selfDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Person>(__self);
+	
+	
+	    try {
+			NativeAOT.CodeGeneratorInputSample.Person __returnValue = __selfDotNet.NiceLevel;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_NiceLevel_Get")]
+	internal static void* /* NativeAOT.CodeGeneratorInputSample.Person */ NativeAOT_CodeGeneratorInputSample_Person_NiceLevel_Get(void* /* NativeAOT.CodeGeneratorInputSample.Person */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.Person __selfDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Person>(__self);
+	
+	
+	    try {
+			NativeAOT.CodeGeneratorInputSample.Person __returnValue = __selfDotNet.NiceLevel;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
-	// TODO (Property): FullName
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_FullName_Set")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Person_FullName_Set(void* /* NativeAOT.CodeGeneratorInputSample.Person */ __self, void* /* NativeAOT.CodeGeneratorInputSample.Person */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.Person __selfDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Person>(__self);
+	
+	
+	    try {
+			NativeAOT.CodeGeneratorInputSample.Person __returnValue = __selfDotNet.FullName;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint="NativeAOT_CodeGeneratorInputSample_Person_Destroy")]
