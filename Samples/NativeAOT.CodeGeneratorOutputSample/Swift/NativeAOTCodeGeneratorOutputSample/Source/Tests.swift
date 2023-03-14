@@ -367,6 +367,63 @@ final class NativeAOTCodeGeneratorOutputSampleTests: XCTestCase {
         newFullNameC.deallocate()
     }
     
+    func testSystemReflectionAssembly() {
+        var exception: System_Exception_t?
+        
+        guard let object = System_Object_Create(&exception),
+              exception == nil else {
+            XCTFail("ctor System.Object should not throw and return an instance")
+            
+            return
+        }
+        
+        defer { System_Object_Destroy(object) }
+        
+        guard let systemObjectType = System_Object_GetType(object,
+                                                           &exception),
+              exception == nil else {
+            XCTFail("System.Object.GetType should not throw and return an instance")
+            
+            return
+        }
+        
+        defer { System_Type_Destroy(systemObjectType) }
+        
+        guard let assembly = System_Reflection_Assembly_GetAssembly(systemObjectType,
+                                                                    &exception),
+              exception == nil else {
+            XCTFail("System.Reflection.Assembly.GetAssembly should not throw and return an instance")
+            
+            return
+        }
+        
+        defer { System_Reflection_Assembly_Destroy(assembly) }
+        
+        guard let assemblyNameObject = System_Reflection_Assembly_GetName(assembly,
+                                                                          &exception),
+              exception == nil else {
+            XCTFail("System.Reflection.Assembly.GetName should not throw and return an instance")
+            
+            return
+        }
+        
+        defer { System_Reflection_AssemblyName_Destroy(assemblyNameObject) }
+        
+        guard let assemblyNameC = System_Reflection_AssemblyName_Name_Get(assemblyNameObject,
+                                                                          &exception),
+              exception == nil else {
+            XCTFail("System.Reflection.AssemblyName.Name should not throw and return an instance")
+            
+            return
+        }
+        
+        let assemblyName = String(cString: assemblyNameC)
+        
+        assemblyNameC.deallocate()
+        
+        XCTAssertEqual("System.Private.CoreLib", assemblyName)
+    }
+    
     func testSystemGuid() {
         var exception: System_Exception_t?
         
