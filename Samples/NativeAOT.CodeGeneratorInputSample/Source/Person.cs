@@ -29,51 +29,6 @@ public class Person
         Age = age;
     }
 
-    public string GetFirstName()
-    {
-        return FirstName;
-    }
-
-    public void SetFirstName(string firstName)
-    {
-        FirstName = firstName;
-    }
-    
-    public string GetLastName()
-    {
-        return LastName;
-    }
-
-    public void SetLastName(string lastName)
-    {
-        LastName = lastName;
-    }
-
-    public int GetAge()
-    {
-        return Age;
-    }
-
-    public void SetAge(int age)
-    {
-        Age = age;
-    }
-
-    public string GetFullName()
-    {
-        return FullName;
-    }
-
-    public NiceLevels GetNiceLevel()
-    {
-        return NiceLevel;
-    }
-
-    public void SetNiceLevel(NiceLevels niceLevel)
-    {
-        NiceLevel = niceLevel;
-    }
-
     public string GetNiceLevelString()
     {
         switch (NiceLevel) {

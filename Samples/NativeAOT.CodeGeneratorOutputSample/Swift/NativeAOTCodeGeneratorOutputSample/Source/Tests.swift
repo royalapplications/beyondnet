@@ -249,33 +249,33 @@ final class NativeAOTCodeGeneratorOutputSampleTests: XCTestCase {
             NativeAOT_CodeGeneratorInputSample_Person_Destroy(person)
         }
         
-        NativeAOT_CodeGeneratorInputSample_Person_SetNiceLevel(person,
-                                                               expectedNiceLevel,
-                                                               &exception)
+        NativeAOT_CodeGeneratorInputSample_Person_NiceLevel_Set(person,
+                                                                expectedNiceLevel,
+                                                                &exception)
         
         guard exception == nil else {
-            XCTFail("Person.SetNiceLevel should not throw")
+            XCTFail("Person.NiceLevel setter should not throw")
             
             return
         }
         
-        let retrievedNiceLevel = NativeAOT_CodeGeneratorInputSample_Person_GetNiceLevel(person,
-                                                                                        &exception)
+        let retrievedNiceLevel = NativeAOT_CodeGeneratorInputSample_Person_NiceLevel_Get(person,
+                                                                                         &exception)
         
         guard exception == nil else {
-            XCTFail("Person.GetNiceLevel should not throw")
+            XCTFail("Person.NiceLevel getter should not throw")
             
             return
         }
         
         XCTAssertEqual(expectedNiceLevel, retrievedNiceLevel)
         
-        let retrievedFirstNameC = NativeAOT_CodeGeneratorInputSample_Person_GetFirstName(person,
-                                                                                         &exception)
+        let retrievedFirstNameC = NativeAOT_CodeGeneratorInputSample_Person_FirstName_Get(person,
+                                                                                          &exception)
         
         guard let retrievedFirstNameC,
               exception == nil else {
-            XCTFail("Person.GetFirstName should not throw and return an instance")
+            XCTFail("Person.FirstName getter should not throw and return an instance")
             
             return
         }
@@ -284,12 +284,12 @@ final class NativeAOTCodeGeneratorOutputSampleTests: XCTestCase {
         
         retrievedFirstNameC.deallocate()
         
-        let retrievedLastNameC = NativeAOT_CodeGeneratorInputSample_Person_GetLastName(person,
-                                                                                       &exception)
+        let retrievedLastNameC = NativeAOT_CodeGeneratorInputSample_Person_LastName_Get(person,
+                                                                                        &exception)
         
         guard let retrievedLastNameC,
               exception == nil else {
-            XCTFail("Person.GetLastName should not throw and return an instance")
+            XCTFail("Person.LastName getter should not throw and return an instance")
             
             return
         }
@@ -298,12 +298,12 @@ final class NativeAOTCodeGeneratorOutputSampleTests: XCTestCase {
         
         retrievedLastNameC.deallocate()
         
-        let retrievedFullNameC = NativeAOT_CodeGeneratorInputSample_Person_GetFullName(person,
-                                                                                       &exception)
+        let retrievedFullNameC = NativeAOT_CodeGeneratorInputSample_Person_FullName_Get(person,
+                                                                                        &exception)
         
         guard let retrievedFullNameC,
               exception == nil else {
-            XCTFail("Person.GetFullName should not throw and return an instance")
+            XCTFail("Person.FullName getter should not throw and return an instance")
             
             return
         }
@@ -312,11 +312,11 @@ final class NativeAOTCodeGeneratorOutputSampleTests: XCTestCase {
         
         retrievedFullNameC.deallocate()
         
-        let retrievedAge = NativeAOT_CodeGeneratorInputSample_Person_GetAge(person,
-                                                                            &exception)
+        let retrievedAge = NativeAOT_CodeGeneratorInputSample_Person_Age_Get(person,
+                                                                             &exception)
         
         guard exception == nil else {
-            XCTFail("Person.GetAge should not throw and return an instance")
+            XCTFail("Person.Age getter should not throw and return an instance")
             
             return
         }
@@ -341,23 +341,23 @@ final class NativeAOTCodeGeneratorOutputSampleTests: XCTestCase {
         let expectedNewFullName = "\(newFirstName) \(lastName)"
         
         newFirstName.withCString { newFirstNameC in
-            NativeAOT_CodeGeneratorInputSample_Person_SetFirstName(person,
-                                                                   newFirstNameC,
-                                                                   &exception)
+            NativeAOT_CodeGeneratorInputSample_Person_FirstName_Set(person,
+                                                                    newFirstNameC,
+                                                                    &exception)
         }
         
         guard exception == nil else {
-            XCTFail("Person.SetFirstName should not throw")
+            XCTFail("Person.FirstName setter should not throw")
             
             return
         }
         
-        let newFullNameC = NativeAOT_CodeGeneratorInputSample_Person_GetFullName(person,
-                                                                                 &exception)
+        let newFullNameC = NativeAOT_CodeGeneratorInputSample_Person_FullName_Get(person,
+                                                                                  &exception)
         
         guard let newFullNameC,
               exception == nil else {
-            XCTFail("Person.GetFullName should not throw and return an instance")
+            XCTFail("Person.FullName getter should not throw and return an instance")
             
             return
         }

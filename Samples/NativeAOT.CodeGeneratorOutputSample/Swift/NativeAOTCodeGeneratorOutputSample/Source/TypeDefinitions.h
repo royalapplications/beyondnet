@@ -1,5 +1,5 @@
 // Number of generated types: 162
-// Number of generated members: 1435
+// Number of generated members: 1426
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -11670,64 +11670,6 @@ System_Reflection_InterfaceMapping_Destroy(
 #pragma mark - END APIs of System.Reflection.InterfaceMapping
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Person
-CString /* System.String */
-NativeAOT_CodeGeneratorInputSample_Person_GetFirstName(
-	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-NativeAOT_CodeGeneratorInputSample_Person_SetFirstName(
-	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
-	CString /* System.String */ firstName,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-CString /* System.String */
-NativeAOT_CodeGeneratorInputSample_Person_GetLastName(
-	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-NativeAOT_CodeGeneratorInputSample_Person_SetLastName(
-	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
-	CString /* System.String */ lastName,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-int32_t /* System.Int32 */
-NativeAOT_CodeGeneratorInputSample_Person_GetAge(
-	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-NativeAOT_CodeGeneratorInputSample_Person_SetAge(
-	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
-	int32_t /* System.Int32 */ age,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-CString /* System.String */
-NativeAOT_CodeGeneratorInputSample_Person_GetFullName(
-	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-NativeAOT_CodeGeneratorInputSample_NiceLevels /* NativeAOT.CodeGeneratorInputSample.NiceLevels */
-NativeAOT_CodeGeneratorInputSample_Person_GetNiceLevel(
-	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-NativeAOT_CodeGeneratorInputSample_Person_SetNiceLevel(
-	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
-	NativeAOT_CodeGeneratorInputSample_NiceLevels /* NativeAOT.CodeGeneratorInputSample.NiceLevels */ niceLevel,
-	System_Exception_t* /* System.Exception */ outException
-);
-
 CString /* System.String */
 NativeAOT_CodeGeneratorInputSample_Person_GetNiceLevelString(
 	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
