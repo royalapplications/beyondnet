@@ -1,3 +1,4 @@
+using System.Reflection;
 using NativeAOT.CodeGenerator.Syntax;
 
 namespace NativeAOT.CodeGenerator.Generator;
@@ -19,5 +20,20 @@ public class Result
     )
     {
         m_generatedTypes[type] = generatedMembers;
+    }
+
+    public GeneratedMember? GetGeneratedMember(MemberInfo member)
+    {
+        Type declaringType = member.DeclaringType ?? throw new Exception("No declaring type");
+
+        var generatedMembers = m_generatedTypes[declaringType];
+
+        foreach (var generatedMember in generatedMembers) {
+            if (generatedMember.Member == member) {
+                return generatedMember;
+            }
+        }
+
+        return null;
     }
 }

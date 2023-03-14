@@ -10,7 +10,7 @@ public partial class BuiltInTypeDescriptors
                 "null",
                 new() {
                     { CodeLanguage.CSharpUnmanaged, "byte" },
-                    { CodeLanguage.C, "char" },
+                    { CodeLanguage.C, "const char" },
                     { CodeLanguage.Swift, "String" }
                 },
                 new() {

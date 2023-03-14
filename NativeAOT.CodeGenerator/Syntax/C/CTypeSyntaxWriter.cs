@@ -79,10 +79,27 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
 
         foreach (var cSharpMember in cSharpMembers) {
             var member = cSharpMember.Member;
-            var name = cSharpMember.GetGeneratedName(CodeLanguage.CSharpUnmanaged) ?? throw new Exception("No name for member");
+            var memberType = member.MemberType;
 
-            sb.AppendLine($"// TODO: Member (\"{name}\")");
+            ICSyntaxWriter? syntaxWriter = GetSyntaxWriter(memberType);
+            
+            if (syntaxWriter == null) {
+                if (Settings.EmitUnsupported) {
+                    sb.AppendLine($"// TODO: Unsupported Member Type \"{memberType}\"");
+                }
+                    
+                continue;
+            }
+
+            string memberCode = syntaxWriter.Write(member, state);
+
+            sb.AppendLine(memberCode);
         }
+        
+        string destructorCode = m_destructorSyntaxWriter.Write(type, state);
+
+        sb.AppendLine(destructorCode);
+        sb.AppendLine();
 
         return sb.ToString();
     }
