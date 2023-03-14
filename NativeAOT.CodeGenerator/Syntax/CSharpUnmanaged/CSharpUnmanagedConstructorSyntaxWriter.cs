@@ -16,7 +16,7 @@ public class CSharpUnmanagedConstructorSyntaxWriter: CSharpUnmanagedMethodSyntax
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
         const bool mayThrow = true;
-        const bool isConstructor = true;
+        const MethodKind methodKind = MethodKind.Constructor;
 
         bool isStaticMethod = true;
         string methodName = constructor.Name;
@@ -32,9 +32,9 @@ public class CSharpUnmanagedConstructorSyntaxWriter: CSharpUnmanagedMethodSyntax
 
         string ctorCode = WriteMethod(
             constructor,
+            methodKind,
             methodName,
             isStaticMethod,
-            isConstructor,
             mayThrow,
             declaringType,
             returnType,

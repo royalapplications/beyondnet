@@ -18,7 +18,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
         const bool mayThrow = true;
-        const bool isConstructor = false;
+        const MethodKind methodKind = MethodKind.Normal;
 
         bool isStaticMethod = method.IsStatic;
         string methodName = method.Name;
@@ -26,12 +26,12 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         Type declaringType = method.DeclaringType ?? throw new Exception("No declaring type");;
         Type returnType = method.ReturnType;
         IEnumerable<ParameterInfo> parameters = method.GetParameters();
-
+        
         string methodCode = WriteMethod(
             method,
+            methodKind,
             methodName,
             isStaticMethod,
-            isConstructor,
             mayThrow,
             declaringType,
             returnType,
@@ -45,9 +45,9 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
     protected string WriteMethod(
         MemberInfo memberInfo,
+        MethodKind methodKind,
         string methodName,
         bool isStaticMethod,
-        bool isConstructor,
         bool mayThrow,
         Type declaringType,
         Type returnType,
@@ -57,11 +57,20 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
     )
     {
         string methodNameC;
-        
-        if (isConstructor) {
-            methodNameC = $"{declaringType.GetFullNameOrName().Replace('.', '_')}_Create";
-        } else {
-            methodNameC = $"{declaringType.GetFullNameOrName().Replace('.', '_')}_{methodName}";
+
+        switch (methodKind) {
+            case MethodKind.Normal:
+                methodNameC = $"{declaringType.GetFullNameOrName().Replace('.', '_')}_{methodName}";
+                break;
+            case MethodKind.Constructor:
+                methodNameC = $"{declaringType.GetFullNameOrName().Replace('.', '_')}_Create";
+                break;
+            case MethodKind.PropertyGetter:
+                throw new NotSupportedException();
+            case MethodKind.PropertySetter:
+                throw new NotSupportedException();
+            default:
+                throw new Exception("Unknown method kind");
         }
 
         methodNameC = state.UniqueGeneratedName(methodNameC, CodeLanguage.CSharpUnmanaged);
@@ -122,7 +131,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             : "\t";
         
         string methodTarget = isStaticMethod
-            ? (isConstructor ? "new " : string.Empty) + declaringType.GetFullNameOrName()
+            ? (methodKind == MethodKind.Constructor ? "new " : string.Empty) + declaringType.GetFullNameOrName()
             : convertedSelfParameterName ?? string.Empty;
 
         string convertedParameterNamesString = string.Join(", ", convertedParameterNames);
@@ -136,7 +145,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             returnValuePrefix = $"{returnType.GetFullNameOrName()} {returnValueName} = ";
         }
 
-        string methodNameForInvocation = isConstructor
+        string methodNameForInvocation = methodKind == MethodKind.Constructor
             ? string.Empty
             : $".{methodName}";
         
