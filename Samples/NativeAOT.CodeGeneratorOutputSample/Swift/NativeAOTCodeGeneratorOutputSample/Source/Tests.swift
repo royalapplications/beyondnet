@@ -2,7 +2,7 @@ import XCTest
 import NativeAOTCodeGeneratorOutputSample
 
 final class NativeAOTCodeGeneratorOutputSampleTests: XCTestCase {
-    func testExample() throws {
+    func testTestClass() {
         var exception: System_Exception_t?
         
         let testClass = NativeAOT_CodeGeneratorInputSample_TestClass_Create(&exception)
@@ -212,6 +212,10 @@ final class NativeAOTCodeGeneratorOutputSampleTests: XCTestCase {
             
             return
         }
+    }
+    
+    func testSystemGuid() throws {
+        var exception: System_Exception_t?
         
         let uuid = UUID()
         let uuidString = uuid.uuidString
