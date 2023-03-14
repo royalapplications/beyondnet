@@ -23,6 +23,7 @@ public class CCodeGenerator: ICodeGenerator
         SourceCodeSection headerSection = writer.AddSection("Header");
         SourceCodeSection sharedCodeSection = writer.AddSection("Shared Code");
         SourceCodeSection unsupportedTypesSection = writer.AddSection("Unsupported Types");
+        SourceCodeSection typedefsSection = writer.AddSection("Type Definitions");
         SourceCodeSection apisSection = writer.AddSection("APIs");
         SourceCodeSection footerSection = writer.AddSection("Footer");
         
@@ -53,8 +54,10 @@ public class CCodeGenerator: ICodeGenerator
             Syntax.State state = new(CSharpUnmanagedResult);
             
             string typeCode = typeSyntaxWriter.Write(type, state);
-            
-            apisSection.Code.AppendLine(typeCode);
+            typedefsSection.Code.AppendLine(typeCode);
+
+            string membersCode = typeSyntaxWriter.WriteMembers(type, state);
+            apisSection.Code.AppendLine(membersCode);
             
             result.AddGeneratedType(
                 type,

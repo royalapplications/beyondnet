@@ -48,10 +48,7 @@ public class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITyp
             return $"// Type \"{type.Name}\" was skipped. Reason: It has no full name.";
         }
         
-        // TODO: Move out
-        string cTypeName = fullTypeName
-            .Replace(".", "_")
-            .Replace("+", "_");
+        string cTypeName = fullTypeName.CTypeName();
         
         StringBuilder sb = new();
         

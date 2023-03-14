@@ -22,4 +22,13 @@ internal static class StringExtensions
 
         return indentedText.ToString();
     }
+
+    internal static string CTypeName(this string fullTypeName)
+    {
+        string cTypeName = fullTypeName
+            .Replace(".", "_")
+            .Replace("+", "_");
+
+        return cTypeName;
+    }
 }
