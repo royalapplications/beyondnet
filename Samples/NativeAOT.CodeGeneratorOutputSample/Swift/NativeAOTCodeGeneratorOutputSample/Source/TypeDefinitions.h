@@ -38,6 +38,10 @@ System_Type_t
 System_Object_GetType(System_Object_t self,
                       System_Exception_t* outException);
 
+const char*
+System_Exception_ToString(System_Exception_t self,
+                          System_Exception_t* outException);
+
 System_Guid_t
 System_Guid_NewGuid(System_Exception_t* outException);
 
@@ -74,5 +78,11 @@ NativeAOT_CodeGeneratorInputSample_TestClass_Add(NativeAOT_CodeGeneratorInputSam
                                                  int number1,
                                                  int number2,
                                                  System_Exception_t* outException);
+
+int
+NativeAOT_CodeGeneratorInputSample_TestClass_Divide(NativeAOT_CodeGeneratorInputSample_TestClass_t self,
+                                                    int number1,
+                                                    int number2,
+                                                    System_Exception_t* outException);
 
 #endif /* TypeDefinitions_h */

@@ -172,6 +172,47 @@ final class NativeAOTCodeGeneratorOutputSampleTests: XCTestCase {
         
         XCTAssertEqual(expectedResult, result)
         
+        let divNumber1: Int32 = 85
+        let divNumber2: Int32 = 0
+        
+        let divisionResult = NativeAOT_CodeGeneratorInputSample_TestClass_Divide(testClass,
+                                                                                 divNumber1,
+                                                                                 divNumber2,
+                                                                                 &exception)
+        
+        guard exception != nil else {
+            XCTFail("Divide should throw but did not")
+            
+            return
+        }
+        
+        var exception2: System_Exception_t?
+        
+        let exceptionAsStringC = System_Exception_ToString(exception,
+                                                           &exception2)
+        
+        guard exception2 == nil else {
+            XCTFail("System_Exception_ToString should not throw")
+            
+            return
+        }
+        
+        guard let exceptionAsStringC else {
+            XCTFail("System_Exception_ToString should return an instance of a string")
+            
+            return
+        }
+        
+        let exceptionAsString = String(cString: exceptionAsStringC)
+        
+        exceptionAsStringC.deallocate()
+        
+        guard exceptionAsString.contains("DivideByZeroException") else {
+            XCTFail("Exception string should contain \"DivideByZeroException\"")
+            
+            return
+        }
+        
         let uuid = UUID()
         let uuidString = uuid.uuidString
         

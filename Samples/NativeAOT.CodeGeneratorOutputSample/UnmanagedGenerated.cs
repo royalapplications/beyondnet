@@ -1,5 +1,5 @@
 // Number of generated types: 159
-// Number of generated members: 1076
+// Number of generated members: 1077
 
 // <Header>
 using System;
@@ -327,6 +327,36 @@ internal static unsafe class NativeAOT_CodeGeneratorInputSample_TestClass
 	
 	    try {
 			System.Int32 __returnValue = __selfDotNet.Add(number1, number2);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_Divide")]
+	internal static int /* System.Int32 */ NativeAOT_CodeGeneratorInputSample_TestClass_Divide(void* /* NativeAOT.CodeGeneratorInputSample.TestClass */ __self, int /* System.Int32 */ number1, int /* System.Int32 */ number2, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.TestClass __selfDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.TestClass>(__self);
+	
+	
+	    try {
+			System.Int32 __returnValue = __selfDotNet.Divide(number1, number2);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
