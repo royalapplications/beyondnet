@@ -220,9 +220,11 @@ final class NativeAOTCodeGeneratorOutputSampleTests: XCTestCase {
         let firstName = "John"
         let lastName = "Doe"
         let age: Int32 = 24
+        let expectedNiceLevel: NativeAOT_CodeGeneratorInputSample_NiceLevels = .veryNice
+        let expectedNiceLevelString = "Very nice"
         
         let expectedFullName = "\(firstName) \(lastName)"
-        let expectedWelcomeMessage = "Welcome, \(expectedFullName)! You're \(age) years old."
+        let expectedWelcomeMessage = "Welcome, \(expectedFullName)! You're \(age) years old and \(expectedNiceLevelString)."
         
         var exception: System_Exception_t?
         var person: NativeAOT_CodeGeneratorInputSample_Person_t?
@@ -246,6 +248,27 @@ final class NativeAOTCodeGeneratorOutputSampleTests: XCTestCase {
         defer {
             NativeAOT_CodeGeneratorInputSample_Person_Destroy(person)
         }
+        
+        NativeAOT_CodeGeneratorInputSample_Person_SetNiceLevel(person,
+                                                               expectedNiceLevel,
+                                                               &exception)
+        
+        guard exception == nil else {
+            XCTFail("Person.SetNiceLevel should not throw")
+            
+            return
+        }
+        
+        let retrievedNiceLevel = NativeAOT_CodeGeneratorInputSample_Person_GetNiceLevel(person,
+                                                                                        &exception)
+        
+        guard exception == nil else {
+            XCTFail("Person.GetNiceLevel should not throw")
+            
+            return
+        }
+        
+        XCTAssertEqual(expectedNiceLevel, retrievedNiceLevel)
         
         let retrievedFirstNameC = NativeAOT_CodeGeneratorInputSample_Person_GetFirstName(person,
                                                                                          &exception)
