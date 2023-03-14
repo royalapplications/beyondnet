@@ -2,6 +2,7 @@ using System.Reflection;
 using System.Text;
 using NativeAOT.CodeGenerator.Extensions;
 using NativeAOT.CodeGenerator.Generator;
+using NativeAOT.CodeGenerator.Types;
 using Settings = NativeAOT.CodeGenerator.Generator.C.Settings;
 
 namespace NativeAOT.CodeGenerator.Syntax.C;
@@ -32,6 +33,8 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
 
     public string Write(Type type, State state)
     {
+        TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
+        
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
         
         if (type.IsPrimitive ||
@@ -53,10 +56,57 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         StringBuilder sb = new();
 
         if (type.IsEnum) {
-            sb.AppendLine($"// TODO: Enum definition ({cTypeName})");
+            string enumdefCode = WriteEnumDef(
+                type,
+                cTypeName,
+                typeDescriptorRegistry
+            );
+
+            sb.AppendLine(enumdefCode);
         } else {
-            sb.AppendLine($"typedef void* {cTypeName}_t;");
+            string typedefCode = WriteTypeDef(cTypeName);
+            
+            sb.AppendLine(typedefCode);
         }
+        
+        return sb.ToString();
+    }
+
+    private string WriteTypeDef(string cTypeName)
+    {
+        return $"typedef void* {cTypeName}_t;";
+    }
+
+    private string WriteEnumDef(
+        Type type,
+        string cTypeName,
+        TypeDescriptorRegistry typeDescriptorRegistry
+    )
+    {
+        StringBuilder sb = new();
+
+        Type underlyingType = type.GetEnumUnderlyingType();
+        TypeDescriptor underlyingTypeDescriptor = underlyingType.GetTypeDescriptor(typeDescriptorRegistry);
+
+        string underlyingTypeName = underlyingTypeDescriptor.GetTypeName(CodeLanguage.C, false);
+
+        sb.AppendLine($"typedef enum __attribute__((enum_extensibility(closed))): {underlyingTypeName} {{");
+
+        var caseNames = type.GetEnumNames();
+
+        List<string> enumCases = new();
+
+        foreach (var caseName in caseNames) {
+            // CBoolYes = 1,
+            // TODO: Value
+            enumCases.Add($"\t{cTypeName}_{caseName} = 0 /* TODO: Value */");
+        }
+
+        string enumCasesString = string.Join(",\n", enumCases);
+
+        sb.AppendLine(enumCasesString);
+        
+        sb.AppendLine($"}} {cTypeName};");
         
         return sb.ToString();
     }
