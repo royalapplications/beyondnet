@@ -2,7 +2,9 @@
 using System.Text;
 
 using NativeAOT.CodeGenerator.Collectors;
+using NativeAOT.CodeGenerator.Generator;
 using NativeAOT.CodeGenerator.Generator.CSharpUnmanaged;
+using NativeAOT.CodeGenerator.Generator.C;
 using NativeAOT.CodeGenerator.SourceCode;
 
 namespace NativeAOT.CodeGenerator.CLI;
@@ -25,12 +27,20 @@ static class Program
             return 1;
         }
 
-        string? outputPath;
+        string? cSharpUnmanagedOutputPath;
         
         if (args.Length > 1) {
-            outputPath = args[1];
+            cSharpUnmanagedOutputPath = args[1];
         } else {
-            outputPath = null;
+            cSharpUnmanagedOutputPath = null;
+        }
+        
+        string? cOutputPath;
+        
+        if (args.Length > 2) {
+            cOutputPath = args[2];
+        } else {
+            cOutputPath = null;
         }
 
         Assembly assembly = Assembly.LoadFrom(assemblyPath);
@@ -41,22 +51,44 @@ static class Program
 
         const string namespaceForCSharpUnamangedCode = "NativeGeneratedCode";
 
-        string cSharpUnmanagedCode = GenerateCSharpUnmanagedCode(
+        var cSharpUnmanagedResultObject = GenerateCSharpUnmanagedCode(
             types,
             unsupportedTypes,
             namespaceForCSharpUnamangedCode
         );
 
-        if (!string.IsNullOrEmpty(outputPath)) {
-            File.WriteAllText(outputPath, cSharpUnmanagedCode);
+        var cSharpUnmanagedResult = cSharpUnmanagedResultObject.Item1;
+        var cSharpUnmanagedCode = cSharpUnmanagedResultObject.Item2;
+        
+        var cResultObject = GenerateCCode(
+            types,
+            unsupportedTypes,
+            cSharpUnmanagedResult
+        );
+
+        var cResult = cResultObject.Item1;
+        var cCode = cResultObject.Item2;
+
+        if (!string.IsNullOrEmpty(cSharpUnmanagedOutputPath)) {
+            File.WriteAllText(cSharpUnmanagedOutputPath, cSharpUnmanagedCode);
         } else {
+            Console.WriteLine("--- C# BEGIN ---");
             Console.WriteLine(cSharpUnmanagedCode);
+            Console.WriteLine("--- C# END ---");
+        }
+
+        if (!string.IsNullOrEmpty(cOutputPath)) {
+            File.WriteAllText(cOutputPath, cCode);
+        } else {
+            Console.WriteLine("--- C BEGIN ---");
+            Console.WriteLine(cCode);
+            Console.WriteLine("--- C END ---");
         }
 
         return 0;
     }
 
-    private static string GenerateCSharpUnmanagedCode(
+    private static Tuple<Result, string> GenerateCSharpUnmanagedCode(
         HashSet<Type> types,
         Dictionary<Type, string> unsupportedTypes,
         string namespaceForGeneratedCode
@@ -64,13 +96,17 @@ static class Program
     {
         SourceCodeWriter writer = new();
         
-        Settings settings = new(namespaceForGeneratedCode) {
+        Generator.CSharpUnmanaged.Settings settings = new(namespaceForGeneratedCode) {
             EmitUnsupported = false
         };
         
-        CSharpUnmanagedCodeGenerator cSharpUnmanagedCodeGenerator = new(settings);
+        CSharpUnmanagedCodeGenerator codeGenerator = new(settings);
         
-        Generator.Result result = cSharpUnmanagedCodeGenerator.Generate(types, unsupportedTypes, writer);
+        Result result = codeGenerator.Generate(
+            types,
+            unsupportedTypes,
+            writer
+        );
         
         StringBuilder sb = new();
 
@@ -91,7 +127,49 @@ static class Program
             sb.AppendLine($"// </{section.Name}>");
         }
 
-        return sb.ToString();
+        return new(result, sb.ToString());
+    }
+    
+    private static Tuple<Result, string> GenerateCCode(
+        HashSet<Type> types,
+        Dictionary<Type, string> unsupportedTypes,
+        Result cSharpUnmanagedResult
+    )
+    {
+        SourceCodeWriter writer = new();
+        
+        Generator.C.Settings settings = new() {
+            EmitUnsupported = false
+        };
+        
+        CCodeGenerator codeGenerator = new(settings);
+        
+        Result result = codeGenerator.Generate(
+            types,
+            unsupportedTypes,
+            writer
+        );
+        
+        StringBuilder sb = new();
+
+        int generatedTypesCount = result.GeneratedTypes.Count;
+        int generatedMembersCount = 0;
+
+        foreach (var generatedMembers in result.GeneratedTypes.Values) {
+            generatedMembersCount += generatedMembers.Count();
+        }
+
+        sb.AppendLine($"// Number of generated types: {generatedTypesCount}");
+        sb.AppendLine($"// Number of generated members: {generatedMembersCount}");
+        sb.AppendLine();
+
+        foreach (var section in writer.Sections) {
+            sb.AppendLine($"// <{section.Name}>");
+            sb.AppendLine(section.Code.ToString());
+            sb.AppendLine($"// </{section.Name}>");
+        }
+
+        return new(result, sb.ToString());
     }
     
     private static void ShowUsage()

@@ -1,7 +1,6 @@
-using System.Reflection;
 using System.Text;
+
 using NativeAOT.CodeGenerator.Extensions;
-using NativeAOT.CodeGenerator.Types;
 
 namespace NativeAOT.CodeGenerator.Syntax.CSharpUnmanaged;
 

@@ -19,7 +19,7 @@
 
   <!-- Item Excludes -->
   <PropertyGroup>
-    <DefaultItemExcludes>$(DefaultItemExcludes);Swift\**\*;.gitignore;*.sln.DotSettings;</DefaultItemExcludes>
+    <DefaultItemExcludes>$(DefaultItemExcludes);Swift\**\*;.gitignore;*.h;*.sln.DotSettings;</DefaultItemExcludes>
   </PropertyGroup>
 
   <!-- This works around a bug in .NET 8 Preview 1 that causes the required package to not be resolved automatically when cross-compiling -->
