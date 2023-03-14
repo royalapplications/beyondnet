@@ -136,8 +136,12 @@ internal static unsafe class InteropUtils
         return handle;
     }
     
-    internal static void* AllocateGCHandleAndGetAddress(this object instance)
+    internal static void* AllocateGCHandleAndGetAddress(this object? instance)
     {
+        if (instance is null) {
+            return null;
+        }
+        
         GCHandle handle = instance.AllocateGCHandle(GCHandleType.Normal);
         void* handleAddress = handle.ToHandleAddress();
 
@@ -186,11 +190,17 @@ internal static unsafe class InteropUtils
         return handle;
     }
 
-    internal static T? GetInstance<T>(void* handleAddress) where T : class
+    internal static T? GetInstance<T>(void* handleAddress)
     {
         GCHandle? handle = GetGCHandle(handleAddress);
 
-        T? instance = handle?.Target as T;
+        object? target = handle?.Target;
+
+        if (target is null) {
+            return default;
+        }
+
+        T instance = (T)target;
 
         return instance;
     }

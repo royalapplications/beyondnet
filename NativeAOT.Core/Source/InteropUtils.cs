@@ -62,11 +62,17 @@ public static unsafe class InteropUtils
         return handle;
     }
 
-    public static T? GetInstance<T>(void* handleAddress) where T : class
+    public static T? GetInstance<T>(void* handleAddress)
     {
         GCHandle? handle = GetGCHandle(handleAddress);
 
-        T? instance = handle?.Target as T;
+        object? target = handle?.Target;
+
+        if (target == null) {
+            return default;
+        }
+
+        T instance = (T)target;
 
         return instance;
     }

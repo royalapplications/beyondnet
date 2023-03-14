@@ -6,6 +6,11 @@ namespace NativeAOT.CodeGenerator.Collectors;
 public class TypeCollector
 {
     private readonly Assembly m_assembly;
+
+    private static List<Type> m_unsupportedTypes = new() {
+        Type.GetType("System.Runtime.Serialization.DeserializationToken")!,
+        Type.GetType("System.TypedReference")!
+    };
     
     public TypeCollector(Assembly assembly)
     {
@@ -157,11 +162,6 @@ public class TypeCollector
             return false;
         }
 
-        if (type.IsStruct()) {
-            unsupportedReason = "Is Struct Type";
-            return false;
-        }
-
         if (type.IsArray) {
             unsupportedReason = "Is Array";
             return false;
@@ -204,6 +204,11 @@ public class TypeCollector
 
         if (type.IsDelegate()) {
             unsupportedReason = "Is Delegate Type";
+            return false;
+        }
+
+        if (m_unsupportedTypes.Contains(type)) {
+            unsupportedReason = "Is unsupported Type";
             return false;
         }
 

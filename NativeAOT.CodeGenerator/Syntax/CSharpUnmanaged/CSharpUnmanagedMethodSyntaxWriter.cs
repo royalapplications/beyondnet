@@ -222,8 +222,15 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             string fullTypeConversion = string.Format(typeConversion, parameterName);
 
             bool isSelfPointer = typeDescriptor.RequiresNativePointer;
-            string throwPart = isSelfPointer ? $" ?? throw new ArgumentNullException(nameof({parameterName}))" : string.Empty;
-            string typeConversionCode = $"{type.GetFullNameOrName()} {convertedParameterName} = {fullTypeConversion}{throwPart};";
+
+            if (isSelfPointer) {
+                sb.AppendLine($"\tif ({parameterName} is null) {{");
+                sb.AppendLine($"\t\tthrow new ArgumentNullException(nameof({parameterName}));");
+                sb.AppendLine("\t}");
+                sb.AppendLine();
+            }
+            
+            string typeConversionCode = $"{type.GetFullNameOrName()} {convertedParameterName} = {fullTypeConversion};";
 
             sb.AppendLine($"\t{typeConversionCode}");
 
