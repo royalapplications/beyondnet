@@ -1,6 +1,6 @@
 using System.Reflection;
 using System.Text;
-using NativeAOT.CodeGenerator.Extensions;
+
 using NativeAOT.CodeGenerator.Types;
 
 namespace NativeAOT.CodeGenerator.Syntax.CSharpUnmanaged;
@@ -39,7 +39,7 @@ public class CSharpUnmanagedPropertySyntaxWriter: CSharpUnmanagedMethodSyntaxWri
             bool isStaticMethod = getterMethod.IsStatic;
             
             string getterCode = WriteMethod(
-                property,
+                getterMethod,
                 MethodKind.PropertyGetter,
                 propertyName,
                 isStaticMethod,
@@ -58,7 +58,7 @@ public class CSharpUnmanagedPropertySyntaxWriter: CSharpUnmanagedMethodSyntaxWri
             bool isStaticMethod = setterMethod.IsStatic;
             
             string setterCode = WriteMethod(
-                property,
+                setterMethod,
                 MethodKind.PropertySetter,
                 propertyName,
                 isStaticMethod,

@@ -1,5 +1,6 @@
 using System.Reflection;
 using System.Text;
+
 using NativeAOT.CodeGenerator.Extensions;
 using NativeAOT.CodeGenerator.Generator;
 using NativeAOT.CodeGenerator.Types;
@@ -53,7 +54,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         bool isStaticMethod,
         bool mayThrow,
         Type declaringType,
-        Type returnType,
+        Type returnOrSetterType,
         IEnumerable<ParameterInfo> parameters,
         TypeDescriptorRegistry typeDescriptorRegistry,
         State state
@@ -71,11 +72,20 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             CodeLanguage.C
         );
         
-        TypeDescriptor returnTypeDescriptor = returnType.GetTypeDescriptor(typeDescriptorRegistry);
-        string cReturnTypeName = returnTypeDescriptor.GetTypeName(CodeLanguage.C, true);
-        string cReturnTypeNameWithComment = $"{cReturnTypeName} /* {returnType.GetFullNameOrName()} */";
+        TypeDescriptor returnOrSetterTypeDescriptor = returnOrSetterType.GetTypeDescriptor(typeDescriptorRegistry);
+        string cReturnOrSetterTypeName = returnOrSetterTypeDescriptor.GetTypeName(CodeLanguage.C, true);
+        
+        string cReturnOrSetterTypeNameWithComment = methodKind != MethodKind.PropertySetter 
+            ? $"{cReturnOrSetterTypeName} /* {returnOrSetterType.GetFullNameOrName()} */"
+            : "void /* System.Void */";
+        
+        Type? setterType = methodKind == MethodKind.PropertySetter 
+            ? returnOrSetterType
+            : null;
         
         string methodSignatureParameters = WriteParameters(
+            methodKind,
+            setterType,
             mayThrow,
             isStaticMethod,
             declaringType,
@@ -85,12 +95,14 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         
         StringBuilder sb = new();
         
-        sb.AppendLine($"{cReturnTypeNameWithComment}\n{methodNameC}(\n\t{methodSignatureParameters}\n);");
+        sb.AppendLine($"{cReturnOrSetterTypeNameWithComment}\n{methodNameC}(\n\t{methodSignatureParameters}\n);");
         
         return sb.ToString();
     }
     
     protected string WriteParameters(
+        MethodKind methodKind,
+        Type? setterType,
         bool mayThrow,
         bool isStatic,
         Type declaringType,
@@ -109,13 +121,25 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             parameterList.Add(parameterString);
         }
 
-        foreach (var parameter in parameters) {
-            Type parameterType = parameter.ParameterType;
-            TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
-            string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(CodeLanguage.C, true);
-
-            string parameterString = $"{unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */ {parameter.Name}";
+        if (methodKind == MethodKind.PropertySetter) {
+            if (setterType == null) {
+                throw new Exception("Setter Type may not be null");
+            }
+            
+            TypeDescriptor setterTypeDescriptor = setterType.GetTypeDescriptor(typeDescriptorRegistry);
+            string unmanagedSetterTypeName = setterTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
+    
+            string parameterString = $"{unmanagedSetterTypeName} /* {setterType.GetFullNameOrName()} */ value";
             parameterList.Add(parameterString);
+        } else {
+            foreach (var parameter in parameters) {
+                Type parameterType = parameter.ParameterType;
+                TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
+                string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(CodeLanguage.C, true);
+
+                string parameterString = $"{unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */ {parameter.Name}";
+                parameterList.Add(parameterString);
+            }
         }
 
         if (mayThrow) {

@@ -1,5 +1,5 @@
 // Number of generated types: 162
-// Number of generated members: 1090
+// Number of generated members: 1435
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -2352,7 +2352,11 @@ System_String_Create(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): Length
+int32_t /* System.Int32 */
+System_String_Length_Get(
+	CString /* System.String */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_String_Destroy(
@@ -2482,69 +2486,193 @@ System_Globalization_CultureInfo_Create4(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): CurrentCulture
+System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */
+System_Globalization_CultureInfo_CurrentCulture_Get(
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): CurrentCulture
+void /* System.Void */
+System_Globalization_CultureInfo_CurrentCulture_Set(
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): CurrentUICulture
+System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */
+System_Globalization_CultureInfo_CurrentUICulture_Get(
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): CurrentUICulture
+void /* System.Void */
+System_Globalization_CultureInfo_CurrentUICulture_Set(
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): InstalledUICulture
+System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */
+System_Globalization_CultureInfo_InstalledUICulture_Get(
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): DefaultThreadCurrentCulture
+System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */
+System_Globalization_CultureInfo_DefaultThreadCurrentCulture_Get(
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): DefaultThreadCurrentCulture
+void /* System.Void */
+System_Globalization_CultureInfo_DefaultThreadCurrentCulture_Set(
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): DefaultThreadCurrentUICulture
+System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */
+System_Globalization_CultureInfo_DefaultThreadCurrentUICulture_Get(
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): DefaultThreadCurrentUICulture
+void /* System.Void */
+System_Globalization_CultureInfo_DefaultThreadCurrentUICulture_Set(
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): InvariantCulture
+System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */
+System_Globalization_CultureInfo_InvariantCulture_Get(
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Parent
+System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */
+System_Globalization_CultureInfo_Parent_Get(
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): LCID
+int32_t /* System.Int32 */
+System_Globalization_CultureInfo_LCID_Get(
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): KeyboardLayoutId
+int32_t /* System.Int32 */
+System_Globalization_CultureInfo_KeyboardLayoutId_Get(
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Name
+CString /* System.String */
+System_Globalization_CultureInfo_Name_Get(
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): IetfLanguageTag
+CString /* System.String */
+System_Globalization_CultureInfo_IetfLanguageTag_Get(
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): DisplayName
+CString /* System.String */
+System_Globalization_CultureInfo_DisplayName_Get(
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): NativeName
+CString /* System.String */
+System_Globalization_CultureInfo_NativeName_Get(
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): EnglishName
+CString /* System.String */
+System_Globalization_CultureInfo_EnglishName_Get(
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): TwoLetterISOLanguageName
+CString /* System.String */
+System_Globalization_CultureInfo_TwoLetterISOLanguageName_Get(
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): ThreeLetterISOLanguageName
+CString /* System.String */
+System_Globalization_CultureInfo_ThreeLetterISOLanguageName_Get(
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): ThreeLetterWindowsLanguageName
+CString /* System.String */
+System_Globalization_CultureInfo_ThreeLetterWindowsLanguageName_Get(
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): CompareInfo
+System_Globalization_CompareInfo_t /* System.Globalization.CompareInfo */
+System_Globalization_CultureInfo_CompareInfo_Get(
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): TextInfo
+System_Globalization_TextInfo_t /* System.Globalization.TextInfo */
+System_Globalization_CultureInfo_TextInfo_Get(
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): IsNeutralCulture
+CBool /* System.Boolean */
+System_Globalization_CultureInfo_IsNeutralCulture_Get(
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): CultureTypes
+System_Globalization_CultureTypes /* System.Globalization.CultureTypes */
+System_Globalization_CultureInfo_CultureTypes_Get(
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): NumberFormat
+System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */
+System_Globalization_CultureInfo_NumberFormat_Get(
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): NumberFormat
+void /* System.Void */
+System_Globalization_CultureInfo_NumberFormat_Set(
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ self,
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): DateTimeFormat
+System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */
+System_Globalization_CultureInfo_DateTimeFormat_Get(
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): DateTimeFormat
+void /* System.Void */
+System_Globalization_CultureInfo_DateTimeFormat_Set(
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ self,
+	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Calendar
+System_Globalization_Calendar_t /* System.Globalization.Calendar */
+System_Globalization_CultureInfo_Calendar_Get(
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): UseUserOverride
+CBool /* System.Boolean */
+System_Globalization_CultureInfo_UseUserOverride_Get(
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): IsReadOnly
+CBool /* System.Boolean */
+System_Globalization_CultureInfo_IsReadOnly_Get(
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_Globalization_CultureInfo_Destroy(
@@ -2976,11 +3104,23 @@ System_Globalization_CompareInfo_ToString(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): Name
+CString /* System.String */
+System_Globalization_CompareInfo_Name_Get(
+	System_Globalization_CompareInfo_t /* System.Globalization.CompareInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Version
+System_Globalization_SortVersion_t /* System.Globalization.SortVersion */
+System_Globalization_CompareInfo_Version_Get(
+	System_Globalization_CompareInfo_t /* System.Globalization.CompareInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): LCID
+int32_t /* System.Int32 */
+System_Globalization_CompareInfo_LCID_Get(
+	System_Globalization_CompareInfo_t /* System.Globalization.CompareInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_Globalization_CompareInfo_Destroy(
@@ -3265,53 +3405,160 @@ System_Reflection_AssemblyName_Create1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): Name
+CString /* System.String */
+System_Reflection_AssemblyName_Name_Get(
+	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Name
+void /* System.Void */
+System_Reflection_AssemblyName_Name_Set(
+	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Version
+System_Version_t /* System.Version */
+System_Reflection_AssemblyName_Version_Get(
+	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Version
+void /* System.Void */
+System_Reflection_AssemblyName_Version_Set(
+	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
+	System_Version_t /* System.Version */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): CultureInfo
+System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */
+System_Reflection_AssemblyName_CultureInfo_Get(
+	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): CultureInfo
+void /* System.Void */
+System_Reflection_AssemblyName_CultureInfo_Set(
+	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): CultureName
+CString /* System.String */
+System_Reflection_AssemblyName_CultureName_Get(
+	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): CultureName
+void /* System.Void */
+System_Reflection_AssemblyName_CultureName_Set(
+	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): CodeBase
+CString /* System.String */
+System_Reflection_AssemblyName_CodeBase_Get(
+	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): CodeBase
+void /* System.Void */
+System_Reflection_AssemblyName_CodeBase_Set(
+	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): EscapedCodeBase
+CString /* System.String */
+System_Reflection_AssemblyName_EscapedCodeBase_Get(
+	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): ProcessorArchitecture
+System_Reflection_ProcessorArchitecture /* System.Reflection.ProcessorArchitecture */
+System_Reflection_AssemblyName_ProcessorArchitecture_Get(
+	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): ProcessorArchitecture
+void /* System.Void */
+System_Reflection_AssemblyName_ProcessorArchitecture_Set(
+	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
+	System_Reflection_ProcessorArchitecture /* System.Reflection.ProcessorArchitecture */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): ContentType
+System_Reflection_AssemblyContentType /* System.Reflection.AssemblyContentType */
+System_Reflection_AssemblyName_ContentType_Get(
+	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): ContentType
+void /* System.Void */
+System_Reflection_AssemblyName_ContentType_Set(
+	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
+	System_Reflection_AssemblyContentType /* System.Reflection.AssemblyContentType */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Flags
+System_Reflection_AssemblyNameFlags /* System.Reflection.AssemblyNameFlags */
+System_Reflection_AssemblyName_Flags_Get(
+	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Flags
+void /* System.Void */
+System_Reflection_AssemblyName_Flags_Set(
+	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
+	System_Reflection_AssemblyNameFlags /* System.Reflection.AssemblyNameFlags */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): HashAlgorithm
+System_Configuration_Assemblies_AssemblyHashAlgorithm /* System.Configuration.Assemblies.AssemblyHashAlgorithm */
+System_Reflection_AssemblyName_HashAlgorithm_Get(
+	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): HashAlgorithm
+void /* System.Void */
+System_Reflection_AssemblyName_HashAlgorithm_Set(
+	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
+	System_Configuration_Assemblies_AssemblyHashAlgorithm /* System.Configuration.Assemblies.AssemblyHashAlgorithm */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): VersionCompatibility
+System_Configuration_Assemblies_AssemblyVersionCompatibility /* System.Configuration.Assemblies.AssemblyVersionCompatibility */
+System_Reflection_AssemblyName_VersionCompatibility_Get(
+	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): VersionCompatibility
+void /* System.Void */
+System_Reflection_AssemblyName_VersionCompatibility_Set(
+	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
+	System_Configuration_Assemblies_AssemblyVersionCompatibility /* System.Configuration.Assemblies.AssemblyVersionCompatibility */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): KeyPair
+System_Reflection_StrongNameKeyPair_t /* System.Reflection.StrongNameKeyPair */
+System_Reflection_AssemblyName_KeyPair_Get(
+	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): KeyPair
+void /* System.Void */
+System_Reflection_AssemblyName_KeyPair_Set(
+	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
+	System_Reflection_StrongNameKeyPair_t /* System.Reflection.StrongNameKeyPair */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): FullName
+CString /* System.String */
+System_Reflection_AssemblyName_FullName_Get(
+	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_Reflection_AssemblyName_Destroy(
@@ -3416,17 +3663,41 @@ System_Version_Create4(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): Major
+int32_t /* System.Int32 */
+System_Version_Major_Get(
+	System_Version_t /* System.Version */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Minor
+int32_t /* System.Int32 */
+System_Version_Minor_Get(
+	System_Version_t /* System.Version */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Build
+int32_t /* System.Int32 */
+System_Version_Build_Get(
+	System_Version_t /* System.Version */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Revision
+int32_t /* System.Int32 */
+System_Version_Revision_Get(
+	System_Version_t /* System.Version */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): MajorRevision
+int16_t /* System.Int16 */
+System_Version_MajorRevision_Get(
+	System_Version_t /* System.Version */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): MinorRevision
+int16_t /* System.Int16 */
+System_Version_MinorRevision_Get(
+	System_Version_t /* System.Version */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_Version_Destroy(
@@ -3732,25 +4003,66 @@ System_IO_FileStream_Create13(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): Handle
+int /* System.IntPtr */
+System_IO_FileStream_Handle_Get(
+	System_IO_FileStream_t /* System.IO.FileStream */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): CanRead
+CBool /* System.Boolean */
+System_IO_FileStream_CanRead_Get(
+	System_IO_FileStream_t /* System.IO.FileStream */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): CanWrite
+CBool /* System.Boolean */
+System_IO_FileStream_CanWrite_Get(
+	System_IO_FileStream_t /* System.IO.FileStream */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): SafeFileHandle
+Microsoft_Win32_SafeHandles_SafeFileHandle_t /* Microsoft.Win32.SafeHandles.SafeFileHandle */
+System_IO_FileStream_SafeFileHandle_Get(
+	System_IO_FileStream_t /* System.IO.FileStream */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Name
+CString /* System.String */
+System_IO_FileStream_Name_Get(
+	System_IO_FileStream_t /* System.IO.FileStream */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): IsAsync
+CBool /* System.Boolean */
+System_IO_FileStream_IsAsync_Get(
+	System_IO_FileStream_t /* System.IO.FileStream */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Length
+int64_t /* System.Int64 */
+System_IO_FileStream_Length_Get(
+	System_IO_FileStream_t /* System.IO.FileStream */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Position
+int64_t /* System.Int64 */
+System_IO_FileStream_Position_Get(
+	System_IO_FileStream_t /* System.IO.FileStream */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Position
+void /* System.Void */
+System_IO_FileStream_Position_Set(
+	System_IO_FileStream_t /* System.IO.FileStream */ self,
+	int64_t /* System.Int64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): CanSeek
+CBool /* System.Boolean */
+System_IO_FileStream_CanSeek_Get(
+	System_IO_FileStream_t /* System.IO.FileStream */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_IO_FileStream_Destroy(
@@ -4077,27 +4389,69 @@ System_Threading_Tasks_Task_Delay3(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): Id
+int32_t /* System.Int32 */
+System_Threading_Tasks_Task_Id_Get(
+	System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Exception
+System_AggregateException_t /* System.AggregateException */
+System_Threading_Tasks_Task_Exception_Get(
+	System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Status
+System_Threading_Tasks_TaskStatus /* System.Threading.Tasks.TaskStatus */
+System_Threading_Tasks_Task_Status_Get(
+	System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): IsCanceled
+CBool /* System.Boolean */
+System_Threading_Tasks_Task_IsCanceled_Get(
+	System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): IsCompleted
+CBool /* System.Boolean */
+System_Threading_Tasks_Task_IsCompleted_Get(
+	System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): IsCompletedSuccessfully
+CBool /* System.Boolean */
+System_Threading_Tasks_Task_IsCompletedSuccessfully_Get(
+	System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): CreationOptions
+System_Threading_Tasks_TaskCreationOptions /* System.Threading.Tasks.TaskCreationOptions */
+System_Threading_Tasks_Task_CreationOptions_Get(
+	System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): AsyncState
+System_Object_t /* System.Object */
+System_Threading_Tasks_Task_AsyncState_Get(
+	System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Factory
+System_Threading_Tasks_TaskFactory_t /* System.Threading.Tasks.TaskFactory */
+System_Threading_Tasks_Task_Factory_Get(
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): CompletedTask
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_Threading_Tasks_Task_CompletedTask_Get(
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): IsFaulted
+CBool /* System.Boolean */
+System_Threading_Tasks_Task_IsFaulted_Get(
+	System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_Threading_Tasks_Task_Destroy(
@@ -4166,7 +4520,11 @@ System_AggregateException_Create2(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): Message
+CString /* System.String */
+System_AggregateException_Message_Get(
+	System_AggregateException_t /* System.AggregateException */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_AggregateException_Destroy(
@@ -4221,27 +4579,74 @@ System_Exception_Create2(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): TargetSite
+System_Reflection_MethodBase_t /* System.Reflection.MethodBase */
+System_Exception_TargetSite_Get(
+	System_Exception_t /* System.Exception */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Message
+CString /* System.String */
+System_Exception_Message_Get(
+	System_Exception_t /* System.Exception */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Data
+System_Collections_IDictionary_t /* System.Collections.IDictionary */
+System_Exception_Data_Get(
+	System_Exception_t /* System.Exception */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): InnerException
+System_Exception_t /* System.Exception */
+System_Exception_InnerException_Get(
+	System_Exception_t /* System.Exception */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): HelpLink
+CString /* System.String */
+System_Exception_HelpLink_Get(
+	System_Exception_t /* System.Exception */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): HelpLink
+void /* System.Void */
+System_Exception_HelpLink_Set(
+	System_Exception_t /* System.Exception */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Source
+CString /* System.String */
+System_Exception_Source_Get(
+	System_Exception_t /* System.Exception */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Source
+void /* System.Void */
+System_Exception_Source_Set(
+	System_Exception_t /* System.Exception */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): HResult
+int32_t /* System.Int32 */
+System_Exception_HResult_Get(
+	System_Exception_t /* System.Exception */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): HResult
+void /* System.Void */
+System_Exception_HResult_Set(
+	System_Exception_t /* System.Exception */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): StackTrace
+CString /* System.String */
+System_Exception_StackTrace_Get(
+	System_Exception_t /* System.Exception */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_Exception_Destroy(
@@ -4350,7 +4755,11 @@ System_RuntimeMethodHandle_GetFunctionPointer(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): Value
+int /* System.IntPtr */
+System_RuntimeMethodHandle_Value_Get(
+	System_RuntimeMethodHandle_t /* System.RuntimeMethodHandle */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_RuntimeMethodHandle_Destroy(
@@ -4631,21 +5040,55 @@ System_Runtime_Serialization_SerializationInfo_Create1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): FullTypeName
+CString /* System.String */
+System_Runtime_Serialization_SerializationInfo_FullTypeName_Get(
+	System_Runtime_Serialization_SerializationInfo_t /* System.Runtime.Serialization.SerializationInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): FullTypeName
+void /* System.Void */
+System_Runtime_Serialization_SerializationInfo_FullTypeName_Set(
+	System_Runtime_Serialization_SerializationInfo_t /* System.Runtime.Serialization.SerializationInfo */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): AssemblyName
+CString /* System.String */
+System_Runtime_Serialization_SerializationInfo_AssemblyName_Get(
+	System_Runtime_Serialization_SerializationInfo_t /* System.Runtime.Serialization.SerializationInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): AssemblyName
+void /* System.Void */
+System_Runtime_Serialization_SerializationInfo_AssemblyName_Set(
+	System_Runtime_Serialization_SerializationInfo_t /* System.Runtime.Serialization.SerializationInfo */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): IsFullTypeNameSetExplicit
+CBool /* System.Boolean */
+System_Runtime_Serialization_SerializationInfo_IsFullTypeNameSetExplicit_Get(
+	System_Runtime_Serialization_SerializationInfo_t /* System.Runtime.Serialization.SerializationInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): IsAssemblyNameSetExplicit
+CBool /* System.Boolean */
+System_Runtime_Serialization_SerializationInfo_IsAssemblyNameSetExplicit_Get(
+	System_Runtime_Serialization_SerializationInfo_t /* System.Runtime.Serialization.SerializationInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): MemberCount
+int32_t /* System.Int32 */
+System_Runtime_Serialization_SerializationInfo_MemberCount_Get(
+	System_Runtime_Serialization_SerializationInfo_t /* System.Runtime.Serialization.SerializationInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): ObjectType
+System_Type_t /* System.Type */
+System_Runtime_Serialization_SerializationInfo_ObjectType_Get(
+	System_Runtime_Serialization_SerializationInfo_t /* System.Runtime.Serialization.SerializationInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_Runtime_Serialization_SerializationInfo_Destroy(
@@ -4668,13 +5111,29 @@ System_Runtime_Serialization_SerializationInfoEnumerator_Reset(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): Current
+System_Runtime_Serialization_SerializationEntry_t /* System.Runtime.Serialization.SerializationEntry */
+System_Runtime_Serialization_SerializationInfoEnumerator_Current_Get(
+	System_Runtime_Serialization_SerializationInfoEnumerator_t /* System.Runtime.Serialization.SerializationInfoEnumerator */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Name
+CString /* System.String */
+System_Runtime_Serialization_SerializationInfoEnumerator_Name_Get(
+	System_Runtime_Serialization_SerializationInfoEnumerator_t /* System.Runtime.Serialization.SerializationInfoEnumerator */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Value
+System_Object_t /* System.Object */
+System_Runtime_Serialization_SerializationInfoEnumerator_Value_Get(
+	System_Runtime_Serialization_SerializationInfoEnumerator_t /* System.Runtime.Serialization.SerializationInfoEnumerator */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): ObjectType
+System_Type_t /* System.Type */
+System_Runtime_Serialization_SerializationInfoEnumerator_ObjectType_Get(
+	System_Runtime_Serialization_SerializationInfoEnumerator_t /* System.Runtime.Serialization.SerializationInfoEnumerator */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_Runtime_Serialization_SerializationInfoEnumerator_Destroy(
@@ -4685,11 +5144,23 @@ System_Runtime_Serialization_SerializationInfoEnumerator_Destroy(
 #pragma mark - END APIs of System.Runtime.Serialization.SerializationInfoEnumerator
 
 #pragma mark - BEGIN APIs of System.Runtime.Serialization.SerializationEntry
-// TODO (Property): Value
+System_Object_t /* System.Object */
+System_Runtime_Serialization_SerializationEntry_Value_Get(
+	System_Runtime_Serialization_SerializationEntry_t /* System.Runtime.Serialization.SerializationEntry */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Name
+CString /* System.String */
+System_Runtime_Serialization_SerializationEntry_Name_Get(
+	System_Runtime_Serialization_SerializationEntry_t /* System.Runtime.Serialization.SerializationEntry */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): ObjectType
+System_Type_t /* System.Type */
+System_Runtime_Serialization_SerializationEntry_ObjectType_Get(
+	System_Runtime_Serialization_SerializationEntry_t /* System.Runtime.Serialization.SerializationEntry */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_Runtime_Serialization_SerializationEntry_Destroy(
@@ -5124,7 +5595,11 @@ System_Decimal_Create6(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): Scale
+uint8_t /* System.Byte */
+System_Decimal_Scale_Get(
+	System_Decimal_t /* System.Decimal */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_Decimal_Destroy(
@@ -5637,41 +6112,110 @@ System_DateTime_Create16(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): Date
+System_DateTime_t /* System.DateTime */
+System_DateTime_Date_Get(
+	System_DateTime_t /* System.DateTime */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Day
+int32_t /* System.Int32 */
+System_DateTime_Day_Get(
+	System_DateTime_t /* System.DateTime */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): DayOfWeek
+System_DayOfWeek /* System.DayOfWeek */
+System_DateTime_DayOfWeek_Get(
+	System_DateTime_t /* System.DateTime */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): DayOfYear
+int32_t /* System.Int32 */
+System_DateTime_DayOfYear_Get(
+	System_DateTime_t /* System.DateTime */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Hour
+int32_t /* System.Int32 */
+System_DateTime_Hour_Get(
+	System_DateTime_t /* System.DateTime */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Kind
+System_DateTimeKind /* System.DateTimeKind */
+System_DateTime_Kind_Get(
+	System_DateTime_t /* System.DateTime */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Millisecond
+int32_t /* System.Int32 */
+System_DateTime_Millisecond_Get(
+	System_DateTime_t /* System.DateTime */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Microsecond
+int32_t /* System.Int32 */
+System_DateTime_Microsecond_Get(
+	System_DateTime_t /* System.DateTime */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Nanosecond
+int32_t /* System.Int32 */
+System_DateTime_Nanosecond_Get(
+	System_DateTime_t /* System.DateTime */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Minute
+int32_t /* System.Int32 */
+System_DateTime_Minute_Get(
+	System_DateTime_t /* System.DateTime */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Month
+int32_t /* System.Int32 */
+System_DateTime_Month_Get(
+	System_DateTime_t /* System.DateTime */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Now
+System_DateTime_t /* System.DateTime */
+System_DateTime_Now_Get(
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Second
+int32_t /* System.Int32 */
+System_DateTime_Second_Get(
+	System_DateTime_t /* System.DateTime */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Ticks
+int64_t /* System.Int64 */
+System_DateTime_Ticks_Get(
+	System_DateTime_t /* System.DateTime */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): TimeOfDay
+System_TimeSpan_t /* System.TimeSpan */
+System_DateTime_TimeOfDay_Get(
+	System_DateTime_t /* System.DateTime */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Today
+System_DateTime_t /* System.DateTime */
+System_DateTime_Today_Get(
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Year
+int32_t /* System.Int32 */
+System_DateTime_Year_Get(
+	System_DateTime_t /* System.DateTime */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): UtcNow
+System_DateTime_t /* System.DateTime */
+System_DateTime_UtcNow_Get(
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_DateTime_Destroy(
@@ -5914,35 +6458,95 @@ System_TimeSpan_Create4(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): Ticks
+int64_t /* System.Int64 */
+System_TimeSpan_Ticks_Get(
+	System_TimeSpan_t /* System.TimeSpan */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Days
+int32_t /* System.Int32 */
+System_TimeSpan_Days_Get(
+	System_TimeSpan_t /* System.TimeSpan */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Hours
+int32_t /* System.Int32 */
+System_TimeSpan_Hours_Get(
+	System_TimeSpan_t /* System.TimeSpan */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Milliseconds
+int32_t /* System.Int32 */
+System_TimeSpan_Milliseconds_Get(
+	System_TimeSpan_t /* System.TimeSpan */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Microseconds
+int32_t /* System.Int32 */
+System_TimeSpan_Microseconds_Get(
+	System_TimeSpan_t /* System.TimeSpan */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Nanoseconds
+int32_t /* System.Int32 */
+System_TimeSpan_Nanoseconds_Get(
+	System_TimeSpan_t /* System.TimeSpan */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Minutes
+int32_t /* System.Int32 */
+System_TimeSpan_Minutes_Get(
+	System_TimeSpan_t /* System.TimeSpan */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Seconds
+int32_t /* System.Int32 */
+System_TimeSpan_Seconds_Get(
+	System_TimeSpan_t /* System.TimeSpan */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): TotalDays
+double /* System.Double */
+System_TimeSpan_TotalDays_Get(
+	System_TimeSpan_t /* System.TimeSpan */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): TotalHours
+double /* System.Double */
+System_TimeSpan_TotalHours_Get(
+	System_TimeSpan_t /* System.TimeSpan */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): TotalMilliseconds
+double /* System.Double */
+System_TimeSpan_TotalMilliseconds_Get(
+	System_TimeSpan_t /* System.TimeSpan */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): TotalMicroseconds
+double /* System.Double */
+System_TimeSpan_TotalMicroseconds_Get(
+	System_TimeSpan_t /* System.TimeSpan */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): TotalNanoseconds
+double /* System.Double */
+System_TimeSpan_TotalNanoseconds_Get(
+	System_TimeSpan_t /* System.TimeSpan */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): TotalMinutes
+double /* System.Double */
+System_TimeSpan_TotalMinutes_Get(
+	System_TimeSpan_t /* System.TimeSpan */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): TotalSeconds
+double /* System.Double */
+System_TimeSpan_TotalSeconds_Get(
+	System_TimeSpan_t /* System.TimeSpan */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_TimeSpan_Destroy(
@@ -6149,21 +6753,51 @@ System_DateOnly_Create1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): MinValue
+System_DateOnly_t /* System.DateOnly */
+System_DateOnly_MinValue_Get(
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): MaxValue
+System_DateOnly_t /* System.DateOnly */
+System_DateOnly_MaxValue_Get(
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Year
+int32_t /* System.Int32 */
+System_DateOnly_Year_Get(
+	System_DateOnly_t /* System.DateOnly */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Month
+int32_t /* System.Int32 */
+System_DateOnly_Month_Get(
+	System_DateOnly_t /* System.DateOnly */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Day
+int32_t /* System.Int32 */
+System_DateOnly_Day_Get(
+	System_DateOnly_t /* System.DateOnly */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): DayOfWeek
+System_DayOfWeek /* System.DayOfWeek */
+System_DateOnly_DayOfWeek_Get(
+	System_DateOnly_t /* System.DateOnly */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): DayOfYear
+int32_t /* System.Int32 */
+System_DateOnly_DayOfYear_Get(
+	System_DateOnly_t /* System.DateOnly */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): DayNumber
+int32_t /* System.Int32 */
+System_DateOnly_DayNumber_Get(
+	System_DateOnly_t /* System.DateOnly */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_DateOnly_Destroy(
@@ -6372,23 +7006,57 @@ System_TimeOnly_Create4(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): MinValue
+System_TimeOnly_t /* System.TimeOnly */
+System_TimeOnly_MinValue_Get(
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): MaxValue
+System_TimeOnly_t /* System.TimeOnly */
+System_TimeOnly_MaxValue_Get(
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Hour
+int32_t /* System.Int32 */
+System_TimeOnly_Hour_Get(
+	System_TimeOnly_t /* System.TimeOnly */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Minute
+int32_t /* System.Int32 */
+System_TimeOnly_Minute_Get(
+	System_TimeOnly_t /* System.TimeOnly */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Second
+int32_t /* System.Int32 */
+System_TimeOnly_Second_Get(
+	System_TimeOnly_t /* System.TimeOnly */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Millisecond
+int32_t /* System.Int32 */
+System_TimeOnly_Millisecond_Get(
+	System_TimeOnly_t /* System.TimeOnly */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Microsecond
+int32_t /* System.Int32 */
+System_TimeOnly_Microsecond_Get(
+	System_TimeOnly_t /* System.TimeOnly */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Nanosecond
+int32_t /* System.Int32 */
+System_TimeOnly_Nanosecond_Get(
+	System_TimeOnly_t /* System.TimeOnly */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Ticks
+int64_t /* System.Int64 */
+System_TimeOnly_Ticks_Get(
+	System_TimeOnly_t /* System.TimeOnly */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_TimeOnly_Destroy(
@@ -6876,9 +7544,17 @@ System_Runtime_Serialization_StreamingContext_Create1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): State
+System_Runtime_Serialization_StreamingContextStates /* System.Runtime.Serialization.StreamingContextStates */
+System_Runtime_Serialization_StreamingContext_State_Get(
+	System_Runtime_Serialization_StreamingContext_t /* System.Runtime.Serialization.StreamingContext */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Context
+System_Object_t /* System.Object */
+System_Runtime_Serialization_StreamingContext_Context_Get(
+	System_Runtime_Serialization_StreamingContext_t /* System.Runtime.Serialization.StreamingContext */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_Runtime_Serialization_StreamingContext_Destroy(
@@ -6941,7 +7617,11 @@ System_RuntimeTypeHandle_GetObjectData(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): Value
+int /* System.IntPtr */
+System_RuntimeTypeHandle_Value_Get(
+	System_RuntimeTypeHandle_t /* System.RuntimeTypeHandle */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_RuntimeTypeHandle_Destroy(
@@ -7014,7 +7694,11 @@ System_ModuleHandle_ResolveFieldHandle(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): MDStreamVersion
+int32_t /* System.Int32 */
+System_ModuleHandle_MDStreamVersion_Get(
+	System_ModuleHandle_t /* System.ModuleHandle */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_ModuleHandle_Destroy(
@@ -7065,7 +7749,11 @@ System_RuntimeFieldHandle_GetObjectData(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): Value
+int /* System.IntPtr */
+System_RuntimeFieldHandle_Value_Get(
+	System_RuntimeFieldHandle_t /* System.RuntimeFieldHandle */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_RuntimeFieldHandle_Destroy(
@@ -7086,11 +7774,23 @@ System_RuntimeFieldHandle_Destroy(
 #pragma mark - END APIs of System.Reflection.MethodImplAttributes
 
 #pragma mark - BEGIN APIs of System.Reflection.MethodBody
-// TODO (Property): LocalSignatureMetadataToken
+int32_t /* System.Int32 */
+System_Reflection_MethodBody_LocalSignatureMetadataToken_Get(
+	System_Reflection_MethodBody_t /* System.Reflection.MethodBody */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): MaxStackSize
+int32_t /* System.Int32 */
+System_Reflection_MethodBody_MaxStackSize_Get(
+	System_Reflection_MethodBody_t /* System.Reflection.MethodBody */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): InitLocals
+CBool /* System.Boolean */
+System_Reflection_MethodBody_InitLocals_Get(
+	System_Reflection_MethodBody_t /* System.Reflection.MethodBody */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_Reflection_MethodBody_Destroy(
@@ -7336,33 +8036,89 @@ System_Reflection_ParameterInfo_ToString(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): Attributes
+System_Reflection_ParameterAttributes /* System.Reflection.ParameterAttributes */
+System_Reflection_ParameterInfo_Attributes_Get(
+	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Member
+System_Reflection_MemberInfo_t /* System.Reflection.MemberInfo */
+System_Reflection_ParameterInfo_Member_Get(
+	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Name
+CString /* System.String */
+System_Reflection_ParameterInfo_Name_Get(
+	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): ParameterType
+System_Type_t /* System.Type */
+System_Reflection_ParameterInfo_ParameterType_Get(
+	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Position
+int32_t /* System.Int32 */
+System_Reflection_ParameterInfo_Position_Get(
+	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): IsIn
+CBool /* System.Boolean */
+System_Reflection_ParameterInfo_IsIn_Get(
+	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): IsLcid
+CBool /* System.Boolean */
+System_Reflection_ParameterInfo_IsLcid_Get(
+	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): IsOptional
+CBool /* System.Boolean */
+System_Reflection_ParameterInfo_IsOptional_Get(
+	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): IsOut
+CBool /* System.Boolean */
+System_Reflection_ParameterInfo_IsOut_Get(
+	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): IsRetval
+CBool /* System.Boolean */
+System_Reflection_ParameterInfo_IsRetval_Get(
+	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): DefaultValue
+System_Object_t /* System.Object */
+System_Reflection_ParameterInfo_DefaultValue_Get(
+	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): RawDefaultValue
+System_Object_t /* System.Object */
+System_Reflection_ParameterInfo_RawDefaultValue_Get(
+	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): HasDefaultValue
+CBool /* System.Boolean */
+System_Reflection_ParameterInfo_HasDefaultValue_Get(
+	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): MetadataToken
+int32_t /* System.Int32 */
+System_Reflection_ParameterInfo_MetadataToken_Get(
+	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_Reflection_ParameterInfo_Destroy(
@@ -7932,13 +8688,31 @@ System_Collections_DictionaryEntry_Create(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): Key
+System_Object_t /* System.Object */
+System_Collections_DictionaryEntry_Key_Get(
+	System_Collections_DictionaryEntry_t /* System.Collections.DictionaryEntry */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Key
+void /* System.Void */
+System_Collections_DictionaryEntry_Key_Set(
+	System_Collections_DictionaryEntry_t /* System.Collections.DictionaryEntry */ self,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Value
+System_Object_t /* System.Object */
+System_Collections_DictionaryEntry_Value_Get(
+	System_Collections_DictionaryEntry_t /* System.Collections.DictionaryEntry */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Value
+void /* System.Void */
+System_Collections_DictionaryEntry_Value_Set(
+	System_Collections_DictionaryEntry_t /* System.Collections.DictionaryEntry */ self,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_Collections_DictionaryEntry_Destroy(
@@ -7992,13 +8766,29 @@ System_Threading_Tasks_TaskFactory_Create4(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): CancellationToken
+System_Threading_CancellationToken_t /* System.Threading.CancellationToken */
+System_Threading_Tasks_TaskFactory_CancellationToken_Get(
+	System_Threading_Tasks_TaskFactory_t /* System.Threading.Tasks.TaskFactory */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Scheduler
+System_Threading_Tasks_TaskScheduler_t /* System.Threading.Tasks.TaskScheduler */
+System_Threading_Tasks_TaskFactory_Scheduler_Get(
+	System_Threading_Tasks_TaskFactory_t /* System.Threading.Tasks.TaskFactory */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): CreationOptions
+System_Threading_Tasks_TaskCreationOptions /* System.Threading.Tasks.TaskCreationOptions */
+System_Threading_Tasks_TaskFactory_CreationOptions_Get(
+	System_Threading_Tasks_TaskFactory_t /* System.Threading.Tasks.TaskFactory */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): ContinuationOptions
+System_Threading_Tasks_TaskContinuationOptions /* System.Threading.Tasks.TaskContinuationOptions */
+System_Threading_Tasks_TaskFactory_ContinuationOptions_Get(
+	System_Threading_Tasks_TaskFactory_t /* System.Threading.Tasks.TaskFactory */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_Threading_Tasks_TaskFactory_Destroy(
@@ -8041,13 +8831,28 @@ System_Threading_CancellationToken_Create(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): None
+System_Threading_CancellationToken_t /* System.Threading.CancellationToken */
+System_Threading_CancellationToken_None_Get(
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): IsCancellationRequested
+CBool /* System.Boolean */
+System_Threading_CancellationToken_IsCancellationRequested_Get(
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): CanBeCanceled
+CBool /* System.Boolean */
+System_Threading_CancellationToken_CanBeCanceled_Get(
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): WaitHandle
+System_Threading_WaitHandle_t /* System.Threading.WaitHandle */
+System_Threading_CancellationToken_WaitHandle_Get(
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_Threading_CancellationToken_Destroy(
@@ -8256,7 +9061,11 @@ System_Threading_CancellationTokenRegistration_GetHashCode(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): Token
+System_Threading_CancellationToken_t /* System.Threading.CancellationToken */
+System_Threading_CancellationTokenRegistration_Token_Get(
+	System_Threading_CancellationTokenRegistration_t /* System.Threading.CancellationTokenRegistration */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_Threading_CancellationTokenRegistration_Destroy(
@@ -8337,15 +9146,34 @@ System_Threading_Tasks_ValueTask_Create1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): CompletedTask
+System_Threading_Tasks_ValueTask_t /* System.Threading.Tasks.ValueTask */
+System_Threading_Tasks_ValueTask_CompletedTask_Get(
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): IsCompleted
+CBool /* System.Boolean */
+System_Threading_Tasks_ValueTask_IsCompleted_Get(
+	System_Threading_Tasks_ValueTask_t /* System.Threading.Tasks.ValueTask */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): IsCompletedSuccessfully
+CBool /* System.Boolean */
+System_Threading_Tasks_ValueTask_IsCompletedSuccessfully_Get(
+	System_Threading_Tasks_ValueTask_t /* System.Threading.Tasks.ValueTask */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): IsFaulted
+CBool /* System.Boolean */
+System_Threading_Tasks_ValueTask_IsFaulted_Get(
+	System_Threading_Tasks_ValueTask_t /* System.Threading.Tasks.ValueTask */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): IsCanceled
+CBool /* System.Boolean */
+System_Threading_Tasks_ValueTask_IsCanceled_Get(
+	System_Threading_Tasks_ValueTask_t /* System.Threading.Tasks.ValueTask */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_Threading_Tasks_ValueTask_Destroy(
@@ -8362,7 +9190,11 @@ System_Runtime_CompilerServices_ValueTaskAwaiter_GetResult(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): IsCompleted
+CBool /* System.Boolean */
+System_Runtime_CompilerServices_ValueTaskAwaiter_IsCompleted_Get(
+	System_Runtime_CompilerServices_ValueTaskAwaiter_t /* System.Runtime.CompilerServices.ValueTaskAwaiter */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_Runtime_CompilerServices_ValueTaskAwaiter_Destroy(
@@ -8394,7 +9226,11 @@ System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTask
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): IsCompleted
+CBool /* System.Boolean */
+System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_IsCompleted_Get(
+	System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_t /* System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_Destroy(
@@ -8458,7 +9294,11 @@ System_Runtime_CompilerServices_TaskAwaiter_GetResult(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): IsCompleted
+CBool /* System.Boolean */
+System_Runtime_CompilerServices_TaskAwaiter_IsCompleted_Get(
+	System_Runtime_CompilerServices_TaskAwaiter_t /* System.Runtime.CompilerServices.TaskAwaiter */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_Runtime_CompilerServices_TaskAwaiter_Destroy(
@@ -8490,7 +9330,11 @@ System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_Ge
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): IsCompleted
+CBool /* System.Boolean */
+System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_IsCompleted_Get(
+	System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_t /* System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_Destroy(
@@ -8522,7 +9366,11 @@ System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_GetResult(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): IsCompleted
+CBool /* System.Boolean */
+System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_IsCompleted_Get(
+	System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_t /* System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_Destroy(
@@ -8550,9 +9398,17 @@ Microsoft_Win32_SafeHandles_SafeFileHandle_Create1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): IsAsync
+CBool /* System.Boolean */
+Microsoft_Win32_SafeHandles_SafeFileHandle_IsAsync_Get(
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t /* Microsoft.Win32.SafeHandles.SafeFileHandle */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): IsInvalid
+CBool /* System.Boolean */
+Microsoft_Win32_SafeHandles_SafeFileHandle_IsInvalid_Get(
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t /* Microsoft.Win32.SafeHandles.SafeFileHandle */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 Microsoft_Win32_SafeHandles_SafeFileHandle_Destroy(
@@ -8588,29 +9444,83 @@ System_IO_FileStreamOptions_Create(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): Mode
+System_IO_FileMode /* System.IO.FileMode */
+System_IO_FileStreamOptions_Mode_Get(
+	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Mode
+void /* System.Void */
+System_IO_FileStreamOptions_Mode_Set(
+	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ self,
+	System_IO_FileMode /* System.IO.FileMode */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Access
+System_IO_FileAccess /* System.IO.FileAccess */
+System_IO_FileStreamOptions_Access_Get(
+	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Access
+void /* System.Void */
+System_IO_FileStreamOptions_Access_Set(
+	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ self,
+	System_IO_FileAccess /* System.IO.FileAccess */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Share
+System_IO_FileShare /* System.IO.FileShare */
+System_IO_FileStreamOptions_Share_Get(
+	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Share
+void /* System.Void */
+System_IO_FileStreamOptions_Share_Set(
+	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ self,
+	System_IO_FileShare /* System.IO.FileShare */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Options
+System_IO_FileOptions /* System.IO.FileOptions */
+System_IO_FileStreamOptions_Options_Get(
+	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Options
+void /* System.Void */
+System_IO_FileStreamOptions_Options_Set(
+	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ self,
+	System_IO_FileOptions /* System.IO.FileOptions */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): PreallocationSize
+int64_t /* System.Int64 */
+System_IO_FileStreamOptions_PreallocationSize_Get(
+	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): PreallocationSize
+void /* System.Void */
+System_IO_FileStreamOptions_PreallocationSize_Set(
+	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ self,
+	int64_t /* System.Int64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): BufferSize
+int32_t /* System.Int32 */
+System_IO_FileStreamOptions_BufferSize_Get(
+	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): BufferSize
+void /* System.Void */
+System_IO_FileStreamOptions_BufferSize_Set(
+	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_IO_FileStreamOptions_Destroy(
@@ -8629,11 +9539,23 @@ System_Reflection_ManifestResourceInfo_Create(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): ReferencedAssembly
+System_Reflection_Assembly_t /* System.Reflection.Assembly */
+System_Reflection_ManifestResourceInfo_ReferencedAssembly_Get(
+	System_Reflection_ManifestResourceInfo_t /* System.Reflection.ManifestResourceInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): FileName
+CString /* System.String */
+System_Reflection_ManifestResourceInfo_FileName_Get(
+	System_Reflection_ManifestResourceInfo_t /* System.Reflection.ManifestResourceInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): ResourceLocation
+System_Reflection_ResourceLocation /* System.Reflection.ResourceLocation */
+System_Reflection_ManifestResourceInfo_ResourceLocation_Get(
+	System_Reflection_ManifestResourceInfo_t /* System.Reflection.ManifestResourceInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_Reflection_ManifestResourceInfo_Destroy(
@@ -9093,19 +10015,46 @@ System_Text_Rune_Create3(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): IsAscii
+CBool /* System.Boolean */
+System_Text_Rune_IsAscii_Get(
+	System_Text_Rune_t /* System.Text.Rune */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): IsBmp
+CBool /* System.Boolean */
+System_Text_Rune_IsBmp_Get(
+	System_Text_Rune_t /* System.Text.Rune */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Plane
+int32_t /* System.Int32 */
+System_Text_Rune_Plane_Get(
+	System_Text_Rune_t /* System.Text.Rune */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): ReplacementChar
+System_Text_Rune_t /* System.Text.Rune */
+System_Text_Rune_ReplacementChar_Get(
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Utf16SequenceLength
+int32_t /* System.Int32 */
+System_Text_Rune_Utf16SequenceLength_Get(
+	System_Text_Rune_t /* System.Text.Rune */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Utf8SequenceLength
+int32_t /* System.Int32 */
+System_Text_Rune_Utf8SequenceLength_Get(
+	System_Text_Rune_t /* System.Text.Rune */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Value
+int32_t /* System.Int32 */
+System_Text_Rune_Value_Get(
+	System_Text_Rune_t /* System.Text.Rune */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_Text_Rune_Destroy(
@@ -9152,7 +10101,11 @@ System_Globalization_SortKey_ToString(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): OriginalString
+CString /* System.String */
+System_Globalization_SortKey_OriginalString_Get(
+	System_Globalization_SortKey_t /* System.Globalization.SortKey */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_Globalization_SortKey_Destroy(
@@ -9190,9 +10143,17 @@ System_Globalization_SortVersion_Create(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): FullVersion
+int32_t /* System.Int32 */
+System_Globalization_SortVersion_FullVersion_Get(
+	System_Globalization_SortVersion_t /* System.Globalization.SortVersion */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): SortId
+System_Guid_t /* System.Guid */
+System_Globalization_SortVersion_SortId_Get(
+	System_Globalization_SortVersion_t /* System.Globalization.SortVersion */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_Globalization_SortVersion_Destroy(
@@ -9269,25 +10230,66 @@ System_Globalization_TextInfo_ToTitleCase(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): ANSICodePage
+int32_t /* System.Int32 */
+System_Globalization_TextInfo_ANSICodePage_Get(
+	System_Globalization_TextInfo_t /* System.Globalization.TextInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): OEMCodePage
+int32_t /* System.Int32 */
+System_Globalization_TextInfo_OEMCodePage_Get(
+	System_Globalization_TextInfo_t /* System.Globalization.TextInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): MacCodePage
+int32_t /* System.Int32 */
+System_Globalization_TextInfo_MacCodePage_Get(
+	System_Globalization_TextInfo_t /* System.Globalization.TextInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): EBCDICCodePage
+int32_t /* System.Int32 */
+System_Globalization_TextInfo_EBCDICCodePage_Get(
+	System_Globalization_TextInfo_t /* System.Globalization.TextInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): LCID
+int32_t /* System.Int32 */
+System_Globalization_TextInfo_LCID_Get(
+	System_Globalization_TextInfo_t /* System.Globalization.TextInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): CultureName
+CString /* System.String */
+System_Globalization_TextInfo_CultureName_Get(
+	System_Globalization_TextInfo_t /* System.Globalization.TextInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): IsReadOnly
+CBool /* System.Boolean */
+System_Globalization_TextInfo_IsReadOnly_Get(
+	System_Globalization_TextInfo_t /* System.Globalization.TextInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): ListSeparator
+CString /* System.String */
+System_Globalization_TextInfo_ListSeparator_Get(
+	System_Globalization_TextInfo_t /* System.Globalization.TextInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): ListSeparator
+void /* System.Void */
+System_Globalization_TextInfo_ListSeparator_Set(
+	System_Globalization_TextInfo_t /* System.Globalization.TextInfo */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): IsRightToLeft
+CBool /* System.Boolean */
+System_Globalization_TextInfo_IsRightToLeft_Get(
+	System_Globalization_TextInfo_t /* System.Globalization.TextInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_Globalization_TextInfo_Destroy(
@@ -9328,103 +10330,320 @@ System_Globalization_NumberFormatInfo_Create(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): InvariantInfo
+System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */
+System_Globalization_NumberFormatInfo_InvariantInfo_Get(
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): CurrencyDecimalDigits
+int32_t /* System.Int32 */
+System_Globalization_NumberFormatInfo_CurrencyDecimalDigits_Get(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): CurrencyDecimalDigits
+void /* System.Void */
+System_Globalization_NumberFormatInfo_CurrencyDecimalDigits_Set(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): CurrencyDecimalSeparator
+CString /* System.String */
+System_Globalization_NumberFormatInfo_CurrencyDecimalSeparator_Get(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): CurrencyDecimalSeparator
+void /* System.Void */
+System_Globalization_NumberFormatInfo_CurrencyDecimalSeparator_Set(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): IsReadOnly
+CBool /* System.Boolean */
+System_Globalization_NumberFormatInfo_IsReadOnly_Get(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): CurrencyGroupSeparator
+CString /* System.String */
+System_Globalization_NumberFormatInfo_CurrencyGroupSeparator_Get(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): CurrencyGroupSeparator
+void /* System.Void */
+System_Globalization_NumberFormatInfo_CurrencyGroupSeparator_Set(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): CurrencySymbol
+CString /* System.String */
+System_Globalization_NumberFormatInfo_CurrencySymbol_Get(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): CurrencySymbol
+void /* System.Void */
+System_Globalization_NumberFormatInfo_CurrencySymbol_Set(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): CurrentInfo
+System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */
+System_Globalization_NumberFormatInfo_CurrentInfo_Get(
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): NaNSymbol
+CString /* System.String */
+System_Globalization_NumberFormatInfo_NaNSymbol_Get(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): NaNSymbol
+void /* System.Void */
+System_Globalization_NumberFormatInfo_NaNSymbol_Set(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): CurrencyNegativePattern
+int32_t /* System.Int32 */
+System_Globalization_NumberFormatInfo_CurrencyNegativePattern_Get(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): CurrencyNegativePattern
+void /* System.Void */
+System_Globalization_NumberFormatInfo_CurrencyNegativePattern_Set(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): NumberNegativePattern
+int32_t /* System.Int32 */
+System_Globalization_NumberFormatInfo_NumberNegativePattern_Get(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): NumberNegativePattern
+void /* System.Void */
+System_Globalization_NumberFormatInfo_NumberNegativePattern_Set(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): PercentPositivePattern
+int32_t /* System.Int32 */
+System_Globalization_NumberFormatInfo_PercentPositivePattern_Get(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): PercentPositivePattern
+void /* System.Void */
+System_Globalization_NumberFormatInfo_PercentPositivePattern_Set(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): PercentNegativePattern
+int32_t /* System.Int32 */
+System_Globalization_NumberFormatInfo_PercentNegativePattern_Get(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): PercentNegativePattern
+void /* System.Void */
+System_Globalization_NumberFormatInfo_PercentNegativePattern_Set(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): NegativeInfinitySymbol
+CString /* System.String */
+System_Globalization_NumberFormatInfo_NegativeInfinitySymbol_Get(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): NegativeInfinitySymbol
+void /* System.Void */
+System_Globalization_NumberFormatInfo_NegativeInfinitySymbol_Set(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): NegativeSign
+CString /* System.String */
+System_Globalization_NumberFormatInfo_NegativeSign_Get(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): NegativeSign
+void /* System.Void */
+System_Globalization_NumberFormatInfo_NegativeSign_Set(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): NumberDecimalDigits
+int32_t /* System.Int32 */
+System_Globalization_NumberFormatInfo_NumberDecimalDigits_Get(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): NumberDecimalDigits
+void /* System.Void */
+System_Globalization_NumberFormatInfo_NumberDecimalDigits_Set(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): NumberDecimalSeparator
+CString /* System.String */
+System_Globalization_NumberFormatInfo_NumberDecimalSeparator_Get(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): NumberDecimalSeparator
+void /* System.Void */
+System_Globalization_NumberFormatInfo_NumberDecimalSeparator_Set(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): NumberGroupSeparator
+CString /* System.String */
+System_Globalization_NumberFormatInfo_NumberGroupSeparator_Get(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): NumberGroupSeparator
+void /* System.Void */
+System_Globalization_NumberFormatInfo_NumberGroupSeparator_Set(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): CurrencyPositivePattern
+int32_t /* System.Int32 */
+System_Globalization_NumberFormatInfo_CurrencyPositivePattern_Get(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): CurrencyPositivePattern
+void /* System.Void */
+System_Globalization_NumberFormatInfo_CurrencyPositivePattern_Set(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): PositiveInfinitySymbol
+CString /* System.String */
+System_Globalization_NumberFormatInfo_PositiveInfinitySymbol_Get(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): PositiveInfinitySymbol
+void /* System.Void */
+System_Globalization_NumberFormatInfo_PositiveInfinitySymbol_Set(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): PositiveSign
+CString /* System.String */
+System_Globalization_NumberFormatInfo_PositiveSign_Get(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): PositiveSign
+void /* System.Void */
+System_Globalization_NumberFormatInfo_PositiveSign_Set(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): PercentDecimalDigits
+int32_t /* System.Int32 */
+System_Globalization_NumberFormatInfo_PercentDecimalDigits_Get(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): PercentDecimalDigits
+void /* System.Void */
+System_Globalization_NumberFormatInfo_PercentDecimalDigits_Set(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): PercentDecimalSeparator
+CString /* System.String */
+System_Globalization_NumberFormatInfo_PercentDecimalSeparator_Get(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): PercentDecimalSeparator
+void /* System.Void */
+System_Globalization_NumberFormatInfo_PercentDecimalSeparator_Set(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): PercentGroupSeparator
+CString /* System.String */
+System_Globalization_NumberFormatInfo_PercentGroupSeparator_Get(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): PercentGroupSeparator
+void /* System.Void */
+System_Globalization_NumberFormatInfo_PercentGroupSeparator_Set(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): PercentSymbol
+CString /* System.String */
+System_Globalization_NumberFormatInfo_PercentSymbol_Get(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): PercentSymbol
+void /* System.Void */
+System_Globalization_NumberFormatInfo_PercentSymbol_Set(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): PerMilleSymbol
+CString /* System.String */
+System_Globalization_NumberFormatInfo_PerMilleSymbol_Get(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): PerMilleSymbol
+void /* System.Void */
+System_Globalization_NumberFormatInfo_PerMilleSymbol_Set(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): DigitSubstitution
+System_Globalization_DigitShapes /* System.Globalization.DigitShapes */
+System_Globalization_NumberFormatInfo_DigitSubstitution_Get(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): DigitSubstitution
+void /* System.Void */
+System_Globalization_NumberFormatInfo_DigitSubstitution_Set(
+	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
+	System_Globalization_DigitShapes /* System.Globalization.DigitShapes */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_Globalization_NumberFormatInfo_Destroy(
@@ -9526,75 +10745,227 @@ System_Globalization_DateTimeFormatInfo_Create(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): InvariantInfo
+System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */
+System_Globalization_DateTimeFormatInfo_InvariantInfo_Get(
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): CurrentInfo
+System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */
+System_Globalization_DateTimeFormatInfo_CurrentInfo_Get(
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): AMDesignator
+CString /* System.String */
+System_Globalization_DateTimeFormatInfo_AMDesignator_Get(
+	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): AMDesignator
+void /* System.Void */
+System_Globalization_DateTimeFormatInfo_AMDesignator_Set(
+	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Calendar
+System_Globalization_Calendar_t /* System.Globalization.Calendar */
+System_Globalization_DateTimeFormatInfo_Calendar_Get(
+	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Calendar
+void /* System.Void */
+System_Globalization_DateTimeFormatInfo_Calendar_Set(
+	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
+	System_Globalization_Calendar_t /* System.Globalization.Calendar */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): DateSeparator
+CString /* System.String */
+System_Globalization_DateTimeFormatInfo_DateSeparator_Get(
+	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): DateSeparator
+void /* System.Void */
+System_Globalization_DateTimeFormatInfo_DateSeparator_Set(
+	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): FirstDayOfWeek
+System_DayOfWeek /* System.DayOfWeek */
+System_Globalization_DateTimeFormatInfo_FirstDayOfWeek_Get(
+	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): FirstDayOfWeek
+void /* System.Void */
+System_Globalization_DateTimeFormatInfo_FirstDayOfWeek_Set(
+	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
+	System_DayOfWeek /* System.DayOfWeek */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): CalendarWeekRule
+System_Globalization_CalendarWeekRule /* System.Globalization.CalendarWeekRule */
+System_Globalization_DateTimeFormatInfo_CalendarWeekRule_Get(
+	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): CalendarWeekRule
+void /* System.Void */
+System_Globalization_DateTimeFormatInfo_CalendarWeekRule_Set(
+	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
+	System_Globalization_CalendarWeekRule /* System.Globalization.CalendarWeekRule */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): FullDateTimePattern
+CString /* System.String */
+System_Globalization_DateTimeFormatInfo_FullDateTimePattern_Get(
+	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): FullDateTimePattern
+void /* System.Void */
+System_Globalization_DateTimeFormatInfo_FullDateTimePattern_Set(
+	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): LongDatePattern
+CString /* System.String */
+System_Globalization_DateTimeFormatInfo_LongDatePattern_Get(
+	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): LongDatePattern
+void /* System.Void */
+System_Globalization_DateTimeFormatInfo_LongDatePattern_Set(
+	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): LongTimePattern
+CString /* System.String */
+System_Globalization_DateTimeFormatInfo_LongTimePattern_Get(
+	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): LongTimePattern
+void /* System.Void */
+System_Globalization_DateTimeFormatInfo_LongTimePattern_Set(
+	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): MonthDayPattern
+CString /* System.String */
+System_Globalization_DateTimeFormatInfo_MonthDayPattern_Get(
+	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): MonthDayPattern
+void /* System.Void */
+System_Globalization_DateTimeFormatInfo_MonthDayPattern_Set(
+	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): PMDesignator
+CString /* System.String */
+System_Globalization_DateTimeFormatInfo_PMDesignator_Get(
+	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): PMDesignator
+void /* System.Void */
+System_Globalization_DateTimeFormatInfo_PMDesignator_Set(
+	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): RFC1123Pattern
+CString /* System.String */
+System_Globalization_DateTimeFormatInfo_RFC1123Pattern_Get(
+	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): ShortDatePattern
+CString /* System.String */
+System_Globalization_DateTimeFormatInfo_ShortDatePattern_Get(
+	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): ShortDatePattern
+void /* System.Void */
+System_Globalization_DateTimeFormatInfo_ShortDatePattern_Set(
+	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): ShortTimePattern
+CString /* System.String */
+System_Globalization_DateTimeFormatInfo_ShortTimePattern_Get(
+	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): ShortTimePattern
+void /* System.Void */
+System_Globalization_DateTimeFormatInfo_ShortTimePattern_Set(
+	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): SortableDateTimePattern
+CString /* System.String */
+System_Globalization_DateTimeFormatInfo_SortableDateTimePattern_Get(
+	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): TimeSeparator
+CString /* System.String */
+System_Globalization_DateTimeFormatInfo_TimeSeparator_Get(
+	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): TimeSeparator
+void /* System.Void */
+System_Globalization_DateTimeFormatInfo_TimeSeparator_Set(
+	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): UniversalSortableDateTimePattern
+CString /* System.String */
+System_Globalization_DateTimeFormatInfo_UniversalSortableDateTimePattern_Get(
+	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): YearMonthPattern
+CString /* System.String */
+System_Globalization_DateTimeFormatInfo_YearMonthPattern_Get(
+	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): YearMonthPattern
+void /* System.Void */
+System_Globalization_DateTimeFormatInfo_YearMonthPattern_Set(
+	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): IsReadOnly
+CBool /* System.Boolean */
+System_Globalization_DateTimeFormatInfo_IsReadOnly_Get(
+	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): NativeCalendarName
+CString /* System.String */
+System_Globalization_DateTimeFormatInfo_NativeCalendarName_Get(
+	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_Globalization_DateTimeFormatInfo_Destroy(
@@ -9629,7 +11000,11 @@ System_CharEnumerator_Reset(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): Current
+uint8_t /* System.Char */
+System_CharEnumerator_Current_Get(
+	System_CharEnumerator_t /* System.CharEnumerator */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_CharEnumerator_Destroy(
@@ -9652,7 +11027,11 @@ System_Text_StringRuneEnumerator_MoveNext(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): Current
+System_Text_Rune_t /* System.Text.Rune */
+System_Text_StringRuneEnumerator_Current_Get(
+	System_Text_StringRuneEnumerator_t /* System.Text.StringRuneEnumerator */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_Text_StringRuneEnumerator_Destroy(
@@ -9674,7 +11053,11 @@ System_Text_CompositeFormat_Parse(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): Format
+CString /* System.String */
+System_Text_CompositeFormat_Format_Get(
+	System_Text_CompositeFormat_t /* System.Text.CompositeFormat */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_Text_CompositeFormat_Destroy(
@@ -10010,7 +11393,11 @@ System_Runtime_InteropServices_StructLayoutAttribute_Create1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): Value
+System_Runtime_InteropServices_LayoutKind /* System.Runtime.InteropServices.LayoutKind */
+System_Runtime_InteropServices_StructLayoutAttribute_Value_Get(
+	System_Runtime_InteropServices_StructLayoutAttribute_t /* System.Runtime.InteropServices.StructLayoutAttribute */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 System_Runtime_InteropServices_StructLayoutAttribute_Destroy(
@@ -10361,23 +11748,63 @@ NativeAOT_CodeGeneratorInputSample_Person_Create(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Property): FirstName
+CString /* System.String */
+NativeAOT_CodeGeneratorInputSample_Person_FirstName_Get(
+	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): FirstName
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_Person_FirstName_Set(
+	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): LastName
+CString /* System.String */
+NativeAOT_CodeGeneratorInputSample_Person_LastName_Get(
+	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): LastName
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_Person_LastName_Set(
+	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Age
+int32_t /* System.Int32 */
+NativeAOT_CodeGeneratorInputSample_Person_Age_Get(
+	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): Age
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_Person_Age_Set(
+	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): NiceLevel
+NativeAOT_CodeGeneratorInputSample_NiceLevels /* NativeAOT.CodeGeneratorInputSample.NiceLevels */
+NativeAOT_CodeGeneratorInputSample_Person_NiceLevel_Get(
+	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): NiceLevel
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_Person_NiceLevel_Set(
+	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
+	NativeAOT_CodeGeneratorInputSample_NiceLevels /* NativeAOT.CodeGeneratorInputSample.NiceLevels */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO (Property): FullName
+CString /* System.String */
+NativeAOT_CodeGeneratorInputSample_Person_FullName_Get(
+	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
 void /* System.Void */
 NativeAOT_CodeGeneratorInputSample_Person_Destroy(
