@@ -216,7 +216,135 @@ final class NativeAOTCodeGeneratorOutputSampleTests: XCTestCase {
         }
     }
     
-    func testSystemGuid() throws {
+    func testPerson() {
+        let firstName = "John"
+        let lastName = "Doe"
+        let age: Int32 = 24
+        
+        let expectedFullName = "\(firstName) \(lastName)"
+        let expectedWelcomeMessage = "Welcome, \(expectedFullName)! You're \(age) years old."
+        
+        var exception: System_Exception_t?
+        var person: NativeAOT_CodeGeneratorInputSample_Person_t?
+        
+        firstName.withCString { firstNameC in
+            lastName.withCString { lastNameC in
+                person = NativeAOT_CodeGeneratorInputSample_Person_Create(firstNameC,
+                                                                          lastNameC,
+                                                                          age,
+                                                                          &exception)
+            }
+        }
+        
+        guard let person,
+              exception == nil else {
+            XCTFail("Person initializer should not throw and return an instance")
+            
+            return
+        }
+        
+        defer {
+            NativeAOT_CodeGeneratorInputSample_Person_Destroy(person)
+        }
+        
+        let retrievedFirstNameC = NativeAOT_CodeGeneratorInputSample_Person_GetFirstName(person,
+                                                                                         &exception)
+        
+        guard let retrievedFirstNameC,
+              exception == nil else {
+            XCTFail("Person.GetFirstName should not throw and return an instance")
+            
+            return
+        }
+        
+        XCTAssertEqual(firstName, .init(cString: retrievedFirstNameC))
+        
+        retrievedFirstNameC.deallocate()
+        
+        let retrievedLastNameC = NativeAOT_CodeGeneratorInputSample_Person_GetLastName(person,
+                                                                                       &exception)
+        
+        guard let retrievedLastNameC,
+              exception == nil else {
+            XCTFail("Person.GetLastName should not throw and return an instance")
+            
+            return
+        }
+        
+        XCTAssertEqual(lastName, .init(cString: retrievedLastNameC))
+        
+        retrievedLastNameC.deallocate()
+        
+        let retrievedFullNameC = NativeAOT_CodeGeneratorInputSample_Person_GetFullName(person,
+                                                                                       &exception)
+        
+        guard let retrievedFullNameC,
+              exception == nil else {
+            XCTFail("Person.GetFullName should not throw and return an instance")
+            
+            return
+        }
+        
+        XCTAssertEqual(expectedFullName, .init(cString: retrievedFullNameC))
+        
+        retrievedFullNameC.deallocate()
+        
+        let retrievedAge = NativeAOT_CodeGeneratorInputSample_Person_GetAge(person,
+                                                                            &exception)
+        
+        guard exception == nil else {
+            XCTFail("Person.GetAge should not throw and return an instance")
+            
+            return
+        }
+        
+        XCTAssertEqual(age, retrievedAge)
+        
+        let retrievedWelcomeMessageC = NativeAOT_CodeGeneratorInputSample_Person_GetWelcomeMessage(person,
+                                                                                                   &exception)
+        
+        guard let retrievedWelcomeMessageC,
+              exception == nil else {
+            XCTFail("Person.GetWelcomeMessage should not throw and return an instance")
+            
+            return
+        }
+        
+        XCTAssertEqual(expectedWelcomeMessage, .init(cString: retrievedWelcomeMessageC))
+        
+        retrievedWelcomeMessageC.deallocate()
+        
+        let newFirstName = "Max 😉"
+        let expectedNewFullName = "\(newFirstName) \(lastName)"
+        
+        newFirstName.withCString { newFirstNameC in
+            NativeAOT_CodeGeneratorInputSample_Person_SetFirstName(person,
+                                                                   newFirstNameC,
+                                                                   &exception)
+        }
+        
+        guard exception == nil else {
+            XCTFail("Person.SetFirstName should not throw")
+            
+            return
+        }
+        
+        let newFullNameC = NativeAOT_CodeGeneratorInputSample_Person_GetFullName(person,
+                                                                                 &exception)
+        
+        guard let newFullNameC,
+              exception == nil else {
+            XCTFail("Person.GetFullName should not throw and return an instance")
+            
+            return
+        }
+        
+        XCTAssertEqual(expectedNewFullName, .init(cString: newFullNameC))
+        
+        newFullNameC.deallocate()
+    }
+    
+    func testSystemGuid() {
         var exception: System_Exception_t?
         
         let uuid = UUID()
