@@ -3984,7 +3984,7 @@ internal static unsafe class System_String
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_EndsWith3")]
-	internal static CBool /* System.Boolean */ System_String_EndsWith3(byte* /* System.String */ __self, System.Char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static CBool /* System.Boolean */ System_String_EndsWith3(byte* /* System.String */ __self, char /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -4323,7 +4323,7 @@ internal static unsafe class System_String
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_StartsWith3")]
-	internal static CBool /* System.Boolean */ System_String_StartsWith3(byte* /* System.String */ __self, System.Char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static CBool /* System.Boolean */ System_String_StartsWith3(byte* /* System.String */ __self, char /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -5141,7 +5141,7 @@ internal static unsafe class System_String
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_PadLeft1")]
-	internal static byte* /* System.String */ System_String_PadLeft1(byte* /* System.String */ __self, int /* System.Int32 */ totalWidth, System.Char /* System.Char */ paddingChar, void** /* System.Exception */ __outException)
+	internal static byte* /* System.String */ System_String_PadLeft1(byte* /* System.String */ __self, int /* System.Int32 */ totalWidth, char /* System.Char */ paddingChar, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -5203,7 +5203,7 @@ internal static unsafe class System_String
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_PadRight1")]
-	internal static byte* /* System.String */ System_String_PadRight1(byte* /* System.String */ __self, int /* System.Int32 */ totalWidth, System.Char /* System.Char */ paddingChar, void** /* System.Exception */ __outException)
+	internal static byte* /* System.String */ System_String_PadRight1(byte* /* System.String */ __self, int /* System.Int32 */ totalWidth, char /* System.Char */ paddingChar, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -5364,7 +5364,7 @@ internal static unsafe class System_String
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Replace2")]
-	internal static byte* /* System.String */ System_String_Replace2(byte* /* System.String */ __self, System.Char /* System.Char */ oldChar, System.Char /* System.Char */ newChar, void** /* System.Exception */ __outException)
+	internal static byte* /* System.String */ System_String_Replace2(byte* /* System.String */ __self, char /* System.Char */ oldChar, char /* System.Char */ newChar, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -5772,7 +5772,7 @@ internal static unsafe class System_String
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Trim1")]
-	internal static byte* /* System.String */ System_String_Trim1(byte* /* System.String */ __self, System.Char /* System.Char */ trimChar, void** /* System.Exception */ __outException)
+	internal static byte* /* System.String */ System_String_Trim1(byte* /* System.String */ __self, char /* System.Char */ trimChar, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -5834,7 +5834,7 @@ internal static unsafe class System_String
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_TrimStart1")]
-	internal static byte* /* System.String */ System_String_TrimStart1(byte* /* System.String */ __self, System.Char /* System.Char */ trimChar, void** /* System.Exception */ __outException)
+	internal static byte* /* System.String */ System_String_TrimStart1(byte* /* System.String */ __self, char /* System.Char */ trimChar, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -5896,7 +5896,7 @@ internal static unsafe class System_String
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_TrimEnd1")]
-	internal static byte* /* System.String */ System_String_TrimEnd1(byte* /* System.String */ __self, System.Char /* System.Char */ trimChar, void** /* System.Exception */ __outException)
+	internal static byte* /* System.String */ System_String_TrimEnd1(byte* /* System.String */ __self, char /* System.Char */ trimChar, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -5991,7 +5991,7 @@ internal static unsafe class System_String
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Contains2")]
-	internal static CBool /* System.Boolean */ System_String_Contains2(byte* /* System.String */ __self, System.Char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static CBool /* System.Boolean */ System_String_Contains2(byte* /* System.String */ __self, char /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -6022,7 +6022,7 @@ internal static unsafe class System_String
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Contains3")]
-	internal static CBool /* System.Boolean */ System_String_Contains3(byte* /* System.String */ __self, System.Char /* System.Char */ value, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
+	internal static CBool /* System.Boolean */ System_String_Contains3(byte* /* System.String */ __self, char /* System.Char */ value, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -6053,7 +6053,7 @@ internal static unsafe class System_String
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_IndexOf")]
-	internal static int /* System.Int32 */ System_String_IndexOf(byte* /* System.String */ __self, System.Char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_String_IndexOf(byte* /* System.String */ __self, char /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -6083,7 +6083,7 @@ internal static unsafe class System_String
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_IndexOf1")]
-	internal static int /* System.Int32 */ System_String_IndexOf1(byte* /* System.String */ __self, System.Char /* System.Char */ value, int /* System.Int32 */ startIndex, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_String_IndexOf1(byte* /* System.String */ __self, char /* System.Char */ value, int /* System.Int32 */ startIndex, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -6113,7 +6113,7 @@ internal static unsafe class System_String
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_IndexOf2")]
-	internal static int /* System.Int32 */ System_String_IndexOf2(byte* /* System.String */ __self, System.Char /* System.Char */ value, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_String_IndexOf2(byte* /* System.String */ __self, char /* System.Char */ value, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -6143,7 +6143,7 @@ internal static unsafe class System_String
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_IndexOf3")]
-	internal static int /* System.Int32 */ System_String_IndexOf3(byte* /* System.String */ __self, System.Char /* System.Char */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_String_IndexOf3(byte* /* System.String */ __self, char /* System.Char */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -6359,7 +6359,7 @@ internal static unsafe class System_String
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_LastIndexOf")]
-	internal static int /* System.Int32 */ System_String_LastIndexOf(byte* /* System.String */ __self, System.Char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_String_LastIndexOf(byte* /* System.String */ __self, char /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -6389,7 +6389,7 @@ internal static unsafe class System_String
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_LastIndexOf1")]
-	internal static int /* System.Int32 */ System_String_LastIndexOf1(byte* /* System.String */ __self, System.Char /* System.Char */ value, int /* System.Int32 */ startIndex, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_String_LastIndexOf1(byte* /* System.String */ __self, char /* System.Char */ value, int /* System.Int32 */ startIndex, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -6419,7 +6419,7 @@ internal static unsafe class System_String
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_LastIndexOf2")]
-	internal static int /* System.Int32 */ System_String_LastIndexOf2(byte* /* System.String */ __self, System.Char /* System.Char */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_String_LastIndexOf2(byte* /* System.String */ __self, char /* System.Char */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -6635,7 +6635,7 @@ internal static unsafe class System_String
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Create")]
-	internal static byte* /* System.String */ System_String_Create(System.Char /* System.Char */ c, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
+	internal static byte* /* System.String */ System_String_Create(char /* System.Char */ c, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
@@ -7388,7 +7388,7 @@ internal static unsafe class System_Globalization_CompareInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_IsSortable")]
-	internal static CBool /* System.Boolean */ System_Globalization_CompareInfo_IsSortable(System.Char /* System.Char */ ch, void** /* System.Exception */ __outException)
+	internal static CBool /* System.Boolean */ System_Globalization_CompareInfo_IsSortable(char /* System.Char */ ch, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
@@ -7789,7 +7789,7 @@ internal static unsafe class System_Globalization_CompareInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_IndexOf")]
-	internal static int /* System.Int32 */ System_Globalization_CompareInfo_IndexOf(void* /* System.Globalization.CompareInfo */ __self, byte* /* System.String */ source, System.Char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_Globalization_CompareInfo_IndexOf(void* /* System.Globalization.CompareInfo */ __self, byte* /* System.String */ source, char /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -7852,7 +7852,7 @@ internal static unsafe class System_Globalization_CompareInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_IndexOf2")]
-	internal static int /* System.Int32 */ System_Globalization_CompareInfo_IndexOf2(void* /* System.Globalization.CompareInfo */ __self, byte* /* System.String */ source, System.Char /* System.Char */ value, System.Globalization.CompareOptions /* System.Globalization.CompareOptions */ options, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_Globalization_CompareInfo_IndexOf2(void* /* System.Globalization.CompareInfo */ __self, byte* /* System.String */ source, char /* System.Char */ value, System.Globalization.CompareOptions /* System.Globalization.CompareOptions */ options, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -7915,7 +7915,7 @@ internal static unsafe class System_Globalization_CompareInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_IndexOf4")]
-	internal static int /* System.Int32 */ System_Globalization_CompareInfo_IndexOf4(void* /* System.Globalization.CompareInfo */ __self, byte* /* System.String */ source, System.Char /* System.Char */ value, int /* System.Int32 */ startIndex, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_Globalization_CompareInfo_IndexOf4(void* /* System.Globalization.CompareInfo */ __self, byte* /* System.String */ source, char /* System.Char */ value, int /* System.Int32 */ startIndex, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -7978,7 +7978,7 @@ internal static unsafe class System_Globalization_CompareInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_IndexOf6")]
-	internal static int /* System.Int32 */ System_Globalization_CompareInfo_IndexOf6(void* /* System.Globalization.CompareInfo */ __self, byte* /* System.String */ source, System.Char /* System.Char */ value, int /* System.Int32 */ startIndex, System.Globalization.CompareOptions /* System.Globalization.CompareOptions */ options, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_Globalization_CompareInfo_IndexOf6(void* /* System.Globalization.CompareInfo */ __self, byte* /* System.String */ source, char /* System.Char */ value, int /* System.Int32 */ startIndex, System.Globalization.CompareOptions /* System.Globalization.CompareOptions */ options, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -8041,7 +8041,7 @@ internal static unsafe class System_Globalization_CompareInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_IndexOf8")]
-	internal static int /* System.Int32 */ System_Globalization_CompareInfo_IndexOf8(void* /* System.Globalization.CompareInfo */ __self, byte* /* System.String */ source, System.Char /* System.Char */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_Globalization_CompareInfo_IndexOf8(void* /* System.Globalization.CompareInfo */ __self, byte* /* System.String */ source, char /* System.Char */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -8104,7 +8104,7 @@ internal static unsafe class System_Globalization_CompareInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_IndexOf10")]
-	internal static int /* System.Int32 */ System_Globalization_CompareInfo_IndexOf10(void* /* System.Globalization.CompareInfo */ __self, byte* /* System.String */ source, System.Char /* System.Char */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, System.Globalization.CompareOptions /* System.Globalization.CompareOptions */ options, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_Globalization_CompareInfo_IndexOf10(void* /* System.Globalization.CompareInfo */ __self, byte* /* System.String */ source, char /* System.Char */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, System.Globalization.CompareOptions /* System.Globalization.CompareOptions */ options, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -8167,7 +8167,7 @@ internal static unsafe class System_Globalization_CompareInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_LastIndexOf")]
-	internal static int /* System.Int32 */ System_Globalization_CompareInfo_LastIndexOf(void* /* System.Globalization.CompareInfo */ __self, byte* /* System.String */ source, System.Char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_Globalization_CompareInfo_LastIndexOf(void* /* System.Globalization.CompareInfo */ __self, byte* /* System.String */ source, char /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -8230,7 +8230,7 @@ internal static unsafe class System_Globalization_CompareInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_LastIndexOf2")]
-	internal static int /* System.Int32 */ System_Globalization_CompareInfo_LastIndexOf2(void* /* System.Globalization.CompareInfo */ __self, byte* /* System.String */ source, System.Char /* System.Char */ value, System.Globalization.CompareOptions /* System.Globalization.CompareOptions */ options, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_Globalization_CompareInfo_LastIndexOf2(void* /* System.Globalization.CompareInfo */ __self, byte* /* System.String */ source, char /* System.Char */ value, System.Globalization.CompareOptions /* System.Globalization.CompareOptions */ options, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -8293,7 +8293,7 @@ internal static unsafe class System_Globalization_CompareInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_LastIndexOf4")]
-	internal static int /* System.Int32 */ System_Globalization_CompareInfo_LastIndexOf4(void* /* System.Globalization.CompareInfo */ __self, byte* /* System.String */ source, System.Char /* System.Char */ value, int /* System.Int32 */ startIndex, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_Globalization_CompareInfo_LastIndexOf4(void* /* System.Globalization.CompareInfo */ __self, byte* /* System.String */ source, char /* System.Char */ value, int /* System.Int32 */ startIndex, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -8356,7 +8356,7 @@ internal static unsafe class System_Globalization_CompareInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_LastIndexOf6")]
-	internal static int /* System.Int32 */ System_Globalization_CompareInfo_LastIndexOf6(void* /* System.Globalization.CompareInfo */ __self, byte* /* System.String */ source, System.Char /* System.Char */ value, int /* System.Int32 */ startIndex, System.Globalization.CompareOptions /* System.Globalization.CompareOptions */ options, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_Globalization_CompareInfo_LastIndexOf6(void* /* System.Globalization.CompareInfo */ __self, byte* /* System.String */ source, char /* System.Char */ value, int /* System.Int32 */ startIndex, System.Globalization.CompareOptions /* System.Globalization.CompareOptions */ options, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -8419,7 +8419,7 @@ internal static unsafe class System_Globalization_CompareInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_LastIndexOf8")]
-	internal static int /* System.Int32 */ System_Globalization_CompareInfo_LastIndexOf8(void* /* System.Globalization.CompareInfo */ __self, byte* /* System.String */ source, System.Char /* System.Char */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_Globalization_CompareInfo_LastIndexOf8(void* /* System.Globalization.CompareInfo */ __self, byte* /* System.String */ source, char /* System.Char */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -8482,7 +8482,7 @@ internal static unsafe class System_Globalization_CompareInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_LastIndexOf10")]
-	internal static int /* System.Int32 */ System_Globalization_CompareInfo_LastIndexOf10(void* /* System.Globalization.CompareInfo */ __self, byte* /* System.String */ source, System.Char /* System.Char */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, System.Globalization.CompareOptions /* System.Globalization.CompareOptions */ options, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_Globalization_CompareInfo_LastIndexOf10(void* /* System.Globalization.CompareInfo */ __self, byte* /* System.String */ source, char /* System.Char */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, System.Globalization.CompareOptions /* System.Globalization.CompareOptions */ options, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -10990,7 +10990,7 @@ internal static unsafe class System_IO_FileStream
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStream_Create")]
-	internal static void* /* System.IO.FileStream */ System_IO_FileStream_Create(System.IntPtr /* System.IntPtr */ handle, System.IO.FileAccess /* System.IO.FileAccess */ access, void** /* System.Exception */ __outException)
+	internal static void* /* System.IO.FileStream */ System_IO_FileStream_Create(nint /* System.IntPtr */ handle, System.IO.FileAccess /* System.IO.FileAccess */ access, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
@@ -11015,7 +11015,7 @@ internal static unsafe class System_IO_FileStream
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStream_Create1")]
-	internal static void* /* System.IO.FileStream */ System_IO_FileStream_Create1(System.IntPtr /* System.IntPtr */ handle, System.IO.FileAccess /* System.IO.FileAccess */ access, CBool /* System.Boolean */ ownsHandle, void** /* System.Exception */ __outException)
+	internal static void* /* System.IO.FileStream */ System_IO_FileStream_Create1(nint /* System.IntPtr */ handle, System.IO.FileAccess /* System.IO.FileAccess */ access, CBool /* System.Boolean */ ownsHandle, void** /* System.Exception */ __outException)
 	{
 		System.Boolean ownsHandleDotNet = ownsHandle.ToBool();
 	
@@ -11041,7 +11041,7 @@ internal static unsafe class System_IO_FileStream
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStream_Create2")]
-	internal static void* /* System.IO.FileStream */ System_IO_FileStream_Create2(System.IntPtr /* System.IntPtr */ handle, System.IO.FileAccess /* System.IO.FileAccess */ access, CBool /* System.Boolean */ ownsHandle, int /* System.Int32 */ bufferSize, void** /* System.Exception */ __outException)
+	internal static void* /* System.IO.FileStream */ System_IO_FileStream_Create2(nint /* System.IntPtr */ handle, System.IO.FileAccess /* System.IO.FileAccess */ access, CBool /* System.Boolean */ ownsHandle, int /* System.Int32 */ bufferSize, void** /* System.Exception */ __outException)
 	{
 		System.Boolean ownsHandleDotNet = ownsHandle.ToBool();
 	
@@ -11067,7 +11067,7 @@ internal static unsafe class System_IO_FileStream
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStream_Create3")]
-	internal static void* /* System.IO.FileStream */ System_IO_FileStream_Create3(System.IntPtr /* System.IntPtr */ handle, System.IO.FileAccess /* System.IO.FileAccess */ access, CBool /* System.Boolean */ ownsHandle, int /* System.Int32 */ bufferSize, CBool /* System.Boolean */ isAsync, void** /* System.Exception */ __outException)
+	internal static void* /* System.IO.FileStream */ System_IO_FileStream_Create3(nint /* System.IntPtr */ handle, System.IO.FileAccess /* System.IO.FileAccess */ access, CBool /* System.Boolean */ ownsHandle, int /* System.Int32 */ bufferSize, CBool /* System.Boolean */ isAsync, void** /* System.Exception */ __outException)
 	{
 		System.Boolean ownsHandleDotNet = ownsHandle.ToBool();
 		System.Boolean isAsyncDotNet = isAsync.ToBool();
@@ -13667,7 +13667,7 @@ internal static unsafe class System_RuntimeMethodHandle
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_RuntimeMethodHandle_FromIntPtr")]
-	internal static void* /* System.RuntimeMethodHandle */ System_RuntimeMethodHandle_FromIntPtr(System.IntPtr /* System.IntPtr */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.RuntimeMethodHandle */ System_RuntimeMethodHandle_FromIntPtr(nint /* System.IntPtr */ value, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
@@ -13692,7 +13692,7 @@ internal static unsafe class System_RuntimeMethodHandle
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_RuntimeMethodHandle_ToIntPtr")]
-	internal static System.IntPtr /* System.IntPtr */ System_RuntimeMethodHandle_ToIntPtr(void* /* System.RuntimeMethodHandle */ value, void** /* System.Exception */ __outException)
+	internal static nint /* System.IntPtr */ System_RuntimeMethodHandle_ToIntPtr(void* /* System.RuntimeMethodHandle */ value, void** /* System.Exception */ __outException)
 	{
 		System.RuntimeMethodHandle valueDotNet = InteropUtils.GetInstance<System.RuntimeMethodHandle>(value);
 	
@@ -13711,7 +13711,7 @@ internal static unsafe class System_RuntimeMethodHandle
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return default(System.IntPtr);
+			return nint.Zero;
 		}
 	}
 	
@@ -13749,7 +13749,7 @@ internal static unsafe class System_RuntimeMethodHandle
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_RuntimeMethodHandle_GetFunctionPointer")]
-	internal static System.IntPtr /* System.IntPtr */ System_RuntimeMethodHandle_GetFunctionPointer(void* /* System.RuntimeMethodHandle */ __self, void** /* System.Exception */ __outException)
+	internal static nint /* System.IntPtr */ System_RuntimeMethodHandle_GetFunctionPointer(void* /* System.RuntimeMethodHandle */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -13773,7 +13773,7 @@ internal static unsafe class System_RuntimeMethodHandle
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return default(System.IntPtr);
+			return nint.Zero;
 		}
 	}
 	
@@ -13945,7 +13945,7 @@ internal static unsafe class System_Runtime_Serialization_SerializationInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_SerializationInfo_AddValue3")]
-	internal static void /* System.Void */ System_Runtime_Serialization_SerializationInfo_AddValue3(void* /* System.Runtime.Serialization.SerializationInfo */ __self, byte* /* System.String */ name, System.Char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_Runtime_Serialization_SerializationInfo_AddValue3(void* /* System.Runtime.Serialization.SerializationInfo */ __self, byte* /* System.String */ name, char /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -14389,7 +14389,7 @@ internal static unsafe class System_Runtime_Serialization_SerializationInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_SerializationInfo_GetChar")]
-	internal static System.Char /* System.Char */ System_Runtime_Serialization_SerializationInfo_GetChar(void* /* System.Runtime.Serialization.SerializationInfo */ __self, byte* /* System.String */ name, void** /* System.Exception */ __outException)
+	internal static char /* System.Char */ System_Runtime_Serialization_SerializationInfo_GetChar(void* /* System.Runtime.Serialization.SerializationInfo */ __self, byte* /* System.String */ name, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -14414,7 +14414,7 @@ internal static unsafe class System_Runtime_Serialization_SerializationInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return default(System.Char);
+			return (char)0;
 		}
 	}
 	
@@ -22516,7 +22516,7 @@ internal static unsafe class System_Runtime_Serialization_IFormatterConverter
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_IFormatterConverter_ToChar")]
-	internal static System.Char /* System.Char */ System_Runtime_Serialization_IFormatterConverter_ToChar(void* /* System.Runtime.Serialization.IFormatterConverter */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
+	internal static char /* System.Char */ System_Runtime_Serialization_IFormatterConverter_ToChar(void* /* System.Runtime.Serialization.IFormatterConverter */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -22541,7 +22541,7 @@ internal static unsafe class System_Runtime_Serialization_IFormatterConverter
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return default(System.Char);
+			return (char)0;
 		}
 	}
 	
@@ -23098,7 +23098,7 @@ internal static unsafe class System_Runtime_Serialization_StreamingContext
 internal static unsafe class System_RuntimeTypeHandle
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_RuntimeTypeHandle_FromIntPtr")]
-	internal static void* /* System.RuntimeTypeHandle */ System_RuntimeTypeHandle_FromIntPtr(System.IntPtr /* System.IntPtr */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.RuntimeTypeHandle */ System_RuntimeTypeHandle_FromIntPtr(nint /* System.IntPtr */ value, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
@@ -23123,7 +23123,7 @@ internal static unsafe class System_RuntimeTypeHandle
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_RuntimeTypeHandle_ToIntPtr")]
-	internal static System.IntPtr /* System.IntPtr */ System_RuntimeTypeHandle_ToIntPtr(void* /* System.RuntimeTypeHandle */ value, void** /* System.Exception */ __outException)
+	internal static nint /* System.IntPtr */ System_RuntimeTypeHandle_ToIntPtr(void* /* System.RuntimeTypeHandle */ value, void** /* System.Exception */ __outException)
 	{
 		System.RuntimeTypeHandle valueDotNet = InteropUtils.GetInstance<System.RuntimeTypeHandle>(value);
 	
@@ -23142,7 +23142,7 @@ internal static unsafe class System_RuntimeTypeHandle
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return default(System.IntPtr);
+			return nint.Zero;
 		}
 	}
 	
@@ -23707,7 +23707,7 @@ internal static unsafe class System_RuntimeFieldHandle
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_RuntimeFieldHandle_FromIntPtr")]
-	internal static void* /* System.RuntimeFieldHandle */ System_RuntimeFieldHandle_FromIntPtr(System.IntPtr /* System.IntPtr */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.RuntimeFieldHandle */ System_RuntimeFieldHandle_FromIntPtr(nint /* System.IntPtr */ value, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
@@ -23732,7 +23732,7 @@ internal static unsafe class System_RuntimeFieldHandle
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_RuntimeFieldHandle_ToIntPtr")]
-	internal static System.IntPtr /* System.IntPtr */ System_RuntimeFieldHandle_ToIntPtr(void* /* System.RuntimeFieldHandle */ value, void** /* System.Exception */ __outException)
+	internal static nint /* System.IntPtr */ System_RuntimeFieldHandle_ToIntPtr(void* /* System.RuntimeFieldHandle */ value, void** /* System.Exception */ __outException)
 	{
 		System.RuntimeFieldHandle valueDotNet = InteropUtils.GetInstance<System.RuntimeFieldHandle>(value);
 	
@@ -23751,7 +23751,7 @@ internal static unsafe class System_RuntimeFieldHandle
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return default(System.IntPtr);
+			return nint.Zero;
 		}
 	}
 	
@@ -27395,7 +27395,7 @@ internal static unsafe class Microsoft_Win32_SafeHandles_SafeWaitHandle
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "Microsoft_Win32_SafeHandles_SafeWaitHandle_Create1")]
-	internal static void* /* Microsoft.Win32.SafeHandles.SafeWaitHandle */ Microsoft_Win32_SafeHandles_SafeWaitHandle_Create1(System.IntPtr /* System.IntPtr */ existingHandle, CBool /* System.Boolean */ ownsHandle, void** /* System.Exception */ __outException)
+	internal static void* /* Microsoft.Win32.SafeHandles.SafeWaitHandle */ Microsoft_Win32_SafeHandles_SafeWaitHandle_Create1(nint /* System.IntPtr */ existingHandle, CBool /* System.Boolean */ ownsHandle, void** /* System.Exception */ __outException)
 	{
 		System.Boolean ownsHandleDotNet = ownsHandle.ToBool();
 	
@@ -27448,7 +27448,7 @@ internal static unsafe class Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOn
 internal static unsafe class System_Runtime_InteropServices_SafeHandle
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_SafeHandle_DangerousGetHandle")]
-	internal static System.IntPtr /* System.IntPtr */ System_Runtime_InteropServices_SafeHandle_DangerousGetHandle(void* /* System.Runtime.InteropServices.SafeHandle */ __self, void** /* System.Exception */ __outException)
+	internal static nint /* System.IntPtr */ System_Runtime_InteropServices_SafeHandle_DangerousGetHandle(void* /* System.Runtime.InteropServices.SafeHandle */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -27472,7 +27472,7 @@ internal static unsafe class System_Runtime_InteropServices_SafeHandle
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return default(System.IntPtr);
+			return nint.Zero;
 		}
 	}
 	
@@ -28611,7 +28611,7 @@ internal static unsafe class System_Runtime_CompilerServices_YieldAwaitable_Yiel
 internal static unsafe class Microsoft_Win32_SafeHandles_SafeFileHandle
 {
 	[UnmanagedCallersOnly(EntryPoint = "Microsoft_Win32_SafeHandles_SafeFileHandle_Create")]
-	internal static void* /* Microsoft.Win32.SafeHandles.SafeFileHandle */ Microsoft_Win32_SafeHandles_SafeFileHandle_Create(System.IntPtr /* System.IntPtr */ preexistingHandle, CBool /* System.Boolean */ ownsHandle, void** /* System.Exception */ __outException)
+	internal static void* /* Microsoft.Win32.SafeHandles.SafeFileHandle */ Microsoft_Win32_SafeHandles_SafeFileHandle_Create(nint /* System.IntPtr */ preexistingHandle, CBool /* System.Boolean */ ownsHandle, void** /* System.Exception */ __outException)
 	{
 		System.Boolean ownsHandleDotNet = ownsHandle.ToBool();
 	
@@ -30481,7 +30481,7 @@ internal static unsafe class System_Text_Rune
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_Create")]
-	internal static void* /* System.Text.Rune */ System_Text_Rune_Create(System.Char /* System.Char */ ch, void** /* System.Exception */ __outException)
+	internal static void* /* System.Text.Rune */ System_Text_Rune_Create(char /* System.Char */ ch, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
@@ -30506,7 +30506,7 @@ internal static unsafe class System_Text_Rune
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_Create1")]
-	internal static void* /* System.Text.Rune */ System_Text_Rune_Create1(System.Char /* System.Char */ highSurrogate, System.Char /* System.Char */ lowSurrogate, void** /* System.Exception */ __outException)
+	internal static void* /* System.Text.Rune */ System_Text_Rune_Create1(char /* System.Char */ highSurrogate, char /* System.Char */ lowSurrogate, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
@@ -30945,7 +30945,7 @@ internal static unsafe class System_Globalization_TextInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_TextInfo_ToLower")]
-	internal static System.Char /* System.Char */ System_Globalization_TextInfo_ToLower(void* /* System.Globalization.TextInfo */ __self, System.Char /* System.Char */ c, void** /* System.Exception */ __outException)
+	internal static char /* System.Char */ System_Globalization_TextInfo_ToLower(void* /* System.Globalization.TextInfo */ __self, char /* System.Char */ c, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -30969,7 +30969,7 @@ internal static unsafe class System_Globalization_TextInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return default(System.Char);
+			return (char)0;
 		}
 	}
 	
@@ -31007,7 +31007,7 @@ internal static unsafe class System_Globalization_TextInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_TextInfo_ToUpper")]
-	internal static System.Char /* System.Char */ System_Globalization_TextInfo_ToUpper(void* /* System.Globalization.TextInfo */ __self, System.Char /* System.Char */ c, void** /* System.Exception */ __outException)
+	internal static char /* System.Char */ System_Globalization_TextInfo_ToUpper(void* /* System.Globalization.TextInfo */ __self, char /* System.Char */ c, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -31031,7 +31031,7 @@ internal static unsafe class System_Globalization_TextInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return default(System.Char);
+			return (char)0;
 		}
 	}
 	
@@ -32951,7 +32951,7 @@ internal static unsafe class System_Text_EncoderFallback
 internal static unsafe class System_Text_EncoderFallbackBuffer
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_EncoderFallbackBuffer_Fallback")]
-	internal static CBool /* System.Boolean */ System_Text_EncoderFallbackBuffer_Fallback(void* /* System.Text.EncoderFallbackBuffer */ __self, System.Char /* System.Char */ charUnknown, int /* System.Int32 */ index, void** /* System.Exception */ __outException)
+	internal static CBool /* System.Boolean */ System_Text_EncoderFallbackBuffer_Fallback(void* /* System.Text.EncoderFallbackBuffer */ __self, char /* System.Char */ charUnknown, int /* System.Int32 */ index, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -32982,7 +32982,7 @@ internal static unsafe class System_Text_EncoderFallbackBuffer
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_EncoderFallbackBuffer_Fallback1")]
-	internal static CBool /* System.Boolean */ System_Text_EncoderFallbackBuffer_Fallback1(void* /* System.Text.EncoderFallbackBuffer */ __self, System.Char /* System.Char */ charUnknownHigh, System.Char /* System.Char */ charUnknownLow, int /* System.Int32 */ index, void** /* System.Exception */ __outException)
+	internal static CBool /* System.Boolean */ System_Text_EncoderFallbackBuffer_Fallback1(void* /* System.Text.EncoderFallbackBuffer */ __self, char /* System.Char */ charUnknownHigh, char /* System.Char */ charUnknownLow, int /* System.Int32 */ index, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -33013,7 +33013,7 @@ internal static unsafe class System_Text_EncoderFallbackBuffer
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_EncoderFallbackBuffer_GetNextChar")]
-	internal static System.Char /* System.Char */ System_Text_EncoderFallbackBuffer_GetNextChar(void* /* System.Text.EncoderFallbackBuffer */ __self, void** /* System.Exception */ __outException)
+	internal static char /* System.Char */ System_Text_EncoderFallbackBuffer_GetNextChar(void* /* System.Text.EncoderFallbackBuffer */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -33037,7 +33037,7 @@ internal static unsafe class System_Text_EncoderFallbackBuffer
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return default(System.Char);
+			return (char)0;
 		}
 	}
 	
@@ -33169,7 +33169,7 @@ internal static unsafe class System_Text_DecoderFallback
 internal static unsafe class System_Text_DecoderFallbackBuffer
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_DecoderFallbackBuffer_GetNextChar")]
-	internal static System.Char /* System.Char */ System_Text_DecoderFallbackBuffer_GetNextChar(void* /* System.Text.DecoderFallbackBuffer */ __self, void** /* System.Exception */ __outException)
+	internal static char /* System.Char */ System_Text_DecoderFallbackBuffer_GetNextChar(void* /* System.Text.DecoderFallbackBuffer */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -33193,7 +33193,7 @@ internal static unsafe class System_Text_DecoderFallbackBuffer
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return default(System.Char);
+			return (char)0;
 		}
 	}
 	

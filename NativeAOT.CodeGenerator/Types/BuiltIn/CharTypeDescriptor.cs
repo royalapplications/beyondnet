@@ -7,7 +7,7 @@ public partial class BuiltInTypeDescriptors
         get {
             var descriptor = new TypeDescriptor(
                 typeof(char),
-                "0", // TODO: Is this correct?
+                "(char)0", // TODO: Is this correct?
                 new() {
                     { CodeLanguage.CSharpUnmanaged, "char" },
                     { CodeLanguage.C, "uint8_t" }, // TODO: Is this correct?

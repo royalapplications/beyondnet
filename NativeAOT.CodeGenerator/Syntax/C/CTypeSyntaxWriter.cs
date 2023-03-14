@@ -93,6 +93,7 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         sb.AppendLine($"typedef enum __attribute__((enum_extensibility(closed))): {underlyingTypeName} {{");
 
         var caseNames = type.GetEnumNames();
+        var values = type.GetEnumValues();
 
         List<string> enumCases = new();
 

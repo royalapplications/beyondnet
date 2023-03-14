@@ -85,7 +85,7 @@ public class CCodeGenerator: ICodeGenerator
     {
         return """
 #pragma mark - Common Types
-typedef char* CString;
+typedef const char* CString;
 
 #pragma mark - Common Enums
 typedef enum __attribute__((enum_extensibility(closed))): uint8_t {

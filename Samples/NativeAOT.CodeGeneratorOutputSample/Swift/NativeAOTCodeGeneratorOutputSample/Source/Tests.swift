@@ -123,9 +123,11 @@ final class NativeAOTCodeGeneratorOutputSampleTests: XCTestCase {
             return
         }
         
-        NativeAOT_CodeGeneratorInputSample_TestClass_SayHello1(testClass,
-                                                               "John",
-                                                               &exception)
+        "John".withCString { cString in
+            NativeAOT_CodeGeneratorInputSample_TestClass_SayHello1(testClass,
+                                                                   cString,
+                                                                   &exception)
+        }
         
         guard exception == nil else {
             XCTFail("SayHello1 should not throw")
