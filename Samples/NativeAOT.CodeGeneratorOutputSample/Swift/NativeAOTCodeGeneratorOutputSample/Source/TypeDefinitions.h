@@ -33,15 +33,15 @@ typedef void* System_Type_t;
 typedef void* System_Reflection_MemberInfo_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Reflection_MemberTypes_Constructor = 0 /* TODO: Value */,
-	System_Reflection_MemberTypes_Event = 0 /* TODO: Value */,
-	System_Reflection_MemberTypes_Field = 0 /* TODO: Value */,
-	System_Reflection_MemberTypes_Method = 0 /* TODO: Value */,
-	System_Reflection_MemberTypes_Property = 0 /* TODO: Value */,
-	System_Reflection_MemberTypes_TypeInfo = 0 /* TODO: Value */,
-	System_Reflection_MemberTypes_Custom = 0 /* TODO: Value */,
-	System_Reflection_MemberTypes_NestedType = 0 /* TODO: Value */,
-	System_Reflection_MemberTypes_All = 0 /* TODO: Value */
+	System_Reflection_MemberTypes_Constructor = 1,
+	System_Reflection_MemberTypes_Event = 2,
+	System_Reflection_MemberTypes_Field = 4,
+	System_Reflection_MemberTypes_Method = 8,
+	System_Reflection_MemberTypes_Property = 16,
+	System_Reflection_MemberTypes_TypeInfo = 32,
+	System_Reflection_MemberTypes_Custom = 64,
+	System_Reflection_MemberTypes_NestedType = 128,
+	System_Reflection_MemberTypes_All = 191
 } System_Reflection_MemberTypes;
 
 
@@ -54,12 +54,12 @@ typedef void* System_ValueType_t;
 typedef void* System_String_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_StringComparison_CurrentCulture = 0 /* TODO: Value */,
-	System_StringComparison_CurrentCultureIgnoreCase = 0 /* TODO: Value */,
-	System_StringComparison_InvariantCulture = 0 /* TODO: Value */,
-	System_StringComparison_InvariantCultureIgnoreCase = 0 /* TODO: Value */,
-	System_StringComparison_Ordinal = 0 /* TODO: Value */,
-	System_StringComparison_OrdinalIgnoreCase = 0 /* TODO: Value */
+	System_StringComparison_CurrentCulture = 0,
+	System_StringComparison_CurrentCultureIgnoreCase = 1,
+	System_StringComparison_InvariantCulture = 2,
+	System_StringComparison_InvariantCultureIgnoreCase = 3,
+	System_StringComparison_Ordinal = 4,
+	System_StringComparison_OrdinalIgnoreCase = 5
 } System_StringComparison;
 
 
@@ -68,14 +68,14 @@ typedef void* System_Globalization_CultureInfo_t;
 typedef void* System_Void_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Globalization_CultureTypes_NeutralCultures = 0 /* TODO: Value */,
-	System_Globalization_CultureTypes_SpecificCultures = 0 /* TODO: Value */,
-	System_Globalization_CultureTypes_InstalledWin32Cultures = 0 /* TODO: Value */,
-	System_Globalization_CultureTypes_AllCultures = 0 /* TODO: Value */,
-	System_Globalization_CultureTypes_UserCustomCulture = 0 /* TODO: Value */,
-	System_Globalization_CultureTypes_ReplacementCultures = 0 /* TODO: Value */,
-	System_Globalization_CultureTypes_WindowsOnlyCultures = 0 /* TODO: Value */,
-	System_Globalization_CultureTypes_FrameworkCultures = 0 /* TODO: Value */
+	System_Globalization_CultureTypes_NeutralCultures = 1,
+	System_Globalization_CultureTypes_SpecificCultures = 2,
+	System_Globalization_CultureTypes_InstalledWin32Cultures = 4,
+	System_Globalization_CultureTypes_AllCultures = 7,
+	System_Globalization_CultureTypes_UserCustomCulture = 8,
+	System_Globalization_CultureTypes_ReplacementCultures = 16,
+	System_Globalization_CultureTypes_WindowsOnlyCultures = 32,
+	System_Globalization_CultureTypes_FrameworkCultures = 64
 } System_Globalization_CultureTypes;
 
 
@@ -91,87 +91,87 @@ typedef void* System_Version_t;
 typedef void* System_IFormatProvider_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Globalization_NumberStyles_None = 0 /* TODO: Value */,
-	System_Globalization_NumberStyles_AllowLeadingWhite = 0 /* TODO: Value */,
-	System_Globalization_NumberStyles_AllowTrailingWhite = 0 /* TODO: Value */,
-	System_Globalization_NumberStyles_AllowLeadingSign = 0 /* TODO: Value */,
-	System_Globalization_NumberStyles_Integer = 0 /* TODO: Value */,
-	System_Globalization_NumberStyles_AllowTrailingSign = 0 /* TODO: Value */,
-	System_Globalization_NumberStyles_AllowParentheses = 0 /* TODO: Value */,
-	System_Globalization_NumberStyles_AllowDecimalPoint = 0 /* TODO: Value */,
-	System_Globalization_NumberStyles_AllowThousands = 0 /* TODO: Value */,
-	System_Globalization_NumberStyles_Number = 0 /* TODO: Value */,
-	System_Globalization_NumberStyles_AllowExponent = 0 /* TODO: Value */,
-	System_Globalization_NumberStyles_Float = 0 /* TODO: Value */,
-	System_Globalization_NumberStyles_AllowCurrencySymbol = 0 /* TODO: Value */,
-	System_Globalization_NumberStyles_Currency = 0 /* TODO: Value */,
-	System_Globalization_NumberStyles_Any = 0 /* TODO: Value */,
-	System_Globalization_NumberStyles_AllowHexSpecifier = 0 /* TODO: Value */,
-	System_Globalization_NumberStyles_HexNumber = 0 /* TODO: Value */
+	System_Globalization_NumberStyles_None = 0,
+	System_Globalization_NumberStyles_AllowLeadingWhite = 1,
+	System_Globalization_NumberStyles_AllowTrailingWhite = 2,
+	System_Globalization_NumberStyles_AllowLeadingSign = 4,
+	System_Globalization_NumberStyles_Integer = 7,
+	System_Globalization_NumberStyles_AllowTrailingSign = 8,
+	System_Globalization_NumberStyles_AllowParentheses = 16,
+	System_Globalization_NumberStyles_AllowDecimalPoint = 32,
+	System_Globalization_NumberStyles_AllowThousands = 64,
+	System_Globalization_NumberStyles_Number = 111,
+	System_Globalization_NumberStyles_AllowExponent = 128,
+	System_Globalization_NumberStyles_Float = 167,
+	System_Globalization_NumberStyles_AllowCurrencySymbol = 256,
+	System_Globalization_NumberStyles_Currency = 383,
+	System_Globalization_NumberStyles_Any = 511,
+	System_Globalization_NumberStyles_AllowHexSpecifier = 512,
+	System_Globalization_NumberStyles_HexNumber = 515
 } System_Globalization_NumberStyles;
 
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_TypeCode_Empty = 0 /* TODO: Value */,
-	System_TypeCode_Object = 0 /* TODO: Value */,
-	System_TypeCode_DBNull = 0 /* TODO: Value */,
-	System_TypeCode_Boolean = 0 /* TODO: Value */,
-	System_TypeCode_Char = 0 /* TODO: Value */,
-	System_TypeCode_SByte = 0 /* TODO: Value */,
-	System_TypeCode_Byte = 0 /* TODO: Value */,
-	System_TypeCode_Int16 = 0 /* TODO: Value */,
-	System_TypeCode_UInt16 = 0 /* TODO: Value */,
-	System_TypeCode_Int32 = 0 /* TODO: Value */,
-	System_TypeCode_UInt32 = 0 /* TODO: Value */,
-	System_TypeCode_Int64 = 0 /* TODO: Value */,
-	System_TypeCode_UInt64 = 0 /* TODO: Value */,
-	System_TypeCode_Single = 0 /* TODO: Value */,
-	System_TypeCode_Double = 0 /* TODO: Value */,
-	System_TypeCode_Decimal = 0 /* TODO: Value */,
-	System_TypeCode_DateTime = 0 /* TODO: Value */,
-	System_TypeCode_String = 0 /* TODO: Value */
+	System_TypeCode_Empty = 0,
+	System_TypeCode_Object = 1,
+	System_TypeCode_DBNull = 2,
+	System_TypeCode_Boolean = 3,
+	System_TypeCode_Char = 4,
+	System_TypeCode_SByte = 5,
+	System_TypeCode_Byte = 6,
+	System_TypeCode_Int16 = 7,
+	System_TypeCode_UInt16 = 8,
+	System_TypeCode_Int32 = 9,
+	System_TypeCode_UInt32 = 10,
+	System_TypeCode_Int64 = 11,
+	System_TypeCode_UInt64 = 12,
+	System_TypeCode_Single = 13,
+	System_TypeCode_Double = 14,
+	System_TypeCode_Decimal = 15,
+	System_TypeCode_DateTime = 16,
+	System_TypeCode_String = 18
 } System_TypeCode;
 
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Reflection_ProcessorArchitecture_None = 0 /* TODO: Value */,
-	System_Reflection_ProcessorArchitecture_MSIL = 0 /* TODO: Value */,
-	System_Reflection_ProcessorArchitecture_X86 = 0 /* TODO: Value */,
-	System_Reflection_ProcessorArchitecture_IA64 = 0 /* TODO: Value */,
-	System_Reflection_ProcessorArchitecture_Amd64 = 0 /* TODO: Value */,
-	System_Reflection_ProcessorArchitecture_Arm = 0 /* TODO: Value */
+	System_Reflection_ProcessorArchitecture_None = 0,
+	System_Reflection_ProcessorArchitecture_MSIL = 1,
+	System_Reflection_ProcessorArchitecture_X86 = 2,
+	System_Reflection_ProcessorArchitecture_IA64 = 3,
+	System_Reflection_ProcessorArchitecture_Amd64 = 4,
+	System_Reflection_ProcessorArchitecture_Arm = 5
 } System_Reflection_ProcessorArchitecture;
 
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Reflection_AssemblyContentType_Default = 0 /* TODO: Value */,
-	System_Reflection_AssemblyContentType_WindowsRuntime = 0 /* TODO: Value */
+	System_Reflection_AssemblyContentType_Default = 0,
+	System_Reflection_AssemblyContentType_WindowsRuntime = 1
 } System_Reflection_AssemblyContentType;
 
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Reflection_AssemblyNameFlags_None = 0 /* TODO: Value */,
-	System_Reflection_AssemblyNameFlags_PublicKey = 0 /* TODO: Value */,
-	System_Reflection_AssemblyNameFlags_Retargetable = 0 /* TODO: Value */,
-	System_Reflection_AssemblyNameFlags_EnableJITcompileOptimizer = 0 /* TODO: Value */,
-	System_Reflection_AssemblyNameFlags_EnableJITcompileTracking = 0 /* TODO: Value */
+	System_Reflection_AssemblyNameFlags_None = 0,
+	System_Reflection_AssemblyNameFlags_PublicKey = 1,
+	System_Reflection_AssemblyNameFlags_Retargetable = 256,
+	System_Reflection_AssemblyNameFlags_EnableJITcompileOptimizer = 16384,
+	System_Reflection_AssemblyNameFlags_EnableJITcompileTracking = 32768
 } System_Reflection_AssemblyNameFlags;
 
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Configuration_Assemblies_AssemblyHashAlgorithm_None = 0 /* TODO: Value */,
-	System_Configuration_Assemblies_AssemblyHashAlgorithm_MD5 = 0 /* TODO: Value */,
-	System_Configuration_Assemblies_AssemblyHashAlgorithm_SHA1 = 0 /* TODO: Value */,
-	System_Configuration_Assemblies_AssemblyHashAlgorithm_SHA256 = 0 /* TODO: Value */,
-	System_Configuration_Assemblies_AssemblyHashAlgorithm_SHA384 = 0 /* TODO: Value */,
-	System_Configuration_Assemblies_AssemblyHashAlgorithm_SHA512 = 0 /* TODO: Value */
+	System_Configuration_Assemblies_AssemblyHashAlgorithm_None = 0,
+	System_Configuration_Assemblies_AssemblyHashAlgorithm_MD5 = 32771,
+	System_Configuration_Assemblies_AssemblyHashAlgorithm_SHA1 = 32772,
+	System_Configuration_Assemblies_AssemblyHashAlgorithm_SHA256 = 32780,
+	System_Configuration_Assemblies_AssemblyHashAlgorithm_SHA384 = 32781,
+	System_Configuration_Assemblies_AssemblyHashAlgorithm_SHA512 = 32782
 } System_Configuration_Assemblies_AssemblyHashAlgorithm;
 
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Configuration_Assemblies_AssemblyVersionCompatibility_SameMachine = 0 /* TODO: Value */,
-	System_Configuration_Assemblies_AssemblyVersionCompatibility_SameProcess = 0 /* TODO: Value */,
-	System_Configuration_Assemblies_AssemblyVersionCompatibility_SameDomain = 0 /* TODO: Value */
+	System_Configuration_Assemblies_AssemblyVersionCompatibility_SameMachine = 1,
+	System_Configuration_Assemblies_AssemblyVersionCompatibility_SameProcess = 2,
+	System_Configuration_Assemblies_AssemblyVersionCompatibility_SameDomain = 3
 } System_Configuration_Assemblies_AssemblyVersionCompatibility;
 
 
@@ -204,46 +204,46 @@ typedef void* System_Runtime_Serialization_SerializationEntry_t;
 
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Globalization_UnicodeCategory_UppercaseLetter = 0 /* TODO: Value */,
-	System_Globalization_UnicodeCategory_LowercaseLetter = 0 /* TODO: Value */,
-	System_Globalization_UnicodeCategory_TitlecaseLetter = 0 /* TODO: Value */,
-	System_Globalization_UnicodeCategory_ModifierLetter = 0 /* TODO: Value */,
-	System_Globalization_UnicodeCategory_OtherLetter = 0 /* TODO: Value */,
-	System_Globalization_UnicodeCategory_NonSpacingMark = 0 /* TODO: Value */,
-	System_Globalization_UnicodeCategory_SpacingCombiningMark = 0 /* TODO: Value */,
-	System_Globalization_UnicodeCategory_EnclosingMark = 0 /* TODO: Value */,
-	System_Globalization_UnicodeCategory_DecimalDigitNumber = 0 /* TODO: Value */,
-	System_Globalization_UnicodeCategory_LetterNumber = 0 /* TODO: Value */,
-	System_Globalization_UnicodeCategory_OtherNumber = 0 /* TODO: Value */,
-	System_Globalization_UnicodeCategory_SpaceSeparator = 0 /* TODO: Value */,
-	System_Globalization_UnicodeCategory_LineSeparator = 0 /* TODO: Value */,
-	System_Globalization_UnicodeCategory_ParagraphSeparator = 0 /* TODO: Value */,
-	System_Globalization_UnicodeCategory_Control = 0 /* TODO: Value */,
-	System_Globalization_UnicodeCategory_Format = 0 /* TODO: Value */,
-	System_Globalization_UnicodeCategory_Surrogate = 0 /* TODO: Value */,
-	System_Globalization_UnicodeCategory_PrivateUse = 0 /* TODO: Value */,
-	System_Globalization_UnicodeCategory_ConnectorPunctuation = 0 /* TODO: Value */,
-	System_Globalization_UnicodeCategory_DashPunctuation = 0 /* TODO: Value */,
-	System_Globalization_UnicodeCategory_OpenPunctuation = 0 /* TODO: Value */,
-	System_Globalization_UnicodeCategory_ClosePunctuation = 0 /* TODO: Value */,
-	System_Globalization_UnicodeCategory_InitialQuotePunctuation = 0 /* TODO: Value */,
-	System_Globalization_UnicodeCategory_FinalQuotePunctuation = 0 /* TODO: Value */,
-	System_Globalization_UnicodeCategory_OtherPunctuation = 0 /* TODO: Value */,
-	System_Globalization_UnicodeCategory_MathSymbol = 0 /* TODO: Value */,
-	System_Globalization_UnicodeCategory_CurrencySymbol = 0 /* TODO: Value */,
-	System_Globalization_UnicodeCategory_ModifierSymbol = 0 /* TODO: Value */,
-	System_Globalization_UnicodeCategory_OtherSymbol = 0 /* TODO: Value */,
-	System_Globalization_UnicodeCategory_OtherNotAssigned = 0 /* TODO: Value */
+	System_Globalization_UnicodeCategory_UppercaseLetter = 0,
+	System_Globalization_UnicodeCategory_LowercaseLetter = 1,
+	System_Globalization_UnicodeCategory_TitlecaseLetter = 2,
+	System_Globalization_UnicodeCategory_ModifierLetter = 3,
+	System_Globalization_UnicodeCategory_OtherLetter = 4,
+	System_Globalization_UnicodeCategory_NonSpacingMark = 5,
+	System_Globalization_UnicodeCategory_SpacingCombiningMark = 6,
+	System_Globalization_UnicodeCategory_EnclosingMark = 7,
+	System_Globalization_UnicodeCategory_DecimalDigitNumber = 8,
+	System_Globalization_UnicodeCategory_LetterNumber = 9,
+	System_Globalization_UnicodeCategory_OtherNumber = 10,
+	System_Globalization_UnicodeCategory_SpaceSeparator = 11,
+	System_Globalization_UnicodeCategory_LineSeparator = 12,
+	System_Globalization_UnicodeCategory_ParagraphSeparator = 13,
+	System_Globalization_UnicodeCategory_Control = 14,
+	System_Globalization_UnicodeCategory_Format = 15,
+	System_Globalization_UnicodeCategory_Surrogate = 16,
+	System_Globalization_UnicodeCategory_PrivateUse = 17,
+	System_Globalization_UnicodeCategory_ConnectorPunctuation = 18,
+	System_Globalization_UnicodeCategory_DashPunctuation = 19,
+	System_Globalization_UnicodeCategory_OpenPunctuation = 20,
+	System_Globalization_UnicodeCategory_ClosePunctuation = 21,
+	System_Globalization_UnicodeCategory_InitialQuotePunctuation = 22,
+	System_Globalization_UnicodeCategory_FinalQuotePunctuation = 23,
+	System_Globalization_UnicodeCategory_OtherPunctuation = 24,
+	System_Globalization_UnicodeCategory_MathSymbol = 25,
+	System_Globalization_UnicodeCategory_CurrencySymbol = 26,
+	System_Globalization_UnicodeCategory_ModifierSymbol = 27,
+	System_Globalization_UnicodeCategory_OtherSymbol = 28,
+	System_Globalization_UnicodeCategory_OtherNotAssigned = 29
 } System_Globalization_UnicodeCategory;
 
 
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_MidpointRounding_ToEven = 0 /* TODO: Value */,
-	System_MidpointRounding_AwayFromZero = 0 /* TODO: Value */,
-	System_MidpointRounding_ToZero = 0 /* TODO: Value */,
-	System_MidpointRounding_ToNegativeInfinity = 0 /* TODO: Value */,
-	System_MidpointRounding_ToPositiveInfinity = 0 /* TODO: Value */
+	System_MidpointRounding_ToEven = 0,
+	System_MidpointRounding_AwayFromZero = 1,
+	System_MidpointRounding_ToZero = 2,
+	System_MidpointRounding_ToNegativeInfinity = 3,
+	System_MidpointRounding_ToPositiveInfinity = 4
 } System_MidpointRounding;
 
 
@@ -260,40 +260,40 @@ typedef void* System_DateTime_t;
 typedef void* System_TimeSpan_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Globalization_TimeSpanStyles_None = 0 /* TODO: Value */,
-	System_Globalization_TimeSpanStyles_AssumeNegative = 0 /* TODO: Value */
+	System_Globalization_TimeSpanStyles_None = 0,
+	System_Globalization_TimeSpanStyles_AssumeNegative = 1
 } System_Globalization_TimeSpanStyles;
 
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_DateTimeKind_Unspecified = 0 /* TODO: Value */,
-	System_DateTimeKind_Utc = 0 /* TODO: Value */,
-	System_DateTimeKind_Local = 0 /* TODO: Value */
+	System_DateTimeKind_Unspecified = 0,
+	System_DateTimeKind_Utc = 1,
+	System_DateTimeKind_Local = 2
 } System_DateTimeKind;
 
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_DayOfWeek_Sunday = 0 /* TODO: Value */,
-	System_DayOfWeek_Monday = 0 /* TODO: Value */,
-	System_DayOfWeek_Tuesday = 0 /* TODO: Value */,
-	System_DayOfWeek_Wednesday = 0 /* TODO: Value */,
-	System_DayOfWeek_Thursday = 0 /* TODO: Value */,
-	System_DayOfWeek_Friday = 0 /* TODO: Value */,
-	System_DayOfWeek_Saturday = 0 /* TODO: Value */
+	System_DayOfWeek_Sunday = 0,
+	System_DayOfWeek_Monday = 1,
+	System_DayOfWeek_Tuesday = 2,
+	System_DayOfWeek_Wednesday = 3,
+	System_DayOfWeek_Thursday = 4,
+	System_DayOfWeek_Friday = 5,
+	System_DayOfWeek_Saturday = 6
 } System_DayOfWeek;
 
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Globalization_DateTimeStyles_None = 0 /* TODO: Value */,
-	System_Globalization_DateTimeStyles_AllowLeadingWhite = 0 /* TODO: Value */,
-	System_Globalization_DateTimeStyles_AllowTrailingWhite = 0 /* TODO: Value */,
-	System_Globalization_DateTimeStyles_AllowInnerWhite = 0 /* TODO: Value */,
-	System_Globalization_DateTimeStyles_AllowWhiteSpaces = 0 /* TODO: Value */,
-	System_Globalization_DateTimeStyles_NoCurrentDateDefault = 0 /* TODO: Value */,
-	System_Globalization_DateTimeStyles_AdjustToUniversal = 0 /* TODO: Value */,
-	System_Globalization_DateTimeStyles_AssumeLocal = 0 /* TODO: Value */,
-	System_Globalization_DateTimeStyles_AssumeUniversal = 0 /* TODO: Value */,
-	System_Globalization_DateTimeStyles_RoundtripKind = 0 /* TODO: Value */
+	System_Globalization_DateTimeStyles_None = 0,
+	System_Globalization_DateTimeStyles_AllowLeadingWhite = 1,
+	System_Globalization_DateTimeStyles_AllowTrailingWhite = 2,
+	System_Globalization_DateTimeStyles_AllowInnerWhite = 4,
+	System_Globalization_DateTimeStyles_AllowWhiteSpaces = 7,
+	System_Globalization_DateTimeStyles_NoCurrentDateDefault = 8,
+	System_Globalization_DateTimeStyles_AdjustToUniversal = 16,
+	System_Globalization_DateTimeStyles_AssumeLocal = 32,
+	System_Globalization_DateTimeStyles_AssumeUniversal = 64,
+	System_Globalization_DateTimeStyles_RoundtripKind = 128
 } System_Globalization_DateTimeStyles;
 
 
@@ -304,17 +304,17 @@ typedef void* System_TimeOnly_t;
 typedef void* System_Globalization_Calendar_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Globalization_CalendarAlgorithmType_Unknown = 0 /* TODO: Value */,
-	System_Globalization_CalendarAlgorithmType_SolarCalendar = 0 /* TODO: Value */,
-	System_Globalization_CalendarAlgorithmType_LunarCalendar = 0 /* TODO: Value */,
-	System_Globalization_CalendarAlgorithmType_LunisolarCalendar = 0 /* TODO: Value */
+	System_Globalization_CalendarAlgorithmType_Unknown = 0,
+	System_Globalization_CalendarAlgorithmType_SolarCalendar = 1,
+	System_Globalization_CalendarAlgorithmType_LunarCalendar = 2,
+	System_Globalization_CalendarAlgorithmType_LunisolarCalendar = 3
 } System_Globalization_CalendarAlgorithmType;
 
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Globalization_CalendarWeekRule_FirstDay = 0 /* TODO: Value */,
-	System_Globalization_CalendarWeekRule_FirstFullWeek = 0 /* TODO: Value */,
-	System_Globalization_CalendarWeekRule_FirstFourDayWeek = 0 /* TODO: Value */
+	System_Globalization_CalendarWeekRule_FirstDay = 0,
+	System_Globalization_CalendarWeekRule_FirstFullWeek = 1,
+	System_Globalization_CalendarWeekRule_FirstFourDayWeek = 2
 } System_Globalization_CalendarWeekRule;
 
 
@@ -323,15 +323,15 @@ typedef void* System_Runtime_Serialization_IFormatterConverter_t;
 typedef void* System_Runtime_Serialization_StreamingContext_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Runtime_Serialization_StreamingContextStates_CrossProcess = 0 /* TODO: Value */,
-	System_Runtime_Serialization_StreamingContextStates_CrossMachine = 0 /* TODO: Value */,
-	System_Runtime_Serialization_StreamingContextStates_File = 0 /* TODO: Value */,
-	System_Runtime_Serialization_StreamingContextStates_Persistence = 0 /* TODO: Value */,
-	System_Runtime_Serialization_StreamingContextStates_Remoting = 0 /* TODO: Value */,
-	System_Runtime_Serialization_StreamingContextStates_Other = 0 /* TODO: Value */,
-	System_Runtime_Serialization_StreamingContextStates_Clone = 0 /* TODO: Value */,
-	System_Runtime_Serialization_StreamingContextStates_CrossAppDomain = 0 /* TODO: Value */,
-	System_Runtime_Serialization_StreamingContextStates_All = 0 /* TODO: Value */
+	System_Runtime_Serialization_StreamingContextStates_CrossProcess = 1,
+	System_Runtime_Serialization_StreamingContextStates_CrossMachine = 2,
+	System_Runtime_Serialization_StreamingContextStates_File = 4,
+	System_Runtime_Serialization_StreamingContextStates_Persistence = 8,
+	System_Runtime_Serialization_StreamingContextStates_Remoting = 16,
+	System_Runtime_Serialization_StreamingContextStates_Other = 32,
+	System_Runtime_Serialization_StreamingContextStates_Clone = 64,
+	System_Runtime_Serialization_StreamingContextStates_CrossAppDomain = 128,
+	System_Runtime_Serialization_StreamingContextStates_All = 255
 } System_Runtime_Serialization_StreamingContextStates;
 
 
@@ -343,87 +343,87 @@ typedef void* System_ModuleHandle_t;
 typedef void* System_RuntimeFieldHandle_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Reflection_MethodAttributes_PrivateScope = 0 /* TODO: Value */,
-	System_Reflection_MethodAttributes_ReuseSlot = 0 /* TODO: Value */,
-	System_Reflection_MethodAttributes_Private = 0 /* TODO: Value */,
-	System_Reflection_MethodAttributes_FamANDAssem = 0 /* TODO: Value */,
-	System_Reflection_MethodAttributes_Assembly = 0 /* TODO: Value */,
-	System_Reflection_MethodAttributes_Family = 0 /* TODO: Value */,
-	System_Reflection_MethodAttributes_FamORAssem = 0 /* TODO: Value */,
-	System_Reflection_MethodAttributes_Public = 0 /* TODO: Value */,
-	System_Reflection_MethodAttributes_MemberAccessMask = 0 /* TODO: Value */,
-	System_Reflection_MethodAttributes_UnmanagedExport = 0 /* TODO: Value */,
-	System_Reflection_MethodAttributes_Static = 0 /* TODO: Value */,
-	System_Reflection_MethodAttributes_Final = 0 /* TODO: Value */,
-	System_Reflection_MethodAttributes_Virtual = 0 /* TODO: Value */,
-	System_Reflection_MethodAttributes_HideBySig = 0 /* TODO: Value */,
-	System_Reflection_MethodAttributes_NewSlot = 0 /* TODO: Value */,
-	System_Reflection_MethodAttributes_VtableLayoutMask = 0 /* TODO: Value */,
-	System_Reflection_MethodAttributes_CheckAccessOnOverride = 0 /* TODO: Value */,
-	System_Reflection_MethodAttributes_Abstract = 0 /* TODO: Value */,
-	System_Reflection_MethodAttributes_SpecialName = 0 /* TODO: Value */,
-	System_Reflection_MethodAttributes_RTSpecialName = 0 /* TODO: Value */,
-	System_Reflection_MethodAttributes_PinvokeImpl = 0 /* TODO: Value */,
-	System_Reflection_MethodAttributes_HasSecurity = 0 /* TODO: Value */,
-	System_Reflection_MethodAttributes_RequireSecObject = 0 /* TODO: Value */,
-	System_Reflection_MethodAttributes_ReservedMask = 0 /* TODO: Value */
+	System_Reflection_MethodAttributes_PrivateScope = 0,
+	System_Reflection_MethodAttributes_ReuseSlot = 0,
+	System_Reflection_MethodAttributes_Private = 1,
+	System_Reflection_MethodAttributes_FamANDAssem = 2,
+	System_Reflection_MethodAttributes_Assembly = 3,
+	System_Reflection_MethodAttributes_Family = 4,
+	System_Reflection_MethodAttributes_FamORAssem = 5,
+	System_Reflection_MethodAttributes_Public = 6,
+	System_Reflection_MethodAttributes_MemberAccessMask = 7,
+	System_Reflection_MethodAttributes_UnmanagedExport = 8,
+	System_Reflection_MethodAttributes_Static = 16,
+	System_Reflection_MethodAttributes_Final = 32,
+	System_Reflection_MethodAttributes_Virtual = 64,
+	System_Reflection_MethodAttributes_HideBySig = 128,
+	System_Reflection_MethodAttributes_NewSlot = 256,
+	System_Reflection_MethodAttributes_VtableLayoutMask = 256,
+	System_Reflection_MethodAttributes_CheckAccessOnOverride = 512,
+	System_Reflection_MethodAttributes_Abstract = 1024,
+	System_Reflection_MethodAttributes_SpecialName = 2048,
+	System_Reflection_MethodAttributes_RTSpecialName = 4096,
+	System_Reflection_MethodAttributes_PinvokeImpl = 8192,
+	System_Reflection_MethodAttributes_HasSecurity = 16384,
+	System_Reflection_MethodAttributes_RequireSecObject = 32768,
+	System_Reflection_MethodAttributes_ReservedMask = 53248
 } System_Reflection_MethodAttributes;
 
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Reflection_MethodImplAttributes_IL = 0 /* TODO: Value */,
-	System_Reflection_MethodImplAttributes_Managed = 0 /* TODO: Value */,
-	System_Reflection_MethodImplAttributes_Native = 0 /* TODO: Value */,
-	System_Reflection_MethodImplAttributes_OPTIL = 0 /* TODO: Value */,
-	System_Reflection_MethodImplAttributes_CodeTypeMask = 0 /* TODO: Value */,
-	System_Reflection_MethodImplAttributes_Runtime = 0 /* TODO: Value */,
-	System_Reflection_MethodImplAttributes_ManagedMask = 0 /* TODO: Value */,
-	System_Reflection_MethodImplAttributes_Unmanaged = 0 /* TODO: Value */,
-	System_Reflection_MethodImplAttributes_NoInlining = 0 /* TODO: Value */,
-	System_Reflection_MethodImplAttributes_ForwardRef = 0 /* TODO: Value */,
-	System_Reflection_MethodImplAttributes_Synchronized = 0 /* TODO: Value */,
-	System_Reflection_MethodImplAttributes_NoOptimization = 0 /* TODO: Value */,
-	System_Reflection_MethodImplAttributes_PreserveSig = 0 /* TODO: Value */,
-	System_Reflection_MethodImplAttributes_AggressiveInlining = 0 /* TODO: Value */,
-	System_Reflection_MethodImplAttributes_AggressiveOptimization = 0 /* TODO: Value */,
-	System_Reflection_MethodImplAttributes_InternalCall = 0 /* TODO: Value */,
-	System_Reflection_MethodImplAttributes_MaxMethodImplVal = 0 /* TODO: Value */
+	System_Reflection_MethodImplAttributes_IL = 0,
+	System_Reflection_MethodImplAttributes_Managed = 0,
+	System_Reflection_MethodImplAttributes_Native = 1,
+	System_Reflection_MethodImplAttributes_OPTIL = 2,
+	System_Reflection_MethodImplAttributes_CodeTypeMask = 3,
+	System_Reflection_MethodImplAttributes_Runtime = 3,
+	System_Reflection_MethodImplAttributes_ManagedMask = 4,
+	System_Reflection_MethodImplAttributes_Unmanaged = 4,
+	System_Reflection_MethodImplAttributes_NoInlining = 8,
+	System_Reflection_MethodImplAttributes_ForwardRef = 16,
+	System_Reflection_MethodImplAttributes_Synchronized = 32,
+	System_Reflection_MethodImplAttributes_NoOptimization = 64,
+	System_Reflection_MethodImplAttributes_PreserveSig = 128,
+	System_Reflection_MethodImplAttributes_AggressiveInlining = 256,
+	System_Reflection_MethodImplAttributes_AggressiveOptimization = 512,
+	System_Reflection_MethodImplAttributes_InternalCall = 4096,
+	System_Reflection_MethodImplAttributes_MaxMethodImplVal = 65535
 } System_Reflection_MethodImplAttributes;
 
 
 typedef void* System_Reflection_MethodBody_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Reflection_CallingConventions_Standard = 0 /* TODO: Value */,
-	System_Reflection_CallingConventions_VarArgs = 0 /* TODO: Value */,
-	System_Reflection_CallingConventions_Any = 0 /* TODO: Value */,
-	System_Reflection_CallingConventions_HasThis = 0 /* TODO: Value */,
-	System_Reflection_CallingConventions_ExplicitThis = 0 /* TODO: Value */
+	System_Reflection_CallingConventions_Standard = 1,
+	System_Reflection_CallingConventions_VarArgs = 2,
+	System_Reflection_CallingConventions_Any = 3,
+	System_Reflection_CallingConventions_HasThis = 32,
+	System_Reflection_CallingConventions_ExplicitThis = 64
 } System_Reflection_CallingConventions;
 
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Reflection_BindingFlags_Default = 0 /* TODO: Value */,
-	System_Reflection_BindingFlags_IgnoreCase = 0 /* TODO: Value */,
-	System_Reflection_BindingFlags_DeclaredOnly = 0 /* TODO: Value */,
-	System_Reflection_BindingFlags_Instance = 0 /* TODO: Value */,
-	System_Reflection_BindingFlags_Static = 0 /* TODO: Value */,
-	System_Reflection_BindingFlags_Public = 0 /* TODO: Value */,
-	System_Reflection_BindingFlags_NonPublic = 0 /* TODO: Value */,
-	System_Reflection_BindingFlags_FlattenHierarchy = 0 /* TODO: Value */,
-	System_Reflection_BindingFlags_InvokeMethod = 0 /* TODO: Value */,
-	System_Reflection_BindingFlags_CreateInstance = 0 /* TODO: Value */,
-	System_Reflection_BindingFlags_GetField = 0 /* TODO: Value */,
-	System_Reflection_BindingFlags_SetField = 0 /* TODO: Value */,
-	System_Reflection_BindingFlags_GetProperty = 0 /* TODO: Value */,
-	System_Reflection_BindingFlags_SetProperty = 0 /* TODO: Value */,
-	System_Reflection_BindingFlags_PutDispProperty = 0 /* TODO: Value */,
-	System_Reflection_BindingFlags_PutRefDispProperty = 0 /* TODO: Value */,
-	System_Reflection_BindingFlags_ExactBinding = 0 /* TODO: Value */,
-	System_Reflection_BindingFlags_SuppressChangeType = 0 /* TODO: Value */,
-	System_Reflection_BindingFlags_OptionalParamBinding = 0 /* TODO: Value */,
-	System_Reflection_BindingFlags_IgnoreReturn = 0 /* TODO: Value */,
-	System_Reflection_BindingFlags_DoNotWrapExceptions = 0 /* TODO: Value */
+	System_Reflection_BindingFlags_Default = 0,
+	System_Reflection_BindingFlags_IgnoreCase = 1,
+	System_Reflection_BindingFlags_DeclaredOnly = 2,
+	System_Reflection_BindingFlags_Instance = 4,
+	System_Reflection_BindingFlags_Static = 8,
+	System_Reflection_BindingFlags_Public = 16,
+	System_Reflection_BindingFlags_NonPublic = 32,
+	System_Reflection_BindingFlags_FlattenHierarchy = 64,
+	System_Reflection_BindingFlags_InvokeMethod = 256,
+	System_Reflection_BindingFlags_CreateInstance = 512,
+	System_Reflection_BindingFlags_GetField = 1024,
+	System_Reflection_BindingFlags_SetField = 2048,
+	System_Reflection_BindingFlags_GetProperty = 4096,
+	System_Reflection_BindingFlags_SetProperty = 8192,
+	System_Reflection_BindingFlags_PutDispProperty = 16384,
+	System_Reflection_BindingFlags_PutRefDispProperty = 32768,
+	System_Reflection_BindingFlags_ExactBinding = 65536,
+	System_Reflection_BindingFlags_SuppressChangeType = 131072,
+	System_Reflection_BindingFlags_OptionalParamBinding = 262144,
+	System_Reflection_BindingFlags_IgnoreReturn = 16777216,
+	System_Reflection_BindingFlags_DoNotWrapExceptions = 33554432
 } System_Reflection_BindingFlags;
 
 
@@ -432,39 +432,39 @@ typedef void* System_Reflection_Binder_t;
 typedef void* System_Reflection_FieldInfo_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Reflection_FieldAttributes_PrivateScope = 0 /* TODO: Value */,
-	System_Reflection_FieldAttributes_Private = 0 /* TODO: Value */,
-	System_Reflection_FieldAttributes_FamANDAssem = 0 /* TODO: Value */,
-	System_Reflection_FieldAttributes_Assembly = 0 /* TODO: Value */,
-	System_Reflection_FieldAttributes_Family = 0 /* TODO: Value */,
-	System_Reflection_FieldAttributes_FamORAssem = 0 /* TODO: Value */,
-	System_Reflection_FieldAttributes_Public = 0 /* TODO: Value */,
-	System_Reflection_FieldAttributes_FieldAccessMask = 0 /* TODO: Value */,
-	System_Reflection_FieldAttributes_Static = 0 /* TODO: Value */,
-	System_Reflection_FieldAttributes_InitOnly = 0 /* TODO: Value */,
-	System_Reflection_FieldAttributes_Literal = 0 /* TODO: Value */,
-	System_Reflection_FieldAttributes_NotSerialized = 0 /* TODO: Value */,
-	System_Reflection_FieldAttributes_HasFieldRVA = 0 /* TODO: Value */,
-	System_Reflection_FieldAttributes_SpecialName = 0 /* TODO: Value */,
-	System_Reflection_FieldAttributes_RTSpecialName = 0 /* TODO: Value */,
-	System_Reflection_FieldAttributes_HasFieldMarshal = 0 /* TODO: Value */,
-	System_Reflection_FieldAttributes_PinvokeImpl = 0 /* TODO: Value */,
-	System_Reflection_FieldAttributes_HasDefault = 0 /* TODO: Value */,
-	System_Reflection_FieldAttributes_ReservedMask = 0 /* TODO: Value */
+	System_Reflection_FieldAttributes_PrivateScope = 0,
+	System_Reflection_FieldAttributes_Private = 1,
+	System_Reflection_FieldAttributes_FamANDAssem = 2,
+	System_Reflection_FieldAttributes_Assembly = 3,
+	System_Reflection_FieldAttributes_Family = 4,
+	System_Reflection_FieldAttributes_FamORAssem = 5,
+	System_Reflection_FieldAttributes_Public = 6,
+	System_Reflection_FieldAttributes_FieldAccessMask = 7,
+	System_Reflection_FieldAttributes_Static = 16,
+	System_Reflection_FieldAttributes_InitOnly = 32,
+	System_Reflection_FieldAttributes_Literal = 64,
+	System_Reflection_FieldAttributes_NotSerialized = 128,
+	System_Reflection_FieldAttributes_HasFieldRVA = 256,
+	System_Reflection_FieldAttributes_SpecialName = 512,
+	System_Reflection_FieldAttributes_RTSpecialName = 1024,
+	System_Reflection_FieldAttributes_HasFieldMarshal = 4096,
+	System_Reflection_FieldAttributes_PinvokeImpl = 8192,
+	System_Reflection_FieldAttributes_HasDefault = 32768,
+	System_Reflection_FieldAttributes_ReservedMask = 38144
 } System_Reflection_FieldAttributes;
 
 
 typedef void* System_Reflection_PropertyInfo_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Reflection_PropertyAttributes_None = 0 /* TODO: Value */,
-	System_Reflection_PropertyAttributes_SpecialName = 0 /* TODO: Value */,
-	System_Reflection_PropertyAttributes_RTSpecialName = 0 /* TODO: Value */,
-	System_Reflection_PropertyAttributes_HasDefault = 0 /* TODO: Value */,
-	System_Reflection_PropertyAttributes_Reserved2 = 0 /* TODO: Value */,
-	System_Reflection_PropertyAttributes_Reserved3 = 0 /* TODO: Value */,
-	System_Reflection_PropertyAttributes_Reserved4 = 0 /* TODO: Value */,
-	System_Reflection_PropertyAttributes_ReservedMask = 0 /* TODO: Value */
+	System_Reflection_PropertyAttributes_None = 0,
+	System_Reflection_PropertyAttributes_SpecialName = 512,
+	System_Reflection_PropertyAttributes_RTSpecialName = 1024,
+	System_Reflection_PropertyAttributes_HasDefault = 4096,
+	System_Reflection_PropertyAttributes_Reserved2 = 8192,
+	System_Reflection_PropertyAttributes_Reserved3 = 16384,
+	System_Reflection_PropertyAttributes_Reserved4 = 32768,
+	System_Reflection_PropertyAttributes_ReservedMask = 62464
 } System_Reflection_PropertyAttributes;
 
 
@@ -473,17 +473,17 @@ typedef void* System_Reflection_MethodInfo_t;
 typedef void* System_Reflection_ParameterInfo_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Reflection_ParameterAttributes_None = 0 /* TODO: Value */,
-	System_Reflection_ParameterAttributes_In = 0 /* TODO: Value */,
-	System_Reflection_ParameterAttributes_Out = 0 /* TODO: Value */,
-	System_Reflection_ParameterAttributes_Lcid = 0 /* TODO: Value */,
-	System_Reflection_ParameterAttributes_Retval = 0 /* TODO: Value */,
-	System_Reflection_ParameterAttributes_Optional = 0 /* TODO: Value */,
-	System_Reflection_ParameterAttributes_HasDefault = 0 /* TODO: Value */,
-	System_Reflection_ParameterAttributes_HasFieldMarshal = 0 /* TODO: Value */,
-	System_Reflection_ParameterAttributes_Reserved3 = 0 /* TODO: Value */,
-	System_Reflection_ParameterAttributes_Reserved4 = 0 /* TODO: Value */,
-	System_Reflection_ParameterAttributes_ReservedMask = 0 /* TODO: Value */
+	System_Reflection_ParameterAttributes_None = 0,
+	System_Reflection_ParameterAttributes_In = 1,
+	System_Reflection_ParameterAttributes_Out = 2,
+	System_Reflection_ParameterAttributes_Lcid = 4,
+	System_Reflection_ParameterAttributes_Retval = 8,
+	System_Reflection_ParameterAttributes_Optional = 16,
+	System_Reflection_ParameterAttributes_HasDefault = 4096,
+	System_Reflection_ParameterAttributes_HasFieldMarshal = 8192,
+	System_Reflection_ParameterAttributes_Reserved3 = 16384,
+	System_Reflection_ParameterAttributes_Reserved4 = 32768,
+	System_Reflection_ParameterAttributes_ReservedMask = 61440
 } System_Reflection_ParameterAttributes;
 
 
@@ -504,25 +504,25 @@ typedef void* System_Collections_IDictionaryEnumerator_t;
 typedef void* System_Collections_DictionaryEntry_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Threading_Tasks_TaskStatus_Created = 0 /* TODO: Value */,
-	System_Threading_Tasks_TaskStatus_WaitingForActivation = 0 /* TODO: Value */,
-	System_Threading_Tasks_TaskStatus_WaitingToRun = 0 /* TODO: Value */,
-	System_Threading_Tasks_TaskStatus_Running = 0 /* TODO: Value */,
-	System_Threading_Tasks_TaskStatus_WaitingForChildrenToComplete = 0 /* TODO: Value */,
-	System_Threading_Tasks_TaskStatus_RanToCompletion = 0 /* TODO: Value */,
-	System_Threading_Tasks_TaskStatus_Canceled = 0 /* TODO: Value */,
-	System_Threading_Tasks_TaskStatus_Faulted = 0 /* TODO: Value */
+	System_Threading_Tasks_TaskStatus_Created = 0,
+	System_Threading_Tasks_TaskStatus_WaitingForActivation = 1,
+	System_Threading_Tasks_TaskStatus_WaitingToRun = 2,
+	System_Threading_Tasks_TaskStatus_Running = 3,
+	System_Threading_Tasks_TaskStatus_WaitingForChildrenToComplete = 4,
+	System_Threading_Tasks_TaskStatus_RanToCompletion = 5,
+	System_Threading_Tasks_TaskStatus_Canceled = 6,
+	System_Threading_Tasks_TaskStatus_Faulted = 7
 } System_Threading_Tasks_TaskStatus;
 
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Threading_Tasks_TaskCreationOptions_None = 0 /* TODO: Value */,
-	System_Threading_Tasks_TaskCreationOptions_PreferFairness = 0 /* TODO: Value */,
-	System_Threading_Tasks_TaskCreationOptions_LongRunning = 0 /* TODO: Value */,
-	System_Threading_Tasks_TaskCreationOptions_AttachedToParent = 0 /* TODO: Value */,
-	System_Threading_Tasks_TaskCreationOptions_DenyChildAttach = 0 /* TODO: Value */,
-	System_Threading_Tasks_TaskCreationOptions_HideScheduler = 0 /* TODO: Value */,
-	System_Threading_Tasks_TaskCreationOptions_RunContinuationsAsynchronously = 0 /* TODO: Value */
+	System_Threading_Tasks_TaskCreationOptions_None = 0,
+	System_Threading_Tasks_TaskCreationOptions_PreferFairness = 1,
+	System_Threading_Tasks_TaskCreationOptions_LongRunning = 2,
+	System_Threading_Tasks_TaskCreationOptions_AttachedToParent = 4,
+	System_Threading_Tasks_TaskCreationOptions_DenyChildAttach = 8,
+	System_Threading_Tasks_TaskCreationOptions_HideScheduler = 16,
+	System_Threading_Tasks_TaskCreationOptions_RunContinuationsAsynchronously = 64
 } System_Threading_Tasks_TaskCreationOptions;
 
 
@@ -553,36 +553,36 @@ typedef void* System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_Confi
 typedef void* System_Threading_Tasks_Sources_IValueTaskSource_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Threading_Tasks_Sources_ValueTaskSourceStatus_Pending = 0 /* TODO: Value */,
-	System_Threading_Tasks_Sources_ValueTaskSourceStatus_Succeeded = 0 /* TODO: Value */,
-	System_Threading_Tasks_Sources_ValueTaskSourceStatus_Faulted = 0 /* TODO: Value */,
-	System_Threading_Tasks_Sources_ValueTaskSourceStatus_Canceled = 0 /* TODO: Value */
+	System_Threading_Tasks_Sources_ValueTaskSourceStatus_Pending = 0,
+	System_Threading_Tasks_Sources_ValueTaskSourceStatus_Succeeded = 1,
+	System_Threading_Tasks_Sources_ValueTaskSourceStatus_Faulted = 2,
+	System_Threading_Tasks_Sources_ValueTaskSourceStatus_Canceled = 3
 } System_Threading_Tasks_Sources_ValueTaskSourceStatus;
 
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Threading_Tasks_Sources_ValueTaskSourceOnCompletedFlags_None = 0 /* TODO: Value */,
-	System_Threading_Tasks_Sources_ValueTaskSourceOnCompletedFlags_UseSchedulingContext = 0 /* TODO: Value */,
-	System_Threading_Tasks_Sources_ValueTaskSourceOnCompletedFlags_FlowExecutionContext = 0 /* TODO: Value */
+	System_Threading_Tasks_Sources_ValueTaskSourceOnCompletedFlags_None = 0,
+	System_Threading_Tasks_Sources_ValueTaskSourceOnCompletedFlags_UseSchedulingContext = 1,
+	System_Threading_Tasks_Sources_ValueTaskSourceOnCompletedFlags_FlowExecutionContext = 2
 } System_Threading_Tasks_Sources_ValueTaskSourceOnCompletedFlags;
 
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Threading_Tasks_TaskContinuationOptions_None = 0 /* TODO: Value */,
-	System_Threading_Tasks_TaskContinuationOptions_PreferFairness = 0 /* TODO: Value */,
-	System_Threading_Tasks_TaskContinuationOptions_LongRunning = 0 /* TODO: Value */,
-	System_Threading_Tasks_TaskContinuationOptions_AttachedToParent = 0 /* TODO: Value */,
-	System_Threading_Tasks_TaskContinuationOptions_DenyChildAttach = 0 /* TODO: Value */,
-	System_Threading_Tasks_TaskContinuationOptions_HideScheduler = 0 /* TODO: Value */,
-	System_Threading_Tasks_TaskContinuationOptions_LazyCancellation = 0 /* TODO: Value */,
-	System_Threading_Tasks_TaskContinuationOptions_RunContinuationsAsynchronously = 0 /* TODO: Value */,
-	System_Threading_Tasks_TaskContinuationOptions_NotOnRanToCompletion = 0 /* TODO: Value */,
-	System_Threading_Tasks_TaskContinuationOptions_NotOnFaulted = 0 /* TODO: Value */,
-	System_Threading_Tasks_TaskContinuationOptions_OnlyOnCanceled = 0 /* TODO: Value */,
-	System_Threading_Tasks_TaskContinuationOptions_NotOnCanceled = 0 /* TODO: Value */,
-	System_Threading_Tasks_TaskContinuationOptions_OnlyOnFaulted = 0 /* TODO: Value */,
-	System_Threading_Tasks_TaskContinuationOptions_OnlyOnRanToCompletion = 0 /* TODO: Value */,
-	System_Threading_Tasks_TaskContinuationOptions_ExecuteSynchronously = 0 /* TODO: Value */
+	System_Threading_Tasks_TaskContinuationOptions_None = 0,
+	System_Threading_Tasks_TaskContinuationOptions_PreferFairness = 1,
+	System_Threading_Tasks_TaskContinuationOptions_LongRunning = 2,
+	System_Threading_Tasks_TaskContinuationOptions_AttachedToParent = 4,
+	System_Threading_Tasks_TaskContinuationOptions_DenyChildAttach = 8,
+	System_Threading_Tasks_TaskContinuationOptions_HideScheduler = 16,
+	System_Threading_Tasks_TaskContinuationOptions_LazyCancellation = 32,
+	System_Threading_Tasks_TaskContinuationOptions_RunContinuationsAsynchronously = 64,
+	System_Threading_Tasks_TaskContinuationOptions_NotOnRanToCompletion = 65536,
+	System_Threading_Tasks_TaskContinuationOptions_NotOnFaulted = 131072,
+	System_Threading_Tasks_TaskContinuationOptions_OnlyOnCanceled = 196608,
+	System_Threading_Tasks_TaskContinuationOptions_NotOnCanceled = 262144,
+	System_Threading_Tasks_TaskContinuationOptions_OnlyOnFaulted = 327680,
+	System_Threading_Tasks_TaskContinuationOptions_OnlyOnRanToCompletion = 393216,
+	System_Threading_Tasks_TaskContinuationOptions_ExecuteSynchronously = 524288
 } System_Threading_Tasks_TaskContinuationOptions;
 
 
@@ -599,49 +599,49 @@ typedef void* System_Runtime_CompilerServices_YieldAwaitable_t;
 typedef void* System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_IO_SeekOrigin_Begin = 0 /* TODO: Value */,
-	System_IO_SeekOrigin_Current = 0 /* TODO: Value */,
-	System_IO_SeekOrigin_End = 0 /* TODO: Value */
+	System_IO_SeekOrigin_Begin = 0,
+	System_IO_SeekOrigin_Current = 1,
+	System_IO_SeekOrigin_End = 2
 } System_IO_SeekOrigin;
 
 
 typedef void* Microsoft_Win32_SafeHandles_SafeFileHandle_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_IO_FileAccess_Read = 0 /* TODO: Value */,
-	System_IO_FileAccess_Write = 0 /* TODO: Value */,
-	System_IO_FileAccess_ReadWrite = 0 /* TODO: Value */
+	System_IO_FileAccess_Read = 1,
+	System_IO_FileAccess_Write = 2,
+	System_IO_FileAccess_ReadWrite = 3
 } System_IO_FileAccess;
 
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_IO_FileMode_CreateNew = 0 /* TODO: Value */,
-	System_IO_FileMode_Create = 0 /* TODO: Value */,
-	System_IO_FileMode_Open = 0 /* TODO: Value */,
-	System_IO_FileMode_OpenOrCreate = 0 /* TODO: Value */,
-	System_IO_FileMode_Truncate = 0 /* TODO: Value */,
-	System_IO_FileMode_Append = 0 /* TODO: Value */
+	System_IO_FileMode_CreateNew = 1,
+	System_IO_FileMode_Create = 2,
+	System_IO_FileMode_Open = 3,
+	System_IO_FileMode_OpenOrCreate = 4,
+	System_IO_FileMode_Truncate = 5,
+	System_IO_FileMode_Append = 6
 } System_IO_FileMode;
 
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_IO_FileShare_None = 0 /* TODO: Value */,
-	System_IO_FileShare_Read = 0 /* TODO: Value */,
-	System_IO_FileShare_Write = 0 /* TODO: Value */,
-	System_IO_FileShare_ReadWrite = 0 /* TODO: Value */,
-	System_IO_FileShare_Delete = 0 /* TODO: Value */,
-	System_IO_FileShare_Inheritable = 0 /* TODO: Value */
+	System_IO_FileShare_None = 0,
+	System_IO_FileShare_Read = 1,
+	System_IO_FileShare_Write = 2,
+	System_IO_FileShare_ReadWrite = 3,
+	System_IO_FileShare_Delete = 4,
+	System_IO_FileShare_Inheritable = 16
 } System_IO_FileShare;
 
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_IO_FileOptions_WriteThrough = 0 /* TODO: Value */,
-	System_IO_FileOptions_None = 0 /* TODO: Value */,
-	System_IO_FileOptions_Encrypted = 0 /* TODO: Value */,
-	System_IO_FileOptions_DeleteOnClose = 0 /* TODO: Value */,
-	System_IO_FileOptions_SequentialScan = 0 /* TODO: Value */,
-	System_IO_FileOptions_RandomAccess = 0 /* TODO: Value */,
-	System_IO_FileOptions_Asynchronous = 0 /* TODO: Value */
+	System_IO_FileOptions_WriteThrough = -2147483648,
+	System_IO_FileOptions_None = 0,
+	System_IO_FileOptions_Encrypted = 16384,
+	System_IO_FileOptions_DeleteOnClose = 67108864,
+	System_IO_FileOptions_SequentialScan = 134217728,
+	System_IO_FileOptions_RandomAccess = 268435456,
+	System_IO_FileOptions_Asynchronous = 1073741824
 } System_IO_FileOptions;
 
 
@@ -650,9 +650,9 @@ typedef void* System_IO_FileStreamOptions_t;
 typedef void* System_Reflection_ManifestResourceInfo_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Reflection_ResourceLocation_Embedded = 0 /* TODO: Value */,
-	System_Reflection_ResourceLocation_ContainedInAnotherAssembly = 0 /* TODO: Value */,
-	System_Reflection_ResourceLocation_ContainedInManifestFile = 0 /* TODO: Value */
+	System_Reflection_ResourceLocation_Embedded = 1,
+	System_Reflection_ResourceLocation_ContainedInAnotherAssembly = 2,
+	System_Reflection_ResourceLocation_ContainedInManifestFile = 4
 } System_Reflection_ResourceLocation;
 
 
@@ -661,32 +661,32 @@ typedef void* System_Reflection_Module_t;
 typedef void* System_Guid_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): uint8_t {
-	System_Security_SecurityRuleSet_None = 0 /* TODO: Value */,
-	System_Security_SecurityRuleSet_Level1 = 0 /* TODO: Value */,
-	System_Security_SecurityRuleSet_Level2 = 0 /* TODO: Value */
+	System_Security_SecurityRuleSet_None = 0,
+	System_Security_SecurityRuleSet_Level1 = 1,
+	System_Security_SecurityRuleSet_Level2 = 2
 } System_Security_SecurityRuleSet;
 
 
 typedef void* System_Text_Rune_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Buffers_OperationStatus_Done = 0 /* TODO: Value */,
-	System_Buffers_OperationStatus_DestinationTooSmall = 0 /* TODO: Value */,
-	System_Buffers_OperationStatus_NeedMoreData = 0 /* TODO: Value */,
-	System_Buffers_OperationStatus_InvalidData = 0 /* TODO: Value */
+	System_Buffers_OperationStatus_Done = 0,
+	System_Buffers_OperationStatus_DestinationTooSmall = 1,
+	System_Buffers_OperationStatus_NeedMoreData = 2,
+	System_Buffers_OperationStatus_InvalidData = 3
 } System_Buffers_OperationStatus;
 
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Globalization_CompareOptions_None = 0 /* TODO: Value */,
-	System_Globalization_CompareOptions_IgnoreCase = 0 /* TODO: Value */,
-	System_Globalization_CompareOptions_IgnoreNonSpace = 0 /* TODO: Value */,
-	System_Globalization_CompareOptions_IgnoreSymbols = 0 /* TODO: Value */,
-	System_Globalization_CompareOptions_IgnoreKanaType = 0 /* TODO: Value */,
-	System_Globalization_CompareOptions_IgnoreWidth = 0 /* TODO: Value */,
-	System_Globalization_CompareOptions_OrdinalIgnoreCase = 0 /* TODO: Value */,
-	System_Globalization_CompareOptions_StringSort = 0 /* TODO: Value */,
-	System_Globalization_CompareOptions_Ordinal = 0 /* TODO: Value */
+	System_Globalization_CompareOptions_None = 0,
+	System_Globalization_CompareOptions_IgnoreCase = 1,
+	System_Globalization_CompareOptions_IgnoreNonSpace = 2,
+	System_Globalization_CompareOptions_IgnoreSymbols = 4,
+	System_Globalization_CompareOptions_IgnoreKanaType = 8,
+	System_Globalization_CompareOptions_IgnoreWidth = 16,
+	System_Globalization_CompareOptions_OrdinalIgnoreCase = 268435456,
+	System_Globalization_CompareOptions_StringSort = 536870912,
+	System_Globalization_CompareOptions_Ordinal = 1073741824
 } System_Globalization_CompareOptions;
 
 
@@ -699,9 +699,9 @@ typedef void* System_Globalization_TextInfo_t;
 typedef void* System_Globalization_NumberFormatInfo_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Globalization_DigitShapes_Context = 0 /* TODO: Value */,
-	System_Globalization_DigitShapes_None = 0 /* TODO: Value */,
-	System_Globalization_DigitShapes_NativeNational = 0 /* TODO: Value */
+	System_Globalization_DigitShapes_Context = 0,
+	System_Globalization_DigitShapes_None = 1,
+	System_Globalization_DigitShapes_NativeNational = 2
 } System_Globalization_DigitShapes;
 
 
@@ -712,19 +712,19 @@ typedef void* System_CharEnumerator_t;
 typedef void* System_Text_StringRuneEnumerator_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Text_NormalizationForm_FormC = 0 /* TODO: Value */,
-	System_Text_NormalizationForm_FormD = 0 /* TODO: Value */,
-	System_Text_NormalizationForm_FormKC = 0 /* TODO: Value */,
-	System_Text_NormalizationForm_FormKD = 0 /* TODO: Value */
+	System_Text_NormalizationForm_FormC = 1,
+	System_Text_NormalizationForm_FormD = 2,
+	System_Text_NormalizationForm_FormKC = 5,
+	System_Text_NormalizationForm_FormKD = 6
 } System_Text_NormalizationForm;
 
 
 typedef void* System_Text_CompositeFormat_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_StringSplitOptions_None = 0 /* TODO: Value */,
-	System_StringSplitOptions_RemoveEmptyEntries = 0 /* TODO: Value */,
-	System_StringSplitOptions_TrimEntries = 0 /* TODO: Value */
+	System_StringSplitOptions_None = 0,
+	System_StringSplitOptions_RemoveEmptyEntries = 1,
+	System_StringSplitOptions_TrimEntries = 2
 } System_StringSplitOptions;
 
 
@@ -745,50 +745,50 @@ typedef void* System_Text_Decoder_t;
 typedef void* System_Text_Encoder_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Reflection_GenericParameterAttributes_None = 0 /* TODO: Value */,
-	System_Reflection_GenericParameterAttributes_Covariant = 0 /* TODO: Value */,
-	System_Reflection_GenericParameterAttributes_Contravariant = 0 /* TODO: Value */,
-	System_Reflection_GenericParameterAttributes_VarianceMask = 0 /* TODO: Value */,
-	System_Reflection_GenericParameterAttributes_ReferenceTypeConstraint = 0 /* TODO: Value */,
-	System_Reflection_GenericParameterAttributes_NotNullableValueTypeConstraint = 0 /* TODO: Value */,
-	System_Reflection_GenericParameterAttributes_DefaultConstructorConstraint = 0 /* TODO: Value */,
-	System_Reflection_GenericParameterAttributes_SpecialConstraintMask = 0 /* TODO: Value */
+	System_Reflection_GenericParameterAttributes_None = 0,
+	System_Reflection_GenericParameterAttributes_Covariant = 1,
+	System_Reflection_GenericParameterAttributes_Contravariant = 2,
+	System_Reflection_GenericParameterAttributes_VarianceMask = 3,
+	System_Reflection_GenericParameterAttributes_ReferenceTypeConstraint = 4,
+	System_Reflection_GenericParameterAttributes_NotNullableValueTypeConstraint = 8,
+	System_Reflection_GenericParameterAttributes_DefaultConstructorConstraint = 16,
+	System_Reflection_GenericParameterAttributes_SpecialConstraintMask = 28
 } System_Reflection_GenericParameterAttributes;
 
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Reflection_TypeAttributes_NotPublic = 0 /* TODO: Value */,
-	System_Reflection_TypeAttributes_AutoLayout = 0 /* TODO: Value */,
-	System_Reflection_TypeAttributes_AnsiClass = 0 /* TODO: Value */,
-	System_Reflection_TypeAttributes_Class = 0 /* TODO: Value */,
-	System_Reflection_TypeAttributes_Public = 0 /* TODO: Value */,
-	System_Reflection_TypeAttributes_NestedPublic = 0 /* TODO: Value */,
-	System_Reflection_TypeAttributes_NestedPrivate = 0 /* TODO: Value */,
-	System_Reflection_TypeAttributes_NestedFamily = 0 /* TODO: Value */,
-	System_Reflection_TypeAttributes_NestedAssembly = 0 /* TODO: Value */,
-	System_Reflection_TypeAttributes_NestedFamANDAssem = 0 /* TODO: Value */,
-	System_Reflection_TypeAttributes_VisibilityMask = 0 /* TODO: Value */,
-	System_Reflection_TypeAttributes_NestedFamORAssem = 0 /* TODO: Value */,
-	System_Reflection_TypeAttributes_SequentialLayout = 0 /* TODO: Value */,
-	System_Reflection_TypeAttributes_ExplicitLayout = 0 /* TODO: Value */,
-	System_Reflection_TypeAttributes_LayoutMask = 0 /* TODO: Value */,
-	System_Reflection_TypeAttributes_Interface = 0 /* TODO: Value */,
-	System_Reflection_TypeAttributes_ClassSemanticsMask = 0 /* TODO: Value */,
-	System_Reflection_TypeAttributes_Abstract = 0 /* TODO: Value */,
-	System_Reflection_TypeAttributes_Sealed = 0 /* TODO: Value */,
-	System_Reflection_TypeAttributes_SpecialName = 0 /* TODO: Value */,
-	System_Reflection_TypeAttributes_RTSpecialName = 0 /* TODO: Value */,
-	System_Reflection_TypeAttributes_Import = 0 /* TODO: Value */,
-	System_Reflection_TypeAttributes_Serializable = 0 /* TODO: Value */,
-	System_Reflection_TypeAttributes_WindowsRuntime = 0 /* TODO: Value */,
-	System_Reflection_TypeAttributes_UnicodeClass = 0 /* TODO: Value */,
-	System_Reflection_TypeAttributes_AutoClass = 0 /* TODO: Value */,
-	System_Reflection_TypeAttributes_StringFormatMask = 0 /* TODO: Value */,
-	System_Reflection_TypeAttributes_CustomFormatClass = 0 /* TODO: Value */,
-	System_Reflection_TypeAttributes_HasSecurity = 0 /* TODO: Value */,
-	System_Reflection_TypeAttributes_ReservedMask = 0 /* TODO: Value */,
-	System_Reflection_TypeAttributes_BeforeFieldInit = 0 /* TODO: Value */,
-	System_Reflection_TypeAttributes_CustomFormatMask = 0 /* TODO: Value */
+	System_Reflection_TypeAttributes_NotPublic = 0,
+	System_Reflection_TypeAttributes_AutoLayout = 0,
+	System_Reflection_TypeAttributes_AnsiClass = 0,
+	System_Reflection_TypeAttributes_Class = 0,
+	System_Reflection_TypeAttributes_Public = 1,
+	System_Reflection_TypeAttributes_NestedPublic = 2,
+	System_Reflection_TypeAttributes_NestedPrivate = 3,
+	System_Reflection_TypeAttributes_NestedFamily = 4,
+	System_Reflection_TypeAttributes_NestedAssembly = 5,
+	System_Reflection_TypeAttributes_NestedFamANDAssem = 6,
+	System_Reflection_TypeAttributes_VisibilityMask = 7,
+	System_Reflection_TypeAttributes_NestedFamORAssem = 7,
+	System_Reflection_TypeAttributes_SequentialLayout = 8,
+	System_Reflection_TypeAttributes_ExplicitLayout = 16,
+	System_Reflection_TypeAttributes_LayoutMask = 24,
+	System_Reflection_TypeAttributes_Interface = 32,
+	System_Reflection_TypeAttributes_ClassSemanticsMask = 32,
+	System_Reflection_TypeAttributes_Abstract = 128,
+	System_Reflection_TypeAttributes_Sealed = 256,
+	System_Reflection_TypeAttributes_SpecialName = 1024,
+	System_Reflection_TypeAttributes_RTSpecialName = 2048,
+	System_Reflection_TypeAttributes_Import = 4096,
+	System_Reflection_TypeAttributes_Serializable = 8192,
+	System_Reflection_TypeAttributes_WindowsRuntime = 16384,
+	System_Reflection_TypeAttributes_UnicodeClass = 65536,
+	System_Reflection_TypeAttributes_AutoClass = 131072,
+	System_Reflection_TypeAttributes_StringFormatMask = 196608,
+	System_Reflection_TypeAttributes_CustomFormatClass = 196608,
+	System_Reflection_TypeAttributes_HasSecurity = 262144,
+	System_Reflection_TypeAttributes_ReservedMask = 264192,
+	System_Reflection_TypeAttributes_BeforeFieldInit = 1048576,
+	System_Reflection_TypeAttributes_CustomFormatMask = 12582912
 } System_Reflection_TypeAttributes;
 
 
@@ -797,17 +797,17 @@ typedef void* System_Runtime_InteropServices_StructLayoutAttribute_t;
 typedef void* System_Attribute_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Runtime_InteropServices_LayoutKind_Sequential = 0 /* TODO: Value */,
-	System_Runtime_InteropServices_LayoutKind_Explicit = 0 /* TODO: Value */,
-	System_Runtime_InteropServices_LayoutKind_Auto = 0 /* TODO: Value */
+	System_Runtime_InteropServices_LayoutKind_Sequential = 0,
+	System_Runtime_InteropServices_LayoutKind_Explicit = 2,
+	System_Runtime_InteropServices_LayoutKind_Auto = 3
 } System_Runtime_InteropServices_LayoutKind;
 
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Runtime_InteropServices_CharSet_None = 0 /* TODO: Value */,
-	System_Runtime_InteropServices_CharSet_Ansi = 0 /* TODO: Value */,
-	System_Runtime_InteropServices_CharSet_Unicode = 0 /* TODO: Value */,
-	System_Runtime_InteropServices_CharSet_Auto = 0 /* TODO: Value */
+	System_Runtime_InteropServices_CharSet_None = 1,
+	System_Runtime_InteropServices_CharSet_Ansi = 2,
+	System_Runtime_InteropServices_CharSet_Unicode = 3,
+	System_Runtime_InteropServices_CharSet_Auto = 4
 } System_Runtime_InteropServices_CharSet;
 
 
@@ -816,10 +816,10 @@ typedef void* System_Reflection_ConstructorInfo_t;
 typedef void* System_Reflection_EventInfo_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Reflection_EventAttributes_None = 0 /* TODO: Value */,
-	System_Reflection_EventAttributes_SpecialName = 0 /* TODO: Value */,
-	System_Reflection_EventAttributes_RTSpecialName = 0 /* TODO: Value */,
-	System_Reflection_EventAttributes_ReservedMask = 0 /* TODO: Value */
+	System_Reflection_EventAttributes_None = 0,
+	System_Reflection_EventAttributes_SpecialName = 512,
+	System_Reflection_EventAttributes_RTSpecialName = 1024,
+	System_Reflection_EventAttributes_ReservedMask = 1024
 } System_Reflection_EventAttributes;
 
 

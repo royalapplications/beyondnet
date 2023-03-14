@@ -93,14 +93,19 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         sb.AppendLine($"typedef enum __attribute__((enum_extensibility(closed))): {underlyingTypeName} {{");
 
         var caseNames = type.GetEnumNames();
-        var values = type.GetEnumValues();
+        var values = type.GetEnumValuesAsUnderlyingType() ?? throw new Exception("No enum values");
+
+        if (caseNames.Length != values.Length) {
+            throw new Exception("The number of case names in an enum must match the number of values");
+        }
 
         List<string> enumCases = new();
 
-        foreach (var caseName in caseNames) {
-            // CBoolYes = 1,
-            // TODO: Value
-            enumCases.Add($"\t{cTypeName}_{caseName} = 0 /* TODO: Value */");
+        for (int i = 0; i < caseNames.Length; i++) {
+            string caseName = caseNames[i];
+            var value = values.GetValue(i) ?? throw new Exception("No enum value for case");
+            
+            enumCases.Add($"\t{cTypeName}_{caseName} = {value.ToString()}");
         }
 
         string enumCasesString = string.Join(",\n", enumCases);
