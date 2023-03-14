@@ -21,7 +21,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         GeneratedMember cSharpGeneratedMember = cSharpUnmanagedResult.GetGeneratedMember(method) ?? throw new Exception("No C# generated member");
 
         bool mayThrow = cSharpGeneratedMember.MayThrow;
-        const bool isConstructor = false;
+        const MethodKind methodKind = MethodKind.Normal;
 
         bool isStaticMethod = method.IsStatic;
         string methodName = method.Name;
@@ -32,9 +32,9 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
 
         string methodCode = WriteMethod(
             method,
+            methodKind,
             methodName,
             isStaticMethod,
-            isConstructor,
             mayThrow,
             declaringType,
             returnType,
@@ -48,9 +48,9 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
 
     protected string WriteMethod(
         MemberInfo memberInfo,
+        MethodKind methodKind,
         string methodName,
         bool isStaticMethod,
-        bool isConstructor,
         bool mayThrow,
         Type declaringType,
         Type returnType,

@@ -20,7 +20,7 @@ public class CConstructorSyntaxWriter: CMethodSyntaxWriter, IConstructorSyntaxWr
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
         bool mayThrow = cSharpGeneratedMember.MayThrow;
-        const bool isConstructor = true;
+        const MethodKind methodKind = MethodKind.Constructor;
 
         bool isStaticMethod = true;
         string methodName = constructor.Name;
@@ -36,9 +36,9 @@ public class CConstructorSyntaxWriter: CMethodSyntaxWriter, IConstructorSyntaxWr
 
         string ctorCode = WriteMethod(
             constructor,
+            methodKind,
             methodName,
             isStaticMethod,
-            isConstructor,
             mayThrow,
             declaringType,
             returnType,
