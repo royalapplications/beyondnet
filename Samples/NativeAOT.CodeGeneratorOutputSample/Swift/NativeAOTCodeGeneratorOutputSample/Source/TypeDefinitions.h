@@ -1,5 +1,5 @@
-#ifndef NativeAOTCodeGeneratorOutputSample_Types_h
-#define NativeAOTCodeGeneratorOutputSample_Types_h
+#ifndef TypeDefinitions_h
+#define TypeDefinitions_h
 
 typedef void* System_Exception_t;
 typedef void* NativeAOT_CodeGeneratorInputSample_TestClass_t;
@@ -22,4 +22,4 @@ int NativeAOT_CodeGeneratorInputSample_TestClass_Add(NativeAOT_CodeGeneratorInpu
                                                      int number2,
                                                      System_Exception_t* outException);
 
-#endif /* NativeAOTCodeGeneratorOutputSample_Types_h */
+#endif /* TypeDefinitions_h */

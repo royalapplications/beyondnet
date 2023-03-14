@@ -1,8 +1,0 @@
-framework module NativeAOTCodeGeneratorOutputSample {
-    umbrella header "NativeAOTCodeGeneratorOutputSample.h"
-
-    private header "NativeAOTCodeGeneratorOutputSample_Types.h"
-    
-    export *
-    module * { export * }
-}
