@@ -142,7 +142,7 @@ static class Program
             EmitUnsupported = false
         };
         
-        CCodeGenerator codeGenerator = new(settings);
+        CCodeGenerator codeGenerator = new(settings, cSharpUnmanagedResult);
         
         Result result = codeGenerator.Generate(
             types,

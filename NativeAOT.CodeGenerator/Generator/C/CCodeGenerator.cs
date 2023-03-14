@@ -6,10 +6,12 @@ namespace NativeAOT.CodeGenerator.Generator.C;
 public class CCodeGenerator: ICodeGenerator
 {
     public Settings Settings { get; }
+    public Result CSharpUnmanagedResult { get; }
     
-    public CCodeGenerator(Settings settings)
+    public CCodeGenerator(Settings settings, Result cSharpUnmanagedResult)
     {
         Settings = settings ?? throw new ArgumentNullException(nameof(settings));
+        CSharpUnmanagedResult = cSharpUnmanagedResult ?? throw new ArgumentNullException(nameof(cSharpUnmanagedResult));
     }
 
     public Result Generate(
