@@ -171,5 +171,52 @@ final class NativeAOTCodeGeneratorOutputSampleTests: XCTestCase {
         }
         
         XCTAssertEqual(expectedResult, result)
+        
+        let uuid = UUID()
+        let uuidString = uuid.uuidString
+        
+        var guid: System_Guid_t?
+        
+        uuidString.withCString { uuidStringC in
+            guid = System_Guid_Create2(uuidStringC,
+                                       &exception)
+        }
+        
+        guard exception == nil else {
+            XCTFail("System_Guid_Create2 should not throw")
+            
+            return
+        }
+        
+        guard let guid else {
+            XCTFail("System_Guid_Create2 should return an instance of a Guid")
+            
+            return
+        }
+        
+        defer {
+            System_Object_Destroy(guid)
+        }
+        
+        let guidCString = System_Guid_ToString(guid,
+                                               &exception)
+        
+        guard exception == nil else {
+            XCTFail("System_Guid_ToString should not throw")
+            
+            return
+        }
+        
+        guard let guidCString else {
+            XCTFail("System_Guid_ToString should return an instance of a String")
+            
+            return
+        }
+        
+        let guidString = String(cString: guidCString)
+        
+        guidCString.deallocate()
+        
+        XCTAssertEqual(uuidString.lowercased(), guidString.lowercased())
     }
 }

@@ -11,6 +11,7 @@ typedef enum __attribute__((enum_extensibility(closed))): uint8_t {
 
 typedef void* System_Object_t;
 typedef void* System_Type_t;
+typedef void* System_Guid_t;
 typedef void* System_Exception_t;
 
 typedef void* NativeAOT_CodeGeneratorInputSample_TestClass_t;
@@ -36,6 +37,18 @@ System_Type_ToString(System_Type_t self,
 System_Type_t
 System_Object_GetType(System_Object_t self,
                       System_Exception_t* outException);
+
+System_Guid_t
+System_Guid_NewGuid(System_Exception_t* outException);
+
+System_Guid_t
+System_Guid_Create2(const char* g,
+                    System_Exception_t* outException);
+
+const char*
+System_Guid_ToString(System_Guid_t self,
+                     System_Exception_t* outException);
+
 
 NativeAOT_CodeGeneratorInputSample_TestClass_t
 NativeAOT_CodeGeneratorInputSample_TestClass_Create(System_Exception_t* outException);
