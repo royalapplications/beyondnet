@@ -1,6 +1,6 @@
 using System.Text;
+
 using NativeAOT.CodeGenerator.Extensions;
-using NativeAOT.CodeGenerator.Generator;
 using NativeAOT.CodeGenerator.Types;
 
 namespace NativeAOT.CodeGenerator.Syntax.C;
@@ -19,13 +19,11 @@ public class CDestructorSyntaxWriter: IDestructorSyntaxWriter
         }
         
         TypeDescriptor typeDescriptor = type.GetTypeDescriptor(TypeDescriptorRegistry.Shared);
-        Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
 
         StringBuilder sb = new();
 
         string fullTypeName = type.GetFullNameOrName();
-        
-        // TODO: Issues with overloads, need to store generated member in C# unmanaged somehow 
+         
         string methodNameC = $"{fullTypeName.Replace('.', '_')}_Destroy";
         methodNameC = state.UniqueGeneratedName(methodNameC, CodeLanguage.C);
 
