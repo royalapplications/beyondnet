@@ -844,10 +844,6 @@ typedef void* NativeAOT_CodeGeneratorInputSample_TestClass_t;
 
 #pragma mark - END Type Definitions
 #pragma mark - BEGIN APIs
-void /* System.Void */
-NativeAOT_CodeGeneratorInputSample_NiceLevels_Destroy(
-	NativeAOT_CodeGeneratorInputSample_NiceLevels /* NativeAOT.CodeGeneratorInputSample.NiceLevels */ self
-);
 
 
 
@@ -1519,10 +1515,6 @@ System_Reflection_MemberInfo_Destroy(
 
 
 
-void /* System.Void */
-System_Reflection_MemberTypes_Destroy(
-	System_Reflection_MemberTypes /* System.Reflection.MemberTypes */ self
-);
 
 
 
@@ -2352,10 +2344,6 @@ System_String_Destroy(
 
 
 
-void /* System.Void */
-System_StringComparison_Destroy(
-	System_StringComparison /* System.StringComparison */ self
-);
 
 
 
@@ -2483,10 +2471,6 @@ System_Globalization_CultureInfo_Destroy(
 
 
 
-void /* System.Void */
-System_Globalization_CultureTypes_Destroy(
-	System_Globalization_CultureTypes /* System.Globalization.CultureTypes */ self
-);
 
 
 
@@ -3303,52 +3287,24 @@ System_IFormatProvider_Destroy(
 
 
 
-void /* System.Void */
-System_Globalization_NumberStyles_Destroy(
-	System_Globalization_NumberStyles /* System.Globalization.NumberStyles */ self
-);
 
 
 
-void /* System.Void */
-System_TypeCode_Destroy(
-	System_TypeCode /* System.TypeCode */ self
-);
 
 
 
-void /* System.Void */
-System_Reflection_ProcessorArchitecture_Destroy(
-	System_Reflection_ProcessorArchitecture /* System.Reflection.ProcessorArchitecture */ self
-);
 
 
 
-void /* System.Void */
-System_Reflection_AssemblyContentType_Destroy(
-	System_Reflection_AssemblyContentType /* System.Reflection.AssemblyContentType */ self
-);
 
 
 
-void /* System.Void */
-System_Reflection_AssemblyNameFlags_Destroy(
-	System_Reflection_AssemblyNameFlags /* System.Reflection.AssemblyNameFlags */ self
-);
 
 
 
-void /* System.Void */
-System_Configuration_Assemblies_AssemblyHashAlgorithm_Destroy(
-	System_Configuration_Assemblies_AssemblyHashAlgorithm /* System.Configuration.Assemblies.AssemblyHashAlgorithm */ self
-);
 
 
 
-void /* System.Void */
-System_Configuration_Assemblies_AssemblyVersionCompatibility_Destroy(
-	System_Configuration_Assemblies_AssemblyVersionCompatibility /* System.Configuration.Assemblies.AssemblyVersionCompatibility */ self
-);
 
 
 
@@ -4440,18 +4396,10 @@ System_Runtime_Serialization_SerializationEntry_Destroy(
 
 
 
-void /* System.Void */
-System_Globalization_UnicodeCategory_Destroy(
-	System_Globalization_UnicodeCategory /* System.Globalization.UnicodeCategory */ self
-);
 
 
 
 
-void /* System.Void */
-System_MidpointRounding_Destroy(
-	System_MidpointRounding /* System.MidpointRounding */ self
-);
 
 
 
@@ -5622,31 +5570,15 @@ System_TimeSpan_Destroy(
 
 
 
-void /* System.Void */
-System_Globalization_TimeSpanStyles_Destroy(
-	System_Globalization_TimeSpanStyles /* System.Globalization.TimeSpanStyles */ self
-);
 
 
 
-void /* System.Void */
-System_DateTimeKind_Destroy(
-	System_DateTimeKind /* System.DateTimeKind */ self
-);
 
 
 
-void /* System.Void */
-System_DayOfWeek_Destroy(
-	System_DayOfWeek /* System.DayOfWeek */ self
-);
 
 
 
-void /* System.Void */
-System_Globalization_DateTimeStyles_Destroy(
-	System_Globalization_DateTimeStyles /* System.Globalization.DateTimeStyles */ self
-);
 
 
 
@@ -6347,17 +6279,9 @@ System_Globalization_Calendar_Destroy(
 
 
 
-void /* System.Void */
-System_Globalization_CalendarAlgorithmType_Destroy(
-	System_Globalization_CalendarAlgorithmType /* System.Globalization.CalendarAlgorithmType */ self
-);
 
 
 
-void /* System.Void */
-System_Globalization_CalendarWeekRule_Destroy(
-	System_Globalization_CalendarWeekRule /* System.Globalization.CalendarWeekRule */ self
-);
 
 
 
@@ -6522,10 +6446,6 @@ System_Runtime_Serialization_StreamingContext_Destroy(
 
 
 
-void /* System.Void */
-System_Runtime_Serialization_StreamingContextStates_Destroy(
-	System_Runtime_Serialization_StreamingContextStates /* System.Runtime.Serialization.StreamingContextStates */ self
-);
 
 
 
@@ -6699,17 +6619,9 @@ System_RuntimeFieldHandle_Destroy(
 
 
 
-void /* System.Void */
-System_Reflection_MethodAttributes_Destroy(
-	System_Reflection_MethodAttributes /* System.Reflection.MethodAttributes */ self
-);
 
 
 
-void /* System.Void */
-System_Reflection_MethodImplAttributes_Destroy(
-	System_Reflection_MethodImplAttributes /* System.Reflection.MethodImplAttributes */ self
-);
 
 
 
@@ -6720,17 +6632,9 @@ System_Reflection_MethodBody_Destroy(
 
 
 
-void /* System.Void */
-System_Reflection_CallingConventions_Destroy(
-	System_Reflection_CallingConventions /* System.Reflection.CallingConventions */ self
-);
 
 
 
-void /* System.Void */
-System_Reflection_BindingFlags_Destroy(
-	System_Reflection_BindingFlags /* System.Reflection.BindingFlags */ self
-);
 
 
 
@@ -6815,10 +6719,6 @@ System_Reflection_FieldInfo_Destroy(
 
 
 
-void /* System.Void */
-System_Reflection_FieldAttributes_Destroy(
-	System_Reflection_FieldAttributes /* System.Reflection.FieldAttributes */ self
-);
 
 
 
@@ -6895,10 +6795,6 @@ System_Reflection_PropertyInfo_Destroy(
 
 
 
-void /* System.Void */
-System_Reflection_PropertyAttributes_Destroy(
-	System_Reflection_PropertyAttributes /* System.Reflection.PropertyAttributes */ self
-);
 
 
 
@@ -6962,10 +6858,6 @@ System_Reflection_ParameterInfo_Destroy(
 
 
 
-void /* System.Void */
-System_Reflection_ParameterAttributes_Destroy(
-	System_Reflection_ParameterAttributes /* System.Reflection.ParameterAttributes */ self
-);
 
 
 
@@ -7516,17 +7408,9 @@ System_Collections_DictionaryEntry_Destroy(
 
 
 
-void /* System.Void */
-System_Threading_Tasks_TaskStatus_Destroy(
-	System_Threading_Tasks_TaskStatus /* System.Threading.Tasks.TaskStatus */ self
-);
 
 
 
-void /* System.Void */
-System_Threading_Tasks_TaskCreationOptions_Destroy(
-	System_Threading_Tasks_TaskCreationOptions /* System.Threading.Tasks.TaskCreationOptions */ self
-);
 
 
 
@@ -7941,24 +7825,12 @@ System_Threading_Tasks_Sources_IValueTaskSource_Destroy(
 
 
 
-void /* System.Void */
-System_Threading_Tasks_Sources_ValueTaskSourceStatus_Destroy(
-	System_Threading_Tasks_Sources_ValueTaskSourceStatus /* System.Threading.Tasks.Sources.ValueTaskSourceStatus */ self
-);
 
 
 
-void /* System.Void */
-System_Threading_Tasks_Sources_ValueTaskSourceOnCompletedFlags_Destroy(
-	System_Threading_Tasks_Sources_ValueTaskSourceOnCompletedFlags /* System.Threading.Tasks.Sources.ValueTaskSourceOnCompletedFlags */ self
-);
 
 
 
-void /* System.Void */
-System_Threading_Tasks_TaskContinuationOptions_Destroy(
-	System_Threading_Tasks_TaskContinuationOptions /* System.Threading.Tasks.TaskContinuationOptions */ self
-);
 
 
 
@@ -8034,10 +7906,6 @@ System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_Destroy(
 
 
 
-void /* System.Void */
-System_IO_SeekOrigin_Destroy(
-	System_IO_SeekOrigin /* System.IO.SeekOrigin */ self
-);
 
 
 
@@ -8060,31 +7928,15 @@ Microsoft_Win32_SafeHandles_SafeFileHandle_Destroy(
 
 
 
-void /* System.Void */
-System_IO_FileAccess_Destroy(
-	System_IO_FileAccess /* System.IO.FileAccess */ self
-);
 
 
 
-void /* System.Void */
-System_IO_FileMode_Destroy(
-	System_IO_FileMode /* System.IO.FileMode */ self
-);
 
 
 
-void /* System.Void */
-System_IO_FileShare_Destroy(
-	System_IO_FileShare /* System.IO.FileShare */ self
-);
 
 
 
-void /* System.Void */
-System_IO_FileOptions_Destroy(
-	System_IO_FileOptions /* System.IO.FileOptions */ self
-);
 
 
 
@@ -8115,10 +7967,6 @@ System_Reflection_ManifestResourceInfo_Destroy(
 
 
 
-void /* System.Void */
-System_Reflection_ResourceLocation_Destroy(
-	System_Reflection_ResourceLocation /* System.Reflection.ResourceLocation */ self
-);
 
 
 
@@ -8376,10 +8224,6 @@ System_Guid_Destroy(
 
 
 
-void /* System.Void */
-System_Security_SecurityRuleSet_Destroy(
-	System_Security_SecurityRuleSet /* System.Security.SecurityRuleSet */ self
-);
 
 
 
@@ -8571,17 +8415,9 @@ System_Text_Rune_Destroy(
 
 
 
-void /* System.Void */
-System_Buffers_OperationStatus_Destroy(
-	System_Buffers_OperationStatus /* System.Buffers.OperationStatus */ self
-);
 
 
 
-void /* System.Void */
-System_Globalization_CompareOptions_Destroy(
-	System_Globalization_CompareOptions /* System.Globalization.CompareOptions */ self
-);
 
 
 
@@ -8762,10 +8598,6 @@ System_Globalization_NumberFormatInfo_Destroy(
 
 
 
-void /* System.Void */
-System_Globalization_DigitShapes_Destroy(
-	System_Globalization_DigitShapes /* System.Globalization.DigitShapes */ self
-);
 
 
 
@@ -8912,10 +8744,6 @@ System_Text_StringRuneEnumerator_Destroy(
 
 
 
-void /* System.Void */
-System_Text_NormalizationForm_Destroy(
-	System_Text_NormalizationForm /* System.Text.NormalizationForm */ self
-);
 
 
 
@@ -8932,10 +8760,6 @@ System_Text_CompositeFormat_Destroy(
 
 
 
-void /* System.Void */
-System_StringSplitOptions_Destroy(
-	System_StringSplitOptions /* System.StringSplitOptions */ self
-);
 
 
 
@@ -9221,17 +9045,9 @@ System_Text_Encoder_Destroy(
 
 
 
-void /* System.Void */
-System_Reflection_GenericParameterAttributes_Destroy(
-	System_Reflection_GenericParameterAttributes /* System.Reflection.GenericParameterAttributes */ self
-);
 
 
 
-void /* System.Void */
-System_Reflection_TypeAttributes_Destroy(
-	System_Reflection_TypeAttributes /* System.Reflection.TypeAttributes */ self
-);
 
 
 
@@ -9407,17 +9223,9 @@ System_Attribute_Destroy(
 
 
 
-void /* System.Void */
-System_Runtime_InteropServices_LayoutKind_Destroy(
-	System_Runtime_InteropServices_LayoutKind /* System.Runtime.InteropServices.LayoutKind */ self
-);
 
 
 
-void /* System.Void */
-System_Runtime_InteropServices_CharSet_Destroy(
-	System_Runtime_InteropServices_CharSet /* System.Runtime.InteropServices.CharSet */ self
-);
 
 
 
@@ -9500,10 +9308,6 @@ System_Reflection_EventInfo_Destroy(
 
 
 
-void /* System.Void */
-System_Reflection_EventAttributes_Destroy(
-	System_Reflection_EventAttributes /* System.Reflection.EventAttributes */ self
-);
 
 
 
@@ -9599,10 +9403,6 @@ NativeAOT_CodeGeneratorInputSample_Person_Destroy(
 
 
 
-void /* System.Void */
-NativeAOT_CodeGeneratorInputSample_TestEnum_Destroy(
-	NativeAOT_CodeGeneratorInputSample_TestEnum /* NativeAOT.CodeGeneratorInputSample.TestEnum */ self
-);
 
 
 

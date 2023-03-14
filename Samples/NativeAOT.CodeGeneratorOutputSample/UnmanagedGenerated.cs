@@ -7055,11 +7055,6 @@ internal static unsafe class System_Globalization_CultureInfo
 
 internal static unsafe class System_Void
 {
-	[UnmanagedCallersOnly(EntryPoint="System_Void_Destroy")]
-	internal static void /* System.Void */ System_Void_Destroy(void* /* System.Void */ __self)
-	{
-		InteropUtils.FreeIfAllocated(__self);
-	}
 	
 
 }

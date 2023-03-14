@@ -14,7 +14,8 @@ public class CDestructorSyntaxWriter: IDestructorSyntaxWriter
 
     public string Write(Type type, State state)
     {
-        if (type.IsVoid()) {
+        if (type.IsVoid() ||
+            type.IsEnum) {
             return string.Empty;
         }
         
