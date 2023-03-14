@@ -28,37 +28,49 @@ public class CSharpUnmanagedPropertySyntaxWriter: CSharpUnmanagedMethodSyntaxWri
         
         IEnumerable<ParameterInfo> parameters = Array.Empty<ParameterInfo>();
 
-        var accessors = property.GetAccessors();
-
         StringBuilder sb = new();
 
-        Type setterType = declaringType;
+        Type propertyType = property.PropertyType;
 
-        foreach (var accessor in accessors) {
-            bool isSetter = !accessor.ReturnType.IsVoid();
-            bool isGetter = !isSetter;
-            bool isStaticMethod = accessor.IsStatic;
+        MethodInfo? getterMethod = property.GetGetMethod(false);
+        MethodInfo? setterMethod = property.GetSetMethod(false);
 
-            MethodKind methodKind = isGetter 
-                ? MethodKind.PropertyGetter
-                : MethodKind.PropertySetter;
-
-            // string accessorMethodName = accessor.Name;
+        if (getterMethod != null) {
+            bool isStaticMethod = getterMethod.IsStatic;
             
-            string accessorCode = WriteMethod(
+            string getterCode = WriteMethod(
                 property,
-                methodKind,
+                MethodKind.PropertyGetter,
                 propertyName,
                 isStaticMethod,
                 mayThrow,
                 declaringType,
-                setterType,
+                propertyType,
                 parameters,
                 typeDescriptorRegistry,
                 state
             );
 
-            sb.AppendLine(accessorCode);
+            sb.AppendLine(getterCode);
+        }
+        
+        if (setterMethod != null) {
+            bool isStaticMethod = setterMethod.IsStatic;
+            
+            string setterCode = WriteMethod(
+                property,
+                MethodKind.PropertySetter,
+                propertyName,
+                isStaticMethod,
+                mayThrow,
+                declaringType,
+                propertyType,
+                parameters,
+                typeDescriptorRegistry,
+                state
+            );
+
+            sb.AppendLine(setterCode);
         }
 
         return sb.ToString();

@@ -147,7 +147,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
         string convertedParameterNamesString = string.Join(", ", convertedParameterNames);
 
-        bool isReturning = !returnOrSetterTypeDescriptor.IsVoid;
+        bool isReturning = methodKind != MethodKind.PropertySetter &&
+                           !returnOrSetterTypeDescriptor.IsVoid;
 
         string returnValuePrefix = string.Empty;
         string returnValueName = "__returnValue";
@@ -160,16 +161,33 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             ? string.Empty
             : $".{methodName}";
 
-        bool invocationNeedsParantheses = methodKind != MethodKind.PropertyGetter &&
+        bool invocationNeedsParentheses = methodKind != MethodKind.PropertyGetter &&
                                           methodKind != MethodKind.PropertySetter;
 
-        string methodInvocationPrefix = invocationNeedsParantheses 
+        string methodInvocationPrefix = invocationNeedsParentheses 
             ? "("
             : string.Empty;
-        
-        string methodInvocationSuffix = invocationNeedsParantheses 
-            ? ")"
-            : string.Empty;
+
+        string methodInvocationSuffix;
+
+        if (invocationNeedsParentheses) {
+            methodInvocationSuffix = ")";
+        } else if (methodKind == MethodKind.PropertySetter) {
+            string valueParamterName = "__value";
+
+            string? setterTypeConversion = returnOrSetterTypeDescriptor.GetTypeConversion(
+                CodeLanguage.CSharpUnmanaged,
+                CodeLanguage.CSharp
+            );
+
+            string fullSetterTypeConversion = setterTypeConversion != null
+                ? string.Format(setterTypeConversion, valueParamterName)
+                : valueParamterName;
+            
+            methodInvocationSuffix = $" = {fullSetterTypeConversion}";
+        } else {
+            methodInvocationSuffix = string.Empty;
+        }
         
         sb.AppendLine($"{implPrefix}{returnValuePrefix}{methodTarget}{methodNameForInvocation}{methodInvocationPrefix}{convertedParameterNamesString}{methodInvocationSuffix};");
 
