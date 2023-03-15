@@ -43,8 +43,8 @@ static class Program
             namespaceForCSharpUnamangedCode
         );
 
-        var cSharpUnmanagedResult = cSharpUnmanagedResultObject.Item1;
-        var cSharpUnmanagedCode = cSharpUnmanagedResultObject.Item2;
+        var cSharpUnmanagedResult = cSharpUnmanagedResultObject.Result;
+        var cSharpUnmanagedCode = cSharpUnmanagedResultObject.GeneratedCode;
         
         var cResultObject = GenerateCCode(
             types,
@@ -52,8 +52,8 @@ static class Program
             cSharpUnmanagedResult
         );
 
-        var cResult = cResultObject.Item1;
-        var cCode = cResultObject.Item2;
+        var cResult = cResultObject.Result;
+        var cCode = cResultObject.GeneratedCode;
 
         if (!string.IsNullOrEmpty(cSharpUnmanagedOutputPath)) {
             File.WriteAllText(cSharpUnmanagedOutputPath, cSharpUnmanagedCode);
@@ -183,7 +183,19 @@ Usage: NativeAOT.CodeGenerator.CLI <PathToAssembly.dll> [<PathToCSharpOutputFile
         return searchPaths;
     }
 
-    private static Tuple<Result, string> GenerateCSharpUnmanagedCode(
+    private struct CodeGeneratorResult
+    {
+        internal Result Result { get; }
+        internal string GeneratedCode { get; }
+
+        internal CodeGeneratorResult(Result result, string generatedCode)
+        {
+            Result = result;
+            GeneratedCode = generatedCode;
+        }
+    }
+
+    private static CodeGeneratorResult GenerateCSharpUnmanagedCode(
         HashSet<Type> types,
         Dictionary<Type, string> unsupportedTypes,
         string namespaceForGeneratedCode
@@ -225,7 +237,7 @@ Usage: NativeAOT.CodeGenerator.CLI <PathToAssembly.dll> [<PathToCSharpOutputFile
         return new(result, sb.ToString());
     }
     
-    private static Tuple<Result, string> GenerateCCode(
+    private static CodeGeneratorResult GenerateCCode(
         HashSet<Type> types,
         Dictionary<Type, string> unsupportedTypes,
         Result cSharpUnmanagedResult
