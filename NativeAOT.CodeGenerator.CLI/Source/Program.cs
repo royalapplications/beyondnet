@@ -13,34 +13,18 @@ static class Program
 {
     public static int Main(string[] args)
     {
-        if (args.Length <= 0) {
+        bool parseSuccess = ParseArguments(
+            args,
+            out string? assemblyPath,
+            out string? cSharpUnmanagedOutputPath,
+            out string? cOutputPath
+        );
+
+        if (!parseSuccess ||
+            assemblyPath == null) {
             ShowUsage();
-            
-            return 1;
-        }
-
-        string assemblyPath = args[0];
-
-        if (string.IsNullOrWhiteSpace(assemblyPath)) {
-            ShowUsage();
 
             return 1;
-        }
-
-        string? cSharpUnmanagedOutputPath;
-        
-        if (args.Length > 1) {
-            cSharpUnmanagedOutputPath = args[1];
-        } else {
-            cSharpUnmanagedOutputPath = null;
-        }
-        
-        string? cOutputPath;
-        
-        if (args.Length > 2) {
-            cOutputPath = args[2];
-        } else {
-            cOutputPath = null;
         }
         
         AppDomain.CurrentDomain.AssemblyResolve += AppDomain_OnAssemblyResolve;
@@ -88,6 +72,58 @@ static class Program
         }
 
         return 0;
+    }
+
+    private static bool ParseArguments(
+        string[] args,
+        out string? assemblyPath,
+        out string? cSharpUnmanagedOutputPath,
+        out string? cOutputPath
+    )
+    {
+        const string cSharpFileExtension = ".cs";
+        const string cHeaderFileExtension = ".h";
+        
+        assemblyPath = null;
+        cSharpUnmanagedOutputPath = null;
+        cOutputPath = null;
+        
+        if (args.Length <= 0) {
+            return false;
+        }
+
+        assemblyPath = args[0].Trim();
+
+        if (string.IsNullOrWhiteSpace(assemblyPath)) {
+            return false;
+        }
+
+        if (args.Length < 2) {
+            return true;
+        }
+
+        for (int i = 1; i < args.Length; i++) {
+            string path = args[i].Trim();
+
+            if (path.EndsWith(cSharpFileExtension, StringComparison.InvariantCultureIgnoreCase)) {
+                cSharpUnmanagedOutputPath = path;
+            } else if (path.EndsWith(cHeaderFileExtension, StringComparison.InvariantCultureIgnoreCase)) {
+                cOutputPath = path;
+            } else {
+                return false;
+            }
+        }
+
+        return true;
+    }
+    
+    private static void ShowUsage()
+    {
+        string usageText = """
+Usage: NativeAOT.CodeGenerator.CLI <PathToAssembly.dll> [<PathToCSharpOutputFile.cs>] [<PathToCHeaderOutputFile.h>]
+""";
+        
+        Console.WriteLine(usageText);    
     }
 
     private static Assembly? AppDomain_OnAssemblyResolve(object? sender, ResolveEventArgs args)
@@ -229,10 +265,5 @@ static class Program
         }
 
         return new(result, sb.ToString());
-    }
-    
-    private static void ShowUsage()
-    {
-        Console.WriteLine("Usage: NativeAOT.CodeGenerator.CLI <PathToAssembly.dll> [<PathToOutput.cs>] [<PathToOutput.h>]");    
     }
 }
