@@ -31,7 +31,11 @@ public class TypeCollector
         return collectedTypes;
     }
 
-    private void CollectType(Type type, HashSet<Type> collectedTypes, Dictionary<Type, string> unsupportedTypes)
+    private void CollectType(
+        Type type,
+        HashSet<Type> collectedTypes,
+        Dictionary<Type, string> unsupportedTypes
+    )
     {
         if (!IsSupportedType(type, out string? unsupportedReason)) {
             unsupportedTypes[type] = unsupportedReason ?? string.Empty;
@@ -65,7 +69,11 @@ public class TypeCollector
         }
     }
 
-    private void CollectMember(MemberInfo memberInfo, HashSet<Type> collectedTypes, Dictionary<Type, string> unsupportedTypes)
+    private void CollectMember(
+        MemberInfo memberInfo,
+        HashSet<Type> collectedTypes,
+        Dictionary<Type, string> unsupportedTypes
+    )
     {
         switch (memberInfo.MemberType) {
             case MemberTypes.Constructor:
@@ -91,7 +99,11 @@ public class TypeCollector
         }
     }
 
-    private void CollectConstructor(ConstructorInfo constructorInfo, HashSet<Type> collectedTypes, Dictionary<Type, string> unsupportedTypes)
+    private void CollectConstructor(
+        ConstructorInfo constructorInfo,
+        HashSet<Type> collectedTypes, 
+        Dictionary<Type, string> unsupportedTypes
+    )
     {
         var parameterInfos = constructorInfo.GetParameters();
 
@@ -100,7 +112,11 @@ public class TypeCollector
         }
     }
     
-    private void CollectMethod(MethodInfo methodInfo, HashSet<Type> collectedTypes, Dictionary<Type, string> unsupportedTypes)
+    private void CollectMethod(
+        MethodInfo methodInfo,
+        HashSet<Type> collectedTypes,
+        Dictionary<Type, string> unsupportedTypes
+    )
     {
         Type returnType = methodInfo.ReturnType;
 
@@ -113,21 +129,33 @@ public class TypeCollector
         }
     }
     
-    private void CollectProperty(PropertyInfo propertyInfo, HashSet<Type> collectedTypes, Dictionary<Type, string> unsupportedTypes)
+    private void CollectProperty(
+        PropertyInfo propertyInfo,
+        HashSet<Type> collectedTypes,
+        Dictionary<Type, string> unsupportedTypes
+    )
     {
         Type propertyType = propertyInfo.PropertyType;
 
         CollectType(propertyType, collectedTypes, unsupportedTypes);
     }
     
-    private void CollectField(FieldInfo fieldInfo, HashSet<Type> collectedTypes, Dictionary<Type, string> unsupportedTypes)
+    private void CollectField(
+        FieldInfo fieldInfo,
+        HashSet<Type> collectedTypes,
+        Dictionary<Type, string> unsupportedTypes
+    )
     {
         Type fieldType = fieldInfo.FieldType;
 
         CollectType(fieldType, collectedTypes, unsupportedTypes);
     }
     
-    private void CollectEvent(EventInfo eventInfo, HashSet<Type> collectedTypes, Dictionary<Type, string> unsupportedTypes)
+    private void CollectEvent(
+        EventInfo eventInfo,
+        HashSet<Type> collectedTypes,
+        Dictionary<Type, string> unsupportedTypes
+    )
     {
         Type? eventHandlerType = eventInfo.EventHandlerType;
 
@@ -136,7 +164,11 @@ public class TypeCollector
         }
     }
 
-    private void CollectParameter(ParameterInfo parameterInfo, HashSet<Type> collectedTypes, Dictionary<Type, string> unsupportedTypes)
+    private void CollectParameter(
+        ParameterInfo parameterInfo,
+        HashSet<Type> collectedTypes,
+        Dictionary<Type, string> unsupportedTypes
+    )
     {
         Type parameterType = parameterInfo.ParameterType;
 
@@ -148,7 +180,10 @@ public class TypeCollector
         return IsSupportedType(type, out _);
     }
     
-    public static bool IsSupportedType(Type type, out string? unsupportedReason)
+    public static bool IsSupportedType(
+        Type type,
+        out string? unsupportedReason
+    )
     {
         unsupportedReason = null;
 
