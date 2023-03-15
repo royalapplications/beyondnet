@@ -192,6 +192,55 @@ internal static unsafe class NativeAOTSample_Person_t
     }
     
     // Sample API for demonstrating non-escaping closures
+    [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "ChangeAgeNew")]
+    internal static CStatus ChangeAgeNew(
+        void* handleAddress,
+        void* nativeDelegateHandleAddress,
+        void** outException
+    )
+    {
+        Person? instance = InteropUtils.GetInstance<Person>(handleAddress);
+
+        if (instance is null) {
+            if (outException is not null) {
+                *outException = null;
+            }
+            
+            return CStatus.Failure;
+        }
+        
+        NativeDelegate? nativeDelegate = InteropUtils.GetInstance<NativeDelegate>(nativeDelegateHandleAddress);
+
+        if (nativeDelegate == null) {
+            if (outException is not null) {
+                *outException = null;
+            }
+            
+            return CStatus.Failure;
+        }
+
+        void* context = nativeDelegate.Context;
+        void* nativeFunction = nativeDelegate.NativeFunction;
+        
+        Func<int> trampoline = () => {
+            delegate* unmanaged<void*, int> nativeFunctionPointer = (delegate* unmanaged<void*, int>)nativeFunction;
+
+            int returnValue = nativeFunctionPointer(context);
+
+            return returnValue;
+        };
+
+        nativeDelegate.Trampoline = trampoline;
+        
+        instance.ChangeAge(trampoline);
+
+        if (outException is not null) {
+            *outException = null;
+        }
+            
+        return CStatus.Success;
+    }
+
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "ChangeAge")]
     internal static CStatus ChangeAge(
         void* handleAddress,
