@@ -13,27 +13,29 @@ static class Program
 {
     public static int Main(string[] args)
     {
-        bool parseSuccess = ParseArguments(
-            args,
-            out string? assemblyPath,
-            out string? cSharpUnmanagedOutputPath,
-            out string? cOutputPath
-        );
-
+        bool parseSuccess = ArgumentParser.TryParse(args, out ArgumentParser.Result? result);
+        
         if (!parseSuccess ||
-            assemblyPath == null) {
+            result == null) {
             ShowUsage();
-
+            
             return 1;
         }
+
+        string assemblyPath = result.AssemblyPath;
+        string? cSharpUnmanagedOutputPath = result.CSharpUnmanagedOutputPath;
+        string? cOutputPath = result.COutputPath;
+
+        Assembly assembly;
         
-        AppDomain.CurrentDomain.AssemblyResolve += AppDomain_OnAssemblyResolve;
-
-        Assembly assembly = Assembly.LoadFrom(assemblyPath);
-
-        TypeCollector typeCollector = new(assembly);
-
-        var types = typeCollector.Collect(out Dictionary<Type, string> unsupportedTypes);
+        using (AssemblyLoader assemblyLoader = new()) {
+            assembly = assemblyLoader.LoadFrom(assemblyPath);
+        }
+        
+        var types = CollectTypes(
+            assembly,
+            out Dictionary<Type, string> unsupportedTypes
+        );
 
         const string namespaceForCSharpUnamangedCode = "NativeGeneratedCode";
 
@@ -55,66 +57,34 @@ static class Program
         var cResult = cResultObject.Result;
         var cCode = cResultObject.GeneratedCode;
 
-        if (!string.IsNullOrEmpty(cSharpUnmanagedOutputPath)) {
-            File.WriteAllText(cSharpUnmanagedOutputPath, cSharpUnmanagedCode);
-        } else {
-            Console.WriteLine("--- C# BEGIN ---");
-            Console.WriteLine(cSharpUnmanagedCode);
-            Console.WriteLine("--- C# END ---");
-        }
-
-        if (!string.IsNullOrEmpty(cOutputPath)) {
-            File.WriteAllText(cOutputPath, cCode);
-        } else {
-            Console.WriteLine("--- C BEGIN ---");
-            Console.WriteLine(cCode);
-            Console.WriteLine("--- C END ---");
-        }
+        WriteCodeToFileOrPrintToConsole(
+            "C#",
+            cSharpUnmanagedCode,
+            cSharpUnmanagedOutputPath
+        );
+        
+        WriteCodeToFileOrPrintToConsole(
+            "C",
+            cCode,
+            cOutputPath
+        );
 
         return 0;
     }
 
-    private static bool ParseArguments(
-        string[] args,
-        out string? assemblyPath,
-        out string? cSharpUnmanagedOutputPath,
-        out string? cOutputPath
+    private static void WriteCodeToFileOrPrintToConsole(
+        string languageName,
+        string code,
+        string? outputPath
     )
     {
-        const string cSharpFileExtension = ".cs";
-        const string cHeaderFileExtension = ".h";
-        
-        assemblyPath = null;
-        cSharpUnmanagedOutputPath = null;
-        cOutputPath = null;
-        
-        if (args.Length <= 0) {
-            return false;
+        if (!string.IsNullOrEmpty(outputPath)) {
+            File.WriteAllText(outputPath, code);
+        } else {
+            Console.WriteLine($"--- {languageName} BEGIN ---");
+            Console.WriteLine(code);
+            Console.WriteLine($"--- {languageName} END ---");
         }
-
-        assemblyPath = args[0].Trim();
-
-        if (string.IsNullOrWhiteSpace(assemblyPath)) {
-            return false;
-        }
-
-        if (args.Length < 2) {
-            return true;
-        }
-
-        for (int i = 1; i < args.Length; i++) {
-            string path = args[i].Trim();
-
-            if (path.EndsWith(cSharpFileExtension, StringComparison.InvariantCultureIgnoreCase)) {
-                cSharpUnmanagedOutputPath = path;
-            } else if (path.EndsWith(cHeaderFileExtension, StringComparison.InvariantCultureIgnoreCase)) {
-                cOutputPath = path;
-            } else {
-                return false;
-            }
-        }
-
-        return true;
     }
     
     private static void ShowUsage()
@@ -126,61 +96,16 @@ Usage: NativeAOT.CodeGenerator.CLI <PathToAssembly.dll> [<PathToCSharpOutputFile
         Console.WriteLine(usageText);    
     }
 
-    private static Assembly? AppDomain_OnAssemblyResolve(object? sender, ResolveEventArgs args)
+    private static HashSet<Type> CollectTypes(
+        Assembly assembly,
+        out Dictionary<Type, string> unsupportedTypes
+    )
     {
-        string assemblyFullName = args.Name;
-        AssemblyName assemblyNameObject = new(assemblyFullName);
-        string? assemblyName = assemblyNameObject.Name;
+        TypeCollector typeCollector = new(assembly);
 
-        if (string.IsNullOrEmpty(assemblyName)) {
-            return null;
-        }
+        var types = typeCollector.Collect(out unsupportedTypes);
 
-        if (!assemblyName.EndsWith(".dll", StringComparison.InvariantCultureIgnoreCase)) {
-            assemblyName += ".dll";
-        }
-        
-        try {
-            return Assembly.LoadFrom(assemblyName);
-        } catch {
-            var searchPaths = GetAssemblySearchPaths();
-
-            foreach (var searchPath in searchPaths) {
-                string potentialAssemblyPath = Path.Combine(
-                    searchPath,
-                    assemblyName
-                );
-
-                try {
-                    return Assembly.LoadFrom(potentialAssemblyPath);
-                } catch {
-                    // ignored
-                }
-            }
-        }
-
-        return null;
-    }
-
-    private static IEnumerable<string> GetAssemblySearchPaths()
-    {
-        List<string> searchPaths = new() {
-            Environment.CurrentDirectory
-        };
-
-        string? processPath = Environment.ProcessPath;
-
-        if (!string.IsNullOrEmpty(processPath)) {
-            string? processDirectoryPath = Path.GetDirectoryName(processPath);
-    
-            if (!string.IsNullOrEmpty(processDirectoryPath)) {
-                if (!searchPaths.Contains(processDirectoryPath)) {
-                    searchPaths.Add(processDirectoryPath);
-                }
-            }
-        }
-
-        return searchPaths;
+        return types;
     }
 
     private struct CodeGeneratorResult
