@@ -51179,7 +51179,7 @@ internal static unsafe class System_Reflection_InterfaceMapping
 internal static unsafe class NativeAOT_CodeGeneratorInputSample_IAnimal
 {
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_IAnimal_Eat")]
-	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_IAnimal_Eat(void* /* NativeAOT.CodeGeneratorInputSample.IAnimal */ __self, byte* /* System.String */ food, void** /* System.Exception */ __outException)
+	internal static byte* /* System.String */ NativeAOT_CodeGeneratorInputSample_IAnimal_Eat(void* /* NativeAOT.CodeGeneratorInputSample.IAnimal */ __self, byte* /* System.String */ food, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -51190,12 +51190,14 @@ internal static unsafe class NativeAOT_CodeGeneratorInputSample_IAnimal
 		System.String foodDotNet = InteropUtils.ToDotNetString(food);
 	
 	    try {
-			__selfDotNet.Eat(foodDotNet);
+			System.String __returnValue = __selfDotNet.Eat(foodDotNet);
+			byte* _returnValueNative = __returnValue.CopyToCString();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
 	        }
 	
+			return _returnValueNative;
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
 	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
@@ -51203,6 +51205,7 @@ internal static unsafe class NativeAOT_CodeGeneratorInputSample_IAnimal
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
+			return null;
 		}
 	}
 	
@@ -51253,7 +51256,7 @@ internal static unsafe class NativeAOT_CodeGeneratorInputSample_IAnimal
 internal static unsafe class NativeAOT_CodeGeneratorInputSample_BaseAnimal
 {
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_BaseAnimal_Eat")]
-	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_BaseAnimal_Eat(void* /* NativeAOT.CodeGeneratorInputSample.BaseAnimal */ __self, byte* /* System.String */ food, void** /* System.Exception */ __outException)
+	internal static byte* /* System.String */ NativeAOT_CodeGeneratorInputSample_BaseAnimal_Eat(void* /* NativeAOT.CodeGeneratorInputSample.BaseAnimal */ __self, byte* /* System.String */ food, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -51264,12 +51267,14 @@ internal static unsafe class NativeAOT_CodeGeneratorInputSample_BaseAnimal
 		System.String foodDotNet = InteropUtils.ToDotNetString(food);
 	
 	    try {
-			__selfDotNet.Eat(foodDotNet);
+			System.String __returnValue = __selfDotNet.Eat(foodDotNet);
+			byte* _returnValueNative = __returnValue.CopyToCString();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
 	        }
 	
+			return _returnValueNative;
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
 	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
@@ -51277,6 +51282,7 @@ internal static unsafe class NativeAOT_CodeGeneratorInputSample_BaseAnimal
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
+			return null;
 		}
 	}
 	

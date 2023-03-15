@@ -13186,7 +13186,7 @@ System_Reflection_InterfaceMapping_Destroy(
 #pragma mark - END APIs of System.Reflection.InterfaceMapping
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.IAnimal
-void /* System.Void */
+CString /* System.String */
 NativeAOT_CodeGeneratorInputSample_IAnimal_Eat(
 	NativeAOT_CodeGeneratorInputSample_IAnimal_t /* NativeAOT.CodeGeneratorInputSample.IAnimal */ self,
 	CString /* System.String */ food,
@@ -13207,7 +13207,7 @@ NativeAOT_CodeGeneratorInputSample_IAnimal_Destroy(
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.IAnimal
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.BaseAnimal
-void /* System.Void */
+CString /* System.String */
 NativeAOT_CodeGeneratorInputSample_BaseAnimal_Eat(
 	NativeAOT_CodeGeneratorInputSample_BaseAnimal_t /* NativeAOT.CodeGeneratorInputSample.BaseAnimal */ self,
 	CString /* System.String */ food,

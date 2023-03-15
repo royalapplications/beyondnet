@@ -4,8 +4,8 @@ public abstract class BaseAnimal: IAnimal
 {
     public abstract string Name { get; }
 
-    public virtual void Eat(string food)
+    public virtual string Eat(string food)
     {
-        Console.WriteLine($"{Name} is eating {food}.");
+        return $"{Name} is eating {food}.";
     }
 }

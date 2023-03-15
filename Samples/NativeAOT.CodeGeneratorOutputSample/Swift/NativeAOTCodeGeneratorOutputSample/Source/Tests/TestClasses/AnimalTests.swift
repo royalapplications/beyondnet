@@ -34,6 +34,31 @@ final class AnimalTests: XCTestCase {
         let retrievedDogName = String(cString: retrievedDogNameC)
         
         XCTAssertEqual(dogName, retrievedDogName)
+        
+        let food = "Bone"
+        
+        var eatC: CString?
+        
+        food.withCString { foodC in
+            eatC = NativeAOT_CodeGeneratorInputSample_IAnimal_Eat(dog,
+                                                                  foodC,
+                                                                  &exception)
+        }
+        
+        guard let eatC,
+              exception == nil else {
+            XCTFail("IAnimal.Eat should not throw and return an instance of a string")
+            
+            return
+        }
+        
+        defer { eatC.deallocate() }
+        
+        let eat = String(cString: eatC)
+        
+        let expectedEat = "\(dogName) is eating \(food)."
+        
+        XCTAssertEqual(expectedEat, eat)
     }
     
     func testCat() {
@@ -68,5 +93,30 @@ final class AnimalTests: XCTestCase {
         let retrievedCatName = String(cString: retrievedCatNameC)
         
         XCTAssertEqual(catName, retrievedCatName)
+        
+        let food = "Catnip"
+        
+        var eatC: CString?
+        
+        food.withCString { foodC in
+            eatC = NativeAOT_CodeGeneratorInputSample_IAnimal_Eat(cat,
+                                                                  foodC,
+                                                                  &exception)
+        }
+        
+        guard let eatC,
+              exception == nil else {
+            XCTFail("IAnimal.Eat should not throw and return an instance of a string")
+            
+            return
+        }
+        
+        defer { eatC.deallocate() }
+        
+        let eat = String(cString: eatC)
+        
+        let expectedEat = "\(catName) is eating \(food)."
+        
+        XCTAssertEqual(expectedEat, eat)
     }
 }

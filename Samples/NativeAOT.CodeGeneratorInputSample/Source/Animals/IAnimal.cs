@@ -4,5 +4,5 @@ public interface IAnimal
 {
     string Name { get; }
 
-    void Eat(string food);
+    string Eat(string food);
 }
