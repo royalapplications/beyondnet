@@ -174,6 +174,6 @@ static class Program
     
     private static void ShowUsage()
     {
-        Console.WriteLine("Usage: NativeAOT.CodeGenerator.CLI <PathToAssembly.dll> [<PathToOutput.cs>]");    
+        Console.WriteLine("Usage: NativeAOT.CodeGenerator.CLI <PathToAssembly.dll> [<PathToOutput.cs>] [<PathToOutput.h>]");    
     }
 }
