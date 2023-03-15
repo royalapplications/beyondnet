@@ -10,5 +10,8 @@ public enum MemberKind
     Destructor,
     
     PropertyGetter,
-    PropertySetter
+    PropertySetter,
+    
+    FieldGetter,
+    FieldSetter
 }

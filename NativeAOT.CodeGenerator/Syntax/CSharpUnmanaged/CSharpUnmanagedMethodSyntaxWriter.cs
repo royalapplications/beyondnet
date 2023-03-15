@@ -79,9 +79,11 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 methodNameC = $"{fullTypeNameC}_Destroy";
                 break;
             case MemberKind.PropertyGetter:
+            case MemberKind.FieldGetter:
                 methodNameC = $"{fullTypeNameC}_{methodName}_Get";
                 break;
             case MemberKind.PropertySetter:
+            case MemberKind.FieldSetter:
                 methodNameC = $"{fullTypeNameC}_{methodName}_Set";
                 break;
             default:
@@ -98,9 +100,14 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             CodeLanguage.CSharpUnmanaged
         );
 
-        Type? setterType = memberKind == MemberKind.PropertySetter 
-            ? returnOrSetterType
-            : null;
+        Type? setterType;
+
+        if (memberKind == MemberKind.PropertySetter ||
+            memberKind == MemberKind.FieldSetter) {
+            setterType = returnOrSetterType;
+        } else {
+            setterType = null;
+        }
 
         string methodSignatureParameters = WriteParameters(
             memberKind,
@@ -114,10 +121,14 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         
         TypeDescriptor returnOrSetterTypeDescriptor = returnOrSetterType.GetTypeDescriptor(typeDescriptorRegistry);
         string unmanagedReturnOrSetterTypeName = returnOrSetterTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
-        
-        string unmanagedReturnOrSetterTypeNameWithComment = memberKind != MemberKind.PropertySetter 
-            ? $"{unmanagedReturnOrSetterTypeName} /* {returnOrSetterType.GetFullNameOrName()} */" 
-            : "void /* System.Void */";
+        string unmanagedReturnOrSetterTypeNameWithComment;
+
+        if (memberKind == MemberKind.PropertySetter ||
+            memberKind == MemberKind.FieldSetter) {
+            unmanagedReturnOrSetterTypeNameWithComment = "void /* System.Void */";
+        } else {
+            unmanagedReturnOrSetterTypeNameWithComment = $"{unmanagedReturnOrSetterTypeName} /* {returnOrSetterType.GetFullNameOrName()} */";
+        }
         
         StringBuilder sb = new();
         
@@ -173,6 +184,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         string convertedParameterNamesString = string.Join(", ", convertedParameterNames);
 
         bool isReturning = memberKind != MemberKind.PropertySetter &&
+                           memberKind != MemberKind.FieldSetter &&
                            !returnOrSetterTypeDescriptor.IsVoid;
 
         string returnValuePrefix = string.Empty;
@@ -194,6 +206,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
         bool invocationNeedsParentheses = memberKind != MemberKind.PropertyGetter &&
                                           memberKind != MemberKind.PropertySetter &&
+                                          memberKind != MemberKind.FieldGetter &&
+                                          memberKind != MemberKind.FieldSetter &&
                                           memberKind != MemberKind.Destructor;
 
         string methodInvocationPrefix = invocationNeedsParentheses 
@@ -204,7 +218,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
         if (invocationNeedsParentheses) {
             methodInvocationSuffix = ")";
-        } else if (memberKind == MemberKind.PropertySetter) {
+        } else if (memberKind == MemberKind.PropertySetter ||
+                   memberKind == MemberKind.FieldSetter) {
             string valueParamterName = "__value";
 
             string? setterTypeConversion = returnOrSetterTypeDescriptor.GetTypeConversion(
@@ -343,7 +358,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             parameterList.Add(parameterString);
         }
 
-        if (memberKind == MemberKind.PropertySetter) {
+        if (memberKind == MemberKind.PropertySetter ||
+            memberKind == MemberKind.FieldSetter) {
             if (setterType == null) {
                 throw new Exception("Setter Type may not be null");
             }
