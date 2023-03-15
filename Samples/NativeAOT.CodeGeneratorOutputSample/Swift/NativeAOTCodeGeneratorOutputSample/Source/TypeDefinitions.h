@@ -1,5 +1,5 @@
 // Number of generated types: 162
-// Number of generated members: 1571
+// Number of generated members: 1572
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -11760,6 +11760,12 @@ void /* System.Void */
 NativeAOT_CodeGeneratorInputSample_Person_Age_Set(
 	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
 	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Array_t /* System.Array */
+NativeAOT_CodeGeneratorInputSample_Person_ChildrenAsArray_Get(
+	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 

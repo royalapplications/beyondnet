@@ -1,5 +1,5 @@
 // Number of generated types: 162
-// Number of generated members: 1571
+// Number of generated members: 1572
 
 // <Header>
 using System;
@@ -44211,6 +44211,38 @@ internal static unsafe class NativeAOT_CodeGeneratorInputSample_Person
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
+		}
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_ChildrenAsArray_Get")]
+	internal static void* /* System.Array */ NativeAOT_CodeGeneratorInputSample_Person_ChildrenAsArray_Get(void* /* NativeAOT.CodeGeneratorInputSample.Person */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.Person __selfDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Person>(__self);
+	
+	
+	    try {
+			System.Array __returnValue = __selfDotNet.ChildrenAsArray;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
 		}
 	}
 	

@@ -18,6 +18,13 @@ public class Person
     public int Age { get; set; }
     public Person[] Children { get; private set; } = Array.Empty<Person>();
 
+    public Array ChildrenAsArray
+    {
+        get {
+            return Children;
+        }
+    }
+
     public NiceLevels NiceLevel { get; set; } = NiceLevels.Nice;
 
     public string FullName => $"{FirstName} {LastName}";
