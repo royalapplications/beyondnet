@@ -2997,6 +2997,12 @@ internal static unsafe class System_Type
 
 	
 
+	// TODO (Field): Delimiter
+	
+
+	// TODO (Field): Missing
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_Destroy")]
 	internal static void /* System.Void */ System_Type_Destroy(void* /* System.Type */ __self)
 	{
@@ -6404,6 +6410,9 @@ internal static unsafe class System_String
 		}
 	}
 	
+	
+
+	// TODO (Field): Empty
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Destroy")]
@@ -13771,6 +13780,9 @@ internal static unsafe class System_IO_Stream
 
 	
 
+	// TODO (Field): Null
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_Stream_Destroy")]
 	internal static void /* System.Void */ System_IO_Stream_Destroy(void* /* System.IO.Stream */ __self)
 	{
@@ -19587,6 +19599,21 @@ internal static unsafe class System_Decimal
 	
 	
 
+	// TODO (Field): Zero
+	
+
+	// TODO (Field): One
+	
+
+	// TODO (Field): MinusOne
+	
+
+	// TODO (Field): MaxValue
+	
+
+	// TODO (Field): MinValue
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_Destroy")]
 	internal static void /* System.Void */ System_Decimal_Destroy(void* /* System.Decimal */ __self)
 	{
@@ -21970,6 +21997,15 @@ internal static unsafe class System_DateTime
 	
 	
 
+	// TODO (Field): MinValue
+	
+
+	// TODO (Field): MaxValue
+	
+
+	// TODO (Field): UnixEpoch
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_Destroy")]
 	internal static void /* System.Void */ System_DateTime_Destroy(void* /* System.DateTime */ __self)
 	{
@@ -23379,6 +23415,36 @@ internal static unsafe class System_TimeSpan
 		}
 	}
 	
+	
+
+	// TODO (Field): Zero
+	
+
+	// TODO (Field): MaxValue
+	
+
+	// TODO (Field): MinValue
+	
+
+	// TODO (Field): NanosecondsPerTick
+	
+
+	// TODO (Field): TicksPerMicrosecond
+	
+
+	// TODO (Field): TicksPerMillisecond
+	
+
+	// TODO (Field): TicksPerSecond
+	
+
+	// TODO (Field): TicksPerMinute
+	
+
+	// TODO (Field): TicksPerHour
+	
+
+	// TODO (Field): TicksPerDay
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_TimeSpan_Destroy")]
@@ -26669,6 +26735,9 @@ internal static unsafe class System_Globalization_Calendar
 
 	
 
+	// TODO (Field): CurrentEra
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_Calendar_Destroy")]
 	internal static void /* System.Void */ System_Globalization_Calendar_Destroy(void* /* System.Globalization.Calendar */ __self)
 	{
@@ -27980,6 +28049,9 @@ internal static unsafe class System_ModuleHandle
 		}
 	}
 	
+	
+
+	// TODO (Field): EmptyHandle
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_ModuleHandle_Destroy")]
@@ -32554,6 +32626,9 @@ internal static unsafe class System_Threading_WaitHandle
 
 	
 
+	// TODO (Field): WaitTimeout
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_WaitHandle_Destroy")]
 	internal static void /* System.Void */ System_Threading_WaitHandle_Destroy(void* /* System.Threading.WaitHandle */ __self)
 	{
@@ -35781,6 +35856,9 @@ internal static unsafe class System_Guid
 			return null;
 		}
 	}
+	
+
+	// TODO (Field): Empty
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Guid_Destroy")]
@@ -42396,6 +42474,15 @@ internal static unsafe class System_Runtime_InteropServices_StructLayoutAttribut
 	
 	
 
+	// TODO (Field): Pack
+	
+
+	// TODO (Field): Size
+	
+
+	// TODO (Field): CharSet
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_StructLayoutAttribute_Destroy")]
 	internal static void /* System.Void */ System_Runtime_InteropServices_StructLayoutAttribute_Destroy(void* /* System.Runtime.InteropServices.StructLayoutAttribute */ __self)
 	{
@@ -43055,6 +43142,12 @@ internal static unsafe class System_Reflection_ConstructorInfo
 
 	
 
+	// TODO (Field): ConstructorName
+	
+
+	// TODO (Field): TypeConstructorName
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ConstructorInfo_Destroy")]
 	internal static void /* System.Void */ System_Reflection_ConstructorInfo_Destroy(void* /* System.Reflection.ConstructorInfo */ __self)
 	{
@@ -43349,6 +43442,12 @@ internal static unsafe class System_Reflection_EventInfo
 
 internal static unsafe class System_Reflection_InterfaceMapping
 {
+	// TODO (Field): TargetType
+	
+
+	// TODO (Field): InterfaceType
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_InterfaceMapping_Destroy")]
 	internal static void /* System.Void */ System_Reflection_InterfaceMapping_Destroy(void* /* System.Reflection.InterfaceMapping */ __self)
 	{
@@ -43715,6 +43814,9 @@ internal static unsafe class NativeAOT_CodeGeneratorInputSample_Person
 		}
 	}
 	
+	
+
+	// TODO (Field): AGE_WHEN_BORN
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_Destroy")]

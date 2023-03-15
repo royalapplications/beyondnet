@@ -198,7 +198,7 @@ public class MemberCollector
             return;
         }
 
-        collectedMembers.Add(fieldType);
+        collectedMembers.Add(fieldInfo);
     }
     
     private void CollectEvent(

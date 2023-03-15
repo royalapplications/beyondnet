@@ -10,6 +10,8 @@ public enum NiceLevels: uint
 
 public class Person
 {
+    public const int AGE_WHEN_BORN = 0;
+    
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public int Age { get; set; }
