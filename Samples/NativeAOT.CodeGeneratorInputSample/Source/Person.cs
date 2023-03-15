@@ -16,6 +16,7 @@ public class Person
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public int Age { get; set; }
+    public Person[] Children { get; private set; } = Array.Empty<Person>();
 
     public NiceLevels NiceLevel { get; set; } = NiceLevels.Nice;
 
@@ -61,5 +62,52 @@ public class Person
     public string GetWelcomeMessage()
     {
         return $"Welcome, {FullName}! You're {Age} years old and {GetNiceLevelString()}.";
+    }
+
+    public void AddChild(Person child)
+    {
+        if (Children.Contains(child)) {
+            return;
+        }
+        
+        List<Person> children = Children.ToList();
+        
+        children.Add(child);
+
+        Children = children.ToArray();
+    }
+    
+    public void RemoveChild(Person child)
+    {
+        if (!Children.Contains(child)) {
+            return;
+        }
+        
+        List<Person> children = Children.ToList();
+        
+        children.Remove(child);
+
+        Children = children.ToArray();
+    }
+    
+    public void RemoveChildAt(int index)
+    {
+        List<Person> children = Children.ToList();
+        
+        children.RemoveAt(index);
+
+        Children = children.ToArray();
+    }
+
+    public int NumberOfChildren
+    {
+        get {
+            return Children.Length;
+        }
+    }
+
+    public Person ChildAt(int index)
+    {
+        return Children[index];
     }
 }

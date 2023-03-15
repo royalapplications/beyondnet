@@ -1,5 +1,5 @@
 // Number of generated types: 162
-// Number of generated members: 1566
+// Number of generated members: 1571
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -11681,6 +11681,34 @@ NativeAOT_CodeGeneratorInputSample_Person_GetWelcomeMessage(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_Person_AddChild(
+	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
+	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ child,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_Person_RemoveChild(
+	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
+	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ child,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_Person_RemoveChildAt(
+	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
+	int32_t /* System.Int32 */ index,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */
+NativeAOT_CodeGeneratorInputSample_Person_ChildAt(
+	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
+	int32_t /* System.Int32 */ index,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */
 NativeAOT_CodeGeneratorInputSample_Person_Create(
 	CString /* System.String */ firstName,
@@ -11750,6 +11778,12 @@ NativeAOT_CodeGeneratorInputSample_Person_NiceLevel_Set(
 
 CString /* System.String */
 NativeAOT_CodeGeneratorInputSample_Person_FullName_Get(
+	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildren_Get(
 	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
 	System_Exception_t* /* System.Exception */ outException
 );

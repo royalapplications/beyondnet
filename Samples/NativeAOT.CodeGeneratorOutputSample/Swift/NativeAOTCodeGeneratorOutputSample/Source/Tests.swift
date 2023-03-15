@@ -398,6 +398,127 @@ final class NativeAOTCodeGeneratorOutputSampleTests: XCTestCase {
         XCTAssertEqual(expectedNewFullName, .init(cString: newFullNameC))
         
         newFullNameC.deallocate()
+        
+        let numberOfChildren = NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildren_Get(person,
+                                                                                              &exception)
+        
+        guard exception == nil else {
+            XCTFail("Person.NumberOfChildren getter should not throw")
+            
+            return
+        }
+        
+        XCTAssertEqual(0, numberOfChildren)
+    }
+    
+    func testPersonChildren() {
+        var exception: System_Exception_t?
+        
+        guard let mother = NativeAOT_CodeGeneratorInputSample_Person_Create("Johanna",
+                                                                            "Doe",
+                                                                            40,
+                                                                            &exception),
+              exception == nil else {
+            XCTFail("Person ctor should not throw and return an instance")
+            
+            return
+        }
+        
+        defer { NativeAOT_CodeGeneratorInputSample_Person_Destroy(mother) }
+        
+        guard let son = NativeAOT_CodeGeneratorInputSample_Person_Create("Max",
+                                                                         "Doe",
+                                                                         4,
+                                                                         &exception),
+              exception == nil else {
+            XCTFail("Person ctor should not throw and return an instance")
+            
+            return
+        }
+        
+        defer { NativeAOT_CodeGeneratorInputSample_Person_Destroy(son) }
+        
+        NativeAOT_CodeGeneratorInputSample_Person_AddChild(mother,
+                                                           son,
+                                                           &exception)
+        
+        guard exception == nil else {
+            XCTFail("Person.AddChild should not throw")
+            
+            return
+        }
+        
+        let numberOfChildren = NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildren_Get(mother,
+                                                                                              &exception)
+        
+        guard exception == nil else {
+            XCTFail("Person.NumberOfChildren should not throw")
+            
+            return
+        }
+        
+        XCTAssertEqual(1, numberOfChildren)
+        
+        guard let firstChild = NativeAOT_CodeGeneratorInputSample_Person_ChildAt(mother,
+                                                                                 0,
+                                                                                 &exception),
+              exception == nil else {
+            XCTFail("Person.ChildAt should not throw and return an instance")
+            
+            return
+        }
+        
+        defer { NativeAOT_CodeGeneratorInputSample_Person_Destroy(firstChild) }
+        
+        let firstChildEqualsSon = System_Object_ReferenceEquals(firstChild,
+                                                                son,
+                                                                &exception)
+        
+        guard exception == nil else {
+            XCTFail("System.Object.ReferenceEquals should not throw")
+            
+            return
+        }
+        
+        XCTAssertEqual(CBool.yes, firstChildEqualsSon)
+        
+        NativeAOT_CodeGeneratorInputSample_Person_RemoveChild(mother,
+                                                              son,
+                                                              &exception)
+        
+        guard exception == nil else {
+            XCTFail("Person.RemoveChild should not throw")
+            
+            return
+        }
+        
+        NativeAOT_CodeGeneratorInputSample_Person_RemoveChildAt(mother,
+                                                                0,
+                                                                &exception)
+        
+        guard let exception else {
+            XCTFail("Person.RemoveChild should throw because the sole child has been removed previously")
+            
+            return
+        }
+        
+        defer { System_Exception_Destroy(exception) }
+        
+        var exception2: System_Exception_t?
+        
+        guard let exceptionMessageC = System_Exception_Message_Get(exception,
+                                                                   &exception2),
+              exception2 == nil else {
+            XCTFail("Exception.Message getter should not throw and return an instance of a string")
+            
+            return
+        }
+        
+        let exceptionMessage = String(cString: exceptionMessageC)
+        
+        exceptionMessageC.deallocate()
+        
+        XCTAssertTrue(exceptionMessage.contains("Index was out of range"))
     }
     
     func testSystemReflectionAssembly() {

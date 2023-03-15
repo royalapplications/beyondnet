@@ -1,5 +1,5 @@
 // Number of generated types: 162
-// Number of generated members: 1566
+// Number of generated members: 1571
 
 // <Header>
 using System;
@@ -43869,6 +43869,123 @@ internal static unsafe class NativeAOT_CodeGeneratorInputSample_Person
 	}
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_AddChild")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Person_AddChild(void* /* NativeAOT.CodeGeneratorInputSample.Person */ __self, void* /* NativeAOT.CodeGeneratorInputSample.Person */ child, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.Person __selfDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Person>(__self);
+	
+		NativeAOT.CodeGeneratorInputSample.Person childDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Person>(child);
+	
+	    try {
+			__selfDotNet.AddChild(childDotNet);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_RemoveChild")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Person_RemoveChild(void* /* NativeAOT.CodeGeneratorInputSample.Person */ __self, void* /* NativeAOT.CodeGeneratorInputSample.Person */ child, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.Person __selfDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Person>(__self);
+	
+		NativeAOT.CodeGeneratorInputSample.Person childDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Person>(child);
+	
+	    try {
+			__selfDotNet.RemoveChild(childDotNet);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_RemoveChildAt")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Person_RemoveChildAt(void* /* NativeAOT.CodeGeneratorInputSample.Person */ __self, int /* System.Int32 */ index, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.Person __selfDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Person>(__self);
+	
+	
+	    try {
+			__selfDotNet.RemoveChildAt(index);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_ChildAt")]
+	internal static void* /* NativeAOT.CodeGeneratorInputSample.Person */ NativeAOT_CodeGeneratorInputSample_Person_ChildAt(void* /* NativeAOT.CodeGeneratorInputSample.Person */ __self, int /* System.Int32 */ index, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.Person __selfDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Person>(__self);
+	
+	
+	    try {
+			NativeAOT.CodeGeneratorInputSample.Person __returnValue = __selfDotNet.ChildAt(index);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_Create")]
 	internal static void* /* NativeAOT.CodeGeneratorInputSample.Person */ NativeAOT_CodeGeneratorInputSample_Person_Create(byte* /* System.String */ firstName, byte* /* System.String */ lastName, int /* System.Int32 */ age, void** /* System.Exception */ __outException)
 	{
@@ -44184,6 +44301,37 @@ internal static unsafe class NativeAOT_CodeGeneratorInputSample_Person
 	        }
 	
 			return null;
+		}
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildren_Get")]
+	internal static int /* System.Int32 */ NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildren_Get(void* /* NativeAOT.CodeGeneratorInputSample.Person */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.Person __selfDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Person>(__self);
+	
+	
+	    try {
+			System.Int32 __returnValue = __selfDotNet.NumberOfChildren;
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
 		}
 	}
 	
