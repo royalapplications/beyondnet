@@ -56,20 +56,28 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         State state
     )
     {
+        string fullTypeName = declaringType.GetFullNameOrName();
+        string fullTypeNameC = fullTypeName.Replace('.', '_');
+        
         string methodNameC;
 
         switch (memberKind) {
+            case MemberKind.Automatic:
+                throw new Exception("MemberKind may not be Automatic here");
             case MemberKind.Method:
-                methodNameC = $"{declaringType.GetFullNameOrName().Replace('.', '_')}_{methodName}";
+                methodNameC = $"{fullTypeNameC}_{methodName}";
                 break;
             case MemberKind.Constructor:
-                methodNameC = $"{declaringType.GetFullNameOrName().Replace('.', '_')}_Create";
+                methodNameC = $"{fullTypeNameC}_Create";
+                break;
+            case MemberKind.Destructor:
+                methodNameC = $"{fullTypeNameC}_Destroy";
                 break;
             case MemberKind.PropertyGetter:
-                methodNameC = $"{declaringType.GetFullNameOrName().Replace('.', '_')}_{methodName}_Get";
+                methodNameC = $"{fullTypeNameC}_{methodName}_Get";
                 break;
             case MemberKind.PropertySetter:
-                methodNameC = $"{declaringType.GetFullNameOrName().Replace('.', '_')}_{methodName}_Set";
+                methodNameC = $"{fullTypeNameC}_{methodName}_Set";
                 break;
             default:
                 throw new Exception("Unknown method kind");
