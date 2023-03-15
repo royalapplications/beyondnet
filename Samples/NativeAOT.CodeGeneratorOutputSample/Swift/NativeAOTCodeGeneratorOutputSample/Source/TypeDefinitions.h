@@ -1,5 +1,5 @@
-// Number of generated types: 163
-// Number of generated members: 1574
+// Number of generated types: 167
+// Number of generated members: 1583
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -24,17 +24,7 @@ typedef enum __attribute__((enum_extensibility(closed))): uint8_t {
 
 #pragma mark - END Unsupported Types
 #pragma mark - BEGIN Type Definitions
-typedef enum __attribute__((enum_extensibility(closed))): uint32_t {
-	NativeAOT_CodeGeneratorInputSample_NiceLevels_NotNice = 0,
-	NativeAOT_CodeGeneratorInputSample_NiceLevels_LittleBitNice = 1,
-	NativeAOT_CodeGeneratorInputSample_NiceLevels_Nice = 2,
-	NativeAOT_CodeGeneratorInputSample_NiceLevels_VeryNice = 3
-} NativeAOT_CodeGeneratorInputSample_NiceLevels;
-
-
-typedef void* System_Enum_t;
-
-typedef void* System_ValueType_t;
+typedef void* NativeAOT_CodeGeneratorInputSample_AnimalFactory_t;
 
 typedef void* System_Object_t;
 
@@ -54,6 +44,10 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_Reflection_MemberTypes_All = 191
 } System_Reflection_MemberTypes;
 
+
+typedef void* System_Enum_t;
+
+typedef void* System_ValueType_t;
 
 
 
@@ -831,6 +825,20 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 
 typedef void* System_Reflection_InterfaceMapping_t;
 
+typedef void* NativeAOT_CodeGeneratorInputSample_IAnimal_t;
+
+typedef void* NativeAOT_CodeGeneratorInputSample_Cat_t;
+
+typedef void* NativeAOT_CodeGeneratorInputSample_Dog_t;
+
+typedef enum __attribute__((enum_extensibility(closed))): uint32_t {
+	NativeAOT_CodeGeneratorInputSample_NiceLevels_NotNice = 0,
+	NativeAOT_CodeGeneratorInputSample_NiceLevels_LittleBitNice = 1,
+	NativeAOT_CodeGeneratorInputSample_NiceLevels_Nice = 2,
+	NativeAOT_CodeGeneratorInputSample_NiceLevels_VeryNice = 3
+} NativeAOT_CodeGeneratorInputSample_NiceLevels;
+
+
 typedef void* NativeAOT_CodeGeneratorInputSample_Person_t;
 
 typedef void* NativeAOT_CodeGeneratorInputSample_Person_Extensions_t;
@@ -846,222 +854,19 @@ typedef void* NativeAOT_CodeGeneratorInputSample_TestClass_t;
 
 #pragma mark - END Type Definitions
 #pragma mark - BEGIN APIs
-#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.NiceLevels
-#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.NiceLevels
-
-#pragma mark - BEGIN APIs of System.Enum
-CString /* System.String */
-System_Enum_GetName(
-	System_Type_t /* System.Type */ enumType,
-	System_Object_t /* System.Object */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Type_t /* System.Type */
-System_Enum_GetUnderlyingType(
-	System_Type_t /* System.Type */ enumType,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Array_t /* System.Array */
-System_Enum_GetValues(
-	System_Type_t /* System.Type */ enumType,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Array_t /* System.Array */
-System_Enum_GetValuesAsUnderlyingType(
-	System_Type_t /* System.Type */ enumType,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-CBool /* System.Boolean */
-System_Enum_HasFlag(
-	System_Enum_t /* System.Enum */ self,
-	System_Enum_t /* System.Enum */ flag,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-CBool /* System.Boolean */
-System_Enum_IsDefined(
-	System_Type_t /* System.Type */ enumType,
-	System_Object_t /* System.Object */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_t /* System.Object */
-System_Enum_Parse(
-	System_Type_t /* System.Type */ enumType,
-	CString /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_t /* System.Object */
-System_Enum_Parse1(
-	System_Type_t /* System.Type */ enumType,
-	CString /* System.String */ value,
-	CBool /* System.Boolean */ ignoreCase,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-CBool /* System.Boolean */
-System_Enum_Equals(
-	System_Enum_t /* System.Enum */ self,
-	System_Object_t /* System.Object */ obj,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-int32_t /* System.Int32 */
-System_Enum_GetHashCode(
-	System_Enum_t /* System.Enum */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-int32_t /* System.Int32 */
-System_Enum_CompareTo(
-	System_Enum_t /* System.Enum */ self,
-	System_Object_t /* System.Object */ target,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-CString /* System.String */
-System_Enum_ToString(
-	System_Enum_t /* System.Enum */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-CString /* System.String */
-System_Enum_ToString1(
-	System_Enum_t /* System.Enum */ self,
-	CString /* System.String */ format,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-CString /* System.String */
-System_Enum_ToString2(
-	System_Enum_t /* System.Enum */ self,
-	System_IFormatProvider_t /* System.IFormatProvider */ provider,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-CString /* System.String */
-System_Enum_ToString3(
-	System_Enum_t /* System.Enum */ self,
-	CString /* System.String */ format,
-	System_IFormatProvider_t /* System.IFormatProvider */ provider,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-CString /* System.String */
-System_Enum_Format(
-	System_Type_t /* System.Type */ enumType,
-	System_Object_t /* System.Object */ value,
-	CString /* System.String */ format,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_TypeCode /* System.TypeCode */
-System_Enum_GetTypeCode(
-	System_Enum_t /* System.Enum */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_t /* System.Object */
-System_Enum_ToObject(
-	System_Type_t /* System.Type */ enumType,
-	System_Object_t /* System.Object */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_t /* System.Object */
-System_Enum_ToObject1(
-	System_Type_t /* System.Type */ enumType,
-	int8_t /* System.SByte */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_t /* System.Object */
-System_Enum_ToObject2(
-	System_Type_t /* System.Type */ enumType,
-	int16_t /* System.Int16 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_t /* System.Object */
-System_Enum_ToObject3(
-	System_Type_t /* System.Type */ enumType,
-	int32_t /* System.Int32 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_t /* System.Object */
-System_Enum_ToObject4(
-	System_Type_t /* System.Type */ enumType,
-	uint8_t /* System.Byte */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_t /* System.Object */
-System_Enum_ToObject5(
-	System_Type_t /* System.Type */ enumType,
-	uint16_t /* System.UInt16 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_t /* System.Object */
-System_Enum_ToObject6(
-	System_Type_t /* System.Type */ enumType,
-	uint32_t /* System.UInt32 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_t /* System.Object */
-System_Enum_ToObject7(
-	System_Type_t /* System.Type */ enumType,
-	int64_t /* System.Int64 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_t /* System.Object */
-System_Enum_ToObject8(
-	System_Type_t /* System.Type */ enumType,
-	uint64_t /* System.UInt64 */ value,
+#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.AnimalFactory
+NativeAOT_CodeGeneratorInputSample_IAnimal_t /* NativeAOT.CodeGeneratorInputSample.IAnimal */
+NativeAOT_CodeGeneratorInputSample_AnimalFactory_CreateAnimal(
+	CString /* System.String */ animalName,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 void /* System.Void */
-System_Enum_Destroy(
-	System_Enum_t /* System.Enum */ self
+NativeAOT_CodeGeneratorInputSample_AnimalFactory_Destroy(
+	NativeAOT_CodeGeneratorInputSample_AnimalFactory_t /* NativeAOT.CodeGeneratorInputSample.AnimalFactory */ self
 );
 
-#pragma mark - END APIs of System.Enum
-
-#pragma mark - BEGIN APIs of System.ValueType
-CBool /* System.Boolean */
-System_ValueType_Equals(
-	System_ValueType_t /* System.ValueType */ self,
-	System_Object_t /* System.Object */ obj,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-int32_t /* System.Int32 */
-System_ValueType_GetHashCode(
-	System_ValueType_t /* System.ValueType */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-CString /* System.String */
-System_ValueType_ToString(
-	System_ValueType_t /* System.ValueType */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_ValueType_Destroy(
-	System_ValueType_t /* System.ValueType */ self
-);
-
-#pragma mark - END APIs of System.ValueType
+#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.AnimalFactory
 
 #pragma mark - BEGIN APIs of System.Object
 System_Type_t /* System.Type */
@@ -1534,6 +1339,220 @@ System_Reflection_MemberInfo_Destroy(
 
 #pragma mark - BEGIN APIs of System.Reflection.MemberTypes
 #pragma mark - END APIs of System.Reflection.MemberTypes
+
+#pragma mark - BEGIN APIs of System.Enum
+CString /* System.String */
+System_Enum_GetName(
+	System_Type_t /* System.Type */ enumType,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_t /* System.Type */
+System_Enum_GetUnderlyingType(
+	System_Type_t /* System.Type */ enumType,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Array_t /* System.Array */
+System_Enum_GetValues(
+	System_Type_t /* System.Type */ enumType,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Array_t /* System.Array */
+System_Enum_GetValuesAsUnderlyingType(
+	System_Type_t /* System.Type */ enumType,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Enum_HasFlag(
+	System_Enum_t /* System.Enum */ self,
+	System_Enum_t /* System.Enum */ flag,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Enum_IsDefined(
+	System_Type_t /* System.Type */ enumType,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Enum_Parse(
+	System_Type_t /* System.Type */ enumType,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Enum_Parse1(
+	System_Type_t /* System.Type */ enumType,
+	CString /* System.String */ value,
+	CBool /* System.Boolean */ ignoreCase,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Enum_Equals(
+	System_Enum_t /* System.Enum */ self,
+	System_Object_t /* System.Object */ obj,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Enum_GetHashCode(
+	System_Enum_t /* System.Enum */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Enum_CompareTo(
+	System_Enum_t /* System.Enum */ self,
+	System_Object_t /* System.Object */ target,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Enum_ToString(
+	System_Enum_t /* System.Enum */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Enum_ToString1(
+	System_Enum_t /* System.Enum */ self,
+	CString /* System.String */ format,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Enum_ToString2(
+	System_Enum_t /* System.Enum */ self,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Enum_ToString3(
+	System_Enum_t /* System.Enum */ self,
+	CString /* System.String */ format,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Enum_Format(
+	System_Type_t /* System.Type */ enumType,
+	System_Object_t /* System.Object */ value,
+	CString /* System.String */ format,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_TypeCode /* System.TypeCode */
+System_Enum_GetTypeCode(
+	System_Enum_t /* System.Enum */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Enum_ToObject(
+	System_Type_t /* System.Type */ enumType,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Enum_ToObject1(
+	System_Type_t /* System.Type */ enumType,
+	int8_t /* System.SByte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Enum_ToObject2(
+	System_Type_t /* System.Type */ enumType,
+	int16_t /* System.Int16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Enum_ToObject3(
+	System_Type_t /* System.Type */ enumType,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Enum_ToObject4(
+	System_Type_t /* System.Type */ enumType,
+	uint8_t /* System.Byte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Enum_ToObject5(
+	System_Type_t /* System.Type */ enumType,
+	uint16_t /* System.UInt16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Enum_ToObject6(
+	System_Type_t /* System.Type */ enumType,
+	uint32_t /* System.UInt32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Enum_ToObject7(
+	System_Type_t /* System.Type */ enumType,
+	int64_t /* System.Int64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Enum_ToObject8(
+	System_Type_t /* System.Type */ enumType,
+	uint64_t /* System.UInt64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Enum_Destroy(
+	System_Enum_t /* System.Enum */ self
+);
+
+#pragma mark - END APIs of System.Enum
+
+#pragma mark - BEGIN APIs of System.ValueType
+CBool /* System.Boolean */
+System_ValueType_Equals(
+	System_ValueType_t /* System.ValueType */ self,
+	System_Object_t /* System.Object */ obj,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_ValueType_GetHashCode(
+	System_ValueType_t /* System.ValueType */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_ValueType_ToString(
+	System_ValueType_t /* System.ValueType */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_ValueType_Destroy(
+	System_ValueType_t /* System.ValueType */ self
+);
+
+#pragma mark - END APIs of System.ValueType
 
 
 
@@ -11669,6 +11688,55 @@ System_Reflection_InterfaceMapping_Destroy(
 );
 
 #pragma mark - END APIs of System.Reflection.InterfaceMapping
+
+#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.IAnimal
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_IAnimal_Destroy(
+	NativeAOT_CodeGeneratorInputSample_IAnimal_t /* NativeAOT.CodeGeneratorInputSample.IAnimal */ self
+);
+
+#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.IAnimal
+
+#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Cat
+CString /* System.String */
+NativeAOT_CodeGeneratorInputSample_Cat_Name_Get(
+	NativeAOT_CodeGeneratorInputSample_Cat_t /* NativeAOT.CodeGeneratorInputSample.Cat */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+NativeAOT_CodeGeneratorInputSample_Cat_CatName_Get(
+	
+);
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_Cat_Destroy(
+	NativeAOT_CodeGeneratorInputSample_Cat_t /* NativeAOT.CodeGeneratorInputSample.Cat */ self
+);
+
+#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.Cat
+
+#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Dog
+CString /* System.String */
+NativeAOT_CodeGeneratorInputSample_Dog_Name_Get(
+	NativeAOT_CodeGeneratorInputSample_Dog_t /* NativeAOT.CodeGeneratorInputSample.Dog */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+NativeAOT_CodeGeneratorInputSample_Dog_DogName_Get(
+	
+);
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_Dog_Destroy(
+	NativeAOT_CodeGeneratorInputSample_Dog_t /* NativeAOT.CodeGeneratorInputSample.Dog */ self
+);
+
+#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.Dog
+
+#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.NiceLevels
+#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.NiceLevels
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Person
 CString /* System.String */
