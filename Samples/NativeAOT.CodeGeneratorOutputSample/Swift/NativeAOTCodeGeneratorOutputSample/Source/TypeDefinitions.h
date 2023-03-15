@@ -11352,7 +11352,7 @@ System_Runtime_InteropServices_StructLayoutAttribute_Pack_Get(
 void /* System.Void */
 System_Runtime_InteropServices_StructLayoutAttribute_Pack_Set(
 	System_Runtime_InteropServices_StructLayoutAttribute_t /* System.Runtime.InteropServices.StructLayoutAttribute */ self,
-	int /* System.Int32 */ value
+	int32_t /* System.Int32 */ value
 );
 
 int32_t /* System.Int32 */
@@ -11363,7 +11363,7 @@ System_Runtime_InteropServices_StructLayoutAttribute_Size_Get(
 void /* System.Void */
 System_Runtime_InteropServices_StructLayoutAttribute_Size_Set(
 	System_Runtime_InteropServices_StructLayoutAttribute_t /* System.Runtime.InteropServices.StructLayoutAttribute */ self,
-	int /* System.Int32 */ value
+	int32_t /* System.Int32 */ value
 );
 
 System_Runtime_InteropServices_CharSet /* System.Runtime.InteropServices.CharSet */
@@ -11374,7 +11374,7 @@ System_Runtime_InteropServices_StructLayoutAttribute_CharSet_Get(
 void /* System.Void */
 System_Runtime_InteropServices_StructLayoutAttribute_CharSet_Set(
 	System_Runtime_InteropServices_StructLayoutAttribute_t /* System.Runtime.InteropServices.StructLayoutAttribute */ self,
-	System.Runtime.InteropServices.CharSet /* System.Runtime.InteropServices.CharSet */ value
+	System_Runtime_InteropServices_CharSet /* System.Runtime.InteropServices.CharSet */ value
 );
 
 void /* System.Void */
@@ -11647,7 +11647,7 @@ System_Reflection_InterfaceMapping_TargetType_Get(
 void /* System.Void */
 System_Reflection_InterfaceMapping_TargetType_Set(
 	System_Reflection_InterfaceMapping_t /* System.Reflection.InterfaceMapping */ self,
-	void* /* System.Type */ value
+	System_Type_t /* System.Type */ value
 );
 
 System_Type_t /* System.Type */
@@ -11658,7 +11658,7 @@ System_Reflection_InterfaceMapping_InterfaceType_Get(
 void /* System.Void */
 System_Reflection_InterfaceMapping_InterfaceType_Set(
 	System_Reflection_InterfaceMapping_t /* System.Reflection.InterfaceMapping */ self,
-	void* /* System.Type */ value
+	System_Type_t /* System.Type */ value
 );
 
 void /* System.Void */
@@ -11755,7 +11755,7 @@ NativeAOT_CodeGeneratorInputSample_Person_DEFAULT_AGE_Get(
 void /* System.Void */
 NativeAOT_CodeGeneratorInputSample_Person_DEFAULT_AGE_Set(
 	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
-	int /* System.Int32 */ value
+	int32_t /* System.Int32 */ value
 );
 
 int32_t /* System.Int32 */

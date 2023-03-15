@@ -147,9 +147,9 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             }
             
             TypeDescriptor setterTypeDescriptor = setterType.GetTypeDescriptor(typeDescriptorRegistry);
-            string unmanagedSetterTypeName = setterTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
+            string cSetterTypeName = setterTypeDescriptor.GetTypeName(CodeLanguage.C, true);
     
-            string parameterString = $"{unmanagedSetterTypeName} /* {setterType.GetFullNameOrName()} */ value";
+            string parameterString = $"{cSetterTypeName} /* {setterType.GetFullNameOrName()} */ value";
             parameterList.Add(parameterString);
         } else {
             foreach (var parameter in parameters) {
