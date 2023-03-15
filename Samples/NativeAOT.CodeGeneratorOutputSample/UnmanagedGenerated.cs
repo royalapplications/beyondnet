@@ -2997,10 +2997,10 @@ internal static unsafe class System_Type
 
 	
 
-	// TODO (Field): Delimiter
+	// TODO (Field Getter): Delimiter
 	
 
-	// TODO (Field): Missing
+	// TODO (Field Getter): Missing
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_Destroy")]
@@ -6412,7 +6412,7 @@ internal static unsafe class System_String
 	
 	
 
-	// TODO (Field): Empty
+	// TODO (Field Getter): Empty
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Destroy")]
@@ -13780,7 +13780,7 @@ internal static unsafe class System_IO_Stream
 
 	
 
-	// TODO (Field): Null
+	// TODO (Field Getter): Null
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_Stream_Destroy")]
@@ -19599,19 +19599,19 @@ internal static unsafe class System_Decimal
 	
 	
 
-	// TODO (Field): Zero
+	// TODO (Field Getter): Zero
 	
 
-	// TODO (Field): One
+	// TODO (Field Getter): One
 	
 
-	// TODO (Field): MinusOne
+	// TODO (Field Getter): MinusOne
 	
 
-	// TODO (Field): MaxValue
+	// TODO (Field Getter): MaxValue
 	
 
-	// TODO (Field): MinValue
+	// TODO (Field Getter): MinValue
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_Destroy")]
@@ -21997,13 +21997,13 @@ internal static unsafe class System_DateTime
 	
 	
 
-	// TODO (Field): MinValue
+	// TODO (Field Getter): MinValue
 	
 
-	// TODO (Field): MaxValue
+	// TODO (Field Getter): MaxValue
 	
 
-	// TODO (Field): UnixEpoch
+	// TODO (Field Getter): UnixEpoch
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_Destroy")]
@@ -23417,34 +23417,34 @@ internal static unsafe class System_TimeSpan
 	
 	
 
-	// TODO (Field): Zero
+	// TODO (Field Getter): Zero
 	
 
-	// TODO (Field): MaxValue
+	// TODO (Field Getter): MaxValue
 	
 
-	// TODO (Field): MinValue
+	// TODO (Field Getter): MinValue
 	
 
-	// TODO (Field): NanosecondsPerTick
+	// TODO (Field Getter): NanosecondsPerTick
 	
 
-	// TODO (Field): TicksPerMicrosecond
+	// TODO (Field Getter): TicksPerMicrosecond
 	
 
-	// TODO (Field): TicksPerMillisecond
+	// TODO (Field Getter): TicksPerMillisecond
 	
 
-	// TODO (Field): TicksPerSecond
+	// TODO (Field Getter): TicksPerSecond
 	
 
-	// TODO (Field): TicksPerMinute
+	// TODO (Field Getter): TicksPerMinute
 	
 
-	// TODO (Field): TicksPerHour
+	// TODO (Field Getter): TicksPerHour
 	
 
-	// TODO (Field): TicksPerDay
+	// TODO (Field Getter): TicksPerDay
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_TimeSpan_Destroy")]
@@ -26735,7 +26735,7 @@ internal static unsafe class System_Globalization_Calendar
 
 	
 
-	// TODO (Field): CurrentEra
+	// TODO (Field Getter): CurrentEra
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_Calendar_Destroy")]
@@ -28051,7 +28051,7 @@ internal static unsafe class System_ModuleHandle
 	
 	
 
-	// TODO (Field): EmptyHandle
+	// TODO (Field Getter): EmptyHandle
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_ModuleHandle_Destroy")]
@@ -32626,7 +32626,7 @@ internal static unsafe class System_Threading_WaitHandle
 
 	
 
-	// TODO (Field): WaitTimeout
+	// TODO (Field Getter): WaitTimeout
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_WaitHandle_Destroy")]
@@ -35858,7 +35858,7 @@ internal static unsafe class System_Guid
 	}
 	
 
-	// TODO (Field): Empty
+	// TODO (Field Getter): Empty
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Guid_Destroy")]
@@ -42474,13 +42474,16 @@ internal static unsafe class System_Runtime_InteropServices_StructLayoutAttribut
 	
 	
 
-	// TODO (Field): Pack
+	// TODO (Field Getter): Pack
+	// TODO (Field Setter): Pack
 	
 
-	// TODO (Field): Size
+	// TODO (Field Getter): Size
+	// TODO (Field Setter): Size
 	
 
-	// TODO (Field): CharSet
+	// TODO (Field Getter): CharSet
+	// TODO (Field Setter): CharSet
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_StructLayoutAttribute_Destroy")]
@@ -43142,10 +43145,10 @@ internal static unsafe class System_Reflection_ConstructorInfo
 
 	
 
-	// TODO (Field): ConstructorName
+	// TODO (Field Getter): ConstructorName
 	
 
-	// TODO (Field): TypeConstructorName
+	// TODO (Field Getter): TypeConstructorName
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ConstructorInfo_Destroy")]
@@ -43442,10 +43445,12 @@ internal static unsafe class System_Reflection_EventInfo
 
 internal static unsafe class System_Reflection_InterfaceMapping
 {
-	// TODO (Field): TargetType
+	// TODO (Field Getter): TargetType
+	// TODO (Field Setter): TargetType
 	
 
-	// TODO (Field): InterfaceType
+	// TODO (Field Getter): InterfaceType
+	// TODO (Field Setter): InterfaceType
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_InterfaceMapping_Destroy")]
@@ -43816,7 +43821,11 @@ internal static unsafe class NativeAOT_CodeGeneratorInputSample_Person
 	
 	
 
-	// TODO (Field): AGE_WHEN_BORN
+	// TODO (Field Getter): DEFAULT_AGE
+	// TODO (Field Setter): DEFAULT_AGE
+	
+
+	// TODO (Field Getter): AGE_WHEN_BORN
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_Destroy")]
