@@ -44,7 +44,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
     }
 
     protected string WriteMethod(
-        MemberInfo memberInfo,
+        MemberInfo? memberInfo,
         MemberKind memberKind,
         string methodName,
         bool isStaticMethod,
@@ -56,6 +56,11 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         State state
     )
     {
+        if (memberInfo == null &&
+            memberKind != MemberKind.Destructor) {
+            throw new Exception("memberInfo may only be null when memberKind is Destructor");
+        }
+        
         string fullTypeName = declaringType.GetFullNameOrName();
         string fullTypeNameC = fullTypeName.Replace('.', '_');
         
@@ -122,7 +127,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
         string? convertedSelfParameterName = null;
 
-        if (!isStaticMethod) {
+        if (!isStaticMethod &&
+            memberKind != MemberKind.Destructor) {
             string selfConversionCode = WriteSelfConversion(
                 declaringType,
                 typeDescriptorRegistry,
@@ -149,10 +155,20 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         string implPrefix = mayThrow 
             ? "\t\t" 
             : "\t";
-        
-        string methodTarget = isStaticMethod
-            ? (memberKind == MemberKind.Constructor ? "new " : string.Empty) + declaringType.GetFullNameOrName()
-            : convertedSelfParameterName ?? string.Empty;
+
+        string methodTarget;
+
+        if (isStaticMethod) {
+            if (memberKind == MemberKind.Constructor) {
+                methodTarget = "new ";
+            } else {
+                methodTarget = string.Empty;
+            }
+
+            methodTarget += declaringType.GetFullNameOrName();
+        } else {
+            methodTarget = convertedSelfParameterName ?? string.Empty;
+        }
 
         string convertedParameterNamesString = string.Join(", ", convertedParameterNames);
 
@@ -166,12 +182,19 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             returnValuePrefix = $"{returnOrSetterType.GetFullNameOrName()} {returnValueName} = ";
         }
 
-        string methodNameForInvocation = memberKind == MemberKind.Constructor
-            ? string.Empty
-            : $".{methodName}";
+        string methodNameForInvocation;
+
+        if (memberKind == MemberKind.Constructor) {
+            methodNameForInvocation = string.Empty;
+        } else if (memberKind == MemberKind.Destructor) {
+            methodNameForInvocation = "InteropUtils.FreeIfAllocated(__self)";
+        } else {
+            methodNameForInvocation = $".{methodName}";
+        }
 
         bool invocationNeedsParentheses = memberKind != MemberKind.PropertyGetter &&
-                                          memberKind != MemberKind.PropertySetter;
+                                          memberKind != MemberKind.PropertySetter &&
+                                          memberKind != MemberKind.Destructor;
 
         string methodInvocationPrefix = invocationNeedsParentheses 
             ? "("
@@ -192,7 +215,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             string fullSetterTypeConversion = setterTypeConversion != null
                 ? string.Format(setterTypeConversion, valueParamterName)
                 : valueParamterName;
-            
+
             methodInvocationSuffix = $" = {fullSetterTypeConversion}";
         } else {
             methodInvocationSuffix = string.Empty;
@@ -330,7 +353,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
     
             string parameterString = $"{unmanagedSetterTypeName} /* {setterType.GetFullNameOrName()} */ __value";
             parameterList.Add(parameterString);
-        } else {
+        } else if (memberKind != MemberKind.Destructor) {
             foreach (var parameter in parameters) {
                 Type parameterType = parameter.ParameterType;
                 TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);

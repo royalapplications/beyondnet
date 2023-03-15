@@ -1,12 +1,13 @@
-using System.Text;
+using System.Reflection;
 
 using NativeAOT.CodeGenerator.Extensions;
+using NativeAOT.CodeGenerator.Types;
 
 namespace NativeAOT.CodeGenerator.Syntax.CSharpUnmanaged;
 
-public class CSharpUnmanagedDestructorSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IDestructorSyntaxWriter
+public class CSharpUnmanagedDestructorSyntaxWriter: CSharpUnmanagedMethodSyntaxWriter, IDestructorSyntaxWriter
 {
-    public string Write(object @object, State state)
+    public new string Write(object @object, State state)
     {
         return Write((Type)@object, state);
     }
@@ -17,32 +18,24 @@ public class CSharpUnmanagedDestructorSyntaxWriter: ICSharpUnmanagedSyntaxWriter
             type.IsEnum) {
             return string.Empty;
         }
-
-        const bool mayThrow = true;
         
-        StringBuilder sb = new();
+        TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
 
-        string fullTypeName = type.GetFullNameOrName();
-        
-        string methodNameC = $"{fullTypeName.Replace('.', '_')}_Destroy";
-        methodNameC = state.UniqueGeneratedName(methodNameC, CodeLanguage.CSharpUnmanaged);
+        const bool mayThrow = false;
 
-        sb.AppendLine($"[UnmanagedCallersOnly(EntryPoint=\"{methodNameC}\")]");
-        sb.AppendLine($"internal static void /* System.Void */ {methodNameC}(void* /* {fullTypeName} */ __self)");
-        sb.AppendLine("{");
-        sb.AppendLine("\tInteropUtils.FreeIfAllocated(__self);");
-        sb.AppendLine("}");
-
-        string generatedCode = sb.ToString();
-
-        state.AddGeneratedMember(
-            MemberKind.Destructor,
+        string destructorCode = WriteMethod(
             null,
+            MemberKind.Destructor,
+            string.Empty,
+            false,
             mayThrow,
-            methodNameC,
-            CodeLanguage.CSharpUnmanaged
+            type,
+            typeof(void),
+            Array.Empty<ParameterInfo>(),
+            typeDescriptorRegistry,
+            state
         );
-        
-        return generatedCode;
+
+        return destructorCode;
     }
 }

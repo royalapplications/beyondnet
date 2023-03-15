@@ -930,9 +930,10 @@ internal static unsafe class System_Enum
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Enum_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_Destroy")]
 	internal static void /* System.Void */ System_Enum_Destroy(void* /* System.Enum */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -1035,9 +1036,10 @@ internal static unsafe class System_ValueType
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_ValueType_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_ValueType_Destroy")]
 	internal static void /* System.Void */ System_ValueType_Destroy(void* /* System.ValueType */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -1250,9 +1252,10 @@ internal static unsafe class System_Object
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Object_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Object_Destroy")]
 	internal static void /* System.Void */ System_Object_Destroy(void* /* System.Object */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -2994,9 +2997,10 @@ internal static unsafe class System_Type
 
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Type_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Type_Destroy")]
 	internal static void /* System.Void */ System_Type_Destroy(void* /* System.Type */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -3147,9 +3151,10 @@ internal static unsafe class System_Reflection_MemberInfo
 
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Reflection_MemberInfo_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MemberInfo_Destroy")]
 	internal static void /* System.Void */ System_Reflection_MemberInfo_Destroy(void* /* System.Reflection.MemberInfo */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -6401,9 +6406,10 @@ internal static unsafe class System_String
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_String_Destroy")]
-	internal static void /* System.Void */ System_String_Destroy(void* /* System.String */ __self)
+	[UnmanagedCallersOnly(EntryPoint = "System_String_Destroy")]
+	internal static void /* System.Void */ System_String_Destroy(byte* /* System.String */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -7847,9 +7853,10 @@ internal static unsafe class System_Globalization_CultureInfo
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Globalization_CultureInfo_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_Destroy")]
 	internal static void /* System.Void */ System_Globalization_CultureInfo_Destroy(void* /* System.Globalization.CultureInfo */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -9411,9 +9418,10 @@ internal static unsafe class System_Globalization_CompareInfo
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Globalization_CompareInfo_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_Destroy")]
 	internal static void /* System.Void */ System_Globalization_CompareInfo_Destroy(void* /* System.Globalization.CompareInfo */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -10396,9 +10404,10 @@ internal static unsafe class System_Reflection_Assembly
 
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Reflection_Assembly_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Assembly_Destroy")]
 	internal static void /* System.Void */ System_Reflection_Assembly_Destroy(void* /* System.Reflection.Assembly */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -11341,9 +11350,10 @@ internal static unsafe class System_Reflection_AssemblyName
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Reflection_AssemblyName_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_AssemblyName_Destroy")]
 	internal static void /* System.Void */ System_Reflection_AssemblyName_Destroy(void* /* System.Reflection.AssemblyName */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -11940,9 +11950,10 @@ internal static unsafe class System_Version
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Version_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Version_Destroy")]
 	internal static void /* System.Void */ System_Version_Destroy(void* /* System.Version */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -11985,9 +11996,10 @@ internal static unsafe class System_IFormatProvider
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_IFormatProvider_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_IFormatProvider_Destroy")]
 	internal static void /* System.Void */ System_IFormatProvider_Destroy(void* /* System.IFormatProvider */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -12056,9 +12068,10 @@ internal static unsafe class System_Reflection_StrongNameKeyPair
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Reflection_StrongNameKeyPair_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_StrongNameKeyPair_Destroy")]
 	internal static void /* System.Void */ System_Reflection_StrongNameKeyPair_Destroy(void* /* System.Reflection.StrongNameKeyPair */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -13161,9 +13174,10 @@ internal static unsafe class System_IO_FileStream
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_IO_FileStream_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStream_Destroy")]
 	internal static void /* System.Void */ System_IO_FileStream_Destroy(void* /* System.IO.FileStream */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -13757,9 +13771,10 @@ internal static unsafe class System_IO_Stream
 
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_IO_Stream_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_Stream_Destroy")]
 	internal static void /* System.Void */ System_IO_Stream_Destroy(void* /* System.IO.Stream */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -13831,9 +13846,10 @@ internal static unsafe class System_MarshalByRefObject
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_MarshalByRefObject_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_MarshalByRefObject_Destroy")]
 	internal static void /* System.Void */ System_MarshalByRefObject_Destroy(void* /* System.MarshalByRefObject */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -14849,9 +14865,10 @@ internal static unsafe class System_Threading_Tasks_Task
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Threading_Tasks_Task_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_Destroy")]
 	internal static void /* System.Void */ System_Threading_Tasks_Task_Destroy(void* /* System.Threading.Tasks.Task */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -14894,9 +14911,10 @@ internal static unsafe class System_Threading_Tasks_TaskScheduler
 
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Threading_Tasks_TaskScheduler_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_TaskScheduler_Destroy")]
 	internal static void /* System.Void */ System_Threading_Tasks_TaskScheduler_Destroy(void* /* System.Threading.Tasks.TaskScheduler */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -15139,9 +15157,10 @@ internal static unsafe class System_AggregateException
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_AggregateException_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_AggregateException_Destroy")]
 	internal static void /* System.Void */ System_AggregateException_Destroy(void* /* System.AggregateException */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -15688,9 +15707,10 @@ internal static unsafe class System_Exception
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Exception_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Exception_Destroy")]
 	internal static void /* System.Void */ System_Exception_Destroy(void* /* System.Exception */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -15949,9 +15969,10 @@ internal static unsafe class System_Reflection_MethodBase
 
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Reflection_MethodBase_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodBase_Destroy")]
 	internal static void /* System.Void */ System_Reflection_MethodBase_Destroy(void* /* System.Reflection.MethodBase */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -16196,9 +16217,10 @@ internal static unsafe class System_RuntimeMethodHandle
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_RuntimeMethodHandle_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_RuntimeMethodHandle_Destroy")]
 	internal static void /* System.Void */ System_RuntimeMethodHandle_Destroy(void* /* System.RuntimeMethodHandle */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -17540,9 +17562,10 @@ internal static unsafe class System_Runtime_Serialization_SerializationInfo
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Runtime_Serialization_SerializationInfo_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_SerializationInfo_Destroy")]
 	internal static void /* System.Void */ System_Runtime_Serialization_SerializationInfo_Destroy(void* /* System.Runtime.Serialization.SerializationInfo */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -17739,9 +17762,10 @@ internal static unsafe class System_Runtime_Serialization_SerializationInfoEnume
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Runtime_Serialization_SerializationInfoEnumerator_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_SerializationInfoEnumerator_Destroy")]
 	internal static void /* System.Void */ System_Runtime_Serialization_SerializationInfoEnumerator_Destroy(void* /* System.Runtime.Serialization.SerializationInfoEnumerator */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -17847,9 +17871,10 @@ internal static unsafe class System_Runtime_Serialization_SerializationEntry
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Runtime_Serialization_SerializationEntry_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_SerializationEntry_Destroy")]
 	internal static void /* System.Void */ System_Runtime_Serialization_SerializationEntry_Destroy(void* /* System.Runtime.Serialization.SerializationEntry */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -19562,9 +19587,10 @@ internal static unsafe class System_Decimal
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Decimal_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_Destroy")]
 	internal static void /* System.Void */ System_Decimal_Destroy(void* /* System.Decimal */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -21944,9 +21970,10 @@ internal static unsafe class System_DateTime
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_DateTime_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_Destroy")]
 	internal static void /* System.Void */ System_DateTime_Destroy(void* /* System.DateTime */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -23354,9 +23381,10 @@ internal static unsafe class System_TimeSpan
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_TimeSpan_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_TimeSpan_Destroy")]
 	internal static void /* System.Void */ System_TimeSpan_Destroy(void* /* System.TimeSpan */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -24348,9 +24376,10 @@ internal static unsafe class System_DateOnly
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_DateOnly_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_DateOnly_Destroy")]
 	internal static void /* System.Void */ System_DateOnly_Destroy(void* /* System.DateOnly */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -25445,9 +25474,10 @@ internal static unsafe class System_TimeOnly
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_TimeOnly_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_TimeOnly_Destroy")]
 	internal static void /* System.Void */ System_TimeOnly_Destroy(void* /* System.TimeOnly */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -26639,9 +26669,10 @@ internal static unsafe class System_Globalization_Calendar
 
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Globalization_Calendar_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_Calendar_Destroy")]
 	internal static void /* System.Void */ System_Globalization_Calendar_Destroy(void* /* System.Globalization.Calendar */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -27187,9 +27218,10 @@ internal static unsafe class System_Runtime_Serialization_IFormatterConverter
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Runtime_Serialization_IFormatterConverter_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_IFormatterConverter_Destroy")]
 	internal static void /* System.Void */ System_Runtime_Serialization_IFormatterConverter_Destroy(void* /* System.Runtime.Serialization.IFormatterConverter */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -27375,9 +27407,10 @@ internal static unsafe class System_Runtime_Serialization_StreamingContext
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Runtime_Serialization_StreamingContext_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_StreamingContext_Destroy")]
 	internal static void /* System.Void */ System_Runtime_Serialization_StreamingContext_Destroy(void* /* System.Runtime.Serialization.StreamingContext */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -27625,9 +27658,10 @@ internal static unsafe class System_RuntimeTypeHandle
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_RuntimeTypeHandle_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_RuntimeTypeHandle_Destroy")]
 	internal static void /* System.Void */ System_RuntimeTypeHandle_Destroy(void* /* System.RuntimeTypeHandle */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -27948,9 +27982,10 @@ internal static unsafe class System_ModuleHandle
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_ModuleHandle_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_ModuleHandle_Destroy")]
 	internal static void /* System.Void */ System_ModuleHandle_Destroy(void* /* System.ModuleHandle */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -28165,9 +28200,10 @@ internal static unsafe class System_RuntimeFieldHandle
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_RuntimeFieldHandle_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_RuntimeFieldHandle_Destroy")]
 	internal static void /* System.Void */ System_RuntimeFieldHandle_Destroy(void* /* System.RuntimeFieldHandle */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -28273,9 +28309,10 @@ internal static unsafe class System_Reflection_MethodBody
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Reflection_MethodBody_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodBody_Destroy")]
 	internal static void /* System.Void */ System_Reflection_MethodBody_Destroy(void* /* System.Reflection.MethodBody */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -28321,9 +28358,10 @@ internal static unsafe class System_Reflection_Binder
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Reflection_Binder_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Binder_Destroy")]
 	internal static void /* System.Void */ System_Reflection_Binder_Destroy(void* /* System.Reflection.Binder */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -28611,9 +28649,10 @@ internal static unsafe class System_Reflection_FieldInfo
 
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Reflection_FieldInfo_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_FieldInfo_Destroy")]
 	internal static void /* System.Void */ System_Reflection_FieldInfo_Destroy(void* /* System.Reflection.FieldInfo */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -28952,9 +28991,10 @@ internal static unsafe class System_Reflection_PropertyInfo
 
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Reflection_PropertyInfo_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_PropertyInfo_Destroy")]
 	internal static void /* System.Void */ System_Reflection_PropertyInfo_Destroy(void* /* System.Reflection.PropertyInfo */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -29097,9 +29137,10 @@ internal static unsafe class System_Reflection_MethodInfo
 
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Reflection_MethodInfo_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodInfo_Destroy")]
 	internal static void /* System.Void */ System_Reflection_MethodInfo_Destroy(void* /* System.Reflection.MethodInfo */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -29650,9 +29691,10 @@ internal static unsafe class System_Reflection_ParameterInfo
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Reflection_ParameterInfo_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ParameterInfo_Destroy")]
 	internal static void /* System.Void */ System_Reflection_ParameterInfo_Destroy(void* /* System.Reflection.ParameterInfo */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -29696,9 +29738,10 @@ internal static unsafe class System_Reflection_ICustomAttributeProvider
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Reflection_ICustomAttributeProvider_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ICustomAttributeProvider_Destroy")]
 	internal static void /* System.Void */ System_Reflection_ICustomAttributeProvider_Destroy(void* /* System.Reflection.ICustomAttributeProvider */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -29866,9 +29909,10 @@ internal static unsafe class System_Collections_IDictionary
 
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Collections_IDictionary_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Collections_IDictionary_Destroy")]
 	internal static void /* System.Void */ System_Collections_IDictionary_Destroy(void* /* System.Collections.IDictionary */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -29913,9 +29957,10 @@ internal static unsafe class System_Collections_ICollection
 
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Collections_ICollection_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Collections_ICollection_Destroy")]
 	internal static void /* System.Void */ System_Collections_ICollection_Destroy(void* /* System.Collections.ICollection */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -31313,9 +31358,10 @@ internal static unsafe class System_Array
 
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Array_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Array_Destroy")]
 	internal static void /* System.Void */ System_Array_Destroy(void* /* System.Array */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -31357,9 +31403,10 @@ internal static unsafe class System_Collections_IComparer
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Collections_IComparer_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Collections_IComparer_Destroy")]
 	internal static void /* System.Void */ System_Collections_IComparer_Destroy(void* /* System.Collections.IComparer */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -31430,9 +31477,10 @@ internal static unsafe class System_Collections_IEnumerator
 
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Collections_IEnumerator_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Collections_IEnumerator_Destroy")]
 	internal static void /* System.Void */ System_Collections_IEnumerator_Destroy(void* /* System.Collections.IEnumerator */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -31448,9 +31496,10 @@ internal static unsafe class System_Collections_IDictionaryEnumerator
 
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Collections_IDictionaryEnumerator_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Collections_IDictionaryEnumerator_Destroy")]
 	internal static void /* System.Void */ System_Collections_IDictionaryEnumerator_Destroy(void* /* System.Collections.IDictionaryEnumerator */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -31636,9 +31685,10 @@ internal static unsafe class System_Collections_DictionaryEntry
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Collections_DictionaryEntry_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Collections_DictionaryEntry_Destroy")]
 	internal static void /* System.Void */ System_Collections_DictionaryEntry_Destroy(void* /* System.Collections.DictionaryEntry */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -31905,9 +31955,10 @@ internal static unsafe class System_Threading_Tasks_TaskFactory
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Threading_Tasks_TaskFactory_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_TaskFactory_Destroy")]
 	internal static void /* System.Void */ System_Threading_Tasks_TaskFactory_Destroy(void* /* System.Threading.Tasks.TaskFactory */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -32187,9 +32238,10 @@ internal static unsafe class System_Threading_CancellationToken
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Threading_CancellationToken_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationToken_Destroy")]
 	internal static void /* System.Void */ System_Threading_CancellationToken_Destroy(void* /* System.Threading.CancellationToken */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -32502,9 +32554,10 @@ internal static unsafe class System_Threading_WaitHandle
 
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Threading_WaitHandle_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_WaitHandle_Destroy")]
 	internal static void /* System.Void */ System_Threading_WaitHandle_Destroy(void* /* System.Threading.WaitHandle */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -32565,9 +32618,10 @@ internal static unsafe class Microsoft_Win32_SafeHandles_SafeWaitHandle
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint="Microsoft_Win32_SafeHandles_SafeWaitHandle_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "Microsoft_Win32_SafeHandles_SafeWaitHandle_Destroy")]
 	internal static void /* System.Void */ Microsoft_Win32_SafeHandles_SafeWaitHandle_Destroy(void* /* Microsoft.Win32.SafeHandles.SafeWaitHandle */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -32579,9 +32633,10 @@ internal static unsafe class Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOn
 {
 	
 
-	[UnmanagedCallersOnly(EntryPoint="Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid_Destroy")]
 	internal static void /* System.Void */ Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid_Destroy(void* /* Microsoft.Win32.SafeHandles.SafeHandleZeroOrMinusOneIsInvalid */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -32737,9 +32792,10 @@ internal static unsafe class System_Runtime_InteropServices_SafeHandle
 
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Runtime_InteropServices_SafeHandle_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_SafeHandle_Destroy")]
 	internal static void /* System.Void */ System_Runtime_InteropServices_SafeHandle_Destroy(void* /* System.Runtime.InteropServices.SafeHandle */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -32749,9 +32805,10 @@ internal static unsafe class System_Runtime_InteropServices_SafeHandle
 
 internal static unsafe class System_Runtime_ConstrainedExecution_CriticalFinalizerObject
 {
-	[UnmanagedCallersOnly(EntryPoint="System_Runtime_ConstrainedExecution_CriticalFinalizerObject_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_ConstrainedExecution_CriticalFinalizerObject_Destroy")]
 	internal static void /* System.Void */ System_Runtime_ConstrainedExecution_CriticalFinalizerObject_Destroy(void* /* System.Runtime.ConstrainedExecution.CriticalFinalizerObject */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -32977,9 +33034,10 @@ internal static unsafe class System_Threading_CancellationTokenRegistration
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Threading_CancellationTokenRegistration_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationTokenRegistration_Destroy")]
 	internal static void /* System.Void */ System_Threading_CancellationTokenRegistration_Destroy(void* /* System.Threading.CancellationTokenRegistration */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -33466,9 +33524,10 @@ internal static unsafe class System_Threading_Tasks_ValueTask
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Threading_Tasks_ValueTask_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_ValueTask_Destroy")]
 	internal static void /* System.Void */ System_Threading_Tasks_ValueTask_Destroy(void* /* System.Threading.Tasks.ValueTask */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -33538,9 +33597,10 @@ internal static unsafe class System_Runtime_CompilerServices_ValueTaskAwaiter
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Runtime_CompilerServices_ValueTaskAwaiter_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_ValueTaskAwaiter_Destroy")]
 	internal static void /* System.Void */ System_Runtime_CompilerServices_ValueTaskAwaiter_Destroy(void* /* System.Runtime.CompilerServices.ValueTaskAwaiter */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -33581,9 +33641,10 @@ internal static unsafe class System_Runtime_CompilerServices_ConfiguredValueTask
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_Destroy")]
 	internal static void /* System.Void */ System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_Destroy(void* /* System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -33653,9 +33714,10 @@ internal static unsafe class System_Runtime_CompilerServices_ConfiguredValueTask
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_Destroy")]
 	internal static void /* System.Void */ System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_Destroy(void* /* System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -33723,9 +33785,10 @@ internal static unsafe class System_Threading_Tasks_Sources_IValueTaskSource
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Threading_Tasks_Sources_IValueTaskSource_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Sources_IValueTaskSource_Destroy")]
 	internal static void /* System.Void */ System_Threading_Tasks_Sources_IValueTaskSource_Destroy(void* /* System.Threading.Tasks.Sources.IValueTaskSource */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -33746,9 +33809,10 @@ internal static unsafe class System_IAsyncResult
 
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_IAsyncResult_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_IAsyncResult_Destroy")]
 	internal static void /* System.Void */ System_IAsyncResult_Destroy(void* /* System.IAsyncResult */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -33818,9 +33882,10 @@ internal static unsafe class System_Runtime_CompilerServices_TaskAwaiter
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Runtime_CompilerServices_TaskAwaiter_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_TaskAwaiter_Destroy")]
 	internal static void /* System.Void */ System_Runtime_CompilerServices_TaskAwaiter_Destroy(void* /* System.Runtime.CompilerServices.TaskAwaiter */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -33861,9 +33926,10 @@ internal static unsafe class System_Runtime_CompilerServices_ConfiguredTaskAwait
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Runtime_CompilerServices_ConfiguredTaskAwaitable_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_ConfiguredTaskAwaitable_Destroy")]
 	internal static void /* System.Void */ System_Runtime_CompilerServices_ConfiguredTaskAwaitable_Destroy(void* /* System.Runtime.CompilerServices.ConfiguredTaskAwaitable */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -33933,9 +33999,10 @@ internal static unsafe class System_Runtime_CompilerServices_ConfiguredTaskAwait
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_Destroy")]
 	internal static void /* System.Void */ System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_Destroy(void* /* System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -33976,9 +34043,10 @@ internal static unsafe class System_Runtime_CompilerServices_YieldAwaitable
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Runtime_CompilerServices_YieldAwaitable_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_YieldAwaitable_Destroy")]
 	internal static void /* System.Void */ System_Runtime_CompilerServices_YieldAwaitable_Destroy(void* /* System.Runtime.CompilerServices.YieldAwaitable */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -34048,9 +34116,10 @@ internal static unsafe class System_Runtime_CompilerServices_YieldAwaitable_Yiel
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_Destroy")]
 	internal static void /* System.Void */ System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_Destroy(void* /* System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -34176,9 +34245,10 @@ internal static unsafe class Microsoft_Win32_SafeHandles_SafeFileHandle
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="Microsoft_Win32_SafeHandles_SafeFileHandle_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "Microsoft_Win32_SafeHandles_SafeFileHandle_Destroy")]
 	internal static void /* System.Void */ Microsoft_Win32_SafeHandles_SafeFileHandle_Destroy(void* /* Microsoft.Win32.SafeHandles.SafeFileHandle */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -34565,9 +34635,10 @@ internal static unsafe class System_IO_FileStreamOptions
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_IO_FileStreamOptions_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStreamOptions_Destroy")]
 	internal static void /* System.Void */ System_IO_FileStreamOptions_Destroy(void* /* System.IO.FileStreamOptions */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -34699,9 +34770,10 @@ internal static unsafe class System_Reflection_ManifestResourceInfo
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Reflection_ManifestResourceInfo_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ManifestResourceInfo_Destroy")]
 	internal static void /* System.Void */ System_Reflection_ManifestResourceInfo_Destroy(void* /* System.Reflection.ManifestResourceInfo */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -35265,9 +35337,10 @@ internal static unsafe class System_Reflection_Module
 
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Reflection_Module_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Module_Destroy")]
 	internal static void /* System.Void */ System_Reflection_Module_Destroy(void* /* System.Reflection.Module */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -35710,9 +35783,10 @@ internal static unsafe class System_Guid
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Guid_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Guid_Destroy")]
 	internal static void /* System.Void */ System_Guid_Destroy(void* /* System.Guid */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -36711,9 +36785,10 @@ internal static unsafe class System_Text_Rune
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Text_Rune_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_Destroy")]
 	internal static void /* System.Void */ System_Text_Rune_Destroy(void* /* System.Text.Rune */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -36876,9 +36951,10 @@ internal static unsafe class System_Globalization_SortKey
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Globalization_SortKey_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_SortKey_Destroy")]
 	internal static void /* System.Void */ System_Globalization_SortKey_Destroy(void* /* System.Globalization.SortKey */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -37071,9 +37147,10 @@ internal static unsafe class System_Globalization_SortVersion
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Globalization_SortVersion_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_SortVersion_Destroy")]
 	internal static void /* System.Void */ System_Globalization_SortVersion_Destroy(void* /* System.Globalization.SortVersion */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -37699,9 +37776,10 @@ internal static unsafe class System_Globalization_TextInfo
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Globalization_TextInfo_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_TextInfo_Destroy")]
 	internal static void /* System.Void */ System_Globalization_TextInfo_Destroy(void* /* System.Globalization.TextInfo */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -39283,9 +39361,10 @@ internal static unsafe class System_Globalization_NumberFormatInfo
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Globalization_NumberFormatInfo_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_Destroy")]
 	internal static void /* System.Void */ System_Globalization_NumberFormatInfo_Destroy(void* /* System.Globalization.NumberFormatInfo */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -40720,9 +40799,10 @@ internal static unsafe class System_Globalization_DateTimeFormatInfo
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Globalization_DateTimeFormatInfo_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_Destroy")]
 	internal static void /* System.Void */ System_Globalization_DateTimeFormatInfo_Destroy(void* /* System.Globalization.DateTimeFormatInfo */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -40881,9 +40961,10 @@ internal static unsafe class System_CharEnumerator
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_CharEnumerator_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_CharEnumerator_Destroy")]
 	internal static void /* System.Void */ System_CharEnumerator_Destroy(void* /* System.CharEnumerator */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -40987,9 +41068,10 @@ internal static unsafe class System_Text_StringRuneEnumerator
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Text_StringRuneEnumerator_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringRuneEnumerator_Destroy")]
 	internal static void /* System.Void */ System_Text_StringRuneEnumerator_Destroy(void* /* System.Text.StringRuneEnumerator */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -41058,9 +41140,10 @@ internal static unsafe class System_Text_CompositeFormat
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Text_CompositeFormat_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_CompositeFormat_Destroy")]
 	internal static void /* System.Void */ System_Text_CompositeFormat_Destroy(void* /* System.Text.CompositeFormat */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -41612,9 +41695,10 @@ internal static unsafe class System_Text_Encoding
 
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Text_Encoding_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_Encoding_Destroy")]
 	internal static void /* System.Void */ System_Text_Encoding_Destroy(void* /* System.Text.Encoding */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -41756,9 +41840,10 @@ internal static unsafe class System_Text_EncodingProvider
 
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Text_EncodingProvider_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_EncodingProvider_Destroy")]
 	internal static void /* System.Void */ System_Text_EncodingProvider_Destroy(void* /* System.Text.EncodingProvider */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -41805,9 +41890,10 @@ internal static unsafe class System_Text_EncoderFallback
 
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Text_EncoderFallback_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_EncoderFallback_Destroy")]
 	internal static void /* System.Void */ System_Text_EncoderFallback_Destroy(void* /* System.Text.EncoderFallback */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -41970,9 +42056,10 @@ internal static unsafe class System_Text_EncoderFallbackBuffer
 
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Text_EncoderFallbackBuffer_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_EncoderFallbackBuffer_Destroy")]
 	internal static void /* System.Void */ System_Text_EncoderFallbackBuffer_Destroy(void* /* System.Text.EncoderFallbackBuffer */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -42019,9 +42106,10 @@ internal static unsafe class System_Text_DecoderFallback
 
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Text_DecoderFallback_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_DecoderFallback_Destroy")]
 	internal static void /* System.Void */ System_Text_DecoderFallback_Destroy(void* /* System.Text.DecoderFallback */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -42122,9 +42210,10 @@ internal static unsafe class System_Text_DecoderFallbackBuffer
 
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Text_DecoderFallbackBuffer_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_DecoderFallbackBuffer_Destroy")]
 	internal static void /* System.Void */ System_Text_DecoderFallbackBuffer_Destroy(void* /* System.Text.DecoderFallbackBuffer */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -42166,9 +42255,10 @@ internal static unsafe class System_Text_Decoder
 
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Text_Decoder_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_Decoder_Destroy")]
 	internal static void /* System.Void */ System_Text_Decoder_Destroy(void* /* System.Text.Decoder */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -42210,9 +42300,10 @@ internal static unsafe class System_Text_Encoder
 
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Text_Encoder_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_Encoder_Destroy")]
 	internal static void /* System.Void */ System_Text_Encoder_Destroy(void* /* System.Text.Encoder */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -42305,9 +42396,10 @@ internal static unsafe class System_Runtime_InteropServices_StructLayoutAttribut
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Runtime_InteropServices_StructLayoutAttribute_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_StructLayoutAttribute_Destroy")]
 	internal static void /* System.Void */ System_Runtime_InteropServices_StructLayoutAttribute_Destroy(void* /* System.Runtime.InteropServices.StructLayoutAttribute */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -42884,9 +42976,10 @@ internal static unsafe class System_Attribute
 
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Attribute_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Attribute_Destroy")]
 	internal static void /* System.Void */ System_Attribute_Destroy(void* /* System.Attribute */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -42962,9 +43055,10 @@ internal static unsafe class System_Reflection_ConstructorInfo
 
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Reflection_ConstructorInfo_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ConstructorInfo_Destroy")]
 	internal static void /* System.Void */ System_Reflection_ConstructorInfo_Destroy(void* /* System.Reflection.ConstructorInfo */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -43241,9 +43335,10 @@ internal static unsafe class System_Reflection_EventInfo
 
 	
 
-	[UnmanagedCallersOnly(EntryPoint="System_Reflection_EventInfo_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_EventInfo_Destroy")]
 	internal static void /* System.Void */ System_Reflection_EventInfo_Destroy(void* /* System.Reflection.EventInfo */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -43254,9 +43349,10 @@ internal static unsafe class System_Reflection_EventInfo
 
 internal static unsafe class System_Reflection_InterfaceMapping
 {
-	[UnmanagedCallersOnly(EntryPoint="System_Reflection_InterfaceMapping_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_InterfaceMapping_Destroy")]
 	internal static void /* System.Void */ System_Reflection_InterfaceMapping_Destroy(void* /* System.Reflection.InterfaceMapping */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -43621,9 +43717,10 @@ internal static unsafe class NativeAOT_CodeGeneratorInputSample_Person
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint="NativeAOT_CodeGeneratorInputSample_Person_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_Destroy")]
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Person_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.Person */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	
@@ -43863,9 +43960,10 @@ internal static unsafe class NativeAOT_CodeGeneratorInputSample_TestClass
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint="NativeAOT_CodeGeneratorInputSample_TestClass_Destroy")]
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_Destroy")]
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_TestClass_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.TestClass */ __self)
 	{
+	
 		InteropUtils.FreeIfAllocated(__self);
 	}
 	

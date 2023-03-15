@@ -5,7 +5,8 @@
     <TargetFramework>net8.0</TargetFramework>
     <LangVersion>latest</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <!-- TODO: Disabled for now to get faster build times -->
+    <Nullable>disable</Nullable>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <PublishTrimmed>true</PublishTrimmed>
     <PublishAot>true</PublishAot>
