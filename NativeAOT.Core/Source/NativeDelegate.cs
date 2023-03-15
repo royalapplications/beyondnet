@@ -55,6 +55,8 @@ public unsafe class NativeDelegate
         Context = context;
         NativeFunction = nativeFunction;
         NativeDestructorFunction = nativeDestructorFunction;
+        
+        NativeDelegateTracker.Shared.Add(this);
     }
 
     [UnmanagedCallersOnly(EntryPoint = "NativeAOT_Core_NativeDelegate_Create")]
