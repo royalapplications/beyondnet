@@ -1,5 +1,5 @@
-// Number of generated types: 162
-// Number of generated members: 1572
+// Number of generated types: 163
+// Number of generated members: 1574
 
 // <Header>
 using System;
@@ -44398,6 +44398,42 @@ internal static unsafe class NativeAOT_CodeGeneratorInputSample_Person
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_Destroy")]
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Person_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.Person */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+
+}
+
+
+internal static unsafe class NativeAOT_CodeGeneratorInputSample_Person_Extensions
+{
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_Extensions_IncreaseAge")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Person_Extensions_IncreaseAge(void* /* NativeAOT.CodeGeneratorInputSample.Person */ person, int /* System.Int32 */ byYears, void** /* System.Exception */ __outException)
+	{
+		NativeAOT.CodeGeneratorInputSample.Person personDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Person>(person);
+	
+	    try {
+			NativeAOT.CodeGeneratorInputSample.Person_Extensions.IncreaseAge(personDotNet, byYears);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_Extensions_Destroy")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Person_Extensions_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.Person_Extensions */ __self)
 	{
 	
 		InteropUtils.FreeIfAllocated(__self);

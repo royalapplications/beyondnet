@@ -1,5 +1,5 @@
-// Number of generated types: 162
-// Number of generated members: 1572
+// Number of generated types: 163
+// Number of generated members: 1574
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -832,6 +832,8 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 typedef void* System_Reflection_InterfaceMapping_t;
 
 typedef void* NativeAOT_CodeGeneratorInputSample_Person_t;
+
+typedef void* NativeAOT_CodeGeneratorInputSample_Person_Extensions_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	NativeAOT_CodeGeneratorInputSample_TestEnum_FirstCase = 0,
@@ -11815,6 +11817,21 @@ NativeAOT_CodeGeneratorInputSample_Person_Destroy(
 );
 
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.Person
+
+#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Person_Extensions
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_Person_Extensions_IncreaseAge(
+	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ person,
+	int32_t /* System.Int32 */ byYears,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_Person_Extensions_Destroy(
+	NativeAOT_CodeGeneratorInputSample_Person_Extensions_t /* NativeAOT.CodeGeneratorInputSample.Person_Extensions */ self
+);
+
+#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.Person_Extensions
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.TestEnum
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.TestEnum
