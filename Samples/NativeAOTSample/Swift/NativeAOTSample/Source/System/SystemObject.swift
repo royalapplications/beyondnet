@@ -1,54 +1,56 @@
 import Foundation
 
-public class SystemObject {
-    internal let handle: System_Object_t
-    
-    internal required init(handle: System_Object_t) {
-        self.handle = handle
-    }
-	
-	public convenience init() {
-		Debug.log("Will create instance of \(Self.swiftTypeName)")
-		
-		guard let handle = System_Object_Create() else {
-			fatalError("Failed to create instance of System.Object")
-		}
-		
-		Debug.log("Did create instance of \(Self.swiftTypeName)")
-		
-		self.init(handle: handle)
-	}
-    
-    public lazy var swiftTypeName: String = {
-		Self.swiftTypeName
-    }()
-	
-	// NOTE: This is very, very expensive and should only be used for debugging purposes
-	public static var swiftTypeName: String {
-		String(describing: Self.self)
-	}
-	
-	class var type: SystemType {
-		.init(handle: System_Object_TypeOf())
-	}
-    
-    deinit {
-		Debug.log("Will destroy \(swiftTypeName)")
+public extension System {
+    class Object {
+        internal let handle: System_Object_t
         
-        System_Object_Destroy(handle)
+        internal required init(handle: System_Object_t) {
+            self.handle = handle
+        }
         
-		Debug.log("Did destroy \(swiftTypeName)")
+        public convenience init() {
+            Debug.log("Will create instance of \(Self.swiftTypeName)")
+            
+            guard let handle = System_Object_Create() else {
+                fatalError("Failed to create instance of System.Object")
+            }
+            
+            Debug.log("Did create instance of \(Self.swiftTypeName)")
+            
+            self.init(handle: handle)
+        }
+        
+        public lazy var swiftTypeName: String = {
+            Self.swiftTypeName
+        }()
+        
+        // NOTE: This is very, very expensive and should only be used for debugging purposes
+        public static var swiftTypeName: String {
+            String(describing: Self.self)
+        }
+        
+        class var type: System._Type {
+            .init(handle: System_Object_TypeOf())
+        }
+        
+        deinit {
+            Debug.log("Will destroy \(swiftTypeName)")
+            
+            System_Object_Destroy(handle)
+            
+            Debug.log("Did destroy \(swiftTypeName)")
+        }
     }
 }
 
 // MARK: - Public API
-public extension SystemObject {
-	var type: SystemType {
+public extension System.Object {
+    var type: System._Type {
 		guard let typeHandle = System_Object_GetType(handle) else {
 			fatalError("Failed to get type of \(swiftTypeName)")
 		}
 		
-		let type = SystemType(handle: typeHandle)
+        let type = System._Type(handle: typeHandle)
 		
 		return type
 	}
@@ -69,7 +71,7 @@ public extension SystemObject {
 		return value
 	}
 	
-	func cast<T>(as _: T.Type) -> T? where T: SystemObject {
+    func cast<T>(as _: T.Type) -> T? where T: System.Object {
 		let targetType = T.type
 		
 		Debug.log("Will cast \(self.type.name) as \(targetType.name)")
@@ -87,7 +89,7 @@ public extension SystemObject {
 		return castedInstance
 	}
 	
-	func `is`<T>(of _: T.Type) -> Bool where T: SystemObject {
+    func `is`<T>(of _: T.Type) -> Bool where T: System.Object {
 		let targetType = T.type
 		
 		Debug.log("Will check if \(self.type.name) is of \(targetType.name)")
@@ -100,7 +102,7 @@ public extension SystemObject {
 	}
 }
 
-internal extension SystemObject {
+internal extension System.Object {
 	static func equals(_ lhs: System_Object_t,
 					   _ rhs: System_Object_t) -> Bool {
 		let result = System_Object_Equals(lhs, rhs).boolValue
@@ -116,9 +118,9 @@ internal extension SystemObject {
 	}
 }
 
-extension SystemObject: Equatable {
-    public static func == (lhs: SystemObject,
-                           rhs: SystemObject) -> Bool {
+extension System.Object: Equatable {
+    public static func == (lhs: System.Object,
+                           rhs: System.Object) -> Bool {
 		Debug.log("Will check equality of \(lhs.swiftTypeName) and \(rhs.swiftTypeName)")
         
         let equal = Self.equals(lhs.handle,
@@ -129,8 +131,8 @@ extension SystemObject: Equatable {
         return equal
     }
 	
-	public static func === (lhs: SystemObject,
-							rhs: SystemObject) -> Bool {
+    public static func === (lhs: System.Object,
+                            rhs: System.Object) -> Bool {
 		Debug.log("Will check reference equality of \(lhs.swiftTypeName) and \(rhs.swiftTypeName)")
 		
 		let equal = Self.referenceEquals(lhs.handle,

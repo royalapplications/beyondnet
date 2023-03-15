@@ -1,19 +1,21 @@
 import Foundation
 
-public class SystemAppDomain: SystemObject {
-	public typealias UnhandledExceptionHandler = (_ sender: SystemObject, _ eventArgs: SystemUnhandledExceptionEventArgs) -> Void
-	
-	override class var type: SystemType {
-		.init(handle: System_AppDomain_TypeOf())
-	}
+public extension System {
+    class AppDomain: System.Object {
+        public typealias UnhandledExceptionHandler = (_ sender: System.Object, _ eventArgs: System.UnhandledExceptionEventArgs) -> Void
+        
+        override class var type: System._Type {
+            .init(handle: System_AppDomain_TypeOf())
+        }
+    }
 }
 
 // MARK: - Public API
-public extension SystemAppDomain {
-	static func current() -> SystemAppDomain {
+public extension System.AppDomain {
+    static func current() -> System.AppDomain {
 		Debug.log("Will get current domain of \(swiftTypeName)")
 		
-		let value = SystemAppDomain(handle: System_AppDomain_CurrentDomain_Get())
+        let value = System.AppDomain(handle: System_AppDomain_CurrentDomain_Get())
 		
 		Debug.log("Did get current domain of \(swiftTypeName)")
 		

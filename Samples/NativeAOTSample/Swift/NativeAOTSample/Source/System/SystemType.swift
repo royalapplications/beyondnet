@@ -1,13 +1,17 @@
+// swiftlint:disable type_name
+
 import Foundation
 
-public class SystemType: SystemObject {
-	override class var type: SystemType {
-		.init(handle: System_Type_TypeOf())
-	}
+public extension System {
+    class _Type: System.Object {
+        override class var type: System._Type {
+            .init(handle: System_Type_TypeOf())
+        }
+    }
 }
 
 // MARK: - Public API
-public extension SystemType {
+public extension System._Type {
 	convenience init?(typeName: String) {
 		Debug.log("Will call GetType of \(Self.swiftTypeName)")
 		
@@ -56,7 +60,7 @@ public extension SystemType {
 		return value
 	}
 	
-	func isAssignableFrom(_ targetType: SystemType) -> Bool {
+    func isAssignableFrom(_ targetType: System._Type) -> Bool {
 		Debug.log("Will call isAssignableFrom of \(swiftTypeName)")
 		
 		let result = System_Type_IsAssignableFrom(handle, targetType.handle).boolValue
@@ -66,7 +70,7 @@ public extension SystemType {
 		return result
 	}
 	
-	func isAssignableTo(_ targetType: SystemType) -> Bool {
+    func isAssignableTo(_ targetType: System._Type) -> Bool {
 		Debug.log("Will call isAssignableTo of \(swiftTypeName)")
 		
 		let result = System_Type_IsAssignableTo(handle, targetType.handle).boolValue

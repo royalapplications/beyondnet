@@ -1,7 +1,7 @@
 import Foundation
 
-public class Company: SystemObject {
-	override class var type: SystemType {
+public class Company: System.Object {
+    override class var type: System._Type {
 		.init(handle: NativeAOTSample_Company_TypeOf())
 	}
 }

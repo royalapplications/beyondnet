@@ -105,8 +105,8 @@ final class PersonTests: XCTestCase {
 		} catch {
 			XCTAssertEqual(0, person.age)
 			
-			guard let systemExceptionError = error as? SystemException.Error else {
-				XCTFail("Error should be of type \(String(describing: SystemException.Error.self)) but is not")
+            guard let systemExceptionError = error as? System.Exception.Error else {
+                XCTFail("Error should be of type \(String(describing: System.Exception.Error.self)) but is not")
 				
 				return
 			}

@@ -1,16 +1,16 @@
 import Foundation
 
-public extension SystemException {
+public extension System.Exception {
 	class Error {
-		public let exception: SystemException
+        public let exception: System.Exception
 		
-		public init(exception: SystemException) {
+        public init(exception: System.Exception) {
 			self.exception = exception
 		}
 	}
 }
 
-public extension SystemException.Error {
+public extension System.Exception.Error {
 	var stackTrace: String? {
 		exception.stackTrace
 	}
@@ -20,7 +20,7 @@ public extension SystemException.Error {
 	}
 }
 
-extension SystemException.Error: LocalizedError {
+extension System.Exception.Error: LocalizedError {
 	public var errorDescription: String? {
 		exception.message
 	}

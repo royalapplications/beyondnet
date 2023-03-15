@@ -1,17 +1,19 @@
 import Foundation
 
-public class SystemUnhandledExceptionEventArgs: SystemObject {
-	override class var type: SystemType {
-		.init(handle: System_UnhandledExceptionEventArgs_TypeOf())
-	}
+public extension System {
+    class UnhandledExceptionEventArgs: System.Object {
+        override class var type: System._Type {
+            .init(handle: System_UnhandledExceptionEventArgs_TypeOf())
+        }
+    }
 }
 
 // MARK: - Public API
-public extension SystemUnhandledExceptionEventArgs {
-	var exceptionObject: SystemObject {
+public extension System.UnhandledExceptionEventArgs {
+    var exceptionObject: System.Object {
 		Debug.log("Will get exception object of \(swiftTypeName)")
 		
-		let value = SystemObject(handle: System_UnhandledExceptionEventArgs_ExceptionObject_Get(handle))
+        let value = System.Object(handle: System_UnhandledExceptionEventArgs_ExceptionObject_Get(handle))
 		
 		Debug.log("Did get exception object of \(swiftTypeName)")
 		

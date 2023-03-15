@@ -3,6 +3,7 @@ disabled_rules: # rule identifiers turned on by default to exclude from running
   - vertical_parameter_alignment
   - switch_case_alignment
   - inclusive_language
+  - nesting
 
 opt_in_rules:
   - unavailable_function
@@ -52,4 +53,5 @@ identifier_name:
   ]
 
 type_name:
+  min_length: 2
   max_length: 50

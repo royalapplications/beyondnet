@@ -3,10 +3,10 @@ import XCTest
 
 final class SystemObjectTests: XCTestCase {
 	func testSystemObject() {
-		let systemObjectType = SystemObject.type
+        let systemObjectType = System.Object.type
 		
-		let object1 = SystemObject()
-		let object2 = SystemObject()
+        let object1 = System.Object()
+        let object2 = System.Object()
 		
 		XCTAssertEqual(systemObjectType, object1.type)
 		XCTAssertEqual("Object", object1.type.name)
@@ -16,18 +16,18 @@ final class SystemObjectTests: XCTestCase {
 		XCTAssertTrue(object1 == object1)
 		XCTAssertFalse(object1 == object2)
 		
-		let object1AsSystemType = object1.cast(as: SystemType.self)
+        let object1AsSystemType = object1.cast(as: System._Type.self)
 		XCTAssertNil(object1AsSystemType)
 		
-		let object1AsSystemObject = object1.cast(as: SystemObject.self)
+        let object1AsSystemObject = object1.cast(as: System.Object.self)
 		XCTAssertNotNil(object1AsSystemObject)
 		XCTAssertTrue(object1 == object1AsSystemObject)
 		
-		XCTAssertTrue(object1.is(of: SystemObject.self))
-		XCTAssertFalse(object1.is(of: SystemType.self))
+        XCTAssertTrue(object1.is(of: System.Object.self))
+        XCTAssertFalse(object1.is(of: System._Type.self))
 		
-		XCTAssertTrue(systemObjectType.is(of: SystemObject.self))
-		XCTAssertTrue(systemObjectType.is(of: SystemType.self))
+        XCTAssertTrue(systemObjectType.is(of: System.Object.self))
+        XCTAssertTrue(systemObjectType.is(of: System._Type.self))
 	}
 	
 	func testSystemObjectCreationPerformance() {
@@ -39,7 +39,7 @@ final class SystemObjectTests: XCTestCase {
 		
 		measure {
 			for _ in 0..<iterations {
-				_ = SystemObject()
+                _ = System.Object()
 			}
 		}
 	}

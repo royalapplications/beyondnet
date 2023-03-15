@@ -3,7 +3,7 @@ import XCTest
 
 final class SystemAppDomainTests: XCTestCase {
 	func testAppDomain() {
-		let appDomain = SystemAppDomain.current()
+        let appDomain = System.AppDomain.current()
 		
 		XCTAssertGreaterThanOrEqual(Int32(1), appDomain.id)
 		XCTAssertTrue(appDomain.isDefault())
@@ -15,7 +15,7 @@ final class SystemAppDomainTests: XCTestCase {
 		XCTAssertEqual("AppDomain", type.name)
 		XCTAssertEqual("System.AppDomain", type.fullName)
 		
-		guard let systemAppDomainType = SystemType(typeName: "System.AppDomain") else {
+        guard let systemAppDomainType = System._Type(typeName: "System.AppDomain") else {
 			XCTFail("Failed to get type for System.AppDomain")
 			
 			return
@@ -26,7 +26,7 @@ final class SystemAppDomainTests: XCTestCase {
 		XCTAssertTrue(type.isAssignableTo(systemAppDomainType))
 		XCTAssertTrue(type.isAssignableFrom(systemAppDomainType))
 		
-		let systemObjectType = SystemObject.type
+        let systemObjectType = System.Object.type
 		
 		XCTAssertTrue(type.isAssignableTo(systemObjectType))
 		XCTAssertFalse(type.isAssignableFrom(systemObjectType))
@@ -34,7 +34,7 @@ final class SystemAppDomainTests: XCTestCase {
 		XCTAssertFalse(systemObjectType.isAssignableTo(type))
 		XCTAssertTrue(systemObjectType.isAssignableFrom(type))
 		
-		guard let appDomainAsSystemObject = appDomain.cast(as: SystemObject.self) else {
+        guard let appDomainAsSystemObject = appDomain.cast(as: System.Object.self) else {
 			XCTFail("Failed to cast System.AppDomain to System.Object")
 			
 			return
@@ -42,7 +42,7 @@ final class SystemAppDomainTests: XCTestCase {
 		
 		XCTAssertEqual(appDomain.type, appDomainAsSystemObject.type)
 		
-		guard let castedAppDomain = appDomain.cast(as: SystemAppDomain.self) else {
+        guard let castedAppDomain = appDomain.cast(as: System.AppDomain.self) else {
 			XCTFail("Failed to cast System.AppDomain to System.AppDomain")
 			
 			return
@@ -52,7 +52,7 @@ final class SystemAppDomainTests: XCTestCase {
 	}
 	
 	func testAppDomainClosures() {
-		let appDomain = SystemAppDomain.current()
+        let appDomain = System.AppDomain.current()
 		
 		let token = appDomain.addUnhandledExceptionHandler { _, _ in }
 		XCTAssertTrue(token.isValid)

@@ -1,7 +1,7 @@
 import Foundation
 
-public class CompanySerializer: SystemObject {
-	override class var type: SystemType {
+public class CompanySerializer: System.Object {
+    override class var type: System._Type {
 		.init(handle: NativeAOTSample_CompanySerializer_TypeOf())
 	}
 	
@@ -55,7 +55,7 @@ public extension CompanySerializer {
 		} else if let exceptionHandle {
 			Debug.log("deserializeFromJson of \(swiftTypeName) threw an exception")
 			
-			let exception = SystemException(handle: exceptionHandle)
+            let exception = System.Exception(handle: exceptionHandle)
 			let error = exception.error
 			
 			throw error

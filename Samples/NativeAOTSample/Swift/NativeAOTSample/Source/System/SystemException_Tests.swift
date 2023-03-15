@@ -6,13 +6,13 @@ final class SystemExceptionTests: XCTestCase {
 		let systemExceptionTypeName = "Exception"
 		let systemExceptionTypeFullName = "System.Exception"
 		
-		guard let systemExceptionType = SystemType(typeName: systemExceptionTypeFullName) else {
+        guard let systemExceptionType = System._Type(typeName: systemExceptionTypeFullName) else {
 			XCTFail("Failed to get type of \(systemExceptionTypeFullName) via name")
 			
 			return
 		}
 		
-		let systemExceptionTypeViaObject = SystemException.type
+        let systemExceptionTypeViaObject = System.Exception.type
 		
 		XCTAssertTrue(systemExceptionType == systemExceptionTypeViaObject)
 		XCTAssertEqual(systemExceptionType.name, systemExceptionTypeName)
@@ -22,16 +22,16 @@ final class SystemExceptionTests: XCTestCase {
 		XCTAssertTrue(systemExceptionType.isAssignableTo(systemExceptionTypeViaObject))
 		
 		let exceptionMessage = "Oh no, Exceptions are never good, are they?"
-		let exception = SystemException(message: exceptionMessage)
+        let exception = System.Exception(message: exceptionMessage)
 		
 		XCTAssertTrue(exception.type == systemExceptionType)
 		XCTAssertEqual(exceptionMessage, exception.message)
 		XCTAssertNil(exception.stackTrace)
-		XCTAssertTrue(exception.is(of: SystemException.self))
-		XCTAssertTrue(exception.is(of: SystemObject.self))
-		XCTAssertFalse(exception.is(of: SystemType.self))
+        XCTAssertTrue(exception.is(of: System.Exception.self))
+        XCTAssertTrue(exception.is(of: System.Object.self))
+        XCTAssertFalse(exception.is(of: System._Type.self))
 		
-		let exceptionWithoutMessage = SystemException(message: nil)
+        let exceptionWithoutMessage = System.Exception(message: nil)
 		
 		XCTAssertTrue(exceptionWithoutMessage.type == systemExceptionTypeViaObject)
 		XCTAssertEqual("Exception of type 'System.Exception' was thrown.", exceptionWithoutMessage.message)
@@ -49,7 +49,7 @@ final class SystemExceptionTests: XCTestCase {
 		
 		measure {
 			for _ in 0..<iterations {
-				_ = SystemException(message: message)
+                _ = System.Exception(message: message)
 			}
 		}
 	}

@@ -1,12 +1,14 @@
 import Foundation
 
-public class SystemGC: SystemObject {
-	override class var type: SystemType {
-		.init(handle: System_GC_TypeOf())
-	}
+public extension System {
+    class GC: System.Object {
+        override class var type: System._Type {
+            .init(handle: System_GC_TypeOf())
+        }
+    }
 }
 
-public extension SystemGC {
+public extension System.GC {
 	static func collect() {
 		Debug.log("Will call collect of \(swiftTypeName)")
 		

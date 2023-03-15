@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E70D118329C1F54400B4E738 /* SystemNamespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70D118229C1F54400B4E738 /* SystemNamespace.swift */; };
 		E716200029A66CC000D45FCD /* CommonTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = E7161FFF29A66CBB00D45FCD /* CommonTypes.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		E716200229A6795D00D45FCD /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = E716200129A6795D00D45FCD /* Debug.swift */; };
 		E71625CE29A942D900F47651 /* NativeBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71625CD29A942D900F47651 /* NativeBox.swift */; };
@@ -72,6 +73,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E70D118229C1F54400B4E738 /* SystemNamespace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemNamespace.swift; sourceTree = "<group>"; };
 		E7161FFF29A66CBB00D45FCD /* CommonTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonTypes.h; sourceTree = "<group>"; };
 		E716200129A6795D00D45FCD /* Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
 		E71625CD29A942D900F47651 /* NativeBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeBox.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 		E7BC394029A7A24F00806ADD /* System */ = {
 			isa = PBXGroup;
 			children = (
+				E70D118229C1F54400B4E738 /* SystemNamespace.swift */,
 				E7E9D57E29A77714002C3834 /* SystemObject.swift */,
 				E797ABB729AE0ECE006F9849 /* SystemObject_Tests.swift */,
 				E7BC394229A7A27600806ADD /* SystemType.swift */,
@@ -446,6 +449,7 @@
 				E738716B29ACE41600BEA7DA /* UnhandledExceptionTest.swift in Sources */,
 				E716C71629AF74DF0099E179 /* CStatus.swift in Sources */,
 				E78E02A529B0AB65003604E3 /* ClosureToken.swift in Sources */,
+				E70D118329C1F54400B4E738 /* SystemNamespace.swift in Sources */,
 				E7E9D58029A77776002C3834 /* SystemObject.swift in Sources */,
 				E716200229A6795D00D45FCD /* Debug.swift in Sources */,
 				E7E26AC929A668F8005334CF /* Company.swift in Sources */,

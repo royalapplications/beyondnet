@@ -31,7 +31,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		return numberFormatter
 	}()
 	
-	private var unhandledExceptionHandlerToken: SystemAppDomain.UnhandledExceptionHandlerToken?
+    private var unhandledExceptionHandlerToken: System.AppDomain.UnhandledExceptionHandlerToken?
 	
 	private var company: Company? {
 		didSet {
@@ -91,14 +91,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 }
 
 private extension AppDelegate {
-	func addUnhandledExceptionHandler() -> SystemAppDomain.UnhandledExceptionHandlerToken {
-		let appDomain = SystemAppDomain.current()
+    func addUnhandledExceptionHandler() -> System.AppDomain.UnhandledExceptionHandlerToken {
+        let appDomain = System.AppDomain.current()
 		
 		let token = appDomain.addUnhandledExceptionHandler { _, eventArgs in
 			let exceptionObject = eventArgs.exceptionObject
 			let exceptionString: String
 			
-			if let exception = exceptionObject.cast(as: SystemException.self) {
+            if let exception = exceptionObject.cast(as: System.Exception.self) {
 				exceptionString = "\(exception.message)\n\(exception.stackTrace ?? "")"
 			} else {
 				let objectAsString = exceptionObject.toString() ?? ""
@@ -113,8 +113,8 @@ private extension AppDelegate {
 		return token
 	}
 	
-	func removeUnhandledExceptionHandler(token: SystemAppDomain.UnhandledExceptionHandlerToken) {
-		let appDomain = SystemAppDomain.current()
+    func removeUnhandledExceptionHandler(token: System.AppDomain.UnhandledExceptionHandlerToken) {
+        let appDomain = System.AppDomain.current()
 		
 		appDomain.removeUnhandledExceptionHandler(token)
 	}
@@ -371,7 +371,7 @@ private extension AppDelegate {
 		DispatchQueue.main.async { [weak self] in
 			guard let self else { return }
 			
-			SystemGC.collect()
+            System.GC.collect()
 			
 			let formattedDelta = self.formattedDateDelta(startDate: startDate)
 			

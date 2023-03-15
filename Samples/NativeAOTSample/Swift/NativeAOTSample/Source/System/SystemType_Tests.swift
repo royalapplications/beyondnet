@@ -6,13 +6,13 @@ final class SystemTypeTests: XCTestCase {
 		let systemObjectTypeName = "Object"
 		let systemObjectTypeFullName = "System.Object"
 		
-		guard let systemObjectType = SystemType(typeName: systemObjectTypeFullName) else {
+        guard let systemObjectType = System._Type(typeName: systemObjectTypeFullName) else {
 			XCTFail("Failed to get type of \(systemObjectTypeFullName) via name")
 			
 			return
 		}
 		
-		let systemObjectTypeViaObject = SystemObject.type
+        let systemObjectTypeViaObject = System.Object.type
 		
 		XCTAssertTrue(systemObjectType == systemObjectTypeViaObject)
 		XCTAssertEqual(systemObjectType.name, systemObjectTypeName)
@@ -21,7 +21,7 @@ final class SystemTypeTests: XCTestCase {
 		XCTAssertTrue(systemObjectType.isAssignableFrom(systemObjectTypeViaObject))
 		XCTAssertTrue(systemObjectType.isAssignableTo(systemObjectTypeViaObject))
 		
-		let systemTypeType = SystemType.type
+        let systemTypeType = System._Type.type
 		
 		XCTAssertTrue(systemObjectType.isAssignableFrom(systemTypeType))
 		XCTAssertFalse(systemObjectType.isAssignableTo(systemTypeType))
@@ -29,7 +29,7 @@ final class SystemTypeTests: XCTestCase {
 		XCTAssertFalse(systemTypeType.isAssignableFrom(systemObjectType))
 		XCTAssertTrue(systemTypeType.isAssignableTo(systemObjectType))
 		
-		XCTAssertTrue(systemObjectType.is(of: SystemObject.self))
+        XCTAssertTrue(systemObjectType.is(of: System.Object.self))
 	}
 	
 	func testSystemTypeCreationPerformance() {
@@ -39,7 +39,7 @@ final class SystemTypeTests: XCTestCase {
 		
 		let iterations = 100_000
 		
-		guard let typeName = SystemType.type.fullName else {
+        guard let typeName = System._Type.type.fullName else {
 			XCTFail("Failed to get type of System.Type")
 			
 			return
@@ -47,7 +47,7 @@ final class SystemTypeTests: XCTestCase {
 		
 		measure {
 			for _ in 0..<iterations {
-				_ = SystemType(typeName: typeName)
+                _ = System._Type(typeName: typeName)
 			}
 		}
 	}

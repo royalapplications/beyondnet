@@ -1,7 +1,7 @@
 import Foundation
 
-public class UnhandledExceptionTest: SystemObject {
-	override class var type: SystemType {
+public class UnhandledExceptionTest: System.Object {
+    override class var type: System._Type {
 		.init(handle: NativeAOTSample_UnhandledExceptionTest_TypeOf())
 	}
 }

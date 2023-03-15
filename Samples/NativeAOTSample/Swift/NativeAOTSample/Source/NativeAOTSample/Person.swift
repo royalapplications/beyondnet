@@ -1,7 +1,7 @@
 import Foundation
 
-public class Person: SystemObject {
-	override class var type: SystemType {
+public class Person: System.Object {
+    override class var type: System._Type {
 		.init(handle: NativeAOTSample_Person_TypeOf())
 	}
 }
@@ -133,7 +133,7 @@ public extension Person {
 		} else if let exceptionHandle {
 			Debug.log("Reduce age of \(swiftTypeName) threw an exception")
 			
-			let exception = SystemException(handle: exceptionHandle)
+            let exception = System.Exception(handle: exceptionHandle)
 			let error = exception.error
 			
 			throw error
@@ -184,7 +184,7 @@ public extension Person {
 		} else if let exceptionHandle {
 			Debug.log("Change age of \(swiftTypeName) threw an exception")
 			
-			let exception = SystemException(handle: exceptionHandle)
+            let exception = System.Exception(handle: exceptionHandle)
 			let error = exception.error
 			
 			throw error
