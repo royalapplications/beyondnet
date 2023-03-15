@@ -16,7 +16,7 @@ public class CSharpUnmanagedConstructorSyntaxWriter: CSharpUnmanagedMethodSyntax
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
         const bool mayThrow = true;
-        const MethodKind methodKind = MethodKind.Constructor;
+        const MemberKind methodKind = MemberKind.Constructor;
 
         bool isStaticMethod = true;
         string methodName = constructor.Name;

@@ -22,7 +22,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         GeneratedMember cSharpGeneratedMember = cSharpUnmanagedResult.GetGeneratedMember(method) ?? throw new Exception("No C# generated member");
 
         bool mayThrow = cSharpGeneratedMember.MayThrow;
-        const MethodKind methodKind = MethodKind.Normal;
+        const MemberKind methodKind = MemberKind.Method;
 
         bool isStaticMethod = method.IsStatic;
         string methodName = method.Name;
@@ -49,7 +49,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
 
     protected string WriteMethod(
         MemberInfo memberInfo,
-        MethodKind methodKind,
+        MemberKind memberKind,
         string methodName,
         bool isStaticMethod,
         bool mayThrow,
@@ -66,6 +66,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         string methodNameC = cSharpGeneratedMember.GetGeneratedName(CodeLanguage.CSharpUnmanaged) ?? throw new Exception("No native name");
         
         state.AddGeneratedMember(
+            memberKind,
             memberInfo,
             mayThrow,
             methodNameC,
@@ -75,16 +76,16 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         TypeDescriptor returnOrSetterTypeDescriptor = returnOrSetterType.GetTypeDescriptor(typeDescriptorRegistry);
         string cReturnOrSetterTypeName = returnOrSetterTypeDescriptor.GetTypeName(CodeLanguage.C, true);
         
-        string cReturnOrSetterTypeNameWithComment = methodKind != MethodKind.PropertySetter 
+        string cReturnOrSetterTypeNameWithComment = memberKind != MemberKind.PropertySetter 
             ? $"{cReturnOrSetterTypeName} /* {returnOrSetterType.GetFullNameOrName()} */"
             : "void /* System.Void */";
         
-        Type? setterType = methodKind == MethodKind.PropertySetter 
+        Type? setterType = memberKind == MemberKind.PropertySetter 
             ? returnOrSetterType
             : null;
         
         string methodSignatureParameters = WriteParameters(
-            methodKind,
+            memberKind,
             setterType,
             mayThrow,
             isStaticMethod,
@@ -101,7 +102,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
     }
     
     protected string WriteParameters(
-        MethodKind methodKind,
+        MemberKind memberKind,
         Type? setterType,
         bool mayThrow,
         bool isStatic,
@@ -121,7 +122,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             parameterList.Add(parameterString);
         }
 
-        if (methodKind == MethodKind.PropertySetter) {
+        if (memberKind == MemberKind.PropertySetter) {
             if (setterType == null) {
                 throw new Exception("Setter Type may not be null");
             }

@@ -19,7 +19,7 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         { MemberTypes.Event, new CEventSyntaxWriter() }
     };
     
-    private IDestructorSyntaxWriter m_destructorSyntaxWriter = new CDestructorSyntaxWriter();
+    private CDestructorSyntaxWriter m_destructorSyntaxWriter = new();
     
     public CTypeSyntaxWriter(Settings settings)
     {
@@ -139,9 +139,13 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
 
         foreach (var cSharpMember in cSharpMembers) {
             var member = cSharpMember.Member;
-            var memberType = member.MemberType;
+            var memberKind = cSharpMember.MemberKind;
+            var memberType = member?.MemberType;
 
-            ICSyntaxWriter? syntaxWriter = GetSyntaxWriter(memberType);
+            ICSyntaxWriter? syntaxWriter = GetSyntaxWriter(
+                memberKind,
+                memberType ?? MemberTypes.Custom
+            );
             
             if (syntaxWriter == null) {
                 if (Settings.EmitUnsupported) {
@@ -151,23 +155,33 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
                 continue;
             }
 
-            string memberCode = syntaxWriter.Write(member, state);
+            object? target = syntaxWriter is IDestructorSyntaxWriter
+                ? type
+                : member;
+
+            if (target == null) {
+                throw new Exception("No target");
+            }
+
+            string memberCode = syntaxWriter.Write(target, state);
 
             sb.AppendLine(memberCode);
         }
-        
-        string destructorCode = m_destructorSyntaxWriter.Write(type, state);
 
-        sb.AppendLine(destructorCode);
-        sb.AppendLine();
-        
         sb.AppendLine($"#pragma mark - END APIs of {fullTypeName}");
 
         return sb.ToString();
     }
     
-    private ICSyntaxWriter? GetSyntaxWriter(MemberTypes memberType)
+    private ICSyntaxWriter? GetSyntaxWriter(
+        MemberKind memberKind,
+        MemberTypes memberType
+    )
     {
+        if (memberKind == MemberKind.Destructor) {
+            return m_destructorSyntaxWriter;
+        }
+
         m_syntaxWriters.TryGetValue(
             memberType,
             out ICSyntaxWriter? syntaxWriter

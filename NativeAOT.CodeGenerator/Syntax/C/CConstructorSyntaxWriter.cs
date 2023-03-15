@@ -20,7 +20,7 @@ public class CConstructorSyntaxWriter: CMethodSyntaxWriter, IConstructorSyntaxWr
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
         bool mayThrow = cSharpGeneratedMember.MayThrow;
-        const MethodKind methodKind = MethodKind.Constructor;
+        const MemberKind methodKind = MemberKind.Constructor;
 
         bool isStaticMethod = true;
         string methodName = constructor.Name;

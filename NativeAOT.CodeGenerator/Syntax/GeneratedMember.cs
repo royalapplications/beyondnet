@@ -6,15 +6,23 @@ public class GeneratedMember
 {
     private Dictionary<CodeLanguage, string> m_generatedNames = new();
     
-    public MemberInfo Member { get; }
+    public MemberKind MemberKind { get; }
+    public MemberInfo? Member { get; }
     public bool MayThrow { get; }
 
     public GeneratedMember(
-        MemberInfo member,
+        MemberKind memberKind,
+        MemberInfo? member,
         bool mayThrow
     )
     {
-        Member = member ?? throw new ArgumentNullException(nameof(member));
+        if (member == null &&
+            memberKind == MemberKind.Automatic) {
+            throw new Exception("Either member must be not null or memberKind must be something other than Automatic");
+        }
+        
+        MemberKind = memberKind;
+        Member = member;
         MayThrow = mayThrow;
     }
 

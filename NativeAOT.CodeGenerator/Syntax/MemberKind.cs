@@ -1,9 +1,14 @@
 namespace NativeAOT.CodeGenerator.Syntax;
 
-public enum MethodKind
+public enum MemberKind
 {
-    Normal,
+    Automatic,
+    
+    Method,
+    
     Constructor,
+    Destructor,
+    
     PropertyGetter,
     PropertySetter
 }

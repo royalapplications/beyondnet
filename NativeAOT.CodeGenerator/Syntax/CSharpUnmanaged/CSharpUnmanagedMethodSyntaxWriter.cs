@@ -18,7 +18,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
         const bool mayThrow = true;
-        const MethodKind methodKind = MethodKind.Normal;
+        const MemberKind methodKind = MemberKind.Method;
 
         bool isStaticMethod = method.IsStatic;
         string methodName = method.Name;
@@ -45,7 +45,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
     protected string WriteMethod(
         MemberInfo memberInfo,
-        MethodKind methodKind,
+        MemberKind memberKind,
         string methodName,
         bool isStaticMethod,
         bool mayThrow,
@@ -58,17 +58,17 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
     {
         string methodNameC;
 
-        switch (methodKind) {
-            case MethodKind.Normal:
+        switch (memberKind) {
+            case MemberKind.Method:
                 methodNameC = $"{declaringType.GetFullNameOrName().Replace('.', '_')}_{methodName}";
                 break;
-            case MethodKind.Constructor:
+            case MemberKind.Constructor:
                 methodNameC = $"{declaringType.GetFullNameOrName().Replace('.', '_')}_Create";
                 break;
-            case MethodKind.PropertyGetter:
+            case MemberKind.PropertyGetter:
                 methodNameC = $"{declaringType.GetFullNameOrName().Replace('.', '_')}_{methodName}_Get";
                 break;
-            case MethodKind.PropertySetter:
+            case MemberKind.PropertySetter:
                 methodNameC = $"{declaringType.GetFullNameOrName().Replace('.', '_')}_{methodName}_Set";
                 break;
             default:
@@ -78,18 +78,19 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         methodNameC = state.UniqueGeneratedName(methodNameC, CodeLanguage.CSharpUnmanaged);
         
         state.AddGeneratedMember(
+            memberKind,
             memberInfo,
             mayThrow,
             methodNameC,
             CodeLanguage.CSharpUnmanaged
         );
 
-        Type? setterType = methodKind == MethodKind.PropertySetter 
+        Type? setterType = memberKind == MemberKind.PropertySetter 
             ? returnOrSetterType
             : null;
 
         string methodSignatureParameters = WriteParameters(
-            methodKind,
+            memberKind,
             setterType,
             mayThrow,
             isStaticMethod,
@@ -101,7 +102,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         TypeDescriptor returnOrSetterTypeDescriptor = returnOrSetterType.GetTypeDescriptor(typeDescriptorRegistry);
         string unmanagedReturnOrSetterTypeName = returnOrSetterTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
         
-        string unmanagedReturnOrSetterTypeNameWithComment = methodKind != MethodKind.PropertySetter 
+        string unmanagedReturnOrSetterTypeNameWithComment = memberKind != MemberKind.PropertySetter 
             ? $"{unmanagedReturnOrSetterTypeName} /* {returnOrSetterType.GetFullNameOrName()} */" 
             : "void /* System.Void */";
         
@@ -142,12 +143,12 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             : "\t";
         
         string methodTarget = isStaticMethod
-            ? (methodKind == MethodKind.Constructor ? "new " : string.Empty) + declaringType.GetFullNameOrName()
+            ? (memberKind == MemberKind.Constructor ? "new " : string.Empty) + declaringType.GetFullNameOrName()
             : convertedSelfParameterName ?? string.Empty;
 
         string convertedParameterNamesString = string.Join(", ", convertedParameterNames);
 
-        bool isReturning = methodKind != MethodKind.PropertySetter &&
+        bool isReturning = memberKind != MemberKind.PropertySetter &&
                            !returnOrSetterTypeDescriptor.IsVoid;
 
         string returnValuePrefix = string.Empty;
@@ -157,12 +158,12 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             returnValuePrefix = $"{returnOrSetterType.GetFullNameOrName()} {returnValueName} = ";
         }
 
-        string methodNameForInvocation = methodKind == MethodKind.Constructor
+        string methodNameForInvocation = memberKind == MemberKind.Constructor
             ? string.Empty
             : $".{methodName}";
 
-        bool invocationNeedsParentheses = methodKind != MethodKind.PropertyGetter &&
-                                          methodKind != MethodKind.PropertySetter;
+        bool invocationNeedsParentheses = memberKind != MemberKind.PropertyGetter &&
+                                          memberKind != MemberKind.PropertySetter;
 
         string methodInvocationPrefix = invocationNeedsParentheses 
             ? "("
@@ -172,7 +173,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
         if (invocationNeedsParentheses) {
             methodInvocationSuffix = ")";
-        } else if (methodKind == MethodKind.PropertySetter) {
+        } else if (memberKind == MemberKind.PropertySetter) {
             string valueParamterName = "__value";
 
             string? setterTypeConversion = returnOrSetterTypeDescriptor.GetTypeConversion(
@@ -291,7 +292,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
     }
 
     protected string WriteParameters(
-        MethodKind methodKind,
+        MemberKind memberKind,
         Type? setterType,
         bool mayThrow,
         bool isStatic,
@@ -311,7 +312,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             parameterList.Add(parameterString);
         }
 
-        if (methodKind == MethodKind.PropertySetter) {
+        if (memberKind == MemberKind.PropertySetter) {
             if (setterType == null) {
                 throw new Exception("Setter Type may not be null");
             }

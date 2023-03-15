@@ -48,7 +48,7 @@ public class CPropertySyntaxWriter: CMethodSyntaxWriter, IPropertySyntaxWriter
             
             string getterCode = WriteMethod(
                 getterMethod,
-                MethodKind.PropertyGetter,
+                MemberKind.PropertyGetter,
                 propertyName,
                 isStaticMethod,
                 mayThrow,
@@ -67,7 +67,7 @@ public class CPropertySyntaxWriter: CMethodSyntaxWriter, IPropertySyntaxWriter
             
             string setterCode = WriteMethod(
                 setterMethod,
-                MethodKind.PropertySetter,
+                MemberKind.PropertySetter,
                 propertyName,
                 isStaticMethod,
                 mayThrow,

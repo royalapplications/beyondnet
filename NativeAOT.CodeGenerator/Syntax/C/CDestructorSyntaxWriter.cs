@@ -5,7 +5,7 @@ using NativeAOT.CodeGenerator.Types;
 
 namespace NativeAOT.CodeGenerator.Syntax.C;
 
-public class CDestructorSyntaxWriter: IDestructorSyntaxWriter
+public class CDestructorSyntaxWriter: ICSyntaxWriter, IDestructorSyntaxWriter
 {
     public string Write(object @object, State state)
     {

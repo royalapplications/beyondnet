@@ -19,7 +19,7 @@ public class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITyp
         { MemberTypes.Event, new CSharpUnmanagedEventSyntaxWriter() }
     };
 
-    private IDestructorSyntaxWriter m_destructorSyntaxWriter = new CSharpUnmanagedDestructorSyntaxWriter();
+    private CSharpUnmanagedDestructorSyntaxWriter m_destructorSyntaxWriter = new();
 
     public CSharpUnmanagedTypeSyntaxWriter(Settings settings)
     {
@@ -73,7 +73,10 @@ public class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITyp
         foreach (var member in members) {
             var memberType = member.MemberType;
 
-            ICSharpUnmanagedSyntaxWriter? syntaxWriter = GetSyntaxWriter(memberType);
+            ICSharpUnmanagedSyntaxWriter? syntaxWriter = GetSyntaxWriter(
+                MemberKind.Automatic,
+                memberType
+            );
 
             if (syntaxWriter == null) {
                 if (Settings.EmitUnsupported) {
@@ -89,7 +92,16 @@ public class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITyp
             sb.AppendLine(memberCode);
         }
 
-        string destructorCode = m_destructorSyntaxWriter.Write(type, state)
+        ICSharpUnmanagedSyntaxWriter? destructorSyntaxWriter = GetSyntaxWriter(
+            MemberKind.Destructor,
+            MemberTypes.Custom
+        );
+
+        if (destructorSyntaxWriter == null) {
+            throw new Exception("No destructor syntax writer");
+        }
+
+        string destructorCode = destructorSyntaxWriter.Write(type, state)
             .IndentAllLines(1);
 
         sb.AppendLine(destructorCode);
@@ -100,8 +112,15 @@ public class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITyp
         return sb.ToString();
     }
 
-    private ICSharpUnmanagedSyntaxWriter? GetSyntaxWriter(MemberTypes memberType)
+    private ICSharpUnmanagedSyntaxWriter? GetSyntaxWriter(
+        MemberKind memberKind,
+        MemberTypes memberType
+    )
     {
+        if (memberKind == MemberKind.Destructor) {
+            return m_destructorSyntaxWriter;
+        }
+
         m_syntaxWriters.TryGetValue(
             memberType,
             out ICSharpUnmanagedSyntaxWriter? syntaxWriter

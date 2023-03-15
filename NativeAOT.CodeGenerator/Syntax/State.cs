@@ -25,11 +25,13 @@ public class State
     }
 
     public GeneratedMember AddGeneratedMember(
-        MemberInfo member,
+        MemberKind memberKind,
+        MemberInfo? member,
         bool mayThrow
     )
     {
         GeneratedMember generatedMember = new(
+            memberKind,
             member,
             mayThrow
         );
@@ -40,13 +42,15 @@ public class State
     }
 
     public GeneratedMember AddGeneratedMember(
-        MemberInfo member,
+        MemberKind memberKind,
+        MemberInfo? member,
         bool mayThrow,
         string generatedName,
         CodeLanguage generatedNameLanguage
     )
     {
         GeneratedMember generatedMember = AddGeneratedMember(
+            memberKind,
             member,
             mayThrow
         );

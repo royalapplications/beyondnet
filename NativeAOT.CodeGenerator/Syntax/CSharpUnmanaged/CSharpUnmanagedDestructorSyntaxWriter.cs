@@ -4,7 +4,7 @@ using NativeAOT.CodeGenerator.Extensions;
 
 namespace NativeAOT.CodeGenerator.Syntax.CSharpUnmanaged;
 
-public class CSharpUnmanagedDestructorSyntaxWriter: IDestructorSyntaxWriter
+public class CSharpUnmanagedDestructorSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IDestructorSyntaxWriter
 {
     public string Write(object @object, State state)
     {
@@ -17,6 +17,8 @@ public class CSharpUnmanagedDestructorSyntaxWriter: IDestructorSyntaxWriter
             type.IsEnum) {
             return string.Empty;
         }
+
+        const bool mayThrow = true;
         
         StringBuilder sb = new();
 
@@ -32,6 +34,14 @@ public class CSharpUnmanagedDestructorSyntaxWriter: IDestructorSyntaxWriter
         sb.AppendLine("}");
 
         string generatedCode = sb.ToString();
+
+        state.AddGeneratedMember(
+            MemberKind.Destructor,
+            null,
+            mayThrow,
+            methodNameC,
+            CodeLanguage.CSharpUnmanaged
+        );
         
         return generatedCode;
     }

@@ -40,7 +40,7 @@ public class CSharpUnmanagedPropertySyntaxWriter: CSharpUnmanagedMethodSyntaxWri
             
             string getterCode = WriteMethod(
                 getterMethod,
-                MethodKind.PropertyGetter,
+                MemberKind.PropertyGetter,
                 propertyName,
                 isStaticMethod,
                 mayThrow,
@@ -59,7 +59,7 @@ public class CSharpUnmanagedPropertySyntaxWriter: CSharpUnmanagedMethodSyntaxWri
             
             string setterCode = WriteMethod(
                 setterMethod,
-                MethodKind.PropertySetter,
+                MemberKind.PropertySetter,
                 propertyName,
                 isStaticMethod,
                 mayThrow,
