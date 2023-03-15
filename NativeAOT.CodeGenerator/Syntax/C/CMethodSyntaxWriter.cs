@@ -25,7 +25,6 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         const MemberKind methodKind = MemberKind.Method;
 
         bool isStaticMethod = method.IsStatic;
-        string methodName = method.Name;
 
         Type declaringType = method.DeclaringType ?? throw new Exception("No declaring type");;
         Type returnType = method.ReturnType;
@@ -34,7 +33,6 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         string methodCode = WriteMethod(
             method,
             methodKind,
-            methodName,
             isStaticMethod,
             mayThrow,
             declaringType,
@@ -48,9 +46,8 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
     }
 
     protected string WriteMethod(
-        MemberInfo memberInfo,
+        MemberInfo? memberInfo,
         MemberKind memberKind,
-        string methodName,
         bool isStaticMethod,
         bool mayThrow,
         Type declaringType,
@@ -60,8 +57,21 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         State state
     )
     {
+        if (memberInfo == null &&
+            memberKind != MemberKind.Destructor) {
+            throw new Exception("memberInfo may only be null when memberKind is Destructor");
+        }
+        
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
-        GeneratedMember cSharpGeneratedMember = cSharpUnmanagedResult.GetGeneratedMember(memberInfo) ?? throw new Exception("No C# generated member");
+        GeneratedMember cSharpGeneratedMember;
+
+        if (memberInfo != null) {
+            cSharpGeneratedMember = cSharpUnmanagedResult.GetGeneratedMember(memberInfo) ?? throw new Exception("No C# generated member");
+        } else if (memberKind == MemberKind.Destructor) {
+            cSharpGeneratedMember = cSharpUnmanagedResult.GetGeneratedDestructor(declaringType) ?? throw new Exception("No C# generated destructor");
+        } else {
+            throw new Exception("No C# generated member");
+        }
         
         string methodNameC = cSharpGeneratedMember.GetGeneratedName(CodeLanguage.CSharpUnmanaged) ?? throw new Exception("No native name");
         

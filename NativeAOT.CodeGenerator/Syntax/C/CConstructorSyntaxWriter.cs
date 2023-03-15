@@ -23,7 +23,6 @@ public class CConstructorSyntaxWriter: CMethodSyntaxWriter, IConstructorSyntaxWr
         const MemberKind methodKind = MemberKind.Constructor;
 
         bool isStaticMethod = true;
-        string methodName = constructor.Name;
 
         Type declaringType = constructor.DeclaringType ?? throw new Exception("No declaring type");;
 
@@ -37,7 +36,6 @@ public class CConstructorSyntaxWriter: CMethodSyntaxWriter, IConstructorSyntaxWr
         string ctorCode = WriteMethod(
             constructor,
             methodKind,
-            methodName,
             isStaticMethod,
             mayThrow,
             declaringType,

@@ -1,4 +1,4 @@
-using System.Text;
+using System.Reflection;
 
 using NativeAOT.CodeGenerator.Extensions;
 using NativeAOT.CodeGenerator.Generator;
@@ -6,9 +6,9 @@ using NativeAOT.CodeGenerator.Types;
 
 namespace NativeAOT.CodeGenerator.Syntax.C;
 
-public class CDestructorSyntaxWriter: ICSyntaxWriter, IDestructorSyntaxWriter
+public class CDestructorSyntaxWriter: CMethodSyntaxWriter, IDestructorSyntaxWriter
 {
-    public string Write(object @object, State state)
+    public new string Write(object @object, State state)
     {
         return Write((Type)@object, state);
     }
@@ -19,31 +19,26 @@ public class CDestructorSyntaxWriter: ICSyntaxWriter, IDestructorSyntaxWriter
             type.IsEnum) {
             return string.Empty;
         }
-        
-        TypeDescriptor typeDescriptor = type.GetTypeDescriptor(TypeDescriptorRegistry.Shared);
+
+        TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
         GeneratedMember cSharpGeneratedMember = cSharpUnmanagedResult.GetGeneratedDestructor(type) ?? throw new Exception("No C# generated destructor");
 
-        StringBuilder sb = new();
-
-        string fullTypeName = type.GetFullNameOrName();
-        string methodNameC = cSharpGeneratedMember.GetGeneratedName(CodeLanguage.CSharpUnmanaged) ?? throw new Exception("No generated unmanaged C# name");
         bool mayThrow = cSharpGeneratedMember.MayThrow;
 
-        string typeNameC = typeDescriptor.GetTypeName(CodeLanguage.C, true);
-        sb.AppendLine($"void /* System.Void */\n{methodNameC}(\n\t{typeNameC} /* {fullTypeName} */ self\n);");
-
-        string generatedCode = sb.ToString();
-        
-        state.AddGeneratedMember(
-            MemberKind.Destructor,
+        string destructorCode = WriteMethod(
             null,
+            MemberKind.Destructor,
+            false,
             mayThrow,
-            methodNameC,
-            CodeLanguage.C
+            type,
+            typeof(void),
+            Array.Empty<ParameterInfo>(),
+            typeDescriptorRegistry,
+            state
         );
-        
-        return generatedCode;
+
+        return destructorCode;
     }
 }
