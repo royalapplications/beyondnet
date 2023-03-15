@@ -26,14 +26,8 @@ public class CPropertySyntaxWriter: CMethodSyntaxWriter, IPropertySyntaxWriter
 
         bool mayThrow = generatedCSharpUnmanagedMember.MayThrow;
         
-        string propertyName = property.Name;
-
         Type declaringType = property.DeclaringType ?? throw new Exception("No declaring type");;
 
-        if (declaringType.IsAbstract) {
-            return string.Empty;
-        }
-        
         IEnumerable<ParameterInfo> parameters = Array.Empty<ParameterInfo>();
 
         StringBuilder sb = new();

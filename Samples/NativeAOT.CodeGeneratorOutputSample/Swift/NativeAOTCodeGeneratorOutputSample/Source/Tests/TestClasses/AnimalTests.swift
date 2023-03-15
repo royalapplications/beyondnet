@@ -23,9 +23,8 @@ final class AnimalTests: XCTestCase {
             return
         }
         
-        // TODO: This should be replaced by a call to IAnimal.Name once interfaces are properly supported
-        guard let retrievedDogNameC = NativeAOT_CodeGeneratorInputSample_Dog_Name_Get(dog,
-                                                                                      &exception),
+        guard let retrievedDogNameC = NativeAOT_CodeGeneratorInputSample_IAnimal_Name_Get(dog,
+                                                                                          &exception),
               exception == nil else {
             XCTFail("Dog.Name getter should not throw and return an instance of a string")
             
@@ -58,9 +57,8 @@ final class AnimalTests: XCTestCase {
             return
         }
         
-        // TODO: This should be replaced by a call to IAnimal.Name once interfaces are properly supported
-        guard let retrievedCatNameC = NativeAOT_CodeGeneratorInputSample_Cat_Name_Get(cat,
-                                                                                      &exception),
+        guard let retrievedCatNameC = NativeAOT_CodeGeneratorInputSample_IAnimal_Name_Get(cat,
+                                                                                          &exception),
               exception == nil else {
             XCTFail("Cat.Name getter should not throw and return an instance of a string")
             

@@ -22,10 +22,6 @@ public class CSharpUnmanagedPropertySyntaxWriter: CSharpUnmanagedMethodSyntaxWri
 
         Type declaringType = property.DeclaringType ?? throw new Exception("No declaring type");;
 
-        if (declaringType.IsAbstract) {
-            return string.Empty;
-        }
-        
         IEnumerable<ParameterInfo> parameters = Array.Empty<ParameterInfo>();
 
         StringBuilder sb = new();
