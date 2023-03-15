@@ -1,10 +1,10 @@
 namespace NativeAOT.CodeGeneratorInputSample;
 
-public class Dog: IAnimal
+public class Dog: BaseAnimal
 {
     public const string DogName = "Dog";
     
-    public string Name => DogName;
+    public override string Name => DogName;
     
     internal Dog() { }
 }

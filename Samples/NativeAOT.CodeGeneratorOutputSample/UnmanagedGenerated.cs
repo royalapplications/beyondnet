@@ -1,5 +1,5 @@
-// Number of generated types: 167
-// Number of generated members: 1834
+// Number of generated types: 168
+// Number of generated members: 1838
 
 // <Header>
 using System;
@@ -51178,6 +51178,35 @@ internal static unsafe class System_Reflection_InterfaceMapping
 
 internal static unsafe class NativeAOT_CodeGeneratorInputSample_IAnimal
 {
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_IAnimal_Eat")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_IAnimal_Eat(void* /* NativeAOT.CodeGeneratorInputSample.IAnimal */ __self, byte* /* System.String */ food, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.IAnimal __selfDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.IAnimal>(__self);
+	
+		System.String foodDotNet = InteropUtils.ToDotNetString(food);
+	
+	    try {
+			__selfDotNet.Eat(foodDotNet);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_IAnimal_Name_Get")]
 	internal static byte* /* System.String */ NativeAOT_CodeGeneratorInputSample_IAnimal_Name_Get(void* /* NativeAOT.CodeGeneratorInputSample.IAnimal */ __self, void** /* System.Exception */ __outException)
 	{
@@ -51212,6 +51241,80 @@ internal static unsafe class NativeAOT_CodeGeneratorInputSample_IAnimal
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_IAnimal_Destroy")]
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_IAnimal_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.IAnimal */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+
+}
+
+
+internal static unsafe class NativeAOT_CodeGeneratorInputSample_BaseAnimal
+{
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_BaseAnimal_Eat")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_BaseAnimal_Eat(void* /* NativeAOT.CodeGeneratorInputSample.BaseAnimal */ __self, byte* /* System.String */ food, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.BaseAnimal __selfDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.BaseAnimal>(__self);
+	
+		System.String foodDotNet = InteropUtils.ToDotNetString(food);
+	
+	    try {
+			__selfDotNet.Eat(foodDotNet);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_BaseAnimal_Name_Get")]
+	internal static byte* /* System.String */ NativeAOT_CodeGeneratorInputSample_BaseAnimal_Name_Get(void* /* NativeAOT.CodeGeneratorInputSample.BaseAnimal */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.BaseAnimal __selfDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.BaseAnimal>(__self);
+	
+	
+	    try {
+			System.String __returnValue = __selfDotNet.Name;
+			byte* _returnValueNative = __returnValue.CopyToCString();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_BaseAnimal_Destroy")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_BaseAnimal_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.BaseAnimal */ __self)
 	{
 	
 		InteropUtils.FreeIfAllocated(__self);

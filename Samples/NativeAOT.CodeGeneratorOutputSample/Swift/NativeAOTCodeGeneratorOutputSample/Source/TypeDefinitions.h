@@ -1,5 +1,5 @@
-// Number of generated types: 167
-// Number of generated members: 1834
+// Number of generated types: 168
+// Number of generated members: 1838
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -826,6 +826,8 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 typedef void* System_Reflection_InterfaceMapping_t;
 
 typedef void* NativeAOT_CodeGeneratorInputSample_IAnimal_t;
+
+typedef void* NativeAOT_CodeGeneratorInputSample_BaseAnimal_t;
 
 typedef void* NativeAOT_CodeGeneratorInputSample_Cat_t;
 
@@ -13184,6 +13186,13 @@ System_Reflection_InterfaceMapping_Destroy(
 #pragma mark - END APIs of System.Reflection.InterfaceMapping
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.IAnimal
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_IAnimal_Eat(
+	NativeAOT_CodeGeneratorInputSample_IAnimal_t /* NativeAOT.CodeGeneratorInputSample.IAnimal */ self,
+	CString /* System.String */ food,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 CString /* System.String */
 NativeAOT_CodeGeneratorInputSample_IAnimal_Name_Get(
 	NativeAOT_CodeGeneratorInputSample_IAnimal_t /* NativeAOT.CodeGeneratorInputSample.IAnimal */ self,
@@ -13196,6 +13205,27 @@ NativeAOT_CodeGeneratorInputSample_IAnimal_Destroy(
 );
 
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.IAnimal
+
+#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.BaseAnimal
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_BaseAnimal_Eat(
+	NativeAOT_CodeGeneratorInputSample_BaseAnimal_t /* NativeAOT.CodeGeneratorInputSample.BaseAnimal */ self,
+	CString /* System.String */ food,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+NativeAOT_CodeGeneratorInputSample_BaseAnimal_Name_Get(
+	NativeAOT_CodeGeneratorInputSample_BaseAnimal_t /* NativeAOT.CodeGeneratorInputSample.BaseAnimal */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_BaseAnimal_Destroy(
+	NativeAOT_CodeGeneratorInputSample_BaseAnimal_t /* NativeAOT.CodeGeneratorInputSample.BaseAnimal */ self
+);
+
+#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.BaseAnimal
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Cat
 CString /* System.String */

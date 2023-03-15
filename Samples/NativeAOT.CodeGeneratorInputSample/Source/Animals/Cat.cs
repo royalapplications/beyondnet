@@ -1,10 +1,10 @@
 namespace NativeAOT.CodeGeneratorInputSample;
 
-public class Cat: IAnimal
+public class Cat: BaseAnimal
 {
     public const string CatName = "Cat";
 
-    public string Name => CatName;
-    
+    public override string Name => CatName;
+
     internal Cat() { }
 }
