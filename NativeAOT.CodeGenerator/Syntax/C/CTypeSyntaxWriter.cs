@@ -163,7 +163,14 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
                 throw new Exception("No target");
             }
 
-            string memberCode = syntaxWriter.Write(target, state);
+            string memberCode;
+            
+            if (member is FieldInfo fieldInfo &&
+                syntaxWriter is CFieldSyntaxWriter fieldSyntaxWriter) {
+                memberCode = fieldSyntaxWriter.Write(fieldInfo, memberKind, state);
+            } else {
+                memberCode = syntaxWriter.Write(target, state);
+            }
 
             sb.AppendLine(memberCode);
         }

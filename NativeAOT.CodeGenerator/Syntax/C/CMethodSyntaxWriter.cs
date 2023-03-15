@@ -66,7 +66,12 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         GeneratedMember cSharpGeneratedMember;
 
         if (memberInfo != null) {
-            cSharpGeneratedMember = cSharpUnmanagedResult.GetGeneratedMember(memberInfo) ?? throw new Exception("No C# generated member");
+            if (memberKind == MemberKind.FieldGetter ||
+                memberKind == MemberKind.FieldSetter) {
+                cSharpGeneratedMember = cSharpUnmanagedResult.GetGeneratedMember(memberInfo, memberKind) ?? throw new Exception("No C# generated member");
+            } else {
+                cSharpGeneratedMember = cSharpUnmanagedResult.GetGeneratedMember(memberInfo) ?? throw new Exception("No C# generated member");
+            }
         } else if (memberKind == MemberKind.Destructor) {
             cSharpGeneratedMember = cSharpUnmanagedResult.GetGeneratedDestructor(declaringType) ?? throw new Exception("No C# generated destructor");
         } else {
@@ -85,14 +90,17 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         
         TypeDescriptor returnOrSetterTypeDescriptor = returnOrSetterType.GetTypeDescriptor(typeDescriptorRegistry);
         string cReturnOrSetterTypeName = returnOrSetterTypeDescriptor.GetTypeName(CodeLanguage.C, true);
+        string cReturnOrSetterTypeNameWithComment;
+        Type? setterType;
         
-        string cReturnOrSetterTypeNameWithComment = memberKind != MemberKind.PropertySetter 
-            ? $"{cReturnOrSetterTypeName} /* {returnOrSetterType.GetFullNameOrName()} */"
-            : "void /* System.Void */";
-        
-        Type? setterType = memberKind == MemberKind.PropertySetter 
-            ? returnOrSetterType
-            : null;
+        if (memberKind == MemberKind.PropertySetter ||
+            memberKind == MemberKind.FieldSetter) {
+            cReturnOrSetterTypeNameWithComment = "void /* System.Void */";
+            setterType = returnOrSetterType;
+        } else {
+            cReturnOrSetterTypeNameWithComment = $"{cReturnOrSetterTypeName} /* {returnOrSetterType.GetFullNameOrName()} */";
+            setterType = null;
+        }
         
         string methodSignatureParameters = WriteParameters(
             memberKind,
@@ -132,7 +140,8 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             parameterList.Add(parameterString);
         }
 
-        if (memberKind == MemberKind.PropertySetter) {
+        if (memberKind == MemberKind.PropertySetter ||
+            memberKind == MemberKind.FieldSetter) {
             if (setterType == null) {
                 throw new Exception("Setter Type may not be null");
             }

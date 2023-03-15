@@ -68,4 +68,23 @@ public class Result
 
         return null;
     }
+    
+    public GeneratedMember? GetGeneratedMember(
+        MemberInfo member,
+        MemberKind memberKind
+    )
+    {
+        Type declaringType = member.DeclaringType ?? throw new Exception("No declaring type");
+
+        var generatedMembers = m_generatedTypes[declaringType];
+
+        foreach (var generatedMember in generatedMembers) {
+            if (generatedMember.Member == member &&
+                generatedMember.MemberKind == memberKind) {
+                return generatedMember;
+            }
+        }
+
+        return null;
+    }
 }

@@ -1,5 +1,5 @@
 // Number of generated types: 162
-// Number of generated members: 1524
+// Number of generated members: 1565
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -1477,9 +1477,15 @@ System_Type_IsAssignableFrom(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Field): Delimiter
+uint8_t /* System.Char */
+System_Type_Delimiter_Get(
+	
+);
 
-// TODO (Field): Missing
+System_Object_t /* System.Object */
+System_Type_Missing_Get(
+	
+);
 
 void /* System.Void */
 System_Type_Destroy(
@@ -2353,7 +2359,10 @@ System_String_Length_Get(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Field): Empty
+CString /* System.String */
+System_String_Empty_Get(
+	
+);
 
 void /* System.Void */
 System_String_Destroy(
@@ -4173,7 +4182,10 @@ System_IO_Stream_Synchronized(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Field): Null
+System_IO_Stream_t /* System.IO.Stream */
+System_IO_Stream_Null_Get(
+	
+);
 
 void /* System.Void */
 System_IO_Stream_Destroy(
@@ -5556,15 +5568,30 @@ System_Decimal_Scale_Get(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Field): Zero
+System_Decimal_t /* System.Decimal */
+System_Decimal_Zero_Get(
+	
+);
 
-// TODO (Field): One
+System_Decimal_t /* System.Decimal */
+System_Decimal_One_Get(
+	
+);
 
-// TODO (Field): MinusOne
+System_Decimal_t /* System.Decimal */
+System_Decimal_MinusOne_Get(
+	
+);
 
-// TODO (Field): MaxValue
+System_Decimal_t /* System.Decimal */
+System_Decimal_MaxValue_Get(
+	
+);
 
-// TODO (Field): MinValue
+System_Decimal_t /* System.Decimal */
+System_Decimal_MinValue_Get(
+	
+);
 
 void /* System.Void */
 System_Decimal_Destroy(
@@ -6181,11 +6208,20 @@ System_DateTime_UtcNow_Get(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Field): MinValue
+System_DateTime_t /* System.DateTime */
+System_DateTime_MinValue_Get(
+	
+);
 
-// TODO (Field): MaxValue
+System_DateTime_t /* System.DateTime */
+System_DateTime_MaxValue_Get(
+	
+);
 
-// TODO (Field): UnixEpoch
+System_DateTime_t /* System.DateTime */
+System_DateTime_UnixEpoch_Get(
+	
+);
 
 void /* System.Void */
 System_DateTime_Destroy(
@@ -6517,25 +6553,55 @@ System_TimeSpan_TotalSeconds_Get(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Field): Zero
+System_TimeSpan_t /* System.TimeSpan */
+System_TimeSpan_Zero_Get(
+	
+);
 
-// TODO (Field): MaxValue
+System_TimeSpan_t /* System.TimeSpan */
+System_TimeSpan_MaxValue_Get(
+	
+);
 
-// TODO (Field): MinValue
+System_TimeSpan_t /* System.TimeSpan */
+System_TimeSpan_MinValue_Get(
+	
+);
 
-// TODO (Field): NanosecondsPerTick
+int64_t /* System.Int64 */
+System_TimeSpan_NanosecondsPerTick_Get(
+	
+);
 
-// TODO (Field): TicksPerMicrosecond
+int64_t /* System.Int64 */
+System_TimeSpan_TicksPerMicrosecond_Get(
+	
+);
 
-// TODO (Field): TicksPerMillisecond
+int64_t /* System.Int64 */
+System_TimeSpan_TicksPerMillisecond_Get(
+	
+);
 
-// TODO (Field): TicksPerSecond
+int64_t /* System.Int64 */
+System_TimeSpan_TicksPerSecond_Get(
+	
+);
 
-// TODO (Field): TicksPerMinute
+int64_t /* System.Int64 */
+System_TimeSpan_TicksPerMinute_Get(
+	
+);
 
-// TODO (Field): TicksPerHour
+int64_t /* System.Int64 */
+System_TimeSpan_TicksPerHour_Get(
+	
+);
 
-// TODO (Field): TicksPerDay
+int64_t /* System.Int64 */
+System_TimeSpan_TicksPerDay_Get(
+	
+);
 
 void /* System.Void */
 System_TimeSpan_Destroy(
@@ -7347,7 +7413,10 @@ System_Globalization_Calendar_ToFourDigitYear(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Field): CurrentEra
+int32_t /* System.Int32 */
+System_Globalization_Calendar_CurrentEra_Get(
+	
+);
 
 void /* System.Void */
 System_Globalization_Calendar_Destroy(
@@ -7670,7 +7739,10 @@ System_ModuleHandle_MDStreamVersion_Get(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Field): EmptyHandle
+System_ModuleHandle_t /* System.ModuleHandle */
+System_ModuleHandle_EmptyHandle_Get(
+	
+);
 
 void /* System.Void */
 System_ModuleHandle_Destroy(
@@ -8872,7 +8944,10 @@ System_Threading_WaitHandle_SignalAndWait2(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Field): WaitTimeout
+int32_t /* System.Int32 */
+System_Threading_WaitHandle_WaitTimeout_Get(
+	
+);
 
 void /* System.Void */
 System_Threading_WaitHandle_Destroy(
@@ -9719,7 +9794,10 @@ System_Guid_Create2(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Field): Empty
+System_Guid_t /* System.Guid */
+System_Guid_Empty_Get(
+	
+);
 
 void /* System.Void */
 System_Guid_Destroy(
@@ -11266,17 +11344,38 @@ System_Runtime_InteropServices_StructLayoutAttribute_Value_Get(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Field): Pack
+int32_t /* System.Int32 */
+System_Runtime_InteropServices_StructLayoutAttribute_Pack_Get(
+	System_Runtime_InteropServices_StructLayoutAttribute_t /* System.Runtime.InteropServices.StructLayoutAttribute */ self
+);
 
-// TODO (Field): Pack
+void /* System.Void */
+System_Runtime_InteropServices_StructLayoutAttribute_Pack_Set(
+	System_Runtime_InteropServices_StructLayoutAttribute_t /* System.Runtime.InteropServices.StructLayoutAttribute */ self,
+	int /* System.Int32 */ value
+);
 
-// TODO (Field): Size
+int32_t /* System.Int32 */
+System_Runtime_InteropServices_StructLayoutAttribute_Size_Get(
+	System_Runtime_InteropServices_StructLayoutAttribute_t /* System.Runtime.InteropServices.StructLayoutAttribute */ self
+);
 
-// TODO (Field): Size
+void /* System.Void */
+System_Runtime_InteropServices_StructLayoutAttribute_Size_Set(
+	System_Runtime_InteropServices_StructLayoutAttribute_t /* System.Runtime.InteropServices.StructLayoutAttribute */ self,
+	int /* System.Int32 */ value
+);
 
-// TODO (Field): CharSet
+System_Runtime_InteropServices_CharSet /* System.Runtime.InteropServices.CharSet */
+System_Runtime_InteropServices_StructLayoutAttribute_CharSet_Get(
+	System_Runtime_InteropServices_StructLayoutAttribute_t /* System.Runtime.InteropServices.StructLayoutAttribute */ self
+);
 
-// TODO (Field): CharSet
+void /* System.Void */
+System_Runtime_InteropServices_StructLayoutAttribute_CharSet_Set(
+	System_Runtime_InteropServices_StructLayoutAttribute_t /* System.Runtime.InteropServices.StructLayoutAttribute */ self,
+	System.Runtime.InteropServices.CharSet /* System.Runtime.InteropServices.CharSet */ value
+);
 
 void /* System.Void */
 System_Runtime_InteropServices_StructLayoutAttribute_Destroy(
@@ -11459,9 +11558,15 @@ System_Reflection_ConstructorInfo_GetHashCode(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Field): ConstructorName
+CString /* System.String */
+System_Reflection_ConstructorInfo_ConstructorName_Get(
+	
+);
 
-// TODO (Field): TypeConstructorName
+CString /* System.String */
+System_Reflection_ConstructorInfo_TypeConstructorName_Get(
+	
+);
 
 void /* System.Void */
 System_Reflection_ConstructorInfo_Destroy(
@@ -11534,13 +11639,27 @@ System_Reflection_EventInfo_Destroy(
 #pragma mark - END APIs of System.Reflection.EventAttributes
 
 #pragma mark - BEGIN APIs of System.Reflection.InterfaceMapping
-// TODO (Field): TargetType
+System_Type_t /* System.Type */
+System_Reflection_InterfaceMapping_TargetType_Get(
+	System_Reflection_InterfaceMapping_t /* System.Reflection.InterfaceMapping */ self
+);
 
-// TODO (Field): TargetType
+void /* System.Void */
+System_Reflection_InterfaceMapping_TargetType_Set(
+	System_Reflection_InterfaceMapping_t /* System.Reflection.InterfaceMapping */ self,
+	void* /* System.Type */ value
+);
 
-// TODO (Field): InterfaceType
+System_Type_t /* System.Type */
+System_Reflection_InterfaceMapping_InterfaceType_Get(
+	System_Reflection_InterfaceMapping_t /* System.Reflection.InterfaceMapping */ self
+);
 
-// TODO (Field): InterfaceType
+void /* System.Void */
+System_Reflection_InterfaceMapping_InterfaceType_Set(
+	System_Reflection_InterfaceMapping_t /* System.Reflection.InterfaceMapping */ self,
+	void* /* System.Type */ value
+);
 
 void /* System.Void */
 System_Reflection_InterfaceMapping_Destroy(
@@ -11628,11 +11747,21 @@ NativeAOT_CodeGeneratorInputSample_Person_FullName_Get(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO (Field): DEFAULT_AGE
+int32_t /* System.Int32 */
+NativeAOT_CodeGeneratorInputSample_Person_DEFAULT_AGE_Get(
+	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self
+);
 
-// TODO (Field): DEFAULT_AGE
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_Person_DEFAULT_AGE_Set(
+	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
+	int /* System.Int32 */ value
+);
 
-// TODO (Field): AGE_WHEN_BORN
+int32_t /* System.Int32 */
+NativeAOT_CodeGeneratorInputSample_Person_AGE_WHEN_BORN_Get(
+	
+);
 
 void /* System.Void */
 NativeAOT_CodeGeneratorInputSample_Person_Destroy(
