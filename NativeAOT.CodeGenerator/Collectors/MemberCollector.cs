@@ -124,13 +124,6 @@ public class MemberCollector
             
             return;
         }
-        
-        // bool isPropertyAccessor = methodInfo.DeclaringType?.GetProperties(flags)
-        //     .Any(prop => prop.GetGetMethod() == methodInfo || prop.GetSetMethod() == methodInfo) ?? false;
-        //
-        // if (isPropertyAccessor) {
-        //     return;
-        // }
 
         Type returnType = methodInfo.ReturnType;
 
