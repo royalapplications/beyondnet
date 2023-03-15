@@ -4,6 +4,7 @@ namespace NativeAOT.Core;
 
 public unsafe class NativeDelegate
 {
+    private bool m_trampolineHasBeenSet;
     private WeakReference<Delegate>? m_weakTrampoline;
 
     public Delegate? Trampoline
@@ -20,9 +21,15 @@ public unsafe class NativeDelegate
             return trampoline;
         }
         set {
+            if (m_trampolineHasBeenSet) {
+                throw new Exception("Trampoline can only be set once");
+            }
+            
             m_weakTrampoline = value != null
                 ? new(value) 
                 : null;
+
+            m_trampolineHasBeenSet = true;
         }
     }
     
