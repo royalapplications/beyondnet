@@ -62,7 +62,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         }
         
         string fullTypeName = declaringType.GetFullNameOrName();
-        string fullTypeNameC = fullTypeName.Replace('.', '_');
+        string fullTypeNameC = fullTypeName.CTypeName();
         
         string methodNameC;
 

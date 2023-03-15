@@ -138,9 +138,9 @@ public class TypeDescriptor
                 
                 if (IsReferenceType ||
                     IsStruct) {
-                    cTypeName = $"{typeName.Replace('.', '_')}_t";    
+                    cTypeName = $"{typeName.CTypeName()}_t";    
                 } else if (IsEnum) {
-                    cTypeName = typeName.Replace('.', '_');
+                    cTypeName = typeName.CTypeName();
                 } else {
                     throw new Exception("Unknown kind of type");
                 }
