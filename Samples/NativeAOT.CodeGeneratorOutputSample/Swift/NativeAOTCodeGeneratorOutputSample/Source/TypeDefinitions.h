@@ -1,5 +1,5 @@
 // Number of generated types: 162
-// Number of generated members: 1426
+// Number of generated members: 1524
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
