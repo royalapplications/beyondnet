@@ -28,7 +28,7 @@ public unsafe class NativeDelegate
     
     public void* Context { get; }
     public void* NativeFunction { get; }
-    public delegate* unmanaged<void*, void> NativeDestructorFunction { get; }
+    public delegate* unmanaged<void*, void>? NativeDestructorFunction { get; }
 
     public bool HasTrampolineBeenCollected
     {
@@ -49,7 +49,7 @@ public unsafe class NativeDelegate
     public NativeDelegate(
         void* context,
         void* nativeFunction,
-        delegate* unmanaged<void*, void> nativeDestructorFunction
+        delegate* unmanaged<void*, void>? nativeDestructorFunction
     )
     {
         Context = context;
@@ -83,6 +83,12 @@ public unsafe class NativeDelegate
 
     public void AnnounceReadyToBeDestroyed()
     {
-        NativeDestructorFunction(Context);
+        var destructorFunction = NativeDestructorFunction;
+
+        if (destructorFunction is null) {
+            return;
+        }
+        
+        destructorFunction(Context);
     }
 }
