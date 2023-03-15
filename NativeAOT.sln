@@ -2,8 +2,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NativeAOT.Core", "NativeAOT.Core\NativeAOT.Core.csproj", "{48CEA4C9-5357-480C-AD47-FAB460C95F0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NativeAOT.Generator", "NativeAOT.Generator\NativeAOT.Generator.csproj", "{D8A95121-7351-4F5A-AA57-F00D553D580D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NativeAOT.Bindings.System", "NativeAOT.Bindings.System\NativeAOT.Bindings.System.csproj", "{440E5555-7074-4374-9372-BBECF666760B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{CF88563D-5990-4B38-B18C-4203D57465F9}"
@@ -28,10 +26,6 @@ Global
 		{48CEA4C9-5357-480C-AD47-FAB460C95F0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48CEA4C9-5357-480C-AD47-FAB460C95F0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48CEA4C9-5357-480C-AD47-FAB460C95F0A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D8A95121-7351-4F5A-AA57-F00D553D580D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D8A95121-7351-4F5A-AA57-F00D553D580D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D8A95121-7351-4F5A-AA57-F00D553D580D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D8A95121-7351-4F5A-AA57-F00D553D580D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{440E5555-7074-4374-9372-BBECF666760B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{440E5555-7074-4374-9372-BBECF666760B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{440E5555-7074-4374-9372-BBECF666760B}.Release|Any CPU.ActiveCfg = Release|Any CPU
