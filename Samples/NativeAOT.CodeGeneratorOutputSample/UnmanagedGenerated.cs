@@ -1,5 +1,5 @@
 // Number of generated types: 162
-// Number of generated members: 1565
+// Number of generated members: 1566
 
 // <Header>
 using System;
@@ -43896,6 +43896,33 @@ internal static unsafe class NativeAOT_CodeGeneratorInputSample_Person
 	}
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_Create1")]
+	internal static void* /* NativeAOT.CodeGeneratorInputSample.Person */ NativeAOT_CodeGeneratorInputSample_Person_Create1(byte* /* System.String */ firstName, byte* /* System.String */ lastName, void** /* System.Exception */ __outException)
+	{
+		System.String firstNameDotNet = InteropUtils.ToDotNetString(firstName);
+		System.String lastNameDotNet = InteropUtils.ToDotNetString(lastName);
+	
+	    try {
+			NativeAOT.CodeGeneratorInputSample.Person __returnValue = new NativeAOT.CodeGeneratorInputSample.Person(firstNameDotNet, lastNameDotNet);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_FirstName_Get")]
 	internal static byte* /* System.String */ NativeAOT_CodeGeneratorInputSample_Person_FirstName_Get(void* /* NativeAOT.CodeGeneratorInputSample.Person */ __self, void** /* System.Exception */ __outException)
 	{
@@ -44163,30 +44190,18 @@ internal static unsafe class NativeAOT_CodeGeneratorInputSample_Person
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_DEFAULT_AGE_Get")]
-	internal static int /* System.Int32 */ NativeAOT_CodeGeneratorInputSample_Person_DEFAULT_AGE_Get(void* /* NativeAOT.CodeGeneratorInputSample.Person */ __self)
+	internal static int /* System.Int32 */ NativeAOT_CodeGeneratorInputSample_Person_DEFAULT_AGE_Get()
 	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
 	
-		NativeAOT.CodeGeneratorInputSample.Person __selfDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Person>(__self);
-	
-	
-		System.Int32 __returnValue = __selfDotNet.DEFAULT_AGE;
+		System.Int32 __returnValue = NativeAOT.CodeGeneratorInputSample.Person.DEFAULT_AGE;
 		return __returnValue;
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_DEFAULT_AGE_Set")]
-	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Person_DEFAULT_AGE_Set(void* /* NativeAOT.CodeGeneratorInputSample.Person */ __self, int /* System.Int32 */ __value)
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Person_DEFAULT_AGE_Set(int /* System.Int32 */ __value)
 	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
 	
-		NativeAOT.CodeGeneratorInputSample.Person __selfDotNet = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Person>(__self);
-	
-	
-		__selfDotNet.DEFAULT_AGE = __value;
+		NativeAOT.CodeGeneratorInputSample.Person.DEFAULT_AGE = __value;
 	}
 	
 	

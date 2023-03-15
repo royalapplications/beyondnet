@@ -11,7 +11,7 @@ public enum NiceLevels: uint
 public class Person
 {
     public const int AGE_WHEN_BORN = 0;
-    public int DEFAULT_AGE = AGE_WHEN_BORN;
+    public static int DEFAULT_AGE = AGE_WHEN_BORN;
     
     public string FirstName { get; set; }
     public string LastName { get; set; }
@@ -30,6 +30,16 @@ public class Person
         FirstName = firstName;
         LastName = lastName;
         Age = age;
+    }
+    
+    public Person(
+        string firstName,
+        string lastName
+    )
+    {
+        FirstName = firstName;
+        LastName = lastName;
+        Age = DEFAULT_AGE;
     }
 
     public string GetNiceLevelString()

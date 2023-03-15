@@ -227,14 +227,26 @@ final class NativeAOTCodeGeneratorOutputSampleTests: XCTestCase {
         let expectedWelcomeMessage = "Welcome, \(expectedFullName)! You're \(age) years old and \(expectedNiceLevelString)."
         
         var exception: System_Exception_t?
+        
+        let ageWhenBorn = NativeAOT_CodeGeneratorInputSample_Person_AGE_WHEN_BORN_Get()
+        XCTAssertEqual(0, ageWhenBorn)
+        
+        let defaultAge = NativeAOT_CodeGeneratorInputSample_Person_DEFAULT_AGE_Get()
+        XCTAssertEqual(ageWhenBorn, defaultAge)
+        
+        let newDefaultAge: Int32 = 5
+        NativeAOT_CodeGeneratorInputSample_Person_DEFAULT_AGE_Set(newDefaultAge)
+        
+        let newRetrievedDefaultAge = NativeAOT_CodeGeneratorInputSample_Person_DEFAULT_AGE_Get()
+        XCTAssertEqual(newDefaultAge, newRetrievedDefaultAge)
+        
         var person: NativeAOT_CodeGeneratorInputSample_Person_t?
         
         firstName.withCString { firstNameC in
             lastName.withCString { lastNameC in
-                person = NativeAOT_CodeGeneratorInputSample_Person_Create(firstNameC,
-                                                                          lastNameC,
-                                                                          age,
-                                                                          &exception)
+                person = NativeAOT_CodeGeneratorInputSample_Person_Create1(firstNameC,
+                                                                           lastNameC,
+                                                                           &exception)
             }
         }
         
@@ -248,6 +260,17 @@ final class NativeAOTCodeGeneratorOutputSampleTests: XCTestCase {
         defer {
             NativeAOT_CodeGeneratorInputSample_Person_Destroy(person)
         }
+        
+        let personAge = NativeAOT_CodeGeneratorInputSample_Person_Age_Get(person,
+                                                                          &exception)
+        
+        guard exception == nil else {
+            XCTFail("Person.Age getter should not throw")
+            
+            return
+        }
+        
+        XCTAssertEqual(newDefaultAge, personAge)
         
         NativeAOT_CodeGeneratorInputSample_Person_NiceLevel_Set(person,
                                                                 expectedNiceLevel,
@@ -316,12 +339,22 @@ final class NativeAOTCodeGeneratorOutputSampleTests: XCTestCase {
                                                                              &exception)
         
         guard exception == nil else {
-            XCTFail("Person.Age getter should not throw and return an instance")
+            XCTFail("Person.Age getter should not throw")
             
             return
         }
         
-        XCTAssertEqual(age, retrievedAge)
+        XCTAssertEqual(newDefaultAge, retrievedAge)
+        
+        NativeAOT_CodeGeneratorInputSample_Person_Age_Set(person,
+                                                          age,
+                                                          &exception)
+        
+        guard exception == nil else {
+            XCTFail("Person.Age setter should not throw")
+            
+            return
+        }
         
         let retrievedWelcomeMessageC = NativeAOT_CodeGeneratorInputSample_Person_GetWelcomeMessage(person,
                                                                                                    &exception)
@@ -511,6 +544,26 @@ final class NativeAOTCodeGeneratorOutputSampleTests: XCTestCase {
         }
         
         XCTAssertEqual(equals, .yes)
+        
+        guard let emptyGuid = System_Guid_Empty_Get() else {
+            XCTFail("System.Guid.Empty getter should return an instance")
+            
+            return
+        }
+        
+        guard let emptyGuidStringC = System_Guid_ToString(emptyGuid,
+                                                          &exception),
+              exception == nil else {
+            XCTFail("System.Guid.ToString should not throw and return a string")
+            
+            return
+        }
+        
+        let emptyGuidString = String(cString: emptyGuidStringC)
+        
+        emptyGuidStringC.deallocate()
+        
+        XCTAssertEqual("00000000-0000-0000-0000-000000000000", emptyGuidString)
     }
     
     func testEnum() {
