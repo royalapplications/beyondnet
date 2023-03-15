@@ -42,6 +42,8 @@ static class Program
         } else {
             cOutputPath = null;
         }
+        
+        AppDomain.CurrentDomain.AssemblyResolve += AppDomain_OnAssemblyResolve;
 
         Assembly assembly = Assembly.LoadFrom(assemblyPath);
 
@@ -86,6 +88,63 @@ static class Program
         }
 
         return 0;
+    }
+
+    private static Assembly? AppDomain_OnAssemblyResolve(object? sender, ResolveEventArgs args)
+    {
+        string assemblyFullName = args.Name;
+        AssemblyName assemblyNameObject = new(assemblyFullName);
+        string? assemblyName = assemblyNameObject.Name;
+
+        if (string.IsNullOrEmpty(assemblyName)) {
+            return null;
+        }
+
+        if (!assemblyName.EndsWith(".dll", StringComparison.InvariantCultureIgnoreCase)) {
+            assemblyName += ".dll";
+        }
+        
+        try {
+            return Assembly.LoadFrom(assemblyName);
+        } catch {
+            var searchPaths = GetAssemblySearchPaths();
+
+            foreach (var searchPath in searchPaths) {
+                string potentialAssemblyPath = Path.Combine(
+                    searchPath,
+                    assemblyName
+                );
+
+                try {
+                    return Assembly.LoadFrom(potentialAssemblyPath);
+                } catch {
+                    // ignored
+                }
+            }
+        }
+
+        return null;
+    }
+
+    private static IEnumerable<string> GetAssemblySearchPaths()
+    {
+        List<string> searchPaths = new() {
+            Environment.CurrentDirectory
+        };
+
+        string? processPath = Environment.ProcessPath;
+
+        if (!string.IsNullOrEmpty(processPath)) {
+            string? processDirectoryPath = Path.GetDirectoryName(processPath);
+    
+            if (!string.IsNullOrEmpty(processDirectoryPath)) {
+                if (!searchPaths.Contains(processDirectoryPath)) {
+                    searchPaths.Add(processDirectoryPath);
+                }
+            }
+        }
+
+        return searchPaths;
     }
 
     private static Tuple<Result, string> GenerateCSharpUnmanagedCode(
