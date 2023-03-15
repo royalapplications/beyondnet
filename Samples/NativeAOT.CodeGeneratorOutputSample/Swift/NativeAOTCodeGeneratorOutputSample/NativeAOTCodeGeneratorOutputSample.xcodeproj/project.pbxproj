@@ -15,7 +15,9 @@
 		E70D117F29C0593C00B4E738 /* NativeAOT.CodeGeneratorOutputSample.dylib in Copy Libraries */ = {isa = PBXBuildFile; fileRef = E70D116A29BF9FCC00B4E738 /* NativeAOT.CodeGeneratorOutputSample.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		E70D118129C0598F00B4E738 /* NativeAOT.CodeGeneratorOutputSample.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E70D116A29BF9FCC00B4E738 /* NativeAOT.CodeGeneratorOutputSample.dylib */; };
 		E736639329BFCB2600B6DEE2 /* NativeAOT.CodeGeneratorOutputSample.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = E70D116A29BF9FCC00B4E738 /* NativeAOT.CodeGeneratorOutputSample.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		E7C8CF0029C1FA1800C4230F /* SystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CEFF29C1FA1800C4230F /* SystemTests.swift */; };
+		E7C8CF0529C1FA9500C4230F /* SystemGuidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0429C1FA9500C4230F /* SystemGuidTests.swift */; };
+		E7C8CF0729C1FABA00C4230F /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0629C1FABA00C4230F /* StringTests.swift */; };
+		E7C8CF0929C1FB0800C4230F /* SystemDateTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0829C1FB0800C4230F /* SystemDateTimeTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +62,9 @@
 		E70D116A29BF9FCC00B4E738 /* NativeAOT.CodeGeneratorOutputSample.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = NativeAOT.CodeGeneratorOutputSample.dylib; sourceTree = "<group>"; };
 		E70D117229BF9FEC00B4E738 /* NativeAOTCodeGeneratorOutputSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NativeAOTCodeGeneratorOutputSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E70D117429BF9FEC00B4E738 /* TestClassesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClassesTests.swift; sourceTree = "<group>"; };
-		E7C8CEFF29C1FA1800C4230F /* SystemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemTests.swift; sourceTree = "<group>"; };
+		E7C8CF0429C1FA9500C4230F /* SystemGuidTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemGuidTests.swift; sourceTree = "<group>"; };
+		E7C8CF0629C1FABA00C4230F /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
+		E7C8CF0829C1FB0800C4230F /* SystemDateTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemDateTimeTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,8 +110,7 @@
 		E70D115F29BF9F2600B4E738 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				E7C8CEFF29C1FA1800C4230F /* SystemTests.swift */,
-				E70D117429BF9FEC00B4E738 /* TestClassesTests.swift */,
+				E7C8CF0129C1FA6C00C4230F /* Tests */,
 				E70D116829BF9F7E00B4E738 /* TypeDefinitions.h */,
 				E70D116029BF9F2600B4E738 /* NativeAOTCodeGeneratorOutputSample.h */,
 			);
@@ -119,6 +122,33 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E7C8CF0129C1FA6C00C4230F /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				E7C8CF0229C1FA7800C4230F /* System */,
+				E7C8CF0329C1FA7B00C4230F /* TestClasses */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		E7C8CF0229C1FA7800C4230F /* System */ = {
+			isa = PBXGroup;
+			children = (
+				E7C8CF0429C1FA9500C4230F /* SystemGuidTests.swift */,
+				E7C8CF0629C1FABA00C4230F /* StringTests.swift */,
+				E7C8CF0829C1FB0800C4230F /* SystemDateTimeTests.swift */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		E7C8CF0329C1FA7B00C4230F /* TestClasses */ = {
+			isa = PBXGroup;
+			children = (
+				E70D117429BF9FEC00B4E738 /* TestClassesTests.swift */,
+			);
+			path = TestClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,7 +294,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7C8CF0029C1FA1800C4230F /* SystemTests.swift in Sources */,
+				E7C8CF0529C1FA9500C4230F /* SystemGuidTests.swift in Sources */,
+				E7C8CF0929C1FB0800C4230F /* SystemDateTimeTests.swift in Sources */,
+				E7C8CF0729C1FABA00C4230F /* StringTests.swift in Sources */,
 				E70D117D29BFA01300B4E738 /* TestClassesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -611,4 +611,33 @@ final class TestClassesTests: XCTestCase {
         
         XCTAssertEqual(CBool.yes, firstChildEqualsSon)
     }
+    
+    func testEnum() {
+        var exception: System_Exception_t?
+        
+        let enumValue = NativeAOT_CodeGeneratorInputSample_TestEnum.secondCase
+        
+        let enumNameC = NativeAOT_CodeGeneratorInputSample_TestClass_GetTestEnumName(enumValue,
+                                                                                     &exception)
+        
+        guard exception == nil else {
+            XCTFail("Should not throw")
+            
+            return
+        }
+        
+        guard let enumNameC else {
+            XCTFail("Should have enum name")
+            
+            return
+        }
+        
+        defer {
+            enumNameC.deallocate()
+        }
+        
+        let enumName = String(cString: enumNameC)
+        
+        XCTAssertEqual("SecondCase", enumName)
+    }
 }
