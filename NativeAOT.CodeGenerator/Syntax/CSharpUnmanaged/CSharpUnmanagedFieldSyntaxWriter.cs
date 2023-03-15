@@ -19,7 +19,7 @@ public class CSharpUnmanagedFieldSyntaxWriter: CSharpUnmanagedMethodSyntaxWriter
         Type declaringType = field.DeclaringType ?? throw new Exception("No declaring type");
         Type fieldType = field.FieldType;
         
-        const bool mayThrow = true;
+        const bool mayThrow = false;
         bool isStatic = field.IsStatic;
         
         bool canSet = !field.IsLiteral &&
