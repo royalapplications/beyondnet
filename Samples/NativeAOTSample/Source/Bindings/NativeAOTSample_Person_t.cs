@@ -209,7 +209,11 @@ internal static unsafe class NativeAOTSample_Person_t
             return CStatus.Failure;
         }
         
-        NativeDelegate? nativeDelegate = InteropUtils.GetInstance<NativeDelegate>(nativeDelegateHandleAddress);
+        Console.WriteLine("ChangeAgeNew 01");
+        
+        CDelegate? nativeDelegate = InteropUtils.GetInstance<CDelegate>(nativeDelegateHandleAddress);
+        
+        Console.WriteLine("ChangeAgeNew 02");
 
         if (nativeDelegate == null) {
             if (outException is not null) {
@@ -218,25 +222,43 @@ internal static unsafe class NativeAOTSample_Person_t
             
             return CStatus.Failure;
         }
+        
+        Console.WriteLine("ChangeAgeNew 03");
 
         void* context = nativeDelegate.Context;
-        void* nativeFunction = nativeDelegate.NativeFunction;
+        void* nativeFunction = nativeDelegate.CFunction;
+        
+        Console.WriteLine("ChangeAgeNew 04");
         
         Func<int> trampoline = () => {
+            Console.WriteLine("ChangeAgeNew (inside trampoline) 01");
+            
             delegate* unmanaged<void*, int> nativeFunctionPointer = (delegate* unmanaged<void*, int>)nativeFunction;
+            
+            Console.WriteLine("ChangeAgeNew (inside trampoline) 02");
 
             int returnValue = nativeFunctionPointer(context);
+            
+            Console.WriteLine("ChangeAgeNew (inside trampoline) 03");
 
             return returnValue;
         };
+        
+        Console.WriteLine("ChangeAgeNew 05");
 
         nativeDelegate.Trampoline = trampoline;
         
+        Console.WriteLine("ChangeAgeNew 06");
+        
         instance.ChangeAge(trampoline);
+        
+        Console.WriteLine("ChangeAgeNew 07");
 
         if (outException is not null) {
             *outException = null;
         }
+        
+        Console.WriteLine("ChangeAgeNew 08");
             
         return CStatus.Success;
     }

@@ -39,4 +39,8 @@ CStatus NativeAOTSample_Person_ChangeAge(NativeAOTSample_Person_t instance,
 										 NativeAOTSample_Person_ChangeAge_NewAgeProvider_t newAgeProvider,
 										 System_Exception_t* exception);
 
+CStatus NativeAOTSample_Person_ChangeAgeNew(NativeAOTSample_Person_t instance,
+                                            const void* newAgeProvider,
+                                            System_Exception_t* exception);
+
 #endif /* NativeAOTSample_Person_h */

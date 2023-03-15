@@ -2,7 +2,7 @@ using System.Runtime.InteropServices;
 
 namespace NativeAOT.Core;
 
-public unsafe class NativeDelegate
+public unsafe class CDelegate
 {
     private bool m_trampolineHasBeenSet;
     private WeakReference<Delegate>? m_weakTrampoline;
@@ -34,8 +34,8 @@ public unsafe class NativeDelegate
     }
     
     public void* Context { get; }
-    public void* NativeFunction { get; }
-    public delegate* unmanaged<void*, void> NativeDestructorFunction { get; }
+    public void* CFunction { get; }
+    public delegate* unmanaged<void*, void> CDestructorFunction { get; }
 
     public bool HasTrampolineBeenCollected
     {
@@ -53,30 +53,30 @@ public unsafe class NativeDelegate
         }
     }
 
-    public NativeDelegate(
+    public CDelegate(
         void* context,
-        void* nativeFunction,
-        delegate* unmanaged<void*, void> nativeDestructorFunction
+        void* cFunction,
+        delegate* unmanaged<void*, void> cDestructorFunction
     )
     {
         Context = context;
-        NativeFunction = nativeFunction;
-        NativeDestructorFunction = nativeDestructorFunction;
+        CFunction = cFunction;
+        CDestructorFunction = cDestructorFunction;
         
-        NativeDelegateTracker.Shared.Add(this);
+        CDelegateTracker.Shared.Add(this);
     }
 
-    [UnmanagedCallersOnly(EntryPoint = "NativeAOT_Core_NativeDelegate_Create")]
+    [UnmanagedCallersOnly(EntryPoint = "NativeAOT_Core_CDelegate_Create")]
     public static void* Create(
         void* context,
-        void* nativeFunction,
-        delegate* unmanaged<void*, void> nativeDestructorFunction
+        void* cFunction,
+        delegate* unmanaged<void*, void> cDestructorFunction
     )
     {
-        NativeDelegate self = new(
+        CDelegate self = new(
             context,
-            nativeFunction,
-            nativeDestructorFunction
+            cFunction,
+            cDestructorFunction
         );
 
         void* handleAddress = self.AllocateGCHandleAndGetAddress();
@@ -84,7 +84,7 @@ public unsafe class NativeDelegate
         return handleAddress;
     }
 
-    [UnmanagedCallersOnly(EntryPoint = "NativeAOT_Core_NativeDelegate_Destroy")]
+    [UnmanagedCallersOnly(EntryPoint = "NativeAOT_Core_CDelegate_Destroy")]
     public static void Destroy(void* __self)
     {
         InteropUtils.FreeIfAllocated(__self);
@@ -92,7 +92,7 @@ public unsafe class NativeDelegate
 
     public void AnnounceReadyToBeDestroyed()
     {
-        var destructorFunction = NativeDestructorFunction;
+        var destructorFunction = CDestructorFunction;
 
         if (destructorFunction is null) {
             return;
