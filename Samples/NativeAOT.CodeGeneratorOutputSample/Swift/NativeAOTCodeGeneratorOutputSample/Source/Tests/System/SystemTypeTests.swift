@@ -31,4 +31,40 @@ final class SystemTypeTests: XCTestCase {
 		
 		XCTAssertEqual(systemObjectTypeName, retrievedSystemObjectTypeName)
 	}
+	
+	func testInvalidType() {
+		var exception: System_Exception_t?
+		
+		let invalidTypeName = "! This.Type.Surely.Does.Not.Exist !"
+		
+		let invalidType = System_Type_GetType1(invalidTypeName,
+											   .yes,
+											   &exception)
+		
+		XCTAssertNil(invalidType)
+		
+		guard let exception else {
+			XCTFail("System.Type.GetType should throw")
+			
+			return
+		}
+		
+		defer { System_Exception_Destroy(exception) }
+		
+		var exception2: System_Exception_t?
+		
+		guard let exceptionMessageC = System_Exception_Message_Get(exception,
+																   &exception2),
+			  exception2 == nil else {
+			XCTFail("System.Exception.Message getter should not throw and return an instance of a C String")
+			
+			return
+		}
+		
+		defer { exceptionMessageC.deallocate() }
+		
+		let exceptionMessage = String(cString: exceptionMessageC)
+		
+		XCTAssertTrue(exceptionMessage.contains("The type \'\(invalidTypeName)\' cannot be found"))
+	}
 }
