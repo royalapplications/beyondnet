@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace NativeAOT.Core;
 
-public unsafe class CDelegate
+public sealed unsafe class CDelegate
 {
     #region Constants
     private const string NAMESPACE = "NativeAOT_Core";

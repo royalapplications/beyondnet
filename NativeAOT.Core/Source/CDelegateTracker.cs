@@ -4,36 +4,23 @@ using Timer = System.Timers.Timer;
 
 namespace NativeAOT.Core;
 
-public class CDelegateTracker: IDisposable
+public sealed class CDelegateTracker: IDisposable
 {
-    private const double INTERVAL = 5 // second(s) 
-                                    * 1000.0;
+    private const double DEFAULT_INTERVAL = 5 // second(s) 
+                                            * 1000.0;
 
     private readonly ConcurrentDictionary<CDelegate, object?> m_cDelegates = new();
     private Timer? m_timer;
+    
+    private static readonly Lazy<CDelegateTracker> m_shared = new(() => 
+        new(DEFAULT_INTERVAL)
+    );
+    
+    public static CDelegateTracker Shared => m_shared.Value;
 
-    private static CDelegateTracker? m_shared;
-    public static CDelegateTracker Shared
+    private CDelegateTracker(double intervalInMilliseconds)
     {
-        get {
-            CDelegateTracker tracker;
-
-            CDelegateTracker? existingTracker = m_shared;
-            
-            if (existingTracker == null) {
-                tracker = new();
-                m_shared = tracker;
-            } else {
-                tracker = existingTracker;
-            }
-
-            return tracker;
-        }
-    }
-
-    private CDelegateTracker()
-    {
-        Timer timer = new(INTERVAL);
+        Timer timer = new(intervalInMilliseconds);
         timer.Elapsed += Timer_Elapsed;
         
         timer.Start();
@@ -51,7 +38,7 @@ public class CDelegateTracker: IDisposable
         m_cDelegates[cDelegate] = null;
     }
 
-    public void Clean()
+    private void Clean()
     {
         // Console.WriteLine("Cleaning C Delegates...");
 
