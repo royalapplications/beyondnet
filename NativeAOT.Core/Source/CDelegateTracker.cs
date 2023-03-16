@@ -1,3 +1,4 @@
+using System.Collections.Concurrent;
 using System.Timers;
 using Timer = System.Timers.Timer;
 
@@ -7,8 +8,7 @@ public class CDelegateTracker: IDisposable
 {
     private const double INTERVAL = 1.0;
 
-    private readonly object m_lock = new();
-    private List<CDelegate> m_cDelegates = new();
+    private readonly ConcurrentDictionary<CDelegate, object> m_cDelegates = new();
     private Timer? m_timer;
 
     private static CDelegateTracker? m_shared;
@@ -47,50 +47,43 @@ public class CDelegateTracker: IDisposable
 
     public void Add(CDelegate cDelegate)
     {
-        lock (m_lock) {
-            if (m_cDelegates.Contains(cDelegate)) {
-                return;
-            }
-
-            m_cDelegates.Add(cDelegate);
-        }
+        m_cDelegates[cDelegate] = new object();
     }
 
     public void Clean()
     {
-        lock (m_lock) {
-            // Console.WriteLine("Cleaning C Delegates...");
+        // Console.WriteLine("Cleaning C Delegates...");
 
-            List<CDelegate> cDelegatesToRemove = new();
+        var collectedCDelegates = m_cDelegates.Select(kvp => 
+            kvp.Key.HasTrampolineBeenCollected 
+                ? kvp.Key 
+                : null
+        );
 
-            List<CDelegate> cDelegates = m_cDelegates.ToList();
+        HashSet<CDelegate> removedCDelegates = new();
 
-            foreach (var cDelegate in cDelegates) {
-                bool hasBeenCollected = cDelegate.HasTrampolineBeenCollected;
-
-                if (hasBeenCollected) {
-                    cDelegatesToRemove.Add(cDelegate);
-                }
+        foreach (var cDelegate in collectedCDelegates) {
+            if (cDelegate == null) {
+                continue;
             }
 
-            foreach (var cDelegate in cDelegatesToRemove) {
-                cDelegates.Remove(cDelegate);
+            if (m_cDelegates.TryRemove(cDelegate, out _)) {
+                removedCDelegates.Add(cDelegate);
             }
-
-            m_cDelegates = cDelegates;
-
-            foreach (var cDelegate in cDelegatesToRemove) {
-                // Console.WriteLine("Announcing that C Delegate is ready to be destroyed");
-                
-                cDelegate.AnnounceReadyToBeDestroyed();
-            }
+        }
+        
+        foreach (var cDelegate in removedCDelegates) {
+            // Console.WriteLine("Announcing that C Delegate is ready to be destroyed");
+            
+            cDelegate.AnnounceReadyToBeDestroyed();
         }
     }
 
     public void Dispose()
     {
         m_timer?.Stop();
-        m_timer?.Dispose(); 
+        m_timer?.Dispose();
+        
         m_timer = null;
     }
 }

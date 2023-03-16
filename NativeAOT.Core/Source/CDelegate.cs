@@ -12,6 +12,7 @@ public unsafe class CDelegate
     #endregion Constants
     
     private bool m_trampolineHasBeenSet;
+    private bool m_readyForDestructionHasBeenAnnounced;
     private WeakReference<Delegate>? m_weakTrampoline;
 
     public Delegate? Trampoline
@@ -32,12 +33,12 @@ public unsafe class CDelegate
                 throw new Exception("Trampoline can only be set once");
             }
             
+            m_trampolineHasBeenSet = true;
+            
             m_weakTrampoline = value != null
                 ? new(value) 
                 : null;
 
-            m_trampolineHasBeenSet = true;
-            
             CDelegateTracker.Shared.Add(this);
         }
     }
@@ -75,6 +76,12 @@ public unsafe class CDelegate
     
     public void AnnounceReadyToBeDestroyed()
     {
+        if (m_readyForDestructionHasBeenAnnounced) {
+            return;
+        }
+
+        m_readyForDestructionHasBeenAnnounced = true;
+        
         var destructorFunction = CDestructorFunction;
 
         if (destructorFunction is null) {
