@@ -36,6 +36,8 @@ public sealed class CDelegateTracker: IDisposable
     public void Add(CDelegate cDelegate)
     {
         m_cDelegates[cDelegate] = null;
+        
+        // Console.WriteLine($"A new C Delegate has been added to tracker. The current total number of tracked delegates is {m_cDelegates.Count}.");
     }
 
     private void Clean()
@@ -65,6 +67,8 @@ public sealed class CDelegateTracker: IDisposable
             
             cDelegate.AnnounceReadyToBeDestroyed();
         }
+        
+        // Console.WriteLine($"C Delegate tracker has been cleaned. The current total number of tracked delegates is {m_cDelegates.Count}.");
     }
 
     public void Dispose()
@@ -73,5 +77,7 @@ public sealed class CDelegateTracker: IDisposable
         m_timer?.Dispose();
         
         m_timer = null;
+        
+        Clean();
     }
 }
