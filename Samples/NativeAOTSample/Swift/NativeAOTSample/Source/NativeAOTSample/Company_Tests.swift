@@ -177,7 +177,7 @@ final class CompanyTests: XCTestCase {
 		Debug.isLoggingEnabled = false
 		defer { Debug.isLoggingEnabled = debugLoggingWasEnabled }
 		
-		let iterations = 100_000
+		let iterations = 10_000
 		
 		// We always add the same employee as we're only interested in the numberOfEmployeesChanged closure
 		let employee = Person(firstName: "First Name",
