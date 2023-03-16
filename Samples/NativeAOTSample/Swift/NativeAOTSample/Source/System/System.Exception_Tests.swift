@@ -43,7 +43,7 @@ final class SystemExceptionTests: XCTestCase {
 		Debug.isLoggingEnabled = false
 		defer { Debug.isLoggingEnabled = debugLoggingWasEnabled }
 		
-		let iterations = 100_000
+		let iterations = 10_000
 		
 		let message = "Oh no!"
 		

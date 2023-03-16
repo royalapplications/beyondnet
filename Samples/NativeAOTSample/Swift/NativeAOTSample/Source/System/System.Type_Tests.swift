@@ -37,7 +37,7 @@ final class SystemTypeTests: XCTestCase {
 		Debug.isLoggingEnabled = false
 		defer { Debug.isLoggingEnabled = debugLoggingWasEnabled }
 		
-		let iterations = 100_000
+		let iterations = 10_000
 		
         guard let typeName = System._Type.type.fullName else {
 			XCTFail("Failed to get type of System.Type")

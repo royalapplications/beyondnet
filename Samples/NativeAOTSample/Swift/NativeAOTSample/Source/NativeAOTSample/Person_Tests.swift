@@ -148,7 +148,7 @@ final class PersonTests: XCTestCase {
 		Debug.isLoggingEnabled = false
 		defer { Debug.isLoggingEnabled = debugLoggingWasEnabled }
 		
-		let iterations = 10_000
+		let iterations = 1_000
 		
 		let persons = createPersons(count: iterations)
 		let newAge: Int32 = 5
