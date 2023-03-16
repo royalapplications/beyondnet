@@ -34,9 +34,9 @@ CStatus NativeAOTSample_Person_ReduceAge(NativeAOTSample_Person_t instance,
 // Sample API for demonstrating non-escaping closures
 typedef int32_t (*NativeAOTSample_Person_ChangeAge_NewAgeProvider_t)(const void* context);
 
-const NativeAOT_Core_CDelegate_t NativeAOTSample_Person_NewAgeProvider_Create(const void* context,
-																			  const NativeAOTSample_Person_ChangeAge_NewAgeProvider_t newAgeProvider,
-																			  const NativeAOTSample_CDelegate_Destructor_t destructorFunction);
+const NativeAOT_Core_CDelegate_t NativeAOTSample_Person_ChangeAge_NewAgeProvider_Create(const void* context,
+																						const NativeAOTSample_Person_ChangeAge_NewAgeProvider_t newAgeProvider,
+																						const NativeAOTSample_CDelegate_Destructor_t destructorFunction);
 
 CStatus NativeAOTSample_Person_ChangeAge(NativeAOTSample_Person_t instance,
 										 const NativeAOT_Core_CDelegate_t newAgeProvider,

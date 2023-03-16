@@ -2,10 +2,14 @@ import Foundation
 
 final class NativeBox<T> {
     let value: T
-    
+	
     init(value: T) {
         self.value = value
     }
+	
+	convenience init(_ value: T) {
+		self.init(value: value)
+	}
 	
 	deinit {
 		Debug.log("Deinitializing \(Self.self)")

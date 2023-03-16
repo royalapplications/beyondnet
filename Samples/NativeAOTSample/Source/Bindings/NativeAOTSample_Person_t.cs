@@ -192,8 +192,8 @@ internal static unsafe class NativeAOTSample_Person_t
     }
     
     // Sample API for demonstrating non-escaping closures
-    [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "NewAgeProvider_Create")]
-    internal static void* /* CDelegate */ NewAgeProvider_Create(
+    [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "ChangeAge_NewAgeProvider_Create")]
+    internal static void* /* CDelegate */ ChangeAge_NewAgeProvider_Create(
         void* context,
         delegate* unmanaged<void*, int> cFunction,
         delegate* unmanaged<void*, void> cDestructorFunction

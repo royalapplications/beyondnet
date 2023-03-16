@@ -314,7 +314,7 @@ private extension AppDelegate {
 		
 		let newAge: Int32 = 10
 		
-		let newAgeProvider: Person.ChangeAgeNewAgeProvider = {
+		let newAgeProvider: Person.ChangeAgeNewAgeProvider.FunctionType = {
 			newAge
 		}
 		

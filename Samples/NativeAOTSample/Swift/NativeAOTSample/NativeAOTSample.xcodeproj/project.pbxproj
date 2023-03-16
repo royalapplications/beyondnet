@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E70A1FAB29C357DB00843CD0 /* Person.ChangeAgeNewAgeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A1FAA29C357DB00843CD0 /* Person.ChangeAgeNewAgeProvider.swift */; };
 		E70D118329C1F54400B4E738 /* SystemNamespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70D118229C1F54400B4E738 /* SystemNamespace.swift */; };
 		E716200029A66CC000D45FCD /* CommonTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = E7161FFF29A66CBB00D45FCD /* CommonTypes.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		E716200229A6795D00D45FCD /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = E716200129A6795D00D45FCD /* Debug.swift */; };
@@ -75,6 +76,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E70A1FAA29C357DB00843CD0 /* Person.ChangeAgeNewAgeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.ChangeAgeNewAgeProvider.swift; sourceTree = "<group>"; };
 		E70D118229C1F54400B4E738 /* SystemNamespace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemNamespace.swift; sourceTree = "<group>"; };
 		E7161FFF29A66CBB00D45FCD /* CommonTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonTypes.h; sourceTree = "<group>"; };
 		E716200129A6795D00D45FCD /* Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 			children = (
 				E7C8CF1229C2531A00C4230F /* CDelegate.swift */,
 				E7E26AC529A63147005334CF /* Person.swift */,
+				E70A1FAA29C357DB00843CD0 /* Person.ChangeAgeNewAgeProvider.swift */,
 				E7E9D57829A766A2002C3834 /* Person_Tests.swift */,
 				E7E26AC829A668F8005334CF /* Company.swift */,
 				E7E9D57A29A768F7002C3834 /* Company_Tests.swift */,
@@ -448,6 +451,7 @@
 			files = (
 				E7BC395829A7BEF500806ADD /* System.GC.swift in Sources */,
 				E716C71429AF71470099E179 /* CBool.swift in Sources */,
+				E70A1FAB29C357DB00843CD0 /* Person.ChangeAgeNewAgeProvider.swift in Sources */,
 				E7BC395429A7B95200806ADD /* System.Exception.Error.swift in Sources */,
 				E7BBE57829B0DF3000394855 /* CompanySerializer.swift in Sources */,
 				E7BC394E29A7A8BC00806ADD /* System.Exception.swift in Sources */,

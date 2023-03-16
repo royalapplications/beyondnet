@@ -143,70 +143,17 @@ public extension Person {
 	}
 	
 	// Sample API for demonstrating non-escaping closures
-    typealias ChangeAgeNewAgeProvider = () -> Int32
-	
-	func createNewAgeProvider(context: UnsafeRawPointer?,
-							  newAgeProvider: NativeAOTSample_Person_ChangeAge_NewAgeProvider_t,
-							  destructorFunction: NativeAOTSample_CDelegate_Destructor_t?) -> CDelegate {
-		let handle = NativeAOTSample_Person_NewAgeProvider_Create(context,
-																  newAgeProvider,
-																  destructorFunction)
-		
-		guard let handle else {
-			fatalError("Failed to create CDelegate")
-		}
-		
-		let cDelegate = CDelegate(handle: handle)
-		
-		return cDelegate
-	}
-    
-	func changeAge(_ newAgeProvider: ChangeAgeNewAgeProvider?) throws {
+	func changeAge(_ newAgeProvider: ChangeAgeNewAgeProvider.FunctionType?) throws {
         var exceptionHandle: System_Exception_t?
 		
-		let closureBox: NativeBox<ChangeAgeNewAgeProvider>?
-		var handler: NativeAOTSample_Person_ChangeAge_NewAgeProvider_t?
+		let newAgeProviderDelegate: ChangeAgeNewAgeProvider?
 		
 		if let newAgeProvider {
-			closureBox = .init(value: newAgeProvider)
-			
-			handler = { innerContext in
-				guard let innerContext else {
-					fatalError("No context")
-				}
-				
-				let innerClosure = NativeBox<ChangeAgeNewAgeProvider>.fromPointer(innerContext).value
-				
-				let result = innerClosure()
-				
-				return result
-			}
-		} else {
-			closureBox = nil
-			handler = nil
-		}
-		
-		let context = closureBox?.retainedPointer()
-		
-		let newAgeProviderDelegate: CDelegate?
-		
-		if let handler {
-			newAgeProviderDelegate = createNewAgeProvider(context: context,
-														  newAgeProvider: handler) { innerContext in
-				guard let innerContext else {
-					fatalError("No context")
-				}
-				
-				let innerClosureBox = NativeBox<ChangeAgeNewAgeProvider>.fromPointer(innerContext)
-				
-				Debug.log("Destroying CDelegate")
-				
-				innerClosureBox.release(innerContext)
-			}
+			newAgeProviderDelegate = .init(newAgeProvider)
 		} else {
 			newAgeProviderDelegate = nil
 		}
-        
+		
 		let success = NativeAOTSample_Person_ChangeAge(handle,
 													   newAgeProviderDelegate?.handle,
 													   &exceptionHandle).boolValue
