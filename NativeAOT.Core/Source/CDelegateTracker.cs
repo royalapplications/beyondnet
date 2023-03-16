@@ -5,6 +5,8 @@ namespace NativeAOT.Core;
 
 public class CDelegateTracker: IDisposable
 {
+    private const double INTERVAL = 0.1;
+    
     private List<CDelegate> m_cDelegates = new();
     private Timer? m_timer;
 
@@ -29,8 +31,10 @@ public class CDelegateTracker: IDisposable
 
     private CDelegateTracker()
     {
-        Timer timer = new(1.0);
+        Timer timer = new(INTERVAL);
         timer.Elapsed += Timer_Elapsed;
+        
+        timer.Start();
 
         m_timer = timer;
     }
@@ -51,6 +55,8 @@ public class CDelegateTracker: IDisposable
 
     public void Clean()
     {
+        Console.WriteLine("Cleaning C Delegates...");
+        
         List<CDelegate> cDelegatesToRemove = new();
 
         List<CDelegate> cDelegates = m_cDelegates.ToList();
@@ -76,6 +82,7 @@ public class CDelegateTracker: IDisposable
 
     public void Dispose()
     {
+        m_timer?.Stop();
         m_timer?.Dispose(); 
         m_timer = null;
     }

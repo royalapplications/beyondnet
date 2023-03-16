@@ -334,9 +334,19 @@ private extension AppDelegate {
 			} catch {
 				fatalError("An error occurred while changing the age of an employee: \(error)")
 			}
+			
+			// TODO: Just for testing new delegate impl
+			do {
+				try employee.changeAgeNew()
+			} catch {
+				fatalError("An error occurred while changing the age of an employee: \(error)")
+			}
 		}
 		
 		let formattedDelta = formattedDateDelta(startDate: startDate)
+		
+		// TODO: Just for testing new delegate impl
+		System.GC.collect()
 		
 		DispatchQueue.main.async { [weak self] in
 			guard let self else { return }

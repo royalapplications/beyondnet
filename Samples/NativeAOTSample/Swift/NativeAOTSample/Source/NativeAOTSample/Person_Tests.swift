@@ -195,18 +195,15 @@ final class PersonTests: XCTestCase {
     typealias ChangeAgeNewAgeProvider = @convention(c) () -> Int32
     
     func testCDelegates() {
-        // TODO
-//        let person = Person(firstName: "John",
-//                            lastName: "Doe",
-//                            age: 24)
-//
-//        do {
-//            try person.changeAgeNew { _ in
-//                return 1
-//            }
-//        } catch {
-//            XCTFail("Should not throw")
-//        }
+        let person = Person(firstName: "John",
+                            lastName: "Doe",
+                            age: 24)
+
+        do {
+            try person.changeAgeNew()
+        } catch {
+            XCTFail("Should not throw")
+        }
     }
 }
 

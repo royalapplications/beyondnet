@@ -200,7 +200,7 @@ internal static unsafe class NativeAOTSample_Person_t
     )
     {
         Person? instance = InteropUtils.GetInstance<Person>(handleAddress);
-
+        
         if (instance is null) {
             if (outException is not null) {
                 *outException = null;
@@ -214,7 +214,7 @@ internal static unsafe class NativeAOTSample_Person_t
         CDelegate? nativeDelegate = InteropUtils.GetInstance<CDelegate>(nativeDelegateHandleAddress);
         
         Console.WriteLine("ChangeAgeNew 02");
-
+        
         if (nativeDelegate == null) {
             if (outException is not null) {
                 *outException = null;
@@ -224,28 +224,26 @@ internal static unsafe class NativeAOTSample_Person_t
         }
         
         Console.WriteLine("ChangeAgeNew 03");
-
+        
         void* context = nativeDelegate.Context;
-        void* nativeFunction = nativeDelegate.CFunction;
+        delegate* unmanaged<void*, int> nativeFunction = (delegate* unmanaged<void*, int>)nativeDelegate.CFunction;
         
         Console.WriteLine("ChangeAgeNew 04");
-        
+
         Func<int> trampoline = () => {
             Console.WriteLine("ChangeAgeNew (inside trampoline) 01");
             
-            delegate* unmanaged<void*, int> nativeFunctionPointer = (delegate* unmanaged<void*, int>)nativeFunction;
-            
             Console.WriteLine("ChangeAgeNew (inside trampoline) 02");
-
-            int returnValue = nativeFunctionPointer(context);
+        
+            int returnValue = nativeFunction(context);
             
             Console.WriteLine("ChangeAgeNew (inside trampoline) 03");
-
+        
             return returnValue;
         };
         
         Console.WriteLine("ChangeAgeNew 05");
-
+        
         nativeDelegate.Trampoline = trampoline;
         
         Console.WriteLine("ChangeAgeNew 06");
@@ -253,7 +251,7 @@ internal static unsafe class NativeAOTSample_Person_t
         instance.ChangeAge(trampoline);
         
         Console.WriteLine("ChangeAgeNew 07");
-
+        
         if (outException is not null) {
             *outException = null;
         }
