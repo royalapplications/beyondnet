@@ -195,7 +195,7 @@ internal static unsafe class NativeAOTSample_Person_t
     [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "ChangeAgeNew")]
     internal static CStatus ChangeAgeNew(
         void* handleAddress,
-        void* nativeDelegateHandleAddress,
+        void* newAgeProviderNativeDelegateHandleAddress,
         void** outException
     )
     {
@@ -208,57 +208,62 @@ internal static unsafe class NativeAOTSample_Person_t
             
             return CStatus.Failure;
         }
+
+        try {
+            CDelegate? nativeDelegate = InteropUtils.GetInstance<CDelegate>(newAgeProviderNativeDelegateHandleAddress);
+
+            void* context;
+            delegate* unmanaged<void*, int> nativeFunction;
+
+            if (nativeDelegate is not null) {
+                if (nativeDelegate.Context is not null) {
+                    context = nativeDelegate.Context;
+                } else {
+                    context = null;
+                }
+    
+                if (nativeDelegate.CFunction is not null) {
+                    nativeFunction = (delegate* unmanaged<void*, int>)nativeDelegate.CFunction;
+                } else {
+                    nativeFunction = null;
+                }
+            } else {
+                context = null;
+                nativeFunction = null;
+            }
+
+            Func<int>? trampoline;
+
+            if (nativeFunction is not null) {
+                trampoline = () => {
+                    int returnValue = nativeFunction(context);
+                
+                    return returnValue;
+                };
+            } else {
+                trampoline = null;
+            }
         
-        Console.WriteLine("ChangeAgeNew 01");
+            if (nativeDelegate is not null) {
+                nativeDelegate.Trampoline = trampoline;
+            }
         
-        CDelegate? nativeDelegate = InteropUtils.GetInstance<CDelegate>(nativeDelegateHandleAddress);
+            instance.ChangeAge(trampoline);
         
-        Console.WriteLine("ChangeAgeNew 02");
-        
-        if (nativeDelegate == null) {
             if (outException is not null) {
                 *outException = null;
             }
             
+            return CStatus.Success;
+        } catch (Exception ex) {
+            if (outException is not null) {
+                void* exceptionHandleAddress = ex.AllocateGCHandleAndGetAddress();
+                
+                *outException = exceptionHandleAddress;
+            }
+            
             return CStatus.Failure;
         }
-        
-        Console.WriteLine("ChangeAgeNew 03");
-        
-        void* context = nativeDelegate.Context;
-        delegate* unmanaged<void*, int> nativeFunction = (delegate* unmanaged<void*, int>)nativeDelegate.CFunction;
-        
-        Console.WriteLine("ChangeAgeNew 04");
-
-        Func<int> trampoline = () => {
-            Console.WriteLine("ChangeAgeNew (inside trampoline) 01");
-            
-            Console.WriteLine("ChangeAgeNew (inside trampoline) 02");
-        
-            int returnValue = nativeFunction(context);
-            
-            Console.WriteLine("ChangeAgeNew (inside trampoline) 03");
-        
-            return returnValue;
-        };
-        
-        Console.WriteLine("ChangeAgeNew 05");
-        
-        nativeDelegate.Trampoline = trampoline;
-        
-        Console.WriteLine("ChangeAgeNew 06");
-        
-        instance.ChangeAge(trampoline);
-        
-        Console.WriteLine("ChangeAgeNew 07");
-        
-        if (outException is not null) {
-            *outException = null;
-        }
-        
-        Console.WriteLine("ChangeAgeNew 08");
-            
-        return CStatus.Success;
     }
 
     [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "ChangeAge")]

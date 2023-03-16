@@ -145,29 +145,27 @@ public extension Person {
 	// Sample API for demonstrating non-escaping closures
     typealias ChangeAgeNewAgeProvider = () -> Int32
     
-    typealias ChangeAgeNewAgeProviderNew = @convention(c) (_ context: UnsafeRawPointer?) -> Int32
-    
 	// Sample API for demonstrating non-escaping closures
-    func changeAgeNew() throws {
+	func changeAgeNew(_ newAgeProvider: ChangeAgeNewAgeProvider) throws {
+		typealias ChangeAgeNewAgeProviderC = @convention(c) (_ context: UnsafeRawPointer?) -> Int32
+		
         var exceptionHandle: System_Exception_t?
         
-		let newAgeProvider: ChangeAgeNewAgeProviderNew = { _ in
+		let newAgeProviderC: ChangeAgeNewAgeProviderC = { _ in
 			return 1
 		}
-		
-		let newAgeProviderFunctionPointer = unsafeBitCast(newAgeProvider,
+
+		let newAgeProviderFunctionPointer = unsafeBitCast(newAgeProviderC,
 														  to: UnsafeRawPointer.self)
-		
+
         let cDelegate = CDelegate(context: newAgeProviderFunctionPointer,
                                   function: newAgeProviderFunctionPointer) { _ in
-            print("!!! TODO !!! Should destroy CDelegate")
+			Debug.log("!!! TODO !!! Should destroy CDelegate")
         }
         
         let success = NativeAOTSample_Person_ChangeAgeNew(handle,
                                                           cDelegate.handle,
                                                           &exceptionHandle).boolValue
-		
-		System.GC.collect()
 		
         if success {
             Debug.log("Did change age of \(swiftTypeName)")

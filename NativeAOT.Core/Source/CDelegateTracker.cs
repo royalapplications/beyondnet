@@ -5,8 +5,9 @@ namespace NativeAOT.Core;
 
 public class CDelegateTracker: IDisposable
 {
-    private const double INTERVAL = 0.1;
-    
+    private const double INTERVAL = 1.0;
+
+    private readonly object m_lock = new();
     private List<CDelegate> m_cDelegates = new();
     private Timer? m_timer;
 
@@ -46,37 +47,43 @@ public class CDelegateTracker: IDisposable
 
     public void Add(CDelegate cDelegate)
     {
-        if (m_cDelegates.Contains(cDelegate)) {
-            return;
+        lock (m_lock) {
+            if (m_cDelegates.Contains(cDelegate)) {
+                return;
+            }
+
+            m_cDelegates.Add(cDelegate);
         }
-        
-        m_cDelegates.Add(cDelegate);
     }
 
     public void Clean()
     {
-        Console.WriteLine("Cleaning C Delegates...");
-        
-        List<CDelegate> cDelegatesToRemove = new();
+        lock (m_lock) {
+            // Console.WriteLine("Cleaning C Delegates...");
 
-        List<CDelegate> cDelegates = m_cDelegates.ToList();
-        
-        foreach (var cDelegate in cDelegates) {
-            bool hasBeenCollected = cDelegate.HasTrampolineBeenCollected;
+            List<CDelegate> cDelegatesToRemove = new();
 
-            if (hasBeenCollected) {
-                cDelegatesToRemove.Add(cDelegate);
+            List<CDelegate> cDelegates = m_cDelegates.ToList();
+
+            foreach (var cDelegate in cDelegates) {
+                bool hasBeenCollected = cDelegate.HasTrampolineBeenCollected;
+
+                if (hasBeenCollected) {
+                    cDelegatesToRemove.Add(cDelegate);
+                }
             }
-        }
 
-        foreach (var cDelegate in cDelegatesToRemove) {
-            cDelegates.Remove(cDelegate);
-        }
+            foreach (var cDelegate in cDelegatesToRemove) {
+                cDelegates.Remove(cDelegate);
+            }
 
-        m_cDelegates = cDelegates;
+            m_cDelegates = cDelegates;
 
-        foreach (var cDelegate in cDelegatesToRemove) {
-            cDelegate.AnnounceReadyToBeDestroyed();
+            foreach (var cDelegate in cDelegatesToRemove) {
+                // Console.WriteLine("Announcing that C Delegate is ready to be destroyed");
+                
+                cDelegate.AnnounceReadyToBeDestroyed();
+            }
         }
     }
 

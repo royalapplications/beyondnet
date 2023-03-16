@@ -329,15 +329,15 @@ private extension AppDelegate {
 				fatalError("Failed to get employee")
 			}
 			
-			do {
-				try employee.changeAge(newAgeProvider)
-			} catch {
-				fatalError("An error occurred while changing the age of an employee: \(error)")
-			}
+//			do {
+//				try employee.changeAge(newAgeProvider)
+//			} catch {
+//				fatalError("An error occurred while changing the age of an employee: \(error)")
+//			}
 			
 			// TODO: Just for testing new delegate impl
 			do {
-				try employee.changeAgeNew()
+				try employee.changeAgeNew(newAgeProvider)
 			} catch {
 				fatalError("An error occurred while changing the age of an employee: \(error)")
 			}

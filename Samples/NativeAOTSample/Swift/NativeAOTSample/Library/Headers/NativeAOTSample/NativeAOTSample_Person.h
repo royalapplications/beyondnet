@@ -5,6 +5,7 @@
 
 #import "System_Object.h"
 #import "System_Type.h"
+#import "NativeAOTSample_CDelegate.h"
 
 typedef void* NativeAOTSample_Person_t;
 
@@ -40,7 +41,7 @@ CStatus NativeAOTSample_Person_ChangeAge(NativeAOTSample_Person_t instance,
 										 System_Exception_t* exception);
 
 CStatus NativeAOTSample_Person_ChangeAgeNew(NativeAOTSample_Person_t instance,
-                                            const void* newAgeProvider,
+                                            const NativeAOT_Core_CDelegate_t newAgeProvider,
                                             System_Exception_t* exception);
 
 #endif /* NativeAOTSample_Person_h */

@@ -4,6 +4,13 @@ namespace NativeAOT.Core;
 
 public unsafe class CDelegate
 {
+    #region Constants
+    private const string NAMESPACE = "NativeAOT_Core";
+    private const string TYPE_NAME = nameof(CDelegate);
+    private const string FULL_TYPE_NAME = NAMESPACE + "_" + TYPE_NAME;
+    private const string ENTRYPOINT_PREFIX = FULL_TYPE_NAME + "_";
+    #endregion Constants
+    
     private bool m_trampolineHasBeenSet;
     private WeakReference<Delegate>? m_weakTrampoline;
 
@@ -30,6 +37,8 @@ public unsafe class CDelegate
                 : null;
 
             m_trampolineHasBeenSet = true;
+            
+            CDelegateTracker.Shared.Add(this);
         }
     }
     
@@ -62,11 +71,26 @@ public unsafe class CDelegate
         Context = context;
         CFunction = cFunction;
         CDestructorFunction = cDestructorFunction;
+    }
+    
+    public void AnnounceReadyToBeDestroyed()
+    {
+        var destructorFunction = CDestructorFunction;
+
+        if (destructorFunction is null) {
+            return;
+        }
         
-        CDelegateTracker.Shared.Add(this);
+        destructorFunction(Context);
+    }
+    
+    [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "TypeOf")]
+    internal static void* TypeOf()
+    {
+        return typeof(CDelegate).AllocateGCHandleAndGetAddress();
     }
 
-    [UnmanagedCallersOnly(EntryPoint = "NativeAOT_Core_CDelegate_Create")]
+    [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "Create")]
     public static void* Create(
         void* context,
         void* cFunction,
@@ -82,22 +106,5 @@ public unsafe class CDelegate
         void* handleAddress = self.AllocateGCHandleAndGetAddress();
 
         return handleAddress;
-    }
-
-    [UnmanagedCallersOnly(EntryPoint = "NativeAOT_Core_CDelegate_Destroy")]
-    public static void Destroy(void* __self)
-    {
-        InteropUtils.FreeIfAllocated(__self);
-    }
-
-    public void AnnounceReadyToBeDestroyed()
-    {
-        var destructorFunction = CDestructorFunction;
-
-        if (destructorFunction is null) {
-            return;
-        }
-        
-        destructorFunction(Context);
     }
 }
