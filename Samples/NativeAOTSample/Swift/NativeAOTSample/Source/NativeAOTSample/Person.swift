@@ -161,25 +161,55 @@ public extension Person {
 		return cDelegate
 	}
     
-	// Sample API for demonstrating non-escaping closures
-	func changeAgeNew(_ newAgeProvider: ChangeAgeNewAgeProvider) throws {
+	func changeAge(_ newAgeProvider: ChangeAgeNewAgeProvider?) throws {
         var exceptionHandle: System_Exception_t?
-        
-		let newAgeProviderC: NativeAOTSample_Person_ChangeAge_NewAgeProvider_t = { _ in
-			return 1
+		
+		let closureBox: NativeBox<ChangeAgeNewAgeProvider>?
+		var handler: NativeAOTSample_Person_ChangeAge_NewAgeProvider_t?
+		
+		if let newAgeProvider {
+			closureBox = .init(value: newAgeProvider)
+			
+			handler = { innerContext in
+				guard let innerContext else {
+					fatalError("No context")
+				}
+				
+				let innerClosure = NativeBox<ChangeAgeNewAgeProvider>.fromPointer(innerContext).value
+				
+				let result = innerClosure()
+				
+				return result
+			}
+		} else {
+			closureBox = nil
+			handler = nil
 		}
 		
-		let context = unsafeBitCast(newAgeProviderC,
-									to: UnsafeRawPointer.self)
+		let context = closureBox?.retainedPointer()
 		
-		let newAgeProviderDelegate = createNewAgeProvider(context: context,
-														  newAgeProvider: newAgeProviderC) { innerContext in
-			Debug.log("!!! TODO !!! Should destroy CDelegate")
+		let newAgeProviderDelegate: CDelegate?
+		
+		if let handler {
+			newAgeProviderDelegate = createNewAgeProvider(context: context,
+														  newAgeProvider: handler) { innerContext in
+				guard let innerContext else {
+					fatalError("No context")
+				}
+				
+				let innerClosureBox = NativeBox<ChangeAgeNewAgeProvider>.fromPointer(innerContext)
+				
+				Debug.log("Destroying CDelegate")
+				
+				innerClosureBox.release(innerContext)
+			}
+		} else {
+			newAgeProviderDelegate = nil
 		}
         
-        let success = NativeAOTSample_Person_ChangeAgeNew(handle,
-														  newAgeProviderDelegate.handle,
-                                                          &exceptionHandle).boolValue
+		let success = NativeAOTSample_Person_ChangeAge(handle,
+													   newAgeProviderDelegate?.handle,
+													   &exceptionHandle).boolValue
 		
         if success {
             Debug.log("Did change age of \(swiftTypeName)")
@@ -194,51 +224,4 @@ public extension Person {
             fatalError("Change age of \(swiftTypeName) failed but didn't throw an exception. This is unexpected.")
         }
     }
-    
-	func changeAge(_ newAgeProvider: ChangeAgeNewAgeProvider?) throws {
-		Debug.log("Will change age of \(swiftTypeName)")
-		
-		var exceptionHandle: System_Exception_t?
-		
-		let closureBox: NativeBox<ChangeAgeNewAgeProvider>?
-		var handler: NativeAOTSample_Person_ChangeAge_NewAgeProvider_t?
-		
-		if let newAgeProvider {
-			closureBox = .init(value: newAgeProvider)
-			
-			handler = { innerContext in
-				guard let innerContext else {
-					fatalError("No context")
-				}
-				
-				let closure = NativeBox<ChangeAgeNewAgeProvider>.fromPointer(innerContext).value
-				let result = closure()
-				
-				return result
-			}
-		} else {
-			closureBox = nil
-			handler = nil
-		}
-		
-		let context = closureBox?.unretainedPointer()
-		
-		let success = NativeAOTSample_Person_ChangeAge(handle,
-													   context,
-													   handler,
-													   &exceptionHandle).boolValue
-		
-		if success {
-			Debug.log("Did change age of \(swiftTypeName)")
-		} else if let exceptionHandle {
-			Debug.log("Change age of \(swiftTypeName) threw an exception")
-			
-            let exception = System.Exception(handle: exceptionHandle)
-			let error = exception.error
-			
-			throw error
-		} else {
-			fatalError("Change age of \(swiftTypeName) failed but didn't throw an exception. This is unexpected.")
-		}
-	}
 }

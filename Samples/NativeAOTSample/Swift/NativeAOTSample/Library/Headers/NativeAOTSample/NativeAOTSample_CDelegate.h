@@ -4,7 +4,7 @@
 #import "CommonTypes.h"
 
 #import "System_Object.h"
-//#import "System_Type.h"
+#import "System_Type.h"
 
 typedef void* NativeAOT_Core_CDelegate_t;
 

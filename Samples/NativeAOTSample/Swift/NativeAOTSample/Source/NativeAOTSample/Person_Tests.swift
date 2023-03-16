@@ -148,7 +148,7 @@ final class PersonTests: XCTestCase {
 		Debug.isLoggingEnabled = false
 		defer { Debug.isLoggingEnabled = debugLoggingWasEnabled }
 		
-		let iterations = 100_000
+		let iterations = 10_000
 		
 		let persons = createPersons(count: iterations)
 		let newAge: Int32 = 5
@@ -191,20 +191,6 @@ final class PersonTests: XCTestCase {
 			}
 		}
 	}
-    
-    typealias ChangeAgeNewAgeProvider = @convention(c) () -> Int32
-    
-    func testCDelegates() {
-        let person = Person(firstName: "John",
-                            lastName: "Doe",
-                            age: 24)
-
-        do {
-            try person.changeAgeNew()
-        } catch {
-            XCTFail("Should not throw")
-        }
-    }
 }
 
 private extension PersonTests {

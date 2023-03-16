@@ -208,8 +208,8 @@ internal static unsafe class NativeAOTSample_Person_t
         return cDelegate.AllocateGCHandleAndGetAddress();
     }
     
-    [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "ChangeAgeNew")]
-    internal static CStatus ChangeAgeNew(
+    [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "ChangeAge")]
+    internal static CStatus ChangeAge(
         void* handleAddress,
         void* newAgeProviderNativeDelegateHandleAddress,
         void** outException
@@ -266,51 +266,6 @@ internal static unsafe class NativeAOTSample_Person_t
         
             instance.ChangeAge(trampoline);
         
-            if (outException is not null) {
-                *outException = null;
-            }
-            
-            return CStatus.Success;
-        } catch (Exception ex) {
-            if (outException is not null) {
-                void* exceptionHandleAddress = ex.AllocateGCHandleAndGetAddress();
-                
-                *outException = exceptionHandleAddress;
-            }
-            
-            return CStatus.Failure;
-        }
-    }
-
-    [UnmanagedCallersOnly(EntryPoint=ENTRYPOINT_PREFIX + "ChangeAge")]
-    internal static CStatus ChangeAge(
-        void* handleAddress,
-        void* context,
-        delegate* unmanaged<void*, int> functionPointer,
-        void** outException
-    )
-    {
-        Person? instance = InteropUtils.GetInstance<Person>(handleAddress);
-
-        if (instance is null) {
-            if (outException is not null) {
-                *outException = null;
-            }
-            
-            return CStatus.Failure;
-        }
-
-        try {
-            Func<int>? trampoline;
-
-            if ((nint)functionPointer != nint.Zero) {
-                trampoline = () => functionPointer(context);
-            } else {
-                trampoline = null;
-            }
-            
-            instance.ChangeAge(trampoline);
-
             if (outException is not null) {
                 *outException = null;
             }

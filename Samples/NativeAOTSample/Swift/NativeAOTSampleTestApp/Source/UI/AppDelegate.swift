@@ -329,15 +329,8 @@ private extension AppDelegate {
 				fatalError("Failed to get employee")
 			}
 			
-//			do {
-//				try employee.changeAge(newAgeProvider)
-//			} catch {
-//				fatalError("An error occurred while changing the age of an employee: \(error)")
-//			}
-			
-			// TODO: Just for testing new delegate impl
 			do {
-				try employee.changeAgeNew(newAgeProvider)
+				try employee.changeAge(newAgeProvider)
 			} catch {
 				fatalError("An error occurred while changing the age of an employee: \(error)")
 			}
@@ -345,7 +338,7 @@ private extension AppDelegate {
 		
 		let formattedDelta = formattedDateDelta(startDate: startDate)
 		
-		// TODO: Just for testing new delegate impl
+		// Ensure that CDelegates are GC collected and their native representation is destroyed
 		System.GC.collect()
 		
 		DispatchQueue.main.async { [weak self] in
