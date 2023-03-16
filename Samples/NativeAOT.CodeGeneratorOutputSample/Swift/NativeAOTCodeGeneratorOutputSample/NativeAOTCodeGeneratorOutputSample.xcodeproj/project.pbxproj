@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E70A1FAD29C3652100843CD0 /* SystemTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A1FAC29C3652100843CD0 /* SystemTypeTests.swift */; };
 		E70D116129BF9F2600B4E738 /* NativeAOTCodeGeneratorOutputSample.h in Headers */ = {isa = PBXBuildFile; fileRef = E70D116029BF9F2600B4E738 /* NativeAOTCodeGeneratorOutputSample.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E70D116929BF9F8000B4E738 /* TypeDefinitions.h in Headers */ = {isa = PBXBuildFile; fileRef = E70D116829BF9F7E00B4E738 /* TypeDefinitions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E70D116B29BF9FCD00B4E738 /* NativeAOT.CodeGeneratorOutputSample.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E70D116A29BF9FCC00B4E738 /* NativeAOT.CodeGeneratorOutputSample.dylib */; };
@@ -59,6 +60,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E70A1FAC29C3652100843CD0 /* SystemTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemTypeTests.swift; sourceTree = "<group>"; };
 		E70D115D29BF9F2600B4E738 /* NativeAOTCodeGeneratorOutputSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NativeAOTCodeGeneratorOutputSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E70D116029BF9F2600B4E738 /* NativeAOTCodeGeneratorOutputSample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeAOTCodeGeneratorOutputSample.h; sourceTree = "<group>"; };
 		E70D116829BF9F7E00B4E738 /* TypeDefinitions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TypeDefinitions.h; sourceTree = "<group>"; };
@@ -142,8 +144,9 @@
 		E7C8CF0229C1FA7800C4230F /* System */ = {
 			isa = PBXGroup;
 			children = (
-				E7C8CF0429C1FA9500C4230F /* SystemGuidTests.swift */,
+				E70A1FAC29C3652100843CD0 /* SystemTypeTests.swift */,
 				E7C8CF0629C1FABA00C4230F /* StringTests.swift */,
+				E7C8CF0429C1FA9500C4230F /* SystemGuidTests.swift */,
 				E7C8CF0829C1FB0800C4230F /* SystemDateTimeTests.swift */,
 				E7C8CF0A29C1FE5800C4230F /* SystemArrayTests.swift */,
 			);
@@ -305,6 +308,7 @@
 			files = (
 				E7C8CF0F29C2180200C4230F /* AnimalTests.swift in Sources */,
 				E7C8CF0B29C1FE5800C4230F /* SystemArrayTests.swift in Sources */,
+				E70A1FAD29C3652100843CD0 /* SystemTypeTests.swift in Sources */,
 				E7C8CF0529C1FA9500C4230F /* SystemGuidTests.swift in Sources */,
 				E7C8CF0929C1FB0800C4230F /* SystemDateTimeTests.swift in Sources */,
 				E7C8CF0729C1FABA00C4230F /* StringTests.swift in Sources */,
