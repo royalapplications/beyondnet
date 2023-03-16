@@ -25,4 +25,16 @@ public extension CDelegate {
 		
 		Debug.log("Did create \(Self.swiftTypeName)")
     }
+	
+	static func destructorForNativeBox() -> NativeAOTSample_CDelegate_Destructor_t {
+		{ innerContext in
+			guard let innerContext else {
+				fatalError("No context")
+			}
+			
+			Debug.log("Destroying CDelegate")
+			
+			NativeBox<Any>.release(innerContext)
+		}
+	}
 }

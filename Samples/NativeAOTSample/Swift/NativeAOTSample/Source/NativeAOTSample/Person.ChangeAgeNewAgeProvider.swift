@@ -20,18 +20,7 @@ public extension Person {
 				return result
 			}
 			
-			let destructorFunction: NativeAOTSample_CDelegate_Destructor_t = { innerContext in
-				guard let innerContext else {
-					fatalError("No context")
-				}
-				
-				let innerClosureBox = NativeBox<FunctionType>.fromPointer(innerContext)
-				
-				Debug.log("Destroying CDelegate")
-				
-				innerClosureBox.release(innerContext)
-			}
-			
+			let destructorFunction = CDelegate.destructorForNativeBox()
 			let context = closureBox.retainedPointer()
 			
 			let delegateHandle = NativeAOTSample_Person_ChangeAge_NewAgeProvider_Create(context,
