@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 
 namespace NativeAOT.Core;
@@ -14,34 +15,6 @@ public unsafe class CDelegate
     private bool m_trampolineHasBeenSet;
     private bool m_readyForDestructionHasBeenAnnounced;
     private WeakReference<Delegate>? m_weakTrampoline;
-
-    public Delegate? Trampoline
-    {
-        get {
-            var weakTrampoline = m_weakTrampoline;
-
-            if (weakTrampoline == null) {
-                return null;
-            }
-            
-            weakTrampoline.TryGetTarget(out Delegate? trampoline);
-
-            return trampoline;
-        }
-        set {
-            if (m_trampolineHasBeenSet) {
-                throw new Exception("Trampoline can only be set once");
-            }
-            
-            m_trampolineHasBeenSet = true;
-            
-            m_weakTrampoline = value != null
-                ? new(value) 
-                : null;
-
-            CDelegateTracker.Shared.Add(this);
-        }
-    }
     
     public void* Context { get; }
     public void* CFunction { get; }
@@ -72,6 +45,30 @@ public unsafe class CDelegate
         Context = context;
         CFunction = cFunction;
         CDestructorFunction = cDestructorFunction;
+    }
+
+    public bool TryGetTrampoline([NotNullWhen(true)] out Delegate? trampoline)
+    {
+        if (m_weakTrampoline?.TryGetTarget(out trampoline) ?? false) {
+            return true;
+        } else {
+            trampoline = null;
+            
+            return false;
+        }
+    }
+
+    public void SetTrampoline(Delegate trampoline)
+    {
+        if (m_trampolineHasBeenSet) {
+            throw new Exception("Trampoline can only be set once");
+        }
+            
+        m_trampolineHasBeenSet = true;
+        
+        m_weakTrampoline = new(trampoline);
+
+        CDelegateTracker.Shared.Add(this);
     }
     
     public void AnnounceReadyToBeDestroyed()

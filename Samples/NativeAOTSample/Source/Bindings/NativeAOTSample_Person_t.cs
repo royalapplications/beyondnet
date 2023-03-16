@@ -260,8 +260,9 @@ internal static unsafe class NativeAOTSample_Person_t
                 trampoline = null;
             }
         
-            if (nativeDelegate is not null) {
-                nativeDelegate.Trampoline = trampoline;
+            if (nativeDelegate is not null &&
+                trampoline is not null) {
+                nativeDelegate.SetTrampoline(trampoline);
             }
         
             instance.ChangeAge(trampoline);

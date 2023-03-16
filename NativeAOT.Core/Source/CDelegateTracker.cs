@@ -6,9 +6,10 @@ namespace NativeAOT.Core;
 
 public class CDelegateTracker: IDisposable
 {
-    private const double INTERVAL = 1.0;
+    private const double INTERVAL = 5 // second(s) 
+                                    * 1000.0;
 
-    private readonly ConcurrentDictionary<CDelegate, object> m_cDelegates = new();
+    private readonly ConcurrentDictionary<CDelegate, object?> m_cDelegates = new();
     private Timer? m_timer;
 
     private static CDelegateTracker? m_shared;
@@ -47,7 +48,7 @@ public class CDelegateTracker: IDisposable
 
     public void Add(CDelegate cDelegate)
     {
-        m_cDelegates[cDelegate] = new object();
+        m_cDelegates[cDelegate] = null;
     }
 
     public void Clean()
@@ -55,7 +56,7 @@ public class CDelegateTracker: IDisposable
         // Console.WriteLine("Cleaning C Delegates...");
 
         var collectedCDelegates = m_cDelegates.Select(kvp => 
-            kvp.Key.HasTrampolineBeenCollected 
+            kvp.Key.HasTrampolineBeenCollected
                 ? kvp.Key 
                 : null
         );
