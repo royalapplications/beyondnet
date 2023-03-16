@@ -144,27 +144,41 @@ public extension Person {
 	
 	// Sample API for demonstrating non-escaping closures
     typealias ChangeAgeNewAgeProvider = () -> Int32
+	
+	func createNewAgeProvider(context: UnsafeRawPointer?,
+							  newAgeProvider: NativeAOTSample_Person_ChangeAge_NewAgeProvider_t,
+							  destructorFunction: NativeAOTSample_CDelegate_Destructor_t?) -> CDelegate {
+		let handle = NativeAOTSample_Person_NewAgeProvider_Create(context,
+																  newAgeProvider,
+																  destructorFunction)
+		
+		guard let handle else {
+			fatalError("Failed to create CDelegate")
+		}
+		
+		let cDelegate = CDelegate(handle: handle)
+		
+		return cDelegate
+	}
     
 	// Sample API for demonstrating non-escaping closures
 	func changeAgeNew(_ newAgeProvider: ChangeAgeNewAgeProvider) throws {
-		typealias ChangeAgeNewAgeProviderC = @convention(c) (_ context: UnsafeRawPointer?) -> Int32
-		
         var exceptionHandle: System_Exception_t?
         
-		let newAgeProviderC: ChangeAgeNewAgeProviderC = { _ in
+		let newAgeProviderC: NativeAOTSample_Person_ChangeAge_NewAgeProvider_t = { _ in
 			return 1
 		}
-
-		let newAgeProviderFunctionPointer = unsafeBitCast(newAgeProviderC,
-														  to: UnsafeRawPointer.self)
-
-        let cDelegate = CDelegate(context: newAgeProviderFunctionPointer,
-                                  function: newAgeProviderFunctionPointer) { _ in
+		
+		let context = unsafeBitCast(newAgeProviderC,
+									to: UnsafeRawPointer.self)
+		
+		let newAgeProviderDelegate = createNewAgeProvider(context: context,
+														  newAgeProvider: newAgeProviderC) { innerContext in
 			Debug.log("!!! TODO !!! Should destroy CDelegate")
-        }
+		}
         
         let success = NativeAOTSample_Person_ChangeAgeNew(handle,
-                                                          cDelegate.handle,
+														  newAgeProviderDelegate.handle,
                                                           &exceptionHandle).boolValue
 		
         if success {

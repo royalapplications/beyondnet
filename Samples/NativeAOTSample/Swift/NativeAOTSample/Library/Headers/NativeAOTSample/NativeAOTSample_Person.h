@@ -40,6 +40,10 @@ CStatus NativeAOTSample_Person_ChangeAge(NativeAOTSample_Person_t instance,
 										 NativeAOTSample_Person_ChangeAge_NewAgeProvider_t newAgeProvider,
 										 System_Exception_t* exception);
 
+const NativeAOT_Core_CDelegate_t NativeAOTSample_Person_NewAgeProvider_Create(const void* context,
+																			  const NativeAOTSample_Person_ChangeAge_NewAgeProvider_t newAgeProvider,
+																			  const NativeAOTSample_CDelegate_Destructor_t destructorFunction);
+
 CStatus NativeAOTSample_Person_ChangeAgeNew(NativeAOTSample_Person_t instance,
                                             const NativeAOT_Core_CDelegate_t newAgeProvider,
                                             System_Exception_t* exception);
