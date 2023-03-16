@@ -1,5 +1,5 @@
 // Number of generated types: 168
-// Number of generated members: 1838
+// Number of generated members: 1844
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -1011,6 +1011,12 @@ System_Type_GetField1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+System_Type_t /* System.Type */
+System_Type_GetFunctionPointerReturnType(
+	System_Type_t /* System.Type */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 System_Reflection_MemberInfo_t /* System.Reflection.MemberInfo */
 System_Type_GetMemberWithSameMetadataDefinitionAs(
 	System_Type_t /* System.Type */ self,
@@ -1432,6 +1438,18 @@ System_Type_IsVariableBoundArray_Get(
 
 CBool /* System.Boolean */
 System_Type_IsByRefLike_Get(
+	System_Type_t /* System.Type */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Type_IsFunctionPointer_Get(
+	System_Type_t /* System.Type */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Type_IsUnmanagedFunctionPointer_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -8741,6 +8759,12 @@ System_Reflection_FieldInfo_GetRawConstantValue(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+System_Type_t /* System.Type */
+System_Reflection_FieldInfo_GetModifiedFieldType(
+	System_Reflection_FieldInfo_t /* System.Reflection.FieldInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 System_Reflection_MemberTypes /* System.Reflection.MemberTypes */
 System_Reflection_FieldInfo_MemberType_Get(
 	System_Reflection_FieldInfo_t /* System.Reflection.FieldInfo */ self,
@@ -8889,6 +8913,12 @@ System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
 System_Reflection_PropertyInfo_GetSetMethod1(
 	System_Reflection_PropertyInfo_t /* System.Reflection.PropertyInfo */ self,
 	CBool /* System.Boolean */ nonPublic,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_t /* System.Type */
+System_Reflection_PropertyInfo_GetModifiedPropertyType(
+	System_Reflection_PropertyInfo_t /* System.Reflection.PropertyInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -9053,6 +9083,12 @@ System_Reflection_ParameterInfo_IsDefined(
 	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ self,
 	System_Type_t /* System.Type */ attributeType,
 	CBool /* System.Boolean */ inherit,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_t /* System.Type */
+System_Reflection_ParameterInfo_GetModifiedParameterType(
+	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 

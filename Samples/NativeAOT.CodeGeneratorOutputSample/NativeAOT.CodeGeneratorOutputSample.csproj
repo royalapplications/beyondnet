@@ -23,12 +23,6 @@
     <DefaultItemExcludes>$(DefaultItemExcludes);Swift\**\*;.gitignore;*.h;*.sln.DotSettings;</DefaultItemExcludes>
   </PropertyGroup>
 
-  <!-- This works around a bug in .NET 8 Preview 1 that causes the required package to not be resolved automatically when cross-compiling -->
-  <ItemGroup>
-    <PackageReference Include="runtime.osx-arm64.Microsoft.DotNet.ILCompiler" Version="8.0.0-preview.1.23110.8" />
-    <PackageReference Include="runtime.osx-x64.Microsoft.DotNet.ILCompiler" Version="8.0.0-preview.1.23110.8" />
-  </ItemGroup>
-
   <!-- Compile Links -->
   <ItemGroup>
     <Compile Include="..\NativeAOT.CodeGeneratorInputSample\Source\**\*.cs">
