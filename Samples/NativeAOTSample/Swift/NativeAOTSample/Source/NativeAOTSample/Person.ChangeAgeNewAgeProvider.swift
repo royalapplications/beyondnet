@@ -1,10 +1,10 @@
 import Foundation
 
 public extension Person {
-	class ChangeAgeNewAgeProvider: CDelegate {
+	class ChangeAgeNewAgeProvider {
 		public typealias FunctionType = () -> Int32
 		
-		public convenience init(_ function: @escaping FunctionType) {
+		public static func createDelegate(_ function: @escaping FunctionType) -> CDelegate {
 			let closureBox = NativeBox(function)
 			
 			let handlerFunction: NativeAOTSample_Person_ChangeAge_NewAgeProvider_t = { innerContext in
@@ -42,7 +42,7 @@ public extension Person {
 				fatalError("Failed to create CDelegate")
 			}
 			
-			self.init(handle: delegateHandle)
+			return .init(handle: delegateHandle)
 		}
 	}
 }

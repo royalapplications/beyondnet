@@ -146,10 +146,10 @@ public extension Person {
 	func changeAge(_ newAgeProvider: ChangeAgeNewAgeProvider.FunctionType?) throws {
         var exceptionHandle: System_Exception_t?
 		
-		let newAgeProviderDelegate: ChangeAgeNewAgeProvider?
+		let newAgeProviderDelegate: CDelegate?
 		
 		if let newAgeProvider {
-			newAgeProviderDelegate = .init(newAgeProvider)
+			newAgeProviderDelegate = ChangeAgeNewAgeProvider.createDelegate(newAgeProvider)
 		} else {
 			newAgeProviderDelegate = nil
 		}
