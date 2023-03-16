@@ -1,18 +1,13 @@
 namespace NativeAOT.CodeGeneratorInputSample;
 
-public enum NiceLevels: uint
-{
-    NotNice,
-    LittleBitNice,
-    Nice,
-    VeryNice
-}
-
 public class Person
 {
+    #region Constants
     public const int AGE_WHEN_BORN = 0;
     public static int DEFAULT_AGE = AGE_WHEN_BORN;
-    
+    #endregion Constants
+
+    #region Properties
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public int Age { get; set; }
@@ -28,7 +23,9 @@ public class Person
     public NiceLevels NiceLevel { get; set; } = NiceLevels.Nice;
 
     public string FullName => $"{FirstName} {LastName}";
-    
+    #endregion Properties
+
+    #region Constructors
     public Person(
         string firstName,
         string lastName,
@@ -49,7 +46,9 @@ public class Person
         LastName = lastName;
         Age = DEFAULT_AGE;
     }
+    #endregion Constructors
 
+    #region Methods
     public string GetNiceLevelString()
     {
         switch (NiceLevel) {
@@ -117,4 +116,5 @@ public class Person
     {
         return Children[index];
     }
+    #endregion Methods
 }
