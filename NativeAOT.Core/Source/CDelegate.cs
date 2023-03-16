@@ -3,6 +3,37 @@ using System.Runtime.InteropServices;
 
 namespace NativeAOT.Core;
 
+// TODO
+// public class ChangeAgeNewAgeProviderWrapper
+// {
+//     private Func<int> Delegate { get; }
+//     
+//     public Delegate ActualDelegate { get; }
+//     
+//     public CDelegate CDelegate { get; }
+//
+//     ~ChangeAgeNewAgeProviderWrapper()
+//     {
+//         CDelegate.AnnounceReadyToBeDestroyed();
+//     }
+//
+//     ChangeAgeNewAgeProviderWrapper(Func<int> @delegate, CDelegate cDelegate)
+//     {
+//         System.Delegate del = System.Delegate.CreateDelegate(
+//             Delegate.GetType(),
+//             this,
+//             "Invoke"
+//         );
+//
+//         ActualDelegate = del;
+//     }
+//     
+//     private int Invoke()
+//     {
+//         return Delegate?.Invoke() ?? 0;
+//     }
+// }
+
 public sealed unsafe class CDelegate
 {
     #region Constants
