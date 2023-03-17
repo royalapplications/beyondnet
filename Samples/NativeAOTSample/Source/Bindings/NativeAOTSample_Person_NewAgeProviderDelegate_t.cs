@@ -59,10 +59,13 @@ internal unsafe class NativeAOTSample_Person_NewAgeProviderDelegate_t
         }
         
         Type typeOfSelf = typeof(NativeAOTSample_Person_NewAgeProviderDelegate_t);
+
+        string nameOfInvocationMethod = nameof(__InvokeByCallingCFunction); 
+        BindingFlags bindingFlags = BindingFlags.Instance | BindingFlags.NonPublic; 
         
         MethodInfo? invocationMethod = typeOfSelf.GetMethod(
-            nameof(__InvokeByCallingCFunction),
-            BindingFlags.Default
+            nameOfInvocationMethod,
+            bindingFlags
         );
 
         if (invocationMethod is null) {
@@ -70,7 +73,7 @@ internal unsafe class NativeAOTSample_Person_NewAgeProviderDelegate_t
         }
         
         Person.NewAgeProviderDelegate trampoline = (Person.NewAgeProviderDelegate)Delegate.CreateDelegate(
-            typeof(NativeAOTSample_Person_NewAgeProviderDelegate_t),
+            typeof(Person.NewAgeProviderDelegate),
             this,
             invocationMethod
         );
@@ -78,7 +81,7 @@ internal unsafe class NativeAOTSample_Person_NewAgeProviderDelegate_t
         return trampoline;
     }
     
-    public int __InvokeByCallingCFunction()
+    private int __InvokeByCallingCFunction()
     {
         Console.WriteLine($"{nameof(NativeAOTSample_Person_NewAgeProviderDelegate_t)}: {nameof(__InvokeByCallingCFunction)}");
         
