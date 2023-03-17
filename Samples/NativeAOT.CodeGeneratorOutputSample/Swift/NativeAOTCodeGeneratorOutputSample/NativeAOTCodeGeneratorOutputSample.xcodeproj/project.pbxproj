@@ -22,7 +22,7 @@
 		E7C8CF0B29C1FE5800C4230F /* SystemArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0A29C1FE5800C4230F /* SystemArrayTests.swift */; };
 		E7C8CF0D29C2139B00C4230F /* PersonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0C29C2139B00C4230F /* PersonTests.swift */; };
 		E7C8CF0F29C2180200C4230F /* AnimalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0E29C2180200C4230F /* AnimalTests.swift */; };
-		E7F0CEB129C4B02D00E4C80A /* StringTransformerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F0CEB029C4B02D00E4C80A /* StringTransformerTests.swift */; };
+		E7F0CEB129C4B02D00E4C80A /* TransformerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F0CEB029C4B02D00E4C80A /* TransformerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +74,7 @@
 		E7C8CF0A29C1FE5800C4230F /* SystemArrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemArrayTests.swift; sourceTree = "<group>"; };
 		E7C8CF0C29C2139B00C4230F /* PersonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTests.swift; sourceTree = "<group>"; };
 		E7C8CF0E29C2180200C4230F /* AnimalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTests.swift; sourceTree = "<group>"; };
-		E7F0CEB029C4B02D00E4C80A /* StringTransformerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTransformerTests.swift; sourceTree = "<group>"; };
+		E7F0CEB029C4B02D00E4C80A /* TransformerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,7 +161,7 @@
 				E70D117429BF9FEC00B4E738 /* TestClassesTests.swift */,
 				E7C8CF0C29C2139B00C4230F /* PersonTests.swift */,
 				E7C8CF0E29C2180200C4230F /* AnimalTests.swift */,
-				E7F0CEB029C4B02D00E4C80A /* StringTransformerTests.swift */,
+				E7F0CEB029C4B02D00E4C80A /* TransformerTests.swift */,
 			);
 			path = TestClasses;
 			sourceTree = "<group>";
@@ -310,7 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7C8CF0F29C2180200C4230F /* AnimalTests.swift in Sources */,
-				E7F0CEB129C4B02D00E4C80A /* StringTransformerTests.swift in Sources */,
+				E7F0CEB129C4B02D00E4C80A /* TransformerTests.swift in Sources */,
 				E7C8CF0B29C1FE5800C4230F /* SystemArrayTests.swift in Sources */,
 				E70A1FAD29C3652100843CD0 /* SystemTypeTests.swift in Sources */,
 				E7C8CF0529C1FA9500C4230F /* SystemGuidTests.swift in Sources */,

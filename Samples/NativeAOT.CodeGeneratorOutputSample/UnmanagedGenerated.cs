@@ -1,5 +1,5 @@
-// Number of generated types: 180
-// Number of generated members: 1895
+// Number of generated types: 181
+// Number of generated members: 1897
 
 // <Header>
 using System;
@@ -54161,153 +54161,6 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Person_Extensions
 }
 
 
-internal unsafe class NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate
-{
-	public void* Context { get; }
-	public delegate* unmanaged<void* /* context */, byte* /* System.String */ /* inputString */, byte* /* System.String */ /* return type */> CFunction { get; }
-	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
-
-	private NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate(void* context, delegate* unmanaged<void* /* context */, byte* /* System.String */ /* inputString */, byte* /* System.String */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
-	{
-		Context = context;
-		CFunction = cFunction;
-		CDestructorFunction = cDestructorFunction;
-	}
-
-	~NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate()
-	{
-		if (CDestructorFunction is null) {
-			return;
-		}
-
-		CDestructorFunction(Context);
-	}
-
-	internal NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate? CreateTrampoline()
-	{
-		if (CFunction is null) {
-			return null;
-		}
-
-		System.Type typeOfSelf = typeof(NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate);
-		string nameOfInvocationMethod = nameof(__InvokeByCallingCFunction);
-		System.Reflection.BindingFlags bindingFlags = System.Reflection.BindingFlags.Instance | BindingFlags.NonPublic;
-		System.Reflection.MethodInfo? invocationMethod = typeOfSelf.GetMethod(nameOfInvocationMethod, bindingFlags);
-
-		if (invocationMethod is null) {
-			throw new Exception("Failed to retrieve delegate invocation method");
-		}
-
-		NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate trampoline = (NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate)System.Delegate.CreateDelegate(typeof(NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate), this, invocationMethod);
-
-		return trampoline;
-	}
-
-	private System.String __InvokeByCallingCFunction(System.String /* System.String */ inputString)
-	{
-		byte* inputStringConverted = inputString.CopyToCString();
-	
-
-
-		return InteropUtils.ToDotNetString(CFunction(Context, inputStringConverted));
-	}
-
-	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Create")]
-	public static void* Create(void* context, delegate* unmanaged<void* /* context */, byte* /* System.String */ /* inputString */, byte* /* System.String */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
-	{
-		var self = new NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate(context, cFunction, cDestructorFunction);
-		void* selfHandle = self.AllocateGCHandleAndGetAddress();
-
-		return selfHandle;
-	}
-
-	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Context_Get")]
-	public static void* Context_Get(void* self)
-	{
-		if (self is null) {
-			throw new ArgumentNullException(nameof(self));
-		}
-
-		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate>(self);
-
-		return selfConverted.Context;
-	}
-
-	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_CFunction_Get")]
-	public static delegate* unmanaged<void* /* context */, byte* /* System.String */ /* inputString */, byte* /* System.String */ /* return type */> CFunction_Get(void* self)
-	{
-		if (self is null) {
-			throw new ArgumentNullException(nameof(self));
-		}
-
-		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate>(self);
-
-		return selfConverted.CFunction;
-	}
-
-	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_CDestructorFunction_Get")]
-	public static delegate* unmanaged<void*, void> CDestructorFunction_Get(void* self)
-	{
-		if (self is null) {
-			throw new ArgumentNullException(nameof(self));
-		}
-
-		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate>(self);
-
-		return selfConverted.CDestructorFunction;
-	}
-
-	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Destroy")]
-	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate */ __self)
-	{
-	
-		InteropUtils.FreeIfAllocated(__self);
-	}
-	
-
-}
-
-
-internal unsafe class NativeAOT_CodeGeneratorInputSample_StringTransformer
-{
-	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_StringTransformer_TransformString")]
-	internal static byte* /* System.String */ NativeAOT_CodeGeneratorInputSample_StringTransformer_TransformString(byte* /* System.String */ inputString, void* /* NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate */ stringTransformerDelegate, void** /* System.Exception */ __outException)
-	{
-		System.String inputStringConverted = InteropUtils.ToDotNetString(inputString);
-		NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate stringTransformerDelegateConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate>(stringTransformerDelegate)?.CreateTrampoline();
-	
-	    try {
-			System.String __returnValue = NativeAOT.CodeGeneratorInputSample.StringTransformer.TransformString(inputStringConverted, stringTransformerDelegateConverted);
-			byte* _returnValueNative = __returnValue.CopyToCString();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_StringTransformer_Destroy")]
-	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_StringTransformer_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.StringTransformer */ __self)
-	{
-	
-		InteropUtils.FreeIfAllocated(__self);
-	}
-	
-
-}
-
-
 
 internal unsafe class NativeAOT_CodeGeneratorInputSample_TestClass
 {
@@ -54542,6 +54395,284 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_TestClass
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_Destroy")]
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_TestClass_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.TestClass */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+
+}
+
+
+internal unsafe class NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate
+{
+	public void* Context { get; }
+	public delegate* unmanaged<void* /* context */, byte* /* System.String */ /* inputString */, byte* /* System.String */ /* return type */> CFunction { get; }
+	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
+
+	private NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate(void* context, delegate* unmanaged<void* /* context */, byte* /* System.String */ /* inputString */, byte* /* System.String */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	{
+		Context = context;
+		CFunction = cFunction;
+		CDestructorFunction = cDestructorFunction;
+	}
+
+	~NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate()
+	{
+		if (CDestructorFunction is null) {
+			return;
+		}
+
+		CDestructorFunction(Context);
+	}
+
+	internal NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate? CreateTrampoline()
+	{
+		if (CFunction is null) {
+			return null;
+		}
+
+		System.Type typeOfSelf = typeof(NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate);
+		string nameOfInvocationMethod = nameof(__InvokeByCallingCFunction);
+		System.Reflection.BindingFlags bindingFlags = System.Reflection.BindingFlags.Instance | BindingFlags.NonPublic;
+		System.Reflection.MethodInfo? invocationMethod = typeOfSelf.GetMethod(nameOfInvocationMethod, bindingFlags);
+
+		if (invocationMethod is null) {
+			throw new Exception("Failed to retrieve delegate invocation method");
+		}
+
+		NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate trampoline = (NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate)System.Delegate.CreateDelegate(typeof(NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate), this, invocationMethod);
+
+		return trampoline;
+	}
+
+	private System.String __InvokeByCallingCFunction(System.String /* System.String */ inputString)
+	{
+		byte* inputStringConverted = inputString.CopyToCString();
+	
+
+
+		return InteropUtils.ToDotNetString(CFunction(Context, inputStringConverted));
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Create")]
+	public static void* Create(void* context, delegate* unmanaged<void* /* context */, byte* /* System.String */ /* inputString */, byte* /* System.String */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	{
+		var self = new NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate(context, cFunction, cDestructorFunction);
+		void* selfHandle = self.AllocateGCHandleAndGetAddress();
+
+		return selfHandle;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Context_Get")]
+	public static void* Context_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate>(self);
+
+		return selfConverted.Context;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_CFunction_Get")]
+	public static delegate* unmanaged<void* /* context */, byte* /* System.String */ /* inputString */, byte* /* System.String */ /* return type */> CFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate>(self);
+
+		return selfConverted.CFunction;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_CDestructorFunction_Get")]
+	public static delegate* unmanaged<void*, void> CDestructorFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate>(self);
+
+		return selfConverted.CDestructorFunction;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Destroy")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+
+}
+
+
+internal unsafe class NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate
+{
+	public void* Context { get; }
+	public delegate* unmanaged<void* /* context */, double /* System.Double */ /* number1 */, double /* System.Double */ /* number2 */, double /* System.Double */ /* return type */> CFunction { get; }
+	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
+
+	private NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate(void* context, delegate* unmanaged<void* /* context */, double /* System.Double */ /* number1 */, double /* System.Double */ /* number2 */, double /* System.Double */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	{
+		Context = context;
+		CFunction = cFunction;
+		CDestructorFunction = cDestructorFunction;
+	}
+
+	~NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate()
+	{
+		if (CDestructorFunction is null) {
+			return;
+		}
+
+		CDestructorFunction(Context);
+	}
+
+	internal NativeAOT.CodeGeneratorInputSample.DoublesTransformerDelegate? CreateTrampoline()
+	{
+		if (CFunction is null) {
+			return null;
+		}
+
+		System.Type typeOfSelf = typeof(NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate);
+		string nameOfInvocationMethod = nameof(__InvokeByCallingCFunction);
+		System.Reflection.BindingFlags bindingFlags = System.Reflection.BindingFlags.Instance | BindingFlags.NonPublic;
+		System.Reflection.MethodInfo? invocationMethod = typeOfSelf.GetMethod(nameOfInvocationMethod, bindingFlags);
+
+		if (invocationMethod is null) {
+			throw new Exception("Failed to retrieve delegate invocation method");
+		}
+
+		NativeAOT.CodeGeneratorInputSample.DoublesTransformerDelegate trampoline = (NativeAOT.CodeGeneratorInputSample.DoublesTransformerDelegate)System.Delegate.CreateDelegate(typeof(NativeAOT.CodeGeneratorInputSample.DoublesTransformerDelegate), this, invocationMethod);
+
+		return trampoline;
+	}
+
+	private System.Double __InvokeByCallingCFunction(System.Double /* System.Double */ number1, System.Double /* System.Double */ number2)
+	{
+	
+
+
+		return CFunction(Context, number1, number2);
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate_Create")]
+	public static void* Create(void* context, delegate* unmanaged<void* /* context */, double /* System.Double */ /* number1 */, double /* System.Double */ /* number2 */, double /* System.Double */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	{
+		var self = new NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate(context, cFunction, cDestructorFunction);
+		void* selfHandle = self.AllocateGCHandleAndGetAddress();
+
+		return selfHandle;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate_Context_Get")]
+	public static void* Context_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate>(self);
+
+		return selfConverted.Context;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate_CFunction_Get")]
+	public static delegate* unmanaged<void* /* context */, double /* System.Double */ /* number1 */, double /* System.Double */ /* number2 */, double /* System.Double */ /* return type */> CFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate>(self);
+
+		return selfConverted.CFunction;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate_CDestructorFunction_Get")]
+	public static delegate* unmanaged<void*, void> CDestructorFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate>(self);
+
+		return selfConverted.CDestructorFunction;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate_Destroy")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.DoublesTransformerDelegate */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+
+}
+
+
+internal unsafe class NativeAOT_CodeGeneratorInputSample_Transformer
+{
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Transformer_TransformString")]
+	internal static byte* /* System.String */ NativeAOT_CodeGeneratorInputSample_Transformer_TransformString(byte* /* System.String */ inputString, void* /* NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate */ stringTransformerDelegate, void** /* System.Exception */ __outException)
+	{
+		System.String inputStringConverted = InteropUtils.ToDotNetString(inputString);
+		NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate stringTransformerDelegateConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate>(stringTransformerDelegate)?.CreateTrampoline();
+	
+	    try {
+			System.String __returnValue = NativeAOT.CodeGeneratorInputSample.Transformer.TransformString(inputStringConverted, stringTransformerDelegateConverted);
+			byte* _returnValueNative = __returnValue.CopyToCString();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Transformer_TransformDoubles")]
+	internal static double /* System.Double */ NativeAOT_CodeGeneratorInputSample_Transformer_TransformDoubles(double /* System.Double */ number1, double /* System.Double */ number2, void* /* NativeAOT.CodeGeneratorInputSample.DoublesTransformerDelegate */ doublesTransformerDelegate, void** /* System.Exception */ __outException)
+	{
+		NativeAOT.CodeGeneratorInputSample.DoublesTransformerDelegate doublesTransformerDelegateConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate>(doublesTransformerDelegate)?.CreateTrampoline();
+	
+	    try {
+			System.Double __returnValue = NativeAOT.CodeGeneratorInputSample.Transformer.TransformDoubles(number1, number2, doublesTransformerDelegateConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Transformer_Destroy")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Transformer_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.Transformer */ __self)
 	{
 	
 		InteropUtils.FreeIfAllocated(__self);
