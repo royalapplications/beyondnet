@@ -345,6 +345,8 @@ true,
         #endregion Native API
         
         sb.AppendLine();
+        
+        // TODO: Add to State
 
         WriteDestructor(
             type,

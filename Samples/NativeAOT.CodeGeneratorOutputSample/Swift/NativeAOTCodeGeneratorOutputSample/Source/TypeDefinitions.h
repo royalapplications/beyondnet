@@ -489,7 +489,7 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 
 typedef void* System_Reflection_ICustomAttributeProvider_t;
 
-typedef void* System_Delegate_t;
+// TODO: Delegate was skipped because it has no invoke method: "System.Delegate"
 
 typedef void* System_Collections_IDictionary_t;
 
@@ -548,9 +548,15 @@ typedef void* System_Threading_Tasks_ValueTask_t;
 
 typedef void* System_Runtime_CompilerServices_ValueTaskAwaiter_t;
 
-typedef void* System_Action_t;
+typedef void (*System_Action_CDestructorFunction_t)(void* context);
 
-typedef void* System_MulticastDelegate_t;
+typedef void (*System_Action_CFunction_t)(
+	void* context
+	
+);
+
+
+// TODO: Delegate was skipped because it has no invoke method: "System.MulticastDelegate"
 
 typedef void* System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_t;
 
@@ -604,7 +610,13 @@ typedef void* System_Runtime_CompilerServices_YieldAwaitable_t;
 
 typedef void* System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_t;
 
-typedef void* System_AsyncCallback_t;
+typedef void (*System_AsyncCallback_CDestructorFunction_t)(void* context);
+
+typedef void (*System_AsyncCallback_CFunction_t)(
+	void* context,
+	System_IAsyncResult_t ar
+);
+
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_IO_SeekOrigin_Begin = 0,
@@ -664,13 +676,27 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Reflection_ResourceLocation;
 
 
-typedef void* System_Reflection_ModuleResolveEventHandler_t;
+typedef void (*System_Reflection_ModuleResolveEventHandler_CDestructorFunction_t)(void* context);
+
+typedef System_Reflection_Module_t (*System_Reflection_ModuleResolveEventHandler_CFunction_t)(
+	void* context,
+	System_Object_t sender,
+	System_ResolveEventArgs_t e
+);
+
 
 typedef void* System_Reflection_Module_t;
 
 typedef void* System_Guid_t;
 
-typedef void* System_Reflection_TypeFilter_t;
+typedef void (*System_Reflection_TypeFilter_CDestructorFunction_t)(void* context);
+
+typedef CBool (*System_Reflection_TypeFilter_CFunction_t)(
+	void* context,
+	System_Type_t m,
+	System_Object_t filterCriteria
+);
+
 
 typedef void* System_ResolveEventArgs_t;
 
@@ -841,7 +867,14 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 
 typedef void* System_Reflection_InterfaceMapping_t;
 
-typedef void* System_Reflection_MemberFilter_t;
+typedef void (*System_Reflection_MemberFilter_CDestructorFunction_t)(void* context);
+
+typedef CBool (*System_Reflection_MemberFilter_CFunction_t)(
+	void* context,
+	System_Reflection_MemberInfo_t m,
+	System_Object_t filterCriteria
+);
+
 
 typedef void* NativeAOT_CodeGeneratorInputSample_IAnimal_t;
 
@@ -861,7 +894,13 @@ typedef enum __attribute__((enum_extensibility(closed))): uint32_t {
 
 typedef void* NativeAOT_CodeGeneratorInputSample_Person_t;
 
-typedef void* NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_t;
+typedef void (*NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CDestructorFunction_t)(void* context);
+
+typedef int32_t (*NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CFunction_t)(
+	void* context
+	
+);
+
 
 typedef void* NativeAOT_CodeGeneratorInputSample_Person_Extensions_t;
 
@@ -873,7 +912,13 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 
 typedef void* NativeAOT_CodeGeneratorInputSample_TestClass_t;
 
-typedef void* NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_t;
+typedef void (*NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_CDestructorFunction_t)(void* context);
+
+typedef void (*NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_CFunction_t)(
+	void* context
+	
+);
+
 
 
 #pragma mark - END Type Definitions
@@ -9309,6 +9354,12 @@ System_Reflection_ICustomAttributeProvider_Destroy(
 #pragma mark - END APIs of System.Reflection.ICustomAttributeProvider
 
 #pragma mark - BEGIN APIs of System.Delegate
+System_Delegate_t /* System.Delegate */
+System_Delegate_Create(
+	void* context
+	System_Delegate_CFunction_t function
+	System_Delegate_CDestructorFunction_t destructorFunction
+);
 #pragma mark - END APIs of System.Delegate
 
 #pragma mark - BEGIN APIs of System.Collections.IDictionary
@@ -10569,6 +10620,12 @@ System_Runtime_CompilerServices_ValueTaskAwaiter_Destroy(
 #pragma mark - END APIs of System.Runtime.CompilerServices.ValueTaskAwaiter
 
 #pragma mark - BEGIN APIs of System.Action
+System_Action_t /* System.Action */
+System_Action_Create(
+	void* context
+	System_Action_CFunction_t function
+	System_Action_CDestructorFunction_t destructorFunction
+);
 void /* System.Void */
 System_Action_Destroy(
 	System_Action_t /* System.Action */ self
@@ -10577,6 +10634,12 @@ System_Action_Destroy(
 #pragma mark - END APIs of System.Action
 
 #pragma mark - BEGIN APIs of System.MulticastDelegate
+System_MulticastDelegate_t /* System.MulticastDelegate */
+System_MulticastDelegate_Create(
+	void* context
+	System_MulticastDelegate_CFunction_t function
+	System_MulticastDelegate_CDestructorFunction_t destructorFunction
+);
 #pragma mark - END APIs of System.MulticastDelegate
 
 #pragma mark - BEGIN APIs of System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable
@@ -10821,6 +10884,12 @@ System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_Destroy(
 #pragma mark - END APIs of System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter
 
 #pragma mark - BEGIN APIs of System.AsyncCallback
+System_AsyncCallback_t /* System.AsyncCallback */
+System_AsyncCallback_Create(
+	void* context
+	System_AsyncCallback_CFunction_t function
+	System_AsyncCallback_CDestructorFunction_t destructorFunction
+);
 void /* System.Void */
 System_AsyncCallback_Destroy(
 	System_AsyncCallback_t /* System.AsyncCallback */ self
@@ -11004,6 +11073,12 @@ System_Reflection_ManifestResourceInfo_Destroy(
 #pragma mark - END APIs of System.Reflection.ResourceLocation
 
 #pragma mark - BEGIN APIs of System.Reflection.ModuleResolveEventHandler
+System_Reflection_ModuleResolveEventHandler_t /* System.Reflection.ModuleResolveEventHandler */
+System_Reflection_ModuleResolveEventHandler_Create(
+	void* context
+	System_Reflection_ModuleResolveEventHandler_CFunction_t function
+	System_Reflection_ModuleResolveEventHandler_CDestructorFunction_t destructorFunction
+);
 void /* System.Void */
 System_Reflection_ModuleResolveEventHandler_Destroy(
 	System_Reflection_ModuleResolveEventHandler_t /* System.Reflection.ModuleResolveEventHandler */ self
@@ -11331,6 +11406,12 @@ System_Guid_Destroy(
 #pragma mark - END APIs of System.Guid
 
 #pragma mark - BEGIN APIs of System.Reflection.TypeFilter
+System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */
+System_Reflection_TypeFilter_Create(
+	void* context
+	System_Reflection_TypeFilter_CFunction_t function
+	System_Reflection_TypeFilter_CDestructorFunction_t destructorFunction
+);
 void /* System.Void */
 System_Reflection_TypeFilter_Destroy(
 	System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */ self
@@ -13548,6 +13629,12 @@ System_Reflection_InterfaceMapping_Destroy(
 #pragma mark - END APIs of System.Reflection.InterfaceMapping
 
 #pragma mark - BEGIN APIs of System.Reflection.MemberFilter
+System_Reflection_MemberFilter_t /* System.Reflection.MemberFilter */
+System_Reflection_MemberFilter_Create(
+	void* context
+	System_Reflection_MemberFilter_CFunction_t function
+	System_Reflection_MemberFilter_CDestructorFunction_t destructorFunction
+);
 void /* System.Void */
 System_Reflection_MemberFilter_Destroy(
 	System_Reflection_MemberFilter_t /* System.Reflection.MemberFilter */ self
@@ -13794,6 +13881,12 @@ NativeAOT_CodeGeneratorInputSample_Person_Destroy(
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.Person
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate
+NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate */
+NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Create(
+	void* context
+	NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CFunction_t function
+	NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CDestructorFunction_t destructorFunction
+);
 void /* System.Void */
 NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Destroy(
 	NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate */ self
@@ -13887,6 +13980,12 @@ NativeAOT_CodeGeneratorInputSample_TestClass_Destroy(
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.TestClass
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate
+NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_t /* NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate */
+NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_Create(
+	void* context
+	NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_CFunction_t function
+	NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_CDestructorFunction_t destructorFunction
+);
 void /* System.Void */
 NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_Destroy(
 	NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_t /* NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate */ self

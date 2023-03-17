@@ -63,6 +63,19 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
             );
 
             sb.AppendLine(enumdefCode);
+        } else if (type.IsDelegate()) {
+            var delegateInvokeMethod = type.GetDelegateInvokeMethod();
+
+            if (delegateInvokeMethod is null) {
+                sb.AppendLine($"// TODO: Delegate was skipped because it has no invoke method: \"{type.GetFullNameOrName()}\"");
+            } else {
+                string delegateTypedefCode = WriteDelegateTypeDefs(
+                    type,
+                    delegateInvokeMethod
+                );
+    
+                sb.AppendLine(delegateTypedefCode);
+            }
         } else {
             string typedefCode = WriteTypeDef(cTypeName);
             
@@ -75,6 +88,71 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
     private string WriteTypeDef(string cTypeName)
     {
         return $"typedef void* {cTypeName}_t;";
+    }
+
+    private string WriteDelegateTypeDefs(
+        Type delegateType,
+        MethodInfo delegateInvokeMethod
+    )
+    {
+        TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
+        
+        string fullTypeName = delegateType.GetFullNameOrName();
+        string cTypeName = fullTypeName.CTypeName();
+
+        string contextTypeName = "void*";
+        string cFunctionTypeName = $"{cTypeName}_CFunction_t";
+        string cDestructorFunctionTypeName = $"{cTypeName}_CDestructorFunction_t";
+
+        StringBuilder sb = new();
+
+        sb.AppendLine($"typedef void (*{cDestructorFunctionTypeName})({contextTypeName} context);");
+        sb.AppendLine();
+
+        Type returnType = delegateInvokeMethod.ReturnType;
+
+        string cReturnTypeName;
+
+        if (returnType.IsVoid()) {
+            cReturnTypeName = "void";
+        } else {
+            TypeDescriptor returnTypeDescriptor = returnType.GetTypeDescriptor(typeDescriptorRegistry);
+            cReturnTypeName = returnTypeDescriptor.GetTypeName(CodeLanguage.C, true);            
+        }
+
+        sb.AppendLine($"typedef {cReturnTypeName} (*{cFunctionTypeName})(");
+
+        List<string> parameters = new();
+
+        foreach (var parameter in delegateInvokeMethod.GetParameters()) {
+            string parameterName = parameter.Name ?? throw new Exception("Delegate parameter has no name");
+            
+            Type parameterType = parameter.ParameterType;
+            TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
+
+            string parameterTypeName = parameterTypeDescriptor.GetTypeName(CodeLanguage.C, true);
+
+            parameters.Add($"{parameterTypeName} {parameterName}");
+        }
+
+        string parametersString = string.Join(",\n", parameters);
+
+        string contextParameter = $"{contextTypeName} context";
+
+        if (!string.IsNullOrEmpty(parametersString)) {
+            parametersString = contextParameter + ",\n" + parametersString;
+        } else {
+            parametersString = contextParameter + "\n";
+        }
+        
+        sb.Append(parametersString
+            .IndentAllLines(1));
+        
+        sb.AppendLine(");");
+
+        string delegateTypeDefCode = sb.ToString();
+
+        return delegateTypeDefCode;
     }
 
     private string WriteEnumDef(
@@ -119,6 +197,8 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
 
     public string WriteMembers(Type type, State state)
     {
+        TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
+        
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
         
         if (type.IsPrimitive ||
@@ -134,8 +214,24 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         StringBuilder sb = new();
 
         string fullTypeName = type.GetFullNameOrName();
+        
+        bool isDelegate = type.IsDelegate();
 
         sb.AppendLine($"#pragma mark - BEGIN APIs of {fullTypeName}");
+
+        if (isDelegate) {
+            TypeDescriptor typeDescriptor = type.GetTypeDescriptor(typeDescriptorRegistry);
+            string cTypeName =  typeDescriptor.GetTypeName(CodeLanguage.C, false);
+            string cMemberNamePrefix = fullTypeName.CTypeName();
+            
+            WriteDelegateTypeMembers(
+                fullTypeName,
+                cTypeName,
+                cMemberNamePrefix,
+                sb,
+                state
+            );
+        }
 
         foreach (var cSharpMember in cSharpMembers) {
             var member = cSharpMember.Member;
@@ -179,7 +275,29 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
 
         return sb.ToString();
     }
-    
+
+    private void WriteDelegateTypeMembers(
+        string fullTypeName,
+        string cTypeName,
+        string cMemberNamePrefix,
+        StringBuilder sb,
+        State state
+    )
+    {
+        string contextType = "void*";
+        string functionType = $"{cMemberNamePrefix}_CFunction_t";
+        string destrutorFunctionType = $"{cMemberNamePrefix}_CDestructorFunction_t";
+
+        sb.AppendLine($"{cTypeName} /* {fullTypeName} */");
+        sb.AppendLine($"{cMemberNamePrefix}_Create(");
+        sb.AppendLine($"\t{contextType} context");
+        sb.AppendLine($"\t{functionType} function");
+        sb.AppendLine($"\t{destrutorFunctionType} destructorFunction");
+        sb.AppendLine(");");
+        
+        // TODO: Add to State
+    }
+
     private ICSyntaxWriter? GetSyntaxWriter(
         MemberKind memberKind,
         MemberTypes memberType
