@@ -207,7 +207,7 @@ true,
         sb.AppendLine();
 
         #region Constructor
-        sb.AppendLine($"\t{cTypeName}({contextType} context, {cFunctionSignature} cFunction, {cDestructorFunctionSignature} cDestructorFunction)");
+        sb.AppendLine($"\tprivate {cTypeName}({contextType} context, {cFunctionSignature} cFunction, {cDestructorFunctionSignature} cDestructorFunction)");
         sb.AppendLine("\t{");
 
         sb.AppendLine("\t\tContext = context;");
@@ -233,6 +233,7 @@ true,
         sb.AppendLine();
         
         #region Delegate Wrapper
+        #region Trampoline
         sb.AppendLine($"\tinternal {fullTypeName}? CreateTrampoline()");
         sb.AppendLine("\t{");
         
@@ -260,9 +261,11 @@ true,
         sb.AppendLine("\t\treturn trampoline;");
         
         sb.AppendLine("\t}");
+        #endregion Trampoline
 
         sb.AppendLine();
 
+        #region Invocation
         sb.AppendLine($"\tprivate {fullReturnTypeName} __InvokeByCallingCFunction({managedParmeters})");
         sb.AppendLine("\t{");
 
@@ -293,8 +296,22 @@ true,
         sb.AppendLine($"\t\t{invocationPrefix}CFunction(Context{parameterNamesString});");
         
         sb.AppendLine("\t}");
+        #endregion Invocation
         #endregion Delegate Wrapper
 
+        sb.AppendLine();
+        
+        #region Native API
+        sb.AppendLine($"\t[UnmanagedCallersOnly(EntryPoint = \"{cTypeName}_Create\")]");
+        sb.AppendLine($"\tpublic static void* Create({contextType} context, {cFunctionSignature} cFunction, {cDestructorFunctionSignature} cDestructorFunction)");
+        sb.AppendLine("\t{");
+        sb.AppendLine($"\t\tvar self = new {cTypeName}(context, cFunction, cDestructorFunction);");
+        sb.AppendLine("\t\tvoid* selfHandle = self.AllocateGCHandleAndGetAddress();");
+        sb.AppendLine();
+        sb.AppendLine("\t\treturn selfHandle;");
+        sb.AppendLine("\t}");
+        #endregion Native API
+        
         sb.AppendLine();
 
         WriteDestructor(

@@ -40249,7 +40249,7 @@ internal unsafe class System_Action
 	public delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> CFunction { get; }
 	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
 
-	System_Action(void* context, delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	private System_Action(void* context, delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
 	{
 		Context = context;
 		CFunction = cFunction;
@@ -40291,6 +40291,15 @@ internal unsafe class System_Action
 
 
 		CFunction(Context);
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Action_Create")]
+	public static void* Create(void* context, delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	{
+		var self = new System_Action(context, cFunction, cDestructorFunction);
+		void* selfHandle = self.AllocateGCHandleAndGetAddress();
+
+		return selfHandle;
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Action_Destroy")]
@@ -41182,7 +41191,7 @@ internal unsafe class System_AsyncCallback
 	public delegate* unmanaged<void* /* context */, void* /* System.IAsyncResult */ /* ar */, void /* System.Void */ /* return type */> CFunction { get; }
 	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
 
-	System_AsyncCallback(void* context, delegate* unmanaged<void* /* context */, void* /* System.IAsyncResult */ /* ar */, void /* System.Void */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	private System_AsyncCallback(void* context, delegate* unmanaged<void* /* context */, void* /* System.IAsyncResult */ /* ar */, void /* System.Void */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
 	{
 		Context = context;
 		CFunction = cFunction;
@@ -41225,6 +41234,15 @@ internal unsafe class System_AsyncCallback
 
 
 		CFunction(Context, arConverted);
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_AsyncCallback_Create")]
+	public static void* Create(void* context, delegate* unmanaged<void* /* context */, void* /* System.IAsyncResult */ /* ar */, void /* System.Void */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	{
+		var self = new System_AsyncCallback(context, cFunction, cDestructorFunction);
+		void* selfHandle = self.AllocateGCHandleAndGetAddress();
+
+		return selfHandle;
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_AsyncCallback_Destroy")]
@@ -41899,7 +41917,7 @@ internal unsafe class System_Reflection_ModuleResolveEventHandler
 	public delegate* unmanaged<void* /* context */, void* /* System.Object */ /* sender */, void* /* System.ResolveEventArgs */ /* e */, void* /* System.Reflection.Module */ /* return type */> CFunction { get; }
 	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
 
-	System_Reflection_ModuleResolveEventHandler(void* context, delegate* unmanaged<void* /* context */, void* /* System.Object */ /* sender */, void* /* System.ResolveEventArgs */ /* e */, void* /* System.Reflection.Module */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	private System_Reflection_ModuleResolveEventHandler(void* context, delegate* unmanaged<void* /* context */, void* /* System.Object */ /* sender */, void* /* System.ResolveEventArgs */ /* e */, void* /* System.Reflection.Module */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
 	{
 		Context = context;
 		CFunction = cFunction;
@@ -41943,6 +41961,15 @@ internal unsafe class System_Reflection_ModuleResolveEventHandler
 
 
 		return CFunction(Context, senderConverted, eConverted);
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ModuleResolveEventHandler_Create")]
+	public static void* Create(void* context, delegate* unmanaged<void* /* context */, void* /* System.Object */ /* sender */, void* /* System.ResolveEventArgs */ /* e */, void* /* System.Reflection.Module */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	{
+		var self = new System_Reflection_ModuleResolveEventHandler(context, cFunction, cDestructorFunction);
+		void* selfHandle = self.AllocateGCHandleAndGetAddress();
+
+		return selfHandle;
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ModuleResolveEventHandler_Destroy")]
@@ -43245,7 +43272,7 @@ internal unsafe class System_Reflection_TypeFilter
 	public delegate* unmanaged<void* /* context */, void* /* System.Type */ /* m */, void* /* System.Object */ /* filterCriteria */, CBool /* System.Boolean */ /* return type */> CFunction { get; }
 	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
 
-	System_Reflection_TypeFilter(void* context, delegate* unmanaged<void* /* context */, void* /* System.Type */ /* m */, void* /* System.Object */ /* filterCriteria */, CBool /* System.Boolean */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	private System_Reflection_TypeFilter(void* context, delegate* unmanaged<void* /* context */, void* /* System.Type */ /* m */, void* /* System.Object */ /* filterCriteria */, CBool /* System.Boolean */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
 	{
 		Context = context;
 		CFunction = cFunction;
@@ -43289,6 +43316,15 @@ internal unsafe class System_Reflection_TypeFilter
 
 
 		return CFunction(Context, mConverted, filterCriteriaConverted);
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_TypeFilter_Create")]
+	public static void* Create(void* context, delegate* unmanaged<void* /* context */, void* /* System.Type */ /* m */, void* /* System.Object */ /* filterCriteria */, CBool /* System.Boolean */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	{
+		var self = new System_Reflection_TypeFilter(context, cFunction, cDestructorFunction);
+		void* selfHandle = self.AllocateGCHandleAndGetAddress();
+
+		return selfHandle;
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_TypeFilter_Destroy")]
@@ -52629,7 +52665,7 @@ internal unsafe class System_Reflection_MemberFilter
 	public delegate* unmanaged<void* /* context */, void* /* System.Reflection.MemberInfo */ /* m */, void* /* System.Object */ /* filterCriteria */, CBool /* System.Boolean */ /* return type */> CFunction { get; }
 	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
 
-	System_Reflection_MemberFilter(void* context, delegate* unmanaged<void* /* context */, void* /* System.Reflection.MemberInfo */ /* m */, void* /* System.Object */ /* filterCriteria */, CBool /* System.Boolean */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	private System_Reflection_MemberFilter(void* context, delegate* unmanaged<void* /* context */, void* /* System.Reflection.MemberInfo */ /* m */, void* /* System.Object */ /* filterCriteria */, CBool /* System.Boolean */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
 	{
 		Context = context;
 		CFunction = cFunction;
@@ -52673,6 +52709,15 @@ internal unsafe class System_Reflection_MemberFilter
 
 
 		return CFunction(Context, mConverted, filterCriteriaConverted);
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MemberFilter_Create")]
+	public static void* Create(void* context, delegate* unmanaged<void* /* context */, void* /* System.Reflection.MemberInfo */ /* m */, void* /* System.Object */ /* filterCriteria */, CBool /* System.Boolean */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	{
+		var self = new System_Reflection_MemberFilter(context, cFunction, cDestructorFunction);
+		void* selfHandle = self.AllocateGCHandleAndGetAddress();
+
+		return selfHandle;
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MemberFilter_Destroy")]
@@ -53590,7 +53635,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDe
 	public delegate* unmanaged<void* /* context */, int /* System.Int32 */ /* return type */> CFunction { get; }
 	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
 
-	NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate(void* context, delegate* unmanaged<void* /* context */, int /* System.Int32 */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	private NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate(void* context, delegate* unmanaged<void* /* context */, int /* System.Int32 */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
 	{
 		Context = context;
 		CFunction = cFunction;
@@ -53632,6 +53677,15 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDe
 
 
 		return CFunction(Context);
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Create")]
+	public static void* Create(void* context, delegate* unmanaged<void* /* context */, int /* System.Int32 */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	{
+		var self = new NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate(context, cFunction, cDestructorFunction);
+		void* selfHandle = self.AllocateGCHandleAndGetAddress();
+
+		return selfHandle;
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Destroy")]
@@ -53959,7 +54013,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegat
 	public delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> CFunction { get; }
 	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
 
-	NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate(void* context, delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	private NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate(void* context, delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
 	{
 		Context = context;
 		CFunction = cFunction;
@@ -54001,6 +54055,15 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegat
 
 
 		CFunction(Context);
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_Create")]
+	public static void* Create(void* context, delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	{
+		var self = new NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate(context, cFunction, cDestructorFunction);
+		void* selfHandle = self.AllocateGCHandleAndGetAddress();
+
+		return selfHandle;
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_Destroy")]
