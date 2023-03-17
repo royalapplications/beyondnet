@@ -432,4 +432,24 @@ final class PersonTests: XCTestCase {
         
         XCTAssertEqual(expectedAge, age)
     }
+	
+	func testPersonChangeAge() {
+		var exception: System_Exception_t?
+		
+		let initialAge: Int32 = 0
+		
+		guard let person = NativeAOT_CodeGeneratorInputSample_Person_Create("Johanna",
+																			"Doe",
+																			0,
+																			&exception),
+			  exception == nil else {
+			XCTFail("Person ctor should not throw and return an instance")
+			
+			return
+		}
+		
+		defer { NativeAOT_CodeGeneratorInputSample_Person_Destroy(person) }
+		
+//		let newAgeProviderDelegate = NewAgeprovi
+	}
 }

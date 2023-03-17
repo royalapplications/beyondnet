@@ -320,6 +320,7 @@ true,
         sb.AppendLine();
         
         #region Native API
+        #region Create
         sb.AppendLine($"\t[UnmanagedCallersOnly(EntryPoint = \"{cTypeName}_Create\")]");
         sb.AppendLine($"\tpublic static void* Create({contextType} context, {cFunctionSignature} cFunction, {cDestructorFunctionSignature} cDestructorFunction)");
         sb.AppendLine("\t{");
@@ -328,6 +329,19 @@ true,
         sb.AppendLine();
         sb.AppendLine("\t\treturn selfHandle;");
         sb.AppendLine("\t}");
+        #endregion Create
+
+        #region Context Get
+        // TODO
+        #endregion Context Get
+        
+        #region CFunction Get
+        // TODO
+        #endregion CFunction Get
+        
+        #region CDestructorFunction Get
+        // TODO
+        #endregion CDestructorFunction Get
         #endregion Native API
         
         sb.AppendLine();
