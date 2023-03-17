@@ -1,5 +1,5 @@
 // Number of generated types: 179
-// Number of generated members: 1892
+// Number of generated members: 1894
 
 // <Header>
 using System;
@@ -35357,7 +35357,19 @@ internal unsafe class System_Reflection_ICustomAttributeProvider
 }
 
 
-// Type "Delegate" was skipped. Reason: It is a delegate but has no Invoke method.
+internal unsafe class System_Delegate
+{
+	[UnmanagedCallersOnly(EntryPoint = "System_Delegate_Destroy")]
+	internal static void /* System.Void */ System_Delegate_Destroy(void* /* System.Delegate */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+
+}
+
+
 internal unsafe class System_Collections_IDictionary
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_Collections_IDictionary_Contains")]
@@ -40313,7 +40325,19 @@ internal unsafe class System_Action
 }
 
 
-// Type "MulticastDelegate" was skipped. Reason: It is a delegate but has no Invoke method.
+internal unsafe class System_MulticastDelegate
+{
+	[UnmanagedCallersOnly(EntryPoint = "System_MulticastDelegate_Destroy")]
+	internal static void /* System.Void */ System_MulticastDelegate_Destroy(void* /* System.MulticastDelegate */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+
+}
+
+
 internal unsafe class System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_GetAwaiter")]
