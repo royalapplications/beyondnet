@@ -1,5 +1,5 @@
-// Number of generated types: 181
-// Number of generated members: 1897
+// Number of generated types: 183
+// Number of generated members: 1903
 
 // <Header>
 using System;
@@ -195,36 +195,316 @@ internal static unsafe class InteropUtils
 
 // </Unsupported Types>
 // <APIs>
-internal unsafe class NativeAOT_CodeGeneratorInputSample_AnimalFactory
+internal unsafe class NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate
 {
-	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_AnimalFactory_CreateAnimal")]
-	internal static void* /* NativeAOT.CodeGeneratorInputSample.IAnimal */ NativeAOT_CodeGeneratorInputSample_AnimalFactory_CreateAnimal(byte* /* System.String */ animalName, void** /* System.Exception */ __outException)
+	public void* Context { get; }
+	public delegate* unmanaged<void* /* context */, byte* /* System.String */ /* animalName */, void* /* NativeAOT.CodeGeneratorInputSample.IAnimal */ /* return type */> CFunction { get; }
+	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
+
+	private NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate(void* context, delegate* unmanaged<void* /* context */, byte* /* System.String */ /* animalName */, void* /* NativeAOT.CodeGeneratorInputSample.IAnimal */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
 	{
-		System.String animalNameConverted = InteropUtils.ToDotNetString(animalName);
-	
-	    try {
-			NativeAOT.CodeGeneratorInputSample.IAnimal __returnValue = NativeAOT.CodeGeneratorInputSample.AnimalFactory.CreateAnimal(animalNameConverted);
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
+		Context = context;
+		CFunction = cFunction;
+		CDestructorFunction = cDestructorFunction;
+	}
+
+	~NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate()
+	{
+		if (CDestructorFunction is null) {
+			return;
+		}
+
+		CDestructorFunction(Context);
+	}
+
+	internal NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate? CreateTrampoline()
+	{
+		if (CFunction is null) {
 			return null;
 		}
+
+		System.Type typeOfSelf = typeof(NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate);
+		string nameOfInvocationMethod = nameof(__InvokeByCallingCFunction);
+		System.Reflection.BindingFlags bindingFlags = System.Reflection.BindingFlags.Instance | BindingFlags.NonPublic;
+		System.Reflection.MethodInfo? invocationMethod = typeOfSelf.GetMethod(nameOfInvocationMethod, bindingFlags);
+
+		if (invocationMethod is null) {
+			throw new Exception("Failed to retrieve delegate invocation method");
+		}
+
+		NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate trampoline = (NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate)System.Delegate.CreateDelegate(typeof(NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate), this, invocationMethod);
+
+		return trampoline;
+	}
+
+	private NativeAOT.CodeGeneratorInputSample.IAnimal __InvokeByCallingCFunction(System.String /* System.String */ animalName)
+	{
+		byte* animalNameConverted = animalName.CopyToCString();
+	
+
+
+		return InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.IAnimal>(CFunction(Context, animalNameConverted));
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Create")]
+	public static void* Create(void* context, delegate* unmanaged<void* /* context */, byte* /* System.String */ /* animalName */, void* /* NativeAOT.CodeGeneratorInputSample.IAnimal */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	{
+		var self = new NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate(context, cFunction, cDestructorFunction);
+		void* selfHandle = self.AllocateGCHandleAndGetAddress();
+
+		return selfHandle;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Context_Get")]
+	public static void* Context_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate>(self);
+
+		return selfConverted.Context;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_CFunction_Get")]
+	public static delegate* unmanaged<void* /* context */, byte* /* System.String */ /* animalName */, void* /* NativeAOT.CodeGeneratorInputSample.IAnimal */ /* return type */> CFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate>(self);
+
+		return selfConverted.CFunction;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_CDestructorFunction_Get")]
+	public static delegate* unmanaged<void*, void> CDestructorFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate>(self);
+
+		return selfConverted.CDestructorFunction;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Destroy")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_AnimalFactory_Destroy")]
-	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_AnimalFactory_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.AnimalFactory */ __self)
+}
+
+
+internal unsafe class System_MulticastDelegate
+{
+	public void* Context { get; }
+	public delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> CFunction { get; }
+	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
+
+	private System_MulticastDelegate(void* context, delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	{
+		Context = context;
+		CFunction = cFunction;
+		CDestructorFunction = cDestructorFunction;
+	}
+
+	~System_MulticastDelegate()
+	{
+		if (CDestructorFunction is null) {
+			return;
+		}
+
+		CDestructorFunction(Context);
+	}
+
+	internal System.MulticastDelegate? CreateTrampoline()
+	{
+		if (CFunction is null) {
+			return null;
+		}
+
+		System.Type typeOfSelf = typeof(System_MulticastDelegate);
+		string nameOfInvocationMethod = nameof(__InvokeByCallingCFunction);
+		System.Reflection.BindingFlags bindingFlags = System.Reflection.BindingFlags.Instance | BindingFlags.NonPublic;
+		System.Reflection.MethodInfo? invocationMethod = typeOfSelf.GetMethod(nameOfInvocationMethod, bindingFlags);
+
+		if (invocationMethod is null) {
+			throw new Exception("Failed to retrieve delegate invocation method");
+		}
+
+		System.MulticastDelegate trampoline = (System.MulticastDelegate)System.Delegate.CreateDelegate(typeof(System.MulticastDelegate), this, invocationMethod);
+
+		return trampoline;
+	}
+
+	private void __InvokeByCallingCFunction()
+	{
+	
+
+
+		CFunction(Context);
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_MulticastDelegate_Create")]
+	public static void* Create(void* context, delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	{
+		var self = new System_MulticastDelegate(context, cFunction, cDestructorFunction);
+		void* selfHandle = self.AllocateGCHandleAndGetAddress();
+
+		return selfHandle;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_MulticastDelegate_Context_Get")]
+	public static void* Context_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_MulticastDelegate>(self);
+
+		return selfConverted.Context;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_MulticastDelegate_CFunction_Get")]
+	public static delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> CFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_MulticastDelegate>(self);
+
+		return selfConverted.CFunction;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_MulticastDelegate_CDestructorFunction_Get")]
+	public static delegate* unmanaged<void*, void> CDestructorFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_MulticastDelegate>(self);
+
+		return selfConverted.CDestructorFunction;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_MulticastDelegate_Destroy")]
+	internal static void /* System.Void */ System_MulticastDelegate_Destroy(void* /* System.MulticastDelegate */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+
+}
+
+
+internal unsafe class System_Delegate
+{
+	public void* Context { get; }
+	public delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> CFunction { get; }
+	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
+
+	private System_Delegate(void* context, delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	{
+		Context = context;
+		CFunction = cFunction;
+		CDestructorFunction = cDestructorFunction;
+	}
+
+	~System_Delegate()
+	{
+		if (CDestructorFunction is null) {
+			return;
+		}
+
+		CDestructorFunction(Context);
+	}
+
+	internal System.Delegate? CreateTrampoline()
+	{
+		if (CFunction is null) {
+			return null;
+		}
+
+		System.Type typeOfSelf = typeof(System_Delegate);
+		string nameOfInvocationMethod = nameof(__InvokeByCallingCFunction);
+		System.Reflection.BindingFlags bindingFlags = System.Reflection.BindingFlags.Instance | BindingFlags.NonPublic;
+		System.Reflection.MethodInfo? invocationMethod = typeOfSelf.GetMethod(nameOfInvocationMethod, bindingFlags);
+
+		if (invocationMethod is null) {
+			throw new Exception("Failed to retrieve delegate invocation method");
+		}
+
+		System.Delegate trampoline = (System.Delegate)System.Delegate.CreateDelegate(typeof(System.Delegate), this, invocationMethod);
+
+		return trampoline;
+	}
+
+	private void __InvokeByCallingCFunction()
+	{
+	
+
+
+		CFunction(Context);
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Delegate_Create")]
+	public static void* Create(void* context, delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	{
+		var self = new System_Delegate(context, cFunction, cDestructorFunction);
+		void* selfHandle = self.AllocateGCHandleAndGetAddress();
+
+		return selfHandle;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Delegate_Context_Get")]
+	public static void* Context_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_Delegate>(self);
+
+		return selfConverted.Context;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Delegate_CFunction_Get")]
+	public static delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> CFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_Delegate>(self);
+
+		return selfConverted.CFunction;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Delegate_CDestructorFunction_Get")]
+	public static delegate* unmanaged<void*, void> CDestructorFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_Delegate>(self);
+
+		return selfConverted.CDestructorFunction;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Delegate_Destroy")]
+	internal static void /* System.Void */ System_Delegate_Destroy(void* /* System.Delegate */ __self)
 	{
 	
 		InteropUtils.FreeIfAllocated(__self);
@@ -35357,112 +35637,6 @@ internal unsafe class System_Reflection_ICustomAttributeProvider
 }
 
 
-internal unsafe class System_Delegate
-{
-	public void* Context { get; }
-	public delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> CFunction { get; }
-	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
-
-	private System_Delegate(void* context, delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
-	{
-		Context = context;
-		CFunction = cFunction;
-		CDestructorFunction = cDestructorFunction;
-	}
-
-	~System_Delegate()
-	{
-		if (CDestructorFunction is null) {
-			return;
-		}
-
-		CDestructorFunction(Context);
-	}
-
-	internal System.Delegate? CreateTrampoline()
-	{
-		if (CFunction is null) {
-			return null;
-		}
-
-		System.Type typeOfSelf = typeof(System_Delegate);
-		string nameOfInvocationMethod = nameof(__InvokeByCallingCFunction);
-		System.Reflection.BindingFlags bindingFlags = System.Reflection.BindingFlags.Instance | BindingFlags.NonPublic;
-		System.Reflection.MethodInfo? invocationMethod = typeOfSelf.GetMethod(nameOfInvocationMethod, bindingFlags);
-
-		if (invocationMethod is null) {
-			throw new Exception("Failed to retrieve delegate invocation method");
-		}
-
-		System.Delegate trampoline = (System.Delegate)System.Delegate.CreateDelegate(typeof(System.Delegate), this, invocationMethod);
-
-		return trampoline;
-	}
-
-	private void __InvokeByCallingCFunction()
-	{
-	
-
-
-		CFunction(Context);
-	}
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Delegate_Create")]
-	public static void* Create(void* context, delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
-	{
-		var self = new System_Delegate(context, cFunction, cDestructorFunction);
-		void* selfHandle = self.AllocateGCHandleAndGetAddress();
-
-		return selfHandle;
-	}
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Delegate_Context_Get")]
-	public static void* Context_Get(void* self)
-	{
-		if (self is null) {
-			throw new ArgumentNullException(nameof(self));
-		}
-
-		var selfConverted = InteropUtils.GetInstance<System_Delegate>(self);
-
-		return selfConverted.Context;
-	}
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Delegate_CFunction_Get")]
-	public static delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> CFunction_Get(void* self)
-	{
-		if (self is null) {
-			throw new ArgumentNullException(nameof(self));
-		}
-
-		var selfConverted = InteropUtils.GetInstance<System_Delegate>(self);
-
-		return selfConverted.CFunction;
-	}
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Delegate_CDestructorFunction_Get")]
-	public static delegate* unmanaged<void*, void> CDestructorFunction_Get(void* self)
-	{
-		if (self is null) {
-			throw new ArgumentNullException(nameof(self));
-		}
-
-		var selfConverted = InteropUtils.GetInstance<System_Delegate>(self);
-
-		return selfConverted.CDestructorFunction;
-	}
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Delegate_Destroy")]
-	internal static void /* System.Void */ System_Delegate_Destroy(void* /* System.Delegate */ __self)
-	{
-	
-		InteropUtils.FreeIfAllocated(__self);
-	}
-	
-
-}
-
-
 internal unsafe class System_Collections_IDictionary
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_Collections_IDictionary_Contains")]
@@ -40445,112 +40619,6 @@ internal unsafe class System_Action
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Action_Destroy")]
 	internal static void /* System.Void */ System_Action_Destroy(void* /* System.Action */ __self)
-	{
-	
-		InteropUtils.FreeIfAllocated(__self);
-	}
-	
-
-}
-
-
-internal unsafe class System_MulticastDelegate
-{
-	public void* Context { get; }
-	public delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> CFunction { get; }
-	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
-
-	private System_MulticastDelegate(void* context, delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
-	{
-		Context = context;
-		CFunction = cFunction;
-		CDestructorFunction = cDestructorFunction;
-	}
-
-	~System_MulticastDelegate()
-	{
-		if (CDestructorFunction is null) {
-			return;
-		}
-
-		CDestructorFunction(Context);
-	}
-
-	internal System.MulticastDelegate? CreateTrampoline()
-	{
-		if (CFunction is null) {
-			return null;
-		}
-
-		System.Type typeOfSelf = typeof(System_MulticastDelegate);
-		string nameOfInvocationMethod = nameof(__InvokeByCallingCFunction);
-		System.Reflection.BindingFlags bindingFlags = System.Reflection.BindingFlags.Instance | BindingFlags.NonPublic;
-		System.Reflection.MethodInfo? invocationMethod = typeOfSelf.GetMethod(nameOfInvocationMethod, bindingFlags);
-
-		if (invocationMethod is null) {
-			throw new Exception("Failed to retrieve delegate invocation method");
-		}
-
-		System.MulticastDelegate trampoline = (System.MulticastDelegate)System.Delegate.CreateDelegate(typeof(System.MulticastDelegate), this, invocationMethod);
-
-		return trampoline;
-	}
-
-	private void __InvokeByCallingCFunction()
-	{
-	
-
-
-		CFunction(Context);
-	}
-
-	[UnmanagedCallersOnly(EntryPoint = "System_MulticastDelegate_Create")]
-	public static void* Create(void* context, delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
-	{
-		var self = new System_MulticastDelegate(context, cFunction, cDestructorFunction);
-		void* selfHandle = self.AllocateGCHandleAndGetAddress();
-
-		return selfHandle;
-	}
-
-	[UnmanagedCallersOnly(EntryPoint = "System_MulticastDelegate_Context_Get")]
-	public static void* Context_Get(void* self)
-	{
-		if (self is null) {
-			throw new ArgumentNullException(nameof(self));
-		}
-
-		var selfConverted = InteropUtils.GetInstance<System_MulticastDelegate>(self);
-
-		return selfConverted.Context;
-	}
-
-	[UnmanagedCallersOnly(EntryPoint = "System_MulticastDelegate_CFunction_Get")]
-	public static delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> CFunction_Get(void* self)
-	{
-		if (self is null) {
-			throw new ArgumentNullException(nameof(self));
-		}
-
-		var selfConverted = InteropUtils.GetInstance<System_MulticastDelegate>(self);
-
-		return selfConverted.CFunction;
-	}
-
-	[UnmanagedCallersOnly(EntryPoint = "System_MulticastDelegate_CDestructorFunction_Get")]
-	public static delegate* unmanaged<void*, void> CDestructorFunction_Get(void* self)
-	{
-		if (self is null) {
-			throw new ArgumentNullException(nameof(self));
-		}
-
-		var selfConverted = InteropUtils.GetInstance<System_MulticastDelegate>(self);
-
-		return selfConverted.CDestructorFunction;
-	}
-
-	[UnmanagedCallersOnly(EntryPoint = "System_MulticastDelegate_Destroy")]
-	internal static void /* System.Void */ System_MulticastDelegate_Destroy(void* /* System.MulticastDelegate */ __self)
 	{
 	
 		InteropUtils.FreeIfAllocated(__self);
@@ -53198,6 +53266,83 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_IAnimal
 }
 
 
+internal unsafe class NativeAOT_CodeGeneratorInputSample_AnimalFactory
+{
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_AnimalFactory_CreateAnimal")]
+	internal static void* /* NativeAOT.CodeGeneratorInputSample.IAnimal */ NativeAOT_CodeGeneratorInputSample_AnimalFactory_CreateAnimal(byte* /* System.String */ animalName, void** /* System.Exception */ __outException)
+	{
+		System.String animalNameConverted = InteropUtils.ToDotNetString(animalName);
+	
+	    try {
+			NativeAOT.CodeGeneratorInputSample.IAnimal __returnValue = NativeAOT.CodeGeneratorInputSample.AnimalFactory.CreateAnimal(animalNameConverted);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_AnimalFactory_CreateAnimal1")]
+	internal static void* /* NativeAOT.CodeGeneratorInputSample.IAnimal */ NativeAOT_CodeGeneratorInputSample_AnimalFactory_CreateAnimal1(byte* /* System.String */ animalName, void* /* NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate */ creator, void** /* System.Exception */ __outException)
+	{
+		System.String animalNameConverted = InteropUtils.ToDotNetString(animalName);
+		NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate creatorConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate>(creator)?.CreateTrampoline();
+	
+	    try {
+			NativeAOT.CodeGeneratorInputSample.IAnimal __returnValue = NativeAOT.CodeGeneratorInputSample.AnimalFactory.CreateAnimal(animalNameConverted, creatorConverted);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_AnimalFactory_DEFAULT_CREATOR_Get")]
+	internal static void* /* NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate */ NativeAOT_CodeGeneratorInputSample_AnimalFactory_DEFAULT_CREATOR_Get()
+	{
+	
+		NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate __returnValue = NativeAOT.CodeGeneratorInputSample.AnimalFactory.DEFAULT_CREATOR;
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_AnimalFactory_Destroy")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_AnimalFactory_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.AnimalFactory */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+
+}
+
+
 internal unsafe class NativeAOT_CodeGeneratorInputSample_BaseAnimal
 {
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_BaseAnimal_Eat")]
@@ -53378,6 +53523,77 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Dog
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Dog_Destroy")]
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Dog_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.Dog */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+
+}
+
+
+internal unsafe class NativeAOT_CodeGeneratorInputSample_GenericAnimal
+{
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericAnimal_Create")]
+	internal static void* /* NativeAOT.CodeGeneratorInputSample.GenericAnimal */ NativeAOT_CodeGeneratorInputSample_GenericAnimal_Create(byte* /* System.String */ name, void** /* System.Exception */ __outException)
+	{
+		System.String nameConverted = InteropUtils.ToDotNetString(name);
+	
+	    try {
+			NativeAOT.CodeGeneratorInputSample.GenericAnimal __returnValue = new NativeAOT.CodeGeneratorInputSample.GenericAnimal(nameConverted);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericAnimal_Name_Get")]
+	internal static byte* /* System.String */ NativeAOT_CodeGeneratorInputSample_GenericAnimal_Name_Get(void* /* NativeAOT.CodeGeneratorInputSample.GenericAnimal */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.GenericAnimal __selfConverted = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.GenericAnimal>(__self);
+	
+	
+	    try {
+			System.String __returnValue = __selfConverted.Name;
+			byte* _returnValueNative = __returnValue.CopyToCString();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericAnimal_Destroy")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_GenericAnimal_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.GenericAnimal */ __self)
 	{
 	
 		InteropUtils.FreeIfAllocated(__self);

@@ -119,4 +119,65 @@ final class AnimalTests: XCTestCase {
         
         XCTAssertEqual(expectedEat, eat)
     }
+	
+	func testCustomAnimalCreator() {
+		var exception: System_Exception_t?
+		
+		let creator: NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_CFunction_t = { _, animalNameC in
+			var innerException: System_Exception_t?
+			
+			guard let animal = NativeAOT_CodeGeneratorInputSample_GenericAnimal_Create(animalNameC,
+																					   &innerException),
+				  innerException == nil else {
+				XCTFail("GenericAnimal ctor should not throw and return an instance")
+				
+				return nil
+			}
+			
+			return animal
+		}
+		
+		guard let creatorDelegate = NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Create(nil,
+																									creator,
+																									nil) else {
+			XCTFail("AnimalCreatorDelegate ctor should return an instance")
+			
+			return
+		}
+		
+		defer { NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Destroy(creatorDelegate) }
+		
+		let animalName = "Horse"
+		
+		var horse: NativeAOT_CodeGeneratorInputSample_IAnimal_t?
+		
+		animalName.withCString { animalNameC in
+			horse = NativeAOT_CodeGeneratorInputSample_AnimalFactory_CreateAnimal1(animalNameC,
+																				   creatorDelegate,
+																				   &exception)
+		}
+		
+		guard let horse,
+			  exception == nil else {
+			XCTFail("AnimalFactory.CreateAnimal should not throw and return an instance")
+			
+			return
+		}
+		
+		defer { NativeAOT_CodeGeneratorInputSample_IAnimal_Destroy(horse) }
+		
+		guard let retrievedAnimalNameC = NativeAOT_CodeGeneratorInputSample_IAnimal_Name_Get(horse,
+																							 &exception),
+			  exception == nil else {
+			XCTFail()
+			
+			return
+		}
+		
+		defer { retrievedAnimalNameC.deallocate() }
+		
+		let retrievedAnimalName = String(cString: retrievedAnimalNameC)
+		
+		XCTAssertEqual(animalName, retrievedAnimalName)
+	}
 }

@@ -1,5 +1,5 @@
-// Number of generated types: 181
-// Number of generated members: 1897
+// Number of generated types: 183
+// Number of generated members: 1903
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -630,8 +630,6 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } NativeAOT_CodeGeneratorInputSample_TestEnum;
 
 
-typedef void* NativeAOT_CodeGeneratorInputSample_AnimalFactory_t;
-
 typedef void* System_Object_t;
 
 typedef void* System_Type_t;
@@ -845,11 +843,15 @@ typedef void* System_Reflection_InterfaceMapping_t;
 
 typedef void* NativeAOT_CodeGeneratorInputSample_IAnimal_t;
 
+typedef void* NativeAOT_CodeGeneratorInputSample_AnimalFactory_t;
+
 typedef void* NativeAOT_CodeGeneratorInputSample_BaseAnimal_t;
 
 typedef void* NativeAOT_CodeGeneratorInputSample_Cat_t;
 
 typedef void* NativeAOT_CodeGeneratorInputSample_Dog_t;
+
+typedef void* NativeAOT_CodeGeneratorInputSample_GenericAnimal_t;
 
 typedef void* NativeAOT_CodeGeneratorInputSample_Person_t;
 
@@ -858,6 +860,24 @@ typedef void* NativeAOT_CodeGeneratorInputSample_Person_Extensions_t;
 typedef void* NativeAOT_CodeGeneratorInputSample_TestClass_t;
 
 typedef void* NativeAOT_CodeGeneratorInputSample_Transformer_t;
+
+typedef void* NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_t;
+typedef void (*NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_CDestructorFunction_t)(void* context);
+
+typedef NativeAOT_CodeGeneratorInputSample_IAnimal_t (*NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_CFunction_t)(
+	void* context,
+	CString animalName
+);
+
+
+typedef void* System_MulticastDelegate_t;
+typedef void (*System_MulticastDelegate_CDestructorFunction_t)(void* context);
+
+typedef void (*System_MulticastDelegate_CFunction_t)(
+	void* context
+	
+);
+
 
 typedef void* System_Delegate_t;
 typedef void (*System_Delegate_CDestructorFunction_t)(void* context);
@@ -872,15 +892,6 @@ typedef void* System_Action_t;
 typedef void (*System_Action_CDestructorFunction_t)(void* context);
 
 typedef void (*System_Action_CFunction_t)(
-	void* context
-	
-);
-
-
-typedef void* System_MulticastDelegate_t;
-typedef void (*System_MulticastDelegate_CDestructorFunction_t)(void* context);
-
-typedef void (*System_MulticastDelegate_CFunction_t)(
 	void* context
 	
 );
@@ -1105,20 +1116,6 @@ typedef double (*NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate_C
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.TestEnum
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.TestEnum
-
-#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.AnimalFactory
-NativeAOT_CodeGeneratorInputSample_IAnimal_t /* NativeAOT.CodeGeneratorInputSample.IAnimal */
-NativeAOT_CodeGeneratorInputSample_AnimalFactory_CreateAnimal(
-	CString /* System.String */ animalName,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-NativeAOT_CodeGeneratorInputSample_AnimalFactory_Destroy(
-	NativeAOT_CodeGeneratorInputSample_AnimalFactory_t /* NativeAOT.CodeGeneratorInputSample.AnimalFactory */ self
-);
-
-#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.AnimalFactory
 
 #pragma mark - BEGIN APIs of System.Object
 System_Type_t /* System.Type */
@@ -13614,6 +13611,32 @@ NativeAOT_CodeGeneratorInputSample_IAnimal_Destroy(
 
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.IAnimal
 
+#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.AnimalFactory
+NativeAOT_CodeGeneratorInputSample_IAnimal_t /* NativeAOT.CodeGeneratorInputSample.IAnimal */
+NativeAOT_CodeGeneratorInputSample_AnimalFactory_CreateAnimal(
+	CString /* System.String */ animalName,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+NativeAOT_CodeGeneratorInputSample_IAnimal_t /* NativeAOT.CodeGeneratorInputSample.IAnimal */
+NativeAOT_CodeGeneratorInputSample_AnimalFactory_CreateAnimal1(
+	CString /* System.String */ animalName,
+	NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_t /* NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate */ creator,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_t /* NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate */
+NativeAOT_CodeGeneratorInputSample_AnimalFactory_DEFAULT_CREATOR_Get(
+	
+);
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_AnimalFactory_Destroy(
+	NativeAOT_CodeGeneratorInputSample_AnimalFactory_t /* NativeAOT.CodeGeneratorInputSample.AnimalFactory */ self
+);
+
+#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.AnimalFactory
+
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.BaseAnimal
 CString /* System.String */
 NativeAOT_CodeGeneratorInputSample_BaseAnimal_Eat(
@@ -13672,6 +13695,26 @@ NativeAOT_CodeGeneratorInputSample_Dog_Destroy(
 );
 
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.Dog
+
+#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.GenericAnimal
+NativeAOT_CodeGeneratorInputSample_GenericAnimal_t /* NativeAOT.CodeGeneratorInputSample.GenericAnimal */
+NativeAOT_CodeGeneratorInputSample_GenericAnimal_Create(
+	CString /* System.String */ name,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+NativeAOT_CodeGeneratorInputSample_GenericAnimal_Name_Get(
+	NativeAOT_CodeGeneratorInputSample_GenericAnimal_t /* NativeAOT.CodeGeneratorInputSample.GenericAnimal */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_GenericAnimal_Destroy(
+	NativeAOT_CodeGeneratorInputSample_GenericAnimal_t /* NativeAOT.CodeGeneratorInputSample.GenericAnimal */ self
+);
+
+#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.GenericAnimal
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Person
 CString /* System.String */
@@ -13926,6 +13969,66 @@ NativeAOT_CodeGeneratorInputSample_Transformer_Destroy(
 
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.Transformer
 
+#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate
+NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_t /* NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate */
+NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Create(
+	void* context,
+	NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_CFunction_t function,
+	NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_CDestructorFunction_t destructorFunction
+);
+
+void*
+NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Context_Get(
+	NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_t /* NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate */ self
+);
+
+NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_CFunction_t
+NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_CFunction_Get(
+	NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_t /* NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate */ self
+);
+
+NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_CDestructorFunction_t
+NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_CDestructorFunction_Get(
+	NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_t /* NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate */ self
+);
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Destroy(
+	NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_t /* NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate */ self
+);
+
+#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate
+
+#pragma mark - BEGIN APIs of System.MulticastDelegate
+System_MulticastDelegate_t /* System.MulticastDelegate */
+System_MulticastDelegate_Create(
+	void* context,
+	System_MulticastDelegate_CFunction_t function,
+	System_MulticastDelegate_CDestructorFunction_t destructorFunction
+);
+
+void*
+System_MulticastDelegate_Context_Get(
+	System_MulticastDelegate_t /* System.MulticastDelegate */ self
+);
+
+System_MulticastDelegate_CFunction_t
+System_MulticastDelegate_CFunction_Get(
+	System_MulticastDelegate_t /* System.MulticastDelegate */ self
+);
+
+System_MulticastDelegate_CDestructorFunction_t
+System_MulticastDelegate_CDestructorFunction_Get(
+	System_MulticastDelegate_t /* System.MulticastDelegate */ self
+);
+
+void /* System.Void */
+System_MulticastDelegate_Destroy(
+	System_MulticastDelegate_t /* System.MulticastDelegate */ self
+);
+
+#pragma mark - END APIs of System.MulticastDelegate
+
 #pragma mark - BEGIN APIs of System.Delegate
 System_Delegate_t /* System.Delegate */
 System_Delegate_Create(
@@ -13985,36 +14088,6 @@ System_Action_Destroy(
 );
 
 #pragma mark - END APIs of System.Action
-
-#pragma mark - BEGIN APIs of System.MulticastDelegate
-System_MulticastDelegate_t /* System.MulticastDelegate */
-System_MulticastDelegate_Create(
-	void* context,
-	System_MulticastDelegate_CFunction_t function,
-	System_MulticastDelegate_CDestructorFunction_t destructorFunction
-);
-
-void*
-System_MulticastDelegate_Context_Get(
-	System_MulticastDelegate_t /* System.MulticastDelegate */ self
-);
-
-System_MulticastDelegate_CFunction_t
-System_MulticastDelegate_CFunction_Get(
-	System_MulticastDelegate_t /* System.MulticastDelegate */ self
-);
-
-System_MulticastDelegate_CDestructorFunction_t
-System_MulticastDelegate_CDestructorFunction_Get(
-	System_MulticastDelegate_t /* System.MulticastDelegate */ self
-);
-
-void /* System.Void */
-System_MulticastDelegate_Destroy(
-	System_MulticastDelegate_t /* System.MulticastDelegate */ self
-);
-
-#pragma mark - END APIs of System.MulticastDelegate
 
 #pragma mark - BEGIN APIs of System.AsyncCallback
 System_AsyncCallback_t /* System.AsyncCallback */
