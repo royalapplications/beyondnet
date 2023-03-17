@@ -1,8 +1,9 @@
 // Number of generated types: 179
-// Number of generated members: 1894
+// Number of generated members: 1892
 
 // <Header>
 using System;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -35356,20 +35357,7 @@ internal unsafe class System_Reflection_ICustomAttributeProvider
 }
 
 
-internal unsafe class System_Delegate
-{
-	// TODO: Delegate Implementation
-	[UnmanagedCallersOnly(EntryPoint = "System_Delegate_Destroy")]
-	internal static void /* System.Void */ System_Delegate_Destroy(void* /* System.Delegate */ __self)
-	{
-	
-		InteropUtils.FreeIfAllocated(__self);
-	}
-	
-
-}
-
-
+// Type "Delegate" was skipped. Reason: It is a delegate but has no Invoke method.
 internal unsafe class System_Collections_IDictionary
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_Collections_IDictionary_Contains")]
@@ -40257,7 +40245,51 @@ internal unsafe class System_Runtime_CompilerServices_ValueTaskAwaiter
 
 internal unsafe class System_Action
 {
-	// TODO: Delegate Implementation
+	public void* Context { get; }
+	public delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> CFunction { get; }
+	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
+
+	System_Action(void* context, delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	{
+		Context = context;
+		CFunction = cFunction;
+		CDestructorFunction = cDestructorFunction;
+	}
+
+	~System_Action()
+	{
+		if (CDestructorFunction is null) {
+			return;
+		}
+
+		CDestructorFunction(Context);
+	}
+
+	internal System.Action? CreateTrampoline()
+	{
+		if (CFunction is null) {
+			return null;
+		}
+
+		System.Type typeOfSelf = typeof(System_Action);
+		string nameOfInvocationMethod = nameof(__InvokeByCallingCFunction);
+		System.Reflection.BindingFlags bindingFlags = System.Reflection.BindingFlags.Instance | BindingFlags.NonPublic;
+		System.Reflection.MethodInfo? invocationMethod = typeOfSelf.GetMethod(nameOfInvocationMethod, bindingFlags);
+
+		if (invocationMethod is null) {
+			throw new Exception("Failed to retrieve delegate invocation method");
+		}
+
+		System.Action trampoline = (System.Action)System.Delegate.CreateDelegate(typeof(System.Action), this, invocationMethod);
+
+		return trampoline;
+	}
+
+	private int __InvokeByCallingCFunction()
+	{
+		return CFunction(Context);
+	}
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Action_Destroy")]
 	internal static void /* System.Void */ System_Action_Destroy(void* /* System.Action */ __self)
 	{
@@ -40269,20 +40301,7 @@ internal unsafe class System_Action
 }
 
 
-internal unsafe class System_MulticastDelegate
-{
-	// TODO: Delegate Implementation
-	[UnmanagedCallersOnly(EntryPoint = "System_MulticastDelegate_Destroy")]
-	internal static void /* System.Void */ System_MulticastDelegate_Destroy(void* /* System.MulticastDelegate */ __self)
-	{
-	
-		InteropUtils.FreeIfAllocated(__self);
-	}
-	
-
-}
-
-
+// Type "MulticastDelegate" was skipped. Reason: It is a delegate but has no Invoke method.
 internal unsafe class System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_GetAwaiter")]
@@ -41156,7 +41175,51 @@ internal unsafe class System_Runtime_CompilerServices_YieldAwaitable_YieldAwaite
 
 internal unsafe class System_AsyncCallback
 {
-	// TODO: Delegate Implementation
+	public void* Context { get; }
+	public delegate* unmanaged<void* /* context */, void* /* System.IAsyncResult */ /* ar */, void /* System.Void */ /* return type */> CFunction { get; }
+	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
+
+	System_AsyncCallback(void* context, delegate* unmanaged<void* /* context */, void* /* System.IAsyncResult */ /* ar */, void /* System.Void */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	{
+		Context = context;
+		CFunction = cFunction;
+		CDestructorFunction = cDestructorFunction;
+	}
+
+	~System_AsyncCallback()
+	{
+		if (CDestructorFunction is null) {
+			return;
+		}
+
+		CDestructorFunction(Context);
+	}
+
+	internal System.AsyncCallback? CreateTrampoline()
+	{
+		if (CFunction is null) {
+			return null;
+		}
+
+		System.Type typeOfSelf = typeof(System_AsyncCallback);
+		string nameOfInvocationMethod = nameof(__InvokeByCallingCFunction);
+		System.Reflection.BindingFlags bindingFlags = System.Reflection.BindingFlags.Instance | BindingFlags.NonPublic;
+		System.Reflection.MethodInfo? invocationMethod = typeOfSelf.GetMethod(nameOfInvocationMethod, bindingFlags);
+
+		if (invocationMethod is null) {
+			throw new Exception("Failed to retrieve delegate invocation method");
+		}
+
+		System.AsyncCallback trampoline = (System.AsyncCallback)System.Delegate.CreateDelegate(typeof(System.AsyncCallback), this, invocationMethod);
+
+		return trampoline;
+	}
+
+	private int __InvokeByCallingCFunction()
+	{
+		return CFunction(Context);
+	}
+
 	[UnmanagedCallersOnly(EntryPoint = "System_AsyncCallback_Destroy")]
 	internal static void /* System.Void */ System_AsyncCallback_Destroy(void* /* System.AsyncCallback */ __self)
 	{
@@ -41825,7 +41888,51 @@ internal unsafe class System_Reflection_ManifestResourceInfo
 
 internal unsafe class System_Reflection_ModuleResolveEventHandler
 {
-	// TODO: Delegate Implementation
+	public void* Context { get; }
+	public delegate* unmanaged<void* /* context */, void* /* System.Object */ /* sender */, void* /* System.ResolveEventArgs */ /* e */, void* /* System.Reflection.Module */ /* return type */> CFunction { get; }
+	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
+
+	System_Reflection_ModuleResolveEventHandler(void* context, delegate* unmanaged<void* /* context */, void* /* System.Object */ /* sender */, void* /* System.ResolveEventArgs */ /* e */, void* /* System.Reflection.Module */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	{
+		Context = context;
+		CFunction = cFunction;
+		CDestructorFunction = cDestructorFunction;
+	}
+
+	~System_Reflection_ModuleResolveEventHandler()
+	{
+		if (CDestructorFunction is null) {
+			return;
+		}
+
+		CDestructorFunction(Context);
+	}
+
+	internal System.Reflection.ModuleResolveEventHandler? CreateTrampoline()
+	{
+		if (CFunction is null) {
+			return null;
+		}
+
+		System.Type typeOfSelf = typeof(System_Reflection_ModuleResolveEventHandler);
+		string nameOfInvocationMethod = nameof(__InvokeByCallingCFunction);
+		System.Reflection.BindingFlags bindingFlags = System.Reflection.BindingFlags.Instance | BindingFlags.NonPublic;
+		System.Reflection.MethodInfo? invocationMethod = typeOfSelf.GetMethod(nameOfInvocationMethod, bindingFlags);
+
+		if (invocationMethod is null) {
+			throw new Exception("Failed to retrieve delegate invocation method");
+		}
+
+		System.Reflection.ModuleResolveEventHandler trampoline = (System.Reflection.ModuleResolveEventHandler)System.Delegate.CreateDelegate(typeof(System.Reflection.ModuleResolveEventHandler), this, invocationMethod);
+
+		return trampoline;
+	}
+
+	private int __InvokeByCallingCFunction()
+	{
+		return CFunction(Context);
+	}
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ModuleResolveEventHandler_Destroy")]
 	internal static void /* System.Void */ System_Reflection_ModuleResolveEventHandler_Destroy(void* /* System.Reflection.ModuleResolveEventHandler */ __self)
 	{
@@ -43122,7 +43229,51 @@ internal unsafe class System_Guid
 
 internal unsafe class System_Reflection_TypeFilter
 {
-	// TODO: Delegate Implementation
+	public void* Context { get; }
+	public delegate* unmanaged<void* /* context */, void* /* System.Type */ /* m */, void* /* System.Object */ /* filterCriteria */, CBool /* System.Boolean */ /* return type */> CFunction { get; }
+	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
+
+	System_Reflection_TypeFilter(void* context, delegate* unmanaged<void* /* context */, void* /* System.Type */ /* m */, void* /* System.Object */ /* filterCriteria */, CBool /* System.Boolean */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	{
+		Context = context;
+		CFunction = cFunction;
+		CDestructorFunction = cDestructorFunction;
+	}
+
+	~System_Reflection_TypeFilter()
+	{
+		if (CDestructorFunction is null) {
+			return;
+		}
+
+		CDestructorFunction(Context);
+	}
+
+	internal System.Reflection.TypeFilter? CreateTrampoline()
+	{
+		if (CFunction is null) {
+			return null;
+		}
+
+		System.Type typeOfSelf = typeof(System_Reflection_TypeFilter);
+		string nameOfInvocationMethod = nameof(__InvokeByCallingCFunction);
+		System.Reflection.BindingFlags bindingFlags = System.Reflection.BindingFlags.Instance | BindingFlags.NonPublic;
+		System.Reflection.MethodInfo? invocationMethod = typeOfSelf.GetMethod(nameOfInvocationMethod, bindingFlags);
+
+		if (invocationMethod is null) {
+			throw new Exception("Failed to retrieve delegate invocation method");
+		}
+
+		System.Reflection.TypeFilter trampoline = (System.Reflection.TypeFilter)System.Delegate.CreateDelegate(typeof(System.Reflection.TypeFilter), this, invocationMethod);
+
+		return trampoline;
+	}
+
+	private int __InvokeByCallingCFunction()
+	{
+		return CFunction(Context);
+	}
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_TypeFilter_Destroy")]
 	internal static void /* System.Void */ System_Reflection_TypeFilter_Destroy(void* /* System.Reflection.TypeFilter */ __self)
 	{
@@ -52457,7 +52608,51 @@ internal unsafe class System_Reflection_InterfaceMapping
 
 internal unsafe class System_Reflection_MemberFilter
 {
-	// TODO: Delegate Implementation
+	public void* Context { get; }
+	public delegate* unmanaged<void* /* context */, void* /* System.Reflection.MemberInfo */ /* m */, void* /* System.Object */ /* filterCriteria */, CBool /* System.Boolean */ /* return type */> CFunction { get; }
+	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
+
+	System_Reflection_MemberFilter(void* context, delegate* unmanaged<void* /* context */, void* /* System.Reflection.MemberInfo */ /* m */, void* /* System.Object */ /* filterCriteria */, CBool /* System.Boolean */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	{
+		Context = context;
+		CFunction = cFunction;
+		CDestructorFunction = cDestructorFunction;
+	}
+
+	~System_Reflection_MemberFilter()
+	{
+		if (CDestructorFunction is null) {
+			return;
+		}
+
+		CDestructorFunction(Context);
+	}
+
+	internal System.Reflection.MemberFilter? CreateTrampoline()
+	{
+		if (CFunction is null) {
+			return null;
+		}
+
+		System.Type typeOfSelf = typeof(System_Reflection_MemberFilter);
+		string nameOfInvocationMethod = nameof(__InvokeByCallingCFunction);
+		System.Reflection.BindingFlags bindingFlags = System.Reflection.BindingFlags.Instance | BindingFlags.NonPublic;
+		System.Reflection.MethodInfo? invocationMethod = typeOfSelf.GetMethod(nameOfInvocationMethod, bindingFlags);
+
+		if (invocationMethod is null) {
+			throw new Exception("Failed to retrieve delegate invocation method");
+		}
+
+		System.Reflection.MemberFilter trampoline = (System.Reflection.MemberFilter)System.Delegate.CreateDelegate(typeof(System.Reflection.MemberFilter), this, invocationMethod);
+
+		return trampoline;
+	}
+
+	private int __InvokeByCallingCFunction()
+	{
+		return CFunction(Context);
+	}
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MemberFilter_Destroy")]
 	internal static void /* System.Void */ System_Reflection_MemberFilter_Destroy(void* /* System.Reflection.MemberFilter */ __self)
 	{
@@ -53369,7 +53564,51 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Person
 
 internal unsafe class NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate
 {
-	// TODO: Delegate Implementation
+	public void* Context { get; }
+	public delegate* unmanaged<void* /* context */, int /* System.Int32 */ /* return type */> CFunction { get; }
+	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
+
+	NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate(void* context, delegate* unmanaged<void* /* context */, int /* System.Int32 */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	{
+		Context = context;
+		CFunction = cFunction;
+		CDestructorFunction = cDestructorFunction;
+	}
+
+	~NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate()
+	{
+		if (CDestructorFunction is null) {
+			return;
+		}
+
+		CDestructorFunction(Context);
+	}
+
+	internal NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate? CreateTrampoline()
+	{
+		if (CFunction is null) {
+			return null;
+		}
+
+		System.Type typeOfSelf = typeof(NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate);
+		string nameOfInvocationMethod = nameof(__InvokeByCallingCFunction);
+		System.Reflection.BindingFlags bindingFlags = System.Reflection.BindingFlags.Instance | BindingFlags.NonPublic;
+		System.Reflection.MethodInfo? invocationMethod = typeOfSelf.GetMethod(nameOfInvocationMethod, bindingFlags);
+
+		if (invocationMethod is null) {
+			throw new Exception("Failed to retrieve delegate invocation method");
+		}
+
+		NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate trampoline = (NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate)System.Delegate.CreateDelegate(typeof(NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate), this, invocationMethod);
+
+		return trampoline;
+	}
+
+	private int __InvokeByCallingCFunction()
+	{
+		return CFunction(Context);
+	}
+
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Destroy")]
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate */ __self)
 	{
@@ -53691,7 +53930,51 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_TestClass
 
 internal unsafe class NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate
 {
-	// TODO: Delegate Implementation
+	public void* Context { get; }
+	public delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> CFunction { get; }
+	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
+
+	NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate(void* context, delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	{
+		Context = context;
+		CFunction = cFunction;
+		CDestructorFunction = cDestructorFunction;
+	}
+
+	~NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate()
+	{
+		if (CDestructorFunction is null) {
+			return;
+		}
+
+		CDestructorFunction(Context);
+	}
+
+	internal NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate? CreateTrampoline()
+	{
+		if (CFunction is null) {
+			return null;
+		}
+
+		System.Type typeOfSelf = typeof(NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate);
+		string nameOfInvocationMethod = nameof(__InvokeByCallingCFunction);
+		System.Reflection.BindingFlags bindingFlags = System.Reflection.BindingFlags.Instance | BindingFlags.NonPublic;
+		System.Reflection.MethodInfo? invocationMethod = typeOfSelf.GetMethod(nameOfInvocationMethod, bindingFlags);
+
+		if (invocationMethod is null) {
+			throw new Exception("Failed to retrieve delegate invocation method");
+		}
+
+		NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate trampoline = (NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate)System.Delegate.CreateDelegate(typeof(NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate), this, invocationMethod);
+
+		return trampoline;
+	}
+
+	private int __InvokeByCallingCFunction()
+	{
+		return CFunction(Context);
+	}
+
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_Destroy")]
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate */ __self)
 	{

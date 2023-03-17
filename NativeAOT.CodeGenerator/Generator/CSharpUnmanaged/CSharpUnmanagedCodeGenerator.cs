@@ -66,6 +66,7 @@ public class CSharpUnmanagedCodeGenerator: ICodeGenerator
     {
         return $"""
 using System;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 

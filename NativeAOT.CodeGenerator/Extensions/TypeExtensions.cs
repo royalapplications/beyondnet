@@ -1,3 +1,4 @@
+using System.Reflection;
 using NativeAOT.CodeGenerator.Types;
 
 namespace NativeAOT.CodeGenerator.Extensions;
@@ -50,5 +51,14 @@ internal static class TypeExtensions
                !type.IsVoid() &&
                !type.IsEnum &&
                !type.IsPrimitive;
+    }
+
+    internal static MethodInfo? GetDelegateInvokeMethod(this Type delegateType)
+    {
+        const string invokeMethodName = "Invoke";
+        
+        MethodInfo? invokeMethod = delegateType.GetMethod(invokeMethodName);
+
+        return invokeMethod;
     }
 }

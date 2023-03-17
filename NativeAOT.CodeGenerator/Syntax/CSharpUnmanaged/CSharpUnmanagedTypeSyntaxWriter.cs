@@ -4,6 +4,7 @@ using System.Text;
 using NativeAOT.CodeGenerator.Collectors;
 using NativeAOT.CodeGenerator.Extensions;
 using NativeAOT.CodeGenerator.Generator.CSharpUnmanaged;
+using NativeAOT.CodeGenerator.Types;
 
 namespace NativeAOT.CodeGenerator.Syntax.CSharpUnmanaged;
 
@@ -49,6 +50,17 @@ public class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITyp
         }
         
         string cTypeName = fullTypeName.CTypeName();
+
+        bool isDelegate = type.IsDelegate();
+        
+        MethodInfo? delegateInvokeMethod = isDelegate
+            ? type.GetDelegateInvokeMethod()
+            : null;
+
+        if (isDelegate &&
+            delegateInvokeMethod is null) {
+            return $"// Type \"{type.Name}\" was skipped. Reason: It is a delegate but has no Invoke method.";
+        }
         
         StringBuilder sb = new();
         
@@ -58,6 +70,9 @@ public class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITyp
         if (type.IsDelegate()) {
             WriteDelegateType(
                 type,
+                fullTypeName,
+                cTypeName,
+                delegateInvokeMethod!,
                 sb,
                 state
             );
@@ -127,14 +142,119 @@ public class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITyp
     
     private void WriteDelegateType(
         Type type,
+        string fullTypeName,
+        string cTypeName,
+        MethodInfo invokeMethod,
         StringBuilder sb,
         State state
     )
     {
-        sb.AppendLine("\t// TODO: Delegate Implementation");
+        TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
+
+        // TODO: Duh...
+        fullTypeName = fullTypeName.Replace("+", ".");
+
+        var returnType = invokeMethod.ReturnType;
+        var parameterInfos = invokeMethod.GetParameters();
+
+        string unmanagedParameters = CSharpUnmanagedMethodSyntaxWriter.WriteParameters(
+            MemberKind.Automatic,
+            null,
+            false,
+            true,
+            type,
+            parameterInfos,
+true,
+            typeDescriptorRegistry
+        );
+
+        if (!string.IsNullOrEmpty(unmanagedParameters)) {
+            unmanagedParameters += ", ";
+        }
         
-        // TODO
+        TypeDescriptor returnTypeDescriptor = returnType.GetTypeDescriptor(typeDescriptorRegistry);
+        string unmanagedReturnTypeName = returnTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
+        string unmanagedReturnTypeNameWithComment = $"{unmanagedReturnTypeName} /* {returnType.GetFullNameOrName()} */";
+
+        string contextType = "void*";
+        string cFunctionSignature = $"delegate* unmanaged<void* /* context */, {unmanagedParameters}{unmanagedReturnTypeNameWithComment} /* return type */>";
+        string cDestructorFunctionSignature = $"delegate* unmanaged<{contextType}, void>";
+
+        #region Properties
+        sb.AppendLine($"\tpublic {contextType} Context {{ get; }}");
+        sb.AppendLine($"\tpublic {cFunctionSignature} CFunction {{ get; }}");
+        sb.AppendLine($"\tpublic {cDestructorFunctionSignature} CDestructorFunction {{ get; }}");
+        #endregion Properties
         
+        sb.AppendLine();
+
+        #region Constructor
+        sb.AppendLine($"\t{cTypeName}({contextType} context, {cFunctionSignature} cFunction, {cDestructorFunctionSignature} cDestructorFunction)");
+        sb.AppendLine("\t{");
+
+        sb.AppendLine("\t\tContext = context;");
+        sb.AppendLine("\t\tCFunction = cFunction;");
+        sb.AppendLine("\t\tCDestructorFunction = cDestructorFunction;");
+        
+        sb.AppendLine("\t}");
+        #endregion Constructor
+
+        sb.AppendLine();
+        
+        #region Finalizer
+        sb.AppendLine($"\t~{cTypeName}()");
+        sb.AppendLine("\t{");
+        sb.AppendLine("\t\tif (CDestructorFunction is null) {");
+        sb.AppendLine("\t\t\treturn;");
+        sb.AppendLine("\t\t}");
+        sb.AppendLine();
+        sb.AppendLine("\t\tCDestructorFunction(Context);");
+        sb.AppendLine("\t}");
+        #endregion Finalizer
+
+        sb.AppendLine();
+        
+        #region Delegate Wrapper
+        sb.AppendLine($"\tinternal {fullTypeName}? CreateTrampoline()");
+        sb.AppendLine("\t{");
+        
+        sb.AppendLine("\t\tif (CFunction is null) {");
+        sb.AppendLine("\t\t\treturn null;");
+        sb.AppendLine("\t\t}");
+        
+        sb.AppendLine();
+
+        sb.AppendLine($"\t\tSystem.Type typeOfSelf = typeof({cTypeName});");
+        sb.AppendLine("\t\tstring nameOfInvocationMethod = nameof(__InvokeByCallingCFunction);");
+        sb.AppendLine("\t\tSystem.Reflection.BindingFlags bindingFlags = System.Reflection.BindingFlags.Instance | BindingFlags.NonPublic;");
+        sb.AppendLine("\t\tSystem.Reflection.MethodInfo? invocationMethod = typeOfSelf.GetMethod(nameOfInvocationMethod, bindingFlags);");
+
+        sb.AppendLine();
+
+        sb.AppendLine("\t\tif (invocationMethod is null) {");
+        sb.AppendLine("\t\t\tthrow new Exception(\"Failed to retrieve delegate invocation method\");");
+        sb.AppendLine("\t\t}");
+
+        sb.AppendLine();
+
+        sb.AppendLine($"\t\t{fullTypeName} trampoline = ({fullTypeName})System.Delegate.CreateDelegate(typeof({fullTypeName}), this, invocationMethod);");
+        sb.AppendLine();
+        sb.AppendLine("\t\treturn trampoline;");
+        
+        sb.AppendLine("\t}");
+
+        sb.AppendLine();
+
+        // TODO: Match function signature!
+        sb.AppendLine("\tprivate int __InvokeByCallingCFunction()");
+        sb.AppendLine("\t{");
+        // TODO: Match function signature!
+        sb.AppendLine("\t\treturn CFunction(Context);");
+        sb.AppendLine("\t}");
+        #endregion Delegate Wrapper
+
+        sb.AppendLine();
+
         WriteDestructor(
             type,
             sb,

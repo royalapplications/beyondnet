@@ -149,9 +149,7 @@ public class TypeCollector
         Dictionary<Type, string> unsupportedTypes
     )
     {
-        const string invokeMethodName = "Invoke";
-        
-        MethodInfo? invokeMethod = delegateType.GetMethod(invokeMethodName);
+        MethodInfo? invokeMethod = delegateType.GetDelegateInvokeMethod();
 
         if (invokeMethod is null) {
             return;

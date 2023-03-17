@@ -116,6 +116,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             isStaticMethod,
             declaringType,
             parameters,
+            false,
             typeDescriptorRegistry
         );
         
@@ -337,24 +338,34 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         return sb.ToString();
     }
 
-    protected string WriteParameters(
+    internal static string WriteParameters(
         MemberKind memberKind,
         Type? setterType,
         bool mayThrow,
         bool isStatic,
         Type declaringType,
         IEnumerable<ParameterInfo> parameters,
+        bool onlyWriteParameterTypes,
         TypeDescriptorRegistry typeDescriptorRegistry
     )
     {
         List<string> parameterList = new();
+        
+        string parameterNamePrefix = onlyWriteParameterTypes 
+            ? "/* "
+            : string.Empty;
+        
+        string parameterNameSuffix = onlyWriteParameterTypes 
+            ? " */"
+            : string.Empty;
 
         if (!isStatic) {
             TypeDescriptor declaringTypeDescriptor = declaringType.GetTypeDescriptor(typeDescriptorRegistry);
             string declaringTypeName = declaringTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
             string selfParameterName = "__self";
-            string parameterString = $"{declaringTypeName} /* {declaringType.GetFullNameOrName()} */ {selfParameterName}";
-
+            
+            string parameterString = $"{declaringTypeName} /* {declaringType.GetFullNameOrName()} */ {parameterNamePrefix}{selfParameterName}{parameterNameSuffix}";
+            
             parameterList.Add(parameterString);
         }
 
@@ -367,7 +378,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             TypeDescriptor setterTypeDescriptor = setterType.GetTypeDescriptor(typeDescriptorRegistry);
             string unmanagedSetterTypeName = setterTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
     
-            string parameterString = $"{unmanagedSetterTypeName} /* {setterType.GetFullNameOrName()} */ __value";
+            string parameterString = $"{unmanagedSetterTypeName} /* {setterType.GetFullNameOrName()} */ {parameterNamePrefix}__value{parameterNameSuffix}";
             parameterList.Add(parameterString);
         } else if (memberKind != MemberKind.Destructor) {
             foreach (var parameter in parameters) {
@@ -375,7 +386,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
                 string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
     
-                string parameterString = $"{unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */ {parameter.Name}";
+                string parameterString = $"{unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */ {parameterNamePrefix}{parameter.Name}{parameterNameSuffix}";
                 parameterList.Add(parameterString);
             }
         }
@@ -386,7 +397,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             string outExceptionTypeName = outExceptionTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true, true);
             string outExceptionParameterName = "__outException";
 
-            string outExceptionParameterString = $"{outExceptionTypeName} /* {exceptionType.GetFullNameOrName()} */ {outExceptionParameterName}"; 
+            string outExceptionParameterString = $"{outExceptionTypeName} /* {exceptionType.GetFullNameOrName()} */ {parameterNamePrefix}{outExceptionParameterName}{parameterNameSuffix}"; 
             parameterList.Add(outExceptionParameterString);
         }
 

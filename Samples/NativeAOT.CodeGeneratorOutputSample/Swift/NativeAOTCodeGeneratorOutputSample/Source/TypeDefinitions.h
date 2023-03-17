@@ -1,5 +1,5 @@
 // Number of generated types: 179
-// Number of generated members: 1894
+// Number of generated members: 1892
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -9309,11 +9309,6 @@ System_Reflection_ICustomAttributeProvider_Destroy(
 #pragma mark - END APIs of System.Reflection.ICustomAttributeProvider
 
 #pragma mark - BEGIN APIs of System.Delegate
-void /* System.Void */
-System_Delegate_Destroy(
-	System_Delegate_t /* System.Delegate */ self
-);
-
 #pragma mark - END APIs of System.Delegate
 
 #pragma mark - BEGIN APIs of System.Collections.IDictionary
@@ -10582,11 +10577,6 @@ System_Action_Destroy(
 #pragma mark - END APIs of System.Action
 
 #pragma mark - BEGIN APIs of System.MulticastDelegate
-void /* System.Void */
-System_MulticastDelegate_Destroy(
-	System_MulticastDelegate_t /* System.MulticastDelegate */ self
-);
-
 #pragma mark - END APIs of System.MulticastDelegate
 
 #pragma mark - BEGIN APIs of System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable
