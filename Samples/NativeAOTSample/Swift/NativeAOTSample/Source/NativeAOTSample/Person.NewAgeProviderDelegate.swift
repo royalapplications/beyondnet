@@ -48,10 +48,18 @@ public extension Person {
 					fatalError("No context")
 				}
 				
+				Debug.log("Will get closure from context")
+				
 				let innerClosureBox = NativeBox<Function>.fromPointer(innerContext)
 				let innerClosure = innerClosureBox.value
 				
+				Debug.log("Did get closure from context")
+				
+				Debug.log("Will call closure")
+				
 				let result = innerClosure()
+				
+				Debug.log("Did call closure")
 				
 				return result
 			}
@@ -61,9 +69,11 @@ public extension Person {
 					fatalError("No context")
 				}
 				
-				Debug.log("Destroying Delegate")
+				Debug.log("Will destroy closure")
 				
 				NativeBox<Function>.release(innerContext)
+				
+				Debug.log("Did destroy closure")
 			}
 			
 			let context = closureBox.retainedPointer()
