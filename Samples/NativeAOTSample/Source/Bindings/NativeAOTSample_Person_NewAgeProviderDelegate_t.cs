@@ -28,7 +28,7 @@ internal unsafe class NativeAOTSample_Person_NewAgeProviderDelegate_t
         delegate* unmanaged<void*, void> cDestructorFunction
     )
     {
-        Console.WriteLine($"{nameof(NativeAOTSample_Person_NewAgeProviderDelegate_t)}: Constructor");
+        // Console.WriteLine($"{nameof(NativeAOTSample_Person_NewAgeProviderDelegate_t)}: Constructor");
         
         Context = context;
         CFunction = cFunction;
@@ -39,7 +39,7 @@ internal unsafe class NativeAOTSample_Person_NewAgeProviderDelegate_t
     #region Finalizer
     ~NativeAOTSample_Person_NewAgeProviderDelegate_t()
     {
-        Console.WriteLine($"{nameof(NativeAOTSample_Person_NewAgeProviderDelegate_t)}: Finalizer");
+        // Console.WriteLine($"{nameof(NativeAOTSample_Person_NewAgeProviderDelegate_t)}: Finalizer");
         
         if (CDestructorFunction is null) {
             return;
@@ -52,7 +52,7 @@ internal unsafe class NativeAOTSample_Person_NewAgeProviderDelegate_t
     #region Delegate Wrapper
     public Person.NewAgeProviderDelegate? CreateTrampoline()
     {
-        Console.WriteLine($"{nameof(NativeAOTSample_Person_NewAgeProviderDelegate_t)}: {nameof(CreateTrampoline)}");
+        // Console.WriteLine($"{nameof(NativeAOTSample_Person_NewAgeProviderDelegate_t)}: {nameof(CreateTrampoline)}");
 
         if (CFunction is null) {
             return null;
@@ -83,7 +83,7 @@ internal unsafe class NativeAOTSample_Person_NewAgeProviderDelegate_t
     
     private int __InvokeByCallingCFunction()
     {
-        Console.WriteLine($"{nameof(NativeAOTSample_Person_NewAgeProviderDelegate_t)}: {nameof(__InvokeByCallingCFunction)}");
+        // Console.WriteLine($"{nameof(NativeAOTSample_Person_NewAgeProviderDelegate_t)}: {nameof(__InvokeByCallingCFunction)}");
         
         return CFunction(Context);
     }
@@ -104,7 +104,7 @@ internal unsafe class NativeAOTSample_Person_NewAgeProviderDelegate_t
         delegate* unmanaged<void*, void> cDestructorFunction
     )
     {
-        Console.WriteLine($"{nameof(NativeAOTSample_Person_NewAgeProviderDelegate_t)}: {nameof(Create)}");
+        // Console.WriteLine($"{nameof(NativeAOTSample_Person_NewAgeProviderDelegate_t)}: {nameof(Create)}");
         
         var self = new NativeAOTSample_Person_NewAgeProviderDelegate_t(
             context,
@@ -120,7 +120,7 @@ internal unsafe class NativeAOTSample_Person_NewAgeProviderDelegate_t
     [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "Context_Get")]
     public static void* Context_Get(void* selfHandle)
     {
-        Console.WriteLine($"{nameof(NativeAOTSample_Person_NewAgeProviderDelegate_t)}: {nameof(Context_Get)}");
+        // Console.WriteLine($"{nameof(NativeAOTSample_Person_NewAgeProviderDelegate_t)}: {nameof(Context_Get)}");
         
         NativeAOTSample_Person_NewAgeProviderDelegate_t? instance = InteropUtils.GetInstance<NativeAOTSample_Person_NewAgeProviderDelegate_t>(selfHandle);
 
@@ -134,7 +134,7 @@ internal unsafe class NativeAOTSample_Person_NewAgeProviderDelegate_t
     [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "CFunction_Get")]
     public static delegate* unmanaged<void*, int> CFunction_Get(void* selfHandle)
     {
-        Console.WriteLine($"{nameof(NativeAOTSample_Person_NewAgeProviderDelegate_t)}: {nameof(CFunction_Get)}");
+        // Console.WriteLine($"{nameof(NativeAOTSample_Person_NewAgeProviderDelegate_t)}: {nameof(CFunction_Get)}");
         
         NativeAOTSample_Person_NewAgeProviderDelegate_t? instance = InteropUtils.GetInstance<NativeAOTSample_Person_NewAgeProviderDelegate_t>(selfHandle);
 
@@ -148,7 +148,7 @@ internal unsafe class NativeAOTSample_Person_NewAgeProviderDelegate_t
     [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "CDestructorFunction_Get")]
     public static delegate* unmanaged<void*, void> CDestructorFunction_Get(void* selfHandle)
     {
-        Console.WriteLine($"{nameof(NativeAOTSample_Person_NewAgeProviderDelegate_t)}: {nameof(CDestructorFunction_Get)}");
+        // Console.WriteLine($"{nameof(NativeAOTSample_Person_NewAgeProviderDelegate_t)}: {nameof(CDestructorFunction_Get)}");
         
         NativeAOTSample_Person_NewAgeProviderDelegate_t? instance = InteropUtils.GetInstance<NativeAOTSample_Person_NewAgeProviderDelegate_t>(selfHandle);
 

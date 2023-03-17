@@ -143,8 +143,6 @@ public extension Person {
 	}
 	
 	func changeAge(_ newAgeProvider: NewAgeProviderDelegate.Function?) throws {
-        var exceptionHandle: System_Exception_t?
-
 		let newAgeProviderDelegate: NewAgeProviderDelegate?
 
 		if let newAgeProvider {
@@ -152,22 +150,28 @@ public extension Person {
 		} else {
 			newAgeProviderDelegate = nil
 		}
-
+		
+		return try changeAge(newAgeProviderDelegate)
+    }
+	
+	func changeAge(_ newAgeProviderDelegate: NewAgeProviderDelegate?) throws {
+		var exceptionHandle: System_Exception_t?
+		
 		let success = NativeAOTSample_Person_ChangeAge(handle,
 													   newAgeProviderDelegate?.handle,
 													   &exceptionHandle).boolValue
 
-        if success {
-            Debug.log("Did change age of \(swiftTypeName)")
-        } else if let exceptionHandle {
-            Debug.log("Change age of \(swiftTypeName) threw an exception")
+		if success {
+			Debug.log("Did change age of \(swiftTypeName)")
+		} else if let exceptionHandle {
+			Debug.log("Change age of \(swiftTypeName) threw an exception")
 
-            let exception = System.Exception(handle: exceptionHandle)
-            let error = exception.error
+			let exception = System.Exception(handle: exceptionHandle)
+			let error = exception.error
 
-            throw error
-        } else {
-            fatalError("Change age of \(swiftTypeName) failed but didn't throw an exception. This is unexpected.")
-        }
-    }
+			throw error
+		} else {
+			fatalError("Change age of \(swiftTypeName) failed but didn't throw an exception. This is unexpected.")
+		}
+	}
 }

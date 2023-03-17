@@ -8,16 +8,34 @@ public extension Person {
 			.init(handle: NativeAOTSample_Person_NewAgeProviderDelegate_TypeOf())
 		}
 		
-		public var context: UnsafeRawPointer {
-			NativeAOTSample_Person_NewAgeProviderDelegate_Context_Get(handle)
+		public var context: UnsafeRawPointer? {
+			Debug.log("Will get context of \(Self.swiftTypeName)")
+			
+			let value = NativeAOTSample_Person_NewAgeProviderDelegate_Context_Get(handle)
+			
+			Debug.log("Did get context of \(Self.swiftTypeName)")
+			
+			return value
 		}
 		
 		public var cFunction: NativeAOTSample_Person_NewAgeProviderDelegate_CFunction_t {
-			NativeAOTSample_Person_NewAgeProviderDelegate_CFunction_Get(handle)
+			Debug.log("Will get cFunction of \(Self.swiftTypeName)")
+			
+			let value = NativeAOTSample_Person_NewAgeProviderDelegate_CFunction_Get(handle)!
+			
+			Debug.log("Did get cFunction of \(Self.swiftTypeName)")
+			
+			return value
 		}
 		
-		public var cDestructorFunction: NativeAOTSample_Person_NewAgeProviderDelegate_CDestructorFunction_t {
-			NativeAOTSample_Person_NewAgeProviderDelegate_CDestructorFunction_Get(handle)
+		public var cDestructorFunction: NativeAOTSample_Person_NewAgeProviderDelegate_CDestructorFunction_t? {
+			Debug.log("Will get cDestructorFunction of \(Self.swiftTypeName)")
+			
+			let value = NativeAOTSample_Person_NewAgeProviderDelegate_CDestructorFunction_Get(handle)
+			
+			Debug.log("Did get cDestructorFunction of \(Self.swiftTypeName)")
+			
+			return value
 		}
 		
 		public convenience init(_ function: @escaping Function) {
