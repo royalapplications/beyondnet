@@ -17583,7 +17583,7 @@ internal unsafe class System_Threading_Tasks_Task
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_Run1")]
 	internal static void* /* System.Threading.Tasks.Task */ System_Threading_Tasks_Task_Run1(void* /* System.Action */ action, void** /* System.Exception */ __outException)
 	{
-		System.Action actionConverted = InteropUtils.GetInstance<System.Action>(action);
+		System.Action actionConverted = InteropUtils.GetInstance<System_Action>(action)?.CreateTrampoline();
 	
 	    try {
 			System.Threading.Tasks.Task __returnValue = System.Threading.Tasks.Task.Run(actionConverted);
@@ -17609,7 +17609,7 @@ internal unsafe class System_Threading_Tasks_Task
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_Run2")]
 	internal static void* /* System.Threading.Tasks.Task */ System_Threading_Tasks_Task_Run2(void* /* System.Action */ action, void* /* System.Threading.CancellationToken */ cancellationToken, void** /* System.Exception */ __outException)
 	{
-		System.Action actionConverted = InteropUtils.GetInstance<System.Action>(action);
+		System.Action actionConverted = InteropUtils.GetInstance<System_Action>(action)?.CreateTrampoline();
 		System.Threading.CancellationToken cancellationTokenConverted = InteropUtils.GetInstance<System.Threading.CancellationToken>(cancellationToken);
 	
 	    try {
@@ -17740,7 +17740,7 @@ internal unsafe class System_Threading_Tasks_Task
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_Create")]
 	internal static void* /* System.Threading.Tasks.Task */ System_Threading_Tasks_Task_Create(void* /* System.Action */ action, void** /* System.Exception */ __outException)
 	{
-		System.Action actionConverted = InteropUtils.GetInstance<System.Action>(action);
+		System.Action actionConverted = InteropUtils.GetInstance<System_Action>(action)?.CreateTrampoline();
 	
 	    try {
 			System.Threading.Tasks.Task __returnValue = new System.Threading.Tasks.Task(actionConverted);
@@ -17766,7 +17766,7 @@ internal unsafe class System_Threading_Tasks_Task
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_Create1")]
 	internal static void* /* System.Threading.Tasks.Task */ System_Threading_Tasks_Task_Create1(void* /* System.Action */ action, void* /* System.Threading.CancellationToken */ cancellationToken, void** /* System.Exception */ __outException)
 	{
-		System.Action actionConverted = InteropUtils.GetInstance<System.Action>(action);
+		System.Action actionConverted = InteropUtils.GetInstance<System_Action>(action)?.CreateTrampoline();
 		System.Threading.CancellationToken cancellationTokenConverted = InteropUtils.GetInstance<System.Threading.CancellationToken>(cancellationToken);
 	
 	    try {
@@ -17793,7 +17793,7 @@ internal unsafe class System_Threading_Tasks_Task
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_Create2")]
 	internal static void* /* System.Threading.Tasks.Task */ System_Threading_Tasks_Task_Create2(void* /* System.Action */ action, System.Threading.Tasks.TaskCreationOptions /* System.Threading.Tasks.TaskCreationOptions */ creationOptions, void** /* System.Exception */ __outException)
 	{
-		System.Action actionConverted = InteropUtils.GetInstance<System.Action>(action);
+		System.Action actionConverted = InteropUtils.GetInstance<System_Action>(action)?.CreateTrampoline();
 	
 	    try {
 			System.Threading.Tasks.Task __returnValue = new System.Threading.Tasks.Task(actionConverted, creationOptions);
@@ -17819,7 +17819,7 @@ internal unsafe class System_Threading_Tasks_Task
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_Create3")]
 	internal static void* /* System.Threading.Tasks.Task */ System_Threading_Tasks_Task_Create3(void* /* System.Action */ action, void* /* System.Threading.CancellationToken */ cancellationToken, System.Threading.Tasks.TaskCreationOptions /* System.Threading.Tasks.TaskCreationOptions */ creationOptions, void** /* System.Exception */ __outException)
 	{
-		System.Action actionConverted = InteropUtils.GetInstance<System.Action>(action);
+		System.Action actionConverted = InteropUtils.GetInstance<System_Action>(action)?.CreateTrampoline();
 		System.Threading.CancellationToken cancellationTokenConverted = InteropUtils.GetInstance<System.Threading.CancellationToken>(cancellationToken);
 	
 	    try {
@@ -35359,6 +35359,63 @@ internal unsafe class System_Reflection_ICustomAttributeProvider
 
 internal unsafe class System_Delegate
 {
+	public void* Context { get; }
+	public delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> CFunction { get; }
+	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
+
+	private System_Delegate(void* context, delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	{
+		Context = context;
+		CFunction = cFunction;
+		CDestructorFunction = cDestructorFunction;
+	}
+
+	~System_Delegate()
+	{
+		if (CDestructorFunction is null) {
+			return;
+		}
+
+		CDestructorFunction(Context);
+	}
+
+	internal System.Delegate? CreateTrampoline()
+	{
+		if (CFunction is null) {
+			return null;
+		}
+
+		System.Type typeOfSelf = typeof(System_Delegate);
+		string nameOfInvocationMethod = nameof(__InvokeByCallingCFunction);
+		System.Reflection.BindingFlags bindingFlags = System.Reflection.BindingFlags.Instance | BindingFlags.NonPublic;
+		System.Reflection.MethodInfo? invocationMethod = typeOfSelf.GetMethod(nameOfInvocationMethod, bindingFlags);
+
+		if (invocationMethod is null) {
+			throw new Exception("Failed to retrieve delegate invocation method");
+		}
+
+		System.Delegate trampoline = (System.Delegate)System.Delegate.CreateDelegate(typeof(System.Delegate), this, invocationMethod);
+
+		return trampoline;
+	}
+
+	private void __InvokeByCallingCFunction()
+	{
+	
+
+
+		CFunction(Context);
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Delegate_Create")]
+	public static void* Create(void* context, delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	{
+		var self = new System_Delegate(context, cFunction, cDestructorFunction);
+		void* selfHandle = self.AllocateGCHandleAndGetAddress();
+
+		return selfHandle;
+	}
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Delegate_Destroy")]
 	internal static void /* System.Void */ System_Delegate_Destroy(void* /* System.Delegate */ __self)
 	{
@@ -37889,7 +37946,7 @@ internal unsafe class System_Threading_Tasks_TaskFactory
 	
 		System.Threading.Tasks.TaskFactory __selfConverted = InteropUtils.GetInstance<System.Threading.Tasks.TaskFactory>(__self);
 	
-		System.Action actionConverted = InteropUtils.GetInstance<System.Action>(action);
+		System.Action actionConverted = InteropUtils.GetInstance<System_Action>(action)?.CreateTrampoline();
 	
 	    try {
 			System.Threading.Tasks.Task __returnValue = __selfConverted.StartNew(actionConverted);
@@ -37921,7 +37978,7 @@ internal unsafe class System_Threading_Tasks_TaskFactory
 	
 		System.Threading.Tasks.TaskFactory __selfConverted = InteropUtils.GetInstance<System.Threading.Tasks.TaskFactory>(__self);
 	
-		System.Action actionConverted = InteropUtils.GetInstance<System.Action>(action);
+		System.Action actionConverted = InteropUtils.GetInstance<System_Action>(action)?.CreateTrampoline();
 		System.Threading.CancellationToken cancellationTokenConverted = InteropUtils.GetInstance<System.Threading.CancellationToken>(cancellationToken);
 	
 	    try {
@@ -37954,7 +38011,7 @@ internal unsafe class System_Threading_Tasks_TaskFactory
 	
 		System.Threading.Tasks.TaskFactory __selfConverted = InteropUtils.GetInstance<System.Threading.Tasks.TaskFactory>(__self);
 	
-		System.Action actionConverted = InteropUtils.GetInstance<System.Action>(action);
+		System.Action actionConverted = InteropUtils.GetInstance<System_Action>(action)?.CreateTrampoline();
 	
 	    try {
 			System.Threading.Tasks.Task __returnValue = __selfConverted.StartNew(actionConverted, creationOptions);
@@ -37986,7 +38043,7 @@ internal unsafe class System_Threading_Tasks_TaskFactory
 	
 		System.Threading.Tasks.TaskFactory __selfConverted = InteropUtils.GetInstance<System.Threading.Tasks.TaskFactory>(__self);
 	
-		System.Action actionConverted = InteropUtils.GetInstance<System.Action>(action);
+		System.Action actionConverted = InteropUtils.GetInstance<System_Action>(action)?.CreateTrampoline();
 		System.Threading.CancellationToken cancellationTokenConverted = InteropUtils.GetInstance<System.Threading.CancellationToken>(cancellationToken);
 		System.Threading.Tasks.TaskScheduler schedulerConverted = InteropUtils.GetInstance<System.Threading.Tasks.TaskScheduler>(scheduler);
 	
@@ -38288,7 +38345,7 @@ internal unsafe class System_Threading_CancellationToken
 	
 		System.Threading.CancellationToken __selfConverted = InteropUtils.GetInstance<System.Threading.CancellationToken>(__self);
 	
-		System.Action callbackConverted = InteropUtils.GetInstance<System.Action>(callback);
+		System.Action callbackConverted = InteropUtils.GetInstance<System_Action>(callback)?.CreateTrampoline();
 	
 	    try {
 			System.Threading.CancellationTokenRegistration __returnValue = __selfConverted.Register(callbackConverted);
@@ -38320,7 +38377,7 @@ internal unsafe class System_Threading_CancellationToken
 	
 		System.Threading.CancellationToken __selfConverted = InteropUtils.GetInstance<System.Threading.CancellationToken>(__self);
 	
-		System.Action callbackConverted = InteropUtils.GetInstance<System.Action>(callback);
+		System.Action callbackConverted = InteropUtils.GetInstance<System_Action>(callback)?.CreateTrampoline();
 		System.Boolean useSynchronizationContextConverted = useSynchronizationContext.ToBool();
 	
 	    try {
@@ -40163,7 +40220,7 @@ internal unsafe class System_Runtime_CompilerServices_ValueTaskAwaiter
 	
 		System.Runtime.CompilerServices.ValueTaskAwaiter __selfConverted = InteropUtils.GetInstance<System.Runtime.CompilerServices.ValueTaskAwaiter>(__self);
 	
-		System.Action continuationConverted = InteropUtils.GetInstance<System.Action>(continuation);
+		System.Action continuationConverted = InteropUtils.GetInstance<System_Action>(continuation)?.CreateTrampoline();
 	
 	    try {
 			__selfConverted.OnCompleted(continuationConverted);
@@ -40192,7 +40249,7 @@ internal unsafe class System_Runtime_CompilerServices_ValueTaskAwaiter
 	
 		System.Runtime.CompilerServices.ValueTaskAwaiter __selfConverted = InteropUtils.GetInstance<System.Runtime.CompilerServices.ValueTaskAwaiter>(__self);
 	
-		System.Action continuationConverted = InteropUtils.GetInstance<System.Action>(continuation);
+		System.Action continuationConverted = InteropUtils.GetInstance<System_Action>(continuation)?.CreateTrampoline();
 	
 	    try {
 			__selfConverted.UnsafeOnCompleted(continuationConverted);
@@ -40327,6 +40384,63 @@ internal unsafe class System_Action
 
 internal unsafe class System_MulticastDelegate
 {
+	public void* Context { get; }
+	public delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> CFunction { get; }
+	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
+
+	private System_MulticastDelegate(void* context, delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	{
+		Context = context;
+		CFunction = cFunction;
+		CDestructorFunction = cDestructorFunction;
+	}
+
+	~System_MulticastDelegate()
+	{
+		if (CDestructorFunction is null) {
+			return;
+		}
+
+		CDestructorFunction(Context);
+	}
+
+	internal System.MulticastDelegate? CreateTrampoline()
+	{
+		if (CFunction is null) {
+			return null;
+		}
+
+		System.Type typeOfSelf = typeof(System_MulticastDelegate);
+		string nameOfInvocationMethod = nameof(__InvokeByCallingCFunction);
+		System.Reflection.BindingFlags bindingFlags = System.Reflection.BindingFlags.Instance | BindingFlags.NonPublic;
+		System.Reflection.MethodInfo? invocationMethod = typeOfSelf.GetMethod(nameOfInvocationMethod, bindingFlags);
+
+		if (invocationMethod is null) {
+			throw new Exception("Failed to retrieve delegate invocation method");
+		}
+
+		System.MulticastDelegate trampoline = (System.MulticastDelegate)System.Delegate.CreateDelegate(typeof(System.MulticastDelegate), this, invocationMethod);
+
+		return trampoline;
+	}
+
+	private void __InvokeByCallingCFunction()
+	{
+	
+
+
+		CFunction(Context);
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_MulticastDelegate_Create")]
+	public static void* Create(void* context, delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	{
+		var self = new System_MulticastDelegate(context, cFunction, cDestructorFunction);
+		void* selfHandle = self.AllocateGCHandleAndGetAddress();
+
+		return selfHandle;
+	}
+
 	[UnmanagedCallersOnly(EntryPoint = "System_MulticastDelegate_Destroy")]
 	internal static void /* System.Void */ System_MulticastDelegate_Destroy(void* /* System.MulticastDelegate */ __self)
 	{
@@ -40421,7 +40535,7 @@ internal unsafe class System_Runtime_CompilerServices_ConfiguredValueTaskAwaitab
 	
 		System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter __selfConverted = InteropUtils.GetInstance<System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter>(__self);
 	
-		System.Action continuationConverted = InteropUtils.GetInstance<System.Action>(continuation);
+		System.Action continuationConverted = InteropUtils.GetInstance<System_Action>(continuation)?.CreateTrampoline();
 	
 	    try {
 			__selfConverted.OnCompleted(continuationConverted);
@@ -40450,7 +40564,7 @@ internal unsafe class System_Runtime_CompilerServices_ConfiguredValueTaskAwaitab
 	
 		System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter __selfConverted = InteropUtils.GetInstance<System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter>(__self);
 	
-		System.Action continuationConverted = InteropUtils.GetInstance<System.Action>(continuation);
+		System.Action continuationConverted = InteropUtils.GetInstance<System_Action>(continuation)?.CreateTrampoline();
 	
 	    try {
 			__selfConverted.UnsafeOnCompleted(continuationConverted);
@@ -40739,7 +40853,7 @@ internal unsafe class System_Runtime_CompilerServices_TaskAwaiter
 	
 		System.Runtime.CompilerServices.TaskAwaiter __selfConverted = InteropUtils.GetInstance<System.Runtime.CompilerServices.TaskAwaiter>(__self);
 	
-		System.Action continuationConverted = InteropUtils.GetInstance<System.Action>(continuation);
+		System.Action continuationConverted = InteropUtils.GetInstance<System_Action>(continuation)?.CreateTrampoline();
 	
 	    try {
 			__selfConverted.OnCompleted(continuationConverted);
@@ -40768,7 +40882,7 @@ internal unsafe class System_Runtime_CompilerServices_TaskAwaiter
 	
 		System.Runtime.CompilerServices.TaskAwaiter __selfConverted = InteropUtils.GetInstance<System.Runtime.CompilerServices.TaskAwaiter>(__self);
 	
-		System.Action continuationConverted = InteropUtils.GetInstance<System.Action>(continuation);
+		System.Action continuationConverted = InteropUtils.GetInstance<System_Action>(continuation)?.CreateTrampoline();
 	
 	    try {
 			__selfConverted.UnsafeOnCompleted(continuationConverted);
@@ -40914,7 +41028,7 @@ internal unsafe class System_Runtime_CompilerServices_ConfiguredTaskAwaitable_Co
 	
 		System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter __selfConverted = InteropUtils.GetInstance<System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter>(__self);
 	
-		System.Action continuationConverted = InteropUtils.GetInstance<System.Action>(continuation);
+		System.Action continuationConverted = InteropUtils.GetInstance<System_Action>(continuation)?.CreateTrampoline();
 	
 	    try {
 			__selfConverted.OnCompleted(continuationConverted);
@@ -40943,7 +41057,7 @@ internal unsafe class System_Runtime_CompilerServices_ConfiguredTaskAwaitable_Co
 	
 		System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter __selfConverted = InteropUtils.GetInstance<System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter>(__self);
 	
-		System.Action continuationConverted = InteropUtils.GetInstance<System.Action>(continuation);
+		System.Action continuationConverted = InteropUtils.GetInstance<System_Action>(continuation)?.CreateTrampoline();
 	
 	    try {
 			__selfConverted.UnsafeOnCompleted(continuationConverted);
@@ -41089,7 +41203,7 @@ internal unsafe class System_Runtime_CompilerServices_YieldAwaitable_YieldAwaite
 	
 		System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter __selfConverted = InteropUtils.GetInstance<System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter>(__self);
 	
-		System.Action continuationConverted = InteropUtils.GetInstance<System.Action>(continuation);
+		System.Action continuationConverted = InteropUtils.GetInstance<System_Action>(continuation)?.CreateTrampoline();
 	
 	    try {
 			__selfConverted.OnCompleted(continuationConverted);
@@ -41118,7 +41232,7 @@ internal unsafe class System_Runtime_CompilerServices_YieldAwaitable_YieldAwaite
 	
 		System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter __selfConverted = InteropUtils.GetInstance<System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter>(__self);
 	
-		System.Action continuationConverted = InteropUtils.GetInstance<System.Action>(continuation);
+		System.Action continuationConverted = InteropUtils.GetInstance<System_Action>(continuation)?.CreateTrampoline();
 	
 	    try {
 			__selfConverted.UnsafeOnCompleted(continuationConverted);
@@ -52232,7 +52346,7 @@ internal unsafe class System_Reflection_EventInfo
 		System.Reflection.EventInfo __selfConverted = InteropUtils.GetInstance<System.Reflection.EventInfo>(__self);
 	
 		System.Object targetConverted = InteropUtils.GetInstance<System.Object>(target);
-		System.Delegate handlerConverted = InteropUtils.GetInstance<System.Delegate>(handler);
+		System.Delegate handlerConverted = InteropUtils.GetInstance<System_Delegate>(handler)?.CreateTrampoline();
 	
 	    try {
 			__selfConverted.AddEventHandler(targetConverted, handlerConverted);
@@ -52262,7 +52376,7 @@ internal unsafe class System_Reflection_EventInfo
 		System.Reflection.EventInfo __selfConverted = InteropUtils.GetInstance<System.Reflection.EventInfo>(__self);
 	
 		System.Object targetConverted = InteropUtils.GetInstance<System.Object>(target);
-		System.Delegate handlerConverted = InteropUtils.GetInstance<System.Delegate>(handler);
+		System.Delegate handlerConverted = InteropUtils.GetInstance<System_Delegate>(handler)?.CreateTrampoline();
 	
 	    try {
 			__selfConverted.RemoveEventHandler(targetConverted, handlerConverted);
@@ -53212,7 +53326,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Person
 	
 		NativeAOT.CodeGeneratorInputSample.Person __selfConverted = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Person>(__self);
 	
-		NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate newAgeProviderConverted = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate>(newAgeProvider);
+		NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate newAgeProviderConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate>(newAgeProvider)?.CreateTrampoline();
 	
 	    try {
 			__selfConverted.ChangeAge(newAgeProviderConverted);
@@ -53771,7 +53885,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_TestClass
 	
 		NativeAOT.CodeGeneratorInputSample.TestClass __selfConverted = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.TestClass>(__self);
 	
-		NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate simpleDelegateConverted = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate>(simpleDelegate);
+		NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate simpleDelegateConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate>(simpleDelegate)?.CreateTrampoline();
 	
 	    try {
 			__selfConverted.CallSimpleDelegate(simpleDelegateConverted);

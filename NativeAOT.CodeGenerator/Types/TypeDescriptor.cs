@@ -191,7 +191,16 @@ public class TypeDescriptor
 
         if (sourceLanguage == CodeLanguage.CSharpUnmanaged &&
             targetLanguage == CodeLanguage.CSharp) {
-            string conversion = "InteropUtils.GetInstance<" + ManagedType.GetFullNameOrName() + ">({0})";
+            string conversion;
+            
+            if (ManagedType.IsDelegate()) {
+                string fullTypeName = ManagedType.GetFullNameOrName();
+                string cTypeName = fullTypeName.CTypeName();
+                
+                conversion = "InteropUtils.GetInstance<" + cTypeName + ">({0})?.CreateTrampoline()";
+            } else {
+                conversion = "InteropUtils.GetInstance<" + ManagedType.GetFullNameOrName() + ">({0})";
+            }
 
             return conversion;
         } else if (sourceLanguage == CodeLanguage.CSharp &&

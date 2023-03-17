@@ -858,6 +858,12 @@ typedef void* NativeAOT_CodeGeneratorInputSample_Person_Extensions_t;
 typedef void* NativeAOT_CodeGeneratorInputSample_TestClass_t;
 
 typedef void* System_Delegate_t;
+typedef void (*System_Delegate_CDestructorFunction_t)(void* context);
+
+typedef void (*System_Delegate_CFunction_t)(
+	void* context
+	
+);
 
 
 typedef void* System_Action_t;
@@ -870,6 +876,12 @@ typedef void (*System_Action_CFunction_t)(
 
 
 typedef void* System_MulticastDelegate_t;
+typedef void (*System_MulticastDelegate_CDestructorFunction_t)(void* context);
+
+typedef void (*System_MulticastDelegate_CFunction_t)(
+	void* context
+	
+);
 
 
 typedef void* System_AsyncCallback_t;
@@ -13887,6 +13899,12 @@ NativeAOT_CodeGeneratorInputSample_TestClass_Destroy(
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.TestClass
 
 #pragma mark - BEGIN APIs of System.Delegate
+System_Delegate_t /* System.Delegate */
+System_Delegate_Create(
+	void* context,
+	System_Delegate_CFunction_t function,
+	System_Delegate_CDestructorFunction_t destructorFunction
+);
 void /* System.Void */
 System_Delegate_Destroy(
 	System_Delegate_t /* System.Delegate */ self
@@ -13909,6 +13927,12 @@ System_Action_Destroy(
 #pragma mark - END APIs of System.Action
 
 #pragma mark - BEGIN APIs of System.MulticastDelegate
+System_MulticastDelegate_t /* System.MulticastDelegate */
+System_MulticastDelegate_Create(
+	void* context,
+	System_MulticastDelegate_CFunction_t function,
+	System_MulticastDelegate_CDestructorFunction_t destructorFunction
+);
 void /* System.Void */
 System_MulticastDelegate_Destroy(
 	System_MulticastDelegate_t /* System.MulticastDelegate */ self

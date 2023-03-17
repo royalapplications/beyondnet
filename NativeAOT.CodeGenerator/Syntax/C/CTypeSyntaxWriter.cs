@@ -100,55 +100,55 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
 
         sb.AppendLine(WriteTypeDef(cTypeName));
 
-        if (delegateInvokeMethod is not null) {
-            string contextTypeName = "void*";
-            string cFunctionTypeName = $"{cTypeName}_CFunction_t";
-            string cDestructorFunctionTypeName = $"{cTypeName}_CDestructorFunction_t";
-            
-            sb.AppendLine($"typedef void (*{cDestructorFunctionTypeName})({contextTypeName} context);");
-            sb.AppendLine();
-
-            Type returnType = delegateInvokeMethod.ReturnType;
-
-            string cReturnTypeName;
-
-            if (returnType.IsVoid()) {
-                cReturnTypeName = "void";
-            } else {
-                TypeDescriptor returnTypeDescriptor = returnType.GetTypeDescriptor(typeDescriptorRegistry);
-                cReturnTypeName = returnTypeDescriptor.GetTypeName(CodeLanguage.C, true);            
-            }
-
-            sb.AppendLine($"typedef {cReturnTypeName} (*{cFunctionTypeName})(");
-
-            List<string> parameters = new();
-
-            foreach (var parameter in delegateInvokeMethod.GetParameters()) {
-                string parameterName = parameter.Name ?? throw new Exception("Delegate parameter has no name");
-            
-                Type parameterType = parameter.ParameterType;
-                TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
-
-                string parameterTypeName = parameterTypeDescriptor.GetTypeName(CodeLanguage.C, true);
-
-                parameters.Add($"{parameterTypeName} {parameterName}");
-            }
-
-            string parametersString = string.Join(",\n", parameters);
-
-            string contextParameter = $"{contextTypeName} context";
-
-            if (!string.IsNullOrEmpty(parametersString)) {
-                parametersString = contextParameter + ",\n" + parametersString;
-            } else {
-                parametersString = contextParameter + "\n";
-            }
+        string contextTypeName = "void*";
+        string cFunctionTypeName = $"{cTypeName}_CFunction_t";
+        string cDestructorFunctionTypeName = $"{cTypeName}_CDestructorFunction_t";
         
-            sb.Append(parametersString
-                .IndentAllLines(1));
-        
-            sb.AppendLine(");");   
+        sb.AppendLine($"typedef void (*{cDestructorFunctionTypeName})({contextTypeName} context);");
+        sb.AppendLine();
+
+        Type returnType = delegateInvokeMethod?.ReturnType ?? typeof(void);
+
+        string cReturnTypeName;
+
+        if (returnType.IsVoid()) {
+            cReturnTypeName = "void";
+        } else {
+            TypeDescriptor returnTypeDescriptor = returnType.GetTypeDescriptor(typeDescriptorRegistry);
+            cReturnTypeName = returnTypeDescriptor.GetTypeName(CodeLanguage.C, true);            
         }
+
+        sb.AppendLine($"typedef {cReturnTypeName} (*{cFunctionTypeName})(");
+
+        List<string> parameters = new();
+
+        var parameterInfos = delegateInvokeMethod?.GetParameters() ?? Array.Empty<ParameterInfo>();
+
+        foreach (var parameter in parameterInfos) {
+            string parameterName = parameter.Name ?? throw new Exception("Delegate parameter has no name");
+        
+            Type parameterType = parameter.ParameterType;
+            TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
+
+            string parameterTypeName = parameterTypeDescriptor.GetTypeName(CodeLanguage.C, true);
+
+            parameters.Add($"{parameterTypeName} {parameterName}");
+        }
+
+        string parametersString = string.Join(",\n", parameters);
+
+        string contextParameter = $"{contextTypeName} context";
+
+        if (!string.IsNullOrEmpty(parametersString)) {
+            parametersString = contextParameter + ",\n" + parametersString;
+        } else {
+            parametersString = contextParameter + "\n";
+        }
+    
+        sb.Append(parametersString
+            .IndentAllLines(1));
+    
+        sb.AppendLine(");");
 
         string delegateTypeDefCode = sb.ToString();
 
@@ -219,8 +219,7 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
 
         sb.AppendLine($"#pragma mark - BEGIN APIs of {fullTypeName}");
 
-        if (isDelegate &&
-            type.GetDelegateInvokeMethod() is not null) {
+        if (isDelegate) {
             TypeDescriptor typeDescriptor = type.GetTypeDescriptor(typeDescriptorRegistry);
             string cTypeName =  typeDescriptor.GetTypeName(CodeLanguage.C, false);
             string cMemberNamePrefix = fullTypeName.CTypeName();
