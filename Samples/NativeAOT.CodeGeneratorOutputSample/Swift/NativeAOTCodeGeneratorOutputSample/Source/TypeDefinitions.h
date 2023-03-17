@@ -13905,6 +13905,22 @@ System_Delegate_Create(
 	System_Delegate_CFunction_t function,
 	System_Delegate_CDestructorFunction_t destructorFunction
 );
+
+void*
+System_Delegate_Context_Get(
+	System_Delegate_t /* System.Delegate */ self
+);
+
+System_Delegate_CFunction_t
+System_Delegate_CFunction_Get(
+	System_Delegate_t /* System.Delegate */ self
+);
+
+System_Delegate_CDestructorFunction_t
+System_Delegate_CDestructorFunction_Get(
+	System_Delegate_t /* System.Delegate */ self
+);
+
 void /* System.Void */
 System_Delegate_Destroy(
 	System_Delegate_t /* System.Delegate */ self
@@ -13919,6 +13935,22 @@ System_Action_Create(
 	System_Action_CFunction_t function,
 	System_Action_CDestructorFunction_t destructorFunction
 );
+
+void*
+System_Action_Context_Get(
+	System_Action_t /* System.Action */ self
+);
+
+System_Action_CFunction_t
+System_Action_CFunction_Get(
+	System_Action_t /* System.Action */ self
+);
+
+System_Action_CDestructorFunction_t
+System_Action_CDestructorFunction_Get(
+	System_Action_t /* System.Action */ self
+);
+
 void /* System.Void */
 System_Action_Destroy(
 	System_Action_t /* System.Action */ self
@@ -13933,6 +13965,22 @@ System_MulticastDelegate_Create(
 	System_MulticastDelegate_CFunction_t function,
 	System_MulticastDelegate_CDestructorFunction_t destructorFunction
 );
+
+void*
+System_MulticastDelegate_Context_Get(
+	System_MulticastDelegate_t /* System.MulticastDelegate */ self
+);
+
+System_MulticastDelegate_CFunction_t
+System_MulticastDelegate_CFunction_Get(
+	System_MulticastDelegate_t /* System.MulticastDelegate */ self
+);
+
+System_MulticastDelegate_CDestructorFunction_t
+System_MulticastDelegate_CDestructorFunction_Get(
+	System_MulticastDelegate_t /* System.MulticastDelegate */ self
+);
+
 void /* System.Void */
 System_MulticastDelegate_Destroy(
 	System_MulticastDelegate_t /* System.MulticastDelegate */ self
@@ -13947,6 +13995,22 @@ System_AsyncCallback_Create(
 	System_AsyncCallback_CFunction_t function,
 	System_AsyncCallback_CDestructorFunction_t destructorFunction
 );
+
+void*
+System_AsyncCallback_Context_Get(
+	System_AsyncCallback_t /* System.AsyncCallback */ self
+);
+
+System_AsyncCallback_CFunction_t
+System_AsyncCallback_CFunction_Get(
+	System_AsyncCallback_t /* System.AsyncCallback */ self
+);
+
+System_AsyncCallback_CDestructorFunction_t
+System_AsyncCallback_CDestructorFunction_Get(
+	System_AsyncCallback_t /* System.AsyncCallback */ self
+);
+
 void /* System.Void */
 System_AsyncCallback_Destroy(
 	System_AsyncCallback_t /* System.AsyncCallback */ self
@@ -13961,6 +14025,22 @@ System_Reflection_ModuleResolveEventHandler_Create(
 	System_Reflection_ModuleResolveEventHandler_CFunction_t function,
 	System_Reflection_ModuleResolveEventHandler_CDestructorFunction_t destructorFunction
 );
+
+void*
+System_Reflection_ModuleResolveEventHandler_Context_Get(
+	System_Reflection_ModuleResolveEventHandler_t /* System.Reflection.ModuleResolveEventHandler */ self
+);
+
+System_Reflection_ModuleResolveEventHandler_CFunction_t
+System_Reflection_ModuleResolveEventHandler_CFunction_Get(
+	System_Reflection_ModuleResolveEventHandler_t /* System.Reflection.ModuleResolveEventHandler */ self
+);
+
+System_Reflection_ModuleResolveEventHandler_CDestructorFunction_t
+System_Reflection_ModuleResolveEventHandler_CDestructorFunction_Get(
+	System_Reflection_ModuleResolveEventHandler_t /* System.Reflection.ModuleResolveEventHandler */ self
+);
+
 void /* System.Void */
 System_Reflection_ModuleResolveEventHandler_Destroy(
 	System_Reflection_ModuleResolveEventHandler_t /* System.Reflection.ModuleResolveEventHandler */ self
@@ -13975,6 +14055,22 @@ System_Reflection_TypeFilter_Create(
 	System_Reflection_TypeFilter_CFunction_t function,
 	System_Reflection_TypeFilter_CDestructorFunction_t destructorFunction
 );
+
+void*
+System_Reflection_TypeFilter_Context_Get(
+	System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */ self
+);
+
+System_Reflection_TypeFilter_CFunction_t
+System_Reflection_TypeFilter_CFunction_Get(
+	System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */ self
+);
+
+System_Reflection_TypeFilter_CDestructorFunction_t
+System_Reflection_TypeFilter_CDestructorFunction_Get(
+	System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */ self
+);
+
 void /* System.Void */
 System_Reflection_TypeFilter_Destroy(
 	System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */ self
@@ -13989,6 +14085,22 @@ System_Reflection_MemberFilter_Create(
 	System_Reflection_MemberFilter_CFunction_t function,
 	System_Reflection_MemberFilter_CDestructorFunction_t destructorFunction
 );
+
+void*
+System_Reflection_MemberFilter_Context_Get(
+	System_Reflection_MemberFilter_t /* System.Reflection.MemberFilter */ self
+);
+
+System_Reflection_MemberFilter_CFunction_t
+System_Reflection_MemberFilter_CFunction_Get(
+	System_Reflection_MemberFilter_t /* System.Reflection.MemberFilter */ self
+);
+
+System_Reflection_MemberFilter_CDestructorFunction_t
+System_Reflection_MemberFilter_CDestructorFunction_Get(
+	System_Reflection_MemberFilter_t /* System.Reflection.MemberFilter */ self
+);
+
 void /* System.Void */
 System_Reflection_MemberFilter_Destroy(
 	System_Reflection_MemberFilter_t /* System.Reflection.MemberFilter */ self
@@ -14003,6 +14115,22 @@ NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Create(
 	NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CFunction_t function,
 	NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CDestructorFunction_t destructorFunction
 );
+
+void*
+NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Context_Get(
+	NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate */ self
+);
+
+NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CFunction_t
+NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CFunction_Get(
+	NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate */ self
+);
+
+NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CDestructorFunction_t
+NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CDestructorFunction_Get(
+	NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate */ self
+);
+
 void /* System.Void */
 NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Destroy(
 	NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate */ self
@@ -14017,6 +14145,22 @@ NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_Create(
 	NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_CFunction_t function,
 	NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_CDestructorFunction_t destructorFunction
 );
+
+void*
+NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_Context_Get(
+	NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_t /* NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate */ self
+);
+
+NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_CFunction_t
+NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_CFunction_Get(
+	NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_t /* NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate */ self
+);
+
+NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_CDestructorFunction_t
+NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_CDestructorFunction_Get(
+	NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_t /* NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate */ self
+);
+
 void /* System.Void */
 NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_Destroy(
 	NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_t /* NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate */ self

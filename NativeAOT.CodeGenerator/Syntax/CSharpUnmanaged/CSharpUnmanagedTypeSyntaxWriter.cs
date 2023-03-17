@@ -326,16 +326,52 @@ public class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITyp
         sb.AppendLine("\t}");
         #endregion Create
 
+        sb.AppendLine();
+
         #region Context Get
-        // TODO
+        sb.AppendLine($"\t[UnmanagedCallersOnly(EntryPoint = \"{cTypeName}_Context_Get\")]");
+        sb.AppendLine($"\tpublic static {contextType} Context_Get(void* self)");
+        sb.AppendLine("\t{");
+        sb.AppendLine("\t\tif (self is null) {");
+        sb.AppendLine("\t\t\tthrow new ArgumentNullException(nameof(self));");
+        sb.AppendLine("\t\t}");
+        sb.AppendLine();
+        sb.AppendLine($"\t\tvar selfConverted = InteropUtils.GetInstance<{cTypeName}>(self);");
+        sb.AppendLine();
+        sb.AppendLine("\t\treturn selfConverted.Context;");
+        sb.AppendLine("\t}");
         #endregion Context Get
+        
+        sb.AppendLine();
 
         #region CFunction Get
-        // TODO
+        sb.AppendLine($"\t[UnmanagedCallersOnly(EntryPoint = \"{cTypeName}_CFunction_Get\")]");
+        sb.AppendLine($"\tpublic static {cFunctionSignature} CFunction_Get(void* self)");
+        sb.AppendLine("\t{");
+        sb.AppendLine("\t\tif (self is null) {");
+        sb.AppendLine("\t\t\tthrow new ArgumentNullException(nameof(self));");
+        sb.AppendLine("\t\t}");
+        sb.AppendLine();
+        sb.AppendLine($"\t\tvar selfConverted = InteropUtils.GetInstance<{cTypeName}>(self);");
+        sb.AppendLine();
+        sb.AppendLine("\t\treturn selfConverted.CFunction;");
+        sb.AppendLine("\t}");
         #endregion CFunction Get
+        
+        sb.AppendLine();
 
         #region CDestructorFunction Get
-        // TODO
+        sb.AppendLine($"\t[UnmanagedCallersOnly(EntryPoint = \"{cTypeName}_CDestructorFunction_Get\")]");
+        sb.AppendLine($"\tpublic static {cDestructorFunctionSignature} CDestructorFunction_Get(void* self)");
+        sb.AppendLine("\t{");
+        sb.AppendLine("\t\tif (self is null) {");
+        sb.AppendLine("\t\t\tthrow new ArgumentNullException(nameof(self));");
+        sb.AppendLine("\t\t}");
+        sb.AppendLine();
+        sb.AppendLine($"\t\tvar selfConverted = InteropUtils.GetInstance<{cTypeName}>(self);");
+        sb.AppendLine();
+        sb.AppendLine("\t\treturn selfConverted.CDestructorFunction;");
+        sb.AppendLine("\t}");
         #endregion CDestructorFunction Get
         #endregion Native API
 

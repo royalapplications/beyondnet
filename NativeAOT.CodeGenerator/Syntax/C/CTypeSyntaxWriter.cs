@@ -288,13 +288,44 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         string functionType = $"{cMemberNamePrefix}_CFunction_t";
         string destrutorFunctionType = $"{cMemberNamePrefix}_CDestructorFunction_t";
 
+        #region Create
         sb.AppendLine($"{cTypeName} /* {fullTypeName} */");
         sb.AppendLine($"{cMemberNamePrefix}_Create(");
         sb.AppendLine($"\t{contextType} context,");
         sb.AppendLine($"\t{functionType} function,");
         sb.AppendLine($"\t{destrutorFunctionType} destructorFunction");
         sb.AppendLine(");");
+        #endregion Create
+
+        sb.AppendLine();
         
+        #region Context Get
+        sb.AppendLine($"{contextType}");
+        sb.AppendLine($"{cMemberNamePrefix}_Context_Get(");
+        sb.AppendLine($"\t{cTypeName} /* {fullTypeName} */ self");
+        sb.AppendLine(");");
+        #endregion Context Get
+
+        sb.AppendLine();
+        
+        #region CFunction Get
+        sb.AppendLine($"{functionType}");
+        sb.AppendLine($"{cMemberNamePrefix}_CFunction_Get(");
+        sb.AppendLine($"\t{cTypeName} /* {fullTypeName} */ self");
+        sb.AppendLine(");");
+        #endregion CFunction Get
+        
+        sb.AppendLine();
+
+        #region CDestructorFunction Get
+        sb.AppendLine($"{destrutorFunctionType}");
+        sb.AppendLine($"{cMemberNamePrefix}_CDestructorFunction_Get(");
+        sb.AppendLine($"\t{cTypeName} /* {fullTypeName} */ self");
+        sb.AppendLine(");");
+        #endregion CDestructorFunction Get
+
+        sb.AppendLine();
+
         // TODO: Add to State
     }
 

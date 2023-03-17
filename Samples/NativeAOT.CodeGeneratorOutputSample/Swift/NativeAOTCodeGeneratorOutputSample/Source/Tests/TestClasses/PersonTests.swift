@@ -460,7 +460,11 @@ final class PersonTests: XCTestCase {
 			return 10
 		}
 		
-		guard let newAgeProviderDelegate = NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Create(nil,
+		let context = malloc(10)
+		
+		defer { free(context) }
+		
+		guard let newAgeProviderDelegate = NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Create(context,
 																												   newAgeProviderFunction,
 																												   nil) else {
 			XCTFail("Person.NewAgeProviderDelegate ctor should return an instance")
@@ -481,5 +485,14 @@ final class PersonTests: XCTestCase {
 		
 		XCTAssertNil(exception)
 		XCTAssertEqual(10, age)
+		
+		let retrievedContext = NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Context_Get(newAgeProviderDelegate)
+		XCTAssertEqual(context, retrievedContext)
+		
+		let retrievedCFunction = NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CFunction_Get(newAgeProviderDelegate)
+		XCTAssertNotNil(retrievedCFunction)
+		
+		let retrievedCDestructorFunction = NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CDestructorFunction_Get(newAgeProviderDelegate)
+		XCTAssertNil(retrievedCDestructorFunction)
 	}
 }

@@ -35416,6 +35416,42 @@ internal unsafe class System_Delegate
 		return selfHandle;
 	}
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Delegate_Context_Get")]
+	public static void* Context_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_Delegate>(self);
+
+		return selfConverted.Context;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Delegate_CFunction_Get")]
+	public static delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> CFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_Delegate>(self);
+
+		return selfConverted.CFunction;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Delegate_CDestructorFunction_Get")]
+	public static delegate* unmanaged<void*, void> CDestructorFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_Delegate>(self);
+
+		return selfConverted.CDestructorFunction;
+	}
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Delegate_Destroy")]
 	internal static void /* System.Void */ System_Delegate_Destroy(void* /* System.Delegate */ __self)
 	{
@@ -40371,6 +40407,42 @@ internal unsafe class System_Action
 		return selfHandle;
 	}
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Action_Context_Get")]
+	public static void* Context_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_Action>(self);
+
+		return selfConverted.Context;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Action_CFunction_Get")]
+	public static delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> CFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_Action>(self);
+
+		return selfConverted.CFunction;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Action_CDestructorFunction_Get")]
+	public static delegate* unmanaged<void*, void> CDestructorFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_Action>(self);
+
+		return selfConverted.CDestructorFunction;
+	}
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Action_Destroy")]
 	internal static void /* System.Void */ System_Action_Destroy(void* /* System.Action */ __self)
 	{
@@ -40439,6 +40511,42 @@ internal unsafe class System_MulticastDelegate
 		void* selfHandle = self.AllocateGCHandleAndGetAddress();
 
 		return selfHandle;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_MulticastDelegate_Context_Get")]
+	public static void* Context_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_MulticastDelegate>(self);
+
+		return selfConverted.Context;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_MulticastDelegate_CFunction_Get")]
+	public static delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> CFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_MulticastDelegate>(self);
+
+		return selfConverted.CFunction;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_MulticastDelegate_CDestructorFunction_Get")]
+	public static delegate* unmanaged<void*, void> CDestructorFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_MulticastDelegate>(self);
+
+		return selfConverted.CDestructorFunction;
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_MulticastDelegate_Destroy")]
@@ -41383,6 +41491,42 @@ internal unsafe class System_AsyncCallback
 		return selfHandle;
 	}
 
+	[UnmanagedCallersOnly(EntryPoint = "System_AsyncCallback_Context_Get")]
+	public static void* Context_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_AsyncCallback>(self);
+
+		return selfConverted.Context;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_AsyncCallback_CFunction_Get")]
+	public static delegate* unmanaged<void* /* context */, void* /* System.IAsyncResult */ /* ar */, void /* System.Void */ /* return type */> CFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_AsyncCallback>(self);
+
+		return selfConverted.CFunction;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_AsyncCallback_CDestructorFunction_Get")]
+	public static delegate* unmanaged<void*, void> CDestructorFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_AsyncCallback>(self);
+
+		return selfConverted.CDestructorFunction;
+	}
+
 	[UnmanagedCallersOnly(EntryPoint = "System_AsyncCallback_Destroy")]
 	internal static void /* System.Void */ System_AsyncCallback_Destroy(void* /* System.AsyncCallback */ __self)
 	{
@@ -42108,6 +42252,42 @@ internal unsafe class System_Reflection_ModuleResolveEventHandler
 		void* selfHandle = self.AllocateGCHandleAndGetAddress();
 
 		return selfHandle;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ModuleResolveEventHandler_Context_Get")]
+	public static void* Context_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_Reflection_ModuleResolveEventHandler>(self);
+
+		return selfConverted.Context;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ModuleResolveEventHandler_CFunction_Get")]
+	public static delegate* unmanaged<void* /* context */, void* /* System.Object */ /* sender */, void* /* System.ResolveEventArgs */ /* e */, void* /* System.Reflection.Module */ /* return type */> CFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_Reflection_ModuleResolveEventHandler>(self);
+
+		return selfConverted.CFunction;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ModuleResolveEventHandler_CDestructorFunction_Get")]
+	public static delegate* unmanaged<void*, void> CDestructorFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_Reflection_ModuleResolveEventHandler>(self);
+
+		return selfConverted.CDestructorFunction;
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ModuleResolveEventHandler_Destroy")]
@@ -43463,6 +43643,42 @@ internal unsafe class System_Reflection_TypeFilter
 		void* selfHandle = self.AllocateGCHandleAndGetAddress();
 
 		return selfHandle;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_TypeFilter_Context_Get")]
+	public static void* Context_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_Reflection_TypeFilter>(self);
+
+		return selfConverted.Context;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_TypeFilter_CFunction_Get")]
+	public static delegate* unmanaged<void* /* context */, void* /* System.Type */ /* m */, void* /* System.Object */ /* filterCriteria */, CBool /* System.Boolean */ /* return type */> CFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_Reflection_TypeFilter>(self);
+
+		return selfConverted.CFunction;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_TypeFilter_CDestructorFunction_Get")]
+	public static delegate* unmanaged<void*, void> CDestructorFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_Reflection_TypeFilter>(self);
+
+		return selfConverted.CDestructorFunction;
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_TypeFilter_Destroy")]
@@ -52858,6 +53074,42 @@ internal unsafe class System_Reflection_MemberFilter
 		return selfHandle;
 	}
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MemberFilter_Context_Get")]
+	public static void* Context_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_Reflection_MemberFilter>(self);
+
+		return selfConverted.Context;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MemberFilter_CFunction_Get")]
+	public static delegate* unmanaged<void* /* context */, void* /* System.Reflection.MemberInfo */ /* m */, void* /* System.Object */ /* filterCriteria */, CBool /* System.Boolean */ /* return type */> CFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_Reflection_MemberFilter>(self);
+
+		return selfConverted.CFunction;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MemberFilter_CDestructorFunction_Get")]
+	public static delegate* unmanaged<void*, void> CDestructorFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_Reflection_MemberFilter>(self);
+
+		return selfConverted.CDestructorFunction;
+	}
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MemberFilter_Destroy")]
 	internal static void /* System.Void */ System_Reflection_MemberFilter_Destroy(void* /* System.Reflection.MemberFilter */ __self)
 	{
@@ -53826,6 +54078,42 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDe
 		return selfHandle;
 	}
 
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Context_Get")]
+	public static void* Context_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate>(self);
+
+		return selfConverted.Context;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CFunction_Get")]
+	public static delegate* unmanaged<void* /* context */, int /* System.Int32 */ /* return type */> CFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate>(self);
+
+		return selfConverted.CFunction;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CDestructorFunction_Get")]
+	public static delegate* unmanaged<void*, void> CDestructorFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate>(self);
+
+		return selfConverted.CDestructorFunction;
+	}
+
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Destroy")]
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate */ __self)
 	{
@@ -54202,6 +54490,42 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegat
 		void* selfHandle = self.AllocateGCHandleAndGetAddress();
 
 		return selfHandle;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_Context_Get")]
+	public static void* Context_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate>(self);
+
+		return selfConverted.Context;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_CFunction_Get")]
+	public static delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> CFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate>(self);
+
+		return selfConverted.CFunction;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_CDestructorFunction_Get")]
+	public static delegate* unmanaged<void*, void> CDestructorFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate>(self);
+
+		return selfConverted.CDestructorFunction;
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_Destroy")]
