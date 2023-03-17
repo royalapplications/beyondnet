@@ -52,9 +52,35 @@ public class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITyp
         
         StringBuilder sb = new();
         
-        sb.AppendLine($"internal static unsafe class {cTypeName}");
+        sb.AppendLine($"internal unsafe class {cTypeName}");
         sb.AppendLine("{");
 
+        if (type.IsDelegate()) {
+            WriteDelegateType(
+                type,
+                sb,
+                state
+            );
+        } else {
+            WriteRegularType(
+                type,
+                sb,
+                state
+            );
+        }
+
+        sb.AppendLine("}");
+        sb.AppendLine();
+
+        return sb.ToString();
+    }
+
+    private void WriteRegularType(
+        Type type,
+        StringBuilder sb,
+        State state
+    )
+    {
         var memberCollector = new MemberCollector(type);
         var members = memberCollector.Collect(out Dictionary<MemberInfo, string> unsupportedMembers);
 
@@ -91,7 +117,37 @@ public class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITyp
 
             sb.AppendLine(memberCode);
         }
+        
+        WriteDestructor(
+            type,
+            sb,
+            state
+        );
+    }
+    
+    private void WriteDelegateType(
+        Type type,
+        StringBuilder sb,
+        State state
+    )
+    {
+        sb.AppendLine("\t// TODO: Delegate Implementation");
+        
+        // TODO
+        
+        WriteDestructor(
+            type,
+            sb,
+            state
+        );
+    }
 
+    private void WriteDestructor(
+        Type type,
+        StringBuilder sb,
+        State state
+    )
+    {
         ICSharpUnmanagedSyntaxWriter? destructorSyntaxWriter = GetSyntaxWriter(
             MemberKind.Destructor,
             MemberTypes.Custom
@@ -105,11 +161,6 @@ public class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITyp
             .IndentAllLines(1);
 
         sb.AppendLine(destructorCode);
-        
-        sb.AppendLine("}");
-        sb.AppendLine();
-
-        return sb.ToString();
     }
 
     private ICSharpUnmanagedSyntaxWriter? GetSyntaxWriter(

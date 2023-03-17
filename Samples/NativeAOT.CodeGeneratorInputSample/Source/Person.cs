@@ -25,6 +25,10 @@ public class Person
     public string FullName => $"{FirstName} {LastName}";
     #endregion Properties
 
+    #region Delegate Types
+    public delegate int NewAgeProviderDelegate();
+    #endregion Delegate Types
+
     #region Constructors
     public Person(
         string firstName,
@@ -115,6 +119,17 @@ public class Person
     public Person ChildAt(int index)
     {
         return Children[index];
+    }
+
+    public void ChangeAge(NewAgeProviderDelegate? newAgeProvider)
+    {
+        if (newAgeProvider is null) {
+            return;
+        }
+        
+        var newAge = newAgeProvider();
+
+        Age = newAge;
     }
     #endregion Methods
 }

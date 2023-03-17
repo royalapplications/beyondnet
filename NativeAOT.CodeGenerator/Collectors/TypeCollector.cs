@@ -57,15 +57,29 @@ public class TypeCollector
             CollectType(baseType, collectedTypes, unsupportedTypes);
         }
 
-        BindingFlags getMembersFlags = BindingFlags.Public | 
-                                       BindingFlags.DeclaredOnly |
-                                       BindingFlags.Instance |
-                                       BindingFlags.Static;
+        bool isDelegate = type.IsDelegate();
 
-        var memberInfos = type.GetMembers(getMembersFlags);
-
-        foreach (var memberInfo in memberInfos) {
-            CollectMember(memberInfo, collectedTypes, unsupportedTypes);
+        if (isDelegate) {
+            CollectDelegate(
+                type,
+                collectedTypes,
+                unsupportedTypes
+            );
+        } else {
+            BindingFlags getMembersFlags = BindingFlags.Public | 
+                                           BindingFlags.DeclaredOnly |
+                                           BindingFlags.Instance |
+                                           BindingFlags.Static;
+    
+            var memberInfos = type.GetMembers(getMembersFlags);
+    
+            foreach (var memberInfo in memberInfos) {
+                CollectMember(
+                    memberInfo,
+                    collectedTypes,
+                    unsupportedTypes
+                );
+            }
         }
     }
 
@@ -127,6 +141,27 @@ public class TypeCollector
         foreach (var parameterInfo in parameterInfos) {
             CollectParameter(parameterInfo, collectedTypes, unsupportedTypes);
         }
+    }
+
+    private void CollectDelegate(
+        Type delegateType,
+        HashSet<Type> collectedTypes,
+        Dictionary<Type, string> unsupportedTypes
+    )
+    {
+        const string invokeMethodName = "Invoke";
+        
+        MethodInfo? invokeMethod = delegateType.GetMethod(invokeMethodName);
+
+        if (invokeMethod is null) {
+            return;
+        }
+        
+        CollectMethod(
+            invokeMethod,
+            collectedTypes,
+            unsupportedTypes
+        );
     }
     
     private void CollectProperty(
@@ -237,10 +272,10 @@ public class TypeCollector
             return false;
         }
 
-        if (type.IsDelegate()) {
-            unsupportedReason = "Is Delegate Type";
-            return false;
-        }
+        // if (type.IsDelegate()) {
+        //     unsupportedReason = "Is Delegate Type";
+        //     return false;
+        // }
 
         if (m_unsupportedTypes.Contains(type)) {
             unsupportedReason = "Is unsupported Type";

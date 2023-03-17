@@ -1,5 +1,5 @@
-// Number of generated types: 168
-// Number of generated members: 1844
+// Number of generated types: 179
+// Number of generated members: 1894
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -489,6 +489,8 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 
 typedef void* System_Reflection_ICustomAttributeProvider_t;
 
+typedef void* System_Delegate_t;
+
 typedef void* System_Collections_IDictionary_t;
 
 typedef void* System_Collections_ICollection_t;
@@ -546,6 +548,10 @@ typedef void* System_Threading_Tasks_ValueTask_t;
 
 typedef void* System_Runtime_CompilerServices_ValueTaskAwaiter_t;
 
+typedef void* System_Action_t;
+
+typedef void* System_MulticastDelegate_t;
+
 typedef void* System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_t;
 
 typedef void* System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_t;
@@ -597,6 +603,8 @@ typedef void* System_Runtime_CompilerServices_ConfiguredTaskAwaitable_Configured
 typedef void* System_Runtime_CompilerServices_YieldAwaitable_t;
 
 typedef void* System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_t;
+
+typedef void* System_AsyncCallback_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_IO_SeekOrigin_Begin = 0,
@@ -656,9 +664,17 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Reflection_ResourceLocation;
 
 
+typedef void* System_Reflection_ModuleResolveEventHandler_t;
+
 typedef void* System_Reflection_Module_t;
 
 typedef void* System_Guid_t;
+
+typedef void* System_Reflection_TypeFilter_t;
+
+typedef void* System_ResolveEventArgs_t;
+
+typedef void* System_EventArgs_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): uint8_t {
 	System_Security_SecurityRuleSet_None = 0,
@@ -825,6 +841,8 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 
 typedef void* System_Reflection_InterfaceMapping_t;
 
+typedef void* System_Reflection_MemberFilter_t;
+
 typedef void* NativeAOT_CodeGeneratorInputSample_IAnimal_t;
 
 typedef void* NativeAOT_CodeGeneratorInputSample_BaseAnimal_t;
@@ -843,6 +861,8 @@ typedef enum __attribute__((enum_extensibility(closed))): uint32_t {
 
 typedef void* NativeAOT_CodeGeneratorInputSample_Person_t;
 
+typedef void* NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_t;
+
 typedef void* NativeAOT_CodeGeneratorInputSample_Person_Extensions_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
@@ -852,6 +872,8 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 
 
 typedef void* NativeAOT_CodeGeneratorInputSample_TestClass_t;
+
+typedef void* NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_t;
 
 
 #pragma mark - END Type Definitions
@@ -1712,6 +1734,21 @@ System_Type_Delimiter_Get(
 
 System_Object_t /* System.Object */
 System_Type_Missing_Get(
+	
+);
+
+System_Reflection_MemberFilter_t /* System.Reflection.MemberFilter */
+System_Type_FilterAttribute_Get(
+	
+);
+
+System_Reflection_MemberFilter_t /* System.Reflection.MemberFilter */
+System_Type_FilterName_Get(
+	
+);
+
+System_Reflection_MemberFilter_t /* System.Reflection.MemberFilter */
+System_Type_FilterNameIgnoreCase_Get(
 	
 );
 
@@ -4981,6 +5018,19 @@ System_Threading_Tasks_Task_FromCanceled(
 );
 
 System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_Threading_Tasks_Task_Run1(
+	System_Action_t /* System.Action */ action,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_Threading_Tasks_Task_Run2(
+	System_Action_t /* System.Action */ action,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
 System_Threading_Tasks_Task_Delay(
 	System_TimeSpan_t /* System.TimeSpan */ delay,
 	System_Exception_t* /* System.Exception */ outException
@@ -5003,6 +5053,34 @@ System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
 System_Threading_Tasks_Task_Delay3(
 	int32_t /* System.Int32 */ millisecondsDelay,
 	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_Threading_Tasks_Task_Create(
+	System_Action_t /* System.Action */ action,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_Threading_Tasks_Task_Create1(
+	System_Action_t /* System.Action */ action,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_Threading_Tasks_Task_Create2(
+	System_Action_t /* System.Action */ action,
+	System_Threading_Tasks_TaskCreationOptions /* System.Threading.Tasks.TaskCreationOptions */ creationOptions,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_Threading_Tasks_Task_Create3(
+	System_Action_t /* System.Action */ action,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Threading_Tasks_TaskCreationOptions /* System.Threading.Tasks.TaskCreationOptions */ creationOptions,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -9033,6 +9111,21 @@ System_Reflection_MethodInfo_GetBaseDefinition(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+System_Delegate_t /* System.Delegate */
+System_Reflection_MethodInfo_CreateDelegate(
+	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
+	System_Type_t /* System.Type */ delegateType,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Delegate_t /* System.Delegate */
+System_Reflection_MethodInfo_CreateDelegate1(
+	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
+	System_Type_t /* System.Type */ delegateType,
+	System_Object_t /* System.Object */ target,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 CBool /* System.Boolean */
 System_Reflection_MethodInfo_Equals(
 	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
@@ -9214,6 +9307,14 @@ System_Reflection_ICustomAttributeProvider_Destroy(
 );
 
 #pragma mark - END APIs of System.Reflection.ICustomAttributeProvider
+
+#pragma mark - BEGIN APIs of System.Delegate
+void /* System.Void */
+System_Delegate_Destroy(
+	System_Delegate_t /* System.Delegate */ self
+);
+
+#pragma mark - END APIs of System.Delegate
 
 #pragma mark - BEGIN APIs of System.Collections.IDictionary
 CBool /* System.Boolean */
@@ -9900,6 +10001,39 @@ System_Collections_DictionaryEntry_Destroy(
 #pragma mark - END APIs of System.Threading.Tasks.TaskCreationOptions
 
 #pragma mark - BEGIN APIs of System.Threading.Tasks.TaskFactory
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_Threading_Tasks_TaskFactory_StartNew(
+	System_Threading_Tasks_TaskFactory_t /* System.Threading.Tasks.TaskFactory */ self,
+	System_Action_t /* System.Action */ action,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_Threading_Tasks_TaskFactory_StartNew1(
+	System_Threading_Tasks_TaskFactory_t /* System.Threading.Tasks.TaskFactory */ self,
+	System_Action_t /* System.Action */ action,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_Threading_Tasks_TaskFactory_StartNew2(
+	System_Threading_Tasks_TaskFactory_t /* System.Threading.Tasks.TaskFactory */ self,
+	System_Action_t /* System.Action */ action,
+	System_Threading_Tasks_TaskCreationOptions /* System.Threading.Tasks.TaskCreationOptions */ creationOptions,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_Threading_Tasks_TaskFactory_StartNew3(
+	System_Threading_Tasks_TaskFactory_t /* System.Threading.Tasks.TaskFactory */ self,
+	System_Action_t /* System.Action */ action,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Threading_Tasks_TaskCreationOptions /* System.Threading.Tasks.TaskCreationOptions */ creationOptions,
+	System_Threading_Tasks_TaskScheduler_t /* System.Threading.Tasks.TaskScheduler */ scheduler,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 System_Threading_Tasks_TaskFactory_t /* System.Threading.Tasks.TaskFactory */
 System_Threading_Tasks_TaskFactory_Create(
 	System_Exception_t* /* System.Exception */ outException
@@ -9965,6 +10099,21 @@ System_Threading_Tasks_TaskFactory_Destroy(
 #pragma mark - END APIs of System.Threading.Tasks.TaskFactory
 
 #pragma mark - BEGIN APIs of System.Threading.CancellationToken
+System_Threading_CancellationTokenRegistration_t /* System.Threading.CancellationTokenRegistration */
+System_Threading_CancellationToken_Register(
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ self,
+	System_Action_t /* System.Action */ callback,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_CancellationTokenRegistration_t /* System.Threading.CancellationTokenRegistration */
+System_Threading_CancellationToken_Register1(
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ self,
+	System_Action_t /* System.Action */ callback,
+	CBool /* System.Boolean */ useSynchronizationContext,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 CBool /* System.Boolean */
 System_Threading_CancellationToken_Equals(
 	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ self,
@@ -10397,6 +10546,20 @@ System_Runtime_CompilerServices_ValueTaskAwaiter_GetResult(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+void /* System.Void */
+System_Runtime_CompilerServices_ValueTaskAwaiter_OnCompleted(
+	System_Runtime_CompilerServices_ValueTaskAwaiter_t /* System.Runtime.CompilerServices.ValueTaskAwaiter */ self,
+	System_Action_t /* System.Action */ continuation,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Runtime_CompilerServices_ValueTaskAwaiter_UnsafeOnCompleted(
+	System_Runtime_CompilerServices_ValueTaskAwaiter_t /* System.Runtime.CompilerServices.ValueTaskAwaiter */ self,
+	System_Action_t /* System.Action */ continuation,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 CBool /* System.Boolean */
 System_Runtime_CompilerServices_ValueTaskAwaiter_IsCompleted_Get(
 	System_Runtime_CompilerServices_ValueTaskAwaiter_t /* System.Runtime.CompilerServices.ValueTaskAwaiter */ self,
@@ -10409,6 +10572,22 @@ System_Runtime_CompilerServices_ValueTaskAwaiter_Destroy(
 );
 
 #pragma mark - END APIs of System.Runtime.CompilerServices.ValueTaskAwaiter
+
+#pragma mark - BEGIN APIs of System.Action
+void /* System.Void */
+System_Action_Destroy(
+	System_Action_t /* System.Action */ self
+);
+
+#pragma mark - END APIs of System.Action
+
+#pragma mark - BEGIN APIs of System.MulticastDelegate
+void /* System.Void */
+System_MulticastDelegate_Destroy(
+	System_MulticastDelegate_t /* System.MulticastDelegate */ self
+);
+
+#pragma mark - END APIs of System.MulticastDelegate
 
 #pragma mark - BEGIN APIs of System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable
 System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_t /* System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter */
@@ -10428,6 +10607,20 @@ System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_Destroy(
 void /* System.Void */
 System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_GetResult(
 	System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_t /* System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_OnCompleted(
+	System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_t /* System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter */ self,
+	System_Action_t /* System.Action */ continuation,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_UnsafeOnCompleted(
+	System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_t /* System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter */ self,
+	System_Action_t /* System.Action */ continuation,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -10509,6 +10702,20 @@ System_IAsyncResult_Destroy(
 
 #pragma mark - BEGIN APIs of System.Runtime.CompilerServices.TaskAwaiter
 void /* System.Void */
+System_Runtime_CompilerServices_TaskAwaiter_OnCompleted(
+	System_Runtime_CompilerServices_TaskAwaiter_t /* System.Runtime.CompilerServices.TaskAwaiter */ self,
+	System_Action_t /* System.Action */ continuation,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Runtime_CompilerServices_TaskAwaiter_UnsafeOnCompleted(
+	System_Runtime_CompilerServices_TaskAwaiter_t /* System.Runtime.CompilerServices.TaskAwaiter */ self,
+	System_Action_t /* System.Action */ continuation,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
 System_Runtime_CompilerServices_TaskAwaiter_GetResult(
 	System_Runtime_CompilerServices_TaskAwaiter_t /* System.Runtime.CompilerServices.TaskAwaiter */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -10542,6 +10749,20 @@ System_Runtime_CompilerServices_ConfiguredTaskAwaitable_Destroy(
 #pragma mark - END APIs of System.Runtime.CompilerServices.ConfiguredTaskAwaitable
 
 #pragma mark - BEGIN APIs of System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter
+void /* System.Void */
+System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_OnCompleted(
+	System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_t /* System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter */ self,
+	System_Action_t /* System.Action */ continuation,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_UnsafeOnCompleted(
+	System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_t /* System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter */ self,
+	System_Action_t /* System.Action */ continuation,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 void /* System.Void */
 System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_GetResult(
 	System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_t /* System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter */ self,
@@ -10577,6 +10798,20 @@ System_Runtime_CompilerServices_YieldAwaitable_Destroy(
 
 #pragma mark - BEGIN APIs of System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter
 void /* System.Void */
+System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_OnCompleted(
+	System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_t /* System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter */ self,
+	System_Action_t /* System.Action */ continuation,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_UnsafeOnCompleted(
+	System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_t /* System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter */ self,
+	System_Action_t /* System.Action */ continuation,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
 System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_GetResult(
 	System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_t /* System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -10594,6 +10829,14 @@ System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_Destroy(
 );
 
 #pragma mark - END APIs of System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter
+
+#pragma mark - BEGIN APIs of System.AsyncCallback
+void /* System.Void */
+System_AsyncCallback_Destroy(
+	System_AsyncCallback_t /* System.AsyncCallback */ self
+);
+
+#pragma mark - END APIs of System.AsyncCallback
 
 #pragma mark - BEGIN APIs of System.IO.SeekOrigin
 #pragma mark - END APIs of System.IO.SeekOrigin
@@ -10770,6 +11013,14 @@ System_Reflection_ManifestResourceInfo_Destroy(
 #pragma mark - BEGIN APIs of System.Reflection.ResourceLocation
 #pragma mark - END APIs of System.Reflection.ResourceLocation
 
+#pragma mark - BEGIN APIs of System.Reflection.ModuleResolveEventHandler
+void /* System.Void */
+System_Reflection_ModuleResolveEventHandler_Destroy(
+	System_Reflection_ModuleResolveEventHandler_t /* System.Reflection.ModuleResolveEventHandler */ self
+);
+
+#pragma mark - END APIs of System.Reflection.ModuleResolveEventHandler
+
 #pragma mark - BEGIN APIs of System.Reflection.Module
 CBool /* System.Boolean */
 System_Reflection_Module_IsResource(
@@ -10941,6 +11192,16 @@ System_Reflection_Module_MetadataToken_Get(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */
+System_Reflection_Module_FilterTypeName_Get(
+	
+);
+
+System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */
+System_Reflection_Module_FilterTypeNameIgnoreCase_Get(
+	
+);
+
 void /* System.Void */
 System_Reflection_Module_Destroy(
 	System_Reflection_Module_t /* System.Reflection.Module */ self
@@ -11078,6 +11339,65 @@ System_Guid_Destroy(
 );
 
 #pragma mark - END APIs of System.Guid
+
+#pragma mark - BEGIN APIs of System.Reflection.TypeFilter
+void /* System.Void */
+System_Reflection_TypeFilter_Destroy(
+	System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */ self
+);
+
+#pragma mark - END APIs of System.Reflection.TypeFilter
+
+#pragma mark - BEGIN APIs of System.ResolveEventArgs
+System_ResolveEventArgs_t /* System.ResolveEventArgs */
+System_ResolveEventArgs_Create(
+	CString /* System.String */ name,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_ResolveEventArgs_t /* System.ResolveEventArgs */
+System_ResolveEventArgs_Create1(
+	CString /* System.String */ name,
+	System_Reflection_Assembly_t /* System.Reflection.Assembly */ requestingAssembly,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_ResolveEventArgs_Name_Get(
+	System_ResolveEventArgs_t /* System.ResolveEventArgs */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_Assembly_t /* System.Reflection.Assembly */
+System_ResolveEventArgs_RequestingAssembly_Get(
+	System_ResolveEventArgs_t /* System.ResolveEventArgs */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_ResolveEventArgs_Destroy(
+	System_ResolveEventArgs_t /* System.ResolveEventArgs */ self
+);
+
+#pragma mark - END APIs of System.ResolveEventArgs
+
+#pragma mark - BEGIN APIs of System.EventArgs
+System_EventArgs_t /* System.EventArgs */
+System_EventArgs_Create(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_EventArgs_t /* System.EventArgs */
+System_EventArgs_Empty_Get(
+	
+);
+
+void /* System.Void */
+System_EventArgs_Destroy(
+	System_EventArgs_t /* System.EventArgs */ self
+);
+
+#pragma mark - END APIs of System.EventArgs
 
 #pragma mark - BEGIN APIs of System.Security.SecurityRuleSet
 #pragma mark - END APIs of System.Security.SecurityRuleSet
@@ -13120,6 +13440,22 @@ System_Reflection_EventInfo_GetRaiseMethod1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+void /* System.Void */
+System_Reflection_EventInfo_AddEventHandler(
+	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
+	System_Object_t /* System.Object */ target,
+	System_Delegate_t /* System.Delegate */ handler,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Reflection_EventInfo_RemoveEventHandler(
+	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
+	System_Object_t /* System.Object */ target,
+	System_Delegate_t /* System.Delegate */ handler,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 CBool /* System.Boolean */
 System_Reflection_EventInfo_Equals(
 	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
@@ -13220,6 +13556,14 @@ System_Reflection_InterfaceMapping_Destroy(
 );
 
 #pragma mark - END APIs of System.Reflection.InterfaceMapping
+
+#pragma mark - BEGIN APIs of System.Reflection.MemberFilter
+void /* System.Void */
+System_Reflection_MemberFilter_Destroy(
+	System_Reflection_MemberFilter_t /* System.Reflection.MemberFilter */ self
+);
+
+#pragma mark - END APIs of System.Reflection.MemberFilter
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.IAnimal
 CString /* System.String */
@@ -13345,6 +13689,13 @@ NativeAOT_CodeGeneratorInputSample_Person_ChildAt(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_Person_ChangeAge(
+	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
+	NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate */ newAgeProvider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */
 NativeAOT_CodeGeneratorInputSample_Person_Create(
 	CString /* System.String */ firstName,
@@ -13452,6 +13803,14 @@ NativeAOT_CodeGeneratorInputSample_Person_Destroy(
 
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.Person
 
+#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Destroy(
+	NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate */ self
+);
+
+#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate
+
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Person_Extensions
 void /* System.Void */
 NativeAOT_CodeGeneratorInputSample_Person_Extensions_IncreaseAge(
@@ -13471,6 +13830,13 @@ NativeAOT_CodeGeneratorInputSample_Person_Extensions_Destroy(
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.TestEnum
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.TestClass
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_TestClass_CallSimpleDelegate(
+	NativeAOT_CodeGeneratorInputSample_TestClass_t /* NativeAOT.CodeGeneratorInputSample.TestClass */ self,
+	NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_t /* NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate */ simpleDelegate,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 void /* System.Void */
 NativeAOT_CodeGeneratorInputSample_TestClass_SayHello(
 	NativeAOT_CodeGeneratorInputSample_TestClass_t /* NativeAOT.CodeGeneratorInputSample.TestClass */ self,
@@ -13529,6 +13895,14 @@ NativeAOT_CodeGeneratorInputSample_TestClass_Destroy(
 );
 
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.TestClass
+
+#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_Destroy(
+	NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_t /* NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate */ self
+);
+
+#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate
 
 
 #pragma mark - END APIs
