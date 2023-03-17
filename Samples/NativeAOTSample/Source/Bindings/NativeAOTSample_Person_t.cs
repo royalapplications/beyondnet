@@ -192,26 +192,10 @@ internal static unsafe class NativeAOTSample_Person_t
     }
     
     // Sample API for demonstrating non-escaping closures
-    [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "ChangeAge_NewAgeProvider_Create")]
-    internal static void* /* CDelegate */ ChangeAge_NewAgeProvider_Create(
-        void* context,
-        delegate* unmanaged<void*, int> cFunction,
-        delegate* unmanaged<void*, void> cDestructorFunction
-    )
-    {
-        CDelegate cDelegate = new(
-            context,
-            cFunction,
-            cDestructorFunction
-        );
-
-        return cDelegate.AllocateGCHandleAndGetAddress();
-    }
-    
     [UnmanagedCallersOnly(EntryPoint = ENTRYPOINT_PREFIX + "ChangeAge")]
     internal static CStatus ChangeAge(
         void* handleAddress,
-        void* newAgeProviderNativeDelegateHandleAddress,
+        void* newAgeProviderDelegateHandleAddress,
         void** outException
     )
     {
@@ -226,44 +210,9 @@ internal static unsafe class NativeAOTSample_Person_t
         }
 
         try {
-            CDelegate? nativeDelegate = InteropUtils.GetInstance<CDelegate>(newAgeProviderNativeDelegateHandleAddress);
+            NativeAOTSample_Person_NewAgeProviderDelegate_t? nativeDelegate = InteropUtils.GetInstance<NativeAOTSample_Person_NewAgeProviderDelegate_t>(newAgeProviderDelegateHandleAddress);
 
-            void* context;
-            delegate* unmanaged<void*, int> nativeFunction;
-
-            if (nativeDelegate is not null) {
-                if (nativeDelegate.Context is not null) {
-                    context = nativeDelegate.Context;
-                } else {
-                    context = null;
-                }
-    
-                if (nativeDelegate.CFunction is not null) {
-                    nativeFunction = (delegate* unmanaged<void*, int>)nativeDelegate.CFunction;
-                } else {
-                    nativeFunction = null;
-                }
-            } else {
-                context = null;
-                nativeFunction = null;
-            }
-
-            Func<int>? trampoline;
-
-            if (nativeFunction is not null) {
-                trampoline = () => {
-                    int returnValue = nativeFunction(context);
-                
-                    return returnValue;
-                };
-            } else {
-                trampoline = null;
-            }
-        
-            if (nativeDelegate is not null &&
-                trampoline is not null) {
-                nativeDelegate.SetTrampoline(trampoline);
-            }
+            var trampoline = nativeDelegate?.CreateTrampoline();
         
             instance.ChangeAge(trampoline);
         

@@ -142,30 +142,29 @@ public extension Person {
 		}
 	}
 	
-	// Sample API for demonstrating non-escaping closures
-	func changeAge(_ newAgeProvider: ChangeAgeNewAgeProvider.FunctionType?) throws {
+	func changeAge(_ newAgeProvider: NewAgeProviderDelegate.Function?) throws {
         var exceptionHandle: System_Exception_t?
-		
-		let newAgeProviderDelegate: CDelegate?
-		
+
+		let newAgeProviderDelegate: NewAgeProviderDelegate?
+
 		if let newAgeProvider {
-			newAgeProviderDelegate = ChangeAgeNewAgeProvider.createDelegate(newAgeProvider)
+			newAgeProviderDelegate = .init(newAgeProvider)
 		} else {
 			newAgeProviderDelegate = nil
 		}
-		
+
 		let success = NativeAOTSample_Person_ChangeAge(handle,
 													   newAgeProviderDelegate?.handle,
 													   &exceptionHandle).boolValue
-		
+
         if success {
             Debug.log("Did change age of \(swiftTypeName)")
         } else if let exceptionHandle {
             Debug.log("Change age of \(swiftTypeName) threw an exception")
-            
+
             let exception = System.Exception(handle: exceptionHandle)
             let error = exception.error
-            
+
             throw error
         } else {
             fatalError("Change age of \(swiftTypeName) failed but didn't throw an exception. This is unexpected.")

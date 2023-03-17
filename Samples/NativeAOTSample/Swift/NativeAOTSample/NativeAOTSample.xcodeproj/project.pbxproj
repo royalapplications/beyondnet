@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E70A1FAB29C357DB00843CD0 /* Person.ChangeAgeNewAgeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A1FAA29C357DB00843CD0 /* Person.ChangeAgeNewAgeProvider.swift */; };
+		E70A1FAB29C357DB00843CD0 /* Person.NewAgeProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A1FAA29C357DB00843CD0 /* Person.NewAgeProviderDelegate.swift */; };
 		E70D118329C1F54400B4E738 /* SystemNamespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70D118229C1F54400B4E738 /* SystemNamespace.swift */; };
 		E716200029A66CC000D45FCD /* CommonTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = E7161FFF29A66CBB00D45FCD /* CommonTypes.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		E716200229A6795D00D45FCD /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = E716200129A6795D00D45FCD /* Debug.swift */; };
@@ -38,8 +38,7 @@
 		E7BC395429A7B95200806ADD /* System.Exception.Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC395329A7B95200806ADD /* System.Exception.Error.swift */; };
 		E7BC395629A7BECC00806ADD /* System_GC.h in Headers */ = {isa = PBXBuildFile; fileRef = E7BC395529A7BECC00806ADD /* System_GC.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		E7BC395829A7BEF500806ADD /* System.GC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC395729A7BEF500806ADD /* System.GC.swift */; };
-		E7C8CF1129C252B200C4230F /* NativeAOTSample_CDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = E7C8CF1029C252B200C4230F /* NativeAOTSample_CDelegate.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		E7C8CF1329C2531A00C4230F /* CDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF1229C2531A00C4230F /* CDelegate.swift */; };
+		E7C8CF1129C252B200C4230F /* NativeAOTSample_Person_NewAgeProviderDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = E7C8CF1029C252B200C4230F /* NativeAOTSample_Person_NewAgeProviderDelegate.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		E7E26AC429A62FBD005334CF /* NativeAOTSample_Person.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E26AC329A62FB8005334CF /* NativeAOTSample_Person.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		E7E26AC629A63147005334CF /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E26AC529A63147005334CF /* Person.swift */; };
 		E7E26AC929A668F8005334CF /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E26AC829A668F8005334CF /* Company.swift */; };
@@ -76,7 +75,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E70A1FAA29C357DB00843CD0 /* Person.ChangeAgeNewAgeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.ChangeAgeNewAgeProvider.swift; sourceTree = "<group>"; };
+		E70A1FAA29C357DB00843CD0 /* Person.NewAgeProviderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.NewAgeProviderDelegate.swift; sourceTree = "<group>"; };
 		E70D118229C1F54400B4E738 /* SystemNamespace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemNamespace.swift; sourceTree = "<group>"; };
 		E7161FFF29A66CBB00D45FCD /* CommonTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonTypes.h; sourceTree = "<group>"; };
 		E716200129A6795D00D45FCD /* Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
@@ -108,8 +107,7 @@
 		E7BC395329A7B95200806ADD /* System.Exception.Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = System.Exception.Error.swift; sourceTree = "<group>"; };
 		E7BC395529A7BECC00806ADD /* System_GC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = System_GC.h; sourceTree = "<group>"; };
 		E7BC395729A7BEF500806ADD /* System.GC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = System.GC.swift; sourceTree = "<group>"; };
-		E7C8CF1029C252B200C4230F /* NativeAOTSample_CDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeAOTSample_CDelegate.h; sourceTree = "<group>"; };
-		E7C8CF1229C2531A00C4230F /* CDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDelegate.swift; sourceTree = "<group>"; };
+		E7C8CF1029C252B200C4230F /* NativeAOTSample_Person_NewAgeProviderDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeAOTSample_Person_NewAgeProviderDelegate.h; sourceTree = "<group>"; };
 		E7E26AC329A62FB8005334CF /* NativeAOTSample_Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeAOTSample_Person.h; sourceTree = "<group>"; };
 		E7E26AC529A63147005334CF /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		E7E26AC729A668CD005334CF /* NativeAOTSample_Company.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeAOTSample_Company.h; sourceTree = "<group>"; };
@@ -157,8 +155,8 @@
 		E716C71829AF77D30099E179 /* NativeAOTSample */ = {
 			isa = PBXGroup;
 			children = (
-				E7C8CF1029C252B200C4230F /* NativeAOTSample_CDelegate.h */,
 				E7E26AC329A62FB8005334CF /* NativeAOTSample_Person.h */,
+				E7C8CF1029C252B200C4230F /* NativeAOTSample_Person_NewAgeProviderDelegate.h */,
 				E7E26AC729A668CD005334CF /* NativeAOTSample_Company.h */,
 				E7BBE57529B0DE8900394855 /* NativeAOTSample_CompanySerializer.h */,
 				E738716829ACE3D100BEA7DA /* NativeAOTSample_UnhandledExceptionTest.h */,
@@ -249,9 +247,8 @@
 		E7BC394129A7A25600806ADD /* NativeAOTSample */ = {
 			isa = PBXGroup;
 			children = (
-				E7C8CF1229C2531A00C4230F /* CDelegate.swift */,
 				E7E26AC529A63147005334CF /* Person.swift */,
-				E70A1FAA29C357DB00843CD0 /* Person.ChangeAgeNewAgeProvider.swift */,
+				E70A1FAA29C357DB00843CD0 /* Person.NewAgeProviderDelegate.swift */,
 				E7E9D57829A766A2002C3834 /* Person_Tests.swift */,
 				E7E26AC829A668F8005334CF /* Company.swift */,
 				E7E9D57A29A768F7002C3834 /* Company_Tests.swift */,
@@ -270,7 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7AACF3829A6278E00846A75 /* NativeAOTSample.h in Headers */,
-				E7C8CF1129C252B200C4230F /* NativeAOTSample_CDelegate.h in Headers */,
+				E7C8CF1129C252B200C4230F /* NativeAOTSample_Person_NewAgeProviderDelegate.h in Headers */,
 				E738716529ACD9CB00BEA7DA /* System_UnhandledExceptionEventArgs.h in Headers */,
 				E7BBE57629B0DE8900394855 /* NativeAOTSample_CompanySerializer.h in Headers */,
 				E738715E29ACD36C00BEA7DA /* System_AppDomain.h in Headers */,
@@ -451,7 +448,7 @@
 			files = (
 				E7BC395829A7BEF500806ADD /* System.GC.swift in Sources */,
 				E716C71429AF71470099E179 /* CBool.swift in Sources */,
-				E70A1FAB29C357DB00843CD0 /* Person.ChangeAgeNewAgeProvider.swift in Sources */,
+				E70A1FAB29C357DB00843CD0 /* Person.NewAgeProviderDelegate.swift in Sources */,
 				E7BC395429A7B95200806ADD /* System.Exception.Error.swift in Sources */,
 				E7BBE57829B0DF3000394855 /* CompanySerializer.swift in Sources */,
 				E7BC394E29A7A8BC00806ADD /* System.Exception.swift in Sources */,
@@ -467,7 +464,6 @@
 				E738716029ACD3AF00BEA7DA /* System.AppDomain.swift in Sources */,
 				E738716729ACDA1200BEA7DA /* System.UnhandledExceptionEventArgs.swift in Sources */,
 				E7BC394329A7A27600806ADD /* System.Type.swift in Sources */,
-				E7C8CF1329C2531A00C4230F /* CDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

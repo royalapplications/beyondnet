@@ -311,46 +311,46 @@ private extension AppDelegate {
 	
 	func _changeAgeOfEmployees() {
 		guard let company else { return }
-		
+
 		let newAge: Int32 = 10
-		
-		let newAgeProvider: Person.ChangeAgeNewAgeProvider.FunctionType = {
+
+		let newAgeProvider: Person.NewAgeProviderDelegate.Function = {
 			newAge
 		}
-		
+
 		let companyName = company.name
 		let numberOfEmployees = company.numberOfEmployees
 		let formattedNumberOfEmployees = spellOutFormattedNumber(.init(numberOfEmployees))
-		
+
 		let startDate = Date()
-		
+
 		for idx in 0..<numberOfEmployees {
 			guard let employee = company.employee(at: idx) else {
 				fatalError("Failed to get employee")
 			}
-			
+
 			do {
 				try employee.changeAge(newAgeProvider)
 			} catch {
-				fatalError("An error occurred while changing the age of an employee: \(error)")
+				fatalError("An error occurred while changing the age of an employee: \(error.localizedDescription)")
 			}
 		}
-		
+
 		let formattedDelta = formattedDateDelta(startDate: startDate)
-		
+
 		// Ensure that CDelegates are GC collected and their native representation is destroyed
 		System.GC.collect()
-		
+
 		DispatchQueue.main.async { [weak self] in
 			guard let self else { return }
-			
+
 			let alert = NSAlert()
 			alert.messageText = "The age of \(companyName)'s employees was changed"
 			alert.informativeText = "The age of all \(formattedNumberOfEmployees) employees of the company \"\(companyName)\" was changed.\nIt took \(formattedDelta) seconds."
 			alert.addButton(withTitle: "OK")
-			
+
 			alert.beginSheetModal(for: self.window)
-			
+
 			self.companyViewController.reloadData()
 		}
 	}

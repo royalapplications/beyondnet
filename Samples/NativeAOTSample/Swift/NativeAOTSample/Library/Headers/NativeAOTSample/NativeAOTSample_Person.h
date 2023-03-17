@@ -5,7 +5,7 @@
 
 #import "System_Object.h"
 #import "System_Type.h"
-#import "NativeAOTSample_CDelegate.h"
+#import "NativeAOTSample_Person_NewAgeProviderDelegate.h"
 
 typedef void* NativeAOTSample_Person_t;
 
@@ -30,16 +30,8 @@ CStatus NativeAOTSample_Person_ReduceAge(NativeAOTSample_Person_t instance,
 										 int32_t byYears,
 										 System_Exception_t* exception);
 
-
-// Sample API for demonstrating non-escaping closures
-typedef int32_t (*NativeAOTSample_Person_ChangeAge_NewAgeProvider_t)(const void* context);
-
-const NativeAOT_Core_CDelegate_t NativeAOTSample_Person_ChangeAge_NewAgeProvider_Create(const void* context,
-																						const NativeAOTSample_Person_ChangeAge_NewAgeProvider_t newAgeProvider,
-																						const NativeAOTSample_CDelegate_Destructor_t destructorFunction);
-
 CStatus NativeAOTSample_Person_ChangeAge(NativeAOTSample_Person_t instance,
-										 const NativeAOT_Core_CDelegate_t newAgeProvider,
+										 const NativeAOTSample_Person_NewAgeProviderDelegate_t newAgeProviderDelegate,
 										 System_Exception_t* exception);
 
 #endif /* NativeAOTSample_Person_h */

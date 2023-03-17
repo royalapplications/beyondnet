@@ -44,8 +44,10 @@ public class Person
 
         Age = newAge;
     }
+
+    public delegate int NewAgeProviderDelegate();
     
-    public void ChangeAge(Func<int>? newAgeProvider)
+    public void ChangeAge(NewAgeProviderDelegate? newAgeProvider)
     {
         if (newAgeProvider is null) {
             return;

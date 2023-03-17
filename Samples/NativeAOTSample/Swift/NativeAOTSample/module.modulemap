@@ -9,10 +9,9 @@ framework module NativeAOTSample {
 	private header "System_AppDomain.h"
 	private header "System_GC.h"
 	private header "System_UnhandledExceptionEventArgs.h"
-	
-    private header "NativeAOTSample_CDelegate.h"
     
     private header "NativeAOTSample_Person.h"
+	private header "NativeAOTSample_Person_NewAgeProviderDelegate.h"
     private header "NativeAOTSample_Company.h"
 	private header "NativeAOTSample_CompanySerializer.h"
 	private header "NativeAOTSample_UnhandledExceptionTest.h"
