@@ -1,5 +1,5 @@
-// Number of generated types: 179
-// Number of generated members: 1894
+// Number of generated types: 180
+// Number of generated members: 1895
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -855,6 +855,8 @@ typedef void* NativeAOT_CodeGeneratorInputSample_Person_t;
 
 typedef void* NativeAOT_CodeGeneratorInputSample_Person_Extensions_t;
 
+typedef void* NativeAOT_CodeGeneratorInputSample_StringTransformer_t;
+
 typedef void* NativeAOT_CodeGeneratorInputSample_TestClass_t;
 
 typedef void* System_Delegate_t;
@@ -932,12 +934,12 @@ typedef int32_t (*NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelega
 );
 
 
-typedef void* NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_t;
-typedef void (*NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_CDestructorFunction_t)(void* context);
+typedef void* NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_t;
+typedef void (*NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_CDestructorFunction_t)(void* context);
 
-typedef void (*NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_CFunction_t)(
-	void* context
-	
+typedef CString (*NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_CFunction_t)(
+	void* context,
+	CString inputString
 );
 
 
@@ -13831,14 +13833,22 @@ NativeAOT_CodeGeneratorInputSample_Person_Extensions_Destroy(
 
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.Person_Extensions
 
-#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.TestClass
-void /* System.Void */
-NativeAOT_CodeGeneratorInputSample_TestClass_CallSimpleDelegate(
-	NativeAOT_CodeGeneratorInputSample_TestClass_t /* NativeAOT.CodeGeneratorInputSample.TestClass */ self,
-	NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_t /* NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate */ simpleDelegate,
+#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.StringTransformer
+CString /* System.String */
+NativeAOT_CodeGeneratorInputSample_StringTransformer_TransformString(
+	CString /* System.String */ inputString,
+	NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_t /* NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate */ stringTransformerDelegate,
 	System_Exception_t* /* System.Exception */ outException
 );
 
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_StringTransformer_Destroy(
+	NativeAOT_CodeGeneratorInputSample_StringTransformer_t /* NativeAOT.CodeGeneratorInputSample.StringTransformer */ self
+);
+
+#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.StringTransformer
+
+#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.TestClass
 void /* System.Void */
 NativeAOT_CodeGeneratorInputSample_TestClass_SayHello(
 	NativeAOT_CodeGeneratorInputSample_TestClass_t /* NativeAOT.CodeGeneratorInputSample.TestClass */ self,
@@ -14138,35 +14148,35 @@ NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Destroy(
 
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate
 
-#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate
-NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_t /* NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate */
-NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_Create(
+#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate
+NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_t /* NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate */
+NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Create(
 	void* context,
-	NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_CFunction_t function,
-	NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_CDestructorFunction_t destructorFunction
+	NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_CFunction_t function,
+	NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_CDestructorFunction_t destructorFunction
 );
 
 void*
-NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_Context_Get(
-	NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_t /* NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate */ self
+NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Context_Get(
+	NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_t /* NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate */ self
 );
 
-NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_CFunction_t
-NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_CFunction_Get(
-	NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_t /* NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate */ self
+NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_CFunction_t
+NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_CFunction_Get(
+	NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_t /* NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate */ self
 );
 
-NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_CDestructorFunction_t
-NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_CDestructorFunction_Get(
-	NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_t /* NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate */ self
+NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_CDestructorFunction_t
+NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_CDestructorFunction_Get(
+	NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_t /* NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate */ self
 );
 
 void /* System.Void */
-NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_Destroy(
-	NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_t /* NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate */ self
+NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Destroy(
+	NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_t /* NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate */ self
 );
 
-#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate
+#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate
 
 
 #pragma mark - END APIs

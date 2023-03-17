@@ -1,5 +1,5 @@
-// Number of generated types: 179
-// Number of generated members: 1894
+// Number of generated types: 180
+// Number of generated members: 1895
 
 // <Header>
 using System;
@@ -54161,27 +54161,130 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Person_Extensions
 }
 
 
-
-internal unsafe class NativeAOT_CodeGeneratorInputSample_TestClass
+internal unsafe class NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate
 {
-	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_CallSimpleDelegate")]
-	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_TestClass_CallSimpleDelegate(void* /* NativeAOT.CodeGeneratorInputSample.TestClass */ __self, void* /* NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate */ simpleDelegate, void** /* System.Exception */ __outException)
+	public void* Context { get; }
+	public delegate* unmanaged<void* /* context */, byte* /* System.String */ /* inputString */, byte* /* System.String */ /* return type */> CFunction { get; }
+	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
+
+	private NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate(void* context, delegate* unmanaged<void* /* context */, byte* /* System.String */ /* inputString */, byte* /* System.String */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
 	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
+		Context = context;
+		CFunction = cFunction;
+		CDestructorFunction = cDestructorFunction;
+	}
+
+	~NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate()
+	{
+		if (CDestructorFunction is null) {
+			return;
 		}
+
+		CDestructorFunction(Context);
+	}
+
+	internal NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate? CreateTrampoline()
+	{
+		if (CFunction is null) {
+			return null;
+		}
+
+		System.Type typeOfSelf = typeof(NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate);
+		string nameOfInvocationMethod = nameof(__InvokeByCallingCFunction);
+		System.Reflection.BindingFlags bindingFlags = System.Reflection.BindingFlags.Instance | BindingFlags.NonPublic;
+		System.Reflection.MethodInfo? invocationMethod = typeOfSelf.GetMethod(nameOfInvocationMethod, bindingFlags);
+
+		if (invocationMethod is null) {
+			throw new Exception("Failed to retrieve delegate invocation method");
+		}
+
+		NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate trampoline = (NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate)System.Delegate.CreateDelegate(typeof(NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate), this, invocationMethod);
+
+		return trampoline;
+	}
+
+	private System.String __InvokeByCallingCFunction(System.String /* System.String */ inputString)
+	{
+		byte* inputStringConverted = inputString.CopyToCString();
 	
-		NativeAOT.CodeGeneratorInputSample.TestClass __selfConverted = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.TestClass>(__self);
+
+
+		return InteropUtils.ToDotNetString(CFunction(Context, inputStringConverted));
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Create")]
+	public static void* Create(void* context, delegate* unmanaged<void* /* context */, byte* /* System.String */ /* inputString */, byte* /* System.String */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	{
+		var self = new NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate(context, cFunction, cDestructorFunction);
+		void* selfHandle = self.AllocateGCHandleAndGetAddress();
+
+		return selfHandle;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Context_Get")]
+	public static void* Context_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate>(self);
+
+		return selfConverted.Context;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_CFunction_Get")]
+	public static delegate* unmanaged<void* /* context */, byte* /* System.String */ /* inputString */, byte* /* System.String */ /* return type */> CFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate>(self);
+
+		return selfConverted.CFunction;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_CDestructorFunction_Get")]
+	public static delegate* unmanaged<void*, void> CDestructorFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate>(self);
+
+		return selfConverted.CDestructorFunction;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Destroy")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate */ __self)
+	{
 	
-		NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate simpleDelegateConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate>(simpleDelegate)?.CreateTrampoline();
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+
+}
+
+
+internal unsafe class NativeAOT_CodeGeneratorInputSample_StringTransformer
+{
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_StringTransformer_TransformString")]
+	internal static byte* /* System.String */ NativeAOT_CodeGeneratorInputSample_StringTransformer_TransformString(byte* /* System.String */ inputString, void* /* NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate */ stringTransformerDelegate, void** /* System.Exception */ __outException)
+	{
+		System.String inputStringConverted = InteropUtils.ToDotNetString(inputString);
+		NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate stringTransformerDelegateConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate>(stringTransformerDelegate)?.CreateTrampoline();
 	
 	    try {
-			__selfConverted.CallSimpleDelegate(simpleDelegateConverted);
+			System.String __returnValue = NativeAOT.CodeGeneratorInputSample.StringTransformer.TransformString(inputStringConverted, stringTransformerDelegateConverted);
+			byte* _returnValueNative = __returnValue.CopyToCString();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
 	        }
 	
+			return _returnValueNative;
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
 	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
@@ -54189,10 +54292,25 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_TestClass
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
+			return null;
 		}
 	}
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_StringTransformer_Destroy")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_StringTransformer_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.StringTransformer */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+
+}
+
+
+
+internal unsafe class NativeAOT_CodeGeneratorInputSample_TestClass
+{
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_SayHello")]
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_TestClass_SayHello(void* /* NativeAOT.CodeGeneratorInputSample.TestClass */ __self, void** /* System.Exception */ __outException)
 	{
@@ -54424,112 +54542,6 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_TestClass
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_Destroy")]
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_TestClass_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.TestClass */ __self)
-	{
-	
-		InteropUtils.FreeIfAllocated(__self);
-	}
-	
-
-}
-
-
-internal unsafe class NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate
-{
-	public void* Context { get; }
-	public delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> CFunction { get; }
-	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
-
-	private NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate(void* context, delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
-	{
-		Context = context;
-		CFunction = cFunction;
-		CDestructorFunction = cDestructorFunction;
-	}
-
-	~NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate()
-	{
-		if (CDestructorFunction is null) {
-			return;
-		}
-
-		CDestructorFunction(Context);
-	}
-
-	internal NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate? CreateTrampoline()
-	{
-		if (CFunction is null) {
-			return null;
-		}
-
-		System.Type typeOfSelf = typeof(NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate);
-		string nameOfInvocationMethod = nameof(__InvokeByCallingCFunction);
-		System.Reflection.BindingFlags bindingFlags = System.Reflection.BindingFlags.Instance | BindingFlags.NonPublic;
-		System.Reflection.MethodInfo? invocationMethod = typeOfSelf.GetMethod(nameOfInvocationMethod, bindingFlags);
-
-		if (invocationMethod is null) {
-			throw new Exception("Failed to retrieve delegate invocation method");
-		}
-
-		NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate trampoline = (NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate)System.Delegate.CreateDelegate(typeof(NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate), this, invocationMethod);
-
-		return trampoline;
-	}
-
-	private void __InvokeByCallingCFunction()
-	{
-	
-
-
-		CFunction(Context);
-	}
-
-	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_Create")]
-	public static void* Create(void* context, delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
-	{
-		var self = new NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate(context, cFunction, cDestructorFunction);
-		void* selfHandle = self.AllocateGCHandleAndGetAddress();
-
-		return selfHandle;
-	}
-
-	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_Context_Get")]
-	public static void* Context_Get(void* self)
-	{
-		if (self is null) {
-			throw new ArgumentNullException(nameof(self));
-		}
-
-		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate>(self);
-
-		return selfConverted.Context;
-	}
-
-	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_CFunction_Get")]
-	public static delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> CFunction_Get(void* self)
-	{
-		if (self is null) {
-			throw new ArgumentNullException(nameof(self));
-		}
-
-		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate>(self);
-
-		return selfConverted.CFunction;
-	}
-
-	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_CDestructorFunction_Get")]
-	public static delegate* unmanaged<void*, void> CDestructorFunction_Get(void* self)
-	{
-		if (self is null) {
-			throw new ArgumentNullException(nameof(self));
-		}
-
-		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate>(self);
-
-		return selfConverted.CDestructorFunction;
-	}
-
-	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_Destroy")]
-	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate */ __self)
 	{
 	
 		InteropUtils.FreeIfAllocated(__self);

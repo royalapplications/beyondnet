@@ -8,13 +8,6 @@ public enum TestEnum
 
 public class TestClass
 {
-    public delegate void SimpleDelegate();
-
-    public void CallSimpleDelegate(SimpleDelegate simpleDelegate)
-    {
-        simpleDelegate();
-    }
-    
     public void SayHello()
     {
         Console.WriteLine(GetHello());
