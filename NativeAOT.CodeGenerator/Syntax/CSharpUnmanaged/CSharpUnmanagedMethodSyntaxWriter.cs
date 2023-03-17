@@ -433,10 +433,16 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             );
             
             if (typeConversion != null) {
+                string parameterTypeName = parameterTypeDescriptor.GetTypeName(
+                    targetLanguage,
+                    true,
+                    parameter.IsOut
+                );
+                
                 string convertedParameterName = $"{parameterName}Converted";
                 
                 string fullTypeConversion = string.Format(typeConversion, parameterName);
-                string typeConversionCode = $"{parameterType.GetFullNameOrName()} {convertedParameterName} = {fullTypeConversion};";
+                string typeConversionCode = $"{parameterTypeName} {convertedParameterName} = {fullTypeConversion};";
 
                 sb.AppendLine($"\t{typeConversionCode}");
                 

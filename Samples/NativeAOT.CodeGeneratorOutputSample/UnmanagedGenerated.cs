@@ -41229,7 +41229,7 @@ internal unsafe class System_AsyncCallback
 
 	private void __InvokeByCallingCFunction(System.IAsyncResult /* System.IAsyncResult */ ar)
 	{
-		System.IAsyncResult arConverted = ar.AllocateGCHandleAndGetAddress();
+		void* arConverted = ar.AllocateGCHandleAndGetAddress();
 	
 
 
@@ -41955,12 +41955,12 @@ internal unsafe class System_Reflection_ModuleResolveEventHandler
 
 	private System.Reflection.Module __InvokeByCallingCFunction(System.Object /* System.Object */ sender, System.ResolveEventArgs /* System.ResolveEventArgs */ e)
 	{
-		System.Object senderConverted = sender.AllocateGCHandleAndGetAddress();
-		System.ResolveEventArgs eConverted = e.AllocateGCHandleAndGetAddress();
+		void* senderConverted = sender.AllocateGCHandleAndGetAddress();
+		void* eConverted = e.AllocateGCHandleAndGetAddress();
 	
 
 
-		return CFunction(Context, senderConverted, eConverted);
+		return InteropUtils.GetInstance<System.Reflection.Module>(CFunction(Context, senderConverted, eConverted));
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ModuleResolveEventHandler_Create")]
@@ -43310,12 +43310,12 @@ internal unsafe class System_Reflection_TypeFilter
 
 	private System.Boolean __InvokeByCallingCFunction(System.Type /* System.Type */ m, System.Object /* System.Object */ filterCriteria)
 	{
-		System.Type mConverted = m.AllocateGCHandleAndGetAddress();
-		System.Object filterCriteriaConverted = filterCriteria.AllocateGCHandleAndGetAddress();
+		void* mConverted = m.AllocateGCHandleAndGetAddress();
+		void* filterCriteriaConverted = filterCriteria.AllocateGCHandleAndGetAddress();
 	
 
 
-		return CFunction(Context, mConverted, filterCriteriaConverted);
+		return CFunction(Context, mConverted, filterCriteriaConverted).ToBool();
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_TypeFilter_Create")]
@@ -52703,12 +52703,12 @@ internal unsafe class System_Reflection_MemberFilter
 
 	private System.Boolean __InvokeByCallingCFunction(System.Reflection.MemberInfo /* System.Reflection.MemberInfo */ m, System.Object /* System.Object */ filterCriteria)
 	{
-		System.Reflection.MemberInfo mConverted = m.AllocateGCHandleAndGetAddress();
-		System.Object filterCriteriaConverted = filterCriteria.AllocateGCHandleAndGetAddress();
+		void* mConverted = m.AllocateGCHandleAndGetAddress();
+		void* filterCriteriaConverted = filterCriteria.AllocateGCHandleAndGetAddress();
 	
 
 
-		return CFunction(Context, mConverted, filterCriteriaConverted);
+		return CFunction(Context, mConverted, filterCriteriaConverted).ToBool();
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MemberFilter_Create")]

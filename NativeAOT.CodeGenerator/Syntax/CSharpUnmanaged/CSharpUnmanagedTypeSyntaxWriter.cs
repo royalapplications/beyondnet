@@ -153,12 +153,6 @@ public class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITyp
 
         // TODO: Duh...
         fullTypeName = fullTypeName.Replace("+", ".");
-
-        var returnType = invokeMethod.ReturnType;
-        
-        string fullReturnTypeName = returnType.IsVoid() 
-            ? "void" 
-            : returnType.GetFullNameOrName();
         
         var parameterInfos = invokeMethod.GetParameters();
 
@@ -189,10 +183,16 @@ true,
         if (!string.IsNullOrEmpty(unmanagedParameters)) {
             unmanagedParameters += ", ";
         }
+        
+        var returnType = invokeMethod.ReturnType;
 
         TypeDescriptor returnTypeDescriptor = returnType.GetTypeDescriptor(typeDescriptorRegistry);
         string unmanagedReturnTypeName = returnTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
         string unmanagedReturnTypeNameWithComment = $"{unmanagedReturnTypeName} /* {returnType.GetFullNameOrName()} */";
+        
+        string managedReturnTypeName = returnType.IsVoid() 
+            ? "void" 
+            : returnType.GetFullNameOrName();
 
         string contextType = "void*";
         string cFunctionSignature = $"delegate* unmanaged<void* /* context */, {unmanagedParameters}{unmanagedReturnTypeNameWithComment} /* return type */>";
@@ -266,7 +266,7 @@ true,
         sb.AppendLine();
 
         #region Invocation
-        sb.AppendLine($"\tprivate {fullReturnTypeName} __InvokeByCallingCFunction({managedParmeters})");
+        sb.AppendLine($"\tprivate {managedReturnTypeName} __InvokeByCallingCFunction({managedParmeters})");
         sb.AppendLine("\t{");
 
         string parameterConversions = CSharpUnmanagedMethodSyntaxWriter.WriteParameterConversions(
@@ -292,8 +292,26 @@ true,
         string invocationPrefix = returnType.IsVoid()
             ? string.Empty
             : "return ";
-        
-        sb.AppendLine($"\t\t{invocationPrefix}CFunction(Context{parameterNamesString});");
+
+        string? returnTypeConversion = returnTypeDescriptor.GetTypeConversion(
+            CodeLanguage.CSharpUnmanaged,
+            CodeLanguage.CSharp
+        );
+
+        string invocationWithoutReturnTypeConversion = $"CFunction(Context{parameterNamesString})";
+
+        string invocationWithReturnTypeConversion;
+
+        if (!string.IsNullOrEmpty(returnTypeConversion)) {
+            invocationWithReturnTypeConversion = string.Format(
+                returnTypeConversion,
+                invocationWithoutReturnTypeConversion
+            );
+        } else {
+            invocationWithReturnTypeConversion = invocationWithoutReturnTypeConversion;
+        }
+
+        sb.AppendLine($"\t\t{invocationPrefix}{invocationWithReturnTypeConversion};");
         
         sb.AppendLine("\t}");
         #endregion Invocation
