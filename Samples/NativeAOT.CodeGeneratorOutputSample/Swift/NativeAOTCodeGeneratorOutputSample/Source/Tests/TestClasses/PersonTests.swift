@@ -450,26 +450,36 @@ final class PersonTests: XCTestCase {
 		
 		defer { NativeAOT_CodeGeneratorInputSample_Person_Destroy(person) }
 		
-		let context = malloc(1)
+		let ageAfterCreation = NativeAOT_CodeGeneratorInputSample_Person_Age_Get(person,
+																				 &exception)
+		
+		XCTAssertNil(exception)
+		XCTAssertEqual(initialAge, ageAfterCreation)
 		
 		let newAgeProviderFunction: NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CFunction_t = { _ in
 			return 10
 		}
 		
-		let newAgeProviderDestructorFunction: NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CDestructorFunction_t = { _ in
-			print("Destructor")
+		guard let newAgeProviderDelegate = NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Create(nil,
+																												   newAgeProviderFunction,
+																												   nil) else {
+			XCTFail("Person.NewAgeProviderDelegate ctor should return an instance")
+			
+			return
 		}
 		
-		let newAgeProviderDelegate = NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Create(context,
-																											 newAgeProviderFunction,
-																											 newAgeProviderDestructorFunction)
-		
-		XCTAssertNotNil(newAgeProviderDelegate)
+		defer { NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Destroy(newAgeProviderDelegate) }
 		
 		NativeAOT_CodeGeneratorInputSample_Person_ChangeAge(person,
 															newAgeProviderDelegate,
 															&exception)
 		
 		XCTAssertNil(exception)
+		
+		let age = NativeAOT_CodeGeneratorInputSample_Person_Age_Get(person,
+																	&exception)
+		
+		XCTAssertNil(exception)
+		XCTAssertEqual(10, age)
 	}
 }
