@@ -134,6 +134,10 @@ final class AnimalTests: XCTestCase {
 				return nil
 			}
 			
+			// TODO: Does this create a memory leak? It's likely as we're allocating a GCHandle but never release it.
+			// TODO: I think we have a general memory leak with all reference types returned from a delegate.
+			// TODO: I guess, for this case it would be best to just assume on the managed side that we have to release anything that's given to us through a delegate's return value.
+			
 			return animal
 		}
 		
