@@ -98,6 +98,12 @@ public class TypeDescriptor
         string typeNameWithModifiers;
 
         switch (language) {
+            case CodeLanguage.CSharp:
+                if (isOutParameter) {
+                    return $"out {typeName}";
+                } else {
+                    return typeName;
+                }
             case CodeLanguage.CSharpUnmanaged:
                 if (RequiresNativePointer && 
                     isOutParameter) {

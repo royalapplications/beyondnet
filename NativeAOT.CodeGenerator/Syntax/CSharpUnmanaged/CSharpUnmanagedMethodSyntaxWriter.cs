@@ -110,6 +110,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         }
 
         string methodSignatureParameters = WriteParameters(
+            CodeLanguage.CSharpUnmanaged,
             memberKind,
             setterType,
             mayThrow,
@@ -151,6 +152,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         }
 
         string parameterConversions = WriteParameterConversions(
+            CodeLanguage.CSharpUnmanaged,
+            CodeLanguage.CSharp,
             parameters,
             typeDescriptorRegistry,
             out List<string> convertedParameterNames
@@ -315,7 +318,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         string? typeConversion = typeDescriptor.GetTypeConversion(CodeLanguage.CSharpUnmanaged, CodeLanguage.CSharp);
             
         if (typeConversion != null) {
-            string convertedParameterName = $"{parameterName}DotNet";
+            string convertedParameterName = $"{parameterName}Converted";
                 
             string fullTypeConversion = string.Format(typeConversion, parameterName);
 
@@ -339,6 +342,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
     }
 
     internal static string WriteParameters(
+        CodeLanguage targetLanguage,
         MemberKind memberKind,
         Type? setterType,
         bool mayThrow,
@@ -361,7 +365,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
         if (!isStatic) {
             TypeDescriptor declaringTypeDescriptor = declaringType.GetTypeDescriptor(typeDescriptorRegistry);
-            string declaringTypeName = declaringTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
+            string declaringTypeName = declaringTypeDescriptor.GetTypeName(targetLanguage, true);
             string selfParameterName = "__self";
             
             string parameterString = $"{declaringTypeName} /* {declaringType.GetFullNameOrName()} */ {parameterNamePrefix}{selfParameterName}{parameterNameSuffix}";
@@ -376,7 +380,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             }
             
             TypeDescriptor setterTypeDescriptor = setterType.GetTypeDescriptor(typeDescriptorRegistry);
-            string unmanagedSetterTypeName = setterTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
+            string unmanagedSetterTypeName = setterTypeDescriptor.GetTypeName(targetLanguage, true);
     
             string parameterString = $"{unmanagedSetterTypeName} /* {setterType.GetFullNameOrName()} */ {parameterNamePrefix}__value{parameterNameSuffix}";
             parameterList.Add(parameterString);
@@ -384,7 +388,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             foreach (var parameter in parameters) {
                 Type parameterType = parameter.ParameterType;
                 TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
-                string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
+                string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(targetLanguage, true);
     
                 string parameterString = $"{unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */ {parameterNamePrefix}{parameter.Name}{parameterNameSuffix}";
                 parameterList.Add(parameterString);
@@ -394,7 +398,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         if (mayThrow) {
             Type exceptionType = typeof(Exception);
             TypeDescriptor outExceptionTypeDescriptor = exceptionType.GetTypeDescriptor(typeDescriptorRegistry);
-            string outExceptionTypeName = outExceptionTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true, true);
+            string outExceptionTypeName = outExceptionTypeDescriptor.GetTypeName(targetLanguage, true, true);
             string outExceptionParameterName = "__outException";
 
             string outExceptionParameterString = $"{outExceptionTypeName} /* {exceptionType.GetFullNameOrName()} */ {parameterNamePrefix}{outExceptionParameterName}{parameterNameSuffix}"; 
@@ -406,7 +410,9 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         return parametersString;
     }
 
-    protected string WriteParameterConversions(
+    internal static string WriteParameterConversions(
+        CodeLanguage sourceLanguage,
+        CodeLanguage targetLanguage,
         IEnumerable<ParameterInfo> parameters,
         TypeDescriptorRegistry typeDescriptorRegistry,
         out List<string> convertedParameterNames
@@ -422,12 +428,12 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
 
             string? typeConversion = parameterTypeDescriptor.GetTypeConversion(
-                CodeLanguage.CSharpUnmanaged, 
-                CodeLanguage.CSharp
+                sourceLanguage,
+                targetLanguage
             );
             
             if (typeConversion != null) {
-                string convertedParameterName = $"{parameterName}DotNet";
+                string convertedParameterName = $"{parameterName}Converted";
                 
                 string fullTypeConversion = string.Format(typeConversion, parameterName);
                 string typeConversionCode = $"{parameterType.GetFullNameOrName()} {convertedParameterName} = {fullTypeConversion};";

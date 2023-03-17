@@ -155,9 +155,27 @@ public class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITyp
         fullTypeName = fullTypeName.Replace("+", ".");
 
         var returnType = invokeMethod.ReturnType;
+        
+        string fullReturnTypeName = returnType.IsVoid() 
+            ? "void" 
+            : returnType.GetFullNameOrName();
+        
         var parameterInfos = invokeMethod.GetParameters();
 
+        string managedParmeters = CSharpUnmanagedMethodSyntaxWriter.WriteParameters(
+            CodeLanguage.CSharp,
+            MemberKind.Automatic,
+            null,
+            false,
+            true,
+            type,
+            parameterInfos,
+            false,
+            typeDescriptorRegistry
+        );
+
         string unmanagedParameters = CSharpUnmanagedMethodSyntaxWriter.WriteParameters(
+            CodeLanguage.CSharpUnmanaged,
             MemberKind.Automatic,
             null,
             false,
@@ -171,7 +189,7 @@ true,
         if (!string.IsNullOrEmpty(unmanagedParameters)) {
             unmanagedParameters += ", ";
         }
-        
+
         TypeDescriptor returnTypeDescriptor = returnType.GetTypeDescriptor(typeDescriptorRegistry);
         string unmanagedReturnTypeName = returnTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
         string unmanagedReturnTypeNameWithComment = $"{unmanagedReturnTypeName} /* {returnType.GetFullNameOrName()} */";
@@ -245,11 +263,35 @@ true,
 
         sb.AppendLine();
 
-        // TODO: Match function signature!
-        sb.AppendLine("\tprivate int __InvokeByCallingCFunction()");
+        sb.AppendLine($"\tprivate {fullReturnTypeName} __InvokeByCallingCFunction({managedParmeters})");
         sb.AppendLine("\t{");
-        // TODO: Match function signature!
-        sb.AppendLine("\t\treturn CFunction(Context);");
+
+        string parameterConversions = CSharpUnmanagedMethodSyntaxWriter.WriteParameterConversions(
+            CodeLanguage.CSharp,
+            CodeLanguage.CSharpUnmanaged,
+            parameterInfos,
+            typeDescriptorRegistry,
+            out List<string> convertedParameterNames
+        );
+        
+        sb.AppendLine(
+            parameterConversions.IndentAllLines(1)
+        );
+
+        sb.AppendLine();
+        
+        string parameterNamesString = string.Join(", ", convertedParameterNames);
+
+        if (!string.IsNullOrEmpty(parameterNamesString)) {
+            parameterNamesString = ", " + parameterNamesString;
+        }
+        
+        string invocationPrefix = returnType.IsVoid()
+            ? string.Empty
+            : "return ";
+        
+        sb.AppendLine($"\t\t{invocationPrefix}CFunction(Context{parameterNamesString});");
+        
         sb.AppendLine("\t}");
         #endregion Delegate Wrapper
 
