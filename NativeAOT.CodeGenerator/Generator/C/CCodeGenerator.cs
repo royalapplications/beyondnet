@@ -1,3 +1,4 @@
+using NativeAOT.CodeGenerator.Extensions;
 using NativeAOT.CodeGenerator.SourceCode;
 using NativeAOT.CodeGenerator.Syntax.C;
 
@@ -49,8 +50,12 @@ public class CCodeGenerator: ICodeGenerator
         CTypeSyntaxWriter typeSyntaxWriter = new(Settings);
 
         Result result = new();
+
+        var orderedTypes = types
+            .OrderByDescending(t => t.IsEnum)
+            .ThenByDescending(t => !t.IsDelegate());
         
-        foreach (Type type in types) {
+        foreach (Type type in orderedTypes) {
             Syntax.State state = new(CSharpUnmanagedResult);
             
             string typeCode = typeSyntaxWriter.Write(type, state);

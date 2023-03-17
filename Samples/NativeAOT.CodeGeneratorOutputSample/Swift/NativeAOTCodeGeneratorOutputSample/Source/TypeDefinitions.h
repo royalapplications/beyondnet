@@ -24,14 +24,6 @@ typedef enum __attribute__((enum_extensibility(closed))): uint8_t {
 
 #pragma mark - END Unsupported Types
 #pragma mark - BEGIN Type Definitions
-typedef void* NativeAOT_CodeGeneratorInputSample_AnimalFactory_t;
-
-typedef void* System_Object_t;
-
-typedef void* System_Type_t;
-
-typedef void* System_Reflection_MemberInfo_t;
-
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_Reflection_MemberTypes_Constructor = 1,
 	System_Reflection_MemberTypes_Event = 2,
@@ -45,14 +37,6 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Reflection_MemberTypes;
 
 
-typedef void* System_Enum_t;
-
-typedef void* System_ValueType_t;
-
-
-
-typedef void* System_String_t;
-
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_StringComparison_CurrentCulture = 0,
 	System_StringComparison_CurrentCultureIgnoreCase = 1,
@@ -62,10 +46,6 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_StringComparison_OrdinalIgnoreCase = 5
 } System_StringComparison;
 
-
-typedef void* System_Globalization_CultureInfo_t;
-
-typedef void* System_Void_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_Globalization_CultureTypes_NeutralCultures = 1,
@@ -78,17 +58,6 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_Globalization_CultureTypes_FrameworkCultures = 64
 } System_Globalization_CultureTypes;
 
-
-typedef void* System_Globalization_CompareInfo_t;
-
-typedef void* System_Reflection_Assembly_t;
-
-typedef void* System_Reflection_AssemblyName_t;
-
-typedef void* System_Version_t;
-
-
-typedef void* System_IFormatProvider_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_Globalization_NumberStyles_None = 0,
@@ -175,34 +144,6 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Configuration_Assemblies_AssemblyVersionCompatibility;
 
 
-typedef void* System_Reflection_StrongNameKeyPair_t;
-
-typedef void* System_IO_FileStream_t;
-
-typedef void* System_IO_Stream_t;
-
-typedef void* System_MarshalByRefObject_t;
-
-
-typedef void* System_Threading_Tasks_Task_t;
-
-typedef void* System_Threading_Tasks_TaskScheduler_t;
-
-typedef void* System_AggregateException_t;
-
-typedef void* System_Exception_t;
-
-typedef void* System_Reflection_MethodBase_t;
-
-typedef void* System_RuntimeMethodHandle_t;
-
-typedef void* System_Runtime_Serialization_SerializationInfo_t;
-
-typedef void* System_Runtime_Serialization_SerializationInfoEnumerator_t;
-
-typedef void* System_Runtime_Serialization_SerializationEntry_t;
-
-
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_Globalization_UnicodeCategory_UppercaseLetter = 0,
 	System_Globalization_UnicodeCategory_LowercaseLetter = 1,
@@ -237,7 +178,6 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Globalization_UnicodeCategory;
 
 
-
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_MidpointRounding_ToEven = 0,
 	System_MidpointRounding_AwayFromZero = 1,
@@ -246,18 +186,6 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_MidpointRounding_ToPositiveInfinity = 4
 } System_MidpointRounding;
 
-
-
-
-
-
-
-
-typedef void* System_Decimal_t;
-
-typedef void* System_DateTime_t;
-
-typedef void* System_TimeSpan_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_Globalization_TimeSpanStyles_None = 0,
@@ -297,12 +225,6 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Globalization_DateTimeStyles;
 
 
-typedef void* System_DateOnly_t;
-
-typedef void* System_TimeOnly_t;
-
-typedef void* System_Globalization_Calendar_t;
-
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_Globalization_CalendarAlgorithmType_Unknown = 0,
 	System_Globalization_CalendarAlgorithmType_SolarCalendar = 1,
@@ -318,10 +240,6 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Globalization_CalendarWeekRule;
 
 
-typedef void* System_Runtime_Serialization_IFormatterConverter_t;
-
-typedef void* System_Runtime_Serialization_StreamingContext_t;
-
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_Runtime_Serialization_StreamingContextStates_CrossProcess = 1,
 	System_Runtime_Serialization_StreamingContextStates_CrossMachine = 2,
@@ -334,13 +252,6 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_Runtime_Serialization_StreamingContextStates_All = 255
 } System_Runtime_Serialization_StreamingContextStates;
 
-
-
-typedef void* System_RuntimeTypeHandle_t;
-
-typedef void* System_ModuleHandle_t;
-
-typedef void* System_RuntimeFieldHandle_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_Reflection_MethodAttributes_PrivateScope = 0,
@@ -391,8 +302,6 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Reflection_MethodImplAttributes;
 
 
-typedef void* System_Reflection_MethodBody_t;
-
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_Reflection_CallingConventions_Standard = 1,
 	System_Reflection_CallingConventions_VarArgs = 2,
@@ -427,10 +336,6 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Reflection_BindingFlags;
 
 
-typedef void* System_Reflection_Binder_t;
-
-typedef void* System_Reflection_FieldInfo_t;
-
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_Reflection_FieldAttributes_PrivateScope = 0,
 	System_Reflection_FieldAttributes_Private = 1,
@@ -454,8 +359,6 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Reflection_FieldAttributes;
 
 
-typedef void* System_Reflection_PropertyInfo_t;
-
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_Reflection_PropertyAttributes_None = 0,
 	System_Reflection_PropertyAttributes_SpecialName = 512,
@@ -467,10 +370,6 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_Reflection_PropertyAttributes_ReservedMask = 62464
 } System_Reflection_PropertyAttributes;
 
-
-typedef void* System_Reflection_MethodInfo_t;
-
-typedef void* System_Reflection_ParameterInfo_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_Reflection_ParameterAttributes_None = 0,
@@ -486,24 +385,6 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_Reflection_ParameterAttributes_ReservedMask = 61440
 } System_Reflection_ParameterAttributes;
 
-
-typedef void* System_Reflection_ICustomAttributeProvider_t;
-
-// TODO: Delegate was skipped because it has no invoke method: "System.Delegate"
-
-typedef void* System_Collections_IDictionary_t;
-
-typedef void* System_Collections_ICollection_t;
-
-typedef void* System_Array_t;
-
-typedef void* System_Collections_IComparer_t;
-
-typedef void* System_Collections_IEnumerator_t;
-
-typedef void* System_Collections_IDictionaryEnumerator_t;
-
-typedef void* System_Collections_DictionaryEntry_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_Threading_Tasks_TaskStatus_Created = 0,
@@ -527,42 +408,6 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_Threading_Tasks_TaskCreationOptions_RunContinuationsAsynchronously = 64
 } System_Threading_Tasks_TaskCreationOptions;
 
-
-typedef void* System_Threading_Tasks_TaskFactory_t;
-
-typedef void* System_Threading_CancellationToken_t;
-
-typedef void* System_Threading_WaitHandle_t;
-
-typedef void* Microsoft_Win32_SafeHandles_SafeWaitHandle_t;
-
-typedef void* Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid_t;
-
-typedef void* System_Runtime_InteropServices_SafeHandle_t;
-
-typedef void* System_Runtime_ConstrainedExecution_CriticalFinalizerObject_t;
-
-typedef void* System_Threading_CancellationTokenRegistration_t;
-
-typedef void* System_Threading_Tasks_ValueTask_t;
-
-typedef void* System_Runtime_CompilerServices_ValueTaskAwaiter_t;
-
-typedef void (*System_Action_CDestructorFunction_t)(void* context);
-
-typedef void (*System_Action_CFunction_t)(
-	void* context
-	
-);
-
-
-// TODO: Delegate was skipped because it has no invoke method: "System.MulticastDelegate"
-
-typedef void* System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_t;
-
-typedef void* System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_t;
-
-typedef void* System_Threading_Tasks_Sources_IValueTaskSource_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_Threading_Tasks_Sources_ValueTaskSourceStatus_Pending = 0,
@@ -598,34 +443,12 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Threading_Tasks_TaskContinuationOptions;
 
 
-typedef void* System_IAsyncResult_t;
-
-typedef void* System_Runtime_CompilerServices_TaskAwaiter_t;
-
-typedef void* System_Runtime_CompilerServices_ConfiguredTaskAwaitable_t;
-
-typedef void* System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_t;
-
-typedef void* System_Runtime_CompilerServices_YieldAwaitable_t;
-
-typedef void* System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_t;
-
-typedef void (*System_AsyncCallback_CDestructorFunction_t)(void* context);
-
-typedef void (*System_AsyncCallback_CFunction_t)(
-	void* context,
-	System_IAsyncResult_t ar
-);
-
-
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_IO_SeekOrigin_Begin = 0,
 	System_IO_SeekOrigin_Current = 1,
 	System_IO_SeekOrigin_End = 2
 } System_IO_SeekOrigin;
 
-
-typedef void* Microsoft_Win32_SafeHandles_SafeFileHandle_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_IO_FileAccess_Read = 1,
@@ -665,10 +488,6 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_IO_FileOptions;
 
 
-typedef void* System_IO_FileStreamOptions_t;
-
-typedef void* System_Reflection_ManifestResourceInfo_t;
-
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_Reflection_ResourceLocation_Embedded = 1,
 	System_Reflection_ResourceLocation_ContainedInAnotherAssembly = 2,
@@ -676,40 +495,12 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Reflection_ResourceLocation;
 
 
-typedef void (*System_Reflection_ModuleResolveEventHandler_CDestructorFunction_t)(void* context);
-
-typedef System_Reflection_Module_t (*System_Reflection_ModuleResolveEventHandler_CFunction_t)(
-	void* context,
-	System_Object_t sender,
-	System_ResolveEventArgs_t e
-);
-
-
-typedef void* System_Reflection_Module_t;
-
-typedef void* System_Guid_t;
-
-typedef void (*System_Reflection_TypeFilter_CDestructorFunction_t)(void* context);
-
-typedef CBool (*System_Reflection_TypeFilter_CFunction_t)(
-	void* context,
-	System_Type_t m,
-	System_Object_t filterCriteria
-);
-
-
-typedef void* System_ResolveEventArgs_t;
-
-typedef void* System_EventArgs_t;
-
 typedef enum __attribute__((enum_extensibility(closed))): uint8_t {
 	System_Security_SecurityRuleSet_None = 0,
 	System_Security_SecurityRuleSet_Level1 = 1,
 	System_Security_SecurityRuleSet_Level2 = 2
 } System_Security_SecurityRuleSet;
 
-
-typedef void* System_Text_Rune_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_Buffers_OperationStatus_Done = 0,
@@ -732,26 +523,12 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Globalization_CompareOptions;
 
 
-typedef void* System_Globalization_SortKey_t;
-
-typedef void* System_Globalization_SortVersion_t;
-
-typedef void* System_Globalization_TextInfo_t;
-
-typedef void* System_Globalization_NumberFormatInfo_t;
-
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_Globalization_DigitShapes_Context = 0,
 	System_Globalization_DigitShapes_None = 1,
 	System_Globalization_DigitShapes_NativeNational = 2
 } System_Globalization_DigitShapes;
 
-
-typedef void* System_Globalization_DateTimeFormatInfo_t;
-
-typedef void* System_CharEnumerator_t;
-
-typedef void* System_Text_StringRuneEnumerator_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_Text_NormalizationForm_FormC = 1,
@@ -761,30 +538,12 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Text_NormalizationForm;
 
 
-typedef void* System_Text_CompositeFormat_t;
-
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_StringSplitOptions_None = 0,
 	System_StringSplitOptions_RemoveEmptyEntries = 1,
 	System_StringSplitOptions_TrimEntries = 2
 } System_StringSplitOptions;
 
-
-typedef void* System_Text_Encoding_t;
-
-typedef void* System_Text_EncodingProvider_t;
-
-typedef void* System_Text_EncoderFallback_t;
-
-typedef void* System_Text_EncoderFallbackBuffer_t;
-
-typedef void* System_Text_DecoderFallback_t;
-
-typedef void* System_Text_DecoderFallbackBuffer_t;
-
-typedef void* System_Text_Decoder_t;
-
-typedef void* System_Text_Encoder_t;
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_Reflection_GenericParameterAttributes_None = 0,
@@ -834,10 +593,6 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Reflection_TypeAttributes;
 
 
-typedef void* System_Runtime_InteropServices_StructLayoutAttribute_t;
-
-typedef void* System_Attribute_t;
-
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_Runtime_InteropServices_LayoutKind_Sequential = 0,
 	System_Runtime_InteropServices_LayoutKind_Explicit = 2,
@@ -853,10 +608,6 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Runtime_InteropServices_CharSet;
 
 
-typedef void* System_Reflection_ConstructorInfo_t;
-
-typedef void* System_Reflection_EventInfo_t;
-
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_Reflection_EventAttributes_None = 0,
 	System_Reflection_EventAttributes_SpecialName = 512,
@@ -865,7 +616,284 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Reflection_EventAttributes;
 
 
+typedef enum __attribute__((enum_extensibility(closed))): uint32_t {
+	NativeAOT_CodeGeneratorInputSample_NiceLevels_NotNice = 0,
+	NativeAOT_CodeGeneratorInputSample_NiceLevels_LittleBitNice = 1,
+	NativeAOT_CodeGeneratorInputSample_NiceLevels_Nice = 2,
+	NativeAOT_CodeGeneratorInputSample_NiceLevels_VeryNice = 3
+} NativeAOT_CodeGeneratorInputSample_NiceLevels;
+
+
+typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+	NativeAOT_CodeGeneratorInputSample_TestEnum_FirstCase = 0,
+	NativeAOT_CodeGeneratorInputSample_TestEnum_SecondCase = 1
+} NativeAOT_CodeGeneratorInputSample_TestEnum;
+
+
+typedef void* NativeAOT_CodeGeneratorInputSample_AnimalFactory_t;
+
+typedef void* System_Object_t;
+
+typedef void* System_Type_t;
+
+typedef void* System_Reflection_MemberInfo_t;
+
+typedef void* System_Enum_t;
+
+typedef void* System_ValueType_t;
+
+
+
+typedef void* System_String_t;
+
+typedef void* System_Globalization_CultureInfo_t;
+
+typedef void* System_Void_t;
+
+typedef void* System_Globalization_CompareInfo_t;
+
+typedef void* System_Reflection_Assembly_t;
+
+typedef void* System_Reflection_AssemblyName_t;
+
+typedef void* System_Version_t;
+
+
+typedef void* System_IFormatProvider_t;
+
+typedef void* System_Reflection_StrongNameKeyPair_t;
+
+typedef void* System_IO_FileStream_t;
+
+typedef void* System_IO_Stream_t;
+
+typedef void* System_MarshalByRefObject_t;
+
+
+typedef void* System_Threading_Tasks_Task_t;
+
+typedef void* System_Threading_Tasks_TaskScheduler_t;
+
+typedef void* System_AggregateException_t;
+
+typedef void* System_Exception_t;
+
+typedef void* System_Reflection_MethodBase_t;
+
+typedef void* System_RuntimeMethodHandle_t;
+
+typedef void* System_Runtime_Serialization_SerializationInfo_t;
+
+typedef void* System_Runtime_Serialization_SerializationInfoEnumerator_t;
+
+typedef void* System_Runtime_Serialization_SerializationEntry_t;
+
+
+
+
+
+
+
+
+
+typedef void* System_Decimal_t;
+
+typedef void* System_DateTime_t;
+
+typedef void* System_TimeSpan_t;
+
+typedef void* System_DateOnly_t;
+
+typedef void* System_TimeOnly_t;
+
+typedef void* System_Globalization_Calendar_t;
+
+typedef void* System_Runtime_Serialization_IFormatterConverter_t;
+
+typedef void* System_Runtime_Serialization_StreamingContext_t;
+
+
+typedef void* System_RuntimeTypeHandle_t;
+
+typedef void* System_ModuleHandle_t;
+
+typedef void* System_RuntimeFieldHandle_t;
+
+typedef void* System_Reflection_MethodBody_t;
+
+typedef void* System_Reflection_Binder_t;
+
+typedef void* System_Reflection_FieldInfo_t;
+
+typedef void* System_Reflection_PropertyInfo_t;
+
+typedef void* System_Reflection_MethodInfo_t;
+
+typedef void* System_Reflection_ParameterInfo_t;
+
+typedef void* System_Reflection_ICustomAttributeProvider_t;
+
+typedef void* System_Collections_IDictionary_t;
+
+typedef void* System_Collections_ICollection_t;
+
+typedef void* System_Array_t;
+
+typedef void* System_Collections_IComparer_t;
+
+typedef void* System_Collections_IEnumerator_t;
+
+typedef void* System_Collections_IDictionaryEnumerator_t;
+
+typedef void* System_Collections_DictionaryEntry_t;
+
+typedef void* System_Threading_Tasks_TaskFactory_t;
+
+typedef void* System_Threading_CancellationToken_t;
+
+typedef void* System_Threading_WaitHandle_t;
+
+typedef void* Microsoft_Win32_SafeHandles_SafeWaitHandle_t;
+
+typedef void* Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid_t;
+
+typedef void* System_Runtime_InteropServices_SafeHandle_t;
+
+typedef void* System_Runtime_ConstrainedExecution_CriticalFinalizerObject_t;
+
+typedef void* System_Threading_CancellationTokenRegistration_t;
+
+typedef void* System_Threading_Tasks_ValueTask_t;
+
+typedef void* System_Runtime_CompilerServices_ValueTaskAwaiter_t;
+
+typedef void* System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_t;
+
+typedef void* System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_t;
+
+typedef void* System_Threading_Tasks_Sources_IValueTaskSource_t;
+
+typedef void* System_IAsyncResult_t;
+
+typedef void* System_Runtime_CompilerServices_TaskAwaiter_t;
+
+typedef void* System_Runtime_CompilerServices_ConfiguredTaskAwaitable_t;
+
+typedef void* System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_t;
+
+typedef void* System_Runtime_CompilerServices_YieldAwaitable_t;
+
+typedef void* System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_t;
+
+typedef void* Microsoft_Win32_SafeHandles_SafeFileHandle_t;
+
+typedef void* System_IO_FileStreamOptions_t;
+
+typedef void* System_Reflection_ManifestResourceInfo_t;
+
+typedef void* System_Reflection_Module_t;
+
+typedef void* System_Guid_t;
+
+typedef void* System_ResolveEventArgs_t;
+
+typedef void* System_EventArgs_t;
+
+typedef void* System_Text_Rune_t;
+
+typedef void* System_Globalization_SortKey_t;
+
+typedef void* System_Globalization_SortVersion_t;
+
+typedef void* System_Globalization_TextInfo_t;
+
+typedef void* System_Globalization_NumberFormatInfo_t;
+
+typedef void* System_Globalization_DateTimeFormatInfo_t;
+
+typedef void* System_CharEnumerator_t;
+
+typedef void* System_Text_StringRuneEnumerator_t;
+
+typedef void* System_Text_CompositeFormat_t;
+
+typedef void* System_Text_Encoding_t;
+
+typedef void* System_Text_EncodingProvider_t;
+
+typedef void* System_Text_EncoderFallback_t;
+
+typedef void* System_Text_EncoderFallbackBuffer_t;
+
+typedef void* System_Text_DecoderFallback_t;
+
+typedef void* System_Text_DecoderFallbackBuffer_t;
+
+typedef void* System_Text_Decoder_t;
+
+typedef void* System_Text_Encoder_t;
+
+typedef void* System_Runtime_InteropServices_StructLayoutAttribute_t;
+
+typedef void* System_Attribute_t;
+
+typedef void* System_Reflection_ConstructorInfo_t;
+
+typedef void* System_Reflection_EventInfo_t;
+
 typedef void* System_Reflection_InterfaceMapping_t;
+
+typedef void* NativeAOT_CodeGeneratorInputSample_IAnimal_t;
+
+typedef void* NativeAOT_CodeGeneratorInputSample_BaseAnimal_t;
+
+typedef void* NativeAOT_CodeGeneratorInputSample_Cat_t;
+
+typedef void* NativeAOT_CodeGeneratorInputSample_Dog_t;
+
+typedef void* NativeAOT_CodeGeneratorInputSample_Person_t;
+
+typedef void* NativeAOT_CodeGeneratorInputSample_Person_Extensions_t;
+
+typedef void* NativeAOT_CodeGeneratorInputSample_TestClass_t;
+
+// TODO: Delegate was skipped because it has no invoke method: "System.Delegate"
+
+typedef void (*System_Action_CDestructorFunction_t)(void* context);
+
+typedef void (*System_Action_CFunction_t)(
+	void* context
+	
+);
+
+
+// TODO: Delegate was skipped because it has no invoke method: "System.MulticastDelegate"
+
+typedef void (*System_AsyncCallback_CDestructorFunction_t)(void* context);
+
+typedef void (*System_AsyncCallback_CFunction_t)(
+	void* context,
+	System_IAsyncResult_t ar
+);
+
+
+typedef void (*System_Reflection_ModuleResolveEventHandler_CDestructorFunction_t)(void* context);
+
+typedef System_Reflection_Module_t (*System_Reflection_ModuleResolveEventHandler_CFunction_t)(
+	void* context,
+	System_Object_t sender,
+	System_ResolveEventArgs_t e
+);
+
+
+typedef void (*System_Reflection_TypeFilter_CDestructorFunction_t)(void* context);
+
+typedef CBool (*System_Reflection_TypeFilter_CFunction_t)(
+	void* context,
+	System_Type_t m,
+	System_Object_t filterCriteria
+);
+
 
 typedef void (*System_Reflection_MemberFilter_CDestructorFunction_t)(void* context);
 
@@ -876,24 +904,6 @@ typedef CBool (*System_Reflection_MemberFilter_CFunction_t)(
 );
 
 
-typedef void* NativeAOT_CodeGeneratorInputSample_IAnimal_t;
-
-typedef void* NativeAOT_CodeGeneratorInputSample_BaseAnimal_t;
-
-typedef void* NativeAOT_CodeGeneratorInputSample_Cat_t;
-
-typedef void* NativeAOT_CodeGeneratorInputSample_Dog_t;
-
-typedef enum __attribute__((enum_extensibility(closed))): uint32_t {
-	NativeAOT_CodeGeneratorInputSample_NiceLevels_NotNice = 0,
-	NativeAOT_CodeGeneratorInputSample_NiceLevels_LittleBitNice = 1,
-	NativeAOT_CodeGeneratorInputSample_NiceLevels_Nice = 2,
-	NativeAOT_CodeGeneratorInputSample_NiceLevels_VeryNice = 3
-} NativeAOT_CodeGeneratorInputSample_NiceLevels;
-
-
-typedef void* NativeAOT_CodeGeneratorInputSample_Person_t;
-
 typedef void (*NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CDestructorFunction_t)(void* context);
 
 typedef int32_t (*NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CFunction_t)(
@@ -901,16 +911,6 @@ typedef int32_t (*NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelega
 	
 );
 
-
-typedef void* NativeAOT_CodeGeneratorInputSample_Person_Extensions_t;
-
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	NativeAOT_CodeGeneratorInputSample_TestEnum_FirstCase = 0,
-	NativeAOT_CodeGeneratorInputSample_TestEnum_SecondCase = 1
-} NativeAOT_CodeGeneratorInputSample_TestEnum;
-
-
-typedef void* NativeAOT_CodeGeneratorInputSample_TestClass_t;
 
 typedef void (*NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_CDestructorFunction_t)(void* context);
 
@@ -923,6 +923,156 @@ typedef void (*NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_CFunc
 
 #pragma mark - END Type Definitions
 #pragma mark - BEGIN APIs
+#pragma mark - BEGIN APIs of System.Reflection.MemberTypes
+#pragma mark - END APIs of System.Reflection.MemberTypes
+
+#pragma mark - BEGIN APIs of System.StringComparison
+#pragma mark - END APIs of System.StringComparison
+
+#pragma mark - BEGIN APIs of System.Globalization.CultureTypes
+#pragma mark - END APIs of System.Globalization.CultureTypes
+
+#pragma mark - BEGIN APIs of System.Globalization.NumberStyles
+#pragma mark - END APIs of System.Globalization.NumberStyles
+
+#pragma mark - BEGIN APIs of System.TypeCode
+#pragma mark - END APIs of System.TypeCode
+
+#pragma mark - BEGIN APIs of System.Reflection.ProcessorArchitecture
+#pragma mark - END APIs of System.Reflection.ProcessorArchitecture
+
+#pragma mark - BEGIN APIs of System.Reflection.AssemblyContentType
+#pragma mark - END APIs of System.Reflection.AssemblyContentType
+
+#pragma mark - BEGIN APIs of System.Reflection.AssemblyNameFlags
+#pragma mark - END APIs of System.Reflection.AssemblyNameFlags
+
+#pragma mark - BEGIN APIs of System.Configuration.Assemblies.AssemblyHashAlgorithm
+#pragma mark - END APIs of System.Configuration.Assemblies.AssemblyHashAlgorithm
+
+#pragma mark - BEGIN APIs of System.Configuration.Assemblies.AssemblyVersionCompatibility
+#pragma mark - END APIs of System.Configuration.Assemblies.AssemblyVersionCompatibility
+
+#pragma mark - BEGIN APIs of System.Globalization.UnicodeCategory
+#pragma mark - END APIs of System.Globalization.UnicodeCategory
+
+#pragma mark - BEGIN APIs of System.MidpointRounding
+#pragma mark - END APIs of System.MidpointRounding
+
+#pragma mark - BEGIN APIs of System.Globalization.TimeSpanStyles
+#pragma mark - END APIs of System.Globalization.TimeSpanStyles
+
+#pragma mark - BEGIN APIs of System.DateTimeKind
+#pragma mark - END APIs of System.DateTimeKind
+
+#pragma mark - BEGIN APIs of System.DayOfWeek
+#pragma mark - END APIs of System.DayOfWeek
+
+#pragma mark - BEGIN APIs of System.Globalization.DateTimeStyles
+#pragma mark - END APIs of System.Globalization.DateTimeStyles
+
+#pragma mark - BEGIN APIs of System.Globalization.CalendarAlgorithmType
+#pragma mark - END APIs of System.Globalization.CalendarAlgorithmType
+
+#pragma mark - BEGIN APIs of System.Globalization.CalendarWeekRule
+#pragma mark - END APIs of System.Globalization.CalendarWeekRule
+
+#pragma mark - BEGIN APIs of System.Runtime.Serialization.StreamingContextStates
+#pragma mark - END APIs of System.Runtime.Serialization.StreamingContextStates
+
+#pragma mark - BEGIN APIs of System.Reflection.MethodAttributes
+#pragma mark - END APIs of System.Reflection.MethodAttributes
+
+#pragma mark - BEGIN APIs of System.Reflection.MethodImplAttributes
+#pragma mark - END APIs of System.Reflection.MethodImplAttributes
+
+#pragma mark - BEGIN APIs of System.Reflection.CallingConventions
+#pragma mark - END APIs of System.Reflection.CallingConventions
+
+#pragma mark - BEGIN APIs of System.Reflection.BindingFlags
+#pragma mark - END APIs of System.Reflection.BindingFlags
+
+#pragma mark - BEGIN APIs of System.Reflection.FieldAttributes
+#pragma mark - END APIs of System.Reflection.FieldAttributes
+
+#pragma mark - BEGIN APIs of System.Reflection.PropertyAttributes
+#pragma mark - END APIs of System.Reflection.PropertyAttributes
+
+#pragma mark - BEGIN APIs of System.Reflection.ParameterAttributes
+#pragma mark - END APIs of System.Reflection.ParameterAttributes
+
+#pragma mark - BEGIN APIs of System.Threading.Tasks.TaskStatus
+#pragma mark - END APIs of System.Threading.Tasks.TaskStatus
+
+#pragma mark - BEGIN APIs of System.Threading.Tasks.TaskCreationOptions
+#pragma mark - END APIs of System.Threading.Tasks.TaskCreationOptions
+
+#pragma mark - BEGIN APIs of System.Threading.Tasks.Sources.ValueTaskSourceStatus
+#pragma mark - END APIs of System.Threading.Tasks.Sources.ValueTaskSourceStatus
+
+#pragma mark - BEGIN APIs of System.Threading.Tasks.Sources.ValueTaskSourceOnCompletedFlags
+#pragma mark - END APIs of System.Threading.Tasks.Sources.ValueTaskSourceOnCompletedFlags
+
+#pragma mark - BEGIN APIs of System.Threading.Tasks.TaskContinuationOptions
+#pragma mark - END APIs of System.Threading.Tasks.TaskContinuationOptions
+
+#pragma mark - BEGIN APIs of System.IO.SeekOrigin
+#pragma mark - END APIs of System.IO.SeekOrigin
+
+#pragma mark - BEGIN APIs of System.IO.FileAccess
+#pragma mark - END APIs of System.IO.FileAccess
+
+#pragma mark - BEGIN APIs of System.IO.FileMode
+#pragma mark - END APIs of System.IO.FileMode
+
+#pragma mark - BEGIN APIs of System.IO.FileShare
+#pragma mark - END APIs of System.IO.FileShare
+
+#pragma mark - BEGIN APIs of System.IO.FileOptions
+#pragma mark - END APIs of System.IO.FileOptions
+
+#pragma mark - BEGIN APIs of System.Reflection.ResourceLocation
+#pragma mark - END APIs of System.Reflection.ResourceLocation
+
+#pragma mark - BEGIN APIs of System.Security.SecurityRuleSet
+#pragma mark - END APIs of System.Security.SecurityRuleSet
+
+#pragma mark - BEGIN APIs of System.Buffers.OperationStatus
+#pragma mark - END APIs of System.Buffers.OperationStatus
+
+#pragma mark - BEGIN APIs of System.Globalization.CompareOptions
+#pragma mark - END APIs of System.Globalization.CompareOptions
+
+#pragma mark - BEGIN APIs of System.Globalization.DigitShapes
+#pragma mark - END APIs of System.Globalization.DigitShapes
+
+#pragma mark - BEGIN APIs of System.Text.NormalizationForm
+#pragma mark - END APIs of System.Text.NormalizationForm
+
+#pragma mark - BEGIN APIs of System.StringSplitOptions
+#pragma mark - END APIs of System.StringSplitOptions
+
+#pragma mark - BEGIN APIs of System.Reflection.GenericParameterAttributes
+#pragma mark - END APIs of System.Reflection.GenericParameterAttributes
+
+#pragma mark - BEGIN APIs of System.Reflection.TypeAttributes
+#pragma mark - END APIs of System.Reflection.TypeAttributes
+
+#pragma mark - BEGIN APIs of System.Runtime.InteropServices.LayoutKind
+#pragma mark - END APIs of System.Runtime.InteropServices.LayoutKind
+
+#pragma mark - BEGIN APIs of System.Runtime.InteropServices.CharSet
+#pragma mark - END APIs of System.Runtime.InteropServices.CharSet
+
+#pragma mark - BEGIN APIs of System.Reflection.EventAttributes
+#pragma mark - END APIs of System.Reflection.EventAttributes
+
+#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.NiceLevels
+#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.NiceLevels
+
+#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.TestEnum
+#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.TestEnum
+
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.AnimalFactory
 NativeAOT_CodeGeneratorInputSample_IAnimal_t /* NativeAOT.CodeGeneratorInputSample.IAnimal */
 NativeAOT_CodeGeneratorInputSample_AnimalFactory_CreateAnimal(
@@ -1881,9 +2031,6 @@ System_Reflection_MemberInfo_Destroy(
 );
 
 #pragma mark - END APIs of System.Reflection.MemberInfo
-
-#pragma mark - BEGIN APIs of System.Reflection.MemberTypes
-#pragma mark - END APIs of System.Reflection.MemberTypes
 
 #pragma mark - BEGIN APIs of System.Enum
 CString /* System.String */
@@ -2937,9 +3084,6 @@ System_String_Destroy(
 
 #pragma mark - END APIs of System.String
 
-#pragma mark - BEGIN APIs of System.StringComparison
-#pragma mark - END APIs of System.StringComparison
-
 #pragma mark - BEGIN APIs of System.Globalization.CultureInfo
 System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */
 System_Globalization_CultureInfo_CreateSpecificCulture(
@@ -3252,9 +3396,6 @@ System_Globalization_CultureInfo_Destroy(
 
 #pragma mark - BEGIN APIs of System.Void
 #pragma mark - END APIs of System.Void
-
-#pragma mark - BEGIN APIs of System.Globalization.CultureTypes
-#pragma mark - END APIs of System.Globalization.CultureTypes
 
 #pragma mark - BEGIN APIs of System.Globalization.CompareInfo
 System_Globalization_CompareInfo_t /* System.Globalization.CompareInfo */
@@ -4366,27 +4507,6 @@ System_IFormatProvider_Destroy(
 );
 
 #pragma mark - END APIs of System.IFormatProvider
-
-#pragma mark - BEGIN APIs of System.Globalization.NumberStyles
-#pragma mark - END APIs of System.Globalization.NumberStyles
-
-#pragma mark - BEGIN APIs of System.TypeCode
-#pragma mark - END APIs of System.TypeCode
-
-#pragma mark - BEGIN APIs of System.Reflection.ProcessorArchitecture
-#pragma mark - END APIs of System.Reflection.ProcessorArchitecture
-
-#pragma mark - BEGIN APIs of System.Reflection.AssemblyContentType
-#pragma mark - END APIs of System.Reflection.AssemblyContentType
-
-#pragma mark - BEGIN APIs of System.Reflection.AssemblyNameFlags
-#pragma mark - END APIs of System.Reflection.AssemblyNameFlags
-
-#pragma mark - BEGIN APIs of System.Configuration.Assemblies.AssemblyHashAlgorithm
-#pragma mark - END APIs of System.Configuration.Assemblies.AssemblyHashAlgorithm
-
-#pragma mark - BEGIN APIs of System.Configuration.Assemblies.AssemblyVersionCompatibility
-#pragma mark - END APIs of System.Configuration.Assemblies.AssemblyVersionCompatibility
 
 #pragma mark - BEGIN APIs of System.Reflection.StrongNameKeyPair
 System_Reflection_StrongNameKeyPair_t /* System.Reflection.StrongNameKeyPair */
@@ -6068,12 +6188,6 @@ System_Runtime_Serialization_SerializationEntry_Destroy(
 #pragma mark - END APIs of System.Runtime.Serialization.SerializationEntry
 
 
-#pragma mark - BEGIN APIs of System.Globalization.UnicodeCategory
-#pragma mark - END APIs of System.Globalization.UnicodeCategory
-
-
-#pragma mark - BEGIN APIs of System.MidpointRounding
-#pragma mark - END APIs of System.MidpointRounding
 
 
 
@@ -7536,18 +7650,6 @@ System_TimeSpan_Destroy(
 
 #pragma mark - END APIs of System.TimeSpan
 
-#pragma mark - BEGIN APIs of System.Globalization.TimeSpanStyles
-#pragma mark - END APIs of System.Globalization.TimeSpanStyles
-
-#pragma mark - BEGIN APIs of System.DateTimeKind
-#pragma mark - END APIs of System.DateTimeKind
-
-#pragma mark - BEGIN APIs of System.DayOfWeek
-#pragma mark - END APIs of System.DayOfWeek
-
-#pragma mark - BEGIN APIs of System.Globalization.DateTimeStyles
-#pragma mark - END APIs of System.Globalization.DateTimeStyles
-
 #pragma mark - BEGIN APIs of System.DateOnly
 System_DateOnly_t /* System.DateOnly */
 System_DateOnly_FromDayNumber(
@@ -8388,12 +8490,6 @@ System_Globalization_Calendar_Destroy(
 
 #pragma mark - END APIs of System.Globalization.Calendar
 
-#pragma mark - BEGIN APIs of System.Globalization.CalendarAlgorithmType
-#pragma mark - END APIs of System.Globalization.CalendarAlgorithmType
-
-#pragma mark - BEGIN APIs of System.Globalization.CalendarWeekRule
-#pragma mark - END APIs of System.Globalization.CalendarWeekRule
-
 #pragma mark - BEGIN APIs of System.Runtime.Serialization.IFormatterConverter
 System_Object_t /* System.Object */
 System_Runtime_Serialization_IFormatterConverter_Convert(
@@ -8568,9 +8664,6 @@ System_Runtime_Serialization_StreamingContext_Destroy(
 );
 
 #pragma mark - END APIs of System.Runtime.Serialization.StreamingContext
-
-#pragma mark - BEGIN APIs of System.Runtime.Serialization.StreamingContextStates
-#pragma mark - END APIs of System.Runtime.Serialization.StreamingContextStates
 
 
 #pragma mark - BEGIN APIs of System.RuntimeTypeHandle
@@ -8768,12 +8861,6 @@ System_RuntimeFieldHandle_Destroy(
 
 #pragma mark - END APIs of System.RuntimeFieldHandle
 
-#pragma mark - BEGIN APIs of System.Reflection.MethodAttributes
-#pragma mark - END APIs of System.Reflection.MethodAttributes
-
-#pragma mark - BEGIN APIs of System.Reflection.MethodImplAttributes
-#pragma mark - END APIs of System.Reflection.MethodImplAttributes
-
 #pragma mark - BEGIN APIs of System.Reflection.MethodBody
 int32_t /* System.Int32 */
 System_Reflection_MethodBody_LocalSignatureMetadataToken_Get(
@@ -8799,12 +8886,6 @@ System_Reflection_MethodBody_Destroy(
 );
 
 #pragma mark - END APIs of System.Reflection.MethodBody
-
-#pragma mark - BEGIN APIs of System.Reflection.CallingConventions
-#pragma mark - END APIs of System.Reflection.CallingConventions
-
-#pragma mark - BEGIN APIs of System.Reflection.BindingFlags
-#pragma mark - END APIs of System.Reflection.BindingFlags
 
 #pragma mark - BEGIN APIs of System.Reflection.Binder
 System_Object_t /* System.Object */
@@ -9009,9 +9090,6 @@ System_Reflection_FieldInfo_Destroy(
 
 #pragma mark - END APIs of System.Reflection.FieldInfo
 
-#pragma mark - BEGIN APIs of System.Reflection.FieldAttributes
-#pragma mark - END APIs of System.Reflection.FieldAttributes
-
 #pragma mark - BEGIN APIs of System.Reflection.PropertyInfo
 System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
 System_Reflection_PropertyInfo_GetGetMethod(
@@ -9139,9 +9217,6 @@ System_Reflection_PropertyInfo_Destroy(
 );
 
 #pragma mark - END APIs of System.Reflection.PropertyInfo
-
-#pragma mark - BEGIN APIs of System.Reflection.PropertyAttributes
-#pragma mark - END APIs of System.Reflection.PropertyAttributes
 
 #pragma mark - BEGIN APIs of System.Reflection.MethodInfo
 System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
@@ -9334,9 +9409,6 @@ System_Reflection_ParameterInfo_Destroy(
 
 #pragma mark - END APIs of System.Reflection.ParameterInfo
 
-#pragma mark - BEGIN APIs of System.Reflection.ParameterAttributes
-#pragma mark - END APIs of System.Reflection.ParameterAttributes
-
 #pragma mark - BEGIN APIs of System.Reflection.ICustomAttributeProvider
 CBool /* System.Boolean */
 System_Reflection_ICustomAttributeProvider_IsDefined(
@@ -9352,15 +9424,6 @@ System_Reflection_ICustomAttributeProvider_Destroy(
 );
 
 #pragma mark - END APIs of System.Reflection.ICustomAttributeProvider
-
-#pragma mark - BEGIN APIs of System.Delegate
-System_Delegate_t /* System.Delegate */
-System_Delegate_Create(
-	void* context
-	System_Delegate_CFunction_t function
-	System_Delegate_CDestructorFunction_t destructorFunction
-);
-#pragma mark - END APIs of System.Delegate
 
 #pragma mark - BEGIN APIs of System.Collections.IDictionary
 CBool /* System.Boolean */
@@ -10040,12 +10103,6 @@ System_Collections_DictionaryEntry_Destroy(
 
 #pragma mark - END APIs of System.Collections.DictionaryEntry
 
-#pragma mark - BEGIN APIs of System.Threading.Tasks.TaskStatus
-#pragma mark - END APIs of System.Threading.Tasks.TaskStatus
-
-#pragma mark - BEGIN APIs of System.Threading.Tasks.TaskCreationOptions
-#pragma mark - END APIs of System.Threading.Tasks.TaskCreationOptions
-
 #pragma mark - BEGIN APIs of System.Threading.Tasks.TaskFactory
 System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
 System_Threading_Tasks_TaskFactory_StartNew(
@@ -10619,29 +10676,6 @@ System_Runtime_CompilerServices_ValueTaskAwaiter_Destroy(
 
 #pragma mark - END APIs of System.Runtime.CompilerServices.ValueTaskAwaiter
 
-#pragma mark - BEGIN APIs of System.Action
-System_Action_t /* System.Action */
-System_Action_Create(
-	void* context
-	System_Action_CFunction_t function
-	System_Action_CDestructorFunction_t destructorFunction
-);
-void /* System.Void */
-System_Action_Destroy(
-	System_Action_t /* System.Action */ self
-);
-
-#pragma mark - END APIs of System.Action
-
-#pragma mark - BEGIN APIs of System.MulticastDelegate
-System_MulticastDelegate_t /* System.MulticastDelegate */
-System_MulticastDelegate_Create(
-	void* context
-	System_MulticastDelegate_CFunction_t function
-	System_MulticastDelegate_CDestructorFunction_t destructorFunction
-);
-#pragma mark - END APIs of System.MulticastDelegate
-
 #pragma mark - BEGIN APIs of System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable
 System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_t /* System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter */
 System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_GetAwaiter(
@@ -10711,15 +10745,6 @@ System_Threading_Tasks_Sources_IValueTaskSource_Destroy(
 );
 
 #pragma mark - END APIs of System.Threading.Tasks.Sources.IValueTaskSource
-
-#pragma mark - BEGIN APIs of System.Threading.Tasks.Sources.ValueTaskSourceStatus
-#pragma mark - END APIs of System.Threading.Tasks.Sources.ValueTaskSourceStatus
-
-#pragma mark - BEGIN APIs of System.Threading.Tasks.Sources.ValueTaskSourceOnCompletedFlags
-#pragma mark - END APIs of System.Threading.Tasks.Sources.ValueTaskSourceOnCompletedFlags
-
-#pragma mark - BEGIN APIs of System.Threading.Tasks.TaskContinuationOptions
-#pragma mark - END APIs of System.Threading.Tasks.TaskContinuationOptions
 
 #pragma mark - BEGIN APIs of System.IAsyncResult
 CBool /* System.Boolean */
@@ -10883,23 +10908,6 @@ System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_Destroy(
 
 #pragma mark - END APIs of System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter
 
-#pragma mark - BEGIN APIs of System.AsyncCallback
-System_AsyncCallback_t /* System.AsyncCallback */
-System_AsyncCallback_Create(
-	void* context
-	System_AsyncCallback_CFunction_t function
-	System_AsyncCallback_CDestructorFunction_t destructorFunction
-);
-void /* System.Void */
-System_AsyncCallback_Destroy(
-	System_AsyncCallback_t /* System.AsyncCallback */ self
-);
-
-#pragma mark - END APIs of System.AsyncCallback
-
-#pragma mark - BEGIN APIs of System.IO.SeekOrigin
-#pragma mark - END APIs of System.IO.SeekOrigin
-
 #pragma mark - BEGIN APIs of Microsoft.Win32.SafeHandles.SafeFileHandle
 Microsoft_Win32_SafeHandles_SafeFileHandle_t /* Microsoft.Win32.SafeHandles.SafeFileHandle */
 Microsoft_Win32_SafeHandles_SafeFileHandle_Create(
@@ -10931,18 +10939,6 @@ Microsoft_Win32_SafeHandles_SafeFileHandle_Destroy(
 );
 
 #pragma mark - END APIs of Microsoft.Win32.SafeHandles.SafeFileHandle
-
-#pragma mark - BEGIN APIs of System.IO.FileAccess
-#pragma mark - END APIs of System.IO.FileAccess
-
-#pragma mark - BEGIN APIs of System.IO.FileMode
-#pragma mark - END APIs of System.IO.FileMode
-
-#pragma mark - BEGIN APIs of System.IO.FileShare
-#pragma mark - END APIs of System.IO.FileShare
-
-#pragma mark - BEGIN APIs of System.IO.FileOptions
-#pragma mark - END APIs of System.IO.FileOptions
 
 #pragma mark - BEGIN APIs of System.IO.FileStreamOptions
 System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */
@@ -11068,23 +11064,6 @@ System_Reflection_ManifestResourceInfo_Destroy(
 );
 
 #pragma mark - END APIs of System.Reflection.ManifestResourceInfo
-
-#pragma mark - BEGIN APIs of System.Reflection.ResourceLocation
-#pragma mark - END APIs of System.Reflection.ResourceLocation
-
-#pragma mark - BEGIN APIs of System.Reflection.ModuleResolveEventHandler
-System_Reflection_ModuleResolveEventHandler_t /* System.Reflection.ModuleResolveEventHandler */
-System_Reflection_ModuleResolveEventHandler_Create(
-	void* context
-	System_Reflection_ModuleResolveEventHandler_CFunction_t function
-	System_Reflection_ModuleResolveEventHandler_CDestructorFunction_t destructorFunction
-);
-void /* System.Void */
-System_Reflection_ModuleResolveEventHandler_Destroy(
-	System_Reflection_ModuleResolveEventHandler_t /* System.Reflection.ModuleResolveEventHandler */ self
-);
-
-#pragma mark - END APIs of System.Reflection.ModuleResolveEventHandler
 
 #pragma mark - BEGIN APIs of System.Reflection.Module
 CBool /* System.Boolean */
@@ -11405,20 +11384,6 @@ System_Guid_Destroy(
 
 #pragma mark - END APIs of System.Guid
 
-#pragma mark - BEGIN APIs of System.Reflection.TypeFilter
-System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */
-System_Reflection_TypeFilter_Create(
-	void* context
-	System_Reflection_TypeFilter_CFunction_t function
-	System_Reflection_TypeFilter_CDestructorFunction_t destructorFunction
-);
-void /* System.Void */
-System_Reflection_TypeFilter_Destroy(
-	System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */ self
-);
-
-#pragma mark - END APIs of System.Reflection.TypeFilter
-
 #pragma mark - BEGIN APIs of System.ResolveEventArgs
 System_ResolveEventArgs_t /* System.ResolveEventArgs */
 System_ResolveEventArgs_Create(
@@ -11469,9 +11434,6 @@ System_EventArgs_Destroy(
 );
 
 #pragma mark - END APIs of System.EventArgs
-
-#pragma mark - BEGIN APIs of System.Security.SecurityRuleSet
-#pragma mark - END APIs of System.Security.SecurityRuleSet
 
 #pragma mark - BEGIN APIs of System.Text.Rune
 int32_t /* System.Int32 */
@@ -11702,12 +11664,6 @@ System_Text_Rune_Destroy(
 );
 
 #pragma mark - END APIs of System.Text.Rune
-
-#pragma mark - BEGIN APIs of System.Buffers.OperationStatus
-#pragma mark - END APIs of System.Buffers.OperationStatus
-
-#pragma mark - BEGIN APIs of System.Globalization.CompareOptions
-#pragma mark - END APIs of System.Globalization.CompareOptions
 
 #pragma mark - BEGIN APIs of System.Globalization.SortKey
 int32_t /* System.Int32 */
@@ -12284,9 +12240,6 @@ System_Globalization_NumberFormatInfo_Destroy(
 
 #pragma mark - END APIs of System.Globalization.NumberFormatInfo
 
-#pragma mark - BEGIN APIs of System.Globalization.DigitShapes
-#pragma mark - END APIs of System.Globalization.DigitShapes
-
 #pragma mark - BEGIN APIs of System.Globalization.DateTimeFormatInfo
 System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */
 System_Globalization_DateTimeFormatInfo_GetInstance(
@@ -12667,9 +12620,6 @@ System_Text_StringRuneEnumerator_Destroy(
 
 #pragma mark - END APIs of System.Text.StringRuneEnumerator
 
-#pragma mark - BEGIN APIs of System.Text.NormalizationForm
-#pragma mark - END APIs of System.Text.NormalizationForm
-
 #pragma mark - BEGIN APIs of System.Text.CompositeFormat
 System_Text_CompositeFormat_t /* System.Text.CompositeFormat */
 System_Text_CompositeFormat_Parse(
@@ -12689,9 +12639,6 @@ System_Text_CompositeFormat_Destroy(
 );
 
 #pragma mark - END APIs of System.Text.CompositeFormat
-
-#pragma mark - BEGIN APIs of System.StringSplitOptions
-#pragma mark - END APIs of System.StringSplitOptions
 
 #pragma mark - BEGIN APIs of System.Text.Encoding
 void /* System.Void */
@@ -13203,12 +13150,6 @@ System_Text_Encoder_Destroy(
 
 #pragma mark - END APIs of System.Text.Encoder
 
-#pragma mark - BEGIN APIs of System.Reflection.GenericParameterAttributes
-#pragma mark - END APIs of System.Reflection.GenericParameterAttributes
-
-#pragma mark - BEGIN APIs of System.Reflection.TypeAttributes
-#pragma mark - END APIs of System.Reflection.TypeAttributes
-
 #pragma mark - BEGIN APIs of System.Runtime.InteropServices.StructLayoutAttribute
 System_Runtime_InteropServices_StructLayoutAttribute_t /* System.Runtime.InteropServices.StructLayoutAttribute */
 System_Runtime_InteropServices_StructLayoutAttribute_Create(
@@ -13428,12 +13369,6 @@ System_Attribute_Destroy(
 
 #pragma mark - END APIs of System.Attribute
 
-#pragma mark - BEGIN APIs of System.Runtime.InteropServices.LayoutKind
-#pragma mark - END APIs of System.Runtime.InteropServices.LayoutKind
-
-#pragma mark - BEGIN APIs of System.Runtime.InteropServices.CharSet
-#pragma mark - END APIs of System.Runtime.InteropServices.CharSet
-
 #pragma mark - BEGIN APIs of System.Reflection.ConstructorInfo
 CBool /* System.Boolean */
 System_Reflection_ConstructorInfo_Equals(
@@ -13595,9 +13530,6 @@ System_Reflection_EventInfo_Destroy(
 
 #pragma mark - END APIs of System.Reflection.EventInfo
 
-#pragma mark - BEGIN APIs of System.Reflection.EventAttributes
-#pragma mark - END APIs of System.Reflection.EventAttributes
-
 #pragma mark - BEGIN APIs of System.Reflection.InterfaceMapping
 System_Type_t /* System.Type */
 System_Reflection_InterfaceMapping_TargetType_Get(
@@ -13627,20 +13559,6 @@ System_Reflection_InterfaceMapping_Destroy(
 );
 
 #pragma mark - END APIs of System.Reflection.InterfaceMapping
-
-#pragma mark - BEGIN APIs of System.Reflection.MemberFilter
-System_Reflection_MemberFilter_t /* System.Reflection.MemberFilter */
-System_Reflection_MemberFilter_Create(
-	void* context
-	System_Reflection_MemberFilter_CFunction_t function
-	System_Reflection_MemberFilter_CDestructorFunction_t destructorFunction
-);
-void /* System.Void */
-System_Reflection_MemberFilter_Destroy(
-	System_Reflection_MemberFilter_t /* System.Reflection.MemberFilter */ self
-);
-
-#pragma mark - END APIs of System.Reflection.MemberFilter
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.IAnimal
 CString /* System.String */
@@ -13721,9 +13639,6 @@ NativeAOT_CodeGeneratorInputSample_Dog_Destroy(
 );
 
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.Dog
-
-#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.NiceLevels
-#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.NiceLevels
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Person
 CString /* System.String */
@@ -13880,20 +13795,6 @@ NativeAOT_CodeGeneratorInputSample_Person_Destroy(
 
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.Person
 
-#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate
-NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate */
-NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Create(
-	void* context
-	NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CFunction_t function
-	NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CDestructorFunction_t destructorFunction
-);
-void /* System.Void */
-NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Destroy(
-	NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate */ self
-);
-
-#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate
-
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Person_Extensions
 void /* System.Void */
 NativeAOT_CodeGeneratorInputSample_Person_Extensions_IncreaseAge(
@@ -13908,9 +13809,6 @@ NativeAOT_CodeGeneratorInputSample_Person_Extensions_Destroy(
 );
 
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.Person_Extensions
-
-#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.TestEnum
-#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.TestEnum
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.TestClass
 void /* System.Void */
@@ -13978,6 +13876,108 @@ NativeAOT_CodeGeneratorInputSample_TestClass_Destroy(
 );
 
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.TestClass
+
+#pragma mark - BEGIN APIs of System.Delegate
+System_Delegate_t /* System.Delegate */
+System_Delegate_Create(
+	void* context
+	System_Delegate_CFunction_t function
+	System_Delegate_CDestructorFunction_t destructorFunction
+);
+#pragma mark - END APIs of System.Delegate
+
+#pragma mark - BEGIN APIs of System.Action
+System_Action_t /* System.Action */
+System_Action_Create(
+	void* context
+	System_Action_CFunction_t function
+	System_Action_CDestructorFunction_t destructorFunction
+);
+void /* System.Void */
+System_Action_Destroy(
+	System_Action_t /* System.Action */ self
+);
+
+#pragma mark - END APIs of System.Action
+
+#pragma mark - BEGIN APIs of System.MulticastDelegate
+System_MulticastDelegate_t /* System.MulticastDelegate */
+System_MulticastDelegate_Create(
+	void* context
+	System_MulticastDelegate_CFunction_t function
+	System_MulticastDelegate_CDestructorFunction_t destructorFunction
+);
+#pragma mark - END APIs of System.MulticastDelegate
+
+#pragma mark - BEGIN APIs of System.AsyncCallback
+System_AsyncCallback_t /* System.AsyncCallback */
+System_AsyncCallback_Create(
+	void* context
+	System_AsyncCallback_CFunction_t function
+	System_AsyncCallback_CDestructorFunction_t destructorFunction
+);
+void /* System.Void */
+System_AsyncCallback_Destroy(
+	System_AsyncCallback_t /* System.AsyncCallback */ self
+);
+
+#pragma mark - END APIs of System.AsyncCallback
+
+#pragma mark - BEGIN APIs of System.Reflection.ModuleResolveEventHandler
+System_Reflection_ModuleResolveEventHandler_t /* System.Reflection.ModuleResolveEventHandler */
+System_Reflection_ModuleResolveEventHandler_Create(
+	void* context
+	System_Reflection_ModuleResolveEventHandler_CFunction_t function
+	System_Reflection_ModuleResolveEventHandler_CDestructorFunction_t destructorFunction
+);
+void /* System.Void */
+System_Reflection_ModuleResolveEventHandler_Destroy(
+	System_Reflection_ModuleResolveEventHandler_t /* System.Reflection.ModuleResolveEventHandler */ self
+);
+
+#pragma mark - END APIs of System.Reflection.ModuleResolveEventHandler
+
+#pragma mark - BEGIN APIs of System.Reflection.TypeFilter
+System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */
+System_Reflection_TypeFilter_Create(
+	void* context
+	System_Reflection_TypeFilter_CFunction_t function
+	System_Reflection_TypeFilter_CDestructorFunction_t destructorFunction
+);
+void /* System.Void */
+System_Reflection_TypeFilter_Destroy(
+	System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */ self
+);
+
+#pragma mark - END APIs of System.Reflection.TypeFilter
+
+#pragma mark - BEGIN APIs of System.Reflection.MemberFilter
+System_Reflection_MemberFilter_t /* System.Reflection.MemberFilter */
+System_Reflection_MemberFilter_Create(
+	void* context
+	System_Reflection_MemberFilter_CFunction_t function
+	System_Reflection_MemberFilter_CDestructorFunction_t destructorFunction
+);
+void /* System.Void */
+System_Reflection_MemberFilter_Destroy(
+	System_Reflection_MemberFilter_t /* System.Reflection.MemberFilter */ self
+);
+
+#pragma mark - END APIs of System.Reflection.MemberFilter
+
+#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate
+NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate */
+NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Create(
+	void* context
+	NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CFunction_t function
+	NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CDestructorFunction_t destructorFunction
+);
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Destroy(
+	NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate */ self
+);
+
+#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate
 NativeAOT_CodeGeneratorInputSample_TestClass_SimpleDelegate_t /* NativeAOT.CodeGeneratorInputSample.TestClass.SimpleDelegate */
