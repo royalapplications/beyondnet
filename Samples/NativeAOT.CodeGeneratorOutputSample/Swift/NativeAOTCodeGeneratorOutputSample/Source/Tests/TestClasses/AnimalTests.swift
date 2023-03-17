@@ -134,6 +134,8 @@ final class AnimalTests: XCTestCase {
 				return nil
 			}
 			
+			defer { NativeAOT_CodeGeneratorInputSample_GenericAnimal_Destroy(animal) }
+			
 			return animal
 		}
 		
