@@ -124,6 +124,15 @@ final class AnimalTests: XCTestCase {
 		var exception: System_Exception_t?
 		
 		let creator: NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_CFunction_t = { _, animalNameC in
+			guard let animalNameC else {
+				// Can't create an animal without a name
+				
+				return nil
+			}
+			
+			// We need to release any reference types that are given to us through the delegate
+			defer { animalNameC.deallocate() }
+			
 			var innerException: System_Exception_t?
 			
 			guard let animal = NativeAOT_CodeGeneratorInputSample_GenericAnimal_Create(animalNameC,

@@ -10,16 +10,15 @@ final class TransformerTests: XCTestCase {
 				return nil
 			}
 			
+			// We need to release any reference types that are given to us through the delegate
+			defer { inputStringC.deallocate() }
+			
 			let inputString = String(cString: inputStringC)
 			let outputString = inputString.uppercased()
 			
 			// TODO: This creates a memory leak
+			// TODO: Also see AnimalTests for a potential solution
 			let outputStringC = strdup(outputString)
-			
-			// TODO: This could crash if the runtime decides to destroy the NSString or underlying UTF8 string pointer before our managed function is done with the string.
-//			let outputStringC = (outputString as NSString).utf8String
-			
-			// Not sure how to deal with this...
 			
 			return .init(outputStringC)
 		}
