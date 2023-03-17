@@ -440,7 +440,7 @@ final class PersonTests: XCTestCase {
 		
 		guard let person = NativeAOT_CodeGeneratorInputSample_Person_Create("Johanna",
 																			"Doe",
-																			0,
+																			initialAge,
 																			&exception),
 			  exception == nil else {
 			XCTFail("Person ctor should not throw and return an instance")
@@ -450,6 +450,26 @@ final class PersonTests: XCTestCase {
 		
 		defer { NativeAOT_CodeGeneratorInputSample_Person_Destroy(person) }
 		
-//		let newAgeProviderDelegate = NewAgeprovi
+		let context = malloc(1)
+		
+		let newAgeProviderFunction: NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CFunction_t = { _ in
+			return 10
+		}
+		
+		let newAgeProviderDestructorFunction: NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CDestructorFunction_t = { _ in
+			print("Destructor")
+		}
+		
+		let newAgeProviderDelegate = NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Create(context,
+																											 newAgeProviderFunction,
+																											 newAgeProviderDestructorFunction)
+		
+		XCTAssertNotNil(newAgeProviderDelegate)
+		
+		NativeAOT_CodeGeneratorInputSample_Person_ChangeAge(person,
+															newAgeProviderDelegate,
+															&exception)
+		
+		XCTAssertNil(exception)
 	}
 }
