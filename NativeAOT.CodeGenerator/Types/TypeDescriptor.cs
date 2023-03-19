@@ -20,12 +20,14 @@ public class TypeDescriptor
     private readonly Dictionary<CodeLanguage, string> m_typeNames;
     private readonly Dictionary<LanguagePair, string> m_typeConversions;
     private readonly string? m_returnValueOnException;
+    private readonly Dictionary<CodeLanguage, string> m_destructors;
 
     public TypeDescriptor(
         Type managedType,
         string? returnValueOnException = null,
         Dictionary<CodeLanguage, string>? typeNames = null,
-        Dictionary<LanguagePair, string>? typeConversions = null
+        Dictionary<LanguagePair, string>? typeConversions = null,
+        Dictionary<CodeLanguage, string>? destructors = null
     )
     {
         ManagedType = managedType;
@@ -49,6 +51,12 @@ public class TypeDescriptor
         }
         
         m_typeConversions = typeConversions;
+
+        if (destructors == null) {
+            destructors = new();
+        }
+
+        m_destructors = destructors;
     }
 
     public void SetTypeName(string typeName, CodeLanguage language)
@@ -179,7 +187,7 @@ public class TypeDescriptor
 
         return typeConversion;
     }
-
+    
     private string? GenerateTypeConversion(
         CodeLanguage sourceLanguage,
         CodeLanguage targetLanguage
@@ -210,6 +218,36 @@ public class TypeDescriptor
             return conversion;
         } else {
             throw new Exception("Unknown language pair");
+        }
+    }
+
+    public string? GetDestructor(CodeLanguage language)
+    {
+        string? destructor;
+        
+        if (m_destructors.TryGetValue(language, out string? tempDestructor)) {
+            destructor = tempDestructor;
+        } else {
+            destructor = GenerateDestructor(language);
+
+            if (destructor != null) {
+                m_destructors[language] = destructor;
+            }
+        }
+
+        return destructor;
+    }
+
+    private string? GenerateDestructor(CodeLanguage language)
+    {
+        if (!RequiresNativePointer) {
+            return string.Empty;
+        }
+
+        if (language == CodeLanguage.CSharpUnmanaged) {
+            return "InteropUtils.FreeIfAllocated({0})";
+        } else {
+            throw new Exception("Unknown language");
         }
     }
 

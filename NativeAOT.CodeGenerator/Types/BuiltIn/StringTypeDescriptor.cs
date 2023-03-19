@@ -21,6 +21,12 @@ public partial class BuiltInTypeDescriptors
                         new(CodeLanguage.CSharpUnmanaged, CodeLanguage.CSharp), 
                         "InteropUtils.ToDotNetString({0})"
                     }
+                },
+                new() {
+                    {
+                        CodeLanguage.CSharpUnmanaged,
+                        "Marshal.FreeHGlobal({0})"
+                    }
                 }
             );
     
