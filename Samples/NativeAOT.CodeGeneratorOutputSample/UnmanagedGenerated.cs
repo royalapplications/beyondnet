@@ -1,5 +1,5 @@
-// Number of generated types: 183
-// Number of generated members: 1903
+// Number of generated types: 185
+// Number of generated members: 1909
 
 // <Header>
 using System;
@@ -195,20 +195,20 @@ internal static unsafe class InteropUtils
 
 // </Unsupported Types>
 // <APIs>
-internal unsafe class NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate
+internal unsafe class NativeAOT_CodeGeneratorInputSample_MoveDelegate
 {
 	public void* Context { get; }
-	public delegate* unmanaged<void* /* context */, byte* /* System.String */ /* animalName */, void* /* NativeAOT.CodeGeneratorInputSample.IAnimal */ /* return type */> CFunction { get; }
+	public delegate* unmanaged<void* /* context */, byte* /* System.String */ /* newStreet */, byte* /* System.String */ /* newCity */, void* /* NativeAOT.CodeGeneratorInputSample.Address */ /* return type */> CFunction { get; }
 	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
 
-	private NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate(void* context, delegate* unmanaged<void* /* context */, byte* /* System.String */ /* animalName */, void* /* NativeAOT.CodeGeneratorInputSample.IAnimal */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	private NativeAOT_CodeGeneratorInputSample_MoveDelegate(void* context, delegate* unmanaged<void* /* context */, byte* /* System.String */ /* newStreet */, byte* /* System.String */ /* newCity */, void* /* NativeAOT.CodeGeneratorInputSample.Address */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
 	{
 		Context = context;
 		CFunction = cFunction;
 		CDestructorFunction = cDestructorFunction;
 	}
 
-	~NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate()
+	~NativeAOT_CodeGeneratorInputSample_MoveDelegate()
 	{
 		if (CDestructorFunction is null) {
 			return;
@@ -217,13 +217,13 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate
 		CDestructorFunction(Context);
 	}
 
-	internal NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate? CreateTrampoline()
+	internal NativeAOT.CodeGeneratorInputSample.MoveDelegate? CreateTrampoline()
 	{
 		if (CFunction is null) {
 			return null;
 		}
 
-		System.Type typeOfSelf = typeof(NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate);
+		System.Type typeOfSelf = typeof(NativeAOT_CodeGeneratorInputSample_MoveDelegate);
 		string nameOfInvocationMethod = nameof(__InvokeByCallingCFunction);
 		System.Reflection.BindingFlags bindingFlags = System.Reflection.BindingFlags.Instance | BindingFlags.NonPublic;
 		System.Reflection.MethodInfo? invocationMethod = typeOfSelf.GetMethod(nameOfInvocationMethod, bindingFlags);
@@ -232,67 +232,68 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate
 			throw new Exception("Failed to retrieve delegate invocation method");
 		}
 
-		NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate trampoline = (NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate)System.Delegate.CreateDelegate(typeof(NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate), this, invocationMethod);
+		NativeAOT.CodeGeneratorInputSample.MoveDelegate trampoline = (NativeAOT.CodeGeneratorInputSample.MoveDelegate)System.Delegate.CreateDelegate(typeof(NativeAOT.CodeGeneratorInputSample.MoveDelegate), this, invocationMethod);
 
 		return trampoline;
 	}
 
-	private NativeAOT.CodeGeneratorInputSample.IAnimal __InvokeByCallingCFunction(System.String /* System.String */ animalName)
+	private NativeAOT.CodeGeneratorInputSample.Address __InvokeByCallingCFunction(System.String /* System.String */ newStreet, System.String /* System.String */ newCity)
 	{
-		byte* animalNameConverted = animalName.CopyToCString();
+		byte* newStreetConverted = newStreet.CopyToCString();
+		byte* newCityConverted = newCity.CopyToCString();
 	
 
 
-		return InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.IAnimal>(CFunction(Context, animalNameConverted));
+		return InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Address>(CFunction(Context, newStreetConverted, newCityConverted));
 	}
 
-	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Create")]
-	public static void* Create(void* context, delegate* unmanaged<void* /* context */, byte* /* System.String */ /* animalName */, void* /* NativeAOT.CodeGeneratorInputSample.IAnimal */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_MoveDelegate_Create")]
+	public static void* Create(void* context, delegate* unmanaged<void* /* context */, byte* /* System.String */ /* newStreet */, byte* /* System.String */ /* newCity */, void* /* NativeAOT.CodeGeneratorInputSample.Address */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
 	{
-		var self = new NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate(context, cFunction, cDestructorFunction);
+		var self = new NativeAOT_CodeGeneratorInputSample_MoveDelegate(context, cFunction, cDestructorFunction);
 		void* selfHandle = self.AllocateGCHandleAndGetAddress();
 
 		return selfHandle;
 	}
 
-	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Context_Get")]
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_MoveDelegate_Context_Get")]
 	public static void* Context_Get(void* self)
 	{
 		if (self is null) {
 			throw new ArgumentNullException(nameof(self));
 		}
 
-		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate>(self);
+		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_MoveDelegate>(self);
 
 		return selfConverted.Context;
 	}
 
-	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_CFunction_Get")]
-	public static delegate* unmanaged<void* /* context */, byte* /* System.String */ /* animalName */, void* /* NativeAOT.CodeGeneratorInputSample.IAnimal */ /* return type */> CFunction_Get(void* self)
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_MoveDelegate_CFunction_Get")]
+	public static delegate* unmanaged<void* /* context */, byte* /* System.String */ /* newStreet */, byte* /* System.String */ /* newCity */, void* /* NativeAOT.CodeGeneratorInputSample.Address */ /* return type */> CFunction_Get(void* self)
 	{
 		if (self is null) {
 			throw new ArgumentNullException(nameof(self));
 		}
 
-		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate>(self);
+		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_MoveDelegate>(self);
 
 		return selfConverted.CFunction;
 	}
 
-	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_CDestructorFunction_Get")]
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_MoveDelegate_CDestructorFunction_Get")]
 	public static delegate* unmanaged<void*, void> CDestructorFunction_Get(void* self)
 	{
 		if (self is null) {
 			throw new ArgumentNullException(nameof(self));
 		}
 
-		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate>(self);
+		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_MoveDelegate>(self);
 
 		return selfConverted.CDestructorFunction;
 	}
 
-	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Destroy")]
-	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate */ __self)
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_MoveDelegate_Destroy")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_MoveDelegate_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.MoveDelegate */ __self)
 	{
 	
 		InteropUtils.FreeIfAllocated(__self);
@@ -53180,6 +53181,251 @@ internal unsafe class System_Reflection_MemberFilter
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MemberFilter_Destroy")]
 	internal static void /* System.Void */ System_Reflection_MemberFilter_Destroy(void* /* System.Reflection.MemberFilter */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+
+}
+
+
+internal unsafe class NativeAOT_CodeGeneratorInputSample_Address
+{
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Address_Move")]
+	internal static void* /* NativeAOT.CodeGeneratorInputSample.Address */ NativeAOT_CodeGeneratorInputSample_Address_Move(void* /* NativeAOT.CodeGeneratorInputSample.Address */ __self, void* /* NativeAOT.CodeGeneratorInputSample.MoveDelegate */ mover, byte* /* System.String */ newStreet, byte* /* System.String */ newCity, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.Address __selfConverted = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Address>(__self);
+	
+		NativeAOT.CodeGeneratorInputSample.MoveDelegate moverConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_MoveDelegate>(mover)?.CreateTrampoline();
+		System.String newStreetConverted = InteropUtils.ToDotNetString(newStreet);
+		System.String newCityConverted = InteropUtils.ToDotNetString(newCity);
+	
+	    try {
+			NativeAOT.CodeGeneratorInputSample.Address __returnValue = __selfConverted.Move(moverConverted, newStreetConverted, newCityConverted);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Address_Create")]
+	internal static void* /* NativeAOT.CodeGeneratorInputSample.Address */ NativeAOT_CodeGeneratorInputSample_Address_Create(byte* /* System.String */ street, byte* /* System.String */ city, void** /* System.Exception */ __outException)
+	{
+		System.String streetConverted = InteropUtils.ToDotNetString(street);
+		System.String cityConverted = InteropUtils.ToDotNetString(city);
+	
+	    try {
+			NativeAOT.CodeGeneratorInputSample.Address __returnValue = new NativeAOT.CodeGeneratorInputSample.Address(streetConverted, cityConverted);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Address_Street_Get")]
+	internal static byte* /* System.String */ NativeAOT_CodeGeneratorInputSample_Address_Street_Get(void* /* NativeAOT.CodeGeneratorInputSample.Address */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.Address __selfConverted = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Address>(__self);
+	
+	
+	    try {
+			System.String __returnValue = __selfConverted.Street;
+			byte* _returnValueNative = __returnValue.CopyToCString();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Address_City_Get")]
+	internal static byte* /* System.String */ NativeAOT_CodeGeneratorInputSample_Address_City_Get(void* /* NativeAOT.CodeGeneratorInputSample.Address */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.Address __selfConverted = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Address>(__self);
+	
+	
+	    try {
+			System.String __returnValue = __selfConverted.City;
+			byte* _returnValueNative = __returnValue.CopyToCString();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Address_Destroy")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Address_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.Address */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+
+}
+
+
+internal unsafe class NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate
+{
+	public void* Context { get; }
+	public delegate* unmanaged<void* /* context */, byte* /* System.String */ /* animalName */, void* /* NativeAOT.CodeGeneratorInputSample.IAnimal */ /* return type */> CFunction { get; }
+	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
+
+	private NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate(void* context, delegate* unmanaged<void* /* context */, byte* /* System.String */ /* animalName */, void* /* NativeAOT.CodeGeneratorInputSample.IAnimal */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	{
+		Context = context;
+		CFunction = cFunction;
+		CDestructorFunction = cDestructorFunction;
+	}
+
+	~NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate()
+	{
+		if (CDestructorFunction is null) {
+			return;
+		}
+
+		CDestructorFunction(Context);
+	}
+
+	internal NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate? CreateTrampoline()
+	{
+		if (CFunction is null) {
+			return null;
+		}
+
+		System.Type typeOfSelf = typeof(NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate);
+		string nameOfInvocationMethod = nameof(__InvokeByCallingCFunction);
+		System.Reflection.BindingFlags bindingFlags = System.Reflection.BindingFlags.Instance | BindingFlags.NonPublic;
+		System.Reflection.MethodInfo? invocationMethod = typeOfSelf.GetMethod(nameOfInvocationMethod, bindingFlags);
+
+		if (invocationMethod is null) {
+			throw new Exception("Failed to retrieve delegate invocation method");
+		}
+
+		NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate trampoline = (NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate)System.Delegate.CreateDelegate(typeof(NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate), this, invocationMethod);
+
+		return trampoline;
+	}
+
+	private NativeAOT.CodeGeneratorInputSample.IAnimal __InvokeByCallingCFunction(System.String /* System.String */ animalName)
+	{
+		byte* animalNameConverted = animalName.CopyToCString();
+	
+
+
+		return InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.IAnimal>(CFunction(Context, animalNameConverted));
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Create")]
+	public static void* Create(void* context, delegate* unmanaged<void* /* context */, byte* /* System.String */ /* animalName */, void* /* NativeAOT.CodeGeneratorInputSample.IAnimal */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	{
+		var self = new NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate(context, cFunction, cDestructorFunction);
+		void* selfHandle = self.AllocateGCHandleAndGetAddress();
+
+		return selfHandle;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Context_Get")]
+	public static void* Context_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate>(self);
+
+		return selfConverted.Context;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_CFunction_Get")]
+	public static delegate* unmanaged<void* /* context */, byte* /* System.String */ /* animalName */, void* /* NativeAOT.CodeGeneratorInputSample.IAnimal */ /* return type */> CFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate>(self);
+
+		return selfConverted.CFunction;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_CDestructorFunction_Get")]
+	public static delegate* unmanaged<void*, void> CDestructorFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate>(self);
+
+		return selfConverted.CDestructorFunction;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Destroy")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate */ __self)
 	{
 	
 		InteropUtils.FreeIfAllocated(__self);
