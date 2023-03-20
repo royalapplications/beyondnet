@@ -1,5 +1,5 @@
 // Number of generated types: 185
-// Number of generated members: 1909
+// Number of generated members: 1911
 
 // <Header>
 using System;
@@ -54273,6 +54273,65 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Person
 	
 	    try {
 			__selfConverted.Age = __value;
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_Address_Get")]
+	internal static void* /* NativeAOT.CodeGeneratorInputSample.Address */ NativeAOT_CodeGeneratorInputSample_Person_Address_Get(void* /* NativeAOT.CodeGeneratorInputSample.Person */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.Person __selfConverted = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Person>(__self);
+	
+	
+	    try {
+			NativeAOT.CodeGeneratorInputSample.Address __returnValue = __selfConverted.Address;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_Address_Set")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Person_Address_Set(void* /* NativeAOT.CodeGeneratorInputSample.Person */ __self, void* /* NativeAOT.CodeGeneratorInputSample.Address */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.Person __selfConverted = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Person>(__self);
+	
+	
+	    try {
+			__selfConverted.Address = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Address>(__value);
 	
 	        if (__outException is not null) {
 	            *__outException = null;

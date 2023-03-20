@@ -495,4 +495,76 @@ final class PersonTests: XCTestCase {
 		let retrievedCDestructorFunction = NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CDestructorFunction_Get(newAgeProviderDelegate)
 		XCTAssertNil(retrievedCDestructorFunction)
 	}
+	
+	func testPersonAddress() {
+		var exception: System_Exception_t?
+		
+		guard let person = NativeAOT_CodeGeneratorInputSample_Person_Create("Johanna",
+																			"Doe",
+																			15,
+																			&exception),
+			  exception == nil else {
+			XCTFail("Person ctor should not throw and return an instance")
+			
+			return
+		}
+		
+		defer { NativeAOT_CodeGeneratorInputSample_Person_Destroy(person) }
+		
+		let street = "Stephansplatz"
+		let city = "Vienna"
+		
+		var address: NativeAOT_CodeGeneratorInputSample_Address_t?
+		
+		street.withCString { streetC in
+			city.withCString { cityC in
+				address = NativeAOT_CodeGeneratorInputSample_Address_Create(streetC,
+																			cityC,
+																			&exception)
+			}
+		}
+		
+		guard let address,
+			  exception == nil else {
+			XCTFail("Address ctor should return an instance and not throw")
+			
+			return
+		}
+		
+		NativeAOT_CodeGeneratorInputSample_Person_Address_Set(person,
+															  address,
+															  &exception)
+		
+		XCTAssertNil(exception)
+		
+		guard let retrievedAddress = NativeAOT_CodeGeneratorInputSample_Person_Address_Get(person,
+																						   &exception),
+			  exception == nil else {
+			XCTFail("Person.Address getter should return an instance and not throw")
+			
+			return
+		}
+		
+		guard let retrievedStreetC = NativeAOT_CodeGeneratorInputSample_Address_Street_Get(retrievedAddress,
+																						   &exception),
+			  exception == nil else {
+			XCTFail("Address.Street getter should return an instance and not throw")
+			
+			return
+		}
+		
+		let retrievedStreet = String(cString: retrievedStreetC)
+		XCTAssertEqual(street, retrievedStreet)
+		
+		guard let retrievedCityC = NativeAOT_CodeGeneratorInputSample_Address_City_Get(retrievedAddress,
+																					   &exception),
+			  exception == nil else {
+			XCTFail("Address.City getter should return an instance and not throw")
+			
+			return
+		}
+		
+		let retrievedCity = String(cString: retrievedCityC)
+		XCTAssertEqual(city, retrievedCity)
+	}
 }
