@@ -18,12 +18,6 @@ internal enum CBool: byte
     False = 0
 }
 
-internal enum CStatus: int
-{
-    Success = 1,
-    Failure = -1
-}
-
 #if NETSTANDARD2_0 ||  NETCOREAPP2_0 ||  NETCOREAPP2_1 ||  NETCOREAPP2_2 || NET45 || NET451 || NET452 || NET46 || NET461 || NET462 || NET47 || NET471 || NET472 || NET48
 public static class ConditionalWeakTable_Extensions
 {
@@ -244,7 +238,10 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_MoveDelegate
 	
 
 
-		return InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Address>(CFunction(Context, newStreetConverted, newCityConverted));
+		var __returnValue = CFunction(Context, newStreetConverted, newCityConverted);
+		var __returnValueConverted = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Address>(__returnValue);
+
+		return __returnValueConverted;
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_MoveDelegate_Create")]
@@ -42311,7 +42308,10 @@ internal unsafe class System_Reflection_ModuleResolveEventHandler
 	
 
 
-		return InteropUtils.GetInstance<System.Reflection.Module>(CFunction(Context, senderConverted, eConverted));
+		var __returnValue = CFunction(Context, senderConverted, eConverted);
+		var __returnValueConverted = InteropUtils.GetInstance<System.Reflection.Module>(__returnValue);
+
+		return __returnValueConverted;
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ModuleResolveEventHandler_Create")]
@@ -43702,7 +43702,10 @@ internal unsafe class System_Reflection_TypeFilter
 	
 
 
-		return CFunction(Context, mConverted, filterCriteriaConverted).ToBool();
+		var __returnValue = CFunction(Context, mConverted, filterCriteriaConverted);
+		var __returnValueConverted = __returnValue.ToBool();
+
+		return __returnValueConverted;
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_TypeFilter_Create")]
@@ -53131,7 +53134,10 @@ internal unsafe class System_Reflection_MemberFilter
 	
 
 
-		return CFunction(Context, mConverted, filterCriteriaConverted).ToBool();
+		var __returnValue = CFunction(Context, mConverted, filterCriteriaConverted);
+		var __returnValueConverted = __returnValue.ToBool();
+
+		return __returnValueConverted;
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MemberFilter_Create")]
@@ -53376,7 +53382,10 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate
 	
 
 
-		return InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.IAnimal>(CFunction(Context, animalNameConverted));
+		var __returnValue = CFunction(Context, animalNameConverted);
+		var __returnValueConverted = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.IAnimal>(__returnValue);
+
+		return __returnValueConverted;
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Create")]
@@ -54587,7 +54596,8 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDe
 	
 
 
-		return CFunction(Context);
+		var __returnValue = CFunction(Context);
+		return __returnValue;
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Create")]
@@ -54973,7 +54983,10 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_StringTransformerDelega
 	
 
 
-		return InteropUtils.ToDotNetString(CFunction(Context, inputStringConverted));
+		var __returnValue = CFunction(Context, inputStringConverted);
+		var __returnValueConverted = InteropUtils.ToDotNetString(__returnValue);
+
+		return __returnValueConverted;
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Create")]
@@ -55079,7 +55092,8 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_DoublesTransformerDeleg
 	
 
 
-		return CFunction(Context, number1, number2);
+		var __returnValue = CFunction(Context, number1, number2);
+		return __returnValue;
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate_Create")]

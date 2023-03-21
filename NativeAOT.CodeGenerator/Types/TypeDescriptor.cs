@@ -244,11 +244,12 @@ public class TypeDescriptor
             return string.Empty;
         }
 
-        if (language == CodeLanguage.CSharpUnmanaged) {
-            return "InteropUtils.FreeIfAllocated({0})";
-        } else {
-            throw new Exception("Unknown language");
+        switch (language) {
+            case CodeLanguage.CSharpUnmanaged:
+                return "InteropUtils.FreeIfAllocated({0})";
         }
+
+        return null;
     }
 
     public string? GetReturnValueOnException()

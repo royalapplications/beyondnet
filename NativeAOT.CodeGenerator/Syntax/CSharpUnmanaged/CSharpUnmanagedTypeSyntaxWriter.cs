@@ -284,29 +284,37 @@ public class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITyp
             parameterNamesString = ", " + parameterNamesString;
         }
 
-        string invocationPrefix = returnType.IsVoid()
-            ? string.Empty
-            : "return ";
+        bool hasReturnType = !returnType.IsVoid();
 
-        string? returnTypeConversion = returnTypeDescriptor.GetTypeConversion(
-            CodeLanguage.CSharpUnmanaged,
-            CodeLanguage.CSharp
-        );
+        string returnValueName = "__returnValue"; 
 
-        string invocationWithoutReturnTypeConversion = $"CFunction(Context{parameterNamesString})";
+        string invocationPrefix = hasReturnType
+            ? $"var {returnValueName} = "
+            : string.Empty;
 
-        string invocationWithReturnTypeConversion;
+        string invocation = $"CFunction(Context{parameterNamesString})";
 
-        if (!string.IsNullOrEmpty(returnTypeConversion)) {
-            invocationWithReturnTypeConversion = string.Format(
-                returnTypeConversion,
-                invocationWithoutReturnTypeConversion
+        sb.AppendLine($"\t\t{invocationPrefix}{invocation};");
+
+        if (hasReturnType) {
+            string? returnTypeConversion = returnTypeDescriptor.GetTypeConversion(
+                CodeLanguage.CSharpUnmanaged,
+                CodeLanguage.CSharp
             );
-        } else {
-            invocationWithReturnTypeConversion = invocationWithoutReturnTypeConversion;
-        }
 
-        sb.AppendLine($"\t\t{invocationPrefix}{invocationWithReturnTypeConversion};");
+            string convertedReturnValueName = "__returnValueConverted";
+    
+            if (!string.IsNullOrEmpty(returnTypeConversion)) {
+                returnTypeConversion = string.Format(returnTypeConversion, "__returnValue");
+                returnTypeConversion = $"var {convertedReturnValueName} = {returnTypeConversion}";
+
+                sb.AppendLine($"\t\t{returnTypeConversion};");
+                sb.AppendLine();
+                sb.AppendLine($"\t\treturn {convertedReturnValueName};");
+            } else {
+                sb.AppendLine($"\t\treturn {returnValueName};");
+            }
+        }
 
         sb.AppendLine("\t}");
         #endregion Invocation
