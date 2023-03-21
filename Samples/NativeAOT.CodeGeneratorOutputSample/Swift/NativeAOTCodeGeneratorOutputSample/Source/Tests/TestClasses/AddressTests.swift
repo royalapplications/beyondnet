@@ -137,7 +137,6 @@ final class AddressTests: XCTestCase {
 				return nil
 			}
 			
-			// TODO: Memory leak
 			return newAddress
 		}
 

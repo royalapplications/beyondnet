@@ -241,6 +241,8 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_MoveDelegate
 		var __returnValue = CFunction(Context, newStreetConverted, newCityConverted);
 		var __returnValueConverted = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Address>(__returnValue);
 
+		InteropUtils.FreeIfAllocated(__returnValue);
+
 		return __returnValueConverted;
 	}
 
@@ -42311,6 +42313,8 @@ internal unsafe class System_Reflection_ModuleResolveEventHandler
 		var __returnValue = CFunction(Context, senderConverted, eConverted);
 		var __returnValueConverted = InteropUtils.GetInstance<System.Reflection.Module>(__returnValue);
 
+		InteropUtils.FreeIfAllocated(__returnValue);
+
 		return __returnValueConverted;
 	}
 
@@ -53385,6 +53389,8 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate
 		var __returnValue = CFunction(Context, animalNameConverted);
 		var __returnValueConverted = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.IAnimal>(__returnValue);
 
+		InteropUtils.FreeIfAllocated(__returnValue);
+
 		return __returnValueConverted;
 	}
 
@@ -54985,6 +54991,8 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_StringTransformerDelega
 
 		var __returnValue = CFunction(Context, inputStringConverted);
 		var __returnValueConverted = InteropUtils.ToDotNetString(__returnValue);
+
+		Marshal.FreeHGlobal((nint)__returnValue);
 
 		return __returnValueConverted;
 	}

@@ -25,7 +25,7 @@ public partial class BuiltInTypeDescriptors
                 new() {
                     {
                         CodeLanguage.CSharpUnmanaged,
-                        "Marshal.FreeHGlobal({0})"
+                        "Marshal.FreeHGlobal((nint){0})"
                     }
                 }
             );

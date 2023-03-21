@@ -303,6 +303,15 @@ public class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITyp
             );
 
             string convertedReturnValueName = "__returnValueConverted";
+
+            string? returnValueDestructorFormat = returnTypeDescriptor.GetDestructor(CodeLanguage.CSharpUnmanaged);
+            string? returnValueDestructor;
+
+            if (!string.IsNullOrEmpty(returnValueDestructorFormat)) {
+                returnValueDestructor = string.Format(returnValueDestructorFormat, returnValueName) + ";";
+            } else {
+                returnValueDestructor = null;
+            }
     
             if (!string.IsNullOrEmpty(returnTypeConversion)) {
                 returnTypeConversion = string.Format(returnTypeConversion, "__returnValue");
@@ -310,8 +319,19 @@ public class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITyp
 
                 sb.AppendLine($"\t\t{returnTypeConversion};");
                 sb.AppendLine();
+
+                if (!string.IsNullOrEmpty(returnValueDestructor)) {
+                    sb.AppendLine($"\t\t{returnValueDestructor}");
+                    sb.AppendLine();
+                }
+
                 sb.AppendLine($"\t\treturn {convertedReturnValueName};");
             } else {
+                if (!string.IsNullOrEmpty(returnValueDestructor)) {
+                    sb.AppendLine($"\t\t{returnValueDestructor}");
+                    sb.AppendLine();
+                }
+                
                 sb.AppendLine($"\t\treturn {returnValueName};");
             }
         }

@@ -16,8 +16,6 @@ final class TransformerTests: XCTestCase {
 			let inputString = String(cString: inputStringC)
 			let outputString = inputString.uppercased()
 			
-			// TODO: This creates a memory leak
-			// TODO: Also see AnimalTests for a potential solution
 			let outputStringC = strdup(outputString)
 			
 			return .init(outputStringC)
