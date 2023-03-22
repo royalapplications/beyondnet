@@ -24,6 +24,7 @@
 		E7C8CF0F29C2180200C4230F /* AnimalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0E29C2180200C4230F /* AnimalTests.swift */; };
 		E7EB338629C8879100392F3D /* AddressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EB338529C8879100392F3D /* AddressTests.swift */; };
 		E7F0CEB129C4B02D00E4C80A /* TransformerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F0CEB029C4B02D00E4C80A /* TransformerTests.swift */; };
+		E7F4A49229CB5F2A00D93D81 /* SystemObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F4A49129CB5F2A00D93D81 /* SystemObjectTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		E7C8CF0E29C2180200C4230F /* AnimalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTests.swift; sourceTree = "<group>"; };
 		E7EB338529C8879100392F3D /* AddressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTests.swift; sourceTree = "<group>"; };
 		E7F0CEB029C4B02D00E4C80A /* TransformerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerTests.swift; sourceTree = "<group>"; };
+		E7F4A49129CB5F2A00D93D81 /* SystemObjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemObjectTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 				E7C8CF0429C1FA9500C4230F /* SystemGuidTests.swift */,
 				E7C8CF0829C1FB0800C4230F /* SystemDateTimeTests.swift */,
 				E7C8CF0A29C1FE5800C4230F /* SystemArrayTests.swift */,
+				E7F4A49129CB5F2A00D93D81 /* SystemObjectTests.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				E7C8CF0929C1FB0800C4230F /* SystemDateTimeTests.swift in Sources */,
 				E7C8CF0729C1FABA00C4230F /* StringTests.swift in Sources */,
 				E7EB338629C8879100392F3D /* AddressTests.swift in Sources */,
+				E7F4A49229CB5F2A00D93D81 /* SystemObjectTests.swift in Sources */,
 				E7C8CF0D29C2139B00C4230F /* PersonTests.swift in Sources */,
 				E70D117D29BFA01300B4E738 /* TestClassesTests.swift in Sources */,
 			);
