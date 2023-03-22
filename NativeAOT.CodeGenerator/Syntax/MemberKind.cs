@@ -9,6 +9,8 @@ public enum MemberKind
     Constructor,
     Destructor,
     
+    TypeOf,
+    
     PropertyGetter,
     PropertySetter,
     

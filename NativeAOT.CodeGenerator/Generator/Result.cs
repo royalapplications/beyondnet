@@ -35,6 +35,20 @@ public class Result
 
         return destructors.FirstOrDefault();
     }
+    
+    public GeneratedMember? GetGeneratedTypeOf(Type type)
+    {
+        var typeOfs = GetGeneratedMembers(
+            type,
+            MemberKind.TypeOf
+        );
+
+        if (typeOfs.Count() > 1) {
+            throw new Exception("More than one typeOf");
+        }
+
+        return typeOfs.FirstOrDefault();
+    }
 
     public IEnumerable<GeneratedMember> GetGeneratedMembers(
         Type type,

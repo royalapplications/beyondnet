@@ -57,8 +57,9 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
     )
     {
         if (memberInfo == null &&
-            memberKind != MemberKind.Destructor) {
-            throw new Exception("memberInfo may only be null when memberKind is Destructor");
+            memberKind != MemberKind.Destructor &&
+            memberKind != MemberKind.TypeOf) {
+            throw new Exception("memberInfo may only be null when memberKind is Destructor or TypeOf");
         }
         
         string fullTypeName = declaringType.GetFullNameOrName();
@@ -77,6 +78,9 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 break;
             case MemberKind.Destructor:
                 methodNameC = $"{fullTypeNameC}_Destroy";
+                break;
+            case MemberKind.TypeOf:
+                methodNameC = $"{fullTypeNameC}_TypeOf";
                 break;
             case MemberKind.PropertyGetter:
             case MemberKind.FieldGetter:
@@ -141,7 +145,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         string? convertedSelfParameterName = null;
 
         if (!isStaticMethod &&
-            memberKind != MemberKind.Destructor) {
+            memberKind != MemberKind.Destructor &&
+            memberKind != MemberKind.TypeOf) {
             string selfConversionCode = WriteSelfConversion(
                 declaringType,
                 typeDescriptorRegistry,
@@ -180,7 +185,9 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 methodTarget = string.Empty;
             }
 
-            methodTarget += declaringType.GetFullNameOrName();
+            if (memberKind != MemberKind.TypeOf) {
+                methodTarget += declaringType.GetFullNameOrName();
+            }
         } else {
             methodTarget = convertedSelfParameterName ?? string.Empty;
         }
@@ -204,6 +211,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             methodNameForInvocation = string.Empty;
         } else if (memberKind == MemberKind.Destructor) {
             methodNameForInvocation = "InteropUtils.FreeIfAllocated(__self)";
+        } else if (memberKind == MemberKind.TypeOf) {
+            methodNameForInvocation = $"typeof({declaringType.GetFullNameOrName()})";
         } else {
             methodNameForInvocation = $".{methodName}";
         }
@@ -212,7 +221,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                                           memberKind != MemberKind.PropertySetter &&
                                           memberKind != MemberKind.FieldGetter &&
                                           memberKind != MemberKind.FieldSetter &&
-                                          memberKind != MemberKind.Destructor;
+                                          memberKind != MemberKind.Destructor &&
+                                          memberKind != MemberKind.TypeOf;
 
         string methodInvocationPrefix = invocationNeedsParentheses 
             ? "("

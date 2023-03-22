@@ -20,6 +20,7 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
     };
     
     private CDestructorSyntaxWriter m_destructorSyntaxWriter = new();
+    private CTypeOfSyntaxWriter m_typeOfSyntaxWriter = new();
     
     public CTypeSyntaxWriter(Settings settings)
     {
@@ -251,9 +252,15 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
                 continue;
             }
 
-            object? target = syntaxWriter is IDestructorSyntaxWriter
-                ? type
-                : member;
+            object? target;
+
+            if (syntaxWriter is IDestructorSyntaxWriter) {
+                target = type;
+            } else if (syntaxWriter is ITypeOfSyntaxWriter) {
+                target = type;
+            } else {
+                target = member;
+            }
 
             if (target == null) {
                 throw new Exception("No target");
@@ -336,6 +343,8 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
     {
         if (memberKind == MemberKind.Destructor) {
             return m_destructorSyntaxWriter;
+        } else if (memberKind == MemberKind.TypeOf) {
+            return m_typeOfSyntaxWriter;
         }
 
         m_syntaxWriters.TryGetValue(

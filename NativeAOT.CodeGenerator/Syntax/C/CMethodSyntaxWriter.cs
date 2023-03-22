@@ -58,7 +58,8 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
     )
     {
         if (memberInfo == null &&
-            memberKind != MemberKind.Destructor) {
+            memberKind != MemberKind.Destructor &&
+            memberKind != MemberKind.TypeOf) {
             throw new Exception("memberInfo may only be null when memberKind is Destructor");
         }
         
@@ -74,6 +75,8 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             }
         } else if (memberKind == MemberKind.Destructor) {
             cSharpGeneratedMember = cSharpUnmanagedResult.GetGeneratedDestructor(declaringType) ?? throw new Exception("No C# generated destructor");
+        } else if (memberKind == MemberKind.TypeOf) {
+            cSharpGeneratedMember = cSharpUnmanagedResult.GetGeneratedTypeOf(declaringType) ?? throw new Exception("No C# generated typeOf");
         } else {
             throw new Exception("No C# generated member");
         }

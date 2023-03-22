@@ -1,5 +1,5 @@
 // Number of generated types: 185
-// Number of generated members: 1911
+// Number of generated members: 2020
 
 // <Header>
 using System;
@@ -716,6 +716,16 @@ internal unsafe class System_Object
 	
 			return null;
 		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Object_TypeOf")]
+	internal static void* /* System.Type */ System_Object_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Object);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
 	}
 	
 
@@ -4613,6 +4623,16 @@ internal unsafe class System_Type
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Type_TypeOf")]
+	internal static void* /* System.Type */ System_Type_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Type);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_Destroy")]
 	internal static void /* System.Void */ System_Type_Destroy(void* /* System.Type */ __self)
 	{
@@ -4973,6 +4993,16 @@ internal unsafe class System_Reflection_MemberInfo
 		}
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MemberInfo_TypeOf")]
+	internal static void* /* System.Type */ System_Reflection_MemberInfo_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Reflection.MemberInfo);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MemberInfo_Destroy")]
@@ -5722,6 +5752,16 @@ internal unsafe class System_Enum
 	}
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_TypeOf")]
+	internal static void* /* System.Type */ System_Enum_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Enum);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Enum_Destroy")]
 	internal static void /* System.Void */ System_Enum_Destroy(void* /* System.Enum */ __self)
 	{
@@ -5825,6 +5865,16 @@ internal unsafe class System_ValueType
 	
 			return null;
 		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_ValueType_TypeOf")]
+	internal static void* /* System.Type */ System_ValueType_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.ValueType);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
 	}
 	
 
@@ -9093,6 +9143,16 @@ internal unsafe class System_String
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_String_TypeOf")]
+	internal static void* /* System.Type */ System_String_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.String);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Destroy")]
 	internal static void /* System.Void */ System_String_Destroy(byte* /* System.String */ __self)
 	{
@@ -10540,6 +10600,16 @@ internal unsafe class System_Globalization_CultureInfo
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_TypeOf")]
+	internal static void* /* System.Type */ System_Globalization_CultureInfo_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Globalization.CultureInfo);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_Destroy")]
 	internal static void /* System.Void */ System_Globalization_CultureInfo_Destroy(void* /* System.Globalization.CultureInfo */ __self)
 	{
@@ -10553,6 +10623,8 @@ internal unsafe class System_Globalization_CultureInfo
 
 internal unsafe class System_Void
 {
+	
+
 	
 
 }
@@ -12105,6 +12177,16 @@ internal unsafe class System_Globalization_CompareInfo
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_TypeOf")]
+	internal static void* /* System.Type */ System_Globalization_CompareInfo_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Globalization.CompareInfo);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_Destroy")]
 	internal static void /* System.Void */ System_Globalization_CompareInfo_Destroy(void* /* System.Globalization.CompareInfo */ __self)
 	{
@@ -13512,6 +13594,16 @@ internal unsafe class System_Reflection_Assembly
 	// TODO (Event): ModuleResolve
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Assembly_TypeOf")]
+	internal static void* /* System.Type */ System_Reflection_Assembly_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Reflection.Assembly);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Assembly_Destroy")]
 	internal static void /* System.Void */ System_Reflection_Assembly_Destroy(void* /* System.Reflection.Assembly */ __self)
 	{
@@ -14458,6 +14550,16 @@ internal unsafe class System_Reflection_AssemblyName
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_AssemblyName_TypeOf")]
+	internal static void* /* System.Type */ System_Reflection_AssemblyName_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Reflection.AssemblyName);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_AssemblyName_Destroy")]
 	internal static void /* System.Void */ System_Reflection_AssemblyName_Destroy(void* /* System.Reflection.AssemblyName */ __self)
 	{
@@ -15058,6 +15160,16 @@ internal unsafe class System_Version
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Version_TypeOf")]
+	internal static void* /* System.Type */ System_Version_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Version);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Version_Destroy")]
 	internal static void /* System.Void */ System_Version_Destroy(void* /* System.Version */ __self)
 	{
@@ -15101,6 +15213,16 @@ internal unsafe class System_IFormatProvider
 	
 			return null;
 		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_IFormatProvider_TypeOf")]
+	internal static void* /* System.Type */ System_IFormatProvider_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.IFormatProvider);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
 	}
 	
 
@@ -15173,6 +15295,16 @@ internal unsafe class System_Reflection_StrongNameKeyPair
 	
 			return null;
 		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_StrongNameKeyPair_TypeOf")]
+	internal static void* /* System.Type */ System_Reflection_StrongNameKeyPair_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Reflection.StrongNameKeyPair);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
 	}
 	
 
@@ -16282,6 +16414,16 @@ internal unsafe class System_IO_FileStream
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStream_TypeOf")]
+	internal static void* /* System.Type */ System_IO_FileStream_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.IO.FileStream);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStream_Destroy")]
 	internal static void /* System.Void */ System_IO_FileStream_Destroy(void* /* System.IO.FileStream */ __self)
 	{
@@ -17207,6 +17349,16 @@ internal unsafe class System_IO_Stream
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_Stream_TypeOf")]
+	internal static void* /* System.Type */ System_IO_Stream_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.IO.Stream);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_Stream_Destroy")]
 	internal static void /* System.Void */ System_IO_Stream_Destroy(void* /* System.IO.Stream */ __self)
 	{
@@ -17279,6 +17431,16 @@ internal unsafe class System_MarshalByRefObject
 	
 			return null;
 		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_MarshalByRefObject_TypeOf")]
+	internal static void* /* System.Type */ System_MarshalByRefObject_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.MarshalByRefObject);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
 	}
 	
 
@@ -18460,6 +18622,16 @@ internal unsafe class System_Threading_Tasks_Task
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_TypeOf")]
+	internal static void* /* System.Type */ System_Threading_Tasks_Task_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Threading.Tasks.Task);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_Destroy")]
 	internal static void /* System.Void */ System_Threading_Tasks_Task_Destroy(void* /* System.Threading.Tasks.Task */ __self)
 	{
@@ -18610,6 +18782,16 @@ internal unsafe class System_Threading_Tasks_TaskScheduler
 		}
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_TaskScheduler_TypeOf")]
+	internal static void* /* System.Type */ System_Threading_Tasks_TaskScheduler_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Threading.Tasks.TaskScheduler);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_TaskScheduler_Destroy")]
@@ -18856,6 +19038,16 @@ internal unsafe class System_AggregateException
 		}
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_AggregateException_TypeOf")]
+	internal static void* /* System.Type */ System_AggregateException_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.AggregateException);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_AggregateException_Destroy")]
@@ -19406,6 +19598,16 @@ internal unsafe class System_Exception
 		}
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Exception_TypeOf")]
+	internal static void* /* System.Type */ System_Exception_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Exception);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Exception_Destroy")]
@@ -20387,6 +20589,16 @@ internal unsafe class System_Reflection_MethodBase
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodBase_TypeOf")]
+	internal static void* /* System.Type */ System_Reflection_MethodBase_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Reflection.MethodBase);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodBase_Destroy")]
 	internal static void /* System.Void */ System_Reflection_MethodBase_Destroy(void* /* System.Reflection.MethodBase */ __self)
 	{
@@ -20633,6 +20845,16 @@ internal unsafe class System_RuntimeMethodHandle
 		}
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_RuntimeMethodHandle_TypeOf")]
+	internal static void* /* System.Type */ System_RuntimeMethodHandle_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.RuntimeMethodHandle);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_RuntimeMethodHandle_Destroy")]
@@ -21980,6 +22202,16 @@ internal unsafe class System_Runtime_Serialization_SerializationInfo
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_SerializationInfo_TypeOf")]
+	internal static void* /* System.Type */ System_Runtime_Serialization_SerializationInfo_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Runtime.Serialization.SerializationInfo);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_SerializationInfo_Destroy")]
 	internal static void /* System.Void */ System_Runtime_Serialization_SerializationInfo_Destroy(void* /* System.Runtime.Serialization.SerializationInfo */ __self)
 	{
@@ -22180,6 +22412,16 @@ internal unsafe class System_Runtime_Serialization_SerializationInfoEnumerator
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_SerializationInfoEnumerator_TypeOf")]
+	internal static void* /* System.Type */ System_Runtime_Serialization_SerializationInfoEnumerator_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Runtime.Serialization.SerializationInfoEnumerator);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_SerializationInfoEnumerator_Destroy")]
 	internal static void /* System.Void */ System_Runtime_Serialization_SerializationInfoEnumerator_Destroy(void* /* System.Runtime.Serialization.SerializationInfoEnumerator */ __self)
 	{
@@ -22287,6 +22529,16 @@ internal unsafe class System_Runtime_Serialization_SerializationEntry
 		}
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_SerializationEntry_TypeOf")]
+	internal static void* /* System.Type */ System_Runtime_Serialization_SerializationEntry_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Runtime.Serialization.SerializationEntry);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_SerializationEntry_Destroy")]
@@ -24058,6 +24310,16 @@ internal unsafe class System_Decimal
 		return _returnValueNative;
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_TypeOf")]
+	internal static void* /* System.Type */ System_Decimal_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Decimal);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_Destroy")]
@@ -26476,6 +26738,16 @@ internal unsafe class System_DateTime
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_TypeOf")]
+	internal static void* /* System.Type */ System_DateTime_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.DateTime);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_Destroy")]
 	internal static void /* System.Void */ System_DateTime_Destroy(void* /* System.DateTime */ __self)
 	{
@@ -27990,6 +28262,16 @@ internal unsafe class System_TimeSpan
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_TimeSpan_TypeOf")]
+	internal static void* /* System.Type */ System_TimeSpan_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.TimeSpan);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_TimeSpan_Destroy")]
 	internal static void /* System.Void */ System_TimeSpan_Destroy(void* /* System.TimeSpan */ __self)
 	{
@@ -28983,6 +29265,16 @@ internal unsafe class System_DateOnly
 		}
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_DateOnly_TypeOf")]
+	internal static void* /* System.Type */ System_DateOnly_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.DateOnly);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_DateOnly_Destroy")]
@@ -30081,6 +30373,16 @@ internal unsafe class System_TimeOnly
 		}
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_TimeOnly_TypeOf")]
+	internal static void* /* System.Type */ System_TimeOnly_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.TimeOnly);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_TimeOnly_Destroy")]
@@ -31463,6 +31765,16 @@ internal unsafe class System_Globalization_Calendar
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_Calendar_TypeOf")]
+	internal static void* /* System.Type */ System_Globalization_Calendar_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Globalization.Calendar);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_Calendar_Destroy")]
 	internal static void /* System.Void */ System_Globalization_Calendar_Destroy(void* /* System.Globalization.Calendar */ __self)
 	{
@@ -32012,6 +32324,16 @@ internal unsafe class System_Runtime_Serialization_IFormatterConverter
 	}
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_IFormatterConverter_TypeOf")]
+	internal static void* /* System.Type */ System_Runtime_Serialization_IFormatterConverter_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Runtime.Serialization.IFormatterConverter);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_IFormatterConverter_Destroy")]
 	internal static void /* System.Void */ System_Runtime_Serialization_IFormatterConverter_Destroy(void* /* System.Runtime.Serialization.IFormatterConverter */ __self)
 	{
@@ -32199,6 +32521,16 @@ internal unsafe class System_Runtime_Serialization_StreamingContext
 		}
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_StreamingContext_TypeOf")]
+	internal static void* /* System.Type */ System_Runtime_Serialization_StreamingContext_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Runtime.Serialization.StreamingContext);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_StreamingContext_Destroy")]
@@ -32450,6 +32782,16 @@ internal unsafe class System_RuntimeTypeHandle
 		}
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_RuntimeTypeHandle_TypeOf")]
+	internal static void* /* System.Type */ System_RuntimeTypeHandle_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.RuntimeTypeHandle);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_RuntimeTypeHandle_Destroy")]
@@ -32787,6 +33129,16 @@ internal unsafe class System_ModuleHandle
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_ModuleHandle_TypeOf")]
+	internal static void* /* System.Type */ System_ModuleHandle_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.ModuleHandle);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_ModuleHandle_Destroy")]
 	internal static void /* System.Void */ System_ModuleHandle_Destroy(void* /* System.ModuleHandle */ __self)
 	{
@@ -33005,6 +33357,16 @@ internal unsafe class System_RuntimeFieldHandle
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_RuntimeFieldHandle_TypeOf")]
+	internal static void* /* System.Type */ System_RuntimeFieldHandle_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.RuntimeFieldHandle);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_RuntimeFieldHandle_Destroy")]
 	internal static void /* System.Void */ System_RuntimeFieldHandle_Destroy(void* /* System.RuntimeFieldHandle */ __self)
 	{
@@ -33114,6 +33476,16 @@ internal unsafe class System_Reflection_MethodBody
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodBody_TypeOf")]
+	internal static void* /* System.Type */ System_Reflection_MethodBody_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Reflection.MethodBody);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodBody_Destroy")]
 	internal static void /* System.Void */ System_Reflection_MethodBody_Destroy(void* /* System.Reflection.MethodBody */ __self)
 	{
@@ -33160,6 +33532,16 @@ internal unsafe class System_Reflection_Binder
 	
 			return null;
 		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Binder_TypeOf")]
+	internal static void* /* System.Type */ System_Reflection_Binder_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Reflection.Binder);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
 	}
 	
 
@@ -34053,6 +34435,16 @@ internal unsafe class System_Reflection_FieldInfo
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_FieldInfo_TypeOf")]
+	internal static void* /* System.Type */ System_Reflection_FieldInfo_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Reflection.FieldInfo);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_FieldInfo_Destroy")]
 	internal static void /* System.Void */ System_Reflection_FieldInfo_Destroy(void* /* System.Reflection.FieldInfo */ __self)
 	{
@@ -34664,6 +35056,16 @@ internal unsafe class System_Reflection_PropertyInfo
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_PropertyInfo_TypeOf")]
+	internal static void* /* System.Type */ System_Reflection_PropertyInfo_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Reflection.PropertyInfo);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_PropertyInfo_Destroy")]
 	internal static void /* System.Void */ System_Reflection_PropertyInfo_Destroy(void* /* System.Reflection.PropertyInfo */ __self)
 	{
@@ -34992,6 +35394,16 @@ internal unsafe class System_Reflection_MethodInfo
 		}
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodInfo_TypeOf")]
+	internal static void* /* System.Type */ System_Reflection_MethodInfo_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Reflection.MethodInfo);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodInfo_Destroy")]
@@ -35579,6 +35991,16 @@ internal unsafe class System_Reflection_ParameterInfo
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ParameterInfo_TypeOf")]
+	internal static void* /* System.Type */ System_Reflection_ParameterInfo_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Reflection.ParameterInfo);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ParameterInfo_Destroy")]
 	internal static void /* System.Void */ System_Reflection_ParameterInfo_Destroy(void* /* System.Reflection.ParameterInfo */ __self)
 	{
@@ -35623,6 +36045,16 @@ internal unsafe class System_Reflection_ICustomAttributeProvider
 	
 			return false.ToCBool();
 		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ICustomAttributeProvider_TypeOf")]
+	internal static void* /* System.Type */ System_Reflection_ICustomAttributeProvider_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Reflection.ICustomAttributeProvider);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
 	}
 	
 
@@ -35917,6 +36349,16 @@ internal unsafe class System_Collections_IDictionary
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Collections_IDictionary_TypeOf")]
+	internal static void* /* System.Type */ System_Collections_IDictionary_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Collections.IDictionary);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Collections_IDictionary_Destroy")]
 	internal static void /* System.Void */ System_Collections_IDictionary_Destroy(void* /* System.Collections.IDictionary */ __self)
 	{
@@ -36052,6 +36494,16 @@ internal unsafe class System_Collections_ICollection
 		}
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Collections_ICollection_TypeOf")]
+	internal static void* /* System.Type */ System_Collections_ICollection_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Collections.ICollection);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Collections_ICollection_Destroy")]
@@ -37685,6 +38137,16 @@ internal unsafe class System_Array
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Array_TypeOf")]
+	internal static void* /* System.Type */ System_Array_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Array);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Array_Destroy")]
 	internal static void /* System.Void */ System_Array_Destroy(void* /* System.Array */ __self)
 	{
@@ -37727,6 +38189,16 @@ internal unsafe class System_Collections_IComparer
 	
 			return -1;
 		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Collections_IComparer_TypeOf")]
+	internal static void* /* System.Type */ System_Collections_IComparer_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Collections.IComparer);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
 	}
 	
 
@@ -37832,6 +38304,16 @@ internal unsafe class System_Collections_IEnumerator
 		}
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Collections_IEnumerator_TypeOf")]
+	internal static void* /* System.Type */ System_Collections_IEnumerator_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Collections.IEnumerator);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Collections_IEnumerator_Destroy")]
@@ -37941,6 +38423,16 @@ internal unsafe class System_Collections_IDictionaryEnumerator
 		}
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Collections_IDictionaryEnumerator_TypeOf")]
+	internal static void* /* System.Type */ System_Collections_IDictionaryEnumerator_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Collections.IDictionaryEnumerator);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Collections_IDictionaryEnumerator_Destroy")]
@@ -38130,6 +38622,16 @@ internal unsafe class System_Collections_DictionaryEntry
 		}
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Collections_DictionaryEntry_TypeOf")]
+	internal static void* /* System.Type */ System_Collections_DictionaryEntry_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Collections.DictionaryEntry);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Collections_DictionaryEntry_Destroy")]
@@ -38533,6 +39035,16 @@ internal unsafe class System_Threading_Tasks_TaskFactory
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_TaskFactory_TypeOf")]
+	internal static void* /* System.Type */ System_Threading_Tasks_TaskFactory_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Threading.Tasks.TaskFactory);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_TaskFactory_Destroy")]
 	internal static void /* System.Void */ System_Threading_Tasks_TaskFactory_Destroy(void* /* System.Threading.Tasks.TaskFactory */ __self)
 	{
@@ -38879,6 +39391,16 @@ internal unsafe class System_Threading_CancellationToken
 		}
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationToken_TypeOf")]
+	internal static void* /* System.Type */ System_Threading_CancellationToken_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Threading.CancellationToken);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationToken_Destroy")]
@@ -39320,6 +39842,16 @@ internal unsafe class System_Threading_WaitHandle
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_WaitHandle_TypeOf")]
+	internal static void* /* System.Type */ System_Threading_WaitHandle_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Threading.WaitHandle);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_WaitHandle_Destroy")]
 	internal static void /* System.Void */ System_Threading_WaitHandle_Destroy(void* /* System.Threading.WaitHandle */ __self)
 	{
@@ -39384,6 +39916,16 @@ internal unsafe class Microsoft_Win32_SafeHandles_SafeWaitHandle
 	}
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "Microsoft_Win32_SafeHandles_SafeWaitHandle_TypeOf")]
+	internal static void* /* System.Type */ Microsoft_Win32_SafeHandles_SafeWaitHandle_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(Microsoft.Win32.SafeHandles.SafeWaitHandle);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "Microsoft_Win32_SafeHandles_SafeWaitHandle_Destroy")]
 	internal static void /* System.Void */ Microsoft_Win32_SafeHandles_SafeWaitHandle_Destroy(void* /* Microsoft.Win32.SafeHandles.SafeWaitHandle */ __self)
 	{
@@ -39427,6 +39969,16 @@ internal unsafe class Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInva
 		}
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid_TypeOf")]
+	internal static void* /* System.Type */ Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(Microsoft.Win32.SafeHandles.SafeHandleZeroOrMinusOneIsInvalid);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid_Destroy")]
@@ -39648,6 +40200,16 @@ internal unsafe class System_Runtime_InteropServices_SafeHandle
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_SafeHandle_TypeOf")]
+	internal static void* /* System.Type */ System_Runtime_InteropServices_SafeHandle_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Runtime.InteropServices.SafeHandle);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_SafeHandle_Destroy")]
 	internal static void /* System.Void */ System_Runtime_InteropServices_SafeHandle_Destroy(void* /* System.Runtime.InteropServices.SafeHandle */ __self)
 	{
@@ -39661,6 +40223,16 @@ internal unsafe class System_Runtime_InteropServices_SafeHandle
 
 internal unsafe class System_Runtime_ConstrainedExecution_CriticalFinalizerObject
 {
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_ConstrainedExecution_CriticalFinalizerObject_TypeOf")]
+	internal static void* /* System.Type */ System_Runtime_ConstrainedExecution_CriticalFinalizerObject_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Runtime.ConstrainedExecution.CriticalFinalizerObject);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_ConstrainedExecution_CriticalFinalizerObject_Destroy")]
 	internal static void /* System.Void */ System_Runtime_ConstrainedExecution_CriticalFinalizerObject_Destroy(void* /* System.Runtime.ConstrainedExecution.CriticalFinalizerObject */ __self)
 	{
@@ -39888,6 +40460,16 @@ internal unsafe class System_Threading_CancellationTokenRegistration
 		}
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationTokenRegistration_TypeOf")]
+	internal static void* /* System.Type */ System_Threading_CancellationTokenRegistration_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Threading.CancellationTokenRegistration);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationTokenRegistration_Destroy")]
@@ -40380,6 +40962,16 @@ internal unsafe class System_Threading_Tasks_ValueTask
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_ValueTask_TypeOf")]
+	internal static void* /* System.Type */ System_Threading_Tasks_ValueTask_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Threading.Tasks.ValueTask);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_ValueTask_Destroy")]
 	internal static void /* System.Void */ System_Threading_Tasks_ValueTask_Destroy(void* /* System.Threading.Tasks.ValueTask */ __self)
 	{
@@ -40509,6 +41101,16 @@ internal unsafe class System_Runtime_CompilerServices_ValueTaskAwaiter
 		}
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_ValueTaskAwaiter_TypeOf")]
+	internal static void* /* System.Type */ System_Runtime_CompilerServices_ValueTaskAwaiter_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Runtime.CompilerServices.ValueTaskAwaiter);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_ValueTaskAwaiter_Destroy")]
@@ -40661,6 +41263,16 @@ internal unsafe class System_Runtime_CompilerServices_ConfiguredValueTaskAwaitab
 	}
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_TypeOf")]
+	internal static void* /* System.Type */ System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_Destroy")]
 	internal static void /* System.Void */ System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_Destroy(void* /* System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable */ __self)
 	{
@@ -40792,6 +41404,16 @@ internal unsafe class System_Runtime_CompilerServices_ConfiguredValueTaskAwaitab
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_TypeOf")]
+	internal static void* /* System.Type */ System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_Destroy")]
 	internal static void /* System.Void */ System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_Destroy(void* /* System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter */ __self)
 	{
@@ -40860,6 +41482,16 @@ internal unsafe class System_Threading_Tasks_Sources_IValueTaskSource
 	        }
 	
 		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Sources_IValueTaskSource_TypeOf")]
+	internal static void* /* System.Type */ System_Threading_Tasks_Sources_IValueTaskSource_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Threading.Tasks.Sources.IValueTaskSource);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
 	}
 	
 
@@ -41007,6 +41639,16 @@ internal unsafe class System_IAsyncResult
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_IAsyncResult_TypeOf")]
+	internal static void* /* System.Type */ System_IAsyncResult_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.IAsyncResult);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_IAsyncResult_Destroy")]
 	internal static void /* System.Void */ System_IAsyncResult_Destroy(void* /* System.IAsyncResult */ __self)
 	{
@@ -41138,6 +41780,16 @@ internal unsafe class System_Runtime_CompilerServices_TaskAwaiter
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_TaskAwaiter_TypeOf")]
+	internal static void* /* System.Type */ System_Runtime_CompilerServices_TaskAwaiter_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Runtime.CompilerServices.TaskAwaiter);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_TaskAwaiter_Destroy")]
 	internal static void /* System.Void */ System_Runtime_CompilerServices_TaskAwaiter_Destroy(void* /* System.Runtime.CompilerServices.TaskAwaiter */ __self)
 	{
@@ -41179,6 +41831,16 @@ internal unsafe class System_Runtime_CompilerServices_ConfiguredTaskAwaitable
 	
 			return null;
 		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_ConfiguredTaskAwaitable_TypeOf")]
+	internal static void* /* System.Type */ System_Runtime_CompilerServices_ConfiguredTaskAwaitable_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Runtime.CompilerServices.ConfiguredTaskAwaitable);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
 	}
 	
 
@@ -41313,6 +41975,16 @@ internal unsafe class System_Runtime_CompilerServices_ConfiguredTaskAwaitable_Co
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_TypeOf")]
+	internal static void* /* System.Type */ System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_Destroy")]
 	internal static void /* System.Void */ System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_Destroy(void* /* System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter */ __self)
 	{
@@ -41354,6 +42026,16 @@ internal unsafe class System_Runtime_CompilerServices_YieldAwaitable
 	
 			return null;
 		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_YieldAwaitable_TypeOf")]
+	internal static void* /* System.Type */ System_Runtime_CompilerServices_YieldAwaitable_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Runtime.CompilerServices.YieldAwaitable);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
 	}
 	
 
@@ -41486,6 +42168,16 @@ internal unsafe class System_Runtime_CompilerServices_YieldAwaitable_YieldAwaite
 		}
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_TypeOf")]
+	internal static void* /* System.Type */ System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_Destroy")]
@@ -41722,6 +42414,16 @@ internal unsafe class Microsoft_Win32_SafeHandles_SafeFileHandle
 		}
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "Microsoft_Win32_SafeHandles_SafeFileHandle_TypeOf")]
+	internal static void* /* System.Type */ Microsoft_Win32_SafeHandles_SafeFileHandle_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(Microsoft.Win32.SafeHandles.SafeFileHandle);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "Microsoft_Win32_SafeHandles_SafeFileHandle_Destroy")]
@@ -42114,6 +42816,16 @@ internal unsafe class System_IO_FileStreamOptions
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStreamOptions_TypeOf")]
+	internal static void* /* System.Type */ System_IO_FileStreamOptions_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.IO.FileStreamOptions);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStreamOptions_Destroy")]
 	internal static void /* System.Void */ System_IO_FileStreamOptions_Destroy(void* /* System.IO.FileStreamOptions */ __self)
 	{
@@ -42247,6 +42959,16 @@ internal unsafe class System_Reflection_ManifestResourceInfo
 		}
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ManifestResourceInfo_TypeOf")]
+	internal static void* /* System.Type */ System_Reflection_ManifestResourceInfo_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Reflection.ManifestResourceInfo);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ManifestResourceInfo_Destroy")]
@@ -43189,6 +43911,16 @@ internal unsafe class System_Reflection_Module
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Module_TypeOf")]
+	internal static void* /* System.Type */ System_Reflection_Module_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Reflection.Module);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Module_Destroy")]
 	internal static void /* System.Void */ System_Reflection_Module_Destroy(void* /* System.Reflection.Module */ __self)
 	{
@@ -43646,6 +44378,16 @@ internal unsafe class System_Guid
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Guid_TypeOf")]
+	internal static void* /* System.Type */ System_Guid_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Guid);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Guid_Destroy")]
 	internal static void /* System.Void */ System_Guid_Destroy(void* /* System.Guid */ __self)
 	{
@@ -43887,6 +44629,16 @@ internal unsafe class System_ResolveEventArgs
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_ResolveEventArgs_TypeOf")]
+	internal static void* /* System.Type */ System_ResolveEventArgs_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.ResolveEventArgs);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_ResolveEventArgs_Destroy")]
 	internal static void /* System.Void */ System_ResolveEventArgs_Destroy(void* /* System.ResolveEventArgs */ __self)
 	{
@@ -43934,6 +44686,16 @@ internal unsafe class System_EventArgs
 		return _returnValueNative;
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_EventArgs_TypeOf")]
+	internal static void* /* System.Type */ System_EventArgs_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.EventArgs);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_EventArgs_Destroy")]
@@ -44938,6 +45700,16 @@ internal unsafe class System_Text_Rune
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_TypeOf")]
+	internal static void* /* System.Type */ System_Text_Rune_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Text.Rune);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_Destroy")]
 	internal static void /* System.Void */ System_Text_Rune_Destroy(void* /* System.Text.Rune */ __self)
 	{
@@ -45102,6 +45874,16 @@ internal unsafe class System_Globalization_SortKey
 		}
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_SortKey_TypeOf")]
+	internal static void* /* System.Type */ System_Globalization_SortKey_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Globalization.SortKey);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_SortKey_Destroy")]
@@ -45298,6 +46080,16 @@ internal unsafe class System_Globalization_SortVersion
 		}
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_SortVersion_TypeOf")]
+	internal static void* /* System.Type */ System_Globalization_SortVersion_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Globalization.SortVersion);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_SortVersion_Destroy")]
@@ -45927,6 +46719,16 @@ internal unsafe class System_Globalization_TextInfo
 		}
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_TextInfo_TypeOf")]
+	internal static void* /* System.Type */ System_Globalization_TextInfo_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Globalization.TextInfo);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_TextInfo_Destroy")]
@@ -47514,6 +48316,16 @@ internal unsafe class System_Globalization_NumberFormatInfo
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_TypeOf")]
+	internal static void* /* System.Type */ System_Globalization_NumberFormatInfo_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Globalization.NumberFormatInfo);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_Destroy")]
 	internal static void /* System.Void */ System_Globalization_NumberFormatInfo_Destroy(void* /* System.Globalization.NumberFormatInfo */ __self)
 	{
@@ -48952,6 +49764,16 @@ internal unsafe class System_Globalization_DateTimeFormatInfo
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_TypeOf")]
+	internal static void* /* System.Type */ System_Globalization_DateTimeFormatInfo_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Globalization.DateTimeFormatInfo);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_Destroy")]
 	internal static void /* System.Void */ System_Globalization_DateTimeFormatInfo_Destroy(void* /* System.Globalization.DateTimeFormatInfo */ __self)
 	{
@@ -49114,6 +49936,16 @@ internal unsafe class System_CharEnumerator
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_CharEnumerator_TypeOf")]
+	internal static void* /* System.Type */ System_CharEnumerator_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.CharEnumerator);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_CharEnumerator_Destroy")]
 	internal static void /* System.Void */ System_CharEnumerator_Destroy(void* /* System.CharEnumerator */ __self)
 	{
@@ -49221,6 +50053,16 @@ internal unsafe class System_Text_StringRuneEnumerator
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringRuneEnumerator_TypeOf")]
+	internal static void* /* System.Type */ System_Text_StringRuneEnumerator_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Text.StringRuneEnumerator);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringRuneEnumerator_Destroy")]
 	internal static void /* System.Void */ System_Text_StringRuneEnumerator_Destroy(void* /* System.Text.StringRuneEnumerator */ __self)
 	{
@@ -49291,6 +50133,16 @@ internal unsafe class System_Text_CompositeFormat
 		}
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_CompositeFormat_TypeOf")]
+	internal static void* /* System.Type */ System_Text_CompositeFormat_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Text.CompositeFormat);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_CompositeFormat_Destroy")]
@@ -50512,6 +51364,16 @@ internal unsafe class System_Text_Encoding
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_Encoding_TypeOf")]
+	internal static void* /* System.Type */ System_Text_Encoding_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Text.Encoding);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Encoding_Destroy")]
 	internal static void /* System.Void */ System_Text_Encoding_Destroy(void* /* System.Text.Encoding */ __self)
 	{
@@ -50657,6 +51519,16 @@ internal unsafe class System_Text_EncodingProvider
 
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_EncodingProvider_TypeOf")]
+	internal static void* /* System.Type */ System_Text_EncodingProvider_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Text.EncodingProvider);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_EncodingProvider_Destroy")]
 	internal static void /* System.Void */ System_Text_EncodingProvider_Destroy(void* /* System.Text.EncodingProvider */ __self)
 	{
@@ -50782,6 +51654,16 @@ internal unsafe class System_Text_EncoderFallback
 		}
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_EncoderFallback_TypeOf")]
+	internal static void* /* System.Type */ System_Text_EncoderFallback_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Text.EncoderFallback);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_EncoderFallback_Destroy")]
@@ -50979,6 +51861,16 @@ internal unsafe class System_Text_EncoderFallbackBuffer
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_EncoderFallbackBuffer_TypeOf")]
+	internal static void* /* System.Type */ System_Text_EncoderFallbackBuffer_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Text.EncoderFallbackBuffer);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_EncoderFallbackBuffer_Destroy")]
 	internal static void /* System.Void */ System_Text_EncoderFallbackBuffer_Destroy(void* /* System.Text.EncoderFallbackBuffer */ __self)
 	{
@@ -51104,6 +51996,16 @@ internal unsafe class System_Text_DecoderFallback
 		}
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_DecoderFallback_TypeOf")]
+	internal static void* /* System.Type */ System_Text_DecoderFallback_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Text.DecoderFallback);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_DecoderFallback_Destroy")]
@@ -51239,6 +52141,16 @@ internal unsafe class System_Text_DecoderFallbackBuffer
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_DecoderFallbackBuffer_TypeOf")]
+	internal static void* /* System.Type */ System_Text_DecoderFallbackBuffer_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Text.DecoderFallbackBuffer);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_DecoderFallbackBuffer_Destroy")]
 	internal static void /* System.Void */ System_Text_DecoderFallbackBuffer_Destroy(void* /* System.Text.DecoderFallbackBuffer */ __self)
 	{
@@ -51371,6 +52283,16 @@ internal unsafe class System_Text_Decoder
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_Decoder_TypeOf")]
+	internal static void* /* System.Type */ System_Text_Decoder_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Text.Decoder);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Decoder_Destroy")]
 	internal static void /* System.Void */ System_Text_Decoder_Destroy(void* /* System.Text.Decoder */ __self)
 	{
@@ -51501,6 +52423,16 @@ internal unsafe class System_Text_Encoder
 		}
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_Encoder_TypeOf")]
+	internal static void* /* System.Type */ System_Text_Encoder_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Text.Encoder);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Encoder_Destroy")]
@@ -51684,6 +52616,16 @@ internal unsafe class System_Runtime_InteropServices_StructLayoutAttribute
 		__selfConverted.CharSet = __value;
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_StructLayoutAttribute_TypeOf")]
+	internal static void* /* System.Type */ System_Runtime_InteropServices_StructLayoutAttribute_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Runtime.InteropServices.StructLayoutAttribute);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_StructLayoutAttribute_Destroy")]
@@ -52296,6 +53238,16 @@ internal unsafe class System_Attribute
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Attribute_TypeOf")]
+	internal static void* /* System.Type */ System_Attribute_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Attribute);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Attribute_Destroy")]
 	internal static void /* System.Void */ System_Attribute_Destroy(void* /* System.Attribute */ __self)
 	{
@@ -52424,6 +53376,16 @@ internal unsafe class System_Reflection_ConstructorInfo
 		return _returnValueNative;
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ConstructorInfo_TypeOf")]
+	internal static void* /* System.Type */ System_Reflection_ConstructorInfo_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Reflection.ConstructorInfo);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ConstructorInfo_Destroy")]
@@ -53004,6 +53966,16 @@ internal unsafe class System_Reflection_EventInfo
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_EventInfo_TypeOf")]
+	internal static void* /* System.Type */ System_Reflection_EventInfo_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Reflection.EventInfo);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_EventInfo_Destroy")]
 	internal static void /* System.Void */ System_Reflection_EventInfo_Destroy(void* /* System.Reflection.EventInfo */ __self)
 	{
@@ -53076,6 +54048,16 @@ internal unsafe class System_Reflection_InterfaceMapping
 		__selfConverted.InterfaceType = InteropUtils.GetInstance<System.Type>(__value);
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_InterfaceMapping_TypeOf")]
+	internal static void* /* System.Type */ System_Reflection_InterfaceMapping_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Reflection.InterfaceMapping);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_InterfaceMapping_Destroy")]
@@ -53327,6 +54309,16 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Address
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Address_TypeOf")]
+	internal static void* /* System.Type */ NativeAOT_CodeGeneratorInputSample_Address_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(NativeAOT.CodeGeneratorInputSample.Address);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Address_Destroy")]
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Address_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.Address */ __self)
 	{
@@ -53516,6 +54508,16 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_IAnimal
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_IAnimal_TypeOf")]
+	internal static void* /* System.Type */ NativeAOT_CodeGeneratorInputSample_IAnimal_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(NativeAOT.CodeGeneratorInputSample.IAnimal);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_IAnimal_Destroy")]
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_IAnimal_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.IAnimal */ __self)
 	{
@@ -53591,6 +54593,16 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_AnimalFactory
 		return _returnValueNative;
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_AnimalFactory_TypeOf")]
+	internal static void* /* System.Type */ NativeAOT_CodeGeneratorInputSample_AnimalFactory_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(NativeAOT.CodeGeneratorInputSample.AnimalFactory);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_AnimalFactory_Destroy")]
@@ -53670,6 +54682,16 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_BaseAnimal
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_BaseAnimal_TypeOf")]
+	internal static void* /* System.Type */ NativeAOT_CodeGeneratorInputSample_BaseAnimal_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(NativeAOT.CodeGeneratorInputSample.BaseAnimal);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_BaseAnimal_Destroy")]
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_BaseAnimal_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.BaseAnimal */ __self)
 	{
@@ -53726,6 +54748,16 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Cat
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Cat_TypeOf")]
+	internal static void* /* System.Type */ NativeAOT_CodeGeneratorInputSample_Cat_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(NativeAOT.CodeGeneratorInputSample.Cat);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Cat_Destroy")]
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Cat_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.Cat */ __self)
 	{
@@ -53780,6 +54812,16 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Dog
 		return _returnValueNative;
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Dog_TypeOf")]
+	internal static void* /* System.Type */ NativeAOT_CodeGeneratorInputSample_Dog_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(NativeAOT.CodeGeneratorInputSample.Dog);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Dog_Destroy")]
@@ -53851,6 +54893,16 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_GenericAnimal
 		}
 	}
 	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericAnimal_TypeOf")]
+	internal static void* /* System.Type */ NativeAOT_CodeGeneratorInputSample_GenericAnimal_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(NativeAOT.CodeGeneratorInputSample.GenericAnimal);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericAnimal_Destroy")]
@@ -54544,6 +55596,16 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Person
 	
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_TypeOf")]
+	internal static void* /* System.Type */ NativeAOT_CodeGeneratorInputSample_Person_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(NativeAOT.CodeGeneratorInputSample.Person);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_Destroy")]
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Person_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.Person */ __self)
 	{
@@ -54684,6 +55746,16 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Person_Extensions
 	        }
 	
 		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_Extensions_TypeOf")]
+	internal static void* /* System.Type */ NativeAOT_CodeGeneratorInputSample_Person_Extensions_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(NativeAOT.CodeGeneratorInputSample.Person_Extensions);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
 	}
 	
 
@@ -54927,6 +55999,16 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_TestClass
 	
 			return null;
 		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_TypeOf")]
+	internal static void* /* System.Type */ NativeAOT_CodeGeneratorInputSample_TestClass_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(NativeAOT.CodeGeneratorInputSample.TestClass);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
 	}
 	
 
@@ -55211,6 +56293,16 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Transformer
 	
 			return -1;
 		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Transformer_TypeOf")]
+	internal static void* /* System.Type */ NativeAOT_CodeGeneratorInputSample_Transformer_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(NativeAOT.CodeGeneratorInputSample.Transformer);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
 	}
 	
 

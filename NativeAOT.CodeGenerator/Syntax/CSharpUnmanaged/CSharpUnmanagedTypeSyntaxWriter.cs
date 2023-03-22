@@ -21,6 +21,7 @@ public class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITyp
     };
 
     private CSharpUnmanagedDestructorSyntaxWriter m_destructorSyntaxWriter = new();
+    private CSharpUnmanagedTypeOfSyntaxWriter m_typeOfSyntaxWriter = new();
 
     public CSharpUnmanagedTypeSyntaxWriter(Settings settings)
     {
@@ -127,6 +128,12 @@ public class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITyp
 
             sb.AppendLine(memberCode);
         }
+        
+        WriteTypeOf(
+            type,
+            sb,
+            state
+        );
         
         WriteDestructor(
             type,
@@ -414,25 +421,46 @@ public class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITyp
         );
     }
 
+    private void WriteTypeOf(
+        Type type,
+        StringBuilder sb,
+        State state
+    )
+    {
+        ICSharpUnmanagedSyntaxWriter? syntaxWriter = GetSyntaxWriter(
+            MemberKind.TypeOf,
+            MemberTypes.Custom
+        );
+
+        if (syntaxWriter == null) {
+            throw new Exception("No typeOf syntax writer");
+        }
+
+        string code = syntaxWriter.Write(type, state)
+            .IndentAllLines(1);
+
+        sb.AppendLine(code);
+    }
+    
     private void WriteDestructor(
         Type type,
         StringBuilder sb,
         State state
     )
     {
-        ICSharpUnmanagedSyntaxWriter? destructorSyntaxWriter = GetSyntaxWriter(
+        ICSharpUnmanagedSyntaxWriter? syntaxWriter = GetSyntaxWriter(
             MemberKind.Destructor,
             MemberTypes.Custom
         );
 
-        if (destructorSyntaxWriter == null) {
+        if (syntaxWriter == null) {
             throw new Exception("No destructor syntax writer");
         }
 
-        string destructorCode = destructorSyntaxWriter.Write(type, state)
+        string code = syntaxWriter.Write(type, state)
             .IndentAllLines(1);
 
-        sb.AppendLine(destructorCode);
+        sb.AppendLine(code);
     }
 
     private ICSharpUnmanagedSyntaxWriter? GetSyntaxWriter(
@@ -442,6 +470,8 @@ public class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITyp
     {
         if (memberKind == MemberKind.Destructor) {
             return m_destructorSyntaxWriter;
+        } else if (memberKind == MemberKind.TypeOf) {
+            return m_typeOfSyntaxWriter;
         }
 
         m_syntaxWriters.TryGetValue(

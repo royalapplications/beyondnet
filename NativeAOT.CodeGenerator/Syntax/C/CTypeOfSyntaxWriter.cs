@@ -6,7 +6,7 @@ using NativeAOT.CodeGenerator.Types;
 
 namespace NativeAOT.CodeGenerator.Syntax.C;
 
-public class CDestructorSyntaxWriter: CMethodSyntaxWriter, IDestructorSyntaxWriter
+public class CTypeOfSyntaxWriter: CMethodSyntaxWriter, ITypeOfSyntaxWriter
 {
     public new string Write(object @object, State state)
     {
@@ -23,17 +23,17 @@ public class CDestructorSyntaxWriter: CMethodSyntaxWriter, IDestructorSyntaxWrit
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
-        GeneratedMember cSharpGeneratedMember = cSharpUnmanagedResult.GetGeneratedDestructor(type) ?? throw new Exception("No C# generated destructor");
+        GeneratedMember cSharpGeneratedMember = cSharpUnmanagedResult.GetGeneratedTypeOf(type) ?? throw new Exception("No C# generated typeOf");
 
         bool mayThrow = cSharpGeneratedMember.MayThrow;
 
         string code = WriteMethod(
             null,
-            MemberKind.Destructor,
-            false,
+            MemberKind.TypeOf,
+            true,
             mayThrow,
             type,
-            typeof(void),
+            typeof(Type),
             Array.Empty<ParameterInfo>(),
             typeDescriptorRegistry,
             state
