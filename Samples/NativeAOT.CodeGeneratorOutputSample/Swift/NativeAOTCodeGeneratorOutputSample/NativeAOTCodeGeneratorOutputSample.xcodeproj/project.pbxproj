@@ -26,6 +26,7 @@
 		E7F0CEB129C4B02D00E4C80A /* TransformerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F0CEB029C4B02D00E4C80A /* TransformerTests.swift */; };
 		E7F4A49229CB5F2A00D93D81 /* SystemObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F4A49129CB5F2A00D93D81 /* SystemObjectTests.swift */; };
 		E7F4A49429CB676100D93D81 /* SystemExceptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F4A49329CB676100D93D81 /* SystemExceptionTests.swift */; };
+		E7F4A49629CB68FE00D93D81 /* SystemEnumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F4A49529CB68FE00D93D81 /* SystemEnumTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		E7F0CEB029C4B02D00E4C80A /* TransformerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerTests.swift; sourceTree = "<group>"; };
 		E7F4A49129CB5F2A00D93D81 /* SystemObjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemObjectTests.swift; sourceTree = "<group>"; };
 		E7F4A49329CB676100D93D81 /* SystemExceptionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemExceptionTests.swift; sourceTree = "<group>"; };
+		E7F4A49529CB68FE00D93D81 /* SystemEnumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemEnumTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 				E7C8CF0A29C1FE5800C4230F /* SystemArrayTests.swift */,
 				E7F4A49129CB5F2A00D93D81 /* SystemObjectTests.swift */,
 				E7F4A49329CB676100D93D81 /* SystemExceptionTests.swift */,
+				E7F4A49529CB68FE00D93D81 /* SystemEnumTests.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				E7F4A49429CB676100D93D81 /* SystemExceptionTests.swift in Sources */,
 				E7C8CF0529C1FA9500C4230F /* SystemGuidTests.swift in Sources */,
 				E7C8CF0929C1FB0800C4230F /* SystemDateTimeTests.swift in Sources */,
+				E7F4A49629CB68FE00D93D81 /* SystemEnumTests.swift in Sources */,
 				E7C8CF0729C1FABA00C4230F /* StringTests.swift in Sources */,
 				E7EB338629C8879100392F3D /* AddressTests.swift in Sources */,
 				E7F4A49229CB5F2A00D93D81 /* SystemObjectTests.swift in Sources */,
