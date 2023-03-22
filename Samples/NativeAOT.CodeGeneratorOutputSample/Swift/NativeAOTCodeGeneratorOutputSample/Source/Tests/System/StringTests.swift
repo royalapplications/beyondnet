@@ -11,6 +11,8 @@ final class StringTests: XCTestCase {
             return
         }
         
+        defer { emptyStringC.deallocate() }
+        
         let emptyString = String(cString: emptyStringC)
         XCTAssertTrue(emptyString.isEmpty)
         

@@ -7,15 +7,32 @@ final class SystemTypeTests: XCTestCase {
 		
 		let systemObjectTypeName = "System.Object"
 		
-		guard let systemObjectType = System_Type_GetType2(systemObjectTypeName,
-														  &exception),
+        guard let systemObjectType = System_Object_TypeOf() else {
+            XCTFail("typeof(System.Object) should return an instance")
+            
+            return
+        }
+        
+        defer { System_Type_Destroy(systemObjectType) }
+        
+        guard let systemObjectTypeViaName = System_Type_GetType2(systemObjectTypeName,
+                                                                 &exception),
 			  exception == nil else {
 			XCTFail("System.Type.GetType should not throw and return an instance of System.Type")
 			
 			return
 		}
 		
-		defer { System_Type_Destroy(systemObjectType) }
+		defer { System_Type_Destroy(systemObjectTypeViaName) }
+        
+        guard System_Object_Equals(systemObjectType,
+                                   systemObjectTypeViaName,
+                                   &exception) == .yes,
+              exception == nil else {
+            XCTFail("System.Object.Equals should not throw and return true")
+            
+            return
+        }
 		
 		guard let retrievedSystemObjectTypeNameC = System_Type_FullName_Get(systemObjectType,
 																			&exception),

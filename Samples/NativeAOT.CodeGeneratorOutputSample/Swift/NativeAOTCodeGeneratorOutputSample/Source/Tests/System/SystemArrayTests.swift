@@ -12,6 +12,8 @@ final class SystemArrayTests: XCTestCase {
             return
         }
         
+        defer { System_DateTime_Destroy(now) }
+        
         guard let dateTimeType = System_Object_GetType(now,
                                                        &exception),
               exception == nil else {
@@ -19,6 +21,8 @@ final class SystemArrayTests: XCTestCase {
             
             return
         }
+        
+        defer { System_Type_Destroy(dateTimeType) }
         
         let arrayLength: Int32 = 1
         
@@ -30,6 +34,8 @@ final class SystemArrayTests: XCTestCase {
             
             return
         }
+        
+        defer { System_Array_Destroy(arrayOfDateTime) }
         
         let index: Int32 = 0
         
@@ -49,12 +55,13 @@ final class SystemArrayTests: XCTestCase {
             return
         }
         
+        defer { System_Object_Destroy(retrievedNow) }
+        
         let equals = System_Object_Equals(now,
                                           retrievedNow,
-                                          &exception)
+                                          &exception) == .yes
         
         XCTAssertNil(exception)
-        
-        XCTAssertTrue(equals == .yes)
+        XCTAssertTrue(equals)
     }
 }

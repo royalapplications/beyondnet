@@ -5,8 +5,6 @@ final class SystemObjectTests: XCTestCase {
     func testSystemObject() {
         var exception: System_Exception_t?
         
-        let systemObjectTypeName = "System.Object"
-        
         guard let systemObjectType = System_Object_TypeOf() else {
             XCTFail("typeof(System.Object should return an instance")
             

@@ -68,6 +68,8 @@ final class SystemGuidTests: XCTestCase {
             return
         }
         
+        defer { System_Type_Destroy(guidType) }
+        
         let guidTypeFromInstance = System_Object_GetType(guid,
                                                          &exception)
         
@@ -77,6 +79,8 @@ final class SystemGuidTests: XCTestCase {
             
             return
         }
+        
+        defer { System_Type_Destroy(guidTypeFromInstance) }
         
         let equals = System_Object_Equals(guidType,
                                           guidTypeFromInstance,
@@ -96,6 +100,8 @@ final class SystemGuidTests: XCTestCase {
             return
         }
         
+        defer { System_Guid_Destroy(emptyGuid) }
+        
         guard let emptyGuidStringC = System_Guid_ToString(emptyGuid,
                                                           &exception),
               exception == nil else {
@@ -104,9 +110,9 @@ final class SystemGuidTests: XCTestCase {
             return
         }
         
-        let emptyGuidString = String(cString: emptyGuidStringC)
+        defer { emptyGuidStringC.deallocate() }
         
-        emptyGuidStringC.deallocate()
+        let emptyGuidString = String(cString: emptyGuidStringC)
         
         XCTAssertEqual("00000000-0000-0000-0000-000000000000", emptyGuidString)
     }
