@@ -1,5 +1,5 @@
-// Number of generated types: 185
-// Number of generated members: 2020
+// Number of generated types: 186
+// Number of generated members: 2021
 
 // <Header>
 using System;
@@ -55569,6 +55569,9 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Person
 	
 	
 
+	// TODO (Event): NumberOfChildrenChanged
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_DEFAULT_AGE_Get")]
 	internal static int /* System.Int32 */ NativeAOT_CodeGeneratorInputSample_Person_DEFAULT_AGE_Get()
 	{
@@ -55608,6 +55611,112 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Person
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_Destroy")]
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Person_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.Person */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+
+}
+
+
+internal unsafe class NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate
+{
+	public void* Context { get; }
+	public delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> CFunction { get; }
+	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
+
+	private NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate(void* context, delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	{
+		Context = context;
+		CFunction = cFunction;
+		CDestructorFunction = cDestructorFunction;
+	}
+
+	~NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate()
+	{
+		if (CDestructorFunction is null) {
+			return;
+		}
+
+		CDestructorFunction(Context);
+	}
+
+	internal NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate? CreateTrampoline()
+	{
+		if (CFunction is null) {
+			return null;
+		}
+
+		System.Type typeOfSelf = typeof(NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate);
+		string nameOfInvocationMethod = nameof(__InvokeByCallingCFunction);
+		System.Reflection.BindingFlags bindingFlags = System.Reflection.BindingFlags.Instance | BindingFlags.NonPublic;
+		System.Reflection.MethodInfo? invocationMethod = typeOfSelf.GetMethod(nameOfInvocationMethod, bindingFlags);
+
+		if (invocationMethod is null) {
+			throw new Exception("Failed to retrieve delegate invocation method");
+		}
+
+		NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate trampoline = (NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate)System.Delegate.CreateDelegate(typeof(NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate), this, invocationMethod);
+
+		return trampoline;
+	}
+
+	private void __InvokeByCallingCFunction()
+	{
+	
+
+
+		CFunction(Context);
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_Create")]
+	public static void* Create(void* context, delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	{
+		var self = new NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate(context, cFunction, cDestructorFunction);
+		void* selfHandle = self.AllocateGCHandleAndGetAddress();
+
+		return selfHandle;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_Context_Get")]
+	public static void* Context_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate>(self);
+
+		return selfConverted.Context;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_CFunction_Get")]
+	public static delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> CFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate>(self);
+
+		return selfConverted.CFunction;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_CDestructorFunction_Get")]
+	public static delegate* unmanaged<void*, void> CDestructorFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate>(self);
+
+		return selfConverted.CDestructorFunction;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_Destroy")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate */ __self)
 	{
 	
 		InteropUtils.FreeIfAllocated(__self);

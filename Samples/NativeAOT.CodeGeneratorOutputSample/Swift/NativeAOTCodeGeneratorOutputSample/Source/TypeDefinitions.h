@@ -1,5 +1,5 @@
-// Number of generated types: 185
-// Number of generated members: 2020
+// Number of generated types: 186
+// Number of generated members: 2021
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -945,6 +945,15 @@ typedef void (*NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_CDestruc
 typedef NativeAOT_CodeGeneratorInputSample_IAnimal_t (*NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_CFunction_t)(
 	void* context,
 	CString animalName
+);
+
+
+typedef void* NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_t;
+typedef void (*NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_CDestructorFunction_t)(void* context);
+
+typedef void (*NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_CFunction_t)(
+	void* context
+	
 );
 
 
@@ -14844,6 +14853,36 @@ NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Destroy(
 );
 
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate
+
+#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate
+NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate */
+NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_Create(
+	void* context,
+	NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_CFunction_t function,
+	NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_CDestructorFunction_t destructorFunction
+);
+
+void*
+NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_Context_Get(
+	NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate */ self
+);
+
+NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_CFunction_t
+NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_CFunction_Get(
+	NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate */ self
+);
+
+NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_CDestructorFunction_t
+NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_CDestructorFunction_Get(
+	NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate */ self
+);
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_Destroy(
+	NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate */ self
+);
+
+#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate
 NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate */

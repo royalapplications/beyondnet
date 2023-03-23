@@ -21,12 +21,15 @@ public class Person
         }
     }
 
+    public event NumberOfChildrenChangedDelegate? NumberOfChildrenChanged;
+    
     public NiceLevels NiceLevel { get; set; } = NiceLevels.Nice;
 
     public string FullName => $"{FirstName} {LastName}";
     #endregion Properties
 
     #region Delegate Types
+    public delegate void NumberOfChildrenChangedDelegate();
     public delegate int NewAgeProviderDelegate();
     #endregion Delegate Types
 
@@ -86,6 +89,8 @@ public class Person
         children.Add(child);
 
         Children = children.ToArray();
+        
+        NumberOfChildrenChanged?.Invoke();
     }
     
     public void RemoveChild(Person child)
@@ -99,6 +104,8 @@ public class Person
         children.Remove(child);
 
         Children = children.ToArray();
+        
+        NumberOfChildrenChanged?.Invoke();
     }
     
     public void RemoveChildAt(int index)
@@ -108,6 +115,8 @@ public class Person
         children.RemoveAt(index);
 
         Children = children.ToArray();
+        
+        NumberOfChildrenChanged?.Invoke();
     }
 
     public int NumberOfChildren
