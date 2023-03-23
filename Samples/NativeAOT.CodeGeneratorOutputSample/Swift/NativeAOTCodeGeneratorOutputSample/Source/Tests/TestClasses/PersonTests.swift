@@ -567,4 +567,69 @@ final class PersonTests: XCTestCase {
 		let retrievedCity = String(cString: retrievedCityC)
 		XCTAssertEqual(city, retrievedCity)
 	}
+    
+    func testPersonEvents() {
+        var exception: System_Exception_t?
+        
+        guard let mother = NativeAOT_CodeGeneratorInputSample_Person_Create("Johanna",
+                                                                            "Doe",
+                                                                            40,
+                                                                            &exception),
+              exception == nil else {
+            XCTFail("Person ctor should not throw and return an instance")
+            
+            return
+        }
+        
+        defer { NativeAOT_CodeGeneratorInputSample_Person_Destroy(mother) }
+        
+        let numberOfChildrenChangedHandler: NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_CFunction_t = { _ in
+            print("Number of children changed")
+            
+            // TODO: Must notify test that this was called so will need context
+        }
+        
+        guard let numberOfChildrenChangedDelegate = NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_Create(nil,
+                                                                                                                                     numberOfChildrenChangedHandler,                                                    nil) else {
+            XCTFail("Number of children changed delegate ctor should return an instance")
+            
+            return
+        }
+        
+        NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChanged_Add(mother,
+                                                                              numberOfChildrenChangedDelegate)
+        
+        guard let son = NativeAOT_CodeGeneratorInputSample_Person_Create("Max",
+                                                                         "Doe",
+                                                                         4,
+                                                                         &exception),
+              exception == nil else {
+            XCTFail("Person ctor should not throw and return an instance")
+            
+            return
+        }
+        
+        defer { NativeAOT_CodeGeneratorInputSample_Person_Destroy(son) }
+        
+        NativeAOT_CodeGeneratorInputSample_Person_AddChild(mother,
+                                                           son,
+                                                           &exception)
+        
+        guard exception == nil else {
+            XCTFail("Person.AddChild should not throw")
+            
+            return
+        }
+        
+        let numberOfChildren = NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildren_Get(mother,
+                                                                                              &exception)
+        
+        guard exception == nil else {
+            XCTFail("Person.NumberOfChildren should not throw")
+            
+            return
+        }
+        
+        XCTAssertEqual(1, numberOfChildren)
+    }
 }

@@ -26,7 +26,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
 
         bool isStaticMethod = method.IsStatic;
 
-        Type declaringType = method.DeclaringType ?? throw new Exception("No declaring type");;
+        Type declaringType = method.DeclaringType ?? throw new Exception("No declaring type");
         Type returnType = method.ReturnType;
         IEnumerable<ParameterInfo> parameters = method.GetParameters();
 
@@ -51,7 +51,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         bool isStaticMethod,
         bool mayThrow,
         Type declaringType,
-        Type returnOrSetterType,
+        Type returnOrSetterOrEventHandlerType,
         IEnumerable<ParameterInfo> parameters,
         TypeDescriptorRegistry typeDescriptorRegistry,
         State state
@@ -66,9 +66,11 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
         GeneratedMember cSharpGeneratedMember;
 
-        if (memberInfo != null) {
+        if (memberInfo is not null) {
             if (memberKind == MemberKind.FieldGetter ||
-                memberKind == MemberKind.FieldSetter) {
+                memberKind == MemberKind.FieldSetter ||
+                memberKind == MemberKind.EventHandlerAdder ||
+                memberKind == MemberKind.EventHandlerRemover) {
                 cSharpGeneratedMember = cSharpUnmanagedResult.GetGeneratedMember(memberInfo, memberKind) ?? throw new Exception("No C# generated member");
             } else {
                 cSharpGeneratedMember = cSharpUnmanagedResult.GetGeneratedMember(memberInfo) ?? throw new Exception("No C# generated member");
@@ -91,17 +93,19 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             CodeLanguage.C
         );
         
-        TypeDescriptor returnOrSetterTypeDescriptor = returnOrSetterType.GetTypeDescriptor(typeDescriptorRegistry);
+        TypeDescriptor returnOrSetterTypeDescriptor = returnOrSetterOrEventHandlerType.GetTypeDescriptor(typeDescriptorRegistry);
         string cReturnOrSetterTypeName = returnOrSetterTypeDescriptor.GetTypeName(CodeLanguage.C, true);
         string cReturnOrSetterTypeNameWithComment;
         Type? setterType;
         
         if (memberKind == MemberKind.PropertySetter ||
-            memberKind == MemberKind.FieldSetter) {
+            memberKind == MemberKind.FieldSetter ||
+            memberKind == MemberKind.EventHandlerAdder ||
+            memberKind == MemberKind.EventHandlerRemover) {
             cReturnOrSetterTypeNameWithComment = "void /* System.Void */";
-            setterType = returnOrSetterType;
+            setterType = returnOrSetterOrEventHandlerType;
         } else {
-            cReturnOrSetterTypeNameWithComment = $"{cReturnOrSetterTypeName} /* {returnOrSetterType.GetFullNameOrName()} */";
+            cReturnOrSetterTypeNameWithComment = $"{cReturnOrSetterTypeName} /* {returnOrSetterOrEventHandlerType.GetFullNameOrName()} */";
             setterType = null;
         }
         
@@ -124,7 +128,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
     
     protected string WriteParameters(
         MemberKind memberKind,
-        Type? setterType,
+        Type? setterOrEventHandlerType,
         bool mayThrow,
         bool isStatic,
         Type declaringType,
@@ -144,15 +148,17 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         }
 
         if (memberKind == MemberKind.PropertySetter ||
-            memberKind == MemberKind.FieldSetter) {
-            if (setterType == null) {
-                throw new Exception("Setter Type may not be null");
+            memberKind == MemberKind.FieldSetter ||
+            memberKind == MemberKind.EventHandlerAdder ||
+            memberKind == MemberKind.EventHandlerRemover) {
+            if (setterOrEventHandlerType == null) {
+                throw new Exception("Setter or Event Handler Type may not be null");
             }
             
-            TypeDescriptor setterTypeDescriptor = setterType.GetTypeDescriptor(typeDescriptorRegistry);
-            string cSetterTypeName = setterTypeDescriptor.GetTypeName(CodeLanguage.C, true);
+            TypeDescriptor setterOrEventHandlerTypeDescriptor = setterOrEventHandlerType.GetTypeDescriptor(typeDescriptorRegistry);
+            string cSetterOrEventHandlerTypeName = setterOrEventHandlerTypeDescriptor.GetTypeName(CodeLanguage.C, true);
     
-            string parameterString = $"{cSetterTypeName} /* {setterType.GetFullNameOrName()} */ value";
+            string parameterString = $"{cSetterOrEventHandlerTypeName} /* {setterOrEventHandlerType.GetFullNameOrName()} */ value";
             parameterList.Add(parameterString);
         } else {
             foreach (var parameter in parameters) {
