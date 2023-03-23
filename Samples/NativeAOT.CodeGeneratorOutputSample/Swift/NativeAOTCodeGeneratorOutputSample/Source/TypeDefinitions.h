@@ -1,5 +1,5 @@
 // Number of generated types: 186
-// Number of generated members: 2021
+// Number of generated members: 2025
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -4222,6 +4222,18 @@ System_Security_SecurityRuleSet /* System.Security.SecurityRuleSet */
 System_Reflection_Assembly_SecurityRuleSet_Get(
 	System_Reflection_Assembly_t /* System.Reflection.Assembly */ self,
 	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Reflection_Assembly_ModuleResolve_Add(
+	System_Reflection_Assembly_t /* System.Reflection.Assembly */ self,
+	System_Reflection_ModuleResolveEventHandler_t /* System.Reflection.ModuleResolveEventHandler */ value
+);
+
+void /* System.Void */
+System_Reflection_Assembly_ModuleResolve_Remove(
+	System_Reflection_Assembly_t /* System.Reflection.Assembly */ self,
+	System_Reflection_ModuleResolveEventHandler_t /* System.Reflection.ModuleResolveEventHandler */ value
 );
 
 System_Type_t /* System.Type */
@@ -14442,6 +14454,18 @@ int32_t /* System.Int32 */
 NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildren_Get(
 	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
 	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChanged_Add(
+	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
+	NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate */ value
+);
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChanged_Remove(
+	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
+	NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate */ value
 );
 
 int32_t /* System.Int32 */

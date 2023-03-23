@@ -1,5 +1,5 @@
 // Number of generated types: 186
-// Number of generated members: 2021
+// Number of generated members: 2025
 
 // <Header>
 using System;
@@ -13591,7 +13591,32 @@ internal unsafe class System_Reflection_Assembly
 	
 	
 
-	// TODO (Event): ModuleResolve
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Assembly_ModuleResolve_Add")]
+	internal static void /* System.Void */ System_Reflection_Assembly_ModuleResolve_Add(void* /* System.Reflection.Assembly */ __self, void* /* System.Reflection.ModuleResolveEventHandler */ __value)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.Assembly __selfConverted = InteropUtils.GetInstance<System.Reflection.Assembly>(__self);
+	
+	
+		__selfConverted.ModuleResolve += InteropUtils.GetInstance<System_Reflection_ModuleResolveEventHandler>(__value)?.CreateTrampoline();
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Assembly_ModuleResolve_Remove")]
+	internal static void /* System.Void */ System_Reflection_Assembly_ModuleResolve_Remove(void* /* System.Reflection.Assembly */ __self, void* /* System.Reflection.ModuleResolveEventHandler */ __value)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.Assembly __selfConverted = InteropUtils.GetInstance<System.Reflection.Assembly>(__self);
+	
+	
+		__selfConverted.ModuleResolve -= InteropUtils.GetInstance<System_Reflection_ModuleResolveEventHandler>(__value)?.CreateTrampoline();
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Assembly_TypeOf")]
@@ -55569,7 +55594,32 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Person
 	
 	
 
-	// TODO (Event): NumberOfChildrenChanged
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChanged_Add")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChanged_Add(void* /* NativeAOT.CodeGeneratorInputSample.Person */ __self, void* /* NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate */ __value)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.Person __selfConverted = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Person>(__self);
+	
+	
+		__selfConverted.NumberOfChildrenChanged += InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate>(__value)?.CreateTrampoline();
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChanged_Remove")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChanged_Remove(void* /* NativeAOT.CodeGeneratorInputSample.Person */ __self, void* /* NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate */ __value)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.Person __selfConverted = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Person>(__self);
+	
+	
+		__selfConverted.NumberOfChildrenChanged -= InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate>(__value)?.CreateTrampoline();
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_DEFAULT_AGE_Get")]

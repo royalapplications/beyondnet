@@ -15,5 +15,8 @@ public enum MemberKind
     PropertySetter,
     
     FieldGetter,
-    FieldSetter
+    FieldSetter,
+    
+    EventHandlerAdder,
+    EventHandlerRemover
 }

@@ -50,7 +50,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         bool isStaticMethod,
         bool mayThrow,
         Type declaringType,
-        Type returnOrSetterType,
+        Type returnOrSetterOrEventHandlerType,
         IEnumerable<ParameterInfo> parameters,
         TypeDescriptorRegistry typeDescriptorRegistry,
         State state
@@ -90,6 +90,12 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             case MemberKind.FieldSetter:
                 methodNameC = $"{fullTypeNameC}_{methodName}_Set";
                 break;
+            case MemberKind.EventHandlerAdder:
+                methodNameC = $"{fullTypeNameC}_{methodName}_Add";
+                break;
+            case MemberKind.EventHandlerRemover:
+                methodNameC = $"{fullTypeNameC}_{methodName}_Remove";
+                break;
             default:
                 throw new Exception("Unknown method kind");
         }
@@ -104,19 +110,21 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             CodeLanguage.CSharpUnmanaged
         );
 
-        Type? setterType;
+        Type? setterOrEventHandlerType;
 
         if (memberKind == MemberKind.PropertySetter ||
-            memberKind == MemberKind.FieldSetter) {
-            setterType = returnOrSetterType;
+            memberKind == MemberKind.FieldSetter ||
+            memberKind == MemberKind.EventHandlerAdder ||
+            memberKind == MemberKind.EventHandlerRemover) {
+            setterOrEventHandlerType = returnOrSetterOrEventHandlerType;
         } else {
-            setterType = null;
+            setterOrEventHandlerType = null;
         }
 
         string methodSignatureParameters = WriteParameters(
             CodeLanguage.CSharpUnmanaged,
             memberKind,
-            setterType,
+            setterOrEventHandlerType,
             mayThrow,
             isStaticMethod,
             declaringType,
@@ -125,21 +133,23 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             typeDescriptorRegistry
         );
         
-        TypeDescriptor returnOrSetterTypeDescriptor = returnOrSetterType.GetTypeDescriptor(typeDescriptorRegistry);
-        string unmanagedReturnOrSetterTypeName = returnOrSetterTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
-        string unmanagedReturnOrSetterTypeNameWithComment;
+        TypeDescriptor returnOrSetterOrEventHandlerTypeDescriptor = returnOrSetterOrEventHandlerType.GetTypeDescriptor(typeDescriptorRegistry);
+        string unmanagedReturnOrSetterOrEventHandlerTypeName = returnOrSetterOrEventHandlerTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
+        string unmanagedReturnOrSetterOrEventHandlerTypeNameWithComment;
 
         if (memberKind == MemberKind.PropertySetter ||
-            memberKind == MemberKind.FieldSetter) {
-            unmanagedReturnOrSetterTypeNameWithComment = "void /* System.Void */";
+            memberKind == MemberKind.FieldSetter ||
+            memberKind == MemberKind.EventHandlerAdder ||
+            memberKind == MemberKind.EventHandlerRemover) {
+            unmanagedReturnOrSetterOrEventHandlerTypeNameWithComment = "void /* System.Void */";
         } else {
-            unmanagedReturnOrSetterTypeNameWithComment = $"{unmanagedReturnOrSetterTypeName} /* {returnOrSetterType.GetFullNameOrName()} */";
+            unmanagedReturnOrSetterOrEventHandlerTypeNameWithComment = $"{unmanagedReturnOrSetterOrEventHandlerTypeName} /* {returnOrSetterOrEventHandlerType.GetFullNameOrName()} */";
         }
         
         StringBuilder sb = new();
         
         sb.AppendLine($"[UnmanagedCallersOnly(EntryPoint = \"{methodNameC}\")]");
-        sb.AppendLine($"internal static {unmanagedReturnOrSetterTypeNameWithComment} {methodNameC}({methodSignatureParameters})");
+        sb.AppendLine($"internal static {unmanagedReturnOrSetterOrEventHandlerTypeNameWithComment} {methodNameC}({methodSignatureParameters})");
         sb.AppendLine("{");
 
         string? convertedSelfParameterName = null;
@@ -196,13 +206,15 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
         bool isReturning = memberKind != MemberKind.PropertySetter &&
                            memberKind != MemberKind.FieldSetter &&
-                           !returnOrSetterTypeDescriptor.IsVoid;
+                           memberKind != MemberKind.EventHandlerAdder &&
+                           memberKind != MemberKind.EventHandlerRemover &&
+                           !returnOrSetterOrEventHandlerTypeDescriptor.IsVoid;
 
         string returnValuePrefix = string.Empty;
         string returnValueName = "__returnValue";
 
         if (isReturning) {
-            returnValuePrefix = $"{returnOrSetterType.GetFullNameOrName()} {returnValueName} = ";
+            returnValuePrefix = $"{returnOrSetterOrEventHandlerType.GetFullNameOrName()} {returnValueName} = ";
         }
 
         string methodNameForInvocation;
@@ -221,6 +233,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                                           memberKind != MemberKind.PropertySetter &&
                                           memberKind != MemberKind.FieldGetter &&
                                           memberKind != MemberKind.FieldSetter &&
+                                          memberKind != MemberKind.EventHandlerAdder &&
+                                          memberKind != MemberKind.EventHandlerRemover &&
                                           memberKind != MemberKind.Destructor &&
                                           memberKind != MemberKind.TypeOf;
 
@@ -236,7 +250,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                    memberKind == MemberKind.FieldSetter) {
             string valueParamterName = "__value";
 
-            string? setterTypeConversion = returnOrSetterTypeDescriptor.GetTypeConversion(
+            string? setterTypeConversion = returnOrSetterOrEventHandlerTypeDescriptor.GetTypeConversion(
                 CodeLanguage.CSharpUnmanaged,
                 CodeLanguage.CSharp
             );
@@ -246,6 +260,24 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 : valueParamterName;
 
             methodInvocationSuffix = $" = {fullSetterTypeConversion}";
+        } else if (memberKind == MemberKind.EventHandlerAdder ||
+                   memberKind == MemberKind.EventHandlerRemover) {
+            string valueParamterName = "__value";
+            
+            string? eventHandlerTypeConversion = returnOrSetterOrEventHandlerTypeDescriptor.GetTypeConversion(
+                CodeLanguage.CSharpUnmanaged,
+                CodeLanguage.CSharp
+            );
+
+            string fullEventHandlerTypeConversion = eventHandlerTypeConversion != null
+                ? string.Format(eventHandlerTypeConversion, valueParamterName)
+                : valueParamterName;
+
+            if (memberKind == MemberKind.EventHandlerAdder) {
+                methodInvocationSuffix = $" += {fullEventHandlerTypeConversion}";
+            } else { // Remover
+                methodInvocationSuffix = $" -= {fullEventHandlerTypeConversion}";
+            }
         } else {
             methodInvocationSuffix = string.Empty;
         }
@@ -255,7 +287,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         string? convertedReturnValueName = null;
 
         if (isReturning) {
-            string? returnValueTypeConversion = returnOrSetterTypeDescriptor.GetTypeConversion(
+            string? returnValueTypeConversion = returnOrSetterOrEventHandlerTypeDescriptor.GetTypeConversion(
                 CodeLanguage.CSharp,
                 CodeLanguage.CSharpUnmanaged
             );
@@ -265,7 +297,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 
                 convertedReturnValueName = "_returnValueNative";
                 
-                sb.AppendLine($"{implPrefix}{returnOrSetterTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true)} {convertedReturnValueName} = {fullReturnValueTypeConversion};");
+                sb.AppendLine($"{implPrefix}{returnOrSetterOrEventHandlerTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true)} {convertedReturnValueName} = {fullReturnValueTypeConversion};");
             } else {
                 convertedReturnValueName = returnValueName;
             }
@@ -295,8 +327,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 """);
 
             if (isReturning) {
-                string returnValue = returnOrSetterTypeDescriptor.GetReturnValueOnException()
-                                     ?? $"default({returnOrSetterType.GetFullNameOrName()})";
+                string returnValue = returnOrSetterOrEventHandlerTypeDescriptor.GetReturnValueOnException()
+                                     ?? $"default({returnOrSetterOrEventHandlerType.GetFullNameOrName()})";
 
                 sb.AppendLine($"{implPrefix}return {returnValue};");
             }
@@ -354,7 +386,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
     internal static string WriteParameters(
         CodeLanguage targetLanguage,
         MemberKind memberKind,
-        Type? setterType,
+        Type? setterOrEventHandlerType,
         bool mayThrow,
         bool isStatic,
         Type declaringType,
@@ -384,15 +416,17 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         }
 
         if (memberKind == MemberKind.PropertySetter ||
-            memberKind == MemberKind.FieldSetter) {
-            if (setterType == null) {
-                throw new Exception("Setter Type may not be null");
+            memberKind == MemberKind.FieldSetter ||
+            memberKind == MemberKind.EventHandlerAdder ||
+            memberKind == MemberKind.EventHandlerRemover) {
+            if (setterOrEventHandlerType == null) {
+                throw new Exception("Setter or Event Handler Type may not be null");
             }
             
-            TypeDescriptor setterTypeDescriptor = setterType.GetTypeDescriptor(typeDescriptorRegistry);
-            string unmanagedSetterTypeName = setterTypeDescriptor.GetTypeName(targetLanguage, true);
+            TypeDescriptor setterOrEventHandlerTypeDescriptor = setterOrEventHandlerType.GetTypeDescriptor(typeDescriptorRegistry);
+            string unmanagedSetterOrEventHandlerTypeName = setterOrEventHandlerTypeDescriptor.GetTypeName(targetLanguage, true);
     
-            string parameterString = $"{unmanagedSetterTypeName} /* {setterType.GetFullNameOrName()} */ {parameterNamePrefix}__value{parameterNameSuffix}";
+            string parameterString = $"{unmanagedSetterOrEventHandlerTypeName} /* {setterOrEventHandlerType.GetFullNameOrName()} */ {parameterNamePrefix}__value{parameterNameSuffix}";
             parameterList.Add(parameterString);
         } else if (memberKind != MemberKind.Destructor) {
             foreach (var parameter in parameters) {
