@@ -291,7 +291,7 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         State state
     )
     {
-        string contextType = "void*";
+        string contextType = "const void*";
         string functionType = $"{cMemberNamePrefix}_CFunction_t";
         string destrutorFunctionType = $"{cMemberNamePrefix}_CDestructorFunction_t";
 

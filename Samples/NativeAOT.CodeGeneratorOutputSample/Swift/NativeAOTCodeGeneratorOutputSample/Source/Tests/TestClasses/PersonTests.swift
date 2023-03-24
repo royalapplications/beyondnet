@@ -583,14 +583,43 @@ final class PersonTests: XCTestCase {
         
         defer { NativeAOT_CodeGeneratorInputSample_Person_Destroy(mother) }
         
-        let numberOfChildrenChangedHandler: NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_CFunction_t = { _ in
-            print("Number of children changed")
-            
-            // TODO: Must notify test that this was called so will need context
+        var numberOfTimesNumberOfChildrenChangedWasCalled: Int32 = 0
+        
+        typealias NumberOfChildrenChangedDelegate_Closure = () -> Void
+        
+        let numberOfChildrenChangedHandlerSwift: NumberOfChildrenChangedDelegate_Closure = {
+            numberOfTimesNumberOfChildrenChangedWasCalled += 1
         }
         
-        guard let numberOfChildrenChangedDelegate = NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_Create(nil,
-                                                                                                                                     numberOfChildrenChangedHandler,                                                    nil) else {
+        let closureBox = NativeBox(numberOfChildrenChangedHandlerSwift)
+        
+        let context = closureBox.retainedPointer()
+        
+        let destructor: NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_CDestructorFunction_t = { innerContext in
+            guard let innerContext else {
+                XCTFail("Context is nil")
+                
+                return
+            }
+            
+            NativeBox<NumberOfChildrenChangedDelegate_Closure>.release(innerContext)
+        }
+        
+        let numberOfChildrenChangedHandler: NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_CFunction_t = { innerContext in
+            guard let innerContext else {
+                XCTFail("Context is nil")
+                
+                return
+            }
+            
+            let innerClosureBox = NativeBox<NumberOfChildrenChangedDelegate_Closure>.fromPointer(innerContext)
+            let closure = innerClosureBox.value
+            
+            closure()
+        }
+        
+        guard let numberOfChildrenChangedDelegate = NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_Create(context,
+                                                                                                                                     numberOfChildrenChangedHandler,                                                    destructor) else {
             XCTFail("Number of children changed delegate ctor should return an instance")
             
             return
@@ -621,6 +650,28 @@ final class PersonTests: XCTestCase {
             return
         }
         
+        guard let daugther = NativeAOT_CodeGeneratorInputSample_Person_Create("Marie",
+                                                                              "Doe",
+                                                                              10,
+                                                                              &exception),
+              exception == nil else {
+            XCTFail("Person ctor should not throw and return an instance")
+            
+            return
+        }
+        
+        defer { NativeAOT_CodeGeneratorInputSample_Person_Destroy(son) }
+        
+        NativeAOT_CodeGeneratorInputSample_Person_AddChild(mother,
+                                                           daugther,
+                                                           &exception)
+        
+        guard exception == nil else {
+            XCTFail("Person.AddChild should not throw")
+            
+            return
+        }
+        
         let numberOfChildren = NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildren_Get(mother,
                                                                                               &exception)
         
@@ -630,6 +681,41 @@ final class PersonTests: XCTestCase {
             return
         }
         
-        XCTAssertEqual(1, numberOfChildren)
+        let expectedNumberOfChildren: Int32 = 2
+        
+        XCTAssertEqual(expectedNumberOfChildren, numberOfChildren)
+        XCTAssertEqual(expectedNumberOfChildren, numberOfTimesNumberOfChildrenChangedWasCalled)
+        
+        NativeAOT_CodeGeneratorInputSample_Person_RemoveChild(mother,
+                                                              daugther,
+                                                              &exception)
+        
+        XCTAssertNil(exception)
+        
+        XCTAssertEqual(3, numberOfTimesNumberOfChildrenChangedWasCalled)
+        
+        NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChanged_Remove(mother,
+                                                                                 numberOfChildrenChangedDelegate)
+        
+        NativeAOT_CodeGeneratorInputSample_Person_RemoveChildAt(mother,
+                                                                0,
+                                                                &exception)
+        
+        XCTAssertNil(exception)
+        
+        XCTAssertEqual(3, numberOfTimesNumberOfChildrenChangedWasCalled)
+        
+        let numberOfChildrenAfterRemoval = NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildren_Get(mother,
+                                                                                                          &exception)
+        
+        guard exception == nil else {
+            XCTFail("Person.NumberOfChildren should not throw")
+            
+            return
+        }
+        
+        let expectedNumberOfChildrenAfterRemoval: Int32 = 0
+        
+        XCTAssertEqual(expectedNumberOfChildrenAfterRemoval, numberOfChildrenAfterRemoval)
     }
 }

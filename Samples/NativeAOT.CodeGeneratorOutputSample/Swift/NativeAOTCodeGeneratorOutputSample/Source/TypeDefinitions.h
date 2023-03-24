@@ -14611,12 +14611,12 @@ NativeAOT_CodeGeneratorInputSample_Transformer_Destroy(
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.MoveDelegate
 NativeAOT_CodeGeneratorInputSample_MoveDelegate_t /* NativeAOT.CodeGeneratorInputSample.MoveDelegate */
 NativeAOT_CodeGeneratorInputSample_MoveDelegate_Create(
-	void* context,
+	const void* context,
 	NativeAOT_CodeGeneratorInputSample_MoveDelegate_CFunction_t function,
 	NativeAOT_CodeGeneratorInputSample_MoveDelegate_CDestructorFunction_t destructorFunction
 );
 
-void*
+const void*
 NativeAOT_CodeGeneratorInputSample_MoveDelegate_Context_Get(
 	NativeAOT_CodeGeneratorInputSample_MoveDelegate_t /* NativeAOT.CodeGeneratorInputSample.MoveDelegate */ self
 );
@@ -14641,12 +14641,12 @@ NativeAOT_CodeGeneratorInputSample_MoveDelegate_Destroy(
 #pragma mark - BEGIN APIs of System.MulticastDelegate
 System_MulticastDelegate_t /* System.MulticastDelegate */
 System_MulticastDelegate_Create(
-	void* context,
+	const void* context,
 	System_MulticastDelegate_CFunction_t function,
 	System_MulticastDelegate_CDestructorFunction_t destructorFunction
 );
 
-void*
+const void*
 System_MulticastDelegate_Context_Get(
 	System_MulticastDelegate_t /* System.MulticastDelegate */ self
 );
@@ -14671,12 +14671,12 @@ System_MulticastDelegate_Destroy(
 #pragma mark - BEGIN APIs of System.Delegate
 System_Delegate_t /* System.Delegate */
 System_Delegate_Create(
-	void* context,
+	const void* context,
 	System_Delegate_CFunction_t function,
 	System_Delegate_CDestructorFunction_t destructorFunction
 );
 
-void*
+const void*
 System_Delegate_Context_Get(
 	System_Delegate_t /* System.Delegate */ self
 );
@@ -14701,12 +14701,12 @@ System_Delegate_Destroy(
 #pragma mark - BEGIN APIs of System.Action
 System_Action_t /* System.Action */
 System_Action_Create(
-	void* context,
+	const void* context,
 	System_Action_CFunction_t function,
 	System_Action_CDestructorFunction_t destructorFunction
 );
 
-void*
+const void*
 System_Action_Context_Get(
 	System_Action_t /* System.Action */ self
 );
@@ -14731,12 +14731,12 @@ System_Action_Destroy(
 #pragma mark - BEGIN APIs of System.AsyncCallback
 System_AsyncCallback_t /* System.AsyncCallback */
 System_AsyncCallback_Create(
-	void* context,
+	const void* context,
 	System_AsyncCallback_CFunction_t function,
 	System_AsyncCallback_CDestructorFunction_t destructorFunction
 );
 
-void*
+const void*
 System_AsyncCallback_Context_Get(
 	System_AsyncCallback_t /* System.AsyncCallback */ self
 );
@@ -14761,12 +14761,12 @@ System_AsyncCallback_Destroy(
 #pragma mark - BEGIN APIs of System.Reflection.ModuleResolveEventHandler
 System_Reflection_ModuleResolveEventHandler_t /* System.Reflection.ModuleResolveEventHandler */
 System_Reflection_ModuleResolveEventHandler_Create(
-	void* context,
+	const void* context,
 	System_Reflection_ModuleResolveEventHandler_CFunction_t function,
 	System_Reflection_ModuleResolveEventHandler_CDestructorFunction_t destructorFunction
 );
 
-void*
+const void*
 System_Reflection_ModuleResolveEventHandler_Context_Get(
 	System_Reflection_ModuleResolveEventHandler_t /* System.Reflection.ModuleResolveEventHandler */ self
 );
@@ -14791,12 +14791,12 @@ System_Reflection_ModuleResolveEventHandler_Destroy(
 #pragma mark - BEGIN APIs of System.Reflection.TypeFilter
 System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */
 System_Reflection_TypeFilter_Create(
-	void* context,
+	const void* context,
 	System_Reflection_TypeFilter_CFunction_t function,
 	System_Reflection_TypeFilter_CDestructorFunction_t destructorFunction
 );
 
-void*
+const void*
 System_Reflection_TypeFilter_Context_Get(
 	System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */ self
 );
@@ -14821,12 +14821,12 @@ System_Reflection_TypeFilter_Destroy(
 #pragma mark - BEGIN APIs of System.Reflection.MemberFilter
 System_Reflection_MemberFilter_t /* System.Reflection.MemberFilter */
 System_Reflection_MemberFilter_Create(
-	void* context,
+	const void* context,
 	System_Reflection_MemberFilter_CFunction_t function,
 	System_Reflection_MemberFilter_CDestructorFunction_t destructorFunction
 );
 
-void*
+const void*
 System_Reflection_MemberFilter_Context_Get(
 	System_Reflection_MemberFilter_t /* System.Reflection.MemberFilter */ self
 );
@@ -14851,12 +14851,12 @@ System_Reflection_MemberFilter_Destroy(
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate
 NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_t /* NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate */
 NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Create(
-	void* context,
+	const void* context,
 	NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_CFunction_t function,
 	NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_CDestructorFunction_t destructorFunction
 );
 
-void*
+const void*
 NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Context_Get(
 	NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_t /* NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate */ self
 );
@@ -14881,12 +14881,12 @@ NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Destroy(
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate
 NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate */
 NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_Create(
-	void* context,
+	const void* context,
 	NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_CFunction_t function,
 	NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_CDestructorFunction_t destructorFunction
 );
 
-void*
+const void*
 NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_Context_Get(
 	NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate */ self
 );
@@ -14911,12 +14911,12 @@ NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_Destro
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate
 NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate */
 NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Create(
-	void* context,
+	const void* context,
 	NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CFunction_t function,
 	NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CDestructorFunction_t destructorFunction
 );
 
-void*
+const void*
 NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Context_Get(
 	NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate */ self
 );
@@ -14941,12 +14941,12 @@ NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Destroy(
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate
 NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_t /* NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate */
 NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Create(
-	void* context,
+	const void* context,
 	NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_CFunction_t function,
 	NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_CDestructorFunction_t destructorFunction
 );
 
-void*
+const void*
 NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Context_Get(
 	NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_t /* NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate */ self
 );
@@ -14971,12 +14971,12 @@ NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Destroy(
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.DoublesTransformerDelegate
 NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate_t /* NativeAOT.CodeGeneratorInputSample.DoublesTransformerDelegate */
 NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate_Create(
-	void* context,
+	const void* context,
 	NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate_CFunction_t function,
 	NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate_CDestructorFunction_t destructorFunction
 );
 
-void*
+const void*
 NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate_Context_Get(
 	NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate_t /* NativeAOT.CodeGeneratorInputSample.DoublesTransformerDelegate */ self
 );
