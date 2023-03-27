@@ -2,34 +2,16 @@ import XCTest
 import NativeAOTCodeGeneratorOutputSample
 
 final class TransformerTests: XCTestCase {
-	func testStringTransformer() {
+    func testStringTransformer() {
 		var exception: System_Exception_t?
 		
-		let uppercaser: NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_CFunction_t = { innerContext, inputStringC in
-			guard let inputStringC else {
-				return nil
-			}
-			
-			// We need to release any reference types that are given to us through the delegate
-			defer { inputStringC.deallocate() }
-			
-			let inputString = String(cString: inputStringC)
-			let outputString = inputString.uppercased()
-			
-			let outputStringC = strdup(outputString)
-			
-			return .init(outputStringC)
-		}
+        guard let uppercaser = createUppercaser() else {
+            XCTFail("Failed to create uppercaser")
+            
+            return
+        }
 		
-		guard let stringTransformerDelegate = NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Create(nil,
-																												  uppercaser,
-																												  nil) else {
-			XCTFail("StringTransformerDelegate ctor should return an instance")
-			
-			return
-		}
-		
-		defer { NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Destroy(stringTransformerDelegate) }
+		defer { NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Destroy(uppercaser) }
 		
 		let inputString = "Hello"
 		let expectedOutputString = inputString.uppercased()
@@ -38,7 +20,7 @@ final class TransformerTests: XCTestCase {
 		
 		inputString.withCString { inputStringC in
 			outputStringC = NativeAOT_CodeGeneratorInputSample_Transformer_TransformString(inputStringC,
-																						   stringTransformerDelegate,
+																						   uppercaser,
 																						   &exception)
 		}
 		
@@ -55,6 +37,41 @@ final class TransformerTests: XCTestCase {
 		
 		XCTAssertEqual(expectedOutputString, outputString)
 	}
+    
+    func testStringGetterAndTransformer() {
+        var exception: System_Exception_t?
+        
+        guard let fixedStringProvider = createFixedStringProvider() else {
+            XCTFail("Failed to create random string provider")
+            
+            return
+        }
+        
+        defer { NativeAOT_CodeGeneratorInputSample_StringGetterDelegate_Destroy(fixedStringProvider) }
+        
+        guard let uppercaser = createUppercaser() else {
+            XCTFail("Failed to create uppercaser")
+            
+            return
+        }
+        
+        defer { NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Destroy(uppercaser) }
+        
+        guard let outputStringC = NativeAOT_CodeGeneratorInputSample_Transformer_GetAndTransformString(fixedStringProvider,
+                                                                                                       uppercaser,
+                                                                                                       &exception),
+              exception == nil else {
+            XCTFail("Transformer.GetAndTransformString should not throw and return an instance of a c string")
+            
+            return
+        }
+        
+        defer { outputStringC.deallocate() }
+        
+        let outputString = String(cString: outputStringC)
+        
+        XCTAssertEqual("FIXED STRING", outputString)
+    }
 	
 	func testDoublesTransformer() {
 		var exception: System_Exception_t?
@@ -89,4 +106,53 @@ final class TransformerTests: XCTestCase {
 		
 		XCTAssertEqual(expectedResult, result)
 	}
+}
+
+private extension TransformerTests {
+    func createFixedStringProvider() -> NativeAOT_CodeGeneratorInputSample_StringGetterDelegate_t? {
+        let fixedStringProvider: NativeAOT_CodeGeneratorInputSample_StringGetterDelegate_CFunction_t = { _ in
+            let outputString = "Fixed String"
+            let outputStringC = strdup(outputString)
+            
+            return .init(outputStringC)
+        }
+        
+        guard let stringGetterDelegate = NativeAOT_CodeGeneratorInputSample_StringGetterDelegate_Create(nil,
+                                                                                                        fixedStringProvider,
+                                                                                                        nil) else {
+            XCTFail("StringGetterDelegate ctor should return an instance")
+            
+            return nil
+        }
+        
+        return stringGetterDelegate
+    }
+    
+    func createUppercaser() -> NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_t? {
+        let uppercaser: NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_CFunction_t = { innerContext, inputStringC in
+            guard let inputStringC else {
+                return nil
+            }
+            
+            // We need to release any reference types that are given to us through the delegate
+            defer { inputStringC.deallocate() }
+            
+            let inputString = String(cString: inputStringC)
+            let outputString = inputString.uppercased()
+            
+            let outputStringC = strdup(outputString)
+            
+            return .init(outputStringC)
+        }
+        
+        guard let stringTransformerDelegate = NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Create(nil,
+                                                                                                                  uppercaser,
+                                                                                                                  nil) else {
+            XCTFail("StringTransformerDelegate ctor should return an instance")
+            
+            return nil
+        }
+        
+        return stringTransformerDelegate
+    }
 }
