@@ -17,6 +17,7 @@ public class CSharpUnmanagedPropertySyntaxWriter: CSharpUnmanagedMethodSyntaxWri
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
         const bool mayThrow = true;
+        const bool addToState = true;
 
         string propertyName = property.Name;
 
@@ -43,6 +44,7 @@ public class CSharpUnmanagedPropertySyntaxWriter: CSharpUnmanagedMethodSyntaxWri
                 declaringType,
                 propertyType,
                 parameters,
+                addToState,
                 typeDescriptorRegistry,
                 state
             );
@@ -62,6 +64,7 @@ public class CSharpUnmanagedPropertySyntaxWriter: CSharpUnmanagedMethodSyntaxWri
                 declaringType,
                 propertyType,
                 parameters,
+                addToState,
                 typeDescriptorRegistry,
                 state
             );

@@ -20,6 +20,7 @@ public class CSharpUnmanagedFieldSyntaxWriter: CSharpUnmanagedMethodSyntaxWriter
         Type fieldType = field.FieldType;
         
         const bool mayThrow = false;
+        const bool addToState = true;
         bool isStatic = field.IsStatic;
         
         bool canSet = !field.IsLiteral &&
@@ -38,6 +39,7 @@ public class CSharpUnmanagedFieldSyntaxWriter: CSharpUnmanagedMethodSyntaxWriter
             declaringType,
             fieldType,
             Array.Empty<ParameterInfo>(),
+            addToState,
             typeDescriptorRegistry,
             state
         );
@@ -54,6 +56,7 @@ public class CSharpUnmanagedFieldSyntaxWriter: CSharpUnmanagedMethodSyntaxWriter
                 declaringType,
                 fieldType,
                 Array.Empty<ParameterInfo>(),
+                addToState,
                 typeDescriptorRegistry,
                 state
             );

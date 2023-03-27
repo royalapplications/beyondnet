@@ -17,6 +17,7 @@ public class CSharpUnmanagedEventSyntaxWriter: CSharpUnmanagedMethodSyntaxWriter
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
         const bool mayThrow = false;
+        const bool addToState = true;
 
         string eventName = @event.Name;
 
@@ -47,6 +48,7 @@ public class CSharpUnmanagedEventSyntaxWriter: CSharpUnmanagedMethodSyntaxWriter
                 declaringType,
                 eventHandlerType,
                 parameters,
+                addToState,
                 typeDescriptorRegistry,
                 state
             );
@@ -66,6 +68,7 @@ public class CSharpUnmanagedEventSyntaxWriter: CSharpUnmanagedMethodSyntaxWriter
                 declaringType,
                 eventHandlerType,
                 parameters,
+                addToState,
                 typeDescriptorRegistry,
                 state
             );

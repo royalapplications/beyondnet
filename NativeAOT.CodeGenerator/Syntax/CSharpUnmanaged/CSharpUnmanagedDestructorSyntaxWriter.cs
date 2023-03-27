@@ -22,6 +22,7 @@ public class CSharpUnmanagedDestructorSyntaxWriter: CSharpUnmanagedMethodSyntaxW
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
 
         const bool mayThrow = false;
+        const bool addToState = true;
 
         string destructorCode = WriteMethod(
             null,
@@ -32,6 +33,7 @@ public class CSharpUnmanagedDestructorSyntaxWriter: CSharpUnmanagedMethodSyntaxW
             type,
             typeof(void),
             Array.Empty<ParameterInfo>(),
+            addToState,
             typeDescriptorRegistry,
             state
         );

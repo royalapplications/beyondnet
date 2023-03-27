@@ -19,6 +19,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         
         const bool mayThrow = true;
         const MemberKind methodKind = MemberKind.Method;
+        const bool addToState = true;
 
         bool isStaticMethod = method.IsStatic;
         string methodName = method.Name;
@@ -36,6 +37,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             declaringType,
             returnType,
             parameters,
+            addToState,
             typeDescriptorRegistry,
             state
         );
@@ -52,6 +54,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         Type declaringType,
         Type returnOrSetterOrEventHandlerType,
         IEnumerable<ParameterInfo> parameters,
+        bool addToState,
         TypeDescriptorRegistry typeDescriptorRegistry,
         State state
     )
@@ -101,14 +104,16 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         }
 
         methodNameC = state.UniqueGeneratedName(methodNameC, CodeLanguage.CSharpUnmanaged);
-        
-        state.AddGeneratedMember(
-            memberKind,
-            memberInfo,
-            mayThrow,
-            methodNameC,
-            CodeLanguage.CSharpUnmanaged
-        );
+
+        if (addToState) {
+            state.AddGeneratedMember(
+                memberKind,
+                memberInfo,
+                mayThrow,
+                methodNameC,
+                CodeLanguage.CSharpUnmanaged
+            );
+        }
 
         Type? setterOrEventHandlerType;
 

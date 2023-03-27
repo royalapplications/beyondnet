@@ -17,6 +17,7 @@ public class CSharpUnmanagedConstructorSyntaxWriter: CSharpUnmanagedMethodSyntax
         
         const bool mayThrow = true;
         const MemberKind methodKind = MemberKind.Constructor;
+        const bool addToState = true;
 
         bool isStaticMethod = true;
         string methodName = constructor.Name;
@@ -39,6 +40,7 @@ public class CSharpUnmanagedConstructorSyntaxWriter: CSharpUnmanagedMethodSyntax
             declaringType,
             returnType,
             parameters,
+            addToState,
             typeDescriptorRegistry,
             state
         );
