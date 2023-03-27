@@ -33,7 +33,10 @@ public class GeneratedMember
 
     public string? GetGeneratedName(CodeLanguage language)
     {
-        m_generatedNames.TryGetValue(language, out string? generatedName);
+        m_generatedNames.TryGetValue(
+            language,
+            out string? generatedName
+        );
 
         return generatedName;
     }

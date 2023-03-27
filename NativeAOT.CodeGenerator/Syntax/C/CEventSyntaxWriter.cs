@@ -17,13 +17,16 @@ public class CEventSyntaxWriter: CMethodSyntaxWriter, IEventSyntaxWriter
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
 
-        var generatedCSharpUnmanagedMember = cSharpUnmanagedResult.GetGeneratedMember(@event);
+        GeneratedMember? generatedAdderMember = cSharpUnmanagedResult.GetGeneratedMember(@event, MemberKind.EventHandlerAdder);
+        GeneratedMember? generatedRemoverMember = cSharpUnmanagedResult.GetGeneratedMember(@event, MemberKind.EventHandlerRemover);
 
-        if (generatedCSharpUnmanagedMember == null) {
+        if (generatedAdderMember is null &&
+            generatedRemoverMember is null) {
             throw new Exception("No generated C# Unmanaged Member");
         }
 
-        bool mayThrow = generatedCSharpUnmanagedMember.MayThrow;
+        bool adderMayThrow = generatedAdderMember?.MayThrow ?? true;
+        bool removerMayThrow = generatedRemoverMember?.MayThrow ?? true;
         
         string eventName = @event.Name;
         
@@ -42,14 +45,16 @@ public class CEventSyntaxWriter: CMethodSyntaxWriter, IEventSyntaxWriter
         MethodInfo? adderMethod = @event.GetAddMethod(false);
         MethodInfo? removerMethod = @event.GetRemoveMethod(false);
 
-        if (adderMethod != null) {
+        if (adderMethod is not null &&
+            generatedAdderMember is not null) {
             bool isStaticMethod = adderMethod.IsStatic;
             
             string adderCode = WriteMethod(
+                generatedAdderMember,
                 adderMethod,
                 MemberKind.EventHandlerAdder,
                 isStaticMethod,
-                mayThrow,
+                adderMayThrow,
                 declaringType,
                 eventHandlerType,
                 parameters,
@@ -60,14 +65,16 @@ public class CEventSyntaxWriter: CMethodSyntaxWriter, IEventSyntaxWriter
             sb.AppendLine(adderCode);
         }
         
-        if (removerMethod != null) {
+        if (removerMethod is not null &&
+            generatedRemoverMember is not null) {
             bool isStaticMethod = removerMethod.IsStatic;
             
             string removerCode = WriteMethod(
+                generatedRemoverMember,
                 removerMethod,
                 MemberKind.EventHandlerRemover,
                 isStaticMethod,
-                mayThrow,
+                adderMayThrow,
                 declaringType,
                 eventHandlerType,
                 parameters,

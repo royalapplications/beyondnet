@@ -35,7 +35,8 @@ public class CSharpUnmanagedTypeOfSyntaxWriter: CSharpUnmanagedMethodSyntaxWrite
             Array.Empty<ParameterInfo>(),
             addToState,
             typeDescriptorRegistry,
-            state
+            state,
+            out _
         );
 
         return destructorCode;

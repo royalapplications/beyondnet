@@ -39,7 +39,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             parameters,
             addToState,
             typeDescriptorRegistry,
-            state
+            state,
+            out _
         );
 
         return methodCode;
@@ -56,7 +57,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         IEnumerable<ParameterInfo> parameters,
         bool addToState,
         TypeDescriptorRegistry typeDescriptorRegistry,
-        State state
+        State state,
+        out string generatedName
     )
     {
         if (memberInfo == null &&
@@ -114,6 +116,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 CodeLanguage.CSharpUnmanaged
             );
         }
+
+        generatedName = methodNameC;
 
         Type? setterOrEventHandlerType;
 

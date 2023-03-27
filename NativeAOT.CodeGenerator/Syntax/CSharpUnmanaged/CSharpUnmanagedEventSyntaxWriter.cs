@@ -17,7 +17,7 @@ public class CSharpUnmanagedEventSyntaxWriter: CSharpUnmanagedMethodSyntaxWriter
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
         const bool mayThrow = false;
-        const bool addToState = true;
+        const bool addToState = false;
 
         string eventName = @event.Name;
 
@@ -50,10 +50,19 @@ public class CSharpUnmanagedEventSyntaxWriter: CSharpUnmanagedMethodSyntaxWriter
                 parameters,
                 addToState,
                 typeDescriptorRegistry,
-                state
+                state,
+                out string generatedName
             );
 
             sb.AppendLine(adderCode);
+
+            state.AddGeneratedMember(
+                MemberKind.EventHandlerAdder,
+                @event,
+                mayThrow,
+                generatedName,
+                CodeLanguage.CSharpUnmanaged
+            );
         }
         
         if (removeMethod != null) {
@@ -70,10 +79,19 @@ public class CSharpUnmanagedEventSyntaxWriter: CSharpUnmanagedMethodSyntaxWriter
                 parameters,
                 addToState,
                 typeDescriptorRegistry,
-                state
+                state,
+                out string generatedName
             );
 
             sb.AppendLine(removerCode);
+            
+            state.AddGeneratedMember(
+                MemberKind.EventHandlerRemover,
+                @event,
+                mayThrow,
+                generatedName,
+                CodeLanguage.CSharpUnmanaged
+            );
         }
 
         return sb.ToString();

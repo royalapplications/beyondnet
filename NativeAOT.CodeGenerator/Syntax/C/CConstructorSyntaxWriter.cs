@@ -34,6 +34,7 @@ public class CConstructorSyntaxWriter: CMethodSyntaxWriter, IConstructorSyntaxWr
         IEnumerable<ParameterInfo> parameters = constructor.GetParameters();
 
         string ctorCode = WriteMethod(
+            cSharpGeneratedMember,
             constructor,
             methodKind,
             isStaticMethod,

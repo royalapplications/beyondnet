@@ -28,6 +28,7 @@ public class CTypeOfSyntaxWriter: CMethodSyntaxWriter, ITypeOfSyntaxWriter
         bool mayThrow = cSharpGeneratedMember.MayThrow;
 
         string code = WriteMethod(
+            cSharpGeneratedMember,
             null,
             MemberKind.TypeOf,
             true,

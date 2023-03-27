@@ -18,15 +18,18 @@ public class CPropertySyntaxWriter: CMethodSyntaxWriter, IPropertySyntaxWriter
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
 
-        var generatedCSharpUnmanagedMember = cSharpUnmanagedResult.GetGeneratedMember(property);
+        GeneratedMember? generatedMemberGetter = cSharpUnmanagedResult.GetGeneratedMember(property, MemberKind.PropertyGetter);
+        GeneratedMember? generatedMemberSetter = cSharpUnmanagedResult.GetGeneratedMember(property, MemberKind.PropertySetter);
 
-        if (generatedCSharpUnmanagedMember == null) {
+        if (generatedMemberGetter is null &&
+            generatedMemberSetter is null) {
             throw new Exception("No generated C# Unmanaged Member");
         }
 
-        bool mayThrow = generatedCSharpUnmanagedMember.MayThrow;
+        bool getterMayThrow = generatedMemberGetter?.MayThrow ?? true;
+        bool setterMayThrow = generatedMemberSetter?.MayThrow ?? true; 
         
-        Type declaringType = property.DeclaringType ?? throw new Exception("No declaring type");;
+        Type declaringType = property.DeclaringType ?? throw new Exception("No declaring type");
 
         IEnumerable<ParameterInfo> parameters = Array.Empty<ParameterInfo>();
 
@@ -37,14 +40,16 @@ public class CPropertySyntaxWriter: CMethodSyntaxWriter, IPropertySyntaxWriter
         MethodInfo? getterMethod = property.GetGetMethod(false);
         MethodInfo? setterMethod = property.GetSetMethod(false);
 
-        if (getterMethod != null) {
+        if (getterMethod is not null &&
+            generatedMemberGetter is not null) {
             bool isStaticMethod = getterMethod.IsStatic;
             
             string getterCode = WriteMethod(
+                generatedMemberGetter,
                 getterMethod,
                 MemberKind.PropertyGetter,
                 isStaticMethod,
-                mayThrow,
+                getterMayThrow,
                 declaringType,
                 propertyType,
                 parameters,
@@ -55,14 +60,16 @@ public class CPropertySyntaxWriter: CMethodSyntaxWriter, IPropertySyntaxWriter
             sb.AppendLine(getterCode);
         }
         
-        if (setterMethod != null) {
+        if (setterMethod is not null &&
+            generatedMemberSetter is not null) {
             bool isStaticMethod = setterMethod.IsStatic;
             
             string setterCode = WriteMethod(
+                generatedMemberSetter,
                 setterMethod,
                 MemberKind.PropertySetter,
                 isStaticMethod,
-                mayThrow,
+                setterMayThrow,
                 declaringType,
                 propertyType,
                 parameters,

@@ -42,7 +42,8 @@ public class CSharpUnmanagedConstructorSyntaxWriter: CSharpUnmanagedMethodSyntax
             parameters,
             addToState,
             typeDescriptorRegistry,
-            state
+            state,
+            out _
         );
 
         return ctorCode;

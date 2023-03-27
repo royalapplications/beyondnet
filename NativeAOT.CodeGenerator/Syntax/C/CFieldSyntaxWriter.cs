@@ -1,4 +1,5 @@
 using System.Reflection;
+using System.Text;
 
 using NativeAOT.CodeGenerator.Generator;
 using NativeAOT.CodeGenerator.Types;
@@ -14,33 +15,58 @@ public class CFieldSyntaxWriter: CMethodSyntaxWriter, IFieldSyntaxWriter
 
     public string Write(FieldInfo field, State state)
     {
-        return Write(field, MemberKind.Automatic, state);
-    }
-    
-    public string Write(FieldInfo field, MemberKind memberKind, State state)
-    {
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
+        
+        GeneratedMember? generatedGetterMember = cSharpUnmanagedResult.GetGeneratedMember(field, MemberKind.FieldGetter);
+        GeneratedMember? generatedSetterMember = cSharpUnmanagedResult.GetGeneratedMember(field, MemberKind.FieldSetter);
+
+        if (generatedGetterMember is null &&
+            generatedSetterMember is null) {
+            throw new Exception("No C# generated member");
+        }
 
         bool isStatic = field.IsStatic;
         Type declaringType = field.DeclaringType ?? throw new Exception("No declaring type");
         Type fieldType = field.FieldType;
-        
-        var generatedMember = cSharpUnmanagedResult.GetGeneratedMember(field, memberKind) ?? throw new Exception("No C# unmanaged generated member");
 
-        string memberCode = WriteMethod(
-            field,
-            memberKind,
-            isStatic,
-            generatedMember.MayThrow,
-            declaringType,
-            fieldType,
-            Array.Empty<ParameterInfo>(),
-            typeDescriptorRegistry,
-            state
-        );
+        StringBuilder sb = new();
 
-        return memberCode;
+        if (generatedGetterMember is not null) {
+            string code = WriteMethod(
+                generatedGetterMember,
+                field,
+                MemberKind.FieldGetter,
+                isStatic,
+                generatedGetterMember.MayThrow,
+                declaringType,
+                fieldType,
+                Array.Empty<ParameterInfo>(),
+                typeDescriptorRegistry,
+                state
+            );
+
+            sb.AppendLine(code);
+        }
+
+        if (generatedSetterMember is not null) {
+            string code = WriteMethod(
+                generatedSetterMember,
+                field,
+                MemberKind.FieldSetter,
+                isStatic,
+                generatedSetterMember.MayThrow,
+                declaringType,
+                fieldType,
+                Array.Empty<ParameterInfo>(),
+                typeDescriptorRegistry,
+                state
+            );
+
+            sb.AppendLine(code);
+        }
+
+        return sb.ToString();
     }
 }

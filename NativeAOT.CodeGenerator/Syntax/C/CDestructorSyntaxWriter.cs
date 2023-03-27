@@ -28,6 +28,7 @@ public class CDestructorSyntaxWriter: CMethodSyntaxWriter, IDestructorSyntaxWrit
         bool mayThrow = cSharpGeneratedMember.MayThrow;
 
         string code = WriteMethod(
+            cSharpGeneratedMember,
             null,
             MemberKind.Destructor,
             false,

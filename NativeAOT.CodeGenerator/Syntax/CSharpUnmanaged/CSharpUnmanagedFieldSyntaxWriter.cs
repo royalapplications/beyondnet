@@ -20,7 +20,8 @@ public class CSharpUnmanagedFieldSyntaxWriter: CSharpUnmanagedMethodSyntaxWriter
         Type fieldType = field.FieldType;
         
         const bool mayThrow = false;
-        const bool addToState = true;
+        const bool addToState = false;
+        
         bool isStatic = field.IsStatic;
         
         bool canSet = !field.IsLiteral &&
@@ -41,10 +42,19 @@ public class CSharpUnmanagedFieldSyntaxWriter: CSharpUnmanagedMethodSyntaxWriter
             Array.Empty<ParameterInfo>(),
             addToState,
             typeDescriptorRegistry,
-            state
+            state,
+            out string generatedGetterName
         );
 
         sb.AppendLine(fieldGetterCode);
+
+        state.AddGeneratedMember(
+            MemberKind.FieldGetter,
+            field,
+            mayThrow,
+            generatedGetterName,
+            CodeLanguage.CSharpUnmanaged
+        );
 
         if (canSet) {
             string fieldSetterCode = WriteMethod(
@@ -58,10 +68,19 @@ public class CSharpUnmanagedFieldSyntaxWriter: CSharpUnmanagedMethodSyntaxWriter
                 Array.Empty<ParameterInfo>(),
                 addToState,
                 typeDescriptorRegistry,
-                state
+                state,
+                out string generatedSetterName
             );
 
             sb.AppendLine(fieldSetterCode);
+            
+            state.AddGeneratedMember(
+                MemberKind.FieldSetter,
+                field,
+                mayThrow,
+                generatedSetterName,
+                CodeLanguage.CSharpUnmanaged
+            );
         }
 
         return sb.ToString();

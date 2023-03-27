@@ -17,7 +17,7 @@ public class CSharpUnmanagedPropertySyntaxWriter: CSharpUnmanagedMethodSyntaxWri
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
         const bool mayThrow = true;
-        const bool addToState = true;
+        const bool addToState = false;
 
         string propertyName = property.Name;
 
@@ -32,7 +32,7 @@ public class CSharpUnmanagedPropertySyntaxWriter: CSharpUnmanagedMethodSyntaxWri
         MethodInfo? getterMethod = property.GetGetMethod(false);
         MethodInfo? setterMethod = property.GetSetMethod(false);
 
-        if (getterMethod != null) {
+        if (getterMethod is not null) {
             bool isStaticMethod = getterMethod.IsStatic;
             
             string getterCode = WriteMethod(
@@ -46,13 +46,22 @@ public class CSharpUnmanagedPropertySyntaxWriter: CSharpUnmanagedMethodSyntaxWri
                 parameters,
                 addToState,
                 typeDescriptorRegistry,
-                state
+                state,
+                out string generatedName
             );
 
             sb.AppendLine(getterCode);
+            
+            state.AddGeneratedMember(
+                MemberKind.PropertyGetter,
+                property,
+                mayThrow,
+                generatedName,
+                CodeLanguage.CSharpUnmanaged
+            );
         }
         
-        if (setterMethod != null) {
+        if (setterMethod is not null) {
             bool isStaticMethod = setterMethod.IsStatic;
             
             string setterCode = WriteMethod(
@@ -66,10 +75,19 @@ public class CSharpUnmanagedPropertySyntaxWriter: CSharpUnmanagedMethodSyntaxWri
                 parameters,
                 addToState,
                 typeDescriptorRegistry,
-                state
+                state,
+                out string generatedName
             );
 
             sb.AppendLine(setterCode);
+            
+            state.AddGeneratedMember(
+                MemberKind.PropertySetter,
+                property,
+                mayThrow,
+                generatedName,
+                CodeLanguage.CSharpUnmanaged
+            );
         }
 
         return sb.ToString();
