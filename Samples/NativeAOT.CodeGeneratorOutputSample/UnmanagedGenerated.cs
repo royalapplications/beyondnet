@@ -1,5 +1,5 @@
 // Number of generated types: 187
-// Number of generated members: 2027
+// Number of generated members: 2030
 
 // <Header>
 using System;
@@ -56591,6 +56591,79 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Transformer
 			return null;
 		}
 	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Transformer_UppercaseString")]
+	internal static byte* /* System.String */ NativeAOT_CodeGeneratorInputSample_Transformer_UppercaseString(byte* /* System.String */ inputString, void** /* System.Exception */ __outException)
+	{
+		System.String inputStringConverted = InteropUtils.ToDotNetString(inputString);
+	
+	    try {
+			System.String __returnValue = NativeAOT.CodeGeneratorInputSample.Transformer.UppercaseString(inputStringConverted);
+			byte* _returnValueNative = __returnValue.CopyToCString();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Transformer_UppercaseStringTransformer_Get")]
+	internal static void* /* NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate */ NativeAOT_CodeGeneratorInputSample_Transformer_UppercaseStringTransformer_Get(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate __returnValue = NativeAOT.CodeGeneratorInputSample.Transformer.UppercaseStringTransformer;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Transformer_UppercaseStringTransformer_Set")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Transformer_UppercaseStringTransformer_Set(void* /* NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate */ __value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			NativeAOT.CodeGeneratorInputSample.Transformer.UppercaseStringTransformer = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate>(__value)?.CreateTrampoline();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Transformer_TypeOf")]

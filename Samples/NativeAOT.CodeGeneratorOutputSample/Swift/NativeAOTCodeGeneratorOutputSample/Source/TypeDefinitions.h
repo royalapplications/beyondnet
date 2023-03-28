@@ -1,5 +1,5 @@
 // Number of generated types: 187
-// Number of generated members: 2211
+// Number of generated members: 2216
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -16448,6 +16448,36 @@ NativeAOT_CodeGeneratorInputSample_Transformer_GetAndTransformString(
 	NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_t /* NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate */ stringTransformer,
 	System_Exception_t* /* System.Exception */ outException
 );
+
+CString /* System.String */
+NativeAOT_CodeGeneratorInputSample_Transformer_UppercaseString(
+	CString /* System.String */ inputString,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_t /* NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate */
+NativeAOT_CodeGeneratorInputSample_Transformer_UppercaseStringTransformer_Get(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_Transformer_UppercaseStringTransformer_Set(
+	NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_t /* NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_t /* NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate */
+NativeAOT_CodeGeneratorInputSample_Transformer_UppercaseStringTransformer_Get(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_Transformer_UppercaseStringTransformer_Set(
+	NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_t /* NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 
 System_Type_t /* System.Type */
 NativeAOT_CodeGeneratorInputSample_Transformer_TypeOf(

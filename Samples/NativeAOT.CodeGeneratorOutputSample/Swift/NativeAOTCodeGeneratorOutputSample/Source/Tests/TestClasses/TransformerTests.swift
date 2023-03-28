@@ -106,6 +106,46 @@ final class TransformerTests: XCTestCase {
 		
 		XCTAssertEqual(expectedResult, result)
 	}
+    
+    func testUppercaserThatActuallyLowercases() {
+        var exception: System_Exception_t?
+        
+        guard let lowercaser = createLowercaser() else {
+            XCTFail("Failed to create lowercaser")
+            
+            return
+        }
+        
+        defer { NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Destroy(lowercaser) }
+        
+        NativeAOT_CodeGeneratorInputSample_Transformer_UppercaseStringTransformer_Set(lowercaser,
+                                                                                      &exception)
+        
+        XCTAssertNil(exception)
+        
+        let inputString = "Hello"
+        let expectedOutputString = inputString.lowercased()
+        
+        var outputStringC: CString?
+        
+        inputString.withCString { inputStringC in
+            outputStringC = NativeAOT_CodeGeneratorInputSample_Transformer_UppercaseString(inputStringC,
+                                                                                           &exception)
+        }
+        
+        guard let outputStringC,
+              exception == nil else {
+            XCTFail("Transformer.UppercaseString should not throw and return an instance of a c string")
+            
+            return
+        }
+        
+        defer { outputStringC.deallocate() }
+        
+        let outputString = String(cString: outputStringC)
+        
+        XCTAssertEqual(expectedOutputString, outputString)
+    }
 }
 
 private extension TransformerTests {
@@ -129,7 +169,7 @@ private extension TransformerTests {
     }
     
     func createUppercaser() -> NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_t? {
-        let uppercaser: NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_CFunction_t = { innerContext, inputStringC in
+        let caser: NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_CFunction_t = { innerContext, inputStringC in
             guard let inputStringC else {
                 return nil
             }
@@ -146,7 +186,35 @@ private extension TransformerTests {
         }
         
         guard let stringTransformerDelegate = NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Create(nil,
-                                                                                                                  uppercaser,
+                                                                                                                  caser,
+                                                                                                                  nil) else {
+            XCTFail("StringTransformerDelegate ctor should return an instance")
+            
+            return nil
+        }
+        
+        return stringTransformerDelegate
+    }
+    
+    func createLowercaser() -> NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_t? {
+        let caser: NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_CFunction_t = { innerContext, inputStringC in
+            guard let inputStringC else {
+                return nil
+            }
+            
+            // We need to release any reference types that are given to us through the delegate
+            defer { inputStringC.deallocate() }
+            
+            let inputString = String(cString: inputStringC)
+            let outputString = inputString.lowercased()
+            
+            let outputStringC = strdup(outputString)
+            
+            return .init(outputStringC)
+        }
+        
+        guard let stringTransformerDelegate = NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Create(nil,
+                                                                                                                  caser,
                                                                                                                   nil) else {
             XCTFail("StringTransformerDelegate ctor should return an instance")
             
