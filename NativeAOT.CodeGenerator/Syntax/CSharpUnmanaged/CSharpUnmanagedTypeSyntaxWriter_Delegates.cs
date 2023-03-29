@@ -113,7 +113,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
         
         sb.AppendLine();
 
-        #region Constructor
+        #region Native Constructor
         sb.AppendLine($"\tprivate {cTypeName}({contextType} context, {cFunctionSignature} cFunction, {cDestructorFunctionSignature} cDestructorFunction)");
         sb.AppendLine("\t{");
 
@@ -122,8 +122,17 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
         sb.AppendLine("\t\tCDestructorFunction = cDestructorFunction;");
 
         sb.AppendLine("\t}");
-        #endregion Constructor
+        #endregion Native Constructor
 
+        sb.AppendLine();
+        
+        #region Managed Constructor
+        sb.AppendLine($"\tinternal {cTypeName}({fullTypeName} originalDelegate)");
+        sb.AppendLine("\t{");
+        sb.AppendLine("\t\tm_trampoline = new(originalDelegate);");
+        sb.AppendLine("\t}");
+        #endregion Managed Constructor
+        
         sb.AppendLine();
         
         #region Finalizer

@@ -213,7 +213,16 @@ public class TypeDescriptor
             return conversion;
         } else if (sourceLanguage == CodeLanguage.CSharp &&
                    targetLanguage == CodeLanguage.CSharpUnmanaged) {
-            string conversion = "{0}.AllocateGCHandleAndGetAddress()";
+            string conversion;
+
+            if (ManagedType.IsDelegate()) {
+                string fullTypeName = ManagedType.GetFullNameOrName();
+                string cTypeName = fullTypeName.CTypeName();
+                
+                conversion = $"new {cTypeName}({{0}}).AllocateGCHandleAndGetAddress()";
+            } else {
+                conversion = "{0}.AllocateGCHandleAndGetAddress()";
+            }
 
             return conversion;
         } else {

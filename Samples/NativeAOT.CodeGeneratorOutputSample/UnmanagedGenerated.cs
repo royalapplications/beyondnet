@@ -223,6 +223,11 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_MoveDelegate
 		CDestructorFunction = cDestructorFunction;
 	}
 
+	internal NativeAOT_CodeGeneratorInputSample_MoveDelegate(NativeAOT.CodeGeneratorInputSample.MoveDelegate originalDelegate)
+	{
+		m_trampoline = new(originalDelegate);
+	}
+
 	~NativeAOT_CodeGeneratorInputSample_MoveDelegate()
 	{
 		if (CDestructorFunction is null) {
@@ -377,6 +382,11 @@ internal unsafe class System_MulticastDelegate
 		CDestructorFunction = cDestructorFunction;
 	}
 
+	internal System_MulticastDelegate(System.MulticastDelegate originalDelegate)
+	{
+		m_trampoline = new(originalDelegate);
+	}
+
 	~System_MulticastDelegate()
 	{
 		if (CDestructorFunction is null) {
@@ -517,6 +527,11 @@ internal unsafe class System_Delegate
 		Context = context;
 		CFunction = cFunction;
 		CDestructorFunction = cDestructorFunction;
+	}
+
+	internal System_Delegate(System.Delegate originalDelegate)
+	{
+		m_trampoline = new(originalDelegate);
 	}
 
 	~System_Delegate()
@@ -4708,7 +4723,7 @@ internal unsafe class System_Type
 	{
 	
 		System.Reflection.MemberFilter __returnValue = System.Type.FilterAttribute;
-		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		void* _returnValueNative = new System_Reflection_MemberFilter(__returnValue).AllocateGCHandleAndGetAddress();
 		return _returnValueNative;
 	}
 	
@@ -4719,7 +4734,7 @@ internal unsafe class System_Type
 	{
 	
 		System.Reflection.MemberFilter __returnValue = System.Type.FilterName;
-		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		void* _returnValueNative = new System_Reflection_MemberFilter(__returnValue).AllocateGCHandleAndGetAddress();
 		return _returnValueNative;
 	}
 	
@@ -4730,7 +4745,7 @@ internal unsafe class System_Type
 	{
 	
 		System.Reflection.MemberFilter __returnValue = System.Type.FilterNameIgnoreCase;
-		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		void* _returnValueNative = new System_Reflection_MemberFilter(__returnValue).AllocateGCHandleAndGetAddress();
 		return _returnValueNative;
 	}
 	
@@ -35293,7 +35308,7 @@ internal unsafe class System_Reflection_MethodInfo
 	
 	    try {
 			System.Delegate __returnValue = __selfConverted.CreateDelegate(delegateTypeConverted);
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+			void* _returnValueNative = new System_Delegate(__returnValue).AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -35326,7 +35341,7 @@ internal unsafe class System_Reflection_MethodInfo
 	
 	    try {
 			System.Delegate __returnValue = __selfConverted.CreateDelegate(delegateTypeConverted, targetConverted);
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+			void* _returnValueNative = new System_Delegate(__returnValue).AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -41296,6 +41311,11 @@ internal unsafe class System_Action
 		CDestructorFunction = cDestructorFunction;
 	}
 
+	internal System_Action(System.Action originalDelegate)
+	{
+		m_trampoline = new(originalDelegate);
+	}
+
 	~System_Action()
 	{
 		if (CDestructorFunction is null) {
@@ -42399,6 +42419,11 @@ internal unsafe class System_AsyncCallback
 		CDestructorFunction = cDestructorFunction;
 	}
 
+	internal System_AsyncCallback(System.AsyncCallback originalDelegate)
+	{
+		m_trampoline = new(originalDelegate);
+	}
+
 	~System_AsyncCallback()
 	{
 		if (CDestructorFunction is null) {
@@ -43226,6 +43251,11 @@ internal unsafe class System_Reflection_ModuleResolveEventHandler
 		Context = context;
 		CFunction = cFunction;
 		CDestructorFunction = cDestructorFunction;
+	}
+
+	internal System_Reflection_ModuleResolveEventHandler(System.Reflection.ModuleResolveEventHandler originalDelegate)
+	{
+		m_trampoline = new(originalDelegate);
 	}
 
 	~System_Reflection_ModuleResolveEventHandler()
@@ -44146,7 +44176,7 @@ internal unsafe class System_Reflection_Module
 	{
 	
 		System.Reflection.TypeFilter __returnValue = System.Reflection.Module.FilterTypeName;
-		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		void* _returnValueNative = new System_Reflection_TypeFilter(__returnValue).AllocateGCHandleAndGetAddress();
 		return _returnValueNative;
 	}
 	
@@ -44157,7 +44187,7 @@ internal unsafe class System_Reflection_Module
 	{
 	
 		System.Reflection.TypeFilter __returnValue = System.Reflection.Module.FilterTypeNameIgnoreCase;
-		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		void* _returnValueNative = new System_Reflection_TypeFilter(__returnValue).AllocateGCHandleAndGetAddress();
 		return _returnValueNative;
 	}
 	
@@ -44683,6 +44713,11 @@ internal unsafe class System_Reflection_TypeFilter
 		Context = context;
 		CFunction = cFunction;
 		CDestructorFunction = cDestructorFunction;
+	}
+
+	internal System_Reflection_TypeFilter(System.Reflection.TypeFilter originalDelegate)
+	{
+		m_trampoline = new(originalDelegate);
 	}
 
 	~System_Reflection_TypeFilter()
@@ -54398,6 +54433,11 @@ internal unsafe class System_Reflection_MemberFilter
 		CDestructorFunction = cDestructorFunction;
 	}
 
+	internal System_Reflection_MemberFilter(System.Reflection.MemberFilter originalDelegate)
+	{
+		m_trampoline = new(originalDelegate);
+	}
+
 	~System_Reflection_MemberFilter()
 	{
 		if (CDestructorFunction is null) {
@@ -54698,6 +54738,11 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate
 		CDestructorFunction = cDestructorFunction;
 	}
 
+	internal NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate(NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate originalDelegate)
+	{
+		m_trampoline = new(originalDelegate);
+	}
+
 	~NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate()
 	{
 		if (CDestructorFunction is null) {
@@ -54963,7 +55008,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_AnimalFactory
 	{
 	
 		NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate __returnValue = NativeAOT.CodeGeneratorInputSample.AnimalFactory.DEFAULT_CREATOR;
-		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		void* _returnValueNative = new NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate(__returnValue).AllocateGCHandleAndGetAddress();
 		return _returnValueNative;
 	}
 	
@@ -56053,6 +56098,11 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildren
 		CDestructorFunction = cDestructorFunction;
 	}
 
+	internal NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate(NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate originalDelegate)
+	{
+		m_trampoline = new(originalDelegate);
+	}
+
 	~NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate()
 	{
 		if (CDestructorFunction is null) {
@@ -56193,6 +56243,11 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDe
 		Context = context;
 		CFunction = cFunction;
 		CDestructorFunction = cDestructorFunction;
+	}
+
+	internal NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate(NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate originalDelegate)
+	{
+		m_trampoline = new(originalDelegate);
 	}
 
 	~NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate()
@@ -56638,6 +56693,11 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_StringGetterDelegate
 		CDestructorFunction = cDestructorFunction;
 	}
 
+	internal NativeAOT_CodeGeneratorInputSample_StringGetterDelegate(NativeAOT.CodeGeneratorInputSample.StringGetterDelegate originalDelegate)
+	{
+		m_trampoline = new(originalDelegate);
+	}
+
 	~NativeAOT_CodeGeneratorInputSample_StringGetterDelegate()
 	{
 		if (CDestructorFunction is null) {
@@ -56786,6 +56846,11 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_StringTransformerDelega
 		Context = context;
 		CFunction = cFunction;
 		CDestructorFunction = cDestructorFunction;
+	}
+
+	internal NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate(NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate originalDelegate)
+	{
+		m_trampoline = new(originalDelegate);
 	}
 
 	~NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate()
@@ -56938,6 +57003,11 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_DoublesTransformerDeleg
 		Context = context;
 		CFunction = cFunction;
 		CDestructorFunction = cDestructorFunction;
+	}
+
+	internal NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate(NativeAOT.CodeGeneratorInputSample.DoublesTransformerDelegate originalDelegate)
+	{
+		m_trampoline = new(originalDelegate);
 	}
 
 	~NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate()
@@ -57163,7 +57233,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Transformer
 	
 	    try {
 			NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate __returnValue = NativeAOT.CodeGeneratorInputSample.Transformer.UppercaseStringTransformer;
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+			void* _returnValueNative = new NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate(__returnValue).AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
 	            *__outException = null;

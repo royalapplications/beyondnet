@@ -189,4 +189,68 @@ final class AnimalTests: XCTestCase {
 		
 		XCTAssertEqual(animalName, retrievedAnimalName)
 	}
+    
+    func testGettingDefaultAnimalCreator() {
+        var exception: System_Exception_t?
+        
+        guard let defaultCreator = NativeAOT_CodeGeneratorInputSample_AnimalFactory_DEFAULT_CREATOR_Get() else {
+            XCTFail("AnimalFactory.DEFAULT_CREATOR should not return nil")
+            
+            return
+        }
+        
+        defer { NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Destroy(defaultCreator) }
+        
+        let dogName = "Dog"
+        var dog: NativeAOT_CodeGeneratorInputSample_IAnimal_t?
+        
+        dogName.withCString { dogNameC in
+            dog = NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Invoke(defaultCreator,
+                                                                                  dogNameC)
+        }
+        
+        guard let dog else {
+            XCTFail("Given the animal name \"Dog\", an instance of a dog should be returned")
+            
+            return
+        }
+        
+        guard let dogNameRetC = NativeAOT_CodeGeneratorInputSample_IAnimal_Name_Get(dog,
+                                                                                    &exception),
+              exception == nil else {
+            XCTFail("IAnimal.Name should not throw and return an instance of a C string")
+            
+            return
+        }
+        
+        let dogNameRet = String(cString: dogNameRetC)
+        
+        XCTAssertEqual(dogName, dogNameRet)
+        
+        let catName = "Cat"
+        var cat: NativeAOT_CodeGeneratorInputSample_IAnimal_t?
+        
+        catName.withCString { catNameC in
+            cat = NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Invoke(defaultCreator,
+                                                                                  catNameC)
+        }
+        
+        guard let cat else {
+            XCTFail("Given the animal name \"Cat\", an instance of a cat should be returned")
+            
+            return
+        }
+        
+        guard let catNameRetC = NativeAOT_CodeGeneratorInputSample_IAnimal_Name_Get(cat,
+                                                                                    &exception),
+              exception == nil else {
+            XCTFail("IAnimal.Name should not throw and return an instance of a C string")
+            
+            return
+        }
+        
+        let catNameRet = String(cString: catNameRetC)
+        
+        XCTAssertEqual(catName, catNameRet)
+    }
 }
