@@ -231,11 +231,13 @@ final class AnimalTests: XCTestCase {
         var cat: NativeAOT_CodeGeneratorInputSample_IAnimal_t?
         
         catName.withCString { catNameC in
-            cat = NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Invoke(defaultCreator,
-                                                                                  catNameC)
+            cat = NativeAOT_CodeGeneratorInputSample_AnimalFactory_CreateAnimal1(catNameC,
+                                                                                 defaultCreator,
+                                                                                 &exception)
         }
         
-        guard let cat else {
+        guard let cat,
+              exception == nil else {
             XCTFail("Given the animal name \"Cat\", an instance of a cat should be returned")
             
             return
