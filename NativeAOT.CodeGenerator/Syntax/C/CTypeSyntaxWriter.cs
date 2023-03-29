@@ -226,11 +226,13 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
             string cMemberNamePrefix = fullTypeName.CTypeName();
             
             WriteDelegateTypeMembers(
+                typeDescriptor,
                 fullTypeName,
                 cTypeName,
                 cMemberNamePrefix,
                 sb,
-                state
+                state,
+                typeDescriptorRegistry
             );
         }
 
@@ -277,13 +279,17 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
     }
 
     private void WriteDelegateTypeMembers(
+        TypeDescriptor typeDescriptor,
         string fullTypeName,
         string cTypeName,
         string cMemberNamePrefix,
         StringBuilder sb,
-        State state
+        State state,
+        TypeDescriptorRegistry typeDescriptorRegistry
     )
     {
+        Type type = typeDescriptor.ManagedType;
+        
         string contextType = "const void*";
         string functionType = $"{cMemberNamePrefix}_CFunction_t";
         string destrutorFunctionType = $"{cMemberNamePrefix}_CDestructorFunction_t";
@@ -297,6 +303,39 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         sb.AppendLine(");");
         #endregion Create
 
+        sb.AppendLine();
+
+        #region Invoke
+        var invokeMethod = typeDescriptor.ManagedType.GetDelegateInvokeMethod();
+        var returnType = invokeMethod?.ReturnType ?? typeof(void);
+        TypeDescriptor? returnTypeDescriptor = returnType.GetTypeDescriptor(typeDescriptorRegistry);
+
+        string returnTypeName = returnType.IsVoid()
+            ? "void"
+            : returnTypeDescriptor.GetTypeName(CodeLanguage.C, true);
+        
+        var parameterInfos = invokeMethod?.GetParameters() ?? Array.Empty<ParameterInfo>();
+
+        string parameters = CMethodSyntaxWriter.WriteParameters(
+            MemberKind.Automatic,
+            null,
+            false,
+            true,
+            type,
+            parameterInfos,
+            typeDescriptorRegistry
+        );
+        
+        if (!string.IsNullOrEmpty(parameters)) {
+            parameters = ", " + parameters;
+        }
+        
+        sb.AppendLine($"{returnTypeName}");
+        sb.AppendLine($"{cMemberNamePrefix}_Invoke(");
+        sb.AppendLine($"\t{cTypeName} /* {fullTypeName} */ self{parameters}");
+        sb.AppendLine(");");
+        #endregion Invoke
+        
         sb.AppendLine();
         
         #region Context Get

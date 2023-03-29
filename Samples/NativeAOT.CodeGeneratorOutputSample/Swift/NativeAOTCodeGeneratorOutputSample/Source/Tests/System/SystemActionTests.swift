@@ -2,10 +2,12 @@ import XCTest
 import NativeAOTCodeGeneratorOutputSample
 
 final class SystemActionTests: XCTestCase {
+    class Context {
+        var numberOfTimesCalled = 0
+    }
+    
     func testSystemAction() {
-//        var exception: System_Exception_t?
-        
-        let swiftyContext = "My Context"
+        let swiftyContext = Context()
         let contextBox = NativeBox(swiftyContext)
         let context = contextBox.unretainedPointer()
         
@@ -16,10 +18,10 @@ final class SystemActionTests: XCTestCase {
                 return
             }
             
-            let innerContextBox = NativeBox<String>.fromPointer(innerContext)
+            let innerContextBox = NativeBox<Context>.fromPointer(innerContext)
             let innerSwiftyContext = innerContextBox.value
             
-            XCTAssertEqual("My Context", innerSwiftyContext)
+            innerSwiftyContext.numberOfTimesCalled += 1
         }
         
         let action = System_Action_Create(context,
@@ -28,7 +30,14 @@ final class SystemActionTests: XCTestCase {
         
         defer { System_Action_Destroy(action) }
         
-        // TODO
-//        System_Action_Invoke()
+        XCTAssertEqual(0, swiftyContext.numberOfTimesCalled)
+        
+        System_Action_Invoke(action)
+        XCTAssertEqual(1, swiftyContext.numberOfTimesCalled)
+        
+        System_Action_Invoke(action)
+        System_Action_Invoke(action)
+        System_Action_Invoke(action)
+        XCTAssertEqual(4, swiftyContext.numberOfTimesCalled)
     }
 }

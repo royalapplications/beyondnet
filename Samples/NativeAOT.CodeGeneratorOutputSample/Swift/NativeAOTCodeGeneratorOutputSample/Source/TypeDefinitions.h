@@ -16499,6 +16499,12 @@ NativeAOT_CodeGeneratorInputSample_MoveDelegate_Create(
 	NativeAOT_CodeGeneratorInputSample_MoveDelegate_CDestructorFunction_t destructorFunction
 );
 
+NativeAOT_CodeGeneratorInputSample_Address_t
+NativeAOT_CodeGeneratorInputSample_MoveDelegate_Invoke(
+	NativeAOT_CodeGeneratorInputSample_MoveDelegate_t /* NativeAOT.CodeGeneratorInputSample.MoveDelegate */ self, CString /* System.String */ newStreet,
+	CString /* System.String */ newCity
+);
+
 const void*
 NativeAOT_CodeGeneratorInputSample_MoveDelegate_Context_Get(
 	NativeAOT_CodeGeneratorInputSample_MoveDelegate_t /* NativeAOT.CodeGeneratorInputSample.MoveDelegate */ self
@@ -16527,6 +16533,11 @@ System_MulticastDelegate_Create(
 	const void* context,
 	System_MulticastDelegate_CFunction_t function,
 	System_MulticastDelegate_CDestructorFunction_t destructorFunction
+);
+
+void
+System_MulticastDelegate_Invoke(
+	System_MulticastDelegate_t /* System.MulticastDelegate */ self
 );
 
 const void*
@@ -16559,6 +16570,11 @@ System_Delegate_Create(
 	System_Delegate_CDestructorFunction_t destructorFunction
 );
 
+void
+System_Delegate_Invoke(
+	System_Delegate_t /* System.Delegate */ self
+);
+
 const void*
 System_Delegate_Context_Get(
 	System_Delegate_t /* System.Delegate */ self
@@ -16587,6 +16603,11 @@ System_Action_Create(
 	const void* context,
 	System_Action_CFunction_t function,
 	System_Action_CDestructorFunction_t destructorFunction
+);
+
+void
+System_Action_Invoke(
+	System_Action_t /* System.Action */ self
 );
 
 const void*
@@ -16619,6 +16640,11 @@ System_AsyncCallback_Create(
 	System_AsyncCallback_CDestructorFunction_t destructorFunction
 );
 
+void
+System_AsyncCallback_Invoke(
+	System_AsyncCallback_t /* System.AsyncCallback */ self, System_IAsyncResult_t /* System.IAsyncResult */ ar
+);
+
 const void*
 System_AsyncCallback_Context_Get(
 	System_AsyncCallback_t /* System.AsyncCallback */ self
@@ -16647,6 +16673,12 @@ System_Reflection_ModuleResolveEventHandler_Create(
 	const void* context,
 	System_Reflection_ModuleResolveEventHandler_CFunction_t function,
 	System_Reflection_ModuleResolveEventHandler_CDestructorFunction_t destructorFunction
+);
+
+System_Reflection_Module_t
+System_Reflection_ModuleResolveEventHandler_Invoke(
+	System_Reflection_ModuleResolveEventHandler_t /* System.Reflection.ModuleResolveEventHandler */ self, System_Object_t /* System.Object */ sender,
+	System_ResolveEventArgs_t /* System.ResolveEventArgs */ e
 );
 
 const void*
@@ -16679,6 +16711,12 @@ System_Reflection_TypeFilter_Create(
 	System_Reflection_TypeFilter_CDestructorFunction_t destructorFunction
 );
 
+CBool
+System_Reflection_TypeFilter_Invoke(
+	System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */ self, System_Type_t /* System.Type */ m,
+	System_Object_t /* System.Object */ filterCriteria
+);
+
 const void*
 System_Reflection_TypeFilter_Context_Get(
 	System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */ self
@@ -16707,6 +16745,12 @@ System_Reflection_MemberFilter_Create(
 	const void* context,
 	System_Reflection_MemberFilter_CFunction_t function,
 	System_Reflection_MemberFilter_CDestructorFunction_t destructorFunction
+);
+
+CBool
+System_Reflection_MemberFilter_Invoke(
+	System_Reflection_MemberFilter_t /* System.Reflection.MemberFilter */ self, System_Reflection_MemberInfo_t /* System.Reflection.MemberInfo */ m,
+	System_Object_t /* System.Object */ filterCriteria
 );
 
 const void*
@@ -16739,6 +16783,11 @@ NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Create(
 	NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_CDestructorFunction_t destructorFunction
 );
 
+NativeAOT_CodeGeneratorInputSample_IAnimal_t
+NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Invoke(
+	NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_t /* NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate */ self, CString /* System.String */ animalName
+);
+
 const void*
 NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Context_Get(
 	NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_t /* NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate */ self
@@ -16767,6 +16816,11 @@ NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_Create
 	const void* context,
 	NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_CFunction_t function,
 	NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_CDestructorFunction_t destructorFunction
+);
+
+void
+NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_Invoke(
+	NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate */ self
 );
 
 const void*
@@ -16799,6 +16853,11 @@ NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Create(
 	NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CDestructorFunction_t destructorFunction
 );
 
+int32_t
+NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Invoke(
+	NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate */ self
+);
+
 const void*
 NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Context_Get(
 	NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate */ self
@@ -16827,6 +16886,11 @@ NativeAOT_CodeGeneratorInputSample_StringGetterDelegate_Create(
 	const void* context,
 	NativeAOT_CodeGeneratorInputSample_StringGetterDelegate_CFunction_t function,
 	NativeAOT_CodeGeneratorInputSample_StringGetterDelegate_CDestructorFunction_t destructorFunction
+);
+
+CString
+NativeAOT_CodeGeneratorInputSample_StringGetterDelegate_Invoke(
+	NativeAOT_CodeGeneratorInputSample_StringGetterDelegate_t /* NativeAOT.CodeGeneratorInputSample.StringGetterDelegate */ self
 );
 
 const void*
@@ -16859,6 +16923,11 @@ NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Create(
 	NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_CDestructorFunction_t destructorFunction
 );
 
+CString
+NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Invoke(
+	NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_t /* NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate */ self, CString /* System.String */ inputString
+);
+
 const void*
 NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Context_Get(
 	NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_t /* NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate */ self
@@ -16887,6 +16956,12 @@ NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate_Create(
 	const void* context,
 	NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate_CFunction_t function,
 	NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate_CDestructorFunction_t destructorFunction
+);
+
+double
+NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate_Invoke(
+	NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate_t /* NativeAOT.CodeGeneratorInputSample.DoublesTransformerDelegate */ self, double /* System.Double */ number1,
+	double /* System.Double */ number2
 );
 
 const void*

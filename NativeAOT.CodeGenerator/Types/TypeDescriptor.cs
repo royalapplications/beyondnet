@@ -205,7 +205,7 @@ public class TypeDescriptor
                 string fullTypeName = ManagedType.GetFullNameOrName();
                 string cTypeName = fullTypeName.CTypeName();
                 
-                conversion = "InteropUtils.GetInstance<" + cTypeName + ">({0})?.CreateTrampoline()";
+                conversion = "InteropUtils.GetInstance<" + cTypeName + ">({0})?.Trampoline";
             } else {
                 conversion = "InteropUtils.GetInstance<" + ManagedType.GetFullNameOrName() + ">({0})";
             }

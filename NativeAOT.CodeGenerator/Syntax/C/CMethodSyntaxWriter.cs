@@ -128,7 +128,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         return sb.ToString();
     }
     
-    protected string WriteParameters(
+    internal static string WriteParameters(
         MemberKind memberKind,
         Type? setterOrEventHandlerType,
         bool mayThrow,

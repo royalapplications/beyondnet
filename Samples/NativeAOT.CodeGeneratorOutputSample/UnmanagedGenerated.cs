@@ -191,9 +191,30 @@ internal static unsafe class InteropUtils
 // <APIs>
 internal unsafe class NativeAOT_CodeGeneratorInputSample_MoveDelegate
 {
-	public void* Context { get; }
-	public delegate* unmanaged<void* /* context */, byte* /* System.String */ /* newStreet */, byte* /* System.String */ /* newCity */, void* /* NativeAOT.CodeGeneratorInputSample.Address */ /* return type */> CFunction { get; }
-	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
+	internal void* Context { get; }
+	internal delegate* unmanaged<void* /* context */, byte* /* System.String */ /* newStreet */, byte* /* System.String */ /* newCity */, void* /* NativeAOT.CodeGeneratorInputSample.Address */ /* return type */> CFunction { get; }
+	internal delegate* unmanaged<void*, void> CDestructorFunction { get; }
+
+	private WeakReference<NativeAOT.CodeGeneratorInputSample.MoveDelegate> m_trampoline;
+	internal NativeAOT.CodeGeneratorInputSample.MoveDelegate Trampoline
+	{
+		get {
+			NativeAOT.CodeGeneratorInputSample.MoveDelegate? trampoline;
+
+			if (m_trampoline is not null) {
+				m_trampoline.TryGetTarget(out trampoline);
+			} else {
+				trampoline = null;
+			}
+
+			if (trampoline is null) {
+				trampoline = CreateTrampoline();
+				m_trampoline = new(trampoline);
+			}
+
+			return trampoline;
+		}
+	}
 
 	private NativeAOT_CodeGeneratorInputSample_MoveDelegate(void* context, delegate* unmanaged<void* /* context */, byte* /* System.String */ /* newStreet */, byte* /* System.String */ /* newCity */, void* /* NativeAOT.CodeGeneratorInputSample.Address */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
 	{
@@ -211,7 +232,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_MoveDelegate
 		CDestructorFunction(Context);
 	}
 
-	internal NativeAOT.CodeGeneratorInputSample.MoveDelegate? CreateTrampoline()
+	private NativeAOT.CodeGeneratorInputSample.MoveDelegate? CreateTrampoline()
 	{
 		if (CFunction is null) {
 			return null;
@@ -253,6 +274,26 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_MoveDelegate
 		void* selfHandle = self.AllocateGCHandleAndGetAddress();
 
 		return selfHandle;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_MoveDelegate_Invoke")]
+	public static void* /* NativeAOT.CodeGeneratorInputSample.Address */ Invoke(void* self, byte* /* System.String */ newStreet, byte* /* System.String */ newCity)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_MoveDelegate>(self);
+
+		System.String newStreetConverted = InteropUtils.ToDotNetString(newStreet);
+		System.String newCityConverted = InteropUtils.ToDotNetString(newCity);
+	
+
+
+		var __returnValue = selfConverted.Trampoline(newStreetConverted, newCityConverted);
+		var __returnValueConverted = __returnValue.AllocateGCHandleAndGetAddress();
+
+		return __returnValueConverted;
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_MoveDelegate_Context_Get")]
@@ -304,9 +345,30 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_MoveDelegate
 
 internal unsafe class System_MulticastDelegate
 {
-	public void* Context { get; }
-	public delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> CFunction { get; }
-	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
+	internal void* Context { get; }
+	internal delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> CFunction { get; }
+	internal delegate* unmanaged<void*, void> CDestructorFunction { get; }
+
+	private WeakReference<System.MulticastDelegate> m_trampoline;
+	internal System.MulticastDelegate Trampoline
+	{
+		get {
+			System.MulticastDelegate? trampoline;
+
+			if (m_trampoline is not null) {
+				m_trampoline.TryGetTarget(out trampoline);
+			} else {
+				trampoline = null;
+			}
+
+			if (trampoline is null) {
+				trampoline = CreateTrampoline();
+				m_trampoline = new(trampoline);
+			}
+
+			return trampoline;
+		}
+	}
 
 	private System_MulticastDelegate(void* context, delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
 	{
@@ -324,7 +386,7 @@ internal unsafe class System_MulticastDelegate
 		CDestructorFunction(Context);
 	}
 
-	internal System.MulticastDelegate? CreateTrampoline()
+	private System.MulticastDelegate? CreateTrampoline()
 	{
 		if (CFunction is null) {
 			return null;
@@ -359,6 +421,21 @@ internal unsafe class System_MulticastDelegate
 		void* selfHandle = self.AllocateGCHandleAndGetAddress();
 
 		return selfHandle;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_MulticastDelegate_Invoke")]
+	public static void /* System.Void */ Invoke(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_MulticastDelegate>(self);
+
+	
+
+
+		selfConverted.Trampoline.DynamicInvoke();
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_MulticastDelegate_Context_Get")]
@@ -410,9 +487,30 @@ internal unsafe class System_MulticastDelegate
 
 internal unsafe class System_Delegate
 {
-	public void* Context { get; }
-	public delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> CFunction { get; }
-	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
+	internal void* Context { get; }
+	internal delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> CFunction { get; }
+	internal delegate* unmanaged<void*, void> CDestructorFunction { get; }
+
+	private WeakReference<System.Delegate> m_trampoline;
+	internal System.Delegate Trampoline
+	{
+		get {
+			System.Delegate? trampoline;
+
+			if (m_trampoline is not null) {
+				m_trampoline.TryGetTarget(out trampoline);
+			} else {
+				trampoline = null;
+			}
+
+			if (trampoline is null) {
+				trampoline = CreateTrampoline();
+				m_trampoline = new(trampoline);
+			}
+
+			return trampoline;
+		}
+	}
 
 	private System_Delegate(void* context, delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
 	{
@@ -430,7 +528,7 @@ internal unsafe class System_Delegate
 		CDestructorFunction(Context);
 	}
 
-	internal System.Delegate? CreateTrampoline()
+	private System.Delegate? CreateTrampoline()
 	{
 		if (CFunction is null) {
 			return null;
@@ -465,6 +563,21 @@ internal unsafe class System_Delegate
 		void* selfHandle = self.AllocateGCHandleAndGetAddress();
 
 		return selfHandle;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Delegate_Invoke")]
+	public static void /* System.Void */ Invoke(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_Delegate>(self);
+
+	
+
+
+		selfConverted.Trampoline.DynamicInvoke();
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Delegate_Context_Get")]
@@ -13601,7 +13714,7 @@ internal unsafe class System_Reflection_Assembly
 		System.Reflection.Assembly __selfConverted = InteropUtils.GetInstance<System.Reflection.Assembly>(__self);
 	
 	
-		__selfConverted.ModuleResolve += InteropUtils.GetInstance<System_Reflection_ModuleResolveEventHandler>(__value)?.CreateTrampoline();
+		__selfConverted.ModuleResolve += InteropUtils.GetInstance<System_Reflection_ModuleResolveEventHandler>(__value)?.Trampoline;
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Assembly_ModuleResolve_Remove")]
@@ -13614,7 +13727,7 @@ internal unsafe class System_Reflection_Assembly
 		System.Reflection.Assembly __selfConverted = InteropUtils.GetInstance<System.Reflection.Assembly>(__self);
 	
 	
-		__selfConverted.ModuleResolve -= InteropUtils.GetInstance<System_Reflection_ModuleResolveEventHandler>(__value)?.CreateTrampoline();
+		__selfConverted.ModuleResolve -= InteropUtils.GetInstance<System_Reflection_ModuleResolveEventHandler>(__value)?.Trampoline;
 	}
 	
 	
@@ -18050,7 +18163,7 @@ internal unsafe class System_Threading_Tasks_Task
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_Run1")]
 	internal static void* /* System.Threading.Tasks.Task */ System_Threading_Tasks_Task_Run1(void* /* System.Action */ action, void** /* System.Exception */ __outException)
 	{
-		System.Action actionConverted = InteropUtils.GetInstance<System_Action>(action)?.CreateTrampoline();
+		System.Action actionConverted = InteropUtils.GetInstance<System_Action>(action)?.Trampoline;
 	
 	    try {
 			System.Threading.Tasks.Task __returnValue = System.Threading.Tasks.Task.Run(actionConverted);
@@ -18076,7 +18189,7 @@ internal unsafe class System_Threading_Tasks_Task
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_Run2")]
 	internal static void* /* System.Threading.Tasks.Task */ System_Threading_Tasks_Task_Run2(void* /* System.Action */ action, void* /* System.Threading.CancellationToken */ cancellationToken, void** /* System.Exception */ __outException)
 	{
-		System.Action actionConverted = InteropUtils.GetInstance<System_Action>(action)?.CreateTrampoline();
+		System.Action actionConverted = InteropUtils.GetInstance<System_Action>(action)?.Trampoline;
 		System.Threading.CancellationToken cancellationTokenConverted = InteropUtils.GetInstance<System.Threading.CancellationToken>(cancellationToken);
 	
 	    try {
@@ -18207,7 +18320,7 @@ internal unsafe class System_Threading_Tasks_Task
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_Create")]
 	internal static void* /* System.Threading.Tasks.Task */ System_Threading_Tasks_Task_Create(void* /* System.Action */ action, void** /* System.Exception */ __outException)
 	{
-		System.Action actionConverted = InteropUtils.GetInstance<System_Action>(action)?.CreateTrampoline();
+		System.Action actionConverted = InteropUtils.GetInstance<System_Action>(action)?.Trampoline;
 	
 	    try {
 			System.Threading.Tasks.Task __returnValue = new System.Threading.Tasks.Task(actionConverted);
@@ -18233,7 +18346,7 @@ internal unsafe class System_Threading_Tasks_Task
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_Create1")]
 	internal static void* /* System.Threading.Tasks.Task */ System_Threading_Tasks_Task_Create1(void* /* System.Action */ action, void* /* System.Threading.CancellationToken */ cancellationToken, void** /* System.Exception */ __outException)
 	{
-		System.Action actionConverted = InteropUtils.GetInstance<System_Action>(action)?.CreateTrampoline();
+		System.Action actionConverted = InteropUtils.GetInstance<System_Action>(action)?.Trampoline;
 		System.Threading.CancellationToken cancellationTokenConverted = InteropUtils.GetInstance<System.Threading.CancellationToken>(cancellationToken);
 	
 	    try {
@@ -18260,7 +18373,7 @@ internal unsafe class System_Threading_Tasks_Task
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_Create2")]
 	internal static void* /* System.Threading.Tasks.Task */ System_Threading_Tasks_Task_Create2(void* /* System.Action */ action, System.Threading.Tasks.TaskCreationOptions /* System.Threading.Tasks.TaskCreationOptions */ creationOptions, void** /* System.Exception */ __outException)
 	{
-		System.Action actionConverted = InteropUtils.GetInstance<System_Action>(action)?.CreateTrampoline();
+		System.Action actionConverted = InteropUtils.GetInstance<System_Action>(action)?.Trampoline;
 	
 	    try {
 			System.Threading.Tasks.Task __returnValue = new System.Threading.Tasks.Task(actionConverted, creationOptions);
@@ -18286,7 +18399,7 @@ internal unsafe class System_Threading_Tasks_Task
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_Create3")]
 	internal static void* /* System.Threading.Tasks.Task */ System_Threading_Tasks_Task_Create3(void* /* System.Action */ action, void* /* System.Threading.CancellationToken */ cancellationToken, System.Threading.Tasks.TaskCreationOptions /* System.Threading.Tasks.TaskCreationOptions */ creationOptions, void** /* System.Exception */ __outException)
 	{
-		System.Action actionConverted = InteropUtils.GetInstance<System_Action>(action)?.CreateTrampoline();
+		System.Action actionConverted = InteropUtils.GetInstance<System_Action>(action)?.Trampoline;
 		System.Threading.CancellationToken cancellationTokenConverted = InteropUtils.GetInstance<System.Threading.CancellationToken>(cancellationToken);
 	
 	    try {
@@ -38683,7 +38796,7 @@ internal unsafe class System_Threading_Tasks_TaskFactory
 	
 		System.Threading.Tasks.TaskFactory __selfConverted = InteropUtils.GetInstance<System.Threading.Tasks.TaskFactory>(__self);
 	
-		System.Action actionConverted = InteropUtils.GetInstance<System_Action>(action)?.CreateTrampoline();
+		System.Action actionConverted = InteropUtils.GetInstance<System_Action>(action)?.Trampoline;
 	
 	    try {
 			System.Threading.Tasks.Task __returnValue = __selfConverted.StartNew(actionConverted);
@@ -38715,7 +38828,7 @@ internal unsafe class System_Threading_Tasks_TaskFactory
 	
 		System.Threading.Tasks.TaskFactory __selfConverted = InteropUtils.GetInstance<System.Threading.Tasks.TaskFactory>(__self);
 	
-		System.Action actionConverted = InteropUtils.GetInstance<System_Action>(action)?.CreateTrampoline();
+		System.Action actionConverted = InteropUtils.GetInstance<System_Action>(action)?.Trampoline;
 		System.Threading.CancellationToken cancellationTokenConverted = InteropUtils.GetInstance<System.Threading.CancellationToken>(cancellationToken);
 	
 	    try {
@@ -38748,7 +38861,7 @@ internal unsafe class System_Threading_Tasks_TaskFactory
 	
 		System.Threading.Tasks.TaskFactory __selfConverted = InteropUtils.GetInstance<System.Threading.Tasks.TaskFactory>(__self);
 	
-		System.Action actionConverted = InteropUtils.GetInstance<System_Action>(action)?.CreateTrampoline();
+		System.Action actionConverted = InteropUtils.GetInstance<System_Action>(action)?.Trampoline;
 	
 	    try {
 			System.Threading.Tasks.Task __returnValue = __selfConverted.StartNew(actionConverted, creationOptions);
@@ -38780,7 +38893,7 @@ internal unsafe class System_Threading_Tasks_TaskFactory
 	
 		System.Threading.Tasks.TaskFactory __selfConverted = InteropUtils.GetInstance<System.Threading.Tasks.TaskFactory>(__self);
 	
-		System.Action actionConverted = InteropUtils.GetInstance<System_Action>(action)?.CreateTrampoline();
+		System.Action actionConverted = InteropUtils.GetInstance<System_Action>(action)?.Trampoline;
 		System.Threading.CancellationToken cancellationTokenConverted = InteropUtils.GetInstance<System.Threading.CancellationToken>(cancellationToken);
 		System.Threading.Tasks.TaskScheduler schedulerConverted = InteropUtils.GetInstance<System.Threading.Tasks.TaskScheduler>(scheduler);
 	
@@ -39092,7 +39205,7 @@ internal unsafe class System_Threading_CancellationToken
 	
 		System.Threading.CancellationToken __selfConverted = InteropUtils.GetInstance<System.Threading.CancellationToken>(__self);
 	
-		System.Action callbackConverted = InteropUtils.GetInstance<System_Action>(callback)?.CreateTrampoline();
+		System.Action callbackConverted = InteropUtils.GetInstance<System_Action>(callback)?.Trampoline;
 	
 	    try {
 			System.Threading.CancellationTokenRegistration __returnValue = __selfConverted.Register(callbackConverted);
@@ -39124,7 +39237,7 @@ internal unsafe class System_Threading_CancellationToken
 	
 		System.Threading.CancellationToken __selfConverted = InteropUtils.GetInstance<System.Threading.CancellationToken>(__self);
 	
-		System.Action callbackConverted = InteropUtils.GetInstance<System_Action>(callback)?.CreateTrampoline();
+		System.Action callbackConverted = InteropUtils.GetInstance<System_Action>(callback)?.Trampoline;
 		System.Boolean useSynchronizationContextConverted = useSynchronizationContext.ToBool();
 	
 	    try {
@@ -41047,7 +41160,7 @@ internal unsafe class System_Runtime_CompilerServices_ValueTaskAwaiter
 	
 		System.Runtime.CompilerServices.ValueTaskAwaiter __selfConverted = InteropUtils.GetInstance<System.Runtime.CompilerServices.ValueTaskAwaiter>(__self);
 	
-		System.Action continuationConverted = InteropUtils.GetInstance<System_Action>(continuation)?.CreateTrampoline();
+		System.Action continuationConverted = InteropUtils.GetInstance<System_Action>(continuation)?.Trampoline;
 	
 	    try {
 			__selfConverted.OnCompleted(continuationConverted);
@@ -41076,7 +41189,7 @@ internal unsafe class System_Runtime_CompilerServices_ValueTaskAwaiter
 	
 		System.Runtime.CompilerServices.ValueTaskAwaiter __selfConverted = InteropUtils.GetInstance<System.Runtime.CompilerServices.ValueTaskAwaiter>(__self);
 	
-		System.Action continuationConverted = InteropUtils.GetInstance<System_Action>(continuation)?.CreateTrampoline();
+		System.Action continuationConverted = InteropUtils.GetInstance<System_Action>(continuation)?.Trampoline;
 	
 	    try {
 			__selfConverted.UnsafeOnCompleted(continuationConverted);
@@ -41151,9 +41264,30 @@ internal unsafe class System_Runtime_CompilerServices_ValueTaskAwaiter
 
 internal unsafe class System_Action
 {
-	public void* Context { get; }
-	public delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> CFunction { get; }
-	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
+	internal void* Context { get; }
+	internal delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> CFunction { get; }
+	internal delegate* unmanaged<void*, void> CDestructorFunction { get; }
+
+	private WeakReference<System.Action> m_trampoline;
+	internal System.Action Trampoline
+	{
+		get {
+			System.Action? trampoline;
+
+			if (m_trampoline is not null) {
+				m_trampoline.TryGetTarget(out trampoline);
+			} else {
+				trampoline = null;
+			}
+
+			if (trampoline is null) {
+				trampoline = CreateTrampoline();
+				m_trampoline = new(trampoline);
+			}
+
+			return trampoline;
+		}
+	}
 
 	private System_Action(void* context, delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
 	{
@@ -41171,7 +41305,7 @@ internal unsafe class System_Action
 		CDestructorFunction(Context);
 	}
 
-	internal System.Action? CreateTrampoline()
+	private System.Action? CreateTrampoline()
 	{
 		if (CFunction is null) {
 			return null;
@@ -41206,6 +41340,21 @@ internal unsafe class System_Action
 		void* selfHandle = self.AllocateGCHandleAndGetAddress();
 
 		return selfHandle;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Action_Invoke")]
+	public static void /* System.Void */ Invoke(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_Action>(self);
+
+	
+
+
+		selfConverted.Trampoline();
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Action_Context_Get")]
@@ -41348,7 +41497,7 @@ internal unsafe class System_Runtime_CompilerServices_ConfiguredValueTaskAwaitab
 	
 		System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter __selfConverted = InteropUtils.GetInstance<System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter>(__self);
 	
-		System.Action continuationConverted = InteropUtils.GetInstance<System_Action>(continuation)?.CreateTrampoline();
+		System.Action continuationConverted = InteropUtils.GetInstance<System_Action>(continuation)?.Trampoline;
 	
 	    try {
 			__selfConverted.OnCompleted(continuationConverted);
@@ -41377,7 +41526,7 @@ internal unsafe class System_Runtime_CompilerServices_ConfiguredValueTaskAwaitab
 	
 		System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter __selfConverted = InteropUtils.GetInstance<System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter>(__self);
 	
-		System.Action continuationConverted = InteropUtils.GetInstance<System_Action>(continuation)?.CreateTrampoline();
+		System.Action continuationConverted = InteropUtils.GetInstance<System_Action>(continuation)?.Trampoline;
 	
 	    try {
 			__selfConverted.UnsafeOnCompleted(continuationConverted);
@@ -41696,7 +41845,7 @@ internal unsafe class System_Runtime_CompilerServices_TaskAwaiter
 	
 		System.Runtime.CompilerServices.TaskAwaiter __selfConverted = InteropUtils.GetInstance<System.Runtime.CompilerServices.TaskAwaiter>(__self);
 	
-		System.Action continuationConverted = InteropUtils.GetInstance<System_Action>(continuation)?.CreateTrampoline();
+		System.Action continuationConverted = InteropUtils.GetInstance<System_Action>(continuation)?.Trampoline;
 	
 	    try {
 			__selfConverted.OnCompleted(continuationConverted);
@@ -41725,7 +41874,7 @@ internal unsafe class System_Runtime_CompilerServices_TaskAwaiter
 	
 		System.Runtime.CompilerServices.TaskAwaiter __selfConverted = InteropUtils.GetInstance<System.Runtime.CompilerServices.TaskAwaiter>(__self);
 	
-		System.Action continuationConverted = InteropUtils.GetInstance<System_Action>(continuation)?.CreateTrampoline();
+		System.Action continuationConverted = InteropUtils.GetInstance<System_Action>(continuation)?.Trampoline;
 	
 	    try {
 			__selfConverted.UnsafeOnCompleted(continuationConverted);
@@ -41891,7 +42040,7 @@ internal unsafe class System_Runtime_CompilerServices_ConfiguredTaskAwaitable_Co
 	
 		System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter __selfConverted = InteropUtils.GetInstance<System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter>(__self);
 	
-		System.Action continuationConverted = InteropUtils.GetInstance<System_Action>(continuation)?.CreateTrampoline();
+		System.Action continuationConverted = InteropUtils.GetInstance<System_Action>(continuation)?.Trampoline;
 	
 	    try {
 			__selfConverted.OnCompleted(continuationConverted);
@@ -41920,7 +42069,7 @@ internal unsafe class System_Runtime_CompilerServices_ConfiguredTaskAwaitable_Co
 	
 		System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter __selfConverted = InteropUtils.GetInstance<System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter>(__self);
 	
-		System.Action continuationConverted = InteropUtils.GetInstance<System_Action>(continuation)?.CreateTrampoline();
+		System.Action continuationConverted = InteropUtils.GetInstance<System_Action>(continuation)?.Trampoline;
 	
 	    try {
 			__selfConverted.UnsafeOnCompleted(continuationConverted);
@@ -42086,7 +42235,7 @@ internal unsafe class System_Runtime_CompilerServices_YieldAwaitable_YieldAwaite
 	
 		System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter __selfConverted = InteropUtils.GetInstance<System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter>(__self);
 	
-		System.Action continuationConverted = InteropUtils.GetInstance<System_Action>(continuation)?.CreateTrampoline();
+		System.Action continuationConverted = InteropUtils.GetInstance<System_Action>(continuation)?.Trampoline;
 	
 	    try {
 			__selfConverted.OnCompleted(continuationConverted);
@@ -42115,7 +42264,7 @@ internal unsafe class System_Runtime_CompilerServices_YieldAwaitable_YieldAwaite
 	
 		System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter __selfConverted = InteropUtils.GetInstance<System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter>(__self);
 	
-		System.Action continuationConverted = InteropUtils.GetInstance<System_Action>(continuation)?.CreateTrampoline();
+		System.Action continuationConverted = InteropUtils.GetInstance<System_Action>(continuation)?.Trampoline;
 	
 	    try {
 			__selfConverted.UnsafeOnCompleted(continuationConverted);
@@ -42218,9 +42367,30 @@ internal unsafe class System_Runtime_CompilerServices_YieldAwaitable_YieldAwaite
 
 internal unsafe class System_AsyncCallback
 {
-	public void* Context { get; }
-	public delegate* unmanaged<void* /* context */, void* /* System.IAsyncResult */ /* ar */, void /* System.Void */ /* return type */> CFunction { get; }
-	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
+	internal void* Context { get; }
+	internal delegate* unmanaged<void* /* context */, void* /* System.IAsyncResult */ /* ar */, void /* System.Void */ /* return type */> CFunction { get; }
+	internal delegate* unmanaged<void*, void> CDestructorFunction { get; }
+
+	private WeakReference<System.AsyncCallback> m_trampoline;
+	internal System.AsyncCallback Trampoline
+	{
+		get {
+			System.AsyncCallback? trampoline;
+
+			if (m_trampoline is not null) {
+				m_trampoline.TryGetTarget(out trampoline);
+			} else {
+				trampoline = null;
+			}
+
+			if (trampoline is null) {
+				trampoline = CreateTrampoline();
+				m_trampoline = new(trampoline);
+			}
+
+			return trampoline;
+		}
+	}
 
 	private System_AsyncCallback(void* context, delegate* unmanaged<void* /* context */, void* /* System.IAsyncResult */ /* ar */, void /* System.Void */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
 	{
@@ -42238,7 +42408,7 @@ internal unsafe class System_AsyncCallback
 		CDestructorFunction(Context);
 	}
 
-	internal System.AsyncCallback? CreateTrampoline()
+	private System.AsyncCallback? CreateTrampoline()
 	{
 		if (CFunction is null) {
 			return null;
@@ -42274,6 +42444,22 @@ internal unsafe class System_AsyncCallback
 		void* selfHandle = self.AllocateGCHandleAndGetAddress();
 
 		return selfHandle;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_AsyncCallback_Invoke")]
+	public static void /* System.Void */ Invoke(void* self, void* /* System.IAsyncResult */ ar)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_AsyncCallback>(self);
+
+		System.IAsyncResult arConverted = InteropUtils.GetInstance<System.IAsyncResult>(ar);
+	
+
+
+		selfConverted.Trampoline(arConverted);
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_AsyncCallback_Context_Get")]
@@ -43010,9 +43196,30 @@ internal unsafe class System_Reflection_ManifestResourceInfo
 
 internal unsafe class System_Reflection_ModuleResolveEventHandler
 {
-	public void* Context { get; }
-	public delegate* unmanaged<void* /* context */, void* /* System.Object */ /* sender */, void* /* System.ResolveEventArgs */ /* e */, void* /* System.Reflection.Module */ /* return type */> CFunction { get; }
-	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
+	internal void* Context { get; }
+	internal delegate* unmanaged<void* /* context */, void* /* System.Object */ /* sender */, void* /* System.ResolveEventArgs */ /* e */, void* /* System.Reflection.Module */ /* return type */> CFunction { get; }
+	internal delegate* unmanaged<void*, void> CDestructorFunction { get; }
+
+	private WeakReference<System.Reflection.ModuleResolveEventHandler> m_trampoline;
+	internal System.Reflection.ModuleResolveEventHandler Trampoline
+	{
+		get {
+			System.Reflection.ModuleResolveEventHandler? trampoline;
+
+			if (m_trampoline is not null) {
+				m_trampoline.TryGetTarget(out trampoline);
+			} else {
+				trampoline = null;
+			}
+
+			if (trampoline is null) {
+				trampoline = CreateTrampoline();
+				m_trampoline = new(trampoline);
+			}
+
+			return trampoline;
+		}
+	}
 
 	private System_Reflection_ModuleResolveEventHandler(void* context, delegate* unmanaged<void* /* context */, void* /* System.Object */ /* sender */, void* /* System.ResolveEventArgs */ /* e */, void* /* System.Reflection.Module */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
 	{
@@ -43030,7 +43237,7 @@ internal unsafe class System_Reflection_ModuleResolveEventHandler
 		CDestructorFunction(Context);
 	}
 
-	internal System.Reflection.ModuleResolveEventHandler? CreateTrampoline()
+	private System.Reflection.ModuleResolveEventHandler? CreateTrampoline()
 	{
 		if (CFunction is null) {
 			return null;
@@ -43072,6 +43279,26 @@ internal unsafe class System_Reflection_ModuleResolveEventHandler
 		void* selfHandle = self.AllocateGCHandleAndGetAddress();
 
 		return selfHandle;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ModuleResolveEventHandler_Invoke")]
+	public static void* /* System.Reflection.Module */ Invoke(void* self, void* /* System.Object */ sender, void* /* System.ResolveEventArgs */ e)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_Reflection_ModuleResolveEventHandler>(self);
+
+		System.Object senderConverted = InteropUtils.GetInstance<System.Object>(sender);
+		System.ResolveEventArgs eConverted = InteropUtils.GetInstance<System.ResolveEventArgs>(e);
+	
+
+
+		var __returnValue = selfConverted.Trampoline(senderConverted, eConverted);
+		var __returnValueConverted = __returnValue.AllocateGCHandleAndGetAddress();
+
+		return __returnValueConverted;
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ModuleResolveEventHandler_Context_Get")]
@@ -44426,9 +44653,30 @@ internal unsafe class System_Guid
 
 internal unsafe class System_Reflection_TypeFilter
 {
-	public void* Context { get; }
-	public delegate* unmanaged<void* /* context */, void* /* System.Type */ /* m */, void* /* System.Object */ /* filterCriteria */, CBool /* System.Boolean */ /* return type */> CFunction { get; }
-	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
+	internal void* Context { get; }
+	internal delegate* unmanaged<void* /* context */, void* /* System.Type */ /* m */, void* /* System.Object */ /* filterCriteria */, CBool /* System.Boolean */ /* return type */> CFunction { get; }
+	internal delegate* unmanaged<void*, void> CDestructorFunction { get; }
+
+	private WeakReference<System.Reflection.TypeFilter> m_trampoline;
+	internal System.Reflection.TypeFilter Trampoline
+	{
+		get {
+			System.Reflection.TypeFilter? trampoline;
+
+			if (m_trampoline is not null) {
+				m_trampoline.TryGetTarget(out trampoline);
+			} else {
+				trampoline = null;
+			}
+
+			if (trampoline is null) {
+				trampoline = CreateTrampoline();
+				m_trampoline = new(trampoline);
+			}
+
+			return trampoline;
+		}
+	}
 
 	private System_Reflection_TypeFilter(void* context, delegate* unmanaged<void* /* context */, void* /* System.Type */ /* m */, void* /* System.Object */ /* filterCriteria */, CBool /* System.Boolean */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
 	{
@@ -44446,7 +44694,7 @@ internal unsafe class System_Reflection_TypeFilter
 		CDestructorFunction(Context);
 	}
 
-	internal System.Reflection.TypeFilter? CreateTrampoline()
+	private System.Reflection.TypeFilter? CreateTrampoline()
 	{
 		if (CFunction is null) {
 			return null;
@@ -44486,6 +44734,26 @@ internal unsafe class System_Reflection_TypeFilter
 		void* selfHandle = self.AllocateGCHandleAndGetAddress();
 
 		return selfHandle;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_TypeFilter_Invoke")]
+	public static CBool /* System.Boolean */ Invoke(void* self, void* /* System.Type */ m, void* /* System.Object */ filterCriteria)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_Reflection_TypeFilter>(self);
+
+		System.Type mConverted = InteropUtils.GetInstance<System.Type>(m);
+		System.Object filterCriteriaConverted = InteropUtils.GetInstance<System.Object>(filterCriteria);
+	
+
+
+		var __returnValue = selfConverted.Trampoline(mConverted, filterCriteriaConverted);
+		var __returnValueConverted = __returnValue.ToCBool();
+
+		return __returnValueConverted;
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_TypeFilter_Context_Get")]
@@ -53625,7 +53893,7 @@ internal unsafe class System_Reflection_EventInfo
 		System.Reflection.EventInfo __selfConverted = InteropUtils.GetInstance<System.Reflection.EventInfo>(__self);
 	
 		System.Object targetConverted = InteropUtils.GetInstance<System.Object>(target);
-		System.Delegate handlerConverted = InteropUtils.GetInstance<System_Delegate>(handler)?.CreateTrampoline();
+		System.Delegate handlerConverted = InteropUtils.GetInstance<System_Delegate>(handler)?.Trampoline;
 	
 	    try {
 			__selfConverted.AddEventHandler(targetConverted, handlerConverted);
@@ -53655,7 +53923,7 @@ internal unsafe class System_Reflection_EventInfo
 		System.Reflection.EventInfo __selfConverted = InteropUtils.GetInstance<System.Reflection.EventInfo>(__self);
 	
 		System.Object targetConverted = InteropUtils.GetInstance<System.Object>(target);
-		System.Delegate handlerConverted = InteropUtils.GetInstance<System_Delegate>(handler)?.CreateTrampoline();
+		System.Delegate handlerConverted = InteropUtils.GetInstance<System_Delegate>(handler)?.Trampoline;
 	
 	    try {
 			__selfConverted.RemoveEventHandler(targetConverted, handlerConverted);
@@ -54098,9 +54366,30 @@ internal unsafe class System_Reflection_InterfaceMapping
 
 internal unsafe class System_Reflection_MemberFilter
 {
-	public void* Context { get; }
-	public delegate* unmanaged<void* /* context */, void* /* System.Reflection.MemberInfo */ /* m */, void* /* System.Object */ /* filterCriteria */, CBool /* System.Boolean */ /* return type */> CFunction { get; }
-	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
+	internal void* Context { get; }
+	internal delegate* unmanaged<void* /* context */, void* /* System.Reflection.MemberInfo */ /* m */, void* /* System.Object */ /* filterCriteria */, CBool /* System.Boolean */ /* return type */> CFunction { get; }
+	internal delegate* unmanaged<void*, void> CDestructorFunction { get; }
+
+	private WeakReference<System.Reflection.MemberFilter> m_trampoline;
+	internal System.Reflection.MemberFilter Trampoline
+	{
+		get {
+			System.Reflection.MemberFilter? trampoline;
+
+			if (m_trampoline is not null) {
+				m_trampoline.TryGetTarget(out trampoline);
+			} else {
+				trampoline = null;
+			}
+
+			if (trampoline is null) {
+				trampoline = CreateTrampoline();
+				m_trampoline = new(trampoline);
+			}
+
+			return trampoline;
+		}
+	}
 
 	private System_Reflection_MemberFilter(void* context, delegate* unmanaged<void* /* context */, void* /* System.Reflection.MemberInfo */ /* m */, void* /* System.Object */ /* filterCriteria */, CBool /* System.Boolean */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
 	{
@@ -54118,7 +54407,7 @@ internal unsafe class System_Reflection_MemberFilter
 		CDestructorFunction(Context);
 	}
 
-	internal System.Reflection.MemberFilter? CreateTrampoline()
+	private System.Reflection.MemberFilter? CreateTrampoline()
 	{
 		if (CFunction is null) {
 			return null;
@@ -54158,6 +54447,26 @@ internal unsafe class System_Reflection_MemberFilter
 		void* selfHandle = self.AllocateGCHandleAndGetAddress();
 
 		return selfHandle;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MemberFilter_Invoke")]
+	public static CBool /* System.Boolean */ Invoke(void* self, void* /* System.Reflection.MemberInfo */ m, void* /* System.Object */ filterCriteria)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_Reflection_MemberFilter>(self);
+
+		System.Reflection.MemberInfo mConverted = InteropUtils.GetInstance<System.Reflection.MemberInfo>(m);
+		System.Object filterCriteriaConverted = InteropUtils.GetInstance<System.Object>(filterCriteria);
+	
+
+
+		var __returnValue = selfConverted.Trampoline(mConverted, filterCriteriaConverted);
+		var __returnValueConverted = __returnValue.ToCBool();
+
+		return __returnValueConverted;
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MemberFilter_Context_Get")]
@@ -54218,7 +54527,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Address
 	
 		NativeAOT.CodeGeneratorInputSample.Address __selfConverted = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Address>(__self);
 	
-		NativeAOT.CodeGeneratorInputSample.MoveDelegate moverConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_MoveDelegate>(mover)?.CreateTrampoline();
+		NativeAOT.CodeGeneratorInputSample.MoveDelegate moverConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_MoveDelegate>(mover)?.Trampoline;
 		System.String newStreetConverted = InteropUtils.ToDotNetString(newStreet);
 		System.String newCityConverted = InteropUtils.ToDotNetString(newCity);
 	
@@ -54357,9 +54666,30 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Address
 
 internal unsafe class NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate
 {
-	public void* Context { get; }
-	public delegate* unmanaged<void* /* context */, byte* /* System.String */ /* animalName */, void* /* NativeAOT.CodeGeneratorInputSample.IAnimal */ /* return type */> CFunction { get; }
-	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
+	internal void* Context { get; }
+	internal delegate* unmanaged<void* /* context */, byte* /* System.String */ /* animalName */, void* /* NativeAOT.CodeGeneratorInputSample.IAnimal */ /* return type */> CFunction { get; }
+	internal delegate* unmanaged<void*, void> CDestructorFunction { get; }
+
+	private WeakReference<NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate> m_trampoline;
+	internal NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate Trampoline
+	{
+		get {
+			NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate? trampoline;
+
+			if (m_trampoline is not null) {
+				m_trampoline.TryGetTarget(out trampoline);
+			} else {
+				trampoline = null;
+			}
+
+			if (trampoline is null) {
+				trampoline = CreateTrampoline();
+				m_trampoline = new(trampoline);
+			}
+
+			return trampoline;
+		}
+	}
 
 	private NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate(void* context, delegate* unmanaged<void* /* context */, byte* /* System.String */ /* animalName */, void* /* NativeAOT.CodeGeneratorInputSample.IAnimal */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
 	{
@@ -54377,7 +54707,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate
 		CDestructorFunction(Context);
 	}
 
-	internal NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate? CreateTrampoline()
+	private NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate? CreateTrampoline()
 	{
 		if (CFunction is null) {
 			return null;
@@ -54418,6 +54748,25 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate
 		void* selfHandle = self.AllocateGCHandleAndGetAddress();
 
 		return selfHandle;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Invoke")]
+	public static void* /* NativeAOT.CodeGeneratorInputSample.IAnimal */ Invoke(void* self, byte* /* System.String */ animalName)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate>(self);
+
+		System.String animalNameConverted = InteropUtils.ToDotNetString(animalName);
+	
+
+
+		var __returnValue = selfConverted.Trampoline(animalNameConverted);
+		var __returnValueConverted = __returnValue.AllocateGCHandleAndGetAddress();
+
+		return __returnValueConverted;
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Context_Get")]
@@ -54586,7 +54935,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_AnimalFactory
 	internal static void* /* NativeAOT.CodeGeneratorInputSample.IAnimal */ NativeAOT_CodeGeneratorInputSample_AnimalFactory_CreateAnimal1(byte* /* System.String */ animalName, void* /* NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate */ creator, void** /* System.Exception */ __outException)
 	{
 		System.String animalNameConverted = InteropUtils.ToDotNetString(animalName);
-		NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate creatorConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate>(creator)?.CreateTrampoline();
+		NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate creatorConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate>(creator)?.Trampoline;
 	
 	    try {
 			NativeAOT.CodeGeneratorInputSample.IAnimal __returnValue = NativeAOT.CodeGeneratorInputSample.AnimalFactory.CreateAnimal(animalNameConverted, creatorConverted);
@@ -55132,7 +55481,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Person
 	
 		NativeAOT.CodeGeneratorInputSample.Person __selfConverted = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Person>(__self);
 	
-		NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate newAgeProviderConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate>(newAgeProvider)?.CreateTrampoline();
+		NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate newAgeProviderConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate>(newAgeProvider)?.Trampoline;
 	
 	    try {
 			__selfConverted.ChangeAge(newAgeProviderConverted);
@@ -55604,7 +55953,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Person
 		NativeAOT.CodeGeneratorInputSample.Person __selfConverted = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Person>(__self);
 	
 	
-		__selfConverted.NumberOfChildrenChanged += InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate>(__value)?.CreateTrampoline();
+		__selfConverted.NumberOfChildrenChanged += InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate>(__value)?.Trampoline;
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChanged_Remove")]
@@ -55617,7 +55966,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Person
 		NativeAOT.CodeGeneratorInputSample.Person __selfConverted = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Person>(__self);
 	
 	
-		__selfConverted.NumberOfChildrenChanged -= InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate>(__value)?.CreateTrampoline();
+		__selfConverted.NumberOfChildrenChanged -= InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate>(__value)?.Trampoline;
 	}
 	
 	
@@ -55672,9 +56021,30 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Person
 
 internal unsafe class NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate
 {
-	public void* Context { get; }
-	public delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> CFunction { get; }
-	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
+	internal void* Context { get; }
+	internal delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> CFunction { get; }
+	internal delegate* unmanaged<void*, void> CDestructorFunction { get; }
+
+	private WeakReference<NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate> m_trampoline;
+	internal NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate Trampoline
+	{
+		get {
+			NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate? trampoline;
+
+			if (m_trampoline is not null) {
+				m_trampoline.TryGetTarget(out trampoline);
+			} else {
+				trampoline = null;
+			}
+
+			if (trampoline is null) {
+				trampoline = CreateTrampoline();
+				m_trampoline = new(trampoline);
+			}
+
+			return trampoline;
+		}
+	}
 
 	private NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate(void* context, delegate* unmanaged<void* /* context */, void /* System.Void */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
 	{
@@ -55692,7 +56062,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildren
 		CDestructorFunction(Context);
 	}
 
-	internal NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate? CreateTrampoline()
+	private NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate? CreateTrampoline()
 	{
 		if (CFunction is null) {
 			return null;
@@ -55727,6 +56097,21 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildren
 		void* selfHandle = self.AllocateGCHandleAndGetAddress();
 
 		return selfHandle;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_Invoke")]
+	public static void /* System.Void */ Invoke(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate>(self);
+
+	
+
+
+		selfConverted.Trampoline();
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_Context_Get")]
@@ -55778,9 +56163,30 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildren
 
 internal unsafe class NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate
 {
-	public void* Context { get; }
-	public delegate* unmanaged<void* /* context */, int /* System.Int32 */ /* return type */> CFunction { get; }
-	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
+	internal void* Context { get; }
+	internal delegate* unmanaged<void* /* context */, int /* System.Int32 */ /* return type */> CFunction { get; }
+	internal delegate* unmanaged<void*, void> CDestructorFunction { get; }
+
+	private WeakReference<NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate> m_trampoline;
+	internal NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate Trampoline
+	{
+		get {
+			NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate? trampoline;
+
+			if (m_trampoline is not null) {
+				m_trampoline.TryGetTarget(out trampoline);
+			} else {
+				trampoline = null;
+			}
+
+			if (trampoline is null) {
+				trampoline = CreateTrampoline();
+				m_trampoline = new(trampoline);
+			}
+
+			return trampoline;
+		}
+	}
 
 	private NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate(void* context, delegate* unmanaged<void* /* context */, int /* System.Int32 */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
 	{
@@ -55798,7 +56204,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDe
 		CDestructorFunction(Context);
 	}
 
-	internal NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate? CreateTrampoline()
+	private NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate? CreateTrampoline()
 	{
 		if (CFunction is null) {
 			return null;
@@ -55834,6 +56240,22 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDe
 		void* selfHandle = self.AllocateGCHandleAndGetAddress();
 
 		return selfHandle;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Invoke")]
+	public static int /* System.Int32 */ Invoke(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate>(self);
+
+	
+
+
+		var __returnValue = selfConverted.Trampoline();
+		return __returnValue;
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Context_Get")]
@@ -56184,9 +56606,30 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_TestClass
 
 internal unsafe class NativeAOT_CodeGeneratorInputSample_StringGetterDelegate
 {
-	public void* Context { get; }
-	public delegate* unmanaged<void* /* context */, byte* /* System.String */ /* return type */> CFunction { get; }
-	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
+	internal void* Context { get; }
+	internal delegate* unmanaged<void* /* context */, byte* /* System.String */ /* return type */> CFunction { get; }
+	internal delegate* unmanaged<void*, void> CDestructorFunction { get; }
+
+	private WeakReference<NativeAOT.CodeGeneratorInputSample.StringGetterDelegate> m_trampoline;
+	internal NativeAOT.CodeGeneratorInputSample.StringGetterDelegate Trampoline
+	{
+		get {
+			NativeAOT.CodeGeneratorInputSample.StringGetterDelegate? trampoline;
+
+			if (m_trampoline is not null) {
+				m_trampoline.TryGetTarget(out trampoline);
+			} else {
+				trampoline = null;
+			}
+
+			if (trampoline is null) {
+				trampoline = CreateTrampoline();
+				m_trampoline = new(trampoline);
+			}
+
+			return trampoline;
+		}
+	}
 
 	private NativeAOT_CodeGeneratorInputSample_StringGetterDelegate(void* context, delegate* unmanaged<void* /* context */, byte* /* System.String */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
 	{
@@ -56204,7 +56647,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_StringGetterDelegate
 		CDestructorFunction(Context);
 	}
 
-	internal NativeAOT.CodeGeneratorInputSample.StringGetterDelegate? CreateTrampoline()
+	private NativeAOT.CodeGeneratorInputSample.StringGetterDelegate? CreateTrampoline()
 	{
 		if (CFunction is null) {
 			return null;
@@ -56244,6 +56687,24 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_StringGetterDelegate
 		void* selfHandle = self.AllocateGCHandleAndGetAddress();
 
 		return selfHandle;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_StringGetterDelegate_Invoke")]
+	public static byte* /* System.String */ Invoke(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_StringGetterDelegate>(self);
+
+	
+
+
+		var __returnValue = selfConverted.Trampoline();
+		var __returnValueConverted = __returnValue.CopyToCString();
+
+		return __returnValueConverted;
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_StringGetterDelegate_Context_Get")]
@@ -56295,9 +56756,30 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_StringGetterDelegate
 
 internal unsafe class NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate
 {
-	public void* Context { get; }
-	public delegate* unmanaged<void* /* context */, byte* /* System.String */ /* inputString */, byte* /* System.String */ /* return type */> CFunction { get; }
-	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
+	internal void* Context { get; }
+	internal delegate* unmanaged<void* /* context */, byte* /* System.String */ /* inputString */, byte* /* System.String */ /* return type */> CFunction { get; }
+	internal delegate* unmanaged<void*, void> CDestructorFunction { get; }
+
+	private WeakReference<NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate> m_trampoline;
+	internal NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate Trampoline
+	{
+		get {
+			NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate? trampoline;
+
+			if (m_trampoline is not null) {
+				m_trampoline.TryGetTarget(out trampoline);
+			} else {
+				trampoline = null;
+			}
+
+			if (trampoline is null) {
+				trampoline = CreateTrampoline();
+				m_trampoline = new(trampoline);
+			}
+
+			return trampoline;
+		}
+	}
 
 	private NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate(void* context, delegate* unmanaged<void* /* context */, byte* /* System.String */ /* inputString */, byte* /* System.String */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
 	{
@@ -56315,7 +56797,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_StringTransformerDelega
 		CDestructorFunction(Context);
 	}
 
-	internal NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate? CreateTrampoline()
+	private NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate? CreateTrampoline()
 	{
 		if (CFunction is null) {
 			return null;
@@ -56356,6 +56838,25 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_StringTransformerDelega
 		void* selfHandle = self.AllocateGCHandleAndGetAddress();
 
 		return selfHandle;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Invoke")]
+	public static byte* /* System.String */ Invoke(void* self, byte* /* System.String */ inputString)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate>(self);
+
+		System.String inputStringConverted = InteropUtils.ToDotNetString(inputString);
+	
+
+
+		var __returnValue = selfConverted.Trampoline(inputStringConverted);
+		var __returnValueConverted = __returnValue.CopyToCString();
+
+		return __returnValueConverted;
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Context_Get")]
@@ -56407,9 +56908,30 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_StringTransformerDelega
 
 internal unsafe class NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate
 {
-	public void* Context { get; }
-	public delegate* unmanaged<void* /* context */, double /* System.Double */ /* number1 */, double /* System.Double */ /* number2 */, double /* System.Double */ /* return type */> CFunction { get; }
-	public delegate* unmanaged<void*, void> CDestructorFunction { get; }
+	internal void* Context { get; }
+	internal delegate* unmanaged<void* /* context */, double /* System.Double */ /* number1 */, double /* System.Double */ /* number2 */, double /* System.Double */ /* return type */> CFunction { get; }
+	internal delegate* unmanaged<void*, void> CDestructorFunction { get; }
+
+	private WeakReference<NativeAOT.CodeGeneratorInputSample.DoublesTransformerDelegate> m_trampoline;
+	internal NativeAOT.CodeGeneratorInputSample.DoublesTransformerDelegate Trampoline
+	{
+		get {
+			NativeAOT.CodeGeneratorInputSample.DoublesTransformerDelegate? trampoline;
+
+			if (m_trampoline is not null) {
+				m_trampoline.TryGetTarget(out trampoline);
+			} else {
+				trampoline = null;
+			}
+
+			if (trampoline is null) {
+				trampoline = CreateTrampoline();
+				m_trampoline = new(trampoline);
+			}
+
+			return trampoline;
+		}
+	}
 
 	private NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate(void* context, delegate* unmanaged<void* /* context */, double /* System.Double */ /* number1 */, double /* System.Double */ /* number2 */, double /* System.Double */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
 	{
@@ -56427,7 +56949,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_DoublesTransformerDeleg
 		CDestructorFunction(Context);
 	}
 
-	internal NativeAOT.CodeGeneratorInputSample.DoublesTransformerDelegate? CreateTrampoline()
+	private NativeAOT.CodeGeneratorInputSample.DoublesTransformerDelegate? CreateTrampoline()
 	{
 		if (CFunction is null) {
 			return null;
@@ -56463,6 +56985,22 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_DoublesTransformerDeleg
 		void* selfHandle = self.AllocateGCHandleAndGetAddress();
 
 		return selfHandle;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate_Invoke")]
+	public static double /* System.Double */ Invoke(void* self, double /* System.Double */ number1, double /* System.Double */ number2)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate>(self);
+
+	
+
+
+		var __returnValue = selfConverted.Trampoline(number1, number2);
+		return __returnValue;
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate_Context_Get")]
@@ -56518,7 +57056,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Transformer
 	internal static byte* /* System.String */ NativeAOT_CodeGeneratorInputSample_Transformer_TransformString(byte* /* System.String */ inputString, void* /* NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate */ stringTransformer, void** /* System.Exception */ __outException)
 	{
 		System.String inputStringConverted = InteropUtils.ToDotNetString(inputString);
-		NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate stringTransformerConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate>(stringTransformer)?.CreateTrampoline();
+		NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate stringTransformerConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate>(stringTransformer)?.Trampoline;
 	
 	    try {
 			System.String __returnValue = NativeAOT.CodeGeneratorInputSample.Transformer.TransformString(inputStringConverted, stringTransformerConverted);
@@ -56544,7 +57082,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Transformer
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Transformer_TransformDoubles")]
 	internal static double /* System.Double */ NativeAOT_CodeGeneratorInputSample_Transformer_TransformDoubles(double /* System.Double */ number1, double /* System.Double */ number2, void* /* NativeAOT.CodeGeneratorInputSample.DoublesTransformerDelegate */ doublesTransformer, void** /* System.Exception */ __outException)
 	{
-		NativeAOT.CodeGeneratorInputSample.DoublesTransformerDelegate doublesTransformerConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate>(doublesTransformer)?.CreateTrampoline();
+		NativeAOT.CodeGeneratorInputSample.DoublesTransformerDelegate doublesTransformerConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate>(doublesTransformer)?.Trampoline;
 	
 	    try {
 			System.Double __returnValue = NativeAOT.CodeGeneratorInputSample.Transformer.TransformDoubles(number1, number2, doublesTransformerConverted);
@@ -56569,8 +57107,8 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Transformer
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Transformer_GetAndTransformString")]
 	internal static byte* /* System.String */ NativeAOT_CodeGeneratorInputSample_Transformer_GetAndTransformString(void* /* NativeAOT.CodeGeneratorInputSample.StringGetterDelegate */ stringGetter, void* /* NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate */ stringTransformer, void** /* System.Exception */ __outException)
 	{
-		NativeAOT.CodeGeneratorInputSample.StringGetterDelegate stringGetterConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_StringGetterDelegate>(stringGetter)?.CreateTrampoline();
-		NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate stringTransformerConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate>(stringTransformer)?.CreateTrampoline();
+		NativeAOT.CodeGeneratorInputSample.StringGetterDelegate stringGetterConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_StringGetterDelegate>(stringGetter)?.Trampoline;
+		NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate stringTransformerConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate>(stringTransformer)?.Trampoline;
 	
 	    try {
 			System.String __returnValue = NativeAOT.CodeGeneratorInputSample.Transformer.GetAndTransformString(stringGetterConverted, stringTransformerConverted);
@@ -56648,7 +57186,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Transformer
 	{
 	
 	    try {
-			NativeAOT.CodeGeneratorInputSample.Transformer.UppercaseStringTransformer = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate>(__value)?.CreateTrampoline();
+			NativeAOT.CodeGeneratorInputSample.Transformer.UppercaseStringTransformer = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate>(__value)?.Trampoline;
 	
 	        if (__outException is not null) {
 	            *__outException = null;
