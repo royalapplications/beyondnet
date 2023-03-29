@@ -439,10 +439,17 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             parameterList.Add(parameterString);
         } else if (memberKind != MemberKind.Destructor) {
             foreach (var parameter in parameters) {
+                bool isOutParameter = parameter.IsOut;
+                
                 Type parameterType = parameter.ParameterType;
                 TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
-                string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(targetLanguage, true);
-    
+                
+                string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(
+                    targetLanguage,
+                    true,
+                    isOutParameter
+                );
+                
                 string parameterString = $"{unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */ {parameterNamePrefix}{parameter.Name}{parameterNameSuffix}";
                 parameterList.Add(parameterString);
             }
@@ -486,10 +493,12 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             );
             
             if (typeConversion != null) {
+                bool isOutParameter = parameter.IsOut;
+                
                 string parameterTypeName = parameterTypeDescriptor.GetTypeName(
                     targetLanguage,
                     true,
-                    parameter.IsOut
+                    isOutParameter
                 );
                 
                 string convertedParameterName = $"{parameterName}Converted";
