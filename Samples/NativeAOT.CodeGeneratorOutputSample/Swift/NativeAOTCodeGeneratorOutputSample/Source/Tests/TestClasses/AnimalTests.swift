@@ -215,6 +215,8 @@ final class AnimalTests: XCTestCase {
             return
         }
         
+        defer { NativeAOT_CodeGeneratorInputSample_IAnimal_Destroy(dog) }
+        
         guard let dogNameRetC = NativeAOT_CodeGeneratorInputSample_IAnimal_Name_Get(dog,
                                                                                     &exception),
               exception == nil else {
@@ -222,6 +224,8 @@ final class AnimalTests: XCTestCase {
             
             return
         }
+        
+        defer { dogNameRetC.deallocate() }
         
         let dogNameRet = String(cString: dogNameRetC)
         
@@ -243,6 +247,8 @@ final class AnimalTests: XCTestCase {
             return
         }
         
+        defer { NativeAOT_CodeGeneratorInputSample_IAnimal_Destroy(cat) }
+        
         guard let catNameRetC = NativeAOT_CodeGeneratorInputSample_IAnimal_Name_Get(cat,
                                                                                     &exception),
               exception == nil else {
@@ -250,6 +256,8 @@ final class AnimalTests: XCTestCase {
             
             return
         }
+        
+        defer { catNameRetC.deallocate() }
         
         let catNameRet = String(cString: catNameRetC)
         
