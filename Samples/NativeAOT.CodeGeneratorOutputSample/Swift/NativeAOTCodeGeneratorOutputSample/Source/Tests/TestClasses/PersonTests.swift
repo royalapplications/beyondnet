@@ -660,7 +660,7 @@ final class PersonTests: XCTestCase {
             return
         }
         
-        defer { NativeAOT_CodeGeneratorInputSample_Person_Destroy(son) }
+        defer { NativeAOT_CodeGeneratorInputSample_Person_Destroy(daugther) }
         
         NativeAOT_CodeGeneratorInputSample_Person_AddChild(mother,
                                                            daugther,
@@ -717,5 +717,112 @@ final class PersonTests: XCTestCase {
         let expectedNumberOfChildrenAfterRemoval: Int32 = 0
         
         XCTAssertEqual(expectedNumberOfChildrenAfterRemoval, numberOfChildrenAfterRemoval)
+    }
+    
+    func testPersonChildrenArrayChange() {
+        var exception: System_Exception_t?
+        
+        guard let mother = NativeAOT_CodeGeneratorInputSample_Person_Create("Johanna",
+                                                                            "Doe",
+                                                                            40,
+                                                                            &exception),
+              exception == nil else {
+            XCTFail("Person ctor should not throw and return an instance")
+            
+            return
+        }
+        
+        defer { NativeAOT_CodeGeneratorInputSample_Person_Destroy(mother) }
+        
+        guard let son = NativeAOT_CodeGeneratorInputSample_Person_Create("Max",
+                                                                         "Doe",
+                                                                         4,
+                                                                         &exception),
+              exception == nil else {
+            XCTFail("Person ctor should not throw and return an instance")
+            
+            return
+        }
+        
+        defer { NativeAOT_CodeGeneratorInputSample_Person_Destroy(son) }
+        
+        NativeAOT_CodeGeneratorInputSample_Person_AddChild(mother,
+                                                           son,
+                                                           &exception)
+        
+        guard exception == nil else {
+            XCTFail("Person.AddChild should not throw")
+            
+            return
+        }
+        
+        guard let originalChildren = NativeAOT_CodeGeneratorInputSample_Person_Children_Get(mother,
+                                                                                            &exception),
+              exception == nil else {
+            XCTFail("Person.Children getter should not throw and return an instance")
+            
+            return
+        }
+        
+        defer { System_Array_Destroy(originalChildren) }
+        
+        let numberOfChildrenBeforeDaugther = System_Array_Length_Get(originalChildren,
+                                                                     &exception)
+        
+        XCTAssertNil(exception)
+        XCTAssertEqual(1, numberOfChildrenBeforeDaugther)
+        
+        let personType = NativeAOT_CodeGeneratorInputSample_Person_TypeOf()
+        
+        defer { System_Type_Destroy(personType) }
+        
+        guard let newChildren = System_Array_CreateInstance(personType,
+                                                            2,
+                                                            &exception),
+              exception == nil else {
+            XCTFail("System.Array.CreateInstance should not throw and return an instance")
+            
+            return
+        }
+        
+        defer { System_Array_Destroy(newChildren) }
+        
+        System_Array_Copy(originalChildren,
+                          newChildren,
+                          1,
+                          &exception)
+        
+        XCTAssertNil(exception)
+        
+        guard let daugther = NativeAOT_CodeGeneratorInputSample_Person_Create("Marie",
+                                                                              "Doe",
+                                                                              10,
+                                                                              &exception),
+              exception == nil else {
+            XCTFail("Person ctor should not throw and return an instance")
+            
+            return
+        }
+        
+        defer { NativeAOT_CodeGeneratorInputSample_Person_Destroy(daugther) }
+        
+        System_Array_SetValue(newChildren,
+                              daugther,
+                              1,
+                              &exception)
+        
+        XCTAssertNil(exception)
+        
+        NativeAOT_CodeGeneratorInputSample_Person_Children_Set(mother,
+                                                               newChildren,
+                                                               &exception)
+        
+        XCTAssertNil(exception)
+        
+        let numberOfChildrenAfterDaugther = NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildren_Get(mother,
+                                                                                                           &exception)
+        
+        XCTAssertNil(exception)
+        XCTAssertEqual(2, numberOfChildrenAfterDaugther)
     }
 }

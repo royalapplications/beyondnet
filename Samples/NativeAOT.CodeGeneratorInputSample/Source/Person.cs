@@ -12,7 +12,7 @@ public class Person
     public string LastName { get; set; }
     public int Age { get; set; }
     public Address? Address { get; set; }
-    public Person[] Children { get; private set; } = Array.Empty<Person>();
+    public Person[] Children { get; set; } = Array.Empty<Person>();
 
     public event NumberOfChildrenChangedDelegate? NumberOfChildrenChanged;
     

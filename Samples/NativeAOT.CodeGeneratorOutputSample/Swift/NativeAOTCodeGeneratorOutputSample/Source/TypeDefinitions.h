@@ -1,5 +1,5 @@
 // Number of generated types: 279
-// Number of generated members: 2604
+// Number of generated members: 2607
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -19433,6 +19433,27 @@ NativeAOT_CodeGeneratorInputSample_Person_Address_Set(
 NativeAOT_CodeGeneratorInputSample_Person_Array_t /* NativeAOT.CodeGeneratorInputSample.Person[] */
 NativeAOT_CodeGeneratorInputSample_Person_Children_Get(
 	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_Person_Children_Set(
+	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
+	NativeAOT_CodeGeneratorInputSample_Person_Array_t /* NativeAOT.CodeGeneratorInputSample.Person[] */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+NativeAOT_CodeGeneratorInputSample_Person_Array_t /* NativeAOT.CodeGeneratorInputSample.Person[] */
+NativeAOT_CodeGeneratorInputSample_Person_Children_Get(
+	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_Person_Children_Set(
+	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
+	NativeAOT_CodeGeneratorInputSample_Person_Array_t /* NativeAOT.CodeGeneratorInputSample.Person[] */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
