@@ -18,6 +18,8 @@ final class SystemVersionTests: XCTestCase {
         let build: Int32    = 3
         let revision: Int32 = 4
         
+        let versionString = "\(major).\(minor).\(build).\(revision)"
+        
         guard let version = System_Version_Create(major,
                                                   minor,
                                                   build,
@@ -73,6 +75,20 @@ final class SystemVersionTests: XCTestCase {
         
         XCTAssertNil(exception)
         XCTAssertEqual(revision, revisionRet)
+        
+        guard let versionStringRetC = System_Version_ToString(version,
+                                                              &exception),
+              exception == nil else {
+            XCTFail("System.Version.ToString should not throw and return an instance of a C string")
+            
+            return
+        }
+        
+        defer { versionStringRetC.deallocate() }
+        
+        let versionStringRet = String(cString: versionStringRetC)
+        
+        XCTAssertEqual(versionString, versionStringRet)
     }
     
     func testSystemVersionFromString() {
@@ -124,5 +140,19 @@ final class SystemVersionTests: XCTestCase {
         
         XCTAssertNil(exception)
         XCTAssertEqual(revision, revisionRet)
+        
+        guard let versionStringRetC = System_Version_ToString(version,
+                                                              &exception),
+              exception == nil else {
+            XCTFail("System.Version.ToString should not throw and return an instance of a C string")
+            
+            return
+        }
+        
+        defer { versionStringRetC.deallocate() }
+        
+        let versionStringRet = String(cString: versionStringRetC)
+        
+        XCTAssertEqual(versionString, versionStringRet)
     }
 }
