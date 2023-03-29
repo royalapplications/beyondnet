@@ -26,6 +26,8 @@ final class SystemActionTests: XCTestCase {
                                           cFunction,
                                           nil)
         
+        defer { System_Action_Destroy(action) }
+        
         // TODO
 //        System_Action_Invoke()
     }
