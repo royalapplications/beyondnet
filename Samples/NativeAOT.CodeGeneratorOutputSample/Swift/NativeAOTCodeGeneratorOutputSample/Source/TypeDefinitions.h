@@ -1,5 +1,5 @@
 // Number of generated types: 279
-// Number of generated members: 2605
+// Number of generated members: 2604
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -19432,13 +19432,6 @@ NativeAOT_CodeGeneratorInputSample_Person_Address_Set(
 
 NativeAOT_CodeGeneratorInputSample_Person_Array_t /* NativeAOT.CodeGeneratorInputSample.Person[] */
 NativeAOT_CodeGeneratorInputSample_Person_Children_Get(
-	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Array_t /* System.Array */
-NativeAOT_CodeGeneratorInputSample_Person_ChildrenAsArray_Get(
 	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
 	System_Exception_t* /* System.Exception */ outException
 );

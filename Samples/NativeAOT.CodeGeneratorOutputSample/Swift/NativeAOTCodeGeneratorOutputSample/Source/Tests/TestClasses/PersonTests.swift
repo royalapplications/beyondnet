@@ -355,14 +355,14 @@ final class PersonTests: XCTestCase {
         
         XCTAssertEqual(1, numberOfChildren)
         
-        guard let childrenArray = NativeAOT_CodeGeneratorInputSample_Person_ChildrenAsArray_Get(mother,
-                                                                                                &exception), exception == nil else {
+        guard let children = NativeAOT_CodeGeneratorInputSample_Person_Children_Get(mother,
+                                                                                    &exception), exception == nil else {
             XCTFail("Person.ChildrenAsArray should not throw and return an instance")
             
             return
         }
         
-        let childrenLength = System_Array_GetLength(childrenArray,
+        let childrenLength = System_Array_GetLength(children,
                                                     0,
                                                     &exception)
         
@@ -374,7 +374,7 @@ final class PersonTests: XCTestCase {
         
         XCTAssertEqual(numberOfChildren, childrenLength)
         
-        guard let firstChild = System_Array_GetValue1(childrenArray,
+        guard let firstChild = System_Array_GetValue1(children,
                                                       0,
                                                       &exception),
               exception == nil else {

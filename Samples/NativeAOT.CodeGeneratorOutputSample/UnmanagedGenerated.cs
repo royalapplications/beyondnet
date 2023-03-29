@@ -1,5 +1,5 @@
 // Number of generated types: 279
-// Number of generated members: 2393
+// Number of generated members: 2392
 
 // <Header>
 using System;
@@ -65944,38 +65944,6 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Person
 	
 	    try {
 			NativeAOT.CodeGeneratorInputSample.Person[] __returnValue = __selfConverted.Children;
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_ChildrenAsArray_Get")]
-	internal static void* /* System.Array */ NativeAOT_CodeGeneratorInputSample_Person_ChildrenAsArray_Get(void* /* NativeAOT.CodeGeneratorInputSample.Person */ __self, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		NativeAOT.CodeGeneratorInputSample.Person __selfConverted = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Person>(__self);
-	
-	
-	    try {
-			System.Array __returnValue = __selfConverted.ChildrenAsArray;
 			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {

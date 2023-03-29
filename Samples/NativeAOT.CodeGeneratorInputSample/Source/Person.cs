@@ -14,13 +14,6 @@ public class Person
     public Address? Address { get; set; }
     public Person[] Children { get; private set; } = Array.Empty<Person>();
 
-    public Array ChildrenAsArray
-    {
-        get {
-            return Children;
-        }
-    }
-
     public event NumberOfChildrenChangedDelegate? NumberOfChildrenChanged;
     
     public NiceLevels NiceLevel { get; set; } = NiceLevels.Nice;
