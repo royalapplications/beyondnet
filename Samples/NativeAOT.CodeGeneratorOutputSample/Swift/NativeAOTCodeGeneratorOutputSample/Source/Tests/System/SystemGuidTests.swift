@@ -11,7 +11,7 @@ final class SystemGuidTests: XCTestCase {
         var guid: System_Guid_t?
         
         uuidString.withCString { uuidStringC in
-            guid = System_Guid_Create2(uuidStringC,
+            guid = System_Guid_Create4(uuidStringC,
                                        &exception)
         }
         

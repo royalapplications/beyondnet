@@ -374,9 +374,9 @@ final class PersonTests: XCTestCase {
         
         XCTAssertEqual(numberOfChildren, childrenLength)
         
-        guard let firstChild = System_Array_GetValue(childrenArray,
-                                                     0,
-                                                     &exception),
+        guard let firstChild = System_Array_GetValue1(childrenArray,
+                                                      0,
+                                                      &exception),
               exception == nil else {
             XCTFail("System.Array.GetValue should not throw and return an instance")
             

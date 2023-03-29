@@ -35,9 +35,9 @@ public partial class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWrit
     public string Write(Type type, State state)
     {
         if (type.IsPrimitive ||
-            type.IsEnum ||
             type.IsPointer ||
-            type.IsByRef) {
+            type.IsByRef ||
+            type.IsArray) {
             // No need to generate C# Unmanaged code for those kinds of types
 
             return string.Empty;
@@ -68,6 +68,12 @@ public partial class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWrit
                 fullTypeName,
                 cTypeName,
                 delegateInvokeMethod!,
+                sb,
+                state
+            );
+        } else if (type.IsEnum) {
+            WriteEnumType(
+                type,
                 sb,
                 state
             );
@@ -135,6 +141,19 @@ public partial class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWrit
         );
         
         WriteDestructor(
+            type,
+            sb,
+            state
+        );
+    }
+
+    private void WriteEnumType(
+        Type type,
+        StringBuilder sb,
+        State state
+    )
+    {
+        WriteTypeOf(
             type,
             sb,
             state

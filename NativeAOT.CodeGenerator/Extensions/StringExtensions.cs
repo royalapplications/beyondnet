@@ -27,7 +27,8 @@ internal static class StringExtensions
     {
         string cTypeName = fullTypeName
             .Replace(".", "_")
-            .Replace("+", "_");
+            .Replace("+", "_")
+            .Replace("[]", "_Array");
 
         return cTypeName;
     }

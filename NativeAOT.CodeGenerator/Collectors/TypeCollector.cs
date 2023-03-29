@@ -230,10 +230,10 @@ public class TypeCollector
             return false;
         }
 
-        if (type.IsArray) {
-            unsupportedReason = "Is Array";
-            return false;
-        }
+        // if (type.IsArray) {
+        //     unsupportedReason = "Is Array";
+        //     return false;
+        // }
         
         if (type.IsGenericType) {
             unsupportedReason = "Is Generic Type";

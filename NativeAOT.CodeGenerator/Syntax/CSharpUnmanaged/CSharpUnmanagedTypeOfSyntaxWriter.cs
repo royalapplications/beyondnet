@@ -14,8 +14,7 @@ public class CSharpUnmanagedTypeOfSyntaxWriter: CSharpUnmanagedMethodSyntaxWrite
 
     public string Write(Type type, State state)
     {
-        if (type.IsVoid() ||
-            type.IsEnum) {
+        if (type.IsVoid()) {
             return string.Empty;
         }
         
