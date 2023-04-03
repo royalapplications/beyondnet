@@ -22,7 +22,7 @@
 		E73EE8F629DAF09D00C57A71 /* SystemMathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73EE8F529DAF09D00C57A71 /* SystemMathTests.swift */; };
 		E746795C29DAE45000AF25C5 /* SystemConvertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E746795B29DAE45000AF25C5 /* SystemConvertTests.swift */; };
 		E7C8CF0529C1FA9500C4230F /* SystemGuidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0429C1FA9500C4230F /* SystemGuidTests.swift */; };
-		E7C8CF0729C1FABA00C4230F /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0629C1FABA00C4230F /* StringTests.swift */; };
+		E7C8CF0729C1FABA00C4230F /* SystemStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0629C1FABA00C4230F /* SystemStringTests.swift */; };
 		E7C8CF0929C1FB0800C4230F /* SystemDateTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0829C1FB0800C4230F /* SystemDateTimeTests.swift */; };
 		E7C8CF0B29C1FE5800C4230F /* SystemArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0A29C1FE5800C4230F /* SystemArrayTests.swift */; };
 		E7C8CF0D29C2139B00C4230F /* PersonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0C29C2139B00C4230F /* PersonTests.swift */; };
@@ -85,7 +85,7 @@
 		E73EE8F529DAF09D00C57A71 /* SystemMathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemMathTests.swift; sourceTree = "<group>"; };
 		E746795B29DAE45000AF25C5 /* SystemConvertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemConvertTests.swift; sourceTree = "<group>"; };
 		E7C8CF0429C1FA9500C4230F /* SystemGuidTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemGuidTests.swift; sourceTree = "<group>"; };
-		E7C8CF0629C1FABA00C4230F /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
+		E7C8CF0629C1FABA00C4230F /* SystemStringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemStringTests.swift; sourceTree = "<group>"; };
 		E7C8CF0829C1FB0800C4230F /* SystemDateTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemDateTimeTests.swift; sourceTree = "<group>"; };
 		E7C8CF0A29C1FE5800C4230F /* SystemArrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemArrayTests.swift; sourceTree = "<group>"; };
 		E7C8CF0C29C2139B00C4230F /* PersonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTests.swift; sourceTree = "<group>"; };
@@ -177,14 +177,14 @@
 		E7C8CF0229C1FA7800C4230F /* System */ = {
 			isa = PBXGroup;
 			children = (
+				E7F4A49129CB5F2A00D93D81 /* SystemObjectTests.swift */,
 				E70A1FAC29C3652100843CD0 /* SystemTypeTests.swift */,
-				E7C8CF0629C1FABA00C4230F /* StringTests.swift */,
+				E7F4A49329CB676100D93D81 /* SystemExceptionTests.swift */,
+				E7C8CF0629C1FABA00C4230F /* SystemStringTests.swift */,
+				E7C8CF0A29C1FE5800C4230F /* SystemArrayTests.swift */,
+				E7F4A49529CB68FE00D93D81 /* SystemEnumTests.swift */,
 				E7C8CF0429C1FA9500C4230F /* SystemGuidTests.swift */,
 				E7C8CF0829C1FB0800C4230F /* SystemDateTimeTests.swift */,
-				E7C8CF0A29C1FE5800C4230F /* SystemArrayTests.swift */,
-				E7F4A49129CB5F2A00D93D81 /* SystemObjectTests.swift */,
-				E7F4A49329CB676100D93D81 /* SystemExceptionTests.swift */,
-				E7F4A49529CB68FE00D93D81 /* SystemEnumTests.swift */,
 				E7ED7A1729D35DF4008C96E0 /* SystemVersionTests.swift */,
 				E746795B29DAE45000AF25C5 /* SystemConvertTests.swift */,
 				E7ED7A1929D445C8008C96E0 /* SystemActionTests.swift */,
@@ -363,7 +363,7 @@
 				E7ED7A1A29D445C8008C96E0 /* SystemActionTests.swift in Sources */,
 				E73EE8F229DAEA0500C57A71 /* SystemThreadingThreadTest.swift in Sources */,
 				E7F4A49629CB68FE00D93D81 /* SystemEnumTests.swift in Sources */,
-				E7C8CF0729C1FABA00C4230F /* StringTests.swift in Sources */,
+				E7C8CF0729C1FABA00C4230F /* SystemStringTests.swift in Sources */,
 				E7EB338629C8879100392F3D /* AddressTests.swift in Sources */,
 				E7F4A49229CB5F2A00D93D81 /* SystemObjectTests.swift in Sources */,
 				E7C8CF0D29C2139B00C4230F /* PersonTests.swift in Sources */,

@@ -1,7 +1,7 @@
 import XCTest
 import NativeAOTCodeGeneratorOutputSample
 
-final class StringTests: XCTestCase {
+final class SystemStringTests: XCTestCase {
     func testString() {
         var exception: System_Exception_t?
         
@@ -54,5 +54,54 @@ final class StringTests: XCTestCase {
         }
         
         XCTAssertFalse(isNonEmptyStringNullOrEmpty)
+		
+		guard let trimmedStringC = System_String_Trim(" \(nonEmptyString) ",
+													  &exception),
+			  exception == nil else {
+			XCTFail("System.String.Trim should not throw and return an instance of a C String")
+			
+			return
+		}
+		
+		defer { trimmedStringC.deallocate() }
+		
+		let trimmedString = String(cString: trimmedStringC)
+		
+		XCTAssertEqual(nonEmptyString, trimmedString)
+		
+		let expectedIndexOfWorld: Int32 = 6
+		
+		let indexOfWorld = System_String_IndexOf4(nonEmptyString,
+												  "World",
+												  &exception)
+		
+		XCTAssertNil(exception)
+		XCTAssertEqual(expectedIndexOfWorld, indexOfWorld)
+		
+		guard let splitOptions: System_StringSplitOptions = .init(rawValue: System_StringSplitOptions.removeEmptyEntries.rawValue | System_StringSplitOptions.trimEntries.rawValue) else {
+			XCTFail("Failed to get string split options")
+			
+			return
+		}
+		
+		guard let split = System_String_Split6(nonEmptyString,
+											   " ",
+											   splitOptions,
+											   &exception),
+			  exception == nil else {
+			XCTFail("System.String.Split should not throw and return an instance")
+			
+			return
+		}
+		
+		defer { System_Array_Destroy(split) }
+		
+		guard System_Array_Length_Get(split,
+									  &exception) == 2,
+			  exception == nil else {
+			XCTFail("System.Array.Length getter should not throw and return 2")
+			
+			return
+		}
     }
 }
