@@ -326,7 +326,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                     string parameterName = parameter.Name ?? throw new Exception("Parameter has no name");
                     string convertedParameterName = $"{parameterName}Converted";
 
-                    TypeDescriptor parameterTypeDescriptor = parameter.ParameterType.GetTypeDescriptor(typeDescriptorRegistry);
+                    Type parameterType = parameter.ParameterType.GetElementType() ?? throw new Exception("Failed to get underlying parameter type of an out parameter");
+                    TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
 
                     string? parameterTypeConversion = parameterTypeDescriptor.GetTypeConversion(CodeLanguage.CSharp, CodeLanguage.CSharpUnmanaged);
                     
@@ -468,6 +469,11 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 bool isOutParameter = parameter.IsOut;
                 
                 Type parameterType = parameter.ParameterType;
+
+                if (isOutParameter) {
+                    parameterType = parameterType.GetElementType() ?? throw new Exception("Failed to get underlying type of an out parameter");
+                }
+                
                 TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
                 
                 string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(
