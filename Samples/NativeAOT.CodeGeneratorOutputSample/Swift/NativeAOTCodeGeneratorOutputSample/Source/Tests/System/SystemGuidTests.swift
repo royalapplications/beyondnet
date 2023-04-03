@@ -156,4 +156,42 @@ final class SystemGuidTests: XCTestCase {
 		
 		XCTAssertEqual(uuidString.lowercased(), uuidStringRet.lowercased())
 	}
+	
+	func testInvalidSystemGuidParsing() {
+		guard let emptyGuid = System_Guid_Empty_Get() else {
+			XCTFail("Failed to get System.Guid.Empty")
+			
+			return
+		}
+		
+		var exception: System_Exception_t?
+		
+		let uuidString = "nonsense"
+		
+		var success: CBool = .no
+		var guid: System_Guid_t?
+		
+		uuidString.withCString { uuidStringC in
+			success = System_Guid_TryParse(uuidStringC,
+										   &guid,
+										   &exception)
+		}
+		
+		guard let guid,
+			  success == .no,
+			  exception == nil else {
+			XCTFail("System.Guid.TryParse should not throw, the return value should be false and the returned instance as out parameter should be an empty System.Guid")
+			
+			return
+		}
+		
+		defer { System_Guid_Destroy(guid) }
+		
+		let equal = System_Object_Equals(emptyGuid,
+										 guid,
+										 &exception)
+		
+		XCTAssertNil(exception)
+		XCTAssertTrue(equal == .yes)
+	}
 }
