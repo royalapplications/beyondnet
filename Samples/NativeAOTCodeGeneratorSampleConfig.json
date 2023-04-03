@@ -11,9 +11,5 @@
 		"System.Threading.Thread",
 		"System.Threading.Timer",
 		"System.AppDomain"
-	],
-
-	"ExcludedTypeNames": [
-		
 	]
 }

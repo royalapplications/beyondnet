@@ -20,10 +20,12 @@ internal class CodeGeneratorDriver
 
     internal void Generate()
     {
+        string assemblyPath = Configuration.AssemblyPath.ExpandTildeAndGetAbsolutePath();
+        
         Assembly assembly;
         
         using (AssemblyLoader assemblyLoader = new()) {
-            assembly = assemblyLoader.LoadFrom(Configuration.AssemblyPath);
+            assembly = assemblyLoader.LoadFrom(assemblyPath);
         }
 
         Type[] includedTypes = TypesFromTypeNames(
@@ -62,17 +64,23 @@ internal class CodeGeneratorDriver
 
         var cResult = cResultObject.Result;
         var cCode = cResultObject.GeneratedCode;
+        
+        string? cSharpUnmanagedOutputPath = Configuration.CSharpUnmanagedOutputPath?
+            .ExpandTildeAndGetAbsolutePath();
 
         WriteCodeToFileOrPrintToConsole(
             "C#",
             cSharpUnmanagedCode,
-            Configuration.CSharpUnmanagedOutputPath
+            cSharpUnmanagedOutputPath
         );
+        
+        string? cOutputPath = Configuration.COutputPath?
+            .ExpandTildeAndGetAbsolutePath();
         
         WriteCodeToFileOrPrintToConsole(
             "C",
             cCode,
-            Configuration.COutputPath
+            cOutputPath
         );
     }
     
@@ -104,9 +112,7 @@ internal class CodeGeneratorDriver
         if (string.IsNullOrEmpty(outputPath)) {
             return;
         }
-        
-        outputPath = Path.GetFullPath(outputPath);
-            
+    
         File.WriteAllText(outputPath, code);
     }
     
