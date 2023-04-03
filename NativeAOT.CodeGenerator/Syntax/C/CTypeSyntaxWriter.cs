@@ -329,6 +329,8 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         if (!string.IsNullOrEmpty(parameters)) {
             parameters = ", " + parameters;
         }
+
+        parameters += ", System_Exception_t* /* System.Exception */ outException";
         
         sb.AppendLine($"{returnTypeName}");
         sb.AppendLine($"{cMemberNamePrefix}_Invoke(");

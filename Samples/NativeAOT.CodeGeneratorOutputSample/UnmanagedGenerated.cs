@@ -45558,18 +45558,27 @@ internal unsafe class System_Delegate
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Delegate_Invoke")]
-	public static void /* System.Void */ Invoke(void* self)
+	public static void /* System.Void */ Invoke(void* self, void** __outException)
 	{
 		if (self is null) {
 			throw new ArgumentNullException(nameof(self));
 		}
 
-		var selfConverted = InteropUtils.GetInstance<System_Delegate>(self);
+		try {
+			var selfConverted = InteropUtils.GetInstance<System_Delegate>(self);
 
-	
+		
 
 
-		selfConverted.Trampoline.DynamicInvoke();
+			selfConverted.Trampoline.DynamicInvoke();
+		} catch (Exception __exception) {
+			if (__outException is not null) {
+				void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+
+				*__outException = __exceptionHandleAddress;
+			}
+
+		}
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Delegate_Context_Get")]
@@ -49283,18 +49292,27 @@ internal unsafe class System_Action
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Action_Invoke")]
-	public static void /* System.Void */ Invoke(void* self)
+	public static void /* System.Void */ Invoke(void* self, void** __outException)
 	{
 		if (self is null) {
 			throw new ArgumentNullException(nameof(self));
 		}
 
-		var selfConverted = InteropUtils.GetInstance<System_Action>(self);
+		try {
+			var selfConverted = InteropUtils.GetInstance<System_Action>(self);
 
-	
+		
 
 
-		selfConverted.Trampoline();
+			selfConverted.Trampoline();
+		} catch (Exception __exception) {
+			if (__outException is not null) {
+				void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+
+				*__outException = __exceptionHandleAddress;
+			}
+
+		}
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Action_Context_Get")]
@@ -49430,18 +49448,27 @@ internal unsafe class System_MulticastDelegate
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_MulticastDelegate_Invoke")]
-	public static void /* System.Void */ Invoke(void* self)
+	public static void /* System.Void */ Invoke(void* self, void** __outException)
 	{
 		if (self is null) {
 			throw new ArgumentNullException(nameof(self));
 		}
 
-		var selfConverted = InteropUtils.GetInstance<System_MulticastDelegate>(self);
+		try {
+			var selfConverted = InteropUtils.GetInstance<System_MulticastDelegate>(self);
 
-	
+		
 
 
-		selfConverted.Trampoline.DynamicInvoke();
+			selfConverted.Trampoline.DynamicInvoke();
+		} catch (Exception __exception) {
+			if (__outException is not null) {
+				void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+
+				*__outException = __exceptionHandleAddress;
+			}
+
+		}
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_MulticastDelegate_Context_Get")]
@@ -50600,19 +50627,28 @@ internal unsafe class System_AsyncCallback
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_AsyncCallback_Invoke")]
-	public static void /* System.Void */ Invoke(void* self, void* /* System.IAsyncResult */ ar)
+	public static void /* System.Void */ Invoke(void* self, void* /* System.IAsyncResult */ ar, void** __outException)
 	{
 		if (self is null) {
 			throw new ArgumentNullException(nameof(self));
 		}
 
-		var selfConverted = InteropUtils.GetInstance<System_AsyncCallback>(self);
+		try {
+			var selfConverted = InteropUtils.GetInstance<System_AsyncCallback>(self);
 
-		System.IAsyncResult arConverted = InteropUtils.GetInstance<System.IAsyncResult>(ar);
-	
+			System.IAsyncResult arConverted = InteropUtils.GetInstance<System.IAsyncResult>(ar);
+		
 
 
-		selfConverted.Trampoline(arConverted);
+			selfConverted.Trampoline(arConverted);
+		} catch (Exception __exception) {
+			if (__outException is not null) {
+				void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+
+				*__outException = __exceptionHandleAddress;
+			}
+
+		}
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_AsyncCallback_Context_Get")]
@@ -51524,23 +51560,33 @@ internal unsafe class System_Reflection_ModuleResolveEventHandler
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ModuleResolveEventHandler_Invoke")]
-	public static void* /* System.Reflection.Module */ Invoke(void* self, void* /* System.Object */ sender, void* /* System.ResolveEventArgs */ e)
+	public static void* /* System.Reflection.Module */ Invoke(void* self, void* /* System.Object */ sender, void* /* System.ResolveEventArgs */ e, void** __outException)
 	{
 		if (self is null) {
 			throw new ArgumentNullException(nameof(self));
 		}
 
-		var selfConverted = InteropUtils.GetInstance<System_Reflection_ModuleResolveEventHandler>(self);
+		try {
+			var selfConverted = InteropUtils.GetInstance<System_Reflection_ModuleResolveEventHandler>(self);
 
-		System.Object senderConverted = InteropUtils.GetInstance<System.Object>(sender);
-		System.ResolveEventArgs eConverted = InteropUtils.GetInstance<System.ResolveEventArgs>(e);
-	
+			System.Object senderConverted = InteropUtils.GetInstance<System.Object>(sender);
+			System.ResolveEventArgs eConverted = InteropUtils.GetInstance<System.ResolveEventArgs>(e);
+		
 
 
-		var __returnValue = selfConverted.Trampoline(senderConverted, eConverted);
-		var __returnValueConverted = __returnValue.AllocateGCHandleAndGetAddress();
+			var __returnValue = selfConverted.Trampoline(senderConverted, eConverted);
+			var __returnValueConverted = __returnValue.AllocateGCHandleAndGetAddress();
 
-		return __returnValueConverted;
+			return __returnValueConverted;
+		} catch (Exception __exception) {
+			if (__outException is not null) {
+				void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+
+				*__outException = __exceptionHandleAddress;
+			}
+
+			return null;
+		}
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ModuleResolveEventHandler_Context_Get")]
@@ -53687,23 +53733,33 @@ internal unsafe class System_Reflection_TypeFilter
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_TypeFilter_Invoke")]
-	public static byte /* System.Boolean */ Invoke(void* self, void* /* System.Type */ m, void* /* System.Object */ filterCriteria)
+	public static byte /* System.Boolean */ Invoke(void* self, void* /* System.Type */ m, void* /* System.Object */ filterCriteria, void** __outException)
 	{
 		if (self is null) {
 			throw new ArgumentNullException(nameof(self));
 		}
 
-		var selfConverted = InteropUtils.GetInstance<System_Reflection_TypeFilter>(self);
+		try {
+			var selfConverted = InteropUtils.GetInstance<System_Reflection_TypeFilter>(self);
 
-		System.Type mConverted = InteropUtils.GetInstance<System.Type>(m);
-		System.Object filterCriteriaConverted = InteropUtils.GetInstance<System.Object>(filterCriteria);
-	
+			System.Type mConverted = InteropUtils.GetInstance<System.Type>(m);
+			System.Object filterCriteriaConverted = InteropUtils.GetInstance<System.Object>(filterCriteria);
+		
 
 
-		var __returnValue = selfConverted.Trampoline(mConverted, filterCriteriaConverted);
-		var __returnValueConverted = __returnValue.ToCBool();
+			var __returnValue = selfConverted.Trampoline(mConverted, filterCriteriaConverted);
+			var __returnValueConverted = __returnValue.ToCBool();
 
-		return __returnValueConverted;
+			return __returnValueConverted;
+		} catch (Exception __exception) {
+			if (__outException is not null) {
+				void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+
+				*__outException = __exceptionHandleAddress;
+			}
+
+			return 0;
+		}
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_TypeFilter_Context_Get")]
@@ -66296,23 +66352,33 @@ internal unsafe class System_Reflection_MemberFilter
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MemberFilter_Invoke")]
-	public static byte /* System.Boolean */ Invoke(void* self, void* /* System.Reflection.MemberInfo */ m, void* /* System.Object */ filterCriteria)
+	public static byte /* System.Boolean */ Invoke(void* self, void* /* System.Reflection.MemberInfo */ m, void* /* System.Object */ filterCriteria, void** __outException)
 	{
 		if (self is null) {
 			throw new ArgumentNullException(nameof(self));
 		}
 
-		var selfConverted = InteropUtils.GetInstance<System_Reflection_MemberFilter>(self);
+		try {
+			var selfConverted = InteropUtils.GetInstance<System_Reflection_MemberFilter>(self);
 
-		System.Reflection.MemberInfo mConverted = InteropUtils.GetInstance<System.Reflection.MemberInfo>(m);
-		System.Object filterCriteriaConverted = InteropUtils.GetInstance<System.Object>(filterCriteria);
-	
+			System.Reflection.MemberInfo mConverted = InteropUtils.GetInstance<System.Reflection.MemberInfo>(m);
+			System.Object filterCriteriaConverted = InteropUtils.GetInstance<System.Object>(filterCriteria);
+		
 
 
-		var __returnValue = selfConverted.Trampoline(mConverted, filterCriteriaConverted);
-		var __returnValueConverted = __returnValue.ToCBool();
+			var __returnValue = selfConverted.Trampoline(mConverted, filterCriteriaConverted);
+			var __returnValueConverted = __returnValue.ToCBool();
 
-		return __returnValueConverted;
+			return __returnValueConverted;
+		} catch (Exception __exception) {
+			if (__outException is not null) {
+				void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+
+				*__outException = __exceptionHandleAddress;
+			}
+
+			return 0;
+		}
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MemberFilter_Context_Get")]
@@ -80902,19 +80968,28 @@ internal unsafe class System_Threading_ContextCallback
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_ContextCallback_Invoke")]
-	public static void /* System.Void */ Invoke(void* self, void* /* System.Object */ state)
+	public static void /* System.Void */ Invoke(void* self, void* /* System.Object */ state, void** __outException)
 	{
 		if (self is null) {
 			throw new ArgumentNullException(nameof(self));
 		}
 
-		var selfConverted = InteropUtils.GetInstance<System_Threading_ContextCallback>(self);
+		try {
+			var selfConverted = InteropUtils.GetInstance<System_Threading_ContextCallback>(self);
 
-		System.Object stateConverted = InteropUtils.GetInstance<System.Object>(state);
-	
+			System.Object stateConverted = InteropUtils.GetInstance<System.Object>(state);
+		
 
 
-		selfConverted.Trampoline(stateConverted);
+			selfConverted.Trampoline(stateConverted);
+		} catch (Exception __exception) {
+			if (__outException is not null) {
+				void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+
+				*__outException = __exceptionHandleAddress;
+			}
+
+		}
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_ContextCallback_Context_Get")]
@@ -88210,20 +88285,29 @@ internal unsafe class System_UnhandledExceptionEventHandler
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_UnhandledExceptionEventHandler_Invoke")]
-	public static void /* System.Void */ Invoke(void* self, void* /* System.Object */ sender, void* /* System.UnhandledExceptionEventArgs */ e)
+	public static void /* System.Void */ Invoke(void* self, void* /* System.Object */ sender, void* /* System.UnhandledExceptionEventArgs */ e, void** __outException)
 	{
 		if (self is null) {
 			throw new ArgumentNullException(nameof(self));
 		}
 
-		var selfConverted = InteropUtils.GetInstance<System_UnhandledExceptionEventHandler>(self);
+		try {
+			var selfConverted = InteropUtils.GetInstance<System_UnhandledExceptionEventHandler>(self);
 
-		System.Object senderConverted = InteropUtils.GetInstance<System.Object>(sender);
-		System.UnhandledExceptionEventArgs eConverted = InteropUtils.GetInstance<System.UnhandledExceptionEventArgs>(e);
-	
+			System.Object senderConverted = InteropUtils.GetInstance<System.Object>(sender);
+			System.UnhandledExceptionEventArgs eConverted = InteropUtils.GetInstance<System.UnhandledExceptionEventArgs>(e);
+		
 
 
-		selfConverted.Trampoline(senderConverted, eConverted);
+			selfConverted.Trampoline(senderConverted, eConverted);
+		} catch (Exception __exception) {
+			if (__outException is not null) {
+				void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+
+				*__outException = __exceptionHandleAddress;
+			}
+
+		}
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_UnhandledExceptionEventHandler_Context_Get")]
@@ -88475,20 +88559,29 @@ internal unsafe class System_EventHandler
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_EventHandler_Invoke")]
-	public static void /* System.Void */ Invoke(void* self, void* /* System.Object */ sender, void* /* System.EventArgs */ e)
+	public static void /* System.Void */ Invoke(void* self, void* /* System.Object */ sender, void* /* System.EventArgs */ e, void** __outException)
 	{
 		if (self is null) {
 			throw new ArgumentNullException(nameof(self));
 		}
 
-		var selfConverted = InteropUtils.GetInstance<System_EventHandler>(self);
+		try {
+			var selfConverted = InteropUtils.GetInstance<System_EventHandler>(self);
 
-		System.Object senderConverted = InteropUtils.GetInstance<System.Object>(sender);
-		System.EventArgs eConverted = InteropUtils.GetInstance<System.EventArgs>(e);
-	
+			System.Object senderConverted = InteropUtils.GetInstance<System.Object>(sender);
+			System.EventArgs eConverted = InteropUtils.GetInstance<System.EventArgs>(e);
+		
 
 
-		selfConverted.Trampoline(senderConverted, eConverted);
+			selfConverted.Trampoline(senderConverted, eConverted);
+		} catch (Exception __exception) {
+			if (__outException is not null) {
+				void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+
+				*__outException = __exceptionHandleAddress;
+			}
+
+		}
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_EventHandler_Context_Get")]
@@ -88627,20 +88720,29 @@ internal unsafe class System_AssemblyLoadEventHandler
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_AssemblyLoadEventHandler_Invoke")]
-	public static void /* System.Void */ Invoke(void* self, void* /* System.Object */ sender, void* /* System.AssemblyLoadEventArgs */ args)
+	public static void /* System.Void */ Invoke(void* self, void* /* System.Object */ sender, void* /* System.AssemblyLoadEventArgs */ args, void** __outException)
 	{
 		if (self is null) {
 			throw new ArgumentNullException(nameof(self));
 		}
 
-		var selfConverted = InteropUtils.GetInstance<System_AssemblyLoadEventHandler>(self);
+		try {
+			var selfConverted = InteropUtils.GetInstance<System_AssemblyLoadEventHandler>(self);
 
-		System.Object senderConverted = InteropUtils.GetInstance<System.Object>(sender);
-		System.AssemblyLoadEventArgs argsConverted = InteropUtils.GetInstance<System.AssemblyLoadEventArgs>(args);
-	
+			System.Object senderConverted = InteropUtils.GetInstance<System.Object>(sender);
+			System.AssemblyLoadEventArgs argsConverted = InteropUtils.GetInstance<System.AssemblyLoadEventArgs>(args);
+		
 
 
-		selfConverted.Trampoline(senderConverted, argsConverted);
+			selfConverted.Trampoline(senderConverted, argsConverted);
+		} catch (Exception __exception) {
+			if (__outException is not null) {
+				void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+
+				*__outException = __exceptionHandleAddress;
+			}
+
+		}
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_AssemblyLoadEventHandler_Context_Get")]
@@ -88864,23 +88966,33 @@ internal unsafe class System_ResolveEventHandler
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_ResolveEventHandler_Invoke")]
-	public static void* /* System.Reflection.Assembly */ Invoke(void* self, void* /* System.Object */ sender, void* /* System.ResolveEventArgs */ args)
+	public static void* /* System.Reflection.Assembly */ Invoke(void* self, void* /* System.Object */ sender, void* /* System.ResolveEventArgs */ args, void** __outException)
 	{
 		if (self is null) {
 			throw new ArgumentNullException(nameof(self));
 		}
 
-		var selfConverted = InteropUtils.GetInstance<System_ResolveEventHandler>(self);
+		try {
+			var selfConverted = InteropUtils.GetInstance<System_ResolveEventHandler>(self);
 
-		System.Object senderConverted = InteropUtils.GetInstance<System.Object>(sender);
-		System.ResolveEventArgs argsConverted = InteropUtils.GetInstance<System.ResolveEventArgs>(args);
-	
+			System.Object senderConverted = InteropUtils.GetInstance<System.Object>(sender);
+			System.ResolveEventArgs argsConverted = InteropUtils.GetInstance<System.ResolveEventArgs>(args);
+		
 
 
-		var __returnValue = selfConverted.Trampoline(senderConverted, argsConverted);
-		var __returnValueConverted = __returnValue.AllocateGCHandleAndGetAddress();
+			var __returnValue = selfConverted.Trampoline(senderConverted, argsConverted);
+			var __returnValueConverted = __returnValue.AllocateGCHandleAndGetAddress();
 
-		return __returnValueConverted;
+			return __returnValueConverted;
+		} catch (Exception __exception) {
+			if (__outException is not null) {
+				void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+
+				*__outException = __exceptionHandleAddress;
+			}
+
+			return null;
+		}
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_ResolveEventHandler_Context_Get")]
@@ -89111,18 +89223,27 @@ internal unsafe class System_Threading_ThreadStart
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_ThreadStart_Invoke")]
-	public static void /* System.Void */ Invoke(void* self)
+	public static void /* System.Void */ Invoke(void* self, void** __outException)
 	{
 		if (self is null) {
 			throw new ArgumentNullException(nameof(self));
 		}
 
-		var selfConverted = InteropUtils.GetInstance<System_Threading_ThreadStart>(self);
+		try {
+			var selfConverted = InteropUtils.GetInstance<System_Threading_ThreadStart>(self);
 
-	
+		
 
 
-		selfConverted.Trampoline();
+			selfConverted.Trampoline();
+		} catch (Exception __exception) {
+			if (__outException is not null) {
+				void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+
+				*__outException = __exceptionHandleAddress;
+			}
+
+		}
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_ThreadStart_Context_Get")]
@@ -89259,19 +89380,28 @@ internal unsafe class System_Threading_ParameterizedThreadStart
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_ParameterizedThreadStart_Invoke")]
-	public static void /* System.Void */ Invoke(void* self, void* /* System.Object */ obj)
+	public static void /* System.Void */ Invoke(void* self, void* /* System.Object */ obj, void** __outException)
 	{
 		if (self is null) {
 			throw new ArgumentNullException(nameof(self));
 		}
 
-		var selfConverted = InteropUtils.GetInstance<System_Threading_ParameterizedThreadStart>(self);
+		try {
+			var selfConverted = InteropUtils.GetInstance<System_Threading_ParameterizedThreadStart>(self);
 
-		System.Object objConverted = InteropUtils.GetInstance<System.Object>(obj);
-	
+			System.Object objConverted = InteropUtils.GetInstance<System.Object>(obj);
+		
 
 
-		selfConverted.Trampoline(objConverted);
+			selfConverted.Trampoline(objConverted);
+		} catch (Exception __exception) {
+			if (__outException is not null) {
+				void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+
+				*__outException = __exceptionHandleAddress;
+			}
+
+		}
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_ParameterizedThreadStart_Context_Get")]
@@ -89809,19 +89939,28 @@ internal unsafe class System_Threading_TimerCallback
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_TimerCallback_Invoke")]
-	public static void /* System.Void */ Invoke(void* self, void* /* System.Object */ state)
+	public static void /* System.Void */ Invoke(void* self, void* /* System.Object */ state, void** __outException)
 	{
 		if (self is null) {
 			throw new ArgumentNullException(nameof(self));
 		}
 
-		var selfConverted = InteropUtils.GetInstance<System_Threading_TimerCallback>(self);
+		try {
+			var selfConverted = InteropUtils.GetInstance<System_Threading_TimerCallback>(self);
 
-		System.Object stateConverted = InteropUtils.GetInstance<System.Object>(state);
-	
+			System.Object stateConverted = InteropUtils.GetInstance<System.Object>(state);
+		
 
 
-		selfConverted.Trampoline(stateConverted);
+			selfConverted.Trampoline(stateConverted);
+		} catch (Exception __exception) {
+			if (__outException is not null) {
+				void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+
+				*__outException = __exceptionHandleAddress;
+			}
+
+		}
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_TimerCallback_Context_Get")]
@@ -89994,23 +90133,33 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_MoveDelegate
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_MoveDelegate_Invoke")]
-	public static void* /* NativeAOT.CodeGeneratorInputSample.Address */ Invoke(void* self, byte* /* System.String */ newStreet, byte* /* System.String */ newCity)
+	public static void* /* NativeAOT.CodeGeneratorInputSample.Address */ Invoke(void* self, byte* /* System.String */ newStreet, byte* /* System.String */ newCity, void** __outException)
 	{
 		if (self is null) {
 			throw new ArgumentNullException(nameof(self));
 		}
 
-		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_MoveDelegate>(self);
+		try {
+			var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_MoveDelegate>(self);
 
-		System.String newStreetConverted = InteropUtils.ToDotNetString(newStreet);
-		System.String newCityConverted = InteropUtils.ToDotNetString(newCity);
-	
+			System.String newStreetConverted = InteropUtils.ToDotNetString(newStreet);
+			System.String newCityConverted = InteropUtils.ToDotNetString(newCity);
+		
 
 
-		var __returnValue = selfConverted.Trampoline(newStreetConverted, newCityConverted);
-		var __returnValueConverted = __returnValue.AllocateGCHandleAndGetAddress();
+			var __returnValue = selfConverted.Trampoline(newStreetConverted, newCityConverted);
+			var __returnValueConverted = __returnValue.AllocateGCHandleAndGetAddress();
 
-		return __returnValueConverted;
+			return __returnValueConverted;
+		} catch (Exception __exception) {
+			if (__outException is not null) {
+				void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+
+				*__outException = __exceptionHandleAddress;
+			}
+
+			return null;
+		}
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_MoveDelegate_Context_Get")]
@@ -90300,22 +90449,32 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Invoke")]
-	public static void* /* NativeAOT.CodeGeneratorInputSample.IAnimal */ Invoke(void* self, byte* /* System.String */ animalName)
+	public static void* /* NativeAOT.CodeGeneratorInputSample.IAnimal */ Invoke(void* self, byte* /* System.String */ animalName, void** __outException)
 	{
 		if (self is null) {
 			throw new ArgumentNullException(nameof(self));
 		}
 
-		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate>(self);
+		try {
+			var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate>(self);
 
-		System.String animalNameConverted = InteropUtils.ToDotNetString(animalName);
-	
+			System.String animalNameConverted = InteropUtils.ToDotNetString(animalName);
+		
 
 
-		var __returnValue = selfConverted.Trampoline(animalNameConverted);
-		var __returnValueConverted = __returnValue.AllocateGCHandleAndGetAddress();
+			var __returnValue = selfConverted.Trampoline(animalNameConverted);
+			var __returnValueConverted = __returnValue.AllocateGCHandleAndGetAddress();
 
-		return __returnValueConverted;
+			return __returnValueConverted;
+		} catch (Exception __exception) {
+			if (__outException is not null) {
+				void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+
+				*__outException = __exceptionHandleAddress;
+			}
+
+			return null;
+		}
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Context_Get")]
@@ -91696,18 +91855,27 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildren
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_Invoke")]
-	public static void /* System.Void */ Invoke(void* self)
+	public static void /* System.Void */ Invoke(void* self, void** __outException)
 	{
 		if (self is null) {
 			throw new ArgumentNullException(nameof(self));
 		}
 
-		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate>(self);
+		try {
+			var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate>(self);
 
-	
+		
 
 
-		selfConverted.Trampoline();
+			selfConverted.Trampoline();
+		} catch (Exception __exception) {
+			if (__outException is not null) {
+				void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+
+				*__outException = __exceptionHandleAddress;
+			}
+
+		}
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_Context_Get")]
@@ -91844,19 +92012,29 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDe
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Invoke")]
-	public static int /* System.Int32 */ Invoke(void* self)
+	public static int /* System.Int32 */ Invoke(void* self, void** __outException)
 	{
 		if (self is null) {
 			throw new ArgumentNullException(nameof(self));
 		}
 
-		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate>(self);
+		try {
+			var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate>(self);
 
-	
+		
 
 
-		var __returnValue = selfConverted.Trampoline();
-		return __returnValue;
+			var __returnValue = selfConverted.Trampoline();
+			return __returnValue;
+		} catch (Exception __exception) {
+			if (__outException is not null) {
+				void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+
+				*__outException = __exceptionHandleAddress;
+			}
+
+			return -1;
+		}
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Context_Get")]
@@ -92310,21 +92488,31 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_StringGetterDelegate
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_StringGetterDelegate_Invoke")]
-	public static byte* /* System.String */ Invoke(void* self)
+	public static byte* /* System.String */ Invoke(void* self, void** __outException)
 	{
 		if (self is null) {
 			throw new ArgumentNullException(nameof(self));
 		}
 
-		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_StringGetterDelegate>(self);
+		try {
+			var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_StringGetterDelegate>(self);
 
-	
+		
 
 
-		var __returnValue = selfConverted.Trampoline();
-		var __returnValueConverted = __returnValue.CopyToCString();
+			var __returnValue = selfConverted.Trampoline();
+			var __returnValueConverted = __returnValue.CopyToCString();
 
-		return __returnValueConverted;
+			return __returnValueConverted;
+		} catch (Exception __exception) {
+			if (__outException is not null) {
+				void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+
+				*__outException = __exceptionHandleAddress;
+			}
+
+			return null;
+		}
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_StringGetterDelegate_Context_Get")]
@@ -92466,22 +92654,32 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_StringTransformerDelega
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Invoke")]
-	public static byte* /* System.String */ Invoke(void* self, byte* /* System.String */ inputString)
+	public static byte* /* System.String */ Invoke(void* self, byte* /* System.String */ inputString, void** __outException)
 	{
 		if (self is null) {
 			throw new ArgumentNullException(nameof(self));
 		}
 
-		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate>(self);
+		try {
+			var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate>(self);
 
-		System.String inputStringConverted = InteropUtils.ToDotNetString(inputString);
-	
+			System.String inputStringConverted = InteropUtils.ToDotNetString(inputString);
+		
 
 
-		var __returnValue = selfConverted.Trampoline(inputStringConverted);
-		var __returnValueConverted = __returnValue.CopyToCString();
+			var __returnValue = selfConverted.Trampoline(inputStringConverted);
+			var __returnValueConverted = __returnValue.CopyToCString();
 
-		return __returnValueConverted;
+			return __returnValueConverted;
+		} catch (Exception __exception) {
+			if (__outException is not null) {
+				void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+
+				*__outException = __exceptionHandleAddress;
+			}
+
+			return null;
+		}
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Context_Get")]
@@ -92618,19 +92816,29 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_DoublesTransformerDeleg
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate_Invoke")]
-	public static double /* System.Double */ Invoke(void* self, double /* System.Double */ number1, double /* System.Double */ number2)
+	public static double /* System.Double */ Invoke(void* self, double /* System.Double */ number1, double /* System.Double */ number2, void** __outException)
 	{
 		if (self is null) {
 			throw new ArgumentNullException(nameof(self));
 		}
 
-		var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate>(self);
+		try {
+			var selfConverted = InteropUtils.GetInstance<NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate>(self);
 
-	
+		
 
 
-		var __returnValue = selfConverted.Trampoline(number1, number2);
-		return __returnValue;
+			var __returnValue = selfConverted.Trampoline(number1, number2);
+			return __returnValue;
+		} catch (Exception __exception) {
+			if (__outException is not null) {
+				void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+
+				*__outException = __exceptionHandleAddress;
+			}
+
+			return -1;
+		}
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate_Context_Get")]

@@ -279,14 +279,15 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
 
         #region Invoke
         sb.AppendLine($"\t[UnmanagedCallersOnly(EntryPoint = \"{cTypeName}_Invoke\")]");
-        sb.AppendLine($"\tpublic static {unmanagedReturnTypeNameWithComment} Invoke(void* self{unmanagedParametersForInvocation})");
+        sb.AppendLine($"\tpublic static {unmanagedReturnTypeNameWithComment} Invoke(void* self{unmanagedParametersForInvocation}, void** __outException)");
         sb.AppendLine("\t{");
         
         sb.AppendLine("\t\tif (self is null) {");
         sb.AppendLine("\t\t\tthrow new ArgumentNullException(nameof(self));");
         sb.AppendLine("\t\t}");
         sb.AppendLine();
-        sb.AppendLine($"\t\tvar selfConverted = InteropUtils.GetInstance<{cTypeName}>(self);");
+        sb.AppendLine("\t\ttry {");
+        sb.AppendLine($"\t\t\tvar selfConverted = InteropUtils.GetInstance<{cTypeName}>(self);");
         sb.AppendLine();
         
         string parameterConversionsForInvocation = CSharpUnmanagedMethodSyntaxWriter.WriteParameterConversions(
@@ -298,7 +299,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
         );
 
         sb.AppendLine(
-            parameterConversionsForInvocation.IndentAllLines(1)
+            parameterConversionsForInvocation.IndentAllLines(2)
         );
 
         sb.AppendLine();
@@ -316,7 +317,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
         
         string managedInvocation = $"selfConverted.Trampoline{trampolineInvocationSuffix}({parameterNamesStringForInvocation})";
 
-        sb.AppendLine($"\t\t{invocationPrefix}{managedInvocation};");
+        sb.AppendLine($"\t\t\t{invocationPrefix}{managedInvocation};");
 
         if (hasReturnType) {
             string? returnTypeConversion = returnTypeDescriptor.GetTypeConversion(
@@ -330,15 +331,31 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
                 returnTypeConversion = string.Format(returnTypeConversion, "__returnValue");
                 returnTypeConversion = $"var {convertedReturnValueName} = {returnTypeConversion}";
         
-                sb.AppendLine($"\t\t{returnTypeConversion};");
+                sb.AppendLine($"\t\t\t{returnTypeConversion};");
                 sb.AppendLine();
 
-                sb.AppendLine($"\t\treturn {convertedReturnValueName};");
+                sb.AppendLine($"\t\t\treturn {convertedReturnValueName};");
             } else {
-                sb.AppendLine($"\t\treturn {returnValueName};");
+                sb.AppendLine($"\t\t\treturn {returnValueName};");
             }
         }
+
+        sb.AppendLine("\t\t} catch (Exception __exception) {");
+        sb.AppendLine("\t\t\tif (__outException is not null) {");
+        sb.AppendLine("\t\t\t\tvoid* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();");
+        sb.AppendLine();
+        sb.AppendLine("\t\t\t\t*__outException = __exceptionHandleAddress;");
+        sb.AppendLine("\t\t\t}");
+        sb.AppendLine();
         
+        if (hasReturnType) {
+            string returnValue = returnTypeDescriptor.GetReturnValueOnException()
+                                 ?? $"default({returnType.GetFullNameOrName()})";
+
+            sb.AppendLine($"\t\t\treturn {returnValue};");
+        }
+
+        sb.AppendLine("\t\t}");
         sb.AppendLine("\t}");
         #endregion Invoke
         

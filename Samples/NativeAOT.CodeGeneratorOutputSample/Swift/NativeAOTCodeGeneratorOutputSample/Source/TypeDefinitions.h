@@ -26599,7 +26599,7 @@ System_Delegate_Create(
 
 void
 System_Delegate_Invoke(
-	System_Delegate_t /* System.Delegate */ self
+	System_Delegate_t /* System.Delegate */ self, System_Exception_t* /* System.Exception */ outException
 );
 
 const void*
@@ -26634,7 +26634,7 @@ System_Action_Create(
 
 void
 System_Action_Invoke(
-	System_Action_t /* System.Action */ self
+	System_Action_t /* System.Action */ self, System_Exception_t* /* System.Exception */ outException
 );
 
 const void*
@@ -26669,7 +26669,7 @@ System_MulticastDelegate_Create(
 
 void
 System_MulticastDelegate_Invoke(
-	System_MulticastDelegate_t /* System.MulticastDelegate */ self
+	System_MulticastDelegate_t /* System.MulticastDelegate */ self, System_Exception_t* /* System.Exception */ outException
 );
 
 const void*
@@ -26704,7 +26704,7 @@ System_AsyncCallback_Create(
 
 void
 System_AsyncCallback_Invoke(
-	System_AsyncCallback_t /* System.AsyncCallback */ self, System_IAsyncResult_t /* System.IAsyncResult */ ar
+	System_AsyncCallback_t /* System.AsyncCallback */ self, System_IAsyncResult_t /* System.IAsyncResult */ ar, System_Exception_t* /* System.Exception */ outException
 );
 
 const void*
@@ -26740,7 +26740,7 @@ System_Reflection_ModuleResolveEventHandler_Create(
 System_Reflection_Module_t
 System_Reflection_ModuleResolveEventHandler_Invoke(
 	System_Reflection_ModuleResolveEventHandler_t /* System.Reflection.ModuleResolveEventHandler */ self, System_Object_t /* System.Object */ sender,
-	System_ResolveEventArgs_t /* System.ResolveEventArgs */ e
+	System_ResolveEventArgs_t /* System.ResolveEventArgs */ e, System_Exception_t* /* System.Exception */ outException
 );
 
 const void*
@@ -26776,7 +26776,7 @@ System_Reflection_TypeFilter_Create(
 bool
 System_Reflection_TypeFilter_Invoke(
 	System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */ self, System_Type_t /* System.Type */ m,
-	System_Object_t /* System.Object */ filterCriteria
+	System_Object_t /* System.Object */ filterCriteria, System_Exception_t* /* System.Exception */ outException
 );
 
 const void*
@@ -26812,7 +26812,7 @@ System_Reflection_MemberFilter_Create(
 bool
 System_Reflection_MemberFilter_Invoke(
 	System_Reflection_MemberFilter_t /* System.Reflection.MemberFilter */ self, System_Reflection_MemberInfo_t /* System.Reflection.MemberInfo */ m,
-	System_Object_t /* System.Object */ filterCriteria
+	System_Object_t /* System.Object */ filterCriteria, System_Exception_t* /* System.Exception */ outException
 );
 
 const void*
@@ -26847,7 +26847,7 @@ System_Threading_ContextCallback_Create(
 
 void
 System_Threading_ContextCallback_Invoke(
-	System_Threading_ContextCallback_t /* System.Threading.ContextCallback */ self, System_Object_t /* System.Object */ state
+	System_Threading_ContextCallback_t /* System.Threading.ContextCallback */ self, System_Object_t /* System.Object */ state, System_Exception_t* /* System.Exception */ outException
 );
 
 const void*
@@ -26883,7 +26883,7 @@ System_UnhandledExceptionEventHandler_Create(
 void
 System_UnhandledExceptionEventHandler_Invoke(
 	System_UnhandledExceptionEventHandler_t /* System.UnhandledExceptionEventHandler */ self, System_Object_t /* System.Object */ sender,
-	System_UnhandledExceptionEventArgs_t /* System.UnhandledExceptionEventArgs */ e
+	System_UnhandledExceptionEventArgs_t /* System.UnhandledExceptionEventArgs */ e, System_Exception_t* /* System.Exception */ outException
 );
 
 const void*
@@ -26919,7 +26919,7 @@ System_EventHandler_Create(
 void
 System_EventHandler_Invoke(
 	System_EventHandler_t /* System.EventHandler */ self, System_Object_t /* System.Object */ sender,
-	System_EventArgs_t /* System.EventArgs */ e
+	System_EventArgs_t /* System.EventArgs */ e, System_Exception_t* /* System.Exception */ outException
 );
 
 const void*
@@ -26955,7 +26955,7 @@ System_AssemblyLoadEventHandler_Create(
 void
 System_AssemblyLoadEventHandler_Invoke(
 	System_AssemblyLoadEventHandler_t /* System.AssemblyLoadEventHandler */ self, System_Object_t /* System.Object */ sender,
-	System_AssemblyLoadEventArgs_t /* System.AssemblyLoadEventArgs */ args
+	System_AssemblyLoadEventArgs_t /* System.AssemblyLoadEventArgs */ args, System_Exception_t* /* System.Exception */ outException
 );
 
 const void*
@@ -26991,7 +26991,7 @@ System_ResolveEventHandler_Create(
 System_Reflection_Assembly_t
 System_ResolveEventHandler_Invoke(
 	System_ResolveEventHandler_t /* System.ResolveEventHandler */ self, System_Object_t /* System.Object */ sender,
-	System_ResolveEventArgs_t /* System.ResolveEventArgs */ args
+	System_ResolveEventArgs_t /* System.ResolveEventArgs */ args, System_Exception_t* /* System.Exception */ outException
 );
 
 const void*
@@ -27026,7 +27026,7 @@ System_Threading_ThreadStart_Create(
 
 void
 System_Threading_ThreadStart_Invoke(
-	System_Threading_ThreadStart_t /* System.Threading.ThreadStart */ self
+	System_Threading_ThreadStart_t /* System.Threading.ThreadStart */ self, System_Exception_t* /* System.Exception */ outException
 );
 
 const void*
@@ -27061,7 +27061,7 @@ System_Threading_ParameterizedThreadStart_Create(
 
 void
 System_Threading_ParameterizedThreadStart_Invoke(
-	System_Threading_ParameterizedThreadStart_t /* System.Threading.ParameterizedThreadStart */ self, System_Object_t /* System.Object */ obj
+	System_Threading_ParameterizedThreadStart_t /* System.Threading.ParameterizedThreadStart */ self, System_Object_t /* System.Object */ obj, System_Exception_t* /* System.Exception */ outException
 );
 
 const void*
@@ -27096,7 +27096,7 @@ System_Threading_TimerCallback_Create(
 
 void
 System_Threading_TimerCallback_Invoke(
-	System_Threading_TimerCallback_t /* System.Threading.TimerCallback */ self, System_Object_t /* System.Object */ state
+	System_Threading_TimerCallback_t /* System.Threading.TimerCallback */ self, System_Object_t /* System.Object */ state, System_Exception_t* /* System.Exception */ outException
 );
 
 const void*
@@ -27132,7 +27132,7 @@ NativeAOT_CodeGeneratorInputSample_MoveDelegate_Create(
 NativeAOT_CodeGeneratorInputSample_Address_t
 NativeAOT_CodeGeneratorInputSample_MoveDelegate_Invoke(
 	NativeAOT_CodeGeneratorInputSample_MoveDelegate_t /* NativeAOT.CodeGeneratorInputSample.MoveDelegate */ self, CString /* System.String */ newStreet,
-	CString /* System.String */ newCity
+	CString /* System.String */ newCity, System_Exception_t* /* System.Exception */ outException
 );
 
 const void*
@@ -27167,7 +27167,7 @@ NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Create(
 
 NativeAOT_CodeGeneratorInputSample_IAnimal_t
 NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Invoke(
-	NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_t /* NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate */ self, CString /* System.String */ animalName
+	NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_t /* NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate */ self, CString /* System.String */ animalName, System_Exception_t* /* System.Exception */ outException
 );
 
 const void*
@@ -27202,7 +27202,7 @@ NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_Create
 
 void
 NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_Invoke(
-	NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate */ self
+	NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate */ self, System_Exception_t* /* System.Exception */ outException
 );
 
 const void*
@@ -27237,7 +27237,7 @@ NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Create(
 
 int32_t
 NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Invoke(
-	NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate */ self
+	NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate */ self, System_Exception_t* /* System.Exception */ outException
 );
 
 const void*
@@ -27272,7 +27272,7 @@ NativeAOT_CodeGeneratorInputSample_StringGetterDelegate_Create(
 
 CString
 NativeAOT_CodeGeneratorInputSample_StringGetterDelegate_Invoke(
-	NativeAOT_CodeGeneratorInputSample_StringGetterDelegate_t /* NativeAOT.CodeGeneratorInputSample.StringGetterDelegate */ self
+	NativeAOT_CodeGeneratorInputSample_StringGetterDelegate_t /* NativeAOT.CodeGeneratorInputSample.StringGetterDelegate */ self, System_Exception_t* /* System.Exception */ outException
 );
 
 const void*
@@ -27307,7 +27307,7 @@ NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Create(
 
 CString
 NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_Invoke(
-	NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_t /* NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate */ self, CString /* System.String */ inputString
+	NativeAOT_CodeGeneratorInputSample_StringTransformerDelegate_t /* NativeAOT.CodeGeneratorInputSample.StringTransformerDelegate */ self, CString /* System.String */ inputString, System_Exception_t* /* System.Exception */ outException
 );
 
 const void*
@@ -27343,7 +27343,7 @@ NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate_Create(
 double
 NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate_Invoke(
 	NativeAOT_CodeGeneratorInputSample_DoublesTransformerDelegate_t /* NativeAOT.CodeGeneratorInputSample.DoublesTransformerDelegate */ self, double /* System.Double */ number1,
-	double /* System.Double */ number2
+	double /* System.Double */ number2, System_Exception_t* /* System.Exception */ outException
 );
 
 const void*

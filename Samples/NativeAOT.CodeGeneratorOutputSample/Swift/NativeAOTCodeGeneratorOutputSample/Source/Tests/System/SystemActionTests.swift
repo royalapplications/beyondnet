@@ -48,12 +48,19 @@ final class SystemActionTests: XCTestCase {
         
         XCTAssertEqual(0, swiftyContext.numberOfTimesCalled)
         
-        System_Action_Invoke(action)
+        System_Action_Invoke(action, &exception)
+		XCTAssertNil(exception)
         XCTAssertEqual(1, swiftyContext.numberOfTimesCalled)
         
-        System_Action_Invoke(action)
-        System_Action_Invoke(action)
-        System_Action_Invoke(action)
+        System_Action_Invoke(action, &exception)
+		XCTAssertNil(exception)
+		
+        System_Action_Invoke(action, &exception)
+		XCTAssertNil(exception)
+		
+        System_Action_Invoke(action, &exception)
+		XCTAssertNil(exception)
+		
         XCTAssertEqual(4, swiftyContext.numberOfTimesCalled)
 		
 		System_Action_Destroy(action)
