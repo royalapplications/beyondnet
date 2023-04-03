@@ -22,6 +22,8 @@ static class Program
 
         CodeGeneratorDriver driver = new(
             assemblyPath,
+            Array.Empty<Type>(),
+            Array.Empty<Type>(),
             cSharpUnmanagedOutputPath,
             cOutputPath
         );

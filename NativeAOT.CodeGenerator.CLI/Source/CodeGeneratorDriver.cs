@@ -12,16 +12,22 @@ namespace NativeAOT.CodeGenerator.CLI;
 internal class CodeGeneratorDriver
 {
     internal string AssemblyPath { get; }
+    internal Type[] TypeWhitelist { get; }
+    internal Type[] TypeBlacklist { get; }
     internal string? CSharpUnmanagedOutputPath { get; }
     internal string? COutputPath { get; }
     
     internal CodeGeneratorDriver(
         string assemblyPath,
+        Type[] typeWhitelist,
+        Type[] typeBlacklist,
         string? cSharpUnmanagedOutputPath,
         string? cOutputPath
     )
     {
         AssemblyPath = assemblyPath;
+        TypeWhitelist = typeWhitelist;
+        TypeBlacklist = typeBlacklist;
         CSharpUnmanagedOutputPath = cSharpUnmanagedOutputPath;
         COutputPath = cOutputPath;
     }
@@ -92,7 +98,11 @@ internal class CodeGeneratorDriver
         out Dictionary<Type, string> unsupportedTypes
     )
     {
-        TypeCollector typeCollector = new(assembly);
+        TypeCollector typeCollector = new(
+            assembly,
+            TypeWhitelist,
+            TypeBlacklist
+        );
 
         var types = typeCollector.Collect(out unsupportedTypes);
 

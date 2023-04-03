@@ -122,8 +122,7 @@ public class TypeDescriptor
                 
                 break;
             case CodeLanguage.C:
-                if (RequiresNativePointer && 
-                    isOutParameter) {
+                if (isOutParameter) {
                     typeNameWithModifiers = $"{typeName}*";
                 } else {
                     typeNameWithModifiers = $"{typeName}";

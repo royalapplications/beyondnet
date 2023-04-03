@@ -1,4 +1,5 @@
 using System.Reflection;
+
 using NativeAOT.CodeGenerator.Extensions;
 
 namespace NativeAOT.CodeGenerator.Collectors;
@@ -7,14 +8,61 @@ public class TypeCollector
 {
     private readonly Assembly m_assembly;
 
-    private static List<Type> m_unsupportedTypes = new() {
+    private static readonly Type[] INCLUDED_TYPES = new [] {
+        typeof(System.Object),
+        typeof(System.Type),
+        typeof(System.Exception),
+        typeof(System.Boolean),
+        typeof(System.Char),
+        typeof(System.Double),
+        typeof(System.Decimal),
+        typeof(System.SByte),
+        typeof(System.Int16),
+        typeof(System.Int32),
+        typeof(System.Int64),
+        typeof(System.IntPtr),
+        typeof(System.UIntPtr),
+        typeof(System.String),
+        typeof(System.Byte),
+        typeof(System.UInt16),
+        typeof(System.UInt32),
+        typeof(System.UInt64),
+        typeof(System.Delegate),
+        typeof(System.MulticastDelegate),
+        typeof(System.Convert),
+        typeof(System.Math),
+        typeof(System.GC),
+        typeof(System.Enum),
+        typeof(System.Array),
+        typeof(System.Threading.Thread),
+        typeof(System.Reflection.PortableExecutableKinds),
+        typeof(System.Reflection.ImageFileMachine),
+    };
+    
+    private static readonly Type[] UNSUPPORTED_TYPES = new [] {
         Type.GetType("System.Runtime.Serialization.DeserializationToken")!,
         Type.GetType("System.TypedReference")!,
         Type.GetType("System.Char&")!
     };
+
+    private readonly Type[] m_typeWhitelist;
+    private readonly Type[] m_typeBlacklist;
     
-    public TypeCollector(Assembly assembly)
+    public TypeCollector(
+        Assembly assembly,
+        Type[] typeWhitelist,
+        Type[] typeBlacklist
+    )
     {
+        List<Type> whitelist = new(INCLUDED_TYPES);
+        whitelist.AddRange(typeWhitelist);
+        
+        List<Type> blacklist = new(UNSUPPORTED_TYPES);
+        blacklist.AddRange(typeBlacklist);
+
+        m_typeWhitelist = whitelist.ToArray();
+        m_typeBlacklist = blacklist.ToArray();
+        
         m_assembly = assembly ?? throw new ArgumentNullException(nameof(assembly));
     }
 
@@ -22,10 +70,14 @@ public class TypeCollector
     {
         HashSet<Type> collectedTypes = new();
         unsupportedTypes = new();
+
+        List<Type> typesToCollect = new(m_typeWhitelist);
         
         var assemblyTypes = m_assembly.ExportedTypes;
+        
+        typesToCollect.AddRange(assemblyTypes);
 
-        foreach (var type in assemblyTypes) {
+        foreach (var type in typesToCollect) {
             CollectType(type, collectedTypes, unsupportedTypes);
         }
 
@@ -38,6 +90,12 @@ public class TypeCollector
         Dictionary<Type, string> unsupportedTypes
     )
     {
+        if (m_typeBlacklist.Contains(type)) {
+            unsupportedTypes[type] = "Blacklisted";
+            
+            return;
+        }
+        
         if (!IsSupportedType(type, out string? unsupportedReason)) {
             unsupportedTypes[type] = unsupportedReason ?? string.Empty;
             
@@ -231,12 +289,12 @@ public class TypeCollector
             unsupportedReason = "Is Not Visible (public)";
             return false;
         }
-        
+
         // TODO: WIP
-        if (type.IsByRef) {
-            unsupportedReason = "Is By Ref Type";
-            return false;
-        }
+        // if (type.IsByRef) {
+        //     unsupportedReason = "Is By Ref Type";
+        //     return false;
+        // }
         
         if (type.IsGenericType) {
             unsupportedReason = "Is Generic Type";
@@ -273,7 +331,7 @@ public class TypeCollector
             return false;
         }
 
-        if (m_unsupportedTypes.Contains(type)) {
+        if (UNSUPPORTED_TYPES.Contains(type)) {
             unsupportedReason = "Is unsupported Type";
             return false;
         }

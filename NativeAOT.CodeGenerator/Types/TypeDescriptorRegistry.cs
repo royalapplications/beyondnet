@@ -51,6 +51,7 @@ public class TypeDescriptorRegistry
             BuiltIn.BuiltInTypeDescriptors.BoolTypeDescriptor,
             BuiltIn.BuiltInTypeDescriptors.CharTypeDescriptor,
             BuiltIn.BuiltInTypeDescriptors.NintTypeDescriptor,
+            BuiltIn.BuiltInTypeDescriptors.NuintTypeDescriptor,
             
             BuiltIn.BuiltInTypeDescriptors.Int8TypeDescriptor,
             BuiltIn.BuiltInTypeDescriptors.UInt8TypeDescriptor,

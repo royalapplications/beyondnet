@@ -116,4 +116,44 @@ final class SystemGuidTests: XCTestCase {
         
         XCTAssertEqual("00000000-0000-0000-0000-000000000000", emptyGuidString)
     }
+	
+	func testSystemGuidParsing() {
+		var exception: System_Exception_t?
+		
+		let uuid = UUID()
+		let uuidString = uuid.uuidString
+		
+		var success: CBool = .no
+		var guid: System_Guid_t?
+		
+		uuidString.withCString { uuidStringC in
+			success = System_Guid_TryParse(uuidStringC,
+										   &guid,
+										   &exception)
+		}
+		
+		guard let guid,
+			  exception == nil,
+			  success == .yes else {
+			XCTFail("System.Guid.TryParse should not throw and return an instance as out parameter")
+			
+			return
+		}
+		
+		defer { System_Guid_Destroy(guid) }
+		
+		guard let uuidStringRetC = System_Guid_ToString(guid,
+														&exception),
+			  exception == nil else {
+			XCTFail("System.Guid.ToString should not throw and return an instance of a C String")
+			
+			return
+		}
+		
+		defer { uuidStringRetC.deallocate() }
+		
+		let uuidStringRet = String(cString: uuidStringRetC)
+		
+		XCTAssertEqual(uuidString.lowercased(), uuidStringRet.lowercased())
+	}
 }

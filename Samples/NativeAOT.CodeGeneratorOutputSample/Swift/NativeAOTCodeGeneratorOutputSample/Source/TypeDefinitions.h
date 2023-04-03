@@ -1,5 +1,5 @@
-// Number of generated types: 279
-// Number of generated members: 2607
+// Number of generated types: 358
+// Number of generated members: 3578
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -616,6 +616,98 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Reflection_EventAttributes;
 
 
+typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+	System_Base64FormattingOptions_None = 0,
+	System_Base64FormattingOptions_InsertLineBreaks = 1
+} System_Base64FormattingOptions;
+
+
+typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+	System_GCKind_Any = 0,
+	System_GCKind_Ephemeral = 1,
+	System_GCKind_FullBlocking = 2,
+	System_GCKind_Background = 3
+} System_GCKind;
+
+
+typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+	System_GCCollectionMode_Default = 0,
+	System_GCCollectionMode_Forced = 1,
+	System_GCCollectionMode_Optimized = 2,
+	System_GCCollectionMode_Aggressive = 3
+} System_GCCollectionMode;
+
+
+typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+	System_GCNotificationStatus_Succeeded = 0,
+	System_GCNotificationStatus_Failed = 1,
+	System_GCNotificationStatus_Canceled = 2,
+	System_GCNotificationStatus_Timeout = 3,
+	System_GCNotificationStatus_NotApplicable = 4
+} System_GCNotificationStatus;
+
+
+typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+	System_Threading_ThreadPriority_Lowest = 0,
+	System_Threading_ThreadPriority_BelowNormal = 1,
+	System_Threading_ThreadPriority_Normal = 2,
+	System_Threading_ThreadPriority_AboveNormal = 3,
+	System_Threading_ThreadPriority_Highest = 4
+} System_Threading_ThreadPriority;
+
+
+typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+	System_Threading_ThreadState_Running = 0,
+	System_Threading_ThreadState_StopRequested = 1,
+	System_Threading_ThreadState_SuspendRequested = 2,
+	System_Threading_ThreadState_Background = 4,
+	System_Threading_ThreadState_Unstarted = 8,
+	System_Threading_ThreadState_Stopped = 16,
+	System_Threading_ThreadState_WaitSleepJoin = 32,
+	System_Threading_ThreadState_Suspended = 64,
+	System_Threading_ThreadState_AbortRequested = 128,
+	System_Threading_ThreadState_Aborted = 256
+} System_Threading_ThreadState;
+
+
+typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+	System_Threading_ApartmentState_STA = 0,
+	System_Threading_ApartmentState_MTA = 1,
+	System_Threading_ApartmentState_Unknown = 2
+} System_Threading_ApartmentState;
+
+
+typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+	System_Security_Permissions_PermissionState_None = 0,
+	System_Security_Permissions_PermissionState_Unrestricted = 1
+} System_Security_Permissions_PermissionState;
+
+
+typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+	System_Security_Principal_PrincipalPolicy_UnauthenticatedPrincipal = 0,
+	System_Security_Principal_PrincipalPolicy_NoPrincipal = 1,
+	System_Security_Principal_PrincipalPolicy_WindowsPrincipal = 2
+} System_Security_Principal_PrincipalPolicy;
+
+
+typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+	System_Reflection_PortableExecutableKinds_NotAPortableExecutableImage = 0,
+	System_Reflection_PortableExecutableKinds_ILOnly = 1,
+	System_Reflection_PortableExecutableKinds_Required32Bit = 2,
+	System_Reflection_PortableExecutableKinds_PE32Plus = 4,
+	System_Reflection_PortableExecutableKinds_Unmanaged32Bit = 8,
+	System_Reflection_PortableExecutableKinds_Preferred32Bit = 16
+} System_Reflection_PortableExecutableKinds;
+
+
+typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+	System_Reflection_ImageFileMachine_I386 = 332,
+	System_Reflection_ImageFileMachine_ARM = 452,
+	System_Reflection_ImageFileMachine_IA64 = 512,
+	System_Reflection_ImageFileMachine_AMD64 = 34404
+} System_Reflection_ImageFileMachine;
+
+
 typedef enum __attribute__((enum_extensibility(closed))): uint32_t {
 	NativeAOT_CodeGeneratorInputSample_NiceLevels_NotNice = 0,
 	NativeAOT_CodeGeneratorInputSample_NiceLevels_LittleBitNice = 1,
@@ -655,7 +747,10 @@ typedef void* System_Array_t;
 
 typedef void* System_IFormatProvider_t;
 
+
+
 // Type "T[]" was skipped. Reason: It has no full name.
+
 typedef void* System_Int32_Array_t;
 
 typedef void* System_Int64_Array_t;
@@ -715,7 +810,10 @@ typedef void* System_Reflection_AssemblyName_t;
 typedef void* System_Version_t;
 
 
+
+
 typedef void* System_Byte_Array_t;
+
 
 
 typedef void* System_Reflection_StrongNameKeyPair_t;
@@ -751,13 +849,24 @@ typedef void* System_Runtime_Serialization_SerializationEntry_t;
 
 
 
+
+
+
+
+
+
 typedef void* System_Decimal_t;
+
 
 typedef void* System_DateTime_t;
 
 typedef void* System_TimeSpan_t;
 
 typedef void* System_String_Array_t;
+
+
+
+
 
 typedef void* System_DateOnly_t;
 
@@ -768,6 +877,7 @@ typedef void* System_Globalization_Calendar_t;
 typedef void* System_Runtime_Serialization_IFormatterConverter_t;
 
 typedef void* System_Runtime_Serialization_StreamingContext_t;
+
 
 
 typedef void* System_RuntimeTypeHandle_t;
@@ -796,9 +906,11 @@ typedef void* System_Reflection_FieldInfo_Array_t;
 
 typedef void* System_Reflection_MethodBase_Array_t;
 
+
 typedef void* System_Reflection_ParameterModifier_Array_t;
 
 typedef void* System_Reflection_ParameterModifier_t;
+
 
 typedef void* System_Reflection_PropertyInfo_t;
 
@@ -833,6 +945,7 @@ typedef void* Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid_t;
 typedef void* System_Runtime_InteropServices_SafeHandle_t;
 
 typedef void* System_Runtime_ConstrainedExecution_CriticalFinalizerObject_t;
+
 
 typedef void* System_Threading_WaitHandle_Array_t;
 
@@ -890,6 +1003,9 @@ typedef void* System_Reflection_Module_t;
 
 typedef void* System_Guid_t;
 
+
+
+
 typedef void* System_ResolveEventArgs_t;
 
 typedef void* System_EventArgs_t;
@@ -901,6 +1017,7 @@ typedef void* System_Reflection_AssemblyName_Array_t;
 typedef void* System_IO_FileStream_Array_t;
 
 typedef void* System_Text_Rune_t;
+
 
 typedef void* System_Globalization_SortKey_t;
 
@@ -914,6 +1031,7 @@ typedef void* System_Globalization_DateTimeFormatInfo_t;
 
 typedef void* System_Globalization_Calendar_Array_t;
 
+
 typedef void* System_Char_Array_t;
 
 typedef void* System_CharEnumerator_t;
@@ -921,6 +1039,7 @@ typedef void* System_CharEnumerator_t;
 typedef void* System_Text_StringRuneEnumerator_t;
 
 typedef void* System_Text_CompositeFormat_t;
+
 
 typedef void* System_Text_Encoding_t;
 
@@ -943,6 +1062,10 @@ typedef void* System_Text_Decoder_t;
 typedef void* System_Text_Encoder_t;
 
 // Type "TEnum[]" was skipped. Reason: It has no full name.
+
+
+
+
 typedef void* System_Runtime_InteropServices_StructLayoutAttribute_t;
 
 typedef void* System_Attribute_t;
@@ -960,6 +1083,62 @@ typedef void* System_Reflection_EventInfo_Array_t;
 typedef void* System_Reflection_MemberInfo_Array_t;
 
 typedef void* System_Reflection_InterfaceMapping_t;
+
+
+
+typedef void* System_Convert_t;
+
+typedef void* System_Math_t;
+
+typedef void* System_GC_t;
+
+typedef void* System_GCMemoryInfo_t;
+
+typedef void* System_WeakReference_t;
+
+// Type "T[]" was skipped. Reason: It has no full name.
+// Type "T[]" was skipped. Reason: It has no full name.
+typedef void* System_Threading_Thread_t;
+
+typedef void* System_Security_Principal_IPrincipal_t;
+
+typedef void* System_Security_Principal_IIdentity_t;
+
+typedef void* System_Threading_ExecutionContext_t;
+
+typedef void* System_Threading_AsyncFlowControl_t;
+
+typedef void* System_LocalDataStoreSlot_t;
+
+typedef void* System_Threading_CompressedStack_t;
+
+typedef void* System_AppDomain_t;
+
+typedef void* System_AppDomainSetup_t;
+
+typedef void* System_Security_PermissionSet_t;
+
+typedef void* System_Security_IPermission_t;
+
+typedef void* System_Security_SecurityElement_t;
+
+typedef void* System_Collections_Hashtable_t;
+
+typedef void* System_Collections_IEqualityComparer_t;
+
+typedef void* System_Collections_IHashCodeProvider_t;
+
+typedef void* System_Collections_ArrayList_t;
+
+typedef void* System_Collections_IList_t;
+
+typedef void* System_UnhandledExceptionEventArgs_t;
+
+typedef void* System_Reflection_Assembly_Array_t;
+
+typedef void* System_AssemblyLoadEventArgs_t;
+
+typedef void* System_Runtime_Remoting_ObjectHandle_t;
 
 typedef void* NativeAOT_CodeGeneratorInputSample_Address_t;
 
@@ -985,25 +1164,6 @@ typedef void* NativeAOT_CodeGeneratorInputSample_TestClass_t;
 
 typedef void* NativeAOT_CodeGeneratorInputSample_Transformer_t;
 
-typedef void* NativeAOT_CodeGeneratorInputSample_MoveDelegate_t;
-typedef void (*NativeAOT_CodeGeneratorInputSample_MoveDelegate_CDestructorFunction_t)(void* context);
-
-typedef NativeAOT_CodeGeneratorInputSample_Address_t (*NativeAOT_CodeGeneratorInputSample_MoveDelegate_CFunction_t)(
-	void* context,
-	CString newStreet,
-	CString newCity
-);
-
-
-typedef void* System_MulticastDelegate_t;
-typedef void (*System_MulticastDelegate_CDestructorFunction_t)(void* context);
-
-typedef void (*System_MulticastDelegate_CFunction_t)(
-	void* context
-	
-);
-
-
 typedef void* System_Delegate_t;
 typedef void (*System_Delegate_CDestructorFunction_t)(void* context);
 
@@ -1017,6 +1177,15 @@ typedef void* System_Action_t;
 typedef void (*System_Action_CDestructorFunction_t)(void* context);
 
 typedef void (*System_Action_CFunction_t)(
+	void* context
+	
+);
+
+
+typedef void* System_MulticastDelegate_t;
+typedef void (*System_MulticastDelegate_CDestructorFunction_t)(void* context);
+
+typedef void (*System_MulticastDelegate_CFunction_t)(
 	void* context
 	
 );
@@ -1058,6 +1227,83 @@ typedef CBool (*System_Reflection_MemberFilter_CFunction_t)(
 	void* context,
 	System_Reflection_MemberInfo_t m,
 	System_Object_t filterCriteria
+);
+
+
+typedef void* System_Threading_ContextCallback_t;
+typedef void (*System_Threading_ContextCallback_CDestructorFunction_t)(void* context);
+
+typedef void (*System_Threading_ContextCallback_CFunction_t)(
+	void* context,
+	System_Object_t state
+);
+
+
+typedef void* System_UnhandledExceptionEventHandler_t;
+typedef void (*System_UnhandledExceptionEventHandler_CDestructorFunction_t)(void* context);
+
+typedef void (*System_UnhandledExceptionEventHandler_CFunction_t)(
+	void* context,
+	System_Object_t sender,
+	System_UnhandledExceptionEventArgs_t e
+);
+
+
+typedef void* System_EventHandler_t;
+typedef void (*System_EventHandler_CDestructorFunction_t)(void* context);
+
+typedef void (*System_EventHandler_CFunction_t)(
+	void* context,
+	System_Object_t sender,
+	System_EventArgs_t e
+);
+
+
+typedef void* System_AssemblyLoadEventHandler_t;
+typedef void (*System_AssemblyLoadEventHandler_CDestructorFunction_t)(void* context);
+
+typedef void (*System_AssemblyLoadEventHandler_CFunction_t)(
+	void* context,
+	System_Object_t sender,
+	System_AssemblyLoadEventArgs_t args
+);
+
+
+typedef void* System_ResolveEventHandler_t;
+typedef void (*System_ResolveEventHandler_CDestructorFunction_t)(void* context);
+
+typedef System_Reflection_Assembly_t (*System_ResolveEventHandler_CFunction_t)(
+	void* context,
+	System_Object_t sender,
+	System_ResolveEventArgs_t args
+);
+
+
+typedef void* System_Threading_ThreadStart_t;
+typedef void (*System_Threading_ThreadStart_CDestructorFunction_t)(void* context);
+
+typedef void (*System_Threading_ThreadStart_CFunction_t)(
+	void* context
+	
+);
+
+
+typedef void* System_Threading_ParameterizedThreadStart_t;
+typedef void (*System_Threading_ParameterizedThreadStart_CDestructorFunction_t)(void* context);
+
+typedef void (*System_Threading_ParameterizedThreadStart_CFunction_t)(
+	void* context,
+	System_Object_t obj
+);
+
+
+typedef void* NativeAOT_CodeGeneratorInputSample_MoveDelegate_t;
+typedef void (*NativeAOT_CodeGeneratorInputSample_MoveDelegate_CDestructorFunction_t)(void* context);
+
+typedef NativeAOT_CodeGeneratorInputSample_Address_t (*NativeAOT_CodeGeneratorInputSample_MoveDelegate_CFunction_t)(
+	void* context,
+	CString newStreet,
+	CString newCity
 );
 
 
@@ -1502,6 +1748,94 @@ System_Reflection_EventAttributes_TypeOf(
 );
 
 #pragma mark - END APIs of System.Reflection.EventAttributes
+
+#pragma mark - BEGIN APIs of System.Base64FormattingOptions
+System_Type_t /* System.Type */
+System_Base64FormattingOptions_TypeOf(
+	
+);
+
+#pragma mark - END APIs of System.Base64FormattingOptions
+
+#pragma mark - BEGIN APIs of System.GCKind
+System_Type_t /* System.Type */
+System_GCKind_TypeOf(
+	
+);
+
+#pragma mark - END APIs of System.GCKind
+
+#pragma mark - BEGIN APIs of System.GCCollectionMode
+System_Type_t /* System.Type */
+System_GCCollectionMode_TypeOf(
+	
+);
+
+#pragma mark - END APIs of System.GCCollectionMode
+
+#pragma mark - BEGIN APIs of System.GCNotificationStatus
+System_Type_t /* System.Type */
+System_GCNotificationStatus_TypeOf(
+	
+);
+
+#pragma mark - END APIs of System.GCNotificationStatus
+
+#pragma mark - BEGIN APIs of System.Threading.ThreadPriority
+System_Type_t /* System.Type */
+System_Threading_ThreadPriority_TypeOf(
+	
+);
+
+#pragma mark - END APIs of System.Threading.ThreadPriority
+
+#pragma mark - BEGIN APIs of System.Threading.ThreadState
+System_Type_t /* System.Type */
+System_Threading_ThreadState_TypeOf(
+	
+);
+
+#pragma mark - END APIs of System.Threading.ThreadState
+
+#pragma mark - BEGIN APIs of System.Threading.ApartmentState
+System_Type_t /* System.Type */
+System_Threading_ApartmentState_TypeOf(
+	
+);
+
+#pragma mark - END APIs of System.Threading.ApartmentState
+
+#pragma mark - BEGIN APIs of System.Security.Permissions.PermissionState
+System_Type_t /* System.Type */
+System_Security_Permissions_PermissionState_TypeOf(
+	
+);
+
+#pragma mark - END APIs of System.Security.Permissions.PermissionState
+
+#pragma mark - BEGIN APIs of System.Security.Principal.PrincipalPolicy
+System_Type_t /* System.Type */
+System_Security_Principal_PrincipalPolicy_TypeOf(
+	
+);
+
+#pragma mark - END APIs of System.Security.Principal.PrincipalPolicy
+
+#pragma mark - BEGIN APIs of System.Reflection.PortableExecutableKinds
+System_Type_t /* System.Type */
+System_Reflection_PortableExecutableKinds_TypeOf(
+	
+);
+
+#pragma mark - END APIs of System.Reflection.PortableExecutableKinds
+
+#pragma mark - BEGIN APIs of System.Reflection.ImageFileMachine
+System_Type_t /* System.Type */
+System_Reflection_ImageFileMachine_TypeOf(
+	
+);
+
+#pragma mark - END APIs of System.Reflection.ImageFileMachine
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.NiceLevels
 System_Type_t /* System.Type */
@@ -3058,6 +3392,23 @@ System_Enum_Parse1(
 	System_Type_t /* System.Type */ enumType,
 	CString /* System.String */ value,
 	CBool /* System.Boolean */ ignoreCase,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Enum_TryParse(
+	System_Type_t /* System.Type */ enumType,
+	CString /* System.String */ value,
+	System_Object_t* /* System.Object */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Enum_TryParse1(
+	System_Type_t /* System.Type */ enumType,
+	CString /* System.String */ value,
+	CBool /* System.Boolean */ ignoreCase,
+	System_Object_t* /* System.Object */ result,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -5331,8 +5682,11 @@ System_IFormatProvider_Destroy(
 
 #pragma mark - END APIs of System.IFormatProvider
 
+
+
 #pragma mark - BEGIN APIs of T[]
 #pragma mark - END APIs of T[]
+
 
 #pragma mark - BEGIN APIs of System.Int32[]
 #pragma mark - END APIs of System.Int32[]
@@ -6928,6 +7282,13 @@ System_Version_Parse(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+CBool /* System.Boolean */
+System_Version_TryParse(
+	CString /* System.String */ input,
+	System_Version_t* /* System.Version */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 System_Version_t /* System.Version */
 System_Version_Create(
 	int32_t /* System.Int32 */ major,
@@ -7018,8 +7379,11 @@ System_Version_Destroy(
 #pragma mark - END APIs of System.Version
 
 
+
+
 #pragma mark - BEGIN APIs of System.Byte[]
 #pragma mark - END APIs of System.Byte[]
+
 
 
 #pragma mark - BEGIN APIs of System.Reflection.StrongNameKeyPair
@@ -9239,6 +9603,12 @@ System_Runtime_Serialization_SerializationEntry_Destroy(
 
 
 
+
+
+
+
+
+
 #pragma mark - BEGIN APIs of System.Decimal
 System_Decimal_t /* System.Decimal */
 System_Decimal_FromOACurrency(
@@ -9379,6 +9749,22 @@ System_Decimal_Parse3(
 	CString /* System.String */ s,
 	System_Globalization_NumberStyles /* System.Globalization.NumberStyles */ style,
 	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Decimal_TryParse(
+	CString /* System.String */ s,
+	System_Decimal_t* /* System.Decimal */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Decimal_TryParse1(
+	CString /* System.String */ s,
+	System_Globalization_NumberStyles /* System.Globalization.NumberStyles */ style,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Decimal_t* /* System.Decimal */ result,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -9606,6 +9992,14 @@ System_Decimal_MinMagnitude(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+CBool /* System.Boolean */
+System_Decimal_TryParse2(
+	CString /* System.String */ s,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Decimal_t* /* System.Decimal */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 System_Decimal_t /* System.Decimal */
 System_Decimal_Create(
 	int32_t /* System.Int32 */ value,
@@ -9706,6 +10100,7 @@ System_Decimal_Destroy(
 );
 
 #pragma mark - END APIs of System.Decimal
+
 
 #pragma mark - BEGIN APIs of System.DateTime
 System_DateTime_t /* System.DateTime */
@@ -10025,6 +10420,59 @@ System_DateTime_ToUniversalTime(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+CBool /* System.Boolean */
+System_DateTime_TryParse(
+	CString /* System.String */ s,
+	System_DateTime_t* /* System.DateTime */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_DateTime_TryParse1(
+	CString /* System.String */ s,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Globalization_DateTimeStyles /* System.Globalization.DateTimeStyles */ styles,
+	System_DateTime_t* /* System.DateTime */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_DateTime_TryParseExact(
+	CString /* System.String */ s,
+	CString /* System.String */ format,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Globalization_DateTimeStyles /* System.Globalization.DateTimeStyles */ style,
+	System_DateTime_t* /* System.DateTime */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_DateTime_TryParseExact1(
+	CString /* System.String */ s,
+	System_String_Array_t /* System.String[] */ formats,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Globalization_DateTimeStyles /* System.Globalization.DateTimeStyles */ style,
+	System_DateTime_t* /* System.DateTime */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_DateTime_Deconstruct(
+	System_DateTime_t /* System.DateTime */ self,
+	System_DateOnly_t* /* System.DateOnly */ date,
+	System_TimeOnly_t* /* System.TimeOnly */ time,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_DateTime_Deconstruct1(
+	System_DateTime_t /* System.DateTime */ self,
+	int32_t* /* System.Int32 */ year,
+	int32_t* /* System.Int32 */ month,
+	int32_t* /* System.Int32 */ day,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 System_String_Array_t /* System.String[] */
 System_DateTime_GetDateTimeFormats(
 	System_DateTime_t /* System.DateTime */ self,
@@ -10056,6 +10504,14 @@ System_DateTime_GetDateTimeFormats3(
 System_TypeCode /* System.TypeCode */
 System_DateTime_GetTypeCode(
 	System_DateTime_t /* System.DateTime */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_DateTime_TryParse2(
+	CString /* System.String */ s,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_DateTime_t* /* System.DateTime */ result,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -10585,6 +11041,59 @@ System_TimeSpan_ParseExact3(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+CBool /* System.Boolean */
+System_TimeSpan_TryParse(
+	CString /* System.String */ s,
+	System_TimeSpan_t* /* System.TimeSpan */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_TimeSpan_TryParse1(
+	CString /* System.String */ input,
+	System_IFormatProvider_t /* System.IFormatProvider */ formatProvider,
+	System_TimeSpan_t* /* System.TimeSpan */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_TimeSpan_TryParseExact(
+	CString /* System.String */ input,
+	CString /* System.String */ format,
+	System_IFormatProvider_t /* System.IFormatProvider */ formatProvider,
+	System_TimeSpan_t* /* System.TimeSpan */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_TimeSpan_TryParseExact1(
+	CString /* System.String */ input,
+	System_String_Array_t /* System.String[] */ formats,
+	System_IFormatProvider_t /* System.IFormatProvider */ formatProvider,
+	System_TimeSpan_t* /* System.TimeSpan */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_TimeSpan_TryParseExact2(
+	CString /* System.String */ input,
+	CString /* System.String */ format,
+	System_IFormatProvider_t /* System.IFormatProvider */ formatProvider,
+	System_Globalization_TimeSpanStyles /* System.Globalization.TimeSpanStyles */ styles,
+	System_TimeSpan_t* /* System.TimeSpan */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_TimeSpan_TryParseExact3(
+	CString /* System.String */ input,
+	System_String_Array_t /* System.String[] */ formats,
+	System_IFormatProvider_t /* System.IFormatProvider */ formatProvider,
+	System_Globalization_TimeSpanStyles /* System.Globalization.TimeSpanStyles */ styles,
+	System_TimeSpan_t* /* System.TimeSpan */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 CString /* System.String */
 System_TimeSpan_ToString(
 	System_TimeSpan_t /* System.TimeSpan */ self,
@@ -10830,6 +11339,10 @@ System_TimeSpan_Destroy(
 #pragma mark - BEGIN APIs of System.String[]
 #pragma mark - END APIs of System.String[]
 
+
+
+
+
 #pragma mark - BEGIN APIs of System.DateOnly
 System_DateOnly_t /* System.DateOnly */
 System_DateOnly_FromDayNumber(
@@ -10855,6 +11368,15 @@ System_DateOnly_t /* System.DateOnly */
 System_DateOnly_AddYears(
 	System_DateOnly_t /* System.DateOnly */ self,
 	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_DateOnly_Deconstruct(
+	System_DateOnly_t /* System.DateOnly */ self,
+	int32_t* /* System.Int32 */ year,
+	int32_t* /* System.Int32 */ month,
+	int32_t* /* System.Int32 */ day,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -10959,6 +11481,58 @@ System_DateOnly_ParseExact3(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+CBool /* System.Boolean */
+System_DateOnly_TryParse(
+	CString /* System.String */ s,
+	System_DateOnly_t* /* System.DateOnly */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_DateOnly_TryParse1(
+	CString /* System.String */ s,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Globalization_DateTimeStyles /* System.Globalization.DateTimeStyles */ style,
+	System_DateOnly_t* /* System.DateOnly */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_DateOnly_TryParseExact(
+	CString /* System.String */ s,
+	CString /* System.String */ format,
+	System_DateOnly_t* /* System.DateOnly */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_DateOnly_TryParseExact1(
+	CString /* System.String */ s,
+	CString /* System.String */ format,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Globalization_DateTimeStyles /* System.Globalization.DateTimeStyles */ style,
+	System_DateOnly_t* /* System.DateOnly */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_DateOnly_TryParseExact2(
+	CString /* System.String */ s,
+	System_String_Array_t /* System.String[] */ formats,
+	System_DateOnly_t* /* System.DateOnly */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_DateOnly_TryParseExact3(
+	CString /* System.String */ s,
+	System_String_Array_t /* System.String[] */ formats,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Globalization_DateTimeStyles /* System.Globalization.DateTimeStyles */ style,
+	System_DateOnly_t* /* System.DateOnly */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 CString /* System.String */
 System_DateOnly_ToLongDateString(
 	System_DateOnly_t /* System.DateOnly */ self,
@@ -11003,6 +11577,14 @@ System_DateOnly_t /* System.DateOnly */
 System_DateOnly_Parse2(
 	CString /* System.String */ s,
 	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_DateOnly_TryParse2(
+	CString /* System.String */ s,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_DateOnly_t* /* System.DateOnly */ result,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -11098,9 +11680,25 @@ System_TimeOnly_Add(
 );
 
 System_TimeOnly_t /* System.TimeOnly */
+System_TimeOnly_Add1(
+	System_TimeOnly_t /* System.TimeOnly */ self,
+	System_TimeSpan_t /* System.TimeSpan */ value,
+	int32_t* /* System.Int32 */ wrappedDays,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_TimeOnly_t /* System.TimeOnly */
 System_TimeOnly_AddHours(
 	System_TimeOnly_t /* System.TimeOnly */ self,
 	double /* System.Double */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_TimeOnly_t /* System.TimeOnly */
+System_TimeOnly_AddHours1(
+	System_TimeOnly_t /* System.TimeOnly */ self,
+	double /* System.Double */ value,
+	int32_t* /* System.Int32 */ wrappedDays,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -11111,11 +11709,57 @@ System_TimeOnly_AddMinutes(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+System_TimeOnly_t /* System.TimeOnly */
+System_TimeOnly_AddMinutes1(
+	System_TimeOnly_t /* System.TimeOnly */ self,
+	double /* System.Double */ value,
+	int32_t* /* System.Int32 */ wrappedDays,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 CBool /* System.Boolean */
 System_TimeOnly_IsBetween(
 	System_TimeOnly_t /* System.TimeOnly */ self,
 	System_TimeOnly_t /* System.TimeOnly */ start,
 	System_TimeOnly_t /* System.TimeOnly */ end,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_TimeOnly_Deconstruct(
+	System_TimeOnly_t /* System.TimeOnly */ self,
+	int32_t* /* System.Int32 */ hour,
+	int32_t* /* System.Int32 */ minute,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_TimeOnly_Deconstruct1(
+	System_TimeOnly_t /* System.TimeOnly */ self,
+	int32_t* /* System.Int32 */ hour,
+	int32_t* /* System.Int32 */ minute,
+	int32_t* /* System.Int32 */ second,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_TimeOnly_Deconstruct2(
+	System_TimeOnly_t /* System.TimeOnly */ self,
+	int32_t* /* System.Int32 */ hour,
+	int32_t* /* System.Int32 */ minute,
+	int32_t* /* System.Int32 */ second,
+	int32_t* /* System.Int32 */ millisecond,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_TimeOnly_Deconstruct3(
+	System_TimeOnly_t /* System.TimeOnly */ self,
+	int32_t* /* System.Int32 */ hour,
+	int32_t* /* System.Int32 */ minute,
+	int32_t* /* System.Int32 */ second,
+	int32_t* /* System.Int32 */ millisecond,
+	int32_t* /* System.Int32 */ microsecond,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -11217,6 +11861,58 @@ System_TimeOnly_ParseExact3(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+CBool /* System.Boolean */
+System_TimeOnly_TryParse(
+	CString /* System.String */ s,
+	System_TimeOnly_t* /* System.TimeOnly */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_TimeOnly_TryParse1(
+	CString /* System.String */ s,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Globalization_DateTimeStyles /* System.Globalization.DateTimeStyles */ style,
+	System_TimeOnly_t* /* System.TimeOnly */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_TimeOnly_TryParseExact(
+	CString /* System.String */ s,
+	CString /* System.String */ format,
+	System_TimeOnly_t* /* System.TimeOnly */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_TimeOnly_TryParseExact1(
+	CString /* System.String */ s,
+	CString /* System.String */ format,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Globalization_DateTimeStyles /* System.Globalization.DateTimeStyles */ style,
+	System_TimeOnly_t* /* System.TimeOnly */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_TimeOnly_TryParseExact2(
+	CString /* System.String */ s,
+	System_String_Array_t /* System.String[] */ formats,
+	System_TimeOnly_t* /* System.TimeOnly */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_TimeOnly_TryParseExact3(
+	CString /* System.String */ s,
+	System_String_Array_t /* System.String[] */ formats,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Globalization_DateTimeStyles /* System.Globalization.DateTimeStyles */ style,
+	System_TimeOnly_t* /* System.TimeOnly */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 CString /* System.String */
 System_TimeOnly_ToLongTimeString(
 	System_TimeOnly_t /* System.TimeOnly */ self,
@@ -11261,6 +11957,14 @@ System_TimeOnly_t /* System.TimeOnly */
 System_TimeOnly_Parse2(
 	CString /* System.String */ s,
 	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_TimeOnly_TryParse2(
+	CString /* System.String */ s,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_TimeOnly_t* /* System.TimeOnly */ result,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -11947,6 +12651,7 @@ System_Runtime_Serialization_StreamingContext_Destroy(
 );
 
 #pragma mark - END APIs of System.Runtime.Serialization.StreamingContext
+
 
 
 #pragma mark - BEGIN APIs of System.RuntimeTypeHandle
@@ -12688,6 +13393,7 @@ System_Reflection_FieldInfo_Destroy(
 #pragma mark - BEGIN APIs of System.Reflection.MethodBase[]
 #pragma mark - END APIs of System.Reflection.MethodBase[]
 
+
 #pragma mark - BEGIN APIs of System.Reflection.ParameterModifier[]
 #pragma mark - END APIs of System.Reflection.ParameterModifier[]
 
@@ -12709,6 +13415,7 @@ System_Reflection_ParameterModifier_Destroy(
 );
 
 #pragma mark - END APIs of System.Reflection.ParameterModifier
+
 
 #pragma mark - BEGIN APIs of System.Reflection.PropertyInfo
 System_Reflection_ParameterInfo_Array_t /* System.Reflection.ParameterInfo[] */
@@ -13210,6 +13917,14 @@ System_Collections_IDictionaryEnumerator_Destroy(
 #pragma mark - END APIs of System.Collections.IDictionaryEnumerator
 
 #pragma mark - BEGIN APIs of System.Collections.DictionaryEntry
+void /* System.Void */
+System_Collections_DictionaryEntry_Deconstruct(
+	System_Collections_DictionaryEntry_t /* System.Collections.DictionaryEntry */ self,
+	System_Object_t* /* System.Object */ key,
+	System_Object_t* /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 CString /* System.String */
 System_Collections_DictionaryEntry_ToString(
 	System_Collections_DictionaryEntry_t /* System.Collections.DictionaryEntry */ self,
@@ -13822,6 +14537,7 @@ System_Runtime_ConstrainedExecution_CriticalFinalizerObject_Destroy(
 );
 
 #pragma mark - END APIs of System.Runtime.ConstrainedExecution.CriticalFinalizerObject
+
 
 #pragma mark - BEGIN APIs of System.Threading.WaitHandle[]
 #pragma mark - END APIs of System.Threading.WaitHandle[]
@@ -14651,6 +15367,14 @@ System_Reflection_ManifestResourceInfo_Destroy(
 #pragma mark - END APIs of System.Reflection.ManifestResourceInfo
 
 #pragma mark - BEGIN APIs of System.Reflection.Module
+void /* System.Void */
+System_Reflection_Module_GetPEKind(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	System_Reflection_PortableExecutableKinds* /* System.Reflection.PortableExecutableKinds */ peKind,
+	System_Reflection_ImageFileMachine* /* System.Reflection.ImageFileMachine */ machine,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 CBool /* System.Boolean */
 System_Reflection_Module_IsResource(
 	System_Reflection_Module_t /* System.Reflection.Module */ self,
@@ -14978,10 +15702,25 @@ System_Guid_Parse(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+CBool /* System.Boolean */
+System_Guid_TryParse(
+	CString /* System.String */ input,
+	System_Guid_t* /* System.Guid */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 System_Guid_t /* System.Guid */
 System_Guid_ParseExact(
 	CString /* System.String */ input,
 	CString /* System.String */ format,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Guid_TryParseExact(
+	CString /* System.String */ input,
+	CString /* System.String */ format,
+	System_Guid_t* /* System.Guid */ result,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -15050,6 +15789,14 @@ System_Guid_t /* System.Guid */
 System_Guid_Parse1(
 	CString /* System.String */ s,
 	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Guid_TryParse1(
+	CString /* System.String */ s,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Guid_t* /* System.Guid */ result,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -15128,6 +15875,9 @@ System_Guid_Destroy(
 );
 
 #pragma mark - END APIs of System.Guid
+
+
+
 
 #pragma mark - BEGIN APIs of System.ResolveEventArgs
 System_ResolveEventArgs_t /* System.ResolveEventArgs */
@@ -15252,6 +16002,43 @@ System_Text_Rune_IsValid1(
 CString /* System.String */
 System_Text_Rune_ToString(
 	System_Text_Rune_t /* System.Text.Rune */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Text_Rune_TryCreate(
+	uint8_t /* System.Char */ ch,
+	System_Text_Rune_t* /* System.Text.Rune */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Text_Rune_TryCreate1(
+	uint8_t /* System.Char */ highSurrogate,
+	uint8_t /* System.Char */ lowSurrogate,
+	System_Text_Rune_t* /* System.Text.Rune */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Text_Rune_TryCreate2(
+	int32_t /* System.Int32 */ value,
+	System_Text_Rune_t* /* System.Text.Rune */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Text_Rune_TryCreate3(
+	uint32_t /* System.UInt32 */ value,
+	System_Text_Rune_t* /* System.Text.Rune */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Text_Rune_TryGetRuneAt(
+	CString /* System.String */ input,
+	int32_t /* System.Int32 */ index,
+	System_Text_Rune_t* /* System.Text.Rune */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -15443,6 +16230,7 @@ System_Text_Rune_Destroy(
 );
 
 #pragma mark - END APIs of System.Text.Rune
+
 
 #pragma mark - BEGIN APIs of System.Globalization.SortKey
 int32_t /* System.Int32 */
@@ -17290,6 +18078,7 @@ System_Globalization_DateTimeFormatInfo_Destroy(
 #pragma mark - BEGIN APIs of System.Globalization.Calendar[]
 #pragma mark - END APIs of System.Globalization.Calendar[]
 
+
 #pragma mark - BEGIN APIs of System.Char[]
 #pragma mark - END APIs of System.Char[]
 
@@ -17376,6 +18165,13 @@ System_Text_CompositeFormat_Parse(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+CBool /* System.Boolean */
+System_Text_CompositeFormat_TryParse(
+	CString /* System.String */ format,
+	System_Text_CompositeFormat_t* /* System.Text.CompositeFormat */ compositeFormat,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 CString /* System.String */
 System_Text_CompositeFormat_Format_Get(
 	System_Text_CompositeFormat_t /* System.Text.CompositeFormat */ self,
@@ -17394,6 +18190,7 @@ System_Text_CompositeFormat_Destroy(
 );
 
 #pragma mark - END APIs of System.Text.CompositeFormat
+
 
 #pragma mark - BEGIN APIs of System.Text.Encoding
 System_Byte_Array_t /* System.Byte[] */
@@ -18207,6 +19004,22 @@ System_Text_Decoder_GetChars1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+void /* System.Void */
+System_Text_Decoder_Convert(
+	System_Text_Decoder_t /* System.Text.Decoder */ self,
+	System_Byte_Array_t /* System.Byte[] */ bytes,
+	int32_t /* System.Int32 */ byteIndex,
+	int32_t /* System.Int32 */ byteCount,
+	System_Char_Array_t /* System.Char[] */ chars,
+	int32_t /* System.Int32 */ charIndex,
+	int32_t /* System.Int32 */ charCount,
+	CBool /* System.Boolean */ flush,
+	int32_t* /* System.Int32 */ bytesUsed,
+	int32_t* /* System.Int32 */ charsUsed,
+	CBool* /* System.Boolean */ completed,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 System_Text_DecoderFallback_t /* System.Text.DecoderFallback */
 System_Text_Decoder_Fallback_Get(
 	System_Text_Decoder_t /* System.Text.Decoder */ self,
@@ -18283,6 +19096,22 @@ System_Text_Encoder_GetBytes(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+void /* System.Void */
+System_Text_Encoder_Convert(
+	System_Text_Encoder_t /* System.Text.Encoder */ self,
+	System_Char_Array_t /* System.Char[] */ chars,
+	int32_t /* System.Int32 */ charIndex,
+	int32_t /* System.Int32 */ charCount,
+	System_Byte_Array_t /* System.Byte[] */ bytes,
+	int32_t /* System.Int32 */ byteIndex,
+	int32_t /* System.Int32 */ byteCount,
+	CBool /* System.Boolean */ flush,
+	int32_t* /* System.Int32 */ charsUsed,
+	int32_t* /* System.Int32 */ bytesUsed,
+	CBool* /* System.Boolean */ completed,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 System_Text_EncoderFallback_t /* System.Text.EncoderFallback */
 System_Text_Encoder_Fallback_Get(
 	System_Text_Encoder_t /* System.Text.Encoder */ self,
@@ -18332,6 +19161,10 @@ System_Text_Encoder_Destroy(
 
 #pragma mark - BEGIN APIs of TEnum[]
 #pragma mark - END APIs of TEnum[]
+
+
+
+
 
 #pragma mark - BEGIN APIs of System.Runtime.InteropServices.StructLayoutAttribute
 System_Runtime_InteropServices_StructLayoutAttribute_t /* System.Runtime.InteropServices.StructLayoutAttribute */
@@ -19048,6 +19881,5923 @@ System_Reflection_InterfaceMapping_Destroy(
 
 #pragma mark - END APIs of System.Reflection.InterfaceMapping
 
+
+
+#pragma mark - BEGIN APIs of System.Convert
+System_TypeCode /* System.TypeCode */
+System_Convert_GetTypeCode(
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Convert_IsDBNull(
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Convert_ChangeType(
+	System_Object_t /* System.Object */ value,
+	System_TypeCode /* System.TypeCode */ typeCode,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Convert_ChangeType1(
+	System_Object_t /* System.Object */ value,
+	System_TypeCode /* System.TypeCode */ typeCode,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Convert_ChangeType2(
+	System_Object_t /* System.Object */ value,
+	System_Type_t /* System.Type */ conversionType,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Convert_ChangeType3(
+	System_Object_t /* System.Object */ value,
+	System_Type_t /* System.Type */ conversionType,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Convert_ToBoolean(
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Convert_ToBoolean1(
+	System_Object_t /* System.Object */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Convert_ToBoolean2(
+	CBool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Convert_ToBoolean3(
+	int8_t /* System.SByte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Convert_ToBoolean4(
+	uint8_t /* System.Char */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Convert_ToBoolean5(
+	uint8_t /* System.Byte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Convert_ToBoolean6(
+	int16_t /* System.Int16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Convert_ToBoolean7(
+	uint16_t /* System.UInt16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Convert_ToBoolean8(
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Convert_ToBoolean9(
+	uint32_t /* System.UInt32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Convert_ToBoolean10(
+	int64_t /* System.Int64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Convert_ToBoolean11(
+	uint64_t /* System.UInt64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Convert_ToBoolean12(
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Convert_ToBoolean13(
+	CString /* System.String */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Convert_ToBoolean14(
+	float /* System.Single */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Convert_ToBoolean15(
+	double /* System.Double */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Convert_ToBoolean16(
+	System_Decimal_t /* System.Decimal */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Convert_ToBoolean17(
+	System_DateTime_t /* System.DateTime */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Char */
+System_Convert_ToChar(
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Char */
+System_Convert_ToChar1(
+	System_Object_t /* System.Object */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Char */
+System_Convert_ToChar2(
+	CBool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Char */
+System_Convert_ToChar3(
+	uint8_t /* System.Char */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Char */
+System_Convert_ToChar4(
+	int8_t /* System.SByte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Char */
+System_Convert_ToChar5(
+	uint8_t /* System.Byte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Char */
+System_Convert_ToChar6(
+	int16_t /* System.Int16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Char */
+System_Convert_ToChar7(
+	uint16_t /* System.UInt16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Char */
+System_Convert_ToChar8(
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Char */
+System_Convert_ToChar9(
+	uint32_t /* System.UInt32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Char */
+System_Convert_ToChar10(
+	int64_t /* System.Int64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Char */
+System_Convert_ToChar11(
+	uint64_t /* System.UInt64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Char */
+System_Convert_ToChar12(
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Char */
+System_Convert_ToChar13(
+	CString /* System.String */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Char */
+System_Convert_ToChar14(
+	float /* System.Single */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Char */
+System_Convert_ToChar15(
+	double /* System.Double */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Char */
+System_Convert_ToChar16(
+	System_Decimal_t /* System.Decimal */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Char */
+System_Convert_ToChar17(
+	System_DateTime_t /* System.DateTime */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int8_t /* System.SByte */
+System_Convert_ToSByte(
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int8_t /* System.SByte */
+System_Convert_ToSByte1(
+	System_Object_t /* System.Object */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int8_t /* System.SByte */
+System_Convert_ToSByte2(
+	CBool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int8_t /* System.SByte */
+System_Convert_ToSByte3(
+	int8_t /* System.SByte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int8_t /* System.SByte */
+System_Convert_ToSByte4(
+	uint8_t /* System.Char */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int8_t /* System.SByte */
+System_Convert_ToSByte5(
+	uint8_t /* System.Byte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int8_t /* System.SByte */
+System_Convert_ToSByte6(
+	int16_t /* System.Int16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int8_t /* System.SByte */
+System_Convert_ToSByte7(
+	uint16_t /* System.UInt16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int8_t /* System.SByte */
+System_Convert_ToSByte8(
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int8_t /* System.SByte */
+System_Convert_ToSByte9(
+	uint32_t /* System.UInt32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int8_t /* System.SByte */
+System_Convert_ToSByte10(
+	int64_t /* System.Int64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int8_t /* System.SByte */
+System_Convert_ToSByte11(
+	uint64_t /* System.UInt64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int8_t /* System.SByte */
+System_Convert_ToSByte12(
+	float /* System.Single */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int8_t /* System.SByte */
+System_Convert_ToSByte13(
+	double /* System.Double */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int8_t /* System.SByte */
+System_Convert_ToSByte14(
+	System_Decimal_t /* System.Decimal */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int8_t /* System.SByte */
+System_Convert_ToSByte15(
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int8_t /* System.SByte */
+System_Convert_ToSByte16(
+	CString /* System.String */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int8_t /* System.SByte */
+System_Convert_ToSByte17(
+	System_DateTime_t /* System.DateTime */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Byte */
+System_Convert_ToByte(
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Byte */
+System_Convert_ToByte1(
+	System_Object_t /* System.Object */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Byte */
+System_Convert_ToByte2(
+	CBool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Byte */
+System_Convert_ToByte3(
+	uint8_t /* System.Byte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Byte */
+System_Convert_ToByte4(
+	uint8_t /* System.Char */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Byte */
+System_Convert_ToByte5(
+	int8_t /* System.SByte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Byte */
+System_Convert_ToByte6(
+	int16_t /* System.Int16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Byte */
+System_Convert_ToByte7(
+	uint16_t /* System.UInt16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Byte */
+System_Convert_ToByte8(
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Byte */
+System_Convert_ToByte9(
+	uint32_t /* System.UInt32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Byte */
+System_Convert_ToByte10(
+	int64_t /* System.Int64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Byte */
+System_Convert_ToByte11(
+	uint64_t /* System.UInt64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Byte */
+System_Convert_ToByte12(
+	float /* System.Single */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Byte */
+System_Convert_ToByte13(
+	double /* System.Double */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Byte */
+System_Convert_ToByte14(
+	System_Decimal_t /* System.Decimal */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Byte */
+System_Convert_ToByte15(
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Byte */
+System_Convert_ToByte16(
+	CString /* System.String */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Byte */
+System_Convert_ToByte17(
+	System_DateTime_t /* System.DateTime */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int16_t /* System.Int16 */
+System_Convert_ToInt16(
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int16_t /* System.Int16 */
+System_Convert_ToInt161(
+	System_Object_t /* System.Object */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int16_t /* System.Int16 */
+System_Convert_ToInt162(
+	CBool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int16_t /* System.Int16 */
+System_Convert_ToInt163(
+	uint8_t /* System.Char */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int16_t /* System.Int16 */
+System_Convert_ToInt164(
+	int8_t /* System.SByte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int16_t /* System.Int16 */
+System_Convert_ToInt165(
+	uint8_t /* System.Byte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int16_t /* System.Int16 */
+System_Convert_ToInt166(
+	uint16_t /* System.UInt16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int16_t /* System.Int16 */
+System_Convert_ToInt167(
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int16_t /* System.Int16 */
+System_Convert_ToInt168(
+	uint32_t /* System.UInt32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int16_t /* System.Int16 */
+System_Convert_ToInt169(
+	int16_t /* System.Int16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int16_t /* System.Int16 */
+System_Convert_ToInt1610(
+	int64_t /* System.Int64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int16_t /* System.Int16 */
+System_Convert_ToInt1611(
+	uint64_t /* System.UInt64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int16_t /* System.Int16 */
+System_Convert_ToInt1612(
+	float /* System.Single */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int16_t /* System.Int16 */
+System_Convert_ToInt1613(
+	double /* System.Double */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int16_t /* System.Int16 */
+System_Convert_ToInt1614(
+	System_Decimal_t /* System.Decimal */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int16_t /* System.Int16 */
+System_Convert_ToInt1615(
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int16_t /* System.Int16 */
+System_Convert_ToInt1616(
+	CString /* System.String */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int16_t /* System.Int16 */
+System_Convert_ToInt1617(
+	System_DateTime_t /* System.DateTime */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint16_t /* System.UInt16 */
+System_Convert_ToUInt16(
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint16_t /* System.UInt16 */
+System_Convert_ToUInt161(
+	System_Object_t /* System.Object */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint16_t /* System.UInt16 */
+System_Convert_ToUInt162(
+	CBool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint16_t /* System.UInt16 */
+System_Convert_ToUInt163(
+	uint8_t /* System.Char */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint16_t /* System.UInt16 */
+System_Convert_ToUInt164(
+	int8_t /* System.SByte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint16_t /* System.UInt16 */
+System_Convert_ToUInt165(
+	uint8_t /* System.Byte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint16_t /* System.UInt16 */
+System_Convert_ToUInt166(
+	int16_t /* System.Int16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint16_t /* System.UInt16 */
+System_Convert_ToUInt167(
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint16_t /* System.UInt16 */
+System_Convert_ToUInt168(
+	uint16_t /* System.UInt16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint16_t /* System.UInt16 */
+System_Convert_ToUInt169(
+	uint32_t /* System.UInt32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint16_t /* System.UInt16 */
+System_Convert_ToUInt1610(
+	int64_t /* System.Int64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint16_t /* System.UInt16 */
+System_Convert_ToUInt1611(
+	uint64_t /* System.UInt64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint16_t /* System.UInt16 */
+System_Convert_ToUInt1612(
+	float /* System.Single */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint16_t /* System.UInt16 */
+System_Convert_ToUInt1613(
+	double /* System.Double */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint16_t /* System.UInt16 */
+System_Convert_ToUInt1614(
+	System_Decimal_t /* System.Decimal */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint16_t /* System.UInt16 */
+System_Convert_ToUInt1615(
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint16_t /* System.UInt16 */
+System_Convert_ToUInt1616(
+	CString /* System.String */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint16_t /* System.UInt16 */
+System_Convert_ToUInt1617(
+	System_DateTime_t /* System.DateTime */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Convert_ToInt32(
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Convert_ToInt321(
+	System_Object_t /* System.Object */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Convert_ToInt322(
+	CBool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Convert_ToInt323(
+	uint8_t /* System.Char */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Convert_ToInt324(
+	int8_t /* System.SByte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Convert_ToInt325(
+	uint8_t /* System.Byte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Convert_ToInt326(
+	int16_t /* System.Int16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Convert_ToInt327(
+	uint16_t /* System.UInt16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Convert_ToInt328(
+	uint32_t /* System.UInt32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Convert_ToInt329(
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Convert_ToInt3210(
+	int64_t /* System.Int64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Convert_ToInt3211(
+	uint64_t /* System.UInt64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Convert_ToInt3212(
+	float /* System.Single */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Convert_ToInt3213(
+	double /* System.Double */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Convert_ToInt3214(
+	System_Decimal_t /* System.Decimal */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Convert_ToInt3215(
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Convert_ToInt3216(
+	CString /* System.String */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Convert_ToInt3217(
+	System_DateTime_t /* System.DateTime */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint32_t /* System.UInt32 */
+System_Convert_ToUInt32(
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint32_t /* System.UInt32 */
+System_Convert_ToUInt321(
+	System_Object_t /* System.Object */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint32_t /* System.UInt32 */
+System_Convert_ToUInt322(
+	CBool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint32_t /* System.UInt32 */
+System_Convert_ToUInt323(
+	uint8_t /* System.Char */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint32_t /* System.UInt32 */
+System_Convert_ToUInt324(
+	int8_t /* System.SByte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint32_t /* System.UInt32 */
+System_Convert_ToUInt325(
+	uint8_t /* System.Byte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint32_t /* System.UInt32 */
+System_Convert_ToUInt326(
+	int16_t /* System.Int16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint32_t /* System.UInt32 */
+System_Convert_ToUInt327(
+	uint16_t /* System.UInt16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint32_t /* System.UInt32 */
+System_Convert_ToUInt328(
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint32_t /* System.UInt32 */
+System_Convert_ToUInt329(
+	uint32_t /* System.UInt32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint32_t /* System.UInt32 */
+System_Convert_ToUInt3210(
+	int64_t /* System.Int64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint32_t /* System.UInt32 */
+System_Convert_ToUInt3211(
+	uint64_t /* System.UInt64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint32_t /* System.UInt32 */
+System_Convert_ToUInt3212(
+	float /* System.Single */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint32_t /* System.UInt32 */
+System_Convert_ToUInt3213(
+	double /* System.Double */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint32_t /* System.UInt32 */
+System_Convert_ToUInt3214(
+	System_Decimal_t /* System.Decimal */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint32_t /* System.UInt32 */
+System_Convert_ToUInt3215(
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint32_t /* System.UInt32 */
+System_Convert_ToUInt3216(
+	CString /* System.String */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint32_t /* System.UInt32 */
+System_Convert_ToUInt3217(
+	System_DateTime_t /* System.DateTime */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_Convert_ToInt64(
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_Convert_ToInt641(
+	System_Object_t /* System.Object */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_Convert_ToInt642(
+	CBool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_Convert_ToInt643(
+	uint8_t /* System.Char */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_Convert_ToInt644(
+	int8_t /* System.SByte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_Convert_ToInt645(
+	uint8_t /* System.Byte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_Convert_ToInt646(
+	int16_t /* System.Int16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_Convert_ToInt647(
+	uint16_t /* System.UInt16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_Convert_ToInt648(
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_Convert_ToInt649(
+	uint32_t /* System.UInt32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_Convert_ToInt6410(
+	uint64_t /* System.UInt64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_Convert_ToInt6411(
+	int64_t /* System.Int64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_Convert_ToInt6412(
+	float /* System.Single */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_Convert_ToInt6413(
+	double /* System.Double */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_Convert_ToInt6414(
+	System_Decimal_t /* System.Decimal */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_Convert_ToInt6415(
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_Convert_ToInt6416(
+	CString /* System.String */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_Convert_ToInt6417(
+	System_DateTime_t /* System.DateTime */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint64_t /* System.UInt64 */
+System_Convert_ToUInt64(
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint64_t /* System.UInt64 */
+System_Convert_ToUInt641(
+	System_Object_t /* System.Object */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint64_t /* System.UInt64 */
+System_Convert_ToUInt642(
+	CBool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint64_t /* System.UInt64 */
+System_Convert_ToUInt643(
+	uint8_t /* System.Char */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint64_t /* System.UInt64 */
+System_Convert_ToUInt644(
+	int8_t /* System.SByte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint64_t /* System.UInt64 */
+System_Convert_ToUInt645(
+	uint8_t /* System.Byte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint64_t /* System.UInt64 */
+System_Convert_ToUInt646(
+	int16_t /* System.Int16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint64_t /* System.UInt64 */
+System_Convert_ToUInt647(
+	uint16_t /* System.UInt16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint64_t /* System.UInt64 */
+System_Convert_ToUInt648(
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint64_t /* System.UInt64 */
+System_Convert_ToUInt649(
+	uint32_t /* System.UInt32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint64_t /* System.UInt64 */
+System_Convert_ToUInt6410(
+	int64_t /* System.Int64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint64_t /* System.UInt64 */
+System_Convert_ToUInt6411(
+	uint64_t /* System.UInt64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint64_t /* System.UInt64 */
+System_Convert_ToUInt6412(
+	float /* System.Single */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint64_t /* System.UInt64 */
+System_Convert_ToUInt6413(
+	double /* System.Double */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint64_t /* System.UInt64 */
+System_Convert_ToUInt6414(
+	System_Decimal_t /* System.Decimal */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint64_t /* System.UInt64 */
+System_Convert_ToUInt6415(
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint64_t /* System.UInt64 */
+System_Convert_ToUInt6416(
+	CString /* System.String */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint64_t /* System.UInt64 */
+System_Convert_ToUInt6417(
+	System_DateTime_t /* System.DateTime */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+float /* System.Single */
+System_Convert_ToSingle(
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+float /* System.Single */
+System_Convert_ToSingle1(
+	System_Object_t /* System.Object */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+float /* System.Single */
+System_Convert_ToSingle2(
+	int8_t /* System.SByte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+float /* System.Single */
+System_Convert_ToSingle3(
+	uint8_t /* System.Byte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+float /* System.Single */
+System_Convert_ToSingle4(
+	uint8_t /* System.Char */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+float /* System.Single */
+System_Convert_ToSingle5(
+	int16_t /* System.Int16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+float /* System.Single */
+System_Convert_ToSingle6(
+	uint16_t /* System.UInt16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+float /* System.Single */
+System_Convert_ToSingle7(
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+float /* System.Single */
+System_Convert_ToSingle8(
+	uint32_t /* System.UInt32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+float /* System.Single */
+System_Convert_ToSingle9(
+	int64_t /* System.Int64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+float /* System.Single */
+System_Convert_ToSingle10(
+	uint64_t /* System.UInt64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+float /* System.Single */
+System_Convert_ToSingle11(
+	float /* System.Single */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+float /* System.Single */
+System_Convert_ToSingle12(
+	double /* System.Double */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+float /* System.Single */
+System_Convert_ToSingle13(
+	System_Decimal_t /* System.Decimal */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+float /* System.Single */
+System_Convert_ToSingle14(
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+float /* System.Single */
+System_Convert_ToSingle15(
+	CString /* System.String */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+float /* System.Single */
+System_Convert_ToSingle16(
+	CBool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+float /* System.Single */
+System_Convert_ToSingle17(
+	System_DateTime_t /* System.DateTime */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Convert_ToDouble(
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Convert_ToDouble1(
+	System_Object_t /* System.Object */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Convert_ToDouble2(
+	int8_t /* System.SByte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Convert_ToDouble3(
+	uint8_t /* System.Byte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Convert_ToDouble4(
+	int16_t /* System.Int16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Convert_ToDouble5(
+	uint8_t /* System.Char */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Convert_ToDouble6(
+	uint16_t /* System.UInt16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Convert_ToDouble7(
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Convert_ToDouble8(
+	uint32_t /* System.UInt32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Convert_ToDouble9(
+	int64_t /* System.Int64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Convert_ToDouble10(
+	uint64_t /* System.UInt64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Convert_ToDouble11(
+	float /* System.Single */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Convert_ToDouble12(
+	double /* System.Double */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Convert_ToDouble13(
+	System_Decimal_t /* System.Decimal */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Convert_ToDouble14(
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Convert_ToDouble15(
+	CString /* System.String */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Convert_ToDouble16(
+	CBool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Convert_ToDouble17(
+	System_DateTime_t /* System.DateTime */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Decimal_t /* System.Decimal */
+System_Convert_ToDecimal(
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Decimal_t /* System.Decimal */
+System_Convert_ToDecimal1(
+	System_Object_t /* System.Object */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Decimal_t /* System.Decimal */
+System_Convert_ToDecimal2(
+	int8_t /* System.SByte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Decimal_t /* System.Decimal */
+System_Convert_ToDecimal3(
+	uint8_t /* System.Byte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Decimal_t /* System.Decimal */
+System_Convert_ToDecimal4(
+	uint8_t /* System.Char */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Decimal_t /* System.Decimal */
+System_Convert_ToDecimal5(
+	int16_t /* System.Int16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Decimal_t /* System.Decimal */
+System_Convert_ToDecimal6(
+	uint16_t /* System.UInt16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Decimal_t /* System.Decimal */
+System_Convert_ToDecimal7(
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Decimal_t /* System.Decimal */
+System_Convert_ToDecimal8(
+	uint32_t /* System.UInt32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Decimal_t /* System.Decimal */
+System_Convert_ToDecimal9(
+	int64_t /* System.Int64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Decimal_t /* System.Decimal */
+System_Convert_ToDecimal10(
+	uint64_t /* System.UInt64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Decimal_t /* System.Decimal */
+System_Convert_ToDecimal11(
+	float /* System.Single */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Decimal_t /* System.Decimal */
+System_Convert_ToDecimal12(
+	double /* System.Double */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Decimal_t /* System.Decimal */
+System_Convert_ToDecimal13(
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Decimal_t /* System.Decimal */
+System_Convert_ToDecimal14(
+	CString /* System.String */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Decimal_t /* System.Decimal */
+System_Convert_ToDecimal15(
+	System_Decimal_t /* System.Decimal */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Decimal_t /* System.Decimal */
+System_Convert_ToDecimal16(
+	CBool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Decimal_t /* System.Decimal */
+System_Convert_ToDecimal17(
+	System_DateTime_t /* System.DateTime */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_Convert_ToDateTime(
+	System_DateTime_t /* System.DateTime */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_Convert_ToDateTime1(
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_Convert_ToDateTime2(
+	System_Object_t /* System.Object */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_Convert_ToDateTime3(
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_Convert_ToDateTime4(
+	CString /* System.String */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_Convert_ToDateTime5(
+	int8_t /* System.SByte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_Convert_ToDateTime6(
+	uint8_t /* System.Byte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_Convert_ToDateTime7(
+	int16_t /* System.Int16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_Convert_ToDateTime8(
+	uint16_t /* System.UInt16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_Convert_ToDateTime9(
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_Convert_ToDateTime10(
+	uint32_t /* System.UInt32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_Convert_ToDateTime11(
+	int64_t /* System.Int64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_Convert_ToDateTime12(
+	uint64_t /* System.UInt64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_Convert_ToDateTime13(
+	CBool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_Convert_ToDateTime14(
+	uint8_t /* System.Char */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_Convert_ToDateTime15(
+	float /* System.Single */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_Convert_ToDateTime16(
+	double /* System.Double */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_Convert_ToDateTime17(
+	System_Decimal_t /* System.Decimal */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString(
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString1(
+	System_Object_t /* System.Object */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString2(
+	CBool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString3(
+	CBool /* System.Boolean */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString4(
+	uint8_t /* System.Char */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString5(
+	uint8_t /* System.Char */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString6(
+	int8_t /* System.SByte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString7(
+	int8_t /* System.SByte */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString8(
+	uint8_t /* System.Byte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString9(
+	uint8_t /* System.Byte */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString10(
+	int16_t /* System.Int16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString11(
+	int16_t /* System.Int16 */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString12(
+	uint16_t /* System.UInt16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString13(
+	uint16_t /* System.UInt16 */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString14(
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString15(
+	int32_t /* System.Int32 */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString16(
+	uint32_t /* System.UInt32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString17(
+	uint32_t /* System.UInt32 */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString18(
+	int64_t /* System.Int64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString19(
+	int64_t /* System.Int64 */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString20(
+	uint64_t /* System.UInt64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString21(
+	uint64_t /* System.UInt64 */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString22(
+	float /* System.Single */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString23(
+	float /* System.Single */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString24(
+	double /* System.Double */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString25(
+	double /* System.Double */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString26(
+	System_Decimal_t /* System.Decimal */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString27(
+	System_Decimal_t /* System.Decimal */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString28(
+	System_DateTime_t /* System.DateTime */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString29(
+	System_DateTime_t /* System.DateTime */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString30(
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString31(
+	CString /* System.String */ value,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Byte */
+System_Convert_ToByte18(
+	CString /* System.String */ value,
+	int32_t /* System.Int32 */ fromBase,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int8_t /* System.SByte */
+System_Convert_ToSByte18(
+	CString /* System.String */ value,
+	int32_t /* System.Int32 */ fromBase,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int16_t /* System.Int16 */
+System_Convert_ToInt1618(
+	CString /* System.String */ value,
+	int32_t /* System.Int32 */ fromBase,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint16_t /* System.UInt16 */
+System_Convert_ToUInt1618(
+	CString /* System.String */ value,
+	int32_t /* System.Int32 */ fromBase,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Convert_ToInt3218(
+	CString /* System.String */ value,
+	int32_t /* System.Int32 */ fromBase,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint32_t /* System.UInt32 */
+System_Convert_ToUInt3218(
+	CString /* System.String */ value,
+	int32_t /* System.Int32 */ fromBase,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_Convert_ToInt6418(
+	CString /* System.String */ value,
+	int32_t /* System.Int32 */ fromBase,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint64_t /* System.UInt64 */
+System_Convert_ToUInt6418(
+	CString /* System.String */ value,
+	int32_t /* System.Int32 */ fromBase,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString32(
+	uint8_t /* System.Byte */ value,
+	int32_t /* System.Int32 */ toBase,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString33(
+	int16_t /* System.Int16 */ value,
+	int32_t /* System.Int32 */ toBase,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString34(
+	int32_t /* System.Int32 */ value,
+	int32_t /* System.Int32 */ toBase,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToString35(
+	int64_t /* System.Int64 */ value,
+	int32_t /* System.Int32 */ toBase,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToBase64String(
+	System_Byte_Array_t /* System.Byte[] */ inArray,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToBase64String1(
+	System_Byte_Array_t /* System.Byte[] */ inArray,
+	System_Base64FormattingOptions /* System.Base64FormattingOptions */ options,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToBase64String2(
+	System_Byte_Array_t /* System.Byte[] */ inArray,
+	int32_t /* System.Int32 */ offset,
+	int32_t /* System.Int32 */ length,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToBase64String3(
+	System_Byte_Array_t /* System.Byte[] */ inArray,
+	int32_t /* System.Int32 */ offset,
+	int32_t /* System.Int32 */ length,
+	System_Base64FormattingOptions /* System.Base64FormattingOptions */ options,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Convert_ToBase64CharArray(
+	System_Byte_Array_t /* System.Byte[] */ inArray,
+	int32_t /* System.Int32 */ offsetIn,
+	int32_t /* System.Int32 */ length,
+	System_Char_Array_t /* System.Char[] */ outArray,
+	int32_t /* System.Int32 */ offsetOut,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Convert_ToBase64CharArray1(
+	System_Byte_Array_t /* System.Byte[] */ inArray,
+	int32_t /* System.Int32 */ offsetIn,
+	int32_t /* System.Int32 */ length,
+	System_Char_Array_t /* System.Char[] */ outArray,
+	int32_t /* System.Int32 */ offsetOut,
+	System_Base64FormattingOptions /* System.Base64FormattingOptions */ options,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Byte_Array_t /* System.Byte[] */
+System_Convert_FromBase64String(
+	CString /* System.String */ s,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Byte_Array_t /* System.Byte[] */
+System_Convert_FromBase64CharArray(
+	System_Char_Array_t /* System.Char[] */ inArray,
+	int32_t /* System.Int32 */ offset,
+	int32_t /* System.Int32 */ length,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Byte_Array_t /* System.Byte[] */
+System_Convert_FromHexString(
+	CString /* System.String */ s,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToHexString(
+	System_Byte_Array_t /* System.Byte[] */ inArray,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Convert_ToHexString1(
+	System_Byte_Array_t /* System.Byte[] */ inArray,
+	int32_t /* System.Int32 */ offset,
+	int32_t /* System.Int32 */ length,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Convert_DBNull_Get(
+	
+);
+
+
+System_Type_t /* System.Type */
+System_Convert_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Convert_Destroy(
+	System_Convert_t /* System.Convert */ self
+);
+
+#pragma mark - END APIs of System.Convert
+
+#pragma mark - BEGIN APIs of System.Math
+double /* System.Double */
+System_Math_Acos(
+	double /* System.Double */ d,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_Acosh(
+	double /* System.Double */ d,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_Asin(
+	double /* System.Double */ d,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_Asinh(
+	double /* System.Double */ d,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_Atan(
+	double /* System.Double */ d,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_Atanh(
+	double /* System.Double */ d,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_Atan2(
+	double /* System.Double */ y,
+	double /* System.Double */ x,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_Cbrt(
+	double /* System.Double */ d,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_Ceiling(
+	double /* System.Double */ a,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_Cos(
+	double /* System.Double */ d,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_Cosh(
+	double /* System.Double */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_Exp(
+	double /* System.Double */ d,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_Floor(
+	double /* System.Double */ d,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_FusedMultiplyAdd(
+	double /* System.Double */ x,
+	double /* System.Double */ y,
+	double /* System.Double */ z,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_Log(
+	double /* System.Double */ d,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_Log2(
+	double /* System.Double */ x,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_Log10(
+	double /* System.Double */ d,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_Pow(
+	double /* System.Double */ x,
+	double /* System.Double */ y,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_Sin(
+	double /* System.Double */ a,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_Sinh(
+	double /* System.Double */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_Sqrt(
+	double /* System.Double */ d,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_Tan(
+	double /* System.Double */ a,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_Tanh(
+	double /* System.Double */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int16_t /* System.Int16 */
+System_Math_Abs(
+	int16_t /* System.Int16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Math_Abs1(
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_Math_Abs2(
+	int64_t /* System.Int64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int /* System.IntPtr */
+System_Math_Abs3(
+	int /* System.IntPtr */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int8_t /* System.SByte */
+System_Math_Abs4(
+	int8_t /* System.SByte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Decimal_t /* System.Decimal */
+System_Math_Abs5(
+	System_Decimal_t /* System.Decimal */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_Abs6(
+	double /* System.Double */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+float /* System.Single */
+System_Math_Abs7(
+	float /* System.Single */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_Math_BigMul(
+	int32_t /* System.Int32 */ a,
+	int32_t /* System.Int32 */ b,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint64_t /* System.UInt64 */
+System_Math_BigMul1(
+	uint64_t /* System.UInt64 */ a,
+	uint64_t /* System.UInt64 */ b,
+	uint64_t* /* System.UInt64 */ low,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_Math_BigMul2(
+	int64_t /* System.Int64 */ a,
+	int64_t /* System.Int64 */ b,
+	int64_t* /* System.Int64 */ low,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_BitDecrement(
+	double /* System.Double */ x,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_BitIncrement(
+	double /* System.Double */ x,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_CopySign(
+	double /* System.Double */ x,
+	double /* System.Double */ y,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Math_DivRem(
+	int32_t /* System.Int32 */ a,
+	int32_t /* System.Int32 */ b,
+	int32_t* /* System.Int32 */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_Math_DivRem1(
+	int64_t /* System.Int64 */ a,
+	int64_t /* System.Int64 */ b,
+	int64_t* /* System.Int64 */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Decimal_t /* System.Decimal */
+System_Math_Ceiling1(
+	System_Decimal_t /* System.Decimal */ d,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Byte */
+System_Math_Clamp(
+	uint8_t /* System.Byte */ value,
+	uint8_t /* System.Byte */ min,
+	uint8_t /* System.Byte */ max,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Decimal_t /* System.Decimal */
+System_Math_Clamp1(
+	System_Decimal_t /* System.Decimal */ value,
+	System_Decimal_t /* System.Decimal */ min,
+	System_Decimal_t /* System.Decimal */ max,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_Clamp2(
+	double /* System.Double */ value,
+	double /* System.Double */ min,
+	double /* System.Double */ max,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int16_t /* System.Int16 */
+System_Math_Clamp3(
+	int16_t /* System.Int16 */ value,
+	int16_t /* System.Int16 */ min,
+	int16_t /* System.Int16 */ max,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Math_Clamp4(
+	int32_t /* System.Int32 */ value,
+	int32_t /* System.Int32 */ min,
+	int32_t /* System.Int32 */ max,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_Math_Clamp5(
+	int64_t /* System.Int64 */ value,
+	int64_t /* System.Int64 */ min,
+	int64_t /* System.Int64 */ max,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int /* System.IntPtr */
+System_Math_Clamp6(
+	int /* System.IntPtr */ value,
+	int /* System.IntPtr */ min,
+	int /* System.IntPtr */ max,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int8_t /* System.SByte */
+System_Math_Clamp7(
+	int8_t /* System.SByte */ value,
+	int8_t /* System.SByte */ min,
+	int8_t /* System.SByte */ max,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+float /* System.Single */
+System_Math_Clamp8(
+	float /* System.Single */ value,
+	float /* System.Single */ min,
+	float /* System.Single */ max,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint16_t /* System.UInt16 */
+System_Math_Clamp9(
+	uint16_t /* System.UInt16 */ value,
+	uint16_t /* System.UInt16 */ min,
+	uint16_t /* System.UInt16 */ max,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint32_t /* System.UInt32 */
+System_Math_Clamp10(
+	uint32_t /* System.UInt32 */ value,
+	uint32_t /* System.UInt32 */ min,
+	uint32_t /* System.UInt32 */ max,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint64_t /* System.UInt64 */
+System_Math_Clamp11(
+	uint64_t /* System.UInt64 */ value,
+	uint64_t /* System.UInt64 */ min,
+	uint64_t /* System.UInt64 */ max,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+unsigned int /* System.UIntPtr */
+System_Math_Clamp12(
+	unsigned int /* System.UIntPtr */ value,
+	unsigned int /* System.UIntPtr */ min,
+	unsigned int /* System.UIntPtr */ max,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Decimal_t /* System.Decimal */
+System_Math_Floor1(
+	System_Decimal_t /* System.Decimal */ d,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_IEEERemainder(
+	double /* System.Double */ x,
+	double /* System.Double */ y,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Math_ILogB(
+	double /* System.Double */ x,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_Log11(
+	double /* System.Double */ a,
+	double /* System.Double */ newBase,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Byte */
+System_Math_Max(
+	uint8_t /* System.Byte */ val1,
+	uint8_t /* System.Byte */ val2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Decimal_t /* System.Decimal */
+System_Math_Max1(
+	System_Decimal_t /* System.Decimal */ val1,
+	System_Decimal_t /* System.Decimal */ val2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_Max2(
+	double /* System.Double */ val1,
+	double /* System.Double */ val2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int16_t /* System.Int16 */
+System_Math_Max3(
+	int16_t /* System.Int16 */ val1,
+	int16_t /* System.Int16 */ val2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Math_Max4(
+	int32_t /* System.Int32 */ val1,
+	int32_t /* System.Int32 */ val2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_Math_Max5(
+	int64_t /* System.Int64 */ val1,
+	int64_t /* System.Int64 */ val2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int /* System.IntPtr */
+System_Math_Max6(
+	int /* System.IntPtr */ val1,
+	int /* System.IntPtr */ val2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int8_t /* System.SByte */
+System_Math_Max7(
+	int8_t /* System.SByte */ val1,
+	int8_t /* System.SByte */ val2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+float /* System.Single */
+System_Math_Max8(
+	float /* System.Single */ val1,
+	float /* System.Single */ val2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint16_t /* System.UInt16 */
+System_Math_Max9(
+	uint16_t /* System.UInt16 */ val1,
+	uint16_t /* System.UInt16 */ val2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint32_t /* System.UInt32 */
+System_Math_Max10(
+	uint32_t /* System.UInt32 */ val1,
+	uint32_t /* System.UInt32 */ val2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint64_t /* System.UInt64 */
+System_Math_Max11(
+	uint64_t /* System.UInt64 */ val1,
+	uint64_t /* System.UInt64 */ val2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+unsigned int /* System.UIntPtr */
+System_Math_Max12(
+	unsigned int /* System.UIntPtr */ val1,
+	unsigned int /* System.UIntPtr */ val2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_MaxMagnitude(
+	double /* System.Double */ x,
+	double /* System.Double */ y,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Byte */
+System_Math_Min(
+	uint8_t /* System.Byte */ val1,
+	uint8_t /* System.Byte */ val2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Decimal_t /* System.Decimal */
+System_Math_Min1(
+	System_Decimal_t /* System.Decimal */ val1,
+	System_Decimal_t /* System.Decimal */ val2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_Min2(
+	double /* System.Double */ val1,
+	double /* System.Double */ val2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int16_t /* System.Int16 */
+System_Math_Min3(
+	int16_t /* System.Int16 */ val1,
+	int16_t /* System.Int16 */ val2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Math_Min4(
+	int32_t /* System.Int32 */ val1,
+	int32_t /* System.Int32 */ val2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_Math_Min5(
+	int64_t /* System.Int64 */ val1,
+	int64_t /* System.Int64 */ val2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int /* System.IntPtr */
+System_Math_Min6(
+	int /* System.IntPtr */ val1,
+	int /* System.IntPtr */ val2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int8_t /* System.SByte */
+System_Math_Min7(
+	int8_t /* System.SByte */ val1,
+	int8_t /* System.SByte */ val2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+float /* System.Single */
+System_Math_Min8(
+	float /* System.Single */ val1,
+	float /* System.Single */ val2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint16_t /* System.UInt16 */
+System_Math_Min9(
+	uint16_t /* System.UInt16 */ val1,
+	uint16_t /* System.UInt16 */ val2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint32_t /* System.UInt32 */
+System_Math_Min10(
+	uint32_t /* System.UInt32 */ val1,
+	uint32_t /* System.UInt32 */ val2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint64_t /* System.UInt64 */
+System_Math_Min11(
+	uint64_t /* System.UInt64 */ val1,
+	uint64_t /* System.UInt64 */ val2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+unsigned int /* System.UIntPtr */
+System_Math_Min12(
+	unsigned int /* System.UIntPtr */ val1,
+	unsigned int /* System.UIntPtr */ val2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_MinMagnitude(
+	double /* System.Double */ x,
+	double /* System.Double */ y,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_ReciprocalEstimate(
+	double /* System.Double */ d,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_ReciprocalSqrtEstimate(
+	double /* System.Double */ d,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Decimal_t /* System.Decimal */
+System_Math_Round(
+	System_Decimal_t /* System.Decimal */ d,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Decimal_t /* System.Decimal */
+System_Math_Round1(
+	System_Decimal_t /* System.Decimal */ d,
+	int32_t /* System.Int32 */ decimals,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Decimal_t /* System.Decimal */
+System_Math_Round2(
+	System_Decimal_t /* System.Decimal */ d,
+	System_MidpointRounding /* System.MidpointRounding */ mode,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Decimal_t /* System.Decimal */
+System_Math_Round3(
+	System_Decimal_t /* System.Decimal */ d,
+	int32_t /* System.Int32 */ decimals,
+	System_MidpointRounding /* System.MidpointRounding */ mode,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_Round4(
+	double /* System.Double */ a,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_Round5(
+	double /* System.Double */ value,
+	int32_t /* System.Int32 */ digits,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_Round6(
+	double /* System.Double */ value,
+	System_MidpointRounding /* System.MidpointRounding */ mode,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_Round7(
+	double /* System.Double */ value,
+	int32_t /* System.Int32 */ digits,
+	System_MidpointRounding /* System.MidpointRounding */ mode,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Math_Sign(
+	System_Decimal_t /* System.Decimal */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Math_Sign1(
+	double /* System.Double */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Math_Sign2(
+	int16_t /* System.Int16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Math_Sign3(
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Math_Sign4(
+	int64_t /* System.Int64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Math_Sign5(
+	int /* System.IntPtr */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Math_Sign6(
+	int8_t /* System.SByte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Math_Sign7(
+	float /* System.Single */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Decimal_t /* System.Decimal */
+System_Math_Truncate(
+	System_Decimal_t /* System.Decimal */ d,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_Truncate1(
+	double /* System.Double */ d,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_ScaleB(
+	double /* System.Double */ x,
+	int32_t /* System.Int32 */ n,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Math_E_Get(
+	
+);
+
+
+double /* System.Double */
+System_Math_PI_Get(
+	
+);
+
+
+double /* System.Double */
+System_Math_Tau_Get(
+	
+);
+
+
+System_Type_t /* System.Type */
+System_Math_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Math_Destroy(
+	System_Math_t /* System.Math */ self
+);
+
+#pragma mark - END APIs of System.Math
+
+#pragma mark - BEGIN APIs of System.GC
+System_GCMemoryInfo_t /* System.GCMemoryInfo */
+System_GC_GetGCMemoryInfo(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_GCMemoryInfo_t /* System.GCMemoryInfo */
+System_GC_GetGCMemoryInfo1(
+	System_GCKind /* System.GCKind */ kind,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_GC_AddMemoryPressure(
+	int64_t /* System.Int64 */ bytesAllocated,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_GC_RemoveMemoryPressure(
+	int64_t /* System.Int64 */ bytesAllocated,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_GC_GetGeneration(
+	System_Object_t /* System.Object */ obj,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_GC_Collect(
+	int32_t /* System.Int32 */ generation,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_GC_Collect1(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_GC_Collect2(
+	int32_t /* System.Int32 */ generation,
+	System_GCCollectionMode /* System.GCCollectionMode */ mode,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_GC_Collect3(
+	int32_t /* System.Int32 */ generation,
+	System_GCCollectionMode /* System.GCCollectionMode */ mode,
+	CBool /* System.Boolean */ blocking,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_GC_Collect4(
+	int32_t /* System.Int32 */ generation,
+	System_GCCollectionMode /* System.GCCollectionMode */ mode,
+	CBool /* System.Boolean */ blocking,
+	CBool /* System.Boolean */ compacting,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_GC_CollectionCount(
+	int32_t /* System.Int32 */ generation,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_GC_KeepAlive(
+	System_Object_t /* System.Object */ obj,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_GC_GetGeneration1(
+	System_WeakReference_t /* System.WeakReference */ wo,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_GC_WaitForPendingFinalizers(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_GC_SuppressFinalize(
+	System_Object_t /* System.Object */ obj,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_GC_ReRegisterForFinalize(
+	System_Object_t /* System.Object */ obj,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_GC_GetTotalMemory(
+	CBool /* System.Boolean */ forceFullCollection,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_GC_GetAllocatedBytesForCurrentThread(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_GC_GetTotalAllocatedBytes(
+	CBool /* System.Boolean */ precise,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_GC_RegisterForFullGCNotification(
+	int32_t /* System.Int32 */ maxGenerationThreshold,
+	int32_t /* System.Int32 */ largeObjectHeapThreshold,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_GC_CancelFullGCNotification(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_GCNotificationStatus /* System.GCNotificationStatus */
+System_GC_WaitForFullGCApproach(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_GCNotificationStatus /* System.GCNotificationStatus */
+System_GC_WaitForFullGCApproach1(
+	int32_t /* System.Int32 */ millisecondsTimeout,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_GCNotificationStatus /* System.GCNotificationStatus */
+System_GC_WaitForFullGCComplete(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_GCNotificationStatus /* System.GCNotificationStatus */
+System_GC_WaitForFullGCComplete1(
+	int32_t /* System.Int32 */ millisecondsTimeout,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_GC_TryStartNoGCRegion(
+	int64_t /* System.Int64 */ totalSize,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_GC_TryStartNoGCRegion1(
+	int64_t /* System.Int64 */ totalSize,
+	int64_t /* System.Int64 */ lohSize,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_GC_TryStartNoGCRegion2(
+	int64_t /* System.Int64 */ totalSize,
+	CBool /* System.Boolean */ disallowFullBlockingGC,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_GC_TryStartNoGCRegion3(
+	int64_t /* System.Int64 */ totalSize,
+	int64_t /* System.Int64 */ lohSize,
+	CBool /* System.Boolean */ disallowFullBlockingGC,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_GC_EndNoGCRegion(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_TimeSpan_t /* System.TimeSpan */
+System_GC_GetTotalPauseDuration(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_GCNotificationStatus /* System.GCNotificationStatus */
+System_GC_WaitForFullGCApproach2(
+	System_TimeSpan_t /* System.TimeSpan */ timeout,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_GCNotificationStatus /* System.GCNotificationStatus */
+System_GC_WaitForFullGCComplete2(
+	System_TimeSpan_t /* System.TimeSpan */ timeout,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_GC_MaxGeneration_Get(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_GC_TypeOf(
+	
+);
+
+void /* System.Void */
+System_GC_Destroy(
+	System_GC_t /* System.GC */ self
+);
+
+#pragma mark - END APIs of System.GC
+
+#pragma mark - BEGIN APIs of System.GCMemoryInfo
+int64_t /* System.Int64 */
+System_GCMemoryInfo_HighMemoryLoadThresholdBytes_Get(
+	System_GCMemoryInfo_t /* System.GCMemoryInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int64_t /* System.Int64 */
+System_GCMemoryInfo_MemoryLoadBytes_Get(
+	System_GCMemoryInfo_t /* System.GCMemoryInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int64_t /* System.Int64 */
+System_GCMemoryInfo_TotalAvailableMemoryBytes_Get(
+	System_GCMemoryInfo_t /* System.GCMemoryInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int64_t /* System.Int64 */
+System_GCMemoryInfo_HeapSizeBytes_Get(
+	System_GCMemoryInfo_t /* System.GCMemoryInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int64_t /* System.Int64 */
+System_GCMemoryInfo_FragmentedBytes_Get(
+	System_GCMemoryInfo_t /* System.GCMemoryInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int64_t /* System.Int64 */
+System_GCMemoryInfo_Index_Get(
+	System_GCMemoryInfo_t /* System.GCMemoryInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_GCMemoryInfo_Generation_Get(
+	System_GCMemoryInfo_t /* System.GCMemoryInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CBool /* System.Boolean */
+System_GCMemoryInfo_Compacted_Get(
+	System_GCMemoryInfo_t /* System.GCMemoryInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CBool /* System.Boolean */
+System_GCMemoryInfo_Concurrent_Get(
+	System_GCMemoryInfo_t /* System.GCMemoryInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int64_t /* System.Int64 */
+System_GCMemoryInfo_TotalCommittedBytes_Get(
+	System_GCMemoryInfo_t /* System.GCMemoryInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int64_t /* System.Int64 */
+System_GCMemoryInfo_PromotedBytes_Get(
+	System_GCMemoryInfo_t /* System.GCMemoryInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int64_t /* System.Int64 */
+System_GCMemoryInfo_PinnedObjectsCount_Get(
+	System_GCMemoryInfo_t /* System.GCMemoryInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int64_t /* System.Int64 */
+System_GCMemoryInfo_FinalizationPendingCount_Get(
+	System_GCMemoryInfo_t /* System.GCMemoryInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+double /* System.Double */
+System_GCMemoryInfo_PauseTimePercentage_Get(
+	System_GCMemoryInfo_t /* System.GCMemoryInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_GCMemoryInfo_TypeOf(
+	
+);
+
+void /* System.Void */
+System_GCMemoryInfo_Destroy(
+	System_GCMemoryInfo_t /* System.GCMemoryInfo */ self
+);
+
+#pragma mark - END APIs of System.GCMemoryInfo
+
+#pragma mark - BEGIN APIs of System.WeakReference
+void /* System.Void */
+System_WeakReference_GetObjectData(
+	System_WeakReference_t /* System.WeakReference */ self,
+	System_Runtime_Serialization_SerializationInfo_t /* System.Runtime.Serialization.SerializationInfo */ info,
+	System_Runtime_Serialization_StreamingContext_t /* System.Runtime.Serialization.StreamingContext */ context,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_WeakReference_t /* System.WeakReference */
+System_WeakReference_Create(
+	System_Object_t /* System.Object */ target,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_WeakReference_t /* System.WeakReference */
+System_WeakReference_Create1(
+	System_Object_t /* System.Object */ target,
+	CBool /* System.Boolean */ trackResurrection,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_WeakReference_TrackResurrection_Get(
+	System_WeakReference_t /* System.WeakReference */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CBool /* System.Boolean */
+System_WeakReference_IsAlive_Get(
+	System_WeakReference_t /* System.WeakReference */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_WeakReference_Target_Get(
+	System_WeakReference_t /* System.WeakReference */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_WeakReference_Target_Set(
+	System_WeakReference_t /* System.WeakReference */ self,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_WeakReference_Target_Get(
+	System_WeakReference_t /* System.WeakReference */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_WeakReference_Target_Set(
+	System_WeakReference_t /* System.WeakReference */ self,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_WeakReference_TypeOf(
+	
+);
+
+void /* System.Void */
+System_WeakReference_Destroy(
+	System_WeakReference_t /* System.WeakReference */ self
+);
+
+#pragma mark - END APIs of System.WeakReference
+
+#pragma mark - BEGIN APIs of T[]
+#pragma mark - END APIs of T[]
+
+#pragma mark - BEGIN APIs of T[]
+#pragma mark - END APIs of T[]
+
+#pragma mark - BEGIN APIs of System.Threading.Thread
+void /* System.Void */
+System_Threading_Thread_SpinWait(
+	int32_t /* System.Int32 */ iterations,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Threading_Thread_Yield(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_ApartmentState /* System.Threading.ApartmentState */
+System_Threading_Thread_GetApartmentState(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_DisableComObjectEagerCleanup(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_Interrupt(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Threading_Thread_Join(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	int32_t /* System.Int32 */ millisecondsTimeout,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_Start(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Object_t /* System.Object */ parameter,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_UnsafeStart(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Object_t /* System.Object */ parameter,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_Start1(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_UnsafeStart1(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_Sleep(
+	int32_t /* System.Int32 */ millisecondsTimeout,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_Abort(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_Abort1(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Object_t /* System.Object */ stateInfo,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_ResetAbort(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_Suspend(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_Resume(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_BeginCriticalRegion(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_EndCriticalRegion(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_BeginThreadAffinity(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_EndThreadAffinity(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_LocalDataStoreSlot_t /* System.LocalDataStoreSlot */
+System_Threading_Thread_AllocateDataSlot(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_LocalDataStoreSlot_t /* System.LocalDataStoreSlot */
+System_Threading_Thread_AllocateNamedDataSlot(
+	CString /* System.String */ name,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_LocalDataStoreSlot_t /* System.LocalDataStoreSlot */
+System_Threading_Thread_GetNamedDataSlot(
+	CString /* System.String */ name,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_FreeNamedDataSlot(
+	CString /* System.String */ name,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Threading_Thread_GetData(
+	System_LocalDataStoreSlot_t /* System.LocalDataStoreSlot */ slot,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_SetData(
+	System_LocalDataStoreSlot_t /* System.LocalDataStoreSlot */ slot,
+	System_Object_t /* System.Object */ data,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_SetApartmentState(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Threading_ApartmentState /* System.Threading.ApartmentState */ state,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Threading_Thread_TrySetApartmentState(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Threading_ApartmentState /* System.Threading.ApartmentState */ state,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_CompressedStack_t /* System.Threading.CompressedStack */
+System_Threading_Thread_GetCompressedStack(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_SetCompressedStack(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Threading_CompressedStack_t /* System.Threading.CompressedStack */ stack,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_AppDomain_t /* System.AppDomain */
+System_Threading_Thread_GetDomain(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Threading_Thread_GetDomainID(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Threading_Thread_GetHashCode(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_Join1(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Threading_Thread_Join2(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_TimeSpan_t /* System.TimeSpan */ timeout,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_MemoryBarrier(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_Sleep1(
+	System_TimeSpan_t /* System.TimeSpan */ timeout,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Threading_Thread_GetCurrentProcessorId(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Thread_t /* System.Threading.Thread */
+System_Threading_Thread_Create(
+	System_Threading_ThreadStart_t /* System.Threading.ThreadStart */ start,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Thread_t /* System.Threading.Thread */
+System_Threading_Thread_Create1(
+	System_Threading_ThreadStart_t /* System.Threading.ThreadStart */ start,
+	int32_t /* System.Int32 */ maxStackSize,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Thread_t /* System.Threading.Thread */
+System_Threading_Thread_Create2(
+	System_Threading_ParameterizedThreadStart_t /* System.Threading.ParameterizedThreadStart */ start,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Thread_t /* System.Threading.Thread */
+System_Threading_Thread_Create3(
+	System_Threading_ParameterizedThreadStart_t /* System.Threading.ParameterizedThreadStart */ start,
+	int32_t /* System.Int32 */ maxStackSize,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Threading_Thread_ManagedThreadId_Get(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CBool /* System.Boolean */
+System_Threading_Thread_IsAlive_Get(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CBool /* System.Boolean */
+System_Threading_Thread_IsBackground_Get(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_IsBackground_Set(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	CBool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CBool /* System.Boolean */
+System_Threading_Thread_IsBackground_Get(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_IsBackground_Set(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	CBool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CBool /* System.Boolean */
+System_Threading_Thread_IsThreadPoolThread_Get(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Threading_ThreadPriority /* System.Threading.ThreadPriority */
+System_Threading_Thread_Priority_Get(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_Priority_Set(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Threading_ThreadPriority /* System.Threading.ThreadPriority */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Threading_ThreadPriority /* System.Threading.ThreadPriority */
+System_Threading_Thread_Priority_Get(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_Priority_Set(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Threading_ThreadPriority /* System.Threading.ThreadPriority */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Threading_ThreadState /* System.Threading.ThreadState */
+System_Threading_Thread_ThreadState_Get(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */
+System_Threading_Thread_CurrentCulture_Get(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_CurrentCulture_Set(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */
+System_Threading_Thread_CurrentCulture_Get(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_CurrentCulture_Set(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */
+System_Threading_Thread_CurrentUICulture_Get(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_CurrentUICulture_Set(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */
+System_Threading_Thread_CurrentUICulture_Get(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_CurrentUICulture_Set(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Security_Principal_IPrincipal_t /* System.Security.Principal.IPrincipal */
+System_Threading_Thread_CurrentPrincipal_Get(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_CurrentPrincipal_Set(
+	System_Security_Principal_IPrincipal_t /* System.Security.Principal.IPrincipal */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Security_Principal_IPrincipal_t /* System.Security.Principal.IPrincipal */
+System_Threading_Thread_CurrentPrincipal_Get(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_CurrentPrincipal_Set(
+	System_Security_Principal_IPrincipal_t /* System.Security.Principal.IPrincipal */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Threading_Thread_t /* System.Threading.Thread */
+System_Threading_Thread_CurrentThread_Get(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Threading_ExecutionContext_t /* System.Threading.ExecutionContext */
+System_Threading_Thread_ExecutionContext_Get(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CString /* System.String */
+System_Threading_Thread_Name_Get(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_Name_Set(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CString /* System.String */
+System_Threading_Thread_Name_Get(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_Name_Set(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Threading_ApartmentState /* System.Threading.ApartmentState */
+System_Threading_Thread_ApartmentState_Get(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_ApartmentState_Set(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Threading_ApartmentState /* System.Threading.ApartmentState */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Threading_ApartmentState /* System.Threading.ApartmentState */
+System_Threading_Thread_ApartmentState_Get(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_ApartmentState_Set(
+	System_Threading_Thread_t /* System.Threading.Thread */ self,
+	System_Threading_ApartmentState /* System.Threading.ApartmentState */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_Threading_Thread_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Threading_Thread_Destroy(
+	System_Threading_Thread_t /* System.Threading.Thread */ self
+);
+
+#pragma mark - END APIs of System.Threading.Thread
+
+#pragma mark - BEGIN APIs of System.Security.Principal.IPrincipal
+CBool /* System.Boolean */
+System_Security_Principal_IPrincipal_IsInRole(
+	System_Security_Principal_IPrincipal_t /* System.Security.Principal.IPrincipal */ self,
+	CString /* System.String */ role,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Security_Principal_IIdentity_t /* System.Security.Principal.IIdentity */
+System_Security_Principal_IPrincipal_Identity_Get(
+	System_Security_Principal_IPrincipal_t /* System.Security.Principal.IPrincipal */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_Security_Principal_IPrincipal_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Security_Principal_IPrincipal_Destroy(
+	System_Security_Principal_IPrincipal_t /* System.Security.Principal.IPrincipal */ self
+);
+
+#pragma mark - END APIs of System.Security.Principal.IPrincipal
+
+#pragma mark - BEGIN APIs of System.Security.Principal.IIdentity
+CString /* System.String */
+System_Security_Principal_IIdentity_Name_Get(
+	System_Security_Principal_IIdentity_t /* System.Security.Principal.IIdentity */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CString /* System.String */
+System_Security_Principal_IIdentity_AuthenticationType_Get(
+	System_Security_Principal_IIdentity_t /* System.Security.Principal.IIdentity */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CBool /* System.Boolean */
+System_Security_Principal_IIdentity_IsAuthenticated_Get(
+	System_Security_Principal_IIdentity_t /* System.Security.Principal.IIdentity */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_Security_Principal_IIdentity_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Security_Principal_IIdentity_Destroy(
+	System_Security_Principal_IIdentity_t /* System.Security.Principal.IIdentity */ self
+);
+
+#pragma mark - END APIs of System.Security.Principal.IIdentity
+
+#pragma mark - BEGIN APIs of System.Threading.ExecutionContext
+void /* System.Void */
+System_Threading_ExecutionContext_GetObjectData(
+	System_Threading_ExecutionContext_t /* System.Threading.ExecutionContext */ self,
+	System_Runtime_Serialization_SerializationInfo_t /* System.Runtime.Serialization.SerializationInfo */ info,
+	System_Runtime_Serialization_StreamingContext_t /* System.Runtime.Serialization.StreamingContext */ context,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_ExecutionContext_t /* System.Threading.ExecutionContext */
+System_Threading_ExecutionContext_Capture(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_AsyncFlowControl_t /* System.Threading.AsyncFlowControl */
+System_Threading_ExecutionContext_SuppressFlow(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_ExecutionContext_RestoreFlow(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Threading_ExecutionContext_IsFlowSuppressed(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_ExecutionContext_Run(
+	System_Threading_ExecutionContext_t /* System.Threading.ExecutionContext */ executionContext,
+	System_Threading_ContextCallback_t /* System.Threading.ContextCallback */ callback,
+	System_Object_t /* System.Object */ state,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_ExecutionContext_Restore1(
+	System_Threading_ExecutionContext_t /* System.Threading.ExecutionContext */ executionContext,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_ExecutionContext_t /* System.Threading.ExecutionContext */
+System_Threading_ExecutionContext_CreateCopy(
+	System_Threading_ExecutionContext_t /* System.Threading.ExecutionContext */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_ExecutionContext_Dispose(
+	System_Threading_ExecutionContext_t /* System.Threading.ExecutionContext */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_t /* System.Type */
+System_Threading_ExecutionContext_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Threading_ExecutionContext_Destroy(
+	System_Threading_ExecutionContext_t /* System.Threading.ExecutionContext */ self
+);
+
+#pragma mark - END APIs of System.Threading.ExecutionContext
+
+#pragma mark - BEGIN APIs of System.Threading.AsyncFlowControl
+void /* System.Void */
+System_Threading_AsyncFlowControl_Undo(
+	System_Threading_AsyncFlowControl_t /* System.Threading.AsyncFlowControl */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_AsyncFlowControl_Dispose(
+	System_Threading_AsyncFlowControl_t /* System.Threading.AsyncFlowControl */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Threading_AsyncFlowControl_Equals(
+	System_Threading_AsyncFlowControl_t /* System.Threading.AsyncFlowControl */ self,
+	System_Object_t /* System.Object */ obj,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Threading_AsyncFlowControl_Equals1(
+	System_Threading_AsyncFlowControl_t /* System.Threading.AsyncFlowControl */ self,
+	System_Threading_AsyncFlowControl_t /* System.Threading.AsyncFlowControl */ obj,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Threading_AsyncFlowControl_GetHashCode(
+	System_Threading_AsyncFlowControl_t /* System.Threading.AsyncFlowControl */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_t /* System.Type */
+System_Threading_AsyncFlowControl_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Threading_AsyncFlowControl_Destroy(
+	System_Threading_AsyncFlowControl_t /* System.Threading.AsyncFlowControl */ self
+);
+
+#pragma mark - END APIs of System.Threading.AsyncFlowControl
+
+#pragma mark - BEGIN APIs of System.LocalDataStoreSlot
+System_Type_t /* System.Type */
+System_LocalDataStoreSlot_TypeOf(
+	
+);
+
+void /* System.Void */
+System_LocalDataStoreSlot_Destroy(
+	System_LocalDataStoreSlot_t /* System.LocalDataStoreSlot */ self
+);
+
+#pragma mark - END APIs of System.LocalDataStoreSlot
+
+#pragma mark - BEGIN APIs of System.Threading.CompressedStack
+void /* System.Void */
+System_Threading_CompressedStack_GetObjectData(
+	System_Threading_CompressedStack_t /* System.Threading.CompressedStack */ self,
+	System_Runtime_Serialization_SerializationInfo_t /* System.Runtime.Serialization.SerializationInfo */ info,
+	System_Runtime_Serialization_StreamingContext_t /* System.Runtime.Serialization.StreamingContext */ context,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_CompressedStack_t /* System.Threading.CompressedStack */
+System_Threading_CompressedStack_Capture(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_CompressedStack_t /* System.Threading.CompressedStack */
+System_Threading_CompressedStack_CreateCopy(
+	System_Threading_CompressedStack_t /* System.Threading.CompressedStack */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_CompressedStack_t /* System.Threading.CompressedStack */
+System_Threading_CompressedStack_GetCompressedStack(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_CompressedStack_Run(
+	System_Threading_CompressedStack_t /* System.Threading.CompressedStack */ compressedStack,
+	System_Threading_ContextCallback_t /* System.Threading.ContextCallback */ callback,
+	System_Object_t /* System.Object */ state,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_t /* System.Type */
+System_Threading_CompressedStack_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Threading_CompressedStack_Destroy(
+	System_Threading_CompressedStack_t /* System.Threading.CompressedStack */ self
+);
+
+#pragma mark - END APIs of System.Threading.CompressedStack
+
+#pragma mark - BEGIN APIs of System.AppDomain
+void /* System.Void */
+System_AppDomain_SetDynamicBase(
+	System_AppDomain_t /* System.AppDomain */ self,
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_AppDomain_ApplyPolicy(
+	System_AppDomain_t /* System.AppDomain */ self,
+	CString /* System.String */ assemblyName,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_AppDomain_t /* System.AppDomain */
+System_AppDomain_CreateDomain(
+	CString /* System.String */ friendlyName,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_AppDomain_ExecuteAssembly(
+	System_AppDomain_t /* System.AppDomain */ self,
+	CString /* System.String */ assemblyFile,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_AppDomain_ExecuteAssembly1(
+	System_AppDomain_t /* System.AppDomain */ self,
+	CString /* System.String */ assemblyFile,
+	System_String_Array_t /* System.String[] */ args,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_AppDomain_ExecuteAssembly2(
+	System_AppDomain_t /* System.AppDomain */ self,
+	CString /* System.String */ assemblyFile,
+	System_String_Array_t /* System.String[] */ args,
+	System_Byte_Array_t /* System.Byte[] */ hashValue,
+	System_Configuration_Assemblies_AssemblyHashAlgorithm /* System.Configuration.Assemblies.AssemblyHashAlgorithm */ hashAlgorithm,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_AppDomain_ExecuteAssemblyByName(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ assemblyName,
+	System_String_Array_t /* System.String[] */ args,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_AppDomain_ExecuteAssemblyByName1(
+	System_AppDomain_t /* System.AppDomain */ self,
+	CString /* System.String */ assemblyName,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_AppDomain_ExecuteAssemblyByName2(
+	System_AppDomain_t /* System.AppDomain */ self,
+	CString /* System.String */ assemblyName,
+	System_String_Array_t /* System.String[] */ args,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_AppDomain_GetData(
+	System_AppDomain_t /* System.AppDomain */ self,
+	CString /* System.String */ name,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_AppDomain_SetData(
+	System_AppDomain_t /* System.AppDomain */ self,
+	CString /* System.String */ name,
+	System_Object_t /* System.Object */ data,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_AppDomain_IsDefaultAppDomain(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_AppDomain_IsFinalizingForUnload(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_AppDomain_ToString(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_AppDomain_Unload(
+	System_AppDomain_t /* System.AppDomain */ domain,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_Assembly_t /* System.Reflection.Assembly */
+System_AppDomain_Load(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_Byte_Array_t /* System.Byte[] */ rawAssembly,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_Assembly_t /* System.Reflection.Assembly */
+System_AppDomain_Load1(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_Byte_Array_t /* System.Byte[] */ rawAssembly,
+	System_Byte_Array_t /* System.Byte[] */ rawSymbolStore,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_Assembly_t /* System.Reflection.Assembly */
+System_AppDomain_Load2(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ assemblyRef,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_Assembly_t /* System.Reflection.Assembly */
+System_AppDomain_Load3(
+	System_AppDomain_t /* System.AppDomain */ self,
+	CString /* System.String */ assemblyString,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_Assembly_Array_t /* System.Reflection.Assembly[] */
+System_AppDomain_ReflectionOnlyGetAssemblies(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_AppDomain_GetCurrentThreadId(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_AppDomain_AppendPrivatePath(
+	System_AppDomain_t /* System.AppDomain */ self,
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_AppDomain_ClearPrivatePath(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_AppDomain_ClearShadowCopyPath(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_AppDomain_SetCachePath(
+	System_AppDomain_t /* System.AppDomain */ self,
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_AppDomain_SetShadowCopyFiles(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_AppDomain_SetShadowCopyPath(
+	System_AppDomain_t /* System.AppDomain */ self,
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_Assembly_Array_t /* System.Reflection.Assembly[] */
+System_AppDomain_GetAssemblies(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_AppDomain_SetPrincipalPolicy(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_Security_Principal_PrincipalPolicy /* System.Security.Principal.PrincipalPolicy */ policy,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_AppDomain_SetThreadPrincipal(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_Security_Principal_IPrincipal_t /* System.Security.Principal.IPrincipal */ principal,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Runtime_Remoting_ObjectHandle_t /* System.Runtime.Remoting.ObjectHandle */
+System_AppDomain_CreateInstance(
+	System_AppDomain_t /* System.AppDomain */ self,
+	CString /* System.String */ assemblyName,
+	CString /* System.String */ typeName,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Runtime_Remoting_ObjectHandle_t /* System.Runtime.Remoting.ObjectHandle */
+System_AppDomain_CreateInstance1(
+	System_AppDomain_t /* System.AppDomain */ self,
+	CString /* System.String */ assemblyName,
+	CString /* System.String */ typeName,
+	CBool /* System.Boolean */ ignoreCase,
+	System_Reflection_BindingFlags /* System.Reflection.BindingFlags */ bindingAttr,
+	System_Reflection_Binder_t /* System.Reflection.Binder */ binder,
+	System_Object_Array_t /* System.Object[] */ args,
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ culture,
+	System_Object_Array_t /* System.Object[] */ activationAttributes,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Runtime_Remoting_ObjectHandle_t /* System.Runtime.Remoting.ObjectHandle */
+System_AppDomain_CreateInstance2(
+	System_AppDomain_t /* System.AppDomain */ self,
+	CString /* System.String */ assemblyName,
+	CString /* System.String */ typeName,
+	System_Object_Array_t /* System.Object[] */ activationAttributes,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_AppDomain_CreateInstanceAndUnwrap(
+	System_AppDomain_t /* System.AppDomain */ self,
+	CString /* System.String */ assemblyName,
+	CString /* System.String */ typeName,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_AppDomain_CreateInstanceAndUnwrap1(
+	System_AppDomain_t /* System.AppDomain */ self,
+	CString /* System.String */ assemblyName,
+	CString /* System.String */ typeName,
+	CBool /* System.Boolean */ ignoreCase,
+	System_Reflection_BindingFlags /* System.Reflection.BindingFlags */ bindingAttr,
+	System_Reflection_Binder_t /* System.Reflection.Binder */ binder,
+	System_Object_Array_t /* System.Object[] */ args,
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ culture,
+	System_Object_Array_t /* System.Object[] */ activationAttributes,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_AppDomain_CreateInstanceAndUnwrap2(
+	System_AppDomain_t /* System.AppDomain */ self,
+	CString /* System.String */ assemblyName,
+	CString /* System.String */ typeName,
+	System_Object_Array_t /* System.Object[] */ activationAttributes,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Runtime_Remoting_ObjectHandle_t /* System.Runtime.Remoting.ObjectHandle */
+System_AppDomain_CreateInstanceFrom(
+	System_AppDomain_t /* System.AppDomain */ self,
+	CString /* System.String */ assemblyFile,
+	CString /* System.String */ typeName,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Runtime_Remoting_ObjectHandle_t /* System.Runtime.Remoting.ObjectHandle */
+System_AppDomain_CreateInstanceFrom1(
+	System_AppDomain_t /* System.AppDomain */ self,
+	CString /* System.String */ assemblyFile,
+	CString /* System.String */ typeName,
+	CBool /* System.Boolean */ ignoreCase,
+	System_Reflection_BindingFlags /* System.Reflection.BindingFlags */ bindingAttr,
+	System_Reflection_Binder_t /* System.Reflection.Binder */ binder,
+	System_Object_Array_t /* System.Object[] */ args,
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ culture,
+	System_Object_Array_t /* System.Object[] */ activationAttributes,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Runtime_Remoting_ObjectHandle_t /* System.Runtime.Remoting.ObjectHandle */
+System_AppDomain_CreateInstanceFrom2(
+	System_AppDomain_t /* System.AppDomain */ self,
+	CString /* System.String */ assemblyFile,
+	CString /* System.String */ typeName,
+	System_Object_Array_t /* System.Object[] */ activationAttributes,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_AppDomain_CreateInstanceFromAndUnwrap(
+	System_AppDomain_t /* System.AppDomain */ self,
+	CString /* System.String */ assemblyFile,
+	CString /* System.String */ typeName,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_AppDomain_CreateInstanceFromAndUnwrap1(
+	System_AppDomain_t /* System.AppDomain */ self,
+	CString /* System.String */ assemblyFile,
+	CString /* System.String */ typeName,
+	CBool /* System.Boolean */ ignoreCase,
+	System_Reflection_BindingFlags /* System.Reflection.BindingFlags */ bindingAttr,
+	System_Reflection_Binder_t /* System.Reflection.Binder */ binder,
+	System_Object_Array_t /* System.Object[] */ args,
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ culture,
+	System_Object_Array_t /* System.Object[] */ activationAttributes,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_AppDomain_CreateInstanceFromAndUnwrap2(
+	System_AppDomain_t /* System.AppDomain */ self,
+	CString /* System.String */ assemblyFile,
+	CString /* System.String */ typeName,
+	System_Object_Array_t /* System.Object[] */ activationAttributes,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_AppDomain_t /* System.AppDomain */
+System_AppDomain_CurrentDomain_Get(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CString /* System.String */
+System_AppDomain_BaseDirectory_Get(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CString /* System.String */
+System_AppDomain_RelativeSearchPath_Get(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_AppDomainSetup_t /* System.AppDomainSetup */
+System_AppDomain_SetupInformation_Get(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Security_PermissionSet_t /* System.Security.PermissionSet */
+System_AppDomain_PermissionSet_Get(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CString /* System.String */
+System_AppDomain_DynamicDirectory_Get(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CString /* System.String */
+System_AppDomain_FriendlyName_Get(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_AppDomain_Id_Get(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CBool /* System.Boolean */
+System_AppDomain_IsFullyTrusted_Get(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CBool /* System.Boolean */
+System_AppDomain_IsHomogenous_Get(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CBool /* System.Boolean */
+System_AppDomain_MonitoringIsEnabled_Get(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_AppDomain_MonitoringIsEnabled_Set(
+	CBool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CBool /* System.Boolean */
+System_AppDomain_MonitoringIsEnabled_Get(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_AppDomain_MonitoringIsEnabled_Set(
+	CBool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int64_t /* System.Int64 */
+System_AppDomain_MonitoringSurvivedMemorySize_Get(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int64_t /* System.Int64 */
+System_AppDomain_MonitoringSurvivedProcessMemorySize_Get(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int64_t /* System.Int64 */
+System_AppDomain_MonitoringTotalAllocatedMemorySize_Get(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CBool /* System.Boolean */
+System_AppDomain_ShadowCopyFiles_Get(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_TimeSpan_t /* System.TimeSpan */
+System_AppDomain_MonitoringTotalProcessorTime_Get(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+void /* System.Void */
+System_AppDomain_UnhandledException_Add(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_UnhandledExceptionEventHandler_t /* System.UnhandledExceptionEventHandler */ value
+);
+
+void /* System.Void */
+System_AppDomain_UnhandledException_Remove(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_UnhandledExceptionEventHandler_t /* System.UnhandledExceptionEventHandler */ value
+);
+
+
+void /* System.Void */
+System_AppDomain_UnhandledException_Add(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_UnhandledExceptionEventHandler_t /* System.UnhandledExceptionEventHandler */ value
+);
+
+void /* System.Void */
+System_AppDomain_UnhandledException_Remove(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_UnhandledExceptionEventHandler_t /* System.UnhandledExceptionEventHandler */ value
+);
+
+
+void /* System.Void */
+System_AppDomain_DomainUnload_Add(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_EventHandler_t /* System.EventHandler */ value
+);
+
+void /* System.Void */
+System_AppDomain_DomainUnload_Remove(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_EventHandler_t /* System.EventHandler */ value
+);
+
+
+void /* System.Void */
+System_AppDomain_DomainUnload_Add(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_EventHandler_t /* System.EventHandler */ value
+);
+
+void /* System.Void */
+System_AppDomain_DomainUnload_Remove(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_EventHandler_t /* System.EventHandler */ value
+);
+
+
+void /* System.Void */
+System_AppDomain_ProcessExit_Add(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_EventHandler_t /* System.EventHandler */ value
+);
+
+void /* System.Void */
+System_AppDomain_ProcessExit_Remove(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_EventHandler_t /* System.EventHandler */ value
+);
+
+
+void /* System.Void */
+System_AppDomain_ProcessExit_Add(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_EventHandler_t /* System.EventHandler */ value
+);
+
+void /* System.Void */
+System_AppDomain_ProcessExit_Remove(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_EventHandler_t /* System.EventHandler */ value
+);
+
+
+void /* System.Void */
+System_AppDomain_AssemblyLoad_Add(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_AssemblyLoadEventHandler_t /* System.AssemblyLoadEventHandler */ value
+);
+
+void /* System.Void */
+System_AppDomain_AssemblyLoad_Remove(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_AssemblyLoadEventHandler_t /* System.AssemblyLoadEventHandler */ value
+);
+
+
+void /* System.Void */
+System_AppDomain_AssemblyLoad_Add(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_AssemblyLoadEventHandler_t /* System.AssemblyLoadEventHandler */ value
+);
+
+void /* System.Void */
+System_AppDomain_AssemblyLoad_Remove(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_AssemblyLoadEventHandler_t /* System.AssemblyLoadEventHandler */ value
+);
+
+
+void /* System.Void */
+System_AppDomain_AssemblyResolve_Add(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_ResolveEventHandler_t /* System.ResolveEventHandler */ value
+);
+
+void /* System.Void */
+System_AppDomain_AssemblyResolve_Remove(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_ResolveEventHandler_t /* System.ResolveEventHandler */ value
+);
+
+
+void /* System.Void */
+System_AppDomain_AssemblyResolve_Add(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_ResolveEventHandler_t /* System.ResolveEventHandler */ value
+);
+
+void /* System.Void */
+System_AppDomain_AssemblyResolve_Remove(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_ResolveEventHandler_t /* System.ResolveEventHandler */ value
+);
+
+
+void /* System.Void */
+System_AppDomain_ReflectionOnlyAssemblyResolve_Add(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_ResolveEventHandler_t /* System.ResolveEventHandler */ value
+);
+
+void /* System.Void */
+System_AppDomain_ReflectionOnlyAssemblyResolve_Remove(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_ResolveEventHandler_t /* System.ResolveEventHandler */ value
+);
+
+
+void /* System.Void */
+System_AppDomain_ReflectionOnlyAssemblyResolve_Add(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_ResolveEventHandler_t /* System.ResolveEventHandler */ value
+);
+
+void /* System.Void */
+System_AppDomain_ReflectionOnlyAssemblyResolve_Remove(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_ResolveEventHandler_t /* System.ResolveEventHandler */ value
+);
+
+
+void /* System.Void */
+System_AppDomain_TypeResolve_Add(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_ResolveEventHandler_t /* System.ResolveEventHandler */ value
+);
+
+void /* System.Void */
+System_AppDomain_TypeResolve_Remove(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_ResolveEventHandler_t /* System.ResolveEventHandler */ value
+);
+
+
+void /* System.Void */
+System_AppDomain_TypeResolve_Add(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_ResolveEventHandler_t /* System.ResolveEventHandler */ value
+);
+
+void /* System.Void */
+System_AppDomain_TypeResolve_Remove(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_ResolveEventHandler_t /* System.ResolveEventHandler */ value
+);
+
+
+void /* System.Void */
+System_AppDomain_ResourceResolve_Add(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_ResolveEventHandler_t /* System.ResolveEventHandler */ value
+);
+
+void /* System.Void */
+System_AppDomain_ResourceResolve_Remove(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_ResolveEventHandler_t /* System.ResolveEventHandler */ value
+);
+
+
+void /* System.Void */
+System_AppDomain_ResourceResolve_Add(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_ResolveEventHandler_t /* System.ResolveEventHandler */ value
+);
+
+void /* System.Void */
+System_AppDomain_ResourceResolve_Remove(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_ResolveEventHandler_t /* System.ResolveEventHandler */ value
+);
+
+
+System_Type_t /* System.Type */
+System_AppDomain_TypeOf(
+	
+);
+
+void /* System.Void */
+System_AppDomain_Destroy(
+	System_AppDomain_t /* System.AppDomain */ self
+);
+
+#pragma mark - END APIs of System.AppDomain
+
+#pragma mark - BEGIN APIs of System.AppDomainSetup
+CString /* System.String */
+System_AppDomainSetup_ApplicationBase_Get(
+	System_AppDomainSetup_t /* System.AppDomainSetup */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CString /* System.String */
+System_AppDomainSetup_TargetFrameworkName_Get(
+	System_AppDomainSetup_t /* System.AppDomainSetup */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_AppDomainSetup_TypeOf(
+	
+);
+
+void /* System.Void */
+System_AppDomainSetup_Destroy(
+	System_AppDomainSetup_t /* System.AppDomainSetup */ self
+);
+
+#pragma mark - END APIs of System.AppDomainSetup
+
+#pragma mark - BEGIN APIs of System.Security.PermissionSet
+System_Security_IPermission_t /* System.Security.IPermission */
+System_Security_PermissionSet_AddPermission(
+	System_Security_PermissionSet_t /* System.Security.PermissionSet */ self,
+	System_Security_IPermission_t /* System.Security.IPermission */ perm,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_PermissionSet_Assert(
+	System_Security_PermissionSet_t /* System.Security.PermissionSet */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Security_PermissionSet_ContainsNonCodeAccessPermissions(
+	System_Security_PermissionSet_t /* System.Security.PermissionSet */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Byte_Array_t /* System.Byte[] */
+System_Security_PermissionSet_ConvertPermissionSet(
+	CString /* System.String */ inFormat,
+	System_Byte_Array_t /* System.Byte[] */ inData,
+	CString /* System.String */ outFormat,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Security_PermissionSet_t /* System.Security.PermissionSet */
+System_Security_PermissionSet_Copy(
+	System_Security_PermissionSet_t /* System.Security.PermissionSet */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_PermissionSet_CopyTo(
+	System_Security_PermissionSet_t /* System.Security.PermissionSet */ self,
+	System_Array_t /* System.Array */ array,
+	int32_t /* System.Int32 */ index,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_PermissionSet_Demand(
+	System_Security_PermissionSet_t /* System.Security.PermissionSet */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_PermissionSet_Deny(
+	System_Security_PermissionSet_t /* System.Security.PermissionSet */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Security_PermissionSet_Equals(
+	System_Security_PermissionSet_t /* System.Security.PermissionSet */ self,
+	System_Object_t /* System.Object */ o,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_PermissionSet_FromXml(
+	System_Security_PermissionSet_t /* System.Security.PermissionSet */ self,
+	System_Security_SecurityElement_t /* System.Security.SecurityElement */ et,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_IEnumerator_t /* System.Collections.IEnumerator */
+System_Security_PermissionSet_GetEnumerator(
+	System_Security_PermissionSet_t /* System.Security.PermissionSet */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Security_PermissionSet_GetHashCode(
+	System_Security_PermissionSet_t /* System.Security.PermissionSet */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Security_IPermission_t /* System.Security.IPermission */
+System_Security_PermissionSet_GetPermission(
+	System_Security_PermissionSet_t /* System.Security.PermissionSet */ self,
+	System_Type_t /* System.Type */ permClass,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Security_PermissionSet_t /* System.Security.PermissionSet */
+System_Security_PermissionSet_Intersect(
+	System_Security_PermissionSet_t /* System.Security.PermissionSet */ self,
+	System_Security_PermissionSet_t /* System.Security.PermissionSet */ other,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Security_PermissionSet_IsEmpty(
+	System_Security_PermissionSet_t /* System.Security.PermissionSet */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Security_PermissionSet_IsSubsetOf(
+	System_Security_PermissionSet_t /* System.Security.PermissionSet */ self,
+	System_Security_PermissionSet_t /* System.Security.PermissionSet */ target,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Security_PermissionSet_IsUnrestricted(
+	System_Security_PermissionSet_t /* System.Security.PermissionSet */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_PermissionSet_PermitOnly(
+	System_Security_PermissionSet_t /* System.Security.PermissionSet */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Security_IPermission_t /* System.Security.IPermission */
+System_Security_PermissionSet_RemovePermission(
+	System_Security_PermissionSet_t /* System.Security.PermissionSet */ self,
+	System_Type_t /* System.Type */ permClass,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_PermissionSet_RevertAssert(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Security_IPermission_t /* System.Security.IPermission */
+System_Security_PermissionSet_SetPermission(
+	System_Security_PermissionSet_t /* System.Security.PermissionSet */ self,
+	System_Security_IPermission_t /* System.Security.IPermission */ perm,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Security_PermissionSet_ToString(
+	System_Security_PermissionSet_t /* System.Security.PermissionSet */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Security_SecurityElement_t /* System.Security.SecurityElement */
+System_Security_PermissionSet_ToXml(
+	System_Security_PermissionSet_t /* System.Security.PermissionSet */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Security_PermissionSet_t /* System.Security.PermissionSet */
+System_Security_PermissionSet_Union(
+	System_Security_PermissionSet_t /* System.Security.PermissionSet */ self,
+	System_Security_PermissionSet_t /* System.Security.PermissionSet */ other,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Security_PermissionSet_t /* System.Security.PermissionSet */
+System_Security_PermissionSet_Create(
+	System_Security_Permissions_PermissionState /* System.Security.Permissions.PermissionState */ state,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Security_PermissionSet_t /* System.Security.PermissionSet */
+System_Security_PermissionSet_Create1(
+	System_Security_PermissionSet_t /* System.Security.PermissionSet */ permSet,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Security_PermissionSet_Count_Get(
+	System_Security_PermissionSet_t /* System.Security.PermissionSet */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CBool /* System.Boolean */
+System_Security_PermissionSet_IsReadOnly_Get(
+	System_Security_PermissionSet_t /* System.Security.PermissionSet */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CBool /* System.Boolean */
+System_Security_PermissionSet_IsSynchronized_Get(
+	System_Security_PermissionSet_t /* System.Security.PermissionSet */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_Security_PermissionSet_SyncRoot_Get(
+	System_Security_PermissionSet_t /* System.Security.PermissionSet */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_Security_PermissionSet_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Security_PermissionSet_Destroy(
+	System_Security_PermissionSet_t /* System.Security.PermissionSet */ self
+);
+
+#pragma mark - END APIs of System.Security.PermissionSet
+
+#pragma mark - BEGIN APIs of System.Security.IPermission
+System_Security_IPermission_t /* System.Security.IPermission */
+System_Security_IPermission_Copy(
+	System_Security_IPermission_t /* System.Security.IPermission */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_IPermission_Demand(
+	System_Security_IPermission_t /* System.Security.IPermission */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Security_IPermission_t /* System.Security.IPermission */
+System_Security_IPermission_Intersect(
+	System_Security_IPermission_t /* System.Security.IPermission */ self,
+	System_Security_IPermission_t /* System.Security.IPermission */ target,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Security_IPermission_IsSubsetOf(
+	System_Security_IPermission_t /* System.Security.IPermission */ self,
+	System_Security_IPermission_t /* System.Security.IPermission */ target,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Security_IPermission_t /* System.Security.IPermission */
+System_Security_IPermission_Union(
+	System_Security_IPermission_t /* System.Security.IPermission */ self,
+	System_Security_IPermission_t /* System.Security.IPermission */ target,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_t /* System.Type */
+System_Security_IPermission_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Security_IPermission_Destroy(
+	System_Security_IPermission_t /* System.Security.IPermission */ self
+);
+
+#pragma mark - END APIs of System.Security.IPermission
+
+#pragma mark - BEGIN APIs of System.Security.SecurityElement
+void /* System.Void */
+System_Security_SecurityElement_AddAttribute(
+	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self,
+	CString /* System.String */ name,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_SecurityElement_AddChild(
+	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self,
+	System_Security_SecurityElement_t /* System.Security.SecurityElement */ child,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Security_SecurityElement_Equal(
+	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self,
+	System_Security_SecurityElement_t /* System.Security.SecurityElement */ other,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Security_SecurityElement_t /* System.Security.SecurityElement */
+System_Security_SecurityElement_Copy(
+	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Security_SecurityElement_IsValidTag(
+	CString /* System.String */ tag,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Security_SecurityElement_IsValidText(
+	CString /* System.String */ text,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Security_SecurityElement_IsValidAttributeName(
+	CString /* System.String */ name,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Security_SecurityElement_IsValidAttributeValue(
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Security_SecurityElement_Escape(
+	CString /* System.String */ str,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Security_SecurityElement_ToString(
+	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Security_SecurityElement_Attribute(
+	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self,
+	CString /* System.String */ name,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Security_SecurityElement_t /* System.Security.SecurityElement */
+System_Security_SecurityElement_SearchForChildByTag(
+	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self,
+	CString /* System.String */ tag,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Security_SecurityElement_SearchForTextOfTag(
+	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self,
+	CString /* System.String */ tag,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Security_SecurityElement_t /* System.Security.SecurityElement */
+System_Security_SecurityElement_FromString(
+	CString /* System.String */ xml,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Security_SecurityElement_t /* System.Security.SecurityElement */
+System_Security_SecurityElement_Create(
+	CString /* System.String */ tag,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Security_SecurityElement_t /* System.Security.SecurityElement */
+System_Security_SecurityElement_Create1(
+	CString /* System.String */ tag,
+	CString /* System.String */ text,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Security_SecurityElement_Tag_Get(
+	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_SecurityElement_Tag_Set(
+	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CString /* System.String */
+System_Security_SecurityElement_Tag_Get(
+	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_SecurityElement_Tag_Set(
+	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Collections_Hashtable_t /* System.Collections.Hashtable */
+System_Security_SecurityElement_Attributes_Get(
+	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_SecurityElement_Attributes_Set(
+	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self,
+	System_Collections_Hashtable_t /* System.Collections.Hashtable */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Collections_Hashtable_t /* System.Collections.Hashtable */
+System_Security_SecurityElement_Attributes_Get(
+	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_SecurityElement_Attributes_Set(
+	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self,
+	System_Collections_Hashtable_t /* System.Collections.Hashtable */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CString /* System.String */
+System_Security_SecurityElement_Text_Get(
+	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_SecurityElement_Text_Set(
+	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CString /* System.String */
+System_Security_SecurityElement_Text_Get(
+	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_SecurityElement_Text_Set(
+	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Collections_ArrayList_t /* System.Collections.ArrayList */
+System_Security_SecurityElement_Children_Get(
+	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_SecurityElement_Children_Set(
+	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self,
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Collections_ArrayList_t /* System.Collections.ArrayList */
+System_Security_SecurityElement_Children_Get(
+	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_SecurityElement_Children_Set(
+	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self,
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_Security_SecurityElement_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Security_SecurityElement_Destroy(
+	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self
+);
+
+#pragma mark - END APIs of System.Security.SecurityElement
+
+#pragma mark - BEGIN APIs of System.Collections.Hashtable
+void /* System.Void */
+System_Collections_Hashtable_Add(
+	System_Collections_Hashtable_t /* System.Collections.Hashtable */ self,
+	System_Object_t /* System.Object */ key,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_Hashtable_Clear(
+	System_Collections_Hashtable_t /* System.Collections.Hashtable */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Collections_Hashtable_Clone(
+	System_Collections_Hashtable_t /* System.Collections.Hashtable */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Collections_Hashtable_Contains(
+	System_Collections_Hashtable_t /* System.Collections.Hashtable */ self,
+	System_Object_t /* System.Object */ key,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Collections_Hashtable_ContainsKey(
+	System_Collections_Hashtable_t /* System.Collections.Hashtable */ self,
+	System_Object_t /* System.Object */ key,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Collections_Hashtable_ContainsValue(
+	System_Collections_Hashtable_t /* System.Collections.Hashtable */ self,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_Hashtable_CopyTo(
+	System_Collections_Hashtable_t /* System.Collections.Hashtable */ self,
+	System_Array_t /* System.Array */ array,
+	int32_t /* System.Int32 */ arrayIndex,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_IDictionaryEnumerator_t /* System.Collections.IDictionaryEnumerator */
+System_Collections_Hashtable_GetEnumerator(
+	System_Collections_Hashtable_t /* System.Collections.Hashtable */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_Hashtable_Remove(
+	System_Collections_Hashtable_t /* System.Collections.Hashtable */ self,
+	System_Object_t /* System.Object */ key,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Hashtable_t /* System.Collections.Hashtable */
+System_Collections_Hashtable_Synchronized(
+	System_Collections_Hashtable_t /* System.Collections.Hashtable */ table,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_Hashtable_GetObjectData(
+	System_Collections_Hashtable_t /* System.Collections.Hashtable */ self,
+	System_Runtime_Serialization_SerializationInfo_t /* System.Runtime.Serialization.SerializationInfo */ info,
+	System_Runtime_Serialization_StreamingContext_t /* System.Runtime.Serialization.StreamingContext */ context,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_Hashtable_OnDeserialization(
+	System_Collections_Hashtable_t /* System.Collections.Hashtable */ self,
+	System_Object_t /* System.Object */ sender,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Hashtable_t /* System.Collections.Hashtable */
+System_Collections_Hashtable_Create(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Hashtable_t /* System.Collections.Hashtable */
+System_Collections_Hashtable_Create1(
+	int32_t /* System.Int32 */ capacity,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Hashtable_t /* System.Collections.Hashtable */
+System_Collections_Hashtable_Create2(
+	int32_t /* System.Int32 */ capacity,
+	float /* System.Single */ loadFactor,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Hashtable_t /* System.Collections.Hashtable */
+System_Collections_Hashtable_Create3(
+	int32_t /* System.Int32 */ capacity,
+	float /* System.Single */ loadFactor,
+	System_Collections_IEqualityComparer_t /* System.Collections.IEqualityComparer */ equalityComparer,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Hashtable_t /* System.Collections.Hashtable */
+System_Collections_Hashtable_Create4(
+	System_Collections_IHashCodeProvider_t /* System.Collections.IHashCodeProvider */ hcp,
+	System_Collections_IComparer_t /* System.Collections.IComparer */ comparer,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Hashtable_t /* System.Collections.Hashtable */
+System_Collections_Hashtable_Create5(
+	System_Collections_IEqualityComparer_t /* System.Collections.IEqualityComparer */ equalityComparer,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Hashtable_t /* System.Collections.Hashtable */
+System_Collections_Hashtable_Create6(
+	int32_t /* System.Int32 */ capacity,
+	System_Collections_IHashCodeProvider_t /* System.Collections.IHashCodeProvider */ hcp,
+	System_Collections_IComparer_t /* System.Collections.IComparer */ comparer,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Hashtable_t /* System.Collections.Hashtable */
+System_Collections_Hashtable_Create7(
+	int32_t /* System.Int32 */ capacity,
+	System_Collections_IEqualityComparer_t /* System.Collections.IEqualityComparer */ equalityComparer,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Hashtable_t /* System.Collections.Hashtable */
+System_Collections_Hashtable_Create8(
+	System_Collections_IDictionary_t /* System.Collections.IDictionary */ d,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Hashtable_t /* System.Collections.Hashtable */
+System_Collections_Hashtable_Create9(
+	System_Collections_IDictionary_t /* System.Collections.IDictionary */ d,
+	float /* System.Single */ loadFactor,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Hashtable_t /* System.Collections.Hashtable */
+System_Collections_Hashtable_Create10(
+	System_Collections_IDictionary_t /* System.Collections.IDictionary */ d,
+	System_Collections_IHashCodeProvider_t /* System.Collections.IHashCodeProvider */ hcp,
+	System_Collections_IComparer_t /* System.Collections.IComparer */ comparer,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Hashtable_t /* System.Collections.Hashtable */
+System_Collections_Hashtable_Create11(
+	System_Collections_IDictionary_t /* System.Collections.IDictionary */ d,
+	System_Collections_IEqualityComparer_t /* System.Collections.IEqualityComparer */ equalityComparer,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Hashtable_t /* System.Collections.Hashtable */
+System_Collections_Hashtable_Create12(
+	int32_t /* System.Int32 */ capacity,
+	float /* System.Single */ loadFactor,
+	System_Collections_IHashCodeProvider_t /* System.Collections.IHashCodeProvider */ hcp,
+	System_Collections_IComparer_t /* System.Collections.IComparer */ comparer,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Hashtable_t /* System.Collections.Hashtable */
+System_Collections_Hashtable_Create13(
+	System_Collections_IDictionary_t /* System.Collections.IDictionary */ d,
+	float /* System.Single */ loadFactor,
+	System_Collections_IHashCodeProvider_t /* System.Collections.IHashCodeProvider */ hcp,
+	System_Collections_IComparer_t /* System.Collections.IComparer */ comparer,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Hashtable_t /* System.Collections.Hashtable */
+System_Collections_Hashtable_Create14(
+	System_Collections_IDictionary_t /* System.Collections.IDictionary */ d,
+	float /* System.Single */ loadFactor,
+	System_Collections_IEqualityComparer_t /* System.Collections.IEqualityComparer */ equalityComparer,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Collections_Hashtable_IsReadOnly_Get(
+	System_Collections_Hashtable_t /* System.Collections.Hashtable */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CBool /* System.Boolean */
+System_Collections_Hashtable_IsFixedSize_Get(
+	System_Collections_Hashtable_t /* System.Collections.Hashtable */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CBool /* System.Boolean */
+System_Collections_Hashtable_IsSynchronized_Get(
+	System_Collections_Hashtable_t /* System.Collections.Hashtable */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Collections_ICollection_t /* System.Collections.ICollection */
+System_Collections_Hashtable_Keys_Get(
+	System_Collections_Hashtable_t /* System.Collections.Hashtable */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Collections_ICollection_t /* System.Collections.ICollection */
+System_Collections_Hashtable_Values_Get(
+	System_Collections_Hashtable_t /* System.Collections.Hashtable */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_Collections_Hashtable_SyncRoot_Get(
+	System_Collections_Hashtable_t /* System.Collections.Hashtable */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Collections_Hashtable_Count_Get(
+	System_Collections_Hashtable_t /* System.Collections.Hashtable */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_Collections_Hashtable_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Collections_Hashtable_Destroy(
+	System_Collections_Hashtable_t /* System.Collections.Hashtable */ self
+);
+
+#pragma mark - END APIs of System.Collections.Hashtable
+
+#pragma mark - BEGIN APIs of System.Collections.IEqualityComparer
+CBool /* System.Boolean */
+System_Collections_IEqualityComparer_Equals(
+	System_Collections_IEqualityComparer_t /* System.Collections.IEqualityComparer */ self,
+	System_Object_t /* System.Object */ x,
+	System_Object_t /* System.Object */ y,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Collections_IEqualityComparer_GetHashCode(
+	System_Collections_IEqualityComparer_t /* System.Collections.IEqualityComparer */ self,
+	System_Object_t /* System.Object */ obj,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_t /* System.Type */
+System_Collections_IEqualityComparer_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Collections_IEqualityComparer_Destroy(
+	System_Collections_IEqualityComparer_t /* System.Collections.IEqualityComparer */ self
+);
+
+#pragma mark - END APIs of System.Collections.IEqualityComparer
+
+#pragma mark - BEGIN APIs of System.Collections.IHashCodeProvider
+int32_t /* System.Int32 */
+System_Collections_IHashCodeProvider_GetHashCode(
+	System_Collections_IHashCodeProvider_t /* System.Collections.IHashCodeProvider */ self,
+	System_Object_t /* System.Object */ obj,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_t /* System.Type */
+System_Collections_IHashCodeProvider_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Collections_IHashCodeProvider_Destroy(
+	System_Collections_IHashCodeProvider_t /* System.Collections.IHashCodeProvider */ self
+);
+
+#pragma mark - END APIs of System.Collections.IHashCodeProvider
+
+#pragma mark - BEGIN APIs of System.Collections.ArrayList
+System_Collections_ArrayList_t /* System.Collections.ArrayList */
+System_Collections_ArrayList_Adapter(
+	System_Collections_IList_t /* System.Collections.IList */ list,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Collections_ArrayList_Add(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_ArrayList_AddRange(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	System_Collections_ICollection_t /* System.Collections.ICollection */ c,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Collections_ArrayList_BinarySearch(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Object_t /* System.Object */ value,
+	System_Collections_IComparer_t /* System.Collections.IComparer */ comparer,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Collections_ArrayList_BinarySearch1(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Collections_ArrayList_BinarySearch2(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	System_Object_t /* System.Object */ value,
+	System_Collections_IComparer_t /* System.Collections.IComparer */ comparer,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_ArrayList_Clear(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Collections_ArrayList_Clone(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Collections_ArrayList_Contains(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	System_Object_t /* System.Object */ item,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_ArrayList_CopyTo(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	System_Array_t /* System.Array */ array,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_ArrayList_CopyTo1(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	System_Array_t /* System.Array */ array,
+	int32_t /* System.Int32 */ arrayIndex,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_ArrayList_CopyTo2(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	int32_t /* System.Int32 */ index,
+	System_Array_t /* System.Array */ array,
+	int32_t /* System.Int32 */ arrayIndex,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_IList_t /* System.Collections.IList */
+System_Collections_ArrayList_FixedSize(
+	System_Collections_IList_t /* System.Collections.IList */ list,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_ArrayList_t /* System.Collections.ArrayList */
+System_Collections_ArrayList_FixedSize1(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ list,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_IEnumerator_t /* System.Collections.IEnumerator */
+System_Collections_ArrayList_GetEnumerator(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_IEnumerator_t /* System.Collections.IEnumerator */
+System_Collections_ArrayList_GetEnumerator1(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Collections_ArrayList_IndexOf(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Collections_ArrayList_IndexOf1(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	System_Object_t /* System.Object */ value,
+	int32_t /* System.Int32 */ startIndex,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Collections_ArrayList_IndexOf2(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	System_Object_t /* System.Object */ value,
+	int32_t /* System.Int32 */ startIndex,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_ArrayList_Insert(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	int32_t /* System.Int32 */ index,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_ArrayList_InsertRange(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	int32_t /* System.Int32 */ index,
+	System_Collections_ICollection_t /* System.Collections.ICollection */ c,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Collections_ArrayList_LastIndexOf(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Collections_ArrayList_LastIndexOf1(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	System_Object_t /* System.Object */ value,
+	int32_t /* System.Int32 */ startIndex,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Collections_ArrayList_LastIndexOf2(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	System_Object_t /* System.Object */ value,
+	int32_t /* System.Int32 */ startIndex,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_IList_t /* System.Collections.IList */
+System_Collections_ArrayList_ReadOnly(
+	System_Collections_IList_t /* System.Collections.IList */ list,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_ArrayList_t /* System.Collections.ArrayList */
+System_Collections_ArrayList_ReadOnly1(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ list,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_ArrayList_Remove(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	System_Object_t /* System.Object */ obj,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_ArrayList_RemoveAt(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	int32_t /* System.Int32 */ index,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_ArrayList_RemoveRange(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_ArrayList_t /* System.Collections.ArrayList */
+System_Collections_ArrayList_Repeat(
+	System_Object_t /* System.Object */ value,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_ArrayList_Reverse(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_ArrayList_Reverse1(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_ArrayList_SetRange(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	int32_t /* System.Int32 */ index,
+	System_Collections_ICollection_t /* System.Collections.ICollection */ c,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_ArrayList_t /* System.Collections.ArrayList */
+System_Collections_ArrayList_GetRange(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_ArrayList_Sort(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_ArrayList_Sort1(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	System_Collections_IComparer_t /* System.Collections.IComparer */ comparer,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_ArrayList_Sort2(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Collections_IComparer_t /* System.Collections.IComparer */ comparer,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_IList_t /* System.Collections.IList */
+System_Collections_ArrayList_Synchronized(
+	System_Collections_IList_t /* System.Collections.IList */ list,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_ArrayList_t /* System.Collections.ArrayList */
+System_Collections_ArrayList_Synchronized1(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ list,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_Array_t /* System.Object[] */
+System_Collections_ArrayList_ToArray(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Array_t /* System.Array */
+System_Collections_ArrayList_ToArray1(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	System_Type_t /* System.Type */ type,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_ArrayList_TrimToSize(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_ArrayList_t /* System.Collections.ArrayList */
+System_Collections_ArrayList_Create(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_ArrayList_t /* System.Collections.ArrayList */
+System_Collections_ArrayList_Create1(
+	int32_t /* System.Int32 */ capacity,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_ArrayList_t /* System.Collections.ArrayList */
+System_Collections_ArrayList_Create2(
+	System_Collections_ICollection_t /* System.Collections.ICollection */ c,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Collections_ArrayList_Capacity_Get(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_ArrayList_Capacity_Set(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Collections_ArrayList_Capacity_Get(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_ArrayList_Capacity_Set(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Collections_ArrayList_Count_Get(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CBool /* System.Boolean */
+System_Collections_ArrayList_IsFixedSize_Get(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CBool /* System.Boolean */
+System_Collections_ArrayList_IsReadOnly_Get(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CBool /* System.Boolean */
+System_Collections_ArrayList_IsSynchronized_Get(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_Collections_ArrayList_SyncRoot_Get(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_Collections_ArrayList_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Collections_ArrayList_Destroy(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self
+);
+
+#pragma mark - END APIs of System.Collections.ArrayList
+
+#pragma mark - BEGIN APIs of System.Collections.IList
+int32_t /* System.Int32 */
+System_Collections_IList_Add(
+	System_Collections_IList_t /* System.Collections.IList */ self,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Collections_IList_Contains(
+	System_Collections_IList_t /* System.Collections.IList */ self,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_IList_Clear(
+	System_Collections_IList_t /* System.Collections.IList */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Collections_IList_IndexOf(
+	System_Collections_IList_t /* System.Collections.IList */ self,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_IList_Insert(
+	System_Collections_IList_t /* System.Collections.IList */ self,
+	int32_t /* System.Int32 */ index,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_IList_Remove(
+	System_Collections_IList_t /* System.Collections.IList */ self,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_IList_RemoveAt(
+	System_Collections_IList_t /* System.Collections.IList */ self,
+	int32_t /* System.Int32 */ index,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CBool /* System.Boolean */
+System_Collections_IList_IsReadOnly_Get(
+	System_Collections_IList_t /* System.Collections.IList */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CBool /* System.Boolean */
+System_Collections_IList_IsFixedSize_Get(
+	System_Collections_IList_t /* System.Collections.IList */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_Collections_IList_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Collections_IList_Destroy(
+	System_Collections_IList_t /* System.Collections.IList */ self
+);
+
+#pragma mark - END APIs of System.Collections.IList
+
+#pragma mark - BEGIN APIs of System.UnhandledExceptionEventArgs
+System_UnhandledExceptionEventArgs_t /* System.UnhandledExceptionEventArgs */
+System_UnhandledExceptionEventArgs_Create(
+	System_Object_t /* System.Object */ exception,
+	CBool /* System.Boolean */ isTerminating,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_UnhandledExceptionEventArgs_ExceptionObject_Get(
+	System_UnhandledExceptionEventArgs_t /* System.UnhandledExceptionEventArgs */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CBool /* System.Boolean */
+System_UnhandledExceptionEventArgs_IsTerminating_Get(
+	System_UnhandledExceptionEventArgs_t /* System.UnhandledExceptionEventArgs */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_UnhandledExceptionEventArgs_TypeOf(
+	
+);
+
+void /* System.Void */
+System_UnhandledExceptionEventArgs_Destroy(
+	System_UnhandledExceptionEventArgs_t /* System.UnhandledExceptionEventArgs */ self
+);
+
+#pragma mark - END APIs of System.UnhandledExceptionEventArgs
+
+#pragma mark - BEGIN APIs of System.Reflection.Assembly[]
+#pragma mark - END APIs of System.Reflection.Assembly[]
+
+#pragma mark - BEGIN APIs of System.AssemblyLoadEventArgs
+System_AssemblyLoadEventArgs_t /* System.AssemblyLoadEventArgs */
+System_AssemblyLoadEventArgs_Create(
+	System_Reflection_Assembly_t /* System.Reflection.Assembly */ loadedAssembly,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_Assembly_t /* System.Reflection.Assembly */
+System_AssemblyLoadEventArgs_LoadedAssembly_Get(
+	System_AssemblyLoadEventArgs_t /* System.AssemblyLoadEventArgs */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_AssemblyLoadEventArgs_TypeOf(
+	
+);
+
+void /* System.Void */
+System_AssemblyLoadEventArgs_Destroy(
+	System_AssemblyLoadEventArgs_t /* System.AssemblyLoadEventArgs */ self
+);
+
+#pragma mark - END APIs of System.AssemblyLoadEventArgs
+
+#pragma mark - BEGIN APIs of System.Runtime.Remoting.ObjectHandle
+System_Object_t /* System.Object */
+System_Runtime_Remoting_ObjectHandle_Unwrap(
+	System_Runtime_Remoting_ObjectHandle_t /* System.Runtime.Remoting.ObjectHandle */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Runtime_Remoting_ObjectHandle_t /* System.Runtime.Remoting.ObjectHandle */
+System_Runtime_Remoting_ObjectHandle_Create(
+	System_Object_t /* System.Object */ o,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_t /* System.Type */
+System_Runtime_Remoting_ObjectHandle_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Runtime_Remoting_ObjectHandle_Destroy(
+	System_Runtime_Remoting_ObjectHandle_t /* System.Runtime.Remoting.ObjectHandle */ self
+);
+
+#pragma mark - END APIs of System.Runtime.Remoting.ObjectHandle
+
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Address
 NativeAOT_CodeGeneratorInputSample_Address_t /* NativeAOT.CodeGeneratorInputSample.Address */
 NativeAOT_CodeGeneratorInputSample_Address_Move(
@@ -19719,77 +26469,6 @@ NativeAOT_CodeGeneratorInputSample_Transformer_Destroy(
 
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.Transformer
 
-#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.MoveDelegate
-NativeAOT_CodeGeneratorInputSample_MoveDelegate_t /* NativeAOT.CodeGeneratorInputSample.MoveDelegate */
-NativeAOT_CodeGeneratorInputSample_MoveDelegate_Create(
-	const void* context,
-	NativeAOT_CodeGeneratorInputSample_MoveDelegate_CFunction_t function,
-	NativeAOT_CodeGeneratorInputSample_MoveDelegate_CDestructorFunction_t destructorFunction
-);
-
-NativeAOT_CodeGeneratorInputSample_Address_t
-NativeAOT_CodeGeneratorInputSample_MoveDelegate_Invoke(
-	NativeAOT_CodeGeneratorInputSample_MoveDelegate_t /* NativeAOT.CodeGeneratorInputSample.MoveDelegate */ self, CString /* System.String */ newStreet,
-	CString /* System.String */ newCity
-);
-
-const void*
-NativeAOT_CodeGeneratorInputSample_MoveDelegate_Context_Get(
-	NativeAOT_CodeGeneratorInputSample_MoveDelegate_t /* NativeAOT.CodeGeneratorInputSample.MoveDelegate */ self
-);
-
-NativeAOT_CodeGeneratorInputSample_MoveDelegate_CFunction_t
-NativeAOT_CodeGeneratorInputSample_MoveDelegate_CFunction_Get(
-	NativeAOT_CodeGeneratorInputSample_MoveDelegate_t /* NativeAOT.CodeGeneratorInputSample.MoveDelegate */ self
-);
-
-NativeAOT_CodeGeneratorInputSample_MoveDelegate_CDestructorFunction_t
-NativeAOT_CodeGeneratorInputSample_MoveDelegate_CDestructorFunction_Get(
-	NativeAOT_CodeGeneratorInputSample_MoveDelegate_t /* NativeAOT.CodeGeneratorInputSample.MoveDelegate */ self
-);
-
-void /* System.Void */
-NativeAOT_CodeGeneratorInputSample_MoveDelegate_Destroy(
-	NativeAOT_CodeGeneratorInputSample_MoveDelegate_t /* NativeAOT.CodeGeneratorInputSample.MoveDelegate */ self
-);
-
-#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.MoveDelegate
-
-#pragma mark - BEGIN APIs of System.MulticastDelegate
-System_MulticastDelegate_t /* System.MulticastDelegate */
-System_MulticastDelegate_Create(
-	const void* context,
-	System_MulticastDelegate_CFunction_t function,
-	System_MulticastDelegate_CDestructorFunction_t destructorFunction
-);
-
-void
-System_MulticastDelegate_Invoke(
-	System_MulticastDelegate_t /* System.MulticastDelegate */ self
-);
-
-const void*
-System_MulticastDelegate_Context_Get(
-	System_MulticastDelegate_t /* System.MulticastDelegate */ self
-);
-
-System_MulticastDelegate_CFunction_t
-System_MulticastDelegate_CFunction_Get(
-	System_MulticastDelegate_t /* System.MulticastDelegate */ self
-);
-
-System_MulticastDelegate_CDestructorFunction_t
-System_MulticastDelegate_CDestructorFunction_Get(
-	System_MulticastDelegate_t /* System.MulticastDelegate */ self
-);
-
-void /* System.Void */
-System_MulticastDelegate_Destroy(
-	System_MulticastDelegate_t /* System.MulticastDelegate */ self
-);
-
-#pragma mark - END APIs of System.MulticastDelegate
-
 #pragma mark - BEGIN APIs of System.Delegate
 System_Delegate_t /* System.Delegate */
 System_Delegate_Create(
@@ -19859,6 +26538,41 @@ System_Action_Destroy(
 );
 
 #pragma mark - END APIs of System.Action
+
+#pragma mark - BEGIN APIs of System.MulticastDelegate
+System_MulticastDelegate_t /* System.MulticastDelegate */
+System_MulticastDelegate_Create(
+	const void* context,
+	System_MulticastDelegate_CFunction_t function,
+	System_MulticastDelegate_CDestructorFunction_t destructorFunction
+);
+
+void
+System_MulticastDelegate_Invoke(
+	System_MulticastDelegate_t /* System.MulticastDelegate */ self
+);
+
+const void*
+System_MulticastDelegate_Context_Get(
+	System_MulticastDelegate_t /* System.MulticastDelegate */ self
+);
+
+System_MulticastDelegate_CFunction_t
+System_MulticastDelegate_CFunction_Get(
+	System_MulticastDelegate_t /* System.MulticastDelegate */ self
+);
+
+System_MulticastDelegate_CDestructorFunction_t
+System_MulticastDelegate_CDestructorFunction_Get(
+	System_MulticastDelegate_t /* System.MulticastDelegate */ self
+);
+
+void /* System.Void */
+System_MulticastDelegate_Destroy(
+	System_MulticastDelegate_t /* System.MulticastDelegate */ self
+);
+
+#pragma mark - END APIs of System.MulticastDelegate
 
 #pragma mark - BEGIN APIs of System.AsyncCallback
 System_AsyncCallback_t /* System.AsyncCallback */
@@ -20002,6 +26716,291 @@ System_Reflection_MemberFilter_Destroy(
 );
 
 #pragma mark - END APIs of System.Reflection.MemberFilter
+
+#pragma mark - BEGIN APIs of System.Threading.ContextCallback
+System_Threading_ContextCallback_t /* System.Threading.ContextCallback */
+System_Threading_ContextCallback_Create(
+	const void* context,
+	System_Threading_ContextCallback_CFunction_t function,
+	System_Threading_ContextCallback_CDestructorFunction_t destructorFunction
+);
+
+void
+System_Threading_ContextCallback_Invoke(
+	System_Threading_ContextCallback_t /* System.Threading.ContextCallback */ self, System_Object_t /* System.Object */ state
+);
+
+const void*
+System_Threading_ContextCallback_Context_Get(
+	System_Threading_ContextCallback_t /* System.Threading.ContextCallback */ self
+);
+
+System_Threading_ContextCallback_CFunction_t
+System_Threading_ContextCallback_CFunction_Get(
+	System_Threading_ContextCallback_t /* System.Threading.ContextCallback */ self
+);
+
+System_Threading_ContextCallback_CDestructorFunction_t
+System_Threading_ContextCallback_CDestructorFunction_Get(
+	System_Threading_ContextCallback_t /* System.Threading.ContextCallback */ self
+);
+
+void /* System.Void */
+System_Threading_ContextCallback_Destroy(
+	System_Threading_ContextCallback_t /* System.Threading.ContextCallback */ self
+);
+
+#pragma mark - END APIs of System.Threading.ContextCallback
+
+#pragma mark - BEGIN APIs of System.UnhandledExceptionEventHandler
+System_UnhandledExceptionEventHandler_t /* System.UnhandledExceptionEventHandler */
+System_UnhandledExceptionEventHandler_Create(
+	const void* context,
+	System_UnhandledExceptionEventHandler_CFunction_t function,
+	System_UnhandledExceptionEventHandler_CDestructorFunction_t destructorFunction
+);
+
+void
+System_UnhandledExceptionEventHandler_Invoke(
+	System_UnhandledExceptionEventHandler_t /* System.UnhandledExceptionEventHandler */ self, System_Object_t /* System.Object */ sender,
+	System_UnhandledExceptionEventArgs_t /* System.UnhandledExceptionEventArgs */ e
+);
+
+const void*
+System_UnhandledExceptionEventHandler_Context_Get(
+	System_UnhandledExceptionEventHandler_t /* System.UnhandledExceptionEventHandler */ self
+);
+
+System_UnhandledExceptionEventHandler_CFunction_t
+System_UnhandledExceptionEventHandler_CFunction_Get(
+	System_UnhandledExceptionEventHandler_t /* System.UnhandledExceptionEventHandler */ self
+);
+
+System_UnhandledExceptionEventHandler_CDestructorFunction_t
+System_UnhandledExceptionEventHandler_CDestructorFunction_Get(
+	System_UnhandledExceptionEventHandler_t /* System.UnhandledExceptionEventHandler */ self
+);
+
+void /* System.Void */
+System_UnhandledExceptionEventHandler_Destroy(
+	System_UnhandledExceptionEventHandler_t /* System.UnhandledExceptionEventHandler */ self
+);
+
+#pragma mark - END APIs of System.UnhandledExceptionEventHandler
+
+#pragma mark - BEGIN APIs of System.EventHandler
+System_EventHandler_t /* System.EventHandler */
+System_EventHandler_Create(
+	const void* context,
+	System_EventHandler_CFunction_t function,
+	System_EventHandler_CDestructorFunction_t destructorFunction
+);
+
+void
+System_EventHandler_Invoke(
+	System_EventHandler_t /* System.EventHandler */ self, System_Object_t /* System.Object */ sender,
+	System_EventArgs_t /* System.EventArgs */ e
+);
+
+const void*
+System_EventHandler_Context_Get(
+	System_EventHandler_t /* System.EventHandler */ self
+);
+
+System_EventHandler_CFunction_t
+System_EventHandler_CFunction_Get(
+	System_EventHandler_t /* System.EventHandler */ self
+);
+
+System_EventHandler_CDestructorFunction_t
+System_EventHandler_CDestructorFunction_Get(
+	System_EventHandler_t /* System.EventHandler */ self
+);
+
+void /* System.Void */
+System_EventHandler_Destroy(
+	System_EventHandler_t /* System.EventHandler */ self
+);
+
+#pragma mark - END APIs of System.EventHandler
+
+#pragma mark - BEGIN APIs of System.AssemblyLoadEventHandler
+System_AssemblyLoadEventHandler_t /* System.AssemblyLoadEventHandler */
+System_AssemblyLoadEventHandler_Create(
+	const void* context,
+	System_AssemblyLoadEventHandler_CFunction_t function,
+	System_AssemblyLoadEventHandler_CDestructorFunction_t destructorFunction
+);
+
+void
+System_AssemblyLoadEventHandler_Invoke(
+	System_AssemblyLoadEventHandler_t /* System.AssemblyLoadEventHandler */ self, System_Object_t /* System.Object */ sender,
+	System_AssemblyLoadEventArgs_t /* System.AssemblyLoadEventArgs */ args
+);
+
+const void*
+System_AssemblyLoadEventHandler_Context_Get(
+	System_AssemblyLoadEventHandler_t /* System.AssemblyLoadEventHandler */ self
+);
+
+System_AssemblyLoadEventHandler_CFunction_t
+System_AssemblyLoadEventHandler_CFunction_Get(
+	System_AssemblyLoadEventHandler_t /* System.AssemblyLoadEventHandler */ self
+);
+
+System_AssemblyLoadEventHandler_CDestructorFunction_t
+System_AssemblyLoadEventHandler_CDestructorFunction_Get(
+	System_AssemblyLoadEventHandler_t /* System.AssemblyLoadEventHandler */ self
+);
+
+void /* System.Void */
+System_AssemblyLoadEventHandler_Destroy(
+	System_AssemblyLoadEventHandler_t /* System.AssemblyLoadEventHandler */ self
+);
+
+#pragma mark - END APIs of System.AssemblyLoadEventHandler
+
+#pragma mark - BEGIN APIs of System.ResolveEventHandler
+System_ResolveEventHandler_t /* System.ResolveEventHandler */
+System_ResolveEventHandler_Create(
+	const void* context,
+	System_ResolveEventHandler_CFunction_t function,
+	System_ResolveEventHandler_CDestructorFunction_t destructorFunction
+);
+
+System_Reflection_Assembly_t
+System_ResolveEventHandler_Invoke(
+	System_ResolveEventHandler_t /* System.ResolveEventHandler */ self, System_Object_t /* System.Object */ sender,
+	System_ResolveEventArgs_t /* System.ResolveEventArgs */ args
+);
+
+const void*
+System_ResolveEventHandler_Context_Get(
+	System_ResolveEventHandler_t /* System.ResolveEventHandler */ self
+);
+
+System_ResolveEventHandler_CFunction_t
+System_ResolveEventHandler_CFunction_Get(
+	System_ResolveEventHandler_t /* System.ResolveEventHandler */ self
+);
+
+System_ResolveEventHandler_CDestructorFunction_t
+System_ResolveEventHandler_CDestructorFunction_Get(
+	System_ResolveEventHandler_t /* System.ResolveEventHandler */ self
+);
+
+void /* System.Void */
+System_ResolveEventHandler_Destroy(
+	System_ResolveEventHandler_t /* System.ResolveEventHandler */ self
+);
+
+#pragma mark - END APIs of System.ResolveEventHandler
+
+#pragma mark - BEGIN APIs of System.Threading.ThreadStart
+System_Threading_ThreadStart_t /* System.Threading.ThreadStart */
+System_Threading_ThreadStart_Create(
+	const void* context,
+	System_Threading_ThreadStart_CFunction_t function,
+	System_Threading_ThreadStart_CDestructorFunction_t destructorFunction
+);
+
+void
+System_Threading_ThreadStart_Invoke(
+	System_Threading_ThreadStart_t /* System.Threading.ThreadStart */ self
+);
+
+const void*
+System_Threading_ThreadStart_Context_Get(
+	System_Threading_ThreadStart_t /* System.Threading.ThreadStart */ self
+);
+
+System_Threading_ThreadStart_CFunction_t
+System_Threading_ThreadStart_CFunction_Get(
+	System_Threading_ThreadStart_t /* System.Threading.ThreadStart */ self
+);
+
+System_Threading_ThreadStart_CDestructorFunction_t
+System_Threading_ThreadStart_CDestructorFunction_Get(
+	System_Threading_ThreadStart_t /* System.Threading.ThreadStart */ self
+);
+
+void /* System.Void */
+System_Threading_ThreadStart_Destroy(
+	System_Threading_ThreadStart_t /* System.Threading.ThreadStart */ self
+);
+
+#pragma mark - END APIs of System.Threading.ThreadStart
+
+#pragma mark - BEGIN APIs of System.Threading.ParameterizedThreadStart
+System_Threading_ParameterizedThreadStart_t /* System.Threading.ParameterizedThreadStart */
+System_Threading_ParameterizedThreadStart_Create(
+	const void* context,
+	System_Threading_ParameterizedThreadStart_CFunction_t function,
+	System_Threading_ParameterizedThreadStart_CDestructorFunction_t destructorFunction
+);
+
+void
+System_Threading_ParameterizedThreadStart_Invoke(
+	System_Threading_ParameterizedThreadStart_t /* System.Threading.ParameterizedThreadStart */ self, System_Object_t /* System.Object */ obj
+);
+
+const void*
+System_Threading_ParameterizedThreadStart_Context_Get(
+	System_Threading_ParameterizedThreadStart_t /* System.Threading.ParameterizedThreadStart */ self
+);
+
+System_Threading_ParameterizedThreadStart_CFunction_t
+System_Threading_ParameterizedThreadStart_CFunction_Get(
+	System_Threading_ParameterizedThreadStart_t /* System.Threading.ParameterizedThreadStart */ self
+);
+
+System_Threading_ParameterizedThreadStart_CDestructorFunction_t
+System_Threading_ParameterizedThreadStart_CDestructorFunction_Get(
+	System_Threading_ParameterizedThreadStart_t /* System.Threading.ParameterizedThreadStart */ self
+);
+
+void /* System.Void */
+System_Threading_ParameterizedThreadStart_Destroy(
+	System_Threading_ParameterizedThreadStart_t /* System.Threading.ParameterizedThreadStart */ self
+);
+
+#pragma mark - END APIs of System.Threading.ParameterizedThreadStart
+
+#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.MoveDelegate
+NativeAOT_CodeGeneratorInputSample_MoveDelegate_t /* NativeAOT.CodeGeneratorInputSample.MoveDelegate */
+NativeAOT_CodeGeneratorInputSample_MoveDelegate_Create(
+	const void* context,
+	NativeAOT_CodeGeneratorInputSample_MoveDelegate_CFunction_t function,
+	NativeAOT_CodeGeneratorInputSample_MoveDelegate_CDestructorFunction_t destructorFunction
+);
+
+NativeAOT_CodeGeneratorInputSample_Address_t
+NativeAOT_CodeGeneratorInputSample_MoveDelegate_Invoke(
+	NativeAOT_CodeGeneratorInputSample_MoveDelegate_t /* NativeAOT.CodeGeneratorInputSample.MoveDelegate */ self, CString /* System.String */ newStreet,
+	CString /* System.String */ newCity
+);
+
+const void*
+NativeAOT_CodeGeneratorInputSample_MoveDelegate_Context_Get(
+	NativeAOT_CodeGeneratorInputSample_MoveDelegate_t /* NativeAOT.CodeGeneratorInputSample.MoveDelegate */ self
+);
+
+NativeAOT_CodeGeneratorInputSample_MoveDelegate_CFunction_t
+NativeAOT_CodeGeneratorInputSample_MoveDelegate_CFunction_Get(
+	NativeAOT_CodeGeneratorInputSample_MoveDelegate_t /* NativeAOT.CodeGeneratorInputSample.MoveDelegate */ self
+);
+
+NativeAOT_CodeGeneratorInputSample_MoveDelegate_CDestructorFunction_t
+NativeAOT_CodeGeneratorInputSample_MoveDelegate_CDestructorFunction_Get(
+	NativeAOT_CodeGeneratorInputSample_MoveDelegate_t /* NativeAOT.CodeGeneratorInputSample.MoveDelegate */ self
+);
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_MoveDelegate_Destroy(
+	NativeAOT_CodeGeneratorInputSample_MoveDelegate_t /* NativeAOT.CodeGeneratorInputSample.MoveDelegate */ self
+);
+
+#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.MoveDelegate
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate
 NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_t /* NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate */
