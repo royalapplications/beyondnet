@@ -35,6 +35,7 @@ public class TypeCollector
         typeof(System.Enum),
         typeof(System.Array),
         typeof(System.Threading.Thread),
+        typeof(System.Threading.Timer),
         typeof(System.AppDomain),
         typeof(System.Reflection.PortableExecutableKinds),
         typeof(System.Reflection.ImageFileMachine),

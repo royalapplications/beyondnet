@@ -1,5 +1,5 @@
-// Number of generated types: 358
-// Number of generated members: 3320
+// Number of generated types: 360
+// Number of generated members: 3336
 
 // <Header>
 using System;
@@ -89312,6 +89312,556 @@ internal unsafe class System_Threading_ParameterizedThreadStart
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_ParameterizedThreadStart_Destroy")]
 	internal static void /* System.Void */ System_Threading_ParameterizedThreadStart_Destroy(void* /* System.Threading.ParameterizedThreadStart */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+
+}
+
+
+internal unsafe class System_Threading_Timer
+{
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Timer_Change")]
+	internal static byte /* System.Boolean */ System_Threading_Timer_Change(void* /* System.Threading.Timer */ __self, int /* System.Int32 */ dueTime, int /* System.Int32 */ period, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.Timer __selfConverted = InteropUtils.GetInstance<System.Threading.Timer>(__self);
+	
+	
+	    try {
+			System.Boolean __returnValue = __selfConverted.Change(dueTime, period);
+			byte _returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Timer_Change1")]
+	internal static byte /* System.Boolean */ System_Threading_Timer_Change1(void* /* System.Threading.Timer */ __self, void* /* System.TimeSpan */ dueTime, void* /* System.TimeSpan */ period, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.Timer __selfConverted = InteropUtils.GetInstance<System.Threading.Timer>(__self);
+	
+		System.TimeSpan dueTimeConverted = InteropUtils.GetInstance<System.TimeSpan>(dueTime);
+		System.TimeSpan periodConverted = InteropUtils.GetInstance<System.TimeSpan>(period);
+	
+	    try {
+			System.Boolean __returnValue = __selfConverted.Change(dueTimeConverted, periodConverted);
+			byte _returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Timer_Change2")]
+	internal static byte /* System.Boolean */ System_Threading_Timer_Change2(void* /* System.Threading.Timer */ __self, uint /* System.UInt32 */ dueTime, uint /* System.UInt32 */ period, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.Timer __selfConverted = InteropUtils.GetInstance<System.Threading.Timer>(__self);
+	
+	
+	    try {
+			System.Boolean __returnValue = __selfConverted.Change(dueTime, period);
+			byte _returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Timer_Change3")]
+	internal static byte /* System.Boolean */ System_Threading_Timer_Change3(void* /* System.Threading.Timer */ __self, long /* System.Int64 */ dueTime, long /* System.Int64 */ period, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.Timer __selfConverted = InteropUtils.GetInstance<System.Threading.Timer>(__self);
+	
+	
+	    try {
+			System.Boolean __returnValue = __selfConverted.Change(dueTime, period);
+			byte _returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Timer_Dispose")]
+	internal static byte /* System.Boolean */ System_Threading_Timer_Dispose(void* /* System.Threading.Timer */ __self, void* /* System.Threading.WaitHandle */ notifyObject, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.Timer __selfConverted = InteropUtils.GetInstance<System.Threading.Timer>(__self);
+	
+		System.Threading.WaitHandle notifyObjectConverted = InteropUtils.GetInstance<System.Threading.WaitHandle>(notifyObject);
+	
+	    try {
+			System.Boolean __returnValue = __selfConverted.Dispose(notifyObjectConverted);
+			byte _returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Timer_Dispose1")]
+	internal static void /* System.Void */ System_Threading_Timer_Dispose1(void* /* System.Threading.Timer */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.Timer __selfConverted = InteropUtils.GetInstance<System.Threading.Timer>(__self);
+	
+	
+	    try {
+			__selfConverted.Dispose();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Timer_DisposeAsync")]
+	internal static void* /* System.Threading.Tasks.ValueTask */ System_Threading_Timer_DisposeAsync(void* /* System.Threading.Timer */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.Timer __selfConverted = InteropUtils.GetInstance<System.Threading.Timer>(__self);
+	
+	
+	    try {
+			System.Threading.Tasks.ValueTask __returnValue = __selfConverted.DisposeAsync();
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Timer_Create")]
+	internal static void* /* System.Threading.Timer */ System_Threading_Timer_Create(void* /* System.Threading.TimerCallback */ callback, void* /* System.Object */ state, int /* System.Int32 */ dueTime, int /* System.Int32 */ period, void** /* System.Exception */ __outException)
+	{
+		System.Threading.TimerCallback callbackConverted = InteropUtils.GetInstance<System_Threading_TimerCallback>(callback)?.Trampoline;
+		System.Object stateConverted = InteropUtils.GetInstance<System.Object>(state);
+	
+	    try {
+			System.Threading.Timer __returnValue = new System.Threading.Timer(callbackConverted, stateConverted, dueTime, period);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Timer_Create1")]
+	internal static void* /* System.Threading.Timer */ System_Threading_Timer_Create1(void* /* System.Threading.TimerCallback */ callback, void* /* System.Object */ state, void* /* System.TimeSpan */ dueTime, void* /* System.TimeSpan */ period, void** /* System.Exception */ __outException)
+	{
+		System.Threading.TimerCallback callbackConverted = InteropUtils.GetInstance<System_Threading_TimerCallback>(callback)?.Trampoline;
+		System.Object stateConverted = InteropUtils.GetInstance<System.Object>(state);
+		System.TimeSpan dueTimeConverted = InteropUtils.GetInstance<System.TimeSpan>(dueTime);
+		System.TimeSpan periodConverted = InteropUtils.GetInstance<System.TimeSpan>(period);
+	
+	    try {
+			System.Threading.Timer __returnValue = new System.Threading.Timer(callbackConverted, stateConverted, dueTimeConverted, periodConverted);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Timer_Create2")]
+	internal static void* /* System.Threading.Timer */ System_Threading_Timer_Create2(void* /* System.Threading.TimerCallback */ callback, void* /* System.Object */ state, uint /* System.UInt32 */ dueTime, uint /* System.UInt32 */ period, void** /* System.Exception */ __outException)
+	{
+		System.Threading.TimerCallback callbackConverted = InteropUtils.GetInstance<System_Threading_TimerCallback>(callback)?.Trampoline;
+		System.Object stateConverted = InteropUtils.GetInstance<System.Object>(state);
+	
+	    try {
+			System.Threading.Timer __returnValue = new System.Threading.Timer(callbackConverted, stateConverted, dueTime, period);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Timer_Create3")]
+	internal static void* /* System.Threading.Timer */ System_Threading_Timer_Create3(void* /* System.Threading.TimerCallback */ callback, void* /* System.Object */ state, long /* System.Int64 */ dueTime, long /* System.Int64 */ period, void** /* System.Exception */ __outException)
+	{
+		System.Threading.TimerCallback callbackConverted = InteropUtils.GetInstance<System_Threading_TimerCallback>(callback)?.Trampoline;
+		System.Object stateConverted = InteropUtils.GetInstance<System.Object>(state);
+	
+	    try {
+			System.Threading.Timer __returnValue = new System.Threading.Timer(callbackConverted, stateConverted, dueTime, period);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Timer_Create4")]
+	internal static void* /* System.Threading.Timer */ System_Threading_Timer_Create4(void* /* System.Threading.TimerCallback */ callback, void** /* System.Exception */ __outException)
+	{
+		System.Threading.TimerCallback callbackConverted = InteropUtils.GetInstance<System_Threading_TimerCallback>(callback)?.Trampoline;
+	
+	    try {
+			System.Threading.Timer __returnValue = new System.Threading.Timer(callbackConverted);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Timer_ActiveCount_Get")]
+	internal static long /* System.Int64 */ System_Threading_Timer_ActiveCount_Get(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Int64 __returnValue = System.Threading.Timer.ActiveCount;
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Timer_TypeOf")]
+	internal static void* /* System.Type */ System_Threading_Timer_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Threading.Timer);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Timer_Destroy")]
+	internal static void /* System.Void */ System_Threading_Timer_Destroy(void* /* System.Threading.Timer */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+
+}
+
+
+internal unsafe class System_Threading_TimerCallback
+{
+	internal void* Context { get; }
+	internal delegate* unmanaged<void* /* context */, void* /* System.Object */ /* state */, void /* System.Void */ /* return type */> CFunction { get; }
+	internal delegate* unmanaged<void*, void> CDestructorFunction { get; }
+
+	private WeakReference<System.Threading.TimerCallback> m_trampoline;
+	internal System.Threading.TimerCallback Trampoline
+	{
+		get {
+			System.Threading.TimerCallback? trampoline;
+
+			if (m_trampoline is not null) {
+				m_trampoline.TryGetTarget(out trampoline);
+			} else {
+				trampoline = null;
+			}
+
+			if (trampoline is null) {
+				trampoline = CreateTrampoline();
+				m_trampoline = new(trampoline);
+			}
+
+			return trampoline;
+		}
+	}
+
+	private System_Threading_TimerCallback(void* context, delegate* unmanaged<void* /* context */, void* /* System.Object */ /* state */, void /* System.Void */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	{
+		Context = context;
+		CFunction = cFunction;
+		CDestructorFunction = cDestructorFunction;
+	}
+
+	internal System_Threading_TimerCallback(System.Threading.TimerCallback originalDelegate)
+	{
+		m_trampoline = new(originalDelegate);
+	}
+
+	~System_Threading_TimerCallback()
+	{
+		if (CDestructorFunction is null) {
+			return;
+		}
+
+		CDestructorFunction(Context);
+	}
+
+	private System.Threading.TimerCallback? CreateTrampoline()
+	{
+		if (CFunction is null) {
+			return null;
+		}
+
+		System.Type typeOfSelf = typeof(System_Threading_TimerCallback);
+		string nameOfInvocationMethod = nameof(__InvokeByCallingCFunction);
+		System.Reflection.BindingFlags bindingFlags = System.Reflection.BindingFlags.Instance | BindingFlags.NonPublic;
+		System.Reflection.MethodInfo? invocationMethod = typeOfSelf.GetMethod(nameOfInvocationMethod, bindingFlags);
+
+		if (invocationMethod is null) {
+			throw new Exception("Failed to retrieve delegate invocation method");
+		}
+
+		System.Threading.TimerCallback trampoline = (System.Threading.TimerCallback)System.Delegate.CreateDelegate(typeof(System.Threading.TimerCallback), this, invocationMethod);
+
+		return trampoline;
+	}
+
+	private void __InvokeByCallingCFunction(System.Object /* System.Object */ state)
+	{
+		void* stateConverted = state.AllocateGCHandleAndGetAddress();
+	
+
+
+		CFunction(Context, stateConverted);
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_TimerCallback_Create")]
+	public static void* Create(void* context, delegate* unmanaged<void* /* context */, void* /* System.Object */ /* state */, void /* System.Void */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	{
+		var self = new System_Threading_TimerCallback(context, cFunction, cDestructorFunction);
+		void* selfHandle = self.AllocateGCHandleAndGetAddress();
+
+		return selfHandle;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_TimerCallback_Invoke")]
+	public static void /* System.Void */ Invoke(void* self, void* /* System.Object */ state)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_Threading_TimerCallback>(self);
+
+		System.Object stateConverted = InteropUtils.GetInstance<System.Object>(state);
+	
+
+
+		selfConverted.Trampoline(stateConverted);
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_TimerCallback_Context_Get")]
+	public static void* Context_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_Threading_TimerCallback>(self);
+
+		return selfConverted.Context;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_TimerCallback_CFunction_Get")]
+	public static delegate* unmanaged<void* /* context */, void* /* System.Object */ /* state */, void /* System.Void */ /* return type */> CFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_Threading_TimerCallback>(self);
+
+		return selfConverted.CFunction;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_TimerCallback_CDestructorFunction_Get")]
+	public static delegate* unmanaged<void*, void> CDestructorFunction_Get(void* self)
+	{
+		if (self is null) {
+			throw new ArgumentNullException(nameof(self));
+		}
+
+		var selfConverted = InteropUtils.GetInstance<System_Threading_TimerCallback>(self);
+
+		return selfConverted.CDestructorFunction;
+	}
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_TimerCallback_Destroy")]
+	internal static void /* System.Void */ System_Threading_TimerCallback_Destroy(void* /* System.Threading.TimerCallback */ __self)
 	{
 	
 		InteropUtils.FreeIfAllocated(__self);

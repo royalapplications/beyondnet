@@ -1,5 +1,5 @@
-// Number of generated types: 358
-// Number of generated members: 3578
+// Number of generated types: 360
+// Number of generated members: 3594
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -1137,6 +1137,8 @@ typedef void* System_AssemblyLoadEventArgs_t;
 
 typedef void* System_Runtime_Remoting_ObjectHandle_t;
 
+typedef void* System_Threading_Timer_t;
+
 typedef void* NativeAOT_CodeGeneratorInputSample_Address_t;
 
 typedef void* NativeAOT_CodeGeneratorInputSample_IAnimal_t;
@@ -1291,6 +1293,15 @@ typedef void (*System_Threading_ParameterizedThreadStart_CDestructorFunction_t)(
 typedef void (*System_Threading_ParameterizedThreadStart_CFunction_t)(
 	void* context,
 	System_Object_t obj
+);
+
+
+typedef void* System_Threading_TimerCallback_t;
+typedef void (*System_Threading_TimerCallback_CDestructorFunction_t)(void* context);
+
+typedef void (*System_Threading_TimerCallback_CFunction_t)(
+	void* context,
+	System_Object_t state
 );
 
 
@@ -25795,6 +25806,118 @@ System_Runtime_Remoting_ObjectHandle_Destroy(
 
 #pragma mark - END APIs of System.Runtime.Remoting.ObjectHandle
 
+#pragma mark - BEGIN APIs of System.Threading.Timer
+bool /* System.Boolean */
+System_Threading_Timer_Change(
+	System_Threading_Timer_t /* System.Threading.Timer */ self,
+	int32_t /* System.Int32 */ dueTime,
+	int32_t /* System.Int32 */ period,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Threading_Timer_Change1(
+	System_Threading_Timer_t /* System.Threading.Timer */ self,
+	System_TimeSpan_t /* System.TimeSpan */ dueTime,
+	System_TimeSpan_t /* System.TimeSpan */ period,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Threading_Timer_Change2(
+	System_Threading_Timer_t /* System.Threading.Timer */ self,
+	uint32_t /* System.UInt32 */ dueTime,
+	uint32_t /* System.UInt32 */ period,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Threading_Timer_Change3(
+	System_Threading_Timer_t /* System.Threading.Timer */ self,
+	int64_t /* System.Int64 */ dueTime,
+	int64_t /* System.Int64 */ period,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Threading_Timer_Dispose(
+	System_Threading_Timer_t /* System.Threading.Timer */ self,
+	System_Threading_WaitHandle_t /* System.Threading.WaitHandle */ notifyObject,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Timer_Dispose1(
+	System_Threading_Timer_t /* System.Threading.Timer */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_ValueTask_t /* System.Threading.Tasks.ValueTask */
+System_Threading_Timer_DisposeAsync(
+	System_Threading_Timer_t /* System.Threading.Timer */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Timer_t /* System.Threading.Timer */
+System_Threading_Timer_Create(
+	System_Threading_TimerCallback_t /* System.Threading.TimerCallback */ callback,
+	System_Object_t /* System.Object */ state,
+	int32_t /* System.Int32 */ dueTime,
+	int32_t /* System.Int32 */ period,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Timer_t /* System.Threading.Timer */
+System_Threading_Timer_Create1(
+	System_Threading_TimerCallback_t /* System.Threading.TimerCallback */ callback,
+	System_Object_t /* System.Object */ state,
+	System_TimeSpan_t /* System.TimeSpan */ dueTime,
+	System_TimeSpan_t /* System.TimeSpan */ period,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Timer_t /* System.Threading.Timer */
+System_Threading_Timer_Create2(
+	System_Threading_TimerCallback_t /* System.Threading.TimerCallback */ callback,
+	System_Object_t /* System.Object */ state,
+	uint32_t /* System.UInt32 */ dueTime,
+	uint32_t /* System.UInt32 */ period,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Timer_t /* System.Threading.Timer */
+System_Threading_Timer_Create3(
+	System_Threading_TimerCallback_t /* System.Threading.TimerCallback */ callback,
+	System_Object_t /* System.Object */ state,
+	int64_t /* System.Int64 */ dueTime,
+	int64_t /* System.Int64 */ period,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Timer_t /* System.Threading.Timer */
+System_Threading_Timer_Create4(
+	System_Threading_TimerCallback_t /* System.Threading.TimerCallback */ callback,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_Threading_Timer_ActiveCount_Get(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_Threading_Timer_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Threading_Timer_Destroy(
+	System_Threading_Timer_t /* System.Threading.Timer */ self
+);
+
+#pragma mark - END APIs of System.Threading.Timer
+
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Address
 NativeAOT_CodeGeneratorInputSample_Address_t /* NativeAOT.CodeGeneratorInputSample.Address */
 NativeAOT_CodeGeneratorInputSample_Address_Move(
@@ -26962,6 +27085,41 @@ System_Threading_ParameterizedThreadStart_Destroy(
 );
 
 #pragma mark - END APIs of System.Threading.ParameterizedThreadStart
+
+#pragma mark - BEGIN APIs of System.Threading.TimerCallback
+System_Threading_TimerCallback_t /* System.Threading.TimerCallback */
+System_Threading_TimerCallback_Create(
+	const void* context,
+	System_Threading_TimerCallback_CFunction_t function,
+	System_Threading_TimerCallback_CDestructorFunction_t destructorFunction
+);
+
+void
+System_Threading_TimerCallback_Invoke(
+	System_Threading_TimerCallback_t /* System.Threading.TimerCallback */ self, System_Object_t /* System.Object */ state
+);
+
+const void*
+System_Threading_TimerCallback_Context_Get(
+	System_Threading_TimerCallback_t /* System.Threading.TimerCallback */ self
+);
+
+System_Threading_TimerCallback_CFunction_t
+System_Threading_TimerCallback_CFunction_Get(
+	System_Threading_TimerCallback_t /* System.Threading.TimerCallback */ self
+);
+
+System_Threading_TimerCallback_CDestructorFunction_t
+System_Threading_TimerCallback_CDestructorFunction_Get(
+	System_Threading_TimerCallback_t /* System.Threading.TimerCallback */ self
+);
+
+void /* System.Void */
+System_Threading_TimerCallback_Destroy(
+	System_Threading_TimerCallback_t /* System.Threading.TimerCallback */ self
+);
+
+#pragma mark - END APIs of System.Threading.TimerCallback
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.MoveDelegate
 NativeAOT_CodeGeneratorInputSample_MoveDelegate_t /* NativeAOT.CodeGeneratorInputSample.MoveDelegate */
