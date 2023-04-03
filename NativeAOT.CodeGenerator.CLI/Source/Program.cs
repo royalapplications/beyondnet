@@ -20,13 +20,15 @@ static class Program
         string? cSharpUnmanagedOutputPath = result.CSharpUnmanagedOutputPath;
         string? cOutputPath = result.COutputPath;
 
-        CodeGeneratorDriver driver = new(
-            assemblyPath,
-            Array.Empty<Type>(),
-            Array.Empty<Type>(),
-            cSharpUnmanagedOutputPath,
-            cOutputPath
-        );
+        Configuration configuration = new() {
+            AssemblyPath = assemblyPath,
+            CSharpUnmanagedOutputPath = cSharpUnmanagedOutputPath,
+            COutputPath = cOutputPath,
+            IncludedTypeNames = Array.Empty<string>(),
+            ExcludedTypeNames = Array.Empty<string>()
+        };
+
+        CodeGeneratorDriver driver = new(configuration);
         
         driver.Generate();
 

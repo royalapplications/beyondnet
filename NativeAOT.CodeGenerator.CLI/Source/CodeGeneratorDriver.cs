@@ -12,24 +12,37 @@ namespace NativeAOT.CodeGenerator.CLI;
 internal class CodeGeneratorDriver
 {
     internal string AssemblyPath { get; }
-    internal Type[] TypeWhitelist { get; }
-    internal Type[] TypeBlacklist { get; }
+    
     internal string? CSharpUnmanagedOutputPath { get; }
     internal string? COutputPath { get; }
     
-    internal CodeGeneratorDriver(
-        string assemblyPath,
-        Type[] typeWhitelist,
-        Type[] typeBlacklist,
-        string? cSharpUnmanagedOutputPath,
-        string? cOutputPath
-    )
+    internal Type[] IncludedTypes { get; }
+    internal Type[] ExcludedTypes { get; }
+    
+    internal CodeGeneratorDriver(Configuration configuration)
     {
-        AssemblyPath = assemblyPath;
-        TypeWhitelist = typeWhitelist;
-        TypeBlacklist = typeBlacklist;
-        CSharpUnmanagedOutputPath = cSharpUnmanagedOutputPath;
-        COutputPath = cOutputPath;
+        AssemblyPath = configuration.AssemblyPath;
+        
+        CSharpUnmanagedOutputPath = configuration.CSharpUnmanagedOutputPath;
+        COutputPath = configuration.COutputPath;
+        
+        IncludedTypes = TypesFromTypeNames(configuration.IncludedTypeNames ?? Array.Empty<string>());
+        ExcludedTypes = TypesFromTypeNames(configuration.ExcludedTypeNames ?? Array.Empty<string>());
+    }
+
+    private static Type[] TypesFromTypeNames(IEnumerable<string> typeNames)
+    {
+        List<Type> types = new();
+
+        foreach (string typeName in typeNames) {
+            Type? type = Type.GetType(typeName, true);
+
+            if (type != null) {
+                types.Add(type);
+            }
+        }
+        
+        return types.ToArray();
     }
 
     internal void Generate()
@@ -100,8 +113,8 @@ internal class CodeGeneratorDriver
     {
         TypeCollector typeCollector = new(
             assembly,
-            TypeWhitelist,
-            TypeBlacklist
+            IncludedTypes,
+            ExcludedTypes
         );
 
         var types = typeCollector.Collect(out unsupportedTypes);

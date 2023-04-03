@@ -47,23 +47,23 @@ public class TypeCollector
         Type.GetType("System.Char&")!
     };
 
-    private readonly Type[] m_typeWhitelist;
-    private readonly Type[] m_typeBlacklist;
+    private readonly Type[] m_includedTypes;
+    private readonly Type[] m_excludedTypes;
     
     public TypeCollector(
         Assembly assembly,
-        Type[] typeWhitelist,
-        Type[] typeBlacklist
+        Type[] includedTypes,
+        Type[] excludedTypes
     )
     {
         List<Type> whitelist = new(INCLUDED_TYPES);
-        whitelist.AddRange(typeWhitelist);
+        whitelist.AddRange(includedTypes);
         
         List<Type> blacklist = new(UNSUPPORTED_TYPES);
-        blacklist.AddRange(typeBlacklist);
+        blacklist.AddRange(excludedTypes);
 
-        m_typeWhitelist = whitelist.ToArray();
-        m_typeBlacklist = blacklist.ToArray();
+        m_includedTypes = whitelist.ToArray();
+        m_excludedTypes = blacklist.ToArray();
         
         m_assembly = assembly ?? throw new ArgumentNullException(nameof(assembly));
     }
@@ -73,7 +73,7 @@ public class TypeCollector
         HashSet<Type> collectedTypes = new();
         unsupportedTypes = new();
 
-        List<Type> typesToCollect = new(m_typeWhitelist);
+        List<Type> typesToCollect = new(m_includedTypes);
         
         var assemblyTypes = m_assembly.ExportedTypes;
         
@@ -92,7 +92,7 @@ public class TypeCollector
         Dictionary<Type, string> unsupportedTypes
     )
     {
-        if (m_typeBlacklist.Contains(type)) {
+        if (m_excludedTypes.Contains(type)) {
             unsupportedTypes[type] = "Blacklisted";
             
             return;
