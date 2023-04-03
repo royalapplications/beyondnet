@@ -48,8 +48,8 @@ final class TestClassesTests: XCTestCase {
         
         systemObjectTypeName.withCString { systemObjectTypeNameC in
             systemObjectType = System_Type_GetType(systemObjectTypeNameC,
-                                                   .yes,
-                                                   .no,
+                                                   true,
+                                                   false,
                                                    &exception)
         }
         
@@ -100,7 +100,7 @@ final class TestClassesTests: XCTestCase {
             return
         }
         
-        XCTAssertEqual(CBool.yes, isTestClassAssignableToSystemObject)
+        XCTAssertTrue(isTestClassAssignableToSystemObject)
         
         let isSystemObjectAssignableToTestClass = System_Type_IsAssignableTo(systemObjectType,
                                                                              testClassType,
@@ -112,7 +112,7 @@ final class TestClassesTests: XCTestCase {
             return
         }
         
-        XCTAssertEqual(CBool.no, isSystemObjectAssignableToTestClass)
+        XCTAssertFalse(isSystemObjectAssignableToTestClass)
         
         NativeAOT_CodeGeneratorInputSample_TestClass_SayHello(testClass,
                                                               &exception)

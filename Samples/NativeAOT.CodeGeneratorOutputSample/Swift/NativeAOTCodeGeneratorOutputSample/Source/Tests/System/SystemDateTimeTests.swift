@@ -102,7 +102,7 @@ final class SystemDateTimeTests: XCTestCase {
 		
 		defer { System_Globalization_CultureInfo_Destroy(enUSCulture) }
 		
-		var success: CBool = .no
+		var success = false
 		var nowDotNet: System_DateTime_t?
 		
 		dateString.withCString { dateStringC in
@@ -112,7 +112,7 @@ final class SystemDateTimeTests: XCTestCase {
 												&exception)
 		}
 		
-		guard success == .yes,
+		guard success,
 			  let nowDotNet,
 			  exception == nil else {
 			XCTFail("System.DateTime.TryParse should return true, an instance as out parameter and not throw")

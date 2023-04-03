@@ -6,16 +6,13 @@
 #define TypeDefinitions_h
 
 #import <stdlib.h>
+#import <stdbool.h>
 
 #pragma mark - END Header
 #pragma mark - BEGIN Shared Code
 #pragma mark - BEGIN Common Types
 typedef const char* CString;
 
-typedef enum __attribute__((enum_extensibility(closed))): uint8_t {
-    CBoolYes = 1,
-    CBoolNo = 0
-} CBool;
 #pragma mark - END Common Types
 
 #pragma mark - END Shared Code
@@ -1213,7 +1210,7 @@ typedef System_Reflection_Module_t (*System_Reflection_ModuleResolveEventHandler
 typedef void* System_Reflection_TypeFilter_t;
 typedef void (*System_Reflection_TypeFilter_CDestructorFunction_t)(void* context);
 
-typedef CBool (*System_Reflection_TypeFilter_CFunction_t)(
+typedef bool (*System_Reflection_TypeFilter_CFunction_t)(
 	void* context,
 	System_Type_t m,
 	System_Object_t filterCriteria
@@ -1223,7 +1220,7 @@ typedef CBool (*System_Reflection_TypeFilter_CFunction_t)(
 typedef void* System_Reflection_MemberFilter_t;
 typedef void (*System_Reflection_MemberFilter_CDestructorFunction_t)(void* context);
 
-typedef CBool (*System_Reflection_MemberFilter_CFunction_t)(
+typedef bool (*System_Reflection_MemberFilter_CFunction_t)(
 	void* context,
 	System_Reflection_MemberInfo_t m,
 	System_Object_t filterCriteria
@@ -1866,21 +1863,21 @@ System_Object_ToString(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Object_Equals(
 	System_Object_t /* System.Object */ self,
 	System_Object_t /* System.Object */ obj,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Object_Equals1(
 	System_Object_t /* System.Object */ objA,
 	System_Object_t /* System.Object */ objB,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Object_ReferenceEquals(
 	System_Object_t /* System.Object */ objA,
 	System_Object_t /* System.Object */ objB,
@@ -1914,15 +1911,15 @@ System_Object_Destroy(
 System_Type_t /* System.Type */
 System_Type_GetType(
 	CString /* System.String */ typeName,
-	CBool /* System.Boolean */ throwOnError,
-	CBool /* System.Boolean */ ignoreCase,
+	bool /* System.Boolean */ throwOnError,
+	bool /* System.Boolean */ ignoreCase,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 System_Type_t /* System.Type */
 System_Type_GetType1(
 	CString /* System.String */ typeName,
-	CBool /* System.Boolean */ throwOnError,
+	bool /* System.Boolean */ throwOnError,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -1986,7 +1983,7 @@ System_Type_GetGenericParameterConstraints(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsAssignableTo(
 	System_Type_t /* System.Type */ self,
 	System_Type_t /* System.Type */ targetType,
@@ -2417,7 +2414,7 @@ System_Type_GetTypeFromCLSID(
 System_Type_t /* System.Type */
 System_Type_GetTypeFromCLSID1(
 	System_Guid_t /* System.Guid */ clsid,
-	CBool /* System.Boolean */ throwOnError,
+	bool /* System.Boolean */ throwOnError,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -2432,7 +2429,7 @@ System_Type_t /* System.Type */
 System_Type_GetTypeFromCLSID3(
 	System_Guid_t /* System.Guid */ clsid,
 	CString /* System.String */ server,
-	CBool /* System.Boolean */ throwOnError,
+	bool /* System.Boolean */ throwOnError,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -2445,7 +2442,7 @@ System_Type_GetTypeFromProgID(
 System_Type_t /* System.Type */
 System_Type_GetTypeFromProgID1(
 	CString /* System.String */ progID,
-	CBool /* System.Boolean */ throwOnError,
+	bool /* System.Boolean */ throwOnError,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -2460,7 +2457,7 @@ System_Type_t /* System.Type */
 System_Type_GetTypeFromProgID3(
 	CString /* System.String */ progID,
 	CString /* System.String */ server,
-	CBool /* System.Boolean */ throwOnError,
+	bool /* System.Boolean */ throwOnError,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -2512,7 +2509,7 @@ System_Type_t /* System.Type */
 System_Type_GetInterface1(
 	System_Type_t /* System.Type */ self,
 	CString /* System.String */ name,
-	CBool /* System.Boolean */ ignoreCase,
+	bool /* System.Boolean */ ignoreCase,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -2529,14 +2526,14 @@ System_Type_GetInterfaceMap(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsInstanceOfType(
 	System_Type_t /* System.Type */ self,
 	System_Object_t /* System.Object */ o,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsEquivalentTo(
 	System_Type_t /* System.Type */ self,
 	System_Type_t /* System.Type */ other,
@@ -2612,7 +2609,7 @@ System_Type_ToString(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_Equals(
 	System_Type_t /* System.Type */ self,
 	System_Object_t /* System.Object */ o,
@@ -2625,7 +2622,7 @@ System_Type_GetHashCode(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_Equals1(
 	System_Type_t /* System.Type */ self,
 	System_Type_t /* System.Type */ o,
@@ -2635,12 +2632,12 @@ System_Type_Equals1(
 System_Type_t /* System.Type */
 System_Type_ReflectionOnlyGetType(
 	CString /* System.String */ typeName,
-	CBool /* System.Boolean */ throwIfNotFound,
-	CBool /* System.Boolean */ ignoreCase,
+	bool /* System.Boolean */ throwIfNotFound,
+	bool /* System.Boolean */ ignoreCase,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsEnumDefined(
 	System_Type_t /* System.Type */ self,
 	System_Object_t /* System.Object */ value,
@@ -2678,21 +2675,21 @@ System_Type_FindMembers(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsSubclassOf(
 	System_Type_t /* System.Type */ self,
 	System_Type_t /* System.Type */ c,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsAssignableFrom(
 	System_Type_t /* System.Type */ self,
 	System_Type_t /* System.Type */ c,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsInterface_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -2741,7 +2738,7 @@ System_Type_Module_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsNested_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -2776,112 +2773,112 @@ System_Type_UnderlyingSystemType_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsTypeDefinition_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsArray_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsByRef_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsPointer_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsConstructedGenericType_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsGenericParameter_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsGenericTypeParameter_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsGenericMethodParameter_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsGenericType_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsGenericTypeDefinition_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsSZArray_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsVariableBoundArray_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsByRefLike_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsFunctionPointer_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsUnmanagedFunctionPointer_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_HasElementType_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -2916,203 +2913,203 @@ System_Type_Attributes_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsAbstract_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsImport_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsSealed_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsSpecialName_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsClass_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsNestedAssembly_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsNestedFamANDAssem_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsNestedFamily_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsNestedFamORAssem_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsNestedPrivate_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsNestedPublic_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsNotPublic_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsPublic_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsAutoLayout_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsExplicitLayout_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsLayoutSequential_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsAnsiClass_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsAutoClass_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsUnicodeClass_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsCOMObject_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsContextful_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsEnum_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsMarshalByRef_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsPrimitive_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsValueType_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsSignatureType_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsSecurityCritical_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsSecuritySafeCritical_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsSecurityTransparent_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -3160,21 +3157,21 @@ System_Type_DefaultBinder_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsSerializable_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_ContainsGenericParameters_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Type_IsVisible_Get(
 	System_Type_t /* System.Type */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -3230,25 +3227,25 @@ System_Type_Destroy(
 #pragma mark - END APIs of System.Type
 
 #pragma mark - BEGIN APIs of System.Reflection.MemberInfo
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_MemberInfo_HasSameMetadataDefinitionAs(
 	System_Reflection_MemberInfo_t /* System.Reflection.MemberInfo */ self,
 	System_Reflection_MemberInfo_t /* System.Reflection.MemberInfo */ other,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_MemberInfo_IsDefined(
 	System_Reflection_MemberInfo_t /* System.Reflection.MemberInfo */ self,
 	System_Type_t /* System.Type */ attributeType,
-	CBool /* System.Boolean */ inherit,
+	bool /* System.Boolean */ inherit,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 System_Object_Array_t /* System.Object[] */
 System_Reflection_MemberInfo_GetCustomAttributes(
 	System_Reflection_MemberInfo_t /* System.Reflection.MemberInfo */ self,
-	CBool /* System.Boolean */ inherit,
+	bool /* System.Boolean */ inherit,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -3256,11 +3253,11 @@ System_Object_Array_t /* System.Object[] */
 System_Reflection_MemberInfo_GetCustomAttributes1(
 	System_Reflection_MemberInfo_t /* System.Reflection.MemberInfo */ self,
 	System_Type_t /* System.Type */ attributeType,
-	CBool /* System.Boolean */ inherit,
+	bool /* System.Boolean */ inherit,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_MemberInfo_Equals(
 	System_Reflection_MemberInfo_t /* System.Reflection.MemberInfo */ self,
 	System_Object_t /* System.Object */ obj,
@@ -3308,7 +3305,7 @@ System_Reflection_MemberInfo_Module_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_MemberInfo_IsCollectible_Get(
 	System_Reflection_MemberInfo_t /* System.Reflection.MemberInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -3366,14 +3363,14 @@ System_Enum_GetValuesAsUnderlyingType(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Enum_HasFlag(
 	System_Enum_t /* System.Enum */ self,
 	System_Enum_t /* System.Enum */ flag,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Enum_IsDefined(
 	System_Type_t /* System.Type */ enumType,
 	System_Object_t /* System.Object */ value,
@@ -3391,11 +3388,11 @@ System_Object_t /* System.Object */
 System_Enum_Parse1(
 	System_Type_t /* System.Type */ enumType,
 	CString /* System.String */ value,
-	CBool /* System.Boolean */ ignoreCase,
+	bool /* System.Boolean */ ignoreCase,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Enum_TryParse(
 	System_Type_t /* System.Type */ enumType,
 	CString /* System.String */ value,
@@ -3403,16 +3400,16 @@ System_Enum_TryParse(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Enum_TryParse1(
 	System_Type_t /* System.Type */ enumType,
 	CString /* System.String */ value,
-	CBool /* System.Boolean */ ignoreCase,
+	bool /* System.Boolean */ ignoreCase,
 	System_Object_t* /* System.Object */ result,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Enum_Equals(
 	System_Enum_t /* System.Enum */ self,
 	System_Object_t /* System.Object */ obj,
@@ -3550,7 +3547,7 @@ System_Enum_Destroy(
 #pragma mark - END APIs of System.Enum
 
 #pragma mark - BEGIN APIs of System.ValueType
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_ValueType_Equals(
 	System_ValueType_t /* System.ValueType */ self,
 	System_Object_t /* System.Object */ obj,
@@ -3607,7 +3604,7 @@ int32_t /* System.Int32 */
 System_String_Compare1(
 	CString /* System.String */ strA,
 	CString /* System.String */ strB,
-	CBool /* System.Boolean */ ignoreCase,
+	bool /* System.Boolean */ ignoreCase,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -3632,7 +3629,7 @@ int32_t /* System.Int32 */
 System_String_Compare4(
 	CString /* System.String */ strA,
 	CString /* System.String */ strB,
-	CBool /* System.Boolean */ ignoreCase,
+	bool /* System.Boolean */ ignoreCase,
 	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ culture,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -3654,7 +3651,7 @@ System_String_Compare6(
 	CString /* System.String */ strB,
 	int32_t /* System.Int32 */ indexB,
 	int32_t /* System.Int32 */ length,
-	CBool /* System.Boolean */ ignoreCase,
+	bool /* System.Boolean */ ignoreCase,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -3665,7 +3662,7 @@ System_String_Compare7(
 	CString /* System.String */ strB,
 	int32_t /* System.Int32 */ indexB,
 	int32_t /* System.Int32 */ length,
-	CBool /* System.Boolean */ ignoreCase,
+	bool /* System.Boolean */ ignoreCase,
 	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ culture,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -3724,14 +3721,14 @@ System_String_CompareTo1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_String_EndsWith(
 	CString /* System.String */ self,
 	CString /* System.String */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_String_EndsWith1(
 	CString /* System.String */ self,
 	CString /* System.String */ value,
@@ -3739,37 +3736,37 @@ System_String_EndsWith1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_String_EndsWith2(
 	CString /* System.String */ self,
 	CString /* System.String */ value,
-	CBool /* System.Boolean */ ignoreCase,
+	bool /* System.Boolean */ ignoreCase,
 	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ culture,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_String_EndsWith3(
 	CString /* System.String */ self,
 	uint8_t /* System.Char */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_String_Equals(
 	CString /* System.String */ self,
 	System_Object_t /* System.Object */ obj,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_String_Equals1(
 	CString /* System.String */ self,
 	CString /* System.String */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_String_Equals2(
 	CString /* System.String */ self,
 	CString /* System.String */ value,
@@ -3777,14 +3774,14 @@ System_String_Equals2(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_String_Equals3(
 	CString /* System.String */ a,
 	CString /* System.String */ b,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_String_Equals4(
 	CString /* System.String */ a,
 	CString /* System.String */ b,
@@ -3805,14 +3802,14 @@ System_String_GetHashCode1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_String_StartsWith(
 	CString /* System.String */ self,
 	CString /* System.String */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_String_StartsWith1(
 	CString /* System.String */ self,
 	CString /* System.String */ value,
@@ -3820,16 +3817,16 @@ System_String_StartsWith1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_String_StartsWith2(
 	CString /* System.String */ self,
 	CString /* System.String */ value,
-	CBool /* System.Boolean */ ignoreCase,
+	bool /* System.Boolean */ ignoreCase,
 	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ culture,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_String_StartsWith3(
 	CString /* System.String */ self,
 	uint8_t /* System.Char */ value,
@@ -3872,13 +3869,13 @@ System_String_ToCharArray1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_String_IsNullOrEmpty(
 	CString /* System.String */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_String_IsNullOrWhiteSpace(
 	CString /* System.String */ value,
 	System_Exception_t* /* System.Exception */ outException
@@ -3915,13 +3912,13 @@ System_String_GetTypeCode(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_String_IsNormalized(
 	CString /* System.String */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_String_IsNormalized1(
 	CString /* System.String */ self,
 	System_Text_NormalizationForm /* System.Text.NormalizationForm */ normalizationForm,
@@ -4176,7 +4173,7 @@ System_String_Replace(
 	CString /* System.String */ self,
 	CString /* System.String */ oldValue,
 	CString /* System.String */ newValue,
-	CBool /* System.Boolean */ ignoreCase,
+	bool /* System.Boolean */ ignoreCase,
 	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ culture,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -4415,14 +4412,14 @@ System_String_TrimEnd2(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_String_Contains(
 	CString /* System.String */ self,
 	CString /* System.String */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_String_Contains1(
 	CString /* System.String */ self,
 	CString /* System.String */ value,
@@ -4430,14 +4427,14 @@ System_String_Contains1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_String_Contains2(
 	CString /* System.String */ self,
 	uint8_t /* System.Char */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_String_Contains3(
 	CString /* System.String */ self,
 	uint8_t /* System.Char */ value,
@@ -4710,7 +4707,7 @@ System_Globalization_CultureInfo_GetCultures(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Globalization_CultureInfo_Equals(
 	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ self,
 	System_Object_t /* System.Object */ value,
@@ -4782,7 +4779,7 @@ System_Globalization_CultureInfo_GetCultureInfo2(
 System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */
 System_Globalization_CultureInfo_GetCultureInfo3(
 	CString /* System.String */ name,
-	CBool /* System.Boolean */ predefinedOnly,
+	bool /* System.Boolean */ predefinedOnly,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -4801,7 +4798,7 @@ System_Globalization_CultureInfo_Create1(
 System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */
 System_Globalization_CultureInfo_Create2(
 	CString /* System.String */ name,
-	CBool /* System.Boolean */ useUserOverride,
+	bool /* System.Boolean */ useUserOverride,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -4814,7 +4811,7 @@ System_Globalization_CultureInfo_Create3(
 System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */
 System_Globalization_CultureInfo_Create4(
 	int32_t /* System.Int32 */ culture,
-	CBool /* System.Boolean */ useUserOverride,
+	bool /* System.Boolean */ useUserOverride,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -5017,7 +5014,7 @@ System_Globalization_CultureInfo_TextInfo_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Globalization_CultureInfo_IsNeutralCulture_Get(
 	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -5101,14 +5098,14 @@ System_Globalization_CultureInfo_OptionalCalendars_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Globalization_CultureInfo_UseUserOverride_Get(
 	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Globalization_CultureInfo_IsReadOnly_Get(
 	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -5622,21 +5619,21 @@ System_Array_SyncRoot_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Array_IsReadOnly_Get(
 	System_Array_t /* System.Array */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Array_IsFixedSize_Get(
 	System_Array_t /* System.Array */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Array_IsSynchronized_Get(
 	System_Array_t /* System.Array */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -5842,7 +5839,7 @@ System_Collections_IComparer_Destroy(
 #pragma mark - END APIs of T[]
 
 #pragma mark - BEGIN APIs of System.Collections.IEnumerator
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Collections_IEnumerator_MoveNext(
 	System_Collections_IEnumerator_t /* System.Collections.IEnumerator */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -5900,19 +5897,19 @@ System_Globalization_CompareInfo_GetCompareInfo3(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Globalization_CompareInfo_IsSortable(
 	uint8_t /* System.Char */ ch,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Globalization_CompareInfo_IsSortable1(
 	CString /* System.String */ text,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Globalization_CompareInfo_IsSortable2(
 	System_Text_Rune_t /* System.Text.Rune */ value,
 	System_Exception_t* /* System.Exception */ outException
@@ -5981,7 +5978,7 @@ System_Globalization_CompareInfo_Compare5(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Globalization_CompareInfo_IsPrefix(
 	System_Globalization_CompareInfo_t /* System.Globalization.CompareInfo */ self,
 	CString /* System.String */ source,
@@ -5990,7 +5987,7 @@ System_Globalization_CompareInfo_IsPrefix(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Globalization_CompareInfo_IsPrefix1(
 	System_Globalization_CompareInfo_t /* System.Globalization.CompareInfo */ self,
 	CString /* System.String */ source,
@@ -5998,7 +5995,7 @@ System_Globalization_CompareInfo_IsPrefix1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Globalization_CompareInfo_IsSuffix(
 	System_Globalization_CompareInfo_t /* System.Globalization.CompareInfo */ self,
 	CString /* System.String */ source,
@@ -6007,7 +6004,7 @@ System_Globalization_CompareInfo_IsSuffix(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Globalization_CompareInfo_IsSuffix1(
 	System_Globalization_CompareInfo_t /* System.Globalization.CompareInfo */ self,
 	CString /* System.String */ source,
@@ -6258,7 +6255,7 @@ System_Globalization_CompareInfo_GetSortKey1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Globalization_CompareInfo_Equals(
 	System_Globalization_CompareInfo_t /* System.Globalization.CompareInfo */ self,
 	System_Object_t /* System.Object */ value,
@@ -6402,7 +6399,7 @@ System_Reflection_Assembly_GetName(
 System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */
 System_Reflection_Assembly_GetName1(
 	System_Reflection_Assembly_t /* System.Reflection.Assembly */ self,
-	CBool /* System.Boolean */ copiedName,
+	bool /* System.Boolean */ copiedName,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -6417,7 +6414,7 @@ System_Type_t /* System.Type */
 System_Reflection_Assembly_GetType2(
 	System_Reflection_Assembly_t /* System.Reflection.Assembly */ self,
 	CString /* System.String */ name,
-	CBool /* System.Boolean */ throwOnError,
+	bool /* System.Boolean */ throwOnError,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -6425,23 +6422,23 @@ System_Type_t /* System.Type */
 System_Reflection_Assembly_GetType3(
 	System_Reflection_Assembly_t /* System.Reflection.Assembly */ self,
 	CString /* System.String */ name,
-	CBool /* System.Boolean */ throwOnError,
-	CBool /* System.Boolean */ ignoreCase,
+	bool /* System.Boolean */ throwOnError,
+	bool /* System.Boolean */ ignoreCase,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_Assembly_IsDefined(
 	System_Reflection_Assembly_t /* System.Reflection.Assembly */ self,
 	System_Type_t /* System.Type */ attributeType,
-	CBool /* System.Boolean */ inherit,
+	bool /* System.Boolean */ inherit,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 System_Object_Array_t /* System.Object[] */
 System_Reflection_Assembly_GetCustomAttributes(
 	System_Reflection_Assembly_t /* System.Reflection.Assembly */ self,
-	CBool /* System.Boolean */ inherit,
+	bool /* System.Boolean */ inherit,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -6449,7 +6446,7 @@ System_Object_Array_t /* System.Object[] */
 System_Reflection_Assembly_GetCustomAttributes1(
 	System_Reflection_Assembly_t /* System.Reflection.Assembly */ self,
 	System_Type_t /* System.Type */ attributeType,
-	CBool /* System.Boolean */ inherit,
+	bool /* System.Boolean */ inherit,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -6464,7 +6461,7 @@ System_Object_t /* System.Object */
 System_Reflection_Assembly_CreateInstance1(
 	System_Reflection_Assembly_t /* System.Reflection.Assembly */ self,
 	CString /* System.String */ typeName,
-	CBool /* System.Boolean */ ignoreCase,
+	bool /* System.Boolean */ ignoreCase,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -6472,7 +6469,7 @@ System_Object_t /* System.Object */
 System_Reflection_Assembly_CreateInstance2(
 	System_Reflection_Assembly_t /* System.Reflection.Assembly */ self,
 	CString /* System.String */ typeName,
-	CBool /* System.Boolean */ ignoreCase,
+	bool /* System.Boolean */ ignoreCase,
 	System_Reflection_BindingFlags /* System.Reflection.BindingFlags */ bindingAttr,
 	System_Reflection_Binder_t /* System.Reflection.Binder */ binder,
 	System_Object_Array_t /* System.Object[] */ args,
@@ -6497,7 +6494,7 @@ System_Reflection_Assembly_GetModules(
 System_Reflection_Module_Array_t /* System.Reflection.Module[] */
 System_Reflection_Assembly_GetModules1(
 	System_Reflection_Assembly_t /* System.Reflection.Assembly */ self,
-	CBool /* System.Boolean */ getResourceModules,
+	bool /* System.Boolean */ getResourceModules,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -6510,7 +6507,7 @@ System_Reflection_Assembly_GetLoadedModules(
 System_Reflection_Module_Array_t /* System.Reflection.Module[] */
 System_Reflection_Assembly_GetLoadedModules1(
 	System_Reflection_Assembly_t /* System.Reflection.Assembly */ self,
-	CBool /* System.Boolean */ getResourceModules,
+	bool /* System.Boolean */ getResourceModules,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -6551,7 +6548,7 @@ System_Reflection_Assembly_GetFiles(
 System_IO_FileStream_Array_t /* System.IO.FileStream[] */
 System_Reflection_Assembly_GetFiles1(
 	System_Reflection_Assembly_t /* System.Reflection.Assembly */ self,
-	CBool /* System.Boolean */ getResourceModules,
+	bool /* System.Boolean */ getResourceModules,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -6569,7 +6566,7 @@ System_Reflection_Assembly_ToString(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_Assembly_Equals(
 	System_Reflection_Assembly_t /* System.Reflection.Assembly */ self,
 	System_Object_t /* System.Object */ o,
@@ -6702,7 +6699,7 @@ System_Reflection_Assembly_ImageRuntimeVersion_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_Assembly_IsDynamic_Get(
 	System_Reflection_Assembly_t /* System.Reflection.Assembly */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -6716,21 +6713,21 @@ System_Reflection_Assembly_Location_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_Assembly_ReflectionOnly_Get(
 	System_Reflection_Assembly_t /* System.Reflection.Assembly */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_Assembly_IsCollectible_Get(
 	System_Reflection_Assembly_t /* System.Reflection.Assembly */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_Assembly_IsFullyTrusted_Get(
 	System_Reflection_Assembly_t /* System.Reflection.Assembly */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -6751,7 +6748,7 @@ System_Reflection_Assembly_ManifestModule_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_Assembly_GlobalAssemblyCache_Get(
 	System_Reflection_Assembly_t /* System.Reflection.Assembly */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -6870,7 +6867,7 @@ System_Reflection_AssemblyName_OnDeserialization(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_AssemblyName_ReferenceMatchesDefinition(
 	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ reference,
 	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ definition,
@@ -7243,14 +7240,14 @@ System_Version_CompareTo1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Version_Equals(
 	System_Version_t /* System.Version */ self,
 	System_Object_t /* System.Object */ obj,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Version_Equals1(
 	System_Version_t /* System.Version */ self,
 	System_Version_t /* System.Version */ obj,
@@ -7282,7 +7279,7 @@ System_Version_Parse(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Version_TryParse(
 	CString /* System.String */ input,
 	System_Version_t* /* System.Version */ result,
@@ -7485,7 +7482,7 @@ System_IO_FileStream_Flush1(
 void /* System.Void */
 System_IO_FileStream_Flush2(
 	System_IO_FileStream_t /* System.IO.FileStream */ self,
-	CBool /* System.Boolean */ flushToDisk,
+	bool /* System.Boolean */ flushToDisk,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -7587,7 +7584,7 @@ System_IO_FileStream_t /* System.IO.FileStream */
 System_IO_FileStream_Create1(
 	int /* System.IntPtr */ handle,
 	System_IO_FileAccess /* System.IO.FileAccess */ access,
-	CBool /* System.Boolean */ ownsHandle,
+	bool /* System.Boolean */ ownsHandle,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -7595,7 +7592,7 @@ System_IO_FileStream_t /* System.IO.FileStream */
 System_IO_FileStream_Create2(
 	int /* System.IntPtr */ handle,
 	System_IO_FileAccess /* System.IO.FileAccess */ access,
-	CBool /* System.Boolean */ ownsHandle,
+	bool /* System.Boolean */ ownsHandle,
 	int32_t /* System.Int32 */ bufferSize,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -7604,9 +7601,9 @@ System_IO_FileStream_t /* System.IO.FileStream */
 System_IO_FileStream_Create3(
 	int /* System.IntPtr */ handle,
 	System_IO_FileAccess /* System.IO.FileAccess */ access,
-	CBool /* System.Boolean */ ownsHandle,
+	bool /* System.Boolean */ ownsHandle,
 	int32_t /* System.Int32 */ bufferSize,
-	CBool /* System.Boolean */ isAsync,
+	bool /* System.Boolean */ isAsync,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -7630,7 +7627,7 @@ System_IO_FileStream_Create6(
 	Microsoft_Win32_SafeHandles_SafeFileHandle_t /* Microsoft.Win32.SafeHandles.SafeFileHandle */ handle,
 	System_IO_FileAccess /* System.IO.FileAccess */ access,
 	int32_t /* System.Int32 */ bufferSize,
-	CBool /* System.Boolean */ isAsync,
+	bool /* System.Boolean */ isAsync,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -7675,7 +7672,7 @@ System_IO_FileStream_Create11(
 	System_IO_FileAccess /* System.IO.FileAccess */ access,
 	System_IO_FileShare /* System.IO.FileShare */ share,
 	int32_t /* System.Int32 */ bufferSize,
-	CBool /* System.Boolean */ useAsync,
+	bool /* System.Boolean */ useAsync,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -7704,14 +7701,14 @@ System_IO_FileStream_Handle_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_IO_FileStream_CanRead_Get(
 	System_IO_FileStream_t /* System.IO.FileStream */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_IO_FileStream_CanWrite_Get(
 	System_IO_FileStream_t /* System.IO.FileStream */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -7732,7 +7729,7 @@ System_IO_FileStream_Name_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_IO_FileStream_IsAsync_Get(
 	System_IO_FileStream_t /* System.IO.FileStream */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -7774,7 +7771,7 @@ System_IO_FileStream_Position_Set(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_IO_FileStream_CanSeek_Get(
 	System_IO_FileStream_t /* System.IO.FileStream */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -8004,28 +8001,28 @@ System_IO_Stream_Synchronized(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_IO_Stream_CanRead_Get(
 	System_IO_Stream_t /* System.IO.Stream */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_IO_Stream_CanWrite_Get(
 	System_IO_Stream_t /* System.IO.Stream */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_IO_Stream_CanSeek_Get(
 	System_IO_Stream_t /* System.IO.Stream */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_IO_Stream_CanTimeout_Get(
 	System_IO_Stream_t /* System.IO.Stream */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -8208,7 +8205,7 @@ System_Threading_Tasks_Task_GetAwaiter(
 System_Runtime_CompilerServices_ConfiguredTaskAwaitable_t /* System.Runtime.CompilerServices.ConfiguredTaskAwaitable */
 System_Threading_Tasks_Task_ConfigureAwait(
 	System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */ self,
-	CBool /* System.Boolean */ continueOnCapturedContext,
+	bool /* System.Boolean */ continueOnCapturedContext,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -8223,14 +8220,14 @@ System_Threading_Tasks_Task_Wait(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_Tasks_Task_Wait1(
 	System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */ self,
 	System_TimeSpan_t /* System.TimeSpan */ timeout,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_Tasks_Task_Wait2(
 	System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */ self,
 	System_TimeSpan_t /* System.TimeSpan */ timeout,
@@ -8245,14 +8242,14 @@ System_Threading_Tasks_Task_Wait3(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_Tasks_Task_Wait4(
 	System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */ self,
 	int32_t /* System.Int32 */ millisecondsTimeout,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_Tasks_Task_Wait5(
 	System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */ self,
 	int32_t /* System.Int32 */ millisecondsTimeout,
@@ -8288,14 +8285,14 @@ System_Threading_Tasks_Task_WaitAll(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_Tasks_Task_WaitAll1(
 	System_Threading_Tasks_Task_Array_t /* System.Threading.Tasks.Task[] */ tasks,
 	System_TimeSpan_t /* System.TimeSpan */ timeout,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_Tasks_Task_WaitAll2(
 	System_Threading_Tasks_Task_Array_t /* System.Threading.Tasks.Task[] */ tasks,
 	int32_t /* System.Int32 */ millisecondsTimeout,
@@ -8309,7 +8306,7 @@ System_Threading_Tasks_Task_WaitAll3(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_Tasks_Task_WaitAll4(
 	System_Threading_Tasks_Task_Array_t /* System.Threading.Tasks.Task[] */ tasks,
 	int32_t /* System.Int32 */ millisecondsTimeout,
@@ -8458,21 +8455,21 @@ System_Threading_Tasks_Task_Status_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_Tasks_Task_IsCanceled_Get(
 	System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_Tasks_Task_IsCompleted_Get(
 	System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_Tasks_Task_IsCompletedSuccessfully_Get(
 	System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -8505,7 +8502,7 @@ System_Threading_Tasks_Task_CompletedTask_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_Tasks_Task_IsFaulted_Get(
 	System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -8883,7 +8880,7 @@ System_Reflection_MethodBase_Invoke1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_MethodBase_Equals(
 	System_Reflection_MethodBase_t /* System.Reflection.MethodBase */ self,
 	System_Object_t /* System.Object */ obj,
@@ -8917,119 +8914,119 @@ System_Reflection_MethodBase_CallingConvention_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_MethodBase_IsAbstract_Get(
 	System_Reflection_MethodBase_t /* System.Reflection.MethodBase */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_MethodBase_IsConstructor_Get(
 	System_Reflection_MethodBase_t /* System.Reflection.MethodBase */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_MethodBase_IsFinal_Get(
 	System_Reflection_MethodBase_t /* System.Reflection.MethodBase */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_MethodBase_IsHideBySig_Get(
 	System_Reflection_MethodBase_t /* System.Reflection.MethodBase */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_MethodBase_IsSpecialName_Get(
 	System_Reflection_MethodBase_t /* System.Reflection.MethodBase */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_MethodBase_IsStatic_Get(
 	System_Reflection_MethodBase_t /* System.Reflection.MethodBase */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_MethodBase_IsVirtual_Get(
 	System_Reflection_MethodBase_t /* System.Reflection.MethodBase */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_MethodBase_IsAssembly_Get(
 	System_Reflection_MethodBase_t /* System.Reflection.MethodBase */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_MethodBase_IsFamily_Get(
 	System_Reflection_MethodBase_t /* System.Reflection.MethodBase */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_MethodBase_IsFamilyAndAssembly_Get(
 	System_Reflection_MethodBase_t /* System.Reflection.MethodBase */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_MethodBase_IsFamilyOrAssembly_Get(
 	System_Reflection_MethodBase_t /* System.Reflection.MethodBase */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_MethodBase_IsPrivate_Get(
 	System_Reflection_MethodBase_t /* System.Reflection.MethodBase */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_MethodBase_IsPublic_Get(
 	System_Reflection_MethodBase_t /* System.Reflection.MethodBase */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_MethodBase_IsConstructedGenericMethod_Get(
 	System_Reflection_MethodBase_t /* System.Reflection.MethodBase */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_MethodBase_IsGenericMethod_Get(
 	System_Reflection_MethodBase_t /* System.Reflection.MethodBase */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_MethodBase_IsGenericMethodDefinition_Get(
 	System_Reflection_MethodBase_t /* System.Reflection.MethodBase */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_MethodBase_ContainsGenericParameters_Get(
 	System_Reflection_MethodBase_t /* System.Reflection.MethodBase */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -9043,21 +9040,21 @@ System_Reflection_MethodBase_MethodHandle_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_MethodBase_IsSecurityCritical_Get(
 	System_Reflection_MethodBase_t /* System.Reflection.MethodBase */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_MethodBase_IsSecuritySafeCritical_Get(
 	System_Reflection_MethodBase_t /* System.Reflection.MethodBase */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_MethodBase_IsSecurityTransparent_Get(
 	System_Reflection_MethodBase_t /* System.Reflection.MethodBase */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -9091,7 +9088,7 @@ System_RuntimeMethodHandle_GetHashCode(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_RuntimeMethodHandle_Equals(
 	System_RuntimeMethodHandle_t /* System.RuntimeMethodHandle */ self,
 	System_Object_t /* System.Object */ obj,
@@ -9110,7 +9107,7 @@ System_RuntimeMethodHandle_ToIntPtr(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_RuntimeMethodHandle_Equals1(
 	System_RuntimeMethodHandle_t /* System.RuntimeMethodHandle */ self,
 	System_RuntimeMethodHandle_t /* System.RuntimeMethodHandle */ handle,
@@ -9177,7 +9174,7 @@ void /* System.Void */
 System_Runtime_Serialization_SerializationInfo_AddValue2(
 	System_Runtime_Serialization_SerializationInfo_t /* System.Runtime.Serialization.SerializationInfo */ self,
 	CString /* System.String */ name,
-	CBool /* System.Boolean */ value,
+	bool /* System.Boolean */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -9293,7 +9290,7 @@ System_Runtime_Serialization_SerializationInfo_GetValue(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Runtime_Serialization_SerializationInfo_GetBoolean(
 	System_Runtime_Serialization_SerializationInfo_t /* System.Runtime.Serialization.SerializationInfo */ self,
 	CString /* System.String */ name,
@@ -9409,7 +9406,7 @@ System_Runtime_Serialization_SerializationInfo_t /* System.Runtime.Serialization
 System_Runtime_Serialization_SerializationInfo_Create1(
 	System_Type_t /* System.Type */ type,
 	System_Runtime_Serialization_IFormatterConverter_t /* System.Runtime.Serialization.IFormatterConverter */ converter,
-	CBool /* System.Boolean */ requireSameTokenInPartialTrust,
+	bool /* System.Boolean */ requireSameTokenInPartialTrust,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -9469,14 +9466,14 @@ System_Runtime_Serialization_SerializationInfo_AssemblyName_Set(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Runtime_Serialization_SerializationInfo_IsFullTypeNameSetExplicit_Get(
 	System_Runtime_Serialization_SerializationInfo_t /* System.Runtime.Serialization.SerializationInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Runtime_Serialization_SerializationInfo_IsAssemblyNameSetExplicit_Get(
 	System_Runtime_Serialization_SerializationInfo_t /* System.Runtime.Serialization.SerializationInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -9510,7 +9507,7 @@ System_Runtime_Serialization_SerializationInfo_Destroy(
 #pragma mark - END APIs of System.Runtime.Serialization.SerializationInfo
 
 #pragma mark - BEGIN APIs of System.Runtime.Serialization.SerializationInfoEnumerator
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Runtime_Serialization_SerializationInfoEnumerator_MoveNext(
 	System_Runtime_Serialization_SerializationInfoEnumerator_t /* System.Runtime.Serialization.SerializationInfoEnumerator */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -9663,14 +9660,14 @@ System_Decimal_Divide(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Decimal_Equals(
 	System_Decimal_t /* System.Decimal */ self,
 	System_Object_t /* System.Object */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Decimal_Equals1(
 	System_Decimal_t /* System.Decimal */ self,
 	System_Decimal_t /* System.Decimal */ value,
@@ -9683,7 +9680,7 @@ System_Decimal_GetHashCode(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Decimal_Equals2(
 	System_Decimal_t /* System.Decimal */ d1,
 	System_Decimal_t /* System.Decimal */ d2,
@@ -9752,14 +9749,14 @@ System_Decimal_Parse3(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Decimal_TryParse(
 	CString /* System.String */ s,
 	System_Decimal_t* /* System.Decimal */ result,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Decimal_TryParse1(
 	CString /* System.String */ s,
 	System_Globalization_NumberStyles /* System.Globalization.NumberStyles */ style,
@@ -9942,37 +9939,37 @@ System_Decimal_Abs(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Decimal_IsCanonical(
 	System_Decimal_t /* System.Decimal */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Decimal_IsEvenInteger(
 	System_Decimal_t /* System.Decimal */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Decimal_IsInteger(
 	System_Decimal_t /* System.Decimal */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Decimal_IsNegative(
 	System_Decimal_t /* System.Decimal */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Decimal_IsOddInteger(
 	System_Decimal_t /* System.Decimal */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Decimal_IsPositive(
 	System_Decimal_t /* System.Decimal */ value,
 	System_Exception_t* /* System.Exception */ outException
@@ -9992,7 +9989,7 @@ System_Decimal_MinMagnitude(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Decimal_TryParse2(
 	CString /* System.String */ s,
 	System_IFormatProvider_t /* System.IFormatProvider */ provider,
@@ -10047,7 +10044,7 @@ System_Decimal_Create7(
 	int32_t /* System.Int32 */ lo,
 	int32_t /* System.Int32 */ mid,
 	int32_t /* System.Int32 */ hi,
-	CBool /* System.Boolean */ isNegative,
+	bool /* System.Boolean */ isNegative,
 	uint8_t /* System.Byte */ scale,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -10201,21 +10198,21 @@ System_DateTime_DaysInMonth(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_DateTime_Equals(
 	System_DateTime_t /* System.DateTime */ self,
 	System_Object_t /* System.Object */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_DateTime_Equals1(
 	System_DateTime_t /* System.DateTime */ self,
 	System_DateTime_t /* System.DateTime */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_DateTime_Equals2(
 	System_DateTime_t /* System.DateTime */ t1,
 	System_DateTime_t /* System.DateTime */ t2,
@@ -10246,7 +10243,7 @@ System_DateTime_FromOADate(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_DateTime_IsDaylightSavingTime(
 	System_DateTime_t /* System.DateTime */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -10271,7 +10268,7 @@ System_DateTime_GetHashCode(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_DateTime_IsLeapYear(
 	int32_t /* System.Int32 */ year,
 	System_Exception_t* /* System.Exception */ outException
@@ -10420,14 +10417,14 @@ System_DateTime_ToUniversalTime(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_DateTime_TryParse(
 	CString /* System.String */ s,
 	System_DateTime_t* /* System.DateTime */ result,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_DateTime_TryParse1(
 	CString /* System.String */ s,
 	System_IFormatProvider_t /* System.IFormatProvider */ provider,
@@ -10436,7 +10433,7 @@ System_DateTime_TryParse1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_DateTime_TryParseExact(
 	CString /* System.String */ s,
 	CString /* System.String */ format,
@@ -10446,7 +10443,7 @@ System_DateTime_TryParseExact(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_DateTime_TryParseExact1(
 	CString /* System.String */ s,
 	System_String_Array_t /* System.String[] */ formats,
@@ -10507,7 +10504,7 @@ System_DateTime_GetTypeCode(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_DateTime_TryParse2(
 	CString /* System.String */ s,
 	System_IFormatProvider_t /* System.IFormatProvider */ provider,
@@ -10897,21 +10894,21 @@ System_TimeSpan_Duration(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_TimeSpan_Equals(
 	System_TimeSpan_t /* System.TimeSpan */ self,
 	System_Object_t /* System.Object */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_TimeSpan_Equals1(
 	System_TimeSpan_t /* System.TimeSpan */ self,
 	System_TimeSpan_t /* System.TimeSpan */ obj,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_TimeSpan_Equals2(
 	System_TimeSpan_t /* System.TimeSpan */ t1,
 	System_TimeSpan_t /* System.TimeSpan */ t2,
@@ -11041,14 +11038,14 @@ System_TimeSpan_ParseExact3(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_TimeSpan_TryParse(
 	CString /* System.String */ s,
 	System_TimeSpan_t* /* System.TimeSpan */ result,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_TimeSpan_TryParse1(
 	CString /* System.String */ input,
 	System_IFormatProvider_t /* System.IFormatProvider */ formatProvider,
@@ -11056,7 +11053,7 @@ System_TimeSpan_TryParse1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_TimeSpan_TryParseExact(
 	CString /* System.String */ input,
 	CString /* System.String */ format,
@@ -11065,7 +11062,7 @@ System_TimeSpan_TryParseExact(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_TimeSpan_TryParseExact1(
 	CString /* System.String */ input,
 	System_String_Array_t /* System.String[] */ formats,
@@ -11074,7 +11071,7 @@ System_TimeSpan_TryParseExact1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_TimeSpan_TryParseExact2(
 	CString /* System.String */ input,
 	CString /* System.String */ format,
@@ -11084,7 +11081,7 @@ System_TimeSpan_TryParseExact2(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_TimeSpan_TryParseExact3(
 	CString /* System.String */ input,
 	System_String_Array_t /* System.String[] */ formats,
@@ -11415,14 +11412,14 @@ System_DateOnly_CompareTo1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_DateOnly_Equals(
 	System_DateOnly_t /* System.DateOnly */ self,
 	System_DateOnly_t /* System.DateOnly */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_DateOnly_Equals1(
 	System_DateOnly_t /* System.DateOnly */ self,
 	System_Object_t /* System.Object */ value,
@@ -11481,14 +11478,14 @@ System_DateOnly_ParseExact3(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_DateOnly_TryParse(
 	CString /* System.String */ s,
 	System_DateOnly_t* /* System.DateOnly */ result,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_DateOnly_TryParse1(
 	CString /* System.String */ s,
 	System_IFormatProvider_t /* System.IFormatProvider */ provider,
@@ -11497,7 +11494,7 @@ System_DateOnly_TryParse1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_DateOnly_TryParseExact(
 	CString /* System.String */ s,
 	CString /* System.String */ format,
@@ -11505,7 +11502,7 @@ System_DateOnly_TryParseExact(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_DateOnly_TryParseExact1(
 	CString /* System.String */ s,
 	CString /* System.String */ format,
@@ -11515,7 +11512,7 @@ System_DateOnly_TryParseExact1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_DateOnly_TryParseExact2(
 	CString /* System.String */ s,
 	System_String_Array_t /* System.String[] */ formats,
@@ -11523,7 +11520,7 @@ System_DateOnly_TryParseExact2(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_DateOnly_TryParseExact3(
 	CString /* System.String */ s,
 	System_String_Array_t /* System.String[] */ formats,
@@ -11580,7 +11577,7 @@ System_DateOnly_Parse2(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_DateOnly_TryParse2(
 	CString /* System.String */ s,
 	System_IFormatProvider_t /* System.IFormatProvider */ provider,
@@ -11717,7 +11714,7 @@ System_TimeOnly_AddMinutes1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_TimeOnly_IsBetween(
 	System_TimeOnly_t /* System.TimeOnly */ self,
 	System_TimeOnly_t /* System.TimeOnly */ start,
@@ -11795,14 +11792,14 @@ System_TimeOnly_CompareTo1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_TimeOnly_Equals(
 	System_TimeOnly_t /* System.TimeOnly */ self,
 	System_TimeOnly_t /* System.TimeOnly */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_TimeOnly_Equals1(
 	System_TimeOnly_t /* System.TimeOnly */ self,
 	System_Object_t /* System.Object */ value,
@@ -11861,14 +11858,14 @@ System_TimeOnly_ParseExact3(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_TimeOnly_TryParse(
 	CString /* System.String */ s,
 	System_TimeOnly_t* /* System.TimeOnly */ result,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_TimeOnly_TryParse1(
 	CString /* System.String */ s,
 	System_IFormatProvider_t /* System.IFormatProvider */ provider,
@@ -11877,7 +11874,7 @@ System_TimeOnly_TryParse1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_TimeOnly_TryParseExact(
 	CString /* System.String */ s,
 	CString /* System.String */ format,
@@ -11885,7 +11882,7 @@ System_TimeOnly_TryParseExact(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_TimeOnly_TryParseExact1(
 	CString /* System.String */ s,
 	CString /* System.String */ format,
@@ -11895,7 +11892,7 @@ System_TimeOnly_TryParseExact1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_TimeOnly_TryParseExact2(
 	CString /* System.String */ s,
 	System_String_Array_t /* System.String[] */ formats,
@@ -11903,7 +11900,7 @@ System_TimeOnly_TryParseExact2(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_TimeOnly_TryParseExact3(
 	CString /* System.String */ s,
 	System_String_Array_t /* System.String[] */ formats,
@@ -11960,7 +11957,7 @@ System_TimeOnly_Parse2(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_TimeOnly_TryParse2(
 	CString /* System.String */ s,
 	System_IFormatProvider_t /* System.IFormatProvider */ provider,
@@ -12284,7 +12281,7 @@ System_Globalization_Calendar_GetYear(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Globalization_Calendar_IsLeapDay(
 	System_Globalization_Calendar_t /* System.Globalization.Calendar */ self,
 	int32_t /* System.Int32 */ year,
@@ -12293,7 +12290,7 @@ System_Globalization_Calendar_IsLeapDay(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Globalization_Calendar_IsLeapDay1(
 	System_Globalization_Calendar_t /* System.Globalization.Calendar */ self,
 	int32_t /* System.Int32 */ year,
@@ -12303,7 +12300,7 @@ System_Globalization_Calendar_IsLeapDay1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Globalization_Calendar_IsLeapMonth(
 	System_Globalization_Calendar_t /* System.Globalization.Calendar */ self,
 	int32_t /* System.Int32 */ year,
@@ -12311,7 +12308,7 @@ System_Globalization_Calendar_IsLeapMonth(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Globalization_Calendar_IsLeapMonth1(
 	System_Globalization_Calendar_t /* System.Globalization.Calendar */ self,
 	int32_t /* System.Int32 */ year,
@@ -12335,14 +12332,14 @@ System_Globalization_Calendar_GetLeapMonth1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Globalization_Calendar_IsLeapYear(
 	System_Globalization_Calendar_t /* System.Globalization.Calendar */ self,
 	int32_t /* System.Int32 */ year,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Globalization_Calendar_IsLeapYear1(
 	System_Globalization_Calendar_t /* System.Globalization.Calendar */ self,
 	int32_t /* System.Int32 */ year,
@@ -12405,7 +12402,7 @@ System_Globalization_Calendar_AlgorithmType_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Globalization_Calendar_IsReadOnly_Get(
 	System_Globalization_Calendar_t /* System.Globalization.Calendar */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -12482,7 +12479,7 @@ System_Runtime_Serialization_IFormatterConverter_Convert1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Runtime_Serialization_IFormatterConverter_ToBoolean(
 	System_Runtime_Serialization_IFormatterConverter_t /* System.Runtime.Serialization.IFormatterConverter */ self,
 	System_Object_t /* System.Object */ value,
@@ -12600,7 +12597,7 @@ System_Runtime_Serialization_IFormatterConverter_Destroy(
 #pragma mark - END APIs of System.Runtime.Serialization.IFormatterConverter
 
 #pragma mark - BEGIN APIs of System.Runtime.Serialization.StreamingContext
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Runtime_Serialization_StreamingContext_Equals(
 	System_Runtime_Serialization_StreamingContext_t /* System.Runtime.Serialization.StreamingContext */ self,
 	System_Object_t /* System.Object */ obj,
@@ -12673,14 +12670,14 @@ System_RuntimeTypeHandle_GetHashCode(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_RuntimeTypeHandle_Equals(
 	System_RuntimeTypeHandle_t /* System.RuntimeTypeHandle */ self,
 	System_Object_t /* System.Object */ obj,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_RuntimeTypeHandle_Equals1(
 	System_RuntimeTypeHandle_t /* System.RuntimeTypeHandle */ self,
 	System_RuntimeTypeHandle_t /* System.RuntimeTypeHandle */ handle,
@@ -12727,14 +12724,14 @@ System_ModuleHandle_GetHashCode(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_ModuleHandle_Equals(
 	System_ModuleHandle_t /* System.ModuleHandle */ self,
 	System_Object_t /* System.Object */ obj,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_ModuleHandle_Equals1(
 	System_ModuleHandle_t /* System.ModuleHandle */ self,
 	System_ModuleHandle_t /* System.ModuleHandle */ handle,
@@ -12845,14 +12842,14 @@ System_RuntimeFieldHandle_GetHashCode(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_RuntimeFieldHandle_Equals(
 	System_RuntimeFieldHandle_t /* System.RuntimeFieldHandle */ self,
 	System_Object_t /* System.Object */ obj,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_RuntimeFieldHandle_Equals1(
 	System_RuntimeFieldHandle_t /* System.RuntimeFieldHandle */ self,
 	System_RuntimeFieldHandle_t /* System.RuntimeFieldHandle */ handle,
@@ -12902,18 +12899,18 @@ System_RuntimeFieldHandle_Destroy(
 #pragma mark - END APIs of System.Reflection.ParameterInfo[]
 
 #pragma mark - BEGIN APIs of System.Reflection.ParameterInfo
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_ParameterInfo_IsDefined(
 	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ self,
 	System_Type_t /* System.Type */ attributeType,
-	CBool /* System.Boolean */ inherit,
+	bool /* System.Boolean */ inherit,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 System_Object_Array_t /* System.Object[] */
 System_Reflection_ParameterInfo_GetCustomAttributes(
 	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ self,
-	CBool /* System.Boolean */ inherit,
+	bool /* System.Boolean */ inherit,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -12921,7 +12918,7 @@ System_Object_Array_t /* System.Object[] */
 System_Reflection_ParameterInfo_GetCustomAttributes1(
 	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ self,
 	System_Type_t /* System.Type */ attributeType,
-	CBool /* System.Boolean */ inherit,
+	bool /* System.Boolean */ inherit,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -12991,35 +12988,35 @@ System_Reflection_ParameterInfo_Position_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_ParameterInfo_IsIn_Get(
 	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_ParameterInfo_IsLcid_Get(
 	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_ParameterInfo_IsOptional_Get(
 	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_ParameterInfo_IsOut_Get(
 	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_ParameterInfo_IsRetval_Get(
 	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -13040,7 +13037,7 @@ System_Reflection_ParameterInfo_RawDefaultValue_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_ParameterInfo_HasDefaultValue_Get(
 	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -13093,7 +13090,7 @@ System_Reflection_MethodBody_MaxStackSize_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_MethodBody_InitLocals_Get(
 	System_Reflection_MethodBody_t /* System.Reflection.MethodBody */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -13179,7 +13176,7 @@ System_Reflection_FieldInfo_GetFieldFromHandle1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_FieldInfo_Equals(
 	System_Reflection_FieldInfo_t /* System.Reflection.FieldInfo */ self,
 	System_Object_t /* System.Object */ obj,
@@ -13263,105 +13260,105 @@ System_Reflection_FieldInfo_FieldType_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_FieldInfo_IsInitOnly_Get(
 	System_Reflection_FieldInfo_t /* System.Reflection.FieldInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_FieldInfo_IsLiteral_Get(
 	System_Reflection_FieldInfo_t /* System.Reflection.FieldInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_FieldInfo_IsNotSerialized_Get(
 	System_Reflection_FieldInfo_t /* System.Reflection.FieldInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_FieldInfo_IsPinvokeImpl_Get(
 	System_Reflection_FieldInfo_t /* System.Reflection.FieldInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_FieldInfo_IsSpecialName_Get(
 	System_Reflection_FieldInfo_t /* System.Reflection.FieldInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_FieldInfo_IsStatic_Get(
 	System_Reflection_FieldInfo_t /* System.Reflection.FieldInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_FieldInfo_IsAssembly_Get(
 	System_Reflection_FieldInfo_t /* System.Reflection.FieldInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_FieldInfo_IsFamily_Get(
 	System_Reflection_FieldInfo_t /* System.Reflection.FieldInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_FieldInfo_IsFamilyAndAssembly_Get(
 	System_Reflection_FieldInfo_t /* System.Reflection.FieldInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_FieldInfo_IsFamilyOrAssembly_Get(
 	System_Reflection_FieldInfo_t /* System.Reflection.FieldInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_FieldInfo_IsPrivate_Get(
 	System_Reflection_FieldInfo_t /* System.Reflection.FieldInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_FieldInfo_IsPublic_Get(
 	System_Reflection_FieldInfo_t /* System.Reflection.FieldInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_FieldInfo_IsSecurityCritical_Get(
 	System_Reflection_FieldInfo_t /* System.Reflection.FieldInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_FieldInfo_IsSecuritySafeCritical_Get(
 	System_Reflection_FieldInfo_t /* System.Reflection.FieldInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_FieldInfo_IsSecurityTransparent_Get(
 	System_Reflection_FieldInfo_t /* System.Reflection.FieldInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -13433,7 +13430,7 @@ System_Reflection_PropertyInfo_GetAccessors(
 System_Reflection_MethodInfo_Array_t /* System.Reflection.MethodInfo[] */
 System_Reflection_PropertyInfo_GetAccessors1(
 	System_Reflection_PropertyInfo_t /* System.Reflection.PropertyInfo */ self,
-	CBool /* System.Boolean */ nonPublic,
+	bool /* System.Boolean */ nonPublic,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -13446,7 +13443,7 @@ System_Reflection_PropertyInfo_GetGetMethod(
 System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
 System_Reflection_PropertyInfo_GetGetMethod1(
 	System_Reflection_PropertyInfo_t /* System.Reflection.PropertyInfo */ self,
-	CBool /* System.Boolean */ nonPublic,
+	bool /* System.Boolean */ nonPublic,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -13459,7 +13456,7 @@ System_Reflection_PropertyInfo_GetSetMethod(
 System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
 System_Reflection_PropertyInfo_GetSetMethod1(
 	System_Reflection_PropertyInfo_t /* System.Reflection.PropertyInfo */ self,
-	CBool /* System.Boolean */ nonPublic,
+	bool /* System.Boolean */ nonPublic,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -13548,7 +13545,7 @@ System_Reflection_PropertyInfo_SetValue2(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_PropertyInfo_Equals(
 	System_Reflection_PropertyInfo_t /* System.Reflection.PropertyInfo */ self,
 	System_Object_t /* System.Object */ obj,
@@ -13582,21 +13579,21 @@ System_Reflection_PropertyInfo_Attributes_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_PropertyInfo_IsSpecialName_Get(
 	System_Reflection_PropertyInfo_t /* System.Reflection.PropertyInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_PropertyInfo_CanRead_Get(
 	System_Reflection_PropertyInfo_t /* System.Reflection.PropertyInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_PropertyInfo_CanWrite_Get(
 	System_Reflection_PropertyInfo_t /* System.Reflection.PropertyInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -13673,7 +13670,7 @@ System_Reflection_MethodInfo_CreateDelegate1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_MethodInfo_Equals(
 	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
 	System_Object_t /* System.Object */ obj,
@@ -13730,7 +13727,7 @@ System_Reflection_MethodInfo_Destroy(
 System_Object_Array_t /* System.Object[] */
 System_Reflection_ICustomAttributeProvider_GetCustomAttributes(
 	System_Reflection_ICustomAttributeProvider_t /* System.Reflection.ICustomAttributeProvider */ self,
-	CBool /* System.Boolean */ inherit,
+	bool /* System.Boolean */ inherit,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -13738,15 +13735,15 @@ System_Object_Array_t /* System.Object[] */
 System_Reflection_ICustomAttributeProvider_GetCustomAttributes1(
 	System_Reflection_ICustomAttributeProvider_t /* System.Reflection.ICustomAttributeProvider */ self,
 	System_Type_t /* System.Type */ attributeType,
-	CBool /* System.Boolean */ inherit,
+	bool /* System.Boolean */ inherit,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_ICustomAttributeProvider_IsDefined(
 	System_Reflection_ICustomAttributeProvider_t /* System.Reflection.ICustomAttributeProvider */ self,
 	System_Type_t /* System.Type */ attributeType,
-	CBool /* System.Boolean */ inherit,
+	bool /* System.Boolean */ inherit,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -13766,7 +13763,7 @@ System_Reflection_ICustomAttributeProvider_Destroy(
 #pragma mark - END APIs of System.Reflection.PropertyInfo[]
 
 #pragma mark - BEGIN APIs of System.Collections.IDictionary
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Collections_IDictionary_Contains(
 	System_Collections_IDictionary_t /* System.Collections.IDictionary */ self,
 	System_Object_t /* System.Object */ key,
@@ -13814,14 +13811,14 @@ System_Collections_IDictionary_Values_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Collections_IDictionary_IsReadOnly_Get(
 	System_Collections_IDictionary_t /* System.Collections.IDictionary */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Collections_IDictionary_IsFixedSize_Get(
 	System_Collections_IDictionary_t /* System.Collections.IDictionary */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -13863,7 +13860,7 @@ System_Collections_ICollection_SyncRoot_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Collections_ICollection_IsSynchronized_Get(
 	System_Collections_ICollection_t /* System.Collections.ICollection */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -14128,18 +14125,18 @@ System_Threading_CancellationTokenRegistration_t /* System.Threading.Cancellatio
 System_Threading_CancellationToken_Register1(
 	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ self,
 	System_Action_t /* System.Action */ callback,
-	CBool /* System.Boolean */ useSynchronizationContext,
+	bool /* System.Boolean */ useSynchronizationContext,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_CancellationToken_Equals(
 	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ self,
 	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ other,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_CancellationToken_Equals1(
 	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ self,
 	System_Object_t /* System.Object */ other,
@@ -14160,7 +14157,7 @@ System_Threading_CancellationToken_ThrowIfCancellationRequested(
 
 System_Threading_CancellationToken_t /* System.Threading.CancellationToken */
 System_Threading_CancellationToken_Create(
-	CBool /* System.Boolean */ canceled,
+	bool /* System.Boolean */ canceled,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -14170,14 +14167,14 @@ System_Threading_CancellationToken_None_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_CancellationToken_IsCancellationRequested_Get(
 	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_CancellationToken_CanBeCanceled_Get(
 	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -14216,75 +14213,75 @@ System_Threading_WaitHandle_Dispose(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_WaitHandle_WaitOne(
 	System_Threading_WaitHandle_t /* System.Threading.WaitHandle */ self,
 	int32_t /* System.Int32 */ millisecondsTimeout,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_WaitHandle_WaitOne1(
 	System_Threading_WaitHandle_t /* System.Threading.WaitHandle */ self,
 	System_TimeSpan_t /* System.TimeSpan */ timeout,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_WaitHandle_WaitOne2(
 	System_Threading_WaitHandle_t /* System.Threading.WaitHandle */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_WaitHandle_WaitOne3(
 	System_Threading_WaitHandle_t /* System.Threading.WaitHandle */ self,
 	int32_t /* System.Int32 */ millisecondsTimeout,
-	CBool /* System.Boolean */ exitContext,
+	bool /* System.Boolean */ exitContext,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_WaitHandle_WaitOne4(
 	System_Threading_WaitHandle_t /* System.Threading.WaitHandle */ self,
 	System_TimeSpan_t /* System.TimeSpan */ timeout,
-	CBool /* System.Boolean */ exitContext,
+	bool /* System.Boolean */ exitContext,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_WaitHandle_WaitAll(
 	System_Threading_WaitHandle_Array_t /* System.Threading.WaitHandle[] */ waitHandles,
 	int32_t /* System.Int32 */ millisecondsTimeout,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_WaitHandle_WaitAll1(
 	System_Threading_WaitHandle_Array_t /* System.Threading.WaitHandle[] */ waitHandles,
 	System_TimeSpan_t /* System.TimeSpan */ timeout,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_WaitHandle_WaitAll2(
 	System_Threading_WaitHandle_Array_t /* System.Threading.WaitHandle[] */ waitHandles,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_WaitHandle_WaitAll3(
 	System_Threading_WaitHandle_Array_t /* System.Threading.WaitHandle[] */ waitHandles,
 	int32_t /* System.Int32 */ millisecondsTimeout,
-	CBool /* System.Boolean */ exitContext,
+	bool /* System.Boolean */ exitContext,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_WaitHandle_WaitAll4(
 	System_Threading_WaitHandle_Array_t /* System.Threading.WaitHandle[] */ waitHandles,
 	System_TimeSpan_t /* System.TimeSpan */ timeout,
-	CBool /* System.Boolean */ exitContext,
+	bool /* System.Boolean */ exitContext,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -14312,7 +14309,7 @@ int32_t /* System.Int32 */
 System_Threading_WaitHandle_WaitAny3(
 	System_Threading_WaitHandle_Array_t /* System.Threading.WaitHandle[] */ waitHandles,
 	int32_t /* System.Int32 */ millisecondsTimeout,
-	CBool /* System.Boolean */ exitContext,
+	bool /* System.Boolean */ exitContext,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -14320,32 +14317,32 @@ int32_t /* System.Int32 */
 System_Threading_WaitHandle_WaitAny4(
 	System_Threading_WaitHandle_Array_t /* System.Threading.WaitHandle[] */ waitHandles,
 	System_TimeSpan_t /* System.TimeSpan */ timeout,
-	CBool /* System.Boolean */ exitContext,
+	bool /* System.Boolean */ exitContext,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_WaitHandle_SignalAndWait(
 	System_Threading_WaitHandle_t /* System.Threading.WaitHandle */ toSignal,
 	System_Threading_WaitHandle_t /* System.Threading.WaitHandle */ toWaitOn,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_WaitHandle_SignalAndWait1(
 	System_Threading_WaitHandle_t /* System.Threading.WaitHandle */ toSignal,
 	System_Threading_WaitHandle_t /* System.Threading.WaitHandle */ toWaitOn,
 	System_TimeSpan_t /* System.TimeSpan */ timeout,
-	CBool /* System.Boolean */ exitContext,
+	bool /* System.Boolean */ exitContext,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_WaitHandle_SignalAndWait2(
 	System_Threading_WaitHandle_t /* System.Threading.WaitHandle */ toSignal,
 	System_Threading_WaitHandle_t /* System.Threading.WaitHandle */ toWaitOn,
 	int32_t /* System.Int32 */ millisecondsTimeout,
-	CBool /* System.Boolean */ exitContext,
+	bool /* System.Boolean */ exitContext,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -14432,7 +14429,7 @@ Microsoft_Win32_SafeHandles_SafeWaitHandle_Create(
 Microsoft_Win32_SafeHandles_SafeWaitHandle_t /* Microsoft.Win32.SafeHandles.SafeWaitHandle */
 Microsoft_Win32_SafeHandles_SafeWaitHandle_Create1(
 	int /* System.IntPtr */ existingHandle,
-	CBool /* System.Boolean */ ownsHandle,
+	bool /* System.Boolean */ ownsHandle,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -14449,7 +14446,7 @@ Microsoft_Win32_SafeHandles_SafeWaitHandle_Destroy(
 #pragma mark - END APIs of Microsoft.Win32.SafeHandles.SafeWaitHandle
 
 #pragma mark - BEGIN APIs of Microsoft.Win32.SafeHandles.SafeHandleZeroOrMinusOneIsInvalid
-CBool /* System.Boolean */
+bool /* System.Boolean */
 Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid_IsInvalid_Get(
 	Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid_t /* Microsoft.Win32.SafeHandles.SafeHandleZeroOrMinusOneIsInvalid */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -14499,14 +14496,14 @@ System_Runtime_InteropServices_SafeHandle_DangerousRelease(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Runtime_InteropServices_SafeHandle_IsClosed_Get(
 	System_Runtime_InteropServices_SafeHandle_t /* System.Runtime.InteropServices.SafeHandle */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Runtime_InteropServices_SafeHandle_IsInvalid_Get(
 	System_Runtime_InteropServices_SafeHandle_t /* System.Runtime.InteropServices.SafeHandle */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -14555,20 +14552,20 @@ System_Threading_CancellationTokenRegistration_DisposeAsync(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_CancellationTokenRegistration_Unregister(
 	System_Threading_CancellationTokenRegistration_t /* System.Threading.CancellationTokenRegistration */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_CancellationTokenRegistration_Equals(
 	System_Threading_CancellationTokenRegistration_t /* System.Threading.CancellationTokenRegistration */ self,
 	System_Object_t /* System.Object */ obj,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_CancellationTokenRegistration_Equals1(
 	System_Threading_CancellationTokenRegistration_t /* System.Threading.CancellationTokenRegistration */ self,
 	System_Threading_CancellationTokenRegistration_t /* System.Threading.CancellationTokenRegistration */ other,
@@ -14619,14 +14616,14 @@ System_Threading_Tasks_ValueTask_GetHashCode(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_Tasks_ValueTask_Equals(
 	System_Threading_Tasks_ValueTask_t /* System.Threading.Tasks.ValueTask */ self,
 	System_Object_t /* System.Object */ obj,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_Tasks_ValueTask_Equals1(
 	System_Threading_Tasks_ValueTask_t /* System.Threading.Tasks.ValueTask */ self,
 	System_Threading_Tasks_ValueTask_t /* System.Threading.Tasks.ValueTask */ other,
@@ -14654,7 +14651,7 @@ System_Threading_Tasks_ValueTask_GetAwaiter(
 System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_t /* System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable */
 System_Threading_Tasks_ValueTask_ConfigureAwait(
 	System_Threading_Tasks_ValueTask_t /* System.Threading.Tasks.ValueTask */ self,
-	CBool /* System.Boolean */ continueOnCapturedContext,
+	bool /* System.Boolean */ continueOnCapturedContext,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -14677,28 +14674,28 @@ System_Threading_Tasks_ValueTask_CompletedTask_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_Tasks_ValueTask_IsCompleted_Get(
 	System_Threading_Tasks_ValueTask_t /* System.Threading.Tasks.ValueTask */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_Tasks_ValueTask_IsCompletedSuccessfully_Get(
 	System_Threading_Tasks_ValueTask_t /* System.Threading.Tasks.ValueTask */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_Tasks_ValueTask_IsFaulted_Get(
 	System_Threading_Tasks_ValueTask_t /* System.Threading.Tasks.ValueTask */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_Tasks_ValueTask_IsCanceled_Get(
 	System_Threading_Tasks_ValueTask_t /* System.Threading.Tasks.ValueTask */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -14738,7 +14735,7 @@ System_Runtime_CompilerServices_ValueTaskAwaiter_UnsafeOnCompleted(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Runtime_CompilerServices_ValueTaskAwaiter_IsCompleted_Get(
 	System_Runtime_CompilerServices_ValueTaskAwaiter_t /* System.Runtime.CompilerServices.ValueTaskAwaiter */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -14797,7 +14794,7 @@ System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTask
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_IsCompleted_Get(
 	System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_t /* System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -14844,7 +14841,7 @@ System_Threading_Tasks_Sources_IValueTaskSource_Destroy(
 #pragma mark - END APIs of System.Threading.Tasks.Sources.IValueTaskSource
 
 #pragma mark - BEGIN APIs of System.IAsyncResult
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_IAsyncResult_IsCompleted_Get(
 	System_IAsyncResult_t /* System.IAsyncResult */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -14865,7 +14862,7 @@ System_IAsyncResult_AsyncState_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_IAsyncResult_CompletedSynchronously_Get(
 	System_IAsyncResult_t /* System.IAsyncResult */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -14956,7 +14953,7 @@ System_Runtime_CompilerServices_TaskAwaiter_GetResult(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Runtime_CompilerServices_TaskAwaiter_IsCompleted_Get(
 	System_Runtime_CompilerServices_TaskAwaiter_t /* System.Runtime.CompilerServices.TaskAwaiter */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -15015,7 +15012,7 @@ System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_Ge
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_IsCompleted_Get(
 	System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_t /* System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -15074,7 +15071,7 @@ System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_GetResult(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_IsCompleted_Get(
 	System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_t /* System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -15103,7 +15100,7 @@ System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_Destroy(
 Microsoft_Win32_SafeHandles_SafeFileHandle_t /* Microsoft.Win32.SafeHandles.SafeFileHandle */
 Microsoft_Win32_SafeHandles_SafeFileHandle_Create(
 	int /* System.IntPtr */ preexistingHandle,
-	CBool /* System.Boolean */ ownsHandle,
+	bool /* System.Boolean */ ownsHandle,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -15112,14 +15109,14 @@ Microsoft_Win32_SafeHandles_SafeFileHandle_Create1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 Microsoft_Win32_SafeHandles_SafeFileHandle_IsAsync_Get(
 	Microsoft_Win32_SafeHandles_SafeFileHandle_t /* Microsoft.Win32.SafeHandles.SafeFileHandle */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 Microsoft_Win32_SafeHandles_SafeFileHandle_IsInvalid_Get(
 	Microsoft_Win32_SafeHandles_SafeFileHandle_t /* Microsoft.Win32.SafeHandles.SafeFileHandle */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -15375,24 +15372,24 @@ System_Reflection_Module_GetPEKind(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_Module_IsResource(
 	System_Reflection_Module_t /* System.Reflection.Module */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_Module_IsDefined(
 	System_Reflection_Module_t /* System.Reflection.Module */ self,
 	System_Type_t /* System.Type */ attributeType,
-	CBool /* System.Boolean */ inherit,
+	bool /* System.Boolean */ inherit,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 System_Object_Array_t /* System.Object[] */
 System_Reflection_Module_GetCustomAttributes(
 	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	CBool /* System.Boolean */ inherit,
+	bool /* System.Boolean */ inherit,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -15400,7 +15397,7 @@ System_Object_Array_t /* System.Object[] */
 System_Reflection_Module_GetCustomAttributes1(
 	System_Reflection_Module_t /* System.Reflection.Module */ self,
 	System_Type_t /* System.Type */ attributeType,
-	CBool /* System.Boolean */ inherit,
+	bool /* System.Boolean */ inherit,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -15489,7 +15486,7 @@ System_Type_t /* System.Type */
 System_Reflection_Module_GetType2(
 	System_Reflection_Module_t /* System.Reflection.Module */ self,
 	CString /* System.String */ className,
-	CBool /* System.Boolean */ ignoreCase,
+	bool /* System.Boolean */ ignoreCase,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -15497,8 +15494,8 @@ System_Type_t /* System.Type */
 System_Reflection_Module_GetType3(
 	System_Reflection_Module_t /* System.Reflection.Module */ self,
 	CString /* System.String */ className,
-	CBool /* System.Boolean */ throwOnError,
-	CBool /* System.Boolean */ ignoreCase,
+	bool /* System.Boolean */ throwOnError,
+	bool /* System.Boolean */ ignoreCase,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -15596,7 +15593,7 @@ System_Reflection_Module_GetObjectData(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_Module_Equals(
 	System_Reflection_Module_t /* System.Reflection.Module */ self,
 	System_Object_t /* System.Object */ o,
@@ -15702,7 +15699,7 @@ System_Guid_Parse(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Guid_TryParse(
 	CString /* System.String */ input,
 	System_Guid_t* /* System.Guid */ result,
@@ -15716,7 +15713,7 @@ System_Guid_ParseExact(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Guid_TryParseExact(
 	CString /* System.String */ input,
 	CString /* System.String */ format,
@@ -15742,14 +15739,14 @@ System_Guid_GetHashCode(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Guid_Equals(
 	System_Guid_t /* System.Guid */ self,
 	System_Object_t /* System.Object */ o,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Guid_Equals1(
 	System_Guid_t /* System.Guid */ self,
 	System_Guid_t /* System.Guid */ g,
@@ -15792,7 +15789,7 @@ System_Guid_Parse1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Guid_TryParse1(
 	CString /* System.String */ s,
 	System_IFormatProvider_t /* System.IFormatProvider */ provider,
@@ -15960,14 +15957,14 @@ System_Text_Rune_CompareTo(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_Rune_Equals(
 	System_Text_Rune_t /* System.Text.Rune */ self,
 	System_Object_t /* System.Object */ obj,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_Rune_Equals1(
 	System_Text_Rune_t /* System.Text.Rune */ self,
 	System_Text_Rune_t /* System.Text.Rune */ other,
@@ -15987,13 +15984,13 @@ System_Text_Rune_GetRuneAt(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_Rune_IsValid(
 	int32_t /* System.Int32 */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_Rune_IsValid1(
 	uint32_t /* System.UInt32 */ value,
 	System_Exception_t* /* System.Exception */ outException
@@ -16005,14 +16002,14 @@ System_Text_Rune_ToString(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_Rune_TryCreate(
 	uint8_t /* System.Char */ ch,
 	System_Text_Rune_t* /* System.Text.Rune */ result,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_Rune_TryCreate1(
 	uint8_t /* System.Char */ highSurrogate,
 	uint8_t /* System.Char */ lowSurrogate,
@@ -16020,21 +16017,21 @@ System_Text_Rune_TryCreate1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_Rune_TryCreate2(
 	int32_t /* System.Int32 */ value,
 	System_Text_Rune_t* /* System.Text.Rune */ result,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_Rune_TryCreate3(
 	uint32_t /* System.UInt32 */ value,
 	System_Text_Rune_t* /* System.Text.Rune */ result,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_Rune_TryGetRuneAt(
 	CString /* System.String */ input,
 	int32_t /* System.Int32 */ index,
@@ -16054,67 +16051,67 @@ System_Text_Rune_GetUnicodeCategory(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_Rune_IsControl(
 	System_Text_Rune_t /* System.Text.Rune */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_Rune_IsDigit(
 	System_Text_Rune_t /* System.Text.Rune */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_Rune_IsLetter(
 	System_Text_Rune_t /* System.Text.Rune */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_Rune_IsLetterOrDigit(
 	System_Text_Rune_t /* System.Text.Rune */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_Rune_IsLower(
 	System_Text_Rune_t /* System.Text.Rune */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_Rune_IsNumber(
 	System_Text_Rune_t /* System.Text.Rune */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_Rune_IsPunctuation(
 	System_Text_Rune_t /* System.Text.Rune */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_Rune_IsSeparator(
 	System_Text_Rune_t /* System.Text.Rune */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_Rune_IsSymbol(
 	System_Text_Rune_t /* System.Text.Rune */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_Rune_IsUpper(
 	System_Text_Rune_t /* System.Text.Rune */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_Rune_IsWhiteSpace(
 	System_Text_Rune_t /* System.Text.Rune */ value,
 	System_Exception_t* /* System.Exception */ outException
@@ -16171,14 +16168,14 @@ System_Text_Rune_Create3(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_Rune_IsAscii_Get(
 	System_Text_Rune_t /* System.Text.Rune */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_Rune_IsBmp_Get(
 	System_Text_Rune_t /* System.Text.Rune */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -16240,7 +16237,7 @@ System_Globalization_SortKey_Compare(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Globalization_SortKey_Equals(
 	System_Globalization_SortKey_t /* System.Globalization.SortKey */ self,
 	System_Object_t /* System.Object */ value,
@@ -16286,14 +16283,14 @@ System_Globalization_SortKey_Destroy(
 #pragma mark - END APIs of System.Globalization.SortKey
 
 #pragma mark - BEGIN APIs of System.Globalization.SortVersion
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Globalization_SortVersion_Equals(
 	System_Globalization_SortVersion_t /* System.Globalization.SortVersion */ self,
 	System_Object_t /* System.Object */ obj,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Globalization_SortVersion_Equals1(
 	System_Globalization_SortVersion_t /* System.Globalization.SortVersion */ self,
 	System_Globalization_SortVersion_t /* System.Globalization.SortVersion */ other,
@@ -16380,7 +16377,7 @@ System_Globalization_TextInfo_ToUpper1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Globalization_TextInfo_Equals(
 	System_Globalization_TextInfo_t /* System.Globalization.TextInfo */ self,
 	System_Object_t /* System.Object */ obj,
@@ -16448,7 +16445,7 @@ System_Globalization_TextInfo_CultureName_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Globalization_TextInfo_IsReadOnly_Get(
 	System_Globalization_TextInfo_t /* System.Globalization.TextInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -16483,7 +16480,7 @@ System_Globalization_TextInfo_ListSeparator_Set(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Globalization_TextInfo_IsRightToLeft_Get(
 	System_Globalization_TextInfo_t /* System.Globalization.TextInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -16595,7 +16592,7 @@ System_Globalization_NumberFormatInfo_CurrencyDecimalSeparator_Set(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Globalization_NumberFormatInfo_IsReadOnly_Get(
 	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -17993,7 +17990,7 @@ System_Globalization_DateTimeFormatInfo_MonthNames_Set(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Globalization_DateTimeFormatInfo_IsReadOnly_Get(
 	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -18089,7 +18086,7 @@ System_CharEnumerator_Clone(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_CharEnumerator_MoveNext(
 	System_CharEnumerator_t /* System.CharEnumerator */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -18133,7 +18130,7 @@ System_Text_StringRuneEnumerator_GetEnumerator(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_StringRuneEnumerator_MoveNext(
 	System_Text_StringRuneEnumerator_t /* System.Text.StringRuneEnumerator */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -18165,7 +18162,7 @@ System_Text_CompositeFormat_Parse(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_CompositeFormat_TryParse(
 	CString /* System.String */ format,
 	System_Text_CompositeFormat_t* /* System.Text.CompositeFormat */ compositeFormat,
@@ -18391,13 +18388,13 @@ System_Text_Encoding_GetChars2(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_Encoding_IsAlwaysNormalized(
 	System_Text_Encoding_t /* System.Text.Encoding */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_Encoding_IsAlwaysNormalized1(
 	System_Text_Encoding_t /* System.Text.Encoding */ self,
 	System_Text_NormalizationForm /* System.Text.NormalizationForm */ form,
@@ -18446,7 +18443,7 @@ System_Text_Encoding_GetString1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_Encoding_Equals(
 	System_Text_Encoding_t /* System.Text.Encoding */ self,
 	System_Object_t /* System.Object */ value,
@@ -18464,7 +18461,7 @@ System_Text_Encoding_CreateTranscodingStream(
 	System_IO_Stream_t /* System.IO.Stream */ innerStream,
 	System_Text_Encoding_t /* System.Text.Encoding */ innerStreamEncoding,
 	System_Text_Encoding_t /* System.Text.Encoding */ outerStreamEncoding,
-	CBool /* System.Boolean */ leaveOpen,
+	bool /* System.Boolean */ leaveOpen,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -18509,35 +18506,35 @@ System_Text_Encoding_WindowsCodePage_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_Encoding_IsBrowserDisplay_Get(
 	System_Text_Encoding_t /* System.Text.Encoding */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_Encoding_IsBrowserSave_Get(
 	System_Text_Encoding_t /* System.Text.Encoding */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_Encoding_IsMailNewsDisplay_Get(
 	System_Text_Encoding_t /* System.Text.Encoding */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_Encoding_IsMailNewsSave_Get(
 	System_Text_Encoding_t /* System.Text.Encoding */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_Encoding_IsSingleByte_Get(
 	System_Text_Encoding_t /* System.Text.Encoding */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -18600,7 +18597,7 @@ System_Text_Encoding_DecoderFallback_Set(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_Encoding_IsReadOnly_Get(
 	System_Text_Encoding_t /* System.Text.Encoding */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -18752,7 +18749,7 @@ System_Text_EncoderFallback_Destroy(
 #pragma mark - END APIs of System.Text.EncoderFallback
 
 #pragma mark - BEGIN APIs of System.Text.EncoderFallbackBuffer
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_EncoderFallbackBuffer_Fallback(
 	System_Text_EncoderFallbackBuffer_t /* System.Text.EncoderFallbackBuffer */ self,
 	uint8_t /* System.Char */ charUnknown,
@@ -18760,7 +18757,7 @@ System_Text_EncoderFallbackBuffer_Fallback(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_EncoderFallbackBuffer_Fallback1(
 	System_Text_EncoderFallbackBuffer_t /* System.Text.EncoderFallbackBuffer */ self,
 	uint8_t /* System.Char */ charUnknownHigh,
@@ -18775,7 +18772,7 @@ System_Text_EncoderFallbackBuffer_GetNextChar(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_EncoderFallbackBuffer_MovePrevious(
 	System_Text_EncoderFallbackBuffer_t /* System.Text.EncoderFallbackBuffer */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -18845,7 +18842,7 @@ System_Text_DecoderFallback_Destroy(
 #pragma mark - END APIs of System.Text.DecoderFallback
 
 #pragma mark - BEGIN APIs of System.Text.DecoderFallbackBuffer
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_DecoderFallbackBuffer_Fallback(
 	System_Text_DecoderFallbackBuffer_t /* System.Text.DecoderFallbackBuffer */ self,
 	System_Byte_Array_t /* System.Byte[] */ bytesUnknown,
@@ -18859,7 +18856,7 @@ System_Text_DecoderFallbackBuffer_GetNextChar(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_DecoderFallbackBuffer_MovePrevious(
 	System_Text_DecoderFallbackBuffer_t /* System.Text.DecoderFallbackBuffer */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -18900,7 +18897,7 @@ System_Text_EncodingInfo_GetEncoding(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Text_EncodingInfo_Equals(
 	System_Text_EncodingInfo_t /* System.Text.EncodingInfo */ self,
 	System_Object_t /* System.Object */ value,
@@ -18977,7 +18974,7 @@ System_Text_Decoder_GetCharCount1(
 	System_Byte_Array_t /* System.Byte[] */ bytes,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ count,
-	CBool /* System.Boolean */ flush,
+	bool /* System.Boolean */ flush,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -19000,7 +18997,7 @@ System_Text_Decoder_GetChars1(
 	int32_t /* System.Int32 */ byteCount,
 	System_Char_Array_t /* System.Char[] */ chars,
 	int32_t /* System.Int32 */ charIndex,
-	CBool /* System.Boolean */ flush,
+	bool /* System.Boolean */ flush,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -19013,10 +19010,10 @@ System_Text_Decoder_Convert(
 	System_Char_Array_t /* System.Char[] */ chars,
 	int32_t /* System.Int32 */ charIndex,
 	int32_t /* System.Int32 */ charCount,
-	CBool /* System.Boolean */ flush,
+	bool /* System.Boolean */ flush,
 	int32_t* /* System.Int32 */ bytesUsed,
 	int32_t* /* System.Int32 */ charsUsed,
-	CBool* /* System.Boolean */ completed,
+	bool* /* System.Boolean */ completed,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -19080,7 +19077,7 @@ System_Text_Encoder_GetByteCount(
 	System_Char_Array_t /* System.Char[] */ chars,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ count,
-	CBool /* System.Boolean */ flush,
+	bool /* System.Boolean */ flush,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -19092,7 +19089,7 @@ System_Text_Encoder_GetBytes(
 	int32_t /* System.Int32 */ charCount,
 	System_Byte_Array_t /* System.Byte[] */ bytes,
 	int32_t /* System.Int32 */ byteIndex,
-	CBool /* System.Boolean */ flush,
+	bool /* System.Boolean */ flush,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -19105,10 +19102,10 @@ System_Text_Encoder_Convert(
 	System_Byte_Array_t /* System.Byte[] */ bytes,
 	int32_t /* System.Int32 */ byteIndex,
 	int32_t /* System.Int32 */ byteCount,
-	CBool /* System.Boolean */ flush,
+	bool /* System.Boolean */ flush,
 	int32_t* /* System.Int32 */ charsUsed,
 	int32_t* /* System.Int32 */ bytesUsed,
-	CBool* /* System.Boolean */ completed,
+	bool* /* System.Boolean */ completed,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -19282,7 +19279,7 @@ System_Attribute_Array_t /* System.Attribute[] */
 System_Attribute_GetCustomAttributes1(
 	System_Reflection_MemberInfo_t /* System.Reflection.MemberInfo */ element,
 	System_Type_t /* System.Type */ attributeType,
-	CBool /* System.Boolean */ inherit,
+	bool /* System.Boolean */ inherit,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -19295,22 +19292,22 @@ System_Attribute_GetCustomAttributes2(
 System_Attribute_Array_t /* System.Attribute[] */
 System_Attribute_GetCustomAttributes3(
 	System_Reflection_MemberInfo_t /* System.Reflection.MemberInfo */ element,
-	CBool /* System.Boolean */ inherit,
+	bool /* System.Boolean */ inherit,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Attribute_IsDefined(
 	System_Reflection_MemberInfo_t /* System.Reflection.MemberInfo */ element,
 	System_Type_t /* System.Type */ attributeType,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Attribute_IsDefined1(
 	System_Reflection_MemberInfo_t /* System.Reflection.MemberInfo */ element,
 	System_Type_t /* System.Type */ attributeType,
-	CBool /* System.Boolean */ inherit,
+	bool /* System.Boolean */ inherit,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -19325,7 +19322,7 @@ System_Attribute_t /* System.Attribute */
 System_Attribute_GetCustomAttribute2(
 	System_Reflection_MemberInfo_t /* System.Reflection.MemberInfo */ element,
 	System_Type_t /* System.Type */ attributeType,
-	CBool /* System.Boolean */ inherit,
+	bool /* System.Boolean */ inherit,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -19346,29 +19343,29 @@ System_Attribute_Array_t /* System.Attribute[] */
 System_Attribute_GetCustomAttributes6(
 	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ element,
 	System_Type_t /* System.Type */ attributeType,
-	CBool /* System.Boolean */ inherit,
+	bool /* System.Boolean */ inherit,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 System_Attribute_Array_t /* System.Attribute[] */
 System_Attribute_GetCustomAttributes7(
 	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ element,
-	CBool /* System.Boolean */ inherit,
+	bool /* System.Boolean */ inherit,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Attribute_IsDefined2(
 	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ element,
 	System_Type_t /* System.Type */ attributeType,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Attribute_IsDefined3(
 	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ element,
 	System_Type_t /* System.Type */ attributeType,
-	CBool /* System.Boolean */ inherit,
+	bool /* System.Boolean */ inherit,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -19383,7 +19380,7 @@ System_Attribute_t /* System.Attribute */
 System_Attribute_GetCustomAttribute4(
 	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ element,
 	System_Type_t /* System.Type */ attributeType,
-	CBool /* System.Boolean */ inherit,
+	bool /* System.Boolean */ inherit,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -19403,7 +19400,7 @@ System_Attribute_GetCustomAttributes9(
 System_Attribute_Array_t /* System.Attribute[] */
 System_Attribute_GetCustomAttributes10(
 	System_Reflection_Module_t /* System.Reflection.Module */ element,
-	CBool /* System.Boolean */ inherit,
+	bool /* System.Boolean */ inherit,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -19411,22 +19408,22 @@ System_Attribute_Array_t /* System.Attribute[] */
 System_Attribute_GetCustomAttributes11(
 	System_Reflection_Module_t /* System.Reflection.Module */ element,
 	System_Type_t /* System.Type */ attributeType,
-	CBool /* System.Boolean */ inherit,
+	bool /* System.Boolean */ inherit,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Attribute_IsDefined4(
 	System_Reflection_Module_t /* System.Reflection.Module */ element,
 	System_Type_t /* System.Type */ attributeType,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Attribute_IsDefined5(
 	System_Reflection_Module_t /* System.Reflection.Module */ element,
 	System_Type_t /* System.Type */ attributeType,
-	CBool /* System.Boolean */ inherit,
+	bool /* System.Boolean */ inherit,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -19441,7 +19438,7 @@ System_Attribute_t /* System.Attribute */
 System_Attribute_GetCustomAttribute6(
 	System_Reflection_Module_t /* System.Reflection.Module */ element,
 	System_Type_t /* System.Type */ attributeType,
-	CBool /* System.Boolean */ inherit,
+	bool /* System.Boolean */ inherit,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -19456,7 +19453,7 @@ System_Attribute_Array_t /* System.Attribute[] */
 System_Attribute_GetCustomAttributes13(
 	System_Reflection_Assembly_t /* System.Reflection.Assembly */ element,
 	System_Type_t /* System.Type */ attributeType,
-	CBool /* System.Boolean */ inherit,
+	bool /* System.Boolean */ inherit,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -19469,22 +19466,22 @@ System_Attribute_GetCustomAttributes14(
 System_Attribute_Array_t /* System.Attribute[] */
 System_Attribute_GetCustomAttributes15(
 	System_Reflection_Assembly_t /* System.Reflection.Assembly */ element,
-	CBool /* System.Boolean */ inherit,
+	bool /* System.Boolean */ inherit,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Attribute_IsDefined6(
 	System_Reflection_Assembly_t /* System.Reflection.Assembly */ element,
 	System_Type_t /* System.Type */ attributeType,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Attribute_IsDefined7(
 	System_Reflection_Assembly_t /* System.Reflection.Assembly */ element,
 	System_Type_t /* System.Type */ attributeType,
-	CBool /* System.Boolean */ inherit,
+	bool /* System.Boolean */ inherit,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -19499,11 +19496,11 @@ System_Attribute_t /* System.Attribute */
 System_Attribute_GetCustomAttribute8(
 	System_Reflection_Assembly_t /* System.Reflection.Assembly */ element,
 	System_Type_t /* System.Type */ attributeType,
-	CBool /* System.Boolean */ inherit,
+	bool /* System.Boolean */ inherit,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Attribute_Equals(
 	System_Attribute_t /* System.Attribute */ self,
 	System_Object_t /* System.Object */ obj,
@@ -19516,14 +19513,14 @@ System_Attribute_GetHashCode(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Attribute_Match(
 	System_Attribute_t /* System.Attribute */ self,
 	System_Object_t /* System.Object */ obj,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Attribute_IsDefaultAttribute(
 	System_Attribute_t /* System.Attribute */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -19569,7 +19566,7 @@ System_Reflection_ConstructorInfo_Invoke1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_ConstructorInfo_Equals(
 	System_Reflection_ConstructorInfo_t /* System.Reflection.ConstructorInfo */ self,
 	System_Object_t /* System.Object */ obj,
@@ -19626,7 +19623,7 @@ System_Reflection_EventInfo_GetOtherMethods(
 System_Reflection_MethodInfo_Array_t /* System.Reflection.MethodInfo[] */
 System_Reflection_EventInfo_GetOtherMethods1(
 	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
-	CBool /* System.Boolean */ nonPublic,
+	bool /* System.Boolean */ nonPublic,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -19651,21 +19648,21 @@ System_Reflection_EventInfo_GetRaiseMethod(
 System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
 System_Reflection_EventInfo_GetAddMethod1(
 	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
-	CBool /* System.Boolean */ nonPublic,
+	bool /* System.Boolean */ nonPublic,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
 System_Reflection_EventInfo_GetRemoveMethod1(
 	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
-	CBool /* System.Boolean */ nonPublic,
+	bool /* System.Boolean */ nonPublic,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
 System_Reflection_EventInfo_GetRaiseMethod1(
 	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
-	CBool /* System.Boolean */ nonPublic,
+	bool /* System.Boolean */ nonPublic,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -19685,7 +19682,7 @@ System_Reflection_EventInfo_RemoveEventHandler(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_EventInfo_Equals(
 	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
 	System_Object_t /* System.Object */ obj,
@@ -19712,7 +19709,7 @@ System_Reflection_EventInfo_Attributes_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_EventInfo_IsSpecialName_Get(
 	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -19740,7 +19737,7 @@ System_Reflection_EventInfo_RaiseMethod_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Reflection_EventInfo_IsMulticast_Get(
 	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -19890,7 +19887,7 @@ System_Convert_GetTypeCode(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Convert_IsDBNull(
 	System_Object_t /* System.Object */ value,
 	System_Exception_t* /* System.Exception */ outException
@@ -19926,111 +19923,111 @@ System_Convert_ChangeType3(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Convert_ToBoolean(
 	System_Object_t /* System.Object */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Convert_ToBoolean1(
 	System_Object_t /* System.Object */ value,
 	System_IFormatProvider_t /* System.IFormatProvider */ provider,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Convert_ToBoolean2(
-	CBool /* System.Boolean */ value,
+	bool /* System.Boolean */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Convert_ToBoolean3(
 	int8_t /* System.SByte */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Convert_ToBoolean4(
 	uint8_t /* System.Char */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Convert_ToBoolean5(
 	uint8_t /* System.Byte */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Convert_ToBoolean6(
 	int16_t /* System.Int16 */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Convert_ToBoolean7(
 	uint16_t /* System.UInt16 */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Convert_ToBoolean8(
 	int32_t /* System.Int32 */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Convert_ToBoolean9(
 	uint32_t /* System.UInt32 */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Convert_ToBoolean10(
 	int64_t /* System.Int64 */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Convert_ToBoolean11(
 	uint64_t /* System.UInt64 */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Convert_ToBoolean12(
 	CString /* System.String */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Convert_ToBoolean13(
 	CString /* System.String */ value,
 	System_IFormatProvider_t /* System.IFormatProvider */ provider,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Convert_ToBoolean14(
 	float /* System.Single */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Convert_ToBoolean15(
 	double /* System.Double */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Convert_ToBoolean16(
 	System_Decimal_t /* System.Decimal */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Convert_ToBoolean17(
 	System_DateTime_t /* System.DateTime */ value,
 	System_Exception_t* /* System.Exception */ outException
@@ -20051,7 +20048,7 @@ System_Convert_ToChar1(
 
 uint8_t /* System.Char */
 System_Convert_ToChar2(
-	CBool /* System.Boolean */ value,
+	bool /* System.Boolean */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -20161,7 +20158,7 @@ System_Convert_ToSByte1(
 
 int8_t /* System.SByte */
 System_Convert_ToSByte2(
-	CBool /* System.Boolean */ value,
+	bool /* System.Boolean */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -20271,7 +20268,7 @@ System_Convert_ToByte1(
 
 uint8_t /* System.Byte */
 System_Convert_ToByte2(
-	CBool /* System.Boolean */ value,
+	bool /* System.Boolean */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -20381,7 +20378,7 @@ System_Convert_ToInt161(
 
 int16_t /* System.Int16 */
 System_Convert_ToInt162(
-	CBool /* System.Boolean */ value,
+	bool /* System.Boolean */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -20491,7 +20488,7 @@ System_Convert_ToUInt161(
 
 uint16_t /* System.UInt16 */
 System_Convert_ToUInt162(
-	CBool /* System.Boolean */ value,
+	bool /* System.Boolean */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -20601,7 +20598,7 @@ System_Convert_ToInt321(
 
 int32_t /* System.Int32 */
 System_Convert_ToInt322(
-	CBool /* System.Boolean */ value,
+	bool /* System.Boolean */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -20711,7 +20708,7 @@ System_Convert_ToUInt321(
 
 uint32_t /* System.UInt32 */
 System_Convert_ToUInt322(
-	CBool /* System.Boolean */ value,
+	bool /* System.Boolean */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -20821,7 +20818,7 @@ System_Convert_ToInt641(
 
 int64_t /* System.Int64 */
 System_Convert_ToInt642(
-	CBool /* System.Boolean */ value,
+	bool /* System.Boolean */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -20931,7 +20928,7 @@ System_Convert_ToUInt641(
 
 uint64_t /* System.UInt64 */
 System_Convert_ToUInt642(
-	CBool /* System.Boolean */ value,
+	bool /* System.Boolean */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -21126,7 +21123,7 @@ System_Convert_ToSingle15(
 
 float /* System.Single */
 System_Convert_ToSingle16(
-	CBool /* System.Boolean */ value,
+	bool /* System.Boolean */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -21236,7 +21233,7 @@ System_Convert_ToDouble15(
 
 double /* System.Double */
 System_Convert_ToDouble16(
-	CBool /* System.Boolean */ value,
+	bool /* System.Boolean */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -21346,7 +21343,7 @@ System_Convert_ToDecimal15(
 
 System_Decimal_t /* System.Decimal */
 System_Convert_ToDecimal16(
-	CBool /* System.Boolean */ value,
+	bool /* System.Boolean */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -21438,7 +21435,7 @@ System_Convert_ToDateTime12(
 
 System_DateTime_t /* System.DateTime */
 System_Convert_ToDateTime13(
-	CBool /* System.Boolean */ value,
+	bool /* System.Boolean */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -21481,13 +21478,13 @@ System_Convert_ToString1(
 
 CString /* System.String */
 System_Convert_ToString2(
-	CBool /* System.Boolean */ value,
+	bool /* System.Boolean */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 CString /* System.String */
 System_Convert_ToString3(
-	CBool /* System.Boolean */ value,
+	bool /* System.Boolean */ value,
 	System_IFormatProvider_t /* System.IFormatProvider */ provider,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -22659,7 +22656,7 @@ void /* System.Void */
 System_GC_Collect3(
 	int32_t /* System.Int32 */ generation,
 	System_GCCollectionMode /* System.GCCollectionMode */ mode,
-	CBool /* System.Boolean */ blocking,
+	bool /* System.Boolean */ blocking,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -22667,8 +22664,8 @@ void /* System.Void */
 System_GC_Collect4(
 	int32_t /* System.Int32 */ generation,
 	System_GCCollectionMode /* System.GCCollectionMode */ mode,
-	CBool /* System.Boolean */ blocking,
-	CBool /* System.Boolean */ compacting,
+	bool /* System.Boolean */ blocking,
+	bool /* System.Boolean */ compacting,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -22709,7 +22706,7 @@ System_GC_ReRegisterForFinalize(
 
 int64_t /* System.Int64 */
 System_GC_GetTotalMemory(
-	CBool /* System.Boolean */ forceFullCollection,
+	bool /* System.Boolean */ forceFullCollection,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -22720,7 +22717,7 @@ System_GC_GetAllocatedBytesForCurrentThread(
 
 int64_t /* System.Int64 */
 System_GC_GetTotalAllocatedBytes(
-	CBool /* System.Boolean */ precise,
+	bool /* System.Boolean */ precise,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -22758,31 +22755,31 @@ System_GC_WaitForFullGCComplete1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_GC_TryStartNoGCRegion(
 	int64_t /* System.Int64 */ totalSize,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_GC_TryStartNoGCRegion1(
 	int64_t /* System.Int64 */ totalSize,
 	int64_t /* System.Int64 */ lohSize,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_GC_TryStartNoGCRegion2(
 	int64_t /* System.Int64 */ totalSize,
-	CBool /* System.Boolean */ disallowFullBlockingGC,
+	bool /* System.Boolean */ disallowFullBlockingGC,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_GC_TryStartNoGCRegion3(
 	int64_t /* System.Int64 */ totalSize,
 	int64_t /* System.Int64 */ lohSize,
-	CBool /* System.Boolean */ disallowFullBlockingGC,
+	bool /* System.Boolean */ disallowFullBlockingGC,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -22876,14 +22873,14 @@ System_GCMemoryInfo_Generation_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_GCMemoryInfo_Compacted_Get(
 	System_GCMemoryInfo_t /* System.GCMemoryInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_GCMemoryInfo_Concurrent_Get(
 	System_GCMemoryInfo_t /* System.GCMemoryInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -22955,18 +22952,18 @@ System_WeakReference_Create(
 System_WeakReference_t /* System.WeakReference */
 System_WeakReference_Create1(
 	System_Object_t /* System.Object */ target,
-	CBool /* System.Boolean */ trackResurrection,
+	bool /* System.Boolean */ trackResurrection,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_WeakReference_TrackResurrection_Get(
 	System_WeakReference_t /* System.WeakReference */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_WeakReference_IsAlive_Get(
 	System_WeakReference_t /* System.WeakReference */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -23026,7 +23023,7 @@ System_Threading_Thread_SpinWait(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_Thread_Yield(
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -23049,7 +23046,7 @@ System_Threading_Thread_Interrupt(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_Thread_Join(
 	System_Threading_Thread_t /* System.Threading.Thread */ self,
 	int32_t /* System.Int32 */ millisecondsTimeout,
@@ -23181,7 +23178,7 @@ System_Threading_Thread_SetApartmentState(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_Thread_TrySetApartmentState(
 	System_Threading_Thread_t /* System.Threading.Thread */ self,
 	System_Threading_ApartmentState /* System.Threading.ApartmentState */ state,
@@ -23223,7 +23220,7 @@ System_Threading_Thread_Join1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_Thread_Join2(
 	System_Threading_Thread_t /* System.Threading.Thread */ self,
 	System_TimeSpan_t /* System.TimeSpan */ timeout,
@@ -23279,14 +23276,14 @@ System_Threading_Thread_ManagedThreadId_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_Thread_IsAlive_Get(
 	System_Threading_Thread_t /* System.Threading.Thread */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_Thread_IsBackground_Get(
 	System_Threading_Thread_t /* System.Threading.Thread */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -23295,12 +23292,12 @@ System_Threading_Thread_IsBackground_Get(
 void /* System.Void */
 System_Threading_Thread_IsBackground_Set(
 	System_Threading_Thread_t /* System.Threading.Thread */ self,
-	CBool /* System.Boolean */ value,
+	bool /* System.Boolean */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_Thread_IsBackground_Get(
 	System_Threading_Thread_t /* System.Threading.Thread */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -23309,12 +23306,12 @@ System_Threading_Thread_IsBackground_Get(
 void /* System.Void */
 System_Threading_Thread_IsBackground_Set(
 	System_Threading_Thread_t /* System.Threading.Thread */ self,
-	CBool /* System.Boolean */ value,
+	bool /* System.Boolean */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_Thread_IsThreadPoolThread_Get(
 	System_Threading_Thread_t /* System.Threading.Thread */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -23518,7 +23515,7 @@ System_Threading_Thread_Destroy(
 #pragma mark - END APIs of System.Threading.Thread
 
 #pragma mark - BEGIN APIs of System.Security.Principal.IPrincipal
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Security_Principal_IPrincipal_IsInRole(
 	System_Security_Principal_IPrincipal_t /* System.Security.Principal.IPrincipal */ self,
 	CString /* System.String */ role,
@@ -23559,7 +23556,7 @@ System_Security_Principal_IIdentity_AuthenticationType_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Security_Principal_IIdentity_IsAuthenticated_Get(
 	System_Security_Principal_IIdentity_t /* System.Security.Principal.IIdentity */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -23602,7 +23599,7 @@ System_Threading_ExecutionContext_RestoreFlow(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_ExecutionContext_IsFlowSuppressed(
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -23658,14 +23655,14 @@ System_Threading_AsyncFlowControl_Dispose(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_AsyncFlowControl_Equals(
 	System_Threading_AsyncFlowControl_t /* System.Threading.AsyncFlowControl */ self,
 	System_Object_t /* System.Object */ obj,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Threading_AsyncFlowControl_Equals1(
 	System_Threading_AsyncFlowControl_t /* System.Threading.AsyncFlowControl */ self,
 	System_Threading_AsyncFlowControl_t /* System.Threading.AsyncFlowControl */ obj,
@@ -23832,13 +23829,13 @@ System_AppDomain_SetData(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_AppDomain_IsDefaultAppDomain(
 	System_AppDomain_t /* System.AppDomain */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_AppDomain_IsFinalizingForUnload(
 	System_AppDomain_t /* System.AppDomain */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -23968,7 +23965,7 @@ System_AppDomain_CreateInstance1(
 	System_AppDomain_t /* System.AppDomain */ self,
 	CString /* System.String */ assemblyName,
 	CString /* System.String */ typeName,
-	CBool /* System.Boolean */ ignoreCase,
+	bool /* System.Boolean */ ignoreCase,
 	System_Reflection_BindingFlags /* System.Reflection.BindingFlags */ bindingAttr,
 	System_Reflection_Binder_t /* System.Reflection.Binder */ binder,
 	System_Object_Array_t /* System.Object[] */ args,
@@ -23999,7 +23996,7 @@ System_AppDomain_CreateInstanceAndUnwrap1(
 	System_AppDomain_t /* System.AppDomain */ self,
 	CString /* System.String */ assemblyName,
 	CString /* System.String */ typeName,
-	CBool /* System.Boolean */ ignoreCase,
+	bool /* System.Boolean */ ignoreCase,
 	System_Reflection_BindingFlags /* System.Reflection.BindingFlags */ bindingAttr,
 	System_Reflection_Binder_t /* System.Reflection.Binder */ binder,
 	System_Object_Array_t /* System.Object[] */ args,
@@ -24030,7 +24027,7 @@ System_AppDomain_CreateInstanceFrom1(
 	System_AppDomain_t /* System.AppDomain */ self,
 	CString /* System.String */ assemblyFile,
 	CString /* System.String */ typeName,
-	CBool /* System.Boolean */ ignoreCase,
+	bool /* System.Boolean */ ignoreCase,
 	System_Reflection_BindingFlags /* System.Reflection.BindingFlags */ bindingAttr,
 	System_Reflection_Binder_t /* System.Reflection.Binder */ binder,
 	System_Object_Array_t /* System.Object[] */ args,
@@ -24061,7 +24058,7 @@ System_AppDomain_CreateInstanceFromAndUnwrap1(
 	System_AppDomain_t /* System.AppDomain */ self,
 	CString /* System.String */ assemblyFile,
 	CString /* System.String */ typeName,
-	CBool /* System.Boolean */ ignoreCase,
+	bool /* System.Boolean */ ignoreCase,
 	System_Reflection_BindingFlags /* System.Reflection.BindingFlags */ bindingAttr,
 	System_Reflection_Binder_t /* System.Reflection.Binder */ binder,
 	System_Object_Array_t /* System.Object[] */ args,
@@ -24134,40 +24131,40 @@ System_AppDomain_Id_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_AppDomain_IsFullyTrusted_Get(
 	System_AppDomain_t /* System.AppDomain */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_AppDomain_IsHomogenous_Get(
 	System_AppDomain_t /* System.AppDomain */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_AppDomain_MonitoringIsEnabled_Get(
 	System_Exception_t* /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_AppDomain_MonitoringIsEnabled_Set(
-	CBool /* System.Boolean */ value,
+	bool /* System.Boolean */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_AppDomain_MonitoringIsEnabled_Get(
 	System_Exception_t* /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_AppDomain_MonitoringIsEnabled_Set(
-	CBool /* System.Boolean */ value,
+	bool /* System.Boolean */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -24192,7 +24189,7 @@ System_AppDomain_MonitoringTotalAllocatedMemorySize_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_AppDomain_ShadowCopyFiles_Get(
 	System_AppDomain_t /* System.AppDomain */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -24467,7 +24464,7 @@ System_Security_PermissionSet_Assert(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Security_PermissionSet_ContainsNonCodeAccessPermissions(
 	System_Security_PermissionSet_t /* System.Security.PermissionSet */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -24507,7 +24504,7 @@ System_Security_PermissionSet_Deny(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Security_PermissionSet_Equals(
 	System_Security_PermissionSet_t /* System.Security.PermissionSet */ self,
 	System_Object_t /* System.Object */ o,
@@ -24547,20 +24544,20 @@ System_Security_PermissionSet_Intersect(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Security_PermissionSet_IsEmpty(
 	System_Security_PermissionSet_t /* System.Security.PermissionSet */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Security_PermissionSet_IsSubsetOf(
 	System_Security_PermissionSet_t /* System.Security.PermissionSet */ self,
 	System_Security_PermissionSet_t /* System.Security.PermissionSet */ target,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Security_PermissionSet_IsUnrestricted(
 	System_Security_PermissionSet_t /* System.Security.PermissionSet */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -24629,14 +24626,14 @@ System_Security_PermissionSet_Count_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Security_PermissionSet_IsReadOnly_Get(
 	System_Security_PermissionSet_t /* System.Security.PermissionSet */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Security_PermissionSet_IsSynchronized_Get(
 	System_Security_PermissionSet_t /* System.Security.PermissionSet */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -24682,7 +24679,7 @@ System_Security_IPermission_Intersect(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Security_IPermission_IsSubsetOf(
 	System_Security_IPermission_t /* System.Security.IPermission */ self,
 	System_Security_IPermission_t /* System.Security.IPermission */ target,
@@ -24724,7 +24721,7 @@ System_Security_SecurityElement_AddChild(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Security_SecurityElement_Equal(
 	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self,
 	System_Security_SecurityElement_t /* System.Security.SecurityElement */ other,
@@ -24737,25 +24734,25 @@ System_Security_SecurityElement_Copy(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Security_SecurityElement_IsValidTag(
 	CString /* System.String */ tag,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Security_SecurityElement_IsValidText(
 	CString /* System.String */ text,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Security_SecurityElement_IsValidAttributeName(
 	CString /* System.String */ name,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Security_SecurityElement_IsValidAttributeValue(
 	CString /* System.String */ value,
 	System_Exception_t* /* System.Exception */ outException
@@ -24958,21 +24955,21 @@ System_Collections_Hashtable_Clone(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Collections_Hashtable_Contains(
 	System_Collections_Hashtable_t /* System.Collections.Hashtable */ self,
 	System_Object_t /* System.Object */ key,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Collections_Hashtable_ContainsKey(
 	System_Collections_Hashtable_t /* System.Collections.Hashtable */ self,
 	System_Object_t /* System.Object */ key,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Collections_Hashtable_ContainsValue(
 	System_Collections_Hashtable_t /* System.Collections.Hashtable */ self,
 	System_Object_t /* System.Object */ value,
@@ -25129,21 +25126,21 @@ System_Collections_Hashtable_Create14(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Collections_Hashtable_IsReadOnly_Get(
 	System_Collections_Hashtable_t /* System.Collections.Hashtable */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Collections_Hashtable_IsFixedSize_Get(
 	System_Collections_Hashtable_t /* System.Collections.Hashtable */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Collections_Hashtable_IsSynchronized_Get(
 	System_Collections_Hashtable_t /* System.Collections.Hashtable */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -25191,7 +25188,7 @@ System_Collections_Hashtable_Destroy(
 #pragma mark - END APIs of System.Collections.Hashtable
 
 #pragma mark - BEGIN APIs of System.Collections.IEqualityComparer
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Collections_IEqualityComparer_Equals(
 	System_Collections_IEqualityComparer_t /* System.Collections.IEqualityComparer */ self,
 	System_Object_t /* System.Object */ x,
@@ -25296,7 +25293,7 @@ System_Collections_ArrayList_Clone(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Collections_ArrayList_Contains(
 	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
 	System_Object_t /* System.Object */ item,
@@ -25594,21 +25591,21 @@ System_Collections_ArrayList_Count_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Collections_ArrayList_IsFixedSize_Get(
 	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Collections_ArrayList_IsReadOnly_Get(
 	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Collections_ArrayList_IsSynchronized_Get(
 	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -25642,7 +25639,7 @@ System_Collections_IList_Add(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Collections_IList_Contains(
 	System_Collections_IList_t /* System.Collections.IList */ self,
 	System_Object_t /* System.Object */ value,
@@ -25684,14 +25681,14 @@ System_Collections_IList_RemoveAt(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Collections_IList_IsReadOnly_Get(
 	System_Collections_IList_t /* System.Collections.IList */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_Collections_IList_IsFixedSize_Get(
 	System_Collections_IList_t /* System.Collections.IList */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -25714,7 +25711,7 @@ System_Collections_IList_Destroy(
 System_UnhandledExceptionEventArgs_t /* System.UnhandledExceptionEventArgs */
 System_UnhandledExceptionEventArgs_Create(
 	System_Object_t /* System.Object */ exception,
-	CBool /* System.Boolean */ isTerminating,
+	bool /* System.Boolean */ isTerminating,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -25725,7 +25722,7 @@ System_UnhandledExceptionEventArgs_ExceptionObject_Get(
 );
 
 
-CBool /* System.Boolean */
+bool /* System.Boolean */
 System_UnhandledExceptionEventArgs_IsTerminating_Get(
 	System_UnhandledExceptionEventArgs_t /* System.UnhandledExceptionEventArgs */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -26653,7 +26650,7 @@ System_Reflection_TypeFilter_Create(
 	System_Reflection_TypeFilter_CDestructorFunction_t destructorFunction
 );
 
-CBool
+bool
 System_Reflection_TypeFilter_Invoke(
 	System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */ self, System_Type_t /* System.Type */ m,
 	System_Object_t /* System.Object */ filterCriteria
@@ -26689,7 +26686,7 @@ System_Reflection_MemberFilter_Create(
 	System_Reflection_MemberFilter_CDestructorFunction_t destructorFunction
 );
 
-CBool
+bool
 System_Reflection_MemberFilter_Invoke(
 	System_Reflection_MemberFilter_t /* System.Reflection.MemberFilter */ self, System_Reflection_MemberInfo_t /* System.Reflection.MemberInfo */ m,
 	System_Object_t /* System.Object */ filterCriteria

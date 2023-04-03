@@ -59,7 +59,7 @@ final class SystemArrayTests: XCTestCase {
         
         let equals = System_Object_Equals(now,
                                           retrievedNow,
-                                          &exception) == .yes
+                                          &exception)
         
         XCTAssertNil(exception)
         XCTAssertTrue(equals)

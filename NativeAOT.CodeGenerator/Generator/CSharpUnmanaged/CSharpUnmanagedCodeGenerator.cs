@@ -78,12 +78,6 @@ namespace {Settings.NamespaceForGeneratedCode};
     private string GetSharedCode()
     {
         return """
-internal enum CBool: byte
-{
-    True = 1,
-    False = 0
-}
-
 #if NETSTANDARD2_0 ||  NETCOREAPP2_0 ||  NETCOREAPP2_1 ||  NETCOREAPP2_2 || NET45 || NET451 || NET452 || NET46 || NET461 || NET462 || NET47 || NET471 || NET472 || NET48
 public static class ConditionalWeakTable_Extensions
 {
@@ -233,18 +227,18 @@ internal static unsafe class InteropUtils
     #endregion Strings
 
     #region Bools
-    internal static CBool ToCBool(this bool @bool)
+    internal static byte ToCBool(this bool @bool)
     {
         if (@bool) {
-            return CBool.True;
+            return 1;
         } else {
-            return CBool.False;
+            return 0;
         }
     }
 
-    public static bool ToBool(this CBool cBool)
+    public static bool ToBool(this byte cBool)
     {
-        return cBool == CBool.True;
+        return cBool == 1;
     }
     #endregion Bools
 }

@@ -25,7 +25,7 @@ final class StringTests: XCTestCase {
             return
         }
         
-        XCTAssertEqual(isNullOrEmpty, .yes)
+        XCTAssertTrue(isNullOrEmpty)
         
         let isNullOrWhiteSpace = System_String_IsNullOrWhiteSpace(emptyStringC,
                                                                   &exception)
@@ -36,11 +36,11 @@ final class StringTests: XCTestCase {
             return
         }
         
-        XCTAssertEqual(isNullOrWhiteSpace, .yes)
+        XCTAssertTrue(isNullOrWhiteSpace)
         
         let nonEmptyString = "Hello World!"
         
-        var isNonEmptyStringNullOrEmpty = CBool.yes
+        var isNonEmptyStringNullOrEmpty = true
         
         nonEmptyString.withCString { nonEmptyStringC in
             isNonEmptyStringNullOrEmpty = System_String_IsNullOrEmpty(nonEmptyStringC,
@@ -53,6 +53,6 @@ final class StringTests: XCTestCase {
             return
         }
         
-        XCTAssertEqual(isNonEmptyStringNullOrEmpty, .no)
+        XCTAssertFalse(isNonEmptyStringNullOrEmpty)
     }
 }

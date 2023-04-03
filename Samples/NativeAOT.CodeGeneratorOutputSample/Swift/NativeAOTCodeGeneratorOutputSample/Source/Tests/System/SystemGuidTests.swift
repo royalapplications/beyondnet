@@ -92,7 +92,7 @@ final class SystemGuidTests: XCTestCase {
             return
         }
         
-        XCTAssertEqual(equals, .yes)
+        XCTAssertTrue(equals)
         
         guard let emptyGuid = System_Guid_Empty_Get() else {
             XCTFail("System.Guid.Empty getter should return an instance")
@@ -123,7 +123,7 @@ final class SystemGuidTests: XCTestCase {
 		let uuid = UUID()
 		let uuidString = uuid.uuidString
 		
-		var success: CBool = .no
+		var success = false
 		var guid: System_Guid_t?
 		
 		uuidString.withCString { uuidStringC in
@@ -134,7 +134,7 @@ final class SystemGuidTests: XCTestCase {
 		
 		guard let guid,
 			  exception == nil,
-			  success == .yes else {
+			  success else {
 			XCTFail("System.Guid.TryParse should not throw and return an instance as out parameter")
 			
 			return
@@ -168,7 +168,7 @@ final class SystemGuidTests: XCTestCase {
 		
 		let uuidString = "nonsense"
 		
-		var success: CBool = .no
+		var success = false
 		var guid: System_Guid_t?
 		
 		uuidString.withCString { uuidStringC in
@@ -178,7 +178,7 @@ final class SystemGuidTests: XCTestCase {
 		}
 		
 		guard let guid,
-			  success == .no,
+			  !success,
 			  exception == nil else {
 			XCTFail("System.Guid.TryParse should not throw, the return value should be false and the returned instance as out parameter should be an empty System.Guid")
 			
@@ -192,6 +192,6 @@ final class SystemGuidTests: XCTestCase {
 										 &exception)
 		
 		XCTAssertNil(exception)
-		XCTAssertTrue(equal == .yes)
+		XCTAssertTrue(equal)
 	}
 }

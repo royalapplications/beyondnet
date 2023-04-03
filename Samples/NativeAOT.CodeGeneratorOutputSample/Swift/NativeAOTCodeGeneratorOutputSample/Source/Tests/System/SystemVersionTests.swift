@@ -45,7 +45,7 @@ final class SystemVersionTests: XCTestCase {
         
         guard System_Object_Equals(systemVersionType,
                                    versionFromComponentsType,
-                                   &exception) == .yes,
+                                   &exception),
               exception == nil else {
             XCTFail("System.Object.Equals should not throw and return true")
             

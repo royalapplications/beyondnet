@@ -266,7 +266,7 @@ final class PersonTests: XCTestCase {
             return
         }
         
-        XCTAssertEqual(CBool.yes, firstChildEqualsSon)
+        XCTAssertTrue(firstChildEqualsSon)
         
         NativeAOT_CodeGeneratorInputSample_Person_RemoveChild(mother,
                                                               son,
@@ -395,7 +395,7 @@ final class PersonTests: XCTestCase {
             return
         }
         
-        XCTAssertEqual(CBool.yes, firstChildEqualsSon)
+        XCTAssertTrue(firstChildEqualsSon)
     }
     
     func testPersonExtensionMethods() {

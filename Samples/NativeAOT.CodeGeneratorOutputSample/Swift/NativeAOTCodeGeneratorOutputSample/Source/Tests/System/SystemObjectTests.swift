@@ -34,7 +34,7 @@ final class SystemObjectTests: XCTestCase {
         
         guard System_Object_Equals(systemObjectType,
                                    object1Type,
-                                   &exception) == .yes,
+                                   &exception),
               exception == nil else {
             XCTFail("System.Object.Equals should not throw and return true")
             
@@ -50,18 +50,18 @@ final class SystemObjectTests: XCTestCase {
         
         defer { System_Object_Destroy(object2) }
         
-        guard System_Object_Equals(object1,
-                                   object2,
-                                   &exception) == .no,
+		guard !System_Object_Equals(object1,
+									object2,
+									&exception),
               exception == nil else {
             XCTFail("System.Object.Equals should not throw and return false")
             
             return
         }
         
-        guard System_Object_ReferenceEquals(object1,
-                                            object2,
-                                            &exception) == .no,
+		guard !System_Object_ReferenceEquals(object1,
+											 object2,
+											 &exception),
               exception == nil else {
             XCTFail("System.Object.ReferenceEquals should not throw and return false")
             

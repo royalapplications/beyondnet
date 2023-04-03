@@ -12,12 +12,6 @@ namespace NativeGeneratedCode;
 
 // </Header>
 // <Shared Code>
-internal enum CBool: byte
-{
-    True = 1,
-    False = 0
-}
-
 #if NETSTANDARD2_0 ||  NETCOREAPP2_0 ||  NETCOREAPP2_1 ||  NETCOREAPP2_2 || NET45 || NET451 || NET452 || NET46 || NET461 || NET462 || NET47 || NET471 || NET472 || NET48
 public static class ConditionalWeakTable_Extensions
 {
@@ -167,18 +161,18 @@ internal static unsafe class InteropUtils
     #endregion Strings
 
     #region Bools
-    internal static CBool ToCBool(this bool @bool)
+    internal static byte ToCBool(this bool @bool)
     {
         if (@bool) {
-            return CBool.True;
+            return 1;
         } else {
-            return CBool.False;
+            return 0;
         }
     }
 
-    public static bool ToBool(this CBool cBool)
+    public static bool ToBool(this byte cBool)
     {
-        return cBool == CBool.True;
+        return cBool == 1;
     }
     #endregion Bools
 }
@@ -254,7 +248,7 @@ internal unsafe class System_Object
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Object_Equals")]
-	internal static CBool /* System.Boolean */ System_Object_Equals(void* /* System.Object */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Object_Equals(void* /* System.Object */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -266,7 +260,7 @@ internal unsafe class System_Object
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(objConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -280,20 +274,20 @@ internal unsafe class System_Object
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Object_Equals1")]
-	internal static CBool /* System.Boolean */ System_Object_Equals1(void* /* System.Object */ objA, void* /* System.Object */ objB, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Object_Equals1(void* /* System.Object */ objA, void* /* System.Object */ objB, void** /* System.Exception */ __outException)
 	{
 		System.Object objAConverted = InteropUtils.GetInstance<System.Object>(objA);
 		System.Object objBConverted = InteropUtils.GetInstance<System.Object>(objB);
 	
 	    try {
 			System.Boolean __returnValue = System.Object.Equals(objAConverted, objBConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -307,20 +301,20 @@ internal unsafe class System_Object
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Object_ReferenceEquals")]
-	internal static CBool /* System.Boolean */ System_Object_ReferenceEquals(void* /* System.Object */ objA, void* /* System.Object */ objB, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Object_ReferenceEquals(void* /* System.Object */ objA, void* /* System.Object */ objB, void** /* System.Exception */ __outException)
 	{
 		System.Object objAConverted = InteropUtils.GetInstance<System.Object>(objA);
 		System.Object objBConverted = InteropUtils.GetInstance<System.Object>(objB);
 	
 	    try {
 			System.Boolean __returnValue = System.Object.ReferenceEquals(objAConverted, objBConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -334,7 +328,7 @@ internal unsafe class System_Object
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -418,7 +412,7 @@ internal unsafe class System_Object
 internal unsafe class System_Type
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_GetType")]
-	internal static void* /* System.Type */ System_Type_GetType(byte* /* System.String */ typeName, CBool /* System.Boolean */ throwOnError, CBool /* System.Boolean */ ignoreCase, void** /* System.Exception */ __outException)
+	internal static void* /* System.Type */ System_Type_GetType(byte* /* System.String */ typeName, byte /* System.Boolean */ throwOnError, byte /* System.Boolean */ ignoreCase, void** /* System.Exception */ __outException)
 	{
 		System.String typeNameConverted = InteropUtils.ToDotNetString(typeName);
 		System.Boolean throwOnErrorConverted = throwOnError.ToBool();
@@ -446,7 +440,7 @@ internal unsafe class System_Type
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_GetType1")]
-	internal static void* /* System.Type */ System_Type_GetType1(byte* /* System.String */ typeName, CBool /* System.Boolean */ throwOnError, void** /* System.Exception */ __outException)
+	internal static void* /* System.Type */ System_Type_GetType1(byte* /* System.String */ typeName, byte /* System.Boolean */ throwOnError, void** /* System.Exception */ __outException)
 	{
 		System.String typeNameConverted = InteropUtils.ToDotNetString(typeName);
 		System.Boolean throwOnErrorConverted = throwOnError.ToBool();
@@ -772,7 +766,7 @@ internal unsafe class System_Type
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsAssignableTo")]
-	internal static CBool /* System.Boolean */ System_Type_IsAssignableTo(void* /* System.Type */ __self, void* /* System.Type */ targetType, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsAssignableTo(void* /* System.Type */ __self, void* /* System.Type */ targetType, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -784,7 +778,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsAssignableTo(targetTypeConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -798,7 +792,7 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -2523,7 +2517,7 @@ internal unsafe class System_Type
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_GetTypeFromCLSID1")]
-	internal static void* /* System.Type */ System_Type_GetTypeFromCLSID1(void* /* System.Guid */ clsid, CBool /* System.Boolean */ throwOnError, void** /* System.Exception */ __outException)
+	internal static void* /* System.Type */ System_Type_GetTypeFromCLSID1(void* /* System.Guid */ clsid, byte /* System.Boolean */ throwOnError, void** /* System.Exception */ __outException)
 	{
 		System.Guid clsidConverted = InteropUtils.GetInstance<System.Guid>(clsid);
 		System.Boolean throwOnErrorConverted = throwOnError.ToBool();
@@ -2577,7 +2571,7 @@ internal unsafe class System_Type
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_GetTypeFromCLSID3")]
-	internal static void* /* System.Type */ System_Type_GetTypeFromCLSID3(void* /* System.Guid */ clsid, byte* /* System.String */ server, CBool /* System.Boolean */ throwOnError, void** /* System.Exception */ __outException)
+	internal static void* /* System.Type */ System_Type_GetTypeFromCLSID3(void* /* System.Guid */ clsid, byte* /* System.String */ server, byte /* System.Boolean */ throwOnError, void** /* System.Exception */ __outException)
 	{
 		System.Guid clsidConverted = InteropUtils.GetInstance<System.Guid>(clsid);
 		System.String serverConverted = InteropUtils.ToDotNetString(server);
@@ -2631,7 +2625,7 @@ internal unsafe class System_Type
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_GetTypeFromProgID1")]
-	internal static void* /* System.Type */ System_Type_GetTypeFromProgID1(byte* /* System.String */ progID, CBool /* System.Boolean */ throwOnError, void** /* System.Exception */ __outException)
+	internal static void* /* System.Type */ System_Type_GetTypeFromProgID1(byte* /* System.String */ progID, byte /* System.Boolean */ throwOnError, void** /* System.Exception */ __outException)
 	{
 		System.String progIDConverted = InteropUtils.ToDotNetString(progID);
 		System.Boolean throwOnErrorConverted = throwOnError.ToBool();
@@ -2685,7 +2679,7 @@ internal unsafe class System_Type
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_GetTypeFromProgID3")]
-	internal static void* /* System.Type */ System_Type_GetTypeFromProgID3(byte* /* System.String */ progID, byte* /* System.String */ server, CBool /* System.Boolean */ throwOnError, void** /* System.Exception */ __outException)
+	internal static void* /* System.Type */ System_Type_GetTypeFromProgID3(byte* /* System.String */ progID, byte* /* System.String */ server, byte /* System.Boolean */ throwOnError, void** /* System.Exception */ __outException)
 	{
 		System.String progIDConverted = InteropUtils.ToDotNetString(progID);
 		System.String serverConverted = InteropUtils.ToDotNetString(server);
@@ -2854,7 +2848,7 @@ internal unsafe class System_Type
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_GetInterface1")]
-	internal static void* /* System.Type */ System_Type_GetInterface1(void* /* System.Type */ __self, byte* /* System.String */ name, CBool /* System.Boolean */ ignoreCase, void** /* System.Exception */ __outException)
+	internal static void* /* System.Type */ System_Type_GetInterface1(void* /* System.Type */ __self, byte* /* System.String */ name, byte /* System.Boolean */ ignoreCase, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -2950,7 +2944,7 @@ internal unsafe class System_Type
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsInstanceOfType")]
-	internal static CBool /* System.Boolean */ System_Type_IsInstanceOfType(void* /* System.Type */ __self, void* /* System.Object */ o, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsInstanceOfType(void* /* System.Type */ __self, void* /* System.Object */ o, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -2962,7 +2956,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsInstanceOfType(oConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -2976,13 +2970,13 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsEquivalentTo")]
-	internal static CBool /* System.Boolean */ System_Type_IsEquivalentTo(void* /* System.Type */ __self, void* /* System.Type */ other, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsEquivalentTo(void* /* System.Type */ __self, void* /* System.Type */ other, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -2994,7 +2988,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsEquivalentTo(otherConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -3008,7 +3002,7 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -3346,7 +3340,7 @@ internal unsafe class System_Type
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_Equals")]
-	internal static CBool /* System.Boolean */ System_Type_Equals(void* /* System.Type */ __self, void* /* System.Object */ o, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_Equals(void* /* System.Type */ __self, void* /* System.Object */ o, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -3358,7 +3352,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(oConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -3372,7 +3366,7 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -3408,7 +3402,7 @@ internal unsafe class System_Type
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_Equals1")]
-	internal static CBool /* System.Boolean */ System_Type_Equals1(void* /* System.Type */ __self, void* /* System.Type */ o, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_Equals1(void* /* System.Type */ __self, void* /* System.Type */ o, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -3420,7 +3414,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(oConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -3434,13 +3428,13 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_ReflectionOnlyGetType")]
-	internal static void* /* System.Type */ System_Type_ReflectionOnlyGetType(byte* /* System.String */ typeName, CBool /* System.Boolean */ throwIfNotFound, CBool /* System.Boolean */ ignoreCase, void** /* System.Exception */ __outException)
+	internal static void* /* System.Type */ System_Type_ReflectionOnlyGetType(byte* /* System.String */ typeName, byte /* System.Boolean */ throwIfNotFound, byte /* System.Boolean */ ignoreCase, void** /* System.Exception */ __outException)
 	{
 		System.String typeNameConverted = InteropUtils.ToDotNetString(typeName);
 		System.Boolean throwIfNotFoundConverted = throwIfNotFound.ToBool();
@@ -3468,7 +3462,7 @@ internal unsafe class System_Type
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsEnumDefined")]
-	internal static CBool /* System.Boolean */ System_Type_IsEnumDefined(void* /* System.Type */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsEnumDefined(void* /* System.Type */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -3480,7 +3474,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsEnumDefined(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -3494,7 +3488,7 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -3629,7 +3623,7 @@ internal unsafe class System_Type
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsSubclassOf")]
-	internal static CBool /* System.Boolean */ System_Type_IsSubclassOf(void* /* System.Type */ __self, void* /* System.Type */ c, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsSubclassOf(void* /* System.Type */ __self, void* /* System.Type */ c, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -3641,7 +3635,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsSubclassOf(cConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -3655,13 +3649,13 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsAssignableFrom")]
-	internal static CBool /* System.Boolean */ System_Type_IsAssignableFrom(void* /* System.Type */ __self, void* /* System.Type */ c, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsAssignableFrom(void* /* System.Type */ __self, void* /* System.Type */ c, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -3673,7 +3667,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsAssignableFrom(cConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -3687,13 +3681,13 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsInterface_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsInterface_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsInterface_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -3704,7 +3698,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsInterface;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -3718,7 +3712,7 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -3916,7 +3910,7 @@ internal unsafe class System_Type
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsNested_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsNested_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsNested_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -3927,7 +3921,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsNested;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -3941,7 +3935,7 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -4076,7 +4070,7 @@ internal unsafe class System_Type
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsTypeDefinition_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsTypeDefinition_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsTypeDefinition_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -4087,7 +4081,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsTypeDefinition;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -4101,14 +4095,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsArray_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsArray_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsArray_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -4119,7 +4113,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsArray;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -4133,14 +4127,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsByRef_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsByRef_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsByRef_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -4151,7 +4145,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsByRef;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -4165,14 +4159,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsPointer_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsPointer_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsPointer_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -4183,7 +4177,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsPointer;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -4197,14 +4191,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsConstructedGenericType_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsConstructedGenericType_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsConstructedGenericType_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -4215,7 +4209,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsConstructedGenericType;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -4229,14 +4223,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsGenericParameter_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsGenericParameter_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsGenericParameter_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -4247,7 +4241,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsGenericParameter;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -4261,14 +4255,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsGenericTypeParameter_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsGenericTypeParameter_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsGenericTypeParameter_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -4279,7 +4273,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsGenericTypeParameter;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -4293,14 +4287,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsGenericMethodParameter_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsGenericMethodParameter_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsGenericMethodParameter_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -4311,7 +4305,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsGenericMethodParameter;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -4325,14 +4319,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsGenericType_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsGenericType_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsGenericType_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -4343,7 +4337,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsGenericType;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -4357,14 +4351,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsGenericTypeDefinition_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsGenericTypeDefinition_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsGenericTypeDefinition_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -4375,7 +4369,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsGenericTypeDefinition;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -4389,14 +4383,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsSZArray_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsSZArray_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsSZArray_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -4407,7 +4401,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsSZArray;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -4421,14 +4415,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsVariableBoundArray_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsVariableBoundArray_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsVariableBoundArray_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -4439,7 +4433,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsVariableBoundArray;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -4453,14 +4447,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsByRefLike_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsByRefLike_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsByRefLike_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -4471,7 +4465,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsByRefLike;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -4485,14 +4479,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsFunctionPointer_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsFunctionPointer_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsFunctionPointer_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -4503,7 +4497,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsFunctionPointer;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -4517,14 +4511,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsUnmanagedFunctionPointer_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsUnmanagedFunctionPointer_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsUnmanagedFunctionPointer_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -4535,7 +4529,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsUnmanagedFunctionPointer;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -4549,14 +4543,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_HasElementType_Get")]
-	internal static CBool /* System.Boolean */ System_Type_HasElementType_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_HasElementType_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -4567,7 +4561,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.HasElementType;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -4581,7 +4575,7 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -4713,7 +4707,7 @@ internal unsafe class System_Type
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsAbstract_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsAbstract_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsAbstract_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -4724,7 +4718,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsAbstract;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -4738,14 +4732,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsImport_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsImport_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsImport_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -4756,7 +4750,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsImport;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -4770,14 +4764,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsSealed_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsSealed_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsSealed_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -4788,7 +4782,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsSealed;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -4802,14 +4796,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsSpecialName_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsSpecialName_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsSpecialName_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -4820,7 +4814,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsSpecialName;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -4834,14 +4828,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsClass_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsClass_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsClass_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -4852,7 +4846,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsClass;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -4866,14 +4860,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsNestedAssembly_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsNestedAssembly_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsNestedAssembly_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -4884,7 +4878,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsNestedAssembly;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -4898,14 +4892,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsNestedFamANDAssem_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsNestedFamANDAssem_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsNestedFamANDAssem_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -4916,7 +4910,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsNestedFamANDAssem;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -4930,14 +4924,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsNestedFamily_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsNestedFamily_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsNestedFamily_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -4948,7 +4942,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsNestedFamily;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -4962,14 +4956,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsNestedFamORAssem_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsNestedFamORAssem_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsNestedFamORAssem_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -4980,7 +4974,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsNestedFamORAssem;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -4994,14 +4988,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsNestedPrivate_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsNestedPrivate_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsNestedPrivate_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -5012,7 +5006,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsNestedPrivate;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -5026,14 +5020,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsNestedPublic_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsNestedPublic_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsNestedPublic_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -5044,7 +5038,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsNestedPublic;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -5058,14 +5052,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsNotPublic_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsNotPublic_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsNotPublic_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -5076,7 +5070,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsNotPublic;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -5090,14 +5084,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsPublic_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsPublic_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsPublic_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -5108,7 +5102,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsPublic;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -5122,14 +5116,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsAutoLayout_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsAutoLayout_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsAutoLayout_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -5140,7 +5134,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsAutoLayout;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -5154,14 +5148,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsExplicitLayout_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsExplicitLayout_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsExplicitLayout_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -5172,7 +5166,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsExplicitLayout;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -5186,14 +5180,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsLayoutSequential_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsLayoutSequential_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsLayoutSequential_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -5204,7 +5198,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsLayoutSequential;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -5218,14 +5212,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsAnsiClass_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsAnsiClass_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsAnsiClass_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -5236,7 +5230,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsAnsiClass;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -5250,14 +5244,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsAutoClass_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsAutoClass_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsAutoClass_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -5268,7 +5262,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsAutoClass;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -5282,14 +5276,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsUnicodeClass_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsUnicodeClass_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsUnicodeClass_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -5300,7 +5294,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsUnicodeClass;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -5314,14 +5308,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsCOMObject_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsCOMObject_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsCOMObject_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -5332,7 +5326,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsCOMObject;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -5346,14 +5340,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsContextful_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsContextful_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsContextful_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -5364,7 +5358,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsContextful;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -5378,14 +5372,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsEnum_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsEnum_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsEnum_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -5396,7 +5390,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsEnum;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -5410,14 +5404,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsMarshalByRef_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsMarshalByRef_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsMarshalByRef_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -5428,7 +5422,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsMarshalByRef;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -5442,14 +5436,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsPrimitive_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsPrimitive_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsPrimitive_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -5460,7 +5454,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsPrimitive;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -5474,14 +5468,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsValueType_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsValueType_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsValueType_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -5492,7 +5486,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsValueType;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -5506,14 +5500,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsSignatureType_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsSignatureType_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsSignatureType_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -5524,7 +5518,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsSignatureType;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -5538,14 +5532,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsSecurityCritical_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsSecurityCritical_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsSecurityCritical_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -5556,7 +5550,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsSecurityCritical;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -5570,14 +5564,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsSecuritySafeCritical_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsSecuritySafeCritical_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsSecuritySafeCritical_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -5588,7 +5582,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsSecuritySafeCritical;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -5602,14 +5596,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsSecurityTransparent_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsSecurityTransparent_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsSecurityTransparent_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -5620,7 +5614,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsSecurityTransparent;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -5634,7 +5628,7 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -5827,7 +5821,7 @@ internal unsafe class System_Type
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsSerializable_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsSerializable_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsSerializable_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -5838,7 +5832,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsSerializable;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -5852,14 +5846,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_ContainsGenericParameters_Get")]
-	internal static CBool /* System.Boolean */ System_Type_ContainsGenericParameters_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_ContainsGenericParameters_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -5870,7 +5864,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.ContainsGenericParameters;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -5884,14 +5878,14 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_IsVisible_Get")]
-	internal static CBool /* System.Boolean */ System_Type_IsVisible_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Type_IsVisible_Get(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -5902,7 +5896,7 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsVisible;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -5916,7 +5910,7 @@ internal unsafe class System_Type
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -6011,7 +6005,7 @@ internal unsafe class System_Type
 internal unsafe class System_Reflection_MemberInfo
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MemberInfo_HasSameMetadataDefinitionAs")]
-	internal static CBool /* System.Boolean */ System_Reflection_MemberInfo_HasSameMetadataDefinitionAs(void* /* System.Reflection.MemberInfo */ __self, void* /* System.Reflection.MemberInfo */ other, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_MemberInfo_HasSameMetadataDefinitionAs(void* /* System.Reflection.MemberInfo */ __self, void* /* System.Reflection.MemberInfo */ other, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -6023,7 +6017,7 @@ internal unsafe class System_Reflection_MemberInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.HasSameMetadataDefinitionAs(otherConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -6037,13 +6031,13 @@ internal unsafe class System_Reflection_MemberInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MemberInfo_IsDefined")]
-	internal static CBool /* System.Boolean */ System_Reflection_MemberInfo_IsDefined(void* /* System.Reflection.MemberInfo */ __self, void* /* System.Type */ attributeType, CBool /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_MemberInfo_IsDefined(void* /* System.Reflection.MemberInfo */ __self, void* /* System.Type */ attributeType, byte /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -6056,7 +6050,7 @@ internal unsafe class System_Reflection_MemberInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsDefined(attributeTypeConverted, inheritConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -6070,13 +6064,13 @@ internal unsafe class System_Reflection_MemberInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MemberInfo_GetCustomAttributes")]
-	internal static void* /* System.Object[] */ System_Reflection_MemberInfo_GetCustomAttributes(void* /* System.Reflection.MemberInfo */ __self, CBool /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
+	internal static void* /* System.Object[] */ System_Reflection_MemberInfo_GetCustomAttributes(void* /* System.Reflection.MemberInfo */ __self, byte /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -6108,7 +6102,7 @@ internal unsafe class System_Reflection_MemberInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MemberInfo_GetCustomAttributes1")]
-	internal static void* /* System.Object[] */ System_Reflection_MemberInfo_GetCustomAttributes1(void* /* System.Reflection.MemberInfo */ __self, void* /* System.Type */ attributeType, CBool /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
+	internal static void* /* System.Object[] */ System_Reflection_MemberInfo_GetCustomAttributes1(void* /* System.Reflection.MemberInfo */ __self, void* /* System.Type */ attributeType, byte /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -6141,7 +6135,7 @@ internal unsafe class System_Reflection_MemberInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MemberInfo_Equals")]
-	internal static CBool /* System.Boolean */ System_Reflection_MemberInfo_Equals(void* /* System.Reflection.MemberInfo */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_MemberInfo_Equals(void* /* System.Reflection.MemberInfo */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -6153,7 +6147,7 @@ internal unsafe class System_Reflection_MemberInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(objConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -6167,7 +6161,7 @@ internal unsafe class System_Reflection_MemberInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -6362,7 +6356,7 @@ internal unsafe class System_Reflection_MemberInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MemberInfo_IsCollectible_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_MemberInfo_IsCollectible_Get(void* /* System.Reflection.MemberInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_MemberInfo_IsCollectible_Get(void* /* System.Reflection.MemberInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -6373,7 +6367,7 @@ internal unsafe class System_Reflection_MemberInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsCollectible;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -6387,7 +6381,7 @@ internal unsafe class System_Reflection_MemberInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -6594,7 +6588,7 @@ internal unsafe class System_Enum
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Enum_HasFlag")]
-	internal static CBool /* System.Boolean */ System_Enum_HasFlag(void* /* System.Enum */ __self, void* /* System.Enum */ flag, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Enum_HasFlag(void* /* System.Enum */ __self, void* /* System.Enum */ flag, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -6606,7 +6600,7 @@ internal unsafe class System_Enum
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.HasFlag(flagConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -6620,20 +6614,20 @@ internal unsafe class System_Enum
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Enum_IsDefined")]
-	internal static CBool /* System.Boolean */ System_Enum_IsDefined(void* /* System.Type */ enumType, void* /* System.Object */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Enum_IsDefined(void* /* System.Type */ enumType, void* /* System.Object */ value, void** /* System.Exception */ __outException)
 	{
 		System.Type enumTypeConverted = InteropUtils.GetInstance<System.Type>(enumType);
 		System.Object valueConverted = InteropUtils.GetInstance<System.Object>(value);
 	
 	    try {
 			System.Boolean __returnValue = System.Enum.IsDefined(enumTypeConverted, valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -6647,7 +6641,7 @@ internal unsafe class System_Enum
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -6680,7 +6674,7 @@ internal unsafe class System_Enum
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Enum_Parse1")]
-	internal static void* /* System.Object */ System_Enum_Parse1(void* /* System.Type */ enumType, byte* /* System.String */ value, CBool /* System.Boolean */ ignoreCase, void** /* System.Exception */ __outException)
+	internal static void* /* System.Object */ System_Enum_Parse1(void* /* System.Type */ enumType, byte* /* System.String */ value, byte /* System.Boolean */ ignoreCase, void** /* System.Exception */ __outException)
 	{
 		System.Type enumTypeConverted = InteropUtils.GetInstance<System.Type>(enumType);
 		System.String valueConverted = InteropUtils.ToDotNetString(value);
@@ -6708,7 +6702,7 @@ internal unsafe class System_Enum
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Enum_TryParse")]
-	internal static CBool /* System.Boolean */ System_Enum_TryParse(void* /* System.Type */ enumType, byte* /* System.String */ value, void** /* System.Object */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Enum_TryParse(void* /* System.Type */ enumType, byte* /* System.String */ value, void** /* System.Object */ result, void** /* System.Exception */ __outException)
 	{
 		System.Type enumTypeConverted = InteropUtils.GetInstance<System.Type>(enumType);
 		System.String valueConverted = InteropUtils.ToDotNetString(value);
@@ -6716,7 +6710,7 @@ internal unsafe class System_Enum
 	
 	    try {
 			System.Boolean __returnValue = System.Enum.TryParse(enumTypeConverted, valueConverted, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -6734,13 +6728,13 @@ internal unsafe class System_Enum
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Enum_TryParse1")]
-	internal static CBool /* System.Boolean */ System_Enum_TryParse1(void* /* System.Type */ enumType, byte* /* System.String */ value, CBool /* System.Boolean */ ignoreCase, void** /* System.Object */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Enum_TryParse1(void* /* System.Type */ enumType, byte* /* System.String */ value, byte /* System.Boolean */ ignoreCase, void** /* System.Object */ result, void** /* System.Exception */ __outException)
 	{
 		System.Type enumTypeConverted = InteropUtils.GetInstance<System.Type>(enumType);
 		System.String valueConverted = InteropUtils.ToDotNetString(value);
@@ -6749,7 +6743,7 @@ internal unsafe class System_Enum
 	
 	    try {
 			System.Boolean __returnValue = System.Enum.TryParse(enumTypeConverted, valueConverted, ignoreCaseConverted, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -6767,13 +6761,13 @@ internal unsafe class System_Enum
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Enum_Equals")]
-	internal static CBool /* System.Boolean */ System_Enum_Equals(void* /* System.Enum */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Enum_Equals(void* /* System.Enum */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -6785,7 +6779,7 @@ internal unsafe class System_Enum
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(objConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -6799,7 +6793,7 @@ internal unsafe class System_Enum
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -7310,7 +7304,7 @@ internal unsafe class System_Enum
 internal unsafe class System_ValueType
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_ValueType_Equals")]
-	internal static CBool /* System.Boolean */ System_ValueType_Equals(void* /* System.ValueType */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_ValueType_Equals(void* /* System.ValueType */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -7322,7 +7316,7 @@ internal unsafe class System_ValueType
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(objConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -7336,7 +7330,7 @@ internal unsafe class System_ValueType
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -7506,7 +7500,7 @@ internal unsafe class System_String
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Compare1")]
-	internal static int /* System.Int32 */ System_String_Compare1(byte* /* System.String */ strA, byte* /* System.String */ strB, CBool /* System.Boolean */ ignoreCase, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_String_Compare1(byte* /* System.String */ strA, byte* /* System.String */ strB, byte /* System.Boolean */ ignoreCase, void** /* System.Exception */ __outException)
 	{
 		System.String strAConverted = InteropUtils.ToDotNetString(strA);
 		System.String strBConverted = InteropUtils.ToDotNetString(strB);
@@ -7586,7 +7580,7 @@ internal unsafe class System_String
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Compare4")]
-	internal static int /* System.Int32 */ System_String_Compare4(byte* /* System.String */ strA, byte* /* System.String */ strB, CBool /* System.Boolean */ ignoreCase, void* /* System.Globalization.CultureInfo */ culture, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_String_Compare4(byte* /* System.String */ strA, byte* /* System.String */ strB, byte /* System.Boolean */ ignoreCase, void* /* System.Globalization.CultureInfo */ culture, void** /* System.Exception */ __outException)
 	{
 		System.String strAConverted = InteropUtils.ToDotNetString(strA);
 		System.String strBConverted = InteropUtils.ToDotNetString(strB);
@@ -7640,7 +7634,7 @@ internal unsafe class System_String
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Compare6")]
-	internal static int /* System.Int32 */ System_String_Compare6(byte* /* System.String */ strA, int /* System.Int32 */ indexA, byte* /* System.String */ strB, int /* System.Int32 */ indexB, int /* System.Int32 */ length, CBool /* System.Boolean */ ignoreCase, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_String_Compare6(byte* /* System.String */ strA, int /* System.Int32 */ indexA, byte* /* System.String */ strB, int /* System.Int32 */ indexB, int /* System.Int32 */ length, byte /* System.Boolean */ ignoreCase, void** /* System.Exception */ __outException)
 	{
 		System.String strAConverted = InteropUtils.ToDotNetString(strA);
 		System.String strBConverted = InteropUtils.ToDotNetString(strB);
@@ -7667,7 +7661,7 @@ internal unsafe class System_String
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Compare7")]
-	internal static int /* System.Int32 */ System_String_Compare7(byte* /* System.String */ strA, int /* System.Int32 */ indexA, byte* /* System.String */ strB, int /* System.Int32 */ indexB, int /* System.Int32 */ length, CBool /* System.Boolean */ ignoreCase, void* /* System.Globalization.CultureInfo */ culture, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_String_Compare7(byte* /* System.String */ strA, int /* System.Int32 */ indexA, byte* /* System.String */ strB, int /* System.Int32 */ indexB, int /* System.Int32 */ length, byte /* System.Boolean */ ignoreCase, void* /* System.Globalization.CultureInfo */ culture, void** /* System.Exception */ __outException)
 	{
 		System.String strAConverted = InteropUtils.ToDotNetString(strA);
 		System.String strBConverted = InteropUtils.ToDotNetString(strB);
@@ -7862,7 +7856,7 @@ internal unsafe class System_String
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_EndsWith")]
-	internal static CBool /* System.Boolean */ System_String_EndsWith(byte* /* System.String */ __self, byte* /* System.String */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_String_EndsWith(byte* /* System.String */ __self, byte* /* System.String */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -7874,7 +7868,7 @@ internal unsafe class System_String
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.EndsWith(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -7888,13 +7882,13 @@ internal unsafe class System_String
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_EndsWith1")]
-	internal static CBool /* System.Boolean */ System_String_EndsWith1(byte* /* System.String */ __self, byte* /* System.String */ value, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_String_EndsWith1(byte* /* System.String */ __self, byte* /* System.String */ value, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -7906,7 +7900,7 @@ internal unsafe class System_String
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.EndsWith(valueConverted, comparisonType);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -7920,13 +7914,13 @@ internal unsafe class System_String
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_EndsWith2")]
-	internal static CBool /* System.Boolean */ System_String_EndsWith2(byte* /* System.String */ __self, byte* /* System.String */ value, CBool /* System.Boolean */ ignoreCase, void* /* System.Globalization.CultureInfo */ culture, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_String_EndsWith2(byte* /* System.String */ __self, byte* /* System.String */ value, byte /* System.Boolean */ ignoreCase, void* /* System.Globalization.CultureInfo */ culture, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -7940,7 +7934,7 @@ internal unsafe class System_String
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.EndsWith(valueConverted, ignoreCaseConverted, cultureConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -7954,13 +7948,13 @@ internal unsafe class System_String
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_EndsWith3")]
-	internal static CBool /* System.Boolean */ System_String_EndsWith3(byte* /* System.String */ __self, char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_String_EndsWith3(byte* /* System.String */ __self, char /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -7971,7 +7965,7 @@ internal unsafe class System_String
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.EndsWith(value);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -7985,13 +7979,13 @@ internal unsafe class System_String
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Equals")]
-	internal static CBool /* System.Boolean */ System_String_Equals(byte* /* System.String */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_String_Equals(byte* /* System.String */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -8003,7 +7997,7 @@ internal unsafe class System_String
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(objConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -8017,13 +8011,13 @@ internal unsafe class System_String
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Equals1")]
-	internal static CBool /* System.Boolean */ System_String_Equals1(byte* /* System.String */ __self, byte* /* System.String */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_String_Equals1(byte* /* System.String */ __self, byte* /* System.String */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -8035,7 +8029,7 @@ internal unsafe class System_String
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -8049,13 +8043,13 @@ internal unsafe class System_String
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Equals2")]
-	internal static CBool /* System.Boolean */ System_String_Equals2(byte* /* System.String */ __self, byte* /* System.String */ value, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_String_Equals2(byte* /* System.String */ __self, byte* /* System.String */ value, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -8067,7 +8061,7 @@ internal unsafe class System_String
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(valueConverted, comparisonType);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -8081,20 +8075,20 @@ internal unsafe class System_String
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Equals3")]
-	internal static CBool /* System.Boolean */ System_String_Equals3(byte* /* System.String */ a, byte* /* System.String */ b, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_String_Equals3(byte* /* System.String */ a, byte* /* System.String */ b, void** /* System.Exception */ __outException)
 	{
 		System.String aConverted = InteropUtils.ToDotNetString(a);
 		System.String bConverted = InteropUtils.ToDotNetString(b);
 	
 	    try {
 			System.Boolean __returnValue = System.String.Equals(aConverted, bConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -8108,20 +8102,20 @@ internal unsafe class System_String
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Equals4")]
-	internal static CBool /* System.Boolean */ System_String_Equals4(byte* /* System.String */ a, byte* /* System.String */ b, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_String_Equals4(byte* /* System.String */ a, byte* /* System.String */ b, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
 	{
 		System.String aConverted = InteropUtils.ToDotNetString(a);
 		System.String bConverted = InteropUtils.ToDotNetString(b);
 	
 	    try {
 			System.Boolean __returnValue = System.String.Equals(aConverted, bConverted, comparisonType);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -8135,7 +8129,7 @@ internal unsafe class System_String
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -8201,7 +8195,7 @@ internal unsafe class System_String
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_StartsWith")]
-	internal static CBool /* System.Boolean */ System_String_StartsWith(byte* /* System.String */ __self, byte* /* System.String */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_String_StartsWith(byte* /* System.String */ __self, byte* /* System.String */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -8213,7 +8207,7 @@ internal unsafe class System_String
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.StartsWith(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -8227,13 +8221,13 @@ internal unsafe class System_String
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_StartsWith1")]
-	internal static CBool /* System.Boolean */ System_String_StartsWith1(byte* /* System.String */ __self, byte* /* System.String */ value, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_String_StartsWith1(byte* /* System.String */ __self, byte* /* System.String */ value, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -8245,7 +8239,7 @@ internal unsafe class System_String
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.StartsWith(valueConverted, comparisonType);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -8259,13 +8253,13 @@ internal unsafe class System_String
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_StartsWith2")]
-	internal static CBool /* System.Boolean */ System_String_StartsWith2(byte* /* System.String */ __self, byte* /* System.String */ value, CBool /* System.Boolean */ ignoreCase, void* /* System.Globalization.CultureInfo */ culture, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_String_StartsWith2(byte* /* System.String */ __self, byte* /* System.String */ value, byte /* System.Boolean */ ignoreCase, void* /* System.Globalization.CultureInfo */ culture, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -8279,7 +8273,7 @@ internal unsafe class System_String
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.StartsWith(valueConverted, ignoreCaseConverted, cultureConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -8293,13 +8287,13 @@ internal unsafe class System_String
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_StartsWith3")]
-	internal static CBool /* System.Boolean */ System_String_StartsWith3(byte* /* System.String */ __self, char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_String_StartsWith3(byte* /* System.String */ __self, char /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -8310,7 +8304,7 @@ internal unsafe class System_String
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.StartsWith(value);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -8324,7 +8318,7 @@ internal unsafe class System_String
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -8478,13 +8472,13 @@ internal unsafe class System_String
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_IsNullOrEmpty")]
-	internal static CBool /* System.Boolean */ System_String_IsNullOrEmpty(byte* /* System.String */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_String_IsNullOrEmpty(byte* /* System.String */ value, void** /* System.Exception */ __outException)
 	{
 		System.String valueConverted = InteropUtils.ToDotNetString(value);
 	
 	    try {
 			System.Boolean __returnValue = System.String.IsNullOrEmpty(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -8498,19 +8492,19 @@ internal unsafe class System_String
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_IsNullOrWhiteSpace")]
-	internal static CBool /* System.Boolean */ System_String_IsNullOrWhiteSpace(byte* /* System.String */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_String_IsNullOrWhiteSpace(byte* /* System.String */ value, void** /* System.Exception */ __outException)
 	{
 		System.String valueConverted = InteropUtils.ToDotNetString(value);
 	
 	    try {
 			System.Boolean __returnValue = System.String.IsNullOrWhiteSpace(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -8524,7 +8518,7 @@ internal unsafe class System_String
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -8685,7 +8679,7 @@ internal unsafe class System_String
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_IsNormalized")]
-	internal static CBool /* System.Boolean */ System_String_IsNormalized(byte* /* System.String */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_String_IsNormalized(byte* /* System.String */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -8696,7 +8690,7 @@ internal unsafe class System_String
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsNormalized();
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -8710,13 +8704,13 @@ internal unsafe class System_String
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_IsNormalized1")]
-	internal static CBool /* System.Boolean */ System_String_IsNormalized1(byte* /* System.String */ __self, System.Text.NormalizationForm /* System.Text.NormalizationForm */ normalizationForm, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_String_IsNormalized1(byte* /* System.String */ __self, System.Text.NormalizationForm /* System.Text.NormalizationForm */ normalizationForm, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -8727,7 +8721,7 @@ internal unsafe class System_String
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsNormalized(normalizationForm);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -8741,7 +8735,7 @@ internal unsafe class System_String
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -9657,7 +9651,7 @@ internal unsafe class System_String
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Replace")]
-	internal static byte* /* System.String */ System_String_Replace(byte* /* System.String */ __self, byte* /* System.String */ oldValue, byte* /* System.String */ newValue, CBool /* System.Boolean */ ignoreCase, void* /* System.Globalization.CultureInfo */ culture, void** /* System.Exception */ __outException)
+	internal static byte* /* System.String */ System_String_Replace(byte* /* System.String */ __self, byte* /* System.String */ oldValue, byte* /* System.String */ newValue, byte /* System.Boolean */ ignoreCase, void* /* System.Globalization.CultureInfo */ culture, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -10702,7 +10696,7 @@ internal unsafe class System_String
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Contains")]
-	internal static CBool /* System.Boolean */ System_String_Contains(byte* /* System.String */ __self, byte* /* System.String */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_String_Contains(byte* /* System.String */ __self, byte* /* System.String */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -10714,7 +10708,7 @@ internal unsafe class System_String
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Contains(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -10728,13 +10722,13 @@ internal unsafe class System_String
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Contains1")]
-	internal static CBool /* System.Boolean */ System_String_Contains1(byte* /* System.String */ __self, byte* /* System.String */ value, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_String_Contains1(byte* /* System.String */ __self, byte* /* System.String */ value, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -10746,7 +10740,7 @@ internal unsafe class System_String
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Contains(valueConverted, comparisonType);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -10760,13 +10754,13 @@ internal unsafe class System_String
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Contains2")]
-	internal static CBool /* System.Boolean */ System_String_Contains2(byte* /* System.String */ __self, char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_String_Contains2(byte* /* System.String */ __self, char /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -10777,7 +10771,7 @@ internal unsafe class System_String
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Contains(value);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -10791,13 +10785,13 @@ internal unsafe class System_String
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Contains3")]
-	internal static CBool /* System.Boolean */ System_String_Contains3(byte* /* System.String */ __self, char /* System.Char */ value, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_String_Contains3(byte* /* System.String */ __self, char /* System.Char */ value, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -10808,7 +10802,7 @@ internal unsafe class System_String
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Contains(value, comparisonType);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -10822,7 +10816,7 @@ internal unsafe class System_String
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -11804,7 +11798,7 @@ internal unsafe class System_Globalization_CultureInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_Equals")]
-	internal static CBool /* System.Boolean */ System_Globalization_CultureInfo_Equals(void* /* System.Globalization.CultureInfo */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Globalization_CultureInfo_Equals(void* /* System.Globalization.CultureInfo */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -11816,7 +11810,7 @@ internal unsafe class System_Globalization_CultureInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -11830,7 +11824,7 @@ internal unsafe class System_Globalization_CultureInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -12123,7 +12117,7 @@ internal unsafe class System_Globalization_CultureInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_GetCultureInfo3")]
-	internal static void* /* System.Globalization.CultureInfo */ System_Globalization_CultureInfo_GetCultureInfo3(byte* /* System.String */ name, CBool /* System.Boolean */ predefinedOnly, void** /* System.Exception */ __outException)
+	internal static void* /* System.Globalization.CultureInfo */ System_Globalization_CultureInfo_GetCultureInfo3(byte* /* System.String */ name, byte /* System.Boolean */ predefinedOnly, void** /* System.Exception */ __outException)
 	{
 		System.String nameConverted = InteropUtils.ToDotNetString(name);
 		System.Boolean predefinedOnlyConverted = predefinedOnly.ToBool();
@@ -12202,7 +12196,7 @@ internal unsafe class System_Globalization_CultureInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_Create2")]
-	internal static void* /* System.Globalization.CultureInfo */ System_Globalization_CultureInfo_Create2(byte* /* System.String */ name, CBool /* System.Boolean */ useUserOverride, void** /* System.Exception */ __outException)
+	internal static void* /* System.Globalization.CultureInfo */ System_Globalization_CultureInfo_Create2(byte* /* System.String */ name, byte /* System.Boolean */ useUserOverride, void** /* System.Exception */ __outException)
 	{
 		System.String nameConverted = InteropUtils.ToDotNetString(name);
 		System.Boolean useUserOverrideConverted = useUserOverride.ToBool();
@@ -12254,7 +12248,7 @@ internal unsafe class System_Globalization_CultureInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_Create4")]
-	internal static void* /* System.Globalization.CultureInfo */ System_Globalization_CultureInfo_Create4(int /* System.Int32 */ culture, CBool /* System.Boolean */ useUserOverride, void** /* System.Exception */ __outException)
+	internal static void* /* System.Globalization.CultureInfo */ System_Globalization_CultureInfo_Create4(int /* System.Int32 */ culture, byte /* System.Boolean */ useUserOverride, void** /* System.Exception */ __outException)
 	{
 		System.Boolean useUserOverrideConverted = useUserOverride.ToBool();
 	
@@ -12934,7 +12928,7 @@ internal unsafe class System_Globalization_CultureInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_IsNeutralCulture_Get")]
-	internal static CBool /* System.Boolean */ System_Globalization_CultureInfo_IsNeutralCulture_Get(void* /* System.Globalization.CultureInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Globalization_CultureInfo_IsNeutralCulture_Get(void* /* System.Globalization.CultureInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -12945,7 +12939,7 @@ internal unsafe class System_Globalization_CultureInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsNeutralCulture;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -12959,7 +12953,7 @@ internal unsafe class System_Globalization_CultureInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -13179,7 +13173,7 @@ internal unsafe class System_Globalization_CultureInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_UseUserOverride_Get")]
-	internal static CBool /* System.Boolean */ System_Globalization_CultureInfo_UseUserOverride_Get(void* /* System.Globalization.CultureInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Globalization_CultureInfo_UseUserOverride_Get(void* /* System.Globalization.CultureInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -13190,7 +13184,7 @@ internal unsafe class System_Globalization_CultureInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.UseUserOverride;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -13204,14 +13198,14 @@ internal unsafe class System_Globalization_CultureInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CultureInfo_IsReadOnly_Get")]
-	internal static CBool /* System.Boolean */ System_Globalization_CultureInfo_IsReadOnly_Get(void* /* System.Globalization.CultureInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Globalization_CultureInfo_IsReadOnly_Get(void* /* System.Globalization.CultureInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -13222,7 +13216,7 @@ internal unsafe class System_Globalization_CultureInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsReadOnly;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -13236,7 +13230,7 @@ internal unsafe class System_Globalization_CultureInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -14979,7 +14973,7 @@ internal unsafe class System_Array
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Array_IsReadOnly_Get")]
-	internal static CBool /* System.Boolean */ System_Array_IsReadOnly_Get(void* /* System.Array */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Array_IsReadOnly_Get(void* /* System.Array */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -14990,7 +14984,7 @@ internal unsafe class System_Array
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsReadOnly;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -15004,14 +14998,14 @@ internal unsafe class System_Array
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Array_IsFixedSize_Get")]
-	internal static CBool /* System.Boolean */ System_Array_IsFixedSize_Get(void* /* System.Array */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Array_IsFixedSize_Get(void* /* System.Array */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -15022,7 +15016,7 @@ internal unsafe class System_Array
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsFixedSize;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -15036,14 +15030,14 @@ internal unsafe class System_Array
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Array_IsSynchronized_Get")]
-	internal static CBool /* System.Boolean */ System_Array_IsSynchronized_Get(void* /* System.Array */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Array_IsSynchronized_Get(void* /* System.Array */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -15054,7 +15048,7 @@ internal unsafe class System_Array
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsSynchronized;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -15068,7 +15062,7 @@ internal unsafe class System_Array
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -15312,7 +15306,7 @@ internal unsafe class System_Collections_IComparer
 internal unsafe class System_Collections_IEnumerator
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_Collections_IEnumerator_MoveNext")]
-	internal static CBool /* System.Boolean */ System_Collections_IEnumerator_MoveNext(void* /* System.Collections.IEnumerator */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Collections_IEnumerator_MoveNext(void* /* System.Collections.IEnumerator */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -15323,7 +15317,7 @@ internal unsafe class System_Collections_IEnumerator
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.MoveNext();
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -15337,7 +15331,7 @@ internal unsafe class System_Collections_IEnumerator
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -15545,12 +15539,12 @@ internal unsafe class System_Globalization_CompareInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_IsSortable")]
-	internal static CBool /* System.Boolean */ System_Globalization_CompareInfo_IsSortable(char /* System.Char */ ch, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Globalization_CompareInfo_IsSortable(char /* System.Char */ ch, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
 			System.Boolean __returnValue = System.Globalization.CompareInfo.IsSortable(ch);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -15564,19 +15558,19 @@ internal unsafe class System_Globalization_CompareInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_IsSortable1")]
-	internal static CBool /* System.Boolean */ System_Globalization_CompareInfo_IsSortable1(byte* /* System.String */ text, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Globalization_CompareInfo_IsSortable1(byte* /* System.String */ text, void** /* System.Exception */ __outException)
 	{
 		System.String textConverted = InteropUtils.ToDotNetString(text);
 	
 	    try {
 			System.Boolean __returnValue = System.Globalization.CompareInfo.IsSortable(textConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -15590,19 +15584,19 @@ internal unsafe class System_Globalization_CompareInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_IsSortable2")]
-	internal static CBool /* System.Boolean */ System_Globalization_CompareInfo_IsSortable2(void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Globalization_CompareInfo_IsSortable2(void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
 	{
 		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
 	
 	    try {
 			System.Boolean __returnValue = System.Globalization.CompareInfo.IsSortable(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -15616,7 +15610,7 @@ internal unsafe class System_Globalization_CompareInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -15814,7 +15808,7 @@ internal unsafe class System_Globalization_CompareInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_IsPrefix")]
-	internal static CBool /* System.Boolean */ System_Globalization_CompareInfo_IsPrefix(void* /* System.Globalization.CompareInfo */ __self, byte* /* System.String */ source, byte* /* System.String */ prefix, System.Globalization.CompareOptions /* System.Globalization.CompareOptions */ options, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Globalization_CompareInfo_IsPrefix(void* /* System.Globalization.CompareInfo */ __self, byte* /* System.String */ source, byte* /* System.String */ prefix, System.Globalization.CompareOptions /* System.Globalization.CompareOptions */ options, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -15827,7 +15821,7 @@ internal unsafe class System_Globalization_CompareInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsPrefix(sourceConverted, prefixConverted, options);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -15841,13 +15835,13 @@ internal unsafe class System_Globalization_CompareInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_IsPrefix1")]
-	internal static CBool /* System.Boolean */ System_Globalization_CompareInfo_IsPrefix1(void* /* System.Globalization.CompareInfo */ __self, byte* /* System.String */ source, byte* /* System.String */ prefix, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Globalization_CompareInfo_IsPrefix1(void* /* System.Globalization.CompareInfo */ __self, byte* /* System.String */ source, byte* /* System.String */ prefix, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -15860,7 +15854,7 @@ internal unsafe class System_Globalization_CompareInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsPrefix(sourceConverted, prefixConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -15874,13 +15868,13 @@ internal unsafe class System_Globalization_CompareInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_IsSuffix")]
-	internal static CBool /* System.Boolean */ System_Globalization_CompareInfo_IsSuffix(void* /* System.Globalization.CompareInfo */ __self, byte* /* System.String */ source, byte* /* System.String */ suffix, System.Globalization.CompareOptions /* System.Globalization.CompareOptions */ options, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Globalization_CompareInfo_IsSuffix(void* /* System.Globalization.CompareInfo */ __self, byte* /* System.String */ source, byte* /* System.String */ suffix, System.Globalization.CompareOptions /* System.Globalization.CompareOptions */ options, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -15893,7 +15887,7 @@ internal unsafe class System_Globalization_CompareInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsSuffix(sourceConverted, suffixConverted, options);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -15907,13 +15901,13 @@ internal unsafe class System_Globalization_CompareInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_IsSuffix1")]
-	internal static CBool /* System.Boolean */ System_Globalization_CompareInfo_IsSuffix1(void* /* System.Globalization.CompareInfo */ __self, byte* /* System.String */ source, byte* /* System.String */ suffix, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Globalization_CompareInfo_IsSuffix1(void* /* System.Globalization.CompareInfo */ __self, byte* /* System.String */ source, byte* /* System.String */ suffix, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -15926,7 +15920,7 @@ internal unsafe class System_Globalization_CompareInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsSuffix(sourceConverted, suffixConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -15940,7 +15934,7 @@ internal unsafe class System_Globalization_CompareInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -16766,7 +16760,7 @@ internal unsafe class System_Globalization_CompareInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_Equals")]
-	internal static CBool /* System.Boolean */ System_Globalization_CompareInfo_Equals(void* /* System.Globalization.CompareInfo */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Globalization_CompareInfo_Equals(void* /* System.Globalization.CompareInfo */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -16778,7 +16772,7 @@ internal unsafe class System_Globalization_CompareInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -16792,7 +16786,7 @@ internal unsafe class System_Globalization_CompareInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -17388,7 +17382,7 @@ internal unsafe class System_Reflection_Assembly
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Assembly_GetName1")]
-	internal static void* /* System.Reflection.AssemblyName */ System_Reflection_Assembly_GetName1(void* /* System.Reflection.Assembly */ __self, CBool /* System.Boolean */ copiedName, void** /* System.Exception */ __outException)
+	internal static void* /* System.Reflection.AssemblyName */ System_Reflection_Assembly_GetName1(void* /* System.Reflection.Assembly */ __self, byte /* System.Boolean */ copiedName, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -17452,7 +17446,7 @@ internal unsafe class System_Reflection_Assembly
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Assembly_GetType2")]
-	internal static void* /* System.Type */ System_Reflection_Assembly_GetType2(void* /* System.Reflection.Assembly */ __self, byte* /* System.String */ name, CBool /* System.Boolean */ throwOnError, void** /* System.Exception */ __outException)
+	internal static void* /* System.Type */ System_Reflection_Assembly_GetType2(void* /* System.Reflection.Assembly */ __self, byte* /* System.String */ name, byte /* System.Boolean */ throwOnError, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -17485,7 +17479,7 @@ internal unsafe class System_Reflection_Assembly
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Assembly_GetType3")]
-	internal static void* /* System.Type */ System_Reflection_Assembly_GetType3(void* /* System.Reflection.Assembly */ __self, byte* /* System.String */ name, CBool /* System.Boolean */ throwOnError, CBool /* System.Boolean */ ignoreCase, void** /* System.Exception */ __outException)
+	internal static void* /* System.Type */ System_Reflection_Assembly_GetType3(void* /* System.Reflection.Assembly */ __self, byte* /* System.String */ name, byte /* System.Boolean */ throwOnError, byte /* System.Boolean */ ignoreCase, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -17519,7 +17513,7 @@ internal unsafe class System_Reflection_Assembly
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Assembly_IsDefined")]
-	internal static CBool /* System.Boolean */ System_Reflection_Assembly_IsDefined(void* /* System.Reflection.Assembly */ __self, void* /* System.Type */ attributeType, CBool /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_Assembly_IsDefined(void* /* System.Reflection.Assembly */ __self, void* /* System.Type */ attributeType, byte /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -17532,7 +17526,7 @@ internal unsafe class System_Reflection_Assembly
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsDefined(attributeTypeConverted, inheritConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -17546,13 +17540,13 @@ internal unsafe class System_Reflection_Assembly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Assembly_GetCustomAttributes")]
-	internal static void* /* System.Object[] */ System_Reflection_Assembly_GetCustomAttributes(void* /* System.Reflection.Assembly */ __self, CBool /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
+	internal static void* /* System.Object[] */ System_Reflection_Assembly_GetCustomAttributes(void* /* System.Reflection.Assembly */ __self, byte /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -17584,7 +17578,7 @@ internal unsafe class System_Reflection_Assembly
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Assembly_GetCustomAttributes1")]
-	internal static void* /* System.Object[] */ System_Reflection_Assembly_GetCustomAttributes1(void* /* System.Reflection.Assembly */ __self, void* /* System.Type */ attributeType, CBool /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
+	internal static void* /* System.Object[] */ System_Reflection_Assembly_GetCustomAttributes1(void* /* System.Reflection.Assembly */ __self, void* /* System.Type */ attributeType, byte /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -17649,7 +17643,7 @@ internal unsafe class System_Reflection_Assembly
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Assembly_CreateInstance1")]
-	internal static void* /* System.Object */ System_Reflection_Assembly_CreateInstance1(void* /* System.Reflection.Assembly */ __self, byte* /* System.String */ typeName, CBool /* System.Boolean */ ignoreCase, void** /* System.Exception */ __outException)
+	internal static void* /* System.Object */ System_Reflection_Assembly_CreateInstance1(void* /* System.Reflection.Assembly */ __self, byte* /* System.String */ typeName, byte /* System.Boolean */ ignoreCase, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -17682,7 +17676,7 @@ internal unsafe class System_Reflection_Assembly
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Assembly_CreateInstance2")]
-	internal static void* /* System.Object */ System_Reflection_Assembly_CreateInstance2(void* /* System.Reflection.Assembly */ __self, byte* /* System.String */ typeName, CBool /* System.Boolean */ ignoreCase, System.Reflection.BindingFlags /* System.Reflection.BindingFlags */ bindingAttr, void* /* System.Reflection.Binder */ binder, void* /* System.Object[] */ args, void* /* System.Globalization.CultureInfo */ culture, void* /* System.Object[] */ activationAttributes, void** /* System.Exception */ __outException)
+	internal static void* /* System.Object */ System_Reflection_Assembly_CreateInstance2(void* /* System.Reflection.Assembly */ __self, byte* /* System.String */ typeName, byte /* System.Boolean */ ignoreCase, System.Reflection.BindingFlags /* System.Reflection.BindingFlags */ bindingAttr, void* /* System.Reflection.Binder */ binder, void* /* System.Object[] */ args, void* /* System.Globalization.CultureInfo */ culture, void* /* System.Object[] */ activationAttributes, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -17782,7 +17776,7 @@ internal unsafe class System_Reflection_Assembly
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Assembly_GetModules1")]
-	internal static void* /* System.Reflection.Module[] */ System_Reflection_Assembly_GetModules1(void* /* System.Reflection.Assembly */ __self, CBool /* System.Boolean */ getResourceModules, void** /* System.Exception */ __outException)
+	internal static void* /* System.Reflection.Module[] */ System_Reflection_Assembly_GetModules1(void* /* System.Reflection.Assembly */ __self, byte /* System.Boolean */ getResourceModules, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -17845,7 +17839,7 @@ internal unsafe class System_Reflection_Assembly
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Assembly_GetLoadedModules1")]
-	internal static void* /* System.Reflection.Module[] */ System_Reflection_Assembly_GetLoadedModules1(void* /* System.Reflection.Assembly */ __self, CBool /* System.Boolean */ getResourceModules, void** /* System.Exception */ __outException)
+	internal static void* /* System.Reflection.Module[] */ System_Reflection_Assembly_GetLoadedModules1(void* /* System.Reflection.Assembly */ __self, byte /* System.Boolean */ getResourceModules, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -18036,7 +18030,7 @@ internal unsafe class System_Reflection_Assembly
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Assembly_GetFiles1")]
-	internal static void* /* System.IO.FileStream[] */ System_Reflection_Assembly_GetFiles1(void* /* System.Reflection.Assembly */ __self, CBool /* System.Boolean */ getResourceModules, void** /* System.Exception */ __outException)
+	internal static void* /* System.IO.FileStream[] */ System_Reflection_Assembly_GetFiles1(void* /* System.Reflection.Assembly */ __self, byte /* System.Boolean */ getResourceModules, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -18129,7 +18123,7 @@ internal unsafe class System_Reflection_Assembly
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Assembly_Equals")]
-	internal static CBool /* System.Boolean */ System_Reflection_Assembly_Equals(void* /* System.Reflection.Assembly */ __self, void* /* System.Object */ o, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_Assembly_Equals(void* /* System.Reflection.Assembly */ __self, void* /* System.Object */ o, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -18141,7 +18135,7 @@ internal unsafe class System_Reflection_Assembly
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(oConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -18155,7 +18149,7 @@ internal unsafe class System_Reflection_Assembly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -18700,7 +18694,7 @@ internal unsafe class System_Reflection_Assembly
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Assembly_IsDynamic_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_Assembly_IsDynamic_Get(void* /* System.Reflection.Assembly */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_Assembly_IsDynamic_Get(void* /* System.Reflection.Assembly */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -18711,7 +18705,7 @@ internal unsafe class System_Reflection_Assembly
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsDynamic;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -18725,7 +18719,7 @@ internal unsafe class System_Reflection_Assembly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -18764,7 +18758,7 @@ internal unsafe class System_Reflection_Assembly
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Assembly_ReflectionOnly_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_Assembly_ReflectionOnly_Get(void* /* System.Reflection.Assembly */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_Assembly_ReflectionOnly_Get(void* /* System.Reflection.Assembly */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -18775,7 +18769,7 @@ internal unsafe class System_Reflection_Assembly
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.ReflectionOnly;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -18789,14 +18783,14 @@ internal unsafe class System_Reflection_Assembly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Assembly_IsCollectible_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_Assembly_IsCollectible_Get(void* /* System.Reflection.Assembly */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_Assembly_IsCollectible_Get(void* /* System.Reflection.Assembly */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -18807,7 +18801,7 @@ internal unsafe class System_Reflection_Assembly
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsCollectible;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -18821,14 +18815,14 @@ internal unsafe class System_Reflection_Assembly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Assembly_IsFullyTrusted_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_Assembly_IsFullyTrusted_Get(void* /* System.Reflection.Assembly */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_Assembly_IsFullyTrusted_Get(void* /* System.Reflection.Assembly */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -18839,7 +18833,7 @@ internal unsafe class System_Reflection_Assembly
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsFullyTrusted;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -18853,7 +18847,7 @@ internal unsafe class System_Reflection_Assembly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -18924,7 +18918,7 @@ internal unsafe class System_Reflection_Assembly
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Assembly_GlobalAssemblyCache_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_Assembly_GlobalAssemblyCache_Get(void* /* System.Reflection.Assembly */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_Assembly_GlobalAssemblyCache_Get(void* /* System.Reflection.Assembly */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -18935,7 +18929,7 @@ internal unsafe class System_Reflection_Assembly
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.GlobalAssemblyCache;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -18949,7 +18943,7 @@ internal unsafe class System_Reflection_Assembly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -19336,14 +19330,14 @@ internal unsafe class System_Reflection_AssemblyName
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_AssemblyName_ReferenceMatchesDefinition")]
-	internal static CBool /* System.Boolean */ System_Reflection_AssemblyName_ReferenceMatchesDefinition(void* /* System.Reflection.AssemblyName */ reference, void* /* System.Reflection.AssemblyName */ definition, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_AssemblyName_ReferenceMatchesDefinition(void* /* System.Reflection.AssemblyName */ reference, void* /* System.Reflection.AssemblyName */ definition, void** /* System.Exception */ __outException)
 	{
 		System.Reflection.AssemblyName referenceConverted = InteropUtils.GetInstance<System.Reflection.AssemblyName>(reference);
 		System.Reflection.AssemblyName definitionConverted = InteropUtils.GetInstance<System.Reflection.AssemblyName>(definition);
 	
 	    try {
 			System.Boolean __returnValue = System.Reflection.AssemblyName.ReferenceMatchesDefinition(referenceConverted, definitionConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -19357,7 +19351,7 @@ internal unsafe class System_Reflection_AssemblyName
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -20238,7 +20232,7 @@ internal unsafe class System_Version
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Version_Equals")]
-	internal static CBool /* System.Boolean */ System_Version_Equals(void* /* System.Version */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Version_Equals(void* /* System.Version */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -20250,7 +20244,7 @@ internal unsafe class System_Version
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(objConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -20264,13 +20258,13 @@ internal unsafe class System_Version
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Version_Equals1")]
-	internal static CBool /* System.Boolean */ System_Version_Equals1(void* /* System.Version */ __self, void* /* System.Version */ obj, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Version_Equals1(void* /* System.Version */ __self, void* /* System.Version */ obj, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -20282,7 +20276,7 @@ internal unsafe class System_Version
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(objConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -20296,7 +20290,7 @@ internal unsafe class System_Version
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -20420,14 +20414,14 @@ internal unsafe class System_Version
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Version_TryParse")]
-	internal static CBool /* System.Boolean */ System_Version_TryParse(byte* /* System.String */ input, void** /* System.Version */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Version_TryParse(byte* /* System.String */ input, void** /* System.Version */ result, void** /* System.Exception */ __outException)
 	{
 		System.String inputConverted = InteropUtils.ToDotNetString(input);
 		System.Version resultConverted;
 	
 	    try {
 			System.Boolean __returnValue = System.Version.TryParse(inputConverted, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -20445,7 +20439,7 @@ internal unsafe class System_Version
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -21209,7 +21203,7 @@ internal unsafe class System_IO_FileStream
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStream_Flush2")]
-	internal static void /* System.Void */ System_IO_FileStream_Flush2(void* /* System.IO.FileStream */ __self, CBool /* System.Boolean */ flushToDisk, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_IO_FileStream_Flush2(void* /* System.IO.FileStream */ __self, byte /* System.Boolean */ flushToDisk, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -21600,7 +21594,7 @@ internal unsafe class System_IO_FileStream
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStream_Create1")]
-	internal static void* /* System.IO.FileStream */ System_IO_FileStream_Create1(nint /* System.IntPtr */ handle, System.IO.FileAccess /* System.IO.FileAccess */ access, CBool /* System.Boolean */ ownsHandle, void** /* System.Exception */ __outException)
+	internal static void* /* System.IO.FileStream */ System_IO_FileStream_Create1(nint /* System.IntPtr */ handle, System.IO.FileAccess /* System.IO.FileAccess */ access, byte /* System.Boolean */ ownsHandle, void** /* System.Exception */ __outException)
 	{
 		System.Boolean ownsHandleConverted = ownsHandle.ToBool();
 	
@@ -21626,7 +21620,7 @@ internal unsafe class System_IO_FileStream
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStream_Create2")]
-	internal static void* /* System.IO.FileStream */ System_IO_FileStream_Create2(nint /* System.IntPtr */ handle, System.IO.FileAccess /* System.IO.FileAccess */ access, CBool /* System.Boolean */ ownsHandle, int /* System.Int32 */ bufferSize, void** /* System.Exception */ __outException)
+	internal static void* /* System.IO.FileStream */ System_IO_FileStream_Create2(nint /* System.IntPtr */ handle, System.IO.FileAccess /* System.IO.FileAccess */ access, byte /* System.Boolean */ ownsHandle, int /* System.Int32 */ bufferSize, void** /* System.Exception */ __outException)
 	{
 		System.Boolean ownsHandleConverted = ownsHandle.ToBool();
 	
@@ -21652,7 +21646,7 @@ internal unsafe class System_IO_FileStream
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStream_Create3")]
-	internal static void* /* System.IO.FileStream */ System_IO_FileStream_Create3(nint /* System.IntPtr */ handle, System.IO.FileAccess /* System.IO.FileAccess */ access, CBool /* System.Boolean */ ownsHandle, int /* System.Int32 */ bufferSize, CBool /* System.Boolean */ isAsync, void** /* System.Exception */ __outException)
+	internal static void* /* System.IO.FileStream */ System_IO_FileStream_Create3(nint /* System.IntPtr */ handle, System.IO.FileAccess /* System.IO.FileAccess */ access, byte /* System.Boolean */ ownsHandle, int /* System.Int32 */ bufferSize, byte /* System.Boolean */ isAsync, void** /* System.Exception */ __outException)
 	{
 		System.Boolean ownsHandleConverted = ownsHandle.ToBool();
 		System.Boolean isAsyncConverted = isAsync.ToBool();
@@ -21731,7 +21725,7 @@ internal unsafe class System_IO_FileStream
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStream_Create6")]
-	internal static void* /* System.IO.FileStream */ System_IO_FileStream_Create6(void* /* Microsoft.Win32.SafeHandles.SafeFileHandle */ handle, System.IO.FileAccess /* System.IO.FileAccess */ access, int /* System.Int32 */ bufferSize, CBool /* System.Boolean */ isAsync, void** /* System.Exception */ __outException)
+	internal static void* /* System.IO.FileStream */ System_IO_FileStream_Create6(void* /* Microsoft.Win32.SafeHandles.SafeFileHandle */ handle, System.IO.FileAccess /* System.IO.FileAccess */ access, int /* System.Int32 */ bufferSize, byte /* System.Boolean */ isAsync, void** /* System.Exception */ __outException)
 	{
 		Microsoft.Win32.SafeHandles.SafeFileHandle handleConverted = InteropUtils.GetInstance<Microsoft.Win32.SafeHandles.SafeFileHandle>(handle);
 		System.Boolean isAsyncConverted = isAsync.ToBool();
@@ -21862,7 +21856,7 @@ internal unsafe class System_IO_FileStream
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStream_Create11")]
-	internal static void* /* System.IO.FileStream */ System_IO_FileStream_Create11(byte* /* System.String */ path, System.IO.FileMode /* System.IO.FileMode */ mode, System.IO.FileAccess /* System.IO.FileAccess */ access, System.IO.FileShare /* System.IO.FileShare */ share, int /* System.Int32 */ bufferSize, CBool /* System.Boolean */ useAsync, void** /* System.Exception */ __outException)
+	internal static void* /* System.IO.FileStream */ System_IO_FileStream_Create11(byte* /* System.String */ path, System.IO.FileMode /* System.IO.FileMode */ mode, System.IO.FileAccess /* System.IO.FileAccess */ access, System.IO.FileShare /* System.IO.FileShare */ share, int /* System.Int32 */ bufferSize, byte /* System.Boolean */ useAsync, void** /* System.Exception */ __outException)
 	{
 		System.String pathConverted = InteropUtils.ToDotNetString(path);
 		System.Boolean useAsyncConverted = useAsync.ToBool();
@@ -21973,7 +21967,7 @@ internal unsafe class System_IO_FileStream
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStream_CanRead_Get")]
-	internal static CBool /* System.Boolean */ System_IO_FileStream_CanRead_Get(void* /* System.IO.FileStream */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_IO_FileStream_CanRead_Get(void* /* System.IO.FileStream */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -21984,7 +21978,7 @@ internal unsafe class System_IO_FileStream
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.CanRead;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -21998,14 +21992,14 @@ internal unsafe class System_IO_FileStream
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStream_CanWrite_Get")]
-	internal static CBool /* System.Boolean */ System_IO_FileStream_CanWrite_Get(void* /* System.IO.FileStream */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_IO_FileStream_CanWrite_Get(void* /* System.IO.FileStream */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -22016,7 +22010,7 @@ internal unsafe class System_IO_FileStream
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.CanWrite;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -22030,7 +22024,7 @@ internal unsafe class System_IO_FileStream
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -22101,7 +22095,7 @@ internal unsafe class System_IO_FileStream
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStream_IsAsync_Get")]
-	internal static CBool /* System.Boolean */ System_IO_FileStream_IsAsync_Get(void* /* System.IO.FileStream */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_IO_FileStream_IsAsync_Get(void* /* System.IO.FileStream */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -22112,7 +22106,7 @@ internal unsafe class System_IO_FileStream
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsAsync;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -22126,7 +22120,7 @@ internal unsafe class System_IO_FileStream
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -22222,7 +22216,7 @@ internal unsafe class System_IO_FileStream
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileStream_CanSeek_Get")]
-	internal static CBool /* System.Boolean */ System_IO_FileStream_CanSeek_Get(void* /* System.IO.FileStream */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_IO_FileStream_CanSeek_Get(void* /* System.IO.FileStream */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -22233,7 +22227,7 @@ internal unsafe class System_IO_FileStream
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.CanSeek;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -22247,7 +22241,7 @@ internal unsafe class System_IO_FileStream
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -23100,7 +23094,7 @@ internal unsafe class System_IO_Stream
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_Stream_CanRead_Get")]
-	internal static CBool /* System.Boolean */ System_IO_Stream_CanRead_Get(void* /* System.IO.Stream */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_IO_Stream_CanRead_Get(void* /* System.IO.Stream */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -23111,7 +23105,7 @@ internal unsafe class System_IO_Stream
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.CanRead;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -23125,14 +23119,14 @@ internal unsafe class System_IO_Stream
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_Stream_CanWrite_Get")]
-	internal static CBool /* System.Boolean */ System_IO_Stream_CanWrite_Get(void* /* System.IO.Stream */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_IO_Stream_CanWrite_Get(void* /* System.IO.Stream */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -23143,7 +23137,7 @@ internal unsafe class System_IO_Stream
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.CanWrite;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -23157,14 +23151,14 @@ internal unsafe class System_IO_Stream
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_Stream_CanSeek_Get")]
-	internal static CBool /* System.Boolean */ System_IO_Stream_CanSeek_Get(void* /* System.IO.Stream */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_IO_Stream_CanSeek_Get(void* /* System.IO.Stream */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -23175,7 +23169,7 @@ internal unsafe class System_IO_Stream
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.CanSeek;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -23189,14 +23183,14 @@ internal unsafe class System_IO_Stream
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_Stream_CanTimeout_Get")]
-	internal static CBool /* System.Boolean */ System_IO_Stream_CanTimeout_Get(void* /* System.IO.Stream */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_IO_Stream_CanTimeout_Get(void* /* System.IO.Stream */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -23207,7 +23201,7 @@ internal unsafe class System_IO_Stream
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.CanTimeout;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -23221,7 +23215,7 @@ internal unsafe class System_IO_Stream
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -23725,7 +23719,7 @@ internal unsafe class System_Threading_Tasks_Task
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_ConfigureAwait")]
-	internal static void* /* System.Runtime.CompilerServices.ConfiguredTaskAwaitable */ System_Threading_Tasks_Task_ConfigureAwait(void* /* System.Threading.Tasks.Task */ __self, CBool /* System.Boolean */ continueOnCapturedContext, void** /* System.Exception */ __outException)
+	internal static void* /* System.Runtime.CompilerServices.ConfiguredTaskAwaitable */ System_Threading_Tasks_Task_ConfigureAwait(void* /* System.Threading.Tasks.Task */ __self, byte /* System.Boolean */ continueOnCapturedContext, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -23810,7 +23804,7 @@ internal unsafe class System_Threading_Tasks_Task
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_Wait1")]
-	internal static CBool /* System.Boolean */ System_Threading_Tasks_Task_Wait1(void* /* System.Threading.Tasks.Task */ __self, void* /* System.TimeSpan */ timeout, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_Tasks_Task_Wait1(void* /* System.Threading.Tasks.Task */ __self, void* /* System.TimeSpan */ timeout, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -23822,7 +23816,7 @@ internal unsafe class System_Threading_Tasks_Task
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Wait(timeoutConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -23836,13 +23830,13 @@ internal unsafe class System_Threading_Tasks_Task
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_Wait2")]
-	internal static CBool /* System.Boolean */ System_Threading_Tasks_Task_Wait2(void* /* System.Threading.Tasks.Task */ __self, void* /* System.TimeSpan */ timeout, void* /* System.Threading.CancellationToken */ cancellationToken, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_Tasks_Task_Wait2(void* /* System.Threading.Tasks.Task */ __self, void* /* System.TimeSpan */ timeout, void* /* System.Threading.CancellationToken */ cancellationToken, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -23855,7 +23849,7 @@ internal unsafe class System_Threading_Tasks_Task
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Wait(timeoutConverted, cancellationTokenConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -23869,7 +23863,7 @@ internal unsafe class System_Threading_Tasks_Task
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -23904,7 +23898,7 @@ internal unsafe class System_Threading_Tasks_Task
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_Wait4")]
-	internal static CBool /* System.Boolean */ System_Threading_Tasks_Task_Wait4(void* /* System.Threading.Tasks.Task */ __self, int /* System.Int32 */ millisecondsTimeout, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_Tasks_Task_Wait4(void* /* System.Threading.Tasks.Task */ __self, int /* System.Int32 */ millisecondsTimeout, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -23915,7 +23909,7 @@ internal unsafe class System_Threading_Tasks_Task
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Wait(millisecondsTimeout);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -23929,13 +23923,13 @@ internal unsafe class System_Threading_Tasks_Task
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_Wait5")]
-	internal static CBool /* System.Boolean */ System_Threading_Tasks_Task_Wait5(void* /* System.Threading.Tasks.Task */ __self, int /* System.Int32 */ millisecondsTimeout, void* /* System.Threading.CancellationToken */ cancellationToken, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_Tasks_Task_Wait5(void* /* System.Threading.Tasks.Task */ __self, int /* System.Int32 */ millisecondsTimeout, void* /* System.Threading.CancellationToken */ cancellationToken, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -23947,7 +23941,7 @@ internal unsafe class System_Threading_Tasks_Task
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Wait(millisecondsTimeout, cancellationTokenConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -23961,7 +23955,7 @@ internal unsafe class System_Threading_Tasks_Task
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -24087,14 +24081,14 @@ internal unsafe class System_Threading_Tasks_Task
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_WaitAll1")]
-	internal static CBool /* System.Boolean */ System_Threading_Tasks_Task_WaitAll1(void* /* System.Threading.Tasks.Task[] */ tasks, void* /* System.TimeSpan */ timeout, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_Tasks_Task_WaitAll1(void* /* System.Threading.Tasks.Task[] */ tasks, void* /* System.TimeSpan */ timeout, void** /* System.Exception */ __outException)
 	{
 		System.Threading.Tasks.Task[] tasksConverted = InteropUtils.GetInstance<System.Threading.Tasks.Task[]>(tasks);
 		System.TimeSpan timeoutConverted = InteropUtils.GetInstance<System.TimeSpan>(timeout);
 	
 	    try {
 			System.Boolean __returnValue = System.Threading.Tasks.Task.WaitAll(tasksConverted, timeoutConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -24108,19 +24102,19 @@ internal unsafe class System_Threading_Tasks_Task
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_WaitAll2")]
-	internal static CBool /* System.Boolean */ System_Threading_Tasks_Task_WaitAll2(void* /* System.Threading.Tasks.Task[] */ tasks, int /* System.Int32 */ millisecondsTimeout, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_Tasks_Task_WaitAll2(void* /* System.Threading.Tasks.Task[] */ tasks, int /* System.Int32 */ millisecondsTimeout, void** /* System.Exception */ __outException)
 	{
 		System.Threading.Tasks.Task[] tasksConverted = InteropUtils.GetInstance<System.Threading.Tasks.Task[]>(tasks);
 	
 	    try {
 			System.Boolean __returnValue = System.Threading.Tasks.Task.WaitAll(tasksConverted, millisecondsTimeout);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -24134,7 +24128,7 @@ internal unsafe class System_Threading_Tasks_Task
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -24164,14 +24158,14 @@ internal unsafe class System_Threading_Tasks_Task
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_WaitAll4")]
-	internal static CBool /* System.Boolean */ System_Threading_Tasks_Task_WaitAll4(void* /* System.Threading.Tasks.Task[] */ tasks, int /* System.Int32 */ millisecondsTimeout, void* /* System.Threading.CancellationToken */ cancellationToken, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_Tasks_Task_WaitAll4(void* /* System.Threading.Tasks.Task[] */ tasks, int /* System.Int32 */ millisecondsTimeout, void* /* System.Threading.CancellationToken */ cancellationToken, void** /* System.Exception */ __outException)
 	{
 		System.Threading.Tasks.Task[] tasksConverted = InteropUtils.GetInstance<System.Threading.Tasks.Task[]>(tasks);
 		System.Threading.CancellationToken cancellationTokenConverted = InteropUtils.GetInstance<System.Threading.CancellationToken>(cancellationToken);
 	
 	    try {
 			System.Boolean __returnValue = System.Threading.Tasks.Task.WaitAll(tasksConverted, millisecondsTimeout, cancellationTokenConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -24185,7 +24179,7 @@ internal unsafe class System_Threading_Tasks_Task
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -24754,7 +24748,7 @@ internal unsafe class System_Threading_Tasks_Task
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_IsCanceled_Get")]
-	internal static CBool /* System.Boolean */ System_Threading_Tasks_Task_IsCanceled_Get(void* /* System.Threading.Tasks.Task */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_Tasks_Task_IsCanceled_Get(void* /* System.Threading.Tasks.Task */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -24765,7 +24759,7 @@ internal unsafe class System_Threading_Tasks_Task
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsCanceled;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -24779,14 +24773,14 @@ internal unsafe class System_Threading_Tasks_Task
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_IsCompleted_Get")]
-	internal static CBool /* System.Boolean */ System_Threading_Tasks_Task_IsCompleted_Get(void* /* System.Threading.Tasks.Task */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_Tasks_Task_IsCompleted_Get(void* /* System.Threading.Tasks.Task */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -24797,7 +24791,7 @@ internal unsafe class System_Threading_Tasks_Task
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsCompleted;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -24811,14 +24805,14 @@ internal unsafe class System_Threading_Tasks_Task
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_IsCompletedSuccessfully_Get")]
-	internal static CBool /* System.Boolean */ System_Threading_Tasks_Task_IsCompletedSuccessfully_Get(void* /* System.Threading.Tasks.Task */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_Tasks_Task_IsCompletedSuccessfully_Get(void* /* System.Threading.Tasks.Task */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -24829,7 +24823,7 @@ internal unsafe class System_Threading_Tasks_Task
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsCompletedSuccessfully;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -24843,7 +24837,7 @@ internal unsafe class System_Threading_Tasks_Task
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -24965,7 +24959,7 @@ internal unsafe class System_Threading_Tasks_Task
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_Task_IsFaulted_Get")]
-	internal static CBool /* System.Boolean */ System_Threading_Tasks_Task_IsFaulted_Get(void* /* System.Threading.Tasks.Task */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_Tasks_Task_IsFaulted_Get(void* /* System.Threading.Tasks.Task */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -24976,7 +24970,7 @@ internal unsafe class System_Threading_Tasks_Task
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsFaulted;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -24990,7 +24984,7 @@ internal unsafe class System_Threading_Tasks_Task
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -26320,7 +26314,7 @@ internal unsafe class System_Reflection_MethodBase
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodBase_Equals")]
-	internal static CBool /* System.Boolean */ System_Reflection_MethodBase_Equals(void* /* System.Reflection.MethodBase */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_MethodBase_Equals(void* /* System.Reflection.MethodBase */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -26332,7 +26326,7 @@ internal unsafe class System_Reflection_MethodBase
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(objConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -26346,7 +26340,7 @@ internal unsafe class System_Reflection_MethodBase
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -26475,7 +26469,7 @@ internal unsafe class System_Reflection_MethodBase
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodBase_IsAbstract_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_MethodBase_IsAbstract_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_MethodBase_IsAbstract_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -26486,7 +26480,7 @@ internal unsafe class System_Reflection_MethodBase
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsAbstract;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -26500,14 +26494,14 @@ internal unsafe class System_Reflection_MethodBase
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodBase_IsConstructor_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_MethodBase_IsConstructor_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_MethodBase_IsConstructor_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -26518,7 +26512,7 @@ internal unsafe class System_Reflection_MethodBase
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsConstructor;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -26532,14 +26526,14 @@ internal unsafe class System_Reflection_MethodBase
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodBase_IsFinal_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_MethodBase_IsFinal_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_MethodBase_IsFinal_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -26550,7 +26544,7 @@ internal unsafe class System_Reflection_MethodBase
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsFinal;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -26564,14 +26558,14 @@ internal unsafe class System_Reflection_MethodBase
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodBase_IsHideBySig_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_MethodBase_IsHideBySig_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_MethodBase_IsHideBySig_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -26582,7 +26576,7 @@ internal unsafe class System_Reflection_MethodBase
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsHideBySig;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -26596,14 +26590,14 @@ internal unsafe class System_Reflection_MethodBase
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodBase_IsSpecialName_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_MethodBase_IsSpecialName_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_MethodBase_IsSpecialName_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -26614,7 +26608,7 @@ internal unsafe class System_Reflection_MethodBase
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsSpecialName;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -26628,14 +26622,14 @@ internal unsafe class System_Reflection_MethodBase
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodBase_IsStatic_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_MethodBase_IsStatic_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_MethodBase_IsStatic_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -26646,7 +26640,7 @@ internal unsafe class System_Reflection_MethodBase
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsStatic;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -26660,14 +26654,14 @@ internal unsafe class System_Reflection_MethodBase
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodBase_IsVirtual_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_MethodBase_IsVirtual_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_MethodBase_IsVirtual_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -26678,7 +26672,7 @@ internal unsafe class System_Reflection_MethodBase
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsVirtual;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -26692,14 +26686,14 @@ internal unsafe class System_Reflection_MethodBase
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodBase_IsAssembly_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_MethodBase_IsAssembly_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_MethodBase_IsAssembly_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -26710,7 +26704,7 @@ internal unsafe class System_Reflection_MethodBase
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsAssembly;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -26724,14 +26718,14 @@ internal unsafe class System_Reflection_MethodBase
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodBase_IsFamily_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_MethodBase_IsFamily_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_MethodBase_IsFamily_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -26742,7 +26736,7 @@ internal unsafe class System_Reflection_MethodBase
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsFamily;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -26756,14 +26750,14 @@ internal unsafe class System_Reflection_MethodBase
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodBase_IsFamilyAndAssembly_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_MethodBase_IsFamilyAndAssembly_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_MethodBase_IsFamilyAndAssembly_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -26774,7 +26768,7 @@ internal unsafe class System_Reflection_MethodBase
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsFamilyAndAssembly;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -26788,14 +26782,14 @@ internal unsafe class System_Reflection_MethodBase
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodBase_IsFamilyOrAssembly_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_MethodBase_IsFamilyOrAssembly_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_MethodBase_IsFamilyOrAssembly_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -26806,7 +26800,7 @@ internal unsafe class System_Reflection_MethodBase
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsFamilyOrAssembly;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -26820,14 +26814,14 @@ internal unsafe class System_Reflection_MethodBase
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodBase_IsPrivate_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_MethodBase_IsPrivate_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_MethodBase_IsPrivate_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -26838,7 +26832,7 @@ internal unsafe class System_Reflection_MethodBase
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsPrivate;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -26852,14 +26846,14 @@ internal unsafe class System_Reflection_MethodBase
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodBase_IsPublic_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_MethodBase_IsPublic_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_MethodBase_IsPublic_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -26870,7 +26864,7 @@ internal unsafe class System_Reflection_MethodBase
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsPublic;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -26884,14 +26878,14 @@ internal unsafe class System_Reflection_MethodBase
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodBase_IsConstructedGenericMethod_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_MethodBase_IsConstructedGenericMethod_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_MethodBase_IsConstructedGenericMethod_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -26902,7 +26896,7 @@ internal unsafe class System_Reflection_MethodBase
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsConstructedGenericMethod;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -26916,14 +26910,14 @@ internal unsafe class System_Reflection_MethodBase
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodBase_IsGenericMethod_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_MethodBase_IsGenericMethod_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_MethodBase_IsGenericMethod_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -26934,7 +26928,7 @@ internal unsafe class System_Reflection_MethodBase
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsGenericMethod;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -26948,14 +26942,14 @@ internal unsafe class System_Reflection_MethodBase
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodBase_IsGenericMethodDefinition_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_MethodBase_IsGenericMethodDefinition_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_MethodBase_IsGenericMethodDefinition_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -26966,7 +26960,7 @@ internal unsafe class System_Reflection_MethodBase
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsGenericMethodDefinition;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -26980,14 +26974,14 @@ internal unsafe class System_Reflection_MethodBase
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodBase_ContainsGenericParameters_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_MethodBase_ContainsGenericParameters_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_MethodBase_ContainsGenericParameters_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -26998,7 +26992,7 @@ internal unsafe class System_Reflection_MethodBase
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.ContainsGenericParameters;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -27012,7 +27006,7 @@ internal unsafe class System_Reflection_MethodBase
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -27051,7 +27045,7 @@ internal unsafe class System_Reflection_MethodBase
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodBase_IsSecurityCritical_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_MethodBase_IsSecurityCritical_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_MethodBase_IsSecurityCritical_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -27062,7 +27056,7 @@ internal unsafe class System_Reflection_MethodBase
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsSecurityCritical;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -27076,14 +27070,14 @@ internal unsafe class System_Reflection_MethodBase
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodBase_IsSecuritySafeCritical_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_MethodBase_IsSecuritySafeCritical_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_MethodBase_IsSecuritySafeCritical_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -27094,7 +27088,7 @@ internal unsafe class System_Reflection_MethodBase
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsSecuritySafeCritical;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -27108,14 +27102,14 @@ internal unsafe class System_Reflection_MethodBase
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodBase_IsSecurityTransparent_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_MethodBase_IsSecurityTransparent_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_MethodBase_IsSecurityTransparent_Get(void* /* System.Reflection.MethodBase */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -27126,7 +27120,7 @@ internal unsafe class System_Reflection_MethodBase
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsSecurityTransparent;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -27140,7 +27134,7 @@ internal unsafe class System_Reflection_MethodBase
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -27230,7 +27224,7 @@ internal unsafe class System_RuntimeMethodHandle
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_RuntimeMethodHandle_Equals")]
-	internal static CBool /* System.Boolean */ System_RuntimeMethodHandle_Equals(void* /* System.RuntimeMethodHandle */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_RuntimeMethodHandle_Equals(void* /* System.RuntimeMethodHandle */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -27242,7 +27236,7 @@ internal unsafe class System_RuntimeMethodHandle
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(objConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -27256,7 +27250,7 @@ internal unsafe class System_RuntimeMethodHandle
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -27312,7 +27306,7 @@ internal unsafe class System_RuntimeMethodHandle
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_RuntimeMethodHandle_Equals1")]
-	internal static CBool /* System.Boolean */ System_RuntimeMethodHandle_Equals1(void* /* System.RuntimeMethodHandle */ __self, void* /* System.RuntimeMethodHandle */ handle, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_RuntimeMethodHandle_Equals1(void* /* System.RuntimeMethodHandle */ __self, void* /* System.RuntimeMethodHandle */ handle, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -27324,7 +27318,7 @@ internal unsafe class System_RuntimeMethodHandle
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(handleConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -27338,7 +27332,7 @@ internal unsafe class System_RuntimeMethodHandle
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -27549,7 +27543,7 @@ internal unsafe class System_Runtime_Serialization_SerializationInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_SerializationInfo_AddValue2")]
-	internal static void /* System.Void */ System_Runtime_Serialization_SerializationInfo_AddValue2(void* /* System.Runtime.Serialization.SerializationInfo */ __self, byte* /* System.String */ name, CBool /* System.Boolean */ value, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_Runtime_Serialization_SerializationInfo_AddValue2(void* /* System.Runtime.Serialization.SerializationInfo */ __self, byte* /* System.String */ name, byte /* System.Boolean */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -27991,7 +27985,7 @@ internal unsafe class System_Runtime_Serialization_SerializationInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_SerializationInfo_GetBoolean")]
-	internal static CBool /* System.Boolean */ System_Runtime_Serialization_SerializationInfo_GetBoolean(void* /* System.Runtime.Serialization.SerializationInfo */ __self, byte* /* System.String */ name, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Runtime_Serialization_SerializationInfo_GetBoolean(void* /* System.Runtime.Serialization.SerializationInfo */ __self, byte* /* System.String */ name, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -28003,7 +27997,7 @@ internal unsafe class System_Runtime_Serialization_SerializationInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.GetBoolean(nameConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -28017,7 +28011,7 @@ internal unsafe class System_Runtime_Serialization_SerializationInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -28487,7 +28481,7 @@ internal unsafe class System_Runtime_Serialization_SerializationInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_SerializationInfo_Create1")]
-	internal static void* /* System.Runtime.Serialization.SerializationInfo */ System_Runtime_Serialization_SerializationInfo_Create1(void* /* System.Type */ type, void* /* System.Runtime.Serialization.IFormatterConverter */ converter, CBool /* System.Boolean */ requireSameTokenInPartialTrust, void** /* System.Exception */ __outException)
+	internal static void* /* System.Runtime.Serialization.SerializationInfo */ System_Runtime_Serialization_SerializationInfo_Create1(void* /* System.Type */ type, void* /* System.Runtime.Serialization.IFormatterConverter */ converter, byte /* System.Boolean */ requireSameTokenInPartialTrust, void** /* System.Exception */ __outException)
 	{
 		System.Type typeConverted = InteropUtils.GetInstance<System.Type>(type);
 		System.Runtime.Serialization.IFormatterConverter converterConverted = InteropUtils.GetInstance<System.Runtime.Serialization.IFormatterConverter>(converter);
@@ -28633,7 +28627,7 @@ internal unsafe class System_Runtime_Serialization_SerializationInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_SerializationInfo_IsFullTypeNameSetExplicit_Get")]
-	internal static CBool /* System.Boolean */ System_Runtime_Serialization_SerializationInfo_IsFullTypeNameSetExplicit_Get(void* /* System.Runtime.Serialization.SerializationInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Runtime_Serialization_SerializationInfo_IsFullTypeNameSetExplicit_Get(void* /* System.Runtime.Serialization.SerializationInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -28644,7 +28638,7 @@ internal unsafe class System_Runtime_Serialization_SerializationInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsFullTypeNameSetExplicit;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -28658,14 +28652,14 @@ internal unsafe class System_Runtime_Serialization_SerializationInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_SerializationInfo_IsAssemblyNameSetExplicit_Get")]
-	internal static CBool /* System.Boolean */ System_Runtime_Serialization_SerializationInfo_IsAssemblyNameSetExplicit_Get(void* /* System.Runtime.Serialization.SerializationInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Runtime_Serialization_SerializationInfo_IsAssemblyNameSetExplicit_Get(void* /* System.Runtime.Serialization.SerializationInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -28676,7 +28670,7 @@ internal unsafe class System_Runtime_Serialization_SerializationInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsAssemblyNameSetExplicit;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -28690,7 +28684,7 @@ internal unsafe class System_Runtime_Serialization_SerializationInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -28783,7 +28777,7 @@ internal unsafe class System_Runtime_Serialization_SerializationInfo
 internal unsafe class System_Runtime_Serialization_SerializationInfoEnumerator
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_SerializationInfoEnumerator_MoveNext")]
-	internal static CBool /* System.Boolean */ System_Runtime_Serialization_SerializationInfoEnumerator_MoveNext(void* /* System.Runtime.Serialization.SerializationInfoEnumerator */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Runtime_Serialization_SerializationInfoEnumerator_MoveNext(void* /* System.Runtime.Serialization.SerializationInfoEnumerator */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -28794,7 +28788,7 @@ internal unsafe class System_Runtime_Serialization_SerializationInfoEnumerator
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.MoveNext();
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -28808,7 +28802,7 @@ internal unsafe class System_Runtime_Serialization_SerializationInfoEnumerator
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -29373,7 +29367,7 @@ internal unsafe class System_Decimal
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_Equals")]
-	internal static CBool /* System.Boolean */ System_Decimal_Equals(void* /* System.Decimal */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Decimal_Equals(void* /* System.Decimal */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -29385,7 +29379,7 @@ internal unsafe class System_Decimal
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -29399,13 +29393,13 @@ internal unsafe class System_Decimal
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_Equals1")]
-	internal static CBool /* System.Boolean */ System_Decimal_Equals1(void* /* System.Decimal */ __self, void* /* System.Decimal */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Decimal_Equals1(void* /* System.Decimal */ __self, void* /* System.Decimal */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -29417,7 +29411,7 @@ internal unsafe class System_Decimal
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -29431,7 +29425,7 @@ internal unsafe class System_Decimal
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -29467,14 +29461,14 @@ internal unsafe class System_Decimal
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_Equals2")]
-	internal static CBool /* System.Boolean */ System_Decimal_Equals2(void* /* System.Decimal */ d1, void* /* System.Decimal */ d2, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Decimal_Equals2(void* /* System.Decimal */ d1, void* /* System.Decimal */ d2, void** /* System.Exception */ __outException)
 	{
 		System.Decimal d1Converted = InteropUtils.GetInstance<System.Decimal>(d1);
 		System.Decimal d2Converted = InteropUtils.GetInstance<System.Decimal>(d2);
 	
 	    try {
 			System.Boolean __returnValue = System.Decimal.Equals(d1Converted, d2Converted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -29488,7 +29482,7 @@ internal unsafe class System_Decimal
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -29754,14 +29748,14 @@ internal unsafe class System_Decimal
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_TryParse")]
-	internal static CBool /* System.Boolean */ System_Decimal_TryParse(byte* /* System.String */ s, void** /* System.Decimal */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Decimal_TryParse(byte* /* System.String */ s, void** /* System.Decimal */ result, void** /* System.Exception */ __outException)
 	{
 		System.String sConverted = InteropUtils.ToDotNetString(s);
 		System.Decimal resultConverted;
 	
 	    try {
 			System.Boolean __returnValue = System.Decimal.TryParse(sConverted, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -29779,13 +29773,13 @@ internal unsafe class System_Decimal
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_TryParse1")]
-	internal static CBool /* System.Boolean */ System_Decimal_TryParse1(byte* /* System.String */ s, System.Globalization.NumberStyles /* System.Globalization.NumberStyles */ style, void* /* System.IFormatProvider */ provider, void** /* System.Decimal */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Decimal_TryParse1(byte* /* System.String */ s, System.Globalization.NumberStyles /* System.Globalization.NumberStyles */ style, void* /* System.IFormatProvider */ provider, void** /* System.Decimal */ result, void** /* System.Exception */ __outException)
 	{
 		System.String sConverted = InteropUtils.ToDotNetString(s);
 		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
@@ -29793,7 +29787,7 @@ internal unsafe class System_Decimal
 	
 	    try {
 			System.Boolean __returnValue = System.Decimal.TryParse(sConverted, style, providerConverted, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -29811,7 +29805,7 @@ internal unsafe class System_Decimal
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -30520,13 +30514,13 @@ internal unsafe class System_Decimal
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_IsCanonical")]
-	internal static CBool /* System.Boolean */ System_Decimal_IsCanonical(void* /* System.Decimal */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Decimal_IsCanonical(void* /* System.Decimal */ value, void** /* System.Exception */ __outException)
 	{
 		System.Decimal valueConverted = InteropUtils.GetInstance<System.Decimal>(value);
 	
 	    try {
 			System.Boolean __returnValue = System.Decimal.IsCanonical(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -30540,19 +30534,19 @@ internal unsafe class System_Decimal
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_IsEvenInteger")]
-	internal static CBool /* System.Boolean */ System_Decimal_IsEvenInteger(void* /* System.Decimal */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Decimal_IsEvenInteger(void* /* System.Decimal */ value, void** /* System.Exception */ __outException)
 	{
 		System.Decimal valueConverted = InteropUtils.GetInstance<System.Decimal>(value);
 	
 	    try {
 			System.Boolean __returnValue = System.Decimal.IsEvenInteger(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -30566,19 +30560,19 @@ internal unsafe class System_Decimal
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_IsInteger")]
-	internal static CBool /* System.Boolean */ System_Decimal_IsInteger(void* /* System.Decimal */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Decimal_IsInteger(void* /* System.Decimal */ value, void** /* System.Exception */ __outException)
 	{
 		System.Decimal valueConverted = InteropUtils.GetInstance<System.Decimal>(value);
 	
 	    try {
 			System.Boolean __returnValue = System.Decimal.IsInteger(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -30592,19 +30586,19 @@ internal unsafe class System_Decimal
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_IsNegative")]
-	internal static CBool /* System.Boolean */ System_Decimal_IsNegative(void* /* System.Decimal */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Decimal_IsNegative(void* /* System.Decimal */ value, void** /* System.Exception */ __outException)
 	{
 		System.Decimal valueConverted = InteropUtils.GetInstance<System.Decimal>(value);
 	
 	    try {
 			System.Boolean __returnValue = System.Decimal.IsNegative(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -30618,19 +30612,19 @@ internal unsafe class System_Decimal
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_IsOddInteger")]
-	internal static CBool /* System.Boolean */ System_Decimal_IsOddInteger(void* /* System.Decimal */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Decimal_IsOddInteger(void* /* System.Decimal */ value, void** /* System.Exception */ __outException)
 	{
 		System.Decimal valueConverted = InteropUtils.GetInstance<System.Decimal>(value);
 	
 	    try {
 			System.Boolean __returnValue = System.Decimal.IsOddInteger(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -30644,19 +30638,19 @@ internal unsafe class System_Decimal
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_IsPositive")]
-	internal static CBool /* System.Boolean */ System_Decimal_IsPositive(void* /* System.Decimal */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Decimal_IsPositive(void* /* System.Decimal */ value, void** /* System.Exception */ __outException)
 	{
 		System.Decimal valueConverted = InteropUtils.GetInstance<System.Decimal>(value);
 	
 	    try {
 			System.Boolean __returnValue = System.Decimal.IsPositive(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -30670,7 +30664,7 @@ internal unsafe class System_Decimal
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -30730,7 +30724,7 @@ internal unsafe class System_Decimal
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_TryParse2")]
-	internal static CBool /* System.Boolean */ System_Decimal_TryParse2(byte* /* System.String */ s, void* /* System.IFormatProvider */ provider, void** /* System.Decimal */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Decimal_TryParse2(byte* /* System.String */ s, void* /* System.IFormatProvider */ provider, void** /* System.Decimal */ result, void** /* System.Exception */ __outException)
 	{
 		System.String sConverted = InteropUtils.ToDotNetString(s);
 		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
@@ -30738,7 +30732,7 @@ internal unsafe class System_Decimal
 	
 	    try {
 			System.Boolean __returnValue = System.Decimal.TryParse(sConverted, providerConverted, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -30756,7 +30750,7 @@ internal unsafe class System_Decimal
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -30938,7 +30932,7 @@ internal unsafe class System_Decimal
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_Create7")]
-	internal static void* /* System.Decimal */ System_Decimal_Create7(int /* System.Int32 */ lo, int /* System.Int32 */ mid, int /* System.Int32 */ hi, CBool /* System.Boolean */ isNegative, byte /* System.Byte */ scale, void** /* System.Exception */ __outException)
+	internal static void* /* System.Decimal */ System_Decimal_Create7(int /* System.Int32 */ lo, int /* System.Int32 */ mid, int /* System.Int32 */ hi, byte /* System.Boolean */ isNegative, byte /* System.Byte */ scale, void** /* System.Exception */ __outException)
 	{
 		System.Boolean isNegativeConverted = isNegative.ToBool();
 	
@@ -31497,7 +31491,7 @@ internal unsafe class System_DateTime
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_Equals")]
-	internal static CBool /* System.Boolean */ System_DateTime_Equals(void* /* System.DateTime */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_DateTime_Equals(void* /* System.DateTime */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -31509,7 +31503,7 @@ internal unsafe class System_DateTime
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -31523,13 +31517,13 @@ internal unsafe class System_DateTime
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_Equals1")]
-	internal static CBool /* System.Boolean */ System_DateTime_Equals1(void* /* System.DateTime */ __self, void* /* System.DateTime */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_DateTime_Equals1(void* /* System.DateTime */ __self, void* /* System.DateTime */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -31541,7 +31535,7 @@ internal unsafe class System_DateTime
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -31555,20 +31549,20 @@ internal unsafe class System_DateTime
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_Equals2")]
-	internal static CBool /* System.Boolean */ System_DateTime_Equals2(void* /* System.DateTime */ t1, void* /* System.DateTime */ t2, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_DateTime_Equals2(void* /* System.DateTime */ t1, void* /* System.DateTime */ t2, void** /* System.Exception */ __outException)
 	{
 		System.DateTime t1Converted = InteropUtils.GetInstance<System.DateTime>(t1);
 		System.DateTime t2Converted = InteropUtils.GetInstance<System.DateTime>(t2);
 	
 	    try {
 			System.Boolean __returnValue = System.DateTime.Equals(t1Converted, t2Converted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -31582,7 +31576,7 @@ internal unsafe class System_DateTime
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -31688,7 +31682,7 @@ internal unsafe class System_DateTime
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_IsDaylightSavingTime")]
-	internal static CBool /* System.Boolean */ System_DateTime_IsDaylightSavingTime(void* /* System.DateTime */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_DateTime_IsDaylightSavingTime(void* /* System.DateTime */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -31699,7 +31693,7 @@ internal unsafe class System_DateTime
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsDaylightSavingTime();
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -31713,7 +31707,7 @@ internal unsafe class System_DateTime
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -31805,12 +31799,12 @@ internal unsafe class System_DateTime
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_IsLeapYear")]
-	internal static CBool /* System.Boolean */ System_DateTime_IsLeapYear(int /* System.Int32 */ year, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_DateTime_IsLeapYear(int /* System.Int32 */ year, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
 			System.Boolean __returnValue = System.DateTime.IsLeapYear(year);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -31824,7 +31818,7 @@ internal unsafe class System_DateTime
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -32462,14 +32456,14 @@ internal unsafe class System_DateTime
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_TryParse")]
-	internal static CBool /* System.Boolean */ System_DateTime_TryParse(byte* /* System.String */ s, void** /* System.DateTime */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_DateTime_TryParse(byte* /* System.String */ s, void** /* System.DateTime */ result, void** /* System.Exception */ __outException)
 	{
 		System.String sConverted = InteropUtils.ToDotNetString(s);
 		System.DateTime resultConverted;
 	
 	    try {
 			System.Boolean __returnValue = System.DateTime.TryParse(sConverted, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -32487,13 +32481,13 @@ internal unsafe class System_DateTime
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_TryParse1")]
-	internal static CBool /* System.Boolean */ System_DateTime_TryParse1(byte* /* System.String */ s, void* /* System.IFormatProvider */ provider, System.Globalization.DateTimeStyles /* System.Globalization.DateTimeStyles */ styles, void** /* System.DateTime */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_DateTime_TryParse1(byte* /* System.String */ s, void* /* System.IFormatProvider */ provider, System.Globalization.DateTimeStyles /* System.Globalization.DateTimeStyles */ styles, void** /* System.DateTime */ result, void** /* System.Exception */ __outException)
 	{
 		System.String sConverted = InteropUtils.ToDotNetString(s);
 		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
@@ -32501,7 +32495,7 @@ internal unsafe class System_DateTime
 	
 	    try {
 			System.Boolean __returnValue = System.DateTime.TryParse(sConverted, providerConverted, styles, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -32519,13 +32513,13 @@ internal unsafe class System_DateTime
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_TryParseExact")]
-	internal static CBool /* System.Boolean */ System_DateTime_TryParseExact(byte* /* System.String */ s, byte* /* System.String */ format, void* /* System.IFormatProvider */ provider, System.Globalization.DateTimeStyles /* System.Globalization.DateTimeStyles */ style, void** /* System.DateTime */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_DateTime_TryParseExact(byte* /* System.String */ s, byte* /* System.String */ format, void* /* System.IFormatProvider */ provider, System.Globalization.DateTimeStyles /* System.Globalization.DateTimeStyles */ style, void** /* System.DateTime */ result, void** /* System.Exception */ __outException)
 	{
 		System.String sConverted = InteropUtils.ToDotNetString(s);
 		System.String formatConverted = InteropUtils.ToDotNetString(format);
@@ -32534,7 +32528,7 @@ internal unsafe class System_DateTime
 	
 	    try {
 			System.Boolean __returnValue = System.DateTime.TryParseExact(sConverted, formatConverted, providerConverted, style, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -32552,13 +32546,13 @@ internal unsafe class System_DateTime
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_TryParseExact1")]
-	internal static CBool /* System.Boolean */ System_DateTime_TryParseExact1(byte* /* System.String */ s, void* /* System.String[] */ formats, void* /* System.IFormatProvider */ provider, System.Globalization.DateTimeStyles /* System.Globalization.DateTimeStyles */ style, void** /* System.DateTime */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_DateTime_TryParseExact1(byte* /* System.String */ s, void* /* System.String[] */ formats, void* /* System.IFormatProvider */ provider, System.Globalization.DateTimeStyles /* System.Globalization.DateTimeStyles */ style, void** /* System.DateTime */ result, void** /* System.Exception */ __outException)
 	{
 		System.String sConverted = InteropUtils.ToDotNetString(s);
 		System.String[] formatsConverted = InteropUtils.GetInstance<System.String[]>(formats);
@@ -32567,7 +32561,7 @@ internal unsafe class System_DateTime
 	
 	    try {
 			System.Boolean __returnValue = System.DateTime.TryParseExact(sConverted, formatsConverted, providerConverted, style, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -32585,7 +32579,7 @@ internal unsafe class System_DateTime
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -32828,7 +32822,7 @@ internal unsafe class System_DateTime
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_TryParse2")]
-	internal static CBool /* System.Boolean */ System_DateTime_TryParse2(byte* /* System.String */ s, void* /* System.IFormatProvider */ provider, void** /* System.DateTime */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_DateTime_TryParse2(byte* /* System.String */ s, void* /* System.IFormatProvider */ provider, void** /* System.DateTime */ result, void** /* System.Exception */ __outException)
 	{
 		System.String sConverted = InteropUtils.ToDotNetString(s);
 		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
@@ -32836,7 +32830,7 @@ internal unsafe class System_DateTime
 	
 	    try {
 			System.Boolean __returnValue = System.DateTime.TryParse(sConverted, providerConverted, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -32854,7 +32848,7 @@ internal unsafe class System_DateTime
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -34072,7 +34066,7 @@ internal unsafe class System_TimeSpan
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_TimeSpan_Equals")]
-	internal static CBool /* System.Boolean */ System_TimeSpan_Equals(void* /* System.TimeSpan */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_TimeSpan_Equals(void* /* System.TimeSpan */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -34084,7 +34078,7 @@ internal unsafe class System_TimeSpan
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -34098,13 +34092,13 @@ internal unsafe class System_TimeSpan
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_TimeSpan_Equals1")]
-	internal static CBool /* System.Boolean */ System_TimeSpan_Equals1(void* /* System.TimeSpan */ __self, void* /* System.TimeSpan */ obj, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_TimeSpan_Equals1(void* /* System.TimeSpan */ __self, void* /* System.TimeSpan */ obj, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -34116,7 +34110,7 @@ internal unsafe class System_TimeSpan
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(objConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -34130,20 +34124,20 @@ internal unsafe class System_TimeSpan
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_TimeSpan_Equals2")]
-	internal static CBool /* System.Boolean */ System_TimeSpan_Equals2(void* /* System.TimeSpan */ t1, void* /* System.TimeSpan */ t2, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_TimeSpan_Equals2(void* /* System.TimeSpan */ t1, void* /* System.TimeSpan */ t2, void** /* System.Exception */ __outException)
 	{
 		System.TimeSpan t1Converted = InteropUtils.GetInstance<System.TimeSpan>(t1);
 		System.TimeSpan t2Converted = InteropUtils.GetInstance<System.TimeSpan>(t2);
 	
 	    try {
 			System.Boolean __returnValue = System.TimeSpan.Equals(t1Converted, t2Converted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -34157,7 +34151,7 @@ internal unsafe class System_TimeSpan
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -34664,14 +34658,14 @@ internal unsafe class System_TimeSpan
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_TimeSpan_TryParse")]
-	internal static CBool /* System.Boolean */ System_TimeSpan_TryParse(byte* /* System.String */ s, void** /* System.TimeSpan */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_TimeSpan_TryParse(byte* /* System.String */ s, void** /* System.TimeSpan */ result, void** /* System.Exception */ __outException)
 	{
 		System.String sConverted = InteropUtils.ToDotNetString(s);
 		System.TimeSpan resultConverted;
 	
 	    try {
 			System.Boolean __returnValue = System.TimeSpan.TryParse(sConverted, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -34689,13 +34683,13 @@ internal unsafe class System_TimeSpan
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_TimeSpan_TryParse1")]
-	internal static CBool /* System.Boolean */ System_TimeSpan_TryParse1(byte* /* System.String */ input, void* /* System.IFormatProvider */ formatProvider, void** /* System.TimeSpan */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_TimeSpan_TryParse1(byte* /* System.String */ input, void* /* System.IFormatProvider */ formatProvider, void** /* System.TimeSpan */ result, void** /* System.Exception */ __outException)
 	{
 		System.String inputConverted = InteropUtils.ToDotNetString(input);
 		System.IFormatProvider formatProviderConverted = InteropUtils.GetInstance<System.IFormatProvider>(formatProvider);
@@ -34703,7 +34697,7 @@ internal unsafe class System_TimeSpan
 	
 	    try {
 			System.Boolean __returnValue = System.TimeSpan.TryParse(inputConverted, formatProviderConverted, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -34721,13 +34715,13 @@ internal unsafe class System_TimeSpan
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_TimeSpan_TryParseExact")]
-	internal static CBool /* System.Boolean */ System_TimeSpan_TryParseExact(byte* /* System.String */ input, byte* /* System.String */ format, void* /* System.IFormatProvider */ formatProvider, void** /* System.TimeSpan */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_TimeSpan_TryParseExact(byte* /* System.String */ input, byte* /* System.String */ format, void* /* System.IFormatProvider */ formatProvider, void** /* System.TimeSpan */ result, void** /* System.Exception */ __outException)
 	{
 		System.String inputConverted = InteropUtils.ToDotNetString(input);
 		System.String formatConverted = InteropUtils.ToDotNetString(format);
@@ -34736,7 +34730,7 @@ internal unsafe class System_TimeSpan
 	
 	    try {
 			System.Boolean __returnValue = System.TimeSpan.TryParseExact(inputConverted, formatConverted, formatProviderConverted, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -34754,13 +34748,13 @@ internal unsafe class System_TimeSpan
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_TimeSpan_TryParseExact1")]
-	internal static CBool /* System.Boolean */ System_TimeSpan_TryParseExact1(byte* /* System.String */ input, void* /* System.String[] */ formats, void* /* System.IFormatProvider */ formatProvider, void** /* System.TimeSpan */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_TimeSpan_TryParseExact1(byte* /* System.String */ input, void* /* System.String[] */ formats, void* /* System.IFormatProvider */ formatProvider, void** /* System.TimeSpan */ result, void** /* System.Exception */ __outException)
 	{
 		System.String inputConverted = InteropUtils.ToDotNetString(input);
 		System.String[] formatsConverted = InteropUtils.GetInstance<System.String[]>(formats);
@@ -34769,7 +34763,7 @@ internal unsafe class System_TimeSpan
 	
 	    try {
 			System.Boolean __returnValue = System.TimeSpan.TryParseExact(inputConverted, formatsConverted, formatProviderConverted, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -34787,13 +34781,13 @@ internal unsafe class System_TimeSpan
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_TimeSpan_TryParseExact2")]
-	internal static CBool /* System.Boolean */ System_TimeSpan_TryParseExact2(byte* /* System.String */ input, byte* /* System.String */ format, void* /* System.IFormatProvider */ formatProvider, System.Globalization.TimeSpanStyles /* System.Globalization.TimeSpanStyles */ styles, void** /* System.TimeSpan */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_TimeSpan_TryParseExact2(byte* /* System.String */ input, byte* /* System.String */ format, void* /* System.IFormatProvider */ formatProvider, System.Globalization.TimeSpanStyles /* System.Globalization.TimeSpanStyles */ styles, void** /* System.TimeSpan */ result, void** /* System.Exception */ __outException)
 	{
 		System.String inputConverted = InteropUtils.ToDotNetString(input);
 		System.String formatConverted = InteropUtils.ToDotNetString(format);
@@ -34802,7 +34796,7 @@ internal unsafe class System_TimeSpan
 	
 	    try {
 			System.Boolean __returnValue = System.TimeSpan.TryParseExact(inputConverted, formatConverted, formatProviderConverted, styles, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -34820,13 +34814,13 @@ internal unsafe class System_TimeSpan
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_TimeSpan_TryParseExact3")]
-	internal static CBool /* System.Boolean */ System_TimeSpan_TryParseExact3(byte* /* System.String */ input, void* /* System.String[] */ formats, void* /* System.IFormatProvider */ formatProvider, System.Globalization.TimeSpanStyles /* System.Globalization.TimeSpanStyles */ styles, void** /* System.TimeSpan */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_TimeSpan_TryParseExact3(byte* /* System.String */ input, void* /* System.String[] */ formats, void* /* System.IFormatProvider */ formatProvider, System.Globalization.TimeSpanStyles /* System.Globalization.TimeSpanStyles */ styles, void** /* System.TimeSpan */ result, void** /* System.Exception */ __outException)
 	{
 		System.String inputConverted = InteropUtils.ToDotNetString(input);
 		System.String[] formatsConverted = InteropUtils.GetInstance<System.String[]>(formats);
@@ -34835,7 +34829,7 @@ internal unsafe class System_TimeSpan
 	
 	    try {
 			System.Boolean __returnValue = System.TimeSpan.TryParseExact(inputConverted, formatsConverted, formatProviderConverted, styles, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -34853,7 +34847,7 @@ internal unsafe class System_TimeSpan
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -36049,7 +36043,7 @@ internal unsafe class System_DateOnly
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_DateOnly_Equals")]
-	internal static CBool /* System.Boolean */ System_DateOnly_Equals(void* /* System.DateOnly */ __self, void* /* System.DateOnly */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_DateOnly_Equals(void* /* System.DateOnly */ __self, void* /* System.DateOnly */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -36061,7 +36055,7 @@ internal unsafe class System_DateOnly
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -36075,13 +36069,13 @@ internal unsafe class System_DateOnly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_DateOnly_Equals1")]
-	internal static CBool /* System.Boolean */ System_DateOnly_Equals1(void* /* System.DateOnly */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_DateOnly_Equals1(void* /* System.DateOnly */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -36093,7 +36087,7 @@ internal unsafe class System_DateOnly
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -36107,7 +36101,7 @@ internal unsafe class System_DateOnly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -36306,14 +36300,14 @@ internal unsafe class System_DateOnly
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_DateOnly_TryParse")]
-	internal static CBool /* System.Boolean */ System_DateOnly_TryParse(byte* /* System.String */ s, void** /* System.DateOnly */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_DateOnly_TryParse(byte* /* System.String */ s, void** /* System.DateOnly */ result, void** /* System.Exception */ __outException)
 	{
 		System.String sConverted = InteropUtils.ToDotNetString(s);
 		System.DateOnly resultConverted;
 	
 	    try {
 			System.Boolean __returnValue = System.DateOnly.TryParse(sConverted, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -36331,13 +36325,13 @@ internal unsafe class System_DateOnly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_DateOnly_TryParse1")]
-	internal static CBool /* System.Boolean */ System_DateOnly_TryParse1(byte* /* System.String */ s, void* /* System.IFormatProvider */ provider, System.Globalization.DateTimeStyles /* System.Globalization.DateTimeStyles */ style, void** /* System.DateOnly */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_DateOnly_TryParse1(byte* /* System.String */ s, void* /* System.IFormatProvider */ provider, System.Globalization.DateTimeStyles /* System.Globalization.DateTimeStyles */ style, void** /* System.DateOnly */ result, void** /* System.Exception */ __outException)
 	{
 		System.String sConverted = InteropUtils.ToDotNetString(s);
 		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
@@ -36345,7 +36339,7 @@ internal unsafe class System_DateOnly
 	
 	    try {
 			System.Boolean __returnValue = System.DateOnly.TryParse(sConverted, providerConverted, style, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -36363,13 +36357,13 @@ internal unsafe class System_DateOnly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_DateOnly_TryParseExact")]
-	internal static CBool /* System.Boolean */ System_DateOnly_TryParseExact(byte* /* System.String */ s, byte* /* System.String */ format, void** /* System.DateOnly */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_DateOnly_TryParseExact(byte* /* System.String */ s, byte* /* System.String */ format, void** /* System.DateOnly */ result, void** /* System.Exception */ __outException)
 	{
 		System.String sConverted = InteropUtils.ToDotNetString(s);
 		System.String formatConverted = InteropUtils.ToDotNetString(format);
@@ -36377,7 +36371,7 @@ internal unsafe class System_DateOnly
 	
 	    try {
 			System.Boolean __returnValue = System.DateOnly.TryParseExact(sConverted, formatConverted, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -36395,13 +36389,13 @@ internal unsafe class System_DateOnly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_DateOnly_TryParseExact1")]
-	internal static CBool /* System.Boolean */ System_DateOnly_TryParseExact1(byte* /* System.String */ s, byte* /* System.String */ format, void* /* System.IFormatProvider */ provider, System.Globalization.DateTimeStyles /* System.Globalization.DateTimeStyles */ style, void** /* System.DateOnly */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_DateOnly_TryParseExact1(byte* /* System.String */ s, byte* /* System.String */ format, void* /* System.IFormatProvider */ provider, System.Globalization.DateTimeStyles /* System.Globalization.DateTimeStyles */ style, void** /* System.DateOnly */ result, void** /* System.Exception */ __outException)
 	{
 		System.String sConverted = InteropUtils.ToDotNetString(s);
 		System.String formatConverted = InteropUtils.ToDotNetString(format);
@@ -36410,7 +36404,7 @@ internal unsafe class System_DateOnly
 	
 	    try {
 			System.Boolean __returnValue = System.DateOnly.TryParseExact(sConverted, formatConverted, providerConverted, style, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -36428,13 +36422,13 @@ internal unsafe class System_DateOnly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_DateOnly_TryParseExact2")]
-	internal static CBool /* System.Boolean */ System_DateOnly_TryParseExact2(byte* /* System.String */ s, void* /* System.String[] */ formats, void** /* System.DateOnly */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_DateOnly_TryParseExact2(byte* /* System.String */ s, void* /* System.String[] */ formats, void** /* System.DateOnly */ result, void** /* System.Exception */ __outException)
 	{
 		System.String sConverted = InteropUtils.ToDotNetString(s);
 		System.String[] formatsConverted = InteropUtils.GetInstance<System.String[]>(formats);
@@ -36442,7 +36436,7 @@ internal unsafe class System_DateOnly
 	
 	    try {
 			System.Boolean __returnValue = System.DateOnly.TryParseExact(sConverted, formatsConverted, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -36460,13 +36454,13 @@ internal unsafe class System_DateOnly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_DateOnly_TryParseExact3")]
-	internal static CBool /* System.Boolean */ System_DateOnly_TryParseExact3(byte* /* System.String */ s, void* /* System.String[] */ formats, void* /* System.IFormatProvider */ provider, System.Globalization.DateTimeStyles /* System.Globalization.DateTimeStyles */ style, void** /* System.DateOnly */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_DateOnly_TryParseExact3(byte* /* System.String */ s, void* /* System.String[] */ formats, void* /* System.IFormatProvider */ provider, System.Globalization.DateTimeStyles /* System.Globalization.DateTimeStyles */ style, void** /* System.DateOnly */ result, void** /* System.Exception */ __outException)
 	{
 		System.String sConverted = InteropUtils.ToDotNetString(s);
 		System.String[] formatsConverted = InteropUtils.GetInstance<System.String[]>(formats);
@@ -36475,7 +36469,7 @@ internal unsafe class System_DateOnly
 	
 	    try {
 			System.Boolean __returnValue = System.DateOnly.TryParseExact(sConverted, formatsConverted, providerConverted, style, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -36493,7 +36487,7 @@ internal unsafe class System_DateOnly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -36716,7 +36710,7 @@ internal unsafe class System_DateOnly
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_DateOnly_TryParse2")]
-	internal static CBool /* System.Boolean */ System_DateOnly_TryParse2(byte* /* System.String */ s, void* /* System.IFormatProvider */ provider, void** /* System.DateOnly */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_DateOnly_TryParse2(byte* /* System.String */ s, void* /* System.IFormatProvider */ provider, void** /* System.DateOnly */ result, void** /* System.Exception */ __outException)
 	{
 		System.String sConverted = InteropUtils.ToDotNetString(s);
 		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
@@ -36724,7 +36718,7 @@ internal unsafe class System_DateOnly
 	
 	    try {
 			System.Boolean __returnValue = System.DateOnly.TryParse(sConverted, providerConverted, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -36742,7 +36736,7 @@ internal unsafe class System_DateOnly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -37263,7 +37257,7 @@ internal unsafe class System_TimeOnly
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_TimeOnly_IsBetween")]
-	internal static CBool /* System.Boolean */ System_TimeOnly_IsBetween(void* /* System.TimeOnly */ __self, void* /* System.TimeOnly */ start, void* /* System.TimeOnly */ end, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_TimeOnly_IsBetween(void* /* System.TimeOnly */ __self, void* /* System.TimeOnly */ start, void* /* System.TimeOnly */ end, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -37276,7 +37270,7 @@ internal unsafe class System_TimeOnly
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsBetween(startConverted, endConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -37290,7 +37284,7 @@ internal unsafe class System_TimeOnly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -37623,7 +37617,7 @@ internal unsafe class System_TimeOnly
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_TimeOnly_Equals")]
-	internal static CBool /* System.Boolean */ System_TimeOnly_Equals(void* /* System.TimeOnly */ __self, void* /* System.TimeOnly */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_TimeOnly_Equals(void* /* System.TimeOnly */ __self, void* /* System.TimeOnly */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -37635,7 +37629,7 @@ internal unsafe class System_TimeOnly
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -37649,13 +37643,13 @@ internal unsafe class System_TimeOnly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_TimeOnly_Equals1")]
-	internal static CBool /* System.Boolean */ System_TimeOnly_Equals1(void* /* System.TimeOnly */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_TimeOnly_Equals1(void* /* System.TimeOnly */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -37667,7 +37661,7 @@ internal unsafe class System_TimeOnly
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -37681,7 +37675,7 @@ internal unsafe class System_TimeOnly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -37880,14 +37874,14 @@ internal unsafe class System_TimeOnly
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_TimeOnly_TryParse")]
-	internal static CBool /* System.Boolean */ System_TimeOnly_TryParse(byte* /* System.String */ s, void** /* System.TimeOnly */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_TimeOnly_TryParse(byte* /* System.String */ s, void** /* System.TimeOnly */ result, void** /* System.Exception */ __outException)
 	{
 		System.String sConverted = InteropUtils.ToDotNetString(s);
 		System.TimeOnly resultConverted;
 	
 	    try {
 			System.Boolean __returnValue = System.TimeOnly.TryParse(sConverted, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -37905,13 +37899,13 @@ internal unsafe class System_TimeOnly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_TimeOnly_TryParse1")]
-	internal static CBool /* System.Boolean */ System_TimeOnly_TryParse1(byte* /* System.String */ s, void* /* System.IFormatProvider */ provider, System.Globalization.DateTimeStyles /* System.Globalization.DateTimeStyles */ style, void** /* System.TimeOnly */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_TimeOnly_TryParse1(byte* /* System.String */ s, void* /* System.IFormatProvider */ provider, System.Globalization.DateTimeStyles /* System.Globalization.DateTimeStyles */ style, void** /* System.TimeOnly */ result, void** /* System.Exception */ __outException)
 	{
 		System.String sConverted = InteropUtils.ToDotNetString(s);
 		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
@@ -37919,7 +37913,7 @@ internal unsafe class System_TimeOnly
 	
 	    try {
 			System.Boolean __returnValue = System.TimeOnly.TryParse(sConverted, providerConverted, style, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -37937,13 +37931,13 @@ internal unsafe class System_TimeOnly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_TimeOnly_TryParseExact")]
-	internal static CBool /* System.Boolean */ System_TimeOnly_TryParseExact(byte* /* System.String */ s, byte* /* System.String */ format, void** /* System.TimeOnly */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_TimeOnly_TryParseExact(byte* /* System.String */ s, byte* /* System.String */ format, void** /* System.TimeOnly */ result, void** /* System.Exception */ __outException)
 	{
 		System.String sConverted = InteropUtils.ToDotNetString(s);
 		System.String formatConverted = InteropUtils.ToDotNetString(format);
@@ -37951,7 +37945,7 @@ internal unsafe class System_TimeOnly
 	
 	    try {
 			System.Boolean __returnValue = System.TimeOnly.TryParseExact(sConverted, formatConverted, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -37969,13 +37963,13 @@ internal unsafe class System_TimeOnly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_TimeOnly_TryParseExact1")]
-	internal static CBool /* System.Boolean */ System_TimeOnly_TryParseExact1(byte* /* System.String */ s, byte* /* System.String */ format, void* /* System.IFormatProvider */ provider, System.Globalization.DateTimeStyles /* System.Globalization.DateTimeStyles */ style, void** /* System.TimeOnly */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_TimeOnly_TryParseExact1(byte* /* System.String */ s, byte* /* System.String */ format, void* /* System.IFormatProvider */ provider, System.Globalization.DateTimeStyles /* System.Globalization.DateTimeStyles */ style, void** /* System.TimeOnly */ result, void** /* System.Exception */ __outException)
 	{
 		System.String sConverted = InteropUtils.ToDotNetString(s);
 		System.String formatConverted = InteropUtils.ToDotNetString(format);
@@ -37984,7 +37978,7 @@ internal unsafe class System_TimeOnly
 	
 	    try {
 			System.Boolean __returnValue = System.TimeOnly.TryParseExact(sConverted, formatConverted, providerConverted, style, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -38002,13 +37996,13 @@ internal unsafe class System_TimeOnly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_TimeOnly_TryParseExact2")]
-	internal static CBool /* System.Boolean */ System_TimeOnly_TryParseExact2(byte* /* System.String */ s, void* /* System.String[] */ formats, void** /* System.TimeOnly */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_TimeOnly_TryParseExact2(byte* /* System.String */ s, void* /* System.String[] */ formats, void** /* System.TimeOnly */ result, void** /* System.Exception */ __outException)
 	{
 		System.String sConverted = InteropUtils.ToDotNetString(s);
 		System.String[] formatsConverted = InteropUtils.GetInstance<System.String[]>(formats);
@@ -38016,7 +38010,7 @@ internal unsafe class System_TimeOnly
 	
 	    try {
 			System.Boolean __returnValue = System.TimeOnly.TryParseExact(sConverted, formatsConverted, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -38034,13 +38028,13 @@ internal unsafe class System_TimeOnly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_TimeOnly_TryParseExact3")]
-	internal static CBool /* System.Boolean */ System_TimeOnly_TryParseExact3(byte* /* System.String */ s, void* /* System.String[] */ formats, void* /* System.IFormatProvider */ provider, System.Globalization.DateTimeStyles /* System.Globalization.DateTimeStyles */ style, void** /* System.TimeOnly */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_TimeOnly_TryParseExact3(byte* /* System.String */ s, void* /* System.String[] */ formats, void* /* System.IFormatProvider */ provider, System.Globalization.DateTimeStyles /* System.Globalization.DateTimeStyles */ style, void** /* System.TimeOnly */ result, void** /* System.Exception */ __outException)
 	{
 		System.String sConverted = InteropUtils.ToDotNetString(s);
 		System.String[] formatsConverted = InteropUtils.GetInstance<System.String[]>(formats);
@@ -38049,7 +38043,7 @@ internal unsafe class System_TimeOnly
 	
 	    try {
 			System.Boolean __returnValue = System.TimeOnly.TryParseExact(sConverted, formatsConverted, providerConverted, style, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -38067,7 +38061,7 @@ internal unsafe class System_TimeOnly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -38290,7 +38284,7 @@ internal unsafe class System_TimeOnly
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_TimeOnly_TryParse2")]
-	internal static CBool /* System.Boolean */ System_TimeOnly_TryParse2(byte* /* System.String */ s, void* /* System.IFormatProvider */ provider, void** /* System.TimeOnly */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_TimeOnly_TryParse2(byte* /* System.String */ s, void* /* System.IFormatProvider */ provider, void** /* System.TimeOnly */ result, void** /* System.Exception */ __outException)
 	{
 		System.String sConverted = InteropUtils.ToDotNetString(s);
 		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
@@ -38298,7 +38292,7 @@ internal unsafe class System_TimeOnly
 	
 	    try {
 			System.Boolean __returnValue = System.TimeOnly.TryParse(sConverted, providerConverted, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -38316,7 +38310,7 @@ internal unsafe class System_TimeOnly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -39573,7 +39567,7 @@ internal unsafe class System_Globalization_Calendar
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_Calendar_IsLeapDay")]
-	internal static CBool /* System.Boolean */ System_Globalization_Calendar_IsLeapDay(void* /* System.Globalization.Calendar */ __self, int /* System.Int32 */ year, int /* System.Int32 */ month, int /* System.Int32 */ day, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Globalization_Calendar_IsLeapDay(void* /* System.Globalization.Calendar */ __self, int /* System.Int32 */ year, int /* System.Int32 */ month, int /* System.Int32 */ day, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -39584,7 +39578,7 @@ internal unsafe class System_Globalization_Calendar
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsLeapDay(year, month, day);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -39598,13 +39592,13 @@ internal unsafe class System_Globalization_Calendar
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_Calendar_IsLeapDay1")]
-	internal static CBool /* System.Boolean */ System_Globalization_Calendar_IsLeapDay1(void* /* System.Globalization.Calendar */ __self, int /* System.Int32 */ year, int /* System.Int32 */ month, int /* System.Int32 */ day, int /* System.Int32 */ era, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Globalization_Calendar_IsLeapDay1(void* /* System.Globalization.Calendar */ __self, int /* System.Int32 */ year, int /* System.Int32 */ month, int /* System.Int32 */ day, int /* System.Int32 */ era, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -39615,7 +39609,7 @@ internal unsafe class System_Globalization_Calendar
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsLeapDay(year, month, day, era);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -39629,13 +39623,13 @@ internal unsafe class System_Globalization_Calendar
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_Calendar_IsLeapMonth")]
-	internal static CBool /* System.Boolean */ System_Globalization_Calendar_IsLeapMonth(void* /* System.Globalization.Calendar */ __self, int /* System.Int32 */ year, int /* System.Int32 */ month, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Globalization_Calendar_IsLeapMonth(void* /* System.Globalization.Calendar */ __self, int /* System.Int32 */ year, int /* System.Int32 */ month, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -39646,7 +39640,7 @@ internal unsafe class System_Globalization_Calendar
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsLeapMonth(year, month);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -39660,13 +39654,13 @@ internal unsafe class System_Globalization_Calendar
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_Calendar_IsLeapMonth1")]
-	internal static CBool /* System.Boolean */ System_Globalization_Calendar_IsLeapMonth1(void* /* System.Globalization.Calendar */ __self, int /* System.Int32 */ year, int /* System.Int32 */ month, int /* System.Int32 */ era, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Globalization_Calendar_IsLeapMonth1(void* /* System.Globalization.Calendar */ __self, int /* System.Int32 */ year, int /* System.Int32 */ month, int /* System.Int32 */ era, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -39677,7 +39671,7 @@ internal unsafe class System_Globalization_Calendar
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsLeapMonth(year, month, era);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -39691,7 +39685,7 @@ internal unsafe class System_Globalization_Calendar
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -39757,7 +39751,7 @@ internal unsafe class System_Globalization_Calendar
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_Calendar_IsLeapYear")]
-	internal static CBool /* System.Boolean */ System_Globalization_Calendar_IsLeapYear(void* /* System.Globalization.Calendar */ __self, int /* System.Int32 */ year, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Globalization_Calendar_IsLeapYear(void* /* System.Globalization.Calendar */ __self, int /* System.Int32 */ year, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -39768,7 +39762,7 @@ internal unsafe class System_Globalization_Calendar
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsLeapYear(year);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -39782,13 +39776,13 @@ internal unsafe class System_Globalization_Calendar
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_Calendar_IsLeapYear1")]
-	internal static CBool /* System.Boolean */ System_Globalization_Calendar_IsLeapYear1(void* /* System.Globalization.Calendar */ __self, int /* System.Int32 */ year, int /* System.Int32 */ era, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Globalization_Calendar_IsLeapYear1(void* /* System.Globalization.Calendar */ __self, int /* System.Int32 */ year, int /* System.Int32 */ era, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -39799,7 +39793,7 @@ internal unsafe class System_Globalization_Calendar
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsLeapYear(year, era);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -39813,7 +39807,7 @@ internal unsafe class System_Globalization_Calendar
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -40006,7 +40000,7 @@ internal unsafe class System_Globalization_Calendar
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_Calendar_IsReadOnly_Get")]
-	internal static CBool /* System.Boolean */ System_Globalization_Calendar_IsReadOnly_Get(void* /* System.Globalization.Calendar */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Globalization_Calendar_IsReadOnly_Get(void* /* System.Globalization.Calendar */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -40017,7 +40011,7 @@ internal unsafe class System_Globalization_Calendar
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsReadOnly;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -40031,7 +40025,7 @@ internal unsafe class System_Globalization_Calendar
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -40256,7 +40250,7 @@ internal unsafe class System_Runtime_Serialization_IFormatterConverter
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_IFormatterConverter_ToBoolean")]
-	internal static CBool /* System.Boolean */ System_Runtime_Serialization_IFormatterConverter_ToBoolean(void* /* System.Runtime.Serialization.IFormatterConverter */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Runtime_Serialization_IFormatterConverter_ToBoolean(void* /* System.Runtime.Serialization.IFormatterConverter */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -40268,7 +40262,7 @@ internal unsafe class System_Runtime_Serialization_IFormatterConverter
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.ToBoolean(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -40282,7 +40276,7 @@ internal unsafe class System_Runtime_Serialization_IFormatterConverter
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -40748,7 +40742,7 @@ internal unsafe class System_Runtime_Serialization_IFormatterConverter
 internal unsafe class System_Runtime_Serialization_StreamingContext
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_StreamingContext_Equals")]
-	internal static CBool /* System.Boolean */ System_Runtime_Serialization_StreamingContext_Equals(void* /* System.Runtime.Serialization.StreamingContext */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Runtime_Serialization_StreamingContext_Equals(void* /* System.Runtime.Serialization.StreamingContext */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -40760,7 +40754,7 @@ internal unsafe class System_Runtime_Serialization_StreamingContext
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(objConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -40774,7 +40768,7 @@ internal unsafe class System_Runtime_Serialization_StreamingContext
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -41044,7 +41038,7 @@ internal unsafe class System_RuntimeTypeHandle
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_RuntimeTypeHandle_Equals")]
-	internal static CBool /* System.Boolean */ System_RuntimeTypeHandle_Equals(void* /* System.RuntimeTypeHandle */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_RuntimeTypeHandle_Equals(void* /* System.RuntimeTypeHandle */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -41056,7 +41050,7 @@ internal unsafe class System_RuntimeTypeHandle
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(objConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -41070,13 +41064,13 @@ internal unsafe class System_RuntimeTypeHandle
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_RuntimeTypeHandle_Equals1")]
-	internal static CBool /* System.Boolean */ System_RuntimeTypeHandle_Equals1(void* /* System.RuntimeTypeHandle */ __self, void* /* System.RuntimeTypeHandle */ handle, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_RuntimeTypeHandle_Equals1(void* /* System.RuntimeTypeHandle */ __self, void* /* System.RuntimeTypeHandle */ handle, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -41088,7 +41082,7 @@ internal unsafe class System_RuntimeTypeHandle
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(handleConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -41102,7 +41096,7 @@ internal unsafe class System_RuntimeTypeHandle
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -41253,7 +41247,7 @@ internal unsafe class System_ModuleHandle
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_ModuleHandle_Equals")]
-	internal static CBool /* System.Boolean */ System_ModuleHandle_Equals(void* /* System.ModuleHandle */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_ModuleHandle_Equals(void* /* System.ModuleHandle */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -41265,7 +41259,7 @@ internal unsafe class System_ModuleHandle
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(objConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -41279,13 +41273,13 @@ internal unsafe class System_ModuleHandle
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_ModuleHandle_Equals1")]
-	internal static CBool /* System.Boolean */ System_ModuleHandle_Equals1(void* /* System.ModuleHandle */ __self, void* /* System.ModuleHandle */ handle, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_ModuleHandle_Equals1(void* /* System.ModuleHandle */ __self, void* /* System.ModuleHandle */ handle, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -41297,7 +41291,7 @@ internal unsafe class System_ModuleHandle
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(handleConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -41311,7 +41305,7 @@ internal unsafe class System_ModuleHandle
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -41698,7 +41692,7 @@ internal unsafe class System_RuntimeFieldHandle
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_RuntimeFieldHandle_Equals")]
-	internal static CBool /* System.Boolean */ System_RuntimeFieldHandle_Equals(void* /* System.RuntimeFieldHandle */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_RuntimeFieldHandle_Equals(void* /* System.RuntimeFieldHandle */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -41710,7 +41704,7 @@ internal unsafe class System_RuntimeFieldHandle
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(objConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -41724,13 +41718,13 @@ internal unsafe class System_RuntimeFieldHandle
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_RuntimeFieldHandle_Equals1")]
-	internal static CBool /* System.Boolean */ System_RuntimeFieldHandle_Equals1(void* /* System.RuntimeFieldHandle */ __self, void* /* System.RuntimeFieldHandle */ handle, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_RuntimeFieldHandle_Equals1(void* /* System.RuntimeFieldHandle */ __self, void* /* System.RuntimeFieldHandle */ handle, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -41742,7 +41736,7 @@ internal unsafe class System_RuntimeFieldHandle
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(handleConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -41756,7 +41750,7 @@ internal unsafe class System_RuntimeFieldHandle
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -41897,7 +41891,7 @@ internal unsafe class System_RuntimeFieldHandle
 internal unsafe class System_Reflection_ParameterInfo
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ParameterInfo_IsDefined")]
-	internal static CBool /* System.Boolean */ System_Reflection_ParameterInfo_IsDefined(void* /* System.Reflection.ParameterInfo */ __self, void* /* System.Type */ attributeType, CBool /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_ParameterInfo_IsDefined(void* /* System.Reflection.ParameterInfo */ __self, void* /* System.Type */ attributeType, byte /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -41910,7 +41904,7 @@ internal unsafe class System_Reflection_ParameterInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsDefined(attributeTypeConverted, inheritConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -41924,13 +41918,13 @@ internal unsafe class System_Reflection_ParameterInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ParameterInfo_GetCustomAttributes")]
-	internal static void* /* System.Object[] */ System_Reflection_ParameterInfo_GetCustomAttributes(void* /* System.Reflection.ParameterInfo */ __self, CBool /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
+	internal static void* /* System.Object[] */ System_Reflection_ParameterInfo_GetCustomAttributes(void* /* System.Reflection.ParameterInfo */ __self, byte /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -41962,7 +41956,7 @@ internal unsafe class System_Reflection_ParameterInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ParameterInfo_GetCustomAttributes1")]
-	internal static void* /* System.Object[] */ System_Reflection_ParameterInfo_GetCustomAttributes1(void* /* System.Reflection.ParameterInfo */ __self, void* /* System.Type */ attributeType, CBool /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
+	internal static void* /* System.Object[] */ System_Reflection_ParameterInfo_GetCustomAttributes1(void* /* System.Reflection.ParameterInfo */ __self, void* /* System.Type */ attributeType, byte /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -42309,7 +42303,7 @@ internal unsafe class System_Reflection_ParameterInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ParameterInfo_IsIn_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_ParameterInfo_IsIn_Get(void* /* System.Reflection.ParameterInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_ParameterInfo_IsIn_Get(void* /* System.Reflection.ParameterInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -42320,7 +42314,7 @@ internal unsafe class System_Reflection_ParameterInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsIn;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -42334,14 +42328,14 @@ internal unsafe class System_Reflection_ParameterInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ParameterInfo_IsLcid_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_ParameterInfo_IsLcid_Get(void* /* System.Reflection.ParameterInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_ParameterInfo_IsLcid_Get(void* /* System.Reflection.ParameterInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -42352,7 +42346,7 @@ internal unsafe class System_Reflection_ParameterInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsLcid;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -42366,14 +42360,14 @@ internal unsafe class System_Reflection_ParameterInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ParameterInfo_IsOptional_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_ParameterInfo_IsOptional_Get(void* /* System.Reflection.ParameterInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_ParameterInfo_IsOptional_Get(void* /* System.Reflection.ParameterInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -42384,7 +42378,7 @@ internal unsafe class System_Reflection_ParameterInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsOptional;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -42398,14 +42392,14 @@ internal unsafe class System_Reflection_ParameterInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ParameterInfo_IsOut_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_ParameterInfo_IsOut_Get(void* /* System.Reflection.ParameterInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_ParameterInfo_IsOut_Get(void* /* System.Reflection.ParameterInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -42416,7 +42410,7 @@ internal unsafe class System_Reflection_ParameterInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsOut;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -42430,14 +42424,14 @@ internal unsafe class System_Reflection_ParameterInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ParameterInfo_IsRetval_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_ParameterInfo_IsRetval_Get(void* /* System.Reflection.ParameterInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_ParameterInfo_IsRetval_Get(void* /* System.Reflection.ParameterInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -42448,7 +42442,7 @@ internal unsafe class System_Reflection_ParameterInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsRetval;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -42462,7 +42456,7 @@ internal unsafe class System_Reflection_ParameterInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -42533,7 +42527,7 @@ internal unsafe class System_Reflection_ParameterInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ParameterInfo_HasDefaultValue_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_ParameterInfo_HasDefaultValue_Get(void* /* System.Reflection.ParameterInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_ParameterInfo_HasDefaultValue_Get(void* /* System.Reflection.ParameterInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -42544,7 +42538,7 @@ internal unsafe class System_Reflection_ParameterInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.HasDefaultValue;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -42558,7 +42552,7 @@ internal unsafe class System_Reflection_ParameterInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -42759,7 +42753,7 @@ internal unsafe class System_Reflection_MethodBody
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodBody_InitLocals_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_MethodBody_InitLocals_Get(void* /* System.Reflection.MethodBody */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_MethodBody_InitLocals_Get(void* /* System.Reflection.MethodBody */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -42770,7 +42764,7 @@ internal unsafe class System_Reflection_MethodBody
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.InitLocals;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -42784,7 +42778,7 @@ internal unsafe class System_Reflection_MethodBody
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -43057,7 +43051,7 @@ internal unsafe class System_Reflection_FieldInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_FieldInfo_Equals")]
-	internal static CBool /* System.Boolean */ System_Reflection_FieldInfo_Equals(void* /* System.Reflection.FieldInfo */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_FieldInfo_Equals(void* /* System.Reflection.FieldInfo */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -43069,7 +43063,7 @@ internal unsafe class System_Reflection_FieldInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(objConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -43083,7 +43077,7 @@ internal unsafe class System_Reflection_FieldInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -43431,7 +43425,7 @@ internal unsafe class System_Reflection_FieldInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_FieldInfo_IsInitOnly_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_FieldInfo_IsInitOnly_Get(void* /* System.Reflection.FieldInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_FieldInfo_IsInitOnly_Get(void* /* System.Reflection.FieldInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -43442,7 +43436,7 @@ internal unsafe class System_Reflection_FieldInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsInitOnly;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -43456,14 +43450,14 @@ internal unsafe class System_Reflection_FieldInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_FieldInfo_IsLiteral_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_FieldInfo_IsLiteral_Get(void* /* System.Reflection.FieldInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_FieldInfo_IsLiteral_Get(void* /* System.Reflection.FieldInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -43474,7 +43468,7 @@ internal unsafe class System_Reflection_FieldInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsLiteral;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -43488,14 +43482,14 @@ internal unsafe class System_Reflection_FieldInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_FieldInfo_IsNotSerialized_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_FieldInfo_IsNotSerialized_Get(void* /* System.Reflection.FieldInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_FieldInfo_IsNotSerialized_Get(void* /* System.Reflection.FieldInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -43506,7 +43500,7 @@ internal unsafe class System_Reflection_FieldInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsNotSerialized;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -43520,14 +43514,14 @@ internal unsafe class System_Reflection_FieldInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_FieldInfo_IsPinvokeImpl_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_FieldInfo_IsPinvokeImpl_Get(void* /* System.Reflection.FieldInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_FieldInfo_IsPinvokeImpl_Get(void* /* System.Reflection.FieldInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -43538,7 +43532,7 @@ internal unsafe class System_Reflection_FieldInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsPinvokeImpl;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -43552,14 +43546,14 @@ internal unsafe class System_Reflection_FieldInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_FieldInfo_IsSpecialName_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_FieldInfo_IsSpecialName_Get(void* /* System.Reflection.FieldInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_FieldInfo_IsSpecialName_Get(void* /* System.Reflection.FieldInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -43570,7 +43564,7 @@ internal unsafe class System_Reflection_FieldInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsSpecialName;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -43584,14 +43578,14 @@ internal unsafe class System_Reflection_FieldInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_FieldInfo_IsStatic_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_FieldInfo_IsStatic_Get(void* /* System.Reflection.FieldInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_FieldInfo_IsStatic_Get(void* /* System.Reflection.FieldInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -43602,7 +43596,7 @@ internal unsafe class System_Reflection_FieldInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsStatic;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -43616,14 +43610,14 @@ internal unsafe class System_Reflection_FieldInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_FieldInfo_IsAssembly_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_FieldInfo_IsAssembly_Get(void* /* System.Reflection.FieldInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_FieldInfo_IsAssembly_Get(void* /* System.Reflection.FieldInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -43634,7 +43628,7 @@ internal unsafe class System_Reflection_FieldInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsAssembly;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -43648,14 +43642,14 @@ internal unsafe class System_Reflection_FieldInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_FieldInfo_IsFamily_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_FieldInfo_IsFamily_Get(void* /* System.Reflection.FieldInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_FieldInfo_IsFamily_Get(void* /* System.Reflection.FieldInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -43666,7 +43660,7 @@ internal unsafe class System_Reflection_FieldInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsFamily;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -43680,14 +43674,14 @@ internal unsafe class System_Reflection_FieldInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_FieldInfo_IsFamilyAndAssembly_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_FieldInfo_IsFamilyAndAssembly_Get(void* /* System.Reflection.FieldInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_FieldInfo_IsFamilyAndAssembly_Get(void* /* System.Reflection.FieldInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -43698,7 +43692,7 @@ internal unsafe class System_Reflection_FieldInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsFamilyAndAssembly;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -43712,14 +43706,14 @@ internal unsafe class System_Reflection_FieldInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_FieldInfo_IsFamilyOrAssembly_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_FieldInfo_IsFamilyOrAssembly_Get(void* /* System.Reflection.FieldInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_FieldInfo_IsFamilyOrAssembly_Get(void* /* System.Reflection.FieldInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -43730,7 +43724,7 @@ internal unsafe class System_Reflection_FieldInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsFamilyOrAssembly;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -43744,14 +43738,14 @@ internal unsafe class System_Reflection_FieldInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_FieldInfo_IsPrivate_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_FieldInfo_IsPrivate_Get(void* /* System.Reflection.FieldInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_FieldInfo_IsPrivate_Get(void* /* System.Reflection.FieldInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -43762,7 +43756,7 @@ internal unsafe class System_Reflection_FieldInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsPrivate;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -43776,14 +43770,14 @@ internal unsafe class System_Reflection_FieldInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_FieldInfo_IsPublic_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_FieldInfo_IsPublic_Get(void* /* System.Reflection.FieldInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_FieldInfo_IsPublic_Get(void* /* System.Reflection.FieldInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -43794,7 +43788,7 @@ internal unsafe class System_Reflection_FieldInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsPublic;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -43808,14 +43802,14 @@ internal unsafe class System_Reflection_FieldInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_FieldInfo_IsSecurityCritical_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_FieldInfo_IsSecurityCritical_Get(void* /* System.Reflection.FieldInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_FieldInfo_IsSecurityCritical_Get(void* /* System.Reflection.FieldInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -43826,7 +43820,7 @@ internal unsafe class System_Reflection_FieldInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsSecurityCritical;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -43840,14 +43834,14 @@ internal unsafe class System_Reflection_FieldInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_FieldInfo_IsSecuritySafeCritical_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_FieldInfo_IsSecuritySafeCritical_Get(void* /* System.Reflection.FieldInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_FieldInfo_IsSecuritySafeCritical_Get(void* /* System.Reflection.FieldInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -43858,7 +43852,7 @@ internal unsafe class System_Reflection_FieldInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsSecuritySafeCritical;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -43872,14 +43866,14 @@ internal unsafe class System_Reflection_FieldInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_FieldInfo_IsSecurityTransparent_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_FieldInfo_IsSecurityTransparent_Get(void* /* System.Reflection.FieldInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_FieldInfo_IsSecurityTransparent_Get(void* /* System.Reflection.FieldInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -43890,7 +43884,7 @@ internal unsafe class System_Reflection_FieldInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsSecurityTransparent;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -43904,7 +43898,7 @@ internal unsafe class System_Reflection_FieldInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -44096,7 +44090,7 @@ internal unsafe class System_Reflection_PropertyInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_PropertyInfo_GetAccessors1")]
-	internal static void* /* System.Reflection.MethodInfo[] */ System_Reflection_PropertyInfo_GetAccessors1(void* /* System.Reflection.PropertyInfo */ __self, CBool /* System.Boolean */ nonPublic, void** /* System.Exception */ __outException)
+	internal static void* /* System.Reflection.MethodInfo[] */ System_Reflection_PropertyInfo_GetAccessors1(void* /* System.Reflection.PropertyInfo */ __self, byte /* System.Boolean */ nonPublic, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -44159,7 +44153,7 @@ internal unsafe class System_Reflection_PropertyInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_PropertyInfo_GetGetMethod1")]
-	internal static void* /* System.Reflection.MethodInfo */ System_Reflection_PropertyInfo_GetGetMethod1(void* /* System.Reflection.PropertyInfo */ __self, CBool /* System.Boolean */ nonPublic, void** /* System.Exception */ __outException)
+	internal static void* /* System.Reflection.MethodInfo */ System_Reflection_PropertyInfo_GetGetMethod1(void* /* System.Reflection.PropertyInfo */ __self, byte /* System.Boolean */ nonPublic, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -44222,7 +44216,7 @@ internal unsafe class System_Reflection_PropertyInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_PropertyInfo_GetSetMethod1")]
-	internal static void* /* System.Reflection.MethodInfo */ System_Reflection_PropertyInfo_GetSetMethod1(void* /* System.Reflection.PropertyInfo */ __self, CBool /* System.Boolean */ nonPublic, void** /* System.Exception */ __outException)
+	internal static void* /* System.Reflection.MethodInfo */ System_Reflection_PropertyInfo_GetSetMethod1(void* /* System.Reflection.PropertyInfo */ __self, byte /* System.Boolean */ nonPublic, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -44603,7 +44597,7 @@ internal unsafe class System_Reflection_PropertyInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_PropertyInfo_Equals")]
-	internal static CBool /* System.Boolean */ System_Reflection_PropertyInfo_Equals(void* /* System.Reflection.PropertyInfo */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_PropertyInfo_Equals(void* /* System.Reflection.PropertyInfo */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -44615,7 +44609,7 @@ internal unsafe class System_Reflection_PropertyInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(objConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -44629,7 +44623,7 @@ internal unsafe class System_Reflection_PropertyInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -44759,7 +44753,7 @@ internal unsafe class System_Reflection_PropertyInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_PropertyInfo_IsSpecialName_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_PropertyInfo_IsSpecialName_Get(void* /* System.Reflection.PropertyInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_PropertyInfo_IsSpecialName_Get(void* /* System.Reflection.PropertyInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -44770,7 +44764,7 @@ internal unsafe class System_Reflection_PropertyInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsSpecialName;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -44784,14 +44778,14 @@ internal unsafe class System_Reflection_PropertyInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_PropertyInfo_CanRead_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_PropertyInfo_CanRead_Get(void* /* System.Reflection.PropertyInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_PropertyInfo_CanRead_Get(void* /* System.Reflection.PropertyInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -44802,7 +44796,7 @@ internal unsafe class System_Reflection_PropertyInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.CanRead;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -44816,14 +44810,14 @@ internal unsafe class System_Reflection_PropertyInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_PropertyInfo_CanWrite_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_PropertyInfo_CanWrite_Get(void* /* System.Reflection.PropertyInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_PropertyInfo_CanWrite_Get(void* /* System.Reflection.PropertyInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -44834,7 +44828,7 @@ internal unsafe class System_Reflection_PropertyInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.CanWrite;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -44848,7 +44842,7 @@ internal unsafe class System_Reflection_PropertyInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -45148,7 +45142,7 @@ internal unsafe class System_Reflection_MethodInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodInfo_Equals")]
-	internal static CBool /* System.Boolean */ System_Reflection_MethodInfo_Equals(void* /* System.Reflection.MethodInfo */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_MethodInfo_Equals(void* /* System.Reflection.MethodInfo */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -45160,7 +45154,7 @@ internal unsafe class System_Reflection_MethodInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(objConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -45174,7 +45168,7 @@ internal unsafe class System_Reflection_MethodInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -45360,7 +45354,7 @@ internal unsafe class System_Reflection_MethodInfo
 internal unsafe class System_Reflection_ICustomAttributeProvider
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ICustomAttributeProvider_GetCustomAttributes")]
-	internal static void* /* System.Object[] */ System_Reflection_ICustomAttributeProvider_GetCustomAttributes(void* /* System.Reflection.ICustomAttributeProvider */ __self, CBool /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
+	internal static void* /* System.Object[] */ System_Reflection_ICustomAttributeProvider_GetCustomAttributes(void* /* System.Reflection.ICustomAttributeProvider */ __self, byte /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -45392,7 +45386,7 @@ internal unsafe class System_Reflection_ICustomAttributeProvider
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ICustomAttributeProvider_GetCustomAttributes1")]
-	internal static void* /* System.Object[] */ System_Reflection_ICustomAttributeProvider_GetCustomAttributes1(void* /* System.Reflection.ICustomAttributeProvider */ __self, void* /* System.Type */ attributeType, CBool /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
+	internal static void* /* System.Object[] */ System_Reflection_ICustomAttributeProvider_GetCustomAttributes1(void* /* System.Reflection.ICustomAttributeProvider */ __self, void* /* System.Type */ attributeType, byte /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -45425,7 +45419,7 @@ internal unsafe class System_Reflection_ICustomAttributeProvider
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ICustomAttributeProvider_IsDefined")]
-	internal static CBool /* System.Boolean */ System_Reflection_ICustomAttributeProvider_IsDefined(void* /* System.Reflection.ICustomAttributeProvider */ __self, void* /* System.Type */ attributeType, CBool /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_ICustomAttributeProvider_IsDefined(void* /* System.Reflection.ICustomAttributeProvider */ __self, void* /* System.Type */ attributeType, byte /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -45438,7 +45432,7 @@ internal unsafe class System_Reflection_ICustomAttributeProvider
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsDefined(attributeTypeConverted, inheritConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -45452,7 +45446,7 @@ internal unsafe class System_Reflection_ICustomAttributeProvider
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -45629,7 +45623,7 @@ internal unsafe class System_Delegate
 internal unsafe class System_Collections_IDictionary
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_Collections_IDictionary_Contains")]
-	internal static CBool /* System.Boolean */ System_Collections_IDictionary_Contains(void* /* System.Collections.IDictionary */ __self, void* /* System.Object */ key, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Collections_IDictionary_Contains(void* /* System.Collections.IDictionary */ __self, void* /* System.Object */ key, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -45641,7 +45635,7 @@ internal unsafe class System_Collections_IDictionary
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Contains(keyConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -45655,7 +45649,7 @@ internal unsafe class System_Collections_IDictionary
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -45843,7 +45837,7 @@ internal unsafe class System_Collections_IDictionary
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Collections_IDictionary_IsReadOnly_Get")]
-	internal static CBool /* System.Boolean */ System_Collections_IDictionary_IsReadOnly_Get(void* /* System.Collections.IDictionary */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Collections_IDictionary_IsReadOnly_Get(void* /* System.Collections.IDictionary */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -45854,7 +45848,7 @@ internal unsafe class System_Collections_IDictionary
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsReadOnly;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -45868,14 +45862,14 @@ internal unsafe class System_Collections_IDictionary
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Collections_IDictionary_IsFixedSize_Get")]
-	internal static CBool /* System.Boolean */ System_Collections_IDictionary_IsFixedSize_Get(void* /* System.Collections.IDictionary */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Collections_IDictionary_IsFixedSize_Get(void* /* System.Collections.IDictionary */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -45886,7 +45880,7 @@ internal unsafe class System_Collections_IDictionary
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsFixedSize;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -45900,7 +45894,7 @@ internal unsafe class System_Collections_IDictionary
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -46022,7 +46016,7 @@ internal unsafe class System_Collections_ICollection
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Collections_ICollection_IsSynchronized_Get")]
-	internal static CBool /* System.Boolean */ System_Collections_ICollection_IsSynchronized_Get(void* /* System.Collections.ICollection */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Collections_ICollection_IsSynchronized_Get(void* /* System.Collections.ICollection */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -46033,7 +46027,7 @@ internal unsafe class System_Collections_ICollection
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsSynchronized;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -46047,7 +46041,7 @@ internal unsafe class System_Collections_ICollection
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -46905,7 +46899,7 @@ internal unsafe class System_Threading_CancellationToken
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationToken_Register1")]
-	internal static void* /* System.Threading.CancellationTokenRegistration */ System_Threading_CancellationToken_Register1(void* /* System.Threading.CancellationToken */ __self, void* /* System.Action */ callback, CBool /* System.Boolean */ useSynchronizationContext, void** /* System.Exception */ __outException)
+	internal static void* /* System.Threading.CancellationTokenRegistration */ System_Threading_CancellationToken_Register1(void* /* System.Threading.CancellationToken */ __self, void* /* System.Action */ callback, byte /* System.Boolean */ useSynchronizationContext, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -46938,7 +46932,7 @@ internal unsafe class System_Threading_CancellationToken
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationToken_Equals")]
-	internal static CBool /* System.Boolean */ System_Threading_CancellationToken_Equals(void* /* System.Threading.CancellationToken */ __self, void* /* System.Threading.CancellationToken */ other, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_CancellationToken_Equals(void* /* System.Threading.CancellationToken */ __self, void* /* System.Threading.CancellationToken */ other, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -46950,7 +46944,7 @@ internal unsafe class System_Threading_CancellationToken
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(otherConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -46964,13 +46958,13 @@ internal unsafe class System_Threading_CancellationToken
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationToken_Equals1")]
-	internal static CBool /* System.Boolean */ System_Threading_CancellationToken_Equals1(void* /* System.Threading.CancellationToken */ __self, void* /* System.Object */ other, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_CancellationToken_Equals1(void* /* System.Threading.CancellationToken */ __self, void* /* System.Object */ other, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -46982,7 +46976,7 @@ internal unsafe class System_Threading_CancellationToken
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(otherConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -46996,7 +46990,7 @@ internal unsafe class System_Threading_CancellationToken
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -47060,7 +47054,7 @@ internal unsafe class System_Threading_CancellationToken
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationToken_Create")]
-	internal static void* /* System.Threading.CancellationToken */ System_Threading_CancellationToken_Create(CBool /* System.Boolean */ canceled, void** /* System.Exception */ __outException)
+	internal static void* /* System.Threading.CancellationToken */ System_Threading_CancellationToken_Create(byte /* System.Boolean */ canceled, void** /* System.Exception */ __outException)
 	{
 		System.Boolean canceledConverted = canceled.ToBool();
 	
@@ -47112,7 +47106,7 @@ internal unsafe class System_Threading_CancellationToken
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationToken_IsCancellationRequested_Get")]
-	internal static CBool /* System.Boolean */ System_Threading_CancellationToken_IsCancellationRequested_Get(void* /* System.Threading.CancellationToken */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_CancellationToken_IsCancellationRequested_Get(void* /* System.Threading.CancellationToken */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -47123,7 +47117,7 @@ internal unsafe class System_Threading_CancellationToken
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsCancellationRequested;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -47137,14 +47131,14 @@ internal unsafe class System_Threading_CancellationToken
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationToken_CanBeCanceled_Get")]
-	internal static CBool /* System.Boolean */ System_Threading_CancellationToken_CanBeCanceled_Get(void* /* System.Threading.CancellationToken */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_CancellationToken_CanBeCanceled_Get(void* /* System.Threading.CancellationToken */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -47155,7 +47149,7 @@ internal unsafe class System_Threading_CancellationToken
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.CanBeCanceled;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -47169,7 +47163,7 @@ internal unsafe class System_Threading_CancellationToken
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -47287,7 +47281,7 @@ internal unsafe class System_Threading_WaitHandle
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_WaitHandle_WaitOne")]
-	internal static CBool /* System.Boolean */ System_Threading_WaitHandle_WaitOne(void* /* System.Threading.WaitHandle */ __self, int /* System.Int32 */ millisecondsTimeout, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_WaitHandle_WaitOne(void* /* System.Threading.WaitHandle */ __self, int /* System.Int32 */ millisecondsTimeout, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -47298,7 +47292,7 @@ internal unsafe class System_Threading_WaitHandle
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.WaitOne(millisecondsTimeout);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -47312,13 +47306,13 @@ internal unsafe class System_Threading_WaitHandle
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_WaitHandle_WaitOne1")]
-	internal static CBool /* System.Boolean */ System_Threading_WaitHandle_WaitOne1(void* /* System.Threading.WaitHandle */ __self, void* /* System.TimeSpan */ timeout, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_WaitHandle_WaitOne1(void* /* System.Threading.WaitHandle */ __self, void* /* System.TimeSpan */ timeout, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -47330,7 +47324,7 @@ internal unsafe class System_Threading_WaitHandle
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.WaitOne(timeoutConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -47344,13 +47338,13 @@ internal unsafe class System_Threading_WaitHandle
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_WaitHandle_WaitOne2")]
-	internal static CBool /* System.Boolean */ System_Threading_WaitHandle_WaitOne2(void* /* System.Threading.WaitHandle */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_WaitHandle_WaitOne2(void* /* System.Threading.WaitHandle */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -47361,7 +47355,7 @@ internal unsafe class System_Threading_WaitHandle
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.WaitOne();
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -47375,13 +47369,13 @@ internal unsafe class System_Threading_WaitHandle
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_WaitHandle_WaitOne3")]
-	internal static CBool /* System.Boolean */ System_Threading_WaitHandle_WaitOne3(void* /* System.Threading.WaitHandle */ __self, int /* System.Int32 */ millisecondsTimeout, CBool /* System.Boolean */ exitContext, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_WaitHandle_WaitOne3(void* /* System.Threading.WaitHandle */ __self, int /* System.Int32 */ millisecondsTimeout, byte /* System.Boolean */ exitContext, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -47393,7 +47387,7 @@ internal unsafe class System_Threading_WaitHandle
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.WaitOne(millisecondsTimeout, exitContextConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -47407,13 +47401,13 @@ internal unsafe class System_Threading_WaitHandle
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_WaitHandle_WaitOne4")]
-	internal static CBool /* System.Boolean */ System_Threading_WaitHandle_WaitOne4(void* /* System.Threading.WaitHandle */ __self, void* /* System.TimeSpan */ timeout, CBool /* System.Boolean */ exitContext, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_WaitHandle_WaitOne4(void* /* System.Threading.WaitHandle */ __self, void* /* System.TimeSpan */ timeout, byte /* System.Boolean */ exitContext, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -47426,7 +47420,7 @@ internal unsafe class System_Threading_WaitHandle
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.WaitOne(timeoutConverted, exitContextConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -47440,19 +47434,19 @@ internal unsafe class System_Threading_WaitHandle
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_WaitHandle_WaitAll")]
-	internal static CBool /* System.Boolean */ System_Threading_WaitHandle_WaitAll(void* /* System.Threading.WaitHandle[] */ waitHandles, int /* System.Int32 */ millisecondsTimeout, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_WaitHandle_WaitAll(void* /* System.Threading.WaitHandle[] */ waitHandles, int /* System.Int32 */ millisecondsTimeout, void** /* System.Exception */ __outException)
 	{
 		System.Threading.WaitHandle[] waitHandlesConverted = InteropUtils.GetInstance<System.Threading.WaitHandle[]>(waitHandles);
 	
 	    try {
 			System.Boolean __returnValue = System.Threading.WaitHandle.WaitAll(waitHandlesConverted, millisecondsTimeout);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -47466,20 +47460,20 @@ internal unsafe class System_Threading_WaitHandle
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_WaitHandle_WaitAll1")]
-	internal static CBool /* System.Boolean */ System_Threading_WaitHandle_WaitAll1(void* /* System.Threading.WaitHandle[] */ waitHandles, void* /* System.TimeSpan */ timeout, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_WaitHandle_WaitAll1(void* /* System.Threading.WaitHandle[] */ waitHandles, void* /* System.TimeSpan */ timeout, void** /* System.Exception */ __outException)
 	{
 		System.Threading.WaitHandle[] waitHandlesConverted = InteropUtils.GetInstance<System.Threading.WaitHandle[]>(waitHandles);
 		System.TimeSpan timeoutConverted = InteropUtils.GetInstance<System.TimeSpan>(timeout);
 	
 	    try {
 			System.Boolean __returnValue = System.Threading.WaitHandle.WaitAll(waitHandlesConverted, timeoutConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -47493,19 +47487,19 @@ internal unsafe class System_Threading_WaitHandle
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_WaitHandle_WaitAll2")]
-	internal static CBool /* System.Boolean */ System_Threading_WaitHandle_WaitAll2(void* /* System.Threading.WaitHandle[] */ waitHandles, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_WaitHandle_WaitAll2(void* /* System.Threading.WaitHandle[] */ waitHandles, void** /* System.Exception */ __outException)
 	{
 		System.Threading.WaitHandle[] waitHandlesConverted = InteropUtils.GetInstance<System.Threading.WaitHandle[]>(waitHandles);
 	
 	    try {
 			System.Boolean __returnValue = System.Threading.WaitHandle.WaitAll(waitHandlesConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -47519,20 +47513,20 @@ internal unsafe class System_Threading_WaitHandle
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_WaitHandle_WaitAll3")]
-	internal static CBool /* System.Boolean */ System_Threading_WaitHandle_WaitAll3(void* /* System.Threading.WaitHandle[] */ waitHandles, int /* System.Int32 */ millisecondsTimeout, CBool /* System.Boolean */ exitContext, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_WaitHandle_WaitAll3(void* /* System.Threading.WaitHandle[] */ waitHandles, int /* System.Int32 */ millisecondsTimeout, byte /* System.Boolean */ exitContext, void** /* System.Exception */ __outException)
 	{
 		System.Threading.WaitHandle[] waitHandlesConverted = InteropUtils.GetInstance<System.Threading.WaitHandle[]>(waitHandles);
 		System.Boolean exitContextConverted = exitContext.ToBool();
 	
 	    try {
 			System.Boolean __returnValue = System.Threading.WaitHandle.WaitAll(waitHandlesConverted, millisecondsTimeout, exitContextConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -47546,13 +47540,13 @@ internal unsafe class System_Threading_WaitHandle
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_WaitHandle_WaitAll4")]
-	internal static CBool /* System.Boolean */ System_Threading_WaitHandle_WaitAll4(void* /* System.Threading.WaitHandle[] */ waitHandles, void* /* System.TimeSpan */ timeout, CBool /* System.Boolean */ exitContext, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_WaitHandle_WaitAll4(void* /* System.Threading.WaitHandle[] */ waitHandles, void* /* System.TimeSpan */ timeout, byte /* System.Boolean */ exitContext, void** /* System.Exception */ __outException)
 	{
 		System.Threading.WaitHandle[] waitHandlesConverted = InteropUtils.GetInstance<System.Threading.WaitHandle[]>(waitHandles);
 		System.TimeSpan timeoutConverted = InteropUtils.GetInstance<System.TimeSpan>(timeout);
@@ -47560,7 +47554,7 @@ internal unsafe class System_Threading_WaitHandle
 	
 	    try {
 			System.Boolean __returnValue = System.Threading.WaitHandle.WaitAll(waitHandlesConverted, timeoutConverted, exitContextConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -47574,7 +47568,7 @@ internal unsafe class System_Threading_WaitHandle
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -47656,7 +47650,7 @@ internal unsafe class System_Threading_WaitHandle
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_WaitHandle_WaitAny3")]
-	internal static int /* System.Int32 */ System_Threading_WaitHandle_WaitAny3(void* /* System.Threading.WaitHandle[] */ waitHandles, int /* System.Int32 */ millisecondsTimeout, CBool /* System.Boolean */ exitContext, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_Threading_WaitHandle_WaitAny3(void* /* System.Threading.WaitHandle[] */ waitHandles, int /* System.Int32 */ millisecondsTimeout, byte /* System.Boolean */ exitContext, void** /* System.Exception */ __outException)
 	{
 		System.Threading.WaitHandle[] waitHandlesConverted = InteropUtils.GetInstance<System.Threading.WaitHandle[]>(waitHandles);
 		System.Boolean exitContextConverted = exitContext.ToBool();
@@ -47682,7 +47676,7 @@ internal unsafe class System_Threading_WaitHandle
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_WaitHandle_WaitAny4")]
-	internal static int /* System.Int32 */ System_Threading_WaitHandle_WaitAny4(void* /* System.Threading.WaitHandle[] */ waitHandles, void* /* System.TimeSpan */ timeout, CBool /* System.Boolean */ exitContext, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_Threading_WaitHandle_WaitAny4(void* /* System.Threading.WaitHandle[] */ waitHandles, void* /* System.TimeSpan */ timeout, byte /* System.Boolean */ exitContext, void** /* System.Exception */ __outException)
 	{
 		System.Threading.WaitHandle[] waitHandlesConverted = InteropUtils.GetInstance<System.Threading.WaitHandle[]>(waitHandles);
 		System.TimeSpan timeoutConverted = InteropUtils.GetInstance<System.TimeSpan>(timeout);
@@ -47709,14 +47703,14 @@ internal unsafe class System_Threading_WaitHandle
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_WaitHandle_SignalAndWait")]
-	internal static CBool /* System.Boolean */ System_Threading_WaitHandle_SignalAndWait(void* /* System.Threading.WaitHandle */ toSignal, void* /* System.Threading.WaitHandle */ toWaitOn, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_WaitHandle_SignalAndWait(void* /* System.Threading.WaitHandle */ toSignal, void* /* System.Threading.WaitHandle */ toWaitOn, void** /* System.Exception */ __outException)
 	{
 		System.Threading.WaitHandle toSignalConverted = InteropUtils.GetInstance<System.Threading.WaitHandle>(toSignal);
 		System.Threading.WaitHandle toWaitOnConverted = InteropUtils.GetInstance<System.Threading.WaitHandle>(toWaitOn);
 	
 	    try {
 			System.Boolean __returnValue = System.Threading.WaitHandle.SignalAndWait(toSignalConverted, toWaitOnConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -47730,13 +47724,13 @@ internal unsafe class System_Threading_WaitHandle
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_WaitHandle_SignalAndWait1")]
-	internal static CBool /* System.Boolean */ System_Threading_WaitHandle_SignalAndWait1(void* /* System.Threading.WaitHandle */ toSignal, void* /* System.Threading.WaitHandle */ toWaitOn, void* /* System.TimeSpan */ timeout, CBool /* System.Boolean */ exitContext, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_WaitHandle_SignalAndWait1(void* /* System.Threading.WaitHandle */ toSignal, void* /* System.Threading.WaitHandle */ toWaitOn, void* /* System.TimeSpan */ timeout, byte /* System.Boolean */ exitContext, void** /* System.Exception */ __outException)
 	{
 		System.Threading.WaitHandle toSignalConverted = InteropUtils.GetInstance<System.Threading.WaitHandle>(toSignal);
 		System.Threading.WaitHandle toWaitOnConverted = InteropUtils.GetInstance<System.Threading.WaitHandle>(toWaitOn);
@@ -47745,7 +47739,7 @@ internal unsafe class System_Threading_WaitHandle
 	
 	    try {
 			System.Boolean __returnValue = System.Threading.WaitHandle.SignalAndWait(toSignalConverted, toWaitOnConverted, timeoutConverted, exitContextConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -47759,13 +47753,13 @@ internal unsafe class System_Threading_WaitHandle
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_WaitHandle_SignalAndWait2")]
-	internal static CBool /* System.Boolean */ System_Threading_WaitHandle_SignalAndWait2(void* /* System.Threading.WaitHandle */ toSignal, void* /* System.Threading.WaitHandle */ toWaitOn, int /* System.Int32 */ millisecondsTimeout, CBool /* System.Boolean */ exitContext, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_WaitHandle_SignalAndWait2(void* /* System.Threading.WaitHandle */ toSignal, void* /* System.Threading.WaitHandle */ toWaitOn, int /* System.Int32 */ millisecondsTimeout, byte /* System.Boolean */ exitContext, void** /* System.Exception */ __outException)
 	{
 		System.Threading.WaitHandle toSignalConverted = InteropUtils.GetInstance<System.Threading.WaitHandle>(toSignal);
 		System.Threading.WaitHandle toWaitOnConverted = InteropUtils.GetInstance<System.Threading.WaitHandle>(toWaitOn);
@@ -47773,7 +47767,7 @@ internal unsafe class System_Threading_WaitHandle
 	
 	    try {
 			System.Boolean __returnValue = System.Threading.WaitHandle.SignalAndWait(toSignalConverted, toWaitOnConverted, millisecondsTimeout, exitContextConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -47787,7 +47781,7 @@ internal unsafe class System_Threading_WaitHandle
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -47968,7 +47962,7 @@ internal unsafe class Microsoft_Win32_SafeHandles_SafeWaitHandle
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "Microsoft_Win32_SafeHandles_SafeWaitHandle_Create1")]
-	internal static void* /* Microsoft.Win32.SafeHandles.SafeWaitHandle */ Microsoft_Win32_SafeHandles_SafeWaitHandle_Create1(nint /* System.IntPtr */ existingHandle, CBool /* System.Boolean */ ownsHandle, void** /* System.Exception */ __outException)
+	internal static void* /* Microsoft.Win32.SafeHandles.SafeWaitHandle */ Microsoft_Win32_SafeHandles_SafeWaitHandle_Create1(nint /* System.IntPtr */ existingHandle, byte /* System.Boolean */ ownsHandle, void** /* System.Exception */ __outException)
 	{
 		System.Boolean ownsHandleConverted = ownsHandle.ToBool();
 	
@@ -48017,7 +48011,7 @@ internal unsafe class Microsoft_Win32_SafeHandles_SafeWaitHandle
 internal unsafe class Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid
 {
 	[UnmanagedCallersOnly(EntryPoint = "Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid_IsInvalid_Get")]
-	internal static CBool /* System.Boolean */ Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid_IsInvalid_Get(void* /* Microsoft.Win32.SafeHandles.SafeHandleZeroOrMinusOneIsInvalid */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid_IsInvalid_Get(void* /* Microsoft.Win32.SafeHandles.SafeHandleZeroOrMinusOneIsInvalid */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -48028,7 +48022,7 @@ internal unsafe class Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInva
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsInvalid;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -48042,7 +48036,7 @@ internal unsafe class Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInva
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -48214,7 +48208,7 @@ internal unsafe class System_Runtime_InteropServices_SafeHandle
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_SafeHandle_IsClosed_Get")]
-	internal static CBool /* System.Boolean */ System_Runtime_InteropServices_SafeHandle_IsClosed_Get(void* /* System.Runtime.InteropServices.SafeHandle */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Runtime_InteropServices_SafeHandle_IsClosed_Get(void* /* System.Runtime.InteropServices.SafeHandle */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -48225,7 +48219,7 @@ internal unsafe class System_Runtime_InteropServices_SafeHandle
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsClosed;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -48239,14 +48233,14 @@ internal unsafe class System_Runtime_InteropServices_SafeHandle
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_SafeHandle_IsInvalid_Get")]
-	internal static CBool /* System.Boolean */ System_Runtime_InteropServices_SafeHandle_IsInvalid_Get(void* /* System.Runtime.InteropServices.SafeHandle */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Runtime_InteropServices_SafeHandle_IsInvalid_Get(void* /* System.Runtime.InteropServices.SafeHandle */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -48257,7 +48251,7 @@ internal unsafe class System_Runtime_InteropServices_SafeHandle
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsInvalid;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -48271,7 +48265,7 @@ internal unsafe class System_Runtime_InteropServices_SafeHandle
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -48385,7 +48379,7 @@ internal unsafe class System_Threading_CancellationTokenRegistration
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationTokenRegistration_Unregister")]
-	internal static CBool /* System.Boolean */ System_Threading_CancellationTokenRegistration_Unregister(void* /* System.Threading.CancellationTokenRegistration */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_CancellationTokenRegistration_Unregister(void* /* System.Threading.CancellationTokenRegistration */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -48396,7 +48390,7 @@ internal unsafe class System_Threading_CancellationTokenRegistration
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Unregister();
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -48410,13 +48404,13 @@ internal unsafe class System_Threading_CancellationTokenRegistration
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationTokenRegistration_Equals")]
-	internal static CBool /* System.Boolean */ System_Threading_CancellationTokenRegistration_Equals(void* /* System.Threading.CancellationTokenRegistration */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_CancellationTokenRegistration_Equals(void* /* System.Threading.CancellationTokenRegistration */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -48428,7 +48422,7 @@ internal unsafe class System_Threading_CancellationTokenRegistration
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(objConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -48442,13 +48436,13 @@ internal unsafe class System_Threading_CancellationTokenRegistration
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationTokenRegistration_Equals1")]
-	internal static CBool /* System.Boolean */ System_Threading_CancellationTokenRegistration_Equals1(void* /* System.Threading.CancellationTokenRegistration */ __self, void* /* System.Threading.CancellationTokenRegistration */ other, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_CancellationTokenRegistration_Equals1(void* /* System.Threading.CancellationTokenRegistration */ __self, void* /* System.Threading.CancellationTokenRegistration */ other, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -48460,7 +48454,7 @@ internal unsafe class System_Threading_CancellationTokenRegistration
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(otherConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -48474,7 +48468,7 @@ internal unsafe class System_Threading_CancellationTokenRegistration
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -48647,7 +48641,7 @@ internal unsafe class System_Threading_Tasks_ValueTask
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_ValueTask_Equals")]
-	internal static CBool /* System.Boolean */ System_Threading_Tasks_ValueTask_Equals(void* /* System.Threading.Tasks.ValueTask */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_Tasks_ValueTask_Equals(void* /* System.Threading.Tasks.ValueTask */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -48659,7 +48653,7 @@ internal unsafe class System_Threading_Tasks_ValueTask
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(objConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -48673,13 +48667,13 @@ internal unsafe class System_Threading_Tasks_ValueTask
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_ValueTask_Equals1")]
-	internal static CBool /* System.Boolean */ System_Threading_Tasks_ValueTask_Equals1(void* /* System.Threading.Tasks.ValueTask */ __self, void* /* System.Threading.Tasks.ValueTask */ other, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_Tasks_ValueTask_Equals1(void* /* System.Threading.Tasks.ValueTask */ __self, void* /* System.Threading.Tasks.ValueTask */ other, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -48691,7 +48685,7 @@ internal unsafe class System_Threading_Tasks_ValueTask
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(otherConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -48705,7 +48699,7 @@ internal unsafe class System_Threading_Tasks_ValueTask
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -48804,7 +48798,7 @@ internal unsafe class System_Threading_Tasks_ValueTask
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_ValueTask_ConfigureAwait")]
-	internal static void* /* System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable */ System_Threading_Tasks_ValueTask_ConfigureAwait(void* /* System.Threading.Tasks.ValueTask */ __self, CBool /* System.Boolean */ continueOnCapturedContext, void** /* System.Exception */ __outException)
+	internal static void* /* System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable */ System_Threading_Tasks_ValueTask_ConfigureAwait(void* /* System.Threading.Tasks.ValueTask */ __self, byte /* System.Boolean */ continueOnCapturedContext, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -48914,7 +48908,7 @@ internal unsafe class System_Threading_Tasks_ValueTask
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_ValueTask_IsCompleted_Get")]
-	internal static CBool /* System.Boolean */ System_Threading_Tasks_ValueTask_IsCompleted_Get(void* /* System.Threading.Tasks.ValueTask */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_Tasks_ValueTask_IsCompleted_Get(void* /* System.Threading.Tasks.ValueTask */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -48925,7 +48919,7 @@ internal unsafe class System_Threading_Tasks_ValueTask
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsCompleted;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -48939,14 +48933,14 @@ internal unsafe class System_Threading_Tasks_ValueTask
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_ValueTask_IsCompletedSuccessfully_Get")]
-	internal static CBool /* System.Boolean */ System_Threading_Tasks_ValueTask_IsCompletedSuccessfully_Get(void* /* System.Threading.Tasks.ValueTask */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_Tasks_ValueTask_IsCompletedSuccessfully_Get(void* /* System.Threading.Tasks.ValueTask */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -48957,7 +48951,7 @@ internal unsafe class System_Threading_Tasks_ValueTask
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsCompletedSuccessfully;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -48971,14 +48965,14 @@ internal unsafe class System_Threading_Tasks_ValueTask
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_ValueTask_IsFaulted_Get")]
-	internal static CBool /* System.Boolean */ System_Threading_Tasks_ValueTask_IsFaulted_Get(void* /* System.Threading.Tasks.ValueTask */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_Tasks_ValueTask_IsFaulted_Get(void* /* System.Threading.Tasks.ValueTask */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -48989,7 +48983,7 @@ internal unsafe class System_Threading_Tasks_ValueTask
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsFaulted;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -49003,14 +48997,14 @@ internal unsafe class System_Threading_Tasks_ValueTask
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Tasks_ValueTask_IsCanceled_Get")]
-	internal static CBool /* System.Boolean */ System_Threading_Tasks_ValueTask_IsCanceled_Get(void* /* System.Threading.Tasks.ValueTask */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_Tasks_ValueTask_IsCanceled_Get(void* /* System.Threading.Tasks.ValueTask */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -49021,7 +49015,7 @@ internal unsafe class System_Threading_Tasks_ValueTask
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsCanceled;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -49035,7 +49029,7 @@ internal unsafe class System_Threading_Tasks_ValueTask
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -49151,7 +49145,7 @@ internal unsafe class System_Runtime_CompilerServices_ValueTaskAwaiter
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_ValueTaskAwaiter_IsCompleted_Get")]
-	internal static CBool /* System.Boolean */ System_Runtime_CompilerServices_ValueTaskAwaiter_IsCompleted_Get(void* /* System.Runtime.CompilerServices.ValueTaskAwaiter */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Runtime_CompilerServices_ValueTaskAwaiter_IsCompleted_Get(void* /* System.Runtime.CompilerServices.ValueTaskAwaiter */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -49162,7 +49156,7 @@ internal unsafe class System_Runtime_CompilerServices_ValueTaskAwaiter
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsCompleted;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -49176,7 +49170,7 @@ internal unsafe class System_Runtime_CompilerServices_ValueTaskAwaiter
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -49640,7 +49634,7 @@ internal unsafe class System_Runtime_CompilerServices_ConfiguredValueTaskAwaitab
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_IsCompleted_Get")]
-	internal static CBool /* System.Boolean */ System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_IsCompleted_Get(void* /* System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_IsCompleted_Get(void* /* System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -49651,7 +49645,7 @@ internal unsafe class System_Runtime_CompilerServices_ConfiguredValueTaskAwaitab
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsCompleted;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -49665,7 +49659,7 @@ internal unsafe class System_Runtime_CompilerServices_ConfiguredValueTaskAwaitab
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -49821,7 +49815,7 @@ internal unsafe class System_Threading_Tasks_TaskContinuationOptions
 internal unsafe class System_IAsyncResult
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_IAsyncResult_IsCompleted_Get")]
-	internal static CBool /* System.Boolean */ System_IAsyncResult_IsCompleted_Get(void* /* System.IAsyncResult */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_IAsyncResult_IsCompleted_Get(void* /* System.IAsyncResult */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -49832,7 +49826,7 @@ internal unsafe class System_IAsyncResult
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsCompleted;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -49846,7 +49840,7 @@ internal unsafe class System_IAsyncResult
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -49917,7 +49911,7 @@ internal unsafe class System_IAsyncResult
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_IAsyncResult_CompletedSynchronously_Get")]
-	internal static CBool /* System.Boolean */ System_IAsyncResult_CompletedSynchronously_Get(void* /* System.IAsyncResult */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_IAsyncResult_CompletedSynchronously_Get(void* /* System.IAsyncResult */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -49928,7 +49922,7 @@ internal unsafe class System_IAsyncResult
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.CompletedSynchronously;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -49942,7 +49936,7 @@ internal unsafe class System_IAsyncResult
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -50075,7 +50069,7 @@ internal unsafe class System_Runtime_CompilerServices_TaskAwaiter
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_TaskAwaiter_IsCompleted_Get")]
-	internal static CBool /* System.Boolean */ System_Runtime_CompilerServices_TaskAwaiter_IsCompleted_Get(void* /* System.Runtime.CompilerServices.TaskAwaiter */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Runtime_CompilerServices_TaskAwaiter_IsCompleted_Get(void* /* System.Runtime.CompilerServices.TaskAwaiter */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -50086,7 +50080,7 @@ internal unsafe class System_Runtime_CompilerServices_TaskAwaiter
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsCompleted;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -50100,7 +50094,7 @@ internal unsafe class System_Runtime_CompilerServices_TaskAwaiter
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -50270,7 +50264,7 @@ internal unsafe class System_Runtime_CompilerServices_ConfiguredTaskAwaitable_Co
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_IsCompleted_Get")]
-	internal static CBool /* System.Boolean */ System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_IsCompleted_Get(void* /* System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_IsCompleted_Get(void* /* System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -50281,7 +50275,7 @@ internal unsafe class System_Runtime_CompilerServices_ConfiguredTaskAwaitable_Co
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsCompleted;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -50295,7 +50289,7 @@ internal unsafe class System_Runtime_CompilerServices_ConfiguredTaskAwaitable_Co
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -50465,7 +50459,7 @@ internal unsafe class System_Runtime_CompilerServices_YieldAwaitable_YieldAwaite
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_IsCompleted_Get")]
-	internal static CBool /* System.Boolean */ System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_IsCompleted_Get(void* /* System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_IsCompleted_Get(void* /* System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -50476,7 +50470,7 @@ internal unsafe class System_Runtime_CompilerServices_YieldAwaitable_YieldAwaite
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsCompleted;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -50490,7 +50484,7 @@ internal unsafe class System_Runtime_CompilerServices_YieldAwaitable_YieldAwaite
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -50686,7 +50680,7 @@ internal unsafe class System_IO_SeekOrigin
 internal unsafe class Microsoft_Win32_SafeHandles_SafeFileHandle
 {
 	[UnmanagedCallersOnly(EntryPoint = "Microsoft_Win32_SafeHandles_SafeFileHandle_Create")]
-	internal static void* /* Microsoft.Win32.SafeHandles.SafeFileHandle */ Microsoft_Win32_SafeHandles_SafeFileHandle_Create(nint /* System.IntPtr */ preexistingHandle, CBool /* System.Boolean */ ownsHandle, void** /* System.Exception */ __outException)
+	internal static void* /* Microsoft.Win32.SafeHandles.SafeFileHandle */ Microsoft_Win32_SafeHandles_SafeFileHandle_Create(nint /* System.IntPtr */ preexistingHandle, byte /* System.Boolean */ ownsHandle, void** /* System.Exception */ __outException)
 	{
 		System.Boolean ownsHandleConverted = ownsHandle.ToBool();
 	
@@ -50737,7 +50731,7 @@ internal unsafe class Microsoft_Win32_SafeHandles_SafeFileHandle
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "Microsoft_Win32_SafeHandles_SafeFileHandle_IsAsync_Get")]
-	internal static CBool /* System.Boolean */ Microsoft_Win32_SafeHandles_SafeFileHandle_IsAsync_Get(void* /* Microsoft.Win32.SafeHandles.SafeFileHandle */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ Microsoft_Win32_SafeHandles_SafeFileHandle_IsAsync_Get(void* /* Microsoft.Win32.SafeHandles.SafeFileHandle */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -50748,7 +50742,7 @@ internal unsafe class Microsoft_Win32_SafeHandles_SafeFileHandle
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsAsync;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -50762,14 +50756,14 @@ internal unsafe class Microsoft_Win32_SafeHandles_SafeFileHandle
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "Microsoft_Win32_SafeHandles_SafeFileHandle_IsInvalid_Get")]
-	internal static CBool /* System.Boolean */ Microsoft_Win32_SafeHandles_SafeFileHandle_IsInvalid_Get(void* /* Microsoft.Win32.SafeHandles.SafeFileHandle */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ Microsoft_Win32_SafeHandles_SafeFileHandle_IsInvalid_Get(void* /* Microsoft.Win32.SafeHandles.SafeFileHandle */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -50780,7 +50774,7 @@ internal unsafe class Microsoft_Win32_SafeHandles_SafeFileHandle
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsInvalid;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -50794,7 +50788,7 @@ internal unsafe class Microsoft_Win32_SafeHandles_SafeFileHandle
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -51637,7 +51631,7 @@ internal unsafe class System_Reflection_Module
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Module_IsResource")]
-	internal static CBool /* System.Boolean */ System_Reflection_Module_IsResource(void* /* System.Reflection.Module */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_Module_IsResource(void* /* System.Reflection.Module */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -51648,7 +51642,7 @@ internal unsafe class System_Reflection_Module
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsResource();
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -51662,13 +51656,13 @@ internal unsafe class System_Reflection_Module
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Module_IsDefined")]
-	internal static CBool /* System.Boolean */ System_Reflection_Module_IsDefined(void* /* System.Reflection.Module */ __self, void* /* System.Type */ attributeType, CBool /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_Module_IsDefined(void* /* System.Reflection.Module */ __self, void* /* System.Type */ attributeType, byte /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -51681,7 +51675,7 @@ internal unsafe class System_Reflection_Module
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsDefined(attributeTypeConverted, inheritConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -51695,13 +51689,13 @@ internal unsafe class System_Reflection_Module
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Module_GetCustomAttributes")]
-	internal static void* /* System.Object[] */ System_Reflection_Module_GetCustomAttributes(void* /* System.Reflection.Module */ __self, CBool /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
+	internal static void* /* System.Object[] */ System_Reflection_Module_GetCustomAttributes(void* /* System.Reflection.Module */ __self, byte /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -51733,7 +51727,7 @@ internal unsafe class System_Reflection_Module
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Module_GetCustomAttributes1")]
-	internal static void* /* System.Object[] */ System_Reflection_Module_GetCustomAttributes1(void* /* System.Reflection.Module */ __self, void* /* System.Type */ attributeType, CBool /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
+	internal static void* /* System.Object[] */ System_Reflection_Module_GetCustomAttributes1(void* /* System.Reflection.Module */ __self, void* /* System.Type */ attributeType, byte /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -52117,7 +52111,7 @@ internal unsafe class System_Reflection_Module
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Module_GetType2")]
-	internal static void* /* System.Type */ System_Reflection_Module_GetType2(void* /* System.Reflection.Module */ __self, byte* /* System.String */ className, CBool /* System.Boolean */ ignoreCase, void** /* System.Exception */ __outException)
+	internal static void* /* System.Type */ System_Reflection_Module_GetType2(void* /* System.Reflection.Module */ __self, byte* /* System.String */ className, byte /* System.Boolean */ ignoreCase, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -52150,7 +52144,7 @@ internal unsafe class System_Reflection_Module
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Module_GetType3")]
-	internal static void* /* System.Type */ System_Reflection_Module_GetType3(void* /* System.Reflection.Module */ __self, byte* /* System.String */ className, CBool /* System.Boolean */ throwOnError, CBool /* System.Boolean */ ignoreCase, void** /* System.Exception */ __outException)
+	internal static void* /* System.Type */ System_Reflection_Module_GetType3(void* /* System.Reflection.Module */ __self, byte* /* System.String */ className, byte /* System.Boolean */ throwOnError, byte /* System.Boolean */ ignoreCase, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -52565,7 +52559,7 @@ internal unsafe class System_Reflection_Module
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Module_Equals")]
-	internal static CBool /* System.Boolean */ System_Reflection_Module_Equals(void* /* System.Reflection.Module */ __self, void* /* System.Object */ o, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_Module_Equals(void* /* System.Reflection.Module */ __self, void* /* System.Object */ o, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -52577,7 +52571,7 @@ internal unsafe class System_Reflection_Module
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(oConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -52591,7 +52585,7 @@ internal unsafe class System_Reflection_Module
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -52983,14 +52977,14 @@ internal unsafe class System_Guid
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Guid_TryParse")]
-	internal static CBool /* System.Boolean */ System_Guid_TryParse(byte* /* System.String */ input, void** /* System.Guid */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Guid_TryParse(byte* /* System.String */ input, void** /* System.Guid */ result, void** /* System.Exception */ __outException)
 	{
 		System.String inputConverted = InteropUtils.ToDotNetString(input);
 		System.Guid resultConverted;
 	
 	    try {
 			System.Boolean __returnValue = System.Guid.TryParse(inputConverted, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -53008,7 +53002,7 @@ internal unsafe class System_Guid
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -53041,7 +53035,7 @@ internal unsafe class System_Guid
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Guid_TryParseExact")]
-	internal static CBool /* System.Boolean */ System_Guid_TryParseExact(byte* /* System.String */ input, byte* /* System.String */ format, void** /* System.Guid */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Guid_TryParseExact(byte* /* System.String */ input, byte* /* System.String */ format, void** /* System.Guid */ result, void** /* System.Exception */ __outException)
 	{
 		System.String inputConverted = InteropUtils.ToDotNetString(input);
 		System.String formatConverted = InteropUtils.ToDotNetString(format);
@@ -53049,7 +53043,7 @@ internal unsafe class System_Guid
 	
 	    try {
 			System.Boolean __returnValue = System.Guid.TryParseExact(inputConverted, formatConverted, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -53067,7 +53061,7 @@ internal unsafe class System_Guid
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -53165,7 +53159,7 @@ internal unsafe class System_Guid
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Guid_Equals")]
-	internal static CBool /* System.Boolean */ System_Guid_Equals(void* /* System.Guid */ __self, void* /* System.Object */ o, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Guid_Equals(void* /* System.Guid */ __self, void* /* System.Object */ o, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -53177,7 +53171,7 @@ internal unsafe class System_Guid
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(oConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -53191,13 +53185,13 @@ internal unsafe class System_Guid
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Guid_Equals1")]
-	internal static CBool /* System.Boolean */ System_Guid_Equals1(void* /* System.Guid */ __self, void* /* System.Guid */ g, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Guid_Equals1(void* /* System.Guid */ __self, void* /* System.Guid */ g, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -53209,7 +53203,7 @@ internal unsafe class System_Guid
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(gConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -53223,7 +53217,7 @@ internal unsafe class System_Guid
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -53383,7 +53377,7 @@ internal unsafe class System_Guid
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Guid_TryParse1")]
-	internal static CBool /* System.Boolean */ System_Guid_TryParse1(byte* /* System.String */ s, void* /* System.IFormatProvider */ provider, void** /* System.Guid */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Guid_TryParse1(byte* /* System.String */ s, void* /* System.IFormatProvider */ provider, void** /* System.Guid */ result, void** /* System.Exception */ __outException)
 	{
 		System.String sConverted = InteropUtils.ToDotNetString(s);
 		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
@@ -53391,7 +53385,7 @@ internal unsafe class System_Guid
 	
 	    try {
 			System.Boolean __returnValue = System.Guid.TryParse(sConverted, providerConverted, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -53409,7 +53403,7 @@ internal unsafe class System_Guid
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -53605,7 +53599,7 @@ internal unsafe class System_Guid
 internal unsafe class System_Reflection_TypeFilter
 {
 	internal void* Context { get; }
-	internal delegate* unmanaged<void* /* context */, void* /* System.Type */ /* m */, void* /* System.Object */ /* filterCriteria */, CBool /* System.Boolean */ /* return type */> CFunction { get; }
+	internal delegate* unmanaged<void* /* context */, void* /* System.Type */ /* m */, void* /* System.Object */ /* filterCriteria */, byte /* System.Boolean */ /* return type */> CFunction { get; }
 	internal delegate* unmanaged<void*, void> CDestructorFunction { get; }
 
 	private WeakReference<System.Reflection.TypeFilter> m_trampoline;
@@ -53629,7 +53623,7 @@ internal unsafe class System_Reflection_TypeFilter
 		}
 	}
 
-	private System_Reflection_TypeFilter(void* context, delegate* unmanaged<void* /* context */, void* /* System.Type */ /* m */, void* /* System.Object */ /* filterCriteria */, CBool /* System.Boolean */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	private System_Reflection_TypeFilter(void* context, delegate* unmanaged<void* /* context */, void* /* System.Type */ /* m */, void* /* System.Object */ /* filterCriteria */, byte /* System.Boolean */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
 	{
 		Context = context;
 		CFunction = cFunction;
@@ -53684,7 +53678,7 @@ internal unsafe class System_Reflection_TypeFilter
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_TypeFilter_Create")]
-	public static void* Create(void* context, delegate* unmanaged<void* /* context */, void* /* System.Type */ /* m */, void* /* System.Object */ /* filterCriteria */, CBool /* System.Boolean */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	public static void* Create(void* context, delegate* unmanaged<void* /* context */, void* /* System.Type */ /* m */, void* /* System.Object */ /* filterCriteria */, byte /* System.Boolean */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
 	{
 		var self = new System_Reflection_TypeFilter(context, cFunction, cDestructorFunction);
 		void* selfHandle = self.AllocateGCHandleAndGetAddress();
@@ -53693,7 +53687,7 @@ internal unsafe class System_Reflection_TypeFilter
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_TypeFilter_Invoke")]
-	public static CBool /* System.Boolean */ Invoke(void* self, void* /* System.Type */ m, void* /* System.Object */ filterCriteria)
+	public static byte /* System.Boolean */ Invoke(void* self, void* /* System.Type */ m, void* /* System.Object */ filterCriteria)
 	{
 		if (self is null) {
 			throw new ArgumentNullException(nameof(self));
@@ -53725,7 +53719,7 @@ internal unsafe class System_Reflection_TypeFilter
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_TypeFilter_CFunction_Get")]
-	public static delegate* unmanaged<void* /* context */, void* /* System.Type */ /* m */, void* /* System.Object */ /* filterCriteria */, CBool /* System.Boolean */ /* return type */> CFunction_Get(void* self)
+	public static delegate* unmanaged<void* /* context */, void* /* System.Type */ /* m */, void* /* System.Object */ /* filterCriteria */, byte /* System.Boolean */ /* return type */> CFunction_Get(void* self)
 	{
 		if (self is null) {
 			throw new ArgumentNullException(nameof(self));
@@ -54010,7 +54004,7 @@ internal unsafe class System_Text_Rune
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_Equals")]
-	internal static CBool /* System.Boolean */ System_Text_Rune_Equals(void* /* System.Text.Rune */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_Rune_Equals(void* /* System.Text.Rune */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -54022,7 +54016,7 @@ internal unsafe class System_Text_Rune
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(objConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -54036,13 +54030,13 @@ internal unsafe class System_Text_Rune
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_Equals1")]
-	internal static CBool /* System.Boolean */ System_Text_Rune_Equals1(void* /* System.Text.Rune */ __self, void* /* System.Text.Rune */ other, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_Rune_Equals1(void* /* System.Text.Rune */ __self, void* /* System.Text.Rune */ other, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -54054,7 +54048,7 @@ internal unsafe class System_Text_Rune
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(otherConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -54068,7 +54062,7 @@ internal unsafe class System_Text_Rune
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -54130,12 +54124,12 @@ internal unsafe class System_Text_Rune
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_IsValid")]
-	internal static CBool /* System.Boolean */ System_Text_Rune_IsValid(int /* System.Int32 */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_Rune_IsValid(int /* System.Int32 */ value, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
 			System.Boolean __returnValue = System.Text.Rune.IsValid(value);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -54149,18 +54143,18 @@ internal unsafe class System_Text_Rune
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_IsValid1")]
-	internal static CBool /* System.Boolean */ System_Text_Rune_IsValid1(uint /* System.UInt32 */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_Rune_IsValid1(uint /* System.UInt32 */ value, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
 			System.Boolean __returnValue = System.Text.Rune.IsValid(value);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -54174,7 +54168,7 @@ internal unsafe class System_Text_Rune
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -54211,13 +54205,13 @@ internal unsafe class System_Text_Rune
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_TryCreate")]
-	internal static CBool /* System.Boolean */ System_Text_Rune_TryCreate(char /* System.Char */ ch, void** /* System.Text.Rune */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_Rune_TryCreate(char /* System.Char */ ch, void** /* System.Text.Rune */ result, void** /* System.Exception */ __outException)
 	{
 		System.Text.Rune resultConverted;
 	
 	    try {
 			System.Boolean __returnValue = System.Text.Rune.TryCreate(ch, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -54235,19 +54229,19 @@ internal unsafe class System_Text_Rune
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_TryCreate1")]
-	internal static CBool /* System.Boolean */ System_Text_Rune_TryCreate1(char /* System.Char */ highSurrogate, char /* System.Char */ lowSurrogate, void** /* System.Text.Rune */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_Rune_TryCreate1(char /* System.Char */ highSurrogate, char /* System.Char */ lowSurrogate, void** /* System.Text.Rune */ result, void** /* System.Exception */ __outException)
 	{
 		System.Text.Rune resultConverted;
 	
 	    try {
 			System.Boolean __returnValue = System.Text.Rune.TryCreate(highSurrogate, lowSurrogate, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -54265,19 +54259,19 @@ internal unsafe class System_Text_Rune
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_TryCreate2")]
-	internal static CBool /* System.Boolean */ System_Text_Rune_TryCreate2(int /* System.Int32 */ value, void** /* System.Text.Rune */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_Rune_TryCreate2(int /* System.Int32 */ value, void** /* System.Text.Rune */ result, void** /* System.Exception */ __outException)
 	{
 		System.Text.Rune resultConverted;
 	
 	    try {
 			System.Boolean __returnValue = System.Text.Rune.TryCreate(value, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -54295,19 +54289,19 @@ internal unsafe class System_Text_Rune
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_TryCreate3")]
-	internal static CBool /* System.Boolean */ System_Text_Rune_TryCreate3(uint /* System.UInt32 */ value, void** /* System.Text.Rune */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_Rune_TryCreate3(uint /* System.UInt32 */ value, void** /* System.Text.Rune */ result, void** /* System.Exception */ __outException)
 	{
 		System.Text.Rune resultConverted;
 	
 	    try {
 			System.Boolean __returnValue = System.Text.Rune.TryCreate(value, out resultConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -54325,20 +54319,20 @@ internal unsafe class System_Text_Rune
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_TryGetRuneAt")]
-	internal static CBool /* System.Boolean */ System_Text_Rune_TryGetRuneAt(byte* /* System.String */ input, int /* System.Int32 */ index, void** /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_Rune_TryGetRuneAt(byte* /* System.String */ input, int /* System.Int32 */ index, void** /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
 	{
 		System.String inputConverted = InteropUtils.ToDotNetString(input);
 		System.Text.Rune valueConverted;
 	
 	    try {
 			System.Boolean __returnValue = System.Text.Rune.TryGetRuneAt(inputConverted, index, out valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -54356,7 +54350,7 @@ internal unsafe class System_Text_Rune
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -54412,13 +54406,13 @@ internal unsafe class System_Text_Rune
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_IsControl")]
-	internal static CBool /* System.Boolean */ System_Text_Rune_IsControl(void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_Rune_IsControl(void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
 	{
 		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
 	
 	    try {
 			System.Boolean __returnValue = System.Text.Rune.IsControl(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -54432,19 +54426,19 @@ internal unsafe class System_Text_Rune
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_IsDigit")]
-	internal static CBool /* System.Boolean */ System_Text_Rune_IsDigit(void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_Rune_IsDigit(void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
 	{
 		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
 	
 	    try {
 			System.Boolean __returnValue = System.Text.Rune.IsDigit(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -54458,19 +54452,19 @@ internal unsafe class System_Text_Rune
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_IsLetter")]
-	internal static CBool /* System.Boolean */ System_Text_Rune_IsLetter(void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_Rune_IsLetter(void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
 	{
 		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
 	
 	    try {
 			System.Boolean __returnValue = System.Text.Rune.IsLetter(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -54484,19 +54478,19 @@ internal unsafe class System_Text_Rune
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_IsLetterOrDigit")]
-	internal static CBool /* System.Boolean */ System_Text_Rune_IsLetterOrDigit(void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_Rune_IsLetterOrDigit(void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
 	{
 		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
 	
 	    try {
 			System.Boolean __returnValue = System.Text.Rune.IsLetterOrDigit(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -54510,19 +54504,19 @@ internal unsafe class System_Text_Rune
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_IsLower")]
-	internal static CBool /* System.Boolean */ System_Text_Rune_IsLower(void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_Rune_IsLower(void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
 	{
 		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
 	
 	    try {
 			System.Boolean __returnValue = System.Text.Rune.IsLower(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -54536,19 +54530,19 @@ internal unsafe class System_Text_Rune
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_IsNumber")]
-	internal static CBool /* System.Boolean */ System_Text_Rune_IsNumber(void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_Rune_IsNumber(void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
 	{
 		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
 	
 	    try {
 			System.Boolean __returnValue = System.Text.Rune.IsNumber(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -54562,19 +54556,19 @@ internal unsafe class System_Text_Rune
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_IsPunctuation")]
-	internal static CBool /* System.Boolean */ System_Text_Rune_IsPunctuation(void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_Rune_IsPunctuation(void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
 	{
 		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
 	
 	    try {
 			System.Boolean __returnValue = System.Text.Rune.IsPunctuation(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -54588,19 +54582,19 @@ internal unsafe class System_Text_Rune
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_IsSeparator")]
-	internal static CBool /* System.Boolean */ System_Text_Rune_IsSeparator(void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_Rune_IsSeparator(void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
 	{
 		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
 	
 	    try {
 			System.Boolean __returnValue = System.Text.Rune.IsSeparator(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -54614,19 +54608,19 @@ internal unsafe class System_Text_Rune
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_IsSymbol")]
-	internal static CBool /* System.Boolean */ System_Text_Rune_IsSymbol(void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_Rune_IsSymbol(void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
 	{
 		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
 	
 	    try {
 			System.Boolean __returnValue = System.Text.Rune.IsSymbol(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -54640,19 +54634,19 @@ internal unsafe class System_Text_Rune
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_IsUpper")]
-	internal static CBool /* System.Boolean */ System_Text_Rune_IsUpper(void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_Rune_IsUpper(void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
 	{
 		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
 	
 	    try {
 			System.Boolean __returnValue = System.Text.Rune.IsUpper(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -54666,19 +54660,19 @@ internal unsafe class System_Text_Rune
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_IsWhiteSpace")]
-	internal static CBool /* System.Boolean */ System_Text_Rune_IsWhiteSpace(void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_Rune_IsWhiteSpace(void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
 	{
 		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
 	
 	    try {
 			System.Boolean __returnValue = System.Text.Rune.IsWhiteSpace(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -54692,7 +54686,7 @@ internal unsafe class System_Text_Rune
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -54904,7 +54898,7 @@ internal unsafe class System_Text_Rune
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_IsAscii_Get")]
-	internal static CBool /* System.Boolean */ System_Text_Rune_IsAscii_Get(void* /* System.Text.Rune */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_Rune_IsAscii_Get(void* /* System.Text.Rune */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -54915,7 +54909,7 @@ internal unsafe class System_Text_Rune
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsAscii;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -54929,14 +54923,14 @@ internal unsafe class System_Text_Rune
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_IsBmp_Get")]
-	internal static CBool /* System.Boolean */ System_Text_Rune_IsBmp_Get(void* /* System.Text.Rune */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_Rune_IsBmp_Get(void* /* System.Text.Rune */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -54947,7 +54941,7 @@ internal unsafe class System_Text_Rune
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsBmp;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -54961,7 +54955,7 @@ internal unsafe class System_Text_Rune
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -55198,7 +55192,7 @@ internal unsafe class System_Globalization_SortKey
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_SortKey_Equals")]
-	internal static CBool /* System.Boolean */ System_Globalization_SortKey_Equals(void* /* System.Globalization.SortKey */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Globalization_SortKey_Equals(void* /* System.Globalization.SortKey */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -55210,7 +55204,7 @@ internal unsafe class System_Globalization_SortKey
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -55224,7 +55218,7 @@ internal unsafe class System_Globalization_SortKey
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -55378,7 +55372,7 @@ internal unsafe class System_Globalization_SortKey
 internal unsafe class System_Globalization_SortVersion
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_SortVersion_Equals")]
-	internal static CBool /* System.Boolean */ System_Globalization_SortVersion_Equals(void* /* System.Globalization.SortVersion */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Globalization_SortVersion_Equals(void* /* System.Globalization.SortVersion */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -55390,7 +55384,7 @@ internal unsafe class System_Globalization_SortVersion
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(objConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -55404,13 +55398,13 @@ internal unsafe class System_Globalization_SortVersion
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_SortVersion_Equals1")]
-	internal static CBool /* System.Boolean */ System_Globalization_SortVersion_Equals1(void* /* System.Globalization.SortVersion */ __self, void* /* System.Globalization.SortVersion */ other, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Globalization_SortVersion_Equals1(void* /* System.Globalization.SortVersion */ __self, void* /* System.Globalization.SortVersion */ other, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -55422,7 +55416,7 @@ internal unsafe class System_Globalization_SortVersion
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(otherConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -55436,7 +55430,7 @@ internal unsafe class System_Globalization_SortVersion
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -55765,7 +55759,7 @@ internal unsafe class System_Globalization_TextInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_TextInfo_Equals")]
-	internal static CBool /* System.Boolean */ System_Globalization_TextInfo_Equals(void* /* System.Globalization.TextInfo */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Globalization_TextInfo_Equals(void* /* System.Globalization.TextInfo */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -55777,7 +55771,7 @@ internal unsafe class System_Globalization_TextInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(objConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -55791,7 +55785,7 @@ internal unsafe class System_Globalization_TextInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -56077,7 +56071,7 @@ internal unsafe class System_Globalization_TextInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_TextInfo_IsReadOnly_Get")]
-	internal static CBool /* System.Boolean */ System_Globalization_TextInfo_IsReadOnly_Get(void* /* System.Globalization.TextInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Globalization_TextInfo_IsReadOnly_Get(void* /* System.Globalization.TextInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -56088,7 +56082,7 @@ internal unsafe class System_Globalization_TextInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsReadOnly;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -56102,7 +56096,7 @@ internal unsafe class System_Globalization_TextInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -56168,7 +56162,7 @@ internal unsafe class System_Globalization_TextInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_TextInfo_IsRightToLeft_Get")]
-	internal static CBool /* System.Boolean */ System_Globalization_TextInfo_IsRightToLeft_Get(void* /* System.Globalization.TextInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Globalization_TextInfo_IsRightToLeft_Get(void* /* System.Globalization.TextInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -56179,7 +56173,7 @@ internal unsafe class System_Globalization_TextInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsRightToLeft;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -56193,7 +56187,7 @@ internal unsafe class System_Globalization_TextInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -56506,7 +56500,7 @@ internal unsafe class System_Globalization_NumberFormatInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_NumberFormatInfo_IsReadOnly_Get")]
-	internal static CBool /* System.Boolean */ System_Globalization_NumberFormatInfo_IsReadOnly_Get(void* /* System.Globalization.NumberFormatInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Globalization_NumberFormatInfo_IsReadOnly_Get(void* /* System.Globalization.NumberFormatInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -56517,7 +56511,7 @@ internal unsafe class System_Globalization_NumberFormatInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsReadOnly;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -56531,7 +56525,7 @@ internal unsafe class System_Globalization_NumberFormatInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -59815,7 +59809,7 @@ internal unsafe class System_Globalization_DateTimeFormatInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_IsReadOnly_Get")]
-	internal static CBool /* System.Boolean */ System_Globalization_DateTimeFormatInfo_IsReadOnly_Get(void* /* System.Globalization.DateTimeFormatInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Globalization_DateTimeFormatInfo_IsReadOnly_Get(void* /* System.Globalization.DateTimeFormatInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -59826,7 +59820,7 @@ internal unsafe class System_Globalization_DateTimeFormatInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsReadOnly;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -59840,7 +59834,7 @@ internal unsafe class System_Globalization_DateTimeFormatInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -60054,7 +60048,7 @@ internal unsafe class System_CharEnumerator
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_CharEnumerator_MoveNext")]
-	internal static CBool /* System.Boolean */ System_CharEnumerator_MoveNext(void* /* System.CharEnumerator */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_CharEnumerator_MoveNext(void* /* System.CharEnumerator */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -60065,7 +60059,7 @@ internal unsafe class System_CharEnumerator
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.MoveNext();
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -60079,7 +60073,7 @@ internal unsafe class System_CharEnumerator
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -60226,7 +60220,7 @@ internal unsafe class System_Text_StringRuneEnumerator
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringRuneEnumerator_MoveNext")]
-	internal static CBool /* System.Boolean */ System_Text_StringRuneEnumerator_MoveNext(void* /* System.Text.StringRuneEnumerator */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_StringRuneEnumerator_MoveNext(void* /* System.Text.StringRuneEnumerator */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -60237,7 +60231,7 @@ internal unsafe class System_Text_StringRuneEnumerator
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.MoveNext();
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -60251,7 +60245,7 @@ internal unsafe class System_Text_StringRuneEnumerator
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -60353,14 +60347,14 @@ internal unsafe class System_Text_CompositeFormat
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_CompositeFormat_TryParse")]
-	internal static CBool /* System.Boolean */ System_Text_CompositeFormat_TryParse(byte* /* System.String */ format, void** /* System.Text.CompositeFormat */ compositeFormat, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_CompositeFormat_TryParse(byte* /* System.String */ format, void** /* System.Text.CompositeFormat */ compositeFormat, void** /* System.Exception */ __outException)
 	{
 		System.String formatConverted = InteropUtils.ToDotNetString(format);
 		System.Text.CompositeFormat compositeFormatConverted;
 	
 	    try {
 			System.Boolean __returnValue = System.Text.CompositeFormat.TryParse(formatConverted, out compositeFormatConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -60378,7 +60372,7 @@ internal unsafe class System_Text_CompositeFormat
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -61201,7 +61195,7 @@ internal unsafe class System_Text_Encoding
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Encoding_IsAlwaysNormalized")]
-	internal static CBool /* System.Boolean */ System_Text_Encoding_IsAlwaysNormalized(void* /* System.Text.Encoding */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_Encoding_IsAlwaysNormalized(void* /* System.Text.Encoding */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -61212,7 +61206,7 @@ internal unsafe class System_Text_Encoding
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsAlwaysNormalized();
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -61226,13 +61220,13 @@ internal unsafe class System_Text_Encoding
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Encoding_IsAlwaysNormalized1")]
-	internal static CBool /* System.Boolean */ System_Text_Encoding_IsAlwaysNormalized1(void* /* System.Text.Encoding */ __self, System.Text.NormalizationForm /* System.Text.NormalizationForm */ form, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_Encoding_IsAlwaysNormalized1(void* /* System.Text.Encoding */ __self, System.Text.NormalizationForm /* System.Text.NormalizationForm */ form, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -61243,7 +61237,7 @@ internal unsafe class System_Text_Encoding
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsAlwaysNormalized(form);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -61257,7 +61251,7 @@ internal unsafe class System_Text_Encoding
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -61449,7 +61443,7 @@ internal unsafe class System_Text_Encoding
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Encoding_Equals")]
-	internal static CBool /* System.Boolean */ System_Text_Encoding_Equals(void* /* System.Text.Encoding */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_Encoding_Equals(void* /* System.Text.Encoding */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -61461,7 +61455,7 @@ internal unsafe class System_Text_Encoding
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -61475,7 +61469,7 @@ internal unsafe class System_Text_Encoding
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -61511,7 +61505,7 @@ internal unsafe class System_Text_Encoding
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Encoding_CreateTranscodingStream")]
-	internal static void* /* System.IO.Stream */ System_Text_Encoding_CreateTranscodingStream(void* /* System.IO.Stream */ innerStream, void* /* System.Text.Encoding */ innerStreamEncoding, void* /* System.Text.Encoding */ outerStreamEncoding, CBool /* System.Boolean */ leaveOpen, void** /* System.Exception */ __outException)
+	internal static void* /* System.IO.Stream */ System_Text_Encoding_CreateTranscodingStream(void* /* System.IO.Stream */ innerStream, void* /* System.Text.Encoding */ innerStreamEncoding, void* /* System.Text.Encoding */ outerStreamEncoding, byte /* System.Boolean */ leaveOpen, void** /* System.Exception */ __outException)
 	{
 		System.IO.Stream innerStreamConverted = InteropUtils.GetInstance<System.IO.Stream>(innerStream);
 		System.Text.Encoding innerStreamEncodingConverted = InteropUtils.GetInstance<System.Text.Encoding>(innerStreamEncoding);
@@ -61725,7 +61719,7 @@ internal unsafe class System_Text_Encoding
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Encoding_IsBrowserDisplay_Get")]
-	internal static CBool /* System.Boolean */ System_Text_Encoding_IsBrowserDisplay_Get(void* /* System.Text.Encoding */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_Encoding_IsBrowserDisplay_Get(void* /* System.Text.Encoding */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -61736,7 +61730,7 @@ internal unsafe class System_Text_Encoding
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsBrowserDisplay;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -61750,14 +61744,14 @@ internal unsafe class System_Text_Encoding
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Encoding_IsBrowserSave_Get")]
-	internal static CBool /* System.Boolean */ System_Text_Encoding_IsBrowserSave_Get(void* /* System.Text.Encoding */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_Encoding_IsBrowserSave_Get(void* /* System.Text.Encoding */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -61768,7 +61762,7 @@ internal unsafe class System_Text_Encoding
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsBrowserSave;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -61782,14 +61776,14 @@ internal unsafe class System_Text_Encoding
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Encoding_IsMailNewsDisplay_Get")]
-	internal static CBool /* System.Boolean */ System_Text_Encoding_IsMailNewsDisplay_Get(void* /* System.Text.Encoding */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_Encoding_IsMailNewsDisplay_Get(void* /* System.Text.Encoding */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -61800,7 +61794,7 @@ internal unsafe class System_Text_Encoding
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsMailNewsDisplay;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -61814,14 +61808,14 @@ internal unsafe class System_Text_Encoding
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Encoding_IsMailNewsSave_Get")]
-	internal static CBool /* System.Boolean */ System_Text_Encoding_IsMailNewsSave_Get(void* /* System.Text.Encoding */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_Encoding_IsMailNewsSave_Get(void* /* System.Text.Encoding */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -61832,7 +61826,7 @@ internal unsafe class System_Text_Encoding
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsMailNewsSave;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -61846,14 +61840,14 @@ internal unsafe class System_Text_Encoding
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Encoding_IsSingleByte_Get")]
-	internal static CBool /* System.Boolean */ System_Text_Encoding_IsSingleByte_Get(void* /* System.Text.Encoding */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_Encoding_IsSingleByte_Get(void* /* System.Text.Encoding */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -61864,7 +61858,7 @@ internal unsafe class System_Text_Encoding
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsSingleByte;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -61878,7 +61872,7 @@ internal unsafe class System_Text_Encoding
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -62003,7 +61997,7 @@ internal unsafe class System_Text_Encoding
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Encoding_IsReadOnly_Get")]
-	internal static CBool /* System.Boolean */ System_Text_Encoding_IsReadOnly_Get(void* /* System.Text.Encoding */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_Encoding_IsReadOnly_Get(void* /* System.Text.Encoding */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -62014,7 +62008,7 @@ internal unsafe class System_Text_Encoding
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsReadOnly;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -62028,7 +62022,7 @@ internal unsafe class System_Text_Encoding
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -62563,7 +62557,7 @@ internal unsafe class System_Text_EncoderFallback
 internal unsafe class System_Text_EncoderFallbackBuffer
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_EncoderFallbackBuffer_Fallback")]
-	internal static CBool /* System.Boolean */ System_Text_EncoderFallbackBuffer_Fallback(void* /* System.Text.EncoderFallbackBuffer */ __self, char /* System.Char */ charUnknown, int /* System.Int32 */ index, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_EncoderFallbackBuffer_Fallback(void* /* System.Text.EncoderFallbackBuffer */ __self, char /* System.Char */ charUnknown, int /* System.Int32 */ index, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -62574,7 +62568,7 @@ internal unsafe class System_Text_EncoderFallbackBuffer
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Fallback(charUnknown, index);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -62588,13 +62582,13 @@ internal unsafe class System_Text_EncoderFallbackBuffer
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_EncoderFallbackBuffer_Fallback1")]
-	internal static CBool /* System.Boolean */ System_Text_EncoderFallbackBuffer_Fallback1(void* /* System.Text.EncoderFallbackBuffer */ __self, char /* System.Char */ charUnknownHigh, char /* System.Char */ charUnknownLow, int /* System.Int32 */ index, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_EncoderFallbackBuffer_Fallback1(void* /* System.Text.EncoderFallbackBuffer */ __self, char /* System.Char */ charUnknownHigh, char /* System.Char */ charUnknownLow, int /* System.Int32 */ index, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -62605,7 +62599,7 @@ internal unsafe class System_Text_EncoderFallbackBuffer
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Fallback(charUnknownHigh, charUnknownLow, index);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -62619,7 +62613,7 @@ internal unsafe class System_Text_EncoderFallbackBuffer
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -62655,7 +62649,7 @@ internal unsafe class System_Text_EncoderFallbackBuffer
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_EncoderFallbackBuffer_MovePrevious")]
-	internal static CBool /* System.Boolean */ System_Text_EncoderFallbackBuffer_MovePrevious(void* /* System.Text.EncoderFallbackBuffer */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_EncoderFallbackBuffer_MovePrevious(void* /* System.Text.EncoderFallbackBuffer */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -62666,7 +62660,7 @@ internal unsafe class System_Text_EncoderFallbackBuffer
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.MovePrevious();
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -62680,7 +62674,7 @@ internal unsafe class System_Text_EncoderFallbackBuffer
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -62905,7 +62899,7 @@ internal unsafe class System_Text_DecoderFallback
 internal unsafe class System_Text_DecoderFallbackBuffer
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_DecoderFallbackBuffer_Fallback")]
-	internal static CBool /* System.Boolean */ System_Text_DecoderFallbackBuffer_Fallback(void* /* System.Text.DecoderFallbackBuffer */ __self, void* /* System.Byte[] */ bytesUnknown, int /* System.Int32 */ index, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_DecoderFallbackBuffer_Fallback(void* /* System.Text.DecoderFallbackBuffer */ __self, void* /* System.Byte[] */ bytesUnknown, int /* System.Int32 */ index, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -62917,7 +62911,7 @@ internal unsafe class System_Text_DecoderFallbackBuffer
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Fallback(bytesUnknownConverted, index);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -62931,7 +62925,7 @@ internal unsafe class System_Text_DecoderFallbackBuffer
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -62967,7 +62961,7 @@ internal unsafe class System_Text_DecoderFallbackBuffer
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_DecoderFallbackBuffer_MovePrevious")]
-	internal static CBool /* System.Boolean */ System_Text_DecoderFallbackBuffer_MovePrevious(void* /* System.Text.DecoderFallbackBuffer */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_DecoderFallbackBuffer_MovePrevious(void* /* System.Text.DecoderFallbackBuffer */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -62978,7 +62972,7 @@ internal unsafe class System_Text_DecoderFallbackBuffer
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.MovePrevious();
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -62992,7 +62986,7 @@ internal unsafe class System_Text_DecoderFallbackBuffer
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -63112,7 +63106,7 @@ internal unsafe class System_Text_EncodingInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_EncodingInfo_Equals")]
-	internal static CBool /* System.Boolean */ System_Text_EncodingInfo_Equals(void* /* System.Text.EncodingInfo */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_EncodingInfo_Equals(void* /* System.Text.EncodingInfo */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -63124,7 +63118,7 @@ internal unsafe class System_Text_EncodingInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -63138,7 +63132,7 @@ internal unsafe class System_Text_EncodingInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -63379,7 +63373,7 @@ internal unsafe class System_Text_Decoder
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Decoder_GetCharCount1")]
-	internal static int /* System.Int32 */ System_Text_Decoder_GetCharCount1(void* /* System.Text.Decoder */ __self, void* /* System.Byte[] */ bytes, int /* System.Int32 */ index, int /* System.Int32 */ count, CBool /* System.Boolean */ flush, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_Text_Decoder_GetCharCount1(void* /* System.Text.Decoder */ __self, void* /* System.Byte[] */ bytes, int /* System.Int32 */ index, int /* System.Int32 */ count, byte /* System.Boolean */ flush, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -63443,7 +63437,7 @@ internal unsafe class System_Text_Decoder
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Decoder_GetChars1")]
-	internal static int /* System.Int32 */ System_Text_Decoder_GetChars1(void* /* System.Text.Decoder */ __self, void* /* System.Byte[] */ bytes, int /* System.Int32 */ byteIndex, int /* System.Int32 */ byteCount, void* /* System.Char[] */ chars, int /* System.Int32 */ charIndex, CBool /* System.Boolean */ flush, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_Text_Decoder_GetChars1(void* /* System.Text.Decoder */ __self, void* /* System.Byte[] */ bytes, int /* System.Int32 */ byteIndex, int /* System.Int32 */ byteCount, void* /* System.Char[] */ chars, int /* System.Int32 */ charIndex, byte /* System.Boolean */ flush, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -63476,7 +63470,7 @@ internal unsafe class System_Text_Decoder
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Decoder_Convert")]
-	internal static void /* System.Void */ System_Text_Decoder_Convert(void* /* System.Text.Decoder */ __self, void* /* System.Byte[] */ bytes, int /* System.Int32 */ byteIndex, int /* System.Int32 */ byteCount, void* /* System.Char[] */ chars, int /* System.Int32 */ charIndex, int /* System.Int32 */ charCount, CBool /* System.Boolean */ flush, int* /* System.Int32 */ bytesUsed, int* /* System.Int32 */ charsUsed, CBool* /* System.Boolean */ completed, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_Text_Decoder_Convert(void* /* System.Text.Decoder */ __self, void* /* System.Byte[] */ bytes, int /* System.Int32 */ byteIndex, int /* System.Int32 */ byteCount, void* /* System.Char[] */ chars, int /* System.Int32 */ charIndex, int /* System.Int32 */ charCount, byte /* System.Boolean */ flush, int* /* System.Int32 */ bytesUsed, int* /* System.Int32 */ charsUsed, byte* /* System.Boolean */ completed, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -63664,7 +63658,7 @@ internal unsafe class System_Text_Encoder
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Encoder_GetByteCount")]
-	internal static int /* System.Int32 */ System_Text_Encoder_GetByteCount(void* /* System.Text.Encoder */ __self, void* /* System.Char[] */ chars, int /* System.Int32 */ index, int /* System.Int32 */ count, CBool /* System.Boolean */ flush, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_Text_Encoder_GetByteCount(void* /* System.Text.Encoder */ __self, void* /* System.Char[] */ chars, int /* System.Int32 */ index, int /* System.Int32 */ count, byte /* System.Boolean */ flush, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -63696,7 +63690,7 @@ internal unsafe class System_Text_Encoder
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Encoder_GetBytes")]
-	internal static int /* System.Int32 */ System_Text_Encoder_GetBytes(void* /* System.Text.Encoder */ __self, void* /* System.Char[] */ chars, int /* System.Int32 */ charIndex, int /* System.Int32 */ charCount, void* /* System.Byte[] */ bytes, int /* System.Int32 */ byteIndex, CBool /* System.Boolean */ flush, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_Text_Encoder_GetBytes(void* /* System.Text.Encoder */ __self, void* /* System.Char[] */ chars, int /* System.Int32 */ charIndex, int /* System.Int32 */ charCount, void* /* System.Byte[] */ bytes, int /* System.Int32 */ byteIndex, byte /* System.Boolean */ flush, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -63729,7 +63723,7 @@ internal unsafe class System_Text_Encoder
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Encoder_Convert")]
-	internal static void /* System.Void */ System_Text_Encoder_Convert(void* /* System.Text.Encoder */ __self, void* /* System.Char[] */ chars, int /* System.Int32 */ charIndex, int /* System.Int32 */ charCount, void* /* System.Byte[] */ bytes, int /* System.Int32 */ byteIndex, int /* System.Int32 */ byteCount, CBool /* System.Boolean */ flush, int* /* System.Int32 */ charsUsed, int* /* System.Int32 */ bytesUsed, CBool* /* System.Boolean */ completed, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_Text_Encoder_Convert(void* /* System.Text.Encoder */ __self, void* /* System.Char[] */ chars, int /* System.Int32 */ charIndex, int /* System.Int32 */ charCount, void* /* System.Byte[] */ bytes, int /* System.Int32 */ byteIndex, int /* System.Int32 */ byteCount, byte /* System.Boolean */ flush, int* /* System.Int32 */ charsUsed, int* /* System.Int32 */ bytesUsed, byte* /* System.Boolean */ completed, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -64142,7 +64136,7 @@ internal unsafe class System_Attribute
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Attribute_GetCustomAttributes1")]
-	internal static void* /* System.Attribute[] */ System_Attribute_GetCustomAttributes1(void* /* System.Reflection.MemberInfo */ element, void* /* System.Type */ attributeType, CBool /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
+	internal static void* /* System.Attribute[] */ System_Attribute_GetCustomAttributes1(void* /* System.Reflection.MemberInfo */ element, void* /* System.Type */ attributeType, byte /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
 	{
 		System.Reflection.MemberInfo elementConverted = InteropUtils.GetInstance<System.Reflection.MemberInfo>(element);
 		System.Type attributeTypeConverted = InteropUtils.GetInstance<System.Type>(attributeType);
@@ -64196,7 +64190,7 @@ internal unsafe class System_Attribute
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Attribute_GetCustomAttributes3")]
-	internal static void* /* System.Attribute[] */ System_Attribute_GetCustomAttributes3(void* /* System.Reflection.MemberInfo */ element, CBool /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
+	internal static void* /* System.Attribute[] */ System_Attribute_GetCustomAttributes3(void* /* System.Reflection.MemberInfo */ element, byte /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
 	{
 		System.Reflection.MemberInfo elementConverted = InteropUtils.GetInstance<System.Reflection.MemberInfo>(element);
 		System.Boolean inheritConverted = inherit.ToBool();
@@ -64223,14 +64217,14 @@ internal unsafe class System_Attribute
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Attribute_IsDefined")]
-	internal static CBool /* System.Boolean */ System_Attribute_IsDefined(void* /* System.Reflection.MemberInfo */ element, void* /* System.Type */ attributeType, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Attribute_IsDefined(void* /* System.Reflection.MemberInfo */ element, void* /* System.Type */ attributeType, void** /* System.Exception */ __outException)
 	{
 		System.Reflection.MemberInfo elementConverted = InteropUtils.GetInstance<System.Reflection.MemberInfo>(element);
 		System.Type attributeTypeConverted = InteropUtils.GetInstance<System.Type>(attributeType);
 	
 	    try {
 			System.Boolean __returnValue = System.Attribute.IsDefined(elementConverted, attributeTypeConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -64244,13 +64238,13 @@ internal unsafe class System_Attribute
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Attribute_IsDefined1")]
-	internal static CBool /* System.Boolean */ System_Attribute_IsDefined1(void* /* System.Reflection.MemberInfo */ element, void* /* System.Type */ attributeType, CBool /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Attribute_IsDefined1(void* /* System.Reflection.MemberInfo */ element, void* /* System.Type */ attributeType, byte /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
 	{
 		System.Reflection.MemberInfo elementConverted = InteropUtils.GetInstance<System.Reflection.MemberInfo>(element);
 		System.Type attributeTypeConverted = InteropUtils.GetInstance<System.Type>(attributeType);
@@ -64258,7 +64252,7 @@ internal unsafe class System_Attribute
 	
 	    try {
 			System.Boolean __returnValue = System.Attribute.IsDefined(elementConverted, attributeTypeConverted, inheritConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -64272,7 +64266,7 @@ internal unsafe class System_Attribute
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -64305,7 +64299,7 @@ internal unsafe class System_Attribute
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Attribute_GetCustomAttribute2")]
-	internal static void* /* System.Attribute */ System_Attribute_GetCustomAttribute2(void* /* System.Reflection.MemberInfo */ element, void* /* System.Type */ attributeType, CBool /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
+	internal static void* /* System.Attribute */ System_Attribute_GetCustomAttribute2(void* /* System.Reflection.MemberInfo */ element, void* /* System.Type */ attributeType, byte /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
 	{
 		System.Reflection.MemberInfo elementConverted = InteropUtils.GetInstance<System.Reflection.MemberInfo>(element);
 		System.Type attributeTypeConverted = InteropUtils.GetInstance<System.Type>(attributeType);
@@ -64386,7 +64380,7 @@ internal unsafe class System_Attribute
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Attribute_GetCustomAttributes6")]
-	internal static void* /* System.Attribute[] */ System_Attribute_GetCustomAttributes6(void* /* System.Reflection.ParameterInfo */ element, void* /* System.Type */ attributeType, CBool /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
+	internal static void* /* System.Attribute[] */ System_Attribute_GetCustomAttributes6(void* /* System.Reflection.ParameterInfo */ element, void* /* System.Type */ attributeType, byte /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
 	{
 		System.Reflection.ParameterInfo elementConverted = InteropUtils.GetInstance<System.Reflection.ParameterInfo>(element);
 		System.Type attributeTypeConverted = InteropUtils.GetInstance<System.Type>(attributeType);
@@ -64414,7 +64408,7 @@ internal unsafe class System_Attribute
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Attribute_GetCustomAttributes7")]
-	internal static void* /* System.Attribute[] */ System_Attribute_GetCustomAttributes7(void* /* System.Reflection.ParameterInfo */ element, CBool /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
+	internal static void* /* System.Attribute[] */ System_Attribute_GetCustomAttributes7(void* /* System.Reflection.ParameterInfo */ element, byte /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
 	{
 		System.Reflection.ParameterInfo elementConverted = InteropUtils.GetInstance<System.Reflection.ParameterInfo>(element);
 		System.Boolean inheritConverted = inherit.ToBool();
@@ -64441,14 +64435,14 @@ internal unsafe class System_Attribute
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Attribute_IsDefined2")]
-	internal static CBool /* System.Boolean */ System_Attribute_IsDefined2(void* /* System.Reflection.ParameterInfo */ element, void* /* System.Type */ attributeType, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Attribute_IsDefined2(void* /* System.Reflection.ParameterInfo */ element, void* /* System.Type */ attributeType, void** /* System.Exception */ __outException)
 	{
 		System.Reflection.ParameterInfo elementConverted = InteropUtils.GetInstance<System.Reflection.ParameterInfo>(element);
 		System.Type attributeTypeConverted = InteropUtils.GetInstance<System.Type>(attributeType);
 	
 	    try {
 			System.Boolean __returnValue = System.Attribute.IsDefined(elementConverted, attributeTypeConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -64462,13 +64456,13 @@ internal unsafe class System_Attribute
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Attribute_IsDefined3")]
-	internal static CBool /* System.Boolean */ System_Attribute_IsDefined3(void* /* System.Reflection.ParameterInfo */ element, void* /* System.Type */ attributeType, CBool /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Attribute_IsDefined3(void* /* System.Reflection.ParameterInfo */ element, void* /* System.Type */ attributeType, byte /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
 	{
 		System.Reflection.ParameterInfo elementConverted = InteropUtils.GetInstance<System.Reflection.ParameterInfo>(element);
 		System.Type attributeTypeConverted = InteropUtils.GetInstance<System.Type>(attributeType);
@@ -64476,7 +64470,7 @@ internal unsafe class System_Attribute
 	
 	    try {
 			System.Boolean __returnValue = System.Attribute.IsDefined(elementConverted, attributeTypeConverted, inheritConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -64490,7 +64484,7 @@ internal unsafe class System_Attribute
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -64523,7 +64517,7 @@ internal unsafe class System_Attribute
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Attribute_GetCustomAttribute4")]
-	internal static void* /* System.Attribute */ System_Attribute_GetCustomAttribute4(void* /* System.Reflection.ParameterInfo */ element, void* /* System.Type */ attributeType, CBool /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
+	internal static void* /* System.Attribute */ System_Attribute_GetCustomAttribute4(void* /* System.Reflection.ParameterInfo */ element, void* /* System.Type */ attributeType, byte /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
 	{
 		System.Reflection.ParameterInfo elementConverted = InteropUtils.GetInstance<System.Reflection.ParameterInfo>(element);
 		System.Type attributeTypeConverted = InteropUtils.GetInstance<System.Type>(attributeType);
@@ -64604,7 +64598,7 @@ internal unsafe class System_Attribute
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Attribute_GetCustomAttributes10")]
-	internal static void* /* System.Attribute[] */ System_Attribute_GetCustomAttributes10(void* /* System.Reflection.Module */ element, CBool /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
+	internal static void* /* System.Attribute[] */ System_Attribute_GetCustomAttributes10(void* /* System.Reflection.Module */ element, byte /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
 	{
 		System.Reflection.Module elementConverted = InteropUtils.GetInstance<System.Reflection.Module>(element);
 		System.Boolean inheritConverted = inherit.ToBool();
@@ -64631,7 +64625,7 @@ internal unsafe class System_Attribute
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Attribute_GetCustomAttributes11")]
-	internal static void* /* System.Attribute[] */ System_Attribute_GetCustomAttributes11(void* /* System.Reflection.Module */ element, void* /* System.Type */ attributeType, CBool /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
+	internal static void* /* System.Attribute[] */ System_Attribute_GetCustomAttributes11(void* /* System.Reflection.Module */ element, void* /* System.Type */ attributeType, byte /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
 	{
 		System.Reflection.Module elementConverted = InteropUtils.GetInstance<System.Reflection.Module>(element);
 		System.Type attributeTypeConverted = InteropUtils.GetInstance<System.Type>(attributeType);
@@ -64659,14 +64653,14 @@ internal unsafe class System_Attribute
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Attribute_IsDefined4")]
-	internal static CBool /* System.Boolean */ System_Attribute_IsDefined4(void* /* System.Reflection.Module */ element, void* /* System.Type */ attributeType, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Attribute_IsDefined4(void* /* System.Reflection.Module */ element, void* /* System.Type */ attributeType, void** /* System.Exception */ __outException)
 	{
 		System.Reflection.Module elementConverted = InteropUtils.GetInstance<System.Reflection.Module>(element);
 		System.Type attributeTypeConverted = InteropUtils.GetInstance<System.Type>(attributeType);
 	
 	    try {
 			System.Boolean __returnValue = System.Attribute.IsDefined(elementConverted, attributeTypeConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -64680,13 +64674,13 @@ internal unsafe class System_Attribute
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Attribute_IsDefined5")]
-	internal static CBool /* System.Boolean */ System_Attribute_IsDefined5(void* /* System.Reflection.Module */ element, void* /* System.Type */ attributeType, CBool /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Attribute_IsDefined5(void* /* System.Reflection.Module */ element, void* /* System.Type */ attributeType, byte /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
 	{
 		System.Reflection.Module elementConverted = InteropUtils.GetInstance<System.Reflection.Module>(element);
 		System.Type attributeTypeConverted = InteropUtils.GetInstance<System.Type>(attributeType);
@@ -64694,7 +64688,7 @@ internal unsafe class System_Attribute
 	
 	    try {
 			System.Boolean __returnValue = System.Attribute.IsDefined(elementConverted, attributeTypeConverted, inheritConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -64708,7 +64702,7 @@ internal unsafe class System_Attribute
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -64741,7 +64735,7 @@ internal unsafe class System_Attribute
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Attribute_GetCustomAttribute6")]
-	internal static void* /* System.Attribute */ System_Attribute_GetCustomAttribute6(void* /* System.Reflection.Module */ element, void* /* System.Type */ attributeType, CBool /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
+	internal static void* /* System.Attribute */ System_Attribute_GetCustomAttribute6(void* /* System.Reflection.Module */ element, void* /* System.Type */ attributeType, byte /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
 	{
 		System.Reflection.Module elementConverted = InteropUtils.GetInstance<System.Reflection.Module>(element);
 		System.Type attributeTypeConverted = InteropUtils.GetInstance<System.Type>(attributeType);
@@ -64796,7 +64790,7 @@ internal unsafe class System_Attribute
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Attribute_GetCustomAttributes13")]
-	internal static void* /* System.Attribute[] */ System_Attribute_GetCustomAttributes13(void* /* System.Reflection.Assembly */ element, void* /* System.Type */ attributeType, CBool /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
+	internal static void* /* System.Attribute[] */ System_Attribute_GetCustomAttributes13(void* /* System.Reflection.Assembly */ element, void* /* System.Type */ attributeType, byte /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
 	{
 		System.Reflection.Assembly elementConverted = InteropUtils.GetInstance<System.Reflection.Assembly>(element);
 		System.Type attributeTypeConverted = InteropUtils.GetInstance<System.Type>(attributeType);
@@ -64850,7 +64844,7 @@ internal unsafe class System_Attribute
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Attribute_GetCustomAttributes15")]
-	internal static void* /* System.Attribute[] */ System_Attribute_GetCustomAttributes15(void* /* System.Reflection.Assembly */ element, CBool /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
+	internal static void* /* System.Attribute[] */ System_Attribute_GetCustomAttributes15(void* /* System.Reflection.Assembly */ element, byte /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
 	{
 		System.Reflection.Assembly elementConverted = InteropUtils.GetInstance<System.Reflection.Assembly>(element);
 		System.Boolean inheritConverted = inherit.ToBool();
@@ -64877,14 +64871,14 @@ internal unsafe class System_Attribute
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Attribute_IsDefined6")]
-	internal static CBool /* System.Boolean */ System_Attribute_IsDefined6(void* /* System.Reflection.Assembly */ element, void* /* System.Type */ attributeType, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Attribute_IsDefined6(void* /* System.Reflection.Assembly */ element, void* /* System.Type */ attributeType, void** /* System.Exception */ __outException)
 	{
 		System.Reflection.Assembly elementConverted = InteropUtils.GetInstance<System.Reflection.Assembly>(element);
 		System.Type attributeTypeConverted = InteropUtils.GetInstance<System.Type>(attributeType);
 	
 	    try {
 			System.Boolean __returnValue = System.Attribute.IsDefined(elementConverted, attributeTypeConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -64898,13 +64892,13 @@ internal unsafe class System_Attribute
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Attribute_IsDefined7")]
-	internal static CBool /* System.Boolean */ System_Attribute_IsDefined7(void* /* System.Reflection.Assembly */ element, void* /* System.Type */ attributeType, CBool /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Attribute_IsDefined7(void* /* System.Reflection.Assembly */ element, void* /* System.Type */ attributeType, byte /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
 	{
 		System.Reflection.Assembly elementConverted = InteropUtils.GetInstance<System.Reflection.Assembly>(element);
 		System.Type attributeTypeConverted = InteropUtils.GetInstance<System.Type>(attributeType);
@@ -64912,7 +64906,7 @@ internal unsafe class System_Attribute
 	
 	    try {
 			System.Boolean __returnValue = System.Attribute.IsDefined(elementConverted, attributeTypeConverted, inheritConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -64926,7 +64920,7 @@ internal unsafe class System_Attribute
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -64959,7 +64953,7 @@ internal unsafe class System_Attribute
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Attribute_GetCustomAttribute8")]
-	internal static void* /* System.Attribute */ System_Attribute_GetCustomAttribute8(void* /* System.Reflection.Assembly */ element, void* /* System.Type */ attributeType, CBool /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
+	internal static void* /* System.Attribute */ System_Attribute_GetCustomAttribute8(void* /* System.Reflection.Assembly */ element, void* /* System.Type */ attributeType, byte /* System.Boolean */ inherit, void** /* System.Exception */ __outException)
 	{
 		System.Reflection.Assembly elementConverted = InteropUtils.GetInstance<System.Reflection.Assembly>(element);
 		System.Type attributeTypeConverted = InteropUtils.GetInstance<System.Type>(attributeType);
@@ -64987,7 +64981,7 @@ internal unsafe class System_Attribute
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Attribute_Equals")]
-	internal static CBool /* System.Boolean */ System_Attribute_Equals(void* /* System.Attribute */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Attribute_Equals(void* /* System.Attribute */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -64999,7 +64993,7 @@ internal unsafe class System_Attribute
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(objConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -65013,7 +65007,7 @@ internal unsafe class System_Attribute
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -65049,7 +65043,7 @@ internal unsafe class System_Attribute
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Attribute_Match")]
-	internal static CBool /* System.Boolean */ System_Attribute_Match(void* /* System.Attribute */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Attribute_Match(void* /* System.Attribute */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -65061,7 +65055,7 @@ internal unsafe class System_Attribute
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Match(objConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -65075,13 +65069,13 @@ internal unsafe class System_Attribute
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Attribute_IsDefaultAttribute")]
-	internal static CBool /* System.Boolean */ System_Attribute_IsDefaultAttribute(void* /* System.Attribute */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Attribute_IsDefaultAttribute(void* /* System.Attribute */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -65092,7 +65086,7 @@ internal unsafe class System_Attribute
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsDefaultAttribute();
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -65106,7 +65100,7 @@ internal unsafe class System_Attribute
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -65264,7 +65258,7 @@ internal unsafe class System_Reflection_ConstructorInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ConstructorInfo_Equals")]
-	internal static CBool /* System.Boolean */ System_Reflection_ConstructorInfo_Equals(void* /* System.Reflection.ConstructorInfo */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_ConstructorInfo_Equals(void* /* System.Reflection.ConstructorInfo */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -65276,7 +65270,7 @@ internal unsafe class System_Reflection_ConstructorInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(objConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -65290,7 +65284,7 @@ internal unsafe class System_Reflection_ConstructorInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -65434,7 +65428,7 @@ internal unsafe class System_Reflection_EventInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_EventInfo_GetOtherMethods1")]
-	internal static void* /* System.Reflection.MethodInfo[] */ System_Reflection_EventInfo_GetOtherMethods1(void* /* System.Reflection.EventInfo */ __self, CBool /* System.Boolean */ nonPublic, void** /* System.Exception */ __outException)
+	internal static void* /* System.Reflection.MethodInfo[] */ System_Reflection_EventInfo_GetOtherMethods1(void* /* System.Reflection.EventInfo */ __self, byte /* System.Boolean */ nonPublic, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -65559,7 +65553,7 @@ internal unsafe class System_Reflection_EventInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_EventInfo_GetAddMethod1")]
-	internal static void* /* System.Reflection.MethodInfo */ System_Reflection_EventInfo_GetAddMethod1(void* /* System.Reflection.EventInfo */ __self, CBool /* System.Boolean */ nonPublic, void** /* System.Exception */ __outException)
+	internal static void* /* System.Reflection.MethodInfo */ System_Reflection_EventInfo_GetAddMethod1(void* /* System.Reflection.EventInfo */ __self, byte /* System.Boolean */ nonPublic, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -65591,7 +65585,7 @@ internal unsafe class System_Reflection_EventInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_EventInfo_GetRemoveMethod1")]
-	internal static void* /* System.Reflection.MethodInfo */ System_Reflection_EventInfo_GetRemoveMethod1(void* /* System.Reflection.EventInfo */ __self, CBool /* System.Boolean */ nonPublic, void** /* System.Exception */ __outException)
+	internal static void* /* System.Reflection.MethodInfo */ System_Reflection_EventInfo_GetRemoveMethod1(void* /* System.Reflection.EventInfo */ __self, byte /* System.Boolean */ nonPublic, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -65623,7 +65617,7 @@ internal unsafe class System_Reflection_EventInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_EventInfo_GetRaiseMethod1")]
-	internal static void* /* System.Reflection.MethodInfo */ System_Reflection_EventInfo_GetRaiseMethod1(void* /* System.Reflection.EventInfo */ __self, CBool /* System.Boolean */ nonPublic, void** /* System.Exception */ __outException)
+	internal static void* /* System.Reflection.MethodInfo */ System_Reflection_EventInfo_GetRaiseMethod1(void* /* System.Reflection.EventInfo */ __self, byte /* System.Boolean */ nonPublic, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -65715,7 +65709,7 @@ internal unsafe class System_Reflection_EventInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_EventInfo_Equals")]
-	internal static CBool /* System.Boolean */ System_Reflection_EventInfo_Equals(void* /* System.Reflection.EventInfo */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_EventInfo_Equals(void* /* System.Reflection.EventInfo */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -65727,7 +65721,7 @@ internal unsafe class System_Reflection_EventInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(objConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -65741,7 +65735,7 @@ internal unsafe class System_Reflection_EventInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -65839,7 +65833,7 @@ internal unsafe class System_Reflection_EventInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_EventInfo_IsSpecialName_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_EventInfo_IsSpecialName_Get(void* /* System.Reflection.EventInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_EventInfo_IsSpecialName_Get(void* /* System.Reflection.EventInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -65850,7 +65844,7 @@ internal unsafe class System_Reflection_EventInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsSpecialName;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -65864,7 +65858,7 @@ internal unsafe class System_Reflection_EventInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -65967,7 +65961,7 @@ internal unsafe class System_Reflection_EventInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_EventInfo_IsMulticast_Get")]
-	internal static CBool /* System.Boolean */ System_Reflection_EventInfo_IsMulticast_Get(void* /* System.Reflection.EventInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Reflection_EventInfo_IsMulticast_Get(void* /* System.Reflection.EventInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -65978,7 +65972,7 @@ internal unsafe class System_Reflection_EventInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsMulticast;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -65992,7 +65986,7 @@ internal unsafe class System_Reflection_EventInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -66214,7 +66208,7 @@ internal unsafe class System_Reflection_InterfaceMapping
 internal unsafe class System_Reflection_MemberFilter
 {
 	internal void* Context { get; }
-	internal delegate* unmanaged<void* /* context */, void* /* System.Reflection.MemberInfo */ /* m */, void* /* System.Object */ /* filterCriteria */, CBool /* System.Boolean */ /* return type */> CFunction { get; }
+	internal delegate* unmanaged<void* /* context */, void* /* System.Reflection.MemberInfo */ /* m */, void* /* System.Object */ /* filterCriteria */, byte /* System.Boolean */ /* return type */> CFunction { get; }
 	internal delegate* unmanaged<void*, void> CDestructorFunction { get; }
 
 	private WeakReference<System.Reflection.MemberFilter> m_trampoline;
@@ -66238,7 +66232,7 @@ internal unsafe class System_Reflection_MemberFilter
 		}
 	}
 
-	private System_Reflection_MemberFilter(void* context, delegate* unmanaged<void* /* context */, void* /* System.Reflection.MemberInfo */ /* m */, void* /* System.Object */ /* filterCriteria */, CBool /* System.Boolean */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	private System_Reflection_MemberFilter(void* context, delegate* unmanaged<void* /* context */, void* /* System.Reflection.MemberInfo */ /* m */, void* /* System.Object */ /* filterCriteria */, byte /* System.Boolean */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
 	{
 		Context = context;
 		CFunction = cFunction;
@@ -66293,7 +66287,7 @@ internal unsafe class System_Reflection_MemberFilter
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MemberFilter_Create")]
-	public static void* Create(void* context, delegate* unmanaged<void* /* context */, void* /* System.Reflection.MemberInfo */ /* m */, void* /* System.Object */ /* filterCriteria */, CBool /* System.Boolean */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	public static void* Create(void* context, delegate* unmanaged<void* /* context */, void* /* System.Reflection.MemberInfo */ /* m */, void* /* System.Object */ /* filterCriteria */, byte /* System.Boolean */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
 	{
 		var self = new System_Reflection_MemberFilter(context, cFunction, cDestructorFunction);
 		void* selfHandle = self.AllocateGCHandleAndGetAddress();
@@ -66302,7 +66296,7 @@ internal unsafe class System_Reflection_MemberFilter
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MemberFilter_Invoke")]
-	public static CBool /* System.Boolean */ Invoke(void* self, void* /* System.Reflection.MemberInfo */ m, void* /* System.Object */ filterCriteria)
+	public static byte /* System.Boolean */ Invoke(void* self, void* /* System.Reflection.MemberInfo */ m, void* /* System.Object */ filterCriteria)
 	{
 		if (self is null) {
 			throw new ArgumentNullException(nameof(self));
@@ -66334,7 +66328,7 @@ internal unsafe class System_Reflection_MemberFilter
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MemberFilter_CFunction_Get")]
-	public static delegate* unmanaged<void* /* context */, void* /* System.Reflection.MemberInfo */ /* m */, void* /* System.Object */ /* filterCriteria */, CBool /* System.Boolean */ /* return type */> CFunction_Get(void* self)
+	public static delegate* unmanaged<void* /* context */, void* /* System.Reflection.MemberInfo */ /* m */, void* /* System.Object */ /* filterCriteria */, byte /* System.Boolean */ /* return type */> CFunction_Get(void* self)
 	{
 		if (self is null) {
 			throw new ArgumentNullException(nameof(self));
@@ -66398,13 +66392,13 @@ internal unsafe class System_Convert
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_IsDBNull")]
-	internal static CBool /* System.Boolean */ System_Convert_IsDBNull(void* /* System.Object */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Convert_IsDBNull(void* /* System.Object */ value, void** /* System.Exception */ __outException)
 	{
 		System.Object valueConverted = InteropUtils.GetInstance<System.Object>(value);
 	
 	    try {
 			System.Boolean __returnValue = System.Convert.IsDBNull(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -66418,7 +66412,7 @@ internal unsafe class System_Convert
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -66532,13 +66526,13 @@ internal unsafe class System_Convert
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToBoolean")]
-	internal static CBool /* System.Boolean */ System_Convert_ToBoolean(void* /* System.Object */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Convert_ToBoolean(void* /* System.Object */ value, void** /* System.Exception */ __outException)
 	{
 		System.Object valueConverted = InteropUtils.GetInstance<System.Object>(value);
 	
 	    try {
 			System.Boolean __returnValue = System.Convert.ToBoolean(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -66552,20 +66546,20 @@ internal unsafe class System_Convert
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToBoolean1")]
-	internal static CBool /* System.Boolean */ System_Convert_ToBoolean1(void* /* System.Object */ value, void* /* System.IFormatProvider */ provider, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Convert_ToBoolean1(void* /* System.Object */ value, void* /* System.IFormatProvider */ provider, void** /* System.Exception */ __outException)
 	{
 		System.Object valueConverted = InteropUtils.GetInstance<System.Object>(value);
 		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
 	
 	    try {
 			System.Boolean __returnValue = System.Convert.ToBoolean(valueConverted, providerConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -66579,19 +66573,19 @@ internal unsafe class System_Convert
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToBoolean2")]
-	internal static CBool /* System.Boolean */ System_Convert_ToBoolean2(CBool /* System.Boolean */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Convert_ToBoolean2(byte /* System.Boolean */ value, void** /* System.Exception */ __outException)
 	{
 		System.Boolean valueConverted = value.ToBool();
 	
 	    try {
 			System.Boolean __returnValue = System.Convert.ToBoolean(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -66605,18 +66599,18 @@ internal unsafe class System_Convert
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToBoolean3")]
-	internal static CBool /* System.Boolean */ System_Convert_ToBoolean3(sbyte /* System.SByte */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Convert_ToBoolean3(sbyte /* System.SByte */ value, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
 			System.Boolean __returnValue = System.Convert.ToBoolean(value);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -66630,18 +66624,18 @@ internal unsafe class System_Convert
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToBoolean4")]
-	internal static CBool /* System.Boolean */ System_Convert_ToBoolean4(char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Convert_ToBoolean4(char /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
 			System.Boolean __returnValue = System.Convert.ToBoolean(value);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -66655,18 +66649,18 @@ internal unsafe class System_Convert
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToBoolean5")]
-	internal static CBool /* System.Boolean */ System_Convert_ToBoolean5(byte /* System.Byte */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Convert_ToBoolean5(byte /* System.Byte */ value, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
 			System.Boolean __returnValue = System.Convert.ToBoolean(value);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -66680,18 +66674,18 @@ internal unsafe class System_Convert
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToBoolean6")]
-	internal static CBool /* System.Boolean */ System_Convert_ToBoolean6(short /* System.Int16 */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Convert_ToBoolean6(short /* System.Int16 */ value, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
 			System.Boolean __returnValue = System.Convert.ToBoolean(value);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -66705,18 +66699,18 @@ internal unsafe class System_Convert
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToBoolean7")]
-	internal static CBool /* System.Boolean */ System_Convert_ToBoolean7(ushort /* System.UInt16 */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Convert_ToBoolean7(ushort /* System.UInt16 */ value, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
 			System.Boolean __returnValue = System.Convert.ToBoolean(value);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -66730,18 +66724,18 @@ internal unsafe class System_Convert
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToBoolean8")]
-	internal static CBool /* System.Boolean */ System_Convert_ToBoolean8(int /* System.Int32 */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Convert_ToBoolean8(int /* System.Int32 */ value, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
 			System.Boolean __returnValue = System.Convert.ToBoolean(value);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -66755,18 +66749,18 @@ internal unsafe class System_Convert
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToBoolean9")]
-	internal static CBool /* System.Boolean */ System_Convert_ToBoolean9(uint /* System.UInt32 */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Convert_ToBoolean9(uint /* System.UInt32 */ value, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
 			System.Boolean __returnValue = System.Convert.ToBoolean(value);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -66780,18 +66774,18 @@ internal unsafe class System_Convert
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToBoolean10")]
-	internal static CBool /* System.Boolean */ System_Convert_ToBoolean10(long /* System.Int64 */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Convert_ToBoolean10(long /* System.Int64 */ value, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
 			System.Boolean __returnValue = System.Convert.ToBoolean(value);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -66805,18 +66799,18 @@ internal unsafe class System_Convert
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToBoolean11")]
-	internal static CBool /* System.Boolean */ System_Convert_ToBoolean11(ulong /* System.UInt64 */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Convert_ToBoolean11(ulong /* System.UInt64 */ value, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
 			System.Boolean __returnValue = System.Convert.ToBoolean(value);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -66830,19 +66824,19 @@ internal unsafe class System_Convert
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToBoolean12")]
-	internal static CBool /* System.Boolean */ System_Convert_ToBoolean12(byte* /* System.String */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Convert_ToBoolean12(byte* /* System.String */ value, void** /* System.Exception */ __outException)
 	{
 		System.String valueConverted = InteropUtils.ToDotNetString(value);
 	
 	    try {
 			System.Boolean __returnValue = System.Convert.ToBoolean(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -66856,20 +66850,20 @@ internal unsafe class System_Convert
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToBoolean13")]
-	internal static CBool /* System.Boolean */ System_Convert_ToBoolean13(byte* /* System.String */ value, void* /* System.IFormatProvider */ provider, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Convert_ToBoolean13(byte* /* System.String */ value, void* /* System.IFormatProvider */ provider, void** /* System.Exception */ __outException)
 	{
 		System.String valueConverted = InteropUtils.ToDotNetString(value);
 		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
 	
 	    try {
 			System.Boolean __returnValue = System.Convert.ToBoolean(valueConverted, providerConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -66883,18 +66877,18 @@ internal unsafe class System_Convert
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToBoolean14")]
-	internal static CBool /* System.Boolean */ System_Convert_ToBoolean14(float /* System.Single */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Convert_ToBoolean14(float /* System.Single */ value, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
 			System.Boolean __returnValue = System.Convert.ToBoolean(value);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -66908,18 +66902,18 @@ internal unsafe class System_Convert
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToBoolean15")]
-	internal static CBool /* System.Boolean */ System_Convert_ToBoolean15(double /* System.Double */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Convert_ToBoolean15(double /* System.Double */ value, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
 			System.Boolean __returnValue = System.Convert.ToBoolean(value);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -66933,19 +66927,19 @@ internal unsafe class System_Convert
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToBoolean16")]
-	internal static CBool /* System.Boolean */ System_Convert_ToBoolean16(void* /* System.Decimal */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Convert_ToBoolean16(void* /* System.Decimal */ value, void** /* System.Exception */ __outException)
 	{
 		System.Decimal valueConverted = InteropUtils.GetInstance<System.Decimal>(value);
 	
 	    try {
 			System.Boolean __returnValue = System.Convert.ToBoolean(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -66959,19 +66953,19 @@ internal unsafe class System_Convert
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToBoolean17")]
-	internal static CBool /* System.Boolean */ System_Convert_ToBoolean17(void* /* System.DateTime */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Convert_ToBoolean17(void* /* System.DateTime */ value, void** /* System.Exception */ __outException)
 	{
 		System.DateTime valueConverted = InteropUtils.GetInstance<System.DateTime>(value);
 	
 	    try {
 			System.Boolean __returnValue = System.Convert.ToBoolean(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -66985,7 +66979,7 @@ internal unsafe class System_Convert
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -67042,7 +67036,7 @@ internal unsafe class System_Convert
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToChar2")]
-	internal static char /* System.Char */ System_Convert_ToChar2(CBool /* System.Boolean */ value, void** /* System.Exception */ __outException)
+	internal static char /* System.Char */ System_Convert_ToChar2(byte /* System.Boolean */ value, void** /* System.Exception */ __outException)
 	{
 		System.Boolean valueConverted = value.ToBool();
 	
@@ -67483,7 +67477,7 @@ internal unsafe class System_Convert
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToSByte2")]
-	internal static sbyte /* System.SByte */ System_Convert_ToSByte2(CBool /* System.Boolean */ value, void** /* System.Exception */ __outException)
+	internal static sbyte /* System.SByte */ System_Convert_ToSByte2(byte /* System.Boolean */ value, void** /* System.Exception */ __outException)
 	{
 		System.Boolean valueConverted = value.ToBool();
 	
@@ -67924,7 +67918,7 @@ internal unsafe class System_Convert
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToByte2")]
-	internal static byte /* System.Byte */ System_Convert_ToByte2(CBool /* System.Boolean */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Byte */ System_Convert_ToByte2(byte /* System.Boolean */ value, void** /* System.Exception */ __outException)
 	{
 		System.Boolean valueConverted = value.ToBool();
 	
@@ -68365,7 +68359,7 @@ internal unsafe class System_Convert
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToInt162")]
-	internal static short /* System.Int16 */ System_Convert_ToInt162(CBool /* System.Boolean */ value, void** /* System.Exception */ __outException)
+	internal static short /* System.Int16 */ System_Convert_ToInt162(byte /* System.Boolean */ value, void** /* System.Exception */ __outException)
 	{
 		System.Boolean valueConverted = value.ToBool();
 	
@@ -68806,7 +68800,7 @@ internal unsafe class System_Convert
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToUInt162")]
-	internal static ushort /* System.UInt16 */ System_Convert_ToUInt162(CBool /* System.Boolean */ value, void** /* System.Exception */ __outException)
+	internal static ushort /* System.UInt16 */ System_Convert_ToUInt162(byte /* System.Boolean */ value, void** /* System.Exception */ __outException)
 	{
 		System.Boolean valueConverted = value.ToBool();
 	
@@ -69247,7 +69241,7 @@ internal unsafe class System_Convert
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToInt322")]
-	internal static int /* System.Int32 */ System_Convert_ToInt322(CBool /* System.Boolean */ value, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_Convert_ToInt322(byte /* System.Boolean */ value, void** /* System.Exception */ __outException)
 	{
 		System.Boolean valueConverted = value.ToBool();
 	
@@ -69688,7 +69682,7 @@ internal unsafe class System_Convert
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToUInt322")]
-	internal static uint /* System.UInt32 */ System_Convert_ToUInt322(CBool /* System.Boolean */ value, void** /* System.Exception */ __outException)
+	internal static uint /* System.UInt32 */ System_Convert_ToUInt322(byte /* System.Boolean */ value, void** /* System.Exception */ __outException)
 	{
 		System.Boolean valueConverted = value.ToBool();
 	
@@ -70129,7 +70123,7 @@ internal unsafe class System_Convert
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToInt642")]
-	internal static long /* System.Int64 */ System_Convert_ToInt642(CBool /* System.Boolean */ value, void** /* System.Exception */ __outException)
+	internal static long /* System.Int64 */ System_Convert_ToInt642(byte /* System.Boolean */ value, void** /* System.Exception */ __outException)
 	{
 		System.Boolean valueConverted = value.ToBool();
 	
@@ -70570,7 +70564,7 @@ internal unsafe class System_Convert
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToUInt642")]
-	internal static ulong /* System.UInt64 */ System_Convert_ToUInt642(CBool /* System.Boolean */ value, void** /* System.Exception */ __outException)
+	internal static ulong /* System.UInt64 */ System_Convert_ToUInt642(byte /* System.Boolean */ value, void** /* System.Exception */ __outException)
 	{
 		System.Boolean valueConverted = value.ToBool();
 	
@@ -71351,7 +71345,7 @@ internal unsafe class System_Convert
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToSingle16")]
-	internal static float /* System.Single */ System_Convert_ToSingle16(CBool /* System.Boolean */ value, void** /* System.Exception */ __outException)
+	internal static float /* System.Single */ System_Convert_ToSingle16(byte /* System.Boolean */ value, void** /* System.Exception */ __outException)
 	{
 		System.Boolean valueConverted = value.ToBool();
 	
@@ -71792,7 +71786,7 @@ internal unsafe class System_Convert
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToDouble16")]
-	internal static double /* System.Double */ System_Convert_ToDouble16(CBool /* System.Boolean */ value, void** /* System.Exception */ __outException)
+	internal static double /* System.Double */ System_Convert_ToDouble16(byte /* System.Boolean */ value, void** /* System.Exception */ __outException)
 	{
 		System.Boolean valueConverted = value.ToBool();
 	
@@ -72249,7 +72243,7 @@ internal unsafe class System_Convert
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToDecimal16")]
-	internal static void* /* System.Decimal */ System_Convert_ToDecimal16(CBool /* System.Boolean */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.Decimal */ System_Convert_ToDecimal16(byte /* System.Boolean */ value, void** /* System.Exception */ __outException)
 	{
 		System.Boolean valueConverted = value.ToBool();
 	
@@ -72633,7 +72627,7 @@ internal unsafe class System_Convert
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToDateTime13")]
-	internal static void* /* System.DateTime */ System_Convert_ToDateTime13(CBool /* System.Boolean */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.DateTime */ System_Convert_ToDateTime13(byte /* System.Boolean */ value, void** /* System.Exception */ __outException)
 	{
 		System.Boolean valueConverted = value.ToBool();
 	
@@ -72813,7 +72807,7 @@ internal unsafe class System_Convert
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToString2")]
-	internal static byte* /* System.String */ System_Convert_ToString2(CBool /* System.Boolean */ value, void** /* System.Exception */ __outException)
+	internal static byte* /* System.String */ System_Convert_ToString2(byte /* System.Boolean */ value, void** /* System.Exception */ __outException)
 	{
 		System.Boolean valueConverted = value.ToBool();
 	
@@ -72839,7 +72833,7 @@ internal unsafe class System_Convert
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToString3")]
-	internal static byte* /* System.String */ System_Convert_ToString3(CBool /* System.Boolean */ value, void* /* System.IFormatProvider */ provider, void** /* System.Exception */ __outException)
+	internal static byte* /* System.String */ System_Convert_ToString3(byte /* System.Boolean */ value, void* /* System.IFormatProvider */ provider, void** /* System.Exception */ __outException)
 	{
 		System.Boolean valueConverted = value.ToBool();
 		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
@@ -77050,7 +77044,7 @@ internal unsafe class System_GC
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_GC_Collect3")]
-	internal static void /* System.Void */ System_GC_Collect3(int /* System.Int32 */ generation, System.GCCollectionMode /* System.GCCollectionMode */ mode, CBool /* System.Boolean */ blocking, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_GC_Collect3(int /* System.Int32 */ generation, System.GCCollectionMode /* System.GCCollectionMode */ mode, byte /* System.Boolean */ blocking, void** /* System.Exception */ __outException)
 	{
 		System.Boolean blockingConverted = blocking.ToBool();
 	
@@ -77073,7 +77067,7 @@ internal unsafe class System_GC
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_GC_Collect4")]
-	internal static void /* System.Void */ System_GC_Collect4(int /* System.Int32 */ generation, System.GCCollectionMode /* System.GCCollectionMode */ mode, CBool /* System.Boolean */ blocking, CBool /* System.Boolean */ compacting, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_GC_Collect4(int /* System.Int32 */ generation, System.GCCollectionMode /* System.GCCollectionMode */ mode, byte /* System.Boolean */ blocking, byte /* System.Boolean */ compacting, void** /* System.Exception */ __outException)
 	{
 		System.Boolean blockingConverted = blocking.ToBool();
 		System.Boolean compactingConverted = compacting.ToBool();
@@ -77237,7 +77231,7 @@ internal unsafe class System_GC
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_GC_GetTotalMemory")]
-	internal static long /* System.Int64 */ System_GC_GetTotalMemory(CBool /* System.Boolean */ forceFullCollection, void** /* System.Exception */ __outException)
+	internal static long /* System.Int64 */ System_GC_GetTotalMemory(byte /* System.Boolean */ forceFullCollection, void** /* System.Exception */ __outException)
 	{
 		System.Boolean forceFullCollectionConverted = forceFullCollection.ToBool();
 	
@@ -77286,7 +77280,7 @@ internal unsafe class System_GC
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_GC_GetTotalAllocatedBytes")]
-	internal static long /* System.Int64 */ System_GC_GetTotalAllocatedBytes(CBool /* System.Boolean */ precise, void** /* System.Exception */ __outException)
+	internal static long /* System.Int64 */ System_GC_GetTotalAllocatedBytes(byte /* System.Boolean */ precise, void** /* System.Exception */ __outException)
 	{
 		System.Boolean preciseConverted = precise.ToBool();
 	
@@ -77451,12 +77445,12 @@ internal unsafe class System_GC
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_GC_TryStartNoGCRegion")]
-	internal static CBool /* System.Boolean */ System_GC_TryStartNoGCRegion(long /* System.Int64 */ totalSize, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_GC_TryStartNoGCRegion(long /* System.Int64 */ totalSize, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
 			System.Boolean __returnValue = System.GC.TryStartNoGCRegion(totalSize);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -77470,18 +77464,18 @@ internal unsafe class System_GC
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_GC_TryStartNoGCRegion1")]
-	internal static CBool /* System.Boolean */ System_GC_TryStartNoGCRegion1(long /* System.Int64 */ totalSize, long /* System.Int64 */ lohSize, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_GC_TryStartNoGCRegion1(long /* System.Int64 */ totalSize, long /* System.Int64 */ lohSize, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
 			System.Boolean __returnValue = System.GC.TryStartNoGCRegion(totalSize, lohSize);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -77495,19 +77489,19 @@ internal unsafe class System_GC
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_GC_TryStartNoGCRegion2")]
-	internal static CBool /* System.Boolean */ System_GC_TryStartNoGCRegion2(long /* System.Int64 */ totalSize, CBool /* System.Boolean */ disallowFullBlockingGC, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_GC_TryStartNoGCRegion2(long /* System.Int64 */ totalSize, byte /* System.Boolean */ disallowFullBlockingGC, void** /* System.Exception */ __outException)
 	{
 		System.Boolean disallowFullBlockingGCConverted = disallowFullBlockingGC.ToBool();
 	
 	    try {
 			System.Boolean __returnValue = System.GC.TryStartNoGCRegion(totalSize, disallowFullBlockingGCConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -77521,19 +77515,19 @@ internal unsafe class System_GC
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_GC_TryStartNoGCRegion3")]
-	internal static CBool /* System.Boolean */ System_GC_TryStartNoGCRegion3(long /* System.Int64 */ totalSize, long /* System.Int64 */ lohSize, CBool /* System.Boolean */ disallowFullBlockingGC, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_GC_TryStartNoGCRegion3(long /* System.Int64 */ totalSize, long /* System.Int64 */ lohSize, byte /* System.Boolean */ disallowFullBlockingGC, void** /* System.Exception */ __outException)
 	{
 		System.Boolean disallowFullBlockingGCConverted = disallowFullBlockingGC.ToBool();
 	
 	    try {
 			System.Boolean __returnValue = System.GC.TryStartNoGCRegion(totalSize, lohSize, disallowFullBlockingGCConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -77547,7 +77541,7 @@ internal unsafe class System_GC
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -77915,7 +77909,7 @@ internal unsafe class System_GCMemoryInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_GCMemoryInfo_Compacted_Get")]
-	internal static CBool /* System.Boolean */ System_GCMemoryInfo_Compacted_Get(void* /* System.GCMemoryInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_GCMemoryInfo_Compacted_Get(void* /* System.GCMemoryInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -77926,7 +77920,7 @@ internal unsafe class System_GCMemoryInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Compacted;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -77940,14 +77934,14 @@ internal unsafe class System_GCMemoryInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_GCMemoryInfo_Concurrent_Get")]
-	internal static CBool /* System.Boolean */ System_GCMemoryInfo_Concurrent_Get(void* /* System.GCMemoryInfo */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_GCMemoryInfo_Concurrent_Get(void* /* System.GCMemoryInfo */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -77958,7 +77952,7 @@ internal unsafe class System_GCMemoryInfo
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Concurrent;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -77972,7 +77966,7 @@ internal unsafe class System_GCMemoryInfo
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -78243,7 +78237,7 @@ internal unsafe class System_WeakReference
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_WeakReference_Create1")]
-	internal static void* /* System.WeakReference */ System_WeakReference_Create1(void* /* System.Object */ target, CBool /* System.Boolean */ trackResurrection, void** /* System.Exception */ __outException)
+	internal static void* /* System.WeakReference */ System_WeakReference_Create1(void* /* System.Object */ target, byte /* System.Boolean */ trackResurrection, void** /* System.Exception */ __outException)
 	{
 		System.Object targetConverted = InteropUtils.GetInstance<System.Object>(target);
 		System.Boolean trackResurrectionConverted = trackResurrection.ToBool();
@@ -78270,7 +78264,7 @@ internal unsafe class System_WeakReference
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_WeakReference_TrackResurrection_Get")]
-	internal static CBool /* System.Boolean */ System_WeakReference_TrackResurrection_Get(void* /* System.WeakReference */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_WeakReference_TrackResurrection_Get(void* /* System.WeakReference */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -78281,7 +78275,7 @@ internal unsafe class System_WeakReference
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.TrackResurrection;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -78295,14 +78289,14 @@ internal unsafe class System_WeakReference
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_WeakReference_IsAlive_Get")]
-	internal static CBool /* System.Boolean */ System_WeakReference_IsAlive_Get(void* /* System.WeakReference */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_WeakReference_IsAlive_Get(void* /* System.WeakReference */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -78313,7 +78307,7 @@ internal unsafe class System_WeakReference
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsAlive;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -78327,7 +78321,7 @@ internal unsafe class System_WeakReference
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -78455,12 +78449,12 @@ internal unsafe class System_Threading_Thread
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_Yield")]
-	internal static CBool /* System.Boolean */ System_Threading_Thread_Yield(void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_Thread_Yield(void** /* System.Exception */ __outException)
 	{
 	
 	    try {
 			System.Boolean __returnValue = System.Threading.Thread.Yield();
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -78474,7 +78468,7 @@ internal unsafe class System_Threading_Thread
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -78566,7 +78560,7 @@ internal unsafe class System_Threading_Thread
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_Join")]
-	internal static CBool /* System.Boolean */ System_Threading_Thread_Join(void* /* System.Threading.Thread */ __self, int /* System.Int32 */ millisecondsTimeout, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_Thread_Join(void* /* System.Threading.Thread */ __self, int /* System.Int32 */ millisecondsTimeout, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -78577,7 +78571,7 @@ internal unsafe class System_Threading_Thread
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Join(millisecondsTimeout);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -78591,7 +78585,7 @@ internal unsafe class System_Threading_Thread
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -79134,7 +79128,7 @@ internal unsafe class System_Threading_Thread
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_TrySetApartmentState")]
-	internal static CBool /* System.Boolean */ System_Threading_Thread_TrySetApartmentState(void* /* System.Threading.Thread */ __self, System.Threading.ApartmentState /* System.Threading.ApartmentState */ state, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_Thread_TrySetApartmentState(void* /* System.Threading.Thread */ __self, System.Threading.ApartmentState /* System.Threading.ApartmentState */ state, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -79145,7 +79139,7 @@ internal unsafe class System_Threading_Thread
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.TrySetApartmentState(state);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -79159,7 +79153,7 @@ internal unsafe class System_Threading_Thread
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -79332,7 +79326,7 @@ internal unsafe class System_Threading_Thread
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_Join2")]
-	internal static CBool /* System.Boolean */ System_Threading_Thread_Join2(void* /* System.Threading.Thread */ __self, void* /* System.TimeSpan */ timeout, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_Thread_Join2(void* /* System.Threading.Thread */ __self, void* /* System.TimeSpan */ timeout, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -79344,7 +79338,7 @@ internal unsafe class System_Threading_Thread
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Join(timeoutConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -79358,7 +79352,7 @@ internal unsafe class System_Threading_Thread
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -79568,7 +79562,7 @@ internal unsafe class System_Threading_Thread
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_IsAlive_Get")]
-	internal static CBool /* System.Boolean */ System_Threading_Thread_IsAlive_Get(void* /* System.Threading.Thread */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_Thread_IsAlive_Get(void* /* System.Threading.Thread */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -79579,7 +79573,7 @@ internal unsafe class System_Threading_Thread
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsAlive;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -79593,14 +79587,14 @@ internal unsafe class System_Threading_Thread
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_IsBackground_Get")]
-	internal static CBool /* System.Boolean */ System_Threading_Thread_IsBackground_Get(void* /* System.Threading.Thread */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_Thread_IsBackground_Get(void* /* System.Threading.Thread */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -79611,7 +79605,7 @@ internal unsafe class System_Threading_Thread
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsBackground;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -79625,12 +79619,12 @@ internal unsafe class System_Threading_Thread
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_IsBackground_Set")]
-	internal static void /* System.Void */ System_Threading_Thread_IsBackground_Set(void* /* System.Threading.Thread */ __self, CBool /* System.Boolean */ __value, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_Threading_Thread_IsBackground_Set(void* /* System.Threading.Thread */ __self, byte /* System.Boolean */ __value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -79659,7 +79653,7 @@ internal unsafe class System_Threading_Thread
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_IsThreadPoolThread_Get")]
-	internal static CBool /* System.Boolean */ System_Threading_Thread_IsThreadPoolThread_Get(void* /* System.Threading.Thread */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_Thread_IsThreadPoolThread_Get(void* /* System.Threading.Thread */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -79670,7 +79664,7 @@ internal unsafe class System_Threading_Thread
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsThreadPoolThread;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -79684,7 +79678,7 @@ internal unsafe class System_Threading_Thread
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -80188,7 +80182,7 @@ internal unsafe class System_Threading_ApartmentState
 internal unsafe class System_Security_Principal_IPrincipal
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_Security_Principal_IPrincipal_IsInRole")]
-	internal static CBool /* System.Boolean */ System_Security_Principal_IPrincipal_IsInRole(void* /* System.Security.Principal.IPrincipal */ __self, byte* /* System.String */ role, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Security_Principal_IPrincipal_IsInRole(void* /* System.Security.Principal.IPrincipal */ __self, byte* /* System.String */ role, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -80200,7 +80194,7 @@ internal unsafe class System_Security_Principal_IPrincipal
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsInRole(roleConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -80214,7 +80208,7 @@ internal unsafe class System_Security_Principal_IPrincipal
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -80339,7 +80333,7 @@ internal unsafe class System_Security_Principal_IIdentity
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Security_Principal_IIdentity_IsAuthenticated_Get")]
-	internal static CBool /* System.Boolean */ System_Security_Principal_IIdentity_IsAuthenticated_Get(void* /* System.Security.Principal.IIdentity */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Security_Principal_IIdentity_IsAuthenticated_Get(void* /* System.Security.Principal.IIdentity */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -80350,7 +80344,7 @@ internal unsafe class System_Security_Principal_IIdentity
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsAuthenticated;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -80364,7 +80358,7 @@ internal unsafe class System_Security_Principal_IIdentity
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -80496,12 +80490,12 @@ internal unsafe class System_Threading_ExecutionContext
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_ExecutionContext_IsFlowSuppressed")]
-	internal static CBool /* System.Boolean */ System_Threading_ExecutionContext_IsFlowSuppressed(void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_ExecutionContext_IsFlowSuppressed(void** /* System.Exception */ __outException)
 	{
 	
 	    try {
 			System.Boolean __returnValue = System.Threading.ExecutionContext.IsFlowSuppressed();
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -80515,7 +80509,7 @@ internal unsafe class System_Threading_ExecutionContext
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -80707,7 +80701,7 @@ internal unsafe class System_Threading_AsyncFlowControl
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_AsyncFlowControl_Equals")]
-	internal static CBool /* System.Boolean */ System_Threading_AsyncFlowControl_Equals(void* /* System.Threading.AsyncFlowControl */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_AsyncFlowControl_Equals(void* /* System.Threading.AsyncFlowControl */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -80719,7 +80713,7 @@ internal unsafe class System_Threading_AsyncFlowControl
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(objConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -80733,13 +80727,13 @@ internal unsafe class System_Threading_AsyncFlowControl
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_AsyncFlowControl_Equals1")]
-	internal static CBool /* System.Boolean */ System_Threading_AsyncFlowControl_Equals1(void* /* System.Threading.AsyncFlowControl */ __self, void* /* System.Threading.AsyncFlowControl */ obj, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Threading_AsyncFlowControl_Equals1(void* /* System.Threading.AsyncFlowControl */ __self, void* /* System.Threading.AsyncFlowControl */ obj, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -80751,7 +80745,7 @@ internal unsafe class System_Threading_AsyncFlowControl
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(objConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -80765,7 +80759,7 @@ internal unsafe class System_Threading_AsyncFlowControl
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -81495,7 +81489,7 @@ internal unsafe class System_AppDomain
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_AppDomain_IsDefaultAppDomain")]
-	internal static CBool /* System.Boolean */ System_AppDomain_IsDefaultAppDomain(void* /* System.AppDomain */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_AppDomain_IsDefaultAppDomain(void* /* System.AppDomain */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -81506,7 +81500,7 @@ internal unsafe class System_AppDomain
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsDefaultAppDomain();
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -81520,13 +81514,13 @@ internal unsafe class System_AppDomain
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_AppDomain_IsFinalizingForUnload")]
-	internal static CBool /* System.Boolean */ System_AppDomain_IsFinalizingForUnload(void* /* System.AppDomain */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_AppDomain_IsFinalizingForUnload(void* /* System.AppDomain */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -81537,7 +81531,7 @@ internal unsafe class System_AppDomain
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsFinalizingForUnload();
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -81551,7 +81545,7 @@ internal unsafe class System_AppDomain
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -82087,7 +82081,7 @@ internal unsafe class System_AppDomain
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_AppDomain_CreateInstance1")]
-	internal static void* /* System.Runtime.Remoting.ObjectHandle */ System_AppDomain_CreateInstance1(void* /* System.AppDomain */ __self, byte* /* System.String */ assemblyName, byte* /* System.String */ typeName, CBool /* System.Boolean */ ignoreCase, System.Reflection.BindingFlags /* System.Reflection.BindingFlags */ bindingAttr, void* /* System.Reflection.Binder */ binder, void* /* System.Object[] */ args, void* /* System.Globalization.CultureInfo */ culture, void* /* System.Object[] */ activationAttributes, void** /* System.Exception */ __outException)
+	internal static void* /* System.Runtime.Remoting.ObjectHandle */ System_AppDomain_CreateInstance1(void* /* System.AppDomain */ __self, byte* /* System.String */ assemblyName, byte* /* System.String */ typeName, byte /* System.Boolean */ ignoreCase, System.Reflection.BindingFlags /* System.Reflection.BindingFlags */ bindingAttr, void* /* System.Reflection.Binder */ binder, void* /* System.Object[] */ args, void* /* System.Globalization.CultureInfo */ culture, void* /* System.Object[] */ activationAttributes, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -82192,7 +82186,7 @@ internal unsafe class System_AppDomain
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_AppDomain_CreateInstanceAndUnwrap1")]
-	internal static void* /* System.Object */ System_AppDomain_CreateInstanceAndUnwrap1(void* /* System.AppDomain */ __self, byte* /* System.String */ assemblyName, byte* /* System.String */ typeName, CBool /* System.Boolean */ ignoreCase, System.Reflection.BindingFlags /* System.Reflection.BindingFlags */ bindingAttr, void* /* System.Reflection.Binder */ binder, void* /* System.Object[] */ args, void* /* System.Globalization.CultureInfo */ culture, void* /* System.Object[] */ activationAttributes, void** /* System.Exception */ __outException)
+	internal static void* /* System.Object */ System_AppDomain_CreateInstanceAndUnwrap1(void* /* System.AppDomain */ __self, byte* /* System.String */ assemblyName, byte* /* System.String */ typeName, byte /* System.Boolean */ ignoreCase, System.Reflection.BindingFlags /* System.Reflection.BindingFlags */ bindingAttr, void* /* System.Reflection.Binder */ binder, void* /* System.Object[] */ args, void* /* System.Globalization.CultureInfo */ culture, void* /* System.Object[] */ activationAttributes, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -82297,7 +82291,7 @@ internal unsafe class System_AppDomain
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_AppDomain_CreateInstanceFrom1")]
-	internal static void* /* System.Runtime.Remoting.ObjectHandle */ System_AppDomain_CreateInstanceFrom1(void* /* System.AppDomain */ __self, byte* /* System.String */ assemblyFile, byte* /* System.String */ typeName, CBool /* System.Boolean */ ignoreCase, System.Reflection.BindingFlags /* System.Reflection.BindingFlags */ bindingAttr, void* /* System.Reflection.Binder */ binder, void* /* System.Object[] */ args, void* /* System.Globalization.CultureInfo */ culture, void* /* System.Object[] */ activationAttributes, void** /* System.Exception */ __outException)
+	internal static void* /* System.Runtime.Remoting.ObjectHandle */ System_AppDomain_CreateInstanceFrom1(void* /* System.AppDomain */ __self, byte* /* System.String */ assemblyFile, byte* /* System.String */ typeName, byte /* System.Boolean */ ignoreCase, System.Reflection.BindingFlags /* System.Reflection.BindingFlags */ bindingAttr, void* /* System.Reflection.Binder */ binder, void* /* System.Object[] */ args, void* /* System.Globalization.CultureInfo */ culture, void* /* System.Object[] */ activationAttributes, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -82402,7 +82396,7 @@ internal unsafe class System_AppDomain
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_AppDomain_CreateInstanceFromAndUnwrap1")]
-	internal static void* /* System.Object */ System_AppDomain_CreateInstanceFromAndUnwrap1(void* /* System.AppDomain */ __self, byte* /* System.String */ assemblyFile, byte* /* System.String */ typeName, CBool /* System.Boolean */ ignoreCase, System.Reflection.BindingFlags /* System.Reflection.BindingFlags */ bindingAttr, void* /* System.Reflection.Binder */ binder, void* /* System.Object[] */ args, void* /* System.Globalization.CultureInfo */ culture, void* /* System.Object[] */ activationAttributes, void** /* System.Exception */ __outException)
+	internal static void* /* System.Object */ System_AppDomain_CreateInstanceFromAndUnwrap1(void* /* System.AppDomain */ __self, byte* /* System.String */ assemblyFile, byte* /* System.String */ typeName, byte /* System.Boolean */ ignoreCase, System.Reflection.BindingFlags /* System.Reflection.BindingFlags */ bindingAttr, void* /* System.Reflection.Binder */ binder, void* /* System.Object[] */ args, void* /* System.Globalization.CultureInfo */ culture, void* /* System.Object[] */ activationAttributes, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -82723,7 +82717,7 @@ internal unsafe class System_AppDomain
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_AppDomain_IsFullyTrusted_Get")]
-	internal static CBool /* System.Boolean */ System_AppDomain_IsFullyTrusted_Get(void* /* System.AppDomain */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_AppDomain_IsFullyTrusted_Get(void* /* System.AppDomain */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -82734,7 +82728,7 @@ internal unsafe class System_AppDomain
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsFullyTrusted;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -82748,14 +82742,14 @@ internal unsafe class System_AppDomain
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_AppDomain_IsHomogenous_Get")]
-	internal static CBool /* System.Boolean */ System_AppDomain_IsHomogenous_Get(void* /* System.AppDomain */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_AppDomain_IsHomogenous_Get(void* /* System.AppDomain */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -82766,7 +82760,7 @@ internal unsafe class System_AppDomain
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsHomogenous;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -82780,19 +82774,19 @@ internal unsafe class System_AppDomain
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_AppDomain_MonitoringIsEnabled_Get")]
-	internal static CBool /* System.Boolean */ System_AppDomain_MonitoringIsEnabled_Get(void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_AppDomain_MonitoringIsEnabled_Get(void** /* System.Exception */ __outException)
 	{
 	
 	    try {
 			System.Boolean __returnValue = System.AppDomain.MonitoringIsEnabled;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -82806,12 +82800,12 @@ internal unsafe class System_AppDomain
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_AppDomain_MonitoringIsEnabled_Set")]
-	internal static void /* System.Void */ System_AppDomain_MonitoringIsEnabled_Set(CBool /* System.Boolean */ __value, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_AppDomain_MonitoringIsEnabled_Set(byte /* System.Boolean */ __value, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
@@ -82921,7 +82915,7 @@ internal unsafe class System_AppDomain
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_AppDomain_ShadowCopyFiles_Get")]
-	internal static CBool /* System.Boolean */ System_AppDomain_ShadowCopyFiles_Get(void* /* System.AppDomain */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_AppDomain_ShadowCopyFiles_Get(void* /* System.AppDomain */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -82932,7 +82926,7 @@ internal unsafe class System_AppDomain
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.ShadowCopyFiles;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -82946,7 +82940,7 @@ internal unsafe class System_AppDomain
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -83379,7 +83373,7 @@ internal unsafe class System_Security_PermissionSet
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Security_PermissionSet_ContainsNonCodeAccessPermissions")]
-	internal static CBool /* System.Boolean */ System_Security_PermissionSet_ContainsNonCodeAccessPermissions(void* /* System.Security.PermissionSet */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Security_PermissionSet_ContainsNonCodeAccessPermissions(void* /* System.Security.PermissionSet */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -83390,7 +83384,7 @@ internal unsafe class System_Security_PermissionSet
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.ContainsNonCodeAccessPermissions();
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -83404,7 +83398,7 @@ internal unsafe class System_Security_PermissionSet
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -83554,7 +83548,7 @@ internal unsafe class System_Security_PermissionSet
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Security_PermissionSet_Equals")]
-	internal static CBool /* System.Boolean */ System_Security_PermissionSet_Equals(void* /* System.Security.PermissionSet */ __self, void* /* System.Object */ o, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Security_PermissionSet_Equals(void* /* System.Security.PermissionSet */ __self, void* /* System.Object */ o, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -83566,7 +83560,7 @@ internal unsafe class System_Security_PermissionSet
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(oConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -83580,7 +83574,7 @@ internal unsafe class System_Security_PermissionSet
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -83740,7 +83734,7 @@ internal unsafe class System_Security_PermissionSet
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Security_PermissionSet_IsEmpty")]
-	internal static CBool /* System.Boolean */ System_Security_PermissionSet_IsEmpty(void* /* System.Security.PermissionSet */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Security_PermissionSet_IsEmpty(void* /* System.Security.PermissionSet */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -83751,7 +83745,7 @@ internal unsafe class System_Security_PermissionSet
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsEmpty();
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -83765,13 +83759,13 @@ internal unsafe class System_Security_PermissionSet
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Security_PermissionSet_IsSubsetOf")]
-	internal static CBool /* System.Boolean */ System_Security_PermissionSet_IsSubsetOf(void* /* System.Security.PermissionSet */ __self, void* /* System.Security.PermissionSet */ target, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Security_PermissionSet_IsSubsetOf(void* /* System.Security.PermissionSet */ __self, void* /* System.Security.PermissionSet */ target, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -83783,7 +83777,7 @@ internal unsafe class System_Security_PermissionSet
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsSubsetOf(targetConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -83797,13 +83791,13 @@ internal unsafe class System_Security_PermissionSet
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Security_PermissionSet_IsUnrestricted")]
-	internal static CBool /* System.Boolean */ System_Security_PermissionSet_IsUnrestricted(void* /* System.Security.PermissionSet */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Security_PermissionSet_IsUnrestricted(void* /* System.Security.PermissionSet */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -83814,7 +83808,7 @@ internal unsafe class System_Security_PermissionSet
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsUnrestricted();
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -83828,7 +83822,7 @@ internal unsafe class System_Security_PermissionSet
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -84124,7 +84118,7 @@ internal unsafe class System_Security_PermissionSet
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Security_PermissionSet_IsReadOnly_Get")]
-	internal static CBool /* System.Boolean */ System_Security_PermissionSet_IsReadOnly_Get(void* /* System.Security.PermissionSet */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Security_PermissionSet_IsReadOnly_Get(void* /* System.Security.PermissionSet */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -84135,7 +84129,7 @@ internal unsafe class System_Security_PermissionSet
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsReadOnly;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -84149,14 +84143,14 @@ internal unsafe class System_Security_PermissionSet
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Security_PermissionSet_IsSynchronized_Get")]
-	internal static CBool /* System.Boolean */ System_Security_PermissionSet_IsSynchronized_Get(void* /* System.Security.PermissionSet */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Security_PermissionSet_IsSynchronized_Get(void* /* System.Security.PermissionSet */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -84167,7 +84161,7 @@ internal unsafe class System_Security_PermissionSet
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsSynchronized;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -84181,7 +84175,7 @@ internal unsafe class System_Security_PermissionSet
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -84334,7 +84328,7 @@ internal unsafe class System_Security_IPermission
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Security_IPermission_IsSubsetOf")]
-	internal static CBool /* System.Boolean */ System_Security_IPermission_IsSubsetOf(void* /* System.Security.IPermission */ __self, void* /* System.Security.IPermission */ target, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Security_IPermission_IsSubsetOf(void* /* System.Security.IPermission */ __self, void* /* System.Security.IPermission */ target, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -84346,7 +84340,7 @@ internal unsafe class System_Security_IPermission
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsSubsetOf(targetConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -84360,7 +84354,7 @@ internal unsafe class System_Security_IPermission
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -84480,7 +84474,7 @@ internal unsafe class System_Security_SecurityElement
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Security_SecurityElement_Equal")]
-	internal static CBool /* System.Boolean */ System_Security_SecurityElement_Equal(void* /* System.Security.SecurityElement */ __self, void* /* System.Security.SecurityElement */ other, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Security_SecurityElement_Equal(void* /* System.Security.SecurityElement */ __self, void* /* System.Security.SecurityElement */ other, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -84492,7 +84486,7 @@ internal unsafe class System_Security_SecurityElement
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equal(otherConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -84506,7 +84500,7 @@ internal unsafe class System_Security_SecurityElement
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -84543,13 +84537,13 @@ internal unsafe class System_Security_SecurityElement
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Security_SecurityElement_IsValidTag")]
-	internal static CBool /* System.Boolean */ System_Security_SecurityElement_IsValidTag(byte* /* System.String */ tag, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Security_SecurityElement_IsValidTag(byte* /* System.String */ tag, void** /* System.Exception */ __outException)
 	{
 		System.String tagConverted = InteropUtils.ToDotNetString(tag);
 	
 	    try {
 			System.Boolean __returnValue = System.Security.SecurityElement.IsValidTag(tagConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -84563,19 +84557,19 @@ internal unsafe class System_Security_SecurityElement
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Security_SecurityElement_IsValidText")]
-	internal static CBool /* System.Boolean */ System_Security_SecurityElement_IsValidText(byte* /* System.String */ text, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Security_SecurityElement_IsValidText(byte* /* System.String */ text, void** /* System.Exception */ __outException)
 	{
 		System.String textConverted = InteropUtils.ToDotNetString(text);
 	
 	    try {
 			System.Boolean __returnValue = System.Security.SecurityElement.IsValidText(textConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -84589,19 +84583,19 @@ internal unsafe class System_Security_SecurityElement
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Security_SecurityElement_IsValidAttributeName")]
-	internal static CBool /* System.Boolean */ System_Security_SecurityElement_IsValidAttributeName(byte* /* System.String */ name, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Security_SecurityElement_IsValidAttributeName(byte* /* System.String */ name, void** /* System.Exception */ __outException)
 	{
 		System.String nameConverted = InteropUtils.ToDotNetString(name);
 	
 	    try {
 			System.Boolean __returnValue = System.Security.SecurityElement.IsValidAttributeName(nameConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -84615,19 +84609,19 @@ internal unsafe class System_Security_SecurityElement
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Security_SecurityElement_IsValidAttributeValue")]
-	internal static CBool /* System.Boolean */ System_Security_SecurityElement_IsValidAttributeValue(byte* /* System.String */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Security_SecurityElement_IsValidAttributeValue(byte* /* System.String */ value, void** /* System.Exception */ __outException)
 	{
 		System.String valueConverted = InteropUtils.ToDotNetString(value);
 	
 	    try {
 			System.Boolean __returnValue = System.Security.SecurityElement.IsValidAttributeValue(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -84641,7 +84635,7 @@ internal unsafe class System_Security_SecurityElement
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -85227,7 +85221,7 @@ internal unsafe class System_Collections_Hashtable
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Collections_Hashtable_Contains")]
-	internal static CBool /* System.Boolean */ System_Collections_Hashtable_Contains(void* /* System.Collections.Hashtable */ __self, void* /* System.Object */ key, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Collections_Hashtable_Contains(void* /* System.Collections.Hashtable */ __self, void* /* System.Object */ key, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -85239,7 +85233,7 @@ internal unsafe class System_Collections_Hashtable
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Contains(keyConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -85253,13 +85247,13 @@ internal unsafe class System_Collections_Hashtable
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Collections_Hashtable_ContainsKey")]
-	internal static CBool /* System.Boolean */ System_Collections_Hashtable_ContainsKey(void* /* System.Collections.Hashtable */ __self, void* /* System.Object */ key, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Collections_Hashtable_ContainsKey(void* /* System.Collections.Hashtable */ __self, void* /* System.Object */ key, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -85271,7 +85265,7 @@ internal unsafe class System_Collections_Hashtable
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.ContainsKey(keyConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -85285,13 +85279,13 @@ internal unsafe class System_Collections_Hashtable
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Collections_Hashtable_ContainsValue")]
-	internal static CBool /* System.Boolean */ System_Collections_Hashtable_ContainsValue(void* /* System.Collections.Hashtable */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Collections_Hashtable_ContainsValue(void* /* System.Collections.Hashtable */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -85303,7 +85297,7 @@ internal unsafe class System_Collections_Hashtable
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.ContainsValue(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -85317,7 +85311,7 @@ internal unsafe class System_Collections_Hashtable
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -85893,7 +85887,7 @@ internal unsafe class System_Collections_Hashtable
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Collections_Hashtable_IsReadOnly_Get")]
-	internal static CBool /* System.Boolean */ System_Collections_Hashtable_IsReadOnly_Get(void* /* System.Collections.Hashtable */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Collections_Hashtable_IsReadOnly_Get(void* /* System.Collections.Hashtable */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -85904,7 +85898,7 @@ internal unsafe class System_Collections_Hashtable
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsReadOnly;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -85918,14 +85912,14 @@ internal unsafe class System_Collections_Hashtable
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Collections_Hashtable_IsFixedSize_Get")]
-	internal static CBool /* System.Boolean */ System_Collections_Hashtable_IsFixedSize_Get(void* /* System.Collections.Hashtable */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Collections_Hashtable_IsFixedSize_Get(void* /* System.Collections.Hashtable */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -85936,7 +85930,7 @@ internal unsafe class System_Collections_Hashtable
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsFixedSize;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -85950,14 +85944,14 @@ internal unsafe class System_Collections_Hashtable
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Collections_Hashtable_IsSynchronized_Get")]
-	internal static CBool /* System.Boolean */ System_Collections_Hashtable_IsSynchronized_Get(void* /* System.Collections.Hashtable */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Collections_Hashtable_IsSynchronized_Get(void* /* System.Collections.Hashtable */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -85968,7 +85962,7 @@ internal unsafe class System_Collections_Hashtable
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsSynchronized;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -85982,7 +85976,7 @@ internal unsafe class System_Collections_Hashtable
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -86139,7 +86133,7 @@ internal unsafe class System_Collections_Hashtable
 internal unsafe class System_Collections_IEqualityComparer
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_Collections_IEqualityComparer_Equals")]
-	internal static CBool /* System.Boolean */ System_Collections_IEqualityComparer_Equals(void* /* System.Collections.IEqualityComparer */ __self, void* /* System.Object */ x, void* /* System.Object */ y, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Collections_IEqualityComparer_Equals(void* /* System.Collections.IEqualityComparer */ __self, void* /* System.Object */ x, void* /* System.Object */ y, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -86152,7 +86146,7 @@ internal unsafe class System_Collections_IEqualityComparer
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Equals(xConverted, yConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -86166,7 +86160,7 @@ internal unsafe class System_Collections_IEqualityComparer
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -86520,7 +86514,7 @@ internal unsafe class System_Collections_ArrayList
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Collections_ArrayList_Contains")]
-	internal static CBool /* System.Boolean */ System_Collections_ArrayList_Contains(void* /* System.Collections.ArrayList */ __self, void* /* System.Object */ item, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Collections_ArrayList_Contains(void* /* System.Collections.ArrayList */ __self, void* /* System.Object */ item, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -86532,7 +86526,7 @@ internal unsafe class System_Collections_ArrayList
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Contains(itemConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -86546,7 +86540,7 @@ internal unsafe class System_Collections_ArrayList
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -87670,7 +87664,7 @@ internal unsafe class System_Collections_ArrayList
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Collections_ArrayList_IsFixedSize_Get")]
-	internal static CBool /* System.Boolean */ System_Collections_ArrayList_IsFixedSize_Get(void* /* System.Collections.ArrayList */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Collections_ArrayList_IsFixedSize_Get(void* /* System.Collections.ArrayList */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -87681,7 +87675,7 @@ internal unsafe class System_Collections_ArrayList
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsFixedSize;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -87695,14 +87689,14 @@ internal unsafe class System_Collections_ArrayList
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Collections_ArrayList_IsReadOnly_Get")]
-	internal static CBool /* System.Boolean */ System_Collections_ArrayList_IsReadOnly_Get(void* /* System.Collections.ArrayList */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Collections_ArrayList_IsReadOnly_Get(void* /* System.Collections.ArrayList */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -87713,7 +87707,7 @@ internal unsafe class System_Collections_ArrayList
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsReadOnly;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -87727,14 +87721,14 @@ internal unsafe class System_Collections_ArrayList
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Collections_ArrayList_IsSynchronized_Get")]
-	internal static CBool /* System.Boolean */ System_Collections_ArrayList_IsSynchronized_Get(void* /* System.Collections.ArrayList */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Collections_ArrayList_IsSynchronized_Get(void* /* System.Collections.ArrayList */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -87745,7 +87739,7 @@ internal unsafe class System_Collections_ArrayList
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsSynchronized;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -87759,7 +87753,7 @@ internal unsafe class System_Collections_ArrayList
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -87852,7 +87846,7 @@ internal unsafe class System_Collections_IList
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Collections_IList_Contains")]
-	internal static CBool /* System.Boolean */ System_Collections_IList_Contains(void* /* System.Collections.IList */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Collections_IList_Contains(void* /* System.Collections.IList */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -87864,7 +87858,7 @@ internal unsafe class System_Collections_IList
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.Contains(valueConverted);
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -87878,7 +87872,7 @@ internal unsafe class System_Collections_IList
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -88029,7 +88023,7 @@ internal unsafe class System_Collections_IList
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Collections_IList_IsReadOnly_Get")]
-	internal static CBool /* System.Boolean */ System_Collections_IList_IsReadOnly_Get(void* /* System.Collections.IList */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Collections_IList_IsReadOnly_Get(void* /* System.Collections.IList */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -88040,7 +88034,7 @@ internal unsafe class System_Collections_IList
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsReadOnly;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -88054,14 +88048,14 @@ internal unsafe class System_Collections_IList
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Collections_IList_IsFixedSize_Get")]
-	internal static CBool /* System.Boolean */ System_Collections_IList_IsFixedSize_Get(void* /* System.Collections.IList */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Collections_IList_IsFixedSize_Get(void* /* System.Collections.IList */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -88072,7 +88066,7 @@ internal unsafe class System_Collections_IList
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsFixedSize;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -88086,7 +88080,7 @@ internal unsafe class System_Collections_IList
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	
@@ -88282,7 +88276,7 @@ internal unsafe class System_UnhandledExceptionEventHandler
 internal unsafe class System_UnhandledExceptionEventArgs
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_UnhandledExceptionEventArgs_Create")]
-	internal static void* /* System.UnhandledExceptionEventArgs */ System_UnhandledExceptionEventArgs_Create(void* /* System.Object */ exception, CBool /* System.Boolean */ isTerminating, void** /* System.Exception */ __outException)
+	internal static void* /* System.UnhandledExceptionEventArgs */ System_UnhandledExceptionEventArgs_Create(void* /* System.Object */ exception, byte /* System.Boolean */ isTerminating, void** /* System.Exception */ __outException)
 	{
 		System.Object exceptionConverted = InteropUtils.GetInstance<System.Object>(exception);
 		System.Boolean isTerminatingConverted = isTerminating.ToBool();
@@ -88341,7 +88335,7 @@ internal unsafe class System_UnhandledExceptionEventArgs
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_UnhandledExceptionEventArgs_IsTerminating_Get")]
-	internal static CBool /* System.Boolean */ System_UnhandledExceptionEventArgs_IsTerminating_Get(void* /* System.UnhandledExceptionEventArgs */ __self, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_UnhandledExceptionEventArgs_IsTerminating_Get(void* /* System.UnhandledExceptionEventArgs */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -88352,7 +88346,7 @@ internal unsafe class System_UnhandledExceptionEventArgs
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.IsTerminating;
-			CBool _returnValueNative = __returnValue.ToCBool();
+			byte _returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -88366,7 +88360,7 @@ internal unsafe class System_UnhandledExceptionEventArgs
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
-			return false.ToCBool();
+			return 0;
 		}
 	}
 	

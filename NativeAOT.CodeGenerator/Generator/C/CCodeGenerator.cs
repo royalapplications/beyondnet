@@ -83,6 +83,7 @@ public class CCodeGenerator: ICodeGenerator
 #define TypeDefinitions_h
 
 #import <stdlib.h>
+#import <stdbool.h>
 """;
     }
 
@@ -92,10 +93,6 @@ public class CCodeGenerator: ICodeGenerator
 #pragma mark - BEGIN Common Types
 typedef const char* CString;
 
-typedef enum __attribute__((enum_extensibility(closed))): uint8_t {
-    CBoolYes = 1,
-    CBoolNo = 0
-} CBool;
 #pragma mark - END Common Types
 """;
     }

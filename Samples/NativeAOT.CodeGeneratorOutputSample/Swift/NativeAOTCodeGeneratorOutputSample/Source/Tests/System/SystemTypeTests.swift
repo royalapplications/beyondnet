@@ -27,7 +27,7 @@ final class SystemTypeTests: XCTestCase {
         
         guard System_Object_Equals(systemObjectType,
                                    systemObjectTypeViaName,
-                                   &exception) == .yes,
+                                   &exception),
               exception == nil else {
             XCTFail("System.Object.Equals should not throw and return true")
             
@@ -55,7 +55,7 @@ final class SystemTypeTests: XCTestCase {
 		let invalidTypeName = "! This.Type.Surely.Does.Not.Exist !"
 		
 		let invalidType = System_Type_GetType1(invalidTypeName,
-											   .yes,
+											   true,
 											   &exception)
 		
 		XCTAssertNil(invalidType)
