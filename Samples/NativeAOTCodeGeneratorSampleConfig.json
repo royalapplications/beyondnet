@@ -20,6 +20,7 @@
 		"System.IO.File",
 		"System.IO.FileInfo",
 		"System.IO.Directory",
-		"System.IO.DirectoryInfo"
+		"System.IO.DirectoryInfo",
+		"System.Security.SecureString"
 	]
 }

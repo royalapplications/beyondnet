@@ -1,5 +1,5 @@
-// Number of generated types: 386
-// Number of generated members: 3831
+// Number of generated types: 387
+// Number of generated members: 3844
 
 // <Header>
 using System;
@@ -103542,6 +103542,343 @@ internal unsafe class System_IO_Directory
 
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_Directory_Destroy")]
 	internal static void /* System.Void */ System_IO_Directory_Destroy(void* /* System.IO.Directory */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+
+}
+
+
+internal unsafe class System_Security_SecureString
+{
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_SecureString_AppendChar")]
+	internal static void /* System.Void */ System_Security_SecureString_AppendChar(void* /* System.Security.SecureString */ __self, char /* System.Char */ c, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.SecureString __selfConverted = InteropUtils.GetInstance<System.Security.SecureString>(__self);
+	
+	
+	    try {
+			__selfConverted.AppendChar(c);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_SecureString_Clear")]
+	internal static void /* System.Void */ System_Security_SecureString_Clear(void* /* System.Security.SecureString */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.SecureString __selfConverted = InteropUtils.GetInstance<System.Security.SecureString>(__self);
+	
+	
+	    try {
+			__selfConverted.Clear();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_SecureString_Copy")]
+	internal static void* /* System.Security.SecureString */ System_Security_SecureString_Copy(void* /* System.Security.SecureString */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.SecureString __selfConverted = InteropUtils.GetInstance<System.Security.SecureString>(__self);
+	
+	
+	    try {
+			System.Security.SecureString __returnValue = __selfConverted.Copy();
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_SecureString_Dispose")]
+	internal static void /* System.Void */ System_Security_SecureString_Dispose(void* /* System.Security.SecureString */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.SecureString __selfConverted = InteropUtils.GetInstance<System.Security.SecureString>(__self);
+	
+	
+	    try {
+			__selfConverted.Dispose();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_SecureString_InsertAt")]
+	internal static void /* System.Void */ System_Security_SecureString_InsertAt(void* /* System.Security.SecureString */ __self, int /* System.Int32 */ index, char /* System.Char */ c, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.SecureString __selfConverted = InteropUtils.GetInstance<System.Security.SecureString>(__self);
+	
+	
+	    try {
+			__selfConverted.InsertAt(index, c);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_SecureString_IsReadOnly")]
+	internal static byte /* System.Boolean */ System_Security_SecureString_IsReadOnly(void* /* System.Security.SecureString */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.SecureString __selfConverted = InteropUtils.GetInstance<System.Security.SecureString>(__self);
+	
+	
+	    try {
+			System.Boolean __returnValue = __selfConverted.IsReadOnly();
+			byte _returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_SecureString_MakeReadOnly")]
+	internal static void /* System.Void */ System_Security_SecureString_MakeReadOnly(void* /* System.Security.SecureString */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.SecureString __selfConverted = InteropUtils.GetInstance<System.Security.SecureString>(__self);
+	
+	
+	    try {
+			__selfConverted.MakeReadOnly();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_SecureString_RemoveAt")]
+	internal static void /* System.Void */ System_Security_SecureString_RemoveAt(void* /* System.Security.SecureString */ __self, int /* System.Int32 */ index, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.SecureString __selfConverted = InteropUtils.GetInstance<System.Security.SecureString>(__self);
+	
+	
+	    try {
+			__selfConverted.RemoveAt(index);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_SecureString_SetAt")]
+	internal static void /* System.Void */ System_Security_SecureString_SetAt(void* /* System.Security.SecureString */ __self, int /* System.Int32 */ index, char /* System.Char */ c, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.SecureString __selfConverted = InteropUtils.GetInstance<System.Security.SecureString>(__self);
+	
+	
+	    try {
+			__selfConverted.SetAt(index, c);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_SecureString_Create")]
+	internal static void* /* System.Security.SecureString */ System_Security_SecureString_Create(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Security.SecureString __returnValue = new System.Security.SecureString();
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_SecureString_Length_Get")]
+	internal static int /* System.Int32 */ System_Security_SecureString_Length_Get(void* /* System.Security.SecureString */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.SecureString __selfConverted = InteropUtils.GetInstance<System.Security.SecureString>(__self);
+	
+	
+	    try {
+			System.Int32 __returnValue = __selfConverted.Length;
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_SecureString_TypeOf")]
+	internal static void* /* System.Type */ System_Security_SecureString_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Security.SecureString);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_SecureString_Destroy")]
+	internal static void /* System.Void */ System_Security_SecureString_Destroy(void* /* System.Security.SecureString */ __self)
 	{
 	
 		InteropUtils.FreeIfAllocated(__self);

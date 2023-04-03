@@ -1,5 +1,5 @@
-// Number of generated types: 386
-// Number of generated members: 4131
+// Number of generated types: 387
+// Number of generated members: 4144
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -1232,6 +1232,8 @@ typedef void* System_IO_FileSystemInfo_Array_t;
 typedef void* System_IO_DirectoryInfo_Array_t;
 
 typedef void* System_IO_Directory_t;
+
+typedef void* System_Security_SecureString_t;
 
 typedef void* NativeAOT_CodeGeneratorInputSample_Address_t;
 
@@ -29818,6 +29820,91 @@ System_IO_Directory_Destroy(
 );
 
 #pragma mark - END APIs of System.IO.Directory
+
+#pragma mark - BEGIN APIs of System.Security.SecureString
+void /* System.Void */
+System_Security_SecureString_AppendChar(
+	System_Security_SecureString_t /* System.Security.SecureString */ self,
+	uint8_t /* System.Char */ c,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_SecureString_Clear(
+	System_Security_SecureString_t /* System.Security.SecureString */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Security_SecureString_t /* System.Security.SecureString */
+System_Security_SecureString_Copy(
+	System_Security_SecureString_t /* System.Security.SecureString */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_SecureString_Dispose(
+	System_Security_SecureString_t /* System.Security.SecureString */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_SecureString_InsertAt(
+	System_Security_SecureString_t /* System.Security.SecureString */ self,
+	int32_t /* System.Int32 */ index,
+	uint8_t /* System.Char */ c,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Security_SecureString_IsReadOnly(
+	System_Security_SecureString_t /* System.Security.SecureString */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_SecureString_MakeReadOnly(
+	System_Security_SecureString_t /* System.Security.SecureString */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_SecureString_RemoveAt(
+	System_Security_SecureString_t /* System.Security.SecureString */ self,
+	int32_t /* System.Int32 */ index,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_SecureString_SetAt(
+	System_Security_SecureString_t /* System.Security.SecureString */ self,
+	int32_t /* System.Int32 */ index,
+	uint8_t /* System.Char */ c,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Security_SecureString_t /* System.Security.SecureString */
+System_Security_SecureString_Create(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Security_SecureString_Length_Get(
+	System_Security_SecureString_t /* System.Security.SecureString */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_Security_SecureString_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Security_SecureString_Destroy(
+	System_Security_SecureString_t /* System.Security.SecureString */ self
+);
+
+#pragma mark - END APIs of System.Security.SecureString
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Address
 NativeAOT_CodeGeneratorInputSample_Address_t /* NativeAOT.CodeGeneratorInputSample.Address */

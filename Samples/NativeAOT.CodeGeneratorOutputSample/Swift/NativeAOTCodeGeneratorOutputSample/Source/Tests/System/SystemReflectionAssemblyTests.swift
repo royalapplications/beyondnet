@@ -76,7 +76,6 @@ final class SystemReflectionAssemblyTests: XCTestCase {
 		}
 		
 		let personType = NativeAOT_CodeGeneratorInputSample_Person_TypeOf()
-		
 		defer { System_Type_Destroy(personType) }
 		
 		var personTypeFound = false
