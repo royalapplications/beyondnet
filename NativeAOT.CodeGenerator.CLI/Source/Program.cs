@@ -4,29 +4,18 @@ static class Program
 {
     public static int Main(string[] args)
     {
-        bool parseSuccess = ArgumentParser.TryParse(
-            args,
-            out ArgumentParser.Result? result
-        );
-        
-        if (!parseSuccess ||
-            result == null) {
+        string? configFilePath = args.Length == 1
+            ? args[0]
+            : null;
+
+        if (string.IsNullOrEmpty(configFilePath)) {
             ShowUsage();
-            
+
             return 1;
         }
 
-        string assemblyPath = result.AssemblyPath;
-        string? cSharpUnmanagedOutputPath = result.CSharpUnmanagedOutputPath;
-        string? cOutputPath = result.COutputPath;
-
-        Configuration configuration = new() {
-            AssemblyPath = assemblyPath,
-            CSharpUnmanagedOutputPath = cSharpUnmanagedOutputPath,
-            COutputPath = cOutputPath,
-            IncludedTypeNames = Array.Empty<string>(),
-            ExcludedTypeNames = Array.Empty<string>()
-        };
+        ConfigurationSerializer serializer = new();
+        Configuration configuration = serializer.DeserializeFromJsonFilePath(configFilePath) ?? throw new Exception("Error while parsing configuration file.");
 
         CodeGeneratorDriver driver = new(configuration);
         
@@ -38,7 +27,7 @@ static class Program
     private static void ShowUsage()
     {
         string usageText = """
-Usage: NativeAOT.CodeGenerator.CLI <PathToAssembly.dll> [<PathToCSharpOutputFile.cs>] [<PathToCHeaderOutputFile.h>]
+Usage: NativeAOT.CodeGenerator.CLI <PathToConfig.json>
 """;
         
         Console.WriteLine(usageText);    

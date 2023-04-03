@@ -1,8 +1,8 @@
 {
-	"AssemblyPath": "",
+	"AssemblyPath": "NativeAOT.CodeGeneratorInputSample/bin/Debug/net8.0/NativeAOT.CodeGeneratorInputSample.dll",
 	
-	"CSharpUnmanagedOutputPath": "",
-	"COutputPath": "",
+	"CSharpUnmanagedOutputPath": "NativeAOT.CodeGeneratorOutputSample/UnmanagedGenerated.cs",
+	"COutputPath": "NativeAOT.CodeGeneratorOutputSample/Swift/NativeAOTCodeGeneratorOutputSample/Source/TypeDefinitions.h",
 
 	"IncludedTypeNames": [
 		

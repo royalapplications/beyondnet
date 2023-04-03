@@ -9,13 +9,21 @@ internal partial class ConfigurationMetadataOnlyContext : JsonSerializerContext 
 
 internal class ConfigurationSerializer
 {
-    public Configuration? DeserializeFromJson(string jsonString)
+    internal Configuration? DeserializeFromJson(string jsonString)
     {
         Configuration? configuration = JsonSerializer.Deserialize(jsonString, ConfigurationMetadataOnlyContext.Default.Configuration);
 
         if (configuration == null) {
             throw new Exception("An unknown error occured while deserializing JSON.");
         }
+
+        return configuration;
+    }
+    
+    internal Configuration? DeserializeFromJsonFilePath(string jsonFilePath)
+    {
+        string jsonString = File.ReadAllText(jsonFilePath);
+        Configuration? configuration = DeserializeFromJson(jsonString);
 
         return configuration;
     }
