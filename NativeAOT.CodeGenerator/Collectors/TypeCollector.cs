@@ -29,14 +29,8 @@ public class TypeCollector
         typeof(System.UInt64),
         typeof(System.Delegate),
         typeof(System.MulticastDelegate),
-        typeof(System.Convert),
-        typeof(System.Math),
-        typeof(System.GC),
         typeof(System.Enum),
         typeof(System.Array),
-        typeof(System.Threading.Thread),
-        typeof(System.Threading.Timer),
-        typeof(System.AppDomain),
         typeof(System.Reflection.PortableExecutableKinds),
         typeof(System.Reflection.ImageFileMachine),
     };
@@ -93,7 +87,7 @@ public class TypeCollector
     )
     {
         if (m_excludedTypes.Contains(type)) {
-            unsupportedTypes[type] = "Blacklisted";
+            unsupportedTypes[type] = "Excluded";
             
             return;
         }

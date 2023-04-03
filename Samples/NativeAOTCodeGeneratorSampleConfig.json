@@ -5,7 +5,12 @@
 	"COutputPath": "NativeAOT.CodeGeneratorOutputSample/Swift/NativeAOTCodeGeneratorOutputSample/Source/TypeDefinitions.h",
 
 	"IncludedTypeNames": [
-		
+		"System.GC",
+		"System.Math",
+		"System.Convert",
+		"System.Threading.Thread",
+		"System.Threading.Timer",
+		"System.AppDomain"
 	],
 
 	"ExcludedTypeNames": [

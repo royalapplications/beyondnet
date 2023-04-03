@@ -66430,6 +66430,4248 @@ internal unsafe class System_Reflection_MemberFilter
 
 
 
+internal unsafe class System_Reflection_PortableExecutableKinds
+{
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_PortableExecutableKinds_TypeOf")]
+	internal static void* /* System.Type */ System_Reflection_PortableExecutableKinds_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Reflection.PortableExecutableKinds);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
+}
+
+
+internal unsafe class System_Reflection_ImageFileMachine
+{
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ImageFileMachine_TypeOf")]
+	internal static void* /* System.Type */ System_Reflection_ImageFileMachine_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Reflection.ImageFileMachine);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
+}
+
+
+internal unsafe class System_GC
+{
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_GetGCMemoryInfo")]
+	internal static void* /* System.GCMemoryInfo */ System_GC_GetGCMemoryInfo(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.GCMemoryInfo __returnValue = System.GC.GetGCMemoryInfo();
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_GetGCMemoryInfo1")]
+	internal static void* /* System.GCMemoryInfo */ System_GC_GetGCMemoryInfo1(System.GCKind /* System.GCKind */ kind, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.GCMemoryInfo __returnValue = System.GC.GetGCMemoryInfo(kind);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_AddMemoryPressure")]
+	internal static void /* System.Void */ System_GC_AddMemoryPressure(long /* System.Int64 */ bytesAllocated, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.GC.AddMemoryPressure(bytesAllocated);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_RemoveMemoryPressure")]
+	internal static void /* System.Void */ System_GC_RemoveMemoryPressure(long /* System.Int64 */ bytesAllocated, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.GC.RemoveMemoryPressure(bytesAllocated);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_GetGeneration")]
+	internal static int /* System.Int32 */ System_GC_GetGeneration(void* /* System.Object */ obj, void** /* System.Exception */ __outException)
+	{
+		System.Object objConverted = InteropUtils.GetInstance<System.Object>(obj);
+	
+	    try {
+			System.Int32 __returnValue = System.GC.GetGeneration(objConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_Collect")]
+	internal static void /* System.Void */ System_GC_Collect(int /* System.Int32 */ generation, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.GC.Collect(generation);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_Collect1")]
+	internal static void /* System.Void */ System_GC_Collect1(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.GC.Collect();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_Collect2")]
+	internal static void /* System.Void */ System_GC_Collect2(int /* System.Int32 */ generation, System.GCCollectionMode /* System.GCCollectionMode */ mode, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.GC.Collect(generation, mode);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_Collect3")]
+	internal static void /* System.Void */ System_GC_Collect3(int /* System.Int32 */ generation, System.GCCollectionMode /* System.GCCollectionMode */ mode, byte /* System.Boolean */ blocking, void** /* System.Exception */ __outException)
+	{
+		System.Boolean blockingConverted = blocking.ToBool();
+	
+	    try {
+			System.GC.Collect(generation, mode, blockingConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_Collect4")]
+	internal static void /* System.Void */ System_GC_Collect4(int /* System.Int32 */ generation, System.GCCollectionMode /* System.GCCollectionMode */ mode, byte /* System.Boolean */ blocking, byte /* System.Boolean */ compacting, void** /* System.Exception */ __outException)
+	{
+		System.Boolean blockingConverted = blocking.ToBool();
+		System.Boolean compactingConverted = compacting.ToBool();
+	
+	    try {
+			System.GC.Collect(generation, mode, blockingConverted, compactingConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_CollectionCount")]
+	internal static int /* System.Int32 */ System_GC_CollectionCount(int /* System.Int32 */ generation, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Int32 __returnValue = System.GC.CollectionCount(generation);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_KeepAlive")]
+	internal static void /* System.Void */ System_GC_KeepAlive(void* /* System.Object */ obj, void** /* System.Exception */ __outException)
+	{
+		System.Object objConverted = InteropUtils.GetInstance<System.Object>(obj);
+	
+	    try {
+			System.GC.KeepAlive(objConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_GetGeneration1")]
+	internal static int /* System.Int32 */ System_GC_GetGeneration1(void* /* System.WeakReference */ wo, void** /* System.Exception */ __outException)
+	{
+		System.WeakReference woConverted = InteropUtils.GetInstance<System.WeakReference>(wo);
+	
+	    try {
+			System.Int32 __returnValue = System.GC.GetGeneration(woConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_WaitForPendingFinalizers")]
+	internal static void /* System.Void */ System_GC_WaitForPendingFinalizers(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.GC.WaitForPendingFinalizers();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_SuppressFinalize")]
+	internal static void /* System.Void */ System_GC_SuppressFinalize(void* /* System.Object */ obj, void** /* System.Exception */ __outException)
+	{
+		System.Object objConverted = InteropUtils.GetInstance<System.Object>(obj);
+	
+	    try {
+			System.GC.SuppressFinalize(objConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_ReRegisterForFinalize")]
+	internal static void /* System.Void */ System_GC_ReRegisterForFinalize(void* /* System.Object */ obj, void** /* System.Exception */ __outException)
+	{
+		System.Object objConverted = InteropUtils.GetInstance<System.Object>(obj);
+	
+	    try {
+			System.GC.ReRegisterForFinalize(objConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_GetTotalMemory")]
+	internal static long /* System.Int64 */ System_GC_GetTotalMemory(byte /* System.Boolean */ forceFullCollection, void** /* System.Exception */ __outException)
+	{
+		System.Boolean forceFullCollectionConverted = forceFullCollection.ToBool();
+	
+	    try {
+			System.Int64 __returnValue = System.GC.GetTotalMemory(forceFullCollectionConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_GetAllocatedBytesForCurrentThread")]
+	internal static long /* System.Int64 */ System_GC_GetAllocatedBytesForCurrentThread(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Int64 __returnValue = System.GC.GetAllocatedBytesForCurrentThread();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_GetTotalAllocatedBytes")]
+	internal static long /* System.Int64 */ System_GC_GetTotalAllocatedBytes(byte /* System.Boolean */ precise, void** /* System.Exception */ __outException)
+	{
+		System.Boolean preciseConverted = precise.ToBool();
+	
+	    try {
+			System.Int64 __returnValue = System.GC.GetTotalAllocatedBytes(preciseConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_RegisterForFullGCNotification")]
+	internal static void /* System.Void */ System_GC_RegisterForFullGCNotification(int /* System.Int32 */ maxGenerationThreshold, int /* System.Int32 */ largeObjectHeapThreshold, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.GC.RegisterForFullGCNotification(maxGenerationThreshold, largeObjectHeapThreshold);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_CancelFullGCNotification")]
+	internal static void /* System.Void */ System_GC_CancelFullGCNotification(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.GC.CancelFullGCNotification();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_WaitForFullGCApproach")]
+	internal static System.GCNotificationStatus /* System.GCNotificationStatus */ System_GC_WaitForFullGCApproach(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.GCNotificationStatus __returnValue = System.GC.WaitForFullGCApproach();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return default(System.GCNotificationStatus);
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_WaitForFullGCApproach1")]
+	internal static System.GCNotificationStatus /* System.GCNotificationStatus */ System_GC_WaitForFullGCApproach1(int /* System.Int32 */ millisecondsTimeout, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.GCNotificationStatus __returnValue = System.GC.WaitForFullGCApproach(millisecondsTimeout);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return default(System.GCNotificationStatus);
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_WaitForFullGCComplete")]
+	internal static System.GCNotificationStatus /* System.GCNotificationStatus */ System_GC_WaitForFullGCComplete(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.GCNotificationStatus __returnValue = System.GC.WaitForFullGCComplete();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return default(System.GCNotificationStatus);
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_WaitForFullGCComplete1")]
+	internal static System.GCNotificationStatus /* System.GCNotificationStatus */ System_GC_WaitForFullGCComplete1(int /* System.Int32 */ millisecondsTimeout, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.GCNotificationStatus __returnValue = System.GC.WaitForFullGCComplete(millisecondsTimeout);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return default(System.GCNotificationStatus);
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_TryStartNoGCRegion")]
+	internal static byte /* System.Boolean */ System_GC_TryStartNoGCRegion(long /* System.Int64 */ totalSize, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Boolean __returnValue = System.GC.TryStartNoGCRegion(totalSize);
+			byte _returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_TryStartNoGCRegion1")]
+	internal static byte /* System.Boolean */ System_GC_TryStartNoGCRegion1(long /* System.Int64 */ totalSize, long /* System.Int64 */ lohSize, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Boolean __returnValue = System.GC.TryStartNoGCRegion(totalSize, lohSize);
+			byte _returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_TryStartNoGCRegion2")]
+	internal static byte /* System.Boolean */ System_GC_TryStartNoGCRegion2(long /* System.Int64 */ totalSize, byte /* System.Boolean */ disallowFullBlockingGC, void** /* System.Exception */ __outException)
+	{
+		System.Boolean disallowFullBlockingGCConverted = disallowFullBlockingGC.ToBool();
+	
+	    try {
+			System.Boolean __returnValue = System.GC.TryStartNoGCRegion(totalSize, disallowFullBlockingGCConverted);
+			byte _returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_TryStartNoGCRegion3")]
+	internal static byte /* System.Boolean */ System_GC_TryStartNoGCRegion3(long /* System.Int64 */ totalSize, long /* System.Int64 */ lohSize, byte /* System.Boolean */ disallowFullBlockingGC, void** /* System.Exception */ __outException)
+	{
+		System.Boolean disallowFullBlockingGCConverted = disallowFullBlockingGC.ToBool();
+	
+	    try {
+			System.Boolean __returnValue = System.GC.TryStartNoGCRegion(totalSize, lohSize, disallowFullBlockingGCConverted);
+			byte _returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_EndNoGCRegion")]
+	internal static void /* System.Void */ System_GC_EndNoGCRegion(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.GC.EndNoGCRegion();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_GetTotalPauseDuration")]
+	internal static void* /* System.TimeSpan */ System_GC_GetTotalPauseDuration(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.TimeSpan __returnValue = System.GC.GetTotalPauseDuration();
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_WaitForFullGCApproach2")]
+	internal static System.GCNotificationStatus /* System.GCNotificationStatus */ System_GC_WaitForFullGCApproach2(void* /* System.TimeSpan */ timeout, void** /* System.Exception */ __outException)
+	{
+		System.TimeSpan timeoutConverted = InteropUtils.GetInstance<System.TimeSpan>(timeout);
+	
+	    try {
+			System.GCNotificationStatus __returnValue = System.GC.WaitForFullGCApproach(timeoutConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return default(System.GCNotificationStatus);
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_WaitForFullGCComplete2")]
+	internal static System.GCNotificationStatus /* System.GCNotificationStatus */ System_GC_WaitForFullGCComplete2(void* /* System.TimeSpan */ timeout, void** /* System.Exception */ __outException)
+	{
+		System.TimeSpan timeoutConverted = InteropUtils.GetInstance<System.TimeSpan>(timeout);
+	
+	    try {
+			System.GCNotificationStatus __returnValue = System.GC.WaitForFullGCComplete(timeoutConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return default(System.GCNotificationStatus);
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_MaxGeneration_Get")]
+	internal static int /* System.Int32 */ System_GC_MaxGeneration_Get(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Int32 __returnValue = System.GC.MaxGeneration;
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_TypeOf")]
+	internal static void* /* System.Type */ System_GC_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.GC);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_Destroy")]
+	internal static void /* System.Void */ System_GC_Destroy(void* /* System.GC */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+
+}
+
+
+internal unsafe class System_GCMemoryInfo
+{
+	[UnmanagedCallersOnly(EntryPoint = "System_GCMemoryInfo_HighMemoryLoadThresholdBytes_Get")]
+	internal static long /* System.Int64 */ System_GCMemoryInfo_HighMemoryLoadThresholdBytes_Get(void* /* System.GCMemoryInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.GCMemoryInfo __selfConverted = InteropUtils.GetInstance<System.GCMemoryInfo>(__self);
+	
+	
+	    try {
+			System.Int64 __returnValue = __selfConverted.HighMemoryLoadThresholdBytes;
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GCMemoryInfo_MemoryLoadBytes_Get")]
+	internal static long /* System.Int64 */ System_GCMemoryInfo_MemoryLoadBytes_Get(void* /* System.GCMemoryInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.GCMemoryInfo __selfConverted = InteropUtils.GetInstance<System.GCMemoryInfo>(__self);
+	
+	
+	    try {
+			System.Int64 __returnValue = __selfConverted.MemoryLoadBytes;
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GCMemoryInfo_TotalAvailableMemoryBytes_Get")]
+	internal static long /* System.Int64 */ System_GCMemoryInfo_TotalAvailableMemoryBytes_Get(void* /* System.GCMemoryInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.GCMemoryInfo __selfConverted = InteropUtils.GetInstance<System.GCMemoryInfo>(__self);
+	
+	
+	    try {
+			System.Int64 __returnValue = __selfConverted.TotalAvailableMemoryBytes;
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GCMemoryInfo_HeapSizeBytes_Get")]
+	internal static long /* System.Int64 */ System_GCMemoryInfo_HeapSizeBytes_Get(void* /* System.GCMemoryInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.GCMemoryInfo __selfConverted = InteropUtils.GetInstance<System.GCMemoryInfo>(__self);
+	
+	
+	    try {
+			System.Int64 __returnValue = __selfConverted.HeapSizeBytes;
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GCMemoryInfo_FragmentedBytes_Get")]
+	internal static long /* System.Int64 */ System_GCMemoryInfo_FragmentedBytes_Get(void* /* System.GCMemoryInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.GCMemoryInfo __selfConverted = InteropUtils.GetInstance<System.GCMemoryInfo>(__self);
+	
+	
+	    try {
+			System.Int64 __returnValue = __selfConverted.FragmentedBytes;
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GCMemoryInfo_Index_Get")]
+	internal static long /* System.Int64 */ System_GCMemoryInfo_Index_Get(void* /* System.GCMemoryInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.GCMemoryInfo __selfConverted = InteropUtils.GetInstance<System.GCMemoryInfo>(__self);
+	
+	
+	    try {
+			System.Int64 __returnValue = __selfConverted.Index;
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GCMemoryInfo_Generation_Get")]
+	internal static int /* System.Int32 */ System_GCMemoryInfo_Generation_Get(void* /* System.GCMemoryInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.GCMemoryInfo __selfConverted = InteropUtils.GetInstance<System.GCMemoryInfo>(__self);
+	
+	
+	    try {
+			System.Int32 __returnValue = __selfConverted.Generation;
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GCMemoryInfo_Compacted_Get")]
+	internal static byte /* System.Boolean */ System_GCMemoryInfo_Compacted_Get(void* /* System.GCMemoryInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.GCMemoryInfo __selfConverted = InteropUtils.GetInstance<System.GCMemoryInfo>(__self);
+	
+	
+	    try {
+			System.Boolean __returnValue = __selfConverted.Compacted;
+			byte _returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		}
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GCMemoryInfo_Concurrent_Get")]
+	internal static byte /* System.Boolean */ System_GCMemoryInfo_Concurrent_Get(void* /* System.GCMemoryInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.GCMemoryInfo __selfConverted = InteropUtils.GetInstance<System.GCMemoryInfo>(__self);
+	
+	
+	    try {
+			System.Boolean __returnValue = __selfConverted.Concurrent;
+			byte _returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		}
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GCMemoryInfo_TotalCommittedBytes_Get")]
+	internal static long /* System.Int64 */ System_GCMemoryInfo_TotalCommittedBytes_Get(void* /* System.GCMemoryInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.GCMemoryInfo __selfConverted = InteropUtils.GetInstance<System.GCMemoryInfo>(__self);
+	
+	
+	    try {
+			System.Int64 __returnValue = __selfConverted.TotalCommittedBytes;
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GCMemoryInfo_PromotedBytes_Get")]
+	internal static long /* System.Int64 */ System_GCMemoryInfo_PromotedBytes_Get(void* /* System.GCMemoryInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.GCMemoryInfo __selfConverted = InteropUtils.GetInstance<System.GCMemoryInfo>(__self);
+	
+	
+	    try {
+			System.Int64 __returnValue = __selfConverted.PromotedBytes;
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GCMemoryInfo_PinnedObjectsCount_Get")]
+	internal static long /* System.Int64 */ System_GCMemoryInfo_PinnedObjectsCount_Get(void* /* System.GCMemoryInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.GCMemoryInfo __selfConverted = InteropUtils.GetInstance<System.GCMemoryInfo>(__self);
+	
+	
+	    try {
+			System.Int64 __returnValue = __selfConverted.PinnedObjectsCount;
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GCMemoryInfo_FinalizationPendingCount_Get")]
+	internal static long /* System.Int64 */ System_GCMemoryInfo_FinalizationPendingCount_Get(void* /* System.GCMemoryInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.GCMemoryInfo __selfConverted = InteropUtils.GetInstance<System.GCMemoryInfo>(__self);
+	
+	
+	    try {
+			System.Int64 __returnValue = __selfConverted.FinalizationPendingCount;
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GCMemoryInfo_PauseTimePercentage_Get")]
+	internal static double /* System.Double */ System_GCMemoryInfo_PauseTimePercentage_Get(void* /* System.GCMemoryInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.GCMemoryInfo __selfConverted = InteropUtils.GetInstance<System.GCMemoryInfo>(__self);
+	
+	
+	    try {
+			System.Double __returnValue = __selfConverted.PauseTimePercentage;
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GCMemoryInfo_TypeOf")]
+	internal static void* /* System.Type */ System_GCMemoryInfo_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.GCMemoryInfo);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GCMemoryInfo_Destroy")]
+	internal static void /* System.Void */ System_GCMemoryInfo_Destroy(void* /* System.GCMemoryInfo */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+
+}
+
+
+internal unsafe class System_GCKind
+{
+	[UnmanagedCallersOnly(EntryPoint = "System_GCKind_TypeOf")]
+	internal static void* /* System.Type */ System_GCKind_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.GCKind);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
+}
+
+
+internal unsafe class System_GCCollectionMode
+{
+	[UnmanagedCallersOnly(EntryPoint = "System_GCCollectionMode_TypeOf")]
+	internal static void* /* System.Type */ System_GCCollectionMode_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.GCCollectionMode);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
+}
+
+
+internal unsafe class System_WeakReference
+{
+	[UnmanagedCallersOnly(EntryPoint = "System_WeakReference_GetObjectData")]
+	internal static void /* System.Void */ System_WeakReference_GetObjectData(void* /* System.WeakReference */ __self, void* /* System.Runtime.Serialization.SerializationInfo */ info, void* /* System.Runtime.Serialization.StreamingContext */ context, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.WeakReference __selfConverted = InteropUtils.GetInstance<System.WeakReference>(__self);
+	
+		System.Runtime.Serialization.SerializationInfo infoConverted = InteropUtils.GetInstance<System.Runtime.Serialization.SerializationInfo>(info);
+		System.Runtime.Serialization.StreamingContext contextConverted = InteropUtils.GetInstance<System.Runtime.Serialization.StreamingContext>(context);
+	
+	    try {
+			__selfConverted.GetObjectData(infoConverted, contextConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_WeakReference_Create")]
+	internal static void* /* System.WeakReference */ System_WeakReference_Create(void* /* System.Object */ target, void** /* System.Exception */ __outException)
+	{
+		System.Object targetConverted = InteropUtils.GetInstance<System.Object>(target);
+	
+	    try {
+			System.WeakReference __returnValue = new System.WeakReference(targetConverted);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_WeakReference_Create1")]
+	internal static void* /* System.WeakReference */ System_WeakReference_Create1(void* /* System.Object */ target, byte /* System.Boolean */ trackResurrection, void** /* System.Exception */ __outException)
+	{
+		System.Object targetConverted = InteropUtils.GetInstance<System.Object>(target);
+		System.Boolean trackResurrectionConverted = trackResurrection.ToBool();
+	
+	    try {
+			System.WeakReference __returnValue = new System.WeakReference(targetConverted, trackResurrectionConverted);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_WeakReference_TrackResurrection_Get")]
+	internal static byte /* System.Boolean */ System_WeakReference_TrackResurrection_Get(void* /* System.WeakReference */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.WeakReference __selfConverted = InteropUtils.GetInstance<System.WeakReference>(__self);
+	
+	
+	    try {
+			System.Boolean __returnValue = __selfConverted.TrackResurrection;
+			byte _returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		}
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_WeakReference_IsAlive_Get")]
+	internal static byte /* System.Boolean */ System_WeakReference_IsAlive_Get(void* /* System.WeakReference */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.WeakReference __selfConverted = InteropUtils.GetInstance<System.WeakReference>(__self);
+	
+	
+	    try {
+			System.Boolean __returnValue = __selfConverted.IsAlive;
+			byte _returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		}
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_WeakReference_Target_Get")]
+	internal static void* /* System.Object */ System_WeakReference_Target_Get(void* /* System.WeakReference */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.WeakReference __selfConverted = InteropUtils.GetInstance<System.WeakReference>(__self);
+	
+	
+	    try {
+			System.Object __returnValue = __selfConverted.Target;
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_WeakReference_Target_Set")]
+	internal static void /* System.Void */ System_WeakReference_Target_Set(void* /* System.WeakReference */ __self, void* /* System.Object */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.WeakReference __selfConverted = InteropUtils.GetInstance<System.WeakReference>(__self);
+	
+	
+	    try {
+			__selfConverted.Target = InteropUtils.GetInstance<System.Object>(__value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_WeakReference_TypeOf")]
+	internal static void* /* System.Type */ System_WeakReference_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.WeakReference);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_WeakReference_Destroy")]
+	internal static void /* System.Void */ System_WeakReference_Destroy(void* /* System.WeakReference */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+
+}
+
+
+internal unsafe class System_GCNotificationStatus
+{
+	[UnmanagedCallersOnly(EntryPoint = "System_GCNotificationStatus_TypeOf")]
+	internal static void* /* System.Type */ System_GCNotificationStatus_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.GCNotificationStatus);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
+}
+
+
+
+
+internal unsafe class System_Math
+{
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Acos")]
+	internal static double /* System.Double */ System_Math_Acos(double /* System.Double */ d, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.Acos(d);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Acosh")]
+	internal static double /* System.Double */ System_Math_Acosh(double /* System.Double */ d, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.Acosh(d);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Asin")]
+	internal static double /* System.Double */ System_Math_Asin(double /* System.Double */ d, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.Asin(d);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Asinh")]
+	internal static double /* System.Double */ System_Math_Asinh(double /* System.Double */ d, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.Asinh(d);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Atan")]
+	internal static double /* System.Double */ System_Math_Atan(double /* System.Double */ d, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.Atan(d);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Atanh")]
+	internal static double /* System.Double */ System_Math_Atanh(double /* System.Double */ d, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.Atanh(d);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Atan2")]
+	internal static double /* System.Double */ System_Math_Atan2(double /* System.Double */ y, double /* System.Double */ x, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.Atan2(y, x);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Cbrt")]
+	internal static double /* System.Double */ System_Math_Cbrt(double /* System.Double */ d, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.Cbrt(d);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Ceiling")]
+	internal static double /* System.Double */ System_Math_Ceiling(double /* System.Double */ a, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.Ceiling(a);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Cos")]
+	internal static double /* System.Double */ System_Math_Cos(double /* System.Double */ d, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.Cos(d);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Cosh")]
+	internal static double /* System.Double */ System_Math_Cosh(double /* System.Double */ value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.Cosh(value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Exp")]
+	internal static double /* System.Double */ System_Math_Exp(double /* System.Double */ d, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.Exp(d);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Floor")]
+	internal static double /* System.Double */ System_Math_Floor(double /* System.Double */ d, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.Floor(d);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_FusedMultiplyAdd")]
+	internal static double /* System.Double */ System_Math_FusedMultiplyAdd(double /* System.Double */ x, double /* System.Double */ y, double /* System.Double */ z, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.FusedMultiplyAdd(x, y, z);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Log")]
+	internal static double /* System.Double */ System_Math_Log(double /* System.Double */ d, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.Log(d);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Log2")]
+	internal static double /* System.Double */ System_Math_Log2(double /* System.Double */ x, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.Log2(x);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Log10")]
+	internal static double /* System.Double */ System_Math_Log10(double /* System.Double */ d, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.Log10(d);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Pow")]
+	internal static double /* System.Double */ System_Math_Pow(double /* System.Double */ x, double /* System.Double */ y, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.Pow(x, y);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Sin")]
+	internal static double /* System.Double */ System_Math_Sin(double /* System.Double */ a, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.Sin(a);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Sinh")]
+	internal static double /* System.Double */ System_Math_Sinh(double /* System.Double */ value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.Sinh(value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Sqrt")]
+	internal static double /* System.Double */ System_Math_Sqrt(double /* System.Double */ d, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.Sqrt(d);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Tan")]
+	internal static double /* System.Double */ System_Math_Tan(double /* System.Double */ a, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.Tan(a);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Tanh")]
+	internal static double /* System.Double */ System_Math_Tanh(double /* System.Double */ value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.Tanh(value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Abs")]
+	internal static short /* System.Int16 */ System_Math_Abs(short /* System.Int16 */ value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Int16 __returnValue = System.Math.Abs(value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Abs1")]
+	internal static int /* System.Int32 */ System_Math_Abs1(int /* System.Int32 */ value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Int32 __returnValue = System.Math.Abs(value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Abs2")]
+	internal static long /* System.Int64 */ System_Math_Abs2(long /* System.Int64 */ value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Int64 __returnValue = System.Math.Abs(value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Abs3")]
+	internal static nint /* System.IntPtr */ System_Math_Abs3(nint /* System.IntPtr */ value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.IntPtr __returnValue = System.Math.Abs(value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return nint.Zero;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Abs4")]
+	internal static sbyte /* System.SByte */ System_Math_Abs4(sbyte /* System.SByte */ value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.SByte __returnValue = System.Math.Abs(value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Abs5")]
+	internal static void* /* System.Decimal */ System_Math_Abs5(void* /* System.Decimal */ value, void** /* System.Exception */ __outException)
+	{
+		System.Decimal valueConverted = InteropUtils.GetInstance<System.Decimal>(value);
+	
+	    try {
+			System.Decimal __returnValue = System.Math.Abs(valueConverted);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Abs6")]
+	internal static double /* System.Double */ System_Math_Abs6(double /* System.Double */ value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.Abs(value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Abs7")]
+	internal static float /* System.Single */ System_Math_Abs7(float /* System.Single */ value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Single __returnValue = System.Math.Abs(value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_BigMul")]
+	internal static long /* System.Int64 */ System_Math_BigMul(int /* System.Int32 */ a, int /* System.Int32 */ b, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Int64 __returnValue = System.Math.BigMul(a, b);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_BigMul1")]
+	internal static ulong /* System.UInt64 */ System_Math_BigMul1(ulong /* System.UInt64 */ a, ulong /* System.UInt64 */ b, ulong* /* System.UInt64 */ low, void** /* System.Exception */ __outException)
+	{
+		System.UInt64 lowConverted;
+	
+	    try {
+			System.UInt64 __returnValue = System.Math.BigMul(a, b, out lowConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (low is not null) {
+				*low = lowConverted;
+			}
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_BigMul2")]
+	internal static long /* System.Int64 */ System_Math_BigMul2(long /* System.Int64 */ a, long /* System.Int64 */ b, long* /* System.Int64 */ low, void** /* System.Exception */ __outException)
+	{
+		System.Int64 lowConverted;
+	
+	    try {
+			System.Int64 __returnValue = System.Math.BigMul(a, b, out lowConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (low is not null) {
+				*low = lowConverted;
+			}
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_BitDecrement")]
+	internal static double /* System.Double */ System_Math_BitDecrement(double /* System.Double */ x, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.BitDecrement(x);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_BitIncrement")]
+	internal static double /* System.Double */ System_Math_BitIncrement(double /* System.Double */ x, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.BitIncrement(x);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_CopySign")]
+	internal static double /* System.Double */ System_Math_CopySign(double /* System.Double */ x, double /* System.Double */ y, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.CopySign(x, y);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_DivRem")]
+	internal static int /* System.Int32 */ System_Math_DivRem(int /* System.Int32 */ a, int /* System.Int32 */ b, int* /* System.Int32 */ result, void** /* System.Exception */ __outException)
+	{
+		System.Int32 resultConverted;
+	
+	    try {
+			System.Int32 __returnValue = System.Math.DivRem(a, b, out resultConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (result is not null) {
+				*result = resultConverted;
+			}
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_DivRem1")]
+	internal static long /* System.Int64 */ System_Math_DivRem1(long /* System.Int64 */ a, long /* System.Int64 */ b, long* /* System.Int64 */ result, void** /* System.Exception */ __outException)
+	{
+		System.Int64 resultConverted;
+	
+	    try {
+			System.Int64 __returnValue = System.Math.DivRem(a, b, out resultConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (result is not null) {
+				*result = resultConverted;
+			}
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Ceiling1")]
+	internal static void* /* System.Decimal */ System_Math_Ceiling1(void* /* System.Decimal */ d, void** /* System.Exception */ __outException)
+	{
+		System.Decimal dConverted = InteropUtils.GetInstance<System.Decimal>(d);
+	
+	    try {
+			System.Decimal __returnValue = System.Math.Ceiling(dConverted);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Clamp")]
+	internal static byte /* System.Byte */ System_Math_Clamp(byte /* System.Byte */ value, byte /* System.Byte */ min, byte /* System.Byte */ max, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Byte __returnValue = System.Math.Clamp(value, min, max);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Clamp1")]
+	internal static void* /* System.Decimal */ System_Math_Clamp1(void* /* System.Decimal */ value, void* /* System.Decimal */ min, void* /* System.Decimal */ max, void** /* System.Exception */ __outException)
+	{
+		System.Decimal valueConverted = InteropUtils.GetInstance<System.Decimal>(value);
+		System.Decimal minConverted = InteropUtils.GetInstance<System.Decimal>(min);
+		System.Decimal maxConverted = InteropUtils.GetInstance<System.Decimal>(max);
+	
+	    try {
+			System.Decimal __returnValue = System.Math.Clamp(valueConverted, minConverted, maxConverted);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Clamp2")]
+	internal static double /* System.Double */ System_Math_Clamp2(double /* System.Double */ value, double /* System.Double */ min, double /* System.Double */ max, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.Clamp(value, min, max);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Clamp3")]
+	internal static short /* System.Int16 */ System_Math_Clamp3(short /* System.Int16 */ value, short /* System.Int16 */ min, short /* System.Int16 */ max, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Int16 __returnValue = System.Math.Clamp(value, min, max);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Clamp4")]
+	internal static int /* System.Int32 */ System_Math_Clamp4(int /* System.Int32 */ value, int /* System.Int32 */ min, int /* System.Int32 */ max, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Int32 __returnValue = System.Math.Clamp(value, min, max);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Clamp5")]
+	internal static long /* System.Int64 */ System_Math_Clamp5(long /* System.Int64 */ value, long /* System.Int64 */ min, long /* System.Int64 */ max, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Int64 __returnValue = System.Math.Clamp(value, min, max);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Clamp6")]
+	internal static nint /* System.IntPtr */ System_Math_Clamp6(nint /* System.IntPtr */ value, nint /* System.IntPtr */ min, nint /* System.IntPtr */ max, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.IntPtr __returnValue = System.Math.Clamp(value, min, max);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return nint.Zero;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Clamp7")]
+	internal static sbyte /* System.SByte */ System_Math_Clamp7(sbyte /* System.SByte */ value, sbyte /* System.SByte */ min, sbyte /* System.SByte */ max, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.SByte __returnValue = System.Math.Clamp(value, min, max);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Clamp8")]
+	internal static float /* System.Single */ System_Math_Clamp8(float /* System.Single */ value, float /* System.Single */ min, float /* System.Single */ max, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Single __returnValue = System.Math.Clamp(value, min, max);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Clamp9")]
+	internal static ushort /* System.UInt16 */ System_Math_Clamp9(ushort /* System.UInt16 */ value, ushort /* System.UInt16 */ min, ushort /* System.UInt16 */ max, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.UInt16 __returnValue = System.Math.Clamp(value, min, max);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Clamp10")]
+	internal static uint /* System.UInt32 */ System_Math_Clamp10(uint /* System.UInt32 */ value, uint /* System.UInt32 */ min, uint /* System.UInt32 */ max, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.UInt32 __returnValue = System.Math.Clamp(value, min, max);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Clamp11")]
+	internal static ulong /* System.UInt64 */ System_Math_Clamp11(ulong /* System.UInt64 */ value, ulong /* System.UInt64 */ min, ulong /* System.UInt64 */ max, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.UInt64 __returnValue = System.Math.Clamp(value, min, max);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Clamp12")]
+	internal static nuint /* System.UIntPtr */ System_Math_Clamp12(nuint /* System.UIntPtr */ value, nuint /* System.UIntPtr */ min, nuint /* System.UIntPtr */ max, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.UIntPtr __returnValue = System.Math.Clamp(value, min, max);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return nuint.Zero;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Floor1")]
+	internal static void* /* System.Decimal */ System_Math_Floor1(void* /* System.Decimal */ d, void** /* System.Exception */ __outException)
+	{
+		System.Decimal dConverted = InteropUtils.GetInstance<System.Decimal>(d);
+	
+	    try {
+			System.Decimal __returnValue = System.Math.Floor(dConverted);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_IEEERemainder")]
+	internal static double /* System.Double */ System_Math_IEEERemainder(double /* System.Double */ x, double /* System.Double */ y, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.IEEERemainder(x, y);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_ILogB")]
+	internal static int /* System.Int32 */ System_Math_ILogB(double /* System.Double */ x, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Int32 __returnValue = System.Math.ILogB(x);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Log11")]
+	internal static double /* System.Double */ System_Math_Log11(double /* System.Double */ a, double /* System.Double */ newBase, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.Log(a, newBase);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Max")]
+	internal static byte /* System.Byte */ System_Math_Max(byte /* System.Byte */ val1, byte /* System.Byte */ val2, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Byte __returnValue = System.Math.Max(val1, val2);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Max1")]
+	internal static void* /* System.Decimal */ System_Math_Max1(void* /* System.Decimal */ val1, void* /* System.Decimal */ val2, void** /* System.Exception */ __outException)
+	{
+		System.Decimal val1Converted = InteropUtils.GetInstance<System.Decimal>(val1);
+		System.Decimal val2Converted = InteropUtils.GetInstance<System.Decimal>(val2);
+	
+	    try {
+			System.Decimal __returnValue = System.Math.Max(val1Converted, val2Converted);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Max2")]
+	internal static double /* System.Double */ System_Math_Max2(double /* System.Double */ val1, double /* System.Double */ val2, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.Max(val1, val2);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Max3")]
+	internal static short /* System.Int16 */ System_Math_Max3(short /* System.Int16 */ val1, short /* System.Int16 */ val2, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Int16 __returnValue = System.Math.Max(val1, val2);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Max4")]
+	internal static int /* System.Int32 */ System_Math_Max4(int /* System.Int32 */ val1, int /* System.Int32 */ val2, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Int32 __returnValue = System.Math.Max(val1, val2);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Max5")]
+	internal static long /* System.Int64 */ System_Math_Max5(long /* System.Int64 */ val1, long /* System.Int64 */ val2, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Int64 __returnValue = System.Math.Max(val1, val2);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Max6")]
+	internal static nint /* System.IntPtr */ System_Math_Max6(nint /* System.IntPtr */ val1, nint /* System.IntPtr */ val2, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.IntPtr __returnValue = System.Math.Max(val1, val2);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return nint.Zero;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Max7")]
+	internal static sbyte /* System.SByte */ System_Math_Max7(sbyte /* System.SByte */ val1, sbyte /* System.SByte */ val2, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.SByte __returnValue = System.Math.Max(val1, val2);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Max8")]
+	internal static float /* System.Single */ System_Math_Max8(float /* System.Single */ val1, float /* System.Single */ val2, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Single __returnValue = System.Math.Max(val1, val2);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Max9")]
+	internal static ushort /* System.UInt16 */ System_Math_Max9(ushort /* System.UInt16 */ val1, ushort /* System.UInt16 */ val2, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.UInt16 __returnValue = System.Math.Max(val1, val2);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Max10")]
+	internal static uint /* System.UInt32 */ System_Math_Max10(uint /* System.UInt32 */ val1, uint /* System.UInt32 */ val2, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.UInt32 __returnValue = System.Math.Max(val1, val2);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Max11")]
+	internal static ulong /* System.UInt64 */ System_Math_Max11(ulong /* System.UInt64 */ val1, ulong /* System.UInt64 */ val2, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.UInt64 __returnValue = System.Math.Max(val1, val2);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Max12")]
+	internal static nuint /* System.UIntPtr */ System_Math_Max12(nuint /* System.UIntPtr */ val1, nuint /* System.UIntPtr */ val2, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.UIntPtr __returnValue = System.Math.Max(val1, val2);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return nuint.Zero;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_MaxMagnitude")]
+	internal static double /* System.Double */ System_Math_MaxMagnitude(double /* System.Double */ x, double /* System.Double */ y, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.MaxMagnitude(x, y);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Min")]
+	internal static byte /* System.Byte */ System_Math_Min(byte /* System.Byte */ val1, byte /* System.Byte */ val2, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Byte __returnValue = System.Math.Min(val1, val2);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Min1")]
+	internal static void* /* System.Decimal */ System_Math_Min1(void* /* System.Decimal */ val1, void* /* System.Decimal */ val2, void** /* System.Exception */ __outException)
+	{
+		System.Decimal val1Converted = InteropUtils.GetInstance<System.Decimal>(val1);
+		System.Decimal val2Converted = InteropUtils.GetInstance<System.Decimal>(val2);
+	
+	    try {
+			System.Decimal __returnValue = System.Math.Min(val1Converted, val2Converted);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Min2")]
+	internal static double /* System.Double */ System_Math_Min2(double /* System.Double */ val1, double /* System.Double */ val2, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.Min(val1, val2);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Min3")]
+	internal static short /* System.Int16 */ System_Math_Min3(short /* System.Int16 */ val1, short /* System.Int16 */ val2, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Int16 __returnValue = System.Math.Min(val1, val2);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Min4")]
+	internal static int /* System.Int32 */ System_Math_Min4(int /* System.Int32 */ val1, int /* System.Int32 */ val2, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Int32 __returnValue = System.Math.Min(val1, val2);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Min5")]
+	internal static long /* System.Int64 */ System_Math_Min5(long /* System.Int64 */ val1, long /* System.Int64 */ val2, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Int64 __returnValue = System.Math.Min(val1, val2);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Min6")]
+	internal static nint /* System.IntPtr */ System_Math_Min6(nint /* System.IntPtr */ val1, nint /* System.IntPtr */ val2, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.IntPtr __returnValue = System.Math.Min(val1, val2);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return nint.Zero;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Min7")]
+	internal static sbyte /* System.SByte */ System_Math_Min7(sbyte /* System.SByte */ val1, sbyte /* System.SByte */ val2, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.SByte __returnValue = System.Math.Min(val1, val2);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Min8")]
+	internal static float /* System.Single */ System_Math_Min8(float /* System.Single */ val1, float /* System.Single */ val2, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Single __returnValue = System.Math.Min(val1, val2);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Min9")]
+	internal static ushort /* System.UInt16 */ System_Math_Min9(ushort /* System.UInt16 */ val1, ushort /* System.UInt16 */ val2, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.UInt16 __returnValue = System.Math.Min(val1, val2);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Min10")]
+	internal static uint /* System.UInt32 */ System_Math_Min10(uint /* System.UInt32 */ val1, uint /* System.UInt32 */ val2, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.UInt32 __returnValue = System.Math.Min(val1, val2);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Min11")]
+	internal static ulong /* System.UInt64 */ System_Math_Min11(ulong /* System.UInt64 */ val1, ulong /* System.UInt64 */ val2, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.UInt64 __returnValue = System.Math.Min(val1, val2);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Min12")]
+	internal static nuint /* System.UIntPtr */ System_Math_Min12(nuint /* System.UIntPtr */ val1, nuint /* System.UIntPtr */ val2, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.UIntPtr __returnValue = System.Math.Min(val1, val2);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return nuint.Zero;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_MinMagnitude")]
+	internal static double /* System.Double */ System_Math_MinMagnitude(double /* System.Double */ x, double /* System.Double */ y, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.MinMagnitude(x, y);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_ReciprocalEstimate")]
+	internal static double /* System.Double */ System_Math_ReciprocalEstimate(double /* System.Double */ d, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.ReciprocalEstimate(d);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_ReciprocalSqrtEstimate")]
+	internal static double /* System.Double */ System_Math_ReciprocalSqrtEstimate(double /* System.Double */ d, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.ReciprocalSqrtEstimate(d);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Round")]
+	internal static void* /* System.Decimal */ System_Math_Round(void* /* System.Decimal */ d, void** /* System.Exception */ __outException)
+	{
+		System.Decimal dConverted = InteropUtils.GetInstance<System.Decimal>(d);
+	
+	    try {
+			System.Decimal __returnValue = System.Math.Round(dConverted);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Round1")]
+	internal static void* /* System.Decimal */ System_Math_Round1(void* /* System.Decimal */ d, int /* System.Int32 */ decimals, void** /* System.Exception */ __outException)
+	{
+		System.Decimal dConverted = InteropUtils.GetInstance<System.Decimal>(d);
+	
+	    try {
+			System.Decimal __returnValue = System.Math.Round(dConverted, decimals);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Round2")]
+	internal static void* /* System.Decimal */ System_Math_Round2(void* /* System.Decimal */ d, System.MidpointRounding /* System.MidpointRounding */ mode, void** /* System.Exception */ __outException)
+	{
+		System.Decimal dConverted = InteropUtils.GetInstance<System.Decimal>(d);
+	
+	    try {
+			System.Decimal __returnValue = System.Math.Round(dConverted, mode);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Round3")]
+	internal static void* /* System.Decimal */ System_Math_Round3(void* /* System.Decimal */ d, int /* System.Int32 */ decimals, System.MidpointRounding /* System.MidpointRounding */ mode, void** /* System.Exception */ __outException)
+	{
+		System.Decimal dConverted = InteropUtils.GetInstance<System.Decimal>(d);
+	
+	    try {
+			System.Decimal __returnValue = System.Math.Round(dConverted, decimals, mode);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Round4")]
+	internal static double /* System.Double */ System_Math_Round4(double /* System.Double */ a, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.Round(a);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Round5")]
+	internal static double /* System.Double */ System_Math_Round5(double /* System.Double */ value, int /* System.Int32 */ digits, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.Round(value, digits);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Round6")]
+	internal static double /* System.Double */ System_Math_Round6(double /* System.Double */ value, System.MidpointRounding /* System.MidpointRounding */ mode, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.Round(value, mode);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Round7")]
+	internal static double /* System.Double */ System_Math_Round7(double /* System.Double */ value, int /* System.Int32 */ digits, System.MidpointRounding /* System.MidpointRounding */ mode, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.Round(value, digits, mode);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Sign")]
+	internal static int /* System.Int32 */ System_Math_Sign(void* /* System.Decimal */ value, void** /* System.Exception */ __outException)
+	{
+		System.Decimal valueConverted = InteropUtils.GetInstance<System.Decimal>(value);
+	
+	    try {
+			System.Int32 __returnValue = System.Math.Sign(valueConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Sign1")]
+	internal static int /* System.Int32 */ System_Math_Sign1(double /* System.Double */ value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Int32 __returnValue = System.Math.Sign(value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Sign2")]
+	internal static int /* System.Int32 */ System_Math_Sign2(short /* System.Int16 */ value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Int32 __returnValue = System.Math.Sign(value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Sign3")]
+	internal static int /* System.Int32 */ System_Math_Sign3(int /* System.Int32 */ value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Int32 __returnValue = System.Math.Sign(value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Sign4")]
+	internal static int /* System.Int32 */ System_Math_Sign4(long /* System.Int64 */ value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Int32 __returnValue = System.Math.Sign(value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Sign5")]
+	internal static int /* System.Int32 */ System_Math_Sign5(nint /* System.IntPtr */ value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Int32 __returnValue = System.Math.Sign(value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Sign6")]
+	internal static int /* System.Int32 */ System_Math_Sign6(sbyte /* System.SByte */ value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Int32 __returnValue = System.Math.Sign(value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Sign7")]
+	internal static int /* System.Int32 */ System_Math_Sign7(float /* System.Single */ value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Int32 __returnValue = System.Math.Sign(value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Truncate")]
+	internal static void* /* System.Decimal */ System_Math_Truncate(void* /* System.Decimal */ d, void** /* System.Exception */ __outException)
+	{
+		System.Decimal dConverted = InteropUtils.GetInstance<System.Decimal>(d);
+	
+	    try {
+			System.Decimal __returnValue = System.Math.Truncate(dConverted);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Truncate1")]
+	internal static double /* System.Double */ System_Math_Truncate1(double /* System.Double */ d, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.Truncate(d);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_ScaleB")]
+	internal static double /* System.Double */ System_Math_ScaleB(double /* System.Double */ x, int /* System.Int32 */ n, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Double __returnValue = System.Math.ScaleB(x, n);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_E_Get")]
+	internal static double /* System.Double */ System_Math_E_Get()
+	{
+	
+		System.Double __returnValue = System.Math.E;
+		return __returnValue;
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_PI_Get")]
+	internal static double /* System.Double */ System_Math_PI_Get()
+	{
+	
+		System.Double __returnValue = System.Math.PI;
+		return __returnValue;
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Tau_Get")]
+	internal static double /* System.Double */ System_Math_Tau_Get()
+	{
+	
+		System.Double __returnValue = System.Math.Tau;
+		return __returnValue;
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_TypeOf")]
+	internal static void* /* System.Type */ System_Math_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Math);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Math_Destroy")]
+	internal static void /* System.Void */ System_Math_Destroy(void* /* System.Math */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+
+}
+
+
 internal unsafe class System_Convert
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_GetTypeCode")]
@@ -74276,4218 +78518,6 @@ internal unsafe class System_Base64FormattingOptions
 	
 
 }
-
-
-internal unsafe class System_Math
-{
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Acos")]
-	internal static double /* System.Double */ System_Math_Acos(double /* System.Double */ d, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.Acos(d);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Acosh")]
-	internal static double /* System.Double */ System_Math_Acosh(double /* System.Double */ d, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.Acosh(d);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Asin")]
-	internal static double /* System.Double */ System_Math_Asin(double /* System.Double */ d, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.Asin(d);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Asinh")]
-	internal static double /* System.Double */ System_Math_Asinh(double /* System.Double */ d, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.Asinh(d);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Atan")]
-	internal static double /* System.Double */ System_Math_Atan(double /* System.Double */ d, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.Atan(d);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Atanh")]
-	internal static double /* System.Double */ System_Math_Atanh(double /* System.Double */ d, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.Atanh(d);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Atan2")]
-	internal static double /* System.Double */ System_Math_Atan2(double /* System.Double */ y, double /* System.Double */ x, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.Atan2(y, x);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Cbrt")]
-	internal static double /* System.Double */ System_Math_Cbrt(double /* System.Double */ d, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.Cbrt(d);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Ceiling")]
-	internal static double /* System.Double */ System_Math_Ceiling(double /* System.Double */ a, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.Ceiling(a);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Cos")]
-	internal static double /* System.Double */ System_Math_Cos(double /* System.Double */ d, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.Cos(d);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Cosh")]
-	internal static double /* System.Double */ System_Math_Cosh(double /* System.Double */ value, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.Cosh(value);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Exp")]
-	internal static double /* System.Double */ System_Math_Exp(double /* System.Double */ d, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.Exp(d);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Floor")]
-	internal static double /* System.Double */ System_Math_Floor(double /* System.Double */ d, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.Floor(d);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_FusedMultiplyAdd")]
-	internal static double /* System.Double */ System_Math_FusedMultiplyAdd(double /* System.Double */ x, double /* System.Double */ y, double /* System.Double */ z, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.FusedMultiplyAdd(x, y, z);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Log")]
-	internal static double /* System.Double */ System_Math_Log(double /* System.Double */ d, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.Log(d);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Log2")]
-	internal static double /* System.Double */ System_Math_Log2(double /* System.Double */ x, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.Log2(x);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Log10")]
-	internal static double /* System.Double */ System_Math_Log10(double /* System.Double */ d, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.Log10(d);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Pow")]
-	internal static double /* System.Double */ System_Math_Pow(double /* System.Double */ x, double /* System.Double */ y, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.Pow(x, y);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Sin")]
-	internal static double /* System.Double */ System_Math_Sin(double /* System.Double */ a, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.Sin(a);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Sinh")]
-	internal static double /* System.Double */ System_Math_Sinh(double /* System.Double */ value, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.Sinh(value);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Sqrt")]
-	internal static double /* System.Double */ System_Math_Sqrt(double /* System.Double */ d, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.Sqrt(d);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Tan")]
-	internal static double /* System.Double */ System_Math_Tan(double /* System.Double */ a, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.Tan(a);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Tanh")]
-	internal static double /* System.Double */ System_Math_Tanh(double /* System.Double */ value, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.Tanh(value);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Abs")]
-	internal static short /* System.Int16 */ System_Math_Abs(short /* System.Int16 */ value, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Int16 __returnValue = System.Math.Abs(value);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Abs1")]
-	internal static int /* System.Int32 */ System_Math_Abs1(int /* System.Int32 */ value, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Int32 __returnValue = System.Math.Abs(value);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Abs2")]
-	internal static long /* System.Int64 */ System_Math_Abs2(long /* System.Int64 */ value, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Int64 __returnValue = System.Math.Abs(value);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Abs3")]
-	internal static nint /* System.IntPtr */ System_Math_Abs3(nint /* System.IntPtr */ value, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.IntPtr __returnValue = System.Math.Abs(value);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return nint.Zero;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Abs4")]
-	internal static sbyte /* System.SByte */ System_Math_Abs4(sbyte /* System.SByte */ value, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.SByte __returnValue = System.Math.Abs(value);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Abs5")]
-	internal static void* /* System.Decimal */ System_Math_Abs5(void* /* System.Decimal */ value, void** /* System.Exception */ __outException)
-	{
-		System.Decimal valueConverted = InteropUtils.GetInstance<System.Decimal>(value);
-	
-	    try {
-			System.Decimal __returnValue = System.Math.Abs(valueConverted);
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Abs6")]
-	internal static double /* System.Double */ System_Math_Abs6(double /* System.Double */ value, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.Abs(value);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Abs7")]
-	internal static float /* System.Single */ System_Math_Abs7(float /* System.Single */ value, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Single __returnValue = System.Math.Abs(value);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_BigMul")]
-	internal static long /* System.Int64 */ System_Math_BigMul(int /* System.Int32 */ a, int /* System.Int32 */ b, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Int64 __returnValue = System.Math.BigMul(a, b);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_BigMul1")]
-	internal static ulong /* System.UInt64 */ System_Math_BigMul1(ulong /* System.UInt64 */ a, ulong /* System.UInt64 */ b, ulong* /* System.UInt64 */ low, void** /* System.Exception */ __outException)
-	{
-		System.UInt64 lowConverted;
-	
-	    try {
-			System.UInt64 __returnValue = System.Math.BigMul(a, b, out lowConverted);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			if (low is not null) {
-				*low = lowConverted;
-			}
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return 0;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_BigMul2")]
-	internal static long /* System.Int64 */ System_Math_BigMul2(long /* System.Int64 */ a, long /* System.Int64 */ b, long* /* System.Int64 */ low, void** /* System.Exception */ __outException)
-	{
-		System.Int64 lowConverted;
-	
-	    try {
-			System.Int64 __returnValue = System.Math.BigMul(a, b, out lowConverted);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			if (low is not null) {
-				*low = lowConverted;
-			}
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_BitDecrement")]
-	internal static double /* System.Double */ System_Math_BitDecrement(double /* System.Double */ x, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.BitDecrement(x);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_BitIncrement")]
-	internal static double /* System.Double */ System_Math_BitIncrement(double /* System.Double */ x, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.BitIncrement(x);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_CopySign")]
-	internal static double /* System.Double */ System_Math_CopySign(double /* System.Double */ x, double /* System.Double */ y, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.CopySign(x, y);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_DivRem")]
-	internal static int /* System.Int32 */ System_Math_DivRem(int /* System.Int32 */ a, int /* System.Int32 */ b, int* /* System.Int32 */ result, void** /* System.Exception */ __outException)
-	{
-		System.Int32 resultConverted;
-	
-	    try {
-			System.Int32 __returnValue = System.Math.DivRem(a, b, out resultConverted);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			if (result is not null) {
-				*result = resultConverted;
-			}
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_DivRem1")]
-	internal static long /* System.Int64 */ System_Math_DivRem1(long /* System.Int64 */ a, long /* System.Int64 */ b, long* /* System.Int64 */ result, void** /* System.Exception */ __outException)
-	{
-		System.Int64 resultConverted;
-	
-	    try {
-			System.Int64 __returnValue = System.Math.DivRem(a, b, out resultConverted);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			if (result is not null) {
-				*result = resultConverted;
-			}
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Ceiling1")]
-	internal static void* /* System.Decimal */ System_Math_Ceiling1(void* /* System.Decimal */ d, void** /* System.Exception */ __outException)
-	{
-		System.Decimal dConverted = InteropUtils.GetInstance<System.Decimal>(d);
-	
-	    try {
-			System.Decimal __returnValue = System.Math.Ceiling(dConverted);
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Clamp")]
-	internal static byte /* System.Byte */ System_Math_Clamp(byte /* System.Byte */ value, byte /* System.Byte */ min, byte /* System.Byte */ max, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Byte __returnValue = System.Math.Clamp(value, min, max);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return 0;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Clamp1")]
-	internal static void* /* System.Decimal */ System_Math_Clamp1(void* /* System.Decimal */ value, void* /* System.Decimal */ min, void* /* System.Decimal */ max, void** /* System.Exception */ __outException)
-	{
-		System.Decimal valueConverted = InteropUtils.GetInstance<System.Decimal>(value);
-		System.Decimal minConverted = InteropUtils.GetInstance<System.Decimal>(min);
-		System.Decimal maxConverted = InteropUtils.GetInstance<System.Decimal>(max);
-	
-	    try {
-			System.Decimal __returnValue = System.Math.Clamp(valueConverted, minConverted, maxConverted);
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Clamp2")]
-	internal static double /* System.Double */ System_Math_Clamp2(double /* System.Double */ value, double /* System.Double */ min, double /* System.Double */ max, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.Clamp(value, min, max);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Clamp3")]
-	internal static short /* System.Int16 */ System_Math_Clamp3(short /* System.Int16 */ value, short /* System.Int16 */ min, short /* System.Int16 */ max, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Int16 __returnValue = System.Math.Clamp(value, min, max);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Clamp4")]
-	internal static int /* System.Int32 */ System_Math_Clamp4(int /* System.Int32 */ value, int /* System.Int32 */ min, int /* System.Int32 */ max, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Int32 __returnValue = System.Math.Clamp(value, min, max);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Clamp5")]
-	internal static long /* System.Int64 */ System_Math_Clamp5(long /* System.Int64 */ value, long /* System.Int64 */ min, long /* System.Int64 */ max, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Int64 __returnValue = System.Math.Clamp(value, min, max);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Clamp6")]
-	internal static nint /* System.IntPtr */ System_Math_Clamp6(nint /* System.IntPtr */ value, nint /* System.IntPtr */ min, nint /* System.IntPtr */ max, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.IntPtr __returnValue = System.Math.Clamp(value, min, max);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return nint.Zero;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Clamp7")]
-	internal static sbyte /* System.SByte */ System_Math_Clamp7(sbyte /* System.SByte */ value, sbyte /* System.SByte */ min, sbyte /* System.SByte */ max, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.SByte __returnValue = System.Math.Clamp(value, min, max);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Clamp8")]
-	internal static float /* System.Single */ System_Math_Clamp8(float /* System.Single */ value, float /* System.Single */ min, float /* System.Single */ max, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Single __returnValue = System.Math.Clamp(value, min, max);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Clamp9")]
-	internal static ushort /* System.UInt16 */ System_Math_Clamp9(ushort /* System.UInt16 */ value, ushort /* System.UInt16 */ min, ushort /* System.UInt16 */ max, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.UInt16 __returnValue = System.Math.Clamp(value, min, max);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return 0;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Clamp10")]
-	internal static uint /* System.UInt32 */ System_Math_Clamp10(uint /* System.UInt32 */ value, uint /* System.UInt32 */ min, uint /* System.UInt32 */ max, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.UInt32 __returnValue = System.Math.Clamp(value, min, max);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return 0;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Clamp11")]
-	internal static ulong /* System.UInt64 */ System_Math_Clamp11(ulong /* System.UInt64 */ value, ulong /* System.UInt64 */ min, ulong /* System.UInt64 */ max, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.UInt64 __returnValue = System.Math.Clamp(value, min, max);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return 0;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Clamp12")]
-	internal static nuint /* System.UIntPtr */ System_Math_Clamp12(nuint /* System.UIntPtr */ value, nuint /* System.UIntPtr */ min, nuint /* System.UIntPtr */ max, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.UIntPtr __returnValue = System.Math.Clamp(value, min, max);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return nuint.Zero;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Floor1")]
-	internal static void* /* System.Decimal */ System_Math_Floor1(void* /* System.Decimal */ d, void** /* System.Exception */ __outException)
-	{
-		System.Decimal dConverted = InteropUtils.GetInstance<System.Decimal>(d);
-	
-	    try {
-			System.Decimal __returnValue = System.Math.Floor(dConverted);
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_IEEERemainder")]
-	internal static double /* System.Double */ System_Math_IEEERemainder(double /* System.Double */ x, double /* System.Double */ y, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.IEEERemainder(x, y);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_ILogB")]
-	internal static int /* System.Int32 */ System_Math_ILogB(double /* System.Double */ x, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Int32 __returnValue = System.Math.ILogB(x);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Log11")]
-	internal static double /* System.Double */ System_Math_Log11(double /* System.Double */ a, double /* System.Double */ newBase, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.Log(a, newBase);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Max")]
-	internal static byte /* System.Byte */ System_Math_Max(byte /* System.Byte */ val1, byte /* System.Byte */ val2, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Byte __returnValue = System.Math.Max(val1, val2);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return 0;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Max1")]
-	internal static void* /* System.Decimal */ System_Math_Max1(void* /* System.Decimal */ val1, void* /* System.Decimal */ val2, void** /* System.Exception */ __outException)
-	{
-		System.Decimal val1Converted = InteropUtils.GetInstance<System.Decimal>(val1);
-		System.Decimal val2Converted = InteropUtils.GetInstance<System.Decimal>(val2);
-	
-	    try {
-			System.Decimal __returnValue = System.Math.Max(val1Converted, val2Converted);
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Max2")]
-	internal static double /* System.Double */ System_Math_Max2(double /* System.Double */ val1, double /* System.Double */ val2, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.Max(val1, val2);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Max3")]
-	internal static short /* System.Int16 */ System_Math_Max3(short /* System.Int16 */ val1, short /* System.Int16 */ val2, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Int16 __returnValue = System.Math.Max(val1, val2);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Max4")]
-	internal static int /* System.Int32 */ System_Math_Max4(int /* System.Int32 */ val1, int /* System.Int32 */ val2, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Int32 __returnValue = System.Math.Max(val1, val2);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Max5")]
-	internal static long /* System.Int64 */ System_Math_Max5(long /* System.Int64 */ val1, long /* System.Int64 */ val2, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Int64 __returnValue = System.Math.Max(val1, val2);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Max6")]
-	internal static nint /* System.IntPtr */ System_Math_Max6(nint /* System.IntPtr */ val1, nint /* System.IntPtr */ val2, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.IntPtr __returnValue = System.Math.Max(val1, val2);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return nint.Zero;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Max7")]
-	internal static sbyte /* System.SByte */ System_Math_Max7(sbyte /* System.SByte */ val1, sbyte /* System.SByte */ val2, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.SByte __returnValue = System.Math.Max(val1, val2);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Max8")]
-	internal static float /* System.Single */ System_Math_Max8(float /* System.Single */ val1, float /* System.Single */ val2, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Single __returnValue = System.Math.Max(val1, val2);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Max9")]
-	internal static ushort /* System.UInt16 */ System_Math_Max9(ushort /* System.UInt16 */ val1, ushort /* System.UInt16 */ val2, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.UInt16 __returnValue = System.Math.Max(val1, val2);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return 0;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Max10")]
-	internal static uint /* System.UInt32 */ System_Math_Max10(uint /* System.UInt32 */ val1, uint /* System.UInt32 */ val2, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.UInt32 __returnValue = System.Math.Max(val1, val2);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return 0;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Max11")]
-	internal static ulong /* System.UInt64 */ System_Math_Max11(ulong /* System.UInt64 */ val1, ulong /* System.UInt64 */ val2, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.UInt64 __returnValue = System.Math.Max(val1, val2);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return 0;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Max12")]
-	internal static nuint /* System.UIntPtr */ System_Math_Max12(nuint /* System.UIntPtr */ val1, nuint /* System.UIntPtr */ val2, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.UIntPtr __returnValue = System.Math.Max(val1, val2);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return nuint.Zero;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_MaxMagnitude")]
-	internal static double /* System.Double */ System_Math_MaxMagnitude(double /* System.Double */ x, double /* System.Double */ y, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.MaxMagnitude(x, y);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Min")]
-	internal static byte /* System.Byte */ System_Math_Min(byte /* System.Byte */ val1, byte /* System.Byte */ val2, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Byte __returnValue = System.Math.Min(val1, val2);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return 0;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Min1")]
-	internal static void* /* System.Decimal */ System_Math_Min1(void* /* System.Decimal */ val1, void* /* System.Decimal */ val2, void** /* System.Exception */ __outException)
-	{
-		System.Decimal val1Converted = InteropUtils.GetInstance<System.Decimal>(val1);
-		System.Decimal val2Converted = InteropUtils.GetInstance<System.Decimal>(val2);
-	
-	    try {
-			System.Decimal __returnValue = System.Math.Min(val1Converted, val2Converted);
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Min2")]
-	internal static double /* System.Double */ System_Math_Min2(double /* System.Double */ val1, double /* System.Double */ val2, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.Min(val1, val2);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Min3")]
-	internal static short /* System.Int16 */ System_Math_Min3(short /* System.Int16 */ val1, short /* System.Int16 */ val2, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Int16 __returnValue = System.Math.Min(val1, val2);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Min4")]
-	internal static int /* System.Int32 */ System_Math_Min4(int /* System.Int32 */ val1, int /* System.Int32 */ val2, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Int32 __returnValue = System.Math.Min(val1, val2);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Min5")]
-	internal static long /* System.Int64 */ System_Math_Min5(long /* System.Int64 */ val1, long /* System.Int64 */ val2, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Int64 __returnValue = System.Math.Min(val1, val2);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Min6")]
-	internal static nint /* System.IntPtr */ System_Math_Min6(nint /* System.IntPtr */ val1, nint /* System.IntPtr */ val2, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.IntPtr __returnValue = System.Math.Min(val1, val2);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return nint.Zero;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Min7")]
-	internal static sbyte /* System.SByte */ System_Math_Min7(sbyte /* System.SByte */ val1, sbyte /* System.SByte */ val2, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.SByte __returnValue = System.Math.Min(val1, val2);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Min8")]
-	internal static float /* System.Single */ System_Math_Min8(float /* System.Single */ val1, float /* System.Single */ val2, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Single __returnValue = System.Math.Min(val1, val2);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Min9")]
-	internal static ushort /* System.UInt16 */ System_Math_Min9(ushort /* System.UInt16 */ val1, ushort /* System.UInt16 */ val2, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.UInt16 __returnValue = System.Math.Min(val1, val2);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return 0;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Min10")]
-	internal static uint /* System.UInt32 */ System_Math_Min10(uint /* System.UInt32 */ val1, uint /* System.UInt32 */ val2, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.UInt32 __returnValue = System.Math.Min(val1, val2);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return 0;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Min11")]
-	internal static ulong /* System.UInt64 */ System_Math_Min11(ulong /* System.UInt64 */ val1, ulong /* System.UInt64 */ val2, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.UInt64 __returnValue = System.Math.Min(val1, val2);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return 0;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Min12")]
-	internal static nuint /* System.UIntPtr */ System_Math_Min12(nuint /* System.UIntPtr */ val1, nuint /* System.UIntPtr */ val2, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.UIntPtr __returnValue = System.Math.Min(val1, val2);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return nuint.Zero;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_MinMagnitude")]
-	internal static double /* System.Double */ System_Math_MinMagnitude(double /* System.Double */ x, double /* System.Double */ y, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.MinMagnitude(x, y);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_ReciprocalEstimate")]
-	internal static double /* System.Double */ System_Math_ReciprocalEstimate(double /* System.Double */ d, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.ReciprocalEstimate(d);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_ReciprocalSqrtEstimate")]
-	internal static double /* System.Double */ System_Math_ReciprocalSqrtEstimate(double /* System.Double */ d, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.ReciprocalSqrtEstimate(d);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Round")]
-	internal static void* /* System.Decimal */ System_Math_Round(void* /* System.Decimal */ d, void** /* System.Exception */ __outException)
-	{
-		System.Decimal dConverted = InteropUtils.GetInstance<System.Decimal>(d);
-	
-	    try {
-			System.Decimal __returnValue = System.Math.Round(dConverted);
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Round1")]
-	internal static void* /* System.Decimal */ System_Math_Round1(void* /* System.Decimal */ d, int /* System.Int32 */ decimals, void** /* System.Exception */ __outException)
-	{
-		System.Decimal dConverted = InteropUtils.GetInstance<System.Decimal>(d);
-	
-	    try {
-			System.Decimal __returnValue = System.Math.Round(dConverted, decimals);
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Round2")]
-	internal static void* /* System.Decimal */ System_Math_Round2(void* /* System.Decimal */ d, System.MidpointRounding /* System.MidpointRounding */ mode, void** /* System.Exception */ __outException)
-	{
-		System.Decimal dConverted = InteropUtils.GetInstance<System.Decimal>(d);
-	
-	    try {
-			System.Decimal __returnValue = System.Math.Round(dConverted, mode);
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Round3")]
-	internal static void* /* System.Decimal */ System_Math_Round3(void* /* System.Decimal */ d, int /* System.Int32 */ decimals, System.MidpointRounding /* System.MidpointRounding */ mode, void** /* System.Exception */ __outException)
-	{
-		System.Decimal dConverted = InteropUtils.GetInstance<System.Decimal>(d);
-	
-	    try {
-			System.Decimal __returnValue = System.Math.Round(dConverted, decimals, mode);
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Round4")]
-	internal static double /* System.Double */ System_Math_Round4(double /* System.Double */ a, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.Round(a);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Round5")]
-	internal static double /* System.Double */ System_Math_Round5(double /* System.Double */ value, int /* System.Int32 */ digits, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.Round(value, digits);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Round6")]
-	internal static double /* System.Double */ System_Math_Round6(double /* System.Double */ value, System.MidpointRounding /* System.MidpointRounding */ mode, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.Round(value, mode);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Round7")]
-	internal static double /* System.Double */ System_Math_Round7(double /* System.Double */ value, int /* System.Int32 */ digits, System.MidpointRounding /* System.MidpointRounding */ mode, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.Round(value, digits, mode);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Sign")]
-	internal static int /* System.Int32 */ System_Math_Sign(void* /* System.Decimal */ value, void** /* System.Exception */ __outException)
-	{
-		System.Decimal valueConverted = InteropUtils.GetInstance<System.Decimal>(value);
-	
-	    try {
-			System.Int32 __returnValue = System.Math.Sign(valueConverted);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Sign1")]
-	internal static int /* System.Int32 */ System_Math_Sign1(double /* System.Double */ value, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Int32 __returnValue = System.Math.Sign(value);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Sign2")]
-	internal static int /* System.Int32 */ System_Math_Sign2(short /* System.Int16 */ value, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Int32 __returnValue = System.Math.Sign(value);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Sign3")]
-	internal static int /* System.Int32 */ System_Math_Sign3(int /* System.Int32 */ value, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Int32 __returnValue = System.Math.Sign(value);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Sign4")]
-	internal static int /* System.Int32 */ System_Math_Sign4(long /* System.Int64 */ value, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Int32 __returnValue = System.Math.Sign(value);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Sign5")]
-	internal static int /* System.Int32 */ System_Math_Sign5(nint /* System.IntPtr */ value, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Int32 __returnValue = System.Math.Sign(value);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Sign6")]
-	internal static int /* System.Int32 */ System_Math_Sign6(sbyte /* System.SByte */ value, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Int32 __returnValue = System.Math.Sign(value);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Sign7")]
-	internal static int /* System.Int32 */ System_Math_Sign7(float /* System.Single */ value, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Int32 __returnValue = System.Math.Sign(value);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Truncate")]
-	internal static void* /* System.Decimal */ System_Math_Truncate(void* /* System.Decimal */ d, void** /* System.Exception */ __outException)
-	{
-		System.Decimal dConverted = InteropUtils.GetInstance<System.Decimal>(d);
-	
-	    try {
-			System.Decimal __returnValue = System.Math.Truncate(dConverted);
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Truncate1")]
-	internal static double /* System.Double */ System_Math_Truncate1(double /* System.Double */ d, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.Truncate(d);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_ScaleB")]
-	internal static double /* System.Double */ System_Math_ScaleB(double /* System.Double */ x, int /* System.Int32 */ n, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Double __returnValue = System.Math.ScaleB(x, n);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_E_Get")]
-	internal static double /* System.Double */ System_Math_E_Get()
-	{
-	
-		System.Double __returnValue = System.Math.E;
-		return __returnValue;
-	}
-	
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_PI_Get")]
-	internal static double /* System.Double */ System_Math_PI_Get()
-	{
-	
-		System.Double __returnValue = System.Math.PI;
-		return __returnValue;
-	}
-	
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Tau_Get")]
-	internal static double /* System.Double */ System_Math_Tau_Get()
-	{
-	
-		System.Double __returnValue = System.Math.Tau;
-		return __returnValue;
-	}
-	
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_TypeOf")]
-	internal static void* /* System.Type */ System_Math_TypeOf()
-	{
-	
-		System.Type __returnValue = typeof(System.Math);
-		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-		return _returnValueNative;
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Math_Destroy")]
-	internal static void /* System.Void */ System_Math_Destroy(void* /* System.Math */ __self)
-	{
-	
-		InteropUtils.FreeIfAllocated(__self);
-	}
-	
-
-}
-
-
-internal unsafe class System_GC
-{
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_GetGCMemoryInfo")]
-	internal static void* /* System.GCMemoryInfo */ System_GC_GetGCMemoryInfo(void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.GCMemoryInfo __returnValue = System.GC.GetGCMemoryInfo();
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_GetGCMemoryInfo1")]
-	internal static void* /* System.GCMemoryInfo */ System_GC_GetGCMemoryInfo1(System.GCKind /* System.GCKind */ kind, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.GCMemoryInfo __returnValue = System.GC.GetGCMemoryInfo(kind);
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_AddMemoryPressure")]
-	internal static void /* System.Void */ System_GC_AddMemoryPressure(long /* System.Int64 */ bytesAllocated, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.GC.AddMemoryPressure(bytesAllocated);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_RemoveMemoryPressure")]
-	internal static void /* System.Void */ System_GC_RemoveMemoryPressure(long /* System.Int64 */ bytesAllocated, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.GC.RemoveMemoryPressure(bytesAllocated);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_GetGeneration")]
-	internal static int /* System.Int32 */ System_GC_GetGeneration(void* /* System.Object */ obj, void** /* System.Exception */ __outException)
-	{
-		System.Object objConverted = InteropUtils.GetInstance<System.Object>(obj);
-	
-	    try {
-			System.Int32 __returnValue = System.GC.GetGeneration(objConverted);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_Collect")]
-	internal static void /* System.Void */ System_GC_Collect(int /* System.Int32 */ generation, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.GC.Collect(generation);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_Collect1")]
-	internal static void /* System.Void */ System_GC_Collect1(void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.GC.Collect();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_Collect2")]
-	internal static void /* System.Void */ System_GC_Collect2(int /* System.Int32 */ generation, System.GCCollectionMode /* System.GCCollectionMode */ mode, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.GC.Collect(generation, mode);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_Collect3")]
-	internal static void /* System.Void */ System_GC_Collect3(int /* System.Int32 */ generation, System.GCCollectionMode /* System.GCCollectionMode */ mode, byte /* System.Boolean */ blocking, void** /* System.Exception */ __outException)
-	{
-		System.Boolean blockingConverted = blocking.ToBool();
-	
-	    try {
-			System.GC.Collect(generation, mode, blockingConverted);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_Collect4")]
-	internal static void /* System.Void */ System_GC_Collect4(int /* System.Int32 */ generation, System.GCCollectionMode /* System.GCCollectionMode */ mode, byte /* System.Boolean */ blocking, byte /* System.Boolean */ compacting, void** /* System.Exception */ __outException)
-	{
-		System.Boolean blockingConverted = blocking.ToBool();
-		System.Boolean compactingConverted = compacting.ToBool();
-	
-	    try {
-			System.GC.Collect(generation, mode, blockingConverted, compactingConverted);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_CollectionCount")]
-	internal static int /* System.Int32 */ System_GC_CollectionCount(int /* System.Int32 */ generation, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Int32 __returnValue = System.GC.CollectionCount(generation);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_KeepAlive")]
-	internal static void /* System.Void */ System_GC_KeepAlive(void* /* System.Object */ obj, void** /* System.Exception */ __outException)
-	{
-		System.Object objConverted = InteropUtils.GetInstance<System.Object>(obj);
-	
-	    try {
-			System.GC.KeepAlive(objConverted);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_GetGeneration1")]
-	internal static int /* System.Int32 */ System_GC_GetGeneration1(void* /* System.WeakReference */ wo, void** /* System.Exception */ __outException)
-	{
-		System.WeakReference woConverted = InteropUtils.GetInstance<System.WeakReference>(wo);
-	
-	    try {
-			System.Int32 __returnValue = System.GC.GetGeneration(woConverted);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_WaitForPendingFinalizers")]
-	internal static void /* System.Void */ System_GC_WaitForPendingFinalizers(void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.GC.WaitForPendingFinalizers();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_SuppressFinalize")]
-	internal static void /* System.Void */ System_GC_SuppressFinalize(void* /* System.Object */ obj, void** /* System.Exception */ __outException)
-	{
-		System.Object objConverted = InteropUtils.GetInstance<System.Object>(obj);
-	
-	    try {
-			System.GC.SuppressFinalize(objConverted);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_ReRegisterForFinalize")]
-	internal static void /* System.Void */ System_GC_ReRegisterForFinalize(void* /* System.Object */ obj, void** /* System.Exception */ __outException)
-	{
-		System.Object objConverted = InteropUtils.GetInstance<System.Object>(obj);
-	
-	    try {
-			System.GC.ReRegisterForFinalize(objConverted);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_GetTotalMemory")]
-	internal static long /* System.Int64 */ System_GC_GetTotalMemory(byte /* System.Boolean */ forceFullCollection, void** /* System.Exception */ __outException)
-	{
-		System.Boolean forceFullCollectionConverted = forceFullCollection.ToBool();
-	
-	    try {
-			System.Int64 __returnValue = System.GC.GetTotalMemory(forceFullCollectionConverted);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_GetAllocatedBytesForCurrentThread")]
-	internal static long /* System.Int64 */ System_GC_GetAllocatedBytesForCurrentThread(void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Int64 __returnValue = System.GC.GetAllocatedBytesForCurrentThread();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_GetTotalAllocatedBytes")]
-	internal static long /* System.Int64 */ System_GC_GetTotalAllocatedBytes(byte /* System.Boolean */ precise, void** /* System.Exception */ __outException)
-	{
-		System.Boolean preciseConverted = precise.ToBool();
-	
-	    try {
-			System.Int64 __returnValue = System.GC.GetTotalAllocatedBytes(preciseConverted);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_RegisterForFullGCNotification")]
-	internal static void /* System.Void */ System_GC_RegisterForFullGCNotification(int /* System.Int32 */ maxGenerationThreshold, int /* System.Int32 */ largeObjectHeapThreshold, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.GC.RegisterForFullGCNotification(maxGenerationThreshold, largeObjectHeapThreshold);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_CancelFullGCNotification")]
-	internal static void /* System.Void */ System_GC_CancelFullGCNotification(void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.GC.CancelFullGCNotification();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_WaitForFullGCApproach")]
-	internal static System.GCNotificationStatus /* System.GCNotificationStatus */ System_GC_WaitForFullGCApproach(void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.GCNotificationStatus __returnValue = System.GC.WaitForFullGCApproach();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return default(System.GCNotificationStatus);
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_WaitForFullGCApproach1")]
-	internal static System.GCNotificationStatus /* System.GCNotificationStatus */ System_GC_WaitForFullGCApproach1(int /* System.Int32 */ millisecondsTimeout, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.GCNotificationStatus __returnValue = System.GC.WaitForFullGCApproach(millisecondsTimeout);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return default(System.GCNotificationStatus);
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_WaitForFullGCComplete")]
-	internal static System.GCNotificationStatus /* System.GCNotificationStatus */ System_GC_WaitForFullGCComplete(void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.GCNotificationStatus __returnValue = System.GC.WaitForFullGCComplete();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return default(System.GCNotificationStatus);
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_WaitForFullGCComplete1")]
-	internal static System.GCNotificationStatus /* System.GCNotificationStatus */ System_GC_WaitForFullGCComplete1(int /* System.Int32 */ millisecondsTimeout, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.GCNotificationStatus __returnValue = System.GC.WaitForFullGCComplete(millisecondsTimeout);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return default(System.GCNotificationStatus);
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_TryStartNoGCRegion")]
-	internal static byte /* System.Boolean */ System_GC_TryStartNoGCRegion(long /* System.Int64 */ totalSize, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Boolean __returnValue = System.GC.TryStartNoGCRegion(totalSize);
-			byte _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return 0;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_TryStartNoGCRegion1")]
-	internal static byte /* System.Boolean */ System_GC_TryStartNoGCRegion1(long /* System.Int64 */ totalSize, long /* System.Int64 */ lohSize, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Boolean __returnValue = System.GC.TryStartNoGCRegion(totalSize, lohSize);
-			byte _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return 0;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_TryStartNoGCRegion2")]
-	internal static byte /* System.Boolean */ System_GC_TryStartNoGCRegion2(long /* System.Int64 */ totalSize, byte /* System.Boolean */ disallowFullBlockingGC, void** /* System.Exception */ __outException)
-	{
-		System.Boolean disallowFullBlockingGCConverted = disallowFullBlockingGC.ToBool();
-	
-	    try {
-			System.Boolean __returnValue = System.GC.TryStartNoGCRegion(totalSize, disallowFullBlockingGCConverted);
-			byte _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return 0;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_TryStartNoGCRegion3")]
-	internal static byte /* System.Boolean */ System_GC_TryStartNoGCRegion3(long /* System.Int64 */ totalSize, long /* System.Int64 */ lohSize, byte /* System.Boolean */ disallowFullBlockingGC, void** /* System.Exception */ __outException)
-	{
-		System.Boolean disallowFullBlockingGCConverted = disallowFullBlockingGC.ToBool();
-	
-	    try {
-			System.Boolean __returnValue = System.GC.TryStartNoGCRegion(totalSize, lohSize, disallowFullBlockingGCConverted);
-			byte _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return 0;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_EndNoGCRegion")]
-	internal static void /* System.Void */ System_GC_EndNoGCRegion(void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.GC.EndNoGCRegion();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_GetTotalPauseDuration")]
-	internal static void* /* System.TimeSpan */ System_GC_GetTotalPauseDuration(void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.TimeSpan __returnValue = System.GC.GetTotalPauseDuration();
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_WaitForFullGCApproach2")]
-	internal static System.GCNotificationStatus /* System.GCNotificationStatus */ System_GC_WaitForFullGCApproach2(void* /* System.TimeSpan */ timeout, void** /* System.Exception */ __outException)
-	{
-		System.TimeSpan timeoutConverted = InteropUtils.GetInstance<System.TimeSpan>(timeout);
-	
-	    try {
-			System.GCNotificationStatus __returnValue = System.GC.WaitForFullGCApproach(timeoutConverted);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return default(System.GCNotificationStatus);
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_WaitForFullGCComplete2")]
-	internal static System.GCNotificationStatus /* System.GCNotificationStatus */ System_GC_WaitForFullGCComplete2(void* /* System.TimeSpan */ timeout, void** /* System.Exception */ __outException)
-	{
-		System.TimeSpan timeoutConverted = InteropUtils.GetInstance<System.TimeSpan>(timeout);
-	
-	    try {
-			System.GCNotificationStatus __returnValue = System.GC.WaitForFullGCComplete(timeoutConverted);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return default(System.GCNotificationStatus);
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_MaxGeneration_Get")]
-	internal static int /* System.Int32 */ System_GC_MaxGeneration_Get(void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Int32 __returnValue = System.GC.MaxGeneration;
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_TypeOf")]
-	internal static void* /* System.Type */ System_GC_TypeOf()
-	{
-	
-		System.Type __returnValue = typeof(System.GC);
-		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-		return _returnValueNative;
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GC_Destroy")]
-	internal static void /* System.Void */ System_GC_Destroy(void* /* System.GC */ __self)
-	{
-	
-		InteropUtils.FreeIfAllocated(__self);
-	}
-	
-
-}
-
-
-internal unsafe class System_GCMemoryInfo
-{
-	[UnmanagedCallersOnly(EntryPoint = "System_GCMemoryInfo_HighMemoryLoadThresholdBytes_Get")]
-	internal static long /* System.Int64 */ System_GCMemoryInfo_HighMemoryLoadThresholdBytes_Get(void* /* System.GCMemoryInfo */ __self, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.GCMemoryInfo __selfConverted = InteropUtils.GetInstance<System.GCMemoryInfo>(__self);
-	
-	
-	    try {
-			System.Int64 __returnValue = __selfConverted.HighMemoryLoadThresholdBytes;
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GCMemoryInfo_MemoryLoadBytes_Get")]
-	internal static long /* System.Int64 */ System_GCMemoryInfo_MemoryLoadBytes_Get(void* /* System.GCMemoryInfo */ __self, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.GCMemoryInfo __selfConverted = InteropUtils.GetInstance<System.GCMemoryInfo>(__self);
-	
-	
-	    try {
-			System.Int64 __returnValue = __selfConverted.MemoryLoadBytes;
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GCMemoryInfo_TotalAvailableMemoryBytes_Get")]
-	internal static long /* System.Int64 */ System_GCMemoryInfo_TotalAvailableMemoryBytes_Get(void* /* System.GCMemoryInfo */ __self, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.GCMemoryInfo __selfConverted = InteropUtils.GetInstance<System.GCMemoryInfo>(__self);
-	
-	
-	    try {
-			System.Int64 __returnValue = __selfConverted.TotalAvailableMemoryBytes;
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GCMemoryInfo_HeapSizeBytes_Get")]
-	internal static long /* System.Int64 */ System_GCMemoryInfo_HeapSizeBytes_Get(void* /* System.GCMemoryInfo */ __self, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.GCMemoryInfo __selfConverted = InteropUtils.GetInstance<System.GCMemoryInfo>(__self);
-	
-	
-	    try {
-			System.Int64 __returnValue = __selfConverted.HeapSizeBytes;
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GCMemoryInfo_FragmentedBytes_Get")]
-	internal static long /* System.Int64 */ System_GCMemoryInfo_FragmentedBytes_Get(void* /* System.GCMemoryInfo */ __self, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.GCMemoryInfo __selfConverted = InteropUtils.GetInstance<System.GCMemoryInfo>(__self);
-	
-	
-	    try {
-			System.Int64 __returnValue = __selfConverted.FragmentedBytes;
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GCMemoryInfo_Index_Get")]
-	internal static long /* System.Int64 */ System_GCMemoryInfo_Index_Get(void* /* System.GCMemoryInfo */ __self, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.GCMemoryInfo __selfConverted = InteropUtils.GetInstance<System.GCMemoryInfo>(__self);
-	
-	
-	    try {
-			System.Int64 __returnValue = __selfConverted.Index;
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GCMemoryInfo_Generation_Get")]
-	internal static int /* System.Int32 */ System_GCMemoryInfo_Generation_Get(void* /* System.GCMemoryInfo */ __self, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.GCMemoryInfo __selfConverted = InteropUtils.GetInstance<System.GCMemoryInfo>(__self);
-	
-	
-	    try {
-			System.Int32 __returnValue = __selfConverted.Generation;
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GCMemoryInfo_Compacted_Get")]
-	internal static byte /* System.Boolean */ System_GCMemoryInfo_Compacted_Get(void* /* System.GCMemoryInfo */ __self, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.GCMemoryInfo __selfConverted = InteropUtils.GetInstance<System.GCMemoryInfo>(__self);
-	
-	
-	    try {
-			System.Boolean __returnValue = __selfConverted.Compacted;
-			byte _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return 0;
-		}
-	}
-	
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GCMemoryInfo_Concurrent_Get")]
-	internal static byte /* System.Boolean */ System_GCMemoryInfo_Concurrent_Get(void* /* System.GCMemoryInfo */ __self, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.GCMemoryInfo __selfConverted = InteropUtils.GetInstance<System.GCMemoryInfo>(__self);
-	
-	
-	    try {
-			System.Boolean __returnValue = __selfConverted.Concurrent;
-			byte _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return 0;
-		}
-	}
-	
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GCMemoryInfo_TotalCommittedBytes_Get")]
-	internal static long /* System.Int64 */ System_GCMemoryInfo_TotalCommittedBytes_Get(void* /* System.GCMemoryInfo */ __self, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.GCMemoryInfo __selfConverted = InteropUtils.GetInstance<System.GCMemoryInfo>(__self);
-	
-	
-	    try {
-			System.Int64 __returnValue = __selfConverted.TotalCommittedBytes;
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GCMemoryInfo_PromotedBytes_Get")]
-	internal static long /* System.Int64 */ System_GCMemoryInfo_PromotedBytes_Get(void* /* System.GCMemoryInfo */ __self, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.GCMemoryInfo __selfConverted = InteropUtils.GetInstance<System.GCMemoryInfo>(__self);
-	
-	
-	    try {
-			System.Int64 __returnValue = __selfConverted.PromotedBytes;
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GCMemoryInfo_PinnedObjectsCount_Get")]
-	internal static long /* System.Int64 */ System_GCMemoryInfo_PinnedObjectsCount_Get(void* /* System.GCMemoryInfo */ __self, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.GCMemoryInfo __selfConverted = InteropUtils.GetInstance<System.GCMemoryInfo>(__self);
-	
-	
-	    try {
-			System.Int64 __returnValue = __selfConverted.PinnedObjectsCount;
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GCMemoryInfo_FinalizationPendingCount_Get")]
-	internal static long /* System.Int64 */ System_GCMemoryInfo_FinalizationPendingCount_Get(void* /* System.GCMemoryInfo */ __self, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.GCMemoryInfo __selfConverted = InteropUtils.GetInstance<System.GCMemoryInfo>(__self);
-	
-	
-	    try {
-			System.Int64 __returnValue = __selfConverted.FinalizationPendingCount;
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GCMemoryInfo_PauseTimePercentage_Get")]
-	internal static double /* System.Double */ System_GCMemoryInfo_PauseTimePercentage_Get(void* /* System.GCMemoryInfo */ __self, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.GCMemoryInfo __selfConverted = InteropUtils.GetInstance<System.GCMemoryInfo>(__self);
-	
-	
-	    try {
-			System.Double __returnValue = __selfConverted.PauseTimePercentage;
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GCMemoryInfo_TypeOf")]
-	internal static void* /* System.Type */ System_GCMemoryInfo_TypeOf()
-	{
-	
-		System.Type __returnValue = typeof(System.GCMemoryInfo);
-		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-		return _returnValueNative;
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_GCMemoryInfo_Destroy")]
-	internal static void /* System.Void */ System_GCMemoryInfo_Destroy(void* /* System.GCMemoryInfo */ __self)
-	{
-	
-		InteropUtils.FreeIfAllocated(__self);
-	}
-	
-
-}
-
-
-internal unsafe class System_GCKind
-{
-	[UnmanagedCallersOnly(EntryPoint = "System_GCKind_TypeOf")]
-	internal static void* /* System.Type */ System_GCKind_TypeOf()
-	{
-	
-		System.Type __returnValue = typeof(System.GCKind);
-		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-		return _returnValueNative;
-	}
-	
-
-}
-
-
-internal unsafe class System_GCCollectionMode
-{
-	[UnmanagedCallersOnly(EntryPoint = "System_GCCollectionMode_TypeOf")]
-	internal static void* /* System.Type */ System_GCCollectionMode_TypeOf()
-	{
-	
-		System.Type __returnValue = typeof(System.GCCollectionMode);
-		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-		return _returnValueNative;
-	}
-	
-
-}
-
-
-internal unsafe class System_WeakReference
-{
-	[UnmanagedCallersOnly(EntryPoint = "System_WeakReference_GetObjectData")]
-	internal static void /* System.Void */ System_WeakReference_GetObjectData(void* /* System.WeakReference */ __self, void* /* System.Runtime.Serialization.SerializationInfo */ info, void* /* System.Runtime.Serialization.StreamingContext */ context, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.WeakReference __selfConverted = InteropUtils.GetInstance<System.WeakReference>(__self);
-	
-		System.Runtime.Serialization.SerializationInfo infoConverted = InteropUtils.GetInstance<System.Runtime.Serialization.SerializationInfo>(info);
-		System.Runtime.Serialization.StreamingContext contextConverted = InteropUtils.GetInstance<System.Runtime.Serialization.StreamingContext>(context);
-	
-	    try {
-			__selfConverted.GetObjectData(infoConverted, contextConverted);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_WeakReference_Create")]
-	internal static void* /* System.WeakReference */ System_WeakReference_Create(void* /* System.Object */ target, void** /* System.Exception */ __outException)
-	{
-		System.Object targetConverted = InteropUtils.GetInstance<System.Object>(target);
-	
-	    try {
-			System.WeakReference __returnValue = new System.WeakReference(targetConverted);
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_WeakReference_Create1")]
-	internal static void* /* System.WeakReference */ System_WeakReference_Create1(void* /* System.Object */ target, byte /* System.Boolean */ trackResurrection, void** /* System.Exception */ __outException)
-	{
-		System.Object targetConverted = InteropUtils.GetInstance<System.Object>(target);
-		System.Boolean trackResurrectionConverted = trackResurrection.ToBool();
-	
-	    try {
-			System.WeakReference __returnValue = new System.WeakReference(targetConverted, trackResurrectionConverted);
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_WeakReference_TrackResurrection_Get")]
-	internal static byte /* System.Boolean */ System_WeakReference_TrackResurrection_Get(void* /* System.WeakReference */ __self, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.WeakReference __selfConverted = InteropUtils.GetInstance<System.WeakReference>(__self);
-	
-	
-	    try {
-			System.Boolean __returnValue = __selfConverted.TrackResurrection;
-			byte _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return 0;
-		}
-	}
-	
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_WeakReference_IsAlive_Get")]
-	internal static byte /* System.Boolean */ System_WeakReference_IsAlive_Get(void* /* System.WeakReference */ __self, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.WeakReference __selfConverted = InteropUtils.GetInstance<System.WeakReference>(__self);
-	
-	
-	    try {
-			System.Boolean __returnValue = __selfConverted.IsAlive;
-			byte _returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return 0;
-		}
-	}
-	
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_WeakReference_Target_Get")]
-	internal static void* /* System.Object */ System_WeakReference_Target_Get(void* /* System.WeakReference */ __self, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.WeakReference __selfConverted = InteropUtils.GetInstance<System.WeakReference>(__self);
-	
-	
-	    try {
-			System.Object __returnValue = __selfConverted.Target;
-			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return _returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-	[UnmanagedCallersOnly(EntryPoint = "System_WeakReference_Target_Set")]
-	internal static void /* System.Void */ System_WeakReference_Target_Set(void* /* System.WeakReference */ __self, void* /* System.Object */ __value, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.WeakReference __selfConverted = InteropUtils.GetInstance<System.WeakReference>(__self);
-	
-	
-	    try {
-			__selfConverted.Target = InteropUtils.GetInstance<System.Object>(__value);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-		}
-	}
-	
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_WeakReference_TypeOf")]
-	internal static void* /* System.Type */ System_WeakReference_TypeOf()
-	{
-	
-		System.Type __returnValue = typeof(System.WeakReference);
-		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-		return _returnValueNative;
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "System_WeakReference_Destroy")]
-	internal static void /* System.Void */ System_WeakReference_Destroy(void* /* System.WeakReference */ __self)
-	{
-	
-		InteropUtils.FreeIfAllocated(__self);
-	}
-	
-
-}
-
-
-internal unsafe class System_GCNotificationStatus
-{
-	[UnmanagedCallersOnly(EntryPoint = "System_GCNotificationStatus_TypeOf")]
-	internal static void* /* System.Type */ System_GCNotificationStatus_TypeOf()
-	{
-	
-		System.Type __returnValue = typeof(System.GCNotificationStatus);
-		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-		return _returnValueNative;
-	}
-	
-
-}
-
-
 
 
 internal unsafe class System_Threading_Thread
@@ -90004,36 +90034,6 @@ internal unsafe class System_Threading_TimerCallback
 	{
 	
 		InteropUtils.FreeIfAllocated(__self);
-	}
-	
-
-}
-
-
-internal unsafe class System_Reflection_PortableExecutableKinds
-{
-	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_PortableExecutableKinds_TypeOf")]
-	internal static void* /* System.Type */ System_Reflection_PortableExecutableKinds_TypeOf()
-	{
-	
-		System.Type __returnValue = typeof(System.Reflection.PortableExecutableKinds);
-		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-		return _returnValueNative;
-	}
-	
-
-}
-
-
-internal unsafe class System_Reflection_ImageFileMachine
-{
-	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ImageFileMachine_TypeOf")]
-	internal static void* /* System.Type */ System_Reflection_ImageFileMachine_TypeOf()
-	{
-	
-		System.Type __returnValue = typeof(System.Reflection.ImageFileMachine);
-		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-		return _returnValueNative;
 	}
 	
 

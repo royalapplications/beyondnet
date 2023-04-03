@@ -11,38 +11,11 @@ namespace NativeAOT.CodeGenerator.CLI;
 
 internal class CodeGeneratorDriver
 {
-    internal string AssemblyPath { get; }
-    
-    internal string? CSharpUnmanagedOutputPath { get; }
-    internal string? COutputPath { get; }
-    
-    internal Type[] IncludedTypes { get; }
-    internal Type[] ExcludedTypes { get; }
+    internal Configuration Configuration { get; }
     
     internal CodeGeneratorDriver(Configuration configuration)
     {
-        AssemblyPath = configuration.AssemblyPath;
-        
-        CSharpUnmanagedOutputPath = configuration.CSharpUnmanagedOutputPath;
-        COutputPath = configuration.COutputPath;
-        
-        IncludedTypes = TypesFromTypeNames(configuration.IncludedTypeNames ?? Array.Empty<string>());
-        ExcludedTypes = TypesFromTypeNames(configuration.ExcludedTypeNames ?? Array.Empty<string>());
-    }
-
-    private static Type[] TypesFromTypeNames(IEnumerable<string> typeNames)
-    {
-        List<Type> types = new();
-
-        foreach (string typeName in typeNames) {
-            Type? type = Type.GetType(typeName, true);
-
-            if (type != null) {
-                types.Add(type);
-            }
-        }
-        
-        return types.ToArray();
+        Configuration = configuration;
     }
 
     internal void Generate()
@@ -50,11 +23,23 @@ internal class CodeGeneratorDriver
         Assembly assembly;
         
         using (AssemblyLoader assemblyLoader = new()) {
-            assembly = assemblyLoader.LoadFrom(AssemblyPath);
+            assembly = assemblyLoader.LoadFrom(Configuration.AssemblyPath);
         }
+
+        Type[] includedTypes = TypesFromTypeNames(
+            Configuration.IncludedTypeNames ?? Array.Empty<string>(),
+            assembly
+        );
+        
+        Type[] excludedTypes = TypesFromTypeNames(
+            Configuration.ExcludedTypeNames ?? Array.Empty<string>(),
+            assembly
+        );
         
         var types = CollectTypes(
             assembly,
+            includedTypes,
+            excludedTypes,
             out Dictionary<Type, string> unsupportedTypes
         );
 
@@ -81,14 +66,33 @@ internal class CodeGeneratorDriver
         WriteCodeToFileOrPrintToConsole(
             "C#",
             cSharpUnmanagedCode,
-            CSharpUnmanagedOutputPath
+            Configuration.CSharpUnmanagedOutputPath
         );
         
         WriteCodeToFileOrPrintToConsole(
             "C",
             cCode,
-            COutputPath
+            Configuration.COutputPath
         );
+    }
+    
+    private static Type[] TypesFromTypeNames(
+        IEnumerable<string> typeNames,
+        Assembly assembly
+    )
+    {
+        List<Type> types = new();
+
+        foreach (string typeName in typeNames) {
+            Type? type = assembly.GetType(typeName, false) 
+                         ?? Type.GetType(typeName, true);
+
+            if (type != null) {
+                types.Add(type);
+            }
+        }
+        
+        return types.ToArray();
     }
     
     private void WriteCodeToFileOrPrintToConsole(
@@ -108,13 +112,15 @@ internal class CodeGeneratorDriver
     
     private HashSet<Type> CollectTypes(
         Assembly assembly,
+        Type[] includedTypes,
+        Type[] excludedTypes,
         out Dictionary<Type, string> unsupportedTypes
     )
     {
         TypeCollector typeCollector = new(
             assembly,
-            IncludedTypes,
-            ExcludedTypes
+            includedTypes,
+            excludedTypes
         );
 
         var types = typeCollector.Collect(out unsupportedTypes);
