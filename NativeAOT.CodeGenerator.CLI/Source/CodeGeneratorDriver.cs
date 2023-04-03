@@ -97,13 +97,13 @@ internal class CodeGeneratorDriver
         string? outputPath
     )
     {
-        if (!string.IsNullOrEmpty(outputPath)) {
-            File.WriteAllText(outputPath, code);
-        } else {
-            Console.WriteLine($"--- {languageName} BEGIN ---");
-            Console.WriteLine(code);
-            Console.WriteLine($"--- {languageName} END ---");
+        if (string.IsNullOrEmpty(outputPath)) {
+            return;
         }
+        
+        outputPath = Path.GetFullPath(outputPath);
+            
+        File.WriteAllText(outputPath, code);
     }
     
     private HashSet<Type> CollectTypes(
