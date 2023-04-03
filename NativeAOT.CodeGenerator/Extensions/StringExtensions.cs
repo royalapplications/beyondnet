@@ -28,6 +28,7 @@ internal static class StringExtensions
         string cTypeName = fullTypeName
             .Replace(".", "_")
             .Replace("+", "_")
+            .Replace("&", string.Empty)
             .Replace("[]", "_Array");
 
         return cTypeName;

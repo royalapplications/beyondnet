@@ -219,6 +219,12 @@ public class MemberCollector
             return false;
         }
 
+        // TODO: Currently only `out` parameters but not `ref` parameters are supported
+        if (parameterType.IsByRef &&
+            !parameterInfo.IsOut) {
+            return false;
+        }
+
         return true;
     }
 }

@@ -165,8 +165,14 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         } else {
             foreach (var parameter in parameters) {
                 Type parameterType = parameter.ParameterType;
+                bool isOutParameter = parameter.IsOut;
+
+                if (isOutParameter) {
+                    parameterType = parameterType.GetElementType() ?? throw new Exception("Failed to get underlying type of a out parameter type");
+                }
+                
                 TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
-                string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(CodeLanguage.C, true);
+                string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(CodeLanguage.C, true, isOutParameter);
 
                 string parameterString = $"{unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */ {parameter.Name}";
                 parameterList.Add(parameterString);

@@ -320,6 +320,32 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         }
 
 """);
+
+            foreach (var parameter in parameters) {
+                if (parameter.IsOut) {
+                    string parameterName = parameter.Name ?? throw new Exception("Parameter has no name");
+                    string convertedParameterName = $"{parameterName}Converted";
+
+                    TypeDescriptor parameterTypeDescriptor = parameter.ParameterType.GetTypeDescriptor(typeDescriptorRegistry);
+
+                    string? parameterTypeConversion = parameterTypeDescriptor.GetTypeConversion(CodeLanguage.CSharp, CodeLanguage.CSharpUnmanaged);
+                    
+                    if (!convertedParameterNames.Contains($"out {convertedParameterName}")) {
+                        convertedParameterName = parameterName;
+                    }
+
+                    if (string.IsNullOrEmpty(parameterTypeConversion)) {
+                        parameterTypeConversion = convertedParameterName;
+                    } else {
+                        parameterTypeConversion = string.Format(parameterTypeConversion, convertedParameterName);
+                    }
+                    
+                    sb.AppendLine($"\t\tif ({parameterName} is not null) {{");
+                    sb.AppendLine($"\t\t\t*{parameterName} = {parameterTypeConversion};");
+                    sb.AppendLine("\t\t}");
+                    sb.AppendLine();
+                }
+            }
             
             if (isReturning) {
                 sb.AppendLine($"{implPrefix}return {convertedReturnValueName};");
@@ -485,33 +511,53 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             string parameterName = parameter.Name ?? throw new Exception("Parameter has no name");
             
             Type parameterType = parameter.ParameterType;
+            bool isOutParameter = parameter.IsOut;
+            bool isByRef = parameterType.IsByRef;
+            
+            if (isOutParameter) {
+                parameterType = parameterType.GetElementType() ?? throw new Exception("Failed to get underlying type of a out parameter type");
+            }
+            
             TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
 
             string? typeConversion = parameterTypeDescriptor.GetTypeConversion(
                 sourceLanguage,
                 targetLanguage
             );
-            
-            if (typeConversion != null) {
-                bool isOutParameter = parameter.IsOut;
+
+            string convertedParameterName;
+
+            if (isOutParameter) {
+                convertedParameterName = $"{parameterName}Converted";
+
+                string typeName = parameterType.GetFullNameOrName()
+                    .Replace("&", string.Empty);
+
+                sb.AppendLine($"\t{typeName} {convertedParameterName};");
                 
+                convertedParameterName = $"out {convertedParameterName}";
+            } else if (typeConversion != null) {
                 string parameterTypeName = parameterTypeDescriptor.GetTypeName(
                     targetLanguage,
                     true,
                     isOutParameter
                 );
                 
-                string convertedParameterName = $"{parameterName}Converted";
+                convertedParameterName = $"{parameterName}Converted";
                 
                 string fullTypeConversion = string.Format(typeConversion, parameterName);
                 string typeConversionCode = $"{parameterTypeName} {convertedParameterName} = {fullTypeConversion};";
 
                 sb.AppendLine($"\t{typeConversionCode}");
-                
-                convertedParameterNames.Add(convertedParameterName);
+
+                if (isOutParameter) {
+                    convertedParameterName = $"out {convertedParameterName}";
+                }
             } else {
-                convertedParameterNames.Add(parameterName);
+                convertedParameterName = parameterName;
             }
+            
+            convertedParameterNames.Add(convertedParameterName);
         }
 
         return sb.ToString();

@@ -9,7 +9,8 @@ public class TypeCollector
 
     private static List<Type> m_unsupportedTypes = new() {
         Type.GetType("System.Runtime.Serialization.DeserializationToken")!,
-        Type.GetType("System.TypedReference")!
+        Type.GetType("System.TypedReference")!,
+        Type.GetType("System.Char&")!
     };
     
     public TypeCollector(Assembly assembly)
@@ -134,6 +135,12 @@ public class TypeCollector
     {
         Type returnType = methodInfo.ReturnType;
 
+        if (returnType.IsByRef) {
+            unsupportedTypes[returnType] = "Is by ref";
+
+            return;
+        }
+
         CollectType(returnType, collectedTypes, unsupportedTypes);
         
         var parameterInfos = methodInfo.GetParameters();
@@ -225,6 +232,7 @@ public class TypeCollector
             return false;
         }
         
+        // TODO: WIP
         if (type.IsByRef) {
             unsupportedReason = "Is By Ref Type";
             return false;
@@ -264,11 +272,6 @@ public class TypeCollector
             unsupportedReason = "Is Managed Pointer Type";
             return false;
         }
-
-        // if (type.IsDelegate()) {
-        //     unsupportedReason = "Is Delegate Type";
-        //     return false;
-        // }
 
         if (m_unsupportedTypes.Contains(type)) {
             unsupportedReason = "Is unsupported Type";
