@@ -62,7 +62,7 @@ final class SystemThreadingThreadTests: XCTestCase {
 		XCTAssertNil(exception)
 		
 		while swiftyContext.numberOfTimesCalled < 1 {
-			Thread.sleep(forTimeInterval: 0.1)
+			Thread.sleep(forTimeInterval: 0.01)
 		}
 		
 		System_Threading_Thread_Destroy(thread)
