@@ -10,6 +10,12 @@
 		"System.Convert",
 		"System.Threading.Thread",
 		"System.Threading.Timer",
-		"System.AppDomain"
+		"System.AppDomain",
+		"System.Random",
+		"System.IO.Path",
+		"System.IO.File",
+		"System.IO.FileInfo",
+		"System.IO.Directory",
+		"System.IO.DirectoryInfo"
 	]
 }

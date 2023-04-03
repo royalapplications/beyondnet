@@ -1,5 +1,5 @@
-// Number of generated types: 360
-// Number of generated members: 3594
+// Number of generated types: 386
+// Number of generated members: 4131
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -705,6 +705,62 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Security_Principal_PrincipalPolicy;
 
 
+typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+	System_IO_FileAttributes_ReadOnly = 1,
+	System_IO_FileAttributes_Hidden = 2,
+	System_IO_FileAttributes_System = 4,
+	System_IO_FileAttributes_Directory = 16,
+	System_IO_FileAttributes_Archive = 32,
+	System_IO_FileAttributes_Device = 64,
+	System_IO_FileAttributes_Normal = 128,
+	System_IO_FileAttributes_Temporary = 256,
+	System_IO_FileAttributes_SparseFile = 512,
+	System_IO_FileAttributes_ReparsePoint = 1024,
+	System_IO_FileAttributes_Compressed = 2048,
+	System_IO_FileAttributes_Offline = 4096,
+	System_IO_FileAttributes_NotContentIndexed = 8192,
+	System_IO_FileAttributes_Encrypted = 16384,
+	System_IO_FileAttributes_IntegrityStream = 32768,
+	System_IO_FileAttributes_NoScrubData = 131072
+} System_IO_FileAttributes;
+
+
+typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+	System_IO_UnixFileMode_None = 0,
+	System_IO_UnixFileMode_OtherExecute = 1,
+	System_IO_UnixFileMode_OtherWrite = 2,
+	System_IO_UnixFileMode_OtherRead = 4,
+	System_IO_UnixFileMode_GroupExecute = 8,
+	System_IO_UnixFileMode_GroupWrite = 16,
+	System_IO_UnixFileMode_GroupRead = 32,
+	System_IO_UnixFileMode_UserExecute = 64,
+	System_IO_UnixFileMode_UserWrite = 128,
+	System_IO_UnixFileMode_UserRead = 256,
+	System_IO_UnixFileMode_StickyBit = 512,
+	System_IO_UnixFileMode_SetGroup = 1024,
+	System_IO_UnixFileMode_SetUser = 2048
+} System_IO_UnixFileMode;
+
+
+typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+	System_IO_SearchOption_TopDirectoryOnly = 0,
+	System_IO_SearchOption_AllDirectories = 1
+} System_IO_SearchOption;
+
+
+typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+	System_IO_MatchType_Simple = 0,
+	System_IO_MatchType_Win32 = 1
+} System_IO_MatchType;
+
+
+typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+	System_IO_MatchCasing_PlatformDefault = 0,
+	System_IO_MatchCasing_CaseSensitive = 1,
+	System_IO_MatchCasing_CaseInsensitive = 2
+} System_IO_MatchCasing;
+
+
 typedef enum __attribute__((enum_extensibility(closed))): uint32_t {
 	NativeAOT_CodeGeneratorInputSample_NiceLevels_NotNice = 0,
 	NativeAOT_CodeGeneratorInputSample_NiceLevels_LittleBitNice = 1,
@@ -1138,6 +1194,44 @@ typedef void* System_AssemblyLoadEventArgs_t;
 typedef void* System_Runtime_Remoting_ObjectHandle_t;
 
 typedef void* System_Threading_Timer_t;
+
+typedef void* System_Random_t;
+
+// Type "T[]" was skipped. Reason: It has no full name.
+// Type "T[]" was skipped. Reason: It has no full name.
+// Type "T[]" was skipped. Reason: It has no full name.
+typedef void* System_IO_Path_t;
+
+typedef void* System_IO_File_t;
+
+typedef void* System_IO_StreamReader_t;
+
+typedef void* System_IO_TextReader_t;
+
+typedef void* System_IO_StreamWriter_t;
+
+typedef void* System_IO_TextWriter_t;
+
+typedef void* System_Text_StringBuilder_t;
+
+typedef void* System_Text_StringBuilder_ChunkEnumerator_t;
+
+
+typedef void* System_IO_FileSystemInfo_t;
+
+typedef void* System_IO_FileInfo_t;
+
+typedef void* System_IO_DirectoryInfo_t;
+
+typedef void* System_IO_FileInfo_Array_t;
+
+typedef void* System_IO_EnumerationOptions_t;
+
+typedef void* System_IO_FileSystemInfo_Array_t;
+
+typedef void* System_IO_DirectoryInfo_Array_t;
+
+typedef void* System_IO_Directory_t;
 
 typedef void* NativeAOT_CodeGeneratorInputSample_Address_t;
 
@@ -1844,6 +1938,46 @@ System_Security_Principal_PrincipalPolicy_TypeOf(
 );
 
 #pragma mark - END APIs of System.Security.Principal.PrincipalPolicy
+
+#pragma mark - BEGIN APIs of System.IO.FileAttributes
+System_Type_t /* System.Type */
+System_IO_FileAttributes_TypeOf(
+	
+);
+
+#pragma mark - END APIs of System.IO.FileAttributes
+
+#pragma mark - BEGIN APIs of System.IO.UnixFileMode
+System_Type_t /* System.Type */
+System_IO_UnixFileMode_TypeOf(
+	
+);
+
+#pragma mark - END APIs of System.IO.UnixFileMode
+
+#pragma mark - BEGIN APIs of System.IO.SearchOption
+System_Type_t /* System.Type */
+System_IO_SearchOption_TypeOf(
+	
+);
+
+#pragma mark - END APIs of System.IO.SearchOption
+
+#pragma mark - BEGIN APIs of System.IO.MatchType
+System_Type_t /* System.Type */
+System_IO_MatchType_TypeOf(
+	
+);
+
+#pragma mark - END APIs of System.IO.MatchType
+
+#pragma mark - BEGIN APIs of System.IO.MatchCasing
+System_Type_t /* System.Type */
+System_IO_MatchCasing_TypeOf(
+	
+);
+
+#pragma mark - END APIs of System.IO.MatchCasing
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.NiceLevels
 System_Type_t /* System.Type */
@@ -25917,6 +26051,3773 @@ System_Threading_Timer_Destroy(
 );
 
 #pragma mark - END APIs of System.Threading.Timer
+
+#pragma mark - BEGIN APIs of System.Random
+int32_t /* System.Int32 */
+System_Random_Next(
+	System_Random_t /* System.Random */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Random_Next1(
+	System_Random_t /* System.Random */ self,
+	int32_t /* System.Int32 */ maxValue,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Random_Next2(
+	System_Random_t /* System.Random */ self,
+	int32_t /* System.Int32 */ minValue,
+	int32_t /* System.Int32 */ maxValue,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_Random_NextInt64(
+	System_Random_t /* System.Random */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_Random_NextInt641(
+	System_Random_t /* System.Random */ self,
+	int64_t /* System.Int64 */ maxValue,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_Random_NextInt642(
+	System_Random_t /* System.Random */ self,
+	int64_t /* System.Int64 */ minValue,
+	int64_t /* System.Int64 */ maxValue,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+float /* System.Single */
+System_Random_NextSingle(
+	System_Random_t /* System.Random */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Random_NextDouble(
+	System_Random_t /* System.Random */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Random_NextBytes(
+	System_Random_t /* System.Random */ self,
+	System_Byte_Array_t /* System.Byte[] */ buffer,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Random_t /* System.Random */
+System_Random_Create(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Random_t /* System.Random */
+System_Random_Create1(
+	int32_t /* System.Int32 */ Seed,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Random_t /* System.Random */
+System_Random_Shared_Get(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_Random_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Random_Destroy(
+	System_Random_t /* System.Random */ self
+);
+
+#pragma mark - END APIs of System.Random
+
+#pragma mark - BEGIN APIs of T[]
+#pragma mark - END APIs of T[]
+
+#pragma mark - BEGIN APIs of T[]
+#pragma mark - END APIs of T[]
+
+#pragma mark - BEGIN APIs of T[]
+#pragma mark - END APIs of T[]
+
+#pragma mark - BEGIN APIs of System.IO.Path
+CString /* System.String */
+System_IO_Path_ChangeExtension(
+	CString /* System.String */ path,
+	CString /* System.String */ extension,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_IO_Path_Exists(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_IO_Path_GetDirectoryName(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_IO_Path_GetExtension(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_IO_Path_GetFileName(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_IO_Path_GetFileNameWithoutExtension(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_IO_Path_GetRandomFileName(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_IO_Path_IsPathFullyQualified(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_IO_Path_HasExtension(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_IO_Path_Combine(
+	CString /* System.String */ path1,
+	CString /* System.String */ path2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_IO_Path_Combine1(
+	CString /* System.String */ path1,
+	CString /* System.String */ path2,
+	CString /* System.String */ path3,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_IO_Path_Combine2(
+	CString /* System.String */ path1,
+	CString /* System.String */ path2,
+	CString /* System.String */ path3,
+	CString /* System.String */ path4,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_IO_Path_Combine3(
+	System_String_Array_t /* System.String[] */ paths,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_IO_Path_Join(
+	CString /* System.String */ path1,
+	CString /* System.String */ path2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_IO_Path_Join1(
+	CString /* System.String */ path1,
+	CString /* System.String */ path2,
+	CString /* System.String */ path3,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_IO_Path_Join2(
+	CString /* System.String */ path1,
+	CString /* System.String */ path2,
+	CString /* System.String */ path3,
+	CString /* System.String */ path4,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_IO_Path_Join3(
+	System_String_Array_t /* System.String[] */ paths,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_IO_Path_GetRelativePath(
+	CString /* System.String */ relativeTo,
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_IO_Path_TrimEndingDirectorySeparator(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_IO_Path_EndsInDirectorySeparator(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Char_Array_t /* System.Char[] */
+System_IO_Path_GetInvalidFileNameChars(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Char_Array_t /* System.Char[] */
+System_IO_Path_GetInvalidPathChars(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_IO_Path_GetFullPath(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_IO_Path_GetFullPath1(
+	CString /* System.String */ path,
+	CString /* System.String */ basePath,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_IO_Path_GetTempPath(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_IO_Path_GetTempFileName(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_IO_Path_IsPathRooted(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_IO_Path_GetPathRoot(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Char */
+System_IO_Path_DirectorySeparatorChar_Get(
+	
+);
+
+
+uint8_t /* System.Char */
+System_IO_Path_AltDirectorySeparatorChar_Get(
+	
+);
+
+
+uint8_t /* System.Char */
+System_IO_Path_VolumeSeparatorChar_Get(
+	
+);
+
+
+uint8_t /* System.Char */
+System_IO_Path_PathSeparator_Get(
+	
+);
+
+
+System_Char_Array_t /* System.Char[] */
+System_IO_Path_InvalidPathChars_Get(
+	
+);
+
+
+System_Type_t /* System.Type */
+System_IO_Path_TypeOf(
+	
+);
+
+void /* System.Void */
+System_IO_Path_Destroy(
+	System_IO_Path_t /* System.IO.Path */ self
+);
+
+#pragma mark - END APIs of System.IO.Path
+
+#pragma mark - BEGIN APIs of System.IO.File
+System_IO_StreamReader_t /* System.IO.StreamReader */
+System_IO_File_OpenText(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_StreamWriter_t /* System.IO.StreamWriter */
+System_IO_File_CreateText(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_StreamWriter_t /* System.IO.StreamWriter */
+System_IO_File_AppendText(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_Copy(
+	CString /* System.String */ sourceFileName,
+	CString /* System.String */ destFileName,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_Copy1(
+	CString /* System.String */ sourceFileName,
+	CString /* System.String */ destFileName,
+	bool /* System.Boolean */ overwrite,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_FileStream_t /* System.IO.FileStream */
+System_IO_File_Create1(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_FileStream_t /* System.IO.FileStream */
+System_IO_File_Create2(
+	CString /* System.String */ path,
+	int32_t /* System.Int32 */ bufferSize,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_FileStream_t /* System.IO.FileStream */
+System_IO_File_Create3(
+	CString /* System.String */ path,
+	int32_t /* System.Int32 */ bufferSize,
+	System_IO_FileOptions /* System.IO.FileOptions */ options,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_Delete(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_IO_File_Exists(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_FileStream_t /* System.IO.FileStream */
+System_IO_File_Open1(
+	CString /* System.String */ path,
+	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ options,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_FileStream_t /* System.IO.FileStream */
+System_IO_File_Open2(
+	CString /* System.String */ path,
+	System_IO_FileMode /* System.IO.FileMode */ mode,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_FileStream_t /* System.IO.FileStream */
+System_IO_File_Open3(
+	CString /* System.String */ path,
+	System_IO_FileMode /* System.IO.FileMode */ mode,
+	System_IO_FileAccess /* System.IO.FileAccess */ access,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_FileStream_t /* System.IO.FileStream */
+System_IO_File_Open4(
+	CString /* System.String */ path,
+	System_IO_FileMode /* System.IO.FileMode */ mode,
+	System_IO_FileAccess /* System.IO.FileAccess */ access,
+	System_IO_FileShare /* System.IO.FileShare */ share,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+Microsoft_Win32_SafeHandles_SafeFileHandle_t /* Microsoft.Win32.SafeHandles.SafeFileHandle */
+System_IO_File_OpenHandle(
+	CString /* System.String */ path,
+	System_IO_FileMode /* System.IO.FileMode */ mode,
+	System_IO_FileAccess /* System.IO.FileAccess */ access,
+	System_IO_FileShare /* System.IO.FileShare */ share,
+	System_IO_FileOptions /* System.IO.FileOptions */ options,
+	int64_t /* System.Int64 */ preallocationSize,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_SetCreationTime(
+	CString /* System.String */ path,
+	System_DateTime_t /* System.DateTime */ creationTime,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_SetCreationTime1(
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
+	System_DateTime_t /* System.DateTime */ creationTime,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_SetCreationTimeUtc(
+	CString /* System.String */ path,
+	System_DateTime_t /* System.DateTime */ creationTimeUtc,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_SetCreationTimeUtc1(
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
+	System_DateTime_t /* System.DateTime */ creationTimeUtc,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_IO_File_GetCreationTime(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_IO_File_GetCreationTime1(
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_IO_File_GetCreationTimeUtc(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_IO_File_GetCreationTimeUtc1(
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_SetLastAccessTime(
+	CString /* System.String */ path,
+	System_DateTime_t /* System.DateTime */ lastAccessTime,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_SetLastAccessTime1(
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
+	System_DateTime_t /* System.DateTime */ lastAccessTime,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_SetLastAccessTimeUtc(
+	CString /* System.String */ path,
+	System_DateTime_t /* System.DateTime */ lastAccessTimeUtc,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_SetLastAccessTimeUtc1(
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
+	System_DateTime_t /* System.DateTime */ lastAccessTimeUtc,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_IO_File_GetLastAccessTime(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_IO_File_GetLastAccessTime1(
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_IO_File_GetLastAccessTimeUtc(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_IO_File_GetLastAccessTimeUtc1(
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_SetLastWriteTime(
+	CString /* System.String */ path,
+	System_DateTime_t /* System.DateTime */ lastWriteTime,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_SetLastWriteTime1(
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
+	System_DateTime_t /* System.DateTime */ lastWriteTime,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_SetLastWriteTimeUtc(
+	CString /* System.String */ path,
+	System_DateTime_t /* System.DateTime */ lastWriteTimeUtc,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_SetLastWriteTimeUtc1(
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
+	System_DateTime_t /* System.DateTime */ lastWriteTimeUtc,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_IO_File_GetLastWriteTime(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_IO_File_GetLastWriteTime1(
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_IO_File_GetLastWriteTimeUtc(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_IO_File_GetLastWriteTimeUtc1(
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_FileAttributes /* System.IO.FileAttributes */
+System_IO_File_GetAttributes(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_FileAttributes /* System.IO.FileAttributes */
+System_IO_File_GetAttributes1(
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_SetAttributes(
+	CString /* System.String */ path,
+	System_IO_FileAttributes /* System.IO.FileAttributes */ fileAttributes,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_SetAttributes1(
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
+	System_IO_FileAttributes /* System.IO.FileAttributes */ fileAttributes,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_UnixFileMode /* System.IO.UnixFileMode */
+System_IO_File_GetUnixFileMode(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_UnixFileMode /* System.IO.UnixFileMode */
+System_IO_File_GetUnixFileMode1(
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_SetUnixFileMode(
+	CString /* System.String */ path,
+	System_IO_UnixFileMode /* System.IO.UnixFileMode */ mode,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_SetUnixFileMode1(
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
+	System_IO_UnixFileMode /* System.IO.UnixFileMode */ mode,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_FileStream_t /* System.IO.FileStream */
+System_IO_File_OpenRead(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_FileStream_t /* System.IO.FileStream */
+System_IO_File_OpenWrite(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_IO_File_ReadAllText(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_IO_File_ReadAllText1(
+	CString /* System.String */ path,
+	System_Text_Encoding_t /* System.Text.Encoding */ encoding,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_WriteAllText(
+	CString /* System.String */ path,
+	CString /* System.String */ contents,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_WriteAllText1(
+	CString /* System.String */ path,
+	CString /* System.String */ contents,
+	System_Text_Encoding_t /* System.Text.Encoding */ encoding,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Byte_Array_t /* System.Byte[] */
+System_IO_File_ReadAllBytes(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_WriteAllBytes(
+	CString /* System.String */ path,
+	System_Byte_Array_t /* System.Byte[] */ bytes,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_String_Array_t /* System.String[] */
+System_IO_File_ReadAllLines(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_String_Array_t /* System.String[] */
+System_IO_File_ReadAllLines1(
+	CString /* System.String */ path,
+	System_Text_Encoding_t /* System.Text.Encoding */ encoding,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_WriteAllLines(
+	CString /* System.String */ path,
+	System_String_Array_t /* System.String[] */ contents,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_WriteAllLines1(
+	CString /* System.String */ path,
+	System_String_Array_t /* System.String[] */ contents,
+	System_Text_Encoding_t /* System.Text.Encoding */ encoding,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_AppendAllText(
+	CString /* System.String */ path,
+	CString /* System.String */ contents,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_AppendAllText1(
+	CString /* System.String */ path,
+	CString /* System.String */ contents,
+	System_Text_Encoding_t /* System.Text.Encoding */ encoding,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_Replace(
+	CString /* System.String */ sourceFileName,
+	CString /* System.String */ destinationFileName,
+	CString /* System.String */ destinationBackupFileName,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_Replace1(
+	CString /* System.String */ sourceFileName,
+	CString /* System.String */ destinationFileName,
+	CString /* System.String */ destinationBackupFileName,
+	bool /* System.Boolean */ ignoreMetadataErrors,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_Move(
+	CString /* System.String */ sourceFileName,
+	CString /* System.String */ destFileName,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_Move1(
+	CString /* System.String */ sourceFileName,
+	CString /* System.String */ destFileName,
+	bool /* System.Boolean */ overwrite,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_Encrypt(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_Decrypt(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_IO_File_WriteAllTextAsync(
+	CString /* System.String */ path,
+	CString /* System.String */ contents,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_IO_File_WriteAllTextAsync1(
+	CString /* System.String */ path,
+	CString /* System.String */ contents,
+	System_Text_Encoding_t /* System.Text.Encoding */ encoding,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_IO_File_WriteAllBytesAsync(
+	CString /* System.String */ path,
+	System_Byte_Array_t /* System.Byte[] */ bytes,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_IO_File_AppendAllTextAsync(
+	CString /* System.String */ path,
+	CString /* System.String */ contents,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_IO_File_AppendAllTextAsync1(
+	CString /* System.String */ path,
+	CString /* System.String */ contents,
+	System_Text_Encoding_t /* System.Text.Encoding */ encoding,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */
+System_IO_File_CreateSymbolicLink(
+	CString /* System.String */ path,
+	CString /* System.String */ pathToTarget,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */
+System_IO_File_ResolveLinkTarget(
+	CString /* System.String */ linkPath,
+	bool /* System.Boolean */ returnFinalTarget,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_t /* System.Type */
+System_IO_File_TypeOf(
+	
+);
+
+void /* System.Void */
+System_IO_File_Destroy(
+	System_IO_File_t /* System.IO.File */ self
+);
+
+#pragma mark - END APIs of System.IO.File
+
+#pragma mark - BEGIN APIs of System.IO.StreamReader
+void /* System.Void */
+System_IO_StreamReader_Close(
+	System_IO_StreamReader_t /* System.IO.StreamReader */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_StreamReader_DiscardBufferedData(
+	System_IO_StreamReader_t /* System.IO.StreamReader */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_IO_StreamReader_Peek(
+	System_IO_StreamReader_t /* System.IO.StreamReader */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_IO_StreamReader_Read(
+	System_IO_StreamReader_t /* System.IO.StreamReader */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_IO_StreamReader_Read1(
+	System_IO_StreamReader_t /* System.IO.StreamReader */ self,
+	System_Char_Array_t /* System.Char[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_IO_StreamReader_ReadToEnd(
+	System_IO_StreamReader_t /* System.IO.StreamReader */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_IO_StreamReader_ReadBlock(
+	System_IO_StreamReader_t /* System.IO.StreamReader */ self,
+	System_Char_Array_t /* System.Char[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_IO_StreamReader_ReadLine(
+	System_IO_StreamReader_t /* System.IO.StreamReader */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_StreamReader_t /* System.IO.StreamReader */
+System_IO_StreamReader_Create(
+	System_IO_Stream_t /* System.IO.Stream */ stream,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_StreamReader_t /* System.IO.StreamReader */
+System_IO_StreamReader_Create1(
+	System_IO_Stream_t /* System.IO.Stream */ stream,
+	bool /* System.Boolean */ detectEncodingFromByteOrderMarks,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_StreamReader_t /* System.IO.StreamReader */
+System_IO_StreamReader_Create2(
+	System_IO_Stream_t /* System.IO.Stream */ stream,
+	System_Text_Encoding_t /* System.Text.Encoding */ encoding,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_StreamReader_t /* System.IO.StreamReader */
+System_IO_StreamReader_Create3(
+	System_IO_Stream_t /* System.IO.Stream */ stream,
+	System_Text_Encoding_t /* System.Text.Encoding */ encoding,
+	bool /* System.Boolean */ detectEncodingFromByteOrderMarks,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_StreamReader_t /* System.IO.StreamReader */
+System_IO_StreamReader_Create4(
+	System_IO_Stream_t /* System.IO.Stream */ stream,
+	System_Text_Encoding_t /* System.Text.Encoding */ encoding,
+	bool /* System.Boolean */ detectEncodingFromByteOrderMarks,
+	int32_t /* System.Int32 */ bufferSize,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_StreamReader_t /* System.IO.StreamReader */
+System_IO_StreamReader_Create5(
+	System_IO_Stream_t /* System.IO.Stream */ stream,
+	System_Text_Encoding_t /* System.Text.Encoding */ encoding,
+	bool /* System.Boolean */ detectEncodingFromByteOrderMarks,
+	int32_t /* System.Int32 */ bufferSize,
+	bool /* System.Boolean */ leaveOpen,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_StreamReader_t /* System.IO.StreamReader */
+System_IO_StreamReader_Create6(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_StreamReader_t /* System.IO.StreamReader */
+System_IO_StreamReader_Create7(
+	CString /* System.String */ path,
+	bool /* System.Boolean */ detectEncodingFromByteOrderMarks,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_StreamReader_t /* System.IO.StreamReader */
+System_IO_StreamReader_Create8(
+	CString /* System.String */ path,
+	System_Text_Encoding_t /* System.Text.Encoding */ encoding,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_StreamReader_t /* System.IO.StreamReader */
+System_IO_StreamReader_Create9(
+	CString /* System.String */ path,
+	System_Text_Encoding_t /* System.Text.Encoding */ encoding,
+	bool /* System.Boolean */ detectEncodingFromByteOrderMarks,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_StreamReader_t /* System.IO.StreamReader */
+System_IO_StreamReader_Create10(
+	CString /* System.String */ path,
+	System_Text_Encoding_t /* System.Text.Encoding */ encoding,
+	bool /* System.Boolean */ detectEncodingFromByteOrderMarks,
+	int32_t /* System.Int32 */ bufferSize,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_StreamReader_t /* System.IO.StreamReader */
+System_IO_StreamReader_Create11(
+	CString /* System.String */ path,
+	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ options,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_StreamReader_t /* System.IO.StreamReader */
+System_IO_StreamReader_Create12(
+	CString /* System.String */ path,
+	System_Text_Encoding_t /* System.Text.Encoding */ encoding,
+	bool /* System.Boolean */ detectEncodingFromByteOrderMarks,
+	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ options,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_Encoding_t /* System.Text.Encoding */
+System_IO_StreamReader_CurrentEncoding_Get(
+	System_IO_StreamReader_t /* System.IO.StreamReader */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_IO_Stream_t /* System.IO.Stream */
+System_IO_StreamReader_BaseStream_Get(
+	System_IO_StreamReader_t /* System.IO.StreamReader */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_IO_StreamReader_EndOfStream_Get(
+	System_IO_StreamReader_t /* System.IO.StreamReader */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_IO_StreamReader_t /* System.IO.StreamReader */
+System_IO_StreamReader_Null_Get(
+	
+);
+
+
+System_Type_t /* System.Type */
+System_IO_StreamReader_TypeOf(
+	
+);
+
+void /* System.Void */
+System_IO_StreamReader_Destroy(
+	System_IO_StreamReader_t /* System.IO.StreamReader */ self
+);
+
+#pragma mark - END APIs of System.IO.StreamReader
+
+#pragma mark - BEGIN APIs of System.IO.TextReader
+void /* System.Void */
+System_IO_TextReader_Close(
+	System_IO_TextReader_t /* System.IO.TextReader */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextReader_Dispose(
+	System_IO_TextReader_t /* System.IO.TextReader */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_IO_TextReader_Peek(
+	System_IO_TextReader_t /* System.IO.TextReader */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_IO_TextReader_Read(
+	System_IO_TextReader_t /* System.IO.TextReader */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_IO_TextReader_Read1(
+	System_IO_TextReader_t /* System.IO.TextReader */ self,
+	System_Char_Array_t /* System.Char[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_IO_TextReader_ReadToEnd(
+	System_IO_TextReader_t /* System.IO.TextReader */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_IO_TextReader_ReadBlock(
+	System_IO_TextReader_t /* System.IO.TextReader */ self,
+	System_Char_Array_t /* System.Char[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_IO_TextReader_ReadLine(
+	System_IO_TextReader_t /* System.IO.TextReader */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_TextReader_t /* System.IO.TextReader */
+System_IO_TextReader_Synchronized(
+	System_IO_TextReader_t /* System.IO.TextReader */ reader,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_TextReader_t /* System.IO.TextReader */
+System_IO_TextReader_Null_Get(
+	
+);
+
+
+System_Type_t /* System.Type */
+System_IO_TextReader_TypeOf(
+	
+);
+
+void /* System.Void */
+System_IO_TextReader_Destroy(
+	System_IO_TextReader_t /* System.IO.TextReader */ self
+);
+
+#pragma mark - END APIs of System.IO.TextReader
+
+#pragma mark - BEGIN APIs of System.IO.StreamWriter
+void /* System.Void */
+System_IO_StreamWriter_Close(
+	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_ValueTask_t /* System.Threading.Tasks.ValueTask */
+System_IO_StreamWriter_DisposeAsync(
+	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_StreamWriter_Flush(
+	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_StreamWriter_Write(
+	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
+	uint8_t /* System.Char */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_StreamWriter_Write1(
+	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
+	System_Char_Array_t /* System.Char[] */ buffer,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_StreamWriter_Write2(
+	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
+	System_Char_Array_t /* System.Char[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_StreamWriter_Write3(
+	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_StreamWriter_WriteLine(
+	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_StreamWriter_Write4(
+	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
+	CString /* System.String */ format,
+	System_Object_t /* System.Object */ arg0,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_StreamWriter_Write5(
+	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
+	CString /* System.String */ format,
+	System_Object_t /* System.Object */ arg0,
+	System_Object_t /* System.Object */ arg1,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_StreamWriter_Write6(
+	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
+	CString /* System.String */ format,
+	System_Object_t /* System.Object */ arg0,
+	System_Object_t /* System.Object */ arg1,
+	System_Object_t /* System.Object */ arg2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_StreamWriter_Write7(
+	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
+	CString /* System.String */ format,
+	System_Object_Array_t /* System.Object[] */ arg,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_StreamWriter_WriteLine1(
+	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
+	CString /* System.String */ format,
+	System_Object_t /* System.Object */ arg0,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_StreamWriter_WriteLine2(
+	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
+	CString /* System.String */ format,
+	System_Object_t /* System.Object */ arg0,
+	System_Object_t /* System.Object */ arg1,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_StreamWriter_WriteLine3(
+	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
+	CString /* System.String */ format,
+	System_Object_t /* System.Object */ arg0,
+	System_Object_t /* System.Object */ arg1,
+	System_Object_t /* System.Object */ arg2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_StreamWriter_WriteLine4(
+	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
+	CString /* System.String */ format,
+	System_Object_Array_t /* System.Object[] */ arg,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_IO_StreamWriter_WriteAsync(
+	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
+	uint8_t /* System.Char */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_IO_StreamWriter_WriteAsync1(
+	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_IO_StreamWriter_WriteAsync2(
+	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
+	System_Char_Array_t /* System.Char[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_IO_StreamWriter_WriteLineAsync(
+	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_IO_StreamWriter_WriteLineAsync1(
+	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
+	uint8_t /* System.Char */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_IO_StreamWriter_WriteLineAsync2(
+	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_IO_StreamWriter_WriteLineAsync3(
+	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
+	System_Char_Array_t /* System.Char[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_IO_StreamWriter_FlushAsync(
+	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_StreamWriter_t /* System.IO.StreamWriter */
+System_IO_StreamWriter_Create(
+	System_IO_Stream_t /* System.IO.Stream */ stream,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_StreamWriter_t /* System.IO.StreamWriter */
+System_IO_StreamWriter_Create1(
+	System_IO_Stream_t /* System.IO.Stream */ stream,
+	System_Text_Encoding_t /* System.Text.Encoding */ encoding,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_StreamWriter_t /* System.IO.StreamWriter */
+System_IO_StreamWriter_Create2(
+	System_IO_Stream_t /* System.IO.Stream */ stream,
+	System_Text_Encoding_t /* System.Text.Encoding */ encoding,
+	int32_t /* System.Int32 */ bufferSize,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_StreamWriter_t /* System.IO.StreamWriter */
+System_IO_StreamWriter_Create3(
+	System_IO_Stream_t /* System.IO.Stream */ stream,
+	System_Text_Encoding_t /* System.Text.Encoding */ encoding,
+	int32_t /* System.Int32 */ bufferSize,
+	bool /* System.Boolean */ leaveOpen,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_StreamWriter_t /* System.IO.StreamWriter */
+System_IO_StreamWriter_Create4(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_StreamWriter_t /* System.IO.StreamWriter */
+System_IO_StreamWriter_Create5(
+	CString /* System.String */ path,
+	bool /* System.Boolean */ append,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_StreamWriter_t /* System.IO.StreamWriter */
+System_IO_StreamWriter_Create6(
+	CString /* System.String */ path,
+	bool /* System.Boolean */ append,
+	System_Text_Encoding_t /* System.Text.Encoding */ encoding,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_StreamWriter_t /* System.IO.StreamWriter */
+System_IO_StreamWriter_Create7(
+	CString /* System.String */ path,
+	bool /* System.Boolean */ append,
+	System_Text_Encoding_t /* System.Text.Encoding */ encoding,
+	int32_t /* System.Int32 */ bufferSize,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_StreamWriter_t /* System.IO.StreamWriter */
+System_IO_StreamWriter_Create8(
+	CString /* System.String */ path,
+	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ options,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_StreamWriter_t /* System.IO.StreamWriter */
+System_IO_StreamWriter_Create9(
+	CString /* System.String */ path,
+	System_Text_Encoding_t /* System.Text.Encoding */ encoding,
+	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ options,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_IO_StreamWriter_AutoFlush_Get(
+	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_StreamWriter_AutoFlush_Set(
+	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_IO_StreamWriter_AutoFlush_Get(
+	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_StreamWriter_AutoFlush_Set(
+	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_IO_Stream_t /* System.IO.Stream */
+System_IO_StreamWriter_BaseStream_Get(
+	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Text_Encoding_t /* System.Text.Encoding */
+System_IO_StreamWriter_Encoding_Get(
+	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_IO_StreamWriter_t /* System.IO.StreamWriter */
+System_IO_StreamWriter_Null_Get(
+	
+);
+
+
+System_Type_t /* System.Type */
+System_IO_StreamWriter_TypeOf(
+	
+);
+
+void /* System.Void */
+System_IO_StreamWriter_Destroy(
+	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self
+);
+
+#pragma mark - END APIs of System.IO.StreamWriter
+
+#pragma mark - BEGIN APIs of System.IO.TextWriter
+void /* System.Void */
+System_IO_TextWriter_Close(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_Dispose(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_ValueTask_t /* System.Threading.Tasks.ValueTask */
+System_IO_TextWriter_DisposeAsync(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_Flush(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_Write(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	uint8_t /* System.Char */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_Write1(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	System_Char_Array_t /* System.Char[] */ buffer,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_Write2(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	System_Char_Array_t /* System.Char[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_Write3(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_Write4(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_Write5(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	uint32_t /* System.UInt32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_Write6(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	int64_t /* System.Int64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_Write7(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	uint64_t /* System.UInt64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_Write8(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	float /* System.Single */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_Write9(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	double /* System.Double */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_Write10(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	System_Decimal_t /* System.Decimal */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_Write11(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_Write12(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_Write13(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_Write14(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	CString /* System.String */ format,
+	System_Object_t /* System.Object */ arg0,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_Write15(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	CString /* System.String */ format,
+	System_Object_t /* System.Object */ arg0,
+	System_Object_t /* System.Object */ arg1,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_Write16(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	CString /* System.String */ format,
+	System_Object_t /* System.Object */ arg0,
+	System_Object_t /* System.Object */ arg1,
+	System_Object_t /* System.Object */ arg2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_Write17(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	CString /* System.String */ format,
+	System_Object_Array_t /* System.Object[] */ arg,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_WriteLine(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_WriteLine1(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	uint8_t /* System.Char */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_WriteLine2(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	System_Char_Array_t /* System.Char[] */ buffer,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_WriteLine3(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	System_Char_Array_t /* System.Char[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_WriteLine4(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_WriteLine5(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_WriteLine6(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	uint32_t /* System.UInt32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_WriteLine7(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	int64_t /* System.Int64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_WriteLine8(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	uint64_t /* System.UInt64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_WriteLine9(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	float /* System.Single */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_WriteLine10(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	double /* System.Double */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_WriteLine11(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	System_Decimal_t /* System.Decimal */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_WriteLine12(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_WriteLine13(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_WriteLine14(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_WriteLine15(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	CString /* System.String */ format,
+	System_Object_t /* System.Object */ arg0,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_WriteLine16(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	CString /* System.String */ format,
+	System_Object_t /* System.Object */ arg0,
+	System_Object_t /* System.Object */ arg1,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_WriteLine17(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	CString /* System.String */ format,
+	System_Object_t /* System.Object */ arg0,
+	System_Object_t /* System.Object */ arg1,
+	System_Object_t /* System.Object */ arg2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_WriteLine18(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	CString /* System.String */ format,
+	System_Object_Array_t /* System.Object[] */ arg,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_IO_TextWriter_WriteAsync(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	uint8_t /* System.Char */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_IO_TextWriter_WriteAsync1(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_IO_TextWriter_WriteAsync2(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ value,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_IO_TextWriter_WriteAsync3(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	System_Char_Array_t /* System.Char[] */ buffer,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_IO_TextWriter_WriteAsync4(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	System_Char_Array_t /* System.Char[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_IO_TextWriter_WriteLineAsync(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	uint8_t /* System.Char */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_IO_TextWriter_WriteLineAsync1(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_IO_TextWriter_WriteLineAsync2(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ value,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_IO_TextWriter_WriteLineAsync3(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	System_Char_Array_t /* System.Char[] */ buffer,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_IO_TextWriter_WriteLineAsync4(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	System_Char_Array_t /* System.Char[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_IO_TextWriter_WriteLineAsync5(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_IO_TextWriter_FlushAsync(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_TextWriter_t /* System.IO.TextWriter */
+System_IO_TextWriter_Synchronized(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ writer,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IFormatProvider_t /* System.IFormatProvider */
+System_IO_TextWriter_FormatProvider_Get(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Text_Encoding_t /* System.Text.Encoding */
+System_IO_TextWriter_Encoding_Get(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CString /* System.String */
+System_IO_TextWriter_NewLine_Get(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_NewLine_Set(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CString /* System.String */
+System_IO_TextWriter_NewLine_Get(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_TextWriter_NewLine_Set(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_IO_TextWriter_t /* System.IO.TextWriter */
+System_IO_TextWriter_Null_Get(
+	
+);
+
+
+System_Type_t /* System.Type */
+System_IO_TextWriter_TypeOf(
+	
+);
+
+void /* System.Void */
+System_IO_TextWriter_Destroy(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self
+);
+
+#pragma mark - END APIs of System.IO.TextWriter
+
+#pragma mark - BEGIN APIs of System.Text.StringBuilder
+int32_t /* System.Int32 */
+System_Text_StringBuilder_EnsureCapacity(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ capacity,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Text_StringBuilder_ToString(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Text_StringBuilder_ToString1(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ startIndex,
+	int32_t /* System.Int32 */ length,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Clear(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_ChunkEnumerator_t /* System.Text.StringBuilder.ChunkEnumerator */
+System_Text_StringBuilder_GetChunks(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	uint8_t /* System.Char */ value,
+	int32_t /* System.Int32 */ repeatCount,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append1(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Char_Array_t /* System.Char[] */ value,
+	int32_t /* System.Int32 */ startIndex,
+	int32_t /* System.Int32 */ charCount,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append2(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append3(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	CString /* System.String */ value,
+	int32_t /* System.Int32 */ startIndex,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append4(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append5(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ value,
+	int32_t /* System.Int32 */ startIndex,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendLine(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendLine1(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Text_StringBuilder_CopyTo(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ sourceIndex,
+	System_Char_Array_t /* System.Char[] */ destination,
+	int32_t /* System.Int32 */ destinationIndex,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	CString /* System.String */ value,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Remove(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ startIndex,
+	int32_t /* System.Int32 */ length,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append6(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append7(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	uint8_t /* System.Char */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append8(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int8_t /* System.SByte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append9(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	uint8_t /* System.Byte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append10(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int16_t /* System.Int16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append11(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append12(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int64_t /* System.Int64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append13(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	float /* System.Single */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append14(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	double /* System.Double */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append15(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Decimal_t /* System.Decimal */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append16(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	uint16_t /* System.UInt16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append17(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	uint32_t /* System.UInt32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append18(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	uint64_t /* System.UInt64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append19(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append20(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Char_Array_t /* System.Char[] */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendJoin(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	CString /* System.String */ separator,
+	System_Object_Array_t /* System.Object[] */ values,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendJoin1(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	CString /* System.String */ separator,
+	System_String_Array_t /* System.String[] */ values,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendJoin2(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	uint8_t /* System.Char */ separator,
+	System_Object_Array_t /* System.Object[] */ values,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendJoin3(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	uint8_t /* System.Char */ separator,
+	System_String_Array_t /* System.String[] */ values,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert1(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert2(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	bool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert3(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	int8_t /* System.SByte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert4(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	uint8_t /* System.Byte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert5(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	int16_t /* System.Int16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert6(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	uint8_t /* System.Char */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert7(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	System_Char_Array_t /* System.Char[] */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert8(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	System_Char_Array_t /* System.Char[] */ value,
+	int32_t /* System.Int32 */ startIndex,
+	int32_t /* System.Int32 */ charCount,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert9(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert10(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	int64_t /* System.Int64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert11(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	float /* System.Single */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert12(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	double /* System.Double */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert13(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	System_Decimal_t /* System.Decimal */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert14(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	uint16_t /* System.UInt16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert15(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	uint32_t /* System.UInt32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert16(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	uint64_t /* System.UInt64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert17(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendFormat(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	CString /* System.String */ format,
+	System_Object_t /* System.Object */ arg0,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendFormat1(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	CString /* System.String */ format,
+	System_Object_t /* System.Object */ arg0,
+	System_Object_t /* System.Object */ arg1,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendFormat2(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	CString /* System.String */ format,
+	System_Object_t /* System.Object */ arg0,
+	System_Object_t /* System.Object */ arg1,
+	System_Object_t /* System.Object */ arg2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendFormat3(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	CString /* System.String */ format,
+	System_Object_Array_t /* System.Object[] */ args,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendFormat4(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	CString /* System.String */ format,
+	System_Object_t /* System.Object */ arg0,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendFormat5(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	CString /* System.String */ format,
+	System_Object_t /* System.Object */ arg0,
+	System_Object_t /* System.Object */ arg1,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendFormat6(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	CString /* System.String */ format,
+	System_Object_t /* System.Object */ arg0,
+	System_Object_t /* System.Object */ arg1,
+	System_Object_t /* System.Object */ arg2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendFormat7(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	CString /* System.String */ format,
+	System_Object_Array_t /* System.Object[] */ args,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendFormat8(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Text_CompositeFormat_t /* System.Text.CompositeFormat */ format,
+	System_Object_Array_t /* System.Object[] */ args,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Replace(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	CString /* System.String */ oldValue,
+	CString /* System.String */ newValue,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Text_StringBuilder_Equals(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ sb,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Replace1(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	CString /* System.String */ oldValue,
+	CString /* System.String */ newValue,
+	int32_t /* System.Int32 */ startIndex,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Replace2(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	uint8_t /* System.Char */ oldChar,
+	uint8_t /* System.Char */ newChar,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Replace3(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	uint8_t /* System.Char */ oldChar,
+	uint8_t /* System.Char */ newChar,
+	int32_t /* System.Int32 */ startIndex,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Create(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Create1(
+	int32_t /* System.Int32 */ capacity,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Create2(
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Create3(
+	CString /* System.String */ value,
+	int32_t /* System.Int32 */ capacity,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Create4(
+	CString /* System.String */ value,
+	int32_t /* System.Int32 */ startIndex,
+	int32_t /* System.Int32 */ length,
+	int32_t /* System.Int32 */ capacity,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Create5(
+	int32_t /* System.Int32 */ capacity,
+	int32_t /* System.Int32 */ maxCapacity,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Text_StringBuilder_Capacity_Get(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Text_StringBuilder_Capacity_Set(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Text_StringBuilder_Capacity_Get(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Text_StringBuilder_Capacity_Set(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Text_StringBuilder_MaxCapacity_Get(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Text_StringBuilder_Length_Get(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Text_StringBuilder_Length_Set(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Text_StringBuilder_Length_Get(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Text_StringBuilder_Length_Set(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_Text_StringBuilder_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Text_StringBuilder_Destroy(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self
+);
+
+#pragma mark - END APIs of System.Text.StringBuilder
+
+#pragma mark - BEGIN APIs of System.Text.StringBuilder.ChunkEnumerator
+System_Text_StringBuilder_ChunkEnumerator_t /* System.Text.StringBuilder.ChunkEnumerator */
+System_Text_StringBuilder_ChunkEnumerator_GetEnumerator(
+	System_Text_StringBuilder_ChunkEnumerator_t /* System.Text.StringBuilder.ChunkEnumerator */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Text_StringBuilder_ChunkEnumerator_MoveNext(
+	System_Text_StringBuilder_ChunkEnumerator_t /* System.Text.StringBuilder.ChunkEnumerator */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_t /* System.Type */
+System_Text_StringBuilder_ChunkEnumerator_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Text_StringBuilder_ChunkEnumerator_Destroy(
+	System_Text_StringBuilder_ChunkEnumerator_t /* System.Text.StringBuilder.ChunkEnumerator */ self
+);
+
+#pragma mark - END APIs of System.Text.StringBuilder.ChunkEnumerator
+
+
+#pragma mark - BEGIN APIs of System.IO.FileSystemInfo
+void /* System.Void */
+System_IO_FileSystemInfo_GetObjectData(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_Runtime_Serialization_SerializationInfo_t /* System.Runtime.Serialization.SerializationInfo */ info,
+	System_Runtime_Serialization_StreamingContext_t /* System.Runtime.Serialization.StreamingContext */ context,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_FileSystemInfo_Delete(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_FileSystemInfo_CreateAsSymbolicLink(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	CString /* System.String */ pathToTarget,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */
+System_IO_FileSystemInfo_ResolveLinkTarget(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	bool /* System.Boolean */ returnFinalTarget,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_IO_FileSystemInfo_ToString(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_FileSystemInfo_Refresh(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_IO_FileSystemInfo_FullName_Get(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CString /* System.String */
+System_IO_FileSystemInfo_Extension_Get(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CString /* System.String */
+System_IO_FileSystemInfo_Name_Get(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_IO_FileSystemInfo_Exists_Get(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_DateTime_t /* System.DateTime */
+System_IO_FileSystemInfo_CreationTime_Get(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_FileSystemInfo_CreationTime_Set(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_DateTime_t /* System.DateTime */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_DateTime_t /* System.DateTime */
+System_IO_FileSystemInfo_CreationTime_Get(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_FileSystemInfo_CreationTime_Set(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_DateTime_t /* System.DateTime */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_DateTime_t /* System.DateTime */
+System_IO_FileSystemInfo_CreationTimeUtc_Get(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_FileSystemInfo_CreationTimeUtc_Set(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_DateTime_t /* System.DateTime */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_DateTime_t /* System.DateTime */
+System_IO_FileSystemInfo_CreationTimeUtc_Get(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_FileSystemInfo_CreationTimeUtc_Set(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_DateTime_t /* System.DateTime */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_DateTime_t /* System.DateTime */
+System_IO_FileSystemInfo_LastAccessTime_Get(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_FileSystemInfo_LastAccessTime_Set(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_DateTime_t /* System.DateTime */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_DateTime_t /* System.DateTime */
+System_IO_FileSystemInfo_LastAccessTime_Get(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_FileSystemInfo_LastAccessTime_Set(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_DateTime_t /* System.DateTime */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_DateTime_t /* System.DateTime */
+System_IO_FileSystemInfo_LastAccessTimeUtc_Get(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_FileSystemInfo_LastAccessTimeUtc_Set(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_DateTime_t /* System.DateTime */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_DateTime_t /* System.DateTime */
+System_IO_FileSystemInfo_LastAccessTimeUtc_Get(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_FileSystemInfo_LastAccessTimeUtc_Set(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_DateTime_t /* System.DateTime */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_DateTime_t /* System.DateTime */
+System_IO_FileSystemInfo_LastWriteTime_Get(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_FileSystemInfo_LastWriteTime_Set(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_DateTime_t /* System.DateTime */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_DateTime_t /* System.DateTime */
+System_IO_FileSystemInfo_LastWriteTime_Get(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_FileSystemInfo_LastWriteTime_Set(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_DateTime_t /* System.DateTime */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_DateTime_t /* System.DateTime */
+System_IO_FileSystemInfo_LastWriteTimeUtc_Get(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_FileSystemInfo_LastWriteTimeUtc_Set(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_DateTime_t /* System.DateTime */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_DateTime_t /* System.DateTime */
+System_IO_FileSystemInfo_LastWriteTimeUtc_Get(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_FileSystemInfo_LastWriteTimeUtc_Set(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_DateTime_t /* System.DateTime */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CString /* System.String */
+System_IO_FileSystemInfo_LinkTarget_Get(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_IO_UnixFileMode /* System.IO.UnixFileMode */
+System_IO_FileSystemInfo_UnixFileMode_Get(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_FileSystemInfo_UnixFileMode_Set(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_IO_UnixFileMode /* System.IO.UnixFileMode */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_IO_UnixFileMode /* System.IO.UnixFileMode */
+System_IO_FileSystemInfo_UnixFileMode_Get(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_FileSystemInfo_UnixFileMode_Set(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_IO_UnixFileMode /* System.IO.UnixFileMode */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_IO_FileAttributes /* System.IO.FileAttributes */
+System_IO_FileSystemInfo_Attributes_Get(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_FileSystemInfo_Attributes_Set(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_IO_FileAttributes /* System.IO.FileAttributes */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_IO_FileAttributes /* System.IO.FileAttributes */
+System_IO_FileSystemInfo_Attributes_Get(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_FileSystemInfo_Attributes_Set(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
+	System_IO_FileAttributes /* System.IO.FileAttributes */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_IO_FileSystemInfo_TypeOf(
+	
+);
+
+void /* System.Void */
+System_IO_FileSystemInfo_Destroy(
+	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self
+);
+
+#pragma mark - END APIs of System.IO.FileSystemInfo
+
+#pragma mark - BEGIN APIs of System.IO.FileInfo
+System_IO_FileStream_t /* System.IO.FileStream */
+System_IO_FileInfo_Open(
+	System_IO_FileInfo_t /* System.IO.FileInfo */ self,
+	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ options,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_StreamReader_t /* System.IO.StreamReader */
+System_IO_FileInfo_OpenText(
+	System_IO_FileInfo_t /* System.IO.FileInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_StreamWriter_t /* System.IO.StreamWriter */
+System_IO_FileInfo_CreateText(
+	System_IO_FileInfo_t /* System.IO.FileInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_StreamWriter_t /* System.IO.StreamWriter */
+System_IO_FileInfo_AppendText(
+	System_IO_FileInfo_t /* System.IO.FileInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_FileInfo_t /* System.IO.FileInfo */
+System_IO_FileInfo_CopyTo(
+	System_IO_FileInfo_t /* System.IO.FileInfo */ self,
+	CString /* System.String */ destFileName,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_FileInfo_t /* System.IO.FileInfo */
+System_IO_FileInfo_CopyTo1(
+	System_IO_FileInfo_t /* System.IO.FileInfo */ self,
+	CString /* System.String */ destFileName,
+	bool /* System.Boolean */ overwrite,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_FileStream_t /* System.IO.FileStream */
+System_IO_FileInfo_Create1(
+	System_IO_FileInfo_t /* System.IO.FileInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_FileInfo_Delete(
+	System_IO_FileInfo_t /* System.IO.FileInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_FileStream_t /* System.IO.FileStream */
+System_IO_FileInfo_Open1(
+	System_IO_FileInfo_t /* System.IO.FileInfo */ self,
+	System_IO_FileMode /* System.IO.FileMode */ mode,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_FileStream_t /* System.IO.FileStream */
+System_IO_FileInfo_Open2(
+	System_IO_FileInfo_t /* System.IO.FileInfo */ self,
+	System_IO_FileMode /* System.IO.FileMode */ mode,
+	System_IO_FileAccess /* System.IO.FileAccess */ access,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_FileStream_t /* System.IO.FileStream */
+System_IO_FileInfo_Open3(
+	System_IO_FileInfo_t /* System.IO.FileInfo */ self,
+	System_IO_FileMode /* System.IO.FileMode */ mode,
+	System_IO_FileAccess /* System.IO.FileAccess */ access,
+	System_IO_FileShare /* System.IO.FileShare */ share,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_FileStream_t /* System.IO.FileStream */
+System_IO_FileInfo_OpenRead(
+	System_IO_FileInfo_t /* System.IO.FileInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_FileStream_t /* System.IO.FileStream */
+System_IO_FileInfo_OpenWrite(
+	System_IO_FileInfo_t /* System.IO.FileInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_FileInfo_MoveTo(
+	System_IO_FileInfo_t /* System.IO.FileInfo */ self,
+	CString /* System.String */ destFileName,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_FileInfo_MoveTo1(
+	System_IO_FileInfo_t /* System.IO.FileInfo */ self,
+	CString /* System.String */ destFileName,
+	bool /* System.Boolean */ overwrite,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_FileInfo_t /* System.IO.FileInfo */
+System_IO_FileInfo_Replace(
+	System_IO_FileInfo_t /* System.IO.FileInfo */ self,
+	CString /* System.String */ destinationFileName,
+	CString /* System.String */ destinationBackupFileName,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_FileInfo_t /* System.IO.FileInfo */
+System_IO_FileInfo_Replace1(
+	System_IO_FileInfo_t /* System.IO.FileInfo */ self,
+	CString /* System.String */ destinationFileName,
+	CString /* System.String */ destinationBackupFileName,
+	bool /* System.Boolean */ ignoreMetadataErrors,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_FileInfo_Decrypt(
+	System_IO_FileInfo_t /* System.IO.FileInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_FileInfo_Encrypt(
+	System_IO_FileInfo_t /* System.IO.FileInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_FileInfo_t /* System.IO.FileInfo */
+System_IO_FileInfo_Create2(
+	CString /* System.String */ fileName,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_IO_FileInfo_Name_Get(
+	System_IO_FileInfo_t /* System.IO.FileInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int64_t /* System.Int64 */
+System_IO_FileInfo_Length_Get(
+	System_IO_FileInfo_t /* System.IO.FileInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+CString /* System.String */
+System_IO_FileInfo_DirectoryName_Get(
+	System_IO_FileInfo_t /* System.IO.FileInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */
+System_IO_FileInfo_Directory_Get(
+	System_IO_FileInfo_t /* System.IO.FileInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_IO_FileInfo_IsReadOnly_Get(
+	System_IO_FileInfo_t /* System.IO.FileInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_FileInfo_IsReadOnly_Set(
+	System_IO_FileInfo_t /* System.IO.FileInfo */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_IO_FileInfo_IsReadOnly_Get(
+	System_IO_FileInfo_t /* System.IO.FileInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_FileInfo_IsReadOnly_Set(
+	System_IO_FileInfo_t /* System.IO.FileInfo */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_IO_FileInfo_Exists_Get(
+	System_IO_FileInfo_t /* System.IO.FileInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_IO_FileInfo_TypeOf(
+	
+);
+
+void /* System.Void */
+System_IO_FileInfo_Destroy(
+	System_IO_FileInfo_t /* System.IO.FileInfo */ self
+);
+
+#pragma mark - END APIs of System.IO.FileInfo
+
+#pragma mark - BEGIN APIs of System.IO.DirectoryInfo
+System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */
+System_IO_DirectoryInfo_CreateSubdirectory(
+	System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */ self,
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_DirectoryInfo_Create1(
+	System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_FileInfo_Array_t /* System.IO.FileInfo[] */
+System_IO_DirectoryInfo_GetFiles(
+	System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_FileInfo_Array_t /* System.IO.FileInfo[] */
+System_IO_DirectoryInfo_GetFiles1(
+	System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */ self,
+	CString /* System.String */ searchPattern,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_FileInfo_Array_t /* System.IO.FileInfo[] */
+System_IO_DirectoryInfo_GetFiles2(
+	System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */ self,
+	CString /* System.String */ searchPattern,
+	System_IO_SearchOption /* System.IO.SearchOption */ searchOption,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_FileInfo_Array_t /* System.IO.FileInfo[] */
+System_IO_DirectoryInfo_GetFiles3(
+	System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */ self,
+	CString /* System.String */ searchPattern,
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ enumerationOptions,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_FileSystemInfo_Array_t /* System.IO.FileSystemInfo[] */
+System_IO_DirectoryInfo_GetFileSystemInfos(
+	System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_FileSystemInfo_Array_t /* System.IO.FileSystemInfo[] */
+System_IO_DirectoryInfo_GetFileSystemInfos1(
+	System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */ self,
+	CString /* System.String */ searchPattern,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_FileSystemInfo_Array_t /* System.IO.FileSystemInfo[] */
+System_IO_DirectoryInfo_GetFileSystemInfos2(
+	System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */ self,
+	CString /* System.String */ searchPattern,
+	System_IO_SearchOption /* System.IO.SearchOption */ searchOption,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_FileSystemInfo_Array_t /* System.IO.FileSystemInfo[] */
+System_IO_DirectoryInfo_GetFileSystemInfos3(
+	System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */ self,
+	CString /* System.String */ searchPattern,
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ enumerationOptions,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_DirectoryInfo_Array_t /* System.IO.DirectoryInfo[] */
+System_IO_DirectoryInfo_GetDirectories(
+	System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_DirectoryInfo_Array_t /* System.IO.DirectoryInfo[] */
+System_IO_DirectoryInfo_GetDirectories1(
+	System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */ self,
+	CString /* System.String */ searchPattern,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_DirectoryInfo_Array_t /* System.IO.DirectoryInfo[] */
+System_IO_DirectoryInfo_GetDirectories2(
+	System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */ self,
+	CString /* System.String */ searchPattern,
+	System_IO_SearchOption /* System.IO.SearchOption */ searchOption,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_DirectoryInfo_Array_t /* System.IO.DirectoryInfo[] */
+System_IO_DirectoryInfo_GetDirectories3(
+	System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */ self,
+	CString /* System.String */ searchPattern,
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ enumerationOptions,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_DirectoryInfo_MoveTo(
+	System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */ self,
+	CString /* System.String */ destDirName,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_DirectoryInfo_Delete(
+	System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_DirectoryInfo_Delete1(
+	System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */ self,
+	bool /* System.Boolean */ recursive,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */
+System_IO_DirectoryInfo_Create2(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_IO_DirectoryInfo_Name_Get(
+	System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */
+System_IO_DirectoryInfo_Parent_Get(
+	System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */
+System_IO_DirectoryInfo_Root_Get(
+	System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_IO_DirectoryInfo_Exists_Get(
+	System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_IO_DirectoryInfo_TypeOf(
+	
+);
+
+void /* System.Void */
+System_IO_DirectoryInfo_Destroy(
+	System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */ self
+);
+
+#pragma mark - END APIs of System.IO.DirectoryInfo
+
+#pragma mark - BEGIN APIs of System.IO.FileInfo[]
+#pragma mark - END APIs of System.IO.FileInfo[]
+
+#pragma mark - BEGIN APIs of System.IO.EnumerationOptions
+System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */
+System_IO_EnumerationOptions_Create(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_IO_EnumerationOptions_RecurseSubdirectories_Get(
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_EnumerationOptions_RecurseSubdirectories_Set(
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_IO_EnumerationOptions_RecurseSubdirectories_Get(
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_EnumerationOptions_RecurseSubdirectories_Set(
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_IO_EnumerationOptions_IgnoreInaccessible_Get(
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_EnumerationOptions_IgnoreInaccessible_Set(
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_IO_EnumerationOptions_IgnoreInaccessible_Get(
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_EnumerationOptions_IgnoreInaccessible_Set(
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_IO_EnumerationOptions_BufferSize_Get(
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_EnumerationOptions_BufferSize_Set(
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_IO_EnumerationOptions_BufferSize_Get(
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_EnumerationOptions_BufferSize_Set(
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_IO_FileAttributes /* System.IO.FileAttributes */
+System_IO_EnumerationOptions_AttributesToSkip_Get(
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_EnumerationOptions_AttributesToSkip_Set(
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
+	System_IO_FileAttributes /* System.IO.FileAttributes */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_IO_FileAttributes /* System.IO.FileAttributes */
+System_IO_EnumerationOptions_AttributesToSkip_Get(
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_EnumerationOptions_AttributesToSkip_Set(
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
+	System_IO_FileAttributes /* System.IO.FileAttributes */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_IO_MatchType /* System.IO.MatchType */
+System_IO_EnumerationOptions_MatchType_Get(
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_EnumerationOptions_MatchType_Set(
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
+	System_IO_MatchType /* System.IO.MatchType */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_IO_MatchType /* System.IO.MatchType */
+System_IO_EnumerationOptions_MatchType_Get(
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_EnumerationOptions_MatchType_Set(
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
+	System_IO_MatchType /* System.IO.MatchType */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_IO_MatchCasing /* System.IO.MatchCasing */
+System_IO_EnumerationOptions_MatchCasing_Get(
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_EnumerationOptions_MatchCasing_Set(
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
+	System_IO_MatchCasing /* System.IO.MatchCasing */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_IO_MatchCasing /* System.IO.MatchCasing */
+System_IO_EnumerationOptions_MatchCasing_Get(
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_EnumerationOptions_MatchCasing_Set(
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
+	System_IO_MatchCasing /* System.IO.MatchCasing */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_IO_EnumerationOptions_MaxRecursionDepth_Get(
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_EnumerationOptions_MaxRecursionDepth_Set(
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_IO_EnumerationOptions_MaxRecursionDepth_Get(
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_EnumerationOptions_MaxRecursionDepth_Set(
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_IO_EnumerationOptions_ReturnSpecialDirectories_Get(
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_EnumerationOptions_ReturnSpecialDirectories_Set(
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_IO_EnumerationOptions_ReturnSpecialDirectories_Get(
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_EnumerationOptions_ReturnSpecialDirectories_Set(
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_IO_EnumerationOptions_TypeOf(
+	
+);
+
+void /* System.Void */
+System_IO_EnumerationOptions_Destroy(
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self
+);
+
+#pragma mark - END APIs of System.IO.EnumerationOptions
+
+#pragma mark - BEGIN APIs of System.IO.FileSystemInfo[]
+#pragma mark - END APIs of System.IO.FileSystemInfo[]
+
+#pragma mark - BEGIN APIs of System.IO.DirectoryInfo[]
+#pragma mark - END APIs of System.IO.DirectoryInfo[]
+
+#pragma mark - BEGIN APIs of System.IO.Directory
+System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */
+System_IO_Directory_GetParent(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */
+System_IO_Directory_CreateDirectory(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */
+System_IO_Directory_CreateDirectory1(
+	CString /* System.String */ path,
+	System_IO_UnixFileMode /* System.IO.UnixFileMode */ unixCreateMode,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */
+System_IO_Directory_CreateTempSubdirectory(
+	CString /* System.String */ prefix,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_IO_Directory_Exists(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_Directory_SetCreationTime(
+	CString /* System.String */ path,
+	System_DateTime_t /* System.DateTime */ creationTime,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_Directory_SetCreationTimeUtc(
+	CString /* System.String */ path,
+	System_DateTime_t /* System.DateTime */ creationTimeUtc,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_IO_Directory_GetCreationTime(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_IO_Directory_GetCreationTimeUtc(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_Directory_SetLastWriteTime(
+	CString /* System.String */ path,
+	System_DateTime_t /* System.DateTime */ lastWriteTime,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_Directory_SetLastWriteTimeUtc(
+	CString /* System.String */ path,
+	System_DateTime_t /* System.DateTime */ lastWriteTimeUtc,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_IO_Directory_GetLastWriteTime(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_IO_Directory_GetLastWriteTimeUtc(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_Directory_SetLastAccessTime(
+	CString /* System.String */ path,
+	System_DateTime_t /* System.DateTime */ lastAccessTime,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_Directory_SetLastAccessTimeUtc(
+	CString /* System.String */ path,
+	System_DateTime_t /* System.DateTime */ lastAccessTimeUtc,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_IO_Directory_GetLastAccessTime(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_DateTime_t /* System.DateTime */
+System_IO_Directory_GetLastAccessTimeUtc(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_String_Array_t /* System.String[] */
+System_IO_Directory_GetFiles(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_String_Array_t /* System.String[] */
+System_IO_Directory_GetFiles1(
+	CString /* System.String */ path,
+	CString /* System.String */ searchPattern,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_String_Array_t /* System.String[] */
+System_IO_Directory_GetFiles2(
+	CString /* System.String */ path,
+	CString /* System.String */ searchPattern,
+	System_IO_SearchOption /* System.IO.SearchOption */ searchOption,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_String_Array_t /* System.String[] */
+System_IO_Directory_GetFiles3(
+	CString /* System.String */ path,
+	CString /* System.String */ searchPattern,
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ enumerationOptions,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_String_Array_t /* System.String[] */
+System_IO_Directory_GetDirectories(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_String_Array_t /* System.String[] */
+System_IO_Directory_GetDirectories1(
+	CString /* System.String */ path,
+	CString /* System.String */ searchPattern,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_String_Array_t /* System.String[] */
+System_IO_Directory_GetDirectories2(
+	CString /* System.String */ path,
+	CString /* System.String */ searchPattern,
+	System_IO_SearchOption /* System.IO.SearchOption */ searchOption,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_String_Array_t /* System.String[] */
+System_IO_Directory_GetDirectories3(
+	CString /* System.String */ path,
+	CString /* System.String */ searchPattern,
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ enumerationOptions,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_String_Array_t /* System.String[] */
+System_IO_Directory_GetFileSystemEntries(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_String_Array_t /* System.String[] */
+System_IO_Directory_GetFileSystemEntries1(
+	CString /* System.String */ path,
+	CString /* System.String */ searchPattern,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_String_Array_t /* System.String[] */
+System_IO_Directory_GetFileSystemEntries2(
+	CString /* System.String */ path,
+	CString /* System.String */ searchPattern,
+	System_IO_SearchOption /* System.IO.SearchOption */ searchOption,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_String_Array_t /* System.String[] */
+System_IO_Directory_GetFileSystemEntries3(
+	CString /* System.String */ path,
+	CString /* System.String */ searchPattern,
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ enumerationOptions,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_IO_Directory_GetDirectoryRoot(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_IO_Directory_GetCurrentDirectory(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_Directory_SetCurrentDirectory(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_Directory_Move(
+	CString /* System.String */ sourceDirName,
+	CString /* System.String */ destDirName,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_Directory_Delete(
+	CString /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_Directory_Delete1(
+	CString /* System.String */ path,
+	bool /* System.Boolean */ recursive,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_String_Array_t /* System.String[] */
+System_IO_Directory_GetLogicalDrives(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */
+System_IO_Directory_CreateSymbolicLink(
+	CString /* System.String */ path,
+	CString /* System.String */ pathToTarget,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */
+System_IO_Directory_ResolveLinkTarget(
+	CString /* System.String */ linkPath,
+	bool /* System.Boolean */ returnFinalTarget,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_t /* System.Type */
+System_IO_Directory_TypeOf(
+	
+);
+
+void /* System.Void */
+System_IO_Directory_Destroy(
+	System_IO_Directory_t /* System.IO.Directory */ self
+);
+
+#pragma mark - END APIs of System.IO.Directory
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Address
 NativeAOT_CodeGeneratorInputSample_Address_t /* NativeAOT.CodeGeneratorInputSample.Address */

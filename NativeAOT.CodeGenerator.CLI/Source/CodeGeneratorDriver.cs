@@ -92,8 +92,13 @@ internal class CodeGeneratorDriver
         List<Type> types = new();
 
         foreach (string typeName in typeNames) {
-            Type? type = assembly.GetType(typeName, false) 
-                         ?? Type.GetType(typeName, true);
+            Type? type;
+            
+            try {
+                type = assembly.GetType(typeName, true);
+            } catch {
+                type = Type.GetType(typeName, true);
+            }
 
             if (type != null) {
                 types.Add(type);
