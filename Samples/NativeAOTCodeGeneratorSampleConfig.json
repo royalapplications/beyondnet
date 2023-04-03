@@ -15,6 +15,7 @@
 		"System.Threading.Timer",
 		"System.AppDomain",
 		"System.Random",
+		"System.Text.Encoding",
 		"System.IO.Path",
 		"System.IO.File",
 		"System.IO.FileInfo",
