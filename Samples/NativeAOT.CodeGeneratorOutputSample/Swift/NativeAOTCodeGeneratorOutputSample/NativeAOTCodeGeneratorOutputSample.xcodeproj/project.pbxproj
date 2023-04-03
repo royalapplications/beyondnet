@@ -21,6 +21,7 @@
 		E73EE8F429DAEC1A00C57A71 /* SystemThreadingTimerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73EE8F329DAEC1A00C57A71 /* SystemThreadingTimerTest.swift */; };
 		E73EE8F629DAF09D00C57A71 /* SystemMathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73EE8F529DAF09D00C57A71 /* SystemMathTests.swift */; };
 		E73EE8F829DB097900C57A71 /* SystemRandomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73EE8F729DB097900C57A71 /* SystemRandomTests.swift */; };
+		E73EE8FA29DB0B3600C57A71 /* SystemIOPathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73EE8F929DB0B3600C57A71 /* SystemIOPathTests.swift */; };
 		E746795C29DAE45000AF25C5 /* SystemConvertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E746795B29DAE45000AF25C5 /* SystemConvertTests.swift */; };
 		E7C8CF0529C1FA9500C4230F /* SystemGuidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0429C1FA9500C4230F /* SystemGuidTests.swift */; };
 		E7C8CF0729C1FABA00C4230F /* SystemStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0629C1FABA00C4230F /* SystemStringTests.swift */; };
@@ -85,6 +86,7 @@
 		E73EE8F329DAEC1A00C57A71 /* SystemThreadingTimerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemThreadingTimerTest.swift; sourceTree = "<group>"; };
 		E73EE8F529DAF09D00C57A71 /* SystemMathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemMathTests.swift; sourceTree = "<group>"; };
 		E73EE8F729DB097900C57A71 /* SystemRandomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemRandomTests.swift; sourceTree = "<group>"; };
+		E73EE8F929DB0B3600C57A71 /* SystemIOPathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemIOPathTests.swift; sourceTree = "<group>"; };
 		E746795B29DAE45000AF25C5 /* SystemConvertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemConvertTests.swift; sourceTree = "<group>"; };
 		E7C8CF0429C1FA9500C4230F /* SystemGuidTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemGuidTests.swift; sourceTree = "<group>"; };
 		E7C8CF0629C1FABA00C4230F /* SystemStringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemStringTests.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				E73EE8F329DAEC1A00C57A71 /* SystemThreadingTimerTest.swift */,
 				E73EE8F529DAF09D00C57A71 /* SystemMathTests.swift */,
 				E73EE8F729DB097900C57A71 /* SystemRandomTests.swift */,
+				E73EE8F929DB0B3600C57A71 /* SystemIOPathTests.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				E73EE8F429DAEC1A00C57A71 /* SystemThreadingTimerTest.swift in Sources */,
 				E720932029CE188E0071B5B3 /* NativeBox.swift in Sources */,
 				E70D117D29BFA01300B4E738 /* TestClassesTests.swift in Sources */,
+				E73EE8FA29DB0B3600C57A71 /* SystemIOPathTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
