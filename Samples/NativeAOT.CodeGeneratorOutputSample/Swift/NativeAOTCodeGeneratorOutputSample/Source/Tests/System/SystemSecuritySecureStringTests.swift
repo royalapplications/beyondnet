@@ -5,7 +5,7 @@ final class SystemSecuritySecureStringTests: XCTestCase {
 	func testSecureString() {
 		var exception: System_Exception_t?
 		
-		let string = "Hello"
+		var string = "Hello World!"
 		
 		guard let secureString = System_Security_SecureString_Create(&exception),
 			  exception == nil else {
@@ -23,32 +23,32 @@ final class SystemSecuritySecureStringTests: XCTestCase {
 			System_Security_SecureString_Destroy(secureString)
 		}
 		
-		let characters = string.utf8.map{ UInt8($0) }
-		
-		for character in characters {
-			System_Security_SecureString_AppendChar(secureString,
-													character,
-													&exception)
-			
-			XCTAssertNil(exception)
+		string.withUTF8 { buffer in
+			for character in buffer {
+				System_Security_SecureString_AppendChar(secureString,
+														character,
+														&exception)
+				
+				XCTAssertNil(exception)
+			}
 		}
 		
-		let retStringPtr = System_Runtime_InteropServices_Marshal_SecureStringToGlobalAllocAnsi(secureString,
-																								&exception)
+		let retStringPtr = System_Runtime_InteropServices_Marshal_SecureStringToGlobalAllocUnicode(secureString,
+																								   &exception)
 		
 		XCTAssertNil(exception)
 		
 		defer {
-			System_Runtime_InteropServices_Marshal_FreeHGlobal(retStringPtr,
-															   &exception)
+			System_Runtime_InteropServices_Marshal_ZeroFreeGlobalAllocUnicode(retStringPtr,
+																			  &exception)
 			
 			XCTAssertNil(exception)
 		}
 		
-		guard let retStringC = System_Runtime_InteropServices_Marshal_PtrToStringAuto1(retStringPtr,
-																					   &exception),
+		guard let retStringC = System_Runtime_InteropServices_Marshal_PtrToStringUni(retStringPtr,
+																					 &exception),
 			  exception == nil else {
-			XCTFail("System.Runtime.InteropServices.Marshal.PtrToStringAuto should not throw and return an instance of a C String")
+			XCTFail("System.Runtime.InteropServices.Marshal.PtrToStringUni should not throw and return an instance of a C String")
 			
 			return
 		}
