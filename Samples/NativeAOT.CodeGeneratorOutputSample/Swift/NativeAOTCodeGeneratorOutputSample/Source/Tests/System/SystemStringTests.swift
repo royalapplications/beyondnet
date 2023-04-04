@@ -147,7 +147,7 @@ final class SystemStringTests: XCTestCase {
 		XCTAssertEqual(expectedIndex, index)
 	}
 	
-	func testStringSplit() {
+	func testStringSplitAndJoin() {
 		var exception: System_Exception_t?
 		
 		let components = [
@@ -171,7 +171,8 @@ final class SystemStringTests: XCTestCase {
 		
 		let separator = ";"
 		
-		let string = components.joined(separator: separator)
+		let joined = components.joined(separator: separator)
+		let cleanedJoined = cleanedComponents.joined(separator: separator)
 		
 		guard let options: System_StringSplitOptions = .init(rawValue: System_StringSplitOptions.removeEmptyEntries.rawValue | System_StringSplitOptions.trimEntries.rawValue) else {
 			XCTFail("Failed to create string split options")
@@ -179,7 +180,7 @@ final class SystemStringTests: XCTestCase {
 			return
 		}
 		
-		guard let split = System_String_Split6(string,
+		guard let split = System_String_Split6(joined,
 											   separator,
 											   options,
 											   &exception),
@@ -223,5 +224,20 @@ final class SystemStringTests: XCTestCase {
 			
 			XCTAssertEqual(component, componentRet)
 		}
+		
+		guard let joinedRetC = System_String_Join1(separator,
+												   split,
+												   &exception),
+			  exception == nil else {
+			XCTFail("System.String.Join should not throw and return an instance of a C String")
+			
+			return
+		}
+		
+		defer { joinedRetC.deallocate() }
+		
+		let joinedRet = String(cString: joinedRetC)
+		
+		XCTAssertEqual(cleanedJoined, joinedRet)
 	}
 }
