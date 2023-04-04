@@ -349,7 +349,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
         sb.AppendLine();
         
         if (hasReturnType) {
-            string returnValue = returnTypeDescriptor.GetReturnValueOnException()
+            string returnValue = returnTypeDescriptor.GetDefaultValue()
                                  ?? $"default({returnType.GetFullNameOrName()})";
 
             sb.AppendLine($"\t\t\treturn {returnValue};");

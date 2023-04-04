@@ -96,7 +96,9 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         );
         
         TypeDescriptor returnOrSetterTypeDescriptor = returnOrSetterOrEventHandlerType.GetTypeDescriptor(typeDescriptorRegistry);
+        
         string cReturnOrSetterTypeName = returnOrSetterTypeDescriptor.GetTypeName(CodeLanguage.C, true);
+        
         string cReturnOrSetterTypeNameWithComment;
         Type? setterType;
         
@@ -142,7 +144,9 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
 
         if (!isStatic) {
             TypeDescriptor declaringTypeDescriptor = declaringType.GetTypeDescriptor(typeDescriptorRegistry);
+            
             string declaringTypeName = declaringTypeDescriptor.GetTypeName(CodeLanguage.C, true);
+            
             string selfParameterName = "self";
             string parameterString = $"{declaringTypeName} /* {declaringType.GetFullNameOrName()} */ {selfParameterName}";
 
@@ -158,6 +162,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             }
             
             TypeDescriptor setterOrEventHandlerTypeDescriptor = setterOrEventHandlerType.GetTypeDescriptor(typeDescriptorRegistry);
+            
             string cSetterOrEventHandlerTypeName = setterOrEventHandlerTypeDescriptor.GetTypeName(CodeLanguage.C, true);
     
             string parameterString = $"{cSetterOrEventHandlerTypeName} /* {setterOrEventHandlerType.GetFullNameOrName()} */ value";
@@ -165,14 +170,21 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         } else {
             foreach (var parameter in parameters) {
                 Type parameterType = parameter.ParameterType;
+                bool isByRefParameter = parameterType.IsByRef;
                 bool isOutParameter = parameter.IsOut;
 
-                if (isOutParameter) {
+                if (isByRefParameter) {
                     parameterType = parameterType.GetNonByRefType();
                 }
                 
                 TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
-                string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(CodeLanguage.C, true, isOutParameter);
+                
+                string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(
+                    CodeLanguage.C,
+                    true,
+                    isOutParameter,
+                    isByRefParameter
+                );
 
                 string parameterString = $"{unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */ {parameter.Name}";
                 parameterList.Add(parameterString);
@@ -182,7 +194,14 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         if (mayThrow) {
             Type exceptionType = typeof(Exception);
             TypeDescriptor outExceptionTypeDescriptor = exceptionType.GetTypeDescriptor(typeDescriptorRegistry);
-            string outExceptionTypeName = outExceptionTypeDescriptor.GetTypeName(CodeLanguage.C, true, true);
+            
+            string outExceptionTypeName = outExceptionTypeDescriptor.GetTypeName(
+                CodeLanguage.C,
+                true,
+                true,
+                true
+            );
+            
             string outExceptionParameterName = "outException";
 
             string outExceptionParameterString = $"{outExceptionTypeName} /* {exceptionType.GetFullNameOrName()} */ {outExceptionParameterName}"; 

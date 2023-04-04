@@ -42,4 +42,13 @@ public class TestClass
     {
         return testEnum.ToString();
     }
+
+    public int ModifyByRefValueAndReturnOriginalValue(ref int valueToModify, int targetValue)
+    {
+        int originalValue = valueToModify;
+        
+        valueToModify = targetValue;
+
+        return originalValue;
+    }
 }

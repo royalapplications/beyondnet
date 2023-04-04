@@ -245,4 +245,33 @@ final class TestClassesTests: XCTestCase {
         
         XCTAssertEqual("SecondCase", enumName)
     }
+	
+	func testByRef() {
+		var exception: System_Exception_t?
+		
+		guard let testClass = NativeAOT_CodeGeneratorInputSample_TestClass_Create(&exception),
+			  exception == nil else {
+			XCTFail("TestClass ctor should not throw and return an instance")
+			
+			return
+		}
+		
+		defer {
+			NativeAOT_CodeGeneratorInputSample_TestClass_Destroy(testClass)
+		}
+		
+		let originalValue: Int32 = 5
+		var valueToModify: Int32 = originalValue
+		let targetValue: Int32 = 10
+		
+		let originalValueRet = NativeAOT_CodeGeneratorInputSample_TestClass_ModifyByRefValueAndReturnOriginalValue(testClass,
+																												   &valueToModify,
+																												   targetValue,
+																												   &exception)
+		
+		XCTAssertNil(exception)
+		
+		XCTAssertEqual(originalValue, originalValueRet)
+		XCTAssertEqual(targetValue, valueToModify)
+	}
 }

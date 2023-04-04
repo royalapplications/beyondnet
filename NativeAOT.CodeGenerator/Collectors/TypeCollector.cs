@@ -299,6 +299,20 @@ public class TypeCollector
     )
     {
         unsupportedReason = null;
+        
+        if (type.IsByRef) {
+            Type nonByRefType = type.GetNonByRefType();
+
+            if (nonByRefType != type) {
+                bool isNonByRefTypeSupported = IsSupportedType(nonByRefType, out string? innerUnsupportedReason);
+
+                if (!isNonByRefTypeSupported) {
+                    unsupportedReason = innerUnsupportedReason;
+                    
+                    return false;
+                }
+            }
+        }
 
         if (!type.IsVisible) {
             unsupportedReason = "Is Not Visible (public)";

@@ -1,5 +1,5 @@
-// Number of generated types: 397
-// Number of generated members: 4294
+// Number of generated types: 392
+// Number of generated members: 4329
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -1091,7 +1091,6 @@ typedef void* System_Globalization_DateTimeFormatInfo_t;
 
 typedef void* System_Globalization_Calendar_Array_t;
 
-
 typedef void* System_Char_Array_t;
 
 typedef void* System_CharEnumerator_t;
@@ -1122,10 +1121,6 @@ typedef void* System_Text_Decoder_t;
 typedef void* System_Text_Encoder_t;
 
 // Type "TEnum[]" was skipped. Reason: It has no full name.
-
-
-
-
 typedef void* System_Runtime_InteropServices_StructLayoutAttribute_t;
 
 typedef void* System_Attribute_t;
@@ -13299,12 +13294,33 @@ System_Reflection_Binder_BindToField(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+System_Reflection_MethodBase_t /* System.Reflection.MethodBase */
+System_Reflection_Binder_BindToMethod(
+	System_Reflection_Binder_t /* System.Reflection.Binder */ self,
+	System_Reflection_BindingFlags /* System.Reflection.BindingFlags */ bindingAttr,
+	System_Reflection_MethodBase_Array_t /* System.Reflection.MethodBase[] */ match,
+	System_Object_Array_t* /* System.Object[] */ args,
+	System_Reflection_ParameterModifier_Array_t /* System.Reflection.ParameterModifier[] */ modifiers,
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ culture,
+	System_String_Array_t /* System.String[] */ names,
+	System_Object_t* /* System.Object */ state,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 System_Object_t /* System.Object */
 System_Reflection_Binder_ChangeType(
 	System_Reflection_Binder_t /* System.Reflection.Binder */ self,
 	System_Object_t /* System.Object */ value,
 	System_Type_t /* System.Type */ type,
 	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ culture,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Reflection_Binder_ReorderArgumentArray(
+	System_Reflection_Binder_t /* System.Reflection.Binder */ self,
+	System_Object_Array_t* /* System.Object[] */ args,
+	System_Object_t /* System.Object */ state,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -14666,6 +14682,13 @@ System_Runtime_InteropServices_SafeHandle_Dispose(
 void /* System.Void */
 System_Runtime_InteropServices_SafeHandle_SetHandleAsInvalid(
 	System_Runtime_InteropServices_SafeHandle_t /* System.Runtime.InteropServices.SafeHandle */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Runtime_InteropServices_SafeHandle_DangerousAddRef(
+	System_Runtime_InteropServices_SafeHandle_t /* System.Runtime.InteropServices.SafeHandle */ self,
+	bool* /* System.Boolean */ success,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -18254,7 +18277,6 @@ System_Globalization_DateTimeFormatInfo_Destroy(
 #pragma mark - BEGIN APIs of System.Globalization.Calendar[]
 #pragma mark - END APIs of System.Globalization.Calendar[]
 
-
 #pragma mark - BEGIN APIs of System.Char[]
 #pragma mark - END APIs of System.Char[]
 
@@ -19337,10 +19359,6 @@ System_Text_Encoder_Destroy(
 
 #pragma mark - BEGIN APIs of TEnum[]
 #pragma mark - END APIs of TEnum[]
-
-
-
-
 
 #pragma mark - BEGIN APIs of System.Runtime.InteropServices.StructLayoutAttribute
 System_Runtime_InteropServices_StructLayoutAttribute_t /* System.Runtime.InteropServices.StructLayoutAttribute */
@@ -23414,6 +23432,175 @@ System_Threading_Thread_MemoryBarrier(
 void /* System.Void */
 System_Threading_Thread_Sleep1(
 	System_TimeSpan_t /* System.TimeSpan */ timeout,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint8_t /* System.Byte */
+System_Threading_Thread_VolatileRead(
+	uint8_t* /* System.Byte */ address,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Threading_Thread_VolatileRead1(
+	double* /* System.Double */ address,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int16_t /* System.Int16 */
+System_Threading_Thread_VolatileRead2(
+	int16_t* /* System.Int16 */ address,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Threading_Thread_VolatileRead3(
+	int32_t* /* System.Int32 */ address,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_Threading_Thread_VolatileRead4(
+	int64_t* /* System.Int64 */ address,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+long /* System.IntPtr */
+System_Threading_Thread_VolatileRead5(
+	long* /* System.IntPtr */ address,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Threading_Thread_VolatileRead6(
+	System_Object_t* /* System.Object */ address,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int8_t /* System.SByte */
+System_Threading_Thread_VolatileRead7(
+	int8_t* /* System.SByte */ address,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+float /* System.Single */
+System_Threading_Thread_VolatileRead8(
+	float* /* System.Single */ address,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint16_t /* System.UInt16 */
+System_Threading_Thread_VolatileRead9(
+	uint16_t* /* System.UInt16 */ address,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint32_t /* System.UInt32 */
+System_Threading_Thread_VolatileRead10(
+	uint32_t* /* System.UInt32 */ address,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+uint64_t /* System.UInt64 */
+System_Threading_Thread_VolatileRead11(
+	uint64_t* /* System.UInt64 */ address,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+unsigned long /* System.UIntPtr */
+System_Threading_Thread_VolatileRead12(
+	unsigned long* /* System.UIntPtr */ address,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_VolatileWrite(
+	uint8_t* /* System.Byte */ address,
+	uint8_t /* System.Byte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_VolatileWrite1(
+	double* /* System.Double */ address,
+	double /* System.Double */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_VolatileWrite2(
+	int16_t* /* System.Int16 */ address,
+	int16_t /* System.Int16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_VolatileWrite3(
+	int32_t* /* System.Int32 */ address,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_VolatileWrite4(
+	int64_t* /* System.Int64 */ address,
+	int64_t /* System.Int64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_VolatileWrite5(
+	long* /* System.IntPtr */ address,
+	long /* System.IntPtr */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_VolatileWrite6(
+	System_Object_t* /* System.Object */ address,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_VolatileWrite7(
+	int8_t* /* System.SByte */ address,
+	int8_t /* System.SByte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_VolatileWrite8(
+	float* /* System.Single */ address,
+	float /* System.Single */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_VolatileWrite9(
+	uint16_t* /* System.UInt16 */ address,
+	uint16_t /* System.UInt16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_VolatileWrite10(
+	uint32_t* /* System.UInt32 */ address,
+	uint32_t /* System.UInt32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_VolatileWrite11(
+	uint64_t* /* System.UInt64 */ address,
+	uint64_t /* System.UInt64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_Thread_VolatileWrite12(
+	unsigned long* /* System.UIntPtr */ address,
+	unsigned long /* System.UIntPtr */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -28208,6 +28395,36 @@ System_Text_StringBuilder_Append20(
 );
 
 System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append21(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Text_StringBuilder_AppendInterpolatedStringHandler_t* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ handler,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append22(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Text_StringBuilder_AppendInterpolatedStringHandler_t* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ handler,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendLine2(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Text_StringBuilder_AppendInterpolatedStringHandler_t* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ handler,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendLine3(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Text_StringBuilder_AppendInterpolatedStringHandler_t* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ handler,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
 System_Text_StringBuilder_AppendJoin(
 	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
 	CString /* System.String */ separator,
@@ -30069,6 +30286,14 @@ System_Runtime_InteropServices_Marshal_SizeOf1(
 );
 
 int32_t /* System.Int32 */
+System_Runtime_InteropServices_Marshal_QueryInterface(
+	long /* System.IntPtr */ pUnk,
+	System_Guid_t* /* System.Guid */ iid,
+	long* /* System.IntPtr */ ppv,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
 System_Runtime_InteropServices_Marshal_AddRef(
 	long /* System.IntPtr */ pUnk,
 	System_Exception_t* /* System.Exception */ outException
@@ -31549,6 +31774,14 @@ NativeAOT_CodeGeneratorInputSample_TestClass_Divide(
 CString /* System.String */
 NativeAOT_CodeGeneratorInputSample_TestClass_GetTestEnumName(
 	NativeAOT_CodeGeneratorInputSample_TestEnum /* NativeAOT.CodeGeneratorInputSample.TestEnum */ testEnum,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+NativeAOT_CodeGeneratorInputSample_TestClass_ModifyByRefValueAndReturnOriginalValue(
+	NativeAOT_CodeGeneratorInputSample_TestClass_t /* NativeAOT.CodeGeneratorInputSample.TestClass */ self,
+	int32_t* /* System.Int32 */ valueToModify,
+	int32_t /* System.Int32 */ targetValue,
 	System_Exception_t* /* System.Exception */ outException
 );
 

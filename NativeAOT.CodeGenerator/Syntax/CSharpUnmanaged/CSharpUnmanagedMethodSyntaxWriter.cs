@@ -322,22 +322,36 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 """);
 
             foreach (var parameter in parameters) {
-                if (!parameter.IsOut) {
+                Type parameterType = parameter.ParameterType;
+
+                bool isOutParameter = parameter.IsOut;
+                bool isByRefParameter = parameterType.IsByRef;
+                
+                if (!isOutParameter &&
+                    !isByRefParameter) {
                     continue;
                 }
+
+                parameterType = parameterType.GetNonByRefType();
                 
                 string parameterName = parameter.Name ?? throw new Exception("Parameter has no name");
                 string convertedParameterName = $"{parameterName}Converted";
 
-                Type parameterType = parameter.ParameterType.GetNonByRefType();
                 TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
 
-                string? parameterTypeConversion = parameterTypeDescriptor.GetTypeConversion(CodeLanguage.CSharp, CodeLanguage.CSharpUnmanaged);
-                
-                if (!convertedParameterNames.Contains($"out {convertedParameterName}")) {
+                string? parameterTypeConversion = parameterTypeDescriptor.GetTypeConversion(
+                    CodeLanguage.CSharp,
+                    CodeLanguage.CSharpUnmanaged
+                );
+
+                string parameterModifier = isOutParameter 
+                    ? "out"
+                    : "ref";
+
+                if (!convertedParameterNames.Contains($"{parameterModifier} {convertedParameterName}")) {
                     convertedParameterName = parameterName;
                 }
-
+                
                 if (string.IsNullOrEmpty(parameterTypeConversion)) {
                     parameterTypeConversion = convertedParameterName;
                 } else {
@@ -374,7 +388,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 Type parameterType = parameter.ParameterType.GetNonByRefType();
                 TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
 
-                string outValue = parameterTypeDescriptor.GetReturnValueOnException() 
+                string outValue = parameterTypeDescriptor.GetDefaultValue() 
                                   ?? $"default({parameterType.GetFullNameOrName()})";
 
                 sb.AppendLine($"\t\tif ({parameterName} is not null) {{");
@@ -384,7 +398,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             }
 
             if (isReturning) {
-                string returnValue = returnOrSetterOrEventHandlerTypeDescriptor.GetReturnValueOnException()
+                string returnValue = returnOrSetterOrEventHandlerTypeDescriptor.GetDefaultValue()
                                      ?? $"default({returnOrSetterOrEventHandlerType.GetFullNameOrName()})";
 
                 sb.AppendLine($"{implPrefix}return {returnValue};");
@@ -487,11 +501,12 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             parameterList.Add(parameterString);
         } else if (memberKind != MemberKind.Destructor) {
             foreach (var parameter in parameters) {
-                bool isOutParameter = parameter.IsOut;
-                
                 Type parameterType = parameter.ParameterType;
 
-                if (isOutParameter) {
+                bool isByRefParameter = parameterType.IsByRef;
+                bool isOutParameter = parameter.IsOut;
+
+                if (isByRefParameter) {
                     parameterType = parameterType.GetNonByRefType();
                 }
                 
@@ -500,7 +515,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(
                     targetLanguage,
                     true,
-                    isOutParameter
+                    isOutParameter,
+                    isByRefParameter
                 );
                 
                 string parameterString = $"{unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */ {parameterNamePrefix}{parameter.Name}{parameterNameSuffix}";
@@ -511,7 +527,14 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         if (mayThrow) {
             Type exceptionType = typeof(Exception);
             TypeDescriptor outExceptionTypeDescriptor = exceptionType.GetTypeDescriptor(typeDescriptorRegistry);
-            string outExceptionTypeName = outExceptionTypeDescriptor.GetTypeName(targetLanguage, true, true);
+            
+            string outExceptionTypeName = outExceptionTypeDescriptor.GetTypeName(
+                targetLanguage,
+                true,
+                true,
+                true
+            );
+            
             string outExceptionParameterName = "__outException";
 
             string outExceptionParameterString = $"{outExceptionTypeName} /* {exceptionType.GetFullNameOrName()} */ {parameterNamePrefix}{outExceptionParameterName}{parameterNameSuffix}"; 
@@ -539,9 +562,12 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             
             Type parameterType = parameter.ParameterType;
             bool isOutParameter = parameter.IsOut;
-            bool isByRef = parameterType.IsByRef;
-            
-            if (isOutParameter) {
+            bool isByRefParameter = parameterType.IsByRef;
+
+            if (!isByRefParameter &&
+                isOutParameter) {
+                throw new Exception("Parameter is out but not by ref, that's impossible");
+            } else if (isByRefParameter) {
                 parameterType = parameterType.GetNonByRefType();
             }
             
@@ -563,11 +589,43 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 sb.AppendLine($"\t{typeName} {convertedParameterName};");
                 
                 convertedParameterName = $"out {convertedParameterName}";
+            } else if (isByRefParameter) {
+                convertedParameterName = $"{parameterName}Converted";
+
+                string parameterTypeName = parameterType.GetFullNameOrName()
+                    .Replace("&", string.Empty);
+
+                string typeConversionCode;
+                
+                if (!string.IsNullOrEmpty(typeConversion)) {
+                    string fullTypeConversion = string.Format(typeConversion, $"(*{parameterName})");
+                    typeConversionCode = $"{convertedParameterName} = {fullTypeConversion};";
+                } else {
+                    typeConversionCode = $"{convertedParameterName} = *{parameterName};";
+                }
+
+                sb.AppendLine($"\t{parameterTypeName} {convertedParameterName};");
+
+                sb.AppendLine();
+                
+                sb.AppendLine($"\tif ({parameterName} is not null) {{");
+                sb.AppendLine($"\t\t{typeConversionCode}");
+                sb.AppendLine("\t} else {");
+                
+                string defaultValue = $"default({parameterType.GetFullNameOrName()})";
+                
+                sb.AppendLine($"\t\t{convertedParameterName} = {defaultValue};");
+                sb.AppendLine("\t}");
+
+                sb.AppendLine();
+
+                convertedParameterName = $"ref {convertedParameterName}";
             } else if (typeConversion != null) {
                 string parameterTypeName = parameterTypeDescriptor.GetTypeName(
                     targetLanguage,
                     true,
-                    isOutParameter
+                    isOutParameter,
+                    isByRefParameter
                 );
                 
                 convertedParameterName = $"{parameterName}Converted";
@@ -579,9 +637,17 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
                 if (isOutParameter) {
                     convertedParameterName = $"out {convertedParameterName}";
+                } else if (isByRefParameter) {
+                    convertedParameterName = $"ref {convertedParameterName}";
                 }
             } else {
-                convertedParameterName = parameterName;
+                if (isOutParameter) {
+                    convertedParameterName = $"out {parameterName}";
+                } else if (isByRefParameter) {
+                    convertedParameterName = $"ref {parameterName}";
+                } else {
+                    convertedParameterName = parameterName;
+                }
             }
             
             convertedParameterNames.Add(convertedParameterName);

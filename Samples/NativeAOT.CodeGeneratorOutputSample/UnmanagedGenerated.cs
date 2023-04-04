@@ -1,5 +1,5 @@
-// Number of generated types: 397
-// Number of generated members: 3994
+// Number of generated types: 392
+// Number of generated members: 4029
 
 // <Header>
 using System;
@@ -43096,6 +43096,62 @@ internal unsafe class System_Reflection_Binder
 	}
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Binder_BindToMethod")]
+	internal static void* /* System.Reflection.MethodBase */ System_Reflection_Binder_BindToMethod(void* /* System.Reflection.Binder */ __self, System.Reflection.BindingFlags /* System.Reflection.BindingFlags */ bindingAttr, void* /* System.Reflection.MethodBase[] */ match, void** /* System.Object[] */ args, void* /* System.Reflection.ParameterModifier[] */ modifiers, void* /* System.Globalization.CultureInfo */ culture, void* /* System.String[] */ names, void** /* System.Object */ state, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.Binder __selfConverted = InteropUtils.GetInstance<System.Reflection.Binder>(__self);
+	
+		System.Reflection.MethodBase[] matchConverted = InteropUtils.GetInstance<System.Reflection.MethodBase[]>(match);
+		System.Object[] argsConverted;
+	
+		if (args is not null) {
+			argsConverted = InteropUtils.GetInstance<System.Object[]>((*args));
+		} else {
+			argsConverted = default(System.Object[]);
+		}
+	
+		System.Reflection.ParameterModifier[] modifiersConverted = InteropUtils.GetInstance<System.Reflection.ParameterModifier[]>(modifiers);
+		System.Globalization.CultureInfo cultureConverted = InteropUtils.GetInstance<System.Globalization.CultureInfo>(culture);
+		System.String[] namesConverted = InteropUtils.GetInstance<System.String[]>(names);
+		System.Object stateConverted;
+	
+	    try {
+			System.Reflection.MethodBase __returnValue = __selfConverted.BindToMethod(bindingAttr, matchConverted, ref argsConverted, modifiersConverted, cultureConverted, namesConverted, out stateConverted);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (args is not null) {
+				*args = argsConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+			if (state is not null) {
+				*state = stateConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			if (state is not null) {
+				*state = null;
+			}
+	
+			return null;
+		}
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Binder_ChangeType")]
 	internal static void* /* System.Object */ System_Reflection_Binder_ChangeType(void* /* System.Reflection.Binder */ __self, void* /* System.Object */ value, void* /* System.Type */ type, void* /* System.Globalization.CultureInfo */ culture, void** /* System.Exception */ __outException)
 	{
@@ -43126,6 +43182,47 @@ internal unsafe class System_Reflection_Binder
 	        }
 	
 			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_Binder_ReorderArgumentArray")]
+	internal static void /* System.Void */ System_Reflection_Binder_ReorderArgumentArray(void* /* System.Reflection.Binder */ __self, void** /* System.Object[] */ args, void* /* System.Object */ state, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.Binder __selfConverted = InteropUtils.GetInstance<System.Reflection.Binder>(__self);
+	
+		System.Object[] argsConverted;
+	
+		if (args is not null) {
+			argsConverted = InteropUtils.GetInstance<System.Object[]>((*args));
+		} else {
+			argsConverted = default(System.Object[]);
+		}
+	
+		System.Object stateConverted = InteropUtils.GetInstance<System.Object>(state);
+	
+	    try {
+			__selfConverted.ReorderArgumentArray(ref argsConverted, stateConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (args is not null) {
+				*args = argsConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
 		}
 	}
 	
@@ -48409,6 +48506,46 @@ internal unsafe class System_Runtime_InteropServices_SafeHandle
 	        if (__outException is not null) {
 	            *__outException = null;
 	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_SafeHandle_DangerousAddRef")]
+	internal static void /* System.Void */ System_Runtime_InteropServices_SafeHandle_DangerousAddRef(void* /* System.Runtime.InteropServices.SafeHandle */ __self, byte* /* System.Boolean */ success, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Runtime.InteropServices.SafeHandle __selfConverted = InteropUtils.GetInstance<System.Runtime.InteropServices.SafeHandle>(__self);
+	
+		System.Boolean successConverted;
+	
+		if (success is not null) {
+			successConverted = (*success).ToBool();
+		} else {
+			successConverted = default(System.Boolean);
+		}
+	
+	
+	    try {
+			__selfConverted.DangerousAddRef(ref successConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (success is not null) {
+				*success = successConverted.ToCBool();
+			}
 	
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
@@ -60372,7 +60509,6 @@ internal unsafe class System_Globalization_DateTimeFormatInfo
 
 
 
-
 internal unsafe class System_CharEnumerator
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_CharEnumerator_Clone")]
@@ -64265,10 +64401,6 @@ internal unsafe class System_Text_Encoder
 	
 
 }
-
-
-
-
 
 
 
@@ -79803,6 +79935,918 @@ internal unsafe class System_Threading_Thread
 	        if (__outException is not null) {
 	            *__outException = null;
 	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_VolatileRead")]
+	internal static byte /* System.Byte */ System_Threading_Thread_VolatileRead(byte* /* System.Byte */ address, void** /* System.Exception */ __outException)
+	{
+		System.Byte addressConverted;
+	
+		if (address is not null) {
+			addressConverted = *address;
+		} else {
+			addressConverted = default(System.Byte);
+		}
+	
+	
+	    try {
+			System.Byte __returnValue = System.Threading.Thread.VolatileRead(ref addressConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (address is not null) {
+				*address = addressConverted;
+			}
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_VolatileRead1")]
+	internal static double /* System.Double */ System_Threading_Thread_VolatileRead1(double* /* System.Double */ address, void** /* System.Exception */ __outException)
+	{
+		System.Double addressConverted;
+	
+		if (address is not null) {
+			addressConverted = *address;
+		} else {
+			addressConverted = default(System.Double);
+		}
+	
+	
+	    try {
+			System.Double __returnValue = System.Threading.Thread.VolatileRead(ref addressConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (address is not null) {
+				*address = addressConverted;
+			}
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_VolatileRead2")]
+	internal static short /* System.Int16 */ System_Threading_Thread_VolatileRead2(short* /* System.Int16 */ address, void** /* System.Exception */ __outException)
+	{
+		System.Int16 addressConverted;
+	
+		if (address is not null) {
+			addressConverted = *address;
+		} else {
+			addressConverted = default(System.Int16);
+		}
+	
+	
+	    try {
+			System.Int16 __returnValue = System.Threading.Thread.VolatileRead(ref addressConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (address is not null) {
+				*address = addressConverted;
+			}
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_VolatileRead3")]
+	internal static int /* System.Int32 */ System_Threading_Thread_VolatileRead3(int* /* System.Int32 */ address, void** /* System.Exception */ __outException)
+	{
+		System.Int32 addressConverted;
+	
+		if (address is not null) {
+			addressConverted = *address;
+		} else {
+			addressConverted = default(System.Int32);
+		}
+	
+	
+	    try {
+			System.Int32 __returnValue = System.Threading.Thread.VolatileRead(ref addressConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (address is not null) {
+				*address = addressConverted;
+			}
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_VolatileRead4")]
+	internal static long /* System.Int64 */ System_Threading_Thread_VolatileRead4(long* /* System.Int64 */ address, void** /* System.Exception */ __outException)
+	{
+		System.Int64 addressConverted;
+	
+		if (address is not null) {
+			addressConverted = *address;
+		} else {
+			addressConverted = default(System.Int64);
+		}
+	
+	
+	    try {
+			System.Int64 __returnValue = System.Threading.Thread.VolatileRead(ref addressConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (address is not null) {
+				*address = addressConverted;
+			}
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_VolatileRead5")]
+	internal static nint /* System.IntPtr */ System_Threading_Thread_VolatileRead5(nint* /* System.IntPtr */ address, void** /* System.Exception */ __outException)
+	{
+		System.IntPtr addressConverted;
+	
+		if (address is not null) {
+			addressConverted = *address;
+		} else {
+			addressConverted = default(System.IntPtr);
+		}
+	
+	
+	    try {
+			System.IntPtr __returnValue = System.Threading.Thread.VolatileRead(ref addressConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (address is not null) {
+				*address = addressConverted;
+			}
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return nint.Zero;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_VolatileRead6")]
+	internal static void* /* System.Object */ System_Threading_Thread_VolatileRead6(void** /* System.Object */ address, void** /* System.Exception */ __outException)
+	{
+		System.Object addressConverted;
+	
+		if (address is not null) {
+			addressConverted = InteropUtils.GetInstance<System.Object>((*address));
+		} else {
+			addressConverted = default(System.Object);
+		}
+	
+	
+	    try {
+			System.Object __returnValue = System.Threading.Thread.VolatileRead(ref addressConverted);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (address is not null) {
+				*address = addressConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_VolatileRead7")]
+	internal static sbyte /* System.SByte */ System_Threading_Thread_VolatileRead7(sbyte* /* System.SByte */ address, void** /* System.Exception */ __outException)
+	{
+		System.SByte addressConverted;
+	
+		if (address is not null) {
+			addressConverted = *address;
+		} else {
+			addressConverted = default(System.SByte);
+		}
+	
+	
+	    try {
+			System.SByte __returnValue = System.Threading.Thread.VolatileRead(ref addressConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (address is not null) {
+				*address = addressConverted;
+			}
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_VolatileRead8")]
+	internal static float /* System.Single */ System_Threading_Thread_VolatileRead8(float* /* System.Single */ address, void** /* System.Exception */ __outException)
+	{
+		System.Single addressConverted;
+	
+		if (address is not null) {
+			addressConverted = *address;
+		} else {
+			addressConverted = default(System.Single);
+		}
+	
+	
+	    try {
+			System.Single __returnValue = System.Threading.Thread.VolatileRead(ref addressConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (address is not null) {
+				*address = addressConverted;
+			}
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_VolatileRead9")]
+	internal static ushort /* System.UInt16 */ System_Threading_Thread_VolatileRead9(ushort* /* System.UInt16 */ address, void** /* System.Exception */ __outException)
+	{
+		System.UInt16 addressConverted;
+	
+		if (address is not null) {
+			addressConverted = *address;
+		} else {
+			addressConverted = default(System.UInt16);
+		}
+	
+	
+	    try {
+			System.UInt16 __returnValue = System.Threading.Thread.VolatileRead(ref addressConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (address is not null) {
+				*address = addressConverted;
+			}
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_VolatileRead10")]
+	internal static uint /* System.UInt32 */ System_Threading_Thread_VolatileRead10(uint* /* System.UInt32 */ address, void** /* System.Exception */ __outException)
+	{
+		System.UInt32 addressConverted;
+	
+		if (address is not null) {
+			addressConverted = *address;
+		} else {
+			addressConverted = default(System.UInt32);
+		}
+	
+	
+	    try {
+			System.UInt32 __returnValue = System.Threading.Thread.VolatileRead(ref addressConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (address is not null) {
+				*address = addressConverted;
+			}
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_VolatileRead11")]
+	internal static ulong /* System.UInt64 */ System_Threading_Thread_VolatileRead11(ulong* /* System.UInt64 */ address, void** /* System.Exception */ __outException)
+	{
+		System.UInt64 addressConverted;
+	
+		if (address is not null) {
+			addressConverted = *address;
+		} else {
+			addressConverted = default(System.UInt64);
+		}
+	
+	
+	    try {
+			System.UInt64 __returnValue = System.Threading.Thread.VolatileRead(ref addressConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (address is not null) {
+				*address = addressConverted;
+			}
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_VolatileRead12")]
+	internal static nuint /* System.UIntPtr */ System_Threading_Thread_VolatileRead12(nuint* /* System.UIntPtr */ address, void** /* System.Exception */ __outException)
+	{
+		System.UIntPtr addressConverted;
+	
+		if (address is not null) {
+			addressConverted = *address;
+		} else {
+			addressConverted = default(System.UIntPtr);
+		}
+	
+	
+	    try {
+			System.UIntPtr __returnValue = System.Threading.Thread.VolatileRead(ref addressConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (address is not null) {
+				*address = addressConverted;
+			}
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return nuint.Zero;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_VolatileWrite")]
+	internal static void /* System.Void */ System_Threading_Thread_VolatileWrite(byte* /* System.Byte */ address, byte /* System.Byte */ value, void** /* System.Exception */ __outException)
+	{
+		System.Byte addressConverted;
+	
+		if (address is not null) {
+			addressConverted = *address;
+		} else {
+			addressConverted = default(System.Byte);
+		}
+	
+	
+	    try {
+			System.Threading.Thread.VolatileWrite(ref addressConverted, value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (address is not null) {
+				*address = addressConverted;
+			}
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_VolatileWrite1")]
+	internal static void /* System.Void */ System_Threading_Thread_VolatileWrite1(double* /* System.Double */ address, double /* System.Double */ value, void** /* System.Exception */ __outException)
+	{
+		System.Double addressConverted;
+	
+		if (address is not null) {
+			addressConverted = *address;
+		} else {
+			addressConverted = default(System.Double);
+		}
+	
+	
+	    try {
+			System.Threading.Thread.VolatileWrite(ref addressConverted, value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (address is not null) {
+				*address = addressConverted;
+			}
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_VolatileWrite2")]
+	internal static void /* System.Void */ System_Threading_Thread_VolatileWrite2(short* /* System.Int16 */ address, short /* System.Int16 */ value, void** /* System.Exception */ __outException)
+	{
+		System.Int16 addressConverted;
+	
+		if (address is not null) {
+			addressConverted = *address;
+		} else {
+			addressConverted = default(System.Int16);
+		}
+	
+	
+	    try {
+			System.Threading.Thread.VolatileWrite(ref addressConverted, value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (address is not null) {
+				*address = addressConverted;
+			}
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_VolatileWrite3")]
+	internal static void /* System.Void */ System_Threading_Thread_VolatileWrite3(int* /* System.Int32 */ address, int /* System.Int32 */ value, void** /* System.Exception */ __outException)
+	{
+		System.Int32 addressConverted;
+	
+		if (address is not null) {
+			addressConverted = *address;
+		} else {
+			addressConverted = default(System.Int32);
+		}
+	
+	
+	    try {
+			System.Threading.Thread.VolatileWrite(ref addressConverted, value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (address is not null) {
+				*address = addressConverted;
+			}
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_VolatileWrite4")]
+	internal static void /* System.Void */ System_Threading_Thread_VolatileWrite4(long* /* System.Int64 */ address, long /* System.Int64 */ value, void** /* System.Exception */ __outException)
+	{
+		System.Int64 addressConverted;
+	
+		if (address is not null) {
+			addressConverted = *address;
+		} else {
+			addressConverted = default(System.Int64);
+		}
+	
+	
+	    try {
+			System.Threading.Thread.VolatileWrite(ref addressConverted, value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (address is not null) {
+				*address = addressConverted;
+			}
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_VolatileWrite5")]
+	internal static void /* System.Void */ System_Threading_Thread_VolatileWrite5(nint* /* System.IntPtr */ address, nint /* System.IntPtr */ value, void** /* System.Exception */ __outException)
+	{
+		System.IntPtr addressConverted;
+	
+		if (address is not null) {
+			addressConverted = *address;
+		} else {
+			addressConverted = default(System.IntPtr);
+		}
+	
+	
+	    try {
+			System.Threading.Thread.VolatileWrite(ref addressConverted, value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (address is not null) {
+				*address = addressConverted;
+			}
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_VolatileWrite6")]
+	internal static void /* System.Void */ System_Threading_Thread_VolatileWrite6(void** /* System.Object */ address, void* /* System.Object */ value, void** /* System.Exception */ __outException)
+	{
+		System.Object addressConverted;
+	
+		if (address is not null) {
+			addressConverted = InteropUtils.GetInstance<System.Object>((*address));
+		} else {
+			addressConverted = default(System.Object);
+		}
+	
+		System.Object valueConverted = InteropUtils.GetInstance<System.Object>(value);
+	
+	    try {
+			System.Threading.Thread.VolatileWrite(ref addressConverted, valueConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (address is not null) {
+				*address = addressConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_VolatileWrite7")]
+	internal static void /* System.Void */ System_Threading_Thread_VolatileWrite7(sbyte* /* System.SByte */ address, sbyte /* System.SByte */ value, void** /* System.Exception */ __outException)
+	{
+		System.SByte addressConverted;
+	
+		if (address is not null) {
+			addressConverted = *address;
+		} else {
+			addressConverted = default(System.SByte);
+		}
+	
+	
+	    try {
+			System.Threading.Thread.VolatileWrite(ref addressConverted, value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (address is not null) {
+				*address = addressConverted;
+			}
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_VolatileWrite8")]
+	internal static void /* System.Void */ System_Threading_Thread_VolatileWrite8(float* /* System.Single */ address, float /* System.Single */ value, void** /* System.Exception */ __outException)
+	{
+		System.Single addressConverted;
+	
+		if (address is not null) {
+			addressConverted = *address;
+		} else {
+			addressConverted = default(System.Single);
+		}
+	
+	
+	    try {
+			System.Threading.Thread.VolatileWrite(ref addressConverted, value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (address is not null) {
+				*address = addressConverted;
+			}
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_VolatileWrite9")]
+	internal static void /* System.Void */ System_Threading_Thread_VolatileWrite9(ushort* /* System.UInt16 */ address, ushort /* System.UInt16 */ value, void** /* System.Exception */ __outException)
+	{
+		System.UInt16 addressConverted;
+	
+		if (address is not null) {
+			addressConverted = *address;
+		} else {
+			addressConverted = default(System.UInt16);
+		}
+	
+	
+	    try {
+			System.Threading.Thread.VolatileWrite(ref addressConverted, value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (address is not null) {
+				*address = addressConverted;
+			}
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_VolatileWrite10")]
+	internal static void /* System.Void */ System_Threading_Thread_VolatileWrite10(uint* /* System.UInt32 */ address, uint /* System.UInt32 */ value, void** /* System.Exception */ __outException)
+	{
+		System.UInt32 addressConverted;
+	
+		if (address is not null) {
+			addressConverted = *address;
+		} else {
+			addressConverted = default(System.UInt32);
+		}
+	
+	
+	    try {
+			System.Threading.Thread.VolatileWrite(ref addressConverted, value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (address is not null) {
+				*address = addressConverted;
+			}
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_VolatileWrite11")]
+	internal static void /* System.Void */ System_Threading_Thread_VolatileWrite11(ulong* /* System.UInt64 */ address, ulong /* System.UInt64 */ value, void** /* System.Exception */ __outException)
+	{
+		System.UInt64 addressConverted;
+	
+		if (address is not null) {
+			addressConverted = *address;
+		} else {
+			addressConverted = default(System.UInt64);
+		}
+	
+	
+	    try {
+			System.Threading.Thread.VolatileWrite(ref addressConverted, value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (address is not null) {
+				*address = addressConverted;
+			}
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_VolatileWrite12")]
+	internal static void /* System.Void */ System_Threading_Thread_VolatileWrite12(nuint* /* System.UIntPtr */ address, nuint /* System.UIntPtr */ value, void** /* System.Exception */ __outException)
+	{
+		System.UIntPtr addressConverted;
+	
+		if (address is not null) {
+			addressConverted = *address;
+		} else {
+			addressConverted = default(System.UIntPtr);
+		}
+	
+	
+	    try {
+			System.Threading.Thread.VolatileWrite(ref addressConverted, value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (address is not null) {
+				*address = addressConverted;
+			}
 	
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
@@ -98345,6 +99389,180 @@ internal unsafe class System_Text_StringBuilder
 	}
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Append21")]
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append21(void* /* System.Text.StringBuilder */ __self, void** /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ handler, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.StringBuilder __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder>(__self);
+	
+		System.Text.StringBuilder.AppendInterpolatedStringHandler handlerConverted;
+	
+		if (handler is not null) {
+			handlerConverted = InteropUtils.GetInstance<System.Text.StringBuilder.AppendInterpolatedStringHandler>((*handler));
+		} else {
+			handlerConverted = default(System.Text.StringBuilder.AppendInterpolatedStringHandler);
+		}
+	
+	
+	    try {
+			System.Text.StringBuilder __returnValue = __selfConverted.Append(ref handlerConverted);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (handler is not null) {
+				*handler = handlerConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Append22")]
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append22(void* /* System.Text.StringBuilder */ __self, void* /* System.IFormatProvider */ provider, void** /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ handler, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.StringBuilder __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder>(__self);
+	
+		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
+		System.Text.StringBuilder.AppendInterpolatedStringHandler handlerConverted;
+	
+		if (handler is not null) {
+			handlerConverted = InteropUtils.GetInstance<System.Text.StringBuilder.AppendInterpolatedStringHandler>((*handler));
+		} else {
+			handlerConverted = default(System.Text.StringBuilder.AppendInterpolatedStringHandler);
+		}
+	
+	
+	    try {
+			System.Text.StringBuilder __returnValue = __selfConverted.Append(providerConverted, ref handlerConverted);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (handler is not null) {
+				*handler = handlerConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_AppendLine2")]
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_AppendLine2(void* /* System.Text.StringBuilder */ __self, void** /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ handler, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.StringBuilder __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder>(__self);
+	
+		System.Text.StringBuilder.AppendInterpolatedStringHandler handlerConverted;
+	
+		if (handler is not null) {
+			handlerConverted = InteropUtils.GetInstance<System.Text.StringBuilder.AppendInterpolatedStringHandler>((*handler));
+		} else {
+			handlerConverted = default(System.Text.StringBuilder.AppendInterpolatedStringHandler);
+		}
+	
+	
+	    try {
+			System.Text.StringBuilder __returnValue = __selfConverted.AppendLine(ref handlerConverted);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (handler is not null) {
+				*handler = handlerConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_AppendLine3")]
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_AppendLine3(void* /* System.Text.StringBuilder */ __self, void* /* System.IFormatProvider */ provider, void** /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ handler, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.StringBuilder __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder>(__self);
+	
+		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
+		System.Text.StringBuilder.AppendInterpolatedStringHandler handlerConverted;
+	
+		if (handler is not null) {
+			handlerConverted = InteropUtils.GetInstance<System.Text.StringBuilder.AppendInterpolatedStringHandler>((*handler));
+		} else {
+			handlerConverted = default(System.Text.StringBuilder.AppendInterpolatedStringHandler);
+		}
+	
+	
+	    try {
+			System.Text.StringBuilder __returnValue = __selfConverted.AppendLine(providerConverted, ref handlerConverted);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (handler is not null) {
+				*handler = handlerConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_AppendJoin")]
 	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_AppendJoin(void* /* System.Text.StringBuilder */ __self, byte* /* System.String */ separator, void* /* System.Object[] */ values, void** /* System.Exception */ __outException)
 	{
@@ -104624,6 +105842,51 @@ internal unsafe class System_Runtime_InteropServices_Marshal
 	}
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_Marshal_QueryInterface")]
+	internal static int /* System.Int32 */ System_Runtime_InteropServices_Marshal_QueryInterface(nint /* System.IntPtr */ pUnk, void** /* System.Guid */ iid, nint* /* System.IntPtr */ ppv, void** /* System.Exception */ __outException)
+	{
+		System.Guid iidConverted;
+	
+		if (iid is not null) {
+			iidConverted = InteropUtils.GetInstance<System.Guid>((*iid));
+		} else {
+			iidConverted = default(System.Guid);
+		}
+	
+		System.IntPtr ppvConverted;
+	
+	    try {
+			System.Int32 __returnValue = System.Runtime.InteropServices.Marshal.QueryInterface(pUnk, ref iidConverted, out ppvConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (iid is not null) {
+				*iid = iidConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+			if (ppv is not null) {
+				*ppv = ppvConverted;
+			}
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			if (ppv is not null) {
+				*ppv = nint.Zero;
+			}
+	
+			return -1;
+		}
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_Marshal_AddRef")]
 	internal static int /* System.Int32 */ System_Runtime_InteropServices_Marshal_AddRef(nint /* System.IntPtr */ pUnk, void** /* System.Exception */ __outException)
 	{
@@ -110071,6 +111334,48 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_TestClass
 	        }
 	
 			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_ModifyByRefValueAndReturnOriginalValue")]
+	internal static int /* System.Int32 */ NativeAOT_CodeGeneratorInputSample_TestClass_ModifyByRefValueAndReturnOriginalValue(void* /* NativeAOT.CodeGeneratorInputSample.TestClass */ __self, int* /* System.Int32 */ valueToModify, int /* System.Int32 */ targetValue, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.TestClass __selfConverted = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.TestClass>(__self);
+	
+		System.Int32 valueToModifyConverted;
+	
+		if (valueToModify is not null) {
+			valueToModifyConverted = *valueToModify;
+		} else {
+			valueToModifyConverted = default(System.Int32);
+		}
+	
+	
+	    try {
+			System.Int32 __returnValue = __selfConverted.ModifyByRefValueAndReturnOriginalValue(ref valueToModifyConverted, targetValue);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (valueToModify is not null) {
+				*valueToModify = valueToModifyConverted;
+			}
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
 		}
 	}
 	

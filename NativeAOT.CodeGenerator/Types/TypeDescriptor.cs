@@ -19,12 +19,12 @@ public class TypeDescriptor
 
     private readonly Dictionary<CodeLanguage, string> m_typeNames;
     private readonly Dictionary<LanguagePair, string> m_typeConversions;
-    private readonly string? m_returnValueOnException;
+    private readonly string? m_defaultValue;
     private readonly Dictionary<CodeLanguage, string> m_destructors;
 
     public TypeDescriptor(
         Type managedType,
-        string? returnValueOnException = null,
+        string? defaultValue = null,
         Dictionary<CodeLanguage, string>? typeNames = null,
         Dictionary<LanguagePair, string>? typeConversions = null,
         Dictionary<CodeLanguage, string>? destructors = null
@@ -32,7 +32,7 @@ public class TypeDescriptor
     {
         ManagedType = managedType;
 
-        m_returnValueOnException = returnValueOnException;
+        m_defaultValue = defaultValue;
         
         if (typeNames == null) {
             typeNames = new();
@@ -64,12 +64,25 @@ public class TypeDescriptor
         m_typeNames[language] = typeName;
     }
 
-    public string GetTypeName(CodeLanguage language, bool includeModifiers)
+    public string GetTypeName(
+        CodeLanguage language,
+        bool includeModifiers
+    )
     {
-        return GetTypeName(language, includeModifiers, false);
+        return GetTypeName(
+            language,
+            includeModifiers,
+            false,
+            false
+        );
     }
     
-    public string GetTypeName(CodeLanguage language, bool includeModifiers, bool isOutParameter)
+    public string GetTypeName(
+        CodeLanguage language,
+        bool includeModifiers,
+        bool isOutParameter,
+        bool isByRefParameter
+    )
     {
         string typeName;
         
@@ -85,7 +98,8 @@ public class TypeDescriptor
             typeName = AddModifiersToTypeName(
                 typeName,
                 language,
-                isOutParameter
+                isOutParameter,
+                isByRefParameter
             );
         }
 
@@ -95,11 +109,13 @@ public class TypeDescriptor
     private string AddModifiersToTypeName(
         string typeName,
         CodeLanguage language,
-        bool isOutParameter
+        bool isOutParameter,
+        bool isByRefParameter
     )
     {
         if (!RequiresNativePointer &&
-            !isOutParameter) {
+            !isOutParameter &&
+            !isByRefParameter) {
             return typeName;
         }
 
@@ -109,12 +125,14 @@ public class TypeDescriptor
             case CodeLanguage.CSharp:
                 if (isOutParameter) {
                     return $"out {typeName}";
+                } else if (isByRefParameter) {
+                    return $"ref {typeName}";
                 } else {
                     return typeName;
                 }
             case CodeLanguage.CSharpUnmanaged:
                 if (RequiresNativePointer && 
-                    isOutParameter) {
+                    (isOutParameter || isByRefParameter)) {
                     typeNameWithModifiers = $"{typeName}**";
                 } else {
                     typeNameWithModifiers = $"{typeName}*";
@@ -122,7 +140,7 @@ public class TypeDescriptor
                 
                 break;
             case CodeLanguage.C:
-                if (isOutParameter) {
+                if (isOutParameter || isByRefParameter) {
                     typeNameWithModifiers = $"{typeName}*";
                 } else {
                     typeNameWithModifiers = $"{typeName}";
@@ -260,10 +278,10 @@ public class TypeDescriptor
         return null;
     }
 
-    public string? GetReturnValueOnException()
+    public string? GetDefaultValue()
     {
-        if (m_returnValueOnException != null) {
-            return m_returnValueOnException;
+        if (m_defaultValue != null) {
+            return m_defaultValue;
         }
 
         if (RequiresNativePointer) {
