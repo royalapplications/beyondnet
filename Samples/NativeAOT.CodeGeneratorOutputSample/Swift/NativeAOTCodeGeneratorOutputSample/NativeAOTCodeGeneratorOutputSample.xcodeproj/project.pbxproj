@@ -25,6 +25,7 @@
 		E73EE8FC29DB12A300C57A71 /* SystemReflectionAssemblyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73EE8FB29DB12A300C57A71 /* SystemReflectionAssemblyTests.swift */; };
 		E73EE90029DB194F00C57A71 /* SystemSecuritySecureStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73EE8FF29DB194F00C57A71 /* SystemSecuritySecureStringTests.swift */; };
 		E746795C29DAE45000AF25C5 /* SystemConvertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E746795B29DAE45000AF25C5 /* SystemConvertTests.swift */; };
+		E748372429DC640A00FE2AE6 /* SystemDecimalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748372329DC640A00FE2AE6 /* SystemDecimalTests.swift */; };
 		E779630029DC171E00E1E70B /* SystemRuntimeInteropServicesMarshalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77962FF29DC171E00E1E70B /* SystemRuntimeInteropServicesMarshalTests.swift */; };
 		E779630229DC54E300E1E70B /* SystemThreadingTasksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E779630129DC54E300E1E70B /* SystemThreadingTasksTests.swift */; };
 		E7C8CF0529C1FA9500C4230F /* SystemGuidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0429C1FA9500C4230F /* SystemGuidTests.swift */; };
@@ -94,6 +95,7 @@
 		E73EE8FB29DB12A300C57A71 /* SystemReflectionAssemblyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemReflectionAssemblyTests.swift; sourceTree = "<group>"; };
 		E73EE8FF29DB194F00C57A71 /* SystemSecuritySecureStringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemSecuritySecureStringTests.swift; sourceTree = "<group>"; };
 		E746795B29DAE45000AF25C5 /* SystemConvertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemConvertTests.swift; sourceTree = "<group>"; };
+		E748372329DC640A00FE2AE6 /* SystemDecimalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemDecimalTests.swift; sourceTree = "<group>"; };
 		E77962FF29DC171E00E1E70B /* SystemRuntimeInteropServicesMarshalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemRuntimeInteropServicesMarshalTests.swift; sourceTree = "<group>"; };
 		E779630129DC54E300E1E70B /* SystemThreadingTasksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemThreadingTasksTests.swift; sourceTree = "<group>"; };
 		E7C8CF0429C1FA9500C4230F /* SystemGuidTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemGuidTests.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				E73EE8FB29DB12A300C57A71 /* SystemReflectionAssemblyTests.swift */,
 				E73EE8FF29DB194F00C57A71 /* SystemSecuritySecureStringTests.swift */,
 				E77962FF29DC171E00E1E70B /* SystemRuntimeInteropServicesMarshalTests.swift */,
+				E748372329DC640A00FE2AE6 /* SystemDecimalTests.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				E7F4A49629CB68FE00D93D81 /* SystemEnumTests.swift in Sources */,
 				E7C8CF0729C1FABA00C4230F /* SystemStringTests.swift in Sources */,
 				E7EB338629C8879100392F3D /* AddressTests.swift in Sources */,
+				E748372429DC640A00FE2AE6 /* SystemDecimalTests.swift in Sources */,
 				E7F4A49229CB5F2A00D93D81 /* SystemObjectTests.swift in Sources */,
 				E779630229DC54E300E1E70B /* SystemThreadingTasksTests.swift in Sources */,
 				E73EE8FC29DB12A300C57A71 /* SystemReflectionAssemblyTests.swift in Sources */,
