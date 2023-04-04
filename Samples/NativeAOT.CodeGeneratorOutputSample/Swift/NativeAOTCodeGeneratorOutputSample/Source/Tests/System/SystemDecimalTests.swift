@@ -45,4 +45,104 @@ final class SystemDecimalTests: XCTestCase {
 		
 		XCTAssertEqual(numberString, numberStringRet)
 	}
+	
+	func testDecimalCalculations() {
+		var exception: System_Exception_t?
+		
+		let number1: UInt64 = 123
+		let number2: UInt64 = 321
+		
+		let addResult = number1 + number2
+		let subtractResult = number2 - number1
+		let multiplyResult = number1 * number2
+		let divideResult = number2 / number1
+		
+		guard let decimal1 = System_Decimal_Create3(number1,
+													&exception),
+			  exception == nil else {
+			XCTFail("System.Decimal ctor should not throw and return an instance")
+			
+			return
+		}
+		
+		defer { System_Decimal_Destroy(decimal1) }
+		
+		guard let decimal2 = System_Decimal_Create3(number2,
+													&exception),
+			  exception == nil else {
+			XCTFail("System.Decimal ctor should not throw and return an instance")
+			
+			return
+		}
+		
+		defer { System_Decimal_Destroy(decimal2) }
+		
+		guard let addResultDecimal = System_Decimal_Add(decimal1,
+														decimal2,
+														&exception),
+			  exception == nil else {
+			XCTFail("System.Decimal.Add should not throw and return an instance")
+			
+			return
+		}
+				
+		defer { System_Decimal_Destroy(addResultDecimal) }
+		
+		let addResultRet = System_Decimal_ToUInt64(addResultDecimal,
+												   &exception)
+		
+		XCTAssertNil(exception)
+		XCTAssertEqual(addResult, addResultRet)
+		
+		guard let subtractResultDecimal = System_Decimal_Subtract(decimal2,
+																  decimal1,
+																  &exception),
+			  exception == nil else {
+			XCTFail("System.Decimal.Subtract should not throw and return an instance")
+			
+			return
+		}
+				
+		defer { System_Decimal_Destroy(subtractResultDecimal) }
+		
+		let subtractResultRet = System_Decimal_ToUInt64(subtractResultDecimal,
+														&exception)
+		
+		XCTAssertNil(exception)
+		XCTAssertEqual(subtractResult, subtractResultRet)
+		
+		guard let multiplyResultDecimal = System_Decimal_Multiply(decimal1,
+																  decimal2,
+																  &exception),
+			  exception == nil else {
+			XCTFail("System.Decimal.Multiply should not throw and return an instance")
+			
+			return
+		}
+				
+		defer { System_Decimal_Destroy(multiplyResultDecimal) }
+		
+		let multiplyResultRet = System_Decimal_ToUInt64(multiplyResultDecimal,
+														&exception)
+		
+		XCTAssertNil(exception)
+		XCTAssertEqual(multiplyResult, multiplyResultRet)
+		
+		guard let divideResultDecimal = System_Decimal_Divide(decimal2,
+															  decimal1,
+															  &exception),
+			  exception == nil else {
+			XCTFail("System.Decimal.Divide should not throw and return an instance")
+			
+			return
+		}
+				
+		defer { System_Decimal_Destroy(divideResultDecimal) }
+		
+		let divideResultRet = System_Decimal_ToUInt64(divideResultDecimal,
+													  &exception)
+		
+		XCTAssertNil(exception)
+		XCTAssertEqual(divideResult, divideResultRet)
+	}
 }
