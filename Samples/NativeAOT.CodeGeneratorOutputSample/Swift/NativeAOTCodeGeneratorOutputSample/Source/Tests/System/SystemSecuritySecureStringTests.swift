@@ -14,6 +14,15 @@ final class SystemSecuritySecureStringTests: XCTestCase {
 			return
 		}
 		
+		defer {
+			System_Security_SecureString_Dispose(secureString,
+												 &exception)
+			
+			XCTAssertNil(exception)
+			
+			System_Security_SecureString_Destroy(secureString)
+		}
+		
 		let characters = string.utf8.map{ UInt8($0) }
 		
 		for character in characters {
@@ -24,6 +33,6 @@ final class SystemSecuritySecureStringTests: XCTestCase {
 			XCTAssertNil(exception)
 		}
 		
-		// TODO
+		// TODO: Need Marshal class to get back a regular string
 	}
 }
