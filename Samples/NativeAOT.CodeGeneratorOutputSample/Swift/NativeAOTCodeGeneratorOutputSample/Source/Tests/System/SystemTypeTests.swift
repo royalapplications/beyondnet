@@ -147,5 +147,19 @@ final class SystemTypeTests: XCTestCase {
 		
 		XCTAssertNil(exception)
 		XCTAssertTrue(equalReturnTypes)
+		
+		let isReturnTypeAssignableToSystemObjectType = System_Type_IsAssignableTo(returnType,
+																				  typeOfSystemObject,
+																				  &exception)
+		
+		XCTAssertNil(exception)
+		XCTAssertTrue(isReturnTypeAssignableToSystemObjectType)
+		
+		let isSystemObjectTypeAssignableFromSystemStringType = System_Type_IsAssignableFrom(typeOfSystemObject,
+																							returnType,
+																							&exception)
+		
+		XCTAssertNil(exception)
+		XCTAssertTrue(isSystemObjectTypeAssignableFromSystemStringType)
 	}
 }
