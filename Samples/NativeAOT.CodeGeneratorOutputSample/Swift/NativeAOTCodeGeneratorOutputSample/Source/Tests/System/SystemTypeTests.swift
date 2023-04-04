@@ -84,4 +84,68 @@ final class SystemTypeTests: XCTestCase {
 		
 		XCTAssertTrue(exceptionMessage.contains("The type \'\(invalidTypeName)\' cannot be found"))
 	}
+	
+	func testReflectingOverSystemObject() {
+		var exception: System_Exception_t?
+		
+		guard let typeOfSystemObject = System_Object_TypeOf() else {
+			XCTFail("typeof(System.Object) should return an instance")
+			
+			return
+		}
+		
+		defer { System_Type_Destroy(typeOfSystemObject) }
+		
+		let methodName = "ToString"
+		
+		guard let toStringMethod = System_Type_GetMethod(typeOfSystemObject,
+														 methodName,
+														 &exception),
+			  exception == nil else {
+			XCTFail("System.Type.GetMethod should not throw and return an instance")
+			
+			return
+		}
+		
+		defer { System_Reflection_MethodInfo_Destroy(toStringMethod) }
+		
+		guard let methodNameRetC = System_Reflection_MemberInfo_Name_Get(toStringMethod,
+																	  &exception),
+			  exception == nil else {
+			XCTFail("System.Reflection.MemberInfo.Name getter should not throw and return an instance of a C String")
+			
+			return
+		}
+		
+		defer { methodNameRetC.deallocate() }
+		
+		let methodNameRet = String(cString: methodNameRetC)
+		
+		XCTAssertEqual(methodName, methodNameRet)
+		
+		guard let returnType = System_Reflection_MethodInfo_ReturnType_Get(toStringMethod,
+																		   &exception),
+			  exception == nil else {
+			XCTFail("System.Reflection.MethodInfo.ReturnType getter should not throw and return an instance")
+			
+			return
+		}
+		
+		defer { System_Type_Destroy(returnType) }
+		
+		guard let typeOfSystemString = System_String_TypeOf() else {
+			XCTFail("typeof(System.String) should return an instance")
+			
+			return
+		}
+		
+		defer { System_Type_Destroy(typeOfSystemString) }
+		
+		let equalReturnTypes = System_Object_Equals(typeOfSystemString,
+													returnType,
+													&exception)
+		
+		XCTAssertNil(exception)
+		XCTAssertTrue(equalReturnTypes)
+	}
 }

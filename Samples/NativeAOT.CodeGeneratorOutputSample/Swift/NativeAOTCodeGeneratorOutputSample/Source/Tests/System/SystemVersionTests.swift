@@ -155,4 +155,69 @@ final class SystemVersionTests: XCTestCase {
         
         XCTAssertEqual(versionString, versionStringRet)
     }
+	
+	func testSystemVersionParse() {
+		var exception: System_Exception_t?
+		
+		let major: Int32    = 123
+		let minor: Int32    = 234
+		let build: Int32    = 345
+		let revision: Int32 = 456
+		
+		let versionString = "\(major).\(minor).\(build).\(revision)"
+		
+		var version: System_Version_t?
+		
+		let parseSuccess = System_Version_TryParse(versionString,
+												   &version,
+												   &exception)
+		
+		guard parseSuccess,
+			  let version,
+			  exception == nil else {
+			XCTFail("System.Version.TryParse should not throw, return true and return an instance as out parameter")
+			
+			return
+		}
+		
+		defer { System_Version_Destroy(version) }
+		
+		let majorRet = System_Version_Major_Get(version,
+												&exception)
+		
+		XCTAssertNil(exception)
+		XCTAssertEqual(major, majorRet)
+		
+		let minorRet = System_Version_Minor_Get(version,
+												&exception)
+		
+		XCTAssertNil(exception)
+		XCTAssertEqual(minor, minorRet)
+		
+		let buildRet = System_Version_Build_Get(version,
+												&exception)
+		
+		XCTAssertNil(exception)
+		XCTAssertEqual(build, buildRet)
+		
+		let revisionRet = System_Version_Revision_Get(version,
+													  &exception)
+		
+		XCTAssertNil(exception)
+		XCTAssertEqual(revision, revisionRet)
+		
+		guard let versionStringRetC = System_Version_ToString(version,
+															  &exception),
+			  exception == nil else {
+			XCTFail("System.Version.ToString should not throw and return an instance of a C string")
+			
+			return
+		}
+		
+		defer { versionStringRetC.deallocate() }
+		
+		let versionStringRet = String(cString: versionStringRetC)
+		
+		XCTAssertEqual(versionString, versionStringRet)
+	}
 }
