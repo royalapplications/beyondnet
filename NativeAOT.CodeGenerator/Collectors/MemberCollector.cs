@@ -16,7 +16,6 @@ public class MemberCollector
 
     public MemberCollector(Type type)
     {
-        
         m_type = type ?? throw new ArgumentNullException(nameof(type));
 
         TYPES_TO_UNSUPPORTED_MEMBER_NAMES_MAPPING.TryGetValue(type, out string[]? unsupportedMemberNames);
@@ -154,6 +153,12 @@ public class MemberCollector
 
         if (!TypeCollector.IsSupportedType(returnType)) {
             unsupportedMembers[methodInfo] = "Has unsupported return type";
+            
+            return;
+        }
+
+        if (returnType.IsByRef) {
+            unsupportedMembers[methodInfo] = "Has by ref return type";
             
             return;
         }

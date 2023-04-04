@@ -1,4 +1,4 @@
-// Number of generated types: 392
+// Number of generated types: 393
 // Number of generated members: 4329
 
 #pragma mark - BEGIN Header
@@ -1453,6 +1453,8 @@ typedef int32_t (*NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelega
 	
 );
 
+
+// TODO: (NativeAOT_CodeGeneratorInputSample_ByRefReturnValueDelegate) Unsupported delegate type. Reason: Has by ref return type
 
 typedef void* NativeAOT_CodeGeneratorInputSample_StringGetterDelegate_t;
 typedef void (*NativeAOT_CodeGeneratorInputSample_StringGetterDelegate_CDestructorFunction_t)(void* context);
@@ -32539,6 +32541,10 @@ NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Destroy(
 );
 
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate
+
+#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.ByRefReturnValueDelegate
+// TODO: Unsupported delegate type. Reason: Has by ref return type
+#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.ByRefReturnValueDelegate
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.StringGetterDelegate
 NativeAOT_CodeGeneratorInputSample_StringGetterDelegate_t /* NativeAOT.CodeGeneratorInputSample.StringGetterDelegate */

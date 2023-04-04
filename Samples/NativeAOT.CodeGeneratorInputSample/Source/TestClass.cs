@@ -6,6 +6,10 @@ public enum TestEnum
     SecondCase
 }
 
+public delegate ref int ByRefReturnValueDelegate();
+public delegate void ByRefParametersDelegate(ref int byRefInt);
+public delegate void OutParametersDelegate(out int outInt);
+
 public class TestClass
 {
     public void SayHello()

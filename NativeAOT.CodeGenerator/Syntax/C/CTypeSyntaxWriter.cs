@@ -96,9 +96,16 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         
         string fullTypeName = delegateType.GetFullNameOrName();
         string cTypeName = fullTypeName.CTypeName();
+        
+        Type returnType = delegateInvokeMethod?.ReturnType ?? typeof(void);
+        var parameterInfos = delegateInvokeMethod?.GetParameters() ?? Array.Empty<ParameterInfo>();
+        
+        if (returnType.IsByRef) {
+            return $"// TODO: ({cTypeName}) Unsupported delegate type. Reason: Has by ref return type";
+        }
 
         StringBuilder sb = new();
-
+        
         sb.AppendLine(WriteTypeDef(cTypeName));
 
         string contextTypeName = "void*";
@@ -107,8 +114,6 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         
         sb.AppendLine($"typedef void (*{cDestructorFunctionTypeName})({contextTypeName} context);");
         sb.AppendLine();
-
-        Type returnType = delegateInvokeMethod?.ReturnType ?? typeof(void);
 
         string cReturnTypeName;
 
@@ -122,8 +127,6 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         sb.AppendLine($"typedef {cReturnTypeName} (*{cFunctionTypeName})(");
 
         List<string> parameters = new();
-
-        var parameterInfos = delegateInvokeMethod?.GetParameters() ?? Array.Empty<ParameterInfo>();
 
         foreach (var parameter in parameterInfos) {
             string parameterName = parameter.Name ?? throw new Exception("Delegate parameter has no name");
@@ -290,6 +293,16 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
     {
         Type type = typeDescriptor.ManagedType;
         
+        MethodInfo? invokeMethod = typeDescriptor.ManagedType.GetDelegateInvokeMethod();
+        Type returnType = invokeMethod?.ReturnType ?? typeof(void);
+        TypeDescriptor returnTypeDescriptor = returnType.GetTypeDescriptor(typeDescriptorRegistry);
+
+        if (returnType.IsByRef) {
+            sb.AppendLine("// TODO: Unsupported delegate type. Reason: Has by ref return type");
+
+            return;
+        }
+        
         string contextType = "const void*";
         string functionType = $"{cMemberNamePrefix}_CFunction_t";
         string destrutorFunctionType = $"{cMemberNamePrefix}_CDestructorFunction_t";
@@ -306,10 +319,6 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         sb.AppendLine();
 
         #region Invoke
-        var invokeMethod = typeDescriptor.ManagedType.GetDelegateInvokeMethod();
-        var returnType = invokeMethod?.ReturnType ?? typeof(void);
-        TypeDescriptor? returnTypeDescriptor = returnType.GetTypeDescriptor(typeDescriptorRegistry);
-
         string returnTypeName = returnType.IsVoid()
             ? "void"
             : returnTypeDescriptor.GetTypeName(CodeLanguage.C, true);

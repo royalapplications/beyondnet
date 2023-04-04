@@ -69,6 +69,12 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
         }
 
         var returnType = invokeMethod?.ReturnType ?? typeof(void);
+        
+        if (returnType.IsByRef) {
+            sb.AppendLine("// TODO: Unsupported delegate type. Reason: Has by ref return type");
+
+            return;
+        }
 
         TypeDescriptor returnTypeDescriptor = returnType.GetTypeDescriptor(typeDescriptorRegistry);
         string unmanagedReturnTypeName = returnTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);

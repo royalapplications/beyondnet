@@ -1,4 +1,4 @@
-// Number of generated types: 392
+// Number of generated types: 393
 // Number of generated members: 4029
 
 // <Header>
@@ -111129,6 +111129,12 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_TestEnum
 	}
 	
 
+}
+
+
+internal unsafe class NativeAOT_CodeGeneratorInputSample_ByRefReturnValueDelegate
+{
+// TODO: Unsupported delegate type. Reason: Has by ref return type
 }
 
 
