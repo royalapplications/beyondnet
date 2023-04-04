@@ -103,6 +103,13 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         if (returnType.IsByRef) {
             return $"// TODO: ({cTypeName}) Unsupported delegate type. Reason: Has by ref return type";
         }
+        
+        foreach (var parameter in parameterInfos) {
+            if (parameter.IsOut ||
+                parameter.ParameterType.IsByRef) {
+                return $"// TODO: ({cTypeName}) Unsupported delegate type. Reason: Has by ref or out parameters";
+            }
+        }
 
         StringBuilder sb = new();
         
@@ -296,11 +303,22 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         MethodInfo? invokeMethod = typeDescriptor.ManagedType.GetDelegateInvokeMethod();
         Type returnType = invokeMethod?.ReturnType ?? typeof(void);
         TypeDescriptor returnTypeDescriptor = returnType.GetTypeDescriptor(typeDescriptorRegistry);
+        
+        var parameterInfos = invokeMethod?.GetParameters() ?? Array.Empty<ParameterInfo>();
 
         if (returnType.IsByRef) {
-            sb.AppendLine("// TODO: Unsupported delegate type. Reason: Has by ref return type");
+            sb.AppendLine($"// TODO: ({cTypeName}) Unsupported delegate type. Reason: Has by ref return type");
 
             return;
+        }
+        
+        foreach (var parameter in parameterInfos) {
+            if (parameter.IsOut ||
+                parameter.ParameterType.IsByRef) {
+                sb.AppendLine($"// TODO: ({cTypeName}) Unsupported delegate type. Reason: Has by ref or out parameters");
+
+                return;
+            }
         }
         
         string contextType = "const void*";
@@ -322,8 +340,6 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         string returnTypeName = returnType.IsVoid()
             ? "void"
             : returnTypeDescriptor.GetTypeName(CodeLanguage.C, true);
-        
-        var parameterInfos = invokeMethod?.GetParameters() ?? Array.Empty<ParameterInfo>();
 
         string parameters = CMethodSyntaxWriter.WriteParameters(
             MemberKind.Automatic,

@@ -24,6 +24,15 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
 
         var parameterInfos = invokeMethod?.GetParameters() ?? Array.Empty<ParameterInfo>();
 
+        foreach (var parameter in parameterInfos) {
+            if (parameter.IsOut ||
+                parameter.ParameterType.IsByRef) {
+                sb.AppendLine("\t// TODO: Unsupported delegate type. Reason: Has by ref or out parameters");
+                
+                return;
+            }
+        }
+
         string managedParmeters = CSharpUnmanagedMethodSyntaxWriter.WriteParameters(
             CodeLanguage.CSharp,
             MemberKind.Automatic,
@@ -71,7 +80,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
         var returnType = invokeMethod?.ReturnType ?? typeof(void);
         
         if (returnType.IsByRef) {
-            sb.AppendLine("// TODO: Unsupported delegate type. Reason: Has by ref return type");
+            sb.AppendLine("\t// TODO: Unsupported delegate type. Reason: Has by ref return type");
 
             return;
         }
