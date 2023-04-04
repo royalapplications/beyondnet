@@ -145,4 +145,57 @@ final class SystemDecimalTests: XCTestCase {
 		XCTAssertNil(exception)
 		XCTAssertEqual(divideResult, divideResultRet)
 	}
+	
+	func testDivisionByZero() {
+		var exception: System_Exception_t?
+		
+		guard let decimalZero = System_Decimal_Zero_Get() else {
+			XCTFail("System.Decimal.Zero getter should return an instance")
+			
+			return
+		}
+		
+		defer { System_Decimal_Destroy(decimalZero) }
+		
+		let number1: Int32 = 123
+		
+		guard let decimal1 = System_Decimal_Create(number1,
+												   &exception),
+			  exception == nil else {
+			XCTFail("System.Decimal ctor should not throw and return an instance")
+			
+			return
+		}
+		
+		defer { System_Decimal_Destroy(decimal1) }
+		
+		let decimalResult = System_Decimal_Divide(decimal1,
+												  decimalZero,
+												  &exception)
+		
+		guard decimalResult == nil,
+			  let exception else {
+			XCTFail("System.Decimal.Divide should throw when dividing by zero and not return a value")
+			
+			return
+		}
+		
+		defer { System_Exception_Destroy(exception) }
+		
+		var exception2: System_Exception_t?
+		
+		guard let exceptionMessageC = System_Exception_Message_Get(exception,
+																   &exception2),
+			  exception2 == nil else {
+			XCTFail("System.Exception.Message getter should not throw and return an instance of a C String")
+			
+			return
+		}
+		
+		defer { exceptionMessageC.deallocate() }
+		
+		let exceptionMessage = String(cString: exceptionMessageC)
+		
+		XCTAssertTrue(exceptionMessage.contains("divide by zero"))
+	}
 }
