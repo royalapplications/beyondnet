@@ -10,7 +10,7 @@ public partial class BuiltInTypeDescriptors
                 "nint.Zero",
                 new() {
                     { CodeLanguage.CSharpUnmanaged, "nint" },
-                    { CodeLanguage.C, "int" },
+                    { CodeLanguage.C, "long" },
                     { CodeLanguage.Swift, "Int" }
                 }
             );

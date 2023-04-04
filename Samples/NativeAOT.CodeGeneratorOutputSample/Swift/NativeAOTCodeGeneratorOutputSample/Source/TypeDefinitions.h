@@ -7748,14 +7748,14 @@ System_IO_FileStream_Seek(
 
 System_IO_FileStream_t /* System.IO.FileStream */
 System_IO_FileStream_Create(
-	int /* System.IntPtr */ handle,
+	long /* System.IntPtr */ handle,
 	System_IO_FileAccess /* System.IO.FileAccess */ access,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 System_IO_FileStream_t /* System.IO.FileStream */
 System_IO_FileStream_Create1(
-	int /* System.IntPtr */ handle,
+	long /* System.IntPtr */ handle,
 	System_IO_FileAccess /* System.IO.FileAccess */ access,
 	bool /* System.Boolean */ ownsHandle,
 	System_Exception_t* /* System.Exception */ outException
@@ -7763,7 +7763,7 @@ System_IO_FileStream_Create1(
 
 System_IO_FileStream_t /* System.IO.FileStream */
 System_IO_FileStream_Create2(
-	int /* System.IntPtr */ handle,
+	long /* System.IntPtr */ handle,
 	System_IO_FileAccess /* System.IO.FileAccess */ access,
 	bool /* System.Boolean */ ownsHandle,
 	int32_t /* System.Int32 */ bufferSize,
@@ -7772,7 +7772,7 @@ System_IO_FileStream_Create2(
 
 System_IO_FileStream_t /* System.IO.FileStream */
 System_IO_FileStream_Create3(
-	int /* System.IntPtr */ handle,
+	long /* System.IntPtr */ handle,
 	System_IO_FileAccess /* System.IO.FileAccess */ access,
 	bool /* System.Boolean */ ownsHandle,
 	int32_t /* System.Int32 */ bufferSize,
@@ -7867,7 +7867,7 @@ System_IO_FileStream_Create13(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_IO_FileStream_Handle_Get(
 	System_IO_FileStream_t /* System.IO.FileStream */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -9270,11 +9270,11 @@ System_RuntimeMethodHandle_Equals(
 
 System_RuntimeMethodHandle_t /* System.RuntimeMethodHandle */
 System_RuntimeMethodHandle_FromIntPtr(
-	int /* System.IntPtr */ value,
+	long /* System.IntPtr */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_RuntimeMethodHandle_ToIntPtr(
 	System_RuntimeMethodHandle_t /* System.RuntimeMethodHandle */ value,
 	System_Exception_t* /* System.Exception */ outException
@@ -9287,13 +9287,13 @@ System_RuntimeMethodHandle_Equals1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_RuntimeMethodHandle_GetFunctionPointer(
 	System_RuntimeMethodHandle_t /* System.RuntimeMethodHandle */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_RuntimeMethodHandle_Value_Get(
 	System_RuntimeMethodHandle_t /* System.RuntimeMethodHandle */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -12827,11 +12827,11 @@ System_Runtime_Serialization_StreamingContext_Destroy(
 #pragma mark - BEGIN APIs of System.RuntimeTypeHandle
 System_RuntimeTypeHandle_t /* System.RuntimeTypeHandle */
 System_RuntimeTypeHandle_FromIntPtr(
-	int /* System.IntPtr */ value,
+	long /* System.IntPtr */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_RuntimeTypeHandle_ToIntPtr(
 	System_RuntimeTypeHandle_t /* System.RuntimeTypeHandle */ value,
 	System_Exception_t* /* System.Exception */ outException
@@ -12871,7 +12871,7 @@ System_RuntimeTypeHandle_GetObjectData(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_RuntimeTypeHandle_Value_Get(
 	System_RuntimeTypeHandle_t /* System.RuntimeTypeHandle */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -13031,11 +13031,11 @@ System_RuntimeFieldHandle_Equals1(
 
 System_RuntimeFieldHandle_t /* System.RuntimeFieldHandle */
 System_RuntimeFieldHandle_FromIntPtr(
-	int /* System.IntPtr */ value,
+	long /* System.IntPtr */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_RuntimeFieldHandle_ToIntPtr(
 	System_RuntimeFieldHandle_t /* System.RuntimeFieldHandle */ value,
 	System_Exception_t* /* System.Exception */ outException
@@ -13049,7 +13049,7 @@ System_RuntimeFieldHandle_GetObjectData(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_RuntimeFieldHandle_Value_Get(
 	System_RuntimeFieldHandle_t /* System.RuntimeFieldHandle */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -14519,7 +14519,7 @@ System_Threading_WaitHandle_SignalAndWait2(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Threading_WaitHandle_Handle_Get(
 	System_Threading_WaitHandle_t /* System.Threading.WaitHandle */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -14528,12 +14528,12 @@ System_Threading_WaitHandle_Handle_Get(
 void /* System.Void */
 System_Threading_WaitHandle_Handle_Set(
 	System_Threading_WaitHandle_t /* System.Threading.WaitHandle */ self,
-	int /* System.IntPtr */ value,
+	long /* System.IntPtr */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Threading_WaitHandle_Handle_Get(
 	System_Threading_WaitHandle_t /* System.Threading.WaitHandle */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -14542,7 +14542,7 @@ System_Threading_WaitHandle_Handle_Get(
 void /* System.Void */
 System_Threading_WaitHandle_Handle_Set(
 	System_Threading_WaitHandle_t /* System.Threading.WaitHandle */ self,
-	int /* System.IntPtr */ value,
+	long /* System.IntPtr */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -14601,7 +14601,7 @@ Microsoft_Win32_SafeHandles_SafeWaitHandle_Create(
 
 Microsoft_Win32_SafeHandles_SafeWaitHandle_t /* Microsoft.Win32.SafeHandles.SafeWaitHandle */
 Microsoft_Win32_SafeHandles_SafeWaitHandle_Create1(
-	int /* System.IntPtr */ existingHandle,
+	long /* System.IntPtr */ existingHandle,
 	bool /* System.Boolean */ ownsHandle,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -14639,7 +14639,7 @@ Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid_Destroy(
 #pragma mark - END APIs of Microsoft.Win32.SafeHandles.SafeHandleZeroOrMinusOneIsInvalid
 
 #pragma mark - BEGIN APIs of System.Runtime.InteropServices.SafeHandle
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Runtime_InteropServices_SafeHandle_DangerousGetHandle(
 	System_Runtime_InteropServices_SafeHandle_t /* System.Runtime.InteropServices.SafeHandle */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -15272,7 +15272,7 @@ System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_Destroy(
 #pragma mark - BEGIN APIs of Microsoft.Win32.SafeHandles.SafeFileHandle
 Microsoft_Win32_SafeHandles_SafeFileHandle_t /* Microsoft.Win32.SafeHandles.SafeFileHandle */
 Microsoft_Win32_SafeHandles_SafeFileHandle_Create(
-	int /* System.IntPtr */ preexistingHandle,
+	long /* System.IntPtr */ preexistingHandle,
 	bool /* System.Boolean */ ownsHandle,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -20626,9 +20626,9 @@ System_Math_Abs2(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Math_Abs3(
-	int /* System.IntPtr */ value,
+	long /* System.IntPtr */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -20768,11 +20768,11 @@ System_Math_Clamp5(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Math_Clamp6(
-	int /* System.IntPtr */ value,
-	int /* System.IntPtr */ min,
-	int /* System.IntPtr */ max,
+	long /* System.IntPtr */ value,
+	long /* System.IntPtr */ min,
+	long /* System.IntPtr */ max,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -20816,11 +20816,11 @@ System_Math_Clamp11(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-unsigned int /* System.UIntPtr */
+unsigned long /* System.UIntPtr */
 System_Math_Clamp12(
-	unsigned int /* System.UIntPtr */ value,
-	unsigned int /* System.UIntPtr */ min,
-	unsigned int /* System.UIntPtr */ max,
+	unsigned long /* System.UIntPtr */ value,
+	unsigned long /* System.UIntPtr */ min,
+	unsigned long /* System.UIntPtr */ max,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -20892,10 +20892,10 @@ System_Math_Max5(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Math_Max6(
-	int /* System.IntPtr */ val1,
-	int /* System.IntPtr */ val2,
+	long /* System.IntPtr */ val1,
+	long /* System.IntPtr */ val2,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -20934,10 +20934,10 @@ System_Math_Max11(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-unsigned int /* System.UIntPtr */
+unsigned long /* System.UIntPtr */
 System_Math_Max12(
-	unsigned int /* System.UIntPtr */ val1,
-	unsigned int /* System.UIntPtr */ val2,
+	unsigned long /* System.UIntPtr */ val1,
+	unsigned long /* System.UIntPtr */ val2,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -20990,10 +20990,10 @@ System_Math_Min5(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Math_Min6(
-	int /* System.IntPtr */ val1,
-	int /* System.IntPtr */ val2,
+	long /* System.IntPtr */ val1,
+	long /* System.IntPtr */ val2,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -21032,10 +21032,10 @@ System_Math_Min11(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-unsigned int /* System.UIntPtr */
+unsigned long /* System.UIntPtr */
 System_Math_Min12(
-	unsigned int /* System.UIntPtr */ val1,
-	unsigned int /* System.UIntPtr */ val2,
+	unsigned long /* System.UIntPtr */ val1,
+	unsigned long /* System.UIntPtr */ val2,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -21146,7 +21146,7 @@ System_Math_Sign4(
 
 int32_t /* System.Int32 */
 System_Math_Sign5(
-	int /* System.IntPtr */ value,
+	long /* System.IntPtr */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -29848,7 +29848,7 @@ System_IO_Directory_Destroy(
 #pragma mark - END APIs of System.IO.Directory
 
 #pragma mark - BEGIN APIs of System.Runtime.InteropServices.Marshal
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_OffsetOf(
 	System_Type_t /* System.Type */ t,
 	CString /* System.String */ fieldName,
@@ -29918,7 +29918,7 @@ System_Runtime_InteropServices_Marshal_SetLastPInvokeError(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_GetExceptionPointers(
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -29931,19 +29931,19 @@ System_Runtime_InteropServices_Marshal_GetExceptionCode(
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_StructureToPtr(
 	System_Object_t /* System.Object */ structure,
-	int /* System.IntPtr */ ptr,
+	long /* System.IntPtr */ ptr,
 	bool /* System.Boolean */ fDeleteOld,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_DestroyStructure(
-	int /* System.IntPtr */ ptr,
+	long /* System.IntPtr */ ptr,
 	System_Type_t /* System.Type */ structuretype,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_AllocHGlobal(
 	int32_t /* System.Int32 */ cb,
 	System_Exception_t* /* System.Exception */ outException
@@ -29951,39 +29951,39 @@ System_Runtime_InteropServices_Marshal_AllocHGlobal(
 
 CString /* System.String */
 System_Runtime_InteropServices_Marshal_PtrToStringAnsi(
-	int /* System.IntPtr */ ptr,
+	long /* System.IntPtr */ ptr,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 CString /* System.String */
 System_Runtime_InteropServices_Marshal_PtrToStringAnsi1(
-	int /* System.IntPtr */ ptr,
+	long /* System.IntPtr */ ptr,
 	int32_t /* System.Int32 */ len,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 CString /* System.String */
 System_Runtime_InteropServices_Marshal_PtrToStringUni(
-	int /* System.IntPtr */ ptr,
+	long /* System.IntPtr */ ptr,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 CString /* System.String */
 System_Runtime_InteropServices_Marshal_PtrToStringUni1(
-	int /* System.IntPtr */ ptr,
+	long /* System.IntPtr */ ptr,
 	int32_t /* System.Int32 */ len,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 CString /* System.String */
 System_Runtime_InteropServices_Marshal_PtrToStringUTF8(
-	int /* System.IntPtr */ ptr,
+	long /* System.IntPtr */ ptr,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 CString /* System.String */
 System_Runtime_InteropServices_Marshal_PtrToStringUTF81(
-	int /* System.IntPtr */ ptr,
+	long /* System.IntPtr */ ptr,
 	int32_t /* System.Int32 */ byteLen,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -30002,17 +30002,17 @@ System_Runtime_InteropServices_Marshal_SizeOf1(
 
 int32_t /* System.Int32 */
 System_Runtime_InteropServices_Marshal_AddRef(
-	int /* System.IntPtr */ pUnk,
+	long /* System.IntPtr */ pUnk,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
 System_Runtime_InteropServices_Marshal_Release(
-	int /* System.IntPtr */ pUnk,
+	long /* System.IntPtr */ pUnk,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_UnsafeAddrOfPinnedArrayElement(
 	System_Array_t /* System.Array */ arr,
 	int32_t /* System.Int32 */ index,
@@ -30023,7 +30023,7 @@ void /* System.Void */
 System_Runtime_InteropServices_Marshal_Copy(
 	System_Int32_Array_t /* System.Int32[] */ source,
 	int32_t /* System.Int32 */ startIndex,
-	int /* System.IntPtr */ destination,
+	long /* System.IntPtr */ destination,
 	int32_t /* System.Int32 */ length,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -30032,7 +30032,7 @@ void /* System.Void */
 System_Runtime_InteropServices_Marshal_Copy1(
 	System_Char_Array_t /* System.Char[] */ source,
 	int32_t /* System.Int32 */ startIndex,
-	int /* System.IntPtr */ destination,
+	long /* System.IntPtr */ destination,
 	int32_t /* System.Int32 */ length,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -30041,7 +30041,7 @@ void /* System.Void */
 System_Runtime_InteropServices_Marshal_Copy2(
 	System_Int16_Array_t /* System.Int16[] */ source,
 	int32_t /* System.Int32 */ startIndex,
-	int /* System.IntPtr */ destination,
+	long /* System.IntPtr */ destination,
 	int32_t /* System.Int32 */ length,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -30050,7 +30050,7 @@ void /* System.Void */
 System_Runtime_InteropServices_Marshal_Copy3(
 	System_Int64_Array_t /* System.Int64[] */ source,
 	int32_t /* System.Int32 */ startIndex,
-	int /* System.IntPtr */ destination,
+	long /* System.IntPtr */ destination,
 	int32_t /* System.Int32 */ length,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -30059,7 +30059,7 @@ void /* System.Void */
 System_Runtime_InteropServices_Marshal_Copy4(
 	System_Single_Array_t /* System.Single[] */ source,
 	int32_t /* System.Int32 */ startIndex,
-	int /* System.IntPtr */ destination,
+	long /* System.IntPtr */ destination,
 	int32_t /* System.Int32 */ length,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -30068,7 +30068,7 @@ void /* System.Void */
 System_Runtime_InteropServices_Marshal_Copy5(
 	System_Double_Array_t /* System.Double[] */ source,
 	int32_t /* System.Int32 */ startIndex,
-	int /* System.IntPtr */ destination,
+	long /* System.IntPtr */ destination,
 	int32_t /* System.Int32 */ length,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -30077,7 +30077,7 @@ void /* System.Void */
 System_Runtime_InteropServices_Marshal_Copy6(
 	System_Byte_Array_t /* System.Byte[] */ source,
 	int32_t /* System.Int32 */ startIndex,
-	int /* System.IntPtr */ destination,
+	long /* System.IntPtr */ destination,
 	int32_t /* System.Int32 */ length,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -30086,14 +30086,14 @@ void /* System.Void */
 System_Runtime_InteropServices_Marshal_Copy7(
 	System_IntPtr_Array_t /* System.IntPtr[] */ source,
 	int32_t /* System.Int32 */ startIndex,
-	int /* System.IntPtr */ destination,
+	long /* System.IntPtr */ destination,
 	int32_t /* System.Int32 */ length,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_Copy8(
-	int /* System.IntPtr */ source,
+	long /* System.IntPtr */ source,
 	System_Int32_Array_t /* System.Int32[] */ destination,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ length,
@@ -30102,7 +30102,7 @@ System_Runtime_InteropServices_Marshal_Copy8(
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_Copy9(
-	int /* System.IntPtr */ source,
+	long /* System.IntPtr */ source,
 	System_Char_Array_t /* System.Char[] */ destination,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ length,
@@ -30111,7 +30111,7 @@ System_Runtime_InteropServices_Marshal_Copy9(
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_Copy10(
-	int /* System.IntPtr */ source,
+	long /* System.IntPtr */ source,
 	System_Int16_Array_t /* System.Int16[] */ destination,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ length,
@@ -30120,7 +30120,7 @@ System_Runtime_InteropServices_Marshal_Copy10(
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_Copy11(
-	int /* System.IntPtr */ source,
+	long /* System.IntPtr */ source,
 	System_Int64_Array_t /* System.Int64[] */ destination,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ length,
@@ -30129,7 +30129,7 @@ System_Runtime_InteropServices_Marshal_Copy11(
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_Copy12(
-	int /* System.IntPtr */ source,
+	long /* System.IntPtr */ source,
 	System_Single_Array_t /* System.Single[] */ destination,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ length,
@@ -30138,7 +30138,7 @@ System_Runtime_InteropServices_Marshal_Copy12(
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_Copy13(
-	int /* System.IntPtr */ source,
+	long /* System.IntPtr */ source,
 	System_Double_Array_t /* System.Double[] */ destination,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ length,
@@ -30147,7 +30147,7 @@ System_Runtime_InteropServices_Marshal_Copy13(
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_Copy14(
-	int /* System.IntPtr */ source,
+	long /* System.IntPtr */ source,
 	System_Byte_Array_t /* System.Byte[] */ destination,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ length,
@@ -30156,7 +30156,7 @@ System_Runtime_InteropServices_Marshal_Copy14(
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_Copy15(
-	int /* System.IntPtr */ source,
+	long /* System.IntPtr */ source,
 	System_IntPtr_Array_t /* System.IntPtr[] */ destination,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ length,
@@ -30165,79 +30165,79 @@ System_Runtime_InteropServices_Marshal_Copy15(
 
 uint8_t /* System.Byte */
 System_Runtime_InteropServices_Marshal_ReadByte1(
-	int /* System.IntPtr */ ptr,
+	long /* System.IntPtr */ ptr,
 	int32_t /* System.Int32 */ ofs,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 uint8_t /* System.Byte */
 System_Runtime_InteropServices_Marshal_ReadByte2(
-	int /* System.IntPtr */ ptr,
+	long /* System.IntPtr */ ptr,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 int16_t /* System.Int16 */
 System_Runtime_InteropServices_Marshal_ReadInt161(
-	int /* System.IntPtr */ ptr,
+	long /* System.IntPtr */ ptr,
 	int32_t /* System.Int32 */ ofs,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 int16_t /* System.Int16 */
 System_Runtime_InteropServices_Marshal_ReadInt162(
-	int /* System.IntPtr */ ptr,
+	long /* System.IntPtr */ ptr,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
 System_Runtime_InteropServices_Marshal_ReadInt321(
-	int /* System.IntPtr */ ptr,
+	long /* System.IntPtr */ ptr,
 	int32_t /* System.Int32 */ ofs,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
 System_Runtime_InteropServices_Marshal_ReadInt322(
-	int /* System.IntPtr */ ptr,
+	long /* System.IntPtr */ ptr,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_ReadIntPtr(
 	System_Object_t /* System.Object */ ptr,
 	int32_t /* System.Int32 */ ofs,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_ReadIntPtr1(
-	int /* System.IntPtr */ ptr,
+	long /* System.IntPtr */ ptr,
 	int32_t /* System.Int32 */ ofs,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_ReadIntPtr2(
-	int /* System.IntPtr */ ptr,
+	long /* System.IntPtr */ ptr,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 int64_t /* System.Int64 */
 System_Runtime_InteropServices_Marshal_ReadInt641(
-	int /* System.IntPtr */ ptr,
+	long /* System.IntPtr */ ptr,
 	int32_t /* System.Int32 */ ofs,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 int64_t /* System.Int64 */
 System_Runtime_InteropServices_Marshal_ReadInt642(
-	int /* System.IntPtr */ ptr,
+	long /* System.IntPtr */ ptr,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_WriteByte1(
-	int /* System.IntPtr */ ptr,
+	long /* System.IntPtr */ ptr,
 	int32_t /* System.Int32 */ ofs,
 	uint8_t /* System.Byte */ val,
 	System_Exception_t* /* System.Exception */ outException
@@ -30245,14 +30245,14 @@ System_Runtime_InteropServices_Marshal_WriteByte1(
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_WriteByte2(
-	int /* System.IntPtr */ ptr,
+	long /* System.IntPtr */ ptr,
 	uint8_t /* System.Byte */ val,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_WriteInt321(
-	int /* System.IntPtr */ ptr,
+	long /* System.IntPtr */ ptr,
 	int32_t /* System.Int32 */ ofs,
 	int32_t /* System.Int32 */ val,
 	System_Exception_t* /* System.Exception */ outException
@@ -30260,16 +30260,16 @@ System_Runtime_InteropServices_Marshal_WriteInt321(
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_WriteInt322(
-	int /* System.IntPtr */ ptr,
+	long /* System.IntPtr */ ptr,
 	int32_t /* System.Int32 */ val,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_WriteIntPtr(
-	int /* System.IntPtr */ ptr,
+	long /* System.IntPtr */ ptr,
 	int32_t /* System.Int32 */ ofs,
-	int /* System.IntPtr */ val,
+	long /* System.IntPtr */ val,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -30277,20 +30277,20 @@ void /* System.Void */
 System_Runtime_InteropServices_Marshal_WriteIntPtr1(
 	System_Object_t /* System.Object */ ptr,
 	int32_t /* System.Int32 */ ofs,
-	int /* System.IntPtr */ val,
+	long /* System.IntPtr */ val,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_WriteIntPtr2(
-	int /* System.IntPtr */ ptr,
-	int /* System.IntPtr */ val,
+	long /* System.IntPtr */ ptr,
+	long /* System.IntPtr */ val,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_WriteInt641(
-	int /* System.IntPtr */ ptr,
+	long /* System.IntPtr */ ptr,
 	int32_t /* System.Int32 */ ofs,
 	int64_t /* System.Int64 */ val,
 	System_Exception_t* /* System.Exception */ outException
@@ -30298,7 +30298,7 @@ System_Runtime_InteropServices_Marshal_WriteInt641(
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_WriteInt642(
-	int /* System.IntPtr */ ptr,
+	long /* System.IntPtr */ ptr,
 	int64_t /* System.Int64 */ val,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -30317,19 +30317,19 @@ System_Runtime_InteropServices_Marshal_PrelinkAll(
 
 System_Object_t /* System.Object */
 System_Runtime_InteropServices_Marshal_PtrToStructure(
-	int /* System.IntPtr */ ptr,
+	long /* System.IntPtr */ ptr,
 	System_Type_t /* System.Type */ structureType,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_PtrToStructure1(
-	int /* System.IntPtr */ ptr,
+	long /* System.IntPtr */ ptr,
 	System_Object_t /* System.Object */ structure,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_GetHINSTANCE(
 	System_Reflection_Module_t /* System.Reflection.Module */ m,
 	System_Exception_t* /* System.Exception */ outException
@@ -30344,7 +30344,7 @@ System_Runtime_InteropServices_Marshal_GetExceptionForHR(
 System_Exception_t /* System.Exception */
 System_Runtime_InteropServices_Marshal_GetExceptionForHR1(
 	int32_t /* System.Int32 */ errorCode,
-	int /* System.IntPtr */ errorInfo,
+	long /* System.IntPtr */ errorInfo,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -30357,65 +30357,65 @@ System_Runtime_InteropServices_Marshal_ThrowExceptionForHR(
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_ThrowExceptionForHR1(
 	int32_t /* System.Int32 */ errorCode,
-	int /* System.IntPtr */ errorInfo,
+	long /* System.IntPtr */ errorInfo,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_SecureStringToBSTR(
 	System_Security_SecureString_t /* System.Security.SecureString */ s,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_SecureStringToCoTaskMemAnsi(
 	System_Security_SecureString_t /* System.Security.SecureString */ s,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_SecureStringToCoTaskMemUnicode(
 	System_Security_SecureString_t /* System.Security.SecureString */ s,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_SecureStringToGlobalAllocAnsi(
 	System_Security_SecureString_t /* System.Security.SecureString */ s,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_SecureStringToGlobalAllocUnicode(
 	System_Security_SecureString_t /* System.Security.SecureString */ s,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_StringToHGlobalAnsi(
 	CString /* System.String */ s,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_StringToHGlobalUni(
 	CString /* System.String */ s,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_StringToCoTaskMemUni(
 	CString /* System.String */ s,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_StringToCoTaskMemUTF8(
 	CString /* System.String */ s,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_StringToCoTaskMemAnsi(
 	CString /* System.String */ s,
 	System_Exception_t* /* System.Exception */ outException
@@ -30435,12 +30435,12 @@ System_Runtime_InteropServices_Marshal_GenerateProgIdForType(
 
 System_Delegate_t /* System.Delegate */
 System_Runtime_InteropServices_Marshal_GetDelegateForFunctionPointer(
-	int /* System.IntPtr */ ptr,
+	long /* System.IntPtr */ ptr,
 	System_Type_t /* System.Type */ t,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_GetFunctionPointerForDelegate(
 	System_Delegate_t /* System.Delegate */ d,
 	System_Exception_t* /* System.Exception */ outException
@@ -30453,41 +30453,41 @@ System_Runtime_InteropServices_Marshal_GetHRForLastWin32Error(
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_ZeroFreeBSTR(
-	int /* System.IntPtr */ s,
+	long /* System.IntPtr */ s,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_ZeroFreeCoTaskMemAnsi(
-	int /* System.IntPtr */ s,
+	long /* System.IntPtr */ s,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_ZeroFreeCoTaskMemUnicode(
-	int /* System.IntPtr */ s,
+	long /* System.IntPtr */ s,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_ZeroFreeCoTaskMemUTF8(
-	int /* System.IntPtr */ s,
+	long /* System.IntPtr */ s,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_ZeroFreeGlobalAllocAnsi(
-	int /* System.IntPtr */ s,
+	long /* System.IntPtr */ s,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_ZeroFreeGlobalAllocUnicode(
-	int /* System.IntPtr */ s,
+	long /* System.IntPtr */ s,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_StringToBSTR(
 	CString /* System.String */ s,
 	System_Exception_t* /* System.Exception */ outException
@@ -30495,7 +30495,7 @@ System_Runtime_InteropServices_Marshal_StringToBSTR(
 
 CString /* System.String */
 System_Runtime_InteropServices_Marshal_PtrToStringBSTR(
-	int /* System.IntPtr */ ptr,
+	long /* System.IntPtr */ ptr,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -30508,7 +30508,7 @@ System_Runtime_InteropServices_Marshal_GetTypeFromCLSID(
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_InitHandle(
 	System_Runtime_InteropServices_SafeHandle_t /* System.Runtime.InteropServices.SafeHandle */ safeHandle,
-	int /* System.IntPtr */ handle,
+	long /* System.IntPtr */ handle,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -30533,9 +30533,9 @@ System_Runtime_InteropServices_Marshal_AreComObjectsAvailableForCleanup(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_CreateAggregatedObject(
-	int /* System.IntPtr */ pOuter,
+	long /* System.IntPtr */ pOuter,
 	System_Object_t /* System.Object */ o,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -30571,14 +30571,14 @@ System_Runtime_InteropServices_Marshal_FinalReleaseComObject(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_GetComInterfaceForObject(
 	System_Object_t /* System.Object */ o,
 	System_Type_t /* System.Type */ T,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_GetComInterfaceForObject1(
 	System_Object_t /* System.Object */ o,
 	System_Type_t /* System.Type */ T,
@@ -30593,13 +30593,13 @@ System_Runtime_InteropServices_Marshal_GetComObjectData(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_GetIDispatchForObject(
 	System_Object_t /* System.Object */ o,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_GetIUnknownForObject(
 	System_Object_t /* System.Object */ o,
 	System_Exception_t* /* System.Exception */ outException
@@ -30608,32 +30608,32 @@ System_Runtime_InteropServices_Marshal_GetIUnknownForObject(
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_GetNativeVariantForObject(
 	System_Object_t /* System.Object */ obj,
-	int /* System.IntPtr */ pDstNativeVariant,
+	long /* System.IntPtr */ pDstNativeVariant,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 System_Object_t /* System.Object */
 System_Runtime_InteropServices_Marshal_GetTypedObjectForIUnknown(
-	int /* System.IntPtr */ pUnk,
+	long /* System.IntPtr */ pUnk,
 	System_Type_t /* System.Type */ t,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 System_Object_t /* System.Object */
 System_Runtime_InteropServices_Marshal_GetObjectForIUnknown(
-	int /* System.IntPtr */ pUnk,
+	long /* System.IntPtr */ pUnk,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 System_Object_t /* System.Object */
 System_Runtime_InteropServices_Marshal_GetObjectForNativeVariant(
-	int /* System.IntPtr */ pSrcNativeVariant,
+	long /* System.IntPtr */ pSrcNativeVariant,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 System_Object_Array_t /* System.Object[] */
 System_Runtime_InteropServices_Marshal_GetObjectsForNativeVariants(
-	int /* System.IntPtr */ aSrcNativeVariant,
+	long /* System.IntPtr */ aSrcNativeVariant,
 	int32_t /* System.Int32 */ cVars,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -30652,7 +30652,7 @@ System_Runtime_InteropServices_Marshal_GetEndComSlot(
 
 System_Object_t /* System.Object */
 System_Runtime_InteropServices_Marshal_GetUniqueObjectForIUnknown(
-	int /* System.IntPtr */ unknown,
+	long /* System.IntPtr */ unknown,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -30684,49 +30684,49 @@ System_Runtime_InteropServices_Marshal_SetComObjectData(
 
 CString /* System.String */
 System_Runtime_InteropServices_Marshal_PtrToStringAuto(
-	int /* System.IntPtr */ ptr,
+	long /* System.IntPtr */ ptr,
 	int32_t /* System.Int32 */ len,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 CString /* System.String */
 System_Runtime_InteropServices_Marshal_PtrToStringAuto1(
-	int /* System.IntPtr */ ptr,
+	long /* System.IntPtr */ ptr,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_StringToHGlobalAuto(
 	CString /* System.String */ s,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_StringToCoTaskMemAuto(
 	CString /* System.String */ s,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_AllocHGlobal1(
-	int /* System.IntPtr */ cb,
+	long /* System.IntPtr */ cb,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_FreeHGlobal(
-	int /* System.IntPtr */ hglobal,
+	long /* System.IntPtr */ hglobal,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_ReAllocHGlobal(
-	int /* System.IntPtr */ pv,
-	int /* System.IntPtr */ cb,
+	long /* System.IntPtr */ pv,
+	long /* System.IntPtr */ cb,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_AllocCoTaskMem(
 	int32_t /* System.Int32 */ cb,
 	System_Exception_t* /* System.Exception */ outException
@@ -30734,20 +30734,20 @@ System_Runtime_InteropServices_Marshal_AllocCoTaskMem(
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_FreeCoTaskMem(
-	int /* System.IntPtr */ ptr,
+	long /* System.IntPtr */ ptr,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-int /* System.IntPtr */
+long /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_ReAllocCoTaskMem(
-	int /* System.IntPtr */ pv,
+	long /* System.IntPtr */ pv,
 	int32_t /* System.Int32 */ cb,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_FreeBSTR(
-	int /* System.IntPtr */ ptr,
+	long /* System.IntPtr */ ptr,
 	System_Exception_t* /* System.Exception */ outException
 );
 
