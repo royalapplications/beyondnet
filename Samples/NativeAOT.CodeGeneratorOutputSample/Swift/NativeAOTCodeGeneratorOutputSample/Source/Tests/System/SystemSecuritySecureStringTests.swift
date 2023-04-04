@@ -33,6 +33,30 @@ final class SystemSecuritySecureStringTests: XCTestCase {
 			XCTAssertNil(exception)
 		}
 		
-		// TODO: Need Marshal class to get back a regular string
+		let retStringPtr = System_Runtime_InteropServices_Marshal_SecureStringToGlobalAllocAnsi(secureString,
+																								&exception)
+		
+		XCTAssertNil(exception)
+		
+		defer {
+			System_Runtime_InteropServices_Marshal_FreeHGlobal(retStringPtr,
+															   &exception)
+			
+			XCTAssertNil(exception)
+		}
+		
+		guard let retStringC = System_Runtime_InteropServices_Marshal_PtrToStringAuto1(retStringPtr,
+																					   &exception),
+			  exception == nil else {
+			XCTFail("System.Runtime.InteropServices.Marshal.PtrToStringAuto should not throw and return an instance of a C String")
+			
+			return
+		}
+		
+		defer { retStringC.deallocate() }
+		
+		let retString = String(cString: retStringC)
+		
+		XCTAssertEqual(string, retString)
 	}
 }
