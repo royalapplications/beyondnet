@@ -3,6 +3,8 @@
 	
 	"CSharpUnmanagedOutputPath": "NativeAOT.CodeGeneratorOutputSample/UnmanagedGenerated.cs",
 	"COutputPath": "NativeAOT.CodeGeneratorOutputSample/Swift/NativeAOTCodeGeneratorOutputSample/Source/TypeDefinitions.h",
+	
+	"EmitUnsupported": false,
 
 	"IncludedTypeNames": [
 		"System.GC",

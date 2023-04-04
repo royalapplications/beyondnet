@@ -45,12 +45,15 @@ internal class CodeGeneratorDriver
             out Dictionary<Type, string> unsupportedTypes
         );
 
+        bool emitUnsupported = Configuration.EmitUnsupported ?? false;
+
         const string namespaceForCSharpUnamangedCode = "NativeGeneratedCode";
 
         var cSharpUnmanagedResultObject = GenerateCSharpUnmanagedCode(
             types,
             unsupportedTypes,
-            namespaceForCSharpUnamangedCode
+            namespaceForCSharpUnamangedCode,
+            emitUnsupported
         );
 
         var cSharpUnmanagedResult = cSharpUnmanagedResultObject.Result;
@@ -59,7 +62,8 @@ internal class CodeGeneratorDriver
         var cResultObject = GenerateCCode(
             types,
             unsupportedTypes,
-            cSharpUnmanagedResult
+            cSharpUnmanagedResult,
+            emitUnsupported
         );
 
         var cResult = cResultObject.Result;
@@ -154,13 +158,14 @@ internal class CodeGeneratorDriver
     private static CodeGeneratorResult GenerateCSharpUnmanagedCode(
         HashSet<Type> types,
         Dictionary<Type, string> unsupportedTypes,
-        string namespaceForGeneratedCode
+        string namespaceForGeneratedCode,
+        bool emitUnsupported
     )
     {
         SourceCodeWriter writer = new();
-        
+
         Generator.CSharpUnmanaged.Settings settings = new(namespaceForGeneratedCode) {
-            EmitUnsupported = false
+            EmitUnsupported = emitUnsupported
         };
         
         CSharpUnmanagedCodeGenerator codeGenerator = new(settings);
@@ -196,13 +201,14 @@ internal class CodeGeneratorDriver
     private static CodeGeneratorResult GenerateCCode(
         HashSet<Type> types,
         Dictionary<Type, string> unsupportedTypes,
-        Result cSharpUnmanagedResult
+        Result cSharpUnmanagedResult,
+        bool emitUnsupported
     )
     {
         SourceCodeWriter writer = new();
         
         Generator.C.Settings settings = new() {
-            EmitUnsupported = false
+            EmitUnsupported = emitUnsupported
         };
         
         CCodeGenerator codeGenerator = new(settings, cSharpUnmanagedResult);
