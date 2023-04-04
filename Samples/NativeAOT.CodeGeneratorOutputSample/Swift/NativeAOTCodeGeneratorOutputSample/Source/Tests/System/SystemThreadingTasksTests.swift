@@ -2,11 +2,11 @@ import XCTest
 import NativeAOTCodeGeneratorOutputSample
 
 final class SystemThreadingTasksTests: XCTestCase {
-	private class Context {
+	private class System_Action_Swift {
 		let actionFunction: () -> Void
 		let destructorFunction: () -> Void
 		
-		lazy var actionFunctionC: System_Action_CFunction_t = {
+		private lazy var actionFunctionC: System_Action_CFunction_t = {
 			{ innerContext in
 				guard let innerContext else {
 					XCTFail("Inner context is nil")
@@ -14,14 +14,14 @@ final class SystemThreadingTasksTests: XCTestCase {
 					return
 				}
 				
-				let innerBoxedContext = NativeBox<Context>.fromPointer(innerContext)
+				let innerBoxedContext = NativeBox<System_Action_Swift>.fromPointer(innerContext)
 				let innerSwiftyContext = innerBoxedContext.value
 				
 				innerSwiftyContext.actionFunction()
 			}
 		}()
 		
-		lazy var destructorFunctionC: System_Action_CDestructorFunction_t = {
+		private lazy var destructorFunctionC: System_Action_CDestructorFunction_t = {
 			{ innerContext in
 				guard let innerContext else {
 					XCTFail("Inner context is nil")
@@ -29,13 +29,23 @@ final class SystemThreadingTasksTests: XCTestCase {
 					return
 				}
 				
-				let innerBoxedContext = NativeBox<Context>.fromPointer(innerContext)
+				let innerBoxedContext = NativeBox<System_Action_Swift>.fromPointer(innerContext)
 				let innerSwiftyContext = innerBoxedContext.value
 				
 				innerSwiftyContext.destructorFunction()
 				
 				innerBoxedContext.release(innerContext)
 			}
+		}()
+		
+		private lazy var boxedContext: UnsafeRawPointer = {
+			NativeBox(self).retainedPointer()
+		}()
+		
+		lazy var systemAction: System_Action_t? = {
+			System_Action_Create(boxedContext,
+								 actionFunctionC,
+								 destructorFunctionC)
 		}()
 		
 		init(actionFunction: @escaping () -> Void,
@@ -51,18 +61,13 @@ final class SystemThreadingTasksTests: XCTestCase {
 		var actionFunctionHasCompleted = false
 		var destructorFunctionHasCompleted = false
 		
-		let swiftyContext = Context(actionFunction: {
+		let swiftySystemAction = System_Action_Swift(actionFunction: {
 			actionFunctionHasCompleted = true
 		}, destructorFunction: {
 			destructorFunctionHasCompleted = true
 		})
 		
-		let boxedContext = NativeBox(swiftyContext)
-		let context = boxedContext.retainedPointer()
-		
-		guard let action = System_Action_Create(context,
-												swiftyContext.actionFunctionC,
-												swiftyContext.destructorFunctionC) else {
+		guard let action = swiftySystemAction.systemAction else {
 			XCTFail("System.Action ctor should return an instance")
 			
 			return
