@@ -1,5 +1,5 @@
-// Number of generated types: 395
-// Number of generated members: 4329
+// Number of generated types: 398
+// Number of generated members: 4338
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -1271,7 +1271,11 @@ typedef void* NativeAOT_CodeGeneratorInputSample_Person_Array_t;
 
 typedef void* NativeAOT_CodeGeneratorInputSample_Person_Extensions_t;
 
+typedef void* NativeAOT_CodeGeneratorInputSample_Book_t;
+
 typedef void* NativeAOT_CodeGeneratorInputSample_TestClass_t;
+
+
 
 typedef void* NativeAOT_CodeGeneratorInputSample_Transformer_t;
 
@@ -31735,6 +31739,50 @@ NativeAOT_CodeGeneratorInputSample_Person_Extensions_Destroy(
 
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.Person_Extensions
 
+#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Book
+NativeAOT_CodeGeneratorInputSample_Book_t /* NativeAOT.CodeGeneratorInputSample.Book */
+NativeAOT_CodeGeneratorInputSample_Book_Create(
+	CString /* System.String */ name,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+NativeAOT_CodeGeneratorInputSample_Book_Name_Get(
+	NativeAOT_CodeGeneratorInputSample_Book_t /* NativeAOT.CodeGeneratorInputSample.Book */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+NativeAOT_CodeGeneratorInputSample_Book_t /* NativeAOT.CodeGeneratorInputSample.Book */
+NativeAOT_CodeGeneratorInputSample_Book_DonQuixote_Get(
+	
+);
+
+
+NativeAOT_CodeGeneratorInputSample_Book_t /* NativeAOT.CodeGeneratorInputSample.Book */
+NativeAOT_CodeGeneratorInputSample_Book_ATaleOfTwoCities_Get(
+	
+);
+
+
+NativeAOT_CodeGeneratorInputSample_Book_t /* NativeAOT.CodeGeneratorInputSample.Book */
+NativeAOT_CodeGeneratorInputSample_Book_TheLordOfTheRings_Get(
+	
+);
+
+
+System_Type_t /* System.Type */
+NativeAOT_CodeGeneratorInputSample_Book_TypeOf(
+	
+);
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_Book_Destroy(
+	NativeAOT_CodeGeneratorInputSample_Book_t /* NativeAOT.CodeGeneratorInputSample.Book */ self
+);
+
+#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.Book
+
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.TestClass
 void /* System.Void */
 NativeAOT_CodeGeneratorInputSample_TestClass_SayHello(
@@ -31791,6 +31839,22 @@ NativeAOT_CodeGeneratorInputSample_TestClass_ModifyByRefValueAndReturnOriginalVa
 	System_Exception_t* /* System.Exception */ outException
 );
 
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_TestClass_ModifyByRefEnum(
+	NativeAOT_CodeGeneratorInputSample_TestClass_t /* NativeAOT.CodeGeneratorInputSample.TestClass */ self,
+	NativeAOT_CodeGeneratorInputSample_TestEnum* /* NativeAOT.CodeGeneratorInputSample.TestEnum */ enumToModify,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_TestClass_ModifyByRefBookAndReturnOriginalBookAsOutParameter(
+	NativeAOT_CodeGeneratorInputSample_TestClass_t /* NativeAOT.CodeGeneratorInputSample.TestClass */ self,
+	NativeAOT_CodeGeneratorInputSample_Book_t* /* NativeAOT.CodeGeneratorInputSample.Book */ bookToModify,
+	NativeAOT_CodeGeneratorInputSample_Book_t /* NativeAOT.CodeGeneratorInputSample.Book */ targetBook,
+	NativeAOT_CodeGeneratorInputSample_Book_t* /* NativeAOT.CodeGeneratorInputSample.Book */ originalBook,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 NativeAOT_CodeGeneratorInputSample_TestClass_t /* NativeAOT.CodeGeneratorInputSample.TestClass */
 NativeAOT_CodeGeneratorInputSample_TestClass_Create(
 	System_Exception_t* /* System.Exception */ outException
@@ -31807,6 +31871,8 @@ NativeAOT_CodeGeneratorInputSample_TestClass_Destroy(
 );
 
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.TestClass
+
+
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Transformer
 CString /* System.String */

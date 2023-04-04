@@ -10,6 +10,20 @@ public delegate ref int ByRefReturnValueDelegate();
 public delegate void ByRefParametersDelegate(ref int byRefInt);
 public delegate void OutParametersDelegate(out int outInt);
 
+public class Book
+{
+    public string Name { get; }
+
+    public static readonly Book DonQuixote = new("Don Quixote");
+    public static readonly Book ATaleOfTwoCities = new("A Tale of Two Cities");
+    public static readonly Book TheLordOfTheRings = new("The Lord of the Rings");
+
+    public Book(string name)
+    {
+        Name = name;
+    }
+}
+
 public class TestClass
 {
     public void SayHello()
@@ -54,5 +68,22 @@ public class TestClass
         valueToModify = targetValue;
 
         return originalValue;
+    }
+
+    public void ModifyByRefEnum(ref TestEnum enumToModify)
+    {
+        if (enumToModify == TestEnum.FirstCase) {
+            enumToModify = TestEnum.SecondCase;
+        } else if (enumToModify == TestEnum.SecondCase) {
+            enumToModify = TestEnum.FirstCase;
+        } else {
+            throw new Exception("Unknown enum case");
+        }
+    }
+
+    public void ModifyByRefBookAndReturnOriginalBookAsOutParameter(ref Book bookToModify, Book targetBook, out Book originalBook)
+    {
+        originalBook = bookToModify;
+        bookToModify = targetBook;
     }
 }

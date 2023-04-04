@@ -246,7 +246,7 @@ final class TestClassesTests: XCTestCase {
         XCTAssertEqual("SecondCase", enumName)
     }
 	
-	func testByRef() {
+	func testInt32ByRef() {
 		var exception: System_Exception_t?
 		
 		guard let testClass = NativeAOT_CodeGeneratorInputSample_TestClass_Create(&exception),
@@ -273,5 +273,76 @@ final class TestClassesTests: XCTestCase {
 		
 		XCTAssertEqual(originalValue, originalValueRet)
 		XCTAssertEqual(targetValue, valueToModify)
+	}
+	
+	func testEnumByRef() {
+		var exception: System_Exception_t?
+		
+		guard let testClass = NativeAOT_CodeGeneratorInputSample_TestClass_Create(&exception),
+			  exception == nil else {
+			XCTFail("TestClass ctor should not throw and return an instance")
+			
+			return
+		}
+		
+		defer {
+			NativeAOT_CodeGeneratorInputSample_TestClass_Destroy(testClass)
+		}
+		
+		let originalValue = NativeAOT_CodeGeneratorInputSample_TestEnum.firstCase
+		var valueToModify = originalValue
+		let expectedValue = NativeAOT_CodeGeneratorInputSample_TestEnum.secondCase
+		
+		NativeAOT_CodeGeneratorInputSample_TestClass_ModifyByRefEnum(testClass,
+																	 &valueToModify,
+																	 &exception)
+		
+		XCTAssertNil(exception)
+		
+		XCTAssertEqual(expectedValue, valueToModify)
+	}
+	
+	func testBookByRef() {
+		var exception: System_Exception_t?
+		
+		guard let testClass = NativeAOT_CodeGeneratorInputSample_TestClass_Create(&exception),
+			  exception == nil else {
+			XCTFail("TestClass ctor should not throw and return an instance")
+			
+			return
+		}
+		
+		defer {
+			NativeAOT_CodeGeneratorInputSample_TestClass_Destroy(testClass)
+		}
+		
+		guard let originalBook = NativeAOT_CodeGeneratorInputSample_Book_DonQuixote_Get() else {
+			XCTFail("Failed to get book")
+			
+			return
+		}
+		
+		guard let targetBook = NativeAOT_CodeGeneratorInputSample_Book_TheLordOfTheRings_Get() else {
+			XCTFail("Failed to get book")
+			
+			return
+		}
+		
+		var bookToModify: NativeAOT_CodeGeneratorInputSample_Book_t? = originalBook
+		var originalBookRet: NativeAOT_CodeGeneratorInputSample_Book_t?
+		
+		NativeAOT_CodeGeneratorInputSample_TestClass_ModifyByRefBookAndReturnOriginalBookAsOutParameter(testClass,
+																										&bookToModify,
+																										targetBook,
+																										&originalBookRet,
+																										&exception)
+		
+		XCTAssertNil(exception)
+		
+		XCTAssertTrue(System_Object_Equals(originalBook, originalBookRet, &exception))
+		XCTAssertNil(exception)
+		
+		XCTAssertTrue(System_Object_Equals(targetBook, bookToModify, &exception))
+		XCTAssertNil(exception)
 	}
 }

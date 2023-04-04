@@ -1,5 +1,5 @@
-// Number of generated types: 395
-// Number of generated members: 4029
+// Number of generated types: 398
+// Number of generated members: 4038
 
 // <Header>
 using System;
@@ -111150,6 +111150,120 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_OutParametersDelegate
 }
 
 
+internal unsafe class NativeAOT_CodeGeneratorInputSample_Book
+{
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Book_Create")]
+	internal static void* /* NativeAOT.CodeGeneratorInputSample.Book */ NativeAOT_CodeGeneratorInputSample_Book_Create(byte* /* System.String */ name, void** /* System.Exception */ __outException)
+	{
+		System.String nameConverted = InteropUtils.ToDotNetString(name);
+	
+	    try {
+			NativeAOT.CodeGeneratorInputSample.Book __returnValue = new NativeAOT.CodeGeneratorInputSample.Book(nameConverted);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Book_Name_Get")]
+	internal static byte* /* System.String */ NativeAOT_CodeGeneratorInputSample_Book_Name_Get(void* /* NativeAOT.CodeGeneratorInputSample.Book */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.Book __selfConverted = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Book>(__self);
+	
+	
+	    try {
+			System.String __returnValue = __selfConverted.Name;
+			byte* _returnValueNative = __returnValue.CopyToCString();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Book_DonQuixote_Get")]
+	internal static void* /* NativeAOT.CodeGeneratorInputSample.Book */ NativeAOT_CodeGeneratorInputSample_Book_DonQuixote_Get()
+	{
+	
+		NativeAOT.CodeGeneratorInputSample.Book __returnValue = NativeAOT.CodeGeneratorInputSample.Book.DonQuixote;
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Book_ATaleOfTwoCities_Get")]
+	internal static void* /* NativeAOT.CodeGeneratorInputSample.Book */ NativeAOT_CodeGeneratorInputSample_Book_ATaleOfTwoCities_Get()
+	{
+	
+		NativeAOT.CodeGeneratorInputSample.Book __returnValue = NativeAOT.CodeGeneratorInputSample.Book.ATaleOfTwoCities;
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Book_TheLordOfTheRings_Get")]
+	internal static void* /* NativeAOT.CodeGeneratorInputSample.Book */ NativeAOT_CodeGeneratorInputSample_Book_TheLordOfTheRings_Get()
+	{
+	
+		NativeAOT.CodeGeneratorInputSample.Book __returnValue = NativeAOT.CodeGeneratorInputSample.Book.TheLordOfTheRings;
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Book_TypeOf")]
+	internal static void* /* System.Type */ NativeAOT_CodeGeneratorInputSample_Book_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(NativeAOT.CodeGeneratorInputSample.Book);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Book_Destroy")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Book_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.Book */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+
+}
+
+
 internal unsafe class NativeAOT_CodeGeneratorInputSample_TestClass
 {
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_SayHello")]
@@ -111398,6 +111512,96 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_TestClass
 	}
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_ModifyByRefEnum")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_TestClass_ModifyByRefEnum(void* /* NativeAOT.CodeGeneratorInputSample.TestClass */ __self, NativeAOT.CodeGeneratorInputSample.TestEnum* /* NativeAOT.CodeGeneratorInputSample.TestEnum */ enumToModify, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.TestClass __selfConverted = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.TestClass>(__self);
+	
+		NativeAOT.CodeGeneratorInputSample.TestEnum enumToModifyConverted;
+	
+		if (enumToModify is not null) {
+			enumToModifyConverted = *enumToModify;
+		} else {
+			enumToModifyConverted = default(NativeAOT.CodeGeneratorInputSample.TestEnum);
+		}
+	
+	
+	    try {
+			__selfConverted.ModifyByRefEnum(ref enumToModifyConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (enumToModify is not null) {
+				*enumToModify = enumToModifyConverted;
+			}
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_ModifyByRefBookAndReturnOriginalBookAsOutParameter")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_TestClass_ModifyByRefBookAndReturnOriginalBookAsOutParameter(void* /* NativeAOT.CodeGeneratorInputSample.TestClass */ __self, void** /* NativeAOT.CodeGeneratorInputSample.Book */ bookToModify, void* /* NativeAOT.CodeGeneratorInputSample.Book */ targetBook, void** /* NativeAOT.CodeGeneratorInputSample.Book */ originalBook, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.TestClass __selfConverted = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.TestClass>(__self);
+	
+		NativeAOT.CodeGeneratorInputSample.Book bookToModifyConverted;
+	
+		if (bookToModify is not null) {
+			bookToModifyConverted = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Book>((*bookToModify));
+		} else {
+			bookToModifyConverted = default(NativeAOT.CodeGeneratorInputSample.Book);
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.Book targetBookConverted = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.Book>(targetBook);
+		NativeAOT.CodeGeneratorInputSample.Book originalBookConverted;
+	
+	    try {
+			__selfConverted.ModifyByRefBookAndReturnOriginalBookAsOutParameter(ref bookToModifyConverted, targetBookConverted, out originalBookConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (bookToModify is not null) {
+				*bookToModify = bookToModifyConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+			if (originalBook is not null) {
+				*originalBook = originalBookConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			if (originalBook is not null) {
+				*originalBook = null;
+			}
+	
+		}
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_TestClass_Create")]
 	internal static void* /* NativeAOT.CodeGeneratorInputSample.TestClass */ NativeAOT_CodeGeneratorInputSample_TestClass_Create(void** /* System.Exception */ __outException)
 	{
@@ -111442,6 +111646,8 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_TestClass
 	
 
 }
+
+
 
 
 internal unsafe class NativeAOT_CodeGeneratorInputSample_StringGetterDelegate
