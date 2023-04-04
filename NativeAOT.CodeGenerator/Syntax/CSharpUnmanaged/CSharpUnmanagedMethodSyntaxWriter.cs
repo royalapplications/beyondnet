@@ -322,30 +322,32 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 """);
 
             foreach (var parameter in parameters) {
-                if (parameter.IsOut) {
-                    string parameterName = parameter.Name ?? throw new Exception("Parameter has no name");
-                    string convertedParameterName = $"{parameterName}Converted";
-
-                    Type parameterType = parameter.ParameterType.GetNonByRefType();
-                    TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
-
-                    string? parameterTypeConversion = parameterTypeDescriptor.GetTypeConversion(CodeLanguage.CSharp, CodeLanguage.CSharpUnmanaged);
-                    
-                    if (!convertedParameterNames.Contains($"out {convertedParameterName}")) {
-                        convertedParameterName = parameterName;
-                    }
-
-                    if (string.IsNullOrEmpty(parameterTypeConversion)) {
-                        parameterTypeConversion = convertedParameterName;
-                    } else {
-                        parameterTypeConversion = string.Format(parameterTypeConversion, convertedParameterName);
-                    }
-                    
-                    sb.AppendLine($"\t\tif ({parameterName} is not null) {{");
-                    sb.AppendLine($"\t\t\t*{parameterName} = {parameterTypeConversion};");
-                    sb.AppendLine("\t\t}");
-                    sb.AppendLine();
+                if (!parameter.IsOut) {
+                    continue;
                 }
+                
+                string parameterName = parameter.Name ?? throw new Exception("Parameter has no name");
+                string convertedParameterName = $"{parameterName}Converted";
+
+                Type parameterType = parameter.ParameterType.GetNonByRefType();
+                TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
+
+                string? parameterTypeConversion = parameterTypeDescriptor.GetTypeConversion(CodeLanguage.CSharp, CodeLanguage.CSharpUnmanaged);
+                
+                if (!convertedParameterNames.Contains($"out {convertedParameterName}")) {
+                    convertedParameterName = parameterName;
+                }
+
+                if (string.IsNullOrEmpty(parameterTypeConversion)) {
+                    parameterTypeConversion = convertedParameterName;
+                } else {
+                    parameterTypeConversion = string.Format(parameterTypeConversion, convertedParameterName);
+                }
+                
+                sb.AppendLine($"\t\tif ({parameterName} is not null) {{");
+                sb.AppendLine($"\t\t\t*{parameterName} = {parameterTypeConversion};");
+                sb.AppendLine("\t\t}");
+                sb.AppendLine();
             }
             
             if (isReturning) {
@@ -361,6 +363,25 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         }
 
 """);
+
+            foreach (var parameter in parameters) {
+                if (!parameter.IsOut) {
+                    continue;
+                }
+                
+                string parameterName = parameter.Name ?? throw new Exception("Parameter has no name");
+
+                Type parameterType = parameter.ParameterType.GetNonByRefType();
+                TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
+
+                string outValue = parameterTypeDescriptor.GetReturnValueOnException() 
+                                  ?? $"default({parameterType.GetFullNameOrName()})";
+
+                sb.AppendLine($"\t\tif ({parameterName} is not null) {{");
+                sb.AppendLine($"\t\t\t*{parameterName} = {outValue};");
+                sb.AppendLine("\t\t}");
+                sb.AppendLine();
+            }
 
             if (isReturning) {
                 string returnValue = returnOrSetterOrEventHandlerTypeDescriptor.GetReturnValueOnException()

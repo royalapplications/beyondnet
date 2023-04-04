@@ -6728,6 +6728,10 @@ internal unsafe class System_Enum
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
+			if (result is not null) {
+				*result = null;
+			}
+	
 			return 0;
 		}
 	}
@@ -6760,6 +6764,10 @@ internal unsafe class System_Enum
 	                
 	            *__outException = __exceptionHandleAddress;
 	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
 	
 			return 0;
 		}
@@ -20439,6 +20447,10 @@ internal unsafe class System_Version
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
+			if (result is not null) {
+				*result = null;
+			}
+	
 			return 0;
 		}
 	}
@@ -29773,6 +29785,10 @@ internal unsafe class System_Decimal
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
+			if (result is not null) {
+				*result = null;
+			}
+	
 			return 0;
 		}
 	}
@@ -29804,6 +29820,10 @@ internal unsafe class System_Decimal
 	                
 	            *__outException = __exceptionHandleAddress;
 	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
 	
 			return 0;
 		}
@@ -30749,6 +30769,10 @@ internal unsafe class System_Decimal
 	                
 	            *__outException = __exceptionHandleAddress;
 	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
 	
 			return 0;
 		}
@@ -32481,6 +32505,10 @@ internal unsafe class System_DateTime
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
+			if (result is not null) {
+				*result = null;
+			}
+	
 			return 0;
 		}
 	}
@@ -32512,6 +32540,10 @@ internal unsafe class System_DateTime
 	                
 	            *__outException = __exceptionHandleAddress;
 	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
 	
 			return 0;
 		}
@@ -32546,6 +32578,10 @@ internal unsafe class System_DateTime
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
+			if (result is not null) {
+				*result = null;
+			}
+	
 			return 0;
 		}
 	}
@@ -32578,6 +32614,10 @@ internal unsafe class System_DateTime
 	                
 	            *__outException = __exceptionHandleAddress;
 	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
 	
 			return 0;
 		}
@@ -32617,6 +32657,14 @@ internal unsafe class System_DateTime
 	                
 	            *__outException = __exceptionHandleAddress;
 	        }
+	
+			if (date is not null) {
+				*date = null;
+			}
+	
+			if (time is not null) {
+				*time = null;
+			}
 	
 		}
 	}
@@ -32660,6 +32708,18 @@ internal unsafe class System_DateTime
 	                
 	            *__outException = __exceptionHandleAddress;
 	        }
+	
+			if (year is not null) {
+				*year = -1;
+			}
+	
+			if (month is not null) {
+				*month = -1;
+			}
+	
+			if (day is not null) {
+				*day = -1;
+			}
 	
 		}
 	}
@@ -32847,6 +32907,10 @@ internal unsafe class System_DateTime
 	                
 	            *__outException = __exceptionHandleAddress;
 	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
 	
 			return 0;
 		}
@@ -34683,6 +34747,10 @@ internal unsafe class System_TimeSpan
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
+			if (result is not null) {
+				*result = null;
+			}
+	
 			return 0;
 		}
 	}
@@ -34714,6 +34782,10 @@ internal unsafe class System_TimeSpan
 	                
 	            *__outException = __exceptionHandleAddress;
 	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
 	
 			return 0;
 		}
@@ -34748,6 +34820,10 @@ internal unsafe class System_TimeSpan
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
+			if (result is not null) {
+				*result = null;
+			}
+	
 			return 0;
 		}
 	}
@@ -34780,6 +34856,10 @@ internal unsafe class System_TimeSpan
 	                
 	            *__outException = __exceptionHandleAddress;
 	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
 	
 			return 0;
 		}
@@ -34814,6 +34894,10 @@ internal unsafe class System_TimeSpan
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
+			if (result is not null) {
+				*result = null;
+			}
+	
 			return 0;
 		}
 	}
@@ -34846,6 +34930,10 @@ internal unsafe class System_TimeSpan
 	                
 	            *__outException = __exceptionHandleAddress;
 	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
 	
 			return 0;
 		}
@@ -35886,6 +35974,18 @@ internal unsafe class System_DateOnly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
+			if (year is not null) {
+				*year = -1;
+			}
+	
+			if (month is not null) {
+				*month = -1;
+			}
+	
+			if (day is not null) {
+				*day = -1;
+			}
+	
 		}
 	}
 	
@@ -36325,6 +36425,10 @@ internal unsafe class System_DateOnly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
+			if (result is not null) {
+				*result = null;
+			}
+	
 			return 0;
 		}
 	}
@@ -36357,6 +36461,10 @@ internal unsafe class System_DateOnly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
+			if (result is not null) {
+				*result = null;
+			}
+	
 			return 0;
 		}
 	}
@@ -36388,6 +36496,10 @@ internal unsafe class System_DateOnly
 	                
 	            *__outException = __exceptionHandleAddress;
 	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
 	
 			return 0;
 		}
@@ -36422,6 +36534,10 @@ internal unsafe class System_DateOnly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
+			if (result is not null) {
+				*result = null;
+			}
+	
 			return 0;
 		}
 	}
@@ -36453,6 +36569,10 @@ internal unsafe class System_DateOnly
 	                
 	            *__outException = __exceptionHandleAddress;
 	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
 	
 			return 0;
 		}
@@ -36486,6 +36606,10 @@ internal unsafe class System_DateOnly
 	                
 	            *__outException = __exceptionHandleAddress;
 	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
 	
 			return 0;
 		}
@@ -36735,6 +36859,10 @@ internal unsafe class System_DateOnly
 	                
 	            *__outException = __exceptionHandleAddress;
 	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
 	
 			return 0;
 		}
@@ -37117,6 +37245,10 @@ internal unsafe class System_TimeOnly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
+			if (wrappedDays is not null) {
+				*wrappedDays = -1;
+			}
+	
 			return null;
 		}
 	}
@@ -37184,6 +37316,10 @@ internal unsafe class System_TimeOnly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
+			if (wrappedDays is not null) {
+				*wrappedDays = -1;
+			}
+	
 			return null;
 		}
 	}
@@ -37250,6 +37386,10 @@ internal unsafe class System_TimeOnly
 	                
 	            *__outException = __exceptionHandleAddress;
 	        }
+	
+			if (wrappedDays is not null) {
+				*wrappedDays = -1;
+			}
 	
 			return null;
 		}
@@ -37323,6 +37463,14 @@ internal unsafe class System_TimeOnly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
+			if (hour is not null) {
+				*hour = -1;
+			}
+	
+			if (minute is not null) {
+				*minute = -1;
+			}
+	
 		}
 	}
 	
@@ -37365,6 +37513,18 @@ internal unsafe class System_TimeOnly
 	                
 	            *__outException = __exceptionHandleAddress;
 	        }
+	
+			if (hour is not null) {
+				*hour = -1;
+			}
+	
+			if (minute is not null) {
+				*minute = -1;
+			}
+	
+			if (second is not null) {
+				*second = -1;
+			}
 	
 		}
 	}
@@ -37413,6 +37573,22 @@ internal unsafe class System_TimeOnly
 	                
 	            *__outException = __exceptionHandleAddress;
 	        }
+	
+			if (hour is not null) {
+				*hour = -1;
+			}
+	
+			if (minute is not null) {
+				*minute = -1;
+			}
+	
+			if (second is not null) {
+				*second = -1;
+			}
+	
+			if (millisecond is not null) {
+				*millisecond = -1;
+			}
 	
 		}
 	}
@@ -37466,6 +37642,26 @@ internal unsafe class System_TimeOnly
 	                
 	            *__outException = __exceptionHandleAddress;
 	        }
+	
+			if (hour is not null) {
+				*hour = -1;
+			}
+	
+			if (minute is not null) {
+				*minute = -1;
+			}
+	
+			if (second is not null) {
+				*second = -1;
+			}
+	
+			if (millisecond is not null) {
+				*millisecond = -1;
+			}
+	
+			if (microsecond is not null) {
+				*microsecond = -1;
+			}
 	
 		}
 	}
@@ -37899,6 +38095,10 @@ internal unsafe class System_TimeOnly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
+			if (result is not null) {
+				*result = null;
+			}
+	
 			return 0;
 		}
 	}
@@ -37931,6 +38131,10 @@ internal unsafe class System_TimeOnly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
+			if (result is not null) {
+				*result = null;
+			}
+	
 			return 0;
 		}
 	}
@@ -37962,6 +38166,10 @@ internal unsafe class System_TimeOnly
 	                
 	            *__outException = __exceptionHandleAddress;
 	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
 	
 			return 0;
 		}
@@ -37996,6 +38204,10 @@ internal unsafe class System_TimeOnly
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
+			if (result is not null) {
+				*result = null;
+			}
+	
 			return 0;
 		}
 	}
@@ -38027,6 +38239,10 @@ internal unsafe class System_TimeOnly
 	                
 	            *__outException = __exceptionHandleAddress;
 	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
 	
 			return 0;
 		}
@@ -38060,6 +38276,10 @@ internal unsafe class System_TimeOnly
 	                
 	            *__outException = __exceptionHandleAddress;
 	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
 	
 			return 0;
 		}
@@ -38309,6 +38529,10 @@ internal unsafe class System_TimeOnly
 	                
 	            *__outException = __exceptionHandleAddress;
 	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
 	
 			return 0;
 		}
@@ -46232,6 +46456,14 @@ internal unsafe class System_Collections_DictionaryEntry
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
+			if (key is not null) {
+				*key = null;
+			}
+	
+			if (value is not null) {
+				*value = null;
+			}
+	
 		}
 	}
 	
@@ -51672,6 +51904,14 @@ internal unsafe class System_Reflection_Module
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
+			if (peKind is not null) {
+				*peKind = default(System.Reflection.PortableExecutableKinds);
+			}
+	
+			if (machine is not null) {
+				*machine = default(System.Reflection.ImageFileMachine);
+			}
+	
 		}
 	}
 	
@@ -53048,6 +53288,10 @@ internal unsafe class System_Guid
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
+			if (result is not null) {
+				*result = null;
+			}
+	
 			return 0;
 		}
 	}
@@ -53106,6 +53350,10 @@ internal unsafe class System_Guid
 	                
 	            *__outException = __exceptionHandleAddress;
 	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
 	
 			return 0;
 		}
@@ -53448,6 +53696,10 @@ internal unsafe class System_Guid
 	                
 	            *__outException = __exceptionHandleAddress;
 	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
 	
 			return 0;
 		}
@@ -54285,6 +54537,10 @@ internal unsafe class System_Text_Rune
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
+			if (result is not null) {
+				*result = null;
+			}
+	
 			return 0;
 		}
 	}
@@ -54314,6 +54570,10 @@ internal unsafe class System_Text_Rune
 	                
 	            *__outException = __exceptionHandleAddress;
 	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
 	
 			return 0;
 		}
@@ -54345,6 +54605,10 @@ internal unsafe class System_Text_Rune
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
+			if (result is not null) {
+				*result = null;
+			}
+	
 			return 0;
 		}
 	}
@@ -54374,6 +54638,10 @@ internal unsafe class System_Text_Rune
 	                
 	            *__outException = __exceptionHandleAddress;
 	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
 	
 			return 0;
 		}
@@ -54405,6 +54673,10 @@ internal unsafe class System_Text_Rune
 	                
 	            *__outException = __exceptionHandleAddress;
 	        }
+	
+			if (value is not null) {
+				*value = null;
+			}
 	
 			return 0;
 		}
@@ -60428,6 +60700,10 @@ internal unsafe class System_Text_CompositeFormat
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
+			if (compositeFormat is not null) {
+				*compositeFormat = null;
+			}
+	
 			return 0;
 		}
 	}
@@ -63567,6 +63843,18 @@ internal unsafe class System_Text_Decoder
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
+			if (bytesUsed is not null) {
+				*bytesUsed = -1;
+			}
+	
+			if (charsUsed is not null) {
+				*charsUsed = -1;
+			}
+	
+			if (completed is not null) {
+				*completed = 0;
+			}
+	
 		}
 	}
 	
@@ -63819,6 +64107,18 @@ internal unsafe class System_Text_Encoder
 	                
 	            *__outException = __exceptionHandleAddress;
 	        }
+	
+			if (charsUsed is not null) {
+				*charsUsed = -1;
+			}
+	
+			if (bytesUsed is not null) {
+				*bytesUsed = -1;
+			}
+	
+			if (completed is not null) {
+				*completed = 0;
+			}
 	
 		}
 	}
@@ -68824,6 +69124,10 @@ internal unsafe class System_Math
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
+			if (low is not null) {
+				*low = 0;
+			}
+	
 			return 0;
 		}
 	}
@@ -68852,6 +69156,10 @@ internal unsafe class System_Math
 	                
 	            *__outException = __exceptionHandleAddress;
 	        }
+	
+			if (low is not null) {
+				*low = -1;
+			}
 	
 			return -1;
 		}
@@ -68954,6 +69262,10 @@ internal unsafe class System_Math
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
+			if (result is not null) {
+				*result = -1;
+			}
+	
 			return -1;
 		}
 	}
@@ -68982,6 +69294,10 @@ internal unsafe class System_Math
 	                
 	            *__outException = __exceptionHandleAddress;
 	        }
+	
+			if (result is not null) {
+				*result = -1;
+			}
 	
 			return -1;
 		}
