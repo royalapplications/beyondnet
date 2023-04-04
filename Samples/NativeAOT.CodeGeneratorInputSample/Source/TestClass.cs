@@ -26,6 +26,9 @@ public class Book
 
 public class TestClass
 {
+    public Book CurrentBook = Book.DonQuixote;
+    public int CurrentIntValue;
+    
     public void SayHello()
     {
         Console.WriteLine(GetHello());
@@ -85,5 +88,17 @@ public class TestClass
     {
         originalBook = bookToModify;
         bookToModify = targetBook;
+    }
+
+    public ref Book GetCurrentBookByRef()
+    {
+        return ref CurrentBook;
+    }
+
+    public ref int IncreaseAndGetCurrentIntValueByRef()
+    {
+        CurrentIntValue += 1;
+        
+        return ref CurrentIntValue;
     }
 }

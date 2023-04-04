@@ -94,10 +94,21 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             methodNameC,
             CodeLanguage.C
         );
+
+        bool returnOrSetterOrEventHandlerTypeIsByRef = returnOrSetterOrEventHandlerType.IsByRef;
+
+        if (returnOrSetterOrEventHandlerTypeIsByRef) {
+            returnOrSetterOrEventHandlerType = returnOrSetterOrEventHandlerType.GetNonByRefType();
+        }
         
         TypeDescriptor returnOrSetterTypeDescriptor = returnOrSetterOrEventHandlerType.GetTypeDescriptor(typeDescriptorRegistry);
         
-        string cReturnOrSetterTypeName = returnOrSetterTypeDescriptor.GetTypeName(CodeLanguage.C, true);
+        string cReturnOrSetterTypeName = returnOrSetterTypeDescriptor.GetTypeName(
+            CodeLanguage.C, 
+            true,
+            false,
+            returnOrSetterOrEventHandlerTypeIsByRef
+        );
         
         string cReturnOrSetterTypeNameWithComment;
         Type? setterType;

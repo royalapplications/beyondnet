@@ -1,5 +1,5 @@
-// Number of generated types: 398
-// Number of generated members: 4338
+// Number of generated types: 425
+// Number of generated members: 4348
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -861,6 +861,7 @@ typedef void* System_Collections_IComparer_t;
 // Type "T[]" was skipped. Reason: It has no full name.
 typedef void* System_Collections_IEnumerator_t;
 
+
 typedef void* System_Globalization_CompareInfo_t;
 
 typedef void* System_Reflection_Assembly_t;
@@ -926,6 +927,7 @@ typedef void* System_String_Array_t;
 
 
 
+
 typedef void* System_DateOnly_t;
 
 typedef void* System_TimeOnly_t;
@@ -946,6 +948,7 @@ typedef void* System_ModuleHandle_t;
 
 typedef void* System_RuntimeTypeHandle_Array_t;
 
+
 typedef void* System_RuntimeFieldHandle_t;
 
 typedef void* System_Reflection_ParameterInfo_Array_t;
@@ -954,7 +957,10 @@ typedef void* System_Reflection_ParameterInfo_t;
 
 typedef void* System_Object_Array_t;
 
+
 typedef void* System_Type_Array_t;
+
+
 
 typedef void* System_Reflection_MethodBody_t;
 
@@ -964,7 +970,9 @@ typedef void* System_Reflection_FieldInfo_t;
 
 typedef void* System_Reflection_FieldInfo_Array_t;
 
+
 typedef void* System_Reflection_MethodBase_Array_t;
+
 
 
 typedef void* System_Reflection_ParameterModifier_Array_t;
@@ -980,7 +988,9 @@ typedef void* System_Reflection_MethodInfo_t;
 
 typedef void* System_Reflection_ICustomAttributeProvider_t;
 
+
 typedef void* System_Reflection_PropertyInfo_Array_t;
+
 
 typedef void* System_Collections_IDictionary_t;
 
@@ -991,6 +1001,7 @@ typedef void* System_Collections_IDictionaryEnumerator_t;
 typedef void* System_Collections_DictionaryEntry_t;
 
 typedef void* System_Exception_Array_t;
+
 
 typedef void* System_Threading_Tasks_TaskFactory_t;
 
@@ -1009,6 +1020,7 @@ typedef void* System_Runtime_ConstrainedExecution_CriticalFinalizerObject_t;
 
 typedef void* System_Threading_WaitHandle_Array_t;
 
+
 typedef void* System_Threading_CancellationTokenRegistration_t;
 
 typedef void* System_Threading_Tasks_ValueTask_t;
@@ -1024,6 +1036,7 @@ typedef void* System_Threading_Tasks_Sources_IValueTaskSource_t;
 typedef void* System_IAsyncResult_t;
 
 typedef void* System_Threading_Tasks_Task_Array_t;
+
 
 // Type "Task`1[]" was skipped. Reason: It has no full name.
 // Type "Task`1[]" was skipped. Reason: It has no full name.
@@ -1072,9 +1085,12 @@ typedef void* System_EventArgs_t;
 
 typedef void* System_Reflection_Module_Array_t;
 
+
 typedef void* System_Reflection_AssemblyName_Array_t;
 
+
 typedef void* System_IO_FileStream_Array_t;
+
 
 typedef void* System_Text_Rune_t;
 
@@ -1090,6 +1106,7 @@ typedef void* System_Globalization_NumberFormatInfo_t;
 typedef void* System_Globalization_DateTimeFormatInfo_t;
 
 typedef void* System_Globalization_Calendar_Array_t;
+
 
 typedef void* System_Char_Array_t;
 
@@ -1116,6 +1133,7 @@ typedef void* System_Text_EncodingInfo_Array_t;
 
 typedef void* System_Text_EncodingInfo_t;
 
+
 typedef void* System_Text_Decoder_t;
 
 typedef void* System_Text_Encoder_t;
@@ -1127,15 +1145,19 @@ typedef void* System_Attribute_t;
 
 typedef void* System_Attribute_Array_t;
 
+
 typedef void* System_Reflection_ConstructorInfo_t;
 
 typedef void* System_Reflection_ConstructorInfo_Array_t;
+
 
 typedef void* System_Reflection_EventInfo_t;
 
 typedef void* System_Reflection_EventInfo_Array_t;
 
+
 typedef void* System_Reflection_MemberInfo_Array_t;
+
 
 typedef void* System_Reflection_InterfaceMapping_t;
 
@@ -1191,6 +1213,7 @@ typedef void* System_UnhandledExceptionEventArgs_t;
 
 typedef void* System_Reflection_Assembly_Array_t;
 
+
 typedef void* System_AssemblyLoadEventArgs_t;
 
 typedef void* System_Runtime_Remoting_ObjectHandle_t;
@@ -1229,11 +1252,14 @@ typedef void* System_IO_DirectoryInfo_t;
 
 typedef void* System_IO_FileInfo_Array_t;
 
+
 typedef void* System_IO_EnumerationOptions_t;
 
 typedef void* System_IO_FileSystemInfo_Array_t;
 
+
 typedef void* System_IO_DirectoryInfo_Array_t;
+
 
 typedef void* System_IO_Directory_t;
 
@@ -1268,6 +1294,7 @@ typedef void* NativeAOT_CodeGeneratorInputSample_GenericAnimal_t;
 typedef void* NativeAOT_CodeGeneratorInputSample_Person_t;
 
 typedef void* NativeAOT_CodeGeneratorInputSample_Person_Array_t;
+
 
 typedef void* NativeAOT_CodeGeneratorInputSample_Person_Extensions_t;
 
@@ -6053,6 +6080,7 @@ System_Collections_IEnumerator_Destroy(
 );
 
 #pragma mark - END APIs of System.Collections.IEnumerator
+
 
 #pragma mark - BEGIN APIs of System.Globalization.CompareInfo
 System_Globalization_CompareInfo_t /* System.Globalization.CompareInfo */
@@ -11522,6 +11550,7 @@ System_TimeSpan_Destroy(
 
 
 
+
 #pragma mark - BEGIN APIs of System.DateOnly
 System_DateOnly_t /* System.DateOnly */
 System_DateOnly_FromDayNumber(
@@ -13019,6 +13048,7 @@ System_ModuleHandle_Destroy(
 #pragma mark - BEGIN APIs of System.RuntimeTypeHandle[]
 #pragma mark - END APIs of System.RuntimeTypeHandle[]
 
+
 #pragma mark - BEGIN APIs of System.RuntimeFieldHandle
 int32_t /* System.Int32 */
 System_RuntimeFieldHandle_GetHashCode(
@@ -13250,8 +13280,11 @@ System_Reflection_ParameterInfo_Destroy(
 #pragma mark - BEGIN APIs of System.Object[]
 #pragma mark - END APIs of System.Object[]
 
+
 #pragma mark - BEGIN APIs of System.Type[]
 #pragma mark - END APIs of System.Type[]
+
+
 
 #pragma mark - BEGIN APIs of System.Reflection.MethodBody
 System_Byte_Array_t /* System.Byte[] */
@@ -13592,8 +13625,10 @@ System_Reflection_FieldInfo_Destroy(
 #pragma mark - BEGIN APIs of System.Reflection.FieldInfo[]
 #pragma mark - END APIs of System.Reflection.FieldInfo[]
 
+
 #pragma mark - BEGIN APIs of System.Reflection.MethodBase[]
 #pragma mark - END APIs of System.Reflection.MethodBase[]
+
 
 
 #pragma mark - BEGIN APIs of System.Reflection.ParameterModifier[]
@@ -13964,8 +13999,10 @@ System_Reflection_ICustomAttributeProvider_Destroy(
 
 #pragma mark - END APIs of System.Reflection.ICustomAttributeProvider
 
+
 #pragma mark - BEGIN APIs of System.Reflection.PropertyInfo[]
 #pragma mark - END APIs of System.Reflection.PropertyInfo[]
+
 
 #pragma mark - BEGIN APIs of System.Collections.IDictionary
 bool /* System.Boolean */
@@ -14210,6 +14247,7 @@ System_Collections_DictionaryEntry_Destroy(
 
 #pragma mark - BEGIN APIs of System.Exception[]
 #pragma mark - END APIs of System.Exception[]
+
 
 #pragma mark - BEGIN APIs of System.Threading.Tasks.TaskFactory
 System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
@@ -14751,6 +14789,7 @@ System_Runtime_ConstrainedExecution_CriticalFinalizerObject_Destroy(
 #pragma mark - BEGIN APIs of System.Threading.WaitHandle[]
 #pragma mark - END APIs of System.Threading.WaitHandle[]
 
+
 #pragma mark - BEGIN APIs of System.Threading.CancellationTokenRegistration
 void /* System.Void */
 System_Threading_CancellationTokenRegistration_Dispose(
@@ -15095,6 +15134,7 @@ System_IAsyncResult_Destroy(
 
 #pragma mark - BEGIN APIs of System.Threading.Tasks.Task[]
 #pragma mark - END APIs of System.Threading.Tasks.Task[]
+
 
 #pragma mark - BEGIN APIs of Task`1[]
 #pragma mark - END APIs of Task`1[]
@@ -16155,11 +16195,14 @@ System_EventArgs_Destroy(
 #pragma mark - BEGIN APIs of System.Reflection.Module[]
 #pragma mark - END APIs of System.Reflection.Module[]
 
+
 #pragma mark - BEGIN APIs of System.Reflection.AssemblyName[]
 #pragma mark - END APIs of System.Reflection.AssemblyName[]
 
+
 #pragma mark - BEGIN APIs of System.IO.FileStream[]
 #pragma mark - END APIs of System.IO.FileStream[]
+
 
 #pragma mark - BEGIN APIs of System.Text.Rune
 int32_t /* System.Int32 */
@@ -18287,6 +18330,7 @@ System_Globalization_DateTimeFormatInfo_Destroy(
 #pragma mark - BEGIN APIs of System.Globalization.Calendar[]
 #pragma mark - END APIs of System.Globalization.Calendar[]
 
+
 #pragma mark - BEGIN APIs of System.Char[]
 #pragma mark - END APIs of System.Char[]
 
@@ -19163,6 +19207,7 @@ System_Text_EncodingInfo_Destroy(
 
 #pragma mark - END APIs of System.Text.EncodingInfo
 
+
 #pragma mark - BEGIN APIs of System.Text.Decoder
 void /* System.Void */
 System_Text_Decoder_Reset(
@@ -19755,6 +19800,7 @@ System_Attribute_Destroy(
 #pragma mark - BEGIN APIs of System.Attribute[]
 #pragma mark - END APIs of System.Attribute[]
 
+
 #pragma mark - BEGIN APIs of System.Reflection.ConstructorInfo
 System_Object_t /* System.Object */
 System_Reflection_ConstructorInfo_Invoke(
@@ -19819,6 +19865,7 @@ System_Reflection_ConstructorInfo_Destroy(
 
 #pragma mark - BEGIN APIs of System.Reflection.ConstructorInfo[]
 #pragma mark - END APIs of System.Reflection.ConstructorInfo[]
+
 
 #pragma mark - BEGIN APIs of System.Reflection.EventInfo
 System_Reflection_MethodInfo_Array_t /* System.Reflection.MethodInfo[] */
@@ -19973,8 +20020,10 @@ System_Reflection_EventInfo_Destroy(
 #pragma mark - BEGIN APIs of System.Reflection.EventInfo[]
 #pragma mark - END APIs of System.Reflection.EventInfo[]
 
+
 #pragma mark - BEGIN APIs of System.Reflection.MemberInfo[]
 #pragma mark - END APIs of System.Reflection.MemberInfo[]
+
 
 #pragma mark - BEGIN APIs of System.Reflection.InterfaceMapping
 System_Type_t /* System.Type */
@@ -26120,6 +26169,7 @@ System_UnhandledExceptionEventArgs_Destroy(
 #pragma mark - BEGIN APIs of System.Reflection.Assembly[]
 #pragma mark - END APIs of System.Reflection.Assembly[]
 
+
 #pragma mark - BEGIN APIs of System.AssemblyLoadEventArgs
 System_AssemblyLoadEventArgs_t /* System.AssemblyLoadEventArgs */
 System_AssemblyLoadEventArgs_Create(
@@ -29629,6 +29679,7 @@ System_IO_DirectoryInfo_Destroy(
 #pragma mark - BEGIN APIs of System.IO.FileInfo[]
 #pragma mark - END APIs of System.IO.FileInfo[]
 
+
 #pragma mark - BEGIN APIs of System.IO.EnumerationOptions
 System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */
 System_IO_EnumerationOptions_Create(
@@ -29874,8 +29925,10 @@ System_IO_EnumerationOptions_Destroy(
 #pragma mark - BEGIN APIs of System.IO.FileSystemInfo[]
 #pragma mark - END APIs of System.IO.FileSystemInfo[]
 
+
 #pragma mark - BEGIN APIs of System.IO.DirectoryInfo[]
 #pragma mark - END APIs of System.IO.DirectoryInfo[]
+
 
 #pragma mark - BEGIN APIs of System.IO.Directory
 System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */
@@ -31719,6 +31772,7 @@ NativeAOT_CodeGeneratorInputSample_Person_Destroy(
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Person[]
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.Person[]
 
+
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Person_Extensions
 void /* System.Void */
 NativeAOT_CodeGeneratorInputSample_Person_Extensions_IncreaseAge(
@@ -31855,10 +31909,70 @@ NativeAOT_CodeGeneratorInputSample_TestClass_ModifyByRefBookAndReturnOriginalBoo
 	System_Exception_t* /* System.Exception */ outException
 );
 
+NativeAOT_CodeGeneratorInputSample_Book_t* /* NativeAOT.CodeGeneratorInputSample.Book */
+NativeAOT_CodeGeneratorInputSample_TestClass_GetCurrentBookByRef(
+	NativeAOT_CodeGeneratorInputSample_TestClass_t /* NativeAOT.CodeGeneratorInputSample.TestClass */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t* /* System.Int32 */
+NativeAOT_CodeGeneratorInputSample_TestClass_IncreaseAndGetCurrentIntValueByRef(
+	NativeAOT_CodeGeneratorInputSample_TestClass_t /* NativeAOT.CodeGeneratorInputSample.TestClass */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 NativeAOT_CodeGeneratorInputSample_TestClass_t /* NativeAOT.CodeGeneratorInputSample.TestClass */
 NativeAOT_CodeGeneratorInputSample_TestClass_Create(
 	System_Exception_t* /* System.Exception */ outException
 );
+
+NativeAOT_CodeGeneratorInputSample_Book_t /* NativeAOT.CodeGeneratorInputSample.Book */
+NativeAOT_CodeGeneratorInputSample_TestClass_CurrentBook_Get(
+	NativeAOT_CodeGeneratorInputSample_TestClass_t /* NativeAOT.CodeGeneratorInputSample.TestClass */ self
+);
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_TestClass_CurrentBook_Set(
+	NativeAOT_CodeGeneratorInputSample_TestClass_t /* NativeAOT.CodeGeneratorInputSample.TestClass */ self,
+	NativeAOT_CodeGeneratorInputSample_Book_t /* NativeAOT.CodeGeneratorInputSample.Book */ value
+);
+
+
+NativeAOT_CodeGeneratorInputSample_Book_t /* NativeAOT.CodeGeneratorInputSample.Book */
+NativeAOT_CodeGeneratorInputSample_TestClass_CurrentBook_Get(
+	NativeAOT_CodeGeneratorInputSample_TestClass_t /* NativeAOT.CodeGeneratorInputSample.TestClass */ self
+);
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_TestClass_CurrentBook_Set(
+	NativeAOT_CodeGeneratorInputSample_TestClass_t /* NativeAOT.CodeGeneratorInputSample.TestClass */ self,
+	NativeAOT_CodeGeneratorInputSample_Book_t /* NativeAOT.CodeGeneratorInputSample.Book */ value
+);
+
+
+int32_t /* System.Int32 */
+NativeAOT_CodeGeneratorInputSample_TestClass_CurrentIntValue_Get(
+	NativeAOT_CodeGeneratorInputSample_TestClass_t /* NativeAOT.CodeGeneratorInputSample.TestClass */ self
+);
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_TestClass_CurrentIntValue_Set(
+	NativeAOT_CodeGeneratorInputSample_TestClass_t /* NativeAOT.CodeGeneratorInputSample.TestClass */ self,
+	int32_t /* System.Int32 */ value
+);
+
+
+int32_t /* System.Int32 */
+NativeAOT_CodeGeneratorInputSample_TestClass_CurrentIntValue_Get(
+	NativeAOT_CodeGeneratorInputSample_TestClass_t /* NativeAOT.CodeGeneratorInputSample.TestClass */ self
+);
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_TestClass_CurrentIntValue_Set(
+	NativeAOT_CodeGeneratorInputSample_TestClass_t /* NativeAOT.CodeGeneratorInputSample.TestClass */ self,
+	int32_t /* System.Int32 */ value
+);
+
 
 System_Type_t /* System.Type */
 NativeAOT_CodeGeneratorInputSample_TestClass_TypeOf(

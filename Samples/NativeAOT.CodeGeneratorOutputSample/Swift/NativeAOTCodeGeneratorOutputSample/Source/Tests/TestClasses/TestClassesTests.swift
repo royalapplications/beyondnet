@@ -312,9 +312,7 @@ final class TestClassesTests: XCTestCase {
 			return
 		}
 		
-		defer {
-			NativeAOT_CodeGeneratorInputSample_TestClass_Destroy(testClass)
-		}
+		defer { NativeAOT_CodeGeneratorInputSample_TestClass_Destroy(testClass) }
 		
 		guard let originalBook = NativeAOT_CodeGeneratorInputSample_Book_DonQuixote_Get() else {
 			XCTFail("Failed to get book")
@@ -322,11 +320,15 @@ final class TestClassesTests: XCTestCase {
 			return
 		}
 		
+		defer { NativeAOT_CodeGeneratorInputSample_Book_Destroy(originalBook) }
+		
 		guard let targetBook = NativeAOT_CodeGeneratorInputSample_Book_TheLordOfTheRings_Get() else {
 			XCTFail("Failed to get book")
 			
 			return
 		}
+		
+		defer { NativeAOT_CodeGeneratorInputSample_Book_Destroy(targetBook) }
 		
 		var bookToModify: NativeAOT_CodeGeneratorInputSample_Book_t? = originalBook
 		var originalBookRet: NativeAOT_CodeGeneratorInputSample_Book_t?
@@ -337,6 +339,8 @@ final class TestClassesTests: XCTestCase {
 																										&originalBookRet,
 																										&exception)
 		
+		defer { NativeAOT_CodeGeneratorInputSample_Book_Destroy(originalBookRet) }
+		
 		XCTAssertNil(exception)
 		
 		XCTAssertTrue(System_Object_Equals(originalBook, originalBookRet, &exception))
@@ -344,5 +348,78 @@ final class TestClassesTests: XCTestCase {
 		
 		XCTAssertTrue(System_Object_Equals(targetBook, bookToModify, &exception))
 		XCTAssertNil(exception)
+	}
+	
+	func testGetCurrentBookByRef() {
+		var exception: System_Exception_t?
+		
+		guard let testClass = NativeAOT_CodeGeneratorInputSample_TestClass_Create(&exception),
+			  exception == nil else {
+			XCTFail("TestClass ctor should not throw and return an instance")
+			
+			return
+		}
+		
+		defer { NativeAOT_CodeGeneratorInputSample_TestClass_Destroy(testClass) }
+		
+		guard let expectedBook = NativeAOT_CodeGeneratorInputSample_TestClass_CurrentBook_Get(testClass) else {
+			XCTFail("Failed to get book")
+			
+			return
+		}
+		
+		defer { NativeAOT_CodeGeneratorInputSample_Book_Destroy(expectedBook) }
+		
+		guard var pointerToCurrentBook = NativeAOT_CodeGeneratorInputSample_TestClass_GetCurrentBookByRef(testClass,
+																										  &exception),
+			  let currentBook = pointerToCurrentBook.pointee,
+			  exception == nil else {
+			XCTFail("TestClass.GetCurrentBookByRef should not throw and return an instance wrapped in a pointer")
+			
+			return
+		}
+		
+		defer {
+			NativeAOT_CodeGeneratorInputSample_Book_Destroy(currentBook)
+			free(pointerToCurrentBook)
+		}
+		
+		let currentBookIsEqualToInitialBook = System_Object_Equals(expectedBook,
+																   currentBook,
+																   &exception)
+		
+		XCTAssertNil(exception)
+		XCTAssertTrue(currentBookIsEqualToInitialBook)
+	}
+	
+	func testIncreaseAndGetCurrentIntValueByRef() {
+		var exception: System_Exception_t?
+		
+		guard let testClass = NativeAOT_CodeGeneratorInputSample_TestClass_Create(&exception),
+			  exception == nil else {
+			XCTFail("TestClass ctor should not throw and return an instance")
+			
+			return
+		}
+		
+		defer { NativeAOT_CodeGeneratorInputSample_TestClass_Destroy(testClass) }
+		
+		let expectedValue = NativeAOT_CodeGeneratorInputSample_TestClass_CurrentIntValue_Get(testClass) + 1
+		
+		guard var pointerToCurrentValue = NativeAOT_CodeGeneratorInputSample_TestClass_IncreaseAndGetCurrentIntValueByRef(testClass,
+																														  &exception),
+			  exception == nil else {
+			XCTFail("TestClass.IncreaseAndGetCurrentIntValueByRef should not throw and return an instance wrapped in a pointer")
+			
+			return
+		}
+		
+		defer {
+			free(pointerToCurrentValue)
+		}
+		
+		let currentValue = pointerToCurrentValue.pointee
+		
+		XCTAssertEqual(expectedValue, currentValue)
 	}
 }

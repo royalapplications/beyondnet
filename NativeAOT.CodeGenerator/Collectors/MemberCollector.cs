@@ -157,11 +157,11 @@ public class MemberCollector
             return;
         }
 
-        if (returnType.IsByRef) {
-            unsupportedMembers[methodInfo] = "Has by ref return type";
-            
-            return;
-        }
+        // if (returnType.IsByRef) {
+        //     unsupportedMembers[methodInfo] = "Has by ref return type";
+        //     
+        //     return;
+        // }
 
         var parameterInfos = methodInfo.GetParameters();
         

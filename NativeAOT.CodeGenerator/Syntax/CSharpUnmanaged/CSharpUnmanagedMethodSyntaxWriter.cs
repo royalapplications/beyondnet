@@ -141,9 +141,22 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             false,
             typeDescriptorRegistry
         );
+
+        bool isReturnOrSetterOrEventHandlerTypeByRef = returnOrSetterOrEventHandlerType.IsByRef;
+
+        if (isReturnOrSetterOrEventHandlerTypeByRef) {
+            returnOrSetterOrEventHandlerType = returnOrSetterOrEventHandlerType.GetNonByRefType();
+        }
         
         TypeDescriptor returnOrSetterOrEventHandlerTypeDescriptor = returnOrSetterOrEventHandlerType.GetTypeDescriptor(typeDescriptorRegistry);
-        string unmanagedReturnOrSetterOrEventHandlerTypeName = returnOrSetterOrEventHandlerTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true);
+        
+        string unmanagedReturnOrSetterOrEventHandlerTypeName = returnOrSetterOrEventHandlerTypeDescriptor.GetTypeName(
+            CodeLanguage.CSharpUnmanaged,
+            true,
+            false,
+            isReturnOrSetterOrEventHandlerTypeByRef
+        );
+        
         string unmanagedReturnOrSetterOrEventHandlerTypeNameWithComment;
 
         if (memberKind == MemberKind.PropertySetter ||
@@ -223,7 +236,18 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         string returnValueName = "__returnValue";
 
         if (isReturning) {
-            returnValuePrefix = $"{returnOrSetterOrEventHandlerType.GetFullNameOrName()} {returnValueName} = ";
+            string fullReturnTypeName = returnOrSetterOrEventHandlerTypeDescriptor.GetTypeName(
+                CodeLanguage.CSharp,
+                true,
+                false,
+                isReturnOrSetterOrEventHandlerTypeByRef
+            ).Replace("&", string.Empty);
+
+            string callPrefix = isReturnOrSetterOrEventHandlerTypeByRef
+                ? "ref "
+                : string.Empty;
+            
+            returnValuePrefix = $"{fullReturnTypeName} {returnValueName} = {callPrefix}";
         }
 
         string methodNameForInvocation;
@@ -294,6 +318,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         sb.AppendLine($"{implPrefix}{returnValuePrefix}{methodTarget}{methodNameForInvocation}{methodInvocationPrefix}{convertedParameterNamesString}{methodInvocationSuffix};");
 
         string? convertedReturnValueName = null;
+        string? returnValueBoxing = null;
 
         if (isReturning) {
             string? returnValueTypeConversion = returnOrSetterOrEventHandlerTypeDescriptor.GetTypeConversion(
@@ -304,11 +329,19 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             if (returnValueTypeConversion != null) {
                 string fullReturnValueTypeConversion = string.Format(returnValueTypeConversion, returnValueName);
                 
-                convertedReturnValueName = "_returnValueNative";
+                convertedReturnValueName = "__returnValueNative";
                 
                 sb.AppendLine($"{implPrefix}{returnOrSetterOrEventHandlerTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true)} {convertedReturnValueName} = {fullReturnValueTypeConversion};");
             } else {
                 convertedReturnValueName = returnValueName;
+            }
+
+            if (isReturnOrSetterOrEventHandlerTypeByRef) {
+                string boxedReturnValueName = "__returnValueBoxed";
+                
+                returnValueBoxing = $"{unmanagedReturnOrSetterOrEventHandlerTypeName} {boxedReturnValueName} = ({unmanagedReturnOrSetterOrEventHandlerTypeName})System.Runtime.InteropServices.Marshal.AllocHGlobal(sizeof({unmanagedReturnOrSetterOrEventHandlerTypeName})); *{boxedReturnValueName} = {convertedReturnValueName};";
+
+                convertedReturnValueName = boxedReturnValueName;
             }
         }
 
@@ -365,6 +398,11 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             }
             
             if (isReturning) {
+                if (!string.IsNullOrEmpty(returnValueBoxing)) {
+                    sb.AppendLine($"{implPrefix}{returnValueBoxing}");
+                    sb.AppendLine();
+                }
+                
                 sb.AppendLine($"{implPrefix}return {convertedReturnValueName};");
             }
             
@@ -398,8 +436,14 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             }
 
             if (isReturning) {
-                string returnValue = returnOrSetterOrEventHandlerTypeDescriptor.GetDefaultValue()
-                                     ?? $"default({returnOrSetterOrEventHandlerType.GetFullNameOrName()})";
+                string returnValue;
+                
+                if (isReturnOrSetterOrEventHandlerTypeByRef) {
+                    returnValue = "null";
+                } else {
+                    returnValue = returnOrSetterOrEventHandlerTypeDescriptor.GetDefaultValue()
+                                  ?? $"default({returnOrSetterOrEventHandlerType.GetFullNameOrName()})";
+                }
 
                 sb.AppendLine($"{implPrefix}return {returnValue};");
             }
@@ -407,6 +451,11 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             sb.AppendLine("\t}");
         } else {
             if (isReturning) {
+                if (!string.IsNullOrEmpty(returnValueBoxing)) {
+                    sb.AppendLine($"\t{returnValueBoxing}");
+                    sb.AppendLine();
+                }
+                
                 sb.AppendLine($"\treturn {convertedReturnValueName};");
             }
         }
