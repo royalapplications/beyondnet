@@ -6,9 +6,22 @@ public class MemberCollector
 {
     private readonly Type m_type;
 
+    private static readonly Dictionary<Type, string[]> TYPES_TO_UNSUPPORTED_MEMBER_NAMES_MAPPING = new() {
+        { typeof(System.Runtime.InteropServices.Marshal), new [] {
+            "WriteInt16"
+        } }
+    };
+
+    private readonly string[]? m_excludedMemberNames;
+
     public MemberCollector(Type type)
     {
+        
         m_type = type ?? throw new ArgumentNullException(nameof(type));
+
+        TYPES_TO_UNSUPPORTED_MEMBER_NAMES_MAPPING.TryGetValue(type, out string[]? unsupportedMemberNames);
+        
+        m_excludedMemberNames = unsupportedMemberNames;
     }
     
     public HashSet<MemberInfo> Collect(out Dictionary<MemberInfo, string> unsupportedMembers)
@@ -25,7 +38,19 @@ public class MemberCollector
             var memberInfos = m_type.GetMembers(flags);
             
             foreach (var memberInfo in memberInfos) {
-                CollectMember(memberInfo, collectedMembers, unsupportedMembers);
+                string memberName = memberInfo.Name;
+
+                if (m_excludedMemberNames?.Contains(memberName) ?? false) {
+                    unsupportedMembers[memberInfo] = "Excluded";
+                    
+                    continue;
+                }
+                
+                CollectMember(
+                    memberInfo,
+                    collectedMembers,
+                    unsupportedMembers
+                );
             }
         }
 

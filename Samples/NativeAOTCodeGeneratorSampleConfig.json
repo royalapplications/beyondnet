@@ -21,6 +21,7 @@
 		"System.IO.FileInfo",
 		"System.IO.Directory",
 		"System.IO.DirectoryInfo",
+		"System.Runtime.InteropServices.Marshal",
 		"System.Security.SecureString"
 	]
 }

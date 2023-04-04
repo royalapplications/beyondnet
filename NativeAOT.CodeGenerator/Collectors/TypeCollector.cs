@@ -37,8 +37,12 @@ public class TypeCollector
     
     private static readonly Type[] UNSUPPORTED_TYPES = new [] {
         Type.GetType("System.Runtime.Serialization.DeserializationToken")!,
-        Type.GetType("System.TypedReference")!,
-        Type.GetType("System.Char&")!
+        typeof(System.TypedReference),
+        Type.GetType("System.Char&")!,
+        typeof(System.Runtime.InteropServices.ComTypes.ITypeInfo),
+        typeof(System.Runtime.InteropServices.ComTypes.ITypeLib),
+        typeof(System.Runtime.InteropServices.ComTypes.ITypeLib2),
+        typeof(System.Runtime.InteropServices.ComTypes.ITypeComp),
     };
 
     private readonly Type[] m_includedTypes;
