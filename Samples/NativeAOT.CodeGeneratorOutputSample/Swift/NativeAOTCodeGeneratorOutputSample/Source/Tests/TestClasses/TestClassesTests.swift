@@ -370,7 +370,7 @@ final class TestClassesTests: XCTestCase {
 		
 		defer { NativeAOT_CodeGeneratorInputSample_Book_Destroy(expectedBook) }
 		
-		guard var pointerToCurrentBook = NativeAOT_CodeGeneratorInputSample_TestClass_GetCurrentBookByRef(testClass,
+		guard let pointerToCurrentBook = NativeAOT_CodeGeneratorInputSample_TestClass_GetCurrentBookByRef(testClass,
 																										  &exception),
 			  let currentBook = pointerToCurrentBook.pointee,
 			  exception == nil else {
@@ -406,7 +406,7 @@ final class TestClassesTests: XCTestCase {
 		
 		let expectedValue = NativeAOT_CodeGeneratorInputSample_TestClass_CurrentIntValue_Get(testClass) + 1
 		
-		guard var pointerToCurrentValue = NativeAOT_CodeGeneratorInputSample_TestClass_IncreaseAndGetCurrentIntValueByRef(testClass,
+		guard let pointerToCurrentValue = NativeAOT_CodeGeneratorInputSample_TestClass_IncreaseAndGetCurrentIntValueByRef(testClass,
 																														  &exception),
 			  exception == nil else {
 			XCTFail("TestClass.IncreaseAndGetCurrentIntValueByRef should not throw and return an instance wrapped in a pointer")

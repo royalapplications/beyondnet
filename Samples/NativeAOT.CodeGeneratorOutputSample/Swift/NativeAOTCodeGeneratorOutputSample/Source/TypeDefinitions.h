@@ -1,5 +1,5 @@
-// Number of generated types: 425
-// Number of generated members: 4348
+// Number of generated types: 428
+// Number of generated members: 4365
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -1219,6 +1219,11 @@ typedef void* System_AssemblyLoadEventArgs_t;
 typedef void* System_Runtime_Remoting_ObjectHandle_t;
 
 typedef void* System_Threading_Timer_t;
+
+typedef void* System_Threading_CancellationTokenSource_t;
+
+typedef void* System_Threading_CancellationToken_Array_t;
+
 
 typedef void* System_Random_t;
 
@@ -26332,6 +26337,118 @@ System_Threading_Timer_Destroy(
 );
 
 #pragma mark - END APIs of System.Threading.Timer
+
+#pragma mark - BEGIN APIs of System.Threading.CancellationTokenSource
+void /* System.Void */
+System_Threading_CancellationTokenSource_Cancel(
+	System_Threading_CancellationTokenSource_t /* System.Threading.CancellationTokenSource */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_CancellationTokenSource_Cancel1(
+	System_Threading_CancellationTokenSource_t /* System.Threading.CancellationTokenSource */ self,
+	bool /* System.Boolean */ throwOnFirstException,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_Threading_CancellationTokenSource_CancelAsync(
+	System_Threading_CancellationTokenSource_t /* System.Threading.CancellationTokenSource */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_CancellationTokenSource_CancelAfter(
+	System_Threading_CancellationTokenSource_t /* System.Threading.CancellationTokenSource */ self,
+	System_TimeSpan_t /* System.TimeSpan */ delay,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_CancellationTokenSource_CancelAfter1(
+	System_Threading_CancellationTokenSource_t /* System.Threading.CancellationTokenSource */ self,
+	int32_t /* System.Int32 */ millisecondsDelay,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Threading_CancellationTokenSource_TryReset(
+	System_Threading_CancellationTokenSource_t /* System.Threading.CancellationTokenSource */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Threading_CancellationTokenSource_Dispose(
+	System_Threading_CancellationTokenSource_t /* System.Threading.CancellationTokenSource */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_CancellationTokenSource_t /* System.Threading.CancellationTokenSource */
+System_Threading_CancellationTokenSource_CreateLinkedTokenSource(
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ token1,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ token2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_CancellationTokenSource_t /* System.Threading.CancellationTokenSource */
+System_Threading_CancellationTokenSource_CreateLinkedTokenSource1(
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ token,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_CancellationTokenSource_t /* System.Threading.CancellationTokenSource */
+System_Threading_CancellationTokenSource_CreateLinkedTokenSource2(
+	System_Threading_CancellationToken_Array_t /* System.Threading.CancellationToken[] */ tokens,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_CancellationTokenSource_t /* System.Threading.CancellationTokenSource */
+System_Threading_CancellationTokenSource_Create1(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_CancellationTokenSource_t /* System.Threading.CancellationTokenSource */
+System_Threading_CancellationTokenSource_Create2(
+	System_TimeSpan_t /* System.TimeSpan */ delay,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_CancellationTokenSource_t /* System.Threading.CancellationTokenSource */
+System_Threading_CancellationTokenSource_Create3(
+	int32_t /* System.Int32 */ millisecondsDelay,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Threading_CancellationTokenSource_IsCancellationRequested_Get(
+	System_Threading_CancellationTokenSource_t /* System.Threading.CancellationTokenSource */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Threading_CancellationToken_t /* System.Threading.CancellationToken */
+System_Threading_CancellationTokenSource_Token_Get(
+	System_Threading_CancellationTokenSource_t /* System.Threading.CancellationTokenSource */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_Threading_CancellationTokenSource_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Threading_CancellationTokenSource_Destroy(
+	System_Threading_CancellationTokenSource_t /* System.Threading.CancellationTokenSource */ self
+);
+
+#pragma mark - END APIs of System.Threading.CancellationTokenSource
+
+#pragma mark - BEGIN APIs of System.Threading.CancellationToken[]
+#pragma mark - END APIs of System.Threading.CancellationToken[]
+
 
 #pragma mark - BEGIN APIs of System.Random
 int32_t /* System.Int32 */

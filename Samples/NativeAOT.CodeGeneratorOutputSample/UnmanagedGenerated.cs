@@ -1,5 +1,5 @@
-// Number of generated types: 425
-// Number of generated members: 4044
+// Number of generated types: 428
+// Number of generated members: 4061
 
 // <Header>
 using System;
@@ -91422,6 +91422,454 @@ internal unsafe class System_Threading_TimerCallback
 	
 
 }
+
+
+internal unsafe class System_Threading_CancellationTokenSource
+{
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationTokenSource_Cancel")]
+	internal static void /* System.Void */ System_Threading_CancellationTokenSource_Cancel(void* /* System.Threading.CancellationTokenSource */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.CancellationTokenSource __selfConverted = InteropUtils.GetInstance<System.Threading.CancellationTokenSource>(__self);
+	
+	
+	    try {
+			__selfConverted.Cancel();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationTokenSource_Cancel1")]
+	internal static void /* System.Void */ System_Threading_CancellationTokenSource_Cancel1(void* /* System.Threading.CancellationTokenSource */ __self, byte /* System.Boolean */ throwOnFirstException, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.CancellationTokenSource __selfConverted = InteropUtils.GetInstance<System.Threading.CancellationTokenSource>(__self);
+	
+		System.Boolean throwOnFirstExceptionConverted = throwOnFirstException.ToBool();
+	
+	    try {
+			__selfConverted.Cancel(throwOnFirstExceptionConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationTokenSource_CancelAsync")]
+	internal static void* /* System.Threading.Tasks.Task */ System_Threading_CancellationTokenSource_CancelAsync(void* /* System.Threading.CancellationTokenSource */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.CancellationTokenSource __selfConverted = InteropUtils.GetInstance<System.Threading.CancellationTokenSource>(__self);
+	
+	
+	    try {
+			System.Threading.Tasks.Task __returnValue = __selfConverted.CancelAsync();
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationTokenSource_CancelAfter")]
+	internal static void /* System.Void */ System_Threading_CancellationTokenSource_CancelAfter(void* /* System.Threading.CancellationTokenSource */ __self, void* /* System.TimeSpan */ delay, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.CancellationTokenSource __selfConverted = InteropUtils.GetInstance<System.Threading.CancellationTokenSource>(__self);
+	
+		System.TimeSpan delayConverted = InteropUtils.GetInstance<System.TimeSpan>(delay);
+	
+	    try {
+			__selfConverted.CancelAfter(delayConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationTokenSource_CancelAfter1")]
+	internal static void /* System.Void */ System_Threading_CancellationTokenSource_CancelAfter1(void* /* System.Threading.CancellationTokenSource */ __self, int /* System.Int32 */ millisecondsDelay, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.CancellationTokenSource __selfConverted = InteropUtils.GetInstance<System.Threading.CancellationTokenSource>(__self);
+	
+	
+	    try {
+			__selfConverted.CancelAfter(millisecondsDelay);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationTokenSource_TryReset")]
+	internal static byte /* System.Boolean */ System_Threading_CancellationTokenSource_TryReset(void* /* System.Threading.CancellationTokenSource */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.CancellationTokenSource __selfConverted = InteropUtils.GetInstance<System.Threading.CancellationTokenSource>(__self);
+	
+	
+	    try {
+			System.Boolean __returnValue = __selfConverted.TryReset();
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationTokenSource_Dispose")]
+	internal static void /* System.Void */ System_Threading_CancellationTokenSource_Dispose(void* /* System.Threading.CancellationTokenSource */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.CancellationTokenSource __selfConverted = InteropUtils.GetInstance<System.Threading.CancellationTokenSource>(__self);
+	
+	
+	    try {
+			__selfConverted.Dispose();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationTokenSource_CreateLinkedTokenSource")]
+	internal static void* /* System.Threading.CancellationTokenSource */ System_Threading_CancellationTokenSource_CreateLinkedTokenSource(void* /* System.Threading.CancellationToken */ token1, void* /* System.Threading.CancellationToken */ token2, void** /* System.Exception */ __outException)
+	{
+		System.Threading.CancellationToken token1Converted = InteropUtils.GetInstance<System.Threading.CancellationToken>(token1);
+		System.Threading.CancellationToken token2Converted = InteropUtils.GetInstance<System.Threading.CancellationToken>(token2);
+	
+	    try {
+			System.Threading.CancellationTokenSource __returnValue = System.Threading.CancellationTokenSource.CreateLinkedTokenSource(token1Converted, token2Converted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationTokenSource_CreateLinkedTokenSource1")]
+	internal static void* /* System.Threading.CancellationTokenSource */ System_Threading_CancellationTokenSource_CreateLinkedTokenSource1(void* /* System.Threading.CancellationToken */ token, void** /* System.Exception */ __outException)
+	{
+		System.Threading.CancellationToken tokenConverted = InteropUtils.GetInstance<System.Threading.CancellationToken>(token);
+	
+	    try {
+			System.Threading.CancellationTokenSource __returnValue = System.Threading.CancellationTokenSource.CreateLinkedTokenSource(tokenConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationTokenSource_CreateLinkedTokenSource2")]
+	internal static void* /* System.Threading.CancellationTokenSource */ System_Threading_CancellationTokenSource_CreateLinkedTokenSource2(void* /* System.Threading.CancellationToken[] */ tokens, void** /* System.Exception */ __outException)
+	{
+		System.Threading.CancellationToken[] tokensConverted = InteropUtils.GetInstance<System.Threading.CancellationToken[]>(tokens);
+	
+	    try {
+			System.Threading.CancellationTokenSource __returnValue = System.Threading.CancellationTokenSource.CreateLinkedTokenSource(tokensConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationTokenSource_Create1")]
+	internal static void* /* System.Threading.CancellationTokenSource */ System_Threading_CancellationTokenSource_Create1(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Threading.CancellationTokenSource __returnValue = new System.Threading.CancellationTokenSource();
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationTokenSource_Create2")]
+	internal static void* /* System.Threading.CancellationTokenSource */ System_Threading_CancellationTokenSource_Create2(void* /* System.TimeSpan */ delay, void** /* System.Exception */ __outException)
+	{
+		System.TimeSpan delayConverted = InteropUtils.GetInstance<System.TimeSpan>(delay);
+	
+	    try {
+			System.Threading.CancellationTokenSource __returnValue = new System.Threading.CancellationTokenSource(delayConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationTokenSource_Create3")]
+	internal static void* /* System.Threading.CancellationTokenSource */ System_Threading_CancellationTokenSource_Create3(int /* System.Int32 */ millisecondsDelay, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Threading.CancellationTokenSource __returnValue = new System.Threading.CancellationTokenSource(millisecondsDelay);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationTokenSource_IsCancellationRequested_Get")]
+	internal static byte /* System.Boolean */ System_Threading_CancellationTokenSource_IsCancellationRequested_Get(void* /* System.Threading.CancellationTokenSource */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.CancellationTokenSource __selfConverted = InteropUtils.GetInstance<System.Threading.CancellationTokenSource>(__self);
+	
+	
+	    try {
+			System.Boolean __returnValue = __selfConverted.IsCancellationRequested;
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		}
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationTokenSource_Token_Get")]
+	internal static void* /* System.Threading.CancellationToken */ System_Threading_CancellationTokenSource_Token_Get(void* /* System.Threading.CancellationTokenSource */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.CancellationTokenSource __selfConverted = InteropUtils.GetInstance<System.Threading.CancellationTokenSource>(__self);
+	
+	
+	    try {
+			System.Threading.CancellationToken __returnValue = __selfConverted.Token;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationTokenSource_TypeOf")]
+	internal static void* /* System.Type */ System_Threading_CancellationTokenSource_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Threading.CancellationTokenSource);
+		void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return __returnValueNative;
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_CancellationTokenSource_Destroy")]
+	internal static void /* System.Void */ System_Threading_CancellationTokenSource_Destroy(void* /* System.Threading.CancellationTokenSource */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+
+}
+
+
 
 
 internal unsafe class System_Random
