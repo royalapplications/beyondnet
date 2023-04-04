@@ -168,7 +168,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
                 bool isOutParameter = parameter.IsOut;
 
                 if (isOutParameter) {
-                    parameterType = parameterType.GetElementType() ?? parameterType;
+                    parameterType = parameterType.GetNonByRefType();
                 }
                 
                 TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);

@@ -61,4 +61,23 @@ internal static class TypeExtensions
 
         return invokeMethod;
     }
+
+    internal static Type GetNonByRefType(this Type type)
+    {
+        if (!type.IsByRef) {
+            return type;
+        }
+
+        if (type.IsArray) {
+            Type? elementType = type.GetElementType();
+
+            if (elementType is not null) {
+                return elementType.MakeArrayType();
+            } else {
+                return type;
+            }
+        } else {
+            return type.GetElementType() ?? type;
+        }
+    }
 }
