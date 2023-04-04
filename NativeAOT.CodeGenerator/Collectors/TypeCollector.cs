@@ -194,7 +194,7 @@ public class TypeCollector
         Type returnType = methodInfo.ReturnType;
 
         if (returnType.IsByRef) {
-            unsupportedTypes[returnType] = "Is by ref";
+            unsupportedTypes[returnType] = "Is by ref return type";
 
             return;
         }
@@ -290,12 +290,6 @@ public class TypeCollector
             return false;
         }
 
-        // TODO: WIP
-        // if (type.IsByRef) {
-        //     unsupportedReason = "Is By Ref Type";
-        //     return false;
-        // }
-        
         if (type.IsGenericType) {
             unsupportedReason = "Is Generic Type";
             return false;
