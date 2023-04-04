@@ -31,14 +31,13 @@ public class TypeCollector
         typeof(System.MulticastDelegate),
         typeof(System.Enum),
         typeof(System.Array),
-        typeof(System.Reflection.PortableExecutableKinds),
-        typeof(System.Reflection.ImageFileMachine),
     };
     
     private static readonly Type[] UNSUPPORTED_TYPES = new [] {
         Type.GetType("System.Runtime.Serialization.DeserializationToken")!,
         typeof(System.TypedReference),
         Type.GetType("System.Char&")!,
+        typeof(System.Runtime.CompilerServices.DefaultInterpolatedStringHandler),
         typeof(System.Runtime.InteropServices.ComTypes.ITypeInfo),
         typeof(System.Runtime.InteropServices.ComTypes.ITypeLib),
         typeof(System.Runtime.InteropServices.ComTypes.ITypeLib2),
@@ -102,6 +101,18 @@ public class TypeCollector
             return;
         }
 
+        if (type.IsByRef) {
+            Type nonByRefType = type.GetNonByRefType();
+
+            if (nonByRefType != type) {
+                CollectType(
+                    nonByRefType,
+                    collectedTypes,
+                    unsupportedTypes
+                );
+            }
+        }
+
         bool added = collectedTypes.Add(type);
 
         if (!added) {
@@ -113,7 +124,11 @@ public class TypeCollector
         Type? baseType = type.BaseType;
 
         if (baseType != null) {
-            CollectType(baseType, collectedTypes, unsupportedTypes);
+            CollectType(
+                baseType,
+                collectedTypes,
+                unsupportedTypes
+            );
         }
 
         bool isDelegate = type.IsDelegate();

@@ -1,5 +1,5 @@
-// Number of generated types: 395
-// Number of generated members: 3986
+// Number of generated types: 397
+// Number of generated members: 3994
 
 // <Header>
 using System;
@@ -15208,6 +15208,7 @@ internal unsafe class System_TypeCode
 	
 
 }
+
 
 
 
@@ -35813,8 +35814,6 @@ internal unsafe class System_Globalization_DateTimeStyles
 
 
 
-
-
 internal unsafe class System_DateOnly
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_DateOnly_FromDayNumber")]
@@ -38952,6 +38951,8 @@ internal unsafe class System_TimeOnly
 	
 
 }
+
+
 
 
 internal unsafe class System_Globalization_Calendar
@@ -53892,6 +53893,36 @@ internal unsafe class System_Guid
 
 
 
+internal unsafe class System_Reflection_PortableExecutableKinds
+{
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_PortableExecutableKinds_TypeOf")]
+	internal static void* /* System.Type */ System_Reflection_PortableExecutableKinds_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Reflection.PortableExecutableKinds);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
+}
+
+
+
+internal unsafe class System_Reflection_ImageFileMachine
+{
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ImageFileMachine_TypeOf")]
+	internal static void* /* System.Type */ System_Reflection_ImageFileMachine_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Reflection.ImageFileMachine);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
+}
+
 
 
 internal unsafe class System_Reflection_TypeFilter
@@ -66728,36 +66759,6 @@ internal unsafe class System_Reflection_MemberFilter
 }
 
 
-
-
-internal unsafe class System_Reflection_PortableExecutableKinds
-{
-	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_PortableExecutableKinds_TypeOf")]
-	internal static void* /* System.Type */ System_Reflection_PortableExecutableKinds_TypeOf()
-	{
-	
-		System.Type __returnValue = typeof(System.Reflection.PortableExecutableKinds);
-		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-		return _returnValueNative;
-	}
-	
-
-}
-
-
-internal unsafe class System_Reflection_ImageFileMachine
-{
-	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ImageFileMachine_TypeOf")]
-	internal static void* /* System.Type */ System_Reflection_ImageFileMachine_TypeOf()
-	{
-	
-		System.Type __returnValue = typeof(System.Reflection.ImageFileMachine);
-		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-		return _returnValueNative;
-	}
-	
-
-}
 
 
 internal unsafe class System_GC
@@ -99872,6 +99873,200 @@ internal unsafe class System_Text_StringBuilder_ChunkEnumerator
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_ChunkEnumerator_Destroy")]
 	internal static void /* System.Void */ System_Text_StringBuilder_ChunkEnumerator_Destroy(void* /* System.Text.StringBuilder.ChunkEnumerator */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+
+}
+
+
+internal unsafe class System_Text_StringBuilder_AppendInterpolatedStringHandler
+{
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendLiteral")]
+	internal static void /* System.Void */ System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendLiteral(void* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ __self, byte* /* System.String */ value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.StringBuilder.AppendInterpolatedStringHandler __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder.AppendInterpolatedStringHandler>(__self);
+	
+		System.String valueConverted = InteropUtils.ToDotNetString(value);
+	
+	    try {
+			__selfConverted.AppendLiteral(valueConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted")]
+	internal static void /* System.Void */ System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted(void* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ __self, byte* /* System.String */ value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.StringBuilder.AppendInterpolatedStringHandler __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder.AppendInterpolatedStringHandler>(__self);
+	
+		System.String valueConverted = InteropUtils.ToDotNetString(value);
+	
+	    try {
+			__selfConverted.AppendFormatted(valueConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted1")]
+	internal static void /* System.Void */ System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted1(void* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ __self, byte* /* System.String */ value, int /* System.Int32 */ alignment, byte* /* System.String */ format, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.StringBuilder.AppendInterpolatedStringHandler __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder.AppendInterpolatedStringHandler>(__self);
+	
+		System.String valueConverted = InteropUtils.ToDotNetString(value);
+		System.String formatConverted = InteropUtils.ToDotNetString(format);
+	
+	    try {
+			__selfConverted.AppendFormatted(valueConverted, alignment, formatConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted2")]
+	internal static void /* System.Void */ System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted2(void* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ __self, void* /* System.Object */ value, int /* System.Int32 */ alignment, byte* /* System.String */ format, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.StringBuilder.AppendInterpolatedStringHandler __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder.AppendInterpolatedStringHandler>(__self);
+	
+		System.Object valueConverted = InteropUtils.GetInstance<System.Object>(value);
+		System.String formatConverted = InteropUtils.ToDotNetString(format);
+	
+	    try {
+			__selfConverted.AppendFormatted(valueConverted, alignment, formatConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_AppendInterpolatedStringHandler_Create")]
+	internal static void* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ System_Text_StringBuilder_AppendInterpolatedStringHandler_Create(int /* System.Int32 */ literalLength, int /* System.Int32 */ formattedCount, void* /* System.Text.StringBuilder */ stringBuilder, void** /* System.Exception */ __outException)
+	{
+		System.Text.StringBuilder stringBuilderConverted = InteropUtils.GetInstance<System.Text.StringBuilder>(stringBuilder);
+	
+	    try {
+			System.Text.StringBuilder.AppendInterpolatedStringHandler __returnValue = new System.Text.StringBuilder.AppendInterpolatedStringHandler(literalLength, formattedCount, stringBuilderConverted);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_AppendInterpolatedStringHandler_Create1")]
+	internal static void* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ System_Text_StringBuilder_AppendInterpolatedStringHandler_Create1(int /* System.Int32 */ literalLength, int /* System.Int32 */ formattedCount, void* /* System.Text.StringBuilder */ stringBuilder, void* /* System.IFormatProvider */ provider, void** /* System.Exception */ __outException)
+	{
+		System.Text.StringBuilder stringBuilderConverted = InteropUtils.GetInstance<System.Text.StringBuilder>(stringBuilder);
+		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
+	
+	    try {
+			System.Text.StringBuilder.AppendInterpolatedStringHandler __returnValue = new System.Text.StringBuilder.AppendInterpolatedStringHandler(literalLength, formattedCount, stringBuilderConverted, providerConverted);
+			void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return _returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_AppendInterpolatedStringHandler_TypeOf")]
+	internal static void* /* System.Type */ System_Text_StringBuilder_AppendInterpolatedStringHandler_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Text.StringBuilder.AppendInterpolatedStringHandler);
+		void* _returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return _returnValueNative;
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_AppendInterpolatedStringHandler_Destroy")]
+	internal static void /* System.Void */ System_Text_StringBuilder_AppendInterpolatedStringHandler_Destroy(void* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ __self)
 	{
 	
 		InteropUtils.FreeIfAllocated(__self);

@@ -1,5 +1,5 @@
-// Number of generated types: 395
-// Number of generated members: 4286
+// Number of generated types: 397
+// Number of generated members: 4294
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -492,6 +492,24 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Reflection_ResourceLocation;
 
 
+typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+	System_Reflection_PortableExecutableKinds_NotAPortableExecutableImage = 0,
+	System_Reflection_PortableExecutableKinds_ILOnly = 1,
+	System_Reflection_PortableExecutableKinds_Required32Bit = 2,
+	System_Reflection_PortableExecutableKinds_PE32Plus = 4,
+	System_Reflection_PortableExecutableKinds_Unmanaged32Bit = 8,
+	System_Reflection_PortableExecutableKinds_Preferred32Bit = 16
+} System_Reflection_PortableExecutableKinds;
+
+
+typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+	System_Reflection_ImageFileMachine_I386 = 332,
+	System_Reflection_ImageFileMachine_ARM = 452,
+	System_Reflection_ImageFileMachine_IA64 = 512,
+	System_Reflection_ImageFileMachine_AMD64 = 34404
+} System_Reflection_ImageFileMachine;
+
+
 typedef enum __attribute__((enum_extensibility(closed))): uint8_t {
 	System_Security_SecurityRuleSet_None = 0,
 	System_Security_SecurityRuleSet_Level1 = 1,
@@ -611,24 +629,6 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_Reflection_EventAttributes_RTSpecialName = 1024,
 	System_Reflection_EventAttributes_ReservedMask = 1024
 } System_Reflection_EventAttributes;
-
-
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Reflection_PortableExecutableKinds_NotAPortableExecutableImage = 0,
-	System_Reflection_PortableExecutableKinds_ILOnly = 1,
-	System_Reflection_PortableExecutableKinds_Required32Bit = 2,
-	System_Reflection_PortableExecutableKinds_PE32Plus = 4,
-	System_Reflection_PortableExecutableKinds_Unmanaged32Bit = 8,
-	System_Reflection_PortableExecutableKinds_Preferred32Bit = 16
-} System_Reflection_PortableExecutableKinds;
-
-
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Reflection_ImageFileMachine_I386 = 332,
-	System_Reflection_ImageFileMachine_ARM = 452,
-	System_Reflection_ImageFileMachine_IA64 = 512,
-	System_Reflection_ImageFileMachine_AMD64 = 34404
-} System_Reflection_ImageFileMachine;
 
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
@@ -809,6 +809,7 @@ typedef void* System_IFormatProvider_t;
 
 
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T[]" was skipped. Reason: It has no full name.
 
 typedef void* System_Int32_Array_t;
 
@@ -925,11 +926,11 @@ typedef void* System_String_Array_t;
 
 
 
-
-
 typedef void* System_DateOnly_t;
 
 typedef void* System_TimeOnly_t;
+
+
 
 typedef void* System_Globalization_Calendar_t;
 
@@ -1221,6 +1222,8 @@ typedef void* System_IO_TextWriter_t;
 typedef void* System_Text_StringBuilder_t;
 
 typedef void* System_Text_StringBuilder_ChunkEnumerator_t;
+
+typedef void* System_Text_StringBuilder_AppendInterpolatedStringHandler_t;
 
 
 typedef void* System_IO_FileSystemInfo_t;
@@ -1783,6 +1786,22 @@ System_Reflection_ResourceLocation_TypeOf(
 
 #pragma mark - END APIs of System.Reflection.ResourceLocation
 
+#pragma mark - BEGIN APIs of System.Reflection.PortableExecutableKinds
+System_Type_t /* System.Type */
+System_Reflection_PortableExecutableKinds_TypeOf(
+	
+);
+
+#pragma mark - END APIs of System.Reflection.PortableExecutableKinds
+
+#pragma mark - BEGIN APIs of System.Reflection.ImageFileMachine
+System_Type_t /* System.Type */
+System_Reflection_ImageFileMachine_TypeOf(
+	
+);
+
+#pragma mark - END APIs of System.Reflection.ImageFileMachine
+
 #pragma mark - BEGIN APIs of System.Security.SecurityRuleSet
 System_Type_t /* System.Type */
 System_Security_SecurityRuleSet_TypeOf(
@@ -1870,22 +1889,6 @@ System_Reflection_EventAttributes_TypeOf(
 );
 
 #pragma mark - END APIs of System.Reflection.EventAttributes
-
-#pragma mark - BEGIN APIs of System.Reflection.PortableExecutableKinds
-System_Type_t /* System.Type */
-System_Reflection_PortableExecutableKinds_TypeOf(
-	
-);
-
-#pragma mark - END APIs of System.Reflection.PortableExecutableKinds
-
-#pragma mark - BEGIN APIs of System.Reflection.ImageFileMachine
-System_Type_t /* System.Type */
-System_Reflection_ImageFileMachine_TypeOf(
-	
-);
-
-#pragma mark - END APIs of System.Reflection.ImageFileMachine
 
 #pragma mark - BEGIN APIs of System.GCKind
 System_Type_t /* System.Type */
@@ -5853,6 +5856,9 @@ System_IFormatProvider_Destroy(
 #pragma mark - END APIs of System.IFormatProvider
 
 
+
+#pragma mark - BEGIN APIs of T[]
+#pragma mark - END APIs of T[]
 
 #pragma mark - BEGIN APIs of T[]
 #pragma mark - END APIs of T[]
@@ -11511,8 +11517,6 @@ System_TimeSpan_Destroy(
 
 
 
-
-
 #pragma mark - BEGIN APIs of System.DateOnly
 System_DateOnly_t /* System.DateOnly */
 System_DateOnly_FromDayNumber(
@@ -12250,6 +12254,8 @@ System_TimeOnly_Destroy(
 );
 
 #pragma mark - END APIs of System.TimeOnly
+
+
 
 #pragma mark - BEGIN APIs of System.Globalization.Calendar
 System_Object_t /* System.Object */
@@ -28636,6 +28642,68 @@ System_Text_StringBuilder_ChunkEnumerator_Destroy(
 );
 
 #pragma mark - END APIs of System.Text.StringBuilder.ChunkEnumerator
+
+#pragma mark - BEGIN APIs of System.Text.StringBuilder.AppendInterpolatedStringHandler
+void /* System.Void */
+System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendLiteral(
+	System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted(
+	System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted1(
+	System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ self,
+	CString /* System.String */ value,
+	int32_t /* System.Int32 */ alignment,
+	CString /* System.String */ format,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted2(
+	System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ self,
+	System_Object_t /* System.Object */ value,
+	int32_t /* System.Int32 */ alignment,
+	CString /* System.String */ format,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */
+System_Text_StringBuilder_AppendInterpolatedStringHandler_Create(
+	int32_t /* System.Int32 */ literalLength,
+	int32_t /* System.Int32 */ formattedCount,
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ stringBuilder,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */
+System_Text_StringBuilder_AppendInterpolatedStringHandler_Create1(
+	int32_t /* System.Int32 */ literalLength,
+	int32_t /* System.Int32 */ formattedCount,
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ stringBuilder,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_t /* System.Type */
+System_Text_StringBuilder_AppendInterpolatedStringHandler_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Text_StringBuilder_AppendInterpolatedStringHandler_Destroy(
+	System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ self
+);
+
+#pragma mark - END APIs of System.Text.StringBuilder.AppendInterpolatedStringHandler
 
 
 #pragma mark - BEGIN APIs of System.IO.FileSystemInfo
