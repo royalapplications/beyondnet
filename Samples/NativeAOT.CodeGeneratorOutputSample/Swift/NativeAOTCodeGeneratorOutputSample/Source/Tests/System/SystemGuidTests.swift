@@ -11,8 +11,8 @@ final class SystemGuidTests: XCTestCase {
         var guid: System_Guid_t?
         
         uuidString.withCString { uuidStringC in
-            guid = System_Guid_Create4(uuidStringC,
-                                       &exception)
+			guid = System_Guid_Create_4(uuidStringC,
+										&exception)
         }
         
         guard exception == nil else {
@@ -57,8 +57,8 @@ final class SystemGuidTests: XCTestCase {
         var guidType: System_Type_t?
         
         guidTypeName.withCString { guidTypeNameC in
-            guidType = System_Type_GetType2(guidTypeNameC,
-                                            &exception)
+			guidType = System_Type_GetType_2(guidTypeNameC,
+											 &exception)
         }
         
         guard let guidType,

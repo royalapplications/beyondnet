@@ -124,9 +124,9 @@ final class TestClassesTests: XCTestCase {
         }
         
         "John".withCString { cString in
-            NativeAOT_CodeGeneratorInputSample_TestClass_SayHello1(testClass,
-                                                                   cString,
-                                                                   &exception)
+			NativeAOT_CodeGeneratorInputSample_TestClass_SayHello_1(testClass,
+																	cString,
+																	&exception)
         }
         
         guard exception == nil else {

@@ -15,8 +15,8 @@ final class SystemTypeTests: XCTestCase {
         
         defer { System_Type_Destroy(systemObjectType) }
         
-        guard let systemObjectTypeViaName = System_Type_GetType2(systemObjectTypeName,
-                                                                 &exception),
+		guard let systemObjectTypeViaName = System_Type_GetType_2(systemObjectTypeName,
+																  &exception),
 			  exception == nil else {
 			XCTFail("System.Type.GetType should not throw and return an instance of System.Type")
 			
@@ -54,9 +54,9 @@ final class SystemTypeTests: XCTestCase {
 		
 		let invalidTypeName = "! This.Type.Surely.Does.Not.Exist !"
 		
-		let invalidType = System_Type_GetType1(invalidTypeName,
-											   true,
-											   &exception)
+		let invalidType = System_Type_GetType_1(invalidTypeName,
+												true,
+												&exception)
 		
 		XCTAssertNil(invalidType)
 		

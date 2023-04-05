@@ -8,8 +8,8 @@ final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
 		let value: Int32 = 59
 		let sizeOfInt32 = MemoryLayout.size(ofValue: Int32.self)
 		
-		let ptr = System_Runtime_InteropServices_Marshal_AllocHGlobal1(sizeOfInt32,
-																	   &exception)
+		let ptr = System_Runtime_InteropServices_Marshal_AllocHGlobal_1(sizeOfInt32,
+																		&exception)
 		
 		XCTAssertNil(exception)
 		
@@ -20,14 +20,14 @@ final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
 			XCTAssertNil(exception)
 		}
 		
-		System_Runtime_InteropServices_Marshal_WriteInt322(ptr,
-														   value,
-														   &exception)
+		System_Runtime_InteropServices_Marshal_WriteInt32_2(ptr,
+															value,
+															&exception)
 		
 		XCTAssertNil(exception)
 		
-		let retValue = System_Runtime_InteropServices_Marshal_ReadInt322(ptr,
-																		 &exception)
+		let retValue = System_Runtime_InteropServices_Marshal_ReadInt32_2(ptr,
+																		  &exception)
 		
 		XCTAssertNil(exception)
 		XCTAssertEqual(value, retValue)
@@ -40,8 +40,8 @@ final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
 		var retStringC: CString?
 		
 		string.withCString { cString in
-			retStringC = System_Runtime_InteropServices_Marshal_PtrToStringAuto1(.init(bitPattern: cString),
-																				 &exception)
+			retStringC = System_Runtime_InteropServices_Marshal_PtrToStringAuto_1(.init(bitPattern: cString),
+																				  &exception)
 		}
 		
 		guard let retStringC,

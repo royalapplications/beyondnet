@@ -30,9 +30,9 @@ final class PersonTests: XCTestCase {
         
         firstName.withCString { firstNameC in
             lastName.withCString { lastNameC in
-                person = NativeAOT_CodeGeneratorInputSample_Person_Create1(firstNameC,
-                                                                           lastNameC,
-                                                                           &exception)
+				person = NativeAOT_CodeGeneratorInputSample_Person_Create_1(firstNameC,
+																			lastNameC,
+																			&exception)
             }
         }
         
@@ -374,9 +374,9 @@ final class PersonTests: XCTestCase {
         
         XCTAssertEqual(numberOfChildren, childrenLength)
         
-        guard let firstChild = System_Array_GetValue1(children,
-                                                      0,
-                                                      &exception),
+		guard let firstChild = System_Array_GetValue_1(children,
+													   0,
+													   &exception),
               exception == nil else {
             XCTFail("System.Array.GetValue should not throw and return an instance")
             

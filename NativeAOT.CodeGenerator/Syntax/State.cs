@@ -70,16 +70,22 @@ public class State
             return proposedName;
         }
 
+        string proposedNameWithOverloadPrefix = proposedName + "_";
+
+        var overloadedMembers = membersThatStartWithProposedName.Where(
+            m => m.GetGeneratedName(language)?.StartsWith(proposedNameWithOverloadPrefix) ?? false
+        );
+
         int highestIndex = 0;
 
-        foreach (var member in membersThatStartWithProposedName) {
+        foreach (var member in overloadedMembers) {
             string? memberName = member.GetGeneratedName(language);
 
             if (memberName == null) {
                 continue;
             }
 
-            string textAfterName = memberName.Substring(proposedName.Length);
+            string textAfterName = memberName.Substring(proposedNameWithOverloadPrefix.Length);
 
             if (string.IsNullOrEmpty(textAfterName)) {
                 continue;
@@ -94,7 +100,7 @@ public class State
 
         int newIndex = highestIndex + 1;
 
-        string newName = $"{proposedName}{newIndex}";
+        string newName = $"{proposedNameWithOverloadPrefix}{newIndex}";
 
         return newName;
     }

@@ -57,9 +57,9 @@ final class SystemReflectionAssemblyTests: XCTestCase {
 		var types = [System_Type_t]()
 		
 		for i in 0..<typesLength {
-			guard let type = System_Array_GetValue1(typesArray,
-													i,
-													&exception),
+			guard let type = System_Array_GetValue_1(typesArray,
+													 i,
+													 &exception),
 				  exception == nil else {
 				XCTFail("System.Array.GetValue should not throw and return an instance")
 				

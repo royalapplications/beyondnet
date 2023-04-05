@@ -161,9 +161,9 @@ final class AnimalTests: XCTestCase {
 		var horse: NativeAOT_CodeGeneratorInputSample_IAnimal_t?
 		
 		animalName.withCString { animalNameC in
-			horse = NativeAOT_CodeGeneratorInputSample_AnimalFactory_CreateAnimal1(animalNameC,
-																				   creatorDelegate,
-																				   &exception)
+			horse = NativeAOT_CodeGeneratorInputSample_AnimalFactory_CreateAnimal_1(animalNameC,
+																					creatorDelegate,
+																					&exception)
 		}
 		
 		guard let horse,
@@ -238,9 +238,9 @@ final class AnimalTests: XCTestCase {
         var cat: NativeAOT_CodeGeneratorInputSample_IAnimal_t?
         
         catName.withCString { catNameC in
-            cat = NativeAOT_CodeGeneratorInputSample_AnimalFactory_CreateAnimal1(catNameC,
-                                                                                 defaultCreator,
-                                                                                 &exception)
+			cat = NativeAOT_CodeGeneratorInputSample_AnimalFactory_CreateAnimal_1(catNameC,
+																				  defaultCreator,
+																				  &exception)
         }
         
         guard let cat,

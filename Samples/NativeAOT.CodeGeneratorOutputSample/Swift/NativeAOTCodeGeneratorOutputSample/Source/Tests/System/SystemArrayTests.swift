@@ -46,9 +46,9 @@ final class SystemArrayTests: XCTestCase {
         
         XCTAssertNil(exception)
         
-        guard let retrievedNow = System_Array_GetValue1(arrayOfDateTime,
-                                                        index,
-                                                        &exception),
+		guard let retrievedNow = System_Array_GetValue_1(arrayOfDateTime,
+														 index,
+														 &exception),
               exception == nil else {
             XCTFail("System.Array.GetValue should not throw and return an instance")
             

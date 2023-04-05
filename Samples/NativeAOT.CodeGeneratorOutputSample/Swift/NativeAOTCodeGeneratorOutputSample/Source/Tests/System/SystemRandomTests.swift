@@ -18,10 +18,10 @@ final class SystemRandomTests: XCTestCase {
 		let maxValue: Int32 = 15
 		
 		for _ in 0..<200 {
-			let value = System_Random_Next2(random,
-											minValue,
-											maxValue,
-											&exception)
+			let value = System_Random_Next_2(random,
+											 minValue,
+											 maxValue,
+											 &exception)
 			
 			XCTAssertNil(exception)
 			

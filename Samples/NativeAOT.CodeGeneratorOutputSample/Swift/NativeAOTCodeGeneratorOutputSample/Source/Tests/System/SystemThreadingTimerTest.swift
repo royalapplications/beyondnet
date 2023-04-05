@@ -41,8 +41,8 @@ final class SystemThreadingTimerTests: XCTestCase {
 					return
 				}
 				
-				System_Threading_Timer_Dispose1(innerTimer,
-												&innerException)
+				System_Threading_Timer_Dispose_1(innerTimer,
+												 &innerException)
 				
 				XCTAssertNil(innerException)
 			}
@@ -87,7 +87,7 @@ final class SystemThreadingTimerTests: XCTestCase {
 		System_Threading_Timer_Destroy(timer)
 		System_Threading_TimerCallback_Destroy(callback)
 		
-		System_GC_Collect1(&exception)
+		System_GC_Collect_1(&exception)
 		XCTAssertNil(exception)
 		
 		System_GC_WaitForPendingFinalizers(&exception)

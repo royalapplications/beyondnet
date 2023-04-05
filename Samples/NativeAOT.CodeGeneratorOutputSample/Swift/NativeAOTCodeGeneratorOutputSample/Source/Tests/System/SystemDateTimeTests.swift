@@ -22,13 +22,13 @@ final class SystemDateTimeTests: XCTestCase {
             return
         }
         
-        guard let nowDotNet = System_DateTime_Create7(.init(expectedYear),
-                                                      .init(expectedMonth),
-                                                      .init(expectedDay),
-                                                      .init(expectedHour),
-                                                      .init(expectedMinute),
-                                                      .init(expectedSecond),
-                                                      &exception),
+		guard let nowDotNet = System_DateTime_Create_7(.init(expectedYear),
+													   .init(expectedMonth),
+													   .init(expectedDay),
+													   .init(expectedHour),
+													   .init(expectedMinute),
+													   .init(expectedSecond),
+													   &exception),
               exception == nil else {
             XCTFail("System.DateTime ctor should not throw and return an instance")
             
@@ -92,8 +92,8 @@ final class SystemDateTimeTests: XCTestCase {
 		
 		let dateString = "\(expectedMonth)/\(expectedDay)/\(expectedYear) \(expectedHour):\(expectedMinute):\(expectedSecond)"
 		
-		guard let enUSCulture = System_Globalization_CultureInfo_Create1("en-US",
-																		 &exception),
+		guard let enUSCulture = System_Globalization_CultureInfo_Create_1("en-US",
+																		  &exception),
 			  exception == nil else {
 			XCTFail("System.CultureInfo ctor should not throw and return an instance")
 			
@@ -106,10 +106,10 @@ final class SystemDateTimeTests: XCTestCase {
 		var nowDotNet: System_DateTime_t?
 		
 		dateString.withCString { dateStringC in
-			success = System_DateTime_TryParse2(dateStringC,
-												enUSCulture,
-												&nowDotNet,
-												&exception)
+			success = System_DateTime_TryParse_2(dateStringC,
+												 enUSCulture,
+												 &nowDotNet,
+												 &exception)
 		}
 		
 		guard success,

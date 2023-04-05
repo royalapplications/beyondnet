@@ -56,8 +56,8 @@ final class SystemThreadingThreadTests: XCTestCase {
 			return
 		}
 		
-		System_Threading_Thread_Start1(thread,
-									   &exception)
+		System_Threading_Thread_Start_1(thread,
+										&exception)
 		
 		XCTAssertNil(exception)
 		
@@ -68,7 +68,7 @@ final class SystemThreadingThreadTests: XCTestCase {
 		System_Threading_Thread_Destroy(thread)
 		System_Threading_ThreadStart_Destroy(threadStart)
 		
-		System_GC_Collect1(&exception)
+		System_GC_Collect_1(&exception)
 		XCTAssertNil(exception)
 		
 		System_GC_WaitForPendingFinalizers(&exception)

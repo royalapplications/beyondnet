@@ -10,8 +10,8 @@ final class SystemExceptionTests: XCTestCase {
         var createdException: System_Exception_t?
         
         exceptionMessage.withCString { exceptionMessageC in
-            createdException = System_Exception_Create1(exceptionMessageC,
-                                                        &exception)
+			createdException = System_Exception_Create_1(exceptionMessageC,
+														 &exception)
         }
         
         guard let createdException,

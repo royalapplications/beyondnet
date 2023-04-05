@@ -73,9 +73,9 @@ final class SystemThreadingTasksTests: XCTestCase {
 			return
 		}
 		
-		guard let task = System_Threading_Tasks_Task_Run2(action,
-														  nil,
-														  &exception),
+		guard let task = System_Threading_Tasks_Task_Run_2(action,
+														   nil,
+														   &exception),
 			  exception == nil else {
 			XCTFail("System.Threading.Tasks.Task.Run should not throw and return an instance")
 			
@@ -92,7 +92,7 @@ final class SystemThreadingTasksTests: XCTestCase {
 		System_Action_Destroy(action)
 		System_Threading_Tasks_Task_Destroy(task)
 		
-		System_GC_Collect1(&exception)
+		System_GC_Collect_1(&exception)
 		XCTAssertNil(exception)
 		
 		System_GC_WaitForPendingFinalizers(&exception)

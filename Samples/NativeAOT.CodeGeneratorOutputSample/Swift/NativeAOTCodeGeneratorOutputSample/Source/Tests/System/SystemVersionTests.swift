@@ -104,8 +104,8 @@ final class SystemVersionTests: XCTestCase {
         var version: System_Version_t?
         
         versionString.withCString { versionStringC in
-            version = System_Version_Create3(versionString,
-                                             &exception)
+			version = System_Version_Create_3(versionString,
+											  &exception)
         }
         
         guard let version,

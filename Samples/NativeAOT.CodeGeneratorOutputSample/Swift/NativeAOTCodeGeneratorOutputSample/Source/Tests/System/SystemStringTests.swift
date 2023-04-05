@@ -71,9 +71,9 @@ final class SystemStringTests: XCTestCase {
 		
 		let expectedIndexOfWorld: Int32 = 6
 		
-		let indexOfWorld = System_String_IndexOf4(nonEmptyString,
-												  "World",
-												  &exception)
+		let indexOfWorld = System_String_IndexOf_4(nonEmptyString,
+												   "World",
+												   &exception)
 		
 		XCTAssertNil(exception)
 		XCTAssertEqual(expectedIndexOfWorld, indexOfWorld)
@@ -84,10 +84,10 @@ final class SystemStringTests: XCTestCase {
 			return
 		}
 		
-		guard let split = System_String_Split6(nonEmptyString,
-											   " ",
-											   splitOptions,
-											   &exception),
+		guard let split = System_String_Split_6(nonEmptyString,
+												" ",
+												splitOptions,
+												&exception),
 			  exception == nil else {
 			XCTFail("System.String.Split should not throw and return an instance")
 			
@@ -114,10 +114,10 @@ final class SystemStringTests: XCTestCase {
 		
 		let expectedString = originalString.replacingOccurrences(of: hello, with: "")
 		
-		guard let replacedStringC = System_String_Replace3(originalString,
-														   hello,
-														   "",
-														   &exception),
+		guard let replacedStringC = System_String_Replace_3(originalString,
+															hello,
+															"",
+															&exception),
 			  exception == nil else {
 			XCTFail("System.String.Replace should not throw and return an instance of a C String")
 			
@@ -139,9 +139,9 @@ final class SystemStringTests: XCTestCase {
 		
 		let expectedIndex: Int32 = 6
 		
-		let index = System_String_IndexOf4(string,
-										   needle,
-										   &exception)
+		let index = System_String_IndexOf_4(string,
+											needle,
+											&exception)
 		
 		XCTAssertNil(exception)
 		XCTAssertEqual(expectedIndex, index)
@@ -180,10 +180,10 @@ final class SystemStringTests: XCTestCase {
 			return
 		}
 		
-		guard let split = System_String_Split6(joined,
-											   separator,
-											   options,
-											   &exception),
+		guard let split = System_String_Split_6(joined,
+												separator,
+												options,
+												&exception),
 			  exception == nil else {
 			XCTFail("System.String.Split should not throw and return an instance")
 			
@@ -199,9 +199,9 @@ final class SystemStringTests: XCTestCase {
 		XCTAssertEqual(cleanedComponents.count, .init(length))
 		
 		for (idx, component) in cleanedComponents.enumerated() {
-			guard let componentRetObj = System_Array_GetValue1(split,
-															   .init(idx),
-															   &exception),
+			guard let componentRetObj = System_Array_GetValue_1(split,
+																.init(idx),
+																&exception),
 				  exception == nil else {
 				XCTFail("System.Array.GetValue should not throw and return an instance")
 				
@@ -225,9 +225,9 @@ final class SystemStringTests: XCTestCase {
 			XCTAssertEqual(component, componentRet)
 		}
 		
-		guard let joinedRetC = System_String_Join1(separator,
-												   split,
-												   &exception),
+		guard let joinedRetC = System_String_Join_1(separator,
+													split,
+													&exception),
 			  exception == nil else {
 			XCTFail("System.String.Join should not throw and return an instance of a C String")
 			

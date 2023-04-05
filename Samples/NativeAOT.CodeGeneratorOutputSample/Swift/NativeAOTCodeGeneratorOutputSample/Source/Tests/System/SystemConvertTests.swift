@@ -5,13 +5,13 @@ final class SystemConvertTests: XCTestCase {
 	func testBooleanConversion() {
 		var exception: System_Exception_t?
 		
-		XCTAssertTrue(System_Convert_ToBoolean12("true", &exception))
+		XCTAssertTrue(System_Convert_ToBoolean_12("true", &exception))
 		XCTAssertNil(exception)
 		
-		XCTAssertFalse(System_Convert_ToBoolean12("false", &exception))
+		XCTAssertFalse(System_Convert_ToBoolean_12("false", &exception))
 		XCTAssertNil(exception)
 		
-		XCTAssertFalse(System_Convert_ToBoolean12("nonsense", &exception))
+		XCTAssertFalse(System_Convert_ToBoolean_12("nonsense", &exception))
 		XCTAssertNotNil(exception)
 	}
 	
@@ -19,19 +19,19 @@ final class SystemConvertTests: XCTestCase {
 		var exception: System_Exception_t?
 		
 		XCTAssertEqual(123456789,
-					   System_Convert_ToInt3215("123456789", &exception))
+					   System_Convert_ToInt32_15("123456789", &exception))
 		XCTAssertNil(exception)
 		
 		XCTAssertEqual(-123456789,
-					   System_Convert_ToInt6415("-123456789", &exception))
+					   System_Convert_ToInt64_15("-123456789", &exception))
 		XCTAssertNil(exception)
 		
 		XCTAssertEqual(-1,
-					   System_Convert_ToInt6415("nonsense", &exception))
+					   System_Convert_ToInt64_15("nonsense", &exception))
 		XCTAssertNotNil(exception)
 		
 		XCTAssertEqual(0,
-					   System_Convert_ToUInt6415("nonsense", &exception))
+					   System_Convert_ToUInt64_15("nonsense", &exception))
 		XCTAssertNotNil(exception)
 	}
 	
@@ -49,9 +49,9 @@ final class SystemConvertTests: XCTestCase {
 		
 		defer { System_Text_Encoding_Destroy(utf8Encoding) }
 		
-		guard let textBytes = System_Text_Encoding_GetBytes3(utf8Encoding,
-															 text,
-															 &exception),
+		guard let textBytes = System_Text_Encoding_GetBytes_3(utf8Encoding,
+															  text,
+															  &exception),
 			  exception == nil else {
 			XCTFail("System.Text.Encoding.GetBytes should not throw and return an instance")
 			

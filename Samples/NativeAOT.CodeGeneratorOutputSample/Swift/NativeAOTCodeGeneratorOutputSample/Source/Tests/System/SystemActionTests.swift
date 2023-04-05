@@ -65,7 +65,7 @@ final class SystemActionTests: XCTestCase {
 		
 		System_Action_Destroy(action)
 		
-		System_GC_Collect1(&exception)
+		System_GC_Collect_1(&exception)
 		XCTAssertNil(exception)
 
 		System_GC_WaitForPendingFinalizers(&exception)
