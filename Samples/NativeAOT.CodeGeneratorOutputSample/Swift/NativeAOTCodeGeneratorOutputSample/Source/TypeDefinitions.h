@@ -1,5 +1,5 @@
-// Number of generated types: 429
-// Number of generated members: 4367
+// Number of generated types: 430
+// Number of generated members: 4370
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -1295,6 +1295,8 @@ typedef void* NativeAOT_CodeGeneratorInputSample_Cat_t;
 typedef void* NativeAOT_CodeGeneratorInputSample_Dog_t;
 
 typedef void* NativeAOT_CodeGeneratorInputSample_GenericAnimal_t;
+
+typedef void* NativeAOT_CodeGeneratorInputSample_GenericTests_t;
 
 typedef void* NativeAOT_CodeGeneratorInputSample_Person_t;
 
@@ -31576,6 +31578,24 @@ NativeAOT_CodeGeneratorInputSample_GenericAnimal_Destroy(
 );
 
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.GenericAnimal
+
+#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.GenericTests
+NativeAOT_CodeGeneratorInputSample_GenericTests_t /* NativeAOT.CodeGeneratorInputSample.GenericTests */
+NativeAOT_CodeGeneratorInputSample_GenericTests_Create(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_t /* System.Type */
+NativeAOT_CodeGeneratorInputSample_GenericTests_TypeOf(
+	
+);
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_GenericTests_Destroy(
+	NativeAOT_CodeGeneratorInputSample_GenericTests_t /* NativeAOT.CodeGeneratorInputSample.GenericTests */ self
+);
+
+#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.GenericTests
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Person
 CString /* System.String */

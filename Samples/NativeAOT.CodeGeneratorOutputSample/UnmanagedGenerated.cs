@@ -1,5 +1,5 @@
-// Number of generated types: 429
-// Number of generated members: 4063
+// Number of generated types: 430
+// Number of generated members: 4066
 
 // <Header>
 using System;
@@ -110450,6 +110450,54 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_GenericAnimal
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericAnimal_Destroy")]
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_GenericAnimal_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.GenericAnimal */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+
+}
+
+
+internal unsafe class NativeAOT_CodeGeneratorInputSample_GenericTests
+{
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericTests_Create")]
+	internal static void* /* NativeAOT.CodeGeneratorInputSample.GenericTests */ NativeAOT_CodeGeneratorInputSample_GenericTests_Create(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			NativeAOT.CodeGeneratorInputSample.GenericTests __returnValue = new NativeAOT.CodeGeneratorInputSample.GenericTests();
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericTests_TypeOf")]
+	internal static void* /* System.Type */ NativeAOT_CodeGeneratorInputSample_GenericTests_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(NativeAOT.CodeGeneratorInputSample.GenericTests);
+		void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return __returnValueNative;
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericTests_Destroy")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_GenericTests_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.GenericTests */ __self)
 	{
 	
 		InteropUtils.FreeIfAllocated(__self);
