@@ -64,4 +64,63 @@ final class SystemArrayTests: XCTestCase {
         XCTAssertNil(exception)
         XCTAssertTrue(equals)
     }
+	
+	func testEmptyArrayWithGenerics() {
+		var exception: System_Exception_t?
+		
+		guard let systemStringType = System_String_TypeOf() else {
+			XCTFail("typeof(System.String) should return an instance")
+			
+			return
+		}
+		
+		defer { System_Type_Destroy(systemStringType) }
+		
+		guard let emptyArrayOfString = System_Array_Empty_A1(systemStringType,
+															 &exception) else {
+			XCTFail("System.Array<System.String>.Empty should not throw and return an instance")
+			
+			return
+		}
+		
+		defer { System_Array_Destroy(emptyArrayOfString) }
+		
+		let length = System_Array_Length_Get(emptyArrayOfString,
+											 &exception)
+		
+		XCTAssertNil(exception)
+		XCTAssertEqual(0, .init(length))
+		
+		guard let arrayType = System_Object_GetType(emptyArrayOfString,
+													&exception) else {
+			XCTFail("System.Object.GetType should not throw and return an instance")
+			
+			return
+		}
+		
+		defer { System_Type_Destroy(arrayType) }
+		
+		let isArray = System_Type_IsArray_Get(arrayType,
+											  &exception)
+		
+		XCTAssertNil(exception)
+		XCTAssertTrue(isArray)
+		
+		guard let arrayElementType = System_Type_GetElementType(arrayType,
+																&exception),
+			  exception == nil else {
+			XCTFail("System.Type.GetElementType should not throw and return an instance")
+			
+			return
+		}
+		
+		defer { System_Type_Destroy(arrayElementType) }
+		
+		let arrayElementTypeIsSystemString = System_Type_Equals(systemStringType,
+																arrayElementType,
+																&exception)
+		
+		XCTAssertNil(exception)
+		XCTAssertTrue(arrayElementTypeIsSystemString)
+	}
 }
