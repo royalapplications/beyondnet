@@ -1417,18 +1417,6 @@ typedef void* System_Random_t;
 // Type "T[]" was skipped. Reason: It has no full name.
 // Type "T" was skipped. Reason: It has no full name.
 
-typedef void* System_IO_Path_t;
-
-typedef void* System_IO_File_t;
-
-typedef void* System_IO_StreamReader_t;
-
-typedef void* System_IO_TextReader_t;
-
-typedef void* System_IO_StreamWriter_t;
-
-typedef void* System_IO_TextWriter_t;
-
 typedef void* System_Text_StringBuilder_t;
 
 typedef void* System_Text_StringBuilder_ChunkEnumerator_t;
@@ -1446,6 +1434,18 @@ typedef void* System_Text_StringBuilder_AppendInterpolatedStringHandler_t;
 // Type "TArg0" was skipped. Reason: It has no full name.
 // Type "TArg1" was skipped. Reason: It has no full name.
 // Type "TArg2" was skipped. Reason: It has no full name.
+typedef void* System_IO_Path_t;
+
+typedef void* System_IO_File_t;
+
+typedef void* System_IO_StreamReader_t;
+
+typedef void* System_IO_TextReader_t;
+
+typedef void* System_IO_StreamWriter_t;
+
+typedef void* System_IO_TextWriter_t;
+
 typedef void* System_IO_FileSystemInfo_t;
 
 typedef void* System_IO_FileInfo_t;
@@ -27098,6 +27098,845 @@ System_Random_Destroy(
 
 
 
+#pragma mark - BEGIN APIs of System.Text.StringBuilder
+int32_t /* System.Int32 */
+System_Text_StringBuilder_EnsureCapacity(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ capacity,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Text_StringBuilder_ToString(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Text_StringBuilder_ToString_1(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ startIndex,
+	int32_t /* System.Int32 */ length,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Clear(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_ChunkEnumerator_t /* System.Text.StringBuilder.ChunkEnumerator */
+System_Text_StringBuilder_GetChunks(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	uint8_t /* System.Char */ value,
+	int32_t /* System.Int32 */ repeatCount,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append_1(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Char_Array_t /* System.Char[] */ value,
+	int32_t /* System.Int32 */ startIndex,
+	int32_t /* System.Int32 */ charCount,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append_2(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append_3(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	CString /* System.String */ value,
+	int32_t /* System.Int32 */ startIndex,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append_4(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append_5(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ value,
+	int32_t /* System.Int32 */ startIndex,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendLine(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendLine_1(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Text_StringBuilder_CopyTo(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ sourceIndex,
+	System_Char_Array_t /* System.Char[] */ destination,
+	int32_t /* System.Int32 */ destinationIndex,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	CString /* System.String */ value,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Remove(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ startIndex,
+	int32_t /* System.Int32 */ length,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append_6(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append_7(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	uint8_t /* System.Char */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append_8(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int8_t /* System.SByte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append_9(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	uint8_t /* System.Byte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append_10(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int16_t /* System.Int16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append_11(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append_12(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int64_t /* System.Int64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append_13(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	float /* System.Single */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append_14(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	double /* System.Double */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append_15(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Decimal_t /* System.Decimal */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append_16(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	uint16_t /* System.UInt16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append_17(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	uint32_t /* System.UInt32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append_18(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	uint64_t /* System.UInt64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append_19(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append_20(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Char_Array_t /* System.Char[] */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append_21(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Text_StringBuilder_AppendInterpolatedStringHandler_t* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ handler,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append_22(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Text_StringBuilder_AppendInterpolatedStringHandler_t* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ handler,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendLine_2(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Text_StringBuilder_AppendInterpolatedStringHandler_t* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ handler,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendLine_3(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Text_StringBuilder_AppendInterpolatedStringHandler_t* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ handler,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendJoin(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	CString /* System.String */ separator,
+	System_Object_Array_t /* System.Object[] */ values,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendJoin_1(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	CString /* System.String */ separator,
+	System_String_Array_t /* System.String[] */ values,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendJoin_2(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	uint8_t /* System.Char */ separator,
+	System_Object_Array_t /* System.Object[] */ values,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendJoin_3(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	uint8_t /* System.Char */ separator,
+	System_String_Array_t /* System.String[] */ values,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert_1(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert_2(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	bool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert_3(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	int8_t /* System.SByte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert_4(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	uint8_t /* System.Byte */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert_5(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	int16_t /* System.Int16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert_6(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	uint8_t /* System.Char */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert_7(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	System_Char_Array_t /* System.Char[] */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert_8(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	System_Char_Array_t /* System.Char[] */ value,
+	int32_t /* System.Int32 */ startIndex,
+	int32_t /* System.Int32 */ charCount,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert_9(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert_10(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	int64_t /* System.Int64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert_11(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	float /* System.Single */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert_12(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	double /* System.Double */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert_13(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	System_Decimal_t /* System.Decimal */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert_14(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	uint16_t /* System.UInt16 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert_15(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	uint32_t /* System.UInt32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert_16(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	uint64_t /* System.UInt64 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Insert_17(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendFormat(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	CString /* System.String */ format,
+	System_Object_t /* System.Object */ arg0,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendFormat_1(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	CString /* System.String */ format,
+	System_Object_t /* System.Object */ arg0,
+	System_Object_t /* System.Object */ arg1,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendFormat_2(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	CString /* System.String */ format,
+	System_Object_t /* System.Object */ arg0,
+	System_Object_t /* System.Object */ arg1,
+	System_Object_t /* System.Object */ arg2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendFormat_3(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	CString /* System.String */ format,
+	System_Object_Array_t /* System.Object[] */ args,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendFormat_4(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	CString /* System.String */ format,
+	System_Object_t /* System.Object */ arg0,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendFormat_5(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	CString /* System.String */ format,
+	System_Object_t /* System.Object */ arg0,
+	System_Object_t /* System.Object */ arg1,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendFormat_6(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	CString /* System.String */ format,
+	System_Object_t /* System.Object */ arg0,
+	System_Object_t /* System.Object */ arg1,
+	System_Object_t /* System.Object */ arg2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendFormat_7(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	CString /* System.String */ format,
+	System_Object_Array_t /* System.Object[] */ args,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendFormat_A1(
+	System_Type_t /* System.Type */ TArg0,
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Text_CompositeFormat_t /* System.Text.CompositeFormat */ format,
+	System_Object_t /* System.Object */ arg0,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendFormat_A2(
+	System_Type_t /* System.Type */ TArg0,
+	System_Type_t /* System.Type */ TArg1,
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Text_CompositeFormat_t /* System.Text.CompositeFormat */ format,
+	System_Object_t /* System.Object */ arg0,
+	System_Object_t /* System.Object */ arg1,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendFormat_A3(
+	System_Type_t /* System.Type */ TArg0,
+	System_Type_t /* System.Type */ TArg1,
+	System_Type_t /* System.Type */ TArg2,
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Text_CompositeFormat_t /* System.Text.CompositeFormat */ format,
+	System_Object_t /* System.Object */ arg0,
+	System_Object_t /* System.Object */ arg1,
+	System_Object_t /* System.Object */ arg2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendFormat_8(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Text_CompositeFormat_t /* System.Text.CompositeFormat */ format,
+	System_Object_Array_t /* System.Object[] */ args,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Replace(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	CString /* System.String */ oldValue,
+	CString /* System.String */ newValue,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Text_StringBuilder_Equals(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ sb,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Replace_1(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	CString /* System.String */ oldValue,
+	CString /* System.String */ newValue,
+	int32_t /* System.Int32 */ startIndex,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Replace_2(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	uint8_t /* System.Char */ oldChar,
+	uint8_t /* System.Char */ newChar,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Replace_3(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	uint8_t /* System.Char */ oldChar,
+	uint8_t /* System.Char */ newChar,
+	int32_t /* System.Int32 */ startIndex,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Create(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Create_1(
+	int32_t /* System.Int32 */ capacity,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Create_2(
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Create_3(
+	CString /* System.String */ value,
+	int32_t /* System.Int32 */ capacity,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Create_4(
+	CString /* System.String */ value,
+	int32_t /* System.Int32 */ startIndex,
+	int32_t /* System.Int32 */ length,
+	int32_t /* System.Int32 */ capacity,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Create_5(
+	int32_t /* System.Int32 */ capacity,
+	int32_t /* System.Int32 */ maxCapacity,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Text_StringBuilder_Capacity_Get(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Text_StringBuilder_Capacity_Set(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Text_StringBuilder_Capacity_Get(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Text_StringBuilder_Capacity_Set(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Text_StringBuilder_MaxCapacity_Get(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Text_StringBuilder_Length_Get(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Text_StringBuilder_Length_Set(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Text_StringBuilder_Length_Get(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Text_StringBuilder_Length_Set(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_Text_StringBuilder_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Text_StringBuilder_Destroy(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self
+);
+
+#pragma mark - END APIs of System.Text.StringBuilder
+
+#pragma mark - BEGIN APIs of System.Text.StringBuilder.ChunkEnumerator
+System_Text_StringBuilder_ChunkEnumerator_t /* System.Text.StringBuilder.ChunkEnumerator */
+System_Text_StringBuilder_ChunkEnumerator_GetEnumerator(
+	System_Text_StringBuilder_ChunkEnumerator_t /* System.Text.StringBuilder.ChunkEnumerator */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Text_StringBuilder_ChunkEnumerator_MoveNext(
+	System_Text_StringBuilder_ChunkEnumerator_t /* System.Text.StringBuilder.ChunkEnumerator */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_t /* System.Type */
+System_Text_StringBuilder_ChunkEnumerator_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Text_StringBuilder_ChunkEnumerator_Destroy(
+	System_Text_StringBuilder_ChunkEnumerator_t /* System.Text.StringBuilder.ChunkEnumerator */ self
+);
+
+#pragma mark - END APIs of System.Text.StringBuilder.ChunkEnumerator
+
+#pragma mark - BEGIN APIs of System.Text.StringBuilder.AppendInterpolatedStringHandler
+void /* System.Void */
+System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendLiteral(
+	System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1(
+	System_Type_t /* System.Type */ T,
+	System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ self,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1_1(
+	System_Type_t /* System.Type */ T,
+	System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ self,
+	System_Object_t /* System.Object */ value,
+	CString /* System.String */ format,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1_2(
+	System_Type_t /* System.Type */ T,
+	System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ self,
+	System_Object_t /* System.Object */ value,
+	int32_t /* System.Int32 */ alignment,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1_3(
+	System_Type_t /* System.Type */ T,
+	System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ self,
+	System_Object_t /* System.Object */ value,
+	int32_t /* System.Int32 */ alignment,
+	CString /* System.String */ format,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_1(
+	System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ self,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_2(
+	System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ self,
+	CString /* System.String */ value,
+	int32_t /* System.Int32 */ alignment,
+	CString /* System.String */ format,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_3(
+	System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ self,
+	System_Object_t /* System.Object */ value,
+	int32_t /* System.Int32 */ alignment,
+	CString /* System.String */ format,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */
+System_Text_StringBuilder_AppendInterpolatedStringHandler_Create(
+	int32_t /* System.Int32 */ literalLength,
+	int32_t /* System.Int32 */ formattedCount,
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ stringBuilder,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */
+System_Text_StringBuilder_AppendInterpolatedStringHandler_Create_1(
+	int32_t /* System.Int32 */ literalLength,
+	int32_t /* System.Int32 */ formattedCount,
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ stringBuilder,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_t /* System.Type */
+System_Text_StringBuilder_AppendInterpolatedStringHandler_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Text_StringBuilder_AppendInterpolatedStringHandler_Destroy(
+	System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ self
+);
+
+#pragma mark - END APIs of System.Text.StringBuilder.AppendInterpolatedStringHandler
+
+
+
+
+
+
+
+
+
+
+
+
 #pragma mark - BEGIN APIs of System.IO.Path
 CString /* System.String */
 System_IO_Path_ChangeExtension(
@@ -28890,845 +29729,6 @@ System_IO_TextWriter_Destroy(
 );
 
 #pragma mark - END APIs of System.IO.TextWriter
-
-#pragma mark - BEGIN APIs of System.Text.StringBuilder
-int32_t /* System.Int32 */
-System_Text_StringBuilder_EnsureCapacity(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	int32_t /* System.Int32 */ capacity,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-CString /* System.String */
-System_Text_StringBuilder_ToString(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-CString /* System.String */
-System_Text_StringBuilder_ToString_1(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	int32_t /* System.Int32 */ startIndex,
-	int32_t /* System.Int32 */ length,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Clear(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_ChunkEnumerator_t /* System.Text.StringBuilder.ChunkEnumerator */
-System_Text_StringBuilder_GetChunks(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Append(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	uint8_t /* System.Char */ value,
-	int32_t /* System.Int32 */ repeatCount,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Append_1(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	System_Char_Array_t /* System.Char[] */ value,
-	int32_t /* System.Int32 */ startIndex,
-	int32_t /* System.Int32 */ charCount,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Append_2(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	CString /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Append_3(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	CString /* System.String */ value,
-	int32_t /* System.Int32 */ startIndex,
-	int32_t /* System.Int32 */ count,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Append_4(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Append_5(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ value,
-	int32_t /* System.Int32 */ startIndex,
-	int32_t /* System.Int32 */ count,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_AppendLine(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_AppendLine_1(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	CString /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Text_StringBuilder_CopyTo(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	int32_t /* System.Int32 */ sourceIndex,
-	System_Char_Array_t /* System.Char[] */ destination,
-	int32_t /* System.Int32 */ destinationIndex,
-	int32_t /* System.Int32 */ count,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Insert(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	int32_t /* System.Int32 */ index,
-	CString /* System.String */ value,
-	int32_t /* System.Int32 */ count,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Remove(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	int32_t /* System.Int32 */ startIndex,
-	int32_t /* System.Int32 */ length,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Append_6(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	bool /* System.Boolean */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Append_7(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	uint8_t /* System.Char */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Append_8(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	int8_t /* System.SByte */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Append_9(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	uint8_t /* System.Byte */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Append_10(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	int16_t /* System.Int16 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Append_11(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	int32_t /* System.Int32 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Append_12(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	int64_t /* System.Int64 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Append_13(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	float /* System.Single */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Append_14(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	double /* System.Double */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Append_15(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	System_Decimal_t /* System.Decimal */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Append_16(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	uint16_t /* System.UInt16 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Append_17(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	uint32_t /* System.UInt32 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Append_18(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	uint64_t /* System.UInt64 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Append_19(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	System_Object_t /* System.Object */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Append_20(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	System_Char_Array_t /* System.Char[] */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Append_21(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	System_Text_StringBuilder_AppendInterpolatedStringHandler_t* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ handler,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Append_22(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	System_IFormatProvider_t /* System.IFormatProvider */ provider,
-	System_Text_StringBuilder_AppendInterpolatedStringHandler_t* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ handler,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_AppendLine_2(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	System_Text_StringBuilder_AppendInterpolatedStringHandler_t* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ handler,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_AppendLine_3(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	System_IFormatProvider_t /* System.IFormatProvider */ provider,
-	System_Text_StringBuilder_AppendInterpolatedStringHandler_t* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ handler,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_AppendJoin(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	CString /* System.String */ separator,
-	System_Object_Array_t /* System.Object[] */ values,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_AppendJoin_1(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	CString /* System.String */ separator,
-	System_String_Array_t /* System.String[] */ values,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_AppendJoin_2(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	uint8_t /* System.Char */ separator,
-	System_Object_Array_t /* System.Object[] */ values,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_AppendJoin_3(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	uint8_t /* System.Char */ separator,
-	System_String_Array_t /* System.String[] */ values,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Insert_1(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	int32_t /* System.Int32 */ index,
-	CString /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Insert_2(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	int32_t /* System.Int32 */ index,
-	bool /* System.Boolean */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Insert_3(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	int32_t /* System.Int32 */ index,
-	int8_t /* System.SByte */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Insert_4(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	int32_t /* System.Int32 */ index,
-	uint8_t /* System.Byte */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Insert_5(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	int32_t /* System.Int32 */ index,
-	int16_t /* System.Int16 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Insert_6(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	int32_t /* System.Int32 */ index,
-	uint8_t /* System.Char */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Insert_7(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	int32_t /* System.Int32 */ index,
-	System_Char_Array_t /* System.Char[] */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Insert_8(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	int32_t /* System.Int32 */ index,
-	System_Char_Array_t /* System.Char[] */ value,
-	int32_t /* System.Int32 */ startIndex,
-	int32_t /* System.Int32 */ charCount,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Insert_9(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	int32_t /* System.Int32 */ index,
-	int32_t /* System.Int32 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Insert_10(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	int32_t /* System.Int32 */ index,
-	int64_t /* System.Int64 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Insert_11(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	int32_t /* System.Int32 */ index,
-	float /* System.Single */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Insert_12(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	int32_t /* System.Int32 */ index,
-	double /* System.Double */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Insert_13(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	int32_t /* System.Int32 */ index,
-	System_Decimal_t /* System.Decimal */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Insert_14(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	int32_t /* System.Int32 */ index,
-	uint16_t /* System.UInt16 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Insert_15(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	int32_t /* System.Int32 */ index,
-	uint32_t /* System.UInt32 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Insert_16(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	int32_t /* System.Int32 */ index,
-	uint64_t /* System.UInt64 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Insert_17(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	int32_t /* System.Int32 */ index,
-	System_Object_t /* System.Object */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_AppendFormat(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	CString /* System.String */ format,
-	System_Object_t /* System.Object */ arg0,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_AppendFormat_1(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	CString /* System.String */ format,
-	System_Object_t /* System.Object */ arg0,
-	System_Object_t /* System.Object */ arg1,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_AppendFormat_2(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	CString /* System.String */ format,
-	System_Object_t /* System.Object */ arg0,
-	System_Object_t /* System.Object */ arg1,
-	System_Object_t /* System.Object */ arg2,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_AppendFormat_3(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	CString /* System.String */ format,
-	System_Object_Array_t /* System.Object[] */ args,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_AppendFormat_4(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	System_IFormatProvider_t /* System.IFormatProvider */ provider,
-	CString /* System.String */ format,
-	System_Object_t /* System.Object */ arg0,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_AppendFormat_5(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	System_IFormatProvider_t /* System.IFormatProvider */ provider,
-	CString /* System.String */ format,
-	System_Object_t /* System.Object */ arg0,
-	System_Object_t /* System.Object */ arg1,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_AppendFormat_6(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	System_IFormatProvider_t /* System.IFormatProvider */ provider,
-	CString /* System.String */ format,
-	System_Object_t /* System.Object */ arg0,
-	System_Object_t /* System.Object */ arg1,
-	System_Object_t /* System.Object */ arg2,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_AppendFormat_7(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	System_IFormatProvider_t /* System.IFormatProvider */ provider,
-	CString /* System.String */ format,
-	System_Object_Array_t /* System.Object[] */ args,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_AppendFormat_A1(
-	System_Type_t /* System.Type */ TArg0,
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	System_IFormatProvider_t /* System.IFormatProvider */ provider,
-	System_Text_CompositeFormat_t /* System.Text.CompositeFormat */ format,
-	System_Object_t /* System.Object */ arg0,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_AppendFormat_A2(
-	System_Type_t /* System.Type */ TArg0,
-	System_Type_t /* System.Type */ TArg1,
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	System_IFormatProvider_t /* System.IFormatProvider */ provider,
-	System_Text_CompositeFormat_t /* System.Text.CompositeFormat */ format,
-	System_Object_t /* System.Object */ arg0,
-	System_Object_t /* System.Object */ arg1,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_AppendFormat_A3(
-	System_Type_t /* System.Type */ TArg0,
-	System_Type_t /* System.Type */ TArg1,
-	System_Type_t /* System.Type */ TArg2,
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	System_IFormatProvider_t /* System.IFormatProvider */ provider,
-	System_Text_CompositeFormat_t /* System.Text.CompositeFormat */ format,
-	System_Object_t /* System.Object */ arg0,
-	System_Object_t /* System.Object */ arg1,
-	System_Object_t /* System.Object */ arg2,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_AppendFormat_8(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	System_IFormatProvider_t /* System.IFormatProvider */ provider,
-	System_Text_CompositeFormat_t /* System.Text.CompositeFormat */ format,
-	System_Object_Array_t /* System.Object[] */ args,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Replace(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	CString /* System.String */ oldValue,
-	CString /* System.String */ newValue,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-bool /* System.Boolean */
-System_Text_StringBuilder_Equals(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ sb,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Replace_1(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	CString /* System.String */ oldValue,
-	CString /* System.String */ newValue,
-	int32_t /* System.Int32 */ startIndex,
-	int32_t /* System.Int32 */ count,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Replace_2(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	uint8_t /* System.Char */ oldChar,
-	uint8_t /* System.Char */ newChar,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Replace_3(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	uint8_t /* System.Char */ oldChar,
-	uint8_t /* System.Char */ newChar,
-	int32_t /* System.Int32 */ startIndex,
-	int32_t /* System.Int32 */ count,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Create(
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Create_1(
-	int32_t /* System.Int32 */ capacity,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Create_2(
-	CString /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Create_3(
-	CString /* System.String */ value,
-	int32_t /* System.Int32 */ capacity,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Create_4(
-	CString /* System.String */ value,
-	int32_t /* System.Int32 */ startIndex,
-	int32_t /* System.Int32 */ length,
-	int32_t /* System.Int32 */ capacity,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_t /* System.Text.StringBuilder */
-System_Text_StringBuilder_Create_5(
-	int32_t /* System.Int32 */ capacity,
-	int32_t /* System.Int32 */ maxCapacity,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-int32_t /* System.Int32 */
-System_Text_StringBuilder_Capacity_Get(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Text_StringBuilder_Capacity_Set(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	int32_t /* System.Int32 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-int32_t /* System.Int32 */
-System_Text_StringBuilder_Capacity_Get(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Text_StringBuilder_Capacity_Set(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	int32_t /* System.Int32 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-int32_t /* System.Int32 */
-System_Text_StringBuilder_MaxCapacity_Get(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-int32_t /* System.Int32 */
-System_Text_StringBuilder_Length_Get(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Text_StringBuilder_Length_Set(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	int32_t /* System.Int32 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-int32_t /* System.Int32 */
-System_Text_StringBuilder_Length_Get(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Text_StringBuilder_Length_Set(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	int32_t /* System.Int32 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Type_t /* System.Type */
-System_Text_StringBuilder_TypeOf(
-	
-);
-
-void /* System.Void */
-System_Text_StringBuilder_Destroy(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self
-);
-
-#pragma mark - END APIs of System.Text.StringBuilder
-
-#pragma mark - BEGIN APIs of System.Text.StringBuilder.ChunkEnumerator
-System_Text_StringBuilder_ChunkEnumerator_t /* System.Text.StringBuilder.ChunkEnumerator */
-System_Text_StringBuilder_ChunkEnumerator_GetEnumerator(
-	System_Text_StringBuilder_ChunkEnumerator_t /* System.Text.StringBuilder.ChunkEnumerator */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-bool /* System.Boolean */
-System_Text_StringBuilder_ChunkEnumerator_MoveNext(
-	System_Text_StringBuilder_ChunkEnumerator_t /* System.Text.StringBuilder.ChunkEnumerator */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Type_t /* System.Type */
-System_Text_StringBuilder_ChunkEnumerator_TypeOf(
-	
-);
-
-void /* System.Void */
-System_Text_StringBuilder_ChunkEnumerator_Destroy(
-	System_Text_StringBuilder_ChunkEnumerator_t /* System.Text.StringBuilder.ChunkEnumerator */ self
-);
-
-#pragma mark - END APIs of System.Text.StringBuilder.ChunkEnumerator
-
-#pragma mark - BEGIN APIs of System.Text.StringBuilder.AppendInterpolatedStringHandler
-void /* System.Void */
-System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendLiteral(
-	System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ self,
-	CString /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1(
-	System_Type_t /* System.Type */ T,
-	System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ self,
-	System_Object_t /* System.Object */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1_1(
-	System_Type_t /* System.Type */ T,
-	System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ self,
-	System_Object_t /* System.Object */ value,
-	CString /* System.String */ format,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1_2(
-	System_Type_t /* System.Type */ T,
-	System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ self,
-	System_Object_t /* System.Object */ value,
-	int32_t /* System.Int32 */ alignment,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1_3(
-	System_Type_t /* System.Type */ T,
-	System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ self,
-	System_Object_t /* System.Object */ value,
-	int32_t /* System.Int32 */ alignment,
-	CString /* System.String */ format,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_1(
-	System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ self,
-	CString /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_2(
-	System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ self,
-	CString /* System.String */ value,
-	int32_t /* System.Int32 */ alignment,
-	CString /* System.String */ format,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_3(
-	System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ self,
-	System_Object_t /* System.Object */ value,
-	int32_t /* System.Int32 */ alignment,
-	CString /* System.String */ format,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */
-System_Text_StringBuilder_AppendInterpolatedStringHandler_Create(
-	int32_t /* System.Int32 */ literalLength,
-	int32_t /* System.Int32 */ formattedCount,
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ stringBuilder,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */
-System_Text_StringBuilder_AppendInterpolatedStringHandler_Create_1(
-	int32_t /* System.Int32 */ literalLength,
-	int32_t /* System.Int32 */ formattedCount,
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ stringBuilder,
-	System_IFormatProvider_t /* System.IFormatProvider */ provider,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Type_t /* System.Type */
-System_Text_StringBuilder_AppendInterpolatedStringHandler_TypeOf(
-	
-);
-
-void /* System.Void */
-System_Text_StringBuilder_AppendInterpolatedStringHandler_Destroy(
-	System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ self
-);
-
-#pragma mark - END APIs of System.Text.StringBuilder.AppendInterpolatedStringHandler
-
-
-
-
-
-
-
-
-
-
-
 
 #pragma mark - BEGIN APIs of System.IO.FileSystemInfo
 void /* System.Void */

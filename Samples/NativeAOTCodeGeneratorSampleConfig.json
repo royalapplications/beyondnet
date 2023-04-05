@@ -22,6 +22,7 @@
 		"System.AppDomain",
 		"System.Random",
 		"System.Text.Encoding",
+		"System.Text.StringBuilder",
 		"System.IO.Path",
 		"System.IO.File",
 		"System.IO.FileInfo",
