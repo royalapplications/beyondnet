@@ -1,14 +1,17 @@
 namespace NativeAOT.CodeGeneratorInputSample;
 
-public delegate string StringGetterDelegate();
-public delegate string StringTransformerDelegate(string inputString);
-public delegate double DoublesTransformerDelegate(double number1, double number2);
-
 public static class Transformer
 {
-    public static StringTransformerDelegate UppercaseStringTransformer { get; set; } =
-        inputString => inputString.ToUpper();
+    public delegate string StringGetterDelegate();
+    public delegate string StringTransformerDelegate(string inputString);
+    public delegate double DoublesTransformerDelegate(double number1, double number2);
     
+    public static class BuiltInTransformers
+    {
+        public static StringTransformerDelegate UppercaseStringTransformer { get; set; } =
+            inputString => inputString.ToUpper();    
+    }
+
     public static string TransformString(
         string inputString,
         StringTransformerDelegate stringTransformer
@@ -43,6 +46,6 @@ public static class Transformer
 
     public static string UppercaseString(string inputString)
     {
-        return UppercaseStringTransformer(inputString);
+        return BuiltInTransformers.UppercaseStringTransformer(inputString);
     }
 }
