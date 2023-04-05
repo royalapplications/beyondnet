@@ -1,5 +1,5 @@
 // Number of generated types: 430
-// Number of generated members: 4066
+// Number of generated members: 4067
 
 // <Header>
 using System;
@@ -110461,6 +110461,32 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_GenericAnimal
 
 internal unsafe class NativeAOT_CodeGeneratorInputSample_GenericTests
 {
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericTests_CallReturnGenericTypeThroughReflection")]
+	internal static void* /* System.Type */ NativeAOT_CodeGeneratorInputSample_GenericTests_CallReturnGenericTypeThroughReflection(void* /* System.Type */ T, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+	
+	    try {
+			System.Type __returnValue = NativeAOT.CodeGeneratorInputSample.GenericTests.CallReturnGenericTypeThroughReflection(TConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericTests_Create")]
 	internal static void* /* NativeAOT.CodeGeneratorInputSample.GenericTests */ NativeAOT_CodeGeneratorInputSample_GenericTests_Create(void** /* System.Exception */ __outException)
 	{

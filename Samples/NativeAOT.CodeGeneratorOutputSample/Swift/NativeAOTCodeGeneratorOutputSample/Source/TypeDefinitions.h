@@ -1,5 +1,5 @@
 // Number of generated types: 430
-// Number of generated members: 4370
+// Number of generated members: 4371
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -31580,6 +31580,12 @@ NativeAOT_CodeGeneratorInputSample_GenericAnimal_Destroy(
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.GenericAnimal
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.GenericTests
+System_Type_t /* System.Type */
+NativeAOT_CodeGeneratorInputSample_GenericTests_CallReturnGenericTypeThroughReflection(
+	System_Type_t /* System.Type */ T,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 NativeAOT_CodeGeneratorInputSample_GenericTests_t /* NativeAOT.CodeGeneratorInputSample.GenericTests */
 NativeAOT_CodeGeneratorInputSample_GenericTests_Create(
 	System_Exception_t* /* System.Exception */ outException
