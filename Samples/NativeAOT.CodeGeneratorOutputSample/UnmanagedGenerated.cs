@@ -1,5 +1,5 @@
-// Number of generated types: 649
-// Number of generated members: 4111
+// Number of generated types: 650
+// Number of generated members: 4112
 
 // <Header>
 using System;
@@ -111989,6 +111989,44 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_AnimalFactory
 	}
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_AnimalFactory_CreateAnimal_A1")]
+	internal static void* /* System.Object */ NativeAOT_CodeGeneratorInputSample_AnimalFactory_CreateAnimal_A1(void* /* System.Type */ T, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(NativeAOT.CodeGeneratorInputSample.AnimalFactory);
+			System.String __nameOfMethodForGenericCall = nameof(NativeAOT.CodeGeneratorInputSample.AnimalFactory.CreateAnimal);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[]? __parametersForGenericCall = null;
+			System.Type[] __parameterTypesForGenericCall = System.Type.EmptyTypes;
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method CreateAnimal not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Object __returnValue = (System.Object)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_AnimalFactory_DEFAULT_CREATOR_Get")]
 	internal static void* /* NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate */ NativeAOT_CodeGeneratorInputSample_AnimalFactory_DEFAULT_CREATOR_Get()
 	{
@@ -112021,6 +112059,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_AnimalFactory
 }
 
 
+// Type "T" was skipped. Reason: It has no full name.
 internal unsafe class NativeAOT_CodeGeneratorInputSample_BaseAnimal
 {
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_BaseAnimal_Eat")]

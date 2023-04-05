@@ -266,4 +266,114 @@ final class AnimalTests: XCTestCase {
         
         XCTAssertEqual(catName, catNameRet)
     }
+	
+	func testCreatingAnimalThroughGenerics() {
+		var exception: System_Exception_t?
+		
+		// MARK: Cat
+		guard let catType = NativeAOT_CodeGeneratorInputSample_Cat_TypeOf() else {
+			XCTFail("typeof(Cat) should return an instance")
+			
+			return
+		}
+		
+		defer { System_Type_Destroy(catType) }
+		
+		guard let cat = NativeAOT_CodeGeneratorInputSample_AnimalFactory_CreateAnimal_A1(catType,
+																						 &exception),
+			  exception == nil else {
+			XCTFail("CreateAnimal<Cat> should not throw and return an instance")
+			
+			return
+		}
+		
+		defer { NativeAOT_CodeGeneratorInputSample_IAnimal_Destroy(cat) }
+		
+		guard let catTypeRet = System_Object_GetType(cat,
+													 &exception),
+			  exception == nil else {
+			XCTFail("System.Object.GetType should not throw and return an instance")
+			
+			return
+		}
+		
+		defer { System_Type_Destroy(catTypeRet) }
+		
+		let catTypesAreEqual = System_Type_Equals(catType,
+												  catTypeRet,
+												  &exception)
+		
+		XCTAssertNil(exception)
+		XCTAssertTrue(catTypesAreEqual)
+		
+		// MARK: Dog
+		guard let dogType = NativeAOT_CodeGeneratorInputSample_Dog_TypeOf() else {
+			XCTFail("typeof(Dog) should return an instance")
+			
+			return
+		}
+		
+		defer { System_Type_Destroy(dogType) }
+		
+		guard let dog = NativeAOT_CodeGeneratorInputSample_AnimalFactory_CreateAnimal_A1(dogType,
+																						 &exception),
+			  exception == nil else {
+			XCTFail("CreateAnimal<Dog> should not throw and return an instance")
+			
+			return
+		}
+		
+		defer { NativeAOT_CodeGeneratorInputSample_IAnimal_Destroy(dog) }
+		
+		guard let dogTypeRet = System_Object_GetType(dog,
+													 &exception),
+			  exception == nil else {
+			XCTFail("System.Object.GetType should not throw and return an instance")
+			
+			return
+		}
+		
+		defer { System_Type_Destroy(dogTypeRet) }
+		
+		let dogTypesAreEqual = System_Type_Equals(dogType,
+												  dogTypeRet,
+												  &exception)
+		
+		XCTAssertNil(exception)
+		XCTAssertTrue(dogTypesAreEqual)
+		
+		// MARK: Invalid Type
+		guard let stringType = System_String_TypeOf() else {
+			XCTFail("typeof(System.String) should return an instance")
+			
+			return
+		}
+		
+		defer { System_Type_Destroy(stringType) }
+		
+		let invalidAnimal = NativeAOT_CodeGeneratorInputSample_AnimalFactory_CreateAnimal_A1(stringType,
+																							 &exception)
+		
+		XCTAssertNil(invalidAnimal)
+		
+		guard let exception else {
+			XCTFail("CreateAnimal with an invalid type should throw an exception")
+			
+			return
+		}
+		
+		defer { System_Exception_Destroy(exception) }
+		
+		var exception2: System_Exception_t?
+		
+		guard let exceptionMessage = System_Exception_Message_Get(exception,
+																  &exception2).string(),
+			  exception2 == nil else {
+			XCTFail("System.Exception.Message getter should not throw and return an instance of a string")
+			
+			return
+		}
+		
+		XCTAssertTrue(exceptionMessage.contains("violates the constraint"))
+	}
 }

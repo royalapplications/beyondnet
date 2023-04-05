@@ -1,5 +1,5 @@
-// Number of generated types: 649
-// Number of generated members: 4415
+// Number of generated types: 650
+// Number of generated members: 4416
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -1501,6 +1501,7 @@ typedef void* NativeAOT_CodeGeneratorInputSample_IAnimal_t;
 
 typedef void* NativeAOT_CodeGeneratorInputSample_AnimalFactory_t;
 
+// Type "T" was skipped. Reason: It has no full name.
 typedef void* NativeAOT_CodeGeneratorInputSample_BaseAnimal_t;
 
 typedef void* NativeAOT_CodeGeneratorInputSample_Cat_t;
@@ -32210,6 +32211,12 @@ NativeAOT_CodeGeneratorInputSample_AnimalFactory_CreateAnimal_1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+System_Object_t /* System.Object */
+NativeAOT_CodeGeneratorInputSample_AnimalFactory_CreateAnimal_A1(
+	System_Type_t /* System.Type */ T,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_t /* NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate */
 NativeAOT_CodeGeneratorInputSample_AnimalFactory_DEFAULT_CREATOR_Get(
 	
@@ -32227,6 +32234,7 @@ NativeAOT_CodeGeneratorInputSample_AnimalFactory_Destroy(
 );
 
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.AnimalFactory
+
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.BaseAnimal
 CString /* System.String */

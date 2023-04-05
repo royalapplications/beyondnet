@@ -30,4 +30,15 @@ public static class AnimalFactory
     {
         return creator(animalName);
     }
+
+    public static T CreateAnimal<T>() where T: class, IAnimal
+    {
+        if (typeof(T).IsAssignableTo(typeof(Cat))) {
+            return (T)(IAnimal)new Cat();
+        } else if (typeof(T).IsAssignableTo(typeof(Dog))) {
+            return (T)(IAnimal)new Dog();
+        }
+
+        throw new Exception("Unknown Animal Type");
+    }
 }
