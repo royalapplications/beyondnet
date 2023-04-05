@@ -23,11 +23,16 @@
     <DefaultItemExcludes>$(DefaultItemExcludes);Swift\**\*;.gitignore;*.h;*.sln.DotSettings;</DefaultItemExcludes>
   </PropertyGroup>
 
-  <!-- Compile Links -->
+  <!-- Project References -->
   <ItemGroup>
-    <Compile Include="..\NativeAOT.CodeGeneratorInputSample\Source\**\*.cs">
-      <Link>Links\NativeAOT.CodeGeneratorInputSample\%(RecursiveDir)%(Filename)%(Extension)</Link>
-    </Compile>
+    <ProjectReference Include="..\NativeAOT.CodeGeneratorInputSample\NativeAOT.CodeGeneratorInputSample.csproj" />
   </ItemGroup>
+  
+  <!-- Compile Links -->
+<!--  <ItemGroup>-->
+<!--    <Compile Include="..\NativeAOT.CodeGeneratorInputSample\Source\**\*.cs">-->
+<!--      <Link>Links\NativeAOT.CodeGeneratorInputSample\%(RecursiveDir)%(Filename)%(Extension)</Link>-->
+<!--    </Compile>-->
+<!--  </ItemGroup>-->
 
 </Project>

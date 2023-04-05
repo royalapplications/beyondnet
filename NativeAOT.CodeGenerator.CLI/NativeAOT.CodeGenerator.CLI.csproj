@@ -9,6 +9,7 @@
     <PublishSelfContained>true</PublishSelfContained>
   </PropertyGroup>
 
+  <!-- Project References -->
   <ItemGroup>
     <ProjectReference Include="..\NativeAOT.CodeGenerator\NativeAOT.CodeGenerator.csproj" />
   </ItemGroup>
