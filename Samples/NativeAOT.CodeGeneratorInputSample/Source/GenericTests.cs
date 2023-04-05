@@ -36,6 +36,21 @@ public class GenericTests
         
         return defaultValues.ToArray();
     }
+
+    public T[] ReturnArrayOfRepeatedValues<T>(T value, int numberOfElements)
+    {
+        if (numberOfElements <= 0) {
+            return Array.Empty<T>();
+        }
+
+        List<T> values = new();
+
+        for (int i = 0; i < numberOfElements; i++) {
+            values.Add(value);
+        }
+
+        return values.ToArray();
+    }
     
     public static Type CallReturnGenericTypeThroughReflection(Type T)
     {
@@ -67,21 +82,5 @@ public class GenericTests
         Type returnValue = (untypedReturnValue as Type)!;
         
         return returnValue;
-    }
-}
-
-public class GenericTestClass<T>
-{
-    public Type ReturnGenericClassType()
-    {
-        return typeof(T);
-    }
-    
-    public Type[] ReturnGenericClassTypeAndGenericMethodType<TM>()
-    {
-        return new[] {
-            typeof(T),
-            typeof(TM)
-        };
     }
 }

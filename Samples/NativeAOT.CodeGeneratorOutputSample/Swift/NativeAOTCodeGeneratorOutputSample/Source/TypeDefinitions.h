@@ -1,5 +1,5 @@
-// Number of generated types: 650
-// Number of generated members: 4416
+// Number of generated types: 653
+// Number of generated members: 4417
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -1513,6 +1513,9 @@ typedef void* NativeAOT_CodeGeneratorInputSample_GenericAnimal_t;
 typedef void* NativeAOT_CodeGeneratorInputSample_GenericTests_t;
 
 // Type "T" was skipped. Reason: It has no full name.
+// Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 // Type "T[]" was skipped. Reason: It has no full name.
 // Type "T" was skipped. Reason: It has no full name.
 
@@ -32368,6 +32371,15 @@ NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnArrayOfDefaultValuesOfGene
 	System_Exception_t* /* System.Exception */ outException
 );
 
+System_Array_t /* System.Array */
+NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnArrayOfRepeatedValues_A1(
+	System_Type_t /* System.Type */ T,
+	NativeAOT_CodeGeneratorInputSample_GenericTests_t /* NativeAOT.CodeGeneratorInputSample.GenericTests */ self,
+	System_Object_t /* System.Object */ value,
+	int32_t /* System.Int32 */ numberOfElements,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 System_Type_t /* System.Type */
 NativeAOT_CodeGeneratorInputSample_GenericTests_CallReturnGenericTypeThroughReflection(
 	System_Type_t /* System.Type */ T,
@@ -32390,6 +32402,11 @@ NativeAOT_CodeGeneratorInputSample_GenericTests_Destroy(
 );
 
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.GenericTests
+
+
+#pragma mark - BEGIN APIs of T[]
+#pragma mark - END APIs of T[]
+
 
 
 #pragma mark - BEGIN APIs of T[]

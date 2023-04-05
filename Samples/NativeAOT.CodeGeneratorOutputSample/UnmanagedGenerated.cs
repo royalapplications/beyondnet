@@ -1,5 +1,5 @@
-// Number of generated types: 650
-// Number of generated members: 4112
+// Number of generated types: 653
+// Number of generated members: 4113
 
 // <Header>
 using System;
@@ -112515,6 +112515,51 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_GenericTests
 	}
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnArrayOfRepeatedValues_A1")]
+	internal static void* /* System.Array */ NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnArrayOfRepeatedValues_A1(void* /* System.Type */ T, void* /* NativeAOT.CodeGeneratorInputSample.GenericTests */ __self, void* /* T */ value, int /* System.Int32 */ numberOfElements, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.GenericTests __selfConverted = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.GenericTests>(__self);
+	
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Object valueConverted = InteropUtils.GetInstance<System.Object>(value);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(NativeAOT.CodeGeneratorInputSample.GenericTests);
+			System.String __nameOfMethodForGenericCall = nameof(NativeAOT.CodeGeneratorInputSample.GenericTests.ReturnArrayOfRepeatedValues);
+			System.Object? __methodTargetForGenericCall = __selfConverted;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { valueConverted, numberOfElements };
+			System.Type[] __parameterTypesForGenericCall = new[] { TConverted, typeof(System.Int32) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method ReturnArrayOfRepeatedValues not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Array __returnValue = (System.Array)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericTests_CallReturnGenericTypeThroughReflection")]
 	internal static void* /* System.Type */ NativeAOT_CodeGeneratorInputSample_GenericTests_CallReturnGenericTypeThroughReflection(void* /* System.Type */ T, void** /* System.Exception */ __outException)
 	{
@@ -112588,6 +112633,9 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_GenericTests
 
 
 // Type "T" was skipped. Reason: It has no full name.
+
+// Type "T" was skipped. Reason: It has no full name.
+
 
 // Type "T" was skipped. Reason: It has no full name.
 
