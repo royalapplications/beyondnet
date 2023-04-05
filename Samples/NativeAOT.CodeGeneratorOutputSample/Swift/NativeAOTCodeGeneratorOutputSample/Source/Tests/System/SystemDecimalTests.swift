@@ -57,7 +57,7 @@ final class SystemDecimalTests: XCTestCase {
 		let multiplyResult = number1 * number2
 		let divideResult = number2 / number1
 		
-		guard let decimal1 = System_Decimal_Create_3(number1,
+		guard let decimal1 = System_Decimal_Create_4(number1,
 													 &exception),
 			  exception == nil else {
 			XCTFail("System.Decimal ctor should not throw and return an instance")
@@ -67,7 +67,7 @@ final class SystemDecimalTests: XCTestCase {
 		
 		defer { System_Decimal_Destroy(decimal1) }
 		
-		guard let decimal2 = System_Decimal_Create_3(number2,
+		guard let decimal2 = System_Decimal_Create_4(number2,
 													 &exception),
 			  exception == nil else {
 			XCTFail("System.Decimal ctor should not throw and return an instance")
@@ -159,8 +159,8 @@ final class SystemDecimalTests: XCTestCase {
 		
 		let number1: Int32 = 123
 		
-		guard let decimal1 = System_Decimal_Create(number1,
-												   &exception),
+		guard let decimal1 = System_Decimal_Create_1(number1,
+													 &exception),
 			  exception == nil else {
 			XCTFail("System.Decimal ctor should not throw and return an instance")
 			

@@ -88,6 +88,21 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             (genericArguments == null || numberOfGenericArguments <= 0)) {
             throw new Exception("Generic Method without generic arguments");
         }
+
+        if (isGeneric) {
+            foreach (var parameter in parameters) {
+                if (parameter.IsOut) {
+                    generatedName = string.Empty;
+                    return "// TODO: Generic Methods with out parameters are not supported";
+                } else if (parameter.ParameterType.IsByRef) {
+                    generatedName = string.Empty;
+                    return "// TODO: Generic Methods with ref parameters are not supported";
+                } else if (parameter.ParameterType.IsArray) {
+                    generatedName = string.Empty;
+                    return "// TODO: Generic Methods with array parameters are not supported";
+                }
+            }
+        }
         
         string fullTypeName = declaringType.GetFullNameOrName();
         string fullTypeNameC = fullTypeName.CTypeName();
@@ -154,6 +169,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                                    returnOrSetterOrEventHandlerType.IsGenericTypeParameter ||
                                    returnOrSetterOrEventHandlerType.IsConstructedGenericType;
 
+        bool isGenericArrayReturnType = false;
+
         if (!isGenericReturnType &&
             returnOrSetterOrEventHandlerType.IsArray) {
             Type? arrayElementType = returnOrSetterOrEventHandlerType.GetElementType();
@@ -167,11 +184,16 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                                       arrayElementType.IsConstructedGenericType;
 
                 isGenericReturnType = isGenericArray;
+                isGenericArrayReturnType = isGenericArray;
             }
         }
 
         if (isGenericReturnType) {
-            returnOrSetterOrEventHandlerType = typeof(object);
+            if (isGenericArrayReturnType) {
+                returnOrSetterOrEventHandlerType = typeof(Array);
+            } else {
+                returnOrSetterOrEventHandlerType = typeof(object);
+            }
         }
 
         Type? setterOrEventHandlerType;
@@ -374,8 +396,76 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         } else {
             methodInvocationSuffix = string.Empty;
         }
-        
-        sb.AppendLine($"{implPrefix}{returnValuePrefix}{methodTarget}{methodNameForInvocation}{methodInvocationPrefix}{convertedParameterNamesString}{methodInvocationSuffix};");
+
+        // Invocation
+        if (isGeneric) {
+            string declaringTypeName = declaringType.GetFullNameOrName();
+            
+            sb.AppendLine($"{implPrefix}System.Type __targetTypeForGenericCall = typeof({declaringTypeName});");
+            sb.AppendLine($"{implPrefix}System.String __nameOfMethodForGenericCall = nameof({declaringTypeName}.{methodName});");
+            
+            if (isStaticMethod) {
+                sb.AppendLine($"{implPrefix}System.Object? __methodTargetForGenericCall = null;");
+            } else {
+                sb.AppendLine($"{implPrefix}System.Object? __methodTargetForGenericCall = {convertedSelfParameterName};");
+            }
+
+            sb.AppendLine();
+            
+            if (convertedParameterNames.Count > 0) {
+                sb.AppendLine($"{implPrefix}System.Object[] __parametersForGenericCall = new System.Object[] {{ {convertedParameterNamesString} }};");
+
+                List<string> parameterTypeNames = new();
+                
+                foreach (var parameter in parameters) {
+                    Type parameterType = parameter.ParameterType;
+                    string parameterTypeName = parameterType.GetFullNameOrName();
+
+                    bool isGenericParameterType = parameterType.IsGenericParameter ||
+                                                  parameterType.IsGenericMethodParameter;
+
+                    if (isGenericParameterType) {
+                        string convertedParameterTypeName = $"{parameterTypeName}Converted";
+                        
+                        if (convertedGenericArgumentNames.Contains(convertedParameterTypeName)) {
+                            parameterTypeNames.Add(convertedParameterTypeName);
+                        } else {
+                            throw new Exception("No converted generic parameter type");    
+                        }
+                    } else {
+                        parameterTypeNames.Add($"typeof({parameterTypeName})");
+                    }
+                }
+
+                string parameterTypeNamesString = string.Join(", ", parameterTypeNames);
+                
+                sb.AppendLine($"{implPrefix}System.Type[] __parameterTypesForGenericCall = new[] {{ {parameterTypeNamesString} }};");
+            } else {
+                sb.AppendLine($"{implPrefix}System.Object[]? __parametersForGenericCall = null;");
+                sb.AppendLine($"{implPrefix}System.Type[] __parameterTypesForGenericCall = System.Type.EmptyTypes;");
+            }
+
+            sb.AppendLine();
+
+            string convertedGenericArgumentNamesString = string.Join(", ", convertedGenericArgumentNames);
+            
+            sb.AppendLine($"{implPrefix}System.Type[] __genericParameterTypesForGenericCall = new[] {{ {convertedGenericArgumentNamesString} }};");
+
+            sb.AppendLine();
+            
+            sb.AppendLine($"{implPrefix}System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, {numberOfGenericArguments}, __parameterTypesForGenericCall) ?? throw new Exception(\"Method {methodName} not found\");");
+            sb.AppendLine($"{implPrefix}System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);");
+
+            sb.AppendLine();
+
+            if (isReturning) {
+                returnValuePrefix += $"({returnOrSetterOrEventHandlerType.GetFullNameOrName()})";
+            }
+            
+            sb.AppendLine($"{implPrefix}{returnValuePrefix}__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);");
+        } else {
+            sb.AppendLine($"{implPrefix}{returnValuePrefix}{methodTarget}{methodNameForInvocation}{methodInvocationPrefix}{convertedParameterNamesString}{methodInvocationSuffix};");
+        }
 
         string? convertedReturnValueName = null;
         string? returnValueBoxing = null;

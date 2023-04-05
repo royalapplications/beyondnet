@@ -134,14 +134,14 @@ public class MemberCollector
     {
         // TODO: Generics
         #region Comment out to enable generic methods
-        if (methodInfo.IsGenericMethod ||
-            methodInfo.IsGenericMethodDefinition ||
-            methodInfo.IsConstructedGenericMethod ||
-            methodInfo.ContainsGenericParameters) {
-            unsupportedMembers[methodInfo] = "Is Generic";
-            
-            return;
-        }
+        // if (methodInfo.IsGenericMethod ||
+        //     methodInfo.IsGenericMethodDefinition ||
+        //     methodInfo.IsConstructedGenericMethod ||
+        //     methodInfo.ContainsGenericParameters) {
+        //     unsupportedMembers[methodInfo] = "Is Generic";
+        //     
+        //     return;
+        // }
         #endregion
         
         // This filters out getters/setters and operator overloading methods

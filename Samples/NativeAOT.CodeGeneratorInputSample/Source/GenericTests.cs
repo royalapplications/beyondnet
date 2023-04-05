@@ -9,6 +9,34 @@ public class GenericTests
         return typeof(T);
     }
     
+    public static Type[] ReturnGenericTypes<T1, T2>()
+    {
+        return new [] {
+            typeof(T1),
+            typeof(T2)
+        };
+    }
+
+    public static T? ReturnDefaultValueOfGenericType<T>()
+    {
+        return default;
+    }
+    
+    public static T?[] ReturnArrayOfDefaultValuesOfGenericType<T>(int numberOfElements)
+    {
+        if (numberOfElements <= 0) {
+            return Array.Empty<T>();
+        }
+        
+        List<T?> defaultValues = new();
+
+        for (int i = 0; i < numberOfElements; i++) {
+            defaultValues.Add(default);
+        }
+        
+        return defaultValues.ToArray();
+    }
+    
     public static Type CallReturnGenericTypeThroughReflection(Type T)
     {
         object? methodTarget = null;
@@ -17,9 +45,9 @@ public class GenericTests
         Type targetType = typeof(GenericTests);
         string nameOfMethod = nameof(ReturnGenericType);
         Type[] genericParameterTypes = new[] { T };
-        Type[] parameterTypes = Array.Empty<Type>();
+        Type[] parameterTypes = Type.EmptyTypes;
 
-        MethodInfo? method = targetType.GetMethod(
+        System.Reflection.MethodInfo? method = targetType.GetMethod(
             nameOfMethod,
             genericParameterTypes.Length,
             parameterTypes
@@ -30,7 +58,7 @@ public class GenericTests
         }
 
         MethodInfo genericMethod = method.MakeGenericMethod(genericParameterTypes);
-
+        
         object? untypedReturnValue = genericMethod.Invoke(
             methodTarget,
             parameters

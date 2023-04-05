@@ -214,7 +214,11 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         
         if (type.IsPrimitive ||
             type.IsPointer ||
-            type.IsByRef) {
+            type.IsByRef ||
+            type.IsGenericParameter ||
+            type.IsGenericMethodParameter ||
+            type.IsGenericTypeParameter ||
+            type.IsConstructedGenericType) {
             // No need to generate C code for those kinds of types
 
             return string.Empty;
@@ -298,6 +302,8 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         TypeDescriptorRegistry typeDescriptorRegistry
     )
     {
+        // TODO: Generics
+        
         Type type = typeDescriptor.ManagedType;
         
         MethodInfo? invokeMethod = typeDescriptor.ManagedType.GetDelegateInvokeMethod();
@@ -313,10 +319,24 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         }
         
         foreach (var parameter in parameterInfos) {
-            if (parameter.IsOut ||
-                parameter.ParameterType.IsByRef) {
-                sb.AppendLine($"// TODO: ({cTypeName}) Unsupported delegate type. Reason: Has by ref or out parameters");
+            if (parameter.IsOut) {
+                sb.AppendLine($"// TODO: ({cTypeName}) Unsupported delegate type. Reason: Has out parameters");
+                
+                return;
+            }
 
+            Type parameterType = parameter.ParameterType;
+            
+            if (parameterType.IsByRef) {
+                sb.AppendLine($"// TODO: ({cTypeName}) Unsupported delegate type. Reason: Has by ref parameters");
+                
+                return;
+            }
+            
+            if (parameterType.IsGenericParameter ||
+                parameterType.IsGenericMethodParameter) {
+                sb.AppendLine($"// TODO: ({cTypeName}) Unsupported delegate type. Reason: Has generic parameters");
+                
                 return;
             }
         }
@@ -348,6 +368,8 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
             true,
             type,
             parameterInfos,
+            false,
+            Array.Empty<Type>(),
             typeDescriptorRegistry
         );
         

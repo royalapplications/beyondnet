@@ -25,9 +25,23 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
         var parameterInfos = invokeMethod?.GetParameters() ?? Array.Empty<ParameterInfo>();
 
         foreach (var parameter in parameterInfos) {
-            if (parameter.IsOut ||
-                parameter.ParameterType.IsByRef) {
-                sb.AppendLine("\t// TODO: Unsupported delegate type. Reason: Has by ref or out parameters");
+            if (parameter.IsOut) {
+                sb.AppendLine("\t// TODO: Unsupported delegate type. Reason: Has out parameters");
+                
+                return;
+            }
+
+            Type parameterType = parameter.ParameterType;
+            
+            if (parameterType.IsByRef) {
+                sb.AppendLine("\t// TODO: Unsupported delegate type. Reason: Has by ref parameters");
+                
+                return;
+            }
+            
+            if (parameterType.IsGenericParameter ||
+                parameterType.IsGenericMethodParameter) {
+                sb.AppendLine("\t// TODO: Unsupported delegate type. Reason: Has generic parameters");
                 
                 return;
             }

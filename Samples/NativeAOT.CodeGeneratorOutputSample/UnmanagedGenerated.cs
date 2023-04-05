@@ -1,5 +1,5 @@
-// Number of generated types: 430
-// Number of generated members: 4067
+// Number of generated types: 649
+// Number of generated members: 4111
 
 // <Header>
 using System;
@@ -6456,8 +6456,47 @@ internal unsafe class System_Reflection_MemberTypes
 
 internal unsafe class System_Enum
 {
-	[UnmanagedCallersOnly(EntryPoint = "System_Enum_GetName")]
-	internal static byte* /* System.String */ System_Enum_GetName(void* /* System.Type */ enumType, void* /* System.Object */ value, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_GetName_A1")]
+	internal static byte* /* System.String */ System_Enum_GetName_A1(void* /* System.Type */ TEnum, void* /* TEnum */ value, void** /* System.Exception */ __outException)
+	{
+		System.Type TEnumConverted = InteropUtils.GetInstance<System.Type>(TEnum);
+		System.Object valueConverted = InteropUtils.GetInstance<System.Object>(value);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Enum);
+			System.String __nameOfMethodForGenericCall = nameof(System.Enum.GetName);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { valueConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { TEnumConverted };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TEnumConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method GetName not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.String __returnValue = (System.String)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			byte* __returnValueNative = __returnValue.CopyToCString();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_GetName_1")]
+	internal static byte* /* System.String */ System_Enum_GetName_1(void* /* System.Type */ enumType, void* /* System.Object */ value, void** /* System.Exception */ __outException)
 	{
 		System.Type enumTypeConverted = InteropUtils.GetInstance<System.Type>(enumType);
 		System.Object valueConverted = InteropUtils.GetInstance<System.Object>(value);
@@ -6483,8 +6522,46 @@ internal unsafe class System_Enum
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint = "System_Enum_GetNames")]
-	internal static void* /* System.String[] */ System_Enum_GetNames(void* /* System.Type */ enumType, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_GetNames_A1")]
+	internal static void* /* System.String[] */ System_Enum_GetNames_A1(void* /* System.Type */ TEnum, void** /* System.Exception */ __outException)
+	{
+		System.Type TEnumConverted = InteropUtils.GetInstance<System.Type>(TEnum);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Enum);
+			System.String __nameOfMethodForGenericCall = nameof(System.Enum.GetNames);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[]? __parametersForGenericCall = null;
+			System.Type[] __parameterTypesForGenericCall = System.Type.EmptyTypes;
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TEnumConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method GetNames not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.String[] __returnValue = (System.String[])__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_GetNames_1")]
+	internal static void* /* System.String[] */ System_Enum_GetNames_1(void* /* System.Type */ enumType, void** /* System.Exception */ __outException)
 	{
 		System.Type enumTypeConverted = InteropUtils.GetInstance<System.Type>(enumType);
 	
@@ -6535,8 +6612,46 @@ internal unsafe class System_Enum
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint = "System_Enum_GetValues")]
-	internal static void* /* System.Array */ System_Enum_GetValues(void* /* System.Type */ enumType, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_GetValues_A1")]
+	internal static void* /* System.Array */ System_Enum_GetValues_A1(void* /* System.Type */ TEnum, void** /* System.Exception */ __outException)
+	{
+		System.Type TEnumConverted = InteropUtils.GetInstance<System.Type>(TEnum);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Enum);
+			System.String __nameOfMethodForGenericCall = nameof(System.Enum.GetValues);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[]? __parametersForGenericCall = null;
+			System.Type[] __parameterTypesForGenericCall = System.Type.EmptyTypes;
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TEnumConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method GetValues not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Array __returnValue = (System.Array)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_GetValues_1")]
+	internal static void* /* System.Array */ System_Enum_GetValues_1(void* /* System.Type */ enumType, void** /* System.Exception */ __outException)
 	{
 		System.Type enumTypeConverted = InteropUtils.GetInstance<System.Type>(enumType);
 	
@@ -6561,8 +6676,46 @@ internal unsafe class System_Enum
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint = "System_Enum_GetValuesAsUnderlyingType")]
-	internal static void* /* System.Array */ System_Enum_GetValuesAsUnderlyingType(void* /* System.Type */ enumType, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_GetValuesAsUnderlyingType_A1")]
+	internal static void* /* System.Array */ System_Enum_GetValuesAsUnderlyingType_A1(void* /* System.Type */ TEnum, void** /* System.Exception */ __outException)
+	{
+		System.Type TEnumConverted = InteropUtils.GetInstance<System.Type>(TEnum);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Enum);
+			System.String __nameOfMethodForGenericCall = nameof(System.Enum.GetValuesAsUnderlyingType);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[]? __parametersForGenericCall = null;
+			System.Type[] __parameterTypesForGenericCall = System.Type.EmptyTypes;
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TEnumConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method GetValuesAsUnderlyingType not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Array __returnValue = (System.Array)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_GetValuesAsUnderlyingType_1")]
+	internal static void* /* System.Array */ System_Enum_GetValuesAsUnderlyingType_1(void* /* System.Type */ enumType, void** /* System.Exception */ __outException)
 	{
 		System.Type enumTypeConverted = InteropUtils.GetInstance<System.Type>(enumType);
 	
@@ -6619,8 +6772,47 @@ internal unsafe class System_Enum
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint = "System_Enum_IsDefined")]
-	internal static byte /* System.Boolean */ System_Enum_IsDefined(void* /* System.Type */ enumType, void* /* System.Object */ value, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_IsDefined_A1")]
+	internal static byte /* System.Boolean */ System_Enum_IsDefined_A1(void* /* System.Type */ TEnum, void* /* TEnum */ value, void** /* System.Exception */ __outException)
+	{
+		System.Type TEnumConverted = InteropUtils.GetInstance<System.Type>(TEnum);
+		System.Object valueConverted = InteropUtils.GetInstance<System.Object>(value);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Enum);
+			System.String __nameOfMethodForGenericCall = nameof(System.Enum.IsDefined);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { valueConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { TEnumConverted };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TEnumConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method IsDefined not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Boolean __returnValue = (System.Boolean)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_IsDefined_1")]
+	internal static byte /* System.Boolean */ System_Enum_IsDefined_1(void* /* System.Type */ enumType, void* /* System.Object */ value, void** /* System.Exception */ __outException)
 	{
 		System.Type enumTypeConverted = InteropUtils.GetInstance<System.Type>(enumType);
 		System.Object valueConverted = InteropUtils.GetInstance<System.Object>(value);
@@ -6682,6 +6874,85 @@ internal unsafe class System_Enum
 	
 	    try {
 			System.Object __returnValue = System.Enum.Parse(enumTypeConverted, valueConverted, ignoreCaseConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_Parse_A1")]
+	internal static void* /* System.Object */ System_Enum_Parse_A1(void* /* System.Type */ TEnum, byte* /* System.String */ value, void** /* System.Exception */ __outException)
+	{
+		System.Type TEnumConverted = InteropUtils.GetInstance<System.Type>(TEnum);
+		System.String valueConverted = InteropUtils.ToDotNetString(value);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Enum);
+			System.String __nameOfMethodForGenericCall = nameof(System.Enum.Parse);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { valueConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.String) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TEnumConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method Parse not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Object __returnValue = (System.Object)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_Parse_A1_1")]
+	internal static void* /* System.Object */ System_Enum_Parse_A1_1(void* /* System.Type */ TEnum, byte* /* System.String */ value, byte /* System.Boolean */ ignoreCase, void** /* System.Exception */ __outException)
+	{
+		System.Type TEnumConverted = InteropUtils.GetInstance<System.Type>(TEnum);
+		System.String valueConverted = InteropUtils.ToDotNetString(value);
+		System.Boolean ignoreCaseConverted = ignoreCase.ToBool();
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Enum);
+			System.String __nameOfMethodForGenericCall = nameof(System.Enum.Parse);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { valueConverted, ignoreCaseConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.String), typeof(System.Boolean) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TEnumConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method Parse not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Object __returnValue = (System.Object)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -6773,6 +7044,10 @@ internal unsafe class System_Enum
 		}
 	}
 	
+
+	// TODO: Generic Methods with out parameters are not supported
+
+	// TODO: Generic Methods with out parameters are not supported
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Enum_Equals")]
 	internal static byte /* System.Boolean */ System_Enum_Equals(void* /* System.Enum */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
@@ -9234,6 +9509,135 @@ internal unsafe class System_String
 	
 	    try {
 			System.String __returnValue = System.String.Format(providerConverted, formatConverted, argsConverted);
+			byte* __returnValueNative = __returnValue.CopyToCString();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_String_Format_A1")]
+	internal static byte* /* System.String */ System_String_Format_A1(void* /* System.Type */ TArg0, void* /* System.IFormatProvider */ provider, void* /* System.Text.CompositeFormat */ format, void* /* TArg0 */ arg0, void** /* System.Exception */ __outException)
+	{
+		System.Type TArg0Converted = InteropUtils.GetInstance<System.Type>(TArg0);
+		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
+		System.Text.CompositeFormat formatConverted = InteropUtils.GetInstance<System.Text.CompositeFormat>(format);
+		System.Object arg0Converted = InteropUtils.GetInstance<System.Object>(arg0);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.String);
+			System.String __nameOfMethodForGenericCall = nameof(System.String.Format);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { providerConverted, formatConverted, arg0Converted };
+			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.IFormatProvider), typeof(System.Text.CompositeFormat), TArg0Converted };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TArg0Converted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method Format not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.String __returnValue = (System.String)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			byte* __returnValueNative = __returnValue.CopyToCString();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_String_Format_A2")]
+	internal static byte* /* System.String */ System_String_Format_A2(void* /* System.Type */ TArg0, void* /* System.Type */ TArg1, void* /* System.IFormatProvider */ provider, void* /* System.Text.CompositeFormat */ format, void* /* TArg0 */ arg0, void* /* TArg1 */ arg1, void** /* System.Exception */ __outException)
+	{
+		System.Type TArg0Converted = InteropUtils.GetInstance<System.Type>(TArg0);
+		System.Type TArg1Converted = InteropUtils.GetInstance<System.Type>(TArg1);
+		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
+		System.Text.CompositeFormat formatConverted = InteropUtils.GetInstance<System.Text.CompositeFormat>(format);
+		System.Object arg0Converted = InteropUtils.GetInstance<System.Object>(arg0);
+		System.Object arg1Converted = InteropUtils.GetInstance<System.Object>(arg1);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.String);
+			System.String __nameOfMethodForGenericCall = nameof(System.String.Format);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { providerConverted, formatConverted, arg0Converted, arg1Converted };
+			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.IFormatProvider), typeof(System.Text.CompositeFormat), TArg0Converted, TArg1Converted };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TArg0Converted, TArg1Converted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 2, __parameterTypesForGenericCall) ?? throw new Exception("Method Format not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.String __returnValue = (System.String)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			byte* __returnValueNative = __returnValue.CopyToCString();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_String_Format_A3")]
+	internal static byte* /* System.String */ System_String_Format_A3(void* /* System.Type */ TArg0, void* /* System.Type */ TArg1, void* /* System.Type */ TArg2, void* /* System.IFormatProvider */ provider, void* /* System.Text.CompositeFormat */ format, void* /* TArg0 */ arg0, void* /* TArg1 */ arg1, void* /* TArg2 */ arg2, void** /* System.Exception */ __outException)
+	{
+		System.Type TArg0Converted = InteropUtils.GetInstance<System.Type>(TArg0);
+		System.Type TArg1Converted = InteropUtils.GetInstance<System.Type>(TArg1);
+		System.Type TArg2Converted = InteropUtils.GetInstance<System.Type>(TArg2);
+		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
+		System.Text.CompositeFormat formatConverted = InteropUtils.GetInstance<System.Text.CompositeFormat>(format);
+		System.Object arg0Converted = InteropUtils.GetInstance<System.Object>(arg0);
+		System.Object arg1Converted = InteropUtils.GetInstance<System.Object>(arg1);
+		System.Object arg2Converted = InteropUtils.GetInstance<System.Object>(arg2);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.String);
+			System.String __nameOfMethodForGenericCall = nameof(System.String.Format);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { providerConverted, formatConverted, arg0Converted, arg1Converted, arg2Converted };
+			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.IFormatProvider), typeof(System.Text.CompositeFormat), TArg0Converted, TArg1Converted, TArg2Converted };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TArg0Converted, TArg1Converted, TArg2Converted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 3, __parameterTypesForGenericCall) ?? throw new Exception("Method Format not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.String __returnValue = (System.String)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
 			byte* __returnValueNative = __returnValue.CopyToCString();
 	
 	        if (__outException is not null) {
@@ -13513,6 +13917,8 @@ internal unsafe class System_Array
 	}
 	
 
+	// TODO: Generic Methods with ref parameters are not supported
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Array_CreateInstance")]
 	internal static void* /* System.Array */ System_Array_CreateInstance(void* /* System.Type */ elementType, int /* System.Int32 */ length, void** /* System.Exception */ __outException)
 	{
@@ -14372,6 +14778,10 @@ internal unsafe class System_Array
 	}
 	
 
+	// TODO: Generic Methods with array parameters are not supported
+
+	// TODO: Generic Methods with array parameters are not supported
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Array_CopyTo")]
 	internal static void /* System.Void */ System_Array_CopyTo(void* /* System.Array */ __self, void* /* System.Array */ array, int /* System.Int32 */ index, void** /* System.Exception */ __outException)
 	{
@@ -14429,6 +14839,48 @@ internal unsafe class System_Array
 		}
 	}
 	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Array_Empty_A1")]
+	internal static void* /* System.Array */ System_Array_Empty_A1(void* /* System.Type */ T, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Array);
+			System.String __nameOfMethodForGenericCall = nameof(System.Array.Empty);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[]? __parametersForGenericCall = null;
+			System.Type[] __parameterTypesForGenericCall = System.Type.EmptyTypes;
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method Empty not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Array __returnValue = (System.Array)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	// TODO: Generic Methods with array parameters are not supported
+
+	// TODO: Generic Methods with array parameters are not supported
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Array_IndexOf")]
 	internal static int /* System.Int32 */ System_Array_IndexOf(void* /* System.Array */ array, void* /* System.Object */ value, void** /* System.Exception */ __outException)
@@ -14508,6 +14960,12 @@ internal unsafe class System_Array
 	}
 	
 
+	// TODO: Generic Methods with array parameters are not supported
+
+	// TODO: Generic Methods with array parameters are not supported
+
+	// TODO: Generic Methods with array parameters are not supported
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Array_LastIndexOf")]
 	internal static int /* System.Int32 */ System_Array_LastIndexOf(void* /* System.Array */ array, void* /* System.Object */ value, void** /* System.Exception */ __outException)
 	{
@@ -14586,6 +15044,12 @@ internal unsafe class System_Array
 	}
 	
 
+	// TODO: Generic Methods with array parameters are not supported
+
+	// TODO: Generic Methods with array parameters are not supported
+
+	// TODO: Generic Methods with array parameters are not supported
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Array_Reverse")]
 	internal static void /* System.Void */ System_Array_Reverse(void* /* System.Array */ array, void** /* System.Exception */ __outException)
 	{
@@ -14631,6 +15095,10 @@ internal unsafe class System_Array
 		}
 	}
 	
+
+	// TODO: Generic Methods with array parameters are not supported
+
+	// TODO: Generic Methods with array parameters are not supported
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Array_Sort")]
 	internal static void /* System.Void */ System_Array_Sort(void* /* System.Array */ array, void** /* System.Exception */ __outException)
@@ -14823,6 +15291,14 @@ internal unsafe class System_Array
 		}
 	}
 	
+
+	// TODO: Generic Methods with array parameters are not supported
+
+	// TODO: Generic Methods with array parameters are not supported
+
+	// TODO: Generic Methods with array parameters are not supported
+
+	// TODO: Generic Methods with array parameters are not supported
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Array_GetEnumerator")]
 	internal static void* /* System.Collections.IEnumerator */ System_Array_GetEnumerator(void* /* System.Array */ __self, void** /* System.Exception */ __outException)
@@ -15210,7 +15686,14 @@ internal unsafe class System_TypeCode
 }
 
 
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
 
+// Type "T" was skipped. Reason: It has no full name.
+
+
+// Type "T" was skipped. Reason: It has no full name.
 
 
 
@@ -15271,46 +15754,130 @@ internal unsafe class System_Collections_IComparer
 
 
 
+// Type "T" was skipped. Reason: It has no full name.
+
+
+// Type "T" was skipped. Reason: It has no full name.
+
+
+// Type "T" was skipped. Reason: It has no full name.
+
+
+// Type "T" was skipped. Reason: It has no full name.
+
+
+// Type "TOutput" was skipped. Reason: It has no full name.
+
+
+// Type "TInput" was skipped. Reason: It has no full name.
+
+
+// Type "T" was skipped. Reason: It has no full name.
+
+
+// Type "T" was skipped. Reason: It has no full name.
+
+
+// Type "T" was skipped. Reason: It has no full name.
+
+
+// Type "T" was skipped. Reason: It has no full name.
+
+// Type "T" was skipped. Reason: It has no full name.
 
 
 
+// Type "T" was skipped. Reason: It has no full name.
+
+
+// Type "T" was skipped. Reason: It has no full name.
+
+
+// Type "T" was skipped. Reason: It has no full name.
+
+
+// Type "T" was skipped. Reason: It has no full name.
+
+// Type "T" was skipped. Reason: It has no full name.
 
 
 
+// Type "T" was skipped. Reason: It has no full name.
 
 
+// Type "T" was skipped. Reason: It has no full name.
 
 
+// Type "T" was skipped. Reason: It has no full name.
 
 
+// Type "T" was skipped. Reason: It has no full name.
 
 
+// Type "T" was skipped. Reason: It has no full name.
 
 
+// Type "T" was skipped. Reason: It has no full name.
 
 
+// Type "T" was skipped. Reason: It has no full name.
 
 
+// Type "T" was skipped. Reason: It has no full name.
 
 
+// Type "T" was skipped. Reason: It has no full name.
 
 
+// Type "T" was skipped. Reason: It has no full name.
 
 
+// Type "T" was skipped. Reason: It has no full name.
 
 
+// Type "T" was skipped. Reason: It has no full name.
 
 
+// Type "T" was skipped. Reason: It has no full name.
 
 
+// Type "TKey" was skipped. Reason: It has no full name.
 
 
+// Type "TValue" was skipped. Reason: It has no full name.
 
 
+// Type "T" was skipped. Reason: It has no full name.
 
 
+// Type "TKey" was skipped. Reason: It has no full name.
 
 
+// Type "TValue" was skipped. Reason: It has no full name.
+
+
+// Type "T" was skipped. Reason: It has no full name.
+
+
+// Type "TKey" was skipped. Reason: It has no full name.
+
+
+// Type "TValue" was skipped. Reason: It has no full name.
+
+
+// Type "T" was skipped. Reason: It has no full name.
+
+
+// Type "TKey" was skipped. Reason: It has no full name.
+
+
+// Type "TValue" was skipped. Reason: It has no full name.
+
+
+// Type "T" was skipped. Reason: It has no full name.
+
+
+// Type "T" was skipped. Reason: It has no full name.
 
 internal unsafe class System_Collections_IEnumerator
 {
@@ -20793,6 +21360,9 @@ internal unsafe class System_Version
 
 
 
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
 
 internal unsafe class System_Reflection_ProcessorArchitecture
 {
@@ -20827,6 +21397,9 @@ internal unsafe class System_Reflection_AssemblyContentType
 
 
 
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
 internal unsafe class System_Reflection_AssemblyNameFlags
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_AssemblyNameFlags_TypeOf")]
@@ -29150,16 +29723,34 @@ internal unsafe class System_MidpointRounding
 }
 
 
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
 
 
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
 
 
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
 
 
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
 
 
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
 
 
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
 internal unsafe class System_Decimal
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_FromOACurrency")]
@@ -30535,6 +31126,123 @@ internal unsafe class System_Decimal
 	}
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_CreateChecked_A1")]
+	internal static void* /* System.Decimal */ System_Decimal_CreateChecked_A1(void* /* System.Type */ TOther, void* /* TOther */ value, void** /* System.Exception */ __outException)
+	{
+		System.Type TOtherConverted = InteropUtils.GetInstance<System.Type>(TOther);
+		System.Object valueConverted = InteropUtils.GetInstance<System.Object>(value);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Decimal);
+			System.String __nameOfMethodForGenericCall = nameof(System.Decimal.CreateChecked);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { valueConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { TOtherConverted };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TOtherConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method CreateChecked not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Decimal __returnValue = (System.Decimal)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_CreateSaturating_A1")]
+	internal static void* /* System.Decimal */ System_Decimal_CreateSaturating_A1(void* /* System.Type */ TOther, void* /* TOther */ value, void** /* System.Exception */ __outException)
+	{
+		System.Type TOtherConverted = InteropUtils.GetInstance<System.Type>(TOther);
+		System.Object valueConverted = InteropUtils.GetInstance<System.Object>(value);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Decimal);
+			System.String __nameOfMethodForGenericCall = nameof(System.Decimal.CreateSaturating);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { valueConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { TOtherConverted };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TOtherConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method CreateSaturating not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Decimal __returnValue = (System.Decimal)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_CreateTruncating_A1")]
+	internal static void* /* System.Decimal */ System_Decimal_CreateTruncating_A1(void* /* System.Type */ TOther, void* /* TOther */ value, void** /* System.Exception */ __outException)
+	{
+		System.Type TOtherConverted = InteropUtils.GetInstance<System.Type>(TOther);
+		System.Object valueConverted = InteropUtils.GetInstance<System.Object>(value);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Decimal);
+			System.String __nameOfMethodForGenericCall = nameof(System.Decimal.CreateTruncating);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { valueConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { TOtherConverted };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TOtherConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method CreateTruncating not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Decimal __returnValue = (System.Decimal)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_IsCanonical")]
 	internal static byte /* System.Boolean */ System_Decimal_IsCanonical(void* /* System.Decimal */ value, void** /* System.Exception */ __outException)
 	{
@@ -30781,33 +31489,8 @@ internal unsafe class System_Decimal
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_Create")]
-	internal static void* /* System.Decimal */ System_Decimal_Create(int /* System.Int32 */ value, void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Decimal __returnValue = new System.Decimal(value);
-			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
 	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_Create_1")]
-	internal static void* /* System.Decimal */ System_Decimal_Create_1(uint /* System.UInt32 */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.Decimal */ System_Decimal_Create_1(int /* System.Int32 */ value, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
@@ -30832,7 +31515,7 @@ internal unsafe class System_Decimal
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_Create_2")]
-	internal static void* /* System.Decimal */ System_Decimal_Create_2(long /* System.Int64 */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.Decimal */ System_Decimal_Create_2(uint /* System.UInt32 */ value, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
@@ -30857,7 +31540,7 @@ internal unsafe class System_Decimal
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_Create_3")]
-	internal static void* /* System.Decimal */ System_Decimal_Create_3(ulong /* System.UInt64 */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.Decimal */ System_Decimal_Create_3(long /* System.Int64 */ value, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
@@ -30882,7 +31565,7 @@ internal unsafe class System_Decimal
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_Create_4")]
-	internal static void* /* System.Decimal */ System_Decimal_Create_4(float /* System.Single */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.Decimal */ System_Decimal_Create_4(ulong /* System.UInt64 */ value, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
@@ -30907,7 +31590,7 @@ internal unsafe class System_Decimal
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_Create_5")]
-	internal static void* /* System.Decimal */ System_Decimal_Create_5(double /* System.Double */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.Decimal */ System_Decimal_Create_5(float /* System.Single */ value, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
@@ -30932,7 +31615,32 @@ internal unsafe class System_Decimal
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_Create_6")]
-	internal static void* /* System.Decimal */ System_Decimal_Create_6(void* /* System.Int32[] */ bits, void** /* System.Exception */ __outException)
+	internal static void* /* System.Decimal */ System_Decimal_Create_6(double /* System.Double */ value, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Decimal __returnValue = new System.Decimal(value);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_Create_7")]
+	internal static void* /* System.Decimal */ System_Decimal_Create_7(void* /* System.Int32[] */ bits, void** /* System.Exception */ __outException)
 	{
 		System.Int32[] bitsConverted = InteropUtils.GetInstance<System.Int32[]>(bits);
 	
@@ -30957,8 +31665,8 @@ internal unsafe class System_Decimal
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_Create_7")]
-	internal static void* /* System.Decimal */ System_Decimal_Create_7(int /* System.Int32 */ lo, int /* System.Int32 */ mid, int /* System.Int32 */ hi, byte /* System.Boolean */ isNegative, byte /* System.Byte */ scale, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_Create_8")]
+	internal static void* /* System.Decimal */ System_Decimal_Create_8(int /* System.Int32 */ lo, int /* System.Int32 */ mid, int /* System.Int32 */ hi, byte /* System.Boolean */ isNegative, byte /* System.Byte */ scale, void** /* System.Exception */ __outException)
 	{
 		System.Boolean isNegativeConverted = isNegative.ToBool();
 	
@@ -31091,6 +31799,9 @@ internal unsafe class System_Decimal
 
 
 
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
 internal unsafe class System_DateTime
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_Add")]
@@ -41182,6 +41893,9 @@ internal unsafe class System_Runtime_Serialization_StreamingContextStates
 
 
 
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
 internal unsafe class System_RuntimeTypeHandle
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_RuntimeTypeHandle_FromIntPtr")]
@@ -45471,6 +46185,95 @@ internal unsafe class System_Reflection_MethodInfo
 	}
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodInfo_CreateDelegate_A1")]
+	internal static void* /* System.Object */ System_Reflection_MethodInfo_CreateDelegate_A1(void* /* System.Type */ T, void* /* System.Reflection.MethodInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.MethodInfo __selfConverted = InteropUtils.GetInstance<System.Reflection.MethodInfo>(__self);
+	
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Reflection.MethodInfo);
+			System.String __nameOfMethodForGenericCall = nameof(System.Reflection.MethodInfo.CreateDelegate);
+			System.Object? __methodTargetForGenericCall = __selfConverted;
+	
+			System.Object[]? __parametersForGenericCall = null;
+			System.Type[] __parameterTypesForGenericCall = System.Type.EmptyTypes;
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method CreateDelegate not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Object __returnValue = (System.Object)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodInfo_CreateDelegate_A1_1")]
+	internal static void* /* System.Object */ System_Reflection_MethodInfo_CreateDelegate_A1_1(void* /* System.Type */ T, void* /* System.Reflection.MethodInfo */ __self, void* /* System.Object */ target, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.MethodInfo __selfConverted = InteropUtils.GetInstance<System.Reflection.MethodInfo>(__self);
+	
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Object targetConverted = InteropUtils.GetInstance<System.Object>(target);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Reflection.MethodInfo);
+			System.String __nameOfMethodForGenericCall = nameof(System.Reflection.MethodInfo.CreateDelegate);
+			System.Object? __methodTargetForGenericCall = __selfConverted;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { targetConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.Object) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method CreateDelegate not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Object __returnValue = (System.Object)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodInfo_Equals")]
 	internal static byte /* System.Boolean */ System_Reflection_MethodInfo_Equals(void* /* System.Reflection.MethodInfo */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
 	{
@@ -45958,6 +46761,8 @@ internal unsafe class System_Delegate
 }
 
 
+// Type "T" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
 
 
 
@@ -49447,6 +50252,7 @@ internal unsafe class System_Threading_Tasks_ValueTask
 }
 
 
+// Type "TResult" was skipped. Reason: It has no full name.
 internal unsafe class System_Runtime_CompilerServices_ValueTaskAwaiter
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_ValueTaskAwaiter_GetResult")]
@@ -50372,6 +51178,30 @@ internal unsafe class System_IAsyncResult
 }
 
 
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg2" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg2" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg2" was skipped. Reason: It has no full name.
+// Type "TArg3" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg2" was skipped. Reason: It has no full name.
+// Type "TArg3" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg2" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg2" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg2" was skipped. Reason: It has no full name.
+// Type "TArg3" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg2" was skipped. Reason: It has no full name.
+// Type "TArg3" was skipped. Reason: It has no full name.
 
 
 
@@ -50921,6 +51751,7 @@ internal unsafe class System_Runtime_CompilerServices_YieldAwaitable_YieldAwaite
 }
 
 
+// Type "TResult" was skipped. Reason: It has no full name.
 
 
 internal unsafe class System_AsyncCallback
@@ -60525,6 +61356,7 @@ internal unsafe class System_Globalization_DateTimeFormatInfo
 
 
 
+// Type "TState" was skipped. Reason: It has no full name.
 
 internal unsafe class System_CharEnumerator
 {
@@ -60947,6 +61779,12 @@ internal unsafe class System_Text_CompositeFormat
 
 
 
+// Type "TArg0" was skipped. Reason: It has no full name.
+// Type "TArg0" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg0" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg2" was skipped. Reason: It has no full name.
 internal unsafe class System_StringSplitOptions
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_StringSplitOptions_TypeOf")]
@@ -64421,7 +65259,27 @@ internal unsafe class System_Text_Encoder
 }
 
 
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TEnum" was skipped. Reason: It has no full name.
 
+// Type "TEnum" was skipped. Reason: It has no full name.
+
+// Type "TEnum" was skipped. Reason: It has no full name.
+// Type "TEnum" was skipped. Reason: It has no full name.
+// Type "TEnum" was skipped. Reason: It has no full name.
+// Type "TEnum" was skipped. Reason: It has no full name.
+// Type "TEnum" was skipped. Reason: It has no full name.
+// Type "TEnum" was skipped. Reason: It has no full name.
+
+// Type "TEnum" was skipped. Reason: It has no full name.
+
+// Type "TEnum" was skipped. Reason: It has no full name.
+
+// Type "TEnum" was skipped. Reason: It has no full name.
+
+// Type "TEnum" was skipped. Reason: It has no full name.
 internal unsafe class System_Reflection_GenericParameterAttributes
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_GenericParameterAttributes_TypeOf")]
@@ -66915,6 +67773,9 @@ internal unsafe class System_Reflection_MemberFilter
 
 
 
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
 internal unsafe class System_GC
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_GC_GetGCMemoryInfo")]
@@ -67623,6 +68484,84 @@ internal unsafe class System_GC
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_AllocateUninitializedArray_A1")]
+	internal static void* /* System.Array */ System_GC_AllocateUninitializedArray_A1(void* /* System.Type */ T, int /* System.Int32 */ length, byte /* System.Boolean */ pinned, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Boolean pinnedConverted = pinned.ToBool();
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.GC);
+			System.String __nameOfMethodForGenericCall = nameof(System.GC.AllocateUninitializedArray);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { length, pinnedConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.Int32), typeof(System.Boolean) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method AllocateUninitializedArray not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Array __returnValue = (System.Array)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_GC_AllocateArray_A1")]
+	internal static void* /* System.Array */ System_GC_AllocateArray_A1(void* /* System.Type */ T, int /* System.Int32 */ length, byte /* System.Boolean */ pinned, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Boolean pinnedConverted = pinned.ToBool();
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.GC);
+			System.String __nameOfMethodForGenericCall = nameof(System.GC.AllocateArray);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { length, pinnedConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.Int32), typeof(System.Boolean) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method AllocateArray not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Array __returnValue = (System.Array)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
 		}
 	}
 	
@@ -68482,6 +69421,10 @@ internal unsafe class System_GCNotificationStatus
 
 
 
+// Type "T" was skipped. Reason: It has no full name.
+
+
+// Type "T" was skipped. Reason: It has no full name.
 
 internal unsafe class System_Math
 {
@@ -92143,6 +93086,10 @@ internal unsafe class System_Random
 	}
 	
 
+	// TODO: Generic Methods with array parameters are not supported
+
+	// TODO: Generic Methods with array parameters are not supported
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Random_Create")]
 	internal static void* /* System.Random */ System_Random_Create(void** /* System.Exception */ __outException)
 	{
@@ -92241,7 +93188,13 @@ internal unsafe class System_Random
 
 
 
+// Type "T" was skipped. Reason: It has no full name.
 
+
+// Type "T" was skipped. Reason: It has no full name.
+
+
+// Type "T" was skipped. Reason: It has no full name.
 
 internal unsafe class System_IO_Path
 {
@@ -100971,6 +101924,153 @@ internal unsafe class System_Text_StringBuilder
 	}
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_AppendFormat_A1")]
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_AppendFormat_A1(void* /* System.Type */ TArg0, void* /* System.Text.StringBuilder */ __self, void* /* System.IFormatProvider */ provider, void* /* System.Text.CompositeFormat */ format, void* /* TArg0 */ arg0, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.StringBuilder __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder>(__self);
+	
+		System.Type TArg0Converted = InteropUtils.GetInstance<System.Type>(TArg0);
+		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
+		System.Text.CompositeFormat formatConverted = InteropUtils.GetInstance<System.Text.CompositeFormat>(format);
+		System.Object arg0Converted = InteropUtils.GetInstance<System.Object>(arg0);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Text.StringBuilder);
+			System.String __nameOfMethodForGenericCall = nameof(System.Text.StringBuilder.AppendFormat);
+			System.Object? __methodTargetForGenericCall = __selfConverted;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { providerConverted, formatConverted, arg0Converted };
+			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.IFormatProvider), typeof(System.Text.CompositeFormat), TArg0Converted };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TArg0Converted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method AppendFormat not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Text.StringBuilder __returnValue = (System.Text.StringBuilder)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_AppendFormat_A2")]
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_AppendFormat_A2(void* /* System.Type */ TArg0, void* /* System.Type */ TArg1, void* /* System.Text.StringBuilder */ __self, void* /* System.IFormatProvider */ provider, void* /* System.Text.CompositeFormat */ format, void* /* TArg0 */ arg0, void* /* TArg1 */ arg1, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.StringBuilder __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder>(__self);
+	
+		System.Type TArg0Converted = InteropUtils.GetInstance<System.Type>(TArg0);
+		System.Type TArg1Converted = InteropUtils.GetInstance<System.Type>(TArg1);
+		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
+		System.Text.CompositeFormat formatConverted = InteropUtils.GetInstance<System.Text.CompositeFormat>(format);
+		System.Object arg0Converted = InteropUtils.GetInstance<System.Object>(arg0);
+		System.Object arg1Converted = InteropUtils.GetInstance<System.Object>(arg1);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Text.StringBuilder);
+			System.String __nameOfMethodForGenericCall = nameof(System.Text.StringBuilder.AppendFormat);
+			System.Object? __methodTargetForGenericCall = __selfConverted;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { providerConverted, formatConverted, arg0Converted, arg1Converted };
+			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.IFormatProvider), typeof(System.Text.CompositeFormat), TArg0Converted, TArg1Converted };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TArg0Converted, TArg1Converted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 2, __parameterTypesForGenericCall) ?? throw new Exception("Method AppendFormat not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Text.StringBuilder __returnValue = (System.Text.StringBuilder)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_AppendFormat_A3")]
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_AppendFormat_A3(void* /* System.Type */ TArg0, void* /* System.Type */ TArg1, void* /* System.Type */ TArg2, void* /* System.Text.StringBuilder */ __self, void* /* System.IFormatProvider */ provider, void* /* System.Text.CompositeFormat */ format, void* /* TArg0 */ arg0, void* /* TArg1 */ arg1, void* /* TArg2 */ arg2, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.StringBuilder __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder>(__self);
+	
+		System.Type TArg0Converted = InteropUtils.GetInstance<System.Type>(TArg0);
+		System.Type TArg1Converted = InteropUtils.GetInstance<System.Type>(TArg1);
+		System.Type TArg2Converted = InteropUtils.GetInstance<System.Type>(TArg2);
+		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
+		System.Text.CompositeFormat formatConverted = InteropUtils.GetInstance<System.Text.CompositeFormat>(format);
+		System.Object arg0Converted = InteropUtils.GetInstance<System.Object>(arg0);
+		System.Object arg1Converted = InteropUtils.GetInstance<System.Object>(arg1);
+		System.Object arg2Converted = InteropUtils.GetInstance<System.Object>(arg2);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Text.StringBuilder);
+			System.String __nameOfMethodForGenericCall = nameof(System.Text.StringBuilder.AppendFormat);
+			System.Object? __methodTargetForGenericCall = __selfConverted;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { providerConverted, formatConverted, arg0Converted, arg1Converted, arg2Converted };
+			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.IFormatProvider), typeof(System.Text.CompositeFormat), TArg0Converted, TArg1Converted, TArg2Converted };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TArg0Converted, TArg1Converted, TArg2Converted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 3, __parameterTypesForGenericCall) ?? throw new Exception("Method AppendFormat not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Text.StringBuilder __returnValue = (System.Text.StringBuilder)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_AppendFormat_8")]
 	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_AppendFormat_8(void* /* System.Text.StringBuilder */ __self, void* /* System.IFormatProvider */ provider, void* /* System.Text.CompositeFormat */ format, void* /* System.Object[] */ args, void** /* System.Exception */ __outException)
 	{
@@ -101602,8 +102702,178 @@ internal unsafe class System_Text_StringBuilder_AppendInterpolatedStringHandler
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted")]
-	internal static void /* System.Void */ System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted(void* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ __self, byte* /* System.String */ value, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1")]
+	internal static void /* System.Void */ System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1(void* /* System.Type */ T, void* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ __self, void* /* T */ value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.StringBuilder.AppendInterpolatedStringHandler __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder.AppendInterpolatedStringHandler>(__self);
+	
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Object valueConverted = InteropUtils.GetInstance<System.Object>(value);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Text.StringBuilder.AppendInterpolatedStringHandler);
+			System.String __nameOfMethodForGenericCall = nameof(System.Text.StringBuilder.AppendInterpolatedStringHandler.AppendFormatted);
+			System.Object? __methodTargetForGenericCall = __selfConverted;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { valueConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method AppendFormatted not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1_1")]
+	internal static void /* System.Void */ System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1_1(void* /* System.Type */ T, void* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ __self, void* /* T */ value, byte* /* System.String */ format, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.StringBuilder.AppendInterpolatedStringHandler __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder.AppendInterpolatedStringHandler>(__self);
+	
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Object valueConverted = InteropUtils.GetInstance<System.Object>(value);
+		System.String formatConverted = InteropUtils.ToDotNetString(format);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Text.StringBuilder.AppendInterpolatedStringHandler);
+			System.String __nameOfMethodForGenericCall = nameof(System.Text.StringBuilder.AppendInterpolatedStringHandler.AppendFormatted);
+			System.Object? __methodTargetForGenericCall = __selfConverted;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { valueConverted, formatConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { TConverted, typeof(System.String) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method AppendFormatted not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1_2")]
+	internal static void /* System.Void */ System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1_2(void* /* System.Type */ T, void* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ __self, void* /* T */ value, int /* System.Int32 */ alignment, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.StringBuilder.AppendInterpolatedStringHandler __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder.AppendInterpolatedStringHandler>(__self);
+	
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Object valueConverted = InteropUtils.GetInstance<System.Object>(value);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Text.StringBuilder.AppendInterpolatedStringHandler);
+			System.String __nameOfMethodForGenericCall = nameof(System.Text.StringBuilder.AppendInterpolatedStringHandler.AppendFormatted);
+			System.Object? __methodTargetForGenericCall = __selfConverted;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { valueConverted, alignment };
+			System.Type[] __parameterTypesForGenericCall = new[] { TConverted, typeof(System.Int32) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method AppendFormatted not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1_3")]
+	internal static void /* System.Void */ System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1_3(void* /* System.Type */ T, void* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ __self, void* /* T */ value, int /* System.Int32 */ alignment, byte* /* System.String */ format, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.StringBuilder.AppendInterpolatedStringHandler __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder.AppendInterpolatedStringHandler>(__self);
+	
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Object valueConverted = InteropUtils.GetInstance<System.Object>(value);
+		System.String formatConverted = InteropUtils.ToDotNetString(format);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Text.StringBuilder.AppendInterpolatedStringHandler);
+			System.String __nameOfMethodForGenericCall = nameof(System.Text.StringBuilder.AppendInterpolatedStringHandler.AppendFormatted);
+			System.Object? __methodTargetForGenericCall = __selfConverted;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { valueConverted, alignment, formatConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { TConverted, typeof(System.Int32), typeof(System.String) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method AppendFormatted not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_1")]
+	internal static void /* System.Void */ System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_1(void* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ __self, byte* /* System.String */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -101631,8 +102901,8 @@ internal unsafe class System_Text_StringBuilder_AppendInterpolatedStringHandler
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_1")]
-	internal static void /* System.Void */ System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_1(void* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ __self, byte* /* System.String */ value, int /* System.Int32 */ alignment, byte* /* System.String */ format, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_2")]
+	internal static void /* System.Void */ System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_2(void* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ __self, byte* /* System.String */ value, int /* System.Int32 */ alignment, byte* /* System.String */ format, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -101661,8 +102931,8 @@ internal unsafe class System_Text_StringBuilder_AppendInterpolatedStringHandler
 	}
 	
 
-	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_2")]
-	internal static void /* System.Void */ System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_2(void* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ __self, void* /* System.Object */ value, int /* System.Int32 */ alignment, byte* /* System.String */ format, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_3")]
+	internal static void /* System.Void */ System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_3(void* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ __self, void* /* System.Object */ value, int /* System.Int32 */ alignment, byte* /* System.String */ format, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -101765,7 +103035,17 @@ internal unsafe class System_Text_StringBuilder_AppendInterpolatedStringHandler
 }
 
 
+// Type "T" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
 
+// Type "TArg0" was skipped. Reason: It has no full name.
+// Type "TArg0" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg0" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg2" was skipped. Reason: It has no full name.
 internal unsafe class System_IO_FileAttributes
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileAttributes_TypeOf")]
@@ -106291,6 +107571,44 @@ internal unsafe class System_Runtime_InteropServices_Marshal
 	}
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_Marshal_SizeOf_A1")]
+	internal static int /* System.Int32 */ System_Runtime_InteropServices_Marshal_SizeOf_A1(void* /* System.Type */ T, void* /* T */ structure, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Object structureConverted = InteropUtils.GetInstance<System.Object>(structure);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Runtime.InteropServices.Marshal);
+			System.String __nameOfMethodForGenericCall = nameof(System.Runtime.InteropServices.Marshal.SizeOf);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { structureConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method SizeOf not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Int32 __returnValue = (System.Int32)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_Marshal_SizeOf_1")]
 	internal static int /* System.Int32 */ System_Runtime_InteropServices_Marshal_SizeOf_1(void* /* System.Type */ t, void** /* System.Exception */ __outException)
 	{
@@ -106298,6 +107616,43 @@ internal unsafe class System_Runtime_InteropServices_Marshal
 	
 	    try {
 			System.Int32 __returnValue = System.Runtime.InteropServices.Marshal.SizeOf(tConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_Marshal_SizeOf_A1_1")]
+	internal static int /* System.Int32 */ System_Runtime_InteropServices_Marshal_SizeOf_A1_1(void* /* System.Type */ T, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Runtime.InteropServices.Marshal);
+			System.String __nameOfMethodForGenericCall = nameof(System.Runtime.InteropServices.Marshal.SizeOf);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[]? __parametersForGenericCall = null;
+			System.Type[] __parameterTypesForGenericCall = System.Type.EmptyTypes;
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method SizeOf not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Int32 __returnValue = (System.Int32)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -106416,6 +107771,46 @@ internal unsafe class System_Runtime_InteropServices_Marshal
 	
 	    try {
 			System.IntPtr __returnValue = System.Runtime.InteropServices.Marshal.UnsafeAddrOfPinnedArrayElement(arrConverted, index);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return nint.Zero;
+		}
+	}
+	
+
+	// TODO: Generic Methods with array parameters are not supported
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_Marshal_OffsetOf_A1")]
+	internal static nint /* System.IntPtr */ System_Runtime_InteropServices_Marshal_OffsetOf_A1(void* /* System.Type */ T, byte* /* System.String */ fieldName, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.String fieldNameConverted = InteropUtils.ToDotNetString(fieldName);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Runtime.InteropServices.Marshal);
+			System.String __nameOfMethodForGenericCall = nameof(System.Runtime.InteropServices.Marshal.OffsetOf);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { fieldNameConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.String) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method OffsetOf not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.IntPtr __returnValue = (System.IntPtr)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -107312,6 +108707,43 @@ internal unsafe class System_Runtime_InteropServices_Marshal
 	}
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_Marshal_StructureToPtr_A1")]
+	internal static void /* System.Void */ System_Runtime_InteropServices_Marshal_StructureToPtr_A1(void* /* System.Type */ T, void* /* T */ structure, nint /* System.IntPtr */ ptr, byte /* System.Boolean */ fDeleteOld, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Object structureConverted = InteropUtils.GetInstance<System.Object>(structure);
+		System.Boolean fDeleteOldConverted = fDeleteOld.ToBool();
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Runtime.InteropServices.Marshal);
+			System.String __nameOfMethodForGenericCall = nameof(System.Runtime.InteropServices.Marshal.StructureToPtr);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { structureConverted, ptr, fDeleteOldConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { TConverted, typeof(System.IntPtr), typeof(System.Boolean) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method StructureToPtr not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_Marshal_PtrToStructure")]
 	internal static void* /* System.Object */ System_Runtime_InteropServices_Marshal_PtrToStructure(nint /* System.IntPtr */ ptr, void* /* System.Type */ structureType, void** /* System.Exception */ __outException)
 	{
@@ -107345,6 +108777,115 @@ internal unsafe class System_Runtime_InteropServices_Marshal
 	
 	    try {
 			System.Runtime.InteropServices.Marshal.PtrToStructure(ptr, structureConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_Marshal_PtrToStructure_A1")]
+	internal static void /* System.Void */ System_Runtime_InteropServices_Marshal_PtrToStructure_A1(void* /* System.Type */ T, nint /* System.IntPtr */ ptr, void* /* T */ structure, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Object structureConverted = InteropUtils.GetInstance<System.Object>(structure);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Runtime.InteropServices.Marshal);
+			System.String __nameOfMethodForGenericCall = nameof(System.Runtime.InteropServices.Marshal.PtrToStructure);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { ptr, structureConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.IntPtr), TConverted };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method PtrToStructure not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_Marshal_PtrToStructure_A1_1")]
+	internal static void* /* System.Object */ System_Runtime_InteropServices_Marshal_PtrToStructure_A1_1(void* /* System.Type */ T, nint /* System.IntPtr */ ptr, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Runtime.InteropServices.Marshal);
+			System.String __nameOfMethodForGenericCall = nameof(System.Runtime.InteropServices.Marshal.PtrToStructure);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { ptr };
+			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.IntPtr) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method PtrToStructure not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Object __returnValue = (System.Object)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_Marshal_DestroyStructure_A1")]
+	internal static void /* System.Void */ System_Runtime_InteropServices_Marshal_DestroyStructure_A1(void* /* System.Type */ T, nint /* System.IntPtr */ ptr, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Runtime.InteropServices.Marshal);
+			System.String __nameOfMethodForGenericCall = nameof(System.Runtime.InteropServices.Marshal.DestroyStructure);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { ptr };
+			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.IntPtr) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method DestroyStructure not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -107808,6 +109349,44 @@ internal unsafe class System_Runtime_InteropServices_Marshal
 	}
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_Marshal_GetDelegateForFunctionPointer_A1")]
+	internal static void* /* System.Object */ System_Runtime_InteropServices_Marshal_GetDelegateForFunctionPointer_A1(void* /* System.Type */ TDelegate, nint /* System.IntPtr */ ptr, void** /* System.Exception */ __outException)
+	{
+		System.Type TDelegateConverted = InteropUtils.GetInstance<System.Type>(TDelegate);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Runtime.InteropServices.Marshal);
+			System.String __nameOfMethodForGenericCall = nameof(System.Runtime.InteropServices.Marshal.GetDelegateForFunctionPointer);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { ptr };
+			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.IntPtr) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TDelegateConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method GetDelegateForFunctionPointer not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Object __returnValue = (System.Object)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_Marshal_GetFunctionPointerForDelegate")]
 	internal static nint /* System.IntPtr */ System_Runtime_InteropServices_Marshal_GetFunctionPointerForDelegate(void* /* System.Delegate */ d, void** /* System.Exception */ __outException)
 	{
@@ -107815,6 +109394,44 @@ internal unsafe class System_Runtime_InteropServices_Marshal
 	
 	    try {
 			System.IntPtr __returnValue = System.Runtime.InteropServices.Marshal.GetFunctionPointerForDelegate(dConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return nint.Zero;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_Marshal_GetFunctionPointerForDelegate_A1")]
+	internal static nint /* System.IntPtr */ System_Runtime_InteropServices_Marshal_GetFunctionPointerForDelegate_A1(void* /* System.Type */ TDelegate, void* /* TDelegate */ d, void** /* System.Exception */ __outException)
+	{
+		System.Type TDelegateConverted = InteropUtils.GetInstance<System.Type>(TDelegate);
+		System.Object dConverted = InteropUtils.GetInstance<System.Object>(d);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Runtime.InteropServices.Marshal);
+			System.String __nameOfMethodForGenericCall = nameof(System.Runtime.InteropServices.Marshal.GetFunctionPointerForDelegate);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { dConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { TDelegateConverted };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TDelegateConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method GetFunctionPointerForDelegate not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.IntPtr __returnValue = (System.IntPtr)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -108260,6 +109877,44 @@ internal unsafe class System_Runtime_InteropServices_Marshal
 	}
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_Marshal_CreateAggregatedObject_A1")]
+	internal static nint /* System.IntPtr */ System_Runtime_InteropServices_Marshal_CreateAggregatedObject_A1(void* /* System.Type */ T, nint /* System.IntPtr */ pOuter, void* /* T */ o, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Object oConverted = InteropUtils.GetInstance<System.Object>(o);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Runtime.InteropServices.Marshal);
+			System.String __nameOfMethodForGenericCall = nameof(System.Runtime.InteropServices.Marshal.CreateAggregatedObject);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { pOuter, oConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.IntPtr), TConverted };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method CreateAggregatedObject not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.IntPtr __returnValue = (System.IntPtr)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return nint.Zero;
+		}
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_Marshal_CreateWrapperOfType")]
 	internal static void* /* System.Object */ System_Runtime_InteropServices_Marshal_CreateWrapperOfType(void* /* System.Object */ o, void* /* System.Type */ t, void** /* System.Exception */ __outException)
 	{
@@ -108268,6 +109923,46 @@ internal unsafe class System_Runtime_InteropServices_Marshal
 	
 	    try {
 			System.Object __returnValue = System.Runtime.InteropServices.Marshal.CreateWrapperOfType(oConverted, tConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_Marshal_CreateWrapperOfType_A2")]
+	internal static void* /* System.Object */ System_Runtime_InteropServices_Marshal_CreateWrapperOfType_A2(void* /* System.Type */ T, void* /* System.Type */ TWrapper, void* /* T */ o, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Type TWrapperConverted = InteropUtils.GetInstance<System.Type>(TWrapper);
+		System.Object oConverted = InteropUtils.GetInstance<System.Object>(o);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Runtime.InteropServices.Marshal);
+			System.String __nameOfMethodForGenericCall = nameof(System.Runtime.InteropServices.Marshal.CreateWrapperOfType);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { oConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted, TWrapperConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 2, __parameterTypesForGenericCall) ?? throw new Exception("Method CreateWrapperOfType not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Object __returnValue = (System.Object)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -108388,6 +110083,45 @@ internal unsafe class System_Runtime_InteropServices_Marshal
 	}
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_Marshal_GetComInterfaceForObject_A2")]
+	internal static nint /* System.IntPtr */ System_Runtime_InteropServices_Marshal_GetComInterfaceForObject_A2(void* /* System.Type */ T, void* /* System.Type */ TInterface, void* /* T */ o, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Type TInterfaceConverted = InteropUtils.GetInstance<System.Type>(TInterface);
+		System.Object oConverted = InteropUtils.GetInstance<System.Object>(o);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Runtime.InteropServices.Marshal);
+			System.String __nameOfMethodForGenericCall = nameof(System.Runtime.InteropServices.Marshal.GetComInterfaceForObject);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { oConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted, TInterfaceConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 2, __parameterTypesForGenericCall) ?? throw new Exception("Method GetComInterfaceForObject not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.IntPtr __returnValue = (System.IntPtr)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return nint.Zero;
+		}
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_Marshal_GetComObjectData")]
 	internal static void* /* System.Object */ System_Runtime_InteropServices_Marshal_GetComObjectData(void* /* System.Object */ obj, void* /* System.Object */ key, void** /* System.Exception */ __outException)
 	{
@@ -108488,6 +110222,42 @@ internal unsafe class System_Runtime_InteropServices_Marshal
 	}
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_Marshal_GetNativeVariantForObject_A1")]
+	internal static void /* System.Void */ System_Runtime_InteropServices_Marshal_GetNativeVariantForObject_A1(void* /* System.Type */ T, void* /* T */ obj, nint /* System.IntPtr */ pDstNativeVariant, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Object objConverted = InteropUtils.GetInstance<System.Object>(obj);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Runtime.InteropServices.Marshal);
+			System.String __nameOfMethodForGenericCall = nameof(System.Runtime.InteropServices.Marshal.GetNativeVariantForObject);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { objConverted, pDstNativeVariant };
+			System.Type[] __parameterTypesForGenericCall = new[] { TConverted, typeof(System.IntPtr) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method GetNativeVariantForObject not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_Marshal_GetTypedObjectForIUnknown")]
 	internal static void* /* System.Object */ System_Runtime_InteropServices_Marshal_GetTypedObjectForIUnknown(nint /* System.IntPtr */ pUnk, void* /* System.Type */ t, void** /* System.Exception */ __outException)
 	{
@@ -108564,12 +110334,88 @@ internal unsafe class System_Runtime_InteropServices_Marshal
 	}
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_Marshal_GetObjectForNativeVariant_A1")]
+	internal static void* /* System.Object */ System_Runtime_InteropServices_Marshal_GetObjectForNativeVariant_A1(void* /* System.Type */ T, nint /* System.IntPtr */ pSrcNativeVariant, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Runtime.InteropServices.Marshal);
+			System.String __nameOfMethodForGenericCall = nameof(System.Runtime.InteropServices.Marshal.GetObjectForNativeVariant);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { pSrcNativeVariant };
+			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.IntPtr) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method GetObjectForNativeVariant not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Object __returnValue = (System.Object)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_Marshal_GetObjectsForNativeVariants")]
 	internal static void* /* System.Object[] */ System_Runtime_InteropServices_Marshal_GetObjectsForNativeVariants(nint /* System.IntPtr */ aSrcNativeVariant, int /* System.Int32 */ cVars, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
 			System.Object[] __returnValue = System.Runtime.InteropServices.Marshal.GetObjectsForNativeVariants(aSrcNativeVariant, cVars);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_Marshal_GetObjectsForNativeVariants_A1")]
+	internal static void* /* System.Array */ System_Runtime_InteropServices_Marshal_GetObjectsForNativeVariants_A1(void* /* System.Type */ T, nint /* System.IntPtr */ aSrcNativeVariant, int /* System.Int32 */ cVars, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Runtime.InteropServices.Marshal);
+			System.String __nameOfMethodForGenericCall = nameof(System.Runtime.InteropServices.Marshal.GetObjectsForNativeVariants);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { aSrcNativeVariant, cVars };
+			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.IntPtr), typeof(System.Int32) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method GetObjectsForNativeVariants not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Array __returnValue = (System.Array)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -109143,11 +110989,17 @@ internal unsafe class System_Runtime_InteropServices_Marshal
 }
 
 
+// Type "T" was skipped. Reason: It has no full name.
+
+// Type "T" was skipped. Reason: It has no full name.
 
 
 
 
 
+// Type "T" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
 internal unsafe class System_Security_SecureString
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_Security_SecureString_AppendChar")]
@@ -109485,6 +111337,11 @@ internal unsafe class System_Security_SecureString
 }
 
 
+// Type "TDelegate" was skipped. Reason: It has no full name.
+// Type "TDelegate" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+// Type "TWrapper" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
 internal unsafe class System_Runtime_InteropServices_CustomQueryInterfaceMode
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_CustomQueryInterfaceMode_TypeOf")]
@@ -109500,6 +111357,11 @@ internal unsafe class System_Runtime_InteropServices_CustomQueryInterfaceMode
 }
 
 
+// Type "T" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
+// Type "T" was skipped. Reason: It has no full name.
 
 internal unsafe class NativeAOT_CodeGeneratorInputSample_MoveDelegate
 {
@@ -110461,6 +112323,159 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_GenericAnimal
 
 internal unsafe class NativeAOT_CodeGeneratorInputSample_GenericTests
 {
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnGenericType_A1")]
+	internal static void* /* System.Type */ NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnGenericType_A1(void* /* System.Type */ T, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(NativeAOT.CodeGeneratorInputSample.GenericTests);
+			System.String __nameOfMethodForGenericCall = nameof(NativeAOT.CodeGeneratorInputSample.GenericTests.ReturnGenericType);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[]? __parametersForGenericCall = null;
+			System.Type[] __parameterTypesForGenericCall = System.Type.EmptyTypes;
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method ReturnGenericType not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Type __returnValue = (System.Type)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnGenericTypes_A2")]
+	internal static void* /* System.Type[] */ NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnGenericTypes_A2(void* /* System.Type */ T1, void* /* System.Type */ T2, void** /* System.Exception */ __outException)
+	{
+		System.Type T1Converted = InteropUtils.GetInstance<System.Type>(T1);
+		System.Type T2Converted = InteropUtils.GetInstance<System.Type>(T2);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(NativeAOT.CodeGeneratorInputSample.GenericTests);
+			System.String __nameOfMethodForGenericCall = nameof(NativeAOT.CodeGeneratorInputSample.GenericTests.ReturnGenericTypes);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[]? __parametersForGenericCall = null;
+			System.Type[] __parameterTypesForGenericCall = System.Type.EmptyTypes;
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { T1Converted, T2Converted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 2, __parameterTypesForGenericCall) ?? throw new Exception("Method ReturnGenericTypes not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Type[] __returnValue = (System.Type[])__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnDefaultValueOfGenericType_A1")]
+	internal static void* /* System.Object */ NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnDefaultValueOfGenericType_A1(void* /* System.Type */ T, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(NativeAOT.CodeGeneratorInputSample.GenericTests);
+			System.String __nameOfMethodForGenericCall = nameof(NativeAOT.CodeGeneratorInputSample.GenericTests.ReturnDefaultValueOfGenericType);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[]? __parametersForGenericCall = null;
+			System.Type[] __parameterTypesForGenericCall = System.Type.EmptyTypes;
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method ReturnDefaultValueOfGenericType not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Object __returnValue = (System.Object)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnArrayOfDefaultValuesOfGenericType_A1")]
+	internal static void* /* System.Array */ NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnArrayOfDefaultValuesOfGenericType_A1(void* /* System.Type */ T, int /* System.Int32 */ numberOfElements, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(NativeAOT.CodeGeneratorInputSample.GenericTests);
+			System.String __nameOfMethodForGenericCall = nameof(NativeAOT.CodeGeneratorInputSample.GenericTests.ReturnArrayOfDefaultValuesOfGenericType);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { numberOfElements };
+			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.Int32) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method ReturnArrayOfDefaultValuesOfGenericType not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Array __returnValue = (System.Array)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericTests_CallReturnGenericTypeThroughReflection")]
 	internal static void* /* System.Type */ NativeAOT_CodeGeneratorInputSample_GenericTests_CallReturnGenericTypeThroughReflection(void* /* System.Type */ T, void** /* System.Exception */ __outException)
 	{
@@ -110532,6 +112547,10 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_GenericTests
 
 }
 
+
+// Type "T" was skipped. Reason: It has no full name.
+
+// Type "T" was skipped. Reason: It has no full name.
 
 internal unsafe class NativeAOT_CodeGeneratorInputSample_NiceLevels
 {
@@ -111689,13 +113708,13 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_ByRefReturnValueDelegat
 
 internal unsafe class NativeAOT_CodeGeneratorInputSample_ByRefParametersDelegate
 {
-	// TODO: Unsupported delegate type. Reason: Has by ref or out parameters
+	// TODO: Unsupported delegate type. Reason: Has by ref parameters
 }
 
 
 internal unsafe class NativeAOT_CodeGeneratorInputSample_OutParametersDelegate
 {
-	// TODO: Unsupported delegate type. Reason: Has by ref or out parameters
+	// TODO: Unsupported delegate type. Reason: Has out parameters
 }
 
 

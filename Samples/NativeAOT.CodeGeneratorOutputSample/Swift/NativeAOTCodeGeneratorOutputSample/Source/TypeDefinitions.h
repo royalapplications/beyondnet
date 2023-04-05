@@ -1,5 +1,5 @@
-// Number of generated types: 430
-// Number of generated members: 4371
+// Number of generated types: 649
+// Number of generated members: 4415
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -808,8 +808,15 @@ typedef void* System_IFormatProvider_t;
 
 
 
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 
 typedef void* System_Int32_Array_t;
 
@@ -818,47 +825,131 @@ typedef void* System_Int64_Array_t;
 typedef void* System_Collections_IComparer_t;
 
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 // Type "TOutput[]" was skipped. Reason: It has no full name.
+// Type "TOutput" was skipped. Reason: It has no full name.
+
 // Type "TInput[]" was skipped. Reason: It has no full name.
+// Type "TInput" was skipped. Reason: It has no full name.
+
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
+// Type "T" was skipped. Reason: It has no full name.
 // Type "T[]" was skipped. Reason: It has no full name.
+
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
+// Type "T" was skipped. Reason: It has no full name.
 // Type "T[]" was skipped. Reason: It has no full name.
+
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 // Type "TKey[]" was skipped. Reason: It has no full name.
+// Type "TKey" was skipped. Reason: It has no full name.
+
 // Type "TValue[]" was skipped. Reason: It has no full name.
+// Type "TValue" was skipped. Reason: It has no full name.
+
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 // Type "TKey[]" was skipped. Reason: It has no full name.
+// Type "TKey" was skipped. Reason: It has no full name.
+
 // Type "TValue[]" was skipped. Reason: It has no full name.
+// Type "TValue" was skipped. Reason: It has no full name.
+
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 // Type "TKey[]" was skipped. Reason: It has no full name.
+// Type "TKey" was skipped. Reason: It has no full name.
+
 // Type "TValue[]" was skipped. Reason: It has no full name.
+// Type "TValue" was skipped. Reason: It has no full name.
+
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 // Type "TKey[]" was skipped. Reason: It has no full name.
+// Type "TKey" was skipped. Reason: It has no full name.
+
 // Type "TValue[]" was skipped. Reason: It has no full name.
+// Type "TValue" was skipped. Reason: It has no full name.
+
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 typedef void* System_Collections_IEnumerator_t;
 
 
@@ -872,11 +963,17 @@ typedef void* System_Version_t;
 
 
 
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
 
 typedef void* System_Byte_Array_t;
 
 
 
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
 typedef void* System_Reflection_StrongNameKeyPair_t;
 
 typedef void* System_IO_FileStream_t;
@@ -906,19 +1003,40 @@ typedef void* System_Runtime_Serialization_SerializationEntry_t;
 
 
 
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
 
 
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
 
 
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
 
 
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
 
 
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
 
 
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
 typedef void* System_Decimal_t;
 
 
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
 typedef void* System_DateTime_t;
 
 typedef void* System_TimeSpan_t;
@@ -942,6 +1060,9 @@ typedef void* System_Runtime_Serialization_StreamingContext_t;
 
 
 
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
 typedef void* System_RuntimeTypeHandle_t;
 
 typedef void* System_ModuleHandle_t;
@@ -1025,6 +1146,7 @@ typedef void* System_Threading_CancellationTokenRegistration_t;
 
 typedef void* System_Threading_Tasks_ValueTask_t;
 
+// Type "TResult" was skipped. Reason: It has no full name.
 typedef void* System_Runtime_CompilerServices_ValueTaskAwaiter_t;
 
 typedef void* System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_t;
@@ -1035,6 +1157,30 @@ typedef void* System_Threading_Tasks_Sources_IValueTaskSource_t;
 
 typedef void* System_IAsyncResult_t;
 
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg2" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg2" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg2" was skipped. Reason: It has no full name.
+// Type "TArg3" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg2" was skipped. Reason: It has no full name.
+// Type "TArg3" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg2" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg2" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg2" was skipped. Reason: It has no full name.
+// Type "TArg3" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg2" was skipped. Reason: It has no full name.
+// Type "TArg3" was skipped. Reason: It has no full name.
 typedef void* System_Threading_Tasks_Task_Array_t;
 
 
@@ -1064,6 +1210,7 @@ typedef void* System_Runtime_CompilerServices_YieldAwaitable_t;
 
 typedef void* System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_t;
 
+// Type "TResult" was skipped. Reason: It has no full name.
 // Type "Task`1[]" was skipped. Reason: It has no full name.
 // Type "Task`1[]" was skipped. Reason: It has no full name.
 typedef void* Microsoft_Win32_SafeHandles_SafeFileHandle_t;
@@ -1108,6 +1255,7 @@ typedef void* System_Globalization_DateTimeFormatInfo_t;
 typedef void* System_Globalization_Calendar_Array_t;
 
 
+// Type "TState" was skipped. Reason: It has no full name.
 typedef void* System_Char_Array_t;
 
 typedef void* System_CharEnumerator_t;
@@ -1117,6 +1265,12 @@ typedef void* System_Text_StringRuneEnumerator_t;
 typedef void* System_Text_CompositeFormat_t;
 
 
+// Type "TArg0" was skipped. Reason: It has no full name.
+// Type "TArg0" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg0" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg2" was skipped. Reason: It has no full name.
 typedef void* System_Text_Encoding_t;
 
 typedef void* System_Text_EncodingProvider_t;
@@ -1138,7 +1292,27 @@ typedef void* System_Text_Decoder_t;
 
 typedef void* System_Text_Encoder_t;
 
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TEnum" was skipped. Reason: It has no full name.
 // Type "TEnum[]" was skipped. Reason: It has no full name.
+// Type "TEnum" was skipped. Reason: It has no full name.
+
+// Type "TEnum" was skipped. Reason: It has no full name.
+// Type "TEnum" was skipped. Reason: It has no full name.
+// Type "TEnum" was skipped. Reason: It has no full name.
+// Type "TEnum" was skipped. Reason: It has no full name.
+// Type "TEnum" was skipped. Reason: It has no full name.
+// Type "TEnum" was skipped. Reason: It has no full name.
+
+// Type "TEnum" was skipped. Reason: It has no full name.
+
+// Type "TEnum" was skipped. Reason: It has no full name.
+
+// Type "TEnum" was skipped. Reason: It has no full name.
+
+// Type "TEnum" was skipped. Reason: It has no full name.
 typedef void* System_Runtime_InteropServices_StructLayoutAttribute_t;
 
 typedef void* System_Attribute_t;
@@ -1163,6 +1337,9 @@ typedef void* System_Reflection_InterfaceMapping_t;
 
 
 
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
 typedef void* System_GC_t;
 
 typedef void* System_GCMemoryInfo_t;
@@ -1170,7 +1347,11 @@ typedef void* System_GCMemoryInfo_t;
 typedef void* System_WeakReference_t;
 
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 typedef void* System_Math_t;
 
 typedef void* System_Convert_t;
@@ -1228,8 +1409,14 @@ typedef void* System_Threading_CancellationToken_Array_t;
 typedef void* System_Random_t;
 
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 typedef void* System_IO_Path_t;
 
 typedef void* System_IO_File_t;
@@ -1248,7 +1435,17 @@ typedef void* System_Text_StringBuilder_ChunkEnumerator_t;
 
 typedef void* System_Text_StringBuilder_AppendInterpolatedStringHandler_t;
 
+// Type "T" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
 
+// Type "TArg0" was skipped. Reason: It has no full name.
+// Type "TArg0" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg0" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg2" was skipped. Reason: It has no full name.
 typedef void* System_IO_FileSystemInfo_t;
 
 typedef void* System_IO_FileInfo_t;
@@ -1270,7 +1467,10 @@ typedef void* System_IO_Directory_t;
 
 typedef void* System_Runtime_InteropServices_Marshal_t;
 
+// Type "T" was skipped. Reason: It has no full name.
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 typedef void* System_Int16_Array_t;
 
 typedef void* System_Single_Array_t;
@@ -1279,9 +1479,22 @@ typedef void* System_Double_Array_t;
 
 typedef void* System_IntPtr_Array_t;
 
+// Type "T" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
 typedef void* System_Security_SecureString_t;
 
+// Type "TDelegate" was skipped. Reason: It has no full name.
+// Type "TDelegate" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+// Type "TWrapper" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
 // Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 typedef void* NativeAOT_CodeGeneratorInputSample_Address_t;
 
 typedef void* NativeAOT_CodeGeneratorInputSample_IAnimal_t;
@@ -1297,6 +1510,10 @@ typedef void* NativeAOT_CodeGeneratorInputSample_Dog_t;
 typedef void* NativeAOT_CodeGeneratorInputSample_GenericAnimal_t;
 
 typedef void* NativeAOT_CodeGeneratorInputSample_GenericTests_t;
+
+// Type "T" was skipped. Reason: It has no full name.
+// Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
 
 typedef void* NativeAOT_CodeGeneratorInputSample_Person_t;
 
@@ -1324,6 +1541,8 @@ typedef void (*System_Delegate_CFunction_t)(
 );
 
 
+// Type "T" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
 typedef void* System_Action_t;
 typedef void (*System_Action_CDestructorFunction_t)(void* context);
 
@@ -3550,14 +3769,27 @@ System_Reflection_MemberInfo_Destroy(
 
 #pragma mark - BEGIN APIs of System.Enum
 CString /* System.String */
-System_Enum_GetName(
+System_Enum_GetName_A1(
+	System_Type_t /* System.Type */ TEnum,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_Enum_GetName_1(
 	System_Type_t /* System.Type */ enumType,
 	System_Object_t /* System.Object */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 System_String_Array_t /* System.String[] */
-System_Enum_GetNames(
+System_Enum_GetNames_A1(
+	System_Type_t /* System.Type */ TEnum,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_String_Array_t /* System.String[] */
+System_Enum_GetNames_1(
 	System_Type_t /* System.Type */ enumType,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -3569,13 +3801,25 @@ System_Enum_GetUnderlyingType(
 );
 
 System_Array_t /* System.Array */
-System_Enum_GetValues(
+System_Enum_GetValues_A1(
+	System_Type_t /* System.Type */ TEnum,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Array_t /* System.Array */
+System_Enum_GetValues_1(
 	System_Type_t /* System.Type */ enumType,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 System_Array_t /* System.Array */
-System_Enum_GetValuesAsUnderlyingType(
+System_Enum_GetValuesAsUnderlyingType_A1(
+	System_Type_t /* System.Type */ TEnum,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Array_t /* System.Array */
+System_Enum_GetValuesAsUnderlyingType_1(
 	System_Type_t /* System.Type */ enumType,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -3588,7 +3832,14 @@ System_Enum_HasFlag(
 );
 
 bool /* System.Boolean */
-System_Enum_IsDefined(
+System_Enum_IsDefined_A1(
+	System_Type_t /* System.Type */ TEnum,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Enum_IsDefined_1(
 	System_Type_t /* System.Type */ enumType,
 	System_Object_t /* System.Object */ value,
 	System_Exception_t* /* System.Exception */ outException
@@ -3604,6 +3855,21 @@ System_Enum_Parse(
 System_Object_t /* System.Object */
 System_Enum_Parse_1(
 	System_Type_t /* System.Type */ enumType,
+	CString /* System.String */ value,
+	bool /* System.Boolean */ ignoreCase,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Enum_Parse_A1(
+	System_Type_t /* System.Type */ TEnum,
+	CString /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Enum_Parse_A1_1(
+	System_Type_t /* System.Type */ TEnum,
 	CString /* System.String */ value,
 	bool /* System.Boolean */ ignoreCase,
 	System_Exception_t* /* System.Exception */ outException
@@ -4275,6 +4541,39 @@ System_String_Format_7(
 	System_IFormatProvider_t /* System.IFormatProvider */ provider,
 	CString /* System.String */ format,
 	System_Object_Array_t /* System.Object[] */ args,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_String_Format_A1(
+	System_Type_t /* System.Type */ TArg0,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Text_CompositeFormat_t /* System.Text.CompositeFormat */ format,
+	System_Object_t /* System.Object */ arg0,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_String_Format_A2(
+	System_Type_t /* System.Type */ TArg0,
+	System_Type_t /* System.Type */ TArg1,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Text_CompositeFormat_t /* System.Text.CompositeFormat */ format,
+	System_Object_t /* System.Object */ arg0,
+	System_Object_t /* System.Object */ arg1,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+System_String_Format_A3(
+	System_Type_t /* System.Type */ TArg0,
+	System_Type_t /* System.Type */ TArg1,
+	System_Type_t /* System.Type */ TArg2,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Text_CompositeFormat_t /* System.Text.CompositeFormat */ format,
+	System_Object_t /* System.Object */ arg0,
+	System_Object_t /* System.Object */ arg1,
+	System_Object_t /* System.Object */ arg2,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -5676,6 +5975,12 @@ System_Array_CopyTo_1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+System_Array_t /* System.Array */
+System_Array_Empty_A1(
+	System_Type_t /* System.Type */ T,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 int32_t /* System.Int32 */
 System_Array_IndexOf(
 	System_Array_t /* System.Array */ array,
@@ -5898,11 +6203,18 @@ System_IFormatProvider_Destroy(
 
 
 
-#pragma mark - BEGIN APIs of T[]
-#pragma mark - END APIs of T[]
+
+
 
 #pragma mark - BEGIN APIs of T[]
 #pragma mark - END APIs of T[]
+
+
+
+#pragma mark - BEGIN APIs of T[]
+#pragma mark - END APIs of T[]
+
+
 
 
 #pragma mark - BEGIN APIs of System.Int32[]
@@ -5935,128 +6247,212 @@ System_Collections_IComparer_Destroy(
 #pragma mark - BEGIN APIs of T[]
 #pragma mark - END APIs of T[]
 
-#pragma mark - BEGIN APIs of T[]
-#pragma mark - END APIs of T[]
+
 
 #pragma mark - BEGIN APIs of T[]
 #pragma mark - END APIs of T[]
 
+
+
 #pragma mark - BEGIN APIs of T[]
 #pragma mark - END APIs of T[]
+
+
+
+#pragma mark - BEGIN APIs of T[]
+#pragma mark - END APIs of T[]
+
+
 
 #pragma mark - BEGIN APIs of TOutput[]
 #pragma mark - END APIs of TOutput[]
 
+
+
 #pragma mark - BEGIN APIs of TInput[]
 #pragma mark - END APIs of TInput[]
 
-#pragma mark - BEGIN APIs of T[]
-#pragma mark - END APIs of T[]
+
 
 #pragma mark - BEGIN APIs of T[]
 #pragma mark - END APIs of T[]
 
-#pragma mark - BEGIN APIs of T[]
-#pragma mark - END APIs of T[]
+
 
 #pragma mark - BEGIN APIs of T[]
 #pragma mark - END APIs of T[]
 
-#pragma mark - BEGIN APIs of T[]
-#pragma mark - END APIs of T[]
+
 
 #pragma mark - BEGIN APIs of T[]
 #pragma mark - END APIs of T[]
 
-#pragma mark - BEGIN APIs of T[]
-#pragma mark - END APIs of T[]
+
 
 #pragma mark - BEGIN APIs of T[]
 #pragma mark - END APIs of T[]
 
-#pragma mark - BEGIN APIs of T[]
-#pragma mark - END APIs of T[]
+
+
 
 #pragma mark - BEGIN APIs of T[]
 #pragma mark - END APIs of T[]
 
-#pragma mark - BEGIN APIs of T[]
-#pragma mark - END APIs of T[]
 
 #pragma mark - BEGIN APIs of T[]
 #pragma mark - END APIs of T[]
 
-#pragma mark - BEGIN APIs of T[]
-#pragma mark - END APIs of T[]
+
 
 #pragma mark - BEGIN APIs of T[]
 #pragma mark - END APIs of T[]
 
-#pragma mark - BEGIN APIs of T[]
-#pragma mark - END APIs of T[]
+
 
 #pragma mark - BEGIN APIs of T[]
 #pragma mark - END APIs of T[]
 
-#pragma mark - BEGIN APIs of T[]
-#pragma mark - END APIs of T[]
+
 
 #pragma mark - BEGIN APIs of T[]
 #pragma mark - END APIs of T[]
 
-#pragma mark - BEGIN APIs of T[]
-#pragma mark - END APIs of T[]
+
+
 
 #pragma mark - BEGIN APIs of T[]
 #pragma mark - END APIs of T[]
 
-#pragma mark - BEGIN APIs of T[]
-#pragma mark - END APIs of T[]
 
 #pragma mark - BEGIN APIs of T[]
 #pragma mark - END APIs of T[]
 
+
+
 #pragma mark - BEGIN APIs of T[]
 #pragma mark - END APIs of T[]
+
+
+
+#pragma mark - BEGIN APIs of T[]
+#pragma mark - END APIs of T[]
+
+
+
+#pragma mark - BEGIN APIs of T[]
+#pragma mark - END APIs of T[]
+
+
+
+#pragma mark - BEGIN APIs of T[]
+#pragma mark - END APIs of T[]
+
+
+
+#pragma mark - BEGIN APIs of T[]
+#pragma mark - END APIs of T[]
+
+
+
+#pragma mark - BEGIN APIs of T[]
+#pragma mark - END APIs of T[]
+
+
+
+#pragma mark - BEGIN APIs of T[]
+#pragma mark - END APIs of T[]
+
+
+
+#pragma mark - BEGIN APIs of T[]
+#pragma mark - END APIs of T[]
+
+
+
+#pragma mark - BEGIN APIs of T[]
+#pragma mark - END APIs of T[]
+
+
+
+#pragma mark - BEGIN APIs of T[]
+#pragma mark - END APIs of T[]
+
+
+
+#pragma mark - BEGIN APIs of T[]
+#pragma mark - END APIs of T[]
+
+
+
+#pragma mark - BEGIN APIs of T[]
+#pragma mark - END APIs of T[]
+
+
 
 #pragma mark - BEGIN APIs of TKey[]
 #pragma mark - END APIs of TKey[]
 
+
+
 #pragma mark - BEGIN APIs of TValue[]
 #pragma mark - END APIs of TValue[]
 
+
+
 #pragma mark - BEGIN APIs of T[]
 #pragma mark - END APIs of T[]
+
+
 
 #pragma mark - BEGIN APIs of TKey[]
 #pragma mark - END APIs of TKey[]
 
+
+
 #pragma mark - BEGIN APIs of TValue[]
 #pragma mark - END APIs of TValue[]
 
+
+
 #pragma mark - BEGIN APIs of T[]
 #pragma mark - END APIs of T[]
+
+
 
 #pragma mark - BEGIN APIs of TKey[]
 #pragma mark - END APIs of TKey[]
 
+
+
 #pragma mark - BEGIN APIs of TValue[]
 #pragma mark - END APIs of TValue[]
 
+
+
 #pragma mark - BEGIN APIs of T[]
 #pragma mark - END APIs of T[]
+
+
 
 #pragma mark - BEGIN APIs of TKey[]
 #pragma mark - END APIs of TKey[]
 
+
+
 #pragma mark - BEGIN APIs of TValue[]
 #pragma mark - END APIs of TValue[]
 
-#pragma mark - BEGIN APIs of T[]
-#pragma mark - END APIs of T[]
+
 
 #pragma mark - BEGIN APIs of T[]
 #pragma mark - END APIs of T[]
+
+
+
+#pragma mark - BEGIN APIs of T[]
+#pragma mark - END APIs of T[]
+
+
 
 #pragma mark - BEGIN APIs of System.Collections.IEnumerator
 bool /* System.Boolean */
@@ -7599,8 +7995,14 @@ System_Version_Destroy(
 
 
 
+
+
+
 #pragma mark - BEGIN APIs of System.Byte[]
 #pragma mark - END APIs of System.Byte[]
+
+
+
 
 
 
@@ -9827,6 +10229,24 @@ System_Runtime_Serialization_SerializationEntry_Destroy(
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #pragma mark - BEGIN APIs of System.Decimal
 System_Decimal_t /* System.Decimal */
 System_Decimal_FromOACurrency(
@@ -10160,6 +10580,27 @@ System_Decimal_Abs(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+System_Decimal_t /* System.Decimal */
+System_Decimal_CreateChecked_A1(
+	System_Type_t /* System.Type */ TOther,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Decimal_t /* System.Decimal */
+System_Decimal_CreateSaturating_A1(
+	System_Type_t /* System.Type */ TOther,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Decimal_t /* System.Decimal */
+System_Decimal_CreateTruncating_A1(
+	System_Type_t /* System.Type */ TOther,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 bool /* System.Boolean */
 System_Decimal_IsCanonical(
 	System_Decimal_t /* System.Decimal */ value,
@@ -10219,49 +10660,49 @@ System_Decimal_TryParse_2(
 );
 
 System_Decimal_t /* System.Decimal */
-System_Decimal_Create(
+System_Decimal_Create_1(
 	int32_t /* System.Int32 */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 System_Decimal_t /* System.Decimal */
-System_Decimal_Create_1(
+System_Decimal_Create_2(
 	uint32_t /* System.UInt32 */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 System_Decimal_t /* System.Decimal */
-System_Decimal_Create_2(
+System_Decimal_Create_3(
 	int64_t /* System.Int64 */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 System_Decimal_t /* System.Decimal */
-System_Decimal_Create_3(
+System_Decimal_Create_4(
 	uint64_t /* System.UInt64 */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 System_Decimal_t /* System.Decimal */
-System_Decimal_Create_4(
+System_Decimal_Create_5(
 	float /* System.Single */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 System_Decimal_t /* System.Decimal */
-System_Decimal_Create_5(
+System_Decimal_Create_6(
 	double /* System.Double */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 System_Decimal_t /* System.Decimal */
-System_Decimal_Create_6(
+System_Decimal_Create_7(
 	System_Int32_Array_t /* System.Int32[] */ bits,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 System_Decimal_t /* System.Decimal */
-System_Decimal_Create_7(
+System_Decimal_Create_8(
 	int32_t /* System.Int32 */ lo,
 	int32_t /* System.Int32 */ mid,
 	int32_t /* System.Int32 */ hi,
@@ -10318,6 +10759,9 @@ System_Decimal_Destroy(
 );
 
 #pragma mark - END APIs of System.Decimal
+
+
+
 
 
 #pragma mark - BEGIN APIs of System.DateTime
@@ -12873,6 +13317,9 @@ System_Runtime_Serialization_StreamingContext_Destroy(
 
 
 
+
+
+
 #pragma mark - BEGIN APIs of System.RuntimeTypeHandle
 System_RuntimeTypeHandle_t /* System.RuntimeTypeHandle */
 System_RuntimeTypeHandle_FromIntPtr(
@@ -13915,6 +14362,21 @@ System_Delegate_t /* System.Delegate */
 System_Reflection_MethodInfo_CreateDelegate_1(
 	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
 	System_Type_t /* System.Type */ delegateType,
+	System_Object_t /* System.Object */ target,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Reflection_MethodInfo_CreateDelegate_A1(
+	System_Type_t /* System.Type */ T,
+	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Reflection_MethodInfo_CreateDelegate_A1_1(
+	System_Type_t /* System.Type */ T,
+	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
 	System_Object_t /* System.Object */ target,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -14974,6 +15436,7 @@ System_Threading_Tasks_ValueTask_Destroy(
 
 #pragma mark - END APIs of System.Threading.Tasks.ValueTask
 
+
 #pragma mark - BEGIN APIs of System.Runtime.CompilerServices.ValueTaskAwaiter
 void /* System.Void */
 System_Runtime_CompilerServices_ValueTaskAwaiter_GetResult(
@@ -15140,6 +15603,30 @@ System_IAsyncResult_Destroy(
 );
 
 #pragma mark - END APIs of System.IAsyncResult
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #pragma mark - BEGIN APIs of System.Threading.Tasks.Task[]
 #pragma mark - END APIs of System.Threading.Tasks.Task[]
@@ -15350,6 +15837,7 @@ System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_Destroy(
 );
 
 #pragma mark - END APIs of System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter
+
 
 #pragma mark - BEGIN APIs of Task`1[]
 #pragma mark - END APIs of Task`1[]
@@ -18340,6 +18828,7 @@ System_Globalization_DateTimeFormatInfo_Destroy(
 #pragma mark - END APIs of System.Globalization.Calendar[]
 
 
+
 #pragma mark - BEGIN APIs of System.Char[]
 #pragma mark - END APIs of System.Char[]
 
@@ -18451,6 +18940,12 @@ System_Text_CompositeFormat_Destroy(
 );
 
 #pragma mark - END APIs of System.Text.CompositeFormat
+
+
+
+
+
+
 
 
 #pragma mark - BEGIN APIs of System.Text.Encoding
@@ -19421,8 +19916,28 @@ System_Text_Encoder_Destroy(
 
 #pragma mark - END APIs of System.Text.Encoder
 
+
+
+
+
 #pragma mark - BEGIN APIs of TEnum[]
 #pragma mark - END APIs of TEnum[]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #pragma mark - BEGIN APIs of System.Runtime.InteropServices.StructLayoutAttribute
 System_Runtime_InteropServices_StructLayoutAttribute_t /* System.Runtime.InteropServices.StructLayoutAttribute */
@@ -20145,6 +20660,9 @@ System_Reflection_InterfaceMapping_Destroy(
 
 
 
+
+
+
 #pragma mark - BEGIN APIs of System.GC
 System_GCMemoryInfo_t /* System.GCMemoryInfo */
 System_GC_GetGCMemoryInfo(
@@ -20326,6 +20844,22 @@ System_GC_TryStartNoGCRegion_3(
 
 void /* System.Void */
 System_GC_EndNoGCRegion(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Array_t /* System.Array */
+System_GC_AllocateUninitializedArray_A1(
+	System_Type_t /* System.Type */ T,
+	int32_t /* System.Int32 */ length,
+	bool /* System.Boolean */ pinned,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Array_t /* System.Array */
+System_GC_AllocateArray_A1(
+	System_Type_t /* System.Type */ T,
+	int32_t /* System.Int32 */ length,
+	bool /* System.Boolean */ pinned,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -20554,8 +21088,12 @@ System_WeakReference_Destroy(
 #pragma mark - BEGIN APIs of T[]
 #pragma mark - END APIs of T[]
 
+
+
 #pragma mark - BEGIN APIs of T[]
 #pragma mark - END APIs of T[]
+
+
 
 #pragma mark - BEGIN APIs of System.Math
 double /* System.Double */
@@ -26548,11 +27086,17 @@ System_Random_Destroy(
 #pragma mark - BEGIN APIs of T[]
 #pragma mark - END APIs of T[]
 
-#pragma mark - BEGIN APIs of T[]
-#pragma mark - END APIs of T[]
+
 
 #pragma mark - BEGIN APIs of T[]
 #pragma mark - END APIs of T[]
+
+
+
+#pragma mark - BEGIN APIs of T[]
+#pragma mark - END APIs of T[]
+
+
 
 #pragma mark - BEGIN APIs of System.IO.Path
 CString /* System.String */
@@ -28850,6 +29394,42 @@ System_Text_StringBuilder_AppendFormat_7(
 );
 
 System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendFormat_A1(
+	System_Type_t /* System.Type */ TArg0,
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Text_CompositeFormat_t /* System.Text.CompositeFormat */ format,
+	System_Object_t /* System.Object */ arg0,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendFormat_A2(
+	System_Type_t /* System.Type */ TArg0,
+	System_Type_t /* System.Type */ TArg1,
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Text_CompositeFormat_t /* System.Text.CompositeFormat */ format,
+	System_Object_t /* System.Object */ arg0,
+	System_Object_t /* System.Object */ arg1,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_AppendFormat_A3(
+	System_Type_t /* System.Type */ TArg0,
+	System_Type_t /* System.Type */ TArg1,
+	System_Type_t /* System.Type */ TArg2,
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Text_CompositeFormat_t /* System.Text.CompositeFormat */ format,
+	System_Object_t /* System.Object */ arg0,
+	System_Object_t /* System.Object */ arg1,
+	System_Object_t /* System.Object */ arg2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
 System_Text_StringBuilder_AppendFormat_8(
 	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
 	System_IFormatProvider_t /* System.IFormatProvider */ provider,
@@ -29050,14 +29630,50 @@ System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendLiteral(
 );
 
 void /* System.Void */
-System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted(
+System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1(
+	System_Type_t /* System.Type */ T,
+	System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ self,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1_1(
+	System_Type_t /* System.Type */ T,
+	System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ self,
+	System_Object_t /* System.Object */ value,
+	CString /* System.String */ format,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1_2(
+	System_Type_t /* System.Type */ T,
+	System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ self,
+	System_Object_t /* System.Object */ value,
+	int32_t /* System.Int32 */ alignment,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1_3(
+	System_Type_t /* System.Type */ T,
+	System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ self,
+	System_Object_t /* System.Object */ value,
+	int32_t /* System.Int32 */ alignment,
+	CString /* System.String */ format,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_1(
 	System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ self,
 	CString /* System.String */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 void /* System.Void */
-System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_1(
+System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_2(
 	System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ self,
 	CString /* System.String */ value,
 	int32_t /* System.Int32 */ alignment,
@@ -29066,7 +29682,7 @@ System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_1(
 );
 
 void /* System.Void */
-System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_2(
+System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_3(
 	System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ self,
 	System_Object_t /* System.Object */ value,
 	int32_t /* System.Int32 */ alignment,
@@ -29102,6 +29718,16 @@ System_Text_StringBuilder_AppendInterpolatedStringHandler_Destroy(
 );
 
 #pragma mark - END APIs of System.Text.StringBuilder.AppendInterpolatedStringHandler
+
+
+
+
+
+
+
+
+
+
 
 
 #pragma mark - BEGIN APIs of System.IO.FileSystemInfo
@@ -30464,8 +31090,21 @@ System_Runtime_InteropServices_Marshal_SizeOf(
 );
 
 int32_t /* System.Int32 */
+System_Runtime_InteropServices_Marshal_SizeOf_A1(
+	System_Type_t /* System.Type */ T,
+	System_Object_t /* System.Object */ structure,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
 System_Runtime_InteropServices_Marshal_SizeOf_1(
 	System_Type_t /* System.Type */ t,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Runtime_InteropServices_Marshal_SizeOf_A1_1(
+	System_Type_t /* System.Type */ T,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -30493,6 +31132,13 @@ long /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_UnsafeAddrOfPinnedArrayElement(
 	System_Array_t /* System.Array */ arr,
 	int32_t /* System.Int32 */ index,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+long /* System.IntPtr */
+System_Runtime_InteropServices_Marshal_OffsetOf_A1(
+	System_Type_t /* System.Type */ T,
+	CString /* System.String */ fieldName,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -30792,6 +31438,15 @@ System_Runtime_InteropServices_Marshal_PrelinkAll(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+void /* System.Void */
+System_Runtime_InteropServices_Marshal_StructureToPtr_A1(
+	System_Type_t /* System.Type */ T,
+	System_Object_t /* System.Object */ structure,
+	long /* System.IntPtr */ ptr,
+	bool /* System.Boolean */ fDeleteOld,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 System_Object_t /* System.Object */
 System_Runtime_InteropServices_Marshal_PtrToStructure(
 	long /* System.IntPtr */ ptr,
@@ -30803,6 +31458,28 @@ void /* System.Void */
 System_Runtime_InteropServices_Marshal_PtrToStructure_1(
 	long /* System.IntPtr */ ptr,
 	System_Object_t /* System.Object */ structure,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Runtime_InteropServices_Marshal_PtrToStructure_A1(
+	System_Type_t /* System.Type */ T,
+	long /* System.IntPtr */ ptr,
+	System_Object_t /* System.Object */ structure,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Runtime_InteropServices_Marshal_PtrToStructure_A1_1(
+	System_Type_t /* System.Type */ T,
+	long /* System.IntPtr */ ptr,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Runtime_InteropServices_Marshal_DestroyStructure_A1(
+	System_Type_t /* System.Type */ T,
+	long /* System.IntPtr */ ptr,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -30917,9 +31594,23 @@ System_Runtime_InteropServices_Marshal_GetDelegateForFunctionPointer(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+System_Object_t /* System.Object */
+System_Runtime_InteropServices_Marshal_GetDelegateForFunctionPointer_A1(
+	System_Type_t /* System.Type */ TDelegate,
+	long /* System.IntPtr */ ptr,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 long /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_GetFunctionPointerForDelegate(
 	System_Delegate_t /* System.Delegate */ d,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+long /* System.IntPtr */
+System_Runtime_InteropServices_Marshal_GetFunctionPointerForDelegate_A1(
+	System_Type_t /* System.Type */ TDelegate,
+	System_Object_t /* System.Object */ d,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -31028,10 +31719,26 @@ System_Runtime_InteropServices_Marshal_CleanupUnusedObjectsInCurrentContext(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+long /* System.IntPtr */
+System_Runtime_InteropServices_Marshal_CreateAggregatedObject_A1(
+	System_Type_t /* System.Type */ T,
+	long /* System.IntPtr */ pOuter,
+	System_Object_t /* System.Object */ o,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 System_Object_t /* System.Object */
 System_Runtime_InteropServices_Marshal_CreateWrapperOfType(
 	System_Object_t /* System.Object */ o,
 	System_Type_t /* System.Type */ t,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Runtime_InteropServices_Marshal_CreateWrapperOfType_A2(
+	System_Type_t /* System.Type */ T,
+	System_Type_t /* System.Type */ TWrapper,
+	System_Object_t /* System.Object */ o,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -31063,6 +31770,14 @@ System_Runtime_InteropServices_Marshal_GetComInterfaceForObject_1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+long /* System.IntPtr */
+System_Runtime_InteropServices_Marshal_GetComInterfaceForObject_A2(
+	System_Type_t /* System.Type */ T,
+	System_Type_t /* System.Type */ TInterface,
+	System_Object_t /* System.Object */ o,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 System_Object_t /* System.Object */
 System_Runtime_InteropServices_Marshal_GetComObjectData(
 	System_Object_t /* System.Object */ obj,
@@ -31089,6 +31804,14 @@ System_Runtime_InteropServices_Marshal_GetNativeVariantForObject(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+void /* System.Void */
+System_Runtime_InteropServices_Marshal_GetNativeVariantForObject_A1(
+	System_Type_t /* System.Type */ T,
+	System_Object_t /* System.Object */ obj,
+	long /* System.IntPtr */ pDstNativeVariant,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 System_Object_t /* System.Object */
 System_Runtime_InteropServices_Marshal_GetTypedObjectForIUnknown(
 	long /* System.IntPtr */ pUnk,
@@ -31108,8 +31831,23 @@ System_Runtime_InteropServices_Marshal_GetObjectForNativeVariant(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+System_Object_t /* System.Object */
+System_Runtime_InteropServices_Marshal_GetObjectForNativeVariant_A1(
+	System_Type_t /* System.Type */ T,
+	long /* System.IntPtr */ pSrcNativeVariant,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 System_Object_Array_t /* System.Object[] */
 System_Runtime_InteropServices_Marshal_GetObjectsForNativeVariants(
+	long /* System.IntPtr */ aSrcNativeVariant,
+	int32_t /* System.Int32 */ cVars,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Array_t /* System.Array */
+System_Runtime_InteropServices_Marshal_GetObjectsForNativeVariants_A1(
+	System_Type_t /* System.Type */ T,
 	long /* System.IntPtr */ aSrcNativeVariant,
 	int32_t /* System.Int32 */ cVars,
 	System_Exception_t* /* System.Exception */ outException
@@ -31269,8 +32007,11 @@ System_Runtime_InteropServices_Marshal_Destroy_1(
 
 #pragma mark - END APIs of System.Runtime.InteropServices.Marshal
 
+
 #pragma mark - BEGIN APIs of T[]
 #pragma mark - END APIs of T[]
+
+
 
 #pragma mark - BEGIN APIs of System.Int16[]
 #pragma mark - END APIs of System.Int16[]
@@ -31283,6 +32024,9 @@ System_Runtime_InteropServices_Marshal_Destroy_1(
 
 #pragma mark - BEGIN APIs of System.IntPtr[]
 #pragma mark - END APIs of System.IntPtr[]
+
+
+
 
 #pragma mark - BEGIN APIs of System.Security.SecureString
 void /* System.Void */
@@ -31369,8 +32113,18 @@ System_Security_SecureString_Destroy(
 
 #pragma mark - END APIs of System.Security.SecureString
 
+
+
+
+
+
+
+
+
 #pragma mark - BEGIN APIs of T[]
 #pragma mark - END APIs of T[]
+
+
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Address
 NativeAOT_CodeGeneratorInputSample_Address_t /* NativeAOT.CodeGeneratorInputSample.Address */
@@ -31581,6 +32335,32 @@ NativeAOT_CodeGeneratorInputSample_GenericAnimal_Destroy(
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.GenericTests
 System_Type_t /* System.Type */
+NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnGenericType_A1(
+	System_Type_t /* System.Type */ T,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_Array_t /* System.Type[] */
+NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnGenericTypes_A2(
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnDefaultValueOfGenericType_A1(
+	System_Type_t /* System.Type */ T,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Array_t /* System.Array */
+NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnArrayOfDefaultValuesOfGenericType_A1(
+	System_Type_t /* System.Type */ T,
+	int32_t /* System.Int32 */ numberOfElements,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_t /* System.Type */
 NativeAOT_CodeGeneratorInputSample_GenericTests_CallReturnGenericTypeThroughReflection(
 	System_Type_t /* System.Type */ T,
 	System_Exception_t* /* System.Exception */ outException
@@ -31602,6 +32382,12 @@ NativeAOT_CodeGeneratorInputSample_GenericTests_Destroy(
 );
 
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.GenericTests
+
+
+#pragma mark - BEGIN APIs of T[]
+#pragma mark - END APIs of T[]
+
+
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Person
 CString /* System.String */
@@ -32246,6 +33032,8 @@ System_Delegate_Destroy(
 
 #pragma mark - END APIs of System.Delegate
 
+
+
 #pragma mark - BEGIN APIs of System.Action
 System_Action_t /* System.Action */
 System_Action_Create(
@@ -32889,11 +33677,11 @@ NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Destroy(
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.ByRefReturnValueDelegate
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.ByRefParametersDelegate
-// TODO: (NativeAOT_CodeGeneratorInputSample_ByRefParametersDelegate_t) Unsupported delegate type. Reason: Has by ref or out parameters
+// TODO: (NativeAOT_CodeGeneratorInputSample_ByRefParametersDelegate_t) Unsupported delegate type. Reason: Has by ref parameters
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.ByRefParametersDelegate
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.OutParametersDelegate
-// TODO: (NativeAOT_CodeGeneratorInputSample_OutParametersDelegate_t) Unsupported delegate type. Reason: Has by ref or out parameters
+// TODO: (NativeAOT_CodeGeneratorInputSample_OutParametersDelegate_t) Unsupported delegate type. Reason: Has out parameters
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.OutParametersDelegate
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Transformer.StringTransformerDelegate

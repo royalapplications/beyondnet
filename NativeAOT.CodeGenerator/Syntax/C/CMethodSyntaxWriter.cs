@@ -65,6 +65,40 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             throw new Exception("memberInfo may only be null when memberKind is Destructor");
         }
         
+        MethodBase? methodBase = memberInfo as MethodBase;
+        bool isGeneric = false;
+        Type[] genericArguments = Array.Empty<Type>();
+        int numberOfGenericArguments = 0;
+
+        if (methodBase is not null) {
+            isGeneric = methodBase.IsGenericMethod ||
+                        methodBase.IsConstructedGenericMethod ||
+                        methodBase.IsGenericMethodDefinition ||
+                        methodBase.ContainsGenericParameters;
+
+            if (isGeneric) {
+                genericArguments = methodBase.GetGenericArguments();
+                numberOfGenericArguments = genericArguments.Length;
+            }
+        }
+
+        if (isGeneric &&
+            (genericArguments == null || numberOfGenericArguments <= 0)) {
+            throw new Exception("Generic Method without generic arguments");
+        }
+
+        if (isGeneric) {
+            foreach (var parameter in parameters) {
+                if (parameter.IsOut) {
+                    return "// TODO: Generic Methods with out parameters are not supported";
+                } else if (parameter.ParameterType.IsByRef) {
+                    return "// TODO: Generic Methods with ref parameters are not supported";
+                } else if (parameter.ParameterType.IsArray) {
+                    return "// TODO: Generic Methods with array parameters are not supported";
+                }
+            }
+        }
+        
         // Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
         // GeneratedMember cSharpGeneratedMember;
         //
@@ -94,6 +128,40 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             methodNameC,
             CodeLanguage.C
         );
+        
+        bool isGenericReturnType = returnOrSetterOrEventHandlerType.IsGenericParameter ||
+                                   returnOrSetterOrEventHandlerType.IsGenericMethodParameter ||
+                                   returnOrSetterOrEventHandlerType.IsGenericType ||
+                                   returnOrSetterOrEventHandlerType.IsGenericTypeDefinition ||
+                                   returnOrSetterOrEventHandlerType.IsGenericTypeParameter ||
+                                   returnOrSetterOrEventHandlerType.IsConstructedGenericType;
+        
+        bool isGenericArrayReturnType = false;
+
+        if (!isGenericReturnType &&
+            returnOrSetterOrEventHandlerType.IsArray) {
+            Type? arrayElementType = returnOrSetterOrEventHandlerType.GetElementType();
+
+            if (arrayElementType is not null) {
+                bool isGenericArray = arrayElementType.IsGenericParameter ||
+                                      arrayElementType.IsGenericMethodParameter ||
+                                      arrayElementType.IsGenericType ||
+                                      arrayElementType.IsGenericTypeDefinition ||
+                                      arrayElementType.IsGenericTypeParameter ||
+                                      arrayElementType.IsConstructedGenericType;
+
+                isGenericReturnType = isGenericArray;
+                isGenericArrayReturnType = isGenericArray;
+            }
+        }
+
+        if (isGenericReturnType) {
+            if (isGenericArrayReturnType) {
+                returnOrSetterOrEventHandlerType = typeof(Array);
+            } else {
+                returnOrSetterOrEventHandlerType = typeof(object);
+            }
+        }
 
         bool returnOrSetterOrEventHandlerTypeIsByRef = returnOrSetterOrEventHandlerType.IsByRef;
 
@@ -131,6 +199,8 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             isStaticMethod,
             declaringType,
             parameters,
+            isGeneric,
+            genericArguments,
             typeDescriptorRegistry
         );
         
@@ -148,10 +218,27 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         bool isStatic,
         Type declaringType,
         IEnumerable<ParameterInfo> parameters,
+        bool isGeneric,
+        IEnumerable<Type> genericArguments,
         TypeDescriptorRegistry typeDescriptorRegistry
     )
     {
         List<string> parameterList = new();
+        
+        if (isGeneric) {
+            Type typeOfSystemType = typeof(Type);
+            TypeDescriptor systemTypeTypeDescriptor = typeOfSystemType.GetTypeDescriptor(typeDescriptorRegistry);
+            string systemTypeTypeName = typeOfSystemType.GetFullNameOrName();
+            string nativeSystemTypeTypeName = systemTypeTypeDescriptor.GetTypeName(CodeLanguage.C, true);
+            
+            foreach (var genericArgumentType in genericArguments) {
+                string parameterName = genericArgumentType.Name;
+            
+                string parameterString = $"{nativeSystemTypeTypeName} /* {systemTypeTypeName} */ {parameterName}";
+            
+                parameterList.Add(parameterString);
+            }
+        }
 
         if (!isStatic) {
             TypeDescriptor declaringTypeDescriptor = declaringType.GetTypeDescriptor(typeDescriptorRegistry);
@@ -181,13 +268,19 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         } else {
             foreach (var parameter in parameters) {
                 Type parameterType = parameter.ParameterType;
+                bool isGenericParameterType = parameterType.IsGenericParameter || parameterType.IsGenericMethodParameter;
+                
+                if (isGenericParameterType) {
+                    parameterType = typeof(object);
+                }
+                
                 bool isByRefParameter = parameterType.IsByRef;
                 bool isOutParameter = parameter.IsOut;
 
                 if (isByRefParameter) {
                     parameterType = parameterType.GetNonByRefType();
                 }
-                
+
                 TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
                 
                 string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(

@@ -336,20 +336,20 @@ public class TypeCollector
 
         // TODO: Generics
         #region Comment out to enable generic methods
-        if (type.IsGenericParameter) {
-            unsupportedReason = "Is Generic Parameter";
-            return false;
-        }
-        
-        if (type.IsGenericMethodParameter) {
-            unsupportedReason = "Is Generic Method Parameter";
-            return false;
-        }
-        
-        if (type.IsGenericTypeParameter) {
-            unsupportedReason = "Is Generic Type Parameter";
-            return false;
-        }
+        // if (type.IsGenericParameter) {
+        //     unsupportedReason = "Is Generic Parameter";
+        //     return false;
+        // }
+        //
+        // if (type.IsGenericMethodParameter) {
+        //     unsupportedReason = "Is Generic Method Parameter";
+        //     return false;
+        // }
+        //
+        // if (type.IsGenericTypeParameter) {
+        //     unsupportedReason = "Is Generic Type Parameter";
+        //     return false;
+        // }
         #endregion
         
         if (type.IsPointer) {
