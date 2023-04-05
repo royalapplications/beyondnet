@@ -67,8 +67,36 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             throw new Exception("memberInfo may only be null when memberKind is Destructor or TypeOf");
         }
         
+        MethodBase? methodBase = memberInfo as MethodBase;
+        bool isGeneric = false;
+        Type[] genericArguments = Array.Empty<Type>();
+        int numberOfGenericArguments = 0;
+
+        if (methodBase is not null) {
+            isGeneric = methodBase.IsGenericMethod ||
+                        methodBase.IsConstructedGenericMethod ||
+                        methodBase.IsGenericMethodDefinition ||
+                        methodBase.ContainsGenericParameters;
+
+            if (isGeneric) {
+                genericArguments = methodBase.GetGenericArguments();
+                numberOfGenericArguments = genericArguments.Length;
+            }
+        }
+
+        if (isGeneric &&
+            (genericArguments == null || numberOfGenericArguments <= 0)) {
+            throw new Exception("Generic Method without generic arguments");
+        }
+        
         string fullTypeName = declaringType.GetFullNameOrName();
         string fullTypeNameC = fullTypeName.CTypeName();
+
+        string methodNameWithGenericArity = methodName;
+
+        if (isGeneric) {
+            methodNameWithGenericArity = methodName + "_A" + numberOfGenericArguments;
+        }
         
         string methodNameC;
 
@@ -76,7 +104,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             case MemberKind.Automatic:
                 throw new Exception("MemberKind may not be Automatic here");
             case MemberKind.Method:
-                methodNameC = $"{fullTypeNameC}_{methodName}";
+                methodNameC = $"{fullTypeNameC}_{methodNameWithGenericArity}";
                 break;
             case MemberKind.Constructor:
                 methodNameC = $"{fullTypeNameC}_Create";
@@ -89,17 +117,17 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 break;
             case MemberKind.PropertyGetter:
             case MemberKind.FieldGetter:
-                methodNameC = $"{fullTypeNameC}_{methodName}_Get";
+                methodNameC = $"{fullTypeNameC}_{methodNameWithGenericArity}_Get";
                 break;
             case MemberKind.PropertySetter:
             case MemberKind.FieldSetter:
-                methodNameC = $"{fullTypeNameC}_{methodName}_Set";
+                methodNameC = $"{fullTypeNameC}_{methodNameWithGenericArity}_Set";
                 break;
             case MemberKind.EventHandlerAdder:
-                methodNameC = $"{fullTypeNameC}_{methodName}_Add";
+                methodNameC = $"{fullTypeNameC}_{methodNameWithGenericArity}_Add";
                 break;
             case MemberKind.EventHandlerRemover:
-                methodNameC = $"{fullTypeNameC}_{methodName}_Remove";
+                methodNameC = $"{fullTypeNameC}_{methodNameWithGenericArity}_Remove";
                 break;
             default:
                 throw new Exception("Unknown method kind");
@@ -118,6 +146,33 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         }
 
         generatedName = methodNameC;
+
+        bool isGenericReturnType = returnOrSetterOrEventHandlerType.IsGenericParameter ||
+                                   returnOrSetterOrEventHandlerType.IsGenericMethodParameter ||
+                                   returnOrSetterOrEventHandlerType.IsGenericType ||
+                                   returnOrSetterOrEventHandlerType.IsGenericTypeDefinition ||
+                                   returnOrSetterOrEventHandlerType.IsGenericTypeParameter ||
+                                   returnOrSetterOrEventHandlerType.IsConstructedGenericType;
+
+        if (!isGenericReturnType &&
+            returnOrSetterOrEventHandlerType.IsArray) {
+            Type? arrayElementType = returnOrSetterOrEventHandlerType.GetElementType();
+
+            if (arrayElementType is not null) {
+                bool isGenericArray = arrayElementType.IsGenericParameter ||
+                                      arrayElementType.IsGenericMethodParameter ||
+                                      arrayElementType.IsGenericType ||
+                                      arrayElementType.IsGenericTypeDefinition ||
+                                      arrayElementType.IsGenericTypeParameter ||
+                                      arrayElementType.IsConstructedGenericType;
+
+                isGenericReturnType = isGenericArray;
+            }
+        }
+
+        if (isGenericReturnType) {
+            returnOrSetterOrEventHandlerType = typeof(object);
+        }
 
         Type? setterOrEventHandlerType;
 
@@ -138,6 +193,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             isStaticMethod,
             declaringType,
             parameters,
+            isGeneric,
+            genericArguments,
             false,
             typeDescriptorRegistry
         );
@@ -192,8 +249,11 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             CodeLanguage.CSharpUnmanaged,
             CodeLanguage.CSharp,
             parameters,
+            isGeneric,
+            genericArguments,
             typeDescriptorRegistry,
-            out List<string> convertedParameterNames
+            out List<string> convertedParameterNames,
+            out List<string> convertedGenericArgumentNames
         );
 
         sb.AppendLine(parameterConversions);
@@ -511,6 +571,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         bool isStatic,
         Type declaringType,
         IEnumerable<ParameterInfo> parameters,
+        bool isGeneric,
+        IEnumerable<Type> genericArguments,
         bool onlyWriteParameterTypes,
         TypeDescriptorRegistry typeDescriptorRegistry
     )
@@ -524,6 +586,21 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         string parameterNameSuffix = onlyWriteParameterTypes 
             ? " */"
             : string.Empty;
+
+        if (isGeneric) {
+            Type typeOfSystemType = typeof(Type);
+            TypeDescriptor systemTypeTypeDescriptor = typeOfSystemType.GetTypeDescriptor(typeDescriptorRegistry);
+            string systemTypeTypeName = typeOfSystemType.GetFullNameOrName();
+            string nativeSystemTypeTypeName = systemTypeTypeDescriptor.GetTypeName(targetLanguage, true);
+            
+            foreach (var genericArgumentType in genericArguments) {
+                string parameterName = genericArgumentType.Name;
+            
+                string parameterString = $"{nativeSystemTypeTypeName} /* {systemTypeTypeName} */ {parameterNamePrefix}{parameterName}{parameterNameSuffix}";
+            
+                parameterList.Add(parameterString);
+            }
+        }
 
         if (!isStatic) {
             TypeDescriptor declaringTypeDescriptor = declaringType.GetTypeDescriptor(typeDescriptorRegistry);
@@ -599,17 +676,47 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         CodeLanguage sourceLanguage,
         CodeLanguage targetLanguage,
         IEnumerable<ParameterInfo> parameters,
+        bool isGeneric,
+        IEnumerable<Type> genericArguments,
         TypeDescriptorRegistry typeDescriptorRegistry,
-        out List<string> convertedParameterNames
+        out List<string> convertedParameterNames,
+        out List<string> convertedGenericArgumentNames
     )
     {
         StringBuilder sb = new();
-        convertedParameterNames = new();
         
+        convertedParameterNames = new();
+        convertedGenericArgumentNames = new();
+
+        if (isGeneric) {
+            Type typeOfSystemType = typeof(Type);
+            TypeDescriptor systemTypeTypeDescriptor = typeOfSystemType.GetTypeDescriptor(typeDescriptorRegistry);
+            string systemTypeTypeName = typeOfSystemType.GetFullNameOrName();
+            
+            string systemTypeTypeConversion = systemTypeTypeDescriptor.GetTypeConversion(
+                sourceLanguage,
+                targetLanguage
+            )!;
+    
+            foreach (var genericArgumentType in genericArguments) {
+                string name = genericArgumentType.Name;
+                
+                string convertedGenericArgumentName = $"{name}Converted";
+                    
+                string fullTypeConversion = string.Format(systemTypeTypeConversion, name);
+                string typeConversionCode = $"{systemTypeTypeName} {convertedGenericArgumentName} = {fullTypeConversion};";
+    
+                sb.AppendLine($"\t{typeConversionCode}");
+                
+                convertedGenericArgumentNames.Add(convertedGenericArgumentName);
+            }
+        }
+
         foreach (var parameter in parameters) {
             string parameterName = parameter.Name ?? throw new Exception("Parameter has no name");
             
             Type parameterType = parameter.ParameterType;
+            bool isGenericParameterType = parameterType.IsGenericParameter || parameterType.IsGenericMethodParameter;
             bool isOutParameter = parameter.IsOut;
             bool isByRefParameter = parameterType.IsByRef;
 
@@ -618,6 +725,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 throw new Exception("Parameter is out but not by ref, that's impossible");
             } else if (isByRefParameter) {
                 parameterType = parameterType.GetNonByRefType();
+            } else if (isGenericParameterType) {
+                parameterType = typeof(object);
             }
             
             TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);

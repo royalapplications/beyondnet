@@ -324,6 +324,18 @@ public class TypeCollector
             return false;
         }
         
+        if (type.IsConstructedGenericType) {
+            unsupportedReason = "Is Constructed Generic Type";
+            return false;
+        }
+        
+        if (type.IsGenericTypeDefinition) {
+            unsupportedReason = "Is Generic Type Definition";
+            return false;
+        }
+
+        // TODO: Generics
+        #region Comment out to enable generic methods
         if (type.IsGenericParameter) {
             unsupportedReason = "Is Generic Parameter";
             return false;
@@ -334,21 +346,12 @@ public class TypeCollector
             return false;
         }
         
-        if (type.IsGenericTypeDefinition) {
-            unsupportedReason = "Is Generic Type Definition";
-            return false;
-        }
-        
         if (type.IsGenericTypeParameter) {
             unsupportedReason = "Is Generic Type Parameter";
             return false;
         }
+        #endregion
         
-        if (type.IsConstructedGenericType) {
-            unsupportedReason = "Is Constructed Generic Type";
-            return false;
-        }
-
         if (type.IsPointer) {
             unsupportedReason = "Is Managed Pointer Type";
             return false;

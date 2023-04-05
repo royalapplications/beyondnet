@@ -98,6 +98,7 @@ public class MemberCollector
         Dictionary<MemberInfo, string> unsupportedMembers
     )
     {
+        // TODO: Generics
         if (constructorInfo.IsGenericMethod ||
             constructorInfo.IsGenericMethodDefinition ||
             constructorInfo.IsConstructedGenericMethod) {
@@ -131,6 +132,8 @@ public class MemberCollector
         Dictionary<MemberInfo, string> unsupportedMembers
     )
     {
+        // TODO: Generics
+        #region Comment out to enable generic methods
         if (methodInfo.IsGenericMethod ||
             methodInfo.IsGenericMethodDefinition ||
             methodInfo.IsConstructedGenericMethod ||
@@ -139,6 +142,7 @@ public class MemberCollector
             
             return;
         }
+        #endregion
         
         // This filters out getters/setters and operator overloading methods
         bool isSpecialName = methodInfo.IsSpecialName;
@@ -156,12 +160,6 @@ public class MemberCollector
             
             return;
         }
-
-        // if (returnType.IsByRef) {
-        //     unsupportedMembers[methodInfo] = "Has by ref return type";
-        //     
-        //     return;
-        // }
 
         var parameterInfos = methodInfo.GetParameters();
         

@@ -32,6 +32,8 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
                 return;
             }
         }
+        
+        // TODO: Generics
 
         string managedParmeters = CSharpUnmanagedMethodSyntaxWriter.WriteParameters(
             CodeLanguage.CSharp,
@@ -41,6 +43,8 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
             true,
             type,
             parameterInfos,
+            false,
+            Array.Empty<Type>(),
             false,
             typeDescriptorRegistry
         );
@@ -53,6 +57,8 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
             true,
             type,
             parameterInfos,
+            false,
+            Array.Empty<Type>(),
             true,
             typeDescriptorRegistry
         );
@@ -69,6 +75,8 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
             true,
             type,
             parameterInfos,
+            false,
+            Array.Empty<Type>(),
             false,
             typeDescriptorRegistry
         );
@@ -199,13 +207,18 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
 
         sb.AppendLine($"\tprivate {managedReturnTypeName} __InvokeByCallingCFunction({managedParmeters})");
         sb.AppendLine("\t{");
+        
+        // TODO: Generics
 
         string parameterConversions = CSharpUnmanagedMethodSyntaxWriter.WriteParameterConversions(
             CodeLanguage.CSharp,
             CodeLanguage.CSharpUnmanaged,
             parameterInfos,
+            false,
+            Array.Empty<Type>(),
             typeDescriptorRegistry,
-            out List<string> convertedParameterNames
+            out List<string> convertedParameterNames,
+            out _
         );
 
         sb.AppendLine(
@@ -309,8 +322,11 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
             CodeLanguage.CSharpUnmanaged,
             CodeLanguage.CSharp,
             parameterInfos,
+            false,
+            Array.Empty<Type>(),
             typeDescriptorRegistry,
-            out List<string> convertedParameterNamesForInvocation
+            out List<string> convertedParameterNamesForInvocation,
+            out _
         );
 
         sb.AppendLine(
