@@ -1,5 +1,5 @@
 // Number of generated types: 659
-// Number of generated members: 4118
+// Number of generated members: 4138
 
 // <Header>
 using System;
@@ -14778,9 +14778,83 @@ internal unsafe class System_Array
 	}
 	
 
-	// TODO: Generic Methods with array parameters are not supported
+	[UnmanagedCallersOnly(EntryPoint = "System_Array_BinarySearch_A1")]
+	internal static int /* System.Int32 */ System_Array_BinarySearch_A1(void* /* System.Type */ T, void* /* T[] */ array, void* /* T */ value, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Array arrayConverted = InteropUtils.GetInstance<System.Array>(array);
+		System.Object valueConverted = InteropUtils.GetInstance<System.Object>(value);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Array);
+			System.String __nameOfMethodForGenericCall = nameof(System.Array.BinarySearch);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { arrayConverted, valueConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0).MakeArrayType(), System.Type.MakeGenericMethodParameter(0) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method BinarySearch not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Int32 __returnValue = (System.Int32)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
 
-	// TODO: Generic Methods with array parameters are not supported
+	[UnmanagedCallersOnly(EntryPoint = "System_Array_BinarySearch_A1_1")]
+	internal static int /* System.Int32 */ System_Array_BinarySearch_A1_1(void* /* System.Type */ T, void* /* T[] */ array, int /* System.Int32 */ index, int /* System.Int32 */ length, void* /* T */ value, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Array arrayConverted = InteropUtils.GetInstance<System.Array>(array);
+		System.Object valueConverted = InteropUtils.GetInstance<System.Object>(value);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Array);
+			System.String __nameOfMethodForGenericCall = nameof(System.Array.BinarySearch);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { arrayConverted, index, length, valueConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0).MakeArrayType(), typeof(System.Int32), typeof(System.Int32), System.Type.MakeGenericMethodParameter(0) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method BinarySearch not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Int32 __returnValue = (System.Int32)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Array_CopyTo")]
 	internal static void /* System.Void */ System_Array_CopyTo(void* /* System.Array */ __self, void* /* System.Array */ array, int /* System.Int32 */ index, void** /* System.Exception */ __outException)
@@ -14878,9 +14952,79 @@ internal unsafe class System_Array
 	}
 	
 
-	// TODO: Generic Methods with array parameters are not supported
+	[UnmanagedCallersOnly(EntryPoint = "System_Array_Fill_A1")]
+	internal static void /* System.Void */ System_Array_Fill_A1(void* /* System.Type */ T, void* /* T[] */ array, void* /* T */ value, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Array arrayConverted = InteropUtils.GetInstance<System.Array>(array);
+		System.Object valueConverted = InteropUtils.GetInstance<System.Object>(value);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Array);
+			System.String __nameOfMethodForGenericCall = nameof(System.Array.Fill);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { arrayConverted, valueConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0).MakeArrayType(), System.Type.MakeGenericMethodParameter(0) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method Fill not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
 
-	// TODO: Generic Methods with array parameters are not supported
+	[UnmanagedCallersOnly(EntryPoint = "System_Array_Fill_A1_1")]
+	internal static void /* System.Void */ System_Array_Fill_A1_1(void* /* System.Type */ T, void* /* T[] */ array, void* /* T */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Array arrayConverted = InteropUtils.GetInstance<System.Array>(array);
+		System.Object valueConverted = InteropUtils.GetInstance<System.Object>(value);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Array);
+			System.String __nameOfMethodForGenericCall = nameof(System.Array.Fill);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { arrayConverted, valueConverted, startIndex, count };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0).MakeArrayType(), System.Type.MakeGenericMethodParameter(0), typeof(System.Int32), typeof(System.Int32) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method Fill not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Array_IndexOf")]
 	internal static int /* System.Int32 */ System_Array_IndexOf(void* /* System.Array */ array, void* /* System.Object */ value, void** /* System.Exception */ __outException)
@@ -14960,11 +15104,122 @@ internal unsafe class System_Array
 	}
 	
 
-	// TODO: Generic Methods with array parameters are not supported
+	[UnmanagedCallersOnly(EntryPoint = "System_Array_IndexOf_A1")]
+	internal static int /* System.Int32 */ System_Array_IndexOf_A1(void* /* System.Type */ T, void* /* T[] */ array, void* /* T */ value, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Array arrayConverted = InteropUtils.GetInstance<System.Array>(array);
+		System.Object valueConverted = InteropUtils.GetInstance<System.Object>(value);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Array);
+			System.String __nameOfMethodForGenericCall = nameof(System.Array.IndexOf);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { arrayConverted, valueConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0).MakeArrayType(), System.Type.MakeGenericMethodParameter(0) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method IndexOf not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Int32 __returnValue = (System.Int32)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
 
-	// TODO: Generic Methods with array parameters are not supported
+	[UnmanagedCallersOnly(EntryPoint = "System_Array_IndexOf_A1_1")]
+	internal static int /* System.Int32 */ System_Array_IndexOf_A1_1(void* /* System.Type */ T, void* /* T[] */ array, void* /* T */ value, int /* System.Int32 */ startIndex, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Array arrayConverted = InteropUtils.GetInstance<System.Array>(array);
+		System.Object valueConverted = InteropUtils.GetInstance<System.Object>(value);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Array);
+			System.String __nameOfMethodForGenericCall = nameof(System.Array.IndexOf);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { arrayConverted, valueConverted, startIndex };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0).MakeArrayType(), System.Type.MakeGenericMethodParameter(0), typeof(System.Int32) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method IndexOf not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Int32 __returnValue = (System.Int32)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
 
-	// TODO: Generic Methods with array parameters are not supported
+	[UnmanagedCallersOnly(EntryPoint = "System_Array_IndexOf_A1_2")]
+	internal static int /* System.Int32 */ System_Array_IndexOf_A1_2(void* /* System.Type */ T, void* /* T[] */ array, void* /* T */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Array arrayConverted = InteropUtils.GetInstance<System.Array>(array);
+		System.Object valueConverted = InteropUtils.GetInstance<System.Object>(value);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Array);
+			System.String __nameOfMethodForGenericCall = nameof(System.Array.IndexOf);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { arrayConverted, valueConverted, startIndex, count };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0).MakeArrayType(), System.Type.MakeGenericMethodParameter(0), typeof(System.Int32), typeof(System.Int32) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method IndexOf not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Int32 __returnValue = (System.Int32)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Array_LastIndexOf")]
 	internal static int /* System.Int32 */ System_Array_LastIndexOf(void* /* System.Array */ array, void* /* System.Object */ value, void** /* System.Exception */ __outException)
@@ -15044,11 +15299,122 @@ internal unsafe class System_Array
 	}
 	
 
-	// TODO: Generic Methods with array parameters are not supported
+	[UnmanagedCallersOnly(EntryPoint = "System_Array_LastIndexOf_A1")]
+	internal static int /* System.Int32 */ System_Array_LastIndexOf_A1(void* /* System.Type */ T, void* /* T[] */ array, void* /* T */ value, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Array arrayConverted = InteropUtils.GetInstance<System.Array>(array);
+		System.Object valueConverted = InteropUtils.GetInstance<System.Object>(value);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Array);
+			System.String __nameOfMethodForGenericCall = nameof(System.Array.LastIndexOf);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { arrayConverted, valueConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0).MakeArrayType(), System.Type.MakeGenericMethodParameter(0) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method LastIndexOf not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Int32 __returnValue = (System.Int32)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
 
-	// TODO: Generic Methods with array parameters are not supported
+	[UnmanagedCallersOnly(EntryPoint = "System_Array_LastIndexOf_A1_1")]
+	internal static int /* System.Int32 */ System_Array_LastIndexOf_A1_1(void* /* System.Type */ T, void* /* T[] */ array, void* /* T */ value, int /* System.Int32 */ startIndex, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Array arrayConverted = InteropUtils.GetInstance<System.Array>(array);
+		System.Object valueConverted = InteropUtils.GetInstance<System.Object>(value);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Array);
+			System.String __nameOfMethodForGenericCall = nameof(System.Array.LastIndexOf);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { arrayConverted, valueConverted, startIndex };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0).MakeArrayType(), System.Type.MakeGenericMethodParameter(0), typeof(System.Int32) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method LastIndexOf not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Int32 __returnValue = (System.Int32)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
 
-	// TODO: Generic Methods with array parameters are not supported
+	[UnmanagedCallersOnly(EntryPoint = "System_Array_LastIndexOf_A1_2")]
+	internal static int /* System.Int32 */ System_Array_LastIndexOf_A1_2(void* /* System.Type */ T, void* /* T[] */ array, void* /* T */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Array arrayConverted = InteropUtils.GetInstance<System.Array>(array);
+		System.Object valueConverted = InteropUtils.GetInstance<System.Object>(value);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Array);
+			System.String __nameOfMethodForGenericCall = nameof(System.Array.LastIndexOf);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { arrayConverted, valueConverted, startIndex, count };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0).MakeArrayType(), System.Type.MakeGenericMethodParameter(0), typeof(System.Int32), typeof(System.Int32) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method LastIndexOf not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Int32 __returnValue = (System.Int32)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		}
+	}
+	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Array_Reverse")]
 	internal static void /* System.Void */ System_Array_Reverse(void* /* System.Array */ array, void** /* System.Exception */ __outException)
@@ -15096,9 +15462,77 @@ internal unsafe class System_Array
 	}
 	
 
-	// TODO: Generic Methods with array parameters are not supported
+	[UnmanagedCallersOnly(EntryPoint = "System_Array_Reverse_A1")]
+	internal static void /* System.Void */ System_Array_Reverse_A1(void* /* System.Type */ T, void* /* T[] */ array, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Array arrayConverted = InteropUtils.GetInstance<System.Array>(array);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Array);
+			System.String __nameOfMethodForGenericCall = nameof(System.Array.Reverse);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { arrayConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0).MakeArrayType() };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method Reverse not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
 
-	// TODO: Generic Methods with array parameters are not supported
+	[UnmanagedCallersOnly(EntryPoint = "System_Array_Reverse_A1_1")]
+	internal static void /* System.Void */ System_Array_Reverse_A1_1(void* /* System.Type */ T, void* /* T[] */ array, int /* System.Int32 */ index, int /* System.Int32 */ length, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Array arrayConverted = InteropUtils.GetInstance<System.Array>(array);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Array);
+			System.String __nameOfMethodForGenericCall = nameof(System.Array.Reverse);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { arrayConverted, index, length };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0).MakeArrayType(), typeof(System.Int32), typeof(System.Int32) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method Reverse not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Array_Sort")]
 	internal static void /* System.Void */ System_Array_Sort(void* /* System.Array */ array, void** /* System.Exception */ __outException)
@@ -15292,13 +15726,153 @@ internal unsafe class System_Array
 	}
 	
 
-	// TODO: Generic Methods with array parameters are not supported
+	[UnmanagedCallersOnly(EntryPoint = "System_Array_Sort_A1")]
+	internal static void /* System.Void */ System_Array_Sort_A1(void* /* System.Type */ T, void* /* T[] */ array, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Array arrayConverted = InteropUtils.GetInstance<System.Array>(array);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Array);
+			System.String __nameOfMethodForGenericCall = nameof(System.Array.Sort);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { arrayConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0).MakeArrayType() };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method Sort not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
 
-	// TODO: Generic Methods with array parameters are not supported
+	[UnmanagedCallersOnly(EntryPoint = "System_Array_Sort_A2")]
+	internal static void /* System.Void */ System_Array_Sort_A2(void* /* System.Type */ TKey, void* /* System.Type */ TValue, void* /* TKey[] */ keys, void* /* TValue[] */ items, void** /* System.Exception */ __outException)
+	{
+		System.Type TKeyConverted = InteropUtils.GetInstance<System.Type>(TKey);
+		System.Type TValueConverted = InteropUtils.GetInstance<System.Type>(TValue);
+		System.Array keysConverted = InteropUtils.GetInstance<System.Array>(keys);
+		System.Array itemsConverted = InteropUtils.GetInstance<System.Array>(items);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Array);
+			System.String __nameOfMethodForGenericCall = nameof(System.Array.Sort);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { keysConverted, itemsConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0).MakeArrayType(), System.Type.MakeGenericMethodParameter(1).MakeArrayType() };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TKeyConverted, TValueConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 2, __parameterTypesForGenericCall) ?? throw new Exception("Method Sort not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
 
-	// TODO: Generic Methods with array parameters are not supported
+	[UnmanagedCallersOnly(EntryPoint = "System_Array_Sort_A1_1")]
+	internal static void /* System.Void */ System_Array_Sort_A1_1(void* /* System.Type */ T, void* /* T[] */ array, int /* System.Int32 */ index, int /* System.Int32 */ length, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Array arrayConverted = InteropUtils.GetInstance<System.Array>(array);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Array);
+			System.String __nameOfMethodForGenericCall = nameof(System.Array.Sort);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { arrayConverted, index, length };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0).MakeArrayType(), typeof(System.Int32), typeof(System.Int32) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method Sort not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
 
-	// TODO: Generic Methods with array parameters are not supported
+	[UnmanagedCallersOnly(EntryPoint = "System_Array_Sort_A2_1")]
+	internal static void /* System.Void */ System_Array_Sort_A2_1(void* /* System.Type */ TKey, void* /* System.Type */ TValue, void* /* TKey[] */ keys, void* /* TValue[] */ items, int /* System.Int32 */ index, int /* System.Int32 */ length, void** /* System.Exception */ __outException)
+	{
+		System.Type TKeyConverted = InteropUtils.GetInstance<System.Type>(TKey);
+		System.Type TValueConverted = InteropUtils.GetInstance<System.Type>(TValue);
+		System.Array keysConverted = InteropUtils.GetInstance<System.Array>(keys);
+		System.Array itemsConverted = InteropUtils.GetInstance<System.Array>(items);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Array);
+			System.String __nameOfMethodForGenericCall = nameof(System.Array.Sort);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { keysConverted, itemsConverted, index, length };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0).MakeArrayType(), System.Type.MakeGenericMethodParameter(1).MakeArrayType(), typeof(System.Int32), typeof(System.Int32) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TKeyConverted, TValueConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 2, __parameterTypesForGenericCall) ?? throw new Exception("Method Sort not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Array_GetEnumerator")]
 	internal static void* /* System.Collections.IEnumerator */ System_Array_GetEnumerator(void* /* System.Array */ __self, void** /* System.Exception */ __outException)
@@ -93086,9 +93660,92 @@ internal unsafe class System_Random
 	}
 	
 
-	// TODO: Generic Methods with array parameters are not supported
+	[UnmanagedCallersOnly(EntryPoint = "System_Random_GetItems_A1")]
+	internal static void* /* System.Array */ System_Random_GetItems_A1(void* /* System.Type */ T, void* /* System.Random */ __self, void* /* T[] */ choices, int /* System.Int32 */ length, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Random __selfConverted = InteropUtils.GetInstance<System.Random>(__self);
+	
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Array choicesConverted = InteropUtils.GetInstance<System.Array>(choices);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Random);
+			System.String __nameOfMethodForGenericCall = nameof(System.Random.GetItems);
+			System.Object? __methodTargetForGenericCall = __selfConverted;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { choicesConverted, length };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0).MakeArrayType(), typeof(System.Int32) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method GetItems not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Array __returnValue = (System.Array)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 
-	// TODO: Generic Methods with array parameters are not supported
+	[UnmanagedCallersOnly(EntryPoint = "System_Random_Shuffle_A1")]
+	internal static void /* System.Void */ System_Random_Shuffle_A1(void* /* System.Type */ T, void* /* System.Random */ __self, void* /* T[] */ values, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Random __selfConverted = InteropUtils.GetInstance<System.Random>(__self);
+	
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Array valuesConverted = InteropUtils.GetInstance<System.Array>(values);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Random);
+			System.String __nameOfMethodForGenericCall = nameof(System.Random.Shuffle);
+			System.Object? __methodTargetForGenericCall = __selfConverted;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { valuesConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0).MakeArrayType() };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method Shuffle not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		}
+	}
+	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Random_Create")]
 	internal static void* /* System.Random */ System_Random_Create(void** /* System.Exception */ __outException)
@@ -107789,7 +108446,43 @@ internal unsafe class System_Runtime_InteropServices_Marshal
 	}
 	
 
-	// TODO: Generic Methods with array parameters are not supported
+	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_Marshal_UnsafeAddrOfPinnedArrayElement_A1")]
+	internal static nint /* System.IntPtr */ System_Runtime_InteropServices_Marshal_UnsafeAddrOfPinnedArrayElement_A1(void* /* System.Type */ T, void* /* T[] */ arr, int /* System.Int32 */ index, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Array arrConverted = InteropUtils.GetInstance<System.Array>(arr);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Runtime.InteropServices.Marshal);
+			System.String __nameOfMethodForGenericCall = nameof(System.Runtime.InteropServices.Marshal.UnsafeAddrOfPinnedArrayElement);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { arrConverted, index };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0).MakeArrayType(), typeof(System.Int32) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method UnsafeAddrOfPinnedArrayElement not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.IntPtr __returnValue = (System.IntPtr)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return nint.Zero;
+		}
+	}
+	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_InteropServices_Marshal_OffsetOf_A1")]
 	internal static nint /* System.IntPtr */ System_Runtime_InteropServices_Marshal_OffsetOf_A1(void* /* System.Type */ T, byte* /* System.String */ fieldName, void** /* System.Exception */ __outException)
@@ -112601,7 +113294,45 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_GenericTests
 	}
 	
 
-	// TODO: Generic Methods with array parameters are not supported
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnStringOfJoinedArray_A1")]
+	internal static byte* /* System.String */ NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnStringOfJoinedArray_A1(void* /* System.Type */ T, void* /* T[] */ values, byte* /* System.String */ separator, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Array valuesConverted = InteropUtils.GetInstance<System.Array>(values);
+		System.String separatorConverted = InteropUtils.ToDotNetString(separator);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(NativeAOT.CodeGeneratorInputSample.GenericTests);
+			System.String __nameOfMethodForGenericCall = nameof(NativeAOT.CodeGeneratorInputSample.GenericTests.ReturnStringOfJoinedArray);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { valuesConverted, separatorConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0).MakeArrayType(), typeof(System.String) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method ReturnStringOfJoinedArray not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.String __returnValue = (System.String)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			byte* __returnValueNative = __returnValue.CopyToCString();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericTests_Create")]
 	internal static void* /* NativeAOT.CodeGeneratorInputSample.GenericTests */ NativeAOT_CodeGeneratorInputSample_GenericTests_Create(void** /* System.Exception */ __outException)

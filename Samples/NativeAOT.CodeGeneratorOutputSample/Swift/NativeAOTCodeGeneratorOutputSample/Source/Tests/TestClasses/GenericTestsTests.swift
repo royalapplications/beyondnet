@@ -437,57 +437,74 @@ final class GenericTestsTests: XCTestCase {
 	}
 	
 	// TODO: Disabled because generic arrays are not yet supported
-//	func testReturnStringOfJoinedArray() {
-//		var exception: System_Exception_t?
-//
-//		let numberOfElements: Int32 = 10
-//		let stringPrefix = "Hello_"
-//
-//		guard let stringBuilderType = System_Text_StringBuilder_TypeOf() else {
-//			XCTFail("typeof(System.Text.StringBuilder) should return an instance")
-//
-//			return
-//		}
-//
-//		defer { System_Type_Destroy(stringBuilderType) }
-//
-//		guard let arrayOfStringBuilders = System_Array_CreateInstance(stringBuilderType,
-//																	  numberOfElements,
-//																	  &exception),
-//			  exception == nil else {
-//			XCTFail("System.Array ctor should not throw and return an instance")
-//
-//			return
-//		}
-//
-//		defer { System_Array_Destroy(arrayOfStringBuilders) }
-//
-//		for idx in 0..<numberOfElements {
-//			guard let stringBuilder = System_Text_StringBuilder_Create(&exception),
-//				  exception == nil else {
-//				XCTFail("System.Text.StringBuilder ctor should not throw and return an instance")
-//
-//				return
-//			}
-//
-//			defer { System_Text_StringBuilder_Destroy(stringBuilder) }
-//
-//			let string = "\(stringPrefix)_\(idx)"
-//
-//			System_Text_StringBuilder_Append_2(stringBuilder,
-//											   string,
-//											   &exception)
-//
-//			XCTAssertNil(exception)
-//
-//			System_Array_SetValue(arrayOfStringBuilders,
-//								  stringBuilder,
-//								  idx,
-//								  &exception)
-//
-//			XCTAssertNil(exception)
-//		}
-//
-//		NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnStringOfJoinedArray
-//	}
+	func testReturnStringOfJoinedArray() {
+		var exception: System_Exception_t?
+
+		let numberOfElements: Int32 = 10
+		let stringPrefix = "Hello_"
+		let separator = ";"
+
+		guard let stringBuilderType = System_Text_StringBuilder_TypeOf() else {
+			XCTFail("typeof(System.Text.StringBuilder) should return an instance")
+
+			return
+		}
+
+		defer { System_Type_Destroy(stringBuilderType) }
+
+		guard let arrayOfStringBuilders = System_Array_CreateInstance(stringBuilderType,
+																	  numberOfElements,
+																	  &exception),
+			  exception == nil else {
+			XCTFail("System.Array ctor should not throw and return an instance")
+
+			return
+		}
+
+		defer { System_Array_Destroy(arrayOfStringBuilders) }
+
+		for idx in 0..<numberOfElements {
+			guard let stringBuilder = System_Text_StringBuilder_Create(&exception),
+				  exception == nil else {
+				XCTFail("System.Text.StringBuilder ctor should not throw and return an instance")
+
+				return
+			}
+
+			defer { System_Text_StringBuilder_Destroy(stringBuilder) }
+
+			let string = "\(stringPrefix)_\(idx)"
+
+			System_Text_StringBuilder_Append_2(stringBuilder,
+											   string,
+											   &exception)
+
+			XCTAssertNil(exception)
+
+			System_Array_SetValue(arrayOfStringBuilders,
+								  stringBuilder,
+								  idx,
+								  &exception)
+
+			XCTAssertNil(exception)
+		}
+
+		guard let stringRetC = NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnStringOfJoinedArray_A1(stringBuilderType,
+																											arrayOfStringBuilders,
+																											separator,
+																											&exception),
+			  exception == nil else {
+			XCTFail("ReturnStringOfJoinedArray should not throw and return an instance")
+			
+			return
+		}
+		
+		defer { stringRetC.deallocate() }
+		
+		let stringRet = String(cString: stringRetC)
+		
+		print(stringRet)
+		
+		// TODO
+	}
 }

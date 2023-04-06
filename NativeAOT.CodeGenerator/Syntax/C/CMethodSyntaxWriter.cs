@@ -93,9 +93,9 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
                     return "// TODO: Generic Methods with out parameters are not supported";
                 } else if (parameter.ParameterType.IsByRef) {
                     return "// TODO: Generic Methods with ref parameters are not supported";
-                } else if (parameter.ParameterType.IsArray) {
+                } /* else if (parameter.ParameterType.IsArray) {
                     return "// TODO: Generic Methods with array parameters are not supported";
-                }
+                } */
             }
         }
         
@@ -272,6 +272,19 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
                 
                 if (isGenericParameterType) {
                     parameterType = typeof(object);
+                }
+                
+                bool isGenericArrayParameterType = false;
+                Type? arrayType = parameterType.GetElementType();
+                        
+                if (parameterType.IsArray &&
+                    arrayType is not null &&
+                    (arrayType.IsGenericParameter || arrayType.IsGenericMethodParameter)) {
+                    isGenericArrayParameterType = true;
+                }
+
+                if (isGenericArrayParameterType) {
+                    parameterType = typeof(Array);
                 }
                 
                 bool isByRefParameter = parameterType.IsByRef;

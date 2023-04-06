@@ -1,5 +1,5 @@
 // Number of generated types: 659
-// Number of generated members: 4422
+// Number of generated members: 4442
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -5970,6 +5970,24 @@ System_Array_BinarySearch_3(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+int32_t /* System.Int32 */
+System_Array_BinarySearch_A1(
+	System_Type_t /* System.Type */ T,
+	System_Array_t /* System.Array */ array,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Array_BinarySearch_A1_1(
+	System_Type_t /* System.Type */ T,
+	System_Array_t /* System.Array */ array,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ length,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 void /* System.Void */
 System_Array_CopyTo(
 	System_Array_t /* System.Array */ self,
@@ -5992,6 +6010,24 @@ System_Array_Empty_A1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+void /* System.Void */
+System_Array_Fill_A1(
+	System_Type_t /* System.Type */ T,
+	System_Array_t /* System.Array */ array,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Array_Fill_A1_1(
+	System_Type_t /* System.Type */ T,
+	System_Array_t /* System.Array */ array,
+	System_Object_t /* System.Object */ value,
+	int32_t /* System.Int32 */ startIndex,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 int32_t /* System.Int32 */
 System_Array_IndexOf(
 	System_Array_t /* System.Array */ array,
@@ -6009,6 +6045,33 @@ System_Array_IndexOf_1(
 
 int32_t /* System.Int32 */
 System_Array_IndexOf_2(
+	System_Array_t /* System.Array */ array,
+	System_Object_t /* System.Object */ value,
+	int32_t /* System.Int32 */ startIndex,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Array_IndexOf_A1(
+	System_Type_t /* System.Type */ T,
+	System_Array_t /* System.Array */ array,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Array_IndexOf_A1_1(
+	System_Type_t /* System.Type */ T,
+	System_Array_t /* System.Array */ array,
+	System_Object_t /* System.Object */ value,
+	int32_t /* System.Int32 */ startIndex,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Array_IndexOf_A1_2(
+	System_Type_t /* System.Type */ T,
 	System_Array_t /* System.Array */ array,
 	System_Object_t /* System.Object */ value,
 	int32_t /* System.Int32 */ startIndex,
@@ -6040,6 +6103,33 @@ System_Array_LastIndexOf_2(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+int32_t /* System.Int32 */
+System_Array_LastIndexOf_A1(
+	System_Type_t /* System.Type */ T,
+	System_Array_t /* System.Array */ array,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Array_LastIndexOf_A1_1(
+	System_Type_t /* System.Type */ T,
+	System_Array_t /* System.Array */ array,
+	System_Object_t /* System.Object */ value,
+	int32_t /* System.Int32 */ startIndex,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Array_LastIndexOf_A1_2(
+	System_Type_t /* System.Type */ T,
+	System_Array_t /* System.Array */ array,
+	System_Object_t /* System.Object */ value,
+	int32_t /* System.Int32 */ startIndex,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 void /* System.Void */
 System_Array_Reverse(
 	System_Array_t /* System.Array */ array,
@@ -6048,6 +6138,22 @@ System_Array_Reverse(
 
 void /* System.Void */
 System_Array_Reverse_1(
+	System_Array_t /* System.Array */ array,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ length,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Array_Reverse_A1(
+	System_Type_t /* System.Type */ T,
+	System_Array_t /* System.Array */ array,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Array_Reverse_A1_1(
+	System_Type_t /* System.Type */ T,
 	System_Array_t /* System.Array */ array,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ length,
@@ -6115,6 +6221,42 @@ System_Array_Sort_7(
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ length,
 	System_Collections_IComparer_t /* System.Collections.IComparer */ comparer,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Array_Sort_A1(
+	System_Type_t /* System.Type */ T,
+	System_Array_t /* System.Array */ array,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Array_Sort_A2(
+	System_Type_t /* System.Type */ TKey,
+	System_Type_t /* System.Type */ TValue,
+	System_Array_t /* System.Array */ keys,
+	System_Array_t /* System.Array */ items,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Array_Sort_A1_1(
+	System_Type_t /* System.Type */ T,
+	System_Array_t /* System.Array */ array,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ length,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Array_Sort_A2_1(
+	System_Type_t /* System.Type */ TKey,
+	System_Type_t /* System.Type */ TValue,
+	System_Array_t /* System.Array */ keys,
+	System_Array_t /* System.Array */ items,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ length,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -27065,6 +27207,23 @@ System_Random_NextBytes(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+System_Array_t /* System.Array */
+System_Random_GetItems_A1(
+	System_Type_t /* System.Type */ T,
+	System_Random_t /* System.Random */ self,
+	System_Array_t /* System.Array */ choices,
+	int32_t /* System.Int32 */ length,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Random_Shuffle_A1(
+	System_Type_t /* System.Type */ T,
+	System_Random_t /* System.Random */ self,
+	System_Array_t /* System.Array */ values,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 System_Random_t /* System.Random */
 System_Random_Create(
 	System_Exception_t* /* System.Exception */ outException
@@ -31147,6 +31306,14 @@ System_Runtime_InteropServices_Marshal_UnsafeAddrOfPinnedArrayElement(
 );
 
 long /* System.IntPtr */
+System_Runtime_InteropServices_Marshal_UnsafeAddrOfPinnedArrayElement_A1(
+	System_Type_t /* System.Type */ T,
+	System_Array_t /* System.Array */ arr,
+	int32_t /* System.Int32 */ index,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+long /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_OffsetOf_A1(
 	System_Type_t /* System.Type */ T,
 	CString /* System.String */ fieldName,
@@ -32393,6 +32560,14 @@ NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnArrayOfRepeatedValues_A1(
 	NativeAOT_CodeGeneratorInputSample_GenericTests_t /* NativeAOT.CodeGeneratorInputSample.GenericTests */ self,
 	System_Object_t /* System.Object */ value,
 	int32_t /* System.Int32 */ numberOfElements,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+CString /* System.String */
+NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnStringOfJoinedArray_A1(
+	System_Type_t /* System.Type */ T,
+	System_Array_t /* System.Array */ values,
+	CString /* System.String */ separator,
 	System_Exception_t* /* System.Exception */ outException
 );
 

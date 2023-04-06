@@ -97,10 +97,10 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 } else if (parameter.ParameterType.IsByRef) {
                     generatedName = string.Empty;
                     return "// TODO: Generic Methods with ref parameters are not supported";
-                } else if (parameter.ParameterType.IsArray) {
+                } /* else if (parameter.ParameterType.IsArray) {
                     generatedName = string.Empty;
                     return "// TODO: Generic Methods with array parameters are not supported";
-                }
+                } */
             }
         }
         
@@ -428,9 +428,24 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                         
                         parameterTypeNames.Add(parameterTypeName);
                     } else {
-                        string parameterTypeName = parameterType.GetFullNameOrName();
+                        bool isGenericArrayParameterType = false;
+                        Type? arrayType = parameterType.GetElementType();
                         
-                        parameterTypeNames.Add($"typeof({parameterTypeName})");
+                        if (parameterType.IsArray &&
+                            arrayType is not null &&
+                            (arrayType.IsGenericParameter || arrayType.IsGenericMethodParameter)) {
+                            isGenericArrayParameterType = true;
+                        }
+
+                        if (isGenericArrayParameterType) {
+                            string parameterTypeName = $"System.Type.MakeGenericMethodParameter({arrayType.GenericParameterPosition}).MakeArrayType()";
+                        
+                            parameterTypeNames.Add(parameterTypeName);
+                        } else {
+                            string parameterTypeName = parameterType.GetFullNameOrName();
+                            
+                            parameterTypeNames.Add($"typeof({parameterTypeName})");
+                        }
                     }
                 }
 
@@ -806,6 +821,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             bool isGenericParameterType = parameterType.IsGenericParameter || parameterType.IsGenericMethodParameter;
             bool isOutParameter = parameter.IsOut;
             bool isByRefParameter = parameterType.IsByRef;
+            bool isArrayType = parameterType.IsArray;
 
             if (!isByRefParameter &&
                 isOutParameter) {
@@ -814,6 +830,15 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 parameterType = parameterType.GetNonByRefType();
             } else if (isGenericParameterType) {
                 parameterType = typeof(object);
+            } else if (isArrayType) {
+                if (isGeneric) {
+                    Type? arrayType = parameterType.GetElementType();
+
+                    if (arrayType is not null &&
+                        (arrayType.IsGenericParameter || arrayType.IsGenericMethodParameter)) {
+                        parameterType = typeof(Array);
+                    }
+                }
             }
             
             TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
