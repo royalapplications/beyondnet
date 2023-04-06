@@ -1,5 +1,3 @@
-using System.Reflection;
-
 namespace NativeAOT.CodeGeneratorInputSample;
 
 public class GenericTests
