@@ -66,4 +66,23 @@ public class GenericTests
 
         return values.ToArray();
     }
+
+    public string ReturnStringOfJoinedArray<T>(T[] values, string separator)
+    {
+        List<string> strings = new();
+
+        foreach (var value in values) {
+            if (value is not null) {
+                continue;
+            }
+            
+            string stringValue = value?.ToString() ?? "null";
+            
+            strings.Add(stringValue);
+        }
+
+        string joinedString = string.Join(separator, strings);
+
+        return joinedString;
+    }
 }

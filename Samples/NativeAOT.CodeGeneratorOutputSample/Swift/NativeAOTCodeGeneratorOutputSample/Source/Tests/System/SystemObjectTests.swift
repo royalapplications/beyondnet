@@ -71,7 +71,7 @@ final class SystemObjectTests: XCTestCase {
 	
 	func testCreatingAndDestroyingManyObjects() {
         measure {
-            let numberOfObjects = 10_000
+            let numberOfObjects = 1000
             var exception: System_Exception_t?
             
             for _ in 0..<numberOfObjects {

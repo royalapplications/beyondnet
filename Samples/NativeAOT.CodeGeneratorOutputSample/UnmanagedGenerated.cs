@@ -1,4 +1,4 @@
-// Number of generated types: 656
+// Number of generated types: 659
 // Number of generated members: 4118
 
 // <Header>
@@ -112601,6 +112601,8 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_GenericTests
 	}
 	
 
+	// TODO: Generic Methods with array parameters are not supported
+
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericTests_Create")]
 	internal static void* /* NativeAOT.CodeGeneratorInputSample.GenericTests */ NativeAOT_CodeGeneratorInputSample_GenericTests_Create(void** /* System.Exception */ __outException)
 	{
@@ -112764,6 +112766,9 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyV
 // Type "TKey" was skipped. Reason: It has no full name.
 // Type "TValue" was skipped. Reason: It has no full name.
 // Type "T" was skipped. Reason: It has no full name.
+
+// Type "T" was skipped. Reason: It has no full name.
+
 
 // Type "T" was skipped. Reason: It has no full name.
 

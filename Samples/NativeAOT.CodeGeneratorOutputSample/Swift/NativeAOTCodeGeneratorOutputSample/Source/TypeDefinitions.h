@@ -1,4 +1,4 @@
-// Number of generated types: 656
+// Number of generated types: 659
 // Number of generated members: 4422
 
 #pragma mark - BEGIN Header
@@ -1517,6 +1517,9 @@ typedef void* NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair
 // Type "TKey" was skipped. Reason: It has no full name.
 // Type "TValue" was skipped. Reason: It has no full name.
 // Type "T" was skipped. Reason: It has no full name.
+// Type "T[]" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+
 // Type "T[]" was skipped. Reason: It has no full name.
 // Type "T" was skipped. Reason: It has no full name.
 
@@ -32444,6 +32447,11 @@ NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_Destroy(
 
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.GenericTests.SimpleKeyValuePair
 
+
+
+
+#pragma mark - BEGIN APIs of T[]
+#pragma mark - END APIs of T[]
 
 
 
