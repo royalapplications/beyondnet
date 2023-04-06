@@ -429,7 +429,6 @@ final class PersonTests: XCTestCase {
                                                                     &exception)
         
         XCTAssertNil(exception)
-        
         XCTAssertEqual(expectedAge, age)
     }
 	

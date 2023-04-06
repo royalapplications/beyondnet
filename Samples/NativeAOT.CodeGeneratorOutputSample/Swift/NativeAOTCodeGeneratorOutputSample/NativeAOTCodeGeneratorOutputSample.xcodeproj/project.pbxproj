@@ -102,6 +102,7 @@
 		E77962FF29DC171E00E1E70B /* SystemRuntimeInteropServicesMarshalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemRuntimeInteropServicesMarshalTests.swift; sourceTree = "<group>"; };
 		E779630129DC54E300E1E70B /* SystemThreadingTasksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemThreadingTasksTests.swift; sourceTree = "<group>"; };
 		E77A85B129DD7EF9000CA09E /* GenericTestsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTestsTests.swift; sourceTree = "<group>"; };
+		E7808CE929DEFB2600F50203 /* NativeAOTCodeGeneratorOutputSample.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = file; path = NativeAOTCodeGeneratorOutputSample.xctestplan; sourceTree = SOURCE_ROOT; };
 		E7C8CF0429C1FA9500C4230F /* SystemGuidTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemGuidTests.swift; sourceTree = "<group>"; };
 		E7C8CF0629C1FABA00C4230F /* SystemStringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemStringTests.swift; sourceTree = "<group>"; };
 		E7C8CF0829C1FB0800C4230F /* SystemDateTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemDateTimeTests.swift; sourceTree = "<group>"; };
@@ -141,6 +142,7 @@
 		E70D115329BF9F2600B4E738 = {
 			isa = PBXGroup;
 			children = (
+				E7808CE929DEFB2600F50203 /* NativeAOTCodeGeneratorOutputSample.xctestplan */,
 				E70D116A29BF9FCC00B4E738 /* NativeAOT.CodeGeneratorOutputSample.dylib */,
 				E70D115F29BF9F2600B4E738 /* Source */,
 				E70D115E29BF9F2600B4E738 /* Products */,

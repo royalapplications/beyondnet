@@ -101,19 +101,13 @@ final class SystemVersionTests: XCTestCase {
         
         let versionString = "\(major).\(minor).\(build).\(revision)"
         
-        var version: System_Version_t?
-        
-        versionString.withCString { versionStringC in
-			version = System_Version_Create_3(versionString,
-											  &exception)
-        }
-        
-        guard let version,
-              exception == nil else {
-            XCTFail("System.Version ctor should not throw and return an instance")
-            
-            return
-        }
+		guard let version = System_Version_Create_3(versionString,
+													&exception),
+			  exception == nil else {
+			XCTFail("System.Version ctor should not throw and return an instance")
+			
+			return
+		}
         
         defer { System_Version_Destroy(version) }
         

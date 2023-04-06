@@ -1,0 +1,28 @@
+{
+  "configurations" : [
+    {
+      "id" : "96ADA3D0-1A9D-496E-BB21-6F008D971AD3",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "addressSanitizer" : {
+      "enabled" : true
+    },
+    "codeCoverage" : false,
+    "testExecutionOrdering" : "random"
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:NativeAOTCodeGeneratorOutputSample.xcodeproj",
+        "identifier" : "E70D117129BF9FEC00B4E738",
+        "name" : "NativeAOTCodeGeneratorOutputSampleTests"
+      }
+    }
+  ],
+  "version" : 1
+}

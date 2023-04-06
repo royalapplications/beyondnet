@@ -278,7 +278,13 @@ final class GenericTestsTests: XCTestCase {
 		
 		defer { System_Type_Destroy(valueType) }
 		
-		let key = keyType
+		guard let key = System_Type_TypeOf() else {
+			XCTFail("typeof(System.Type) should return an instance")
+			
+			return
+		}
+		
+		defer { System_Type_Destroy(key)}
 		
 		guard let value = System_Text_StringBuilder_Create(&exception),
 			  exception == nil else {
@@ -287,7 +293,7 @@ final class GenericTestsTests: XCTestCase {
 			return
 		}
 		
-		defer { System_Text_StringBuilder_Destroy(valueType) }
+		defer { System_Text_StringBuilder_Destroy(value) }
 		
 		let expectedString = "Hello World"
 		
@@ -377,7 +383,13 @@ final class GenericTestsTests: XCTestCase {
 		
 		defer { System_Type_Destroy(valueType) }
 		
-		let key = keyType
+		guard let key = System_Type_TypeOf() else {
+			XCTFail("typeof(System.Type) should return an instance")
+			
+			return
+		}
+		
+		defer { System_Type_Destroy(key) }
 		
 		guard let value = System_Object_Create(&exception),
 			  exception == nil else {
