@@ -79,7 +79,7 @@ final class SystemThreadingTimerTests: XCTestCase {
 				
 				let exceptionString = String(cString: exceptionStringC)
 				
-				print("System.Threading.Timer ctor failed with exception: \(exceptionStringC)")
+				print("System.Threading.Timer ctor failed with exception: \(exceptionString)")
 			}
 			
 			XCTFail("System.Threading.Timer ctor should not throw and return an instance")
