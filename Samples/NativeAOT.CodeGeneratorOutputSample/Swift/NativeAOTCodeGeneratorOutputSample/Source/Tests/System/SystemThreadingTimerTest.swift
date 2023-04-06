@@ -73,6 +73,15 @@ final class SystemThreadingTimerTests: XCTestCase {
 														10,
 														&exception),
 			  exception == nil else {
+			if let exception,
+			   let exceptionStringC = System_Exception_ToString(exception, nil) {
+				defer { exceptionStringC.deallocate() }
+				
+				let exceptionString = String(cString: exceptionStringC)
+				
+				print("System.Threading.Timer ctor failed with exception: \(exceptionStringC)")
+			}
+			
 			XCTFail("System.Threading.Timer ctor should not throw and return an instance")
 			
 			return
