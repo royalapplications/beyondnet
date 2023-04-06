@@ -102,15 +102,11 @@ final class SystemDateTimeTests: XCTestCase {
 		
 		defer { System_Globalization_CultureInfo_Destroy(enUSCulture) }
 		
-		var success = false
 		var nowDotNet: System_DateTime_t?
-		
-		dateString.withCString { dateStringC in
-			success = System_DateTime_TryParse_2(dateStringC,
+		let success = System_DateTime_TryParse_2(dateString,
 												 enUSCulture,
 												 &nowDotNet,
 												 &exception)
-		}
 		
 		guard success,
 			  let nowDotNet,

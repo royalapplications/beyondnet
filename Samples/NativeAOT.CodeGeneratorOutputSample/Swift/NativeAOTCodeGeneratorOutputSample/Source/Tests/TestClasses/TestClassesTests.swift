@@ -44,45 +44,25 @@ final class TestClassesTests: XCTestCase {
         
         let systemObjectTypeName = "System.Object"
         
-        var systemObjectType: System_Type_t?
-        
-        systemObjectTypeName.withCString { systemObjectTypeNameC in
-            systemObjectType = System_Type_GetType(systemObjectTypeNameC,
-                                                   true,
-                                                   false,
-                                                   &exception)
-        }
-        
-        guard exception == nil else {
+		guard let systemObjectType = System_Type_GetType(systemObjectTypeName,
+														 true,
+														 false,
+														 &exception),
+			  exception == nil else {
             XCTFail("System.Type.GetType should not throw")
             
             return
         }
         
-        guard let systemObjectType else {
-            XCTFail("System.Type.GetType should return a type object")
-            
-            return
-        }
+        defer { System_Object_Destroy(systemObjectType) }
         
-        defer {
-            System_Object_Destroy(systemObjectType)
-        }
-        
-        let systemObjectTypeNameC = System_Type_ToString(systemObjectType,
-                                                         &exception)
-        
-        guard exception == nil else {
-            XCTFail("System.Type.ToString should not throw")
-            
-            return
-        }
-        
-        guard let systemObjectTypeNameC else {
-            XCTFail("System.Type.ToString should return an instance of a C string")
-            
-            return
-        }
+        guard let systemObjectTypeNameC = System_Type_ToString(systemObjectType,
+															   &exception),
+			  exception == nil else {
+			XCTFail("System.Type.ToString should not throw and return an instance of a C string")
+			
+			return
+		}
         
         let retrievedSystemObjectTypeName = String(cString: systemObjectTypeNameC)
         
@@ -123,11 +103,9 @@ final class TestClassesTests: XCTestCase {
             return
         }
         
-        "John".withCString { cString in
-			NativeAOT_CodeGeneratorInputSample_TestClass_SayHello_1(testClass,
-																	cString,
-																	&exception)
-        }
+		NativeAOT_CodeGeneratorInputSample_TestClass_SayHello_1(testClass,
+																"John",
+																&exception)
         
         guard exception == nil else {
             XCTFail("SayHello1 should not throw")
@@ -237,9 +215,7 @@ final class TestClassesTests: XCTestCase {
             return
         }
         
-        defer {
-            enumNameC.deallocate()
-        }
+        defer { enumNameC.deallocate() }
         
         let enumName = String(cString: enumNameC)
         

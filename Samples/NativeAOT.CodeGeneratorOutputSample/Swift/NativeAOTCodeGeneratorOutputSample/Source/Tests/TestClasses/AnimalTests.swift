@@ -37,15 +37,9 @@ final class AnimalTests: XCTestCase {
         
         let food = "Bone"
         
-        var eatC: CString?
-        
-        food.withCString { foodC in
-            eatC = NativeAOT_CodeGeneratorInputSample_IAnimal_Eat(dog,
-                                                                  foodC,
-                                                                  &exception)
-        }
-        
-        guard let eatC,
+		guard let eatC = NativeAOT_CodeGeneratorInputSample_IAnimal_Eat(dog,
+																		food,
+																		&exception),
               exception == nil else {
             XCTFail("IAnimal.Eat should not throw and return an instance of a string")
             
@@ -96,15 +90,9 @@ final class AnimalTests: XCTestCase {
         
         let food = "Catnip"
         
-        var eatC: CString?
-        
-        food.withCString { foodC in
-            eatC = NativeAOT_CodeGeneratorInputSample_IAnimal_Eat(cat,
-                                                                  foodC,
-                                                                  &exception)
-        }
-        
-        guard let eatC,
+        guard let eatC = NativeAOT_CodeGeneratorInputSample_IAnimal_Eat(cat,
+																		food,
+																		&exception),
               exception == nil else {
             XCTFail("IAnimal.Eat should not throw and return an instance of a string")
             
@@ -158,15 +146,9 @@ final class AnimalTests: XCTestCase {
 		
 		let animalName = "Horse"
 		
-		var horse: NativeAOT_CodeGeneratorInputSample_IAnimal_t?
-		
-		animalName.withCString { animalNameC in
-			horse = NativeAOT_CodeGeneratorInputSample_AnimalFactory_CreateAnimal_1(animalNameC,
-																					creatorDelegate,
-																					&exception)
-		}
-		
-		guard let horse,
+		guard let horse = NativeAOT_CodeGeneratorInputSample_AnimalFactory_CreateAnimal_1(animalName,
+																						  creatorDelegate,
+																						  &exception),
 			  exception == nil else {
 			XCTFail("AnimalFactory.CreateAnimal should not throw and return an instance")
 			
@@ -202,17 +184,11 @@ final class AnimalTests: XCTestCase {
         defer { NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Destroy(defaultCreator) }
         
         let dogName = "Dog"
-        var dog: NativeAOT_CodeGeneratorInputSample_IAnimal_t?
         
-        dogName.withCString { dogNameC in
-            dog = NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Invoke(defaultCreator,
-                                                                                  dogNameC,
-																				  &exception)
-        }
-        
-		XCTAssertNil(exception)
-		
-        guard let dog else {
+        guard let dog = NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Invoke(defaultCreator,
+																						dogName,
+																						&exception),
+			  exception == nil else {
             XCTFail("Given the animal name \"Dog\", an instance of a dog should be returned")
             
             return
@@ -235,15 +211,10 @@ final class AnimalTests: XCTestCase {
         XCTAssertEqual(dogName, dogNameRet)
         
         let catName = "Cat"
-        var cat: NativeAOT_CodeGeneratorInputSample_IAnimal_t?
         
-        catName.withCString { catNameC in
-			cat = NativeAOT_CodeGeneratorInputSample_AnimalFactory_CreateAnimal_1(catNameC,
-																				  defaultCreator,
-																				  &exception)
-        }
-        
-        guard let cat,
+        guard let cat = NativeAOT_CodeGeneratorInputSample_AnimalFactory_CreateAnimal_1(catName,
+																						defaultCreator,
+																						&exception),
               exception == nil else {
             XCTFail("Given the animal name \"Cat\", an instance of a cat should be returned")
             

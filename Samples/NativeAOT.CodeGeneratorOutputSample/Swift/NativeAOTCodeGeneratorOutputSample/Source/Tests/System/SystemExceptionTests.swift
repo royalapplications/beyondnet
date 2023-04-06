@@ -7,14 +7,8 @@ final class SystemExceptionTests: XCTestCase {
         
         let exceptionMessage = "I'm a nice exception"
         
-        var createdException: System_Exception_t?
-        
-        exceptionMessage.withCString { exceptionMessageC in
-			createdException = System_Exception_Create_1(exceptionMessageC,
-														 &exception)
-        }
-        
-        guard let createdException,
+        guard let createdException = System_Exception_Create_1(exceptionMessage,
+															   &exception),
               exception == nil else {
             XCTFail("System.Exception ctor should not throw and return an instance")
             

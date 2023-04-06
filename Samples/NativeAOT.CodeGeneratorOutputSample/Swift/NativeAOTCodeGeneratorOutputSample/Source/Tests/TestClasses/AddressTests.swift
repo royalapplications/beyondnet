@@ -8,19 +8,10 @@ final class AddressTests: XCTestCase {
 		let street = "Schwedenplatz"
 		let city = "Vienna"
 		
-		var address: NativeAOT_CodeGeneratorInputSample_Address_t?
-		
-		street.withCString { streetC in
-			city.withCString { cityC in
-				address = NativeAOT_CodeGeneratorInputSample_Address_Create(streetC,
-																			cityC,
-																			&exception)
-			}
-		}
-		
-		XCTAssertNil(exception)
-		
-		guard let address else {
+		guard let address = NativeAOT_CodeGeneratorInputSample_Address_Create(street,
+																			  city,
+																			  &exception),
+			  exception == nil else {
 			XCTFail("Address is nil but should not")
 			
 			return
@@ -83,19 +74,10 @@ final class AddressTests: XCTestCase {
 		let originalCity = "Vienna"
 		let newCity = "Wien"
 
-		var originalAddress: NativeAOT_CodeGeneratorInputSample_Address_t?
-
-		originalStreet.withCString { streetC in
-			originalCity.withCString { cityC in
-				originalAddress = NativeAOT_CodeGeneratorInputSample_Address_Create(streetC,
-																					cityC,
-																					&exception)
-			}
-		}
-
-		XCTAssertNil(exception)
-		
-		guard let originalAddress else {
+		guard let originalAddress = NativeAOT_CodeGeneratorInputSample_Address_Create(originalStreet,
+																					  originalCity,
+																					  &exception),
+			  exception == nil else {
 			XCTFail("Address is nil but should not")
 
 			return
@@ -152,29 +134,18 @@ final class AddressTests: XCTestCase {
 
 		defer { NativeAOT_CodeGeneratorInputSample_MoveDelegate_Destroy(moverDelegate) }
 
-		var newAddress: NativeAOT_CodeGeneratorInputSample_Address_t?
-
-		newStreet.withCString { newStreetC in
-			newCity.withCString { newCityC in
-				newAddress = NativeAOT_CodeGeneratorInputSample_Address_Move(originalAddress,
-																			 moverDelegate,
-																			 newStreet,
-																			 newCity,
-																			 &exception)
-			}
-		}
-
-		guard let newAddress else {
-			XCTFail("Address should not be nil")
+		guard let newAddress = NativeAOT_CodeGeneratorInputSample_Address_Move(originalAddress,
+																			   moverDelegate,
+																			   newStreet,
+																			   newCity,
+																			   &exception),
+			  exception == nil else {
+			XCTFail("Address.Move should not throw and return an instance")
 
 			return
 		}
-
-		guard exception == nil else {
-			XCTFail("Exception should be nil")
-
-			return
-		}
+		
+		defer { NativeAOT_CodeGeneratorInputSample_Address_Destroy(newAddress) }
 
 		let retrievedNewStreetC = NativeAOT_CodeGeneratorInputSample_Address_Street_Get(newAddress, nil)
 

@@ -26,26 +26,16 @@ final class PersonTests: XCTestCase {
         let newRetrievedDefaultAge = NativeAOT_CodeGeneratorInputSample_Person_DEFAULT_AGE_Get()
         XCTAssertEqual(newDefaultAge, newRetrievedDefaultAge)
         
-        var person: NativeAOT_CodeGeneratorInputSample_Person_t?
-        
-        firstName.withCString { firstNameC in
-            lastName.withCString { lastNameC in
-				person = NativeAOT_CodeGeneratorInputSample_Person_Create_1(firstNameC,
-																			lastNameC,
-																			&exception)
-            }
-        }
-        
-        guard let person,
+        guard let person = NativeAOT_CodeGeneratorInputSample_Person_Create_1(firstName,
+																			  lastName,
+																			  &exception),
               exception == nil else {
             XCTFail("Person initializer should not throw and return an instance")
             
             return
         }
         
-        defer {
-            NativeAOT_CodeGeneratorInputSample_Person_Destroy(person)
-        }
+        defer { NativeAOT_CodeGeneratorInputSample_Person_Destroy(person) }
         
         let personAge = NativeAOT_CodeGeneratorInputSample_Person_Age_Get(person,
                                                                           &exception)
@@ -159,11 +149,9 @@ final class PersonTests: XCTestCase {
         let newFirstName = "Max 😉"
         let expectedNewFullName = "\(newFirstName) \(lastName)"
         
-        newFirstName.withCString { newFirstNameC in
-            NativeAOT_CodeGeneratorInputSample_Person_FirstName_Set(person,
-                                                                    newFirstNameC,
-                                                                    &exception)
-        }
+		NativeAOT_CodeGeneratorInputSample_Person_FirstName_Set(person,
+																newFirstName,
+																&exception)
         
         guard exception == nil else {
             XCTFail("Person.FirstName setter should not throw")
@@ -513,17 +501,9 @@ final class PersonTests: XCTestCase {
 		let street = "Stephansplatz"
 		let city = "Vienna"
 		
-		var address: NativeAOT_CodeGeneratorInputSample_Address_t?
-		
-		street.withCString { streetC in
-			city.withCString { cityC in
-				address = NativeAOT_CodeGeneratorInputSample_Address_Create(streetC,
-																			cityC,
-																			&exception)
-			}
-		}
-		
-		guard let address,
+		guard let address = NativeAOT_CodeGeneratorInputSample_Address_Create(street,
+																			  city,
+																			  &exception),
 			  exception == nil else {
 			XCTFail("Address ctor should return an instance and not throw")
 			

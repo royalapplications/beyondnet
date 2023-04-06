@@ -8,21 +8,10 @@ final class SystemGuidTests: XCTestCase {
         let uuid = UUID()
         let uuidString = uuid.uuidString
         
-        var guid: System_Guid_t?
-        
-        uuidString.withCString { uuidStringC in
-			guid = System_Guid_Create_4(uuidStringC,
-										&exception)
-        }
-        
-        guard exception == nil else {
-            XCTFail("System_Guid_Create2 should not throw")
-            
-            return
-        }
-        
-        guard let guid else {
-            XCTFail("System_Guid_Create2 should return an instance of a Guid")
+        guard let guid = System_Guid_Create_4(uuidString,
+											  &exception),
+			  exception == nil else {
+            XCTFail("System_Guid_Create2 should not throw and return an instance")
             
             return
         }
@@ -31,37 +20,24 @@ final class SystemGuidTests: XCTestCase {
             System_Object_Destroy(guid)
         }
         
-        let guidCString = System_Guid_ToString(guid,
-                                               &exception)
+        guard let guidCString = System_Guid_ToString(guid,
+													 &exception),
+			  exception == nil else {
+			XCTFail("System_Guid_ToString should not throw and return an instance of a C string")
+			
+			return
+		}
         
-        guard exception == nil else {
-            XCTFail("System_Guid_ToString should not throw")
-            
-            return
-        }
-        
-        guard let guidCString else {
-            XCTFail("System_Guid_ToString should return an instance of a String")
-            
-            return
-        }
-        
+		defer { guidCString.deallocate() }
+		
         let guidString = String(cString: guidCString)
-        
-        guidCString.deallocate()
-        
+		
         XCTAssertEqual(uuidString.lowercased(), guidString.lowercased())
         
         let guidTypeName = "System.Guid"
         
-        var guidType: System_Type_t?
-        
-        guidTypeName.withCString { guidTypeNameC in
-			guidType = System_Type_GetType_2(guidTypeNameC,
-											 &exception)
-        }
-        
-        guard let guidType,
+        guard let guidType = System_Type_GetType_2(guidTypeName,
+												   &exception),
               exception == nil else {
             XCTFail("GetType should not throw and return something")
             
@@ -123,14 +99,10 @@ final class SystemGuidTests: XCTestCase {
 		let uuid = UUID()
 		let uuidString = uuid.uuidString
 		
-		var success = false
 		var guid: System_Guid_t?
-		
-		uuidString.withCString { uuidStringC in
-			success = System_Guid_TryParse(uuidStringC,
+		let success = System_Guid_TryParse(uuidString,
 										   &guid,
 										   &exception)
-		}
 		
 		guard let guid,
 			  exception == nil,
@@ -168,14 +140,10 @@ final class SystemGuidTests: XCTestCase {
 		
 		let uuidString = "nonsense"
 		
-		var success = false
 		var guid: System_Guid_t?
-		
-		uuidString.withCString { uuidStringC in
-			success = System_Guid_TryParse(uuidStringC,
+		let success = System_Guid_TryParse(uuidString,
 										   &guid,
 										   &exception)
-		}
 		
 		guard let guid,
 			  !success,

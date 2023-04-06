@@ -40,20 +40,11 @@ final class SystemStringTests: XCTestCase {
         
         let nonEmptyString = "Hello World!"
         
-        var isNonEmptyStringNullOrEmpty = true
+        let isNonEmptyStringNullOrEmpty = System_String_IsNullOrEmpty(nonEmptyString,
+																	  &exception)
         
-        nonEmptyString.withCString { nonEmptyStringC in
-            isNonEmptyStringNullOrEmpty = System_String_IsNullOrEmpty(nonEmptyStringC,
-                                                                      &exception)
-        }
-        
-        guard exception == nil else {
-            XCTFail("System.String.IsNullOrEmpty should not throw")
-            
-            return
-        }
-        
-        XCTAssertFalse(isNonEmptyStringNullOrEmpty)
+		XCTAssertNil(exception)
+		XCTAssertFalse(isNonEmptyStringNullOrEmpty)
 		
 		guard let trimmedStringC = System_String_Trim(" \(nonEmptyString) ",
 													  &exception),
