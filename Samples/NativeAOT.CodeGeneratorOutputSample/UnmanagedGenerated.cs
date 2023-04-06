@@ -1,5 +1,5 @@
-// Number of generated types: 653
-// Number of generated members: 4112
+// Number of generated types: 656
+// Number of generated members: 4118
 
 // <Header>
 using System;
@@ -112439,6 +112439,47 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_GenericTests
 	}
 	
 
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnSimpleKeyValuePair_A2")]
+	internal static void* /* NativeAOT.CodeGeneratorInputSample.GenericTests.SimpleKeyValuePair */ NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnSimpleKeyValuePair_A2(void* /* System.Type */ TKey, void* /* System.Type */ TValue, void* /* TKey */ key, void* /* TValue */ value, void** /* System.Exception */ __outException)
+	{
+		System.Type TKeyConverted = InteropUtils.GetInstance<System.Type>(TKey);
+		System.Type TValueConverted = InteropUtils.GetInstance<System.Type>(TValue);
+		System.Object keyConverted = InteropUtils.GetInstance<System.Object>(key);
+		System.Object valueConverted = InteropUtils.GetInstance<System.Object>(value);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(NativeAOT.CodeGeneratorInputSample.GenericTests);
+			System.String __nameOfMethodForGenericCall = nameof(NativeAOT.CodeGeneratorInputSample.GenericTests.ReturnSimpleKeyValuePair);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { keyConverted, valueConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0), System.Type.MakeGenericMethodParameter(1) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TKeyConverted, TValueConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 2, __parameterTypesForGenericCall) ?? throw new Exception("Method ReturnSimpleKeyValuePair not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			NativeAOT.CodeGeneratorInputSample.GenericTests.SimpleKeyValuePair __returnValue = (NativeAOT.CodeGeneratorInputSample.GenericTests.SimpleKeyValuePair)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnDefaultValueOfGenericType_A1")]
 	internal static void* /* System.Object */ NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnDefaultValueOfGenericType_A1(void* /* System.Type */ T, void** /* System.Exception */ __outException)
 	{
@@ -112606,6 +112647,122 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_GenericTests
 }
 
 
+internal unsafe class NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair
+{
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_Create")]
+	internal static void* /* NativeAOT.CodeGeneratorInputSample.GenericTests.SimpleKeyValuePair */ NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_Create(void* /* System.Object */ key, void* /* System.Object */ value, void** /* System.Exception */ __outException)
+	{
+		System.Object keyConverted = InteropUtils.GetInstance<System.Object>(key);
+		System.Object valueConverted = InteropUtils.GetInstance<System.Object>(value);
+	
+	    try {
+			NativeAOT.CodeGeneratorInputSample.GenericTests.SimpleKeyValuePair __returnValue = new NativeAOT.CodeGeneratorInputSample.GenericTests.SimpleKeyValuePair(keyConverted, valueConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_Key_Get")]
+	internal static void* /* System.Object */ NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_Key_Get(void* /* NativeAOT.CodeGeneratorInputSample.GenericTests.SimpleKeyValuePair */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.GenericTests.SimpleKeyValuePair __selfConverted = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.GenericTests.SimpleKeyValuePair>(__self);
+	
+	
+	    try {
+			System.Object __returnValue = __selfConverted.Key;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_Value_Get")]
+	internal static void* /* System.Object */ NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_Value_Get(void* /* NativeAOT.CodeGeneratorInputSample.GenericTests.SimpleKeyValuePair */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		NativeAOT.CodeGeneratorInputSample.GenericTests.SimpleKeyValuePair __selfConverted = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.GenericTests.SimpleKeyValuePair>(__self);
+	
+	
+	    try {
+			System.Object __returnValue = __selfConverted.Value;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_TypeOf")]
+	internal static void* /* System.Type */ NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(NativeAOT.CodeGeneratorInputSample.GenericTests.SimpleKeyValuePair);
+		void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return __returnValueNative;
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_Destroy")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.GenericTests.SimpleKeyValuePair */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+
+}
+
+
+// Type "TKey" was skipped. Reason: It has no full name.
+// Type "TValue" was skipped. Reason: It has no full name.
 // Type "T" was skipped. Reason: It has no full name.
 
 // Type "T" was skipped. Reason: It has no full name.

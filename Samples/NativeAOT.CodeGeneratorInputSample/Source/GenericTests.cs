@@ -2,6 +2,18 @@ namespace NativeAOT.CodeGeneratorInputSample;
 
 public class GenericTests
 {
+    public struct SimpleKeyValuePair
+    {
+        public object? Key { get; }
+        public object? Value { get; }
+
+        public SimpleKeyValuePair(object? key, object? value)
+        {
+            Key = key;
+            Value = value;
+        }
+    }
+    
     public static Type ReturnGenericType<T>()
     {
         return typeof(T);
@@ -13,6 +25,11 @@ public class GenericTests
             typeof(T1),
             typeof(T2)
         };
+    }
+    
+    public static SimpleKeyValuePair ReturnSimpleKeyValuePair<TKey, TValue>(TKey key, TValue value)
+    {
+        return new SimpleKeyValuePair(key, value);
     }
 
     public static T? ReturnDefaultValueOfGenericType<T>()

@@ -1,5 +1,5 @@
-// Number of generated types: 653
-// Number of generated members: 4416
+// Number of generated types: 656
+// Number of generated members: 4422
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -1512,6 +1512,10 @@ typedef void* NativeAOT_CodeGeneratorInputSample_GenericAnimal_t;
 
 typedef void* NativeAOT_CodeGeneratorInputSample_GenericTests_t;
 
+typedef void* NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_t;
+
+// Type "TKey" was skipped. Reason: It has no full name.
+// Type "TValue" was skipped. Reason: It has no full name.
 // Type "T" was skipped. Reason: It has no full name.
 // Type "T[]" was skipped. Reason: It has no full name.
 // Type "T" was skipped. Reason: It has no full name.
@@ -32358,6 +32362,15 @@ NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnGenericTypes_A2(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_t /* NativeAOT.CodeGeneratorInputSample.GenericTests.SimpleKeyValuePair */
+NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnSimpleKeyValuePair_A2(
+	System_Type_t /* System.Type */ TKey,
+	System_Type_t /* System.Type */ TValue,
+	System_Object_t /* System.Object */ key,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 System_Object_t /* System.Object */
 NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnDefaultValueOfGenericType_A1(
 	System_Type_t /* System.Type */ T,
@@ -32396,6 +32409,42 @@ NativeAOT_CodeGeneratorInputSample_GenericTests_Destroy(
 );
 
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.GenericTests
+
+#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.GenericTests.SimpleKeyValuePair
+NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_t /* NativeAOT.CodeGeneratorInputSample.GenericTests.SimpleKeyValuePair */
+NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_Create(
+	System_Object_t /* System.Object */ key,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_Key_Get(
+	NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_t /* NativeAOT.CodeGeneratorInputSample.GenericTests.SimpleKeyValuePair */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_Value_Get(
+	NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_t /* NativeAOT.CodeGeneratorInputSample.GenericTests.SimpleKeyValuePair */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_TypeOf(
+	
+);
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_Destroy(
+	NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_t /* NativeAOT.CodeGeneratorInputSample.GenericTests.SimpleKeyValuePair */ self
+);
+
+#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.GenericTests.SimpleKeyValuePair
+
+
 
 
 #pragma mark - BEGIN APIs of T[]

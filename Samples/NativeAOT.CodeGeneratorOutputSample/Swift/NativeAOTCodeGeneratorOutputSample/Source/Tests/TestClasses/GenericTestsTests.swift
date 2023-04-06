@@ -258,4 +258,100 @@ final class GenericTestsTests: XCTestCase {
 			XCTAssertTrue(equal)
 		}
 	}
+	
+	func testReturnSimpleKeyValuePair() {
+		var exception: System_Exception_t?
+		
+		guard let keyType = System_Type_TypeOf() else {
+			XCTFail("typeof(System.Type) should return an instance")
+			
+			return
+		}
+		
+		defer { System_Type_Destroy(keyType) }
+		
+		guard let valueType = System_Text_StringBuilder_TypeOf() else {
+			XCTFail("typeof(System.Text.StringBuilder) should return an instance")
+			
+			return
+		}
+		
+		defer { System_Type_Destroy(valueType) }
+		
+		let key = keyType
+		
+		guard let value = System_Text_StringBuilder_Create(&exception),
+			  exception == nil else {
+			XCTFail("System.Text.StringBuilder ctor should not throw and return an instance")
+			
+			return
+		}
+		
+		defer { System_Text_StringBuilder_Destroy(valueType) }
+		
+		let expectedString = "Hello World"
+		
+		System_Text_StringBuilder_Append_2(value,
+										   expectedString,
+										   &exception)
+		
+		XCTAssertNil(exception)
+		
+		guard let keyValuePair = NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnSimpleKeyValuePair_A2(keyType,
+																											 valueType,
+																											 key,
+																											 value,
+																											 &exception),
+			  exception == nil else {
+			XCTFail("ReturnSimpleKeyValuePair should not throw and return an instance")
+			
+			return
+		}
+		
+		defer { NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_Destroy(keyValuePair) }
+		
+		guard let keyRet = NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_Key_Get(keyValuePair,
+																									  &exception),
+			  exception == nil else {
+			XCTFail("SimpleKeyValuePair.Key getter should not throw and return an instance")
+			
+			return
+		}
+		
+		defer { System_Object_Destroy(keyRet) }
+		
+		let keyEqual = System_Object_Equals(key,
+											keyRet,
+											&exception)
+		
+		XCTAssertNil(exception)
+		XCTAssertTrue(keyEqual)
+		
+		guard let valueRet = NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_Value_Get(keyValuePair,
+																										  &exception),
+			  exception == nil else {
+			XCTFail("SimpleKeyValuePair.Value getter should not throw and return an instance")
+			
+			return
+		}
+		
+		defer { System_Object_Destroy(valueRet) }
+		
+		let valueEqual = System_Object_Equals(value,
+											  valueRet,
+											  &exception)
+		
+		XCTAssertNil(exception)
+		XCTAssertTrue(valueEqual)
+		
+		guard let stringRet = System_Text_StringBuilder_ToString(valueRet,
+																 &exception).string(),
+			  exception == nil else {
+			XCTFail("System.Text.StringBuilder.ToString should not throw and return an instance of a string")
+			
+			return
+		}
+		
+		XCTAssertEqual(expectedString, stringRet)
+	}
 }
