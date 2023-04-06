@@ -1,5 +1,5 @@
 // Number of generated types: 653
-// Number of generated members: 4114
+// Number of generated members: 4112
 
 // <Header>
 using System;
@@ -6468,7 +6468,7 @@ internal unsafe class System_Enum
 			System.Object? __methodTargetForGenericCall = null;
 	
 			System.Object[] __parametersForGenericCall = new System.Object[] { valueConverted };
-			System.Type[] __parameterTypesForGenericCall = new[] { TEnumConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0) };
 	
 			System.Type[] __genericParameterTypesForGenericCall = new[] { TEnumConverted };
 	
@@ -6784,7 +6784,7 @@ internal unsafe class System_Enum
 			System.Object? __methodTargetForGenericCall = null;
 	
 			System.Object[] __parametersForGenericCall = new System.Object[] { valueConverted };
-			System.Type[] __parameterTypesForGenericCall = new[] { TEnumConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0) };
 	
 			System.Type[] __genericParameterTypesForGenericCall = new[] { TEnumConverted };
 	
@@ -9542,7 +9542,7 @@ internal unsafe class System_String
 			System.Object? __methodTargetForGenericCall = null;
 	
 			System.Object[] __parametersForGenericCall = new System.Object[] { providerConverted, formatConverted, arg0Converted };
-			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.IFormatProvider), typeof(System.Text.CompositeFormat), TArg0Converted };
+			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.IFormatProvider), typeof(System.Text.CompositeFormat), System.Type.MakeGenericMethodParameter(0) };
 	
 			System.Type[] __genericParameterTypesForGenericCall = new[] { TArg0Converted };
 	
@@ -9585,7 +9585,7 @@ internal unsafe class System_String
 			System.Object? __methodTargetForGenericCall = null;
 	
 			System.Object[] __parametersForGenericCall = new System.Object[] { providerConverted, formatConverted, arg0Converted, arg1Converted };
-			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.IFormatProvider), typeof(System.Text.CompositeFormat), TArg0Converted, TArg1Converted };
+			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.IFormatProvider), typeof(System.Text.CompositeFormat), System.Type.MakeGenericMethodParameter(0), System.Type.MakeGenericMethodParameter(1) };
 	
 			System.Type[] __genericParameterTypesForGenericCall = new[] { TArg0Converted, TArg1Converted };
 	
@@ -9630,7 +9630,7 @@ internal unsafe class System_String
 			System.Object? __methodTargetForGenericCall = null;
 	
 			System.Object[] __parametersForGenericCall = new System.Object[] { providerConverted, formatConverted, arg0Converted, arg1Converted, arg2Converted };
-			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.IFormatProvider), typeof(System.Text.CompositeFormat), TArg0Converted, TArg1Converted, TArg2Converted };
+			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.IFormatProvider), typeof(System.Text.CompositeFormat), System.Type.MakeGenericMethodParameter(0), System.Type.MakeGenericMethodParameter(1), System.Type.MakeGenericMethodParameter(2) };
 	
 			System.Type[] __genericParameterTypesForGenericCall = new[] { TArg0Converted, TArg1Converted, TArg2Converted };
 	
@@ -31138,7 +31138,7 @@ internal unsafe class System_Decimal
 			System.Object? __methodTargetForGenericCall = null;
 	
 			System.Object[] __parametersForGenericCall = new System.Object[] { valueConverted };
-			System.Type[] __parameterTypesForGenericCall = new[] { TOtherConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0) };
 	
 			System.Type[] __genericParameterTypesForGenericCall = new[] { TOtherConverted };
 	
@@ -31177,7 +31177,7 @@ internal unsafe class System_Decimal
 			System.Object? __methodTargetForGenericCall = null;
 	
 			System.Object[] __parametersForGenericCall = new System.Object[] { valueConverted };
-			System.Type[] __parameterTypesForGenericCall = new[] { TOtherConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0) };
 	
 			System.Type[] __genericParameterTypesForGenericCall = new[] { TOtherConverted };
 	
@@ -31216,7 +31216,7 @@ internal unsafe class System_Decimal
 			System.Object? __methodTargetForGenericCall = null;
 	
 			System.Object[] __parametersForGenericCall = new System.Object[] { valueConverted };
-			System.Type[] __parameterTypesForGenericCall = new[] { TOtherConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0) };
 	
 			System.Type[] __genericParameterTypesForGenericCall = new[] { TOtherConverted };
 	
@@ -95298,7 +95298,7 @@ internal unsafe class System_Text_StringBuilder
 			System.Object? __methodTargetForGenericCall = __selfConverted;
 	
 			System.Object[] __parametersForGenericCall = new System.Object[] { providerConverted, formatConverted, arg0Converted };
-			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.IFormatProvider), typeof(System.Text.CompositeFormat), TArg0Converted };
+			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.IFormatProvider), typeof(System.Text.CompositeFormat), System.Type.MakeGenericMethodParameter(0) };
 	
 			System.Type[] __genericParameterTypesForGenericCall = new[] { TArg0Converted };
 	
@@ -95347,7 +95347,7 @@ internal unsafe class System_Text_StringBuilder
 			System.Object? __methodTargetForGenericCall = __selfConverted;
 	
 			System.Object[] __parametersForGenericCall = new System.Object[] { providerConverted, formatConverted, arg0Converted, arg1Converted };
-			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.IFormatProvider), typeof(System.Text.CompositeFormat), TArg0Converted, TArg1Converted };
+			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.IFormatProvider), typeof(System.Text.CompositeFormat), System.Type.MakeGenericMethodParameter(0), System.Type.MakeGenericMethodParameter(1) };
 	
 			System.Type[] __genericParameterTypesForGenericCall = new[] { TArg0Converted, TArg1Converted };
 	
@@ -95398,7 +95398,7 @@ internal unsafe class System_Text_StringBuilder
 			System.Object? __methodTargetForGenericCall = __selfConverted;
 	
 			System.Object[] __parametersForGenericCall = new System.Object[] { providerConverted, formatConverted, arg0Converted, arg1Converted, arg2Converted };
-			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.IFormatProvider), typeof(System.Text.CompositeFormat), TArg0Converted, TArg1Converted, TArg2Converted };
+			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.IFormatProvider), typeof(System.Text.CompositeFormat), System.Type.MakeGenericMethodParameter(0), System.Type.MakeGenericMethodParameter(1), System.Type.MakeGenericMethodParameter(2) };
 	
 			System.Type[] __genericParameterTypesForGenericCall = new[] { TArg0Converted, TArg1Converted, TArg2Converted };
 	
@@ -96074,7 +96074,7 @@ internal unsafe class System_Text_StringBuilder_AppendInterpolatedStringHandler
 			System.Object? __methodTargetForGenericCall = __selfConverted;
 	
 			System.Object[] __parametersForGenericCall = new System.Object[] { valueConverted };
-			System.Type[] __parameterTypesForGenericCall = new[] { TConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0) };
 	
 			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
 	
@@ -96117,7 +96117,7 @@ internal unsafe class System_Text_StringBuilder_AppendInterpolatedStringHandler
 			System.Object? __methodTargetForGenericCall = __selfConverted;
 	
 			System.Object[] __parametersForGenericCall = new System.Object[] { valueConverted, formatConverted };
-			System.Type[] __parameterTypesForGenericCall = new[] { TConverted, typeof(System.String) };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0), typeof(System.String) };
 	
 			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
 	
@@ -96159,7 +96159,7 @@ internal unsafe class System_Text_StringBuilder_AppendInterpolatedStringHandler
 			System.Object? __methodTargetForGenericCall = __selfConverted;
 	
 			System.Object[] __parametersForGenericCall = new System.Object[] { valueConverted, alignment };
-			System.Type[] __parameterTypesForGenericCall = new[] { TConverted, typeof(System.Int32) };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0), typeof(System.Int32) };
 	
 			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
 	
@@ -96202,7 +96202,7 @@ internal unsafe class System_Text_StringBuilder_AppendInterpolatedStringHandler
 			System.Object? __methodTargetForGenericCall = __selfConverted;
 	
 			System.Object[] __parametersForGenericCall = new System.Object[] { valueConverted, alignment, formatConverted };
-			System.Type[] __parameterTypesForGenericCall = new[] { TConverted, typeof(System.Int32), typeof(System.String) };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0), typeof(System.Int32), typeof(System.String) };
 	
 			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
 	
@@ -107583,7 +107583,7 @@ internal unsafe class System_Runtime_InteropServices_Marshal
 			System.Object? __methodTargetForGenericCall = null;
 	
 			System.Object[] __parametersForGenericCall = new System.Object[] { structureConverted };
-			System.Type[] __parameterTypesForGenericCall = new[] { TConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0) };
 	
 			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
 	
@@ -108720,7 +108720,7 @@ internal unsafe class System_Runtime_InteropServices_Marshal
 			System.Object? __methodTargetForGenericCall = null;
 	
 			System.Object[] __parametersForGenericCall = new System.Object[] { structureConverted, ptr, fDeleteOldConverted };
-			System.Type[] __parameterTypesForGenericCall = new[] { TConverted, typeof(System.IntPtr), typeof(System.Boolean) };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0), typeof(System.IntPtr), typeof(System.Boolean) };
 	
 			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
 	
@@ -108805,7 +108805,7 @@ internal unsafe class System_Runtime_InteropServices_Marshal
 			System.Object? __methodTargetForGenericCall = null;
 	
 			System.Object[] __parametersForGenericCall = new System.Object[] { ptr, structureConverted };
-			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.IntPtr), TConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.IntPtr), System.Type.MakeGenericMethodParameter(0) };
 	
 			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
 	
@@ -109424,7 +109424,7 @@ internal unsafe class System_Runtime_InteropServices_Marshal
 			System.Object? __methodTargetForGenericCall = null;
 	
 			System.Object[] __parametersForGenericCall = new System.Object[] { dConverted };
-			System.Type[] __parameterTypesForGenericCall = new[] { TDelegateConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0) };
 	
 			System.Type[] __genericParameterTypesForGenericCall = new[] { TDelegateConverted };
 	
@@ -109889,7 +109889,7 @@ internal unsafe class System_Runtime_InteropServices_Marshal
 			System.Object? __methodTargetForGenericCall = null;
 	
 			System.Object[] __parametersForGenericCall = new System.Object[] { pOuter, oConverted };
-			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.IntPtr), TConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.IntPtr), System.Type.MakeGenericMethodParameter(0) };
 	
 			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
 	
@@ -109955,7 +109955,7 @@ internal unsafe class System_Runtime_InteropServices_Marshal
 			System.Object? __methodTargetForGenericCall = null;
 	
 			System.Object[] __parametersForGenericCall = new System.Object[] { oConverted };
-			System.Type[] __parameterTypesForGenericCall = new[] { TConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0) };
 	
 			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted, TWrapperConverted };
 	
@@ -110096,7 +110096,7 @@ internal unsafe class System_Runtime_InteropServices_Marshal
 			System.Object? __methodTargetForGenericCall = null;
 	
 			System.Object[] __parametersForGenericCall = new System.Object[] { oConverted };
-			System.Type[] __parameterTypesForGenericCall = new[] { TConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0) };
 	
 			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted, TInterfaceConverted };
 	
@@ -110234,7 +110234,7 @@ internal unsafe class System_Runtime_InteropServices_Marshal
 			System.Object? __methodTargetForGenericCall = null;
 	
 			System.Object[] __parametersForGenericCall = new System.Object[] { objConverted, pDstNativeVariant };
-			System.Type[] __parameterTypesForGenericCall = new[] { TConverted, typeof(System.IntPtr) };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0), typeof(System.IntPtr) };
 	
 			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
 	
@@ -112533,7 +112533,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_GenericTests
 			System.Object? __methodTargetForGenericCall = __selfConverted;
 	
 			System.Object[] __parametersForGenericCall = new System.Object[] { valueConverted, numberOfElements };
-			System.Type[] __parameterTypesForGenericCall = new[] { TConverted, typeof(System.Int32) };
+			System.Type[] __parameterTypesForGenericCall = new[] { System.Type.MakeGenericMethodParameter(0), typeof(System.Int32) };
 	
 			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
 	
@@ -112541,62 +112541,6 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_GenericTests
 			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
 	
 			System.Array __returnValue = (System.Array)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
-			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericTests_DynamicMethodTest")]
-	internal static double /* System.Double */ NativeAOT_CodeGeneratorInputSample_GenericTests_DynamicMethodTest(void* /* NativeAOT.CodeGeneratorInputSample.GenericTests */ __self, int /* System.Int32 */ theValue, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		NativeAOT.CodeGeneratorInputSample.GenericTests __selfConverted = InteropUtils.GetInstance<NativeAOT.CodeGeneratorInputSample.GenericTests>(__self);
-	
-	
-	    try {
-			System.Double __returnValue = __selfConverted.DynamicMethodTest(theValue);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValue;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	                
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return -1;
-		}
-	}
-	
-
-	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericTests_CallReturnGenericTypeThroughReflection")]
-	internal static void* /* System.Type */ NativeAOT_CodeGeneratorInputSample_GenericTests_CallReturnGenericTypeThroughReflection(void* /* System.Type */ T, void** /* System.Exception */ __outException)
-	{
-		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
-	
-	    try {
-			System.Type __returnValue = NativeAOT.CodeGeneratorInputSample.GenericTests.CallReturnGenericTypeThroughReflection(TConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {

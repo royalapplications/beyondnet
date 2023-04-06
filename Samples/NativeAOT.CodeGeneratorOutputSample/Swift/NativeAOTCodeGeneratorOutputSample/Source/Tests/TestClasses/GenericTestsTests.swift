@@ -186,165 +186,76 @@ final class GenericTestsTests: XCTestCase {
 		}
 	}
 	
-	// TODO: Doesn't work. Why?
-//	func testReturnArrayOfRepeatedValues() {
-//		var exception: System_Exception_t?
-//
-//		let numberOfElements: Int32 = 100
-//
-//		guard let value = System_Object_Create(&exception),
-//			  exception == nil else {
-//			XCTFail("System.Object ctor should not throw and return an instance")
-//
-//			return
-//		}
-//
-//		defer { System_Object_Destroy(value) }
-//
-//		guard let systemObjectType = System_Object_GetType(value,
-//														   &exception),
-//			  exception == nil else {
-//			XCTFail("System.Object.GetType should not throw and return an instance")
-//
-//			return
-//		}
-//
-//		defer { System_Type_Destroy(systemObjectType) }
-//
-//		guard let genericTests = NativeAOT_CodeGeneratorInputSample_GenericTests_Create(&exception),
-//			  exception == nil else {
-//			XCTFail("GenericTests ctor should not throw and return an instance")
-//
-//			return
-//		}
-//
-//		defer { NativeAOT_CodeGeneratorInputSample_GenericTests_Destroy(genericTests) }
-//
-//		guard let arrayRet = NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnArrayOfRepeatedValues_A1(systemObjectType,
-//																											genericTests,
-//																											value,
-//																											numberOfElements,
-//																											&exception),
-//			  exception == nil else {
-//			let exStr = System_Exception_ToString(exception, nil).string()
-//
-//			XCTFail("ReturnArrayOfRepeatedValues should not throw and return an instance: \(exStr)")
-//
-//			return
-//		}
-//
-//		defer { System_Array_Destroy(arrayRet) }
-//
-//		let length = System_Array_Length_Get(arrayRet,
-//											 &exception)
-//
-//		XCTAssertNil(exception)
-//		XCTAssertEqual(numberOfElements, length)
-//
-//		for idx in 0..<length {
-//			guard let element = System_Array_GetValue_1(arrayRet,
-//														idx,
-//														&exception),
-//				  exception == nil else {
-//				XCTFail("System.Array.GetValue should not throw and return an instance")
-//
-//				return
-//			}
-//
-//			defer { System_Object_Destroy(element) }
-//
-//			let equal = System_Object_ReferenceEquals(value,
-//													  element,
-//													  &exception)
-//
-//			XCTAssertNil(exception)
-//			XCTAssertTrue(equal)
-//		}
-//	}
-	
-	func testDynamicMethodTest() {
+	func testReturnArrayOfRepeatedValues() {
 		var exception: System_Exception_t?
-		
-		guard let genericTest = NativeAOT_CodeGeneratorInputSample_GenericTests_Create(&exception),
+
+		let numberOfElements: Int32 = 100
+
+		guard let value = System_Object_Create(&exception),
+			  exception == nil else {
+			XCTFail("System.Object ctor should not throw and return an instance")
+
+			return
+		}
+
+		defer { System_Object_Destroy(value) }
+
+		guard let systemObjectType = System_Object_GetType(value,
+														   &exception),
+			  exception == nil else {
+			XCTFail("System.Object.GetType should not throw and return an instance")
+
+			return
+		}
+
+		defer { System_Type_Destroy(systemObjectType) }
+
+		guard let genericTests = NativeAOT_CodeGeneratorInputSample_GenericTests_Create(&exception),
 			  exception == nil else {
 			XCTFail("GenericTests ctor should not throw and return an instance")
-			
+
 			return
 		}
-		
-		defer { NativeAOT_CodeGeneratorInputSample_GenericTests_Destroy(genericTest) }
-		
-		let inputValue: Int32 = 5
-		
-		let result = NativeAOT_CodeGeneratorInputSample_GenericTests_DynamicMethodTest(genericTest,
-																					   inputValue,
-																					   &exception)
-		
-		guard let exception else {
-			XCTFail("DynamicMethodTest should throw because dynamic code generation is not supported in NativeAOT")
-			
-			return
-		}
-	}
-	
-	func testGenericMethodCallThroughReflectionWithReferenceType() {
-		var exception: System_Exception_t?
-		
-		guard let genericType = System_String_TypeOf() else {
-			XCTFail("typeof(System.String) should return an instance")
-			
-			return
-		}
-		
-		defer { System_Type_Destroy(genericType) }
-	 
-		guard let typeRet = NativeAOT_CodeGeneratorInputSample_GenericTests_CallReturnGenericTypeThroughReflection(genericType,
-																												   &exception),
+
+		defer { NativeAOT_CodeGeneratorInputSample_GenericTests_Destroy(genericTests) }
+
+		guard let arrayRet = NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnArrayOfRepeatedValues_A1(systemObjectType,
+																											genericTests,
+																											value,
+																											numberOfElements,
+																											&exception),
 			  exception == nil else {
-			if let exceptionAsStringC = System_Exception_ToString(exception, nil) {
-				defer { exceptionAsStringC.deallocate() }
-				
-				let exceptionAsString = String(cString: exceptionAsStringC)
-				
-				print(exceptionAsString)
-			}
-			
-			XCTFail("CallReturnGenericTypeThroughReflection should not throw and return an instance")
-			
+			XCTFail("ReturnArrayOfRepeatedValues should not throw and return an instance")
+
 			return
 		}
-		
-		defer { System_Type_Destroy(typeRet) }
-		
-		let typesEqual = System_Object_Equals(genericType,
-											  typeRet,
-											  &exception)
-		
+
+		defer { System_Array_Destroy(arrayRet) }
+
+		let length = System_Array_Length_Get(arrayRet,
+											 &exception)
+
 		XCTAssertNil(exception)
-		XCTAssertTrue(typesEqual)
-	}
-	
-	// See comment above regarding generic value types
-	func testGenericMethodCallThroughReflectionWithValueType() {
-		var exception: System_Exception_t?
-		
-		guard let genericType = System_Guid_TypeOf() else {
-			XCTFail("typeof(System.Guid) should return an instance")
-			
-			return
-		}
-		
-		defer { System_Type_Destroy(genericType) }
-	 
-		let typeRet = NativeAOT_CodeGeneratorInputSample_GenericTests_CallReturnGenericTypeThroughReflection(genericType,
-																											 &exception)
-		
-		XCTAssertNotNil(exception)
-		
-		System_Exception_Destroy(exception)
-		
-		if let typeRet {
-			System_Type_Destroy(typeRet)
+		XCTAssertEqual(numberOfElements, length)
+
+		for idx in 0..<length {
+			guard let element = System_Array_GetValue_1(arrayRet,
+														idx,
+														&exception),
+				  exception == nil else {
+				XCTFail("System.Array.GetValue should not throw and return an instance")
+
+				return
+			}
+
+			defer { System_Object_Destroy(element) }
+
+			let equal = System_Object_ReferenceEquals(value,
+													  element,
+													  &exception)
+
+			XCTAssertNil(exception)
+			XCTAssertTrue(equal)
 		}
 	}
 }

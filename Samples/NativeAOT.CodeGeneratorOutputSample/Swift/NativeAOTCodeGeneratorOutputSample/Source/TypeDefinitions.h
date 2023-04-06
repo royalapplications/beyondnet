@@ -1,5 +1,5 @@
 // Number of generated types: 653
-// Number of generated members: 4418
+// Number of generated members: 4416
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -32377,19 +32377,6 @@ NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnArrayOfRepeatedValues_A1(
 	NativeAOT_CodeGeneratorInputSample_GenericTests_t /* NativeAOT.CodeGeneratorInputSample.GenericTests */ self,
 	System_Object_t /* System.Object */ value,
 	int32_t /* System.Int32 */ numberOfElements,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-double /* System.Double */
-NativeAOT_CodeGeneratorInputSample_GenericTests_DynamicMethodTest(
-	NativeAOT_CodeGeneratorInputSample_GenericTests_t /* NativeAOT.CodeGeneratorInputSample.GenericTests */ self,
-	int32_t /* System.Int32 */ theValue,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Type_t /* System.Type */
-NativeAOT_CodeGeneratorInputSample_GenericTests_CallReturnGenericTypeThroughReflection(
-	System_Type_t /* System.Type */ T,
 	System_Exception_t* /* System.Exception */ outException
 );
 

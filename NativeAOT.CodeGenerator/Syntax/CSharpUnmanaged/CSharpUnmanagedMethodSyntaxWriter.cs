@@ -416,23 +416,20 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 sb.AppendLine($"{implPrefix}System.Object[] __parametersForGenericCall = new System.Object[] {{ {convertedParameterNamesString} }};");
 
                 List<string> parameterTypeNames = new();
-                
+
                 foreach (var parameter in parameters) {
                     Type parameterType = parameter.ParameterType;
-                    string parameterTypeName = parameterType.GetFullNameOrName();
 
                     bool isGenericParameterType = parameterType.IsGenericParameter ||
                                                   parameterType.IsGenericMethodParameter;
 
                     if (isGenericParameterType) {
-                        string convertedParameterTypeName = $"{parameterTypeName}Converted";
+                        string parameterTypeName = $"System.Type.MakeGenericMethodParameter({parameterType.GenericParameterPosition})";
                         
-                        if (convertedGenericArgumentNames.Contains(convertedParameterTypeName)) {
-                            parameterTypeNames.Add(convertedParameterTypeName);
-                        } else {
-                            throw new Exception("No converted generic parameter type");    
-                        }
+                        parameterTypeNames.Add(parameterTypeName);
                     } else {
+                        string parameterTypeName = parameterType.GetFullNameOrName();
+                        
                         parameterTypeNames.Add($"typeof({parameterTypeName})");
                     }
                 }
