@@ -68,4 +68,31 @@ final class SystemObjectTests: XCTestCase {
             return
         }
     }
+	
+	func testCreatingManyObjects() {
+		var exception: System_Exception_t?
+		
+		let numberOfObjects = 100
+		
+		var objects = [System_Object_t]()
+		
+		for _ in 0..<numberOfObjects {
+			guard let object = System_Object_Create(&exception),
+				  exception == nil else {
+				XCTFail("System.Object ctor should not throw and return an instance")
+				
+				return
+			}
+			
+			objects.append(object)
+		}
+		
+		for object in objects {
+			System_Object_Destroy(object)
+		}
+	
+		System_GC_Collect_1(&exception)
+		
+		XCTAssertNil(exception)
+	}
 }
