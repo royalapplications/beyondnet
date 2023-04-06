@@ -366,13 +366,16 @@ final class AnimalTests: XCTestCase {
 		
 		var exception2: System_Exception_t?
 		
-		guard let exceptionMessage = System_Exception_Message_Get(exception,
-																  &exception2).string(),
+		guard let exceptionMessageC = System_Exception_Message_Get(exception,
+																   &exception2),
 			  exception2 == nil else {
 			XCTFail("System.Exception.Message getter should not throw and return an instance of a string")
 			
 			return
 		}
+		
+		defer { exceptionMessageC.deallocate() }
+		let exceptionMessage = String(cString: exceptionMessageC)
 		
 		XCTAssertTrue(exceptionMessage.contains("violates the constraint"))
 	}

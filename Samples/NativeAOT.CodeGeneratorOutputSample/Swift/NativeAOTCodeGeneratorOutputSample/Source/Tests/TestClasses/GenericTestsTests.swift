@@ -344,14 +344,83 @@ final class GenericTestsTests: XCTestCase {
 		XCTAssertNil(exception)
 		XCTAssertTrue(valueEqual)
 		
-		guard let stringRet = System_Text_StringBuilder_ToString(valueRet,
-																 &exception).string(),
+		guard let stringRetC = System_Text_StringBuilder_ToString(valueRet,
+																  &exception),
 			  exception == nil else {
 			XCTFail("System.Text.StringBuilder.ToString should not throw and return an instance of a string")
 			
 			return
 		}
 		
+		defer { stringRetC.deallocate() }
+		let stringRet = String(cString: stringRetC)
+		
 		XCTAssertEqual(expectedString, stringRet)
+	}
+	
+	func testIncorrectParametersInGenericMethod() {
+		var exception: System_Exception_t?
+		
+		guard let keyType = System_Type_TypeOf() else {
+			XCTFail("typeof(System.Type) should return an instance")
+			
+			return
+		}
+		
+		defer { System_Type_Destroy(keyType) }
+		
+		guard let valueType = System_Text_StringBuilder_TypeOf() else {
+			XCTFail("typeof(System.Text.StringBuilder) should return an instance")
+			
+			return
+		}
+		
+		defer { System_Type_Destroy(valueType) }
+		
+		let key = keyType
+		
+		guard let value = System_Object_Create(&exception),
+			  exception == nil else {
+			XCTFail("System.Object ctor should not throw and return an instance")
+			
+			return
+		}
+		
+		defer { System_Object_Destroy(value) }
+		
+		let keyValuePair = NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnSimpleKeyValuePair_A2(keyType,
+																									   valueType,
+																									   key,
+																									   value,
+																									   &exception)
+
+		defer {
+			if let keyValuePair {
+				NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_Destroy(keyValuePair)
+			}
+		}
+
+		guard let exception else {
+			XCTFail("ReturnSimpleKeyValuePair should throw an exception because the value passed in does not match the provided generic type")
+
+			return
+		}
+
+		defer { System_Exception_Destroy(exception) }
+
+		var exception2: System_Exception_t?
+
+		guard let exceptionMessageC = System_Exception_Message_Get(exception,
+																   &exception2),
+			  exception2 == nil else {
+			XCTFail("System.Exception.Message getter should not throw and return an instance of a C string")
+
+			return
+		}
+
+		defer { exceptionMessageC.deallocate() }
+		let exceptionMessage = String(cString: exceptionMessageC)
+		
+		XCTAssertEqual(exceptionMessage, "Object of type \'System.Object\' cannot be converted to type \'System.Text.StringBuilder\'.")
 	}
 }

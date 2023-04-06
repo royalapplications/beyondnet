@@ -21,13 +21,16 @@ final class SystemTextStringBuilderTests: XCTestCase {
 		
 		defer { System_Text_StringBuilder_Destroy(sb) }
 		
-		guard let helloRet = System_Text_StringBuilder_ToString(sb,
-																&exception).string(),
+		guard let helloRetC = System_Text_StringBuilder_ToString(sb,
+																 &exception),
 			  exception == nil else {
 			XCTFail("System.Text.StringBuilder.ToString should not throw and return a string")
 			
 			return
 		}
+		
+		defer { helloRetC.deallocate() }
+		let helloRet = String(cString: helloRetC)
 		
 		XCTAssertEqual(hello, helloRet)
 		
@@ -42,13 +45,16 @@ final class SystemTextStringBuilderTests: XCTestCase {
 		
 		XCTAssertNil(exception)
 		
-		guard let finalStringRet = System_Text_StringBuilder_ToString(sb,
-																	  &exception).string(),
+		guard let finalStringRetC = System_Text_StringBuilder_ToString(sb,
+																	   &exception),
 			  exception == nil else {
 			XCTFail("System.Text.StringBuilder.ToString should not throw and return a string")
 			
 			return
 		}
+		
+		defer { finalStringRetC.deallocate() }
+		let finalStringRet = String(cString: finalStringRetC)
 		
 		XCTAssertEqual(expectedFinalString, finalStringRet)
 	}
