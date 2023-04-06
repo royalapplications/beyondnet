@@ -262,6 +262,31 @@ final class GenericTestsTests: XCTestCase {
 //		}
 //	}
 	
+	func testDynamicMethodTest() {
+		var exception: System_Exception_t?
+		
+		guard let genericTest = NativeAOT_CodeGeneratorInputSample_GenericTests_Create(&exception),
+			  exception == nil else {
+			XCTFail("GenericTests ctor should not throw and return an instance")
+			
+			return
+		}
+		
+		defer { NativeAOT_CodeGeneratorInputSample_GenericTests_Destroy(genericTest) }
+		
+		let inputValue: Int32 = 5
+		
+		let result = NativeAOT_CodeGeneratorInputSample_GenericTests_DynamicMethodTest(genericTest,
+																					   inputValue,
+																					   &exception)
+		
+		guard let exception else {
+			XCTFail("DynamicMethodTest should throw because dynamic code generation is not supported in NativeAOT")
+			
+			return
+		}
+	}
+	
 	func testGenericMethodCallThroughReflectionWithReferenceType() {
 		var exception: System_Exception_t?
 		
