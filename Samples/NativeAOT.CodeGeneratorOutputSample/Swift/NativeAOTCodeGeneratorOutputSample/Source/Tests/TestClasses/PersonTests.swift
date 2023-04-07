@@ -605,6 +605,21 @@ final class PersonTests: XCTestCase {
 	}
     
     func testPersonEvents() {
+		typealias NumberOfChildrenChangedDelegate_Closure = (_ context: Context) -> Void
+		
+		class Context {
+			var delegateClosure: NumberOfChildrenChangedDelegate_Closure
+			var numberOfTimesNumberOfChildrenChangedWasCalled: Int32 = 0
+			
+			init(delegateClosure: @escaping NumberOfChildrenChangedDelegate_Closure) {
+				self.delegateClosure = delegateClosure
+			}
+			
+			func invokeClosure() {
+				delegateClosure(self)
+			}
+		}
+		
         var exception: System_Exception_t?
 		
 		let motherFirstNameDN = "Johanna".dotNETString()
@@ -631,17 +646,12 @@ final class PersonTests: XCTestCase {
         
         defer { NativeAOT_CodeGeneratorInputSample_Person_Destroy(mother) }
         
-        var numberOfTimesNumberOfChildrenChangedWasCalled: Int32 = 0
+		let swiftyContext = Context(delegateClosure: { innerSwiftyContext in
+			innerSwiftyContext.numberOfTimesNumberOfChildrenChangedWasCalled += 1
+		})
         
-        typealias NumberOfChildrenChangedDelegate_Closure = () -> Void
-        
-        let numberOfChildrenChangedHandlerSwift: NumberOfChildrenChangedDelegate_Closure = {
-            numberOfTimesNumberOfChildrenChangedWasCalled += 1
-        }
-        
-        let closureBox = NativeBox(numberOfChildrenChangedHandlerSwift)
-        
-        let context = closureBox.retainedPointer()
+        let contextBox = NativeBox(swiftyContext)
+        let context = contextBox.retainedPointer()
         
         let destructor: NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_CDestructorFunction_t = { innerContext in
             guard let innerContext else {
@@ -650,7 +660,7 @@ final class PersonTests: XCTestCase {
                 return
             }
             
-            NativeBox<NumberOfChildrenChangedDelegate_Closure>.release(innerContext)
+            NativeBox<Context>.release(innerContext)
         }
         
         let numberOfChildrenChangedHandler: NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_CFunction_t = { innerContext in
@@ -660,18 +670,21 @@ final class PersonTests: XCTestCase {
                 return
             }
             
-            let innerClosureBox = NativeBox<NumberOfChildrenChangedDelegate_Closure>.fromPointer(innerContext)
-            let closure = innerClosureBox.value
-            
-            closure()
+            let innerContextBox = NativeBox<Context>.fromPointer(innerContext)
+            let innerSwiftyContext = innerContextBox.value
+			
+			innerSwiftyContext.invokeClosure()
         }
         
         guard let numberOfChildrenChangedDelegate = NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_Create(context,
-																																	 numberOfChildrenChangedHandler,                                                    destructor) else {
+																																	 numberOfChildrenChangedHandler,
+																																	 destructor) else {
             XCTFail("Number of children changed delegate ctor should return an instance")
             
             return
         }
+		
+		defer { NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_Destroy(numberOfChildrenChangedDelegate) }
         
         NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChanged_Add(mother,
                                                                               numberOfChildrenChangedDelegate)
@@ -732,7 +745,7 @@ final class PersonTests: XCTestCase {
         let expectedNumberOfChildren: Int32 = 2
         
         XCTAssertEqual(expectedNumberOfChildren, numberOfChildren)
-        XCTAssertEqual(expectedNumberOfChildren, numberOfTimesNumberOfChildrenChangedWasCalled)
+		XCTAssertEqual(expectedNumberOfChildren, swiftyContext.numberOfTimesNumberOfChildrenChangedWasCalled)
         
         NativeAOT_CodeGeneratorInputSample_Person_RemoveChild(mother,
                                                               daugther,
@@ -740,7 +753,7 @@ final class PersonTests: XCTestCase {
         
         XCTAssertNil(exception)
         
-        XCTAssertEqual(3, numberOfTimesNumberOfChildrenChangedWasCalled)
+		XCTAssertEqual(3, swiftyContext.numberOfTimesNumberOfChildrenChangedWasCalled)
         
         NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChanged_Remove(mother,
                                                                                  numberOfChildrenChangedDelegate)
@@ -751,7 +764,7 @@ final class PersonTests: XCTestCase {
         
         XCTAssertNil(exception)
         
-        XCTAssertEqual(3, numberOfTimesNumberOfChildrenChangedWasCalled)
+		XCTAssertEqual(3, swiftyContext.numberOfTimesNumberOfChildrenChangedWasCalled)
         
         let numberOfChildrenAfterRemoval = NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildren_Get(mother,
                                                                                                           &exception)
