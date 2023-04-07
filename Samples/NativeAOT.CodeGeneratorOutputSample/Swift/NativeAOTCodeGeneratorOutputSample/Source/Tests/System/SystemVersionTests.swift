@@ -41,7 +41,7 @@ final class SystemVersionTests: XCTestCase {
             return
         }
         
-        defer { System_Type_Destroy(version) }
+        defer { System_Type_Destroy(versionFromComponentsType) }
         
         guard System_Object_Equals(systemVersionType,
                                    versionFromComponentsType,
