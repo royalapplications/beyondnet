@@ -141,6 +141,12 @@ final class GenericTestsTests: XCTestCase {
 		
 		let defaultValueRet = NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnDefaultValueOfGenericType_A1(genericType,
 																												 &exception)
+        
+        defer {
+            if let defaultValueRet {
+                System_Object_Destroy(defaultValueRet)
+            }
+        }
 		
 		XCTAssertNil(exception)
 		XCTAssertNil(defaultValueRet)
@@ -180,6 +186,12 @@ final class GenericTestsTests: XCTestCase {
 			let defaultValue = System_Array_GetValue_1(defaultValuesArrayRet,
 													   i,
 													   &exception)
+            
+            defer {
+                if let defaultValue {
+                    System_Object_Destroy(defaultValue)
+                }
+            }
 			
 			XCTAssertNil(exception)
 			XCTAssertNil(defaultValue)
@@ -463,13 +475,14 @@ final class GenericTestsTests: XCTestCase {
 
 		defer { System_Array_Destroy(arrayOfStrings) }
 
+        var dnStrings = [System_String_t]()
 		var strings = [String]()
 		
 		for idx in 0..<numberOfElements {
 			let string = "\(stringPrefix)\(idx)"
 			let stringDN = string.dotNETString()
-			defer { System_String_Destroy(stringDN) }
 			
+            dnStrings.append(stringDN)
 			strings.append(string)
 
 			System_Array_SetValue(arrayOfStrings,
@@ -481,6 +494,10 @@ final class GenericTestsTests: XCTestCase {
 		}
 		
 		let expectedString = strings.joined(separator: separator)
+        
+        for dnString in dnStrings {
+            System_String_Destroy(dnString)
+        }
 
 		guard let stringRet = String(dotNETString: NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnStringOfJoinedArray_A1(stringType,
 																																arrayOfStrings,

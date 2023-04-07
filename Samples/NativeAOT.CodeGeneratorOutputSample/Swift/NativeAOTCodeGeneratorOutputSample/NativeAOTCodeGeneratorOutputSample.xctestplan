@@ -13,17 +13,14 @@
       "enabled" : true
     },
     "codeCoverage" : false,
-    "maximumTestRepetitions" : 20,
-    "repeatInNewRunnerProcess" : true,
+    "maximumTestRepetitions" : 50,
     "testExecutionOrdering" : "random",
     "testRepetitionMode" : "fixedIterations"
   },
   "testTargets" : [
     {
       "skippedTests" : [
-        "GenericTestsTests",
-        "PersonTests",
-        "TestClassesTests"
+        "PersonTests"
       ],
       "target" : {
         "containerPath" : "container:NativeAOTCodeGeneratorOutputSample.xcodeproj",
