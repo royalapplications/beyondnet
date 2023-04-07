@@ -133,4 +133,60 @@ final class SystemArrayTests: XCTestCase {
 		XCTAssertNil(exception)
 		XCTAssertTrue(arrayElementTypeIsSystemString)
 	}
+	
+	func testFillArrayWithGenerics() {
+		var exception: System_Exception_t?
+		
+		guard let systemStringType = System_String_TypeOf() else {
+			XCTFail("typeof(System.String) should return an instance")
+			
+			return
+		}
+		
+		defer { System_Type_Destroy(systemStringType) }
+		
+		let numberOfElements: Int32 = 5
+		
+		guard let arrayOfString = System_Array_CreateInstance(systemStringType,
+															  numberOfElements,
+															  &exception),
+			  exception == nil else {
+			XCTFail("System.Array.CreateInstance should not throw and return an instance")
+			
+			return
+		}
+		
+		defer { System_Array_Destroy(arrayOfString) }
+		
+		let string = "Abc"
+		let stringDN = string.dotNETString()
+		defer { System_String_Destroy(stringDN) }
+		
+		System_Array_Fill_A1(systemStringType,
+							 arrayOfString,
+							 stringDN,
+							 &exception)
+		
+		XCTAssertNil(exception)
+		
+		let length = System_Array_Length_Get(arrayOfString,
+											 &exception)
+		
+		XCTAssertNil(exception)
+		XCTAssertEqual(numberOfElements, length)
+		
+		for idx in 0..<length {
+			guard let stringElement = String(dotNETString: System_Array_GetValue_1(arrayOfString,
+																				   idx,
+																				   &exception),
+											 destroyDotNETString: true),
+				  exception == nil else {
+				XCTFail("System.Array.GetValue should not throw and return an instance")
+				
+				return
+			}
+			
+			XCTAssertEqual(string, stringElement)
+		}
+	}
 }
