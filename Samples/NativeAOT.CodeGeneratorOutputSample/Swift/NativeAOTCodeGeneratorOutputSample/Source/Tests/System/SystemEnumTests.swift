@@ -33,14 +33,50 @@ final class SystemEnumTests: XCTestCase {
 
         defer { System_Array_Destroy(enumNames) }
 
-        let namesCount = System_Array_GetLength(enumNames,
-                                                0,
-                                                &exception)
+        let namesCount = System_Array_Length_Get(enumNames,
+												 &exception)
 
         XCTAssertNil(exception)
 
         XCTAssertEqual(3, namesCount)
 		
-		// TODO: Check names
+		var names = [String]()
+		
+		for idx in 0..<namesCount {
+			guard let stringElement = String(dotNETString: System_Array_GetValue_1(enumNames,
+																				   idx,
+																				   &exception),
+											 destroyDotNETString: true),
+				  exception == nil else {
+				XCTFail("System.Array.GetValue should not throw and return an instance")
+				
+				return
+			}
+			
+			names.append(stringElement)
+		}
+		
+		let unspecified = "Unspecified"
+		let utc = "Utc"
+		let local = "Local"
+		
+		XCTAssertEqual(unspecified, names[0])
+		XCTAssertEqual(utc, names[1])
+		XCTAssertEqual(local, names[2])
+		
+		// TODO: Incomplete/Does not work
+//		let utcDN = utc.dotNETString()
+//		defer { System_String_Destroy(utcDN) }
+//
+//		guard let parsed = System_Enum_Parse_A1(systemDateTimeKindType,
+//												utcDN,
+//												&exception),
+//			  exception == nil else {
+//			XCTFail("System.Enum.Parse should not throw and return an instance")
+//
+//			return
+//		}
+//
+//		defer { System_Object_Destroy(parsed) }
     }
 }
