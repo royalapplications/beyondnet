@@ -13,7 +13,7 @@
       "enabled" : true
     },
     "codeCoverage" : false,
-    "maximumTestRepetitions" : 20,
+    "maximumTestRepetitions" : 10,
     "repeatInNewRunnerProcess" : true,
     "testExecutionOrdering" : "random",
     "testRepetitionMode" : "fixedIterations"
@@ -21,8 +21,6 @@
   "testTargets" : [
     {
       "skippedTests" : [
-        "PersonTests\/testPersonAddress()",
-        "PersonTests\/testPersonChildrenArrayChange()",
         "PersonTests\/testPersonEvents()"
       ],
       "target" : {

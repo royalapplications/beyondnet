@@ -12,7 +12,20 @@ public class Person
     public string LastName { get; set; }
     public int Age { get; set; }
     public Address? Address { get; set; }
-    public Person[] Children { get; set; } = Array.Empty<Person>();
+
+    private Person[] m_children = Array.Empty<Person>();
+
+    public Person[] Children
+    {
+        get {
+            return m_children;
+        }
+        set {
+            m_children = value;
+            
+            NumberOfChildrenChanged?.Invoke();
+        }
+    }
 
     public event NumberOfChildrenChangedDelegate? NumberOfChildrenChanged;
     
@@ -82,8 +95,6 @@ public class Person
         children.Add(child);
 
         Children = children.ToArray();
-        
-        NumberOfChildrenChanged?.Invoke();
     }
     
     public void RemoveChild(Person child)
@@ -97,8 +108,6 @@ public class Person
         children.Remove(child);
 
         Children = children.ToArray();
-        
-        NumberOfChildrenChanged?.Invoke();
     }
     
     public void RemoveChildAt(int index)
@@ -108,8 +117,6 @@ public class Person
         children.RemoveAt(index);
 
         Children = children.ToArray();
-        
-        NumberOfChildrenChanged?.Invoke();
     }
 
     public int NumberOfChildren
