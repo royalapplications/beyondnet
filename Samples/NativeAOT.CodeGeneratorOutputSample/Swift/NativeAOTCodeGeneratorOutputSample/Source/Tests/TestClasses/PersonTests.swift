@@ -2,10 +2,12 @@ import XCTest
 import NativeAOTCodeGeneratorOutputSample
 
 final class PersonTests: XCTestCase {
+	@MainActor
 	override class func setUp() {
 		Self.gcCollect()
 	}
 	
+	@MainActor
 	override class func tearDown() {
 		Self.gcCollect()
 	}

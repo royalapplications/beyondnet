@@ -2,10 +2,12 @@ import XCTest
 import NativeAOTCodeGeneratorOutputSample
 
 final class SystemIOPathTests: XCTestCase {
+	@MainActor
 	override class func setUp() {
 		Self.gcCollect()
 	}
 	
+	@MainActor
 	override class func tearDown() {
 		Self.gcCollect()
 	}

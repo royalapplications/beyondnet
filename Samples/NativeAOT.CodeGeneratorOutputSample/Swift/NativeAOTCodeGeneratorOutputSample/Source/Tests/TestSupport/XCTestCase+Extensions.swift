@@ -3,6 +3,7 @@ import XCTest
 import NativeAOTCodeGeneratorOutputSample
 
 extension XCTestCase {
+	@MainActor
 	class func gcCollect() {
 		var exception: System_Exception_t?
 		

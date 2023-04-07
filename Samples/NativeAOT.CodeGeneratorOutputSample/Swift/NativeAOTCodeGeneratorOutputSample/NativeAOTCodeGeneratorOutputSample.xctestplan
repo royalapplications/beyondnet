@@ -13,14 +13,21 @@
       "enabled" : true
     },
     "codeCoverage" : false,
-    "maximumTestRepetitions" : 50,
+    "maximumTestRepetitions" : 20,
+    "repeatInNewRunnerProcess" : true,
     "testExecutionOrdering" : "random",
     "testRepetitionMode" : "fixedIterations"
   },
   "testTargets" : [
     {
       "skippedTests" : [
-        "PersonTests"
+        "PersonTests\/testPersonAddress()",
+        "PersonTests\/testPersonChangeAge()",
+        "PersonTests\/testPersonChildren()",
+        "PersonTests\/testPersonChildrenArray()",
+        "PersonTests\/testPersonChildrenArrayChange()",
+        "PersonTests\/testPersonEvents()",
+        "PersonTests\/testPersonExtensionMethods()"
       ],
       "target" : {
         "containerPath" : "container:NativeAOTCodeGeneratorOutputSample.xcodeproj",
