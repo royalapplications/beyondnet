@@ -19,6 +19,11 @@ final class SystemThreadingTimerTests: XCTestCase {
 		let context = contextBox.retainedPointer()
 		
 		let cFunction: System_Threading_TimerCallback_CFunction_t = { innerContext, state in
+			if let state {
+				// We need to release any reference types that are given to us through the delegate
+				System_Object_Destroy(state)
+			}
+			
 			var innerException: System_Exception_t?
 			
 			guard let innerContext else {
@@ -59,6 +64,8 @@ final class SystemThreadingTimerTests: XCTestCase {
 			let innerSwiftyContext = innerContextBox.value
 			
 			innerSwiftyContext.numberOfTimesDestructorCalled += 1
+			
+			XCTAssertEqual(1, innerSwiftyContext.numberOfTimesDestructorCalled)
 			
 			innerContextBox.release(innerContext)
 		}

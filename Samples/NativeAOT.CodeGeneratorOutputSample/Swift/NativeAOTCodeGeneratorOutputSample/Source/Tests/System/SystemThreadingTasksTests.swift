@@ -60,11 +60,16 @@ final class SystemThreadingTasksTests: XCTestCase {
 		
 		var actionFunctionHasCompleted = false
 		var destructorFunctionHasCompleted = false
+		var numberOfTimesDestructorFunctionWasCalled = 0
 		
 		let swiftySystemAction = System_Action_Swift(actionFunction: {
 			actionFunctionHasCompleted = true
 		}, destructorFunction: {
 			destructorFunctionHasCompleted = true
+			
+			numberOfTimesDestructorFunctionWasCalled += 1
+			
+			XCTAssertEqual(1, numberOfTimesDestructorFunctionWasCalled)
 		})
 		
 		guard let action = swiftySystemAction.systemAction else {

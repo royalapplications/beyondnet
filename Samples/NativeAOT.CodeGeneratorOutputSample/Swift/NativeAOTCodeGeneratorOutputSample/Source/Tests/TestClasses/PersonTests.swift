@@ -468,7 +468,11 @@ final class PersonTests: XCTestCase {
 			return 10
 		}
 		
-		let swiftyContext = "Blah"
+		class Context {
+			var numberOfTimesDestructorWasCalled = 0
+		}
+		
+		var swiftyContext = Context()
 		let contextBox = NativeBox(swiftyContext)
 		let context = contextBox.retainedPointer()
 		
@@ -479,7 +483,14 @@ final class PersonTests: XCTestCase {
 				return
 			}
 			
-			NativeBox<String>.release(innerContext)
+			let innerContextBox = NativeBox<Context>.fromPointer(innerContext)
+			let innerSwiftyContext = innerContextBox.value
+			
+			innerSwiftyContext.numberOfTimesDestructorWasCalled += 1
+			
+			XCTAssertEqual(1, innerSwiftyContext.numberOfTimesDestructorWasCalled)
+			
+			innerContextBox.release(innerContext)
 		}
 		
 		guard let newAgeProviderDelegate = NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Create(context,
@@ -652,7 +663,7 @@ final class PersonTests: XCTestCase {
         }
         
         guard let numberOfChildrenChangedDelegate = NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_Create(context,
-                                                                                                                                     numberOfChildrenChangedHandler,                                                    destructor) else {
+																																	 numberOfChildrenChangedHandler,                                                    destructor) else {
             XCTFail("Number of children changed delegate ctor should return an instance")
             
             return

@@ -41,6 +41,8 @@ final class SystemThreadingThreadTests: XCTestCase {
 			
 			innerSwiftyContext.numberOfTimesDestructorCalled += 1
 			
+			XCTAssertEqual(1, innerSwiftyContext.numberOfTimesDestructorCalled)
+			
 			innerContextBox.release(innerContext)
 		}
 		
