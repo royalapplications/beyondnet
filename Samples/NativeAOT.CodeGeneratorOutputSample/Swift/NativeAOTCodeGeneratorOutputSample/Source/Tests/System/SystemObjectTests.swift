@@ -99,4 +99,28 @@ final class SystemObjectTests: XCTestCase {
             XCTAssertNil(exception)
         }
 	}
+	
+	func testCreatingAndDestroyingManyObjectsByInstantlyCollectingGC() {
+		measure {
+			let numberOfObjects = 500
+			var exception: System_Exception_t?
+			
+			for _ in 0..<numberOfObjects {
+				guard let object = System_Object_Create(&exception),
+					  exception == nil else {
+					XCTFail("System.Object ctor should not throw and return an instance")
+					
+					return
+				}
+				
+				System_Object_Destroy(object)
+	
+				System_GC_Collect_1(&exception)
+				XCTAssertNil(exception)
+				
+				System_GC_WaitForPendingFinalizers(&exception)
+				XCTAssertNil(exception)
+			}
+		}
+	}
 }
