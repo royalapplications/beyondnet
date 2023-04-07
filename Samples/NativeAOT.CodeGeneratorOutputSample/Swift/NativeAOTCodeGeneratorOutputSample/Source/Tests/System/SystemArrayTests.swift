@@ -189,4 +189,70 @@ final class SystemArrayTests: XCTestCase {
 			XCTAssertEqual(string, stringElement)
 		}
 	}
+	
+	func testReverseArrayWithGenerics() {
+		var exception: System_Exception_t?
+		
+		guard let systemStringType = System_String_TypeOf() else {
+			XCTFail("typeof(System.String) should return an instance")
+			
+			return
+		}
+		
+		defer { System_Type_Destroy(systemStringType) }
+		
+		let strings = [
+			"1",
+			"2"
+		]
+		
+		let numberOfElements: Int32 = .init(strings.count)
+		
+		guard let arrayOfString = System_Array_CreateInstance(systemStringType,
+															  numberOfElements,
+															  &exception),
+			  exception == nil else {
+			XCTFail("System.Array.CreateInstance should not throw and return an instance")
+			
+			return
+		}
+		
+		defer { System_Array_Destroy(arrayOfString) }
+		
+		for (idx, string) in strings.enumerated() {
+			let stringDN = string.dotNETString()
+			defer { System_String_Destroy(stringDN) }
+			
+			System_Array_SetValue(arrayOfString,
+								  stringDN,
+								  .init(idx),
+								  &exception)
+			
+			XCTAssertNil(exception)
+		}
+		
+		System_Array_Reverse_A1(systemStringType,
+								arrayOfString,
+								&exception)
+		
+		XCTAssertNil(exception)
+		
+		let reversedStrings = [String](strings.reversed())
+		
+		for idx in 0..<numberOfElements {
+			guard let stringElement = String(dotNETString: System_Array_GetValue_1(arrayOfString,
+																				   idx,
+																				   &exception),
+											 destroyDotNETString: true),
+				  exception == nil else {
+				XCTFail("System.Array.GetValue should not throw and return an instance")
+				
+				return
+			}
+			
+			let expectedString = reversedStrings[.init(idx)]
+			
+			XCTAssertEqual(expectedString, stringElement)
+		}
+	}
 }
