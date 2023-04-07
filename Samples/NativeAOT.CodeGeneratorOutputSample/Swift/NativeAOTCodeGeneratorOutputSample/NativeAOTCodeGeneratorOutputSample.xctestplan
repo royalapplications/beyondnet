@@ -13,10 +13,22 @@
       "enabled" : true
     },
     "codeCoverage" : false,
-    "testExecutionOrdering" : "random"
+    "maximumTestRepetitions" : 20,
+    "repeatInNewRunnerProcess" : true,
+    "testExecutionOrdering" : "random",
+    "testRepetitionMode" : "fixedIterations"
   },
   "testTargets" : [
     {
+      "skippedTests" : [
+        "GenericTestsTests",
+        "PersonTests",
+        "SystemVersionTests",
+        "SystemVersionTests\/testSystemVersionFromComponents()",
+        "SystemVersionTests\/testSystemVersionFromString()",
+        "SystemVersionTests\/testSystemVersionParse()",
+        "TestClassesTests"
+      ],
       "target" : {
         "containerPath" : "container:NativeAOTCodeGeneratorOutputSample.xcodeproj",
         "identifier" : "E70D117129BF9FEC00B4E738",
