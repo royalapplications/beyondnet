@@ -23,8 +23,6 @@
       "skippedTests" : [
         "GenericTestsTests",
         "PersonTests",
-        "SystemVersionTests\/testSystemVersionFromString()",
-        "SystemVersionTests\/testSystemVersionParse()",
         "TestClassesTests"
       ],
       "target" : {
