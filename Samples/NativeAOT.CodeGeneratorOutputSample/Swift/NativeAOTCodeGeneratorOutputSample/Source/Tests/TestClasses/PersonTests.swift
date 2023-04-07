@@ -472,7 +472,7 @@ final class PersonTests: XCTestCase {
 			var numberOfTimesDestructorWasCalled = 0
 		}
 		
-		var swiftyContext = Context()
+		let swiftyContext = Context()
 		let contextBox = NativeBox(swiftyContext)
 		let context = contextBox.retainedPointer()
 		
