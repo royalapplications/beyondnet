@@ -46,6 +46,7 @@ internal class CodeGeneratorDriver
         );
 
         bool emitUnsupported = Configuration.EmitUnsupported ?? false;
+        bool generateTypeCheckedDestroyMethods = Configuration.GenerateTypeCheckedDestroyMethods ?? false;
 
         const string namespaceForCSharpUnamangedCode = "NativeGeneratedCode";
 
@@ -53,7 +54,8 @@ internal class CodeGeneratorDriver
             types,
             unsupportedTypes,
             namespaceForCSharpUnamangedCode,
-            emitUnsupported
+            emitUnsupported,
+            generateTypeCheckedDestroyMethods
         );
 
         var cSharpUnmanagedResult = cSharpUnmanagedResultObject.Result;
@@ -159,13 +161,15 @@ internal class CodeGeneratorDriver
         HashSet<Type> types,
         Dictionary<Type, string> unsupportedTypes,
         string namespaceForGeneratedCode,
-        bool emitUnsupported
+        bool emitUnsupported,
+        bool generateTypeCheckedDestroyMethods
     )
     {
         SourceCodeWriter writer = new();
 
         Generator.CSharpUnmanaged.Settings settings = new(namespaceForGeneratedCode) {
-            EmitUnsupported = emitUnsupported
+            EmitUnsupported = emitUnsupported,
+            GenerateTypeCheckedDestroyMethods = generateTypeCheckedDestroyMethods
         };
         
         CSharpUnmanagedCodeGenerator codeGenerator = new(settings);

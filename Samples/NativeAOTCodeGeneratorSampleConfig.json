@@ -5,6 +5,7 @@
 	"COutputPath": "NativeAOT.CodeGeneratorOutputSample/Swift/NativeAOTCodeGeneratorOutputSample/Source/TypeDefinitions.h",
 	
 	"EmitUnsupported": false,
+	"GenerateTypeCheckedDestroyMethods": true,
 
 	"IncludedTypeNames": [
 		"System.GC",

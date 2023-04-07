@@ -8,6 +8,7 @@ public struct Configuration
     public string? COutputPath { get; init; }
 
     public bool? EmitUnsupported { get; init; }
+    public bool? GenerateTypeCheckedDestroyMethods { get; init; }
     
     public string[]? IncludedTypeNames { get; init; }
     public string[]? ExcludedTypeNames { get; init; }

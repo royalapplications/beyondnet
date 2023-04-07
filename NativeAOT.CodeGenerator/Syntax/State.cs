@@ -6,6 +6,8 @@ namespace NativeAOT.CodeGenerator.Syntax;
 
 public class State
 {
+    public Settings? Settings { get; init; }
+    
     private List<GeneratedMember> m_generatedMembers = new();
 
     public IEnumerable<GeneratedMember> GeneratedMembers

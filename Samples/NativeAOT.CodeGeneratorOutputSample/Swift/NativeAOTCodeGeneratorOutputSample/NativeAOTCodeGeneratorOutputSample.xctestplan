@@ -23,8 +23,6 @@
       "skippedTests" : [
         "PersonTests\/testPersonAddress()",
         "PersonTests\/testPersonChangeAge()",
-        "PersonTests\/testPersonChildren()",
-        "PersonTests\/testPersonChildrenArray()",
         "PersonTests\/testPersonChildrenArrayChange()",
         "PersonTests\/testPersonEvents()",
         "PersonTests\/testPersonExtensionMethods()"

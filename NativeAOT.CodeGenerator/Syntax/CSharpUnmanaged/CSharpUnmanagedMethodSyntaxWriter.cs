@@ -337,7 +337,20 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         if (memberKind == MemberKind.Constructor) {
             methodNameForInvocation = string.Empty;
         } else if (memberKind == MemberKind.Destructor) {
-            methodNameForInvocation = "InteropUtils.FreeIfAllocated(__self)";
+            bool generateCheckedDestructors = state.Settings?.GenerateTypeCheckedDestroyMethods ?? false;
+            
+            if (generateCheckedDestructors &&
+                !declaringType.IsAbstract) {
+                string typeName = fullTypeName;
+                
+                if (declaringType.IsDelegate()) {
+                    typeName = fullTypeNameC;
+                }
+                
+                methodNameForInvocation = $"InteropUtils.CheckedFreeIfAllocated<{typeName}>(__self)";
+            } else {
+                methodNameForInvocation = "InteropUtils.FreeIfAllocated(__self)";
+            }
         } else if (memberKind == MemberKind.TypeOf) {
             methodNameForInvocation = $"typeof({declaringType.GetFullNameOrName()})";
         } else {

@@ -47,7 +47,9 @@ public class CSharpUnmanagedCodeGenerator: ICodeGenerator
         Result result = new();
         
         foreach (Type type in types) {
-            Syntax.State state = new();
+            Syntax.State state = new() {
+                Settings = Settings
+            };
             
             string typeCode = typeSyntaxWriter.Write(type, state);
             
@@ -146,6 +148,28 @@ internal static unsafe class InteropUtils
         }
 
         GCHandle? handle = GetGCHandle(handleAddress);
+        
+        handle?.FreeIfAllocated();
+    }
+
+    internal static void CheckedFreeIfAllocated<T>(void* handleAddress)
+    {
+        if (handleAddress is null) {
+            return;
+        }
+
+        GCHandle? handle = GetGCHandle(handleAddress);
+
+        if (handle is null) {
+            return;
+        }
+
+        object? target = handle?.Target;
+
+        if (target is not null &&
+            !(target is T)) {
+            throw new Exception("Type of handle is unexpected");
+        }
         
         handle?.FreeIfAllocated();
     }

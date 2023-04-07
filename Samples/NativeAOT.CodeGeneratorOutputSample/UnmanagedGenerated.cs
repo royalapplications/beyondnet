@@ -83,6 +83,28 @@ internal static unsafe class InteropUtils
         
         handle?.FreeIfAllocated();
     }
+
+    internal static void CheckedFreeIfAllocated<T>(void* handleAddress)
+    {
+        if (handleAddress is null) {
+            return;
+        }
+
+        GCHandle? handle = GetGCHandle(handleAddress);
+
+        if (handle is null) {
+            return;
+        }
+
+        object? target = handle?.Target;
+
+        if (target is not null &&
+            !(target is T)) {
+            throw new Exception("Type of handle is unexpected");
+        }
+        
+        handle?.FreeIfAllocated();
+    }
     
     internal static void FreeIfAllocated(this GCHandle handle)
     {
@@ -416,7 +438,7 @@ internal unsafe class System_Object
 	internal static void /* System.Void */ System_Object_Destroy(void* /* System.Object */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Object>(__self);
 	}
 	
 
@@ -12148,7 +12170,7 @@ internal unsafe class System_String
 	internal static void /* System.Void */ System_String_Destroy(void* /* System.String */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.String>(__self);
 	}
 	
 
@@ -13676,7 +13698,7 @@ internal unsafe class System_Globalization_CultureInfo
 	internal static void /* System.Void */ System_Globalization_CultureInfo_Destroy(void* /* System.Globalization.CultureInfo */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Globalization.CultureInfo>(__self);
 	}
 	
 
@@ -18157,7 +18179,7 @@ internal unsafe class System_Globalization_CompareInfo
 	internal static void /* System.Void */ System_Globalization_CompareInfo_Destroy(void* /* System.Globalization.CompareInfo */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Globalization.CompareInfo>(__self);
 	}
 	
 
@@ -21294,7 +21316,7 @@ internal unsafe class System_Reflection_AssemblyName
 	internal static void /* System.Void */ System_Reflection_AssemblyName_Destroy(void* /* System.Reflection.AssemblyName */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Reflection.AssemblyName>(__self);
 	}
 	
 
@@ -21939,7 +21961,7 @@ internal unsafe class System_Version
 	internal static void /* System.Void */ System_Version_Destroy(void* /* System.Version */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Version>(__self);
 	}
 	
 
@@ -22159,7 +22181,7 @@ internal unsafe class System_Reflection_StrongNameKeyPair
 	internal static void /* System.Void */ System_Reflection_StrongNameKeyPair_Destroy(void* /* System.Reflection.StrongNameKeyPair */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Reflection.StrongNameKeyPair>(__self);
 	}
 	
 
@@ -23436,7 +23458,7 @@ internal unsafe class System_IO_FileStream
 	internal static void /* System.Void */ System_IO_FileStream_Destroy(void* /* System.IO.FileStream */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.IO.FileStream>(__self);
 	}
 	
 
@@ -26179,7 +26201,7 @@ internal unsafe class System_Threading_Tasks_Task
 	internal static void /* System.Void */ System_Threading_Tasks_Task_Destroy(void* /* System.Threading.Tasks.Task */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Threading.Tasks.Task>(__self);
 	}
 	
 
@@ -26650,7 +26672,7 @@ internal unsafe class System_AggregateException
 	internal static void /* System.Void */ System_AggregateException_Destroy(void* /* System.AggregateException */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.AggregateException>(__self);
 	}
 	
 
@@ -27210,7 +27232,7 @@ internal unsafe class System_Exception
 	internal static void /* System.Void */ System_Exception_Destroy(void* /* System.Exception */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Exception>(__self);
 	}
 	
 
@@ -28587,7 +28609,7 @@ internal unsafe class System_RuntimeMethodHandle
 	internal static void /* System.Void */ System_RuntimeMethodHandle_Destroy(void* /* System.RuntimeMethodHandle */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.RuntimeMethodHandle>(__self);
 	}
 	
 
@@ -29942,7 +29964,7 @@ internal unsafe class System_Runtime_Serialization_SerializationInfo
 	internal static void /* System.Void */ System_Runtime_Serialization_SerializationInfo_Destroy(void* /* System.Runtime.Serialization.SerializationInfo */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Runtime.Serialization.SerializationInfo>(__self);
 	}
 	
 
@@ -30152,7 +30174,7 @@ internal unsafe class System_Runtime_Serialization_SerializationInfoEnumerator
 	internal static void /* System.Void */ System_Runtime_Serialization_SerializationInfoEnumerator_Destroy(void* /* System.Runtime.Serialization.SerializationInfoEnumerator */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Runtime.Serialization.SerializationInfoEnumerator>(__self);
 	}
 	
 
@@ -30271,7 +30293,7 @@ internal unsafe class System_Runtime_Serialization_SerializationEntry
 	internal static void /* System.Void */ System_Runtime_Serialization_SerializationEntry_Destroy(void* /* System.Runtime.Serialization.SerializationEntry */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Runtime.Serialization.SerializationEntry>(__self);
 	}
 	
 
@@ -32379,7 +32401,7 @@ internal unsafe class System_Decimal
 	internal static void /* System.Void */ System_Decimal_Destroy(void* /* System.Decimal */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Decimal>(__self);
 	}
 	
 
@@ -35245,7 +35267,7 @@ internal unsafe class System_DateTime
 	internal static void /* System.Void */ System_DateTime_Destroy(void* /* System.DateTime */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.DateTime>(__self);
 	}
 	
 
@@ -37044,7 +37066,7 @@ internal unsafe class System_TimeSpan
 	internal static void /* System.Void */ System_TimeSpan_Destroy(void* /* System.TimeSpan */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.TimeSpan>(__self);
 	}
 	
 
@@ -38472,7 +38494,7 @@ internal unsafe class System_DateOnly
 	internal static void /* System.Void */ System_DateOnly_Destroy(void* /* System.DateOnly */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.DateOnly>(__self);
 	}
 	
 
@@ -40247,7 +40269,7 @@ internal unsafe class System_TimeOnly
 	internal static void /* System.Void */ System_TimeOnly_Destroy(void* /* System.TimeOnly */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.TimeOnly>(__self);
 	}
 	
 
@@ -42457,7 +42479,7 @@ internal unsafe class System_Runtime_Serialization_StreamingContext
 	internal static void /* System.Void */ System_Runtime_Serialization_StreamingContext_Destroy(void* /* System.Runtime.Serialization.StreamingContext */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Runtime.Serialization.StreamingContext>(__self);
 	}
 	
 
@@ -42736,7 +42758,7 @@ internal unsafe class System_RuntimeTypeHandle
 	internal static void /* System.Void */ System_RuntimeTypeHandle_Destroy(void* /* System.RuntimeTypeHandle */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.RuntimeTypeHandle>(__self);
 	}
 	
 
@@ -43180,7 +43202,7 @@ internal unsafe class System_ModuleHandle
 	internal static void /* System.Void */ System_ModuleHandle_Destroy(void* /* System.ModuleHandle */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.ModuleHandle>(__self);
 	}
 	
 
@@ -43410,7 +43432,7 @@ internal unsafe class System_RuntimeFieldHandle
 	internal static void /* System.Void */ System_RuntimeFieldHandle_Destroy(void* /* System.RuntimeFieldHandle */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.RuntimeFieldHandle>(__self);
 	}
 	
 
@@ -44133,7 +44155,7 @@ internal unsafe class System_Reflection_ParameterInfo
 	internal static void /* System.Void */ System_Reflection_ParameterInfo_Destroy(void* /* System.Reflection.ParameterInfo */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Reflection.ParameterInfo>(__self);
 	}
 	
 
@@ -44331,7 +44353,7 @@ internal unsafe class System_Reflection_MethodBody
 	internal static void /* System.Void */ System_Reflection_MethodBody_Destroy(void* /* System.Reflection.MethodBody */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Reflection.MethodBody>(__self);
 	}
 	
 
@@ -45649,7 +45671,7 @@ internal unsafe class System_Reflection_ParameterModifier
 	internal static void /* System.Void */ System_Reflection_ParameterModifier_Destroy(void* /* System.Reflection.ParameterModifier */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Reflection.ParameterModifier>(__self);
 	}
 	
 
@@ -48159,7 +48181,7 @@ internal unsafe class System_Collections_DictionaryEntry
 	internal static void /* System.Void */ System_Collections_DictionaryEntry_Destroy(void* /* System.Collections.DictionaryEntry */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Collections.DictionaryEntry>(__self);
 	}
 	
 
@@ -48600,7 +48622,7 @@ internal unsafe class System_Threading_Tasks_TaskFactory
 	internal static void /* System.Void */ System_Threading_Tasks_TaskFactory_Destroy(void* /* System.Threading.Tasks.TaskFactory */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Threading.Tasks.TaskFactory>(__self);
 	}
 	
 
@@ -48958,7 +48980,7 @@ internal unsafe class System_Threading_CancellationToken
 	internal static void /* System.Void */ System_Threading_CancellationToken_Destroy(void* /* System.Threading.CancellationToken */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Threading.CancellationToken>(__self);
 	}
 	
 
@@ -49744,7 +49766,7 @@ internal unsafe class Microsoft_Win32_SafeHandles_SafeWaitHandle
 	internal static void /* System.Void */ Microsoft_Win32_SafeHandles_SafeWaitHandle_Destroy(void* /* Microsoft.Win32.SafeHandles.SafeWaitHandle */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<Microsoft.Win32.SafeHandles.SafeWaitHandle>(__self);
 	}
 	
 
@@ -50333,7 +50355,7 @@ internal unsafe class System_Threading_CancellationTokenRegistration
 	internal static void /* System.Void */ System_Threading_CancellationTokenRegistration_Destroy(void* /* System.Threading.CancellationTokenRegistration */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Threading.CancellationTokenRegistration>(__self);
 	}
 	
 
@@ -50833,7 +50855,7 @@ internal unsafe class System_Threading_Tasks_ValueTask
 	internal static void /* System.Void */ System_Threading_Tasks_ValueTask_Destroy(void* /* System.Threading.Tasks.ValueTask */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Threading.Tasks.ValueTask>(__self);
 	}
 	
 
@@ -50975,7 +50997,7 @@ internal unsafe class System_Runtime_CompilerServices_ValueTaskAwaiter
 	internal static void /* System.Void */ System_Runtime_CompilerServices_ValueTaskAwaiter_Destroy(void* /* System.Runtime.CompilerServices.ValueTaskAwaiter */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Runtime.CompilerServices.ValueTaskAwaiter>(__self);
 	}
 	
 
@@ -51131,7 +51153,7 @@ internal unsafe class System_Action
 	internal static void /* System.Void */ System_Action_Destroy(void* /* System.Action */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System_Action>(__self);
 	}
 	
 
@@ -51341,7 +51363,7 @@ internal unsafe class System_Runtime_CompilerServices_ConfiguredValueTaskAwaitab
 	internal static void /* System.Void */ System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_Destroy(void* /* System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable>(__self);
 	}
 	
 
@@ -51482,7 +51504,7 @@ internal unsafe class System_Runtime_CompilerServices_ConfiguredValueTaskAwaitab
 	internal static void /* System.Void */ System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_Destroy(void* /* System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter>(__self);
 	}
 	
 
@@ -51942,7 +51964,7 @@ internal unsafe class System_Runtime_CompilerServices_TaskAwaiter
 	internal static void /* System.Void */ System_Runtime_CompilerServices_TaskAwaiter_Destroy(void* /* System.Runtime.CompilerServices.TaskAwaiter */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Runtime.CompilerServices.TaskAwaiter>(__self);
 	}
 	
 
@@ -51996,7 +52018,7 @@ internal unsafe class System_Runtime_CompilerServices_ConfiguredTaskAwaitable
 	internal static void /* System.Void */ System_Runtime_CompilerServices_ConfiguredTaskAwaitable_Destroy(void* /* System.Runtime.CompilerServices.ConfiguredTaskAwaitable */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Runtime.CompilerServices.ConfiguredTaskAwaitable>(__self);
 	}
 	
 
@@ -52137,7 +52159,7 @@ internal unsafe class System_Runtime_CompilerServices_ConfiguredTaskAwaitable_Co
 	internal static void /* System.Void */ System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_Destroy(void* /* System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter>(__self);
 	}
 	
 
@@ -52191,7 +52213,7 @@ internal unsafe class System_Runtime_CompilerServices_YieldAwaitable
 	internal static void /* System.Void */ System_Runtime_CompilerServices_YieldAwaitable_Destroy(void* /* System.Runtime.CompilerServices.YieldAwaitable */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Runtime.CompilerServices.YieldAwaitable>(__self);
 	}
 	
 
@@ -52332,7 +52354,7 @@ internal unsafe class System_Runtime_CompilerServices_YieldAwaitable_YieldAwaite
 	internal static void /* System.Void */ System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_Destroy(void* /* System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter>(__self);
 	}
 	
 
@@ -52493,7 +52515,7 @@ internal unsafe class System_AsyncCallback
 	internal static void /* System.Void */ System_AsyncCallback_Destroy(void* /* System.AsyncCallback */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System_AsyncCallback>(__self);
 	}
 	
 
@@ -52646,7 +52668,7 @@ internal unsafe class Microsoft_Win32_SafeHandles_SafeFileHandle
 	internal static void /* System.Void */ Microsoft_Win32_SafeHandles_SafeFileHandle_Destroy(void* /* Microsoft.Win32.SafeHandles.SafeFileHandle */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<Microsoft.Win32.SafeHandles.SafeFileHandle>(__self);
 	}
 	
 
@@ -53102,7 +53124,7 @@ internal unsafe class System_IO_FileStreamOptions
 	internal static void /* System.Void */ System_IO_FileStreamOptions_Destroy(void* /* System.IO.FileStreamOptions */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.IO.FileStreamOptions>(__self);
 	}
 	
 
@@ -53247,7 +53269,7 @@ internal unsafe class System_Reflection_ManifestResourceInfo
 	internal static void /* System.Void */ System_Reflection_ManifestResourceInfo_Destroy(void* /* System.Reflection.ManifestResourceInfo */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Reflection.ManifestResourceInfo>(__self);
 	}
 	
 
@@ -53431,7 +53453,7 @@ internal unsafe class System_Reflection_ModuleResolveEventHandler
 	internal static void /* System.Void */ System_Reflection_ModuleResolveEventHandler_Destroy(void* /* System.Reflection.ModuleResolveEventHandler */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System_Reflection_ModuleResolveEventHandler>(__self);
 	}
 	
 
@@ -55454,7 +55476,7 @@ internal unsafe class System_Guid
 	internal static void /* System.Void */ System_Guid_Destroy(void* /* System.Guid */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Guid>(__self);
 	}
 	
 
@@ -55654,7 +55676,7 @@ internal unsafe class System_Reflection_TypeFilter
 	internal static void /* System.Void */ System_Reflection_TypeFilter_Destroy(void* /* System.Reflection.TypeFilter */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System_Reflection_TypeFilter>(__self);
 	}
 	
 
@@ -55794,7 +55816,7 @@ internal unsafe class System_ResolveEventArgs
 	internal static void /* System.Void */ System_ResolveEventArgs_Destroy(void* /* System.ResolveEventArgs */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.ResolveEventArgs>(__self);
 	}
 	
 
@@ -55853,7 +55875,7 @@ internal unsafe class System_EventArgs
 	internal static void /* System.Void */ System_EventArgs_Destroy(void* /* System.EventArgs */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.EventArgs>(__self);
 	}
 	
 
@@ -57056,7 +57078,7 @@ internal unsafe class System_Text_Rune
 	internal static void /* System.Void */ System_Text_Rune_Destroy(void* /* System.Text.Rune */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Text.Rune>(__self);
 	}
 	
 
@@ -57293,7 +57315,7 @@ internal unsafe class System_Globalization_SortKey
 	internal static void /* System.Void */ System_Globalization_SortKey_Destroy(void* /* System.Globalization.SortKey */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Globalization.SortKey>(__self);
 	}
 	
 
@@ -57499,7 +57521,7 @@ internal unsafe class System_Globalization_SortVersion
 	internal static void /* System.Void */ System_Globalization_SortVersion_Destroy(void* /* System.Globalization.SortVersion */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Globalization.SortVersion>(__self);
 	}
 	
 
@@ -58138,7 +58160,7 @@ internal unsafe class System_Globalization_TextInfo
 	internal static void /* System.Void */ System_Globalization_TextInfo_Destroy(void* /* System.Globalization.TextInfo */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Globalization.TextInfo>(__self);
 	}
 	
 
@@ -59969,7 +59991,7 @@ internal unsafe class System_Globalization_NumberFormatInfo
 	internal static void /* System.Void */ System_Globalization_NumberFormatInfo_Destroy(void* /* System.Globalization.NumberFormatInfo */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Globalization.NumberFormatInfo>(__self);
 	}
 	
 
@@ -61935,7 +61957,7 @@ internal unsafe class System_Globalization_DateTimeFormatInfo
 	internal static void /* System.Void */ System_Globalization_DateTimeFormatInfo_Destroy(void* /* System.Globalization.DateTimeFormatInfo */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Globalization.DateTimeFormatInfo>(__self);
 	}
 	
 
@@ -62111,7 +62133,7 @@ internal unsafe class System_CharEnumerator
 	internal static void /* System.Void */ System_CharEnumerator_Destroy(void* /* System.CharEnumerator */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.CharEnumerator>(__self);
 	}
 	
 
@@ -62228,7 +62250,7 @@ internal unsafe class System_Text_StringRuneEnumerator
 	internal static void /* System.Void */ System_Text_StringRuneEnumerator_Destroy(void* /* System.Text.StringRuneEnumerator */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Text.StringRuneEnumerator>(__self);
 	}
 	
 
@@ -62359,7 +62381,7 @@ internal unsafe class System_Text_CompositeFormat
 	internal static void /* System.Void */ System_Text_CompositeFormat_Destroy(void* /* System.Text.CompositeFormat */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Text.CompositeFormat>(__self);
 	}
 	
 
@@ -65246,7 +65268,7 @@ internal unsafe class System_Text_EncodingInfo
 	internal static void /* System.Void */ System_Text_EncodingInfo_Destroy(void* /* System.Text.EncodingInfo */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Text.EncodingInfo>(__self);
 	}
 	
 
@@ -66082,7 +66104,7 @@ internal unsafe class System_Runtime_InteropServices_StructLayoutAttribute
 	internal static void /* System.Void */ System_Runtime_InteropServices_StructLayoutAttribute_Destroy(void* /* System.Runtime.InteropServices.StructLayoutAttribute */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Runtime.InteropServices.StructLayoutAttribute>(__self);
 	}
 	
 
@@ -68185,7 +68207,7 @@ internal unsafe class System_Reflection_InterfaceMapping
 	internal static void /* System.Void */ System_Reflection_InterfaceMapping_Destroy(void* /* System.Reflection.InterfaceMapping */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Reflection.InterfaceMapping>(__self);
 	}
 	
 
@@ -68352,7 +68374,7 @@ internal unsafe class System_Reflection_MemberFilter
 	internal static void /* System.Void */ System_Reflection_MemberFilter_Destroy(void* /* System.Reflection.MemberFilter */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System_Reflection_MemberFilter>(__self);
 	}
 	
 
@@ -72691,7 +72713,7 @@ internal unsafe class System_Security_SecureString
 	internal static void /* System.Void */ System_Security_SecureString_Destroy(void* /* System.Security.SecureString */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Security.SecureString>(__self);
 	}
 	
 
@@ -74092,7 +74114,7 @@ internal unsafe class System_GCMemoryInfo
 	internal static void /* System.Void */ System_GCMemoryInfo_Destroy(void* /* System.GCMemoryInfo */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.GCMemoryInfo>(__self);
 	}
 	
 
@@ -74351,7 +74373,7 @@ internal unsafe class System_WeakReference
 	internal static void /* System.Void */ System_WeakReference_Destroy(void* /* System.WeakReference */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.WeakReference>(__self);
 	}
 	
 
@@ -87502,7 +87524,7 @@ internal unsafe class System_Threading_Thread
 	internal static void /* System.Void */ System_Threading_Thread_Destroy(void* /* System.Threading.Thread */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Threading.Thread>(__self);
 	}
 	
 
@@ -88010,7 +88032,7 @@ internal unsafe class System_Threading_ExecutionContext
 	internal static void /* System.Void */ System_Threading_ExecutionContext_Destroy(void* /* System.Threading.ExecutionContext */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Threading.ExecutionContext>(__self);
 	}
 	
 
@@ -88183,7 +88205,7 @@ internal unsafe class System_Threading_AsyncFlowControl
 	internal static void /* System.Void */ System_Threading_AsyncFlowControl_Destroy(void* /* System.Threading.AsyncFlowControl */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Threading.AsyncFlowControl>(__self);
 	}
 	
 
@@ -88341,7 +88363,7 @@ internal unsafe class System_Threading_ContextCallback
 	internal static void /* System.Void */ System_Threading_ContextCallback_Destroy(void* /* System.Threading.ContextCallback */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System_Threading_ContextCallback>(__self);
 	}
 	
 
@@ -88364,7 +88386,7 @@ internal unsafe class System_LocalDataStoreSlot
 	internal static void /* System.Void */ System_LocalDataStoreSlot_Destroy(void* /* System.LocalDataStoreSlot */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.LocalDataStoreSlot>(__self);
 	}
 	
 
@@ -88523,7 +88545,7 @@ internal unsafe class System_Threading_CompressedStack
 	internal static void /* System.Void */ System_Threading_CompressedStack_Destroy(void* /* System.Threading.CompressedStack */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Threading.CompressedStack>(__self);
 	}
 	
 
@@ -90600,7 +90622,7 @@ internal unsafe class System_AppDomain
 	internal static void /* System.Void */ System_AppDomain_Destroy(void* /* System.AppDomain */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.AppDomain>(__self);
 	}
 	
 
@@ -90687,7 +90709,7 @@ internal unsafe class System_AppDomainSetup
 	internal static void /* System.Void */ System_AppDomainSetup_Destroy(void* /* System.AppDomainSetup */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.AppDomainSetup>(__self);
 	}
 	
 
@@ -91611,7 +91633,7 @@ internal unsafe class System_Security_PermissionSet
 	internal static void /* System.Void */ System_Security_PermissionSet_Destroy(void* /* System.Security.PermissionSet */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Security.PermissionSet>(__self);
 	}
 	
 
@@ -92506,7 +92528,7 @@ internal unsafe class System_Security_SecurityElement
 	internal static void /* System.Void */ System_Security_SecurityElement_Destroy(void* /* System.Security.SecurityElement */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Security.SecurityElement>(__self);
 	}
 	
 
@@ -93507,7 +93529,7 @@ internal unsafe class System_Collections_Hashtable
 	internal static void /* System.Void */ System_Collections_Hashtable_Destroy(void* /* System.Collections.Hashtable */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Collections.Hashtable>(__self);
 	}
 	
 
@@ -95189,7 +95211,7 @@ internal unsafe class System_Collections_ArrayList
 	internal static void /* System.Void */ System_Collections_ArrayList_Destroy(void* /* System.Collections.ArrayList */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Collections.ArrayList>(__self);
 	}
 	
 
@@ -95659,7 +95681,7 @@ internal unsafe class System_UnhandledExceptionEventHandler
 	internal static void /* System.Void */ System_UnhandledExceptionEventHandler_Destroy(void* /* System.UnhandledExceptionEventHandler */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System_UnhandledExceptionEventHandler>(__self);
 	}
 	
 
@@ -95773,7 +95795,7 @@ internal unsafe class System_UnhandledExceptionEventArgs
 	internal static void /* System.Void */ System_UnhandledExceptionEventArgs_Destroy(void* /* System.UnhandledExceptionEventArgs */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.UnhandledExceptionEventArgs>(__self);
 	}
 	
 
@@ -95933,7 +95955,7 @@ internal unsafe class System_EventHandler
 	internal static void /* System.Void */ System_EventHandler_Destroy(void* /* System.EventHandler */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System_EventHandler>(__self);
 	}
 	
 
@@ -96095,7 +96117,7 @@ internal unsafe class System_AssemblyLoadEventHandler
 	internal static void /* System.Void */ System_AssemblyLoadEventHandler_Destroy(void* /* System.AssemblyLoadEventHandler */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System_AssemblyLoadEventHandler>(__self);
 	}
 	
 
@@ -96176,7 +96198,7 @@ internal unsafe class System_AssemblyLoadEventArgs
 	internal static void /* System.Void */ System_AssemblyLoadEventArgs_Destroy(void* /* System.AssemblyLoadEventArgs */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.AssemblyLoadEventArgs>(__self);
 	}
 	
 
@@ -96345,7 +96367,7 @@ internal unsafe class System_ResolveEventHandler
 	internal static void /* System.Void */ System_ResolveEventHandler_Destroy(void* /* System.ResolveEventHandler */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System_ResolveEventHandler>(__self);
 	}
 	
 
@@ -96440,7 +96462,7 @@ internal unsafe class System_Runtime_Remoting_ObjectHandle
 	internal static void /* System.Void */ System_Runtime_Remoting_ObjectHandle_Destroy(void* /* System.Runtime.Remoting.ObjectHandle */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Runtime.Remoting.ObjectHandle>(__self);
 	}
 	
 
@@ -96596,7 +96618,7 @@ internal unsafe class System_Threading_ThreadStart
 	internal static void /* System.Void */ System_Threading_ThreadStart_Destroy(void* /* System.Threading.ThreadStart */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System_Threading_ThreadStart>(__self);
 	}
 	
 
@@ -96754,7 +96776,7 @@ internal unsafe class System_Threading_ParameterizedThreadStart
 	internal static void /* System.Void */ System_Threading_ParameterizedThreadStart_Destroy(void* /* System.Threading.ParameterizedThreadStart */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System_Threading_ParameterizedThreadStart>(__self);
 	}
 	
 
@@ -97155,7 +97177,7 @@ internal unsafe class System_Threading_Timer
 	internal static void /* System.Void */ System_Threading_Timer_Destroy(void* /* System.Threading.Timer */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Threading.Timer>(__self);
 	}
 	
 
@@ -97313,7 +97335,7 @@ internal unsafe class System_Threading_TimerCallback
 	internal static void /* System.Void */ System_Threading_TimerCallback_Destroy(void* /* System.Threading.TimerCallback */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System_Threading_TimerCallback>(__self);
 	}
 	
 
@@ -97759,7 +97781,7 @@ internal unsafe class System_Threading_CancellationTokenSource
 	internal static void /* System.Void */ System_Threading_CancellationTokenSource_Destroy(void* /* System.Threading.CancellationTokenSource */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Threading.CancellationTokenSource>(__self);
 	}
 	
 
@@ -98216,7 +98238,7 @@ internal unsafe class System_Random
 	internal static void /* System.Void */ System_Random_Destroy(void* /* System.Random */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Random>(__self);
 	}
 	
 
@@ -100969,7 +100991,7 @@ internal unsafe class System_Text_StringBuilder
 	internal static void /* System.Void */ System_Text_StringBuilder_Destroy(void* /* System.Text.StringBuilder */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Text.StringBuilder>(__self);
 	}
 	
 
@@ -101054,7 +101076,7 @@ internal unsafe class System_Text_StringBuilder_ChunkEnumerator
 	internal static void /* System.Void */ System_Text_StringBuilder_ChunkEnumerator_Destroy(void* /* System.Text.StringBuilder.ChunkEnumerator */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Text.StringBuilder.ChunkEnumerator>(__self);
 	}
 	
 
@@ -101418,7 +101440,7 @@ internal unsafe class System_Text_StringBuilder_AppendInterpolatedStringHandler
 	internal static void /* System.Void */ System_Text_StringBuilder_AppendInterpolatedStringHandler_Destroy(void* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.Text.StringBuilder.AppendInterpolatedStringHandler>(__self);
 	}
 	
 
@@ -104865,7 +104887,7 @@ internal unsafe class System_IO_StreamReader
 	internal static void /* System.Void */ System_IO_StreamReader_Destroy(void* /* System.IO.StreamReader */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.IO.StreamReader>(__self);
 	}
 	
 
@@ -106323,7 +106345,7 @@ internal unsafe class System_IO_StreamWriter
 	internal static void /* System.Void */ System_IO_StreamWriter_Destroy(void* /* System.IO.StreamWriter */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.IO.StreamWriter>(__self);
 	}
 	
 
@@ -109789,7 +109811,7 @@ internal unsafe class System_IO_FileInfo
 	internal static void /* System.Void */ System_IO_FileInfo_Destroy(void* /* System.IO.FileInfo */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.IO.FileInfo>(__self);
 	}
 	
 
@@ -110496,7 +110518,7 @@ internal unsafe class System_IO_DirectoryInfo
 	internal static void /* System.Void */ System_IO_DirectoryInfo_Destroy(void* /* System.IO.DirectoryInfo */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.IO.DirectoryInfo>(__self);
 	}
 	
 
@@ -111028,7 +111050,7 @@ internal unsafe class System_IO_EnumerationOptions
 	internal static void /* System.Void */ System_IO_EnumerationOptions_Destroy(void* /* System.IO.EnumerationOptions */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<System.IO.EnumerationOptions>(__self);
 	}
 	
 
@@ -112232,7 +112254,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_MoveDelegate
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_MoveDelegate_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.MoveDelegate */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<NativeAOT_CodeGeneratorInputSample_MoveDelegate>(__self);
 	}
 	
 
@@ -112380,7 +112402,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Address
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Address_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.Address */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<NativeAOT.CodeGeneratorInputSample.Address>(__self);
 	}
 	
 
@@ -112547,7 +112569,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate>(__self);
 	}
 	
 
@@ -112913,7 +112935,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Cat
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Cat_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.Cat */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<NativeAOT.CodeGeneratorInputSample.Cat>(__self);
 	}
 	
 
@@ -112979,7 +113001,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Dog
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Dog_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.Dog */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<NativeAOT.CodeGeneratorInputSample.Dog>(__self);
 	}
 	
 
@@ -113060,7 +113082,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_GenericAnimal
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_GenericAnimal_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.GenericAnimal */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<NativeAOT.CodeGeneratorInputSample.GenericAnimal>(__self);
 	}
 	
 
@@ -113387,7 +113409,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_GenericTests
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_GenericTests_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.GenericTests */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<NativeAOT.CodeGeneratorInputSample.GenericTests>(__self);
 	}
 	
 
@@ -113501,7 +113523,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyV
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.GenericTests.SimpleKeyValuePair */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<NativeAOT.CodeGeneratorInputSample.GenericTests.SimpleKeyValuePair>(__self);
 	}
 	
 
@@ -114283,7 +114305,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Person
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Person_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.Person */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<NativeAOT.CodeGeneratorInputSample.Person>(__self);
 	}
 	
 
@@ -114441,7 +114463,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildren
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate>(__self);
 	}
 	
 
@@ -114600,7 +114622,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDe
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate>(__self);
 	}
 	
 
@@ -114793,7 +114815,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Book
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Book_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.Book */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<NativeAOT.CodeGeneratorInputSample.Book>(__self);
 	}
 	
 
@@ -115301,7 +115323,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_TestClass
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_TestClass_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.TestClass */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<NativeAOT.CodeGeneratorInputSample.TestClass>(__self);
 	}
 	
 
@@ -115598,7 +115620,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Transformer_StringTrans
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.Transformer.StringTransformerDelegate */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate>(__self);
 	}
 	
 
@@ -115757,7 +115779,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Transformer_DoublesTran
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Transformer_DoublesTransformerDelegate_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.Transformer.DoublesTransformerDelegate */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<NativeAOT_CodeGeneratorInputSample_Transformer_DoublesTransformerDelegate>(__self);
 	}
 	
 
@@ -115922,7 +115944,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Transformer_StringGette
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.Transformer.StringGetterDelegate */ __self)
 	{
 	
-		InteropUtils.FreeIfAllocated(__self);
+		InteropUtils.CheckedFreeIfAllocated<NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate>(__self);
 	}
 	
 
