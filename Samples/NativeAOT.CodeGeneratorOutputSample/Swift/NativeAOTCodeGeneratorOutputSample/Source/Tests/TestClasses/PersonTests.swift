@@ -36,12 +36,6 @@ final class PersonTests: XCTestCase {
         let defaultAge = NativeAOT_CodeGeneratorInputSample_Person_DEFAULT_AGE_Get()
         XCTAssertEqual(ageWhenBorn, defaultAge)
         
-        let newDefaultAge: Int32 = 5
-        NativeAOT_CodeGeneratorInputSample_Person_DEFAULT_AGE_Set(newDefaultAge)
-        
-        let newRetrievedDefaultAge = NativeAOT_CodeGeneratorInputSample_Person_DEFAULT_AGE_Get()
-        XCTAssertEqual(newDefaultAge, newRetrievedDefaultAge)
-        
         guard let person = NativeAOT_CodeGeneratorInputSample_Person_Create_1(firstNameDN,
 																			  lastNameDN,
 																			  &exception),
@@ -62,7 +56,7 @@ final class PersonTests: XCTestCase {
             return
         }
         
-        XCTAssertEqual(newDefaultAge, personAge)
+        XCTAssertEqual(defaultAge, personAge)
         
         NativeAOT_CodeGeneratorInputSample_Person_NiceLevel_Set(person,
                                                                 expectedNiceLevel,
@@ -127,7 +121,7 @@ final class PersonTests: XCTestCase {
             return
         }
         
-        XCTAssertEqual(newDefaultAge, retrievedAge)
+        XCTAssertEqual(defaultAge, retrievedAge)
         
         NativeAOT_CodeGeneratorInputSample_Person_Age_Set(person,
                                                           age,

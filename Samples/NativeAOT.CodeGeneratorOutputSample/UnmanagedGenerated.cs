@@ -1,5 +1,5 @@
 // Number of generated types: 659
-// Number of generated members: 4138
+// Number of generated members: 4137
 
 // <Header>
 using System;
@@ -114264,28 +114264,21 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_Person
 	
 	
 
-	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_DEFAULT_AGE_Get")]
-	internal static int /* System.Int32 */ NativeAOT_CodeGeneratorInputSample_Person_DEFAULT_AGE_Get()
-	{
-	
-		System.Int32 __returnValue = NativeAOT.CodeGeneratorInputSample.Person.DEFAULT_AGE;
-		return __returnValue;
-	}
-	
-	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_DEFAULT_AGE_Set")]
-	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_Person_DEFAULT_AGE_Set(int /* System.Int32 */ __value)
-	{
-	
-		NativeAOT.CodeGeneratorInputSample.Person.DEFAULT_AGE = __value;
-	}
-	
-	
-
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_AGE_WHEN_BORN_Get")]
 	internal static int /* System.Int32 */ NativeAOT_CodeGeneratorInputSample_Person_AGE_WHEN_BORN_Get()
 	{
 	
 		System.Int32 __returnValue = NativeAOT.CodeGeneratorInputSample.Person.AGE_WHEN_BORN;
+		return __returnValue;
+	}
+	
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_Person_DEFAULT_AGE_Get")]
+	internal static int /* System.Int32 */ NativeAOT_CodeGeneratorInputSample_Person_DEFAULT_AGE_Get()
+	{
+	
+		System.Int32 __returnValue = NativeAOT.CodeGeneratorInputSample.Person.DEFAULT_AGE;
 		return __returnValue;
 	}
 	

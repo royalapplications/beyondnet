@@ -1,5 +1,5 @@
 // Number of generated types: 659
-// Number of generated members: 4442
+// Number of generated members: 4439
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -32913,29 +32913,13 @@ NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChanged_Remove(
 
 
 int32_t /* System.Int32 */
-NativeAOT_CodeGeneratorInputSample_Person_DEFAULT_AGE_Get(
-	
-);
-
-void /* System.Void */
-NativeAOT_CodeGeneratorInputSample_Person_DEFAULT_AGE_Set(
-	int32_t /* System.Int32 */ value
-);
-
-
-int32_t /* System.Int32 */
-NativeAOT_CodeGeneratorInputSample_Person_DEFAULT_AGE_Get(
-	
-);
-
-void /* System.Void */
-NativeAOT_CodeGeneratorInputSample_Person_DEFAULT_AGE_Set(
-	int32_t /* System.Int32 */ value
-);
-
-
-int32_t /* System.Int32 */
 NativeAOT_CodeGeneratorInputSample_Person_AGE_WHEN_BORN_Get(
+	
+);
+
+
+int32_t /* System.Int32 */
+NativeAOT_CodeGeneratorInputSample_Person_DEFAULT_AGE_Get(
 	
 );
 
