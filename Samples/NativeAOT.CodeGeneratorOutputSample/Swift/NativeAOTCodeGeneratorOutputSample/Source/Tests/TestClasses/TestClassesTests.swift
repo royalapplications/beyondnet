@@ -43,8 +43,10 @@ final class TestClassesTests: XCTestCase {
         }
         
         let systemObjectTypeName = "System.Object"
+		let systemObjectTypeNameDN = systemObjectTypeName.dotNETString()
+		defer { System_String_Destroy(systemObjectTypeNameDN) }
         
-		guard let systemObjectType = System_Type_GetType(systemObjectTypeName,
+		guard let systemObjectType = System_Type_GetType(systemObjectTypeNameDN,
 														 true,
 														 false,
 														 &exception),
@@ -56,17 +58,14 @@ final class TestClassesTests: XCTestCase {
         
         defer { System_Object_Destroy(systemObjectType) }
         
-        guard let systemObjectTypeNameC = System_Type_ToString(systemObjectType,
-															   &exception),
+		guard let retrievedSystemObjectTypeName = String(dotNETString: System_Type_ToString(systemObjectType,
+																							&exception),
+														 destroyDotNETString: true),
 			  exception == nil else {
-			XCTFail("System.Type.ToString should not throw and return an instance of a C string")
+			XCTFail("System.Type.ToString should not throw and return an instance")
 			
 			return
 		}
-        
-        let retrievedSystemObjectTypeName = String(cString: systemObjectTypeNameC)
-        
-        systemObjectTypeNameC.deallocate()
         
         XCTAssertEqual(systemObjectTypeName, retrievedSystemObjectTypeName)
         
@@ -102,9 +101,13 @@ final class TestClassesTests: XCTestCase {
             
             return
         }
+		
+		let john = "John"
+		let johnDN = john.dotNETString()
+		defer { System_String_Destroy(johnDN) }
         
 		NativeAOT_CodeGeneratorInputSample_TestClass_SayHello_1(testClass,
-																"John",
+																johnDN,
 																&exception)
         
         guard exception == nil else {
@@ -113,26 +116,16 @@ final class TestClassesTests: XCTestCase {
             return
         }
         
-        let hello = NativeAOT_CodeGeneratorInputSample_TestClass_GetHello(testClass,
-                                                                          &exception)
-        
-        guard exception == nil else {
-            XCTFail("GetHello should not throw")
-            
-            return
-        }
-        
-        guard let hello else {
-            XCTFail("hello should not be nil")
-            
-            return
-        }
-        
-        let helloString = String(cString: hello)
-        
-        hello.deallocate()
-        
-        XCTAssertEqual("Hello", helloString)
+        guard let hello = String(dotNETString: NativeAOT_CodeGeneratorInputSample_TestClass_GetHello(testClass,
+																									 &exception),
+								 destroyDotNETString: true),
+			  exception == nil else {
+			XCTFail("GetHello should not throw and return an instance")
+			
+			return
+		}
+		
+        XCTAssertEqual("Hello", hello)
         
         let number1: Int32 = 85
         let number2: Int32 = 262
@@ -200,25 +193,15 @@ final class TestClassesTests: XCTestCase {
         
         let enumValue = NativeAOT_CodeGeneratorInputSample_TestEnum.secondCase
         
-        let enumNameC = NativeAOT_CodeGeneratorInputSample_TestClass_GetTestEnumName(enumValue,
-                                                                                     &exception)
-        
-        guard exception == nil else {
-            XCTFail("Should not throw")
-            
-            return
-        }
-        
-        guard let enumNameC else {
-            XCTFail("Should have enum name")
-            
-            return
-        }
-        
-        defer { enumNameC.deallocate() }
-        
-        let enumName = String(cString: enumNameC)
-        
+		guard let enumName = String(dotNETString: NativeAOT_CodeGeneratorInputSample_TestClass_GetTestEnumName(enumValue,
+																											   &exception),
+									destroyDotNETString: true),
+			  exception == nil else {
+			XCTFail("GetTestEnumName should not throw and return an instance")
+			
+			return
+		}
+		
         XCTAssertEqual("SecondCase", enumName)
     }
 	

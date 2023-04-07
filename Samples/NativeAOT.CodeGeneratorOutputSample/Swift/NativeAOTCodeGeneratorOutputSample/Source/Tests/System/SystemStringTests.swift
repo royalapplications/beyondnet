@@ -5,18 +5,23 @@ final class SystemStringTests: XCTestCase {
     func testString() {
         var exception: System_Exception_t?
         
-        guard let emptyStringC = System_String_Empty_Get() else {
+        guard let emptyStringDN = System_String_Empty_Get() else {
             XCTFail("System.String.Empty should return an empty string")
             
             return
         }
         
-        defer { emptyStringC.deallocate() }
+        defer { System_String_Destroy(emptyStringDN) }
         
-        let emptyString = String(cString: emptyStringC)
+		guard let emptyString = String(dotNETString: emptyStringDN) else {
+			XCTFail("Failed to convert string")
+			
+			return
+		}
+		
         XCTAssertTrue(emptyString.isEmpty)
         
-        let isNullOrEmpty = System_String_IsNullOrEmpty(emptyStringC,
+        let isNullOrEmpty = System_String_IsNullOrEmpty(emptyStringDN,
                                                         &exception)
         
         guard exception == nil else {
@@ -27,7 +32,7 @@ final class SystemStringTests: XCTestCase {
         
         XCTAssertTrue(isNullOrEmpty)
         
-        let isNullOrWhiteSpace = System_String_IsNullOrWhiteSpace(emptyStringC,
+        let isNullOrWhiteSpace = System_String_IsNullOrWhiteSpace(emptyStringDN,
                                                                   &exception)
         
         guard exception == nil else {
@@ -39,31 +44,39 @@ final class SystemStringTests: XCTestCase {
         XCTAssertTrue(isNullOrWhiteSpace)
         
         let nonEmptyString = "Hello World!"
+		let nonEmptyStringDN = nonEmptyString.dotNETString()
+		
+		defer { System_String_Destroy(nonEmptyStringDN) }
         
-        let isNonEmptyStringNullOrEmpty = System_String_IsNullOrEmpty(nonEmptyString,
+        let isNonEmptyStringNullOrEmpty = System_String_IsNullOrEmpty(nonEmptyStringDN,
 																	  &exception)
         
 		XCTAssertNil(exception)
 		XCTAssertFalse(isNonEmptyStringNullOrEmpty)
 		
-		guard let trimmedStringC = System_String_Trim(" \(nonEmptyString) ",
-													  &exception),
+		let stringForTrimmingDN = " \(nonEmptyString) ".dotNETString()
+		
+		defer { System_String_Destroy(stringForTrimmingDN) }
+		
+		guard let trimmedString = String(dotNETString: System_String_Trim(stringForTrimmingDN,
+																		  &exception),
+										 destroyDotNETString: true),
 			  exception == nil else {
-			XCTFail("System.String.Trim should not throw and return an instance of a C String")
+			XCTFail("System.String.Trim should not throw and return an instance")
 			
 			return
 		}
 		
-		defer { trimmedStringC.deallocate() }
-		
-		let trimmedString = String(cString: trimmedStringC)
-		
 		XCTAssertEqual(nonEmptyString, trimmedString)
+		
+		let worldDN = "World".dotNETString()
+		
+		defer { System_String_Destroy(worldDN) }
 		
 		let expectedIndexOfWorld: Int32 = 6
 		
-		let indexOfWorld = System_String_IndexOf_4(nonEmptyString,
-												   "World",
+		let indexOfWorld = System_String_IndexOf_4(nonEmptyStringDN,
+												   worldDN,
 												   &exception)
 		
 		XCTAssertNil(exception)
@@ -75,8 +88,12 @@ final class SystemStringTests: XCTestCase {
 			return
 		}
 		
-		guard let split = System_String_Split_6(nonEmptyString,
-												" ",
+		let blankDN = " ".dotNETString()
+		
+		defer { System_String_Destroy(blankDN) }
+		
+		guard let split = System_String_Split_6(nonEmptyStringDN,
+												blankDN,
 												splitOptions,
 												&exception),
 			  exception == nil else {
@@ -102,22 +119,30 @@ final class SystemStringTests: XCTestCase {
 		let hello = "Hello"
 		let otherPart = " World 😀"
 		let originalString = "\(hello)\(otherPart)"
+		let emptyString = ""
 		
-		let expectedString = originalString.replacingOccurrences(of: hello, with: "")
+		let expectedString = originalString.replacingOccurrences(of: hello,
+																 with: emptyString)
 		
-		guard let replacedStringC = System_String_Replace_3(originalString,
-															hello,
-															"",
-															&exception),
+		let originalStringDN = originalString.dotNETString()
+		defer { System_String_Destroy(originalStringDN) }
+		
+		let helloDN = hello.dotNETString()
+		defer { System_String_Destroy(helloDN) }
+		
+		let emptyStringDN = emptyString.dotNETString()
+		defer { System_String_Destroy(emptyStringDN) }
+		
+		guard let replacedString = String(dotNETString: System_String_Replace_3(originalStringDN,
+																				helloDN,
+																				emptyStringDN,
+																				&exception),
+										  destroyDotNETString: true),
 			  exception == nil else {
-			XCTFail("System.String.Replace should not throw and return an instance of a C String")
+			XCTFail("System.String.Replace should not throw and return an instance")
 			
 			return
 		}
-		
-		defer { replacedStringC.deallocate() }
-		
-		let replacedString = String(cString: replacedStringC)
 		
 		XCTAssertEqual(expectedString, replacedString)
 	}
@@ -128,10 +153,16 @@ final class SystemStringTests: XCTestCase {
 		let string = "Hello World 😀"
 		let needle = "World"
 		
+		let stringDN = string.dotNETString()
+		defer { System_String_Destroy(stringDN) }
+		
+		let needleDN = needle.dotNETString()
+		defer { System_String_Destroy(needleDN) }
+		
 		let expectedIndex: Int32 = 6
 		
-		let index = System_String_IndexOf_4(string,
-											needle,
+		let index = System_String_IndexOf_4(stringDN,
+											needleDN,
 											&exception)
 		
 		XCTAssertNil(exception)
@@ -161,8 +192,13 @@ final class SystemStringTests: XCTestCase {
 		}
 		
 		let separator = ";"
+		let separatorDN = separator.dotNETString()
+		defer { System_String_Destroy(separatorDN) }
 		
 		let joined = components.joined(separator: separator)
+		let joinedDN = joined.dotNETString()
+		defer { System_String_Destroy(joinedDN) }
+		
 		let cleanedJoined = cleanedComponents.joined(separator: separator)
 		
 		guard let options: System_StringSplitOptions = .init(rawValue: System_StringSplitOptions.removeEmptyEntries.rawValue | System_StringSplitOptions.trimEntries.rawValue) else {
@@ -171,8 +207,8 @@ final class SystemStringTests: XCTestCase {
 			return
 		}
 		
-		guard let split = System_String_Split_6(joined,
-												separator,
+		guard let split = System_String_Split_6(joinedDN,
+												separatorDN,
 												options,
 												&exception),
 			  exception == nil else {
@@ -199,35 +235,21 @@ final class SystemStringTests: XCTestCase {
 				return
 			}
 			
-			defer { System_Object_Destroy(componentRetObj) }
-			
-			guard let componentRetC = System_Object_ToString(componentRetObj,
-															 &exception),
-				  exception == nil else {
-				XCTFail("System.Object.ToString should not throw and return an instance of a C String")
-				
-				return
-			}
-			
-			defer { componentRetC.deallocate() }
-			
-			let componentRet = String(cString: componentRetC)
+			let componentRet = String(dotNETString: componentRetObj,
+									  destroyDotNETString: true)
 			
 			XCTAssertEqual(component, componentRet)
 		}
 		
-		guard let joinedRetC = System_String_Join_1(separator,
-													split,
-													&exception),
+		guard let joinedRet = String(dotNETString: System_String_Join_1(separatorDN,
+																		split,
+																		&exception),
+									 destroyDotNETString: true),
 			  exception == nil else {
-			XCTFail("System.String.Join should not throw and return an instance of a C String")
+			XCTFail("System.String.Join should not throw and return an instance")
 			
 			return
 		}
-		
-		defer { joinedRetC.deallocate() }
-		
-		let joinedRet = String(cString: joinedRetC)
 		
 		XCTAssertEqual(cleanedJoined, joinedRet)
 	}

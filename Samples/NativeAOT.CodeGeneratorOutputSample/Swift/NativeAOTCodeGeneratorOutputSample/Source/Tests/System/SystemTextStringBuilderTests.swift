@@ -6,12 +6,18 @@ final class SystemTextStringBuilderTests: XCTestCase {
 		var exception: System_Exception_t?
 		
 		let hello = "Hello"
+		let helloDN = hello.dotNETString()
+		defer { System_String_Destroy(helloDN) }
+		
 		let lineBreak = "\n"
+		
 		let world = "World"
+		let worldDN = world.dotNETString()
+		defer { System_String_Destroy(worldDN) }
 		
 		let expectedFinalString = "\(hello)\(lineBreak)\(world)"
 		
-		guard let sb = System_Text_StringBuilder_Create_2(hello,
+		guard let sb = System_Text_StringBuilder_Create_2(helloDN,
 														  &exception),
 			  exception == nil else {
 			XCTFail("System.Text.StringBuilder ctor should not throw and return an instance")
@@ -21,16 +27,14 @@ final class SystemTextStringBuilderTests: XCTestCase {
 		
 		defer { System_Text_StringBuilder_Destroy(sb) }
 		
-		guard let helloRetC = System_Text_StringBuilder_ToString(sb,
-																 &exception),
+		guard let helloRet = String(dotNETString: System_Text_StringBuilder_ToString(sb,
+																					 &exception),
+									destroyDotNETString: true),
 			  exception == nil else {
 			XCTFail("System.Text.StringBuilder.ToString should not throw and return a string")
 			
 			return
 		}
-		
-		defer { helloRetC.deallocate() }
-		let helloRet = String(cString: helloRetC)
 		
 		XCTAssertEqual(hello, helloRet)
 		
@@ -40,21 +44,19 @@ final class SystemTextStringBuilderTests: XCTestCase {
 		XCTAssertNil(exception)
 		
 		System_Text_StringBuilder_Append_2(sb,
-										   world,
+										   worldDN,
 										   &exception)
 		
 		XCTAssertNil(exception)
 		
-		guard let finalStringRetC = System_Text_StringBuilder_ToString(sb,
-																	   &exception),
+		guard let finalStringRet = String(dotNETString: System_Text_StringBuilder_ToString(sb,
+																						   &exception),
+										  destroyDotNETString: true),
 			  exception == nil else {
 			XCTFail("System.Text.StringBuilder.ToString should not throw and return a string")
 			
 			return
 		}
-		
-		defer { finalStringRetC.deallocate() }
-		let finalStringRet = String(cString: finalStringRetC)
 		
 		XCTAssertEqual(expectedFinalString, finalStringRet)
 	}

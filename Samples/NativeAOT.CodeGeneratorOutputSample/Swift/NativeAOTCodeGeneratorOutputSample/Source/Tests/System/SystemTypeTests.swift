@@ -14,8 +14,11 @@ final class SystemTypeTests: XCTestCase {
         }
         
         defer { System_Type_Destroy(systemObjectType) }
+		
+		let systemObjectTypeNameDN = systemObjectTypeName.dotNETString()
+		defer { System_String_Destroy(systemObjectTypeNameDN) }
         
-		guard let systemObjectTypeViaName = System_Type_GetType_2(systemObjectTypeName,
+		guard let systemObjectTypeViaName = System_Type_GetType_2(systemObjectTypeNameDN,
 																  &exception),
 			  exception == nil else {
 			XCTFail("System.Type.GetType should not throw and return an instance of System.Type")
@@ -34,17 +37,14 @@ final class SystemTypeTests: XCTestCase {
             return
         }
 		
-		guard let retrievedSystemObjectTypeNameC = System_Type_FullName_Get(systemObjectType,
-																			&exception),
+		guard let retrievedSystemObjectTypeName = String(dotNETString: System_Type_FullName_Get(systemObjectType,
+																								&exception),
+														 destroyDotNETString: true),
 			  exception == nil else {
-			XCTFail("System.Type.FullName getter should not throw and return an instance of a C String")
+			XCTFail("System.Type.FullName getter should not throw and return an instance")
 			
 			return
 		}
-		
-		defer { retrievedSystemObjectTypeNameC.deallocate() }
-		
-		let retrievedSystemObjectTypeName = String(cString: retrievedSystemObjectTypeNameC)
 		
 		XCTAssertEqual(systemObjectTypeName, retrievedSystemObjectTypeName)
 	}
@@ -53,8 +53,11 @@ final class SystemTypeTests: XCTestCase {
 		var exception: System_Exception_t?
 		
 		let invalidTypeName = "! This.Type.Surely.Does.Not.Exist !"
+		let invalidTypeNameDN = invalidTypeName.dotNETString()
 		
-		let invalidType = System_Type_GetType_1(invalidTypeName,
+		defer { System_String_Destroy(invalidTypeNameDN) }
+		
+		let invalidType = System_Type_GetType_1(invalidTypeNameDN,
 												true,
 												&exception)
 		
@@ -70,17 +73,14 @@ final class SystemTypeTests: XCTestCase {
 		
 		var exception2: System_Exception_t?
 		
-		guard let exceptionMessageC = System_Exception_Message_Get(exception,
-																   &exception2),
+		guard let exceptionMessage = String(dotNETString: System_Exception_Message_Get(exception,
+																					   &exception2),
+											destroyDotNETString: true),
 			  exception2 == nil else {
 			XCTFail("System.Exception.Message getter should not throw and return an instance of a C String")
 			
 			return
 		}
-		
-		defer { exceptionMessageC.deallocate() }
-		
-		let exceptionMessage = String(cString: exceptionMessageC)
 		
 		XCTAssertTrue(exceptionMessage.contains("The type \'\(invalidTypeName)\' cannot be found"))
 	}
@@ -97,9 +97,12 @@ final class SystemTypeTests: XCTestCase {
 		defer { System_Type_Destroy(typeOfSystemObject) }
 		
 		let methodName = "ToString"
+		let methodNameDN = methodName.dotNETString()
+		
+		defer { System_String_Destroy(methodNameDN) }
 		
 		guard let toStringMethod = System_Type_GetMethod(typeOfSystemObject,
-														 methodName,
+														 methodNameDN,
 														 &exception),
 			  exception == nil else {
 			XCTFail("System.Type.GetMethod should not throw and return an instance")
@@ -109,17 +112,14 @@ final class SystemTypeTests: XCTestCase {
 		
 		defer { System_Reflection_MethodInfo_Destroy(toStringMethod) }
 		
-		guard let methodNameRetC = System_Reflection_MemberInfo_Name_Get(toStringMethod,
-																	  &exception),
+		guard let methodNameRet = String(dotNETString: System_Reflection_MemberInfo_Name_Get(toStringMethod,
+																							 &exception),
+										 destroyDotNETString: true),
 			  exception == nil else {
 			XCTFail("System.Reflection.MemberInfo.Name getter should not throw and return an instance of a C String")
 			
 			return
 		}
-		
-		defer { methodNameRetC.deallocate() }
-		
-		let methodNameRet = String(cString: methodNameRetC)
 		
 		XCTAssertEqual(methodName, methodNameRet)
 		

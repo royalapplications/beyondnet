@@ -4,7 +4,13 @@ import NativeAOTCodeGeneratorOutputSample
 final class PersonTests: XCTestCase {
     func testPerson() {
         let firstName = "John"
+		let firstNameDN = firstName.dotNETString()
+		defer { System_String_Destroy(firstNameDN) }
+		
         let lastName = "Doe"
+		let lastNameDN = lastName.dotNETString()
+		defer { System_String_Destroy(lastNameDN) }
+		
         let age: Int32 = 24
         let expectedNiceLevel: NativeAOT_CodeGeneratorInputSample_NiceLevels = .veryNice
         let expectedNiceLevelString = "Very nice"
@@ -26,8 +32,8 @@ final class PersonTests: XCTestCase {
         let newRetrievedDefaultAge = NativeAOT_CodeGeneratorInputSample_Person_DEFAULT_AGE_Get()
         XCTAssertEqual(newDefaultAge, newRetrievedDefaultAge)
         
-        guard let person = NativeAOT_CodeGeneratorInputSample_Person_Create_1(firstName,
-																			  lastName,
+        guard let person = NativeAOT_CodeGeneratorInputSample_Person_Create_1(firstNameDN,
+																			  lastNameDN,
 																			  &exception),
               exception == nil else {
             XCTFail("Person initializer should not throw and return an instance")
@@ -69,47 +75,38 @@ final class PersonTests: XCTestCase {
         
         XCTAssertEqual(expectedNiceLevel, retrievedNiceLevel)
         
-        let retrievedFirstNameC = NativeAOT_CodeGeneratorInputSample_Person_FirstName_Get(person,
-                                                                                          &exception)
-        
-        guard let retrievedFirstNameC,
+        guard let retrievedFirstName =  String(dotNETString: NativeAOT_CodeGeneratorInputSample_Person_FirstName_Get(person,
+																													 &exception),
+											   destroyDotNETString: true),
               exception == nil else {
             XCTFail("Person.FirstName getter should not throw and return an instance")
             
             return
         }
         
-        XCTAssertEqual(firstName, .init(cString: retrievedFirstNameC))
+        XCTAssertEqual(firstName, retrievedFirstName)
         
-        retrievedFirstNameC.deallocate()
-        
-        let retrievedLastNameC = NativeAOT_CodeGeneratorInputSample_Person_LastName_Get(person,
-                                                                                        &exception)
-        
-        guard let retrievedLastNameC,
+        guard let retrievedLastName = String(dotNETString: NativeAOT_CodeGeneratorInputSample_Person_LastName_Get(person,
+																												  &exception),
+											 destroyDotNETString: true),
               exception == nil else {
             XCTFail("Person.LastName getter should not throw and return an instance")
             
             return
         }
         
-        XCTAssertEqual(lastName, .init(cString: retrievedLastNameC))
+        XCTAssertEqual(lastName, retrievedLastName)
         
-        retrievedLastNameC.deallocate()
-        
-        let retrievedFullNameC = NativeAOT_CodeGeneratorInputSample_Person_FullName_Get(person,
-                                                                                        &exception)
-        
-        guard let retrievedFullNameC,
+        guard let retrievedFullName = String(dotNETString: NativeAOT_CodeGeneratorInputSample_Person_FullName_Get(person,
+																												  &exception),
+											 destroyDotNETString: true),
               exception == nil else {
             XCTFail("Person.FullName getter should not throw and return an instance")
             
             return
         }
         
-        XCTAssertEqual(expectedFullName, .init(cString: retrievedFullNameC))
-        
-        retrievedFullNameC.deallocate()
+        XCTAssertEqual(expectedFullName, retrievedFullName)
         
         let retrievedAge = NativeAOT_CodeGeneratorInputSample_Person_Age_Get(person,
                                                                              &exception)
@@ -132,25 +129,25 @@ final class PersonTests: XCTestCase {
             return
         }
         
-        let retrievedWelcomeMessageC = NativeAOT_CodeGeneratorInputSample_Person_GetWelcomeMessage(person,
-                                                                                                   &exception)
-        
-        guard let retrievedWelcomeMessageC,
+        guard let retrievedWelcomeMessage = String(dotNETString: NativeAOT_CodeGeneratorInputSample_Person_GetWelcomeMessage(person,
+																															 &exception),
+												   destroyDotNETString: true),
               exception == nil else {
             XCTFail("Person.GetWelcomeMessage should not throw and return an instance")
             
             return
         }
         
-        XCTAssertEqual(expectedWelcomeMessage, .init(cString: retrievedWelcomeMessageC))
-        
-        retrievedWelcomeMessageC.deallocate()
+        XCTAssertEqual(expectedWelcomeMessage, retrievedWelcomeMessage)
         
         let newFirstName = "Max 😉"
+		let newFirstNameDN = newFirstName.dotNETString()
+		defer { System_String_Destroy(newFirstNameDN) }
+		
         let expectedNewFullName = "\(newFirstName) \(lastName)"
         
 		NativeAOT_CodeGeneratorInputSample_Person_FirstName_Set(person,
-																newFirstName,
+																newFirstNameDN,
 																&exception)
         
         guard exception == nil else {
@@ -159,19 +156,16 @@ final class PersonTests: XCTestCase {
             return
         }
         
-        let newFullNameC = NativeAOT_CodeGeneratorInputSample_Person_FullName_Get(person,
-                                                                                  &exception)
-        
-        guard let newFullNameC,
+        guard let newFullName = String(dotNETString: NativeAOT_CodeGeneratorInputSample_Person_FullName_Get(person,
+																											&exception),
+									   destroyDotNETString: true),
               exception == nil else {
             XCTFail("Person.FullName getter should not throw and return an instance")
             
             return
         }
         
-        XCTAssertEqual(expectedNewFullName, .init(cString: newFullNameC))
-        
-        newFullNameC.deallocate()
+        XCTAssertEqual(expectedNewFullName, newFullName)
         
         let numberOfChildren = NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildren_Get(person,
                                                                                               &exception)
@@ -187,9 +181,18 @@ final class PersonTests: XCTestCase {
     
     func testPersonChildren() {
         var exception: System_Exception_t?
+		
+		let motherFirstNameDN = "Johanna".dotNETString()
+		defer { System_String_Destroy(motherFirstNameDN) }
+		
+		let sonFirstNameDN = "Max".dotNETString()
+		defer { System_String_Destroy(sonFirstNameDN) }
+		
+		let lastNameDN = "Doe".dotNETString()
+		defer { System_String_Destroy(lastNameDN) }
         
-        guard let mother = NativeAOT_CodeGeneratorInputSample_Person_Create("Johanna",
-                                                                            "Doe",
+        guard let mother = NativeAOT_CodeGeneratorInputSample_Person_Create(motherFirstNameDN,
+                                                                            lastNameDN,
                                                                             40,
                                                                             &exception),
               exception == nil else {
@@ -200,8 +203,8 @@ final class PersonTests: XCTestCase {
         
         defer { NativeAOT_CodeGeneratorInputSample_Person_Destroy(mother) }
         
-        guard let son = NativeAOT_CodeGeneratorInputSample_Person_Create("Max",
-                                                                         "Doe",
+        guard let son = NativeAOT_CodeGeneratorInputSample_Person_Create(sonFirstNameDN,
+                                                                         lastNameDN,
                                                                          4,
                                                                          &exception),
               exception == nil else {
@@ -280,26 +283,32 @@ final class PersonTests: XCTestCase {
         
         var exception2: System_Exception_t?
         
-        guard let exceptionMessageC = System_Exception_Message_Get(exception,
-                                                                   &exception2),
+        guard let exceptionMessage = String(dotNETString: System_Exception_Message_Get(exception,
+																					   &exception2),
+											destroyDotNETString: true),
               exception2 == nil else {
             XCTFail("Exception.Message getter should not throw and return an instance of a string")
             
             return
         }
         
-        let exceptionMessage = String(cString: exceptionMessageC)
-        
-        exceptionMessageC.deallocate()
-        
         XCTAssertTrue(exceptionMessage.contains("Index was out of range"))
     }
     
     func testPersonChildrenArray() {
         var exception: System_Exception_t?
+		
+		let motherFirstNameDN = "Johanna".dotNETString()
+		defer { System_String_Destroy(motherFirstNameDN) }
+		
+		let sonFirstNameDN = "Max".dotNETString()
+		defer { System_String_Destroy(sonFirstNameDN) }
+		
+		let lastNameDN = "Doe".dotNETString()
+		defer { System_String_Destroy(lastNameDN) }
         
-        guard let mother = NativeAOT_CodeGeneratorInputSample_Person_Create("Johanna",
-                                                                            "Doe",
+        guard let mother = NativeAOT_CodeGeneratorInputSample_Person_Create(motherFirstNameDN,
+                                                                            lastNameDN,
                                                                             40,
                                                                             &exception),
               exception == nil else {
@@ -310,8 +319,8 @@ final class PersonTests: XCTestCase {
         
         defer { NativeAOT_CodeGeneratorInputSample_Person_Destroy(mother) }
         
-        guard let son = NativeAOT_CodeGeneratorInputSample_Person_Create("Max",
-                                                                         "Doe",
+        guard let son = NativeAOT_CodeGeneratorInputSample_Person_Create(sonFirstNameDN,
+                                                                         lastNameDN,
                                                                          4,
                                                                          &exception),
               exception == nil else {
@@ -390,9 +399,15 @@ final class PersonTests: XCTestCase {
         var exception: System_Exception_t?
         
         let initialAge: Int32 = 0
+		
+		let firstNameDN = "Johanna".dotNETString()
+		defer { System_String_Destroy(firstNameDN) }
+		
+		let lastNameDN = "Doe".dotNETString()
+		defer { System_String_Destroy(lastNameDN) }
         
-        guard let baby = NativeAOT_CodeGeneratorInputSample_Person_Create("Johanna",
-                                                                          "Doe",
+        guard let baby = NativeAOT_CodeGeneratorInputSample_Person_Create(firstNameDN,
+                                                                          lastNameDN,
                                                                           0,
                                                                           &exception),
               exception == nil else {
@@ -425,8 +440,14 @@ final class PersonTests: XCTestCase {
 		
 		let initialAge: Int32 = 0
 		
-		guard let person = NativeAOT_CodeGeneratorInputSample_Person_Create("Johanna",
-																			"Doe",
+		let firstNameDN = "Johanna".dotNETString()
+		defer { System_String_Destroy(firstNameDN) }
+		
+		let lastNameDN = "Doe".dotNETString()
+		defer { System_String_Destroy(lastNameDN) }
+		
+		guard let person = NativeAOT_CodeGeneratorInputSample_Person_Create(firstNameDN,
+																			lastNameDN,
 																			initialAge,
 																			&exception),
 			  exception == nil else {
@@ -486,8 +507,14 @@ final class PersonTests: XCTestCase {
 	func testPersonAddress() {
 		var exception: System_Exception_t?
 		
-		guard let person = NativeAOT_CodeGeneratorInputSample_Person_Create("Johanna",
-																			"Doe",
+		let firstNameDN = "Johanna".dotNETString()
+		defer { System_String_Destroy(firstNameDN) }
+		
+		let lastNameDN = "Doe".dotNETString()
+		defer { System_String_Destroy(lastNameDN) }
+		
+		guard let person = NativeAOT_CodeGeneratorInputSample_Person_Create(firstNameDN,
+																			lastNameDN,
 																			15,
 																			&exception),
 			  exception == nil else {
@@ -499,10 +526,15 @@ final class PersonTests: XCTestCase {
 		defer { NativeAOT_CodeGeneratorInputSample_Person_Destroy(person) }
 		
 		let street = "Stephansplatz"
-		let city = "Vienna"
+		let streetDN = street.dotNETString()
+		defer { System_String_Destroy(streetDN) }
 		
-		guard let address = NativeAOT_CodeGeneratorInputSample_Address_Create(street,
-																			  city,
+		let city = "Vienna"
+		let cityDN = city.dotNETString()
+		defer { System_String_Destroy(cityDN) }
+		
+		guard let address = NativeAOT_CodeGeneratorInputSample_Address_Create(streetDN,
+																			  cityDN,
 																			  &exception),
 			  exception == nil else {
 			XCTFail("Address ctor should return an instance and not throw")
@@ -524,34 +556,46 @@ final class PersonTests: XCTestCase {
 			return
 		}
 		
-		guard let retrievedStreetC = NativeAOT_CodeGeneratorInputSample_Address_Street_Get(retrievedAddress,
-																						   &exception),
+		guard let retrievedStreet = String(dotNETString: NativeAOT_CodeGeneratorInputSample_Address_Street_Get(retrievedAddress,
+																											   &exception),
+										   destroyDotNETString: true),
 			  exception == nil else {
 			XCTFail("Address.Street getter should return an instance and not throw")
 			
 			return
 		}
 		
-		let retrievedStreet = String(cString: retrievedStreetC)
 		XCTAssertEqual(street, retrievedStreet)
 		
-		guard let retrievedCityC = NativeAOT_CodeGeneratorInputSample_Address_City_Get(retrievedAddress,
-																					   &exception),
+		guard let retrievedCity = String(dotNETString: NativeAOT_CodeGeneratorInputSample_Address_City_Get(retrievedAddress,
+																										   &exception),
+										 destroyDotNETString: true),
 			  exception == nil else {
 			XCTFail("Address.City getter should return an instance and not throw")
 			
 			return
 		}
 		
-		let retrievedCity = String(cString: retrievedCityC)
 		XCTAssertEqual(city, retrievedCity)
 	}
     
     func testPersonEvents() {
         var exception: System_Exception_t?
+		
+		let motherFirstNameDN = "Johanna".dotNETString()
+		defer { System_String_Destroy(motherFirstNameDN) }
+		
+		let sonFirstNameDN = "Max".dotNETString()
+		defer { System_String_Destroy(sonFirstNameDN) }
+		
+		let daugtherFirstNameDN = "Marie".dotNETString()
+		defer { System_String_Destroy(daugtherFirstNameDN) }
+		
+		let lastNameDN = "Doe".dotNETString()
+		defer { System_String_Destroy(lastNameDN) }
         
-        guard let mother = NativeAOT_CodeGeneratorInputSample_Person_Create("Johanna",
-                                                                            "Doe",
+        guard let mother = NativeAOT_CodeGeneratorInputSample_Person_Create(motherFirstNameDN,
+                                                                            lastNameDN,
                                                                             40,
                                                                             &exception),
               exception == nil else {
@@ -607,8 +651,8 @@ final class PersonTests: XCTestCase {
         NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChanged_Add(mother,
                                                                               numberOfChildrenChangedDelegate)
         
-        guard let son = NativeAOT_CodeGeneratorInputSample_Person_Create("Max",
-                                                                         "Doe",
+        guard let son = NativeAOT_CodeGeneratorInputSample_Person_Create(sonFirstNameDN,
+                                                                         lastNameDN,
                                                                          4,
                                                                          &exception),
               exception == nil else {
@@ -629,8 +673,8 @@ final class PersonTests: XCTestCase {
             return
         }
         
-        guard let daugther = NativeAOT_CodeGeneratorInputSample_Person_Create("Marie",
-                                                                              "Doe",
+        guard let daugther = NativeAOT_CodeGeneratorInputSample_Person_Create(daugtherFirstNameDN,
+                                                                              lastNameDN,
                                                                               10,
                                                                               &exception),
               exception == nil else {
@@ -700,9 +744,21 @@ final class PersonTests: XCTestCase {
     
     func testPersonChildrenArrayChange() {
         var exception: System_Exception_t?
+		
+		let motherFirstNameDN = "Johanna".dotNETString()
+		defer { System_String_Destroy(motherFirstNameDN) }
+		
+		let sonFirstNameDN = "Max".dotNETString()
+		defer { System_String_Destroy(sonFirstNameDN) }
+		
+		let daugtherFirstNameDN = "Marie".dotNETString()
+		defer { System_String_Destroy(daugtherFirstNameDN) }
+		
+		let lastNameDN = "Doe".dotNETString()
+		defer { System_String_Destroy(lastNameDN) }
         
-        guard let mother = NativeAOT_CodeGeneratorInputSample_Person_Create("Johanna",
-                                                                            "Doe",
+        guard let mother = NativeAOT_CodeGeneratorInputSample_Person_Create(motherFirstNameDN,
+                                                                            lastNameDN,
                                                                             40,
                                                                             &exception),
               exception == nil else {
@@ -713,8 +769,8 @@ final class PersonTests: XCTestCase {
         
         defer { NativeAOT_CodeGeneratorInputSample_Person_Destroy(mother) }
         
-        guard let son = NativeAOT_CodeGeneratorInputSample_Person_Create("Max",
-                                                                         "Doe",
+        guard let son = NativeAOT_CodeGeneratorInputSample_Person_Create(sonFirstNameDN,
+                                                                         lastNameDN,
                                                                          4,
                                                                          &exception),
               exception == nil else {
@@ -773,8 +829,8 @@ final class PersonTests: XCTestCase {
         
         XCTAssertNil(exception)
         
-        guard let daugther = NativeAOT_CodeGeneratorInputSample_Person_Create("Marie",
-                                                                              "Doe",
+        guard let daugther = NativeAOT_CodeGeneratorInputSample_Person_Create(daugtherFirstNameDN,
+                                                                              lastNameDN,
                                                                               10,
                                                                               &exception),
               exception == nil else {

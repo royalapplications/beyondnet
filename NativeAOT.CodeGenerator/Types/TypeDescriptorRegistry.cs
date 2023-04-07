@@ -65,7 +65,7 @@ public class TypeDescriptorRegistry
             BuiltIn.BuiltInTypeDescriptors.FloatTypeDescriptor,
             BuiltIn.BuiltInTypeDescriptors.DoubleTypeDescriptor,
             
-            BuiltIn.BuiltInTypeDescriptors.StringTypeDescriptor
+            // BuiltIn.BuiltInTypeDescriptors.StringTypeDescriptor
         };
 
         return descriptors;

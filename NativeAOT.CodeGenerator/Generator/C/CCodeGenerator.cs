@@ -91,6 +91,7 @@ public class CCodeGenerator: ICodeGenerator
     {
         return """
 #pragma mark - BEGIN Common Types
+
 typedef const char* CString;
 
 #pragma mark - END Common Types
@@ -100,6 +101,13 @@ typedef const char* CString;
     private string GetFooterCode()
     {
         return """
+
+CString
+DNStringToC(System_String_t systemString);
+
+System_String_t
+DNStringFromC(CString cString);
+
 #endif /* TypeDefinitions_h */
 """;        
     }

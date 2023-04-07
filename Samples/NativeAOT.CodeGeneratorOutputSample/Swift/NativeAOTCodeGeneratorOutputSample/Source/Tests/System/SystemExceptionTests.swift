@@ -6,8 +6,11 @@ final class SystemExceptionTests: XCTestCase {
         var exception: System_Exception_t?
         
         let exceptionMessage = "I'm a nice exception"
+		let exceptionMessageDN = exceptionMessage.dotNETString()
+		
+		defer { System_String_Destroy(exceptionMessageDN) }
         
-        guard let createdException = System_Exception_Create_1(exceptionMessage,
+        guard let createdException = System_Exception_Create_1(exceptionMessageDN,
 															   &exception),
               exception == nil else {
             XCTFail("System.Exception ctor should not throw and return an instance")
@@ -17,17 +20,14 @@ final class SystemExceptionTests: XCTestCase {
         
         defer { System_Exception_Destroy(createdException) }
         
-        guard let retrievedExceptionMessageC = System_Exception_Message_Get(createdException,
-                                                                            &exception),
+        guard let retrievedExceptionMessage = String(dotNETString: System_Exception_Message_Get(createdException,
+																								&exception),
+													 destroyDotNETString: true),
               exception == nil else {
             XCTFail("System.Exception.Message getter should not throw and return an instance of a C string")
             
             return
         }
-        
-        defer { retrievedExceptionMessageC.deallocate() }
-        
-        let retrievedExceptionMessage = String(String(cString: retrievedExceptionMessageC))
         
         XCTAssertEqual(exceptionMessage, retrievedExceptionMessage)
     }

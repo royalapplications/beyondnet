@@ -200,13 +200,20 @@ internal static unsafe class InteropUtils
     /// This allocates a native char* and copies the contents of the managed string into it.
     /// The allocated native string must be freed when not needed anymore!
     /// </summary>
-    internal static byte* CopyToCString(this string? @string)
+    [UnmanagedCallersOnly(EntryPoint = "DNStringToC")]
+    internal static byte* DNStringToC(void* /* System.String? */ systemString)
     {
-        if (@string is null) {
+        if (systemString is null) {
             return null;
         }
 
-        byte* cString = (byte*)Marshal.StringToHGlobalAuto(@string);
+        System.String? systemStringConverted = InteropUtils.GetInstance<System.String>(systemString);
+
+        if (systemStringConverted is null) {
+            return null;
+        }
+
+        byte* cString = (byte*)Marshal.StringToHGlobalAuto(systemStringConverted);
         
         return cString;
     }
@@ -214,15 +221,22 @@ internal static unsafe class InteropUtils
     /// <summary>
     /// This allocates a managed string and copies the contents of the native char* into it.
     /// </summary>
-    internal static string? ToDotNetString(byte* cString)
+    [UnmanagedCallersOnly(EntryPoint = "DNStringFromC")]
+    internal static void* /* System.String? */ DNStringFromC(byte* cString)
     {
         if (cString is null) {
             return null;
         }
         
-        string? @string = Marshal.PtrToStringAuto((nint)cString);
+        System.String? systemString = Marshal.PtrToStringAuto((nint)cString);
 
-        return @string;
+        if (systemString is null) {
+            return null;
+        }
+        
+        void* systemStringNative = systemString.AllocateGCHandleAndGetAddress();
+
+        return systemStringNative;
     }
     #endregion Strings
 

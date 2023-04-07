@@ -6,9 +6,12 @@ final class SystemGuidTests: XCTestCase {
         var exception: System_Exception_t?
         
         let uuid = UUID()
-        let uuidString = uuid.uuidString
         
-        guard let guid = System_Guid_Create_4(uuidString,
+		let uuidString = uuid.uuidString
+		let uuidStringDN = uuidString.dotNETString()
+		defer { System_String_Destroy(uuidStringDN) }
+        
+        guard let guid = System_Guid_Create_4(uuidStringDN,
 											  &exception),
 			  exception == nil else {
             XCTFail("System_Guid_Create2 should not throw and return an instance")
@@ -20,23 +23,22 @@ final class SystemGuidTests: XCTestCase {
             System_Object_Destroy(guid)
         }
         
-        guard let guidCString = System_Guid_ToString(guid,
-													 &exception),
+        guard let guidString = String(dotNETString: System_Guid_ToString(guid,
+																		 &exception),
+									  destroyDotNETString: true),
 			  exception == nil else {
-			XCTFail("System_Guid_ToString should not throw and return an instance of a C string")
+			XCTFail("System_Guid_ToString should not throw and return an instance")
 			
 			return
 		}
         
-		defer { guidCString.deallocate() }
-		
-        let guidString = String(cString: guidCString)
-		
         XCTAssertEqual(uuidString.lowercased(), guidString.lowercased())
         
         let guidTypeName = "System.Guid"
+		let guidTypeNameDN = guidTypeName.dotNETString()
+		defer { System_String_Destroy(guidTypeNameDN) }
         
-        guard let guidType = System_Type_GetType_2(guidTypeName,
+        guard let guidType = System_Type_GetType_2(guidTypeNameDN,
 												   &exception),
               exception == nil else {
             XCTFail("GetType should not throw and return something")
@@ -78,17 +80,14 @@ final class SystemGuidTests: XCTestCase {
         
         defer { System_Guid_Destroy(emptyGuid) }
         
-        guard let emptyGuidStringC = System_Guid_ToString(emptyGuid,
-                                                          &exception),
+        guard let emptyGuidString = String(dotNETString: System_Guid_ToString(emptyGuid,
+																			  &exception),
+										   destroyDotNETString: true),
               exception == nil else {
             XCTFail("System.Guid.ToString should not throw and return a string")
             
             return
         }
-        
-        defer { emptyGuidStringC.deallocate() }
-        
-        let emptyGuidString = String(cString: emptyGuidStringC)
         
         XCTAssertEqual("00000000-0000-0000-0000-000000000000", emptyGuidString)
     }
@@ -97,10 +96,13 @@ final class SystemGuidTests: XCTestCase {
 		var exception: System_Exception_t?
 		
 		let uuid = UUID()
+		
 		let uuidString = uuid.uuidString
+		let uuidStringDN = uuidString.dotNETString()
+		defer { System_String_Destroy(uuidStringDN) }
 		
 		var guid: System_Guid_t?
-		let success = System_Guid_TryParse(uuidString,
+		let success = System_Guid_TryParse(uuidStringDN,
 										   &guid,
 										   &exception)
 		
@@ -114,17 +116,14 @@ final class SystemGuidTests: XCTestCase {
 		
 		defer { System_Guid_Destroy(guid) }
 		
-		guard let uuidStringRetC = System_Guid_ToString(guid,
-														&exception),
+		guard let uuidStringRet = String(dotNETString: System_Guid_ToString(guid,
+																			&exception),
+										 destroyDotNETString: true),
 			  exception == nil else {
-			XCTFail("System.Guid.ToString should not throw and return an instance of a C String")
+			XCTFail("System.Guid.ToString should not throw and return an instance")
 			
 			return
 		}
-		
-		defer { uuidStringRetC.deallocate() }
-		
-		let uuidStringRet = String(cString: uuidStringRetC)
 		
 		XCTAssertEqual(uuidString.lowercased(), uuidStringRet.lowercased())
 	}
@@ -139,9 +138,11 @@ final class SystemGuidTests: XCTestCase {
 		var exception: System_Exception_t?
 		
 		let uuidString = "nonsense"
+		let uuidStringDN = uuidString.dotNETString()
+		defer { System_String_Destroy(uuidStringDN) }
 		
 		var guid: System_Guid_t?
-		let success = System_Guid_TryParse(uuidString,
+		let success = System_Guid_TryParse(uuidStringDN,
 										   &guid,
 										   &exception)
 		

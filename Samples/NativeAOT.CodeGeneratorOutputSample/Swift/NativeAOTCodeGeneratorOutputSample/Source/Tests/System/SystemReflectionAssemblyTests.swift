@@ -24,17 +24,14 @@ final class SystemReflectionAssemblyTests: XCTestCase {
 		
 		defer { System_Reflection_AssemblyName_Destroy(assemblyName) }
 		
-		guard let assemblyNameStringC = System_Reflection_AssemblyName_Name_Get(assemblyName,
-																				&exception),
+		guard let assemblyNameString = String(dotNETString: System_Reflection_AssemblyName_Name_Get(assemblyName,
+																									&exception),
+											  destroyDotNETString: true),
 			  exception == nil else {
 			XCTFail("System.Reflection.AssemblyName.Name getter should not throw and return an instance of a C string")
 			
 			return
 		}
-		
-		defer { assemblyNameStringC.deallocate() }
-		
-		let assemblyNameString = String(cString: assemblyNameStringC)
 		
 		XCTAssertEqual("NativeAOT.CodeGeneratorOutputSample", assemblyNameString)
 	}

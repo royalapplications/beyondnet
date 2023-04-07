@@ -7,10 +7,12 @@ final class SystemDecimalTests: XCTestCase {
 		
 		let number = 1234
 		let numberString = "\(number)"
+		let numberStringDN = numberString.dotNETString()
+		defer { System_String_Destroy(numberStringDN) }
 		
 		var decimal: System_Decimal_t?
 		
-		let parseSuccess = System_Decimal_TryParse(numberString,
+		let parseSuccess = System_Decimal_TryParse(numberStringDN,
 												   &decimal,
 												   &exception)
 		
@@ -31,17 +33,14 @@ final class SystemDecimalTests: XCTestCase {
 		
 		XCTAssertEqual(number, .init(numberRet))
 		
-		guard let numberStringRetC = System_Decimal_ToString(decimal,
-															 &exception),
+		guard let numberStringRet = String(dotNETString: System_Decimal_ToString(decimal,
+																				 &exception),
+										   destroyDotNETString: true),
 			  exception == nil else {
-			XCTFail("System.Decimal.ToString should not throw and return an instance of a C String")
+			XCTFail("System.Decimal.ToString should not throw and return an instance")
 			
 			return
 		}
-		
-		defer { numberStringRetC.deallocate() }
-		
-		let numberStringRet = String(cString: numberStringRetC)
 		
 		XCTAssertEqual(numberString, numberStringRet)
 	}
@@ -184,17 +183,14 @@ final class SystemDecimalTests: XCTestCase {
 		
 		var exception2: System_Exception_t?
 		
-		guard let exceptionMessageC = System_Exception_Message_Get(exception,
-																   &exception2),
+		guard let exceptionMessage = String(dotNETString: System_Exception_Message_Get(exception,
+																					   &exception2),
+											destroyDotNETString: true),
 			  exception2 == nil else {
 			XCTFail("System.Exception.Message getter should not throw and return an instance of a C String")
 			
 			return
 		}
-		
-		defer { exceptionMessageC.deallocate() }
-		
-		let exceptionMessage = String(cString: exceptionMessageC)
 		
 		XCTAssertTrue(exceptionMessage.contains("divide by zero"))
 	}

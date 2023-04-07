@@ -437,7 +437,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                             isGenericArrayParameterType = true;
                         }
 
-                        if (isGenericArrayParameterType) {
+                        if (isGenericArrayParameterType &&
+                            arrayType is not null) {
                             string parameterTypeName = $"System.Type.MakeGenericMethodParameter({arrayType.GenericParameterPosition}).MakeArrayType()";
                         
                             parameterTypeNames.Add(parameterTypeName);

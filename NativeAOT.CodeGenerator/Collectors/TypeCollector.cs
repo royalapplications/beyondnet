@@ -11,6 +11,8 @@ public class TypeCollector
     private static readonly Type[] INCLUDED_TYPES = new [] {
         typeof(System.Object),
         typeof(System.Type),
+        typeof(System.String),
+        typeof(System.Runtime.InteropServices.Marshal),
         typeof(System.Exception),
         typeof(System.Boolean),
         typeof(System.Char),
@@ -22,7 +24,6 @@ public class TypeCollector
         typeof(System.Int64),
         typeof(System.IntPtr),
         typeof(System.UIntPtr),
-        typeof(System.String),
         typeof(System.Byte),
         typeof(System.UInt16),
         typeof(System.UInt32),

@@ -296,9 +296,11 @@ final class GenericTestsTests: XCTestCase {
 		defer { System_Text_StringBuilder_Destroy(value) }
 		
 		let expectedString = "Hello World"
+		let expectedStringDN = expectedString.dotNETString()
+		defer { System_String_Destroy(expectedStringDN) }
 		
 		System_Text_StringBuilder_Append_2(value,
-										   expectedString,
+										   expectedStringDN,
 										   &exception)
 		
 		XCTAssertNil(exception)
@@ -350,16 +352,14 @@ final class GenericTestsTests: XCTestCase {
 		XCTAssertNil(exception)
 		XCTAssertTrue(valueEqual)
 		
-		guard let stringRetC = System_Text_StringBuilder_ToString(valueRet,
-																  &exception),
+		guard let stringRet = String(dotNETString: System_Text_StringBuilder_ToString(valueRet,
+																					  &exception),
+									 destroyDotNETString: true),
 			  exception == nil else {
 			XCTFail("System.Text.StringBuilder.ToString should not throw and return an instance of a string")
 			
 			return
 		}
-		
-		defer { stringRetC.deallocate() }
-		let stringRet = String(cString: stringRetC)
 		
 		XCTAssertEqual(expectedString, stringRet)
 	}
@@ -422,89 +422,77 @@ final class GenericTestsTests: XCTestCase {
 
 		var exception2: System_Exception_t?
 
-		guard let exceptionMessageC = System_Exception_Message_Get(exception,
-																   &exception2),
+		guard let exceptionMessage = String(dotNETString: System_Exception_Message_Get(exception,
+																					   &exception2),
+											destroyDotNETString: true),
 			  exception2 == nil else {
 			XCTFail("System.Exception.Message getter should not throw and return an instance of a C string")
 
 			return
 		}
 
-		defer { exceptionMessageC.deallocate() }
-		let exceptionMessage = String(cString: exceptionMessageC)
-		
 		XCTAssertEqual(exceptionMessage, "Object of type \'System.Object\' cannot be converted to type \'System.Text.StringBuilder\'.")
 	}
 	
-	// TODO: Disabled because generic arrays are not yet supported
 	func testReturnStringOfJoinedArray() {
 		var exception: System_Exception_t?
 
 		let numberOfElements: Int32 = 10
 		let stringPrefix = "Hello_"
+		
 		let separator = ";"
+		let separatorDN = separator.dotNETString()
+		defer { System_String_Destroy(separatorDN) }
 
-		guard let stringBuilderType = System_Text_StringBuilder_TypeOf() else {
-			XCTFail("typeof(System.Text.StringBuilder) should return an instance")
+		guard let stringType = System_String_TypeOf() else {
+			XCTFail("typeof(System.String) should return an instance")
 
 			return
 		}
 
-		defer { System_Type_Destroy(stringBuilderType) }
+		defer { System_Type_Destroy(stringType) }
 
-		guard let arrayOfStringBuilders = System_Array_CreateInstance(stringBuilderType,
-																	  numberOfElements,
-																	  &exception),
+		guard let arrayOfStrings = System_Array_CreateInstance(stringType,
+															   numberOfElements,
+															   &exception),
 			  exception == nil else {
 			XCTFail("System.Array ctor should not throw and return an instance")
 
 			return
 		}
 
-		defer { System_Array_Destroy(arrayOfStringBuilders) }
+		defer { System_Array_Destroy(arrayOfStrings) }
 
+		var strings = [String]()
+		
 		for idx in 0..<numberOfElements {
-			guard let stringBuilder = System_Text_StringBuilder_Create(&exception),
-				  exception == nil else {
-				XCTFail("System.Text.StringBuilder ctor should not throw and return an instance")
+			let string = "\(stringPrefix)\(idx)"
+			let stringDN = string.dotNETString()
+			defer { System_String_Destroy(stringDN) }
+			
+			strings.append(string)
 
-				return
-			}
-
-			defer { System_Text_StringBuilder_Destroy(stringBuilder) }
-
-			let string = "\(stringPrefix)_\(idx)"
-
-			System_Text_StringBuilder_Append_2(stringBuilder,
-											   string,
-											   &exception)
-
-			XCTAssertNil(exception)
-
-			System_Array_SetValue(arrayOfStringBuilders,
-								  stringBuilder,
+			System_Array_SetValue(arrayOfStrings,
+								  stringDN,
 								  idx,
 								  &exception)
 
 			XCTAssertNil(exception)
 		}
+		
+		let expectedString = strings.joined(separator: separator)
 
-		guard let stringRetC = NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnStringOfJoinedArray_A1(stringBuilderType,
-																											arrayOfStringBuilders,
-																											separator,
-																											&exception),
+		guard let stringRet = String(dotNETString: NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnStringOfJoinedArray_A1(stringType,
+																																arrayOfStrings,
+																																separatorDN,
+																																&exception),
+									 destroyDotNETString: true),
 			  exception == nil else {
 			XCTFail("ReturnStringOfJoinedArray should not throw and return an instance")
 			
 			return
 		}
 		
-		defer { stringRetC.deallocate() }
-		
-		let stringRet = String(cString: stringRetC)
-		
-		print(stringRet)
-		
-		// TODO
+		XCTAssertEqual(expectedString, stringRet)
 	}
 }

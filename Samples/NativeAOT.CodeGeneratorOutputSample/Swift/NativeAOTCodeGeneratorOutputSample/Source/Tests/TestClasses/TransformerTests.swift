@@ -14,20 +14,20 @@ final class TransformerTests: XCTestCase {
 		defer { NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate_Destroy(uppercaser) }
 		
 		let inputString = "Hello"
+		let inputStringDN = inputString.dotNETString()
+		defer { System_String_Destroy(inputStringDN) }
+		
 		let expectedOutputString = inputString.uppercased()
 		
-		guard let outputStringC = NativeAOT_CodeGeneratorInputSample_Transformer_TransformString(inputString,
-																								 uppercaser,
-																								 &exception),
+		guard let outputString = String(dotNETString: NativeAOT_CodeGeneratorInputSample_Transformer_TransformString(inputStringDN,
+																													 uppercaser,
+																													 &exception),
+										destroyDotNETString: true),
 			  exception == nil else {
 			XCTFail("Transformer.TransformString should not throw and return an instance of a c string")
 			
 			return
 		}
-		
-		defer { outputStringC.deallocate() }
-		
-		let outputString = String(cString: outputStringC)
 		
 		XCTAssertEqual(expectedOutputString, outputString)
 	}
@@ -51,18 +51,15 @@ final class TransformerTests: XCTestCase {
 		
 		defer { NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate_Destroy(uppercaser) }
 		
-		guard let outputStringC = NativeAOT_CodeGeneratorInputSample_Transformer_GetAndTransformString(fixedStringProvider,
-																									   uppercaser,
-																									   &exception),
+		guard let outputString = String(dotNETString: NativeAOT_CodeGeneratorInputSample_Transformer_GetAndTransformString(fixedStringProvider,
+																														   uppercaser,
+																														   &exception),
+										destroyDotNETString: true),
 			  exception == nil else {
-			XCTFail("Transformer.GetAndTransformString should not throw and return an instance of a c string")
+			XCTFail("Transformer.GetAndTransformString should not throw and return an instance")
 			
 			return
 		}
-		
-		defer { outputStringC.deallocate() }
-		
-		let outputString = String(cString: outputStringC)
 		
 		XCTAssertEqual("FIXED STRING", outputString)
 	}
@@ -118,19 +115,19 @@ final class TransformerTests: XCTestCase {
 		XCTAssertNil(exception)
 		
 		let inputString = "Hello"
+		let inputStringDN = inputString.dotNETString()
+		defer { System_String_Destroy(inputStringDN) }
+		
 		let expectedOutputString = inputString.lowercased()
 		
-		guard let outputStringC = NativeAOT_CodeGeneratorInputSample_Transformer_UppercaseString(inputString,
-																								 &exception),
+		guard let outputString = String(dotNETString: NativeAOT_CodeGeneratorInputSample_Transformer_UppercaseString(inputStringDN,
+																													 &exception),
+										destroyDotNETString: true),
 			  exception == nil else {
 			XCTFail("Transformer.UppercaseString should not throw and return an instance of a c string")
 			
 			return
 		}
-		
-		defer { outputStringC.deallocate() }
-		
-		let outputString = String(cString: outputStringC)
 		
 		XCTAssertEqual(expectedOutputString, outputString)
 	}
@@ -140,9 +137,9 @@ private extension TransformerTests {
 	func createFixedStringProvider() -> NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate_t? {
 		let fixedStringProvider: NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate_CFunction_t = { _ in
 			let outputString = "Fixed String"
-			let outputStringC = strdup(outputString)
+			let outputStringDN = outputString.dotNETString()
 			
-			return .init(outputStringC)
+			return outputStringDN
 		}
 		
 		guard let stringGetterDelegate = NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate_Create(nil,
@@ -157,20 +154,22 @@ private extension TransformerTests {
 	}
 	
 	func createUppercaser() -> NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate_t? {
-		let caser: NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate_CFunction_t = { innerContext, inputStringC in
-			guard let inputStringC else {
+		let caser: NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate_CFunction_t = { innerContext, inputStringDN in
+			guard let inputStringDN else { return nil }
+			
+			// We need to release any reference types that are given to us through the delegate
+			defer { System_String_Destroy(inputStringDN) }
+			
+			guard let inputString = String(dotNETString: inputStringDN) else {
+				XCTFail("Failed to convert string")
+				
 				return nil
 			}
 			
-			// We need to release any reference types that are given to us through the delegate
-			defer { inputStringC.deallocate() }
-			
-			let inputString = String(cString: inputStringC)
 			let outputString = inputString.uppercased()
+			let outputStringDN = outputString.dotNETString()
 			
-			let outputStringC = strdup(outputString)
-			
-			return .init(outputStringC)
+			return outputStringDN
 		}
 		
 		guard let stringTransformerDelegate = NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate_Create(nil,
@@ -185,20 +184,22 @@ private extension TransformerTests {
 	}
 	
 	func createLowercaser() -> NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate_t? {
-		let caser: NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate_CFunction_t = { innerContext, inputStringC in
-			guard let inputStringC else {
+		let caser: NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate_CFunction_t = { innerContext, inputStringDN in
+			guard let inputStringDN else { return nil }
+			
+			// We need to release any reference types that are given to us through the delegate
+			defer { System_String_Destroy(inputStringDN) }
+			
+			guard let inputString = String(dotNETString: inputStringDN) else {
+				XCTFail("Failed to convert string")
+				
 				return nil
 			}
 			
-			// We need to release any reference types that are given to us through the delegate
-			defer { inputStringC.deallocate() }
-			
-			let inputString = String(cString: inputStringC)
 			let outputString = inputString.lowercased()
+			let outputStringDN = outputString.dotNETString()
 			
-			let outputStringC = strdup(outputString)
-			
-			return .init(outputStringC)
+			return outputStringDN
 		}
 		
 		guard let stringTransformerDelegate = NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate_Create(nil,

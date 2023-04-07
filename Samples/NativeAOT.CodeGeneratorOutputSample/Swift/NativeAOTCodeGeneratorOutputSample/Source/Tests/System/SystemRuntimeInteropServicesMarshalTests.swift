@@ -37,23 +37,20 @@ final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
 		var exception: System_Exception_t?
 		
 		let string = "Hello World! 😀"
-		var retStringC: CString?
+		var retString: String?
 		
 		string.withCString { cString in
-			retStringC = System_Runtime_InteropServices_Marshal_PtrToStringAuto_1(.init(bitPattern: cString),
-																				  &exception)
+			retString = .init(dotNETString: System_Runtime_InteropServices_Marshal_PtrToStringAuto_1(.init(bitPattern: cString),
+																									 &exception),
+							  destroyDotNETString: true)
 		}
 		
-		guard let retStringC,
+		guard let retString,
 			  exception == nil else {
-			XCTFail("System.Runtime.InteropServices.Marshal.PtrToStringAuto should not throw and return an instance of a C String")
+			XCTFail("System.Runtime.InteropServices.Marshal.PtrToStringAuto should not throw and return an instance")
 			
 			return
 		}
-		
-		defer { retStringC.deallocate() }
-		
-		let retString = String(cString: retStringC)
 		
 		XCTAssertEqual(string, retString)
 	}

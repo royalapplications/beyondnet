@@ -90,9 +90,10 @@ final class SystemDateTimeTests: XCTestCase {
 			return
 		}
 		
-		let dateString = "\(expectedMonth)/\(expectedDay)/\(expectedYear) \(expectedHour):\(expectedMinute):\(expectedSecond)"
+		let cultureNameDN = "en-US".dotNETString()
+		defer { System_String_Destroy(cultureNameDN) }
 		
-		guard let enUSCulture = System_Globalization_CultureInfo_Create_1("en-US",
+		guard let enUSCulture = System_Globalization_CultureInfo_Create_1(cultureNameDN,
 																		  &exception),
 			  exception == nil else {
 			XCTFail("System.CultureInfo ctor should not throw and return an instance")
@@ -102,8 +103,12 @@ final class SystemDateTimeTests: XCTestCase {
 		
 		defer { System_Globalization_CultureInfo_Destroy(enUSCulture) }
 		
+		let dateString = "\(expectedMonth)/\(expectedDay)/\(expectedYear) \(expectedHour):\(expectedMinute):\(expectedSecond)"
+		let dateStringDN = dateString.dotNETString()
+		defer { System_String_Destroy(dateStringDN) }
+		
 		var nowDotNet: System_DateTime_t?
-		let success = System_DateTime_TryParse_2(dateString,
+		let success = System_DateTime_TryParse_2(dateStringDN,
 												 enUSCulture,
 												 &nowDotNet,
 												 &exception)

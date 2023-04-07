@@ -76,17 +76,14 @@ final class SystemVersionTests: XCTestCase {
         XCTAssertNil(exception)
         XCTAssertEqual(revision, revisionRet)
         
-        guard let versionStringRetC = System_Version_ToString(version,
-                                                              &exception),
+        guard let versionStringRet = String(dotNETString: System_Version_ToString(version,
+																				  &exception),
+											destroyDotNETString: true),
               exception == nil else {
             XCTFail("System.Version.ToString should not throw and return an instance of a C string")
             
             return
         }
-        
-        defer { versionStringRetC.deallocate() }
-        
-        let versionStringRet = String(cString: versionStringRetC)
         
         XCTAssertEqual(versionString, versionStringRet)
     }
@@ -100,8 +97,10 @@ final class SystemVersionTests: XCTestCase {
         let revision: Int32 = 456
         
         let versionString = "\(major).\(minor).\(build).\(revision)"
+		let versionStringDN = versionString.dotNETString()
+		defer { System_String_Destroy(versionStringDN) }
         
-		guard let version = System_Version_Create_3(versionString,
+		guard let version = System_Version_Create_3(versionStringDN,
 													&exception),
 			  exception == nil else {
 			XCTFail("System.Version ctor should not throw and return an instance")
@@ -135,17 +134,14 @@ final class SystemVersionTests: XCTestCase {
         XCTAssertNil(exception)
         XCTAssertEqual(revision, revisionRet)
         
-        guard let versionStringRetC = System_Version_ToString(version,
-                                                              &exception),
+        guard let versionStringRet = String(dotNETString: System_Version_ToString(version,
+																				  &exception),
+											destroyDotNETString: true),
               exception == nil else {
             XCTFail("System.Version.ToString should not throw and return an instance of a C string")
             
             return
         }
-        
-        defer { versionStringRetC.deallocate() }
-        
-        let versionStringRet = String(cString: versionStringRetC)
         
         XCTAssertEqual(versionString, versionStringRet)
     }
@@ -159,10 +155,12 @@ final class SystemVersionTests: XCTestCase {
 		let revision: Int32 = 456
 		
 		let versionString = "\(major).\(minor).\(build).\(revision)"
+		let versionStringDN = versionString.dotNETString()
+		defer { System_String_Destroy(versionStringDN) }
 		
 		var version: System_Version_t?
 		
-		let parseSuccess = System_Version_TryParse(versionString,
+		let parseSuccess = System_Version_TryParse(versionStringDN,
 												   &version,
 												   &exception)
 		
@@ -200,17 +198,14 @@ final class SystemVersionTests: XCTestCase {
 		XCTAssertNil(exception)
 		XCTAssertEqual(revision, revisionRet)
 		
-		guard let versionStringRetC = System_Version_ToString(version,
-															  &exception),
+		guard let versionStringRet = String(dotNETString: System_Version_ToString(version,
+																				  &exception),
+											destroyDotNETString: true),
 			  exception == nil else {
 			XCTFail("System.Version.ToString should not throw and return an instance of a C string")
 			
 			return
 		}
-		
-		defer { versionStringRetC.deallocate() }
-		
-		let versionStringRet = String(cString: versionStringRetC)
 		
 		XCTAssertEqual(versionString, versionStringRet)
 	}

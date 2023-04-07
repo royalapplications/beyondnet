@@ -45,17 +45,14 @@ final class SystemSecuritySecureStringTests: XCTestCase {
 			XCTAssertNil(exception)
 		}
 		
-		guard let retStringC = System_Runtime_InteropServices_Marshal_PtrToStringUni(retStringPtr,
-																					 &exception),
+		guard let retString = String(dotNETString: System_Runtime_InteropServices_Marshal_PtrToStringUni(retStringPtr,
+																										 &exception),
+									 destroyDotNETString: true),
 			  exception == nil else {
 			XCTFail("System.Runtime.InteropServices.Marshal.PtrToStringUni should not throw and return an instance of a C String")
 			
 			return
 		}
-		
-		defer { retStringC.deallocate() }
-		
-		let retString = String(cString: retStringC)
 		
 		XCTAssertEqual(string, retString)
 	}

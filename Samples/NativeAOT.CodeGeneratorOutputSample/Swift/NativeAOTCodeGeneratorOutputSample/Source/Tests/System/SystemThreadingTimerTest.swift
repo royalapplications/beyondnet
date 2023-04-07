@@ -74,11 +74,8 @@ final class SystemThreadingTimerTests: XCTestCase {
 														&exception),
 			  exception == nil else {
 			if let exception,
-			   let exceptionStringC = System_Exception_ToString(exception, nil) {
-				defer { exceptionStringC.deallocate() }
-				
-				let exceptionString = String(cString: exceptionStringC)
-				
+			   let exceptionString = String(dotNETString: System_Exception_ToString(exception, nil),
+											destroyDotNETString: true) {
 				print("System.Threading.Timer ctor failed with exception: \(exceptionString)")
 			}
 			

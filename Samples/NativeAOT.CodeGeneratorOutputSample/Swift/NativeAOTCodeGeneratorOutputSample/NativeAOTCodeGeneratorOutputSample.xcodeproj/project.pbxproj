@@ -30,6 +30,7 @@
 		E779630029DC171E00E1E70B /* SystemRuntimeInteropServicesMarshalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77962FF29DC171E00E1E70B /* SystemRuntimeInteropServicesMarshalTests.swift */; };
 		E779630229DC54E300E1E70B /* SystemThreadingTasksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E779630129DC54E300E1E70B /* SystemThreadingTasksTests.swift */; };
 		E77A85B229DD7EF9000CA09E /* GenericTestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A85B129DD7EF9000CA09E /* GenericTestsTests.swift */; };
+		E79B376529E002E700118C35 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B376429E002E700118C35 /* StringExtensions.swift */; };
 		E7C8CF0529C1FA9500C4230F /* SystemGuidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0429C1FA9500C4230F /* SystemGuidTests.swift */; };
 		E7C8CF0729C1FABA00C4230F /* SystemStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0629C1FABA00C4230F /* SystemStringTests.swift */; };
 		E7C8CF0929C1FB0800C4230F /* SystemDateTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0829C1FB0800C4230F /* SystemDateTimeTests.swift */; };
@@ -102,7 +103,8 @@
 		E77962FF29DC171E00E1E70B /* SystemRuntimeInteropServicesMarshalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemRuntimeInteropServicesMarshalTests.swift; sourceTree = "<group>"; };
 		E779630129DC54E300E1E70B /* SystemThreadingTasksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemThreadingTasksTests.swift; sourceTree = "<group>"; };
 		E77A85B129DD7EF9000CA09E /* GenericTestsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTestsTests.swift; sourceTree = "<group>"; };
-		E7808CE929DEFB2600F50203 /* NativeAOTCodeGeneratorOutputSample.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = file; path = NativeAOTCodeGeneratorOutputSample.xctestplan; sourceTree = SOURCE_ROOT; };
+		E7808CE929DEFB2600F50203 /* NativeAOTCodeGeneratorOutputSample.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = NativeAOTCodeGeneratorOutputSample.xctestplan; sourceTree = SOURCE_ROOT; };
+		E79B376429E002E700118C35 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		E7C8CF0429C1FA9500C4230F /* SystemGuidTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemGuidTests.swift; sourceTree = "<group>"; };
 		E7C8CF0629C1FABA00C4230F /* SystemStringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemStringTests.swift; sourceTree = "<group>"; };
 		E7C8CF0829C1FB0800C4230F /* SystemDateTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemDateTimeTests.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				E720931F29CE188E0071B5B3 /* NativeBox.swift */,
+				E79B376429E002E700118C35 /* StringExtensions.swift */,
 			);
 			path = SwiftSupport;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				E7F4A49429CB676100D93D81 /* SystemExceptionTests.swift in Sources */,
 				E779630029DC171E00E1E70B /* SystemRuntimeInteropServicesMarshalTests.swift in Sources */,
 				E7C8CF0529C1FA9500C4230F /* SystemGuidTests.swift in Sources */,
+				E79B376529E002E700118C35 /* StringExtensions.swift in Sources */,
 				E7ED7A1829D35DF4008C96E0 /* SystemVersionTests.swift in Sources */,
 				E7C8CF0929C1FB0800C4230F /* SystemDateTimeTests.swift in Sources */,
 				E7ED7A1A29D445C8008C96E0 /* SystemActionTests.swift in Sources */,
