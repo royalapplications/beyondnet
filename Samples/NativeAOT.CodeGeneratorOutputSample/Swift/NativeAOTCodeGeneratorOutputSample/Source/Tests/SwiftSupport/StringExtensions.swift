@@ -13,16 +13,22 @@ public extension String {
 	
 	init?(dotNETString: System_String_t?,
 		  destroyDotNETString: Bool) {
+		guard let dotNETString else {
+			return nil
+		}
+		
+		defer {
+			if destroyDotNETString {
+				System_String_Destroy(dotNETString)
+			}
+		}
+		
 		guard let cString = DNStringToC(dotNETString) else {
 			return nil
 		}
 		
 		defer {
 			cString.deallocate()
-			
-			if destroyDotNETString {
-				System_String_Destroy(dotNETString)
-			}
 		}
 		
 		self.init(cString: cString)
