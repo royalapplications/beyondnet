@@ -4,7 +4,7 @@ public class Person
 {
     #region Constants
     public const int AGE_WHEN_BORN = 0;
-    public static int DEFAULT_AGE = AGE_WHEN_BORN;
+    public const int DEFAULT_AGE = AGE_WHEN_BORN;
     #endregion Constants
 
     #region Properties
