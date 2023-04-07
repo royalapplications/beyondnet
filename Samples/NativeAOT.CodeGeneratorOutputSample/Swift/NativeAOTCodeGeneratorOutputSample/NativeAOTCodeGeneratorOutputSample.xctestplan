@@ -22,10 +22,8 @@
     {
       "skippedTests" : [
         "PersonTests\/testPersonAddress()",
-        "PersonTests\/testPersonChangeAge()",
         "PersonTests\/testPersonChildrenArrayChange()",
-        "PersonTests\/testPersonEvents()",
-        "PersonTests\/testPersonExtensionMethods()"
+        "PersonTests\/testPersonEvents()"
       ],
       "target" : {
         "containerPath" : "container:NativeAOTCodeGeneratorOutputSample.xcodeproj",
