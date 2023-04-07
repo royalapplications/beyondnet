@@ -2,6 +2,14 @@ import XCTest
 import NativeAOTCodeGeneratorOutputSample
 
 final class PersonTests: XCTestCase {
+	override class func setUp() {
+		Self.gcCollect()
+	}
+	
+	override class func tearDown() {
+		Self.gcCollect()
+	}
+	
     func testPerson() {
         let firstName = "John"
 		let firstNameDN = firstName.dotNETString()

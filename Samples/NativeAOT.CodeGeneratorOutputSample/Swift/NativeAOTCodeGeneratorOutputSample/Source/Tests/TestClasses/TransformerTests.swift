@@ -2,6 +2,14 @@ import XCTest
 import NativeAOTCodeGeneratorOutputSample
 
 final class TransformerTests: XCTestCase {
+	override class func setUp() {
+		Self.gcCollect()
+	}
+	
+	override class func tearDown() {
+		Self.gcCollect()
+	}
+	
 	func testStringTransformer() {
 		var exception: System_Exception_t?
 		

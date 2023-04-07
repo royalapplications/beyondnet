@@ -2,6 +2,14 @@ import XCTest
 import NativeAOTCodeGeneratorOutputSample
 
 final class SystemStringTests: XCTestCase {
+	override class func setUp() {
+		Self.gcCollect()
+	}
+	
+	override class func tearDown() {
+		Self.gcCollect()
+	}
+	
     func testString() {
         var exception: System_Exception_t?
         

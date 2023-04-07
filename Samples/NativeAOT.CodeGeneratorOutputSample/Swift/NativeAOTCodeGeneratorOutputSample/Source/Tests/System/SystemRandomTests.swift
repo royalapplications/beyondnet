@@ -2,6 +2,14 @@ import XCTest
 import NativeAOTCodeGeneratorOutputSample
 
 final class SystemRandomTests: XCTestCase {
+	override class func setUp() {
+		Self.gcCollect()
+	}
+	
+	override class func tearDown() {
+		Self.gcCollect()
+	}
+	
 	func testRandom() {
 		var exception: System_Exception_t?
 		

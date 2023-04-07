@@ -2,6 +2,14 @@ import XCTest
 import NativeAOTCodeGeneratorOutputSample
 
 final class SystemThreadingTasksTests: XCTestCase {
+	override class func setUp() {
+		Self.gcCollect()
+	}
+	
+	override class func tearDown() {
+		Self.gcCollect()
+	}
+	
 	private class System_Action_Swift {
 		let actionFunction: () -> Void
 		let destructorFunction: () -> Void
