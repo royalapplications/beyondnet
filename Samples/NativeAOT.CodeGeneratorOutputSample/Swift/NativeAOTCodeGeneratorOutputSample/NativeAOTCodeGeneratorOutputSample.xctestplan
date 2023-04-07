@@ -12,7 +12,8 @@
     "addressSanitizer" : {
       "enabled" : true
     },
-    "codeCoverage" : false
+    "codeCoverage" : false,
+    "testExecutionOrdering" : "random"
   },
   "testTargets" : [
     {

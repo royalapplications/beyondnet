@@ -144,48 +144,6 @@ final class TestClassesTests: XCTestCase {
         }
         
         XCTAssertEqual(expectedResult, result)
-        
-		// Disabled for now because it raises a signal on x64 which halts tests. The tests actually succeed but block until telling the debugger to continue so it's kinda annoying.
-//        let divNumber1: Int32 = 85
-//        let divNumber2: Int32 = 0
-//
-//        _ = NativeAOT_CodeGeneratorInputSample_TestClass_Divide(testClass,
-//                                                                divNumber1,
-//                                                                divNumber2,
-//                                                                &exception)
-//
-//        guard exception != nil else {
-//            XCTFail("Divide should throw but did not")
-//
-//            return
-//        }
-//
-//        var exception2: System_Exception_t?
-//
-//        let exceptionAsStringC = System_Exception_ToString(exception,
-//                                                           &exception2)
-//
-//        guard exception2 == nil else {
-//            XCTFail("System_Exception_ToString should not throw")
-//
-//            return
-//        }
-//
-//        guard let exceptionAsStringC else {
-//            XCTFail("System_Exception_ToString should return an instance of a string")
-//
-//            return
-//        }
-//
-//        let exceptionAsString = String(cString: exceptionAsStringC)
-//
-//        exceptionAsStringC.deallocate()
-//
-//        guard exceptionAsString.contains("DivideByZeroException") else {
-//            XCTFail("Exception string should contain \"DivideByZeroException\"")
-//
-//            return
-//        }
     }
     
     func testEnum() {

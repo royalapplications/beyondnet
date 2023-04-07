@@ -468,13 +468,23 @@ final class PersonTests: XCTestCase {
 			return 10
 		}
 		
-		let context = malloc(10)
+		let swiftyContext = "Blah"
+		let contextBox = NativeBox(swiftyContext)
+		let context = contextBox.retainedPointer()
 		
-		defer { free(context) }
+		let destructorFunction: NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CDestructorFunction_t = { innerContext in
+			guard let innerContext else {
+				XCTFail("No context")
+				
+				return
+			}
+			
+			NativeBox<String>.release(innerContext)
+		}
 		
 		guard let newAgeProviderDelegate = NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Create(context,
 																												   newAgeProviderFunction,
-																												   nil) else {
+																												   destructorFunction) else {
 			XCTFail("Person.NewAgeProviderDelegate ctor should return an instance")
 			
 			return
@@ -501,7 +511,7 @@ final class PersonTests: XCTestCase {
 		XCTAssertNotNil(retrievedCFunction)
 		
 		let retrievedCDestructorFunction = NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CDestructorFunction_Get(newAgeProviderDelegate)
-		XCTAssertNil(retrievedCDestructorFunction)
+		XCTAssertNotNil(retrievedCDestructorFunction)
 	}
 	
 	func testPersonAddress() {
