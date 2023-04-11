@@ -4,12 +4,12 @@ import NativeAOTCodeGeneratorOutputSample
 final class SystemActionTests: XCTestCase {
 	@MainActor
 	override class func setUp() {
-		Self.gcCollect()
+		Self.sharedSetUp()
 	}
 	
 	@MainActor
 	override class func tearDown() {
-		Self.gcCollect()
+		Self.sharedTearDown()
 	}
 	
     class Context {

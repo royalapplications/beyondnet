@@ -11,4 +11,14 @@ extension XCTestCase {
 		
 		XCTAssertNil(exception)
 	}
+	
+	@MainActor
+	class func sharedSetUp() {
+		gcCollect()
+	}
+	
+	@MainActor
+	class func sharedTearDown() {
+		gcCollect()
+	}
 }

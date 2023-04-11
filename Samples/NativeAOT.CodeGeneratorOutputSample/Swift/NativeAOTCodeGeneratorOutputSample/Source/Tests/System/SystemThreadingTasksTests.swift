@@ -5,12 +5,12 @@ import NativeAOTCodeGeneratorOutputSample
 final class SystemThreadingTasksTests: XCTestCase {
 	@MainActor
 	override class func setUp() {
-		Self.gcCollect()
+		Self.sharedSetUp()
 	}
 	
 	@MainActor
 	override class func tearDown() {
-		Self.gcCollect()
+		Self.sharedTearDown()
 	}
 	
 	private class System_Action_Swift {

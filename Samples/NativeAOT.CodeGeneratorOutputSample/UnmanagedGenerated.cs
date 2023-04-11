@@ -151,6 +151,74 @@ internal static unsafe class InteropUtils
     }
     #endregion Handle Address/GCHandle <-> Object Conversion
 
+    #region Type Conversion
+    [UnmanagedCallersOnly(EntryPoint = "DNObjectCastTo")]
+    internal static void* /* System.Object */ DNObjectCastTo(void* /* System.Object */ @object, void* /* System.Type */ type, void** /* out System.Exception */ outException)
+    {
+        System.Object objectConverted = InteropUtils.GetInstance<System.Object>(@object);
+        System.Type typeConverted = InteropUtils.GetInstance<System.Type>(type);
+    
+        try {
+	        System.Type currentType = objectConverted.GetType();
+	        bool isValidCast = currentType.IsAssignableTo(typeConverted);
+
+	        if (!isValidCast) {
+		        throw new InvalidCastException();
+	        }
+    
+            if (outException is not null) {
+                *outException = null;
+            }
+    
+            return objectConverted.AllocateGCHandleAndGetAddress();
+        } catch (Exception exception) {
+            if (outException is not null) {
+                void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
+                    
+                *outException = exceptionHandleAddress;
+            }
+    
+            return null;
+        }
+    }
+
+    [UnmanagedCallersOnly(EntryPoint = "DNObjectCastAs")]
+    internal static void* /* System.Object */ DNObjectCastAs(void* /* System.Object */ @object, void* /* System.Type */ type)
+    {
+        System.Object objectConverted = InteropUtils.GetInstance<System.Object>(@object);
+        System.Type typeConverted = InteropUtils.GetInstance<System.Type>(type);
+    
+        try {
+	        System.Type currentType = objectConverted.GetType();
+	        bool isValidCast = currentType.IsAssignableTo(typeConverted);
+
+	        if (!isValidCast) {
+		        return null;
+	        }
+    
+            return objectConverted.AllocateGCHandleAndGetAddress();
+        } catch {
+            return null;
+        }
+    }
+
+    [UnmanagedCallersOnly(EntryPoint = "DNObjectIs")]
+    internal static byte DNObjectIs(void* /* System.Object */ @object, void* /* System.Type */ type)
+    {
+        System.Object objectConverted = InteropUtils.GetInstance<System.Object>(@object);
+        System.Type typeConverted = InteropUtils.GetInstance<System.Type>(type);
+    
+        try {
+	        System.Type currentType = objectConverted.GetType();
+	        bool isValidCast = currentType.IsAssignableTo(typeConverted);
+
+            return isValidCast.ToCBool();
+        } catch {
+            return false.ToCBool();
+        }
+    }
+    #endregion Type Conversion
+
     #region Strings
     /// <summary>
     /// This allocates a native char* and copies the contents of the managed string into it.
