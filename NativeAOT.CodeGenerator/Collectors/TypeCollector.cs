@@ -330,24 +330,6 @@ public class TypeCollector
             unsupportedReason = "Is Generic Type Definition";
             return false;
         }
-
-        // TODO: Generics
-        #region Comment out to enable generic methods
-        // if (type.IsGenericParameter) {
-        //     unsupportedReason = "Is Generic Parameter";
-        //     return false;
-        // }
-        //
-        // if (type.IsGenericMethodParameter) {
-        //     unsupportedReason = "Is Generic Method Parameter";
-        //     return false;
-        // }
-        //
-        // if (type.IsGenericTypeParameter) {
-        //     unsupportedReason = "Is Generic Type Parameter";
-        //     return false;
-        // }
-        #endregion
         
         if (type.IsPointer) {
             unsupportedReason = "Is Managed Pointer Type";
