@@ -34096,14 +34096,14 @@ NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate_Destroy(
 #pragma mark - END APIs
 
 #pragma mark - BEGIN Utils
+CString
+DNStringToC(System_String_t systemString);
+
+System_String_t
+DNStringFromC(CString cString);
+
 System_Object_t
 DNObjectCastTo(System_Object_t object, System_Type_t type, System_Exception_t* outException);
-
-int32_t
-DNObjectCastToInt32(System_Object_t object, System_Exception_t* outException);
-
-System_Object_t
-DNObjectFromInt32(int32_t number);
 
 System_Object_t
 DNObjectCastAs(System_Object_t object, System_Type_t type);
@@ -34111,11 +34111,41 @@ DNObjectCastAs(System_Object_t object, System_Type_t type);
 bool
 DNObjectIs(System_Object_t object, System_Type_t type);
 
-CString
-DNStringToC(System_String_t systemString);
+int8_t
+DNObjectCastToInt8(System_Object_t object, System_Exception_t* outException);
 
-System_String_t
-DNStringFromC(CString cString);
+System_Object_t
+DNObjectFromInt8(int8_t number);
+
+uint8_t
+DNObjectCastToUInt8(System_Object_t object, System_Exception_t* outException);
+
+System_Object_t
+DNObjectFromUInt8(uint8_t number);
+
+int16_t
+DNObjectCastToInt16(System_Object_t object, System_Exception_t* outException);
+
+System_Object_t
+DNObjectFromInt16(int16_t number);
+
+uint16_t
+DNObjectCastToUInt16(System_Object_t object, System_Exception_t* outException);
+
+System_Object_t
+DNObjectFromUInt16(uint16_t number);
+
+int32_t
+DNObjectCastToInt32(System_Object_t object, System_Exception_t* outException);
+
+System_Object_t
+DNObjectFromInt32(int32_t number);
+
+uint32_t
+DNObjectCastToUInt32(System_Object_t object, System_Exception_t* outException);
+
+System_Object_t
+DNObjectFromUInt32(uint32_t number);
 
 #pragma mark - END Utils
 

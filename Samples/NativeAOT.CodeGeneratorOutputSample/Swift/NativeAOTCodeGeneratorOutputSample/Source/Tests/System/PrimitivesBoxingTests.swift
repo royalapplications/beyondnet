@@ -12,14 +12,46 @@ final class PrimitivesBoxingTests: XCTestCase {
 		Self.sharedTearDown()
 	}
 	
+	func testInt8() {
+		boxAndUnbox(number: -123 as Int8,
+					expectedTypeName: "System.SByte",
+					boxFunc: { DNObjectFromInt8($0) },
+					unboxFunc: { DNObjectCastToInt8($0, &$1) })
+	}
+	
+	func testUInt8() {
+		boxAndUnbox(number: 123 as UInt8,
+					expectedTypeName: "System.Byte",
+					boxFunc: { DNObjectFromUInt8($0) },
+					unboxFunc: { DNObjectCastToUInt8($0, &$1) })
+	}
+	
+	func testInt16() {
+		boxAndUnbox(number: -1234 as Int16,
+					expectedTypeName: "System.Int16",
+					boxFunc: { DNObjectFromInt16($0) },
+					unboxFunc: { DNObjectCastToInt16($0, &$1) })
+	}
+	
+	func testUInt16() {
+		boxAndUnbox(number: 1234 as UInt16,
+					expectedTypeName: "System.UInt16",
+					boxFunc: { DNObjectFromUInt16($0) },
+					unboxFunc: { DNObjectCastToUInt16($0, &$1) })
+	}
+	
 	func testInt32() {
-		boxAndUnbox(number: 1234 as Int32,
+		boxAndUnbox(number: -123456789 as Int32,
 					expectedTypeName: "System.Int32",
-					boxFunc: { input in
-			DNObjectFromInt32(input)
-		}, unboxFunc: { input, exception in
-			DNObjectCastToInt32(input, &exception)
-		})
+					boxFunc: { DNObjectFromInt32($0) },
+					unboxFunc: { DNObjectCastToInt32($0, &$1) })
+	}
+	
+	func testUInt32() {
+		boxAndUnbox(number: 123456789 as UInt32,
+					expectedTypeName: "System.UInt32",
+					boxFunc: { DNObjectFromUInt32($0) },
+					unboxFunc: { DNObjectCastToUInt32($0, &$1) })
 	}
 }
 
@@ -79,5 +111,7 @@ private extension PrimitivesBoxingTests {
 		
 		XCTAssertNotNil(exception)
 		System_Exception_Destroy(exception)
+		
+		// TODO: Stuff into array and retrieve it again
 	}
 }

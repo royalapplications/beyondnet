@@ -219,38 +219,6 @@ internal static unsafe class InteropUtils
     }
     #endregion Type Conversion
 
-    #region Boxing/Unboxing of primitives
-    [UnmanagedCallersOnly(EntryPoint = "DNObjectCastToInt32")]
-    internal static Int32 DNObjectCastToInt32(void* /* System.Object */ @object, void** /* out System.Exception */ outException)
-    {
-        System.Object objectConverted = InteropUtils.GetInstance<System.Object>(@object);
-    
-        try {
-	        Int32 returnValue = (Int32)objectConverted;
-    
-            if (outException is not null) {
-                *outException = null;
-            }
-    
-            return returnValue;
-        } catch (Exception exception) {
-            if (outException is not null) {
-                void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
-                    
-                *outException = exceptionHandleAddress;
-            }
-    
-            return default(Int32);
-        }
-    }
-
-    [UnmanagedCallersOnly(EntryPoint = "DNObjectFromInt32")]
-    internal static void* /* System.Object */ DNObjectFromInt32(Int32 number)
-    {
-        return ((System.Object)number).AllocateGCHandleAndGetAddress();
-    }
-    #endregion Boxing/Unboxing of primitives
-
     #region Strings
     /// <summary>
     /// This allocates a native char* and copies the contents of the managed string into it.
@@ -311,6 +279,201 @@ internal static unsafe class InteropUtils
         return cBool == 1;
     }
     #endregion Bools
+
+    #region Boxing/Unboxing of primitives
+    
+    #region Int8
+    [UnmanagedCallersOnly(EntryPoint = "DNObjectCastToInt8")]
+    internal static sbyte DNObjectCastToInt8(void* /* System.Object */ @object, void** /* out System.Exception */ outException)
+    {
+        System.Object objectConverted = InteropUtils.GetInstance<System.Object>(@object);
+    
+        try {
+            sbyte returnValue = (sbyte)objectConverted;
+    
+            if (outException is not null) {
+                *outException = null;
+            }
+    
+            return returnValue;
+        } catch (Exception exception) {
+            if (outException is not null) {
+                void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
+                    
+                *outException = exceptionHandleAddress;
+            }
+    
+            return default(sbyte);
+        }
+    }
+    
+    [UnmanagedCallersOnly(EntryPoint = "DNObjectFromInt8")]
+    internal static void* /* System.Object */ DNObjectFromInt8(sbyte number)
+    {
+        return ((System.Object)number).AllocateGCHandleAndGetAddress();
+    }
+    #endregion Int8
+    
+    #region UInt8
+    [UnmanagedCallersOnly(EntryPoint = "DNObjectCastToUInt8")]
+    internal static byte DNObjectCastToUInt8(void* /* System.Object */ @object, void** /* out System.Exception */ outException)
+    {
+        System.Object objectConverted = InteropUtils.GetInstance<System.Object>(@object);
+    
+        try {
+            byte returnValue = (byte)objectConverted;
+    
+            if (outException is not null) {
+                *outException = null;
+            }
+    
+            return returnValue;
+        } catch (Exception exception) {
+            if (outException is not null) {
+                void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
+                    
+                *outException = exceptionHandleAddress;
+            }
+    
+            return default(byte);
+        }
+    }
+    
+    [UnmanagedCallersOnly(EntryPoint = "DNObjectFromUInt8")]
+    internal static void* /* System.Object */ DNObjectFromUInt8(byte number)
+    {
+        return ((System.Object)number).AllocateGCHandleAndGetAddress();
+    }
+    #endregion UInt8
+
+    #region Int16
+    [UnmanagedCallersOnly(EntryPoint = "DNObjectCastToInt16")]
+    internal static Int16 DNObjectCastToInt16(void* /* System.Object */ @object, void** /* out System.Exception */ outException)
+    {
+        System.Object objectConverted = InteropUtils.GetInstance<System.Object>(@object);
+    
+        try {
+            Int16 returnValue = (Int16)objectConverted;
+    
+            if (outException is not null) {
+                *outException = null;
+            }
+    
+            return returnValue;
+        } catch (Exception exception) {
+            if (outException is not null) {
+                void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
+                    
+                *outException = exceptionHandleAddress;
+            }
+    
+            return default(Int16);
+        }
+    }
+    
+    [UnmanagedCallersOnly(EntryPoint = "DNObjectFromInt16")]
+    internal static void* /* System.Object */ DNObjectFromInt16(Int16 number)
+    {
+        return ((System.Object)number).AllocateGCHandleAndGetAddress();
+    }
+    #endregion Int16
+    
+    #region UInt16
+    [UnmanagedCallersOnly(EntryPoint = "DNObjectCastToUInt16")]
+    internal static UInt16 DNObjectCastToUInt16(void* /* System.Object */ @object, void** /* out System.Exception */ outException)
+    {
+        System.Object objectConverted = InteropUtils.GetInstance<System.Object>(@object);
+    
+        try {
+            UInt16 returnValue = (UInt16)objectConverted;
+    
+            if (outException is not null) {
+                *outException = null;
+            }
+    
+            return returnValue;
+        } catch (Exception exception) {
+            if (outException is not null) {
+                void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
+                    
+                *outException = exceptionHandleAddress;
+            }
+    
+            return default(UInt16);
+        }
+    }
+    
+    [UnmanagedCallersOnly(EntryPoint = "DNObjectFromUInt16")]
+    internal static void* /* System.Object */ DNObjectFromUInt16(UInt16 number)
+    {
+        return ((System.Object)number).AllocateGCHandleAndGetAddress();
+    }
+    #endregion UInt16
+
+    #region Int32
+    [UnmanagedCallersOnly(EntryPoint = "DNObjectCastToInt32")]
+    internal static Int32 DNObjectCastToInt32(void* /* System.Object */ @object, void** /* out System.Exception */ outException)
+    {
+        System.Object objectConverted = InteropUtils.GetInstance<System.Object>(@object);
+    
+        try {
+	        Int32 returnValue = (Int32)objectConverted;
+    
+            if (outException is not null) {
+                *outException = null;
+            }
+    
+            return returnValue;
+        } catch (Exception exception) {
+            if (outException is not null) {
+                void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
+                    
+                *outException = exceptionHandleAddress;
+            }
+    
+            return default(Int32);
+        }
+    }
+
+    [UnmanagedCallersOnly(EntryPoint = "DNObjectFromInt32")]
+    internal static void* /* System.Object */ DNObjectFromInt32(Int32 number)
+    {
+        return ((System.Object)number).AllocateGCHandleAndGetAddress();
+    }
+    #endregion Int32
+    
+    #region UInt32
+    [UnmanagedCallersOnly(EntryPoint = "DNObjectCastToUInt32")]
+    internal static UInt32 DNObjectCastToUInt32(void* /* System.Object */ @object, void** /* out System.Exception */ outException)
+    {
+        System.Object objectConverted = InteropUtils.GetInstance<System.Object>(@object);
+    
+        try {
+	        UInt32 returnValue = (UInt32)objectConverted;
+    
+            if (outException is not null) {
+                *outException = null;
+            }
+    
+            return returnValue;
+        } catch (Exception exception) {
+            if (outException is not null) {
+                void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
+                    
+                *outException = exceptionHandleAddress;
+            }
+    
+            return default(UInt32);
+        }
+    }
+
+    [UnmanagedCallersOnly(EntryPoint = "DNObjectFromUInt32")]
+    internal static void* /* System.Object */ DNObjectFromUInt32(UInt32 number)
+    {
+        return ((System.Object)number).AllocateGCHandleAndGetAddress();
+    }
+    #endregion UInt32
+    #endregion Boxing/Unboxing of primitives
 }
 
 // </Shared Code>
