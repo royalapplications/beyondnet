@@ -17,6 +17,11 @@ final class PrimitivesBoxingTests: XCTestCase {
 					expectedTypeName: "System.Boolean",
 					boxFunc: { DNObjectFromBool($0) },
 					unboxFunc: { DNObjectCastToBool($0, &$1) })
+		
+		boxAndUnbox(value: false,
+					expectedTypeName: "System.Boolean",
+					boxFunc: { DNObjectFromBool($0) },
+					unboxFunc: { DNObjectCastToBool($0, &$1) })
 	}
 	
 	func testFloat() {
