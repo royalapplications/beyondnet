@@ -22,17 +22,18 @@ public class CCodeGenerator: ICodeGenerator
     )
     {
         SourceCodeSection headerSection = writer.AddSection("Header");
-        SourceCodeSection sharedCodeSection = writer.AddSection("Shared Code");
+        SourceCodeSection commonTypesSection = writer.AddSection("Common Types");
         SourceCodeSection unsupportedTypesSection = writer.AddSection("Unsupported Types");
         SourceCodeSection typedefsSection = writer.AddSection("Type Definitions");
         SourceCodeSection apisSection = writer.AddSection("APIs");
+        SourceCodeSection utilsSection = writer.AddSection("Utils");
         SourceCodeSection footerSection = writer.AddSection("Footer");
         
         string header = GetHeaderCode();
         headerSection.Code.AppendLine(header);
 
-        string sharedCode = GetSharedCode();
-        sharedCodeSection.Code.AppendLine(sharedCode);
+        string commonTypes = GetCommonTypesCode();
+        commonTypesSection.Code.AppendLine(commonTypes);
 
         if (Settings.EmitUnsupported) {
             foreach (var kvp in unsupportedTypes) {
@@ -69,6 +70,9 @@ public class CCodeGenerator: ICodeGenerator
                 state.GeneratedMembers
             );
         }
+        
+        string utilsCode = GetUtilsCode();
+        utilsSection.Code.AppendLine(utilsCode);
 
         string footerCode = GetFooterCode();
         footerSection.Code.AppendLine(footerCode);
@@ -87,28 +91,24 @@ public class CCodeGenerator: ICodeGenerator
 """;
     }
 
-    private string GetSharedCode()
+    private string GetCommonTypesCode()
     {
-        return """
-#pragma mark - BEGIN Common Types
-
-typedef const char* CString;
-
-#pragma mark - END Common Types
-""";
+        return "typedef const char* CString;";
     }
 
-    private string GetFooterCode()
+    private string GetUtilsCode()
     {
         return """
-
 CString
 DNStringToC(System_String_t systemString);
 
 System_String_t
 DNStringFromC(CString cString);
+""";
+    }
 
-#endif /* TypeDefinitions_h */
-""";        
+    private string GetFooterCode()
+    {
+        return "#endif /* TypeDefinitions_h */";
     }
 }

@@ -240,6 +240,7 @@ internal class CodeGeneratorDriver
             sb.AppendLine($"#pragma mark - BEGIN {section.Name}");
             sb.AppendLine(section.Code.ToString());
             sb.AppendLine($"#pragma mark - END {section.Name}");
+            sb.AppendLine();
         }
 
         return new(result, sb.ToString());

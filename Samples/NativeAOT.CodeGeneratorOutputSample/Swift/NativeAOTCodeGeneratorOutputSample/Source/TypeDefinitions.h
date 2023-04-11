@@ -9,18 +9,17 @@
 #import <stdbool.h>
 
 #pragma mark - END Header
-#pragma mark - BEGIN Shared Code
-#pragma mark - BEGIN Common Types
 
+#pragma mark - BEGIN Common Types
 typedef const char* CString;
 
 #pragma mark - END Common Types
 
-#pragma mark - END Shared Code
 #pragma mark - BEGIN Unsupported Types
 // Omitted due to settings
 
 #pragma mark - END Unsupported Types
+
 #pragma mark - BEGIN Type Definitions
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_Reflection_MemberTypes_Constructor = 1,
@@ -1761,6 +1760,7 @@ typedef System_String_t (*NativeAOT_CodeGeneratorInputSample_Transformer_StringG
 
 
 #pragma mark - END Type Definitions
+
 #pragma mark - BEGIN APIs
 #pragma mark - BEGIN APIs of System.Reflection.MemberTypes
 System_Type_t /* System.Type */
@@ -34028,14 +34028,18 @@ NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate_Destroy(
 
 
 #pragma mark - END APIs
-#pragma mark - BEGIN Footer
 
+#pragma mark - BEGIN Utils
 CString
 DNStringToC(System_String_t systemString);
 
 System_String_t
 DNStringFromC(CString cString);
 
+#pragma mark - END Utils
+
+#pragma mark - BEGIN Footer
 #endif /* TypeDefinitions_h */
 
 #pragma mark - END Footer
+
