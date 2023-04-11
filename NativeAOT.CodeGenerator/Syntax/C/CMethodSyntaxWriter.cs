@@ -77,12 +77,18 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
                         methodBase.ContainsGenericParameters;
 
             if (isGeneric) {
-                genericArguments = methodBase.GetGenericArguments();
+                try {
+                    genericArguments = methodBase.GetGenericArguments();
+                } catch {
+                    genericArguments = Array.Empty<Type>();
+                }
+                
                 numberOfGenericArguments = genericArguments.Length;
             }
         }
 
         if (isGeneric &&
+            !declaringType.IsGenericType &&
             (genericArguments == null || numberOfGenericArguments <= 0)) {
             throw new Exception("Generic Method without generic arguments");
         }

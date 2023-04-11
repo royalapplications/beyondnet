@@ -321,16 +321,16 @@ public class TypeCollector
             return false;
         }
         
-        if (type.IsConstructedGenericType) {
-            unsupportedReason = "Is Constructed Generic Type";
-            return false;
-        }
-        
         if (type.IsGenericTypeDefinition) {
             unsupportedReason = "Is Generic Type Definition";
             return false;
         }
         
+        if (type.IsConstructedGenericType) {
+            unsupportedReason = "Is Constructed Generic Type";
+            return false;
+        }
+
         if (type.IsPointer) {
             unsupportedReason = "Is Managed Pointer Type";
             return false;

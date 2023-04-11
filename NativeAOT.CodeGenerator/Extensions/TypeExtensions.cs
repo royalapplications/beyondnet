@@ -20,7 +20,8 @@ internal static class TypeExtensions
         string name = type.FullName ?? type.Name;
 
         // TODO: Is this correct? Why is there even a "+" in some types (ie. System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable+ConfiguredValueTaskAwaiter)
-        name = name.Replace("+", ".");
+        name = name
+            .Replace("+", ".");
         
         return name;
     }

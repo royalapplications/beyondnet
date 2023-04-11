@@ -79,12 +79,18 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                         methodBase.ContainsGenericParameters;
 
             if (isGeneric) {
-                genericArguments = methodBase.GetGenericArguments();
+                try {
+                    genericArguments = methodBase.GetGenericArguments();
+                } catch {
+                    genericArguments = Array.Empty<Type>();
+                }
+                
                 numberOfGenericArguments = genericArguments.Length;
             }
         }
 
         if (isGeneric &&
+            !declaringType.IsGenericType &&
             (genericArguments == null || numberOfGenericArguments <= 0)) {
             throw new Exception("Generic Method without generic arguments");
         }
@@ -110,7 +116,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
         string methodNameWithGenericArity = methodName;
 
-        if (isGeneric) {
+        if (isGeneric &&
+            genericArguments.Length > 0) {
             methodNameWithGenericArity = methodName + "_A" + numberOfGenericArguments;
         }
         
