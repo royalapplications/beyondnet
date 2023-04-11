@@ -211,12 +211,6 @@ public class TypeCollector
     {
         Type returnType = methodInfo.ReturnType;
 
-        // if (returnType.IsByRef) {
-        //     unsupportedTypes[returnType] = "Is by ref return type";
-        //
-        //     return;
-        // }
-
         CollectType(returnType, collectedTypes, unsupportedTypes);
         
         var parameterInfos = methodInfo.GetParameters();

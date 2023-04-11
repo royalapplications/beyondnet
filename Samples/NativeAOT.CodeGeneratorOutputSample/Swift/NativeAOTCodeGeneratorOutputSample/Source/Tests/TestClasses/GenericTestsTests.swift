@@ -12,7 +12,7 @@ final class GenericTestsTests: XCTestCase {
 		Self.sharedTearDown()
 	}
 	
-	func testGenericMethodCallWithReferenceType() {
+	func testReturnGenericTypeWithReferenceType() {
 		var exception: System_Exception_t?
 		
 		guard let genericType = System_String_TypeOf() else {
@@ -44,7 +44,7 @@ final class GenericTestsTests: XCTestCase {
 	// Currently, value types as generic parameters aren't supported through reflection when compiling with NativeAOT
 	// It's possible to specifically include these types with a Rd.xml
 	// https://github.com/dotnet/runtime/blob/main/src/coreclr/nativeaot/docs/rd-xml-format.md
-	func testGenericMethodCallWithValueType() {
+	func testReturnGenericTypeWithValueType() {
 		var exception: System_Exception_t?
 		
 		guard let genericType = System_Guid_TypeOf() else {
@@ -68,7 +68,83 @@ final class GenericTestsTests: XCTestCase {
 		}
 	}
 	
-	func testGenericMethodCallWithMultipleGenericParameters() {
+	func testReturnGenericTypeAsOutParameter() {
+		var exception: System_Exception_t?
+		
+		guard let genericType = System_String_TypeOf() else {
+			XCTFail("typeof(System.String) should return an instance")
+			
+			return
+		}
+		
+		defer { System_Type_Destroy(genericType) }
+		
+		var typeRet: System_Type_t?
+		
+		NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnGenericTypeAsOutParameter_A1(genericType,
+																						   &typeRet,
+																						   &exception)
+		
+		guard exception == nil,
+			  let typeRet else {
+			XCTFail("ReturnGenericTypeAsOutParameter<System.String> should not throw and return an instance as out parameter")
+			
+			return
+		}
+		
+		defer { System_Type_Destroy(typeRet) }
+		
+		let typesEqual = System_Object_Equals(genericType,
+											  typeRet,
+											  &exception)
+		
+		XCTAssertNil(exception)
+		XCTAssertTrue(typesEqual)
+	}
+	
+	func testReturnGenericTypeAsRefParameter() {
+		var exception: System_Exception_t?
+		
+		guard let genericType = System_String_TypeOf() else {
+			XCTFail("typeof(System.String) should return an instance")
+			
+			return
+		}
+		
+		defer { System_Type_Destroy(genericType) }
+		
+		let systemObjectType = System_Object_TypeOf()
+		
+		defer {
+			if let systemObjectType {
+				System_Type_Destroy(systemObjectType)
+			}
+		}
+		
+		var typeRet = systemObjectType
+		
+		NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnGenericTypeAsRefParameter_A1(genericType,
+																						   &typeRet,
+																						   &exception)
+		
+		guard exception == nil,
+			  let typeRet else {
+			XCTFail("ReturnGenericTypeAsRefParameter<System.String> should not throw and return an instance as ref parameter")
+			
+			return
+		}
+		
+		defer { System_Type_Destroy(typeRet) }
+		
+		let typesEqual = System_Object_Equals(genericType,
+											  typeRet,
+											  &exception)
+		
+		XCTAssertNil(exception)
+		XCTAssertTrue(typesEqual)
+	}
+	
+	func testReturnGenericTypes() {
 		var exception: System_Exception_t?
 		
 		guard let genericType1 = System_String_TypeOf() else {

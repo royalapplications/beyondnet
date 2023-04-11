@@ -1,5 +1,5 @@
 // Number of generated types: 661
-// Number of generated members: 4147
+// Number of generated members: 4151
 
 // <Header>
 using System;
@@ -7503,9 +7503,106 @@ internal unsafe class System_Enum
 	}
 	
 
-	// TODO: Generic Methods with out parameters are not supported
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_TryParse_A1")]
+	internal static byte /* System.Boolean */ System_Enum_TryParse_A1(void* /* System.Type */ TEnum, void* /* System.String */ value, void** /* TEnum */ result, void** /* System.Exception */ __outException)
+	{
+		System.Type TEnumConverted = InteropUtils.GetInstance<System.Type>(TEnum);
+		System.String valueConverted = InteropUtils.GetInstance<System.String>(value);
+		System.Object resultConverted = default(System.Object);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Enum);
+			System.String __nameOfMethodForGenericCall = nameof(System.Enum.TryParse);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { valueConverted, resultConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.String), System.Type.MakeGenericMethodParameter(0) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TEnumConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method TryParse not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Boolean __returnValue = (System.Boolean)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			resultConverted = (System.Object)__parametersForGenericCall[0];
+	
+			if (result is not null) {
+				*result = resultConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
+	
+			return 0;
+		}
+	}
+	
 
-	// TODO: Generic Methods with out parameters are not supported
+	[UnmanagedCallersOnly(EntryPoint = "System_Enum_TryParse_A1_1")]
+	internal static byte /* System.Boolean */ System_Enum_TryParse_A1_1(void* /* System.Type */ TEnum, void* /* System.String */ value, byte /* System.Boolean */ ignoreCase, void** /* TEnum */ result, void** /* System.Exception */ __outException)
+	{
+		System.Type TEnumConverted = InteropUtils.GetInstance<System.Type>(TEnum);
+		System.String valueConverted = InteropUtils.GetInstance<System.String>(value);
+		System.Boolean ignoreCaseConverted = ignoreCase.ToBool();
+		System.Object resultConverted = default(System.Object);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Enum);
+			System.String __nameOfMethodForGenericCall = nameof(System.Enum.TryParse);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { valueConverted, ignoreCaseConverted, resultConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.String), typeof(System.Boolean), System.Type.MakeGenericMethodParameter(0) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TEnumConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method TryParse not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Boolean __returnValue = (System.Boolean)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			resultConverted = (System.Object)__parametersForGenericCall[0];
+	
+			if (result is not null) {
+				*result = resultConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
+	
+			return 0;
+		}
+	}
+	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Enum_Equals")]
 	internal static byte /* System.Boolean */ System_Enum_Equals(void* /* System.Enum */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
@@ -14375,7 +14472,7 @@ internal unsafe class System_Array
 	}
 	
 
-	// TODO: Generic Methods with ref parameters are not supported
+	// TODO: Generic Methods with out/ref parameters that are arrays are not supported
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Array_CreateInstance")]
 	internal static void* /* System.Array */ System_Array_CreateInstance(void* /* System.Type */ elementType, int /* System.Int32 */ length, void** /* System.Exception */ __outException)
@@ -113749,6 +113846,101 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_GenericTests
 	        }
 	
 			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnGenericTypeAsOutParameter_A1")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnGenericTypeAsOutParameter_A1(void* /* System.Type */ T, void** /* System.Type */ typeOfT, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Type typeOfTConverted = default(System.Type);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(NativeAOT.CodeGeneratorInputSample.GenericTests);
+			System.String __nameOfMethodForGenericCall = nameof(NativeAOT.CodeGeneratorInputSample.GenericTests.ReturnGenericTypeAsOutParameter);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { typeOfTConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.Type).MakeByRefType() };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method ReturnGenericTypeAsOutParameter not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			typeOfTConverted = (System.Type)__parametersForGenericCall[0];
+	
+			if (typeOfT is not null) {
+				*typeOfT = typeOfTConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			if (typeOfT is not null) {
+				*typeOfT = null;
+			}
+	
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnGenericTypeAsRefParameter_A1")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnGenericTypeAsRefParameter_A1(void* /* System.Type */ T, void** /* System.Type */ typeOfT, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Type typeOfTConverted;
+	
+		if (typeOfT is not null) {
+			typeOfTConverted = InteropUtils.GetInstance<System.Type>((*typeOfT));
+		} else {
+			typeOfTConverted = default(System.Type);
+		}
+	
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(NativeAOT.CodeGeneratorInputSample.GenericTests);
+			System.String __nameOfMethodForGenericCall = nameof(NativeAOT.CodeGeneratorInputSample.GenericTests.ReturnGenericTypeAsRefParameter);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { typeOfTConverted };
+			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.Type).MakeByRefType() };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method ReturnGenericTypeAsRefParameter not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			typeOfTConverted = (System.Type)__parametersForGenericCall[0];
+	
+			if (typeOfT is not null) {
+				*typeOfT = typeOfTConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
 		}
 	}
 	

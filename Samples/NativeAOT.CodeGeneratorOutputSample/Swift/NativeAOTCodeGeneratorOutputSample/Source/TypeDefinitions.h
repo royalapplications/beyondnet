@@ -1,5 +1,5 @@
 // Number of generated types: 661
-// Number of generated members: 4449
+// Number of generated members: 4453
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -3902,6 +3902,23 @@ System_Enum_TryParse(
 bool /* System.Boolean */
 System_Enum_TryParse_1(
 	System_Type_t /* System.Type */ enumType,
+	System_String_t /* System.String */ value,
+	bool /* System.Boolean */ ignoreCase,
+	System_Object_t* /* System.Object */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Enum_TryParse_A1(
+	System_Type_t /* System.Type */ TEnum,
+	System_String_t /* System.String */ value,
+	System_Object_t* /* System.Object */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Enum_TryParse_A1_1(
+	System_Type_t /* System.Type */ TEnum,
 	System_String_t /* System.String */ value,
 	bool /* System.Boolean */ ignoreCase,
 	System_Object_t* /* System.Object */ result,
@@ -32589,6 +32606,20 @@ NativeAOT_CodeGeneratorInputSample_GenericAnimal_Destroy(
 System_Type_t /* System.Type */
 NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnGenericType_A1(
 	System_Type_t /* System.Type */ T,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnGenericTypeAsOutParameter_A1(
+	System_Type_t /* System.Type */ T,
+	System_Type_t* /* System.Type */ typeOfT,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnGenericTypeAsRefParameter_A1(
+	System_Type_t /* System.Type */ T,
+	System_Type_t* /* System.Type */ typeOfT,
 	System_Exception_t* /* System.Exception */ outException
 );
 

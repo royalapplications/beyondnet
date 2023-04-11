@@ -89,35 +89,17 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
 
         if (isGeneric) {
             foreach (var parameter in parameters) {
-                if (parameter.IsOut) {
-                    return "// TODO: Generic Methods with out parameters are not supported";
-                } else if (parameter.ParameterType.IsByRef) {
-                    return "// TODO: Generic Methods with ref parameters are not supported";
-                } /* else if (parameter.ParameterType.IsArray) {
-                    return "// TODO: Generic Methods with array parameters are not supported";
-                } */
+                bool isOutOrByRef = parameter.IsOut || parameter.ParameterType.IsByRef;
+
+                if (isOutOrByRef) {
+                    Type nonByRefParameterType = parameter.ParameterType.GetNonByRefType();
+
+                    if (nonByRefParameterType.IsArray) {
+                        return "// TODO: Generic Methods with out/ref parameters that are arrays are not supported";    
+                    }
+                }
             }
         }
-        
-        // Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
-        // GeneratedMember cSharpGeneratedMember;
-        //
-        // if (memberInfo is not null) {
-        //     if (memberKind == MemberKind.FieldGetter ||
-        //         memberKind == MemberKind.FieldSetter ||
-        //         memberKind == MemberKind.EventHandlerAdder ||
-        //         memberKind == MemberKind.EventHandlerRemover) {
-        //         cSharpGeneratedMember = cSharpUnmanagedResult.GetGeneratedMember(memberInfo, memberKind) ?? throw new Exception("No C# generated member");
-        //     } else {
-        //         cSharpGeneratedMember = cSharpUnmanagedResult.GetGeneratedMember(memberInfo) ?? throw new Exception("No C# generated member");
-        //     }
-        // } else if (memberKind == MemberKind.Destructor) {
-        //     cSharpGeneratedMember = cSharpUnmanagedResult.GetGeneratedDestructor(declaringType) ?? throw new Exception("No C# generated destructor");
-        // } else if (memberKind == MemberKind.TypeOf) {
-        //     cSharpGeneratedMember = cSharpUnmanagedResult.GetGeneratedTypeOf(declaringType) ?? throw new Exception("No C# generated typeOf");
-        // } else {
-        //     throw new Exception("No C# generated member");
-        // }
         
         string methodNameC = cSharpGeneratedMember.GetGeneratedName(CodeLanguage.CSharpUnmanaged) ?? throw new Exception("No native name");
         
@@ -267,7 +249,16 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             parameterList.Add(parameterString);
         } else {
             foreach (var parameter in parameters) {
+                bool isOutParameter = parameter.IsOut;
+                
                 Type parameterType = parameter.ParameterType;
+                
+                bool isByRefParameter = parameterType.IsByRef;
+
+                if (isByRefParameter) {
+                    parameterType = parameterType.GetNonByRefType();
+                }
+                
                 bool isGenericParameterType = parameterType.IsGenericParameter || parameterType.IsGenericMethodParameter;
                 
                 if (isGenericParameterType) {
@@ -287,13 +278,6 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
                     parameterType = typeof(Array);
                 }
                 
-                bool isByRefParameter = parameterType.IsByRef;
-                bool isOutParameter = parameter.IsOut;
-
-                if (isByRefParameter) {
-                    parameterType = parameterType.GetNonByRefType();
-                }
-
                 TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
                 
                 string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(

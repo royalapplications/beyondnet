@@ -19,6 +19,16 @@ public class GenericTests
         return typeof(T);
     }
     
+    public static void ReturnGenericTypeAsOutParameter<T>(out Type typeOfT)
+    {
+        typeOfT = typeof(T);
+    }
+    
+    public static void ReturnGenericTypeAsRefParameter<T>(ref Type typeOfT)
+    {
+        typeOfT = typeof(T);
+    }
+    
     public static Type[] ReturnGenericTypes<T1, T2>()
     {
         return new [] {
