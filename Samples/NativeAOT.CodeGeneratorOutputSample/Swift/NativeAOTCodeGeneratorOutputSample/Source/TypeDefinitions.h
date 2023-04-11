@@ -34117,6 +34117,18 @@ DNObjectCastToBool(System_Object_t object, System_Exception_t* outException);
 System_Object_t
 DNObjectFromBool(bool value);
 
+float
+DNObjectCastToFloat(System_Object_t object, System_Exception_t* outException);
+
+System_Object_t
+DNObjectFromFloat(float value);
+
+double
+DNObjectCastToDouble(System_Object_t object, System_Exception_t* outException);
+
+System_Object_t
+DNObjectFromDouble(double value);
+
 int8_t
 DNObjectCastToInt8(System_Object_t object, System_Exception_t* outException);
 

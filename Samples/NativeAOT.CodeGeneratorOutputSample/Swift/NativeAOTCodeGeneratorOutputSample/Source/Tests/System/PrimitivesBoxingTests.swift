@@ -19,6 +19,20 @@ final class PrimitivesBoxingTests: XCTestCase {
 					unboxFunc: { DNObjectCastToBool($0, &$1) })
 	}
 	
+	func testFloat() {
+		boxAndUnbox(value: -123.123 as Float,
+					expectedTypeName: "System.Single",
+					boxFunc: { DNObjectFromFloat($0) },
+					unboxFunc: { DNObjectCastToFloat($0, &$1) })
+	}
+	
+	func testDouble() {
+		boxAndUnbox(value: -123456789.123456789 as Double,
+					expectedTypeName: "System.Double",
+					boxFunc: { DNObjectFromDouble($0) },
+					unboxFunc: { DNObjectCastToDouble($0, &$1) })
+	}
+	
 	func testInt8() {
 		boxAndUnbox(value: -123 as Int8,
 					expectedTypeName: "System.SByte",

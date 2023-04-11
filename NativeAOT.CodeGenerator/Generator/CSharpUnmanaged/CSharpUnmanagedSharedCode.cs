@@ -304,6 +304,70 @@ internal static unsafe class InteropUtils
     }
     #endregion Bool
     
+    #region Float
+    [UnmanagedCallersOnly(EntryPoint = "DNObjectCastToFloat")]
+    internal static float DNObjectCastToFloat(void* /* System.Object */ @object, void** /* out System.Exception */ outException)
+    {
+        System.Object objectConverted = InteropUtils.GetInstance<System.Object>(@object);
+    
+        try {
+            float returnValue = (float)objectConverted;
+    
+            if (outException is not null) {
+                *outException = null;
+            }
+    
+            return returnValue;
+        } catch (Exception exception) {
+            if (outException is not null) {
+                void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
+                    
+                *outException = exceptionHandleAddress;
+            }
+    
+            return default(float);
+        }
+    }
+    
+    [UnmanagedCallersOnly(EntryPoint = "DNObjectFromFloat")]
+    internal static void* /* System.Object */ DNObjectFromFloat(float number)
+    {
+        return ((System.Object)number).AllocateGCHandleAndGetAddress();
+    }
+    #endregion Float
+
+    #region Double
+    [UnmanagedCallersOnly(EntryPoint = "DNObjectCastToDouble")]
+    internal static double DNObjectCastToDouble(void* /* System.Object */ @object, void** /* out System.Exception */ outException)
+    {
+        System.Object objectConverted = InteropUtils.GetInstance<System.Object>(@object);
+    
+        try {
+            double returnValue = (double)objectConverted;
+    
+            if (outException is not null) {
+                *outException = null;
+            }
+    
+            return returnValue;
+        } catch (Exception exception) {
+            if (outException is not null) {
+                void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
+                    
+                *outException = exceptionHandleAddress;
+            }
+    
+            return default(double);
+        }
+    }
+    
+    [UnmanagedCallersOnly(EntryPoint = "DNObjectFromDouble")]
+    internal static void* /* System.Object */ DNObjectFromDouble(double number)
+    {
+        return ((System.Object)number).AllocateGCHandleAndGetAddress();
+    }
+    #endregion Double
+
     #region Int8
     [UnmanagedCallersOnly(EntryPoint = "DNObjectCastToInt8")]
     internal static sbyte DNObjectCastToInt8(void* /* System.Object */ @object, void** /* out System.Exception */ outException)
