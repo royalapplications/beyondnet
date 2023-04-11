@@ -316,6 +316,7 @@ public class TypeCollector
             return false;
         }
 
+        #region Generic Types
         if (type.IsGenericType) {
             unsupportedReason = "Is Generic Type";
             return false;
@@ -325,7 +326,9 @@ public class TypeCollector
             unsupportedReason = "Is Generic Type Definition";
             return false;
         }
+        #endregion Generic Types
         
+        // TODO: Not sure what that is
         if (type.IsConstructedGenericType) {
             unsupportedReason = "Is Constructed Generic Type";
             return false;

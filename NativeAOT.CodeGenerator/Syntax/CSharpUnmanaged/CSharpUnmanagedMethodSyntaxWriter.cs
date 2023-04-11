@@ -110,9 +110,9 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 }
             }
         }
-        
+
         string fullTypeName = declaringType.GetFullNameOrName();
-        string fullTypeNameC = fullTypeName.CTypeName();
+        string fullTypeNameC = declaringType.CTypeName();
 
         string methodNameWithGenericArity = methodName;
 

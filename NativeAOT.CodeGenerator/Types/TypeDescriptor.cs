@@ -164,19 +164,19 @@ public class TypeDescriptor
                     return ManagedType.GetFullNameOrName();
                 }
             case CodeLanguage.C:
-                string typeName = ManagedType.GetFullNameOrName();
-                string cTypeName;
+                string cTypeName = ManagedType.CTypeName();
+                string constructedCTypeName;
                 
                 if (IsReferenceType ||
                     IsStruct) {
-                    cTypeName = $"{typeName.CTypeName()}_t";    
+                    constructedCTypeName = $"{cTypeName}_t";    
                 } else if (IsEnum) {
-                    cTypeName = typeName.CTypeName();
+                    constructedCTypeName = cTypeName;
                 } else {
                     throw new Exception("Unknown kind of type");
                 }
 
-                return cTypeName;
+                return constructedCTypeName;
             default:
                 throw new NotImplementedException();
         }
@@ -219,8 +219,7 @@ public class TypeDescriptor
             string conversion;
 
             if (ManagedType.IsDelegate()) {
-                string fullTypeName = ManagedType.GetFullNameOrName();
-                string cTypeName = fullTypeName.CTypeName();
+                string cTypeName = ManagedType.CTypeName();
 
                 conversion = "InteropUtils.GetInstance<" + cTypeName + ">({0})?.Trampoline";
             } else {
@@ -233,8 +232,7 @@ public class TypeDescriptor
             string conversion;
 
             if (ManagedType.IsDelegate()) {
-                string fullTypeName = ManagedType.GetFullNameOrName();
-                string cTypeName = fullTypeName.CTypeName();
+                string cTypeName = ManagedType.CTypeName();
                 
                 conversion = $"new {cTypeName}({{0}}).AllocateGCHandleAndGetAddress()";
             } else {

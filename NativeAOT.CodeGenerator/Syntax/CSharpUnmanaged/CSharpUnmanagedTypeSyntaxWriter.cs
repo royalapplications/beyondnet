@@ -49,7 +49,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWrit
             return $"// Type \"{type.Name}\" was skipped. Reason: It has no full name.";
         }
         
-        string cTypeName = fullTypeName.CTypeName();
+        string cTypeName = type.CTypeName();
 
         bool isDelegate = type.IsDelegate();
         

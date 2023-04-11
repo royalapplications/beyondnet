@@ -25,6 +25,36 @@ internal static class TypeExtensions
         
         return name;
     }
+    
+    internal static string CTypeName(this Type type)
+    {
+        string fullTypeName = type.GetFullNameOrName();
+
+        string cTypeName = fullTypeName
+            .Replace(".", "_")
+            .Replace("+", "_")
+            .Replace("&", string.Empty)
+            .Replace("[]", "_Array");
+
+        bool isGeneric = type.IsGenericType ||
+                         type.IsGenericTypeDefinition;
+
+        if (isGeneric) {
+            int backtickIndex = cTypeName.IndexOf('`');
+
+            if (backtickIndex <= 0) {
+                throw new Exception($"A generic type \"{fullTypeName}\" without a backtick in its name is weird");
+            }
+
+            cTypeName = cTypeName.Substring(0, backtickIndex);
+        
+            int genericArgsCount = type.GetGenericArguments().Length;
+
+            cTypeName += "_A" + genericArgsCount;
+        }
+
+        return cTypeName;
+    }
 
     internal static bool IsReferenceType(this Type type)
     {

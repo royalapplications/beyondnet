@@ -52,7 +52,7 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
             return $"// Type \"{type.Name}\" was skipped. Reason: It has no full name.";
         }
         
-        string cTypeName = fullTypeName.CTypeName();
+        string cTypeName = type.CTypeName();
 
         StringBuilder sb = new();
 
@@ -94,8 +94,13 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
     {
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
-        string fullTypeName = delegateType.GetFullNameOrName();
-        string cTypeName = fullTypeName.CTypeName();
+        string? fullTypeName = delegateType.FullName;
+
+        if (fullTypeName == null) {
+            return $"// Type \"{delegateType.Name}\" was skipped. Reason: It has no full name.";
+        }
+        
+        string cTypeName = delegateType.CTypeName();
         
         Type returnType = delegateInvokeMethod?.ReturnType ?? typeof(void);
         var parameterInfos = delegateInvokeMethod?.GetParameters() ?? Array.Empty<ParameterInfo>();
@@ -237,7 +242,7 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         if (isDelegate) {
             TypeDescriptor typeDescriptor = type.GetTypeDescriptor(typeDescriptorRegistry);
             string cTypeName =  typeDescriptor.GetTypeName(CodeLanguage.C, false);
-            string cMemberNamePrefix = fullTypeName.CTypeName();
+            string cMemberNamePrefix = type.CTypeName();
             
             WriteDelegateTypeMembers(
                 typeDescriptor,
