@@ -219,6 +219,33 @@ internal static unsafe class InteropUtils
     }
     #endregion Handle Address/GCHandle <-> Object Conversion
 
+    #region Type Conversion
+    [UnmanagedCallersOnly(EntryPoint = "DNObjectCastTo")]
+    internal static void* /* System.Object */ DNObjectCastTo(void* /* System.Object */ @object, void* /* System.Type */ type, void** /* out System.Exception */ outException)
+    {
+        System.Object objectConverted = InteropUtils.GetInstance<System.Object>(@object);
+        System.Type typeConverted = InteropUtils.GetInstance<System.Type>(type);
+    
+        try {
+            // TODO
+    
+            if (outException is not null) {
+                *outException = null;
+            }
+    
+            return returnValueNative;
+        } catch (Exception exception) {
+            if (outException is not null) {
+                void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
+                    
+                *outException = exceptionHandleAddress;
+            }
+    
+            return null;
+        }
+    }
+    #endregion Type Conversion
+
     #region Strings
     /// <summary>
     /// This allocates a native char* and copies the contents of the managed string into it.
