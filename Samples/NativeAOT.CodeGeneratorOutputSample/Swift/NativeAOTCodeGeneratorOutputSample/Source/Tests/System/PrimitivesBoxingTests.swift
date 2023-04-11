@@ -97,6 +97,18 @@ private extension PrimitivesBoxingTests {
 						unboxFunc: (_ input: System_Object_t, inout System_Exception_t?) -> T?) where T: Equatable {
 		var exception: System_Exception_t?
 		
+		let valueTypeName = expectedTypeName.dotNETString()
+		
+		defer { System_String_Destroy(valueTypeName) }
+		
+		guard let valueType = System_Type_GetType_2(valueTypeName,
+													&exception),
+			  exception == nil else {
+			XCTFail("System.Type.GetType should not throw and return an instance")
+			
+			return
+		}
+		
 		guard let valueObject = boxFunc(value) else {
 			XCTFail("Should return an instance")
 			
@@ -147,6 +159,48 @@ private extension PrimitivesBoxingTests {
 		XCTAssertNotNil(exception)
 		System_Exception_Destroy(exception)
 		
-		// TODO: Stuff into array and retrieve it again
+		let arrayLength: Int32 = 1
+		
+		guard let array = System_Array_CreateInstance(valueType,
+													  arrayLength,
+													  &exception),
+			  exception == nil else {
+			XCTFail("System.Array.CreateInstance should not throw and return an instance")
+			
+			return
+		}
+		
+		defer { System_Array_Destroy(array) }
+		
+		System_Array_SetValue_4(array,
+								valueObject,
+								0,
+								&exception)
+		
+		XCTAssertNil(exception)
+		
+		guard let valueObjectRetFromArray = System_Array_GetValue_1(array,
+																	0,
+																	&exception),
+			  exception == nil else {
+			XCTFail("System.Array.GetValue should not throw and return an instance")
+			
+			return
+		}
+		
+		defer { System_Object_Destroy(valueObjectRetFromArray) }
+		
+		let equal = System_Object_Equals(valueObject,
+										 valueObjectRetFromArray,
+										 &exception)
+		
+		XCTAssertNil(exception)
+		XCTAssertTrue(equal)
+		
+		let valueRetFromArray = unboxFunc(valueObjectRetFromArray,
+										  &exception)
+		
+		XCTAssertNil(exception)
+		XCTAssertEqual(value, valueRetFromArray)
 	}
 }
