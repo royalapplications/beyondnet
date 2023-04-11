@@ -281,6 +281,37 @@ internal static unsafe class InteropUtils
     #endregion Bools
 
     #region Boxing/Unboxing of primitives
+    #region Bool
+    [UnmanagedCallersOnly(EntryPoint = "DNObjectCastToBool")]
+    internal static byte DNObjectCastToBool(void* /* System.Object */ @object, void** /* out System.Exception */ outException)
+    {
+        System.Object objectConverted = InteropUtils.GetInstance<System.Object>(@object);
+    
+        try {
+            bool returnValue = (bool)objectConverted;
+    
+            if (outException is not null) {
+                *outException = null;
+            }
+    
+            return returnValue.ToCBool();
+        } catch (Exception exception) {
+            if (outException is not null) {
+                void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
+                    
+                *outException = exceptionHandleAddress;
+            }
+    
+            return default(bool).ToCBool();
+        }
+    }
+    
+    [UnmanagedCallersOnly(EntryPoint = "DNObjectFromBool")]
+    internal static void* /* System.Object */ DNObjectFromBool(byte value)
+    {
+        return ((System.Object)value.ToBool()).AllocateGCHandleAndGetAddress();
+    }
+    #endregion Bool
     
     #region Int8
     [UnmanagedCallersOnly(EntryPoint = "DNObjectCastToInt8")]
@@ -473,6 +504,70 @@ internal static unsafe class InteropUtils
         return ((System.Object)number).AllocateGCHandleAndGetAddress();
     }
     #endregion UInt32
+
+    #region Int64
+    [UnmanagedCallersOnly(EntryPoint = "DNObjectCastToInt64")]
+    internal static Int64 DNObjectCastToInt64(void* /* System.Object */ @object, void** /* out System.Exception */ outException)
+    {
+        System.Object objectConverted = InteropUtils.GetInstance<System.Object>(@object);
+    
+        try {
+            Int64 returnValue = (Int64)objectConverted;
+    
+            if (outException is not null) {
+                *outException = null;
+            }
+    
+            return returnValue;
+        } catch (Exception exception) {
+            if (outException is not null) {
+                void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
+                    
+                *outException = exceptionHandleAddress;
+            }
+    
+            return default(Int64);
+        }
+    }
+
+    [UnmanagedCallersOnly(EntryPoint = "DNObjectFromInt64")]
+    internal static void* /* System.Object */ DNObjectFromInt64(Int64 number)
+    {
+        return ((System.Object)number).AllocateGCHandleAndGetAddress();
+    }
+    #endregion Int64
+    
+    #region UInt64
+    [UnmanagedCallersOnly(EntryPoint = "DNObjectCastToUInt64")]
+    internal static UInt64 DNObjectCastToUInt64(void* /* System.Object */ @object, void** /* out System.Exception */ outException)
+    {
+        System.Object objectConverted = InteropUtils.GetInstance<System.Object>(@object);
+    
+        try {
+            UInt64 returnValue = (UInt64)objectConverted;
+    
+            if (outException is not null) {
+                *outException = null;
+            }
+    
+            return returnValue;
+        } catch (Exception exception) {
+            if (outException is not null) {
+                void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
+                    
+                *outException = exceptionHandleAddress;
+            }
+    
+            return default(UInt64);
+        }
+    }
+
+    [UnmanagedCallersOnly(EntryPoint = "DNObjectFromUInt64")]
+    internal static void* /* System.Object */ DNObjectFromUInt64(UInt64 number)
+    {
+        return ((System.Object)number).AllocateGCHandleAndGetAddress();
+    }
+    #endregion UInt64
     #endregion Boxing/Unboxing of primitives
 }
 

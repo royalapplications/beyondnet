@@ -114,6 +114,12 @@ DNObjectCastAs(System_Object_t object, System_Type_t type);
 bool
 DNObjectIs(System_Object_t object, System_Type_t type);
 
+bool
+DNObjectCastToBool(System_Object_t object, System_Exception_t* outException);
+
+System_Object_t
+DNObjectFromBool(bool value);
+
 int8_t
 DNObjectCastToInt8(System_Object_t object, System_Exception_t* outException);
 
@@ -149,6 +155,18 @@ DNObjectCastToUInt32(System_Object_t object, System_Exception_t* outException);
 
 System_Object_t
 DNObjectFromUInt32(uint32_t number);
+
+int64_t
+DNObjectCastToInt64(System_Object_t object, System_Exception_t* outException);
+
+System_Object_t
+DNObjectFromInt64(int64_t number);
+
+uint64_t
+DNObjectCastToUInt64(System_Object_t object, System_Exception_t* outException);
+
+System_Object_t
+DNObjectFromUInt64(uint64_t number);
 """;
     }
 
