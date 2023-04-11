@@ -14,6 +14,8 @@ public class TypeCollector
         typeof(System.String),
         typeof(System.Runtime.InteropServices.Marshal),
         typeof(System.Exception),
+        typeof(System.NullReferenceException),
+        typeof(System.AggregateException),
         typeof(System.Boolean),
         typeof(System.Char),
         typeof(System.Double),

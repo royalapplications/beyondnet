@@ -1,5 +1,5 @@
-// Number of generated types: 659
-// Number of generated members: 4137
+// Number of generated types: 661
+// Number of generated members: 4147
 
 // <Header>
 using System;
@@ -72813,6 +72813,208 @@ internal unsafe class System_Runtime_InteropServices_CustomQueryInterfaceMode
 // Type "T" was skipped. Reason: It has no full name.
 
 // Type "T" was skipped. Reason: It has no full name.
+
+internal unsafe class System_NullReferenceException
+{
+	[UnmanagedCallersOnly(EntryPoint = "System_NullReferenceException_Create")]
+	internal static void* /* System.NullReferenceException */ System_NullReferenceException_Create(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.NullReferenceException __returnValue = new System.NullReferenceException();
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_NullReferenceException_Create_1")]
+	internal static void* /* System.NullReferenceException */ System_NullReferenceException_Create_1(void* /* System.String */ message, void** /* System.Exception */ __outException)
+	{
+		System.String messageConverted = InteropUtils.GetInstance<System.String>(message);
+	
+	    try {
+			System.NullReferenceException __returnValue = new System.NullReferenceException(messageConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_NullReferenceException_Create_2")]
+	internal static void* /* System.NullReferenceException */ System_NullReferenceException_Create_2(void* /* System.String */ message, void* /* System.Exception */ innerException, void** /* System.Exception */ __outException)
+	{
+		System.String messageConverted = InteropUtils.GetInstance<System.String>(message);
+		System.Exception innerExceptionConverted = InteropUtils.GetInstance<System.Exception>(innerException);
+	
+	    try {
+			System.NullReferenceException __returnValue = new System.NullReferenceException(messageConverted, innerExceptionConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_NullReferenceException_TypeOf")]
+	internal static void* /* System.Type */ System_NullReferenceException_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.NullReferenceException);
+		void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return __returnValueNative;
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_NullReferenceException_Destroy")]
+	internal static void /* System.Void */ System_NullReferenceException_Destroy(void* /* System.NullReferenceException */ __self)
+	{
+	
+		InteropUtils.CheckedFreeIfAllocated<System.NullReferenceException>(__self);
+	}
+	
+
+}
+
+
+internal unsafe class System_SystemException
+{
+	[UnmanagedCallersOnly(EntryPoint = "System_SystemException_Create")]
+	internal static void* /* System.SystemException */ System_SystemException_Create(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.SystemException __returnValue = new System.SystemException();
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_SystemException_Create_1")]
+	internal static void* /* System.SystemException */ System_SystemException_Create_1(void* /* System.String */ message, void** /* System.Exception */ __outException)
+	{
+		System.String messageConverted = InteropUtils.GetInstance<System.String>(message);
+	
+	    try {
+			System.SystemException __returnValue = new System.SystemException(messageConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_SystemException_Create_2")]
+	internal static void* /* System.SystemException */ System_SystemException_Create_2(void* /* System.String */ message, void* /* System.Exception */ innerException, void** /* System.Exception */ __outException)
+	{
+		System.String messageConverted = InteropUtils.GetInstance<System.String>(message);
+		System.Exception innerExceptionConverted = InteropUtils.GetInstance<System.Exception>(innerException);
+	
+	    try {
+			System.SystemException __returnValue = new System.SystemException(messageConverted, innerExceptionConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_SystemException_TypeOf")]
+	internal static void* /* System.Type */ System_SystemException_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.SystemException);
+		void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return __returnValueNative;
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_SystemException_Destroy")]
+	internal static void /* System.Void */ System_SystemException_Destroy(void* /* System.SystemException */ __self)
+	{
+	
+		InteropUtils.CheckedFreeIfAllocated<System.SystemException>(__self);
+	}
+	
+
+}
+
 
 
 

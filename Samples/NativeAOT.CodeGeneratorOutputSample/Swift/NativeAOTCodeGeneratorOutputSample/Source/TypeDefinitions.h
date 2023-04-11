@@ -1,5 +1,5 @@
-// Number of generated types: 659
-// Number of generated members: 4439
+// Number of generated types: 661
+// Number of generated members: 4449
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -1364,6 +1364,10 @@ typedef void* System_Security_SecureString_t;
 // Type "T" was skipped. Reason: It has no full name.
 // Type "T[]" was skipped. Reason: It has no full name.
 // Type "T" was skipped. Reason: It has no full name.
+
+typedef void* System_NullReferenceException_t;
+
+typedef void* System_SystemException_t;
 
 
 
@@ -22004,6 +22008,68 @@ System_Security_SecureString_Destroy(
 
 
 
+#pragma mark - BEGIN APIs of System.NullReferenceException
+System_NullReferenceException_t /* System.NullReferenceException */
+System_NullReferenceException_Create(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_NullReferenceException_t /* System.NullReferenceException */
+System_NullReferenceException_Create_1(
+	System_String_t /* System.String */ message,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_NullReferenceException_t /* System.NullReferenceException */
+System_NullReferenceException_Create_2(
+	System_String_t /* System.String */ message,
+	System_Exception_t /* System.Exception */ innerException,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_t /* System.Type */
+System_NullReferenceException_TypeOf(
+	
+);
+
+void /* System.Void */
+System_NullReferenceException_Destroy(
+	System_NullReferenceException_t /* System.NullReferenceException */ self
+);
+
+#pragma mark - END APIs of System.NullReferenceException
+
+#pragma mark - BEGIN APIs of System.SystemException
+System_SystemException_t /* System.SystemException */
+System_SystemException_Create(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_SystemException_t /* System.SystemException */
+System_SystemException_Create_1(
+	System_String_t /* System.String */ message,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_SystemException_t /* System.SystemException */
+System_SystemException_Create_2(
+	System_String_t /* System.String */ message,
+	System_Exception_t /* System.Exception */ innerException,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_t /* System.Type */
+System_SystemException_TypeOf(
+	
+);
+
+void /* System.Void */
+System_SystemException_Destroy(
+	System_SystemException_t /* System.SystemException */ self
+);
+
+#pragma mark - END APIs of System.SystemException
+
 
 
 
@@ -34033,11 +34099,13 @@ NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate_Destroy(
 System_Object_t
 DNObjectCastTo(System_Object_t object, System_Type_t type, System_Exception_t* outException);
 
-int32_t
-DNObjectCastToInt32(System_Object_t object, System_Exception_t* outException);
+// TODO
+// int32_t
+// DNObjectCastToInt32(System_Object_t object, System_Exception_t* outException);
 
-System_Object_t
-DNObjectFromInt32(int32_t number);
+// TODO
+// System_Object_t
+// DNObjectFromInt32(int32_t number);
 
 System_Object_t
 DNObjectCastAs(System_Object_t object, System_Type_t type);
