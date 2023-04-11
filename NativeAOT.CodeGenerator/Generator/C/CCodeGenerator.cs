@@ -102,19 +102,17 @@ public class CCodeGenerator: ICodeGenerator
 System_Object_t
 DNObjectCastTo(System_Object_t object, System_Type_t type, System_Exception_t* outException);
 
-// TODO
-// int32_t
-// DNObjectCastToInt32(System_Object_t object, System_Exception_t* outException);
-
-// TODO
-// System_Object_t
-// DNObjectFromInt32(int32_t number);
-
 System_Object_t
 DNObjectCastAs(System_Object_t object, System_Type_t type);
 
 bool
 DNObjectIs(System_Object_t object, System_Type_t type);
+
+int32_t
+DNObjectCastToInt32(System_Object_t object, System_Exception_t* outException);
+
+System_Object_t
+DNObjectFromInt32(int32_t number);
 
 CString
 DNStringToC(System_String_t systemString);

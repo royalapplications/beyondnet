@@ -287,6 +287,38 @@ internal static unsafe class InteropUtils
     }
     #endregion Type Conversion
 
+    #region Boxing/Unboxing of primitives
+    [UnmanagedCallersOnly(EntryPoint = "DNObjectCastToInt32")]
+    internal static Int32 DNObjectCastToInt32(void* /* System.Object */ @object, void** /* out System.Exception */ outException)
+    {
+        System.Object objectConverted = InteropUtils.GetInstance<System.Object>(@object);
+    
+        try {
+	        Int32 returnValue = (Int32)objectConverted;
+    
+            if (outException is not null) {
+                *outException = null;
+            }
+    
+            return returnValue;
+        } catch (Exception exception) {
+            if (outException is not null) {
+                void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
+                    
+                *outException = exceptionHandleAddress;
+            }
+    
+            return default(Int32);
+        }
+    }
+
+    [UnmanagedCallersOnly(EntryPoint = "DNObjectFromInt32")]
+    internal static void* /* System.Object */ DNObjectFromInt32(Int32 number)
+    {
+        return ((System.Object)number).AllocateGCHandleAndGetAddress();
+    }
+    #endregion Boxing/Unboxing of primitives
+
     #region Strings
     /// <summary>
     /// This allocates a native char* and copies the contents of the managed string into it.
