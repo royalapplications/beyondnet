@@ -230,8 +230,10 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
             parameterInfos,
             false,
             Array.Empty<Type>(),
+            Array.Empty<Type>(),
             typeDescriptorRegistry,
             out List<string> convertedParameterNames,
+            out _,
             out _
         );
 
@@ -338,8 +340,10 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
             parameterInfos,
             false,
             Array.Empty<Type>(),
+            Array.Empty<Type>(),
             typeDescriptorRegistry,
             out List<string> convertedParameterNamesForInvocation,
+            out _,
             out _
         );
 

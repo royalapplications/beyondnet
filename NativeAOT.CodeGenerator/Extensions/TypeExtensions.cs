@@ -23,6 +23,34 @@ internal static class TypeExtensions
         name = name
             .Replace("+", ".");
         
+        bool isGeneric = type.IsGenericType ||
+                         type.IsGenericTypeDefinition;
+
+        if (isGeneric) {
+            int backtickIndex = name.IndexOf('`');
+
+            if (backtickIndex <= 0) {
+                throw new Exception($"A generic type \"{name}\" without a backtick in its name");
+            }
+
+            name = name.Substring(0, backtickIndex);
+
+            int numberOfGenericArguments = type.GetGenericArguments()
+                .Length;
+
+            if (numberOfGenericArguments <= 0) {
+                throw new Exception($"A generic type \"{name}\" without generic arguments");
+            }
+
+            name += "<";
+
+            for (int i = 0; i < numberOfGenericArguments; i++) {
+                name += ",";
+            }
+            
+            name += ">";
+        }
+
         return name;
     }
     
@@ -40,16 +68,20 @@ internal static class TypeExtensions
                          type.IsGenericTypeDefinition;
 
         if (isGeneric) {
+            int genericArgsCount = type.GetGenericArguments().Length;
+            
             int backtickIndex = cTypeName.IndexOf('`');
 
-            if (backtickIndex <= 0) {
-                throw new Exception($"A generic type \"{fullTypeName}\" without a backtick in its name is weird");
+            if (backtickIndex > 0) {
+                cTypeName = cTypeName.Substring(0, backtickIndex);
             }
 
-            cTypeName = cTypeName.Substring(0, backtickIndex);
-        
-            int genericArgsCount = type.GetGenericArguments().Length;
+            int lessThanIndex = cTypeName.IndexOf('<');
 
+            if (lessThanIndex > 0) {
+                cTypeName = cTypeName.Substring(0, lessThanIndex);
+            }
+            
             cTypeName += "_A" + genericArgsCount;
         }
 

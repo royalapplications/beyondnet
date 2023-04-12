@@ -68,32 +68,52 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         }
         
         MethodBase? methodBase = memberInfo as MethodBase;
+
+        bool isGenericType = declaringType.IsGenericType ||
+                             declaringType.IsGenericTypeDefinition;
+        
+        Type[] genericTypeArguments = Array.Empty<Type>();
+        int numberOfGenericTypeArguments = 0;
+
+        if (isGenericType) {
+            genericTypeArguments = declaringType.GetGenericArguments();
+            numberOfGenericTypeArguments = genericTypeArguments.Length;
+        }
+        
         bool isGeneric = false;
-        Type[] genericArguments = Array.Empty<Type>();
-        int numberOfGenericArguments = 0;
+        Type[] genericMethodArguments = Array.Empty<Type>();
+        int numberOfGenericMethodArguments = 0;
 
         if (methodBase is not null) {
-            isGeneric = methodBase.IsGenericMethod ||
+            isGeneric = isGenericType ||
+                        methodBase.IsGenericMethod ||
                         methodBase.IsConstructedGenericMethod ||
                         methodBase.IsGenericMethodDefinition ||
                         methodBase.ContainsGenericParameters;
 
             if (isGeneric) {
                 try {
-                    genericArguments = methodBase.GetGenericArguments();
+                    genericMethodArguments = methodBase.GetGenericArguments();
                 } catch {
-                    genericArguments = Array.Empty<Type>();
+                    genericMethodArguments = Array.Empty<Type>();
                 }
                 
-                numberOfGenericArguments = genericArguments.Length;
+                numberOfGenericMethodArguments = genericMethodArguments.Length;
             }
         }
 
         if (isGeneric &&
             !declaringType.IsGenericType &&
-            (genericArguments == null || numberOfGenericArguments <= 0)) {
+            (genericMethodArguments == null || numberOfGenericMethodArguments <= 0)) {
             throw new Exception("Generic Method without generic arguments");
         }
+
+        List<Type> tempCombinedGenericArguments = new();
+        
+        tempCombinedGenericArguments.AddRange(genericTypeArguments);
+        tempCombinedGenericArguments.AddRange(genericMethodArguments);
+
+        Type[] combinedGenericArguments = tempCombinedGenericArguments.ToArray();
 
         if (isGeneric) {
             foreach (var parameter in parameters) {
@@ -117,8 +137,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         string methodNameWithGenericArity = methodName;
 
         if (isGeneric &&
-            genericArguments.Length > 0) {
-            methodNameWithGenericArity = methodName + "_A" + numberOfGenericArguments;
+            genericMethodArguments.Length > 0) {
+            methodNameWithGenericArity = methodName + "_A" + numberOfGenericMethodArguments;
         }
         
         string methodNameC;
@@ -224,7 +244,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             declaringType,
             parameters,
             isGeneric,
-            genericArguments,
+            combinedGenericArguments,
             false,
             typeDescriptorRegistry
         );
@@ -280,10 +300,12 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             CodeLanguage.CSharp,
             parameters,
             isGeneric,
-            genericArguments,
+            genericTypeArguments,
+            genericMethodArguments,
             typeDescriptorRegistry,
             out List<string> convertedParameterNames,
-            out List<string> convertedGenericArgumentNames
+            out List<string> convertedGenericTypeArgumentNames,
+            out List<string> convertedGenericMethodArgumentNames
         );
 
         sb.AppendLine(parameterConversions);
@@ -422,18 +444,28 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
         // Invocation
         if (isGeneric) {
-            string declaringTypeName = declaringType.GetFullNameOrName();
-            
-            sb.AppendLine($"{implPrefix}System.Type __targetTypeForGenericCall = typeof({declaringTypeName});");
-            sb.AppendLine($"{implPrefix}System.String __nameOfMethodForGenericCall = nameof({declaringTypeName}.{methodName});");
-            
-            if (isStaticMethod) {
-                sb.AppendLine($"{implPrefix}System.Object? __methodTargetForGenericCall = null;");
-            } else {
-                sb.AppendLine($"{implPrefix}System.Object? __methodTargetForGenericCall = {convertedSelfParameterName};");
-            }
+            if (memberKind == MemberKind.Constructor) {
+                // TODO
+                
+                string declaringTypeName = declaringType.GetFullNameOrName();
 
-            sb.AppendLine();
+                // var genericTypeArguments = declaringType.GetGenericArguments();
+                
+                sb.AppendLine($"{implPrefix}System.Type __targetTypeForGenericCall = typeof({declaringTypeName});");
+            } else {
+                string declaringTypeName = declaringType.GetFullNameOrName();
+                
+                sb.AppendLine($"{implPrefix}System.Type __targetTypeForGenericCall = typeof({declaringTypeName});");
+                sb.AppendLine($"{implPrefix}System.String __nameOfMethodForGenericCall = nameof({declaringTypeName}.{methodName});");
+                
+                if (isStaticMethod) {
+                    sb.AppendLine($"{implPrefix}System.Object? __methodTargetForGenericCall = null;");
+                } else {
+                    sb.AppendLine($"{implPrefix}System.Object? __methodTargetForGenericCall = {convertedSelfParameterName};");
+                }
+    
+                sb.AppendLine();
+            }
             
             if (convertedParameterNames.Count > 0) {
                 sb.AppendLine($"{implPrefix}System.Object[] __parametersForGenericCall = new System.Object[] {{ {convertedParameterNamesString} }};");
@@ -495,13 +527,13 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
             sb.AppendLine();
 
-            string convertedGenericArgumentNamesString = string.Join(", ", convertedGenericArgumentNames);
+            string convertedGenericArgumentNamesString = string.Join(", ", convertedGenericMethodArgumentNames);
             
             sb.AppendLine($"{implPrefix}System.Type[] __genericParameterTypesForGenericCall = new[] {{ {convertedGenericArgumentNamesString} }};");
 
             sb.AppendLine();
             
-            sb.AppendLine($"{implPrefix}System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, {numberOfGenericArguments}, __parameterTypesForGenericCall) ?? throw new Exception(\"Method {methodName} not found\");");
+            sb.AppendLine($"{implPrefix}System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__nameOfMethodForGenericCall, {numberOfGenericMethodArguments}, __parameterTypesForGenericCall) ?? throw new Exception(\"Method {methodName} not found\");");
             sb.AppendLine($"{implPrefix}System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);");
 
             sb.AppendLine();
@@ -837,16 +869,19 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         CodeLanguage targetLanguage,
         IEnumerable<ParameterInfo> parameters,
         bool isGeneric,
-        IEnumerable<Type> genericArguments,
+        IEnumerable<Type> genericTypeArguments,
+        IEnumerable<Type> genericMethodArguments,
         TypeDescriptorRegistry typeDescriptorRegistry,
         out List<string> convertedParameterNames,
-        out List<string> convertedGenericArgumentNames
+        out List<string> convertedGenericTypeArgumentNames,
+        out List<string> convertedGenericMethodArgumentNames
     )
     {
         StringBuilder sb = new();
         
         convertedParameterNames = new();
-        convertedGenericArgumentNames = new();
+        convertedGenericTypeArgumentNames = new();
+        convertedGenericMethodArgumentNames = new();
 
         if (isGeneric) {
             Type typeOfSystemType = typeof(Type);
@@ -858,7 +893,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 targetLanguage
             )!;
     
-            foreach (var genericArgumentType in genericArguments) {
+            foreach (var genericArgumentType in genericTypeArguments) {
                 string name = genericArgumentType.Name;
                 
                 string convertedGenericArgumentName = $"{name}Converted";
@@ -868,7 +903,20 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
     
                 sb.AppendLine($"\t{typeConversionCode}");
                 
-                convertedGenericArgumentNames.Add(convertedGenericArgumentName);
+                convertedGenericTypeArgumentNames.Add(convertedGenericArgumentName);
+            }
+            
+            foreach (var genericArgumentType in genericMethodArguments) {
+                string name = genericArgumentType.Name;
+                
+                string convertedGenericArgumentName = $"{name}Converted";
+                    
+                string fullTypeConversion = string.Format(systemTypeTypeConversion, name);
+                string typeConversionCode = $"{systemTypeTypeName} {convertedGenericArgumentName} = {fullTypeConversion};";
+    
+                sb.AppendLine($"\t{typeConversionCode}");
+                
+                convertedGenericMethodArgumentNames.Add(convertedGenericArgumentName);
             }
         }
 
