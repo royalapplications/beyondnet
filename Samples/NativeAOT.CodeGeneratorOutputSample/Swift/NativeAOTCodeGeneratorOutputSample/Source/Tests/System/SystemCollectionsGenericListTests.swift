@@ -157,12 +157,12 @@ final class SystemCollectionsGenericListTests: XCTestCase {
 		for string in strings {
 			let stringDN = string.dotNETString()
 			
-			defer { System_String_Destroy(stringDN) }
-			
 			System_Collections_Generic_List_A1_Add(list,
 												   systemStringType,
 												   stringDN,
 												   &exception)
+			
+			System_String_Destroy(stringDN)
 			
 			if let exception,
 			   let exceptionString = String(dotNETString: System_Exception_ToString(exception, nil),
@@ -202,8 +202,6 @@ final class SystemCollectionsGenericListTests: XCTestCase {
 				
 				return
 			}
-			
-			defer { System_Object_Destroy(element) }
 			
 			XCTAssertTrue(DNObjectIs(element, systemStringType))
 			
