@@ -17,6 +17,12 @@ public class GenericTestClass<T>
             typeof(TM)
         };
     }
+
+    public static void JustForTrimmer()
+    {
+        List<string> test = new();
+        test.Add("a");
+    }
 }
 
 public class GenericTestClass<T1, T2>

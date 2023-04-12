@@ -126,4 +126,97 @@ final class SystemCollectionsGenericListTests: XCTestCase {
 		
 		XCTAssertTrue(listTypeName.contains("System.Collections.Generic.List`1[[System.String"))
 	}
+	
+	func testUse() {
+		var exception: System_Exception_t?
+		
+		guard let systemStringType = System_String_TypeOf() else {
+			XCTFail("typeof(System.String) should return an instance")
+			
+			return
+		}
+		
+		defer { System_Type_Destroy(systemStringType) }
+		
+		guard let list = System_Collections_Generic_List_A1_Create(systemStringType,
+																   &exception),
+			  exception == nil else {
+			XCTFail("System.Collections.Generic.List<System.String> ctor should not throw and return an instance")
+			
+			return
+		}
+		
+		defer { System_Collections_Generic_List_A1_Destroy(list) }
+		
+		let strings = [
+			"01. A",
+			"02. B",
+			"03. C"
+		]
+		
+		for string in strings {
+			let stringDN = string.dotNETString()
+			
+			defer { System_String_Destroy(stringDN) }
+			
+			System_Collections_Generic_List_A1_Add(list,
+												   systemStringType,
+												   stringDN,
+												   &exception)
+			
+			if let exception,
+			   let exceptionString = String(dotNETString: System_Exception_ToString(exception, nil),
+											destroyDotNETString: true) {
+				XCTFail("System.Collections.Generic.List<System.String>.Add should not throw: \(exceptionString)")
+				
+				return
+			}
+			
+			XCTAssertNil(exception)
+		}
+		
+		let listCount = System_Collections_Generic_List_A1_Count_Get(list,
+																	 systemStringType,
+																	 &exception)
+		
+		XCTAssertNil(exception)
+		XCTAssertEqual(strings.count, .init(listCount))
+		
+		guard let array = System_Collections_Generic_List_A1_ToArray(list,
+																	 systemStringType,
+																	 &exception),
+			  exception == nil else {
+			XCTFail("System.Collections.Generic.List<System.String>.ToArray should not throw and return an instance")
+			
+			return
+		}
+		
+		defer { System_Array_Destroy(array) }
+		
+		for idx in 0..<listCount {
+			guard let element = System_Array_GetValue_1(array,
+														idx,
+														&exception),
+				  exception == nil else {
+				XCTFail("System.Array.GetValue should not throw and return an instance")
+				
+				return
+			}
+			
+			defer { System_Object_Destroy(element) }
+			
+			XCTAssertTrue(DNObjectIs(element, systemStringType))
+			
+			guard let elementString = String(dotNETString: element,
+											 destroyDotNETString: true) else {
+				XCTFail("Failed to get string")
+				
+				return
+			}
+			
+			let expectedString = strings[.init(idx)]
+			
+			XCTAssertEqual(expectedString, elementString)
+		}
+	}
 }

@@ -64,4 +64,40 @@ final class SystemCollectionsGenericDictionaryTests: XCTestCase {
 		XCTAssertTrue(dictionaryTypeName.contains("System.Collections.Generic.Dictionary`2[[System.String"))
 		XCTAssertTrue(dictionaryTypeName.contains(",[System.Exception"))
 	}
+	
+	// TODO
+//	func testUse() {
+//		var exception: System_Exception_t?
+//
+//		guard let systemStringType = System_String_TypeOf() else {
+//			XCTFail("typeof(System.String) should return an instance")
+//
+//			return
+//		}
+//
+//		defer { System_Type_Destroy(systemStringType) }
+//
+//		guard let systemExceptionType = System_Exception_TypeOf() else {
+//			XCTFail("typeof(System.Exception) should return an instance")
+//
+//			return
+//		}
+//
+//		defer { System_Type_Destroy(systemExceptionType) }
+//
+//		guard let dictionary = System_Collections_Generic_Dictionary_A2_Create(systemStringType,
+//																			   systemExceptionType,
+//																			   &exception),
+//			  exception == nil else {
+//			XCTFail("System.Collections.Generic.Dictionary<System.String, System.Exception> ctor should not throw and return an instance")
+//
+//			return
+//		}
+//
+//		defer { System_Collections_Generic_Dictionary_A2_Destroy(dictionary) }
+//
+//		let stringExceptionMapping: [System_String_t: System_Exception_t] = [
+//
+//		]
+//	}
 }

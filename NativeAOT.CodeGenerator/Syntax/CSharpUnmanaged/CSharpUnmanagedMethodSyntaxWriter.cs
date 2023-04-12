@@ -487,6 +487,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
                 List<string> parameterTypeNames = new();
 
+                int parameterIndex = 0;
+
                 foreach (var parameter in parameters) {
                     Type parameterType = parameter.ParameterType;
 
@@ -496,11 +498,22 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                         parameterType = parameterType.GetNonByRefType();
                     }
 
-                    bool isGenericParameterType = parameterType.IsGenericParameter ||
-                                                  parameterType.IsGenericMethodParameter;
+                    bool isGenericParameter = parameterType.IsGenericParameter;
+                    bool isGenericMethodParameter = parameterType.IsGenericMethodParameter;
+
+                    bool isGenericParameterType = isGenericParameter ||
+                                                  isGenericMethodParameter;
 
                     if (isGenericParameterType) {
-                        string parameterTypeName = $"System.Type.MakeGenericMethodParameter({parameterType.GenericParameterPosition})";
+                        string parameterTypeName;
+                        
+                        if (isGenericMethodParameter) {
+                            parameterTypeName = $"System.Type.MakeGenericMethodParameter({parameterType.GenericParameterPosition})";
+                        } else {
+                            string convertedParameterName = convertedParameterNames[parameterIndex];
+                            
+                            parameterTypeName = $"{convertedParameterName}.GetType()";
+                        }
 
                         parameterTypeNames.Add(parameterTypeName);
                     } else {
@@ -515,6 +528,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
                         if (isGenericArrayParameterType &&
                             arrayType is not null) {
+                            // TODO: This is not correct for type generic parameters
                             string parameterTypeName = $"System.Type.MakeGenericMethodParameter({arrayType.GenericParameterPosition}).MakeArrayType()";
                         
                             parameterTypeNames.Add(parameterTypeName);
@@ -530,6 +544,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                             parameterTypeNames.Add(typeOfCode);
                         }
                     }
+
+                    parameterIndex++;
                 }
 
                 string parameterTypeNamesString = string.Join(", ", parameterTypeNames);
