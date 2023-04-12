@@ -348,7 +348,9 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             bool generateCheckedDestructors = state.Settings?.GenerateTypeCheckedDestroyMethods ?? false;
             
             if (generateCheckedDestructors &&
-                !declaringType.IsAbstract) {
+                !declaringType.IsAbstract &&
+                !declaringType.IsGenericType &&
+                !declaringType.IsGenericTypeDefinition) {
                 string typeName = fullTypeName;
                 
                 if (declaringType.IsDelegate()) {
