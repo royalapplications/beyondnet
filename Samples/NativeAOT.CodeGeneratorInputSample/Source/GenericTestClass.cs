@@ -17,3 +17,25 @@ public class GenericTestClass<T>
         };
     }
 }
+
+public class GenericTestClass<T1, T2>
+{
+    public int AProperty { get; set; } = 0;
+
+    public Type[] ReturnGenericClassTypes()
+    {
+        return new[] {
+            typeof(T1),
+            typeof(T2)
+        };
+    }
+
+    public Type[] ReturnGenericClassTypeAndGenericMethodType<TM>()
+    {
+        return new[] {
+            typeof(T1),
+            typeof(T2),
+            typeof(TM)
+        };
+    }
+}

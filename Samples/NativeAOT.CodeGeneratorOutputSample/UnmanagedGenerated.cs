@@ -1,5 +1,5 @@
-// Number of generated types: 661
-// Number of generated members: 4151
+// Number of generated types: 663
+// Number of generated members: 4159
 
 // <Header>
 using System;
@@ -113804,6 +113804,121 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_GenericAnimal
 	{
 	
 		InteropUtils.CheckedFreeIfAllocated<NativeAOT.CodeGeneratorInputSample.GenericAnimal>(__self);
+	}
+	
+
+}
+
+
+internal unsafe class NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1
+{
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_Create")]
+	internal static void* /* System.Object */ NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_Create(void* /* System.Type */ T, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(NativeAOT.CodeGeneratorInputSample.GenericTestClass<>);
+			System.Object[]? __parametersForGenericCall = null;
+			System.Type[] __parameterTypesForGenericCall = System.Type.EmptyTypes;
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Type __genericTargetType = __targetTypeForGenericCall.MakeGenericType(__genericParameterTypesForGenericCall);
+	
+			System.Object __returnValue = (System.Object)System.Activator.CreateInstance(__genericTargetType, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+	// TODO: Only constructors and destructors of generic types are currently supported
+	
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_Destroy")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.GenericTestClass<> */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+
+}
+
+
+internal unsafe class NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2
+{
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_Create")]
+	internal static void* /* System.Object */ NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_Create(void* /* System.Type */ T1, void* /* System.Type */ T2, void** /* System.Exception */ __outException)
+	{
+		System.Type T1Converted = InteropUtils.GetInstance<System.Type>(T1);
+		System.Type T2Converted = InteropUtils.GetInstance<System.Type>(T2);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(NativeAOT.CodeGeneratorInputSample.GenericTestClass<,>);
+			System.Object[]? __parametersForGenericCall = null;
+			System.Type[] __parameterTypesForGenericCall = System.Type.EmptyTypes;
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { T1Converted, T2Converted };
+	
+			System.Type __genericTargetType = __targetTypeForGenericCall.MakeGenericType(__genericParameterTypesForGenericCall);
+	
+			System.Object __returnValue = (System.Object)System.Activator.CreateInstance(__genericTargetType, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+	// TODO: Only constructors and destructors of generic types are currently supported
+	
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_Destroy")]
+	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.GenericTestClass<,> */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
 	}
 	
 

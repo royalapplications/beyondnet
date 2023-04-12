@@ -1,5 +1,5 @@
-// Number of generated types: 661
-// Number of generated members: 4453
+// Number of generated types: 663
+// Number of generated members: 4457
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -1513,6 +1513,10 @@ typedef void* NativeAOT_CodeGeneratorInputSample_Cat_t;
 typedef void* NativeAOT_CodeGeneratorInputSample_Dog_t;
 
 typedef void* NativeAOT_CodeGeneratorInputSample_GenericAnimal_t;
+
+typedef void* NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_t;
+
+typedef void* NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_t;
 
 typedef void* NativeAOT_CodeGeneratorInputSample_GenericTests_t;
 
@@ -32601,6 +32605,47 @@ NativeAOT_CodeGeneratorInputSample_GenericAnimal_Destroy(
 );
 
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.GenericAnimal
+
+#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.GenericTestClass<>
+System_Object_t /* System.Object */
+NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_Create(
+	System_Type_t /* System.Type */ T,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+// TODO: Only constructors and destructors of generic types are currently supported
+// TODO: Only constructors and destructors of generic types are currently supported
+
+// TODO: Only constructors and destructors of generic types are currently supported
+// TODO: Only constructors and destructors of generic types are currently supported
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_Destroy(
+	NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_t /* NativeAOT.CodeGeneratorInputSample.GenericTestClass<> */ self
+);
+
+#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.GenericTestClass<>
+
+#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.GenericTestClass<,>
+System_Object_t /* System.Object */
+NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_Create(
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+// TODO: Only constructors and destructors of generic types are currently supported
+// TODO: Only constructors and destructors of generic types are currently supported
+
+// TODO: Only constructors and destructors of generic types are currently supported
+// TODO: Only constructors and destructors of generic types are currently supported
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_Destroy(
+	NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_t /* NativeAOT.CodeGeneratorInputSample.GenericTestClass<,> */ self
+);
+
+#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.GenericTestClass<,>
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.GenericTests
 System_Type_t /* System.Type */

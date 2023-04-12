@@ -316,18 +316,6 @@ public class TypeCollector
             return false;
         }
 
-        #region Generic Types
-        if (type.IsGenericType) {
-            unsupportedReason = "Is Generic Type";
-            return false;
-        }
-        
-        if (type.IsGenericTypeDefinition) {
-            unsupportedReason = "Is Generic Type Definition";
-            return false;
-        }
-        #endregion Generic Types
-
         if ((type.IsGenericType || type.IsGenericTypeDefinition) &&
             type.IsDelegate()) {
             unsupportedReason = "Is Generic Delegate Type";

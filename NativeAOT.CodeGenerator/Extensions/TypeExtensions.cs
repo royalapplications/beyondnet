@@ -44,7 +44,7 @@ internal static class TypeExtensions
 
             name += "<";
 
-            for (int i = 0; i < numberOfGenericArguments; i++) {
+            for (int i = 0; i < numberOfGenericArguments - 1; i++) {
                 name += ",";
             }
             

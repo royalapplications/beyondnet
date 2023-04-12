@@ -66,32 +66,57 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         }
         
         MethodBase? methodBase = memberInfo as MethodBase;
+        
+        bool isGenericType = declaringType.IsGenericType ||
+                             declaringType.IsGenericTypeDefinition;
+        
+        Type[] genericTypeArguments = Array.Empty<Type>();
+        int numberOfGenericTypeArguments = 0;
+
+        if (isGenericType) {
+            genericTypeArguments = declaringType.GetGenericArguments();
+            numberOfGenericTypeArguments = genericTypeArguments.Length;
+        }
+        
         bool isGeneric = false;
-        Type[] genericArguments = Array.Empty<Type>();
-        int numberOfGenericArguments = 0;
+        Type[] genericMethodArguments = Array.Empty<Type>();
+        int numberOfGenericMethodArguments = 0;
 
         if (methodBase is not null) {
-            isGeneric = methodBase.IsGenericMethod ||
+            isGeneric = isGenericType ||
+                        methodBase.IsGenericMethod ||
                         methodBase.IsConstructedGenericMethod ||
                         methodBase.IsGenericMethodDefinition ||
                         methodBase.ContainsGenericParameters;
 
             if (isGeneric) {
                 try {
-                    genericArguments = methodBase.GetGenericArguments();
+                    genericMethodArguments = methodBase.GetGenericArguments();
                 } catch {
-                    genericArguments = Array.Empty<Type>();
+                    genericMethodArguments = Array.Empty<Type>();
                 }
                 
-                numberOfGenericArguments = genericArguments.Length;
+                numberOfGenericMethodArguments = genericMethodArguments.Length;
             }
         }
 
+        if (isGenericType &&
+            numberOfGenericTypeArguments <= 0) {
+            throw new Exception("Generic Type without generic arguments");
+        }
+
         if (isGeneric &&
-            !declaringType.IsGenericType &&
-            (genericArguments == null || numberOfGenericArguments <= 0)) {
+            !isGenericType &&
+            numberOfGenericMethodArguments <= 0) {
             throw new Exception("Generic Method without generic arguments");
         }
+        
+        List<Type> tempCombinedGenericArguments = new();
+        
+        tempCombinedGenericArguments.AddRange(genericTypeArguments);
+        tempCombinedGenericArguments.AddRange(genericMethodArguments);
+
+        Type[] combinedGenericArguments = tempCombinedGenericArguments.ToArray();
 
         if (isGeneric) {
             foreach (var parameter in parameters) {
@@ -105,6 +130,15 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
                     }
                 }
             }
+        }
+        
+        bool isSupportedGenericTypeMember = !isGenericType ||
+                                            memberKind == MemberKind.Constructor ||
+                                            memberKind == MemberKind.Destructor;
+
+        if (isGenericType &&
+            !isSupportedGenericTypeMember) {
+            return "// TODO: Only constructors and destructors of generic types are currently supported";
         }
         
         string methodNameC = cSharpGeneratedMember.GetGeneratedName(CodeLanguage.CSharpUnmanaged) ?? throw new Exception("No native name");
@@ -188,7 +222,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             declaringType,
             parameters,
             isGeneric,
-            genericArguments,
+            combinedGenericArguments,
             typeDescriptorRegistry
         );
         
