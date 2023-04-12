@@ -66,7 +66,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         }
         
         MethodBase? methodBase = memberInfo as MethodBase;
-        
+
         bool isGenericType = declaringType.IsGenericType ||
                              declaringType.IsGenericTypeDefinition;
         
@@ -98,6 +98,10 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
                 
                 numberOfGenericMethodArguments = genericMethodArguments.Length;
             }
+        } else if (isGenericType &&
+                   memberKind != MemberKind.Destructor &&
+                   memberKind != MemberKind.TypeOf) {
+            isGeneric = true;
         }
 
         if (isGenericType &&
@@ -130,16 +134,6 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
                     }
                 }
             }
-        }
-        
-        bool isSupportedGenericTypeMember = !isGenericType ||
-                                            memberKind == MemberKind.Constructor ||
-                                            memberKind == MemberKind.Destructor ||
-                                            memberKind == MemberKind.TypeOf;
-
-        if (isGenericType &&
-            !isSupportedGenericTypeMember) {
-            return "// TODO: Only constructors and destructors of generic types are currently supported";
         }
         
         string methodNameC = cSharpGeneratedMember.GetGeneratedName(CodeLanguage.CSharpUnmanaged) ?? throw new Exception("No native name");

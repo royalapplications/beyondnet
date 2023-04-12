@@ -1,5 +1,5 @@
 // Number of generated types: 653
-// Number of generated members: 4467
+// Number of generated members: 4219
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -475,13 +475,13 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_IO_FileOptions_WriteThrough = -2147483648,
 	System_IO_FileOptions_None = 0,
 	System_IO_FileOptions_Encrypted = 16384,
 	System_IO_FileOptions_DeleteOnClose = 67108864,
 	System_IO_FileOptions_SequentialScan = 134217728,
 	System_IO_FileOptions_RandomAccess = 268435456,
-	System_IO_FileOptions_Asynchronous = 1073741824
+	System_IO_FileOptions_Asynchronous = 1073741824,
+	System_IO_FileOptions_WriteThrough = -2147483648
 } System_IO_FileOptions;
 
 
@@ -5373,30 +5373,6 @@ System_Globalization_CultureInfo_CurrentCulture_Set(
 
 
 System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */
-System_Globalization_CultureInfo_CurrentCulture_Get(
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_CultureInfo_CurrentCulture_Set(
-	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */
-System_Globalization_CultureInfo_CurrentUICulture_Get(
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_CultureInfo_CurrentUICulture_Set(
-	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */
 System_Globalization_CultureInfo_CurrentUICulture_Get(
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -5421,30 +5397,6 @@ System_Globalization_CultureInfo_DefaultThreadCurrentCulture_Get(
 
 void /* System.Void */
 System_Globalization_CultureInfo_DefaultThreadCurrentCulture_Set(
-	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */
-System_Globalization_CultureInfo_DefaultThreadCurrentCulture_Get(
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_CultureInfo_DefaultThreadCurrentCulture_Set(
-	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */
-System_Globalization_CultureInfo_DefaultThreadCurrentUICulture_Get(
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_CultureInfo_DefaultThreadCurrentUICulture_Set(
 	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -5587,34 +5539,6 @@ System_Globalization_CultureInfo_NumberFormat_Set(
 );
 
 
-System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */
-System_Globalization_CultureInfo_NumberFormat_Get(
-	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_CultureInfo_NumberFormat_Set(
-	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ self,
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */
-System_Globalization_CultureInfo_DateTimeFormat_Get(
-	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_CultureInfo_DateTimeFormat_Set(
-	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ self,
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
 System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */
 System_Globalization_CultureInfo_DateTimeFormat_Get(
 	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ self,
@@ -5676,24 +5600,6 @@ System_Globalization_CultureInfo_Destroy(
 #pragma mark - END APIs of System.Globalization.CultureInfo[]
 
 #pragma mark - BEGIN APIs of System.Array
-void /* System.Void */
-System_Array_Copy(
-	System_Array_t /* System.Array */ sourceArray,
-	System_Array_t /* System.Array */ destinationArray,
-	int32_t /* System.Int32 */ length,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Array_Copy_1(
-	System_Array_t /* System.Array */ sourceArray,
-	int32_t /* System.Int32 */ sourceIndex,
-	System_Array_t /* System.Array */ destinationArray,
-	int32_t /* System.Int32 */ destinationIndex,
-	int32_t /* System.Int32 */ length,
-	System_Exception_t* /* System.Exception */ outException
-);
-
 void /* System.Void */
 System_Array_ConstrainedCopy(
 	System_Array_t /* System.Array */ sourceArray,
@@ -5792,7 +5698,7 @@ System_Array_CreateInstance_5(
 );
 
 void /* System.Void */
-System_Array_Copy_2(
+System_Array_Copy(
 	System_Array_t /* System.Array */ sourceArray,
 	System_Array_t /* System.Array */ destinationArray,
 	int64_t /* System.Int64 */ length,
@@ -5800,12 +5706,30 @@ System_Array_Copy_2(
 );
 
 void /* System.Void */
-System_Array_Copy_3(
+System_Array_Copy_1(
 	System_Array_t /* System.Array */ sourceArray,
 	int64_t /* System.Int64 */ sourceIndex,
 	System_Array_t /* System.Array */ destinationArray,
 	int64_t /* System.Int64 */ destinationIndex,
 	int64_t /* System.Int64 */ length,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Array_Copy_2(
+	System_Array_t /* System.Array */ sourceArray,
+	System_Array_t /* System.Array */ destinationArray,
+	int32_t /* System.Int32 */ length,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Array_Copy_3(
+	System_Array_t /* System.Array */ sourceArray,
+	int32_t /* System.Int32 */ sourceIndex,
+	System_Array_t /* System.Array */ destinationArray,
+	int32_t /* System.Int32 */ destinationIndex,
+	int32_t /* System.Int32 */ length,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -7570,19 +7494,6 @@ System_Reflection_Assembly_ModuleResolve_Remove(
 );
 
 
-void /* System.Void */
-System_Reflection_Assembly_ModuleResolve_Add(
-	System_Reflection_Assembly_t /* System.Reflection.Assembly */ self,
-	System_Reflection_ModuleResolveEventHandler_t /* System.Reflection.ModuleResolveEventHandler */ value
-);
-
-void /* System.Void */
-System_Reflection_Assembly_ModuleResolve_Remove(
-	System_Reflection_Assembly_t /* System.Reflection.Assembly */ self,
-	System_Reflection_ModuleResolveEventHandler_t /* System.Reflection.ModuleResolveEventHandler */ value
-);
-
-
 System_Type_t /* System.Type */
 System_Reflection_Assembly_TypeOf(
 	
@@ -7687,34 +7598,6 @@ System_Reflection_AssemblyName_Name_Set(
 );
 
 
-System_String_t /* System.String */
-System_Reflection_AssemblyName_Name_Get(
-	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Reflection_AssemblyName_Name_Set(
-	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Version_t /* System.Version */
-System_Reflection_AssemblyName_Version_Get(
-	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Reflection_AssemblyName_Version_Set(
-	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
-	System_Version_t /* System.Version */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
 System_Version_t /* System.Version */
 System_Reflection_AssemblyName_Version_Get(
 	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
@@ -7743,20 +7626,6 @@ System_Reflection_AssemblyName_CultureInfo_Set(
 );
 
 
-System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */
-System_Reflection_AssemblyName_CultureInfo_Get(
-	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Reflection_AssemblyName_CultureInfo_Set(
-	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
-	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
 System_String_t /* System.String */
 System_Reflection_AssemblyName_CultureName_Get(
 	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
@@ -7765,34 +7634,6 @@ System_Reflection_AssemblyName_CultureName_Get(
 
 void /* System.Void */
 System_Reflection_AssemblyName_CultureName_Set(
-	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
-System_Reflection_AssemblyName_CultureName_Get(
-	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Reflection_AssemblyName_CultureName_Set(
-	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
-System_Reflection_AssemblyName_CodeBase_Get(
-	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Reflection_AssemblyName_CodeBase_Set(
 	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
 	System_String_t /* System.String */ value,
 	System_Exception_t* /* System.Exception */ outException
@@ -7834,20 +7675,6 @@ System_Reflection_AssemblyName_ProcessorArchitecture_Set(
 );
 
 
-System_Reflection_ProcessorArchitecture /* System.Reflection.ProcessorArchitecture */
-System_Reflection_AssemblyName_ProcessorArchitecture_Get(
-	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Reflection_AssemblyName_ProcessorArchitecture_Set(
-	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
-	System_Reflection_ProcessorArchitecture /* System.Reflection.ProcessorArchitecture */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
 System_Reflection_AssemblyContentType /* System.Reflection.AssemblyContentType */
 System_Reflection_AssemblyName_ContentType_Get(
 	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
@@ -7858,34 +7685,6 @@ void /* System.Void */
 System_Reflection_AssemblyName_ContentType_Set(
 	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
 	System_Reflection_AssemblyContentType /* System.Reflection.AssemblyContentType */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Reflection_AssemblyContentType /* System.Reflection.AssemblyContentType */
-System_Reflection_AssemblyName_ContentType_Get(
-	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Reflection_AssemblyName_ContentType_Set(
-	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
-	System_Reflection_AssemblyContentType /* System.Reflection.AssemblyContentType */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Reflection_AssemblyNameFlags /* System.Reflection.AssemblyNameFlags */
-System_Reflection_AssemblyName_Flags_Get(
-	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Reflection_AssemblyName_Flags_Set(
-	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
-	System_Reflection_AssemblyNameFlags /* System.Reflection.AssemblyNameFlags */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -7918,20 +7717,6 @@ System_Reflection_AssemblyName_HashAlgorithm_Set(
 );
 
 
-System_Configuration_Assemblies_AssemblyHashAlgorithm /* System.Configuration.Assemblies.AssemblyHashAlgorithm */
-System_Reflection_AssemblyName_HashAlgorithm_Get(
-	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Reflection_AssemblyName_HashAlgorithm_Set(
-	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
-	System_Configuration_Assemblies_AssemblyHashAlgorithm /* System.Configuration.Assemblies.AssemblyHashAlgorithm */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
 System_Configuration_Assemblies_AssemblyVersionCompatibility /* System.Configuration.Assemblies.AssemblyVersionCompatibility */
 System_Reflection_AssemblyName_VersionCompatibility_Get(
 	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
@@ -7942,34 +7727,6 @@ void /* System.Void */
 System_Reflection_AssemblyName_VersionCompatibility_Set(
 	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
 	System_Configuration_Assemblies_AssemblyVersionCompatibility /* System.Configuration.Assemblies.AssemblyVersionCompatibility */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Configuration_Assemblies_AssemblyVersionCompatibility /* System.Configuration.Assemblies.AssemblyVersionCompatibility */
-System_Reflection_AssemblyName_VersionCompatibility_Get(
-	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Reflection_AssemblyName_VersionCompatibility_Set(
-	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
-	System_Configuration_Assemblies_AssemblyVersionCompatibility /* System.Configuration.Assemblies.AssemblyVersionCompatibility */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Reflection_StrongNameKeyPair_t /* System.Reflection.StrongNameKeyPair */
-System_Reflection_AssemblyName_KeyPair_Get(
-	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Reflection_AssemblyName_KeyPair_Set(
-	System_Reflection_AssemblyName_t /* System.Reflection.AssemblyName */ self,
-	System_Reflection_StrongNameKeyPair_t /* System.Reflection.StrongNameKeyPair */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -8551,20 +8308,6 @@ System_IO_FileStream_Position_Set(
 );
 
 
-int64_t /* System.Int64 */
-System_IO_FileStream_Position_Get(
-	System_IO_FileStream_t /* System.IO.FileStream */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_FileStream_Position_Set(
-	System_IO_FileStream_t /* System.IO.FileStream */ self,
-	int64_t /* System.Int64 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
 bool /* System.Boolean */
 System_IO_FileStream_CanSeek_Get(
 	System_IO_FileStream_t /* System.IO.FileStream */ self,
@@ -8844,20 +8587,6 @@ System_IO_Stream_Position_Set(
 );
 
 
-int64_t /* System.Int64 */
-System_IO_Stream_Position_Get(
-	System_IO_Stream_t /* System.IO.Stream */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_Stream_Position_Set(
-	System_IO_Stream_t /* System.IO.Stream */ self,
-	int64_t /* System.Int64 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
 int32_t /* System.Int32 */
 System_IO_Stream_ReadTimeout_Get(
 	System_IO_Stream_t /* System.IO.Stream */ self,
@@ -8866,34 +8595,6 @@ System_IO_Stream_ReadTimeout_Get(
 
 void /* System.Void */
 System_IO_Stream_ReadTimeout_Set(
-	System_IO_Stream_t /* System.IO.Stream */ self,
-	int32_t /* System.Int32 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-int32_t /* System.Int32 */
-System_IO_Stream_ReadTimeout_Get(
-	System_IO_Stream_t /* System.IO.Stream */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_Stream_ReadTimeout_Set(
-	System_IO_Stream_t /* System.IO.Stream */ self,
-	int32_t /* System.Int32 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-int32_t /* System.Int32 */
-System_IO_Stream_WriteTimeout_Get(
-	System_IO_Stream_t /* System.IO.Stream */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_Stream_WriteTimeout_Set(
 	System_IO_Stream_t /* System.IO.Stream */ self,
 	int32_t /* System.Int32 */ value,
 	System_Exception_t* /* System.Exception */ outException
@@ -9524,20 +9225,6 @@ System_Exception_HelpLink_Set(
 
 
 System_String_t /* System.String */
-System_Exception_HelpLink_Get(
-	System_Exception_t /* System.Exception */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Exception_HelpLink_Set(
-	System_Exception_t /* System.Exception */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
 System_Exception_Source_Get(
 	System_Exception_t /* System.Exception */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -9547,34 +9234,6 @@ void /* System.Void */
 System_Exception_Source_Set(
 	System_Exception_t /* System.Exception */ self,
 	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
-System_Exception_Source_Get(
-	System_Exception_t /* System.Exception */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Exception_Source_Set(
-	System_Exception_t /* System.Exception */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-int32_t /* System.Int32 */
-System_Exception_HResult_Get(
-	System_Exception_t /* System.Exception */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Exception_HResult_Set(
-	System_Exception_t /* System.Exception */ self,
-	int32_t /* System.Int32 */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -10212,34 +9871,6 @@ System_Runtime_Serialization_SerializationInfo_FullTypeName_Get(
 
 void /* System.Void */
 System_Runtime_Serialization_SerializationInfo_FullTypeName_Set(
-	System_Runtime_Serialization_SerializationInfo_t /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
-System_Runtime_Serialization_SerializationInfo_FullTypeName_Get(
-	System_Runtime_Serialization_SerializationInfo_t /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Runtime_Serialization_SerializationInfo_FullTypeName_Set(
-	System_Runtime_Serialization_SerializationInfo_t /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
-System_Runtime_Serialization_SerializationInfo_AssemblyName_Get(
-	System_Runtime_Serialization_SerializationInfo_t /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Runtime_Serialization_SerializationInfo_AssemblyName_Set(
 	System_Runtime_Serialization_SerializationInfo_t /* System.Runtime.Serialization.SerializationInfo */ self,
 	System_String_t /* System.String */ value,
 	System_Exception_t* /* System.Exception */ outException
@@ -13268,20 +12899,6 @@ System_Globalization_Calendar_TwoDigitYearMax_Set(
 
 
 int32_t /* System.Int32 */
-System_Globalization_Calendar_TwoDigitYearMax_Get(
-	System_Globalization_Calendar_t /* System.Globalization.Calendar */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_Calendar_TwoDigitYearMax_Set(
-	System_Globalization_Calendar_t /* System.Globalization.Calendar */ self,
-	int32_t /* System.Int32 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-int32_t /* System.Int32 */
 System_Globalization_Calendar_CurrentEra_Get(
 	
 );
@@ -14834,34 +14451,6 @@ System_Collections_DictionaryEntry_Key_Set(
 
 
 System_Object_t /* System.Object */
-System_Collections_DictionaryEntry_Key_Get(
-	System_Collections_DictionaryEntry_t /* System.Collections.DictionaryEntry */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Collections_DictionaryEntry_Key_Set(
-	System_Collections_DictionaryEntry_t /* System.Collections.DictionaryEntry */ self,
-	System_Object_t /* System.Object */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Object_t /* System.Object */
-System_Collections_DictionaryEntry_Value_Get(
-	System_Collections_DictionaryEntry_t /* System.Collections.DictionaryEntry */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Collections_DictionaryEntry_Value_Set(
-	System_Collections_DictionaryEntry_t /* System.Collections.DictionaryEntry */ self,
-	System_Object_t /* System.Object */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Object_t /* System.Object */
 System_Collections_DictionaryEntry_Value_Get(
 	System_Collections_DictionaryEntry_t /* System.Collections.DictionaryEntry */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -15241,34 +14830,6 @@ void /* System.Void */
 System_Threading_WaitHandle_Handle_Set(
 	System_Threading_WaitHandle_t /* System.Threading.WaitHandle */ self,
 	long /* System.IntPtr */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-long /* System.IntPtr */
-System_Threading_WaitHandle_Handle_Get(
-	System_Threading_WaitHandle_t /* System.Threading.WaitHandle */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Threading_WaitHandle_Handle_Set(
-	System_Threading_WaitHandle_t /* System.Threading.WaitHandle */ self,
-	long /* System.IntPtr */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-Microsoft_Win32_SafeHandles_SafeWaitHandle_t /* Microsoft.Win32.SafeHandles.SafeWaitHandle */
-System_Threading_WaitHandle_SafeWaitHandle_Get(
-	System_Threading_WaitHandle_t /* System.Threading.WaitHandle */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Threading_WaitHandle_SafeWaitHandle_Set(
-	System_Threading_WaitHandle_t /* System.Threading.WaitHandle */ self,
-	Microsoft_Win32_SafeHandles_SafeWaitHandle_t /* Microsoft.Win32.SafeHandles.SafeWaitHandle */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -16021,20 +15582,6 @@ System_IO_FileStreamOptions_Mode_Set(
 );
 
 
-System_IO_FileMode /* System.IO.FileMode */
-System_IO_FileStreamOptions_Mode_Get(
-	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_FileStreamOptions_Mode_Set(
-	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ self,
-	System_IO_FileMode /* System.IO.FileMode */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
 System_IO_FileAccess /* System.IO.FileAccess */
 System_IO_FileStreamOptions_Access_Get(
 	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ self,
@@ -16045,34 +15592,6 @@ void /* System.Void */
 System_IO_FileStreamOptions_Access_Set(
 	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ self,
 	System_IO_FileAccess /* System.IO.FileAccess */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_IO_FileAccess /* System.IO.FileAccess */
-System_IO_FileStreamOptions_Access_Get(
-	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_FileStreamOptions_Access_Set(
-	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ self,
-	System_IO_FileAccess /* System.IO.FileAccess */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_IO_FileShare /* System.IO.FileShare */
-System_IO_FileStreamOptions_Share_Get(
-	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_FileStreamOptions_Share_Set(
-	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ self,
-	System_IO_FileShare /* System.IO.FileShare */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -16105,20 +15624,6 @@ System_IO_FileStreamOptions_Options_Set(
 );
 
 
-System_IO_FileOptions /* System.IO.FileOptions */
-System_IO_FileStreamOptions_Options_Get(
-	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_FileStreamOptions_Options_Set(
-	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ self,
-	System_IO_FileOptions /* System.IO.FileOptions */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
 int64_t /* System.Int64 */
 System_IO_FileStreamOptions_PreallocationSize_Get(
 	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ self,
@@ -16129,34 +15634,6 @@ void /* System.Void */
 System_IO_FileStreamOptions_PreallocationSize_Set(
 	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ self,
 	int64_t /* System.Int64 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-int64_t /* System.Int64 */
-System_IO_FileStreamOptions_PreallocationSize_Get(
-	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_FileStreamOptions_PreallocationSize_Set(
-	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ self,
-	int64_t /* System.Int64 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-int32_t /* System.Int32 */
-System_IO_FileStreamOptions_BufferSize_Get(
-	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_FileStreamOptions_BufferSize_Set(
-	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ self,
-	int32_t /* System.Int32 */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -17335,20 +16812,6 @@ System_Globalization_TextInfo_ListSeparator_Set(
 );
 
 
-System_String_t /* System.String */
-System_Globalization_TextInfo_ListSeparator_Get(
-	System_Globalization_TextInfo_t /* System.Globalization.TextInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_TextInfo_ListSeparator_Set(
-	System_Globalization_TextInfo_t /* System.Globalization.TextInfo */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
 bool /* System.Boolean */
 System_Globalization_TextInfo_IsRightToLeft_Get(
 	System_Globalization_TextInfo_t /* System.Globalization.TextInfo */ self,
@@ -17419,34 +16882,6 @@ System_Globalization_NumberFormatInfo_CurrencyDecimalDigits_Set(
 );
 
 
-int32_t /* System.Int32 */
-System_Globalization_NumberFormatInfo_CurrencyDecimalDigits_Get(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_NumberFormatInfo_CurrencyDecimalDigits_Set(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	int32_t /* System.Int32 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
-System_Globalization_NumberFormatInfo_CurrencyDecimalSeparator_Get(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_NumberFormatInfo_CurrencyDecimalSeparator_Set(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
 System_String_t /* System.String */
 System_Globalization_NumberFormatInfo_CurrencyDecimalSeparator_Get(
 	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
@@ -17483,20 +16918,6 @@ System_Globalization_NumberFormatInfo_CurrencyGroupSizes_Set(
 
 
 System_Int32_Array_t /* System.Int32[] */
-System_Globalization_NumberFormatInfo_CurrencyGroupSizes_Get(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_NumberFormatInfo_CurrencyGroupSizes_Set(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_Int32_Array_t /* System.Int32[] */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Int32_Array_t /* System.Int32[] */
 System_Globalization_NumberFormatInfo_NumberGroupSizes_Get(
 	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -17504,34 +16925,6 @@ System_Globalization_NumberFormatInfo_NumberGroupSizes_Get(
 
 void /* System.Void */
 System_Globalization_NumberFormatInfo_NumberGroupSizes_Set(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_Int32_Array_t /* System.Int32[] */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Int32_Array_t /* System.Int32[] */
-System_Globalization_NumberFormatInfo_NumberGroupSizes_Get(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_NumberFormatInfo_NumberGroupSizes_Set(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_Int32_Array_t /* System.Int32[] */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Int32_Array_t /* System.Int32[] */
-System_Globalization_NumberFormatInfo_PercentGroupSizes_Get(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_NumberFormatInfo_PercentGroupSizes_Set(
 	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
 	System_Int32_Array_t /* System.Int32[] */ value,
 	System_Exception_t* /* System.Exception */ outException
@@ -17560,34 +16953,6 @@ System_Globalization_NumberFormatInfo_CurrencyGroupSeparator_Get(
 
 void /* System.Void */
 System_Globalization_NumberFormatInfo_CurrencyGroupSeparator_Set(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
-System_Globalization_NumberFormatInfo_CurrencyGroupSeparator_Get(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_NumberFormatInfo_CurrencyGroupSeparator_Set(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
-System_Globalization_NumberFormatInfo_CurrencySymbol_Get(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_NumberFormatInfo_CurrencySymbol_Set(
 	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
 	System_String_t /* System.String */ value,
 	System_Exception_t* /* System.Exception */ outException
@@ -17628,20 +16993,6 @@ System_Globalization_NumberFormatInfo_NaNSymbol_Set(
 );
 
 
-System_String_t /* System.String */
-System_Globalization_NumberFormatInfo_NaNSymbol_Get(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_NumberFormatInfo_NaNSymbol_Set(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
 int32_t /* System.Int32 */
 System_Globalization_NumberFormatInfo_CurrencyNegativePattern_Get(
 	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
@@ -17650,34 +17001,6 @@ System_Globalization_NumberFormatInfo_CurrencyNegativePattern_Get(
 
 void /* System.Void */
 System_Globalization_NumberFormatInfo_CurrencyNegativePattern_Set(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	int32_t /* System.Int32 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-int32_t /* System.Int32 */
-System_Globalization_NumberFormatInfo_CurrencyNegativePattern_Get(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_NumberFormatInfo_CurrencyNegativePattern_Set(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	int32_t /* System.Int32 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-int32_t /* System.Int32 */
-System_Globalization_NumberFormatInfo_NumberNegativePattern_Get(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_NumberFormatInfo_NumberNegativePattern_Set(
 	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
 	int32_t /* System.Int32 */ value,
 	System_Exception_t* /* System.Exception */ outException
@@ -17713,34 +17036,6 @@ System_Globalization_NumberFormatInfo_PercentPositivePattern_Set(
 
 
 int32_t /* System.Int32 */
-System_Globalization_NumberFormatInfo_PercentPositivePattern_Get(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_NumberFormatInfo_PercentPositivePattern_Set(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	int32_t /* System.Int32 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-int32_t /* System.Int32 */
-System_Globalization_NumberFormatInfo_PercentNegativePattern_Get(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_NumberFormatInfo_PercentNegativePattern_Set(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	int32_t /* System.Int32 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-int32_t /* System.Int32 */
 System_Globalization_NumberFormatInfo_PercentNegativePattern_Get(
 	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -17762,34 +17057,6 @@ System_Globalization_NumberFormatInfo_NegativeInfinitySymbol_Get(
 
 void /* System.Void */
 System_Globalization_NumberFormatInfo_NegativeInfinitySymbol_Set(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
-System_Globalization_NumberFormatInfo_NegativeInfinitySymbol_Get(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_NumberFormatInfo_NegativeInfinitySymbol_Set(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
-System_Globalization_NumberFormatInfo_NegativeSign_Get(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_NumberFormatInfo_NegativeSign_Set(
 	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
 	System_String_t /* System.String */ value,
 	System_Exception_t* /* System.Exception */ outException
@@ -17824,20 +17091,6 @@ System_Globalization_NumberFormatInfo_NumberDecimalDigits_Set(
 );
 
 
-int32_t /* System.Int32 */
-System_Globalization_NumberFormatInfo_NumberDecimalDigits_Get(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_NumberFormatInfo_NumberDecimalDigits_Set(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	int32_t /* System.Int32 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
 System_String_t /* System.String */
 System_Globalization_NumberFormatInfo_NumberDecimalSeparator_Get(
 	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
@@ -17846,34 +17099,6 @@ System_Globalization_NumberFormatInfo_NumberDecimalSeparator_Get(
 
 void /* System.Void */
 System_Globalization_NumberFormatInfo_NumberDecimalSeparator_Set(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
-System_Globalization_NumberFormatInfo_NumberDecimalSeparator_Get(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_NumberFormatInfo_NumberDecimalSeparator_Set(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
-System_Globalization_NumberFormatInfo_NumberGroupSeparator_Get(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_NumberFormatInfo_NumberGroupSeparator_Set(
 	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
 	System_String_t /* System.String */ value,
 	System_Exception_t* /* System.Exception */ outException
@@ -17908,20 +17133,6 @@ System_Globalization_NumberFormatInfo_CurrencyPositivePattern_Set(
 );
 
 
-int32_t /* System.Int32 */
-System_Globalization_NumberFormatInfo_CurrencyPositivePattern_Get(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_NumberFormatInfo_CurrencyPositivePattern_Set(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	int32_t /* System.Int32 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
 System_String_t /* System.String */
 System_Globalization_NumberFormatInfo_PositiveInfinitySymbol_Get(
 	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
@@ -17930,34 +17141,6 @@ System_Globalization_NumberFormatInfo_PositiveInfinitySymbol_Get(
 
 void /* System.Void */
 System_Globalization_NumberFormatInfo_PositiveInfinitySymbol_Set(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
-System_Globalization_NumberFormatInfo_PositiveInfinitySymbol_Get(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_NumberFormatInfo_PositiveInfinitySymbol_Set(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
-System_Globalization_NumberFormatInfo_PositiveSign_Get(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_NumberFormatInfo_PositiveSign_Set(
 	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
 	System_String_t /* System.String */ value,
 	System_Exception_t* /* System.Exception */ outException
@@ -17992,20 +17175,6 @@ System_Globalization_NumberFormatInfo_PercentDecimalDigits_Set(
 );
 
 
-int32_t /* System.Int32 */
-System_Globalization_NumberFormatInfo_PercentDecimalDigits_Get(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_NumberFormatInfo_PercentDecimalDigits_Set(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	int32_t /* System.Int32 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
 System_String_t /* System.String */
 System_Globalization_NumberFormatInfo_PercentDecimalSeparator_Get(
 	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
@@ -18014,34 +17183,6 @@ System_Globalization_NumberFormatInfo_PercentDecimalSeparator_Get(
 
 void /* System.Void */
 System_Globalization_NumberFormatInfo_PercentDecimalSeparator_Set(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
-System_Globalization_NumberFormatInfo_PercentDecimalSeparator_Get(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_NumberFormatInfo_PercentDecimalSeparator_Set(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
-System_Globalization_NumberFormatInfo_PercentGroupSeparator_Get(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_NumberFormatInfo_PercentGroupSeparator_Set(
 	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
 	System_String_t /* System.String */ value,
 	System_Exception_t* /* System.Exception */ outException
@@ -18077,34 +17218,6 @@ System_Globalization_NumberFormatInfo_PercentSymbol_Set(
 
 
 System_String_t /* System.String */
-System_Globalization_NumberFormatInfo_PercentSymbol_Get(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_NumberFormatInfo_PercentSymbol_Set(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
-System_Globalization_NumberFormatInfo_PerMilleSymbol_Get(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_NumberFormatInfo_PerMilleSymbol_Set(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
 System_Globalization_NumberFormatInfo_PerMilleSymbol_Get(
 	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -18128,34 +17241,6 @@ void /* System.Void */
 System_Globalization_NumberFormatInfo_NativeDigits_Set(
 	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
 	System_String_Array_t /* System.String[] */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_Array_t /* System.String[] */
-System_Globalization_NumberFormatInfo_NativeDigits_Get(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_NumberFormatInfo_NativeDigits_Set(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_String_Array_t /* System.String[] */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Globalization_DigitShapes /* System.Globalization.DigitShapes */
-System_Globalization_NumberFormatInfo_DigitSubstitution_Get(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_NumberFormatInfo_DigitSubstitution_Set(
-	System_Globalization_NumberFormatInfo_t /* System.Globalization.NumberFormatInfo */ self,
-	System_Globalization_DigitShapes /* System.Globalization.DigitShapes */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -18320,20 +17405,6 @@ System_Globalization_DateTimeFormatInfo_AMDesignator_Set(
 );
 
 
-System_String_t /* System.String */
-System_Globalization_DateTimeFormatInfo_AMDesignator_Get(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_DateTimeFormatInfo_AMDesignator_Set(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
 System_Globalization_Calendar_t /* System.Globalization.Calendar */
 System_Globalization_DateTimeFormatInfo_Calendar_Get(
 	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
@@ -18344,34 +17415,6 @@ void /* System.Void */
 System_Globalization_DateTimeFormatInfo_Calendar_Set(
 	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
 	System_Globalization_Calendar_t /* System.Globalization.Calendar */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Globalization_Calendar_t /* System.Globalization.Calendar */
-System_Globalization_DateTimeFormatInfo_Calendar_Get(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_DateTimeFormatInfo_Calendar_Set(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_Globalization_Calendar_t /* System.Globalization.Calendar */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
-System_Globalization_DateTimeFormatInfo_DateSeparator_Get(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_DateTimeFormatInfo_DateSeparator_Set(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_t /* System.String */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -18404,34 +17447,6 @@ System_Globalization_DateTimeFormatInfo_FirstDayOfWeek_Set(
 );
 
 
-System_DayOfWeek /* System.DayOfWeek */
-System_Globalization_DateTimeFormatInfo_FirstDayOfWeek_Get(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_DateTimeFormatInfo_FirstDayOfWeek_Set(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_DayOfWeek /* System.DayOfWeek */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Globalization_CalendarWeekRule /* System.Globalization.CalendarWeekRule */
-System_Globalization_DateTimeFormatInfo_CalendarWeekRule_Get(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_DateTimeFormatInfo_CalendarWeekRule_Set(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_Globalization_CalendarWeekRule /* System.Globalization.CalendarWeekRule */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
 System_Globalization_CalendarWeekRule /* System.Globalization.CalendarWeekRule */
 System_Globalization_DateTimeFormatInfo_CalendarWeekRule_Get(
 	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
@@ -18454,34 +17469,6 @@ System_Globalization_DateTimeFormatInfo_FullDateTimePattern_Get(
 
 void /* System.Void */
 System_Globalization_DateTimeFormatInfo_FullDateTimePattern_Set(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
-System_Globalization_DateTimeFormatInfo_FullDateTimePattern_Get(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_DateTimeFormatInfo_FullDateTimePattern_Set(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
-System_Globalization_DateTimeFormatInfo_LongDatePattern_Get(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_DateTimeFormatInfo_LongDatePattern_Set(
 	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
 	System_String_t /* System.String */ value,
 	System_Exception_t* /* System.Exception */ outException
@@ -18517,20 +17504,6 @@ System_Globalization_DateTimeFormatInfo_LongTimePattern_Set(
 
 
 System_String_t /* System.String */
-System_Globalization_DateTimeFormatInfo_LongTimePattern_Get(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_DateTimeFormatInfo_LongTimePattern_Set(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
 System_Globalization_DateTimeFormatInfo_MonthDayPattern_Get(
 	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -18538,34 +17511,6 @@ System_Globalization_DateTimeFormatInfo_MonthDayPattern_Get(
 
 void /* System.Void */
 System_Globalization_DateTimeFormatInfo_MonthDayPattern_Set(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
-System_Globalization_DateTimeFormatInfo_MonthDayPattern_Get(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_DateTimeFormatInfo_MonthDayPattern_Set(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
-System_Globalization_DateTimeFormatInfo_PMDesignator_Get(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_DateTimeFormatInfo_PMDesignator_Set(
 	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
 	System_String_t /* System.String */ value,
 	System_Exception_t* /* System.Exception */ outException
@@ -18608,34 +17553,6 @@ System_Globalization_DateTimeFormatInfo_ShortDatePattern_Set(
 
 
 System_String_t /* System.String */
-System_Globalization_DateTimeFormatInfo_ShortDatePattern_Get(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_DateTimeFormatInfo_ShortDatePattern_Set(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
-System_Globalization_DateTimeFormatInfo_ShortTimePattern_Get(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_DateTimeFormatInfo_ShortTimePattern_Set(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
 System_Globalization_DateTimeFormatInfo_ShortTimePattern_Get(
 	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -18652,20 +17569,6 @@ System_Globalization_DateTimeFormatInfo_ShortTimePattern_Set(
 System_String_t /* System.String */
 System_Globalization_DateTimeFormatInfo_SortableDateTimePattern_Get(
 	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
-System_Globalization_DateTimeFormatInfo_TimeSeparator_Get(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_DateTimeFormatInfo_TimeSeparator_Set(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_t /* System.String */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -18705,20 +17608,6 @@ System_Globalization_DateTimeFormatInfo_YearMonthPattern_Set(
 );
 
 
-System_String_t /* System.String */
-System_Globalization_DateTimeFormatInfo_YearMonthPattern_Get(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_DateTimeFormatInfo_YearMonthPattern_Set(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
 System_String_Array_t /* System.String[] */
 System_Globalization_DateTimeFormatInfo_AbbreviatedDayNames_Get(
 	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
@@ -18727,34 +17616,6 @@ System_Globalization_DateTimeFormatInfo_AbbreviatedDayNames_Get(
 
 void /* System.Void */
 System_Globalization_DateTimeFormatInfo_AbbreviatedDayNames_Set(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_Array_t /* System.String[] */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_Array_t /* System.String[] */
-System_Globalization_DateTimeFormatInfo_AbbreviatedDayNames_Get(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_DateTimeFormatInfo_AbbreviatedDayNames_Set(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_Array_t /* System.String[] */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_Array_t /* System.String[] */
-System_Globalization_DateTimeFormatInfo_ShortestDayNames_Get(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_DateTimeFormatInfo_ShortestDayNames_Set(
 	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
 	System_String_Array_t /* System.String[] */ value,
 	System_Exception_t* /* System.Exception */ outException
@@ -18790,20 +17651,6 @@ System_Globalization_DateTimeFormatInfo_DayNames_Set(
 
 
 System_String_Array_t /* System.String[] */
-System_Globalization_DateTimeFormatInfo_DayNames_Get(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_DateTimeFormatInfo_DayNames_Set(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_Array_t /* System.String[] */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_Array_t /* System.String[] */
 System_Globalization_DateTimeFormatInfo_AbbreviatedMonthNames_Get(
 	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -18811,34 +17658,6 @@ System_Globalization_DateTimeFormatInfo_AbbreviatedMonthNames_Get(
 
 void /* System.Void */
 System_Globalization_DateTimeFormatInfo_AbbreviatedMonthNames_Set(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_Array_t /* System.String[] */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_Array_t /* System.String[] */
-System_Globalization_DateTimeFormatInfo_AbbreviatedMonthNames_Get(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_DateTimeFormatInfo_AbbreviatedMonthNames_Set(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_Array_t /* System.String[] */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_Array_t /* System.String[] */
-System_Globalization_DateTimeFormatInfo_MonthNames_Get(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_DateTimeFormatInfo_MonthNames_Set(
 	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
 	System_String_Array_t /* System.String[] */ value,
 	System_Exception_t* /* System.Exception */ outException
@@ -18881,34 +17700,6 @@ System_Globalization_DateTimeFormatInfo_AbbreviatedMonthGenitiveNames_Get(
 
 void /* System.Void */
 System_Globalization_DateTimeFormatInfo_AbbreviatedMonthGenitiveNames_Set(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_Array_t /* System.String[] */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_Array_t /* System.String[] */
-System_Globalization_DateTimeFormatInfo_AbbreviatedMonthGenitiveNames_Get(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_DateTimeFormatInfo_AbbreviatedMonthGenitiveNames_Set(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_Array_t /* System.String[] */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_Array_t /* System.String[] */
-System_Globalization_DateTimeFormatInfo_MonthGenitiveNames_Get(
-	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Globalization_DateTimeFormatInfo_MonthGenitiveNames_Set(
 	System_Globalization_DateTimeFormatInfo_t /* System.Globalization.DateTimeFormatInfo */ self,
 	System_String_Array_t /* System.String[] */ value,
 	System_Exception_t* /* System.Exception */ outException
@@ -19431,34 +18222,6 @@ System_Text_Encoding_EncoderFallback_Set(
 );
 
 
-System_Text_EncoderFallback_t /* System.Text.EncoderFallback */
-System_Text_Encoding_EncoderFallback_Get(
-	System_Text_Encoding_t /* System.Text.Encoding */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Text_Encoding_EncoderFallback_Set(
-	System_Text_Encoding_t /* System.Text.Encoding */ self,
-	System_Text_EncoderFallback_t /* System.Text.EncoderFallback */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Text_DecoderFallback_t /* System.Text.DecoderFallback */
-System_Text_Encoding_DecoderFallback_Get(
-	System_Text_Encoding_t /* System.Text.Encoding */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Text_Encoding_DecoderFallback_Set(
-	System_Text_Encoding_t /* System.Text.Encoding */ self,
-	System_Text_DecoderFallback_t /* System.Text.DecoderFallback */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
 System_Text_DecoderFallback_t /* System.Text.DecoderFallback */
 System_Text_Encoding_DecoderFallback_Get(
 	System_Text_Encoding_t /* System.Text.Encoding */ self,
@@ -19908,20 +18671,6 @@ System_Text_Decoder_Fallback_Set(
 );
 
 
-System_Text_DecoderFallback_t /* System.Text.DecoderFallback */
-System_Text_Decoder_Fallback_Get(
-	System_Text_Decoder_t /* System.Text.Decoder */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Text_Decoder_Fallback_Set(
-	System_Text_Decoder_t /* System.Text.Decoder */ self,
-	System_Text_DecoderFallback_t /* System.Text.DecoderFallback */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
 System_Text_DecoderFallbackBuffer_t /* System.Text.DecoderFallbackBuffer */
 System_Text_Decoder_FallbackBuffer_Get(
 	System_Text_Decoder_t /* System.Text.Decoder */ self,
@@ -19985,20 +18734,6 @@ System_Text_Encoder_Convert(
 	bool* /* System.Boolean */ completed,
 	System_Exception_t* /* System.Exception */ outException
 );
-
-System_Text_EncoderFallback_t /* System.Text.EncoderFallback */
-System_Text_Encoder_Fallback_Get(
-	System_Text_Encoder_t /* System.Text.Encoder */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Text_Encoder_Fallback_Set(
-	System_Text_Encoder_t /* System.Text.Encoder */ self,
-	System_Text_EncoderFallback_t /* System.Text.EncoderFallback */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
 
 System_Text_EncoderFallback_t /* System.Text.EncoderFallback */
 System_Text_Encoder_Fallback_Get(
@@ -20089,18 +18824,6 @@ System_Runtime_InteropServices_StructLayoutAttribute_Pack_Set(
 
 
 int32_t /* System.Int32 */
-System_Runtime_InteropServices_StructLayoutAttribute_Pack_Get(
-	System_Runtime_InteropServices_StructLayoutAttribute_t /* System.Runtime.InteropServices.StructLayoutAttribute */ self
-);
-
-void /* System.Void */
-System_Runtime_InteropServices_StructLayoutAttribute_Pack_Set(
-	System_Runtime_InteropServices_StructLayoutAttribute_t /* System.Runtime.InteropServices.StructLayoutAttribute */ self,
-	int32_t /* System.Int32 */ value
-);
-
-
-int32_t /* System.Int32 */
 System_Runtime_InteropServices_StructLayoutAttribute_Size_Get(
 	System_Runtime_InteropServices_StructLayoutAttribute_t /* System.Runtime.InteropServices.StructLayoutAttribute */ self
 );
@@ -20109,30 +18832,6 @@ void /* System.Void */
 System_Runtime_InteropServices_StructLayoutAttribute_Size_Set(
 	System_Runtime_InteropServices_StructLayoutAttribute_t /* System.Runtime.InteropServices.StructLayoutAttribute */ self,
 	int32_t /* System.Int32 */ value
-);
-
-
-int32_t /* System.Int32 */
-System_Runtime_InteropServices_StructLayoutAttribute_Size_Get(
-	System_Runtime_InteropServices_StructLayoutAttribute_t /* System.Runtime.InteropServices.StructLayoutAttribute */ self
-);
-
-void /* System.Void */
-System_Runtime_InteropServices_StructLayoutAttribute_Size_Set(
-	System_Runtime_InteropServices_StructLayoutAttribute_t /* System.Runtime.InteropServices.StructLayoutAttribute */ self,
-	int32_t /* System.Int32 */ value
-);
-
-
-System_Runtime_InteropServices_CharSet /* System.Runtime.InteropServices.CharSet */
-System_Runtime_InteropServices_StructLayoutAttribute_CharSet_Get(
-	System_Runtime_InteropServices_StructLayoutAttribute_t /* System.Runtime.InteropServices.StructLayoutAttribute */ self
-);
-
-void /* System.Void */
-System_Runtime_InteropServices_StructLayoutAttribute_CharSet_Set(
-	System_Runtime_InteropServices_StructLayoutAttribute_t /* System.Runtime.InteropServices.StructLayoutAttribute */ self,
-	System_Runtime_InteropServices_CharSet /* System.Runtime.InteropServices.CharSet */ value
 );
 
 
@@ -20680,30 +19379,6 @@ System_Reflection_InterfaceMapping_TargetType_Set(
 
 
 System_Type_t /* System.Type */
-System_Reflection_InterfaceMapping_TargetType_Get(
-	System_Reflection_InterfaceMapping_t /* System.Reflection.InterfaceMapping */ self
-);
-
-void /* System.Void */
-System_Reflection_InterfaceMapping_TargetType_Set(
-	System_Reflection_InterfaceMapping_t /* System.Reflection.InterfaceMapping */ self,
-	System_Type_t /* System.Type */ value
-);
-
-
-System_Type_t /* System.Type */
-System_Reflection_InterfaceMapping_InterfaceType_Get(
-	System_Reflection_InterfaceMapping_t /* System.Reflection.InterfaceMapping */ self
-);
-
-void /* System.Void */
-System_Reflection_InterfaceMapping_InterfaceType_Set(
-	System_Reflection_InterfaceMapping_t /* System.Reflection.InterfaceMapping */ self,
-	System_Type_t /* System.Type */ value
-);
-
-
-System_Type_t /* System.Type */
 System_Reflection_InterfaceMapping_InterfaceType_Get(
 	System_Reflection_InterfaceMapping_t /* System.Reflection.InterfaceMapping */ self
 );
@@ -20722,30 +19397,6 @@ System_Reflection_InterfaceMapping_TargetMethods_Get(
 
 void /* System.Void */
 System_Reflection_InterfaceMapping_TargetMethods_Set(
-	System_Reflection_InterfaceMapping_t /* System.Reflection.InterfaceMapping */ self,
-	System_Reflection_MethodInfo_Array_t /* System.Reflection.MethodInfo[] */ value
-);
-
-
-System_Reflection_MethodInfo_Array_t /* System.Reflection.MethodInfo[] */
-System_Reflection_InterfaceMapping_TargetMethods_Get(
-	System_Reflection_InterfaceMapping_t /* System.Reflection.InterfaceMapping */ self
-);
-
-void /* System.Void */
-System_Reflection_InterfaceMapping_TargetMethods_Set(
-	System_Reflection_InterfaceMapping_t /* System.Reflection.InterfaceMapping */ self,
-	System_Reflection_MethodInfo_Array_t /* System.Reflection.MethodInfo[] */ value
-);
-
-
-System_Reflection_MethodInfo_Array_t /* System.Reflection.MethodInfo[] */
-System_Reflection_InterfaceMapping_InterfaceMethods_Get(
-	System_Reflection_InterfaceMapping_t /* System.Reflection.InterfaceMapping */ self
-);
-
-void /* System.Void */
-System_Reflection_InterfaceMapping_InterfaceMethods_Set(
 	System_Reflection_InterfaceMapping_t /* System.Reflection.InterfaceMapping */ self,
 	System_Reflection_MethodInfo_Array_t /* System.Reflection.MethodInfo[] */ value
 );
@@ -22412,20 +21063,6 @@ System_WeakReference_TrackResurrection_Get(
 bool /* System.Boolean */
 System_WeakReference_IsAlive_Get(
 	System_WeakReference_t /* System.WeakReference */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Object_t /* System.Object */
-System_WeakReference_Target_Get(
-	System_WeakReference_t /* System.WeakReference */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_WeakReference_Target_Set(
-	System_WeakReference_t /* System.WeakReference */ self,
-	System_Object_t /* System.Object */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -25641,36 +24278,8 @@ System_Threading_Thread_IsBackground_Set(
 
 
 bool /* System.Boolean */
-System_Threading_Thread_IsBackground_Get(
-	System_Threading_Thread_t /* System.Threading.Thread */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Threading_Thread_IsBackground_Set(
-	System_Threading_Thread_t /* System.Threading.Thread */ self,
-	bool /* System.Boolean */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-bool /* System.Boolean */
 System_Threading_Thread_IsThreadPoolThread_Get(
 	System_Threading_Thread_t /* System.Threading.Thread */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Threading_ThreadPriority /* System.Threading.ThreadPriority */
-System_Threading_Thread_Priority_Get(
-	System_Threading_Thread_t /* System.Threading.Thread */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Threading_Thread_Priority_Set(
-	System_Threading_Thread_t /* System.Threading.Thread */ self,
-	System_Threading_ThreadPriority /* System.Threading.ThreadPriority */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -25711,20 +24320,6 @@ System_Threading_Thread_CurrentCulture_Set(
 
 
 System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */
-System_Threading_Thread_CurrentCulture_Get(
-	System_Threading_Thread_t /* System.Threading.Thread */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Threading_Thread_CurrentCulture_Set(
-	System_Threading_Thread_t /* System.Threading.Thread */ self,
-	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */
 System_Threading_Thread_CurrentUICulture_Get(
 	System_Threading_Thread_t /* System.Threading.Thread */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -25734,32 +24329,6 @@ void /* System.Void */
 System_Threading_Thread_CurrentUICulture_Set(
 	System_Threading_Thread_t /* System.Threading.Thread */ self,
 	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */
-System_Threading_Thread_CurrentUICulture_Get(
-	System_Threading_Thread_t /* System.Threading.Thread */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Threading_Thread_CurrentUICulture_Set(
-	System_Threading_Thread_t /* System.Threading.Thread */ self,
-	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Security_Principal_IPrincipal_t /* System.Security.Principal.IPrincipal */
-System_Threading_Thread_CurrentPrincipal_Get(
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Threading_Thread_CurrentPrincipal_Set(
-	System_Security_Principal_IPrincipal_t /* System.Security.Principal.IPrincipal */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -25799,34 +24368,6 @@ void /* System.Void */
 System_Threading_Thread_Name_Set(
 	System_Threading_Thread_t /* System.Threading.Thread */ self,
 	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
-System_Threading_Thread_Name_Get(
-	System_Threading_Thread_t /* System.Threading.Thread */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Threading_Thread_Name_Set(
-	System_Threading_Thread_t /* System.Threading.Thread */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Threading_ApartmentState /* System.Threading.ApartmentState */
-System_Threading_Thread_ApartmentState_Get(
-	System_Threading_Thread_t /* System.Threading.Thread */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Threading_Thread_ApartmentState_Set(
-	System_Threading_Thread_t /* System.Threading.Thread */ self,
-	System_Threading_ApartmentState /* System.Threading.ApartmentState */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -26500,18 +25041,6 @@ System_AppDomain_MonitoringIsEnabled_Set(
 );
 
 
-bool /* System.Boolean */
-System_AppDomain_MonitoringIsEnabled_Get(
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_AppDomain_MonitoringIsEnabled_Set(
-	bool /* System.Boolean */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
 int64_t /* System.Int64 */
 System_AppDomain_MonitoringSurvivedMemorySize_Get(
 	System_AppDomain_t /* System.AppDomain */ self,
@@ -26560,19 +25089,6 @@ System_AppDomain_UnhandledException_Remove(
 
 
 void /* System.Void */
-System_AppDomain_UnhandledException_Add(
-	System_AppDomain_t /* System.AppDomain */ self,
-	System_UnhandledExceptionEventHandler_t /* System.UnhandledExceptionEventHandler */ value
-);
-
-void /* System.Void */
-System_AppDomain_UnhandledException_Remove(
-	System_AppDomain_t /* System.AppDomain */ self,
-	System_UnhandledExceptionEventHandler_t /* System.UnhandledExceptionEventHandler */ value
-);
-
-
-void /* System.Void */
 System_AppDomain_DomainUnload_Add(
 	System_AppDomain_t /* System.AppDomain */ self,
 	System_EventHandler_t /* System.EventHandler */ value
@@ -26580,32 +25096,6 @@ System_AppDomain_DomainUnload_Add(
 
 void /* System.Void */
 System_AppDomain_DomainUnload_Remove(
-	System_AppDomain_t /* System.AppDomain */ self,
-	System_EventHandler_t /* System.EventHandler */ value
-);
-
-
-void /* System.Void */
-System_AppDomain_DomainUnload_Add(
-	System_AppDomain_t /* System.AppDomain */ self,
-	System_EventHandler_t /* System.EventHandler */ value
-);
-
-void /* System.Void */
-System_AppDomain_DomainUnload_Remove(
-	System_AppDomain_t /* System.AppDomain */ self,
-	System_EventHandler_t /* System.EventHandler */ value
-);
-
-
-void /* System.Void */
-System_AppDomain_ProcessExit_Add(
-	System_AppDomain_t /* System.AppDomain */ self,
-	System_EventHandler_t /* System.EventHandler */ value
-);
-
-void /* System.Void */
-System_AppDomain_ProcessExit_Remove(
 	System_AppDomain_t /* System.AppDomain */ self,
 	System_EventHandler_t /* System.EventHandler */ value
 );
@@ -26638,32 +25128,6 @@ System_AppDomain_AssemblyLoad_Remove(
 
 
 void /* System.Void */
-System_AppDomain_AssemblyLoad_Add(
-	System_AppDomain_t /* System.AppDomain */ self,
-	System_AssemblyLoadEventHandler_t /* System.AssemblyLoadEventHandler */ value
-);
-
-void /* System.Void */
-System_AppDomain_AssemblyLoad_Remove(
-	System_AppDomain_t /* System.AppDomain */ self,
-	System_AssemblyLoadEventHandler_t /* System.AssemblyLoadEventHandler */ value
-);
-
-
-void /* System.Void */
-System_AppDomain_AssemblyResolve_Add(
-	System_AppDomain_t /* System.AppDomain */ self,
-	System_ResolveEventHandler_t /* System.ResolveEventHandler */ value
-);
-
-void /* System.Void */
-System_AppDomain_AssemblyResolve_Remove(
-	System_AppDomain_t /* System.AppDomain */ self,
-	System_ResolveEventHandler_t /* System.ResolveEventHandler */ value
-);
-
-
-void /* System.Void */
 System_AppDomain_AssemblyResolve_Add(
 	System_AppDomain_t /* System.AppDomain */ self,
 	System_ResolveEventHandler_t /* System.ResolveEventHandler */ value
@@ -26690,19 +25154,6 @@ System_AppDomain_ReflectionOnlyAssemblyResolve_Remove(
 
 
 void /* System.Void */
-System_AppDomain_ReflectionOnlyAssemblyResolve_Add(
-	System_AppDomain_t /* System.AppDomain */ self,
-	System_ResolveEventHandler_t /* System.ResolveEventHandler */ value
-);
-
-void /* System.Void */
-System_AppDomain_ReflectionOnlyAssemblyResolve_Remove(
-	System_AppDomain_t /* System.AppDomain */ self,
-	System_ResolveEventHandler_t /* System.ResolveEventHandler */ value
-);
-
-
-void /* System.Void */
 System_AppDomain_TypeResolve_Add(
 	System_AppDomain_t /* System.AppDomain */ self,
 	System_ResolveEventHandler_t /* System.ResolveEventHandler */ value
@@ -26710,32 +25161,6 @@ System_AppDomain_TypeResolve_Add(
 
 void /* System.Void */
 System_AppDomain_TypeResolve_Remove(
-	System_AppDomain_t /* System.AppDomain */ self,
-	System_ResolveEventHandler_t /* System.ResolveEventHandler */ value
-);
-
-
-void /* System.Void */
-System_AppDomain_TypeResolve_Add(
-	System_AppDomain_t /* System.AppDomain */ self,
-	System_ResolveEventHandler_t /* System.ResolveEventHandler */ value
-);
-
-void /* System.Void */
-System_AppDomain_TypeResolve_Remove(
-	System_AppDomain_t /* System.AppDomain */ self,
-	System_ResolveEventHandler_t /* System.ResolveEventHandler */ value
-);
-
-
-void /* System.Void */
-System_AppDomain_ResourceResolve_Add(
-	System_AppDomain_t /* System.AppDomain */ self,
-	System_ResolveEventHandler_t /* System.ResolveEventHandler */ value
-);
-
-void /* System.Void */
-System_AppDomain_ResourceResolve_Remove(
 	System_AppDomain_t /* System.AppDomain */ self,
 	System_ResolveEventHandler_t /* System.ResolveEventHandler */ value
 );
@@ -27167,34 +25592,6 @@ System_Security_SecurityElement_Tag_Set(
 );
 
 
-System_String_t /* System.String */
-System_Security_SecurityElement_Tag_Get(
-	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Security_SecurityElement_Tag_Set(
-	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Collections_Hashtable_t /* System.Collections.Hashtable */
-System_Security_SecurityElement_Attributes_Get(
-	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Security_SecurityElement_Attributes_Set(
-	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self,
-	System_Collections_Hashtable_t /* System.Collections.Hashtable */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
 System_Collections_Hashtable_t /* System.Collections.Hashtable */
 System_Security_SecurityElement_Attributes_Get(
 	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self,
@@ -27219,34 +25616,6 @@ void /* System.Void */
 System_Security_SecurityElement_Text_Set(
 	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self,
 	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
-System_Security_SecurityElement_Text_Get(
-	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Security_SecurityElement_Text_Set(
-	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Collections_ArrayList_t /* System.Collections.ArrayList */
-System_Security_SecurityElement_Children_Get(
-	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Security_SecurityElement_Children_Set(
-	System_Security_SecurityElement_t /* System.Security.SecurityElement */ self,
-	System_Collections_ArrayList_t /* System.Collections.ArrayList */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -27898,20 +26267,6 @@ System_Collections_ArrayList_Create_2(
 	System_Collections_ICollection_t /* System.Collections.ICollection */ c,
 	System_Exception_t* /* System.Exception */ outException
 );
-
-int32_t /* System.Int32 */
-System_Collections_ArrayList_Capacity_Get(
-	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Collections_ArrayList_Capacity_Set(
-	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
-	int32_t /* System.Int32 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
 
 int32_t /* System.Int32 */
 System_Collections_ArrayList_Capacity_Get(
@@ -29131,36 +27486,8 @@ System_Text_StringBuilder_Capacity_Set(
 
 
 int32_t /* System.Int32 */
-System_Text_StringBuilder_Capacity_Get(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Text_StringBuilder_Capacity_Set(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	int32_t /* System.Int32 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-int32_t /* System.Int32 */
 System_Text_StringBuilder_MaxCapacity_Get(
 	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-int32_t /* System.Int32 */
-System_Text_StringBuilder_Length_Get(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Text_StringBuilder_Length_Set(
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	int32_t /* System.Int32 */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -30617,20 +28944,6 @@ System_IO_StreamWriter_AutoFlush_Set(
 );
 
 
-bool /* System.Boolean */
-System_IO_StreamWriter_AutoFlush_Get(
-	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_StreamWriter_AutoFlush_Set(
-	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
-	bool /* System.Boolean */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
 System_IO_Stream_t /* System.IO.Stream */
 System_IO_StreamWriter_BaseStream_Get(
 	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
@@ -31086,20 +29399,6 @@ System_IO_TextWriter_NewLine_Set(
 );
 
 
-System_String_t /* System.String */
-System_IO_TextWriter_NewLine_Get(
-	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_TextWriter_NewLine_Set(
-	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
 System_IO_TextWriter_t /* System.IO.TextWriter */
 System_IO_TextWriter_Null_Get(
 	
@@ -31202,20 +29501,6 @@ System_IO_FileSystemInfo_CreationTime_Set(
 
 
 System_DateTime_t /* System.DateTime */
-System_IO_FileSystemInfo_CreationTime_Get(
-	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_FileSystemInfo_CreationTime_Set(
-	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
-	System_DateTime_t /* System.DateTime */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_DateTime_t /* System.DateTime */
 System_IO_FileSystemInfo_CreationTimeUtc_Get(
 	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -31223,34 +29508,6 @@ System_IO_FileSystemInfo_CreationTimeUtc_Get(
 
 void /* System.Void */
 System_IO_FileSystemInfo_CreationTimeUtc_Set(
-	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
-	System_DateTime_t /* System.DateTime */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_DateTime_t /* System.DateTime */
-System_IO_FileSystemInfo_CreationTimeUtc_Get(
-	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_FileSystemInfo_CreationTimeUtc_Set(
-	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
-	System_DateTime_t /* System.DateTime */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_DateTime_t /* System.DateTime */
-System_IO_FileSystemInfo_LastAccessTime_Get(
-	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_FileSystemInfo_LastAccessTime_Set(
 	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
 	System_DateTime_t /* System.DateTime */ value,
 	System_Exception_t* /* System.Exception */ outException
@@ -31286,20 +29543,6 @@ System_IO_FileSystemInfo_LastAccessTimeUtc_Set(
 
 
 System_DateTime_t /* System.DateTime */
-System_IO_FileSystemInfo_LastAccessTimeUtc_Get(
-	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_FileSystemInfo_LastAccessTimeUtc_Set(
-	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
-	System_DateTime_t /* System.DateTime */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_DateTime_t /* System.DateTime */
 System_IO_FileSystemInfo_LastWriteTime_Get(
 	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -31307,34 +29550,6 @@ System_IO_FileSystemInfo_LastWriteTime_Get(
 
 void /* System.Void */
 System_IO_FileSystemInfo_LastWriteTime_Set(
-	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
-	System_DateTime_t /* System.DateTime */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_DateTime_t /* System.DateTime */
-System_IO_FileSystemInfo_LastWriteTime_Get(
-	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_FileSystemInfo_LastWriteTime_Set(
-	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
-	System_DateTime_t /* System.DateTime */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_DateTime_t /* System.DateTime */
-System_IO_FileSystemInfo_LastWriteTimeUtc_Get(
-	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_FileSystemInfo_LastWriteTimeUtc_Set(
 	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
 	System_DateTime_t /* System.DateTime */ value,
 	System_Exception_t* /* System.Exception */ outException
@@ -31372,34 +29587,6 @@ void /* System.Void */
 System_IO_FileSystemInfo_UnixFileMode_Set(
 	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
 	System_IO_UnixFileMode /* System.IO.UnixFileMode */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_IO_UnixFileMode /* System.IO.UnixFileMode */
-System_IO_FileSystemInfo_UnixFileMode_Get(
-	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_FileSystemInfo_UnixFileMode_Set(
-	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
-	System_IO_UnixFileMode /* System.IO.UnixFileMode */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_IO_FileAttributes /* System.IO.FileAttributes */
-System_IO_FileSystemInfo_Attributes_Get(
-	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_FileSystemInfo_Attributes_Set(
-	System_IO_FileSystemInfo_t /* System.IO.FileSystemInfo */ self,
-	System_IO_FileAttributes /* System.IO.FileAttributes */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -31593,20 +29780,6 @@ System_IO_FileInfo_DirectoryName_Get(
 System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */
 System_IO_FileInfo_Directory_Get(
 	System_IO_FileInfo_t /* System.IO.FileInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-bool /* System.Boolean */
-System_IO_FileInfo_IsReadOnly_Get(
-	System_IO_FileInfo_t /* System.IO.FileInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_FileInfo_IsReadOnly_Set(
-	System_IO_FileInfo_t /* System.IO.FileInfo */ self,
-	bool /* System.Boolean */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -31836,20 +30009,6 @@ System_IO_EnumerationOptions_RecurseSubdirectories_Set(
 
 
 bool /* System.Boolean */
-System_IO_EnumerationOptions_RecurseSubdirectories_Get(
-	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_EnumerationOptions_RecurseSubdirectories_Set(
-	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
-	bool /* System.Boolean */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-bool /* System.Boolean */
 System_IO_EnumerationOptions_IgnoreInaccessible_Get(
 	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -31859,34 +30018,6 @@ void /* System.Void */
 System_IO_EnumerationOptions_IgnoreInaccessible_Set(
 	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
 	bool /* System.Boolean */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-bool /* System.Boolean */
-System_IO_EnumerationOptions_IgnoreInaccessible_Get(
-	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_EnumerationOptions_IgnoreInaccessible_Set(
-	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
-	bool /* System.Boolean */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-int32_t /* System.Int32 */
-System_IO_EnumerationOptions_BufferSize_Get(
-	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_EnumerationOptions_BufferSize_Set(
-	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
-	int32_t /* System.Int32 */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -31919,34 +30050,6 @@ System_IO_EnumerationOptions_AttributesToSkip_Set(
 );
 
 
-System_IO_FileAttributes /* System.IO.FileAttributes */
-System_IO_EnumerationOptions_AttributesToSkip_Get(
-	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_EnumerationOptions_AttributesToSkip_Set(
-	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
-	System_IO_FileAttributes /* System.IO.FileAttributes */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_IO_MatchType /* System.IO.MatchType */
-System_IO_EnumerationOptions_MatchType_Get(
-	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_EnumerationOptions_MatchType_Set(
-	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
-	System_IO_MatchType /* System.IO.MatchType */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
 System_IO_MatchType /* System.IO.MatchType */
 System_IO_EnumerationOptions_MatchType_Get(
 	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
@@ -31975,20 +30078,6 @@ System_IO_EnumerationOptions_MatchCasing_Set(
 );
 
 
-System_IO_MatchCasing /* System.IO.MatchCasing */
-System_IO_EnumerationOptions_MatchCasing_Get(
-	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_EnumerationOptions_MatchCasing_Set(
-	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
-	System_IO_MatchCasing /* System.IO.MatchCasing */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
 int32_t /* System.Int32 */
 System_IO_EnumerationOptions_MaxRecursionDepth_Get(
 	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
@@ -31999,34 +30088,6 @@ void /* System.Void */
 System_IO_EnumerationOptions_MaxRecursionDepth_Set(
 	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
 	int32_t /* System.Int32 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-int32_t /* System.Int32 */
-System_IO_EnumerationOptions_MaxRecursionDepth_Get(
-	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_EnumerationOptions_MaxRecursionDepth_Set(
-	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
-	int32_t /* System.Int32 */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-bool /* System.Boolean */
-System_IO_EnumerationOptions_ReturnSpecialDirectories_Get(
-	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_EnumerationOptions_ReturnSpecialDirectories_Set(
-	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ self,
-	bool /* System.Boolean */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -32331,6 +30392,216 @@ System_IO_Directory_Destroy(
 #pragma mark - END APIs of System.IO.Directory
 
 #pragma mark - BEGIN APIs of System.Collections.Generic.List<>
+void /* System.Void */
+System_Collections_Generic_List_A1_Add(
+	System_Collections_Generic_List_A1_t /* System.Collections.Generic.List<> */ self,
+	System_Type_t /* System.Type */ T,
+	System_Object_t /* System.Object */ item,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Collections_Generic_List_A1_BinarySearch(
+	System_Collections_Generic_List_A1_t /* System.Collections.Generic.List<> */ self,
+	System_Type_t /* System.Type */ T,
+	System_Object_t /* System.Object */ item,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_Generic_List_A1_Clear(
+	System_Collections_Generic_List_A1_t /* System.Collections.Generic.List<> */ self,
+	System_Type_t /* System.Type */ T,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Collections_Generic_List_A1_Contains(
+	System_Collections_Generic_List_A1_t /* System.Collections.Generic.List<> */ self,
+	System_Type_t /* System.Type */ T,
+	System_Object_t /* System.Object */ item,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_Generic_List_A1_CopyTo(
+	System_Collections_Generic_List_A1_t /* System.Collections.Generic.List<> */ self,
+	System_Type_t /* System.Type */ T,
+	System_Array_t /* System.Array */ array,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_Generic_List_A1_CopyTo_1(
+	System_Collections_Generic_List_A1_t /* System.Collections.Generic.List<> */ self,
+	System_Type_t /* System.Type */ T,
+	int32_t /* System.Int32 */ index,
+	System_Array_t /* System.Array */ array,
+	int32_t /* System.Int32 */ arrayIndex,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_Generic_List_A1_CopyTo_2(
+	System_Collections_Generic_List_A1_t /* System.Collections.Generic.List<> */ self,
+	System_Type_t /* System.Type */ T,
+	System_Array_t /* System.Array */ array,
+	int32_t /* System.Int32 */ arrayIndex,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Collections_Generic_List_A1_EnsureCapacity(
+	System_Collections_Generic_List_A1_t /* System.Collections.Generic.List<> */ self,
+	System_Type_t /* System.Type */ T,
+	int32_t /* System.Int32 */ capacity,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Collections_Generic_List_A1_GetRange(
+	System_Collections_Generic_List_A1_t /* System.Collections.Generic.List<> */ self,
+	System_Type_t /* System.Type */ T,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Collections_Generic_List_A1_Slice(
+	System_Collections_Generic_List_A1_t /* System.Collections.Generic.List<> */ self,
+	System_Type_t /* System.Type */ T,
+	int32_t /* System.Int32 */ start,
+	int32_t /* System.Int32 */ length,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Collections_Generic_List_A1_IndexOf(
+	System_Collections_Generic_List_A1_t /* System.Collections.Generic.List<> */ self,
+	System_Type_t /* System.Type */ T,
+	System_Object_t /* System.Object */ item,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Collections_Generic_List_A1_IndexOf_1(
+	System_Collections_Generic_List_A1_t /* System.Collections.Generic.List<> */ self,
+	System_Type_t /* System.Type */ T,
+	System_Object_t /* System.Object */ item,
+	int32_t /* System.Int32 */ index,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Collections_Generic_List_A1_IndexOf_2(
+	System_Collections_Generic_List_A1_t /* System.Collections.Generic.List<> */ self,
+	System_Type_t /* System.Type */ T,
+	System_Object_t /* System.Object */ item,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_Generic_List_A1_Insert(
+	System_Collections_Generic_List_A1_t /* System.Collections.Generic.List<> */ self,
+	System_Type_t /* System.Type */ T,
+	int32_t /* System.Int32 */ index,
+	System_Object_t /* System.Object */ item,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Collections_Generic_List_A1_LastIndexOf(
+	System_Collections_Generic_List_A1_t /* System.Collections.Generic.List<> */ self,
+	System_Type_t /* System.Type */ T,
+	System_Object_t /* System.Object */ item,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Collections_Generic_List_A1_LastIndexOf_1(
+	System_Collections_Generic_List_A1_t /* System.Collections.Generic.List<> */ self,
+	System_Type_t /* System.Type */ T,
+	System_Object_t /* System.Object */ item,
+	int32_t /* System.Int32 */ index,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Collections_Generic_List_A1_LastIndexOf_2(
+	System_Collections_Generic_List_A1_t /* System.Collections.Generic.List<> */ self,
+	System_Type_t /* System.Type */ T,
+	System_Object_t /* System.Object */ item,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Collections_Generic_List_A1_Remove(
+	System_Collections_Generic_List_A1_t /* System.Collections.Generic.List<> */ self,
+	System_Type_t /* System.Type */ T,
+	System_Object_t /* System.Object */ item,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_Generic_List_A1_RemoveAt(
+	System_Collections_Generic_List_A1_t /* System.Collections.Generic.List<> */ self,
+	System_Type_t /* System.Type */ T,
+	int32_t /* System.Int32 */ index,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_Generic_List_A1_RemoveRange(
+	System_Collections_Generic_List_A1_t /* System.Collections.Generic.List<> */ self,
+	System_Type_t /* System.Type */ T,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_Generic_List_A1_Reverse(
+	System_Collections_Generic_List_A1_t /* System.Collections.Generic.List<> */ self,
+	System_Type_t /* System.Type */ T,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_Generic_List_A1_Reverse_1(
+	System_Collections_Generic_List_A1_t /* System.Collections.Generic.List<> */ self,
+	System_Type_t /* System.Type */ T,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_Generic_List_A1_Sort(
+	System_Collections_Generic_List_A1_t /* System.Collections.Generic.List<> */ self,
+	System_Type_t /* System.Type */ T,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Array_t /* System.Array */
+System_Collections_Generic_List_A1_ToArray(
+	System_Collections_Generic_List_A1_t /* System.Collections.Generic.List<> */ self,
+	System_Type_t /* System.Type */ T,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_Generic_List_A1_TrimExcess(
+	System_Collections_Generic_List_A1_t /* System.Collections.Generic.List<> */ self,
+	System_Type_t /* System.Type */ T,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 System_Object_t /* System.Object */
 System_Collections_Generic_List_A1_Create(
 	System_Type_t /* System.Type */ T,
@@ -32344,13 +30615,29 @@ System_Collections_Generic_List_A1_Create_1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO: Only constructors and destructors of generic types are currently supported
-// TODO: Only constructors and destructors of generic types are currently supported
+int32_t /* System.Int32 */
+System_Collections_Generic_List_A1_Capacity_Get(
+	System_Collections_Generic_List_A1_t /* System.Collections.Generic.List<> */ self,
+	System_Type_t /* System.Type */ T,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO: Only constructors and destructors of generic types are currently supported
-// TODO: Only constructors and destructors of generic types are currently supported
+void /* System.Void */
+System_Collections_Generic_List_A1_Capacity_Set(
+	System_Collections_Generic_List_A1_t /* System.Collections.Generic.List<> */ self,
+	System_Type_t /* System.Type */ T,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO: Only constructors and destructors of generic types are currently supported
+
+int32_t /* System.Int32 */
+System_Collections_Generic_List_A1_Count_Get(
+	System_Collections_Generic_List_A1_t /* System.Collections.Generic.List<> */ self,
+	System_Type_t /* System.Type */ T,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 
 System_Type_t /* System.Type */
 System_Collections_Generic_List_A1_TypeOf(
@@ -32370,6 +30657,126 @@ System_Collections_Generic_List_A1_Destroy(
 
 
 #pragma mark - BEGIN APIs of System.Collections.Generic.Dictionary<,>
+void /* System.Void */
+System_Collections_Generic_Dictionary_A2_Add(
+	System_Collections_Generic_Dictionary_A2_t /* System.Collections.Generic.Dictionary<,> */ self,
+	System_Type_t /* System.Type */ TKey,
+	System_Type_t /* System.Type */ TValue,
+	System_Object_t /* System.Object */ key,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_Generic_Dictionary_A2_Clear(
+	System_Collections_Generic_Dictionary_A2_t /* System.Collections.Generic.Dictionary<,> */ self,
+	System_Type_t /* System.Type */ TKey,
+	System_Type_t /* System.Type */ TValue,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Collections_Generic_Dictionary_A2_ContainsKey(
+	System_Collections_Generic_Dictionary_A2_t /* System.Collections.Generic.Dictionary<,> */ self,
+	System_Type_t /* System.Type */ TKey,
+	System_Type_t /* System.Type */ TValue,
+	System_Object_t /* System.Object */ key,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Collections_Generic_Dictionary_A2_ContainsValue(
+	System_Collections_Generic_Dictionary_A2_t /* System.Collections.Generic.Dictionary<,> */ self,
+	System_Type_t /* System.Type */ TKey,
+	System_Type_t /* System.Type */ TValue,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_Generic_Dictionary_A2_GetObjectData(
+	System_Collections_Generic_Dictionary_A2_t /* System.Collections.Generic.Dictionary<,> */ self,
+	System_Type_t /* System.Type */ TKey,
+	System_Type_t /* System.Type */ TValue,
+	System_Runtime_Serialization_SerializationInfo_t /* System.Runtime.Serialization.SerializationInfo */ info,
+	System_Runtime_Serialization_StreamingContext_t /* System.Runtime.Serialization.StreamingContext */ context,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_Generic_Dictionary_A2_OnDeserialization(
+	System_Collections_Generic_Dictionary_A2_t /* System.Collections.Generic.Dictionary<,> */ self,
+	System_Type_t /* System.Type */ TKey,
+	System_Type_t /* System.Type */ TValue,
+	System_Object_t /* System.Object */ sender,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Collections_Generic_Dictionary_A2_Remove(
+	System_Collections_Generic_Dictionary_A2_t /* System.Collections.Generic.Dictionary<,> */ self,
+	System_Type_t /* System.Type */ TKey,
+	System_Type_t /* System.Type */ TValue,
+	System_Object_t /* System.Object */ key,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Collections_Generic_Dictionary_A2_Remove_1(
+	System_Collections_Generic_Dictionary_A2_t /* System.Collections.Generic.Dictionary<,> */ self,
+	System_Type_t /* System.Type */ TKey,
+	System_Type_t /* System.Type */ TValue,
+	System_Object_t /* System.Object */ key,
+	System_Object_t* /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Collections_Generic_Dictionary_A2_TryGetValue(
+	System_Collections_Generic_Dictionary_A2_t /* System.Collections.Generic.Dictionary<,> */ self,
+	System_Type_t /* System.Type */ TKey,
+	System_Type_t /* System.Type */ TValue,
+	System_Object_t /* System.Object */ key,
+	System_Object_t* /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Collections_Generic_Dictionary_A2_TryAdd(
+	System_Collections_Generic_Dictionary_A2_t /* System.Collections.Generic.Dictionary<,> */ self,
+	System_Type_t /* System.Type */ TKey,
+	System_Type_t /* System.Type */ TValue,
+	System_Object_t /* System.Object */ key,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Collections_Generic_Dictionary_A2_EnsureCapacity(
+	System_Collections_Generic_Dictionary_A2_t /* System.Collections.Generic.Dictionary<,> */ self,
+	System_Type_t /* System.Type */ TKey,
+	System_Type_t /* System.Type */ TValue,
+	int32_t /* System.Int32 */ capacity,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_Generic_Dictionary_A2_TrimExcess(
+	System_Collections_Generic_Dictionary_A2_t /* System.Collections.Generic.Dictionary<,> */ self,
+	System_Type_t /* System.Type */ TKey,
+	System_Type_t /* System.Type */ TValue,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_Generic_Dictionary_A2_TrimExcess_1(
+	System_Collections_Generic_Dictionary_A2_t /* System.Collections.Generic.Dictionary<,> */ self,
+	System_Type_t /* System.Type */ TKey,
+	System_Type_t /* System.Type */ TValue,
+	int32_t /* System.Int32 */ capacity,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 System_Object_t /* System.Object */
 System_Collections_Generic_Dictionary_A2_Create(
 	System_Type_t /* System.Type */ TKey,
@@ -32385,7 +30792,14 @@ System_Collections_Generic_Dictionary_A2_Create_1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO: Only constructors and destructors of generic types are currently supported
+int32_t /* System.Int32 */
+System_Collections_Generic_Dictionary_A2_Count_Get(
+	System_Collections_Generic_Dictionary_A2_t /* System.Collections.Generic.Dictionary<,> */ self,
+	System_Type_t /* System.Type */ TKey,
+	System_Type_t /* System.Type */ TValue,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 
 System_Type_t /* System.Type */
 System_Collections_Generic_Dictionary_A2_TypeOf(
@@ -32617,17 +31031,55 @@ NativeAOT_CodeGeneratorInputSample_GenericAnimal_Destroy(
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.GenericAnimal
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.GenericTestClass<>
+System_Type_t /* System.Type */
+NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_ReturnGenericClassType(
+	NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_t /* NativeAOT.CodeGeneratorInputSample.GenericTestClass<> */ self,
+	System_Type_t /* System.Type */ T,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_Array_t /* System.Type[] */
+NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_ReturnGenericClassTypeAndGenericMethodType_A1(
+	System_Type_t /* System.Type */ T,
+	System_Type_t /* System.Type */ TM,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 System_Object_t /* System.Object */
 NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_Create(
 	System_Type_t /* System.Type */ T,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO: Only constructors and destructors of generic types are currently supported
-// TODO: Only constructors and destructors of generic types are currently supported
+int32_t /* System.Int32 */
+NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_AProperty_Get(
+	NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_t /* NativeAOT.CodeGeneratorInputSample.GenericTestClass<> */ self,
+	System_Type_t /* System.Type */ T,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO: Only constructors and destructors of generic types are currently supported
-// TODO: Only constructors and destructors of generic types are currently supported
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_AProperty_Set(
+	NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_t /* NativeAOT.CodeGeneratorInputSample.GenericTestClass<> */ self,
+	System_Type_t /* System.Type */ T,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_AField_Get(
+	NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_t /* NativeAOT.CodeGeneratorInputSample.GenericTestClass<> */ self,
+	System_Type_t /* System.Type */ T
+);
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_AField_Set(
+	NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_t /* NativeAOT.CodeGeneratorInputSample.GenericTestClass<> */ self,
+	System_Type_t /* System.Type */ T,
+	int32_t /* System.Int32 */ value
+);
+
 
 System_Type_t /* System.Type */
 NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_TypeOf(
@@ -32642,6 +31094,22 @@ NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_Destroy(
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.GenericTestClass<>
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.GenericTestClass<,>
+System_Type_Array_t /* System.Type[] */
+NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_ReturnGenericClassTypes(
+	NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_t /* NativeAOT.CodeGeneratorInputSample.GenericTestClass<,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_Array_t /* System.Type[] */
+NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_ReturnGenericClassTypeAndGenericMethodType_A1(
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ TM,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 System_Object_t /* System.Object */
 NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_Create(
 	System_Type_t /* System.Type */ T1,
@@ -32649,11 +31117,39 @@ NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_Create(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-// TODO: Only constructors and destructors of generic types are currently supported
-// TODO: Only constructors and destructors of generic types are currently supported
+int32_t /* System.Int32 */
+NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_AProperty_Get(
+	NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_t /* NativeAOT.CodeGeneratorInputSample.GenericTestClass<,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-// TODO: Only constructors and destructors of generic types are currently supported
-// TODO: Only constructors and destructors of generic types are currently supported
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_AProperty_Set(
+	NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_t /* NativeAOT.CodeGeneratorInputSample.GenericTestClass<,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_AField_Get(
+	NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_t /* NativeAOT.CodeGeneratorInputSample.GenericTestClass<,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2
+);
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_AField_Set(
+	NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_t /* NativeAOT.CodeGeneratorInputSample.GenericTestClass<,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	int32_t /* System.Int32 */ value
+);
+
 
 System_Type_t /* System.Type */
 NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_TypeOf(
@@ -32881,20 +31377,6 @@ NativeAOT_CodeGeneratorInputSample_Person_FirstName_Set(
 
 
 System_String_t /* System.String */
-NativeAOT_CodeGeneratorInputSample_Person_FirstName_Get(
-	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-NativeAOT_CodeGeneratorInputSample_Person_FirstName_Set(
-	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
 NativeAOT_CodeGeneratorInputSample_Person_LastName_Get(
 	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -32904,34 +31386,6 @@ void /* System.Void */
 NativeAOT_CodeGeneratorInputSample_Person_LastName_Set(
 	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
 	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
-NativeAOT_CodeGeneratorInputSample_Person_LastName_Get(
-	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-NativeAOT_CodeGeneratorInputSample_Person_LastName_Set(
-	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-int32_t /* System.Int32 */
-NativeAOT_CodeGeneratorInputSample_Person_Age_Get(
-	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-NativeAOT_CodeGeneratorInputSample_Person_Age_Set(
-	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
-	int32_t /* System.Int32 */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -32964,20 +31418,6 @@ NativeAOT_CodeGeneratorInputSample_Person_Address_Set(
 );
 
 
-NativeAOT_CodeGeneratorInputSample_Address_t /* NativeAOT.CodeGeneratorInputSample.Address */
-NativeAOT_CodeGeneratorInputSample_Person_Address_Get(
-	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-NativeAOT_CodeGeneratorInputSample_Person_Address_Set(
-	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
-	NativeAOT_CodeGeneratorInputSample_Address_t /* NativeAOT.CodeGeneratorInputSample.Address */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
 NativeAOT_CodeGeneratorInputSample_Person_Array_t /* NativeAOT.CodeGeneratorInputSample.Person[] */
 NativeAOT_CodeGeneratorInputSample_Person_Children_Get(
 	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
@@ -32988,34 +31428,6 @@ void /* System.Void */
 NativeAOT_CodeGeneratorInputSample_Person_Children_Set(
 	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
 	NativeAOT_CodeGeneratorInputSample_Person_Array_t /* NativeAOT.CodeGeneratorInputSample.Person[] */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-NativeAOT_CodeGeneratorInputSample_Person_Array_t /* NativeAOT.CodeGeneratorInputSample.Person[] */
-NativeAOT_CodeGeneratorInputSample_Person_Children_Get(
-	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-NativeAOT_CodeGeneratorInputSample_Person_Children_Set(
-	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
-	NativeAOT_CodeGeneratorInputSample_Person_Array_t /* NativeAOT.CodeGeneratorInputSample.Person[] */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-NativeAOT_CodeGeneratorInputSample_NiceLevels /* NativeAOT.CodeGeneratorInputSample.NiceLevels */
-NativeAOT_CodeGeneratorInputSample_Person_NiceLevel_Get(
-	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-NativeAOT_CodeGeneratorInputSample_Person_NiceLevel_Set(
-	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
-	NativeAOT_CodeGeneratorInputSample_NiceLevels /* NativeAOT.CodeGeneratorInputSample.NiceLevels */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -33045,19 +31457,6 @@ int32_t /* System.Int32 */
 NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildren_Get(
 	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
 	System_Exception_t* /* System.Exception */ outException
-);
-
-
-void /* System.Void */
-NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChanged_Add(
-	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
-	NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate */ value
-);
-
-void /* System.Void */
-NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChanged_Remove(
-	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ self,
-	NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate */ value
 );
 
 
@@ -33267,30 +31666,6 @@ NativeAOT_CodeGeneratorInputSample_TestClass_CurrentBook_Set(
 );
 
 
-NativeAOT_CodeGeneratorInputSample_Book_t /* NativeAOT.CodeGeneratorInputSample.Book */
-NativeAOT_CodeGeneratorInputSample_TestClass_CurrentBook_Get(
-	NativeAOT_CodeGeneratorInputSample_TestClass_t /* NativeAOT.CodeGeneratorInputSample.TestClass */ self
-);
-
-void /* System.Void */
-NativeAOT_CodeGeneratorInputSample_TestClass_CurrentBook_Set(
-	NativeAOT_CodeGeneratorInputSample_TestClass_t /* NativeAOT.CodeGeneratorInputSample.TestClass */ self,
-	NativeAOT_CodeGeneratorInputSample_Book_t /* NativeAOT.CodeGeneratorInputSample.Book */ value
-);
-
-
-int32_t /* System.Int32 */
-NativeAOT_CodeGeneratorInputSample_TestClass_CurrentIntValue_Get(
-	NativeAOT_CodeGeneratorInputSample_TestClass_t /* NativeAOT.CodeGeneratorInputSample.TestClass */ self
-);
-
-void /* System.Void */
-NativeAOT_CodeGeneratorInputSample_TestClass_CurrentIntValue_Set(
-	NativeAOT_CodeGeneratorInputSample_TestClass_t /* NativeAOT.CodeGeneratorInputSample.TestClass */ self,
-	int32_t /* System.Int32 */ value
-);
-
-
 int32_t /* System.Int32 */
 NativeAOT_CodeGeneratorInputSample_TestClass_CurrentIntValue_Get(
 	NativeAOT_CodeGeneratorInputSample_TestClass_t /* NativeAOT.CodeGeneratorInputSample.TestClass */ self
@@ -33359,18 +31734,6 @@ NativeAOT_CodeGeneratorInputSample_Transformer_Destroy(
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.Transformer
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Transformer.BuiltInTransformers
-NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate_t /* NativeAOT.CodeGeneratorInputSample.Transformer.StringTransformerDelegate */
-NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers_UppercaseStringTransformer_Get(
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers_UppercaseStringTransformer_Set(
-	NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate_t /* NativeAOT.CodeGeneratorInputSample.Transformer.StringTransformerDelegate */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
 NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate_t /* NativeAOT.CodeGeneratorInputSample.Transformer.StringTransformerDelegate */
 NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers_UppercaseStringTransformer_Get(
 	System_Exception_t* /* System.Exception */ outException

@@ -214,16 +214,20 @@ public class TypeDescriptor
             return null;
         }
 
+        Type type = ManagedType;
+
         if (sourceLanguage == CodeLanguage.CSharpUnmanaged &&
             targetLanguage == CodeLanguage.CSharp) {
             string conversion;
 
-            if (ManagedType.IsDelegate()) {
-                string cTypeName = ManagedType.CTypeName();
+            if (type.IsDelegate()) {
+                string cTypeName = type.CTypeName();
 
                 conversion = "InteropUtils.GetInstance<" + cTypeName + ">({0})?.Trampoline";
             } else {
-                conversion = "InteropUtils.GetInstance<" + ManagedType.GetFullNameOrName() + ">({0})";
+                string typeName = type.GetFullNameOrName();
+                
+                conversion = "InteropUtils.GetInstance<" + typeName + ">({0})";
             }
 
             return conversion;
@@ -231,8 +235,8 @@ public class TypeDescriptor
                    targetLanguage == CodeLanguage.CSharpUnmanaged) {
             string conversion;
 
-            if (ManagedType.IsDelegate()) {
-                string cTypeName = ManagedType.CTypeName();
+            if (type.IsDelegate()) {
+                string cTypeName = type.CTypeName();
                 
                 conversion = $"new {cTypeName}({{0}}).AllocateGCHandleAndGetAddress()";
             } else {

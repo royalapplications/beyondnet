@@ -255,8 +255,16 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
             );
         }
 
+        HashSet<MemberInfo> generatedMembers = new();
+
         foreach (var cSharpMember in cSharpMembers) {
             var member = cSharpMember.Member;
+
+            if (member is not null &&
+                generatedMembers.Contains(member)) {
+                continue;
+            }
+            
             var memberKind = cSharpMember.MemberKind;
             var memberType = member?.MemberType;
 
@@ -290,6 +298,10 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
             string memberCode = syntaxWriter.Write(target, state);
 
             sb.AppendLine(memberCode);
+
+            if (member is not null) {
+                generatedMembers.Add(member);
+            }
         }
 
         sb.AppendLine($"#pragma mark - END APIs of {fullTypeName}");

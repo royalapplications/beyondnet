@@ -29,6 +29,7 @@ public class CFieldSyntaxWriter: CMethodSyntaxWriter, IFieldSyntaxWriter
 
         bool isStatic = field.IsStatic;
         Type declaringType = field.DeclaringType ?? throw new Exception("No declaring type");
+        IEnumerable<ParameterInfo> parameters = Array.Empty<ParameterInfo>();
         Type fieldType = field.FieldType;
 
         StringBuilder sb = new();
@@ -42,7 +43,7 @@ public class CFieldSyntaxWriter: CMethodSyntaxWriter, IFieldSyntaxWriter
                 generatedGetterMember.MayThrow,
                 declaringType,
                 fieldType,
-                Array.Empty<ParameterInfo>(),
+                parameters,
                 typeDescriptorRegistry,
                 state
             );
@@ -59,7 +60,7 @@ public class CFieldSyntaxWriter: CMethodSyntaxWriter, IFieldSyntaxWriter
                 generatedSetterMember.MayThrow,
                 declaringType,
                 fieldType,
-                Array.Empty<ParameterInfo>(),
+                parameters,
                 typeDescriptorRegistry,
                 state
             );
