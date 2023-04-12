@@ -12,6 +12,19 @@ final class SystemObjectTests: XCTestCase {
 		Self.sharedTearDown()
 	}
 	
+//	func testOverrelease() {
+//		guard let systemObjectType = System_Object_TypeOf() else {
+//			XCTFail("typeof(System.Object) should return an instance")
+//			
+//			return
+//		}
+//		
+//		System_Type_Destroy(systemObjectType)
+//		System_Type_Destroy(systemObjectType)
+//		System_Type_Destroy(systemObjectType)
+//		System_Type_Destroy(systemObjectType)
+//	}
+	
     func testSystemObject() {
         var exception: System_Exception_t?
         
