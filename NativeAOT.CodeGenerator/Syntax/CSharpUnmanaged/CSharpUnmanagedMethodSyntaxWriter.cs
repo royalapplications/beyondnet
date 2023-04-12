@@ -745,6 +745,16 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             ? " */"
             : string.Empty;
 
+        if (!isStatic) {
+            TypeDescriptor declaringTypeDescriptor = declaringType.GetTypeDescriptor(typeDescriptorRegistry);
+            string declaringTypeName = declaringTypeDescriptor.GetTypeName(targetLanguage, true);
+            string selfParameterName = "__self";
+            
+            string parameterString = $"{declaringTypeName} /* {declaringType.GetFullNameOrName()} */ {parameterNamePrefix}{selfParameterName}{parameterNameSuffix}";
+            
+            parameterList.Add(parameterString);
+        }
+        
         if (isGeneric) {
             Type typeOfSystemType = typeof(Type);
             TypeDescriptor systemTypeTypeDescriptor = typeOfSystemType.GetTypeDescriptor(typeDescriptorRegistry);
@@ -758,16 +768,6 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             
                 parameterList.Add(parameterString);
             }
-        }
-
-        if (!isStatic) {
-            TypeDescriptor declaringTypeDescriptor = declaringType.GetTypeDescriptor(typeDescriptorRegistry);
-            string declaringTypeName = declaringTypeDescriptor.GetTypeName(targetLanguage, true);
-            string selfParameterName = "__self";
-            
-            string parameterString = $"{declaringTypeName} /* {declaringType.GetFullNameOrName()} */ {parameterNamePrefix}{selfParameterName}{parameterNameSuffix}";
-            
-            parameterList.Add(parameterString);
         }
 
         if (memberKind == MemberKind.PropertySetter ||

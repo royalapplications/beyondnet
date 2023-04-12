@@ -14543,15 +14543,15 @@ System_Reflection_MethodInfo_CreateDelegate_1(
 
 System_Object_t /* System.Object */
 System_Reflection_MethodInfo_CreateDelegate_A1(
-	System_Type_t /* System.Type */ T,
 	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
+	System_Type_t /* System.Type */ T,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 System_Object_t /* System.Object */
 System_Reflection_MethodInfo_CreateDelegate_A1_1(
-	System_Type_t /* System.Type */ T,
 	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
+	System_Type_t /* System.Type */ T,
 	System_Object_t /* System.Object */ target,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -28485,8 +28485,8 @@ System_Random_NextBytes(
 
 System_Array_t /* System.Array */
 System_Random_GetItems_A1(
-	System_Type_t /* System.Type */ T,
 	System_Random_t /* System.Random */ self,
+	System_Type_t /* System.Type */ T,
 	System_Array_t /* System.Array */ choices,
 	int32_t /* System.Int32 */ length,
 	System_Exception_t* /* System.Exception */ outException
@@ -28494,8 +28494,8 @@ System_Random_GetItems_A1(
 
 void /* System.Void */
 System_Random_Shuffle_A1(
-	System_Type_t /* System.Type */ T,
 	System_Random_t /* System.Random */ self,
+	System_Type_t /* System.Type */ T,
 	System_Array_t /* System.Array */ values,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -29048,8 +29048,8 @@ System_Text_StringBuilder_AppendFormat_7(
 
 System_Text_StringBuilder_t /* System.Text.StringBuilder */
 System_Text_StringBuilder_AppendFormat_A1(
-	System_Type_t /* System.Type */ TArg0,
 	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Type_t /* System.Type */ TArg0,
 	System_IFormatProvider_t /* System.IFormatProvider */ provider,
 	System_Text_CompositeFormat_t /* System.Text.CompositeFormat */ format,
 	System_Object_t /* System.Object */ arg0,
@@ -29058,9 +29058,9 @@ System_Text_StringBuilder_AppendFormat_A1(
 
 System_Text_StringBuilder_t /* System.Text.StringBuilder */
 System_Text_StringBuilder_AppendFormat_A2(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
 	System_Type_t /* System.Type */ TArg0,
 	System_Type_t /* System.Type */ TArg1,
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
 	System_IFormatProvider_t /* System.IFormatProvider */ provider,
 	System_Text_CompositeFormat_t /* System.Text.CompositeFormat */ format,
 	System_Object_t /* System.Object */ arg0,
@@ -29070,10 +29070,10 @@ System_Text_StringBuilder_AppendFormat_A2(
 
 System_Text_StringBuilder_t /* System.Text.StringBuilder */
 System_Text_StringBuilder_AppendFormat_A3(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
 	System_Type_t /* System.Type */ TArg0,
 	System_Type_t /* System.Type */ TArg1,
 	System_Type_t /* System.Type */ TArg2,
-	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
 	System_IFormatProvider_t /* System.IFormatProvider */ provider,
 	System_Text_CompositeFormat_t /* System.Text.CompositeFormat */ format,
 	System_Object_t /* System.Object */ arg0,
@@ -29284,16 +29284,16 @@ System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendLiteral(
 
 void /* System.Void */
 System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1(
-	System_Type_t /* System.Type */ T,
 	System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ self,
+	System_Type_t /* System.Type */ T,
 	System_Object_t /* System.Object */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1_1(
-	System_Type_t /* System.Type */ T,
 	System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ self,
+	System_Type_t /* System.Type */ T,
 	System_Object_t /* System.Object */ value,
 	System_String_t /* System.String */ format,
 	System_Exception_t* /* System.Exception */ outException
@@ -29301,8 +29301,8 @@ System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1_1(
 
 void /* System.Void */
 System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1_2(
-	System_Type_t /* System.Type */ T,
 	System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ self,
+	System_Type_t /* System.Type */ T,
 	System_Object_t /* System.Object */ value,
 	int32_t /* System.Int32 */ alignment,
 	System_Exception_t* /* System.Exception */ outException
@@ -29310,8 +29310,8 @@ System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1_2(
 
 void /* System.Void */
 System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1_3(
-	System_Type_t /* System.Type */ T,
 	System_Text_StringBuilder_AppendInterpolatedStringHandler_t /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ self,
+	System_Type_t /* System.Type */ T,
 	System_Object_t /* System.Object */ value,
 	int32_t /* System.Int32 */ alignment,
 	System_String_t /* System.String */ format,
@@ -32654,8 +32654,8 @@ NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnArrayOfDefaultValuesOfGene
 
 System_Array_t /* System.Array */
 NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnArrayOfRepeatedValues_A1(
-	System_Type_t /* System.Type */ T,
 	NativeAOT_CodeGeneratorInputSample_GenericTests_t /* NativeAOT.CodeGeneratorInputSample.GenericTests */ self,
+	System_Type_t /* System.Type */ T,
 	System_Object_t /* System.Object */ value,
 	int32_t /* System.Int32 */ numberOfElements,
 	System_Exception_t* /* System.Exception */ outException

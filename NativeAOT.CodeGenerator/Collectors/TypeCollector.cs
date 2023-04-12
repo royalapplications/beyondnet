@@ -327,6 +327,12 @@ public class TypeCollector
             return false;
         }
         #endregion Generic Types
+
+        if ((type.IsGenericType || type.IsGenericTypeDefinition) &&
+            type.IsDelegate()) {
+            unsupportedReason = "Is Generic Delegate Type";
+            return false;
+        }
         
         // TODO: Not sure what that is
         if (type.IsConstructedGenericType) {

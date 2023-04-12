@@ -317,8 +317,8 @@ final class GenericTestsTests: XCTestCase {
 
 		defer { NativeAOT_CodeGeneratorInputSample_GenericTests_Destroy(genericTests) }
 
-		guard let arrayRet = NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnArrayOfRepeatedValues_A1(systemObjectType,
-																											genericTests,
+		guard let arrayRet = NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnArrayOfRepeatedValues_A1(genericTests,
+																											systemObjectType,
 																											value,
 																											numberOfElements,
 																											&exception),

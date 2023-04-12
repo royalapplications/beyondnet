@@ -212,6 +212,17 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
     )
     {
         List<string> parameterList = new();
+
+        if (!isStatic) {
+            TypeDescriptor declaringTypeDescriptor = declaringType.GetTypeDescriptor(typeDescriptorRegistry);
+            
+            string declaringTypeName = declaringTypeDescriptor.GetTypeName(CodeLanguage.C, true);
+            
+            string selfParameterName = "self";
+            string parameterString = $"{declaringTypeName} /* {declaringType.GetFullNameOrName()} */ {selfParameterName}";
+
+            parameterList.Add(parameterString);
+        }
         
         if (isGeneric) {
             Type typeOfSystemType = typeof(Type);
@@ -226,17 +237,6 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             
                 parameterList.Add(parameterString);
             }
-        }
-
-        if (!isStatic) {
-            TypeDescriptor declaringTypeDescriptor = declaringType.GetTypeDescriptor(typeDescriptorRegistry);
-            
-            string declaringTypeName = declaringTypeDescriptor.GetTypeName(CodeLanguage.C, true);
-            
-            string selfParameterName = "self";
-            string parameterString = $"{declaringTypeName} /* {declaringType.GetFullNameOrName()} */ {selfParameterName}";
-
-            parameterList.Add(parameterString);
         }
 
         if (memberKind == MemberKind.PropertySetter ||

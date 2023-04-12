@@ -47315,7 +47315,7 @@ internal unsafe class System_Reflection_MethodInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodInfo_CreateDelegate_A1")]
-	internal static void* /* System.Object */ System_Reflection_MethodInfo_CreateDelegate_A1(void* /* System.Type */ T, void* /* System.Reflection.MethodInfo */ __self, void** /* System.Exception */ __outException)
+	internal static void* /* System.Object */ System_Reflection_MethodInfo_CreateDelegate_A1(void* /* System.Reflection.MethodInfo */ __self, void* /* System.Type */ T, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -47359,7 +47359,7 @@ internal unsafe class System_Reflection_MethodInfo
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_MethodInfo_CreateDelegate_A1_1")]
-	internal static void* /* System.Object */ System_Reflection_MethodInfo_CreateDelegate_A1_1(void* /* System.Type */ T, void* /* System.Reflection.MethodInfo */ __self, void* /* System.Object */ target, void** /* System.Exception */ __outException)
+	internal static void* /* System.Object */ System_Reflection_MethodInfo_CreateDelegate_A1_1(void* /* System.Reflection.MethodInfo */ __self, void* /* System.Type */ T, void* /* System.Object */ target, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -98783,7 +98783,7 @@ internal unsafe class System_Random
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Random_GetItems_A1")]
-	internal static void* /* System.Array */ System_Random_GetItems_A1(void* /* System.Type */ T, void* /* System.Random */ __self, void* /* T[] */ choices, int /* System.Int32 */ length, void** /* System.Exception */ __outException)
+	internal static void* /* System.Array */ System_Random_GetItems_A1(void* /* System.Random */ __self, void* /* System.Type */ T, void* /* T[] */ choices, int /* System.Int32 */ length, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -98828,7 +98828,7 @@ internal unsafe class System_Random
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Random_Shuffle_A1")]
-	internal static void /* System.Void */ System_Random_Shuffle_A1(void* /* System.Type */ T, void* /* System.Random */ __self, void* /* T[] */ values, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_Random_Shuffle_A1(void* /* System.Random */ __self, void* /* System.Type */ T, void* /* T[] */ values, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -101058,7 +101058,7 @@ internal unsafe class System_Text_StringBuilder
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_AppendFormat_A1")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_AppendFormat_A1(void* /* System.Type */ TArg0, void* /* System.Text.StringBuilder */ __self, void* /* System.IFormatProvider */ provider, void* /* System.Text.CompositeFormat */ format, void* /* TArg0 */ arg0, void** /* System.Exception */ __outException)
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_AppendFormat_A1(void* /* System.Text.StringBuilder */ __self, void* /* System.Type */ TArg0, void* /* System.IFormatProvider */ provider, void* /* System.Text.CompositeFormat */ format, void* /* TArg0 */ arg0, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -101105,7 +101105,7 @@ internal unsafe class System_Text_StringBuilder
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_AppendFormat_A2")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_AppendFormat_A2(void* /* System.Type */ TArg0, void* /* System.Type */ TArg1, void* /* System.Text.StringBuilder */ __self, void* /* System.IFormatProvider */ provider, void* /* System.Text.CompositeFormat */ format, void* /* TArg0 */ arg0, void* /* TArg1 */ arg1, void** /* System.Exception */ __outException)
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_AppendFormat_A2(void* /* System.Text.StringBuilder */ __self, void* /* System.Type */ TArg0, void* /* System.Type */ TArg1, void* /* System.IFormatProvider */ provider, void* /* System.Text.CompositeFormat */ format, void* /* TArg0 */ arg0, void* /* TArg1 */ arg1, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -101154,7 +101154,7 @@ internal unsafe class System_Text_StringBuilder
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_AppendFormat_A3")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_AppendFormat_A3(void* /* System.Type */ TArg0, void* /* System.Type */ TArg1, void* /* System.Type */ TArg2, void* /* System.Text.StringBuilder */ __self, void* /* System.IFormatProvider */ provider, void* /* System.Text.CompositeFormat */ format, void* /* TArg0 */ arg0, void* /* TArg1 */ arg1, void* /* TArg2 */ arg2, void** /* System.Exception */ __outException)
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_AppendFormat_A3(void* /* System.Text.StringBuilder */ __self, void* /* System.Type */ TArg0, void* /* System.Type */ TArg1, void* /* System.Type */ TArg2, void* /* System.IFormatProvider */ provider, void* /* System.Text.CompositeFormat */ format, void* /* TArg0 */ arg0, void* /* TArg1 */ arg1, void* /* TArg2 */ arg2, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -101836,7 +101836,7 @@ internal unsafe class System_Text_StringBuilder_AppendInterpolatedStringHandler
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1")]
-	internal static void /* System.Void */ System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1(void* /* System.Type */ T, void* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ __self, void* /* T */ value, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1(void* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ __self, void* /* System.Type */ T, void* /* T */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -101878,7 +101878,7 @@ internal unsafe class System_Text_StringBuilder_AppendInterpolatedStringHandler
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1_1")]
-	internal static void /* System.Void */ System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1_1(void* /* System.Type */ T, void* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ __self, void* /* T */ value, void* /* System.String */ format, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1_1(void* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ __self, void* /* System.Type */ T, void* /* T */ value, void* /* System.String */ format, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -101921,7 +101921,7 @@ internal unsafe class System_Text_StringBuilder_AppendInterpolatedStringHandler
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1_2")]
-	internal static void /* System.Void */ System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1_2(void* /* System.Type */ T, void* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ __self, void* /* T */ value, int /* System.Int32 */ alignment, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1_2(void* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ __self, void* /* System.Type */ T, void* /* T */ value, int /* System.Int32 */ alignment, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -101963,7 +101963,7 @@ internal unsafe class System_Text_StringBuilder_AppendInterpolatedStringHandler
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1_3")]
-	internal static void /* System.Void */ System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1_3(void* /* System.Type */ T, void* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ __self, void* /* T */ value, int /* System.Int32 */ alignment, void* /* System.String */ format, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendFormatted_A1_3(void* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ __self, void* /* System.Type */ T, void* /* T */ value, int /* System.Int32 */ alignment, void* /* System.String */ format, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -114102,7 +114102,7 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_GenericTests
 	
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnArrayOfRepeatedValues_A1")]
-	internal static void* /* System.Array */ NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnArrayOfRepeatedValues_A1(void* /* System.Type */ T, void* /* NativeAOT.CodeGeneratorInputSample.GenericTests */ __self, void* /* T */ value, int /* System.Int32 */ numberOfElements, void** /* System.Exception */ __outException)
+	internal static void* /* System.Array */ NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnArrayOfRepeatedValues_A1(void* /* NativeAOT.CodeGeneratorInputSample.GenericTests */ __self, void* /* System.Type */ T, void* /* T */ value, int /* System.Int32 */ numberOfElements, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
