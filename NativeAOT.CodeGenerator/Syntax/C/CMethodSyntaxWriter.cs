@@ -134,7 +134,8 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         
         bool isSupportedGenericTypeMember = !isGenericType ||
                                             memberKind == MemberKind.Constructor ||
-                                            memberKind == MemberKind.Destructor;
+                                            memberKind == MemberKind.Destructor ||
+                                            memberKind == MemberKind.TypeOf;
 
         if (isGenericType &&
             !isSupportedGenericTypeMember) {

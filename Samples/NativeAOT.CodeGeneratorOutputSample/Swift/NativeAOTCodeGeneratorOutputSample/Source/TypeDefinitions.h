@@ -1,5 +1,5 @@
 // Number of generated types: 653
-// Number of generated members: 4463
+// Number of generated members: 4467
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -32352,6 +32352,11 @@ System_Collections_Generic_List_A1_Create_1(
 
 // TODO: Only constructors and destructors of generic types are currently supported
 
+System_Type_t /* System.Type */
+System_Collections_Generic_List_A1_TypeOf(
+	
+);
+
 void /* System.Void */
 System_Collections_Generic_List_A1_Destroy(
 	System_Collections_Generic_List_A1_t /* System.Collections.Generic.List<> */ self
@@ -32381,6 +32386,11 @@ System_Collections_Generic_Dictionary_A2_Create_1(
 );
 
 // TODO: Only constructors and destructors of generic types are currently supported
+
+System_Type_t /* System.Type */
+System_Collections_Generic_Dictionary_A2_TypeOf(
+	
+);
 
 void /* System.Void */
 System_Collections_Generic_Dictionary_A2_Destroy(
@@ -32619,6 +32629,11 @@ NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_Create(
 // TODO: Only constructors and destructors of generic types are currently supported
 // TODO: Only constructors and destructors of generic types are currently supported
 
+System_Type_t /* System.Type */
+NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_TypeOf(
+	
+);
+
 void /* System.Void */
 NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_Destroy(
 	NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_t /* NativeAOT.CodeGeneratorInputSample.GenericTestClass<> */ self
@@ -32639,6 +32654,11 @@ NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_Create(
 
 // TODO: Only constructors and destructors of generic types are currently supported
 // TODO: Only constructors and destructors of generic types are currently supported
+
+System_Type_t /* System.Type */
+NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_TypeOf(
+	
+);
 
 void /* System.Void */
 NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_Destroy(

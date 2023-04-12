@@ -1,5 +1,5 @@
 // Number of generated types: 653
-// Number of generated members: 4169
+// Number of generated members: 4173
 
 // <Header>
 using System;
@@ -112922,7 +112922,15 @@ internal unsafe class System_Collections_Generic_List_A1
 	// TODO: Only constructors and destructors of generic types are currently supported
 	
 
-	// TODO: Only constructors and destructors of generic types are currently supported
+	[UnmanagedCallersOnly(EntryPoint = "System_Collections_Generic_List_A1_TypeOf")]
+	internal static void* /* System.Type */ System_Collections_Generic_List_A1_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Collections.Generic.List<>);
+		void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return __returnValueNative;
+	}
+	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Collections_Generic_List_A1_Destroy")]
 	internal static void /* System.Void */ System_Collections_Generic_List_A1_Destroy(void* /* System.Collections.Generic.List<> */ __self)
@@ -113039,7 +113047,15 @@ internal unsafe class System_Collections_Generic_Dictionary_A2
 	// TODO: Only constructors and destructors of generic types are currently supported
 	
 
-	// TODO: Only constructors and destructors of generic types are currently supported
+	[UnmanagedCallersOnly(EntryPoint = "System_Collections_Generic_Dictionary_A2_TypeOf")]
+	internal static void* /* System.Type */ System_Collections_Generic_Dictionary_A2_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Collections.Generic.Dictionary<,>);
+		void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return __returnValueNative;
+	}
+	
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Collections_Generic_Dictionary_A2_Destroy")]
 	internal static void /* System.Void */ System_Collections_Generic_Dictionary_A2_Destroy(void* /* System.Collections.Generic.Dictionary<,> */ __self)
@@ -114096,7 +114112,15 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1
 	// TODO: Only constructors and destructors of generic types are currently supported
 	
 
-	// TODO: Only constructors and destructors of generic types are currently supported
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_TypeOf")]
+	internal static void* /* System.Type */ NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(NativeAOT.CodeGeneratorInputSample.GenericTestClass<>);
+		void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return __returnValueNative;
+	}
+	
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_Destroy")]
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.GenericTestClass<> */ __self)
@@ -114154,7 +114178,15 @@ internal unsafe class NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2
 	// TODO: Only constructors and destructors of generic types are currently supported
 	
 
-	// TODO: Only constructors and destructors of generic types are currently supported
+	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_TypeOf")]
+	internal static void* /* System.Type */ NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(NativeAOT.CodeGeneratorInputSample.GenericTestClass<,>);
+		void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return __returnValueNative;
+	}
+	
 
 	[UnmanagedCallersOnly(EntryPoint = "NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_Destroy")]
 	internal static void /* System.Void */ NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_Destroy(void* /* NativeAOT.CodeGeneratorInputSample.GenericTestClass<,> */ __self)

@@ -141,7 +141,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
         bool isSupportedGenericTypeMember = !isGenericType ||
                                             memberKind == MemberKind.Constructor ||
-                                            memberKind == MemberKind.Destructor;
+                                            memberKind == MemberKind.Destructor ||
+                                            memberKind == MemberKind.TypeOf;
 
         if (isGenericType &&
             !isSupportedGenericTypeMember) {

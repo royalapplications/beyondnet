@@ -12,6 +12,78 @@ final class SystemCollectionsGenericListTests: XCTestCase {
 		Self.sharedTearDown()
 	}
 	
+	func testTypeOf() {
+		var exception: System_Exception_t?
+		
+		guard let systemTypeType = System_Type_TypeOf() else {
+			XCTFail("typeof(System.Type) should return an instance")
+			
+			return
+		}
+		
+		defer { System_Type_Destroy(systemTypeType) }
+		
+		guard let type = System_Collections_Generic_List_A1_TypeOf() else {
+			XCTFail("typeof(System.Collections.Generic.List<>) should return an instance")
+			
+			return
+		}
+		
+		defer { System_Type_Destroy(type) }
+		
+		let isGenericType = System_Type_IsGenericType_Get(type,
+														  &exception)
+		
+		XCTAssertNil(exception)
+		XCTAssertTrue(isGenericType)
+		
+		let isConstructedGenericType = System_Type_IsConstructedGenericType_Get(type,
+																				&exception)
+		
+		XCTAssertNil(exception)
+		XCTAssertFalse(isConstructedGenericType)
+		
+		guard let genericArguments = System_Type_GetGenericArguments(type,
+																	 &exception),
+			  exception == nil else {
+			XCTFail("System.Type.GetGenericArguments should not throw and return an instance")
+			
+			return
+		}
+		
+		defer { System_Array_Destroy(genericArguments) }
+		
+		let numberOfGenericArguments = System_Array_Length_Get(genericArguments,
+															   &exception)
+		
+		XCTAssertNil(exception)
+		XCTAssertEqual(1, numberOfGenericArguments)
+		
+		guard let genericArgument = System_Array_GetValue_1(genericArguments,
+															0,
+															&exception),
+			  exception == nil else {
+			XCTFail("System.Array.GetValue should not throw and return an instance")
+			
+			return
+		}
+		
+		defer { System_Object_Destroy(genericArgument) }
+		
+		XCTAssertTrue(DNObjectIs(genericArgument, systemTypeType))
+		
+		guard let genericArgumentTypeName = String(dotNETString: System_Reflection_MemberInfo_Name_Get(genericArgument,
+																									   &exception),
+												   destroyDotNETString: true),
+			  exception == nil else {
+			XCTFail("System.Reflection.MemberInfo.Name getter should not throw and return an instance")
+			
+			return
+		}
+		
+		XCTAssertEqual("T", genericArgumentTypeName)
+	}
+	
 	func testCreate() {
 		var exception: System_Exception_t?
 		
