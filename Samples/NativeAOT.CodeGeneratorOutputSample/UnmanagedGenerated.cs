@@ -1,4 +1,4 @@
-// Number of generated types: 671
+// Number of generated types: 653
 // Number of generated members: 4169
 
 // <Header>
@@ -52333,22 +52333,6 @@ internal unsafe class System_IAsyncResult
 // Type "TArg3" was skipped. Reason: It has no full name.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 internal unsafe class System_Runtime_CompilerServices_TaskAwaiter
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_CompilerServices_TaskAwaiter_OnCompleted")]
@@ -52881,8 +52865,6 @@ internal unsafe class System_Runtime_CompilerServices_YieldAwaitable_YieldAwaite
 
 
 // Type "TResult" was skipped. Reason: It has no full name.
-
-
 internal unsafe class System_AsyncCallback
 {
 	internal void* Context { get; }

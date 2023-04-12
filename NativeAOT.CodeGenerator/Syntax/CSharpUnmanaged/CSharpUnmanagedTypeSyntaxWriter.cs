@@ -37,7 +37,8 @@ public partial class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWrit
         if (type.IsPrimitive ||
             type.IsPointer ||
             type.IsByRef ||
-            type.IsArray) {
+            type.IsArray ||
+            type.IsConstructedGenericType) {
             // No need to generate C# Unmanaged code for those kinds of types
 
             return string.Empty;

@@ -26,6 +26,8 @@ internal static class TypeExtensions
         bool isGeneric = type.IsGenericType ||
                          type.IsGenericTypeDefinition;
 
+        bool isConstructedGeneric = type.IsConstructedGenericType;
+
         if (isGeneric) {
             int backtickIndex = name.IndexOf('`');
 
@@ -35,8 +37,8 @@ internal static class TypeExtensions
 
             name = name.Substring(0, backtickIndex);
 
-            int numberOfGenericArguments = type.GetGenericArguments()
-                .Length;
+            Type[] genericArguments = type.GetGenericArguments();
+            int numberOfGenericArguments = genericArguments.Length;
 
             if (numberOfGenericArguments <= 0) {
                 throw new Exception($"A generic type \"{name}\" without generic arguments");
@@ -44,8 +46,20 @@ internal static class TypeExtensions
 
             name += "<";
 
-            for (int i = 0; i < numberOfGenericArguments - 1; i++) {
-                name += ",";
+            int index = 0;
+            
+            foreach (Type genericArgument in genericArguments) {
+                if (index > 0) {
+                    name += ",";
+                }
+                
+                if (isConstructedGeneric) {
+                    string argumentTypeName = genericArgument.GetFullNameOrName();
+
+                    name += argumentTypeName;
+                }
+
+                index++;
             }
             
             name += ">";

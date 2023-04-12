@@ -971,7 +971,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                     Type? arrayType = parameterType.GetElementType();
 
                     if (arrayType is not null &&
-                        (arrayType.IsGenericParameter || arrayType.IsGenericMethodParameter)) {
+                        (arrayType.IsGenericType || arrayType.IsGenericParameter || arrayType.IsGenericMethodParameter)) {
                         parameterType = typeof(Array);
                     }
                 }

@@ -4,6 +4,11 @@ public class GenericTests
 {
     public List<string>? ListOfStrings { get; set; }
     public Dictionary<string, Exception>? DictionaryOfStringKeysAndExceptionValues { get; set; }
+
+    public string JoinListOfStrings(List<string> listOfString, string separator)
+    {
+        return string.Join(separator, listOfString);
+    }
     
     public struct SimpleKeyValuePair
     {

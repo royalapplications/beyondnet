@@ -1,4 +1,4 @@
-// Number of generated types: 671
+// Number of generated types: 653
 // Number of generated members: 4463
 
 #pragma mark - BEGIN Header
@@ -1184,22 +1184,6 @@ typedef void* System_IAsyncResult_t;
 typedef void* System_Threading_Tasks_Task_Array_t;
 
 
-// Type "Task`1[]" was skipped. Reason: It has no full name.
-// Type "Task`1[]" was skipped. Reason: It has no full name.
-// Type "Task`1[]" was skipped. Reason: It has no full name.
-// Type "Task`1[]" was skipped. Reason: It has no full name.
-// Type "Task`1[]" was skipped. Reason: It has no full name.
-// Type "Task`1[]" was skipped. Reason: It has no full name.
-// Type "Task`1[]" was skipped. Reason: It has no full name.
-// Type "Task`1[]" was skipped. Reason: It has no full name.
-// Type "Task`1[]" was skipped. Reason: It has no full name.
-// Type "Task`1[]" was skipped. Reason: It has no full name.
-// Type "Task`1[]" was skipped. Reason: It has no full name.
-// Type "Task`1[]" was skipped. Reason: It has no full name.
-// Type "Task`1[]" was skipped. Reason: It has no full name.
-// Type "Task`1[]" was skipped. Reason: It has no full name.
-// Type "Task`1[]" was skipped. Reason: It has no full name.
-// Type "Task`1[]" was skipped. Reason: It has no full name.
 typedef void* System_Runtime_CompilerServices_TaskAwaiter_t;
 
 typedef void* System_Runtime_CompilerServices_ConfiguredTaskAwaitable_t;
@@ -1211,8 +1195,6 @@ typedef void* System_Runtime_CompilerServices_YieldAwaitable_t;
 typedef void* System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_t;
 
 // Type "TResult" was skipped. Reason: It has no full name.
-// Type "Task`1[]" was skipped. Reason: It has no full name.
-// Type "Task`1[]" was skipped. Reason: It has no full name.
 typedef void* Microsoft_Win32_SafeHandles_SafeFileHandle_t;
 
 typedef void* System_IO_FileStreamOptions_t;
@@ -15821,54 +15803,6 @@ System_IAsyncResult_Destroy(
 #pragma mark - END APIs of System.Threading.Tasks.Task[]
 
 
-#pragma mark - BEGIN APIs of Task`1[]
-#pragma mark - END APIs of Task`1[]
-
-#pragma mark - BEGIN APIs of Task`1[]
-#pragma mark - END APIs of Task`1[]
-
-#pragma mark - BEGIN APIs of Task`1[]
-#pragma mark - END APIs of Task`1[]
-
-#pragma mark - BEGIN APIs of Task`1[]
-#pragma mark - END APIs of Task`1[]
-
-#pragma mark - BEGIN APIs of Task`1[]
-#pragma mark - END APIs of Task`1[]
-
-#pragma mark - BEGIN APIs of Task`1[]
-#pragma mark - END APIs of Task`1[]
-
-#pragma mark - BEGIN APIs of Task`1[]
-#pragma mark - END APIs of Task`1[]
-
-#pragma mark - BEGIN APIs of Task`1[]
-#pragma mark - END APIs of Task`1[]
-
-#pragma mark - BEGIN APIs of Task`1[]
-#pragma mark - END APIs of Task`1[]
-
-#pragma mark - BEGIN APIs of Task`1[]
-#pragma mark - END APIs of Task`1[]
-
-#pragma mark - BEGIN APIs of Task`1[]
-#pragma mark - END APIs of Task`1[]
-
-#pragma mark - BEGIN APIs of Task`1[]
-#pragma mark - END APIs of Task`1[]
-
-#pragma mark - BEGIN APIs of Task`1[]
-#pragma mark - END APIs of Task`1[]
-
-#pragma mark - BEGIN APIs of Task`1[]
-#pragma mark - END APIs of Task`1[]
-
-#pragma mark - BEGIN APIs of Task`1[]
-#pragma mark - END APIs of Task`1[]
-
-#pragma mark - BEGIN APIs of Task`1[]
-#pragma mark - END APIs of Task`1[]
-
 #pragma mark - BEGIN APIs of System.Runtime.CompilerServices.TaskAwaiter
 void /* System.Void */
 System_Runtime_CompilerServices_TaskAwaiter_OnCompleted(
@@ -16027,12 +15961,6 @@ System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_Destroy(
 
 #pragma mark - END APIs of System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter
 
-
-#pragma mark - BEGIN APIs of Task`1[]
-#pragma mark - END APIs of Task`1[]
-
-#pragma mark - BEGIN APIs of Task`1[]
-#pragma mark - END APIs of Task`1[]
 
 #pragma mark - BEGIN APIs of Microsoft.Win32.SafeHandles.SafeFileHandle
 Microsoft_Win32_SafeHandles_SafeFileHandle_t /* Microsoft.Win32.SafeHandles.SafeFileHandle */
