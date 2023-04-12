@@ -1,5 +1,5 @@
-// Number of generated types: 663
-// Number of generated members: 4159
+// Number of generated types: 671
+// Number of generated members: 4169
 
 // <Header>
 using System;
@@ -112812,6 +112812,266 @@ internal unsafe class System_IO_Directory
 
 }
 
+
+internal unsafe class System_Collections_Generic_List_A1
+{
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Collections_Generic_List_A1_Create")]
+	internal static void* /* System.Object */ System_Collections_Generic_List_A1_Create(void* /* System.Type */ T, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Collections.Generic.List<>);
+			System.Object[]? __parametersForGenericCall = null;
+			System.Type[] __parameterTypesForGenericCall = System.Type.EmptyTypes;
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Type __genericTargetType = __targetTypeForGenericCall.MakeGenericType(__genericParameterTypesForGenericCall);
+	
+			System.Object __returnValue = (System.Object)System.Activator.CreateInstance(__genericTargetType, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Collections_Generic_List_A1_Create_1")]
+	internal static void* /* System.Object */ System_Collections_Generic_List_A1_Create_1(void* /* System.Type */ T, int /* System.Int32 */ capacity, void** /* System.Exception */ __outException)
+	{
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Collections.Generic.List<>);
+			System.Object[] __parametersForGenericCall = new System.Object[] { capacity };
+			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.Int32) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TConverted };
+	
+			System.Type __genericTargetType = __targetTypeForGenericCall.MakeGenericType(__genericParameterTypesForGenericCall);
+	
+			System.Object __returnValue = (System.Object)System.Activator.CreateInstance(__genericTargetType, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+	// TODO: Only constructors and destructors of generic types are currently supported
+	
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+	
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Collections_Generic_List_A1_Destroy")]
+	internal static void /* System.Void */ System_Collections_Generic_List_A1_Destroy(void* /* System.Collections.Generic.List<> */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+
+}
+
+
+// Type "T" was skipped. Reason: It has no full name.
+
+
+internal unsafe class System_Collections_Generic_Dictionary_A2
+{
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Collections_Generic_Dictionary_A2_Create")]
+	internal static void* /* System.Object */ System_Collections_Generic_Dictionary_A2_Create(void* /* System.Type */ TKey, void* /* System.Type */ TValue, void** /* System.Exception */ __outException)
+	{
+		System.Type TKeyConverted = InteropUtils.GetInstance<System.Type>(TKey);
+		System.Type TValueConverted = InteropUtils.GetInstance<System.Type>(TValue);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Collections.Generic.Dictionary<,>);
+			System.Object[]? __parametersForGenericCall = null;
+			System.Type[] __parameterTypesForGenericCall = System.Type.EmptyTypes;
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TKeyConverted, TValueConverted };
+	
+			System.Type __genericTargetType = __targetTypeForGenericCall.MakeGenericType(__genericParameterTypesForGenericCall);
+	
+			System.Object __returnValue = (System.Object)System.Activator.CreateInstance(__genericTargetType, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Collections_Generic_Dictionary_A2_Create_1")]
+	internal static void* /* System.Object */ System_Collections_Generic_Dictionary_A2_Create_1(void* /* System.Type */ TKey, void* /* System.Type */ TValue, int /* System.Int32 */ capacity, void** /* System.Exception */ __outException)
+	{
+		System.Type TKeyConverted = InteropUtils.GetInstance<System.Type>(TKey);
+		System.Type TValueConverted = InteropUtils.GetInstance<System.Type>(TValue);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Collections.Generic.Dictionary<,>);
+			System.Object[] __parametersForGenericCall = new System.Object[] { capacity };
+			System.Type[] __parameterTypesForGenericCall = new[] { typeof(System.Int32) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new[] { TKeyConverted, TValueConverted };
+	
+			System.Type __genericTargetType = __targetTypeForGenericCall.MakeGenericType(__genericParameterTypesForGenericCall);
+	
+			System.Object __returnValue = (System.Object)System.Activator.CreateInstance(__genericTargetType, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	                
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		}
+	}
+	
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+	
+
+	// TODO: Only constructors and destructors of generic types are currently supported
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Collections_Generic_Dictionary_A2_Destroy")]
+	internal static void /* System.Void */ System_Collections_Generic_Dictionary_A2_Destroy(void* /* System.Collections.Generic.Dictionary<,> */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+
+}
+
+
+// Type "TValue" was skipped. Reason: It has no full name.
+// Type "TKey" was skipped. Reason: It has no full name.
 
 internal unsafe class NativeAOT_CodeGeneratorInputSample_MoveDelegate
 {

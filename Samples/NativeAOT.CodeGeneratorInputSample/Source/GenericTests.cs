@@ -2,6 +2,9 @@ namespace NativeAOT.CodeGeneratorInputSample;
 
 public class GenericTests
 {
+    public List<string>? ListOfStrings { get; set; }
+    public Dictionary<string, Exception>? DictionaryOfStringKeysAndExceptionValues { get; set; }
+    
     public struct SimpleKeyValuePair
     {
         public object? Key { get; }

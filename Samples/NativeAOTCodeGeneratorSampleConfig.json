@@ -29,6 +29,8 @@
 		"System.IO.FileInfo",
 		"System.IO.Directory",
 		"System.IO.DirectoryInfo",
-		"System.Security.SecureString"
+		"System.Security.SecureString",
+		"System.Collections.Generic.List`1",
+		"System.Collections.Generic.Dictionary`2"
 	]
 }

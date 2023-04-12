@@ -1,5 +1,5 @@
-// Number of generated types: 663
-// Number of generated members: 4457
+// Number of generated types: 671
+// Number of generated members: 4463
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -1498,6 +1498,16 @@ typedef void* System_IO_DirectoryInfo_Array_t;
 
 
 typedef void* System_IO_Directory_t;
+
+typedef void* System_Collections_Generic_List_A1_t;
+
+// Type "T" was skipped. Reason: It has no full name.
+// Type "T[]" was skipped. Reason: It has no full name.
+
+typedef void* System_Collections_Generic_Dictionary_A2_t;
+
+// Type "TValue" was skipped. Reason: It has no full name.
+// Type "TKey" was skipped. Reason: It has no full name.
 
 typedef void* NativeAOT_CodeGeneratorInputSample_Address_t;
 
@@ -32391,6 +32401,68 @@ System_IO_Directory_Destroy(
 );
 
 #pragma mark - END APIs of System.IO.Directory
+
+#pragma mark - BEGIN APIs of System.Collections.Generic.List<>
+System_Object_t /* System.Object */
+System_Collections_Generic_List_A1_Create(
+	System_Type_t /* System.Type */ T,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Collections_Generic_List_A1_Create_1(
+	System_Type_t /* System.Type */ T,
+	int32_t /* System.Int32 */ capacity,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+// TODO: Only constructors and destructors of generic types are currently supported
+// TODO: Only constructors and destructors of generic types are currently supported
+
+// TODO: Only constructors and destructors of generic types are currently supported
+// TODO: Only constructors and destructors of generic types are currently supported
+
+// TODO: Only constructors and destructors of generic types are currently supported
+
+void /* System.Void */
+System_Collections_Generic_List_A1_Destroy(
+	System_Collections_Generic_List_A1_t /* System.Collections.Generic.List<> */ self
+);
+
+#pragma mark - END APIs of System.Collections.Generic.List<>
+
+
+#pragma mark - BEGIN APIs of T[]
+#pragma mark - END APIs of T[]
+
+
+#pragma mark - BEGIN APIs of System.Collections.Generic.Dictionary<,>
+System_Object_t /* System.Object */
+System_Collections_Generic_Dictionary_A2_Create(
+	System_Type_t /* System.Type */ TKey,
+	System_Type_t /* System.Type */ TValue,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Collections_Generic_Dictionary_A2_Create_1(
+	System_Type_t /* System.Type */ TKey,
+	System_Type_t /* System.Type */ TValue,
+	int32_t /* System.Int32 */ capacity,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+// TODO: Only constructors and destructors of generic types are currently supported
+
+void /* System.Void */
+System_Collections_Generic_Dictionary_A2_Destroy(
+	System_Collections_Generic_Dictionary_A2_t /* System.Collections.Generic.Dictionary<,> */ self
+);
+
+#pragma mark - END APIs of System.Collections.Generic.Dictionary<,>
+
+
+
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Address
 NativeAOT_CodeGeneratorInputSample_Address_t /* NativeAOT.CodeGeneratorInputSample.Address */
