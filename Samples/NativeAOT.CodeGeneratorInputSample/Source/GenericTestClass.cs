@@ -17,6 +17,15 @@ public class GenericTestClass<T>
             typeof(TM)
         };
     }
+
+    public T Extreme<TM>(int countIn, out int countOut, T input, out T output, ref TM? inputToBeReplacedWithDefault)
+    {
+        output = input;
+        countOut = countIn;
+        inputToBeReplacedWithDefault = default(TM);
+
+        return input;
+    }
 }
 
 public class GenericTestClass<T1, T2>

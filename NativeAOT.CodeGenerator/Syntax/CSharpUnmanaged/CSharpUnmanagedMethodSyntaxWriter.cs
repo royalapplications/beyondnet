@@ -518,10 +518,10 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                             } else {
                                 parameterTypeName = convertedGenericTypeArgumentNames[parameterType.GenericParameterPosition];
                             }
-                            
-                            if (isByRefParameter) {
-                                parameterTypeName += ".MakeByRefType()";
-                            }
+                        }
+                        
+                        if (isByRefParameter) {
+                            parameterTypeName += ".MakeByRefType()";
                         }
 
                         parameterTypeNames.Add(parameterTypeName);

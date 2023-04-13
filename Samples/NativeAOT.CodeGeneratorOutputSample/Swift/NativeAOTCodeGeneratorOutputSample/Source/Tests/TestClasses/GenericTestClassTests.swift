@@ -157,6 +157,91 @@ final class GenericTestClassTests: XCTestCase {
 										   &exception))
 		XCTAssertNil(exception)
 	}
+    
+    func testExtremeWith1GenericArgument() {
+        var exception: System_Exception_t?
+        
+        guard let systemStringType = System_String_TypeOf() else {
+            XCTFail("typeof(System.String) should return an instance")
+            
+            return
+        }
+        
+        defer { System_Type_Destroy(systemStringType) }
+        
+        guard let systemExceptionType = System_Exception_TypeOf() else {
+            XCTFail("typeof(System.Exception) should return an instance")
+            
+            return
+        }
+        
+        defer { System_Type_Destroy(systemExceptionType) }
+        
+        guard let genericTestClass = NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_Create(systemStringType,
+                                                                                                   &exception),
+              exception == nil else {
+            XCTFail("GenericTestClass<System.String>.GenericTestClass ctor should not throw and return an instance")
+            
+            return
+        }
+        
+        defer { NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_Destroy(genericTestClass) }
+        
+        let string = "Hello World"
+        let stringDN = string.dotNETString()
+        
+        defer { System_String_Destroy(stringDN) }
+        
+        guard let originalException = System_Exception_Create_1(stringDN,
+                                                                                     &exception),
+              exception == nil else {
+            XCTFail("System.Exception ctor should not throw and return an instance")
+            
+            return
+        }
+        
+        defer { System_Exception_Destroy(originalException) }
+        
+        var inOutException: System_Exception_t? = originalException
+        
+        let countIn: Int32 = 15
+        var countOut: Int32 = -1
+        
+        var output: System_Object_t?
+        
+        guard let returnValue = NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_Extreme_A1(genericTestClass,
+                                                                                                  systemStringType,
+                                                                                                  systemExceptionType,
+                                                                                                  countIn,
+                                                                                                  &countOut,
+                                                                                                  stringDN,
+                                                                                                  &output,
+                                                                                                  &inOutException,
+                                                                                                  &exception),
+              exception == nil else {
+            XCTFail("GenericTestClass<System.String>.Extreme should not throw and return an instance")
+            
+            return
+        }
+        
+        XCTAssertEqual(countIn, countOut)
+        
+        let outputEqualsInput = System_Object_Equals(stringDN,
+                                                     output,
+                                                     &exception)
+        
+        XCTAssertNil(exception)
+        XCTAssertTrue(outputEqualsInput)
+        
+        let returnValueEqualsInput = System_Object_Equals(stringDN,
+                                                          returnValue,
+                                                          &exception)
+        
+        XCTAssertNil(exception)
+        XCTAssertTrue(returnValueEqualsInput)
+        
+        XCTAssertNil(inOutException)
+    }
 	
 	func testWith2GenericArguments() {
 		var exception: System_Exception_t?

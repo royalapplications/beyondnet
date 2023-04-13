@@ -1,5 +1,5 @@
-// Number of generated types: 653
-// Number of generated members: 4219
+// Number of generated types: 657
+// Number of generated members: 4220
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -1507,6 +1507,10 @@ typedef void* NativeAOT_CodeGeneratorInputSample_Dog_t;
 typedef void* NativeAOT_CodeGeneratorInputSample_GenericAnimal_t;
 
 typedef void* NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_t;
+
+// Type "T" was skipped. Reason: It has no full name.
+
+// Type "TM" was skipped. Reason: It has no full name.
 
 typedef void* NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_t;
 
@@ -31046,6 +31050,19 @@ NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_ReturnGenericClassTypeAnd
 );
 
 System_Object_t /* System.Object */
+NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_Extreme_A1(
+	NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_t /* NativeAOT.CodeGeneratorInputSample.GenericTestClass<> */ self,
+	System_Type_t /* System.Type */ T,
+	System_Type_t /* System.Type */ TM,
+	int32_t /* System.Int32 */ countIn,
+	int32_t* /* System.Int32 */ countOut,
+	System_Object_t /* System.Object */ input,
+	System_Object_t* /* System.Object */ output,
+	System_Object_t* /* System.Object */ inputToBeReplacedWithDefault,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
 NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_Create(
 	System_Type_t /* System.Type */ T,
 	System_Exception_t* /* System.Exception */ outException
@@ -31092,6 +31109,10 @@ NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_Destroy(
 );
 
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.GenericTestClass<>
+
+
+
+
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.GenericTestClass<,>
 System_Type_Array_t /* System.Type[] */
