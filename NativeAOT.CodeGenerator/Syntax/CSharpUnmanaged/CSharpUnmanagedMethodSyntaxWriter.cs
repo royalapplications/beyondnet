@@ -670,9 +670,11 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
 """);
 
-            int parameterIdx = 0;
+            int parameterIdx = -1;
 
             foreach (var parameter in parameters) {
+                parameterIdx++;
+                
                 Type parameterType = parameter.ParameterType;
 
                 bool isOutParameter = parameter.IsOut;
@@ -731,8 +733,6 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 sb.AppendLine($"\t\t\t*{parameterName} = {parameterTypeConversion};");
                 sb.AppendLine("\t\t}");
                 sb.AppendLine();
-
-                parameterIdx++;
             }
             
             if (isReturning) {
