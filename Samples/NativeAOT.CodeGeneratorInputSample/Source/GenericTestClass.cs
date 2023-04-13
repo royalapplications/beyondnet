@@ -18,13 +18,19 @@ public class GenericTestClass<T>
         };
     }
 
-    public T Extreme<TM>(int countIn, out int countOut, T input, out T output, ref TM? inputToBeReplacedWithDefault)
+    public T Extreme<TM>(
+        int countIn,
+        out int countOut,
+        T typeGenericInput,
+        out T typeGenericOutput,
+        ref TM? methodGenericInputThatIsToBeReplacedWithDefault
+    )
     {
-        output = input;
+        typeGenericOutput = typeGenericInput;
         countOut = countIn;
-        inputToBeReplacedWithDefault = default(TM);
+        methodGenericInputThatIsToBeReplacedWithDefault = default(TM);
 
-        return input;
+        return typeGenericInput;
     }
 }
 

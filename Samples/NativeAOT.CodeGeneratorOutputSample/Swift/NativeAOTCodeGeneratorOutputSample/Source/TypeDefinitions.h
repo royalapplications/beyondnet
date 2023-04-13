@@ -31056,9 +31056,9 @@ NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_Extreme_A1(
 	System_Type_t /* System.Type */ TM,
 	int32_t /* System.Int32 */ countIn,
 	int32_t* /* System.Int32 */ countOut,
-	System_Object_t /* System.Object */ input,
-	System_Object_t* /* System.Object */ output,
-	System_Object_t* /* System.Object */ inputToBeReplacedWithDefault,
+	System_Object_t /* System.Object */ typeGenericInput,
+	System_Object_t* /* System.Object */ typeGenericOutput,
+	System_Object_t* /* System.Object */ methodGenericInputThatIsToBeReplacedWithDefault,
 	System_Exception_t* /* System.Exception */ outException
 );
 
