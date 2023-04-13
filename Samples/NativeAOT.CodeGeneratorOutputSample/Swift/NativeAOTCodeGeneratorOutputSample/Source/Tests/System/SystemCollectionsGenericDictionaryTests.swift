@@ -121,52 +121,51 @@ final class SystemCollectionsGenericDictionaryTests: XCTestCase {
             return
         }
         
-        // TODO: This fails
-//        guard let emptyString = System_String_Empty_Get() else {
-//            XCTFail("System.String.Empty should return an instance")
-//
-//            return
-//        }
-//
-//        defer { System_String_Destroy(emptyString) }
-//
-//        var valueForEmptyString: System_Object_t?
-//
-//        guard !System_Collections_Generic_Dictionary_A2_TryGetValue(dictionary,
-//                                                                    systemStringType,
-//                                                                    systemExceptionType,
-//                                                                    emptyString,
-//                                                                    &valueForEmptyString,
-//                                                                    &exception),
-//              exception == nil,
-//              valueForEmptyString == nil else {
-//            XCTFail("System.Collections.Generic.Dictionary<System.String, System.Exception>.TryGetValue should not throw and return false")
-//
-//            return
-//        }
-//
-//        var valueRet: System_Object_t?
-//
-//        guard System_Collections_Generic_Dictionary_A2_TryGetValue(dictionary,
-//                                                                   systemStringType,
-//                                                                   systemExceptionType,
-//                                                                   exceptionMessageDN,
-//                                                                   &valueRet,
-//                                                                   &exception),
-//              exception == nil,
-//              let valueRet else {
-//            XCTFail("System.Collections.Generic.Dictionary<System.String, System.Exception>.TryGetValue should not throw and return true")
-//
-//            return
-//        }
-//
-//        defer { System_Object_Destroy(valueRet) }
-//
-//        let equal = System_Object_Equals(exceptionValue,
-//                                         valueRet,
-//                                         &exception)
-//
-//        XCTAssertNil(exception)
-//        XCTAssertTrue(equal)
+        guard let emptyString = System_String_Empty_Get() else {
+            XCTFail("System.String.Empty should return an instance")
+            
+            return
+        }
+        
+        defer { System_String_Destroy(emptyString) }
+        
+        var valueForEmptyString: System_Object_t?
+
+        guard !System_Collections_Generic_Dictionary_A2_TryGetValue(dictionary,
+                                                                    systemStringType,
+                                                                    systemExceptionType,
+                                                                    emptyString,
+                                                                    &valueForEmptyString,
+                                                                    &exception),
+              exception == nil,
+              valueForEmptyString == nil else {
+            XCTFail("System.Collections.Generic.Dictionary<System.String, System.Exception>.TryGetValue should not throw and return false")
+
+            return
+        }
+
+        var valueRet: System_Object_t?
+
+        guard System_Collections_Generic_Dictionary_A2_TryGetValue(dictionary,
+                                                                   systemStringType,
+                                                                   systemExceptionType,
+                                                                   exceptionMessageDN,
+                                                                   &valueRet,
+                                                                   &exception),
+              exception == nil,
+              let valueRet else {
+            XCTFail("System.Collections.Generic.Dictionary<System.String, System.Exception>.TryGetValue should not throw and return true")
+
+            return
+        }
+
+        defer { System_Object_Destroy(valueRet) }
+
+        let equal = System_Object_Equals(exceptionValue,
+                                         valueRet,
+                                         &exception)
+
+        XCTAssertNil(exception)
+        XCTAssertTrue(equal)
 	}
 }

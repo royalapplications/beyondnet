@@ -510,9 +510,18 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                         if (isGenericMethodParameter) {
                             parameterTypeName = $"System.Type.MakeGenericMethodParameter({parameterType.GenericParameterPosition})";
                         } else {
-                            string convertedParameterName = convertedParameterNames[parameterIndex];
+                            // TODO: We have the converted generic types, we just need to use them
+                            // string convertedParameterName = convertedParameterNames[parameterIndex];
                             
-                            parameterTypeName = $"{convertedParameterName}.GetType()";
+                            if (isGenericMethodParameter) {
+                                parameterTypeName = convertedGenericMethodArgumentNames[parameterType.GenericParameterPosition];
+                            } else {
+                                parameterTypeName = convertedGenericTypeArgumentNames[parameterType.GenericParameterPosition];
+                            }
+                            
+                            if (isByRefParameter) {
+                                parameterTypeName += ".MakeByRefType()";
+                            }
                         }
 
                         parameterTypeNames.Add(parameterTypeName);
