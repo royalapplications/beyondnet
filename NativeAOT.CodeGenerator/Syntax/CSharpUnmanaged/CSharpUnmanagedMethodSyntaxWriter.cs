@@ -236,7 +236,6 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             if (isGenericArrayReturnType) {
                 returnOrSetterOrEventHandlerType = typeof(Array);
             } else if (!isConstructedGenericReturnType) {
-                // TODO: This is no good! See System_Tuple_A1_Item1_Get
                 returnOrSetterOrEventHandlerType = typeof(object);
             }
         }
