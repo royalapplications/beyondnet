@@ -598,4 +598,95 @@ final class GenericTestsTests: XCTestCase {
 		
 		XCTAssertEqual(expectedString, stringRet)
 	}
+    
+    func testConstructedGenericListOfStrings() {
+        var exception: System_Exception_t?
+        
+        guard let genericTests = NativeAOT_CodeGeneratorInputSample_GenericTests_Create(&exception),
+              exception == nil else {
+            XCTFail("GenericTests ctor should not throw and return an instance")
+            
+            return
+        }
+        
+        defer { NativeAOT_CodeGeneratorInputSample_GenericTests_Destroy(genericTests) }
+        
+        guard let listOfStrings = NativeAOT_CodeGeneratorInputSample_GenericTests_ListOfStrings_Get(genericTests,
+                                                                                                    &exception),
+              exception == nil else {
+            XCTFail("GenericTests.ListOfStrings getter should not throw and return an instance")
+            
+            return
+        }
+        
+        defer { System_Collections_Generic_List_A1_Destroy(listOfStrings) }
+        
+        guard let listType = System_Collections_Generic_List_A1_TypeOf() else {
+            XCTFail("typeof(System.Collections.Generic.List<>) should return an instance")
+            
+            return
+        }
+        
+        defer { System_Type_Destroy(listType) }
+        
+        guard let systemTypeType = System_Type_TypeOf() else {
+            XCTFail("typeof(System.Type) should return an instance")
+            
+            return
+        }
+        
+        defer { System_Type_Destroy(systemTypeType) }
+        
+        guard let systemStringType = System_String_TypeOf() else {
+            XCTFail("typeof(System.String) should return an instance")
+            
+            return
+        }
+        
+        defer { System_Type_Destroy(systemStringType) }
+        
+        guard let typeArguments = System_Array_CreateInstance(systemTypeType,
+                                                              1,
+                                                              &exception),
+              exception == nil else {
+            XCTFail("System.Array.CreateInstance should not throw and return an instance")
+            
+            return
+        }
+        
+        defer { System_Array_Destroy(typeArguments) }
+        
+        System_Array_SetValue_4(typeArguments,
+                                systemStringType,
+                                0,
+                                &exception)
+        
+        XCTAssertNil(exception)
+        
+        guard let listOfStringType = System_Type_MakeGenericType(listType,
+                                                                 typeArguments,
+                                                                 &exception),
+              exception == nil else {
+            XCTFail("System.Type.MakeGenericType should not throw and return an instance")
+            
+            return
+        }
+        
+        defer { System_Type_Destroy(listOfStringType) }
+        
+        XCTAssertTrue(DNObjectIs(listOfStrings, listOfStringType))
+        
+        guard let arrayOfStrings = System_Collections_Generic_List_A1_ToArray(listOfStrings,
+                                                                              systemStringType,
+                                                                              &exception),
+              exception == nil else {
+            XCTFail("System.Collections.Generic.List<System.String>.ToArray should not throw and return an instance")
+            
+            return
+        }
+        
+        defer { System_Array_Destroy(arrayOfStrings) }
+        
+        // TODO: Check array contents
+    }
 }

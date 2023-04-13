@@ -1,5 +1,5 @@
-// Number of generated types: 657
-// Number of generated members: 4220
+// Number of generated types: 828
+// Number of generated members: 4429
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -266,61 +266,21 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Reflection_MethodAttributes_PrivateScope = 0,
-	System_Reflection_MethodAttributes_ReuseSlot = 0,
-	System_Reflection_MethodAttributes_Private = 1,
-	System_Reflection_MethodAttributes_FamANDAssem = 2,
-	System_Reflection_MethodAttributes_Assembly = 3,
-	System_Reflection_MethodAttributes_Family = 4,
-	System_Reflection_MethodAttributes_FamORAssem = 5,
-	System_Reflection_MethodAttributes_Public = 6,
-	System_Reflection_MethodAttributes_MemberAccessMask = 7,
-	System_Reflection_MethodAttributes_UnmanagedExport = 8,
-	System_Reflection_MethodAttributes_Static = 16,
-	System_Reflection_MethodAttributes_Final = 32,
-	System_Reflection_MethodAttributes_Virtual = 64,
-	System_Reflection_MethodAttributes_HideBySig = 128,
-	System_Reflection_MethodAttributes_NewSlot = 256,
-	System_Reflection_MethodAttributes_VtableLayoutMask = 256,
-	System_Reflection_MethodAttributes_CheckAccessOnOverride = 512,
-	System_Reflection_MethodAttributes_Abstract = 1024,
-	System_Reflection_MethodAttributes_SpecialName = 2048,
-	System_Reflection_MethodAttributes_RTSpecialName = 4096,
-	System_Reflection_MethodAttributes_PinvokeImpl = 8192,
-	System_Reflection_MethodAttributes_HasSecurity = 16384,
-	System_Reflection_MethodAttributes_RequireSecObject = 32768,
-	System_Reflection_MethodAttributes_ReservedMask = 53248
-} System_Reflection_MethodAttributes;
+	System_Reflection_PortableExecutableKinds_NotAPortableExecutableImage = 0,
+	System_Reflection_PortableExecutableKinds_ILOnly = 1,
+	System_Reflection_PortableExecutableKinds_Required32Bit = 2,
+	System_Reflection_PortableExecutableKinds_PE32Plus = 4,
+	System_Reflection_PortableExecutableKinds_Unmanaged32Bit = 8,
+	System_Reflection_PortableExecutableKinds_Preferred32Bit = 16
+} System_Reflection_PortableExecutableKinds;
 
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Reflection_MethodImplAttributes_IL = 0,
-	System_Reflection_MethodImplAttributes_Managed = 0,
-	System_Reflection_MethodImplAttributes_Native = 1,
-	System_Reflection_MethodImplAttributes_OPTIL = 2,
-	System_Reflection_MethodImplAttributes_CodeTypeMask = 3,
-	System_Reflection_MethodImplAttributes_Runtime = 3,
-	System_Reflection_MethodImplAttributes_ManagedMask = 4,
-	System_Reflection_MethodImplAttributes_Unmanaged = 4,
-	System_Reflection_MethodImplAttributes_NoInlining = 8,
-	System_Reflection_MethodImplAttributes_ForwardRef = 16,
-	System_Reflection_MethodImplAttributes_Synchronized = 32,
-	System_Reflection_MethodImplAttributes_NoOptimization = 64,
-	System_Reflection_MethodImplAttributes_PreserveSig = 128,
-	System_Reflection_MethodImplAttributes_AggressiveInlining = 256,
-	System_Reflection_MethodImplAttributes_AggressiveOptimization = 512,
-	System_Reflection_MethodImplAttributes_InternalCall = 4096,
-	System_Reflection_MethodImplAttributes_MaxMethodImplVal = 65535
-} System_Reflection_MethodImplAttributes;
-
-
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Reflection_CallingConventions_Standard = 1,
-	System_Reflection_CallingConventions_VarArgs = 2,
-	System_Reflection_CallingConventions_Any = 3,
-	System_Reflection_CallingConventions_HasThis = 32,
-	System_Reflection_CallingConventions_ExplicitThis = 64
-} System_Reflection_CallingConventions;
+	System_Reflection_ImageFileMachine_I386 = 332,
+	System_Reflection_ImageFileMachine_ARM = 452,
+	System_Reflection_ImageFileMachine_IA64 = 512,
+	System_Reflection_ImageFileMachine_AMD64 = 34404
+} System_Reflection_ImageFileMachine;
 
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
@@ -384,6 +344,72 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+	System_Reflection_CallingConventions_Standard = 1,
+	System_Reflection_CallingConventions_VarArgs = 2,
+	System_Reflection_CallingConventions_Any = 3,
+	System_Reflection_CallingConventions_HasThis = 32,
+	System_Reflection_CallingConventions_ExplicitThis = 64
+} System_Reflection_CallingConventions;
+
+
+typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+	System_Reflection_MethodAttributes_PrivateScope = 0,
+	System_Reflection_MethodAttributes_ReuseSlot = 0,
+	System_Reflection_MethodAttributes_Private = 1,
+	System_Reflection_MethodAttributes_FamANDAssem = 2,
+	System_Reflection_MethodAttributes_Assembly = 3,
+	System_Reflection_MethodAttributes_Family = 4,
+	System_Reflection_MethodAttributes_FamORAssem = 5,
+	System_Reflection_MethodAttributes_Public = 6,
+	System_Reflection_MethodAttributes_MemberAccessMask = 7,
+	System_Reflection_MethodAttributes_UnmanagedExport = 8,
+	System_Reflection_MethodAttributes_Static = 16,
+	System_Reflection_MethodAttributes_Final = 32,
+	System_Reflection_MethodAttributes_Virtual = 64,
+	System_Reflection_MethodAttributes_HideBySig = 128,
+	System_Reflection_MethodAttributes_NewSlot = 256,
+	System_Reflection_MethodAttributes_VtableLayoutMask = 256,
+	System_Reflection_MethodAttributes_CheckAccessOnOverride = 512,
+	System_Reflection_MethodAttributes_Abstract = 1024,
+	System_Reflection_MethodAttributes_SpecialName = 2048,
+	System_Reflection_MethodAttributes_RTSpecialName = 4096,
+	System_Reflection_MethodAttributes_PinvokeImpl = 8192,
+	System_Reflection_MethodAttributes_HasSecurity = 16384,
+	System_Reflection_MethodAttributes_RequireSecObject = 32768,
+	System_Reflection_MethodAttributes_ReservedMask = 53248
+} System_Reflection_MethodAttributes;
+
+
+typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+	System_Reflection_MethodImplAttributes_IL = 0,
+	System_Reflection_MethodImplAttributes_Managed = 0,
+	System_Reflection_MethodImplAttributes_Native = 1,
+	System_Reflection_MethodImplAttributes_OPTIL = 2,
+	System_Reflection_MethodImplAttributes_CodeTypeMask = 3,
+	System_Reflection_MethodImplAttributes_Runtime = 3,
+	System_Reflection_MethodImplAttributes_ManagedMask = 4,
+	System_Reflection_MethodImplAttributes_Unmanaged = 4,
+	System_Reflection_MethodImplAttributes_NoInlining = 8,
+	System_Reflection_MethodImplAttributes_ForwardRef = 16,
+	System_Reflection_MethodImplAttributes_Synchronized = 32,
+	System_Reflection_MethodImplAttributes_NoOptimization = 64,
+	System_Reflection_MethodImplAttributes_PreserveSig = 128,
+	System_Reflection_MethodImplAttributes_AggressiveInlining = 256,
+	System_Reflection_MethodImplAttributes_AggressiveOptimization = 512,
+	System_Reflection_MethodImplAttributes_InternalCall = 4096,
+	System_Reflection_MethodImplAttributes_MaxMethodImplVal = 65535
+} System_Reflection_MethodImplAttributes;
+
+
+typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+	System_Reflection_ExceptionHandlingClauseOptions_Clause = 0,
+	System_Reflection_ExceptionHandlingClauseOptions_Filter = 1,
+	System_Reflection_ExceptionHandlingClauseOptions_Finally = 2,
+	System_Reflection_ExceptionHandlingClauseOptions_Fault = 4
+} System_Reflection_ExceptionHandlingClauseOptions;
+
+
+typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_Threading_Tasks_TaskStatus_Created = 0,
 	System_Threading_Tasks_TaskStatus_WaitingForActivation = 1,
 	System_Threading_Tasks_TaskStatus_WaitingToRun = 2,
@@ -441,6 +467,14 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+	System_Runtime_InteropServices_GCHandleType_Weak = 0,
+	System_Runtime_InteropServices_GCHandleType_WeakTrackResurrection = 1,
+	System_Runtime_InteropServices_GCHandleType_Normal = 2,
+	System_Runtime_InteropServices_GCHandleType_Pinned = 3
+} System_Runtime_InteropServices_GCHandleType;
+
+
+typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_IO_SeekOrigin_Begin = 0,
 	System_IO_SeekOrigin_Current = 1,
 	System_IO_SeekOrigin_End = 2
@@ -486,28 +520,35 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+	System_IO_UnixFileMode_None = 0,
+	System_IO_UnixFileMode_OtherExecute = 1,
+	System_IO_UnixFileMode_OtherWrite = 2,
+	System_IO_UnixFileMode_OtherRead = 4,
+	System_IO_UnixFileMode_GroupExecute = 8,
+	System_IO_UnixFileMode_GroupWrite = 16,
+	System_IO_UnixFileMode_GroupRead = 32,
+	System_IO_UnixFileMode_UserExecute = 64,
+	System_IO_UnixFileMode_UserWrite = 128,
+	System_IO_UnixFileMode_UserRead = 256,
+	System_IO_UnixFileMode_StickyBit = 512,
+	System_IO_UnixFileMode_SetGroup = 1024,
+	System_IO_UnixFileMode_SetUser = 2048
+} System_IO_UnixFileMode;
+
+
+typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+	System_Reflection_EventAttributes_None = 0,
+	System_Reflection_EventAttributes_SpecialName = 512,
+	System_Reflection_EventAttributes_RTSpecialName = 1024,
+	System_Reflection_EventAttributes_ReservedMask = 1024
+} System_Reflection_EventAttributes;
+
+
+typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_Reflection_ResourceLocation_Embedded = 1,
 	System_Reflection_ResourceLocation_ContainedInAnotherAssembly = 2,
 	System_Reflection_ResourceLocation_ContainedInManifestFile = 4
 } System_Reflection_ResourceLocation;
-
-
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Reflection_PortableExecutableKinds_NotAPortableExecutableImage = 0,
-	System_Reflection_PortableExecutableKinds_ILOnly = 1,
-	System_Reflection_PortableExecutableKinds_Required32Bit = 2,
-	System_Reflection_PortableExecutableKinds_PE32Plus = 4,
-	System_Reflection_PortableExecutableKinds_Unmanaged32Bit = 8,
-	System_Reflection_PortableExecutableKinds_Preferred32Bit = 16
-} System_Reflection_PortableExecutableKinds;
-
-
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Reflection_ImageFileMachine_I386 = 332,
-	System_Reflection_ImageFileMachine_ARM = 452,
-	System_Reflection_ImageFileMachine_IA64 = 512,
-	System_Reflection_ImageFileMachine_AMD64 = 34404
-} System_Reflection_ImageFileMachine;
 
 
 typedef enum __attribute__((enum_extensibility(closed))): uint8_t {
@@ -624,14 +665,6 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_Reflection_EventAttributes_None = 0,
-	System_Reflection_EventAttributes_SpecialName = 512,
-	System_Reflection_EventAttributes_RTSpecialName = 1024,
-	System_Reflection_EventAttributes_ReservedMask = 1024
-} System_Reflection_EventAttributes;
-
-
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_Runtime_InteropServices_CustomQueryInterfaceMode_Ignore = 0,
 	System_Runtime_InteropServices_CustomQueryInterfaceMode_Allow = 1
 } System_Runtime_InteropServices_CustomQueryInterfaceMode;
@@ -732,23 +765,6 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 
 
 typedef enum __attribute__((enum_extensibility(closed))): int32_t {
-	System_IO_UnixFileMode_None = 0,
-	System_IO_UnixFileMode_OtherExecute = 1,
-	System_IO_UnixFileMode_OtherWrite = 2,
-	System_IO_UnixFileMode_OtherRead = 4,
-	System_IO_UnixFileMode_GroupExecute = 8,
-	System_IO_UnixFileMode_GroupWrite = 16,
-	System_IO_UnixFileMode_GroupRead = 32,
-	System_IO_UnixFileMode_UserExecute = 64,
-	System_IO_UnixFileMode_UserWrite = 128,
-	System_IO_UnixFileMode_UserRead = 256,
-	System_IO_UnixFileMode_StickyBit = 512,
-	System_IO_UnixFileMode_SetGroup = 1024,
-	System_IO_UnixFileMode_SetUser = 2048
-} System_IO_UnixFileMode;
-
-
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 	System_IO_SearchOption_TopDirectoryOnly = 0,
 	System_IO_SearchOption_AllDirectories = 1
 } System_IO_SearchOption;
@@ -807,6 +823,8 @@ typedef void* System_Array_t;
 typedef void* System_IFormatProvider_t;
 
 
+
+typedef void* System_ValueTuple_A2_t;
 
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
@@ -963,6 +981,8 @@ typedef void* System_Version_t;
 
 
 
+typedef void* System_ValueTuple_A2_t;
+
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
@@ -970,6 +990,8 @@ typedef void* System_Version_t;
 typedef void* System_Byte_Array_t;
 
 
+
+typedef void* System_ValueTuple_A2_t;
 
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
@@ -985,6 +1007,8 @@ typedef void* System_MarshalByRefObject_t;
 typedef void* System_Threading_Tasks_Task_t;
 
 typedef void* System_Threading_Tasks_TaskScheduler_t;
+
+typedef void* System_Nullable_A1_t;
 
 typedef void* System_AggregateException_t;
 
@@ -1006,23 +1030,33 @@ typedef void* System_Runtime_Serialization_SerializationEntry_t;
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
+typedef void* System_ValueTuple_A2_t;
 
 
-// Type "TOther" was skipped. Reason: It has no full name.
-// Type "TOther" was skipped. Reason: It has no full name.
-// Type "TOther" was skipped. Reason: It has no full name.
 
-
-// Type "TOther" was skipped. Reason: It has no full name.
-// Type "TOther" was skipped. Reason: It has no full name.
-// Type "TOther" was skipped. Reason: It has no full name.
-
+typedef void* System_ValueTuple_A2_t;
 
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 
 
+typedef void* System_ValueTuple_A2_t;
+
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
+
+
+typedef void* System_ValueTuple_A2_t;
+
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
+
+
+typedef void* System_ValueTuple_A2_t;
+
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
@@ -1031,6 +1065,8 @@ typedef void* System_Runtime_Serialization_SerializationEntry_t;
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
+typedef void* System_ValueTuple_A2_t;
+
 typedef void* System_Decimal_t;
 
 
@@ -1060,6 +1096,8 @@ typedef void* System_Runtime_Serialization_StreamingContext_t;
 
 
 
+typedef void* System_ValueTuple_A2_t;
+
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
@@ -1076,14 +1114,30 @@ typedef void* System_Reflection_ParameterInfo_Array_t;
 
 typedef void* System_Reflection_ParameterInfo_t;
 
+typedef void* System_Collections_Generic_IEnumerable_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerator_A1_t;
+
+typedef void* System_Reflection_CustomAttributeData_t;
+
+typedef void* System_Collections_Generic_IList_A1_t;
+
+typedef void* System_Reflection_Module_t;
+
+typedef void* System_Guid_t;
+
+
+
+
 typedef void* System_Object_Array_t;
 
+
+typedef void* System_Reflection_MethodInfo_t;
 
 typedef void* System_Type_Array_t;
 
 
-
-typedef void* System_Reflection_MethodBody_t;
+typedef void* System_Reflection_ICustomAttributeProvider_t;
 
 typedef void* System_Reflection_Binder_t;
 
@@ -1105,13 +1159,30 @@ typedef void* System_Reflection_PropertyInfo_t;
 
 typedef void* System_Reflection_MethodInfo_Array_t;
 
-typedef void* System_Reflection_MethodInfo_t;
-
-typedef void* System_Reflection_ICustomAttributeProvider_t;
-
 
 typedef void* System_Reflection_PropertyInfo_Array_t;
 
+
+typedef void* System_Reflection_ConstructorInfo_t;
+
+typedef void* System_Collections_Generic_IList_A1_t;
+
+typedef void* System_Reflection_CustomAttributeTypedArgument_t;
+
+typedef void* System_Collections_Generic_IList_A1_t;
+
+typedef void* System_Reflection_CustomAttributeNamedArgument_t;
+
+
+typedef void* System_Reflection_MethodBody_t;
+
+typedef void* System_Collections_Generic_IList_A1_t;
+
+typedef void* System_Reflection_LocalVariableInfo_t;
+
+typedef void* System_Collections_Generic_IList_A1_t;
+
+typedef void* System_Reflection_ExceptionHandlingClause_t;
 
 typedef void* System_Collections_IDictionary_t;
 
@@ -1121,8 +1192,16 @@ typedef void* System_Collections_IDictionaryEnumerator_t;
 
 typedef void* System_Collections_DictionaryEntry_t;
 
+typedef void* System_Collections_ObjectModel_ReadOnlyCollection_A1_t;
+
 typedef void* System_Exception_Array_t;
 
+
+typedef void* System_Collections_Generic_IEnumerator_A1_t;
+
+typedef void* System_Collections_Generic_IList_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerable_A1_t;
 
 typedef void* System_Threading_Tasks_TaskFactory_t;
 
@@ -1195,18 +1274,125 @@ typedef void* System_Runtime_CompilerServices_YieldAwaitable_t;
 typedef void* System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_t;
 
 // Type "TResult" was skipped. Reason: It has no full name.
+typedef void* System_Collections_Generic_IEnumerable_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerator_A1_t;
+
+// Type "Task`1" was skipped. Reason: It has no full name.
+// Type "TResult[]" was skipped. Reason: It has no full name.
+// Type "TResult" was skipped. Reason: It has no full name.
+
+// Type "TaskFactory`1" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg2" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg2" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg2" was skipped. Reason: It has no full name.
+// Type "TArg3" was skipped. Reason: It has no full name.
+// Type "TArg1" was skipped. Reason: It has no full name.
+// Type "TArg2" was skipped. Reason: It has no full name.
+// Type "TArg3" was skipped. Reason: It has no full name.
+// Type "TaskAwaiter`1" was skipped. Reason: It has no full name.
+// Type "ConfiguredTaskAwaitable`1" was skipped. Reason: It has no full name.
+// Type "ConfiguredTaskAwaiter" was skipped. Reason: It has no full name.
+// Type "Task`1" was skipped. Reason: It has no full name.
+// Type "TResult[]" was skipped. Reason: It has no full name.
+// Type "TResult" was skipped. Reason: It has no full name.
+
+// Type "TaskFactory`1" was skipped. Reason: It has no full name.
+// Type "TaskAwaiter`1" was skipped. Reason: It has no full name.
+// Type "ConfiguredTaskAwaitable`1" was skipped. Reason: It has no full name.
+// Type "ConfiguredTaskAwaiter" was skipped. Reason: It has no full name.
+typedef void* System_Threading_Tasks_Task_A1_t;
+
+typedef void* System_Threading_Tasks_TaskFactory_A1_t;
+
+typedef void* System_Runtime_CompilerServices_TaskAwaiter_A1_t;
+
+typedef void* System_Runtime_CompilerServices_ConfiguredTaskAwaitable_A1_t;
+
+typedef void* System_Runtime_CompilerServices_ConfiguredTaskAwaitable_A1_t;
+
+typedef void* System_Threading_Tasks_Task_A1_t;
+
+typedef void* System_Threading_Tasks_TaskFactory_A1_t;
+
+typedef void* System_Runtime_CompilerServices_TaskAwaiter_A1_t;
+
+typedef void* System_Runtime_CompilerServices_ConfiguredTaskAwaitable_A1_t;
+
+typedef void* System_Runtime_CompilerServices_ConfiguredTaskAwaitable_A1_t;
+
+typedef void* System_Threading_Tasks_ValueTask_A1_t;
+
+typedef void* System_Runtime_CompilerServices_ValueTaskAwaiter_A1_t;
+
+typedef void* System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_A1_t;
+
+typedef void* System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_A1_t;
+
+typedef void* System_Threading_Tasks_Sources_IValueTaskSource_A1_t;
+
+typedef void* System_Memory_A1_t;
+
+typedef void* System_ArraySegment_A1_t;
+
+typedef void* System_ArraySegment_A1_t;
+
+typedef void* System_ReadOnlyMemory_A1_t;
+
+typedef void* System_Buffers_MemoryHandle_t;
+
+typedef void* System_Runtime_InteropServices_GCHandle_t;
+
+typedef void* System_Buffers_IPinnable_t;
+
 typedef void* Microsoft_Win32_SafeHandles_SafeFileHandle_t;
 
 typedef void* System_IO_FileStreamOptions_t;
 
+typedef void* System_Nullable_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerable_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerator_A1_t;
+
+typedef void* System_Reflection_TypeInfo_t;
+
+typedef void* System_Reflection_EventInfo_t;
+
+typedef void* System_Collections_Generic_IEnumerable_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerator_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerable_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerator_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerable_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerator_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerable_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerator_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerable_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerator_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerable_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerator_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerable_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerator_A1_t;
+
 typedef void* System_Reflection_ManifestResourceInfo_t;
-
-typedef void* System_Reflection_Module_t;
-
-typedef void* System_Guid_t;
-
-
-
 
 typedef void* System_ResolveEventArgs_t;
 
@@ -1214,6 +1400,10 @@ typedef void* System_EventArgs_t;
 
 typedef void* System_Reflection_Module_Array_t;
 
+
+typedef void* System_Collections_Generic_IEnumerable_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerator_A1_t;
 
 typedef void* System_Reflection_AssemblyName_Array_t;
 
@@ -1244,6 +1434,10 @@ typedef void* System_CharEnumerator_t;
 
 typedef void* System_Text_StringRuneEnumerator_t;
 
+typedef void* System_Collections_Generic_IEnumerable_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerator_A1_t;
+
 typedef void* System_Text_CompositeFormat_t;
 
 
@@ -1265,14 +1459,20 @@ typedef void* System_Text_DecoderFallback_t;
 
 typedef void* System_Text_DecoderFallbackBuffer_t;
 
-typedef void* System_Text_EncodingInfo_Array_t;
+typedef void* System_Collections_Generic_IEnumerable_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerator_A1_t;
 
 typedef void* System_Text_EncodingInfo_t;
+
+typedef void* System_Text_EncodingInfo_Array_t;
 
 
 typedef void* System_Text_Decoder_t;
 
 typedef void* System_Text_Encoder_t;
+
+typedef void* System_ValueTuple_A2_t;
 
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
@@ -1302,12 +1502,8 @@ typedef void* System_Attribute_t;
 typedef void* System_Attribute_Array_t;
 
 
-typedef void* System_Reflection_ConstructorInfo_t;
-
 typedef void* System_Reflection_ConstructorInfo_Array_t;
 
-
-typedef void* System_Reflection_EventInfo_t;
 
 typedef void* System_Reflection_EventInfo_Array_t;
 
@@ -1353,6 +1549,8 @@ typedef void* System_SystemException_t;
 
 
 
+typedef void* System_ValueTuple_A2_t;
+
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
@@ -1367,6 +1565,12 @@ typedef void* System_WeakReference_t;
 
 // Type "T[]" was skipped. Reason: It has no full name.
 // Type "T" was skipped. Reason: It has no full name.
+
+typedef void* System_Collections_Generic_IReadOnlyDictionary_A2_t;
+
+typedef void* System_Collections_Generic_IEnumerable_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerator_A1_t;
 
 typedef void* System_Math_t;
 
@@ -1408,6 +1612,8 @@ typedef void* System_Collections_IList_t;
 
 typedef void* System_UnhandledExceptionEventArgs_t;
 
+typedef void* System_Nullable_A1_t;
+
 typedef void* System_Reflection_Assembly_Array_t;
 
 
@@ -1437,6 +1643,14 @@ typedef void* System_Text_StringBuilder_t;
 
 typedef void* System_Text_StringBuilder_ChunkEnumerator_t;
 
+typedef void* System_ReadOnlyMemory_A1_t;
+
+typedef void* System_ArraySegment_A1_t;
+
+typedef void* System_ArraySegment_A1_t;
+
+typedef void* System_Memory_A1_t;
+
 typedef void* System_Text_StringBuilder_AppendInterpolatedStringHandler_t;
 
 // Type "T" was skipped. Reason: It has no full name.
@@ -1458,9 +1672,73 @@ typedef void* System_IO_StreamReader_t;
 
 typedef void* System_IO_TextReader_t;
 
+typedef void* System_Threading_Tasks_Task_A1_t;
+
+typedef void* System_Threading_Tasks_TaskFactory_A1_t;
+
+typedef void* System_Runtime_CompilerServices_TaskAwaiter_A1_t;
+
+typedef void* System_Runtime_CompilerServices_ConfiguredTaskAwaitable_A1_t;
+
+typedef void* System_Runtime_CompilerServices_ConfiguredTaskAwaitable_A1_t;
+
+typedef void* System_Threading_Tasks_ValueTask_A1_t;
+
+typedef void* System_Runtime_CompilerServices_ValueTaskAwaiter_A1_t;
+
+typedef void* System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_A1_t;
+
+typedef void* System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_A1_t;
+
+typedef void* System_Threading_Tasks_Sources_IValueTaskSource_A1_t;
+
 typedef void* System_IO_StreamWriter_t;
 
 typedef void* System_IO_TextWriter_t;
+
+typedef void* System_Collections_Generic_IAsyncEnumerable_A1_t;
+
+typedef void* System_Collections_Generic_IAsyncEnumerator_A1_t;
+
+typedef void* System_Threading_Tasks_ValueTask_A1_t;
+
+typedef void* System_Threading_Tasks_Task_A1_t;
+
+typedef void* System_Threading_Tasks_TaskFactory_A1_t;
+
+typedef void* System_Runtime_CompilerServices_TaskAwaiter_A1_t;
+
+typedef void* System_Runtime_CompilerServices_ConfiguredTaskAwaitable_A1_t;
+
+typedef void* System_Runtime_CompilerServices_ConfiguredTaskAwaitable_A1_t;
+
+typedef void* System_Runtime_CompilerServices_ValueTaskAwaiter_A1_t;
+
+typedef void* System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_A1_t;
+
+typedef void* System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_A1_t;
+
+typedef void* System_Threading_Tasks_Sources_IValueTaskSource_A1_t;
+
+typedef void* System_Threading_Tasks_Task_A1_t;
+
+typedef void* System_Threading_Tasks_TaskFactory_A1_t;
+
+typedef void* System_Runtime_CompilerServices_TaskAwaiter_A1_t;
+
+typedef void* System_Runtime_CompilerServices_ConfiguredTaskAwaitable_A1_t;
+
+typedef void* System_Runtime_CompilerServices_ConfiguredTaskAwaitable_A1_t;
+
+typedef void* System_Threading_Tasks_Task_A1_t;
+
+typedef void* System_Threading_Tasks_TaskFactory_A1_t;
+
+typedef void* System_Runtime_CompilerServices_TaskAwaiter_A1_t;
+
+typedef void* System_Runtime_CompilerServices_ConfiguredTaskAwaitable_A1_t;
+
+typedef void* System_Runtime_CompilerServices_ConfiguredTaskAwaitable_A1_t;
 
 typedef void* System_IO_FileSystemInfo_t;
 
@@ -1478,6 +1756,18 @@ typedef void* System_IO_FileSystemInfo_Array_t;
 
 typedef void* System_IO_DirectoryInfo_Array_t;
 
+
+typedef void* System_Collections_Generic_IEnumerable_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerator_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerable_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerator_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerable_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerator_A1_t;
 
 typedef void* System_IO_Directory_t;
 
@@ -1515,6 +1805,42 @@ typedef void* NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_t;
 typedef void* NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_t;
 
 typedef void* NativeAOT_CodeGeneratorInputSample_GenericTests_t;
+
+typedef void* System_Collections_Generic_List_A1_t;
+
+typedef void* System_Collections_ObjectModel_ReadOnlyCollection_A1_t;
+
+typedef void* System_Collections_Generic_IList_A1_t;
+
+typedef void* System_Collections_Generic_IComparer_A1_t;
+
+typedef void* System_Collections_Generic_List_A1_t;
+
+typedef void* System_Collections_Generic_Dictionary_A2_t;
+
+typedef void* System_Collections_Generic_IEqualityComparer_A1_t;
+
+typedef void* System_Collections_Generic_Dictionary_A2_t;
+
+typedef void* System_Collections_Generic_Dictionary_A2_t;
+
+typedef void* System_Collections_Generic_Dictionary_A2_t;
+
+typedef void* System_Collections_Generic_Dictionary_A2_t;
+
+typedef void* System_Collections_Generic_Dictionary_A2_t;
+
+typedef void* System_Collections_Generic_KeyValuePair_A2_t;
+
+typedef void* System_Collections_Generic_IDictionary_A2_t;
+
+typedef void* System_Collections_Generic_ICollection_A1_t;
+
+typedef void* System_Collections_Generic_ICollection_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerable_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerator_A1_t;
 
 typedef void* NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_t;
 
@@ -1558,12 +1884,13 @@ typedef void (*System_Delegate_CFunction_t)(
 
 // Type "T" was skipped. Reason: It has no full name.
 // Type "T" was skipped. Reason: It has no full name.
-typedef void* System_Action_t;
-typedef void (*System_Action_CDestructorFunction_t)(void* context);
+typedef void* System_Reflection_TypeFilter_t;
+typedef void (*System_Reflection_TypeFilter_CDestructorFunction_t)(void* context);
 
-typedef void (*System_Action_CFunction_t)(
-	void* context
-	
+typedef bool (*System_Reflection_TypeFilter_CFunction_t)(
+	void* context,
+	System_Type_t m,
+	System_Object_t filterCriteria
 );
 
 
@@ -1571,6 +1898,15 @@ typedef void* System_MulticastDelegate_t;
 typedef void (*System_MulticastDelegate_CDestructorFunction_t)(void* context);
 
 typedef void (*System_MulticastDelegate_CFunction_t)(
+	void* context
+	
+);
+
+
+typedef void* System_Action_t;
+typedef void (*System_Action_CDestructorFunction_t)(void* context);
+
+typedef void (*System_Action_CFunction_t)(
 	void* context
 	
 );
@@ -1592,16 +1928,6 @@ typedef System_Reflection_Module_t (*System_Reflection_ModuleResolveEventHandler
 	void* context,
 	System_Object_t sender,
 	System_ResolveEventArgs_t e
-);
-
-
-typedef void* System_Reflection_TypeFilter_t;
-typedef void (*System_Reflection_TypeFilter_CDestructorFunction_t)(void* context);
-
-typedef bool (*System_Reflection_TypeFilter_CFunction_t)(
-	void* context,
-	System_Type_t m,
-	System_Object_t filterCriteria
 );
 
 
@@ -1926,29 +2252,21 @@ System_Reflection_ParameterAttributes_TypeOf(
 
 #pragma mark - END APIs of System.Reflection.ParameterAttributes
 
-#pragma mark - BEGIN APIs of System.Reflection.MethodAttributes
+#pragma mark - BEGIN APIs of System.Reflection.PortableExecutableKinds
 System_Type_t /* System.Type */
-System_Reflection_MethodAttributes_TypeOf(
+System_Reflection_PortableExecutableKinds_TypeOf(
 	
 );
 
-#pragma mark - END APIs of System.Reflection.MethodAttributes
+#pragma mark - END APIs of System.Reflection.PortableExecutableKinds
 
-#pragma mark - BEGIN APIs of System.Reflection.MethodImplAttributes
+#pragma mark - BEGIN APIs of System.Reflection.ImageFileMachine
 System_Type_t /* System.Type */
-System_Reflection_MethodImplAttributes_TypeOf(
+System_Reflection_ImageFileMachine_TypeOf(
 	
 );
 
-#pragma mark - END APIs of System.Reflection.MethodImplAttributes
-
-#pragma mark - BEGIN APIs of System.Reflection.CallingConventions
-System_Type_t /* System.Type */
-System_Reflection_CallingConventions_TypeOf(
-	
-);
-
-#pragma mark - END APIs of System.Reflection.CallingConventions
+#pragma mark - END APIs of System.Reflection.ImageFileMachine
 
 #pragma mark - BEGIN APIs of System.Reflection.BindingFlags
 System_Type_t /* System.Type */
@@ -1973,6 +2291,38 @@ System_Reflection_PropertyAttributes_TypeOf(
 );
 
 #pragma mark - END APIs of System.Reflection.PropertyAttributes
+
+#pragma mark - BEGIN APIs of System.Reflection.CallingConventions
+System_Type_t /* System.Type */
+System_Reflection_CallingConventions_TypeOf(
+	
+);
+
+#pragma mark - END APIs of System.Reflection.CallingConventions
+
+#pragma mark - BEGIN APIs of System.Reflection.MethodAttributes
+System_Type_t /* System.Type */
+System_Reflection_MethodAttributes_TypeOf(
+	
+);
+
+#pragma mark - END APIs of System.Reflection.MethodAttributes
+
+#pragma mark - BEGIN APIs of System.Reflection.MethodImplAttributes
+System_Type_t /* System.Type */
+System_Reflection_MethodImplAttributes_TypeOf(
+	
+);
+
+#pragma mark - END APIs of System.Reflection.MethodImplAttributes
+
+#pragma mark - BEGIN APIs of System.Reflection.ExceptionHandlingClauseOptions
+System_Type_t /* System.Type */
+System_Reflection_ExceptionHandlingClauseOptions_TypeOf(
+	
+);
+
+#pragma mark - END APIs of System.Reflection.ExceptionHandlingClauseOptions
 
 #pragma mark - BEGIN APIs of System.Threading.Tasks.TaskStatus
 System_Type_t /* System.Type */
@@ -2014,6 +2364,14 @@ System_Threading_Tasks_TaskContinuationOptions_TypeOf(
 
 #pragma mark - END APIs of System.Threading.Tasks.TaskContinuationOptions
 
+#pragma mark - BEGIN APIs of System.Runtime.InteropServices.GCHandleType
+System_Type_t /* System.Type */
+System_Runtime_InteropServices_GCHandleType_TypeOf(
+	
+);
+
+#pragma mark - END APIs of System.Runtime.InteropServices.GCHandleType
+
 #pragma mark - BEGIN APIs of System.IO.SeekOrigin
 System_Type_t /* System.Type */
 System_IO_SeekOrigin_TypeOf(
@@ -2054,6 +2412,22 @@ System_IO_FileOptions_TypeOf(
 
 #pragma mark - END APIs of System.IO.FileOptions
 
+#pragma mark - BEGIN APIs of System.IO.UnixFileMode
+System_Type_t /* System.Type */
+System_IO_UnixFileMode_TypeOf(
+	
+);
+
+#pragma mark - END APIs of System.IO.UnixFileMode
+
+#pragma mark - BEGIN APIs of System.Reflection.EventAttributes
+System_Type_t /* System.Type */
+System_Reflection_EventAttributes_TypeOf(
+	
+);
+
+#pragma mark - END APIs of System.Reflection.EventAttributes
+
 #pragma mark - BEGIN APIs of System.Reflection.ResourceLocation
 System_Type_t /* System.Type */
 System_Reflection_ResourceLocation_TypeOf(
@@ -2061,22 +2435,6 @@ System_Reflection_ResourceLocation_TypeOf(
 );
 
 #pragma mark - END APIs of System.Reflection.ResourceLocation
-
-#pragma mark - BEGIN APIs of System.Reflection.PortableExecutableKinds
-System_Type_t /* System.Type */
-System_Reflection_PortableExecutableKinds_TypeOf(
-	
-);
-
-#pragma mark - END APIs of System.Reflection.PortableExecutableKinds
-
-#pragma mark - BEGIN APIs of System.Reflection.ImageFileMachine
-System_Type_t /* System.Type */
-System_Reflection_ImageFileMachine_TypeOf(
-	
-);
-
-#pragma mark - END APIs of System.Reflection.ImageFileMachine
 
 #pragma mark - BEGIN APIs of System.Security.SecurityRuleSet
 System_Type_t /* System.Type */
@@ -2157,14 +2515,6 @@ System_Runtime_InteropServices_CharSet_TypeOf(
 );
 
 #pragma mark - END APIs of System.Runtime.InteropServices.CharSet
-
-#pragma mark - BEGIN APIs of System.Reflection.EventAttributes
-System_Type_t /* System.Type */
-System_Reflection_EventAttributes_TypeOf(
-	
-);
-
-#pragma mark - END APIs of System.Reflection.EventAttributes
 
 #pragma mark - BEGIN APIs of System.Runtime.InteropServices.CustomQueryInterfaceMode
 System_Type_t /* System.Type */
@@ -2253,14 +2603,6 @@ System_IO_FileAttributes_TypeOf(
 );
 
 #pragma mark - END APIs of System.IO.FileAttributes
-
-#pragma mark - BEGIN APIs of System.IO.UnixFileMode
-System_Type_t /* System.Type */
-System_IO_UnixFileMode_TypeOf(
-	
-);
-
-#pragma mark - END APIs of System.IO.UnixFileMode
 
 #pragma mark - BEGIN APIs of System.IO.SearchOption
 System_Type_t /* System.Type */
@@ -3709,6 +4051,12 @@ System_Reflection_MemberInfo_GetCustomAttributes_1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+System_Collections_Generic_IList_A1_t /* System.Collections.Generic.IList<System.Reflection.CustomAttributeData> */
+System_Reflection_MemberInfo_GetCustomAttributesData(
+	System_Reflection_MemberInfo_t /* System.Reflection.MemberInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 bool /* System.Boolean */
 System_Reflection_MemberInfo_Equals(
 	System_Reflection_MemberInfo_t /* System.Reflection.MemberInfo */ self,
@@ -3752,6 +4100,13 @@ System_Reflection_MemberInfo_ReflectedType_Get(
 
 System_Reflection_Module_t /* System.Reflection.Module */
 System_Reflection_MemberInfo_Module_Get(
+	System_Reflection_MemberInfo_t /* System.Reflection.MemberInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.Reflection.CustomAttributeData> */
+System_Reflection_MemberInfo_CustomAttributes_Get(
 	System_Reflection_MemberInfo_t /* System.Reflection.MemberInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -4483,8 +4838,7 @@ System_String_Concat_3(
 
 System_String_t /* System.String */
 System_String_Concat_4(
-	System_String_t /* System.String */ str0,
-	System_String_t /* System.String */ str1,
+	System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.String> */ values,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -4492,7 +4846,6 @@ System_String_t /* System.String */
 System_String_Concat_5(
 	System_String_t /* System.String */ str0,
 	System_String_t /* System.String */ str1,
-	System_String_t /* System.String */ str2,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -4501,12 +4854,20 @@ System_String_Concat_6(
 	System_String_t /* System.String */ str0,
 	System_String_t /* System.String */ str1,
 	System_String_t /* System.String */ str2,
-	System_String_t /* System.String */ str3,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 System_String_t /* System.String */
 System_String_Concat_7(
+	System_String_t /* System.String */ str0,
+	System_String_t /* System.String */ str1,
+	System_String_t /* System.String */ str2,
+	System_String_t /* System.String */ str3,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_String_t /* System.String */
+System_String_Concat_8(
 	System_String_Array_t /* System.String[] */ values,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -4660,13 +5021,20 @@ System_String_Join_3(
 
 System_String_t /* System.String */
 System_String_Join_4(
+	System_String_t /* System.String */ separator,
+	System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.String> */ values,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_String_t /* System.String */
+System_String_Join_5(
 	uint8_t /* System.Char */ separator,
 	System_Object_Array_t /* System.Object[] */ values,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 System_String_t /* System.String */
-System_String_Join_5(
+System_String_Join_6(
 	System_String_t /* System.String */ separator,
 	System_Object_Array_t /* System.Object[] */ values,
 	System_Exception_t* /* System.Exception */ outException
@@ -6305,6 +6673,7 @@ System_IFormatProvider_Destroy(
 
 
 
+
 #pragma mark - BEGIN APIs of T[]
 #pragma mark - END APIs of T[]
 
@@ -7151,15 +7520,21 @@ System_Reflection_Assembly_IsDefined(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+System_Collections_Generic_IList_A1_t /* System.Collections.Generic.IList<System.Reflection.CustomAttributeData> */
+System_Reflection_Assembly_GetCustomAttributesData(
+	System_Reflection_Assembly_t /* System.Reflection.Assembly */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 System_Object_Array_t /* System.Object[] */
-System_Reflection_Assembly_GetCustomAttributes(
+System_Reflection_Assembly_GetCustomAttributes_1(
 	System_Reflection_Assembly_t /* System.Reflection.Assembly */ self,
 	bool /* System.Boolean */ inherit,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 System_Object_Array_t /* System.Object[] */
-System_Reflection_Assembly_GetCustomAttributes_1(
+System_Reflection_Assembly_GetCustomAttributes_2(
 	System_Reflection_Assembly_t /* System.Reflection.Assembly */ self,
 	System_Type_t /* System.Type */ attributeType,
 	bool /* System.Boolean */ inherit,
@@ -7387,6 +7762,20 @@ System_Reflection_Assembly_ReflectionOnlyLoadFrom(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.Reflection.TypeInfo> */
+System_Reflection_Assembly_DefinedTypes_Get(
+	System_Reflection_Assembly_t /* System.Reflection.Assembly */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.Type> */
+System_Reflection_Assembly_ExportedTypes_Get(
+	System_Reflection_Assembly_t /* System.Reflection.Assembly */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
 System_String_t /* System.String */
 System_Reflection_Assembly_CodeBase_Get(
 	System_Reflection_Assembly_t /* System.Reflection.Assembly */ self,
@@ -7450,6 +7839,13 @@ System_Reflection_Assembly_IsFullyTrusted_Get(
 );
 
 
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.Reflection.CustomAttributeData> */
+System_Reflection_Assembly_CustomAttributes_Get(
+	System_Reflection_Assembly_t /* System.Reflection.Assembly */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
 System_String_t /* System.String */
 System_Reflection_Assembly_EscapedCodeBase_Get(
 	System_Reflection_Assembly_t /* System.Reflection.Assembly */ self,
@@ -7459,6 +7855,13 @@ System_Reflection_Assembly_EscapedCodeBase_Get(
 
 System_Reflection_Module_t /* System.Reflection.Module */
 System_Reflection_Assembly_ManifestModule_Get(
+	System_Reflection_Assembly_t /* System.Reflection.Assembly */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.Reflection.Module> */
+System_Reflection_Assembly_Modules_Get(
 	System_Reflection_Assembly_t /* System.Reflection.Assembly */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -7930,8 +8333,10 @@ System_Version_Destroy(
 
 
 
+
 #pragma mark - BEGIN APIs of System.Byte[]
 #pragma mark - END APIs of System.Byte[]
+
 
 
 
@@ -8009,6 +8414,24 @@ System_IO_FileStream_Read(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+System_Threading_Tasks_Task_A1_t /* System.Threading.Tasks.Task<System.Int32> */
+System_IO_FileStream_ReadAsync(
+	System_IO_FileStream_t /* System.IO.FileStream */ self,
+	System_Byte_Array_t /* System.Byte[] */ buffer,
+	int32_t /* System.Int32 */ offset,
+	int32_t /* System.Int32 */ count,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_ValueTask_A1_t /* System.Threading.Tasks.ValueTask<System.Int32> */
+System_IO_FileStream_ReadAsync_1(
+	System_IO_FileStream_t /* System.IO.FileStream */ self,
+	System_Memory_A1_t /* System.Memory<System.Byte> */ buffer,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 void /* System.Void */
 System_IO_FileStream_Write(
 	System_IO_FileStream_t /* System.IO.FileStream */ self,
@@ -8024,6 +8447,14 @@ System_IO_FileStream_WriteAsync(
 	System_Byte_Array_t /* System.Byte[] */ buffer,
 	int32_t /* System.Int32 */ offset,
 	int32_t /* System.Int32 */ count,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_ValueTask_t /* System.Threading.Tasks.ValueTask */
+System_IO_FileStream_WriteAsync_1(
+	System_IO_FileStream_t /* System.IO.FileStream */ self,
+	System_ReadOnlyMemory_A1_t /* System.ReadOnlyMemory<System.Byte> */ buffer,
 	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -8434,12 +8865,57 @@ System_IO_Stream_EndRead(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Threading_Tasks_ValueTask_t /* System.Threading.Tasks.ValueTask */
-System_IO_Stream_ReadExactlyAsync(
+System_Threading_Tasks_Task_A1_t /* System.Threading.Tasks.Task<System.Int32> */
+System_IO_Stream_ReadAsync(
 	System_IO_Stream_t /* System.IO.Stream */ self,
 	System_Byte_Array_t /* System.Byte[] */ buffer,
 	int32_t /* System.Int32 */ offset,
 	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t /* System.Threading.Tasks.Task<System.Int32> */
+System_IO_Stream_ReadAsync_1(
+	System_IO_Stream_t /* System.IO.Stream */ self,
+	System_Byte_Array_t /* System.Byte[] */ buffer,
+	int32_t /* System.Int32 */ offset,
+	int32_t /* System.Int32 */ count,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_ValueTask_A1_t /* System.Threading.Tasks.ValueTask<System.Int32> */
+System_IO_Stream_ReadAsync_2(
+	System_IO_Stream_t /* System.IO.Stream */ self,
+	System_Memory_A1_t /* System.Memory<System.Byte> */ buffer,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_ValueTask_t /* System.Threading.Tasks.ValueTask */
+System_IO_Stream_ReadExactlyAsync(
+	System_IO_Stream_t /* System.IO.Stream */ self,
+	System_Memory_A1_t /* System.Memory<System.Byte> */ buffer,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_ValueTask_t /* System.Threading.Tasks.ValueTask */
+System_IO_Stream_ReadExactlyAsync_1(
+	System_IO_Stream_t /* System.IO.Stream */ self,
+	System_Byte_Array_t /* System.Byte[] */ buffer,
+	int32_t /* System.Int32 */ offset,
+	int32_t /* System.Int32 */ count,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_ValueTask_A1_t /* System.Threading.Tasks.ValueTask<System.Int32> */
+System_IO_Stream_ReadAtLeastAsync(
+	System_IO_Stream_t /* System.IO.Stream */ self,
+	System_Memory_A1_t /* System.Memory<System.Byte> */ buffer,
+	int32_t /* System.Int32 */ minimumBytes,
+	bool /* System.Boolean */ throwOnEndOfStream,
 	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -8477,6 +8953,14 @@ System_IO_Stream_WriteAsync_1(
 	System_Byte_Array_t /* System.Byte[] */ buffer,
 	int32_t /* System.Int32 */ offset,
 	int32_t /* System.Int32 */ count,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_ValueTask_t /* System.Threading.Tasks.ValueTask */
+System_IO_Stream_WriteAsync_2(
+	System_IO_Stream_t /* System.IO.Stream */ self,
+	System_ReadOnlyMemory_A1_t /* System.ReadOnlyMemory<System.Byte> */ buffer,
 	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -8901,7 +9385,32 @@ System_Threading_Tasks_Task_Delay_3(
 
 System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
 System_Threading_Tasks_Task_WhenAll(
+	System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.Threading.Tasks.Task> */ tasks,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_Threading_Tasks_Task_WhenAll_1(
 	System_Threading_Tasks_Task_Array_t /* System.Threading.Tasks.Task[] */ tasks,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t /* System.Threading.Tasks.Task<System.Threading.Tasks.Task> */
+System_Threading_Tasks_Task_WhenAny(
+	System_Threading_Tasks_Task_Array_t /* System.Threading.Tasks.Task[] */ tasks,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t /* System.Threading.Tasks.Task<System.Threading.Tasks.Task> */
+System_Threading_Tasks_Task_WhenAny_1(
+	System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */ task1,
+	System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */ task2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t /* System.Threading.Tasks.Task<System.Threading.Tasks.Task> */
+System_Threading_Tasks_Task_WhenAny_2(
+	System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.Threading.Tasks.Task> */ tasks,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -8936,6 +9445,12 @@ System_Threading_Tasks_Task_Create_3(
 int32_t /* System.Int32 */
 System_Threading_Tasks_Task_Id_Get(
 	System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Nullable_A1_t /* System.Nullable<System.Int32> */
+System_Threading_Tasks_Task_CurrentId_Get(
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -9064,6 +9579,7 @@ System_Threading_Tasks_TaskScheduler_Destroy(
 
 #pragma mark - END APIs of System.Threading.Tasks.TaskScheduler
 
+
 #pragma mark - BEGIN APIs of System.AggregateException
 void /* System.Void */
 System_AggregateException_GetObjectData(
@@ -9111,16 +9627,36 @@ System_AggregateException_Create_2(
 
 System_AggregateException_t /* System.AggregateException */
 System_AggregateException_Create_3(
-	System_Exception_Array_t /* System.Exception[] */ innerExceptions,
+	System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.Exception> */ innerExceptions,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 System_AggregateException_t /* System.AggregateException */
 System_AggregateException_Create_4(
+	System_Exception_Array_t /* System.Exception[] */ innerExceptions,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_AggregateException_t /* System.AggregateException */
+System_AggregateException_Create_5(
+	System_String_t /* System.String */ message,
+	System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.Exception> */ innerExceptions,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_AggregateException_t /* System.AggregateException */
+System_AggregateException_Create_6(
 	System_String_t /* System.String */ message,
 	System_Exception_Array_t /* System.Exception[] */ innerExceptions,
 	System_Exception_t* /* System.Exception */ outException
 );
+
+System_Collections_ObjectModel_ReadOnlyCollection_A1_t /* System.Collections.ObjectModel.ReadOnlyCollection<System.Exception> */
+System_AggregateException_InnerExceptions_Get(
+	System_AggregateException_t /* System.AggregateException */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 
 System_String_t /* System.String */
 System_AggregateException_Message_Get(
@@ -10021,6 +10557,12 @@ System_Runtime_Serialization_SerializationEntry_Destroy(
 );
 
 #pragma mark - END APIs of System.Runtime.Serialization.SerializationEntry
+
+
+
+
+
+
 
 
 
@@ -13112,6 +13654,7 @@ System_Runtime_Serialization_StreamingContext_Destroy(
 
 
 
+
 #pragma mark - BEGIN APIs of System.RuntimeTypeHandle
 System_RuntimeTypeHandle_t /* System.RuntimeTypeHandle */
 System_RuntimeTypeHandle_FromIntPtr(
@@ -13369,15 +13912,21 @@ System_Reflection_ParameterInfo_IsDefined(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+System_Collections_Generic_IList_A1_t /* System.Collections.Generic.IList<System.Reflection.CustomAttributeData> */
+System_Reflection_ParameterInfo_GetCustomAttributesData(
+	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 System_Object_Array_t /* System.Object[] */
-System_Reflection_ParameterInfo_GetCustomAttributes(
+System_Reflection_ParameterInfo_GetCustomAttributes_1(
 	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ self,
 	bool /* System.Boolean */ inherit,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 System_Object_Array_t /* System.Object[] */
-System_Reflection_ParameterInfo_GetCustomAttributes_1(
+System_Reflection_ParameterInfo_GetCustomAttributes_2(
 	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ self,
 	System_Type_t /* System.Type */ attributeType,
 	bool /* System.Boolean */ inherit,
@@ -13506,6 +14055,13 @@ System_Reflection_ParameterInfo_HasDefaultValue_Get(
 );
 
 
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.Reflection.CustomAttributeData> */
+System_Reflection_ParameterInfo_CustomAttributes_Get(
+	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
 int32_t /* System.Int32 */
 System_Reflection_ParameterInfo_MetadataToken_Get(
 	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ self,
@@ -13525,54 +14081,771 @@ System_Reflection_ParameterInfo_Destroy(
 
 #pragma mark - END APIs of System.Reflection.ParameterInfo
 
-#pragma mark - BEGIN APIs of System.Object[]
-#pragma mark - END APIs of System.Object[]
 
 
-#pragma mark - BEGIN APIs of System.Type[]
-#pragma mark - END APIs of System.Type[]
+#pragma mark - BEGIN APIs of System.Reflection.CustomAttributeData
+System_Collections_Generic_IList_A1_t /* System.Collections.Generic.IList<System.Reflection.CustomAttributeData> */
+System_Reflection_CustomAttributeData_GetCustomAttributes(
+	System_Reflection_MemberInfo_t /* System.Reflection.MemberInfo */ target,
+	System_Exception_t* /* System.Exception */ outException
+);
 
+System_Collections_Generic_IList_A1_t /* System.Collections.Generic.IList<System.Reflection.CustomAttributeData> */
+System_Reflection_CustomAttributeData_GetCustomAttributes_1(
+	System_Reflection_Module_t /* System.Reflection.Module */ target,
+	System_Exception_t* /* System.Exception */ outException
+);
 
+System_Collections_Generic_IList_A1_t /* System.Collections.Generic.IList<System.Reflection.CustomAttributeData> */
+System_Reflection_CustomAttributeData_GetCustomAttributes_2(
+	System_Reflection_Assembly_t /* System.Reflection.Assembly */ target,
+	System_Exception_t* /* System.Exception */ outException
+);
 
-#pragma mark - BEGIN APIs of System.Reflection.MethodBody
-System_Byte_Array_t /* System.Byte[] */
-System_Reflection_MethodBody_GetILAsByteArray(
-	System_Reflection_MethodBody_t /* System.Reflection.MethodBody */ self,
+System_Collections_Generic_IList_A1_t /* System.Collections.Generic.IList<System.Reflection.CustomAttributeData> */
+System_Reflection_CustomAttributeData_GetCustomAttributes_3(
+	System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */ target,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_String_t /* System.String */
+System_Reflection_CustomAttributeData_ToString(
+	System_Reflection_CustomAttributeData_t /* System.Reflection.CustomAttributeData */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
-System_Reflection_MethodBody_LocalSignatureMetadataToken_Get(
-	System_Reflection_MethodBody_t /* System.Reflection.MethodBody */ self,
+System_Reflection_CustomAttributeData_GetHashCode(
+	System_Reflection_CustomAttributeData_t /* System.Reflection.CustomAttributeData */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
-
-
-int32_t /* System.Int32 */
-System_Reflection_MethodBody_MaxStackSize_Get(
-	System_Reflection_MethodBody_t /* System.Reflection.MethodBody */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
 
 bool /* System.Boolean */
-System_Reflection_MethodBody_InitLocals_Get(
-	System_Reflection_MethodBody_t /* System.Reflection.MethodBody */ self,
+System_Reflection_CustomAttributeData_Equals(
+	System_Reflection_CustomAttributeData_t /* System.Reflection.CustomAttributeData */ self,
+	System_Object_t /* System.Object */ obj,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_t /* System.Type */
+System_Reflection_CustomAttributeData_AttributeType_Get(
+	System_Reflection_CustomAttributeData_t /* System.Reflection.CustomAttributeData */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Reflection_ConstructorInfo_t /* System.Reflection.ConstructorInfo */
+System_Reflection_CustomAttributeData_Constructor_Get(
+	System_Reflection_CustomAttributeData_t /* System.Reflection.CustomAttributeData */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Collections_Generic_IList_A1_t /* System.Collections.Generic.IList<System.Reflection.CustomAttributeTypedArgument> */
+System_Reflection_CustomAttributeData_ConstructorArguments_Get(
+	System_Reflection_CustomAttributeData_t /* System.Reflection.CustomAttributeData */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Collections_Generic_IList_A1_t /* System.Collections.Generic.IList<System.Reflection.CustomAttributeNamedArgument> */
+System_Reflection_CustomAttributeData_NamedArguments_Get(
+	System_Reflection_CustomAttributeData_t /* System.Reflection.CustomAttributeData */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
 System_Type_t /* System.Type */
-System_Reflection_MethodBody_TypeOf(
+System_Reflection_CustomAttributeData_TypeOf(
 	
 );
 
 void /* System.Void */
-System_Reflection_MethodBody_Destroy(
-	System_Reflection_MethodBody_t /* System.Reflection.MethodBody */ self
+System_Reflection_CustomAttributeData_Destroy(
+	System_Reflection_CustomAttributeData_t /* System.Reflection.CustomAttributeData */ self
 );
 
-#pragma mark - END APIs of System.Reflection.MethodBody
+#pragma mark - END APIs of System.Reflection.CustomAttributeData
+
+
+#pragma mark - BEGIN APIs of System.Reflection.Module
+void /* System.Void */
+System_Reflection_Module_GetPEKind(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	System_Reflection_PortableExecutableKinds* /* System.Reflection.PortableExecutableKinds */ peKind,
+	System_Reflection_ImageFileMachine* /* System.Reflection.ImageFileMachine */ machine,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Reflection_Module_IsResource(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Reflection_Module_IsDefined(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	System_Type_t /* System.Type */ attributeType,
+	bool /* System.Boolean */ inherit,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Generic_IList_A1_t /* System.Collections.Generic.IList<System.Reflection.CustomAttributeData> */
+System_Reflection_Module_GetCustomAttributesData(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_Array_t /* System.Object[] */
+System_Reflection_Module_GetCustomAttributes_1(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	bool /* System.Boolean */ inherit,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_Array_t /* System.Object[] */
+System_Reflection_Module_GetCustomAttributes_2(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	System_Type_t /* System.Type */ attributeType,
+	bool /* System.Boolean */ inherit,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
+System_Reflection_Module_GetMethod(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	System_String_t /* System.String */ name,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
+System_Reflection_Module_GetMethod_1(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	System_String_t /* System.String */ name,
+	System_Type_Array_t /* System.Type[] */ types,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
+System_Reflection_Module_GetMethod_2(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	System_String_t /* System.String */ name,
+	System_Reflection_BindingFlags /* System.Reflection.BindingFlags */ bindingAttr,
+	System_Reflection_Binder_t /* System.Reflection.Binder */ binder,
+	System_Reflection_CallingConventions /* System.Reflection.CallingConventions */ callConvention,
+	System_Type_Array_t /* System.Type[] */ types,
+	System_Reflection_ParameterModifier_Array_t /* System.Reflection.ParameterModifier[] */ modifiers,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_MethodInfo_Array_t /* System.Reflection.MethodInfo[] */
+System_Reflection_Module_GetMethods(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_MethodInfo_Array_t /* System.Reflection.MethodInfo[] */
+System_Reflection_Module_GetMethods_1(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	System_Reflection_BindingFlags /* System.Reflection.BindingFlags */ bindingFlags,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_FieldInfo_t /* System.Reflection.FieldInfo */
+System_Reflection_Module_GetField(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	System_String_t /* System.String */ name,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_FieldInfo_t /* System.Reflection.FieldInfo */
+System_Reflection_Module_GetField_1(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	System_String_t /* System.String */ name,
+	System_Reflection_BindingFlags /* System.Reflection.BindingFlags */ bindingAttr,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_FieldInfo_Array_t /* System.Reflection.FieldInfo[] */
+System_Reflection_Module_GetFields(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_FieldInfo_Array_t /* System.Reflection.FieldInfo[] */
+System_Reflection_Module_GetFields_1(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	System_Reflection_BindingFlags /* System.Reflection.BindingFlags */ bindingFlags,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_Array_t /* System.Type[] */
+System_Reflection_Module_GetTypes(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_t /* System.Type */
+System_Reflection_Module_GetType_1(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	System_String_t /* System.String */ className,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_t /* System.Type */
+System_Reflection_Module_GetType_2(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	System_String_t /* System.String */ className,
+	bool /* System.Boolean */ ignoreCase,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_t /* System.Type */
+System_Reflection_Module_GetType_3(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	System_String_t /* System.String */ className,
+	bool /* System.Boolean */ throwOnError,
+	bool /* System.Boolean */ ignoreCase,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_Array_t /* System.Type[] */
+System_Reflection_Module_FindTypes(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */ filter,
+	System_Object_t /* System.Object */ filterCriteria,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_FieldInfo_t /* System.Reflection.FieldInfo */
+System_Reflection_Module_ResolveField(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	int32_t /* System.Int32 */ metadataToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_FieldInfo_t /* System.Reflection.FieldInfo */
+System_Reflection_Module_ResolveField_1(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	int32_t /* System.Int32 */ metadataToken,
+	System_Type_Array_t /* System.Type[] */ genericTypeArguments,
+	System_Type_Array_t /* System.Type[] */ genericMethodArguments,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_MemberInfo_t /* System.Reflection.MemberInfo */
+System_Reflection_Module_ResolveMember(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	int32_t /* System.Int32 */ metadataToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_MemberInfo_t /* System.Reflection.MemberInfo */
+System_Reflection_Module_ResolveMember_1(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	int32_t /* System.Int32 */ metadataToken,
+	System_Type_Array_t /* System.Type[] */ genericTypeArguments,
+	System_Type_Array_t /* System.Type[] */ genericMethodArguments,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_MethodBase_t /* System.Reflection.MethodBase */
+System_Reflection_Module_ResolveMethod(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	int32_t /* System.Int32 */ metadataToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_MethodBase_t /* System.Reflection.MethodBase */
+System_Reflection_Module_ResolveMethod_1(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	int32_t /* System.Int32 */ metadataToken,
+	System_Type_Array_t /* System.Type[] */ genericTypeArguments,
+	System_Type_Array_t /* System.Type[] */ genericMethodArguments,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Byte_Array_t /* System.Byte[] */
+System_Reflection_Module_ResolveSignature(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	int32_t /* System.Int32 */ metadataToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_String_t /* System.String */
+System_Reflection_Module_ResolveString(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	int32_t /* System.Int32 */ metadataToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_t /* System.Type */
+System_Reflection_Module_ResolveType(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	int32_t /* System.Int32 */ metadataToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_t /* System.Type */
+System_Reflection_Module_ResolveType_1(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	int32_t /* System.Int32 */ metadataToken,
+	System_Type_Array_t /* System.Type[] */ genericTypeArguments,
+	System_Type_Array_t /* System.Type[] */ genericMethodArguments,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Reflection_Module_GetObjectData(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	System_Runtime_Serialization_SerializationInfo_t /* System.Runtime.Serialization.SerializationInfo */ info,
+	System_Runtime_Serialization_StreamingContext_t /* System.Runtime.Serialization.StreamingContext */ context,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Reflection_Module_Equals(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	System_Object_t /* System.Object */ o,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Reflection_Module_GetHashCode(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_String_t /* System.String */
+System_Reflection_Module_ToString(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_Assembly_t /* System.Reflection.Assembly */
+System_Reflection_Module_Assembly_Get(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_String_t /* System.String */
+System_Reflection_Module_FullyQualifiedName_Get(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_String_t /* System.String */
+System_Reflection_Module_Name_Get(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Reflection_Module_MDStreamVersion_Get(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Guid_t /* System.Guid */
+System_Reflection_Module_ModuleVersionId_Get(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_String_t /* System.String */
+System_Reflection_Module_ScopeName_Get(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_ModuleHandle_t /* System.ModuleHandle */
+System_Reflection_Module_ModuleHandle_Get(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.Reflection.CustomAttributeData> */
+System_Reflection_Module_CustomAttributes_Get(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Reflection_Module_MetadataToken_Get(
+	System_Reflection_Module_t /* System.Reflection.Module */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */
+System_Reflection_Module_FilterTypeName_Get(
+	
+);
+
+
+System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */
+System_Reflection_Module_FilterTypeNameIgnoreCase_Get(
+	
+);
+
+
+System_Type_t /* System.Type */
+System_Reflection_Module_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Reflection_Module_Destroy(
+	System_Reflection_Module_t /* System.Reflection.Module */ self
+);
+
+#pragma mark - END APIs of System.Reflection.Module
+
+#pragma mark - BEGIN APIs of System.Guid
+System_Guid_t /* System.Guid */
+System_Guid_Parse(
+	System_String_t /* System.String */ input,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Guid_TryParse(
+	System_String_t /* System.String */ input,
+	System_Guid_t* /* System.Guid */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Guid_t /* System.Guid */
+System_Guid_ParseExact(
+	System_String_t /* System.String */ input,
+	System_String_t /* System.String */ format,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Guid_TryParseExact(
+	System_String_t /* System.String */ input,
+	System_String_t /* System.String */ format,
+	System_Guid_t* /* System.Guid */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Byte_Array_t /* System.Byte[] */
+System_Guid_ToByteArray(
+	System_Guid_t /* System.Guid */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_String_t /* System.String */
+System_Guid_ToString(
+	System_Guid_t /* System.Guid */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Guid_GetHashCode(
+	System_Guid_t /* System.Guid */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Guid_Equals(
+	System_Guid_t /* System.Guid */ self,
+	System_Object_t /* System.Object */ o,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Guid_Equals_1(
+	System_Guid_t /* System.Guid */ self,
+	System_Guid_t /* System.Guid */ g,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Guid_CompareTo(
+	System_Guid_t /* System.Guid */ self,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Guid_CompareTo_1(
+	System_Guid_t /* System.Guid */ self,
+	System_Guid_t /* System.Guid */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_String_t /* System.String */
+System_Guid_ToString_1(
+	System_Guid_t /* System.Guid */ self,
+	System_String_t /* System.String */ format,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_String_t /* System.String */
+System_Guid_ToString_2(
+	System_Guid_t /* System.Guid */ self,
+	System_String_t /* System.String */ format,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Guid_t /* System.Guid */
+System_Guid_Parse_1(
+	System_String_t /* System.String */ s,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Guid_TryParse_1(
+	System_String_t /* System.String */ s,
+	System_IFormatProvider_t /* System.IFormatProvider */ provider,
+	System_Guid_t* /* System.Guid */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Guid_t /* System.Guid */
+System_Guid_NewGuid(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Guid_t /* System.Guid */
+System_Guid_Create(
+	System_Byte_Array_t /* System.Byte[] */ b,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Guid_t /* System.Guid */
+System_Guid_Create_1(
+	uint32_t /* System.UInt32 */ a,
+	uint16_t /* System.UInt16 */ b,
+	uint16_t /* System.UInt16 */ c,
+	uint8_t /* System.Byte */ d,
+	uint8_t /* System.Byte */ e,
+	uint8_t /* System.Byte */ f,
+	uint8_t /* System.Byte */ g,
+	uint8_t /* System.Byte */ h,
+	uint8_t /* System.Byte */ i,
+	uint8_t /* System.Byte */ j,
+	uint8_t /* System.Byte */ k,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Guid_t /* System.Guid */
+System_Guid_Create_2(
+	int32_t /* System.Int32 */ a,
+	int16_t /* System.Int16 */ b,
+	int16_t /* System.Int16 */ c,
+	System_Byte_Array_t /* System.Byte[] */ d,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Guid_t /* System.Guid */
+System_Guid_Create_3(
+	int32_t /* System.Int32 */ a,
+	int16_t /* System.Int16 */ b,
+	int16_t /* System.Int16 */ c,
+	uint8_t /* System.Byte */ d,
+	uint8_t /* System.Byte */ e,
+	uint8_t /* System.Byte */ f,
+	uint8_t /* System.Byte */ g,
+	uint8_t /* System.Byte */ h,
+	uint8_t /* System.Byte */ i,
+	uint8_t /* System.Byte */ j,
+	uint8_t /* System.Byte */ k,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Guid_t /* System.Guid */
+System_Guid_Create_4(
+	System_String_t /* System.String */ g,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Guid_t /* System.Guid */
+System_Guid_Empty_Get(
+	
+);
+
+
+System_Type_t /* System.Type */
+System_Guid_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Guid_Destroy(
+	System_Guid_t /* System.Guid */ self
+);
+
+#pragma mark - END APIs of System.Guid
+
+
+
+
+#pragma mark - BEGIN APIs of System.Object[]
+#pragma mark - END APIs of System.Object[]
+
+
+#pragma mark - BEGIN APIs of System.Reflection.MethodInfo
+System_Type_Array_t /* System.Type[] */
+System_Reflection_MethodInfo_GetGenericArguments(
+	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
+System_Reflection_MethodInfo_GetGenericMethodDefinition(
+	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
+System_Reflection_MethodInfo_MakeGenericMethod(
+	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
+	System_Type_Array_t /* System.Type[] */ typeArguments,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
+System_Reflection_MethodInfo_GetBaseDefinition(
+	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Delegate_t /* System.Delegate */
+System_Reflection_MethodInfo_CreateDelegate(
+	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
+	System_Type_t /* System.Type */ delegateType,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Delegate_t /* System.Delegate */
+System_Reflection_MethodInfo_CreateDelegate_1(
+	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
+	System_Type_t /* System.Type */ delegateType,
+	System_Object_t /* System.Object */ target,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Reflection_MethodInfo_CreateDelegate_A1(
+	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
+	System_Type_t /* System.Type */ T,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Reflection_MethodInfo_CreateDelegate_A1_1(
+	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
+	System_Type_t /* System.Type */ T,
+	System_Object_t /* System.Object */ target,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Reflection_MethodInfo_Equals(
+	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
+	System_Object_t /* System.Object */ obj,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Reflection_MethodInfo_GetHashCode(
+	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_MemberTypes /* System.Reflection.MemberTypes */
+System_Reflection_MethodInfo_MemberType_Get(
+	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */
+System_Reflection_MethodInfo_ReturnParameter_Get(
+	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_Reflection_MethodInfo_ReturnType_Get(
+	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Reflection_ICustomAttributeProvider_t /* System.Reflection.ICustomAttributeProvider */
+System_Reflection_MethodInfo_ReturnTypeCustomAttributes_Get(
+	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_Reflection_MethodInfo_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Reflection_MethodInfo_Destroy(
+	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self
+);
+
+#pragma mark - END APIs of System.Reflection.MethodInfo
+
+#pragma mark - BEGIN APIs of System.Type[]
+#pragma mark - END APIs of System.Type[]
+
+
+#pragma mark - BEGIN APIs of System.Reflection.ICustomAttributeProvider
+System_Object_Array_t /* System.Object[] */
+System_Reflection_ICustomAttributeProvider_GetCustomAttributes(
+	System_Reflection_ICustomAttributeProvider_t /* System.Reflection.ICustomAttributeProvider */ self,
+	bool /* System.Boolean */ inherit,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_Array_t /* System.Object[] */
+System_Reflection_ICustomAttributeProvider_GetCustomAttributes_1(
+	System_Reflection_ICustomAttributeProvider_t /* System.Reflection.ICustomAttributeProvider */ self,
+	System_Type_t /* System.Type */ attributeType,
+	bool /* System.Boolean */ inherit,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Reflection_ICustomAttributeProvider_IsDefined(
+	System_Reflection_ICustomAttributeProvider_t /* System.Reflection.ICustomAttributeProvider */ self,
+	System_Type_t /* System.Type */ attributeType,
+	bool /* System.Boolean */ inherit,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_t /* System.Type */
+System_Reflection_ICustomAttributeProvider_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Reflection_ICustomAttributeProvider_Destroy(
+	System_Reflection_ICustomAttributeProvider_t /* System.Reflection.ICustomAttributeProvider */ self
+);
+
+#pragma mark - END APIs of System.Reflection.ICustomAttributeProvider
 
 #pragma mark - BEGIN APIs of System.Reflection.Binder
 System_Reflection_FieldInfo_t /* System.Reflection.FieldInfo */
@@ -14117,155 +15390,386 @@ System_Reflection_PropertyInfo_Destroy(
 #pragma mark - BEGIN APIs of System.Reflection.MethodInfo[]
 #pragma mark - END APIs of System.Reflection.MethodInfo[]
 
-#pragma mark - BEGIN APIs of System.Reflection.MethodInfo
-System_Type_Array_t /* System.Type[] */
-System_Reflection_MethodInfo_GetGenericArguments(
-	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
 
-System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
-System_Reflection_MethodInfo_GetGenericMethodDefinition(
-	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
+#pragma mark - BEGIN APIs of System.Reflection.PropertyInfo[]
+#pragma mark - END APIs of System.Reflection.PropertyInfo[]
 
-System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
-System_Reflection_MethodInfo_MakeGenericMethod(
-	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
-	System_Type_Array_t /* System.Type[] */ typeArguments,
-	System_Exception_t* /* System.Exception */ outException
-);
 
-System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
-System_Reflection_MethodInfo_GetBaseDefinition(
-	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Delegate_t /* System.Delegate */
-System_Reflection_MethodInfo_CreateDelegate(
-	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
-	System_Type_t /* System.Type */ delegateType,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Delegate_t /* System.Delegate */
-System_Reflection_MethodInfo_CreateDelegate_1(
-	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
-	System_Type_t /* System.Type */ delegateType,
-	System_Object_t /* System.Object */ target,
+#pragma mark - BEGIN APIs of System.Reflection.ConstructorInfo
+System_Object_t /* System.Object */
+System_Reflection_ConstructorInfo_Invoke(
+	System_Reflection_ConstructorInfo_t /* System.Reflection.ConstructorInfo */ self,
+	System_Object_Array_t /* System.Object[] */ parameters,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 System_Object_t /* System.Object */
-System_Reflection_MethodInfo_CreateDelegate_A1(
-	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
-	System_Type_t /* System.Type */ T,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_t /* System.Object */
-System_Reflection_MethodInfo_CreateDelegate_A1_1(
-	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
-	System_Type_t /* System.Type */ T,
-	System_Object_t /* System.Object */ target,
+System_Reflection_ConstructorInfo_Invoke_1(
+	System_Reflection_ConstructorInfo_t /* System.Reflection.ConstructorInfo */ self,
+	System_Reflection_BindingFlags /* System.Reflection.BindingFlags */ invokeAttr,
+	System_Reflection_Binder_t /* System.Reflection.Binder */ binder,
+	System_Object_Array_t /* System.Object[] */ parameters,
+	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ culture,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 bool /* System.Boolean */
-System_Reflection_MethodInfo_Equals(
-	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
+System_Reflection_ConstructorInfo_Equals(
+	System_Reflection_ConstructorInfo_t /* System.Reflection.ConstructorInfo */ self,
 	System_Object_t /* System.Object */ obj,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
-System_Reflection_MethodInfo_GetHashCode(
-	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
+System_Reflection_ConstructorInfo_GetHashCode(
+	System_Reflection_ConstructorInfo_t /* System.Reflection.ConstructorInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 System_Reflection_MemberTypes /* System.Reflection.MemberTypes */
-System_Reflection_MethodInfo_MemberType_Get(
-	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
+System_Reflection_ConstructorInfo_MemberType_Get(
+	System_Reflection_ConstructorInfo_t /* System.Reflection.ConstructorInfo */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 
-System_Reflection_ParameterInfo_t /* System.Reflection.ParameterInfo */
-System_Reflection_MethodInfo_ReturnParameter_Get(
-	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
+System_String_t /* System.String */
+System_Reflection_ConstructorInfo_ConstructorName_Get(
+	
 );
 
 
-System_Type_t /* System.Type */
-System_Reflection_MethodInfo_ReturnType_Get(
-	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Reflection_ICustomAttributeProvider_t /* System.Reflection.ICustomAttributeProvider */
-System_Reflection_MethodInfo_ReturnTypeCustomAttributes_Get(
-	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
+System_String_t /* System.String */
+System_Reflection_ConstructorInfo_TypeConstructorName_Get(
+	
 );
 
 
 System_Type_t /* System.Type */
-System_Reflection_MethodInfo_TypeOf(
+System_Reflection_ConstructorInfo_TypeOf(
 	
 );
 
 void /* System.Void */
-System_Reflection_MethodInfo_Destroy(
-	System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */ self
+System_Reflection_ConstructorInfo_Destroy(
+	System_Reflection_ConstructorInfo_t /* System.Reflection.ConstructorInfo */ self
 );
 
-#pragma mark - END APIs of System.Reflection.MethodInfo
+#pragma mark - END APIs of System.Reflection.ConstructorInfo
 
-#pragma mark - BEGIN APIs of System.Reflection.ICustomAttributeProvider
-System_Object_Array_t /* System.Object[] */
-System_Reflection_ICustomAttributeProvider_GetCustomAttributes(
-	System_Reflection_ICustomAttributeProvider_t /* System.Reflection.ICustomAttributeProvider */ self,
-	bool /* System.Boolean */ inherit,
+
+#pragma mark - BEGIN APIs of System.Reflection.CustomAttributeTypedArgument
+System_String_t /* System.String */
+System_Reflection_CustomAttributeTypedArgument_ToString(
+	System_Reflection_CustomAttributeTypedArgument_t /* System.Reflection.CustomAttributeTypedArgument */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Object_Array_t /* System.Object[] */
-System_Reflection_ICustomAttributeProvider_GetCustomAttributes_1(
-	System_Reflection_ICustomAttributeProvider_t /* System.Reflection.ICustomAttributeProvider */ self,
-	System_Type_t /* System.Type */ attributeType,
-	bool /* System.Boolean */ inherit,
+int32_t /* System.Int32 */
+System_Reflection_CustomAttributeTypedArgument_GetHashCode(
+	System_Reflection_CustomAttributeTypedArgument_t /* System.Reflection.CustomAttributeTypedArgument */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 bool /* System.Boolean */
-System_Reflection_ICustomAttributeProvider_IsDefined(
-	System_Reflection_ICustomAttributeProvider_t /* System.Reflection.ICustomAttributeProvider */ self,
-	System_Type_t /* System.Type */ attributeType,
-	bool /* System.Boolean */ inherit,
+System_Reflection_CustomAttributeTypedArgument_Equals(
+	System_Reflection_CustomAttributeTypedArgument_t /* System.Reflection.CustomAttributeTypedArgument */ self,
+	System_Object_t /* System.Object */ obj,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Reflection_CustomAttributeTypedArgument_Equals_1(
+	System_Reflection_CustomAttributeTypedArgument_t /* System.Reflection.CustomAttributeTypedArgument */ self,
+	System_Reflection_CustomAttributeTypedArgument_t /* System.Reflection.CustomAttributeTypedArgument */ other,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_CustomAttributeTypedArgument_t /* System.Reflection.CustomAttributeTypedArgument */
+System_Reflection_CustomAttributeTypedArgument_Create(
+	System_Type_t /* System.Type */ argumentType,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_CustomAttributeTypedArgument_t /* System.Reflection.CustomAttributeTypedArgument */
+System_Reflection_CustomAttributeTypedArgument_Create_1(
+	System_Object_t /* System.Object */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 System_Type_t /* System.Type */
-System_Reflection_ICustomAttributeProvider_TypeOf(
+System_Reflection_CustomAttributeTypedArgument_ArgumentType_Get(
+	System_Reflection_CustomAttributeTypedArgument_t /* System.Reflection.CustomAttributeTypedArgument */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_Reflection_CustomAttributeTypedArgument_Value_Get(
+	System_Reflection_CustomAttributeTypedArgument_t /* System.Reflection.CustomAttributeTypedArgument */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_Reflection_CustomAttributeTypedArgument_TypeOf(
 	
 );
 
 void /* System.Void */
-System_Reflection_ICustomAttributeProvider_Destroy(
-	System_Reflection_ICustomAttributeProvider_t /* System.Reflection.ICustomAttributeProvider */ self
+System_Reflection_CustomAttributeTypedArgument_Destroy(
+	System_Reflection_CustomAttributeTypedArgument_t /* System.Reflection.CustomAttributeTypedArgument */ self
 );
 
-#pragma mark - END APIs of System.Reflection.ICustomAttributeProvider
+#pragma mark - END APIs of System.Reflection.CustomAttributeTypedArgument
 
 
-#pragma mark - BEGIN APIs of System.Reflection.PropertyInfo[]
-#pragma mark - END APIs of System.Reflection.PropertyInfo[]
+#pragma mark - BEGIN APIs of System.Reflection.CustomAttributeNamedArgument
+System_String_t /* System.String */
+System_Reflection_CustomAttributeNamedArgument_ToString(
+	System_Reflection_CustomAttributeNamedArgument_t /* System.Reflection.CustomAttributeNamedArgument */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
 
+int32_t /* System.Int32 */
+System_Reflection_CustomAttributeNamedArgument_GetHashCode(
+	System_Reflection_CustomAttributeNamedArgument_t /* System.Reflection.CustomAttributeNamedArgument */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Reflection_CustomAttributeNamedArgument_Equals(
+	System_Reflection_CustomAttributeNamedArgument_t /* System.Reflection.CustomAttributeNamedArgument */ self,
+	System_Object_t /* System.Object */ obj,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Reflection_CustomAttributeNamedArgument_Equals_1(
+	System_Reflection_CustomAttributeNamedArgument_t /* System.Reflection.CustomAttributeNamedArgument */ self,
+	System_Reflection_CustomAttributeNamedArgument_t /* System.Reflection.CustomAttributeNamedArgument */ other,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_CustomAttributeNamedArgument_t /* System.Reflection.CustomAttributeNamedArgument */
+System_Reflection_CustomAttributeNamedArgument_Create(
+	System_Reflection_MemberInfo_t /* System.Reflection.MemberInfo */ memberInfo,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_CustomAttributeNamedArgument_t /* System.Reflection.CustomAttributeNamedArgument */
+System_Reflection_CustomAttributeNamedArgument_Create_1(
+	System_Reflection_MemberInfo_t /* System.Reflection.MemberInfo */ memberInfo,
+	System_Reflection_CustomAttributeTypedArgument_t /* System.Reflection.CustomAttributeTypedArgument */ typedArgument,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_MemberInfo_t /* System.Reflection.MemberInfo */
+System_Reflection_CustomAttributeNamedArgument_MemberInfo_Get(
+	System_Reflection_CustomAttributeNamedArgument_t /* System.Reflection.CustomAttributeNamedArgument */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Reflection_CustomAttributeTypedArgument_t /* System.Reflection.CustomAttributeTypedArgument */
+System_Reflection_CustomAttributeNamedArgument_TypedValue_Get(
+	System_Reflection_CustomAttributeNamedArgument_t /* System.Reflection.CustomAttributeNamedArgument */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_String_t /* System.String */
+System_Reflection_CustomAttributeNamedArgument_MemberName_Get(
+	System_Reflection_CustomAttributeNamedArgument_t /* System.Reflection.CustomAttributeNamedArgument */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Reflection_CustomAttributeNamedArgument_IsField_Get(
+	System_Reflection_CustomAttributeNamedArgument_t /* System.Reflection.CustomAttributeNamedArgument */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_Reflection_CustomAttributeNamedArgument_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Reflection_CustomAttributeNamedArgument_Destroy(
+	System_Reflection_CustomAttributeNamedArgument_t /* System.Reflection.CustomAttributeNamedArgument */ self
+);
+
+#pragma mark - END APIs of System.Reflection.CustomAttributeNamedArgument
+
+
+#pragma mark - BEGIN APIs of System.Reflection.MethodBody
+System_Byte_Array_t /* System.Byte[] */
+System_Reflection_MethodBody_GetILAsByteArray(
+	System_Reflection_MethodBody_t /* System.Reflection.MethodBody */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Reflection_MethodBody_LocalSignatureMetadataToken_Get(
+	System_Reflection_MethodBody_t /* System.Reflection.MethodBody */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Collections_Generic_IList_A1_t /* System.Collections.Generic.IList<System.Reflection.LocalVariableInfo> */
+System_Reflection_MethodBody_LocalVariables_Get(
+	System_Reflection_MethodBody_t /* System.Reflection.MethodBody */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Reflection_MethodBody_MaxStackSize_Get(
+	System_Reflection_MethodBody_t /* System.Reflection.MethodBody */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Reflection_MethodBody_InitLocals_Get(
+	System_Reflection_MethodBody_t /* System.Reflection.MethodBody */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Collections_Generic_IList_A1_t /* System.Collections.Generic.IList<System.Reflection.ExceptionHandlingClause> */
+System_Reflection_MethodBody_ExceptionHandlingClauses_Get(
+	System_Reflection_MethodBody_t /* System.Reflection.MethodBody */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_Reflection_MethodBody_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Reflection_MethodBody_Destroy(
+	System_Reflection_MethodBody_t /* System.Reflection.MethodBody */ self
+);
+
+#pragma mark - END APIs of System.Reflection.MethodBody
+
+
+#pragma mark - BEGIN APIs of System.Reflection.LocalVariableInfo
+System_String_t /* System.String */
+System_Reflection_LocalVariableInfo_ToString(
+	System_Reflection_LocalVariableInfo_t /* System.Reflection.LocalVariableInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_t /* System.Type */
+System_Reflection_LocalVariableInfo_LocalType_Get(
+	System_Reflection_LocalVariableInfo_t /* System.Reflection.LocalVariableInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Reflection_LocalVariableInfo_LocalIndex_Get(
+	System_Reflection_LocalVariableInfo_t /* System.Reflection.LocalVariableInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Reflection_LocalVariableInfo_IsPinned_Get(
+	System_Reflection_LocalVariableInfo_t /* System.Reflection.LocalVariableInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_Reflection_LocalVariableInfo_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Reflection_LocalVariableInfo_Destroy(
+	System_Reflection_LocalVariableInfo_t /* System.Reflection.LocalVariableInfo */ self
+);
+
+#pragma mark - END APIs of System.Reflection.LocalVariableInfo
+
+
+#pragma mark - BEGIN APIs of System.Reflection.ExceptionHandlingClause
+System_String_t /* System.String */
+System_Reflection_ExceptionHandlingClause_ToString(
+	System_Reflection_ExceptionHandlingClause_t /* System.Reflection.ExceptionHandlingClause */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_ExceptionHandlingClauseOptions /* System.Reflection.ExceptionHandlingClauseOptions */
+System_Reflection_ExceptionHandlingClause_Flags_Get(
+	System_Reflection_ExceptionHandlingClause_t /* System.Reflection.ExceptionHandlingClause */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Reflection_ExceptionHandlingClause_TryOffset_Get(
+	System_Reflection_ExceptionHandlingClause_t /* System.Reflection.ExceptionHandlingClause */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Reflection_ExceptionHandlingClause_TryLength_Get(
+	System_Reflection_ExceptionHandlingClause_t /* System.Reflection.ExceptionHandlingClause */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Reflection_ExceptionHandlingClause_HandlerOffset_Get(
+	System_Reflection_ExceptionHandlingClause_t /* System.Reflection.ExceptionHandlingClause */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Reflection_ExceptionHandlingClause_HandlerLength_Get(
+	System_Reflection_ExceptionHandlingClause_t /* System.Reflection.ExceptionHandlingClause */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Reflection_ExceptionHandlingClause_FilterOffset_Get(
+	System_Reflection_ExceptionHandlingClause_t /* System.Reflection.ExceptionHandlingClause */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_Reflection_ExceptionHandlingClause_CatchType_Get(
+	System_Reflection_ExceptionHandlingClause_t /* System.Reflection.ExceptionHandlingClause */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_Reflection_ExceptionHandlingClause_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Reflection_ExceptionHandlingClause_Destroy(
+	System_Reflection_ExceptionHandlingClause_t /* System.Reflection.ExceptionHandlingClause */ self
+);
+
+#pragma mark - END APIs of System.Reflection.ExceptionHandlingClause
 
 #pragma mark - BEGIN APIs of System.Collections.IDictionary
 bool /* System.Boolean */
@@ -14480,8 +15984,12 @@ System_Collections_DictionaryEntry_Destroy(
 
 #pragma mark - END APIs of System.Collections.DictionaryEntry
 
+
 #pragma mark - BEGIN APIs of System.Exception[]
 #pragma mark - END APIs of System.Exception[]
+
+
+
 
 
 #pragma mark - BEGIN APIs of System.Threading.Tasks.TaskFactory
@@ -15527,6 +17035,195 @@ System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_Destroy(
 #pragma mark - END APIs of System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter
 
 
+
+
+
+#pragma mark - BEGIN APIs of TResult[]
+#pragma mark - END APIs of TResult[]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#pragma mark - BEGIN APIs of TResult[]
+#pragma mark - END APIs of TResult[]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#pragma mark - BEGIN APIs of System.Buffers.MemoryHandle
+void /* System.Void */
+System_Buffers_MemoryHandle_Dispose(
+	System_Buffers_MemoryHandle_t /* System.Buffers.MemoryHandle */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_t /* System.Type */
+System_Buffers_MemoryHandle_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Buffers_MemoryHandle_Destroy(
+	System_Buffers_MemoryHandle_t /* System.Buffers.MemoryHandle */ self
+);
+
+#pragma mark - END APIs of System.Buffers.MemoryHandle
+
+#pragma mark - BEGIN APIs of System.Runtime.InteropServices.GCHandle
+System_Runtime_InteropServices_GCHandle_t /* System.Runtime.InteropServices.GCHandle */
+System_Runtime_InteropServices_GCHandle_Alloc(
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Runtime_InteropServices_GCHandle_t /* System.Runtime.InteropServices.GCHandle */
+System_Runtime_InteropServices_GCHandle_Alloc_1(
+	System_Object_t /* System.Object */ value,
+	System_Runtime_InteropServices_GCHandleType /* System.Runtime.InteropServices.GCHandleType */ type,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Runtime_InteropServices_GCHandle_Free(
+	System_Runtime_InteropServices_GCHandle_t /* System.Runtime.InteropServices.GCHandle */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+long /* System.IntPtr */
+System_Runtime_InteropServices_GCHandle_AddrOfPinnedObject(
+	System_Runtime_InteropServices_GCHandle_t /* System.Runtime.InteropServices.GCHandle */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Runtime_InteropServices_GCHandle_t /* System.Runtime.InteropServices.GCHandle */
+System_Runtime_InteropServices_GCHandle_FromIntPtr(
+	long /* System.IntPtr */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+long /* System.IntPtr */
+System_Runtime_InteropServices_GCHandle_ToIntPtr(
+	System_Runtime_InteropServices_GCHandle_t /* System.Runtime.InteropServices.GCHandle */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Runtime_InteropServices_GCHandle_GetHashCode(
+	System_Runtime_InteropServices_GCHandle_t /* System.Runtime.InteropServices.GCHandle */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Runtime_InteropServices_GCHandle_Equals(
+	System_Runtime_InteropServices_GCHandle_t /* System.Runtime.InteropServices.GCHandle */ self,
+	System_Object_t /* System.Object */ o,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Runtime_InteropServices_GCHandle_Equals_1(
+	System_Runtime_InteropServices_GCHandle_t /* System.Runtime.InteropServices.GCHandle */ self,
+	System_Runtime_InteropServices_GCHandle_t /* System.Runtime.InteropServices.GCHandle */ other,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Runtime_InteropServices_GCHandle_Target_Get(
+	System_Runtime_InteropServices_GCHandle_t /* System.Runtime.InteropServices.GCHandle */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Runtime_InteropServices_GCHandle_Target_Set(
+	System_Runtime_InteropServices_GCHandle_t /* System.Runtime.InteropServices.GCHandle */ self,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Runtime_InteropServices_GCHandle_IsAllocated_Get(
+	System_Runtime_InteropServices_GCHandle_t /* System.Runtime.InteropServices.GCHandle */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_Runtime_InteropServices_GCHandle_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Runtime_InteropServices_GCHandle_Destroy(
+	System_Runtime_InteropServices_GCHandle_t /* System.Runtime.InteropServices.GCHandle */ self
+);
+
+#pragma mark - END APIs of System.Runtime.InteropServices.GCHandle
+
+#pragma mark - BEGIN APIs of System.Buffers.IPinnable
+System_Buffers_MemoryHandle_t /* System.Buffers.MemoryHandle */
+System_Buffers_IPinnable_Pin(
+	System_Buffers_IPinnable_t /* System.Buffers.IPinnable */ self,
+	int32_t /* System.Int32 */ elementIndex,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Buffers_IPinnable_Unpin(
+	System_Buffers_IPinnable_t /* System.Buffers.IPinnable */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_t /* System.Type */
+System_Buffers_IPinnable_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Buffers_IPinnable_Destroy(
+	System_Buffers_IPinnable_t /* System.Buffers.IPinnable */ self
+);
+
+#pragma mark - END APIs of System.Buffers.IPinnable
+
 #pragma mark - BEGIN APIs of Microsoft.Win32.SafeHandles.SafeFileHandle
 Microsoft_Win32_SafeHandles_SafeFileHandle_t /* Microsoft.Win32.SafeHandles.SafeFileHandle */
 Microsoft_Win32_SafeHandles_SafeFileHandle_Create(
@@ -15656,6 +17353,20 @@ System_IO_FileStreamOptions_BufferSize_Set(
 );
 
 
+System_Nullable_A1_t /* System.Nullable<System.IO.UnixFileMode> */
+System_IO_FileStreamOptions_UnixCreateMode_Get(
+	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_FileStreamOptions_UnixCreateMode_Set(
+	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ self,
+	System_Nullable_A1_t /* System.Nullable<System.IO.UnixFileMode> */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
 System_Type_t /* System.Type */
 System_IO_FileStreamOptions_TypeOf(
 	
@@ -15667,6 +17378,304 @@ System_IO_FileStreamOptions_Destroy(
 );
 
 #pragma mark - END APIs of System.IO.FileStreamOptions
+
+
+
+
+#pragma mark - BEGIN APIs of System.Reflection.TypeInfo
+System_Type_t /* System.Type */
+System_Reflection_TypeInfo_AsType(
+	System_Reflection_TypeInfo_t /* System.Reflection.TypeInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_EventInfo_t /* System.Reflection.EventInfo */
+System_Reflection_TypeInfo_GetDeclaredEvent(
+	System_Reflection_TypeInfo_t /* System.Reflection.TypeInfo */ self,
+	System_String_t /* System.String */ name,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_FieldInfo_t /* System.Reflection.FieldInfo */
+System_Reflection_TypeInfo_GetDeclaredField(
+	System_Reflection_TypeInfo_t /* System.Reflection.TypeInfo */ self,
+	System_String_t /* System.String */ name,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
+System_Reflection_TypeInfo_GetDeclaredMethod(
+	System_Reflection_TypeInfo_t /* System.Reflection.TypeInfo */ self,
+	System_String_t /* System.String */ name,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_TypeInfo_t /* System.Reflection.TypeInfo */
+System_Reflection_TypeInfo_GetDeclaredNestedType(
+	System_Reflection_TypeInfo_t /* System.Reflection.TypeInfo */ self,
+	System_String_t /* System.String */ name,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_PropertyInfo_t /* System.Reflection.PropertyInfo */
+System_Reflection_TypeInfo_GetDeclaredProperty(
+	System_Reflection_TypeInfo_t /* System.Reflection.TypeInfo */ self,
+	System_String_t /* System.String */ name,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.Reflection.MethodInfo> */
+System_Reflection_TypeInfo_GetDeclaredMethods(
+	System_Reflection_TypeInfo_t /* System.Reflection.TypeInfo */ self,
+	System_String_t /* System.String */ name,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Reflection_TypeInfo_IsAssignableFrom(
+	System_Reflection_TypeInfo_t /* System.Reflection.TypeInfo */ self,
+	System_Reflection_TypeInfo_t /* System.Reflection.TypeInfo */ typeInfo,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_Array_t /* System.Type[] */
+System_Reflection_TypeInfo_GenericTypeParameters_Get(
+	System_Reflection_TypeInfo_t /* System.Reflection.TypeInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.Reflection.ConstructorInfo> */
+System_Reflection_TypeInfo_DeclaredConstructors_Get(
+	System_Reflection_TypeInfo_t /* System.Reflection.TypeInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.Reflection.EventInfo> */
+System_Reflection_TypeInfo_DeclaredEvents_Get(
+	System_Reflection_TypeInfo_t /* System.Reflection.TypeInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.Reflection.FieldInfo> */
+System_Reflection_TypeInfo_DeclaredFields_Get(
+	System_Reflection_TypeInfo_t /* System.Reflection.TypeInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.Reflection.MemberInfo> */
+System_Reflection_TypeInfo_DeclaredMembers_Get(
+	System_Reflection_TypeInfo_t /* System.Reflection.TypeInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.Reflection.MethodInfo> */
+System_Reflection_TypeInfo_DeclaredMethods_Get(
+	System_Reflection_TypeInfo_t /* System.Reflection.TypeInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.Reflection.TypeInfo> */
+System_Reflection_TypeInfo_DeclaredNestedTypes_Get(
+	System_Reflection_TypeInfo_t /* System.Reflection.TypeInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.Reflection.PropertyInfo> */
+System_Reflection_TypeInfo_DeclaredProperties_Get(
+	System_Reflection_TypeInfo_t /* System.Reflection.TypeInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.Type> */
+System_Reflection_TypeInfo_ImplementedInterfaces_Get(
+	System_Reflection_TypeInfo_t /* System.Reflection.TypeInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_Reflection_TypeInfo_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Reflection_TypeInfo_Destroy(
+	System_Reflection_TypeInfo_t /* System.Reflection.TypeInfo */ self
+);
+
+#pragma mark - END APIs of System.Reflection.TypeInfo
+
+#pragma mark - BEGIN APIs of System.Reflection.EventInfo
+System_Reflection_MethodInfo_Array_t /* System.Reflection.MethodInfo[] */
+System_Reflection_EventInfo_GetOtherMethods(
+	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_MethodInfo_Array_t /* System.Reflection.MethodInfo[] */
+System_Reflection_EventInfo_GetOtherMethods_1(
+	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
+	bool /* System.Boolean */ nonPublic,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
+System_Reflection_EventInfo_GetAddMethod(
+	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
+System_Reflection_EventInfo_GetRemoveMethod(
+	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
+System_Reflection_EventInfo_GetRaiseMethod(
+	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
+System_Reflection_EventInfo_GetAddMethod_1(
+	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
+	bool /* System.Boolean */ nonPublic,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
+System_Reflection_EventInfo_GetRemoveMethod_1(
+	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
+	bool /* System.Boolean */ nonPublic,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
+System_Reflection_EventInfo_GetRaiseMethod_1(
+	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
+	bool /* System.Boolean */ nonPublic,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Reflection_EventInfo_AddEventHandler(
+	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
+	System_Object_t /* System.Object */ target,
+	System_Delegate_t /* System.Delegate */ handler,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Reflection_EventInfo_RemoveEventHandler(
+	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
+	System_Object_t /* System.Object */ target,
+	System_Delegate_t /* System.Delegate */ handler,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Reflection_EventInfo_Equals(
+	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
+	System_Object_t /* System.Object */ obj,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Reflection_EventInfo_GetHashCode(
+	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Reflection_MemberTypes /* System.Reflection.MemberTypes */
+System_Reflection_EventInfo_MemberType_Get(
+	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Reflection_EventAttributes /* System.Reflection.EventAttributes */
+System_Reflection_EventInfo_Attributes_Get(
+	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Reflection_EventInfo_IsSpecialName_Get(
+	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
+System_Reflection_EventInfo_AddMethod_Get(
+	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
+System_Reflection_EventInfo_RemoveMethod_Get(
+	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
+System_Reflection_EventInfo_RaiseMethod_Get(
+	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Reflection_EventInfo_IsMulticast_Get(
+	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_Reflection_EventInfo_EventHandlerType_Get(
+	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_Reflection_EventInfo_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Reflection_EventInfo_Destroy(
+	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self
+);
+
+#pragma mark - END APIs of System.Reflection.EventInfo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #pragma mark - BEGIN APIs of System.Reflection.ManifestResourceInfo
 System_Reflection_ManifestResourceInfo_t /* System.Reflection.ManifestResourceInfo */
@@ -15709,519 +17718,6 @@ System_Reflection_ManifestResourceInfo_Destroy(
 );
 
 #pragma mark - END APIs of System.Reflection.ManifestResourceInfo
-
-#pragma mark - BEGIN APIs of System.Reflection.Module
-void /* System.Void */
-System_Reflection_Module_GetPEKind(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	System_Reflection_PortableExecutableKinds* /* System.Reflection.PortableExecutableKinds */ peKind,
-	System_Reflection_ImageFileMachine* /* System.Reflection.ImageFileMachine */ machine,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-bool /* System.Boolean */
-System_Reflection_Module_IsResource(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-bool /* System.Boolean */
-System_Reflection_Module_IsDefined(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	System_Type_t /* System.Type */ attributeType,
-	bool /* System.Boolean */ inherit,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_Array_t /* System.Object[] */
-System_Reflection_Module_GetCustomAttributes(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	bool /* System.Boolean */ inherit,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_Array_t /* System.Object[] */
-System_Reflection_Module_GetCustomAttributes_1(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	System_Type_t /* System.Type */ attributeType,
-	bool /* System.Boolean */ inherit,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
-System_Reflection_Module_GetMethod(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	System_String_t /* System.String */ name,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
-System_Reflection_Module_GetMethod_1(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	System_String_t /* System.String */ name,
-	System_Type_Array_t /* System.Type[] */ types,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
-System_Reflection_Module_GetMethod_2(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	System_String_t /* System.String */ name,
-	System_Reflection_BindingFlags /* System.Reflection.BindingFlags */ bindingAttr,
-	System_Reflection_Binder_t /* System.Reflection.Binder */ binder,
-	System_Reflection_CallingConventions /* System.Reflection.CallingConventions */ callConvention,
-	System_Type_Array_t /* System.Type[] */ types,
-	System_Reflection_ParameterModifier_Array_t /* System.Reflection.ParameterModifier[] */ modifiers,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Reflection_MethodInfo_Array_t /* System.Reflection.MethodInfo[] */
-System_Reflection_Module_GetMethods(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Reflection_MethodInfo_Array_t /* System.Reflection.MethodInfo[] */
-System_Reflection_Module_GetMethods_1(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	System_Reflection_BindingFlags /* System.Reflection.BindingFlags */ bindingFlags,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Reflection_FieldInfo_t /* System.Reflection.FieldInfo */
-System_Reflection_Module_GetField(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	System_String_t /* System.String */ name,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Reflection_FieldInfo_t /* System.Reflection.FieldInfo */
-System_Reflection_Module_GetField_1(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	System_String_t /* System.String */ name,
-	System_Reflection_BindingFlags /* System.Reflection.BindingFlags */ bindingAttr,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Reflection_FieldInfo_Array_t /* System.Reflection.FieldInfo[] */
-System_Reflection_Module_GetFields(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Reflection_FieldInfo_Array_t /* System.Reflection.FieldInfo[] */
-System_Reflection_Module_GetFields_1(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	System_Reflection_BindingFlags /* System.Reflection.BindingFlags */ bindingFlags,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Type_Array_t /* System.Type[] */
-System_Reflection_Module_GetTypes(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Type_t /* System.Type */
-System_Reflection_Module_GetType_1(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	System_String_t /* System.String */ className,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Type_t /* System.Type */
-System_Reflection_Module_GetType_2(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	System_String_t /* System.String */ className,
-	bool /* System.Boolean */ ignoreCase,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Type_t /* System.Type */
-System_Reflection_Module_GetType_3(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	System_String_t /* System.String */ className,
-	bool /* System.Boolean */ throwOnError,
-	bool /* System.Boolean */ ignoreCase,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Type_Array_t /* System.Type[] */
-System_Reflection_Module_FindTypes(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */ filter,
-	System_Object_t /* System.Object */ filterCriteria,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Reflection_FieldInfo_t /* System.Reflection.FieldInfo */
-System_Reflection_Module_ResolveField(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	int32_t /* System.Int32 */ metadataToken,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Reflection_FieldInfo_t /* System.Reflection.FieldInfo */
-System_Reflection_Module_ResolveField_1(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	int32_t /* System.Int32 */ metadataToken,
-	System_Type_Array_t /* System.Type[] */ genericTypeArguments,
-	System_Type_Array_t /* System.Type[] */ genericMethodArguments,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Reflection_MemberInfo_t /* System.Reflection.MemberInfo */
-System_Reflection_Module_ResolveMember(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	int32_t /* System.Int32 */ metadataToken,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Reflection_MemberInfo_t /* System.Reflection.MemberInfo */
-System_Reflection_Module_ResolveMember_1(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	int32_t /* System.Int32 */ metadataToken,
-	System_Type_Array_t /* System.Type[] */ genericTypeArguments,
-	System_Type_Array_t /* System.Type[] */ genericMethodArguments,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Reflection_MethodBase_t /* System.Reflection.MethodBase */
-System_Reflection_Module_ResolveMethod(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	int32_t /* System.Int32 */ metadataToken,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Reflection_MethodBase_t /* System.Reflection.MethodBase */
-System_Reflection_Module_ResolveMethod_1(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	int32_t /* System.Int32 */ metadataToken,
-	System_Type_Array_t /* System.Type[] */ genericTypeArguments,
-	System_Type_Array_t /* System.Type[] */ genericMethodArguments,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Byte_Array_t /* System.Byte[] */
-System_Reflection_Module_ResolveSignature(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	int32_t /* System.Int32 */ metadataToken,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_String_t /* System.String */
-System_Reflection_Module_ResolveString(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	int32_t /* System.Int32 */ metadataToken,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Type_t /* System.Type */
-System_Reflection_Module_ResolveType(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	int32_t /* System.Int32 */ metadataToken,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Type_t /* System.Type */
-System_Reflection_Module_ResolveType_1(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	int32_t /* System.Int32 */ metadataToken,
-	System_Type_Array_t /* System.Type[] */ genericTypeArguments,
-	System_Type_Array_t /* System.Type[] */ genericMethodArguments,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Reflection_Module_GetObjectData(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	System_Runtime_Serialization_SerializationInfo_t /* System.Runtime.Serialization.SerializationInfo */ info,
-	System_Runtime_Serialization_StreamingContext_t /* System.Runtime.Serialization.StreamingContext */ context,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-bool /* System.Boolean */
-System_Reflection_Module_Equals(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	System_Object_t /* System.Object */ o,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-int32_t /* System.Int32 */
-System_Reflection_Module_GetHashCode(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_String_t /* System.String */
-System_Reflection_Module_ToString(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Reflection_Assembly_t /* System.Reflection.Assembly */
-System_Reflection_Module_Assembly_Get(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
-System_Reflection_Module_FullyQualifiedName_Get(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
-System_Reflection_Module_Name_Get(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-int32_t /* System.Int32 */
-System_Reflection_Module_MDStreamVersion_Get(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Guid_t /* System.Guid */
-System_Reflection_Module_ModuleVersionId_Get(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
-System_Reflection_Module_ScopeName_Get(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_ModuleHandle_t /* System.ModuleHandle */
-System_Reflection_Module_ModuleHandle_Get(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-int32_t /* System.Int32 */
-System_Reflection_Module_MetadataToken_Get(
-	System_Reflection_Module_t /* System.Reflection.Module */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */
-System_Reflection_Module_FilterTypeName_Get(
-	
-);
-
-
-System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */
-System_Reflection_Module_FilterTypeNameIgnoreCase_Get(
-	
-);
-
-
-System_Type_t /* System.Type */
-System_Reflection_Module_TypeOf(
-	
-);
-
-void /* System.Void */
-System_Reflection_Module_Destroy(
-	System_Reflection_Module_t /* System.Reflection.Module */ self
-);
-
-#pragma mark - END APIs of System.Reflection.Module
-
-#pragma mark - BEGIN APIs of System.Guid
-System_Guid_t /* System.Guid */
-System_Guid_Parse(
-	System_String_t /* System.String */ input,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-bool /* System.Boolean */
-System_Guid_TryParse(
-	System_String_t /* System.String */ input,
-	System_Guid_t* /* System.Guid */ result,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Guid_t /* System.Guid */
-System_Guid_ParseExact(
-	System_String_t /* System.String */ input,
-	System_String_t /* System.String */ format,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-bool /* System.Boolean */
-System_Guid_TryParseExact(
-	System_String_t /* System.String */ input,
-	System_String_t /* System.String */ format,
-	System_Guid_t* /* System.Guid */ result,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Byte_Array_t /* System.Byte[] */
-System_Guid_ToByteArray(
-	System_Guid_t /* System.Guid */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_String_t /* System.String */
-System_Guid_ToString(
-	System_Guid_t /* System.Guid */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-int32_t /* System.Int32 */
-System_Guid_GetHashCode(
-	System_Guid_t /* System.Guid */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-bool /* System.Boolean */
-System_Guid_Equals(
-	System_Guid_t /* System.Guid */ self,
-	System_Object_t /* System.Object */ o,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-bool /* System.Boolean */
-System_Guid_Equals_1(
-	System_Guid_t /* System.Guid */ self,
-	System_Guid_t /* System.Guid */ g,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-int32_t /* System.Int32 */
-System_Guid_CompareTo(
-	System_Guid_t /* System.Guid */ self,
-	System_Object_t /* System.Object */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-int32_t /* System.Int32 */
-System_Guid_CompareTo_1(
-	System_Guid_t /* System.Guid */ self,
-	System_Guid_t /* System.Guid */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_String_t /* System.String */
-System_Guid_ToString_1(
-	System_Guid_t /* System.Guid */ self,
-	System_String_t /* System.String */ format,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_String_t /* System.String */
-System_Guid_ToString_2(
-	System_Guid_t /* System.Guid */ self,
-	System_String_t /* System.String */ format,
-	System_IFormatProvider_t /* System.IFormatProvider */ provider,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Guid_t /* System.Guid */
-System_Guid_Parse_1(
-	System_String_t /* System.String */ s,
-	System_IFormatProvider_t /* System.IFormatProvider */ provider,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-bool /* System.Boolean */
-System_Guid_TryParse_1(
-	System_String_t /* System.String */ s,
-	System_IFormatProvider_t /* System.IFormatProvider */ provider,
-	System_Guid_t* /* System.Guid */ result,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Guid_t /* System.Guid */
-System_Guid_NewGuid(
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Guid_t /* System.Guid */
-System_Guid_Create(
-	System_Byte_Array_t /* System.Byte[] */ b,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Guid_t /* System.Guid */
-System_Guid_Create_1(
-	uint32_t /* System.UInt32 */ a,
-	uint16_t /* System.UInt16 */ b,
-	uint16_t /* System.UInt16 */ c,
-	uint8_t /* System.Byte */ d,
-	uint8_t /* System.Byte */ e,
-	uint8_t /* System.Byte */ f,
-	uint8_t /* System.Byte */ g,
-	uint8_t /* System.Byte */ h,
-	uint8_t /* System.Byte */ i,
-	uint8_t /* System.Byte */ j,
-	uint8_t /* System.Byte */ k,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Guid_t /* System.Guid */
-System_Guid_Create_2(
-	int32_t /* System.Int32 */ a,
-	int16_t /* System.Int16 */ b,
-	int16_t /* System.Int16 */ c,
-	System_Byte_Array_t /* System.Byte[] */ d,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Guid_t /* System.Guid */
-System_Guid_Create_3(
-	int32_t /* System.Int32 */ a,
-	int16_t /* System.Int16 */ b,
-	int16_t /* System.Int16 */ c,
-	uint8_t /* System.Byte */ d,
-	uint8_t /* System.Byte */ e,
-	uint8_t /* System.Byte */ f,
-	uint8_t /* System.Byte */ g,
-	uint8_t /* System.Byte */ h,
-	uint8_t /* System.Byte */ i,
-	uint8_t /* System.Byte */ j,
-	uint8_t /* System.Byte */ k,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Guid_t /* System.Guid */
-System_Guid_Create_4(
-	System_String_t /* System.String */ g,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Guid_t /* System.Guid */
-System_Guid_Empty_Get(
-	
-);
-
-
-System_Type_t /* System.Type */
-System_Guid_TypeOf(
-	
-);
-
-void /* System.Void */
-System_Guid_Destroy(
-	System_Guid_t /* System.Guid */ self
-);
-
-#pragma mark - END APIs of System.Guid
-
-
-
 
 #pragma mark - BEGIN APIs of System.ResolveEventArgs
 System_ResolveEventArgs_t /* System.ResolveEventArgs */
@@ -16289,6 +17785,8 @@ System_EventArgs_Destroy(
 
 #pragma mark - BEGIN APIs of System.Reflection.Module[]
 #pragma mark - END APIs of System.Reflection.Module[]
+
+
 
 
 #pragma mark - BEGIN APIs of System.Reflection.AssemblyName[]
@@ -17820,6 +19318,8 @@ System_Text_StringRuneEnumerator_Destroy(
 
 #pragma mark - END APIs of System.Text.StringRuneEnumerator
 
+
+
 #pragma mark - BEGIN APIs of System.Text.CompositeFormat
 System_Text_CompositeFormat_t /* System.Text.CompositeFormat */
 System_Text_CompositeFormat_Parse(
@@ -18341,6 +19841,12 @@ System_Text_EncodingProvider_GetEncoding_3(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.Text.EncodingInfo> */
+System_Text_EncodingProvider_GetEncodings(
+	System_Text_EncodingProvider_t /* System.Text.EncodingProvider */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 System_Type_t /* System.Type */
 System_Text_EncodingProvider_TypeOf(
 	
@@ -18530,8 +20036,7 @@ System_Text_DecoderFallbackBuffer_Destroy(
 
 #pragma mark - END APIs of System.Text.DecoderFallbackBuffer
 
-#pragma mark - BEGIN APIs of System.Text.EncodingInfo[]
-#pragma mark - END APIs of System.Text.EncodingInfo[]
+
 
 #pragma mark - BEGIN APIs of System.Text.EncodingInfo
 System_Text_Encoding_t /* System.Text.Encoding */
@@ -18594,6 +20099,9 @@ System_Text_EncodingInfo_Destroy(
 );
 
 #pragma mark - END APIs of System.Text.EncodingInfo
+
+#pragma mark - BEGIN APIs of System.Text.EncodingInfo[]
+#pragma mark - END APIs of System.Text.EncodingInfo[]
 
 
 #pragma mark - BEGIN APIs of System.Text.Decoder
@@ -18771,6 +20279,7 @@ System_Text_Encoder_Destroy(
 );
 
 #pragma mark - END APIs of System.Text.Encoder
+
 
 
 
@@ -19145,221 +20654,9 @@ System_Attribute_Destroy(
 #pragma mark - END APIs of System.Attribute[]
 
 
-#pragma mark - BEGIN APIs of System.Reflection.ConstructorInfo
-System_Object_t /* System.Object */
-System_Reflection_ConstructorInfo_Invoke(
-	System_Reflection_ConstructorInfo_t /* System.Reflection.ConstructorInfo */ self,
-	System_Object_Array_t /* System.Object[] */ parameters,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_t /* System.Object */
-System_Reflection_ConstructorInfo_Invoke_1(
-	System_Reflection_ConstructorInfo_t /* System.Reflection.ConstructorInfo */ self,
-	System_Reflection_BindingFlags /* System.Reflection.BindingFlags */ invokeAttr,
-	System_Reflection_Binder_t /* System.Reflection.Binder */ binder,
-	System_Object_Array_t /* System.Object[] */ parameters,
-	System_Globalization_CultureInfo_t /* System.Globalization.CultureInfo */ culture,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-bool /* System.Boolean */
-System_Reflection_ConstructorInfo_Equals(
-	System_Reflection_ConstructorInfo_t /* System.Reflection.ConstructorInfo */ self,
-	System_Object_t /* System.Object */ obj,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-int32_t /* System.Int32 */
-System_Reflection_ConstructorInfo_GetHashCode(
-	System_Reflection_ConstructorInfo_t /* System.Reflection.ConstructorInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Reflection_MemberTypes /* System.Reflection.MemberTypes */
-System_Reflection_ConstructorInfo_MemberType_Get(
-	System_Reflection_ConstructorInfo_t /* System.Reflection.ConstructorInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_String_t /* System.String */
-System_Reflection_ConstructorInfo_ConstructorName_Get(
-	
-);
-
-
-System_String_t /* System.String */
-System_Reflection_ConstructorInfo_TypeConstructorName_Get(
-	
-);
-
-
-System_Type_t /* System.Type */
-System_Reflection_ConstructorInfo_TypeOf(
-	
-);
-
-void /* System.Void */
-System_Reflection_ConstructorInfo_Destroy(
-	System_Reflection_ConstructorInfo_t /* System.Reflection.ConstructorInfo */ self
-);
-
-#pragma mark - END APIs of System.Reflection.ConstructorInfo
-
 #pragma mark - BEGIN APIs of System.Reflection.ConstructorInfo[]
 #pragma mark - END APIs of System.Reflection.ConstructorInfo[]
 
-
-#pragma mark - BEGIN APIs of System.Reflection.EventInfo
-System_Reflection_MethodInfo_Array_t /* System.Reflection.MethodInfo[] */
-System_Reflection_EventInfo_GetOtherMethods(
-	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Reflection_MethodInfo_Array_t /* System.Reflection.MethodInfo[] */
-System_Reflection_EventInfo_GetOtherMethods_1(
-	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
-	bool /* System.Boolean */ nonPublic,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
-System_Reflection_EventInfo_GetAddMethod(
-	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
-System_Reflection_EventInfo_GetRemoveMethod(
-	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
-System_Reflection_EventInfo_GetRaiseMethod(
-	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
-System_Reflection_EventInfo_GetAddMethod_1(
-	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
-	bool /* System.Boolean */ nonPublic,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
-System_Reflection_EventInfo_GetRemoveMethod_1(
-	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
-	bool /* System.Boolean */ nonPublic,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
-System_Reflection_EventInfo_GetRaiseMethod_1(
-	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
-	bool /* System.Boolean */ nonPublic,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Reflection_EventInfo_AddEventHandler(
-	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
-	System_Object_t /* System.Object */ target,
-	System_Delegate_t /* System.Delegate */ handler,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Reflection_EventInfo_RemoveEventHandler(
-	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
-	System_Object_t /* System.Object */ target,
-	System_Delegate_t /* System.Delegate */ handler,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-bool /* System.Boolean */
-System_Reflection_EventInfo_Equals(
-	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
-	System_Object_t /* System.Object */ obj,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-int32_t /* System.Int32 */
-System_Reflection_EventInfo_GetHashCode(
-	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Reflection_MemberTypes /* System.Reflection.MemberTypes */
-System_Reflection_EventInfo_MemberType_Get(
-	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Reflection_EventAttributes /* System.Reflection.EventAttributes */
-System_Reflection_EventInfo_Attributes_Get(
-	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-bool /* System.Boolean */
-System_Reflection_EventInfo_IsSpecialName_Get(
-	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
-System_Reflection_EventInfo_AddMethod_Get(
-	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
-System_Reflection_EventInfo_RemoveMethod_Get(
-	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Reflection_MethodInfo_t /* System.Reflection.MethodInfo */
-System_Reflection_EventInfo_RaiseMethod_Get(
-	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-bool /* System.Boolean */
-System_Reflection_EventInfo_IsMulticast_Get(
-	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Type_t /* System.Type */
-System_Reflection_EventInfo_EventHandlerType_Get(
-	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Type_t /* System.Type */
-System_Reflection_EventInfo_TypeOf(
-	
-);
-
-void /* System.Void */
-System_Reflection_EventInfo_Destroy(
-	System_Reflection_EventInfo_t /* System.Reflection.EventInfo */ self
-);
-
-#pragma mark - END APIs of System.Reflection.EventInfo
 
 #pragma mark - BEGIN APIs of System.Reflection.EventInfo[]
 #pragma mark - END APIs of System.Reflection.EventInfo[]
@@ -20689,6 +21986,7 @@ System_SystemException_Destroy(
 
 
 
+
 #pragma mark - BEGIN APIs of System.GC
 System_GCMemoryInfo_t /* System.GCMemoryInfo */
 System_GC_GetGCMemoryInfo(
@@ -20891,6 +22189,11 @@ System_GC_AllocateArray_A1(
 
 System_TimeSpan_t /* System.TimeSpan */
 System_GC_GetTotalPauseDuration(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Generic_IReadOnlyDictionary_A2_t /* System.Collections.Generic.IReadOnlyDictionary<System.String,System.Object> */
+System_GC_GetConfigurationVariables(
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -21107,6 +22410,9 @@ System_WeakReference_Destroy(
 
 
 
+
+
+
 #pragma mark - BEGIN APIs of System.Math
 double /* System.Double */
 System_Math_Acos(
@@ -21223,6 +22529,12 @@ System_Math_Pow(
 double /* System.Double */
 System_Math_Sin(
 	double /* System.Double */ a,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_ValueTuple_A2_t /* System.ValueTuple<System.Double,System.Double> */
+System_Math_SinCos(
+	double /* System.Double */ x,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -21353,6 +22665,76 @@ System_Math_DivRem_1(
 	int64_t /* System.Int64 */ a,
 	int64_t /* System.Int64 */ b,
 	int64_t* /* System.Int64 */ result,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_ValueTuple_A2_t /* System.ValueTuple<System.SByte,System.SByte> */
+System_Math_DivRem_2(
+	int8_t /* System.SByte */ left,
+	int8_t /* System.SByte */ right,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_ValueTuple_A2_t /* System.ValueTuple<System.Byte,System.Byte> */
+System_Math_DivRem_3(
+	uint8_t /* System.Byte */ left,
+	uint8_t /* System.Byte */ right,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_ValueTuple_A2_t /* System.ValueTuple<System.Int16,System.Int16> */
+System_Math_DivRem_4(
+	int16_t /* System.Int16 */ left,
+	int16_t /* System.Int16 */ right,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_ValueTuple_A2_t /* System.ValueTuple<System.UInt16,System.UInt16> */
+System_Math_DivRem_5(
+	uint16_t /* System.UInt16 */ left,
+	uint16_t /* System.UInt16 */ right,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_ValueTuple_A2_t /* System.ValueTuple<System.Int32,System.Int32> */
+System_Math_DivRem_6(
+	int32_t /* System.Int32 */ left,
+	int32_t /* System.Int32 */ right,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_ValueTuple_A2_t /* System.ValueTuple<System.UInt32,System.UInt32> */
+System_Math_DivRem_7(
+	uint32_t /* System.UInt32 */ left,
+	uint32_t /* System.UInt32 */ right,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_ValueTuple_A2_t /* System.ValueTuple<System.Int64,System.Int64> */
+System_Math_DivRem_8(
+	int64_t /* System.Int64 */ left,
+	int64_t /* System.Int64 */ right,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_ValueTuple_A2_t /* System.ValueTuple<System.UInt64,System.UInt64> */
+System_Math_DivRem_9(
+	uint64_t /* System.UInt64 */ left,
+	uint64_t /* System.UInt64 */ right,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_ValueTuple_A2_t /* System.ValueTuple<System.IntPtr,System.IntPtr> */
+System_Math_DivRem_10(
+	long /* System.IntPtr */ left,
+	long /* System.IntPtr */ right,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_ValueTuple_A2_t /* System.ValueTuple<System.UIntPtr,System.UIntPtr> */
+System_Math_DivRem_11(
+	unsigned long /* System.UIntPtr */ left,
+	unsigned long /* System.UIntPtr */ right,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -24717,6 +26099,13 @@ System_AppDomain_SetData(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+System_Nullable_A1_t /* System.Nullable<System.Boolean> */
+System_AppDomain_IsCompatibilitySwitchSet(
+	System_AppDomain_t /* System.AppDomain */ self,
+	System_String_t /* System.String */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 bool /* System.Boolean */
 System_AppDomain_IsDefaultAppDomain(
 	System_AppDomain_t /* System.AppDomain */ self,
@@ -26443,6 +27832,7 @@ System_UnhandledExceptionEventArgs_Destroy(
 
 #pragma mark - END APIs of System.UnhandledExceptionEventArgs
 
+
 #pragma mark - BEGIN APIs of System.Reflection.Assembly[]
 #pragma mark - END APIs of System.Reflection.Assembly[]
 
@@ -27076,12 +28466,19 @@ System_Text_StringBuilder_Append_20(
 System_Text_StringBuilder_t /* System.Text.StringBuilder */
 System_Text_StringBuilder_Append_21(
 	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
-	System_Text_StringBuilder_AppendInterpolatedStringHandler_t* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ handler,
+	System_ReadOnlyMemory_A1_t /* System.ReadOnlyMemory<System.Char> */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
 System_Text_StringBuilder_t /* System.Text.StringBuilder */
 System_Text_StringBuilder_Append_22(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	System_Text_StringBuilder_AppendInterpolatedStringHandler_t* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ handler,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Text_StringBuilder_t /* System.Text.StringBuilder */
+System_Text_StringBuilder_Append_23(
 	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
 	System_IFormatProvider_t /* System.IFormatProvider */ provider,
 	System_Text_StringBuilder_AppendInterpolatedStringHandler_t* /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ handler,
@@ -27535,6 +28932,13 @@ System_Text_StringBuilder_ChunkEnumerator_MoveNext(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+System_ReadOnlyMemory_A1_t /* System.ReadOnlyMemory<System.Char> */
+System_Text_StringBuilder_ChunkEnumerator_Current_Get(
+	System_Text_StringBuilder_ChunkEnumerator_t /* System.Text.StringBuilder.ChunkEnumerator */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
 System_Type_t /* System.Type */
 System_Text_StringBuilder_ChunkEnumerator_TypeOf(
 	
@@ -27546,6 +28950,10 @@ System_Text_StringBuilder_ChunkEnumerator_Destroy(
 );
 
 #pragma mark - END APIs of System.Text.StringBuilder.ChunkEnumerator
+
+
+
+
 
 #pragma mark - BEGIN APIs of System.Text.StringBuilder.AppendInterpolatedStringHandler
 void /* System.Void */
@@ -28260,6 +29668,34 @@ System_IO_File_ReadAllLines_1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.String> */
+System_IO_File_ReadLines(
+	System_String_t /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.String> */
+System_IO_File_ReadLines_1(
+	System_String_t /* System.String */ path,
+	System_Text_Encoding_t /* System.Text.Encoding */ encoding,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Generic_IAsyncEnumerable_A1_t /* System.Collections.Generic.IAsyncEnumerable<System.String> */
+System_IO_File_ReadLinesAsync(
+	System_String_t /* System.String */ path,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Generic_IAsyncEnumerable_A1_t /* System.Collections.Generic.IAsyncEnumerable<System.String> */
+System_IO_File_ReadLinesAsync_1(
+	System_String_t /* System.String */ path,
+	System_Text_Encoding_t /* System.Text.Encoding */ encoding,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 void /* System.Void */
 System_IO_File_WriteAllLines(
 	System_String_t /* System.String */ path,
@@ -28270,7 +29706,22 @@ System_IO_File_WriteAllLines(
 void /* System.Void */
 System_IO_File_WriteAllLines_1(
 	System_String_t /* System.String */ path,
+	System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.String> */ contents,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_WriteAllLines_2(
+	System_String_t /* System.String */ path,
 	System_String_Array_t /* System.String[] */ contents,
+	System_Text_Encoding_t /* System.Text.Encoding */ encoding,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_WriteAllLines_3(
+	System_String_t /* System.String */ path,
+	System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.String> */ contents,
 	System_Text_Encoding_t /* System.Text.Encoding */ encoding,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -28286,6 +29737,21 @@ void /* System.Void */
 System_IO_File_AppendAllText_1(
 	System_String_t /* System.String */ path,
 	System_String_t /* System.String */ contents,
+	System_Text_Encoding_t /* System.Text.Encoding */ encoding,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_AppendAllLines(
+	System_String_t /* System.String */ path,
+	System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.String> */ contents,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_File_AppendAllLines_1(
+	System_String_t /* System.String */ path,
+	System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.String> */ contents,
 	System_Text_Encoding_t /* System.Text.Encoding */ encoding,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -28334,6 +29800,21 @@ System_IO_File_Decrypt(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+System_Threading_Tasks_Task_A1_t /* System.Threading.Tasks.Task<System.String> */
+System_IO_File_ReadAllTextAsync(
+	System_String_t /* System.String */ path,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t /* System.Threading.Tasks.Task<System.String> */
+System_IO_File_ReadAllTextAsync_1(
+	System_String_t /* System.String */ path,
+	System_Text_Encoding_t /* System.Text.Encoding */ encoding,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
 System_IO_File_WriteAllTextAsync(
 	System_String_t /* System.String */ path,
@@ -28351,10 +29832,49 @@ System_IO_File_WriteAllTextAsync_1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+System_Threading_Tasks_Task_A1_t /* System.Threading.Tasks.Task<System.Byte[]> */
+System_IO_File_ReadAllBytesAsync(
+	System_String_t /* System.String */ path,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
 System_IO_File_WriteAllBytesAsync(
 	System_String_t /* System.String */ path,
 	System_Byte_Array_t /* System.Byte[] */ bytes,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t /* System.Threading.Tasks.Task<System.String[]> */
+System_IO_File_ReadAllLinesAsync(
+	System_String_t /* System.String */ path,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t /* System.Threading.Tasks.Task<System.String[]> */
+System_IO_File_ReadAllLinesAsync_1(
+	System_String_t /* System.String */ path,
+	System_Text_Encoding_t /* System.Text.Encoding */ encoding,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_IO_File_WriteAllLinesAsync(
+	System_String_t /* System.String */ path,
+	System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.String> */ contents,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_IO_File_WriteAllLinesAsync_1(
+	System_String_t /* System.String */ path,
+	System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.String> */ contents,
+	System_Text_Encoding_t /* System.Text.Encoding */ encoding,
 	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -28371,6 +29891,23 @@ System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
 System_IO_File_AppendAllTextAsync_1(
 	System_String_t /* System.String */ path,
 	System_String_t /* System.String */ contents,
+	System_Text_Encoding_t /* System.Text.Encoding */ encoding,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_IO_File_AppendAllLinesAsync(
+	System_String_t /* System.String */ path,
+	System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.String> */ contents,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_IO_File_AppendAllLinesAsync_1(
+	System_String_t /* System.String */ path,
+	System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.String> */ contents,
 	System_Text_Encoding_t /* System.Text.Encoding */ encoding,
 	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
 	System_Exception_t* /* System.Exception */ outException
@@ -28454,6 +29991,66 @@ System_IO_StreamReader_ReadBlock(
 System_String_t /* System.String */
 System_IO_StreamReader_ReadLine(
 	System_IO_StreamReader_t /* System.IO.StreamReader */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t /* System.Threading.Tasks.Task<System.String> */
+System_IO_StreamReader_ReadLineAsync(
+	System_IO_StreamReader_t /* System.IO.StreamReader */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_ValueTask_A1_t /* System.Threading.Tasks.ValueTask<System.String> */
+System_IO_StreamReader_ReadLineAsync_1(
+	System_IO_StreamReader_t /* System.IO.StreamReader */ self,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t /* System.Threading.Tasks.Task<System.String> */
+System_IO_StreamReader_ReadToEndAsync(
+	System_IO_StreamReader_t /* System.IO.StreamReader */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t /* System.Threading.Tasks.Task<System.String> */
+System_IO_StreamReader_ReadToEndAsync_1(
+	System_IO_StreamReader_t /* System.IO.StreamReader */ self,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t /* System.Threading.Tasks.Task<System.Int32> */
+System_IO_StreamReader_ReadAsync(
+	System_IO_StreamReader_t /* System.IO.StreamReader */ self,
+	System_Char_Array_t /* System.Char[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_ValueTask_A1_t /* System.Threading.Tasks.ValueTask<System.Int32> */
+System_IO_StreamReader_ReadAsync_1(
+	System_IO_StreamReader_t /* System.IO.StreamReader */ self,
+	System_Memory_A1_t /* System.Memory<System.Char> */ buffer,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t /* System.Threading.Tasks.Task<System.Int32> */
+System_IO_StreamReader_ReadBlockAsync(
+	System_IO_StreamReader_t /* System.IO.StreamReader */ self,
+	System_Char_Array_t /* System.Char[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_ValueTask_A1_t /* System.Threading.Tasks.ValueTask<System.Int32> */
+System_IO_StreamReader_ReadBlockAsync_1(
+	System_IO_StreamReader_t /* System.IO.StreamReader */ self,
+	System_Memory_A1_t /* System.Memory<System.Char> */ buffer,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -28651,6 +30248,66 @@ System_IO_TextReader_ReadLine(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+System_Threading_Tasks_Task_A1_t /* System.Threading.Tasks.Task<System.String> */
+System_IO_TextReader_ReadLineAsync(
+	System_IO_TextReader_t /* System.IO.TextReader */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_ValueTask_A1_t /* System.Threading.Tasks.ValueTask<System.String> */
+System_IO_TextReader_ReadLineAsync_1(
+	System_IO_TextReader_t /* System.IO.TextReader */ self,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t /* System.Threading.Tasks.Task<System.String> */
+System_IO_TextReader_ReadToEndAsync(
+	System_IO_TextReader_t /* System.IO.TextReader */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t /* System.Threading.Tasks.Task<System.String> */
+System_IO_TextReader_ReadToEndAsync_1(
+	System_IO_TextReader_t /* System.IO.TextReader */ self,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t /* System.Threading.Tasks.Task<System.Int32> */
+System_IO_TextReader_ReadAsync(
+	System_IO_TextReader_t /* System.IO.TextReader */ self,
+	System_Char_Array_t /* System.Char[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_ValueTask_A1_t /* System.Threading.Tasks.ValueTask<System.Int32> */
+System_IO_TextReader_ReadAsync_1(
+	System_IO_TextReader_t /* System.IO.TextReader */ self,
+	System_Memory_A1_t /* System.Memory<System.Char> */ buffer,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t /* System.Threading.Tasks.Task<System.Int32> */
+System_IO_TextReader_ReadBlockAsync(
+	System_IO_TextReader_t /* System.IO.TextReader */ self,
+	System_Char_Array_t /* System.Char[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_ValueTask_A1_t /* System.Threading.Tasks.ValueTask<System.Int32> */
+System_IO_TextReader_ReadBlockAsync_1(
+	System_IO_TextReader_t /* System.IO.TextReader */ self,
+	System_Memory_A1_t /* System.Memory<System.Char> */ buffer,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 System_IO_TextReader_t /* System.IO.TextReader */
 System_IO_TextReader_Synchronized(
 	System_IO_TextReader_t /* System.IO.TextReader */ reader,
@@ -28674,6 +30331,16 @@ System_IO_TextReader_Destroy(
 );
 
 #pragma mark - END APIs of System.IO.TextReader
+
+
+
+
+
+
+
+
+
+
 
 #pragma mark - BEGIN APIs of System.IO.StreamWriter
 void /* System.Void */
@@ -28825,6 +30492,14 @@ System_IO_StreamWriter_WriteAsync_2(
 );
 
 System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_IO_StreamWriter_WriteAsync_3(
+	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
+	System_ReadOnlyMemory_A1_t /* System.ReadOnlyMemory<System.Char> */ buffer,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
 System_IO_StreamWriter_WriteLineAsync(
 	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
 	System_Exception_t* /* System.Exception */ outException
@@ -28850,6 +30525,14 @@ System_IO_StreamWriter_WriteLineAsync_3(
 	System_Char_Array_t /* System.Char[] */ buffer,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ count,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_IO_StreamWriter_WriteLineAsync_4(
+	System_IO_StreamWriter_t /* System.IO.StreamWriter */ self,
+	System_ReadOnlyMemory_A1_t /* System.ReadOnlyMemory<System.Char> */ buffer,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -29320,6 +31003,14 @@ System_IO_TextWriter_WriteAsync_4(
 );
 
 System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_IO_TextWriter_WriteAsync_5(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	System_ReadOnlyMemory_A1_t /* System.ReadOnlyMemory<System.Char> */ buffer,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
 System_IO_TextWriter_WriteLineAsync(
 	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
 	uint8_t /* System.Char */ value,
@@ -29359,6 +31050,14 @@ System_IO_TextWriter_WriteLineAsync_4(
 
 System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
 System_IO_TextWriter_WriteLineAsync_5(
+	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
+	System_ReadOnlyMemory_A1_t /* System.ReadOnlyMemory<System.Char> */ buffer,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */
+System_IO_TextWriter_WriteLineAsync_6(
 	System_IO_TextWriter_t /* System.IO.TextWriter */ self,
 	System_Exception_t* /* System.Exception */ outException
 );
@@ -29420,6 +31119,28 @@ System_IO_TextWriter_Destroy(
 );
 
 #pragma mark - END APIs of System.IO.TextWriter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #pragma mark - BEGIN APIs of System.IO.FileSystemInfo
 void /* System.Void */
@@ -29922,6 +31643,93 @@ System_IO_DirectoryInfo_GetDirectories_3(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.IO.DirectoryInfo> */
+System_IO_DirectoryInfo_EnumerateDirectories(
+	System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.IO.DirectoryInfo> */
+System_IO_DirectoryInfo_EnumerateDirectories_1(
+	System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */ self,
+	System_String_t /* System.String */ searchPattern,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.IO.DirectoryInfo> */
+System_IO_DirectoryInfo_EnumerateDirectories_2(
+	System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */ self,
+	System_String_t /* System.String */ searchPattern,
+	System_IO_SearchOption /* System.IO.SearchOption */ searchOption,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.IO.DirectoryInfo> */
+System_IO_DirectoryInfo_EnumerateDirectories_3(
+	System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */ self,
+	System_String_t /* System.String */ searchPattern,
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ enumerationOptions,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.IO.FileInfo> */
+System_IO_DirectoryInfo_EnumerateFiles(
+	System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.IO.FileInfo> */
+System_IO_DirectoryInfo_EnumerateFiles_1(
+	System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */ self,
+	System_String_t /* System.String */ searchPattern,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.IO.FileInfo> */
+System_IO_DirectoryInfo_EnumerateFiles_2(
+	System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */ self,
+	System_String_t /* System.String */ searchPattern,
+	System_IO_SearchOption /* System.IO.SearchOption */ searchOption,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.IO.FileInfo> */
+System_IO_DirectoryInfo_EnumerateFiles_3(
+	System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */ self,
+	System_String_t /* System.String */ searchPattern,
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ enumerationOptions,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.IO.FileSystemInfo> */
+System_IO_DirectoryInfo_EnumerateFileSystemInfos(
+	System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.IO.FileSystemInfo> */
+System_IO_DirectoryInfo_EnumerateFileSystemInfos_1(
+	System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */ self,
+	System_String_t /* System.String */ searchPattern,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.IO.FileSystemInfo> */
+System_IO_DirectoryInfo_EnumerateFileSystemInfos_2(
+	System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */ self,
+	System_String_t /* System.String */ searchPattern,
+	System_IO_SearchOption /* System.IO.SearchOption */ searchOption,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.IO.FileSystemInfo> */
+System_IO_DirectoryInfo_EnumerateFileSystemInfos_3(
+	System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */ self,
+	System_String_t /* System.String */ searchPattern,
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ enumerationOptions,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 void /* System.Void */
 System_IO_DirectoryInfo_MoveTo(
 	System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */ self,
@@ -30130,6 +31938,12 @@ System_IO_EnumerationOptions_Destroy(
 #pragma mark - END APIs of System.IO.DirectoryInfo[]
 
 
+
+
+
+
+
+
 #pragma mark - BEGIN APIs of System.IO.Directory
 System_IO_DirectoryInfo_t /* System.IO.DirectoryInfo */
 System_IO_Directory_GetParent(
@@ -30321,6 +32135,93 @@ System_IO_Directory_GetFileSystemEntries_2(
 
 System_String_Array_t /* System.String[] */
 System_IO_Directory_GetFileSystemEntries_3(
+	System_String_t /* System.String */ path,
+	System_String_t /* System.String */ searchPattern,
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ enumerationOptions,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.String> */
+System_IO_Directory_EnumerateDirectories(
+	System_String_t /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.String> */
+System_IO_Directory_EnumerateDirectories_1(
+	System_String_t /* System.String */ path,
+	System_String_t /* System.String */ searchPattern,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.String> */
+System_IO_Directory_EnumerateDirectories_2(
+	System_String_t /* System.String */ path,
+	System_String_t /* System.String */ searchPattern,
+	System_IO_SearchOption /* System.IO.SearchOption */ searchOption,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.String> */
+System_IO_Directory_EnumerateDirectories_3(
+	System_String_t /* System.String */ path,
+	System_String_t /* System.String */ searchPattern,
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ enumerationOptions,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.String> */
+System_IO_Directory_EnumerateFiles(
+	System_String_t /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.String> */
+System_IO_Directory_EnumerateFiles_1(
+	System_String_t /* System.String */ path,
+	System_String_t /* System.String */ searchPattern,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.String> */
+System_IO_Directory_EnumerateFiles_2(
+	System_String_t /* System.String */ path,
+	System_String_t /* System.String */ searchPattern,
+	System_IO_SearchOption /* System.IO.SearchOption */ searchOption,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.String> */
+System_IO_Directory_EnumerateFiles_3(
+	System_String_t /* System.String */ path,
+	System_String_t /* System.String */ searchPattern,
+	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ enumerationOptions,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.String> */
+System_IO_Directory_EnumerateFileSystemEntries(
+	System_String_t /* System.String */ path,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.String> */
+System_IO_Directory_EnumerateFileSystemEntries_1(
+	System_String_t /* System.String */ path,
+	System_String_t /* System.String */ searchPattern,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.String> */
+System_IO_Directory_EnumerateFileSystemEntries_2(
+	System_String_t /* System.String */ path,
+	System_String_t /* System.String */ searchPattern,
+	System_IO_SearchOption /* System.IO.SearchOption */ searchOption,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<System.String> */
+System_IO_Directory_EnumerateFileSystemEntries_3(
 	System_String_t /* System.String */ path,
 	System_String_t /* System.String */ searchPattern,
 	System_IO_EnumerationOptions_t /* System.IO.EnumerationOptions */ enumerationOptions,
@@ -31185,6 +33086,14 @@ NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_Destroy(
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.GenericTestClass<,>
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.GenericTests
+System_String_t /* System.String */
+NativeAOT_CodeGeneratorInputSample_GenericTests_JoinListOfStrings(
+	NativeAOT_CodeGeneratorInputSample_GenericTests_t /* NativeAOT.CodeGeneratorInputSample.GenericTests */ self,
+	System_Collections_Generic_List_A1_t /* System.Collections.Generic.List<System.String> */ listOfString,
+	System_String_t /* System.String */ separator,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 System_Type_t /* System.Type */
 NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnGenericType_A1(
 	System_Type_t /* System.Type */ T,
@@ -31256,6 +33165,34 @@ NativeAOT_CodeGeneratorInputSample_GenericTests_Create(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+System_Collections_Generic_List_A1_t /* System.Collections.Generic.List<System.String> */
+NativeAOT_CodeGeneratorInputSample_GenericTests_ListOfStrings_Get(
+	NativeAOT_CodeGeneratorInputSample_GenericTests_t /* NativeAOT.CodeGeneratorInputSample.GenericTests */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_GenericTests_ListOfStrings_Set(
+	NativeAOT_CodeGeneratorInputSample_GenericTests_t /* NativeAOT.CodeGeneratorInputSample.GenericTests */ self,
+	System_Collections_Generic_List_A1_t /* System.Collections.Generic.List<System.String> */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Collections_Generic_Dictionary_A2_t /* System.Collections.Generic.Dictionary<System.String,System.Exception> */
+NativeAOT_CodeGeneratorInputSample_GenericTests_DictionaryOfStringKeysAndExceptionValues_Get(
+	NativeAOT_CodeGeneratorInputSample_GenericTests_t /* NativeAOT.CodeGeneratorInputSample.GenericTests */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_GenericTests_DictionaryOfStringKeysAndExceptionValues_Set(
+	NativeAOT_CodeGeneratorInputSample_GenericTests_t /* NativeAOT.CodeGeneratorInputSample.GenericTests */ self,
+	System_Collections_Generic_Dictionary_A2_t /* System.Collections.Generic.Dictionary<System.String,System.Exception> */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
 System_Type_t /* System.Type */
 NativeAOT_CodeGeneratorInputSample_GenericTests_TypeOf(
 	
@@ -31267,6 +33204,24 @@ NativeAOT_CodeGeneratorInputSample_GenericTests_Destroy(
 );
 
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.GenericTests
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.GenericTests.SimpleKeyValuePair
 NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_t /* NativeAOT.CodeGeneratorInputSample.GenericTests.SimpleKeyValuePair */
@@ -31816,40 +33771,41 @@ System_Delegate_Destroy(
 
 
 
-#pragma mark - BEGIN APIs of System.Action
-System_Action_t /* System.Action */
-System_Action_Create(
+#pragma mark - BEGIN APIs of System.Reflection.TypeFilter
+System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */
+System_Reflection_TypeFilter_Create(
 	const void* context,
-	System_Action_CFunction_t function,
-	System_Action_CDestructorFunction_t destructorFunction
+	System_Reflection_TypeFilter_CFunction_t function,
+	System_Reflection_TypeFilter_CDestructorFunction_t destructorFunction
 );
 
-void
-System_Action_Invoke(
-	System_Action_t /* System.Action */ self, System_Exception_t* /* System.Exception */ outException
+bool
+System_Reflection_TypeFilter_Invoke(
+	System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */ self, System_Type_t /* System.Type */ m,
+	System_Object_t /* System.Object */ filterCriteria, System_Exception_t* /* System.Exception */ outException
 );
 
 const void*
-System_Action_Context_Get(
-	System_Action_t /* System.Action */ self
+System_Reflection_TypeFilter_Context_Get(
+	System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */ self
 );
 
-System_Action_CFunction_t
-System_Action_CFunction_Get(
-	System_Action_t /* System.Action */ self
+System_Reflection_TypeFilter_CFunction_t
+System_Reflection_TypeFilter_CFunction_Get(
+	System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */ self
 );
 
-System_Action_CDestructorFunction_t
-System_Action_CDestructorFunction_Get(
-	System_Action_t /* System.Action */ self
+System_Reflection_TypeFilter_CDestructorFunction_t
+System_Reflection_TypeFilter_CDestructorFunction_Get(
+	System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */ self
 );
 
 void /* System.Void */
-System_Action_Destroy(
-	System_Action_t /* System.Action */ self
+System_Reflection_TypeFilter_Destroy(
+	System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */ self
 );
 
-#pragma mark - END APIs of System.Action
+#pragma mark - END APIs of System.Reflection.TypeFilter
 
 #pragma mark - BEGIN APIs of System.MulticastDelegate
 System_MulticastDelegate_t /* System.MulticastDelegate */
@@ -31885,6 +33841,41 @@ System_MulticastDelegate_Destroy(
 );
 
 #pragma mark - END APIs of System.MulticastDelegate
+
+#pragma mark - BEGIN APIs of System.Action
+System_Action_t /* System.Action */
+System_Action_Create(
+	const void* context,
+	System_Action_CFunction_t function,
+	System_Action_CDestructorFunction_t destructorFunction
+);
+
+void
+System_Action_Invoke(
+	System_Action_t /* System.Action */ self, System_Exception_t* /* System.Exception */ outException
+);
+
+const void*
+System_Action_Context_Get(
+	System_Action_t /* System.Action */ self
+);
+
+System_Action_CFunction_t
+System_Action_CFunction_Get(
+	System_Action_t /* System.Action */ self
+);
+
+System_Action_CDestructorFunction_t
+System_Action_CDestructorFunction_Get(
+	System_Action_t /* System.Action */ self
+);
+
+void /* System.Void */
+System_Action_Destroy(
+	System_Action_t /* System.Action */ self
+);
+
+#pragma mark - END APIs of System.Action
 
 #pragma mark - BEGIN APIs of System.AsyncCallback
 System_AsyncCallback_t /* System.AsyncCallback */
@@ -31956,42 +33947,6 @@ System_Reflection_ModuleResolveEventHandler_Destroy(
 );
 
 #pragma mark - END APIs of System.Reflection.ModuleResolveEventHandler
-
-#pragma mark - BEGIN APIs of System.Reflection.TypeFilter
-System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */
-System_Reflection_TypeFilter_Create(
-	const void* context,
-	System_Reflection_TypeFilter_CFunction_t function,
-	System_Reflection_TypeFilter_CDestructorFunction_t destructorFunction
-);
-
-bool
-System_Reflection_TypeFilter_Invoke(
-	System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */ self, System_Type_t /* System.Type */ m,
-	System_Object_t /* System.Object */ filterCriteria, System_Exception_t* /* System.Exception */ outException
-);
-
-const void*
-System_Reflection_TypeFilter_Context_Get(
-	System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */ self
-);
-
-System_Reflection_TypeFilter_CFunction_t
-System_Reflection_TypeFilter_CFunction_Get(
-	System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */ self
-);
-
-System_Reflection_TypeFilter_CDestructorFunction_t
-System_Reflection_TypeFilter_CDestructorFunction_Get(
-	System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */ self
-);
-
-void /* System.Void */
-System_Reflection_TypeFilter_Destroy(
-	System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */ self
-);
-
-#pragma mark - END APIs of System.Reflection.TypeFilter
 
 #pragma mark - BEGIN APIs of System.Reflection.MemberFilter
 System_Reflection_MemberFilter_t /* System.Reflection.MemberFilter */

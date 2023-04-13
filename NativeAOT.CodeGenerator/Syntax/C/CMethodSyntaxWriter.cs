@@ -152,6 +152,8 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
                                    returnOrSetterOrEventHandlerType.IsGenericTypeDefinition ||
                                    returnOrSetterOrEventHandlerType.IsGenericTypeParameter ||
                                    returnOrSetterOrEventHandlerType.IsConstructedGenericType;
+
+        bool isConstructedGenericReturnType = returnOrSetterOrEventHandlerType.IsConstructedGenericType;
         
         bool isGenericArrayReturnType = false;
 
@@ -175,7 +177,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         if (isGenericReturnType) {
             if (isGenericArrayReturnType) {
                 returnOrSetterOrEventHandlerType = typeof(Array);
-            } else {
+            } else if (!isConstructedGenericReturnType) {
                 returnOrSetterOrEventHandlerType = typeof(object);
             }
         }

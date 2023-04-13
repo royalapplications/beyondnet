@@ -209,6 +209,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                                    returnOrSetterOrEventHandlerType.IsGenericTypeParameter ||
                                    returnOrSetterOrEventHandlerType.IsConstructedGenericType;
 
+        bool isConstructedGenericReturnType = returnOrSetterOrEventHandlerType.IsConstructedGenericType;
+
         bool isGenericArrayReturnType = false;
 
         if (!isGenericReturnType &&
@@ -231,7 +233,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         if (isGenericReturnType) {
             if (isGenericArrayReturnType) {
                 returnOrSetterOrEventHandlerType = typeof(Array);
-            } else {
+            } else if (!isConstructedGenericReturnType) {
                 returnOrSetterOrEventHandlerType = typeof(object);
             }
         }

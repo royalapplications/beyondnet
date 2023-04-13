@@ -40,14 +40,8 @@ public class TypeCollector
         Type.GetType("System.Runtime.Serialization.DeserializationToken")!,
         typeof(System.TypedReference),
         Type.GetType("System.Char&")!,
-        typeof(System.ReadOnlySpan<char>),
-        typeof(System.Span<char>),
-        typeof(System.ReadOnlySpan<object>),
-        typeof(System.Span<object>),
-        typeof(System.ReadOnlySpan<byte>),
-        typeof(System.Span<byte>),
-        typeof(System.ReadOnlySpan<int>),
-        typeof(System.Span<int>),
+        typeof(System.ReadOnlySpan<>),
+        typeof(System.Span<>),
         typeof(System.Runtime.CompilerServices.DefaultInterpolatedStringHandler),
         typeof(System.Runtime.InteropServices.ComTypes.ITypeInfo),
         typeof(System.Runtime.InteropServices.ComTypes.ITypeLib),
@@ -332,17 +326,17 @@ public class TypeCollector
         
         // TODO: Generic Types as arguments, properties, etc.
         if (type.IsConstructedGenericType) {
-            unsupportedReason = "Is Constructed Generic Type with Generic Types";
-            return false;
+            Type genericTypeDefinition = type.GetGenericTypeDefinition();
+
+            if (UNSUPPORTED_TYPES.Contains(genericTypeDefinition)) {
+                unsupportedReason = "Is unsupported Type";
+                return false;
+            }
             
-            // Type[] genericArgs = type.GetGenericArguments();
-            //
-            // foreach (Type genericArg in genericArgs) {
-            //     if (genericArg.IsGenericParameter) {
-            //         unsupportedReason = "Is Constructed Generic Type with Generic Types";
-            //         return false;        
-            //     }
-            // }
+            if (type.ContainsNonConstructedGenericTypes()) {
+                unsupportedReason = "Is Constructed Generic Type with non-constructed generic types";
+                return false;
+            }
         }
 
         if (type.IsArray) {

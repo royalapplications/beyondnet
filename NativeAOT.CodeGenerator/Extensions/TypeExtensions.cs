@@ -157,4 +157,25 @@ internal static class TypeExtensions
             return type.GetElementType() ?? type;
         }
     }
+
+    internal static bool ContainsNonConstructedGenericTypes(this Type type)
+    {
+        // if (!type.IsGenericType) {
+        //     return false;
+        // }
+
+        if (type.IsGenericParameter) {
+            return true;
+        }
+        
+        Type[] genericArgs = type.GetGenericArguments();
+
+        foreach (Type genericArg in genericArgs) {
+            if (genericArg.ContainsNonConstructedGenericTypes()) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }

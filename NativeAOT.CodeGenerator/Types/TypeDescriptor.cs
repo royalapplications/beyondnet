@@ -226,7 +226,7 @@ public class TypeDescriptor
                 conversion = "InteropUtils.GetInstance<" + cTypeName + ">({0})?.Trampoline";
             } else {
                 string typeName = type.GetFullNameOrName();
-                
+
                 conversion = "InteropUtils.GetInstance<" + typeName + ">({0})";
             }
 

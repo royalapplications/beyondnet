@@ -2,8 +2,15 @@ namespace NativeAOT.CodeGeneratorInputSample;
 
 public class GenericTests
 {
-    public List<string>? ListOfStrings { get; set; }
-    public Dictionary<string, Exception>? DictionaryOfStringKeysAndExceptionValues { get; set; }
+    public List<string>? ListOfStrings { get; set; } = new() {
+        "A",
+        "B"
+    };
+
+    public Dictionary<string, Exception>? DictionaryOfStringKeysAndExceptionValues { get; set; } = new() {
+        { "A", new Exception("A") },
+        { "B", new Exception("B") }
+    };
 
     public string JoinListOfStrings(List<string> listOfString, string separator)
     {
