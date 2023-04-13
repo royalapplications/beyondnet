@@ -65,39 +65,108 @@ final class SystemCollectionsGenericDictionaryTests: XCTestCase {
 		XCTAssertTrue(dictionaryTypeName.contains(",[System.Exception"))
 	}
 	
-	// TODO
-//	func testUse() {
-//		var exception: System_Exception_t?
+	func testUse() {
+		var exception: System_Exception_t?
+
+		guard let systemStringType = System_String_TypeOf() else {
+			XCTFail("typeof(System.String) should return an instance")
+
+			return
+		}
+
+		defer { System_Type_Destroy(systemStringType) }
+
+		guard let systemExceptionType = System_Exception_TypeOf() else {
+			XCTFail("typeof(System.Exception) should return an instance")
+
+			return
+		}
+
+		defer { System_Type_Destroy(systemExceptionType) }
+
+		guard let dictionary = System_Collections_Generic_Dictionary_A2_Create(systemStringType,
+																			   systemExceptionType,
+																			   &exception),
+			  exception == nil else {
+			XCTFail("System.Collections.Generic.Dictionary<System.String, System.Exception> ctor should not throw and return an instance")
+
+			return
+		}
+
+		defer { System_Collections_Generic_Dictionary_A2_Destroy(dictionary) }
+
+		let exceptionMessage = "My Exception Message"
+        
+        let exceptionMessageDN = exceptionMessage.dotNETString()
+        defer { System_String_Destroy(exceptionMessageDN) }
+        
+        guard let exceptionValue = System_Exception_Create_1(exceptionMessageDN,
+                                                             &exception) else {
+            XCTFail("System.Exception ctor should not throw and return an instance")
+            
+            return
+        }
+        
+        defer { System_Exception_Destroy(exceptionValue) }
+        
+        guard System_Collections_Generic_Dictionary_A2_TryAdd(dictionary,
+                                                              systemStringType,
+                                                              systemExceptionType,
+                                                              exceptionMessageDN,
+                                                              exceptionValue,
+                                                              &exception),
+              exception == nil else {
+            XCTFail("System.Collections.Generic.Dictionary<System.String, System.Exception>.TryAdd should not throw and return true")
+            
+            return
+        }
+        
+//        guard let emptyString = System_String_Empty_Get() else {
+//            XCTFail("System.String.Empty should return an instance")
+//            
+//            return
+//        }
+//        
+//        defer { System_String_Destroy(emptyString) }
+        
+        // TODO: This fails
+//        var valueForEmptyString: System_Object_t?
 //
-//		guard let systemStringType = System_String_TypeOf() else {
-//			XCTFail("typeof(System.String) should return an instance")
+//        guard !System_Collections_Generic_Dictionary_A2_TryGetValue(dictionary,
+//                                                                    systemStringType,
+//                                                                    systemExceptionType,
+//                                                                    emptyString,
+//                                                                    &valueForEmptyString,
+//                                                                    &exception),
+//              exception == nil,
+//              valueForEmptyString == nil else {
+//            XCTFail("System.Collections.Generic.Dictionary<System.String, System.Exception>.TryGetValue should not throw and return false")
 //
-//			return
-//		}
+//            return
+//        }
 //
-//		defer { System_Type_Destroy(systemStringType) }
+//        var valueRet: System_Object_t?
 //
-//		guard let systemExceptionType = System_Exception_TypeOf() else {
-//			XCTFail("typeof(System.Exception) should return an instance")
+//        guard System_Collections_Generic_Dictionary_A2_TryGetValue(dictionary,
+//                                                                   systemStringType,
+//                                                                   systemExceptionType,
+//                                                                   exceptionMessageDN,
+//                                                                   &valueRet,
+//                                                                   &exception),
+//              exception == nil,
+//              let valueRet else {
+//            XCTFail("System.Collections.Generic.Dictionary<System.String, System.Exception>.TryGetValue should not throw and return true")
 //
-//			return
-//		}
+//            return
+//        }
 //
-//		defer { System_Type_Destroy(systemExceptionType) }
+//        defer { System_Object_Destroy(valueRet) }
 //
-//		guard let dictionary = System_Collections_Generic_Dictionary_A2_Create(systemStringType,
-//																			   systemExceptionType,
-//																			   &exception),
-//			  exception == nil else {
-//			XCTFail("System.Collections.Generic.Dictionary<System.String, System.Exception> ctor should not throw and return an instance")
+//        let equal = System_Object_Equals(exceptionValue,
+//                                         valueRet,
+//                                         &exception)
 //
-//			return
-//		}
-//
-//		defer { System_Collections_Generic_Dictionary_A2_Destroy(dictionary) }
-//
-//		let stringExceptionMapping: [System_String_t: System_Exception_t] = [
-//
-//		]
-//	}
+//        XCTAssertNil(exception)
+//        XCTAssertTrue(equal)
+	}
 }
