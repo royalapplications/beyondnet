@@ -230,6 +230,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             }
         }
 
+        Type originalReturnOrSetterOrEventHandlerType = returnOrSetterOrEventHandlerType;
+
         if (isGenericReturnType) {
             if (isGenericArrayReturnType) {
                 returnOrSetterOrEventHandlerType = typeof(Array);
@@ -484,13 +486,64 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
     
                 sb.AppendLine();
             }
+
+            Type returnType;
+            string returnTypeName;
+            string typeOfReturnTypeName;
             
+            if (isGenericReturnType ||
+                isConstructedGenericReturnType) {
+                returnType = originalReturnOrSetterOrEventHandlerType;
+
+                bool returnTypeIsByRef = returnType.IsByRef;
+
+                if (returnTypeIsByRef) {
+                    returnType = returnType.GetNonByRefType();
+                }
+
+                bool returnTypeIsGenericParameter = returnType.IsGenericParameter;
+                bool returnTypeIsGenericMethodParameter = returnType.IsGenericMethodParameter;
+
+                bool returnTypeIsGenericParameterType = returnTypeIsGenericParameter ||
+                                                        returnTypeIsGenericMethodParameter;
+
+                if (returnTypeIsGenericParameterType) {
+                    if (returnTypeIsGenericMethodParameter) {
+                        returnTypeName = $"System.Type.MakeGenericMethodParameter({returnType.GenericParameterPosition})";
+                    } else {
+                        returnTypeName = convertedGenericTypeArgumentNames[returnType.GenericParameterPosition];
+                    }
+
+                    if (returnTypeIsByRef) {
+                        returnTypeName += ".MakeByRefType()";
+                    }
+
+                    if (returnTypeIsGenericMethodParameter ||
+                        returnTypeIsByRef) {
+                        returnTypeName = "System.Object";
+                        typeOfReturnTypeName = "typeof(System.Object)";
+                    } else {
+                        typeOfReturnTypeName = returnTypeName;
+                        
+                        if (returnTypeIsGenericParameterType) {
+                            returnTypeName = "System.Object";
+                        }
+                    }
+                } else {
+                    returnType = returnOrSetterOrEventHandlerType;
+                    returnTypeName = returnType.GetFullNameOrName();
+                    typeOfReturnTypeName = $"typeof({returnTypeName})";
+                }
+            } else {
+                returnType = returnOrSetterOrEventHandlerType;
+                returnTypeName = returnType.GetFullNameOrName();
+                typeOfReturnTypeName = $"typeof({returnTypeName})";
+            }
+
             if (convertedParameterNames.Count > 0) {
                 sb.AppendLine($"{implPrefix}System.Object[] __parametersForGenericCall = new System.Object[] {{ {convertedParameterNamesString} }};");
 
                 List<string> parameterTypeNames = new();
-
-                int parameterIndex = 0;
 
                 foreach (var parameter in parameters) {
                     Type parameterType = parameter.ParameterType;
@@ -553,8 +606,6 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                             parameterTypeNames.Add(typeOfCode);
                         }
                     }
-
-                    parameterIndex++;
                 }
 
                 string parameterTypeNamesString = string.Join(", ", parameterTypeNames);
@@ -584,8 +635,6 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             sb.AppendLine($"{implPrefix}System.Type[] __genericParameterTypesForGenericCall = new System.Type[] {{ {convertedGenericMethodArgumentNamesString} }};");
             sb.AppendLine();
 
-            string returnTypeName = returnOrSetterOrEventHandlerType.GetFullNameOrName();
-
             if (isNonConstructedGenericType) {
                 sb.AppendLine($"{implPrefix}__targetTypeForGenericCall = __targetTypeForGenericCall.MakeGenericType(__genericParameterTypesForGenericType);");
             }
@@ -598,9 +647,9 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 if (memberKind == MemberKind.Method) {
                     sb.AppendLine($"{implPrefix}System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__memberNameForGenericCall, {numberOfGenericMethodArguments}, __parameterTypesForGenericCall) ?? throw new Exception(\"Method {methodName} not found\");");
                 } else if (memberKind == MemberKind.PropertyGetter) {
-                    sb.AppendLine($"{implPrefix}System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetProperty(__memberNameForGenericCall, typeof({returnTypeName})).GetGetMethod() ?? throw new Exception(\"Property {methodName} or getter method not found\");");
+                    sb.AppendLine($"{implPrefix}System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetProperty(__memberNameForGenericCall, {typeOfReturnTypeName}).GetGetMethod() ?? throw new Exception(\"Property {methodName} or getter method not found\");");
                 } else if (memberKind == MemberKind.PropertySetter) {
-                    sb.AppendLine($"{implPrefix}System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetProperty(__memberNameForGenericCall, typeof({returnTypeName})).GetSetMethod() ?? throw new Exception(\"Property {methodName} or setter method not found\");");
+                    sb.AppendLine($"{implPrefix}System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetProperty(__memberNameForGenericCall, {typeOfReturnTypeName}).GetSetMethod() ?? throw new Exception(\"Property {methodName} or setter method not found\");");
                 } else if (memberKind == MemberKind.FieldGetter ||
                            memberKind == MemberKind.FieldSetter) {
                     hasMethodForGenericCall = false;
