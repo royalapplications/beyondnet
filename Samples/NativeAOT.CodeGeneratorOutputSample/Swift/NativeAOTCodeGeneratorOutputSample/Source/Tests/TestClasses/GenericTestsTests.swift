@@ -687,6 +687,38 @@ final class GenericTestsTests: XCTestCase {
         
         defer { System_Array_Destroy(arrayOfStrings) }
         
-        // TODO: Check array contents
+        let length = System_Array_Length_Get(arrayOfStrings,
+                                             &exception)
+        
+        XCTAssertNil(exception)
+        XCTAssertEqual(2, length)
+        
+        guard let firstObject = System_Array_GetValue_1(arrayOfStrings,
+                                                        0,
+                                                        &exception),
+              exception == nil,
+              DNObjectIs(firstObject, systemStringType),
+              let firstString = String(dotNETString: firstObject,
+                                       destroyDotNETString: true) else {
+            XCTFail("System.Array.GetValue should not throw and return an instance")
+            
+            return
+        }
+        
+        XCTAssertEqual("A", firstString)
+        
+        guard let secondObject = System_Array_GetValue_1(arrayOfStrings,
+                                                         1,
+                                                         &exception),
+              exception == nil,
+              DNObjectIs(secondObject, systemStringType),
+              let secondString = String(dotNETString: secondObject,
+                                       destroyDotNETString: true) else {
+            XCTFail("System.Array.GetValue should not throw and return an instance")
+            
+            return
+        }
+        
+        XCTAssertEqual("B", secondString)
     }
 }

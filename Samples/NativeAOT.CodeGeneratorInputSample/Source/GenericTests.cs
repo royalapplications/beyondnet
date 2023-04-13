@@ -2,12 +2,12 @@ namespace NativeAOT.CodeGeneratorInputSample;
 
 public class GenericTests
 {
-    public List<string>? ListOfStrings { get; set; } = new() {
+    public List<string> ListOfStrings { get; set; } = new() {
         "A",
         "B"
     };
 
-    public Dictionary<string, Exception>? DictionaryOfStringKeysAndExceptionValues { get; set; } = new() {
+    public Dictionary<string, Exception> DictionaryOfStringKeysAndExceptionValues { get; set; } = new() {
         { "A", new Exception("A") },
         { "B", new Exception("B") }
     };
