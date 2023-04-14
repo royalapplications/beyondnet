@@ -147,14 +147,16 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             }
         }
         
-        string methodNameC = cSharpGeneratedMember.GetGeneratedName(CodeLanguage.CSharpUnmanaged) ?? throw new Exception("No native name");
-
+        string cMethodName = cSharpGeneratedMember.GetGeneratedName(CodeLanguage.CSharpUnmanaged) ?? throw new Exception("No native name");
+        
+        string methodNameSwift = memberKind.SwiftName(memberInfo);
+        
         if (addToState) {
             state.AddGeneratedMember(
                 memberKind,
                 memberInfo,
                 mayThrow,
-                methodNameC,
+                methodNameSwift,
                 CodeLanguage.Swift
             );
         }
@@ -203,31 +205,32 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         
         TypeDescriptor returnOrSetterTypeDescriptor = returnOrSetterOrEventHandlerType.GetTypeDescriptor(typeDescriptorRegistry);
         
-        string cReturnOrSetterTypeName = returnOrSetterTypeDescriptor.GetTypeName(
-            CodeLanguage.C, 
+        string swiftReturnOrSetterTypeName = returnOrSetterTypeDescriptor.GetTypeName(
+            CodeLanguage.Swift,
+            true,
             true,
             false,
             returnOrSetterOrEventHandlerTypeIsByRef
         );
         
-        string cReturnOrSetterTypeNameWithComment;
+        string swiftReturnOrSetterTypeNameWithComment;
         Type? setterType;
         
         if (memberKind == MemberKind.PropertySetter ||
             memberKind == MemberKind.FieldSetter ||
             memberKind == MemberKind.EventHandlerAdder ||
             memberKind == MemberKind.EventHandlerRemover) {
-            cReturnOrSetterTypeNameWithComment = "void /* System.Void */";
+            swiftReturnOrSetterTypeNameWithComment = string.Empty;
             setterType = returnOrSetterOrEventHandlerType;
         } else {
-            cReturnOrSetterTypeNameWithComment = $"{cReturnOrSetterTypeName} /* {returnOrSetterOrEventHandlerType.GetFullNameOrName()} */";
+            swiftReturnOrSetterTypeNameWithComment = $"{swiftReturnOrSetterTypeName} /* {returnOrSetterOrEventHandlerType.GetFullNameOrName()} */";
             setterType = null;
         }
-        
+
+        #region Func Signature
         string methodSignatureParameters = WriteParameters(
             memberKind,
             setterType,
-            mayThrow,
             isStaticMethod,
             declaringType,
             parameters,
@@ -237,10 +240,72 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         );
         
         StringBuilder sb = new();
-        
-        sb.AppendLine($"{cReturnOrSetterTypeNameWithComment}\n{methodNameC}(\n\t{methodSignatureParameters}\n);");
 
-        generatedName = methodNameC;
+        string staticOrNot = isStaticMethod
+            ? "static "
+            : string.Empty;
+        
+        string funcThrowsPart = mayThrow
+            ? " throws"
+            : string.Empty;
+
+        string funcPrefix;
+        string funcReturn;
+        string funcParams = $"({methodSignatureParameters})";
+
+        if (memberKind == MemberKind.Constructor) {
+            funcPrefix = string.Empty;
+            funcReturn = string.Empty;
+        } else if (memberKind == MemberKind.Destructor) {
+            funcPrefix = string.Empty;
+            funcReturn = string.Empty;
+            funcParams = string.Empty;
+        } else {
+            funcPrefix = $"{staticOrNot}func ";
+            
+            funcReturn = returnOrSetterOrEventHandlerType.IsVoid()
+                ? string.Empty
+                : $" -> {swiftReturnOrSetterTypeNameWithComment}";
+        }
+        
+        string funcSignature = $"{funcPrefix}{methodNameSwift}{funcParams}{funcThrowsPart}{funcReturn} {{"; 
+
+        sb.AppendLine(funcSignature);
+        #endregion Func Signature
+
+        #region Func Implementation
+        StringBuilder sbImpl = new();
+
+        // TODO
+        if (memberKind == MemberKind.Constructor) {
+            sbImpl.AppendLine("// TODO: Constructor");
+        } else if (memberKind == MemberKind.Destructor) {
+            sbImpl.AppendLine($"{cMethodName}(self._handle)");
+        } else if (memberKind == MemberKind.TypeOf) {
+            string returnTypeConversion = returnOrSetterTypeDescriptor.GetTypeConversion(
+                CodeLanguage.C, 
+                CodeLanguage.Swift
+            ) ?? "{0}";
+
+            string invocation = string.Format(returnTypeConversion, $"{cMethodName}()");
+
+            sbImpl.AppendLine($"return {invocation}");
+        } else {
+            sbImpl.AppendLine("// TODO: Method/Property/Field/Event Handler adder/remover");
+        }
+
+        string funcImpl = sbImpl
+            .ToString()
+            .IndentAllLines(1);
+
+        sb.AppendLine(funcImpl);
+        #endregion Func Implementation
+
+        #region Func End
+        sb.AppendLine("}");
+        #endregion Func End
+        
+        generatedName = methodNameSwift;
         
         return sb.ToString();
     }
@@ -248,7 +313,6 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
     internal static string WriteParameters(
         MemberKind memberKind,
         Type? setterOrEventHandlerType,
-        bool mayThrow,
         bool isStatic,
         Type declaringType,
         IEnumerable<ParameterInfo> parameters,
@@ -259,22 +323,16 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
     {
         List<string> parameterList = new();
 
-        if (!isStatic) {
-            TypeDescriptor declaringTypeDescriptor = declaringType.GetTypeDescriptor(typeDescriptorRegistry);
-            
-            string declaringTypeName = declaringTypeDescriptor.GetTypeName(CodeLanguage.C, true);
-            
-            string selfParameterName = "self";
-            string parameterString = $"{declaringTypeName} /* {declaringType.GetFullNameOrName()} */ {selfParameterName}";
-
-            parameterList.Add(parameterString);
-        }
-        
         if (isGeneric) {
             Type typeOfSystemType = typeof(Type);
             TypeDescriptor systemTypeTypeDescriptor = typeOfSystemType.GetTypeDescriptor(typeDescriptorRegistry);
             string systemTypeTypeName = typeOfSystemType.GetFullNameOrName();
-            string nativeSystemTypeTypeName = systemTypeTypeDescriptor.GetTypeName(CodeLanguage.C, true);
+            
+            string nativeSystemTypeTypeName = systemTypeTypeDescriptor.GetTypeName(
+                CodeLanguage.Swift, 
+                true,
+                true
+            );
             
             foreach (var genericArgumentType in genericArguments) {
                 string parameterName = genericArgumentType.Name;
@@ -295,7 +353,11 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             
             TypeDescriptor setterOrEventHandlerTypeDescriptor = setterOrEventHandlerType.GetTypeDescriptor(typeDescriptorRegistry);
             
-            string cSetterOrEventHandlerTypeName = setterOrEventHandlerTypeDescriptor.GetTypeName(CodeLanguage.C, true);
+            string cSetterOrEventHandlerTypeName = setterOrEventHandlerTypeDescriptor.GetTypeName(
+                CodeLanguage.Swift,
+                true,
+                true
+            );
     
             string parameterString = $"{cSetterOrEventHandlerTypeName} /* {setterOrEventHandlerType.GetFullNameOrName()} */ value";
             parameterList.Add(parameterString);
@@ -333,7 +395,8 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
                 
                 string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(
-                    CodeLanguage.C,
+                    CodeLanguage.Swift,
+                    true,
                     true,
                     isOutParameter,
                     isByRefParameter
@@ -344,24 +407,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             }
         }
 
-        if (mayThrow) {
-            Type exceptionType = typeof(Exception);
-            TypeDescriptor outExceptionTypeDescriptor = exceptionType.GetTypeDescriptor(typeDescriptorRegistry);
-            
-            string outExceptionTypeName = outExceptionTypeDescriptor.GetTypeName(
-                CodeLanguage.C,
-                true,
-                true,
-                true
-            );
-            
-            string outExceptionParameterName = "outException";
-
-            string outExceptionParameterString = $"{outExceptionTypeName} /* {exceptionType.GetFullNameOrName()} */ {outExceptionParameterName}"; 
-            parameterList.Add(outExceptionParameterString);
-        }
-
-        string parametersString = string.Join(",\n\t", parameterList);
+        string parametersString = string.Join(", ", parameterList);
 
         return parametersString;
     }

@@ -328,6 +328,8 @@ public class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWriter
 
             return string.Empty;
         }
+
+        bool isAbstract = type.IsAbstract;
         
         var cSharpMembers = cSharpUnmanagedResult.GeneratedTypes[type];
         var cMembers = cResult.GeneratedTypes[type];
@@ -336,12 +338,30 @@ public class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWriter
 
         string fullTypeName = type.GetFullNameOrName();
         TypeDescriptor typeDescriptor = type.GetTypeDescriptor(typeDescriptorRegistry);
+        string cTypeName = typeDescriptor.GetTypeName(CodeLanguage.C, false);
         string swiftTypeName =  typeDescriptor.GetTypeName(CodeLanguage.Swift, false);
         
         bool isDelegate = type.IsDelegate();
 
         if (writeTypeDefinition) {
             sb.AppendLine($"public class {swiftTypeName} /* {fullTypeName} */ {{");
+
+            if (!isAbstract) {
+                sb.AppendLine($"\tlet _handle: {cTypeName}");
+                sb.AppendLine();
+                
+                sb.AppendLine($"\trequired init(handle: {cTypeName}) {{");
+                sb.AppendLine("\t\tself._handle = handle");
+                sb.AppendLine("\t}");
+                sb.AppendLine();
+                
+                sb.AppendLine($"\tconvenience init?(handle: {cTypeName}?) {{");
+                sb.AppendLine("\t\tguard let handle else { return nil }");
+                sb.AppendLine();
+                sb.AppendLine("\t\tself.init(handle: handle)");
+                sb.AppendLine("\t}");
+                sb.AppendLine();
+            }
         }
 
         // if (isDelegate) {
@@ -500,7 +520,6 @@ public class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWriter
         string parameters = SwiftMethodSyntaxWriter.WriteParameters(
             MemberKind.Automatic,
             null,
-            false,
             true,
             type,
             parameterInfos,

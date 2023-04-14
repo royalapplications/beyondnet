@@ -72,6 +72,20 @@ public class TypeDescriptor
         return GetTypeName(
             language,
             includeModifiers,
+            true
+        );
+    }
+    
+    public string GetTypeName(
+        CodeLanguage language,
+        bool includeModifiers,
+        bool isOptional
+    )
+    {
+        return GetTypeName(
+            language,
+            includeModifiers,
+            isOptional,
             false,
             false
         );
@@ -80,6 +94,7 @@ public class TypeDescriptor
     public string GetTypeName(
         CodeLanguage language,
         bool includeModifiers,
+        bool isOptional,
         bool isOutParameter,
         bool isByRefParameter
     )
@@ -98,6 +113,7 @@ public class TypeDescriptor
             typeName = AddModifiersToTypeName(
                 typeName,
                 language,
+                isOptional,
                 isOutParameter,
                 isByRefParameter
             );
@@ -109,6 +125,7 @@ public class TypeDescriptor
     private string AddModifiersToTypeName(
         string typeName,
         CodeLanguage language,
+        bool isOptional,
         bool isOutParameter,
         bool isByRefParameter
     )
@@ -153,6 +170,10 @@ public class TypeDescriptor
                 } else {
                     typeNameWithModifiers = $"{typeName}";
                 }
+
+                if (isOptional) {
+                    typeNameWithModifiers += "?";
+                }
                 
                 break;
             default:
@@ -186,7 +207,9 @@ public class TypeDescriptor
 
                 return constructedCTypeName;
             case CodeLanguage.Swift:
-                return ManagedType.CTypeName();
+                string swiftTypeName = ManagedType.CTypeName();
+                
+                return swiftTypeName;
             default:
                 throw new NotImplementedException();
         }
@@ -254,6 +277,18 @@ public class TypeDescriptor
             }
 
             return conversion;
+        } else if (sourceLanguage == CodeLanguage.C &&
+                   targetLanguage == CodeLanguage.Swift) {
+            string swiftTypeName = GetTypeName(
+                CodeLanguage.Swift,
+                false
+            );
+
+            if (IsEnum) {
+                return $"{swiftTypeName}(cValue: {{0}})";
+            } else {
+                return $"{swiftTypeName}(handle: {{0}})";
+            }
         } else {
             throw new Exception("Unknown language pair");
         }

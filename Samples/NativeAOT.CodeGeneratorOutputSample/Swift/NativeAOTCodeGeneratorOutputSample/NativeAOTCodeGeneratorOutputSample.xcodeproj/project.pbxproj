@@ -30,13 +30,13 @@
 		E75FFBAC29E83C70006904BA /* SystemTupleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75FFBAB29E83C70006904BA /* SystemTupleTests.swift */; };
 		E763998729E5537300C2541B /* TypeConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E763998629E5537300C2541B /* TypeConversionTests.swift */; };
 		E763998929E55EC600C2541B /* PrimitivesBoxingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E763998829E55EC600C2541B /* PrimitivesBoxingTests.swift */; };
-		E779611D29E9587400140279 /* TypeDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E779611C29E9524B00140279 /* TypeDefinitions.swift */; };
 		E779630029DC171E00E1E70B /* SystemRuntimeInteropServicesMarshalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77962FF29DC171E00E1E70B /* SystemRuntimeInteropServicesMarshalTests.swift */; };
 		E779630229DC54E300E1E70B /* SystemThreadingTasksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E779630129DC54E300E1E70B /* SystemThreadingTasksTests.swift */; };
 		E77A85B229DD7EF9000CA09E /* GenericTestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A85B129DD7EF9000CA09E /* GenericTestsTests.swift */; };
 		E790C0DB29E6ABC70054AA4B /* GenericTestClassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E790C0DA29E6ABC70054AA4B /* GenericTestClassTests.swift */; };
 		E790C0DD29E6B1B80054AA4B /* SystemCollectionsGenericListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E790C0DC29E6B1B80054AA4B /* SystemCollectionsGenericListTests.swift */; };
 		E790C0DF29E6B2500054AA4B /* SystemCollectionsGenericDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E790C0DE29E6B2500054AA4B /* SystemCollectionsGenericDictionaryTests.swift */; };
+		E79335A629E98D3D0035FCEB /* SwiftSyntaxPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79335A529E98D3D0035FCEB /* SwiftSyntaxPlayground.swift */; };
 		E79B376529E002E700118C35 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B376429E002E700118C35 /* StringExtensions.swift */; };
 		E7AC3D8C29E0391200C5609B /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AC3D8A29E038E000C5609B /* XCTestCase+Extensions.swift */; };
 		E7C8CF0529C1FA9500C4230F /* SystemGuidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0429C1FA9500C4230F /* SystemGuidTests.swift */; };
@@ -119,6 +119,7 @@
 		E790C0DA29E6ABC70054AA4B /* GenericTestClassTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTestClassTests.swift; sourceTree = "<group>"; };
 		E790C0DC29E6B1B80054AA4B /* SystemCollectionsGenericListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemCollectionsGenericListTests.swift; sourceTree = "<group>"; };
 		E790C0DE29E6B2500054AA4B /* SystemCollectionsGenericDictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemCollectionsGenericDictionaryTests.swift; sourceTree = "<group>"; };
+		E79335A529E98D3D0035FCEB /* SwiftSyntaxPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSyntaxPlayground.swift; sourceTree = "<group>"; };
 		E79B376429E002E700118C35 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		E7AC3D8A29E038E000C5609B /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
 		E7C8CF0429C1FA9500C4230F /* SystemGuidTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemGuidTests.swift; sourceTree = "<group>"; };
@@ -184,6 +185,7 @@
 				E70D116829BF9F7E00B4E738 /* TypeDefinitions.h */,
 				E779611C29E9524B00140279 /* TypeDefinitions.swift */,
 				E70D116029BF9F2600B4E738 /* NativeAOTCodeGeneratorOutputSample.h */,
+				E79335A529E98D3D0035FCEB /* SwiftSyntaxPlayground.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -407,7 +409,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E779611D29E9587400140279 /* TypeDefinitions.swift in Sources */,
+				E79335A629E98D3D0035FCEB /* SwiftSyntaxPlayground.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

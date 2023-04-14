@@ -276,6 +276,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         string unmanagedReturnOrSetterOrEventHandlerTypeName = returnOrSetterOrEventHandlerTypeDescriptor.GetTypeName(
             CodeLanguage.CSharpUnmanaged,
             true,
+            true,
             false,
             isReturnOrSetterOrEventHandlerTypeByRef
         );
@@ -366,6 +367,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         if (isReturning) {
             string fullReturnTypeName = returnOrSetterOrEventHandlerTypeDescriptor.GetTypeName(
                 CodeLanguage.CSharp,
+                true,
                 true,
                 false,
                 isReturnOrSetterOrEventHandlerTypeByRef
@@ -987,6 +989,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(
                     targetLanguage,
                     true,
+                    true,
                     isOutParameter,
                     isByRefParameter
                 );
@@ -1002,6 +1005,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             
             string outExceptionTypeName = outExceptionTypeDescriptor.GetTypeName(
                 targetLanguage,
+                true,
                 true,
                 true,
                 true
@@ -1168,6 +1172,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             } else if (typeConversion != null) {
                 string parameterTypeName = parameterTypeDescriptor.GetTypeName(
                     targetLanguage,
+                    true,
                     true,
                     isOutParameter,
                     isByRefParameter

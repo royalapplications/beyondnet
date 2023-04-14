@@ -201,6 +201,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         string cReturnOrSetterTypeName = returnOrSetterTypeDescriptor.GetTypeName(
             CodeLanguage.C, 
             true,
+            true,
             false,
             returnOrSetterOrEventHandlerTypeIsByRef
         );
@@ -330,6 +331,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
                 string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(
                     CodeLanguage.C,
                     true,
+                    true,
                     isOutParameter,
                     isByRefParameter
                 );
@@ -345,6 +347,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             
             string outExceptionTypeName = outExceptionTypeDescriptor.GetTypeName(
                 CodeLanguage.C,
+                true,
                 true,
                 true,
                 true
