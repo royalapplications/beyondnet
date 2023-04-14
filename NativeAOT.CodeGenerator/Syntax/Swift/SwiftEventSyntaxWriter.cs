@@ -4,9 +4,9 @@ using System.Text;
 using NativeAOT.CodeGenerator.Generator;
 using NativeAOT.CodeGenerator.Types;
 
-namespace NativeAOT.CodeGenerator.Syntax.C;
+namespace NativeAOT.CodeGenerator.Syntax.Swift;
 
-public class CEventSyntaxWriter: CMethodSyntaxWriter, IEventSyntaxWriter
+public class SwiftEventSyntaxWriter: SwiftMethodSyntaxWriter, IEventSyntaxWriter
 {
     public new string Write(object @object, State state)
     {

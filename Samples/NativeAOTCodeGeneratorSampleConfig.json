@@ -3,6 +3,7 @@
 	
 	"CSharpUnmanagedOutputPath": "NativeAOT.CodeGeneratorOutputSample/UnmanagedGenerated.cs",
 	"COutputPath": "NativeAOT.CodeGeneratorOutputSample/Swift/NativeAOTCodeGeneratorOutputSample/Source/TypeDefinitions.h",
+	"SwiftOutputPath": "NativeAOT.CodeGeneratorOutputSample/Swift/NativeAOTCodeGeneratorOutputSample/Source/TypeDefinitions.swift",
 	
 	"EmitUnsupported": false,
 	"GenerateTypeCheckedDestroyMethods": true,

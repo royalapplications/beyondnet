@@ -18,12 +18,22 @@ public class State
     }
     
     public Result? CSharpUnmanagedResult { get; }
+    public Result? CResult { get; }
 
     public State() { }
 
     public State(Result cSharpUnmanagedResult)
     {
         CSharpUnmanagedResult = cSharpUnmanagedResult ?? throw new ArgumentNullException(nameof(cSharpUnmanagedResult));
+    }
+    
+    public State(
+        Result cSharpUnmanagedResult,
+        Result cResult
+    )
+    {
+        CSharpUnmanagedResult = cSharpUnmanagedResult ?? throw new ArgumentNullException(nameof(cSharpUnmanagedResult));
+        CResult = cResult ?? throw new ArgumentNullException(nameof(cResult));
     }
 
     public GeneratedMember AddGeneratedMember(

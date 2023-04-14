@@ -5,26 +5,26 @@ using NativeAOT.CodeGenerator.Extensions;
 using NativeAOT.CodeGenerator.Generator;
 using NativeAOT.CodeGenerator.Types;
 
-using Settings = NativeAOT.CodeGenerator.Generator.C.Settings;
+using Settings = NativeAOT.CodeGenerator.Generator.Swift.Settings;
 
-namespace NativeAOT.CodeGenerator.Syntax.C;
+namespace NativeAOT.CodeGenerator.Syntax.Swift;
 
-public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
+public class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWriter
 {
     public Settings Settings { get; }
     
-    private readonly Dictionary<MemberTypes, ICSyntaxWriter> m_syntaxWriters = new() {
-        { MemberTypes.Constructor, new CConstructorSyntaxWriter() },
-        { MemberTypes.Property, new CPropertySyntaxWriter() },
-        { MemberTypes.Method, new CMethodSyntaxWriter() },
-        { MemberTypes.Field, new CFieldSyntaxWriter() },
-        { MemberTypes.Event, new CEventSyntaxWriter() }
+    private readonly Dictionary<MemberTypes, ISwiftSyntaxWriter> m_syntaxWriters = new() {
+        { MemberTypes.Constructor, new SwiftConstructorSyntaxWriter() },
+        { MemberTypes.Property, new SwiftPropertySyntaxWriter() },
+        { MemberTypes.Method, new SwiftMethodSyntaxWriter() },
+        { MemberTypes.Field, new SwiftFieldSyntaxWriter() },
+        { MemberTypes.Event, new SwiftEventSyntaxWriter() }
     };
     
-    private CDestructorSyntaxWriter m_destructorSyntaxWriter = new();
-    private CTypeOfSyntaxWriter m_typeOfSyntaxWriter = new();
+    private SwiftDestructorSyntaxWriter m_destructorSyntaxWriter = new();
+    private SwiftTypeOfSyntaxWriter m_typeOfSyntaxWriter = new();
     
-    public CTypeSyntaxWriter(Settings settings)
+    public SwiftTypeSyntaxWriter(Settings settings)
     {
         Settings = settings ?? throw new ArgumentNullException(nameof(settings));
     }
@@ -38,12 +38,13 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
     {
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
-        // Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
+        Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
+        Result cResult = state.CResult ?? throw new Exception("No CResult provided");
         
         if (type.IsPrimitive ||
             type.IsPointer ||
             type.IsByRef) {
-            // No need to generate C code for those kinds of types
+            // No need to generate Swift code for those kinds of types
 
             return string.Empty;
         }
@@ -66,7 +67,7 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
             );
 
             sb.AppendLine(enumdefCode);
-        } else if (type.IsDelegate()) {
+        } /* else if (type.IsDelegate()) {
             var delegateInvokeMethod = type.GetDelegateInvokeMethod();
 
             string delegateTypedefCode = WriteDelegateTypeDefs(
@@ -79,21 +80,27 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
             string typedefCode = WriteTypeDef(cTypeName);
             
             sb.AppendLine(typedefCode);
-        }
+        } */
         
         return sb.ToString();
     }
 
+    // TODO
     private string WriteTypeDef(string cTypeName)
     {
+        return "// TODO: Type Def";
+        
         return $"typedef void* {cTypeName}_t;";
     }
 
+    // TODO
     private string WriteDelegateTypeDefs(
         Type delegateType,
         MethodInfo? delegateInvokeMethod
     )
     {
+        return "// TODO: Delegate Type Def";
+        
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
         string? fullTypeName = delegateType.FullName;
@@ -186,22 +193,38 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         Type underlyingType = type.GetEnumUnderlyingType();
         TypeDescriptor underlyingTypeDescriptor = underlyingType.GetTypeDescriptor(typeDescriptorRegistry);
 
-        string underlyingTypeName = underlyingTypeDescriptor.GetTypeName(CodeLanguage.C, false);
+        string underlyingSwiftTypeName = underlyingTypeDescriptor.GetTypeName(CodeLanguage.Swift, false);
+        string cEnumTypeName = typeDescriptor.GetTypeName(CodeLanguage.C, false);
+        string swiftEnumTypeName = typeDescriptor.GetTypeName(CodeLanguage.Swift, false);
         
         bool isFlagsEnum = type.IsDefined(typeof(FlagsAttribute), false);
 
-        List<string> clangAttributes = new() {
-            "__attribute__((enum_extensibility(open)))"
-        };
-
         if (isFlagsEnum) {
-            clangAttributes.Add("__attribute__((flag_enum))");
+            sb.AppendLine($"public struct {swiftEnumTypeName}: OptionSet {{");
+
+            sb.AppendLine($"\tpublic typealias RawValue = {underlyingSwiftTypeName}");
+            sb.AppendLine("\tpublic let rawValue: RawValue");
+            sb.AppendLine();
+            sb.AppendLine("\tpublic init(rawValue: RawValue) {");
+            sb.AppendLine("\t\tself.rawValue = rawValue");
+            sb.AppendLine("\t}");
+            sb.AppendLine();
+        } else {
+            sb.AppendLine($"public enum {swiftEnumTypeName}: {underlyingSwiftTypeName} {{");
         }
 
-        string clangAttributesString = string.Join(' ', clangAttributes);
+        string initUnwrap = isFlagsEnum 
+            ? string.Empty
+            : "!";
+        
+        sb.AppendLine($"\tinit(cValue: {cEnumTypeName}) {{");
+        sb.AppendLine($"\t\tself.init(rawValue: cValue.rawValue){initUnwrap}");
+        sb.AppendLine("\t}");
 
-        sb.AppendLine($"typedef enum {clangAttributesString}: {underlyingTypeName} {{");
-
+        sb.AppendLine();
+        sb.AppendLine($"\tvar cValue: {cEnumTypeName} {{ {cEnumTypeName}(rawValue: rawValue){initUnwrap} }}");
+        sb.AppendLine();
+        
         var caseNames = type.GetEnumNames();
         var values = type.GetEnumValuesAsUnderlyingType() ?? throw new Exception("No enum values");
 
@@ -209,28 +232,79 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
             throw new Exception("The number of case names in an enum must match the number of values");
         }
 
+        Dictionary<object, string> valueToNameMapping = new();
+
+        for (int i = 0; i < values.Length; i++) {
+            object value = values.GetValue(i) ?? throw new ArgumentNullException(nameof(value));
+            string name = caseNames[i];
+
+            if (valueToNameMapping.ContainsKey(value)) {
+                continue;
+            }
+
+            valueToNameMapping[value] = name;
+        }
+
+        Dictionary<string, string> duplicateCases = new();
+        List<object> uniqueValues = new();
+
+        for (int i = 0; i < values.Length; i++) {
+            object value = values.GetValue(i) ?? throw new ArgumentNullException(nameof(value));
+            string name = caseNames[i];
+
+            if (uniqueValues.Contains(value)) {
+                string originalName = valueToNameMapping[value];
+
+                duplicateCases[name] = originalName;
+            } else {
+                uniqueValues.Add(value);
+            }
+        }
+
         List<string> enumCases = new();
 
         for (int i = 0; i < caseNames.Length; i++) {
             string caseName = caseNames[i];
+            string swiftCaseName = caseName.ToSwiftEnumCaseName();
+
             var value = values.GetValue(i) ?? throw new Exception("No enum value for case");
+
+            string caseCode;
+
+            if (isFlagsEnum) {
+                string caseCodeDecl = $"public static let {swiftCaseName} = {swiftEnumTypeName}";
+                
+                if (value.Equals(0)) {
+                    caseCode = $"{caseCodeDecl}([])";
+                } else {
+                    caseCode = $"{caseCodeDecl}(rawValue: {value})";
+                }
+            } else {
+                if (duplicateCases.TryGetValue(caseName, out string? caseNameWithEquivalentValue)) {
+                    string swiftCaseNameWithEquivalentValue = caseNameWithEquivalentValue.ToSwiftEnumCaseName();
+                    
+                    caseCode = $"public static let {swiftCaseName} = {swiftEnumTypeName}.{swiftCaseNameWithEquivalentValue}";
+                } else {
+                    caseCode = $"case {swiftCaseName} = {value}";
+                }
+            }
             
-            enumCases.Add($"\t{cTypeName}_{caseName} = {value.ToString()}");
+            enumCases.Add($"\t{caseCode}");
         }
 
-        string enumCasesString = string.Join(",\n", enumCases);
+        string enumCasesString = string.Join('\n', enumCases);
 
         sb.AppendLine(enumCasesString);
-
-        string cEnumTypeName = typeDescriptor.GetTypeName(CodeLanguage.C, false);
-        
-        sb.AppendLine($"}} {cEnumTypeName};");
+        sb.AppendLine("}");
         
         return sb.ToString();
     }
 
+    // TODO
     public string WriteMembers(Type type, State state)
     {
+        return "// TODO: Members";
+        
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
@@ -286,7 +360,7 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
             var memberKind = cSharpMember.MemberKind;
             var memberType = member?.MemberType;
 
-            ICSyntaxWriter? syntaxWriter = GetSyntaxWriter(
+            ISwiftSyntaxWriter? syntaxWriter = GetSyntaxWriter(
                 memberKind,
                 memberType ?? MemberTypes.Custom
             );
@@ -327,6 +401,7 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         return sb.ToString();
     }
 
+    // TODO
     private void WriteDelegateTypeMembers(
         TypeDescriptor typeDescriptor,
         string fullTypeName,
@@ -337,6 +412,10 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         TypeDescriptorRegistry typeDescriptorRegistry
     )
     {
+        sb.AppendLine("// TODO: Delegate Members");
+        
+        return;
+        
         // TODO: Generics
         
         Type type = typeDescriptor.ManagedType;
@@ -396,7 +475,7 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
             ? "void"
             : returnTypeDescriptor.GetTypeName(CodeLanguage.C, true);
 
-        string parameters = CMethodSyntaxWriter.WriteParameters(
+        string parameters = SwiftMethodSyntaxWriter.WriteParameters(
             MemberKind.Automatic,
             null,
             false,
@@ -452,7 +531,7 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         // TODO: Add to State
     }
 
-    private ICSyntaxWriter? GetSyntaxWriter(
+    private ISwiftSyntaxWriter? GetSyntaxWriter(
         MemberKind memberKind,
         MemberTypes memberType
     )
@@ -465,7 +544,7 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
 
         m_syntaxWriters.TryGetValue(
             memberType,
-            out ICSyntaxWriter? syntaxWriter
+            out ISwiftSyntaxWriter? syntaxWriter
         );
 
         return syntaxWriter;

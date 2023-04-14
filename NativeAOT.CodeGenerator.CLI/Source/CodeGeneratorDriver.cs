@@ -5,6 +5,7 @@ using NativeAOT.CodeGenerator.Collectors;
 using NativeAOT.CodeGenerator.Generator;
 using NativeAOT.CodeGenerator.Generator.C;
 using NativeAOT.CodeGenerator.Generator.CSharpUnmanaged;
+using NativeAOT.CodeGenerator.Generator.Swift;
 using NativeAOT.CodeGenerator.SourceCode;
 
 namespace NativeAOT.CodeGenerator.CLI;
@@ -20,6 +21,7 @@ internal class CodeGeneratorDriver
 
     internal void Generate()
     {
+        #region Load Assembly
         string assemblyPath = Configuration.AssemblyPath.ExpandTildeAndGetAbsolutePath();
         
         Assembly assembly;
@@ -27,7 +29,9 @@ internal class CodeGeneratorDriver
         using (AssemblyLoader assemblyLoader = new()) {
             assembly = assemblyLoader.LoadFrom(assemblyPath);
         }
+        #endregion Load Assembly
 
+        #region Collect Types
         Type[] includedTypes = TypesFromTypeNames(
             Configuration.IncludedTypeNames ?? Array.Empty<string>(),
             assembly
@@ -44,7 +48,10 @@ internal class CodeGeneratorDriver
             excludedTypes,
             out Dictionary<Type, string> unsupportedTypes
         );
+        #endregion Collect Types
 
+        #region Generate Code
+        #region C# Unmanaged
         bool emitUnsupported = Configuration.EmitUnsupported ?? false;
         bool generateTypeCheckedDestroyMethods = Configuration.GenerateTypeCheckedDestroyMethods ?? false;
 
@@ -60,7 +67,9 @@ internal class CodeGeneratorDriver
 
         var cSharpUnmanagedResult = cSharpUnmanagedResultObject.Result;
         var cSharpUnmanagedCode = cSharpUnmanagedResultObject.GeneratedCode;
-        
+        #endregion C# Unmanaged
+
+        #region C
         var cResultObject = GenerateCCode(
             types,
             unsupportedTypes,
@@ -70,7 +79,23 @@ internal class CodeGeneratorDriver
 
         var cResult = cResultObject.Result;
         var cCode = cResultObject.GeneratedCode;
+        #endregion C
+
+        #region Swift
+        var swiftResultObject = GenerateSwiftCode(
+            types,
+            unsupportedTypes,
+            cSharpUnmanagedResult,
+            cResult,
+            emitUnsupported
+        );
+
+        var swiftResult = swiftResultObject.Result;
+        var swiftCode = swiftResultObject.GeneratedCode;
+        #endregion Swift
+        #endregion Generate Code
         
+        #region Write Output to Files
         string? cSharpUnmanagedOutputPath = Configuration.CSharpUnmanagedOutputPath?
             .ExpandTildeAndGetAbsolutePath();
 
@@ -88,6 +113,16 @@ internal class CodeGeneratorDriver
             cCode,
             cOutputPath
         );
+        
+        string? swiftOutputPath = Configuration.SwiftOutputPath?
+            .ExpandTildeAndGetAbsolutePath();
+        
+        WriteCodeToFileOrPrintToConsole(
+            "Swift",
+            swiftCode,
+            swiftOutputPath
+        );
+        #endregion Write Output to Files
     }
     
     private static Type[] TypesFromTypeNames(
@@ -240,6 +275,51 @@ internal class CodeGeneratorDriver
             sb.AppendLine($"#pragma mark - BEGIN {section.Name}");
             sb.AppendLine(section.Code.ToString());
             sb.AppendLine($"#pragma mark - END {section.Name}");
+            sb.AppendLine();
+        }
+
+        return new(result, sb.ToString());
+    }
+    
+    private static CodeGeneratorResult GenerateSwiftCode(
+        HashSet<Type> types,
+        Dictionary<Type, string> unsupportedTypes,
+        Result cSharpUnmanagedResult,
+        Result cResult,
+        bool emitUnsupported
+    )
+    {
+        SourceCodeWriter writer = new();
+        
+        Generator.Swift.Settings settings = new() {
+            EmitUnsupported = emitUnsupported
+        };
+        
+        SwiftCodeGenerator codeGenerator = new(settings, cSharpUnmanagedResult, cResult);
+        
+        Result result = codeGenerator.Generate(
+            types,
+            unsupportedTypes,
+            writer
+        );
+        
+        StringBuilder sb = new();
+
+        int generatedTypesCount = result.GeneratedTypes.Count;
+        int generatedMembersCount = 0;
+
+        foreach (var generatedMembers in result.GeneratedTypes.Values) {
+            generatedMembersCount += generatedMembers.Count();
+        }
+
+        sb.AppendLine($"// Number of generated types: {generatedTypesCount}");
+        sb.AppendLine($"// Number of generated members: {generatedMembersCount}");
+        sb.AppendLine();
+
+        foreach (var section in writer.Sections) {
+            sb.AppendLine($"// MARK: - BEGIN {section.Name}");
+            sb.AppendLine(section.Code.ToString());
+            sb.AppendLine($"// MARK: - END {section.Name}");
             sb.AppendLine();
         }
 

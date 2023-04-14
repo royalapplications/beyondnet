@@ -147,6 +147,14 @@ public class TypeDescriptor
                 }
                 
                 break;
+            case CodeLanguage.Swift:
+                if (isOutParameter || isByRefParameter) {
+                    typeNameWithModifiers = $"inout {typeName}";
+                } else {
+                    typeNameWithModifiers = $"{typeName}";
+                }
+                
+                break;
             default:
                 throw new NotImplementedException();
         }
@@ -177,6 +185,8 @@ public class TypeDescriptor
                 }
 
                 return constructedCTypeName;
+            case CodeLanguage.Swift:
+                return ManagedType.CTypeName();
             default:
                 throw new NotImplementedException();
         }
