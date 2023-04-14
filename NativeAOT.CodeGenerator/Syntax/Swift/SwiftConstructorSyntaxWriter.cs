@@ -15,7 +15,10 @@ public class SwiftConstructorSyntaxWriter: SwiftMethodSyntaxWriter, IConstructor
     public string Write(ConstructorInfo constructor, State state)
     {
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
+        Result cResult = state.CResult ?? throw new Exception("No CResult provided");
+        
         GeneratedMember cSharpGeneratedMember = cSharpUnmanagedResult.GetGeneratedMember(constructor) ?? throw new Exception("No C# generated member");
+        GeneratedMember cGeneratedMember = cResult.GetGeneratedMember(constructor) ?? throw new Exception("No C generated member");
         
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
@@ -35,6 +38,7 @@ public class SwiftConstructorSyntaxWriter: SwiftMethodSyntaxWriter, IConstructor
 
         string ctorCode = WriteMethod(
             cSharpGeneratedMember,
+            cGeneratedMember,
             constructor,
             methodKind,
             isStaticMethod,
@@ -42,8 +46,10 @@ public class SwiftConstructorSyntaxWriter: SwiftMethodSyntaxWriter, IConstructor
             declaringType,
             returnType,
             parameters,
+            true,
             typeDescriptorRegistry,
-            state
+            state,
+            out _
         );
 
         return ctorCode;

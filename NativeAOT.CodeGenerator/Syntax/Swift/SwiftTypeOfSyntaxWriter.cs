@@ -22,12 +22,16 @@ public class SwiftTypeOfSyntaxWriter: SwiftMethodSyntaxWriter, ITypeOfSyntaxWrit
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
+        Result cResult = state.CResult ?? throw new Exception("No CResult provided");
+        
         GeneratedMember cSharpGeneratedMember = cSharpUnmanagedResult.GetGeneratedTypeOf(type) ?? throw new Exception("No C# generated typeOf");
+        GeneratedMember cGeneratedMember = cResult.GetGeneratedTypeOf(type) ?? throw new Exception("No C generated typeOf");
 
         bool mayThrow = cSharpGeneratedMember.MayThrow;
 
         string code = WriteMethod(
             cSharpGeneratedMember,
+            cGeneratedMember,
             null,
             MemberKind.TypeOf,
             true,
@@ -35,8 +39,10 @@ public class SwiftTypeOfSyntaxWriter: SwiftMethodSyntaxWriter, ITypeOfSyntaxWrit
             type,
             typeof(Type),
             Array.Empty<ParameterInfo>(),
+            true,
             typeDescriptorRegistry,
-            state
+            state,
+            out _
         );
 
         return code;

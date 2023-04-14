@@ -31,7 +31,6 @@ public class SwiftCodeGenerator: ICodeGenerator
         SourceCodeSection utilsSection = writer.AddSection("Utils");
         SourceCodeSection commonTypesSection = writer.AddSection("Common Types");
         SourceCodeSection unsupportedTypesSection = writer.AddSection("Unsupported Types");
-        SourceCodeSection typedefsSection = writer.AddSection("Type Definitions");
         SourceCodeSection apisSection = writer.AddSection("APIs");
         SourceCodeSection footerSection = writer.AddSection("Footer");
         
@@ -69,11 +68,8 @@ public class SwiftCodeGenerator: ICodeGenerator
             Syntax.State state = new(CSharpUnmanagedResult, CResult);
             
             string typeCode = typeSyntaxWriter.Write(type, state);
-            typedefsSection.Code.AppendLine(typeCode);
+            apisSection.Code.AppendLine(typeCode);
 
-            string membersCode = typeSyntaxWriter.WriteMembers(type, state);
-            apisSection.Code.AppendLine(membersCode);
-            
             result.AddGeneratedType(
                 type,
                 state.GeneratedMembers

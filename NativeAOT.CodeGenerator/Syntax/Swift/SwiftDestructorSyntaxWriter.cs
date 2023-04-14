@@ -23,12 +23,16 @@ public class SwiftDestructorSyntaxWriter: SwiftMethodSyntaxWriter, IDestructorSy
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
+        Result cResult = state.CResult ?? throw new Exception("No CResult provided");
+        
         GeneratedMember cSharpGeneratedMember = cSharpUnmanagedResult.GetGeneratedDestructor(type) ?? throw new Exception("No C# generated destructor");
+        GeneratedMember cGeneratedMember = cResult.GetGeneratedDestructor(type) ?? throw new Exception("No C generated destructor");
 
         bool mayThrow = cSharpGeneratedMember.MayThrow;
 
         string code = WriteMethod(
             cSharpGeneratedMember,
+            cGeneratedMember,
             null,
             MemberKind.Destructor,
             false,
@@ -36,8 +40,10 @@ public class SwiftDestructorSyntaxWriter: SwiftMethodSyntaxWriter, IDestructorSy
             type,
             typeof(void),
             Array.Empty<ParameterInfo>(),
+            true,
             typeDescriptorRegistry,
-            state
+            state,
+            out _
         );
 
         return code;

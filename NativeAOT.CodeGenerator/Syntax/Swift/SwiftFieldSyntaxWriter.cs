@@ -15,16 +15,27 @@ public class SwiftFieldSyntaxWriter: SwiftMethodSyntaxWriter, IFieldSyntaxWriter
 
     public string Write(FieldInfo field, State state)
     {
+        const bool addToState = false;
+        
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
+        Result cResult = state.CResult ?? throw new Exception("No CResult provided");
         
-        GeneratedMember? generatedGetterMember = cSharpUnmanagedResult.GetGeneratedMember(field, MemberKind.FieldGetter);
-        GeneratedMember? generatedSetterMember = cSharpUnmanagedResult.GetGeneratedMember(field, MemberKind.FieldSetter);
+        GeneratedMember? cSharpGeneratedGetterMember = cSharpUnmanagedResult.GetGeneratedMember(field, MemberKind.FieldGetter);
+        GeneratedMember? cGeneratedGetterMember = cResult.GetGeneratedMember(field, MemberKind.FieldGetter);
+        
+        GeneratedMember? cSharpGeneratedSetterMember = cSharpUnmanagedResult.GetGeneratedMember(field, MemberKind.FieldSetter);
+        GeneratedMember? cGeneratedSetterMember = cResult.GetGeneratedMember(field, MemberKind.FieldSetter);
 
-        if (generatedGetterMember is null &&
-            generatedSetterMember is null) {
+        if (cSharpGeneratedGetterMember is null &&
+            cSharpGeneratedSetterMember is null) {
             throw new Exception("No C# generated member");
+        }
+        
+        if (cGeneratedGetterMember is null &&
+            cGeneratedSetterMember is null) {
+            throw new Exception("No C generated member");
         }
 
         bool isStatic = field.IsStatic;
@@ -34,38 +45,66 @@ public class SwiftFieldSyntaxWriter: SwiftMethodSyntaxWriter, IFieldSyntaxWriter
 
         StringBuilder sb = new();
 
-        if (generatedGetterMember is not null) {
+        if (cSharpGeneratedGetterMember is not null &&
+            cGeneratedGetterMember is not null) {
+            bool mayThrow = cSharpGeneratedGetterMember.MayThrow;
+                
             string code = WriteMethod(
-                generatedGetterMember,
+                cSharpGeneratedGetterMember,
+                cGeneratedGetterMember,
                 field,
                 MemberKind.FieldGetter,
                 isStatic,
-                generatedGetterMember.MayThrow,
+                mayThrow,
                 declaringType,
                 fieldType,
                 parameters,
+                addToState,
                 typeDescriptorRegistry,
-                state
+                state,
+                out string generatedName
             );
 
             sb.AppendLine(code);
+            
+            state.AddGeneratedMember(
+                MemberKind.FieldGetter,
+                field,
+                mayThrow,
+                generatedName,
+                CodeLanguage.Swift
+            );
         }
 
-        if (generatedSetterMember is not null) {
+        if (cSharpGeneratedSetterMember is not null &&
+            cGeneratedSetterMember is not null) {
+            bool mayThrow = cSharpGeneratedSetterMember.MayThrow;
+            
             string code = WriteMethod(
-                generatedSetterMember,
+                cSharpGeneratedSetterMember,
+                cGeneratedSetterMember,
                 field,
                 MemberKind.FieldSetter,
                 isStatic,
-                generatedSetterMember.MayThrow,
+                mayThrow,
                 declaringType,
                 fieldType,
                 parameters,
+                addToState,
                 typeDescriptorRegistry,
-                state
+                state,
+                out string generatedName
             );
 
             sb.AppendLine(code);
+            
+            state.AddGeneratedMember(
+                MemberKind.FieldSetter,
+                field,
+                mayThrow,
+                generatedName,
+                CodeLanguage.Swift
+            );
         }
 
         return sb.ToString();

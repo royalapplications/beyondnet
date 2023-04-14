@@ -59,6 +59,9 @@ public class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWriter
 
         StringBuilder sb = new();
 
+        bool writeMembers = !type.IsEnum;
+        bool writeTypeDefinition = true;
+
         if (type.IsEnum) {
             string enumdefCode = WriteEnumDef(
                 type,
@@ -67,7 +70,9 @@ public class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWriter
             );
 
             sb.AppendLine(enumdefCode);
-        } /* else if (type.IsDelegate()) {
+        } else if (type.IsDelegate()) {
+            writeTypeDefinition = false;
+            
             var delegateInvokeMethod = type.GetDelegateInvokeMethod();
 
             string delegateTypedefCode = WriteDelegateTypeDefs(
@@ -76,21 +81,19 @@ public class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWriter
             );
     
             sb.AppendLine(delegateTypedefCode);
-        } else {
-            string typedefCode = WriteTypeDef(cTypeName);
-            
-            sb.AppendLine(typedefCode);
-        } */
+        }
+
+        if (writeMembers) {
+            string membersCode = WriteMembers(
+                type,
+                state,
+                writeTypeDefinition
+            );
+                
+            sb.AppendLine(membersCode);
+        }
         
         return sb.ToString();
-    }
-
-    // TODO
-    private string WriteTypeDef(string cTypeName)
-    {
-        return "// TODO: Type Def";
-        
-        return $"typedef void* {cTypeName}_t;";
     }
 
     // TODO
@@ -99,85 +102,85 @@ public class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWriter
         MethodInfo? delegateInvokeMethod
     )
     {
-        return "// TODO: Delegate Type Def";
+        return $"// TODO: Delegate Type Defition ({delegateType.GetFullNameOrName()})";
         
-        TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
-        
-        string? fullTypeName = delegateType.FullName;
-
-        if (fullTypeName == null) {
-            return $"// Type \"{delegateType.Name}\" was skipped. Reason: It has no full name.";
-        }
-        
-        string cTypeName = delegateType.CTypeName();
-        
-        Type returnType = delegateInvokeMethod?.ReturnType ?? typeof(void);
-        var parameterInfos = delegateInvokeMethod?.GetParameters() ?? Array.Empty<ParameterInfo>();
-        
-        if (returnType.IsByRef) {
-            return $"// TODO: ({cTypeName}) Unsupported delegate type. Reason: Has by ref return type";
-        }
-        
-        foreach (var parameter in parameterInfos) {
-            if (parameter.IsOut ||
-                parameter.ParameterType.IsByRef) {
-                return $"// TODO: ({cTypeName}) Unsupported delegate type. Reason: Has by ref or out parameters";
-            }
-        }
-
-        StringBuilder sb = new();
-        
-        sb.AppendLine(WriteTypeDef(cTypeName));
-
-        string contextTypeName = "void*";
-        string cFunctionTypeName = $"{cTypeName}_CFunction_t";
-        string cDestructorFunctionTypeName = $"{cTypeName}_CDestructorFunction_t";
-        
-        sb.AppendLine($"typedef void (*{cDestructorFunctionTypeName})({contextTypeName} context);");
-        sb.AppendLine();
-
-        string cReturnTypeName;
-
-        if (returnType.IsVoid()) {
-            cReturnTypeName = "void";
-        } else {
-            TypeDescriptor returnTypeDescriptor = returnType.GetTypeDescriptor(typeDescriptorRegistry);
-            cReturnTypeName = returnTypeDescriptor.GetTypeName(CodeLanguage.C, true);            
-        }
-
-        sb.AppendLine($"typedef {cReturnTypeName} (*{cFunctionTypeName})(");
-
-        List<string> parameters = new();
-
-        foreach (var parameter in parameterInfos) {
-            string parameterName = parameter.Name ?? throw new Exception("Delegate parameter has no name");
-        
-            Type parameterType = parameter.ParameterType;
-            TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
-
-            string parameterTypeName = parameterTypeDescriptor.GetTypeName(CodeLanguage.C, true);
-
-            parameters.Add($"{parameterTypeName} {parameterName}");
-        }
-
-        string parametersString = string.Join(",\n", parameters);
-
-        string contextParameter = $"{contextTypeName} context";
-
-        if (!string.IsNullOrEmpty(parametersString)) {
-            parametersString = contextParameter + ",\n" + parametersString;
-        } else {
-            parametersString = contextParameter + "\n";
-        }
-    
-        sb.Append(parametersString
-            .IndentAllLines(1));
-    
-        sb.AppendLine(");");
-
-        string delegateTypeDefCode = sb.ToString();
-
-        return delegateTypeDefCode;
+        // TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
+        //
+        // string? fullTypeName = delegateType.FullName;
+        //
+        // if (fullTypeName == null) {
+        //     return $"// Type \"{delegateType.Name}\" was skipped. Reason: It has no full name.";
+        // }
+        //
+        // string cTypeName = delegateType.CTypeName();
+        //
+        // Type returnType = delegateInvokeMethod?.ReturnType ?? typeof(void);
+        // var parameterInfos = delegateInvokeMethod?.GetParameters() ?? Array.Empty<ParameterInfo>();
+        //
+        // if (returnType.IsByRef) {
+        //     return $"// TODO: ({cTypeName}) Unsupported delegate type. Reason: Has by ref return type";
+        // }
+        //
+        // foreach (var parameter in parameterInfos) {
+        //     if (parameter.IsOut ||
+        //         parameter.ParameterType.IsByRef) {
+        //         return $"// TODO: ({cTypeName}) Unsupported delegate type. Reason: Has by ref or out parameters";
+        //     }
+        // }
+        //
+        // StringBuilder sb = new();
+        //
+        // sb.AppendLine(WriteTypeDef(cTypeName));
+        //
+        // string contextTypeName = "void*";
+        // string cFunctionTypeName = $"{cTypeName}_CFunction_t";
+        // string cDestructorFunctionTypeName = $"{cTypeName}_CDestructorFunction_t";
+        //
+        // sb.AppendLine($"typedef void (*{cDestructorFunctionTypeName})({contextTypeName} context);");
+        // sb.AppendLine();
+        //
+        // string cReturnTypeName;
+        //
+        // if (returnType.IsVoid()) {
+        //     cReturnTypeName = "void";
+        // } else {
+        //     TypeDescriptor returnTypeDescriptor = returnType.GetTypeDescriptor(typeDescriptorRegistry);
+        //     cReturnTypeName = returnTypeDescriptor.GetTypeName(CodeLanguage.C, true);            
+        // }
+        //
+        // sb.AppendLine($"typedef {cReturnTypeName} (*{cFunctionTypeName})(");
+        //
+        // List<string> parameters = new();
+        //
+        // foreach (var parameter in parameterInfos) {
+        //     string parameterName = parameter.Name ?? throw new Exception("Delegate parameter has no name");
+        //
+        //     Type parameterType = parameter.ParameterType;
+        //     TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
+        //
+        //     string parameterTypeName = parameterTypeDescriptor.GetTypeName(CodeLanguage.C, true);
+        //
+        //     parameters.Add($"{parameterTypeName} {parameterName}");
+        // }
+        //
+        // string parametersString = string.Join(",\n", parameters);
+        //
+        // string contextParameter = $"{contextTypeName} context";
+        //
+        // if (!string.IsNullOrEmpty(parametersString)) {
+        //     parametersString = contextParameter + ",\n" + parametersString;
+        // } else {
+        //     parametersString = contextParameter + "\n";
+        // }
+        //
+        // sb.Append(parametersString
+        //     .IndentAllLines(1));
+        //
+        // sb.AppendLine(");");
+        //
+        // string delegateTypeDefCode = sb.ToString();
+        //
+        // return delegateTypeDefCode;
     }
 
     private string WriteEnumDef(
@@ -301,13 +304,18 @@ public class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWriter
     }
 
     // TODO
-    public string WriteMembers(Type type, State state)
+    public string WriteMembers(
+        Type type,
+        State state,
+        bool writeTypeDefinition
+    )
     {
-        return "// TODO: Members";
+        // return $"// TODO: Members ({type.GetFullNameOrName()})";
         
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
+        Result cResult = state.CResult ?? throw new Exception("No CResult provided");
         
         if (type.IsPrimitive ||
             type.IsPointer ||
@@ -316,38 +324,44 @@ public class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWriter
             type.IsGenericMethodParameter ||
             type.IsGenericTypeParameter ||
             type.IsConstructedGenericType) {
-            // No need to generate C code for those kinds of types
+            // No need to generate Swift code for those kinds of types
 
             return string.Empty;
         }
         
         var cSharpMembers = cSharpUnmanagedResult.GeneratedTypes[type];
+        var cMembers = cResult.GeneratedTypes[type];
 
         StringBuilder sb = new();
 
         string fullTypeName = type.GetFullNameOrName();
+        TypeDescriptor typeDescriptor = type.GetTypeDescriptor(typeDescriptorRegistry);
+        string swiftTypeName =  typeDescriptor.GetTypeName(CodeLanguage.Swift, false);
         
         bool isDelegate = type.IsDelegate();
 
-        sb.AppendLine($"#pragma mark - BEGIN APIs of {fullTypeName}");
-
-        if (isDelegate) {
-            TypeDescriptor typeDescriptor = type.GetTypeDescriptor(typeDescriptorRegistry);
-            string cTypeName =  typeDescriptor.GetTypeName(CodeLanguage.C, false);
-            string cMemberNamePrefix = type.CTypeName();
-            
-            WriteDelegateTypeMembers(
-                typeDescriptor,
-                fullTypeName,
-                cTypeName,
-                cMemberNamePrefix,
-                sb,
-                state,
-                typeDescriptorRegistry
-            );
+        if (writeTypeDefinition) {
+            sb.AppendLine($"public class {swiftTypeName} /* {fullTypeName} */ {{");
         }
 
+        // if (isDelegate) {
+        //     string cTypeName =  typeDescriptor.GetTypeName(CodeLanguage.Swift, false);
+        //     string cMemberNamePrefix = type.CTypeName();
+        //     
+        //     WriteDelegateTypeMembers(
+        //         typeDescriptor,
+        //         fullTypeName,
+        //         cTypeName,
+        //         cMemberNamePrefix,
+        //         sb,
+        //         state,
+        //         typeDescriptorRegistry
+        //     );
+        // }
+
         HashSet<MemberInfo> generatedMembers = new();
+
+        StringBuilder sbMembers = new();
 
         foreach (var cSharpMember in cSharpMembers) {
             var member = cSharpMember.Member;
@@ -367,7 +381,7 @@ public class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWriter
             
             if (syntaxWriter == null) {
                 if (Settings.EmitUnsupported) {
-                    sb.AppendLine($"// TODO: Unsupported Member Type \"{memberType}\"");
+                    sbMembers.AppendLine($"// TODO: Unsupported Member Type \"{memberType}\"");
                 }
                     
                 continue;
@@ -389,14 +403,22 @@ public class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWriter
 
             string memberCode = syntaxWriter.Write(target, state);
 
-            sb.AppendLine(memberCode);
+            sbMembers.AppendLine(memberCode);
 
             if (member is not null) {
                 generatedMembers.Add(member);
             }
         }
 
-        sb.AppendLine($"#pragma mark - END APIs of {fullTypeName}");
+        string membersCode = sbMembers
+            .ToString()
+            .IndentAllLines(1); 
+
+        sb.AppendLine(membersCode);
+
+        if (writeTypeDefinition) {
+            sb.AppendLine("}");
+        }
 
         return sb.ToString();
     }

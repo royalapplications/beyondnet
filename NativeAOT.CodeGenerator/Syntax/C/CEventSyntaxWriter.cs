@@ -15,6 +15,8 @@ public class CEventSyntaxWriter: CMethodSyntaxWriter, IEventSyntaxWriter
 
     public string Write(EventInfo @event, State state)
     {
+        const bool addToState = false;
+        
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
 
@@ -59,11 +61,21 @@ public class CEventSyntaxWriter: CMethodSyntaxWriter, IEventSyntaxWriter
                 declaringType,
                 eventHandlerType,
                 parameters,
+                addToState,
                 typeDescriptorRegistry,
-                state
+                state,
+                out string generatedName
             );
 
             sb.AppendLine(adderCode);
+            
+            state.AddGeneratedMember(
+                MemberKind.EventHandlerAdder,
+                @event,
+                adderMayThrow,
+                generatedName,
+                CodeLanguage.C
+            );
         }
         
         if (removerMethod is not null &&
@@ -79,11 +91,21 @@ public class CEventSyntaxWriter: CMethodSyntaxWriter, IEventSyntaxWriter
                 declaringType,
                 eventHandlerType,
                 parameters,
+                addToState,
                 typeDescriptorRegistry,
-                state
+                state,
+                out string generatedName
             );
 
             sb.AppendLine(removerCode);
+            
+            state.AddGeneratedMember(
+                MemberKind.EventHandlerRemover,
+                @event,
+                removerMayThrow,
+                generatedName,
+                CodeLanguage.C
+            );
         }
 
         return sb.ToString();

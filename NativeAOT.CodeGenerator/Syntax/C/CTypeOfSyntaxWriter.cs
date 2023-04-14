@@ -35,8 +35,10 @@ public class CTypeOfSyntaxWriter: CMethodSyntaxWriter, ITypeOfSyntaxWriter
             type,
             typeof(Type),
             Array.Empty<ParameterInfo>(),
+            true,
             typeDescriptorRegistry,
-            state
+            state,
+            out _
         );
 
         return code;

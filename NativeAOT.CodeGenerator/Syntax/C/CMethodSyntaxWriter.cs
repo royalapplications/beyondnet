@@ -39,8 +39,10 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             declaringType,
             returnType,
             parameters,
+            true,
             typeDescriptorRegistry,
-            state
+            state,
+            out _
         );
 
         return methodCode;
@@ -55,8 +57,10 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         Type declaringType,
         Type returnOrSetterOrEventHandlerType,
         IEnumerable<ParameterInfo> parameters,
+        bool addToState,
         TypeDescriptorRegistry typeDescriptorRegistry,
-        State state
+        State state,
+        out string generatedName
     )
     {
         if (memberInfo == null &&
@@ -130,6 +134,8 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
                     Type nonByRefParameterType = parameter.ParameterType.GetNonByRefType();
 
                     if (nonByRefParameterType.IsArray) {
+                        generatedName = string.Empty;
+                        
                         return "// TODO: Generic Methods with out/ref parameters that are arrays are not supported";    
                     }
                 }
@@ -137,14 +143,16 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         }
         
         string methodNameC = cSharpGeneratedMember.GetGeneratedName(CodeLanguage.CSharpUnmanaged) ?? throw new Exception("No native name");
-        
-        state.AddGeneratedMember(
-            memberKind,
-            memberInfo,
-            mayThrow,
-            methodNameC,
-            CodeLanguage.C
-        );
+
+        if (addToState) {
+            state.AddGeneratedMember(
+                memberKind,
+                memberInfo,
+                mayThrow,
+                methodNameC,
+                CodeLanguage.C
+            );
+        }
         
         bool isGenericReturnType = returnOrSetterOrEventHandlerType.IsGenericParameter ||
                                    returnOrSetterOrEventHandlerType.IsGenericMethodParameter ||
@@ -226,6 +234,8 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         StringBuilder sb = new();
         
         sb.AppendLine($"{cReturnOrSetterTypeNameWithComment}\n{methodNameC}(\n\t{methodSignatureParameters}\n);");
+
+        generatedName = methodNameC;
         
         return sb.ToString();
     }

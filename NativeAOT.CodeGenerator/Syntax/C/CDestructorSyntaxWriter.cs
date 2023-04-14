@@ -36,8 +36,10 @@ public class CDestructorSyntaxWriter: CMethodSyntaxWriter, IDestructorSyntaxWrit
             type,
             typeof(void),
             Array.Empty<ParameterInfo>(),
+            true,
             typeDescriptorRegistry,
-            state
+            state,
+            out _
         );
 
         return code;

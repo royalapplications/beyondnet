@@ -15,6 +15,8 @@ public class CPropertySyntaxWriter: CMethodSyntaxWriter, IPropertySyntaxWriter
     
     public string Write(PropertyInfo property, State state)
     {
+        const bool addToState = false;
+        
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
 
@@ -53,11 +55,21 @@ public class CPropertySyntaxWriter: CMethodSyntaxWriter, IPropertySyntaxWriter
                 declaringType,
                 propertyType,
                 parameters,
+                addToState,
                 typeDescriptorRegistry,
-                state
+                state,
+                out string generatedName
             );
 
             sb.AppendLine(getterCode);
+            
+            state.AddGeneratedMember(
+                MemberKind.PropertyGetter,
+                property,
+                getterMayThrow,
+                generatedName,
+                CodeLanguage.C
+            );
         }
         
         if (setterMethod is not null &&
@@ -73,11 +85,21 @@ public class CPropertySyntaxWriter: CMethodSyntaxWriter, IPropertySyntaxWriter
                 declaringType,
                 propertyType,
                 parameters,
+                addToState,
                 typeDescriptorRegistry,
-                state
+                state,
+                out string generatedName
             );
 
             sb.AppendLine(setterCode);
+            
+            state.AddGeneratedMember(
+                MemberKind.PropertySetter,
+                property,
+                getterMayThrow,
+                generatedName,
+                CodeLanguage.C
+            );
         }
 
         return sb.ToString();

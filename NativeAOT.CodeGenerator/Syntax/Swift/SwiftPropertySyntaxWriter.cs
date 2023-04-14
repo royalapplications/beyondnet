@@ -15,19 +15,31 @@ public class SwiftPropertySyntaxWriter: SwiftMethodSyntaxWriter, IPropertySyntax
     
     public string Write(PropertyInfo property, State state)
     {
+        const bool addToState = false;
+        
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
+        
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
+        Result cResult = state.CResult ?? throw new Exception("No CResult provided");
 
-        GeneratedMember? generatedMemberGetter = cSharpUnmanagedResult.GetGeneratedMember(property, MemberKind.PropertyGetter);
-        GeneratedMember? generatedMemberSetter = cSharpUnmanagedResult.GetGeneratedMember(property, MemberKind.PropertySetter);
+        GeneratedMember? cSharpGeneratedMemberGetter = cSharpUnmanagedResult.GetGeneratedMember(property, MemberKind.PropertyGetter);
+        GeneratedMember? cGeneratedMemberGetter = cResult.GetGeneratedMember(property, MemberKind.PropertyGetter);
+        
+        GeneratedMember? cSharpGeneratedMemberSetter = cSharpUnmanagedResult.GetGeneratedMember(property, MemberKind.PropertySetter);
+        GeneratedMember? cGeneratedMemberSetter = cResult.GetGeneratedMember(property, MemberKind.PropertySetter);
 
-        if (generatedMemberGetter is null &&
-            generatedMemberSetter is null) {
+        if (cSharpGeneratedMemberGetter is null &&
+            cSharpGeneratedMemberSetter is null) {
             throw new Exception("No generated C# Unmanaged Member");
         }
+        
+        if (cGeneratedMemberGetter is null &&
+            cGeneratedMemberSetter is null) {
+            throw new Exception("No generated C Member");
+        }
 
-        bool getterMayThrow = generatedMemberGetter?.MayThrow ?? true;
-        bool setterMayThrow = generatedMemberSetter?.MayThrow ?? true; 
+        bool getterMayThrow = cSharpGeneratedMemberGetter?.MayThrow ?? true;
+        bool setterMayThrow = cSharpGeneratedMemberSetter?.MayThrow ?? true; 
         
         Type declaringType = property.DeclaringType ?? throw new Exception("No declaring type");
 
@@ -41,11 +53,13 @@ public class SwiftPropertySyntaxWriter: SwiftMethodSyntaxWriter, IPropertySyntax
         MethodInfo? setterMethod = property.GetSetMethod(false);
 
         if (getterMethod is not null &&
-            generatedMemberGetter is not null) {
+            cSharpGeneratedMemberGetter is not null &&
+            cGeneratedMemberGetter is not null) {
             bool isStaticMethod = getterMethod.IsStatic;
             
             string getterCode = WriteMethod(
-                generatedMemberGetter,
+                cSharpGeneratedMemberGetter,
+                cGeneratedMemberGetter,
                 getterMethod,
                 MemberKind.PropertyGetter,
                 isStaticMethod,
@@ -53,19 +67,31 @@ public class SwiftPropertySyntaxWriter: SwiftMethodSyntaxWriter, IPropertySyntax
                 declaringType,
                 propertyType,
                 parameters,
+                addToState,
                 typeDescriptorRegistry,
-                state
+                state,
+                out string generatedName
             );
 
             sb.AppendLine(getterCode);
+            
+            state.AddGeneratedMember(
+                MemberKind.PropertyGetter,
+                property,
+                getterMayThrow,
+                generatedName,
+                CodeLanguage.Swift
+            );
         }
         
         if (setterMethod is not null &&
-            generatedMemberSetter is not null) {
+            cSharpGeneratedMemberSetter is not null &&
+            cGeneratedMemberSetter is not null) {
             bool isStaticMethod = setterMethod.IsStatic;
             
             string setterCode = WriteMethod(
-                generatedMemberSetter,
+                cSharpGeneratedMemberSetter,
+                cGeneratedMemberSetter,
                 setterMethod,
                 MemberKind.PropertySetter,
                 isStaticMethod,
@@ -73,11 +99,21 @@ public class SwiftPropertySyntaxWriter: SwiftMethodSyntaxWriter, IPropertySyntax
                 declaringType,
                 propertyType,
                 parameters,
+                addToState,
                 typeDescriptorRegistry,
-                state
+                state,
+                out string generatedName
             );
 
             sb.AppendLine(setterCode);
+            
+            state.AddGeneratedMember(
+                MemberKind.PropertySetter,
+                property,
+                getterMayThrow,
+                generatedName,
+                CodeLanguage.Swift
+            );
         }
 
         return sb.ToString();

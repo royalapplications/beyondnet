@@ -15,19 +15,31 @@ public class SwiftEventSyntaxWriter: SwiftMethodSyntaxWriter, IEventSyntaxWriter
 
     public string Write(EventInfo @event, State state)
     {
+        const bool addToState = false;
+        
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
+        
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
+        Result cResult = state.CResult ?? throw new Exception("No CResult provided");
 
-        GeneratedMember? generatedAdderMember = cSharpUnmanagedResult.GetGeneratedMember(@event, MemberKind.EventHandlerAdder);
-        GeneratedMember? generatedRemoverMember = cSharpUnmanagedResult.GetGeneratedMember(@event, MemberKind.EventHandlerRemover);
+        GeneratedMember? cSharpGeneratedAdderMember = cSharpUnmanagedResult.GetGeneratedMember(@event, MemberKind.EventHandlerAdder);
+        GeneratedMember? cGeneratedAdderMember = cResult.GetGeneratedMember(@event, MemberKind.EventHandlerAdder);
+        
+        GeneratedMember? cSharpGeneratedRemoverMember = cSharpUnmanagedResult.GetGeneratedMember(@event, MemberKind.EventHandlerRemover);
+        GeneratedMember? cGeneratedRemoverMember = cResult.GetGeneratedMember(@event, MemberKind.EventHandlerRemover);
 
-        if (generatedAdderMember is null &&
-            generatedRemoverMember is null) {
+        if (cSharpGeneratedAdderMember is null &&
+            cSharpGeneratedRemoverMember is null) {
             throw new Exception("No generated C# Unmanaged Member");
         }
+        
+        if (cGeneratedAdderMember is null &&
+            cGeneratedRemoverMember is null) {
+            throw new Exception("No generated C Member");
+        }
 
-        bool adderMayThrow = generatedAdderMember?.MayThrow ?? true;
-        bool removerMayThrow = generatedRemoverMember?.MayThrow ?? true;
+        bool adderMayThrow = cSharpGeneratedAdderMember?.MayThrow ?? true;
+        bool removerMayThrow = cSharpGeneratedRemoverMember?.MayThrow ?? true;
         
         string eventName = @event.Name;
         
@@ -47,11 +59,13 @@ public class SwiftEventSyntaxWriter: SwiftMethodSyntaxWriter, IEventSyntaxWriter
         MethodInfo? removerMethod = @event.GetRemoveMethod(false);
 
         if (adderMethod is not null &&
-            generatedAdderMember is not null) {
+            cSharpGeneratedAdderMember is not null &&
+            cGeneratedAdderMember is not null) {
             bool isStaticMethod = adderMethod.IsStatic;
             
             string adderCode = WriteMethod(
-                generatedAdderMember,
+                cSharpGeneratedAdderMember,
+                cGeneratedAdderMember,
                 adderMethod,
                 MemberKind.EventHandlerAdder,
                 isStaticMethod,
@@ -59,19 +73,31 @@ public class SwiftEventSyntaxWriter: SwiftMethodSyntaxWriter, IEventSyntaxWriter
                 declaringType,
                 eventHandlerType,
                 parameters,
+                addToState,
                 typeDescriptorRegistry,
-                state
+                state,
+                out string generatedName
             );
 
             sb.AppendLine(adderCode);
+            
+            state.AddGeneratedMember(
+                MemberKind.EventHandlerAdder,
+                @event,
+                adderMayThrow,
+                generatedName,
+                CodeLanguage.Swift
+            );
         }
         
         if (removerMethod is not null &&
-            generatedRemoverMember is not null) {
+            cSharpGeneratedRemoverMember is not null &&
+            cGeneratedRemoverMember is not null) {
             bool isStaticMethod = removerMethod.IsStatic;
             
             string removerCode = WriteMethod(
-                generatedRemoverMember,
+                cSharpGeneratedRemoverMember,
+                cGeneratedRemoverMember,
                 removerMethod,
                 MemberKind.EventHandlerRemover,
                 isStaticMethod,
@@ -79,11 +105,21 @@ public class SwiftEventSyntaxWriter: SwiftMethodSyntaxWriter, IEventSyntaxWriter
                 declaringType,
                 eventHandlerType,
                 parameters,
+                addToState,
                 typeDescriptorRegistry,
-                state
+                state,
+                out string generatedName
             );
 
             sb.AppendLine(removerCode);
+            
+            state.AddGeneratedMember(
+                MemberKind.EventHandlerRemover,
+                @event,
+                removerMayThrow,
+                generatedName,
+                CodeLanguage.Swift
+            );
         }
 
         return sb.ToString();

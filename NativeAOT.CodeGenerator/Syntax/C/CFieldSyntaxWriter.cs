@@ -15,6 +15,8 @@ public class CFieldSyntaxWriter: CMethodSyntaxWriter, IFieldSyntaxWriter
 
     public string Write(FieldInfo field, State state)
     {
+        const bool addToState = false;
+        
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
@@ -35,37 +37,61 @@ public class CFieldSyntaxWriter: CMethodSyntaxWriter, IFieldSyntaxWriter
         StringBuilder sb = new();
 
         if (generatedGetterMember is not null) {
+            bool mayThrow = generatedGetterMember.MayThrow;
+            
             string code = WriteMethod(
                 generatedGetterMember,
                 field,
                 MemberKind.FieldGetter,
                 isStatic,
-                generatedGetterMember.MayThrow,
+                mayThrow,
                 declaringType,
                 fieldType,
                 parameters,
+                addToState,
                 typeDescriptorRegistry,
-                state
+                state,
+                out string generatedName
             );
 
             sb.AppendLine(code);
+            
+            state.AddGeneratedMember(
+                MemberKind.FieldGetter,
+                field,
+                mayThrow,
+                generatedName,
+                CodeLanguage.C
+            );
         }
 
         if (generatedSetterMember is not null) {
+            bool mayThrow = generatedSetterMember.MayThrow;
+            
             string code = WriteMethod(
                 generatedSetterMember,
                 field,
                 MemberKind.FieldSetter,
                 isStatic,
-                generatedSetterMember.MayThrow,
+                mayThrow,
                 declaringType,
                 fieldType,
                 parameters,
+                addToState,
                 typeDescriptorRegistry,
-                state
+                state,
+                out string generatedName
             );
 
             sb.AppendLine(code);
+            
+            state.AddGeneratedMember(
+                MemberKind.FieldSetter,
+                field,
+                mayThrow,
+                generatedName,
+                CodeLanguage.C
+            );
         }
 
         return sb.ToString();

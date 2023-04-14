@@ -19,7 +19,10 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
+        Result cResult = state.CResult ?? throw new Exception("No CResult provided");
+        
         GeneratedMember cSharpGeneratedMember = cSharpUnmanagedResult.GetGeneratedMember(method) ?? throw new Exception("No C# generated member");
+        GeneratedMember cGeneratedMember = cResult.GetGeneratedMember(method) ?? throw new Exception("No C generated member");
 
         bool mayThrow = cSharpGeneratedMember.MayThrow;
         const MemberKind methodKind = MemberKind.Method;
@@ -32,6 +35,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
 
         string methodCode = WriteMethod(
             cSharpGeneratedMember,
+            cGeneratedMember,
             method,
             methodKind,
             isStaticMethod,
@@ -39,8 +43,10 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             declaringType,
             returnType,
             parameters,
+            true,
             typeDescriptorRegistry,
-            state
+            state,
+            out _
         );
 
         return methodCode;
@@ -48,6 +54,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
 
     protected string WriteMethod(
         GeneratedMember cSharpGeneratedMember,
+        GeneratedMember cMember,
         MemberInfo? memberInfo,
         MemberKind memberKind,
         bool isStaticMethod,
@@ -55,8 +62,10 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         Type declaringType,
         Type returnOrSetterOrEventHandlerType,
         IEnumerable<ParameterInfo> parameters,
+        bool addToState,
         TypeDescriptorRegistry typeDescriptorRegistry,
-        State state
+        State state,
+        out string generatedName
     )
     {
         if (memberInfo == null &&
@@ -130,6 +139,8 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                     Type nonByRefParameterType = parameter.ParameterType.GetNonByRefType();
 
                     if (nonByRefParameterType.IsArray) {
+                        generatedName = string.Empty;
+                        
                         return "// TODO: Generic Methods with out/ref parameters that are arrays are not supported";    
                     }
                 }
@@ -137,14 +148,16 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         }
         
         string methodNameC = cSharpGeneratedMember.GetGeneratedName(CodeLanguage.CSharpUnmanaged) ?? throw new Exception("No native name");
-        
-        state.AddGeneratedMember(
-            memberKind,
-            memberInfo,
-            mayThrow,
-            methodNameC,
-            CodeLanguage.C
-        );
+
+        if (addToState) {
+            state.AddGeneratedMember(
+                memberKind,
+                memberInfo,
+                mayThrow,
+                methodNameC,
+                CodeLanguage.Swift
+            );
+        }
         
         bool isGenericReturnType = returnOrSetterOrEventHandlerType.IsGenericParameter ||
                                    returnOrSetterOrEventHandlerType.IsGenericMethodParameter ||
@@ -226,6 +239,8 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         StringBuilder sb = new();
         
         sb.AppendLine($"{cReturnOrSetterTypeNameWithComment}\n{methodNameC}(\n\t{methodSignatureParameters}\n);");
+
+        generatedName = methodNameC;
         
         return sb.ToString();
     }

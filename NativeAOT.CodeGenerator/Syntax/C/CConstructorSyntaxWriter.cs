@@ -42,8 +42,10 @@ public class CConstructorSyntaxWriter: CMethodSyntaxWriter, IConstructorSyntaxWr
             declaringType,
             returnType,
             parameters,
+            true,
             typeDescriptorRegistry,
-            state
+            state,
+            out _
         );
 
         return ctorCode;
