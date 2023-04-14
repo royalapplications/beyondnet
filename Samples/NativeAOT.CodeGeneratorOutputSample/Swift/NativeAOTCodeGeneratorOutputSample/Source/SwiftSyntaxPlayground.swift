@@ -82,6 +82,4 @@ public class NativeAOT_CodeGeneratorInputSample_TestClass /* NativeAOT.CodeGener
 	
 	}
 	
-	
-
 }

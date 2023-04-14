@@ -289,6 +289,13 @@ public class TypeDescriptor
             } else {
                 return $"{swiftTypeName}(handle: {{0}})";
             }
+        } else if (sourceLanguage == CodeLanguage.Swift &&
+                   targetLanguage == CodeLanguage.C) {
+            if (IsEnum) {
+                return "{0}.cValue";
+            } else {
+                return "{0}._handle";
+            }
         } else {
             throw new Exception("Unknown language pair");
         }

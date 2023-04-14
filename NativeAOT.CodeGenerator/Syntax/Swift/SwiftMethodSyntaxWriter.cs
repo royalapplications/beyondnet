@@ -276,12 +276,15 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         #region Func Implementation
         StringBuilder sbImpl = new();
 
-        // TODO
-        if (memberKind == MemberKind.Constructor) {
-            sbImpl.AppendLine("// TODO: Constructor");
-        } else if (memberKind == MemberKind.Destructor) {
+        bool needsRegularImpl = true;
+
+        if (memberKind == MemberKind.Destructor) {
+            needsRegularImpl = false;
+            
             sbImpl.AppendLine($"{cMethodName}(self._handle)");
         } else if (memberKind == MemberKind.TypeOf) {
+            needsRegularImpl = false;
+            
             string returnTypeConversion = returnOrSetterTypeDescriptor.GetTypeConversion(
                 CodeLanguage.C, 
                 CodeLanguage.Swift
@@ -290,8 +293,93 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             string invocation = string.Format(returnTypeConversion, $"{cMethodName}()");
 
             sbImpl.AppendLine($"return {invocation}");
-        } else {
-            sbImpl.AppendLine("// TODO: Method/Property/Field/Event Handler adder/remover");
+        }
+
+        if (needsRegularImpl) {
+            string parameterConversions = WriteParameterConversions(
+                CodeLanguage.Swift,
+                CodeLanguage.C,
+                parameters,
+                isGeneric,
+                genericTypeArguments,
+                genericMethodArguments,
+                typeDescriptorRegistry,
+                out List<string> convertedParameterNames,
+                out List<string> convertedGenericTypeArgumentNames,
+                out List<string> convertedGenericMethodArgumentNames
+            );
+
+            sbImpl.AppendLine(parameterConversions);
+            sbImpl.AppendLine();
+
+            if (mayThrow) {
+                string cExceptionVarName = "__exceptionC";
+                
+                convertedParameterNames.Add($"&{cExceptionVarName}");
+                
+                sbImpl.AppendLine($"var {cExceptionVarName}: System_Exception_t?");
+                sbImpl.AppendLine();
+            }
+
+            bool isReturning = !returnOrSetterTypeDescriptor.IsVoid;
+
+            string returnValueName = "__returnValueC";
+            
+            string returnValueCStorage = isReturning
+                ? $"let {returnValueName} = "
+                : string.Empty;
+
+            List<string> allParameterNames = new();
+
+            if (!isStaticMethod) {
+                allParameterNames.Add("self._handle");
+            }
+            
+            allParameterNames.AddRange(convertedGenericTypeArgumentNames);
+            allParameterNames.AddRange(convertedGenericMethodArgumentNames);
+            allParameterNames.AddRange(convertedParameterNames);
+            
+            string allParameterNamesString = string.Join(", ", allParameterNames);
+            
+            string invocation = $"{returnValueCStorage}{cMethodName}({allParameterNamesString})";
+            
+            sbImpl.AppendLine(invocation);
+
+            string returnCode = string.Empty;
+
+            if (isReturning) {
+                string? returnTypeConversion = returnOrSetterTypeDescriptor.GetTypeConversion(
+                    CodeLanguage.C,
+                    CodeLanguage.Swift
+                );
+
+                if (!string.IsNullOrEmpty(returnTypeConversion)) {
+                    string newReturnValueName = "__returnValue";
+                    
+                    string fullReturnTypeConversion = $"let {newReturnValueName} = {string.Format(returnTypeConversion, returnValueName)}";
+
+                    sbImpl.AppendLine(fullReturnTypeConversion);
+                    sbImpl.AppendLine();
+                    
+                    returnValueName = newReturnValueName;
+                }
+
+                if (memberKind == MemberKind.Constructor) {
+                    returnCode = $"self.init(handle: {returnValueName})";
+                } else {
+                    returnCode = $"return {returnValueName}";
+                }
+            }
+
+            if (mayThrow) {
+                // TODO: Exception handling
+                sbImpl.AppendLine("// TODO: Exception Handling");
+            }
+
+            if (isReturning) {
+                sbImpl.AppendLine();
+                sbImpl.AppendLine(returnCode);
+            }
         }
 
         string funcImpl = sbImpl
@@ -331,7 +419,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             string nativeSystemTypeTypeName = systemTypeTypeDescriptor.GetTypeName(
                 CodeLanguage.Swift, 
                 true,
-                true
+                false
             );
             
             foreach (var genericArgumentType in genericArguments) {
@@ -410,5 +498,135 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         string parametersString = string.Join(", ", parameterList);
 
         return parametersString;
+    }
+    
+    internal static string WriteParameterConversions(
+        CodeLanguage sourceLanguage,
+        CodeLanguage targetLanguage,
+        IEnumerable<ParameterInfo> parameters,
+        bool isGeneric,
+        IEnumerable<Type> genericTypeArguments,
+        IEnumerable<Type> genericMethodArguments,
+        TypeDescriptorRegistry typeDescriptorRegistry,
+        out List<string> convertedParameterNames,
+        out List<string> convertedGenericTypeArgumentNames,
+        out List<string> convertedGenericMethodArgumentNames
+    )
+    {
+        StringBuilder sb = new();
+        
+        convertedParameterNames = new();
+        convertedGenericTypeArgumentNames = new();
+        convertedGenericMethodArgumentNames = new();
+
+        if (isGeneric) {
+            Type typeOfSystemType = typeof(Type);
+            TypeDescriptor systemTypeTypeDescriptor = typeOfSystemType.GetTypeDescriptor(typeDescriptorRegistry);
+            string systemTypeTypeName = typeOfSystemType.GetFullNameOrName();
+            
+            string systemTypeTypeConversion = systemTypeTypeDescriptor.GetTypeConversion(
+                sourceLanguage,
+                targetLanguage
+            )!;
+    
+            foreach (var genericArgumentType in genericTypeArguments) {
+                string name = genericArgumentType.Name;
+                
+                string convertedGenericArgumentName = $"{name}C";
+                    
+                string fullTypeConversion = string.Format(systemTypeTypeConversion, name);
+                string typeConversionCode = $"let {convertedGenericArgumentName} = {fullTypeConversion}";
+    
+                sb.AppendLine(typeConversionCode);
+                
+                convertedGenericTypeArgumentNames.Add(convertedGenericArgumentName);
+            }
+            
+            foreach (var genericArgumentType in genericMethodArguments) {
+                string name = genericArgumentType.Name;
+                
+                string convertedGenericArgumentName = $"{name}C";
+                    
+                string fullTypeConversion = string.Format(systemTypeTypeConversion, name);
+                string typeConversionCode = $"let {convertedGenericArgumentName} = {fullTypeConversion}";
+    
+                sb.AppendLine(typeConversionCode);
+                
+                convertedGenericMethodArgumentNames.Add(convertedGenericArgumentName);
+            }
+        }
+
+        foreach (var parameter in parameters) {
+            string parameterName = parameter.Name ?? throw new Exception("Parameter has no name");
+            
+            Type parameterType = parameter.ParameterType;
+            bool isOutParameter = parameter.IsOut;
+            bool isByRefParameter = parameterType.IsByRef;
+            bool isArrayType = parameterType.IsArray;
+            bool isInOut = isOutParameter || isByRefParameter;
+
+            if (isByRefParameter) {
+                parameterType = parameterType.GetNonByRefType();
+            }
+            
+            bool isGenericParameterType = parameterType.IsGenericParameter || parameterType.IsGenericMethodParameter;
+
+            if (!isByRefParameter &&
+                isOutParameter) {
+                throw new Exception("Parameter is out but not by ref, that's impossible");
+            } else if (isGenericParameterType) {
+                parameterType = typeof(object);
+            } else if (isArrayType) {
+                if (isGeneric) {
+                    Type? arrayType = parameterType.GetElementType();
+
+                    if (arrayType is not null &&
+                        (arrayType.IsGenericType || arrayType.IsGenericParameter || arrayType.IsGenericMethodParameter)) {
+                        parameterType = typeof(Array);
+                    }
+                }
+            }
+            
+            TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
+
+            string? typeConversion = parameterTypeDescriptor.GetTypeConversion(
+                sourceLanguage,
+                targetLanguage
+            );
+
+            string convertedParameterName;
+
+            if (typeConversion != null) {
+                convertedParameterName = $"{parameterName}C";
+                
+                string fullTypeConversion = string.Format(typeConversion, $"{parameterName}?");
+
+                string varOrLet = isInOut 
+                    ? "var"
+                    : "let";
+
+                string typeConversionCode = $"{varOrLet} {convertedParameterName} = {fullTypeConversion}";
+                
+                sb.AppendLine(typeConversionCode);
+                
+                if (isInOut) {
+                    convertedParameterName = $"&{convertedParameterName}";
+                }
+            } else {
+                if (!isGeneric &&
+                    isOutParameter) {
+                    convertedParameterName = $"&{parameterName}";
+                } else if (!isGeneric &&
+                           isByRefParameter) {
+                    convertedParameterName = $"&{parameterName}";
+                } else {
+                    convertedParameterName = parameterName;
+                }
+            }
+            
+            convertedParameterNames.Add(convertedParameterName);
+        }
+
+        return sb.ToString();
     }
 }
