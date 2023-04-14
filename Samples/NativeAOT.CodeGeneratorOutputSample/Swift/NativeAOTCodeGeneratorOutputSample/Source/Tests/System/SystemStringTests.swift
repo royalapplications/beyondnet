@@ -92,11 +92,7 @@ final class SystemStringTests: XCTestCase {
 		XCTAssertNil(exception)
 		XCTAssertEqual(expectedIndexOfWorld, indexOfWorld)
 		
-		guard let splitOptions: System_StringSplitOptions = .init(rawValue: System_StringSplitOptions.removeEmptyEntries.rawValue | System_StringSplitOptions.trimEntries.rawValue) else {
-			XCTFail("Failed to get string split options")
-			
-			return
-		}
+		let splitOptions: System_StringSplitOptions = [ .removeEmptyEntries, .trimEntries ]
 		
 		let blankDN = " ".dotNETString()
 		
@@ -211,15 +207,11 @@ final class SystemStringTests: XCTestCase {
 		
 		let cleanedJoined = cleanedComponents.joined(separator: separator)
 		
-		guard let options: System_StringSplitOptions = .init(rawValue: System_StringSplitOptions.removeEmptyEntries.rawValue | System_StringSplitOptions.trimEntries.rawValue) else {
-			XCTFail("Failed to create string split options")
-			
-			return
-		}
+		let splitOptions: System_StringSplitOptions = [ .removeEmptyEntries, .trimEntries ]
 		
 		guard let split = System_String_Split_6(joinedDN,
 												separatorDN,
-												options,
+												splitOptions,
 												&exception),
 			  exception == nil else {
 			XCTFail("System.String.Split should not throw and return an instance")

@@ -21,7 +21,7 @@ typedef const char* CString;
 #pragma mark - END Unsupported Types
 
 #pragma mark - BEGIN Type Definitions
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+typedef enum __attribute__((enum_extensibility(closed))) __attribute__((flag_enum)): int32_t {
 	System_Reflection_MemberTypes_Constructor = 1,
 	System_Reflection_MemberTypes_Event = 2,
 	System_Reflection_MemberTypes_Field = 4,
@@ -44,7 +44,7 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_StringComparison;
 
 
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+typedef enum __attribute__((enum_extensibility(closed))) __attribute__((flag_enum)): int32_t {
 	System_Globalization_NumberStyles_None = 0,
 	System_Globalization_NumberStyles_AllowLeadingWhite = 1,
 	System_Globalization_NumberStyles_AllowTrailingWhite = 2,
@@ -87,7 +87,7 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_TypeCode;
 
 
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+typedef enum __attribute__((enum_extensibility(closed))) __attribute__((flag_enum)): int32_t {
 	System_Globalization_CultureTypes_NeutralCultures = 1,
 	System_Globalization_CultureTypes_SpecificCultures = 2,
 	System_Globalization_CultureTypes_InstalledWin32Cultures = 4,
@@ -115,7 +115,7 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Reflection_AssemblyContentType;
 
 
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+typedef enum __attribute__((enum_extensibility(closed))) __attribute__((flag_enum)): int32_t {
 	System_Reflection_AssemblyNameFlags_None = 0,
 	System_Reflection_AssemblyNameFlags_PublicKey = 1,
 	System_Reflection_AssemblyNameFlags_Retargetable = 256,
@@ -184,7 +184,7 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_MidpointRounding;
 
 
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+typedef enum __attribute__((enum_extensibility(closed))) __attribute__((flag_enum)): int32_t {
 	System_Globalization_TimeSpanStyles_None = 0,
 	System_Globalization_TimeSpanStyles_AssumeNegative = 1
 } System_Globalization_TimeSpanStyles;
@@ -208,7 +208,7 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_DayOfWeek;
 
 
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+typedef enum __attribute__((enum_extensibility(closed))) __attribute__((flag_enum)): int32_t {
 	System_Globalization_DateTimeStyles_None = 0,
 	System_Globalization_DateTimeStyles_AllowLeadingWhite = 1,
 	System_Globalization_DateTimeStyles_AllowTrailingWhite = 2,
@@ -237,7 +237,7 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Globalization_CalendarWeekRule;
 
 
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+typedef enum __attribute__((enum_extensibility(closed))) __attribute__((flag_enum)): int32_t {
 	System_Runtime_Serialization_StreamingContextStates_CrossProcess = 1,
 	System_Runtime_Serialization_StreamingContextStates_CrossMachine = 2,
 	System_Runtime_Serialization_StreamingContextStates_File = 4,
@@ -250,7 +250,7 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Runtime_Serialization_StreamingContextStates;
 
 
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+typedef enum __attribute__((enum_extensibility(closed))) __attribute__((flag_enum)): int32_t {
 	System_Reflection_ParameterAttributes_None = 0,
 	System_Reflection_ParameterAttributes_In = 1,
 	System_Reflection_ParameterAttributes_Out = 2,
@@ -265,7 +265,7 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Reflection_ParameterAttributes;
 
 
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+typedef enum __attribute__((enum_extensibility(closed))) __attribute__((flag_enum)): int32_t {
 	System_Reflection_PortableExecutableKinds_NotAPortableExecutableImage = 0,
 	System_Reflection_PortableExecutableKinds_ILOnly = 1,
 	System_Reflection_PortableExecutableKinds_Required32Bit = 2,
@@ -283,7 +283,7 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Reflection_ImageFileMachine;
 
 
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+typedef enum __attribute__((enum_extensibility(closed))) __attribute__((flag_enum)): int32_t {
 	System_Reflection_BindingFlags_Default = 0,
 	System_Reflection_BindingFlags_IgnoreCase = 1,
 	System_Reflection_BindingFlags_DeclaredOnly = 2,
@@ -308,7 +308,7 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Reflection_BindingFlags;
 
 
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+typedef enum __attribute__((enum_extensibility(closed))) __attribute__((flag_enum)): int32_t {
 	System_Reflection_FieldAttributes_PrivateScope = 0,
 	System_Reflection_FieldAttributes_Private = 1,
 	System_Reflection_FieldAttributes_FamANDAssem = 2,
@@ -331,7 +331,7 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Reflection_FieldAttributes;
 
 
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+typedef enum __attribute__((enum_extensibility(closed))) __attribute__((flag_enum)): int32_t {
 	System_Reflection_PropertyAttributes_None = 0,
 	System_Reflection_PropertyAttributes_SpecialName = 512,
 	System_Reflection_PropertyAttributes_RTSpecialName = 1024,
@@ -343,7 +343,7 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Reflection_PropertyAttributes;
 
 
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+typedef enum __attribute__((enum_extensibility(closed))) __attribute__((flag_enum)): int32_t {
 	System_Reflection_CallingConventions_Standard = 1,
 	System_Reflection_CallingConventions_VarArgs = 2,
 	System_Reflection_CallingConventions_Any = 3,
@@ -352,7 +352,7 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Reflection_CallingConventions;
 
 
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+typedef enum __attribute__((enum_extensibility(closed))) __attribute__((flag_enum)): int32_t {
 	System_Reflection_MethodAttributes_PrivateScope = 0,
 	System_Reflection_MethodAttributes_ReuseSlot = 0,
 	System_Reflection_MethodAttributes_Private = 1,
@@ -401,7 +401,7 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Reflection_MethodImplAttributes;
 
 
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+typedef enum __attribute__((enum_extensibility(closed))) __attribute__((flag_enum)): int32_t {
 	System_Reflection_ExceptionHandlingClauseOptions_Clause = 0,
 	System_Reflection_ExceptionHandlingClauseOptions_Filter = 1,
 	System_Reflection_ExceptionHandlingClauseOptions_Finally = 2,
@@ -421,7 +421,7 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Threading_Tasks_TaskStatus;
 
 
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+typedef enum __attribute__((enum_extensibility(closed))) __attribute__((flag_enum)): int32_t {
 	System_Threading_Tasks_TaskCreationOptions_None = 0,
 	System_Threading_Tasks_TaskCreationOptions_PreferFairness = 1,
 	System_Threading_Tasks_TaskCreationOptions_LongRunning = 2,
@@ -440,14 +440,14 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Threading_Tasks_Sources_ValueTaskSourceStatus;
 
 
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+typedef enum __attribute__((enum_extensibility(closed))) __attribute__((flag_enum)): int32_t {
 	System_Threading_Tasks_Sources_ValueTaskSourceOnCompletedFlags_None = 0,
 	System_Threading_Tasks_Sources_ValueTaskSourceOnCompletedFlags_UseSchedulingContext = 1,
 	System_Threading_Tasks_Sources_ValueTaskSourceOnCompletedFlags_FlowExecutionContext = 2
 } System_Threading_Tasks_Sources_ValueTaskSourceOnCompletedFlags;
 
 
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+typedef enum __attribute__((enum_extensibility(closed))) __attribute__((flag_enum)): int32_t {
 	System_Threading_Tasks_TaskContinuationOptions_None = 0,
 	System_Threading_Tasks_TaskContinuationOptions_PreferFairness = 1,
 	System_Threading_Tasks_TaskContinuationOptions_LongRunning = 2,
@@ -481,7 +481,7 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_IO_SeekOrigin;
 
 
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+typedef enum __attribute__((enum_extensibility(closed))) __attribute__((flag_enum)): int32_t {
 	System_IO_FileAccess_Read = 1,
 	System_IO_FileAccess_Write = 2,
 	System_IO_FileAccess_ReadWrite = 3
@@ -498,7 +498,7 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_IO_FileMode;
 
 
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+typedef enum __attribute__((enum_extensibility(closed))) __attribute__((flag_enum)): int32_t {
 	System_IO_FileShare_None = 0,
 	System_IO_FileShare_Read = 1,
 	System_IO_FileShare_Write = 2,
@@ -508,7 +508,7 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_IO_FileShare;
 
 
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+typedef enum __attribute__((enum_extensibility(closed))) __attribute__((flag_enum)): int32_t {
 	System_IO_FileOptions_None = 0,
 	System_IO_FileOptions_Encrypted = 16384,
 	System_IO_FileOptions_DeleteOnClose = 67108864,
@@ -519,7 +519,7 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_IO_FileOptions;
 
 
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+typedef enum __attribute__((enum_extensibility(closed))) __attribute__((flag_enum)): int32_t {
 	System_IO_UnixFileMode_None = 0,
 	System_IO_UnixFileMode_OtherExecute = 1,
 	System_IO_UnixFileMode_OtherWrite = 2,
@@ -536,7 +536,7 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_IO_UnixFileMode;
 
 
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+typedef enum __attribute__((enum_extensibility(closed))) __attribute__((flag_enum)): int32_t {
 	System_Reflection_EventAttributes_None = 0,
 	System_Reflection_EventAttributes_SpecialName = 512,
 	System_Reflection_EventAttributes_RTSpecialName = 1024,
@@ -544,7 +544,7 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Reflection_EventAttributes;
 
 
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+typedef enum __attribute__((enum_extensibility(closed))) __attribute__((flag_enum)): int32_t {
 	System_Reflection_ResourceLocation_Embedded = 1,
 	System_Reflection_ResourceLocation_ContainedInAnotherAssembly = 2,
 	System_Reflection_ResourceLocation_ContainedInManifestFile = 4
@@ -566,7 +566,7 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Buffers_OperationStatus;
 
 
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+typedef enum __attribute__((enum_extensibility(closed))) __attribute__((flag_enum)): int32_t {
 	System_Globalization_CompareOptions_None = 0,
 	System_Globalization_CompareOptions_IgnoreCase = 1,
 	System_Globalization_CompareOptions_IgnoreNonSpace = 2,
@@ -594,14 +594,14 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Text_NormalizationForm;
 
 
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+typedef enum __attribute__((enum_extensibility(closed))) __attribute__((flag_enum)): int32_t {
 	System_StringSplitOptions_None = 0,
 	System_StringSplitOptions_RemoveEmptyEntries = 1,
 	System_StringSplitOptions_TrimEntries = 2
 } System_StringSplitOptions;
 
 
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+typedef enum __attribute__((enum_extensibility(closed))) __attribute__((flag_enum)): int32_t {
 	System_Reflection_GenericParameterAttributes_None = 0,
 	System_Reflection_GenericParameterAttributes_Covariant = 1,
 	System_Reflection_GenericParameterAttributes_Contravariant = 2,
@@ -613,7 +613,7 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Reflection_GenericParameterAttributes;
 
 
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+typedef enum __attribute__((enum_extensibility(closed))) __attribute__((flag_enum)): int32_t {
 	System_Reflection_TypeAttributes_NotPublic = 0,
 	System_Reflection_TypeAttributes_AutoLayout = 0,
 	System_Reflection_TypeAttributes_AnsiClass = 0,
@@ -695,7 +695,7 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_GCNotificationStatus;
 
 
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+typedef enum __attribute__((enum_extensibility(closed))) __attribute__((flag_enum)): int32_t {
 	System_Base64FormattingOptions_None = 0,
 	System_Base64FormattingOptions_InsertLineBreaks = 1
 } System_Base64FormattingOptions;
@@ -710,7 +710,7 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Threading_ThreadPriority;
 
 
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+typedef enum __attribute__((enum_extensibility(closed))) __attribute__((flag_enum)): int32_t {
 	System_Threading_ThreadState_Running = 0,
 	System_Threading_ThreadState_StopRequested = 1,
 	System_Threading_ThreadState_SuspendRequested = 2,
@@ -744,7 +744,7 @@ typedef enum __attribute__((enum_extensibility(closed))): int32_t {
 } System_Security_Principal_PrincipalPolicy;
 
 
-typedef enum __attribute__((enum_extensibility(closed))): int32_t {
+typedef enum __attribute__((enum_extensibility(closed))) __attribute__((flag_enum)): int32_t {
 	System_IO_FileAttributes_ReadOnly = 1,
 	System_IO_FileAttributes_Hidden = 2,
 	System_IO_FileAttributes_System = 4,

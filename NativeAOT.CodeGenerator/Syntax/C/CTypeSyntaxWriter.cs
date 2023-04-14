@@ -183,8 +183,20 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         TypeDescriptor underlyingTypeDescriptor = underlyingType.GetTypeDescriptor(typeDescriptorRegistry);
 
         string underlyingTypeName = underlyingTypeDescriptor.GetTypeName(CodeLanguage.C, false);
+        
+        bool isFlagsEnum = type.IsDefined(typeof(FlagsAttribute), false);
 
-        sb.AppendLine($"typedef enum __attribute__((enum_extensibility(closed))): {underlyingTypeName} {{");
+        List<string> clangAttributes = new() {
+            "__attribute__((enum_extensibility(closed)))"
+        };
+
+        if (isFlagsEnum) {
+            clangAttributes.Add("__attribute__((flag_enum))");
+        }
+
+        string clangAttributesString = string.Join(' ', clangAttributes);
+
+        sb.AppendLine($"typedef enum {clangAttributesString}: {underlyingTypeName} {{");
 
         var caseNames = type.GetEnumNames();
         var values = type.GetEnumValuesAsUnderlyingType() ?? throw new Exception("No enum values");
