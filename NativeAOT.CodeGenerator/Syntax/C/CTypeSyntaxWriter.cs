@@ -189,7 +189,7 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         bool isFlagsEnum = type.IsDefined(typeof(FlagsAttribute), false);
 
         List<string> clangAttributes = new() {
-            "__attribute__((enum_extensibility(closed)))"
+            "__attribute__((enum_extensibility(open)))"
         };
 
         if (isFlagsEnum) {
