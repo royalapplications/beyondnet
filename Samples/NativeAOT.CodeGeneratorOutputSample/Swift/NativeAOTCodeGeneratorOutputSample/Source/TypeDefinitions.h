@@ -8,6 +8,9 @@
 #import <stdlib.h>
 #import <stdbool.h>
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wflag-enum"
+
 #pragma mark - END Header
 
 #pragma mark - BEGIN Common Types
@@ -34830,6 +34833,8 @@ DNObjectFromUInt64(uint64_t number);
 #pragma mark - END Utils
 
 #pragma mark - BEGIN Footer
+#pragma clang diagnostic pop
+
 #endif /* TypeDefinitions_h */
 
 #pragma mark - END Footer

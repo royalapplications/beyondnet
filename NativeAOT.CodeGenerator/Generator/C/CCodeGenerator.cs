@@ -88,6 +88,9 @@ public class CCodeGenerator: ICodeGenerator
 
 #import <stdlib.h>
 #import <stdbool.h>
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wflag-enum"
 """;
     }
 
@@ -184,6 +187,10 @@ DNObjectFromUInt64(uint64_t number);
 
     private string GetFooterCode()
     {
-        return "#endif /* TypeDefinitions_h */";
+        return """
+#pragma clang diagnostic pop
+
+#endif /* TypeDefinitions_h */
+""";
     }
 }
