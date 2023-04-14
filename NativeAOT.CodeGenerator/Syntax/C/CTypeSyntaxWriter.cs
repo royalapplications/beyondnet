@@ -36,7 +36,7 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
     {
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
-        Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
+        // Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
         
         if (type.IsPrimitive ||
             type.IsPointer ||
@@ -179,6 +179,8 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
     {
         StringBuilder sb = new();
 
+        TypeDescriptor typeDescriptor = type.GetTypeDescriptor(typeDescriptorRegistry);
+
         Type underlyingType = type.GetEnumUnderlyingType();
         TypeDescriptor underlyingTypeDescriptor = underlyingType.GetTypeDescriptor(typeDescriptorRegistry);
 
@@ -217,8 +219,10 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         string enumCasesString = string.Join(",\n", enumCases);
 
         sb.AppendLine(enumCasesString);
+
+        string cEnumTypeName = typeDescriptor.GetTypeName(CodeLanguage.C, false);
         
-        sb.AppendLine($"}} {cTypeName};");
+        sb.AppendLine($"}} {cEnumTypeName};");
         
         return sb.ToString();
     }

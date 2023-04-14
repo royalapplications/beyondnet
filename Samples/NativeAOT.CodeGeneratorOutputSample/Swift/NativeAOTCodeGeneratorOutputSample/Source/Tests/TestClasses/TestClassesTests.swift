@@ -159,7 +159,7 @@ final class TestClassesTests: XCTestCase {
     func testEnum() {
         var exception: System_Exception_t?
         
-        let enumValue = NativeAOT_CodeGeneratorInputSample_TestEnum.secondCase
+		let enumValue = NativeAOT_CodeGeneratorInputSample_TestEnum_t.secondCase
         
 		guard let enumName = String(dotNETString: NativeAOT_CodeGeneratorInputSample_TestClass_GetTestEnumName(enumValue,
 																											   &exception),
@@ -216,9 +216,9 @@ final class TestClassesTests: XCTestCase {
 			NativeAOT_CodeGeneratorInputSample_TestClass_Destroy(testClass)
 		}
 		
-		let originalValue = NativeAOT_CodeGeneratorInputSample_TestEnum.firstCase
+		let originalValue = NativeAOT_CodeGeneratorInputSample_TestEnum_t.firstCase
 		var valueToModify = originalValue
-		let expectedValue = NativeAOT_CodeGeneratorInputSample_TestEnum.secondCase
+		let expectedValue = NativeAOT_CodeGeneratorInputSample_TestEnum_t.secondCase
 		
 		NativeAOT_CodeGeneratorInputSample_TestClass_ModifyByRefEnum(testClass,
 																	 &valueToModify,

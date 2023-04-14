@@ -92,7 +92,7 @@ final class SystemStringTests: XCTestCase {
 		XCTAssertNil(exception)
 		XCTAssertEqual(expectedIndexOfWorld, indexOfWorld)
 		
-		let splitOptions: System_StringSplitOptions = [ .removeEmptyEntries, .trimEntries ]
+		let splitOptions: System_StringSplitOptions_t = [ .removeEmptyEntries, .trimEntries ]
 		
 		let blankDN = " ".dotNETString()
 		
@@ -207,7 +207,7 @@ final class SystemStringTests: XCTestCase {
 		
 		let cleanedJoined = cleanedComponents.joined(separator: separator)
 		
-		let splitOptions: System_StringSplitOptions = [ .removeEmptyEntries, .trimEntries ]
+		let splitOptions: System_StringSplitOptions_t = [ .removeEmptyEntries, .trimEntries ]
 		
 		guard let split = System_String_Split_6(joinedDN,
 												separatorDN,

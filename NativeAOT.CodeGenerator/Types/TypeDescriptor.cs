@@ -171,7 +171,7 @@ public class TypeDescriptor
                     IsStruct) {
                     constructedCTypeName = $"{cTypeName}_t";    
                 } else if (IsEnum) {
-                    constructedCTypeName = cTypeName;
+                    constructedCTypeName = $"{cTypeName}_t";
                 } else {
                     throw new Exception("Unknown kind of type");
                 }

@@ -22,7 +22,7 @@ final class PersonTests: XCTestCase {
 		defer { System_String_Destroy(lastNameDN) }
 		
         let age: Int32 = 24
-        let expectedNiceLevel: NativeAOT_CodeGeneratorInputSample_NiceLevels = .veryNice
+        let expectedNiceLevel: NativeAOT_CodeGeneratorInputSample_NiceLevels_t = .veryNice
         let expectedNiceLevelString = "Very nice"
         
         let expectedFullName = "\(firstName) \(lastName)"
