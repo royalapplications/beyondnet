@@ -1,18 +1,32 @@
 import Foundation
 
-public class System_Object /* System.Object */ {
-	let _handle: System_Object_t
+public class DNObject {
+    let __handle: UnsafeMutableRawPointer
 
-	required init(handle: System_Object_t) {
-		self._handle = handle
-	}
+    required init(handle: UnsafeMutableRawPointer) {
+        self.__handle = handle
+    }
 
-	convenience init?(handle: System_Object_t?) {
-		guard let handle else { return nil }
+    convenience init?(handle: UnsafeMutableRawPointer?) {
+        guard let handle else { return nil }
 
-		self.init(handle: handle)
-	}
+        self.init(handle: handle)
+    }
 
+    internal func destroy(handle: UnsafeMutableRawPointer) {
+        // Override in subclass
+    }
+    
+    public class var typeOf: System_Type /* System.Type */ {
+        fatalError("Override in subclass")
+    }
+
+    deinit {
+        destroy(handle: self.__handle)
+    }
+}
+
+public class System_Object /* System.Object */: DNObject {
 //	func getType() throws -> System_Type? /* System.Type */ {
 //
 //	}
@@ -25,61 +39,32 @@ public class System_Object /* System.Object */ {
 //		}
 //	}
 	
-	static func typeOf() -> System_Type? /* System.Type */ {
-		return System_Type(handle: System_Object_TypeOf())
+    public override class var typeOf: System_Type /* System.Type */ {
+		return System_Type(handle: System_Object_TypeOf())!
 	}
-	
-	deinit {
-		System_Object_Destroy(self._handle)
-	}
+    
+    override func destroy(handle: UnsafeMutableRawPointer) {
+        System_Object_Destroy(handle)
+    }
 }
 
 
-public class System_Type /* System.Type */ {
-	let _handle: System_Type_t
-
-	required init(handle: System_Type_t) {
-		self._handle = handle
-	}
-
-	convenience init?(handle: System_Type_t?) {
-		guard let handle else { return nil }
-
-		self.init(handle: handle)
-	}
-	
+public class System_Type /* System.Type */: System_Object {
 //	static func typeOf() -> System_Type? /* System.Type */ {
 //
 //	}
 
-	deinit {
-		System_Type_Destroy(self._handle)
+    override func destroy(handle: UnsafeMutableRawPointer) {
+		System_Type_Destroy(handle)
 	}
 }
 
-public class NativeAOT_CodeGeneratorInputSample_TestClass /* NativeAOT.CodeGeneratorInputSample.TestClass */ {
-	let _handle: NativeAOT_CodeGeneratorInputSample_TestClass_t
-
-	required init(handle: NativeAOT_CodeGeneratorInputSample_TestClass_t) {
-		self._handle = handle
-	}
-
-	convenience init?(handle: NativeAOT_CodeGeneratorInputSample_TestClass_t?) {
-		guard let handle else { return nil }
-
-		self.init(handle: handle)
-	}
-
-	static func typeOf() -> System_Type? /* System.Type */ {
-		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_TestClass_TypeOf())
-		
-	
-	}
-	
-	deinit {
-		NativeAOT_CodeGeneratorInputSample_TestClass_Destroy(self._handle)
-		
-	
-	}
-	
+public class NativeAOT_CodeGeneratorInputSample_TestClass /* NativeAOT.CodeGeneratorInputSample.TestClass */: System_Object {
+    public override class var typeOf: System_Type /* System.Type */ {
+        return System_Type(handle: NativeAOT_CodeGeneratorInputSample_TestClass_TypeOf())
+    }
+    
+    override func destroy(handle: UnsafeMutableRawPointer) {
+        NativeAOT_CodeGeneratorInputSample_TestClass_Destroy(handle)
+    }
 }
