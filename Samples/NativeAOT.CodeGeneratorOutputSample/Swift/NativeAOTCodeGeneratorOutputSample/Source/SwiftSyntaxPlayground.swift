@@ -2,6 +2,9 @@ import Foundation
 
 public class DNObject {
     let __handle: UnsafeMutableRawPointer
+    
+    public var typeName: String { "" }
+    public var fullTypeName: String { "" }
 
     required init(handle: UnsafeMutableRawPointer) {
         self.__handle = handle
@@ -27,6 +30,9 @@ public class DNObject {
 }
 
 public class System_Object /* System.Object */: DNObject {
+    public override var typeName: String { "System.Object" }
+    public override var fullTypeName: String { "Blah" }
+    
 //	func getType() throws -> System_Type? /* System.Type */ {
 //
 //	}

@@ -75,6 +75,9 @@ extension NativeBox {
 public class DNObject {
     let __handle: UnsafeMutableRawPointer
 
+    public var typeName: String { "" }
+    public var fullTypeName: String { "" }
+
     required init(handle: UnsafeMutableRawPointer) {
 		self.__handle = handle
 	}

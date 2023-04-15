@@ -76,6 +76,35 @@ extension NativeBox {
     }
 }
 
+public class DNObject {
+    let __handle: UnsafeMutableRawPointer
+
+    public var typeName: String { "" }
+    public var fullTypeName: String { "" }
+
+    required init(handle: UnsafeMutableRawPointer) {
+		self.__handle = handle
+	}
+
+	convenience init?(handle: UnsafeMutableRawPointer?) {
+		guard let handle else { return nil }
+
+		self.init(handle: handle)
+	}
+
+    public class var typeOf: System_Type /* System.Type */ {
+        fatalError("Override in subclass")
+    }
+
+    internal func destroy(handle: UnsafeMutableRawPointer) {
+        // Override in subclass
+    }
+
+    deinit {
+		destroy(handle: self.__handle)
+	}
+}
+
 // MARK: - END Utils
 
 // MARK: - BEGIN Common Types
