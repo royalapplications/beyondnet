@@ -344,24 +344,13 @@ public class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWriter
         bool isDelegate = type.IsDelegate();
 
         if (writeTypeDefinition) {
-            sb.AppendLine($"public class {swiftTypeName} /* {fullTypeName} */ {{");
+            Type? baseType = type.BaseType;
+            TypeDescriptor? baseTypeDescriptor = baseType?.GetTypeDescriptor(typeDescriptorRegistry);
 
-            if (!isAbstract) {
-                sb.AppendLine($"\tlet _handle: {cTypeName}");
-                sb.AppendLine();
-                
-                sb.AppendLine($"\trequired init(handle: {cTypeName}) {{");
-                sb.AppendLine("\t\tself._handle = handle");
-                sb.AppendLine("\t}");
-                sb.AppendLine();
-                
-                sb.AppendLine($"\tconvenience init?(handle: {cTypeName}?) {{");
-                sb.AppendLine("\t\tguard let handle else { return nil }");
-                sb.AppendLine();
-                sb.AppendLine("\t\tself.init(handle: handle)");
-                sb.AppendLine("\t}");
-                sb.AppendLine();
-            }
+            string swiftBaseTypeName = baseTypeDescriptor?.GetTypeName(CodeLanguage.Swift, false)
+                                       ?? "DNObject";
+            
+            sb.AppendLine($"public class {swiftTypeName} /* {fullTypeName} */: {swiftBaseTypeName} {{");
         }
 
         // if (isDelegate) {

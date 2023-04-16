@@ -294,7 +294,7 @@ public class TypeDescriptor
             if (IsEnum) {
                 return "{0}.cValue";
             } else {
-                return "{0}._handle";
+                return "{0}.__handle";
             }
         } else {
             throw new Exception("Unknown language pair");

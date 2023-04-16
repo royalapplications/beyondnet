@@ -254,14 +254,18 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         string funcParams = $"({methodSignatureParameters})";
 
         if (memberKind == MemberKind.Constructor) {
-            funcPrefix = string.Empty;
+            funcPrefix = "public ";
             funcReturn = string.Empty;
         } else if (memberKind == MemberKind.Destructor) {
-            funcPrefix = string.Empty;
+            funcPrefix = "override func ";
+            funcReturn = string.Empty;
+            funcParams = string.Empty;
+        } else if (memberKind == MemberKind.TypeOf) {
+            funcPrefix = "public override class func ";
             funcReturn = string.Empty;
             funcParams = string.Empty;
         } else {
-            funcPrefix = $"{staticOrNot}func ";
+            funcPrefix = $"public {staticOrNot}func ";
             
             funcReturn = returnOrSetterOrEventHandlerType.IsVoid()
                 ? string.Empty
@@ -281,7 +285,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         if (memberKind == MemberKind.Destructor) {
             needsRegularImpl = false;
             
-            sbImpl.AppendLine($"{cMethodName}(self._handle)");
+            sbImpl.AppendLine($"{cMethodName}(self.__handle)");
         } else if (memberKind == MemberKind.TypeOf) {
             needsRegularImpl = false;
             
@@ -332,7 +336,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             List<string> allParameterNames = new();
 
             if (!isStaticMethod) {
-                allParameterNames.Add("self._handle");
+                allParameterNames.Add("self.__handle");
             }
             
             allParameterNames.AddRange(convertedGenericTypeArgumentNames);

@@ -88,11 +88,11 @@ public class DNObject {
 		self.init(handle: handle)
 	}
 
-    public class var typeOf: System_Type /* System.Type */ {
+    public class func typeOf() -> System_Type /* System.Type */ {
         fatalError("Override in subclass")
     }
 
-    internal func destroy(handle: UnsafeMutableRawPointer) {
+    internal func destroy() {
         // Override in subclass
     }
 

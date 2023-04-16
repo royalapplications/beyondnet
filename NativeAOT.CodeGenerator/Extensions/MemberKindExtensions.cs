@@ -93,7 +93,7 @@ public static class MemberKindExtensions
             if (memberKind == MemberKind.Constructor) {
                 swiftName = "convenience init?";
             } else if (memberKind == MemberKind.Destructor) {
-                swiftName = "deinit";
+                swiftName = "destroy";
             } else if (memberKind == MemberKind.TypeOf) {
                 swiftName = "typeOf";
             } else {

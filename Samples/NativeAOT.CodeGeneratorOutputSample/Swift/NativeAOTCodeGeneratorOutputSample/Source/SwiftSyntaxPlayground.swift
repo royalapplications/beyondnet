@@ -16,7 +16,7 @@ public class DNObject {
         self.init(handle: handle)
     }
 
-    internal func destroy(handle: UnsafeMutableRawPointer) {
+    internal func destroy() {
         // Override in subclass
     }
     
@@ -49,8 +49,8 @@ public class System_Object /* System.Object */: DNObject {
 		return System_Type(handle: System_Object_TypeOf())!
 	}
     
-    override func destroy(handle: UnsafeMutableRawPointer) {
-        System_Object_Destroy(handle)
+    override func destroy() {
+        System_Object_Destroy(self.__handle)
     }
 }
 
@@ -60,8 +60,8 @@ public class System_Type /* System.Type */: System_Object {
 //
 //	}
 
-    override func destroy(handle: UnsafeMutableRawPointer) {
-		System_Type_Destroy(handle)
+    override func destroy() {
+        System_Type_Destroy(self.__handle)
 	}
 }
 
@@ -70,7 +70,7 @@ public class NativeAOT_CodeGeneratorInputSample_TestClass /* NativeAOT.CodeGener
         return System_Type(handle: NativeAOT_CodeGeneratorInputSample_TestClass_TypeOf())
     }
     
-    override func destroy(handle: UnsafeMutableRawPointer) {
-        NativeAOT_CodeGeneratorInputSample_TestClass_Destroy(handle)
+    override func destroy() {
+        NativeAOT_CodeGeneratorInputSample_TestClass_Destroy(self.__handle)
     }
 }
