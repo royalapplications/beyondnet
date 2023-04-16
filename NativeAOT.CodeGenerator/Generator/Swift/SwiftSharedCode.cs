@@ -100,5 +100,35 @@ public class DNObject {
 		destroy(handle: self.__handle)
 	}
 }
+
+class DNError: LocalizedError {
+    public let exception: System_Exception
+    
+    public init(exception: System_Exception) {
+        self.exception = exception
+    }
+    
+    public func stackTrace() -> String? {
+        do {
+            return try exception.getStackTrace()
+        } catch {
+            return nil
+        }
+    }
+    
+    public var errorDescription: String? {
+        do {
+            return try exception.getMessage()
+        } catch {
+            return nil
+        }
+    }
+}
+
+public extension System_Exception {
+    var error: DNError {
+        return DNError(exception: self)
+    }
+}
 """;
 }
