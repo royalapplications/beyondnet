@@ -97,7 +97,7 @@ public class DNObject {
     }
 
     deinit {
-		destroy(handle: self.__handle)
+		destroy()
 	}
 }
 
