@@ -259,11 +259,11 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         } else if (memberKind == MemberKind.Destructor) {
             funcPrefix = "override func ";
             funcReturn = string.Empty;
-            funcParams = string.Empty;
+            funcParams = "()";
         } else if (memberKind == MemberKind.TypeOf) {
             funcPrefix = "public override class func ";
             funcReturn = string.Empty;
-            funcParams = string.Empty;
+            funcParams = "()";
         } else {
             funcPrefix = $"public {staticOrNot}func ";
             

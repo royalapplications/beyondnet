@@ -1658,13 +1658,13 @@ public class System_Object /* System.Object */: DNObject {
 	
 	}
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Object_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Object_Destroy(self.__handle)
 		
 	
@@ -4438,13 +4438,13 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Type_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Type_Destroy(self.__handle)
 		
 	
@@ -4679,13 +4679,13 @@ public class System_Reflection_MemberInfo /* System.Reflection.MemberInfo */: Sy
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Reflection_MemberInfo_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Reflection_MemberInfo_Destroy(self.__handle)
 		
 	
@@ -5300,13 +5300,13 @@ public class System_Enum /* System.Enum */: System_ValueType {
 	
 	}
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Enum_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Enum_Destroy(self.__handle)
 		
 	
@@ -5360,13 +5360,13 @@ public class System_ValueType /* System.ValueType */: System_Object {
 	
 	}
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_ValueType_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_ValueType_Destroy(self.__handle)
 		
 	
@@ -7654,13 +7654,13 @@ public class System_String /* System.String */: System_Object {
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_String_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_String_Destroy(self.__handle)
 		
 	
@@ -8470,13 +8470,13 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Globalization_CultureInfo_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Globalization_CultureInfo_Destroy(self.__handle)
 		
 	
@@ -9674,13 +9674,13 @@ public class System_Array /* System.Array */: System_Object {
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Array_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Array_Destroy(self.__handle)
 		
 	
@@ -9709,13 +9709,13 @@ public class System_IFormatProvider /* System.IFormatProvider */: DNObject {
 	
 	}
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_IFormatProvider_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_IFormatProvider_Destroy(self.__handle)
 		
 	
@@ -9768,13 +9768,13 @@ public class System_Collections_IComparer /* System.Collections.IComparer */: DN
 	
 	}
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Collections_IComparer_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Collections_IComparer_Destroy(self.__handle)
 		
 	
@@ -9952,13 +9952,13 @@ public class System_Collections_IEnumerator /* System.Collections.IEnumerator */
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Collections_IEnumerator_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Collections_IEnumerator_Destroy(self.__handle)
 		
 	
@@ -10708,13 +10708,13 @@ public class System_Globalization_CompareInfo /* System.Globalization.CompareInf
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Globalization_CompareInfo_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Globalization_CompareInfo_Destroy(self.__handle)
 		
 	
@@ -11856,13 +11856,13 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Reflection_Assembly_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Reflection_Assembly_Destroy(self.__handle)
 		
 	
@@ -12398,13 +12398,13 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Reflection_AssemblyName_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Reflection_AssemblyName_Destroy(self.__handle)
 		
 	
@@ -12721,13 +12721,13 @@ public class System_Version /* System.Version */: System_Object {
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Version_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Version_Destroy(self.__handle)
 		
 	
@@ -12824,13 +12824,13 @@ public class System_Reflection_StrongNameKeyPair /* System.Reflection.StrongName
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Reflection_StrongNameKeyPair_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Reflection_StrongNameKeyPair_Destroy(self.__handle)
 		
 	
@@ -13514,13 +13514,13 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_IO_FileStream_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_IO_FileStream_Destroy(self.__handle)
 		
 	
@@ -14180,13 +14180,13 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_IO_Stream_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_IO_Stream_Destroy(self.__handle)
 		
 	
@@ -14228,13 +14228,13 @@ public class System_MarshalByRefObject /* System.MarshalByRefObject */: System_O
 	
 	}
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_MarshalByRefObject_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_MarshalByRefObject_Destroy(self.__handle)
 		
 	
@@ -15072,13 +15072,13 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Threading_Tasks_Task_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Threading_Tasks_Task_Destroy(self.__handle)
 		
 	
@@ -15165,13 +15165,13 @@ public class System_Threading_Tasks_TaskScheduler /* System.Threading.Tasks.Task
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Threading_Tasks_TaskScheduler_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Threading_Tasks_TaskScheduler_Destroy(self.__handle)
 		
 	
@@ -15389,13 +15389,13 @@ public class System_AggregateException /* System.AggregateException */: System_E
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_AggregateException_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_AggregateException_Destroy(self.__handle)
 		
 	
@@ -15682,13 +15682,13 @@ public class System_Exception /* System.Exception */: System_Object {
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Exception_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Exception_Destroy(self.__handle)
 		
 	
@@ -16207,13 +16207,13 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Reflection_MethodBase_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Reflection_MethodBase_Destroy(self.__handle)
 		
 	
@@ -16335,13 +16335,13 @@ public class System_RuntimeMethodHandle /* System.RuntimeMethodHandle */: System
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_RuntimeMethodHandle_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_RuntimeMethodHandle_Destroy(self.__handle)
 		
 	
@@ -16964,13 +16964,13 @@ public class System_Runtime_Serialization_SerializationInfo /* System.Runtime.Se
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Runtime_Serialization_SerializationInfo_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Runtime_Serialization_SerializationInfo_Destroy(self.__handle)
 		
 	
@@ -17070,13 +17070,13 @@ public class System_Runtime_Serialization_SerializationInfoEnumerator /* System.
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Runtime_Serialization_SerializationInfoEnumerator_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Runtime_Serialization_SerializationInfoEnumerator_Destroy(self.__handle)
 		
 	
@@ -17136,13 +17136,13 @@ public class System_Runtime_Serialization_SerializationEntry /* System.Runtime.S
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Runtime_Serialization_SerializationEntry_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Runtime_Serialization_SerializationEntry_Destroy(self.__handle)
 		
 	
@@ -18352,13 +18352,13 @@ public class System_Decimal /* System.Decimal */: System_ValueType {
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Decimal_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Decimal_Destroy(self.__handle)
 		
 	
@@ -19827,13 +19827,13 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_DateTime_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_DateTime_Destroy(self.__handle)
 		
 	
@@ -20808,13 +20808,13 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_TimeSpan_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_TimeSpan_Destroy(self.__handle)
 		
 	
@@ -21497,13 +21497,13 @@ public class System_DateOnly /* System.DateOnly */: System_ValueType {
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_DateOnly_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_DateOnly_Destroy(self.__handle)
 		
 	
@@ -22314,13 +22314,13 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_TimeOnly_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_TimeOnly_Destroy(self.__handle)
 		
 	
@@ -22986,13 +22986,13 @@ public class System_Globalization_Calendar /* System.Globalization.Calendar */: 
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Globalization_Calendar_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Globalization_Calendar_Destroy(self.__handle)
 		
 	
@@ -23253,13 +23253,13 @@ public class System_Runtime_Serialization_IFormatterConverter /* System.Runtime.
 	
 	}
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Runtime_Serialization_IFormatterConverter_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Runtime_Serialization_IFormatterConverter_Destroy(self.__handle)
 		
 	
@@ -23359,13 +23359,13 @@ public class System_Runtime_Serialization_StreamingContext /* System.Runtime.Ser
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Runtime_Serialization_StreamingContext_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Runtime_Serialization_StreamingContext_Destroy(self.__handle)
 		
 	
@@ -23496,13 +23496,13 @@ public class System_RuntimeTypeHandle /* System.RuntimeTypeHandle */: System_Val
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_RuntimeTypeHandle_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_RuntimeTypeHandle_Destroy(self.__handle)
 		
 	
@@ -23723,13 +23723,13 @@ public class System_ModuleHandle /* System.ModuleHandle */: System_ValueType {
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_ModuleHandle_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_ModuleHandle_Destroy(self.__handle)
 		
 	
@@ -23845,13 +23845,13 @@ public class System_RuntimeFieldHandle /* System.RuntimeFieldHandle */: System_V
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_RuntimeFieldHandle_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_RuntimeFieldHandle_Destroy(self.__handle)
 		
 	
@@ -24227,13 +24227,13 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Reflection_ParameterInfo_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Reflection_ParameterInfo_Destroy(self.__handle)
 		
 	
@@ -24419,13 +24419,13 @@ public class System_Reflection_CustomAttributeData /* System.Reflection.CustomAt
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Reflection_CustomAttributeData_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Reflection_CustomAttributeData_Destroy(self.__handle)
 		
 	
@@ -25126,13 +25126,13 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Reflection_Module_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Reflection_Module_Destroy(self.__handle)
 		
 	
@@ -25479,13 +25479,13 @@ public class System_Guid /* System.Guid */: System_ValueType {
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Guid_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Guid_Destroy(self.__handle)
 		
 	
@@ -25723,13 +25723,13 @@ public class System_Reflection_MethodInfo /* System.Reflection.MethodInfo */: Sy
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Reflection_MethodInfo_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Reflection_MethodInfo_Destroy(self.__handle)
 		
 	
@@ -25793,13 +25793,13 @@ public class System_Reflection_ICustomAttributeProvider /* System.Reflection.ICu
 	
 	}
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Reflection_ICustomAttributeProvider_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Reflection_ICustomAttributeProvider_Destroy(self.__handle)
 		
 	
@@ -25918,13 +25918,13 @@ public class System_Reflection_Binder /* System.Reflection.Binder */: System_Obj
 	
 	}
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Reflection_Binder_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Reflection_Binder_Destroy(self.__handle)
 		
 	
@@ -26370,13 +26370,13 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Reflection_FieldInfo_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Reflection_FieldInfo_Destroy(self.__handle)
 		
 	
@@ -26424,13 +26424,13 @@ public class System_Reflection_ParameterModifier /* System.Reflection.ParameterM
 	
 	}
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Reflection_ParameterModifier_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Reflection_ParameterModifier_Destroy(self.__handle)
 		
 	
@@ -26863,13 +26863,13 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Reflection_PropertyInfo_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Reflection_PropertyInfo_Destroy(self.__handle)
 		
 	
@@ -26996,13 +26996,13 @@ public class System_Reflection_ConstructorInfo /* System.Reflection.ConstructorI
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Reflection_ConstructorInfo_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Reflection_ConstructorInfo_Destroy(self.__handle)
 		
 	
@@ -27137,13 +27137,13 @@ public class System_Reflection_CustomAttributeTypedArgument /* System.Reflection
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Reflection_CustomAttributeTypedArgument_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Reflection_CustomAttributeTypedArgument_Destroy(self.__handle)
 		
 	
@@ -27309,13 +27309,13 @@ public class System_Reflection_CustomAttributeNamedArgument /* System.Reflection
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Reflection_CustomAttributeNamedArgument_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Reflection_CustomAttributeNamedArgument_Destroy(self.__handle)
 		
 	
@@ -27417,13 +27417,13 @@ public class System_Reflection_MethodBody /* System.Reflection.MethodBody */: Sy
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Reflection_MethodBody_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Reflection_MethodBody_Destroy(self.__handle)
 		
 	
@@ -27496,13 +27496,13 @@ public class System_Reflection_LocalVariableInfo /* System.Reflection.LocalVaria
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Reflection_LocalVariableInfo_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Reflection_LocalVariableInfo_Destroy(self.__handle)
 		
 	
@@ -27631,13 +27631,13 @@ public class System_Reflection_ExceptionHandlingClause /* System.Reflection.Exce
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Reflection_ExceptionHandlingClause_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Reflection_ExceptionHandlingClause_Destroy(self.__handle)
 		
 	
@@ -27774,13 +27774,13 @@ public class System_Collections_IDictionary /* System.Collections.IDictionary */
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Collections_IDictionary_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Collections_IDictionary_Destroy(self.__handle)
 		
 	
@@ -27848,13 +27848,13 @@ public class System_Collections_ICollection /* System.Collections.ICollection */
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Collections_ICollection_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Collections_ICollection_Destroy(self.__handle)
 		
 	
@@ -27914,13 +27914,13 @@ public class System_Collections_IDictionaryEnumerator /* System.Collections.IDic
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Collections_IDictionaryEnumerator_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Collections_IDictionaryEnumerator_Destroy(self.__handle)
 		
 	
@@ -28039,13 +28039,13 @@ public class System_Collections_DictionaryEntry /* System.Collections.Dictionary
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Collections_DictionaryEntry_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Collections_DictionaryEntry_Destroy(self.__handle)
 		
 	
@@ -28278,13 +28278,13 @@ public class System_Threading_Tasks_TaskFactory /* System.Threading.Tasks.TaskFa
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Threading_Tasks_TaskFactory_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Threading_Tasks_TaskFactory_Destroy(self.__handle)
 		
 	
@@ -28455,13 +28455,13 @@ public class System_Threading_CancellationToken /* System.Threading.Cancellation
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Threading_CancellationToken_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Threading_CancellationToken_Destroy(self.__handle)
 		
 	
@@ -28821,13 +28821,13 @@ public class System_Threading_WaitHandle /* System.Threading.WaitHandle */: Syst
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Threading_WaitHandle_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Threading_WaitHandle_Destroy(self.__handle)
 		
 	
@@ -28869,13 +28869,13 @@ public class Microsoft_Win32_SafeHandles_SafeWaitHandle /* Microsoft.Win32.SafeH
 	
 	}
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: Microsoft_Win32_SafeHandles_SafeWaitHandle_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		Microsoft_Win32_SafeHandles_SafeWaitHandle_Destroy(self.__handle)
 		
 	
@@ -28901,13 +28901,13 @@ public class Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid /* Mi
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid_Destroy(self.__handle)
 		
 	
@@ -29015,13 +29015,13 @@ public class System_Runtime_InteropServices_SafeHandle /* System.Runtime.Interop
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Runtime_InteropServices_SafeHandle_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Runtime_InteropServices_SafeHandle_Destroy(self.__handle)
 		
 	
@@ -29033,13 +29033,13 @@ public class System_Runtime_InteropServices_SafeHandle /* System.Runtime.Interop
 
 
 public class System_Runtime_ConstrainedExecution_CriticalFinalizerObject /* System.Runtime.ConstrainedExecution.CriticalFinalizerObject */: System_Object {
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Runtime_ConstrainedExecution_CriticalFinalizerObject_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Runtime_ConstrainedExecution_CriticalFinalizerObject_Destroy(self.__handle)
 		
 	
@@ -29155,13 +29155,13 @@ public class System_Threading_CancellationTokenRegistration /* System.Threading.
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Threading_CancellationTokenRegistration_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Threading_CancellationTokenRegistration_Destroy(self.__handle)
 		
 	
@@ -29410,13 +29410,13 @@ public class System_Threading_Tasks_ValueTask /* System.Threading.Tasks.ValueTas
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Threading_Tasks_ValueTask_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Threading_Tasks_ValueTask_Destroy(self.__handle)
 		
 	
@@ -29478,13 +29478,13 @@ public class System_Runtime_CompilerServices_ValueTaskAwaiter /* System.Runtime.
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Runtime_CompilerServices_ValueTaskAwaiter_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Runtime_CompilerServices_ValueTaskAwaiter_Destroy(self.__handle)
 		
 	
@@ -29511,13 +29511,13 @@ public class System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable /* Sys
 	
 	}
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_Destroy(self.__handle)
 		
 	
@@ -29578,13 +29578,13 @@ public class System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_Config
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_Destroy(self.__handle)
 		
 	
@@ -29620,13 +29620,13 @@ public class System_Threading_Tasks_Sources_IValueTaskSource /* System.Threading
 	
 	}
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Threading_Tasks_Sources_IValueTaskSource_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Threading_Tasks_Sources_IValueTaskSource_Destroy(self.__handle)
 		
 	
@@ -29698,13 +29698,13 @@ public class System_IAsyncResult /* System.IAsyncResult */: DNObject {
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_IAsyncResult_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_IAsyncResult_Destroy(self.__handle)
 		
 	
@@ -29796,13 +29796,13 @@ public class System_Runtime_CompilerServices_TaskAwaiter /* System.Runtime.Compi
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Runtime_CompilerServices_TaskAwaiter_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Runtime_CompilerServices_TaskAwaiter_Destroy(self.__handle)
 		
 	
@@ -29829,13 +29829,13 @@ public class System_Runtime_CompilerServices_ConfiguredTaskAwaitable /* System.R
 	
 	}
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Runtime_CompilerServices_ConfiguredTaskAwaitable_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Runtime_CompilerServices_ConfiguredTaskAwaitable_Destroy(self.__handle)
 		
 	
@@ -29896,13 +29896,13 @@ public class System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredT
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_Destroy(self.__handle)
 		
 	
@@ -29929,13 +29929,13 @@ public class System_Runtime_CompilerServices_YieldAwaitable /* System.Runtime.Co
 	
 	}
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Runtime_CompilerServices_YieldAwaitable_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Runtime_CompilerServices_YieldAwaitable_Destroy(self.__handle)
 		
 	
@@ -29996,13 +29996,13 @@ public class System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter /* Syst
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_Destroy(self.__handle)
 		
 	
@@ -30096,13 +30096,13 @@ public class System_Buffers_MemoryHandle /* System.Buffers.MemoryHandle */: Syst
 	
 	}
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Buffers_MemoryHandle_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Buffers_MemoryHandle_Destroy(self.__handle)
 		
 	
@@ -30285,13 +30285,13 @@ public class System_Runtime_InteropServices_GCHandle /* System.Runtime.InteropSe
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Runtime_InteropServices_GCHandle_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Runtime_InteropServices_GCHandle_Destroy(self.__handle)
 		
 	
@@ -30329,13 +30329,13 @@ public class System_Buffers_IPinnable /* System.Buffers.IPinnable */: DNObject {
 	
 	}
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Buffers_IPinnable_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Buffers_IPinnable_Destroy(self.__handle)
 		
 	
@@ -30405,13 +30405,13 @@ public class Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeH
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: Microsoft_Win32_SafeHandles_SafeFileHandle_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		Microsoft_Win32_SafeHandles_SafeFileHandle_Destroy(self.__handle)
 		
 	
@@ -30631,13 +30631,13 @@ public class System_IO_FileStreamOptions /* System.IO.FileStreamOptions */: Syst
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_IO_FileStreamOptions_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_IO_FileStreamOptions_Destroy(self.__handle)
 		
 	
@@ -30924,13 +30924,13 @@ public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Reflection_TypeInfo_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Reflection_TypeInfo_Destroy(self.__handle)
 		
 	
@@ -31235,13 +31235,13 @@ public class System_Reflection_EventInfo /* System.Reflection.EventInfo */: Syst
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Reflection_EventInfo_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Reflection_EventInfo_Destroy(self.__handle)
 		
 	
@@ -31344,13 +31344,13 @@ public class System_Reflection_ManifestResourceInfo /* System.Reflection.Manifes
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Reflection_ManifestResourceInfo_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Reflection_ManifestResourceInfo_Destroy(self.__handle)
 		
 	
@@ -31427,13 +31427,13 @@ public class System_ResolveEventArgs /* System.ResolveEventArgs */: System_Event
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_ResolveEventArgs_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_ResolveEventArgs_Destroy(self.__handle)
 		
 	
@@ -31473,13 +31473,13 @@ public class System_EventArgs /* System.EventArgs */: System_Object {
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_EventArgs_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_EventArgs_Destroy(self.__handle)
 		
 	
@@ -32107,13 +32107,13 @@ public class System_Text_Rune /* System.Text.Rune */: System_ValueType {
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Text_Rune_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Text_Rune_Destroy(self.__handle)
 		
 	
@@ -32215,13 +32215,13 @@ public class System_Globalization_SortKey /* System.Globalization.SortKey */: Sy
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Globalization_SortKey_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Globalization_SortKey_Destroy(self.__handle)
 		
 	
@@ -32320,13 +32320,13 @@ public class System_Globalization_SortVersion /* System.Globalization.SortVersio
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Globalization_SortVersion_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Globalization_SortVersion_Destroy(self.__handle)
 		
 	
@@ -32630,13 +32630,13 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Globalization_TextInfo_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Globalization_TextInfo_Destroy(self.__handle)
 		
 	
@@ -33573,13 +33573,13 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Globalization_NumberFormatInfo_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Globalization_NumberFormatInfo_Destroy(self.__handle)
 		
 	
@@ -34583,13 +34583,13 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Globalization_DateTimeFormatInfo_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Globalization_DateTimeFormatInfo_Destroy(self.__handle)
 		
 	
@@ -34679,13 +34679,13 @@ public class System_CharEnumerator /* System.CharEnumerator */: System_Object {
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_CharEnumerator_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_CharEnumerator_Destroy(self.__handle)
 		
 	
@@ -34741,13 +34741,13 @@ public class System_Text_StringRuneEnumerator /* System.Text.StringRuneEnumerato
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Text_StringRuneEnumerator_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Text_StringRuneEnumerator_Destroy(self.__handle)
 		
 	
@@ -34810,13 +34810,13 @@ public class System_Text_CompositeFormat /* System.Text.CompositeFormat */: Syst
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Text_CompositeFormat_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Text_CompositeFormat_Destroy(self.__handle)
 		
 	
@@ -35744,13 +35744,13 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Text_Encoding_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Text_Encoding_Destroy(self.__handle)
 		
 	
@@ -35843,13 +35843,13 @@ public class System_Text_EncodingProvider /* System.Text.EncodingProvider */: Sy
 	
 	}
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Text_EncodingProvider_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Text_EncodingProvider_Destroy(self.__handle)
 		
 	
@@ -35922,13 +35922,13 @@ public class System_Text_EncoderFallback /* System.Text.EncoderFallback */: Syst
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Text_EncoderFallback_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Text_EncoderFallback_Destroy(self.__handle)
 		
 	
@@ -36017,13 +36017,13 @@ public class System_Text_EncoderFallbackBuffer /* System.Text.EncoderFallbackBuf
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Text_EncoderFallbackBuffer_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Text_EncoderFallbackBuffer_Destroy(self.__handle)
 		
 	
@@ -36096,13 +36096,13 @@ public class System_Text_DecoderFallback /* System.Text.DecoderFallback */: Syst
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Text_DecoderFallback_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Text_DecoderFallback_Destroy(self.__handle)
 		
 	
@@ -36179,13 +36179,13 @@ public class System_Text_DecoderFallbackBuffer /* System.Text.DecoderFallbackBuf
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Text_DecoderFallbackBuffer_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Text_DecoderFallbackBuffer_Destroy(self.__handle)
 		
 	
@@ -36307,13 +36307,13 @@ public class System_Text_EncodingInfo /* System.Text.EncodingInfo */: System_Obj
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Text_EncodingInfo_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Text_EncodingInfo_Destroy(self.__handle)
 		
 	
@@ -36461,13 +36461,13 @@ public class System_Text_Decoder /* System.Text.Decoder */: System_Object {
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Text_Decoder_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Text_Decoder_Destroy(self.__handle)
 		
 	
@@ -36579,13 +36579,13 @@ public class System_Text_Encoder /* System.Text.Encoder */: System_Object {
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Text_Encoder_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Text_Encoder_Destroy(self.__handle)
 		
 	
@@ -36727,13 +36727,13 @@ public class System_Runtime_InteropServices_StructLayoutAttribute /* System.Runt
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Runtime_InteropServices_StructLayoutAttribute_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Runtime_InteropServices_StructLayoutAttribute_Destroy(self.__handle)
 		
 	
@@ -37335,13 +37335,13 @@ public class System_Attribute /* System.Attribute */: System_Object {
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Attribute_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Attribute_Destroy(self.__handle)
 		
 	
@@ -37481,13 +37481,13 @@ public class System_Reflection_InterfaceMapping /* System.Reflection.InterfaceMa
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Reflection_InterfaceMapping_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Reflection_InterfaceMapping_Destroy(self.__handle)
 		
 	
@@ -39587,13 +39587,13 @@ public class System_Runtime_InteropServices_Marshal /* System.Runtime.InteropSer
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Runtime_InteropServices_Marshal_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Runtime_InteropServices_Marshal_Destroy_1(self.__handle)
 		
 	
@@ -39770,13 +39770,13 @@ public class System_Security_SecureString /* System.Security.SecureString */: Sy
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Security_SecureString_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Security_SecureString_Destroy(self.__handle)
 		
 	
@@ -39847,13 +39847,13 @@ public class System_NullReferenceException /* System.NullReferenceException */: 
 	
 	}
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_NullReferenceException_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_NullReferenceException_Destroy(self.__handle)
 		
 	
@@ -39913,13 +39913,13 @@ public class System_SystemException /* System.SystemException */: System_Excepti
 	
 	}
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_SystemException_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_SystemException_Destroy(self.__handle)
 		
 	
@@ -40413,13 +40413,13 @@ public class System_GC /* System.GC */: System_Object {
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_GC_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_GC_Destroy(self.__handle)
 		
 	
@@ -40627,13 +40627,13 @@ public class System_GCMemoryInfo /* System.GCMemoryInfo */: System_ValueType {
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_GCMemoryInfo_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_GCMemoryInfo_Destroy(self.__handle)
 		
 	
@@ -40749,13 +40749,13 @@ public class System_WeakReference /* System.WeakReference */: System_Object {
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_WeakReference_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_WeakReference_Destroy(self.__handle)
 		
 	
@@ -42393,13 +42393,13 @@ public class System_Math /* System.Math */: System_Object {
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Math_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Math_Destroy(self.__handle)
 		
 	
@@ -46830,13 +46830,13 @@ public class System_Convert /* System.Convert */: System_Object {
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Convert_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Convert_Destroy(self.__handle)
 		
 	
@@ -47992,13 +47992,13 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Threading_Thread_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Threading_Thread_Destroy(self.__handle)
 		
 	
@@ -48040,13 +48040,13 @@ public class System_Security_Principal_IPrincipal /* System.Security.Principal.I
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Security_Principal_IPrincipal_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Security_Principal_IPrincipal_Destroy(self.__handle)
 		
 	
@@ -48104,13 +48104,13 @@ public class System_Security_Principal_IIdentity /* System.Security.Principal.II
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Security_Principal_IIdentity_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Security_Principal_IIdentity_Destroy(self.__handle)
 		
 	
@@ -48241,13 +48241,13 @@ public class System_Threading_ExecutionContext /* System.Threading.ExecutionCont
 	
 	}
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Threading_ExecutionContext_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Threading_ExecutionContext_Destroy(self.__handle)
 		
 	
@@ -48322,13 +48322,13 @@ public class System_Threading_AsyncFlowControl /* System.Threading.AsyncFlowCont
 	
 	}
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Threading_AsyncFlowControl_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Threading_AsyncFlowControl_Destroy(self.__handle)
 		
 	
@@ -48340,13 +48340,13 @@ public class System_Threading_AsyncFlowControl /* System.Threading.AsyncFlowCont
 
 
 public class System_LocalDataStoreSlot /* System.LocalDataStoreSlot */: System_Object {
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_LocalDataStoreSlot_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_LocalDataStoreSlot_Destroy(self.__handle)
 		
 	
@@ -48430,13 +48430,13 @@ public class System_Threading_CompressedStack /* System.Threading.CompressedStac
 	
 	}
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Threading_CompressedStack_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Threading_CompressedStack_Destroy(self.__handle)
 		
 	
@@ -49556,13 +49556,13 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_AppDomain_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_AppDomain_Destroy(self.__handle)
 		
 	
@@ -49606,13 +49606,13 @@ public class System_AppDomainSetup /* System.AppDomainSetup */: System_Object {
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_AppDomainSetup_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_AppDomainSetup_Destroy(self.__handle)
 		
 	
@@ -50046,13 +50046,13 @@ public class System_Security_PermissionSet /* System.Security.PermissionSet */: 
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Security_PermissionSet_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Security_PermissionSet_Destroy(self.__handle)
 		
 	
@@ -50136,13 +50136,13 @@ public class System_Security_IPermission /* System.Security.IPermission */: DNOb
 	
 	}
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Security_IPermission_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Security_IPermission_Destroy(self.__handle)
 		
 	
@@ -50516,13 +50516,13 @@ public class System_Security_SecurityElement /* System.Security.SecurityElement 
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Security_SecurityElement_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Security_SecurityElement_Destroy(self.__handle)
 		
 	
@@ -51045,13 +51045,13 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Collections_Hashtable_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Collections_Hashtable_Destroy(self.__handle)
 		
 	
@@ -51092,13 +51092,13 @@ public class System_Collections_IEqualityComparer /* System.Collections.IEqualit
 	
 	}
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Collections_IEqualityComparer_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Collections_IEqualityComparer_Destroy(self.__handle)
 		
 	
@@ -51124,13 +51124,13 @@ public class System_Collections_IHashCodeProvider /* System.Collections.IHashCod
 	
 	}
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Collections_IHashCodeProvider_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Collections_IHashCodeProvider_Destroy(self.__handle)
 		
 	
@@ -51859,13 +51859,13 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Collections_ArrayList_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Collections_ArrayList_Destroy(self.__handle)
 		
 	
@@ -51993,13 +51993,13 @@ public class System_Collections_IList /* System.Collections.IList */: DNObject {
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Collections_IList_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Collections_IList_Destroy(self.__handle)
 		
 	
@@ -52057,13 +52057,13 @@ public class System_UnhandledExceptionEventArgs /* System.UnhandledExceptionEven
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_UnhandledExceptionEventArgs_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_UnhandledExceptionEventArgs_Destroy(self.__handle)
 		
 	
@@ -52116,13 +52116,13 @@ public class System_AssemblyLoadEventArgs /* System.AssemblyLoadEventArgs */: Sy
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_AssemblyLoadEventArgs_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_AssemblyLoadEventArgs_Destroy(self.__handle)
 		
 	
@@ -52165,13 +52165,13 @@ public class System_Runtime_Remoting_ObjectHandle /* System.Runtime.Remoting.Obj
 	
 	}
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Runtime_Remoting_ObjectHandle_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Runtime_Remoting_ObjectHandle_Destroy(self.__handle)
 		
 	
@@ -52377,13 +52377,13 @@ public class System_Threading_Timer /* System.Threading.Timer */: System_Marshal
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Threading_Timer_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Threading_Timer_Destroy(self.__handle)
 		
 	
@@ -52604,13 +52604,13 @@ public class System_Threading_CancellationTokenSource /* System.Threading.Cancel
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Threading_CancellationTokenSource_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Threading_CancellationTokenSource_Destroy(self.__handle)
 		
 	
@@ -52821,13 +52821,13 @@ public class System_Random /* System.Random */: System_Object {
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Random_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Random_Destroy(self.__handle)
 		
 	
@@ -54192,13 +54192,13 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Text_StringBuilder_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Text_StringBuilder_Destroy(self.__handle)
 		
 	
@@ -54254,13 +54254,13 @@ public class System_Text_StringBuilder_ChunkEnumerator /* System.Text.StringBuil
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Text_StringBuilder_ChunkEnumerator_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Text_StringBuilder_ChunkEnumerator_Destroy(self.__handle)
 		
 	
@@ -54417,13 +54417,13 @@ public class System_Text_StringBuilder_AppendInterpolatedStringHandler /* System
 	
 	}
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Text_StringBuilder_AppendInterpolatedStringHandler_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Text_StringBuilder_AppendInterpolatedStringHandler_Destroy(self.__handle)
 		
 	
@@ -54951,13 +54951,13 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_IO_Path_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_IO_Path_Destroy(self.__handle)
 		
 	
@@ -56344,13 +56344,13 @@ public class System_IO_File /* System.IO.File */: System_Object {
 	
 	}
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_IO_File_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_IO_File_Destroy(self.__handle)
 		
 	
@@ -56873,13 +56873,13 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_IO_StreamReader_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_IO_StreamReader_Destroy(self.__handle)
 		
 	
@@ -57154,13 +57154,13 @@ public class System_IO_TextReader /* System.IO.TextReader */: System_MarshalByRe
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_IO_TextReader_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_IO_TextReader_Destroy(self.__handle)
 		
 	
@@ -57796,13 +57796,13 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_IO_StreamWriter_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_IO_StreamWriter_Destroy(self.__handle)
 		
 	
@@ -58619,13 +58619,13 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_IO_TextWriter_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_IO_TextWriter_Destroy(self.__handle)
 		
 	
@@ -59076,13 +59076,13 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_IO_FileSystemInfo_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_IO_FileSystemInfo_Destroy(self.__handle)
 		
 	
@@ -59487,13 +59487,13 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_IO_FileInfo_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_IO_FileInfo_Destroy(self.__handle)
 		
 	
@@ -60028,13 +60028,13 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_IO_DirectoryInfo_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_IO_DirectoryInfo_Destroy(self.__handle)
 		
 	
@@ -60284,13 +60284,13 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_IO_EnumerationOptions_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_IO_EnumerationOptions_Destroy(self.__handle)
 		
 	
@@ -61116,13 +61116,13 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 	
 	}
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_IO_Directory_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_IO_Directory_Destroy(self.__handle)
 		
 	
@@ -61556,13 +61556,13 @@ public class System_Collections_Generic_List_A1 /* System.Collections.Generic.Li
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Collections_Generic_List_A1_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Collections_Generic_List_A1_Destroy(self.__handle)
 		
 	
@@ -61824,13 +61824,13 @@ public class System_Collections_Generic_Dictionary_A2 /* System.Collections.Gene
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Collections_Generic_Dictionary_A2_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Collections_Generic_Dictionary_A2_Destroy(self.__handle)
 		
 	
@@ -61924,13 +61924,13 @@ public class System_Tuple_A1 /* System.Tuple<> */: System_Object {
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Tuple_A1_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Tuple_A1_Destroy(self.__handle)
 		
 	
@@ -62046,13 +62046,13 @@ public class System_Tuple_A2 /* System.Tuple<,> */: System_Object {
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Tuple_A2_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Tuple_A2_Destroy(self.__handle)
 		
 	
@@ -62195,13 +62195,13 @@ public class System_Tuple_A3 /* System.Tuple<,,> */: System_Object {
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: System_Tuple_A3_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		System_Tuple_A3_Destroy(self.__handle)
 		
 	
@@ -62283,13 +62283,13 @@ public class NativeAOT_CodeGeneratorInputSample_Address /* NativeAOT.CodeGenerat
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Address_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		NativeAOT_CodeGeneratorInputSample_Address_Destroy(self.__handle)
 		
 	
@@ -62333,13 +62333,13 @@ public class NativeAOT_CodeGeneratorInputSample_IAnimal /* NativeAOT.CodeGenerat
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_IAnimal_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		NativeAOT_CodeGeneratorInputSample_IAnimal_Destroy(self.__handle)
 		
 	
@@ -62413,13 +62413,13 @@ public class NativeAOT_CodeGeneratorInputSample_AnimalFactory /* NativeAOT.CodeG
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_AnimalFactory_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		NativeAOT_CodeGeneratorInputSample_AnimalFactory_Destroy(self.__handle)
 		
 	
@@ -62464,13 +62464,13 @@ public class NativeAOT_CodeGeneratorInputSample_BaseAnimal /* NativeAOT.CodeGene
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_BaseAnimal_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		NativeAOT_CodeGeneratorInputSample_BaseAnimal_Destroy(self.__handle)
 		
 	
@@ -62511,13 +62511,13 @@ public class NativeAOT_CodeGeneratorInputSample_Cat /* NativeAOT.CodeGeneratorIn
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Cat_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		NativeAOT_CodeGeneratorInputSample_Cat_Destroy(self.__handle)
 		
 	
@@ -62558,13 +62558,13 @@ public class NativeAOT_CodeGeneratorInputSample_Dog /* NativeAOT.CodeGeneratorIn
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Dog_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		NativeAOT_CodeGeneratorInputSample_Dog_Destroy(self.__handle)
 		
 	
@@ -62608,13 +62608,13 @@ public class NativeAOT_CodeGeneratorInputSample_GenericAnimal /* NativeAOT.CodeG
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_GenericAnimal_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		NativeAOT_CodeGeneratorInputSample_GenericAnimal_Destroy(self.__handle)
 		
 	
@@ -62747,13 +62747,13 @@ public class NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1 /* NativeAOT
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_Destroy(self.__handle)
 		
 	
@@ -62877,13 +62877,13 @@ public class NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2 /* NativeAOT
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_Destroy(self.__handle)
 		
 	
@@ -63134,13 +63134,13 @@ public class NativeAOT_CodeGeneratorInputSample_GenericTests /* NativeAOT.CodeGe
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_GenericTests_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		NativeAOT_CodeGeneratorInputSample_GenericTests_Destroy(self.__handle)
 		
 	
@@ -63237,13 +63237,13 @@ public class NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair 
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_Destroy(self.__handle)
 		
 	
@@ -63648,13 +63648,13 @@ public class NativeAOT_CodeGeneratorInputSample_Person /* NativeAOT.CodeGenerato
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Person_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		NativeAOT_CodeGeneratorInputSample_Person_Destroy(self.__handle)
 		
 	
@@ -63685,13 +63685,13 @@ public class NativeAOT_CodeGeneratorInputSample_Person_Extensions /* NativeAOT.C
 	
 	}
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Person_Extensions_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		NativeAOT_CodeGeneratorInputSample_Person_Extensions_Destroy(self.__handle)
 		
 	
@@ -63774,13 +63774,13 @@ public class NativeAOT_CodeGeneratorInputSample_Book /* NativeAOT.CodeGeneratorI
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Book_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		NativeAOT_CodeGeneratorInputSample_Book_Destroy(self.__handle)
 		
 	
@@ -64013,13 +64013,13 @@ public class NativeAOT_CodeGeneratorInputSample_TestClass /* NativeAOT.CodeGener
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_TestClass_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		NativeAOT_CodeGeneratorInputSample_TestClass_Destroy(self.__handle)
 		
 	
@@ -64097,13 +64097,13 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer /* NativeAOT.CodeGen
 	
 	}
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Transformer_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		NativeAOT_CodeGeneratorInputSample_Transformer_Destroy(self.__handle)
 		
 	
@@ -64146,13 +64146,13 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers 
 	}
 	
 	
-	public override class func typeOf {
+	public override class func typeOf() {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers_TypeOf())
 		
 	
 	}
 	
-	override func destroy {
+	override func destroy() {
 		NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers_Destroy(self.__handle)
 		
 	
@@ -64164,7 +64164,7 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers 
 
 
 // TODO: Delegate Type Defition (System.Delegate)
-	override func destroy {
+	override func destroy() {
 		System_Delegate_Destroy(self.__handle)
 		
 	
@@ -64177,7 +64177,7 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers 
 // Type "T" was skipped. Reason: It has no full name.
 // Type "T" was skipped. Reason: It has no full name.
 // TODO: Delegate Type Defition (System.Reflection.TypeFilter)
-	override func destroy {
+	override func destroy() {
 		System_Reflection_TypeFilter_Destroy(self.__handle)
 		
 	
@@ -64188,7 +64188,7 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers 
 
 
 // TODO: Delegate Type Defition (System.MulticastDelegate)
-	override func destroy {
+	override func destroy() {
 		System_MulticastDelegate_Destroy(self.__handle)
 		
 	
@@ -64199,7 +64199,7 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers 
 
 
 // TODO: Delegate Type Defition (System.Action)
-	override func destroy {
+	override func destroy() {
 		System_Action_Destroy(self.__handle)
 		
 	
@@ -64210,7 +64210,7 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers 
 
 
 // TODO: Delegate Type Defition (System.AsyncCallback)
-	override func destroy {
+	override func destroy() {
 		System_AsyncCallback_Destroy(self.__handle)
 		
 	
@@ -64221,7 +64221,7 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers 
 
 
 // TODO: Delegate Type Defition (System.Reflection.ModuleResolveEventHandler)
-	override func destroy {
+	override func destroy() {
 		System_Reflection_ModuleResolveEventHandler_Destroy(self.__handle)
 		
 	
@@ -64232,7 +64232,7 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers 
 
 
 // TODO: Delegate Type Defition (System.Reflection.MemberFilter)
-	override func destroy {
+	override func destroy() {
 		System_Reflection_MemberFilter_Destroy(self.__handle)
 		
 	
@@ -64243,7 +64243,7 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers 
 
 
 // TODO: Delegate Type Defition (System.Threading.ContextCallback)
-	override func destroy {
+	override func destroy() {
 		System_Threading_ContextCallback_Destroy(self.__handle)
 		
 	
@@ -64254,7 +64254,7 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers 
 
 
 // TODO: Delegate Type Defition (System.UnhandledExceptionEventHandler)
-	override func destroy {
+	override func destroy() {
 		System_UnhandledExceptionEventHandler_Destroy(self.__handle)
 		
 	
@@ -64265,7 +64265,7 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers 
 
 
 // TODO: Delegate Type Defition (System.EventHandler)
-	override func destroy {
+	override func destroy() {
 		System_EventHandler_Destroy(self.__handle)
 		
 	
@@ -64276,7 +64276,7 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers 
 
 
 // TODO: Delegate Type Defition (System.AssemblyLoadEventHandler)
-	override func destroy {
+	override func destroy() {
 		System_AssemblyLoadEventHandler_Destroy(self.__handle)
 		
 	
@@ -64287,7 +64287,7 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers 
 
 
 // TODO: Delegate Type Defition (System.ResolveEventHandler)
-	override func destroy {
+	override func destroy() {
 		System_ResolveEventHandler_Destroy(self.__handle)
 		
 	
@@ -64298,7 +64298,7 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers 
 
 
 // TODO: Delegate Type Defition (System.Threading.ThreadStart)
-	override func destroy {
+	override func destroy() {
 		System_Threading_ThreadStart_Destroy(self.__handle)
 		
 	
@@ -64309,7 +64309,7 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers 
 
 
 // TODO: Delegate Type Defition (System.Threading.ParameterizedThreadStart)
-	override func destroy {
+	override func destroy() {
 		System_Threading_ParameterizedThreadStart_Destroy(self.__handle)
 		
 	
@@ -64320,7 +64320,7 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers 
 
 
 // TODO: Delegate Type Defition (System.Threading.TimerCallback)
-	override func destroy {
+	override func destroy() {
 		System_Threading_TimerCallback_Destroy(self.__handle)
 		
 	
@@ -64331,7 +64331,7 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers 
 
 
 // TODO: Delegate Type Defition (NativeAOT.CodeGeneratorInputSample.MoveDelegate)
-	override func destroy {
+	override func destroy() {
 		NativeAOT_CodeGeneratorInputSample_MoveDelegate_Destroy(self.__handle)
 		
 	
@@ -64342,7 +64342,7 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers 
 
 
 // TODO: Delegate Type Defition (NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate)
-	override func destroy {
+	override func destroy() {
 		NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Destroy(self.__handle)
 		
 	
@@ -64353,7 +64353,7 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers 
 
 
 // TODO: Delegate Type Defition (NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate)
-	override func destroy {
+	override func destroy() {
 		NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_Destroy(self.__handle)
 		
 	
@@ -64364,7 +64364,7 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers 
 
 
 // TODO: Delegate Type Defition (NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate)
-	override func destroy {
+	override func destroy() {
 		NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Destroy(self.__handle)
 		
 	
@@ -64390,7 +64390,7 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers 
 
 
 // TODO: Delegate Type Defition (NativeAOT.CodeGeneratorInputSample.Transformer.StringTransformerDelegate)
-	override func destroy {
+	override func destroy() {
 		NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate_Destroy(self.__handle)
 		
 	
@@ -64401,7 +64401,7 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers 
 
 
 // TODO: Delegate Type Defition (NativeAOT.CodeGeneratorInputSample.Transformer.DoublesTransformerDelegate)
-	override func destroy {
+	override func destroy() {
 		NativeAOT_CodeGeneratorInputSample_Transformer_DoublesTransformerDelegate_Destroy(self.__handle)
 		
 	
@@ -64412,7 +64412,7 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers 
 
 
 // TODO: Delegate Type Defition (NativeAOT.CodeGeneratorInputSample.Transformer.StringGetterDelegate)
-	override func destroy {
+	override func destroy() {
 		NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate_Destroy(self.__handle)
 		
 	
