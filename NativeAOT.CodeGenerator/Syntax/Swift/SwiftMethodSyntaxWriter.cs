@@ -3,6 +3,7 @@ using System.Text;
 
 using NativeAOT.CodeGenerator.Extensions;
 using NativeAOT.CodeGenerator.Generator;
+using NativeAOT.CodeGenerator.Syntax.Swift.Declaration;
 using NativeAOT.CodeGenerator.Types;
 
 namespace NativeAOT.CodeGenerator.Syntax.Swift;
@@ -75,6 +76,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         }
         
         MethodBase? methodBase = memberInfo as MethodBase;
+        MethodInfo? methodInfo = methodBase as MethodInfo;
 
         bool isGenericType = declaringType.IsGenericType ||
                              declaringType.IsGenericTypeDefinition;
@@ -123,7 +125,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             numberOfGenericMethodArguments <= 0) {
             throw new Exception("Generic Method without generic arguments");
         }
-        
+
         List<Type> tempCombinedGenericArguments = new();
         
         tempCombinedGenericArguments.AddRange(genericTypeArguments);
@@ -149,8 +151,29 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         
         string cMethodName = cSharpGeneratedMember.GetGeneratedName(CodeLanguage.CSharpUnmanaged) ?? throw new Exception("No native name");
         
+        // string methodNameSwift = state.UniqueGeneratedName(
+        //     memberKind.SwiftName(memberInfo),
+        //     CodeLanguage.Swift
+        // );
+
         string methodNameSwift = memberKind.SwiftName(memberInfo);
-        
+
+        bool treatAsOverridden = false;
+
+        if (methodInfo is not null) {
+            bool isActuallyOverridden = methodInfo.IsOverridden();
+
+            if (isActuallyOverridden) {
+                treatAsOverridden = true;
+            } else {
+                bool isShadowed = methodInfo.IsShadowed();
+
+                if (isShadowed) {
+                    treatAsOverridden = true;
+                }
+            }
+        }
+
         if (addToState) {
             state.AddGeneratedMember(
                 memberKind,
@@ -226,6 +249,8 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             swiftReturnOrSetterTypeNameWithComment = $"{swiftReturnOrSetterTypeName} /* {returnOrSetterOrEventHandlerType.GetFullNameOrName()} */";
             setterType = null;
         }
+        
+        StringBuilder sb = new();
 
         #region Func Signature
         string methodSignatureParameters = WriteParameters(
@@ -238,41 +263,64 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             combinedGenericArguments,
             typeDescriptorRegistry
         );
-        
-        StringBuilder sb = new();
 
-        string staticOrNot = isStaticMethod
-            ? "static "
-            : string.Empty;
-        
-        string funcThrowsPart = mayThrow
-            ? " throws"
-            : string.Empty;
-
-        string funcPrefix;
-        string funcReturn;
-        string funcParams = $"({methodSignatureParameters})";
+        string funcSignature;
 
         if (memberKind == MemberKind.Constructor) {
-            funcPrefix = "public ";
-            funcReturn = string.Empty;
+            SwiftInitDeclaration decl = new(
+                true,
+                true,
+                SwiftVisibilities.Public,
+                methodSignatureParameters,
+                mayThrow
+            );
+
+            funcSignature = decl.ToString();
         } else if (memberKind == MemberKind.Destructor) {
-            funcPrefix = "override func ";
-            funcReturn = string.Empty;
-            funcParams = "()";
+            SwiftFuncDeclaration decl = new(
+                methodNameSwift,
+                SwiftVisibilities.Internal,
+                SwiftTypeAttachmentKinds.Instance,
+                true,
+                methodSignatureParameters,
+                mayThrow,
+                null
+            );
+
+            funcSignature = decl.ToString();
         } else if (memberKind == MemberKind.TypeOf) {
-            funcPrefix = "public override class func ";
-            funcReturn = string.Empty;
-            funcParams = "()";
+            SwiftFuncDeclaration decl = new(
+                methodNameSwift,
+                SwiftVisibilities.Public,
+                SwiftTypeAttachmentKinds.Class,
+                true,
+                methodSignatureParameters,
+                mayThrow,
+                !returnOrSetterOrEventHandlerType.IsVoid()
+                    ? swiftReturnOrSetterTypeNameWithComment
+                    : null
+            );
+
+            funcSignature = decl.ToString();
         } else {
-            funcPrefix = $"public {staticOrNot}func ";
-            
-            funcReturn = returnOrSetterOrEventHandlerType.IsVoid()
-                ? string.Empty
-                : $" -> {swiftReturnOrSetterTypeNameWithComment}";
+            SwiftFuncDeclaration decl = new(
+                methodNameSwift,
+                SwiftVisibilities.Public,
+                isStaticMethod 
+                    ? SwiftTypeAttachmentKinds.Class
+                    : SwiftTypeAttachmentKinds.Instance,
+                treatAsOverridden,
+                methodSignatureParameters,
+                mayThrow,
+                !returnOrSetterOrEventHandlerType.IsVoid()
+                    ? swiftReturnOrSetterTypeNameWithComment
+                    : null
+            );
+
+            funcSignature = decl.ToString();
         }
-        
-        string funcSignature = $"{funcPrefix}{methodNameSwift}{funcParams}{funcThrowsPart}{funcReturn} {{"; 
+
+        funcSignature += " {";
 
         sb.AppendLine(funcSignature);
         #endregion Func Signature
@@ -325,7 +373,10 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 sbImpl.AppendLine();
             }
 
-            bool isReturning = !returnOrSetterTypeDescriptor.IsVoid;
+            bool isReturning =
+                memberKind != MemberKind.FieldSetter &&
+                memberKind != MemberKind.PropertySetter &&
+                !returnOrSetterTypeDescriptor.IsVoid;
 
             string returnValueName = "__returnValueC";
             
@@ -352,25 +403,29 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             string returnCode = string.Empty;
 
             if (isReturning) {
-                string? returnTypeConversion = returnOrSetterTypeDescriptor.GetTypeConversion(
-                    CodeLanguage.C,
-                    CodeLanguage.Swift
-                );
-
-                if (!string.IsNullOrEmpty(returnTypeConversion)) {
-                    string newReturnValueName = "__returnValue";
-                    
-                    string fullReturnTypeConversion = $"let {newReturnValueName} = {string.Format(returnTypeConversion, returnValueName)}";
-
-                    sbImpl.AppendLine(fullReturnTypeConversion);
-                    sbImpl.AppendLine();
-                    
-                    returnValueName = newReturnValueName;
-                }
-
                 if (memberKind == MemberKind.Constructor) {
-                    returnCode = $"self.init(handle: {returnValueName})";
+                    returnCode = $$"""
+guard let {{returnValueName}} else { return nil }
+
+self.init(handle: {{returnValueName}})
+""";
                 } else {
+                    string? returnTypeConversion = returnOrSetterTypeDescriptor.GetTypeConversion(
+                        CodeLanguage.C,
+                        CodeLanguage.Swift
+                    );
+    
+                    if (!string.IsNullOrEmpty(returnTypeConversion)) {
+                        string newReturnValueName = "__returnValue";
+                        
+                        string fullReturnTypeConversion = $"let {newReturnValueName} = {string.Format(returnTypeConversion, returnValueName)}";
+    
+                        sbImpl.AppendLine(fullReturnTypeConversion);
+                        sbImpl.AppendLine();
+                        
+                        returnValueName = newReturnValueName;
+                    }
+    
                     returnCode = $"return {returnValueName}";
                 }
             }
@@ -429,7 +484,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             foreach (var genericArgumentType in genericArguments) {
                 string parameterName = genericArgumentType.Name;
             
-                string parameterString = $"{nativeSystemTypeTypeName} /* {systemTypeTypeName} */ {parameterName}";
+                string parameterString = $"{parameterName}: {nativeSystemTypeTypeName} /* {systemTypeTypeName} */";
             
                 parameterList.Add(parameterString);
             }
@@ -451,7 +506,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 true
             );
     
-            string parameterString = $"{cSetterOrEventHandlerTypeName} /* {setterOrEventHandlerType.GetFullNameOrName()} */ value";
+            string parameterString = $"value: {cSetterOrEventHandlerTypeName} /* {setterOrEventHandlerType.GetFullNameOrName()} */";
             parameterList.Add(parameterString);
         } else {
             foreach (var parameter in parameters) {
@@ -494,7 +549,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                     isByRefParameter
                 );
 
-                string parameterString = $"{unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */ {parameter.Name}";
+                string parameterString = $"{parameter.Name}: {unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */";
                 parameterList.Add(parameterString);
             }
         }
