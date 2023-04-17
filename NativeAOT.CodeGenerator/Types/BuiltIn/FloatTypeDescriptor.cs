@@ -10,8 +10,8 @@ public partial class BuiltInTypeDescriptors
                 "-1",
                 new() {
                     { CodeLanguage.CSharpUnmanaged, "float" },
-                    { CodeLanguage.C, "float" }, // TODO: is that correct?
-                    { CodeLanguage.Swift, "Float" } // TODO: is that correct?
+                    { CodeLanguage.C, "float" },
+                    { CodeLanguage.Swift, "Float" }
                 }
             );
         

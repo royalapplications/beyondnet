@@ -10,8 +10,8 @@ public partial class BuiltInTypeDescriptors
                 "-1",
                 new() {
                     { CodeLanguage.CSharpUnmanaged, "double" },
-                    { CodeLanguage.C, "double" }, // TODO: is that correct?
-                    { CodeLanguage.Swift, "double" } // TODO: is that correct?
+                    { CodeLanguage.C, "double" },
+                    { CodeLanguage.Swift, "Double" }
                 }
             );
         

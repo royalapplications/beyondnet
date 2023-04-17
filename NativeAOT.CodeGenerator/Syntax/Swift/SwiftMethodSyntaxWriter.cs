@@ -74,6 +74,14 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             memberKind != MemberKind.TypeOf) {
             throw new Exception("memberInfo may only be null when memberKind is Destructor");
         }
+
+        foreach (ParameterInfo parameter in parameters) {
+            if (parameter.ParameterType.IsDelegate()) {
+                generatedName = string.Empty;
+                
+                return $"// TODO: Method with Delegate parameter ({cMember.GetGeneratedName(CodeLanguage.C)})";
+            }
+        }
         
         MethodBase? methodBase = memberInfo as MethodBase;
         MethodInfo? methodInfo = methodBase as MethodInfo;
@@ -732,8 +740,14 @@ if let __exceptionC {
 
         if (typeConversion != null) {
             convertedParameterName = $"{parameterName}C";
+
+            bool isOptional = parameterTypeDescriptor.RequiresNativePointer;
             
-            string fullTypeConversion = string.Format(typeConversion, $"{parameterName}?");
+            string optionalString = isOptional
+                ? "?"
+                : string.Empty;
+            
+            string fullTypeConversion = string.Format(typeConversion, $"{parameterName}{optionalString}");
 
             string varOrLet = isInOut 
                 ? "var"

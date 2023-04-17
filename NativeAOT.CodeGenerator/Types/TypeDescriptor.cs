@@ -243,14 +243,14 @@ public class TypeDescriptor
         CodeLanguage targetLanguage
     )
     {
-        if (!RequiresNativePointer) {
-            return null;
-        }
-
         Type type = ManagedType;
 
         if (sourceLanguage == CodeLanguage.CSharpUnmanaged &&
             targetLanguage == CodeLanguage.CSharp) {
+            if (!RequiresNativePointer) {
+                return null;
+            }
+            
             string conversion;
 
             if (type.IsDelegate()) {
@@ -266,6 +266,10 @@ public class TypeDescriptor
             return conversion;
         } else if (sourceLanguage == CodeLanguage.CSharp &&
                    targetLanguage == CodeLanguage.CSharpUnmanaged) {
+            if (!RequiresNativePointer) {
+                return null;
+            }
+            
             string conversion;
 
             if (type.IsDelegate()) {
@@ -286,15 +290,19 @@ public class TypeDescriptor
 
             if (IsEnum) {
                 return $"{swiftTypeName}(cValue: {{0}})";
-            } else {
+            } else if (RequiresNativePointer) {
                 return $"{swiftTypeName}(handle: {{0}})";
+            } else {
+                return null;
             }
         } else if (sourceLanguage == CodeLanguage.Swift &&
                    targetLanguage == CodeLanguage.C) {
             if (IsEnum) {
                 return "{0}.cValue";
-            } else {
+            } else if (RequiresNativePointer) {
                 return "{0}.__handle";
+            } else {
+                return null;
             }
         } else {
             throw new Exception("Unknown language pair");

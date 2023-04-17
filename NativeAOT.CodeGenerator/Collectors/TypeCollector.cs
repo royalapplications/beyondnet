@@ -136,6 +136,16 @@ public class TypeCollector
             );
         }
 
+        Type[] interfaceTypes = type.GetInterfaces();
+
+        foreach (var interfaceType in interfaceTypes) {
+            CollectType(
+                interfaceType,
+                collectedTypes,
+                unsupportedTypes
+            );
+        }
+
         bool isDelegate = type.IsDelegate();
 
         if (isDelegate) {
