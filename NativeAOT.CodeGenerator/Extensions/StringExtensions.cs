@@ -128,4 +128,15 @@ internal static class StringExtensions
     {
         return SWIFT_KEYWORDS.Contains(input);
     }
+
+    internal static string EscapedSwiftName(this string input)
+    {
+        if (!input.IsSwiftKeyword()) {
+            return input;
+        }
+        
+        string output = $"`{input}`";
+
+        return output;
+    }
 }

@@ -73547,7 +73547,7 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 	
 	}
 	
-	public class func repeat(_ value: System_Object? /* System.Object */, _ count: Int32 /* System.Int32 */) throws -> System_Collections_ArrayList? /* System.Collections.ArrayList */ {
+	public class func `repeat`(_ value: System_Object? /* System.Object */, _ count: Int32 /* System.Int32 */) throws -> System_Collections_ArrayList? /* System.Collections.ArrayList */ {
 		let valueC = value?.__handle
 		
 		
@@ -77542,9 +77542,9 @@ public class System_Text_StringBuilder_AppendInterpolatedStringHandler /* System
 // Type "TArg1" was skipped. Reason: It has no full name.
 // Type "TArg2" was skipped. Reason: It has no full name.
 public class System_IO_Path /* System.IO.Path */: System_Object {
-	public class func changeExtension(_ path: System_String? /* System.String */, _ extension: System_String? /* System.String */) throws -> System_String? /* System.String */ {
+	public class func changeExtension(_ path: System_String? /* System.String */, _ `extension`: System_String? /* System.String */) throws -> System_String? /* System.String */ {
 		let pathC = path?.__handle
-		let extensionC = extension?.__handle
+		let extensionC = `extension`?.__handle
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -78445,7 +78445,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 	
 	}
 	
-	public class func open(_ path: System_String? /* System.String */, _ options: System_IO_FileStreamOptions? /* System.IO.FileStreamOptions */) throws -> System_IO_FileStream? /* System.IO.FileStream */ {
+	public class func `open`(_ path: System_String? /* System.String */, _ options: System_IO_FileStreamOptions? /* System.IO.FileStreamOptions */) throws -> System_IO_FileStream? /* System.IO.FileStream */ {
 		let pathC = path?.__handle
 		let optionsC = options?.__handle
 		
@@ -78468,7 +78468,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 	
 	}
 	
-	public class func open(_ path: System_String? /* System.String */, _ mode: System_IO_FileMode /* System.IO.FileMode */) throws -> System_IO_FileStream? /* System.IO.FileStream */ {
+	public class func `open`(_ path: System_String? /* System.String */, _ mode: System_IO_FileMode /* System.IO.FileMode */) throws -> System_IO_FileStream? /* System.IO.FileStream */ {
 		let pathC = path?.__handle
 		let modeC = mode.cValue
 		
@@ -78491,7 +78491,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 	
 	}
 	
-	public class func open(_ path: System_String? /* System.String */, _ mode: System_IO_FileMode /* System.IO.FileMode */, _ access: System_IO_FileAccess /* System.IO.FileAccess */) throws -> System_IO_FileStream? /* System.IO.FileStream */ {
+	public class func `open`(_ path: System_String? /* System.String */, _ mode: System_IO_FileMode /* System.IO.FileMode */, _ access: System_IO_FileAccess /* System.IO.FileAccess */) throws -> System_IO_FileStream? /* System.IO.FileStream */ {
 		let pathC = path?.__handle
 		let modeC = mode.cValue
 		let accessC = access.cValue
@@ -78515,7 +78515,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 	
 	}
 	
-	public class func open(_ path: System_String? /* System.String */, _ mode: System_IO_FileMode /* System.IO.FileMode */, _ access: System_IO_FileAccess /* System.IO.FileAccess */, _ share: System_IO_FileShare /* System.IO.FileShare */) throws -> System_IO_FileStream? /* System.IO.FileStream */ {
+	public class func `open`(_ path: System_String? /* System.String */, _ mode: System_IO_FileMode /* System.IO.FileMode */, _ access: System_IO_FileAccess /* System.IO.FileAccess */, _ share: System_IO_FileShare /* System.IO.FileShare */) throws -> System_IO_FileStream? /* System.IO.FileStream */ {
 		let pathC = path?.__handle
 		let modeC = mode.cValue
 		let accessC = access.cValue
@@ -83807,7 +83807,7 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 
 
 public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemInfo {
-	public func open(_ options: System_IO_FileStreamOptions? /* System.IO.FileStreamOptions */) throws -> System_IO_FileStream? /* System.IO.FileStream */ {
+	public func `open`(_ options: System_IO_FileStreamOptions? /* System.IO.FileStreamOptions */) throws -> System_IO_FileStream? /* System.IO.FileStream */ {
 		let optionsC = options?.__handle
 		
 		
@@ -83975,7 +83975,7 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 	
 	}
 	
-	public func open(_ mode: System_IO_FileMode /* System.IO.FileMode */) throws -> System_IO_FileStream? /* System.IO.FileStream */ {
+	public func `open`(_ mode: System_IO_FileMode /* System.IO.FileMode */) throws -> System_IO_FileStream? /* System.IO.FileStream */ {
 		let modeC = mode.cValue
 		
 		
@@ -83997,7 +83997,7 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 	
 	}
 	
-	public func open(_ mode: System_IO_FileMode /* System.IO.FileMode */, _ access: System_IO_FileAccess /* System.IO.FileAccess */) throws -> System_IO_FileStream? /* System.IO.FileStream */ {
+	public func `open`(_ mode: System_IO_FileMode /* System.IO.FileMode */, _ access: System_IO_FileAccess /* System.IO.FileAccess */) throws -> System_IO_FileStream? /* System.IO.FileStream */ {
 		let modeC = mode.cValue
 		let accessC = access.cValue
 		
@@ -84020,7 +84020,7 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 	
 	}
 	
-	public func open(_ mode: System_IO_FileMode /* System.IO.FileMode */, _ access: System_IO_FileAccess /* System.IO.FileAccess */, _ share: System_IO_FileShare /* System.IO.FileShare */) throws -> System_IO_FileStream? /* System.IO.FileStream */ {
+	public func `open`(_ mode: System_IO_FileMode /* System.IO.FileMode */, _ access: System_IO_FileAccess /* System.IO.FileAccess */, _ share: System_IO_FileShare /* System.IO.FileShare */) throws -> System_IO_FileStream? /* System.IO.FileStream */ {
 		let modeC = mode.cValue
 		let accessC = access.cValue
 		let shareC = share.cValue

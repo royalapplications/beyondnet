@@ -1,4 +1,4 @@
-using System.Text;
+using NativeAOT.CodeGenerator.Extensions;
 
 namespace NativeAOT.CodeGenerator.Syntax.Swift.Declaration;
 

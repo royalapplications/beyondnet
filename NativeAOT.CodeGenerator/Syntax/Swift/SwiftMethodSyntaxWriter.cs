@@ -508,7 +508,7 @@ if let __exceptionC {
             );
             
             foreach (var genericArgumentType in genericArguments) {
-                string parameterName = genericArgumentType.Name;
+                string parameterName = genericArgumentType.Name.EscapedSwiftName();
             
                 string parameterString = $"_ {parameterName}: {nativeSystemTypeTypeName} /* {systemTypeTypeName} */";
             
@@ -575,7 +575,14 @@ if let __exceptionC {
                     isByRefParameter
                 );
 
-                string parameterString = $"_ {parameter.Name}: {unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */";
+                string? parameterName = parameter.Name
+                    ?.EscapedSwiftName();
+
+                if (parameterName is null) {
+                    throw new Exception("Parameter without a name");
+                }
+
+                string parameterString = $"_ {parameterName}: {unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */";
                 parameterList.Add(parameterString);
             }
         }
@@ -644,7 +651,13 @@ if let __exceptionC {
         }
 
         foreach (var parameter in parameters) {
-            string parameterName = parameter.Name ?? string.Empty;
+            string? parameterName = parameter.Name
+                ?.EscapedSwiftName();
+            
+            if (parameterName is null) {
+                throw new Exception("Parameter without a name");
+            }
+            
             Type parameterType = parameter.ParameterType;
             bool isOutParameter = parameter.IsOut;
             
@@ -746,8 +759,16 @@ if let __exceptionC {
             targetLanguage
         );
 
+
         if (typeConversion != null) {
-            convertedParameterName = $"{parameterName}C";
+            string parameterNameForConversion = parameterName;
+            
+            if (parameterName.StartsWith("`") &&
+                parameterName.EndsWith("`")) {
+                parameterNameForConversion = parameterName.Trim('`');
+            }
+            
+            convertedParameterName = $"{parameterNameForConversion}C";
 
             bool isOptional = parameterTypeDescriptor.RequiresNativePointer;
             

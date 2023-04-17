@@ -1,5 +1,11 @@
-//import Foundation
-//
+import Foundation
+
+public class NameTests {
+	public class func `repeat`() {
+		
+	}
+}
+
 //public class DNObject {
 //	let __handle: UnsafeMutableRawPointer
 //

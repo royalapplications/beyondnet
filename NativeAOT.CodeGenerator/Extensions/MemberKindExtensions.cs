@@ -84,6 +84,8 @@ public static class MemberKindExtensions
 
         string? swiftName = originalName?.FirstCharToLower();
 
+        bool needsEscaping = true;
+
         if (isGetter) {
             swiftName = swiftName + getterSuffix;
         } else if (isSetter) {
@@ -94,14 +96,24 @@ public static class MemberKindExtensions
             swiftName = swiftName + removerSuffix;
         } else {
             if (memberKind == MemberKind.Constructor) {
-                swiftName = "convenience init?";
+                needsEscaping = false;
+                
+                swiftName = "init";
             } else if (memberKind == MemberKind.Destructor) {
+                needsEscaping = false;
+                
                 swiftName = "destroy";
             } else if (memberKind == MemberKind.TypeOf) {
+                needsEscaping = false;
+                
                 swiftName = "typeOf";
             } else {
                 swiftName = swiftName ?? throw new Exception();
             }
+        }
+
+        if (needsEscaping) {
+            swiftName = swiftName.EscapedSwiftName();
         }
 
         return swiftName;
