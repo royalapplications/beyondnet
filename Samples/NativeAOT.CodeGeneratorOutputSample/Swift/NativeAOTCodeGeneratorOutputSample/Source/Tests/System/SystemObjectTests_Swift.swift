@@ -84,11 +84,13 @@ final class SystemObjectTests_Swift: XCTestCase {
             let numberOfObjects = 500
 
             for _ in 0..<numberOfObjects {
-                guard let _ = try? System_Object() else {
-                    XCTFail("System.Object ctor should not throw and return an instance")
-
-                    return
-                }
+                {
+                    guard let _ = try? System_Object() else {
+                        XCTFail("System.Object ctor should not throw and return an instance")
+                        
+                        return
+                    }
+                }()
                 
                 do {
                     try System_GC.collect()
