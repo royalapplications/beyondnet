@@ -43,7 +43,7 @@ final class SystemEnumTests: XCTestCase {
 		var names = [String]()
 		
 		for idx in 0..<namesCount {
-			guard let stringElement = String(dotNETString: System_Array_GetValue_1(enumNames,
+			guard let stringElement = String(cDotNETString: System_Array_GetValue_1(enumNames,
 																				   idx,
 																				   &exception),
 											 destroyDotNETString: true),
@@ -65,7 +65,7 @@ final class SystemEnumTests: XCTestCase {
 		XCTAssertEqual(local, names[2])
 		
 		// TODO: Incomplete/Does not work
-//		let utcDN = utc.dotNETString()
+//		let utcDN = utc.cDotNETString()
 //		defer { System_String_Destroy(utcDN) }
 //
 //		guard let parsed = System_Enum_Parse_A1(systemDateTimeKindType,

@@ -75,7 +75,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             throw new Exception("memberInfo may only be null when memberKind is Destructor");
         }
 
-        #region TODO: Delegate Support
+        #region TODO: Unsupported Stuff
         foreach (ParameterInfo parameter in parameters) {
             if (parameter.ParameterType.IsDelegate()) {
                 generatedName = string.Empty;
@@ -89,7 +89,13 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             
             return $"// TODO: Method with Delegate return or setter or event handler type ({cMember.GetGeneratedName(CodeLanguage.C)})";
         }
-        #endregion TODO: Delegate Support
+
+        if (returnOrSetterOrEventHandlerType.IsByRef) {
+            generatedName = string.Empty;
+            
+            return $"// TODO: Method with by ref return or setter or event handler type ({cMember.GetGeneratedName(CodeLanguage.C)})";
+        }
+        #endregion TODO: Unsupported Stuff
         
         MethodBase? methodBase = memberInfo as MethodBase;
         MethodInfo? methodInfo = methodBase as MethodInfo;

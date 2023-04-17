@@ -15,13 +15,13 @@ final class SystemConvertTests: XCTestCase {
 	func testBooleanConversion() {
 		var exception: System_Exception_t?
 		
-		let trueStringDN = "true".dotNETString()
+		let trueStringDN = "true".cDotNETString()
 		defer { System_String_Destroy(trueStringDN) }
 		
-		let falseStringDN = "false".dotNETString()
+		let falseStringDN = "false".cDotNETString()
 		defer { System_String_Destroy(falseStringDN) }
 		
-		let nonsenseStringDN = "nonsense".dotNETString()
+		let nonsenseStringDN = "nonsense".cDotNETString()
 		defer { System_String_Destroy(nonsenseStringDN) }
 		
 		XCTAssertTrue(System_Convert_ToBoolean_12(trueStringDN, &exception))
@@ -38,7 +38,7 @@ final class SystemConvertTests: XCTestCase {
 		var exception: System_Exception_t?
 		
 		let number1: Int32 = 123456789
-		let number1StringDN = "\(number1)".dotNETString()
+		let number1StringDN = "\(number1)".cDotNETString()
 		defer { System_String_Destroy(number1StringDN) }
 		
 		XCTAssertEqual(number1,
@@ -46,7 +46,7 @@ final class SystemConvertTests: XCTestCase {
 		XCTAssertNil(exception)
 		
 		let number2: Int64 = -123456789
-		let number2StringDN = "\(number2)".dotNETString()
+		let number2StringDN = "\(number2)".cDotNETString()
 		defer { System_String_Destroy(number2StringDN) }
 		
 		XCTAssertEqual(number2,
@@ -54,7 +54,7 @@ final class SystemConvertTests: XCTestCase {
 		XCTAssertNil(exception)
 		
 		let number3: Int64 = -1
-		let number3StringDN = "nonsense".dotNETString()
+		let number3StringDN = "nonsense".cDotNETString()
 		defer { System_String_Destroy(number3StringDN) }
 		
 		XCTAssertEqual(number3,
@@ -62,7 +62,7 @@ final class SystemConvertTests: XCTestCase {
 		XCTAssertNotNil(exception)
 		
 		let number4: UInt64 = 0
-		let number4StringDN = "nonsense".dotNETString()
+		let number4StringDN = "nonsense".cDotNETString()
 		defer { System_String_Destroy(number4StringDN) }
 		
 		XCTAssertEqual(number4,
@@ -74,7 +74,7 @@ final class SystemConvertTests: XCTestCase {
 		var exception: System_Exception_t?
 		
 		let text = "Hello World!"
-		let textDN = text.dotNETString()
+		let textDN = text.cDotNETString()
 		defer { System_String_Destroy(textDN) }
 		
 		guard let utf8Encoding = System_Text_Encoding_UTF8_Get(&exception),
@@ -107,7 +107,7 @@ final class SystemConvertTests: XCTestCase {
 		
 		defer { System_String_Destroy(textAsBase64StringDN) }
 		
-		guard let textAsBase64String = String(dotNETString: textAsBase64StringDN) else {
+		guard let textAsBase64String = String(cDotNETString: textAsBase64StringDN) else {
 			XCTFail("Failed to convert string")
 			
 			return
@@ -143,7 +143,7 @@ final class SystemConvertTests: XCTestCase {
 		
 		defer { System_Array_Destroy(textBytesRet) }
 		
-		guard let textRet = String(dotNETString: System_Text_Encoding_GetString(utf8Encoding,
+		guard let textRet = String(cDotNETString: System_Text_Encoding_GetString(utf8Encoding,
 																				textBytesRet,
 																				&exception),
 								   destroyDotNETString: true),

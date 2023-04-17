@@ -91,7 +91,7 @@ final class SystemThreadingTimerTests: XCTestCase {
 														&exception),
 			  exception == nil else {
 			if let exception,
-			   let exceptionString = String(dotNETString: System_Exception_ToString(exception, nil),
+			   let exceptionString = String(cDotNETString: System_Exception_ToString(exception, nil),
 											destroyDotNETString: true) {
 				print("System.Threading.Timer ctor failed with exception: \(exceptionString)")
 			}

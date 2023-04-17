@@ -16,13 +16,13 @@ final class SystemTextStringBuilderTests: XCTestCase {
 		var exception: System_Exception_t?
 		
 		let hello = "Hello"
-		let helloDN = hello.dotNETString()
+		let helloDN = hello.cDotNETString()
 		defer { System_String_Destroy(helloDN) }
 		
 		let lineBreak = "\n"
 		
 		let world = "World"
-		let worldDN = world.dotNETString()
+		let worldDN = world.cDotNETString()
 		defer { System_String_Destroy(worldDN) }
 		
 		let expectedFinalString = "\(hello)\(lineBreak)\(world)"
@@ -37,7 +37,7 @@ final class SystemTextStringBuilderTests: XCTestCase {
 		
 		defer { System_Text_StringBuilder_Destroy(sb) }
 		
-		guard let helloRet = String(dotNETString: System_Text_StringBuilder_ToString(sb,
+		guard let helloRet = String(cDotNETString: System_Text_StringBuilder_ToString(sb,
 																					 &exception),
 									destroyDotNETString: true),
 			  exception == nil else {
@@ -59,7 +59,7 @@ final class SystemTextStringBuilderTests: XCTestCase {
 		
 		XCTAssertNil(exception)
 		
-		guard let finalStringRet = String(dotNETString: System_Text_StringBuilder_ToString(sb,
+		guard let finalStringRet = String(cDotNETString: System_Text_StringBuilder_ToString(sb,
 																						   &exception),
 										  destroyDotNETString: true),
 			  exception == nil else {

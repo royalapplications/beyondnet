@@ -16,15 +16,15 @@ final class SystemIOPathTests: XCTestCase {
 		var exception: System_Exception_t?
 		
 		let dirPath = "/some/path"
-		let dirPathDN = dirPath.dotNETString()
+		let dirPathDN = dirPath.cDotNETString()
 		defer { System_String_Destroy(dirPathDN) }
 		
 		let fileName = "a file.txt"
-		let fileNameDN = fileName.dotNETString()
+		let fileNameDN = fileName.cDotNETString()
 		defer { System_String_Destroy(fileNameDN) }
 		
 		let expectedFilePath = (dirPath as NSString).appendingPathComponent(fileName)
-		let expectedFilePathDN = expectedFilePath.dotNETString()
+		let expectedFilePathDN = expectedFilePath.cDotNETString()
 		defer { System_String_Destroy(expectedFilePathDN) }
 		
 		let expectedFileExtension = ".\((expectedFilePath as NSString).pathExtension)"
@@ -41,7 +41,7 @@ final class SystemIOPathTests: XCTestCase {
 		
 		defer { System_String_Destroy(filePathDN) }
 		
-		guard let filePath = String(dotNETString: filePathDN) else {
+		guard let filePath = String(cDotNETString: filePathDN) else {
 			XCTFail("Failed to convert string")
 			
 			return
@@ -49,7 +49,7 @@ final class SystemIOPathTests: XCTestCase {
 		
 		XCTAssertEqual(expectedFilePath, filePath)
 		
-		guard let fileExtension = String(dotNETString: System_IO_Path_GetExtension(filePathDN,
+		guard let fileExtension = String(cDotNETString: System_IO_Path_GetExtension(filePathDN,
 																				   &exception),
 										 destroyDotNETString: true),
 			  exception == nil else {
@@ -60,7 +60,7 @@ final class SystemIOPathTests: XCTestCase {
 		
 		XCTAssertEqual(expectedFileExtension, fileExtension)
 		
-		guard let fileNameWithoutExtension = String(dotNETString: System_IO_Path_GetFileNameWithoutExtension(expectedFilePathDN,
+		guard let fileNameWithoutExtension = String(cDotNETString: System_IO_Path_GetFileNameWithoutExtension(expectedFilePathDN,
 																											 &exception),
 													destroyDotNETString: true),
 			  exception == nil else {

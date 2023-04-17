@@ -34,7 +34,7 @@ final class SystemReflectionAssemblyTests: XCTestCase {
 		
 		defer { System_Reflection_AssemblyName_Destroy(assemblyName) }
 		
-		guard let assemblyNameString = String(dotNETString: System_Reflection_AssemblyName_Name_Get(assemblyName,
+		guard let assemblyNameString = String(cDotNETString: System_Reflection_AssemblyName_Name_Get(assemblyName,
 																									&exception),
 											  destroyDotNETString: true),
 			  exception == nil else {

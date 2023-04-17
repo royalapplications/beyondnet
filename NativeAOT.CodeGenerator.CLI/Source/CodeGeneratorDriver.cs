@@ -177,6 +177,8 @@ internal class CodeGeneratorDriver
 
         var types = typeCollector.Collect(out unsupportedTypes);
 
+        types.Remove(typeof(void));
+
         return types;
     }
     

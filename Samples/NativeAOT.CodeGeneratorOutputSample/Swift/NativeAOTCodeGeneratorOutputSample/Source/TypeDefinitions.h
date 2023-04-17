@@ -1,4 +1,4 @@
-// Number of generated types: 1488
+// Number of generated types: 1487
 // Number of generated members: 4581
 
 #pragma mark - BEGIN Header
@@ -835,8 +835,6 @@ typedef void* System_Collections_Generic_IEnumerable_A1_t;
 typedef void* System_Collections_Generic_IEnumerator_A1_t;
 
 typedef void* System_IDisposable_t;
-
-typedef void* System_Void_t;
 
 
 typedef void* System_IComparable_A1_t;
@@ -7976,9 +7974,6 @@ System_IDisposable_Destroy(
 );
 
 #pragma mark - END APIs of System.IDisposable
-
-#pragma mark - BEGIN APIs of System.Void
-#pragma mark - END APIs of System.Void
 
 
 

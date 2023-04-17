@@ -24,7 +24,7 @@ final class SystemTupleTests: XCTestCase {
         defer { System_Type_Destroy(systemStringType) }
 
         let string = "Hello World"
-        let stringDN = string.dotNETString()
+        let stringDN = string.cDotNETString()
         defer { System_String_Destroy(stringDN) }
 
         guard let tupleOfString = System_Tuple_A1_Create(systemStringType,
@@ -47,7 +47,7 @@ final class SystemTupleTests: XCTestCase {
             return
         }
 
-        let stringRet = String(dotNETString: stringRetDN,
+        let stringRet = String(cDotNETString: stringRetDN,
                                destroyDotNETString: true)
 
         XCTAssertEqual(string, stringRet)

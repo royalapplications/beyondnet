@@ -45,7 +45,7 @@ public class NameTests {
 //	
 //	public func stackTrace() -> String? {
 //		do {
-//			return try String(dotNETString: exception.getStackTrace())
+//			return try String(cDotNETString: exception.getStackTrace())
 //		} catch {
 //			return nil
 //		}
@@ -53,7 +53,7 @@ public class NameTests {
 //	
 //	public var errorDescription: String? {
 //		do {
-//			return try String(dotNETString: exception.getMessage())
+//			return try String(cDotNETString: exception.getMessage())
 //		} catch {
 //			return nil
 //		}
@@ -75,14 +75,14 @@ public class NameTests {
 //		return System_String(handle: dotNetStringHandle)
 //	}
 //	
-//	init?(dotNETString: System_String?) {
+//	init?(cDotNETString: System_String?) {
 //		guard let dotNETString else { return nil }
 //		
-//		self.init(dotNETString: dotNETString)
+//		self.init(cDotNETString: dotNETString)
 //	}
 //	
-//	init(dotNETString: System_String) {
-//		guard let cString = DNStringToC(dotNETString.__handle) else {
+//	init(cDotNETString: System_String) {
+//		guard let cString = DNStringToC(cDotNETString.__handle) else {
 //			fatalError("Failed to convert .NET String to C String")
 //		}
 //		

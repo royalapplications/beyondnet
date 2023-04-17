@@ -23,7 +23,7 @@ final class SystemStringTests: XCTestCase {
         
         defer { System_String_Destroy(emptyStringDN) }
         
-		guard let emptyString = String(dotNETString: emptyStringDN) else {
+		guard let emptyString = String(cDotNETString: emptyStringDN) else {
 			XCTFail("Failed to convert string")
 			
 			return
@@ -54,7 +54,7 @@ final class SystemStringTests: XCTestCase {
         XCTAssertTrue(isNullOrWhiteSpace)
         
         let nonEmptyString = "Hello World!"
-		let nonEmptyStringDN = nonEmptyString.dotNETString()
+		let nonEmptyStringDN = nonEmptyString.cDotNETString()
 		
 		defer { System_String_Destroy(nonEmptyStringDN) }
         
@@ -64,11 +64,11 @@ final class SystemStringTests: XCTestCase {
 		XCTAssertNil(exception)
 		XCTAssertFalse(isNonEmptyStringNullOrEmpty)
 		
-		let stringForTrimmingDN = " \(nonEmptyString) ".dotNETString()
+		let stringForTrimmingDN = " \(nonEmptyString) ".cDotNETString()
 		
 		defer { System_String_Destroy(stringForTrimmingDN) }
 		
-		guard let trimmedString = String(dotNETString: System_String_Trim(stringForTrimmingDN,
+		guard let trimmedString = String(cDotNETString: System_String_Trim(stringForTrimmingDN,
 																		  &exception),
 										 destroyDotNETString: true),
 			  exception == nil else {
@@ -79,7 +79,7 @@ final class SystemStringTests: XCTestCase {
 		
 		XCTAssertEqual(nonEmptyString, trimmedString)
 		
-		let worldDN = "World".dotNETString()
+		let worldDN = "World".cDotNETString()
 		
 		defer { System_String_Destroy(worldDN) }
 		
@@ -94,7 +94,7 @@ final class SystemStringTests: XCTestCase {
 		
 		let splitOptions: System_StringSplitOptions_t = [ .removeEmptyEntries, .trimEntries ]
 		
-		let blankDN = " ".dotNETString()
+		let blankDN = " ".cDotNETString()
 		
 		defer { System_String_Destroy(blankDN) }
 		
@@ -130,16 +130,16 @@ final class SystemStringTests: XCTestCase {
 		let expectedString = originalString.replacingOccurrences(of: hello,
 																 with: emptyString)
 		
-		let originalStringDN = originalString.dotNETString()
+		let originalStringDN = originalString.cDotNETString()
 		defer { System_String_Destroy(originalStringDN) }
 		
-		let helloDN = hello.dotNETString()
+		let helloDN = hello.cDotNETString()
 		defer { System_String_Destroy(helloDN) }
 		
-		let emptyStringDN = emptyString.dotNETString()
+		let emptyStringDN = emptyString.cDotNETString()
 		defer { System_String_Destroy(emptyStringDN) }
 		
-		guard let replacedString = String(dotNETString: System_String_Replace_3(originalStringDN,
+		guard let replacedString = String(cDotNETString: System_String_Replace_3(originalStringDN,
 																				helloDN,
 																				emptyStringDN,
 																				&exception),
@@ -159,10 +159,10 @@ final class SystemStringTests: XCTestCase {
 		let string = "Hello World 😀"
 		let needle = "World"
 		
-		let stringDN = string.dotNETString()
+		let stringDN = string.cDotNETString()
 		defer { System_String_Destroy(stringDN) }
 		
-		let needleDN = needle.dotNETString()
+		let needleDN = needle.cDotNETString()
 		defer { System_String_Destroy(needleDN) }
 		
 		let expectedIndex: Int32 = 6
@@ -198,11 +198,11 @@ final class SystemStringTests: XCTestCase {
 		}
 		
 		let separator = ";"
-		let separatorDN = separator.dotNETString()
+		let separatorDN = separator.cDotNETString()
 		defer { System_String_Destroy(separatorDN) }
 		
 		let joined = components.joined(separator: separator)
-		let joinedDN = joined.dotNETString()
+		let joinedDN = joined.cDotNETString()
 		defer { System_String_Destroy(joinedDN) }
 		
 		let cleanedJoined = cleanedComponents.joined(separator: separator)
@@ -237,13 +237,13 @@ final class SystemStringTests: XCTestCase {
 				return
 			}
 			
-			let componentRet = String(dotNETString: componentRetObj,
+			let componentRet = String(cDotNETString: componentRetObj,
 									  destroyDotNETString: true)
 			
 			XCTAssertEqual(component, componentRet)
 		}
 		
-		guard let joinedRet = String(dotNETString: System_String_Join_1(separatorDN,
+		guard let joinedRet = String(cDotNETString: System_String_Join_1(separatorDN,
 																		split,
 																		&exception),
 									 destroyDotNETString: true),

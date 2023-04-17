@@ -43,7 +43,7 @@ final class GenericTestClassTests: XCTestCase {
 		
 		defer { System_Type_Destroy(genericTestClassType) }
 		
-		guard let genericTestClassTypeName = String(dotNETString: System_Type_FullName_Get(genericTestClassType,
+		guard let genericTestClassTypeName = String(cDotNETString: System_Type_FullName_Get(genericTestClassType,
 																						   &exception),
 													destroyDotNETString: true),
 			  exception == nil else {
@@ -188,7 +188,7 @@ final class GenericTestClassTests: XCTestCase {
         defer { NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_Destroy(genericTestClass) }
         
         let string = "Hello World"
-        let stringDN = string.dotNETString()
+        let stringDN = string.cDotNETString()
         
         defer { System_String_Destroy(stringDN) }
         
@@ -283,7 +283,7 @@ final class GenericTestClassTests: XCTestCase {
 		
 		defer { System_Type_Destroy(genericTestClassType) }
 		
-		guard let genericTestClassTypeName = String(dotNETString: System_Type_FullName_Get(genericTestClassType,
+		guard let genericTestClassTypeName = String(cDotNETString: System_Type_FullName_Get(genericTestClassType,
 																						   &exception),
 													destroyDotNETString: true),
 			  exception == nil else {

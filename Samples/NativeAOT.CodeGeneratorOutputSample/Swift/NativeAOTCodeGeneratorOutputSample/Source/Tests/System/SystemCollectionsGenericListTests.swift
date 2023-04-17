@@ -72,7 +72,7 @@ final class SystemCollectionsGenericListTests: XCTestCase {
 		
 		XCTAssertTrue(DNObjectIs(genericArgument, systemTypeType))
 		
-		guard let genericArgumentTypeName = String(dotNETString: System_Reflection_MemberInfo_Name_Get(genericArgument,
+		guard let genericArgumentTypeName = String(cDotNETString: System_Reflection_MemberInfo_Name_Get(genericArgument,
 																									   &exception),
 												   destroyDotNETString: true),
 			  exception == nil else {
@@ -115,7 +115,7 @@ final class SystemCollectionsGenericListTests: XCTestCase {
 		
 		defer { System_Type_Destroy(listType) }
 		
-		guard let listTypeName = String(dotNETString: System_Type_FullName_Get(listType,
+		guard let listTypeName = String(cDotNETString: System_Type_FullName_Get(listType,
 																			   &exception),
 										destroyDotNETString: true),
 			  exception == nil else {
@@ -155,7 +155,7 @@ final class SystemCollectionsGenericListTests: XCTestCase {
 		]
 		
 		for string in strings {
-			let stringDN = string.dotNETString()
+			let stringDN = string.cDotNETString()
 			
 			System_Collections_Generic_List_A1_Add(list,
 												   systemStringType,
@@ -165,7 +165,7 @@ final class SystemCollectionsGenericListTests: XCTestCase {
 			System_String_Destroy(stringDN)
 			
 			if let exception,
-			   let exceptionString = String(dotNETString: System_Exception_ToString(exception, nil),
+			   let exceptionString = String(cDotNETString: System_Exception_ToString(exception, nil),
 											destroyDotNETString: true) {
 				XCTFail("System.Collections.Generic.List<System.String>.Add should not throw: \(exceptionString)")
 				
@@ -205,7 +205,7 @@ final class SystemCollectionsGenericListTests: XCTestCase {
 			
 			XCTAssertTrue(DNObjectIs(element, systemStringType))
 			
-			guard let elementString = String(dotNETString: element,
+			guard let elementString = String(cDotNETString: element,
 											 destroyDotNETString: true) else {
 				XCTFail("Failed to get string")
 				

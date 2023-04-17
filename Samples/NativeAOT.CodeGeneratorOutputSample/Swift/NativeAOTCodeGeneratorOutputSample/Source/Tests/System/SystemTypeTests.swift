@@ -25,7 +25,7 @@ final class SystemTypeTests: XCTestCase {
         
         defer { System_Type_Destroy(systemObjectType) }
 		
-		let systemObjectTypeNameDN = systemObjectTypeName.dotNETString()
+		let systemObjectTypeNameDN = systemObjectTypeName.cDotNETString()
 		defer { System_String_Destroy(systemObjectTypeNameDN) }
         
 		guard let systemObjectTypeViaName = System_Type_GetType_2(systemObjectTypeNameDN,
@@ -47,7 +47,7 @@ final class SystemTypeTests: XCTestCase {
             return
         }
 		
-		guard let retrievedSystemObjectTypeName = String(dotNETString: System_Type_FullName_Get(systemObjectType,
+		guard let retrievedSystemObjectTypeName = String(cDotNETString: System_Type_FullName_Get(systemObjectType,
 																								&exception),
 														 destroyDotNETString: true),
 			  exception == nil else {
@@ -63,7 +63,7 @@ final class SystemTypeTests: XCTestCase {
 		var exception: System_Exception_t?
 		
 		let invalidTypeName = "! This.Type.Surely.Does.Not.Exist !"
-		let invalidTypeNameDN = invalidTypeName.dotNETString()
+		let invalidTypeNameDN = invalidTypeName.cDotNETString()
 		
 		defer { System_String_Destroy(invalidTypeNameDN) }
 		
@@ -83,7 +83,7 @@ final class SystemTypeTests: XCTestCase {
 		
 		var exception2: System_Exception_t?
 		
-		guard let exceptionMessage = String(dotNETString: System_Exception_Message_Get(exception,
+		guard let exceptionMessage = String(cDotNETString: System_Exception_Message_Get(exception,
 																					   &exception2),
 											destroyDotNETString: true),
 			  exception2 == nil else {
@@ -108,7 +108,7 @@ final class SystemTypeTests: XCTestCase {
 //		defer { System_Type_Destroy(typeOfSystemObject) }
 //
 //		let methodName = "ToString"
-//		let methodNameDN = methodName.dotNETString()
+//		let methodNameDN = methodName.cDotNETString()
 //
 //		defer { System_String_Destroy(methodNameDN) }
 //
@@ -123,7 +123,7 @@ final class SystemTypeTests: XCTestCase {
 //
 //		defer { System_Reflection_MethodInfo_Destroy(toStringMethod) }
 //
-//		guard let methodNameRet = String(dotNETString: System_Reflection_MemberInfo_Name_Get(toStringMethod,
+//		guard let methodNameRet = String(cDotNETString: System_Reflection_MemberInfo_Name_Get(toStringMethod,
 //																							 &exception),
 //										 destroyDotNETString: true),
 //			  exception == nil else {

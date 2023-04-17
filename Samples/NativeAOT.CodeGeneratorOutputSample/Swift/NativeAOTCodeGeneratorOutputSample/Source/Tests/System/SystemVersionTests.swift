@@ -86,7 +86,7 @@ final class SystemVersionTests: XCTestCase {
         XCTAssertNil(exception)
         XCTAssertEqual(revision, revisionRet)
         
-        guard let versionStringRet = String(dotNETString: System_Version_ToString(version,
+        guard let versionStringRet = String(cDotNETString: System_Version_ToString(version,
 																				  &exception),
 											destroyDotNETString: true),
               exception == nil else {
@@ -107,7 +107,7 @@ final class SystemVersionTests: XCTestCase {
         let revision: Int32 = 456
         
         let versionString = "\(major).\(minor).\(build).\(revision)"
-		let versionStringDN = versionString.dotNETString()
+		let versionStringDN = versionString.cDotNETString()
 		defer { System_String_Destroy(versionStringDN) }
         
 		guard let version = System_Version_Create_3(versionStringDN,
@@ -144,7 +144,7 @@ final class SystemVersionTests: XCTestCase {
         XCTAssertNil(exception)
         XCTAssertEqual(revision, revisionRet)
         
-        guard let versionStringRet = String(dotNETString: System_Version_ToString(version,
+        guard let versionStringRet = String(cDotNETString: System_Version_ToString(version,
 																				  &exception),
 											destroyDotNETString: true),
               exception == nil else {
@@ -165,7 +165,7 @@ final class SystemVersionTests: XCTestCase {
 		let revision: Int32 = 456
 		
 		let versionString = "\(major).\(minor).\(build).\(revision)"
-		let versionStringDN = versionString.dotNETString()
+		let versionStringDN = versionString.cDotNETString()
 		defer { System_String_Destroy(versionStringDN) }
 		
 		var version: System_Version_t?
@@ -208,7 +208,7 @@ final class SystemVersionTests: XCTestCase {
 		XCTAssertNil(exception)
 		XCTAssertEqual(revision, revisionRet)
 		
-		guard let versionStringRet = String(dotNETString: System_Version_ToString(version,
+		guard let versionStringRet = String(cDotNETString: System_Version_ToString(version,
 																				  &exception),
 											destroyDotNETString: true),
 			  exception == nil else {

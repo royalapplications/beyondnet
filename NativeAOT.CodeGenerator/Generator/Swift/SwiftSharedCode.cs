@@ -97,14 +97,14 @@ public extension String {
 	}
 }
 
-final class NativeBox<T> {
-    let value: T
+public final class NativeBox<T> {
+    public let value: T
     
-    init(value: T) {
+    public init(value: T) {
         self.value = value
     }
     
-    convenience init(_ value: T) {
+    public convenience init(_ value: T) {
         self.init(value: value)
     }
     
@@ -114,7 +114,7 @@ final class NativeBox<T> {
 }
 
 // MARK: - To Pointer
-extension NativeBox {
+public extension NativeBox {
     func unretainedPointer() -> UnsafeRawPointer {
         pointer(retained: false)
     }
@@ -143,7 +143,7 @@ private extension NativeBox {
 }
 
 // MARK: - From Pointer
-extension NativeBox {
+public extension NativeBox {
     static func fromPointer(_ pointer: UnsafeRawPointer) -> Self {
         let unmanaged = Unmanaged<Self>.fromOpaque(pointer)
         
@@ -154,7 +154,7 @@ extension NativeBox {
 }
 
 // MARK: - Release
-extension NativeBox {
+public extension NativeBox {
     static func release(_ pointer: UnsafeRawPointer) {
         let unmanaged = Unmanaged<Self>.fromOpaque(pointer)
         

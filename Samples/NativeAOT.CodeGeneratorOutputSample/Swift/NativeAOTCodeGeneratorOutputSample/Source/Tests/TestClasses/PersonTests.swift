@@ -14,11 +14,11 @@ final class PersonTests: XCTestCase {
 	
     func testPerson() {
         let firstName = "John"
-		let firstNameDN = firstName.dotNETString()
+		let firstNameDN = firstName.cDotNETString()
 		defer { System_String_Destroy(firstNameDN) }
 		
         let lastName = "Doe"
-		let lastNameDN = lastName.dotNETString()
+		let lastNameDN = lastName.cDotNETString()
 		defer { System_String_Destroy(lastNameDN) }
 		
         let age: Int32 = 24
@@ -79,7 +79,7 @@ final class PersonTests: XCTestCase {
         
         XCTAssertEqual(expectedNiceLevel, retrievedNiceLevel)
         
-        guard let retrievedFirstName =  String(dotNETString: NativeAOT_CodeGeneratorInputSample_Person_FirstName_Get(person,
+        guard let retrievedFirstName =  String(cDotNETString: NativeAOT_CodeGeneratorInputSample_Person_FirstName_Get(person,
 																													 &exception),
 											   destroyDotNETString: true),
               exception == nil else {
@@ -90,7 +90,7 @@ final class PersonTests: XCTestCase {
         
         XCTAssertEqual(firstName, retrievedFirstName)
         
-        guard let retrievedLastName = String(dotNETString: NativeAOT_CodeGeneratorInputSample_Person_LastName_Get(person,
+        guard let retrievedLastName = String(cDotNETString: NativeAOT_CodeGeneratorInputSample_Person_LastName_Get(person,
 																												  &exception),
 											 destroyDotNETString: true),
               exception == nil else {
@@ -101,7 +101,7 @@ final class PersonTests: XCTestCase {
         
         XCTAssertEqual(lastName, retrievedLastName)
         
-        guard let retrievedFullName = String(dotNETString: NativeAOT_CodeGeneratorInputSample_Person_FullName_Get(person,
+        guard let retrievedFullName = String(cDotNETString: NativeAOT_CodeGeneratorInputSample_Person_FullName_Get(person,
 																												  &exception),
 											 destroyDotNETString: true),
               exception == nil else {
@@ -133,7 +133,7 @@ final class PersonTests: XCTestCase {
             return
         }
         
-        guard let retrievedWelcomeMessage = String(dotNETString: NativeAOT_CodeGeneratorInputSample_Person_GetWelcomeMessage(person,
+        guard let retrievedWelcomeMessage = String(cDotNETString: NativeAOT_CodeGeneratorInputSample_Person_GetWelcomeMessage(person,
 																															 &exception),
 												   destroyDotNETString: true),
               exception == nil else {
@@ -145,7 +145,7 @@ final class PersonTests: XCTestCase {
         XCTAssertEqual(expectedWelcomeMessage, retrievedWelcomeMessage)
         
         let newFirstName = "Max 😉"
-		let newFirstNameDN = newFirstName.dotNETString()
+		let newFirstNameDN = newFirstName.cDotNETString()
 		defer { System_String_Destroy(newFirstNameDN) }
 		
         let expectedNewFullName = "\(newFirstName) \(lastName)"
@@ -160,7 +160,7 @@ final class PersonTests: XCTestCase {
             return
         }
         
-        guard let newFullName = String(dotNETString: NativeAOT_CodeGeneratorInputSample_Person_FullName_Get(person,
+        guard let newFullName = String(cDotNETString: NativeAOT_CodeGeneratorInputSample_Person_FullName_Get(person,
 																											&exception),
 									   destroyDotNETString: true),
               exception == nil else {
@@ -186,13 +186,13 @@ final class PersonTests: XCTestCase {
     func testPersonChildren() {
         var exception: System_Exception_t?
 		
-		let motherFirstNameDN = "Johanna".dotNETString()
+		let motherFirstNameDN = "Johanna".cDotNETString()
 		defer { System_String_Destroy(motherFirstNameDN) }
 		
-		let sonFirstNameDN = "Max".dotNETString()
+		let sonFirstNameDN = "Max".cDotNETString()
 		defer { System_String_Destroy(sonFirstNameDN) }
 		
-		let lastNameDN = "Doe".dotNETString()
+		let lastNameDN = "Doe".cDotNETString()
 		defer { System_String_Destroy(lastNameDN) }
         
         guard let mother = NativeAOT_CodeGeneratorInputSample_Person_Create(motherFirstNameDN,
@@ -287,7 +287,7 @@ final class PersonTests: XCTestCase {
         
         var exception2: System_Exception_t?
         
-        guard let exceptionMessage = String(dotNETString: System_Exception_Message_Get(exception,
+        guard let exceptionMessage = String(cDotNETString: System_Exception_Message_Get(exception,
 																					   &exception2),
 											destroyDotNETString: true),
               exception2 == nil else {
@@ -302,13 +302,13 @@ final class PersonTests: XCTestCase {
     func testPersonChildrenArray() {
         var exception: System_Exception_t?
 		
-		let motherFirstNameDN = "Johanna".dotNETString()
+		let motherFirstNameDN = "Johanna".cDotNETString()
 		defer { System_String_Destroy(motherFirstNameDN) }
 		
-		let sonFirstNameDN = "Max".dotNETString()
+		let sonFirstNameDN = "Max".cDotNETString()
 		defer { System_String_Destroy(sonFirstNameDN) }
 		
-		let lastNameDN = "Doe".dotNETString()
+		let lastNameDN = "Doe".cDotNETString()
 		defer { System_String_Destroy(lastNameDN) }
         
         guard let mother = NativeAOT_CodeGeneratorInputSample_Person_Create(motherFirstNameDN,
@@ -404,10 +404,10 @@ final class PersonTests: XCTestCase {
         
         let initialAge: Int32 = 0
 		
-		let firstNameDN = "Johanna".dotNETString()
+		let firstNameDN = "Johanna".cDotNETString()
 		defer { System_String_Destroy(firstNameDN) }
 		
-		let lastNameDN = "Doe".dotNETString()
+		let lastNameDN = "Doe".cDotNETString()
 		defer { System_String_Destroy(lastNameDN) }
         
         guard let baby = NativeAOT_CodeGeneratorInputSample_Person_Create(firstNameDN,
@@ -444,10 +444,10 @@ final class PersonTests: XCTestCase {
 		
 		let initialAge: Int32 = 0
 		
-		let firstNameDN = "Johanna".dotNETString()
+		let firstNameDN = "Johanna".cDotNETString()
 		defer { System_String_Destroy(firstNameDN) }
 		
-		let lastNameDN = "Doe".dotNETString()
+		let lastNameDN = "Doe".cDotNETString()
 		defer { System_String_Destroy(lastNameDN) }
 		
 		guard let person = NativeAOT_CodeGeneratorInputSample_Person_Create(firstNameDN,
@@ -532,10 +532,10 @@ final class PersonTests: XCTestCase {
 	func testPersonAddress() {
 		var exception: System_Exception_t?
 		
-		let firstNameDN = "Johanna".dotNETString()
+		let firstNameDN = "Johanna".cDotNETString()
 		defer { System_String_Destroy(firstNameDN) }
 		
-		let lastNameDN = "Doe".dotNETString()
+		let lastNameDN = "Doe".cDotNETString()
 		defer { System_String_Destroy(lastNameDN) }
 		
 		guard let person = NativeAOT_CodeGeneratorInputSample_Person_Create(firstNameDN,
@@ -551,11 +551,11 @@ final class PersonTests: XCTestCase {
 		defer { NativeAOT_CodeGeneratorInputSample_Person_Destroy(person) }
 		
 		let street = "Stephansplatz"
-		let streetDN = street.dotNETString()
+		let streetDN = street.cDotNETString()
 		defer { System_String_Destroy(streetDN) }
 		
 		let city = "Vienna"
-		let cityDN = city.dotNETString()
+		let cityDN = city.cDotNETString()
 		defer { System_String_Destroy(cityDN) }
 		
 		guard let address = NativeAOT_CodeGeneratorInputSample_Address_Create(streetDN,
@@ -581,7 +581,7 @@ final class PersonTests: XCTestCase {
 			return
 		}
 		
-		guard let retrievedStreet = String(dotNETString: NativeAOT_CodeGeneratorInputSample_Address_Street_Get(retrievedAddress,
+		guard let retrievedStreet = String(cDotNETString: NativeAOT_CodeGeneratorInputSample_Address_Street_Get(retrievedAddress,
 																											   &exception),
 										   destroyDotNETString: true),
 			  exception == nil else {
@@ -592,7 +592,7 @@ final class PersonTests: XCTestCase {
 		
 		XCTAssertEqual(street, retrievedStreet)
 		
-		guard let retrievedCity = String(dotNETString: NativeAOT_CodeGeneratorInputSample_Address_City_Get(retrievedAddress,
+		guard let retrievedCity = String(cDotNETString: NativeAOT_CodeGeneratorInputSample_Address_City_Get(retrievedAddress,
 																										   &exception),
 										 destroyDotNETString: true),
 			  exception == nil else {
@@ -622,16 +622,16 @@ final class PersonTests: XCTestCase {
 		
         var exception: System_Exception_t?
 		
-		let motherFirstNameDN = "Johanna".dotNETString()
+		let motherFirstNameDN = "Johanna".cDotNETString()
 		defer { System_String_Destroy(motherFirstNameDN) }
 		
-		let sonFirstNameDN = "Max".dotNETString()
+		let sonFirstNameDN = "Max".cDotNETString()
 		defer { System_String_Destroy(sonFirstNameDN) }
 		
-		let daugtherFirstNameDN = "Marie".dotNETString()
+		let daugtherFirstNameDN = "Marie".cDotNETString()
 		defer { System_String_Destroy(daugtherFirstNameDN) }
 		
-		let lastNameDN = "Doe".dotNETString()
+		let lastNameDN = "Doe".cDotNETString()
 		defer { System_String_Destroy(lastNameDN) }
         
         guard let mother = NativeAOT_CodeGeneratorInputSample_Person_Create(motherFirstNameDN,
@@ -783,16 +783,16 @@ final class PersonTests: XCTestCase {
     func testPersonChildrenArrayChange() {
         var exception: System_Exception_t?
 		
-		let motherFirstNameDN = "Johanna".dotNETString()
+		let motherFirstNameDN = "Johanna".cDotNETString()
 		defer { System_String_Destroy(motherFirstNameDN) }
 		
-		let sonFirstNameDN = "Max".dotNETString()
+		let sonFirstNameDN = "Max".cDotNETString()
 		defer { System_String_Destroy(sonFirstNameDN) }
 		
-		let daugtherFirstNameDN = "Marie".dotNETString()
+		let daugtherFirstNameDN = "Marie".cDotNETString()
 		defer { System_String_Destroy(daugtherFirstNameDN) }
 		
-		let lastNameDN = "Doe".dotNETString()
+		let lastNameDN = "Doe".cDotNETString()
 		defer { System_String_Destroy(lastNameDN) }
         
         guard let mother = NativeAOT_CodeGeneratorInputSample_Person_Create(motherFirstNameDN,

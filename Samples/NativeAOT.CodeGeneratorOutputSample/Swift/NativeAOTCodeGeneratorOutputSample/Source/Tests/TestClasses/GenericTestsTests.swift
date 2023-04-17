@@ -394,7 +394,7 @@ final class GenericTestsTests: XCTestCase {
 		defer { System_Text_StringBuilder_Destroy(value) }
 		
 		let expectedString = "Hello World"
-		let expectedStringDN = expectedString.dotNETString()
+		let expectedStringDN = expectedString.cDotNETString()
 		defer { System_String_Destroy(expectedStringDN) }
 		
 		System_Text_StringBuilder_Append_2(value,
@@ -450,7 +450,7 @@ final class GenericTestsTests: XCTestCase {
 		XCTAssertNil(exception)
 		XCTAssertTrue(valueEqual)
 		
-		guard let stringRet = String(dotNETString: System_Text_StringBuilder_ToString(valueRet,
+		guard let stringRet = String(cDotNETString: System_Text_StringBuilder_ToString(valueRet,
 																					  &exception),
 									 destroyDotNETString: true),
 			  exception == nil else {
@@ -520,7 +520,7 @@ final class GenericTestsTests: XCTestCase {
 
 		var exception2: System_Exception_t?
 
-		guard let exceptionMessage = String(dotNETString: System_Exception_Message_Get(exception,
+		guard let exceptionMessage = String(cDotNETString: System_Exception_Message_Get(exception,
 																					   &exception2),
 											destroyDotNETString: true),
 			  exception2 == nil else {
@@ -539,7 +539,7 @@ final class GenericTestsTests: XCTestCase {
 		let stringPrefix = "Hello_"
 		
 		let separator = ";"
-		let separatorDN = separator.dotNETString()
+		let separatorDN = separator.cDotNETString()
 		defer { System_String_Destroy(separatorDN) }
 
 		guard let stringType = System_String_TypeOf() else {
@@ -566,7 +566,7 @@ final class GenericTestsTests: XCTestCase {
 		
 		for idx in 0..<numberOfElements {
 			let string = "\(stringPrefix)\(idx)"
-			let stringDN = string.dotNETString()
+			let stringDN = string.cDotNETString()
 			
             dnStrings.append(stringDN)
 			strings.append(string)
@@ -585,7 +585,7 @@ final class GenericTestsTests: XCTestCase {
             System_String_Destroy(dnString)
         }
 
-		guard let stringRet = String(dotNETString: NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnStringOfJoinedArray_A1(stringType,
+		guard let stringRet = String(cDotNETString: NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnStringOfJoinedArray_A1(stringType,
 																																arrayOfStrings,
 																																separatorDN,
 																																&exception),
@@ -698,7 +698,7 @@ final class GenericTestsTests: XCTestCase {
                                                         &exception),
               exception == nil,
               DNObjectIs(firstObject, systemStringType),
-              let firstString = String(dotNETString: firstObject,
+              let firstString = String(cDotNETString: firstObject,
                                        destroyDotNETString: true) else {
             XCTFail("System.Array.GetValue should not throw and return an instance")
             
@@ -712,7 +712,7 @@ final class GenericTestsTests: XCTestCase {
                                                          &exception),
               exception == nil,
               DNObjectIs(secondObject, systemStringType),
-              let secondString = String(dotNETString: secondObject,
+              let secondString = String(cDotNETString: secondObject,
                                        destroyDotNETString: true) else {
             XCTFail("System.Array.GetValue should not throw and return an instance")
             

@@ -16,7 +16,7 @@ final class SystemExceptionTests: XCTestCase {
         var exception: System_Exception_t?
         
         let exceptionMessage = "I'm a nice exception"
-		let exceptionMessageDN = exceptionMessage.dotNETString()
+		let exceptionMessageDN = exceptionMessage.cDotNETString()
 		
 		defer { System_String_Destroy(exceptionMessageDN) }
         
@@ -30,7 +30,7 @@ final class SystemExceptionTests: XCTestCase {
         
         defer { System_Exception_Destroy(createdException) }
         
-        guard let retrievedExceptionMessage = String(dotNETString: System_Exception_Message_Get(createdException,
+        guard let retrievedExceptionMessage = String(cDotNETString: System_Exception_Message_Get(createdException,
 																								&exception),
 													 destroyDotNETString: true),
               exception == nil else {

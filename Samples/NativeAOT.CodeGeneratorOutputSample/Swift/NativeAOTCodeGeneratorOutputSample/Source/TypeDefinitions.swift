@@ -1,5 +1,5 @@
-// Number of generated types: 1488
-// Number of generated members: 4435
+// Number of generated types: 1487
+// Number of generated members: 4433
 
 // MARK: - BEGIN Header
 import Foundation
@@ -101,14 +101,14 @@ public extension String {
 	}
 }
 
-final class NativeBox<T> {
-    let value: T
+public final class NativeBox<T> {
+    public let value: T
     
-    init(value: T) {
+    public init(value: T) {
         self.value = value
     }
     
-    convenience init(_ value: T) {
+    public convenience init(_ value: T) {
         self.init(value: value)
     }
     
@@ -118,7 +118,7 @@ final class NativeBox<T> {
 }
 
 // MARK: - To Pointer
-extension NativeBox {
+public extension NativeBox {
     func unretainedPointer() -> UnsafeRawPointer {
         pointer(retained: false)
     }
@@ -147,7 +147,7 @@ private extension NativeBox {
 }
 
 // MARK: - From Pointer
-extension NativeBox {
+public extension NativeBox {
     static func fromPointer(_ pointer: UnsafeRawPointer) -> Self {
         let unmanaged = Unmanaged<Self>.fromOpaque(pointer)
         
@@ -158,7 +158,7 @@ extension NativeBox {
 }
 
 // MARK: - Release
-extension NativeBox {
+public extension NativeBox {
     static func release(_ pointer: UnsafeRawPointer) {
         let unmanaged = Unmanaged<Self>.fromOpaque(pointer)
         
@@ -12792,12 +12792,6 @@ public class System_IDisposable /* System.IDisposable */: DNObject {
 	
 	}
 	
-	
-
-}
-
-
-public class Void /* System.Void */: System_ValueType {
 	
 
 }
@@ -90347,46 +90341,8 @@ public class NativeAOT_CodeGeneratorInputSample_TestClass /* NativeAOT.CodeGener
 	
 	}
 	
-	public func getCurrentBookByRef() throws -> inout NativeAOT_CodeGeneratorInputSample_Book? /* NativeAOT.CodeGeneratorInputSample.Book */ {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = NativeAOT_CodeGeneratorInputSample_TestClass_GetCurrentBookByRef(self.__handle, &__exceptionC)
-		
-		let __returnValue = NativeAOT_CodeGeneratorInputSample_Book(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	
-	}
-	
-	public func increaseAndGetCurrentIntValueByRef() throws -> inout Int32? /* System.Int32 */ {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = NativeAOT_CodeGeneratorInputSample_TestClass_IncreaseAndGetCurrentIntValueByRef(self.__handle, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	
-	}
-	
+	// TODO: Method with by ref return or setter or event handler type (NativeAOT_CodeGeneratorInputSample_TestClass_GetCurrentBookByRef)
+	// TODO: Method with by ref return or setter or event handler type (NativeAOT_CodeGeneratorInputSample_TestClass_IncreaseAndGetCurrentIntValueByRef)
 	public convenience init?() throws {
 		
 		

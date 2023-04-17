@@ -41,7 +41,7 @@ import NativeAOTCodeGeneratorOutputSample
 //		var retString: String?
 //
 //		string.withCString { cString in
-//			retString = .init(dotNETString: System_Runtime_InteropServices_Marshal_PtrToStringAuto_1(.init(bitPattern: cString),
+//			retString = .init(cDotNETString: System_Runtime_InteropServices_Marshal_PtrToStringAuto_1(.init(bitPattern: cString),
 //																									 &exception),
 //							  destroyDotNETString: true)
 //		}

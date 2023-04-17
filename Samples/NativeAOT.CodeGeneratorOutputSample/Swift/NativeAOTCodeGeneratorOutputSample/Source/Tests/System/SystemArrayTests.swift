@@ -159,7 +159,7 @@ final class SystemArrayTests: XCTestCase {
 		defer { System_Array_Destroy(arrayOfString) }
 		
 		let string = "Abc"
-		let stringDN = string.dotNETString()
+		let stringDN = string.cDotNETString()
 		defer { System_String_Destroy(stringDN) }
 		
 		System_Array_Fill_A1(systemStringType,
@@ -176,7 +176,7 @@ final class SystemArrayTests: XCTestCase {
 		XCTAssertEqual(numberOfElements, length)
 		
 		for idx in 0..<length {
-			guard let stringElement = String(dotNETString: System_Array_GetValue_1(arrayOfString,
+			guard let stringElement = String(cDotNETString: System_Array_GetValue_1(arrayOfString,
 																				   idx,
 																				   &exception),
 											 destroyDotNETString: true),
@@ -220,7 +220,7 @@ final class SystemArrayTests: XCTestCase {
 		defer { System_Array_Destroy(arrayOfString) }
 		
 		for (idx, string) in strings.enumerated() {
-			let stringDN = string.dotNETString()
+			let stringDN = string.cDotNETString()
 			defer { System_String_Destroy(stringDN) }
 			
 			System_Array_SetValue(arrayOfString,
@@ -240,7 +240,7 @@ final class SystemArrayTests: XCTestCase {
 		let reversedStrings = [String](strings.reversed())
 		
 		for idx in 0..<numberOfElements {
-			guard let stringElement = String(dotNETString: System_Array_GetValue_1(arrayOfString,
+			guard let stringElement = String(cDotNETString: System_Array_GetValue_1(arrayOfString,
 																				   idx,
 																				   &exception),
 											 destroyDotNETString: true),

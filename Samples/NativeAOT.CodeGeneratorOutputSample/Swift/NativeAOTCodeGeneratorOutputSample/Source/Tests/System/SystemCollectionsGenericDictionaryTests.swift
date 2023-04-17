@@ -52,7 +52,7 @@ final class SystemCollectionsGenericDictionaryTests: XCTestCase {
 		
 		defer { System_Type_Destroy(dictionaryType) }
 		
-		guard let dictionaryTypeName = String(dotNETString: System_Type_FullName_Get(dictionaryType,
+		guard let dictionaryTypeName = String(cDotNETString: System_Type_FullName_Get(dictionaryType,
 																					 &exception),
 										destroyDotNETString: true),
 			  exception == nil else {
@@ -97,7 +97,7 @@ final class SystemCollectionsGenericDictionaryTests: XCTestCase {
 
 		let exceptionMessage = "My Exception Message"
         
-        let exceptionMessageDN = exceptionMessage.dotNETString()
+        let exceptionMessageDN = exceptionMessage.cDotNETString()
         defer { System_String_Destroy(exceptionMessageDN) }
         
         guard let exceptionValue = System_Exception_Create_1(exceptionMessageDN,

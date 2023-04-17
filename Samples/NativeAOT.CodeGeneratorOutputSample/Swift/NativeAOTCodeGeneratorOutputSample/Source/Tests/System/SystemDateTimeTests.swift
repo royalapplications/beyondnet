@@ -100,7 +100,7 @@ final class SystemDateTimeTests: XCTestCase {
 			return
 		}
 		
-		let cultureNameDN = "en-US".dotNETString()
+		let cultureNameDN = "en-US".cDotNETString()
 		defer { System_String_Destroy(cultureNameDN) }
 		
 		guard let enUSCulture = System_Globalization_CultureInfo_Create_1(cultureNameDN,
@@ -114,7 +114,7 @@ final class SystemDateTimeTests: XCTestCase {
 		defer { System_Globalization_CultureInfo_Destroy(enUSCulture) }
 		
 		let dateString = "\(expectedMonth)/\(expectedDay)/\(expectedYear) \(expectedHour):\(expectedMinute):\(expectedSecond)"
-		let dateStringDN = dateString.dotNETString()
+		let dateStringDN = dateString.cDotNETString()
 		defer { System_String_Destroy(dateStringDN) }
 		
 		var nowDotNet: System_DateTime_t?

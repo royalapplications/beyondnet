@@ -53,7 +53,7 @@ final class TestClassesTests: XCTestCase {
         }
         
         let systemObjectTypeName = "System.Object"
-		let systemObjectTypeNameDN = systemObjectTypeName.dotNETString()
+		let systemObjectTypeNameDN = systemObjectTypeName.cDotNETString()
 		defer { System_String_Destroy(systemObjectTypeNameDN) }
         
 		guard let systemObjectType = System_Type_GetType(systemObjectTypeNameDN,
@@ -68,7 +68,7 @@ final class TestClassesTests: XCTestCase {
         
         defer { System_Object_Destroy(systemObjectType) }
         
-		guard let retrievedSystemObjectTypeName = String(dotNETString: System_Type_ToString(systemObjectType,
+		guard let retrievedSystemObjectTypeName = String(cDotNETString: System_Type_ToString(systemObjectType,
 																							&exception),
 														 destroyDotNETString: true),
 			  exception == nil else {
@@ -113,7 +113,7 @@ final class TestClassesTests: XCTestCase {
         }
 		
 		let john = "John"
-		let johnDN = john.dotNETString()
+		let johnDN = john.cDotNETString()
 		defer { System_String_Destroy(johnDN) }
         
 		NativeAOT_CodeGeneratorInputSample_TestClass_SayHello_1(testClass,
@@ -126,7 +126,7 @@ final class TestClassesTests: XCTestCase {
             return
         }
         
-        guard let hello = String(dotNETString: NativeAOT_CodeGeneratorInputSample_TestClass_GetHello(testClass,
+        guard let hello = String(cDotNETString: NativeAOT_CodeGeneratorInputSample_TestClass_GetHello(testClass,
 																									 &exception),
 								 destroyDotNETString: true),
 			  exception == nil else {
@@ -161,7 +161,7 @@ final class TestClassesTests: XCTestCase {
         
 		let enumValue = NativeAOT_CodeGeneratorInputSample_TestEnum_t.secondCase
         
-		guard let enumName = String(dotNETString: NativeAOT_CodeGeneratorInputSample_TestClass_GetTestEnumName(enumValue,
+		guard let enumName = String(cDotNETString: NativeAOT_CodeGeneratorInputSample_TestClass_GetTestEnumName(enumValue,
 																											   &exception),
 									destroyDotNETString: true),
 			  exception == nil else {

@@ -17,7 +17,7 @@ final class SystemDecimalTests: XCTestCase {
 		
 		let number = 1234
 		let numberString = "\(number)"
-		let numberStringDN = numberString.dotNETString()
+		let numberStringDN = numberString.cDotNETString()
 		defer { System_String_Destroy(numberStringDN) }
 		
 		var decimal: System_Decimal_t?
@@ -43,7 +43,7 @@ final class SystemDecimalTests: XCTestCase {
 		
 		XCTAssertEqual(number, .init(numberRet))
 		
-		guard let numberStringRet = String(dotNETString: System_Decimal_ToString(decimal,
+		guard let numberStringRet = String(cDotNETString: System_Decimal_ToString(decimal,
 																				 &exception),
 										   destroyDotNETString: true),
 			  exception == nil else {
@@ -193,7 +193,7 @@ final class SystemDecimalTests: XCTestCase {
 		
 		var exception2: System_Exception_t?
 		
-		guard let exceptionMessage = String(dotNETString: System_Exception_Message_Get(exception,
+		guard let exceptionMessage = String(cDotNETString: System_Exception_Message_Get(exception,
 																					   &exception2),
 											destroyDotNETString: true),
 			  exception2 == nil else {

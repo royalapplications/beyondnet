@@ -21,7 +21,7 @@ final class AnimalTests: XCTestCase {
             return
         }
 		
-		guard let dogName = String(dotNETString: dogNameDN) else {
+		guard let dogName = String(cDotNETString: dogNameDN) else {
 			XCTFail("Failed to convert string")
 			
 			return
@@ -37,7 +37,7 @@ final class AnimalTests: XCTestCase {
             return
         }
         
-        guard let retrievedDogName = String(dotNETString: NativeAOT_CodeGeneratorInputSample_IAnimal_Name_Get(dog,
+        guard let retrievedDogName = String(cDotNETString: NativeAOT_CodeGeneratorInputSample_IAnimal_Name_Get(dog,
 																											  &exception),
 											destroyDotNETString: true),
               exception == nil else {
@@ -49,10 +49,10 @@ final class AnimalTests: XCTestCase {
         XCTAssertEqual(dogName, retrievedDogName)
         
         let food = "Bone"
-		let foodDN = food.dotNETString()
+		let foodDN = food.cDotNETString()
 		defer { System_String_Destroy(foodDN) }
         
-		guard let eat = String(dotNETString: NativeAOT_CodeGeneratorInputSample_IAnimal_Eat(dog,
+		guard let eat = String(cDotNETString: NativeAOT_CodeGeneratorInputSample_IAnimal_Eat(dog,
 																							foodDN,
 																							&exception),
 							   destroyDotNETString: true),
@@ -76,7 +76,7 @@ final class AnimalTests: XCTestCase {
             return
         }
 		
-		guard let catName = String(dotNETString: catNameDN) else {
+		guard let catName = String(cDotNETString: catNameDN) else {
 			XCTFail("Failed to convert string")
 			
 			return
@@ -92,7 +92,7 @@ final class AnimalTests: XCTestCase {
             return
         }
         
-        guard let retrievedCatName = String(dotNETString: NativeAOT_CodeGeneratorInputSample_IAnimal_Name_Get(cat,
+        guard let retrievedCatName = String(cDotNETString: NativeAOT_CodeGeneratorInputSample_IAnimal_Name_Get(cat,
 																											  &exception),
 											destroyDotNETString: true),
               exception == nil else {
@@ -104,10 +104,10 @@ final class AnimalTests: XCTestCase {
         XCTAssertEqual(catName, retrievedCatName)
         
         let food = "Catnip"
-		let foodDN = food.dotNETString()
+		let foodDN = food.cDotNETString()
 		defer { System_String_Destroy(foodDN) }
         
-		guard let eat = String(dotNETString: NativeAOT_CodeGeneratorInputSample_IAnimal_Eat(cat,
+		guard let eat = String(cDotNETString: NativeAOT_CodeGeneratorInputSample_IAnimal_Eat(cat,
 																							foodDN,
 																							&exception),
 							   destroyDotNETString: true),
@@ -159,7 +159,7 @@ final class AnimalTests: XCTestCase {
 		defer { NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Destroy(creatorDelegate) }
 		
 		let animalName = "Horse"
-		let animalNameDN = animalName.dotNETString()
+		let animalNameDN = animalName.cDotNETString()
 		defer { System_String_Destroy(animalNameDN) }
 		
 		guard let horse = NativeAOT_CodeGeneratorInputSample_AnimalFactory_CreateAnimal_1(animalNameDN,
@@ -173,7 +173,7 @@ final class AnimalTests: XCTestCase {
 		
 		defer { NativeAOT_CodeGeneratorInputSample_IAnimal_Destroy(horse) }
 		
-		guard let retrievedAnimalName = String(dotNETString: NativeAOT_CodeGeneratorInputSample_IAnimal_Name_Get(horse,
+		guard let retrievedAnimalName = String(cDotNETString: NativeAOT_CodeGeneratorInputSample_IAnimal_Name_Get(horse,
 																												 &exception),
 											   destroyDotNETString: true),
 			  exception == nil else {
@@ -197,7 +197,7 @@ final class AnimalTests: XCTestCase {
         defer { NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Destroy(defaultCreator) }
         
         let dogName = "Dog"
-		let dogNameDN = dogName.dotNETString()
+		let dogNameDN = dogName.cDotNETString()
 		defer { System_String_Destroy(dogNameDN) }
         
         guard let dog = NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Invoke(defaultCreator,
@@ -211,7 +211,7 @@ final class AnimalTests: XCTestCase {
         
         defer { NativeAOT_CodeGeneratorInputSample_IAnimal_Destroy(dog) }
         
-        guard let dogNameRet = String(dotNETString: NativeAOT_CodeGeneratorInputSample_IAnimal_Name_Get(dog,
+        guard let dogNameRet = String(cDotNETString: NativeAOT_CodeGeneratorInputSample_IAnimal_Name_Get(dog,
 																										&exception),
 									  destroyDotNETString: true),
               exception == nil else {
@@ -223,7 +223,7 @@ final class AnimalTests: XCTestCase {
         XCTAssertEqual(dogName, dogNameRet)
         
         let catName = "Cat"
-		let catNameDN = catName.dotNETString()
+		let catNameDN = catName.cDotNETString()
 		defer { System_String_Destroy(catNameDN) }
         
         guard let cat = NativeAOT_CodeGeneratorInputSample_AnimalFactory_CreateAnimal_1(catNameDN,
@@ -237,7 +237,7 @@ final class AnimalTests: XCTestCase {
         
         defer { NativeAOT_CodeGeneratorInputSample_IAnimal_Destroy(cat) }
         
-        guard let catNameRet = String(dotNETString: NativeAOT_CodeGeneratorInputSample_IAnimal_Name_Get(cat,
+        guard let catNameRet = String(cDotNETString: NativeAOT_CodeGeneratorInputSample_IAnimal_Name_Get(cat,
 																										&exception),
 									  destroyDotNETString: true),
               exception == nil else {
@@ -348,7 +348,7 @@ final class AnimalTests: XCTestCase {
 		
 		var exception2: System_Exception_t?
 		
-		guard let exceptionMessage = String(dotNETString: System_Exception_Message_Get(exception,
+		guard let exceptionMessage = String(cDotNETString: System_Exception_Message_Get(exception,
 																					   &exception2),
 											destroyDotNETString: true),
 			  exception2 == nil else {

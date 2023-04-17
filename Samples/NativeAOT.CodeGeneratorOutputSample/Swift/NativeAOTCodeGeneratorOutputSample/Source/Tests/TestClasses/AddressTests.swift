@@ -16,11 +16,11 @@ final class AddressTests: XCTestCase {
 		var exception: System_Exception_t?
 		
 		let street = "Schwedenplatz"
-		let streetDN = street.dotNETString()
+		let streetDN = street.cDotNETString()
 		defer { System_String_Destroy(streetDN) }
 		
 		let city = "Vienna"
-		let cityDN = city.dotNETString()
+		let cityDN = city.cDotNETString()
 		defer { System_String_Destroy(cityDN) }
 		
 		guard let address = NativeAOT_CodeGeneratorInputSample_Address_Create(streetDN,
@@ -34,7 +34,7 @@ final class AddressTests: XCTestCase {
 		
 		defer { NativeAOT_CodeGeneratorInputSample_Address_Destroy(address) }
 		
-		guard let retrievedStreet = String(dotNETString: NativeAOT_CodeGeneratorInputSample_Address_Street_Get(address,
+		guard let retrievedStreet = String(cDotNETString: NativeAOT_CodeGeneratorInputSample_Address_Street_Get(address,
 																											   &exception),
 										   destroyDotNETString: true),
 			  exception == nil else {
@@ -59,7 +59,7 @@ final class AddressTests: XCTestCase {
 		
 		let expectedAddressTypeFullName = "NativeAOT.CodeGeneratorInputSample.Address"
 		
-		guard let actualAddressFullTypeName = String(dotNETString: System_Type_FullName_Get(addressType,
+		guard let actualAddressFullTypeName = String(cDotNETString: System_Type_FullName_Get(addressType,
 																							&exception),
 													 destroyDotNETString: true),
 			  exception == nil else {
@@ -75,19 +75,19 @@ final class AddressTests: XCTestCase {
 		var exception: System_Exception_t?
 		
 		let originalStreet = "Schwedenplatz"
-		let originalStreetDN = originalStreet.dotNETString()
+		let originalStreetDN = originalStreet.cDotNETString()
 		defer { System_String_Destroy(originalStreetDN) }
 		
 		let newStreet = "Stephansplatz"
-		let newStreetDN = newStreet.dotNETString()
+		let newStreetDN = newStreet.cDotNETString()
 		defer { System_String_Destroy(newStreetDN) }
 
 		let originalCity = "Vienna"
-		let originalCityDN = originalCity.dotNETString()
+		let originalCityDN = originalCity.cDotNETString()
 		defer { System_String_Destroy(originalCityDN) }
 		
 		let newCity = "Wien"
-		let newCityDN = newCity.dotNETString()
+		let newCityDN = newCity.cDotNETString()
 		defer { System_String_Destroy(newCityDN) }
 
 		guard let originalAddress = NativeAOT_CodeGeneratorInputSample_Address_Create(originalStreetDN,
@@ -108,7 +108,7 @@ final class AddressTests: XCTestCase {
 
 			var innerException: System_Exception_t?
 
-			guard let originalStreetInner = String(dotNETString: NativeAOT_CodeGeneratorInputSample_Address_Street_Get(context,
+			guard let originalStreetInner = String(cDotNETString: NativeAOT_CodeGeneratorInputSample_Address_Street_Get(context,
 																													   &innerException),
 												   destroyDotNETString: true),
 				  innerException == nil else {
@@ -156,7 +156,7 @@ final class AddressTests: XCTestCase {
 		
 		defer { NativeAOT_CodeGeneratorInputSample_Address_Destroy(newAddress) }
 
-		guard let retrievedNewStreet = String(dotNETString: NativeAOT_CodeGeneratorInputSample_Address_Street_Get(newAddress,
+		guard let retrievedNewStreet = String(cDotNETString: NativeAOT_CodeGeneratorInputSample_Address_Street_Get(newAddress,
 																												  &exception),
 											  destroyDotNETString: true),
 			  exception == nil else {
@@ -167,7 +167,7 @@ final class AddressTests: XCTestCase {
 		
 		XCTAssertEqual(newStreet, retrievedNewStreet)
 
-		guard let retrievedNewCity = String(dotNETString: NativeAOT_CodeGeneratorInputSample_Address_City_Get(newAddress,
+		guard let retrievedNewCity = String(cDotNETString: NativeAOT_CodeGeneratorInputSample_Address_City_Get(newAddress,
 																											  &exception),
 											destroyDotNETString: true),
 			  exception == nil else {

@@ -57,7 +57,7 @@ private extension XCTestCase {
 				  innerException == nil {
 				defer { System_Object_Destroy(exceptionObject) }
 				
-				exceptionAsString = String(dotNETString: System_Object_ToString(exceptionObject,
+				exceptionAsString = String(cDotNETString: System_Object_ToString(exceptionObject,
 																				&innerException),
 										   destroyDotNETString: true)
 			} else {

@@ -102,7 +102,7 @@ private extension PrimitivesBoxingTests {
 						unboxFunc: (_ input: System_Object_t, inout System_Exception_t?) -> T?) where T: Equatable {
 		var exception: System_Exception_t?
 		
-		let valueTypeName = expectedTypeName.dotNETString()
+		let valueTypeName = expectedTypeName.cDotNETString()
 		
 		defer { System_String_Destroy(valueTypeName) }
 		
@@ -132,7 +132,7 @@ private extension PrimitivesBoxingTests {
 		
 		defer { System_Type_Destroy(valueObjectType) }
 		
-		guard let numberObjectTypeName = String(dotNETString: System_Type_FullName_Get(valueObjectType,
+		guard let numberObjectTypeName = String(cDotNETString: System_Type_FullName_Get(valueObjectType,
 																					   &exception),
 												destroyDotNETString: true),
 			  exception == nil else {

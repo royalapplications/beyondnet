@@ -46,7 +46,7 @@ import NativeAOTCodeGeneratorOutputSample
 //			XCTAssertNil(exception)
 //		}
 //
-//		guard let retString = String(dotNETString: System_Runtime_InteropServices_Marshal_PtrToStringUni(retStringPtr,
+//		guard let retString = String(cDotNETString: System_Runtime_InteropServices_Marshal_PtrToStringUni(retStringPtr,
 //																										 &exception),
 //									 destroyDotNETString: true),
 //			  exception == nil else {

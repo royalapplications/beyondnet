@@ -18,7 +18,7 @@ final class SystemGuidTests: XCTestCase {
         let uuid = UUID()
         
 		let uuidString = uuid.uuidString
-		let uuidStringDN = uuidString.dotNETString()
+		let uuidStringDN = uuidString.cDotNETString()
 		defer { System_String_Destroy(uuidStringDN) }
         
         guard let guid = System_Guid_Create_4(uuidStringDN,
@@ -33,7 +33,7 @@ final class SystemGuidTests: XCTestCase {
             System_Object_Destroy(guid)
         }
         
-        guard let guidString = String(dotNETString: System_Guid_ToString(guid,
+        guard let guidString = String(cDotNETString: System_Guid_ToString(guid,
 																		 &exception),
 									  destroyDotNETString: true),
 			  exception == nil else {
@@ -45,7 +45,7 @@ final class SystemGuidTests: XCTestCase {
         XCTAssertEqual(uuidString.lowercased(), guidString.lowercased())
         
         let guidTypeName = "System.Guid"
-		let guidTypeNameDN = guidTypeName.dotNETString()
+		let guidTypeNameDN = guidTypeName.cDotNETString()
 		defer { System_String_Destroy(guidTypeNameDN) }
         
         guard let guidType = System_Type_GetType_2(guidTypeNameDN,
@@ -90,7 +90,7 @@ final class SystemGuidTests: XCTestCase {
         
         defer { System_Guid_Destroy(emptyGuid) }
         
-        guard let emptyGuidString = String(dotNETString: System_Guid_ToString(emptyGuid,
+        guard let emptyGuidString = String(cDotNETString: System_Guid_ToString(emptyGuid,
 																			  &exception),
 										   destroyDotNETString: true),
               exception == nil else {
@@ -108,7 +108,7 @@ final class SystemGuidTests: XCTestCase {
 		let uuid = UUID()
 		
 		let uuidString = uuid.uuidString
-		let uuidStringDN = uuidString.dotNETString()
+		let uuidStringDN = uuidString.cDotNETString()
 		defer { System_String_Destroy(uuidStringDN) }
 		
 		var guid: System_Guid_t?
@@ -126,7 +126,7 @@ final class SystemGuidTests: XCTestCase {
 		
 		defer { System_Guid_Destroy(guid) }
 		
-		guard let uuidStringRet = String(dotNETString: System_Guid_ToString(guid,
+		guard let uuidStringRet = String(cDotNETString: System_Guid_ToString(guid,
 																			&exception),
 										 destroyDotNETString: true),
 			  exception == nil else {
@@ -148,7 +148,7 @@ final class SystemGuidTests: XCTestCase {
 		var exception: System_Exception_t?
 		
 		let uuidString = "nonsense"
-		let uuidStringDN = uuidString.dotNETString()
+		let uuidStringDN = uuidString.cDotNETString()
 		defer { System_String_Destroy(uuidStringDN) }
 		
 		var guid: System_Guid_t?
