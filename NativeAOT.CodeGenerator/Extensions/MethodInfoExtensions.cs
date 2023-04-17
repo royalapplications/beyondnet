@@ -4,6 +4,7 @@ namespace NativeAOT.CodeGenerator.Extensions;
 
 public static class MethodInfoExtensions
 {
+    // TODO: Works only for methods (not! fields)
     public static bool IsOverridden(this MethodInfo methodInfo)
     {
         Type? declaringType = methodInfo.DeclaringType;
@@ -21,6 +22,7 @@ public static class MethodInfoExtensions
         return isOverridden;
     }
 
+    // TODO: Works only for methods (not! fields)
     public static bool IsShadowed(this MethodInfo methodInfo)
     {
         Type? declaringType = methodInfo.DeclaringType;
@@ -44,10 +46,10 @@ public static class MethodInfoExtensions
                 }
 
                 var baseParameters = baseBaseMethodInfo.GetParameters();
-                var baseReturnType = baseBaseMethodInfo.ReturnType;
+                // var baseReturnType = baseBaseMethodInfo.ReturnType;
 
-                if (methodInfo.GetParameters() == baseParameters &&
-                    methodInfo.ReturnType == baseReturnType) {
+                if (methodInfo.GetParameters() == baseParameters /*&&
+                    methodInfo.ReturnType == baseReturnType*/) {
                     return true;
                 }
             }
