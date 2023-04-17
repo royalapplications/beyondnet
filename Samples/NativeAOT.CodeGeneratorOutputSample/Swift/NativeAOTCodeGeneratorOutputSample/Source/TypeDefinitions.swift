@@ -1,5 +1,5 @@
-// Number of generated types: 1516
-// Number of generated members: 4428
+// Number of generated types: 1488
+// Number of generated members: 4435
 
 // MARK: - BEGIN Header
 import Foundation
@@ -990,36 +990,6 @@ public struct System_IO_FileOptions: OptionSet {
 }
 
 
-public struct System_IO_UnixFileMode: OptionSet {
-	public typealias RawValue = Int32
-	public let rawValue: RawValue
-
-	public init(rawValue: RawValue) {
-		self.rawValue = rawValue
-	}
-
-	init(cValue: System_IO_UnixFileMode_t) {
-		self.init(rawValue: cValue.rawValue)
-	}
-
-	var cValue: System_IO_UnixFileMode_t { System_IO_UnixFileMode_t(rawValue: rawValue) }
-
-	public static let none = System_IO_UnixFileMode([])
-	public static let otherExecute = System_IO_UnixFileMode(rawValue: 1)
-	public static let otherWrite = System_IO_UnixFileMode(rawValue: 2)
-	public static let otherRead = System_IO_UnixFileMode(rawValue: 4)
-	public static let groupExecute = System_IO_UnixFileMode(rawValue: 8)
-	public static let groupWrite = System_IO_UnixFileMode(rawValue: 16)
-	public static let groupRead = System_IO_UnixFileMode(rawValue: 32)
-	public static let userExecute = System_IO_UnixFileMode(rawValue: 64)
-	public static let userWrite = System_IO_UnixFileMode(rawValue: 128)
-	public static let userRead = System_IO_UnixFileMode(rawValue: 256)
-	public static let stickyBit = System_IO_UnixFileMode(rawValue: 512)
-	public static let setGroup = System_IO_UnixFileMode(rawValue: 1024)
-	public static let setUser = System_IO_UnixFileMode(rawValue: 2048)
-}
-
-
 public struct System_Reflection_EventAttributes: OptionSet {
 	public typealias RawValue = Int32
 	public let rawValue: RawValue
@@ -1502,6 +1472,36 @@ public struct System_IO_FileAttributes: OptionSet {
 	public static let encrypted = System_IO_FileAttributes(rawValue: 16384)
 	public static let integrityStream = System_IO_FileAttributes(rawValue: 32768)
 	public static let noScrubData = System_IO_FileAttributes(rawValue: 131072)
+}
+
+
+public struct System_IO_UnixFileMode: OptionSet {
+	public typealias RawValue = Int32
+	public let rawValue: RawValue
+
+	public init(rawValue: RawValue) {
+		self.rawValue = rawValue
+	}
+
+	init(cValue: System_IO_UnixFileMode_t) {
+		self.init(rawValue: cValue.rawValue)
+	}
+
+	var cValue: System_IO_UnixFileMode_t { System_IO_UnixFileMode_t(rawValue: rawValue) }
+
+	public static let none = System_IO_UnixFileMode([])
+	public static let otherExecute = System_IO_UnixFileMode(rawValue: 1)
+	public static let otherWrite = System_IO_UnixFileMode(rawValue: 2)
+	public static let otherRead = System_IO_UnixFileMode(rawValue: 4)
+	public static let groupExecute = System_IO_UnixFileMode(rawValue: 8)
+	public static let groupWrite = System_IO_UnixFileMode(rawValue: 16)
+	public static let groupRead = System_IO_UnixFileMode(rawValue: 32)
+	public static let userExecute = System_IO_UnixFileMode(rawValue: 64)
+	public static let userWrite = System_IO_UnixFileMode(rawValue: 128)
+	public static let userRead = System_IO_UnixFileMode(rawValue: 256)
+	public static let stickyBit = System_IO_UnixFileMode(rawValue: 512)
+	public static let setGroup = System_IO_UnixFileMode(rawValue: 1024)
+	public static let setUser = System_IO_UnixFileMode(rawValue: 2048)
 }
 
 
@@ -40356,28 +40356,6 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 	}
 	
 	
-	public class func currentId_get() throws -> System_Nullable_A1? /* System.Nullable<System.Int32> */ {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Threading_Tasks_Task_CurrentId_Get(&__exceptionC)
-		
-		let __returnValue = System_Nullable_A1(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	
-	}
-	
-	
 	public func exception_get() throws -> System_AggregateException? /* System.AggregateException */ {
 		
 		
@@ -40830,8 +40808,6 @@ public class System_Threading_Tasks_TaskScheduler /* System.Threading.Tasks.Task
 	
 
 }
-
-
 
 
 public class System_AggregateException /* System.AggregateException */: System_Exception {
@@ -41732,7 +41708,6 @@ public class System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter /* Syst
 // Type "TArg3" was skipped. Reason: It has no full name.
 // Type "TaskAwaiter`1" was skipped. Reason: It has no full name.
 // Type "ConfiguredTaskAwaitable`1" was skipped. Reason: It has no full name.
-// Type "ConfiguredTaskAwaiter" was skipped. Reason: It has no full name.
 // Type "Task`1" was skipped. Reason: It has no full name.
 // Type "TResult[]" was skipped. Reason: It has no full name.
 // Type "TResult" was skipped. Reason: It has no full name.
@@ -41740,9 +41715,6 @@ public class System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter /* Syst
 // Type "TaskFactory`1" was skipped. Reason: It has no full name.
 // Type "TaskAwaiter`1" was skipped. Reason: It has no full name.
 // Type "ConfiguredTaskAwaitable`1" was skipped. Reason: It has no full name.
-// Type "ConfiguredTaskAwaiter" was skipped. Reason: It has no full name.
-
-
 
 
 
@@ -41961,20 +41933,6 @@ public class System_Threading_Tasks_Sources_IValueTaskSource /* System.Threading
 	
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -42347,47 +42305,6 @@ public class System_IO_FileStreamOptions /* System.IO.FileStreamOptions */: Syst
 	}
 	
 	
-	public func unixCreateMode_get() throws -> System_Nullable_A1? /* System.Nullable<System.IO.UnixFileMode> */ {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_IO_FileStreamOptions_UnixCreateMode_Get(self.__handle, &__exceptionC)
-		
-		let __returnValue = System_Nullable_A1(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	
-	}
-	
-	public func unixCreateMode_set(_ value: System_Nullable_A1? /* System.Nullable<System.IO.UnixFileMode> */) throws {
-		let valueC = value?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		System_IO_FileStreamOptions_UnixCreateMode_Set(self.__handle, valueC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		
-	
-	}
-	
-	
 	public override class func typeOf() -> System_Type? /* System.Type */ {
 		return System_Type(handle: System_IO_FileStreamOptions_TypeOf())
 		
@@ -42403,8 +42320,6 @@ public class System_IO_FileStreamOptions /* System.IO.FileStreamOptions */: Syst
 	
 
 }
-
-
 
 
 
@@ -55812,242 +55727,6 @@ public class System_SystemException /* System.SystemException */: System_Excepti
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
-public class System_Nullable /* System.Nullable */: System_Object {
-	public class func getUnderlyingType(_ nullableType: System_Type? /* System.Type */) throws -> System_Type? /* System.Type */ {
-		let nullableTypeC = nullableType?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Nullable_GetUnderlyingType(nullableTypeC, &__exceptionC)
-		
-		let __returnValue = System_Type(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	
-	}
-	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
-		return System_Type(handle: System_Nullable_TypeOf())
-		
-	
-	}
-	
-	internal override func destroy() {
-		System_Nullable_Destroy(self.__handle)
-		
-	
-	}
-	
-	
-
-}
-
-
-// Type "T" was skipped. Reason: It has no full name.
-
-public class System_Nullable_A1 /* System.Nullable<> */: System_ValueType {
-	public func getValueOrDefault(_ T: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let TC = T.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Nullable_A1_GetValueOrDefault(self.__handle, TC, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	
-	}
-	
-	public func getValueOrDefault(_ T: System_Type /* System.Type */, _ defaultValue: System_Object? /* System.Object */) throws -> System_Object? /* System.Object */ {
-		let TC = T.__handle
-		let defaultValueC = defaultValue?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Nullable_A1_GetValueOrDefault_1(self.__handle, TC, defaultValueC, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	
-	}
-	
-	public override func equals(_ T: System_Type /* System.Type */, _ other: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
-		let TC = T.__handle
-		let otherC = other?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Nullable_A1_Equals(self.__handle, TC, otherC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	
-	}
-	
-	public override func getHashCode(_ T: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
-		let TC = T.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Nullable_A1_GetHashCode(self.__handle, TC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	
-	}
-	
-	public override func toString(_ T: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
-		let TC = T.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Nullable_A1_ToString(self.__handle, TC, &__exceptionC)
-		
-		let __returnValue = System_String(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	
-	}
-	
-	public convenience init?(_ T: System_Type /* System.Type */, _ value: System_Object? /* System.Object */) throws {
-		let TC = T.__handle
-		let valueC = value?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Nullable_A1_Create(TC, valueC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		guard let __returnValueC else { return nil }
-		
-		self.init(handle: __returnValueC)
-		
-	
-	}
-	
-	public func hasValue_get(_ T: System_Type /* System.Type */) throws -> Bool /* System.Boolean */ {
-		let TC = T.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Nullable_A1_HasValue_Get(self.__handle, TC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	
-	}
-	
-	
-	public func value_get(_ T: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let TC = T.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Nullable_A1_Value_Get(self.__handle, TC, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	
-	}
-	
-	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
-		return System_Type(handle: System_Nullable_A1_TypeOf())
-		
-	
-	}
-	
-	internal override func destroy() {
-		System_Nullable_A1_Destroy(self.__handle)
-		
-	
-	}
-	
-	
-
-}
-
-
-// Type "T" was skipped. Reason: It has no full name.
 public class System_Tuple_A1 /* System.Tuple<> */: System_Object {
 	public override func equals(_ T1: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
 		let T1C = T1.__handle
@@ -70170,28 +69849,6 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 	
 	}
 	
-	public func isCompatibilitySwitchSet(_ value: System_String? /* System.String */) throws -> System_Nullable_A1? /* System.Nullable<System.Boolean> */ {
-		let valueC = value?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_AppDomain_IsCompatibilitySwitchSet(self.__handle, valueC, &__exceptionC)
-		
-		let __returnValue = System_Nullable_A1(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	
-	}
-	
 	public func isDefaultAppDomain() throws -> Bool /* System.Boolean */ {
 		
 		
@@ -74661,8 +74318,6 @@ public class System_UnhandledExceptionEventArgs /* System.UnhandledExceptionEven
 	
 
 }
-
-
 
 
 public class System_Reflection_Assembly_Array /* System.Reflection.Assembly[] */: System_Array {
@@ -80753,28 +80408,6 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 	
 	}
 	
-	public override func readLineAsync(_ cancellationToken: System_Threading_CancellationToken? /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_ValueTask_A1? /* System.Threading.Tasks.ValueTask<System.String> */ {
-		let cancellationTokenC = cancellationToken?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_IO_StreamReader_ReadLineAsync_1(self.__handle, cancellationTokenC, &__exceptionC)
-		
-		let __returnValue = System_Threading_Tasks_ValueTask_A1(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	
-	}
-	
 	public override func readToEndAsync() throws -> System_Threading_Tasks_Task_A1? /* System.Threading.Tasks.Task<System.String> */ {
 		
 		
@@ -81430,28 +81063,6 @@ public class System_IO_TextReader /* System.IO.TextReader */: System_MarshalByRe
 	
 	}
 	
-	public func readLineAsync(_ cancellationToken: System_Threading_CancellationToken? /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_ValueTask_A1? /* System.Threading.Tasks.ValueTask<System.String> */ {
-		let cancellationTokenC = cancellationToken?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_IO_TextReader_ReadLineAsync_1(self.__handle, cancellationTokenC, &__exceptionC)
-		
-		let __returnValue = System_Threading_Tasks_ValueTask_A1(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	
-	}
-	
 	public func readToEndAsync() throws -> System_Threading_Tasks_Task_A1? /* System.Threading.Tasks.Task<System.String> */ {
 		
 		
@@ -81589,20 +81200,6 @@ public class System_IO_TextReader /* System.IO.TextReader */: System_MarshalByRe
 	
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -83616,32 +83213,6 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 	
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -87105,6 +86676,24 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 }
 
 
+public class System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<> */: DNObject {
+	public override class func typeOf() -> System_Type? /* System.Type */ {
+		return System_Type(handle: System_Collections_Generic_IEnumerable_A1_TypeOf())
+		
+	
+	}
+	
+	internal override func destroy() {
+		System_Collections_Generic_IEnumerable_A1_Destroy(self.__handle)
+		
+	
+	}
+	
+	
+
+}
+
+
 public class System_Collections_Generic_List_A1 /* System.Collections.Generic.List<> */: System_Object {
 	public func add(_ T: System_Type /* System.Type */, _ item: System_Object? /* System.Object */) throws {
 		let TC = T.__handle
@@ -87739,6 +87328,85 @@ public class System_Collections_Generic_List_A1 /* System.Collections.Generic.Li
 // Type "T" was skipped. Reason: It has no full name.
 // Type "T[]" was skipped. Reason: It has no full name.
 
+public class System_Collections_Generic_IList_A1 /* System.Collections.Generic.IList<> */: DNObject {
+	public func indexOf(_ T: System_Type /* System.Type */, _ item: System_Object? /* System.Object */) throws -> Int32 /* System.Int32 */ {
+		let TC = T.__handle
+		let itemC = item?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Collections_Generic_IList_A1_IndexOf(self.__handle, TC, itemC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	
+	}
+	
+	public func insert(_ T: System_Type /* System.Type */, _ index: Int32 /* System.Int32 */, _ item: System_Object? /* System.Object */) throws {
+		let TC = T.__handle
+		let itemC = item?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Collections_Generic_IList_A1_Insert(self.__handle, TC, index, itemC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		
+	
+	}
+	
+	public func removeAt(_ T: System_Type /* System.Type */, _ index: Int32 /* System.Int32 */) throws {
+		let TC = T.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Collections_Generic_IList_A1_RemoveAt(self.__handle, TC, index, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		
+	
+	}
+	
+	public override class func typeOf() -> System_Type? /* System.Type */ {
+		return System_Type(handle: System_Collections_Generic_IList_A1_TypeOf())
+		
+	
+	}
+	
+	internal override func destroy() {
+		System_Collections_Generic_IList_A1_Destroy(self.__handle)
+		
+	
+	}
+	
+	
+
+}
+
+
+// Type "T" was skipped. Reason: It has no full name.
 public class System_Collections_Generic_Dictionary_A2 /* System.Collections.Generic.Dictionary<,> */: System_Object {
 	public func add(_ TKey: System_Type /* System.Type */, _ TValue: System_Type /* System.Type */, _ key: System_Object? /* System.Object */, _ value: System_Object? /* System.Object */) throws {
 		let TKeyC = TKey.__handle
@@ -88108,6 +87776,327 @@ public class System_Collections_Generic_Dictionary_A2 /* System.Collections.Gene
 
 // Type "TValue" was skipped. Reason: It has no full name.
 // Type "TKey" was skipped. Reason: It has no full name.
+
+public class System_Collections_Generic_IDictionary_A2 /* System.Collections.Generic.IDictionary<,> */: DNObject {
+	public func containsKey(_ TKey: System_Type /* System.Type */, _ TValue: System_Type /* System.Type */, _ key: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
+		let TKeyC = TKey.__handle
+		let TValueC = TValue.__handle
+		let keyC = key?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Collections_Generic_IDictionary_A2_ContainsKey(self.__handle, TKeyC, TValueC, keyC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	
+	}
+	
+	public func add(_ TKey: System_Type /* System.Type */, _ TValue: System_Type /* System.Type */, _ key: System_Object? /* System.Object */, _ value: System_Object? /* System.Object */) throws {
+		let TKeyC = TKey.__handle
+		let TValueC = TValue.__handle
+		let keyC = key?.__handle
+		let valueC = value?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Collections_Generic_IDictionary_A2_Add(self.__handle, TKeyC, TValueC, keyC, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		
+	
+	}
+	
+	public func remove(_ TKey: System_Type /* System.Type */, _ TValue: System_Type /* System.Type */, _ key: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
+		let TKeyC = TKey.__handle
+		let TValueC = TValue.__handle
+		let keyC = key?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Collections_Generic_IDictionary_A2_Remove(self.__handle, TKeyC, TValueC, keyC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	
+	}
+	
+	public func tryGetValue(_ TKey: System_Type /* System.Type */, _ TValue: System_Type /* System.Type */, _ key: System_Object? /* System.Object */, _ value: inout System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
+		let TKeyC = TKey.__handle
+		let TValueC = TValue.__handle
+		let keyC = key?.__handle
+		var valueC = value?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Collections_Generic_IDictionary_A2_TryGetValue(self.__handle, TKeyC, TValueC, keyC, &valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	
+	}
+	
+	public override class func typeOf() -> System_Type? /* System.Type */ {
+		return System_Type(handle: System_Collections_Generic_IDictionary_A2_TypeOf())
+		
+	
+	}
+	
+	internal override func destroy() {
+		System_Collections_Generic_IDictionary_A2_Destroy(self.__handle)
+		
+	
+	}
+	
+	
+
+}
+
+
+// Type "TValue" was skipped. Reason: It has no full name.
+// Type "TKey" was skipped. Reason: It has no full name.
+
+public class System_Collections_ObjectModel_ReadOnlyCollection_A1 /* System.Collections.ObjectModel.ReadOnlyCollection<> */: System_Object {
+	public func contains(_ T: System_Type /* System.Type */, _ value: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
+		let TC = T.__handle
+		let valueC = value?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Collections_ObjectModel_ReadOnlyCollection_A1_Contains(self.__handle, TC, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	
+	}
+	
+	public func copyTo(_ T: System_Type /* System.Type */, _ array: System_Array? /* System.Array */, _ index: Int32 /* System.Int32 */) throws {
+		let TC = T.__handle
+		let arrayC = array?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Collections_ObjectModel_ReadOnlyCollection_A1_CopyTo(self.__handle, TC, arrayC, index, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		
+	
+	}
+	
+	public func indexOf(_ T: System_Type /* System.Type */, _ value: System_Object? /* System.Object */) throws -> Int32 /* System.Int32 */ {
+		let TC = T.__handle
+		let valueC = value?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Collections_ObjectModel_ReadOnlyCollection_A1_IndexOf(self.__handle, TC, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	
+	}
+	
+	public class func empty_get(_ T: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let TC = T.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Collections_ObjectModel_ReadOnlyCollection_A1_Empty_Get(TC, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	
+	}
+	
+	
+	public func count_get(_ T: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
+		let TC = T.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Collections_ObjectModel_ReadOnlyCollection_A1_Count_Get(self.__handle, TC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	
+	}
+	
+	
+	public override class func typeOf() -> System_Type? /* System.Type */ {
+		return System_Type(handle: System_Collections_ObjectModel_ReadOnlyCollection_A1_TypeOf())
+		
+	
+	}
+	
+	internal override func destroy() {
+		System_Collections_ObjectModel_ReadOnlyCollection_A1_Destroy(self.__handle)
+		
+	
+	}
+	
+	
+
+}
+
+
+// Type "T" was skipped. Reason: It has no full name.
+// Type "T[]" was skipped. Reason: It has no full name.
+
+public class System_Collections_Generic_IReadOnlyDictionary_A2 /* System.Collections.Generic.IReadOnlyDictionary<,> */: DNObject {
+	public func containsKey(_ TKey: System_Type /* System.Type */, _ TValue: System_Type /* System.Type */, _ key: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
+		let TKeyC = TKey.__handle
+		let TValueC = TValue.__handle
+		let keyC = key?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Collections_Generic_IReadOnlyDictionary_A2_ContainsKey(self.__handle, TKeyC, TValueC, keyC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	
+	}
+	
+	public func tryGetValue(_ TKey: System_Type /* System.Type */, _ TValue: System_Type /* System.Type */, _ key: System_Object? /* System.Object */, _ value: inout System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
+		let TKeyC = TKey.__handle
+		let TValueC = TValue.__handle
+		let keyC = key?.__handle
+		var valueC = value?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Collections_Generic_IReadOnlyDictionary_A2_TryGetValue(self.__handle, TKeyC, TValueC, keyC, &valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	
+	}
+	
+	public override class func typeOf() -> System_Type? /* System.Type */ {
+		return System_Type(handle: System_Collections_Generic_IReadOnlyDictionary_A2_TypeOf())
+		
+	
+	}
+	
+	internal override func destroy() {
+		System_Collections_Generic_IReadOnlyDictionary_A2_Destroy(self.__handle)
+		
+	
+	}
+	
+	
+
+}
+
+
+// Type "TKey" was skipped. Reason: It has no full name.
+// Type "TValue" was skipped. Reason: It has no full name.
+
+public class System_Collections_Generic_IAsyncEnumerable_A1 /* System.Collections.Generic.IAsyncEnumerable<> */: DNObject {
+	public override class func typeOf() -> System_Type? /* System.Type */ {
+		return System_Type(handle: System_Collections_Generic_IAsyncEnumerable_A1_TypeOf())
+		
+	
+	}
+	
+	internal override func destroy() {
+		System_Collections_Generic_IAsyncEnumerable_A1_Destroy(self.__handle)
+		
+	
+	}
+	
+	
+
+}
+
 
 public class NativeAOT_CodeGeneratorInputSample_Address /* NativeAOT.CodeGeneratorInputSample.Address */: System_Object {
 	// TODO: Method with Delegate parameter (NativeAOT_CodeGeneratorInputSample_Address_Move)
@@ -89227,18 +89216,6 @@ public class NativeAOT_CodeGeneratorInputSample_GenericTests /* NativeAOT.CodeGe
 	
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

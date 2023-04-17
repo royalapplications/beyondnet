@@ -17,9 +17,21 @@ internal static class TypeExtensions
 
     internal static string GetFullNameOrName(this Type type)
     {
-        string name = type.FullName ?? type.Name;
+        string? fullName = type.FullName;
+        string name = fullName ?? type.Name;
 
-        // TODO: Is this correct? Why is there even a "+" in some types (ie. System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable+ConfiguredValueTaskAwaiter)
+        // TODO: Nested type handling is not good (ie. System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable+ConfiguredValueTaskAwaiter)
+        // if (string.IsNullOrEmpty(fullName) &&
+        //     type.IsNested) {
+        //     Type? declaringType = type.DeclaringType;
+        //
+        //     if (declaringType is null) {
+        //         throw new Exception("Nested type without declaring type");
+        //     }
+        //
+        //     name = $"{declaringType.GetFullNameOrName()}.{name}";
+        // }
+
         name = name
             .Replace("+", ".");
         

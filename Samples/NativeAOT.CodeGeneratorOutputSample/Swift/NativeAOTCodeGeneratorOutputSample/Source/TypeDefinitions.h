@@ -1,5 +1,5 @@
-// Number of generated types: 1516
-// Number of generated members: 4574
+// Number of generated types: 1488
+// Number of generated members: 4581
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -471,23 +471,6 @@ typedef enum __attribute__((enum_extensibility(open))) __attribute__((flag_enum)
 
 
 typedef enum __attribute__((enum_extensibility(open))) __attribute__((flag_enum)): int32_t {
-	System_IO_UnixFileMode_None = 0,
-	System_IO_UnixFileMode_OtherExecute = 1,
-	System_IO_UnixFileMode_OtherWrite = 2,
-	System_IO_UnixFileMode_OtherRead = 4,
-	System_IO_UnixFileMode_GroupExecute = 8,
-	System_IO_UnixFileMode_GroupWrite = 16,
-	System_IO_UnixFileMode_GroupRead = 32,
-	System_IO_UnixFileMode_UserExecute = 64,
-	System_IO_UnixFileMode_UserWrite = 128,
-	System_IO_UnixFileMode_UserRead = 256,
-	System_IO_UnixFileMode_StickyBit = 512,
-	System_IO_UnixFileMode_SetGroup = 1024,
-	System_IO_UnixFileMode_SetUser = 2048
-} System_IO_UnixFileMode_t;
-
-
-typedef enum __attribute__((enum_extensibility(open))) __attribute__((flag_enum)): int32_t {
 	System_Reflection_EventAttributes_None = 0,
 	System_Reflection_EventAttributes_SpecialName = 512,
 	System_Reflection_EventAttributes_RTSpecialName = 1024,
@@ -757,6 +740,23 @@ typedef enum __attribute__((enum_extensibility(open))) __attribute__((flag_enum)
 	System_IO_FileAttributes_IntegrityStream = 32768,
 	System_IO_FileAttributes_NoScrubData = 131072
 } System_IO_FileAttributes_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))) __attribute__((flag_enum)): int32_t {
+	System_IO_UnixFileMode_None = 0,
+	System_IO_UnixFileMode_OtherExecute = 1,
+	System_IO_UnixFileMode_OtherWrite = 2,
+	System_IO_UnixFileMode_OtherRead = 4,
+	System_IO_UnixFileMode_GroupExecute = 8,
+	System_IO_UnixFileMode_GroupWrite = 16,
+	System_IO_UnixFileMode_GroupRead = 32,
+	System_IO_UnixFileMode_UserExecute = 64,
+	System_IO_UnixFileMode_UserWrite = 128,
+	System_IO_UnixFileMode_UserRead = 256,
+	System_IO_UnixFileMode_StickyBit = 512,
+	System_IO_UnixFileMode_SetGroup = 1024,
+	System_IO_UnixFileMode_SetUser = 2048
+} System_IO_UnixFileMode_t;
 
 
 typedef enum __attribute__((enum_extensibility(open))): int32_t {
@@ -1995,8 +1995,6 @@ typedef void* System_IAsyncResult_t;
 
 typedef void* System_Threading_Tasks_TaskScheduler_t;
 
-typedef void* System_Nullable_A1_t;
-
 typedef void* System_AggregateException_t;
 
 typedef void* System_Collections_ObjectModel_ReadOnlyCollection_A1_t;
@@ -2091,7 +2089,6 @@ typedef void* System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_t;
 // Type "TArg3" was skipped. Reason: It has no full name.
 // Type "TaskAwaiter`1" was skipped. Reason: It has no full name.
 // Type "ConfiguredTaskAwaitable`1" was skipped. Reason: It has no full name.
-// Type "ConfiguredTaskAwaiter" was skipped. Reason: It has no full name.
 // Type "Task`1" was skipped. Reason: It has no full name.
 // Type "TResult[]" was skipped. Reason: It has no full name.
 // Type "TResult" was skipped. Reason: It has no full name.
@@ -2099,14 +2096,11 @@ typedef void* System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_t;
 // Type "TaskFactory`1" was skipped. Reason: It has no full name.
 // Type "TaskAwaiter`1" was skipped. Reason: It has no full name.
 // Type "ConfiguredTaskAwaitable`1" was skipped. Reason: It has no full name.
-// Type "ConfiguredTaskAwaiter" was skipped. Reason: It has no full name.
 typedef void* System_Threading_Tasks_Task_A1_t;
 
 typedef void* System_Threading_Tasks_TaskFactory_A1_t;
 
 typedef void* System_Runtime_CompilerServices_TaskAwaiter_A1_t;
-
-typedef void* System_Runtime_CompilerServices_ConfiguredTaskAwaitable_A1_t;
 
 typedef void* System_Runtime_CompilerServices_ConfiguredTaskAwaitable_A1_t;
 
@@ -2126,25 +2120,9 @@ typedef void* System_Runtime_CompilerServices_TaskAwaiter_A1_t;
 
 typedef void* System_Runtime_CompilerServices_ConfiguredTaskAwaitable_A1_t;
 
-typedef void* System_Runtime_CompilerServices_ConfiguredTaskAwaitable_A1_t;
-
-typedef void* System_Threading_Tasks_ValueTask_A1_t;
-
-typedef void* System_IEquatable_A1_t;
-
-typedef void* System_Runtime_CompilerServices_ValueTaskAwaiter_A1_t;
-
-typedef void* System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_A1_t;
-
-typedef void* System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_A1_t;
-
-typedef void* System_Threading_Tasks_Sources_IValueTaskSource_A1_t;
-
 typedef void* Microsoft_Win32_SafeHandles_SafeFileHandle_t;
 
 typedef void* System_IO_FileStreamOptions_t;
-
-typedef void* System_Nullable_A1_t;
 
 typedef void* System_Collections_Generic_IEnumerable_A1_t;
 
@@ -2753,13 +2731,6 @@ typedef void* System_Numerics_IUnsignedNumber_A1_t;
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
-typedef void* System_Nullable_t;
-
-// Type "T" was skipped. Reason: It has no full name.
-
-typedef void* System_Nullable_A1_t;
-
-// Type "T" was skipped. Reason: It has no full name.
 typedef void* System_Tuple_A1_t;
 
 typedef void* System_Runtime_CompilerServices_ITuple_t;
@@ -2878,8 +2849,6 @@ typedef void* System_Security_IPermission_t;
 
 typedef void* System_UnhandledExceptionEventArgs_t;
 
-typedef void* System_Nullable_A1_t;
-
 typedef void* System_Reflection_Assembly_Array_t;
 
 typedef void* System_Collections_Generic_IList_A1_t;
@@ -2965,20 +2934,6 @@ typedef void* System_Runtime_CompilerServices_TaskAwaiter_A1_t;
 
 typedef void* System_Runtime_CompilerServices_ConfiguredTaskAwaitable_A1_t;
 
-typedef void* System_Runtime_CompilerServices_ConfiguredTaskAwaitable_A1_t;
-
-typedef void* System_Threading_Tasks_ValueTask_A1_t;
-
-typedef void* System_IEquatable_A1_t;
-
-typedef void* System_Runtime_CompilerServices_ValueTaskAwaiter_A1_t;
-
-typedef void* System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_A1_t;
-
-typedef void* System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_A1_t;
-
-typedef void* System_Threading_Tasks_Sources_IValueTaskSource_A1_t;
-
 typedef void* System_IO_StreamWriter_t;
 
 typedef void* System_IO_TextWriter_t;
@@ -2987,10 +2942,6 @@ typedef void* System_Collections_Generic_IAsyncEnumerable_A1_t;
 
 typedef void* System_Collections_Generic_IAsyncEnumerator_A1_t;
 
-typedef void* System_Threading_Tasks_ValueTask_A1_t;
-
-typedef void* System_IEquatable_A1_t;
-
 typedef void* System_Threading_Tasks_Task_A1_t;
 
 typedef void* System_Threading_Tasks_TaskFactory_A1_t;
@@ -2999,33 +2950,11 @@ typedef void* System_Runtime_CompilerServices_TaskAwaiter_A1_t;
 
 typedef void* System_Runtime_CompilerServices_ConfiguredTaskAwaitable_A1_t;
 
-typedef void* System_Runtime_CompilerServices_ConfiguredTaskAwaitable_A1_t;
-
-typedef void* System_Runtime_CompilerServices_ValueTaskAwaiter_A1_t;
-
-typedef void* System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_A1_t;
-
-typedef void* System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_A1_t;
-
-typedef void* System_Threading_Tasks_Sources_IValueTaskSource_A1_t;
-
 typedef void* System_Threading_Tasks_Task_A1_t;
 
 typedef void* System_Threading_Tasks_TaskFactory_A1_t;
 
 typedef void* System_Runtime_CompilerServices_TaskAwaiter_A1_t;
-
-typedef void* System_Runtime_CompilerServices_ConfiguredTaskAwaitable_A1_t;
-
-typedef void* System_Runtime_CompilerServices_ConfiguredTaskAwaitable_A1_t;
-
-typedef void* System_Threading_Tasks_Task_A1_t;
-
-typedef void* System_Threading_Tasks_TaskFactory_A1_t;
-
-typedef void* System_Runtime_CompilerServices_TaskAwaiter_A1_t;
-
-typedef void* System_Runtime_CompilerServices_ConfiguredTaskAwaitable_A1_t;
 
 typedef void* System_Runtime_CompilerServices_ConfiguredTaskAwaitable_A1_t;
 
@@ -3084,15 +3013,37 @@ typedef void* System_Collections_Generic_IReadOnlyCollection_A1_t;
 
 typedef void* System_IO_Directory_t;
 
+typedef void* System_Collections_Generic_IEnumerable_A1_t;
+
 typedef void* System_Collections_Generic_List_A1_t;
 
 // Type "T" was skipped. Reason: It has no full name.
 // Type "T[]" was skipped. Reason: It has no full name.
 
+typedef void* System_Collections_Generic_IList_A1_t;
+
+// Type "T" was skipped. Reason: It has no full name.
 typedef void* System_Collections_Generic_Dictionary_A2_t;
 
 // Type "TValue" was skipped. Reason: It has no full name.
 // Type "TKey" was skipped. Reason: It has no full name.
+
+typedef void* System_Collections_Generic_IDictionary_A2_t;
+
+// Type "TValue" was skipped. Reason: It has no full name.
+// Type "TKey" was skipped. Reason: It has no full name.
+
+typedef void* System_Collections_ObjectModel_ReadOnlyCollection_A1_t;
+
+// Type "T" was skipped. Reason: It has no full name.
+// Type "T[]" was skipped. Reason: It has no full name.
+
+typedef void* System_Collections_Generic_IReadOnlyDictionary_A2_t;
+
+// Type "TKey" was skipped. Reason: It has no full name.
+// Type "TValue" was skipped. Reason: It has no full name.
+
+typedef void* System_Collections_Generic_IAsyncEnumerable_A1_t;
 
 typedef void* NativeAOT_CodeGeneratorInputSample_Address_t;
 
@@ -3125,8 +3076,6 @@ typedef void* System_Collections_ObjectModel_ReadOnlyCollection_A1_t;
 
 typedef void* System_Collections_Generic_IComparer_A1_t;
 
-typedef void* System_Collections_Generic_List_A1_t;
-
 typedef void* System_Collections_Generic_Dictionary_A2_t;
 
 typedef void* System_Collections_Generic_IDictionary_A2_t;
@@ -3144,16 +3093,6 @@ typedef void* System_Collections_Generic_IReadOnlyDictionary_A2_t;
 typedef void* System_Collections_Generic_IReadOnlyCollection_A1_t;
 
 typedef void* System_Collections_Generic_IEqualityComparer_A1_t;
-
-typedef void* System_Collections_Generic_Dictionary_A2_t;
-
-typedef void* System_Collections_Generic_Dictionary_A2_t;
-
-typedef void* System_Collections_Generic_Dictionary_A2_t;
-
-typedef void* System_Collections_Generic_Dictionary_A2_t;
-
-typedef void* System_Collections_Generic_Dictionary_A2_t;
 
 typedef void* NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_t;
 
@@ -3713,14 +3652,6 @@ System_IO_FileOptions_TypeOf(
 
 #pragma mark - END APIs of System.IO.FileOptions
 
-#pragma mark - BEGIN APIs of System.IO.UnixFileMode
-System_Type_t /* System.Type */
-System_IO_UnixFileMode_TypeOf(
-	
-);
-
-#pragma mark - END APIs of System.IO.UnixFileMode
-
 #pragma mark - BEGIN APIs of System.Reflection.EventAttributes
 System_Type_t /* System.Type */
 System_Reflection_EventAttributes_TypeOf(
@@ -3920,6 +3851,14 @@ System_IO_FileAttributes_TypeOf(
 );
 
 #pragma mark - END APIs of System.IO.FileAttributes
+
+#pragma mark - BEGIN APIs of System.IO.UnixFileMode
+System_Type_t /* System.Type */
+System_IO_UnixFileMode_TypeOf(
+	
+);
+
+#pragma mark - END APIs of System.IO.UnixFileMode
 
 #pragma mark - BEGIN APIs of System.IO.SearchOption
 System_Type_t /* System.Type */
@@ -18318,12 +18257,6 @@ System_Threading_Tasks_Task_Id_Get(
 );
 
 
-System_Nullable_A1_t /* System.Nullable<System.Int32> */
-System_Threading_Tasks_Task_CurrentId_Get(
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
 System_AggregateException_t /* System.AggregateException */
 System_Threading_Tasks_Task_Exception_Get(
 	System_Threading_Tasks_Task_t /* System.Threading.Tasks.Task */ self,
@@ -18488,7 +18421,6 @@ System_Threading_Tasks_TaskScheduler_Destroy(
 );
 
 #pragma mark - END APIs of System.Threading.Tasks.TaskScheduler
-
 
 #pragma mark - BEGIN APIs of System.AggregateException
 void /* System.Void */
@@ -18960,11 +18892,8 @@ System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_Destroy(
 
 
 
-
 #pragma mark - BEGIN APIs of TResult[]
 #pragma mark - END APIs of TResult[]
-
-
 
 
 
@@ -19105,13 +19034,6 @@ System_Threading_Tasks_Sources_IValueTaskSource_Destroy(
 
 
 
-
-
-
-
-
-
-
 #pragma mark - BEGIN APIs of Microsoft.Win32.SafeHandles.SafeFileHandle
 Microsoft_Win32_SafeHandles_SafeFileHandle_t /* Microsoft.Win32.SafeHandles.SafeFileHandle */
 Microsoft_Win32_SafeHandles_SafeFileHandle_Create(
@@ -19241,20 +19163,6 @@ System_IO_FileStreamOptions_BufferSize_Set(
 );
 
 
-System_Nullable_A1_t /* System.Nullable<System.IO.UnixFileMode> */
-System_IO_FileStreamOptions_UnixCreateMode_Get(
-	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_FileStreamOptions_UnixCreateMode_Set(
-	System_IO_FileStreamOptions_t /* System.IO.FileStreamOptions */ self,
-	System_Nullable_A1_t /* System.Nullable<System.IO.UnixFileMode> */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
 System_Type_t /* System.Type */
 System_IO_FileStreamOptions_TypeOf(
 	
@@ -19266,7 +19174,6 @@ System_IO_FileStreamOptions_Destroy(
 );
 
 #pragma mark - END APIs of System.IO.FileStreamOptions
-
 
 
 
@@ -24370,101 +24277,6 @@ System_SystemException_Destroy(
 
 
 
-#pragma mark - BEGIN APIs of System.Nullable
-System_Type_t /* System.Type */
-System_Nullable_GetUnderlyingType(
-	System_Type_t /* System.Type */ nullableType,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Type_t /* System.Type */
-System_Nullable_TypeOf(
-	
-);
-
-void /* System.Void */
-System_Nullable_Destroy(
-	System_Nullable_t /* System.Nullable */ self
-);
-
-#pragma mark - END APIs of System.Nullable
-
-
-
-#pragma mark - BEGIN APIs of System.Nullable<>
-System_Object_t /* System.Object */
-System_Nullable_A1_GetValueOrDefault(
-	System_Nullable_A1_t /* System.Nullable<> */ self,
-	System_Type_t /* System.Type */ T,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_t /* System.Object */
-System_Nullable_A1_GetValueOrDefault_1(
-	System_Nullable_A1_t /* System.Nullable<> */ self,
-	System_Type_t /* System.Type */ T,
-	System_Object_t /* System.Object */ defaultValue,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-bool /* System.Boolean */
-System_Nullable_A1_Equals(
-	System_Nullable_A1_t /* System.Nullable<> */ self,
-	System_Type_t /* System.Type */ T,
-	System_Object_t /* System.Object */ other,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-int32_t /* System.Int32 */
-System_Nullable_A1_GetHashCode(
-	System_Nullable_A1_t /* System.Nullable<> */ self,
-	System_Type_t /* System.Type */ T,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_String_t /* System.String */
-System_Nullable_A1_ToString(
-	System_Nullable_A1_t /* System.Nullable<> */ self,
-	System_Type_t /* System.Type */ T,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_t /* System.Object */
-System_Nullable_A1_Create(
-	System_Type_t /* System.Type */ T,
-	System_Object_t /* System.Object */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-bool /* System.Boolean */
-System_Nullable_A1_HasValue_Get(
-	System_Nullable_A1_t /* System.Nullable<> */ self,
-	System_Type_t /* System.Type */ T,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Object_t /* System.Object */
-System_Nullable_A1_Value_Get(
-	System_Nullable_A1_t /* System.Nullable<> */ self,
-	System_Type_t /* System.Type */ T,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Type_t /* System.Type */
-System_Nullable_A1_TypeOf(
-	
-);
-
-void /* System.Void */
-System_Nullable_A1_Destroy(
-	System_Nullable_A1_t /* System.Nullable<> */ self
-);
-
-#pragma mark - END APIs of System.Nullable<>
-
-
 #pragma mark - BEGIN APIs of System.Tuple<>
 bool /* System.Boolean */
 System_Tuple_A1_Equals(
@@ -29492,13 +29304,6 @@ System_AppDomain_SetData(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Nullable_A1_t /* System.Nullable<System.Boolean> */
-System_AppDomain_IsCompatibilitySwitchSet(
-	System_AppDomain_t /* System.AppDomain */ self,
-	System_String_t /* System.String */ value,
-	System_Exception_t* /* System.Exception */ outException
-);
-
 bool /* System.Boolean */
 System_AppDomain_IsDefaultAppDomain(
 	System_AppDomain_t /* System.AppDomain */ self,
@@ -31183,7 +30988,6 @@ System_UnhandledExceptionEventArgs_Destroy(
 );
 
 #pragma mark - END APIs of System.UnhandledExceptionEventArgs
-
 
 #pragma mark - BEGIN APIs of System.Reflection.Assembly[]
 #pragma mark - END APIs of System.Reflection.Assembly[]
@@ -33393,13 +33197,6 @@ System_IO_StreamReader_ReadLineAsync(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Threading_Tasks_ValueTask_A1_t /* System.Threading.Tasks.ValueTask<System.String> */
-System_IO_StreamReader_ReadLineAsync_1(
-	System_IO_StreamReader_t /* System.IO.StreamReader */ self,
-	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
-	System_Exception_t* /* System.Exception */ outException
-);
-
 System_Threading_Tasks_Task_A1_t /* System.Threading.Tasks.Task<System.String> */
 System_IO_StreamReader_ReadToEndAsync(
 	System_IO_StreamReader_t /* System.IO.StreamReader */ self,
@@ -33631,13 +33428,6 @@ System_IO_TextReader_ReadLineAsync(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Threading_Tasks_ValueTask_A1_t /* System.Threading.Tasks.ValueTask<System.String> */
-System_IO_TextReader_ReadLineAsync_1(
-	System_IO_TextReader_t /* System.IO.TextReader */ self,
-	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
-	System_Exception_t* /* System.Exception */ outException
-);
-
 System_Threading_Tasks_Task_A1_t /* System.Threading.Tasks.Task<System.String> */
 System_IO_TextReader_ReadToEndAsync(
 	System_IO_TextReader_t /* System.IO.TextReader */ self,
@@ -33692,13 +33482,6 @@ System_IO_TextReader_Destroy(
 );
 
 #pragma mark - END APIs of System.IO.TextReader
-
-
-
-
-
-
-
 
 
 
@@ -34449,19 +34232,6 @@ System_IO_TextWriter_Destroy(
 );
 
 #pragma mark - END APIs of System.IO.TextWriter
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -35639,6 +35409,19 @@ System_IO_Directory_Destroy(
 
 #pragma mark - END APIs of System.IO.Directory
 
+#pragma mark - BEGIN APIs of System.Collections.Generic.IEnumerable<>
+System_Type_t /* System.Type */
+System_Collections_Generic_IEnumerable_A1_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Collections_Generic_IEnumerable_A1_Destroy(
+	System_Collections_Generic_IEnumerable_A1_t /* System.Collections.Generic.IEnumerable<> */ self
+);
+
+#pragma mark - END APIs of System.Collections.Generic.IEnumerable<>
+
 #pragma mark - BEGIN APIs of System.Collections.Generic.List<>
 void /* System.Void */
 System_Collections_Generic_List_A1_Add(
@@ -35904,6 +35687,45 @@ System_Collections_Generic_List_A1_Destroy(
 #pragma mark - END APIs of T[]
 
 
+#pragma mark - BEGIN APIs of System.Collections.Generic.IList<>
+int32_t /* System.Int32 */
+System_Collections_Generic_IList_A1_IndexOf(
+	System_Collections_Generic_IList_A1_t /* System.Collections.Generic.IList<> */ self,
+	System_Type_t /* System.Type */ T,
+	System_Object_t /* System.Object */ item,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_Generic_IList_A1_Insert(
+	System_Collections_Generic_IList_A1_t /* System.Collections.Generic.IList<> */ self,
+	System_Type_t /* System.Type */ T,
+	int32_t /* System.Int32 */ index,
+	System_Object_t /* System.Object */ item,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_Generic_IList_A1_RemoveAt(
+	System_Collections_Generic_IList_A1_t /* System.Collections.Generic.IList<> */ self,
+	System_Type_t /* System.Type */ T,
+	int32_t /* System.Int32 */ index,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_t /* System.Type */
+System_Collections_Generic_IList_A1_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Collections_Generic_IList_A1_Destroy(
+	System_Collections_Generic_IList_A1_t /* System.Collections.Generic.IList<> */ self
+);
+
+#pragma mark - END APIs of System.Collections.Generic.IList<>
+
+
 #pragma mark - BEGIN APIs of System.Collections.Generic.Dictionary<,>
 void /* System.Void */
 System_Collections_Generic_Dictionary_A2_Add(
@@ -36063,6 +35885,166 @@ System_Collections_Generic_Dictionary_A2_Destroy(
 
 
 
+
+#pragma mark - BEGIN APIs of System.Collections.Generic.IDictionary<,>
+bool /* System.Boolean */
+System_Collections_Generic_IDictionary_A2_ContainsKey(
+	System_Collections_Generic_IDictionary_A2_t /* System.Collections.Generic.IDictionary<,> */ self,
+	System_Type_t /* System.Type */ TKey,
+	System_Type_t /* System.Type */ TValue,
+	System_Object_t /* System.Object */ key,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_Generic_IDictionary_A2_Add(
+	System_Collections_Generic_IDictionary_A2_t /* System.Collections.Generic.IDictionary<,> */ self,
+	System_Type_t /* System.Type */ TKey,
+	System_Type_t /* System.Type */ TValue,
+	System_Object_t /* System.Object */ key,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Collections_Generic_IDictionary_A2_Remove(
+	System_Collections_Generic_IDictionary_A2_t /* System.Collections.Generic.IDictionary<,> */ self,
+	System_Type_t /* System.Type */ TKey,
+	System_Type_t /* System.Type */ TValue,
+	System_Object_t /* System.Object */ key,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Collections_Generic_IDictionary_A2_TryGetValue(
+	System_Collections_Generic_IDictionary_A2_t /* System.Collections.Generic.IDictionary<,> */ self,
+	System_Type_t /* System.Type */ TKey,
+	System_Type_t /* System.Type */ TValue,
+	System_Object_t /* System.Object */ key,
+	System_Object_t* /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_t /* System.Type */
+System_Collections_Generic_IDictionary_A2_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Collections_Generic_IDictionary_A2_Destroy(
+	System_Collections_Generic_IDictionary_A2_t /* System.Collections.Generic.IDictionary<,> */ self
+);
+
+#pragma mark - END APIs of System.Collections.Generic.IDictionary<,>
+
+
+
+
+#pragma mark - BEGIN APIs of System.Collections.ObjectModel.ReadOnlyCollection<>
+bool /* System.Boolean */
+System_Collections_ObjectModel_ReadOnlyCollection_A1_Contains(
+	System_Collections_ObjectModel_ReadOnlyCollection_A1_t /* System.Collections.ObjectModel.ReadOnlyCollection<> */ self,
+	System_Type_t /* System.Type */ T,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_ObjectModel_ReadOnlyCollection_A1_CopyTo(
+	System_Collections_ObjectModel_ReadOnlyCollection_A1_t /* System.Collections.ObjectModel.ReadOnlyCollection<> */ self,
+	System_Type_t /* System.Type */ T,
+	System_Array_t /* System.Array */ array,
+	int32_t /* System.Int32 */ index,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Collections_ObjectModel_ReadOnlyCollection_A1_IndexOf(
+	System_Collections_ObjectModel_ReadOnlyCollection_A1_t /* System.Collections.ObjectModel.ReadOnlyCollection<> */ self,
+	System_Type_t /* System.Type */ T,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Collections_ObjectModel_ReadOnlyCollection_A1_Empty_Get(
+	System_Type_t /* System.Type */ T,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Collections_ObjectModel_ReadOnlyCollection_A1_Count_Get(
+	System_Collections_ObjectModel_ReadOnlyCollection_A1_t /* System.Collections.ObjectModel.ReadOnlyCollection<> */ self,
+	System_Type_t /* System.Type */ T,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t /* System.Type */
+System_Collections_ObjectModel_ReadOnlyCollection_A1_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Collections_ObjectModel_ReadOnlyCollection_A1_Destroy(
+	System_Collections_ObjectModel_ReadOnlyCollection_A1_t /* System.Collections.ObjectModel.ReadOnlyCollection<> */ self
+);
+
+#pragma mark - END APIs of System.Collections.ObjectModel.ReadOnlyCollection<>
+
+
+#pragma mark - BEGIN APIs of T[]
+#pragma mark - END APIs of T[]
+
+
+#pragma mark - BEGIN APIs of System.Collections.Generic.IReadOnlyDictionary<,>
+bool /* System.Boolean */
+System_Collections_Generic_IReadOnlyDictionary_A2_ContainsKey(
+	System_Collections_Generic_IReadOnlyDictionary_A2_t /* System.Collections.Generic.IReadOnlyDictionary<,> */ self,
+	System_Type_t /* System.Type */ TKey,
+	System_Type_t /* System.Type */ TValue,
+	System_Object_t /* System.Object */ key,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Collections_Generic_IReadOnlyDictionary_A2_TryGetValue(
+	System_Collections_Generic_IReadOnlyDictionary_A2_t /* System.Collections.Generic.IReadOnlyDictionary<,> */ self,
+	System_Type_t /* System.Type */ TKey,
+	System_Type_t /* System.Type */ TValue,
+	System_Object_t /* System.Object */ key,
+	System_Object_t* /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Type_t /* System.Type */
+System_Collections_Generic_IReadOnlyDictionary_A2_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Collections_Generic_IReadOnlyDictionary_A2_Destroy(
+	System_Collections_Generic_IReadOnlyDictionary_A2_t /* System.Collections.Generic.IReadOnlyDictionary<,> */ self
+);
+
+#pragma mark - END APIs of System.Collections.Generic.IReadOnlyDictionary<,>
+
+
+
+
+#pragma mark - BEGIN APIs of System.Collections.Generic.IAsyncEnumerable<>
+System_Type_t /* System.Type */
+System_Collections_Generic_IAsyncEnumerable_A1_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Collections_Generic_IAsyncEnumerable_A1_Destroy(
+	System_Collections_Generic_IAsyncEnumerable_A1_t /* System.Collections.Generic.IAsyncEnumerable<> */ self
+);
+
+#pragma mark - END APIs of System.Collections.Generic.IAsyncEnumerable<>
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Address
 NativeAOT_CodeGeneratorInputSample_Address_t /* NativeAOT.CodeGeneratorInputSample.Address */
@@ -36547,12 +36529,6 @@ NativeAOT_CodeGeneratorInputSample_GenericTests_Destroy(
 );
 
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.GenericTests
-
-
-
-
-
-
 
 
 

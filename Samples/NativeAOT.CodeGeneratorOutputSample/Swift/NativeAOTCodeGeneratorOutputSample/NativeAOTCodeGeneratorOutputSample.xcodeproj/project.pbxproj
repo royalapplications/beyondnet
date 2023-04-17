@@ -24,7 +24,6 @@
 		E73EE8FA29DB0B3600C57A71 /* SystemIOPathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73EE8F929DB0B3600C57A71 /* SystemIOPathTests.swift */; };
 		E73EE8FC29DB12A300C57A71 /* SystemReflectionAssemblyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73EE8FB29DB12A300C57A71 /* SystemReflectionAssemblyTests.swift */; };
 		E73EE90029DB194F00C57A71 /* SystemSecuritySecureStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73EE8FF29DB194F00C57A71 /* SystemSecuritySecureStringTests.swift */; };
-		E73F3E3629ED6C2E00D0AA58 /* TypeDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E779611C29E9524B00140279 /* TypeDefinitions.swift */; };
 		E746795C29DAE45000AF25C5 /* SystemConvertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E746795B29DAE45000AF25C5 /* SystemConvertTests.swift */; };
 		E748372429DC640A00FE2AE6 /* SystemDecimalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748372329DC640A00FE2AE6 /* SystemDecimalTests.swift */; };
 		E7575EBF29DDA90C00AE2EC6 /* SystemTextStringBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7575EBE29DDA90C00AE2EC6 /* SystemTextStringBuilderTests.swift */; };
@@ -410,7 +409,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E73F3E3629ED6C2E00D0AA58 /* TypeDefinitions.swift in Sources */,
 				E79335A629E98D3D0035FCEB /* SwiftSyntaxPlayground.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

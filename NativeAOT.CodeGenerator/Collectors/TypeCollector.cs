@@ -34,8 +34,6 @@ public class TypeCollector
         typeof(System.MulticastDelegate),
         typeof(System.Enum),
         typeof(System.Array),
-        typeof(System.Nullable),
-        typeof(System.Nullable<>),
         typeof(System.Tuple<>),
         typeof(System.Tuple<,>),
         typeof(System.Tuple<,,>),
@@ -55,6 +53,8 @@ public class TypeCollector
         Type.GetType("System.Runtime.Serialization.DeserializationToken")!,
         typeof(System.TypedReference),
         Type.GetType("System.Char&")!,
+        typeof(System.Threading.Tasks.ValueTask<>),
+        typeof(System.Nullable<>),
         typeof(System.ReadOnlySpan<>),
         typeof(System.Span<>),
         typeof(System.ReadOnlyMemory<>),
@@ -367,6 +367,12 @@ public class TypeCollector
                 unsupportedReason = "Is Constructed Generic Type with non-constructed generic types";
                 return false;
             }
+        }
+
+        if (type.IsNested &&
+            (type.IsGenericType || type.IsGenericTypeDefinition)) {
+            unsupportedReason = "Is nested type inside generic type";
+            return false;
         }
 
         if (type.IsArray) {
