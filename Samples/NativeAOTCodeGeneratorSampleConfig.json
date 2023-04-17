@@ -19,8 +19,9 @@
 		"System.Threading.Timer",
 		"System.Threading.CancellationTokenSource",
 		"System.Threading.CancellationToken",
-		"System.Threading.Tasks.Task",
 		"System.Threading.Tasks.TaskFactory",
+		"System.Threading.Tasks.Task",
+		"System.Threading.Tasks.Task`1",
 		"System.AppDomain",
 		"System.Random",
 		"System.Text.Encoding",
@@ -31,12 +32,7 @@
 		"System.IO.Directory",
 		"System.IO.DirectoryInfo",
 		"System.Security.SecureString",
-		"System.Collections.Generic.IEnumerable`1",
-		"System.Collections.Generic.IList`1",
 		"System.Collections.Generic.List`1",
-		"System.Collections.Generic.Dictionary`2",
-		"System.Tuple`1",
-		"System.Tuple`2",
-		"System.Tuple`3"
+		"System.Collections.Generic.Dictionary`2"
 	]
 }

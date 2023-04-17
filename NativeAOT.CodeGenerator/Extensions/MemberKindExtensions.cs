@@ -10,8 +10,19 @@ public static class MemberKindExtensions
         MemberInfo? memberInfo 
     )
     {
+        const string getterPrefix = "get_";
+        const string getterSuffix = "_get";
+        
+        const string setterPrefix = "set_";
+        const string setterSuffix = "_set";
+        
+        const string adderPrefix = "add_";
+        const string adderSuffix = "_add";
+        
+        const string removerPrefix = "remove_";
+        const string removerSuffix = "_remove";
+        
         string? originalName = memberInfo?.Name;
-        string? trimmedName = originalName;
         MethodBase? methodBase = memberInfo as MethodBase;
         bool isSpecialName = methodBase?.IsSpecialName ?? false;
 
@@ -24,13 +35,11 @@ public static class MemberKindExtensions
             switch (memberKind) {
                 case MemberKind.PropertyGetter:
                     isGetter = true;
-                    
-                    const string getterPrefix = "get_";
 
                     if (originalName?.StartsWith(getterPrefix) ?? false) {
-                        trimmedName = originalName.Substring(getterPrefix.Length);
+                        originalName = originalName.Substring(getterPrefix.Length);
                     }
-                    
+
                     break;
                 case MemberKind.FieldGetter:
                     isGetter = true;
@@ -39,10 +48,8 @@ public static class MemberKindExtensions
                 case MemberKind.PropertySetter:
                     isSetter = true;
                     
-                    const string setterPrefix = "set_";
-
                     if (originalName?.StartsWith(setterPrefix) ?? false) {
-                        trimmedName = originalName.Substring(setterPrefix.Length);
+                        originalName = originalName.Substring(setterPrefix.Length);
                     }
                     
                     break;
@@ -53,20 +60,16 @@ public static class MemberKindExtensions
                 case MemberKind.EventHandlerAdder:
                     isAdder = true;
                     
-                    const string adderPrefix = "add_";
-
                     if (originalName?.StartsWith(adderPrefix) ?? false) {
-                        trimmedName = originalName.Substring(adderPrefix.Length);
+                        originalName = originalName.Substring(adderPrefix.Length);
                     }
                     
                     break;
                 case MemberKind.EventHandlerRemover:
                     isRemover = true;
                     
-                    const string removerPrefix = "remove_";
-
                     if (originalName?.StartsWith(removerPrefix) ?? false) {
-                        trimmedName = originalName.Substring(removerPrefix.Length);
+                        originalName = originalName.Substring(removerPrefix.Length);
                     }
                     
                     break;
@@ -79,16 +82,16 @@ public static class MemberKindExtensions
             isSetter = true;
         }
 
-        string swiftName;
+        string? swiftName = originalName?.FirstCharToLower();
 
         if (isGetter) {
-            swiftName = $"get{trimmedName}";
+            swiftName = swiftName + getterSuffix;
         } else if (isSetter) {
-            swiftName = $"set{trimmedName}";
+            swiftName = swiftName + setterSuffix;
         } else if (isAdder) {
-            swiftName = $"add{trimmedName}";
+            swiftName = swiftName + adderSuffix;
         } else if (isRemover) {
-            swiftName = $"remove{trimmedName}";
+            swiftName = swiftName + removerSuffix;
         } else {
             if (memberKind == MemberKind.Constructor) {
                 swiftName = "convenience init?";
@@ -97,7 +100,7 @@ public static class MemberKindExtensions
             } else if (memberKind == MemberKind.TypeOf) {
                 swiftName = "typeOf";
             } else {
-                swiftName = trimmedName?.FirstCharToLower() ?? throw new Exception();
+                swiftName = swiftName ?? throw new Exception();
             }
         }
 

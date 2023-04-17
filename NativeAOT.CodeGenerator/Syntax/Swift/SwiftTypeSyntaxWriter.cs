@@ -81,6 +81,9 @@ public class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWriter
             );
     
             sb.AppendLine(delegateTypedefCode);
+            
+            // TODO: Delegates are not yet supported
+            writeMembers = false;
         }
 
         if (writeMembers) {

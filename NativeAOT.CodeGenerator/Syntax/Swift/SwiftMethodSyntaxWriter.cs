@@ -75,6 +75,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             throw new Exception("memberInfo may only be null when memberKind is Destructor");
         }
 
+        #region TODO: Delegate Support
         foreach (ParameterInfo parameter in parameters) {
             if (parameter.ParameterType.IsDelegate()) {
                 generatedName = string.Empty;
@@ -82,6 +83,13 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 return $"// TODO: Method with Delegate parameter ({cMember.GetGeneratedName(CodeLanguage.C)})";
             }
         }
+
+        if (returnOrSetterOrEventHandlerType.IsDelegate()) {
+            generatedName = string.Empty;
+            
+            return $"// TODO: Method with Delegate return or setter or event handler type ({cMember.GetGeneratedName(CodeLanguage.C)})";
+        }
+        #endregion TODO: Delegate Support
         
         MethodBase? methodBase = memberInfo as MethodBase;
         MethodInfo? methodInfo = methodBase as MethodInfo;
@@ -502,7 +510,7 @@ if let __exceptionC {
             foreach (var genericArgumentType in genericArguments) {
                 string parameterName = genericArgumentType.Name;
             
-                string parameterString = $"{parameterName}: {nativeSystemTypeTypeName} /* {systemTypeTypeName} */";
+                string parameterString = $"_ {parameterName}: {nativeSystemTypeTypeName} /* {systemTypeTypeName} */";
             
                 parameterList.Add(parameterString);
             }
@@ -524,7 +532,7 @@ if let __exceptionC {
                 true
             );
     
-            string parameterString = $"value: {cSetterOrEventHandlerTypeName} /* {setterOrEventHandlerType.GetFullNameOrName()} */";
+            string parameterString = $"_ value: {cSetterOrEventHandlerTypeName} /* {setterOrEventHandlerType.GetFullNameOrName()} */";
             parameterList.Add(parameterString);
         } else {
             foreach (var parameter in parameters) {
@@ -567,7 +575,7 @@ if let __exceptionC {
                     isByRefParameter
                 );
 
-                string parameterString = $"{parameter.Name}: {unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */";
+                string parameterString = $"_ {parameter.Name}: {unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */";
                 parameterList.Add(parameterString);
             }
         }

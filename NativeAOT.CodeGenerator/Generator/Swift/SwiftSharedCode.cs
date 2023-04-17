@@ -42,7 +42,7 @@ public class DNError: LocalizedError {
     
     public func stackTrace() -> String? {
         do {
-            return try String(dotNETString: exception.getStackTrace())
+            return try String(dotNETString: exception.stackTrace_get())
         } catch {
             return nil
         }
@@ -50,7 +50,7 @@ public class DNError: LocalizedError {
     
     public var errorDescription: String? {
         do {
-            return try String(dotNETString: exception.getMessage())
+            return try String(dotNETString: exception.message_get())
         } catch {
             return nil
         }
