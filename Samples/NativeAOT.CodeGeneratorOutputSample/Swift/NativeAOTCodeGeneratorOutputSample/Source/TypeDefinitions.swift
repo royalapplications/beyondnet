@@ -80855,7 +80855,7 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 	}
 	
 	
-	public class func null_get() -> System_IO_StreamReader? /* System.IO.StreamReader */ {
+	public override class func null_get() -> System_IO_StreamReader? /* System.IO.StreamReader */ {
 		
 		
 		let __returnValueC = System_IO_StreamReader_Null_Get()
@@ -82010,7 +82010,7 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 	}
 	
 	
-	public class func null_get() -> System_IO_StreamWriter? /* System.IO.StreamWriter */ {
+	public override class func null_get() -> System_IO_StreamWriter? /* System.IO.StreamWriter */ {
 		
 		
 		let __returnValueC = System_IO_StreamWriter_Null_Get()
@@ -90189,7 +90189,7 @@ public class NativeAOT_CodeGeneratorInputSample_TestClass /* NativeAOT.CodeGener
 	
 	}
 	
-	public func getCurrentBookByRef() throws -> inout NativeAOT_CodeGeneratorInputSample_Book? /* NativeAOT.CodeGeneratorInputSample.Book */ {
+	public func getCurrentBookByRef() throws -> NativeAOT_CodeGeneratorInputSample_Book? /* NativeAOT.CodeGeneratorInputSample.Book */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -90210,7 +90210,7 @@ public class NativeAOT_CodeGeneratorInputSample_TestClass /* NativeAOT.CodeGener
 	
 	}
 	
-	public func increaseAndGetCurrentIntValueByRef() throws -> inout Int32? /* System.Int32 */ {
+	public func increaseAndGetCurrentIntValueByRef() throws -> Int32 /* System.Int32 */ {
 		
 		
 		var __exceptionC: System_Exception_t?

@@ -188,6 +188,12 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                     treatAsOverridden = true;
                 }
             }
+        } else if (memberInfo is FieldInfo fieldInfo) {
+            bool isShadowed = fieldInfo.IsShadowed();
+
+            if (isShadowed) {
+                treatAsOverridden = true;
+            }
         }
 
         if (addToState) {
@@ -244,6 +250,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         
         TypeDescriptor returnOrSetterTypeDescriptor = returnOrSetterOrEventHandlerType.GetTypeDescriptor(typeDescriptorRegistry);
         
+        // TODO: This generates inout TypeName if the return type is by ref
         string swiftReturnOrSetterTypeName = returnOrSetterTypeDescriptor.GetTypeName(
             CodeLanguage.Swift,
             true,
