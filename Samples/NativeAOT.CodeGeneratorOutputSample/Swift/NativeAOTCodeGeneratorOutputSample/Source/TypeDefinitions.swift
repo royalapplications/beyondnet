@@ -88598,7 +88598,7 @@ public class NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1 /* NativeAOT
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_Extreme_A1(self.__handle, TC, TMC, countIn, countOut, typeGenericInputC, &typeGenericOutputC, &methodGenericInputThatIsToBeReplacedWithDefaultC, &__exceptionC)
+		let __returnValueC = NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_Extreme_A1(self.__handle, TC, TMC, countIn, &countOut, typeGenericInputC, &typeGenericOutputC, &methodGenericInputThatIsToBeReplacedWithDefaultC, &__exceptionC)
 		
 		let __returnValue = System_Object(handle: __returnValueC)
 		

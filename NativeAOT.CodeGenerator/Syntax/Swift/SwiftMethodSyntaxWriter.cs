@@ -791,11 +791,8 @@ if let __exceptionC {
         } else {
             typeConversionCode = null;
             
-            if (!isGeneric &&
-                isOutParameter) {
-                convertedParameterName = $"&{parameterName}";
-            } else if (!isGeneric &&
-                       isByRefParameter) {
+            if (isOutParameter ||
+                isByRefParameter) {
                 convertedParameterName = $"&{parameterName}";
             } else {
                 convertedParameterName = parameterName;
