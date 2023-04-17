@@ -88,6 +88,7 @@ public extension String {
 
 public class System_Object /* System.Object */: DNObject {
 	public func getType() throws -> System_Type? /* System.Type */ {
+	
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -95,7 +96,12 @@ public class System_Object /* System.Object */: DNObject {
 		let __returnValueC = System_Object_GetType(self.__handle, &__exceptionC)
 		let __returnValue = System_Type(handle: __returnValueC)
 		
-		// TODO: Exception Handling
+		if let __exceptionC {
+			let __exception = System_Exception(handle: __exceptionC)
+			let __error = __exception.error
+			
+			throw __error
+		}
 		
 		return __returnValue
 		
@@ -103,6 +109,7 @@ public class System_Object /* System.Object */: DNObject {
 	}
 	
 	public func toString() throws -> System_String? /* System.String */ {
+	
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -110,7 +117,12 @@ public class System_Object /* System.Object */: DNObject {
 		let __returnValueC = System_Object_ToString(self.__handle, &__exceptionC)
 		let __returnValue = System_String(handle: __returnValueC)
 		
-		// TODO: Exception Handling
+		if let __exceptionC {
+			let __exception = System_Exception(handle: __exceptionC)
+			let __error = __exception.error
+			
+			throw __error
+		}
 		
 		return __returnValue
 		
@@ -118,13 +130,19 @@ public class System_Object /* System.Object */: DNObject {
 	}
 	
 	public func equals(obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
+	
 		let objC = obj?.__handle
 		
 		
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Object_Equals(self.__handle, objC, &__exceptionC)
-		// TODO: Exception Handling
+		if let __exceptionC {
+			let __exception = System_Exception(handle: __exceptionC)
+			let __error = __exception.error
+			
+			throw __error
+		}
 		
 		return __returnValueC
 		
@@ -132,6 +150,7 @@ public class System_Object /* System.Object */: DNObject {
 	}
 	
 	public class func equals(objA: System_Object? /* System.Object */, objB: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
+	
 		let objAC = objA?.__handle
 		let objBC = objB?.__handle
 		
@@ -139,7 +158,12 @@ public class System_Object /* System.Object */: DNObject {
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Object_Equals_1(objAC, objBC, &__exceptionC)
-		// TODO: Exception Handling
+		if let __exceptionC {
+			let __exception = System_Exception(handle: __exceptionC)
+			let __error = __exception.error
+			
+			throw __error
+		}
 		
 		return __returnValueC
 		
@@ -147,6 +171,7 @@ public class System_Object /* System.Object */: DNObject {
 	}
 	
 	public class func referenceEquals(objA: System_Object? /* System.Object */, objB: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
+	
 		let objAC = objA?.__handle
 		let objBC = objB?.__handle
 		
@@ -154,7 +179,12 @@ public class System_Object /* System.Object */: DNObject {
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Object_ReferenceEquals(objAC, objBC, &__exceptionC)
-		// TODO: Exception Handling
+		if let __exceptionC {
+			let __exception = System_Exception(handle: __exceptionC)
+			let __error = __exception.error
+			
+			throw __error
+		}
 		
 		return __returnValueC
 		
@@ -162,12 +192,18 @@ public class System_Object /* System.Object */: DNObject {
 	}
 	
 	public func getHashCode() throws -> Int32 /* System.Int32 */ {
+	
 		
 		
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Object_GetHashCode(self.__handle, &__exceptionC)
-		// TODO: Exception Handling
+		if let __exceptionC {
+			let __exception = System_Exception(handle: __exceptionC)
+			let __error = __exception.error
+			
+			throw __error
+		}
 		
 		return __returnValueC
 		
@@ -175,12 +211,18 @@ public class System_Object /* System.Object */: DNObject {
 	}
 	
 	public convenience init?() throws {
+	
 		
 		
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Object_Create(&__exceptionC)
-		// TODO: Exception Handling
+		if let __exceptionC {
+			let __exception = System_Exception(handle: __exceptionC)
+			let __error = __exception.error
+			
+			throw __error
+		}
 		
 		guard let __returnValueC else { return nil }
 		
@@ -190,12 +232,14 @@ public class System_Object /* System.Object */: DNObject {
 	}
 	
 	public override class func typeOf() -> System_Type? /* System.Type */ {
+	
 		return System_Type(handle: System_Object_TypeOf())
 		
 	
 	}
 	
 	internal override func destroy() {
+	
 		System_Object_Destroy(self.__handle)
 		
 	

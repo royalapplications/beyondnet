@@ -351,6 +351,8 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             string parameterConversions = WriteParameterConversions(
                 CodeLanguage.Swift,
                 CodeLanguage.C,
+                memberKind,
+                returnOrSetterOrEventHandlerType,
                 parameters,
                 isGeneric,
                 genericTypeArguments,
@@ -399,6 +401,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             string invocation = $"{returnValueCStorage}{cMethodName}({allParameterNamesString})";
             
             sbImpl.AppendLine(invocation);
+            sbImpl.AppendLine();
 
             string returnCode = string.Empty;
 
@@ -431,12 +434,19 @@ self.init(handle: {{returnValueName}})
             }
 
             if (mayThrow) {
-                // TODO: Exception handling
-                sbImpl.AppendLine("// TODO: Exception Handling");
+                sbImpl.AppendLine("""
+if let __exceptionC {
+    let __exception = System_Exception(handle: __exceptionC)
+    let __error = __exception.error
+    
+    throw __error
+}
+""");
+
+                sbImpl.AppendLine();
             }
 
             if (isReturning) {
-                sbImpl.AppendLine();
                 sbImpl.AppendLine(returnCode);
             }
         }
@@ -562,6 +572,8 @@ self.init(handle: {{returnValueName}})
     internal static string WriteParameterConversions(
         CodeLanguage sourceLanguage,
         CodeLanguage targetLanguage,
+        MemberKind memberKind,
+        Type? setterOrEventHandlerType,
         IEnumerable<ParameterInfo> parameters,
         bool isGeneric,
         IEnumerable<Type> genericTypeArguments,
@@ -616,76 +628,134 @@ self.init(handle: {{returnValueName}})
         }
 
         foreach (var parameter in parameters) {
-            string parameterName = parameter.Name ?? throw new Exception("Parameter has no name");
-            
+            string parameterName = parameter.Name ?? string.Empty;
             Type parameterType = parameter.ParameterType;
             bool isOutParameter = parameter.IsOut;
-            bool isByRefParameter = parameterType.IsByRef;
-            bool isArrayType = parameterType.IsArray;
-            bool isInOut = isOutParameter || isByRefParameter;
-
-            if (isByRefParameter) {
-                parameterType = parameterType.GetNonByRefType();
-            }
             
-            bool isGenericParameterType = parameterType.IsGenericParameter || parameterType.IsGenericMethodParameter;
-
-            if (!isByRefParameter &&
-                isOutParameter) {
-                throw new Exception("Parameter is out but not by ref, that's impossible");
-            } else if (isGenericParameterType) {
-                parameterType = typeof(object);
-            } else if (isArrayType) {
-                if (isGeneric) {
-                    Type? arrayType = parameterType.GetElementType();
-
-                    if (arrayType is not null &&
-                        (arrayType.IsGenericType || arrayType.IsGenericParameter || arrayType.IsGenericMethodParameter)) {
-                        parameterType = typeof(Array);
-                    }
-                }
-            }
-            
-            TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
-
-            string? typeConversion = parameterTypeDescriptor.GetTypeConversion(
+            WriteParameterConversion(
                 sourceLanguage,
-                targetLanguage
+                targetLanguage,
+                parameterName,
+                parameterType,
+                isOutParameter,
+                isGeneric,
+                typeDescriptorRegistry,
+                out string? typeConversionCode,
+                out string convertedParameterName
             );
 
-            string convertedParameterName;
-
-            if (typeConversion != null) {
-                convertedParameterName = $"{parameterName}C";
-                
-                string fullTypeConversion = string.Format(typeConversion, $"{parameterName}?");
-
-                string varOrLet = isInOut 
-                    ? "var"
-                    : "let";
-
-                string typeConversionCode = $"{varOrLet} {convertedParameterName} = {fullTypeConversion}";
-                
+            if (!string.IsNullOrEmpty(typeConversionCode)) {
                 sb.AppendLine(typeConversionCode);
-                
-                if (isInOut) {
-                    convertedParameterName = $"&{convertedParameterName}";
-                }
-            } else {
-                if (!isGeneric &&
-                    isOutParameter) {
-                    convertedParameterName = $"&{parameterName}";
-                } else if (!isGeneric &&
-                           isByRefParameter) {
-                    convertedParameterName = $"&{parameterName}";
-                } else {
-                    convertedParameterName = parameterName;
-                }
+            }
+            
+            convertedParameterNames.Add(convertedParameterName);
+        }
+
+        if (memberKind == MemberKind.FieldSetter ||
+            memberKind == MemberKind.PropertySetter ||
+            memberKind == MemberKind.EventHandlerAdder ||
+            memberKind == MemberKind.EventHandlerRemover) {
+            string parameterName = "value";
+            Type parameterType = setterOrEventHandlerType ?? throw new Exception("No setter or event handler type");
+            const bool isOutParameter = false;
+            
+            WriteParameterConversion(
+                sourceLanguage,
+                targetLanguage,
+                parameterName,
+                parameterType,
+                isOutParameter,
+                isGeneric,
+                typeDescriptorRegistry,
+                out string? typeConversionCode,
+                out string convertedParameterName
+            );
+
+            if (!string.IsNullOrEmpty(typeConversionCode)) {
+                sb.AppendLine(typeConversionCode);
             }
             
             convertedParameterNames.Add(convertedParameterName);
         }
 
         return sb.ToString();
+    }
+
+    private static void WriteParameterConversion(
+        CodeLanguage sourceLanguage,
+        CodeLanguage targetLanguage,
+        string parameterName,
+        Type parameterType,
+        bool isOutParameter,
+        bool isGeneric,
+        TypeDescriptorRegistry typeDescriptorRegistry,
+        out string? typeConversionCode,
+        out string convertedParameterName
+    )
+    {
+        if (string.IsNullOrEmpty(parameterName)) {
+            throw new Exception("Parameter has no name");   
+        }
+        
+        bool isByRefParameter = parameterType.IsByRef;
+        bool isArrayType = parameterType.IsArray;
+        bool isInOut = isOutParameter || isByRefParameter;
+
+        if (isByRefParameter) {
+            parameterType = parameterType.GetNonByRefType();
+        }
+        
+        bool isGenericParameterType = parameterType.IsGenericParameter || parameterType.IsGenericMethodParameter;
+
+        if (!isByRefParameter &&
+            isOutParameter) {
+            throw new Exception("Parameter is out but not by ref, that's impossible");
+        } else if (isGenericParameterType) {
+            parameterType = typeof(object);
+        } else if (isArrayType) {
+            if (isGeneric) {
+                Type? arrayType = parameterType.GetElementType();
+
+                if (arrayType is not null &&
+                    (arrayType.IsGenericType || arrayType.IsGenericParameter || arrayType.IsGenericMethodParameter)) {
+                    parameterType = typeof(Array);
+                }
+            }
+        }
+        
+        TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
+
+        string? typeConversion = parameterTypeDescriptor.GetTypeConversion(
+            sourceLanguage,
+            targetLanguage
+        );
+
+        if (typeConversion != null) {
+            convertedParameterName = $"{parameterName}C";
+            
+            string fullTypeConversion = string.Format(typeConversion, $"{parameterName}?");
+
+            string varOrLet = isInOut 
+                ? "var"
+                : "let";
+
+            typeConversionCode = $"{varOrLet} {convertedParameterName} = {fullTypeConversion}";
+            
+            if (isInOut) {
+                convertedParameterName = $"&{convertedParameterName}";
+            }
+        } else {
+            typeConversionCode = null;
+            
+            if (!isGeneric &&
+                isOutParameter) {
+                convertedParameterName = $"&{parameterName}";
+            } else if (!isGeneric &&
+                       isByRefParameter) {
+                convertedParameterName = $"&{parameterName}";
+            } else {
+                convertedParameterName = parameterName;
+            }
+        }
     }
 }
