@@ -10,8 +10,12 @@ public partial class BuiltInTypeDescriptors
                 "(char)0", // TODO: Is this correct?
                 new() {
                     { CodeLanguage.CSharpUnmanaged, "char" },
-                    { CodeLanguage.C, "uint8_t" }, // TODO: Is this correct?
-                    { CodeLanguage.Swift, "UInt8" } // TODO: Is this correct?
+                    { CodeLanguage.C, "wchar_t" }, // TODO: Is this correct?
+                    { CodeLanguage.Swift, "DNChar" } // TODO: Is this correct?
+                },
+                new() {
+                    { new LanguagePair(CodeLanguage.C, CodeLanguage.Swift), "DNChar(cValue: {0})" },
+                    { new LanguagePair(CodeLanguage.Swift, CodeLanguage.C), "{0}.cValue" }
                 }
             );
         

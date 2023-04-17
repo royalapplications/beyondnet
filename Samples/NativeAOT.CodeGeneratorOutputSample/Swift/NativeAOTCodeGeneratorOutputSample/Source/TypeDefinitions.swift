@@ -7,6 +7,14 @@ import Foundation
 // MARK: - END Header
 
 // MARK: - BEGIN Utils
+public struct DNChar {
+    public let cValue: wchar_t
+
+    public init(cValue: wchar_t) {
+        self.cValue = cValue
+    }
+}
+
 public class DNObject {
     let __handle: UnsafeMutableRawPointer
 
@@ -5461,12 +5469,14 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}
 	
 	
-	public class func delimiter_get() -> UInt8 /* System.Char */ {
+	public class func delimiter_get() -> DNChar /* System.Char */ {
 		
 		
 		let __returnValueC = System_Type_Delimiter_Get()
 		
-		return __returnValueC
+		let __returnValue = DNChar(cValue: __returnValueC)
+		
+		return __returnValue
 		
 	
 	}
@@ -8273,13 +8283,15 @@ public class System_IConvertible /* System.IConvertible */: DNObject {
 	
 	}
 	
-	public func toChar(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> UInt8 /* System.Char */ {
+	public func toChar(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> DNChar /* System.Char */ {
 		let providerC = provider?.__handle
 		
 		
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_IConvertible_ToChar(self.__handle, providerC, &__exceptionC)
+		
+		let __returnValue = DNChar(cValue: __returnValueC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -8288,7 +8300,7 @@ public class System_IConvertible /* System.IConvertible */: DNObject {
 		    throw __error
 		}
 		
-		return __returnValueC
+		return __returnValue
 		
 	
 	}
@@ -9916,12 +9928,13 @@ public class System_String /* System.String */: System_Object {
 	
 	}
 	
-	public func endsWith(_ value: UInt8 /* System.Char */) throws -> Bool /* System.Boolean */ {
+	public func endsWith(_ value: DNChar /* System.Char */) throws -> Bool /* System.Boolean */ {
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_EndsWith_3(self.__handle, value, &__exceptionC)
+		let __returnValueC = System_String_EndsWith_3(self.__handle, valueC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -10140,12 +10153,13 @@ public class System_String /* System.String */: System_Object {
 	
 	}
 	
-	public func startsWith(_ value: UInt8 /* System.Char */) throws -> Bool /* System.Boolean */ {
+	public func startsWith(_ value: DNChar /* System.Char */) throws -> Bool /* System.Boolean */ {
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_StartsWith_3(self.__handle, value, &__exceptionC)
+		let __returnValueC = System_String_StartsWith_3(self.__handle, valueC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -11019,13 +11033,14 @@ public class System_String /* System.String */: System_Object {
 	
 	}
 	
-	public class func join(_ separator: UInt8 /* System.Char */, _ value: System_String_Array? /* System.String[] */) throws -> System_String? /* System.String */ {
+	public class func join(_ separator: DNChar /* System.Char */, _ value: System_String_Array? /* System.String[] */) throws -> System_String? /* System.String */ {
+		let separatorC = separator.cValue
 		let valueC = value?.__handle
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_Join(separator, valueC, &__exceptionC)
+		let __returnValueC = System_String_Join(separatorC, valueC, &__exceptionC)
 		
 		let __returnValue = System_String(handle: __returnValueC)
 		
@@ -11064,13 +11079,14 @@ public class System_String /* System.String */: System_Object {
 	
 	}
 	
-	public class func join(_ separator: UInt8 /* System.Char */, _ value: System_String_Array? /* System.String[] */, _ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_String? /* System.String */ {
+	public class func join(_ separator: DNChar /* System.Char */, _ value: System_String_Array? /* System.String[] */, _ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_String? /* System.String */ {
+		let separatorC = separator.cValue
 		let valueC = value?.__handle
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_Join_2(separator, valueC, startIndex, count, &__exceptionC)
+		let __returnValueC = System_String_Join_2(separatorC, valueC, startIndex, count, &__exceptionC)
 		
 		let __returnValue = System_String(handle: __returnValueC)
 		
@@ -11132,13 +11148,14 @@ public class System_String /* System.String */: System_Object {
 	
 	}
 	
-	public class func join(_ separator: UInt8 /* System.Char */, _ values: System_Object_Array? /* System.Object[] */) throws -> System_String? /* System.String */ {
+	public class func join(_ separator: DNChar /* System.Char */, _ values: System_Object_Array? /* System.Object[] */) throws -> System_String? /* System.String */ {
+		let separatorC = separator.cValue
 		let valuesC = values?.__handle
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_Join_5(separator, valuesC, &__exceptionC)
+		let __returnValueC = System_String_Join_5(separatorC, valuesC, &__exceptionC)
 		
 		let __returnValue = System_String(handle: __returnValueC)
 		
@@ -11198,12 +11215,13 @@ public class System_String /* System.String */: System_Object {
 	
 	}
 	
-	public func padLeft(_ totalWidth: Int32 /* System.Int32 */, _ paddingChar: UInt8 /* System.Char */) throws -> System_String? /* System.String */ {
+	public func padLeft(_ totalWidth: Int32 /* System.Int32 */, _ paddingChar: DNChar /* System.Char */) throws -> System_String? /* System.String */ {
+		let paddingCharC = paddingChar.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_PadLeft_1(self.__handle, totalWidth, paddingChar, &__exceptionC)
+		let __returnValueC = System_String_PadLeft_1(self.__handle, totalWidth, paddingCharC, &__exceptionC)
 		
 		let __returnValue = System_String(handle: __returnValueC)
 		
@@ -11240,12 +11258,13 @@ public class System_String /* System.String */: System_Object {
 	
 	}
 	
-	public func padRight(_ totalWidth: Int32 /* System.Int32 */, _ paddingChar: UInt8 /* System.Char */) throws -> System_String? /* System.String */ {
+	public func padRight(_ totalWidth: Int32 /* System.Int32 */, _ paddingChar: DNChar /* System.Char */) throws -> System_String? /* System.String */ {
+		let paddingCharC = paddingChar.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_PadRight_1(self.__handle, totalWidth, paddingChar, &__exceptionC)
+		let __returnValueC = System_String_PadRight_1(self.__handle, totalWidth, paddingCharC, &__exceptionC)
 		
 		let __returnValue = System_String(handle: __returnValueC)
 		
@@ -11351,12 +11370,14 @@ public class System_String /* System.String */: System_Object {
 	
 	}
 	
-	public func replace(_ oldChar: UInt8 /* System.Char */, _ newChar: UInt8 /* System.Char */) throws -> System_String? /* System.String */ {
+	public func replace(_ oldChar: DNChar /* System.Char */, _ newChar: DNChar /* System.Char */) throws -> System_String? /* System.String */ {
+		let oldCharC = oldChar.cValue
+		let newCharC = newChar.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_Replace_2(self.__handle, oldChar, newChar, &__exceptionC)
+		let __returnValueC = System_String_Replace_2(self.__handle, oldCharC, newCharC, &__exceptionC)
 		
 		let __returnValue = System_String(handle: __returnValueC)
 		
@@ -11438,13 +11459,14 @@ public class System_String /* System.String */: System_Object {
 	
 	}
 	
-	public func split(_ separator: UInt8 /* System.Char */, _ options: System_StringSplitOptions /* System.StringSplitOptions */) throws -> System_String_Array? /* System.String[] */ {
+	public func split(_ separator: DNChar /* System.Char */, _ options: System_StringSplitOptions /* System.StringSplitOptions */) throws -> System_String_Array? /* System.String[] */ {
+		let separatorC = separator.cValue
 		let optionsC = options.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_Split(self.__handle, separator, optionsC, &__exceptionC)
+		let __returnValueC = System_String_Split(self.__handle, separatorC, optionsC, &__exceptionC)
 		
 		let __returnValue = System_String_Array(handle: __returnValueC)
 		
@@ -11460,13 +11482,14 @@ public class System_String /* System.String */: System_Object {
 	
 	}
 	
-	public func split(_ separator: UInt8 /* System.Char */, _ count: Int32 /* System.Int32 */, _ options: System_StringSplitOptions /* System.StringSplitOptions */) throws -> System_String_Array? /* System.String[] */ {
+	public func split(_ separator: DNChar /* System.Char */, _ count: Int32 /* System.Int32 */, _ options: System_StringSplitOptions /* System.StringSplitOptions */) throws -> System_String_Array? /* System.String[] */ {
+		let separatorC = separator.cValue
 		let optionsC = options.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_Split_1(self.__handle, separator, count, optionsC, &__exceptionC)
+		let __returnValueC = System_String_Split_1(self.__handle, separatorC, count, optionsC, &__exceptionC)
 		
 		let __returnValue = System_String_Array(handle: __returnValueC)
 		
@@ -11855,12 +11878,13 @@ public class System_String /* System.String */: System_Object {
 	
 	}
 	
-	public func trim(_ trimChar: UInt8 /* System.Char */) throws -> System_String? /* System.String */ {
+	public func trim(_ trimChar: DNChar /* System.Char */) throws -> System_String? /* System.String */ {
+		let trimCharC = trimChar.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_Trim_1(self.__handle, trimChar, &__exceptionC)
+		let __returnValueC = System_String_Trim_1(self.__handle, trimCharC, &__exceptionC)
 		
 		let __returnValue = System_String(handle: __returnValueC)
 		
@@ -11919,12 +11943,13 @@ public class System_String /* System.String */: System_Object {
 	
 	}
 	
-	public func trimStart(_ trimChar: UInt8 /* System.Char */) throws -> System_String? /* System.String */ {
+	public func trimStart(_ trimChar: DNChar /* System.Char */) throws -> System_String? /* System.String */ {
+		let trimCharC = trimChar.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_TrimStart_1(self.__handle, trimChar, &__exceptionC)
+		let __returnValueC = System_String_TrimStart_1(self.__handle, trimCharC, &__exceptionC)
 		
 		let __returnValue = System_String(handle: __returnValueC)
 		
@@ -11983,12 +12008,13 @@ public class System_String /* System.String */: System_Object {
 	
 	}
 	
-	public func trimEnd(_ trimChar: UInt8 /* System.Char */) throws -> System_String? /* System.String */ {
+	public func trimEnd(_ trimChar: DNChar /* System.Char */) throws -> System_String? /* System.String */ {
+		let trimCharC = trimChar.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_TrimEnd_1(self.__handle, trimChar, &__exceptionC)
+		let __returnValueC = System_String_TrimEnd_1(self.__handle, trimCharC, &__exceptionC)
 		
 		let __returnValue = System_String(handle: __returnValueC)
 		
@@ -12067,12 +12093,13 @@ public class System_String /* System.String */: System_Object {
 	
 	}
 	
-	public func contains(_ value: UInt8 /* System.Char */) throws -> Bool /* System.Boolean */ {
+	public func contains(_ value: DNChar /* System.Char */) throws -> Bool /* System.Boolean */ {
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_Contains_2(self.__handle, value, &__exceptionC)
+		let __returnValueC = System_String_Contains_2(self.__handle, valueC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -12086,13 +12113,14 @@ public class System_String /* System.String */: System_Object {
 	
 	}
 	
-	public func contains(_ value: UInt8 /* System.Char */, _ comparisonType: System_StringComparison /* System.StringComparison */) throws -> Bool /* System.Boolean */ {
+	public func contains(_ value: DNChar /* System.Char */, _ comparisonType: System_StringComparison /* System.StringComparison */) throws -> Bool /* System.Boolean */ {
+		let valueC = value.cValue
 		let comparisonTypeC = comparisonType.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_Contains_3(self.__handle, value, comparisonTypeC, &__exceptionC)
+		let __returnValueC = System_String_Contains_3(self.__handle, valueC, comparisonTypeC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -12106,12 +12134,13 @@ public class System_String /* System.String */: System_Object {
 	
 	}
 	
-	public func indexOf(_ value: UInt8 /* System.Char */) throws -> Int32 /* System.Int32 */ {
+	public func indexOf(_ value: DNChar /* System.Char */) throws -> Int32 /* System.Int32 */ {
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_IndexOf(self.__handle, value, &__exceptionC)
+		let __returnValueC = System_String_IndexOf(self.__handle, valueC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -12125,12 +12154,13 @@ public class System_String /* System.String */: System_Object {
 	
 	}
 	
-	public func indexOf(_ value: UInt8 /* System.Char */, _ startIndex: Int32 /* System.Int32 */) throws -> Int32 /* System.Int32 */ {
+	public func indexOf(_ value: DNChar /* System.Char */, _ startIndex: Int32 /* System.Int32 */) throws -> Int32 /* System.Int32 */ {
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_IndexOf_1(self.__handle, value, startIndex, &__exceptionC)
+		let __returnValueC = System_String_IndexOf_1(self.__handle, valueC, startIndex, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -12144,13 +12174,14 @@ public class System_String /* System.String */: System_Object {
 	
 	}
 	
-	public func indexOf(_ value: UInt8 /* System.Char */, _ comparisonType: System_StringComparison /* System.StringComparison */) throws -> Int32 /* System.Int32 */ {
+	public func indexOf(_ value: DNChar /* System.Char */, _ comparisonType: System_StringComparison /* System.StringComparison */) throws -> Int32 /* System.Int32 */ {
+		let valueC = value.cValue
 		let comparisonTypeC = comparisonType.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_IndexOf_2(self.__handle, value, comparisonTypeC, &__exceptionC)
+		let __returnValueC = System_String_IndexOf_2(self.__handle, valueC, comparisonTypeC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -12164,12 +12195,13 @@ public class System_String /* System.String */: System_Object {
 	
 	}
 	
-	public func indexOf(_ value: UInt8 /* System.Char */, _ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> Int32 /* System.Int32 */ {
+	public func indexOf(_ value: DNChar /* System.Char */, _ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> Int32 /* System.Int32 */ {
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_IndexOf_3(self.__handle, value, startIndex, count, &__exceptionC)
+		let __returnValueC = System_String_IndexOf_3(self.__handle, valueC, startIndex, count, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -12366,12 +12398,13 @@ public class System_String /* System.String */: System_Object {
 	
 	}
 	
-	public func lastIndexOf(_ value: UInt8 /* System.Char */) throws -> Int32 /* System.Int32 */ {
+	public func lastIndexOf(_ value: DNChar /* System.Char */) throws -> Int32 /* System.Int32 */ {
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_LastIndexOf(self.__handle, value, &__exceptionC)
+		let __returnValueC = System_String_LastIndexOf(self.__handle, valueC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -12385,12 +12418,13 @@ public class System_String /* System.String */: System_Object {
 	
 	}
 	
-	public func lastIndexOf(_ value: UInt8 /* System.Char */, _ startIndex: Int32 /* System.Int32 */) throws -> Int32 /* System.Int32 */ {
+	public func lastIndexOf(_ value: DNChar /* System.Char */, _ startIndex: Int32 /* System.Int32 */) throws -> Int32 /* System.Int32 */ {
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_LastIndexOf_1(self.__handle, value, startIndex, &__exceptionC)
+		let __returnValueC = System_String_LastIndexOf_1(self.__handle, valueC, startIndex, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -12404,12 +12438,13 @@ public class System_String /* System.String */: System_Object {
 	
 	}
 	
-	public func lastIndexOf(_ value: UInt8 /* System.Char */, _ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> Int32 /* System.Int32 */ {
+	public func lastIndexOf(_ value: DNChar /* System.Char */, _ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> Int32 /* System.Int32 */ {
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_LastIndexOf_2(self.__handle, value, startIndex, count, &__exceptionC)
+		let __returnValueC = System_String_LastIndexOf_2(self.__handle, valueC, startIndex, count, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -12650,12 +12685,13 @@ public class System_String /* System.String */: System_Object {
 	
 	}
 	
-	public convenience init?(_ c: UInt8 /* System.Char */, _ count: Int32 /* System.Int32 */) throws {
+	public convenience init?(_ c: DNChar /* System.Char */, _ count: Int32 /* System.Int32 */) throws {
+		let cC = c.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_Create_2(c, count, &__exceptionC)
+		let __returnValueC = System_String_Create_2(cC, count, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -14359,12 +14395,13 @@ public class System_Globalization_CompareInfo /* System.Globalization.CompareInf
 	
 	}
 	
-	public class func isSortable(_ ch: UInt8 /* System.Char */) throws -> Bool /* System.Boolean */ {
+	public class func isSortable(_ ch: DNChar /* System.Char */) throws -> Bool /* System.Boolean */ {
+		let chC = ch.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Globalization_CompareInfo_IsSortable(ch, &__exceptionC)
+		let __returnValueC = System_Globalization_CompareInfo_IsSortable(chC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -14633,13 +14670,14 @@ public class System_Globalization_CompareInfo /* System.Globalization.CompareInf
 	
 	}
 	
-	public func indexOf(_ source: System_String? /* System.String */, _ value: UInt8 /* System.Char */) throws -> Int32 /* System.Int32 */ {
+	public func indexOf(_ source: System_String? /* System.String */, _ value: DNChar /* System.Char */) throws -> Int32 /* System.Int32 */ {
 		let sourceC = source?.__handle
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Globalization_CompareInfo_IndexOf(self.__handle, sourceC, value, &__exceptionC)
+		let __returnValueC = System_Globalization_CompareInfo_IndexOf(self.__handle, sourceC, valueC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -14674,14 +14712,15 @@ public class System_Globalization_CompareInfo /* System.Globalization.CompareInf
 	
 	}
 	
-	public func indexOf(_ source: System_String? /* System.String */, _ value: UInt8 /* System.Char */, _ options: System_Globalization_CompareOptions /* System.Globalization.CompareOptions */) throws -> Int32 /* System.Int32 */ {
+	public func indexOf(_ source: System_String? /* System.String */, _ value: DNChar /* System.Char */, _ options: System_Globalization_CompareOptions /* System.Globalization.CompareOptions */) throws -> Int32 /* System.Int32 */ {
 		let sourceC = source?.__handle
+		let valueC = value.cValue
 		let optionsC = options.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Globalization_CompareInfo_IndexOf_2(self.__handle, sourceC, value, optionsC, &__exceptionC)
+		let __returnValueC = System_Globalization_CompareInfo_IndexOf_2(self.__handle, sourceC, valueC, optionsC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -14717,13 +14756,14 @@ public class System_Globalization_CompareInfo /* System.Globalization.CompareInf
 	
 	}
 	
-	public func indexOf(_ source: System_String? /* System.String */, _ value: UInt8 /* System.Char */, _ startIndex: Int32 /* System.Int32 */) throws -> Int32 /* System.Int32 */ {
+	public func indexOf(_ source: System_String? /* System.String */, _ value: DNChar /* System.Char */, _ startIndex: Int32 /* System.Int32 */) throws -> Int32 /* System.Int32 */ {
 		let sourceC = source?.__handle
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Globalization_CompareInfo_IndexOf_4(self.__handle, sourceC, value, startIndex, &__exceptionC)
+		let __returnValueC = System_Globalization_CompareInfo_IndexOf_4(self.__handle, sourceC, valueC, startIndex, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -14758,14 +14798,15 @@ public class System_Globalization_CompareInfo /* System.Globalization.CompareInf
 	
 	}
 	
-	public func indexOf(_ source: System_String? /* System.String */, _ value: UInt8 /* System.Char */, _ startIndex: Int32 /* System.Int32 */, _ options: System_Globalization_CompareOptions /* System.Globalization.CompareOptions */) throws -> Int32 /* System.Int32 */ {
+	public func indexOf(_ source: System_String? /* System.String */, _ value: DNChar /* System.Char */, _ startIndex: Int32 /* System.Int32 */, _ options: System_Globalization_CompareOptions /* System.Globalization.CompareOptions */) throws -> Int32 /* System.Int32 */ {
 		let sourceC = source?.__handle
+		let valueC = value.cValue
 		let optionsC = options.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Globalization_CompareInfo_IndexOf_6(self.__handle, sourceC, value, startIndex, optionsC, &__exceptionC)
+		let __returnValueC = System_Globalization_CompareInfo_IndexOf_6(self.__handle, sourceC, valueC, startIndex, optionsC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -14801,13 +14842,14 @@ public class System_Globalization_CompareInfo /* System.Globalization.CompareInf
 	
 	}
 	
-	public func indexOf(_ source: System_String? /* System.String */, _ value: UInt8 /* System.Char */, _ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> Int32 /* System.Int32 */ {
+	public func indexOf(_ source: System_String? /* System.String */, _ value: DNChar /* System.Char */, _ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> Int32 /* System.Int32 */ {
 		let sourceC = source?.__handle
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Globalization_CompareInfo_IndexOf_8(self.__handle, sourceC, value, startIndex, count, &__exceptionC)
+		let __returnValueC = System_Globalization_CompareInfo_IndexOf_8(self.__handle, sourceC, valueC, startIndex, count, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -14842,14 +14884,15 @@ public class System_Globalization_CompareInfo /* System.Globalization.CompareInf
 	
 	}
 	
-	public func indexOf(_ source: System_String? /* System.String */, _ value: UInt8 /* System.Char */, _ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ options: System_Globalization_CompareOptions /* System.Globalization.CompareOptions */) throws -> Int32 /* System.Int32 */ {
+	public func indexOf(_ source: System_String? /* System.String */, _ value: DNChar /* System.Char */, _ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ options: System_Globalization_CompareOptions /* System.Globalization.CompareOptions */) throws -> Int32 /* System.Int32 */ {
 		let sourceC = source?.__handle
+		let valueC = value.cValue
 		let optionsC = options.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Globalization_CompareInfo_IndexOf_10(self.__handle, sourceC, value, startIndex, count, optionsC, &__exceptionC)
+		let __returnValueC = System_Globalization_CompareInfo_IndexOf_10(self.__handle, sourceC, valueC, startIndex, count, optionsC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -14885,13 +14928,14 @@ public class System_Globalization_CompareInfo /* System.Globalization.CompareInf
 	
 	}
 	
-	public func lastIndexOf(_ source: System_String? /* System.String */, _ value: UInt8 /* System.Char */) throws -> Int32 /* System.Int32 */ {
+	public func lastIndexOf(_ source: System_String? /* System.String */, _ value: DNChar /* System.Char */) throws -> Int32 /* System.Int32 */ {
 		let sourceC = source?.__handle
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Globalization_CompareInfo_LastIndexOf(self.__handle, sourceC, value, &__exceptionC)
+		let __returnValueC = System_Globalization_CompareInfo_LastIndexOf(self.__handle, sourceC, valueC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -14926,14 +14970,15 @@ public class System_Globalization_CompareInfo /* System.Globalization.CompareInf
 	
 	}
 	
-	public func lastIndexOf(_ source: System_String? /* System.String */, _ value: UInt8 /* System.Char */, _ options: System_Globalization_CompareOptions /* System.Globalization.CompareOptions */) throws -> Int32 /* System.Int32 */ {
+	public func lastIndexOf(_ source: System_String? /* System.String */, _ value: DNChar /* System.Char */, _ options: System_Globalization_CompareOptions /* System.Globalization.CompareOptions */) throws -> Int32 /* System.Int32 */ {
 		let sourceC = source?.__handle
+		let valueC = value.cValue
 		let optionsC = options.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Globalization_CompareInfo_LastIndexOf_2(self.__handle, sourceC, value, optionsC, &__exceptionC)
+		let __returnValueC = System_Globalization_CompareInfo_LastIndexOf_2(self.__handle, sourceC, valueC, optionsC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -14969,13 +15014,14 @@ public class System_Globalization_CompareInfo /* System.Globalization.CompareInf
 	
 	}
 	
-	public func lastIndexOf(_ source: System_String? /* System.String */, _ value: UInt8 /* System.Char */, _ startIndex: Int32 /* System.Int32 */) throws -> Int32 /* System.Int32 */ {
+	public func lastIndexOf(_ source: System_String? /* System.String */, _ value: DNChar /* System.Char */, _ startIndex: Int32 /* System.Int32 */) throws -> Int32 /* System.Int32 */ {
 		let sourceC = source?.__handle
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Globalization_CompareInfo_LastIndexOf_4(self.__handle, sourceC, value, startIndex, &__exceptionC)
+		let __returnValueC = System_Globalization_CompareInfo_LastIndexOf_4(self.__handle, sourceC, valueC, startIndex, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -15010,14 +15056,15 @@ public class System_Globalization_CompareInfo /* System.Globalization.CompareInf
 	
 	}
 	
-	public func lastIndexOf(_ source: System_String? /* System.String */, _ value: UInt8 /* System.Char */, _ startIndex: Int32 /* System.Int32 */, _ options: System_Globalization_CompareOptions /* System.Globalization.CompareOptions */) throws -> Int32 /* System.Int32 */ {
+	public func lastIndexOf(_ source: System_String? /* System.String */, _ value: DNChar /* System.Char */, _ startIndex: Int32 /* System.Int32 */, _ options: System_Globalization_CompareOptions /* System.Globalization.CompareOptions */) throws -> Int32 /* System.Int32 */ {
 		let sourceC = source?.__handle
+		let valueC = value.cValue
 		let optionsC = options.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Globalization_CompareInfo_LastIndexOf_6(self.__handle, sourceC, value, startIndex, optionsC, &__exceptionC)
+		let __returnValueC = System_Globalization_CompareInfo_LastIndexOf_6(self.__handle, sourceC, valueC, startIndex, optionsC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -15053,13 +15100,14 @@ public class System_Globalization_CompareInfo /* System.Globalization.CompareInf
 	
 	}
 	
-	public func lastIndexOf(_ source: System_String? /* System.String */, _ value: UInt8 /* System.Char */, _ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> Int32 /* System.Int32 */ {
+	public func lastIndexOf(_ source: System_String? /* System.String */, _ value: DNChar /* System.Char */, _ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> Int32 /* System.Int32 */ {
 		let sourceC = source?.__handle
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Globalization_CompareInfo_LastIndexOf_8(self.__handle, sourceC, value, startIndex, count, &__exceptionC)
+		let __returnValueC = System_Globalization_CompareInfo_LastIndexOf_8(self.__handle, sourceC, valueC, startIndex, count, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -15094,14 +15142,15 @@ public class System_Globalization_CompareInfo /* System.Globalization.CompareInf
 	
 	}
 	
-	public func lastIndexOf(_ source: System_String? /* System.String */, _ value: UInt8 /* System.Char */, _ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ options: System_Globalization_CompareOptions /* System.Globalization.CompareOptions */) throws -> Int32 /* System.Int32 */ {
+	public func lastIndexOf(_ source: System_String? /* System.String */, _ value: DNChar /* System.Char */, _ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ options: System_Globalization_CompareOptions /* System.Globalization.CompareOptions */) throws -> Int32 /* System.Int32 */ {
 		let sourceC = source?.__handle
+		let valueC = value.cValue
 		let optionsC = options.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Globalization_CompareInfo_LastIndexOf_10(self.__handle, sourceC, value, startIndex, count, optionsC, &__exceptionC)
+		let __returnValueC = System_Globalization_CompareInfo_LastIndexOf_10(self.__handle, sourceC, valueC, startIndex, count, optionsC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -17077,13 +17126,14 @@ public class System_Runtime_Serialization_SerializationInfo /* System.Runtime.Se
 	
 	}
 	
-	public func addValue(_ name: System_String? /* System.String */, _ value: UInt8 /* System.Char */) throws {
+	public func addValue(_ name: System_String? /* System.String */, _ value: DNChar /* System.Char */) throws {
 		let nameC = name?.__handle
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_Runtime_Serialization_SerializationInfo_AddValue_3(self.__handle, nameC, value, &__exceptionC)
+		System_Runtime_Serialization_SerializationInfo_AddValue_3(self.__handle, nameC, valueC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -17369,13 +17419,15 @@ public class System_Runtime_Serialization_SerializationInfo /* System.Runtime.Se
 	
 	}
 	
-	public func getChar(_ name: System_String? /* System.String */) throws -> UInt8 /* System.Char */ {
+	public func getChar(_ name: System_String? /* System.String */) throws -> DNChar /* System.Char */ {
 		let nameC = name?.__handle
 		
 		
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Runtime_Serialization_SerializationInfo_GetChar(self.__handle, nameC, &__exceptionC)
+		
+		let __returnValue = DNChar(cValue: __returnValueC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -17384,7 +17436,7 @@ public class System_Runtime_Serialization_SerializationInfo /* System.Runtime.Se
 		    throw __error
 		}
 		
-		return __returnValueC
+		return __returnValue
 		
 	
 	}
@@ -21422,12 +21474,13 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 	
 	}
 	
-	public func getDateTimeFormats(_ format: UInt8 /* System.Char */) throws -> System_String_Array? /* System.String[] */ {
+	public func getDateTimeFormats(_ format: DNChar /* System.Char */) throws -> System_String_Array? /* System.String[] */ {
+		let formatC = format.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_DateTime_GetDateTimeFormats_2(self.__handle, format, &__exceptionC)
+		let __returnValueC = System_DateTime_GetDateTimeFormats_2(self.__handle, formatC, &__exceptionC)
 		
 		let __returnValue = System_String_Array(handle: __returnValueC)
 		
@@ -21443,13 +21496,14 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 	
 	}
 	
-	public func getDateTimeFormats(_ format: UInt8 /* System.Char */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String_Array? /* System.String[] */ {
+	public func getDateTimeFormats(_ format: DNChar /* System.Char */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String_Array? /* System.String[] */ {
+		let formatC = format.cValue
 		let providerC = provider?.__handle
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_DateTime_GetDateTimeFormats_3(self.__handle, format, providerC, &__exceptionC)
+		let __returnValueC = System_DateTime_GetDateTimeFormats_3(self.__handle, formatC, providerC, &__exceptionC)
 		
 		let __returnValue = System_String_Array(handle: __returnValueC)
 		
@@ -26793,13 +26847,15 @@ public class System_Runtime_Serialization_IFormatterConverter /* System.Runtime.
 	
 	}
 	
-	public func toChar(_ value: System_Object? /* System.Object */) throws -> UInt8 /* System.Char */ {
+	public func toChar(_ value: System_Object? /* System.Object */) throws -> DNChar /* System.Char */ {
 		let valueC = value?.__handle
 		
 		
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Runtime_Serialization_IFormatterConverter_ToChar(self.__handle, valueC, &__exceptionC)
+		
+		let __returnValue = DNChar(cValue: __returnValueC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -26808,7 +26864,7 @@ public class System_Runtime_Serialization_IFormatterConverter /* System.Runtime.
 		    throw __error
 		}
 		
-		return __returnValueC
+		return __returnValue
 		
 	
 	}
@@ -43967,13 +44023,14 @@ public class System_Text_Rune /* System.Text.Rune */: System_ValueType {
 	
 	}
 	
-	public class func tryCreate(_ ch: UInt8 /* System.Char */, _ result: inout System_Text_Rune? /* System.Text.Rune */) throws -> Bool /* System.Boolean */ {
+	public class func tryCreate(_ ch: DNChar /* System.Char */, _ result: inout System_Text_Rune? /* System.Text.Rune */) throws -> Bool /* System.Boolean */ {
+		let chC = ch.cValue
 		var resultC = result?.__handle
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_Rune_TryCreate(ch, &resultC, &__exceptionC)
+		let __returnValueC = System_Text_Rune_TryCreate(chC, &resultC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -43987,13 +44044,15 @@ public class System_Text_Rune /* System.Text.Rune */: System_ValueType {
 	
 	}
 	
-	public class func tryCreate(_ highSurrogate: UInt8 /* System.Char */, _ lowSurrogate: UInt8 /* System.Char */, _ result: inout System_Text_Rune? /* System.Text.Rune */) throws -> Bool /* System.Boolean */ {
+	public class func tryCreate(_ highSurrogate: DNChar /* System.Char */, _ lowSurrogate: DNChar /* System.Char */, _ result: inout System_Text_Rune? /* System.Text.Rune */) throws -> Bool /* System.Boolean */ {
+		let highSurrogateC = highSurrogate.cValue
+		let lowSurrogateC = lowSurrogate.cValue
 		var resultC = result?.__handle
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_Rune_TryCreate_1(highSurrogate, lowSurrogate, &resultC, &__exceptionC)
+		let __returnValueC = System_Text_Rune_TryCreate_1(highSurrogateC, lowSurrogateC, &resultC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -44420,12 +44479,13 @@ public class System_Text_Rune /* System.Text.Rune */: System_ValueType {
 	
 	}
 	
-	public convenience init?(_ ch: UInt8 /* System.Char */) throws {
+	public convenience init?(_ ch: DNChar /* System.Char */) throws {
+		let chC = ch.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_Rune_Create(ch, &__exceptionC)
+		let __returnValueC = System_Text_Rune_Create(chC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -44441,12 +44501,14 @@ public class System_Text_Rune /* System.Text.Rune */: System_ValueType {
 	
 	}
 	
-	public convenience init?(_ highSurrogate: UInt8 /* System.Char */, _ lowSurrogate: UInt8 /* System.Char */) throws {
+	public convenience init?(_ highSurrogate: DNChar /* System.Char */, _ lowSurrogate: DNChar /* System.Char */) throws {
+		let highSurrogateC = highSurrogate.cValue
+		let lowSurrogateC = lowSurrogate.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_Rune_Create_1(highSurrogate, lowSurrogate, &__exceptionC)
+		let __returnValueC = System_Text_Rune_Create_1(highSurrogateC, lowSurrogateC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -44998,12 +45060,15 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 	
 	}
 	
-	public func toLower(_ c: UInt8 /* System.Char */) throws -> UInt8 /* System.Char */ {
+	public func toLower(_ c: DNChar /* System.Char */) throws -> DNChar /* System.Char */ {
+		let cC = c.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Globalization_TextInfo_ToLower(self.__handle, c, &__exceptionC)
+		let __returnValueC = System_Globalization_TextInfo_ToLower(self.__handle, cC, &__exceptionC)
+		
+		let __returnValue = DNChar(cValue: __returnValueC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -45012,7 +45077,7 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 		    throw __error
 		}
 		
-		return __returnValueC
+		return __returnValue
 		
 	
 	}
@@ -45039,12 +45104,15 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 	
 	}
 	
-	public func toUpper(_ c: UInt8 /* System.Char */) throws -> UInt8 /* System.Char */ {
+	public func toUpper(_ c: DNChar /* System.Char */) throws -> DNChar /* System.Char */ {
+		let cC = c.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Globalization_TextInfo_ToUpper(self.__handle, c, &__exceptionC)
+		let __returnValueC = System_Globalization_TextInfo_ToUpper(self.__handle, cC, &__exceptionC)
+		
+		let __returnValue = DNChar(cValue: __returnValueC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -45053,7 +45121,7 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 		    throw __error
 		}
 		
-		return __returnValueC
+		return __returnValue
 		
 	
 	}
@@ -46848,12 +46916,13 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	
 	}
 	
-	public func getAllDateTimePatterns(_ format: UInt8 /* System.Char */) throws -> System_String_Array? /* System.String[] */ {
+	public func getAllDateTimePatterns(_ format: DNChar /* System.Char */) throws -> System_String_Array? /* System.String[] */ {
+		let formatC = format.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Globalization_DateTimeFormatInfo_GetAllDateTimePatterns_1(self.__handle, format, &__exceptionC)
+		let __returnValueC = System_Globalization_DateTimeFormatInfo_GetAllDateTimePatterns_1(self.__handle, formatC, &__exceptionC)
 		
 		let __returnValue = System_String_Array(handle: __returnValueC)
 		
@@ -46955,13 +47024,14 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	
 	}
 	
-	public func setAllDateTimePatterns(_ patterns: System_String_Array? /* System.String[] */, _ format: UInt8 /* System.Char */) throws {
+	public func setAllDateTimePatterns(_ patterns: System_String_Array? /* System.String[] */, _ format: DNChar /* System.Char */) throws {
 		let patternsC = patterns?.__handle
+		let formatC = format.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_Globalization_DateTimeFormatInfo_SetAllDateTimePatterns(self.__handle, patternsC, format, &__exceptionC)
+		System_Globalization_DateTimeFormatInfo_SetAllDateTimePatterns(self.__handle, patternsC, formatC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -48144,12 +48214,14 @@ public class System_CharEnumerator /* System.CharEnumerator */: System_Object {
 	
 	}
 	
-	public func current_get() throws -> UInt8 /* System.Char */ {
+	public func current_get() throws -> DNChar /* System.Char */ {
 		
 		
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_CharEnumerator_Current_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNChar(cValue: __returnValueC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -48158,7 +48230,7 @@ public class System_CharEnumerator /* System.CharEnumerator */: System_Object {
 		    throw __error
 		}
 		
-		return __returnValueC
+		return __returnValue
 		
 	
 	}
@@ -49873,12 +49945,13 @@ public class System_Text_EncoderFallback /* System.Text.EncoderFallback */: Syst
 
 
 public class System_Text_EncoderFallbackBuffer /* System.Text.EncoderFallbackBuffer */: System_Object {
-	public func fallback(_ charUnknown: UInt8 /* System.Char */, _ index: Int32 /* System.Int32 */) throws -> Bool /* System.Boolean */ {
+	public func fallback(_ charUnknown: DNChar /* System.Char */, _ index: Int32 /* System.Int32 */) throws -> Bool /* System.Boolean */ {
+		let charUnknownC = charUnknown.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_EncoderFallbackBuffer_Fallback(self.__handle, charUnknown, index, &__exceptionC)
+		let __returnValueC = System_Text_EncoderFallbackBuffer_Fallback(self.__handle, charUnknownC, index, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -49892,12 +49965,14 @@ public class System_Text_EncoderFallbackBuffer /* System.Text.EncoderFallbackBuf
 	
 	}
 	
-	public func fallback(_ charUnknownHigh: UInt8 /* System.Char */, _ charUnknownLow: UInt8 /* System.Char */, _ index: Int32 /* System.Int32 */) throws -> Bool /* System.Boolean */ {
+	public func fallback(_ charUnknownHigh: DNChar /* System.Char */, _ charUnknownLow: DNChar /* System.Char */, _ index: Int32 /* System.Int32 */) throws -> Bool /* System.Boolean */ {
+		let charUnknownHighC = charUnknownHigh.cValue
+		let charUnknownLowC = charUnknownLow.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_EncoderFallbackBuffer_Fallback_1(self.__handle, charUnknownHigh, charUnknownLow, index, &__exceptionC)
+		let __returnValueC = System_Text_EncoderFallbackBuffer_Fallback_1(self.__handle, charUnknownHighC, charUnknownLowC, index, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -49911,13 +49986,15 @@ public class System_Text_EncoderFallbackBuffer /* System.Text.EncoderFallbackBuf
 	
 	}
 	
-	public func getNextChar() throws -> UInt8 /* System.Char */ {
+	public func getNextChar() throws -> DNChar /* System.Char */ {
 		
 		
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Text_EncoderFallbackBuffer_GetNextChar(self.__handle, &__exceptionC)
 		
+		let __returnValue = DNChar(cValue: __returnValueC)
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -49925,7 +50002,7 @@ public class System_Text_EncoderFallbackBuffer /* System.Text.EncoderFallbackBuf
 		    throw __error
 		}
 		
-		return __returnValueC
+		return __returnValue
 		
 	
 	}
@@ -50128,12 +50205,14 @@ public class System_Text_DecoderFallbackBuffer /* System.Text.DecoderFallbackBuf
 	
 	}
 	
-	public func getNextChar() throws -> UInt8 /* System.Char */ {
+	public func getNextChar() throws -> DNChar /* System.Char */ {
 		
 		
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Text_DecoderFallbackBuffer_GetNextChar(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNChar(cValue: __returnValueC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -50142,7 +50221,7 @@ public class System_Text_DecoderFallbackBuffer /* System.Text.DecoderFallbackBuf
 		    throw __error
 		}
 		
-		return __returnValueC
+		return __returnValue
 		
 	
 	}
@@ -55269,12 +55348,13 @@ public class System_IntPtr_Array /* System.IntPtr[] */: System_Array {
 // Type "T" was skipped. Reason: It has no full name.
 // Type "T" was skipped. Reason: It has no full name.
 public class System_Security_SecureString /* System.Security.SecureString */: System_Object {
-	public func appendChar(_ c: UInt8 /* System.Char */) throws {
+	public func appendChar(_ c: DNChar /* System.Char */) throws {
+		let cC = c.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_Security_SecureString_AppendChar(self.__handle, c, &__exceptionC)
+		System_Security_SecureString_AppendChar(self.__handle, cC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -55344,12 +55424,13 @@ public class System_Security_SecureString /* System.Security.SecureString */: Sy
 	
 	}
 	
-	public func insertAt(_ index: Int32 /* System.Int32 */, _ c: UInt8 /* System.Char */) throws {
+	public func insertAt(_ index: Int32 /* System.Int32 */, _ c: DNChar /* System.Char */) throws {
+		let cC = c.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_Security_SecureString_InsertAt(self.__handle, index, c, &__exceptionC)
+		System_Security_SecureString_InsertAt(self.__handle, index, cC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -55417,12 +55498,13 @@ public class System_Security_SecureString /* System.Security.SecureString */: Sy
 	
 	}
 	
-	public func setAt(_ index: Int32 /* System.Int32 */, _ c: UInt8 /* System.Char */) throws {
+	public func setAt(_ index: Int32 /* System.Int32 */, _ c: DNChar /* System.Char */) throws {
+		let cC = c.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_Security_SecureString_SetAt(self.__handle, index, c, &__exceptionC)
+		System_Security_SecureString_SetAt(self.__handle, index, cC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -55728,7 +55810,7 @@ public class System_SystemException /* System.SystemException */: System_Excepti
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 public class System_Tuple_A1 /* System.Tuple<> */: System_Object {
-	public override func equals(_ T1: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
+	public func equals(_ T1: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
 		let T1C = T1.__handle
 		let objC = obj?.__handle
 		
@@ -55749,7 +55831,7 @@ public class System_Tuple_A1 /* System.Tuple<> */: System_Object {
 	
 	}
 	
-	public override func getHashCode(_ T1: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
+	public func getHashCode(_ T1: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
 		let T1C = T1.__handle
 		
 		
@@ -55769,7 +55851,7 @@ public class System_Tuple_A1 /* System.Tuple<> */: System_Object {
 	
 	}
 	
-	public override func toString(_ T1: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
+	public func toString(_ T1: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
 		let T1C = T1.__handle
 		
 		
@@ -55894,7 +55976,7 @@ public class System_Runtime_CompilerServices_ITuple /* System.Runtime.CompilerSe
 
 // Type "T1" was skipped. Reason: It has no full name.
 public class System_Tuple_A2 /* System.Tuple<,> */: System_Object {
-	public override func equals(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
+	public func equals(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let objC = obj?.__handle
@@ -55916,7 +55998,7 @@ public class System_Tuple_A2 /* System.Tuple<,> */: System_Object {
 	
 	}
 	
-	public override func getHashCode(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
+	public func getHashCode(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		
@@ -55937,7 +56019,7 @@ public class System_Tuple_A2 /* System.Tuple<,> */: System_Object {
 	
 	}
 	
-	public override func toString(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
+	public func toString(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		
@@ -56053,7 +56135,7 @@ public class System_Tuple_A2 /* System.Tuple<,> */: System_Object {
 // Type "T1" was skipped. Reason: It has no full name.
 // Type "T2" was skipped. Reason: It has no full name.
 public class System_Tuple_A3 /* System.Tuple<,,> */: System_Object {
-	public override func equals(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
+	public func equals(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -56076,7 +56158,7 @@ public class System_Tuple_A3 /* System.Tuple<,,> */: System_Object {
 	
 	}
 	
-	public override func getHashCode(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
+	public func getHashCode(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -56098,7 +56180,7 @@ public class System_Tuple_A3 /* System.Tuple<,,> */: System_Object {
 	
 	}
 	
-	public override func toString(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
+	public func toString(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -56245,7 +56327,7 @@ public class System_Tuple_A3 /* System.Tuple<,,> */: System_Object {
 // Type "T2" was skipped. Reason: It has no full name.
 // Type "T3" was skipped. Reason: It has no full name.
 public class System_Tuple_A4 /* System.Tuple<,,,> */: System_Object {
-	public override func equals(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
+	public func equals(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -56269,7 +56351,7 @@ public class System_Tuple_A4 /* System.Tuple<,,,> */: System_Object {
 	
 	}
 	
-	public override func getHashCode(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
+	public func getHashCode(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -56292,7 +56374,7 @@ public class System_Tuple_A4 /* System.Tuple<,,,> */: System_Object {
 	
 	}
 	
-	public override func toString(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
+	public func toString(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -56472,7 +56554,7 @@ public class System_Tuple_A4 /* System.Tuple<,,,> */: System_Object {
 // Type "T3" was skipped. Reason: It has no full name.
 // Type "T4" was skipped. Reason: It has no full name.
 public class System_Tuple_A5 /* System.Tuple<,,,,> */: System_Object {
-	public override func equals(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
+	public func equals(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -56497,7 +56579,7 @@ public class System_Tuple_A5 /* System.Tuple<,,,,> */: System_Object {
 	
 	}
 	
-	public override func getHashCode(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
+	public func getHashCode(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -56521,7 +56603,7 @@ public class System_Tuple_A5 /* System.Tuple<,,,,> */: System_Object {
 	
 	}
 	
-	public override func toString(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
+	public func toString(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -56736,7 +56818,7 @@ public class System_Tuple_A5 /* System.Tuple<,,,,> */: System_Object {
 // Type "T4" was skipped. Reason: It has no full name.
 // Type "T5" was skipped. Reason: It has no full name.
 public class System_Tuple_A6 /* System.Tuple<,,,,,> */: System_Object {
-	public override func equals(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
+	public func equals(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -56762,7 +56844,7 @@ public class System_Tuple_A6 /* System.Tuple<,,,,,> */: System_Object {
 	
 	}
 	
-	public override func getHashCode(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
+	public func getHashCode(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -56787,7 +56869,7 @@ public class System_Tuple_A6 /* System.Tuple<,,,,,> */: System_Object {
 	
 	}
 	
-	public override func toString(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
+	public func toString(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -57039,7 +57121,7 @@ public class System_Tuple_A6 /* System.Tuple<,,,,,> */: System_Object {
 // Type "T5" was skipped. Reason: It has no full name.
 // Type "T6" was skipped. Reason: It has no full name.
 public class System_Tuple_A7 /* System.Tuple<,,,,,,> */: System_Object {
-	public override func equals(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
+	public func equals(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -57066,7 +57148,7 @@ public class System_Tuple_A7 /* System.Tuple<,,,,,,> */: System_Object {
 	
 	}
 	
-	public override func getHashCode(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
+	public func getHashCode(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -57092,7 +57174,7 @@ public class System_Tuple_A7 /* System.Tuple<,,,,,,> */: System_Object {
 	
 	}
 	
-	public override func toString(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
+	public func toString(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -57383,7 +57465,7 @@ public class System_Tuple_A7 /* System.Tuple<,,,,,,> */: System_Object {
 // Type "T6" was skipped. Reason: It has no full name.
 // Type "T7" was skipped. Reason: It has no full name.
 public class System_Tuple_A8 /* System.Tuple<,,,,,,,> */: System_Object {
-	public override func equals(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
+	public func equals(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -57411,7 +57493,7 @@ public class System_Tuple_A8 /* System.Tuple<,,,,,,,> */: System_Object {
 	
 	}
 	
-	public override func getHashCode(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
+	public func getHashCode(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -57438,7 +57520,7 @@ public class System_Tuple_A8 /* System.Tuple<,,,,,,,> */: System_Object {
 	
 	}
 	
-	public override func toString(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
+	public func toString(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -61314,12 +61396,13 @@ public class System_Convert /* System.Convert */: System_Object {
 	
 	}
 	
-	public class func toBoolean(_ value: UInt8 /* System.Char */) throws -> Bool /* System.Boolean */ {
+	public class func toBoolean(_ value: DNChar /* System.Char */) throws -> Bool /* System.Boolean */ {
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Convert_ToBoolean_4(value, &__exceptionC)
+		let __returnValueC = System_Convert_ToBoolean_4(valueC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -61585,13 +61668,15 @@ public class System_Convert /* System.Convert */: System_Object {
 	
 	}
 	
-	public class func toChar(_ value: System_Object? /* System.Object */) throws -> UInt8 /* System.Char */ {
+	public class func toChar(_ value: System_Object? /* System.Object */) throws -> DNChar /* System.Char */ {
 		let valueC = value?.__handle
 		
 		
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Convert_ToChar(valueC, &__exceptionC)
+		
+		let __returnValue = DNChar(cValue: __returnValueC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -61600,12 +61685,12 @@ public class System_Convert /* System.Convert */: System_Object {
 		    throw __error
 		}
 		
-		return __returnValueC
+		return __returnValue
 		
 	
 	}
 	
-	public class func toChar(_ value: System_Object? /* System.Object */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> UInt8 /* System.Char */ {
+	public class func toChar(_ value: System_Object? /* System.Object */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> DNChar /* System.Char */ {
 		let valueC = value?.__handle
 		let providerC = provider?.__handle
 		
@@ -61614,6 +61699,8 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 		let __returnValueC = System_Convert_ToChar_1(valueC, providerC, &__exceptionC)
 		
+		let __returnValue = DNChar(cValue: __returnValueC)
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -61621,18 +61708,20 @@ public class System_Convert /* System.Convert */: System_Object {
 		    throw __error
 		}
 		
-		return __returnValueC
+		return __returnValue
 		
 	
 	}
 	
-	public class func toChar(_ value: Bool /* System.Boolean */) throws -> UInt8 /* System.Char */ {
+	public class func toChar(_ value: Bool /* System.Boolean */) throws -> DNChar /* System.Char */ {
 		
 		
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Convert_ToChar_2(value, &__exceptionC)
 		
+		let __returnValue = DNChar(cValue: __returnValueC)
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -61640,17 +61729,20 @@ public class System_Convert /* System.Convert */: System_Object {
 		    throw __error
 		}
 		
-		return __returnValueC
+		return __returnValue
 		
 	
 	}
 	
-	public class func toChar(_ value: UInt8 /* System.Char */) throws -> UInt8 /* System.Char */ {
+	public class func toChar(_ value: DNChar /* System.Char */) throws -> DNChar /* System.Char */ {
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Convert_ToChar_3(value, &__exceptionC)
+		let __returnValueC = System_Convert_ToChar_3(valueC, &__exceptionC)
+		
+		let __returnValue = DNChar(cValue: __returnValueC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -61659,18 +61751,20 @@ public class System_Convert /* System.Convert */: System_Object {
 		    throw __error
 		}
 		
-		return __returnValueC
+		return __returnValue
 		
 	
 	}
 	
-	public class func toChar(_ value: Int8 /* System.SByte */) throws -> UInt8 /* System.Char */ {
+	public class func toChar(_ value: Int8 /* System.SByte */) throws -> DNChar /* System.Char */ {
 		
 		
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Convert_ToChar_4(value, &__exceptionC)
 		
+		let __returnValue = DNChar(cValue: __returnValueC)
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -61678,18 +61772,20 @@ public class System_Convert /* System.Convert */: System_Object {
 		    throw __error
 		}
 		
-		return __returnValueC
+		return __returnValue
 		
 	
 	}
 	
-	public class func toChar(_ value: UInt8 /* System.Byte */) throws -> UInt8 /* System.Char */ {
+	public class func toChar(_ value: UInt8 /* System.Byte */) throws -> DNChar /* System.Char */ {
 		
 		
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Convert_ToChar_5(value, &__exceptionC)
 		
+		let __returnValue = DNChar(cValue: __returnValueC)
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -61697,18 +61793,20 @@ public class System_Convert /* System.Convert */: System_Object {
 		    throw __error
 		}
 		
-		return __returnValueC
+		return __returnValue
 		
 	
 	}
 	
-	public class func toChar(_ value: Int16 /* System.Int16 */) throws -> UInt8 /* System.Char */ {
+	public class func toChar(_ value: Int16 /* System.Int16 */) throws -> DNChar /* System.Char */ {
 		
 		
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Convert_ToChar_6(value, &__exceptionC)
 		
+		let __returnValue = DNChar(cValue: __returnValueC)
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -61716,18 +61814,20 @@ public class System_Convert /* System.Convert */: System_Object {
 		    throw __error
 		}
 		
-		return __returnValueC
+		return __returnValue
 		
 	
 	}
 	
-	public class func toChar(_ value: UInt16 /* System.UInt16 */) throws -> UInt8 /* System.Char */ {
+	public class func toChar(_ value: UInt16 /* System.UInt16 */) throws -> DNChar /* System.Char */ {
 		
 		
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Convert_ToChar_7(value, &__exceptionC)
 		
+		let __returnValue = DNChar(cValue: __returnValueC)
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -61735,18 +61835,20 @@ public class System_Convert /* System.Convert */: System_Object {
 		    throw __error
 		}
 		
-		return __returnValueC
+		return __returnValue
 		
 	
 	}
 	
-	public class func toChar(_ value: Int32 /* System.Int32 */) throws -> UInt8 /* System.Char */ {
+	public class func toChar(_ value: Int32 /* System.Int32 */) throws -> DNChar /* System.Char */ {
 		
 		
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Convert_ToChar_8(value, &__exceptionC)
 		
+		let __returnValue = DNChar(cValue: __returnValueC)
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -61754,18 +61856,20 @@ public class System_Convert /* System.Convert */: System_Object {
 		    throw __error
 		}
 		
-		return __returnValueC
+		return __returnValue
 		
 	
 	}
 	
-	public class func toChar(_ value: UInt32 /* System.UInt32 */) throws -> UInt8 /* System.Char */ {
+	public class func toChar(_ value: UInt32 /* System.UInt32 */) throws -> DNChar /* System.Char */ {
 		
 		
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Convert_ToChar_9(value, &__exceptionC)
 		
+		let __returnValue = DNChar(cValue: __returnValueC)
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -61773,18 +61877,20 @@ public class System_Convert /* System.Convert */: System_Object {
 		    throw __error
 		}
 		
-		return __returnValueC
+		return __returnValue
 		
 	
 	}
 	
-	public class func toChar(_ value: Int64 /* System.Int64 */) throws -> UInt8 /* System.Char */ {
+	public class func toChar(_ value: Int64 /* System.Int64 */) throws -> DNChar /* System.Char */ {
 		
 		
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Convert_ToChar_10(value, &__exceptionC)
 		
+		let __returnValue = DNChar(cValue: __returnValueC)
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -61792,18 +61898,20 @@ public class System_Convert /* System.Convert */: System_Object {
 		    throw __error
 		}
 		
-		return __returnValueC
+		return __returnValue
 		
 	
 	}
 	
-	public class func toChar(_ value: UInt64 /* System.UInt64 */) throws -> UInt8 /* System.Char */ {
+	public class func toChar(_ value: UInt64 /* System.UInt64 */) throws -> DNChar /* System.Char */ {
 		
 		
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Convert_ToChar_11(value, &__exceptionC)
 		
+		let __returnValue = DNChar(cValue: __returnValueC)
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -61811,12 +61919,12 @@ public class System_Convert /* System.Convert */: System_Object {
 		    throw __error
 		}
 		
-		return __returnValueC
+		return __returnValue
 		
 	
 	}
 	
-	public class func toChar(_ value: System_String? /* System.String */) throws -> UInt8 /* System.Char */ {
+	public class func toChar(_ value: System_String? /* System.String */) throws -> DNChar /* System.Char */ {
 		let valueC = value?.__handle
 		
 		
@@ -61824,6 +61932,8 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 		let __returnValueC = System_Convert_ToChar_12(valueC, &__exceptionC)
 		
+		let __returnValue = DNChar(cValue: __returnValueC)
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -61831,12 +61941,12 @@ public class System_Convert /* System.Convert */: System_Object {
 		    throw __error
 		}
 		
-		return __returnValueC
+		return __returnValue
 		
 	
 	}
 	
-	public class func toChar(_ value: System_String? /* System.String */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> UInt8 /* System.Char */ {
+	public class func toChar(_ value: System_String? /* System.String */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> DNChar /* System.Char */ {
 		let valueC = value?.__handle
 		let providerC = provider?.__handle
 		
@@ -61845,6 +61955,8 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 		let __returnValueC = System_Convert_ToChar_13(valueC, providerC, &__exceptionC)
 		
+		let __returnValue = DNChar(cValue: __returnValueC)
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -61852,18 +61964,20 @@ public class System_Convert /* System.Convert */: System_Object {
 		    throw __error
 		}
 		
-		return __returnValueC
+		return __returnValue
 		
 	
 	}
 	
-	public class func toChar(_ value: Float /* System.Single */) throws -> UInt8 /* System.Char */ {
+	public class func toChar(_ value: Float /* System.Single */) throws -> DNChar /* System.Char */ {
 		
 		
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Convert_ToChar_14(value, &__exceptionC)
 		
+		let __returnValue = DNChar(cValue: __returnValueC)
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -61871,18 +61985,20 @@ public class System_Convert /* System.Convert */: System_Object {
 		    throw __error
 		}
 		
-		return __returnValueC
+		return __returnValue
 		
 	
 	}
 	
-	public class func toChar(_ value: Double /* System.Double */) throws -> UInt8 /* System.Char */ {
+	public class func toChar(_ value: Double /* System.Double */) throws -> DNChar /* System.Char */ {
 		
 		
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Convert_ToChar_15(value, &__exceptionC)
 		
+		let __returnValue = DNChar(cValue: __returnValueC)
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -61890,12 +62006,12 @@ public class System_Convert /* System.Convert */: System_Object {
 		    throw __error
 		}
 		
-		return __returnValueC
+		return __returnValue
 		
 	
 	}
 	
-	public class func toChar(_ value: System_Decimal? /* System.Decimal */) throws -> UInt8 /* System.Char */ {
+	public class func toChar(_ value: System_Decimal? /* System.Decimal */) throws -> DNChar /* System.Char */ {
 		let valueC = value?.__handle
 		
 		
@@ -61903,6 +62019,8 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 		let __returnValueC = System_Convert_ToChar_16(valueC, &__exceptionC)
 		
+		let __returnValue = DNChar(cValue: __returnValueC)
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -61910,12 +62028,12 @@ public class System_Convert /* System.Convert */: System_Object {
 		    throw __error
 		}
 		
-		return __returnValueC
+		return __returnValue
 		
 	
 	}
 	
-	public class func toChar(_ value: System_DateTime? /* System.DateTime */) throws -> UInt8 /* System.Char */ {
+	public class func toChar(_ value: System_DateTime? /* System.DateTime */) throws -> DNChar /* System.Char */ {
 		let valueC = value?.__handle
 		
 		
@@ -61923,6 +62041,8 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 		let __returnValueC = System_Convert_ToChar_17(valueC, &__exceptionC)
 		
+		let __returnValue = DNChar(cValue: __returnValueC)
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -61930,7 +62050,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		    throw __error
 		}
 		
-		return __returnValueC
+		return __returnValue
 		
 	
 	}
@@ -62014,12 +62134,13 @@ public class System_Convert /* System.Convert */: System_Object {
 	
 	}
 	
-	public class func toSByte(_ value: UInt8 /* System.Char */) throws -> Int8 /* System.SByte */ {
+	public class func toSByte(_ value: DNChar /* System.Char */) throws -> Int8 /* System.SByte */ {
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Convert_ToSByte_4(value, &__exceptionC)
+		let __returnValueC = System_Convert_ToSByte_4(valueC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -62364,12 +62485,13 @@ public class System_Convert /* System.Convert */: System_Object {
 	
 	}
 	
-	public class func toByte(_ value: UInt8 /* System.Char */) throws -> UInt8 /* System.Byte */ {
+	public class func toByte(_ value: DNChar /* System.Char */) throws -> UInt8 /* System.Byte */ {
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Convert_ToByte_4(value, &__exceptionC)
+		let __returnValueC = System_Convert_ToByte_4(valueC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -62695,12 +62817,13 @@ public class System_Convert /* System.Convert */: System_Object {
 	
 	}
 	
-	public class func toInt16(_ value: UInt8 /* System.Char */) throws -> Int16 /* System.Int16 */ {
+	public class func toInt16(_ value: DNChar /* System.Char */) throws -> Int16 /* System.Int16 */ {
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Convert_ToInt16_3(value, &__exceptionC)
+		let __returnValueC = System_Convert_ToInt16_3(valueC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -63045,12 +63168,13 @@ public class System_Convert /* System.Convert */: System_Object {
 	
 	}
 	
-	public class func toUInt16(_ value: UInt8 /* System.Char */) throws -> UInt16 /* System.UInt16 */ {
+	public class func toUInt16(_ value: DNChar /* System.Char */) throws -> UInt16 /* System.UInt16 */ {
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Convert_ToUInt16_3(value, &__exceptionC)
+		let __returnValueC = System_Convert_ToUInt16_3(valueC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -63395,12 +63519,13 @@ public class System_Convert /* System.Convert */: System_Object {
 	
 	}
 	
-	public class func toInt32(_ value: UInt8 /* System.Char */) throws -> Int32 /* System.Int32 */ {
+	public class func toInt32(_ value: DNChar /* System.Char */) throws -> Int32 /* System.Int32 */ {
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Convert_ToInt32_3(value, &__exceptionC)
+		let __returnValueC = System_Convert_ToInt32_3(valueC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -63745,12 +63870,13 @@ public class System_Convert /* System.Convert */: System_Object {
 	
 	}
 	
-	public class func toUInt32(_ value: UInt8 /* System.Char */) throws -> UInt32 /* System.UInt32 */ {
+	public class func toUInt32(_ value: DNChar /* System.Char */) throws -> UInt32 /* System.UInt32 */ {
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Convert_ToUInt32_3(value, &__exceptionC)
+		let __returnValueC = System_Convert_ToUInt32_3(valueC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -64095,12 +64221,13 @@ public class System_Convert /* System.Convert */: System_Object {
 	
 	}
 	
-	public class func toInt64(_ value: UInt8 /* System.Char */) throws -> Int64 /* System.Int64 */ {
+	public class func toInt64(_ value: DNChar /* System.Char */) throws -> Int64 /* System.Int64 */ {
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Convert_ToInt64_3(value, &__exceptionC)
+		let __returnValueC = System_Convert_ToInt64_3(valueC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -64445,12 +64572,13 @@ public class System_Convert /* System.Convert */: System_Object {
 	
 	}
 	
-	public class func toUInt64(_ value: UInt8 /* System.Char */) throws -> UInt64 /* System.UInt64 */ {
+	public class func toUInt64(_ value: DNChar /* System.Char */) throws -> UInt64 /* System.UInt64 */ {
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Convert_ToUInt64_3(value, &__exceptionC)
+		let __returnValueC = System_Convert_ToUInt64_3(valueC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -64814,12 +64942,13 @@ public class System_Convert /* System.Convert */: System_Object {
 	
 	}
 	
-	public class func toSingle(_ value: UInt8 /* System.Char */) throws -> Float /* System.Single */ {
+	public class func toSingle(_ value: DNChar /* System.Char */) throws -> Float /* System.Single */ {
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Convert_ToSingle_4(value, &__exceptionC)
+		let __returnValueC = System_Convert_ToSingle_4(valueC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -65183,12 +65312,13 @@ public class System_Convert /* System.Convert */: System_Object {
 	
 	}
 	
-	public class func toDouble(_ value: UInt8 /* System.Char */) throws -> Double /* System.Double */ {
+	public class func toDouble(_ value: DNChar /* System.Char */) throws -> Double /* System.Double */ {
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Convert_ToDouble_5(value, &__exceptionC)
+		let __returnValueC = System_Convert_ToDouble_5(valueC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -65522,12 +65652,13 @@ public class System_Convert /* System.Convert */: System_Object {
 	
 	}
 	
-	public class func toDecimal(_ value: UInt8 /* System.Char */) throws -> System_Decimal? /* System.Decimal */ {
+	public class func toDecimal(_ value: DNChar /* System.Char */) throws -> System_Decimal? /* System.Decimal */ {
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Convert_ToDecimal_4(value, &__exceptionC)
+		let __returnValueC = System_Convert_ToDecimal_4(valueC, &__exceptionC)
 		
 		let __returnValue = System_Decimal(handle: __returnValueC)
 		
@@ -66122,12 +66253,13 @@ public class System_Convert /* System.Convert */: System_Object {
 	
 	}
 	
-	public class func toDateTime(_ value: UInt8 /* System.Char */) throws -> System_DateTime? /* System.DateTime */ {
+	public class func toDateTime(_ value: DNChar /* System.Char */) throws -> System_DateTime? /* System.DateTime */ {
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Convert_ToDateTime_14(value, &__exceptionC)
+		let __returnValueC = System_Convert_ToDateTime_14(valueC, &__exceptionC)
 		
 		let __returnValue = System_DateTime(handle: __returnValueC)
 		
@@ -66295,12 +66427,13 @@ public class System_Convert /* System.Convert */: System_Object {
 	
 	}
 	
-	public class func toString(_ value: UInt8 /* System.Char */) throws -> System_String? /* System.String */ {
+	public class func toString(_ value: DNChar /* System.Char */) throws -> System_String? /* System.String */ {
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Convert_ToString_4(value, &__exceptionC)
+		let __returnValueC = System_Convert_ToString_4(valueC, &__exceptionC)
 		
 		let __returnValue = System_String(handle: __returnValueC)
 		
@@ -66316,13 +66449,14 @@ public class System_Convert /* System.Convert */: System_Object {
 	
 	}
 	
-	public class func toString(_ value: UInt8 /* System.Char */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public class func toString(_ value: DNChar /* System.Char */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+		let valueC = value.cValue
 		let providerC = provider?.__handle
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Convert_ToString_5(value, providerC, &__exceptionC)
+		let __returnValueC = System_Convert_ToString_5(valueC, providerC, &__exceptionC)
 		
 		let __returnValue = System_String(handle: __returnValueC)
 		
@@ -75504,12 +75638,13 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 	
 	}
 	
-	public func append(_ value: UInt8 /* System.Char */, _ repeatCount: Int32 /* System.Int32 */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func append(_ value: DNChar /* System.Char */, _ repeatCount: Int32 /* System.Int32 */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_StringBuilder_Append(self.__handle, value, repeatCount, &__exceptionC)
+		let __returnValueC = System_Text_StringBuilder_Append(self.__handle, valueC, repeatCount, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
 		
@@ -75761,12 +75896,13 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 	
 	}
 	
-	public func append(_ value: UInt8 /* System.Char */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func append(_ value: DNChar /* System.Char */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_StringBuilder_Append_7(self.__handle, value, &__exceptionC)
+		let __returnValueC = System_Text_StringBuilder_Append_7(self.__handle, valueC, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
 		
@@ -76194,13 +76330,14 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 	
 	}
 	
-	public func appendJoin(_ separator: UInt8 /* System.Char */, _ values: System_Object_Array? /* System.Object[] */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func appendJoin(_ separator: DNChar /* System.Char */, _ values: System_Object_Array? /* System.Object[] */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+		let separatorC = separator.cValue
 		let valuesC = values?.__handle
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_StringBuilder_AppendJoin_2(self.__handle, separator, valuesC, &__exceptionC)
+		let __returnValueC = System_Text_StringBuilder_AppendJoin_2(self.__handle, separatorC, valuesC, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
 		
@@ -76216,13 +76353,14 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 	
 	}
 	
-	public func appendJoin(_ separator: UInt8 /* System.Char */, _ values: System_String_Array? /* System.String[] */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func appendJoin(_ separator: DNChar /* System.Char */, _ values: System_String_Array? /* System.String[] */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+		let separatorC = separator.cValue
 		let valuesC = values?.__handle
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_StringBuilder_AppendJoin_3(self.__handle, separator, valuesC, &__exceptionC)
+		let __returnValueC = System_Text_StringBuilder_AppendJoin_3(self.__handle, separatorC, valuesC, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
 		
@@ -76344,12 +76482,13 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 	
 	}
 	
-	public func insert(_ index: Int32 /* System.Int32 */, _ value: UInt8 /* System.Char */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func insert(_ index: Int32 /* System.Int32 */, _ value: DNChar /* System.Char */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_StringBuilder_Insert_6(self.__handle, index, value, &__exceptionC)
+		let __returnValueC = System_Text_StringBuilder_Insert_6(self.__handle, index, valueC, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
 		
@@ -76965,12 +77104,14 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 	
 	}
 	
-	public func replace(_ oldChar: UInt8 /* System.Char */, _ newChar: UInt8 /* System.Char */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func replace(_ oldChar: DNChar /* System.Char */, _ newChar: DNChar /* System.Char */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+		let oldCharC = oldChar.cValue
+		let newCharC = newChar.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_StringBuilder_Replace_2(self.__handle, oldChar, newChar, &__exceptionC)
+		let __returnValueC = System_Text_StringBuilder_Replace_2(self.__handle, oldCharC, newCharC, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
 		
@@ -76986,12 +77127,14 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 	
 	}
 	
-	public func replace(_ oldChar: UInt8 /* System.Char */, _ newChar: UInt8 /* System.Char */, _ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func replace(_ oldChar: DNChar /* System.Char */, _ newChar: DNChar /* System.Char */, _ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+		let oldCharC = oldChar.cValue
+		let newCharC = newChar.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_StringBuilder_Replace_3(self.__handle, oldChar, newChar, startIndex, count, &__exceptionC)
+		let __returnValueC = System_Text_StringBuilder_Replace_3(self.__handle, oldCharC, newCharC, startIndex, count, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
 		
@@ -78158,45 +78301,53 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 	
 	}
 	
-	public class func directorySeparatorChar_get() -> UInt8 /* System.Char */ {
+	public class func directorySeparatorChar_get() -> DNChar /* System.Char */ {
 		
 		
 		let __returnValueC = System_IO_Path_DirectorySeparatorChar_Get()
 		
-		return __returnValueC
+		let __returnValue = DNChar(cValue: __returnValueC)
+		
+		return __returnValue
 		
 	
 	}
 	
 	
-	public class func altDirectorySeparatorChar_get() -> UInt8 /* System.Char */ {
+	public class func altDirectorySeparatorChar_get() -> DNChar /* System.Char */ {
 		
 		
 		let __returnValueC = System_IO_Path_AltDirectorySeparatorChar_Get()
 		
-		return __returnValueC
+		let __returnValue = DNChar(cValue: __returnValueC)
+		
+		return __returnValue
 		
 	
 	}
 	
 	
-	public class func volumeSeparatorChar_get() -> UInt8 /* System.Char */ {
+	public class func volumeSeparatorChar_get() -> DNChar /* System.Char */ {
 		
 		
 		let __returnValueC = System_IO_Path_VolumeSeparatorChar_Get()
 		
-		return __returnValueC
+		let __returnValue = DNChar(cValue: __returnValueC)
+		
+		return __returnValue
 		
 	
 	}
 	
 	
-	public class func pathSeparator_get() -> UInt8 /* System.Char */ {
+	public class func pathSeparator_get() -> DNChar /* System.Char */ {
 		
 		
 		let __returnValueC = System_IO_Path_PathSeparator_Get()
 		
-		return __returnValueC
+		let __returnValue = DNChar(cValue: __returnValueC)
+		
+		return __returnValue
 		
 	
 	}
@@ -81268,12 +81419,13 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 	
 	}
 	
-	public override func write(_ value: UInt8 /* System.Char */) throws {
+	public override func write(_ value: DNChar /* System.Char */) throws {
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_StreamWriter_Write(self.__handle, value, &__exceptionC)
+		System_IO_StreamWriter_Write(self.__handle, valueC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -81528,12 +81680,13 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 	
 	}
 	
-	public override func writeAsync(_ value: UInt8 /* System.Char */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public override func writeAsync(_ value: DNChar /* System.Char */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_IO_StreamWriter_WriteAsync(self.__handle, value, &__exceptionC)
+		let __returnValueC = System_IO_StreamWriter_WriteAsync(self.__handle, valueC, &__exceptionC)
 		
 		let __returnValue = System_Threading_Tasks_Task(handle: __returnValueC)
 		
@@ -81614,12 +81767,13 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 	
 	}
 	
-	public override func writeLineAsync(_ value: UInt8 /* System.Char */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public override func writeLineAsync(_ value: DNChar /* System.Char */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_IO_StreamWriter_WriteLineAsync_1(self.__handle, value, &__exceptionC)
+		let __returnValueC = System_IO_StreamWriter_WriteLineAsync_1(self.__handle, valueC, &__exceptionC)
 		
 		let __returnValue = System_Threading_Tasks_Task(handle: __returnValueC)
 		
@@ -82116,12 +82270,13 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 	
 	}
 	
-	public func write(_ value: UInt8 /* System.Char */) throws {
+	public func write(_ value: DNChar /* System.Char */) throws {
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_Write(self.__handle, value, &__exceptionC)
+		System_IO_TextWriter_Write(self.__handle, valueC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -82475,12 +82630,13 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 	
 	}
 	
-	public func writeLine(_ value: UInt8 /* System.Char */) throws {
+	public func writeLine(_ value: DNChar /* System.Char */) throws {
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_WriteLine_1(self.__handle, value, &__exceptionC)
+		System_IO_TextWriter_WriteLine_1(self.__handle, valueC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -82816,12 +82972,13 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 	
 	}
 	
-	public func writeAsync(_ value: UInt8 /* System.Char */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public func writeAsync(_ value: DNChar /* System.Char */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_IO_TextWriter_WriteAsync(self.__handle, value, &__exceptionC)
+		let __returnValueC = System_IO_TextWriter_WriteAsync(self.__handle, valueC, &__exceptionC)
 		
 		let __returnValue = System_Threading_Tasks_Task(handle: __returnValueC)
 		
@@ -82926,12 +83083,13 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 	
 	}
 	
-	public func writeLineAsync(_ value: UInt8 /* System.Char */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public func writeLineAsync(_ value: DNChar /* System.Char */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+		let valueC = value.cValue
 		
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_IO_TextWriter_WriteLineAsync(self.__handle, value, &__exceptionC)
+		let __returnValueC = System_IO_TextWriter_WriteLineAsync(self.__handle, valueC, &__exceptionC)
 		
 		let __returnValue = System_Threading_Tasks_Task(handle: __returnValueC)
 		
@@ -90189,7 +90347,7 @@ public class NativeAOT_CodeGeneratorInputSample_TestClass /* NativeAOT.CodeGener
 	
 	}
 	
-	public func getCurrentBookByRef() throws -> NativeAOT_CodeGeneratorInputSample_Book? /* NativeAOT.CodeGeneratorInputSample.Book */ {
+	public func getCurrentBookByRef() throws -> inout NativeAOT_CodeGeneratorInputSample_Book? /* NativeAOT.CodeGeneratorInputSample.Book */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -90210,7 +90368,7 @@ public class NativeAOT_CodeGeneratorInputSample_TestClass /* NativeAOT.CodeGener
 	
 	}
 	
-	public func increaseAndGetCurrentIntValueByRef() throws -> Int32 /* System.Int32 */ {
+	public func increaseAndGetCurrentIntValueByRef() throws -> inout Int32? /* System.Int32 */ {
 		
 		
 		var __exceptionC: System_Exception_t?

@@ -3,6 +3,14 @@ namespace NativeAOT.CodeGenerator.Generator.Swift;
 public class SwiftSharedCode
 {
     public const string SharedCode = """
+public struct DNChar {
+    public let cValue: wchar_t
+
+    public init(cValue: wchar_t) {
+        self.cValue = cValue
+    }
+}
+
 public class DNObject {
     let __handle: UnsafeMutableRawPointer
 

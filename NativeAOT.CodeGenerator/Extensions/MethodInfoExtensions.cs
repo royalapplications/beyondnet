@@ -4,7 +4,6 @@ namespace NativeAOT.CodeGenerator.Extensions;
 
 public static class MethodInfoExtensions
 {
-    // TODO: Works only for methods (not! fields)
     public static bool IsOverridden(this MethodInfo methodInfo)
     {
         Type? declaringType = methodInfo.DeclaringType;
@@ -16,13 +15,27 @@ public static class MethodInfoExtensions
         MethodInfo baseMethodInfo = methodInfo.GetBaseDefinition();
         Type? baseMethodDeclaringType = baseMethodInfo.DeclaringType;
 
+        if (baseMethodDeclaringType is null) {
+            return false;
+        }
+
+        bool declaringTypeIsGeneric = declaringType.IsGenericType ||
+                                      declaringType.IsGenericTypeDefinition;
+
+        bool baseTypeIsGeneric = baseMethodDeclaringType.IsGenericType ||
+                                 baseMethodDeclaringType.IsGenericTypeDefinition;
+
+        if (declaringTypeIsGeneric != baseTypeIsGeneric) {
+            return false;
+        }
+
         bool isOverridden = methodInfo != baseMethodInfo || 
-                            declaringType != baseMethodDeclaringType;
+                            declaringType != baseMethodDeclaringType ||
+                            declaringTypeIsGeneric != baseTypeIsGeneric;
 
         return isOverridden;
     }
 
-    // TODO: Works only for methods (not! fields)
     public static bool IsShadowed(this MethodInfo methodInfo)
     {
         Type? declaringType = methodInfo.DeclaringType;
@@ -34,14 +47,26 @@ public static class MethodInfoExtensions
         Type? baseType = declaringType.BaseType;
 
         if (baseType is not null) {
+            bool declaringTypeIsGeneric = declaringType.IsGenericType ||
+                                          declaringType.IsGenericTypeDefinition;
+            
+            bool baseTypeIsGeneric = baseType.IsGenericType ||
+                                     baseType.IsGenericTypeDefinition;
+
+            if (declaringTypeIsGeneric != baseTypeIsGeneric) {
+                return false;
+            }
+            
             MemberInfo[] baseMembers = baseType.GetMember(methodInfo.Name);
 
             foreach (var baseMember in baseMembers) {
                 if (baseMember is not MethodInfo baseBaseMethodInfo) {
                     continue;
                 }
+
+                Type? baseBaseDeclaringType = baseBaseMethodInfo.DeclaringType;
                 
-                if (baseBaseMethodInfo.DeclaringType == declaringType) {
+                if (baseBaseDeclaringType == declaringType) {
                     continue;
                 }
 
