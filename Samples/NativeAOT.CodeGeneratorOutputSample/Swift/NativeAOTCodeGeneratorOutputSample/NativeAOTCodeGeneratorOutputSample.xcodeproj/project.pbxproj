@@ -32,6 +32,7 @@
 		E779630029DC171E00E1E70B /* SystemRuntimeInteropServicesMarshalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77962FF29DC171E00E1E70B /* SystemRuntimeInteropServicesMarshalTests.swift */; };
 		E779630229DC54E300E1E70B /* SystemThreadingTasksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E779630129DC54E300E1E70B /* SystemThreadingTasksTests.swift */; };
 		E77A85B229DD7EF9000CA09E /* GenericTestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A85B129DD7EF9000CA09E /* GenericTestsTests.swift */; };
+		E787AA8629EDC0BA00601F1A /* SystemObjectTests_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E787AA8529EDC0BA00601F1A /* SystemObjectTests_Swift.swift */; };
 		E790C0DB29E6ABC70054AA4B /* GenericTestClassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E790C0DA29E6ABC70054AA4B /* GenericTestClassTests.swift */; };
 		E790C0DD29E6B1B80054AA4B /* SystemCollectionsGenericListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E790C0DC29E6B1B80054AA4B /* SystemCollectionsGenericListTests.swift */; };
 		E790C0DF29E6B2500054AA4B /* SystemCollectionsGenericDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E790C0DE29E6B2500054AA4B /* SystemCollectionsGenericDictionaryTests.swift */; };
@@ -97,7 +98,6 @@
 		E70D116A29BF9FCC00B4E738 /* NativeAOT.CodeGeneratorOutputSample.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = NativeAOT.CodeGeneratorOutputSample.dylib; sourceTree = "<group>"; };
 		E70D117229BF9FEC00B4E738 /* NativeAOTCodeGeneratorOutputSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NativeAOTCodeGeneratorOutputSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E70D117429BF9FEC00B4E738 /* TestClassesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClassesTests.swift; sourceTree = "<group>"; };
-		E720931F29CE188E0071B5B3 /* NativeBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeBox.swift; sourceTree = "<group>"; };
 		E73EE8F129DAEA0500C57A71 /* SystemThreadingThreadTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemThreadingThreadTest.swift; sourceTree = "<group>"; };
 		E73EE8F329DAEC1A00C57A71 /* SystemThreadingTimerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemThreadingTimerTest.swift; sourceTree = "<group>"; };
 		E73EE8F529DAF09D00C57A71 /* SystemMathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemMathTests.swift; sourceTree = "<group>"; };
@@ -116,6 +116,7 @@
 		E779630129DC54E300E1E70B /* SystemThreadingTasksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemThreadingTasksTests.swift; sourceTree = "<group>"; };
 		E77A85B129DD7EF9000CA09E /* GenericTestsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTestsTests.swift; sourceTree = "<group>"; };
 		E7808CE929DEFB2600F50203 /* NativeAOTCodeGeneratorOutputSample.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = NativeAOTCodeGeneratorOutputSample.xctestplan; sourceTree = SOURCE_ROOT; };
+		E787AA8529EDC0BA00601F1A /* SystemObjectTests_Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemObjectTests_Swift.swift; sourceTree = "<group>"; };
 		E790C0DA29E6ABC70054AA4B /* GenericTestClassTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTestClassTests.swift; sourceTree = "<group>"; };
 		E790C0DC29E6B1B80054AA4B /* SystemCollectionsGenericListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemCollectionsGenericListTests.swift; sourceTree = "<group>"; };
 		E790C0DE29E6B2500054AA4B /* SystemCollectionsGenericDictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemCollectionsGenericDictionaryTests.swift; sourceTree = "<group>"; };
@@ -200,7 +201,6 @@
 		E720931E29CE187C0071B5B3 /* SwiftSupport */ = {
 			isa = PBXGroup;
 			children = (
-				E720931F29CE188E0071B5B3 /* NativeBox.swift */,
 				E79B376429E002E700118C35 /* StringExtensions.swift */,
 			);
 			path = SwiftSupport;
@@ -231,6 +231,7 @@
 				E763998629E5537300C2541B /* TypeConversionTests.swift */,
 				E763998829E55EC600C2541B /* PrimitivesBoxingTests.swift */,
 				E7F4A49129CB5F2A00D93D81 /* SystemObjectTests.swift */,
+				E787AA8529EDC0BA00601F1A /* SystemObjectTests_Swift.swift */,
 				E70A1FAC29C3652100843CD0 /* SystemTypeTests.swift */,
 				E7F4A49329CB676100D93D81 /* SystemExceptionTests.swift */,
 				E7C8CF0629C1FABA00C4230F /* SystemStringTests.swift */,
@@ -446,6 +447,7 @@
 				E7F4A49229CB5F2A00D93D81 /* SystemObjectTests.swift in Sources */,
 				E779630229DC54E300E1E70B /* SystemThreadingTasksTests.swift in Sources */,
 				E73EE8FC29DB12A300C57A71 /* SystemReflectionAssemblyTests.swift in Sources */,
+				E787AA8629EDC0BA00601F1A /* SystemObjectTests_Swift.swift in Sources */,
 				E75FFBAC29E83C70006904BA /* SystemTupleTests.swift in Sources */,
 				E7C8CF0D29C2139B00C4230F /* PersonTests.swift in Sources */,
 				E73EE8F429DAEC1A00C57A71 /* SystemThreadingTimerTest.swift in Sources */,

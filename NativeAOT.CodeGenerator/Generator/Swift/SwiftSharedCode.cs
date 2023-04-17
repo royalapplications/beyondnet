@@ -14,8 +14,8 @@ public struct DNChar {
 public class DNObject {
     let __handle: UnsafeMutableRawPointer
 
-    public var typeName: String { "" }
-    public var fullTypeName: String { "" }
+    public class var typeName: String { "" }
+    public class var fullTypeName: String { "" }
 
     required init(handle: UnsafeMutableRawPointer) {
 		self.__handle = handle

@@ -18,8 +18,8 @@ public struct DNChar {
 public class DNObject {
     let __handle: UnsafeMutableRawPointer
 
-    public var typeName: String { "" }
-    public var fullTypeName: String { "" }
+    public class var typeName: String { "" }
+    public class var fullTypeName: String { "" }
 
     required init(handle: UnsafeMutableRawPointer) {
 		self.__handle = handle
@@ -1577,6 +1577,8 @@ public enum NativeAOT_CodeGeneratorInputSample_TestEnum: Int32 {
 
 
 public class System_Object /* System.Object */: DNObject {
+public override class var typeName: String { "Object" }
+public override class var fullTypeName: String { "System.Object" }
 	public func getType() throws -> System_Type? /* System.Type */ {
 		
 		
@@ -1739,6 +1741,8 @@ public class System_Object /* System.Object */: DNObject {
 
 
 public class System_Type /* System.Type */: System_Reflection_MemberInfo {
+public override class var typeName: String { "Type" }
+public override class var fullTypeName: String { "System.Type" }
 	public class func getType(_ typeName: System_String? /* System.String */, _ throwOnError: Bool /* System.Boolean */, _ ignoreCase: Bool /* System.Boolean */) throws -> System_Type? /* System.Type */ {
 		let typeNameC = typeName?.__handle
 		
@@ -5532,6 +5536,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 
 
 public class System_Reflection_MemberInfo /* System.Reflection.MemberInfo */: System_Object {
+public override class var typeName: String { "MemberInfo" }
+public override class var fullTypeName: String { "System.Reflection.MemberInfo" }
 	public func hasSameMetadataDefinitionAs(_ other: System_Reflection_MemberInfo? /* System.Reflection.MemberInfo */) throws -> Bool /* System.Boolean */ {
 		let otherC = other?.__handle
 		
@@ -5865,6 +5871,8 @@ public class System_Reflection_MemberInfo /* System.Reflection.MemberInfo */: Sy
 
 
 public class System_Reflection_ICustomAttributeProvider /* System.Reflection.ICustomAttributeProvider */: DNObject {
+public override class var typeName: String { "ICustomAttributeProvider" }
+public override class var fullTypeName: String { "System.Reflection.ICustomAttributeProvider" }
 	public func getCustomAttributes(_ inherit: Bool /* System.Boolean */) throws -> System_Object_Array? /* System.Object[] */ {
 		
 		
@@ -5946,12 +5954,16 @@ public class System_Reflection_ICustomAttributeProvider /* System.Reflection.ICu
 
 
 public class System_Object_Array /* System.Object[] */: System_Array {
+public override class var typeName: String { "Object[]" }
+public override class var fullTypeName: String { "System.Object[]" }
 	
 
 }
 
 
 public class System_Array /* System.Array */: System_Object {
+public override class var typeName: String { "Array" }
+public override class var fullTypeName: String { "System.Array" }
 	public class func constrainedCopy(_ sourceArray: System_Array? /* System.Array */, _ sourceIndex: Int32 /* System.Int32 */, _ destinationArray: System_Array? /* System.Array */, _ destinationIndex: Int32 /* System.Int32 */, _ length: Int32 /* System.Int32 */) throws {
 		let sourceArrayC = sourceArray?.__handle
 		let destinationArrayC = destinationArray?.__handle
@@ -7678,6 +7690,8 @@ public class System_Array /* System.Array */: System_Object {
 
 
 public class System_ICloneable /* System.ICloneable */: DNObject {
+public override class var typeName: String { "ICloneable" }
+public override class var fullTypeName: String { "System.ICloneable" }
 	public func clone() throws -> System_Object? /* System.Object */ {
 		
 		
@@ -7717,6 +7731,8 @@ public class System_ICloneable /* System.ICloneable */: DNObject {
 
 
 public class System_Collections_IList /* System.Collections.IList */: DNObject {
+public override class var typeName: String { "IList" }
+public override class var fullTypeName: String { "System.Collections.IList" }
 	public func add(_ value: System_Object? /* System.Object */) throws -> Int32 /* System.Int32 */ {
 		let valueC = value?.__handle
 		
@@ -7909,6 +7925,8 @@ public class System_Collections_IList /* System.Collections.IList */: DNObject {
 
 
 public class System_Collections_ICollection /* System.Collections.ICollection */: DNObject {
+public override class var typeName: String { "ICollection" }
+public override class var fullTypeName: String { "System.Collections.ICollection" }
 	public func copyTo(_ array: System_Array? /* System.Array */, _ index: Int32 /* System.Int32 */) throws {
 		let arrayC = array?.__handle
 		
@@ -8008,6 +8026,8 @@ public class System_Collections_ICollection /* System.Collections.ICollection */
 
 
 public class System_Collections_IEnumerable /* System.Collections.IEnumerable */: DNObject {
+public override class var typeName: String { "IEnumerable" }
+public override class var fullTypeName: String { "System.Collections.IEnumerable" }
 	public func getEnumerator() throws -> System_Collections_IEnumerator? /* System.Collections.IEnumerator */ {
 		
 		
@@ -8047,6 +8067,8 @@ public class System_Collections_IEnumerable /* System.Collections.IEnumerable */
 
 
 public class System_Collections_IEnumerator /* System.Collections.IEnumerator */: DNObject {
+public override class var typeName: String { "IEnumerator" }
+public override class var fullTypeName: String { "System.Collections.IEnumerator" }
 	public func moveNext() throws -> Bool /* System.Boolean */ {
 		
 		
@@ -8125,6 +8147,8 @@ public class System_Collections_IEnumerator /* System.Collections.IEnumerator */
 
 
 public class System_ValueType /* System.ValueType */: System_Object {
+public override class var typeName: String { "ValueType" }
+public override class var fullTypeName: String { "System.ValueType" }
 	public override func equals(_ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
 		let objC = obj?.__handle
 		
@@ -8204,6 +8228,8 @@ public class System_ValueType /* System.ValueType */: System_Object {
 
 
 public class System_IComparable /* System.IComparable */: DNObject {
+public override class var typeName: String { "IComparable" }
+public override class var fullTypeName: String { "System.IComparable" }
 	public func compareTo(_ obj: System_Object? /* System.Object */) throws -> Int32 /* System.Int32 */ {
 		let objC = obj?.__handle
 		
@@ -8242,6 +8268,8 @@ public class System_IComparable /* System.IComparable */: DNObject {
 
 
 public class System_IConvertible /* System.IConvertible */: DNObject {
+public override class var typeName: String { "IConvertible" }
+public override class var fullTypeName: String { "System.IConvertible" }
 	public func getTypeCode() throws -> System_TypeCode /* System.TypeCode */ {
 		
 		
@@ -8612,6 +8640,8 @@ public class System_IConvertible /* System.IConvertible */: DNObject {
 
 
 public class System_Enum /* System.Enum */: System_ValueType {
+public override class var typeName: String { "Enum" }
+public override class var fullTypeName: String { "System.Enum" }
 	public class func getName(_ TEnum: System_Type /* System.Type */, _ value: System_Object? /* System.Object */) throws -> System_String? /* System.String */ {
 		let TEnumC = TEnum.__handle
 		let valueC = value?.__handle
@@ -9463,6 +9493,8 @@ public class System_Enum /* System.Enum */: System_ValueType {
 
 
 public class System_ISpanFormattable /* System.ISpanFormattable */: DNObject {
+public override class var typeName: String { "ISpanFormattable" }
+public override class var fullTypeName: String { "System.ISpanFormattable" }
 	public override class func typeOf() -> System_Type? /* System.Type */ {
 		return System_Type(handle: System_ISpanFormattable_TypeOf())
 		
@@ -9481,6 +9513,8 @@ public class System_ISpanFormattable /* System.ISpanFormattable */: DNObject {
 
 
 public class System_IFormattable /* System.IFormattable */: DNObject {
+public override class var typeName: String { "IFormattable" }
+public override class var fullTypeName: String { "System.IFormattable" }
 	public func toString(_ format: System_String? /* System.String */, _ formatProvider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
 		let formatC = format?.__handle
 		let formatProviderC = formatProvider?.__handle
@@ -9522,6 +9556,8 @@ public class System_IFormattable /* System.IFormattable */: DNObject {
 
 
 public class System_String /* System.String */: System_Object {
+public override class var typeName: String { "String" }
+public override class var fullTypeName: String { "System.String" }
 	public class func intern(_ str: System_String? /* System.String */) throws -> System_String? /* System.String */ {
 		let strC = str?.__handle
 		
@@ -12762,6 +12798,8 @@ public class System_String /* System.String */: System_Object {
 
 
 public class System_IDisposable /* System.IDisposable */: DNObject {
+public override class var typeName: String { "IDisposable" }
+public override class var fullTypeName: String { "System.IDisposable" }
 	public func dispose() throws {
 		
 		
@@ -12837,6 +12875,8 @@ public class System_IDisposable /* System.IDisposable */: DNObject {
 
 
 public class System_IFormatProvider /* System.IFormatProvider */: DNObject {
+public override class var typeName: String { "IFormatProvider" }
+public override class var fullTypeName: String { "System.IFormatProvider" }
 	public func getFormat(_ formatType: System_Type? /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let formatTypeC = formatType?.__handle
 		
@@ -12888,12 +12928,16 @@ public class System_IFormatProvider /* System.IFormatProvider */: DNObject {
 
 
 public class System_Byte_Array /* System.Byte[] */: System_Array {
+public override class var typeName: String { "Byte[]" }
+public override class var fullTypeName: String { "System.Byte[]" }
 	
 
 }
 
 
 public class System_Collections_IStructuralComparable /* System.Collections.IStructuralComparable */: DNObject {
+public override class var typeName: String { "IStructuralComparable" }
+public override class var fullTypeName: String { "System.Collections.IStructuralComparable" }
 	public func compareTo(_ other: System_Object? /* System.Object */, _ comparer: System_Collections_IComparer? /* System.Collections.IComparer */) throws -> Int32 /* System.Int32 */ {
 		let otherC = other?.__handle
 		let comparerC = comparer?.__handle
@@ -12933,6 +12977,8 @@ public class System_Collections_IStructuralComparable /* System.Collections.IStr
 
 
 public class System_Collections_IComparer /* System.Collections.IComparer */: DNObject {
+public override class var typeName: String { "IComparer" }
+public override class var fullTypeName: String { "System.Collections.IComparer" }
 	public func compare(_ x: System_Object? /* System.Object */, _ y: System_Object? /* System.Object */) throws -> Int32 /* System.Int32 */ {
 		let xC = x?.__handle
 		let yC = y?.__handle
@@ -12972,6 +13018,8 @@ public class System_Collections_IComparer /* System.Collections.IComparer */: DN
 
 
 public class System_Collections_IStructuralEquatable /* System.Collections.IStructuralEquatable */: DNObject {
+public override class var typeName: String { "IStructuralEquatable" }
+public override class var fullTypeName: String { "System.Collections.IStructuralEquatable" }
 	public func equals(_ other: System_Object? /* System.Object */, _ comparer: System_Collections_IEqualityComparer? /* System.Collections.IEqualityComparer */) throws -> Bool /* System.Boolean */ {
 		let otherC = other?.__handle
 		let comparerC = comparer?.__handle
@@ -13031,6 +13079,8 @@ public class System_Collections_IStructuralEquatable /* System.Collections.IStru
 
 
 public class System_Collections_IEqualityComparer /* System.Collections.IEqualityComparer */: DNObject {
+public override class var typeName: String { "IEqualityComparer" }
+public override class var fullTypeName: String { "System.Collections.IEqualityComparer" }
 	public func equals(_ x: System_Object? /* System.Object */, _ y: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
 		let xC = x?.__handle
 		let yC = y?.__handle
@@ -13162,6 +13212,8 @@ public class System_Collections_IEqualityComparer /* System.Collections.IEqualit
 
 
 public class System_Globalization_CultureInfo /* System.Globalization.CultureInfo */: System_Object {
+public override class var typeName: String { "CultureInfo" }
+public override class var fullTypeName: String { "System.Globalization.CultureInfo" }
 	public class func createSpecificCulture(_ name: System_String? /* System.String */) throws -> System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ {
 		let nameC = name?.__handle
 		
@@ -14282,6 +14334,8 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 
 
 public class System_Globalization_CultureInfo_Array /* System.Globalization.CultureInfo[] */: System_Array {
+public override class var typeName: String { "CultureInfo[]" }
+public override class var fullTypeName: String { "System.Globalization.CultureInfo[]" }
 	
 
 }
@@ -14301,6 +14355,8 @@ public class System_Globalization_CultureInfo_Array /* System.Globalization.Cult
 
 
 public class System_Globalization_CompareInfo /* System.Globalization.CompareInfo */: System_Object {
+public override class var typeName: String { "CompareInfo" }
+public override class var fullTypeName: String { "System.Globalization.CompareInfo" }
 	public class func getCompareInfo(_ culture: Int32 /* System.Int32 */, _ assembly: System_Reflection_Assembly? /* System.Reflection.Assembly */) throws -> System_Globalization_CompareInfo? /* System.Globalization.CompareInfo */ {
 		let assemblyC = assembly?.__handle
 		
@@ -15388,6 +15444,8 @@ public class System_Globalization_CompareInfo /* System.Globalization.CompareInf
 
 
 public class System_Runtime_Serialization_IDeserializationCallback /* System.Runtime.Serialization.IDeserializationCallback */: DNObject {
+public override class var typeName: String { "IDeserializationCallback" }
+public override class var fullTypeName: String { "System.Runtime.Serialization.IDeserializationCallback" }
 	public func onDeserialization(_ sender: System_Object? /* System.Object */) throws {
 		let senderC = sender?.__handle
 		
@@ -15425,6 +15483,8 @@ public class System_Runtime_Serialization_IDeserializationCallback /* System.Run
 
 
 public class System_Reflection_Assembly /* System.Reflection.Assembly */: System_Object {
+public override class var typeName: String { "Assembly" }
+public override class var fullTypeName: String { "System.Reflection.Assembly" }
 	public class func load(_ assemblyString: System_String? /* System.String */) throws -> System_Reflection_Assembly? /* System.Reflection.Assembly */ {
 		let assemblyStringC = assemblyString?.__handle
 		
@@ -16982,6 +17042,8 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 
 
 public class System_Runtime_Serialization_ISerializable /* System.Runtime.Serialization.ISerializable */: DNObject {
+public override class var typeName: String { "ISerializable" }
+public override class var fullTypeName: String { "System.Runtime.Serialization.ISerializable" }
 	public func getObjectData(_ info: System_Runtime_Serialization_SerializationInfo? /* System.Runtime.Serialization.SerializationInfo */, _ context: System_Runtime_Serialization_StreamingContext? /* System.Runtime.Serialization.StreamingContext */) throws {
 		let infoC = info?.__handle
 		let contextC = context?.__handle
@@ -17020,6 +17082,8 @@ public class System_Runtime_Serialization_ISerializable /* System.Runtime.Serial
 
 
 public class System_Runtime_Serialization_SerializationInfo /* System.Runtime.Serialization.SerializationInfo */: System_Object {
+public override class var typeName: String { "SerializationInfo" }
+public override class var fullTypeName: String { "System.Runtime.Serialization.SerializationInfo" }
 	public func setType(_ type: System_Type? /* System.Type */) throws {
 		let typeC = type?.__handle
 		
@@ -17929,6 +17993,8 @@ public class System_Runtime_Serialization_SerializationInfo /* System.Runtime.Se
 
 
 public class System_Runtime_Serialization_SerializationInfoEnumerator /* System.Runtime.Serialization.SerializationInfoEnumerator */: System_Object {
+public override class var typeName: String { "SerializationInfoEnumerator" }
+public override class var fullTypeName: String { "System.Runtime.Serialization.SerializationInfoEnumerator" }
 	public func moveNext() throws -> Bool /* System.Boolean */ {
 		
 		
@@ -18072,6 +18138,8 @@ public class System_Runtime_Serialization_SerializationInfoEnumerator /* System.
 
 
 public class System_Runtime_Serialization_SerializationEntry /* System.Runtime.Serialization.SerializationEntry */: System_ValueType {
+public override class var typeName: String { "SerializationEntry" }
+public override class var fullTypeName: String { "System.Runtime.Serialization.SerializationEntry" }
 	public func value_get() throws -> System_Object? /* System.Object */ {
 		
 		
@@ -18628,6 +18696,8 @@ public class System_Runtime_Serialization_SerializationEntry /* System.Runtime.S
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 public class System_Decimal /* System.Decimal */: System_ValueType {
+public override class var typeName: String { "Decimal" }
+public override class var fullTypeName: String { "System.Decimal" }
 	public class func fromOACurrency(_ cy: Int64 /* System.Int64 */) throws -> System_Decimal? /* System.Decimal */ {
 		
 		
@@ -20281,6 +20351,8 @@ public class System_Decimal /* System.Decimal */: System_ValueType {
 
 
 public class System_Int32_Array /* System.Int32[] */: System_Array {
+public override class var typeName: String { "Int32[]" }
+public override class var fullTypeName: String { "System.Int32[]" }
 	
 
 }
@@ -20302,6 +20374,8 @@ public class System_Int32_Array /* System.Int32[] */: System_Array {
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 public class System_DateTime /* System.DateTime */: System_ValueType {
+public override class var typeName: String { "DateTime" }
+public override class var fullTypeName: String { "System.DateTime" }
 	public func add(_ value: System_TimeSpan? /* System.TimeSpan */) throws -> System_DateTime? /* System.DateTime */ {
 		let valueC = value?.__handle
 		
@@ -22370,6 +22444,8 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 
 
 public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
+public override class var typeName: String { "TimeSpan" }
+public override class var fullTypeName: String { "System.TimeSpan" }
 	public func add(_ ts: System_TimeSpan? /* System.TimeSpan */) throws -> System_TimeSpan? /* System.TimeSpan */ {
 		let tsC = ts?.__handle
 		
@@ -23700,6 +23776,8 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 
 
 public class System_String_Array /* System.String[] */: System_Array {
+public override class var typeName: String { "String[]" }
+public override class var fullTypeName: String { "System.String[]" }
 	
 
 }
@@ -23719,6 +23797,8 @@ public class System_String_Array /* System.String[] */: System_Array {
 
 
 public class System_DateOnly /* System.DateOnly */: System_ValueType {
+public override class var typeName: String { "DateOnly" }
+public override class var fullTypeName: String { "System.DateOnly" }
 	public class func fromDayNumber(_ dayNumber: Int32 /* System.Int32 */) throws -> System_DateOnly? /* System.DateOnly */ {
 		
 		
@@ -24676,6 +24756,8 @@ public class System_DateOnly /* System.DateOnly */: System_ValueType {
 
 
 public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
+public override class var typeName: String { "TimeOnly" }
+public override class var fullTypeName: String { "System.TimeOnly" }
 	public func add(_ value: System_TimeSpan? /* System.TimeSpan */) throws -> System_TimeOnly? /* System.TimeOnly */ {
 		let valueC = value?.__handle
 		
@@ -25830,6 +25912,8 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 
 
 public class System_Globalization_Calendar /* System.Globalization.Calendar */: System_Object {
+public override class var typeName: String { "Calendar" }
+public override class var fullTypeName: String { "System.Globalization.Calendar" }
 	public func clone() throws -> System_Object? /* System.Object */ {
 		
 		
@@ -26775,6 +26859,8 @@ public class System_Globalization_Calendar /* System.Globalization.Calendar */: 
 
 
 public class System_Runtime_Serialization_IFormatterConverter /* System.Runtime.Serialization.IFormatterConverter */: DNObject {
+public override class var typeName: String { "IFormatterConverter" }
+public override class var fullTypeName: String { "System.Runtime.Serialization.IFormatterConverter" }
 	public func convert(_ value: System_Object? /* System.Object */, _ type: System_Type? /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let valueC = value?.__handle
 		let typeC = type?.__handle
@@ -27147,6 +27233,8 @@ public class System_Runtime_Serialization_IFormatterConverter /* System.Runtime.
 
 
 public class System_Runtime_Serialization_StreamingContext /* System.Runtime.Serialization.StreamingContext */: System_ValueType {
+public override class var typeName: String { "StreamingContext" }
+public override class var fullTypeName: String { "System.Runtime.Serialization.StreamingContext" }
 	public override func equals(_ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
 		let objC = obj?.__handle
 		
@@ -27293,6 +27381,8 @@ public class System_Runtime_Serialization_StreamingContext /* System.Runtime.Ser
 
 
 public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */: System_Object {
+public override class var typeName: String { "AssemblyName" }
+public override class var fullTypeName: String { "System.Reflection.AssemblyName" }
 	public func clone() throws -> System_Object? /* System.Object */ {
 		
 		
@@ -28053,6 +28143,8 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 
 
 public class System_Version /* System.Version */: System_Object {
+public override class var typeName: String { "Version" }
+public override class var fullTypeName: String { "System.Version" }
 	public func clone() throws -> System_Object? /* System.Object */ {
 		
 		
@@ -28507,6 +28599,8 @@ public class System_Version /* System.Version */: System_Object {
 
 
 public class System_Reflection_StrongNameKeyPair /* System.Reflection.StrongNameKeyPair */: System_Object {
+public override class var typeName: String { "StrongNameKeyPair" }
+public override class var fullTypeName: String { "System.Reflection.StrongNameKeyPair" }
 	public convenience init?(_ keyPairFile: System_IO_FileStream? /* System.IO.FileStream */) throws {
 		let keyPairFileC = keyPairFile?.__handle
 		
@@ -28613,6 +28707,8 @@ public class System_Reflection_StrongNameKeyPair /* System.Reflection.StrongName
 
 
 public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
+public override class var typeName: String { "FileStream" }
+public override class var fullTypeName: String { "System.IO.FileStream" }
 	public func lock(_ position: Int64 /* System.Int64 */, _ length: Int64 /* System.Int64 */) throws {
 		
 		
@@ -29519,6 +29615,8 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 
 
 public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject {
+public override class var typeName: String { "Stream" }
+public override class var fullTypeName: String { "System.IO.Stream" }
 	public func copyTo(_ destination: System_IO_Stream? /* System.IO.Stream */) throws {
 		let destinationC = destination?.__handle
 		
@@ -30319,6 +30417,8 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 
 
 public class System_MarshalByRefObject /* System.MarshalByRefObject */: System_Object {
+public override class var typeName: String { "MarshalByRefObject" }
+public override class var fullTypeName: String { "System.MarshalByRefObject" }
 	public func getLifetimeService() throws -> System_Object? /* System.Object */ {
 		
 		
@@ -30379,6 +30479,8 @@ public class System_MarshalByRefObject /* System.MarshalByRefObject */: System_O
 
 
 public class System_IAsyncDisposable /* System.IAsyncDisposable */: DNObject {
+public override class var typeName: String { "IAsyncDisposable" }
+public override class var fullTypeName: String { "System.IAsyncDisposable" }
 	public func disposeAsync() throws -> System_Threading_Tasks_ValueTask? /* System.Threading.Tasks.ValueTask */ {
 		
 		
@@ -30418,6 +30520,8 @@ public class System_IAsyncDisposable /* System.IAsyncDisposable */: DNObject {
 
 
 public class System_Threading_Tasks_ValueTask /* System.Threading.Tasks.ValueTask */: System_ValueType {
+public override class var typeName: String { "ValueTask" }
+public override class var fullTypeName: String { "System.Threading.Tasks.ValueTask" }
 	public class func fromCanceled(_ cancellationToken: System_Threading_CancellationToken? /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_ValueTask? /* System.Threading.Tasks.ValueTask */ {
 		let cancellationTokenC = cancellationToken?.__handle
 		
@@ -30772,6 +30876,8 @@ public class System_Threading_Tasks_ValueTask /* System.Threading.Tasks.ValueTas
 
 // Type "TResult" was skipped. Reason: It has no full name.
 public class System_Threading_CancellationToken /* System.Threading.CancellationToken */: System_ValueType {
+public override class var typeName: String { "CancellationToken" }
+public override class var fullTypeName: String { "System.Threading.CancellationToken" }
 	// TODO: Method with Delegate parameter (System_Threading_CancellationToken_Register)
 	// TODO: Method with Delegate parameter (System_Threading_CancellationToken_Register_1)
 	public func equals(_ other: System_Threading_CancellationToken? /* System.Threading.CancellationToken */) throws -> Bool /* System.Boolean */ {
@@ -30976,6 +31082,8 @@ public class System_Threading_CancellationToken /* System.Threading.Cancellation
 
 
 public class System_Threading_WaitHandle /* System.Threading.WaitHandle */: System_MarshalByRefObject {
+public override class var typeName: String { "WaitHandle" }
+public override class var fullTypeName: String { "System.Threading.WaitHandle" }
 	public func close() throws {
 		
 		
@@ -31540,6 +31648,8 @@ public class System_Threading_WaitHandle /* System.Threading.WaitHandle */: Syst
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 public class Microsoft_Win32_SafeHandles_SafeWaitHandle /* Microsoft.Win32.SafeHandles.SafeWaitHandle */: Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid {
+public override class var typeName: String { "SafeWaitHandle" }
+public override class var fullTypeName: String { "Microsoft.Win32.SafeHandles.SafeWaitHandle" }
 	public convenience init?() throws {
 		
 		
@@ -31600,6 +31710,8 @@ public class Microsoft_Win32_SafeHandles_SafeWaitHandle /* Microsoft.Win32.SafeH
 
 
 public class Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid /* Microsoft.Win32.SafeHandles.SafeHandleZeroOrMinusOneIsInvalid */: System_Runtime_InteropServices_SafeHandle {
+public override class var typeName: String { "SafeHandleZeroOrMinusOneIsInvalid" }
+public override class var fullTypeName: String { "Microsoft.Win32.SafeHandles.SafeHandleZeroOrMinusOneIsInvalid" }
 	public override func isInvalid_get() throws -> Bool /* System.Boolean */ {
 		
 		
@@ -31638,6 +31750,8 @@ public class Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid /* Mi
 
 
 public class System_Runtime_InteropServices_SafeHandle /* System.Runtime.InteropServices.SafeHandle */: System_Runtime_ConstrainedExecution_CriticalFinalizerObject {
+public override class var typeName: String { "SafeHandle" }
+public override class var fullTypeName: String { "System.Runtime.InteropServices.SafeHandle" }
 	public func dangerousGetHandle() throws -> Int /* System.IntPtr */ {
 		
 		
@@ -31805,6 +31919,8 @@ public class System_Runtime_InteropServices_SafeHandle /* System.Runtime.Interop
 
 
 public class System_Runtime_ConstrainedExecution_CriticalFinalizerObject /* System.Runtime.ConstrainedExecution.CriticalFinalizerObject */: System_Object {
+public override class var typeName: String { "CriticalFinalizerObject" }
+public override class var fullTypeName: String { "System.Runtime.ConstrainedExecution.CriticalFinalizerObject" }
 	public override class func typeOf() -> System_Type? /* System.Type */ {
 		return System_Type(handle: System_Runtime_ConstrainedExecution_CriticalFinalizerObject_TypeOf())
 		
@@ -31824,6 +31940,8 @@ public class System_Runtime_ConstrainedExecution_CriticalFinalizerObject /* Syst
 
 
 public class System_Threading_WaitHandle_Array /* System.Threading.WaitHandle[] */: System_Array {
+public override class var typeName: String { "WaitHandle[]" }
+public override class var fullTypeName: String { "System.Threading.WaitHandle[]" }
 	
 
 }
@@ -31843,6 +31961,8 @@ public class System_Threading_WaitHandle_Array /* System.Threading.WaitHandle[] 
 
 
 public class System_Threading_CancellationTokenRegistration /* System.Threading.CancellationTokenRegistration */: System_ValueType {
+public override class var typeName: String { "CancellationTokenRegistration" }
+public override class var fullTypeName: String { "System.Threading.CancellationTokenRegistration" }
 	public func dispose() throws {
 		
 		
@@ -32002,6 +32122,8 @@ public class System_Threading_CancellationTokenRegistration /* System.Threading.
 
 
 public class System_Exception /* System.Exception */: System_Object {
+public override class var typeName: String { "Exception" }
+public override class var fullTypeName: String { "System.Exception" }
 	public func getBaseException() throws -> System_Exception? /* System.Exception */ {
 		
 		
@@ -32399,6 +32521,8 @@ public class System_Exception /* System.Exception */: System_Object {
 
 
 public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: System_Reflection_MemberInfo {
+public override class var typeName: String { "MethodBase" }
+public override class var fullTypeName: String { "System.Reflection.MethodBase" }
 	public class func getMethodFromHandle(_ handle: System_RuntimeMethodHandle? /* System.RuntimeMethodHandle */) throws -> System_Reflection_MethodBase? /* System.Reflection.MethodBase */ {
 		let handleC = handle?.__handle
 		
@@ -33143,6 +33267,8 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 
 
 public class System_RuntimeMethodHandle /* System.RuntimeMethodHandle */: System_ValueType {
+public override class var typeName: String { "RuntimeMethodHandle" }
+public override class var fullTypeName: String { "System.RuntimeMethodHandle" }
 	public func getObjectData(_ info: System_Runtime_Serialization_SerializationInfo? /* System.Runtime.Serialization.SerializationInfo */, _ context: System_Runtime_Serialization_StreamingContext? /* System.Runtime.Serialization.StreamingContext */) throws {
 		let infoC = info?.__handle
 		let contextC = context?.__handle
@@ -33322,6 +33448,8 @@ public class System_RuntimeMethodHandle /* System.RuntimeMethodHandle */: System
 
 
 public class System_RuntimeTypeHandle /* System.RuntimeTypeHandle */: System_ValueType {
+public override class var typeName: String { "RuntimeTypeHandle" }
+public override class var fullTypeName: String { "System.RuntimeTypeHandle" }
 	public class func fromIntPtr(_ value: Int /* System.IntPtr */) throws -> System_RuntimeTypeHandle? /* System.RuntimeTypeHandle */ {
 		
 		
@@ -33503,6 +33631,8 @@ public class System_RuntimeTypeHandle /* System.RuntimeTypeHandle */: System_Val
 
 
 public class System_ModuleHandle /* System.ModuleHandle */: System_ValueType {
+public override class var typeName: String { "ModuleHandle" }
+public override class var fullTypeName: String { "System.ModuleHandle" }
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -33810,6 +33940,8 @@ public class System_ModuleHandle /* System.ModuleHandle */: System_ValueType {
 
 
 public class System_RuntimeTypeHandle_Array /* System.RuntimeTypeHandle[] */: System_Array {
+public override class var typeName: String { "RuntimeTypeHandle[]" }
+public override class var fullTypeName: String { "System.RuntimeTypeHandle[]" }
 	
 
 }
@@ -33829,6 +33961,8 @@ public class System_RuntimeTypeHandle_Array /* System.RuntimeTypeHandle[] */: Sy
 
 
 public class System_RuntimeFieldHandle /* System.RuntimeFieldHandle */: System_ValueType {
+public override class var typeName: String { "RuntimeFieldHandle" }
+public override class var fullTypeName: String { "System.RuntimeFieldHandle" }
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -33989,6 +34123,8 @@ public class System_RuntimeFieldHandle /* System.RuntimeFieldHandle */: System_V
 
 
 public class System_Reflection_ParameterInfo_Array /* System.Reflection.ParameterInfo[] */: System_Array {
+public override class var typeName: String { "ParameterInfo[]" }
+public override class var fullTypeName: String { "System.Reflection.ParameterInfo[]" }
 	
 
 }
@@ -34003,6 +34139,8 @@ public class System_Reflection_ParameterInfo_Array /* System.Reflection.Paramete
 
 
 public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo */: System_Object {
+public override class var typeName: String { "ParameterInfo" }
+public override class var fullTypeName: String { "System.Reflection.ParameterInfo" }
 	public func isDefined(_ attributeType: System_Type? /* System.Type */, _ inherit: Bool /* System.Boolean */) throws -> Bool /* System.Boolean */ {
 		let attributeTypeC = attributeType?.__handle
 		
@@ -34525,6 +34663,8 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 
 
 public class System_Runtime_Serialization_IObjectReference /* System.Runtime.Serialization.IObjectReference */: DNObject {
+public override class var typeName: String { "IObjectReference" }
+public override class var fullTypeName: String { "System.Runtime.Serialization.IObjectReference" }
 	public func getRealObject(_ context: System_Runtime_Serialization_StreamingContext? /* System.Runtime.Serialization.StreamingContext */) throws -> System_Object? /* System.Object */ {
 		let contextC = context?.__handle
 		
@@ -34569,6 +34709,8 @@ public class System_Runtime_Serialization_IObjectReference /* System.Runtime.Ser
 
 
 public class System_Reflection_CustomAttributeData /* System.Reflection.CustomAttributeData */: System_Object {
+public override class var typeName: String { "CustomAttributeData" }
+public override class var fullTypeName: String { "System.Reflection.CustomAttributeData" }
 	public class func getCustomAttributes(_ target: System_Reflection_MemberInfo? /* System.Reflection.MemberInfo */) throws -> System_Collections_Generic_IList_A1? /* System.Collections.Generic.IList<System.Reflection.CustomAttributeData> */ {
 		let targetC = target?.__handle
 		
@@ -34827,6 +34969,8 @@ public class System_Reflection_CustomAttributeData /* System.Reflection.CustomAt
 
 
 public class System_Reflection_CustomAttributeData_Array /* System.Reflection.CustomAttributeData[] */: System_Array {
+public override class var typeName: String { "CustomAttributeData[]" }
+public override class var fullTypeName: String { "System.Reflection.CustomAttributeData[]" }
 	
 
 }
@@ -34838,6 +34982,8 @@ public class System_Reflection_CustomAttributeData_Array /* System.Reflection.Cu
 
 
 public class System_Reflection_Module /* System.Reflection.Module */: System_Object {
+public override class var typeName: String { "Module" }
+public override class var fullTypeName: String { "System.Reflection.Module" }
 	public func getPEKind(_ peKind: inout System_Reflection_PortableExecutableKinds /* System.Reflection.PortableExecutableKinds */, _ machine: inout System_Reflection_ImageFileMachine /* System.Reflection.ImageFileMachine */) throws {
 		var peKindC = peKind.cValue
 		var machineC = machine.cValue
@@ -35766,6 +35912,8 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 
 
 public class System_Guid /* System.Guid */: System_ValueType {
+public override class var typeName: String { "Guid" }
+public override class var fullTypeName: String { "System.Guid" }
 	public class func parse(_ input: System_String? /* System.String */) throws -> System_Guid? /* System.Guid */ {
 		let inputC = input?.__handle
 		
@@ -36256,6 +36404,8 @@ public class System_Guid /* System.Guid */: System_ValueType {
 
 
 public class System_Reflection_MethodInfo /* System.Reflection.MethodInfo */: System_Reflection_MethodBase {
+public override class var typeName: String { "MethodInfo" }
+public override class var fullTypeName: String { "System.Reflection.MethodInfo" }
 	public override func getGenericArguments() throws -> System_Type_Array? /* System.Type[] */ {
 		
 		
@@ -36490,6 +36640,8 @@ public class System_Reflection_MethodInfo /* System.Reflection.MethodInfo */: Sy
 
 
 public class System_Type_Array /* System.Type[] */: System_Array {
+public override class var typeName: String { "Type[]" }
+public override class var fullTypeName: String { "System.Type[]" }
 	
 
 }
@@ -36509,6 +36661,8 @@ public class System_Type_Array /* System.Type[] */: System_Array {
 
 
 public class System_Reflection_Binder /* System.Reflection.Binder */: System_Object {
+public override class var typeName: String { "Binder" }
+public override class var fullTypeName: String { "System.Reflection.Binder" }
 	public func bindToField(_ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */, _ match: System_Reflection_FieldInfo_Array? /* System.Reflection.FieldInfo[] */, _ value: System_Object? /* System.Object */, _ culture: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */) throws -> System_Reflection_FieldInfo? /* System.Reflection.FieldInfo */ {
 		let bindingAttrC = bindingAttr.cValue
 		let matchC = match?.__handle
@@ -36675,6 +36829,8 @@ public class System_Reflection_Binder /* System.Reflection.Binder */: System_Obj
 
 
 public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: System_Reflection_MemberInfo {
+public override class var typeName: String { "FieldInfo" }
+public override class var fullTypeName: String { "System.Reflection.FieldInfo" }
 	public class func getFieldFromHandle(_ handle: System_RuntimeFieldHandle? /* System.RuntimeFieldHandle */) throws -> System_Reflection_FieldInfo? /* System.Reflection.FieldInfo */ {
 		let handleC = handle?.__handle
 		
@@ -37314,6 +37470,8 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 
 
 public class System_Reflection_FieldInfo_Array /* System.Reflection.FieldInfo[] */: System_Array {
+public override class var typeName: String { "FieldInfo[]" }
+public override class var fullTypeName: String { "System.Reflection.FieldInfo[]" }
 	
 
 }
@@ -37333,6 +37491,8 @@ public class System_Reflection_FieldInfo_Array /* System.Reflection.FieldInfo[] 
 
 
 public class System_Reflection_MethodBase_Array /* System.Reflection.MethodBase[] */: System_Array {
+public override class var typeName: String { "MethodBase[]" }
+public override class var fullTypeName: String { "System.Reflection.MethodBase[]" }
 	
 
 }
@@ -37353,6 +37513,8 @@ public class System_Reflection_MethodBase_Array /* System.Reflection.MethodBase[
 
 
 public class System_Reflection_ParameterModifier_Array /* System.Reflection.ParameterModifier[] */: System_Array {
+public override class var typeName: String { "ParameterModifier[]" }
+public override class var fullTypeName: String { "System.Reflection.ParameterModifier[]" }
 	
 
 }
@@ -37367,6 +37529,8 @@ public class System_Reflection_ParameterModifier_Array /* System.Reflection.Para
 
 
 public class System_Reflection_ParameterModifier /* System.Reflection.ParameterModifier */: System_ValueType {
+public override class var typeName: String { "ParameterModifier" }
+public override class var fullTypeName: String { "System.Reflection.ParameterModifier" }
 	public convenience init?(_ parameterCount: Int32 /* System.Int32 */) throws {
 		
 		
@@ -37412,6 +37576,8 @@ public class System_Reflection_ParameterModifier /* System.Reflection.ParameterM
 
 
 public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */: System_Reflection_MemberInfo {
+public override class var typeName: String { "PropertyInfo" }
+public override class var fullTypeName: String { "System.Reflection.PropertyInfo" }
 	public func getIndexParameters() throws -> System_Reflection_ParameterInfo_Array? /* System.Reflection.ParameterInfo[] */ {
 		
 		
@@ -38027,6 +38193,8 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 
 
 public class System_Reflection_MethodInfo_Array /* System.Reflection.MethodInfo[] */: System_Array {
+public override class var typeName: String { "MethodInfo[]" }
+public override class var fullTypeName: String { "System.Reflection.MethodInfo[]" }
 	
 
 }
@@ -38046,6 +38214,8 @@ public class System_Reflection_MethodInfo_Array /* System.Reflection.MethodInfo[
 
 
 public class System_Reflection_PropertyInfo_Array /* System.Reflection.PropertyInfo[] */: System_Array {
+public override class var typeName: String { "PropertyInfo[]" }
+public override class var fullTypeName: String { "System.Reflection.PropertyInfo[]" }
 	
 
 }
@@ -38065,6 +38235,8 @@ public class System_Reflection_PropertyInfo_Array /* System.Reflection.PropertyI
 
 
 public class System_Reflection_ConstructorInfo /* System.Reflection.ConstructorInfo */: System_Reflection_MethodBase {
+public override class var typeName: String { "ConstructorInfo" }
+public override class var fullTypeName: String { "System.Reflection.ConstructorInfo" }
 	public func invoke(_ parameters: System_Object_Array? /* System.Object[] */) throws -> System_Object? /* System.Object */ {
 		let parametersC = parameters?.__handle
 		
@@ -38225,6 +38397,8 @@ public class System_Reflection_ConstructorInfo /* System.Reflection.ConstructorI
 
 
 public class System_Reflection_CustomAttributeTypedArgument /* System.Reflection.CustomAttributeTypedArgument */: System_ValueType {
+public override class var typeName: String { "CustomAttributeTypedArgument" }
+public override class var fullTypeName: String { "System.Reflection.CustomAttributeTypedArgument" }
 	public override func toString() throws -> System_String? /* System.String */ {
 		
 		
@@ -38414,6 +38588,8 @@ public class System_Reflection_CustomAttributeTypedArgument /* System.Reflection
 
 
 public class System_Reflection_CustomAttributeTypedArgument_Array /* System.Reflection.CustomAttributeTypedArgument[] */: System_Array {
+public override class var typeName: String { "CustomAttributeTypedArgument[]" }
+public override class var fullTypeName: String { "System.Reflection.CustomAttributeTypedArgument[]" }
 	
 
 }
@@ -38433,6 +38609,8 @@ public class System_Reflection_CustomAttributeTypedArgument_Array /* System.Refl
 
 
 public class System_Reflection_CustomAttributeNamedArgument /* System.Reflection.CustomAttributeNamedArgument */: System_ValueType {
+public override class var typeName: String { "CustomAttributeNamedArgument" }
+public override class var fullTypeName: String { "System.Reflection.CustomAttributeNamedArgument" }
 	public override func toString() throws -> System_String? /* System.String */ {
 		
 		
@@ -38665,6 +38843,8 @@ public class System_Reflection_CustomAttributeNamedArgument /* System.Reflection
 
 
 public class System_Reflection_CustomAttributeNamedArgument_Array /* System.Reflection.CustomAttributeNamedArgument[] */: System_Array {
+public override class var typeName: String { "CustomAttributeNamedArgument[]" }
+public override class var fullTypeName: String { "System.Reflection.CustomAttributeNamedArgument[]" }
 	
 
 }
@@ -38681,6 +38861,8 @@ public class System_Reflection_CustomAttributeNamedArgument_Array /* System.Refl
 
 
 public class System_Reflection_MethodBody /* System.Reflection.MethodBody */: System_Object {
+public override class var typeName: String { "MethodBody" }
+public override class var fullTypeName: String { "System.Reflection.MethodBody" }
 	public func getILAsByteArray() throws -> System_Byte_Array? /* System.Byte[] */ {
 		
 		
@@ -38832,6 +39014,8 @@ public class System_Reflection_MethodBody /* System.Reflection.MethodBody */: Sy
 
 
 public class System_Reflection_LocalVariableInfo /* System.Reflection.LocalVariableInfo */: System_Object {
+public override class var typeName: String { "LocalVariableInfo" }
+public override class var fullTypeName: String { "System.Reflection.LocalVariableInfo" }
 	public override func toString() throws -> System_String? /* System.String */ {
 		
 		
@@ -38933,6 +39117,8 @@ public class System_Reflection_LocalVariableInfo /* System.Reflection.LocalVaria
 
 
 public class System_Reflection_LocalVariableInfo_Array /* System.Reflection.LocalVariableInfo[] */: System_Array {
+public override class var typeName: String { "LocalVariableInfo[]" }
+public override class var fullTypeName: String { "System.Reflection.LocalVariableInfo[]" }
 	
 
 }
@@ -38952,6 +39138,8 @@ public class System_Reflection_LocalVariableInfo_Array /* System.Reflection.Loca
 
 
 public class System_Reflection_ExceptionHandlingClause /* System.Reflection.ExceptionHandlingClause */: System_Object {
+public override class var typeName: String { "ExceptionHandlingClause" }
+public override class var fullTypeName: String { "System.Reflection.ExceptionHandlingClause" }
 	public override func toString() throws -> System_String? /* System.String */ {
 		
 		
@@ -39135,6 +39323,8 @@ public class System_Reflection_ExceptionHandlingClause /* System.Reflection.Exce
 
 
 public class System_Reflection_ExceptionHandlingClause_Array /* System.Reflection.ExceptionHandlingClause[] */: System_Array {
+public override class var typeName: String { "ExceptionHandlingClause[]" }
+public override class var fullTypeName: String { "System.Reflection.ExceptionHandlingClause[]" }
 	
 
 }
@@ -39146,6 +39336,8 @@ public class System_Reflection_ExceptionHandlingClause_Array /* System.Reflectio
 
 
 public class System_Collections_IDictionary /* System.Collections.IDictionary */: DNObject {
+public override class var typeName: String { "IDictionary" }
+public override class var fullTypeName: String { "System.Collections.IDictionary" }
 	public func contains(_ key: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
 		let keyC = key?.__handle
 		
@@ -39346,6 +39538,8 @@ public class System_Collections_IDictionary /* System.Collections.IDictionary */
 
 
 public class System_Collections_IDictionaryEnumerator /* System.Collections.IDictionaryEnumerator */: DNObject {
+public override class var typeName: String { "IDictionaryEnumerator" }
+public override class var fullTypeName: String { "System.Collections.IDictionaryEnumerator" }
 	public func key_get() throws -> System_Object? /* System.Object */ {
 		
 		
@@ -39430,6 +39624,8 @@ public class System_Collections_IDictionaryEnumerator /* System.Collections.IDic
 
 
 public class System_Collections_DictionaryEntry /* System.Collections.DictionaryEntry */: System_ValueType {
+public override class var typeName: String { "DictionaryEntry" }
+public override class var fullTypeName: String { "System.Collections.DictionaryEntry" }
 	public func deconstruct(_ key: inout System_Object? /* System.Object */, _ value: inout System_Object? /* System.Object */) throws {
 		var keyC = key?.__handle
 		var valueC = value?.__handle
@@ -39594,6 +39790,8 @@ public class System_Collections_DictionaryEntry /* System.Collections.Dictionary
 
 
 public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: System_Object {
+public override class var typeName: String { "Task" }
+public override class var fullTypeName: String { "System.Threading.Tasks.Task" }
 	public func start() throws {
 		
 		
@@ -40636,6 +40834,8 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 
 
 public class System_IAsyncResult /* System.IAsyncResult */: DNObject {
+public override class var typeName: String { "IAsyncResult" }
+public override class var fullTypeName: String { "System.IAsyncResult" }
 	public func isCompleted_get() throws -> Bool /* System.Boolean */ {
 		
 		
@@ -40738,6 +40938,8 @@ public class System_IAsyncResult /* System.IAsyncResult */: DNObject {
 
 
 public class System_Threading_Tasks_TaskScheduler /* System.Threading.Tasks.TaskScheduler */: System_Object {
+public override class var typeName: String { "TaskScheduler" }
+public override class var fullTypeName: String { "System.Threading.Tasks.TaskScheduler" }
 	public class func fromCurrentSynchronizationContext() throws -> System_Threading_Tasks_TaskScheduler? /* System.Threading.Tasks.TaskScheduler */ {
 		
 		
@@ -40861,6 +41063,8 @@ public class System_Threading_Tasks_TaskScheduler /* System.Threading.Tasks.Task
 
 
 public class System_AggregateException /* System.AggregateException */: System_Exception {
+public override class var typeName: String { "AggregateException" }
+public override class var fullTypeName: String { "System.AggregateException" }
 	public override func getObjectData(_ info: System_Runtime_Serialization_SerializationInfo? /* System.Runtime.Serialization.SerializationInfo */, _ context: System_Runtime_Serialization_StreamingContext? /* System.Runtime.Serialization.StreamingContext */) throws {
 		let infoC = info?.__handle
 		let contextC = context?.__handle
@@ -41172,6 +41376,8 @@ public class System_AggregateException /* System.AggregateException */: System_E
 
 
 public class System_Exception_Array /* System.Exception[] */: System_Array {
+public override class var typeName: String { "Exception[]" }
+public override class var fullTypeName: String { "System.Exception[]" }
 	
 
 }
@@ -41183,6 +41389,8 @@ public class System_Exception_Array /* System.Exception[] */: System_Array {
 
 
 public class System_Threading_Tasks_TaskFactory /* System.Threading.Tasks.TaskFactory */: System_Object {
+public override class var typeName: String { "TaskFactory" }
+public override class var fullTypeName: String { "System.Threading.Tasks.TaskFactory" }
 	// TODO: Method with Delegate parameter (System_Threading_Tasks_TaskFactory_StartNew)
 	// TODO: Method with Delegate parameter (System_Threading_Tasks_TaskFactory_StartNew_1)
 	// TODO: Method with Delegate parameter (System_Threading_Tasks_TaskFactory_StartNew_2)
@@ -41430,6 +41638,8 @@ public class System_Threading_Tasks_TaskFactory /* System.Threading.Tasks.TaskFa
 // Type "TArg2" was skipped. Reason: It has no full name.
 // Type "TArg3" was skipped. Reason: It has no full name.
 public class System_Threading_Tasks_Task_Array /* System.Threading.Tasks.Task[] */: System_Array {
+public override class var typeName: String { "Task[]" }
+public override class var fullTypeName: String { "System.Threading.Tasks.Task[]" }
 	
 
 }
@@ -41449,6 +41659,8 @@ public class System_Threading_Tasks_Task_Array /* System.Threading.Tasks.Task[] 
 
 
 public class System_Runtime_CompilerServices_TaskAwaiter /* System.Runtime.CompilerServices.TaskAwaiter */: System_ValueType {
+public override class var typeName: String { "TaskAwaiter" }
+public override class var fullTypeName: String { "System.Runtime.CompilerServices.TaskAwaiter" }
 	// TODO: Method with Delegate parameter (System_Runtime_CompilerServices_TaskAwaiter_OnCompleted)
 	// TODO: Method with Delegate parameter (System_Runtime_CompilerServices_TaskAwaiter_UnsafeOnCompleted)
 	public func getResult() throws {
@@ -41507,6 +41719,8 @@ public class System_Runtime_CompilerServices_TaskAwaiter /* System.Runtime.Compi
 
 
 public class System_Runtime_CompilerServices_ICriticalNotifyCompletion /* System.Runtime.CompilerServices.ICriticalNotifyCompletion */: DNObject {
+public override class var typeName: String { "ICriticalNotifyCompletion" }
+public override class var fullTypeName: String { "System.Runtime.CompilerServices.ICriticalNotifyCompletion" }
 	// TODO: Method with Delegate parameter (System_Runtime_CompilerServices_ICriticalNotifyCompletion_UnsafeOnCompleted)
 	public override class func typeOf() -> System_Type? /* System.Type */ {
 		return System_Type(handle: System_Runtime_CompilerServices_ICriticalNotifyCompletion_TypeOf())
@@ -41526,6 +41740,8 @@ public class System_Runtime_CompilerServices_ICriticalNotifyCompletion /* System
 
 
 public class System_Runtime_CompilerServices_INotifyCompletion /* System.Runtime.CompilerServices.INotifyCompletion */: DNObject {
+public override class var typeName: String { "INotifyCompletion" }
+public override class var fullTypeName: String { "System.Runtime.CompilerServices.INotifyCompletion" }
 	// TODO: Method with Delegate parameter (System_Runtime_CompilerServices_INotifyCompletion_OnCompleted)
 	public override class func typeOf() -> System_Type? /* System.Type */ {
 		return System_Type(handle: System_Runtime_CompilerServices_INotifyCompletion_TypeOf())
@@ -41545,6 +41761,8 @@ public class System_Runtime_CompilerServices_INotifyCompletion /* System.Runtime
 
 
 public class System_Runtime_CompilerServices_ConfiguredTaskAwaitable /* System.Runtime.CompilerServices.ConfiguredTaskAwaitable */: System_ValueType {
+public override class var typeName: String { "ConfiguredTaskAwaitable" }
+public override class var fullTypeName: String { "System.Runtime.CompilerServices.ConfiguredTaskAwaitable" }
 	public func getAwaiter() throws -> System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter? /* System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter */ {
 		
 		
@@ -41584,6 +41802,8 @@ public class System_Runtime_CompilerServices_ConfiguredTaskAwaitable /* System.R
 
 
 public class System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter /* System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter */: System_ValueType {
+public override class var typeName: String { "ConfiguredTaskAwaiter" }
+public override class var fullTypeName: String { "System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter" }
 	// TODO: Method with Delegate parameter (System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_OnCompleted)
 	// TODO: Method with Delegate parameter (System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_UnsafeOnCompleted)
 	public func getResult() throws {
@@ -41642,6 +41862,8 @@ public class System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredT
 
 
 public class System_Runtime_CompilerServices_YieldAwaitable /* System.Runtime.CompilerServices.YieldAwaitable */: System_ValueType {
+public override class var typeName: String { "YieldAwaitable" }
+public override class var fullTypeName: String { "System.Runtime.CompilerServices.YieldAwaitable" }
 	public func getAwaiter() throws -> System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter? /* System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter */ {
 		
 		
@@ -41681,6 +41903,8 @@ public class System_Runtime_CompilerServices_YieldAwaitable /* System.Runtime.Co
 
 
 public class System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter /* System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter */: System_ValueType {
+public override class var typeName: String { "YieldAwaiter" }
+public override class var fullTypeName: String { "System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter" }
 	// TODO: Method with Delegate parameter (System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_OnCompleted)
 	// TODO: Method with Delegate parameter (System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_UnsafeOnCompleted)
 	public func getResult() throws {
@@ -41774,6 +41998,8 @@ public class System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter /* Syst
 
 
 public class System_Runtime_CompilerServices_ValueTaskAwaiter /* System.Runtime.CompilerServices.ValueTaskAwaiter */: System_ValueType {
+public override class var typeName: String { "ValueTaskAwaiter" }
+public override class var fullTypeName: String { "System.Runtime.CompilerServices.ValueTaskAwaiter" }
 	public func getResult() throws {
 		
 		
@@ -41832,6 +42058,8 @@ public class System_Runtime_CompilerServices_ValueTaskAwaiter /* System.Runtime.
 
 
 public class System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable /* System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable */: System_ValueType {
+public override class var typeName: String { "ConfiguredValueTaskAwaitable" }
+public override class var fullTypeName: String { "System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable" }
 	public func getAwaiter() throws -> System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter? /* System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter */ {
 		
 		
@@ -41871,6 +42099,8 @@ public class System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable /* Sys
 
 
 public class System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter /* System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter */: System_ValueType {
+public override class var typeName: String { "ConfiguredValueTaskAwaiter" }
+public override class var fullTypeName: String { "System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter" }
 	public func getResult() throws {
 		
 		
@@ -41929,6 +42159,8 @@ public class System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_Config
 
 
 public class System_Threading_Tasks_Sources_IValueTaskSource /* System.Threading.Tasks.Sources.IValueTaskSource */: DNObject {
+public override class var typeName: String { "IValueTaskSource" }
+public override class var fullTypeName: String { "System.Threading.Tasks.Sources.IValueTaskSource" }
 	public func getStatus(_ token: Int16 /* System.Int16 */) throws -> System_Threading_Tasks_Sources_ValueTaskSourceStatus /* System.Threading.Tasks.Sources.ValueTaskSourceStatus */ {
 		
 		
@@ -41994,6 +42226,8 @@ public class System_Threading_Tasks_Sources_IValueTaskSource /* System.Threading
 
 
 public class Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeHandles.SafeFileHandle */: Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid {
+public override class var typeName: String { "SafeFileHandle" }
+public override class var fullTypeName: String { "Microsoft.Win32.SafeHandles.SafeFileHandle" }
 	public convenience init?(_ preexistingHandle: Int /* System.IntPtr */, _ ownsHandle: Bool /* System.Boolean */) throws {
 		
 		
@@ -42094,6 +42328,8 @@ public class Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeH
 
 
 public class System_IO_FileStreamOptions /* System.IO.FileStreamOptions */: System_Object {
+public override class var typeName: String { "FileStreamOptions" }
+public override class var fullTypeName: String { "System.IO.FileStreamOptions" }
 	public convenience init?() throws {
 		
 		
@@ -42377,6 +42613,8 @@ public class System_IO_FileStreamOptions /* System.IO.FileStreamOptions */: Syst
 
 
 public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System_Type {
+public override class var typeName: String { "TypeInfo" }
+public override class var fullTypeName: String { "System.Reflection.TypeInfo" }
 	public func asType() throws -> System_Type? /* System.Type */ {
 		
 		
@@ -42766,6 +43004,8 @@ public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System
 
 
 public class System_Reflection_IReflect /* System.Reflection.IReflect */: DNObject {
+public override class var typeName: String { "IReflect" }
+public override class var fullTypeName: String { "System.Reflection.IReflect" }
 	public func getMethod(_ name: System_String? /* System.String */, _ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */, _ binder: System_Reflection_Binder? /* System.Reflection.Binder */, _ types: System_Type_Array? /* System.Type[] */, _ modifiers: System_Reflection_ParameterModifier_Array? /* System.Reflection.ParameterModifier[] */) throws -> System_Reflection_MethodInfo? /* System.Reflection.MethodInfo */ {
 		let nameC = name?.__handle
 		let bindingAttrC = bindingAttr.cValue
@@ -43068,6 +43308,8 @@ public class System_Reflection_IReflect /* System.Reflection.IReflect */: DNObje
 
 
 public class System_Reflection_MemberInfo_Array /* System.Reflection.MemberInfo[] */: System_Array {
+public override class var typeName: String { "MemberInfo[]" }
+public override class var fullTypeName: String { "System.Reflection.MemberInfo[]" }
 	
 
 }
@@ -43087,6 +43329,8 @@ public class System_Reflection_MemberInfo_Array /* System.Reflection.MemberInfo[
 
 
 public class System_Reflection_IReflectableType /* System.Reflection.IReflectableType */: DNObject {
+public override class var typeName: String { "IReflectableType" }
+public override class var fullTypeName: String { "System.Reflection.IReflectableType" }
 	public func getTypeInfo() throws -> System_Reflection_TypeInfo? /* System.Reflection.TypeInfo */ {
 		
 		
@@ -43126,6 +43370,8 @@ public class System_Reflection_IReflectableType /* System.Reflection.IReflectabl
 
 
 public class System_Reflection_EventInfo /* System.Reflection.EventInfo */: System_Reflection_MemberInfo {
+public override class var typeName: String { "EventInfo" }
+public override class var fullTypeName: String { "System.Reflection.EventInfo" }
 	public func getOtherMethods() throws -> System_Reflection_MethodInfo_Array? /* System.Reflection.MethodInfo[] */ {
 		
 		
@@ -43533,6 +43779,8 @@ public class System_Reflection_EventInfo /* System.Reflection.EventInfo */: Syst
 
 
 public class System_Reflection_ManifestResourceInfo /* System.Reflection.ManifestResourceInfo */: System_Object {
+public override class var typeName: String { "ManifestResourceInfo" }
+public override class var fullTypeName: String { "System.Reflection.ManifestResourceInfo" }
 	public convenience init?(_ containingAssembly: System_Reflection_Assembly? /* System.Reflection.Assembly */, _ containingFileName: System_String? /* System.String */, _ resourceLocation: System_Reflection_ResourceLocation /* System.Reflection.ResourceLocation */) throws {
 		let containingAssemblyC = containingAssembly?.__handle
 		let containingFileNameC = containingFileName?.__handle
@@ -43641,6 +43889,8 @@ public class System_Reflection_ManifestResourceInfo /* System.Reflection.Manifes
 
 
 public class System_ResolveEventArgs /* System.ResolveEventArgs */: System_EventArgs {
+public override class var typeName: String { "ResolveEventArgs" }
+public override class var fullTypeName: String { "System.ResolveEventArgs" }
 	public convenience init?(_ name: System_String? /* System.String */) throws {
 		let nameC = name?.__handle
 		
@@ -43748,6 +43998,8 @@ public class System_ResolveEventArgs /* System.ResolveEventArgs */: System_Event
 
 
 public class System_EventArgs /* System.EventArgs */: System_Object {
+public override class var typeName: String { "EventArgs" }
+public override class var fullTypeName: String { "System.EventArgs" }
 	public convenience init?() throws {
 		
 		
@@ -43800,6 +44052,8 @@ public class System_EventArgs /* System.EventArgs */: System_Object {
 
 
 public class System_Reflection_Module_Array /* System.Reflection.Module[] */: System_Array {
+public override class var typeName: String { "Module[]" }
+public override class var fullTypeName: String { "System.Reflection.Module[]" }
 	
 
 }
@@ -43819,6 +44073,8 @@ public class System_Reflection_Module_Array /* System.Reflection.Module[] */: Sy
 
 
 public class System_Reflection_AssemblyName_Array /* System.Reflection.AssemblyName[] */: System_Array {
+public override class var typeName: String { "AssemblyName[]" }
+public override class var fullTypeName: String { "System.Reflection.AssemblyName[]" }
 	
 
 }
@@ -43838,6 +44094,8 @@ public class System_Reflection_AssemblyName_Array /* System.Reflection.AssemblyN
 
 
 public class System_IO_FileStream_Array /* System.IO.FileStream[] */: System_Array {
+public override class var typeName: String { "FileStream[]" }
+public override class var fullTypeName: String { "System.IO.FileStream[]" }
 	
 
 }
@@ -43857,6 +44115,8 @@ public class System_IO_FileStream_Array /* System.IO.FileStream[] */: System_Arr
 
 
 public class System_Text_Rune /* System.Text.Rune */: System_ValueType {
+public override class var typeName: String { "Rune" }
+public override class var fullTypeName: String { "System.Text.Rune" }
 	public func compareTo(_ other: System_Text_Rune? /* System.Text.Rune */) throws -> Int32 /* System.Int32 */ {
 		let otherC = other?.__handle
 		
@@ -44725,6 +44985,8 @@ public class System_Text_Rune /* System.Text.Rune */: System_ValueType {
 
 
 public class System_Globalization_SortKey /* System.Globalization.SortKey */: System_Object {
+public override class var typeName: String { "SortKey" }
+public override class var fullTypeName: String { "System.Globalization.SortKey" }
 	public class func compare(_ sortkey1: System_Globalization_SortKey? /* System.Globalization.SortKey */, _ sortkey2: System_Globalization_SortKey? /* System.Globalization.SortKey */) throws -> Int32 /* System.Int32 */ {
 		let sortkey1C = sortkey1?.__handle
 		let sortkey2C = sortkey2?.__handle
@@ -44868,6 +45130,8 @@ public class System_Globalization_SortKey /* System.Globalization.SortKey */: Sy
 
 
 public class System_Globalization_SortVersion /* System.Globalization.SortVersion */: System_Object {
+public override class var typeName: String { "SortVersion" }
+public override class var fullTypeName: String { "System.Globalization.SortVersion" }
 	public override func equals(_ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
 		let objC = obj?.__handle
 		
@@ -45011,6 +45275,8 @@ public class System_Globalization_SortVersion /* System.Globalization.SortVersio
 
 
 public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: System_Object {
+public override class var typeName: String { "TextInfo" }
+public override class var fullTypeName: String { "System.Globalization.TextInfo" }
 	public func clone() throws -> System_Object? /* System.Object */ {
 		
 		
@@ -45445,6 +45711,8 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 
 
 public class System_Globalization_NumberFormatInfo /* System.Globalization.NumberFormatInfo */: System_Object {
+public override class var typeName: String { "NumberFormatInfo" }
+public override class var fullTypeName: String { "System.Globalization.NumberFormatInfo" }
 	public class func getInstance(_ formatProvider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_Globalization_NumberFormatInfo? /* System.Globalization.NumberFormatInfo */ {
 		let formatProviderC = formatProvider?.__handle
 		
@@ -46718,6 +46986,8 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 
 
 public class System_Globalization_DateTimeFormatInfo /* System.Globalization.DateTimeFormatInfo */: System_Object {
+public override class var typeName: String { "DateTimeFormatInfo" }
+public override class var fullTypeName: String { "System.Globalization.DateTimeFormatInfo" }
 	public class func getInstance(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_Globalization_DateTimeFormatInfo? /* System.Globalization.DateTimeFormatInfo */ {
 		let providerC = provider?.__handle
 		
@@ -48090,6 +48360,8 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 
 
 public class System_Globalization_Calendar_Array /* System.Globalization.Calendar[] */: System_Array {
+public override class var typeName: String { "Calendar[]" }
+public override class var fullTypeName: String { "System.Globalization.Calendar[]" }
 	
 
 }
@@ -48118,6 +48390,8 @@ public class System_Globalization_Calendar_Array /* System.Globalization.Calenda
 
 // Type "TState" was skipped. Reason: It has no full name.
 public class System_Char_Array /* System.Char[] */: System_Array {
+public override class var typeName: String { "Char[]" }
+public override class var fullTypeName: String { "System.Char[]" }
 	
 
 }
@@ -48132,6 +48406,8 @@ public class System_Char_Array /* System.Char[] */: System_Array {
 
 
 public class System_CharEnumerator /* System.CharEnumerator */: System_Object {
+public override class var typeName: String { "CharEnumerator" }
+public override class var fullTypeName: String { "System.CharEnumerator" }
 	public func clone() throws -> System_Object? /* System.Object */ {
 		
 		
@@ -48248,6 +48524,8 @@ public class System_CharEnumerator /* System.CharEnumerator */: System_Object {
 
 
 public class System_Text_StringRuneEnumerator /* System.Text.StringRuneEnumerator */: System_ValueType {
+public override class var typeName: String { "StringRuneEnumerator" }
+public override class var fullTypeName: String { "System.Text.StringRuneEnumerator" }
 	public func getEnumerator() throws -> System_Text_StringRuneEnumerator? /* System.Text.StringRuneEnumerator */ {
 		
 		
@@ -48332,6 +48610,8 @@ public class System_Text_StringRuneEnumerator /* System.Text.StringRuneEnumerato
 
 
 public class System_Text_CompositeFormat /* System.Text.CompositeFormat */: System_Object {
+public override class var typeName: String { "CompositeFormat" }
+public override class var fullTypeName: String { "System.Text.CompositeFormat" }
 	public class func parse(_ format: System_String? /* System.String */) throws -> System_Text_CompositeFormat? /* System.Text.CompositeFormat */ {
 		let formatC = format?.__handle
 		
@@ -48422,6 +48702,8 @@ public class System_Text_CompositeFormat /* System.Text.CompositeFormat */: Syst
 // Type "TArg1" was skipped. Reason: It has no full name.
 // Type "TArg2" was skipped. Reason: It has no full name.
 public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
+public override class var typeName: String { "Encoding" }
+public override class var fullTypeName: String { "System.Text.Encoding" }
 	public class func convert(_ srcEncoding: System_Text_Encoding? /* System.Text.Encoding */, _ dstEncoding: System_Text_Encoding? /* System.Text.Encoding */, _ bytes: System_Byte_Array? /* System.Byte[] */) throws -> System_Byte_Array? /* System.Byte[] */ {
 		let srcEncodingC = srcEncoding?.__handle
 		let dstEncodingC = dstEncoding?.__handle
@@ -49707,6 +49989,8 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 
 
 public class System_Text_EncodingProvider /* System.Text.EncodingProvider */: System_Object {
+public override class var typeName: String { "EncodingProvider" }
+public override class var fullTypeName: String { "System.Text.EncodingProvider" }
 	public func getEncoding(_ name: System_String? /* System.String */) throws -> System_Text_Encoding? /* System.Text.Encoding */ {
 		let nameC = name?.__handle
 		
@@ -49836,6 +50120,8 @@ public class System_Text_EncodingProvider /* System.Text.EncodingProvider */: Sy
 
 
 public class System_Text_EncoderFallback /* System.Text.EncoderFallback */: System_Object {
+public override class var typeName: String { "EncoderFallback" }
+public override class var fullTypeName: String { "System.Text.EncoderFallback" }
 	public func createFallbackBuffer() throws -> System_Text_EncoderFallbackBuffer? /* System.Text.EncoderFallbackBuffer */ {
 		
 		
@@ -49939,6 +50225,8 @@ public class System_Text_EncoderFallback /* System.Text.EncoderFallback */: Syst
 
 
 public class System_Text_EncoderFallbackBuffer /* System.Text.EncoderFallbackBuffer */: System_Object {
+public override class var typeName: String { "EncoderFallbackBuffer" }
+public override class var fullTypeName: String { "System.Text.EncoderFallbackBuffer" }
 	public func fallback(_ charUnknown: DNChar /* System.Char */, _ index: Int32 /* System.Int32 */) throws -> Bool /* System.Boolean */ {
 		let charUnknownC = charUnknown.cValue
 		
@@ -50076,6 +50364,8 @@ public class System_Text_EncoderFallbackBuffer /* System.Text.EncoderFallbackBuf
 
 
 public class System_Text_DecoderFallback /* System.Text.DecoderFallback */: System_Object {
+public override class var typeName: String { "DecoderFallback" }
+public override class var fullTypeName: String { "System.Text.DecoderFallback" }
 	public func createFallbackBuffer() throws -> System_Text_DecoderFallbackBuffer? /* System.Text.DecoderFallbackBuffer */ {
 		
 		
@@ -50179,6 +50469,8 @@ public class System_Text_DecoderFallback /* System.Text.DecoderFallback */: Syst
 
 
 public class System_Text_DecoderFallbackBuffer /* System.Text.DecoderFallbackBuffer */: System_Object {
+public override class var typeName: String { "DecoderFallbackBuffer" }
+public override class var fullTypeName: String { "System.Text.DecoderFallbackBuffer" }
 	public func fallback(_ bytesUnknown: System_Byte_Array? /* System.Byte[] */, _ index: Int32 /* System.Int32 */) throws -> Bool /* System.Boolean */ {
 		let bytesUnknownC = bytesUnknown?.__handle
 		
@@ -50299,6 +50591,8 @@ public class System_Text_DecoderFallbackBuffer /* System.Text.DecoderFallbackBuf
 
 
 public class System_Text_EncodingInfo /* System.Text.EncodingInfo */: System_Object {
+public override class var typeName: String { "EncodingInfo" }
+public override class var fullTypeName: String { "System.Text.EncodingInfo" }
 	public func getEncoding() throws -> System_Text_Encoding? /* System.Text.Encoding */ {
 		
 		
@@ -50465,6 +50759,8 @@ public class System_Text_EncodingInfo /* System.Text.EncodingInfo */: System_Obj
 
 
 public class System_Text_EncodingInfo_Array /* System.Text.EncodingInfo[] */: System_Array {
+public override class var typeName: String { "EncodingInfo[]" }
+public override class var fullTypeName: String { "System.Text.EncodingInfo[]" }
 	
 
 }
@@ -50480,6 +50776,8 @@ public class System_Text_EncodingInfo_Array /* System.Text.EncodingInfo[] */: Sy
 
 
 public class System_Text_Decoder /* System.Text.Decoder */: System_Object {
+public override class var typeName: String { "Decoder" }
+public override class var fullTypeName: String { "System.Text.Decoder" }
 	public func reset() throws {
 		
 		
@@ -50681,6 +50979,8 @@ public class System_Text_Decoder /* System.Text.Decoder */: System_Object {
 
 
 public class System_Text_Encoder /* System.Text.Encoder */: System_Object {
+public override class var typeName: String { "Encoder" }
+public override class var fullTypeName: String { "System.Text.Encoder" }
 	public func reset() throws {
 		
 		
@@ -50927,6 +51227,8 @@ public class System_Text_Encoder /* System.Text.Encoder */: System_Object {
 
 
 public class System_Int64_Array /* System.Int64[] */: System_Array {
+public override class var typeName: String { "Int64[]" }
+public override class var fullTypeName: String { "System.Int64[]" }
 	
 
 }
@@ -51083,6 +51385,8 @@ public class System_Int64_Array /* System.Int64[] */: System_Array {
 
 
 public class System_Runtime_InteropServices_StructLayoutAttribute /* System.Runtime.InteropServices.StructLayoutAttribute */: System_Attribute {
+public override class var typeName: String { "StructLayoutAttribute" }
+public override class var fullTypeName: String { "System.Runtime.InteropServices.StructLayoutAttribute" }
 	public convenience init?(_ layoutKind: System_Runtime_InteropServices_LayoutKind /* System.Runtime.InteropServices.LayoutKind */) throws {
 		let layoutKindC = layoutKind.cValue
 		
@@ -51229,6 +51533,8 @@ public class System_Runtime_InteropServices_StructLayoutAttribute /* System.Runt
 
 
 public class System_Attribute /* System.Attribute */: System_Object {
+public override class var typeName: String { "Attribute" }
+public override class var fullTypeName: String { "System.Attribute" }
 	public class func getCustomAttributes(_ element: System_Reflection_MemberInfo? /* System.Reflection.MemberInfo */, _ attributeType: System_Type? /* System.Type */) throws -> System_Attribute_Array? /* System.Attribute[] */ {
 		let elementC = element?.__handle
 		let attributeTypeC = attributeType?.__handle
@@ -52059,6 +52365,8 @@ public class System_Attribute /* System.Attribute */: System_Object {
 
 
 public class System_Attribute_Array /* System.Attribute[] */: System_Array {
+public override class var typeName: String { "Attribute[]" }
+public override class var fullTypeName: String { "System.Attribute[]" }
 	
 
 }
@@ -52078,6 +52386,8 @@ public class System_Attribute_Array /* System.Attribute[] */: System_Array {
 
 
 public class System_Reflection_ConstructorInfo_Array /* System.Reflection.ConstructorInfo[] */: System_Array {
+public override class var typeName: String { "ConstructorInfo[]" }
+public override class var fullTypeName: String { "System.Reflection.ConstructorInfo[]" }
 	
 
 }
@@ -52093,6 +52403,8 @@ public class System_Reflection_ConstructorInfo_Array /* System.Reflection.Constr
 
 
 public class System_Reflection_EventInfo_Array /* System.Reflection.EventInfo[] */: System_Array {
+public override class var typeName: String { "EventInfo[]" }
+public override class var fullTypeName: String { "System.Reflection.EventInfo[]" }
 	
 
 }
@@ -52108,6 +52420,8 @@ public class System_Reflection_EventInfo_Array /* System.Reflection.EventInfo[] 
 
 
 public class System_Reflection_InterfaceMapping /* System.Reflection.InterfaceMapping */: System_ValueType {
+public override class var typeName: String { "InterfaceMapping" }
+public override class var fullTypeName: String { "System.Reflection.InterfaceMapping" }
 	public func targetType_get() -> System_Type? /* System.Type */ {
 		
 		
@@ -52218,6 +52532,8 @@ public class System_Reflection_InterfaceMapping /* System.Reflection.InterfaceMa
 
 
 public class System_Runtime_InteropServices_Marshal /* System.Runtime.InteropServices.Marshal */: System_Object {
+public override class var typeName: String { "Marshal" }
+public override class var fullTypeName: String { "System.Runtime.InteropServices.Marshal" }
 	public class func offsetOf(_ t: System_Type? /* System.Type */, _ fieldName: System_String? /* System.String */) throws -> Int /* System.IntPtr */ {
 		let tC = t?.__handle
 		let fieldNameC = fieldName?.__handle
@@ -55267,6 +55583,8 @@ public class System_Runtime_InteropServices_Marshal /* System.Runtime.InteropSer
 // Type "T" was skipped. Reason: It has no full name.
 
 public class System_Int16_Array /* System.Int16[] */: System_Array {
+public override class var typeName: String { "Int16[]" }
+public override class var fullTypeName: String { "System.Int16[]" }
 	
 
 }
@@ -55285,6 +55603,8 @@ public class System_Int16_Array /* System.Int16[] */: System_Array {
 
 
 public class System_Single_Array /* System.Single[] */: System_Array {
+public override class var typeName: String { "Single[]" }
+public override class var fullTypeName: String { "System.Single[]" }
 	
 
 }
@@ -55303,6 +55623,8 @@ public class System_Single_Array /* System.Single[] */: System_Array {
 
 
 public class System_Double_Array /* System.Double[] */: System_Array {
+public override class var typeName: String { "Double[]" }
+public override class var fullTypeName: String { "System.Double[]" }
 	
 
 }
@@ -55321,6 +55643,8 @@ public class System_Double_Array /* System.Double[] */: System_Array {
 
 
 public class System_IntPtr_Array /* System.IntPtr[] */: System_Array {
+public override class var typeName: String { "IntPtr[]" }
+public override class var fullTypeName: String { "System.IntPtr[]" }
 	
 
 }
@@ -55342,6 +55666,8 @@ public class System_IntPtr_Array /* System.IntPtr[] */: System_Array {
 // Type "T" was skipped. Reason: It has no full name.
 // Type "T" was skipped. Reason: It has no full name.
 public class System_Security_SecureString /* System.Security.SecureString */: System_Object {
+public override class var typeName: String { "SecureString" }
+public override class var fullTypeName: String { "System.Security.SecureString" }
 	public func appendChar(_ c: DNChar /* System.Char */) throws {
 		let cC = c.cValue
 		
@@ -55581,6 +55907,8 @@ public class System_Security_SecureString /* System.Security.SecureString */: Sy
 // Type "T" was skipped. Reason: It has no full name.
 
 public class System_NullReferenceException /* System.NullReferenceException */: System_SystemException {
+public override class var typeName: String { "NullReferenceException" }
+public override class var fullTypeName: String { "System.NullReferenceException" }
 	public convenience init?() throws {
 		
 		
@@ -55665,6 +55993,8 @@ public class System_NullReferenceException /* System.NullReferenceException */: 
 
 
 public class System_SystemException /* System.SystemException */: System_Exception {
+public override class var typeName: String { "SystemException" }
+public override class var fullTypeName: String { "System.SystemException" }
 	public convenience init?() throws {
 		
 		
@@ -55804,6 +56134,8 @@ public class System_SystemException /* System.SystemException */: System_Excepti
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 public class System_Tuple_A1 /* System.Tuple<> */: System_Object {
+public override class var typeName: String { "Tuple`1" }
+public override class var fullTypeName: String { "System.Tuple<>" }
 	public func equals(_ T1: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
 		let T1C = T1.__handle
 		let objC = obj?.__handle
@@ -55931,6 +56263,8 @@ public class System_Tuple_A1 /* System.Tuple<> */: System_Object {
 
 
 public class System_Runtime_CompilerServices_ITuple /* System.Runtime.CompilerServices.ITuple */: DNObject {
+public override class var typeName: String { "ITuple" }
+public override class var fullTypeName: String { "System.Runtime.CompilerServices.ITuple" }
 	public func length_get() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -55970,6 +56304,8 @@ public class System_Runtime_CompilerServices_ITuple /* System.Runtime.CompilerSe
 
 // Type "T1" was skipped. Reason: It has no full name.
 public class System_Tuple_A2 /* System.Tuple<,> */: System_Object {
+public override class var typeName: String { "Tuple`2" }
+public override class var fullTypeName: String { "System.Tuple<,>" }
 	public func equals(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -56129,6 +56465,8 @@ public class System_Tuple_A2 /* System.Tuple<,> */: System_Object {
 // Type "T1" was skipped. Reason: It has no full name.
 // Type "T2" was skipped. Reason: It has no full name.
 public class System_Tuple_A3 /* System.Tuple<,,> */: System_Object {
+public override class var typeName: String { "Tuple`3" }
+public override class var fullTypeName: String { "System.Tuple<,,>" }
 	public func equals(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -56321,6 +56659,8 @@ public class System_Tuple_A3 /* System.Tuple<,,> */: System_Object {
 // Type "T2" was skipped. Reason: It has no full name.
 // Type "T3" was skipped. Reason: It has no full name.
 public class System_Tuple_A4 /* System.Tuple<,,,> */: System_Object {
+public override class var typeName: String { "Tuple`4" }
+public override class var fullTypeName: String { "System.Tuple<,,,>" }
 	public func equals(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -56548,6 +56888,8 @@ public class System_Tuple_A4 /* System.Tuple<,,,> */: System_Object {
 // Type "T3" was skipped. Reason: It has no full name.
 // Type "T4" was skipped. Reason: It has no full name.
 public class System_Tuple_A5 /* System.Tuple<,,,,> */: System_Object {
+public override class var typeName: String { "Tuple`5" }
+public override class var fullTypeName: String { "System.Tuple<,,,,>" }
 	public func equals(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -56812,6 +57154,8 @@ public class System_Tuple_A5 /* System.Tuple<,,,,> */: System_Object {
 // Type "T4" was skipped. Reason: It has no full name.
 // Type "T5" was skipped. Reason: It has no full name.
 public class System_Tuple_A6 /* System.Tuple<,,,,,> */: System_Object {
+public override class var typeName: String { "Tuple`6" }
+public override class var fullTypeName: String { "System.Tuple<,,,,,>" }
 	public func equals(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -57115,6 +57459,8 @@ public class System_Tuple_A6 /* System.Tuple<,,,,,> */: System_Object {
 // Type "T5" was skipped. Reason: It has no full name.
 // Type "T6" was skipped. Reason: It has no full name.
 public class System_Tuple_A7 /* System.Tuple<,,,,,,> */: System_Object {
+public override class var typeName: String { "Tuple`7" }
+public override class var fullTypeName: String { "System.Tuple<,,,,,,>" }
 	public func equals(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -57459,6 +57805,8 @@ public class System_Tuple_A7 /* System.Tuple<,,,,,,> */: System_Object {
 // Type "T6" was skipped. Reason: It has no full name.
 // Type "T7" was skipped. Reason: It has no full name.
 public class System_Tuple_A8 /* System.Tuple<,,,,,,,> */: System_Object {
+public override class var typeName: String { "Tuple`8" }
+public override class var fullTypeName: String { "System.Tuple<,,,,,,,>" }
 	public func equals(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -57846,6 +58194,8 @@ public class System_Tuple_A8 /* System.Tuple<,,,,,,,> */: System_Object {
 // Type "T7" was skipped. Reason: It has no full name.
 // Type "TRest" was skipped. Reason: It has no full name.
 public class System_GC /* System.GC */: System_Object {
+public override class var typeName: String { "GC" }
+public override class var fullTypeName: String { "System.GC" }
 	public class func getGCMemoryInfo() throws -> System_GCMemoryInfo? /* System.GCMemoryInfo */ {
 		
 		
@@ -58591,6 +58941,8 @@ public class System_GC /* System.GC */: System_Object {
 
 
 public class System_GCMemoryInfo /* System.GCMemoryInfo */: System_ValueType {
+public override class var typeName: String { "GCMemoryInfo" }
+public override class var fullTypeName: String { "System.GCMemoryInfo" }
 	public func highMemoryLoadThresholdBytes_get() throws -> Int64 /* System.Int64 */ {
 		
 		
@@ -58889,6 +59241,8 @@ public class System_GCMemoryInfo /* System.GCMemoryInfo */: System_ValueType {
 
 
 public class System_WeakReference /* System.WeakReference */: System_Object {
+public override class var typeName: String { "WeakReference" }
+public override class var fullTypeName: String { "System.WeakReference" }
 	public func getObjectData(_ info: System_Runtime_Serialization_SerializationInfo? /* System.Runtime.Serialization.SerializationInfo */, _ context: System_Runtime_Serialization_StreamingContext? /* System.Runtime.Serialization.StreamingContext */) throws {
 		let infoC = info?.__handle
 		let contextC = context?.__handle
@@ -59068,6 +59422,8 @@ public class System_WeakReference /* System.WeakReference */: System_Object {
 
 
 public class System_Math /* System.Math */: System_Object {
+public override class var typeName: String { "Math" }
+public override class var fullTypeName: String { "System.Math" }
 	public class func acos(_ d: Double /* System.Double */) throws -> Double /* System.Double */ {
 		
 		
@@ -61175,6 +61531,8 @@ public class System_Math /* System.Math */: System_Object {
 
 
 public class System_Convert /* System.Convert */: System_Object {
+public override class var typeName: String { "Convert" }
+public override class var fullTypeName: String { "System.Convert" }
 	public class func getTypeCode(_ value: System_Object? /* System.Object */) throws -> System_TypeCode /* System.TypeCode */ {
 		let valueC = value?.__handle
 		
@@ -67549,6 +67907,8 @@ public class System_Convert /* System.Convert */: System_Object {
 
 
 public class System_Threading_Thread /* System.Threading.Thread */: System_Runtime_ConstrainedExecution_CriticalFinalizerObject {
+public override class var typeName: String { "Thread" }
+public override class var fullTypeName: String { "System.Threading.Thread" }
 	public class func spinWait(_ iterations: Int32 /* System.Int32 */) throws {
 		
 		
@@ -69193,6 +69553,8 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 
 
 public class System_Security_Principal_IPrincipal /* System.Security.Principal.IPrincipal */: DNObject {
+public override class var typeName: String { "IPrincipal" }
+public override class var fullTypeName: String { "System.Security.Principal.IPrincipal" }
 	public func isInRole(_ role: System_String? /* System.String */) throws -> Bool /* System.Boolean */ {
 		let roleC = role?.__handle
 		
@@ -69253,6 +69615,8 @@ public class System_Security_Principal_IPrincipal /* System.Security.Principal.I
 
 
 public class System_Security_Principal_IIdentity /* System.Security.Principal.IIdentity */: DNObject {
+public override class var typeName: String { "IIdentity" }
+public override class var fullTypeName: String { "System.Security.Principal.IIdentity" }
 	public func name_get() throws -> System_String? /* System.String */ {
 		
 		
@@ -69335,6 +69699,8 @@ public class System_Security_Principal_IIdentity /* System.Security.Principal.II
 
 
 public class System_Threading_ExecutionContext /* System.Threading.ExecutionContext */: System_Object {
+public override class var typeName: String { "ExecutionContext" }
+public override class var fullTypeName: String { "System.Threading.ExecutionContext" }
 	public func getObjectData(_ info: System_Runtime_Serialization_SerializationInfo? /* System.Runtime.Serialization.SerializationInfo */, _ context: System_Runtime_Serialization_StreamingContext? /* System.Runtime.Serialization.StreamingContext */) throws {
 		let infoC = info?.__handle
 		let contextC = context?.__handle
@@ -69511,6 +69877,8 @@ public class System_Threading_ExecutionContext /* System.Threading.ExecutionCont
 
 
 public class System_Threading_AsyncFlowControl /* System.Threading.AsyncFlowControl */: System_ValueType {
+public override class var typeName: String { "AsyncFlowControl" }
+public override class var fullTypeName: String { "System.Threading.AsyncFlowControl" }
 	public func undo() throws {
 		
 		
@@ -69626,6 +69994,8 @@ public class System_Threading_AsyncFlowControl /* System.Threading.AsyncFlowCont
 
 
 public class System_LocalDataStoreSlot /* System.LocalDataStoreSlot */: System_Object {
+public override class var typeName: String { "LocalDataStoreSlot" }
+public override class var fullTypeName: String { "System.LocalDataStoreSlot" }
 	public override class func typeOf() -> System_Type? /* System.Type */ {
 		return System_Type(handle: System_LocalDataStoreSlot_TypeOf())
 		
@@ -69644,6 +70014,8 @@ public class System_LocalDataStoreSlot /* System.LocalDataStoreSlot */: System_O
 
 
 public class System_Threading_CompressedStack /* System.Threading.CompressedStack */: System_Object {
+public override class var typeName: String { "CompressedStack" }
+public override class var fullTypeName: String { "System.Threading.CompressedStack" }
 	public func getObjectData(_ info: System_Runtime_Serialization_SerializationInfo? /* System.Runtime.Serialization.SerializationInfo */, _ context: System_Runtime_Serialization_StreamingContext? /* System.Runtime.Serialization.StreamingContext */) throws {
 		let infoC = info?.__handle
 		let contextC = context?.__handle
@@ -69746,6 +70118,8 @@ public class System_Threading_CompressedStack /* System.Threading.CompressedStac
 
 
 public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject {
+public override class var typeName: String { "AppDomain" }
+public override class var fullTypeName: String { "System.AppDomain" }
 	public func setDynamicBase(_ path: System_String? /* System.String */) throws {
 		let pathC = path?.__handle
 		
@@ -71050,6 +71424,8 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 
 
 public class System_AppDomainSetup /* System.AppDomainSetup */: System_Object {
+public override class var typeName: String { "AppDomainSetup" }
+public override class var fullTypeName: String { "System.AppDomainSetup" }
 	public func applicationBase_get() throws -> System_String? /* System.String */ {
 		
 		
@@ -71112,6 +71488,8 @@ public class System_AppDomainSetup /* System.AppDomainSetup */: System_Object {
 
 
 public class System_Security_PermissionSet /* System.Security.PermissionSet */: System_Object {
+public override class var typeName: String { "PermissionSet" }
+public override class var fullTypeName: String { "System.Security.PermissionSet" }
 	public func addPermission(_ perm: System_Security_IPermission? /* System.Security.IPermission */) throws -> System_Security_IPermission? /* System.Security.IPermission */ {
 		let permC = perm?.__handle
 		
@@ -71740,6 +72118,8 @@ public class System_Security_PermissionSet /* System.Security.PermissionSet */: 
 
 
 public class System_Security_ISecurityEncodable /* System.Security.ISecurityEncodable */: DNObject {
+public override class var typeName: String { "ISecurityEncodable" }
+public override class var fullTypeName: String { "System.Security.ISecurityEncodable" }
 	public func fromXml(_ e: System_Security_SecurityElement? /* System.Security.SecurityElement */) throws {
 		let eC = e?.__handle
 		
@@ -71798,6 +72178,8 @@ public class System_Security_ISecurityEncodable /* System.Security.ISecurityEnco
 
 
 public class System_Security_SecurityElement /* System.Security.SecurityElement */: System_Object {
+public override class var typeName: String { "SecurityElement" }
+public override class var fullTypeName: String { "System.Security.SecurityElement" }
 	public func addAttribute(_ name: System_String? /* System.String */, _ value: System_String? /* System.String */) throws {
 		let nameC = name?.__handle
 		let valueC = value?.__handle
@@ -72316,6 +72698,8 @@ public class System_Security_SecurityElement /* System.Security.SecurityElement 
 
 
 public class System_Collections_Hashtable /* System.Collections.Hashtable */: System_Object {
+public override class var typeName: String { "Hashtable" }
+public override class var fullTypeName: String { "System.Collections.Hashtable" }
 	public func add(_ key: System_Object? /* System.Object */, _ value: System_Object? /* System.Object */) throws {
 		let keyC = key?.__handle
 		let valueC = value?.__handle
@@ -73055,6 +73439,8 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 
 
 public class System_Collections_IHashCodeProvider /* System.Collections.IHashCodeProvider */: DNObject {
+public override class var typeName: String { "IHashCodeProvider" }
+public override class var fullTypeName: String { "System.Collections.IHashCodeProvider" }
 	public func getHashCode(_ obj: System_Object? /* System.Object */) throws -> Int32 /* System.Int32 */ {
 		let objC = obj?.__handle
 		
@@ -73093,6 +73479,8 @@ public class System_Collections_IHashCodeProvider /* System.Collections.IHashCod
 
 
 public class System_Collections_ArrayList /* System.Collections.ArrayList */: System_Object {
+public override class var typeName: String { "ArrayList" }
+public override class var fullTypeName: String { "System.Collections.ArrayList" }
 	public class func adapter(_ list: System_Collections_IList? /* System.Collections.IList */) throws -> System_Collections_ArrayList? /* System.Collections.ArrayList */ {
 		let listC = list?.__handle
 		
@@ -74156,6 +74544,8 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 
 
 public class System_Security_IStackWalk /* System.Security.IStackWalk */: DNObject {
+public override class var typeName: String { "IStackWalk" }
+public override class var fullTypeName: String { "System.Security.IStackWalk" }
 	public func assert() throws {
 		
 		
@@ -74246,6 +74636,8 @@ public class System_Security_IStackWalk /* System.Security.IStackWalk */: DNObje
 
 
 public class System_Security_IPermission /* System.Security.IPermission */: DNObject {
+public override class var typeName: String { "IPermission" }
+public override class var fullTypeName: String { "System.Security.IPermission" }
 	public func copy() throws -> System_Security_IPermission? /* System.Security.IPermission */ {
 		
 		
@@ -74367,6 +74759,8 @@ public class System_Security_IPermission /* System.Security.IPermission */: DNOb
 
 
 public class System_UnhandledExceptionEventArgs /* System.UnhandledExceptionEventArgs */: System_EventArgs {
+public override class var typeName: String { "UnhandledExceptionEventArgs" }
+public override class var fullTypeName: String { "System.UnhandledExceptionEventArgs" }
 	public convenience init?(_ exception: System_Object? /* System.Object */, _ isTerminating: Bool /* System.Boolean */) throws {
 		let exceptionC = exception?.__handle
 		
@@ -74449,6 +74843,8 @@ public class System_UnhandledExceptionEventArgs /* System.UnhandledExceptionEven
 
 
 public class System_Reflection_Assembly_Array /* System.Reflection.Assembly[] */: System_Array {
+public override class var typeName: String { "Assembly[]" }
+public override class var fullTypeName: String { "System.Reflection.Assembly[]" }
 	
 
 }
@@ -74468,6 +74864,8 @@ public class System_Reflection_Assembly_Array /* System.Reflection.Assembly[] */
 
 
 public class System_AssemblyLoadEventArgs /* System.AssemblyLoadEventArgs */: System_EventArgs {
+public override class var typeName: String { "AssemblyLoadEventArgs" }
+public override class var fullTypeName: String { "System.AssemblyLoadEventArgs" }
 	public convenience init?(_ loadedAssembly: System_Reflection_Assembly? /* System.Reflection.Assembly */) throws {
 		let loadedAssemblyC = loadedAssembly?.__handle
 		
@@ -74530,6 +74928,8 @@ public class System_AssemblyLoadEventArgs /* System.AssemblyLoadEventArgs */: Sy
 
 
 public class System_Runtime_Remoting_ObjectHandle /* System.Runtime.Remoting.ObjectHandle */: System_MarshalByRefObject {
+public override class var typeName: String { "ObjectHandle" }
+public override class var fullTypeName: String { "System.Runtime.Remoting.ObjectHandle" }
 	public func unwrap() throws -> System_Object? /* System.Object */ {
 		
 		
@@ -74591,6 +74991,8 @@ public class System_Runtime_Remoting_ObjectHandle /* System.Runtime.Remoting.Obj
 
 
 public class System_Threading_Timer /* System.Threading.Timer */: System_MarshalByRefObject {
+public override class var typeName: String { "Timer" }
+public override class var fullTypeName: String { "System.Threading.Timer" }
 	public func change(_ dueTime: Int32 /* System.Int32 */, _ period: Int32 /* System.Int32 */) throws -> Bool /* System.Boolean */ {
 		
 		
@@ -74771,6 +75173,8 @@ public class System_Threading_Timer /* System.Threading.Timer */: System_Marshal
 
 
 public class System_Threading_CancellationTokenSource /* System.Threading.CancellationTokenSource */: System_Object {
+public override class var typeName: String { "CancellationTokenSource" }
+public override class var fullTypeName: String { "System.Threading.CancellationTokenSource" }
 	public func cancel() throws {
 		
 		
@@ -75093,6 +75497,8 @@ public class System_Threading_CancellationTokenSource /* System.Threading.Cancel
 
 
 public class System_Threading_CancellationToken_Array /* System.Threading.CancellationToken[] */: System_Array {
+public override class var typeName: String { "CancellationToken[]" }
+public override class var fullTypeName: String { "System.Threading.CancellationToken[]" }
 	
 
 }
@@ -75112,6 +75518,8 @@ public class System_Threading_CancellationToken_Array /* System.Threading.Cancel
 
 
 public class System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<> */: System_Threading_Tasks_Task {
+public override class var typeName: String { "Task`1" }
+public override class var fullTypeName: String { "System.Threading.Tasks.Task<>" }
 	public func waitAsync(_ TResult: System_Type /* System.Type */, _ cancellationToken: System_Threading_CancellationToken? /* System.Threading.CancellationToken */) throws -> System_Object? /* System.Object */ {
 		let TResultC = TResult.__handle
 		let cancellationTokenC = cancellationToken?.__handle
@@ -75224,6 +75632,8 @@ public class System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<> */:
 
 // Type "TResult" was skipped. Reason: It has no full name.
 public class System_Random /* System.Random */: System_Object {
+public override class var typeName: String { "Random" }
+public override class var fullTypeName: String { "System.Random" }
 	public func next() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -75529,6 +75939,8 @@ public class System_Random /* System.Random */: System_Object {
 // Type "T" was skipped. Reason: It has no full name.
 
 public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_Object {
+public override class var typeName: String { "StringBuilder" }
+public override class var fullTypeName: String { "System.Text.StringBuilder" }
 	public func ensureCapacity(_ capacity: Int32 /* System.Int32 */) throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -77387,6 +77799,8 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 
 
 public class System_Text_StringBuilder_ChunkEnumerator /* System.Text.StringBuilder.ChunkEnumerator */: System_ValueType {
+public override class var typeName: String { "ChunkEnumerator" }
+public override class var fullTypeName: String { "System.Text.StringBuilder.ChunkEnumerator" }
 	public func getEnumerator() throws -> System_Text_StringBuilder_ChunkEnumerator? /* System.Text.StringBuilder.ChunkEnumerator */ {
 		
 		
@@ -77445,6 +77859,8 @@ public class System_Text_StringBuilder_ChunkEnumerator /* System.Text.StringBuil
 
 
 public class System_Text_StringBuilder_AppendInterpolatedStringHandler /* System.Text.StringBuilder.AppendInterpolatedStringHandler */: System_ValueType {
+public override class var typeName: String { "AppendInterpolatedStringHandler" }
+public override class var fullTypeName: String { "System.Text.StringBuilder.AppendInterpolatedStringHandler" }
 	public func appendLiteral(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -77679,6 +78095,8 @@ public class System_Text_StringBuilder_AppendInterpolatedStringHandler /* System
 // Type "TArg1" was skipped. Reason: It has no full name.
 // Type "TArg2" was skipped. Reason: It has no full name.
 public class System_IO_Path /* System.IO.Path */: System_Object {
+public override class var typeName: String { "Path" }
+public override class var fullTypeName: String { "System.IO.Path" }
 	public class func changeExtension(_ path: System_String? /* System.String */, _ `extension`: System_String? /* System.String */) throws -> System_String? /* System.String */ {
 		let pathC = path?.__handle
 		let extensionC = `extension`?.__handle
@@ -78378,6 +78796,8 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 
 
 public class System_IO_File /* System.IO.File */: System_Object {
+public override class var typeName: String { "File" }
+public override class var fullTypeName: String { "System.IO.File" }
 	public class func openText(_ path: System_String? /* System.String */) throws -> System_IO_StreamReader? /* System.IO.StreamReader */ {
 		let pathC = path?.__handle
 		
@@ -80376,6 +80796,8 @@ public class System_IO_File /* System.IO.File */: System_Object {
 
 
 public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_TextReader {
+public override class var typeName: String { "StreamReader" }
+public override class var fullTypeName: String { "System.IO.StreamReader" }
 	public override func close() throws {
 		
 		
@@ -81031,6 +81453,8 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 
 
 public class System_IO_TextReader /* System.IO.TextReader */: System_MarshalByRefObject {
+public override class var typeName: String { "TextReader" }
+public override class var fullTypeName: String { "System.IO.TextReader" }
 	public func close() throws {
 		
 		
@@ -81356,6 +81780,8 @@ public class System_IO_TextReader /* System.IO.TextReader */: System_MarshalByRe
 
 
 public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_TextWriter {
+public override class var typeName: String { "StreamWriter" }
+public override class var fullTypeName: String { "System.IO.StreamWriter" }
 	public override func close() throws {
 		
 		
@@ -82189,6 +82615,8 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 
 
 public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRefObject {
+public override class var typeName: String { "TextWriter" }
+public override class var fullTypeName: String { "System.IO.TextWriter" }
 	public func close() throws {
 		
 		
@@ -83388,6 +83816,8 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 
 
 public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_MarshalByRefObject {
+public override class var typeName: String { "FileSystemInfo" }
+public override class var fullTypeName: String { "System.IO.FileSystemInfo" }
 	public func getObjectData(_ info: System_Runtime_Serialization_SerializationInfo? /* System.Runtime.Serialization.SerializationInfo */, _ context: System_Runtime_Serialization_StreamingContext? /* System.Runtime.Serialization.StreamingContext */) throws {
 		let infoC = info?.__handle
 		let contextC = context?.__handle
@@ -83959,6 +84389,8 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 
 
 public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemInfo {
+public override class var typeName: String { "FileInfo" }
+public override class var fullTypeName: String { "System.IO.FileInfo" }
 	public func `open`(_ options: System_IO_FileStreamOptions? /* System.IO.FileStreamOptions */) throws -> System_IO_FileStream? /* System.IO.FileStream */ {
 		let optionsC = options?.__handle
 		
@@ -84542,6 +84974,8 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 
 
 public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_FileSystemInfo {
+public override class var typeName: String { "DirectoryInfo" }
+public override class var fullTypeName: String { "System.IO.DirectoryInfo" }
 	public func createSubdirectory(_ path: System_String? /* System.String */) throws -> System_IO_DirectoryInfo? /* System.IO.DirectoryInfo */ {
 		let pathC = path?.__handle
 		
@@ -85297,6 +85731,8 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 
 
 public class System_IO_FileInfo_Array /* System.IO.FileInfo[] */: System_Array {
+public override class var typeName: String { "FileInfo[]" }
+public override class var fullTypeName: String { "System.IO.FileInfo[]" }
 	
 
 }
@@ -85316,6 +85752,8 @@ public class System_IO_FileInfo_Array /* System.IO.FileInfo[] */: System_Array {
 
 
 public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: System_Object {
+public override class var typeName: String { "EnumerationOptions" }
+public override class var fullTypeName: String { "System.IO.EnumerationOptions" }
 	public convenience init?() throws {
 		
 		
@@ -85668,6 +86106,8 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 
 
 public class System_IO_FileSystemInfo_Array /* System.IO.FileSystemInfo[] */: System_Array {
+public override class var typeName: String { "FileSystemInfo[]" }
+public override class var fullTypeName: String { "System.IO.FileSystemInfo[]" }
 	
 
 }
@@ -85687,6 +86127,8 @@ public class System_IO_FileSystemInfo_Array /* System.IO.FileSystemInfo[] */: Sy
 
 
 public class System_IO_DirectoryInfo_Array /* System.IO.DirectoryInfo[] */: System_Array {
+public override class var typeName: String { "DirectoryInfo[]" }
+public override class var fullTypeName: String { "System.IO.DirectoryInfo[]" }
 	
 
 }
@@ -85706,6 +86148,8 @@ public class System_IO_DirectoryInfo_Array /* System.IO.DirectoryInfo[] */: Syst
 
 
 public class System_IO_Directory /* System.IO.Directory */: System_Object {
+public override class var typeName: String { "Directory" }
+public override class var fullTypeName: String { "System.IO.Directory" }
 	public class func getParent(_ path: System_String? /* System.String */) throws -> System_IO_DirectoryInfo? /* System.IO.DirectoryInfo */ {
 		let pathC = path?.__handle
 		
@@ -86829,6 +87273,8 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 
 
 public class System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<> */: DNObject {
+public override class var typeName: String { "IEnumerable`1" }
+public override class var fullTypeName: String { "System.Collections.Generic.IEnumerable<>" }
 	public override class func typeOf() -> System_Type? /* System.Type */ {
 		return System_Type(handle: System_Collections_Generic_IEnumerable_A1_TypeOf())
 		
@@ -86847,6 +87293,8 @@ public class System_Collections_Generic_IEnumerable_A1 /* System.Collections.Gen
 
 
 public class System_Collections_Generic_List_A1 /* System.Collections.Generic.List<> */: System_Object {
+public override class var typeName: String { "List`1" }
+public override class var fullTypeName: String { "System.Collections.Generic.List<>" }
 	public func add(_ T: System_Type /* System.Type */, _ item: System_Object? /* System.Object */) throws {
 		let TC = T.__handle
 		let itemC = item?.__handle
@@ -87481,6 +87929,8 @@ public class System_Collections_Generic_List_A1 /* System.Collections.Generic.Li
 // Type "T[]" was skipped. Reason: It has no full name.
 
 public class System_Collections_Generic_IList_A1 /* System.Collections.Generic.IList<> */: DNObject {
+public override class var typeName: String { "IList`1" }
+public override class var fullTypeName: String { "System.Collections.Generic.IList<>" }
 	public func indexOf(_ T: System_Type /* System.Type */, _ item: System_Object? /* System.Object */) throws -> Int32 /* System.Int32 */ {
 		let TC = T.__handle
 		let itemC = item?.__handle
@@ -87560,6 +88010,8 @@ public class System_Collections_Generic_IList_A1 /* System.Collections.Generic.I
 
 // Type "T" was skipped. Reason: It has no full name.
 public class System_Collections_Generic_Dictionary_A2 /* System.Collections.Generic.Dictionary<,> */: System_Object {
+public override class var typeName: String { "Dictionary`2" }
+public override class var fullTypeName: String { "System.Collections.Generic.Dictionary<,>" }
 	public func add(_ TKey: System_Type /* System.Type */, _ TValue: System_Type /* System.Type */, _ key: System_Object? /* System.Object */, _ value: System_Object? /* System.Object */) throws {
 		let TKeyC = TKey.__handle
 		let TValueC = TValue.__handle
@@ -87930,6 +88382,8 @@ public class System_Collections_Generic_Dictionary_A2 /* System.Collections.Gene
 // Type "TKey" was skipped. Reason: It has no full name.
 
 public class System_Collections_Generic_IDictionary_A2 /* System.Collections.Generic.IDictionary<,> */: DNObject {
+public override class var typeName: String { "IDictionary`2" }
+public override class var fullTypeName: String { "System.Collections.Generic.IDictionary<,>" }
 	public func containsKey(_ TKey: System_Type /* System.Type */, _ TValue: System_Type /* System.Type */, _ key: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
 		let TKeyC = TKey.__handle
 		let TValueC = TValue.__handle
@@ -88040,6 +88494,8 @@ public class System_Collections_Generic_IDictionary_A2 /* System.Collections.Gen
 // Type "TKey" was skipped. Reason: It has no full name.
 
 public class System_Collections_ObjectModel_ReadOnlyCollection_A1 /* System.Collections.ObjectModel.ReadOnlyCollection<> */: System_Object {
+public override class var typeName: String { "ReadOnlyCollection`1" }
+public override class var fullTypeName: String { "System.Collections.ObjectModel.ReadOnlyCollection<>" }
 	public func contains(_ T: System_Type /* System.Type */, _ value: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
 		let TC = T.__handle
 		let valueC = value?.__handle
@@ -88167,6 +88623,8 @@ public class System_Collections_ObjectModel_ReadOnlyCollection_A1 /* System.Coll
 // Type "T[]" was skipped. Reason: It has no full name.
 
 public class System_Collections_Generic_IReadOnlyDictionary_A2 /* System.Collections.Generic.IReadOnlyDictionary<,> */: DNObject {
+public override class var typeName: String { "IReadOnlyDictionary`2" }
+public override class var fullTypeName: String { "System.Collections.Generic.IReadOnlyDictionary<,>" }
 	public func containsKey(_ TKey: System_Type /* System.Type */, _ TValue: System_Type /* System.Type */, _ key: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
 		let TKeyC = TKey.__handle
 		let TValueC = TValue.__handle
@@ -88233,6 +88691,8 @@ public class System_Collections_Generic_IReadOnlyDictionary_A2 /* System.Collect
 // Type "TValue" was skipped. Reason: It has no full name.
 
 public class System_Collections_Generic_IAsyncEnumerable_A1 /* System.Collections.Generic.IAsyncEnumerable<> */: DNObject {
+public override class var typeName: String { "IAsyncEnumerable`1" }
+public override class var fullTypeName: String { "System.Collections.Generic.IAsyncEnumerable<>" }
 	public override class func typeOf() -> System_Type? /* System.Type */ {
 		return System_Type(handle: System_Collections_Generic_IAsyncEnumerable_A1_TypeOf())
 		
@@ -88251,6 +88711,8 @@ public class System_Collections_Generic_IAsyncEnumerable_A1 /* System.Collection
 
 
 public class NativeAOT_CodeGeneratorInputSample_Address /* NativeAOT.CodeGeneratorInputSample.Address */: System_Object {
+public override class var typeName: String { "Address" }
+public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.Address" }
 	// TODO: Method with Delegate parameter (NativeAOT_CodeGeneratorInputSample_Address_Move)
 	public convenience init?(_ street: System_String? /* System.String */, _ city: System_String? /* System.String */) throws {
 		let streetC = street?.__handle
@@ -88337,6 +88799,8 @@ public class NativeAOT_CodeGeneratorInputSample_Address /* NativeAOT.CodeGenerat
 
 
 public class NativeAOT_CodeGeneratorInputSample_IAnimal /* NativeAOT.CodeGeneratorInputSample.IAnimal */: DNObject {
+public override class var typeName: String { "IAnimal" }
+public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.IAnimal" }
 	public func eat(_ food: System_String? /* System.String */) throws -> System_String? /* System.String */ {
 		let foodC = food?.__handle
 		
@@ -88399,6 +88863,8 @@ public class NativeAOT_CodeGeneratorInputSample_IAnimal /* NativeAOT.CodeGenerat
 
 
 public class NativeAOT_CodeGeneratorInputSample_AnimalFactory /* NativeAOT.CodeGeneratorInputSample.AnimalFactory */: System_Object {
+public override class var typeName: String { "AnimalFactory" }
+public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.AnimalFactory" }
 	public class func createAnimal(_ animalName: System_String? /* System.String */) throws -> NativeAOT_CodeGeneratorInputSample_IAnimal? /* NativeAOT.CodeGeneratorInputSample.IAnimal */ {
 		let animalNameC = animalName?.__handle
 		
@@ -88465,6 +88931,8 @@ public class NativeAOT_CodeGeneratorInputSample_AnimalFactory /* NativeAOT.CodeG
 
 // Type "T" was skipped. Reason: It has no full name.
 public class NativeAOT_CodeGeneratorInputSample_BaseAnimal /* NativeAOT.CodeGeneratorInputSample.BaseAnimal */: System_Object {
+public override class var typeName: String { "BaseAnimal" }
+public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.BaseAnimal" }
 	public func eat(_ food: System_String? /* System.String */) throws -> System_String? /* System.String */ {
 		let foodC = food?.__handle
 		
@@ -88527,6 +88995,8 @@ public class NativeAOT_CodeGeneratorInputSample_BaseAnimal /* NativeAOT.CodeGene
 
 
 public class NativeAOT_CodeGeneratorInputSample_Cat /* NativeAOT.CodeGeneratorInputSample.Cat */: NativeAOT_CodeGeneratorInputSample_BaseAnimal {
+public override class var typeName: String { "Cat" }
+public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.Cat" }
 	public override func name_get() throws -> System_String? /* System.String */ {
 		
 		
@@ -88580,6 +89050,8 @@ public class NativeAOT_CodeGeneratorInputSample_Cat /* NativeAOT.CodeGeneratorIn
 
 
 public class NativeAOT_CodeGeneratorInputSample_Dog /* NativeAOT.CodeGeneratorInputSample.Dog */: NativeAOT_CodeGeneratorInputSample_BaseAnimal {
+public override class var typeName: String { "Dog" }
+public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.Dog" }
 	public override func name_get() throws -> System_String? /* System.String */ {
 		
 		
@@ -88633,6 +89105,8 @@ public class NativeAOT_CodeGeneratorInputSample_Dog /* NativeAOT.CodeGeneratorIn
 
 
 public class NativeAOT_CodeGeneratorInputSample_GenericAnimal /* NativeAOT.CodeGeneratorInputSample.GenericAnimal */: NativeAOT_CodeGeneratorInputSample_BaseAnimal {
+public override class var typeName: String { "GenericAnimal" }
+public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.GenericAnimal" }
 	public convenience init?(_ name: System_String? /* System.String */) throws {
 		let nameC = name?.__handle
 		
@@ -88695,6 +89169,8 @@ public class NativeAOT_CodeGeneratorInputSample_GenericAnimal /* NativeAOT.CodeG
 
 
 public class NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1 /* NativeAOT.CodeGeneratorInputSample.GenericTestClass<> */: System_Object {
+public override class var typeName: String { "GenericTestClass`1" }
+public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.GenericTestClass<>" }
 	public func returnGenericClassType(_ T: System_Type /* System.Type */) throws -> System_Type? /* System.Type */ {
 		let TC = T.__handle
 		
@@ -88872,6 +89348,8 @@ public class NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1 /* NativeAOT
 // Type "TM" was skipped. Reason: It has no full name.
 
 public class NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2 /* NativeAOT.CodeGeneratorInputSample.GenericTestClass<,> */: System_Object {
+public override class var typeName: String { "GenericTestClass`2" }
+public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.GenericTestClass<,>" }
 	public func returnGenericClassTypes(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */) throws -> System_Type_Array? /* System.Type[] */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -89026,6 +89504,8 @@ public class NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2 /* NativeAOT
 
 
 public class NativeAOT_CodeGeneratorInputSample_GenericTests /* NativeAOT.CodeGeneratorInputSample.GenericTests */: System_Object {
+public override class var typeName: String { "GenericTests" }
+public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.GenericTests" }
 	public func joinListOfStrings(_ listOfString: System_Collections_Generic_List_A1? /* System.Collections.Generic.List<System.String> */, _ separator: System_String? /* System.String */) throws -> System_String? /* System.String */ {
 		let listOfStringC = listOfString?.__handle
 		let separatorC = separator?.__handle
@@ -89395,6 +89875,8 @@ public class NativeAOT_CodeGeneratorInputSample_GenericTests /* NativeAOT.CodeGe
 
 
 public class NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair /* NativeAOT.CodeGeneratorInputSample.GenericTests.SimpleKeyValuePair */: System_ValueType {
+public override class var typeName: String { "SimpleKeyValuePair" }
+public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.GenericTests.SimpleKeyValuePair" }
 	public convenience init?(_ key: System_Object? /* System.Object */, _ value: System_Object? /* System.Object */) throws {
 		let keyC = key?.__handle
 		let valueC = value?.__handle
@@ -89492,6 +89974,8 @@ public class NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair 
 // Type "T" was skipped. Reason: It has no full name.
 
 public class NativeAOT_CodeGeneratorInputSample_Person /* NativeAOT.CodeGeneratorInputSample.Person */: System_Object {
+public override class var typeName: String { "Person" }
+public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.Person" }
 	public func getNiceLevelString() throws -> System_String? /* System.String */ {
 		
 		
@@ -89986,6 +90470,8 @@ public class NativeAOT_CodeGeneratorInputSample_Person /* NativeAOT.CodeGenerato
 
 
 public class NativeAOT_CodeGeneratorInputSample_Person_Array /* NativeAOT.CodeGeneratorInputSample.Person[] */: System_Array {
+public override class var typeName: String { "Person[]" }
+public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.Person[]" }
 	
 
 }
@@ -90005,6 +90491,8 @@ public class NativeAOT_CodeGeneratorInputSample_Person_Array /* NativeAOT.CodeGe
 
 
 public class NativeAOT_CodeGeneratorInputSample_Person_Extensions /* NativeAOT.CodeGeneratorInputSample.Person_Extensions */: System_Object {
+public override class var typeName: String { "Person_Extensions" }
+public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.Person_Extensions" }
 	public class func increaseAge(_ person: NativeAOT_CodeGeneratorInputSample_Person? /* NativeAOT.CodeGeneratorInputSample.Person */, _ byYears: Int32 /* System.Int32 */) throws {
 		let personC = person?.__handle
 		
@@ -90042,6 +90530,8 @@ public class NativeAOT_CodeGeneratorInputSample_Person_Extensions /* NativeAOT.C
 
 
 public class NativeAOT_CodeGeneratorInputSample_Book /* NativeAOT.CodeGeneratorInputSample.Book */: System_Object {
+public override class var typeName: String { "Book" }
+public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.Book" }
 	public convenience init?(_ name: System_String? /* System.String */) throws {
 		let nameC = name?.__handle
 		
@@ -90143,6 +90633,8 @@ public class NativeAOT_CodeGeneratorInputSample_Book /* NativeAOT.CodeGeneratorI
 
 
 public class NativeAOT_CodeGeneratorInputSample_TestClass /* NativeAOT.CodeGeneratorInputSample.TestClass */: System_Object {
+public override class var typeName: String { "TestClass" }
+public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.TestClass" }
 	public func sayHello() throws {
 		
 		
@@ -90427,6 +90919,8 @@ public class NativeAOT_CodeGeneratorInputSample_TestClass /* NativeAOT.CodeGener
 
 
 public class NativeAOT_CodeGeneratorInputSample_Transformer /* NativeAOT.CodeGeneratorInputSample.Transformer */: System_Object {
+public override class var typeName: String { "Transformer" }
+public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.Transformer" }
 	// TODO: Method with Delegate parameter (NativeAOT_CodeGeneratorInputSample_Transformer_TransformString)
 	// TODO: Method with Delegate parameter (NativeAOT_CodeGeneratorInputSample_Transformer_TransformDoubles)
 	// TODO: Method with Delegate parameter (NativeAOT_CodeGeneratorInputSample_Transformer_GetAndTransformString)
@@ -90470,6 +90964,8 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer /* NativeAOT.CodeGen
 
 
 public class NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers /* NativeAOT.CodeGeneratorInputSample.Transformer.BuiltInTransformers */: System_Object {
+public override class var typeName: String { "BuiltInTransformers" }
+public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.Transformer.BuiltInTransformers" }
 	// TODO: Method with Delegate return or setter or event handler type (NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers_UppercaseStringTransformer_Get)
 	// TODO: Method with Delegate return or setter or event handler type (NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers_UppercaseStringTransformer_Set)
 	

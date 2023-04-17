@@ -339,6 +339,7 @@ public class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWriter
 
         StringBuilder sb = new();
 
+        string typeName = type.Name;
         string fullTypeName = type.GetFullNameOrName();
         TypeDescriptor typeDescriptor = type.GetTypeDescriptor(typeDescriptorRegistry);
         string cTypeName = typeDescriptor.GetTypeName(CodeLanguage.C, false);
@@ -354,6 +355,8 @@ public class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWriter
                                        ?? "DNObject";
             
             sb.AppendLine($"public class {swiftTypeName} /* {fullTypeName} */: {swiftBaseTypeName} {{");
+            sb.AppendLine($"public override class var typeName: String {{ \"{typeName}\" }}");
+            sb.AppendLine($"public override class var fullTypeName: String {{ \"{fullTypeName}\" }}");
         }
 
         // if (isDelegate) {
