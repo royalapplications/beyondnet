@@ -13,8 +13,6 @@ final class SystemObjectTests_Swift: XCTestCase {
     }
     
     func testSystemObject() {
-        var exception: System_Exception_t?
-        
         guard let systemObjectType = System_Object.typeOf() else {
             XCTFail("typeof(System.Object) should return an instance")
             
@@ -27,8 +25,7 @@ final class SystemObjectTests_Swift: XCTestCase {
             return
         }
         
-        guard let object1Type = try? object1.getType(),
-              exception == nil else {
+        guard let object1Type = try? object1.getType() else {
             XCTFail("System.Object.GetType should not throw and return an instance")
             
             return
@@ -46,8 +43,7 @@ final class SystemObjectTests_Swift: XCTestCase {
             return
         }
         
-        guard !((try? object1.equals(object2)) ?? false),
-              exception == nil else {
+        guard !((try? object1.equals(object2)) ?? false) else {
             XCTFail("System.Object.Equals should not throw and return false")
             
             return

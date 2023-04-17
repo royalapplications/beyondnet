@@ -96,6 +96,7 @@ final class SystemTypeTests: XCTestCase {
 	}
 	
 	// TODO: Fails since .NET 8 Preview 3
+    // TODO: Add to Swift tests
 //	func testReflectingOverSystemObject() {
 //		var exception: System_Exception_t?
 //

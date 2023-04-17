@@ -101,6 +101,12 @@ public extension String {
 	}
 }
 
+public extension System_String {
+    func string() -> String {
+        return String(dotNETString: self)
+    }
+}
+
 public final class NativeBox<T> {
     public let value: T
     
