@@ -566,11 +566,13 @@ if let __exceptionC {
                 }
                 
                 TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
+
+                bool isOptional = parameterTypeDescriptor.RequiresNativePointer;
                 
                 string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(
                     CodeLanguage.Swift,
                     true,
-                    true,
+                    isOptional,
                     isOutParameter,
                     isByRefParameter
                 );
@@ -758,8 +760,7 @@ if let __exceptionC {
             sourceLanguage,
             targetLanguage
         );
-
-
+        
         if (typeConversion != null) {
             string parameterNameForConversion = parameterName;
             
@@ -771,7 +772,7 @@ if let __exceptionC {
             convertedParameterName = $"{parameterNameForConversion}C";
 
             bool isOptional = parameterTypeDescriptor.RequiresNativePointer;
-            
+
             string optionalString = isOptional
                 ? "?"
                 : string.Empty;

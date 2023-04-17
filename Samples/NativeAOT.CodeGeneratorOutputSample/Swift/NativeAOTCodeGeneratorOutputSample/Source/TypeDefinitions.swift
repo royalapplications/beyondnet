@@ -21361,7 +21361,7 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 	
 	}
 	
-	public func deconstruct(_ year: inout Int32? /* System.Int32 */, _ month: inout Int32? /* System.Int32 */, _ day: inout Int32? /* System.Int32 */) throws {
+	public func deconstruct(_ year: inout Int32 /* System.Int32 */, _ month: inout Int32 /* System.Int32 */, _ day: inout Int32 /* System.Int32 */) throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -23755,7 +23755,7 @@ public class System_DateOnly /* System.DateOnly */: System_ValueType {
 	
 	}
 	
-	public func deconstruct(_ year: inout Int32? /* System.Int32 */, _ month: inout Int32? /* System.Int32 */, _ day: inout Int32? /* System.Int32 */) throws {
+	public func deconstruct(_ year: inout Int32 /* System.Int32 */, _ month: inout Int32 /* System.Int32 */, _ day: inout Int32 /* System.Int32 */) throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -24650,7 +24650,7 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 	
 	}
 	
-	public func add(_ value: System_TimeSpan? /* System.TimeSpan */, _ wrappedDays: inout Int32? /* System.Int32 */) throws -> System_TimeOnly? /* System.TimeOnly */ {
+	public func add(_ value: System_TimeSpan? /* System.TimeSpan */, _ wrappedDays: inout Int32 /* System.Int32 */) throws -> System_TimeOnly? /* System.TimeOnly */ {
 		let valueC = value?.__handle
 		
 		
@@ -24693,7 +24693,7 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 	
 	}
 	
-	public func addHours(_ value: Double /* System.Double */, _ wrappedDays: inout Int32? /* System.Int32 */) throws -> System_TimeOnly? /* System.TimeOnly */ {
+	public func addHours(_ value: Double /* System.Double */, _ wrappedDays: inout Int32 /* System.Int32 */) throws -> System_TimeOnly? /* System.TimeOnly */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -24735,7 +24735,7 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 	
 	}
 	
-	public func addMinutes(_ value: Double /* System.Double */, _ wrappedDays: inout Int32? /* System.Int32 */) throws -> System_TimeOnly? /* System.TimeOnly */ {
+	public func addMinutes(_ value: Double /* System.Double */, _ wrappedDays: inout Int32 /* System.Int32 */) throws -> System_TimeOnly? /* System.TimeOnly */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -24777,7 +24777,7 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 	
 	}
 	
-	public func deconstruct(_ hour: inout Int32? /* System.Int32 */, _ minute: inout Int32? /* System.Int32 */) throws {
+	public func deconstruct(_ hour: inout Int32 /* System.Int32 */, _ minute: inout Int32 /* System.Int32 */) throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -24795,7 +24795,7 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 	
 	}
 	
-	public func deconstruct(_ hour: inout Int32? /* System.Int32 */, _ minute: inout Int32? /* System.Int32 */, _ second: inout Int32? /* System.Int32 */) throws {
+	public func deconstruct(_ hour: inout Int32 /* System.Int32 */, _ minute: inout Int32 /* System.Int32 */, _ second: inout Int32 /* System.Int32 */) throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -24813,7 +24813,7 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 	
 	}
 	
-	public func deconstruct(_ hour: inout Int32? /* System.Int32 */, _ minute: inout Int32? /* System.Int32 */, _ second: inout Int32? /* System.Int32 */, _ millisecond: inout Int32? /* System.Int32 */) throws {
+	public func deconstruct(_ hour: inout Int32 /* System.Int32 */, _ minute: inout Int32 /* System.Int32 */, _ second: inout Int32 /* System.Int32 */, _ millisecond: inout Int32 /* System.Int32 */) throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -24831,7 +24831,7 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 	
 	}
 	
-	public func deconstruct(_ hour: inout Int32? /* System.Int32 */, _ minute: inout Int32? /* System.Int32 */, _ second: inout Int32? /* System.Int32 */, _ millisecond: inout Int32? /* System.Int32 */, _ microsecond: inout Int32? /* System.Int32 */) throws {
+	public func deconstruct(_ hour: inout Int32 /* System.Int32 */, _ minute: inout Int32 /* System.Int32 */, _ second: inout Int32 /* System.Int32 */, _ millisecond: inout Int32 /* System.Int32 */, _ microsecond: inout Int32 /* System.Int32 */) throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -31661,7 +31661,7 @@ public class System_Runtime_InteropServices_SafeHandle /* System.Runtime.Interop
 	
 	}
 	
-	public func dangerousAddRef(_ success: inout Bool? /* System.Boolean */) throws {
+	public func dangerousAddRef(_ success: inout Bool /* System.Boolean */) throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -34788,7 +34788,7 @@ public class System_Reflection_CustomAttributeData_Array /* System.Reflection.Cu
 
 
 public class System_Reflection_Module /* System.Reflection.Module */: System_Object {
-	public func getPEKind(_ peKind: inout System_Reflection_PortableExecutableKinds? /* System.Reflection.PortableExecutableKinds */, _ machine: inout System_Reflection_ImageFileMachine? /* System.Reflection.ImageFileMachine */) throws {
+	public func getPEKind(_ peKind: inout System_Reflection_PortableExecutableKinds /* System.Reflection.PortableExecutableKinds */, _ machine: inout System_Reflection_ImageFileMachine /* System.Reflection.ImageFileMachine */) throws {
 		var peKindC = peKind.cValue
 		var machineC = machine.cValue
 		
@@ -50507,7 +50507,7 @@ public class System_Text_Decoder /* System.Text.Decoder */: System_Object {
 	
 	}
 	
-	public func convert(_ bytes: System_Byte_Array? /* System.Byte[] */, _ byteIndex: Int32 /* System.Int32 */, _ byteCount: Int32 /* System.Int32 */, _ chars: System_Char_Array? /* System.Char[] */, _ charIndex: Int32 /* System.Int32 */, _ charCount: Int32 /* System.Int32 */, _ flush: Bool /* System.Boolean */, _ bytesUsed: inout Int32? /* System.Int32 */, _ charsUsed: inout Int32? /* System.Int32 */, _ completed: inout Bool? /* System.Boolean */) throws {
+	public func convert(_ bytes: System_Byte_Array? /* System.Byte[] */, _ byteIndex: Int32 /* System.Int32 */, _ byteCount: Int32 /* System.Int32 */, _ chars: System_Char_Array? /* System.Char[] */, _ charIndex: Int32 /* System.Int32 */, _ charCount: Int32 /* System.Int32 */, _ flush: Bool /* System.Boolean */, _ bytesUsed: inout Int32 /* System.Int32 */, _ charsUsed: inout Int32 /* System.Int32 */, _ completed: inout Bool /* System.Boolean */) throws {
 		let bytesC = bytes?.__handle
 		let charsC = chars?.__handle
 		
@@ -50667,7 +50667,7 @@ public class System_Text_Encoder /* System.Text.Encoder */: System_Object {
 	
 	}
 	
-	public func convert(_ chars: System_Char_Array? /* System.Char[] */, _ charIndex: Int32 /* System.Int32 */, _ charCount: Int32 /* System.Int32 */, _ bytes: System_Byte_Array? /* System.Byte[] */, _ byteIndex: Int32 /* System.Int32 */, _ byteCount: Int32 /* System.Int32 */, _ flush: Bool /* System.Boolean */, _ charsUsed: inout Int32? /* System.Int32 */, _ bytesUsed: inout Int32? /* System.Int32 */, _ completed: inout Bool? /* System.Boolean */) throws {
+	public func convert(_ chars: System_Char_Array? /* System.Char[] */, _ charIndex: Int32 /* System.Int32 */, _ charCount: Int32 /* System.Int32 */, _ bytes: System_Byte_Array? /* System.Byte[] */, _ byteIndex: Int32 /* System.Int32 */, _ byteCount: Int32 /* System.Int32 */, _ flush: Bool /* System.Boolean */, _ charsUsed: inout Int32 /* System.Int32 */, _ bytesUsed: inout Int32 /* System.Int32 */, _ completed: inout Bool /* System.Boolean */) throws {
 		let charsC = chars?.__handle
 		let bytesC = bytes?.__handle
 		
@@ -52642,7 +52642,7 @@ public class System_Runtime_InteropServices_Marshal /* System.Runtime.InteropSer
 	
 	}
 	
-	public class func queryInterface(_ pUnk: Int /* System.IntPtr */, _ iid: inout System_Guid? /* System.Guid */, _ ppv: inout Int? /* System.IntPtr */) throws -> Int32 /* System.Int32 */ {
+	public class func queryInterface(_ pUnk: Int /* System.IntPtr */, _ iid: inout System_Guid? /* System.Guid */, _ ppv: inout Int /* System.IntPtr */) throws -> Int32 /* System.Int32 */ {
 		var iidC = iid?.__handle
 		
 		
@@ -59603,7 +59603,7 @@ public class System_Math /* System.Math */: System_Object {
 	
 	}
 	
-	public class func bigMul(_ a: UInt64 /* System.UInt64 */, _ b: UInt64 /* System.UInt64 */, _ low: inout UInt64? /* System.UInt64 */) throws -> UInt64 /* System.UInt64 */ {
+	public class func bigMul(_ a: UInt64 /* System.UInt64 */, _ b: UInt64 /* System.UInt64 */, _ low: inout UInt64 /* System.UInt64 */) throws -> UInt64 /* System.UInt64 */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -59622,7 +59622,7 @@ public class System_Math /* System.Math */: System_Object {
 	
 	}
 	
-	public class func bigMul(_ a: Int64 /* System.Int64 */, _ b: Int64 /* System.Int64 */, _ low: inout Int64? /* System.Int64 */) throws -> Int64 /* System.Int64 */ {
+	public class func bigMul(_ a: Int64 /* System.Int64 */, _ b: Int64 /* System.Int64 */, _ low: inout Int64 /* System.Int64 */) throws -> Int64 /* System.Int64 */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -59698,7 +59698,7 @@ public class System_Math /* System.Math */: System_Object {
 	
 	}
 	
-	public class func divRem(_ a: Int32 /* System.Int32 */, _ b: Int32 /* System.Int32 */, _ result: inout Int32? /* System.Int32 */) throws -> Int32 /* System.Int32 */ {
+	public class func divRem(_ a: Int32 /* System.Int32 */, _ b: Int32 /* System.Int32 */, _ result: inout Int32 /* System.Int32 */) throws -> Int32 /* System.Int32 */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -59717,7 +59717,7 @@ public class System_Math /* System.Math */: System_Object {
 	
 	}
 	
-	public class func divRem(_ a: Int64 /* System.Int64 */, _ b: Int64 /* System.Int64 */, _ result: inout Int64? /* System.Int64 */) throws -> Int64 /* System.Int64 */ {
+	public class func divRem(_ a: Int64 /* System.Int64 */, _ b: Int64 /* System.Int64 */, _ result: inout Int64 /* System.Int64 */) throws -> Int64 /* System.Int64 */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -68128,7 +68128,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	
 	}
 	
-	public class func volatileRead(_ address: inout UInt8? /* System.Byte */) throws -> UInt8 /* System.Byte */ {
+	public class func volatileRead(_ address: inout UInt8 /* System.Byte */) throws -> UInt8 /* System.Byte */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -68147,7 +68147,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	
 	}
 	
-	public class func volatileRead(_ address: inout Double? /* System.Double */) throws -> Double /* System.Double */ {
+	public class func volatileRead(_ address: inout Double /* System.Double */) throws -> Double /* System.Double */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -68166,7 +68166,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	
 	}
 	
-	public class func volatileRead(_ address: inout Int16? /* System.Int16 */) throws -> Int16 /* System.Int16 */ {
+	public class func volatileRead(_ address: inout Int16 /* System.Int16 */) throws -> Int16 /* System.Int16 */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -68185,7 +68185,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	
 	}
 	
-	public class func volatileRead(_ address: inout Int32? /* System.Int32 */) throws -> Int32 /* System.Int32 */ {
+	public class func volatileRead(_ address: inout Int32 /* System.Int32 */) throws -> Int32 /* System.Int32 */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -68204,7 +68204,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	
 	}
 	
-	public class func volatileRead(_ address: inout Int64? /* System.Int64 */) throws -> Int64 /* System.Int64 */ {
+	public class func volatileRead(_ address: inout Int64 /* System.Int64 */) throws -> Int64 /* System.Int64 */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -68223,7 +68223,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	
 	}
 	
-	public class func volatileRead(_ address: inout Int? /* System.IntPtr */) throws -> Int /* System.IntPtr */ {
+	public class func volatileRead(_ address: inout Int /* System.IntPtr */) throws -> Int /* System.IntPtr */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -68264,7 +68264,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	
 	}
 	
-	public class func volatileRead(_ address: inout Int8? /* System.SByte */) throws -> Int8 /* System.SByte */ {
+	public class func volatileRead(_ address: inout Int8 /* System.SByte */) throws -> Int8 /* System.SByte */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -68283,7 +68283,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	
 	}
 	
-	public class func volatileRead(_ address: inout Float? /* System.Single */) throws -> Float /* System.Single */ {
+	public class func volatileRead(_ address: inout Float /* System.Single */) throws -> Float /* System.Single */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -68302,7 +68302,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	
 	}
 	
-	public class func volatileRead(_ address: inout UInt16? /* System.UInt16 */) throws -> UInt16 /* System.UInt16 */ {
+	public class func volatileRead(_ address: inout UInt16 /* System.UInt16 */) throws -> UInt16 /* System.UInt16 */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -68321,7 +68321,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	
 	}
 	
-	public class func volatileRead(_ address: inout UInt32? /* System.UInt32 */) throws -> UInt32 /* System.UInt32 */ {
+	public class func volatileRead(_ address: inout UInt32 /* System.UInt32 */) throws -> UInt32 /* System.UInt32 */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -68340,7 +68340,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	
 	}
 	
-	public class func volatileRead(_ address: inout UInt64? /* System.UInt64 */) throws -> UInt64 /* System.UInt64 */ {
+	public class func volatileRead(_ address: inout UInt64 /* System.UInt64 */) throws -> UInt64 /* System.UInt64 */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -68359,7 +68359,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	
 	}
 	
-	public class func volatileRead(_ address: inout UInt? /* System.UIntPtr */) throws -> UInt /* System.UIntPtr */ {
+	public class func volatileRead(_ address: inout UInt /* System.UIntPtr */) throws -> UInt /* System.UIntPtr */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -68378,7 +68378,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	
 	}
 	
-	public class func volatileWrite(_ address: inout UInt8? /* System.Byte */, _ value: UInt8 /* System.Byte */) throws {
+	public class func volatileWrite(_ address: inout UInt8 /* System.Byte */, _ value: UInt8 /* System.Byte */) throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -68396,7 +68396,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	
 	}
 	
-	public class func volatileWrite(_ address: inout Double? /* System.Double */, _ value: Double /* System.Double */) throws {
+	public class func volatileWrite(_ address: inout Double /* System.Double */, _ value: Double /* System.Double */) throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -68414,7 +68414,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	
 	}
 	
-	public class func volatileWrite(_ address: inout Int16? /* System.Int16 */, _ value: Int16 /* System.Int16 */) throws {
+	public class func volatileWrite(_ address: inout Int16 /* System.Int16 */, _ value: Int16 /* System.Int16 */) throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -68432,7 +68432,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	
 	}
 	
-	public class func volatileWrite(_ address: inout Int32? /* System.Int32 */, _ value: Int32 /* System.Int32 */) throws {
+	public class func volatileWrite(_ address: inout Int32 /* System.Int32 */, _ value: Int32 /* System.Int32 */) throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -68450,7 +68450,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	
 	}
 	
-	public class func volatileWrite(_ address: inout Int64? /* System.Int64 */, _ value: Int64 /* System.Int64 */) throws {
+	public class func volatileWrite(_ address: inout Int64 /* System.Int64 */, _ value: Int64 /* System.Int64 */) throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -68468,7 +68468,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	
 	}
 	
-	public class func volatileWrite(_ address: inout Int? /* System.IntPtr */, _ value: Int /* System.IntPtr */) throws {
+	public class func volatileWrite(_ address: inout Int /* System.IntPtr */, _ value: Int /* System.IntPtr */) throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -68506,7 +68506,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	
 	}
 	
-	public class func volatileWrite(_ address: inout Int8? /* System.SByte */, _ value: Int8 /* System.SByte */) throws {
+	public class func volatileWrite(_ address: inout Int8 /* System.SByte */, _ value: Int8 /* System.SByte */) throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -68524,7 +68524,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	
 	}
 	
-	public class func volatileWrite(_ address: inout Float? /* System.Single */, _ value: Float /* System.Single */) throws {
+	public class func volatileWrite(_ address: inout Float /* System.Single */, _ value: Float /* System.Single */) throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -68542,7 +68542,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	
 	}
 	
-	public class func volatileWrite(_ address: inout UInt16? /* System.UInt16 */, _ value: UInt16 /* System.UInt16 */) throws {
+	public class func volatileWrite(_ address: inout UInt16 /* System.UInt16 */, _ value: UInt16 /* System.UInt16 */) throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -68560,7 +68560,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	
 	}
 	
-	public class func volatileWrite(_ address: inout UInt32? /* System.UInt32 */, _ value: UInt32 /* System.UInt32 */) throws {
+	public class func volatileWrite(_ address: inout UInt32 /* System.UInt32 */, _ value: UInt32 /* System.UInt32 */) throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -68578,7 +68578,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	
 	}
 	
-	public class func volatileWrite(_ address: inout UInt64? /* System.UInt64 */, _ value: UInt64 /* System.UInt64 */) throws {
+	public class func volatileWrite(_ address: inout UInt64 /* System.UInt64 */, _ value: UInt64 /* System.UInt64 */) throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -68596,7 +68596,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	
 	}
 	
-	public class func volatileWrite(_ address: inout UInt? /* System.UIntPtr */, _ value: UInt /* System.UIntPtr */) throws {
+	public class func volatileWrite(_ address: inout UInt /* System.UIntPtr */, _ value: UInt /* System.UIntPtr */) throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -88588,7 +88588,7 @@ public class NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1 /* NativeAOT
 	
 	}
 	
-	public func extreme(_ T: System_Type /* System.Type */, _ TM: System_Type /* System.Type */, _ countIn: Int32 /* System.Int32 */, _ countOut: inout Int32? /* System.Int32 */, _ typeGenericInput: System_Object? /* System.Object */, _ typeGenericOutput: inout System_Object? /* System.Object */, _ methodGenericInputThatIsToBeReplacedWithDefault: inout System_Object? /* System.Object */) throws -> System_Object? /* System.Object */ {
+	public func extreme(_ T: System_Type /* System.Type */, _ TM: System_Type /* System.Type */, _ countIn: Int32 /* System.Int32 */, _ countOut: inout Int32 /* System.Int32 */, _ typeGenericInput: System_Object? /* System.Object */, _ typeGenericOutput: inout System_Object? /* System.Object */, _ methodGenericInputThatIsToBeReplacedWithDefault: inout System_Object? /* System.Object */) throws -> System_Object? /* System.Object */ {
 		let TC = T.__handle
 		let TMC = TM.__handle
 		let typeGenericInputC = typeGenericInput?.__handle
@@ -90130,7 +90130,7 @@ public class NativeAOT_CodeGeneratorInputSample_TestClass /* NativeAOT.CodeGener
 	
 	}
 	
-	public func modifyByRefValueAndReturnOriginalValue(_ valueToModify: inout Int32? /* System.Int32 */, _ targetValue: Int32 /* System.Int32 */) throws -> Int32 /* System.Int32 */ {
+	public func modifyByRefValueAndReturnOriginalValue(_ valueToModify: inout Int32 /* System.Int32 */, _ targetValue: Int32 /* System.Int32 */) throws -> Int32 /* System.Int32 */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -90149,7 +90149,7 @@ public class NativeAOT_CodeGeneratorInputSample_TestClass /* NativeAOT.CodeGener
 	
 	}
 	
-	public func modifyByRefEnum(_ enumToModify: inout NativeAOT_CodeGeneratorInputSample_TestEnum? /* NativeAOT.CodeGeneratorInputSample.TestEnum */) throws {
+	public func modifyByRefEnum(_ enumToModify: inout NativeAOT_CodeGeneratorInputSample_TestEnum /* NativeAOT.CodeGeneratorInputSample.TestEnum */) throws {
 		var enumToModifyC = enumToModify.cValue
 		
 		
