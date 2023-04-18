@@ -205,6 +205,12 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             false,
             returnOrSetterOrEventHandlerTypeIsByRef
         );
+
+        bool returnTypeIsNonNull = memberKind == MemberKind.TypeOf;
+        
+        string returnTypeNullabilitySpecifier = returnTypeIsNonNull
+            ? " __nonnull"
+            : string.Empty;
         
         string cReturnOrSetterTypeNameWithComment;
         Type? setterType;
@@ -216,7 +222,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             cReturnOrSetterTypeNameWithComment = "void /* System.Void */";
             setterType = returnOrSetterOrEventHandlerType;
         } else {
-            cReturnOrSetterTypeNameWithComment = $"{cReturnOrSetterTypeName} /* {returnOrSetterOrEventHandlerType.GetFullNameOrName()} */";
+            cReturnOrSetterTypeNameWithComment = $"{cReturnOrSetterTypeName}{returnTypeNullabilitySpecifier} /* {returnOrSetterOrEventHandlerType.GetFullNameOrName()} */";
             setterType = null;
         }
         

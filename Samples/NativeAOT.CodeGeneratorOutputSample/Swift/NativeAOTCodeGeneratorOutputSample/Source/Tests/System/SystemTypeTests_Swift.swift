@@ -14,12 +14,7 @@ final class SystemTypeTests_Swift: XCTestCase {
     
     func testSystemType() {
         let systemObjectTypeName = System_Object.fullTypeName
-        
-        guard let systemObjectType = System_Object.typeOf() else {
-            XCTFail("typeof(System.Object) should return an instance")
-            
-            return
-        }
+        let systemObjectType = System_Object.typeOf()
         
         guard let systemObjectTypeViaName = try? System_Type.getType(systemObjectTypeName.dotNETString()) else {
             XCTFail("System.Type.GetType should not throw and return an instance of System.Type")

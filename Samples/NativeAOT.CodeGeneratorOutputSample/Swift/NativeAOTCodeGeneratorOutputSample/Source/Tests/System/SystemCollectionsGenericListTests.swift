@@ -15,20 +15,10 @@ final class SystemCollectionsGenericListTests: XCTestCase {
 	func testTypeOf() {
 		var exception: System_Exception_t?
 		
-		guard let systemTypeType = System_Type_TypeOf() else {
-			XCTFail("typeof(System.Type) should return an instance")
-			
-			return
-		}
-		
+		let systemTypeType = System_Type_TypeOf()
 		defer { System_Type_Destroy(systemTypeType) }
 		
-		guard let type = System_Collections_Generic_List_A1_TypeOf() else {
-			XCTFail("typeof(System.Collections.Generic.List<>) should return an instance")
-			
-			return
-		}
-		
+		let type = System_Collections_Generic_List_A1_TypeOf()
 		defer { System_Type_Destroy(type) }
 		
 		let isGenericType = System_Type_IsGenericType_Get(type,
@@ -87,12 +77,7 @@ final class SystemCollectionsGenericListTests: XCTestCase {
 	func testCreate() {
 		var exception: System_Exception_t?
 		
-		guard let systemStringType = System_String_TypeOf() else {
-			XCTFail("typeof(System.String) should return an instance")
-			
-			return
-		}
-		
+		let systemStringType = System_String_TypeOf()
 		defer { System_Type_Destroy(systemStringType) }
 		
 		guard let list = System_Collections_Generic_List_A1_Create(systemStringType,
@@ -130,12 +115,7 @@ final class SystemCollectionsGenericListTests: XCTestCase {
 	func testUse() {
 		var exception: System_Exception_t?
 		
-		guard let systemStringType = System_String_TypeOf() else {
-			XCTFail("typeof(System.String) should return an instance")
-			
-			return
-		}
-		
+		let systemStringType = System_String_TypeOf()
 		defer { System_Type_Destroy(systemStringType) }
 		
 		guard let list = System_Collections_Generic_List_A1_Create(systemStringType,

@@ -15,12 +15,7 @@ final class SystemTupleTests: XCTestCase {
     func testTupleA1() {
         var exception: System_Exception_t?
 
-        guard let systemStringType = System_String_TypeOf() else {
-            XCTFail("typeof(System.String) should return an instance")
-
-            return
-        }
-
+        let systemStringType = System_String_TypeOf()
         defer { System_Type_Destroy(systemStringType) }
 
         let string = "Hello World"

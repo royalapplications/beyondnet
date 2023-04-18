@@ -13,11 +13,7 @@ final class SystemObjectTests_Swift: XCTestCase {
     }
     
     func testSystemObject() {
-        guard let systemObjectType = System_Object.typeOf() else {
-            XCTFail("typeof(System.Object) should return an instance")
-            
-            return
-        }
+        let systemObjectType = System_Object.typeOf()
         
         guard let object1 = try? System_Object() else {
             XCTFail("System.Object ctor should not throw and return an instance")

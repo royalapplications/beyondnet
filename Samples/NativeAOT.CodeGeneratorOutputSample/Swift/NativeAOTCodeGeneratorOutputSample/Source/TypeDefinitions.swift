@@ -31,8 +31,7 @@ public class DNObject {
 		self.init(handle: handle)
 	}
 
-    // TODO: Should be non-optional
-    public class func typeOf() -> System_Type? /* System.Type */ {
+    public class func typeOf() -> System_Type /* System.Type */ {
         fatalError("Override in subclass")
     }
 
@@ -41,7 +40,13 @@ public class DNObject {
     }
 
     deinit {
+        // Enable for debugging
+        print("[DEBUG] Will destroy \(Self.fullTypeName)")
+
 		destroy()
+
+        // Enable for debugging
+        print("[DEBUG] Did destroy \(Self.fullTypeName)")
 	}
 }
 
@@ -1729,7 +1734,7 @@ public override class var fullTypeName: String { "System.Object" }
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Object_TypeOf())
 		
 	
@@ -5524,7 +5529,7 @@ public override class var fullTypeName: String { "System.Type" }
 	
 	// TODO: Method with Delegate return or setter or event handler type (System_Type_FilterNameIgnoreCase_Get)
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Type_TypeOf())
 		
 	
@@ -5859,7 +5864,7 @@ public override class var fullTypeName: String { "System.Reflection.MemberInfo" 
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_MemberInfo_TypeOf())
 		
 	
@@ -5942,7 +5947,7 @@ public override class var fullTypeName: String { "System.Reflection.ICustomAttri
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_ICustomAttributeProvider_TypeOf())
 		
 	
@@ -7678,7 +7683,7 @@ public override class var fullTypeName: String { "System.Array" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Array_TypeOf())
 		
 	
@@ -7719,7 +7724,7 @@ public override class var fullTypeName: String { "System.ICloneable" }
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_ICloneable_TypeOf())
 		
 	
@@ -7913,7 +7918,7 @@ public override class var fullTypeName: String { "System.Collections.IList" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Collections_IList_TypeOf())
 		
 	
@@ -8014,7 +8019,7 @@ public override class var fullTypeName: String { "System.Collections.ICollection
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Collections_ICollection_TypeOf())
 		
 	
@@ -8055,7 +8060,7 @@ public override class var fullTypeName: String { "System.Collections.IEnumerable
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Collections_IEnumerable_TypeOf())
 		
 	
@@ -8134,7 +8139,7 @@ public override class var fullTypeName: String { "System.Collections.IEnumerator
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Collections_IEnumerator_TypeOf())
 		
 	
@@ -8215,7 +8220,7 @@ public override class var fullTypeName: String { "System.ValueType" }
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_ValueType_TypeOf())
 		
 	
@@ -8256,7 +8261,7 @@ public override class var fullTypeName: String { "System.IComparable" }
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_IComparable_TypeOf())
 		
 	
@@ -8628,7 +8633,7 @@ public override class var fullTypeName: String { "System.IConvertible" }
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_IConvertible_TypeOf())
 		
 	
@@ -9481,7 +9486,7 @@ public override class var fullTypeName: String { "System.Enum" }
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Enum_TypeOf())
 		
 	
@@ -9501,7 +9506,7 @@ public override class var fullTypeName: String { "System.Enum" }
 public class System_ISpanFormattable /* System.ISpanFormattable */: DNObject {
 public override class var typeName: String { "ISpanFormattable" }
 public override class var fullTypeName: String { "System.ISpanFormattable" }
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_ISpanFormattable_TypeOf())
 		
 	
@@ -9544,7 +9549,7 @@ public override class var fullTypeName: String { "System.IFormattable" }
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_IFormattable_TypeOf())
 		
 	
@@ -12782,7 +12787,7 @@ public override class var fullTypeName: String { "System.String" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_String_TypeOf())
 		
 	
@@ -12824,7 +12829,7 @@ public override class var fullTypeName: String { "System.IDisposable" }
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_IDisposable_TypeOf())
 		
 	
@@ -12905,7 +12910,7 @@ public override class var fullTypeName: String { "System.IFormatProvider" }
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_IFormatProvider_TypeOf())
 		
 	
@@ -12965,7 +12970,7 @@ public override class var fullTypeName: String { "System.Collections.IStructural
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Collections_IStructuralComparable_TypeOf())
 		
 	
@@ -13006,7 +13011,7 @@ public override class var fullTypeName: String { "System.Collections.IComparer" 
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Collections_IComparer_TypeOf())
 		
 	
@@ -13067,7 +13072,7 @@ public override class var fullTypeName: String { "System.Collections.IStructural
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Collections_IStructuralEquatable_TypeOf())
 		
 	
@@ -13128,7 +13133,7 @@ public override class var fullTypeName: String { "System.Collections.IEqualityCo
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Collections_IEqualityComparer_TypeOf())
 		
 	
@@ -14322,7 +14327,7 @@ public override class var fullTypeName: String { "System.Globalization.CultureIn
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Globalization_CultureInfo_TypeOf())
 		
 	
@@ -15432,7 +15437,7 @@ public override class var fullTypeName: String { "System.Globalization.CompareIn
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Globalization_CompareInfo_TypeOf())
 		
 	
@@ -15471,7 +15476,7 @@ public override class var fullTypeName: String { "System.Runtime.Serialization.I
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Runtime_Serialization_IDeserializationCallback_TypeOf())
 		
 	
@@ -17030,7 +17035,7 @@ public override class var fullTypeName: String { "System.Reflection.Assembly" }
 	// TODO: Method with Delegate return or setter or event handler type (System_Reflection_Assembly_ModuleResolve_Add)
 	// TODO: Method with Delegate return or setter or event handler type (System_Reflection_Assembly_ModuleResolve_Remove)
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_Assembly_TypeOf())
 		
 	
@@ -17070,7 +17075,7 @@ public override class var fullTypeName: String { "System.Runtime.Serialization.I
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Runtime_Serialization_ISerializable_TypeOf())
 		
 	
@@ -17981,7 +17986,7 @@ public override class var fullTypeName: String { "System.Runtime.Serialization.S
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Runtime_Serialization_SerializationInfo_TypeOf())
 		
 	
@@ -18126,7 +18131,7 @@ public override class var fullTypeName: String { "System.Runtime.Serialization.S
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Runtime_Serialization_SerializationInfoEnumerator_TypeOf())
 		
 	
@@ -18212,7 +18217,7 @@ public override class var fullTypeName: String { "System.Runtime.Serialization.S
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Runtime_Serialization_SerializationEntry_TypeOf())
 		
 	
@@ -20292,7 +20297,7 @@ public override class var fullTypeName: String { "System.Decimal" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Decimal_TypeOf())
 		
 	
@@ -22423,7 +22428,7 @@ public override class var fullTypeName: String { "System.DateTime" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_DateTime_TypeOf())
 		
 	
@@ -23755,7 +23760,7 @@ public override class var fullTypeName: String { "System.TimeSpan" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_TimeSpan_TypeOf())
 		
 	
@@ -24735,7 +24740,7 @@ public override class var fullTypeName: String { "System.DateOnly" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_DateOnly_TypeOf())
 		
 	
@@ -25891,7 +25896,7 @@ public override class var fullTypeName: String { "System.TimeOnly" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_TimeOnly_TypeOf())
 		
 	
@@ -26847,7 +26852,7 @@ public override class var fullTypeName: String { "System.Globalization.Calendar"
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Globalization_Calendar_TypeOf())
 		
 	
@@ -27221,7 +27226,7 @@ public override class var fullTypeName: String { "System.Runtime.Serialization.I
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Runtime_Serialization_IFormatterConverter_TypeOf())
 		
 	
@@ -27369,7 +27374,7 @@ public override class var fullTypeName: String { "System.Runtime.Serialization.S
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Runtime_Serialization_StreamingContext_TypeOf())
 		
 	
@@ -28131,7 +28136,7 @@ public override class var fullTypeName: String { "System.Reflection.AssemblyName
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_AssemblyName_TypeOf())
 		
 	
@@ -28582,7 +28587,7 @@ public override class var fullTypeName: String { "System.Version" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Version_TypeOf())
 		
 	
@@ -28695,7 +28700,7 @@ public override class var fullTypeName: String { "System.Reflection.StrongNameKe
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_StrongNameKeyPair_TypeOf())
 		
 	
@@ -29603,7 +29608,7 @@ public override class var fullTypeName: String { "System.IO.FileStream" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_IO_FileStream_TypeOf())
 		
 	
@@ -30405,7 +30410,7 @@ public override class var fullTypeName: String { "System.IO.Stream" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_IO_Stream_TypeOf())
 		
 	
@@ -30467,7 +30472,7 @@ public override class var fullTypeName: String { "System.MarshalByRefObject" }
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_MarshalByRefObject_TypeOf())
 		
 	
@@ -30508,7 +30513,7 @@ public override class var fullTypeName: String { "System.IAsyncDisposable" }
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_IAsyncDisposable_TypeOf())
 		
 	
@@ -30861,7 +30866,7 @@ public override class var fullTypeName: String { "System.Threading.Tasks.ValueTa
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Threading_Tasks_ValueTask_TypeOf())
 		
 	
@@ -31068,7 +31073,7 @@ public override class var fullTypeName: String { "System.Threading.CancellationT
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Threading_CancellationToken_TypeOf())
 		
 	
@@ -31581,7 +31586,7 @@ public override class var fullTypeName: String { "System.Threading.WaitHandle" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Threading_WaitHandle_TypeOf())
 		
 	
@@ -31698,7 +31703,7 @@ public override class var fullTypeName: String { "Microsoft.Win32.SafeHandles.Sa
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: Microsoft_Win32_SafeHandles_SafeWaitHandle_TypeOf())
 		
 	
@@ -31738,7 +31743,7 @@ public override class var fullTypeName: String { "Microsoft.Win32.SafeHandles.Sa
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid_TypeOf())
 		
 	
@@ -31907,7 +31912,7 @@ public override class var fullTypeName: String { "System.Runtime.InteropServices
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Runtime_InteropServices_SafeHandle_TypeOf())
 		
 	
@@ -31927,7 +31932,7 @@ public override class var fullTypeName: String { "System.Runtime.InteropServices
 public class System_Runtime_ConstrainedExecution_CriticalFinalizerObject /* System.Runtime.ConstrainedExecution.CriticalFinalizerObject */: System_Object {
 public override class var typeName: String { "CriticalFinalizerObject" }
 public override class var fullTypeName: String { "System.Runtime.ConstrainedExecution.CriticalFinalizerObject" }
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Runtime_ConstrainedExecution_CriticalFinalizerObject_TypeOf())
 		
 	
@@ -32108,7 +32113,7 @@ public override class var fullTypeName: String { "System.Threading.CancellationT
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Threading_CancellationTokenRegistration_TypeOf())
 		
 	
@@ -32509,7 +32514,7 @@ public override class var fullTypeName: String { "System.Exception" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Exception_TypeOf())
 		
 	
@@ -33255,7 +33260,7 @@ public override class var fullTypeName: String { "System.Reflection.MethodBase" 
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_MethodBase_TypeOf())
 		
 	
@@ -33434,7 +33439,7 @@ public override class var fullTypeName: String { "System.RuntimeMethodHandle" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_RuntimeMethodHandle_TypeOf())
 		
 	
@@ -33617,7 +33622,7 @@ public override class var fullTypeName: String { "System.RuntimeTypeHandle" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_RuntimeTypeHandle_TypeOf())
 		
 	
@@ -33926,7 +33931,7 @@ public override class var fullTypeName: String { "System.ModuleHandle" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_ModuleHandle_TypeOf())
 		
 	
@@ -34109,7 +34114,7 @@ public override class var fullTypeName: String { "System.RuntimeFieldHandle" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_RuntimeFieldHandle_TypeOf())
 		
 	
@@ -34651,7 +34656,7 @@ public override class var fullTypeName: String { "System.Reflection.ParameterInf
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_ParameterInfo_TypeOf())
 		
 	
@@ -34693,7 +34698,7 @@ public override class var fullTypeName: String { "System.Runtime.Serialization.I
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Runtime_Serialization_IObjectReference_TypeOf())
 		
 	
@@ -34953,7 +34958,7 @@ public override class var fullTypeName: String { "System.Reflection.CustomAttrib
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_CustomAttributeData_TypeOf())
 		
 	
@@ -35900,7 +35905,7 @@ public override class var fullTypeName: String { "System.Reflection.Module" }
 	
 	// TODO: Method with Delegate return or setter or event handler type (System_Reflection_Module_FilterTypeNameIgnoreCase_Get)
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_Module_TypeOf())
 		
 	
@@ -36381,7 +36386,7 @@ public override class var fullTypeName: String { "System.Guid" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Guid_TypeOf())
 		
 	
@@ -36628,7 +36633,7 @@ public override class var fullTypeName: String { "System.Reflection.MethodInfo" 
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_MethodInfo_TypeOf())
 		
 	
@@ -36817,7 +36822,7 @@ public override class var fullTypeName: String { "System.Reflection.Binder" }
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_Binder_TypeOf())
 		
 	
@@ -37458,7 +37463,7 @@ public override class var fullTypeName: String { "System.Reflection.FieldInfo" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_FieldInfo_TypeOf())
 		
 	
@@ -37558,7 +37563,7 @@ public override class var fullTypeName: String { "System.Reflection.ParameterMod
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_ParameterModifier_TypeOf())
 		
 	
@@ -38181,7 +38186,7 @@ public override class var fullTypeName: String { "System.Reflection.PropertyInfo
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_PropertyInfo_TypeOf())
 		
 	
@@ -38377,7 +38382,7 @@ public override class var fullTypeName: String { "System.Reflection.ConstructorI
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_ConstructorInfo_TypeOf())
 		
 	
@@ -38574,7 +38579,7 @@ public override class var fullTypeName: String { "System.Reflection.CustomAttrib
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_CustomAttributeTypedArgument_TypeOf())
 		
 	
@@ -38829,7 +38834,7 @@ public override class var fullTypeName: String { "System.Reflection.CustomAttrib
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_CustomAttributeNamedArgument_TypeOf())
 		
 	
@@ -38994,7 +38999,7 @@ public override class var fullTypeName: String { "System.Reflection.MethodBody" 
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_MethodBody_TypeOf())
 		
 	
@@ -39105,7 +39110,7 @@ public override class var fullTypeName: String { "System.Reflection.LocalVariabl
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_LocalVariableInfo_TypeOf())
 		
 	
@@ -39311,7 +39316,7 @@ public override class var fullTypeName: String { "System.Reflection.ExceptionHan
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_ExceptionHandlingClause_TypeOf())
 		
 	
@@ -39526,7 +39531,7 @@ public override class var fullTypeName: String { "System.Collections.IDictionary
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Collections_IDictionary_TypeOf())
 		
 	
@@ -39612,7 +39617,7 @@ public override class var fullTypeName: String { "System.Collections.IDictionary
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Collections_IDictionaryEnumerator_TypeOf())
 		
 	
@@ -39778,7 +39783,7 @@ public override class var fullTypeName: String { "System.Collections.DictionaryE
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Collections_DictionaryEntry_TypeOf())
 		
 	
@@ -40822,7 +40827,7 @@ public override class var fullTypeName: String { "System.Threading.Tasks.Task" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Threading_Tasks_Task_TypeOf())
 		
 	
@@ -40926,7 +40931,7 @@ public override class var fullTypeName: String { "System.IAsyncResult" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_IAsyncResult_TypeOf())
 		
 	
@@ -41051,7 +41056,7 @@ public override class var fullTypeName: String { "System.Threading.Tasks.TaskSch
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Threading_Tasks_TaskScheduler_TypeOf())
 		
 	
@@ -41354,7 +41359,7 @@ public override class var fullTypeName: String { "System.AggregateException" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_AggregateException_TypeOf())
 		
 	
@@ -41602,7 +41607,7 @@ public override class var fullTypeName: String { "System.Threading.Tasks.TaskFac
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Threading_Tasks_TaskFactory_TypeOf())
 		
 	
@@ -41707,7 +41712,7 @@ public override class var fullTypeName: String { "System.Runtime.CompilerService
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Runtime_CompilerServices_TaskAwaiter_TypeOf())
 		
 	
@@ -41728,7 +41733,7 @@ public class System_Runtime_CompilerServices_ICriticalNotifyCompletion /* System
 public override class var typeName: String { "ICriticalNotifyCompletion" }
 public override class var fullTypeName: String { "System.Runtime.CompilerServices.ICriticalNotifyCompletion" }
 	// TODO: Method with Delegate parameter (System_Runtime_CompilerServices_ICriticalNotifyCompletion_UnsafeOnCompleted)
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Runtime_CompilerServices_ICriticalNotifyCompletion_TypeOf())
 		
 	
@@ -41749,7 +41754,7 @@ public class System_Runtime_CompilerServices_INotifyCompletion /* System.Runtime
 public override class var typeName: String { "INotifyCompletion" }
 public override class var fullTypeName: String { "System.Runtime.CompilerServices.INotifyCompletion" }
 	// TODO: Method with Delegate parameter (System_Runtime_CompilerServices_INotifyCompletion_OnCompleted)
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Runtime_CompilerServices_INotifyCompletion_TypeOf())
 		
 	
@@ -41790,7 +41795,7 @@ public override class var fullTypeName: String { "System.Runtime.CompilerService
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Runtime_CompilerServices_ConfiguredTaskAwaitable_TypeOf())
 		
 	
@@ -41850,7 +41855,7 @@ public override class var fullTypeName: String { "System.Runtime.CompilerService
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_TypeOf())
 		
 	
@@ -41891,7 +41896,7 @@ public override class var fullTypeName: String { "System.Runtime.CompilerService
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Runtime_CompilerServices_YieldAwaitable_TypeOf())
 		
 	
@@ -41951,7 +41956,7 @@ public override class var fullTypeName: String { "System.Runtime.CompilerService
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_TypeOf())
 		
 	
@@ -42046,7 +42051,7 @@ public override class var fullTypeName: String { "System.Runtime.CompilerService
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Runtime_CompilerServices_ValueTaskAwaiter_TypeOf())
 		
 	
@@ -42087,7 +42092,7 @@ public override class var fullTypeName: String { "System.Runtime.CompilerService
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_TypeOf())
 		
 	
@@ -42147,7 +42152,7 @@ public override class var fullTypeName: String { "System.Runtime.CompilerService
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_TypeOf())
 		
 	
@@ -42206,7 +42211,7 @@ public override class var fullTypeName: String { "System.Threading.Tasks.Sources
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Threading_Tasks_Sources_IValueTaskSource_TypeOf())
 		
 	
@@ -42316,7 +42321,7 @@ public override class var fullTypeName: String { "Microsoft.Win32.SafeHandles.Sa
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: Microsoft_Win32_SafeHandles_SafeFileHandle_TypeOf())
 		
 	
@@ -42597,7 +42602,7 @@ public override class var fullTypeName: String { "System.IO.FileStreamOptions" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_IO_FileStreamOptions_TypeOf())
 		
 	
@@ -42992,7 +42997,7 @@ public override class var fullTypeName: String { "System.Reflection.TypeInfo" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_TypeInfo_TypeOf())
 		
 	
@@ -43296,7 +43301,7 @@ public override class var fullTypeName: String { "System.Reflection.IReflect" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_IReflect_TypeOf())
 		
 	
@@ -43358,7 +43363,7 @@ public override class var fullTypeName: String { "System.Reflection.IReflectable
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_IReflectableType_TypeOf())
 		
 	
@@ -43759,7 +43764,7 @@ public override class var fullTypeName: String { "System.Reflection.EventInfo" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_EventInfo_TypeOf())
 		
 	
@@ -43877,7 +43882,7 @@ public override class var fullTypeName: String { "System.Reflection.ManifestReso
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_ManifestResourceInfo_TypeOf())
 		
 	
@@ -43986,7 +43991,7 @@ public override class var fullTypeName: String { "System.ResolveEventArgs" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_ResolveEventArgs_TypeOf())
 		
 	
@@ -44040,7 +44045,7 @@ public override class var fullTypeName: String { "System.EventArgs" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_EventArgs_TypeOf())
 		
 	
@@ -44968,7 +44973,7 @@ public override class var fullTypeName: String { "System.Text.Rune" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Text_Rune_TypeOf())
 		
 	
@@ -45118,7 +45123,7 @@ public override class var fullTypeName: String { "System.Globalization.SortKey" 
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Globalization_SortKey_TypeOf())
 		
 	
@@ -45261,7 +45266,7 @@ public override class var fullTypeName: String { "System.Globalization.SortVersi
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Globalization_SortVersion_TypeOf())
 		
 	
@@ -45699,7 +45704,7 @@ public override class var fullTypeName: String { "System.Globalization.TextInfo"
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Globalization_TextInfo_TypeOf())
 		
 	
@@ -46974,7 +46979,7 @@ public override class var fullTypeName: String { "System.Globalization.NumberFor
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Globalization_NumberFormatInfo_TypeOf())
 		
 	
@@ -48348,7 +48353,7 @@ public override class var fullTypeName: String { "System.Globalization.DateTimeF
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Globalization_DateTimeFormatInfo_TypeOf())
 		
 	
@@ -48512,7 +48517,7 @@ public override class var fullTypeName: String { "System.CharEnumerator" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_CharEnumerator_TypeOf())
 		
 	
@@ -48594,7 +48599,7 @@ public override class var fullTypeName: String { "System.Text.StringRuneEnumerat
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Text_StringRuneEnumerator_TypeOf())
 		
 	
@@ -48683,7 +48688,7 @@ public override class var fullTypeName: String { "System.Text.CompositeFormat" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Text_CompositeFormat_TypeOf())
 		
 	
@@ -49977,7 +49982,7 @@ public override class var fullTypeName: String { "System.Text.Encoding" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Text_Encoding_TypeOf())
 		
 	
@@ -50108,7 +50113,7 @@ public override class var fullTypeName: String { "System.Text.EncodingProvider" 
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Text_EncodingProvider_TypeOf())
 		
 	
@@ -50213,7 +50218,7 @@ public override class var fullTypeName: String { "System.Text.EncoderFallback" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Text_EncoderFallback_TypeOf())
 		
 	
@@ -50352,7 +50357,7 @@ public override class var fullTypeName: String { "System.Text.EncoderFallbackBuf
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Text_EncoderFallbackBuffer_TypeOf())
 		
 	
@@ -50457,7 +50462,7 @@ public override class var fullTypeName: String { "System.Text.DecoderFallback" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Text_DecoderFallback_TypeOf())
 		
 	
@@ -50575,7 +50580,7 @@ public override class var fullTypeName: String { "System.Text.DecoderFallbackBuf
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Text_DecoderFallbackBuffer_TypeOf())
 		
 	
@@ -50747,7 +50752,7 @@ public override class var fullTypeName: String { "System.Text.EncodingInfo" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Text_EncodingInfo_TypeOf())
 		
 	
@@ -50967,7 +50972,7 @@ public override class var fullTypeName: String { "System.Text.Decoder" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Text_Decoder_TypeOf())
 		
 	
@@ -51129,7 +51134,7 @@ public override class var fullTypeName: String { "System.Text.Encoder" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Text_Encoder_TypeOf())
 		
 	
@@ -51521,7 +51526,7 @@ public override class var fullTypeName: String { "System.Runtime.InteropServices
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Runtime_InteropServices_StructLayoutAttribute_TypeOf())
 		
 	
@@ -52353,7 +52358,7 @@ public override class var fullTypeName: String { "System.Attribute" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Attribute_TypeOf())
 		
 	
@@ -52520,7 +52525,7 @@ public override class var fullTypeName: String { "System.Reflection.InterfaceMap
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_InterfaceMapping_TypeOf())
 		
 	
@@ -55567,7 +55572,7 @@ public override class var fullTypeName: String { "System.Runtime.InteropServices
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Runtime_InteropServices_Marshal_TypeOf())
 		
 	
@@ -55884,7 +55889,7 @@ public override class var fullTypeName: String { "System.Security.SecureString" 
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Security_SecureString_TypeOf())
 		
 	
@@ -55981,7 +55986,7 @@ public override class var fullTypeName: String { "System.NullReferenceException"
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_NullReferenceException_TypeOf())
 		
 	
@@ -56067,7 +56072,7 @@ public override class var fullTypeName: String { "System.SystemException" }
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_SystemException_TypeOf())
 		
 	
@@ -56251,7 +56256,7 @@ public override class var fullTypeName: String { "System.Tuple<>" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Tuple_A1_TypeOf())
 		
 	
@@ -56291,7 +56296,7 @@ public override class var fullTypeName: String { "System.Runtime.CompilerService
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Runtime_CompilerServices_ITuple_TypeOf())
 		
 	
@@ -56451,7 +56456,7 @@ public override class var fullTypeName: String { "System.Tuple<,>" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Tuple_A2_TypeOf())
 		
 	
@@ -56644,7 +56649,7 @@ public override class var fullTypeName: String { "System.Tuple<,,>" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Tuple_A3_TypeOf())
 		
 	
@@ -56872,7 +56877,7 @@ public override class var fullTypeName: String { "System.Tuple<,,,>" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Tuple_A4_TypeOf())
 		
 	
@@ -57137,7 +57142,7 @@ public override class var fullTypeName: String { "System.Tuple<,,,,>" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Tuple_A5_TypeOf())
 		
 	
@@ -57441,7 +57446,7 @@ public override class var fullTypeName: String { "System.Tuple<,,,,,>" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Tuple_A6_TypeOf())
 		
 	
@@ -57786,7 +57791,7 @@ public override class var fullTypeName: String { "System.Tuple<,,,,,,>" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Tuple_A7_TypeOf())
 		
 	
@@ -58174,7 +58179,7 @@ public override class var fullTypeName: String { "System.Tuple<,,,,,,,>" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Tuple_A8_TypeOf())
 		
 	
@@ -58929,7 +58934,7 @@ public override class var fullTypeName: String { "System.GC" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_GC_TypeOf())
 		
 	
@@ -59229,7 +59234,7 @@ public override class var fullTypeName: String { "System.GCMemoryInfo" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_GCMemoryInfo_TypeOf())
 		
 	
@@ -59394,7 +59399,7 @@ public override class var fullTypeName: String { "System.WeakReference" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_WeakReference_TypeOf())
 		
 	
@@ -61519,7 +61524,7 @@ public override class var fullTypeName: String { "System.Math" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Math_TypeOf())
 		
 	
@@ -67895,7 +67900,7 @@ public override class var fullTypeName: String { "System.Convert" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Convert_TypeOf())
 		
 	
@@ -69541,7 +69546,7 @@ public override class var fullTypeName: String { "System.Threading.Thread" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Threading_Thread_TypeOf())
 		
 	
@@ -69603,7 +69608,7 @@ public override class var fullTypeName: String { "System.Security.Principal.IPri
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Security_Principal_IPrincipal_TypeOf())
 		
 	
@@ -69687,7 +69692,7 @@ public override class var fullTypeName: String { "System.Security.Principal.IIde
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Security_Principal_IIdentity_TypeOf())
 		
 	
@@ -69865,7 +69870,7 @@ public override class var fullTypeName: String { "System.Threading.ExecutionCont
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Threading_ExecutionContext_TypeOf())
 		
 	
@@ -69980,7 +69985,7 @@ public override class var fullTypeName: String { "System.Threading.AsyncFlowCont
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Threading_AsyncFlowControl_TypeOf())
 		
 	
@@ -70002,7 +70007,7 @@ public override class var fullTypeName: String { "System.Threading.AsyncFlowCont
 public class System_LocalDataStoreSlot /* System.LocalDataStoreSlot */: System_Object {
 public override class var typeName: String { "LocalDataStoreSlot" }
 public override class var fullTypeName: String { "System.LocalDataStoreSlot" }
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_LocalDataStoreSlot_TypeOf())
 		
 	
@@ -70106,7 +70111,7 @@ public override class var fullTypeName: String { "System.Threading.CompressedSta
 	}
 	
 	// TODO: Method with Delegate parameter (System_Threading_CompressedStack_Run)
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Threading_CompressedStack_TypeOf())
 		
 	
@@ -71412,7 +71417,7 @@ public override class var fullTypeName: String { "System.AppDomain" }
 	// TODO: Method with Delegate return or setter or event handler type (System_AppDomain_ResourceResolve_Add)
 	// TODO: Method with Delegate return or setter or event handler type (System_AppDomain_ResourceResolve_Remove)
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_AppDomain_TypeOf())
 		
 	
@@ -71476,7 +71481,7 @@ public override class var fullTypeName: String { "System.AppDomainSetup" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_AppDomainSetup_TypeOf())
 		
 	
@@ -72106,7 +72111,7 @@ public override class var fullTypeName: String { "System.Security.PermissionSet"
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Security_PermissionSet_TypeOf())
 		
 	
@@ -72166,7 +72171,7 @@ public override class var fullTypeName: String { "System.Security.ISecurityEncod
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Security_ISecurityEncodable_TypeOf())
 		
 	
@@ -72686,7 +72691,7 @@ public override class var fullTypeName: String { "System.Security.SecurityElemen
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Security_SecurityElement_TypeOf())
 		
 	
@@ -73427,7 +73432,7 @@ public override class var fullTypeName: String { "System.Collections.Hashtable" 
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Collections_Hashtable_TypeOf())
 		
 	
@@ -73467,7 +73472,7 @@ public override class var fullTypeName: String { "System.Collections.IHashCodePr
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Collections_IHashCodeProvider_TypeOf())
 		
 	
@@ -74532,7 +74537,7 @@ public override class var fullTypeName: String { "System.Collections.ArrayList" 
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Collections_ArrayList_TypeOf())
 		
 	
@@ -74624,7 +74629,7 @@ public override class var fullTypeName: String { "System.Security.IStackWalk" }
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Security_IStackWalk_TypeOf())
 		
 	
@@ -74747,7 +74752,7 @@ public override class var fullTypeName: String { "System.Security.IPermission" }
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Security_IPermission_TypeOf())
 		
 	
@@ -74831,7 +74836,7 @@ public override class var fullTypeName: String { "System.UnhandledExceptionEvent
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_UnhandledExceptionEventArgs_TypeOf())
 		
 	
@@ -74916,7 +74921,7 @@ public override class var fullTypeName: String { "System.AssemblyLoadEventArgs" 
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_AssemblyLoadEventArgs_TypeOf())
 		
 	
@@ -74979,7 +74984,7 @@ public override class var fullTypeName: String { "System.Runtime.Remoting.Object
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Runtime_Remoting_ObjectHandle_TypeOf())
 		
 	
@@ -75161,7 +75166,7 @@ public override class var fullTypeName: String { "System.Threading.Timer" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Threading_Timer_TypeOf())
 		
 	
@@ -75485,7 +75490,7 @@ public override class var fullTypeName: String { "System.Threading.CancellationT
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Threading_CancellationTokenSource_TypeOf())
 		
 	
@@ -75619,7 +75624,7 @@ public override class var fullTypeName: String { "System.Threading.Tasks.Task<>"
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Threading_Tasks_Task_A1_TypeOf())
 		
 	
@@ -75918,7 +75923,7 @@ public override class var fullTypeName: String { "System.Random" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Random_TypeOf())
 		
 	
@@ -77787,7 +77792,7 @@ public override class var fullTypeName: String { "System.Text.StringBuilder" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Text_StringBuilder_TypeOf())
 		
 	
@@ -77847,7 +77852,7 @@ public override class var fullTypeName: String { "System.Text.StringBuilder.Chun
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Text_StringBuilder_ChunkEnumerator_TypeOf())
 		
 	
@@ -78072,7 +78077,7 @@ public override class var fullTypeName: String { "System.Text.StringBuilder.Appe
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Text_StringBuilder_AppendInterpolatedStringHandler_TypeOf())
 		
 	
@@ -78784,7 +78789,7 @@ public override class var fullTypeName: String { "System.IO.Path" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_IO_Path_TypeOf())
 		
 	
@@ -80784,7 +80789,7 @@ public override class var fullTypeName: String { "System.IO.File" }
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_IO_File_TypeOf())
 		
 	
@@ -81441,7 +81446,7 @@ public override class var fullTypeName: String { "System.IO.StreamReader" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_IO_StreamReader_TypeOf())
 		
 	
@@ -81760,7 +81765,7 @@ public override class var fullTypeName: String { "System.IO.TextReader" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_IO_TextReader_TypeOf())
 		
 	
@@ -82603,7 +82608,7 @@ public override class var fullTypeName: String { "System.IO.StreamWriter" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_IO_StreamWriter_TypeOf())
 		
 	
@@ -83784,7 +83789,7 @@ public override class var fullTypeName: String { "System.IO.TextWriter" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_IO_TextWriter_TypeOf())
 		
 	
@@ -84377,7 +84382,7 @@ public override class var fullTypeName: String { "System.IO.FileSystemInfo" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_IO_FileSystemInfo_TypeOf())
 		
 	
@@ -84962,7 +84967,7 @@ public override class var fullTypeName: String { "System.IO.FileInfo" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_IO_FileInfo_TypeOf())
 		
 	
@@ -85719,7 +85724,7 @@ public override class var fullTypeName: String { "System.IO.DirectoryInfo" }
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_IO_DirectoryInfo_TypeOf())
 		
 	
@@ -86094,7 +86099,7 @@ public override class var fullTypeName: String { "System.IO.EnumerationOptions" 
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_IO_EnumerationOptions_TypeOf())
 		
 	
@@ -87261,7 +87266,7 @@ public override class var fullTypeName: String { "System.IO.Directory" }
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_IO_Directory_TypeOf())
 		
 	
@@ -87281,7 +87286,7 @@ public override class var fullTypeName: String { "System.IO.Directory" }
 public class System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<> */: DNObject {
 public override class var typeName: String { "IEnumerable`1" }
 public override class var fullTypeName: String { "System.Collections.Generic.IEnumerable<>" }
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Collections_Generic_IEnumerable_A1_TypeOf())
 		
 	
@@ -87914,7 +87919,7 @@ public override class var fullTypeName: String { "System.Collections.Generic.Lis
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Collections_Generic_List_A1_TypeOf())
 		
 	
@@ -87997,7 +88002,7 @@ public override class var fullTypeName: String { "System.Collections.Generic.ILi
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Collections_Generic_IList_A1_TypeOf())
 		
 	
@@ -88367,7 +88372,7 @@ public override class var fullTypeName: String { "System.Collections.Generic.Dic
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Collections_Generic_Dictionary_A2_TypeOf())
 		
 	
@@ -88479,7 +88484,7 @@ public override class var fullTypeName: String { "System.Collections.Generic.IDi
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Collections_Generic_IDictionary_A2_TypeOf())
 		
 	
@@ -88608,7 +88613,7 @@ public override class var fullTypeName: String { "System.Collections.ObjectModel
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Collections_ObjectModel_ReadOnlyCollection_A1_TypeOf())
 		
 	
@@ -88676,7 +88681,7 @@ public override class var fullTypeName: String { "System.Collections.Generic.IRe
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Collections_Generic_IReadOnlyDictionary_A2_TypeOf())
 		
 	
@@ -88699,7 +88704,7 @@ public override class var fullTypeName: String { "System.Collections.Generic.IRe
 public class System_Collections_Generic_IAsyncEnumerable_A1 /* System.Collections.Generic.IAsyncEnumerable<> */: DNObject {
 public override class var typeName: String { "IAsyncEnumerable`1" }
 public override class var fullTypeName: String { "System.Collections.Generic.IAsyncEnumerable<>" }
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Collections_Generic_IAsyncEnumerable_A1_TypeOf())
 		
 	
@@ -88787,7 +88792,7 @@ public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSa
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Address_TypeOf())
 		
 	
@@ -88851,7 +88856,7 @@ public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSa
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_IAnimal_TypeOf())
 		
 	
@@ -88918,7 +88923,7 @@ public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSa
 	
 	// TODO: Method with Delegate return or setter or event handler type (NativeAOT_CodeGeneratorInputSample_AnimalFactory_DEFAULT_CREATOR_Get)
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_AnimalFactory_TypeOf())
 		
 	
@@ -88983,7 +88988,7 @@ public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSa
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_BaseAnimal_TypeOf())
 		
 	
@@ -89038,7 +89043,7 @@ public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSa
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Cat_TypeOf())
 		
 	
@@ -89093,7 +89098,7 @@ public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSa
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Dog_TypeOf())
 		
 	
@@ -89157,7 +89162,7 @@ public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSa
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_GenericAnimal_TypeOf())
 		
 	
@@ -89332,7 +89337,7 @@ public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSa
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_TypeOf())
 		
 	
@@ -89492,7 +89497,7 @@ public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSa
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_TypeOf())
 		
 	
@@ -89839,7 +89844,7 @@ public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSa
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_GenericTests_TypeOf())
 		
 	
@@ -89950,7 +89955,7 @@ public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSa
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_TypeOf())
 		
 	
@@ -90458,7 +90463,7 @@ public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSa
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Person_TypeOf())
 		
 	
@@ -90518,7 +90523,7 @@ public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSa
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Person_Extensions_TypeOf())
 		
 	
@@ -90621,7 +90626,7 @@ public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSa
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Book_TypeOf())
 		
 	
@@ -90905,7 +90910,7 @@ public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSa
 	}
 	
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_TestClass_TypeOf())
 		
 	
@@ -90952,7 +90957,7 @@ public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSa
 	
 	}
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Transformer_TypeOf())
 		
 	
@@ -90975,7 +90980,7 @@ public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSa
 	// TODO: Method with Delegate return or setter or event handler type (NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers_UppercaseStringTransformer_Get)
 	// TODO: Method with Delegate return or setter or event handler type (NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers_UppercaseStringTransformer_Set)
 	
-	public override class func typeOf() -> System_Type? /* System.Type */ {
+	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers_TypeOf())
 		
 	

@@ -78,12 +78,7 @@ final class SystemArrayTests: XCTestCase {
 	func testEmptyArrayWithGenerics() {
 		var exception: System_Exception_t?
 		
-		guard let systemStringType = System_String_TypeOf() else {
-			XCTFail("typeof(System.String) should return an instance")
-			
-			return
-		}
-		
+		let systemStringType = System_String_TypeOf()
 		defer { System_Type_Destroy(systemStringType) }
 		
 		guard let emptyArrayOfString = System_Array_Empty_A1(systemStringType,
@@ -137,12 +132,7 @@ final class SystemArrayTests: XCTestCase {
 	func testFillArrayWithGenerics() {
 		var exception: System_Exception_t?
 		
-		guard let systemStringType = System_String_TypeOf() else {
-			XCTFail("typeof(System.String) should return an instance")
-			
-			return
-		}
-		
+		let systemStringType = System_String_TypeOf()
 		defer { System_Type_Destroy(systemStringType) }
 		
 		let numberOfElements: Int32 = 5
@@ -193,12 +183,7 @@ final class SystemArrayTests: XCTestCase {
 	func testReverseArrayWithGenerics() {
 		var exception: System_Exception_t?
 		
-		guard let systemStringType = System_String_TypeOf() else {
-			XCTFail("typeof(System.String) should return an instance")
-			
-			return
-		}
-		
+		let systemStringType = System_String_TypeOf()
 		defer { System_Type_Destroy(systemStringType) }
 		
 		let strings = [

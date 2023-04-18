@@ -27,8 +27,7 @@ public class DNObject {
 		self.init(handle: handle)
 	}
 
-    // TODO: Should be non-optional
-    public class func typeOf() -> System_Type? /* System.Type */ {
+    public class func typeOf() -> System_Type /* System.Type */ {
         fatalError("Override in subclass")
     }
 
@@ -37,7 +36,13 @@ public class DNObject {
     }
 
     deinit {
+        // Enable for debugging
+        print("[DEBUG] Will destroy \(Self.fullTypeName)")
+
 		destroy()
+
+        // Enable for debugging
+        print("[DEBUG] Did destroy \(Self.fullTypeName)")
 	}
 }
 

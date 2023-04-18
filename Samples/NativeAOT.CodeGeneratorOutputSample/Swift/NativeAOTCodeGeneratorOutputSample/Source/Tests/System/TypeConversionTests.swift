@@ -15,36 +15,16 @@ final class TypeConversionTests: XCTestCase {
 	func testIs() {
 		var exception: System_Exception_t?
 		
-		guard let systemObjectType = System_Object_TypeOf() else {
-			XCTFail("typeof(System.Object) should return an instance")
-			
-			return
-		}
-		
+		let systemObjectType = System_Object_TypeOf()
 		defer { System_Type_Destroy(systemObjectType) }
 		
-		guard let systemStringType = System_String_TypeOf() else {
-			XCTFail("typeof(System.String) should return an instance")
-			
-			return
-		}
-		
+		let systemStringType = System_String_TypeOf()
 		defer { System_Type_Destroy(systemStringType) }
 		
-		guard let systemExceptionType = System_Exception_TypeOf() else {
-			XCTFail("typeof(System.Exception) should return an instance")
-			
-			return
-		}
-		
+		let systemExceptionType = System_Exception_TypeOf()
 		defer { System_Type_Destroy(systemExceptionType) }
 		
-		guard let systemGuidType = System_Guid_TypeOf() else {
-			XCTFail("typeof(System.Guid) should return an instance")
-			
-			return
-		}
-		
+		let systemGuidType = System_Guid_TypeOf()
 		defer { System_Type_Destroy(systemGuidType) }
 		
 		// MARK: - System.Object
@@ -110,36 +90,16 @@ final class TypeConversionTests: XCTestCase {
 	func testCastAs() {
 		var exception: System_Exception_t?
 		
-		guard let systemObjectType = System_Object_TypeOf() else {
-			XCTFail("typeof(System.Object) should return an instance")
-			
-			return
-		}
-		
+		let systemObjectType = System_Object_TypeOf()
 		defer { System_Type_Destroy(systemObjectType) }
 		
-		guard let systemGuidType = System_Guid_TypeOf() else {
-			XCTFail("typeof(System.Guid) should return an instance")
-			
-			return
-		}
-		
+		let systemGuidType = System_Guid_TypeOf()
 		defer { System_Type_Destroy(systemGuidType) }
 		
-		guard let systemExceptionType = System_Exception_TypeOf() else {
-			XCTFail("typeof(System.Exception) should return an instance")
-			
-			return
-		}
-		
+		let systemExceptionType = System_Exception_TypeOf()
 		defer { System_Type_Destroy(systemExceptionType) }
 		
-		guard let systemNullReferenceExceptionType = System_NullReferenceException_TypeOf() else {
-			XCTFail("typeof(System.NullReferenceException) should return an instance")
-			
-			return
-		}
-		
+		let systemNullReferenceExceptionType = System_NullReferenceException_TypeOf()
 		defer { System_Type_Destroy(systemNullReferenceExceptionType) }
 		
 		guard let systemObject = System_Object_Create(&exception),
@@ -204,36 +164,16 @@ final class TypeConversionTests: XCTestCase {
 	func testCastTo() {
 		var exception: System_Exception_t?
 		
-		guard let systemObjectType = System_Object_TypeOf() else {
-			XCTFail("typeof(System.Object) should return an instance")
-			
-			return
-		}
-		
+		let systemObjectType = System_Object_TypeOf()
 		defer { System_Type_Destroy(systemObjectType) }
 		
-		guard let systemGuidType = System_Guid_TypeOf() else {
-			XCTFail("typeof(System.Guid) should return an instance")
-			
-			return
-		}
-		
+		let systemGuidType = System_Guid_TypeOf()
 		defer { System_Type_Destroy(systemGuidType) }
 		
-		guard let systemExceptionType = System_Exception_TypeOf() else {
-			XCTFail("typeof(System.Exception) should return an instance")
-			
-			return
-		}
-		
+		let systemExceptionType = System_Exception_TypeOf()
 		defer { System_Type_Destroy(systemExceptionType) }
 		
-		guard let systemNullReferenceExceptionType = System_NullReferenceException_TypeOf() else {
-			XCTFail("typeof(System.NullReferenceException) should return an instance")
-			
-			return
-		}
-		
+		let systemNullReferenceExceptionType = System_NullReferenceException_TypeOf()
 		defer { System_Type_Destroy(systemNullReferenceExceptionType) }
 		
 		guard let systemObject = System_Object_Create(&exception),

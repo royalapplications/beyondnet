@@ -13,11 +13,7 @@ final class SystemObjectTests: XCTestCase {
 	}
 	
 //	func testOverrelease() {
-//		guard let systemObjectType = System_Object_TypeOf() else {
-//			XCTFail("typeof(System.Object) should return an instance")
-//			
-//			return
-//		}
+//		let systemObjectType = System_Object_TypeOf()
 //		
 //		System_Type_Destroy(systemObjectType)
 //		System_Type_Destroy(systemObjectType)
@@ -28,12 +24,7 @@ final class SystemObjectTests: XCTestCase {
     func testSystemObject() {
         var exception: System_Exception_t?
         
-        guard let systemObjectType = System_Object_TypeOf() else {
-            XCTFail("typeof(System.Object should return an instance")
-            
-            return
-        }
-        
+        let systemObjectType = System_Object_TypeOf()
         defer { System_Type_Destroy(systemObjectType) }
         
         guard let object1 = System_Object_Create(&exception),

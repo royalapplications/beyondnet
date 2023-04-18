@@ -15,12 +15,7 @@ final class GenericTestClassTests: XCTestCase {
 	func testWith1GenericArgument() {
 		var exception: System_Exception_t?
 		
-		guard let systemStringType = System_String_TypeOf() else {
-			XCTFail("typeof(System.String) should return an instance")
-			
-			return
-		}
-		
+		let systemStringType = System_String_TypeOf()
 		defer { System_Type_Destroy(systemStringType) }
 		
 		guard let genericTestClass = NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_Create(systemStringType,
@@ -100,12 +95,7 @@ final class GenericTestClassTests: XCTestCase {
 		XCTAssertNil(exception)
 		XCTAssertEqual(value, fieldValueRet)
 		
-		guard let systemArrayType = System_Array_TypeOf() else {
-			XCTFail("typeof(System.Array) should return an instance")
-			
-			return
-		}
-		
+		let systemArrayType = System_Array_TypeOf()
 		defer { System_Type_Destroy(systemArrayType) }
 		
 		guard let genericArgumentAndMethodType = NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_ReturnGenericClassTypeAndGenericMethodType_A1(systemStringType,
@@ -161,20 +151,10 @@ final class GenericTestClassTests: XCTestCase {
     func testExtremeWith1GenericArgument() {
         var exception: System_Exception_t?
         
-        guard let systemStringType = System_String_TypeOf() else {
-            XCTFail("typeof(System.String) should return an instance")
-            
-            return
-        }
-        
+        let systemStringType = System_String_TypeOf()
         defer { System_Type_Destroy(systemStringType) }
         
-        guard let systemExceptionType = System_Exception_TypeOf() else {
-            XCTFail("typeof(System.Exception) should return an instance")
-            
-            return
-        }
-        
+        let systemExceptionType = System_Exception_TypeOf()
         defer { System_Type_Destroy(systemExceptionType) }
         
         guard let genericTestClass = NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_Create(systemStringType,
@@ -246,20 +226,10 @@ final class GenericTestClassTests: XCTestCase {
 	func testWith2GenericArguments() {
 		var exception: System_Exception_t?
 		
-		guard let systemStringType = System_String_TypeOf() else {
-			XCTFail("typeof(System.String) should return an instance")
-			
-			return
-		}
-		
+		let systemStringType = System_String_TypeOf()
 		defer { System_Type_Destroy(systemStringType) }
 		
-		guard let systemExceptionType = System_Exception_TypeOf() else {
-			XCTFail("typeof(System.Exception) should return an instance")
-			
-			return
-		}
-		
+		let systemExceptionType = System_Exception_TypeOf()
 		defer { System_Type_Destroy(systemExceptionType) }
 		
 		guard let genericTestClass = NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_Create(systemStringType,
@@ -381,27 +351,7 @@ final class GenericTestClassTests: XCTestCase {
 		XCTAssertNil(exception)
 		XCTAssertEqual(value, fieldValueRet)
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		guard let systemArrayType = System_Array_TypeOf() else {
-			XCTFail("typeof(System.Array) should return an instance")
-			
-			return
-		}
-		
+		let systemArrayType = System_Array_TypeOf()
 		defer { System_Type_Destroy(systemArrayType) }
 		
 		guard let genericArgumentsAndMethodType = NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_ReturnGenericClassTypeAndGenericMethodType_A1(systemStringType,

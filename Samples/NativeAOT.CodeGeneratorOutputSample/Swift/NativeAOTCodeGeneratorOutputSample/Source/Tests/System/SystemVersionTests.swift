@@ -15,12 +15,7 @@ final class SystemVersionTests: XCTestCase {
     func testSystemVersionFromComponents() {
         var exception: System_Exception_t?
         
-        guard let systemVersionType = System_Version_TypeOf() else {
-            XCTFail("typeof(System.Version should return an instance")
-            
-            return
-        }
-        
+        let systemVersionType = System_Version_TypeOf()
         defer { System_Type_Destroy(systemVersionType) }
         
         let major: Int32    = 1

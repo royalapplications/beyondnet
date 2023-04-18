@@ -253,12 +253,7 @@ final class AnimalTests: XCTestCase {
 		var exception: System_Exception_t?
 		
 		// MARK: Cat
-		guard let catType = NativeAOT_CodeGeneratorInputSample_Cat_TypeOf() else {
-			XCTFail("typeof(Cat) should return an instance")
-			
-			return
-		}
-		
+		let catType = NativeAOT_CodeGeneratorInputSample_Cat_TypeOf()
 		defer { System_Type_Destroy(catType) }
 		
 		guard let cat = NativeAOT_CodeGeneratorInputSample_AnimalFactory_CreateAnimal_A1(catType,
@@ -289,12 +284,7 @@ final class AnimalTests: XCTestCase {
 		XCTAssertTrue(catTypesAreEqual)
 		
 		// MARK: Dog
-		guard let dogType = NativeAOT_CodeGeneratorInputSample_Dog_TypeOf() else {
-			XCTFail("typeof(Dog) should return an instance")
-			
-			return
-		}
-		
+		let dogType = NativeAOT_CodeGeneratorInputSample_Dog_TypeOf()
 		defer { System_Type_Destroy(dogType) }
 		
 		guard let dog = NativeAOT_CodeGeneratorInputSample_AnimalFactory_CreateAnimal_A1(dogType,
@@ -325,12 +315,7 @@ final class AnimalTests: XCTestCase {
 		XCTAssertTrue(dogTypesAreEqual)
 		
 		// MARK: Invalid Type
-		guard let stringType = System_String_TypeOf() else {
-			XCTFail("typeof(System.String) should return an instance")
-			
-			return
-		}
-		
+		let stringType = System_String_TypeOf()
 		defer { System_Type_Destroy(stringType) }
 		
 		let invalidAnimal = NativeAOT_CodeGeneratorInputSample_AnimalFactory_CreateAnimal_A1(stringType,

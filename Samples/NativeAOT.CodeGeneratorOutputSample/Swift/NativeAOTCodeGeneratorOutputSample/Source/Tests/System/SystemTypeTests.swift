@@ -17,11 +17,7 @@ final class SystemTypeTests: XCTestCase {
 		
 		let systemObjectTypeName = "System.Object"
 		
-        guard let systemObjectType = System_Object_TypeOf() else {
-            XCTFail("typeof(System.Object) should return an instance")
-            
-            return
-        }
+        let systemObjectType = System_Object_TypeOf()
         
         defer { System_Type_Destroy(systemObjectType) }
 		
@@ -100,12 +96,7 @@ final class SystemTypeTests: XCTestCase {
 //	func testReflectingOverSystemObject() {
 //		var exception: System_Exception_t?
 //
-//		guard let typeOfSystemObject = System_Object_TypeOf() else {
-//			XCTFail("typeof(System.Object) should return an instance")
-//
-//			return
-//		}
-//
+//		let typeOfSystemObject = System_Object_TypeOf()
 //		defer { System_Type_Destroy(typeOfSystemObject) }
 //
 //		let methodName = "ToString"
@@ -145,12 +136,7 @@ final class SystemTypeTests: XCTestCase {
 //
 //		defer { System_Type_Destroy(returnType) }
 //
-//		guard let typeOfSystemString = System_String_TypeOf() else {
-//			XCTFail("typeof(System.String) should return an instance")
-//
-//			return
-//		}
-//
+//		let typeOfSystemString = System_String_TypeOf()
 //		defer { System_Type_Destroy(typeOfSystemString) }
 //
 //		let equalReturnTypes = System_Object_Equals(typeOfSystemString,

@@ -256,11 +256,13 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         
         TypeDescriptor returnOrSetterTypeDescriptor = returnOrSetterOrEventHandlerType.GetTypeDescriptor(typeDescriptorRegistry);
         
+        bool returnTypeIsOptional = memberKind != MemberKind.TypeOf;
+        
         // TODO: This generates inout TypeName if the return type is by ref
         string swiftReturnOrSetterTypeName = returnOrSetterTypeDescriptor.GetTypeName(
             CodeLanguage.Swift,
             true,
-            true,
+            returnTypeIsOptional,
             false,
             returnOrSetterOrEventHandlerTypeIsByRef
         );

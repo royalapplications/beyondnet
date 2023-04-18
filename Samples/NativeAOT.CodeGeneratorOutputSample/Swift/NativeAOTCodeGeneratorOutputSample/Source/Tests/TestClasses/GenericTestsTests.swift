@@ -15,12 +15,7 @@ final class GenericTestsTests: XCTestCase {
 	func testReturnGenericTypeWithReferenceType() {
 		var exception: System_Exception_t?
 		
-		guard let genericType = System_String_TypeOf() else {
-			XCTFail("typeof(System.String) should return an instance")
-			
-			return
-		}
-		
+		let genericType = System_String_TypeOf()
 		defer { System_Type_Destroy(genericType) }
 		
 		guard let typeRet = NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnGenericType_A1(genericType,
@@ -47,14 +42,8 @@ final class GenericTestsTests: XCTestCase {
 	func testReturnGenericTypeWithValueType() {
 		var exception: System_Exception_t?
 		
-		guard let genericType = System_Guid_TypeOf() else {
-			XCTFail("typeof(System.Guid) should return an instance")
-			
-			return
-		}
-		
+		let genericType = System_Guid_TypeOf()
 		defer { System_Type_Destroy(genericType) }
-		
 		
 		let typeRet = NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnGenericType_A1(genericType,
 																						   &exception)
@@ -71,12 +60,7 @@ final class GenericTestsTests: XCTestCase {
 	func testReturnGenericTypeAsOutParameter() {
 		var exception: System_Exception_t?
 		
-		guard let genericType = System_String_TypeOf() else {
-			XCTFail("typeof(System.String) should return an instance")
-			
-			return
-		}
-		
+		let genericType = System_String_TypeOf()
 		defer { System_Type_Destroy(genericType) }
 		
 		var typeRet: System_Type_t?
@@ -105,23 +89,13 @@ final class GenericTestsTests: XCTestCase {
 	func testReturnGenericTypeAsRefParameter() {
 		var exception: System_Exception_t?
 		
-		guard let genericType = System_String_TypeOf() else {
-			XCTFail("typeof(System.String) should return an instance")
-			
-			return
-		}
-		
+		let genericType = System_String_TypeOf()
 		defer { System_Type_Destroy(genericType) }
 		
 		let systemObjectType = System_Object_TypeOf()
+		defer { System_Type_Destroy(systemObjectType) }
 		
-		defer {
-			if let systemObjectType {
-				System_Type_Destroy(systemObjectType)
-			}
-		}
-		
-		var typeRet = systemObjectType
+        var typeRet: System_Type_t? = systemObjectType
 		
 		NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnGenericTypeAsRefParameter_A1(genericType,
 																						   &typeRet,
@@ -147,20 +121,10 @@ final class GenericTestsTests: XCTestCase {
 	func testReturnGenericTypes() {
 		var exception: System_Exception_t?
 		
-		guard let genericType1 = System_String_TypeOf() else {
-			XCTFail("typeof(System.String) should return an instance")
-			
-			return
-		}
-		
+		let genericType1 = System_String_TypeOf()
 		defer { System_Type_Destroy(genericType1) }
 		
-		guard let genericType2 = System_Array_TypeOf() else {
-			XCTFail("typeof(System.Array) should return an instance")
-			
-			return
-		}
-		
+		let genericType2 = System_Array_TypeOf()
 		defer { System_Type_Destroy(genericType2) }
 		
 		guard let typesArrayRet = NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnGenericTypes_A2(genericType1,
@@ -217,12 +181,7 @@ final class GenericTestsTests: XCTestCase {
 	func testReturnDefaultValueOfGenericType() {
 		var exception: System_Exception_t?
 		
-		guard let genericType = System_String_TypeOf() else {
-			XCTFail("typeof(System.String) should return an instance")
-			
-			return
-		}
-		
+		let genericType = System_String_TypeOf()
 		defer { System_Type_Destroy(genericType) }
 		
 		let defaultValueRet = NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnDefaultValueOfGenericType_A1(genericType,
@@ -241,12 +200,7 @@ final class GenericTestsTests: XCTestCase {
 	func testReturnArrayOfDefaultValuesOfGenericType() {
 		var exception: System_Exception_t?
 		
-		guard let genericType = System_String_TypeOf() else {
-			XCTFail("typeof(System.String) should return an instance")
-			
-			return
-		}
-		
+		let genericType = System_String_TypeOf()
 		defer { System_Type_Destroy(genericType) }
 		
 		let numberOfElements: Int32 = 10
@@ -360,28 +314,13 @@ final class GenericTestsTests: XCTestCase {
 	func testReturnSimpleKeyValuePair() {
 		var exception: System_Exception_t?
 		
-		guard let keyType = System_Type_TypeOf() else {
-			XCTFail("typeof(System.Type) should return an instance")
-			
-			return
-		}
-		
+		let keyType = System_Type_TypeOf()
 		defer { System_Type_Destroy(keyType) }
 		
-		guard let valueType = System_Text_StringBuilder_TypeOf() else {
-			XCTFail("typeof(System.Text.StringBuilder) should return an instance")
-			
-			return
-		}
-		
+		let valueType = System_Text_StringBuilder_TypeOf()
 		defer { System_Type_Destroy(valueType) }
 		
-		guard let key = System_Type_TypeOf() else {
-			XCTFail("typeof(System.Type) should return an instance")
-			
-			return
-		}
-		
+		let key = System_Type_TypeOf()
 		defer { System_Type_Destroy(key)}
 		
 		guard let value = System_Text_StringBuilder_Create(&exception),
@@ -465,28 +404,13 @@ final class GenericTestsTests: XCTestCase {
 	func testIncorrectParametersInGenericMethod() {
 		var exception: System_Exception_t?
 		
-		guard let keyType = System_Type_TypeOf() else {
-			XCTFail("typeof(System.Type) should return an instance")
-			
-			return
-		}
-		
+		let keyType = System_Type_TypeOf()
 		defer { System_Type_Destroy(keyType) }
 		
-		guard let valueType = System_Text_StringBuilder_TypeOf() else {
-			XCTFail("typeof(System.Text.StringBuilder) should return an instance")
-			
-			return
-		}
-		
+		let valueType = System_Text_StringBuilder_TypeOf()
 		defer { System_Type_Destroy(valueType) }
 		
-		guard let key = System_Type_TypeOf() else {
-			XCTFail("typeof(System.Type) should return an instance")
-			
-			return
-		}
-		
+		let key = System_Type_TypeOf()
 		defer { System_Type_Destroy(key) }
 		
 		guard let value = System_Object_Create(&exception),
@@ -542,12 +466,7 @@ final class GenericTestsTests: XCTestCase {
 		let separatorDN = separator.cDotNETString()
 		defer { System_String_Destroy(separatorDN) }
 
-		guard let stringType = System_String_TypeOf() else {
-			XCTFail("typeof(System.String) should return an instance")
-
-			return
-		}
-
+		let stringType = System_String_TypeOf()
 		defer { System_Type_Destroy(stringType) }
 
 		guard let arrayOfStrings = System_Array_CreateInstance(stringType,
@@ -621,28 +540,13 @@ final class GenericTestsTests: XCTestCase {
         
         defer { System_Collections_Generic_List_A1_Destroy(listOfStrings) }
         
-        guard let listType = System_Collections_Generic_List_A1_TypeOf() else {
-            XCTFail("typeof(System.Collections.Generic.List<>) should return an instance")
-            
-            return
-        }
-        
+        let listType = System_Collections_Generic_List_A1_TypeOf()
         defer { System_Type_Destroy(listType) }
         
-        guard let systemTypeType = System_Type_TypeOf() else {
-            XCTFail("typeof(System.Type) should return an instance")
-            
-            return
-        }
-        
+        let systemTypeType = System_Type_TypeOf()
         defer { System_Type_Destroy(systemTypeType) }
         
-        guard let systemStringType = System_String_TypeOf() else {
-            XCTFail("typeof(System.String) should return an instance")
-            
-            return
-        }
-        
+        let systemStringType = System_String_TypeOf()
         defer { System_Type_Destroy(systemStringType) }
         
         guard let typeArguments = System_Array_CreateInstance(systemTypeType,

@@ -9,6 +9,7 @@
 #import <stdbool.h>
 
 #pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wnullability-completeness"
 #pragma clang diagnostic ignored "-Wflag-enum"
 
 #pragma mark - END Header
@@ -3355,7 +3356,7 @@ typedef System_String_t (*NativeAOT_CodeGeneratorInputSample_Transformer_StringG
 
 #pragma mark - BEGIN APIs
 #pragma mark - BEGIN APIs of System.TypeCode
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_TypeCode_TypeOf(
 	
 );
@@ -3363,7 +3364,7 @@ System_TypeCode_TypeOf(
 #pragma mark - END APIs of System.TypeCode
 
 #pragma mark - BEGIN APIs of System.Globalization.NumberStyles
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Globalization_NumberStyles_TypeOf(
 	
 );
@@ -3371,7 +3372,7 @@ System_Globalization_NumberStyles_TypeOf(
 #pragma mark - END APIs of System.Globalization.NumberStyles
 
 #pragma mark - BEGIN APIs of System.Globalization.CultureTypes
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Globalization_CultureTypes_TypeOf(
 	
 );
@@ -3379,7 +3380,7 @@ System_Globalization_CultureTypes_TypeOf(
 #pragma mark - END APIs of System.Globalization.CultureTypes
 
 #pragma mark - BEGIN APIs of System.MidpointRounding
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_MidpointRounding_TypeOf(
 	
 );
@@ -3387,7 +3388,7 @@ System_MidpointRounding_TypeOf(
 #pragma mark - END APIs of System.MidpointRounding
 
 #pragma mark - BEGIN APIs of System.Globalization.TimeSpanStyles
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Globalization_TimeSpanStyles_TypeOf(
 	
 );
@@ -3395,7 +3396,7 @@ System_Globalization_TimeSpanStyles_TypeOf(
 #pragma mark - END APIs of System.Globalization.TimeSpanStyles
 
 #pragma mark - BEGIN APIs of System.DateTimeKind
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_DateTimeKind_TypeOf(
 	
 );
@@ -3403,7 +3404,7 @@ System_DateTimeKind_TypeOf(
 #pragma mark - END APIs of System.DateTimeKind
 
 #pragma mark - BEGIN APIs of System.DayOfWeek
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_DayOfWeek_TypeOf(
 	
 );
@@ -3411,7 +3412,7 @@ System_DayOfWeek_TypeOf(
 #pragma mark - END APIs of System.DayOfWeek
 
 #pragma mark - BEGIN APIs of System.Globalization.DateTimeStyles
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Globalization_DateTimeStyles_TypeOf(
 	
 );
@@ -3419,7 +3420,7 @@ System_Globalization_DateTimeStyles_TypeOf(
 #pragma mark - END APIs of System.Globalization.DateTimeStyles
 
 #pragma mark - BEGIN APIs of System.Globalization.CalendarAlgorithmType
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Globalization_CalendarAlgorithmType_TypeOf(
 	
 );
@@ -3427,7 +3428,7 @@ System_Globalization_CalendarAlgorithmType_TypeOf(
 #pragma mark - END APIs of System.Globalization.CalendarAlgorithmType
 
 #pragma mark - BEGIN APIs of System.Globalization.CalendarWeekRule
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Globalization_CalendarWeekRule_TypeOf(
 	
 );
@@ -3435,7 +3436,7 @@ System_Globalization_CalendarWeekRule_TypeOf(
 #pragma mark - END APIs of System.Globalization.CalendarWeekRule
 
 #pragma mark - BEGIN APIs of System.Runtime.Serialization.StreamingContextStates
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Runtime_Serialization_StreamingContextStates_TypeOf(
 	
 );
@@ -3443,7 +3444,7 @@ System_Runtime_Serialization_StreamingContextStates_TypeOf(
 #pragma mark - END APIs of System.Runtime.Serialization.StreamingContextStates
 
 #pragma mark - BEGIN APIs of System.Reflection.ProcessorArchitecture
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_ProcessorArchitecture_TypeOf(
 	
 );
@@ -3451,7 +3452,7 @@ System_Reflection_ProcessorArchitecture_TypeOf(
 #pragma mark - END APIs of System.Reflection.ProcessorArchitecture
 
 #pragma mark - BEGIN APIs of System.Reflection.AssemblyContentType
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_AssemblyContentType_TypeOf(
 	
 );
@@ -3459,7 +3460,7 @@ System_Reflection_AssemblyContentType_TypeOf(
 #pragma mark - END APIs of System.Reflection.AssemblyContentType
 
 #pragma mark - BEGIN APIs of System.Reflection.AssemblyNameFlags
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_AssemblyNameFlags_TypeOf(
 	
 );
@@ -3467,7 +3468,7 @@ System_Reflection_AssemblyNameFlags_TypeOf(
 #pragma mark - END APIs of System.Reflection.AssemblyNameFlags
 
 #pragma mark - BEGIN APIs of System.Configuration.Assemblies.AssemblyHashAlgorithm
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Configuration_Assemblies_AssemblyHashAlgorithm_TypeOf(
 	
 );
@@ -3475,7 +3476,7 @@ System_Configuration_Assemblies_AssemblyHashAlgorithm_TypeOf(
 #pragma mark - END APIs of System.Configuration.Assemblies.AssemblyHashAlgorithm
 
 #pragma mark - BEGIN APIs of System.Configuration.Assemblies.AssemblyVersionCompatibility
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Configuration_Assemblies_AssemblyVersionCompatibility_TypeOf(
 	
 );
@@ -3483,7 +3484,7 @@ System_Configuration_Assemblies_AssemblyVersionCompatibility_TypeOf(
 #pragma mark - END APIs of System.Configuration.Assemblies.AssemblyVersionCompatibility
 
 #pragma mark - BEGIN APIs of System.Reflection.ParameterAttributes
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_ParameterAttributes_TypeOf(
 	
 );
@@ -3491,7 +3492,7 @@ System_Reflection_ParameterAttributes_TypeOf(
 #pragma mark - END APIs of System.Reflection.ParameterAttributes
 
 #pragma mark - BEGIN APIs of System.Reflection.PortableExecutableKinds
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_PortableExecutableKinds_TypeOf(
 	
 );
@@ -3499,7 +3500,7 @@ System_Reflection_PortableExecutableKinds_TypeOf(
 #pragma mark - END APIs of System.Reflection.PortableExecutableKinds
 
 #pragma mark - BEGIN APIs of System.Reflection.ImageFileMachine
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_ImageFileMachine_TypeOf(
 	
 );
@@ -3507,7 +3508,7 @@ System_Reflection_ImageFileMachine_TypeOf(
 #pragma mark - END APIs of System.Reflection.ImageFileMachine
 
 #pragma mark - BEGIN APIs of System.Reflection.MemberTypes
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_MemberTypes_TypeOf(
 	
 );
@@ -3515,7 +3516,7 @@ System_Reflection_MemberTypes_TypeOf(
 #pragma mark - END APIs of System.Reflection.MemberTypes
 
 #pragma mark - BEGIN APIs of System.Reflection.BindingFlags
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_BindingFlags_TypeOf(
 	
 );
@@ -3523,7 +3524,7 @@ System_Reflection_BindingFlags_TypeOf(
 #pragma mark - END APIs of System.Reflection.BindingFlags
 
 #pragma mark - BEGIN APIs of System.Reflection.FieldAttributes
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_FieldAttributes_TypeOf(
 	
 );
@@ -3531,7 +3532,7 @@ System_Reflection_FieldAttributes_TypeOf(
 #pragma mark - END APIs of System.Reflection.FieldAttributes
 
 #pragma mark - BEGIN APIs of System.Reflection.PropertyAttributes
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_PropertyAttributes_TypeOf(
 	
 );
@@ -3539,7 +3540,7 @@ System_Reflection_PropertyAttributes_TypeOf(
 #pragma mark - END APIs of System.Reflection.PropertyAttributes
 
 #pragma mark - BEGIN APIs of System.Reflection.CallingConventions
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_CallingConventions_TypeOf(
 	
 );
@@ -3547,7 +3548,7 @@ System_Reflection_CallingConventions_TypeOf(
 #pragma mark - END APIs of System.Reflection.CallingConventions
 
 #pragma mark - BEGIN APIs of System.Reflection.MethodAttributes
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_MethodAttributes_TypeOf(
 	
 );
@@ -3555,7 +3556,7 @@ System_Reflection_MethodAttributes_TypeOf(
 #pragma mark - END APIs of System.Reflection.MethodAttributes
 
 #pragma mark - BEGIN APIs of System.Reflection.MethodImplAttributes
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_MethodImplAttributes_TypeOf(
 	
 );
@@ -3563,7 +3564,7 @@ System_Reflection_MethodImplAttributes_TypeOf(
 #pragma mark - END APIs of System.Reflection.MethodImplAttributes
 
 #pragma mark - BEGIN APIs of System.Reflection.ExceptionHandlingClauseOptions
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_ExceptionHandlingClauseOptions_TypeOf(
 	
 );
@@ -3571,7 +3572,7 @@ System_Reflection_ExceptionHandlingClauseOptions_TypeOf(
 #pragma mark - END APIs of System.Reflection.ExceptionHandlingClauseOptions
 
 #pragma mark - BEGIN APIs of System.Threading.Tasks.TaskStatus
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Threading_Tasks_TaskStatus_TypeOf(
 	
 );
@@ -3579,7 +3580,7 @@ System_Threading_Tasks_TaskStatus_TypeOf(
 #pragma mark - END APIs of System.Threading.Tasks.TaskStatus
 
 #pragma mark - BEGIN APIs of System.Threading.Tasks.TaskCreationOptions
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Threading_Tasks_TaskCreationOptions_TypeOf(
 	
 );
@@ -3587,7 +3588,7 @@ System_Threading_Tasks_TaskCreationOptions_TypeOf(
 #pragma mark - END APIs of System.Threading.Tasks.TaskCreationOptions
 
 #pragma mark - BEGIN APIs of System.Threading.Tasks.TaskContinuationOptions
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Threading_Tasks_TaskContinuationOptions_TypeOf(
 	
 );
@@ -3595,7 +3596,7 @@ System_Threading_Tasks_TaskContinuationOptions_TypeOf(
 #pragma mark - END APIs of System.Threading.Tasks.TaskContinuationOptions
 
 #pragma mark - BEGIN APIs of System.Threading.Tasks.Sources.ValueTaskSourceStatus
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Threading_Tasks_Sources_ValueTaskSourceStatus_TypeOf(
 	
 );
@@ -3603,7 +3604,7 @@ System_Threading_Tasks_Sources_ValueTaskSourceStatus_TypeOf(
 #pragma mark - END APIs of System.Threading.Tasks.Sources.ValueTaskSourceStatus
 
 #pragma mark - BEGIN APIs of System.Threading.Tasks.Sources.ValueTaskSourceOnCompletedFlags
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Threading_Tasks_Sources_ValueTaskSourceOnCompletedFlags_TypeOf(
 	
 );
@@ -3611,7 +3612,7 @@ System_Threading_Tasks_Sources_ValueTaskSourceOnCompletedFlags_TypeOf(
 #pragma mark - END APIs of System.Threading.Tasks.Sources.ValueTaskSourceOnCompletedFlags
 
 #pragma mark - BEGIN APIs of System.IO.SeekOrigin
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_IO_SeekOrigin_TypeOf(
 	
 );
@@ -3619,7 +3620,7 @@ System_IO_SeekOrigin_TypeOf(
 #pragma mark - END APIs of System.IO.SeekOrigin
 
 #pragma mark - BEGIN APIs of System.IO.FileAccess
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_IO_FileAccess_TypeOf(
 	
 );
@@ -3627,7 +3628,7 @@ System_IO_FileAccess_TypeOf(
 #pragma mark - END APIs of System.IO.FileAccess
 
 #pragma mark - BEGIN APIs of System.IO.FileMode
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_IO_FileMode_TypeOf(
 	
 );
@@ -3635,7 +3636,7 @@ System_IO_FileMode_TypeOf(
 #pragma mark - END APIs of System.IO.FileMode
 
 #pragma mark - BEGIN APIs of System.IO.FileShare
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_IO_FileShare_TypeOf(
 	
 );
@@ -3643,7 +3644,7 @@ System_IO_FileShare_TypeOf(
 #pragma mark - END APIs of System.IO.FileShare
 
 #pragma mark - BEGIN APIs of System.IO.FileOptions
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_IO_FileOptions_TypeOf(
 	
 );
@@ -3651,7 +3652,7 @@ System_IO_FileOptions_TypeOf(
 #pragma mark - END APIs of System.IO.FileOptions
 
 #pragma mark - BEGIN APIs of System.Reflection.EventAttributes
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_EventAttributes_TypeOf(
 	
 );
@@ -3659,7 +3660,7 @@ System_Reflection_EventAttributes_TypeOf(
 #pragma mark - END APIs of System.Reflection.EventAttributes
 
 #pragma mark - BEGIN APIs of System.Reflection.ResourceLocation
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_ResourceLocation_TypeOf(
 	
 );
@@ -3667,7 +3668,7 @@ System_Reflection_ResourceLocation_TypeOf(
 #pragma mark - END APIs of System.Reflection.ResourceLocation
 
 #pragma mark - BEGIN APIs of System.Security.SecurityRuleSet
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Security_SecurityRuleSet_TypeOf(
 	
 );
@@ -3675,7 +3676,7 @@ System_Security_SecurityRuleSet_TypeOf(
 #pragma mark - END APIs of System.Security.SecurityRuleSet
 
 #pragma mark - BEGIN APIs of System.Buffers.OperationStatus
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Buffers_OperationStatus_TypeOf(
 	
 );
@@ -3683,7 +3684,7 @@ System_Buffers_OperationStatus_TypeOf(
 #pragma mark - END APIs of System.Buffers.OperationStatus
 
 #pragma mark - BEGIN APIs of System.Globalization.UnicodeCategory
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Globalization_UnicodeCategory_TypeOf(
 	
 );
@@ -3691,7 +3692,7 @@ System_Globalization_UnicodeCategory_TypeOf(
 #pragma mark - END APIs of System.Globalization.UnicodeCategory
 
 #pragma mark - BEGIN APIs of System.Globalization.CompareOptions
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Globalization_CompareOptions_TypeOf(
 	
 );
@@ -3699,7 +3700,7 @@ System_Globalization_CompareOptions_TypeOf(
 #pragma mark - END APIs of System.Globalization.CompareOptions
 
 #pragma mark - BEGIN APIs of System.Globalization.DigitShapes
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Globalization_DigitShapes_TypeOf(
 	
 );
@@ -3707,7 +3708,7 @@ System_Globalization_DigitShapes_TypeOf(
 #pragma mark - END APIs of System.Globalization.DigitShapes
 
 #pragma mark - BEGIN APIs of System.StringComparison
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_StringComparison_TypeOf(
 	
 );
@@ -3715,7 +3716,7 @@ System_StringComparison_TypeOf(
 #pragma mark - END APIs of System.StringComparison
 
 #pragma mark - BEGIN APIs of System.Text.NormalizationForm
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Text_NormalizationForm_TypeOf(
 	
 );
@@ -3723,7 +3724,7 @@ System_Text_NormalizationForm_TypeOf(
 #pragma mark - END APIs of System.Text.NormalizationForm
 
 #pragma mark - BEGIN APIs of System.StringSplitOptions
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_StringSplitOptions_TypeOf(
 	
 );
@@ -3731,7 +3732,7 @@ System_StringSplitOptions_TypeOf(
 #pragma mark - END APIs of System.StringSplitOptions
 
 #pragma mark - BEGIN APIs of System.Reflection.GenericParameterAttributes
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_GenericParameterAttributes_TypeOf(
 	
 );
@@ -3739,7 +3740,7 @@ System_Reflection_GenericParameterAttributes_TypeOf(
 #pragma mark - END APIs of System.Reflection.GenericParameterAttributes
 
 #pragma mark - BEGIN APIs of System.Reflection.TypeAttributes
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_TypeAttributes_TypeOf(
 	
 );
@@ -3747,7 +3748,7 @@ System_Reflection_TypeAttributes_TypeOf(
 #pragma mark - END APIs of System.Reflection.TypeAttributes
 
 #pragma mark - BEGIN APIs of System.Runtime.InteropServices.LayoutKind
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Runtime_InteropServices_LayoutKind_TypeOf(
 	
 );
@@ -3755,7 +3756,7 @@ System_Runtime_InteropServices_LayoutKind_TypeOf(
 #pragma mark - END APIs of System.Runtime.InteropServices.LayoutKind
 
 #pragma mark - BEGIN APIs of System.Runtime.InteropServices.CharSet
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Runtime_InteropServices_CharSet_TypeOf(
 	
 );
@@ -3763,7 +3764,7 @@ System_Runtime_InteropServices_CharSet_TypeOf(
 #pragma mark - END APIs of System.Runtime.InteropServices.CharSet
 
 #pragma mark - BEGIN APIs of System.Runtime.InteropServices.CustomQueryInterfaceMode
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Runtime_InteropServices_CustomQueryInterfaceMode_TypeOf(
 	
 );
@@ -3771,7 +3772,7 @@ System_Runtime_InteropServices_CustomQueryInterfaceMode_TypeOf(
 #pragma mark - END APIs of System.Runtime.InteropServices.CustomQueryInterfaceMode
 
 #pragma mark - BEGIN APIs of System.GCKind
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_GCKind_TypeOf(
 	
 );
@@ -3779,7 +3780,7 @@ System_GCKind_TypeOf(
 #pragma mark - END APIs of System.GCKind
 
 #pragma mark - BEGIN APIs of System.GCCollectionMode
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_GCCollectionMode_TypeOf(
 	
 );
@@ -3787,7 +3788,7 @@ System_GCCollectionMode_TypeOf(
 #pragma mark - END APIs of System.GCCollectionMode
 
 #pragma mark - BEGIN APIs of System.GCNotificationStatus
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_GCNotificationStatus_TypeOf(
 	
 );
@@ -3795,7 +3796,7 @@ System_GCNotificationStatus_TypeOf(
 #pragma mark - END APIs of System.GCNotificationStatus
 
 #pragma mark - BEGIN APIs of System.Base64FormattingOptions
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Base64FormattingOptions_TypeOf(
 	
 );
@@ -3803,7 +3804,7 @@ System_Base64FormattingOptions_TypeOf(
 #pragma mark - END APIs of System.Base64FormattingOptions
 
 #pragma mark - BEGIN APIs of System.Threading.ThreadPriority
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Threading_ThreadPriority_TypeOf(
 	
 );
@@ -3811,7 +3812,7 @@ System_Threading_ThreadPriority_TypeOf(
 #pragma mark - END APIs of System.Threading.ThreadPriority
 
 #pragma mark - BEGIN APIs of System.Threading.ThreadState
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Threading_ThreadState_TypeOf(
 	
 );
@@ -3819,7 +3820,7 @@ System_Threading_ThreadState_TypeOf(
 #pragma mark - END APIs of System.Threading.ThreadState
 
 #pragma mark - BEGIN APIs of System.Threading.ApartmentState
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Threading_ApartmentState_TypeOf(
 	
 );
@@ -3827,7 +3828,7 @@ System_Threading_ApartmentState_TypeOf(
 #pragma mark - END APIs of System.Threading.ApartmentState
 
 #pragma mark - BEGIN APIs of System.Security.Permissions.PermissionState
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Security_Permissions_PermissionState_TypeOf(
 	
 );
@@ -3835,7 +3836,7 @@ System_Security_Permissions_PermissionState_TypeOf(
 #pragma mark - END APIs of System.Security.Permissions.PermissionState
 
 #pragma mark - BEGIN APIs of System.Security.Principal.PrincipalPolicy
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Security_Principal_PrincipalPolicy_TypeOf(
 	
 );
@@ -3843,7 +3844,7 @@ System_Security_Principal_PrincipalPolicy_TypeOf(
 #pragma mark - END APIs of System.Security.Principal.PrincipalPolicy
 
 #pragma mark - BEGIN APIs of System.IO.FileAttributes
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_IO_FileAttributes_TypeOf(
 	
 );
@@ -3851,7 +3852,7 @@ System_IO_FileAttributes_TypeOf(
 #pragma mark - END APIs of System.IO.FileAttributes
 
 #pragma mark - BEGIN APIs of System.IO.UnixFileMode
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_IO_UnixFileMode_TypeOf(
 	
 );
@@ -3859,7 +3860,7 @@ System_IO_UnixFileMode_TypeOf(
 #pragma mark - END APIs of System.IO.UnixFileMode
 
 #pragma mark - BEGIN APIs of System.IO.SearchOption
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_IO_SearchOption_TypeOf(
 	
 );
@@ -3867,7 +3868,7 @@ System_IO_SearchOption_TypeOf(
 #pragma mark - END APIs of System.IO.SearchOption
 
 #pragma mark - BEGIN APIs of System.IO.MatchType
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_IO_MatchType_TypeOf(
 	
 );
@@ -3875,7 +3876,7 @@ System_IO_MatchType_TypeOf(
 #pragma mark - END APIs of System.IO.MatchType
 
 #pragma mark - BEGIN APIs of System.IO.MatchCasing
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_IO_MatchCasing_TypeOf(
 	
 );
@@ -3883,7 +3884,7 @@ System_IO_MatchCasing_TypeOf(
 #pragma mark - END APIs of System.IO.MatchCasing
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.NiceLevels
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 NativeAOT_CodeGeneratorInputSample_NiceLevels_TypeOf(
 	
 );
@@ -3891,7 +3892,7 @@ NativeAOT_CodeGeneratorInputSample_NiceLevels_TypeOf(
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.NiceLevels
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.TestEnum
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 NativeAOT_CodeGeneratorInputSample_TestEnum_TypeOf(
 	
 );
@@ -3943,7 +3944,7 @@ System_Object_Create(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Object_TypeOf(
 	
 );
@@ -5262,7 +5263,7 @@ System_Type_FilterNameIgnoreCase_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Type_TypeOf(
 	
 );
@@ -5380,7 +5381,7 @@ System_Reflection_MemberInfo_MetadataToken_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_MemberInfo_TypeOf(
 	
 );
@@ -5416,7 +5417,7 @@ System_Reflection_ICustomAttributeProvider_IsDefined(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_ICustomAttributeProvider_TypeOf(
 	
 );
@@ -6095,7 +6096,7 @@ System_Array_MaxLength_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Array_TypeOf(
 	
 );
@@ -6114,7 +6115,7 @@ System_ICloneable_Clone(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_ICloneable_TypeOf(
 	
 );
@@ -6190,7 +6191,7 @@ System_Collections_IList_IsFixedSize_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Collections_IList_TypeOf(
 	
 );
@@ -6232,7 +6233,7 @@ System_Collections_ICollection_IsSynchronized_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Collections_ICollection_TypeOf(
 	
 );
@@ -6251,7 +6252,7 @@ System_Collections_IEnumerable_GetEnumerator(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Collections_IEnumerable_TypeOf(
 	
 );
@@ -6283,7 +6284,7 @@ System_Collections_IEnumerator_Current_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Collections_IEnumerator_TypeOf(
 	
 );
@@ -6316,7 +6317,7 @@ System_ValueType_ToString(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_ValueType_TypeOf(
 	
 );
@@ -6337,7 +6338,7 @@ System_IComparable_CompareTo(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_IComparable_TypeOf(
 	
 );
@@ -6469,7 +6470,7 @@ System_IConvertible_ToType(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_IConvertible_TypeOf(
 	
 );
@@ -6748,7 +6749,7 @@ System_Enum_ToObject_8(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Enum_TypeOf(
 	
 );
@@ -6761,7 +6762,7 @@ System_Enum_Destroy(
 #pragma mark - END APIs of System.Enum
 
 #pragma mark - BEGIN APIs of System.ISpanFormattable
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_ISpanFormattable_TypeOf(
 	
 );
@@ -6782,7 +6783,7 @@ System_IFormattable_ToString(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_IFormattable_TypeOf(
 	
 );
@@ -7942,7 +7943,7 @@ System_String_Empty_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_String_TypeOf(
 	
 );
@@ -7963,7 +7964,7 @@ System_IDisposable_Dispose(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_IDisposable_TypeOf(
 	
 );
@@ -8003,7 +8004,7 @@ System_IFormatProvider_GetFormat(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_IFormatProvider_TypeOf(
 	
 );
@@ -8034,7 +8035,7 @@ System_Collections_IStructuralComparable_CompareTo(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Collections_IStructuralComparable_TypeOf(
 	
 );
@@ -8055,7 +8056,7 @@ System_Collections_IComparer_Compare(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Collections_IComparer_TypeOf(
 	
 );
@@ -8083,7 +8084,7 @@ System_Collections_IStructuralEquatable_GetHashCode(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Collections_IStructuralEquatable_TypeOf(
 	
 );
@@ -8111,7 +8112,7 @@ System_Collections_IEqualityComparer_GetHashCode(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Collections_IEqualityComparer_TypeOf(
 	
 );
@@ -8504,7 +8505,7 @@ System_Globalization_CultureInfo_IsReadOnly_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Globalization_CultureInfo_TypeOf(
 	
 );
@@ -8959,7 +8960,7 @@ System_Globalization_CompareInfo_LCID_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Globalization_CompareInfo_TypeOf(
 	
 );
@@ -8979,7 +8980,7 @@ System_Runtime_Serialization_IDeserializationCallback_OnDeserialization(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Runtime_Serialization_IDeserializationCallback_TypeOf(
 	
 );
@@ -9492,7 +9493,7 @@ System_Reflection_Assembly_ModuleResolve_Remove(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_Assembly_TypeOf(
 	
 );
@@ -9513,7 +9514,7 @@ System_Runtime_Serialization_ISerializable_GetObjectData(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Runtime_Serialization_ISerializable_TypeOf(
 	
 );
@@ -9852,7 +9853,7 @@ System_Runtime_Serialization_SerializationInfo_ObjectType_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Runtime_Serialization_SerializationInfo_TypeOf(
 	
 );
@@ -9905,7 +9906,7 @@ System_Runtime_Serialization_SerializationInfoEnumerator_ObjectType_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Runtime_Serialization_SerializationInfoEnumerator_TypeOf(
 	
 );
@@ -9939,7 +9940,7 @@ System_Runtime_Serialization_SerializationEntry_ObjectType_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Runtime_Serialization_SerializationEntry_TypeOf(
 	
 );
@@ -10708,7 +10709,7 @@ System_Decimal_MinValue_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Decimal_TypeOf(
 	
 );
@@ -11498,7 +11499,7 @@ System_DateTime_UnixEpoch_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_DateTime_TypeOf(
 	
 );
@@ -11983,7 +11984,7 @@ System_TimeSpan_TicksPerDay_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_TimeSpan_TypeOf(
 	
 );
@@ -12326,7 +12327,7 @@ System_DateOnly_DayNumber_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_DateOnly_TypeOf(
 	
 );
@@ -12741,7 +12742,7 @@ System_TimeOnly_Ticks_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_TimeOnly_TypeOf(
 	
 );
@@ -13116,7 +13117,7 @@ System_Globalization_Calendar_CurrentEra_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Globalization_Calendar_TypeOf(
 	
 );
@@ -13250,7 +13251,7 @@ System_Runtime_Serialization_IFormatterConverter_ToString(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Runtime_Serialization_IFormatterConverter_TypeOf(
 	
 );
@@ -13303,7 +13304,7 @@ System_Runtime_Serialization_StreamingContext_Context_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Runtime_Serialization_StreamingContext_TypeOf(
 	
 );
@@ -13561,7 +13562,7 @@ System_Reflection_AssemblyName_FullName_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_AssemblyName_TypeOf(
 	
 );
@@ -13717,7 +13718,7 @@ System_Version_MinorRevision_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Version_TypeOf(
 	
 );
@@ -13758,7 +13759,7 @@ System_Reflection_StrongNameKeyPair_PublicKey_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_StrongNameKeyPair_TypeOf(
 	
 );
@@ -14123,7 +14124,7 @@ System_IO_FileStream_CanSeek_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_IO_FileStream_TypeOf(
 	
 );
@@ -14448,7 +14449,7 @@ System_IO_Stream_Null_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_IO_Stream_TypeOf(
 	
 );
@@ -14473,7 +14474,7 @@ System_MarshalByRefObject_InitializeLifetimeService(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_MarshalByRefObject_TypeOf(
 	
 );
@@ -14492,7 +14493,7 @@ System_IAsyncDisposable_DisposeAsync(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_IAsyncDisposable_TypeOf(
 	
 );
@@ -14609,7 +14610,7 @@ System_Threading_Tasks_ValueTask_IsCanceled_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Threading_Tasks_ValueTask_TypeOf(
 	
 );
@@ -14698,7 +14699,7 @@ System_Threading_CancellationToken_WaitHandle_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Threading_CancellationToken_TypeOf(
 	
 );
@@ -14891,7 +14892,7 @@ System_Threading_WaitHandle_WaitTimeout_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Threading_WaitHandle_TypeOf(
 	
 );
@@ -14946,7 +14947,7 @@ Microsoft_Win32_SafeHandles_SafeWaitHandle_Create_1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 Microsoft_Win32_SafeHandles_SafeWaitHandle_TypeOf(
 	
 );
@@ -14966,7 +14967,7 @@ Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid_IsInvalid_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid_TypeOf(
 	
 );
@@ -15030,7 +15031,7 @@ System_Runtime_InteropServices_SafeHandle_IsInvalid_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Runtime_InteropServices_SafeHandle_TypeOf(
 	
 );
@@ -15043,7 +15044,7 @@ System_Runtime_InteropServices_SafeHandle_Destroy(
 #pragma mark - END APIs of System.Runtime.InteropServices.SafeHandle
 
 #pragma mark - BEGIN APIs of System.Runtime.ConstrainedExecution.CriticalFinalizerObject
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Runtime_ConstrainedExecution_CriticalFinalizerObject_TypeOf(
 	
 );
@@ -15112,7 +15113,7 @@ System_Threading_CancellationTokenRegistration_Token_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Threading_CancellationTokenRegistration_TypeOf(
 	
 );
@@ -15247,7 +15248,7 @@ System_Exception_StackTrace_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Exception_TypeOf(
 	
 );
@@ -15502,7 +15503,7 @@ System_Reflection_MethodBase_IsSecurityTransparent_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_MethodBase_TypeOf(
 	
 );
@@ -15568,7 +15569,7 @@ System_RuntimeMethodHandle_Value_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_RuntimeMethodHandle_TypeOf(
 	
 );
@@ -15635,7 +15636,7 @@ System_RuntimeTypeHandle_Value_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_RuntimeTypeHandle_TypeOf(
 	
 );
@@ -15751,7 +15752,7 @@ System_ModuleHandle_EmptyHandle_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_ModuleHandle_TypeOf(
 	
 );
@@ -15822,7 +15823,7 @@ System_RuntimeFieldHandle_Value_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_RuntimeFieldHandle_TypeOf(
 	
 );
@@ -16008,7 +16009,7 @@ System_Reflection_ParameterInfo_MetadataToken_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_ParameterInfo_TypeOf(
 	
 );
@@ -16028,7 +16029,7 @@ System_Runtime_Serialization_IObjectReference_GetRealObject(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Runtime_Serialization_IObjectReference_TypeOf(
 	
 );
@@ -16114,7 +16115,7 @@ System_Reflection_CustomAttributeData_NamedArguments_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_CustomAttributeData_TypeOf(
 	
 );
@@ -16464,7 +16465,7 @@ System_Reflection_Module_FilterTypeNameIgnoreCase_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_Module_TypeOf(
 	
 );
@@ -16645,7 +16646,7 @@ System_Guid_Empty_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Guid_TypeOf(
 	
 );
@@ -16761,7 +16762,7 @@ System_Reflection_MethodInfo_ReturnTypeCustomAttributes_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_MethodInfo_TypeOf(
 	
 );
@@ -16845,7 +16846,7 @@ System_Reflection_Binder_SelectProperty(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_Binder_TypeOf(
 	
 );
@@ -17067,7 +17068,7 @@ System_Reflection_FieldInfo_FieldHandle_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_FieldInfo_TypeOf(
 	
 );
@@ -17114,7 +17115,7 @@ System_Reflection_ParameterModifier_Create(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_ParameterModifier_TypeOf(
 	
 );
@@ -17330,7 +17331,7 @@ System_Reflection_PropertyInfo_SetMethod_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_PropertyInfo_TypeOf(
 	
 );
@@ -17412,7 +17413,7 @@ System_Reflection_ConstructorInfo_TypeConstructorName_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_ConstructorInfo_TypeOf(
 	
 );
@@ -17482,7 +17483,7 @@ System_Reflection_CustomAttributeTypedArgument_Value_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_CustomAttributeTypedArgument_TypeOf(
 	
 );
@@ -17574,7 +17575,7 @@ System_Reflection_CustomAttributeNamedArgument_IsField_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_CustomAttributeNamedArgument_TypeOf(
 	
 );
@@ -17638,7 +17639,7 @@ System_Reflection_MethodBody_ExceptionHandlingClauses_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_MethodBody_TypeOf(
 	
 );
@@ -17682,7 +17683,7 @@ System_Reflection_LocalVariableInfo_IsPinned_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_LocalVariableInfo_TypeOf(
 	
 );
@@ -17760,7 +17761,7 @@ System_Reflection_ExceptionHandlingClause_CatchType_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_ExceptionHandlingClause_TypeOf(
 	
 );
@@ -17841,7 +17842,7 @@ System_Collections_IDictionary_IsFixedSize_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Collections_IDictionary_TypeOf(
 	
 );
@@ -17875,7 +17876,7 @@ System_Collections_IDictionaryEnumerator_Entry_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Collections_IDictionaryEnumerator_TypeOf(
 	
 );
@@ -17937,7 +17938,7 @@ System_Collections_DictionaryEntry_Value_Set(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Collections_DictionaryEntry_TypeOf(
 	
 );
@@ -18320,7 +18321,7 @@ System_Threading_Tasks_Task_IsFaulted_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Threading_Tasks_Task_TypeOf(
 	
 );
@@ -18361,7 +18362,7 @@ System_IAsyncResult_CompletedSynchronously_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_IAsyncResult_TypeOf(
 	
 );
@@ -18405,7 +18406,7 @@ System_Threading_Tasks_TaskScheduler_Id_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Threading_Tasks_TaskScheduler_TypeOf(
 	
 );
@@ -18502,7 +18503,7 @@ System_AggregateException_Message_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_AggregateException_TypeOf(
 	
 );
@@ -18620,7 +18621,7 @@ System_Threading_Tasks_TaskFactory_ContinuationOptions_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Threading_Tasks_TaskFactory_TypeOf(
 	
 );
@@ -18694,7 +18695,7 @@ System_Runtime_CompilerServices_TaskAwaiter_IsCompleted_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Runtime_CompilerServices_TaskAwaiter_TypeOf(
 	
 );
@@ -18714,7 +18715,7 @@ System_Runtime_CompilerServices_ICriticalNotifyCompletion_UnsafeOnCompleted(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Runtime_CompilerServices_ICriticalNotifyCompletion_TypeOf(
 	
 );
@@ -18734,7 +18735,7 @@ System_Runtime_CompilerServices_INotifyCompletion_OnCompleted(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Runtime_CompilerServices_INotifyCompletion_TypeOf(
 	
 );
@@ -18753,7 +18754,7 @@ System_Runtime_CompilerServices_ConfiguredTaskAwaitable_GetAwaiter(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Runtime_CompilerServices_ConfiguredTaskAwaitable_TypeOf(
 	
 );
@@ -18793,7 +18794,7 @@ System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_Is
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_TypeOf(
 	
 );
@@ -18812,7 +18813,7 @@ System_Runtime_CompilerServices_YieldAwaitable_GetAwaiter(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Runtime_CompilerServices_YieldAwaitable_TypeOf(
 	
 );
@@ -18852,7 +18853,7 @@ System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_IsCompleted_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_TypeOf(
 	
 );
@@ -18927,7 +18928,7 @@ System_Runtime_CompilerServices_ValueTaskAwaiter_IsCompleted_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Runtime_CompilerServices_ValueTaskAwaiter_TypeOf(
 	
 );
@@ -18946,7 +18947,7 @@ System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_GetAwaiter(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_TypeOf(
 	
 );
@@ -18986,7 +18987,7 @@ System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTask
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_TypeOf(
 	
 );
@@ -19013,7 +19014,7 @@ System_Threading_Tasks_Sources_IValueTaskSource_GetResult(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Threading_Tasks_Sources_IValueTaskSource_TypeOf(
 	
 );
@@ -19056,7 +19057,7 @@ Microsoft_Win32_SafeHandles_SafeFileHandle_IsInvalid_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 Microsoft_Win32_SafeHandles_SafeFileHandle_TypeOf(
 	
 );
@@ -19158,7 +19159,7 @@ System_IO_FileStreamOptions_BufferSize_Set(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_IO_FileStreamOptions_TypeOf(
 	
 );
@@ -19291,7 +19292,7 @@ System_Reflection_TypeInfo_ImplementedInterfaces_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_TypeInfo_TypeOf(
 	
 );
@@ -19408,7 +19409,7 @@ System_Reflection_IReflect_UnderlyingSystemType_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_IReflect_TypeOf(
 	
 );
@@ -19437,7 +19438,7 @@ System_Reflection_IReflectableType_GetTypeInfo(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_IReflectableType_TypeOf(
 	
 );
@@ -19587,7 +19588,7 @@ System_Reflection_EventInfo_EventHandlerType_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_EventInfo_TypeOf(
 	
 );
@@ -19633,7 +19634,7 @@ System_Reflection_ManifestResourceInfo_ResourceLocation_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_ManifestResourceInfo_TypeOf(
 	
 );
@@ -19673,7 +19674,7 @@ System_ResolveEventArgs_RequestingAssembly_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_ResolveEventArgs_TypeOf(
 	
 );
@@ -19697,7 +19698,7 @@ System_EventArgs_Empty_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_EventArgs_TypeOf(
 	
 );
@@ -20006,7 +20007,7 @@ System_Text_Rune_Value_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Text_Rune_TypeOf(
 	
 );
@@ -20062,7 +20063,7 @@ System_Globalization_SortKey_KeyData_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Globalization_SortKey_TypeOf(
 	
 );
@@ -20116,7 +20117,7 @@ System_Globalization_SortVersion_SortId_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Globalization_SortVersion_TypeOf(
 	
 );
@@ -20266,7 +20267,7 @@ System_Globalization_TextInfo_IsRightToLeft_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Globalization_TextInfo_TypeOf(
 	
 );
@@ -20706,7 +20707,7 @@ System_Globalization_NumberFormatInfo_DigitSubstitution_Set(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Globalization_NumberFormatInfo_TypeOf(
 	
 );
@@ -21167,7 +21168,7 @@ System_Globalization_DateTimeFormatInfo_MonthGenitiveNames_Set(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Globalization_DateTimeFormatInfo_TypeOf(
 	
 );
@@ -21233,7 +21234,7 @@ System_CharEnumerator_Current_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_CharEnumerator_TypeOf(
 	
 );
@@ -21265,7 +21266,7 @@ System_Text_StringRuneEnumerator_Current_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Text_StringRuneEnumerator_TypeOf(
 	
 );
@@ -21300,7 +21301,7 @@ System_Text_CompositeFormat_Format_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Text_CompositeFormat_TypeOf(
 	
 );
@@ -21755,7 +21756,7 @@ System_Text_Encoding_UTF32_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Text_Encoding_TypeOf(
 	
 );
@@ -21806,7 +21807,7 @@ System_Text_EncodingProvider_GetEncodings(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Text_EncodingProvider_TypeOf(
 	
 );
@@ -21844,7 +21845,7 @@ System_Text_EncoderFallback_MaxCharCount_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Text_EncoderFallback_TypeOf(
 	
 );
@@ -21899,7 +21900,7 @@ System_Text_EncoderFallbackBuffer_Remaining_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Text_EncoderFallbackBuffer_TypeOf(
 	
 );
@@ -21937,7 +21938,7 @@ System_Text_DecoderFallback_MaxCharCount_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Text_DecoderFallback_TypeOf(
 	
 );
@@ -21983,7 +21984,7 @@ System_Text_DecoderFallbackBuffer_Remaining_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Text_DecoderFallbackBuffer_TypeOf(
 	
 );
@@ -22047,7 +22048,7 @@ System_Text_EncodingInfo_DisplayName_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Text_EncodingInfo_TypeOf(
 	
 );
@@ -22153,7 +22154,7 @@ System_Text_Decoder_FallbackBuffer_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Text_Decoder_TypeOf(
 	
 );
@@ -22231,7 +22232,7 @@ System_Text_Encoder_FallbackBuffer_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Text_Encoder_TypeOf(
 	
 );
@@ -22587,7 +22588,7 @@ System_Runtime_InteropServices_StructLayoutAttribute_CharSet_Set(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Runtime_InteropServices_StructLayoutAttribute_TypeOf(
 	
 );
@@ -22865,7 +22866,7 @@ System_Attribute_TypeId_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Attribute_TypeOf(
 	
 );
@@ -22952,7 +22953,7 @@ System_Reflection_InterfaceMapping_InterfaceMethods_Set(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Reflection_InterfaceMapping_TypeOf(
 	
 );
@@ -24025,7 +24026,7 @@ System_Runtime_InteropServices_Marshal_SystemMaxDBCSCharSize_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Runtime_InteropServices_Marshal_TypeOf(
 	
 );
@@ -24155,7 +24156,7 @@ System_Security_SecureString_Length_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Security_SecureString_TypeOf(
 	
 );
@@ -24199,7 +24200,7 @@ System_NullReferenceException_Create_2(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_NullReferenceException_TypeOf(
 	
 );
@@ -24230,7 +24231,7 @@ System_SystemException_Create_2(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_SystemException_TypeOf(
 	
 );
@@ -24310,7 +24311,7 @@ System_Tuple_A1_Item1_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Tuple_A1_TypeOf(
 	
 );
@@ -24330,7 +24331,7 @@ System_Runtime_CompilerServices_ITuple_Length_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Runtime_CompilerServices_ITuple_TypeOf(
 	
 );
@@ -24396,7 +24397,7 @@ System_Tuple_A2_Item2_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Tuple_A2_TypeOf(
 	
 );
@@ -24480,7 +24481,7 @@ System_Tuple_A3_Item3_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Tuple_A3_TypeOf(
 	
 );
@@ -24584,7 +24585,7 @@ System_Tuple_A4_Item4_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Tuple_A4_TypeOf(
 	
 );
@@ -24710,7 +24711,7 @@ System_Tuple_A5_Item5_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Tuple_A5_TypeOf(
 	
 );
@@ -24860,7 +24861,7 @@ System_Tuple_A6_Item6_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Tuple_A6_TypeOf(
 	
 );
@@ -25036,7 +25037,7 @@ System_Tuple_A7_Item7_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Tuple_A7_TypeOf(
 	
 );
@@ -25240,7 +25241,7 @@ System_Tuple_A8_Rest_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Tuple_A8_TypeOf(
 	
 );
@@ -25488,7 +25489,7 @@ System_GC_MaxGeneration_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_GC_TypeOf(
 	
 );
@@ -25599,7 +25600,7 @@ System_GCMemoryInfo_PauseTimePercentage_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_GCMemoryInfo_TypeOf(
 	
 );
@@ -25661,7 +25662,7 @@ System_WeakReference_Target_Set(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_WeakReference_TypeOf(
 	
 );
@@ -26422,7 +26423,7 @@ System_Math_Tau_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Math_TypeOf(
 	
 );
@@ -28400,7 +28401,7 @@ System_Convert_DBNull_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Convert_TypeOf(
 	
 );
@@ -28971,7 +28972,7 @@ System_Threading_Thread_ApartmentState_Set(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Threading_Thread_TypeOf(
 	
 );
@@ -28998,7 +28999,7 @@ System_Security_Principal_IPrincipal_Identity_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Security_Principal_IPrincipal_TypeOf(
 	
 );
@@ -29032,7 +29033,7 @@ System_Security_Principal_IIdentity_IsAuthenticated_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Security_Principal_IIdentity_TypeOf(
 	
 );
@@ -29099,7 +29100,7 @@ System_Threading_ExecutionContext_Dispose(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Threading_ExecutionContext_TypeOf(
 	
 );
@@ -29144,7 +29145,7 @@ System_Threading_AsyncFlowControl_GetHashCode(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Threading_AsyncFlowControl_TypeOf(
 	
 );
@@ -29158,7 +29159,7 @@ System_Threading_AsyncFlowControl_Destroy(
 
 
 #pragma mark - BEGIN APIs of System.LocalDataStoreSlot
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_LocalDataStoreSlot_TypeOf(
 	
 );
@@ -29203,7 +29204,7 @@ System_Threading_CompressedStack_Run(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Threading_CompressedStack_TypeOf(
 	
 );
@@ -29765,7 +29766,7 @@ System_AppDomain_ResourceResolve_Remove(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_AppDomain_TypeOf(
 	
 );
@@ -29792,7 +29793,7 @@ System_AppDomainSetup_TargetFrameworkName_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_AppDomainSetup_TypeOf(
 	
 );
@@ -30001,7 +30002,7 @@ System_Security_PermissionSet_SyncRoot_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Security_PermissionSet_TypeOf(
 	
 );
@@ -30027,7 +30028,7 @@ System_Security_ISecurityEncodable_ToXml(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Security_ISecurityEncodable_TypeOf(
 	
 );
@@ -30200,7 +30201,7 @@ System_Security_SecurityElement_Children_Set(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Security_SecurityElement_TypeOf(
 	
 );
@@ -30453,7 +30454,7 @@ System_Collections_Hashtable_Count_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Collections_Hashtable_TypeOf(
 	
 );
@@ -30473,7 +30474,7 @@ System_Collections_IHashCodeProvider_GetHashCode(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Collections_IHashCodeProvider_TypeOf(
 	
 );
@@ -30855,7 +30856,7 @@ System_Collections_ArrayList_SyncRoot_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Collections_ArrayList_TypeOf(
 	
 );
@@ -30892,7 +30893,7 @@ System_Security_IStackWalk_PermitOnly(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Security_IStackWalk_TypeOf(
 	
 );
@@ -30938,7 +30939,7 @@ System_Security_IPermission_Union(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Security_IPermission_TypeOf(
 	
 );
@@ -30972,7 +30973,7 @@ System_UnhandledExceptionEventArgs_IsTerminating_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_UnhandledExceptionEventArgs_TypeOf(
 	
 );
@@ -31008,7 +31009,7 @@ System_AssemblyLoadEventArgs_LoadedAssembly_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_AssemblyLoadEventArgs_TypeOf(
 	
 );
@@ -31033,7 +31034,7 @@ System_Runtime_Remoting_ObjectHandle_Create(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Runtime_Remoting_ObjectHandle_TypeOf(
 	
 );
@@ -31145,7 +31146,7 @@ System_Threading_Timer_ActiveCount_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Threading_Timer_TypeOf(
 	
 );
@@ -31253,7 +31254,7 @@ System_Threading_CancellationTokenSource_Token_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Threading_CancellationTokenSource_TypeOf(
 	
 );
@@ -31309,7 +31310,7 @@ System_Threading_Tasks_Task_A1_Result_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Threading_Tasks_Task_A1_TypeOf(
 	
 );
@@ -31418,7 +31419,7 @@ System_Random_Shared_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Random_TypeOf(
 	
 );
@@ -32110,7 +32111,7 @@ System_Text_StringBuilder_Length_Set(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Text_StringBuilder_TypeOf(
 	
 );
@@ -32135,7 +32136,7 @@ System_Text_StringBuilder_ChunkEnumerator_MoveNext(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Text_StringBuilder_ChunkEnumerator_TypeOf(
 	
 );
@@ -32233,7 +32234,7 @@ System_Text_StringBuilder_AppendInterpolatedStringHandler_Create_1(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Text_StringBuilder_AppendInterpolatedStringHandler_TypeOf(
 	
 );
@@ -32465,7 +32466,7 @@ System_IO_Path_InvalidPathChars_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_IO_Path_TypeOf(
 	
 );
@@ -33119,7 +33120,7 @@ System_IO_File_ResolveLinkTarget(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_IO_File_TypeOf(
 	
 );
@@ -33350,7 +33351,7 @@ System_IO_StreamReader_Null_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_IO_StreamReader_TypeOf(
 	
 );
@@ -33466,7 +33467,7 @@ System_IO_TextReader_Null_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_IO_TextReader_TypeOf(
 	
 );
@@ -33775,7 +33776,7 @@ System_IO_StreamWriter_Null_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_IO_StreamWriter_TypeOf(
 	
 );
@@ -34216,7 +34217,7 @@ System_IO_TextWriter_Null_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_IO_TextWriter_TypeOf(
 	
 );
@@ -34426,7 +34427,7 @@ System_IO_FileSystemInfo_Attributes_Set(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_IO_FileSystemInfo_TypeOf(
 	
 );
@@ -34626,7 +34627,7 @@ System_IO_FileInfo_Exists_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_IO_FileInfo_TypeOf(
 	
 );
@@ -34880,7 +34881,7 @@ System_IO_DirectoryInfo_Exists_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_IO_DirectoryInfo_TypeOf(
 	
 );
@@ -35020,7 +35021,7 @@ System_IO_EnumerationOptions_ReturnSpecialDirectories_Set(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_IO_EnumerationOptions_TypeOf(
 	
 );
@@ -35392,7 +35393,7 @@ System_IO_Directory_ResolveLinkTarget(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_IO_Directory_TypeOf(
 	
 );
@@ -35405,7 +35406,7 @@ System_IO_Directory_Destroy(
 #pragma mark - END APIs of System.IO.Directory
 
 #pragma mark - BEGIN APIs of System.Collections.Generic.IEnumerable<>
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Collections_Generic_IEnumerable_A1_TypeOf(
 	
 );
@@ -35665,7 +35666,7 @@ System_Collections_Generic_List_A1_Count_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Collections_Generic_List_A1_TypeOf(
 	
 );
@@ -35708,7 +35709,7 @@ System_Collections_Generic_IList_A1_RemoveAt(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Collections_Generic_IList_A1_TypeOf(
 	
 );
@@ -35866,7 +35867,7 @@ System_Collections_Generic_Dictionary_A2_Count_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Collections_Generic_Dictionary_A2_TypeOf(
 	
 );
@@ -35920,7 +35921,7 @@ System_Collections_Generic_IDictionary_A2_TryGetValue(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Collections_Generic_IDictionary_A2_TypeOf(
 	
 );
@@ -35976,7 +35977,7 @@ System_Collections_ObjectModel_ReadOnlyCollection_A1_Count_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Collections_ObjectModel_ReadOnlyCollection_A1_TypeOf(
 	
 );
@@ -36013,7 +36014,7 @@ System_Collections_Generic_IReadOnlyDictionary_A2_TryGetValue(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Collections_Generic_IReadOnlyDictionary_A2_TypeOf(
 	
 );
@@ -36029,7 +36030,7 @@ System_Collections_Generic_IReadOnlyDictionary_A2_Destroy(
 
 
 #pragma mark - BEGIN APIs of System.Collections.Generic.IAsyncEnumerable<>
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 System_Collections_Generic_IAsyncEnumerable_A1_TypeOf(
 	
 );
@@ -36072,7 +36073,7 @@ NativeAOT_CodeGeneratorInputSample_Address_City_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 NativeAOT_CodeGeneratorInputSample_Address_TypeOf(
 	
 );
@@ -36099,7 +36100,7 @@ NativeAOT_CodeGeneratorInputSample_IAnimal_Name_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 NativeAOT_CodeGeneratorInputSample_IAnimal_TypeOf(
 	
 );
@@ -36137,7 +36138,7 @@ NativeAOT_CodeGeneratorInputSample_AnimalFactory_DEFAULT_CREATOR_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 NativeAOT_CodeGeneratorInputSample_AnimalFactory_TypeOf(
 	
 );
@@ -36165,7 +36166,7 @@ NativeAOT_CodeGeneratorInputSample_BaseAnimal_Name_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 NativeAOT_CodeGeneratorInputSample_BaseAnimal_TypeOf(
 	
 );
@@ -36191,7 +36192,7 @@ NativeAOT_CodeGeneratorInputSample_Cat_CatName_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 NativeAOT_CodeGeneratorInputSample_Cat_TypeOf(
 	
 );
@@ -36217,7 +36218,7 @@ NativeAOT_CodeGeneratorInputSample_Dog_DogName_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 NativeAOT_CodeGeneratorInputSample_Dog_TypeOf(
 	
 );
@@ -36243,7 +36244,7 @@ NativeAOT_CodeGeneratorInputSample_GenericAnimal_Name_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 NativeAOT_CodeGeneratorInputSample_GenericAnimal_TypeOf(
 	
 );
@@ -36319,7 +36320,7 @@ NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_AField_Set(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1_TypeOf(
 	
 );
@@ -36393,7 +36394,7 @@ NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_AField_Set(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2_TypeOf(
 	
 );
@@ -36513,7 +36514,7 @@ NativeAOT_CodeGeneratorInputSample_GenericTests_DictionaryOfStringKeysAndExcepti
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 NativeAOT_CodeGeneratorInputSample_GenericTests_TypeOf(
 	
 );
@@ -36559,7 +36560,7 @@ NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_Value_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_TypeOf(
 	
 );
@@ -36775,7 +36776,7 @@ NativeAOT_CodeGeneratorInputSample_Person_DEFAULT_AGE_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 NativeAOT_CodeGeneratorInputSample_Person_TypeOf(
 	
 );
@@ -36805,7 +36806,7 @@ NativeAOT_CodeGeneratorInputSample_Person_Extensions_IncreaseAge(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 NativeAOT_CodeGeneratorInputSample_Person_Extensions_TypeOf(
 	
 );
@@ -36849,7 +36850,7 @@ NativeAOT_CodeGeneratorInputSample_Book_TheLordOfTheRings_Get(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 NativeAOT_CodeGeneratorInputSample_Book_TypeOf(
 	
 );
@@ -36974,7 +36975,7 @@ NativeAOT_CodeGeneratorInputSample_TestClass_CurrentIntValue_Set(
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 NativeAOT_CodeGeneratorInputSample_TestClass_TypeOf(
 	
 );
@@ -37017,7 +37018,7 @@ NativeAOT_CodeGeneratorInputSample_Transformer_UppercaseString(
 	System_Exception_t* /* System.Exception */ outException
 );
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 NativeAOT_CodeGeneratorInputSample_Transformer_TypeOf(
 	
 );
@@ -37042,7 +37043,7 @@ NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers_UppercaseStri
 );
 
 
-System_Type_t /* System.Type */
+System_Type_t __nonnull /* System.Type */
 NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers_TypeOf(
 	
 );

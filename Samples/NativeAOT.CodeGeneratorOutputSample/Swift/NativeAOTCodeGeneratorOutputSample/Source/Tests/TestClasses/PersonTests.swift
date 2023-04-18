@@ -846,7 +846,6 @@ final class PersonTests: XCTestCase {
         XCTAssertEqual(1, numberOfChildrenBeforeDaugther)
         
         let personType = NativeAOT_CodeGeneratorInputSample_Person_TypeOf()
-        
         defer { System_Type_Destroy(personType) }
         
         guard let newChildren = System_Array_CreateInstance(personType,

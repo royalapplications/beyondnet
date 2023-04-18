@@ -15,20 +15,10 @@ final class SystemCollectionsGenericDictionaryTests: XCTestCase {
 	func testCreate() {
 		var exception: System_Exception_t?
 		
-		guard let systemStringType = System_String_TypeOf() else {
-			XCTFail("typeof(System.String) should return an instance")
-			
-			return
-		}
-		
+		let systemStringType = System_String_TypeOf()
 		defer { System_Type_Destroy(systemStringType) }
 		
-		guard let systemExceptionType = System_Exception_TypeOf() else {
-			XCTFail("typeof(System.Exception) should return an instance")
-			
-			return
-		}
-		
+		let systemExceptionType = System_Exception_TypeOf()
 		defer { System_Type_Destroy(systemExceptionType) }
 		
 		guard let dictionary = System_Collections_Generic_Dictionary_A2_Create(systemStringType,
@@ -68,20 +58,10 @@ final class SystemCollectionsGenericDictionaryTests: XCTestCase {
 	func testUse() {
 		var exception: System_Exception_t?
 
-		guard let systemStringType = System_String_TypeOf() else {
-			XCTFail("typeof(System.String) should return an instance")
-
-			return
-		}
-
+		let systemStringType = System_String_TypeOf()
 		defer { System_Type_Destroy(systemStringType) }
 
-		guard let systemExceptionType = System_Exception_TypeOf() else {
-			XCTFail("typeof(System.Exception) should return an instance")
-
-			return
-		}
-
+		let systemExceptionType = System_Exception_TypeOf()
 		defer { System_Type_Destroy(systemExceptionType) }
 
 		guard let dictionary = System_Collections_Generic_Dictionary_A2_Create(systemStringType,
