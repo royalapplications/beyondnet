@@ -6,237 +6,184 @@ final class PrimitivesBoxingTests_Swift: XCTestCase {
     override class func setUp() {
         Self.sharedSetUp()
     }
-
+    
     @MainActor
     override class func tearDown() {
         Self.sharedTearDown()
     }
     
     func testBool() {
-        let systemBooleanTypeName = "System.Boolean"
+        boxAndUnbox(value: true,
+                    expectedTypeName: "System.Boolean",
+                    boxFunc: { System_Object.fromBool($0) },
+                    unboxFunc: { try $0.castToBool() })
         
-        let trueValue = true
-        let trueObject = System_Object.fromBool(trueValue)
-        let trueType = try? trueObject.getType()
-        let trueTypeName = try? trueType?.fullName_get()?.string()
-        
-        XCTAssertEqual(systemBooleanTypeName, trueTypeName)
-        
-        let trueValueRet = try? trueObject.castToBool()
-        
-        XCTAssertEqual(trueValue, trueValueRet)
+        boxAndUnbox(value: false,
+                    expectedTypeName: "System.Boolean",
+                    boxFunc: { System_Object.fromBool($0) },
+                    unboxFunc: { try $0.castToBool() })
     }
     
     func testFloat() {
-        let systemFloatTypeName = "System.Single"
-        
-        let floatValue: Float = 0.1234
-        let floatObject = System_Object.fromFloat(floatValue)
-        let floatType = try? floatObject.getType()
-        let floatTypeName = try? floatType?.fullName_get()?.string()
-        
-        XCTAssertEqual(systemFloatTypeName, floatTypeName)
-        
-        let floatValueRet = try? floatObject.castToFloat()
-        
-        XCTAssertEqual(floatValue, floatValueRet)
+        boxAndUnbox(value: -123.123 as Float,
+                    expectedTypeName: "System.Single",
+                    boxFunc: { System_Object.fromFloat($0) },
+                    unboxFunc: { try $0.castToFloat() })
     }
 
-    // TODO
-//    func testBool() {
-//        boxAndUnbox(value: true,
-//                    expectedTypeName: "System.Boolean",
-//                    boxFunc: { DNObjectFromBool($0) },
-//                    unboxFunc: { DNObjectCastToBool($0, &$1) })
-//
-//        boxAndUnbox(value: false,
-//                    expectedTypeName: "System.Boolean",
-//                    boxFunc: { DNObjectFromBool($0) },
-//                    unboxFunc: { DNObjectCastToBool($0, &$1) })
-//    }
-//
-//    func testFloat() {
-//        boxAndUnbox(value: -123.123 as Float,
-//                    expectedTypeName: "System.Single",
-//                    boxFunc: { DNObjectFromFloat($0) },
-//                    unboxFunc: { DNObjectCastToFloat($0, &$1) })
-//    }
-//
-//    func testDouble() {
-//        boxAndUnbox(value: -123456789.123456789 as Double,
-//                    expectedTypeName: "System.Double",
-//                    boxFunc: { DNObjectFromDouble($0) },
-//                    unboxFunc: { DNObjectCastToDouble($0, &$1) })
-//    }
-//
-//    func testInt8() {
-//        boxAndUnbox(value: -123 as Int8,
-//                    expectedTypeName: "System.SByte",
-//                    boxFunc: { DNObjectFromInt8($0) },
-//                    unboxFunc: { DNObjectCastToInt8($0, &$1) })
-//    }
-//
-//    func testUInt8() {
-//        boxAndUnbox(value: 123 as UInt8,
-//                    expectedTypeName: "System.Byte",
-//                    boxFunc: { DNObjectFromUInt8($0) },
-//                    unboxFunc: { DNObjectCastToUInt8($0, &$1) })
-//    }
-//
-//    func testInt16() {
-//        boxAndUnbox(value: -1234 as Int16,
-//                    expectedTypeName: "System.Int16",
-//                    boxFunc: { DNObjectFromInt16($0) },
-//                    unboxFunc: { DNObjectCastToInt16($0, &$1) })
-//    }
-//
-//    func testUInt16() {
-//        boxAndUnbox(value: 1234 as UInt16,
-//                    expectedTypeName: "System.UInt16",
-//                    boxFunc: { DNObjectFromUInt16($0) },
-//                    unboxFunc: { DNObjectCastToUInt16($0, &$1) })
-//    }
-//
-//    func testInt32() {
-//        boxAndUnbox(value: -123456789 as Int32,
-//                    expectedTypeName: "System.Int32",
-//                    boxFunc: { DNObjectFromInt32($0) },
-//                    unboxFunc: { DNObjectCastToInt32($0, &$1) })
-//    }
-//
-//    func testUInt32() {
-//        boxAndUnbox(value: 123456789 as UInt32,
-//                    expectedTypeName: "System.UInt32",
-//                    boxFunc: { DNObjectFromUInt32($0) },
-//                    unboxFunc: { DNObjectCastToUInt32($0, &$1) })
-//    }
-//
-//    func testInt64() {
-//        boxAndUnbox(value: -123456789123456789 as Int64,
-//                    expectedTypeName: "System.Int64",
-//                    boxFunc: { DNObjectFromInt64($0) },
-//                    unboxFunc: { DNObjectCastToInt64($0, &$1) })
-//    }
-//
-//    func testUInt64() {
-//        boxAndUnbox(value: 123456789123456789 as UInt64,
-//                    expectedTypeName: "System.UInt64",
-//                    boxFunc: { DNObjectFromUInt64($0) },
-//                    unboxFunc: { DNObjectCastToUInt64($0, &$1) })
-//    }
-//}
-//
-//private extension PrimitivesBoxingTests {
-//    func boxAndUnbox<T>(value: T,
-//                        expectedTypeName: String,
-//                        boxFunc: (_ input: T) -> System_Object?,
-//                        unboxFunc: (_ input: System_Object) throws -> T?) where T: Equatable {
-//        var exception: System_Exception_t?
-//
-//        let valueTypeName = expectedTypeName.cDotNETString()
-//
-//        defer { System_String_Destroy(valueTypeName) }
-//
-//        guard let valueType = System_Type_GetType_2(valueTypeName,
-//                                                    &exception),
-//              exception == nil else {
-//            XCTFail("System.Type.GetType should not throw and return an instance")
-//
-//            return
-//        }
-//
-//        guard let valueObject = boxFunc(value) else {
-//            XCTFail("Should return an instance")
-//
-//            return
-//        }
-//
-//        defer { System_Object_Destroy(valueObject) }
-//
-//        guard let valueObjectType = System_Object_GetType(valueObject,
-//                                                           &exception),
-//              exception == nil else {
-//            XCTFail("System.Object.GetType should not throw and return an instance")
-//
-//            return
-//        }
-//
-//        defer { System_Type_Destroy(valueObjectType) }
-//
-//        guard let numberObjectTypeName = String(cDotNETString: System_Type_FullName_Get(valueObjectType,
-//                                                                                       &exception),
-//                                                destroyDotNETString: true),
-//              exception == nil else {
-//            XCTFail("System.Type.FullName getter should not throw and return an instance")
-//
-//            return
-//        }
-//
-//        XCTAssertEqual(expectedTypeName, numberObjectTypeName)
-//
-//        let valueRet = unboxFunc(valueObject,
-//                                 &exception)
-//
-//        XCTAssertNil(exception)
-//        XCTAssertEqual(value, valueRet)
-//
-//        guard let systemObject = System_Object_Create(&exception),
-//              exception == nil else {
-//            XCTFail("System.Object ctor should return an instance")
-//
-//            return
-//        }
-//
-//        defer { System_Object_Destroy(systemObject) }
-//
-//        _ = unboxFunc(systemObject,
-//                      &exception)
-//
-//        XCTAssertNotNil(exception)
-//        System_Exception_Destroy(exception)
-//
-//        let arrayLength: Int32 = 1
-//
-//        guard let array = System_Array_CreateInstance(valueType,
-//                                                      arrayLength,
-//                                                      &exception),
-//              exception == nil else {
-//            XCTFail("System.Array.CreateInstance should not throw and return an instance")
-//
-//            return
-//        }
-//
-//        defer { System_Array_Destroy(array) }
-//
-//        System_Array_SetValue_4(array,
-//                                valueObject,
-//                                0,
-//                                &exception)
-//
-//        XCTAssertNil(exception)
-//
-//        guard let valueObjectRetFromArray = System_Array_GetValue_1(array,
-//                                                                    0,
-//                                                                    &exception),
-//              exception == nil else {
-//            XCTFail("System.Array.GetValue should not throw and return an instance")
-//
-//            return
-//        }
-//
-//        defer { System_Object_Destroy(valueObjectRetFromArray) }
-//
-//        let equal = System_Object_Equals(valueObject,
-//                                         valueObjectRetFromArray,
-//                                         &exception)
-//
-//        XCTAssertNil(exception)
-//        XCTAssertTrue(equal)
-//
-//        let valueRetFromArray = unboxFunc(valueObjectRetFromArray,
-//                                          &exception)
-//
-//        XCTAssertNil(exception)
-//        XCTAssertEqual(value, valueRetFromArray)
-//    }
+    func testDouble() {
+        boxAndUnbox(value: -123456789.123456789 as Double,
+                    expectedTypeName: "System.Double",
+                    boxFunc: { System_Object.fromDouble($0) },
+                    unboxFunc: { try $0.castToDouble() })
+    }
+
+    func testInt8() {
+        boxAndUnbox(value: -123 as Int8,
+                    expectedTypeName: "System.SByte",
+                    boxFunc: { System_Object.fromInt8($0) },
+                    unboxFunc: { try $0.castToInt8() })
+    }
+
+    func testUInt8() {
+        boxAndUnbox(value: 123 as UInt8,
+                    expectedTypeName: "System.Byte",
+                    boxFunc: { System_Object.fromUInt8($0) },
+                    unboxFunc: { try $0.castToUInt8() })
+    }
+
+    func testInt16() {
+        boxAndUnbox(value: -1234 as Int16,
+                    expectedTypeName: "System.Int16",
+                    boxFunc: { System_Object.fromInt16($0) },
+                    unboxFunc: { try $0.castToInt16() })
+    }
+
+    func testUInt16() {
+        boxAndUnbox(value: 1234 as UInt16,
+                    expectedTypeName: "System.UInt16",
+                    boxFunc: { System_Object.fromUInt16($0) },
+                    unboxFunc: { try $0.castToUInt16() })
+    }
+
+    func testInt32() {
+        boxAndUnbox(value: -123456789 as Int32,
+                    expectedTypeName: "System.Int32",
+                    boxFunc: { System_Object.fromInt32($0) },
+                    unboxFunc: { try $0.castToInt32() })
+    }
+
+    func testUInt32() {
+        boxAndUnbox(value: 123456789 as UInt32,
+                    expectedTypeName: "System.UInt32",
+                    boxFunc: { System_Object.fromUInt32($0) },
+                    unboxFunc: { try $0.castToUInt32() })
+    }
+
+    func testInt64() {
+        boxAndUnbox(value: -123456789123456789 as Int64,
+                    expectedTypeName: "System.Int64",
+                    boxFunc: { System_Object.fromInt64($0) },
+                    unboxFunc: { try $0.castToInt64() })
+    }
+
+    func testUInt64() {
+        boxAndUnbox(value: 123456789123456789 as UInt64,
+                    expectedTypeName: "System.UInt64",
+                    boxFunc: { System_Object.fromUInt64($0) },
+                    unboxFunc: { try $0.castToUInt64() })
+    }
+}
+
+private extension PrimitivesBoxingTests_Swift {
+    func boxAndUnbox<T>(value: T,
+                        expectedTypeName: String,
+                        boxFunc: (_ input: T) -> System_Object?,
+                        unboxFunc: (_ input: System_Object) throws -> T?) where T: Equatable {
+        let valueTypeName = expectedTypeName.dotNETString()
+        
+        guard let valueType = try? System_Type.getType(valueTypeName) else {
+            XCTFail("System.Type.GetType should not throw and return an instance")
+            
+            return
+        }
+        
+        guard let valueObject = boxFunc(value) else {
+            XCTFail("Should return an instance")
+            
+            return
+        }
+        
+        guard let valueObjectType = try? valueObject.getType() else {
+            XCTFail("System.Object.GetType should not throw and return an instance")
+            
+            return
+        }
+        
+        guard let numberObjectTypeName = try? valueObjectType.fullName_get()?.string() else {
+            XCTFail("System.Type.FullName getter should not throw and return an instance")
+            
+            return
+        }
+        
+        XCTAssertEqual(expectedTypeName, numberObjectTypeName)
+        
+        let valueRet: T?
+        
+        do {
+            valueRet = try unboxFunc(valueObject)
+        } catch {
+            XCTFail("Should not throw")
+            
+            return
+        }
+        
+        XCTAssertEqual(value, valueRet)
+        
+        guard let systemObject = try? System_Object() else {
+            XCTFail("System.Object ctor should return an instance")
+            
+            return
+        }
+        
+        do {
+            _ = try unboxFunc(systemObject)
+            
+            XCTFail("Should throw")
+            
+            return
+        } catch { }
+        
+        let arrayLength: Int32 = 1
+        
+        guard let array = try? System_Array.createInstance(valueType,
+                                                           arrayLength) else {
+            XCTFail("System.Array.CreateInstance should not throw and return an instance")
+            
+            return
+        }
+        
+        XCTAssertNoThrow(try array.setValue(valueObject,
+                                            0 as Int32))
+        
+        guard let valueObjectRetFromArray = try? array.getValue(0 as Int32) else {
+            XCTFail("System.Array.GetValue should not throw and return an instance")
+            
+            return
+        }
+        
+        let equal = (try? valueObject.equals(valueObjectRetFromArray)) ?? false
+        
+        XCTAssertTrue(equal)
+        
+        do {
+            let valueRetFromArray = try unboxFunc(valueObjectRetFromArray)
+            
+            XCTAssertEqual(value, valueRetFromArray)
+        } catch {
+            XCTFail("Should not throw")
+            
+            return
+        }
+    }
 }

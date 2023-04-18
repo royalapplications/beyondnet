@@ -122,6 +122,204 @@ public extension DNObject {
 
         return castedObject
 	}
+
+    func castToDouble() throws -> Double {
+        var exceptionC: System_Exception_t?
+        
+        let castedValue = DNObjectCastToDouble(self.__handle, &exceptionC)
+        
+        if let exceptionC {
+            let exception = System_Exception(handle: exceptionC)
+            let exceptionError = exception.error
+            
+            throw exceptionError
+        }
+        
+        return castedValue 
+    }
+
+    static func fromDouble(_ doubleValue: Double) -> System_Object {
+        let castedObjectC = DNObjectFromDouble(doubleValue)
+		let castedObject = System_Object(handle: castedObjectC)
+
+        return castedObject
+	}
+
+    func castToInt8() throws -> Int8 {
+        var exceptionC: System_Exception_t?
+        
+        let castedValue = DNObjectCastToInt8(self.__handle, &exceptionC)
+        
+        if let exceptionC {
+            let exception = System_Exception(handle: exceptionC)
+            let exceptionError = exception.error
+            
+            throw exceptionError
+        }
+        
+        return castedValue 
+    }
+
+    static func fromInt8(_ int8Value: Int8) -> System_Object {
+        let castedObjectC = DNObjectFromInt8(int8Value)
+        let castedObject = System_Object(handle: castedObjectC)
+
+        return castedObject
+    }
+
+    func castToUInt8() throws -> UInt8 {
+        var exceptionC: System_Exception_t?
+        
+        let castedValue = DNObjectCastToUInt8(self.__handle, &exceptionC)
+        
+        if let exceptionC {
+            let exception = System_Exception(handle: exceptionC)
+            let exceptionError = exception.error
+            
+            throw exceptionError
+        }
+        
+        return castedValue 
+    }
+
+    static func fromUInt8(_ uint8Value: UInt8) -> System_Object {
+        let castedObjectC = DNObjectFromUInt8(uint8Value)
+        let castedObject = System_Object(handle: castedObjectC)
+
+        return castedObject
+    }
+
+    func castToInt16() throws -> Int16 {
+        var exceptionC: System_Exception_t?
+        
+        let castedValue = DNObjectCastToInt16(self.__handle, &exceptionC)
+        
+        if let exceptionC {
+            let exception = System_Exception(handle: exceptionC)
+            let exceptionError = exception.error
+            
+            throw exceptionError
+        }
+        
+        return castedValue 
+    }
+
+    static func fromInt16(_ int16Value: Int16) -> System_Object {
+        let castedObjectC = DNObjectFromInt16(int16Value)
+        let castedObject = System_Object(handle: castedObjectC)
+
+        return castedObject
+    }
+
+    func castToUInt16() throws -> UInt16 {
+        var exceptionC: System_Exception_t?
+        
+        let castedValue = DNObjectCastToUInt16(self.__handle, &exceptionC)
+        
+        if let exceptionC {
+            let exception = System_Exception(handle: exceptionC)
+            let exceptionError = exception.error
+            
+            throw exceptionError
+        }
+        
+        return castedValue 
+    }
+
+    static func fromUInt16(_ uint16Value: UInt16) -> System_Object {
+        let castedObjectC = DNObjectFromUInt16(uint16Value)
+        let castedObject = System_Object(handle: castedObjectC)
+
+        return castedObject
+    }
+
+    func castToInt32() throws -> Int32 {
+        var exceptionC: System_Exception_t?
+        
+        let castedValue = DNObjectCastToInt32(self.__handle, &exceptionC)
+        
+        if let exceptionC {
+            let exception = System_Exception(handle: exceptionC)
+            let exceptionError = exception.error
+            
+            throw exceptionError
+        }
+        
+        return castedValue 
+    }
+
+    static func fromInt32(_ int32Value: Int32) -> System_Object {
+        let castedObjectC = DNObjectFromInt32(int32Value)
+        let castedObject = System_Object(handle: castedObjectC)
+
+        return castedObject
+    }
+
+    func castToUInt32() throws -> UInt32 {
+        var exceptionC: System_Exception_t?
+        
+        let castedValue = DNObjectCastToUInt32(self.__handle, &exceptionC)
+        
+        if let exceptionC {
+            let exception = System_Exception(handle: exceptionC)
+            let exceptionError = exception.error
+            
+            throw exceptionError
+        }
+        
+        return castedValue 
+    }
+
+    static func fromUInt32(_ uint32Value: UInt32) -> System_Object {
+        let castedObjectC = DNObjectFromUInt32(uint32Value)
+        let castedObject = System_Object(handle: castedObjectC)
+
+        return castedObject
+    }
+
+    func castToInt64() throws -> Int64 {
+        var exceptionC: System_Exception_t?
+        
+        let castedValue = DNObjectCastToInt64(self.__handle, &exceptionC)
+        
+        if let exceptionC {
+            let exception = System_Exception(handle: exceptionC)
+            let exceptionError = exception.error
+            
+            throw exceptionError
+        }
+        
+        return castedValue 
+    }
+
+    static func fromInt64(_ int64Value: Int64) -> System_Object {
+        let castedObjectC = DNObjectFromInt64(int64Value)
+        let castedObject = System_Object(handle: castedObjectC)
+
+        return castedObject
+    }
+
+    func castToUInt64() throws -> UInt64 {
+        var exceptionC: System_Exception_t?
+        
+        let castedValue = DNObjectCastToUInt64(self.__handle, &exceptionC)
+        
+        if let exceptionC {
+            let exception = System_Exception(handle: exceptionC)
+            let exceptionError = exception.error
+            
+            throw exceptionError
+        }
+        
+        return castedValue 
+    }
+
+    static func fromUInt64(_ uint64Value: UInt64) -> System_Object {
+        let castedObjectC = DNObjectFromUInt64(uint64Value)
+        let castedObject = System_Object(handle: castedObjectC)
+
+        return castedObject
+    }
 }
 
 public class DNError: LocalizedError {
