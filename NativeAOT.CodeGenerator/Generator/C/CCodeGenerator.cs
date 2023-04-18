@@ -109,77 +109,77 @@ DNStringToC(__nonnull System_String_t systemString);
 __nonnull System_String_t
 DNStringFromC(__nonnull CString cString);
 
-System_Object_t
-DNObjectCastTo(System_Object_t object, System_Type_t type, System_Exception_t* outException);
+__nullable System_Object_t
+DNObjectCastTo(__nonnull System_Object_t object, __nonnull System_Type_t type, __nullable System_Exception_t* outException);
 
-System_Object_t
-DNObjectCastAs(System_Object_t object, System_Type_t type);
-
-bool
-DNObjectIs(System_Object_t object, System_Type_t type);
+__nullable System_Object_t
+DNObjectCastAs(__nonnull System_Object_t object, __nonnull System_Type_t type);
 
 bool
-DNObjectCastToBool(System_Object_t object, System_Exception_t* outException);
+DNObjectIs(__nonnull System_Object_t object, __nonnull System_Type_t type);
+
+bool
+DNObjectCastToBool(__nonnull System_Object_t object, __nullable System_Exception_t* outException);
 
 __nonnull System_Object_t
 DNObjectFromBool(bool value);
 
 float
-DNObjectCastToFloat(System_Object_t object, System_Exception_t* outException);
+DNObjectCastToFloat(__nonnull System_Object_t object, __nullable System_Exception_t* outException);
 
 __nonnull System_Object_t
 DNObjectFromFloat(float value);
 
 double
-DNObjectCastToDouble(System_Object_t object, System_Exception_t* outException);
+DNObjectCastToDouble(__nonnull System_Object_t object, __nullable System_Exception_t* outException);
 
 __nonnull System_Object_t
 DNObjectFromDouble(double value);
 
 int8_t
-DNObjectCastToInt8(System_Object_t object, System_Exception_t* outException);
+DNObjectCastToInt8(__nonnull System_Object_t object, __nullable System_Exception_t* outException);
 
 __nonnull System_Object_t
 DNObjectFromInt8(int8_t number);
 
 uint8_t
-DNObjectCastToUInt8(System_Object_t object, System_Exception_t* outException);
+DNObjectCastToUInt8(__nonnull System_Object_t object, __nullable System_Exception_t* outException);
 
 __nonnull System_Object_t
 DNObjectFromUInt8(uint8_t number);
 
 int16_t
-DNObjectCastToInt16(System_Object_t object, System_Exception_t* outException);
+DNObjectCastToInt16(__nonnull System_Object_t object, __nullable System_Exception_t* outException);
 
 __nonnull System_Object_t
 DNObjectFromInt16(int16_t number);
 
 uint16_t
-DNObjectCastToUInt16(System_Object_t object, System_Exception_t* outException);
+DNObjectCastToUInt16(__nonnull System_Object_t object, __nullable System_Exception_t* outException);
 
 __nonnull System_Object_t
 DNObjectFromUInt16(uint16_t number);
 
 int32_t
-DNObjectCastToInt32(System_Object_t object, System_Exception_t* outException);
+DNObjectCastToInt32(__nonnull System_Object_t object, __nullable System_Exception_t* outException);
 
 __nonnull System_Object_t
 DNObjectFromInt32(int32_t number);
 
 uint32_t
-DNObjectCastToUInt32(System_Object_t object, System_Exception_t* outException);
+DNObjectCastToUInt32(__nonnull System_Object_t object, __nullable System_Exception_t* outException);
 
 __nonnull System_Object_t
 DNObjectFromUInt32(uint32_t number);
 
 int64_t
-DNObjectCastToInt64(System_Object_t object, System_Exception_t* outException);
+DNObjectCastToInt64(__nonnull System_Object_t object, __nullable System_Exception_t* outException);
 
 __nonnull System_Object_t
 DNObjectFromInt64(int64_t number);
 
 uint64_t
-DNObjectCastToUInt64(System_Object_t object, System_Exception_t* outException);
+DNObjectCastToUInt64(__nonnull System_Object_t object, __nullable System_Exception_t* outException);
 
 __nonnull System_Object_t
 DNObjectFromUInt64(uint64_t number);
