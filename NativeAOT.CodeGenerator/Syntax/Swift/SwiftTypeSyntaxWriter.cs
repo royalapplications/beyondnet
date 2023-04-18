@@ -59,10 +59,14 @@ public class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWriter
 
         StringBuilder sb = new();
 
-        bool writeMembers = !type.IsEnum;
+        bool writeMembers = true;
         bool writeTypeDefinition = true;
-
+        bool writeTypeExtension = false;
+        
         if (type.IsEnum) {
+            writeTypeDefinition = false;
+            writeTypeExtension = true;
+            
             string enumdefCode = WriteEnumDef(
                 type,
                 cTypeName,
@@ -86,6 +90,13 @@ public class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWriter
             writeMembers = false;
         }
 
+        if (writeTypeExtension) {
+            string swiftTypeName = type.GetTypeDescriptor(typeDescriptorRegistry)
+                .GetTypeName(CodeLanguage.Swift, false);
+
+            sb.AppendLine($"extension {swiftTypeName} {{");
+        }
+
         if (writeMembers) {
             string membersCode = WriteMembers(
                 type,
@@ -94,6 +105,10 @@ public class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWriter
             );
                 
             sb.AppendLine(membersCode);
+        }
+        
+        if (writeTypeExtension) {
+            sb.AppendLine("}");
         }
         
         return sb.ToString();

@@ -1,5 +1,5 @@
 // Number of generated types: 1487
-// Number of generated members: 4433
+// Number of generated members: 4501
 
 // MARK: - BEGIN Header
 import Foundation
@@ -540,6 +540,17 @@ public enum System_TypeCode: Int32 {
 	case string = 18
 }
 
+extension System_TypeCode {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_TypeCode_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public struct System_Globalization_NumberStyles: OptionSet {
 	public typealias RawValue = Int32
@@ -574,6 +585,17 @@ public struct System_Globalization_NumberStyles: OptionSet {
 	public static let hexNumber = System_Globalization_NumberStyles(rawValue: 515)
 }
 
+extension System_Globalization_NumberStyles {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Globalization_NumberStyles_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public struct System_Globalization_CultureTypes: OptionSet {
 	public typealias RawValue = Int32
@@ -599,6 +621,17 @@ public struct System_Globalization_CultureTypes: OptionSet {
 	public static let frameworkCultures = System_Globalization_CultureTypes(rawValue: 64)
 }
 
+extension System_Globalization_CultureTypes {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Globalization_CultureTypes_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum System_MidpointRounding: Int32 {
 	init(cValue: System_MidpointRounding_t) {
@@ -614,6 +647,17 @@ public enum System_MidpointRounding: Int32 {
 	case toPositiveInfinity = 4
 }
 
+extension System_MidpointRounding {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_MidpointRounding_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public struct System_Globalization_TimeSpanStyles: OptionSet {
 	public typealias RawValue = Int32
@@ -633,6 +677,17 @@ public struct System_Globalization_TimeSpanStyles: OptionSet {
 	public static let assumeNegative = System_Globalization_TimeSpanStyles(rawValue: 1)
 }
 
+extension System_Globalization_TimeSpanStyles {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Globalization_TimeSpanStyles_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum System_DateTimeKind: Int32 {
 	init(cValue: System_DateTimeKind_t) {
@@ -646,6 +701,17 @@ public enum System_DateTimeKind: Int32 {
 	case local = 2
 }
 
+extension System_DateTimeKind {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_DateTimeKind_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum System_DayOfWeek: Int32 {
 	init(cValue: System_DayOfWeek_t) {
@@ -663,6 +729,17 @@ public enum System_DayOfWeek: Int32 {
 	case saturday = 6
 }
 
+extension System_DayOfWeek {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_DayOfWeek_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public struct System_Globalization_DateTimeStyles: OptionSet {
 	public typealias RawValue = Int32
@@ -690,6 +767,17 @@ public struct System_Globalization_DateTimeStyles: OptionSet {
 	public static let roundtripKind = System_Globalization_DateTimeStyles(rawValue: 128)
 }
 
+extension System_Globalization_DateTimeStyles {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Globalization_DateTimeStyles_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum System_Globalization_CalendarAlgorithmType: Int32 {
 	init(cValue: System_Globalization_CalendarAlgorithmType_t) {
@@ -704,6 +792,17 @@ public enum System_Globalization_CalendarAlgorithmType: Int32 {
 	case lunisolarCalendar = 3
 }
 
+extension System_Globalization_CalendarAlgorithmType {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Globalization_CalendarAlgorithmType_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum System_Globalization_CalendarWeekRule: Int32 {
 	init(cValue: System_Globalization_CalendarWeekRule_t) {
@@ -717,6 +816,17 @@ public enum System_Globalization_CalendarWeekRule: Int32 {
 	case firstFourDayWeek = 2
 }
 
+extension System_Globalization_CalendarWeekRule {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Globalization_CalendarWeekRule_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public struct System_Runtime_Serialization_StreamingContextStates: OptionSet {
 	public typealias RawValue = Int32
@@ -743,6 +853,17 @@ public struct System_Runtime_Serialization_StreamingContextStates: OptionSet {
 	public static let all = System_Runtime_Serialization_StreamingContextStates(rawValue: 255)
 }
 
+extension System_Runtime_Serialization_StreamingContextStates {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Runtime_Serialization_StreamingContextStates_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum System_Reflection_ProcessorArchitecture: Int32 {
 	init(cValue: System_Reflection_ProcessorArchitecture_t) {
@@ -759,6 +880,17 @@ public enum System_Reflection_ProcessorArchitecture: Int32 {
 	case arm = 5
 }
 
+extension System_Reflection_ProcessorArchitecture {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Reflection_ProcessorArchitecture_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum System_Reflection_AssemblyContentType: Int32 {
 	init(cValue: System_Reflection_AssemblyContentType_t) {
@@ -771,6 +903,17 @@ public enum System_Reflection_AssemblyContentType: Int32 {
 	case windowsRuntime = 1
 }
 
+extension System_Reflection_AssemblyContentType {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Reflection_AssemblyContentType_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public struct System_Reflection_AssemblyNameFlags: OptionSet {
 	public typealias RawValue = Int32
@@ -793,6 +936,17 @@ public struct System_Reflection_AssemblyNameFlags: OptionSet {
 	public static let enableJITcompileTracking = System_Reflection_AssemblyNameFlags(rawValue: 32768)
 }
 
+extension System_Reflection_AssemblyNameFlags {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Reflection_AssemblyNameFlags_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum System_Configuration_Assemblies_AssemblyHashAlgorithm: Int32 {
 	init(cValue: System_Configuration_Assemblies_AssemblyHashAlgorithm_t) {
@@ -809,6 +963,17 @@ public enum System_Configuration_Assemblies_AssemblyHashAlgorithm: Int32 {
 	case sHA512 = 32782
 }
 
+extension System_Configuration_Assemblies_AssemblyHashAlgorithm {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Configuration_Assemblies_AssemblyHashAlgorithm_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum System_Configuration_Assemblies_AssemblyVersionCompatibility: Int32 {
 	init(cValue: System_Configuration_Assemblies_AssemblyVersionCompatibility_t) {
@@ -822,6 +987,17 @@ public enum System_Configuration_Assemblies_AssemblyVersionCompatibility: Int32 
 	case sameDomain = 3
 }
 
+extension System_Configuration_Assemblies_AssemblyVersionCompatibility {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Configuration_Assemblies_AssemblyVersionCompatibility_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public struct System_Reflection_ParameterAttributes: OptionSet {
 	public typealias RawValue = Int32
@@ -850,6 +1026,17 @@ public struct System_Reflection_ParameterAttributes: OptionSet {
 	public static let reservedMask = System_Reflection_ParameterAttributes(rawValue: 61440)
 }
 
+extension System_Reflection_ParameterAttributes {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Reflection_ParameterAttributes_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public struct System_Reflection_PortableExecutableKinds: OptionSet {
 	public typealias RawValue = Int32
@@ -873,6 +1060,17 @@ public struct System_Reflection_PortableExecutableKinds: OptionSet {
 	public static let preferred32Bit = System_Reflection_PortableExecutableKinds(rawValue: 16)
 }
 
+extension System_Reflection_PortableExecutableKinds {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Reflection_PortableExecutableKinds_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum System_Reflection_ImageFileMachine: Int32 {
 	init(cValue: System_Reflection_ImageFileMachine_t) {
@@ -887,6 +1085,17 @@ public enum System_Reflection_ImageFileMachine: Int32 {
 	case aMD64 = 34404
 }
 
+extension System_Reflection_ImageFileMachine {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Reflection_ImageFileMachine_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public struct System_Reflection_MemberTypes: OptionSet {
 	public typealias RawValue = Int32
@@ -913,6 +1122,17 @@ public struct System_Reflection_MemberTypes: OptionSet {
 	public static let all = System_Reflection_MemberTypes(rawValue: 191)
 }
 
+extension System_Reflection_MemberTypes {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Reflection_MemberTypes_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public struct System_Reflection_BindingFlags: OptionSet {
 	public typealias RawValue = Int32
@@ -951,6 +1171,17 @@ public struct System_Reflection_BindingFlags: OptionSet {
 	public static let doNotWrapExceptions = System_Reflection_BindingFlags(rawValue: 33554432)
 }
 
+extension System_Reflection_BindingFlags {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Reflection_BindingFlags_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public struct System_Reflection_FieldAttributes: OptionSet {
 	public typealias RawValue = Int32
@@ -987,6 +1218,17 @@ public struct System_Reflection_FieldAttributes: OptionSet {
 	public static let reservedMask = System_Reflection_FieldAttributes(rawValue: 38144)
 }
 
+extension System_Reflection_FieldAttributes {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Reflection_FieldAttributes_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public struct System_Reflection_PropertyAttributes: OptionSet {
 	public typealias RawValue = Int32
@@ -1012,6 +1254,17 @@ public struct System_Reflection_PropertyAttributes: OptionSet {
 	public static let reservedMask = System_Reflection_PropertyAttributes(rawValue: 62464)
 }
 
+extension System_Reflection_PropertyAttributes {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Reflection_PropertyAttributes_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public struct System_Reflection_CallingConventions: OptionSet {
 	public typealias RawValue = Int32
@@ -1034,6 +1287,17 @@ public struct System_Reflection_CallingConventions: OptionSet {
 	public static let explicitThis = System_Reflection_CallingConventions(rawValue: 64)
 }
 
+extension System_Reflection_CallingConventions {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Reflection_CallingConventions_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public struct System_Reflection_MethodAttributes: OptionSet {
 	public typealias RawValue = Int32
@@ -1075,6 +1339,17 @@ public struct System_Reflection_MethodAttributes: OptionSet {
 	public static let reservedMask = System_Reflection_MethodAttributes(rawValue: 53248)
 }
 
+extension System_Reflection_MethodAttributes {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Reflection_MethodAttributes_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum System_Reflection_MethodImplAttributes: Int32 {
 	init(cValue: System_Reflection_MethodImplAttributes_t) {
@@ -1102,6 +1377,17 @@ public enum System_Reflection_MethodImplAttributes: Int32 {
 	case maxMethodImplVal = 65535
 }
 
+extension System_Reflection_MethodImplAttributes {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Reflection_MethodImplAttributes_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public struct System_Reflection_ExceptionHandlingClauseOptions: OptionSet {
 	public typealias RawValue = Int32
@@ -1123,6 +1409,17 @@ public struct System_Reflection_ExceptionHandlingClauseOptions: OptionSet {
 	public static let fault = System_Reflection_ExceptionHandlingClauseOptions(rawValue: 4)
 }
 
+extension System_Reflection_ExceptionHandlingClauseOptions {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Reflection_ExceptionHandlingClauseOptions_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum System_Threading_Tasks_TaskStatus: Int32 {
 	init(cValue: System_Threading_Tasks_TaskStatus_t) {
@@ -1141,6 +1438,17 @@ public enum System_Threading_Tasks_TaskStatus: Int32 {
 	case faulted = 7
 }
 
+extension System_Threading_Tasks_TaskStatus {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Threading_Tasks_TaskStatus_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public struct System_Threading_Tasks_TaskCreationOptions: OptionSet {
 	public typealias RawValue = Int32
@@ -1165,6 +1473,17 @@ public struct System_Threading_Tasks_TaskCreationOptions: OptionSet {
 	public static let runContinuationsAsynchronously = System_Threading_Tasks_TaskCreationOptions(rawValue: 64)
 }
 
+extension System_Threading_Tasks_TaskCreationOptions {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Threading_Tasks_TaskCreationOptions_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public struct System_Threading_Tasks_TaskContinuationOptions: OptionSet {
 	public typealias RawValue = Int32
@@ -1197,6 +1516,17 @@ public struct System_Threading_Tasks_TaskContinuationOptions: OptionSet {
 	public static let executeSynchronously = System_Threading_Tasks_TaskContinuationOptions(rawValue: 524288)
 }
 
+extension System_Threading_Tasks_TaskContinuationOptions {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Threading_Tasks_TaskContinuationOptions_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum System_Threading_Tasks_Sources_ValueTaskSourceStatus: Int32 {
 	init(cValue: System_Threading_Tasks_Sources_ValueTaskSourceStatus_t) {
@@ -1211,6 +1541,17 @@ public enum System_Threading_Tasks_Sources_ValueTaskSourceStatus: Int32 {
 	case canceled = 3
 }
 
+extension System_Threading_Tasks_Sources_ValueTaskSourceStatus {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Threading_Tasks_Sources_ValueTaskSourceStatus_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public struct System_Threading_Tasks_Sources_ValueTaskSourceOnCompletedFlags: OptionSet {
 	public typealias RawValue = Int32
@@ -1231,6 +1572,17 @@ public struct System_Threading_Tasks_Sources_ValueTaskSourceOnCompletedFlags: Op
 	public static let flowExecutionContext = System_Threading_Tasks_Sources_ValueTaskSourceOnCompletedFlags(rawValue: 2)
 }
 
+extension System_Threading_Tasks_Sources_ValueTaskSourceOnCompletedFlags {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Threading_Tasks_Sources_ValueTaskSourceOnCompletedFlags_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum System_IO_SeekOrigin: Int32 {
 	init(cValue: System_IO_SeekOrigin_t) {
@@ -1244,6 +1596,17 @@ public enum System_IO_SeekOrigin: Int32 {
 	case end = 2
 }
 
+extension System_IO_SeekOrigin {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_IO_SeekOrigin_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public struct System_IO_FileAccess: OptionSet {
 	public typealias RawValue = Int32
@@ -1264,6 +1627,17 @@ public struct System_IO_FileAccess: OptionSet {
 	public static let readWrite = System_IO_FileAccess(rawValue: 3)
 }
 
+extension System_IO_FileAccess {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_IO_FileAccess_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum System_IO_FileMode: Int32 {
 	init(cValue: System_IO_FileMode_t) {
@@ -1280,6 +1654,17 @@ public enum System_IO_FileMode: Int32 {
 	case append = 6
 }
 
+extension System_IO_FileMode {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_IO_FileMode_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public struct System_IO_FileShare: OptionSet {
 	public typealias RawValue = Int32
@@ -1303,6 +1688,17 @@ public struct System_IO_FileShare: OptionSet {
 	public static let inheritable = System_IO_FileShare(rawValue: 16)
 }
 
+extension System_IO_FileShare {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_IO_FileShare_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public struct System_IO_FileOptions: OptionSet {
 	public typealias RawValue = Int32
@@ -1327,6 +1723,17 @@ public struct System_IO_FileOptions: OptionSet {
 	public static let writeThrough = System_IO_FileOptions(rawValue: -2147483648)
 }
 
+extension System_IO_FileOptions {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_IO_FileOptions_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public struct System_Reflection_EventAttributes: OptionSet {
 	public typealias RawValue = Int32
@@ -1348,6 +1755,17 @@ public struct System_Reflection_EventAttributes: OptionSet {
 	public static let reservedMask = System_Reflection_EventAttributes(rawValue: 1024)
 }
 
+extension System_Reflection_EventAttributes {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Reflection_EventAttributes_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public struct System_Reflection_ResourceLocation: OptionSet {
 	public typealias RawValue = Int32
@@ -1368,6 +1786,17 @@ public struct System_Reflection_ResourceLocation: OptionSet {
 	public static let containedInManifestFile = System_Reflection_ResourceLocation(rawValue: 4)
 }
 
+extension System_Reflection_ResourceLocation {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Reflection_ResourceLocation_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum System_Security_SecurityRuleSet: UInt8 {
 	init(cValue: System_Security_SecurityRuleSet_t) {
@@ -1381,6 +1810,17 @@ public enum System_Security_SecurityRuleSet: UInt8 {
 	case level2 = 2
 }
 
+extension System_Security_SecurityRuleSet {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Security_SecurityRuleSet_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum System_Buffers_OperationStatus: Int32 {
 	init(cValue: System_Buffers_OperationStatus_t) {
@@ -1395,6 +1835,17 @@ public enum System_Buffers_OperationStatus: Int32 {
 	case invalidData = 3
 }
 
+extension System_Buffers_OperationStatus {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Buffers_OperationStatus_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum System_Globalization_UnicodeCategory: Int32 {
 	init(cValue: System_Globalization_UnicodeCategory_t) {
@@ -1435,6 +1886,17 @@ public enum System_Globalization_UnicodeCategory: Int32 {
 	case otherNotAssigned = 29
 }
 
+extension System_Globalization_UnicodeCategory {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Globalization_UnicodeCategory_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public struct System_Globalization_CompareOptions: OptionSet {
 	public typealias RawValue = Int32
@@ -1461,6 +1923,17 @@ public struct System_Globalization_CompareOptions: OptionSet {
 	public static let ordinal = System_Globalization_CompareOptions(rawValue: 1073741824)
 }
 
+extension System_Globalization_CompareOptions {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Globalization_CompareOptions_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum System_Globalization_DigitShapes: Int32 {
 	init(cValue: System_Globalization_DigitShapes_t) {
@@ -1474,6 +1947,17 @@ public enum System_Globalization_DigitShapes: Int32 {
 	case nativeNational = 2
 }
 
+extension System_Globalization_DigitShapes {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Globalization_DigitShapes_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum System_StringComparison: Int32 {
 	init(cValue: System_StringComparison_t) {
@@ -1490,6 +1974,17 @@ public enum System_StringComparison: Int32 {
 	case ordinalIgnoreCase = 5
 }
 
+extension System_StringComparison {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_StringComparison_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum System_Text_NormalizationForm: Int32 {
 	init(cValue: System_Text_NormalizationForm_t) {
@@ -1504,6 +1999,17 @@ public enum System_Text_NormalizationForm: Int32 {
 	case formKD = 6
 }
 
+extension System_Text_NormalizationForm {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Text_NormalizationForm_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public struct System_StringSplitOptions: OptionSet {
 	public typealias RawValue = Int32
@@ -1524,6 +2030,17 @@ public struct System_StringSplitOptions: OptionSet {
 	public static let trimEntries = System_StringSplitOptions(rawValue: 2)
 }
 
+extension System_StringSplitOptions {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_StringSplitOptions_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public struct System_Reflection_GenericParameterAttributes: OptionSet {
 	public typealias RawValue = Int32
@@ -1549,6 +2066,17 @@ public struct System_Reflection_GenericParameterAttributes: OptionSet {
 	public static let specialConstraintMask = System_Reflection_GenericParameterAttributes(rawValue: 28)
 }
 
+extension System_Reflection_GenericParameterAttributes {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Reflection_GenericParameterAttributes_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public struct System_Reflection_TypeAttributes: OptionSet {
 	public typealias RawValue = Int32
@@ -1598,6 +2126,17 @@ public struct System_Reflection_TypeAttributes: OptionSet {
 	public static let customFormatMask = System_Reflection_TypeAttributes(rawValue: 12582912)
 }
 
+extension System_Reflection_TypeAttributes {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Reflection_TypeAttributes_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum System_Runtime_InteropServices_LayoutKind: Int32 {
 	init(cValue: System_Runtime_InteropServices_LayoutKind_t) {
@@ -1611,6 +2150,17 @@ public enum System_Runtime_InteropServices_LayoutKind: Int32 {
 	case auto = 3
 }
 
+extension System_Runtime_InteropServices_LayoutKind {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Runtime_InteropServices_LayoutKind_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum System_Runtime_InteropServices_CharSet: Int32 {
 	init(cValue: System_Runtime_InteropServices_CharSet_t) {
@@ -1625,6 +2175,17 @@ public enum System_Runtime_InteropServices_CharSet: Int32 {
 	case auto = 4
 }
 
+extension System_Runtime_InteropServices_CharSet {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Runtime_InteropServices_CharSet_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum System_Runtime_InteropServices_CustomQueryInterfaceMode: Int32 {
 	init(cValue: System_Runtime_InteropServices_CustomQueryInterfaceMode_t) {
@@ -1637,6 +2198,17 @@ public enum System_Runtime_InteropServices_CustomQueryInterfaceMode: Int32 {
 	case allow = 1
 }
 
+extension System_Runtime_InteropServices_CustomQueryInterfaceMode {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Runtime_InteropServices_CustomQueryInterfaceMode_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum System_GCKind: Int32 {
 	init(cValue: System_GCKind_t) {
@@ -1651,6 +2223,17 @@ public enum System_GCKind: Int32 {
 	case background = 3
 }
 
+extension System_GCKind {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_GCKind_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum System_GCCollectionMode: Int32 {
 	init(cValue: System_GCCollectionMode_t) {
@@ -1665,6 +2248,17 @@ public enum System_GCCollectionMode: Int32 {
 	case aggressive = 3
 }
 
+extension System_GCCollectionMode {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_GCCollectionMode_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum System_GCNotificationStatus: Int32 {
 	init(cValue: System_GCNotificationStatus_t) {
@@ -1680,6 +2274,17 @@ public enum System_GCNotificationStatus: Int32 {
 	case notApplicable = 4
 }
 
+extension System_GCNotificationStatus {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_GCNotificationStatus_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public struct System_Base64FormattingOptions: OptionSet {
 	public typealias RawValue = Int32
@@ -1699,6 +2304,17 @@ public struct System_Base64FormattingOptions: OptionSet {
 	public static let insertLineBreaks = System_Base64FormattingOptions(rawValue: 1)
 }
 
+extension System_Base64FormattingOptions {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Base64FormattingOptions_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum System_Threading_ThreadPriority: Int32 {
 	init(cValue: System_Threading_ThreadPriority_t) {
@@ -1714,6 +2330,17 @@ public enum System_Threading_ThreadPriority: Int32 {
 	case highest = 4
 }
 
+extension System_Threading_ThreadPriority {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Threading_ThreadPriority_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public struct System_Threading_ThreadState: OptionSet {
 	public typealias RawValue = Int32
@@ -1741,6 +2368,17 @@ public struct System_Threading_ThreadState: OptionSet {
 	public static let aborted = System_Threading_ThreadState(rawValue: 256)
 }
 
+extension System_Threading_ThreadState {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Threading_ThreadState_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum System_Threading_ApartmentState: Int32 {
 	init(cValue: System_Threading_ApartmentState_t) {
@@ -1754,6 +2392,17 @@ public enum System_Threading_ApartmentState: Int32 {
 	case unknown = 2
 }
 
+extension System_Threading_ApartmentState {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Threading_ApartmentState_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum System_Security_Permissions_PermissionState: Int32 {
 	init(cValue: System_Security_Permissions_PermissionState_t) {
@@ -1766,6 +2415,17 @@ public enum System_Security_Permissions_PermissionState: Int32 {
 	case unrestricted = 1
 }
 
+extension System_Security_Permissions_PermissionState {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Security_Permissions_PermissionState_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum System_Security_Principal_PrincipalPolicy: Int32 {
 	init(cValue: System_Security_Principal_PrincipalPolicy_t) {
@@ -1779,6 +2439,17 @@ public enum System_Security_Principal_PrincipalPolicy: Int32 {
 	case windowsPrincipal = 2
 }
 
+extension System_Security_Principal_PrincipalPolicy {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Security_Principal_PrincipalPolicy_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public struct System_IO_FileAttributes: OptionSet {
 	public typealias RawValue = Int32
@@ -1812,6 +2483,17 @@ public struct System_IO_FileAttributes: OptionSet {
 	public static let noScrubData = System_IO_FileAttributes(rawValue: 131072)
 }
 
+extension System_IO_FileAttributes {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_IO_FileAttributes_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public struct System_IO_UnixFileMode: OptionSet {
 	public typealias RawValue = Int32
@@ -1842,6 +2524,17 @@ public struct System_IO_UnixFileMode: OptionSet {
 	public static let setUser = System_IO_UnixFileMode(rawValue: 2048)
 }
 
+extension System_IO_UnixFileMode {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_IO_UnixFileMode_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum System_IO_SearchOption: Int32 {
 	init(cValue: System_IO_SearchOption_t) {
@@ -1854,6 +2547,17 @@ public enum System_IO_SearchOption: Int32 {
 	case allDirectories = 1
 }
 
+extension System_IO_SearchOption {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_IO_SearchOption_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum System_IO_MatchType: Int32 {
 	init(cValue: System_IO_MatchType_t) {
@@ -1866,6 +2570,17 @@ public enum System_IO_MatchType: Int32 {
 	case win32 = 1
 }
 
+extension System_IO_MatchType {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_IO_MatchType_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum System_IO_MatchCasing: Int32 {
 	init(cValue: System_IO_MatchCasing_t) {
@@ -1879,6 +2594,17 @@ public enum System_IO_MatchCasing: Int32 {
 	case caseInsensitive = 2
 }
 
+extension System_IO_MatchCasing {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_IO_MatchCasing_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum NativeAOT_CodeGeneratorInputSample_NiceLevels: UInt32 {
 	init(cValue: NativeAOT_CodeGeneratorInputSample_NiceLevels_t) {
@@ -1893,6 +2619,17 @@ public enum NativeAOT_CodeGeneratorInputSample_NiceLevels: UInt32 {
 	case veryNice = 3
 }
 
+extension NativeAOT_CodeGeneratorInputSample_NiceLevels {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_NiceLevels_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public enum NativeAOT_CodeGeneratorInputSample_TestEnum: Int32 {
 	init(cValue: NativeAOT_CodeGeneratorInputSample_TestEnum_t) {
@@ -1905,6 +2642,17 @@ public enum NativeAOT_CodeGeneratorInputSample_TestEnum: Int32 {
 	case secondCase = 1
 }
 
+extension NativeAOT_CodeGeneratorInputSample_TestEnum {
+	public static func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_TestEnum_TypeOf())
+		
+	
+	}
+	
+	
+
+
+}
 
 public class System_Object /* System.Object */: DNObject {
 public override class var typeName: String { "Object" }

@@ -320,11 +320,19 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
 
             funcSignature = decl.ToString();
         } else if (memberKind == MemberKind.TypeOf) {
+            bool isEnum = declaringType.IsEnum;
+            
+            bool isOverride = !isEnum;
+            
+            SwiftTypeAttachmentKinds attachmentKind = isEnum
+                ? SwiftTypeAttachmentKinds.Static
+                : SwiftTypeAttachmentKinds.Class;
+            
             SwiftFuncDeclaration decl = new(
                 methodNameSwift,
                 SwiftVisibilities.Public,
-                SwiftTypeAttachmentKinds.Class,
-                true,
+                attachmentKind,
+                isOverride,
                 methodSignatureParameters,
                 mayThrow,
                 !returnOrSetterOrEventHandlerType.IsVoid()
