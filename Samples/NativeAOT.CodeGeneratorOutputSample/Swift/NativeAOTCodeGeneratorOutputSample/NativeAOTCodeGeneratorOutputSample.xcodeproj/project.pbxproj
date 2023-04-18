@@ -60,6 +60,7 @@
 		E7A3E6E829EEE38F00447BF2 /* SystemCollectionsGenericDictionaryTests_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A3E6E729EEE38F00447BF2 /* SystemCollectionsGenericDictionaryTests_Swift.swift */; };
 		E7A3E6EA29EEE4B100447BF2 /* SystemTupleTests_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A3E6E929EEE4B100447BF2 /* SystemTupleTests_Swift.swift */; };
 		E7A3E6EC29EEEB0800447BF2 /* TestClassesTests_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A3E6EB29EEEB0800447BF2 /* TestClassesTests_Swift.swift */; };
+		E7A3E6EE29EEEDB100447BF2 /* PersonTests_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A3E6ED29EEEDB100447BF2 /* PersonTests_Swift.swift */; };
 		E7AC3D8C29E0391200C5609B /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AC3D8A29E038E000C5609B /* XCTestCase+Extensions.swift */; };
 		E7C8CF0529C1FA9500C4230F /* SystemGuidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0429C1FA9500C4230F /* SystemGuidTests.swift */; };
 		E7C8CF0729C1FABA00C4230F /* SystemStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0629C1FABA00C4230F /* SystemStringTests.swift */; };
@@ -164,6 +165,7 @@
 		E7A3E6E729EEE38F00447BF2 /* SystemCollectionsGenericDictionaryTests_Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemCollectionsGenericDictionaryTests_Swift.swift; sourceTree = "<group>"; };
 		E7A3E6E929EEE4B100447BF2 /* SystemTupleTests_Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemTupleTests_Swift.swift; sourceTree = "<group>"; };
 		E7A3E6EB29EEEB0800447BF2 /* TestClassesTests_Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClassesTests_Swift.swift; sourceTree = "<group>"; };
+		E7A3E6ED29EEEDB100447BF2 /* PersonTests_Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTests_Swift.swift; sourceTree = "<group>"; };
 		E7AC3D8A29E038E000C5609B /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
 		E7C8CF0429C1FA9500C4230F /* SystemGuidTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemGuidTests.swift; sourceTree = "<group>"; };
 		E7C8CF0629C1FABA00C4230F /* SystemStringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemStringTests.swift; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 				E70D117429BF9FEC00B4E738 /* TestClassesTests.swift */,
 				E7A3E6EB29EEEB0800447BF2 /* TestClassesTests_Swift.swift */,
 				E7C8CF0C29C2139B00C4230F /* PersonTests.swift */,
+				E7A3E6ED29EEEDB100447BF2 /* PersonTests_Swift.swift */,
 				E7C8CF0E29C2180200C4230F /* AnimalTests.swift */,
 				E7F0CEB029C4B02D00E4C80A /* TransformerTests.swift */,
 				E7EB338529C8879100392F3D /* AddressTests.swift */,
@@ -527,6 +530,7 @@
 				E790871A29EEB8A5001F776F /* SystemStringTests_Swift.swift in Sources */,
 				E73EE8FC29DB12A300C57A71 /* SystemReflectionAssemblyTests.swift in Sources */,
 				E787AA8629EDC0BA00601F1A /* SystemObjectTests_Swift.swift in Sources */,
+				E7A3E6EE29EEEDB100447BF2 /* PersonTests_Swift.swift in Sources */,
 				E7A3E6E229EEDEF100447BF2 /* SystemDecimalTests_Swift.swift in Sources */,
 				E75FFBAC29E83C70006904BA /* SystemTupleTests.swift in Sources */,
 				E7A3E6D229EECEF800447BF2 /* SystemDateTimeTests_Swift.swift in Sources */,
