@@ -56,7 +56,7 @@ public extension DNObject {
         return DNObjectIs(self.__handle, type.__handle)
     }
 
-    func `is`<T>(_ type: T.Type? = nil) -> Bool where T: System_Object {
+    func `is`<T>(_ type: T.Type? = nil) -> Bool where T: DNObject {
         let dnType: System_Type
         
         if let type {
@@ -68,7 +68,7 @@ public extension DNObject {
         return DNObjectIs(self.__handle, dnType.__handle)
     }
 
-    func castAs<T>(_ type: T.Type? = nil) -> T? where T: System_Object {
+    func castAs<T>(_ type: T.Type? = nil) -> T? where T: DNObject {
         let dnType: System_Type
         
         if let type {
@@ -86,7 +86,7 @@ public extension DNObject {
         return castedObject
     }
 
-    func castTo<T>(_ type: T.Type? = nil) throws -> T where T: System_Object {
+    func castTo<T>(_ type: T.Type? = nil) throws -> T where T: DNObject {
         let dnType: System_Type
         
         if let type {
