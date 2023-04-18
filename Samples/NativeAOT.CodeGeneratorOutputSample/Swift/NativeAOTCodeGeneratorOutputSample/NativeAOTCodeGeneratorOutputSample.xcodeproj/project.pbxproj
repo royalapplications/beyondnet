@@ -49,6 +49,7 @@
 		E7A3E6D029EECD9800447BF2 /* SystemGuidTests_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A3E6CF29EECD9800447BF2 /* SystemGuidTests_Swift.swift */; };
 		E7A3E6D229EECEF800447BF2 /* SystemDateTimeTests_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A3E6D129EECEF800447BF2 /* SystemDateTimeTests_Swift.swift */; };
 		E7A3E6D629EED70000447BF2 /* SystemVersionTests_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A3E6D529EED70000447BF2 /* SystemVersionTests_Swift.swift */; };
+		E7A3E6D829EED85000447BF2 /* SystemConvertTests_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A3E6D729EED85000447BF2 /* SystemConvertTests_Swift.swift */; };
 		E7AC3D8C29E0391200C5609B /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AC3D8A29E038E000C5609B /* XCTestCase+Extensions.swift */; };
 		E7C8CF0529C1FA9500C4230F /* SystemGuidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0429C1FA9500C4230F /* SystemGuidTests.swift */; };
 		E7C8CF0729C1FABA00C4230F /* SystemStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0629C1FABA00C4230F /* SystemStringTests.swift */; };
@@ -142,6 +143,7 @@
 		E7A3E6CF29EECD9800447BF2 /* SystemGuidTests_Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemGuidTests_Swift.swift; sourceTree = "<group>"; };
 		E7A3E6D129EECEF800447BF2 /* SystemDateTimeTests_Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemDateTimeTests_Swift.swift; sourceTree = "<group>"; };
 		E7A3E6D529EED70000447BF2 /* SystemVersionTests_Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemVersionTests_Swift.swift; sourceTree = "<group>"; };
+		E7A3E6D729EED85000447BF2 /* SystemConvertTests_Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemConvertTests_Swift.swift; sourceTree = "<group>"; };
 		E7AC3D8A29E038E000C5609B /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
 		E7C8CF0429C1FA9500C4230F /* SystemGuidTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemGuidTests.swift; sourceTree = "<group>"; };
 		E7C8CF0629C1FABA00C4230F /* SystemStringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemStringTests.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 				E7ED7A1729D35DF4008C96E0 /* SystemVersionTests.swift */,
 				E7A3E6D529EED70000447BF2 /* SystemVersionTests_Swift.swift */,
 				E746795B29DAE45000AF25C5 /* SystemConvertTests.swift */,
+				E7A3E6D729EED85000447BF2 /* SystemConvertTests_Swift.swift */,
 				E7ED7A1929D445C8008C96E0 /* SystemActionTests.swift */,
 				E73EE8F129DAEA0500C57A71 /* SystemThreadingThreadTest.swift */,
 				E73EE8F329DAEC1A00C57A71 /* SystemThreadingTimerTest.swift */,
@@ -463,6 +466,7 @@
 				E73EE8F829DB097900C57A71 /* SystemRandomTests.swift in Sources */,
 				E70A1FAD29C3652100843CD0 /* SystemTypeTests.swift in Sources */,
 				E7F4A49429CB676100D93D81 /* SystemExceptionTests.swift in Sources */,
+				E7A3E6D829EED85000447BF2 /* SystemConvertTests_Swift.swift in Sources */,
 				E779630029DC171E00E1E70B /* SystemRuntimeInteropServicesMarshalTests.swift in Sources */,
 				E7C8CF0529C1FA9500C4230F /* SystemGuidTests.swift in Sources */,
 				E79B376529E002E700118C35 /* StringExtensions.swift in Sources */,
