@@ -46,6 +46,37 @@ public class DNObject {
 	}
 }
 
+// MARK: - Type Conversion Extensions
+public extension DNObject {
+    func `is`(_ type: System_Type) -> Bool {
+        return DNObjectIs(self.__handle, type.__handle)
+    }
+
+    func castAs(_ type: System_Type) -> System_Object? {
+        let castedObjectC = DNObjectCastAs(self.__handle, type.__handle)
+        let castedObject = System_Object(handle: castedObjectC)
+
+        return castedObject
+    }
+
+    func castTo(_ type: System_Type) throws -> System_Object? {
+        var exceptionC: System_Exception_t?
+        
+        let castedObjectC = DNObjectCastTo(self.__handle, type.__handle, &exceptionC)
+        
+        if let exceptionC {
+            let exception = System_Exception(handle: exceptionC)
+            let exceptionError = exception.error
+            
+            throw exceptionError
+        }
+        
+        let castedObject = System_Object(handle: castedObjectC)
+        
+        return castedObject 
+    }
+}
+
 public class DNError: LocalizedError {
     public let exception: System_Exception
     
