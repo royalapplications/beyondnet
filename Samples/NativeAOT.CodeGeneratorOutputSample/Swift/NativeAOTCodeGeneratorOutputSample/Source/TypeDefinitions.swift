@@ -56,17 +56,48 @@ public extension DNObject {
         return DNObjectIs(self.__handle, type.__handle)
     }
 
-    func castAs(_ type: System_Type) -> System_Object? {
-        let castedObjectC = DNObjectCastAs(self.__handle, type.__handle)
-        let castedObject = System_Object(handle: castedObjectC)
+    func `is`<T>(_ type: T.Type? = nil) -> Bool where T: System_Object {
+        let dnType: System_Type
+        
+        if let type {
+            dnType = type.typeOf()
+        } else {
+            dnType = T.typeOf()
+        }
+        
+        return DNObjectIs(self.__handle, dnType.__handle)
+    }
 
+    func castAs<T>(_ type: T.Type? = nil) -> T? where T: System_Object {
+        let dnType: System_Type
+        
+        if let type {
+            dnType = type.typeOf()
+        } else {
+            dnType = T.typeOf()
+        }
+        
+        guard let castedObjectC = DNObjectCastAs(self.__handle, dnType.__handle) else {
+            return nil
+        }
+        
+        let castedObject = T(handle: castedObjectC)
+        
         return castedObject
     }
 
-    func castTo(_ type: System_Type) throws -> System_Object? {
+    func castTo<T>(_ type: T.Type? = nil) throws -> T where T: System_Object {
+        let dnType: System_Type
+        
+        if let type {
+            dnType = type.typeOf()
+        } else {
+            dnType = T.typeOf()
+        }
+    
         var exceptionC: System_Exception_t?
         
-        let castedObjectC = DNObjectCastTo(self.__handle, type.__handle, &exceptionC)
+        let castedObjectC = DNObjectCastTo(self.__handle, dnType.__handle, &exceptionC)
         
         if let exceptionC {
             let exception = System_Exception(handle: exceptionC)
@@ -74,10 +105,14 @@ public extension DNObject {
             
             throw exceptionError
         }
+    
+        guard let castedObjectC else {
+            fatalError("DNObjectCastTo didn't throw an exception but returned nil") 
+        }
         
-        let castedObject = System_Object(handle: castedObjectC)
+        let castedObject = T(handle: castedObjectC)
         
-        return castedObject 
+        return castedObject
     }
 }
 

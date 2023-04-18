@@ -13,10 +13,17 @@ final class TypeConversionTests_Swift: XCTestCase {
     }
     
     func testIs() {
-        let systemObjectType = System_Object.typeOf()
-        let systemStringType = System_String.typeOf()
-        let systemExceptionType = System_Exception.typeOf()
-        let systemGuidType = System_Guid.typeOf()
+        let systemObjectType = System_Object.self
+        let systemObjectTypeDN = systemObjectType.typeOf()
+        
+        let systemStringType = System_String.self
+        let systemStringTypeDN = systemStringType.typeOf()
+        
+        let systemExceptionType = System_Exception.self
+        let systemExceptionTypeDN = systemExceptionType.typeOf()
+        
+        let systemGuidType = System_Guid.self
+        let systemGuidTypeDN = systemGuidType.typeOf()
         
         // MARK: - System.Object
         guard let systemObject = try? System_Object() else {
@@ -25,9 +32,16 @@ final class TypeConversionTests_Swift: XCTestCase {
             return
         }
         
+        XCTAssertTrue(systemObject.is(systemObjectTypeDN))
         XCTAssertTrue(systemObject.is(systemObjectType))
+        
+        XCTAssertFalse(systemObject.is(systemStringTypeDN))
         XCTAssertFalse(systemObject.is(systemStringType))
+        
+        XCTAssertFalse(systemObject.is(systemExceptionTypeDN))
         XCTAssertFalse(systemObject.is(systemExceptionType))
+        
+        XCTAssertFalse(systemObject.is(systemGuidTypeDN))
         XCTAssertFalse(systemObject.is(systemGuidType))
         
         // MARK: - System.String
@@ -37,9 +51,16 @@ final class TypeConversionTests_Swift: XCTestCase {
             return
         }
         
+        XCTAssertTrue(systemString.is(systemObjectTypeDN))
         XCTAssertTrue(systemString.is(systemObjectType))
+        
+        XCTAssertTrue(systemString.is(systemStringTypeDN))
         XCTAssertTrue(systemString.is(systemStringType))
+        
+        XCTAssertFalse(systemString.is(systemExceptionTypeDN))
         XCTAssertFalse(systemString.is(systemExceptionType))
+        
+        XCTAssertFalse(systemString.is(systemGuidTypeDN))
         XCTAssertFalse(systemString.is(systemGuidType))
         
         // MARK: - System.Exception
@@ -49,9 +70,16 @@ final class TypeConversionTests_Swift: XCTestCase {
             return
         }
         
+        XCTAssertTrue(systemException.is(systemObjectTypeDN))
         XCTAssertTrue(systemException.is(systemObjectType))
+        
+        XCTAssertFalse(systemException.is(systemStringTypeDN))
         XCTAssertFalse(systemException.is(systemStringType))
+        
+        XCTAssertTrue(systemException.is(systemExceptionTypeDN))
         XCTAssertTrue(systemException.is(systemExceptionType))
+        
+        XCTAssertFalse(systemException.is(systemGuidTypeDN))
         XCTAssertFalse(systemException.is(systemGuidType))
         
         // MARK: - System.Guid
@@ -61,18 +89,20 @@ final class TypeConversionTests_Swift: XCTestCase {
             return
         }
         
+        XCTAssertTrue(systemGuid.is(systemObjectTypeDN))
         XCTAssertTrue(systemGuid.is(systemObjectType))
+        
+        XCTAssertFalse(systemGuid.is(systemStringTypeDN))
         XCTAssertFalse(systemGuid.is(systemStringType))
+        
+        XCTAssertFalse(systemGuid.is(systemExceptionTypeDN))
         XCTAssertFalse(systemGuid.is(systemExceptionType))
+        
+        XCTAssertTrue(systemGuid.is(systemGuidTypeDN))
         XCTAssertTrue(systemGuid.is(systemGuidType))
     }
     
     func testCastAs() {
-        let systemObjectType = System_Object.typeOf()
-        let systemGuidType = System_Guid.typeOf()
-        let systemExceptionType = System_Exception.typeOf()
-        let systemNullReferenceExceptionType = System_NullReferenceException.typeOf()
-
         guard let systemObject = try? System_Object() else {
             XCTFail("System.Object ctor should not throw and return an instance")
 
@@ -97,31 +127,26 @@ final class TypeConversionTests_Swift: XCTestCase {
             return
         }
 
-        let systemObjectCastToSystemObject = systemObject.castAs(systemObjectType)
+        let systemObjectCastToSystemObject: System_Object? = systemObject.castAs()
         XCTAssertNotNil(systemObjectCastToSystemObject)
 
-        let systemObjectCastToSystemGuid = systemObject.castAs(systemGuidType)
+        let systemObjectCastToSystemGuid: System_Guid? = systemObject.castAs()
         XCTAssertNil(systemObjectCastToSystemGuid)
 
-        let systemGuidCastToSystemGuid = systemGuid.castAs(systemGuidType)
+        let systemGuidCastToSystemGuid: System_Guid? = systemGuid.castAs()
         XCTAssertNotNil(systemGuidCastToSystemGuid)
 
-        let systemGuidCastToSystemObject = systemGuid.castAs(systemObjectType)
+        let systemGuidCastToSystemObject: System_Object? = systemGuid.castAs()
         XCTAssertNotNil(systemGuidCastToSystemObject)
 
-        let systemExceptionCastToSystemNullReferenceException = systemException.castAs(systemNullReferenceExceptionType)
+        let systemExceptionCastToSystemNullReferenceException = systemException.castAs(System_NullReferenceException.self)
         XCTAssertNil(systemExceptionCastToSystemNullReferenceException)
 
-        let systemNullReferenceExceptionCastToSystemException = systemNullReferenceException.castAs(systemExceptionType)
+        let systemNullReferenceExceptionCastToSystemException = systemNullReferenceException.castAs(System_Exception.self)
         XCTAssertNotNil(systemNullReferenceExceptionCastToSystemException)
     }
     
     func testCastTo() {
-        let systemObjectType = System_Object.typeOf()
-        let systemGuidType = System_Guid.typeOf()
-        let systemExceptionType = System_Exception.typeOf()
-        let systemNullReferenceExceptionType = System_NullReferenceException.typeOf()
-        
         guard let systemObject = try? System_Object() else {
             XCTFail("System.Object ctor should not throw and return an instance")
 
@@ -145,47 +170,47 @@ final class TypeConversionTests_Swift: XCTestCase {
 
             return
         }
-        
+
         do {
-            let systemObjectCastToSystemObject = try systemObject.castTo(systemObjectType)
+            let systemObjectCastToSystemObject = try systemObject.castTo(System_Object.self)
             XCTAssertNotNil(systemObjectCastToSystemObject)
         } catch {
             XCTFail("Should not throw")
             return
         }
-        
+
         do {
-            let _ = try systemObject.castTo(systemGuidType)
-            
+            let _: System_Guid = try systemObject.castTo()
+
             XCTFail("Should throw")
             return
         } catch { }
-        
+
         do {
-            let systemGuidCastToSystemGuid = try systemGuid.castTo(systemGuidType)
+            let systemGuidCastToSystemGuid = try systemGuid.castTo(System_Guid.self)
             XCTAssertNotNil(systemGuidCastToSystemGuid)
         } catch {
             XCTFail("Should not throw")
             return
         }
-        
+
         do {
-            let systemGuidCastToSystemObject = try systemGuid.castTo(systemObjectType)
+            let systemGuidCastToSystemObject = try systemGuid.castTo(System_Object.self)
             XCTAssertNotNil(systemGuidCastToSystemObject)
         } catch {
             XCTFail("Should not throw")
             return
         }
-        
+
         do {
-            let _ = try systemException.castTo(systemNullReferenceExceptionType)
-            
+            let _: System_NullReferenceException = try systemException.castTo()
+
             XCTFail("Should throw")
             return
         } catch { }
-        
+
         do {
-            let systemNullReferenceExceptionCastToSystemException = try systemNullReferenceException.castTo(systemExceptionType)
+            let systemNullReferenceExceptionCastToSystemException = try systemNullReferenceException.castTo(System_Exception.self)
             XCTAssertNotNil(systemNullReferenceExceptionCastToSystemException)
         } catch {
             XCTFail("Should not throw")
