@@ -1,7 +1,7 @@
 import XCTest
 import NativeAOTCodeGeneratorOutputSample
 
-final class TypeConversionTestsSwift: XCTestCase {
+final class TypeConversionTests_Swift: XCTestCase {
     @MainActor
     override class func setUp() {
         Self.sharedSetUp()

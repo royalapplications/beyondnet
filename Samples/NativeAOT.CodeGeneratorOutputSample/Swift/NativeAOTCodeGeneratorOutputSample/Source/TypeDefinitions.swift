@@ -79,6 +79,28 @@ public extension DNObject {
         
         return castedObject 
     }
+
+    func castToBool() throws -> Bool {
+        var exceptionC: System_Exception_t?
+        
+        let castedValue = DNObjectCastToBool(self.__handle, &exceptionC)
+        
+        if let exceptionC {
+            let exception = System_Exception(handle: exceptionC)
+            let exceptionError = exception.error
+            
+            throw exceptionError
+        }
+        
+        return castedValue 
+    }
+
+    static func fromBool(_ boolValue: Bool) -> System_Object {
+        let castedObjectC = DNObjectFromBool(boolValue)
+		let castedObject = System_Object(handle: castedObjectC)
+
+        return castedObject
+	}
 }
 
 public class DNError: LocalizedError {
