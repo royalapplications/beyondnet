@@ -37,12 +37,12 @@ public class DNObject {
 
     deinit {
         // Enable for debugging
-        print("[DEBUG] Will destroy \(Self.fullTypeName)")
+        // print("[DEBUG] Will destroy \(Self.fullTypeName)")
 
 		destroy()
 
         // Enable for debugging
-        print("[DEBUG] Did destroy \(Self.fullTypeName)")
+        // print("[DEBUG] Did destroy \(Self.fullTypeName)")
 	}
 }
 
@@ -78,9 +78,7 @@ public extension System_Exception {
 
 public extension String {
 	func dotNETString() -> System_String {
-		guard let dotNetStringHandle = DNStringFromC(self) else {
-			fatalError("Failed to convert Swift String to .NET String")
-		}
+		let dotNetStringHandle = DNStringFromC(self)
 		
 		return System_String(handle: dotNetStringHandle)
 	}
@@ -92,9 +90,7 @@ public extension String {
 	}
 	
 	init(dotNETString: System_String) {
-		guard let cString = DNStringToC(dotNETString.__handle) else {
-			fatalError("Failed to convert .NET String to C String")
-		}
+		let cString = DNStringToC(dotNETString.__handle)
 		
 		self.init(cString: cString)
 		

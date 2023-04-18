@@ -23,13 +23,8 @@ public extension String {
 			}
 		}
 		
-		guard let cString = DNStringToC(cDotNETString) else {
-			return nil
-		}
-		
-		defer {
-			cString.deallocate()
-		}
+		let cString = DNStringToC(cDotNETString)
+		defer { cString.deallocate() }
 		
 		self.init(cString: cString)
 	}
