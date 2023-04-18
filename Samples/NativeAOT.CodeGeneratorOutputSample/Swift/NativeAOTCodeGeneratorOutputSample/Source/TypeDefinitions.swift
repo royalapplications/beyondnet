@@ -9301,6 +9301,9 @@ public override class var fullTypeName: String { "System.Enum" }
 		
 		let __returnValueC = System_Enum_TryParse(enumTypeC, valueC, &resultC, &__exceptionC)
 		
+		result = System_Object(handle: resultC)
+		
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -9322,6 +9325,9 @@ public override class var fullTypeName: String { "System.Enum" }
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Enum_TryParse_1(enumTypeC, valueC, ignoreCase, &resultC, &__exceptionC)
+		
+		result = System_Object(handle: resultC)
+		
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -9345,6 +9351,9 @@ public override class var fullTypeName: String { "System.Enum" }
 		
 		let __returnValueC = System_Enum_TryParse_A1(TEnumC, valueC, &resultC, &__exceptionC)
 		
+		result = System_Object(handle: resultC)
+		
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -9366,6 +9375,9 @@ public override class var fullTypeName: String { "System.Enum" }
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Enum_TryParse_A1_1(TEnumC, valueC, ignoreCase, &resultC, &__exceptionC)
+		
+		result = System_Object(handle: resultC)
+		
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -19454,6 +19466,9 @@ public override class var fullTypeName: String { "System.Decimal" }
 		
 		let __returnValueC = System_Decimal_TryParse(sC, &resultC, &__exceptionC)
 		
+		result = System_Decimal(handle: resultC)
+		
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -19476,6 +19491,9 @@ public override class var fullTypeName: String { "System.Decimal" }
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Decimal_TryParse_1(sC, styleC, providerC, &resultC, &__exceptionC)
+		
+		result = System_Decimal(handle: resultC)
+		
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -20314,6 +20332,9 @@ public override class var fullTypeName: String { "System.Decimal" }
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Decimal_TryParse_2(sC, providerC, &resultC, &__exceptionC)
+		
+		result = System_Decimal(handle: resultC)
+		
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -21673,6 +21694,9 @@ public override class var fullTypeName: String { "System.DateTime" }
 		
 		let __returnValueC = System_DateTime_TryParse(sC, &resultC, &__exceptionC)
 		
+		result = System_DateTime(handle: resultC)
+		
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -21695,6 +21719,9 @@ public override class var fullTypeName: String { "System.DateTime" }
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_DateTime_TryParse_1(sC, providerC, stylesC, &resultC, &__exceptionC)
+		
+		result = System_DateTime(handle: resultC)
+		
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -21720,6 +21747,9 @@ public override class var fullTypeName: String { "System.DateTime" }
 		
 		let __returnValueC = System_DateTime_TryParseExact(sC, formatC, providerC, styleC, &resultC, &__exceptionC)
 		
+		result = System_DateTime(handle: resultC)
+		
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -21744,6 +21774,9 @@ public override class var fullTypeName: String { "System.DateTime" }
 		
 		let __returnValueC = System_DateTime_TryParseExact_1(sC, formatsC, providerC, styleC, &resultC, &__exceptionC)
 		
+		result = System_DateTime(handle: resultC)
+		
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -21764,6 +21797,11 @@ public override class var fullTypeName: String { "System.DateTime" }
 		var __exceptionC: System_Exception_t?
 		
 		System_DateTime_Deconstruct(self.__handle, &dateC, &timeC, &__exceptionC)
+		
+		date = System_DateOnly(handle: dateC)
+		
+		time = System_TimeOnly(handle: timeC)
+		
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -21912,6 +21950,9 @@ public override class var fullTypeName: String { "System.DateTime" }
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_DateTime_TryParse_2(sC, providerC, &resultC, &__exceptionC)
+		
+		result = System_DateTime(handle: resultC)
+		
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -23329,6 +23370,9 @@ public override class var fullTypeName: String { "System.TimeSpan" }
 		
 		let __returnValueC = System_TimeSpan_TryParse(sC, &resultC, &__exceptionC)
 		
+		result = System_TimeSpan(handle: resultC)
+		
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -23350,6 +23394,9 @@ public override class var fullTypeName: String { "System.TimeSpan" }
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_TimeSpan_TryParse_1(inputC, formatProviderC, &resultC, &__exceptionC)
+		
+		result = System_TimeSpan(handle: resultC)
+		
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -23374,6 +23421,9 @@ public override class var fullTypeName: String { "System.TimeSpan" }
 		
 		let __returnValueC = System_TimeSpan_TryParseExact(inputC, formatC, formatProviderC, &resultC, &__exceptionC)
 		
+		result = System_TimeSpan(handle: resultC)
+		
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -23396,6 +23446,9 @@ public override class var fullTypeName: String { "System.TimeSpan" }
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_TimeSpan_TryParseExact_1(inputC, formatsC, formatProviderC, &resultC, &__exceptionC)
+		
+		result = System_TimeSpan(handle: resultC)
+		
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -23421,6 +23474,9 @@ public override class var fullTypeName: String { "System.TimeSpan" }
 		
 		let __returnValueC = System_TimeSpan_TryParseExact_2(inputC, formatC, formatProviderC, stylesC, &resultC, &__exceptionC)
 		
+		result = System_TimeSpan(handle: resultC)
+		
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -23444,6 +23500,9 @@ public override class var fullTypeName: String { "System.TimeSpan" }
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_TimeSpan_TryParseExact_3(inputC, formatsC, formatProviderC, stylesC, &resultC, &__exceptionC)
+		
+		result = System_TimeSpan(handle: resultC)
+		
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -24513,6 +24572,9 @@ public override class var fullTypeName: String { "System.DateOnly" }
 		
 		let __returnValueC = System_DateOnly_TryParse(sC, &resultC, &__exceptionC)
 		
+		result = System_DateOnly(handle: resultC)
+		
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -24536,6 +24598,9 @@ public override class var fullTypeName: String { "System.DateOnly" }
 		
 		let __returnValueC = System_DateOnly_TryParse_1(sC, providerC, styleC, &resultC, &__exceptionC)
 		
+		result = System_DateOnly(handle: resultC)
+		
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -24557,6 +24622,9 @@ public override class var fullTypeName: String { "System.DateOnly" }
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_DateOnly_TryParseExact(sC, formatC, &resultC, &__exceptionC)
+		
+		result = System_DateOnly(handle: resultC)
+		
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -24582,6 +24650,9 @@ public override class var fullTypeName: String { "System.DateOnly" }
 		
 		let __returnValueC = System_DateOnly_TryParseExact_1(sC, formatC, providerC, styleC, &resultC, &__exceptionC)
 		
+		result = System_DateOnly(handle: resultC)
+		
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -24603,6 +24674,9 @@ public override class var fullTypeName: String { "System.DateOnly" }
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_DateOnly_TryParseExact_2(sC, formatsC, &resultC, &__exceptionC)
+		
+		result = System_DateOnly(handle: resultC)
+		
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -24627,6 +24701,9 @@ public override class var fullTypeName: String { "System.DateOnly" }
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_DateOnly_TryParseExact_3(sC, formatsC, providerC, styleC, &resultC, &__exceptionC)
+		
+		result = System_DateOnly(handle: resultC)
+		
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -24802,6 +24879,9 @@ public override class var fullTypeName: String { "System.DateOnly" }
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_DateOnly_TryParse_2(sC, providerC, &resultC, &__exceptionC)
+		
+		result = System_DateOnly(handle: resultC)
+		
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -25589,6 +25669,9 @@ public override class var fullTypeName: String { "System.TimeOnly" }
 		
 		let __returnValueC = System_TimeOnly_TryParse(sC, &resultC, &__exceptionC)
 		
+		result = System_TimeOnly(handle: resultC)
+		
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -25612,6 +25695,9 @@ public override class var fullTypeName: String { "System.TimeOnly" }
 		
 		let __returnValueC = System_TimeOnly_TryParse_1(sC, providerC, styleC, &resultC, &__exceptionC)
 		
+		result = System_TimeOnly(handle: resultC)
+		
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -25633,6 +25719,9 @@ public override class var fullTypeName: String { "System.TimeOnly" }
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_TimeOnly_TryParseExact(sC, formatC, &resultC, &__exceptionC)
+		
+		result = System_TimeOnly(handle: resultC)
+		
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -25658,6 +25747,9 @@ public override class var fullTypeName: String { "System.TimeOnly" }
 		
 		let __returnValueC = System_TimeOnly_TryParseExact_1(sC, formatC, providerC, styleC, &resultC, &__exceptionC)
 		
+		result = System_TimeOnly(handle: resultC)
+		
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -25679,6 +25771,9 @@ public override class var fullTypeName: String { "System.TimeOnly" }
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_TimeOnly_TryParseExact_2(sC, formatsC, &resultC, &__exceptionC)
+		
+		result = System_TimeOnly(handle: resultC)
+		
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -25703,6 +25798,9 @@ public override class var fullTypeName: String { "System.TimeOnly" }
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_TimeOnly_TryParseExact_3(sC, formatsC, providerC, styleC, &resultC, &__exceptionC)
+		
+		result = System_TimeOnly(handle: resultC)
+		
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -25878,6 +25976,9 @@ public override class var fullTypeName: String { "System.TimeOnly" }
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_TimeOnly_TryParse_2(sC, providerC, &resultC, &__exceptionC)
+		
+		result = System_TimeOnly(handle: resultC)
+		
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -28632,6 +28733,9 @@ public override class var fullTypeName: String { "System.Version" }
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Version_TryParse(inputC, &resultC, &__exceptionC)
+		
+		result = System_Version(handle: resultC)
+		
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -35288,6 +35392,11 @@ public override class var fullTypeName: String { "System.Reflection.Module" }
 		
 		System_Reflection_Module_GetPEKind(self.__handle, &peKindC, &machineC, &__exceptionC)
 		
+		peKind = System_Reflection_PortableExecutableKinds(cValue: peKindC)
+		
+		machine = System_Reflection_ImageFileMachine(cValue: machineC)
+		
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -36240,6 +36349,9 @@ public override class var fullTypeName: String { "System.Guid" }
 		
 		let __returnValueC = System_Guid_TryParse(inputC, &resultC, &__exceptionC)
 		
+		result = System_Guid(handle: resultC)
+		
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -36284,6 +36396,9 @@ public override class var fullTypeName: String { "System.Guid" }
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Guid_TryParseExact(inputC, formatC, &resultC, &__exceptionC)
+		
+		result = System_Guid(handle: resultC)
+		
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -36515,6 +36630,9 @@ public override class var fullTypeName: String { "System.Guid" }
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Guid_TryParse_1(sC, providerC, &resultC, &__exceptionC)
+		
+		result = System_Guid(handle: resultC)
+		
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -36999,6 +37117,11 @@ public override class var fullTypeName: String { "System.Reflection.Binder" }
 		
 		let __returnValue = System_Reflection_MethodBase(handle: __returnValueC)
 		
+		args = System_Object_Array(handle: argsC)
+		
+		state = System_Object(handle: stateC)
+		
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -37043,6 +37166,9 @@ public override class var fullTypeName: String { "System.Reflection.Binder" }
 		var __exceptionC: System_Exception_t?
 		
 		System_Reflection_Binder_ReorderArgumentArray(self.__handle, &argsC, stateC, &__exceptionC)
+		
+		args = System_Object_Array(handle: argsC)
+		
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -39929,6 +40055,11 @@ public override class var fullTypeName: String { "System.Collections.DictionaryE
 		var __exceptionC: System_Exception_t?
 		
 		System_Collections_DictionaryEntry_Deconstruct(self.__handle, &keyC, &valueC, &__exceptionC)
+		
+		key = System_Object(handle: keyC)
+		
+		value = System_Object(handle: valueC)
+		
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -44581,6 +44712,9 @@ public override class var fullTypeName: String { "System.Text.Rune" }
 		
 		let __returnValueC = System_Text_Rune_TryCreate(chC, &resultC, &__exceptionC)
 		
+		result = System_Text_Rune(handle: resultC)
+		
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -44603,6 +44737,9 @@ public override class var fullTypeName: String { "System.Text.Rune" }
 		
 		let __returnValueC = System_Text_Rune_TryCreate_1(highSurrogateC, lowSurrogateC, &resultC, &__exceptionC)
 		
+		result = System_Text_Rune(handle: resultC)
+		
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -44622,6 +44759,9 @@ public override class var fullTypeName: String { "System.Text.Rune" }
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Text_Rune_TryCreate_2(value, &resultC, &__exceptionC)
+		
+		result = System_Text_Rune(handle: resultC)
+		
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -44643,6 +44783,9 @@ public override class var fullTypeName: String { "System.Text.Rune" }
 		
 		let __returnValueC = System_Text_Rune_TryCreate_3(value, &resultC, &__exceptionC)
 		
+		result = System_Text_Rune(handle: resultC)
+		
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -44663,6 +44806,9 @@ public override class var fullTypeName: String { "System.Text.Rune" }
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Text_Rune_TryGetRuneAt(inputC, index, &valueC, &__exceptionC)
+		
+		value = System_Text_Rune(handle: valueC)
+		
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -48937,6 +49083,9 @@ public override class var fullTypeName: String { "System.Text.CompositeFormat" }
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Text_CompositeFormat_TryParse(formatC, &compositeFormatC, &__exceptionC)
+		
+		compositeFormat = System_Text_CompositeFormat(handle: compositeFormatC)
+		
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -53333,6 +53482,9 @@ public override class var fullTypeName: String { "System.Runtime.InteropServices
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Runtime_InteropServices_Marshal_QueryInterface(pUnk, &iidC, &ppv, &__exceptionC)
+		
+		iid = System_Guid(handle: iidC)
+		
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -69035,6 +69187,9 @@ public override class var fullTypeName: String { "System.Threading.Thread" }
 		
 		let __returnValue = System_Object(handle: __returnValueC)
 		
+		address = System_Object(handle: addressC)
+		
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -69277,6 +69432,9 @@ public override class var fullTypeName: String { "System.Threading.Thread" }
 		var __exceptionC: System_Exception_t?
 		
 		System_Threading_Thread_VolatileWrite_6(&addressC, valueC, &__exceptionC)
+		
+		address = System_Object(handle: addressC)
+		
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -76905,6 +77063,9 @@ public override class var fullTypeName: String { "System.Text.StringBuilder" }
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
 		
+		handler = System_Text_StringBuilder_AppendInterpolatedStringHandler(handle: handlerC)
+		
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -76928,6 +77089,9 @@ public override class var fullTypeName: String { "System.Text.StringBuilder" }
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
 		
+		handler = System_Text_StringBuilder_AppendInterpolatedStringHandler(handle: handlerC)
+		
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -76949,6 +77113,9 @@ public override class var fullTypeName: String { "System.Text.StringBuilder" }
 		let __returnValueC = System_Text_StringBuilder_AppendLine_2(self.__handle, &handlerC, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
+		
+		handler = System_Text_StringBuilder_AppendInterpolatedStringHandler(handle: handlerC)
+		
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -76972,6 +77139,9 @@ public override class var fullTypeName: String { "System.Text.StringBuilder" }
 		let __returnValueC = System_Text_StringBuilder_AppendLine_3(self.__handle, providerC, &handlerC, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
+		
+		handler = System_Text_StringBuilder_AppendInterpolatedStringHandler(handle: handlerC)
+		
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -88469,6 +88639,9 @@ public override class var fullTypeName: String { "System.Collections.Generic.Dic
 		
 		let __returnValueC = System_Collections_Generic_Dictionary_A2_Remove_1(self.__handle, TKeyC, TValueC, keyC, &valueC, &__exceptionC)
 		
+		value = System_Object(handle: valueC)
+		
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -88491,6 +88664,9 @@ public override class var fullTypeName: String { "System.Collections.Generic.Dic
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Collections_Generic_Dictionary_A2_TryGetValue(self.__handle, TKeyC, TValueC, keyC, &valueC, &__exceptionC)
+		
+		value = System_Object(handle: valueC)
+		
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -88756,6 +88932,9 @@ public override class var fullTypeName: String { "System.Collections.Generic.IDi
 		
 		let __returnValueC = System_Collections_Generic_IDictionary_A2_TryGetValue(self.__handle, TKeyC, TValueC, keyC, &valueC, &__exceptionC)
 		
+		value = System_Object(handle: valueC)
+		
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -88952,6 +89131,9 @@ public override class var fullTypeName: String { "System.Collections.Generic.IRe
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Collections_Generic_IReadOnlyDictionary_A2_TryGetValue(self.__handle, TKeyC, TValueC, keyC, &valueC, &__exceptionC)
+		
+		value = System_Object(handle: valueC)
+		
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -89525,6 +89707,11 @@ public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSa
 		
 		let __returnValue = System_Object(handle: __returnValueC)
 		
+		typeGenericOutput = System_Object(handle: typeGenericOutputC)
+		
+		methodGenericInputThatIsToBeReplacedWithDefault = System_Object(handle: methodGenericInputThatIsToBeReplacedWithDefaultC)
+		
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -89855,6 +90042,9 @@ public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSa
 		
 		NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnGenericTypeAsOutParameter_A1(TC, &typeOfTC, &__exceptionC)
 		
+		typeOfT = System_Type(handle: typeOfTC)
+		
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -89874,6 +90064,9 @@ public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSa
 		var __exceptionC: System_Exception_t?
 		
 		NativeAOT_CodeGeneratorInputSample_GenericTests_ReturnGenericTypeAsRefParameter_A1(TC, &typeOfTC, &__exceptionC)
+		
+		typeOfT = System_Type(handle: typeOfTC)
+		
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -91096,6 +91289,9 @@ public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSa
 		
 		NativeAOT_CodeGeneratorInputSample_TestClass_ModifyByRefEnum(self.__handle, &enumToModifyC, &__exceptionC)
 		
+		enumToModify = NativeAOT_CodeGeneratorInputSample_TestEnum(cValue: enumToModifyC)
+		
+		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
 		    let __error = __exception.error
@@ -91116,6 +91312,11 @@ public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSa
 		var __exceptionC: System_Exception_t?
 		
 		NativeAOT_CodeGeneratorInputSample_TestClass_ModifyByRefBookAndReturnOriginalBookAsOutParameter(self.__handle, &bookToModifyC, targetBookC, &originalBookC, &__exceptionC)
+		
+		bookToModify = NativeAOT_CodeGeneratorInputSample_Book(handle: bookToModifyC)
+		
+		originalBook = NativeAOT_CodeGeneratorInputSample_Book(handle: originalBookC)
+		
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)

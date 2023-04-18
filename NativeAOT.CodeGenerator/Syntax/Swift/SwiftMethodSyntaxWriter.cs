@@ -464,6 +464,60 @@ self.init(handle: {{returnValueName}})
                 }
             }
 
+            StringBuilder sbByRefParameters = new();
+
+            foreach (var parameter in parameters) {
+                Type parameterType = parameter.ParameterType;
+
+                bool isOutParameter = parameter.IsOut;
+                bool isByRefParameter = parameterType.IsByRef;
+                
+                if (!isOutParameter &&
+                    !isByRefParameter) {
+                    continue;
+                }
+
+                parameterType = parameterType.GetNonByRefType();
+
+                if (parameterType.IsGenericParameter ||
+                    parameterType.IsGenericMethodParameter) {
+                    parameterType = typeof(object);
+                }
+                
+                string parameterName = parameter.Name ?? throw new Exception("Parameter has no name");
+                string convertedParameterName = $"{parameterName}C";
+
+                TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
+
+                string? parameterTypeConversion = parameterTypeDescriptor.GetTypeConversion(
+                    CodeLanguage.C,
+                    CodeLanguage.Swift
+                );
+
+                if (string.IsNullOrEmpty(parameterTypeConversion)) {
+                    continue;
+                }
+
+                if (!convertedParameterNames.Contains($"&{convertedParameterName}")) {
+                    convertedParameterName = parameterName;
+                }
+
+                if (string.IsNullOrEmpty(parameterTypeConversion)) {
+                    parameterTypeConversion = convertedParameterName;
+                } else {
+                    parameterTypeConversion = string.Format(parameterTypeConversion, convertedParameterName);
+                }
+                
+                sbByRefParameters.AppendLine($"{parameterName} = {parameterTypeConversion}");
+                sbByRefParameters.AppendLine();
+            }
+
+            string byRefParamtersCode = sbByRefParameters.ToString();
+
+            if (!string.IsNullOrEmpty(byRefParamtersCode)) {
+                sbImpl.AppendLine(byRefParamtersCode);
+            }
+
             if (mayThrow) {
                 sbImpl.AppendLine("""
 if let __exceptionC {
