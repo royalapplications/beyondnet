@@ -75,7 +75,10 @@ public extension DNObject {
         
         return castedObject 
     }
+}
 
+// MARK: - Primitive Conversion Extensions
+public extension DNObject {
     func castToBool() throws -> Bool {
         var exceptionC: System_Exception_t?
         
@@ -93,6 +96,28 @@ public extension DNObject {
 
     static func fromBool(_ boolValue: Bool) -> System_Object {
         let castedObjectC = DNObjectFromBool(boolValue)
+		let castedObject = System_Object(handle: castedObjectC)
+
+        return castedObject
+	}
+
+    func castToFloat() throws -> Float {
+        var exceptionC: System_Exception_t?
+        
+        let castedValue = DNObjectCastToFloat(self.__handle, &exceptionC)
+        
+        if let exceptionC {
+            let exception = System_Exception(handle: exceptionC)
+            let exceptionError = exception.error
+            
+            throw exceptionError
+        }
+        
+        return castedValue 
+    }
+
+    static func fromFloat(_ floatValue: Float) -> System_Object {
+        let castedObjectC = DNObjectFromFloat(floatValue)
 		let castedObject = System_Object(handle: castedObjectC)
 
         return castedObject

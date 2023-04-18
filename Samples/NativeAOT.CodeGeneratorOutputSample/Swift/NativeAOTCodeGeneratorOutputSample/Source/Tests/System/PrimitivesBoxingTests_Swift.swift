@@ -26,6 +26,21 @@ final class PrimitivesBoxingTests_Swift: XCTestCase {
         
         XCTAssertEqual(trueValue, trueValueRet)
     }
+    
+    func testFloat() {
+        let systemFloatTypeName = "System.Single"
+        
+        let floatValue: Float = 0.1234
+        let floatObject = System_Object.fromFloat(floatValue)
+        let floatType = try? floatObject.getType()
+        let floatTypeName = try? floatType?.fullName_get()?.string()
+        
+        XCTAssertEqual(systemFloatTypeName, floatTypeName)
+        
+        let floatValueRet = try? floatObject.castToFloat()
+        
+        XCTAssertEqual(floatValue, floatValueRet)
+    }
 
     // TODO
 //    func testBool() {
