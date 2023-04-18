@@ -22,7 +22,7 @@ final class SystemTypeTests_Swift: XCTestCase {
             return
         }
         
-        guard (try? systemObjectType.equals(systemObjectTypeViaName)) ?? false else {
+        guard systemObjectType == systemObjectTypeViaName else {
             XCTFail("System.Object.Equals should not throw and return true")
             
             return

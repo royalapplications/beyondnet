@@ -27,7 +27,7 @@ final class SystemObjectTests_Swift: XCTestCase {
             return
         }
         
-        guard (try? systemObjectType.equals(object1Type)) ?? false else {
+        guard systemObjectType == object1Type else {
             XCTFail("System.Object.Equals should not throw and return true")
             
             return
@@ -39,14 +39,13 @@ final class SystemObjectTests_Swift: XCTestCase {
             return
         }
         
-        guard !((try? object1.equals(object2)) ?? false) else {
+        guard object1 != object2 else {
             XCTFail("System.Object.Equals should not throw and return false")
             
             return
         }
         
-        guard !((try? System_Object.referenceEquals(object1,
-                                                    object2)) ?? false) else {
+        guard object1 !== object2 else {
             XCTFail("System.Object.ReferenceEquals should not throw and return false")
             
             return

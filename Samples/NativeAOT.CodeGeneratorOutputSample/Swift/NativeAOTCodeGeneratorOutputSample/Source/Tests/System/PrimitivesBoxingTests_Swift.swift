@@ -172,7 +172,7 @@ private extension PrimitivesBoxingTests_Swift {
             return
         }
         
-        let equal = (try? valueObject.equals(valueObjectRetFromArray)) ?? false
+        let equal = valueObject == valueObjectRetFromArray
         
         XCTAssertTrue(equal)
         

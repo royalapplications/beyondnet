@@ -380,6 +380,18 @@ public extension System_String {
     }
 }
 
+extension System_Object: Equatable {
+    public static func == (lhs: System_Object,
+                           rhs: System_Object) -> Bool {
+        return (try? Self.equals(lhs, rhs)) ?? false
+    }
+    
+    public static func === (lhs: System_Object,
+                            rhs: System_Object) -> Bool {
+        return (try? Self.referenceEquals(lhs, rhs)) ?? false
+    }
+}
+
 public final class NativeBox<T> {
     public let value: T
     
