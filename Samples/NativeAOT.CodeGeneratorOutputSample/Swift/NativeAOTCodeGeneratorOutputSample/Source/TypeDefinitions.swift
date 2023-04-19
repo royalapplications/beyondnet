@@ -1,5 +1,5 @@
 // Number of generated types: 1487
-// Number of generated members: 4501
+// Number of generated members: 4525
 
 // MARK: - BEGIN Header
 import Foundation
@@ -8945,6 +8945,47 @@ public override class var fullTypeName: String { "System.Collections.IList" }
 	
 	}
 	
+	public func item_get(_ index: Int32 /* System.Int32 */) throws -> System_Object? /* System.Object */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Collections_IList_Item_Get(self.__handle, index, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	
+	}
+	
+	public func item_set(_ index: Int32 /* System.Int32 */, _ value: System_Object? /* System.Object */) throws {
+		let valueC = value?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Collections_IList_Item_Set(self.__handle, index, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		
+	
+	}
+	
+	
 	public func isReadOnly_get() throws -> Bool /* System.Boolean */ {
 		
 		
@@ -13832,6 +13873,28 @@ public override class var fullTypeName: String { "System.String" }
 		
 	
 	}
+	
+	public func chars_get(_ index: Int32 /* System.Int32 */) throws -> DNChar /* System.Char */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_String_Chars_Get(self.__handle, index, &__exceptionC)
+		
+		let __returnValue = DNChar(cValue: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	
+	}
+	
 	
 	public func length_get() throws -> Int32 /* System.Int32 */ {
 		
@@ -38756,6 +38819,44 @@ public override class var fullTypeName: String { "System.Reflection.ParameterMod
 	
 	}
 	
+	public func item_get(_ index: Int32 /* System.Int32 */) throws -> Bool /* System.Boolean */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Reflection_ParameterModifier_Item_Get(self.__handle, index, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	
+	}
+	
+	public func item_set(_ index: Int32 /* System.Int32 */, _ value: Bool /* System.Boolean */) throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Reflection_ParameterModifier_Item_Set(self.__handle, index, value, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		
+	
+	}
+	
+	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_ParameterModifier_TypeOf())
 		
@@ -40639,6 +40740,49 @@ public override class var fullTypeName: String { "System.Collections.IDictionary
 		
 	
 	}
+	
+	public func item_get(_ key: System_Object? /* System.Object */) throws -> System_Object? /* System.Object */ {
+		let keyC = key?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Collections_IDictionary_Item_Get(self.__handle, keyC, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	
+	}
+	
+	public func item_set(_ key: System_Object? /* System.Object */, _ value: System_Object? /* System.Object */) throws {
+		let keyC = key?.__handle
+		let valueC = value?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Collections_IDictionary_Item_Set(self.__handle, keyC, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		
+	
+	}
+	
 	
 	public func keys_get() throws -> System_Collections_ICollection? /* System.Collections.ICollection */ {
 		
@@ -57510,6 +57654,28 @@ public override class var fullTypeName: String { "System.Runtime.CompilerService
 		}
 		
 		return __returnValueC
+		
+	
+	}
+	
+	
+	public func item_get(_ index: Int32 /* System.Int32 */) throws -> System_Object? /* System.Object */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Runtime_CompilerServices_ITuple_Item_Get(self.__handle, index, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
 		
 	
 	}
@@ -74511,6 +74677,49 @@ public override class var fullTypeName: String { "System.Collections.Hashtable" 
 	
 	}
 	
+	public func item_get(_ key: System_Object? /* System.Object */) throws -> System_Object? /* System.Object */ {
+		let keyC = key?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Collections_Hashtable_Item_Get(self.__handle, keyC, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	
+	}
+	
+	public func item_set(_ key: System_Object? /* System.Object */, _ value: System_Object? /* System.Object */) throws {
+		let keyC = key?.__handle
+		let valueC = value?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Collections_Hashtable_Item_Set(self.__handle, keyC, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		
+	
+	}
+	
+	
 	public func isReadOnly_get() throws -> Bool /* System.Boolean */ {
 		
 		
@@ -75757,6 +75966,47 @@ public override class var fullTypeName: String { "System.Collections.ArrayList" 
 		}
 		
 		return __returnValue
+		
+	
+	}
+	
+	
+	public func item_get(_ index: Int32 /* System.Int32 */) throws -> System_Object? /* System.Object */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Collections_ArrayList_Item_Get(self.__handle, index, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	
+	}
+	
+	public func item_set(_ index: Int32 /* System.Int32 */, _ value: System_Object? /* System.Object */) throws {
+		let valueC = value?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Collections_ArrayList_Item_Set(self.__handle, index, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
 		
 	
 	}
@@ -79016,6 +79266,47 @@ public override class var fullTypeName: String { "System.Text.StringBuilder" }
 		var __exceptionC: System_Exception_t?
 		
 		System_Text_StringBuilder_Length_Set(self.__handle, value, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		
+	
+	}
+	
+	
+	public func chars_get(_ index: Int32 /* System.Int32 */) throws -> DNChar /* System.Char */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Text_StringBuilder_Chars_Get(self.__handle, index, &__exceptionC)
+		
+		let __returnValue = DNChar(cValue: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	
+	}
+	
+	public func chars_set(_ index: Int32 /* System.Int32 */, _ value: DNChar /* System.Char */) throws {
+		let valueC = value.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Text_StringBuilder_Chars_Set(self.__handle, index, valueC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -89156,6 +89447,49 @@ public override class var fullTypeName: String { "System.Collections.Generic.Lis
 	}
 	
 	
+	public func item_get(_ T: System_Type /* System.Type */, _ index: Int32 /* System.Int32 */) throws -> System_Object? /* System.Object */ {
+		let TC = T.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Collections_Generic_List_A1_Item_Get(self.__handle, TC, index, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	
+	}
+	
+	public func item_set(_ T: System_Type /* System.Type */, _ index: Int32 /* System.Int32 */, _ value: System_Object? /* System.Object */) throws {
+		let TC = T.__handle
+		let valueC = value?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Collections_Generic_List_A1_Item_Set(self.__handle, TC, index, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		
+	
+	}
+	
+	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Collections_Generic_List_A1_TypeOf())
 		
@@ -89238,6 +89572,49 @@ public override class var fullTypeName: String { "System.Collections.Generic.ILi
 		
 	
 	}
+	
+	public func item_get(_ T: System_Type /* System.Type */, _ index: Int32 /* System.Int32 */) throws -> System_Object? /* System.Object */ {
+		let TC = T.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Collections_Generic_IList_A1_Item_Get(self.__handle, TC, index, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	
+	}
+	
+	public func item_set(_ T: System_Type /* System.Type */, _ index: Int32 /* System.Int32 */, _ value: System_Object? /* System.Object */) throws {
+		let TC = T.__handle
+		let valueC = value?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Collections_Generic_IList_A1_Item_Set(self.__handle, TC, index, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		
+	
+	}
+	
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Collections_Generic_IList_A1_TypeOf())
@@ -89615,6 +89992,53 @@ public override class var fullTypeName: String { "System.Collections.Generic.Dic
 	}
 	
 	
+	public func item_get(_ TKey: System_Type /* System.Type */, _ TValue: System_Type /* System.Type */, _ key: System_Object? /* System.Object */) throws -> System_Object? /* System.Object */ {
+		let TKeyC = TKey.__handle
+		let TValueC = TValue.__handle
+		let keyC = key?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Collections_Generic_Dictionary_A2_Item_Get(self.__handle, TKeyC, TValueC, keyC, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	
+	}
+	
+	public func item_set(_ TKey: System_Type /* System.Type */, _ TValue: System_Type /* System.Type */, _ key: System_Object? /* System.Object */, _ value: System_Object? /* System.Object */) throws {
+		let TKeyC = TKey.__handle
+		let TValueC = TValue.__handle
+		let keyC = key?.__handle
+		let valueC = value?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Collections_Generic_Dictionary_A2_Item_Set(self.__handle, TKeyC, TValueC, keyC, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		
+	
+	}
+	
+	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Collections_Generic_Dictionary_A2_TypeOf())
 		
@@ -89729,6 +90153,53 @@ public override class var fullTypeName: String { "System.Collections.Generic.IDi
 		
 	
 	}
+	
+	public func item_get(_ TKey: System_Type /* System.Type */, _ TValue: System_Type /* System.Type */, _ key: System_Object? /* System.Object */) throws -> System_Object? /* System.Object */ {
+		let TKeyC = TKey.__handle
+		let TValueC = TValue.__handle
+		let keyC = key?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Collections_Generic_IDictionary_A2_Item_Get(self.__handle, TKeyC, TValueC, keyC, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	
+	}
+	
+	public func item_set(_ TKey: System_Type /* System.Type */, _ TValue: System_Type /* System.Type */, _ key: System_Object? /* System.Object */, _ value: System_Object? /* System.Object */) throws {
+		let TKeyC = TKey.__handle
+		let TValueC = TValue.__handle
+		let keyC = key?.__handle
+		let valueC = value?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Collections_Generic_IDictionary_A2_Item_Set(self.__handle, TKeyC, TValueC, keyC, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		
+	
+	}
+	
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Collections_Generic_IDictionary_A2_TypeOf())
@@ -89859,6 +90330,29 @@ public override class var fullTypeName: String { "System.Collections.ObjectModel
 	}
 	
 	
+	public func item_get(_ T: System_Type /* System.Type */, _ index: Int32 /* System.Int32 */) throws -> System_Object? /* System.Object */ {
+		let TC = T.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Collections_ObjectModel_ReadOnlyCollection_A1_Item_Get(self.__handle, TC, index, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	
+	}
+	
+	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Collections_ObjectModel_ReadOnlyCollection_A1_TypeOf())
 		
@@ -89929,6 +90423,31 @@ public override class var fullTypeName: String { "System.Collections.Generic.IRe
 		
 	
 	}
+	
+	public func item_get(_ TKey: System_Type /* System.Type */, _ TValue: System_Type /* System.Type */, _ key: System_Object? /* System.Object */) throws -> System_Object? /* System.Object */ {
+		let TKeyC = TKey.__handle
+		let TValueC = TValue.__handle
+		let keyC = key?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Collections_Generic_IReadOnlyDictionary_A2_Item_Get(self.__handle, TKeyC, TValueC, keyC, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	
+	}
+	
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Collections_Generic_IReadOnlyDictionary_A2_TypeOf())

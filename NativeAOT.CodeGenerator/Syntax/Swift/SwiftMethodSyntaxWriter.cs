@@ -592,6 +592,59 @@ if let __exceptionC {
                 parameterList.Add(parameterString);
             }
         }
+        
+        foreach (var parameter in parameters) {
+            bool isOutParameter = parameter.IsOut;
+            
+            Type parameterType = parameter.ParameterType;
+            
+            bool isByRefParameter = parameterType.IsByRef;
+
+            if (isByRefParameter) {
+                parameterType = parameterType.GetNonByRefType();
+            }
+            
+            bool isGenericParameterType = parameterType.IsGenericParameter || parameterType.IsGenericMethodParameter;
+            
+            if (isGenericParameterType) {
+                parameterType = typeof(object);
+            }
+            
+            bool isGenericArrayParameterType = false;
+            Type? arrayType = parameterType.GetElementType();
+                    
+            if (parameterType.IsArray &&
+                arrayType is not null &&
+                (arrayType.IsGenericParameter || arrayType.IsGenericMethodParameter)) {
+                isGenericArrayParameterType = true;
+            }
+
+            if (isGenericArrayParameterType) {
+                parameterType = typeof(Array);
+            }
+            
+            TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
+
+            bool isOptional = parameterTypeDescriptor.RequiresNativePointer;
+            
+            string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(
+                CodeLanguage.Swift,
+                true,
+                isOptional,
+                isOutParameter,
+                isByRefParameter
+            );
+
+            string? parameterName = parameter.Name
+                ?.EscapedSwiftName();
+
+            if (parameterName is null) {
+                throw new Exception("Parameter without a name");
+            }
+
+            string parameterString = $"_ {parameterName}: {unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */";
+            parameterList.Add(parameterString);
+        }
 
         if (memberKind == MemberKind.PropertySetter ||
             memberKind == MemberKind.FieldSetter ||
@@ -611,59 +664,6 @@ if let __exceptionC {
     
             string parameterString = $"_ value: {cSetterOrEventHandlerTypeName} /* {setterOrEventHandlerType.GetFullNameOrName()} */";
             parameterList.Add(parameterString);
-        } else {
-            foreach (var parameter in parameters) {
-                bool isOutParameter = parameter.IsOut;
-                
-                Type parameterType = parameter.ParameterType;
-                
-                bool isByRefParameter = parameterType.IsByRef;
-
-                if (isByRefParameter) {
-                    parameterType = parameterType.GetNonByRefType();
-                }
-                
-                bool isGenericParameterType = parameterType.IsGenericParameter || parameterType.IsGenericMethodParameter;
-                
-                if (isGenericParameterType) {
-                    parameterType = typeof(object);
-                }
-                
-                bool isGenericArrayParameterType = false;
-                Type? arrayType = parameterType.GetElementType();
-                        
-                if (parameterType.IsArray &&
-                    arrayType is not null &&
-                    (arrayType.IsGenericParameter || arrayType.IsGenericMethodParameter)) {
-                    isGenericArrayParameterType = true;
-                }
-
-                if (isGenericArrayParameterType) {
-                    parameterType = typeof(Array);
-                }
-                
-                TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
-
-                bool isOptional = parameterTypeDescriptor.RequiresNativePointer;
-                
-                string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(
-                    CodeLanguage.Swift,
-                    true,
-                    isOptional,
-                    isOutParameter,
-                    isByRefParameter
-                );
-
-                string? parameterName = parameter.Name
-                    ?.EscapedSwiftName();
-
-                if (parameterName is null) {
-                    throw new Exception("Parameter without a name");
-                }
-
-                string parameterString = $"_ {parameterName}: {unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */";
-                parameterList.Add(parameterString);
-            }
         }
 
         string parametersString = string.Join(", ", parameterList);

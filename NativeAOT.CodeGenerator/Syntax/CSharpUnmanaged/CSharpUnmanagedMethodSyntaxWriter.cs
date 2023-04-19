@@ -379,6 +379,12 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             
             returnValuePrefix = $"{fullReturnTypeName} {returnValueName} = {callPrefix}";
         }
+        
+        bool isProperty = memberKind == MemberKind.PropertyGetter ||
+                          memberKind == MemberKind.PropertySetter;
+
+        bool invocationIsIndexer = isProperty &&
+                                   parameters.Any();
 
         string methodNameForInvocation;
 
@@ -403,6 +409,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             }
         } else if (memberKind == MemberKind.TypeOf) {
             methodNameForInvocation = $"typeof({declaringType.GetFullNameOrName()})";
+        } else if (invocationIsIndexer) {
+            methodNameForInvocation = string.Empty;
         } else {
             methodNameForInvocation = $".{methodName}";
         }
@@ -416,9 +424,15 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                                           memberKind != MemberKind.Destructor &&
                                           memberKind != MemberKind.TypeOf;
 
-        string methodInvocationPrefix = invocationNeedsParentheses 
-            ? "("
-            : string.Empty;
+        string methodInvocationPrefix;
+
+        if (invocationNeedsParentheses) {
+            methodInvocationPrefix = "(";
+        } else if (invocationIsIndexer) {
+            methodInvocationPrefix = "[";
+        } else {
+            methodInvocationPrefix = string.Empty;
+        }
 
         string methodInvocationSuffix;
         string? fullSetterTypeConversion = null;
@@ -438,7 +452,14 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 ? string.Format(setterTypeConversion, valueParamterName)
                 : valueParamterName;
 
-            methodInvocationSuffix = $" = {fullSetterTypeConversion}";
+            string indexerSuffix = invocationIsIndexer
+                ? "] "
+                : string.Empty;
+
+            methodInvocationSuffix = $"{indexerSuffix} = {fullSetterTypeConversion}";
+        } else if (memberKind == MemberKind.PropertyGetter &&
+                   invocationIsIndexer) {
+            methodInvocationSuffix = "]";
         } else if (memberKind == MemberKind.EventHandlerAdder ||
                    memberKind == MemberKind.EventHandlerRemover) {
             string valueParamterName = "__value";
@@ -959,21 +980,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 parameterList.Add(parameterString);
             }
         }
-
-        if (memberKind == MemberKind.PropertySetter ||
-            memberKind == MemberKind.FieldSetter ||
-            memberKind == MemberKind.EventHandlerAdder ||
-            memberKind == MemberKind.EventHandlerRemover) {
-            if (setterOrEventHandlerType == null) {
-                throw new Exception("Setter or Event Handler Type may not be null");
-            }
-            
-            TypeDescriptor setterOrEventHandlerTypeDescriptor = setterOrEventHandlerType.GetTypeDescriptor(typeDescriptorRegistry);
-            string unmanagedSetterOrEventHandlerTypeName = setterOrEventHandlerTypeDescriptor.GetTypeName(targetLanguage, true);
-    
-            string parameterString = $"{unmanagedSetterOrEventHandlerTypeName} /* {setterOrEventHandlerType.GetFullNameOrName()} */ {parameterNamePrefix}__value{parameterNameSuffix}";
-            parameterList.Add(parameterString);
-        } else if (memberKind != MemberKind.Destructor) {
+        
+        if (memberKind != MemberKind.Destructor) {
             foreach (var parameter in parameters) {
                 Type parameterType = parameter.ParameterType;
 
@@ -997,6 +1005,21 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 string parameterString = $"{unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */ {parameterNamePrefix}{parameter.Name}{parameterNameSuffix}";
                 parameterList.Add(parameterString);
             }
+        }
+
+        if (memberKind == MemberKind.PropertySetter ||
+            memberKind == MemberKind.FieldSetter ||
+            memberKind == MemberKind.EventHandlerAdder ||
+            memberKind == MemberKind.EventHandlerRemover) {
+            if (setterOrEventHandlerType == null) {
+                throw new Exception("Setter or Event Handler Type may not be null");
+            }
+            
+            TypeDescriptor setterOrEventHandlerTypeDescriptor = setterOrEventHandlerType.GetTypeDescriptor(typeDescriptorRegistry);
+            string unmanagedSetterOrEventHandlerTypeName = setterOrEventHandlerTypeDescriptor.GetTypeName(targetLanguage, true);
+    
+            string parameterString = $"{unmanagedSetterOrEventHandlerTypeName} /* {setterOrEventHandlerType.GetFullNameOrName()} */ {parameterNamePrefix}__value{parameterNameSuffix}";
+            parameterList.Add(parameterString);
         }
 
         if (mayThrow) {

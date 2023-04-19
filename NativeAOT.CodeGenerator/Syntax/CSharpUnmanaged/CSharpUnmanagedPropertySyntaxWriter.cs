@@ -23,7 +23,7 @@ public class CSharpUnmanagedPropertySyntaxWriter: CSharpUnmanagedMethodSyntaxWri
 
         Type declaringType = property.DeclaringType ?? throw new Exception("No declaring type");;
 
-        IEnumerable<ParameterInfo> parameters = Array.Empty<ParameterInfo>();
+        IEnumerable<ParameterInfo> parameters = property.GetIndexParameters();
 
         StringBuilder sb = new();
 

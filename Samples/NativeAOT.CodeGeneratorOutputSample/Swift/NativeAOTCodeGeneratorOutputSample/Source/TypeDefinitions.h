@@ -1,5 +1,5 @@
 // Number of generated types: 1487
-// Number of generated members: 4581
+// Number of generated members: 4605
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -6177,6 +6177,22 @@ System_Collections_IList_RemoveAt(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+System_Object_t /* System.Object */
+System_Collections_IList_Item_Get(
+	System_Collections_IList_t /* System.Collections.IList */ self,
+	int32_t /* System.Int32 */ index,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_IList_Item_Set(
+	System_Collections_IList_t /* System.Collections.IList */ self,
+	int32_t /* System.Int32 */ index,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
 bool /* System.Boolean */
 System_Collections_IList_IsReadOnly_Get(
 	System_Collections_IList_t /* System.Collections.IList */ self,
@@ -7929,6 +7945,14 @@ System_String_Create_2(
 	int32_t /* System.Int32 */ count,
 	System_Exception_t* /* System.Exception */ outException
 );
+
+wchar_t /* System.Char */
+System_String_Chars_Get(
+	System_String_t /* System.String */ self,
+	int32_t /* System.Int32 */ index,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 
 int32_t /* System.Int32 */
 System_String_Length_Get(
@@ -17115,6 +17139,22 @@ System_Reflection_ParameterModifier_Create(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+bool /* System.Boolean */
+System_Reflection_ParameterModifier_Item_Get(
+	System_Reflection_ParameterModifier_t /* System.Reflection.ParameterModifier */ self,
+	int32_t /* System.Int32 */ index,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Reflection_ParameterModifier_Item_Set(
+	System_Reflection_ParameterModifier_t /* System.Reflection.ParameterModifier */ self,
+	int32_t /* System.Int32 */ index,
+	bool /* System.Boolean */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
 System_Type_t __nonnull /* System.Type */
 System_Reflection_ParameterModifier_TypeOf(
 	
@@ -17813,6 +17853,22 @@ System_Collections_IDictionary_Remove(
 	System_Object_t /* System.Object */ key,
 	System_Exception_t* /* System.Exception */ outException
 );
+
+System_Object_t /* System.Object */
+System_Collections_IDictionary_Item_Get(
+	System_Collections_IDictionary_t /* System.Collections.IDictionary */ self,
+	System_Object_t /* System.Object */ key,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_IDictionary_Item_Set(
+	System_Collections_IDictionary_t /* System.Collections.IDictionary */ self,
+	System_Object_t /* System.Object */ key,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 
 System_Collections_ICollection_t /* System.Collections.ICollection */
 System_Collections_IDictionary_Keys_Get(
@@ -24331,6 +24387,14 @@ System_Runtime_CompilerServices_ITuple_Length_Get(
 );
 
 
+System_Object_t /* System.Object */
+System_Runtime_CompilerServices_ITuple_Item_Get(
+	System_Runtime_CompilerServices_ITuple_t /* System.Runtime.CompilerServices.ITuple */ self,
+	int32_t /* System.Int32 */ index,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
 System_Type_t __nonnull /* System.Type */
 System_Runtime_CompilerServices_ITuple_TypeOf(
 	
@@ -30405,6 +30469,22 @@ System_Collections_Hashtable_Create_14(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+System_Object_t /* System.Object */
+System_Collections_Hashtable_Item_Get(
+	System_Collections_Hashtable_t /* System.Collections.Hashtable */ self,
+	System_Object_t /* System.Object */ key,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_Hashtable_Item_Set(
+	System_Collections_Hashtable_t /* System.Collections.Hashtable */ self,
+	System_Object_t /* System.Object */ key,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
 bool /* System.Boolean */
 System_Collections_Hashtable_IsReadOnly_Get(
 	System_Collections_Hashtable_t /* System.Collections.Hashtable */ self,
@@ -30852,6 +30932,22 @@ System_Collections_ArrayList_IsSynchronized_Get(
 System_Object_t /* System.Object */
 System_Collections_ArrayList_SyncRoot_Get(
 	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_Collections_ArrayList_Item_Get(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	int32_t /* System.Int32 */ index,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_ArrayList_Item_Set(
+	System_Collections_ArrayList_t /* System.Collections.ArrayList */ self,
+	int32_t /* System.Int32 */ index,
+	System_Object_t /* System.Object */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -32107,6 +32203,22 @@ void /* System.Void */
 System_Text_StringBuilder_Length_Set(
 	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
 	int32_t /* System.Int32 */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+wchar_t /* System.Char */
+System_Text_StringBuilder_Chars_Get(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Text_StringBuilder_Chars_Set(
+	System_Text_StringBuilder_t /* System.Text.StringBuilder */ self,
+	int32_t /* System.Int32 */ index,
+	wchar_t /* System.Char */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
 
@@ -35666,6 +35778,24 @@ System_Collections_Generic_List_A1_Count_Get(
 );
 
 
+System_Object_t /* System.Object */
+System_Collections_Generic_List_A1_Item_Get(
+	System_Collections_Generic_List_A1_t /* System.Collections.Generic.List<> */ self,
+	System_Type_t /* System.Type */ T,
+	int32_t /* System.Int32 */ index,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_Generic_List_A1_Item_Set(
+	System_Collections_Generic_List_A1_t /* System.Collections.Generic.List<> */ self,
+	System_Type_t /* System.Type */ T,
+	int32_t /* System.Int32 */ index,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
 System_Type_t __nonnull /* System.Type */
 System_Collections_Generic_List_A1_TypeOf(
 	
@@ -35708,6 +35838,24 @@ System_Collections_Generic_IList_A1_RemoveAt(
 	int32_t /* System.Int32 */ index,
 	System_Exception_t* /* System.Exception */ outException
 );
+
+System_Object_t /* System.Object */
+System_Collections_Generic_IList_A1_Item_Get(
+	System_Collections_Generic_IList_A1_t /* System.Collections.Generic.IList<> */ self,
+	System_Type_t /* System.Type */ T,
+	int32_t /* System.Int32 */ index,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_Generic_IList_A1_Item_Set(
+	System_Collections_Generic_IList_A1_t /* System.Collections.Generic.IList<> */ self,
+	System_Type_t /* System.Type */ T,
+	int32_t /* System.Int32 */ index,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 
 System_Type_t __nonnull /* System.Type */
 System_Collections_Generic_IList_A1_TypeOf(
@@ -35867,6 +36015,26 @@ System_Collections_Generic_Dictionary_A2_Count_Get(
 );
 
 
+System_Object_t /* System.Object */
+System_Collections_Generic_Dictionary_A2_Item_Get(
+	System_Collections_Generic_Dictionary_A2_t /* System.Collections.Generic.Dictionary<,> */ self,
+	System_Type_t /* System.Type */ TKey,
+	System_Type_t /* System.Type */ TValue,
+	System_Object_t /* System.Object */ key,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_Generic_Dictionary_A2_Item_Set(
+	System_Collections_Generic_Dictionary_A2_t /* System.Collections.Generic.Dictionary<,> */ self,
+	System_Type_t /* System.Type */ TKey,
+	System_Type_t /* System.Type */ TValue,
+	System_Object_t /* System.Object */ key,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
 System_Type_t __nonnull /* System.Type */
 System_Collections_Generic_Dictionary_A2_TypeOf(
 	
@@ -35920,6 +36088,26 @@ System_Collections_Generic_IDictionary_A2_TryGetValue(
 	System_Object_t* /* System.Object */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
+
+System_Object_t /* System.Object */
+System_Collections_Generic_IDictionary_A2_Item_Get(
+	System_Collections_Generic_IDictionary_A2_t /* System.Collections.Generic.IDictionary<,> */ self,
+	System_Type_t /* System.Type */ TKey,
+	System_Type_t /* System.Type */ TValue,
+	System_Object_t /* System.Object */ key,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_Generic_IDictionary_A2_Item_Set(
+	System_Collections_Generic_IDictionary_A2_t /* System.Collections.Generic.IDictionary<,> */ self,
+	System_Type_t /* System.Type */ TKey,
+	System_Type_t /* System.Type */ TValue,
+	System_Object_t /* System.Object */ key,
+	System_Object_t /* System.Object */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 
 System_Type_t __nonnull /* System.Type */
 System_Collections_Generic_IDictionary_A2_TypeOf(
@@ -35977,6 +36165,15 @@ System_Collections_ObjectModel_ReadOnlyCollection_A1_Count_Get(
 );
 
 
+System_Object_t /* System.Object */
+System_Collections_ObjectModel_ReadOnlyCollection_A1_Item_Get(
+	System_Collections_ObjectModel_ReadOnlyCollection_A1_t /* System.Collections.ObjectModel.ReadOnlyCollection<> */ self,
+	System_Type_t /* System.Type */ T,
+	int32_t /* System.Int32 */ index,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
 System_Type_t __nonnull /* System.Type */
 System_Collections_ObjectModel_ReadOnlyCollection_A1_TypeOf(
 	
@@ -36013,6 +36210,16 @@ System_Collections_Generic_IReadOnlyDictionary_A2_TryGetValue(
 	System_Object_t* /* System.Object */ value,
 	System_Exception_t* /* System.Exception */ outException
 );
+
+System_Object_t /* System.Object */
+System_Collections_Generic_IReadOnlyDictionary_A2_Item_Get(
+	System_Collections_Generic_IReadOnlyDictionary_A2_t /* System.Collections.Generic.IReadOnlyDictionary<,> */ self,
+	System_Type_t /* System.Type */ TKey,
+	System_Type_t /* System.Type */ TValue,
+	System_Object_t /* System.Object */ key,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 
 System_Type_t __nonnull /* System.Type */
 System_Collections_Generic_IReadOnlyDictionary_A2_TypeOf(

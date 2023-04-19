@@ -286,6 +286,50 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
                 parameterList.Add(parameterString);
             }
         }
+        
+        foreach (var parameter in parameters) {
+            bool isOutParameter = parameter.IsOut;
+                
+            Type parameterType = parameter.ParameterType;
+                
+            bool isByRefParameter = parameterType.IsByRef;
+
+            if (isByRefParameter) {
+                parameterType = parameterType.GetNonByRefType();
+            }
+                
+            bool isGenericParameterType = parameterType.IsGenericParameter || parameterType.IsGenericMethodParameter;
+                
+            if (isGenericParameterType) {
+                parameterType = typeof(object);
+            }
+                
+            bool isGenericArrayParameterType = false;
+            Type? arrayType = parameterType.GetElementType();
+                        
+            if (parameterType.IsArray &&
+                arrayType is not null &&
+                (arrayType.IsGenericParameter || arrayType.IsGenericMethodParameter)) {
+                isGenericArrayParameterType = true;
+            }
+
+            if (isGenericArrayParameterType) {
+                parameterType = typeof(Array);
+            }
+                
+            TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
+                
+            string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(
+                CodeLanguage.C,
+                true,
+                true,
+                isOutParameter,
+                isByRefParameter
+            );
+
+            string parameterString = $"{unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */ {parameter.Name}";
+            parameterList.Add(parameterString);
+        }
 
         if (memberKind == MemberKind.PropertySetter ||
             memberKind == MemberKind.FieldSetter ||
@@ -301,50 +345,6 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
     
             string parameterString = $"{cSetterOrEventHandlerTypeName} /* {setterOrEventHandlerType.GetFullNameOrName()} */ value";
             parameterList.Add(parameterString);
-        } else {
-            foreach (var parameter in parameters) {
-                bool isOutParameter = parameter.IsOut;
-                
-                Type parameterType = parameter.ParameterType;
-                
-                bool isByRefParameter = parameterType.IsByRef;
-
-                if (isByRefParameter) {
-                    parameterType = parameterType.GetNonByRefType();
-                }
-                
-                bool isGenericParameterType = parameterType.IsGenericParameter || parameterType.IsGenericMethodParameter;
-                
-                if (isGenericParameterType) {
-                    parameterType = typeof(object);
-                }
-                
-                bool isGenericArrayParameterType = false;
-                Type? arrayType = parameterType.GetElementType();
-                        
-                if (parameterType.IsArray &&
-                    arrayType is not null &&
-                    (arrayType.IsGenericParameter || arrayType.IsGenericMethodParameter)) {
-                    isGenericArrayParameterType = true;
-                }
-
-                if (isGenericArrayParameterType) {
-                    parameterType = typeof(Array);
-                }
-                
-                TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
-                
-                string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(
-                    CodeLanguage.C,
-                    true,
-                    true,
-                    isOutParameter,
-                    isByRefParameter
-                );
-
-                string parameterString = $"{unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */ {parameter.Name}";
-                parameterList.Add(parameterString);
-            }
         }
 
         if (mayThrow) {
