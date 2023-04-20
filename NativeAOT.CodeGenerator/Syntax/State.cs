@@ -1,5 +1,5 @@
 using System.Reflection;
-
+using System.Runtime.CompilerServices;
 using NativeAOT.CodeGenerator.Generator;
 
 namespace NativeAOT.CodeGenerator.Syntax;
@@ -115,5 +115,41 @@ public class State
         string newName = $"{proposedNameWithOverloadPrefix}{newIndex}";
 
         return newName;
+    }
+
+    public IEnumerable<GeneratedMember> GetGeneratedMembersThatAreExtensions()
+    {
+        List<GeneratedMember> extensionMembers = new();
+        
+        foreach (var generatedMember in GeneratedMembers) {
+            MethodBase? methodBase = generatedMember.Member as MethodBase;
+            
+            if (methodBase is null) {
+                continue;
+            }
+
+            Type? declaringType = methodBase.DeclaringType;
+
+            if (declaringType is null) {
+                continue;
+            }
+            
+            if (declaringType.IsGenericType ||
+                declaringType.IsNested ||
+                !declaringType.IsSealed ||
+                !methodBase.IsDefined(typeof(ExtensionAttribute))) {
+                continue;
+            }
+
+            var parameters = methodBase.GetParameters();
+
+            if (parameters.Length < 1) {
+                continue;
+            }
+            
+            extensionMembers.Add(generatedMember);
+        }
+
+        return extensionMembers;
     }
 }

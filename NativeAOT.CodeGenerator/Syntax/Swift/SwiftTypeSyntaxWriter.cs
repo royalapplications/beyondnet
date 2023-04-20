@@ -535,6 +535,7 @@ public class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWriter
             parameterInfos,
             false,
             Array.Empty<Type>(),
+            false,
             typeDescriptorRegistry
         );
         

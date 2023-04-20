@@ -1,5 +1,5 @@
-// Number of generated types: 1488
-// Number of generated members: 4534
+// Number of generated types: 1489
+// Number of generated members: 4535
 
 // MARK: - BEGIN Header
 import Foundation
@@ -92474,6 +92474,30 @@ public class NativeAOT_CodeGeneratorInputSample_Person_Extensions /* NativeAOT.C
 	
 	}
 	
+	public class func tryGetAddress(_ person: NativeAOT_CodeGeneratorInputSample_Person? /* NativeAOT.CodeGeneratorInputSample.Person */, _ address: inout NativeAOT_CodeGeneratorInputSample_Address? /* NativeAOT.CodeGeneratorInputSample.Address */) throws -> Bool /* System.Boolean */ {
+		let personC = person?.__handle
+		var addressC = address?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = NativeAOT_CodeGeneratorInputSample_Person_Extensions_TryGetAddress(personC, &addressC, &__exceptionC)
+		
+		address = NativeAOT_CodeGeneratorInputSample_Address(handle: addressC)
+		
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	
+	}
+	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Person_Extensions_TypeOf())
 		
@@ -92489,6 +92513,7 @@ public class NativeAOT_CodeGeneratorInputSample_Person_Extensions /* NativeAOT.C
 	
 
 }
+
 
 
 public class NativeAOT_CodeGeneratorInputSample_Book /* NativeAOT.CodeGeneratorInputSample.Book */: System_Object {
@@ -93010,6 +93035,32 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers 
 
 
 // MARK: - END APIs
+
+// MARK: - BEGIN API Extensions
+extension NativeAOT_CodeGeneratorInputSample_Person? {
+	public func increaseAge(_ byYears: Int32 /* System.Int32 */) throws {
+		try NativeAOT_CodeGeneratorInputSample_Person_Extensions.increaseAge(self, byYears)
+	}
+	public func tryGetAddress(_ address: inout NativeAOT_CodeGeneratorInputSample_Address? /* NativeAOT.CodeGeneratorInputSample.Address */) throws -> Bool {
+		return try NativeAOT_CodeGeneratorInputSample_Person_Extensions.tryGetAddress(self, &address)
+	}
+	
+
+}
+
+extension NativeAOT_CodeGeneratorInputSample_Person {
+	public func increaseAge(_ byYears: Int32 /* System.Int32 */) throws {
+		try NativeAOT_CodeGeneratorInputSample_Person_Extensions.increaseAge(self, byYears)
+	}
+	public func tryGetAddress(_ address: inout NativeAOT_CodeGeneratorInputSample_Address? /* NativeAOT.CodeGeneratorInputSample.Address */) throws -> Bool {
+		return try NativeAOT_CodeGeneratorInputSample_Person_Extensions.tryGetAddress(self, &address)
+	}
+	
+
+}
+
+
+// MARK: - END API Extensions
 
 // MARK: - BEGIN Footer
 

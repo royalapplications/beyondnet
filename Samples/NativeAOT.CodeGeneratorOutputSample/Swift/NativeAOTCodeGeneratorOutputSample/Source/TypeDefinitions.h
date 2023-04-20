@@ -1,5 +1,5 @@
-// Number of generated types: 1488
-// Number of generated members: 4614
+// Number of generated types: 1489
+// Number of generated members: 4615
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -3127,6 +3127,7 @@ typedef void* System_Collections_Generic_IReadOnlyCollection_A1_t;
 
 
 typedef void* NativeAOT_CodeGeneratorInputSample_Person_Extensions_t;
+
 
 typedef void* NativeAOT_CodeGeneratorInputSample_Book_t;
 
@@ -37081,6 +37082,13 @@ NativeAOT_CodeGeneratorInputSample_Person_Extensions_IncreaseAge(
 	System_Exception_t* /* System.Exception */ outException
 );
 
+bool /* System.Boolean */
+NativeAOT_CodeGeneratorInputSample_Person_Extensions_TryGetAddress(
+	NativeAOT_CodeGeneratorInputSample_Person_t /* NativeAOT.CodeGeneratorInputSample.Person */ person,
+	NativeAOT_CodeGeneratorInputSample_Address_t* /* NativeAOT.CodeGeneratorInputSample.Address */ address,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 System_Type_t __nonnull /* System.Type */
 NativeAOT_CodeGeneratorInputSample_Person_Extensions_TypeOf(
 	
@@ -37092,6 +37100,7 @@ NativeAOT_CodeGeneratorInputSample_Person_Extensions_Destroy(
 );
 
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.Person_Extensions
+
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Book
 NativeAOT_CodeGeneratorInputSample_Book_t /* NativeAOT.CodeGeneratorInputSample.Book */

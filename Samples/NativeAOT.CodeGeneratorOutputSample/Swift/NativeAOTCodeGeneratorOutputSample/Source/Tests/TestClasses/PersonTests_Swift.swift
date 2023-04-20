@@ -247,9 +247,7 @@ final class PersonTests_Swift: XCTestCase {
         
         let increaseAgeByYears: Int32 = 4
         
-        // TODO: This should be refactored to be a Swift extension on the Person class
-        XCTAssertNoThrow(try NativeAOT_CodeGeneratorInputSample_Person_Extensions.increaseAge(baby,
-                                                                                              increaseAgeByYears))
+        XCTAssertNoThrow(try baby.increaseAge(increaseAgeByYears))
         
         let expectedAge = initialAge + increaseAgeByYears
         
@@ -260,6 +258,43 @@ final class PersonTests_Swift: XCTestCase {
         }
         
         XCTAssertEqual(expectedAge, age)
+		
+		var nilAddressRet: NativeAOT_CodeGeneratorInputSample_Address?
+		let nilAddressSuccess: Bool
+		
+		do {
+			nilAddressSuccess = try baby.tryGetAddress(&nilAddressRet)
+		} catch {
+			XCTFail("Person.TryGetAddress should not throw")
+			
+			return
+		}
+		
+		XCTAssertFalse(nilAddressSuccess)
+		XCTAssertNil(nilAddressRet)
+		
+		guard let address = try? NativeAOT_CodeGeneratorInputSample_Address("Street Name".dotNETString(),
+																			"City Name".dotNETString()) else {
+			XCTFail("Address ctor should not throw")
+			
+			return
+		}
+		
+		XCTAssertNoThrow(try baby.address_set(address))
+		
+		var addressRet: NativeAOT_CodeGeneratorInputSample_Address?
+		let addressSuccess: Bool
+		
+		do {
+			addressSuccess = try baby.tryGetAddress(&addressRet)
+		} catch {
+			XCTFail("Person.TryGetAddress should not throw")
+			
+			return
+		}
+		
+		XCTAssertTrue(addressSuccess)
+		XCTAssertNotNil(addressRet)
     }
     
     // TODO: Swiftify

@@ -292,6 +292,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             parameters,
             isGeneric,
             combinedGenericArguments,
+            false,
             typeDescriptorRegistry
         );
 
@@ -568,6 +569,7 @@ if let __exceptionC {
         IEnumerable<ParameterInfo> parameters,
         bool isGeneric,
         IEnumerable<Type> genericArguments,
+        bool onlyWriteParameterNamesAndModifiersForInvocation,
         TypeDescriptorRegistry typeDescriptorRegistry
     )
     {
@@ -586,8 +588,10 @@ if let __exceptionC {
             
             foreach (var genericArgumentType in genericArguments) {
                 string parameterName = genericArgumentType.Name.EscapedSwiftName();
-            
-                string parameterString = $"_ {parameterName}: {nativeSystemTypeTypeName} /* {systemTypeTypeName} */";
+
+                string parameterString = onlyWriteParameterNamesAndModifiersForInvocation 
+                    ? parameterName 
+                    : $"_ {parameterName}: {nativeSystemTypeTypeName} /* {systemTypeTypeName} */";
             
                 parameterList.Add(parameterString);
             }
@@ -642,7 +646,14 @@ if let __exceptionC {
                 throw new Exception("Parameter without a name");
             }
 
-            string parameterString = $"_ {parameterName}: {unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */";
+            string parameterString;
+            
+            if (onlyWriteParameterNamesAndModifiersForInvocation) {
+                parameterString = $"{(isByRefParameter || isOutParameter ? "&" : string.Empty)}{parameterName}";
+            } else {
+                parameterString = $"_ {parameterName}: {unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */";    
+            }
+            
             parameterList.Add(parameterString);
         }
 
@@ -661,8 +672,13 @@ if let __exceptionC {
                 true,
                 true
             );
-    
-            string parameterString = $"_ value: {cSetterOrEventHandlerTypeName} /* {setterOrEventHandlerType.GetFullNameOrName()} */";
+
+            const string parameterName = "value";
+
+            string parameterString = onlyWriteParameterNamesAndModifiersForInvocation
+                ? parameterName
+                : $"_ {parameterName}: {cSetterOrEventHandlerTypeName} /* {setterOrEventHandlerType.GetFullNameOrName()} */";
+            
             parameterList.Add(parameterString);
         }
 

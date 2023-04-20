@@ -437,6 +437,64 @@ final class PersonTests: XCTestCase {
         
         XCTAssertNil(exception)
         XCTAssertEqual(expectedAge, age)
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		var nilAddressRet: NativeAOT_CodeGeneratorInputSample_Address_t?
+		
+		guard NativeAOT_CodeGeneratorInputSample_Person_Extensions_TryGetAddress(baby,
+																				 &nilAddressRet,
+																				 &exception) == false,
+			  exception == nil,
+			  nilAddressRet == nil else {
+			XCTFail("Person.TryGetAddress should not throw and return false and a nil address as out parameter")
+			
+			return
+		}
+		
+		let streetDN = "Street Name".cDotNETString()
+		defer { System_String_Destroy(streetDN) }
+		
+		let cityDN = "City Name".cDotNETString()
+		defer { System_String_Destroy(cityDN)}
+		
+		guard let address = NativeAOT_CodeGeneratorInputSample_Address_Create(streetDN,
+																			  cityDN,
+																			  &exception),
+			  exception == nil else {
+			XCTFail("Address ctor should not throw")
+			
+			return
+		}
+		
+		defer { NativeAOT_CodeGeneratorInputSample_Address_Destroy(address) }
+		
+		NativeAOT_CodeGeneratorInputSample_Person_Address_Set(baby,
+															  address,
+															  &exception)
+		
+		XCTAssertNil(exception)
+		
+		var addressRet: NativeAOT_CodeGeneratorInputSample_Address_t?
+		
+		guard NativeAOT_CodeGeneratorInputSample_Person_Extensions_TryGetAddress(baby,
+																				 &addressRet,
+																				 &exception),
+			  exception == nil,
+			  addressRet != nil else {
+			XCTFail("Person.TryGetAddress should not throw, return true and an Address as out parameter")
+			
+			return
+		}
+		
+		NativeAOT_CodeGeneratorInputSample_Address_Destroy(addressRet)
     }
 	
 	func testPersonChangeAge() {
