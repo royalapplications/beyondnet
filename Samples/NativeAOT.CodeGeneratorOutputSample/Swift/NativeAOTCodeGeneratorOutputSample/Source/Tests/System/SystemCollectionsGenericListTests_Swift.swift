@@ -103,15 +103,10 @@ final class SystemCollectionsGenericListTests_Swift: XCTestCase {
         let listCount = (try? list.count_get(systemStringType)) ?? -1
         XCTAssertEqual(strings.count, .init(listCount))
         
-        guard let array = try? list.toArray(systemStringType) else {
-            XCTFail("System.Collections.Generic.List<System.String>.ToArray should not throw and return an instance")
-            
-            return
-        }
-        
         for idx in 0..<listCount {
-            guard let element = try? array.getValue(idx) else {
-                XCTFail("System.Array.GetValue should not throw and return an instance")
+			guard let element = try? list.item_get(systemStringType,
+												   idx) else {
+                XCTFail("System.Collections.Generic.List<System.String>[] getter not throw and return an instance")
                 
                 return
             }
@@ -128,5 +123,29 @@ final class SystemCollectionsGenericListTests_Swift: XCTestCase {
             
             XCTAssertEqual(expectedString, elementString)
         }
+		
+		let idx1: Int32 = 1
+		
+		let newStringForIdx1 = "New String"
+		let newStringForIdx1DN = newStringForIdx1.dotNETString()
+		
+		do {
+			try list.item_set(systemStringType,
+							  idx1,
+							  newStringForIdx1DN)
+		} catch {
+			XCTFail("System.Collections.Generic.List<System.String>[] setter not throw and return an instance")
+			
+			return
+		}
+		
+		guard let newElement1String = try? list.item_get(systemStringType,
+														 idx1)?.castAs(System_String.self)?.string() else {
+			XCTFail("System.Collections.Generic.List<System.String>[] getter not throw and return an instance")
+			
+			return
+		}
+		
+		XCTAssertEqual(newStringForIdx1, newElement1String)
     }
 }

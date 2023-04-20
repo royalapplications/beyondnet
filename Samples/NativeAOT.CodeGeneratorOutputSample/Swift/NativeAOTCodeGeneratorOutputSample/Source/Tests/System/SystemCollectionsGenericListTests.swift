@@ -162,23 +162,13 @@ final class SystemCollectionsGenericListTests: XCTestCase {
 		XCTAssertNil(exception)
 		XCTAssertEqual(strings.count, .init(listCount))
 		
-		guard let array = System_Collections_Generic_List_A1_ToArray(list,
-																	 systemStringType,
-																	 &exception),
-			  exception == nil else {
-			XCTFail("System.Collections.Generic.List<System.String>.ToArray should not throw and return an instance")
-			
-			return
-		}
-		
-		defer { System_Array_Destroy(array) }
-		
 		for idx in 0..<listCount {
-			guard let element = System_Array_GetValue_1(array,
-														idx,
-														&exception),
+			guard let element = System_Collections_Generic_List_A1_Item_Get(list,
+																			systemStringType,
+																			idx,
+																			&exception),
 				  exception == nil else {
-				XCTFail("System.Array.GetValue should not throw and return an instance")
+				XCTFail("System.Collections.Generic.List<System.String>[] getter should not throw and return an instance")
 				
 				return
 			}
@@ -196,5 +186,32 @@ final class SystemCollectionsGenericListTests: XCTestCase {
 			
 			XCTAssertEqual(expectedString, elementString)
 		}
+		
+		let idx1: Int32 = 1
+		
+		let newStringForIdx1 = "New String"
+		let newStringForIdx1DN = newStringForIdx1.cDotNETString()
+		defer { System_String_Destroy(newStringForIdx1DN) }
+		
+		System_Collections_Generic_List_A1_Item_Set(list,
+													systemStringType,
+													idx1,
+													newStringForIdx1DN,
+													&exception)
+		
+		XCTAssertNil(exception)
+		
+		guard let newElement1String = String(cDotNETString: System_Collections_Generic_List_A1_Item_Get(list,
+																										systemStringType,
+																										idx1,
+																										&exception),
+											 destroyDotNETString: true),
+			  exception == nil else {
+			XCTFail("System.Collections.Generic.List<System.String>[] getter not throw and return an instance")
+			
+			return
+		}
+		
+		XCTAssertEqual(newStringForIdx1, newElement1String)
 	}
 }
