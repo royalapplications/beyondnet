@@ -85,18 +85,14 @@ final class SystemCollectionsGenericDictionaryTests_Swift: XCTestCase {
 
             return
         }
+		
+		guard let valueRet = try? dictionary.item_get(systemStringType,
+													  systemExceptionType,
+													  exceptionMessageDN) else {
+			XCTFail("System.Collections.Generic.Dictionary<System.String, System.Exception>[] should not throw and return an instance")
 
-        var valueRet: System_Object?
-
-        guard (try? dictionary.tryGetValue(systemStringType,
-                                           systemExceptionType,
-                                           exceptionMessageDN,
-                                           &valueRet)) ?? false,
-              let valueRet else {
-            XCTFail("System.Collections.Generic.Dictionary<System.String, System.Exception>.TryGetValue should not throw and return true")
-
-            return
-        }
+			return
+		}
 
         let equal = exceptionValue == valueRet
         XCTAssertTrue(equal)

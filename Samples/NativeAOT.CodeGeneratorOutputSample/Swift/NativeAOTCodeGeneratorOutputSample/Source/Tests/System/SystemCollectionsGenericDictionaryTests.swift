@@ -123,23 +123,19 @@ final class SystemCollectionsGenericDictionaryTests: XCTestCase {
 
             return
         }
-
-        var valueRet: System_Object_t?
-
-        guard System_Collections_Generic_Dictionary_A2_TryGetValue(dictionary,
-                                                                   systemStringType,
-                                                                   systemExceptionType,
-                                                                   exceptionMessageDN,
-                                                                   &valueRet,
-                                                                   &exception),
-              exception == nil,
-              let valueRet else {
-            XCTFail("System.Collections.Generic.Dictionary<System.String, System.Exception>.TryGetValue should not throw and return true")
-
-            return
-        }
-
-        defer { System_Object_Destroy(valueRet) }
+		
+		guard let valueRet = System_Collections_Generic_Dictionary_A2_Item_Get(dictionary,
+																			   systemStringType,
+																			   systemExceptionType,
+																			   exceptionMessageDN,
+																			   &exception),
+			  exception == nil else {
+			XCTFail("System.Collections.Generic.Dictionary<System.String, System.Exception>[] should not throw and return an instance")
+			
+			return
+		}
+		
+		defer { System_Object_Destroy(valueRet) }
 
         let equal = System_Object_Equals(exceptionValue,
                                          valueRet,
