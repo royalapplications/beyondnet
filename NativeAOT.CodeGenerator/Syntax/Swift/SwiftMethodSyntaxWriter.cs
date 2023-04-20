@@ -76,20 +76,6 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         }
 
         #region TODO: Unsupported Stuff
-        foreach (ParameterInfo parameter in parameters) {
-            if (parameter.ParameterType.IsDelegate()) {
-                generatedName = string.Empty;
-                
-                return $"// TODO: Method with Delegate parameter ({cMember.GetGeneratedName(CodeLanguage.C)})";
-            }
-        }
-
-        if (returnOrSetterOrEventHandlerType.IsDelegate()) {
-            generatedName = string.Empty;
-            
-            return $"// TODO: Method with Delegate return or setter or event handler type ({cMember.GetGeneratedName(CodeLanguage.C)})";
-        }
-
         if (returnOrSetterOrEventHandlerType.IsByRef) {
             generatedName = string.Empty;
             
@@ -293,6 +279,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             isGeneric,
             combinedGenericArguments,
             false,
+            false,
             typeDescriptorRegistry
         );
 
@@ -416,6 +403,8 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             }
 
             bool isReturning =
+                memberKind != MemberKind.EventHandlerAdder &&
+                memberKind != MemberKind.EventHandlerRemover &&
                 memberKind != MemberKind.FieldSetter &&
                 memberKind != MemberKind.PropertySetter &&
                 !returnOrSetterTypeDescriptor.IsVoid;
@@ -603,6 +592,7 @@ if let __exceptionC {
             isGeneric,
             genericParameters,
             false,
+            false,
             typeDescriptorRegistry
         );
 
@@ -668,6 +658,7 @@ if let __exceptionC {
             isGeneric,
             genericParameters,
             true,
+            true,
             typeDescriptorRegistry
         );
 
@@ -696,7 +687,8 @@ if let __exceptionC {
         IEnumerable<ParameterInfo> parameters,
         bool isGeneric,
         IEnumerable<Type> genericArguments,
-        bool onlyWriteParameterNamesAndModifiersForInvocation,
+        bool onlyWriteParameterNames,
+        bool writeModifiersForInvocation,
         TypeDescriptorRegistry typeDescriptorRegistry
     )
     {
@@ -716,7 +708,7 @@ if let __exceptionC {
             foreach (var genericArgumentType in genericArguments) {
                 string parameterName = genericArgumentType.Name.EscapedSwiftName();
 
-                string parameterString = onlyWriteParameterNamesAndModifiersForInvocation 
+                string parameterString = onlyWriteParameterNames 
                     ? parameterName 
                     : $"_ {parameterName}: {nativeSystemTypeTypeName} /* {systemTypeTypeName} */";
             
@@ -775,8 +767,12 @@ if let __exceptionC {
 
             string parameterString;
             
-            if (onlyWriteParameterNamesAndModifiersForInvocation) {
-                parameterString = $"{(isByRefParameter || isOutParameter ? "&" : string.Empty)}{parameterName}";
+            if (onlyWriteParameterNames) {
+                if (writeModifiersForInvocation) {
+                    parameterString = $"{(isByRefParameter || isOutParameter ? "&" : string.Empty)}{parameterName}";
+                } else {
+                    parameterString = parameterName;
+                }
             } else {
                 parameterString = $"_ {parameterName}: {unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */";    
             }
@@ -802,7 +798,7 @@ if let __exceptionC {
 
             const string parameterName = "value";
 
-            string parameterString = onlyWriteParameterNamesAndModifiersForInvocation
+            string parameterString = onlyWriteParameterNames
                 ? parameterName
                 : $"_ {parameterName}: {cSetterOrEventHandlerTypeName} /* {setterOrEventHandlerType.GetFullNameOrName()} */";
             
@@ -829,6 +825,18 @@ if let __exceptionC {
         out List<string> convertedGenericMethodArgumentNames
     )
     {
+        string convertedParameterNameSuffix;
+
+        if (sourceLanguage == CodeLanguage.Swift &&
+            targetLanguage == CodeLanguage.C) {
+            convertedParameterNameSuffix = "C";
+        } else if (sourceLanguage == CodeLanguage.C &&
+                   targetLanguage == CodeLanguage.Swift) {
+            convertedParameterNameSuffix = "Swift";
+        } else {
+            throw new Exception("Unknown language pair");
+        }
+        
         StringBuilder sb = new();
         
         convertedParameterNames = new();
@@ -848,7 +856,7 @@ if let __exceptionC {
             foreach (var genericArgumentType in genericTypeArguments) {
                 string name = genericArgumentType.Name;
                 
-                string convertedGenericArgumentName = $"{name}C";
+                string convertedGenericArgumentName = $"{name}{convertedParameterNameSuffix}";
                     
                 string fullTypeConversion = string.Format(systemTypeTypeConversion, name);
                 string typeConversionCode = $"let {convertedGenericArgumentName} = {fullTypeConversion}";
@@ -861,7 +869,7 @@ if let __exceptionC {
             foreach (var genericArgumentType in genericMethodArguments) {
                 string name = genericArgumentType.Name;
                 
-                string convertedGenericArgumentName = $"{name}C";
+                string convertedGenericArgumentName = $"{name}{convertedParameterNameSuffix}";
                     
                 string fullTypeConversion = string.Format(systemTypeTypeConversion, name);
                 string typeConversionCode = $"let {convertedGenericArgumentName} = {fullTypeConversion}";
@@ -948,6 +956,18 @@ if let __exceptionC {
             throw new Exception("Parameter has no name");   
         }
         
+        string convertedParameterNameSuffix;
+
+        if (sourceLanguage == CodeLanguage.Swift &&
+            targetLanguage == CodeLanguage.C) {
+            convertedParameterNameSuffix = "C";
+        } else if (sourceLanguage == CodeLanguage.C &&
+                   targetLanguage == CodeLanguage.Swift) {
+            convertedParameterNameSuffix = "Swift";
+        } else {
+            throw new Exception("Unknown language pair");
+        }
+        
         bool isByRefParameter = parameterType.IsByRef;
         bool isArrayType = parameterType.IsArray;
         bool isInOut = isOutParameter || isByRefParameter;
@@ -989,14 +1009,21 @@ if let __exceptionC {
                 parameterNameForConversion = parameterName.Trim('`');
             }
             
-            convertedParameterName = $"{parameterNameForConversion}C";
+            convertedParameterName = $"{parameterNameForConversion}{convertedParameterNameSuffix}";
 
-            bool isOptional = parameterTypeDescriptor.RequiresNativePointer;
-
-            string optionalString = isOptional
-                ? "?"
-                : string.Empty;
+            string optionalString;
             
+            if (sourceLanguage == CodeLanguage.Swift &&
+                targetLanguage == CodeLanguage.C) {
+                bool isOptional = parameterTypeDescriptor.RequiresNativePointer;
+
+                optionalString = isOptional
+                    ? "?"
+                    : string.Empty;                
+            } else {
+                optionalString = string.Empty;
+            }
+
             string fullTypeConversion = string.Format(typeConversion, $"{parameterName}{optionalString}");
 
             string varOrLet = isInOut 

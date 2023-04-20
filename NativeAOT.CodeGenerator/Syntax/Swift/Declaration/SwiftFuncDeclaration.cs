@@ -1,5 +1,3 @@
-using NativeAOT.CodeGenerator.Extensions;
-
 namespace NativeAOT.CodeGenerator.Syntax.Swift.Declaration;
 
 public struct SwiftFuncDeclaration
