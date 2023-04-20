@@ -37,9 +37,14 @@ public class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWriter
     public string Write(Type type, State state)
     {
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
-        
-        // Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
-        // Result cResult = state.CResult ?? throw new Exception("No CResult provided");
+
+        if (state.CSharpUnmanagedResult is null) {
+            throw new Exception("No CSharpUnmanagedResult provided");
+        }
+
+        if (state.CResult is null) {
+            throw new Exception("No CResult provided");
+        }
         
         if (type.IsPrimitive ||
             type.IsPointer ||
@@ -326,7 +331,10 @@ public class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWriter
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
-        Result cResult = state.CResult ?? throw new Exception("No CResult provided");
+
+        if (state.CResult is null) {
+            throw new Exception("No CResult provided");
+        }
         
         if (type.IsPrimitive ||
             type.IsPointer ||
