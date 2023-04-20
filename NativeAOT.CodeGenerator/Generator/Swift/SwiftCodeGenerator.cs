@@ -4,7 +4,6 @@ using NativeAOT.CodeGenerator.Extensions;
 using NativeAOT.CodeGenerator.SourceCode;
 using NativeAOT.CodeGenerator.Syntax;
 using NativeAOT.CodeGenerator.Syntax.Swift;
-using NativeAOT.CodeGenerator.Types;
 
 namespace NativeAOT.CodeGenerator.Generator.Swift;
 

@@ -38,8 +38,8 @@ public class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWriter
     {
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
-        Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
-        Result cResult = state.CResult ?? throw new Exception("No CResult provided");
+        // Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
+        // Result cResult = state.CResult ?? throw new Exception("No CResult provided");
         
         if (type.IsPrimitive ||
             type.IsPointer ||
@@ -55,8 +55,6 @@ public class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWriter
             return $"// Type \"{type.Name}\" was skipped. Reason: It has no full name.";
         }
         
-        string cTypeName = type.CTypeName();
-
         StringBuilder sb = new();
 
         bool writeMembers = true;
@@ -69,7 +67,6 @@ public class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWriter
             
             string enumdefCode = WriteEnumDef(
                 type,
-                cTypeName,
                 typeDescriptorRegistry
             );
 
@@ -203,7 +200,6 @@ public class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWriter
 
     private string WriteEnumDef(
         Type type,
-        string cTypeName,
         TypeDescriptorRegistry typeDescriptorRegistry
     )
     {
@@ -321,15 +317,12 @@ public class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWriter
         return sb.ToString();
     }
 
-    // TODO
     public string WriteMembers(
         Type type,
         State state,
         bool writeTypeDefinition
     )
     {
-        // return $"// TODO: Members ({type.GetFullNameOrName()})";
-        
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
@@ -347,17 +340,16 @@ public class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWriter
             return string.Empty;
         }
 
-        bool isAbstract = type.IsAbstract;
+        // bool isAbstract = type.IsAbstract;
         
         var cSharpMembers = cSharpUnmanagedResult.GeneratedTypes[type];
-        var cMembers = cResult.GeneratedTypes[type];
+        // var cMembers = cResult.GeneratedTypes[type];
 
         StringBuilder sb = new();
 
         string typeName = type.Name;
         string fullTypeName = type.GetFullNameOrName();
         TypeDescriptor typeDescriptor = type.GetTypeDescriptor(typeDescriptorRegistry);
-        string cTypeName = typeDescriptor.GetTypeName(CodeLanguage.C, false);
         string swiftTypeName =  typeDescriptor.GetTypeName(CodeLanguage.Swift, false);
         
         bool isDelegate = type.IsDelegate();
