@@ -93041,9 +93041,11 @@ extension NativeAOT_CodeGeneratorInputSample_Person? {
 	public func increaseAge(_ byYears: Int32 /* System.Int32 */) throws {
 		try NativeAOT_CodeGeneratorInputSample_Person_Extensions.increaseAge(self, byYears)
 	}
+	
 	public func tryGetAddress(_ address: inout NativeAOT_CodeGeneratorInputSample_Address? /* NativeAOT.CodeGeneratorInputSample.Address */) throws -> Bool {
 		return try NativeAOT_CodeGeneratorInputSample_Person_Extensions.tryGetAddress(self, &address)
 	}
+	
 	
 
 }
@@ -93052,12 +93054,15 @@ extension NativeAOT_CodeGeneratorInputSample_Person {
 	public func increaseAge(_ byYears: Int32 /* System.Int32 */) throws {
 		try NativeAOT_CodeGeneratorInputSample_Person_Extensions.increaseAge(self, byYears)
 	}
+	
 	public func tryGetAddress(_ address: inout NativeAOT_CodeGeneratorInputSample_Address? /* NativeAOT.CodeGeneratorInputSample.Address */) throws -> Bool {
 		return try NativeAOT_CodeGeneratorInputSample_Person_Extensions.tryGetAddress(self, &address)
 	}
 	
+	
 
 }
+
 
 
 // MARK: - END API Extensions

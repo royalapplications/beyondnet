@@ -560,6 +560,133 @@ if let __exceptionC {
         
         return sb.ToString();
     }
+
+    internal static string WriteExtensionMethod(
+        GeneratedMember swiftGeneratedMember,
+        TypeDescriptorRegistry typeDescriptorRegistry
+    )
+    {
+        MethodBase? methodBase = swiftGeneratedMember.Member as MethodBase;
+
+        if (methodBase is null) {
+            return string.Empty;
+        }
+
+        Type? typeWhereExtensionIsDeclared = methodBase.DeclaringType;
+
+        if (typeWhereExtensionIsDeclared is null) {
+            return string.Empty;
+        }
+
+        TypeDescriptor typeDescriptorWhereExtensionIsDeclared = typeWhereExtensionIsDeclared.GetTypeDescriptor(typeDescriptorRegistry);
+        string swiftTypeNameWhereExtensionIsDeclared = typeDescriptorWhereExtensionIsDeclared.GetTypeName(CodeLanguage.Swift, false);
+        
+        string? generatedName = swiftGeneratedMember.GetGeneratedName(CodeLanguage.Swift);
+
+        if (string.IsNullOrEmpty(generatedName)) {
+            return string.Empty;
+        }
+        
+        // TODO: This is likely wrong
+        bool isGeneric = false;
+        IEnumerable<Type> genericParameters = Array.Empty<Type>();
+        
+        List<ParameterInfo> parameters = methodBase.GetParameters().ToList();
+        parameters.RemoveAt(0);
+
+        string parametersString = WriteParameters(
+            swiftGeneratedMember.MemberKind,
+            null,
+            false,
+            typeWhereExtensionIsDeclared,
+            parameters,
+            isGeneric,
+            genericParameters,
+            false,
+            typeDescriptorRegistry
+        );
+
+        Type returnType = typeof(void);
+
+        if (methodBase is MethodInfo methodInfo) {
+            returnType = methodInfo.ReturnType;
+        }
+        
+        bool returnTypeIsByRef = returnType.IsByRef;
+
+        if (returnTypeIsByRef) {
+            returnType = returnType.GetNonByRefType();
+        }
+        
+        TypeDescriptor returnTypeDescriptor = returnType.GetTypeDescriptor(typeDescriptorRegistry);
+        
+        const bool returnTypeIsOptional = true;
+        
+        // TODO: This generates inout TypeName if the return type is by ref
+        string swiftReturnTypeName = returnTypeDescriptor.GetTypeName(
+            CodeLanguage.Swift,
+            true,
+            returnTypeIsOptional,
+            false,
+            returnTypeIsByRef
+        );
+
+        bool mayThrow = swiftGeneratedMember.MayThrow;
+        
+        SwiftFuncDeclaration decl = new(
+            generatedName,
+            SwiftVisibilities.Public,
+            SwiftTypeAttachmentKinds.Instance,
+            false,
+            parametersString,
+            mayThrow,
+            !returnType.IsVoid()
+                ? swiftReturnTypeName
+                : null
+        );
+        
+        string funcSignature = decl.ToString();
+
+        StringBuilder sb = new();
+            
+        sb.AppendLine($"{funcSignature} {{");
+
+        string toReturnOrNotToReturn = !returnType.IsVoid()
+            ? "return "
+            : string.Empty;
+        
+        string toTryOrNotToTry = mayThrow
+            ? "try "
+            : string.Empty;
+
+        string invocationParametersString = WriteParameters(
+            swiftGeneratedMember.MemberKind,
+            null,
+            false,
+            typeWhereExtensionIsDeclared,
+            parameters,
+            isGeneric,
+            genericParameters,
+            true,
+            typeDescriptorRegistry
+        );
+
+        if (string.IsNullOrEmpty(invocationParametersString)) {
+            invocationParametersString = "self";
+        } else {
+            invocationParametersString = "self, " + invocationParametersString;
+        }
+
+        string invocation = $"\t{toReturnOrNotToReturn}{toTryOrNotToTry}{swiftTypeNameWhereExtensionIsDeclared}.{generatedName}({invocationParametersString})";
+
+        sb.AppendLine(invocation);
+        
+        sb.AppendLine("}");
+
+        string code = sb.ToString();
+
+        return code;
+    }
     
     internal static string WriteParameters(
         MemberKind memberKind,

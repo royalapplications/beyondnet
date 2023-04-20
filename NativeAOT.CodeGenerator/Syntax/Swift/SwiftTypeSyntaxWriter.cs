@@ -583,6 +583,82 @@ public class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWriter
         // TODO: Add to State
     }
 
+    public string WriteTypeExtensionMethods(
+        Type extendedType,
+        List<GeneratedMember> generatedMembers
+    )
+    {
+        TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
+        
+        string codeForOptional = GetTypeExtensionsCode(
+            extendedType,
+            true,
+            generatedMembers,
+            typeDescriptorRegistry
+        );
+            
+        string codeForNonOptional = GetTypeExtensionsCode(
+            extendedType,
+            false,
+            generatedMembers,
+            typeDescriptorRegistry
+        );
+
+        StringBuilder sb = new();
+
+        sb.AppendLine(codeForOptional);
+        sb.AppendLine(codeForNonOptional);
+
+        string code = sb.ToString();
+
+        return code;
+    }
+    
+    private string GetTypeExtensionsCode(
+        Type extendedType,
+        bool isExtendedTypeOptional,
+        List<GeneratedMember> generatedMembers,
+        TypeDescriptorRegistry typeDescriptorRegistry
+    )
+    {
+        if (generatedMembers.Count <= 0) {
+            return string.Empty;
+        }
+            
+        StringBuilder sb = new();
+
+        TypeDescriptor extendedTypeDescriptor = extendedType.GetTypeDescriptor(typeDescriptorRegistry);
+        string extendedTypeSwiftName = extendedTypeDescriptor.GetTypeName(CodeLanguage.Swift, false);
+
+        string extendedTypeOptionality = isExtendedTypeOptional
+            ? "?"
+            : string.Empty;
+        
+        string typeExtensionDecl = $"extension {extendedTypeSwiftName}{extendedTypeOptionality} {{";
+        sb.AppendLine(typeExtensionDecl);
+
+        StringBuilder sbMembers = new();
+        
+        foreach (GeneratedMember swiftGeneratedMember in generatedMembers) {
+            string extensionMethod = SwiftMethodSyntaxWriter.WriteExtensionMethod(
+                swiftGeneratedMember,
+                typeDescriptorRegistry
+            );
+
+            sbMembers.AppendLine(extensionMethod);
+        }
+
+        sb.AppendLine(sbMembers
+            .ToString()
+            .IndentAllLines(1));
+
+        sb.AppendLine("}");
+        
+        string code = sb.ToString();
+        
+        return code;
+    }
+
     private ISwiftSyntaxWriter? GetSyntaxWriter(
         MemberKind memberKind,
         MemberTypes memberType
