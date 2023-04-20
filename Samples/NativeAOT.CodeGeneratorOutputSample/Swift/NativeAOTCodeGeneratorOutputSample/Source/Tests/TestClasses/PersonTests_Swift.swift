@@ -297,96 +297,36 @@ final class PersonTests_Swift: XCTestCase {
 		XCTAssertNotNil(addressRet)
     }
     
-    // TODO: Swiftify
-//    func testPersonChangeAge() {
-//        var exception: System_Exception_t?
-//
-//        let initialAge: Int32 = 0
-//
-//        let firstNameDN = "Johanna".cDotNETString()
-//        defer { System_String_Destroy(firstNameDN) }
-//
-//        let lastNameDN = "Doe".cDotNETString()
-//        defer { System_String_Destroy(lastNameDN) }
-//
-//        guard let person = NativeAOT_CodeGeneratorInputSample_Person_Create(firstNameDN,
-//                                                                            lastNameDN,
-//                                                                            initialAge,
-//                                                                            &exception),
-//              exception == nil else {
-//            XCTFail("Person ctor should not throw and return an instance")
-//
-//            return
-//        }
-//
-//        defer { NativeAOT_CodeGeneratorInputSample_Person_Destroy(person) }
-//
-//        let ageAfterCreation = NativeAOT_CodeGeneratorInputSample_Person_Age_Get(person,
-//                                                                                 &exception)
-//
-//        XCTAssertNil(exception)
-//        XCTAssertEqual(initialAge, ageAfterCreation)
-//
-//        let newAgeProviderFunction: NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CFunction_t = { _ in
-//            return 10
-//        }
-//
-//        class Context {
-//            var numberOfTimesDestructorWasCalled = 0
-//        }
-//
-//        let swiftyContext = Context()
-//        let contextBox = NativeBox(swiftyContext)
-//        let context = contextBox.retainedPointer()
-//
-//        let destructorFunction: NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CDestructorFunction_t = { innerContext in
-//            guard let innerContext else {
-//                XCTFail("No context")
-//
-//                return
-//            }
-//
-//            let innerContextBox = NativeBox<Context>.fromPointer(innerContext)
-//            let innerSwiftyContext = innerContextBox.value
-//
-//            innerSwiftyContext.numberOfTimesDestructorWasCalled += 1
-//
-//            XCTAssertEqual(1, innerSwiftyContext.numberOfTimesDestructorWasCalled)
-//
-//            innerContextBox.release(innerContext)
-//        }
-//
-//        guard let newAgeProviderDelegate = NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Create(context,
-//                                                                                                                   newAgeProviderFunction,
-//                                                                                                                   destructorFunction) else {
-//            XCTFail("Person.NewAgeProviderDelegate ctor should return an instance")
-//
-//            return
-//        }
-//
-//        defer { NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Destroy(newAgeProviderDelegate) }
-//
-//        NativeAOT_CodeGeneratorInputSample_Person_ChangeAge(person,
-//                                                            newAgeProviderDelegate,
-//                                                            &exception)
-//
-//        XCTAssertNil(exception)
-//
-//        let age = NativeAOT_CodeGeneratorInputSample_Person_Age_Get(person,
-//                                                                    &exception)
-//
-//        XCTAssertNil(exception)
-//        XCTAssertEqual(10, age)
-//
-//        let retrievedContext = NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Context_Get(newAgeProviderDelegate)
-//        XCTAssertEqual(context, retrievedContext)
-//
-//        let retrievedCFunction = NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CFunction_Get(newAgeProviderDelegate)
-//        XCTAssertNotNil(retrievedCFunction)
-//
-//        let retrievedCDestructorFunction = NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CDestructorFunction_Get(newAgeProviderDelegate)
-//        XCTAssertNotNil(retrievedCDestructorFunction)
-//    }
+    func testPersonChangeAge() {
+        let initialAge: Int32 = 0
+
+        let firstNameDN = "Johanna".dotNETString()
+        let lastNameDN = "Doe".dotNETString()
+
+		guard let person = try? NativeAOT_CodeGeneratorInputSample_Person(firstNameDN,
+																		  lastNameDN,
+																		  initialAge) else {
+            XCTFail("Person ctor should not throw and return an instance")
+
+            return
+        }
+
+		let ageAfterCreation = (try? person.age_get()) ?? -1
+        XCTAssertEqual(initialAge, ageAfterCreation)
+
+		guard let newAgeProviderDelegate = NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate({
+			10
+		}) else {
+            XCTFail("Person.NewAgeProviderDelegate ctor should return an instance")
+
+            return
+        }
+
+		XCTAssertNoThrow(try person.changeAge(newAgeProviderDelegate))
+
+		let age = (try? person.age_get()) ?? -1
+        XCTAssertEqual(10, age)
+    }
     
     func testPersonAddress() {
         let firstNameDN = "Johanna".dotNETString()
@@ -438,182 +378,72 @@ final class PersonTests_Swift: XCTestCase {
         XCTAssertEqual(city, retrievedCity)
     }
     
-    // TODO: Swiftify
-//    func testPersonEvents() {
-//        typealias NumberOfChildrenChangedDelegate_Closure = (_ context: Context) -> Void
-//
-//        class Context {
-//            var delegateClosure: NumberOfChildrenChangedDelegate_Closure
-//            var numberOfTimesNumberOfChildrenChangedWasCalled: Int32 = 0
-//
-//            init(delegateClosure: @escaping NumberOfChildrenChangedDelegate_Closure) {
-//                self.delegateClosure = delegateClosure
-//            }
-//
-//            func invokeClosure() {
-//                delegateClosure(self)
-//            }
-//        }
-//
-//        var exception: System_Exception_t?
-//
-//        let motherFirstNameDN = "Johanna".cDotNETString()
-//        defer { System_String_Destroy(motherFirstNameDN) }
-//
-//        let sonFirstNameDN = "Max".cDotNETString()
-//        defer { System_String_Destroy(sonFirstNameDN) }
-//
-//        let daugtherFirstNameDN = "Marie".cDotNETString()
-//        defer { System_String_Destroy(daugtherFirstNameDN) }
-//
-//        let lastNameDN = "Doe".cDotNETString()
-//        defer { System_String_Destroy(lastNameDN) }
-//
-//        guard let mother = NativeAOT_CodeGeneratorInputSample_Person_Create(motherFirstNameDN,
-//                                                                            lastNameDN,
-//                                                                            40,
-//                                                                            &exception),
-//              exception == nil else {
-//            XCTFail("Person ctor should not throw and return an instance")
-//
-//            return
-//        }
-//
-//        defer { NativeAOT_CodeGeneratorInputSample_Person_Destroy(mother) }
-//
-//        let swiftyContext = Context(delegateClosure: { innerSwiftyContext in
-//            innerSwiftyContext.numberOfTimesNumberOfChildrenChangedWasCalled += 1
-//        })
-//
-//        let contextBox = NativeBox(swiftyContext)
-//        let context = contextBox.retainedPointer()
-//
-//        let destructor: NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_CDestructorFunction_t = { innerContext in
-//            guard let innerContext else {
-//                XCTFail("Context is nil")
-//
-//                return
-//            }
-//
-//            NativeBox<Context>.release(innerContext)
-//        }
-//
-//        let numberOfChildrenChangedHandler: NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_CFunction_t = { innerContext in
-//            guard let innerContext else {
-//                XCTFail("Context is nil")
-//
-//                return
-//            }
-//
-//            let innerContextBox = NativeBox<Context>.fromPointer(innerContext)
-//            let innerSwiftyContext = innerContextBox.value
-//
-//            innerSwiftyContext.invokeClosure()
-//        }
-//
-//        guard let numberOfChildrenChangedDelegate = NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_Create(context,
-//                                                                                                                                     numberOfChildrenChangedHandler,
-//                                                                                                                                     destructor) else {
-//            XCTFail("Number of children changed delegate ctor should return an instance")
-//
-//            return
-//        }
-//
-//        defer { NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_Destroy(numberOfChildrenChangedDelegate) }
-//
-//        NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChanged_Add(mother,
-//                                                                              numberOfChildrenChangedDelegate)
-//
-//        guard let son = NativeAOT_CodeGeneratorInputSample_Person_Create(sonFirstNameDN,
-//                                                                         lastNameDN,
-//                                                                         4,
-//                                                                         &exception),
-//              exception == nil else {
-//            XCTFail("Person ctor should not throw and return an instance")
-//
-//            return
-//        }
-//
-//        defer { NativeAOT_CodeGeneratorInputSample_Person_Destroy(son) }
-//
-//        NativeAOT_CodeGeneratorInputSample_Person_AddChild(mother,
-//                                                           son,
-//                                                           &exception)
-//
-//        guard exception == nil else {
-//            XCTFail("Person.AddChild should not throw")
-//
-//            return
-//        }
-//
-//        guard let daugther = NativeAOT_CodeGeneratorInputSample_Person_Create(daugtherFirstNameDN,
-//                                                                              lastNameDN,
-//                                                                              10,
-//                                                                              &exception),
-//              exception == nil else {
-//            XCTFail("Person ctor should not throw and return an instance")
-//
-//            return
-//        }
-//
-//        defer { NativeAOT_CodeGeneratorInputSample_Person_Destroy(daugther) }
-//
-//        NativeAOT_CodeGeneratorInputSample_Person_AddChild(mother,
-//                                                           daugther,
-//                                                           &exception)
-//
-//        guard exception == nil else {
-//            XCTFail("Person.AddChild should not throw")
-//
-//            return
-//        }
-//
-//        let numberOfChildren = NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildren_Get(mother,
-//                                                                                              &exception)
-//
-//        guard exception == nil else {
-//            XCTFail("Person.NumberOfChildren should not throw")
-//
-//            return
-//        }
-//
-//        let expectedNumberOfChildren: Int32 = 2
-//
-//        XCTAssertEqual(expectedNumberOfChildren, numberOfChildren)
-//        XCTAssertEqual(expectedNumberOfChildren, swiftyContext.numberOfTimesNumberOfChildrenChangedWasCalled)
-//
-//        NativeAOT_CodeGeneratorInputSample_Person_RemoveChild(mother,
-//                                                              daugther,
-//                                                              &exception)
-//
-//        XCTAssertNil(exception)
-//
-//        XCTAssertEqual(3, swiftyContext.numberOfTimesNumberOfChildrenChangedWasCalled)
-//
-//        NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChanged_Remove(mother,
-//                                                                                 numberOfChildrenChangedDelegate)
-//
-//        NativeAOT_CodeGeneratorInputSample_Person_RemoveChildAt(mother,
-//                                                                0,
-//                                                                &exception)
-//
-//        XCTAssertNil(exception)
-//
-//        XCTAssertEqual(3, swiftyContext.numberOfTimesNumberOfChildrenChangedWasCalled)
-//
-//        let numberOfChildrenAfterRemoval = NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildren_Get(mother,
-//                                                                                                          &exception)
-//
-//        guard exception == nil else {
-//            XCTFail("Person.NumberOfChildren should not throw")
-//
-//            return
-//        }
-//
-//        let expectedNumberOfChildrenAfterRemoval: Int32 = 0
-//
-//        XCTAssertEqual(expectedNumberOfChildrenAfterRemoval, numberOfChildrenAfterRemoval)
-//    }
+    func testPersonEvents() {
+        var numberOfTimesNumberOfChildrenChangedWasCalled: Int32 = 0
+
+        let motherFirstNameDN = "Johanna".dotNETString()
+        let sonFirstNameDN = "Max".dotNETString()
+        let daugtherFirstNameDN = "Marie".dotNETString()
+        let lastNameDN = "Doe".dotNETString()
+		
+		guard let mother = try? NativeAOT_CodeGeneratorInputSample_Person(motherFirstNameDN,
+																		  lastNameDN,
+																		  40) else {
+            XCTFail("Person ctor should not throw and return an instance")
+
+            return
+        }
+
+		guard let numberOfChildrenChangedDelegate = NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate({
+			numberOfTimesNumberOfChildrenChangedWasCalled += 1
+		}) else {
+			XCTFail("Number of children changed delegate ctor should return an instance")
+
+			return
+		}
+		
+		mother.numberOfChildrenChanged_add(numberOfChildrenChangedDelegate)
+
+		guard let son = try? NativeAOT_CodeGeneratorInputSample_Person(sonFirstNameDN,
+																	   lastNameDN,
+																	   4) else {
+            XCTFail("Person ctor should not throw and return an instance")
+
+            return
+        }
+		
+		XCTAssertNoThrow(try mother.addChild(son))
+		
+		guard let daugther = try? NativeAOT_CodeGeneratorInputSample_Person(daugtherFirstNameDN,
+																			lastNameDN,
+																			10) else {
+            XCTFail("Person ctor should not throw and return an instance")
+
+            return
+        }
+		
+		XCTAssertNoThrow(try mother.addChild(daugther))
+
+		let numberOfChildren = (try? mother.numberOfChildren_get()) ?? -1
+
+        let expectedNumberOfChildren: Int32 = 2
+
+        XCTAssertEqual(expectedNumberOfChildren, numberOfChildren)
+        XCTAssertEqual(expectedNumberOfChildren, numberOfTimesNumberOfChildrenChangedWasCalled)
+
+		XCTAssertNoThrow(try mother.removeChild(daugther))
+
+        XCTAssertEqual(3, numberOfTimesNumberOfChildrenChangedWasCalled)
+		
+		mother.numberOfChildrenChanged_remove(numberOfChildrenChangedDelegate)
+		
+		XCTAssertNoThrow(try mother.removeChildAt(0))
+        XCTAssertEqual(3, numberOfTimesNumberOfChildrenChangedWasCalled)
+
+		let numberOfChildrenAfterRemoval = (try? mother.numberOfChildren_get()) ?? -1
+        let expectedNumberOfChildrenAfterRemoval: Int32 = 0
+        XCTAssertEqual(expectedNumberOfChildrenAfterRemoval, numberOfChildrenAfterRemoval)
+    }
     
     func testPersonChildrenArrayChange() {
         let motherFirstNameDN = "Johanna".dotNETString()
