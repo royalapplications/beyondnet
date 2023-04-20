@@ -312,6 +312,9 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             sb.AppendLine(selfConversionCode);
         }
 
+        bool isIndexerSetter = memberKind == MemberKind.PropertySetter &&
+                               parameters.Any();
+
         string parameterConversions = WriteParameterConversions(
             CodeLanguage.CSharpUnmanaged,
             CodeLanguage.CSharp,
@@ -563,7 +566,17 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             }
 
             if (convertedParameterNames.Count > 0) {
-                sb.AppendLine($"{implPrefix}System.Object[] __parametersForGenericCall = new System.Object[] {{ {convertedParameterNamesString} }};");
+                string parameterNamesString = convertedParameterNamesString;
+
+                if (memberKind == MemberKind.PropertySetter) {
+                    if (!parameterNamesString.TrimEnd().EndsWith(',')) {
+                        parameterNamesString += ", ";
+                    }
+
+                    parameterNamesString += $"{fullSetterTypeConversion}";
+                }
+                
+                sb.AppendLine($"{implPrefix}System.Object[] __parametersForGenericCall = new System.Object[] {{ {parameterNamesString} }};");
 
                 List<string> parameterTypeNames = new();
 
@@ -628,6 +641,10 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                             parameterTypeNames.Add(typeOfCode);
                         }
                     }
+                }
+
+                if (memberKind == MemberKind.PropertySetter) {
+                    parameterTypeNames.Add($"typeof({returnOrSetterOrEventHandlerType.GetFullNameOrName()})");
                 }
 
                 string parameterTypeNamesString = string.Join(", ", parameterTypeNames);
