@@ -370,8 +370,8 @@ public class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWriter
                                        ?? "DNObject";
             
             sb.AppendLine($"public class {swiftTypeName} /* {fullTypeName} */: {swiftBaseTypeName} {{");
-            sb.AppendLine($"public override class var typeName: String {{ \"{typeName}\" }}");
-            sb.AppendLine($"public override class var fullTypeName: String {{ \"{fullTypeName}\" }}");
+            sb.AppendLine($"\tpublic override class var typeName: String {{ \"{typeName}\" }}");
+            sb.AppendLine($"\tpublic override class var fullTypeName: String {{ \"{fullTypeName}\" }}");
         }
 
         // if (isDelegate) {

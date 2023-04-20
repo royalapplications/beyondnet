@@ -1,5 +1,5 @@
-// Number of generated types: 1487
-// Number of generated members: 4605
+// Number of generated types: 1488
+// Number of generated members: 4614
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -3106,6 +3106,8 @@ typedef void* NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair
 
 // Type "T[]" was skipped. Reason: It has no full name.
 // Type "T" was skipped. Reason: It has no full name.
+
+typedef void* NativeAOT_CodeGeneratorInputSample_IndexerTests_t;
 
 typedef void* NativeAOT_CodeGeneratorInputSample_Person_t;
 
@@ -36796,6 +36798,72 @@ NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_Destroy(
 #pragma mark - END APIs of T[]
 
 
+
+#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.IndexerTests
+NativeAOT_CodeGeneratorInputSample_IndexerTests_t /* NativeAOT.CodeGeneratorInputSample.IndexerTests */
+NativeAOT_CodeGeneratorInputSample_IndexerTests_Create(
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_String_t /* System.String */
+NativeAOT_CodeGeneratorInputSample_IndexerTests_StoredString_Get(
+	NativeAOT_CodeGeneratorInputSample_IndexerTests_t /* NativeAOT.CodeGeneratorInputSample.IndexerTests */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+NativeAOT_CodeGeneratorInputSample_IndexerTests_StoredNumber_Get(
+	NativeAOT_CodeGeneratorInputSample_IndexerTests_t /* NativeAOT.CodeGeneratorInputSample.IndexerTests */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Guid_t /* System.Guid */
+NativeAOT_CodeGeneratorInputSample_IndexerTests_StoredGuid_Get(
+	NativeAOT_CodeGeneratorInputSample_IndexerTests_t /* NativeAOT.CodeGeneratorInputSample.IndexerTests */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_Array_t /* System.Object[] */
+NativeAOT_CodeGeneratorInputSample_IndexerTests_StoredValue_Get(
+	NativeAOT_CodeGeneratorInputSample_IndexerTests_t /* NativeAOT.CodeGeneratorInputSample.IndexerTests */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_Array_t /* System.Object[] */
+NativeAOT_CodeGeneratorInputSample_IndexerTests_Item_Get(
+	NativeAOT_CodeGeneratorInputSample_IndexerTests_t /* NativeAOT.CodeGeneratorInputSample.IndexerTests */ self,
+	System_String_t /* System.String */ aString,
+	int32_t /* System.Int32 */ aNumber,
+	System_Guid_t /* System.Guid */ aGuid,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_IndexerTests_Item_Set(
+	NativeAOT_CodeGeneratorInputSample_IndexerTests_t /* NativeAOT.CodeGeneratorInputSample.IndexerTests */ self,
+	System_String_t /* System.String */ aString,
+	int32_t /* System.Int32 */ aNumber,
+	System_Guid_t /* System.Guid */ aGuid,
+	System_Object_Array_t /* System.Object[] */ value,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t __nonnull /* System.Type */
+NativeAOT_CodeGeneratorInputSample_IndexerTests_TypeOf(
+	
+);
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_IndexerTests_Destroy(
+	NativeAOT_CodeGeneratorInputSample_IndexerTests_t /* NativeAOT.CodeGeneratorInputSample.IndexerTests */ self
+);
+
+#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.IndexerTests
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Person
 System_String_t /* System.String */
