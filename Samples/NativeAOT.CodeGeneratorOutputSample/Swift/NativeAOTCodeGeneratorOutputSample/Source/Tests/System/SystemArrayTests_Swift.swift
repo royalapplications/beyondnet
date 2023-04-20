@@ -48,6 +48,49 @@ final class SystemArrayTests_Swift: XCTestCase {
         let equals = now == retrievedNow
         XCTAssertTrue(equals)
     }
+	
+	func testSystemArrayConvertedToIList() {
+		guard let now = try? System_DateTime.now_get() else {
+			XCTFail("System.DateTime.Now should not throw and return an instance")
+			
+			return
+		}
+		
+		guard let dateTimeType = try? now.getType() else {
+			XCTFail("System.Object.GetType should not throw and return an instance")
+			
+			return
+		}
+		
+		let arrayLength: Int32 = 1
+		
+		guard let arrayOfDateTime = try? System_Array.createInstance(dateTimeType,
+																	 arrayLength) else {
+			XCTFail("System.Array.CreateInstance should not fail and return an instance")
+			
+			return
+		}
+		
+		guard let iList = try? arrayOfDateTime.castTo(System_Collections_IList.self) else {
+			XCTFail("Failed to cast System.Array to System.Collections.IList")
+			
+			return
+		}
+		
+		let index: Int32 = 0
+		
+		XCTAssertNoThrow(try iList.item_set(index,
+											now))
+		
+		guard let retrievedNow = try? iList.item_get(index) else {
+			XCTFail("System.Collections.IList[] should not throw and return an instance")
+			
+			return
+		}
+		
+		let equals = now == retrievedNow
+		XCTAssertTrue(equals)
+	}
     
     func testEmptyArrayWithGenerics() {
         let systemStringType = System_String.typeOf()
