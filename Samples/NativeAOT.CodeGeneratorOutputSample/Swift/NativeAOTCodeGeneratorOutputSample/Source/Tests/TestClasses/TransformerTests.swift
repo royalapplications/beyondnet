@@ -30,8 +30,8 @@ final class TransformerTests: XCTestCase {
 		let expectedOutputString = inputString.uppercased()
 		
 		guard let outputString = String(cDotNETString: NativeAOT_CodeGeneratorInputSample_Transformer_TransformString(inputStringDN,
-																													 uppercaser,
-																													 &exception),
+																													  uppercaser,
+																													  &exception),
 										destroyDotNETString: true),
 			  exception == nil else {
 			XCTFail("Transformer.TransformString should not throw and return an instance of a c string")
@@ -62,8 +62,8 @@ final class TransformerTests: XCTestCase {
 		defer { NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate_Destroy(uppercaser) }
 		
 		guard let outputString = String(cDotNETString: NativeAOT_CodeGeneratorInputSample_Transformer_GetAndTransformString(fixedStringProvider,
-																														   uppercaser,
-																														   &exception),
+																															uppercaser,
+																															&exception),
 										destroyDotNETString: true),
 			  exception == nil else {
 			XCTFail("Transformer.GetAndTransformString should not throw and return an instance")
@@ -131,7 +131,7 @@ final class TransformerTests: XCTestCase {
 		let expectedOutputString = inputString.lowercased()
 		
 		guard let outputString = String(cDotNETString: NativeAOT_CodeGeneratorInputSample_Transformer_UppercaseString(inputStringDN,
-																													 &exception),
+																													  &exception),
 										destroyDotNETString: true),
 			  exception == nil else {
 			XCTFail("Transformer.UppercaseString should not throw and return an instance of a c string")
