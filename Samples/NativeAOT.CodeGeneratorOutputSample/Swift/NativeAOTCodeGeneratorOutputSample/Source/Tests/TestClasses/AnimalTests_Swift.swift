@@ -86,49 +86,48 @@ final class AnimalTests_Swift: XCTestCase {
 		XCTAssertEqual(expectedEat, eat)
 	}
 	
-	// TODO: Swiftify
-//	func testCustomAnimalCreator() {
-//		var exception: System_Exception_t?
-//
-//		guard let creatorDelegate = NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate({ animalName in
-//			guard let animalName else {
-//				// Can't create an animal without a name
-//
-//				return nil
-//			}
-//
-//			guard let animal = try? NativeAOT_CodeGeneratorInputSample_GenericAnimal(animalNameDN) else {
-//				XCTFail("GenericAnimal ctor should not throw and return an instance")
-//
-//				return nil
-//			}
-//
-//			return animal
-//		}) else {
-//			XCTFail("AnimalCreatorDelegate ctor should return an instance")
-//
-//			return
-//		}
-//
-//
-//		let animalName = "Horse"
-//		let animalNameDN = animalName.dotNETString()
-//
-//		guard let horse = try? NativeAOT_CodeGeneratorInputSample_AnimalFactory.createAnimal(animalNameDN,
-//																							 creatorDelegate) else {
-//			XCTFail("AnimalFactory.CreateAnimal should not throw and return an instance")
-//
-//			return
-//		}
-//
-//		guard let retrievedAnimalName = try? horse.name_get()?.string() else {
-//			XCTFail()
-//
-//			return
-//		}
-//
-//		XCTAssertEqual(animalName, retrievedAnimalName)
-//	}
+	func testCustomAnimalCreator() {
+		let creatorFunc: NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate.ClosureType = { innerAnimalName in
+			guard let innerAnimalName else {
+				// Can't create an animal without a name
+
+				return nil
+			}
+
+			guard let animal = try? NativeAOT_CodeGeneratorInputSample_GenericAnimal(innerAnimalName),
+				  let animalAsIAnimal = try? animal.castTo(NativeAOT_CodeGeneratorInputSample_IAnimal.self) else {
+				XCTFail("GenericAnimal ctor should not throw and return an instance")
+
+				return nil
+			}
+			
+			return animalAsIAnimal
+		}
+
+		guard let creatorDelegate = NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate(creatorFunc) else {
+			XCTFail("AnimalCreatorDelegate ctor should return an instance")
+
+			return
+		}
+		
+		let animalName = "Horse"
+		let animalNameDN = animalName.dotNETString()
+
+		guard let horse = try? NativeAOT_CodeGeneratorInputSample_AnimalFactory.createAnimal(animalNameDN,
+																							 creatorDelegate) else {
+			XCTFail("AnimalFactory.CreateAnimal should not throw and return an instance")
+
+			return
+		}
+
+		guard let retrievedAnimalName = try? horse.name_get()?.string() else {
+			XCTFail()
+
+			return
+		}
+
+		XCTAssertEqual(animalName, retrievedAnimalName)
+	}
 	
 	// TODO: Swiftify
 //	func testGettingDefaultAnimalCreator() {

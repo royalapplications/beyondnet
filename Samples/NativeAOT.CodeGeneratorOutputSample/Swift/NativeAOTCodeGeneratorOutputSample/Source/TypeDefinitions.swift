@@ -17,6 +17,7 @@ public struct DNChar {
 
 public class DNObject {
     let __handle: UnsafeMutableRawPointer
+    var __skipDestroy = false
 
     public class var typeName: String { "" }
     public class var fullTypeName: String { "" }
@@ -40,6 +41,8 @@ public class DNObject {
     }
 
     deinit {
+        guard !__skipDestroy else { return }
+        
         // Enable for debugging
         // print("[DEBUG] Will destroy \(Self.fullTypeName)")
 
@@ -94724,6 +94727,7 @@ public class System_Reflection_ModuleResolveEventHandler /* System.Reflection.Mo
 			let __returnValueSwift = __innerClosure(senderSwift, eSwift)
 
 			let __returnValue = __returnValueSwift?.__handle
+			__returnValueSwift?.__skipDestroy = true // Will be destroyed by .NET
 
 			return __returnValue
 		}
@@ -95063,6 +95067,7 @@ public class System_ResolveEventHandler /* System.ResolveEventHandler */: System
 			let __returnValueSwift = __innerClosure(senderSwift, argsSwift)
 
 			let __returnValue = __returnValueSwift?.__handle
+			__returnValueSwift?.__skipDestroy = true // Will be destroyed by .NET
 
 			return __returnValue
 		}
@@ -95286,6 +95291,7 @@ public class NativeAOT_CodeGeneratorInputSample_MoveDelegate /* NativeAOT.CodeGe
 			let __returnValueSwift = __innerClosure(newStreetSwift, newCitySwift)
 
 			let __returnValue = __returnValueSwift?.__handle
+			__returnValueSwift?.__skipDestroy = true // Will be destroyed by .NET
 
 			return __returnValue
 		}
@@ -95344,6 +95350,7 @@ public class NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate /* NativeA
 			let __returnValueSwift = __innerClosure(animalNameSwift)
 
 			let __returnValue = __returnValueSwift?.__handle
+			__returnValueSwift?.__skipDestroy = true // Will be destroyed by .NET
 
 			return __returnValue
 		}
@@ -95517,6 +95524,7 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDel
 			let __returnValueSwift = __innerClosure(inputStringSwift)
 
 			let __returnValue = __returnValueSwift?.__handle
+			__returnValueSwift?.__skipDestroy = true // Will be destroyed by .NET
 
 			return __returnValue
 		}
@@ -95629,6 +95637,7 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate
 			let __returnValueSwift = __innerClosure()
 
 			let __returnValue = __returnValueSwift?.__handle
+			__returnValueSwift?.__skipDestroy = true // Will be destroyed by .NET
 
 			return __returnValue
 		}

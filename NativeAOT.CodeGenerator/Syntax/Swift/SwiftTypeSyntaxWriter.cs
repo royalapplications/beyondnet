@@ -294,6 +294,7 @@ public class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWriter
                 string fullReturnTypeConversion = $"let {newReturnValueName} = {string.Format(returnTypeConversion, $"{returnValueName}?")}";
     
                 sb.AppendLine($"\t\t\t{fullReturnTypeConversion}");
+                sb.AppendLine($"\t\t\t{returnValueName}?.__skipDestroy = true // Will be destroyed by .NET");
                 sb.AppendLine();
                         
                 returnValueName = newReturnValueName;

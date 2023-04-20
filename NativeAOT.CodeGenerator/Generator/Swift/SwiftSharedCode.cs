@@ -13,6 +13,7 @@ public struct DNChar {
 
 public class DNObject {
     let __handle: UnsafeMutableRawPointer
+    var __skipDestroy = false
 
     public class var typeName: String { "" }
     public class var fullTypeName: String { "" }
@@ -36,6 +37,8 @@ public class DNObject {
     }
 
     deinit {
+        guard !__skipDestroy else { return }
+        
         // Enable for debugging
         // print("[DEBUG] Will destroy \(Self.fullTypeName)")
 
