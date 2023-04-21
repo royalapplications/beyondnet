@@ -80,23 +80,12 @@ public partial class SwiftTypeSyntaxWriter
         sb.AppendLine();
         #endregion Type Names
         
-        string swiftFuncParameters = SwiftMethodSyntaxWriter.WriteParameters(
-            MemberKind.Method,
-            null,
-            false,
-            type,
-            parameterInfos,
-            false,
-            Array.Empty<Type>(),
-            false,
-            false,
-            typeDescriptorRegistry
-        );
-
         #region Closure Type Alias
         string closureTypeAliasCode = WriteClosureTypeAlias(
-            swiftFuncParameters,
+            type,
+            parameterInfos,
             swiftReturnTypeName,
+            typeDescriptorRegistry,
             out string closureTypeTypeAliasName
         );
 
@@ -240,6 +229,19 @@ public partial class SwiftTypeSyntaxWriter
         #endregion Init
 
         #region Invoke
+        string swiftFuncParameters = SwiftMethodSyntaxWriter.WriteParameters(
+            MemberKind.Method,
+            null,
+            false,
+            type,
+            parameterInfos,
+            false,
+            Array.Empty<Type>(),
+            false,
+            false,
+            typeDescriptorRegistry
+        );
+        
         SwiftFuncDeclaration swiftFuncDecl = new(
             "invoke",
             SwiftVisibilities.Public,
@@ -350,11 +352,26 @@ public partial class SwiftTypeSyntaxWriter
     }
 
     private string WriteClosureTypeAlias(
-        string swiftFuncParameters,
+        Type type,
+        ParameterInfo[] parameterInfos,
         string swiftReturnTypeName,
+        TypeDescriptorRegistry typeDescriptorRegistry,
         out string closureTypeTypeAliasName
     )
     {
+        string swiftFuncParameters = SwiftMethodSyntaxWriter.WriteParameters(
+            MemberKind.Method,
+            null,
+            false,
+            type,
+            parameterInfos,
+            false,
+            Array.Empty<Type>(),
+            false,
+            false,
+            typeDescriptorRegistry
+        );
+        
         SwiftClosureDeclaration swiftClosureDecl = new(
             swiftFuncParameters,
             false,
