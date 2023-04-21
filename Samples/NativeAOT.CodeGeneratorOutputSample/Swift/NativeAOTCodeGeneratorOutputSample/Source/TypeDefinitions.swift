@@ -89552,9 +89552,8 @@ public class System_Action /* System.Action */: System_MulticastDelegate {
 	public override class var typeName: String { "System.Action" }
 	public override class var fullTypeName: String { "System.Action" }
 	
-
 	public typealias ClosureType = () -> Void
-
+	
 	private static func __createCFunction() -> System_Action_CFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -89568,7 +89567,6 @@ public class System_Action /* System.Action */: System_MulticastDelegate {
 		}
 	}
 	
-
 	private static func __createCDestructorFunction() -> System_Action_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -89577,7 +89575,6 @@ public class System_Action /* System.Action */: System_MulticastDelegate {
 		}
 	}
 	
-
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
@@ -89590,7 +89587,6 @@ public class System_Action /* System.Action */: System_MulticastDelegate {
 		self.init(handle: __delegateC)
 	}
 	
-
 	public func invoke() throws -> Void {
 		var __exceptionC: System_Exception_t?
 	
@@ -89599,7 +89595,6 @@ public class System_Action /* System.Action */: System_MulticastDelegate {
 		
 	}
 	
-
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Action_TypeOf())
 		
@@ -89619,9 +89614,8 @@ public class System_MulticastDelegate /* System.MulticastDelegate */: System_Del
 	public override class var typeName: String { "System.MulticastDelegate" }
 	public override class var fullTypeName: String { "System.MulticastDelegate" }
 	
-
 	public typealias ClosureType = () -> Void
-
+	
 	private static func __createCFunction() -> System_MulticastDelegate_CFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -89635,7 +89629,6 @@ public class System_MulticastDelegate /* System.MulticastDelegate */: System_Del
 		}
 	}
 	
-
 	private static func __createCDestructorFunction() -> System_MulticastDelegate_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -89644,7 +89637,6 @@ public class System_MulticastDelegate /* System.MulticastDelegate */: System_Del
 		}
 	}
 	
-
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
@@ -89657,7 +89649,6 @@ public class System_MulticastDelegate /* System.MulticastDelegate */: System_Del
 		self.init(handle: __delegateC)
 	}
 	
-
 	public func invoke() throws -> Void {
 		var __exceptionC: System_Exception_t?
 	
@@ -89666,7 +89657,6 @@ public class System_MulticastDelegate /* System.MulticastDelegate */: System_Del
 		
 	}
 	
-
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_MulticastDelegate_TypeOf())
 		
@@ -89686,9 +89676,8 @@ public class System_Delegate /* System.Delegate */: System_Object {
 	public override class var typeName: String { "System.Delegate" }
 	public override class var fullTypeName: String { "System.Delegate" }
 	
-
 	public typealias ClosureType = () -> Void
-
+	
 	private static func __createCFunction() -> System_Delegate_CFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -89702,7 +89691,6 @@ public class System_Delegate /* System.Delegate */: System_Object {
 		}
 	}
 	
-
 	private static func __createCDestructorFunction() -> System_Delegate_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -89711,7 +89699,6 @@ public class System_Delegate /* System.Delegate */: System_Object {
 		}
 	}
 	
-
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
@@ -89724,7 +89711,6 @@ public class System_Delegate /* System.Delegate */: System_Object {
 		self.init(handle: __delegateC)
 	}
 	
-
 	public func invoke() throws -> Void {
 		var __exceptionC: System_Exception_t?
 	
@@ -89733,7 +89719,6 @@ public class System_Delegate /* System.Delegate */: System_Object {
 		
 	}
 	
-
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Delegate_TypeOf())
 		
@@ -89755,9 +89740,8 @@ public class System_Reflection_TypeFilter /* System.Reflection.TypeFilter */: Sy
 	public override class var typeName: String { "System.Reflection.TypeFilter" }
 	public override class var fullTypeName: String { "System.Reflection.TypeFilter" }
 	
-
 	public typealias ClosureType = (_ m: System_Type? /* System.Type */, _ filterCriteria: System_Object? /* System.Object */) -> Bool
-
+	
 	private static func __createCFunction() -> System_Reflection_TypeFilter_CFunction_t {
 		return { __innerContext, m, filterCriteria in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -89774,7 +89758,6 @@ public class System_Reflection_TypeFilter /* System.Reflection.TypeFilter */: Sy
 		}
 	}
 	
-
 	private static func __createCDestructorFunction() -> System_Reflection_TypeFilter_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -89783,7 +89766,6 @@ public class System_Reflection_TypeFilter /* System.Reflection.TypeFilter */: Sy
 		}
 	}
 	
-
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
@@ -89796,7 +89778,6 @@ public class System_Reflection_TypeFilter /* System.Reflection.TypeFilter */: Sy
 		self.init(handle: __delegateC)
 	}
 	
-
 	public func invoke(_ m: System_Type? /* System.Type */, _ filterCriteria: System_Object? /* System.Object */) throws -> Bool {
 		var __exceptionC: System_Exception_t?
 	
@@ -89807,7 +89788,6 @@ public class System_Reflection_TypeFilter /* System.Reflection.TypeFilter */: Sy
 		
 	}
 	
-
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_TypeFilter_TypeOf())
 		
@@ -89827,9 +89807,8 @@ public class System_AsyncCallback /* System.AsyncCallback */: System_MulticastDe
 	public override class var typeName: String { "System.AsyncCallback" }
 	public override class var fullTypeName: String { "System.AsyncCallback" }
 	
-
 	public typealias ClosureType = (_ ar: System_IAsyncResult? /* System.IAsyncResult */) -> Void
-
+	
 	private static func __createCFunction() -> System_AsyncCallback_CFunction_t {
 		return { __innerContext, ar in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -89844,7 +89823,6 @@ public class System_AsyncCallback /* System.AsyncCallback */: System_MulticastDe
 		}
 	}
 	
-
 	private static func __createCDestructorFunction() -> System_AsyncCallback_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -89853,7 +89831,6 @@ public class System_AsyncCallback /* System.AsyncCallback */: System_MulticastDe
 		}
 	}
 	
-
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
@@ -89866,7 +89843,6 @@ public class System_AsyncCallback /* System.AsyncCallback */: System_MulticastDe
 		self.init(handle: __delegateC)
 	}
 	
-
 	public func invoke(_ ar: System_IAsyncResult? /* System.IAsyncResult */) throws -> Void {
 		var __exceptionC: System_Exception_t?
 	
@@ -89876,7 +89852,6 @@ public class System_AsyncCallback /* System.AsyncCallback */: System_MulticastDe
 		
 	}
 	
-
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_AsyncCallback_TypeOf())
 		
@@ -89896,9 +89871,8 @@ public class System_Reflection_ModuleResolveEventHandler /* System.Reflection.Mo
 	public override class var typeName: String { "System.Reflection.ModuleResolveEventHandler" }
 	public override class var fullTypeName: String { "System.Reflection.ModuleResolveEventHandler" }
 	
-
 	public typealias ClosureType = (_ sender: System_Object? /* System.Object */, _ e: System_ResolveEventArgs? /* System.ResolveEventArgs */) -> System_Reflection_Module?
-
+	
 	private static func __createCFunction() -> System_Reflection_ModuleResolveEventHandler_CFunction_t {
 		return { __innerContext, sender, e in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -89918,7 +89892,6 @@ public class System_Reflection_ModuleResolveEventHandler /* System.Reflection.Mo
 		}
 	}
 	
-
 	private static func __createCDestructorFunction() -> System_Reflection_ModuleResolveEventHandler_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -89927,7 +89900,6 @@ public class System_Reflection_ModuleResolveEventHandler /* System.Reflection.Mo
 		}
 	}
 	
-
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
@@ -89940,7 +89912,6 @@ public class System_Reflection_ModuleResolveEventHandler /* System.Reflection.Mo
 		self.init(handle: __delegateC)
 	}
 	
-
 	public func invoke(_ sender: System_Object? /* System.Object */, _ e: System_ResolveEventArgs? /* System.ResolveEventArgs */) throws -> System_Reflection_Module? {
 		var __exceptionC: System_Exception_t?
 	
@@ -89951,7 +89922,6 @@ public class System_Reflection_ModuleResolveEventHandler /* System.Reflection.Mo
 		
 	}
 	
-
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_ModuleResolveEventHandler_TypeOf())
 		
@@ -89971,9 +89941,8 @@ public class System_Reflection_MemberFilter /* System.Reflection.MemberFilter */
 	public override class var typeName: String { "System.Reflection.MemberFilter" }
 	public override class var fullTypeName: String { "System.Reflection.MemberFilter" }
 	
-
 	public typealias ClosureType = (_ m: System_Reflection_MemberInfo? /* System.Reflection.MemberInfo */, _ filterCriteria: System_Object? /* System.Object */) -> Bool
-
+	
 	private static func __createCFunction() -> System_Reflection_MemberFilter_CFunction_t {
 		return { __innerContext, m, filterCriteria in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -89990,7 +89959,6 @@ public class System_Reflection_MemberFilter /* System.Reflection.MemberFilter */
 		}
 	}
 	
-
 	private static func __createCDestructorFunction() -> System_Reflection_MemberFilter_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -89999,7 +89967,6 @@ public class System_Reflection_MemberFilter /* System.Reflection.MemberFilter */
 		}
 	}
 	
-
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
@@ -90012,7 +89979,6 @@ public class System_Reflection_MemberFilter /* System.Reflection.MemberFilter */
 		self.init(handle: __delegateC)
 	}
 	
-
 	public func invoke(_ m: System_Reflection_MemberInfo? /* System.Reflection.MemberInfo */, _ filterCriteria: System_Object? /* System.Object */) throws -> Bool {
 		var __exceptionC: System_Exception_t?
 	
@@ -90023,7 +89989,6 @@ public class System_Reflection_MemberFilter /* System.Reflection.MemberFilter */
 		
 	}
 	
-
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_MemberFilter_TypeOf())
 		
@@ -90043,9 +90008,8 @@ public class System_Threading_ContextCallback /* System.Threading.ContextCallbac
 	public override class var typeName: String { "System.Threading.ContextCallback" }
 	public override class var fullTypeName: String { "System.Threading.ContextCallback" }
 	
-
 	public typealias ClosureType = (_ state: System_Object? /* System.Object */) -> Void
-
+	
 	private static func __createCFunction() -> System_Threading_ContextCallback_CFunction_t {
 		return { __innerContext, state in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -90060,7 +90024,6 @@ public class System_Threading_ContextCallback /* System.Threading.ContextCallbac
 		}
 	}
 	
-
 	private static func __createCDestructorFunction() -> System_Threading_ContextCallback_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -90069,7 +90032,6 @@ public class System_Threading_ContextCallback /* System.Threading.ContextCallbac
 		}
 	}
 	
-
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
@@ -90082,7 +90044,6 @@ public class System_Threading_ContextCallback /* System.Threading.ContextCallbac
 		self.init(handle: __delegateC)
 	}
 	
-
 	public func invoke(_ state: System_Object? /* System.Object */) throws -> Void {
 		var __exceptionC: System_Exception_t?
 	
@@ -90092,7 +90053,6 @@ public class System_Threading_ContextCallback /* System.Threading.ContextCallbac
 		
 	}
 	
-
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Threading_ContextCallback_TypeOf())
 		
@@ -90112,9 +90072,8 @@ public class System_UnhandledExceptionEventHandler /* System.UnhandledExceptionE
 	public override class var typeName: String { "System.UnhandledExceptionEventHandler" }
 	public override class var fullTypeName: String { "System.UnhandledExceptionEventHandler" }
 	
-
 	public typealias ClosureType = (_ sender: System_Object? /* System.Object */, _ e: System_UnhandledExceptionEventArgs? /* System.UnhandledExceptionEventArgs */) -> Void
-
+	
 	private static func __createCFunction() -> System_UnhandledExceptionEventHandler_CFunction_t {
 		return { __innerContext, sender, e in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -90130,7 +90089,6 @@ public class System_UnhandledExceptionEventHandler /* System.UnhandledExceptionE
 		}
 	}
 	
-
 	private static func __createCDestructorFunction() -> System_UnhandledExceptionEventHandler_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -90139,7 +90097,6 @@ public class System_UnhandledExceptionEventHandler /* System.UnhandledExceptionE
 		}
 	}
 	
-
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
@@ -90152,7 +90109,6 @@ public class System_UnhandledExceptionEventHandler /* System.UnhandledExceptionE
 		self.init(handle: __delegateC)
 	}
 	
-
 	public func invoke(_ sender: System_Object? /* System.Object */, _ e: System_UnhandledExceptionEventArgs? /* System.UnhandledExceptionEventArgs */) throws -> Void {
 		var __exceptionC: System_Exception_t?
 	
@@ -90163,7 +90119,6 @@ public class System_UnhandledExceptionEventHandler /* System.UnhandledExceptionE
 		
 	}
 	
-
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_UnhandledExceptionEventHandler_TypeOf())
 		
@@ -90183,9 +90138,8 @@ public class System_EventHandler /* System.EventHandler */: System_MulticastDele
 	public override class var typeName: String { "System.EventHandler" }
 	public override class var fullTypeName: String { "System.EventHandler" }
 	
-
 	public typealias ClosureType = (_ sender: System_Object? /* System.Object */, _ e: System_EventArgs? /* System.EventArgs */) -> Void
-
+	
 	private static func __createCFunction() -> System_EventHandler_CFunction_t {
 		return { __innerContext, sender, e in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -90201,7 +90155,6 @@ public class System_EventHandler /* System.EventHandler */: System_MulticastDele
 		}
 	}
 	
-
 	private static func __createCDestructorFunction() -> System_EventHandler_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -90210,7 +90163,6 @@ public class System_EventHandler /* System.EventHandler */: System_MulticastDele
 		}
 	}
 	
-
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
@@ -90223,7 +90175,6 @@ public class System_EventHandler /* System.EventHandler */: System_MulticastDele
 		self.init(handle: __delegateC)
 	}
 	
-
 	public func invoke(_ sender: System_Object? /* System.Object */, _ e: System_EventArgs? /* System.EventArgs */) throws -> Void {
 		var __exceptionC: System_Exception_t?
 	
@@ -90234,7 +90185,6 @@ public class System_EventHandler /* System.EventHandler */: System_MulticastDele
 		
 	}
 	
-
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_EventHandler_TypeOf())
 		
@@ -90254,9 +90204,8 @@ public class System_AssemblyLoadEventHandler /* System.AssemblyLoadEventHandler 
 	public override class var typeName: String { "System.AssemblyLoadEventHandler" }
 	public override class var fullTypeName: String { "System.AssemblyLoadEventHandler" }
 	
-
 	public typealias ClosureType = (_ sender: System_Object? /* System.Object */, _ args: System_AssemblyLoadEventArgs? /* System.AssemblyLoadEventArgs */) -> Void
-
+	
 	private static func __createCFunction() -> System_AssemblyLoadEventHandler_CFunction_t {
 		return { __innerContext, sender, args in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -90272,7 +90221,6 @@ public class System_AssemblyLoadEventHandler /* System.AssemblyLoadEventHandler 
 		}
 	}
 	
-
 	private static func __createCDestructorFunction() -> System_AssemblyLoadEventHandler_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -90281,7 +90229,6 @@ public class System_AssemblyLoadEventHandler /* System.AssemblyLoadEventHandler 
 		}
 	}
 	
-
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
@@ -90294,7 +90241,6 @@ public class System_AssemblyLoadEventHandler /* System.AssemblyLoadEventHandler 
 		self.init(handle: __delegateC)
 	}
 	
-
 	public func invoke(_ sender: System_Object? /* System.Object */, _ args: System_AssemblyLoadEventArgs? /* System.AssemblyLoadEventArgs */) throws -> Void {
 		var __exceptionC: System_Exception_t?
 	
@@ -90305,7 +90251,6 @@ public class System_AssemblyLoadEventHandler /* System.AssemblyLoadEventHandler 
 		
 	}
 	
-
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_AssemblyLoadEventHandler_TypeOf())
 		
@@ -90325,9 +90270,8 @@ public class System_ResolveEventHandler /* System.ResolveEventHandler */: System
 	public override class var typeName: String { "System.ResolveEventHandler" }
 	public override class var fullTypeName: String { "System.ResolveEventHandler" }
 	
-
 	public typealias ClosureType = (_ sender: System_Object? /* System.Object */, _ args: System_ResolveEventArgs? /* System.ResolveEventArgs */) -> System_Reflection_Assembly?
-
+	
 	private static func __createCFunction() -> System_ResolveEventHandler_CFunction_t {
 		return { __innerContext, sender, args in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -90347,7 +90291,6 @@ public class System_ResolveEventHandler /* System.ResolveEventHandler */: System
 		}
 	}
 	
-
 	private static func __createCDestructorFunction() -> System_ResolveEventHandler_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -90356,7 +90299,6 @@ public class System_ResolveEventHandler /* System.ResolveEventHandler */: System
 		}
 	}
 	
-
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
@@ -90369,7 +90311,6 @@ public class System_ResolveEventHandler /* System.ResolveEventHandler */: System
 		self.init(handle: __delegateC)
 	}
 	
-
 	public func invoke(_ sender: System_Object? /* System.Object */, _ args: System_ResolveEventArgs? /* System.ResolveEventArgs */) throws -> System_Reflection_Assembly? {
 		var __exceptionC: System_Exception_t?
 	
@@ -90380,7 +90321,6 @@ public class System_ResolveEventHandler /* System.ResolveEventHandler */: System
 		
 	}
 	
-
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_ResolveEventHandler_TypeOf())
 		
@@ -90400,9 +90340,8 @@ public class System_Threading_ThreadStart /* System.Threading.ThreadStart */: Sy
 	public override class var typeName: String { "System.Threading.ThreadStart" }
 	public override class var fullTypeName: String { "System.Threading.ThreadStart" }
 	
-
 	public typealias ClosureType = () -> Void
-
+	
 	private static func __createCFunction() -> System_Threading_ThreadStart_CFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -90416,7 +90355,6 @@ public class System_Threading_ThreadStart /* System.Threading.ThreadStart */: Sy
 		}
 	}
 	
-
 	private static func __createCDestructorFunction() -> System_Threading_ThreadStart_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -90425,7 +90363,6 @@ public class System_Threading_ThreadStart /* System.Threading.ThreadStart */: Sy
 		}
 	}
 	
-
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
@@ -90438,7 +90375,6 @@ public class System_Threading_ThreadStart /* System.Threading.ThreadStart */: Sy
 		self.init(handle: __delegateC)
 	}
 	
-
 	public func invoke() throws -> Void {
 		var __exceptionC: System_Exception_t?
 	
@@ -90447,7 +90383,6 @@ public class System_Threading_ThreadStart /* System.Threading.ThreadStart */: Sy
 		
 	}
 	
-
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Threading_ThreadStart_TypeOf())
 		
@@ -90467,9 +90402,8 @@ public class System_Threading_ParameterizedThreadStart /* System.Threading.Param
 	public override class var typeName: String { "System.Threading.ParameterizedThreadStart" }
 	public override class var fullTypeName: String { "System.Threading.ParameterizedThreadStart" }
 	
-
 	public typealias ClosureType = (_ obj: System_Object? /* System.Object */) -> Void
-
+	
 	private static func __createCFunction() -> System_Threading_ParameterizedThreadStart_CFunction_t {
 		return { __innerContext, obj in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -90484,7 +90418,6 @@ public class System_Threading_ParameterizedThreadStart /* System.Threading.Param
 		}
 	}
 	
-
 	private static func __createCDestructorFunction() -> System_Threading_ParameterizedThreadStart_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -90493,7 +90426,6 @@ public class System_Threading_ParameterizedThreadStart /* System.Threading.Param
 		}
 	}
 	
-
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
@@ -90506,7 +90438,6 @@ public class System_Threading_ParameterizedThreadStart /* System.Threading.Param
 		self.init(handle: __delegateC)
 	}
 	
-
 	public func invoke(_ obj: System_Object? /* System.Object */) throws -> Void {
 		var __exceptionC: System_Exception_t?
 	
@@ -90516,7 +90447,6 @@ public class System_Threading_ParameterizedThreadStart /* System.Threading.Param
 		
 	}
 	
-
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Threading_ParameterizedThreadStart_TypeOf())
 		
@@ -90536,9 +90466,8 @@ public class System_Threading_TimerCallback /* System.Threading.TimerCallback */
 	public override class var typeName: String { "System.Threading.TimerCallback" }
 	public override class var fullTypeName: String { "System.Threading.TimerCallback" }
 	
-
 	public typealias ClosureType = (_ state: System_Object? /* System.Object */) -> Void
-
+	
 	private static func __createCFunction() -> System_Threading_TimerCallback_CFunction_t {
 		return { __innerContext, state in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -90553,7 +90482,6 @@ public class System_Threading_TimerCallback /* System.Threading.TimerCallback */
 		}
 	}
 	
-
 	private static func __createCDestructorFunction() -> System_Threading_TimerCallback_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -90562,7 +90490,6 @@ public class System_Threading_TimerCallback /* System.Threading.TimerCallback */
 		}
 	}
 	
-
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
@@ -90575,7 +90502,6 @@ public class System_Threading_TimerCallback /* System.Threading.TimerCallback */
 		self.init(handle: __delegateC)
 	}
 	
-
 	public func invoke(_ state: System_Object? /* System.Object */) throws -> Void {
 		var __exceptionC: System_Exception_t?
 	
@@ -90585,7 +90511,6 @@ public class System_Threading_TimerCallback /* System.Threading.TimerCallback */
 		
 	}
 	
-
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Threading_TimerCallback_TypeOf())
 		
@@ -90605,9 +90530,8 @@ public class NativeAOT_CodeGeneratorInputSample_MoveDelegate /* NativeAOT.CodeGe
 	public override class var typeName: String { "NativeAOT.CodeGeneratorInputSample.MoveDelegate" }
 	public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.MoveDelegate" }
 	
-
 	public typealias ClosureType = (_ newStreet: System_String? /* System.String */, _ newCity: System_String? /* System.String */) -> NativeAOT_CodeGeneratorInputSample_Address?
-
+	
 	private static func __createCFunction() -> NativeAOT_CodeGeneratorInputSample_MoveDelegate_CFunction_t {
 		return { __innerContext, newStreet, newCity in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -90627,7 +90551,6 @@ public class NativeAOT_CodeGeneratorInputSample_MoveDelegate /* NativeAOT.CodeGe
 		}
 	}
 	
-
 	private static func __createCDestructorFunction() -> NativeAOT_CodeGeneratorInputSample_MoveDelegate_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -90636,7 +90559,6 @@ public class NativeAOT_CodeGeneratorInputSample_MoveDelegate /* NativeAOT.CodeGe
 		}
 	}
 	
-
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
@@ -90649,7 +90571,6 @@ public class NativeAOT_CodeGeneratorInputSample_MoveDelegate /* NativeAOT.CodeGe
 		self.init(handle: __delegateC)
 	}
 	
-
 	public func invoke(_ newStreet: System_String? /* System.String */, _ newCity: System_String? /* System.String */) throws -> NativeAOT_CodeGeneratorInputSample_Address? {
 		var __exceptionC: System_Exception_t?
 	
@@ -90660,7 +90581,6 @@ public class NativeAOT_CodeGeneratorInputSample_MoveDelegate /* NativeAOT.CodeGe
 		
 	}
 	
-
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_MoveDelegate_TypeOf())
 		
@@ -90680,9 +90600,8 @@ public class NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate /* NativeA
 	public override class var typeName: String { "NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate" }
 	public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate" }
 	
-
 	public typealias ClosureType = (_ animalName: System_String? /* System.String */) -> NativeAOT_CodeGeneratorInputSample_IAnimal?
-
+	
 	private static func __createCFunction() -> NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_CFunction_t {
 		return { __innerContext, animalName in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -90701,7 +90620,6 @@ public class NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate /* NativeA
 		}
 	}
 	
-
 	private static func __createCDestructorFunction() -> NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -90710,7 +90628,6 @@ public class NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate /* NativeA
 		}
 	}
 	
-
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
@@ -90723,7 +90640,6 @@ public class NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate /* NativeA
 		self.init(handle: __delegateC)
 	}
 	
-
 	public func invoke(_ animalName: System_String? /* System.String */) throws -> NativeAOT_CodeGeneratorInputSample_IAnimal? {
 		var __exceptionC: System_Exception_t?
 	
@@ -90733,7 +90649,6 @@ public class NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate /* NativeA
 		
 	}
 	
-
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_TypeOf())
 		
@@ -90753,9 +90668,8 @@ public class NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDe
 	public override class var typeName: String { "NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate" }
 	public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.Person+NumberOfChildrenChangedDelegate" }
 	
-
 	public typealias ClosureType = () -> Void
-
+	
 	private static func __createCFunction() -> NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_CFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -90769,7 +90683,6 @@ public class NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDe
 		}
 	}
 	
-
 	private static func __createCDestructorFunction() -> NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -90778,7 +90691,6 @@ public class NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDe
 		}
 	}
 	
-
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
@@ -90791,7 +90703,6 @@ public class NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDe
 		self.init(handle: __delegateC)
 	}
 	
-
 	public func invoke() throws -> Void {
 		var __exceptionC: System_Exception_t?
 	
@@ -90800,7 +90711,6 @@ public class NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDe
 		
 	}
 	
-
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_TypeOf())
 		
@@ -90820,9 +90730,8 @@ public class NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate /*
 	public override class var typeName: String { "NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate" }
 	public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.Person+NewAgeProviderDelegate" }
 	
-
 	public typealias ClosureType = () -> Int32
-
+	
 	private static func __createCFunction() -> NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -90837,7 +90746,6 @@ public class NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate /*
 		}
 	}
 	
-
 	private static func __createCDestructorFunction() -> NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -90846,7 +90754,6 @@ public class NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate /*
 		}
 	}
 	
-
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
@@ -90859,7 +90766,6 @@ public class NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate /*
 		self.init(handle: __delegateC)
 	}
 	
-
 	public func invoke() throws -> Int32 {
 		var __exceptionC: System_Exception_t?
 	
@@ -90868,7 +90774,6 @@ public class NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate /*
 		
 	}
 	
-
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_TypeOf())
 		
@@ -90894,9 +90799,8 @@ public class NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate /* NativeAO
 	public override class var typeName: String { "NativeAOT.CodeGeneratorInputSample.CharReturnerDelegate" }
 	public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.CharReturnerDelegate" }
 	
-
 	public typealias ClosureType = () -> DNChar
-
+	
 	private static func __createCFunction() -> NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_CFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -90913,7 +90817,6 @@ public class NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate /* NativeAO
 		}
 	}
 	
-
 	private static func __createCDestructorFunction() -> NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -90922,7 +90825,6 @@ public class NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate /* NativeAO
 		}
 	}
 	
-
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
@@ -90935,7 +90837,6 @@ public class NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate /* NativeAO
 		self.init(handle: __delegateC)
 	}
 	
-
 	public func invoke() throws -> DNChar {
 		var __exceptionC: System_Exception_t?
 	
@@ -90944,7 +90845,6 @@ public class NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate /* NativeAO
 		
 	}
 	
-
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_TypeOf())
 		
@@ -90964,9 +90864,8 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDel
 	public override class var typeName: String { "NativeAOT.CodeGeneratorInputSample.Transformer.StringTransformerDelegate" }
 	public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.Transformer+StringTransformerDelegate" }
 	
-
 	public typealias ClosureType = (_ inputString: System_String? /* System.String */) -> System_String?
-
+	
 	private static func __createCFunction() -> NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate_CFunction_t {
 		return { __innerContext, inputString in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -90985,7 +90884,6 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDel
 		}
 	}
 	
-
 	private static func __createCDestructorFunction() -> NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -90994,7 +90892,6 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDel
 		}
 	}
 	
-
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
@@ -91007,7 +90904,6 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDel
 		self.init(handle: __delegateC)
 	}
 	
-
 	public func invoke(_ inputString: System_String? /* System.String */) throws -> System_String? {
 		var __exceptionC: System_Exception_t?
 	
@@ -91017,7 +90913,6 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDel
 		
 	}
 	
-
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate_TypeOf())
 		
@@ -91037,9 +90932,8 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_DoublesTransformerDe
 	public override class var typeName: String { "NativeAOT.CodeGeneratorInputSample.Transformer.DoublesTransformerDelegate" }
 	public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.Transformer+DoublesTransformerDelegate" }
 	
-
 	public typealias ClosureType = (_ number1: Double /* System.Double */, _ number2: Double /* System.Double */) -> Double
-
+	
 	private static func __createCFunction() -> NativeAOT_CodeGeneratorInputSample_Transformer_DoublesTransformerDelegate_CFunction_t {
 		return { __innerContext, number1, number2 in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -91054,7 +90948,6 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_DoublesTransformerDe
 		}
 	}
 	
-
 	private static func __createCDestructorFunction() -> NativeAOT_CodeGeneratorInputSample_Transformer_DoublesTransformerDelegate_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -91063,7 +90956,6 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_DoublesTransformerDe
 		}
 	}
 	
-
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
@@ -91076,7 +90968,6 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_DoublesTransformerDe
 		self.init(handle: __delegateC)
 	}
 	
-
 	public func invoke(_ number1: Double /* System.Double */, _ number2: Double /* System.Double */) throws -> Double {
 		var __exceptionC: System_Exception_t?
 	
@@ -91085,7 +90976,6 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_DoublesTransformerDe
 		
 	}
 	
-
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Transformer_DoublesTransformerDelegate_TypeOf())
 		
@@ -91105,9 +90995,8 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate
 	public override class var typeName: String { "NativeAOT.CodeGeneratorInputSample.Transformer.StringGetterDelegate" }
 	public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.Transformer+StringGetterDelegate" }
 	
-
 	public typealias ClosureType = () -> System_String?
-
+	
 	private static func __createCFunction() -> NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate_CFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -91125,7 +91014,6 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate
 		}
 	}
 	
-
 	private static func __createCDestructorFunction() -> NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
@@ -91134,7 +91022,6 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate
 		}
 	}
 	
-
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
@@ -91147,7 +91034,6 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate
 		self.init(handle: __delegateC)
 	}
 	
-
 	public func invoke() throws -> System_String? {
 		var __exceptionC: System_Exception_t?
 	
@@ -91156,7 +91042,6 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate
 		
 	}
 	
-
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate_TypeOf())
 		

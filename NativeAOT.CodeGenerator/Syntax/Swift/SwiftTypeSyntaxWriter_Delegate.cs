@@ -74,14 +74,15 @@ public partial class SwiftTypeSyntaxWriter
             
         sb.AppendLine($"public class {swiftTypeName} /* {fullTypeName} */: {swiftBaseTypeName} {{");
 
+        List<string> memberParts = new();
+
         #region Type Names
         string typeNamesCode = WriteTypeNames(
             typeName,
             fullTypeName
         );
-
-        sb.AppendLine(typeNamesCode.IndentAllLines(1));
-        sb.AppendLine();
+        
+        memberParts.Add(typeNamesCode);
         #endregion Type Names
         
         #region Closure Type Alias
@@ -93,8 +94,7 @@ public partial class SwiftTypeSyntaxWriter
             out string closureTypeTypeAliasName
         );
 
-        sb.AppendLine(closureTypeAliasCode.IndentAllLines(1));
-        sb.AppendLine();
+        memberParts.Add(closureTypeAliasCode);
         #endregion Closure Type Alias
 
         #region Create C Function
@@ -111,8 +111,7 @@ public partial class SwiftTypeSyntaxWriter
             out string createCFunctionFuncName
         );
 
-        sb.AppendLine(createCFunctionCode.IndentAllLines(1));
-        sb.AppendLine();
+        memberParts.Add(createCFunctionCode);
         #endregion Create C Function
 
         #region Create C Destructor Function
@@ -122,8 +121,7 @@ public partial class SwiftTypeSyntaxWriter
             out string createCDestructorFunctionFuncName
         );
 
-        sb.AppendLine(createCDestructorFunctionCode.IndentAllLines(1));
-        sb.AppendLine();
+        memberParts.Add(createCDestructorFunctionCode);
         #endregion Create C Destructor Function
 
         #region Init
@@ -134,8 +132,7 @@ public partial class SwiftTypeSyntaxWriter
             createCDestructorFunctionFuncName
         );
 
-        sb.AppendLine(initCode.IndentAllLines(1));
-        sb.AppendLine();
+        memberParts.Add(initCode);
         #endregion Init
 
         #region Invoke
@@ -149,9 +146,11 @@ public partial class SwiftTypeSyntaxWriter
             typeDescriptorRegistry
         );
 
-        sb.AppendLine(invokeCode.IndentAllLines(1));
-        sb.AppendLine();
+        memberParts.Add(invokeCode);
         #endregion Invoke
+
+        string memberPartsCode = string.Join('\n', memberParts);
+        sb.AppendLine(memberPartsCode.IndentAllLines(1));
 
         #region Other Members
         string membersCode = WriteMembers(
@@ -193,6 +192,8 @@ public partial class SwiftTypeSyntaxWriter
         out string closureTypeTypeAliasName
     )
     {
+        StringBuilder sb = new();
+        
         string swiftFuncParameters = SwiftMethodSyntaxWriter.WriteParameters(
             MemberKind.Method,
             null,
@@ -220,7 +221,9 @@ public partial class SwiftTypeSyntaxWriter
             swiftClosureDecl.ToString()
         );
 
-        string code = typeAliasDeclaration.ToString();
+        sb.AppendLine(typeAliasDeclaration.ToString());
+
+        string code = sb.ToString();
 
         return code;
     }
