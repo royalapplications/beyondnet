@@ -58,20 +58,5 @@ final class SystemEnumTests: XCTestCase {
 		XCTAssertEqual(unspecified, names[0])
 		XCTAssertEqual(utc, names[1])
 		XCTAssertEqual(local, names[2])
-		
-		// TODO: Incomplete/Does not work
-//		let utcDN = utc.cDotNETString()
-//		defer { System_String_Destroy(utcDN) }
-//
-//		guard let parsed = System_Enum_Parse_A1(systemDateTimeKindType,
-//												utcDN,
-//												&exception),
-//			  exception == nil else {
-//			XCTFail("System.Enum.Parse should not throw and return an instance")
-//
-//			return
-//		}
-//
-//		defer { System_Object_Destroy(parsed) }
     }
 }
