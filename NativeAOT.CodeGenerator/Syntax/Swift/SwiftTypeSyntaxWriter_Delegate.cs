@@ -75,8 +75,12 @@ public partial class SwiftTypeSyntaxWriter
         sb.AppendLine($"public class {swiftTypeName} /* {fullTypeName} */: {swiftBaseTypeName} {{");
 
         #region Type Names
-        sb.AppendLine($"\tpublic override class var typeName: String {{ \"{typeName}\" }}");
-        sb.AppendLine($"\tpublic override class var fullTypeName: String {{ \"{fullTypeName}\" }}");
+        string typeNamesCode = WriteTypeNames(
+            typeName,
+            fullTypeName
+        );
+
+        sb.AppendLine(typeNamesCode.IndentAllLines(1));
         sb.AppendLine();
         #endregion Type Names
         
@@ -94,6 +98,148 @@ public partial class SwiftTypeSyntaxWriter
         #endregion Closure Type Alias
 
         #region Create C Function
+        string createCFunctionCode = WriteCreateCFunction(
+            type,
+            parameterInfos,
+            cTypeName,
+            closureTypeTypeAliasName,
+            isReturning,
+            returnTypeDescriptor,
+            returnTypeIsOptional,
+            returnTypeIsPrimitive,
+            typeDescriptorRegistry,
+            out string createCFunctionFuncName
+        );
+
+        sb.AppendLine(createCFunctionCode.IndentAllLines(1));
+        sb.AppendLine();
+        #endregion Create C Function
+
+        #region Create C Destructor Function
+        string createCDestructorFunctionCode = WriteCreateCDestructorFunction(
+            cTypeName,
+            closureTypeTypeAliasName,
+            out string createCDestructorFunctionFuncName
+        );
+
+        sb.AppendLine(createCDestructorFunctionCode.IndentAllLines(1));
+        sb.AppendLine();
+        #endregion Create C Destructor Function
+
+        #region Init
+        string initCode = WriteInit(
+            cTypeName,
+            closureTypeTypeAliasName,
+            createCFunctionFuncName,
+            createCDestructorFunctionFuncName
+        );
+
+        sb.AppendLine(initCode.IndentAllLines(1));
+        sb.AppendLine();
+        #endregion Init
+
+        #region Invoke
+        string invokeCode = WriteInvoke(
+            type,
+            parameterInfos,
+            swiftReturnTypeName,
+            returnTypeDescriptor,
+            returnTypeIsOptional,
+            returnTypeIsPrimitive,
+            typeDescriptorRegistry
+        );
+
+        sb.AppendLine(invokeCode.IndentAllLines(1));
+        sb.AppendLine();
+        #endregion Invoke
+
+        #region Other Members
+        string membersCode = WriteMembers(
+            type,
+            state,
+            false
+        );
+                
+        sb.AppendLine(membersCode);
+        #endregion Other Members
+        
+        sb.AppendLine("}");
+
+        string code = sb.ToString();
+
+        return code;
+    }
+
+    private string WriteTypeNames(
+        string typeName,
+        string fullTypeName
+    )
+    {
+        StringBuilder sb = new();
+        
+        sb.AppendLine($"public override class var typeName: String {{ \"{typeName}\" }}");
+        sb.AppendLine($"public override class var fullTypeName: String {{ \"{fullTypeName}\" }}");
+
+        string code = sb.ToString();
+
+        return code;
+    }
+
+    private string WriteClosureTypeAlias(
+        Type type,
+        ParameterInfo[] parameterInfos,
+        string swiftReturnTypeName,
+        TypeDescriptorRegistry typeDescriptorRegistry,
+        out string closureTypeTypeAliasName
+    )
+    {
+        string swiftFuncParameters = SwiftMethodSyntaxWriter.WriteParameters(
+            MemberKind.Method,
+            null,
+            false,
+            type,
+            parameterInfos,
+            false,
+            Array.Empty<Type>(),
+            false,
+            false,
+            typeDescriptorRegistry
+        );
+        
+        SwiftClosureDeclaration swiftClosureDecl = new(
+            swiftFuncParameters,
+            false,
+            swiftReturnTypeName
+        );
+
+        closureTypeTypeAliasName = "ClosureType";
+
+        SwiftTypeAliasDeclaration typeAliasDeclaration = new(
+            closureTypeTypeAliasName,
+            SwiftVisibilities.Public,
+            swiftClosureDecl.ToString()
+        );
+
+        string code = typeAliasDeclaration.ToString();
+
+        return code;
+    }
+
+    private string WriteCreateCFunction(
+        Type type,
+        ParameterInfo[] parameterInfos,
+        string cTypeName,
+        string closureTypeTypeAliasName,
+        bool isReturning,
+        TypeDescriptor returnTypeDescriptor,
+        bool returnTypeIsOptional,
+        bool returnTypeIsPrimitive,
+        TypeDescriptorRegistry typeDescriptorRegistry,
+        out string createCFunctionFuncName
+    )
+    {
+        StringBuilder sb = new();
+        
         string cFunctionParameters = SwiftMethodSyntaxWriter.WriteParameters(
             MemberKind.Method,
             null,
@@ -118,15 +264,15 @@ public partial class SwiftTypeSyntaxWriter
         string fatalErrorMessageIfNoContext = "Context is nil";
         
         string innerSwiftContextVarName = "__innerSwiftContext";
-        string createCFunctionFuncName = "__createCFunction";
+        createCFunctionFuncName = "__createCFunction";
         string innerClosureVarName = "__innerClosure";
 
-        sb.AppendLine($"\tprivate static func {createCFunctionFuncName}() -> {cTypeName}_CFunction_t {{");
-        sb.AppendLine($"\t\treturn {{ {cFunctionParameters} in");
-        sb.AppendLine($"\t\t\tguard let {innerContextParameterName} else {{ fatalError(\"{fatalErrorMessageIfNoContext}\") }}");
+        sb.AppendLine($"private static func {createCFunctionFuncName}() -> {cTypeName}_CFunction_t {{");
+        sb.AppendLine($"\treturn {{ {cFunctionParameters} in");
+        sb.AppendLine($"\t\tguard let {innerContextParameterName} else {{ fatalError(\"{fatalErrorMessageIfNoContext}\") }}");
         sb.AppendLine();
-        sb.AppendLine($"\t\t\tlet {innerSwiftContextVarName} = NativeBox<{closureTypeTypeAliasName}>.fromPointer({innerContextParameterName})");
-        sb.AppendLine($"\t\t\tlet {innerClosureVarName} = {innerSwiftContextVarName}.value");
+        sb.AppendLine($"\t\tlet {innerSwiftContextVarName} = NativeBox<{closureTypeTypeAliasName}>.fromPointer({innerContextParameterName})");
+        sb.AppendLine($"\t\tlet {innerClosureVarName} = {innerSwiftContextVarName}.value");
         sb.AppendLine();
 
         string parameterConversionsToSwift = SwiftMethodSyntaxWriter.WriteParameterConversions(
@@ -145,7 +291,7 @@ public partial class SwiftTypeSyntaxWriter
         );
 
         sb.AppendLine(parameterConversionsToSwift
-            .IndentAllLines(3));
+            .IndentAllLines(2));
         
         string returnValueName = "__returnValueSwift";
             
@@ -157,7 +303,7 @@ public partial class SwiftTypeSyntaxWriter
         
         string invocation = $"{returnValueStorage}{innerClosureVarName}({allParameterNamesString})";
         
-        sb.AppendLine($"\t\t\t{invocation}");
+        sb.AppendLine($"\t\t{invocation}");
         sb.AppendLine();
         
         string returnCode = string.Empty;
@@ -177,10 +323,10 @@ public partial class SwiftTypeSyntaxWriter
 
                 string fullReturnTypeConversion = $"let {newReturnValueName} = {string.Format(returnTypeConversion, $"{returnValueName}{returnTypeOptionalString}")}";
     
-                sb.AppendLine($"\t\t\t{fullReturnTypeConversion}");
+                sb.AppendLine($"\t\t{fullReturnTypeConversion}");
                 
                 if (!returnTypeIsPrimitive) {
-                    sb.AppendLine($"\t\t\t{returnValueName}?.__skipDestroy = true // Will be destroyed by .NET");
+                    sb.AppendLine($"\t\t{returnValueName}?.__skipDestroy = true // Will be destroyed by .NET");
                 }
                 
                 sb.AppendLine();
@@ -192,43 +338,81 @@ public partial class SwiftTypeSyntaxWriter
         }
 
         if (isReturning) {
-            sb.AppendLine($"\t\t\t{returnCode}");
+            sb.AppendLine($"\t\t{returnCode}");
         }
         
-        sb.AppendLine("\t\t}");
         sb.AppendLine("\t}");
-        sb.AppendLine();
-        #endregion Create C Function
+        sb.AppendLine("}");
 
-        #region Create C Destructor Function
-        string createCDestructorFunctionFuncName = "__createCDestructorFunction";
+        string code = sb.ToString();
+
+        return code;
+    }
+
+    private string WriteCreateCDestructorFunction(
+        string cTypeName,
+        string closureTypeTypeAliasName,
+        out string createCDestructorFunctionFuncName
+    )
+    {
+        StringBuilder sb = new();
+
+        string innerContextParameterName = "__innerContext";
+        string fatalErrorMessageIfNoContext = "Context is nil";
         
-        sb.AppendLine($"\tprivate static func {createCDestructorFunctionFuncName}() -> {cTypeName}_CDestructorFunction_t {{");
-        sb.AppendLine($"\t\treturn {{ {innerContextParameterName} in");
-        sb.AppendLine($"\t\t\tguard let {innerContextParameterName} else {{ fatalError(\"{fatalErrorMessageIfNoContext}\") }}");
+        createCDestructorFunctionFuncName = "__createCDestructorFunction";
+        
+        sb.AppendLine($"private static func {createCDestructorFunctionFuncName}() -> {cTypeName}_CDestructorFunction_t {{");
+        sb.AppendLine($"\treturn {{ {innerContextParameterName} in");
+        sb.AppendLine($"\t\tguard let {innerContextParameterName} else {{ fatalError(\"{fatalErrorMessageIfNoContext}\") }}");
         sb.AppendLine();
-        sb.AppendLine($"\t\t\tNativeBox<{closureTypeTypeAliasName}>.release({innerContextParameterName})");
-        sb.AppendLine("\t\t}");
+        sb.AppendLine($"\t\tNativeBox<{closureTypeTypeAliasName}>.release({innerContextParameterName})");
         sb.AppendLine("\t}");
-        sb.AppendLine();
-        #endregion Create C Destructor Function
+        sb.AppendLine("}");
 
-        #region Init
-        sb.AppendLine($"\tpublic convenience init?(_ __closure: @escaping {closureTypeTypeAliasName}) {{");
-        sb.AppendLine($"\t\tlet __cFunction = Self.{createCFunctionFuncName}()");
-        sb.AppendLine($"\t\tlet __cDestructorFunction = Self.{createCDestructorFunctionFuncName}()");
-        sb.AppendLine();
-        sb.AppendLine("\t\tlet __outerSwiftContext = NativeBox(__closure)");
-        sb.AppendLine("\t\tlet __outerContext = __outerSwiftContext.retainedPointer()");
-        sb.AppendLine();
-        sb.AppendLine($"\t\tguard let __delegateC = {cTypeName}_Create(__outerContext, __cFunction, __cDestructorFunction) else {{ return nil }}");
-        sb.AppendLine();
-        sb.AppendLine("\t\tself.init(handle: __delegateC)");
-        sb.AppendLine("\t}");
-        sb.AppendLine();
-        #endregion Init
+        string code = sb.ToString();
 
-        #region Invoke
+        return code;
+    }
+
+    private string WriteInit(
+        string cTypeName,
+        string closureTypeTypeAliasName,
+        string createCFunctionFuncName,
+        string createCDestructorFunctionFuncName
+    )
+    {
+        StringBuilder sb = new();
+        
+        sb.AppendLine($"public convenience init?(_ __closure: @escaping {closureTypeTypeAliasName}) {{");
+        sb.AppendLine($"\tlet __cFunction = Self.{createCFunctionFuncName}()");
+        sb.AppendLine($"\tlet __cDestructorFunction = Self.{createCDestructorFunctionFuncName}()");
+        sb.AppendLine();
+        sb.AppendLine("\tlet __outerSwiftContext = NativeBox(__closure)");
+        sb.AppendLine("\tlet __outerContext = __outerSwiftContext.retainedPointer()");
+        sb.AppendLine();
+        sb.AppendLine($"\tguard let __delegateC = {cTypeName}_Create(__outerContext, __cFunction, __cDestructorFunction) else {{ return nil }}");
+        sb.AppendLine();
+        sb.AppendLine("\tself.init(handle: __delegateC)");
+        sb.AppendLine("}");
+
+        string code = sb.ToString();
+
+        return code;
+    }
+
+    private string WriteInvoke(
+        Type type,
+        ParameterInfo[] parameterInfos,
+        string swiftReturnTypeName,
+        TypeDescriptor returnTypeDescriptor,
+        bool returnTypeIsOptional,
+        bool returnTypeIsPrimitive,
+        TypeDescriptorRegistry typeDescriptorRegistry
+    )
+    {
+        StringBuilder sb = new();
+        
         string swiftFuncParameters = SwiftMethodSyntaxWriter.WriteParameters(
             MemberKind.Method,
             null,
@@ -252,14 +436,14 @@ public partial class SwiftTypeSyntaxWriter
             swiftReturnTypeName
         );
 
-        sb.AppendLine($"\t{swiftFuncDecl} {{");
+        sb.AppendLine($"{swiftFuncDecl} {{");
 
-        sb.AppendLine("\t\tvar __exceptionC: System_Exception_t?");
+        sb.AppendLine("\tvar __exceptionC: System_Exception_t?");
         sb.AppendLine();
 
         string selfConvertedVarName = "__selfC";
 
-        sb.AppendLine($"\t\tlet {selfConvertedVarName} = self.__handle");
+        sb.AppendLine($"\tlet {selfConvertedVarName} = self.__handle");
         sb.AppendLine();
 
         string parameterConversionsToC = SwiftMethodSyntaxWriter.WriteParameterConversions(
@@ -278,7 +462,7 @@ public partial class SwiftTypeSyntaxWriter
         );
 
         sb.AppendLine(parameterConversionsToC
-            .IndentAllLines(2));
+            .IndentAllLines(1));
         
         // TODO
         // string returnValueName = "__returnValueSwift";
@@ -329,71 +513,10 @@ public partial class SwiftTypeSyntaxWriter
         //     sb.AppendLine($"\t\t\t{returnCode}");
         // }
         
-        sb.AppendLine("\t}");
-        
-        sb.AppendLine();
-        #endregion Invoke
-
-        #region Other Members
-        string membersCode = WriteMembers(
-            type,
-            state,
-            false
-        );
-                
-        sb.AppendLine(membersCode);
-        #endregion Other Members
-        
         sb.AppendLine("}");
 
         string code = sb.ToString();
 
         return code;
-    }
-
-    private string WriteClosureTypeAlias(
-        Type type,
-        ParameterInfo[] parameterInfos,
-        string swiftReturnTypeName,
-        TypeDescriptorRegistry typeDescriptorRegistry,
-        out string closureTypeTypeAliasName
-    )
-    {
-        string swiftFuncParameters = SwiftMethodSyntaxWriter.WriteParameters(
-            MemberKind.Method,
-            null,
-            false,
-            type,
-            parameterInfos,
-            false,
-            Array.Empty<Type>(),
-            false,
-            false,
-            typeDescriptorRegistry
-        );
-        
-        SwiftClosureDeclaration swiftClosureDecl = new(
-            swiftFuncParameters,
-            false,
-            swiftReturnTypeName
-        );
-
-        closureTypeTypeAliasName = "ClosureType";
-
-        SwiftTypeAliasDeclaration typeAliasDeclaration = new(
-            closureTypeTypeAliasName,
-            SwiftVisibilities.Public,
-            swiftClosureDecl.ToString()
-        );
-
-        string code = typeAliasDeclaration.ToString();
-
-        return code;
-    }
-
-    private string WriteCreateCFunction(
-    )
-    {
-        return "TODO";
     }
 }
