@@ -9,77 +9,131 @@ namespace NativeAOT.CodeGenerator.Syntax.Swift;
 
 public partial class SwiftTypeSyntaxWriter
 {
+    internal class DelegateTypeInfo
+    {
+        internal Type Type { get; }
+        internal TypeDescriptor TypeDescriptor { get; }
+        internal string TypeName { get; }
+        internal string FullTypeName { get; }
+        internal string CTypeName { get; }
+        internal string SwiftTypeName { get; }
+        
+        internal Type? BaseType { get; }
+        internal TypeDescriptor? BaseTypeDescriptor { get; }
+        internal string SwiftBaseTypeName { get; }
+        
+        internal Type ReturnType { get; }
+        internal TypeDescriptor ReturnTypeDescriptor { get; }
+        internal bool IsReturning { get; }
+        internal bool ReturnTypeIsPrimitive { get; }
+        internal bool ReturnTypeIsOptional { get; }
+        internal string SwiftReturnTypeName { get; }
+        
+        internal ParameterInfo[] ParameterInfos { get; }
+        
+        internal MethodInfo? DelegateInvokeMethod { get; }
+
+        internal DelegateTypeInfo(
+            Type type,
+            MethodInfo? delegateInvokeMethod,
+            TypeDescriptorRegistry typeDescriptorRegistry
+        )
+        {
+            DelegateInvokeMethod = delegateInvokeMethod;
+            
+            Type = type;
+            TypeDescriptor = type.GetTypeDescriptor(typeDescriptorRegistry);
+
+            string? fullTypeName = type.FullName;
+            
+            if (string.IsNullOrEmpty(fullTypeName)) {
+                throw new Exception($"// Type \"{type.Name}\" was skipped. Reason: It has no full name.");
+            }
+
+            FullTypeName = fullTypeName;
+            TypeName = type.GetFullNameOrName();
+            CTypeName = type.CTypeName();
+            SwiftTypeName = TypeDescriptor.GetTypeName(CodeLanguage.Swift, false);
+            
+            ReturnType = delegateInvokeMethod?.ReturnType ?? typeof(void);
+    
+            if (ReturnType.IsByRef) {
+                throw new Exception($"// TODO: ({SwiftTypeName}) Unsupported delegate type. Reason: Has by ref return type");
+            }
+            
+            IsReturning = !ReturnType.IsVoid();
+    
+            ReturnTypeDescriptor = ReturnType.GetTypeDescriptor(typeDescriptorRegistry);
+            
+            ReturnTypeIsPrimitive = ReturnType.IsPrimitive;
+            ReturnTypeIsOptional = !ReturnTypeIsPrimitive;
+            
+            // TODO: This generates inout TypeName if the return type is by ref
+            SwiftReturnTypeName = ReturnTypeDescriptor.GetTypeName(
+                CodeLanguage.Swift,
+                true,
+                ReturnTypeIsOptional,
+                false,
+                false
+            );
+            
+            var parameterInfos = delegateInvokeMethod?.GetParameters() ?? Array.Empty<ParameterInfo>();
+            
+            foreach (var parameter in parameterInfos) {
+                if (parameter.IsOut ||
+                    parameter.ParameterType.IsByRef) {
+                    throw new Exception($"// TODO: ({SwiftTypeName}) Unsupported delegate type. Reason: Has by ref or out parameters");
+                }
+            }
+
+            ParameterInfos = parameterInfos;
+            
+            BaseType = type.BaseType;
+            BaseTypeDescriptor = BaseType?.GetTypeDescriptor(typeDescriptorRegistry);
+    
+            SwiftBaseTypeName = BaseTypeDescriptor?.GetTypeName(CodeLanguage.Swift, false)
+                                ?? "DNObject";
+        }
+    }
+    
     private string WriteDelegateTypeDefs(
         Type type,
         MethodInfo? delegateInvokeMethod,
         State state
     )
     {
-        // return $"// TODO: Delegate Type Defition ({delegateType.GetFullNameOrName()})";
-        
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
-        TypeDescriptor typeDescriptor = type.GetTypeDescriptor(typeDescriptorRegistry);
 
-        var cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No C# unmanaged result");
-        var cResult = state.CResult ?? throw new Exception("No C result");
-        
-        string? fullTypeName = type.FullName;
-        
-        if (fullTypeName == null) {
-            return $"// Type \"{type.Name}\" was skipped. Reason: It has no full name.";
+        if (state.CSharpUnmanagedResult is null) {
+            throw new Exception("No C# unmanaged result");
         }
 
-        string typeName = type.GetFullNameOrName();
-        string cTypeName = type.CTypeName();
-        string swiftTypeName = typeDescriptor.GetTypeName(CodeLanguage.Swift, false);
-        
-        Type returnType = delegateInvokeMethod?.ReturnType ?? typeof(void);
-
-        if (returnType.IsByRef) {
-            return $"// TODO: ({swiftTypeName}) Unsupported delegate type. Reason: Has by ref return type";
+        if (state.CResult is null) {
+            throw new Exception("No C result");
         }
-        
-        bool isReturning = !returnType.IsVoid();
 
-        TypeDescriptor returnTypeDescriptor = returnType.GetTypeDescriptor(typeDescriptorRegistry);
+        DelegateTypeInfo typeInfo;
         
-        bool returnTypeIsPrimitive = returnType.IsPrimitive;
-        bool returnTypeIsOptional = !returnTypeIsPrimitive;
-        
-        // TODO: This generates inout TypeName if the return type is by ref
-        string swiftReturnTypeName = returnTypeDescriptor.GetTypeName(
-            CodeLanguage.Swift,
-            true,
-            returnTypeIsOptional,
-            false,
-            false
-        );
-        
-        var parameterInfos = delegateInvokeMethod?.GetParameters() ?? Array.Empty<ParameterInfo>();
-        
-        foreach (var parameter in parameterInfos) {
-            if (parameter.IsOut ||
-                parameter.ParameterType.IsByRef) {
-                return $"// TODO: ({swiftTypeName}) Unsupported delegate type. Reason: Has by ref or out parameters";
-            }
+        try {
+            typeInfo = new DelegateTypeInfo(
+                type,
+                delegateInvokeMethod,
+                typeDescriptorRegistry
+            );
+        } catch (Exception ex) {
+            return ex.Message;
         }
-        
+            
         StringBuilder sb = new();
         
-        Type? baseType = type.BaseType;
-        TypeDescriptor? baseTypeDescriptor = baseType?.GetTypeDescriptor(typeDescriptorRegistry);
-
-        string swiftBaseTypeName = baseTypeDescriptor?.GetTypeName(CodeLanguage.Swift, false)
-                                   ?? "DNObject";
-            
-        sb.AppendLine($"public class {swiftTypeName} /* {fullTypeName} */: {swiftBaseTypeName} {{");
+        sb.AppendLine($"public class {typeInfo.SwiftTypeName} /* {typeInfo.FullTypeName} */: {typeInfo.SwiftBaseTypeName} {{");
 
         List<string> memberParts = new();
 
         #region Type Names
         string typeNamesCode = WriteTypeNames(
-            typeName,
-            fullTypeName
+            typeInfo.TypeName,
+            typeInfo.FullTypeName
         );
         
         memberParts.Add(typeNamesCode);
@@ -88,8 +142,8 @@ public partial class SwiftTypeSyntaxWriter
         #region Closure Type Alias
         string closureTypeAliasCode = WriteClosureTypeAlias(
             type,
-            parameterInfos,
-            swiftReturnTypeName,
+            typeInfo.ParameterInfos,
+            typeInfo.SwiftReturnTypeName,
             typeDescriptorRegistry,
             out string closureTypeTypeAliasName
         );
@@ -100,13 +154,13 @@ public partial class SwiftTypeSyntaxWriter
         #region Create C Function
         string createCFunctionCode = WriteCreateCFunction(
             type,
-            parameterInfos,
-            cTypeName,
+            typeInfo.ParameterInfos,
+            typeInfo.CTypeName,
             closureTypeTypeAliasName,
-            isReturning,
-            returnTypeDescriptor,
-            returnTypeIsOptional,
-            returnTypeIsPrimitive,
+            typeInfo.IsReturning,
+            typeInfo.ReturnTypeDescriptor,
+            typeInfo.ReturnTypeIsOptional,
+            typeInfo.ReturnTypeIsPrimitive,
             typeDescriptorRegistry,
             out string createCFunctionFuncName
         );
@@ -116,7 +170,7 @@ public partial class SwiftTypeSyntaxWriter
 
         #region Create C Destructor Function
         string createCDestructorFunctionCode = WriteCreateCDestructorFunction(
-            cTypeName,
+            typeInfo.CTypeName,
             closureTypeTypeAliasName,
             out string createCDestructorFunctionFuncName
         );
@@ -126,7 +180,7 @@ public partial class SwiftTypeSyntaxWriter
 
         #region Init
         string initCode = WriteInit(
-            cTypeName,
+            typeInfo.CTypeName,
             closureTypeTypeAliasName,
             createCFunctionFuncName,
             createCDestructorFunctionFuncName
@@ -138,11 +192,12 @@ public partial class SwiftTypeSyntaxWriter
         #region Invoke
         string invokeCode = WriteInvoke(
             type,
-            parameterInfos,
-            swiftReturnTypeName,
-            returnTypeDescriptor,
-            returnTypeIsOptional,
-            returnTypeIsPrimitive,
+            typeInfo.ParameterInfos,
+            typeInfo.CTypeName,
+            typeInfo.BaseType,
+            typeInfo.IsReturning,
+            typeInfo.SwiftReturnTypeName,
+            typeInfo.ReturnTypeDescriptor,
             typeDescriptorRegistry
         );
 
@@ -407,10 +462,11 @@ public partial class SwiftTypeSyntaxWriter
     private string WriteInvoke(
         Type type,
         ParameterInfo[] parameterInfos,
+        string cTypeName,
+        Type? baseType,
+        bool isReturning,
         string swiftReturnTypeName,
         TypeDescriptor returnTypeDescriptor,
-        bool returnTypeIsOptional,
-        bool returnTypeIsPrimitive,
         TypeDescriptorRegistry typeDescriptorRegistry
     )
     {
@@ -428,12 +484,15 @@ public partial class SwiftTypeSyntaxWriter
             false,
             typeDescriptorRegistry
         );
+
+        bool isOverride = baseType is not null &&
+                          baseType.IsDelegate();
         
         SwiftFuncDeclaration swiftFuncDecl = new(
             "invoke",
             SwiftVisibilities.Public,
             SwiftTypeAttachmentKinds.Instance,
-            false,
+            isOverride,
             swiftFuncParameters,
             true,
             swiftReturnTypeName
@@ -441,7 +500,9 @@ public partial class SwiftTypeSyntaxWriter
 
         sb.AppendLine($"{swiftFuncDecl} {{");
 
-        sb.AppendLine("\tvar __exceptionC: System_Exception_t?");
+        string exceptionCVarName = "__exceptionC";
+
+        sb.AppendLine($"\tvar {exceptionCVarName}: System_Exception_t?");
         sb.AppendLine();
 
         string selfConvertedVarName = "__selfC";
@@ -449,7 +510,7 @@ public partial class SwiftTypeSyntaxWriter
         sb.AppendLine($"\tlet {selfConvertedVarName} = self.__handle");
         sb.AppendLine();
 
-        string parameterConversionsToC = SwiftMethodSyntaxWriter.WriteParameterConversions(
+        string parameterConversions = SwiftMethodSyntaxWriter.WriteParameterConversions(
             CodeLanguage.Swift,
             CodeLanguage.C,
             MemberKind.Method,
@@ -464,57 +525,64 @@ public partial class SwiftTypeSyntaxWriter
             out _
         );
 
-        sb.AppendLine(parameterConversionsToC
+        convertedParameterNamesToC.Insert(0, selfConvertedVarName);
+        convertedParameterNamesToC.Add($"&{exceptionCVarName}");
+
+        string allParameterNamesString = string.Join(", ", convertedParameterNamesToC);
+        
+        sb.AppendLine(parameterConversions
             .IndentAllLines(1));
         
-        // TODO
-        // string returnValueName = "__returnValueSwift";
-        //     
-        // string returnValueStorage = isReturning
-        //     ? $"let {returnValueName} = "
-        //     : string.Empty;
-        //
-        // string allParameterNamesString = string.Join(", ", convertedParameterNamesToC);
-        //
-        // string invocation = $"{returnValueStorage}{innerClosureVarName}({allParameterNamesString})";
-        //
-        // sb.AppendLine($"\t\t\t{invocation}");
-        // sb.AppendLine();
-        //
-        // string returnCode = string.Empty;
-        //
-        // if (isReturning) {
-        //     string? returnTypeConversion = returnTypeDescriptor.GetTypeConversion(
-        //         CodeLanguage.Swift,
-        //         CodeLanguage.C
-        //     );
-        //
-        //     if (!string.IsNullOrEmpty(returnTypeConversion)) {
-        //         string newReturnValueName = "__returnValue";
-        //
-        //         string returnTypeOptionalString = returnTypeIsOptional
-        //             ? "?"
-        //             : string.Empty;
-        //
-        //         string fullReturnTypeConversion = $"let {newReturnValueName} = {string.Format(returnTypeConversion, $"{returnValueName}{returnTypeOptionalString}")}";
-        //
-        //         sb.AppendLine($"\t\t\t{fullReturnTypeConversion}");
-        //         
-        //         if (!returnTypeIsPrimitive) {
-        //             sb.AppendLine($"\t\t\t{returnValueName}?.__skipDestroy = true // Will be destroyed by .NET");
-        //         }
-        //         
-        //         sb.AppendLine();
-        //                 
-        //         returnValueName = newReturnValueName;
-        //     }
-        //
-        //     returnCode = $"return {returnValueName}";
-        // }
-        //
-        // if (isReturning) {
-        //     sb.AppendLine($"\t\t\t{returnCode}");
-        // }
+        string returnValueName = "__returnValueC";
+            
+        string returnValueStorage = isReturning
+            ? $"let {returnValueName} = "
+            : string.Empty;
+        
+
+        string cInvokeMethodName = $"{cTypeName}_Invoke";
+        
+        string invocation = $"{returnValueStorage}{cInvokeMethodName}({allParameterNamesString})";
+        
+        sb.AppendLine($"\t{invocation}");
+        sb.AppendLine();
+        
+        string returnCode = string.Empty;
+        
+        if (isReturning) {
+            string? returnTypeConversion = returnTypeDescriptor.GetTypeConversion(
+                CodeLanguage.C,
+                CodeLanguage.Swift
+            );
+        
+            if (!string.IsNullOrEmpty(returnTypeConversion)) {
+                string newReturnValueName = "__returnValue";
+        
+                string fullReturnTypeConversion = $"let {newReturnValueName} = {string.Format(returnTypeConversion, $"{returnValueName}")}";
+        
+                sb.AppendLine($"\t{fullReturnTypeConversion}");
+                sb.AppendLine();
+                        
+                returnValueName = newReturnValueName;
+            }
+        
+            returnCode = $"return {returnValueName}";
+        }
+        
+        sb.AppendLine("""
+    if let __exceptionC {
+        let __exception = System_Exception(handle: __exceptionC)
+        let __error = __exception.error
+        
+        throw __error
+    }
+""");
+
+        sb.AppendLine();
+        
+        if (isReturning) {
+            sb.AppendLine($"\t{returnCode}");
+        }
         
         sb.AppendLine("}");
 
