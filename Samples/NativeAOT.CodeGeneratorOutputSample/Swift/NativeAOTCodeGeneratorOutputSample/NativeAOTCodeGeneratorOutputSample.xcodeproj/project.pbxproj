@@ -83,6 +83,7 @@
 		E7F4A49629CB68FE00D93D81 /* SystemEnumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F4A49529CB68FE00D93D81 /* SystemEnumTests.swift */; };
 		E7F90B6029F2A324005B0C67 /* GenericTestsTests_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F90B5F29F2A324005B0C67 /* GenericTestsTests_Swift.swift */; };
 		E7F90B6229F2A340005B0C67 /* GenericTestClassTests_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F90B6129F2A340005B0C67 /* GenericTestClassTests_Swift.swift */; };
+		E7F90B6429F2B664005B0C67 /* SwiftSyntaxPlaygroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F90B6329F2B664005B0C67 /* SwiftSyntaxPlaygroundTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -196,6 +197,7 @@
 		E7F4A49529CB68FE00D93D81 /* SystemEnumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemEnumTests.swift; sourceTree = "<group>"; };
 		E7F90B5F29F2A324005B0C67 /* GenericTestsTests_Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTestsTests_Swift.swift; sourceTree = "<group>"; };
 		E7F90B6129F2A340005B0C67 /* GenericTestClassTests_Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTestClassTests_Swift.swift; sourceTree = "<group>"; };
+		E7F90B6329F2B664005B0C67 /* SwiftSyntaxPlaygroundTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSyntaxPlaygroundTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +249,7 @@
 				E779611C29E9524B00140279 /* TypeDefinitions.swift */,
 				E70D116029BF9F2600B4E738 /* NativeAOTCodeGeneratorOutputSample.h */,
 				E79335A529E98D3D0035FCEB /* SwiftSyntaxPlayground.swift */,
+				E7F90B6329F2B664005B0C67 /* SwiftSyntaxPlaygroundTests.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -570,6 +573,7 @@
 				E790C0DD29E6B1B80054AA4B /* SystemCollectionsGenericListTests.swift in Sources */,
 				E7A3E6D029EECD9800447BF2 /* SystemGuidTests_Swift.swift in Sources */,
 				E70D117D29BFA01300B4E738 /* TestClassesTests.swift in Sources */,
+				E7F90B6429F2B664005B0C67 /* SwiftSyntaxPlaygroundTests.swift in Sources */,
 				E756F71129F1760A00CA039F /* SystemThreadingTimerTests_Swift.swift in Sources */,
 				E7A3E6E829EEE38F00447BF2 /* SystemCollectionsGenericDictionaryTests_Swift.swift in Sources */,
 				E73EE8FA29DB0B3600C57A71 /* SystemIOPathTests.swift in Sources */,
