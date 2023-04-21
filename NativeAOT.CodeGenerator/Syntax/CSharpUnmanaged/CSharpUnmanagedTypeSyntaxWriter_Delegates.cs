@@ -9,6 +9,7 @@ namespace NativeAOT.CodeGenerator.Syntax.CSharpUnmanaged;
 public partial class CSharpUnmanagedTypeSyntaxWriter
 {
     private void WriteDelegateType(
+        ISyntaxWriterConfiguration? configuration,
         Type type,
         string fullTypeName,
         string cTypeName,
@@ -461,6 +462,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
 
         #region TypeOf
         WriteTypeOf(
+            configuration,
             type,
             sb,
             state
@@ -471,6 +473,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
         
         #region Destructor
         WriteDestructor(
+            configuration,
             type,
             sb,
             state

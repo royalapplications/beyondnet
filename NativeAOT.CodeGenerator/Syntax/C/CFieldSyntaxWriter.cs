@@ -8,12 +8,12 @@ namespace NativeAOT.CodeGenerator.Syntax.C;
 
 public class CFieldSyntaxWriter: CMethodSyntaxWriter, IFieldSyntaxWriter
 {
-    public new string Write(object @object, State state)
+    public new string Write(object @object, State state, ISyntaxWriterConfiguration? configuration)
     {
-        return Write((FieldInfo)@object, state);
+        return Write((FieldInfo)@object, state, configuration);
     }
 
-    public string Write(FieldInfo field, State state)
+    public string Write(FieldInfo field, State state, ISyntaxWriterConfiguration? configuration)
     {
         const bool addToState = false;
         

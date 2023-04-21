@@ -29,12 +29,12 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
         Settings = settings ?? throw new ArgumentNullException(nameof(settings));
     }
     
-    public string Write(object @object, State state)
+    public string Write(object @object, State state, ISyntaxWriterConfiguration? configuration)
     {
-        return Write((Type)@object, state);
+        return Write((Type)@object, state, configuration);
     }
 
-    public string Write(Type type, State state)
+    public string Write(Type type, State state, ISyntaxWriterConfiguration? configuration)
     {
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
 
@@ -83,6 +83,7 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
             var delegateInvokeMethod = type.GetDelegateInvokeMethod();
 
             string delegateTypedefCode = WriteDelegateTypeDefs(
+                configuration,
                 type,
                 delegateInvokeMethod,
                 state
@@ -100,6 +101,7 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
 
         if (writeMembers) {
             string membersCode = WriteMembers(
+                configuration,
                 type,
                 state,
                 writeTypeDefinition
@@ -235,6 +237,7 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
     }
 
     public string WriteMembers(
+        ISyntaxWriterConfiguration? configuration,
         Type type,
         State state,
         bool writeTypeDefinition
@@ -326,7 +329,11 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
                 throw new Exception("No target");
             }
 
-            string memberCode = syntaxWriter.Write(target, state);
+            string memberCode = syntaxWriter.Write(
+                target,
+                state,
+                configuration
+            );
 
             sbMembers.AppendLine(memberCode);
 

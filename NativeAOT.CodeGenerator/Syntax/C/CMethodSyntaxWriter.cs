@@ -9,12 +9,12 @@ namespace NativeAOT.CodeGenerator.Syntax.C;
 
 public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
 {
-    public string Write(object @object, State state)
+    public string Write(object @object, State state, ISyntaxWriterConfiguration? configuration)
     {
-        return Write((MethodInfo)@object, state);
+        return Write((MethodInfo)@object, state, configuration);
     }
 
-    public string Write(MethodInfo method, State state)
+    public string Write(MethodInfo method, State state, ISyntaxWriterConfiguration? configuration)
     {
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         

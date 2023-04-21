@@ -8,12 +8,12 @@ namespace NativeAOT.CodeGenerator.Syntax.Swift;
 
 public class SwiftEventSyntaxWriter: SwiftMethodSyntaxWriter, IEventSyntaxWriter
 {
-    public new string Write(object @object, State state)
+    public new string Write(object @object, State state, ISyntaxWriterConfiguration? configuration)
     {
-        return Write((EventInfo)@object, state);
+        return Write((EventInfo)@object, state, configuration);
     }
 
-    public string Write(EventInfo @event, State state)
+    public string Write(EventInfo @event, State state, ISyntaxWriterConfiguration? configuration)
     {
         const bool addToState = false;
         
@@ -73,6 +73,7 @@ public class SwiftEventSyntaxWriter: SwiftMethodSyntaxWriter, IEventSyntaxWriter
                 declaringType,
                 eventHandlerType,
                 parameters,
+                configuration,
                 addToState,
                 typeDescriptorRegistry,
                 state,
@@ -105,6 +106,7 @@ public class SwiftEventSyntaxWriter: SwiftMethodSyntaxWriter, IEventSyntaxWriter
                 declaringType,
                 eventHandlerType,
                 parameters,
+                configuration,
                 addToState,
                 typeDescriptorRegistry,
                 state,

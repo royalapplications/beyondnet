@@ -8,12 +8,12 @@ namespace NativeAOT.CodeGenerator.Syntax.C;
 
 public class CEventSyntaxWriter: CMethodSyntaxWriter, IEventSyntaxWriter
 {
-    public new string Write(object @object, State state)
+    public new string Write(object @object, State state, ISyntaxWriterConfiguration? configuration)
     {
-        return Write((EventInfo)@object, state);
+        return Write((EventInfo)@object, state, configuration);
     }
 
-    public string Write(EventInfo @event, State state)
+    public string Write(EventInfo @event, State state, ISyntaxWriterConfiguration? configuration)
     {
         const bool addToState = false;
         

@@ -18,6 +18,8 @@ public class CSharpUnmanagedCodeGenerator: ICodeGenerator
         SourceCodeWriter writer
     )
     {
+        CSharpUnmanagedSyntaxWriterConfiguration? syntaxWriterConfiguration = null;
+        
         SourceCodeSection headerSection = writer.AddSection("Header");
         SourceCodeSection sharedCodeSection = writer.AddSection("Shared Code");
         SourceCodeSection unsupportedTypesSection = writer.AddSection("Unsupported Types");
@@ -51,7 +53,7 @@ public class CSharpUnmanagedCodeGenerator: ICodeGenerator
                 Settings = Settings
             };
             
-            string typeCode = typeSyntaxWriter.Write(type, state);
+            string typeCode = typeSyntaxWriter.Write(type, state, syntaxWriterConfiguration);
             
             apisSection.Code.AppendLine(typeCode);
             

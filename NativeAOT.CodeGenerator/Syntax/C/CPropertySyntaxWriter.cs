@@ -8,12 +8,12 @@ namespace NativeAOT.CodeGenerator.Syntax.C;
 
 public class CPropertySyntaxWriter: CMethodSyntaxWriter, IPropertySyntaxWriter
 {
-    public new string Write(object @object, State state)
+    public new string Write(object @object, State state, ISyntaxWriterConfiguration? configuration)
     {
-        return Write((PropertyInfo)@object, state);
+        return Write((PropertyInfo)@object, state, configuration);
     }
     
-    public string Write(PropertyInfo property, State state)
+    public string Write(PropertyInfo property, State state, ISyntaxWriterConfiguration? configuration)
     {
         const bool addToState = false;
         

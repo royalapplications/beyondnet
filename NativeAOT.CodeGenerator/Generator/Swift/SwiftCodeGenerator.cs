@@ -30,6 +30,8 @@ public class SwiftCodeGenerator: ICodeGenerator
         SourceCodeWriter writer
     )
     {
+        SwiftSyntaxWriterConfiguration syntaxWriterConfiguration = new();
+        
         SourceCodeSection headerSection = writer.AddSection("Header");
         SourceCodeSection utilsSection = writer.AddSection("Utils");
         SourceCodeSection commonTypesSection = writer.AddSection("Common Types");
@@ -71,9 +73,12 @@ public class SwiftCodeGenerator: ICodeGenerator
         Dictionary<Type, List<GeneratedMember>> typeExtensionMembers = new();
 
         foreach (Type type in orderedTypes) {
-            Syntax.State state = new(CSharpUnmanagedResult, CResult);
+            // bool isInterface = type.IsInterface;
+            // syntaxWriterConfiguration.OnlyWriteSignatureForProtocol = isInterface;
             
-            string typeCode = typeSyntaxWriter.Write(type, state);
+            Syntax.State state = new(CSharpUnmanagedResult, CResult);
+
+            string typeCode = typeSyntaxWriter.Write(type, state, syntaxWriterConfiguration);
             apisSection.Code.AppendLine(typeCode);
 
             result.AddGeneratedType(

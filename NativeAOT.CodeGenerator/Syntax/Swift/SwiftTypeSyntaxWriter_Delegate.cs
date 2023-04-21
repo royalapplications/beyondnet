@@ -127,6 +127,7 @@ public partial class SwiftTypeSyntaxWriter
     }
     
     private string WriteDelegateTypeDefs(
+        ISyntaxWriterConfiguration? configuration,
         Type type,
         MethodInfo? delegateInvokeMethod,
         State state
@@ -246,6 +247,7 @@ public partial class SwiftTypeSyntaxWriter
 
         #region Other Members
         string membersCode = WriteMembers(
+            configuration,
             type,
             state,
             false

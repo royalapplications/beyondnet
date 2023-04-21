@@ -7,12 +7,12 @@ namespace NativeAOT.CodeGenerator.Syntax.Swift;
 
 public class SwiftConstructorSyntaxWriter: SwiftMethodSyntaxWriter, IConstructorSyntaxWriter
 {
-    public new string Write(object @object, State state)
+    public new string Write(object @object, State state, ISyntaxWriterConfiguration? configuration)
     {
-        return Write((ConstructorInfo)@object, state);
+        return Write((ConstructorInfo)@object, state, configuration);
     }
 
-    public string Write(ConstructorInfo constructor, State state)
+    public string Write(ConstructorInfo constructor, State state, ISyntaxWriterConfiguration? configuration)
     {
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
         Result cResult = state.CResult ?? throw new Exception("No CResult provided");
@@ -46,6 +46,7 @@ public class SwiftConstructorSyntaxWriter: SwiftMethodSyntaxWriter, IConstructor
             declaringType,
             returnType,
             parameters,
+            configuration,
             true,
             typeDescriptorRegistry,
             state,

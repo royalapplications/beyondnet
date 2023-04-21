@@ -10,12 +10,12 @@ namespace NativeAOT.CodeGenerator.Syntax.Swift;
 
 public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
 {
-    public string Write(object @object, State state)
+    public string Write(object @object, State state, ISyntaxWriterConfiguration? configuration)
     {
-        return Write((MethodInfo)@object, state);
+        return Write((MethodInfo)@object, state, configuration);
     }
 
-    public string Write(MethodInfo method, State state)
+    public string Write(MethodInfo method, State state, ISyntaxWriterConfiguration? configuration)
     {
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
@@ -44,6 +44,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             declaringType,
             returnType,
             parameters,
+            configuration,
             true,
             typeDescriptorRegistry,
             state,
@@ -63,6 +64,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         Type declaringType,
         Type returnOrSetterOrEventHandlerType,
         IEnumerable<ParameterInfo> parameters,
+        ISyntaxWriterConfiguration? syntaxWriterConfiguration,
         bool addToState,
         TypeDescriptorRegistry typeDescriptorRegistry,
         State state,
@@ -82,6 +84,8 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             return $"// TODO: Method with by ref return or setter or event handler type ({cMember.GetGeneratedName(CodeLanguage.C)})";
         }
         #endregion TODO: Unsupported Stuff
+
+        bool onlyWriteSignatureForProtocol = (syntaxWriterConfiguration as SwiftSyntaxWriterConfiguration)?.OnlyWriteSignatureForProtocol ?? false;
         
         MethodBase? methodBase = memberInfo as MethodBase;
         MethodInfo? methodInfo = methodBase as MethodInfo;
@@ -289,7 +293,9 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             SwiftInitDeclaration decl = new(
                 true,
                 true,
-                SwiftVisibilities.Public,
+                onlyWriteSignatureForProtocol 
+                    ? SwiftVisibilities.None
+                    : SwiftVisibilities.Public,
                 methodSignatureParameters,
                 mayThrow
             );
@@ -298,7 +304,9 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         } else if (memberKind == MemberKind.Destructor) {
             SwiftFuncDeclaration decl = new(
                 methodNameSwift,
-                SwiftVisibilities.Internal,
+                onlyWriteSignatureForProtocol 
+                    ? SwiftVisibilities.None
+                    : SwiftVisibilities.Internal,
                 SwiftTypeAttachmentKinds.Instance,
                 true,
                 methodSignatureParameters,
@@ -318,7 +326,9 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             
             SwiftFuncDeclaration decl = new(
                 methodNameSwift,
-                SwiftVisibilities.Public,
+                onlyWriteSignatureForProtocol 
+                    ? SwiftVisibilities.None
+                    : SwiftVisibilities.Public,
                 attachmentKind,
                 isOverride,
                 methodSignatureParameters,
@@ -332,7 +342,9 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         } else {
             SwiftFuncDeclaration decl = new(
                 methodNameSwift,
-                SwiftVisibilities.Public,
+                onlyWriteSignatureForProtocol 
+                    ? SwiftVisibilities.None
+                    : SwiftVisibilities.Public,
                 isStaticMethod 
                     ? SwiftTypeAttachmentKinds.Class
                     : SwiftTypeAttachmentKinds.Instance,
@@ -347,6 +359,12 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             funcSignature = decl.ToString();
         }
 
+        if (onlyWriteSignatureForProtocol) {
+            generatedName = methodNameSwift;
+            
+            return funcSignature;
+        }
+        
         funcSignature += " {";
 
         sb.AppendLine(funcSignature);

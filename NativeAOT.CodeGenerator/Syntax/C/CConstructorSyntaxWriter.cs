@@ -7,12 +7,12 @@ namespace NativeAOT.CodeGenerator.Syntax.C;
 
 public class CConstructorSyntaxWriter: CMethodSyntaxWriter, IConstructorSyntaxWriter
 {
-    public new string Write(object @object, State state)
+    public new string Write(object @object, State state, ISyntaxWriterConfiguration? configuration)
     {
-        return Write((ConstructorInfo)@object, state);
+        return Write((ConstructorInfo)@object, state, configuration);
     }
 
-    public string Write(ConstructorInfo constructor, State state)
+    public string Write(ConstructorInfo constructor, State state, ISyntaxWriterConfiguration? configuration)
     {
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
         GeneratedMember cSharpGeneratedMember = cSharpUnmanagedResult.GetGeneratedMember(constructor) ?? throw new Exception("No C# generated member");

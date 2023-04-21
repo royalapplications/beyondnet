@@ -4,5 +4,5 @@ namespace NativeAOT.CodeGenerator.Syntax;
 
 public interface IPropertySyntaxWriter: ISyntaxWriter
 {
-    string Write(PropertyInfo property, State state);
+    string Write(PropertyInfo property, State state, ISyntaxWriterConfiguration? configuration);
 }

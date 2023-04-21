@@ -7,12 +7,12 @@ namespace NativeAOT.CodeGenerator.Syntax.CSharpUnmanaged;
 
 public class CSharpUnmanagedEventSyntaxWriter: CSharpUnmanagedMethodSyntaxWriter, IEventSyntaxWriter
 {
-    public new string Write(object @object, State state)
+    public new string Write(object @object, State state, ISyntaxWriterConfiguration? configuration)
     {
-        return Write((EventInfo)@object, state);
+        return Write((EventInfo)@object, state, configuration);
     }
     
-    public string Write(EventInfo @event, State state)
+    public string Write(EventInfo @event, State state, ISyntaxWriterConfiguration? configuration)
     {
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         

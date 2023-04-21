@@ -8,12 +8,12 @@ namespace NativeAOT.CodeGenerator.Syntax.Swift;
 
 public class SwiftTypeOfSyntaxWriter: SwiftMethodSyntaxWriter, ITypeOfSyntaxWriter
 {
-    public new string Write(object @object, State state)
+    public new string Write(object @object, State state, ISyntaxWriterConfiguration? configuration)
     {
-        return Write((Type)@object, state);
+        return Write((Type)@object, state, configuration);
     }
 
-    public string Write(Type type, State state)
+    public string Write(Type type, State state, ISyntaxWriterConfiguration? configuration)
     {
         if (type.IsVoid()) {
             return string.Empty;
@@ -39,6 +39,7 @@ public class SwiftTypeOfSyntaxWriter: SwiftMethodSyntaxWriter, ITypeOfSyntaxWrit
             type,
             typeof(Type),
             Array.Empty<ParameterInfo>(),
+            configuration,
             true,
             typeDescriptorRegistry,
             state,

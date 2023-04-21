@@ -8,12 +8,12 @@ namespace NativeAOT.CodeGenerator.Syntax.Swift;
 
 public class SwiftPropertySyntaxWriter: SwiftMethodSyntaxWriter, IPropertySyntaxWriter
 {
-    public new string Write(object @object, State state)
+    public new string Write(object @object, State state, ISyntaxWriterConfiguration? configuration)
     {
-        return Write((PropertyInfo)@object, state);
+        return Write((PropertyInfo)@object, state, configuration);
     }
     
-    public string Write(PropertyInfo property, State state)
+    public string Write(PropertyInfo property, State state, ISyntaxWriterConfiguration? configuration)
     {
         const bool addToState = false;
         
@@ -67,6 +67,7 @@ public class SwiftPropertySyntaxWriter: SwiftMethodSyntaxWriter, IPropertySyntax
                 declaringType,
                 propertyType,
                 parameters,
+                configuration,
                 addToState,
                 typeDescriptorRegistry,
                 state,
@@ -99,6 +100,7 @@ public class SwiftPropertySyntaxWriter: SwiftMethodSyntaxWriter, IPropertySyntax
                 declaringType,
                 propertyType,
                 parameters,
+                configuration,
                 addToState,
                 typeDescriptorRegistry,
                 state,

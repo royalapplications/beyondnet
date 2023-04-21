@@ -8,12 +8,12 @@ namespace NativeAOT.CodeGenerator.Syntax.Swift;
 
 public class SwiftDestructorSyntaxWriter: SwiftMethodSyntaxWriter, IDestructorSyntaxWriter
 {
-    public new string Write(object @object, State state)
+    public new string Write(object @object, State state, ISyntaxWriterConfiguration? configuration)
     {
-        return Write((Type)@object, state);
+        return Write((Type)@object, state, configuration);
     }
 
-    public string Write(Type type, State state)
+    public string Write(Type type, State state, ISyntaxWriterConfiguration? configuration)
     {
         if (type.IsVoid() ||
             type.IsEnum) {
@@ -40,6 +40,7 @@ public class SwiftDestructorSyntaxWriter: SwiftMethodSyntaxWriter, IDestructorSy
             type,
             typeof(void),
             Array.Empty<ParameterInfo>(),
+            configuration,
             true,
             typeDescriptorRegistry,
             state,

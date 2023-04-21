@@ -7,12 +7,12 @@ namespace NativeAOT.CodeGenerator.Syntax.CSharpUnmanaged;
 
 public class CSharpUnmanagedDestructorSyntaxWriter: CSharpUnmanagedMethodSyntaxWriter, IDestructorSyntaxWriter
 {
-    public new string Write(object @object, State state)
+    public new string Write(object @object, State state, ISyntaxWriterConfiguration? configuration)
     {
-        return Write((Type)@object, state);
+        return Write((Type)@object, state, configuration);
     }
 
-    public string Write(Type type, State state)
+    public string Write(Type type, State state, ISyntaxWriterConfiguration? configuration)
     {
         if (type.IsVoid() ||
             type.IsEnum) {

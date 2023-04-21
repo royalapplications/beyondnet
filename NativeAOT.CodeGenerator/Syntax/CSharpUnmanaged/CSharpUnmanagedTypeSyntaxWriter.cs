@@ -27,12 +27,12 @@ public partial class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWrit
         Settings = settings ?? throw new ArgumentNullException(nameof(settings));
     }
     
-    public string Write(object @object, State state)
+    public string Write(object @object, State state, ISyntaxWriterConfiguration? configuration)
     {
-        return Write((Type)@object, state);
+        return Write((Type)@object, state, configuration);
     }
     
-    public string Write(Type type, State state)
+    public string Write(Type type, State state, ISyntaxWriterConfiguration? configuration)
     {
         if (type.IsPrimitive ||
             type.IsPointer ||
@@ -65,6 +65,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWrit
 
         if (type.IsDelegate()) {
             WriteDelegateType(
+                configuration,
                 type,
                 fullTypeName,
                 cTypeName,
@@ -74,12 +75,14 @@ public partial class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWrit
             );
         } else if (type.IsEnum) {
             WriteEnumType(
+                configuration,
                 type,
                 sb,
                 state
             );
         } else {
             WriteRegularType(
+                configuration,
                 type,
                 sb,
                 state
@@ -93,6 +96,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWrit
     }
 
     private void WriteRegularType(
+        ISyntaxWriterConfiguration? configuration,
         Type type,
         StringBuilder sb,
         State state
@@ -129,19 +133,21 @@ public partial class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWrit
                 continue;
             }
 
-            string memberCode = syntaxWriter.Write(member, state)
+            string memberCode = syntaxWriter.Write(member, state, configuration)
                 .IndentAllLines(1);
 
             sb.AppendLine(memberCode);
         }
         
         WriteTypeOf(
+            configuration,
             type,
             sb,
             state
         );
         
         WriteDestructor(
+            configuration,
             type,
             sb,
             state
@@ -149,12 +155,14 @@ public partial class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWrit
     }
 
     private void WriteEnumType(
+        ISyntaxWriterConfiguration? configuration,
         Type type,
         StringBuilder sb,
         State state
     )
     {
         WriteTypeOf(
+            configuration,
             type,
             sb,
             state
@@ -162,6 +170,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWrit
     }
 
     private void WriteTypeOf(
+        ISyntaxWriterConfiguration? configuration,
         Type type,
         StringBuilder sb,
         State state
@@ -176,13 +185,14 @@ public partial class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWrit
             throw new Exception("No typeOf syntax writer");
         }
 
-        string code = syntaxWriter.Write(type, state)
+        string code = syntaxWriter.Write(type, state, configuration)
             .IndentAllLines(1);
 
         sb.AppendLine(code);
     }
     
     private void WriteDestructor(
+        ISyntaxWriterConfiguration? configuration,
         Type type,
         StringBuilder sb,
         State state
@@ -197,7 +207,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWrit
             throw new Exception("No destructor syntax writer");
         }
 
-        string code = syntaxWriter.Write(type, state)
+        string code = syntaxWriter.Write(type, state, configuration)
             .IndentAllLines(1);
 
         sb.AppendLine(code);

@@ -21,6 +21,8 @@ public class CCodeGenerator: ICodeGenerator
         SourceCodeWriter writer
     )
     {
+        CSyntaxWriterConfiguration? syntaxWriterConfiguration = null;
+        
         SourceCodeSection headerSection = writer.AddSection("Header");
         SourceCodeSection commonTypesSection = writer.AddSection("Common Types");
         SourceCodeSection unsupportedTypesSection = writer.AddSection("Unsupported Types");
@@ -59,10 +61,10 @@ public class CCodeGenerator: ICodeGenerator
         foreach (Type type in orderedTypes) {
             Syntax.State state = new(CSharpUnmanagedResult);
             
-            string typeCode = typeSyntaxWriter.Write(type, state);
+            string typeCode = typeSyntaxWriter.Write(type, state, syntaxWriterConfiguration);
             typedefsSection.Code.AppendLine(typeCode);
 
-            string membersCode = typeSyntaxWriter.WriteMembers(type, state);
+            string membersCode = typeSyntaxWriter.WriteMembers(type, state, syntaxWriterConfiguration);
             apisSection.Code.AppendLine(membersCode);
             
             result.AddGeneratedType(

@@ -8,12 +8,12 @@ namespace NativeAOT.CodeGenerator.Syntax.Swift;
 
 public class SwiftFieldSyntaxWriter: SwiftMethodSyntaxWriter, IFieldSyntaxWriter
 {
-    public new string Write(object @object, State state)
+    public new string Write(object @object, State state, ISyntaxWriterConfiguration? configuration)
     {
-        return Write((FieldInfo)@object, state);
+        return Write((FieldInfo)@object, state, configuration);
     }
 
-    public string Write(FieldInfo field, State state)
+    public string Write(FieldInfo field, State state, ISyntaxWriterConfiguration? configuration)
     {
         const bool addToState = false;
         
@@ -59,6 +59,7 @@ public class SwiftFieldSyntaxWriter: SwiftMethodSyntaxWriter, IFieldSyntaxWriter
                 declaringType,
                 fieldType,
                 parameters,
+                configuration,
                 addToState,
                 typeDescriptorRegistry,
                 state,
@@ -90,6 +91,7 @@ public class SwiftFieldSyntaxWriter: SwiftMethodSyntaxWriter, IFieldSyntaxWriter
                 declaringType,
                 fieldType,
                 parameters,
+                configuration,
                 addToState,
                 typeDescriptorRegistry,
                 state,

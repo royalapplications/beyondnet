@@ -29,12 +29,12 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         Settings = settings ?? throw new ArgumentNullException(nameof(settings));
     }
     
-    public string Write(object @object, State state)
+    public string Write(object @object, State state, ISyntaxWriterConfiguration? configuration)
     {
-        return Write((Type)@object, state);
+        return Write((Type)@object, state, configuration);
     }
 
-    public string Write(Type type, State state)
+    public string Write(Type type, State state, ISyntaxWriterConfiguration? configuration)
     {
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
@@ -230,7 +230,7 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         return sb.ToString();
     }
 
-    public string WriteMembers(Type type, State state)
+    public string WriteMembers(Type type, State state, ISyntaxWriterConfiguration? configuration)
     {
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
@@ -314,7 +314,7 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
                 throw new Exception("No target");
             }
 
-            string memberCode = syntaxWriter.Write(target, state);
+            string memberCode = syntaxWriter.Write(target, state, configuration);
 
             sb.AppendLine(memberCode);
 
