@@ -229,6 +229,42 @@ final class TestClassesTests: XCTestCase {
 		XCTAssertEqual(expectedValue, valueToModify)
 	}
 	
+	func testDelegateReturningChar() {
+		var exception: System_Exception_t?
+		
+		guard let testClass = NativeAOT_CodeGeneratorInputSample_TestClass_Create(&exception),
+			exception == nil else {
+			XCTFail("TestClass ctor should not throw and return an instance")
+			
+			return
+		}
+		
+		defer { NativeAOT_CodeGeneratorInputSample_TestClass_Destroy(testClass) }
+		
+		let value: wchar_t = 5
+		
+		let charReturnerFunc: NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_CFunction_t = { _ in
+			return 5
+		}
+		
+		guard let charReturnerDelegate = NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_Create(nil,
+																										charReturnerFunc,
+																										nil) else {
+			XCTFail("CharReturnerDelegate ctor should return an instance")
+			
+			return
+		}
+		
+		defer { NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_Destroy(charReturnerDelegate) }
+		
+		let retVal = NativeAOT_CodeGeneratorInputSample_TestClass_GetChar(testClass,
+																		  charReturnerDelegate,
+																		  &exception)
+		
+		XCTAssertNil(exception)
+		XCTAssertEqual(value, retVal)
+	}
+	
 	func testBookByRef() {
 		var exception: System_Exception_t?
 		
