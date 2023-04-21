@@ -77,21 +77,26 @@ internal static class StringExtensions
         
     internal static string IndentAllLines(this string text, int indentCount)
     {
+        string newLine = Environment.NewLine;
+        
         string indentPrefix = string.Empty;
 
         for (int i = 0; i < indentCount; i++) {
             indentPrefix += "\t";
         }
         
-        StringBuilder indentedText = new();
+        var lines = text.Split(newLine);
+        List<string> indentedLines = new();
 
-        foreach (var line in text.Split(Environment.NewLine)) {
+        foreach (var line in lines) {
             string indentedLine = indentPrefix + line;
-
-            indentedText.AppendLine(indentedLine);
+            
+            indentedLines.Add(indentedLine);
         }
 
-        return indentedText.ToString();
+        string indentedText = string.Join(newLine, indentedLines);
+
+        return indentedText;
     }
 
     internal static string ToSwiftEnumCaseName(this string cSharpCaseName)

@@ -160,12 +160,13 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         if (!string.IsNullOrEmpty(parametersString)) {
             parametersString = contextParameter + ",\n" + parametersString;
         } else {
-            parametersString = contextParameter + "\n";
+            parametersString = contextParameter;
         }
     
         sb.Append(parametersString
             .IndentAllLines(1));
-    
+
+        sb.AppendLine();
         sb.AppendLine(");");
 
         string delegateTypeDefCode = sb.ToString();

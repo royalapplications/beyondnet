@@ -3144,7 +3144,6 @@ typedef void (*System_Action_CDestructorFunction_t)(void* context);
 
 typedef void (*System_Action_CFunction_t)(
 	void* context
-	
 );
 
 
@@ -3153,7 +3152,6 @@ typedef void (*System_MulticastDelegate_CDestructorFunction_t)(void* context);
 
 typedef void (*System_MulticastDelegate_CFunction_t)(
 	void* context
-	
 );
 
 
@@ -3162,7 +3160,6 @@ typedef void (*System_Delegate_CDestructorFunction_t)(void* context);
 
 typedef void (*System_Delegate_CFunction_t)(
 	void* context
-	
 );
 
 
@@ -3261,7 +3258,6 @@ typedef void (*System_Threading_ThreadStart_CDestructorFunction_t)(void* context
 
 typedef void (*System_Threading_ThreadStart_CFunction_t)(
 	void* context
-	
 );
 
 
@@ -3307,7 +3303,6 @@ typedef void (*NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChanged
 
 typedef void (*NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_CFunction_t)(
 	void* context
-	
 );
 
 
@@ -3316,7 +3311,6 @@ typedef void (*NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_
 
 typedef int32_t (*NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CFunction_t)(
 	void* context
-	
 );
 
 
@@ -3350,7 +3344,6 @@ typedef void (*NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelega
 
 typedef System_String_t (*NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate_CFunction_t)(
 	void* context
-	
 );
 
 
