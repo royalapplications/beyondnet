@@ -1,5 +1,5 @@
-// Number of generated types: 1489
-// Number of generated members: 4615
+// Number of generated types: 1490
+// Number of generated members: 4617
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -3319,6 +3319,14 @@ typedef int32_t (*NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelega
 // TODO: (NativeAOT_CodeGeneratorInputSample_ByRefParametersDelegate) Unsupported delegate type. Reason: Has by ref or out parameters
 
 // TODO: (NativeAOT_CodeGeneratorInputSample_OutParametersDelegate) Unsupported delegate type. Reason: Has by ref or out parameters
+
+typedef void* NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_t;
+typedef void (*NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_CDestructorFunction_t)(void* context);
+
+typedef wchar_t (*NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_CFunction_t)(
+	void* context
+);
+
 
 typedef void* NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate_t;
 typedef void (*NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate_CDestructorFunction_t)(void* context);
@@ -37140,6 +37148,13 @@ NativeAOT_CodeGeneratorInputSample_Book_Destroy(
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.Book
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.TestClass
+wchar_t /* System.Char */
+NativeAOT_CodeGeneratorInputSample_TestClass_GetChar(
+	NativeAOT_CodeGeneratorInputSample_TestClass_t /* NativeAOT.CodeGeneratorInputSample.TestClass */ self,
+	NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_t /* NativeAOT.CodeGeneratorInputSample.CharReturnerDelegate */ charReturnerDelegate,
+	System_Exception_t* /* System.Exception */ outException
+);
+
 void /* System.Void */
 NativeAOT_CodeGeneratorInputSample_TestClass_SayHello(
 	NativeAOT_CodeGeneratorInputSample_TestClass_t /* NativeAOT.CodeGeneratorInputSample.TestClass */ self,
@@ -38018,6 +38033,41 @@ NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Destroy(
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.OutParametersDelegate
 // TODO: (NativeAOT_CodeGeneratorInputSample_OutParametersDelegate_t) Unsupported delegate type. Reason: Has out parameters
 #pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.OutParametersDelegate
+
+#pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.CharReturnerDelegate
+NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_t /* NativeAOT.CodeGeneratorInputSample.CharReturnerDelegate */
+NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_Create(
+	const void* context,
+	NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_CFunction_t function,
+	NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_CDestructorFunction_t destructorFunction
+);
+
+wchar_t
+NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_Invoke(
+	NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_t /* NativeAOT.CodeGeneratorInputSample.CharReturnerDelegate */ self, System_Exception_t* /* System.Exception */ outException
+);
+
+const void*
+NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_Context_Get(
+	NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_t /* NativeAOT.CodeGeneratorInputSample.CharReturnerDelegate */ self
+);
+
+NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_CFunction_t
+NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_CFunction_Get(
+	NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_t /* NativeAOT.CodeGeneratorInputSample.CharReturnerDelegate */ self
+);
+
+NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_CDestructorFunction_t
+NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_CDestructorFunction_Get(
+	NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_t /* NativeAOT.CodeGeneratorInputSample.CharReturnerDelegate */ self
+);
+
+void /* System.Void */
+NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_Destroy(
+	NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_t /* NativeAOT.CodeGeneratorInputSample.CharReturnerDelegate */ self
+);
+
+#pragma mark - END APIs of NativeAOT.CodeGeneratorInputSample.CharReturnerDelegate
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Transformer.StringTransformerDelegate
 NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate_t /* NativeAOT.CodeGeneratorInputSample.Transformer.StringTransformerDelegate */

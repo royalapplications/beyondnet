@@ -9,6 +9,7 @@ public enum TestEnum
 public delegate ref int ByRefReturnValueDelegate();
 public delegate void ByRefParametersDelegate(ref int byRefInt);
 public delegate void OutParametersDelegate(out int outInt);
+public delegate char CharReturnerDelegate();
 
 public class Book
 {
@@ -28,6 +29,11 @@ public class TestClass
 {
     public Book CurrentBook = Book.DonQuixote;
     public int CurrentIntValue;
+
+    public char GetChar(CharReturnerDelegate charReturnerDelegate)
+    {
+        return charReturnerDelegate();
+    }
     
     public void SayHello()
     {

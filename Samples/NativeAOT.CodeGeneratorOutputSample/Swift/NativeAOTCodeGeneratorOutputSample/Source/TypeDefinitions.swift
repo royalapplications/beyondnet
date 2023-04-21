@@ -1,5 +1,5 @@
-// Number of generated types: 1489
-// Number of generated members: 4613
+// Number of generated types: 1490
+// Number of generated members: 4615
 
 // MARK: - BEGIN Header
 import Foundation
@@ -7,11 +7,15 @@ import Foundation
 // MARK: - END Header
 
 // MARK: - BEGIN Utils
-public struct DNChar {
+public struct DNChar: Equatable {
     public let cValue: wchar_t
 
     public init(cValue: wchar_t) {
         self.cValue = cValue
+    }
+
+    public static func == (lhs: DNChar, rhs: DNChar) -> Bool {
+        lhs.cValue == rhs.cValue
     }
 }
 
@@ -89093,6 +89097,27 @@ public class NativeAOT_CodeGeneratorInputSample_Book /* NativeAOT.CodeGeneratorI
 public class NativeAOT_CodeGeneratorInputSample_TestClass /* NativeAOT.CodeGeneratorInputSample.TestClass */: System_Object {
 	public override class var typeName: String { "TestClass" }
 	public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.TestClass" }
+	public func getChar(_ charReturnerDelegate: NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate? /* NativeAOT.CodeGeneratorInputSample.CharReturnerDelegate */) throws -> DNChar /* System.Char */ {
+		let charReturnerDelegateC = charReturnerDelegate?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = NativeAOT_CodeGeneratorInputSample_TestClass_GetChar(self.__handle, charReturnerDelegateC, &__exceptionC)
+		
+		let __returnValue = DNChar(cValue: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
 	public func sayHello() throws {
 		
 		
@@ -90539,6 +90564,60 @@ public class NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate /*
 // TODO: (NativeAOT_CodeGeneratorInputSample_ByRefParametersDelegate) Unsupported delegate type. Reason: Has by ref or out parameters
 
 // TODO: (NativeAOT_CodeGeneratorInputSample_OutParametersDelegate) Unsupported delegate type. Reason: Has by ref or out parameters
+
+public class NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate /* NativeAOT.CodeGeneratorInputSample.CharReturnerDelegate */: System_MulticastDelegate {
+	public override class var typeName: String { "NativeAOT.CodeGeneratorInputSample.CharReturnerDelegate" }
+	public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.CharReturnerDelegate" }
+
+	public typealias ClosureType = () -> DNChar
+
+	private static func __createCFunction() -> NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_CFunction_t {
+		return { __innerContext in
+			guard let __innerContext else { fatalError("Context is nil") }
+
+			let __innerSwiftContext = NativeBox<ClosureType>.fromPointer(__innerContext)
+			let __innerClosure = __innerSwiftContext.value
+
+			
+			let __returnValueSwift = __innerClosure()
+
+			let __returnValue = __returnValueSwift.cValue
+
+			return __returnValue
+		}
+	}
+
+	private static func __createCDestructorFunction() -> NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_CDestructorFunction_t {
+		return { __innerContext in
+			guard let __innerContext else { fatalError("Context is nil") }
+
+			NativeBox<ClosureType>.release(__innerContext)
+		}
+	}
+
+	public convenience init?(_ __closure: @escaping ClosureType) {
+		let __cFunction = Self.__createCFunction()
+		let __cDestructorFunction = Self.__createCDestructorFunction()
+
+		let __outerSwiftContext = NativeBox(__closure)
+		let __outerContext = __outerSwiftContext.retainedPointer()
+
+		guard let __delegateC = NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_Create(__outerContext, __cFunction, __cDestructorFunction) else { return nil }
+
+		self.init(handle: __delegateC)
+	}
+
+	// TODO: invoke
+
+	internal override func destroy() {
+		NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_Destroy(self.__handle)
+		
+	}
+	
+	
+
+}
+
 
 public class NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate /* NativeAOT.CodeGeneratorInputSample.Transformer+StringTransformerDelegate */: System_MulticastDelegate {
 	public override class var typeName: String { "NativeAOT.CodeGeneratorInputSample.Transformer.StringTransformerDelegate" }

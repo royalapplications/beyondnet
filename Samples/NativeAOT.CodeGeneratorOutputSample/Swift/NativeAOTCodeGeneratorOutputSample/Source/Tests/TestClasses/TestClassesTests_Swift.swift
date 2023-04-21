@@ -126,6 +126,34 @@ final class TestClassesTests_Swift: XCTestCase {
         XCTAssertNoThrow(try testClass.modifyByRefEnum(&valueToModify))
         XCTAssertEqual(expectedValue, valueToModify)
     }
+	
+	func testDelegateReturningChar() {
+		guard let testClass = try? NativeAOT_CodeGeneratorInputSample_TestClass() else {
+			XCTFail("TestClass ctor should not throw and return an instance")
+			
+			return
+		}
+		
+		let value = DNChar(cValue: 5)
+		
+		let charReturnerDelegate = NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate {
+			value
+		}
+		
+		guard let charReturnerDelegate else {
+			XCTFail("CharReturnerDelegate ctor should return an instance")
+			
+			return
+		}
+		
+		guard let retVal = try? testClass.getChar(charReturnerDelegate) else {
+			XCTFail("TestClass.GetChar should not throw and return a char")
+			
+			return
+		}
+		
+		XCTAssertEqual(value, retVal)
+	}
     
     func testBookByRef() {
         guard let testClass = try? NativeAOT_CodeGeneratorInputSample_TestClass() else {

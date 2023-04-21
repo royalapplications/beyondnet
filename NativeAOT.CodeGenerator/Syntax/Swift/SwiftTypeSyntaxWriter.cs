@@ -151,7 +151,8 @@ public class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWriter
 
         TypeDescriptor returnTypeDescriptor = returnType.GetTypeDescriptor(typeDescriptorRegistry);
         
-        const bool returnTypeIsOptional = true;
+        bool returnTypeIsPrimitive = returnType.IsPrimitive;
+        bool returnTypeIsOptional = !returnTypeIsPrimitive;
         
         // TODO: This generates inout TypeName if the return type is by ref
         string swiftReturnTypeName = returnTypeDescriptor.GetTypeName(
@@ -290,11 +291,19 @@ public class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWriter
     
             if (!string.IsNullOrEmpty(returnTypeConversion)) {
                 string newReturnValueName = "__returnValue";
-                        
-                string fullReturnTypeConversion = $"let {newReturnValueName} = {string.Format(returnTypeConversion, $"{returnValueName}?")}";
+
+                string returnTypeOptionalString = returnTypeIsOptional
+                    ? "?"
+                    : string.Empty;
+
+                string fullReturnTypeConversion = $"let {newReturnValueName} = {string.Format(returnTypeConversion, $"{returnValueName}{returnTypeOptionalString}")}";
     
                 sb.AppendLine($"\t\t\t{fullReturnTypeConversion}");
-                sb.AppendLine($"\t\t\t{returnValueName}?.__skipDestroy = true // Will be destroyed by .NET");
+                
+                if (!returnTypeIsPrimitive) {
+                    sb.AppendLine($"\t\t\t{returnValueName}?.__skipDestroy = true // Will be destroyed by .NET");
+                }
+                
                 sb.AppendLine();
                         
                 returnValueName = newReturnValueName;
