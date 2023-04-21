@@ -2,6 +2,7 @@ namespace NativeAOT.CodeGenerator.Syntax.Swift.Declaration;
 
 public enum SwiftVisibilities
 {
+    None,
     Private,
     Internal,
     Public,
@@ -13,6 +14,8 @@ public static class SwiftVisibilities_Extensions
     public static string ToSwiftSyntaxString(this SwiftVisibilities swiftVisibility)
     {
         switch (swiftVisibility) {
+            case SwiftVisibilities.None:
+                return string.Empty;
             case SwiftVisibilities.Private:
                 return "private";
             case SwiftVisibilities.Internal:

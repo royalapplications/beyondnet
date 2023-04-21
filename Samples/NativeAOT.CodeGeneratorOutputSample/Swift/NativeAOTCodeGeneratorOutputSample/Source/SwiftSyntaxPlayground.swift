@@ -1,5 +1,15 @@
 import Foundation
 
+public protocol PropTest {
+	var age: Int32 { get throws }
+}
+
+public class PropTest_Impl: PropTest {
+	public var age: Int32 { get throws {
+		return 0
+	}}
+}
+
 public class TEST_NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate /* NativeAOT.CodeGeneratorInputSample.Transformer+StringTransformerDelegate */: System_MulticastDelegate {
 	public override class var typeName: String { "NativeAOT.CodeGeneratorInputSample.Transformer.StringTransformerDelegate" }
 	public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.Transformer+StringTransformerDelegate" }
