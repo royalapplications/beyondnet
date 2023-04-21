@@ -89587,7 +89587,13 @@ public class System_Action /* System.Action */: System_MulticastDelegate {
 		self.init(handle: __delegateC)
 	}
 
-	// TODO: invoke
+	public func invoke() throws -> Void {
+		var __exceptionC: System_Exception_t?
+
+		let __selfC = self.__handle
+
+		
+	}
 
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Action_TypeOf())
@@ -89643,7 +89649,13 @@ public class System_MulticastDelegate /* System.MulticastDelegate */: System_Del
 		self.init(handle: __delegateC)
 	}
 
-	// TODO: invoke
+	public func invoke() throws -> Void {
+		var __exceptionC: System_Exception_t?
+
+		let __selfC = self.__handle
+
+		
+	}
 
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_MulticastDelegate_TypeOf())
@@ -89699,7 +89711,13 @@ public class System_Delegate /* System.Delegate */: System_Object {
 		self.init(handle: __delegateC)
 	}
 
-	// TODO: invoke
+	public func invoke() throws -> Void {
+		var __exceptionC: System_Exception_t?
+
+		let __selfC = self.__handle
+
+		
+	}
 
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Delegate_TypeOf())
@@ -89760,7 +89778,15 @@ public class System_Reflection_TypeFilter /* System.Reflection.TypeFilter */: Sy
 		self.init(handle: __delegateC)
 	}
 
-	// TODO: invoke
+	public func invoke(_ m: System_Type? /* System.Type */, _ filterCriteria: System_Object? /* System.Object */) throws -> Bool {
+		var __exceptionC: System_Exception_t?
+
+		let __selfC = self.__handle
+
+		let mC = m?.__handle
+		let filterCriteriaC = filterCriteria?.__handle
+		
+	}
 
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_TypeFilter_TypeOf())
@@ -89817,7 +89843,14 @@ public class System_AsyncCallback /* System.AsyncCallback */: System_MulticastDe
 		self.init(handle: __delegateC)
 	}
 
-	// TODO: invoke
+	public func invoke(_ ar: System_IAsyncResult? /* System.IAsyncResult */) throws -> Void {
+		var __exceptionC: System_Exception_t?
+
+		let __selfC = self.__handle
+
+		let arC = ar?.__handle
+		
+	}
 
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_AsyncCallback_TypeOf())
@@ -89879,7 +89912,15 @@ public class System_Reflection_ModuleResolveEventHandler /* System.Reflection.Mo
 		self.init(handle: __delegateC)
 	}
 
-	// TODO: invoke
+	public func invoke(_ sender: System_Object? /* System.Object */, _ e: System_ResolveEventArgs? /* System.ResolveEventArgs */) throws -> System_Reflection_Module? {
+		var __exceptionC: System_Exception_t?
+
+		let __selfC = self.__handle
+
+		let senderC = sender?.__handle
+		let eC = e?.__handle
+		
+	}
 
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_ModuleResolveEventHandler_TypeOf())
@@ -89938,7 +89979,15 @@ public class System_Reflection_MemberFilter /* System.Reflection.MemberFilter */
 		self.init(handle: __delegateC)
 	}
 
-	// TODO: invoke
+	public func invoke(_ m: System_Reflection_MemberInfo? /* System.Reflection.MemberInfo */, _ filterCriteria: System_Object? /* System.Object */) throws -> Bool {
+		var __exceptionC: System_Exception_t?
+
+		let __selfC = self.__handle
+
+		let mC = m?.__handle
+		let filterCriteriaC = filterCriteria?.__handle
+		
+	}
 
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_MemberFilter_TypeOf())
@@ -89995,7 +90044,14 @@ public class System_Threading_ContextCallback /* System.Threading.ContextCallbac
 		self.init(handle: __delegateC)
 	}
 
-	// TODO: invoke
+	public func invoke(_ state: System_Object? /* System.Object */) throws -> Void {
+		var __exceptionC: System_Exception_t?
+
+		let __selfC = self.__handle
+
+		let stateC = state?.__handle
+		
+	}
 
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Threading_ContextCallback_TypeOf())
@@ -90053,7 +90109,15 @@ public class System_UnhandledExceptionEventHandler /* System.UnhandledExceptionE
 		self.init(handle: __delegateC)
 	}
 
-	// TODO: invoke
+	public func invoke(_ sender: System_Object? /* System.Object */, _ e: System_UnhandledExceptionEventArgs? /* System.UnhandledExceptionEventArgs */) throws -> Void {
+		var __exceptionC: System_Exception_t?
+
+		let __selfC = self.__handle
+
+		let senderC = sender?.__handle
+		let eC = e?.__handle
+		
+	}
 
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_UnhandledExceptionEventHandler_TypeOf())
@@ -90111,7 +90175,15 @@ public class System_EventHandler /* System.EventHandler */: System_MulticastDele
 		self.init(handle: __delegateC)
 	}
 
-	// TODO: invoke
+	public func invoke(_ sender: System_Object? /* System.Object */, _ e: System_EventArgs? /* System.EventArgs */) throws -> Void {
+		var __exceptionC: System_Exception_t?
+
+		let __selfC = self.__handle
+
+		let senderC = sender?.__handle
+		let eC = e?.__handle
+		
+	}
 
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_EventHandler_TypeOf())
@@ -90169,7 +90241,15 @@ public class System_AssemblyLoadEventHandler /* System.AssemblyLoadEventHandler 
 		self.init(handle: __delegateC)
 	}
 
-	// TODO: invoke
+	public func invoke(_ sender: System_Object? /* System.Object */, _ args: System_AssemblyLoadEventArgs? /* System.AssemblyLoadEventArgs */) throws -> Void {
+		var __exceptionC: System_Exception_t?
+
+		let __selfC = self.__handle
+
+		let senderC = sender?.__handle
+		let argsC = args?.__handle
+		
+	}
 
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_AssemblyLoadEventHandler_TypeOf())
@@ -90231,7 +90311,15 @@ public class System_ResolveEventHandler /* System.ResolveEventHandler */: System
 		self.init(handle: __delegateC)
 	}
 
-	// TODO: invoke
+	public func invoke(_ sender: System_Object? /* System.Object */, _ args: System_ResolveEventArgs? /* System.ResolveEventArgs */) throws -> System_Reflection_Assembly? {
+		var __exceptionC: System_Exception_t?
+
+		let __selfC = self.__handle
+
+		let senderC = sender?.__handle
+		let argsC = args?.__handle
+		
+	}
 
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_ResolveEventHandler_TypeOf())
@@ -90287,7 +90375,13 @@ public class System_Threading_ThreadStart /* System.Threading.ThreadStart */: Sy
 		self.init(handle: __delegateC)
 	}
 
-	// TODO: invoke
+	public func invoke() throws -> Void {
+		var __exceptionC: System_Exception_t?
+
+		let __selfC = self.__handle
+
+		
+	}
 
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Threading_ThreadStart_TypeOf())
@@ -90344,7 +90438,14 @@ public class System_Threading_ParameterizedThreadStart /* System.Threading.Param
 		self.init(handle: __delegateC)
 	}
 
-	// TODO: invoke
+	public func invoke(_ obj: System_Object? /* System.Object */) throws -> Void {
+		var __exceptionC: System_Exception_t?
+
+		let __selfC = self.__handle
+
+		let objC = obj?.__handle
+		
+	}
 
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Threading_ParameterizedThreadStart_TypeOf())
@@ -90401,7 +90502,14 @@ public class System_Threading_TimerCallback /* System.Threading.TimerCallback */
 		self.init(handle: __delegateC)
 	}
 
-	// TODO: invoke
+	public func invoke(_ state: System_Object? /* System.Object */) throws -> Void {
+		var __exceptionC: System_Exception_t?
+
+		let __selfC = self.__handle
+
+		let stateC = state?.__handle
+		
+	}
 
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Threading_TimerCallback_TypeOf())
@@ -90463,7 +90571,15 @@ public class NativeAOT_CodeGeneratorInputSample_MoveDelegate /* NativeAOT.CodeGe
 		self.init(handle: __delegateC)
 	}
 
-	// TODO: invoke
+	public func invoke(_ newStreet: System_String? /* System.String */, _ newCity: System_String? /* System.String */) throws -> NativeAOT_CodeGeneratorInputSample_Address? {
+		var __exceptionC: System_Exception_t?
+
+		let __selfC = self.__handle
+
+		let newStreetC = newStreet?.__handle
+		let newCityC = newCity?.__handle
+		
+	}
 
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_MoveDelegate_TypeOf())
@@ -90524,7 +90640,14 @@ public class NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate /* NativeA
 		self.init(handle: __delegateC)
 	}
 
-	// TODO: invoke
+	public func invoke(_ animalName: System_String? /* System.String */) throws -> NativeAOT_CodeGeneratorInputSample_IAnimal? {
+		var __exceptionC: System_Exception_t?
+
+		let __selfC = self.__handle
+
+		let animalNameC = animalName?.__handle
+		
+	}
 
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_TypeOf())
@@ -90580,7 +90703,13 @@ public class NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDe
 		self.init(handle: __delegateC)
 	}
 
-	// TODO: invoke
+	public func invoke() throws -> Void {
+		var __exceptionC: System_Exception_t?
+
+		let __selfC = self.__handle
+
+		
+	}
 
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_TypeOf())
@@ -90637,7 +90766,13 @@ public class NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate /*
 		self.init(handle: __delegateC)
 	}
 
-	// TODO: invoke
+	public func invoke() throws -> Int32 {
+		var __exceptionC: System_Exception_t?
+
+		let __selfC = self.__handle
+
+		
+	}
 
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_TypeOf())
@@ -90702,7 +90837,13 @@ public class NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate /* NativeAO
 		self.init(handle: __delegateC)
 	}
 
-	// TODO: invoke
+	public func invoke() throws -> DNChar {
+		var __exceptionC: System_Exception_t?
+
+		let __selfC = self.__handle
+
+		
+	}
 
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_TypeOf())
@@ -90763,7 +90904,14 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDel
 		self.init(handle: __delegateC)
 	}
 
-	// TODO: invoke
+	public func invoke(_ inputString: System_String? /* System.String */) throws -> System_String? {
+		var __exceptionC: System_Exception_t?
+
+		let __selfC = self.__handle
+
+		let inputStringC = inputString?.__handle
+		
+	}
 
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate_TypeOf())
@@ -90820,7 +90968,13 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_DoublesTransformerDe
 		self.init(handle: __delegateC)
 	}
 
-	// TODO: invoke
+	public func invoke(_ number1: Double /* System.Double */, _ number2: Double /* System.Double */) throws -> Double {
+		var __exceptionC: System_Exception_t?
+
+		let __selfC = self.__handle
+
+		
+	}
 
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Transformer_DoublesTransformerDelegate_TypeOf())
@@ -90880,7 +91034,13 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate
 		self.init(handle: __delegateC)
 	}
 
-	// TODO: invoke
+	public func invoke() throws -> System_String? {
+		var __exceptionC: System_Exception_t?
+
+		let __selfC = self.__handle
+
+		
+	}
 
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate_TypeOf())
