@@ -16,6 +16,24 @@ final class SystemActionTests: XCTestCase {
         var numberOfTimesCalled = 0
 		var numberOfTimesDestructorCalled = 0
     }
+	
+	func testSystemActionType() {
+		var exception: System_Exception_t?
+		
+		let systemActionType = System_Action_TypeOf()
+		defer { System_Type_Destroy(systemActionType) }
+		
+		guard let systemActionFullTypeName = String(cDotNETString: System_Type_FullName_Get(systemActionType,
+																							&exception),
+													destroyDotNETString: true),
+			  exception == nil else {
+			XCTFail("System.Type.FullName getter should not throw and return an instance")
+			
+			return
+		}
+		
+		XCTAssertEqual("System.Action", systemActionFullTypeName)
+	}
     
     func testSystemAction() {
 		var exception: System_Exception_t?

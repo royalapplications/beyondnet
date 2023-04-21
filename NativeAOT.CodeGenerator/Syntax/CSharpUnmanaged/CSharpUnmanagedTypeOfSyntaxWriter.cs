@@ -23,7 +23,7 @@ public class CSharpUnmanagedTypeOfSyntaxWriter: CSharpUnmanagedMethodSyntaxWrite
         const bool mayThrow = false;
         const bool addToState = true;
 
-        string destructorCode = WriteMethod(
+        string code = WriteMethod(
             null,
             MemberKind.TypeOf,
             string.Empty,
@@ -38,6 +38,6 @@ public class CSharpUnmanagedTypeOfSyntaxWriter: CSharpUnmanagedMethodSyntaxWrite
             out _
         );
 
-        return destructorCode;
+        return code;
     }
 }

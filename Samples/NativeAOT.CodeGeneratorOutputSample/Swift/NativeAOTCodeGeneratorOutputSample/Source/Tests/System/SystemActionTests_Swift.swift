@@ -18,6 +18,18 @@ final class SystemActionTests_Swift: XCTestCase {
 		var numberOfTimesDestructorCalled = 0
 	}
 	
+	func testSystemActionType() {
+		let systemActionType = System_Action.typeOf()
+		
+		guard let systemActionFullTypeName = try? systemActionType.fullName_get()?.string() else {
+			XCTFail("System.Type.FullName getter should not throw and return an instance")
+			
+			return
+		}
+		
+		XCTAssertEqual("System.Action", systemActionFullTypeName)
+	}
+	
 	func testSystemAction() {
 		var numberOfTimesCalled = 0
 		

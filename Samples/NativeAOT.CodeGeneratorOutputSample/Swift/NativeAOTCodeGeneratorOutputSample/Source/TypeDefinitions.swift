@@ -1,5 +1,5 @@
 // Number of generated types: 1490
-// Number of generated members: 4615
+// Number of generated members: 4638
 
 // MARK: - BEGIN Header
 import Foundation
@@ -89589,6 +89589,11 @@ public class System_Action /* System.Action */: System_MulticastDelegate {
 
 	// TODO: invoke
 
+	public override class func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Action_TypeOf())
+		
+	}
+	
 	internal override func destroy() {
 		System_Action_Destroy(self.__handle)
 		
@@ -89640,6 +89645,11 @@ public class System_MulticastDelegate /* System.MulticastDelegate */: System_Del
 
 	// TODO: invoke
 
+	public override class func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_MulticastDelegate_TypeOf())
+		
+	}
+	
 	internal override func destroy() {
 		System_MulticastDelegate_Destroy(self.__handle)
 		
@@ -89691,6 +89701,11 @@ public class System_Delegate /* System.Delegate */: System_Object {
 
 	// TODO: invoke
 
+	public override class func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Delegate_TypeOf())
+		
+	}
+	
 	internal override func destroy() {
 		System_Delegate_Destroy(self.__handle)
 		
@@ -89747,6 +89762,11 @@ public class System_Reflection_TypeFilter /* System.Reflection.TypeFilter */: Sy
 
 	// TODO: invoke
 
+	public override class func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Reflection_TypeFilter_TypeOf())
+		
+	}
+	
 	internal override func destroy() {
 		System_Reflection_TypeFilter_Destroy(self.__handle)
 		
@@ -89799,6 +89819,11 @@ public class System_AsyncCallback /* System.AsyncCallback */: System_MulticastDe
 
 	// TODO: invoke
 
+	public override class func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_AsyncCallback_TypeOf())
+		
+	}
+	
 	internal override func destroy() {
 		System_AsyncCallback_Destroy(self.__handle)
 		
@@ -89856,6 +89881,11 @@ public class System_Reflection_ModuleResolveEventHandler /* System.Reflection.Mo
 
 	// TODO: invoke
 
+	public override class func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Reflection_ModuleResolveEventHandler_TypeOf())
+		
+	}
+	
 	internal override func destroy() {
 		System_Reflection_ModuleResolveEventHandler_Destroy(self.__handle)
 		
@@ -89910,6 +89940,11 @@ public class System_Reflection_MemberFilter /* System.Reflection.MemberFilter */
 
 	// TODO: invoke
 
+	public override class func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Reflection_MemberFilter_TypeOf())
+		
+	}
+	
 	internal override func destroy() {
 		System_Reflection_MemberFilter_Destroy(self.__handle)
 		
@@ -89962,6 +89997,11 @@ public class System_Threading_ContextCallback /* System.Threading.ContextCallbac
 
 	// TODO: invoke
 
+	public override class func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Threading_ContextCallback_TypeOf())
+		
+	}
+	
 	internal override func destroy() {
 		System_Threading_ContextCallback_Destroy(self.__handle)
 		
@@ -90015,6 +90055,11 @@ public class System_UnhandledExceptionEventHandler /* System.UnhandledExceptionE
 
 	// TODO: invoke
 
+	public override class func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_UnhandledExceptionEventHandler_TypeOf())
+		
+	}
+	
 	internal override func destroy() {
 		System_UnhandledExceptionEventHandler_Destroy(self.__handle)
 		
@@ -90068,6 +90113,11 @@ public class System_EventHandler /* System.EventHandler */: System_MulticastDele
 
 	// TODO: invoke
 
+	public override class func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_EventHandler_TypeOf())
+		
+	}
+	
 	internal override func destroy() {
 		System_EventHandler_Destroy(self.__handle)
 		
@@ -90121,6 +90171,11 @@ public class System_AssemblyLoadEventHandler /* System.AssemblyLoadEventHandler 
 
 	// TODO: invoke
 
+	public override class func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_AssemblyLoadEventHandler_TypeOf())
+		
+	}
+	
 	internal override func destroy() {
 		System_AssemblyLoadEventHandler_Destroy(self.__handle)
 		
@@ -90178,6 +90233,11 @@ public class System_ResolveEventHandler /* System.ResolveEventHandler */: System
 
 	// TODO: invoke
 
+	public override class func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_ResolveEventHandler_TypeOf())
+		
+	}
+	
 	internal override func destroy() {
 		System_ResolveEventHandler_Destroy(self.__handle)
 		
@@ -90229,6 +90289,11 @@ public class System_Threading_ThreadStart /* System.Threading.ThreadStart */: Sy
 
 	// TODO: invoke
 
+	public override class func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Threading_ThreadStart_TypeOf())
+		
+	}
+	
 	internal override func destroy() {
 		System_Threading_ThreadStart_Destroy(self.__handle)
 		
@@ -90281,6 +90346,11 @@ public class System_Threading_ParameterizedThreadStart /* System.Threading.Param
 
 	// TODO: invoke
 
+	public override class func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Threading_ParameterizedThreadStart_TypeOf())
+		
+	}
+	
 	internal override func destroy() {
 		System_Threading_ParameterizedThreadStart_Destroy(self.__handle)
 		
@@ -90333,6 +90403,11 @@ public class System_Threading_TimerCallback /* System.Threading.TimerCallback */
 
 	// TODO: invoke
 
+	public override class func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: System_Threading_TimerCallback_TypeOf())
+		
+	}
+	
 	internal override func destroy() {
 		System_Threading_TimerCallback_Destroy(self.__handle)
 		
@@ -90390,6 +90465,11 @@ public class NativeAOT_CodeGeneratorInputSample_MoveDelegate /* NativeAOT.CodeGe
 
 	// TODO: invoke
 
+	public override class func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_MoveDelegate_TypeOf())
+		
+	}
+	
 	internal override func destroy() {
 		NativeAOT_CodeGeneratorInputSample_MoveDelegate_Destroy(self.__handle)
 		
@@ -90446,6 +90526,11 @@ public class NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate /* NativeA
 
 	// TODO: invoke
 
+	public override class func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_TypeOf())
+		
+	}
+	
 	internal override func destroy() {
 		NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Destroy(self.__handle)
 		
@@ -90497,6 +90582,11 @@ public class NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDe
 
 	// TODO: invoke
 
+	public override class func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_TypeOf())
+		
+	}
+	
 	internal override func destroy() {
 		NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_Destroy(self.__handle)
 		
@@ -90549,6 +90639,11 @@ public class NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate /*
 
 	// TODO: invoke
 
+	public override class func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_TypeOf())
+		
+	}
+	
 	internal override func destroy() {
 		NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Destroy(self.__handle)
 		
@@ -90609,6 +90704,11 @@ public class NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate /* NativeAO
 
 	// TODO: invoke
 
+	public override class func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_TypeOf())
+		
+	}
+	
 	internal override func destroy() {
 		NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_Destroy(self.__handle)
 		
@@ -90665,6 +90765,11 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDel
 
 	// TODO: invoke
 
+	public override class func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate_TypeOf())
+		
+	}
+	
 	internal override func destroy() {
 		NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate_Destroy(self.__handle)
 		
@@ -90717,6 +90822,11 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_DoublesTransformerDe
 
 	// TODO: invoke
 
+	public override class func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Transformer_DoublesTransformerDelegate_TypeOf())
+		
+	}
+	
 	internal override func destroy() {
 		NativeAOT_CodeGeneratorInputSample_Transformer_DoublesTransformerDelegate_Destroy(self.__handle)
 		
@@ -90772,6 +90882,11 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate
 
 	// TODO: invoke
 
+	public override class func typeOf() -> System_Type /* System.Type */ {
+		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate_TypeOf())
+		
+	}
+	
 	internal override func destroy() {
 		NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate_Destroy(self.__handle)
 		

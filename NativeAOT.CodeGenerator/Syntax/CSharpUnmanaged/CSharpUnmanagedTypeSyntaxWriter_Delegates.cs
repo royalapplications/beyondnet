@@ -458,13 +458,25 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
         #endregion Native API
 
         sb.AppendLine();
-        
-        // TODO: Add to State
 
+        #region TypeOf
+        WriteTypeOf(
+            type,
+            sb,
+            state
+        );
+        #endregion TypeOf
+
+        sb.AppendLine();
+        
+        #region Destructor
         WriteDestructor(
             type,
             sb,
             state
         );
+        #endregion Destructor
+        
+        // TODO: Add to State
     }
 }

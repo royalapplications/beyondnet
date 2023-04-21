@@ -1,5 +1,5 @@
 // Number of generated types: 1490
-// Number of generated members: 4617
+// Number of generated members: 4640
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -37375,6 +37375,11 @@ System_Action_CDestructorFunction_Get(
 	System_Action_t /* System.Action */ self
 );
 
+System_Type_t __nonnull /* System.Type */
+System_Action_TypeOf(
+	
+);
+
 void /* System.Void */
 System_Action_Destroy(
 	System_Action_t /* System.Action */ self
@@ -37410,6 +37415,11 @@ System_MulticastDelegate_CDestructorFunction_Get(
 	System_MulticastDelegate_t /* System.MulticastDelegate */ self
 );
 
+System_Type_t __nonnull /* System.Type */
+System_MulticastDelegate_TypeOf(
+	
+);
+
 void /* System.Void */
 System_MulticastDelegate_Destroy(
 	System_MulticastDelegate_t /* System.MulticastDelegate */ self
@@ -37443,6 +37453,11 @@ System_Delegate_CFunction_Get(
 System_Delegate_CDestructorFunction_t
 System_Delegate_CDestructorFunction_Get(
 	System_Delegate_t /* System.Delegate */ self
+);
+
+System_Type_t __nonnull /* System.Type */
+System_Delegate_TypeOf(
+	
 );
 
 void /* System.Void */
@@ -37483,6 +37498,11 @@ System_Reflection_TypeFilter_CDestructorFunction_Get(
 	System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */ self
 );
 
+System_Type_t __nonnull /* System.Type */
+System_Reflection_TypeFilter_TypeOf(
+	
+);
+
 void /* System.Void */
 System_Reflection_TypeFilter_Destroy(
 	System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */ self
@@ -37516,6 +37536,11 @@ System_AsyncCallback_CFunction_Get(
 System_AsyncCallback_CDestructorFunction_t
 System_AsyncCallback_CDestructorFunction_Get(
 	System_AsyncCallback_t /* System.AsyncCallback */ self
+);
+
+System_Type_t __nonnull /* System.Type */
+System_AsyncCallback_TypeOf(
+	
 );
 
 void /* System.Void */
@@ -37554,6 +37579,11 @@ System_Reflection_ModuleResolveEventHandler_CDestructorFunction_Get(
 	System_Reflection_ModuleResolveEventHandler_t /* System.Reflection.ModuleResolveEventHandler */ self
 );
 
+System_Type_t __nonnull /* System.Type */
+System_Reflection_ModuleResolveEventHandler_TypeOf(
+	
+);
+
 void /* System.Void */
 System_Reflection_ModuleResolveEventHandler_Destroy(
 	System_Reflection_ModuleResolveEventHandler_t /* System.Reflection.ModuleResolveEventHandler */ self
@@ -37590,6 +37620,11 @@ System_Reflection_MemberFilter_CDestructorFunction_Get(
 	System_Reflection_MemberFilter_t /* System.Reflection.MemberFilter */ self
 );
 
+System_Type_t __nonnull /* System.Type */
+System_Reflection_MemberFilter_TypeOf(
+	
+);
+
 void /* System.Void */
 System_Reflection_MemberFilter_Destroy(
 	System_Reflection_MemberFilter_t /* System.Reflection.MemberFilter */ self
@@ -37623,6 +37658,11 @@ System_Threading_ContextCallback_CFunction_Get(
 System_Threading_ContextCallback_CDestructorFunction_t
 System_Threading_ContextCallback_CDestructorFunction_Get(
 	System_Threading_ContextCallback_t /* System.Threading.ContextCallback */ self
+);
+
+System_Type_t __nonnull /* System.Type */
+System_Threading_ContextCallback_TypeOf(
+	
 );
 
 void /* System.Void */
@@ -37661,6 +37701,11 @@ System_UnhandledExceptionEventHandler_CDestructorFunction_Get(
 	System_UnhandledExceptionEventHandler_t /* System.UnhandledExceptionEventHandler */ self
 );
 
+System_Type_t __nonnull /* System.Type */
+System_UnhandledExceptionEventHandler_TypeOf(
+	
+);
+
 void /* System.Void */
 System_UnhandledExceptionEventHandler_Destroy(
 	System_UnhandledExceptionEventHandler_t /* System.UnhandledExceptionEventHandler */ self
@@ -37695,6 +37740,11 @@ System_EventHandler_CFunction_Get(
 System_EventHandler_CDestructorFunction_t
 System_EventHandler_CDestructorFunction_Get(
 	System_EventHandler_t /* System.EventHandler */ self
+);
+
+System_Type_t __nonnull /* System.Type */
+System_EventHandler_TypeOf(
+	
 );
 
 void /* System.Void */
@@ -37733,6 +37783,11 @@ System_AssemblyLoadEventHandler_CDestructorFunction_Get(
 	System_AssemblyLoadEventHandler_t /* System.AssemblyLoadEventHandler */ self
 );
 
+System_Type_t __nonnull /* System.Type */
+System_AssemblyLoadEventHandler_TypeOf(
+	
+);
+
 void /* System.Void */
 System_AssemblyLoadEventHandler_Destroy(
 	System_AssemblyLoadEventHandler_t /* System.AssemblyLoadEventHandler */ self
@@ -37767,6 +37822,11 @@ System_ResolveEventHandler_CFunction_Get(
 System_ResolveEventHandler_CDestructorFunction_t
 System_ResolveEventHandler_CDestructorFunction_Get(
 	System_ResolveEventHandler_t /* System.ResolveEventHandler */ self
+);
+
+System_Type_t __nonnull /* System.Type */
+System_ResolveEventHandler_TypeOf(
+	
 );
 
 void /* System.Void */
@@ -37804,6 +37864,11 @@ System_Threading_ThreadStart_CDestructorFunction_Get(
 	System_Threading_ThreadStart_t /* System.Threading.ThreadStart */ self
 );
 
+System_Type_t __nonnull /* System.Type */
+System_Threading_ThreadStart_TypeOf(
+	
+);
+
 void /* System.Void */
 System_Threading_ThreadStart_Destroy(
 	System_Threading_ThreadStart_t /* System.Threading.ThreadStart */ self
@@ -37839,6 +37904,11 @@ System_Threading_ParameterizedThreadStart_CDestructorFunction_Get(
 	System_Threading_ParameterizedThreadStart_t /* System.Threading.ParameterizedThreadStart */ self
 );
 
+System_Type_t __nonnull /* System.Type */
+System_Threading_ParameterizedThreadStart_TypeOf(
+	
+);
+
 void /* System.Void */
 System_Threading_ParameterizedThreadStart_Destroy(
 	System_Threading_ParameterizedThreadStart_t /* System.Threading.ParameterizedThreadStart */ self
@@ -37872,6 +37942,11 @@ System_Threading_TimerCallback_CFunction_Get(
 System_Threading_TimerCallback_CDestructorFunction_t
 System_Threading_TimerCallback_CDestructorFunction_Get(
 	System_Threading_TimerCallback_t /* System.Threading.TimerCallback */ self
+);
+
+System_Type_t __nonnull /* System.Type */
+System_Threading_TimerCallback_TypeOf(
+	
 );
 
 void /* System.Void */
@@ -37910,6 +37985,11 @@ NativeAOT_CodeGeneratorInputSample_MoveDelegate_CDestructorFunction_Get(
 	NativeAOT_CodeGeneratorInputSample_MoveDelegate_t /* NativeAOT.CodeGeneratorInputSample.MoveDelegate */ self
 );
 
+System_Type_t __nonnull /* System.Type */
+NativeAOT_CodeGeneratorInputSample_MoveDelegate_TypeOf(
+	
+);
+
 void /* System.Void */
 NativeAOT_CodeGeneratorInputSample_MoveDelegate_Destroy(
 	NativeAOT_CodeGeneratorInputSample_MoveDelegate_t /* NativeAOT.CodeGeneratorInputSample.MoveDelegate */ self
@@ -37943,6 +38023,11 @@ NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_CFunction_Get(
 NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_CDestructorFunction_t
 NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_CDestructorFunction_Get(
 	NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_t /* NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate */ self
+);
+
+System_Type_t __nonnull /* System.Type */
+NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_TypeOf(
+	
 );
 
 void /* System.Void */
@@ -37980,6 +38065,11 @@ NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_CDestr
 	NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate */ self
 );
 
+System_Type_t __nonnull /* System.Type */
+NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_TypeOf(
+	
+);
+
 void /* System.Void */
 NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_Destroy(
 	NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate */ self
@@ -38013,6 +38103,11 @@ NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CFunction_Get(
 NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CDestructorFunction_t
 NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CDestructorFunction_Get(
 	NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_t /* NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate */ self
+);
+
+System_Type_t __nonnull /* System.Type */
+NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_TypeOf(
+	
 );
 
 void /* System.Void */
@@ -38062,6 +38157,11 @@ NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_CDestructorFunction_Get(
 	NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_t /* NativeAOT.CodeGeneratorInputSample.CharReturnerDelegate */ self
 );
 
+System_Type_t __nonnull /* System.Type */
+NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_TypeOf(
+	
+);
+
 void /* System.Void */
 NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_Destroy(
 	NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_t /* NativeAOT.CodeGeneratorInputSample.CharReturnerDelegate */ self
@@ -38095,6 +38195,11 @@ NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate_CFuncti
 NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate_CDestructorFunction_t
 NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate_CDestructorFunction_Get(
 	NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate_t /* NativeAOT.CodeGeneratorInputSample.Transformer.StringTransformerDelegate */ self
+);
+
+System_Type_t __nonnull /* System.Type */
+NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate_TypeOf(
+	
 );
 
 void /* System.Void */
@@ -38133,6 +38238,11 @@ NativeAOT_CodeGeneratorInputSample_Transformer_DoublesTransformerDelegate_CDestr
 	NativeAOT_CodeGeneratorInputSample_Transformer_DoublesTransformerDelegate_t /* NativeAOT.CodeGeneratorInputSample.Transformer.DoublesTransformerDelegate */ self
 );
 
+System_Type_t __nonnull /* System.Type */
+NativeAOT_CodeGeneratorInputSample_Transformer_DoublesTransformerDelegate_TypeOf(
+	
+);
+
 void /* System.Void */
 NativeAOT_CodeGeneratorInputSample_Transformer_DoublesTransformerDelegate_Destroy(
 	NativeAOT_CodeGeneratorInputSample_Transformer_DoublesTransformerDelegate_t /* NativeAOT.CodeGeneratorInputSample.Transformer.DoublesTransformerDelegate */ self
@@ -38166,6 +38276,11 @@ NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate_CFunction_Ge
 NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate_CDestructorFunction_t
 NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate_CDestructorFunction_Get(
 	NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate_t /* NativeAOT.CodeGeneratorInputSample.Transformer.StringGetterDelegate */ self
+);
+
+System_Type_t __nonnull /* System.Type */
+NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate_TypeOf(
+	
 );
 
 void /* System.Void */
