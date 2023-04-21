@@ -129,65 +129,48 @@ final class AnimalTests_Swift: XCTestCase {
 		XCTAssertEqual(animalName, retrievedAnimalName)
 	}
 	
-	// TODO: Swiftify
-//	func testGettingDefaultAnimalCreator() {
-//		guard let defaultCreator = NativeAOT_CodeGeneratorInputSample_AnimalFactory.dEFAULT_CREATOR_get() else {
-//			XCTFail("AnimalFactory.DEFAULT_CREATOR should not return nil")
-//
-//			return
-//		}
-//
-//		let dogName = "Dog"
-//		let dogNameDN = dogName.dotNETString()
-//
-//		guard let dog = NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Invoke(defaultCreator,
-//																						dogNameDN,
-//																						&exception),
-//			  exception == nil else {
-//			XCTFail("Given the animal name \"Dog\", an instance of a dog should be returned")
-//
-//			return
-//		}
-//
-//		defer { NativeAOT_CodeGeneratorInputSample_IAnimal_Destroy(dog) }
-//
-//		guard let dogNameRet = String(cDotNETString: NativeAOT_CodeGeneratorInputSample_IAnimal_Name_Get(dog,
-//																										&exception),
-//									  destroyDotNETString: true),
-//			  exception == nil else {
-//			XCTFail("IAnimal.Name should not throw and return an instance")
-//
-//			return
-//		}
-//
-//		XCTAssertEqual(dogName, dogNameRet)
-//
-//		let catName = "Cat"
-//		let catNameDN = catName.cDotNETString()
-//		defer { System_String_Destroy(catNameDN) }
-//
-//		guard let cat = NativeAOT_CodeGeneratorInputSample_AnimalFactory_CreateAnimal_1(catNameDN,
-//																						defaultCreator,
-//																						&exception),
-//			  exception == nil else {
-//			XCTFail("Given the animal name \"Cat\", an instance of a cat should be returned")
-//
-//			return
-//		}
-//
-//		defer { NativeAOT_CodeGeneratorInputSample_IAnimal_Destroy(cat) }
-//
-//		guard let catNameRet = String(cDotNETString: NativeAOT_CodeGeneratorInputSample_IAnimal_Name_Get(cat,
-//																										&exception),
-//									  destroyDotNETString: true),
-//			  exception == nil else {
-//			XCTFail("IAnimal.Name should not throw and return an instance")
-//
-//			return
-//		}
-//
-//		XCTAssertEqual(catName, catNameRet)
-//	}
+	func testGettingDefaultAnimalCreator() {
+		guard let defaultCreator = NativeAOT_CodeGeneratorInputSample_AnimalFactory.dEFAULT_CREATOR_get() else {
+			XCTFail("AnimalFactory.DEFAULT_CREATOR should not return nil")
+
+			return
+		}
+
+		let dogName = "Dog"
+		let dogNameDN = dogName.dotNETString()
+
+		guard let dog = try? defaultCreator.invoke(dogNameDN) else {
+			XCTFail("Given the animal name \"Dog\", an instance of a dog should be returned")
+
+			return
+		}
+
+		guard let dogNameRet = try? dog.name_get()?.string() else {
+			XCTFail("IAnimal.Name should not throw and return an instance")
+
+			return
+		}
+
+		XCTAssertEqual(dogName, dogNameRet)
+
+		let catName = "Cat"
+		let catNameDN = catName.dotNETString()
+
+		guard let cat = try? NativeAOT_CodeGeneratorInputSample_AnimalFactory.createAnimal(catNameDN,
+																						   defaultCreator) else {
+			XCTFail("Given the animal name \"Cat\", an instance of a cat should be returned")
+
+			return
+		}
+
+		guard let catNameRet = try? cat.name_get()?.string() else {
+			XCTFail("IAnimal.Name should not throw and return an instance")
+
+			return
+		}
+
+		XCTAssertEqual(catName, catNameRet)
+	}
 	
 	func testCreatingAnimalThroughGenerics() {
 		// MARK: Cat

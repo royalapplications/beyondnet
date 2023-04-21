@@ -94,6 +94,36 @@ public partial class SwiftTypeSyntaxWriter
             SwiftBaseTypeName = BaseTypeDescriptor?.GetTypeName(CodeLanguage.Swift, false)
                                 ?? "DNObject";
         }
+
+        public bool DelegateInvokeMethodMatches(MethodInfo? otherDelegateInvokeMethod)
+        {
+            MethodInfo? delegateInvokeMethod = DelegateInvokeMethod;
+
+            if (otherDelegateInvokeMethod == delegateInvokeMethod) {
+                return true;
+            }
+
+            if (delegateInvokeMethod == null ||
+                otherDelegateInvokeMethod == null) {
+                return false;
+            }
+
+            var returnType = delegateInvokeMethod.ReturnType;
+            var otherReturnType = otherDelegateInvokeMethod.ReturnType;
+
+            if (returnType != otherReturnType) {
+                return false;
+            }
+
+            var parameterInfos = delegateInvokeMethod.GetParameters();
+            var otherParameterInfos = otherDelegateInvokeMethod.GetParameters();
+
+            if (parameterInfos != otherParameterInfos) {
+                return false;
+            }
+
+            return true;
+        }
     }
     
     private string WriteDelegateTypeDefs(
@@ -113,15 +143,25 @@ public partial class SwiftTypeSyntaxWriter
         }
 
         DelegateTypeInfo typeInfo;
-        
+
         try {
-            typeInfo = new DelegateTypeInfo(
+            typeInfo = new(
                 type,
                 delegateInvokeMethod,
                 typeDescriptorRegistry
             );
         } catch (Exception ex) {
             return ex.Message;
+        }
+        
+        Type? baseType = typeInfo.BaseType;
+        MethodInfo? baseTypeDelegateInvokeMethod;
+
+        if (baseType is not null &&
+            baseType.IsDelegate()) {
+            baseTypeDelegateInvokeMethod = baseType.GetDelegateInvokeMethod();
+        } else {
+            baseTypeDelegateInvokeMethod = null;
         }
             
         StringBuilder sb = new();
@@ -190,18 +230,15 @@ public partial class SwiftTypeSyntaxWriter
         #endregion Init
 
         #region Invoke
-        string invokeCode = WriteInvoke(
-            type,
-            typeInfo.ParameterInfos,
-            typeInfo.CTypeName,
-            typeInfo.BaseType,
-            typeInfo.IsReturning,
-            typeInfo.SwiftReturnTypeName,
-            typeInfo.ReturnTypeDescriptor,
-            typeDescriptorRegistry
-        );
-
-        memberParts.Add(invokeCode);
+        if (typeInfo.DelegateInvokeMethod is not null) {
+            string invokeCode = WriteInvoke(
+                typeInfo,
+                baseTypeDelegateInvokeMethod,
+                typeDescriptorRegistry
+            );
+    
+            memberParts.Add(invokeCode);
+        }
         #endregion Invoke
 
         string memberPartsCode = string.Join('\n', memberParts);
@@ -460,13 +497,8 @@ public partial class SwiftTypeSyntaxWriter
     }
 
     private string WriteInvoke(
-        Type type,
-        ParameterInfo[] parameterInfos,
-        string cTypeName,
-        Type? baseType,
-        bool isReturning,
-        string swiftReturnTypeName,
-        TypeDescriptor returnTypeDescriptor,
+        DelegateTypeInfo typeInfo,
+        MethodInfo? baseTypeDelegateInvokeMethod,
         TypeDescriptorRegistry typeDescriptorRegistry
     )
     {
@@ -476,8 +508,8 @@ public partial class SwiftTypeSyntaxWriter
             MemberKind.Method,
             null,
             false,
-            type,
-            parameterInfos,
+            typeInfo.Type,
+            typeInfo.ParameterInfos,
             false,
             Array.Empty<Type>(),
             false,
@@ -485,9 +517,8 @@ public partial class SwiftTypeSyntaxWriter
             typeDescriptorRegistry
         );
 
-        bool isOverride = baseType is not null &&
-                          baseType.IsDelegate();
-        
+        bool isOverride = typeInfo.DelegateInvokeMethodMatches(baseTypeDelegateInvokeMethod);
+
         SwiftFuncDeclaration swiftFuncDecl = new(
             "invoke",
             SwiftVisibilities.Public,
@@ -495,7 +526,7 @@ public partial class SwiftTypeSyntaxWriter
             isOverride,
             swiftFuncParameters,
             true,
-            swiftReturnTypeName
+            typeInfo.SwiftReturnTypeName
         );
 
         sb.AppendLine($"{swiftFuncDecl} {{");
@@ -515,7 +546,7 @@ public partial class SwiftTypeSyntaxWriter
             CodeLanguage.C,
             MemberKind.Method,
             null,
-            parameterInfos,
+            typeInfo.ParameterInfos,
             false,
             Array.Empty<Type>(),
             Array.Empty<Type>(),
@@ -535,12 +566,12 @@ public partial class SwiftTypeSyntaxWriter
         
         string returnValueName = "__returnValueC";
             
-        string returnValueStorage = isReturning
+        string returnValueStorage = typeInfo.IsReturning
             ? $"let {returnValueName} = "
             : string.Empty;
         
 
-        string cInvokeMethodName = $"{cTypeName}_Invoke";
+        string cInvokeMethodName = $"{typeInfo.CTypeName}_Invoke";
         
         string invocation = $"{returnValueStorage}{cInvokeMethodName}({allParameterNamesString})";
         
@@ -549,8 +580,8 @@ public partial class SwiftTypeSyntaxWriter
         
         string returnCode = string.Empty;
         
-        if (isReturning) {
-            string? returnTypeConversion = returnTypeDescriptor.GetTypeConversion(
+        if (typeInfo.IsReturning) {
+            string? returnTypeConversion = typeInfo.ReturnTypeDescriptor.GetTypeConversion(
                 CodeLanguage.C,
                 CodeLanguage.Swift
             );
@@ -580,7 +611,7 @@ public partial class SwiftTypeSyntaxWriter
 
         sb.AppendLine();
         
-        if (isReturning) {
+        if (typeInfo.IsReturning) {
             sb.AppendLine($"\t{returnCode}");
         }
         
