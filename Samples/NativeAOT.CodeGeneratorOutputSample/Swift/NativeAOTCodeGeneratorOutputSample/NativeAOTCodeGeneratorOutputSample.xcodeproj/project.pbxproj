@@ -386,7 +386,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E70D116429BF9F2600B4E738 /* Build configuration list for PBXNativeTarget "NativeAOTCodeGeneratorOutputSample" */;
 			buildPhases = (
-				E736639229BFCA1300B6DEE2 /* Build .NET Library */,
+				E79340DC29F68045003337B9 /* Build .NET Library */,
+				E736639229BFCA1300B6DEE2 /* Build .NET Native Library */,
 				E70D115829BF9F2600B4E738 /* Headers */,
 				E70D115929BF9F2600B4E738 /* Sources */,
 				E70D115A29BF9F2600B4E738 /* Frameworks */,
@@ -477,7 +478,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		E736639229BFCA1300B6DEE2 /* Build .NET Library */ = {
+		E736639229BFCA1300B6DEE2 /* Build .NET Native Library */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Build .NET Native Library";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\n# Important: This variable is set by Xcode but messes with msbuild/dotnet publish \nTARGETNAME=\"\"\n\ncd \"${PROJECT_DIR}/../../\"\n\n./publish\n";
+		};
+		E79340DC29F68045003337B9 /* Build .NET Library */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -494,7 +514,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\n\n# Important: This variable is set by Xcode but messes with msbuild/dotnet publish \nTARGETNAME=\"\"\n\ncd \"${PROJECT_DIR}/../../\"\n\n./publish\n";
+			shellScript = "set -e\n\n# Important: This variable is set by Xcode but messes with msbuild/dotnet publish \nTARGETNAME=\"\"\n\ncd \"${PROJECT_DIR}/../../../NativeAOT.CodeGeneratorInputSample\"\n\n./publish\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

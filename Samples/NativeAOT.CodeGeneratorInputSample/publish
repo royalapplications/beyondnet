@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -e
+
+DOTNET_PATH="/usr/local/share/dotnet/dotnet"
+
+VERBOSITY_LEVEL="normal"
+
+echo "Building"
+${DOTNET_PATH} publish -v "${VERBOSITY_LEVEL}"
