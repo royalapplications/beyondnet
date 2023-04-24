@@ -3,6 +3,7 @@ using System.Text;
 
 using NativeAOT.CodeGenerator.Extensions;
 using NativeAOT.CodeGenerator.Generator;
+using NativeAOT.CodeGenerator.Syntax.Swift.Declaration;
 using NativeAOT.CodeGenerator.Types;
 
 using Settings = NativeAOT.CodeGenerator.Generator.Swift.Settings;
@@ -106,6 +107,10 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
                 state,
                 writeTypeDefinition
             );
+
+            if (writeTypeExtension) {
+                membersCode = membersCode.IndentAllLines(1);
+            }
                 
             sb.AppendLine(membersCode);
         }
@@ -281,10 +286,40 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
 
             string swiftBaseTypeName = baseTypeDescriptor?.GetTypeName(CodeLanguage.Swift, false)
                                        ?? "DNObject";
+
+            SwiftClassDeclaration classDecl = new(
+                $"{swiftTypeName} /* {fullTypeName} */",
+                swiftBaseTypeName,
+                SwiftVisibilities.Public,
+                null
+            );
             
-            sb.AppendLine($"public class {swiftTypeName} /* {fullTypeName} */: {swiftBaseTypeName} {{");
-            sb.AppendLine($"\tpublic override class var typeName: String {{ \"{typeName}\" }}");
-            sb.AppendLine($"\tpublic override class var fullTypeName: String {{ \"{fullTypeName}\" }}");
+            sb.AppendLine($"{classDecl.ToString()} {{");
+            
+            SwiftGetOnlyPropertyDeclaration typeNameDecl = new(
+                "typeName",
+                SwiftVisibilities.Public,
+                SwiftTypeAttachmentKinds.Class,
+                true,
+                false,
+                "String",
+                $"\"{typeName}\""
+            );
+        
+            SwiftGetOnlyPropertyDeclaration fullTypeNameDecl = new(
+                "fullTypeName",
+                SwiftVisibilities.Public,
+                SwiftTypeAttachmentKinds.Class,
+                true,
+                false,
+                "String",
+                $"\"{fullTypeName}\""
+            );
+            
+            sb.AppendLine($"{typeNameDecl.ToString().IndentAllLines(1)}");
+            sb.AppendLine();
+            sb.AppendLine($"{fullTypeNameDecl.ToString().IndentAllLines(1)}");
+            sb.AppendLine();
         }
 
         HashSet<MemberInfo> generatedMembers = new();
@@ -343,10 +378,12 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
             }
         }
 
-        string membersCode = sbMembers
-            .ToString()
-            .IndentAllLines(1); 
+        string membersCode = sbMembers.ToString();
 
+        if (writeTypeDefinition) {
+            membersCode = membersCode.IndentAllLines(1);
+        }
+        
         sb.AppendLine(membersCode);
 
         if (writeTypeDefinition) {

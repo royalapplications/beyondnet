@@ -164,17 +164,6 @@ public partial class SwiftTypeSyntaxWriter
         } else {
             baseTypeDelegateInvokeMethod = null;
         }
-            
-        StringBuilder sb = new();
-
-        SwiftClassDeclaration typeDecl = new(
-            $"{typeInfo.SwiftTypeName} /* {typeInfo.FullTypeName} */",
-            typeInfo.SwiftBaseTypeName,
-            SwiftVisibilities.Public,
-            null
-        );
-        
-        sb.AppendLine($"{typeDecl.ToString()} {{");
 
         List<string> memberParts = new();
 
@@ -250,7 +239,10 @@ public partial class SwiftTypeSyntaxWriter
         #endregion Invoke
 
         string memberPartsCode = string.Join("\n\n", memberParts);
-        sb.AppendLine(memberPartsCode.IndentAllLines(1));
+        
+        StringBuilder sb = new();
+        
+        sb.AppendLine(memberPartsCode);
 
         #region Other Members
         string membersCode = WriteMembers(
@@ -263,9 +255,14 @@ public partial class SwiftTypeSyntaxWriter
         sb.AppendLine(membersCode);
         #endregion Other Members
         
-        sb.AppendLine("}");
-
-        string code = sb.ToString();
+        SwiftClassDeclaration typeDecl = new(
+            $"{typeInfo.SwiftTypeName} /* {typeInfo.FullTypeName} */",
+            typeInfo.SwiftBaseTypeName,
+            SwiftVisibilities.Public,
+            sb.ToString()
+        );
+        
+        string code = typeDecl.ToString();
 
         return code;
     }
