@@ -483,6 +483,12 @@ public partial class SwiftTypeSyntaxWriter
         
         createCDestructorFunctionFuncName = "__createCDestructorFunction";
 
+        sb.AppendLine($"return {{ {innerContextParameterName} in");
+        sb.AppendLine($"\tguard let {innerContextParameterName} else {{ fatalError(\"{fatalErrorMessageIfNoContext}\") }}");
+        sb.AppendLine();
+        sb.AppendLine($"\tNativeBox<{closureTypeTypeAliasName}>.release({innerContextParameterName})");
+        sb.AppendLine("}");
+        
         SwiftFuncDeclaration funcDecl = new(
             createCDestructorFunctionFuncName,
             SwiftVisibilities.Private,
@@ -491,18 +497,10 @@ public partial class SwiftTypeSyntaxWriter
             string.Empty,
             false,
             $"{cTypeName}_CDestructorFunction_t",
-            null
-        ); 
-        
-        sb.AppendLine($"{funcDecl.ToString()} {{");
-        sb.AppendLine($"\treturn {{ {innerContextParameterName} in");
-        sb.AppendLine($"\t\tguard let {innerContextParameterName} else {{ fatalError(\"{fatalErrorMessageIfNoContext}\") }}");
-        sb.AppendLine();
-        sb.AppendLine($"\t\tNativeBox<{closureTypeTypeAliasName}>.release({innerContextParameterName})");
-        sb.AppendLine("\t}");
-        sb.AppendLine("}");
+            sb.ToString()
+        );
 
-        string code = sb.ToString();
+        string code = funcDecl.ToString();
 
         return code;
     }
@@ -516,28 +514,26 @@ public partial class SwiftTypeSyntaxWriter
     {
         StringBuilder sb = new();
 
+        sb.AppendLine($"let __cFunction = Self.{createCFunctionFuncName}()");
+        sb.AppendLine($"let __cDestructorFunction = Self.{createCDestructorFunctionFuncName}()");
+        sb.AppendLine();
+        sb.AppendLine("let __outerSwiftContext = NativeBox(__closure)");
+        sb.AppendLine("let __outerContext = __outerSwiftContext.retainedPointer()");
+        sb.AppendLine();
+        sb.AppendLine($"guard let __delegateC = {cTypeName}_Create(__outerContext, __cFunction, __cDestructorFunction) else {{ return nil }}");
+        sb.AppendLine();
+        sb.AppendLine("self.init(handle: __delegateC)");
+
         SwiftInitDeclaration initDecl = new(
             true,
             true,
             SwiftVisibilities.Public,
             $"_ __closure: @escaping {closureTypeTypeAliasName}",
             false,
-            null
+            sb.ToString()
         );
-        
-        sb.AppendLine($"{initDecl.ToString()} {{");
-        sb.AppendLine($"\tlet __cFunction = Self.{createCFunctionFuncName}()");
-        sb.AppendLine($"\tlet __cDestructorFunction = Self.{createCDestructorFunctionFuncName}()");
-        sb.AppendLine();
-        sb.AppendLine("\tlet __outerSwiftContext = NativeBox(__closure)");
-        sb.AppendLine("\tlet __outerContext = __outerSwiftContext.retainedPointer()");
-        sb.AppendLine();
-        sb.AppendLine($"\tguard let __delegateC = {cTypeName}_Create(__outerContext, __cFunction, __cDestructorFunction) else {{ return nil }}");
-        sb.AppendLine();
-        sb.AppendLine("\tself.init(handle: __delegateC)");
-        sb.AppendLine("}");
 
-        string code = sb.ToString();
+        string code = initDecl.ToString();
 
         return code;
     }

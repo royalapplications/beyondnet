@@ -89410,24 +89410,24 @@ public class System_Action /* System.Action */: System_MulticastDelegate {
 	private static func __createCDestructorFunction() -> System_Action_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			NativeBox<ClosureType>.release(__innerContext)
 		}
+		
 	}
-	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
-	
+		
 		let __outerSwiftContext = NativeBox(__closure)
 		let __outerContext = __outerSwiftContext.retainedPointer()
-	
+		
 		guard let __delegateC = System_Action_Create(__outerContext, __cFunction, __cDestructorFunction) else { return nil }
-	
+		
 		self.init(handle: __delegateC)
+		
 	}
-	
 	
 	public func invoke() throws -> Void {
 		var __exceptionC: System_Exception_t?
@@ -89490,24 +89490,24 @@ public class System_MulticastDelegate /* System.MulticastDelegate */: System_Del
 	private static func __createCDestructorFunction() -> System_MulticastDelegate_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			NativeBox<ClosureType>.release(__innerContext)
 		}
+		
 	}
-	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
-	
+		
 		let __outerSwiftContext = NativeBox(__closure)
 		let __outerContext = __outerSwiftContext.retainedPointer()
-	
+		
 		guard let __delegateC = System_MulticastDelegate_Create(__outerContext, __cFunction, __cDestructorFunction) else { return nil }
-	
+		
 		self.init(handle: __delegateC)
+		
 	}
-	
 	public override class var typeOf: System_Type /* System.Type */ { get {
 		return System_Type(handle: System_MulticastDelegate_TypeOf())
 		
@@ -89552,24 +89552,24 @@ public class System_Delegate /* System.Delegate */: System_Object {
 	private static func __createCDestructorFunction() -> System_Delegate_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			NativeBox<ClosureType>.release(__innerContext)
 		}
+		
 	}
-	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
-	
+		
 		let __outerSwiftContext = NativeBox(__closure)
 		let __outerContext = __outerSwiftContext.retainedPointer()
-	
+		
 		guard let __delegateC = System_Delegate_Create(__outerContext, __cFunction, __cDestructorFunction) else { return nil }
-	
+		
 		self.init(handle: __delegateC)
+		
 	}
-	
 	public override class var typeOf: System_Type /* System.Type */ { get {
 		return System_Type(handle: System_Delegate_TypeOf())
 		
@@ -89619,24 +89619,24 @@ public class System_Reflection_TypeFilter /* System.Reflection.TypeFilter */: Sy
 	private static func __createCDestructorFunction() -> System_Reflection_TypeFilter_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			NativeBox<ClosureType>.release(__innerContext)
 		}
+		
 	}
-	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
-	
+		
 		let __outerSwiftContext = NativeBox(__closure)
 		let __outerContext = __outerSwiftContext.retainedPointer()
-	
+		
 		guard let __delegateC = System_Reflection_TypeFilter_Create(__outerContext, __cFunction, __cDestructorFunction) else { return nil }
-	
+		
 		self.init(handle: __delegateC)
+		
 	}
-	
 	
 	public func invoke(_ m: System_Type? /* System.Type */, _ filterCriteria: System_Object? /* System.Object */) throws -> Bool {
 		var __exceptionC: System_Exception_t?
@@ -89703,24 +89703,24 @@ public class System_AsyncCallback /* System.AsyncCallback */: System_MulticastDe
 	private static func __createCDestructorFunction() -> System_AsyncCallback_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			NativeBox<ClosureType>.release(__innerContext)
 		}
+		
 	}
-	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
-	
+		
 		let __outerSwiftContext = NativeBox(__closure)
 		let __outerContext = __outerSwiftContext.retainedPointer()
-	
+		
 		guard let __delegateC = System_AsyncCallback_Create(__outerContext, __cFunction, __cDestructorFunction) else { return nil }
-	
+		
 		self.init(handle: __delegateC)
+		
 	}
-	
 	
 	public func invoke(_ ar: System_IAsyncResult? /* System.IAsyncResult */) throws -> Void {
 		var __exceptionC: System_Exception_t?
@@ -89790,24 +89790,24 @@ public class System_Reflection_ModuleResolveEventHandler /* System.Reflection.Mo
 	private static func __createCDestructorFunction() -> System_Reflection_ModuleResolveEventHandler_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			NativeBox<ClosureType>.release(__innerContext)
 		}
+		
 	}
-	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
-	
+		
 		let __outerSwiftContext = NativeBox(__closure)
 		let __outerContext = __outerSwiftContext.retainedPointer()
-	
+		
 		guard let __delegateC = System_Reflection_ModuleResolveEventHandler_Create(__outerContext, __cFunction, __cDestructorFunction) else { return nil }
-	
+		
 		self.init(handle: __delegateC)
+		
 	}
-	
 	
 	public func invoke(_ sender: System_Object? /* System.Object */, _ e: System_ResolveEventArgs? /* System.ResolveEventArgs */) throws -> System_Reflection_Module? {
 		var __exceptionC: System_Exception_t?
@@ -89878,24 +89878,24 @@ public class System_Reflection_MemberFilter /* System.Reflection.MemberFilter */
 	private static func __createCDestructorFunction() -> System_Reflection_MemberFilter_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			NativeBox<ClosureType>.release(__innerContext)
 		}
+		
 	}
-	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
-	
+		
 		let __outerSwiftContext = NativeBox(__closure)
 		let __outerContext = __outerSwiftContext.retainedPointer()
-	
+		
 		guard let __delegateC = System_Reflection_MemberFilter_Create(__outerContext, __cFunction, __cDestructorFunction) else { return nil }
-	
+		
 		self.init(handle: __delegateC)
+		
 	}
-	
 	
 	public func invoke(_ m: System_Reflection_MemberInfo? /* System.Reflection.MemberInfo */, _ filterCriteria: System_Object? /* System.Object */) throws -> Bool {
 		var __exceptionC: System_Exception_t?
@@ -89962,24 +89962,24 @@ public class System_Threading_ContextCallback /* System.Threading.ContextCallbac
 	private static func __createCDestructorFunction() -> System_Threading_ContextCallback_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			NativeBox<ClosureType>.release(__innerContext)
 		}
+		
 	}
-	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
-	
+		
 		let __outerSwiftContext = NativeBox(__closure)
 		let __outerContext = __outerSwiftContext.retainedPointer()
-	
+		
 		guard let __delegateC = System_Threading_ContextCallback_Create(__outerContext, __cFunction, __cDestructorFunction) else { return nil }
-	
+		
 		self.init(handle: __delegateC)
+		
 	}
-	
 	
 	public func invoke(_ state: System_Object? /* System.Object */) throws -> Void {
 		var __exceptionC: System_Exception_t?
@@ -90045,24 +90045,24 @@ public class System_UnhandledExceptionEventHandler /* System.UnhandledExceptionE
 	private static func __createCDestructorFunction() -> System_UnhandledExceptionEventHandler_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			NativeBox<ClosureType>.release(__innerContext)
 		}
+		
 	}
-	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
-	
+		
 		let __outerSwiftContext = NativeBox(__closure)
 		let __outerContext = __outerSwiftContext.retainedPointer()
-	
+		
 		guard let __delegateC = System_UnhandledExceptionEventHandler_Create(__outerContext, __cFunction, __cDestructorFunction) else { return nil }
-	
+		
 		self.init(handle: __delegateC)
+		
 	}
-	
 	
 	public func invoke(_ sender: System_Object? /* System.Object */, _ e: System_UnhandledExceptionEventArgs? /* System.UnhandledExceptionEventArgs */) throws -> Void {
 		var __exceptionC: System_Exception_t?
@@ -90129,24 +90129,24 @@ public class System_EventHandler /* System.EventHandler */: System_MulticastDele
 	private static func __createCDestructorFunction() -> System_EventHandler_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			NativeBox<ClosureType>.release(__innerContext)
 		}
+		
 	}
-	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
-	
+		
 		let __outerSwiftContext = NativeBox(__closure)
 		let __outerContext = __outerSwiftContext.retainedPointer()
-	
+		
 		guard let __delegateC = System_EventHandler_Create(__outerContext, __cFunction, __cDestructorFunction) else { return nil }
-	
+		
 		self.init(handle: __delegateC)
+		
 	}
-	
 	
 	public func invoke(_ sender: System_Object? /* System.Object */, _ e: System_EventArgs? /* System.EventArgs */) throws -> Void {
 		var __exceptionC: System_Exception_t?
@@ -90213,24 +90213,24 @@ public class System_AssemblyLoadEventHandler /* System.AssemblyLoadEventHandler 
 	private static func __createCDestructorFunction() -> System_AssemblyLoadEventHandler_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			NativeBox<ClosureType>.release(__innerContext)
 		}
+		
 	}
-	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
-	
+		
 		let __outerSwiftContext = NativeBox(__closure)
 		let __outerContext = __outerSwiftContext.retainedPointer()
-	
+		
 		guard let __delegateC = System_AssemblyLoadEventHandler_Create(__outerContext, __cFunction, __cDestructorFunction) else { return nil }
-	
+		
 		self.init(handle: __delegateC)
+		
 	}
-	
 	
 	public func invoke(_ sender: System_Object? /* System.Object */, _ args: System_AssemblyLoadEventArgs? /* System.AssemblyLoadEventArgs */) throws -> Void {
 		var __exceptionC: System_Exception_t?
@@ -90301,24 +90301,24 @@ public class System_ResolveEventHandler /* System.ResolveEventHandler */: System
 	private static func __createCDestructorFunction() -> System_ResolveEventHandler_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			NativeBox<ClosureType>.release(__innerContext)
 		}
+		
 	}
-	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
-	
+		
 		let __outerSwiftContext = NativeBox(__closure)
 		let __outerContext = __outerSwiftContext.retainedPointer()
-	
+		
 		guard let __delegateC = System_ResolveEventHandler_Create(__outerContext, __cFunction, __cDestructorFunction) else { return nil }
-	
+		
 		self.init(handle: __delegateC)
+		
 	}
-	
 	
 	public func invoke(_ sender: System_Object? /* System.Object */, _ args: System_ResolveEventArgs? /* System.ResolveEventArgs */) throws -> System_Reflection_Assembly? {
 		var __exceptionC: System_Exception_t?
@@ -90386,24 +90386,24 @@ public class System_Threading_ThreadStart /* System.Threading.ThreadStart */: Sy
 	private static func __createCDestructorFunction() -> System_Threading_ThreadStart_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			NativeBox<ClosureType>.release(__innerContext)
 		}
+		
 	}
-	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
-	
+		
 		let __outerSwiftContext = NativeBox(__closure)
 		let __outerContext = __outerSwiftContext.retainedPointer()
-	
+		
 		guard let __delegateC = System_Threading_ThreadStart_Create(__outerContext, __cFunction, __cDestructorFunction) else { return nil }
-	
+		
 		self.init(handle: __delegateC)
+		
 	}
-	
 	
 	public func invoke() throws -> Void {
 		var __exceptionC: System_Exception_t?
@@ -90467,24 +90467,24 @@ public class System_Threading_ParameterizedThreadStart /* System.Threading.Param
 	private static func __createCDestructorFunction() -> System_Threading_ParameterizedThreadStart_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			NativeBox<ClosureType>.release(__innerContext)
 		}
+		
 	}
-	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
-	
+		
 		let __outerSwiftContext = NativeBox(__closure)
 		let __outerContext = __outerSwiftContext.retainedPointer()
-	
+		
 		guard let __delegateC = System_Threading_ParameterizedThreadStart_Create(__outerContext, __cFunction, __cDestructorFunction) else { return nil }
-	
+		
 		self.init(handle: __delegateC)
+		
 	}
-	
 	
 	public func invoke(_ obj: System_Object? /* System.Object */) throws -> Void {
 		var __exceptionC: System_Exception_t?
@@ -90549,24 +90549,24 @@ public class System_Threading_TimerCallback /* System.Threading.TimerCallback */
 	private static func __createCDestructorFunction() -> System_Threading_TimerCallback_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			NativeBox<ClosureType>.release(__innerContext)
 		}
+		
 	}
-	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
-	
+		
 		let __outerSwiftContext = NativeBox(__closure)
 		let __outerContext = __outerSwiftContext.retainedPointer()
-	
+		
 		guard let __delegateC = System_Threading_TimerCallback_Create(__outerContext, __cFunction, __cDestructorFunction) else { return nil }
-	
+		
 		self.init(handle: __delegateC)
+		
 	}
-	
 	
 	public func invoke(_ state: System_Object? /* System.Object */) throws -> Void {
 		var __exceptionC: System_Exception_t?
@@ -90636,24 +90636,24 @@ public class NativeAOT_CodeGeneratorInputSample_MoveDelegate /* NativeAOT.CodeGe
 	private static func __createCDestructorFunction() -> NativeAOT_CodeGeneratorInputSample_MoveDelegate_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			NativeBox<ClosureType>.release(__innerContext)
 		}
+		
 	}
-	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
-	
+		
 		let __outerSwiftContext = NativeBox(__closure)
 		let __outerContext = __outerSwiftContext.retainedPointer()
-	
+		
 		guard let __delegateC = NativeAOT_CodeGeneratorInputSample_MoveDelegate_Create(__outerContext, __cFunction, __cDestructorFunction) else { return nil }
-	
+		
 		self.init(handle: __delegateC)
+		
 	}
-	
 	
 	public func invoke(_ newStreet: System_String? /* System.String */, _ newCity: System_String? /* System.String */) throws -> NativeAOT_CodeGeneratorInputSample_Address? {
 		var __exceptionC: System_Exception_t?
@@ -90726,24 +90726,24 @@ public class NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate /* NativeA
 	private static func __createCDestructorFunction() -> NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			NativeBox<ClosureType>.release(__innerContext)
 		}
+		
 	}
-	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
-	
+		
 		let __outerSwiftContext = NativeBox(__closure)
 		let __outerContext = __outerSwiftContext.retainedPointer()
-	
+		
 		guard let __delegateC = NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_Create(__outerContext, __cFunction, __cDestructorFunction) else { return nil }
-	
+		
 		self.init(handle: __delegateC)
+		
 	}
-	
 	
 	public func invoke(_ animalName: System_String? /* System.String */) throws -> NativeAOT_CodeGeneratorInputSample_IAnimal? {
 		var __exceptionC: System_Exception_t?
@@ -90810,24 +90810,24 @@ public class NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDe
 	private static func __createCDestructorFunction() -> NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			NativeBox<ClosureType>.release(__innerContext)
 		}
+		
 	}
-	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
-	
+		
 		let __outerSwiftContext = NativeBox(__closure)
 		let __outerContext = __outerSwiftContext.retainedPointer()
-	
+		
 		guard let __delegateC = NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_Create(__outerContext, __cFunction, __cDestructorFunction) else { return nil }
-	
+		
 		self.init(handle: __delegateC)
+		
 	}
-	
 	
 	public func invoke() throws -> Void {
 		var __exceptionC: System_Exception_t?
@@ -90891,24 +90891,24 @@ public class NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate /*
 	private static func __createCDestructorFunction() -> NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			NativeBox<ClosureType>.release(__innerContext)
 		}
+		
 	}
-	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
-	
+		
 		let __outerSwiftContext = NativeBox(__closure)
 		let __outerContext = __outerSwiftContext.retainedPointer()
-	
+		
 		guard let __delegateC = NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_Create(__outerContext, __cFunction, __cDestructorFunction) else { return nil }
-	
+		
 		self.init(handle: __delegateC)
+		
 	}
-	
 	
 	public func invoke() throws -> Int32 {
 		var __exceptionC: System_Exception_t?
@@ -90981,24 +90981,24 @@ public class NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate /* NativeAO
 	private static func __createCDestructorFunction() -> NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			NativeBox<ClosureType>.release(__innerContext)
 		}
+		
 	}
-	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
-	
+		
 		let __outerSwiftContext = NativeBox(__closure)
 		let __outerContext = __outerSwiftContext.retainedPointer()
-	
+		
 		guard let __delegateC = NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_Create(__outerContext, __cFunction, __cDestructorFunction) else { return nil }
-	
+		
 		self.init(handle: __delegateC)
+		
 	}
-	
 	
 	public func invoke() throws -> DNChar {
 		var __exceptionC: System_Exception_t?
@@ -91069,24 +91069,24 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDel
 	private static func __createCDestructorFunction() -> NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			NativeBox<ClosureType>.release(__innerContext)
 		}
+		
 	}
-	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
-	
+		
 		let __outerSwiftContext = NativeBox(__closure)
 		let __outerContext = __outerSwiftContext.retainedPointer()
-	
+		
 		guard let __delegateC = NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate_Create(__outerContext, __cFunction, __cDestructorFunction) else { return nil }
-	
+		
 		self.init(handle: __delegateC)
+		
 	}
-	
 	
 	public func invoke(_ inputString: System_String? /* System.String */) throws -> System_String? {
 		var __exceptionC: System_Exception_t?
@@ -91154,24 +91154,24 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_DoublesTransformerDe
 	private static func __createCDestructorFunction() -> NativeAOT_CodeGeneratorInputSample_Transformer_DoublesTransformerDelegate_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			NativeBox<ClosureType>.release(__innerContext)
 		}
+		
 	}
-	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
-	
+		
 		let __outerSwiftContext = NativeBox(__closure)
 		let __outerContext = __outerSwiftContext.retainedPointer()
-	
+		
 		guard let __delegateC = NativeAOT_CodeGeneratorInputSample_Transformer_DoublesTransformerDelegate_Create(__outerContext, __cFunction, __cDestructorFunction) else { return nil }
-	
+		
 		self.init(handle: __delegateC)
+		
 	}
-	
 	
 	public func invoke(_ number1: Double /* System.Double */, _ number2: Double /* System.Double */) throws -> Double {
 		var __exceptionC: System_Exception_t?
@@ -91239,24 +91239,24 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate
 	private static func __createCDestructorFunction() -> NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate_CDestructorFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			NativeBox<ClosureType>.release(__innerContext)
 		}
+		
 	}
-	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
 		let __cDestructorFunction = Self.__createCDestructorFunction()
-	
+		
 		let __outerSwiftContext = NativeBox(__closure)
 		let __outerContext = __outerSwiftContext.retainedPointer()
-	
+		
 		guard let __delegateC = NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate_Create(__outerContext, __cFunction, __cDestructorFunction) else { return nil }
-	
+		
 		self.init(handle: __delegateC)
+		
 	}
-	
 	
 	public func invoke() throws -> System_String? {
 		var __exceptionC: System_Exception_t?
