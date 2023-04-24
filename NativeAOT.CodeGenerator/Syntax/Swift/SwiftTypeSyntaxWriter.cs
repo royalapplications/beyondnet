@@ -150,10 +150,18 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
             
             sb.AppendLine($"{structDecl.ToString()} {{");
 
-            sb.AppendLine($"\tpublic typealias RawValue = {underlyingSwiftTypeName}");
-            sb.AppendLine("\tpublic let rawValue: RawValue");
+            const string rawValueTypeAliasVarName = "RawValue"; 
+
+            SwiftTypeAliasDeclaration rawValueTypeAliasDecl = new(
+                rawValueTypeAliasVarName,
+                SwiftVisibilities.Public,
+                underlyingSwiftTypeName
+            );
+            
+            sb.AppendLine($"\t{rawValueTypeAliasDecl.ToString()}");
+            sb.AppendLine($"\tpublic let rawValue: {rawValueTypeAliasVarName}");
             sb.AppendLine();
-            sb.AppendLine("\tpublic init(rawValue: RawValue) {");
+            sb.AppendLine($"\tpublic init(rawValue: {rawValueTypeAliasVarName}) {{");
             sb.AppendLine("\t\tself.rawValue = rawValue");
             sb.AppendLine("\t}");
             sb.AppendLine();
@@ -171,10 +179,17 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
         string initUnwrap = isFlagsEnum 
             ? string.Empty
             : "!";
-        
-        sb.AppendLine($"\tinit(cValue: {cEnumTypeName}) {{");
-        sb.AppendLine($"\t\tself.init(rawValue: cValue.rawValue){initUnwrap}");
-        sb.AppendLine("\t}");
+
+        SwiftInitDeclaration initDecl = new(
+            false,
+            false,
+            SwiftVisibilities.None,
+            $"cValue: {cEnumTypeName}",
+            false,
+            $"self.init(rawValue: cValue.rawValue){initUnwrap}"
+        );
+
+        sb.AppendLine(initDecl.ToString().IndentAllLines(1));
 
         sb.AppendLine();
         sb.AppendLine($"\tvar cValue: {cEnumTypeName} {{ {cEnumTypeName}(rawValue: rawValue){initUnwrap} }}");
