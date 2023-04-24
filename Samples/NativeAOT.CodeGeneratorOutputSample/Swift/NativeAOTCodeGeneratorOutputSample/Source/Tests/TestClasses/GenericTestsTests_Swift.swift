@@ -86,7 +86,7 @@ final class GenericTestsTests_Swift: XCTestCase {
 			return
 		}
 		
-		let typesLength = (try? typesArrayRet.length_get()) ?? -1
+		let typesLength = (try? typesArrayRet.length) ?? -1
 		XCTAssertEqual(2, .init(typesLength))
 		
 		for idx in 0..<typesLength {
@@ -140,7 +140,7 @@ final class GenericTestsTests_Swift: XCTestCase {
 			return
 		}
 		
-		let length = (try? defaultValuesArrayRet.length_get()) ?? -1
+		let length = (try? defaultValuesArrayRet.length) ?? -1
 		XCTAssertEqual(numberOfElements, length)
 		
 		for i in 0..<length {
@@ -182,7 +182,7 @@ final class GenericTestsTests_Swift: XCTestCase {
 			return
 		}
 
-		let length = (try? arrayRet.length_get()) ?? -1
+		let length = (try? arrayRet.length) ?? -1
 		XCTAssertEqual(numberOfElements, length)
 
 		for idx in 0..<length {
@@ -222,7 +222,7 @@ final class GenericTestsTests_Swift: XCTestCase {
 			return
 		}
 		
-		guard let keyRet = try? keyValuePair.key_get() else {
+		guard let keyRet = try? keyValuePair.key else {
 			XCTFail("SimpleKeyValuePair.Key getter should not throw and return an instance")
 			
 			return
@@ -231,7 +231,7 @@ final class GenericTestsTests_Swift: XCTestCase {
 		let keyEqual = key == keyRet
 		XCTAssertTrue(keyEqual)
 		
-		guard let valueRet = try? keyValuePair.value_get() else {
+		guard let valueRet = try? keyValuePair.value else {
 			XCTFail("SimpleKeyValuePair.Value getter should not throw and return an instance")
 			
 			return
@@ -323,7 +323,7 @@ final class GenericTestsTests_Swift: XCTestCase {
 			return
 		}
 		
-		guard let listOfStrings = try? genericTests.listOfStrings_get() else {
+		guard let listOfStrings = try? genericTests.listOfStrings else {
 			XCTFail("GenericTests.ListOfStrings getter should not throw and return an instance")
 			
 			return
@@ -356,7 +356,7 @@ final class GenericTestsTests_Swift: XCTestCase {
 			return
 		}
 		
-		let length = (try? arrayOfStrings.length_get()) ?? -1
+		let length = (try? arrayOfStrings.length) ?? -1
 		XCTAssertEqual(2, length)
 		
 		guard let firstObject = try? arrayOfStrings.getValue(0 as Int32),

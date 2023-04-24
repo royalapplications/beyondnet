@@ -21,7 +21,7 @@ final class SystemActionTests_Swift: XCTestCase {
 	func testSystemActionType() {
 		let systemActionType = System_Action.typeOf()
 		
-		guard let systemActionFullTypeName = try? systemActionType.fullName_get()?.string() else {
+		guard let systemActionFullTypeName = try? systemActionType.fullName?.string() else {
 			XCTFail("System.Type.FullName getter should not throw and return an instance")
 			
 			return

@@ -377,7 +377,7 @@ public class DNError: LocalizedError {
     
     public func stackTrace() -> String? {
         do {
-            return try String(dotNETString: exception.stackTrace_get())
+            return try String(dotNETString: exception.stackTrace)
         } catch {
             return nil
         }
@@ -385,7 +385,7 @@ public class DNError: LocalizedError {
     
     public var errorDescription: String? {
         do {
-            return try String(dotNETString: exception.message_get())
+            return try String(dotNETString: exception.message)
         } catch {
             return nil
         }
@@ -4733,7 +4733,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		return __returnValueC
 		
 	}
-	public func isInterface_get() throws -> Bool /* System.Boolean */ {
+	public var isInterface: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -4749,9 +4749,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public override func memberType_get() throws -> System_Reflection_MemberTypes /* System.Reflection.MemberTypes */ {
+	public override var memberType: System_Reflection_MemberTypes /* System.Reflection.MemberTypes */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -4769,9 +4769,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func namespace_get() throws -> System_String? /* System.String */ {
+	public var namespace: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -4789,9 +4789,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func assemblyQualifiedName_get() throws -> System_String? /* System.String */ {
+	public var assemblyQualifiedName: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -4809,9 +4809,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func fullName_get() throws -> System_String? /* System.String */ {
+	public var fullName: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -4829,9 +4829,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func assembly_get() throws -> System_Reflection_Assembly? /* System.Reflection.Assembly */ {
+	public var assembly: System_Reflection_Assembly? /* System.Reflection.Assembly */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -4849,9 +4849,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public override func module_get() throws -> System_Reflection_Module? /* System.Reflection.Module */ {
+	public override var module: System_Reflection_Module? /* System.Reflection.Module */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -4869,9 +4869,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func isNested_get() throws -> Bool /* System.Boolean */ {
+	public var isNested: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -4887,9 +4887,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public override func declaringType_get() throws -> System_Type? /* System.Type */ {
+	public override var declaringType: System_Type? /* System.Type */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -4907,9 +4907,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func declaringMethod_get() throws -> System_Reflection_MethodBase? /* System.Reflection.MethodBase */ {
+	public var declaringMethod: System_Reflection_MethodBase? /* System.Reflection.MethodBase */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -4927,9 +4927,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public override func reflectedType_get() throws -> System_Type? /* System.Type */ {
+	public override var reflectedType: System_Type? /* System.Type */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -4947,9 +4947,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func underlyingSystemType_get() throws -> System_Type? /* System.Type */ {
+	public var underlyingSystemType: System_Type? /* System.Type */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -4967,9 +4967,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func isTypeDefinition_get() throws -> Bool /* System.Boolean */ {
+	public var isTypeDefinition: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -4985,9 +4985,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isArray_get() throws -> Bool /* System.Boolean */ {
+	public var isArray: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5003,9 +5003,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isByRef_get() throws -> Bool /* System.Boolean */ {
+	public var isByRef: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5021,9 +5021,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isPointer_get() throws -> Bool /* System.Boolean */ {
+	public var isPointer: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5039,9 +5039,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isConstructedGenericType_get() throws -> Bool /* System.Boolean */ {
+	public var isConstructedGenericType: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5057,9 +5057,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isGenericParameter_get() throws -> Bool /* System.Boolean */ {
+	public var isGenericParameter: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5075,9 +5075,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isGenericTypeParameter_get() throws -> Bool /* System.Boolean */ {
+	public var isGenericTypeParameter: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5093,9 +5093,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isGenericMethodParameter_get() throws -> Bool /* System.Boolean */ {
+	public var isGenericMethodParameter: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5111,9 +5111,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isGenericType_get() throws -> Bool /* System.Boolean */ {
+	public var isGenericType: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5129,9 +5129,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isGenericTypeDefinition_get() throws -> Bool /* System.Boolean */ {
+	public var isGenericTypeDefinition: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5147,9 +5147,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isSZArray_get() throws -> Bool /* System.Boolean */ {
+	public var isSZArray: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5165,9 +5165,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isVariableBoundArray_get() throws -> Bool /* System.Boolean */ {
+	public var isVariableBoundArray: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5183,9 +5183,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isByRefLike_get() throws -> Bool /* System.Boolean */ {
+	public var isByRefLike: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5201,9 +5201,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isFunctionPointer_get() throws -> Bool /* System.Boolean */ {
+	public var isFunctionPointer: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5219,9 +5219,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isUnmanagedFunctionPointer_get() throws -> Bool /* System.Boolean */ {
+	public var isUnmanagedFunctionPointer: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5237,9 +5237,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func hasElementType_get() throws -> Bool /* System.Boolean */ {
+	public var hasElementType: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5255,9 +5255,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func genericTypeArguments_get() throws -> System_Type_Array? /* System.Type[] */ {
+	public var genericTypeArguments: System_Type_Array? /* System.Type[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5275,9 +5275,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func genericParameterPosition_get() throws -> Int32 /* System.Int32 */ {
+	public var genericParameterPosition: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5293,9 +5293,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func genericParameterAttributes_get() throws -> System_Reflection_GenericParameterAttributes /* System.Reflection.GenericParameterAttributes */ {
+	public var genericParameterAttributes: System_Reflection_GenericParameterAttributes /* System.Reflection.GenericParameterAttributes */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5313,9 +5313,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func attributes_get() throws -> System_Reflection_TypeAttributes /* System.Reflection.TypeAttributes */ {
+	public var attributes: System_Reflection_TypeAttributes /* System.Reflection.TypeAttributes */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5333,9 +5333,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func isAbstract_get() throws -> Bool /* System.Boolean */ {
+	public var isAbstract: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5351,9 +5351,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isImport_get() throws -> Bool /* System.Boolean */ {
+	public var isImport: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5369,9 +5369,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isSealed_get() throws -> Bool /* System.Boolean */ {
+	public var isSealed: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5387,9 +5387,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isSpecialName_get() throws -> Bool /* System.Boolean */ {
+	public var isSpecialName: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5405,9 +5405,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isClass_get() throws -> Bool /* System.Boolean */ {
+	public var isClass: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5423,9 +5423,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isNestedAssembly_get() throws -> Bool /* System.Boolean */ {
+	public var isNestedAssembly: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5441,9 +5441,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isNestedFamANDAssem_get() throws -> Bool /* System.Boolean */ {
+	public var isNestedFamANDAssem: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5459,9 +5459,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isNestedFamily_get() throws -> Bool /* System.Boolean */ {
+	public var isNestedFamily: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5477,9 +5477,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isNestedFamORAssem_get() throws -> Bool /* System.Boolean */ {
+	public var isNestedFamORAssem: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5495,9 +5495,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isNestedPrivate_get() throws -> Bool /* System.Boolean */ {
+	public var isNestedPrivate: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5513,9 +5513,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isNestedPublic_get() throws -> Bool /* System.Boolean */ {
+	public var isNestedPublic: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5531,9 +5531,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isNotPublic_get() throws -> Bool /* System.Boolean */ {
+	public var isNotPublic: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5549,9 +5549,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isPublic_get() throws -> Bool /* System.Boolean */ {
+	public var isPublic: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5567,9 +5567,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isAutoLayout_get() throws -> Bool /* System.Boolean */ {
+	public var isAutoLayout: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5585,9 +5585,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isExplicitLayout_get() throws -> Bool /* System.Boolean */ {
+	public var isExplicitLayout: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5603,9 +5603,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isLayoutSequential_get() throws -> Bool /* System.Boolean */ {
+	public var isLayoutSequential: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5621,9 +5621,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isAnsiClass_get() throws -> Bool /* System.Boolean */ {
+	public var isAnsiClass: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5639,9 +5639,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isAutoClass_get() throws -> Bool /* System.Boolean */ {
+	public var isAutoClass: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5657,9 +5657,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isUnicodeClass_get() throws -> Bool /* System.Boolean */ {
+	public var isUnicodeClass: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5675,9 +5675,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isCOMObject_get() throws -> Bool /* System.Boolean */ {
+	public var isCOMObject: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5693,9 +5693,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isContextful_get() throws -> Bool /* System.Boolean */ {
+	public var isContextful: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5711,9 +5711,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isEnum_get() throws -> Bool /* System.Boolean */ {
+	public var isEnum: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5729,9 +5729,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isMarshalByRef_get() throws -> Bool /* System.Boolean */ {
+	public var isMarshalByRef: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5747,9 +5747,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isPrimitive_get() throws -> Bool /* System.Boolean */ {
+	public var isPrimitive: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5765,9 +5765,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isValueType_get() throws -> Bool /* System.Boolean */ {
+	public var isValueType: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5783,9 +5783,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isSignatureType_get() throws -> Bool /* System.Boolean */ {
+	public var isSignatureType: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5801,9 +5801,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isSecurityCritical_get() throws -> Bool /* System.Boolean */ {
+	public var isSecurityCritical: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5819,9 +5819,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isSecuritySafeCritical_get() throws -> Bool /* System.Boolean */ {
+	public var isSecuritySafeCritical: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5837,9 +5837,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isSecurityTransparent_get() throws -> Bool /* System.Boolean */ {
+	public var isSecurityTransparent: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5855,9 +5855,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func structLayoutAttribute_get() throws -> System_Runtime_InteropServices_StructLayoutAttribute? /* System.Runtime.InteropServices.StructLayoutAttribute */ {
+	public var structLayoutAttribute: System_Runtime_InteropServices_StructLayoutAttribute? /* System.Runtime.InteropServices.StructLayoutAttribute */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5875,9 +5875,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func typeInitializer_get() throws -> System_Reflection_ConstructorInfo? /* System.Reflection.ConstructorInfo */ {
+	public var typeInitializer: System_Reflection_ConstructorInfo? /* System.Reflection.ConstructorInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5895,9 +5895,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func typeHandle_get() throws -> System_RuntimeTypeHandle? /* System.RuntimeTypeHandle */ {
+	public var typeHandle: System_RuntimeTypeHandle? /* System.RuntimeTypeHandle */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5915,9 +5915,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func gUID_get() throws -> System_Guid? /* System.Guid */ {
+	public var gUID: System_Guid? /* System.Guid */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5935,9 +5935,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func baseType_get() throws -> System_Type? /* System.Type */ {
+	public var baseType: System_Type? /* System.Type */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5955,9 +5955,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func defaultBinder_get() throws -> System_Reflection_Binder? /* System.Reflection.Binder */ {
+	public class var defaultBinder: System_Reflection_Binder? /* System.Reflection.Binder */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5975,9 +5975,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func isSerializable_get() throws -> Bool /* System.Boolean */ {
+	public var isSerializable: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5993,9 +5993,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func containsGenericParameters_get() throws -> Bool /* System.Boolean */ {
+	public var containsGenericParameters: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -6011,9 +6011,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isVisible_get() throws -> Bool /* System.Boolean */ {
+	public var isVisible: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -6029,9 +6029,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public class func delimiter_get() -> DNChar /* System.Char */ {
+	public class var delimiter: DNChar /* System.Char */ { get {
 		
 		
 		let __returnValueC = System_Type_Delimiter_Get()
@@ -6040,9 +6040,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func emptyTypes_get() -> System_Type_Array? /* System.Type[] */ {
+	public class var emptyTypes: System_Type_Array? /* System.Type[] */ { get {
 		
 		
 		let __returnValueC = System_Type_EmptyTypes_Get()
@@ -6051,9 +6051,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func missing_get() -> System_Object? /* System.Object */ {
+	public class var missing: System_Object? /* System.Object */ { get {
 		
 		
 		let __returnValueC = System_Type_Missing_Get()
@@ -6062,9 +6062,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func filterAttribute_get() -> System_Reflection_MemberFilter? /* System.Reflection.MemberFilter */ {
+	public class var filterAttribute: System_Reflection_MemberFilter? /* System.Reflection.MemberFilter */ { get {
 		
 		
 		let __returnValueC = System_Type_FilterAttribute_Get()
@@ -6073,9 +6073,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func filterName_get() -> System_Reflection_MemberFilter? /* System.Reflection.MemberFilter */ {
+	public class var filterName: System_Reflection_MemberFilter? /* System.Reflection.MemberFilter */ { get {
 		
 		
 		let __returnValueC = System_Type_FilterName_Get()
@@ -6084,9 +6084,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func filterNameIgnoreCase_get() -> System_Reflection_MemberFilter? /* System.Reflection.MemberFilter */ {
+	public class var filterNameIgnoreCase: System_Reflection_MemberFilter? /* System.Reflection.MemberFilter */ { get {
 		
 		
 		let __returnValueC = System_Type_FilterNameIgnoreCase_Get()
@@ -6095,7 +6095,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Type_TypeOf())
@@ -6241,7 +6241,7 @@ public class System_Reflection_MemberInfo /* System.Reflection.MemberInfo */: Sy
 		return __returnValueC
 		
 	}
-	public func memberType_get() throws -> System_Reflection_MemberTypes /* System.Reflection.MemberTypes */ {
+	public var memberType: System_Reflection_MemberTypes /* System.Reflection.MemberTypes */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -6259,9 +6259,9 @@ public class System_Reflection_MemberInfo /* System.Reflection.MemberInfo */: Sy
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func name_get() throws -> System_String? /* System.String */ {
+	public var name: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -6279,9 +6279,9 @@ public class System_Reflection_MemberInfo /* System.Reflection.MemberInfo */: Sy
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func declaringType_get() throws -> System_Type? /* System.Type */ {
+	public var declaringType: System_Type? /* System.Type */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -6299,9 +6299,9 @@ public class System_Reflection_MemberInfo /* System.Reflection.MemberInfo */: Sy
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func reflectedType_get() throws -> System_Type? /* System.Type */ {
+	public var reflectedType: System_Type? /* System.Type */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -6319,9 +6319,9 @@ public class System_Reflection_MemberInfo /* System.Reflection.MemberInfo */: Sy
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func module_get() throws -> System_Reflection_Module? /* System.Reflection.Module */ {
+	public var module: System_Reflection_Module? /* System.Reflection.Module */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -6339,9 +6339,9 @@ public class System_Reflection_MemberInfo /* System.Reflection.MemberInfo */: Sy
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func customAttributes_get() throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.CustomAttributeData> */ {
+	public var customAttributes: System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.CustomAttributeData> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -6359,9 +6359,9 @@ public class System_Reflection_MemberInfo /* System.Reflection.MemberInfo */: Sy
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func isCollectible_get() throws -> Bool /* System.Boolean */ {
+	public var isCollectible: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -6377,9 +6377,9 @@ public class System_Reflection_MemberInfo /* System.Reflection.MemberInfo */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func metadataToken_get() throws -> Int32 /* System.Int32 */ {
+	public var metadataToken: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -6395,7 +6395,7 @@ public class System_Reflection_MemberInfo /* System.Reflection.MemberInfo */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_MemberInfo_TypeOf())
@@ -7887,7 +7887,7 @@ public class System_Array /* System.Array */: System_Object {
 		return __returnValue
 		
 	}
-	public func length_get() throws -> Int32 /* System.Int32 */ {
+	public var length: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -7903,9 +7903,9 @@ public class System_Array /* System.Array */: System_Object {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func longLength_get() throws -> Int64 /* System.Int64 */ {
+	public var longLength: Int64 /* System.Int64 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -7921,9 +7921,9 @@ public class System_Array /* System.Array */: System_Object {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func rank_get() throws -> Int32 /* System.Int32 */ {
+	public var rank: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -7939,9 +7939,9 @@ public class System_Array /* System.Array */: System_Object {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func syncRoot_get() throws -> System_Object? /* System.Object */ {
+	public var syncRoot: System_Object? /* System.Object */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -7959,9 +7959,9 @@ public class System_Array /* System.Array */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func isReadOnly_get() throws -> Bool /* System.Boolean */ {
+	public var isReadOnly: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -7977,9 +7977,9 @@ public class System_Array /* System.Array */: System_Object {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isFixedSize_get() throws -> Bool /* System.Boolean */ {
+	public var isFixedSize: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -7995,9 +7995,9 @@ public class System_Array /* System.Array */: System_Object {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isSynchronized_get() throws -> Bool /* System.Boolean */ {
+	public var isSynchronized: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -8013,9 +8013,9 @@ public class System_Array /* System.Array */: System_Object {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public class func maxLength_get() throws -> Int32 /* System.Int32 */ {
+	public class var maxLength: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -8031,7 +8031,7 @@ public class System_Array /* System.Array */: System_Object {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Array_TypeOf())
@@ -8202,7 +8202,7 @@ public class System_Collections_IList /* System.Collections.IList */: DNObject {
 		
 		
 	}
-	public func item_get(_ index: Int32 /* System.Int32 */) throws -> System_Object? /* System.Object */ {
+	public func item(_ index: Int32 /* System.Int32 */) throws -> System_Object? /* System.Object */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -8239,7 +8239,7 @@ public class System_Collections_IList /* System.Collections.IList */: DNObject {
 		
 	}
 	
-	public func isReadOnly_get() throws -> Bool /* System.Boolean */ {
+	public var isReadOnly: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -8255,9 +8255,9 @@ public class System_Collections_IList /* System.Collections.IList */: DNObject {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isFixedSize_get() throws -> Bool /* System.Boolean */ {
+	public var isFixedSize: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -8273,7 +8273,7 @@ public class System_Collections_IList /* System.Collections.IList */: DNObject {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Collections_IList_TypeOf())
@@ -8307,7 +8307,7 @@ public class System_Collections_ICollection /* System.Collections.ICollection */
 		
 		
 	}
-	public func count_get() throws -> Int32 /* System.Int32 */ {
+	public var count: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -8323,9 +8323,9 @@ public class System_Collections_ICollection /* System.Collections.ICollection */
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func syncRoot_get() throws -> System_Object? /* System.Object */ {
+	public var syncRoot: System_Object? /* System.Object */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -8343,9 +8343,9 @@ public class System_Collections_ICollection /* System.Collections.ICollection */
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func isSynchronized_get() throws -> Bool /* System.Boolean */ {
+	public var isSynchronized: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -8361,7 +8361,7 @@ public class System_Collections_ICollection /* System.Collections.ICollection */
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Collections_ICollection_TypeOf())
@@ -8445,7 +8445,7 @@ public class System_Collections_IEnumerator /* System.Collections.IEnumerator */
 		
 		
 	}
-	public func current_get() throws -> System_Object? /* System.Object */ {
+	public var current: System_Object? /* System.Object */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -8463,7 +8463,7 @@ public class System_Collections_IEnumerator /* System.Collections.IEnumerator */
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Collections_IEnumerator_TypeOf())
@@ -12643,7 +12643,7 @@ public class System_String /* System.String */: System_Object {
 		self.init(handle: __returnValueC)
 		
 	}
-	public func chars_get(_ index: Int32 /* System.Int32 */) throws -> DNChar /* System.Char */ {
+	public func chars(_ index: Int32 /* System.Int32 */) throws -> DNChar /* System.Char */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -12663,7 +12663,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func length_get() throws -> Int32 /* System.Int32 */ {
+	public var length: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -12679,9 +12679,9 @@ public class System_String /* System.String */: System_Object {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public class func empty_get() -> System_String? /* System.String */ {
+	public class var empty: System_String? /* System.String */ { get {
 		
 		
 		let __returnValueC = System_String_Empty_Get()
@@ -12690,7 +12690,7 @@ public class System_String /* System.String */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_String_TypeOf())
@@ -13444,7 +13444,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		self.init(handle: __returnValueC)
 		
 	}
-	public class func currentCulture_get() throws -> System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ {
+	public class var currentCulture: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -13462,7 +13462,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 		return __returnValue
 		
-	}
+	}}
 	public class func currentCulture_set(_ value: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */) throws {
 		let valueC = value?.__handle
 		
@@ -13481,7 +13481,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 	}
 	
-	public class func currentUICulture_get() throws -> System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ {
+	public class var currentUICulture: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -13499,7 +13499,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 		return __returnValue
 		
-	}
+	}}
 	public class func currentUICulture_set(_ value: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */) throws {
 		let valueC = value?.__handle
 		
@@ -13518,7 +13518,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 	}
 	
-	public class func installedUICulture_get() throws -> System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ {
+	public class var installedUICulture: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -13536,9 +13536,9 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func defaultThreadCurrentCulture_get() throws -> System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ {
+	public class var defaultThreadCurrentCulture: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -13556,7 +13556,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 		return __returnValue
 		
-	}
+	}}
 	public class func defaultThreadCurrentCulture_set(_ value: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */) throws {
 		let valueC = value?.__handle
 		
@@ -13575,7 +13575,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 	}
 	
-	public class func defaultThreadCurrentUICulture_get() throws -> System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ {
+	public class var defaultThreadCurrentUICulture: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -13593,7 +13593,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 		return __returnValue
 		
-	}
+	}}
 	public class func defaultThreadCurrentUICulture_set(_ value: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */) throws {
 		let valueC = value?.__handle
 		
@@ -13612,7 +13612,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 	}
 	
-	public class func invariantCulture_get() throws -> System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ {
+	public class var invariantCulture: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -13630,9 +13630,9 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func parent_get() throws -> System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ {
+	public var parent: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -13650,9 +13650,9 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func lCID_get() throws -> Int32 /* System.Int32 */ {
+	public var lCID: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -13668,9 +13668,9 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func keyboardLayoutId_get() throws -> Int32 /* System.Int32 */ {
+	public var keyboardLayoutId: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -13686,9 +13686,9 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func name_get() throws -> System_String? /* System.String */ {
+	public var name: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -13706,9 +13706,9 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func ietfLanguageTag_get() throws -> System_String? /* System.String */ {
+	public var ietfLanguageTag: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -13726,9 +13726,9 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func displayName_get() throws -> System_String? /* System.String */ {
+	public var displayName: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -13746,9 +13746,9 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func nativeName_get() throws -> System_String? /* System.String */ {
+	public var nativeName: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -13766,9 +13766,9 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func englishName_get() throws -> System_String? /* System.String */ {
+	public var englishName: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -13786,9 +13786,9 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func twoLetterISOLanguageName_get() throws -> System_String? /* System.String */ {
+	public var twoLetterISOLanguageName: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -13806,9 +13806,9 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func threeLetterISOLanguageName_get() throws -> System_String? /* System.String */ {
+	public var threeLetterISOLanguageName: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -13826,9 +13826,9 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func threeLetterWindowsLanguageName_get() throws -> System_String? /* System.String */ {
+	public var threeLetterWindowsLanguageName: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -13846,9 +13846,9 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func compareInfo_get() throws -> System_Globalization_CompareInfo? /* System.Globalization.CompareInfo */ {
+	public var compareInfo: System_Globalization_CompareInfo? /* System.Globalization.CompareInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -13866,9 +13866,9 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func textInfo_get() throws -> System_Globalization_TextInfo? /* System.Globalization.TextInfo */ {
+	public var textInfo: System_Globalization_TextInfo? /* System.Globalization.TextInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -13886,9 +13886,9 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func isNeutralCulture_get() throws -> Bool /* System.Boolean */ {
+	public var isNeutralCulture: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -13904,9 +13904,9 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func cultureTypes_get() throws -> System_Globalization_CultureTypes /* System.Globalization.CultureTypes */ {
+	public var cultureTypes: System_Globalization_CultureTypes /* System.Globalization.CultureTypes */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -13924,9 +13924,9 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func numberFormat_get() throws -> System_Globalization_NumberFormatInfo? /* System.Globalization.NumberFormatInfo */ {
+	public var numberFormat: System_Globalization_NumberFormatInfo? /* System.Globalization.NumberFormatInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -13944,7 +13944,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 		return __returnValue
 		
-	}
+	}}
 	public func numberFormat_set(_ value: System_Globalization_NumberFormatInfo? /* System.Globalization.NumberFormatInfo */) throws {
 		let valueC = value?.__handle
 		
@@ -13963,7 +13963,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 	}
 	
-	public func dateTimeFormat_get() throws -> System_Globalization_DateTimeFormatInfo? /* System.Globalization.DateTimeFormatInfo */ {
+	public var dateTimeFormat: System_Globalization_DateTimeFormatInfo? /* System.Globalization.DateTimeFormatInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -13981,7 +13981,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 		return __returnValue
 		
-	}
+	}}
 	public func dateTimeFormat_set(_ value: System_Globalization_DateTimeFormatInfo? /* System.Globalization.DateTimeFormatInfo */) throws {
 		let valueC = value?.__handle
 		
@@ -14000,7 +14000,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 	}
 	
-	public func calendar_get() throws -> System_Globalization_Calendar? /* System.Globalization.Calendar */ {
+	public var calendar: System_Globalization_Calendar? /* System.Globalization.Calendar */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -14018,9 +14018,9 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func optionalCalendars_get() throws -> System_Globalization_Calendar_Array? /* System.Globalization.Calendar[] */ {
+	public var optionalCalendars: System_Globalization_Calendar_Array? /* System.Globalization.Calendar[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -14038,9 +14038,9 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func useUserOverride_get() throws -> Bool /* System.Boolean */ {
+	public var useUserOverride: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -14056,9 +14056,9 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isReadOnly_get() throws -> Bool /* System.Boolean */ {
+	public var isReadOnly: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -14074,7 +14074,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Globalization_CultureInfo_TypeOf())
@@ -15022,7 +15022,7 @@ public class System_Globalization_CompareInfo /* System.Globalization.CompareInf
 		return __returnValue
 		
 	}
-	public func name_get() throws -> System_String? /* System.String */ {
+	public var name: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -15040,9 +15040,9 @@ public class System_Globalization_CompareInfo /* System.Globalization.CompareInf
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func version_get() throws -> System_Globalization_SortVersion? /* System.Globalization.SortVersion */ {
+	public var version: System_Globalization_SortVersion? /* System.Globalization.SortVersion */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -15060,9 +15060,9 @@ public class System_Globalization_CompareInfo /* System.Globalization.CompareInf
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func lCID_get() throws -> Int32 /* System.Int32 */ {
+	public var lCID: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -15078,7 +15078,7 @@ public class System_Globalization_CompareInfo /* System.Globalization.CompareInf
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Globalization_CompareInfo_TypeOf())
@@ -16173,7 +16173,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		return __returnValue
 		
 	}
-	public func definedTypes_get() throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.TypeInfo> */ {
+	public var definedTypes: System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.TypeInfo> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -16191,9 +16191,9 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func exportedTypes_get() throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Type> */ {
+	public var exportedTypes: System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Type> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -16211,9 +16211,9 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func codeBase_get() throws -> System_String? /* System.String */ {
+	public var codeBase: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -16231,9 +16231,9 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func entryPoint_get() throws -> System_Reflection_MethodInfo? /* System.Reflection.MethodInfo */ {
+	public var entryPoint: System_Reflection_MethodInfo? /* System.Reflection.MethodInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -16251,9 +16251,9 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func fullName_get() throws -> System_String? /* System.String */ {
+	public var fullName: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -16271,9 +16271,9 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func imageRuntimeVersion_get() throws -> System_String? /* System.String */ {
+	public var imageRuntimeVersion: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -16291,9 +16291,9 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func isDynamic_get() throws -> Bool /* System.Boolean */ {
+	public var isDynamic: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -16309,9 +16309,9 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func location_get() throws -> System_String? /* System.String */ {
+	public var location: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -16329,9 +16329,9 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func reflectionOnly_get() throws -> Bool /* System.Boolean */ {
+	public var reflectionOnly: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -16347,9 +16347,9 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isCollectible_get() throws -> Bool /* System.Boolean */ {
+	public var isCollectible: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -16365,9 +16365,9 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isFullyTrusted_get() throws -> Bool /* System.Boolean */ {
+	public var isFullyTrusted: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -16383,9 +16383,9 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func customAttributes_get() throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.CustomAttributeData> */ {
+	public var customAttributes: System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.CustomAttributeData> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -16403,9 +16403,9 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func escapedCodeBase_get() throws -> System_String? /* System.String */ {
+	public var escapedCodeBase: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -16423,9 +16423,9 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func manifestModule_get() throws -> System_Reflection_Module? /* System.Reflection.Module */ {
+	public var manifestModule: System_Reflection_Module? /* System.Reflection.Module */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -16443,9 +16443,9 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func modules_get() throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.Module> */ {
+	public var modules: System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.Module> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -16463,9 +16463,9 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func globalAssemblyCache_get() throws -> Bool /* System.Boolean */ {
+	public var globalAssemblyCache: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -16481,9 +16481,9 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func hostContext_get() throws -> Int64 /* System.Int64 */ {
+	public var hostContext: Int64 /* System.Int64 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -16499,9 +16499,9 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func securityRuleSet_get() throws -> System_Security_SecurityRuleSet /* System.Security.SecurityRuleSet */ {
+	public var securityRuleSet: System_Security_SecurityRuleSet /* System.Security.SecurityRuleSet */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -16519,7 +16519,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public func moduleResolve_add(_ value: System_Reflection_ModuleResolveEventHandler? /* System.Reflection.ModuleResolveEventHandler */) {
 		let valueC = value?.__handle
@@ -17241,7 +17241,7 @@ public class System_Runtime_Serialization_SerializationInfo /* System.Runtime.Se
 		self.init(handle: __returnValueC)
 		
 	}
-	public func fullTypeName_get() throws -> System_String? /* System.String */ {
+	public var fullTypeName: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -17259,7 +17259,7 @@ public class System_Runtime_Serialization_SerializationInfo /* System.Runtime.Se
 		
 		return __returnValue
 		
-	}
+	}}
 	public func fullTypeName_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -17278,7 +17278,7 @@ public class System_Runtime_Serialization_SerializationInfo /* System.Runtime.Se
 		
 	}
 	
-	public func assemblyName_get() throws -> System_String? /* System.String */ {
+	public var assemblyName: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -17296,7 +17296,7 @@ public class System_Runtime_Serialization_SerializationInfo /* System.Runtime.Se
 		
 		return __returnValue
 		
-	}
+	}}
 	public func assemblyName_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -17315,7 +17315,7 @@ public class System_Runtime_Serialization_SerializationInfo /* System.Runtime.Se
 		
 	}
 	
-	public func isFullTypeNameSetExplicit_get() throws -> Bool /* System.Boolean */ {
+	public var isFullTypeNameSetExplicit: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -17331,9 +17331,9 @@ public class System_Runtime_Serialization_SerializationInfo /* System.Runtime.Se
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isAssemblyNameSetExplicit_get() throws -> Bool /* System.Boolean */ {
+	public var isAssemblyNameSetExplicit: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -17349,9 +17349,9 @@ public class System_Runtime_Serialization_SerializationInfo /* System.Runtime.Se
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func memberCount_get() throws -> Int32 /* System.Int32 */ {
+	public var memberCount: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -17367,9 +17367,9 @@ public class System_Runtime_Serialization_SerializationInfo /* System.Runtime.Se
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func objectType_get() throws -> System_Type? /* System.Type */ {
+	public var objectType: System_Type? /* System.Type */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -17387,7 +17387,7 @@ public class System_Runtime_Serialization_SerializationInfo /* System.Runtime.Se
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Runtime_Serialization_SerializationInfo_TypeOf())
@@ -17437,7 +17437,7 @@ public class System_Runtime_Serialization_SerializationInfoEnumerator /* System.
 		
 		
 	}
-	public func current_get() throws -> System_Runtime_Serialization_SerializationEntry? /* System.Runtime.Serialization.SerializationEntry */ {
+	public var current: System_Runtime_Serialization_SerializationEntry? /* System.Runtime.Serialization.SerializationEntry */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -17455,9 +17455,9 @@ public class System_Runtime_Serialization_SerializationInfoEnumerator /* System.
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func name_get() throws -> System_String? /* System.String */ {
+	public var name: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -17475,9 +17475,9 @@ public class System_Runtime_Serialization_SerializationInfoEnumerator /* System.
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func value_get() throws -> System_Object? /* System.Object */ {
+	public var value: System_Object? /* System.Object */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -17495,9 +17495,9 @@ public class System_Runtime_Serialization_SerializationInfoEnumerator /* System.
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func objectType_get() throws -> System_Type? /* System.Type */ {
+	public var objectType: System_Type? /* System.Type */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -17515,7 +17515,7 @@ public class System_Runtime_Serialization_SerializationInfoEnumerator /* System.
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Runtime_Serialization_SerializationInfoEnumerator_TypeOf())
@@ -17532,7 +17532,7 @@ public class System_Runtime_Serialization_SerializationInfoEnumerator /* System.
 public class System_Runtime_Serialization_SerializationEntry /* System.Runtime.Serialization.SerializationEntry */: System_ValueType {
 	public override class var typeName: String { "SerializationEntry" }
 	public override class var fullTypeName: String { "System.Runtime.Serialization.SerializationEntry" }
-	public func value_get() throws -> System_Object? /* System.Object */ {
+	public var value: System_Object? /* System.Object */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -17550,9 +17550,9 @@ public class System_Runtime_Serialization_SerializationEntry /* System.Runtime.S
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func name_get() throws -> System_String? /* System.String */ {
+	public var name: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -17570,9 +17570,9 @@ public class System_Runtime_Serialization_SerializationEntry /* System.Runtime.S
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func objectType_get() throws -> System_Type? /* System.Type */ {
+	public var objectType: System_Type? /* System.Type */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -17590,7 +17590,7 @@ public class System_Runtime_Serialization_SerializationEntry /* System.Runtime.S
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Runtime_Serialization_SerializationEntry_TypeOf())
@@ -19451,7 +19451,7 @@ public class System_Decimal /* System.Decimal */: System_ValueType {
 		self.init(handle: __returnValueC)
 		
 	}
-	public func scale_get() throws -> UInt8 /* System.Byte */ {
+	public var scale: UInt8 /* System.Byte */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -19467,9 +19467,9 @@ public class System_Decimal /* System.Decimal */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public class func zero_get() -> System_Decimal? /* System.Decimal */ {
+	public class var zero: System_Decimal? /* System.Decimal */ { get {
 		
 		
 		let __returnValueC = System_Decimal_Zero_Get()
@@ -19478,9 +19478,9 @@ public class System_Decimal /* System.Decimal */: System_ValueType {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func one_get() -> System_Decimal? /* System.Decimal */ {
+	public class var one: System_Decimal? /* System.Decimal */ { get {
 		
 		
 		let __returnValueC = System_Decimal_One_Get()
@@ -19489,9 +19489,9 @@ public class System_Decimal /* System.Decimal */: System_ValueType {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func minusOne_get() -> System_Decimal? /* System.Decimal */ {
+	public class var minusOne: System_Decimal? /* System.Decimal */ { get {
 		
 		
 		let __returnValueC = System_Decimal_MinusOne_Get()
@@ -19500,9 +19500,9 @@ public class System_Decimal /* System.Decimal */: System_ValueType {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func maxValue_get() -> System_Decimal? /* System.Decimal */ {
+	public class var maxValue: System_Decimal? /* System.Decimal */ { get {
 		
 		
 		let __returnValueC = System_Decimal_MaxValue_Get()
@@ -19511,9 +19511,9 @@ public class System_Decimal /* System.Decimal */: System_ValueType {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func minValue_get() -> System_Decimal? /* System.Decimal */ {
+	public class var minValue: System_Decimal? /* System.Decimal */ { get {
 		
 		
 		let __returnValueC = System_Decimal_MinValue_Get()
@@ -19522,7 +19522,7 @@ public class System_Decimal /* System.Decimal */: System_ValueType {
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Decimal_TypeOf())
@@ -21104,7 +21104,7 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		self.init(handle: __returnValueC)
 		
 	}
-	public func date_get() throws -> System_DateTime? /* System.DateTime */ {
+	public var date: System_DateTime? /* System.DateTime */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -21122,9 +21122,9 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func day_get() throws -> Int32 /* System.Int32 */ {
+	public var day: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -21140,9 +21140,9 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func dayOfWeek_get() throws -> System_DayOfWeek /* System.DayOfWeek */ {
+	public var dayOfWeek: System_DayOfWeek /* System.DayOfWeek */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -21160,9 +21160,9 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func dayOfYear_get() throws -> Int32 /* System.Int32 */ {
+	public var dayOfYear: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -21178,9 +21178,9 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func hour_get() throws -> Int32 /* System.Int32 */ {
+	public var hour: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -21196,9 +21196,9 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func kind_get() throws -> System_DateTimeKind /* System.DateTimeKind */ {
+	public var kind: System_DateTimeKind /* System.DateTimeKind */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -21216,9 +21216,9 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func millisecond_get() throws -> Int32 /* System.Int32 */ {
+	public var millisecond: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -21234,9 +21234,9 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func microsecond_get() throws -> Int32 /* System.Int32 */ {
+	public var microsecond: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -21252,9 +21252,9 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func nanosecond_get() throws -> Int32 /* System.Int32 */ {
+	public var nanosecond: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -21270,9 +21270,9 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func minute_get() throws -> Int32 /* System.Int32 */ {
+	public var minute: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -21288,9 +21288,9 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func month_get() throws -> Int32 /* System.Int32 */ {
+	public var month: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -21306,9 +21306,9 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public class func now_get() throws -> System_DateTime? /* System.DateTime */ {
+	public class var now: System_DateTime? /* System.DateTime */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -21326,9 +21326,9 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func second_get() throws -> Int32 /* System.Int32 */ {
+	public var second: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -21344,9 +21344,9 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func ticks_get() throws -> Int64 /* System.Int64 */ {
+	public var ticks: Int64 /* System.Int64 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -21362,9 +21362,9 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func timeOfDay_get() throws -> System_TimeSpan? /* System.TimeSpan */ {
+	public var timeOfDay: System_TimeSpan? /* System.TimeSpan */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -21382,9 +21382,9 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func today_get() throws -> System_DateTime? /* System.DateTime */ {
+	public class var today: System_DateTime? /* System.DateTime */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -21402,9 +21402,9 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func year_get() throws -> Int32 /* System.Int32 */ {
+	public var year: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -21420,9 +21420,9 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public class func utcNow_get() throws -> System_DateTime? /* System.DateTime */ {
+	public class var utcNow: System_DateTime? /* System.DateTime */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -21440,9 +21440,9 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func minValue_get() -> System_DateTime? /* System.DateTime */ {
+	public class var minValue: System_DateTime? /* System.DateTime */ { get {
 		
 		
 		let __returnValueC = System_DateTime_MinValue_Get()
@@ -21451,9 +21451,9 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func maxValue_get() -> System_DateTime? /* System.DateTime */ {
+	public class var maxValue: System_DateTime? /* System.DateTime */ { get {
 		
 		
 		let __returnValueC = System_DateTime_MaxValue_Get()
@@ -21462,9 +21462,9 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func unixEpoch_get() -> System_DateTime? /* System.DateTime */ {
+	public class var unixEpoch: System_DateTime? /* System.DateTime */ { get {
 		
 		
 		let __returnValueC = System_DateTime_UnixEpoch_Get()
@@ -21473,7 +21473,7 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_DateTime_TypeOf())
@@ -22322,7 +22322,7 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 		self.init(handle: __returnValueC)
 		
 	}
-	public func ticks_get() throws -> Int64 /* System.Int64 */ {
+	public var ticks: Int64 /* System.Int64 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -22338,9 +22338,9 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func days_get() throws -> Int32 /* System.Int32 */ {
+	public var days: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -22356,9 +22356,9 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func hours_get() throws -> Int32 /* System.Int32 */ {
+	public var hours: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -22374,9 +22374,9 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func milliseconds_get() throws -> Int32 /* System.Int32 */ {
+	public var milliseconds: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -22392,9 +22392,9 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func microseconds_get() throws -> Int32 /* System.Int32 */ {
+	public var microseconds: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -22410,9 +22410,9 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func nanoseconds_get() throws -> Int32 /* System.Int32 */ {
+	public var nanoseconds: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -22428,9 +22428,9 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func minutes_get() throws -> Int32 /* System.Int32 */ {
+	public var minutes: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -22446,9 +22446,9 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func seconds_get() throws -> Int32 /* System.Int32 */ {
+	public var seconds: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -22464,9 +22464,9 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func totalDays_get() throws -> Double /* System.Double */ {
+	public var totalDays: Double /* System.Double */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -22482,9 +22482,9 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func totalHours_get() throws -> Double /* System.Double */ {
+	public var totalHours: Double /* System.Double */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -22500,9 +22500,9 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func totalMilliseconds_get() throws -> Double /* System.Double */ {
+	public var totalMilliseconds: Double /* System.Double */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -22518,9 +22518,9 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func totalMicroseconds_get() throws -> Double /* System.Double */ {
+	public var totalMicroseconds: Double /* System.Double */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -22536,9 +22536,9 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func totalNanoseconds_get() throws -> Double /* System.Double */ {
+	public var totalNanoseconds: Double /* System.Double */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -22554,9 +22554,9 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func totalMinutes_get() throws -> Double /* System.Double */ {
+	public var totalMinutes: Double /* System.Double */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -22572,9 +22572,9 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func totalSeconds_get() throws -> Double /* System.Double */ {
+	public var totalSeconds: Double /* System.Double */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -22590,9 +22590,9 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public class func zero_get() -> System_TimeSpan? /* System.TimeSpan */ {
+	public class var zero: System_TimeSpan? /* System.TimeSpan */ { get {
 		
 		
 		let __returnValueC = System_TimeSpan_Zero_Get()
@@ -22601,9 +22601,9 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func maxValue_get() -> System_TimeSpan? /* System.TimeSpan */ {
+	public class var maxValue: System_TimeSpan? /* System.TimeSpan */ { get {
 		
 		
 		let __returnValueC = System_TimeSpan_MaxValue_Get()
@@ -22612,9 +22612,9 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func minValue_get() -> System_TimeSpan? /* System.TimeSpan */ {
+	public class var minValue: System_TimeSpan? /* System.TimeSpan */ { get {
 		
 		
 		let __returnValueC = System_TimeSpan_MinValue_Get()
@@ -22623,70 +22623,70 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func nanosecondsPerTick_get() -> Int64 /* System.Int64 */ {
+	public class var nanosecondsPerTick: Int64 /* System.Int64 */ { get {
 		
 		
 		let __returnValueC = System_TimeSpan_NanosecondsPerTick_Get()
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public class func ticksPerMicrosecond_get() -> Int64 /* System.Int64 */ {
+	public class var ticksPerMicrosecond: Int64 /* System.Int64 */ { get {
 		
 		
 		let __returnValueC = System_TimeSpan_TicksPerMicrosecond_Get()
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public class func ticksPerMillisecond_get() -> Int64 /* System.Int64 */ {
+	public class var ticksPerMillisecond: Int64 /* System.Int64 */ { get {
 		
 		
 		let __returnValueC = System_TimeSpan_TicksPerMillisecond_Get()
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public class func ticksPerSecond_get() -> Int64 /* System.Int64 */ {
+	public class var ticksPerSecond: Int64 /* System.Int64 */ { get {
 		
 		
 		let __returnValueC = System_TimeSpan_TicksPerSecond_Get()
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public class func ticksPerMinute_get() -> Int64 /* System.Int64 */ {
+	public class var ticksPerMinute: Int64 /* System.Int64 */ { get {
 		
 		
 		let __returnValueC = System_TimeSpan_TicksPerMinute_Get()
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public class func ticksPerHour_get() -> Int64 /* System.Int64 */ {
+	public class var ticksPerHour: Int64 /* System.Int64 */ { get {
 		
 		
 		let __returnValueC = System_TimeSpan_TicksPerHour_Get()
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public class func ticksPerDay_get() -> Int64 /* System.Int64 */ {
+	public class var ticksPerDay: Int64 /* System.Int64 */ { get {
 		
 		
 		let __returnValueC = System_TimeSpan_TicksPerDay_Get()
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_TimeSpan_TypeOf())
@@ -23447,7 +23447,7 @@ public class System_DateOnly /* System.DateOnly */: System_ValueType {
 		self.init(handle: __returnValueC)
 		
 	}
-	public class func minValue_get() throws -> System_DateOnly? /* System.DateOnly */ {
+	public class var minValue: System_DateOnly? /* System.DateOnly */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -23465,9 +23465,9 @@ public class System_DateOnly /* System.DateOnly */: System_ValueType {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func maxValue_get() throws -> System_DateOnly? /* System.DateOnly */ {
+	public class var maxValue: System_DateOnly? /* System.DateOnly */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -23485,9 +23485,9 @@ public class System_DateOnly /* System.DateOnly */: System_ValueType {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func year_get() throws -> Int32 /* System.Int32 */ {
+	public var year: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -23503,9 +23503,9 @@ public class System_DateOnly /* System.DateOnly */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func month_get() throws -> Int32 /* System.Int32 */ {
+	public var month: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -23521,9 +23521,9 @@ public class System_DateOnly /* System.DateOnly */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func day_get() throws -> Int32 /* System.Int32 */ {
+	public var day: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -23539,9 +23539,9 @@ public class System_DateOnly /* System.DateOnly */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func dayOfWeek_get() throws -> System_DayOfWeek /* System.DayOfWeek */ {
+	public var dayOfWeek: System_DayOfWeek /* System.DayOfWeek */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -23559,9 +23559,9 @@ public class System_DateOnly /* System.DateOnly */: System_ValueType {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func dayOfYear_get() throws -> Int32 /* System.Int32 */ {
+	public var dayOfYear: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -23577,9 +23577,9 @@ public class System_DateOnly /* System.DateOnly */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func dayNumber_get() throws -> Int32 /* System.Int32 */ {
+	public var dayNumber: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -23595,7 +23595,7 @@ public class System_DateOnly /* System.DateOnly */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_DateOnly_TypeOf())
@@ -24497,7 +24497,7 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 		self.init(handle: __returnValueC)
 		
 	}
-	public class func minValue_get() throws -> System_TimeOnly? /* System.TimeOnly */ {
+	public class var minValue: System_TimeOnly? /* System.TimeOnly */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -24515,9 +24515,9 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func maxValue_get() throws -> System_TimeOnly? /* System.TimeOnly */ {
+	public class var maxValue: System_TimeOnly? /* System.TimeOnly */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -24535,9 +24535,9 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func hour_get() throws -> Int32 /* System.Int32 */ {
+	public var hour: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -24553,9 +24553,9 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func minute_get() throws -> Int32 /* System.Int32 */ {
+	public var minute: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -24571,9 +24571,9 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func second_get() throws -> Int32 /* System.Int32 */ {
+	public var second: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -24589,9 +24589,9 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func millisecond_get() throws -> Int32 /* System.Int32 */ {
+	public var millisecond: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -24607,9 +24607,9 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func microsecond_get() throws -> Int32 /* System.Int32 */ {
+	public var microsecond: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -24625,9 +24625,9 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func nanosecond_get() throws -> Int32 /* System.Int32 */ {
+	public var nanosecond: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -24643,9 +24643,9 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func ticks_get() throws -> Int64 /* System.Int64 */ {
+	public var ticks: Int64 /* System.Int64 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -24661,7 +24661,7 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_TimeOnly_TypeOf())
@@ -25381,7 +25381,7 @@ public class System_Globalization_Calendar /* System.Globalization.Calendar */: 
 		return __returnValueC
 		
 	}
-	public func minSupportedDateTime_get() throws -> System_DateTime? /* System.DateTime */ {
+	public var minSupportedDateTime: System_DateTime? /* System.DateTime */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -25399,9 +25399,9 @@ public class System_Globalization_Calendar /* System.Globalization.Calendar */: 
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func maxSupportedDateTime_get() throws -> System_DateTime? /* System.DateTime */ {
+	public var maxSupportedDateTime: System_DateTime? /* System.DateTime */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -25419,9 +25419,9 @@ public class System_Globalization_Calendar /* System.Globalization.Calendar */: 
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func algorithmType_get() throws -> System_Globalization_CalendarAlgorithmType /* System.Globalization.CalendarAlgorithmType */ {
+	public var algorithmType: System_Globalization_CalendarAlgorithmType /* System.Globalization.CalendarAlgorithmType */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -25439,9 +25439,9 @@ public class System_Globalization_Calendar /* System.Globalization.Calendar */: 
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func isReadOnly_get() throws -> Bool /* System.Boolean */ {
+	public var isReadOnly: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -25457,9 +25457,9 @@ public class System_Globalization_Calendar /* System.Globalization.Calendar */: 
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func eras_get() throws -> System_Int32_Array? /* System.Int32[] */ {
+	public var eras: System_Int32_Array? /* System.Int32[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -25477,9 +25477,9 @@ public class System_Globalization_Calendar /* System.Globalization.Calendar */: 
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func twoDigitYearMax_get() throws -> Int32 /* System.Int32 */ {
+	public var twoDigitYearMax: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -25495,7 +25495,7 @@ public class System_Globalization_Calendar /* System.Globalization.Calendar */: 
 		
 		return __returnValueC
 		
-	}
+	}}
 	public func twoDigitYearMax_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -25513,14 +25513,14 @@ public class System_Globalization_Calendar /* System.Globalization.Calendar */: 
 		
 	}
 	
-	public class func currentEra_get() -> Int32 /* System.Int32 */ {
+	public class var currentEra: Int32 /* System.Int32 */ { get {
 		
 		
 		let __returnValueC = System_Globalization_Calendar_CurrentEra_Get()
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Globalization_Calendar_TypeOf())
@@ -25948,7 +25948,7 @@ public class System_Runtime_Serialization_StreamingContext /* System.Runtime.Ser
 		self.init(handle: __returnValueC)
 		
 	}
-	public func state_get() throws -> System_Runtime_Serialization_StreamingContextStates /* System.Runtime.Serialization.StreamingContextStates */ {
+	public var state: System_Runtime_Serialization_StreamingContextStates /* System.Runtime.Serialization.StreamingContextStates */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -25966,9 +25966,9 @@ public class System_Runtime_Serialization_StreamingContext /* System.Runtime.Ser
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func context_get() throws -> System_Object? /* System.Object */ {
+	public var context: System_Object? /* System.Object */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -25986,7 +25986,7 @@ public class System_Runtime_Serialization_StreamingContext /* System.Runtime.Ser
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Runtime_Serialization_StreamingContext_TypeOf())
@@ -26226,7 +26226,7 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		self.init(handle: __returnValueC)
 		
 	}
-	public func name_get() throws -> System_String? /* System.String */ {
+	public var name: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -26244,7 +26244,7 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		
 		return __returnValue
 		
-	}
+	}}
 	public func name_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -26263,7 +26263,7 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		
 	}
 	
-	public func version_get() throws -> System_Version? /* System.Version */ {
+	public var version: System_Version? /* System.Version */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -26281,7 +26281,7 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		
 		return __returnValue
 		
-	}
+	}}
 	public func version_set(_ value: System_Version? /* System.Version */) throws {
 		let valueC = value?.__handle
 		
@@ -26300,7 +26300,7 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		
 	}
 	
-	public func cultureInfo_get() throws -> System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ {
+	public var cultureInfo: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -26318,7 +26318,7 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		
 		return __returnValue
 		
-	}
+	}}
 	public func cultureInfo_set(_ value: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */) throws {
 		let valueC = value?.__handle
 		
@@ -26337,7 +26337,7 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		
 	}
 	
-	public func cultureName_get() throws -> System_String? /* System.String */ {
+	public var cultureName: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -26355,7 +26355,7 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		
 		return __returnValue
 		
-	}
+	}}
 	public func cultureName_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -26374,7 +26374,7 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		
 	}
 	
-	public func codeBase_get() throws -> System_String? /* System.String */ {
+	public var codeBase: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -26392,7 +26392,7 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		
 		return __returnValue
 		
-	}
+	}}
 	public func codeBase_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -26411,7 +26411,7 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		
 	}
 	
-	public func escapedCodeBase_get() throws -> System_String? /* System.String */ {
+	public var escapedCodeBase: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -26429,9 +26429,9 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func processorArchitecture_get() throws -> System_Reflection_ProcessorArchitecture /* System.Reflection.ProcessorArchitecture */ {
+	public var processorArchitecture: System_Reflection_ProcessorArchitecture /* System.Reflection.ProcessorArchitecture */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -26449,7 +26449,7 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		
 		return __returnValue
 		
-	}
+	}}
 	public func processorArchitecture_set(_ value: System_Reflection_ProcessorArchitecture /* System.Reflection.ProcessorArchitecture */) throws {
 		let valueC = value.cValue
 		
@@ -26468,7 +26468,7 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		
 	}
 	
-	public func contentType_get() throws -> System_Reflection_AssemblyContentType /* System.Reflection.AssemblyContentType */ {
+	public var contentType: System_Reflection_AssemblyContentType /* System.Reflection.AssemblyContentType */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -26486,7 +26486,7 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		
 		return __returnValue
 		
-	}
+	}}
 	public func contentType_set(_ value: System_Reflection_AssemblyContentType /* System.Reflection.AssemblyContentType */) throws {
 		let valueC = value.cValue
 		
@@ -26505,7 +26505,7 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		
 	}
 	
-	public func flags_get() throws -> System_Reflection_AssemblyNameFlags /* System.Reflection.AssemblyNameFlags */ {
+	public var flags: System_Reflection_AssemblyNameFlags /* System.Reflection.AssemblyNameFlags */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -26523,7 +26523,7 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		
 		return __returnValue
 		
-	}
+	}}
 	public func flags_set(_ value: System_Reflection_AssemblyNameFlags /* System.Reflection.AssemblyNameFlags */) throws {
 		let valueC = value.cValue
 		
@@ -26542,7 +26542,7 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		
 	}
 	
-	public func hashAlgorithm_get() throws -> System_Configuration_Assemblies_AssemblyHashAlgorithm /* System.Configuration.Assemblies.AssemblyHashAlgorithm */ {
+	public var hashAlgorithm: System_Configuration_Assemblies_AssemblyHashAlgorithm /* System.Configuration.Assemblies.AssemblyHashAlgorithm */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -26560,7 +26560,7 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		
 		return __returnValue
 		
-	}
+	}}
 	public func hashAlgorithm_set(_ value: System_Configuration_Assemblies_AssemblyHashAlgorithm /* System.Configuration.Assemblies.AssemblyHashAlgorithm */) throws {
 		let valueC = value.cValue
 		
@@ -26579,7 +26579,7 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		
 	}
 	
-	public func versionCompatibility_get() throws -> System_Configuration_Assemblies_AssemblyVersionCompatibility /* System.Configuration.Assemblies.AssemblyVersionCompatibility */ {
+	public var versionCompatibility: System_Configuration_Assemblies_AssemblyVersionCompatibility /* System.Configuration.Assemblies.AssemblyVersionCompatibility */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -26597,7 +26597,7 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		
 		return __returnValue
 		
-	}
+	}}
 	public func versionCompatibility_set(_ value: System_Configuration_Assemblies_AssemblyVersionCompatibility /* System.Configuration.Assemblies.AssemblyVersionCompatibility */) throws {
 		let valueC = value.cValue
 		
@@ -26616,7 +26616,7 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		
 	}
 	
-	public func keyPair_get() throws -> System_Reflection_StrongNameKeyPair? /* System.Reflection.StrongNameKeyPair */ {
+	public var keyPair: System_Reflection_StrongNameKeyPair? /* System.Reflection.StrongNameKeyPair */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -26634,7 +26634,7 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		
 		return __returnValue
 		
-	}
+	}}
 	public func keyPair_set(_ value: System_Reflection_StrongNameKeyPair? /* System.Reflection.StrongNameKeyPair */) throws {
 		let valueC = value?.__handle
 		
@@ -26653,7 +26653,7 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		
 	}
 	
-	public func fullName_get() throws -> System_String? /* System.String */ {
+	public var fullName: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -26671,7 +26671,7 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_AssemblyName_TypeOf())
@@ -26972,7 +26972,7 @@ public class System_Version /* System.Version */: System_Object {
 		self.init(handle: __returnValueC)
 		
 	}
-	public func major_get() throws -> Int32 /* System.Int32 */ {
+	public var major: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -26988,9 +26988,9 @@ public class System_Version /* System.Version */: System_Object {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func minor_get() throws -> Int32 /* System.Int32 */ {
+	public var minor: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -27006,9 +27006,9 @@ public class System_Version /* System.Version */: System_Object {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func build_get() throws -> Int32 /* System.Int32 */ {
+	public var build: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -27024,9 +27024,9 @@ public class System_Version /* System.Version */: System_Object {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func revision_get() throws -> Int32 /* System.Int32 */ {
+	public var revision: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -27042,9 +27042,9 @@ public class System_Version /* System.Version */: System_Object {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func majorRevision_get() throws -> Int16 /* System.Int16 */ {
+	public var majorRevision: Int16 /* System.Int16 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -27060,9 +27060,9 @@ public class System_Version /* System.Version */: System_Object {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func minorRevision_get() throws -> Int16 /* System.Int16 */ {
+	public var minorRevision: Int16 /* System.Int16 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -27078,7 +27078,7 @@ public class System_Version /* System.Version */: System_Object {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Version_TypeOf())
@@ -27160,7 +27160,7 @@ public class System_Reflection_StrongNameKeyPair /* System.Reflection.StrongName
 		self.init(handle: __returnValueC)
 		
 	}
-	public func publicKey_get() throws -> System_Byte_Array? /* System.Byte[] */ {
+	public var publicKey: System_Byte_Array? /* System.Byte[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -27178,7 +27178,7 @@ public class System_Reflection_StrongNameKeyPair /* System.Reflection.StrongName
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_StrongNameKeyPair_TypeOf())
@@ -27859,7 +27859,7 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		self.init(handle: __returnValueC)
 		
 	}
-	public func handle_get() throws -> Int /* System.IntPtr */ {
+	public var handle: Int /* System.IntPtr */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -27875,9 +27875,9 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public override func canRead_get() throws -> Bool /* System.Boolean */ {
+	public override var canRead: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -27893,9 +27893,9 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public override func canWrite_get() throws -> Bool /* System.Boolean */ {
+	public override var canWrite: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -27911,9 +27911,9 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func safeFileHandle_get() throws -> Microsoft_Win32_SafeHandles_SafeFileHandle? /* Microsoft.Win32.SafeHandles.SafeFileHandle */ {
+	public var safeFileHandle: Microsoft_Win32_SafeHandles_SafeFileHandle? /* Microsoft.Win32.SafeHandles.SafeFileHandle */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -27931,9 +27931,9 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func name_get() throws -> System_String? /* System.String */ {
+	public var name: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -27951,9 +27951,9 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func isAsync_get() throws -> Bool /* System.Boolean */ {
+	public var isAsync: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -27969,9 +27969,9 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public override func length_get() throws -> Int64 /* System.Int64 */ {
+	public override var length: Int64 /* System.Int64 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -27987,9 +27987,9 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public override func position_get() throws -> Int64 /* System.Int64 */ {
+	public override var position: Int64 /* System.Int64 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -28005,7 +28005,7 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		
 		return __returnValueC
 		
-	}
+	}}
 	public override func position_set(_ value: Int64 /* System.Int64 */) throws {
 		
 		
@@ -28023,7 +28023,7 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		
 	}
 	
-	public override func canSeek_get() throws -> Bool /* System.Boolean */ {
+	public override var canSeek: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -28039,7 +28039,7 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_IO_FileStream_TypeOf())
@@ -28599,7 +28599,7 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		return __returnValue
 		
 	}
-	public func canRead_get() throws -> Bool /* System.Boolean */ {
+	public var canRead: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -28615,9 +28615,9 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func canWrite_get() throws -> Bool /* System.Boolean */ {
+	public var canWrite: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -28633,9 +28633,9 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func canSeek_get() throws -> Bool /* System.Boolean */ {
+	public var canSeek: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -28651,9 +28651,9 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func canTimeout_get() throws -> Bool /* System.Boolean */ {
+	public var canTimeout: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -28669,9 +28669,9 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func length_get() throws -> Int64 /* System.Int64 */ {
+	public var length: Int64 /* System.Int64 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -28687,9 +28687,9 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func position_get() throws -> Int64 /* System.Int64 */ {
+	public var position: Int64 /* System.Int64 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -28705,7 +28705,7 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		
 		return __returnValueC
 		
-	}
+	}}
 	public func position_set(_ value: Int64 /* System.Int64 */) throws {
 		
 		
@@ -28723,7 +28723,7 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		
 	}
 	
-	public func readTimeout_get() throws -> Int32 /* System.Int32 */ {
+	public var readTimeout: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -28739,7 +28739,7 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		
 		return __returnValueC
 		
-	}
+	}}
 	public func readTimeout_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -28757,7 +28757,7 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		
 	}
 	
-	public func writeTimeout_get() throws -> Int32 /* System.Int32 */ {
+	public var writeTimeout: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -28773,7 +28773,7 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		
 		return __returnValueC
 		
-	}
+	}}
 	public func writeTimeout_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -28791,7 +28791,7 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		
 	}
 	
-	public class func null_get() -> System_IO_Stream? /* System.IO.Stream */ {
+	public class var null: System_IO_Stream? /* System.IO.Stream */ { get {
 		
 		
 		let __returnValueC = System_IO_Stream_Null_Get()
@@ -28800,7 +28800,7 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_IO_Stream_TypeOf())
@@ -29113,7 +29113,7 @@ public class System_Threading_Tasks_ValueTask /* System.Threading.Tasks.ValueTas
 		self.init(handle: __returnValueC)
 		
 	}
-	public class func completedTask_get() throws -> System_Threading_Tasks_ValueTask? /* System.Threading.Tasks.ValueTask */ {
+	public class var completedTask: System_Threading_Tasks_ValueTask? /* System.Threading.Tasks.ValueTask */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -29131,9 +29131,9 @@ public class System_Threading_Tasks_ValueTask /* System.Threading.Tasks.ValueTas
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func isCompleted_get() throws -> Bool /* System.Boolean */ {
+	public var isCompleted: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -29149,9 +29149,9 @@ public class System_Threading_Tasks_ValueTask /* System.Threading.Tasks.ValueTas
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isCompletedSuccessfully_get() throws -> Bool /* System.Boolean */ {
+	public var isCompletedSuccessfully: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -29167,9 +29167,9 @@ public class System_Threading_Tasks_ValueTask /* System.Threading.Tasks.ValueTas
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isFaulted_get() throws -> Bool /* System.Boolean */ {
+	public var isFaulted: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -29185,9 +29185,9 @@ public class System_Threading_Tasks_ValueTask /* System.Threading.Tasks.ValueTas
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isCanceled_get() throws -> Bool /* System.Boolean */ {
+	public var isCanceled: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -29203,7 +29203,7 @@ public class System_Threading_Tasks_ValueTask /* System.Threading.Tasks.ValueTas
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Threading_Tasks_ValueTask_TypeOf())
@@ -29351,7 +29351,7 @@ public class System_Threading_CancellationToken /* System.Threading.Cancellation
 		self.init(handle: __returnValueC)
 		
 	}
-	public class func none_get() throws -> System_Threading_CancellationToken? /* System.Threading.CancellationToken */ {
+	public class var none: System_Threading_CancellationToken? /* System.Threading.CancellationToken */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -29369,9 +29369,9 @@ public class System_Threading_CancellationToken /* System.Threading.Cancellation
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func isCancellationRequested_get() throws -> Bool /* System.Boolean */ {
+	public var isCancellationRequested: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -29387,9 +29387,9 @@ public class System_Threading_CancellationToken /* System.Threading.Cancellation
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func canBeCanceled_get() throws -> Bool /* System.Boolean */ {
+	public var canBeCanceled: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -29405,9 +29405,9 @@ public class System_Threading_CancellationToken /* System.Threading.Cancellation
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func waitHandle_get() throws -> System_Threading_WaitHandle? /* System.Threading.WaitHandle */ {
+	public var waitHandle: System_Threading_WaitHandle? /* System.Threading.WaitHandle */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -29425,7 +29425,7 @@ public class System_Threading_CancellationToken /* System.Threading.Cancellation
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Threading_CancellationToken_TypeOf())
@@ -29805,7 +29805,7 @@ public class System_Threading_WaitHandle /* System.Threading.WaitHandle */: Syst
 		return __returnValueC
 		
 	}
-	public func handle_get() throws -> Int /* System.IntPtr */ {
+	public var handle: Int /* System.IntPtr */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -29821,7 +29821,7 @@ public class System_Threading_WaitHandle /* System.Threading.WaitHandle */: Syst
 		
 		return __returnValueC
 		
-	}
+	}}
 	public func handle_set(_ value: Int /* System.IntPtr */) throws {
 		
 		
@@ -29839,7 +29839,7 @@ public class System_Threading_WaitHandle /* System.Threading.WaitHandle */: Syst
 		
 	}
 	
-	public func safeWaitHandle_get() throws -> Microsoft_Win32_SafeHandles_SafeWaitHandle? /* Microsoft.Win32.SafeHandles.SafeWaitHandle */ {
+	public var safeWaitHandle: Microsoft_Win32_SafeHandles_SafeWaitHandle? /* Microsoft.Win32.SafeHandles.SafeWaitHandle */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -29857,7 +29857,7 @@ public class System_Threading_WaitHandle /* System.Threading.WaitHandle */: Syst
 		
 		return __returnValue
 		
-	}
+	}}
 	public func safeWaitHandle_set(_ value: Microsoft_Win32_SafeHandles_SafeWaitHandle? /* Microsoft.Win32.SafeHandles.SafeWaitHandle */) throws {
 		let valueC = value?.__handle
 		
@@ -29876,14 +29876,14 @@ public class System_Threading_WaitHandle /* System.Threading.WaitHandle */: Syst
 		
 	}
 	
-	public class func waitTimeout_get() -> Int32 /* System.Int32 */ {
+	public class var waitTimeout: Int32 /* System.Int32 */ { get {
 		
 		
 		let __returnValueC = System_Threading_WaitHandle_WaitTimeout_Get()
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Threading_WaitHandle_TypeOf())
@@ -30008,7 +30008,7 @@ public class Microsoft_Win32_SafeHandles_SafeWaitHandle /* Microsoft.Win32.SafeH
 public class Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid /* Microsoft.Win32.SafeHandles.SafeHandleZeroOrMinusOneIsInvalid */: System_Runtime_InteropServices_SafeHandle {
 	public override class var typeName: String { "SafeHandleZeroOrMinusOneIsInvalid" }
 	public override class var fullTypeName: String { "Microsoft.Win32.SafeHandles.SafeHandleZeroOrMinusOneIsInvalid" }
-	public override func isInvalid_get() throws -> Bool /* System.Boolean */ {
+	public override var isInvalid: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -30024,7 +30024,7 @@ public class Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid /* Mi
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid_TypeOf())
@@ -30138,7 +30138,7 @@ public class System_Runtime_InteropServices_SafeHandle /* System.Runtime.Interop
 		
 		
 	}
-	public func isClosed_get() throws -> Bool /* System.Boolean */ {
+	public var isClosed: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -30154,9 +30154,9 @@ public class System_Runtime_InteropServices_SafeHandle /* System.Runtime.Interop
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isInvalid_get() throws -> Bool /* System.Boolean */ {
+	public var isInvalid: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -30172,7 +30172,7 @@ public class System_Runtime_InteropServices_SafeHandle /* System.Runtime.Interop
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Runtime_InteropServices_SafeHandle_TypeOf())
@@ -30330,7 +30330,7 @@ public class System_Threading_CancellationTokenRegistration /* System.Threading.
 		return __returnValueC
 		
 	}
-	public func token_get() throws -> System_Threading_CancellationToken? /* System.Threading.CancellationToken */ {
+	public var token: System_Threading_CancellationToken? /* System.Threading.CancellationToken */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -30348,7 +30348,7 @@ public class System_Threading_CancellationTokenRegistration /* System.Threading.
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Threading_CancellationTokenRegistration_TypeOf())
@@ -30502,7 +30502,7 @@ public class System_Exception /* System.Exception */: System_Object {
 		self.init(handle: __returnValueC)
 		
 	}
-	public func targetSite_get() throws -> System_Reflection_MethodBase? /* System.Reflection.MethodBase */ {
+	public var targetSite: System_Reflection_MethodBase? /* System.Reflection.MethodBase */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -30520,9 +30520,9 @@ public class System_Exception /* System.Exception */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func message_get() throws -> System_String? /* System.String */ {
+	public var message: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -30540,9 +30540,9 @@ public class System_Exception /* System.Exception */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func data_get() throws -> System_Collections_IDictionary? /* System.Collections.IDictionary */ {
+	public var data: System_Collections_IDictionary? /* System.Collections.IDictionary */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -30560,9 +30560,9 @@ public class System_Exception /* System.Exception */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func innerException_get() throws -> System_Exception? /* System.Exception */ {
+	public var innerException: System_Exception? /* System.Exception */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -30580,9 +30580,9 @@ public class System_Exception /* System.Exception */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func helpLink_get() throws -> System_String? /* System.String */ {
+	public var helpLink: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -30600,7 +30600,7 @@ public class System_Exception /* System.Exception */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	public func helpLink_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -30619,7 +30619,7 @@ public class System_Exception /* System.Exception */: System_Object {
 		
 	}
 	
-	public func source_get() throws -> System_String? /* System.String */ {
+	public var source: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -30637,7 +30637,7 @@ public class System_Exception /* System.Exception */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	public func source_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -30656,7 +30656,7 @@ public class System_Exception /* System.Exception */: System_Object {
 		
 	}
 	
-	public func hResult_get() throws -> Int32 /* System.Int32 */ {
+	public var hResult: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -30672,7 +30672,7 @@ public class System_Exception /* System.Exception */: System_Object {
 		
 		return __returnValueC
 		
-	}
+	}}
 	public func hResult_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -30690,7 +30690,7 @@ public class System_Exception /* System.Exception */: System_Object {
 		
 	}
 	
-	public func stackTrace_get() throws -> System_String? /* System.String */ {
+	public var stackTrace: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -30708,7 +30708,7 @@ public class System_Exception /* System.Exception */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Exception_TypeOf())
@@ -30941,7 +30941,7 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 		return __returnValueC
 		
 	}
-	public func attributes_get() throws -> System_Reflection_MethodAttributes /* System.Reflection.MethodAttributes */ {
+	public var attributes: System_Reflection_MethodAttributes /* System.Reflection.MethodAttributes */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -30959,9 +30959,9 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func methodImplementationFlags_get() throws -> System_Reflection_MethodImplAttributes /* System.Reflection.MethodImplAttributes */ {
+	public var methodImplementationFlags: System_Reflection_MethodImplAttributes /* System.Reflection.MethodImplAttributes */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -30979,9 +30979,9 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func callingConvention_get() throws -> System_Reflection_CallingConventions /* System.Reflection.CallingConventions */ {
+	public var callingConvention: System_Reflection_CallingConventions /* System.Reflection.CallingConventions */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -30999,9 +30999,9 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func isAbstract_get() throws -> Bool /* System.Boolean */ {
+	public var isAbstract: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -31017,9 +31017,9 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isConstructor_get() throws -> Bool /* System.Boolean */ {
+	public var isConstructor: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -31035,9 +31035,9 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isFinal_get() throws -> Bool /* System.Boolean */ {
+	public var isFinal: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -31053,9 +31053,9 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isHideBySig_get() throws -> Bool /* System.Boolean */ {
+	public var isHideBySig: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -31071,9 +31071,9 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isSpecialName_get() throws -> Bool /* System.Boolean */ {
+	public var isSpecialName: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -31089,9 +31089,9 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isStatic_get() throws -> Bool /* System.Boolean */ {
+	public var isStatic: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -31107,9 +31107,9 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isVirtual_get() throws -> Bool /* System.Boolean */ {
+	public var isVirtual: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -31125,9 +31125,9 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isAssembly_get() throws -> Bool /* System.Boolean */ {
+	public var isAssembly: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -31143,9 +31143,9 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isFamily_get() throws -> Bool /* System.Boolean */ {
+	public var isFamily: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -31161,9 +31161,9 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isFamilyAndAssembly_get() throws -> Bool /* System.Boolean */ {
+	public var isFamilyAndAssembly: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -31179,9 +31179,9 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isFamilyOrAssembly_get() throws -> Bool /* System.Boolean */ {
+	public var isFamilyOrAssembly: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -31197,9 +31197,9 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isPrivate_get() throws -> Bool /* System.Boolean */ {
+	public var isPrivate: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -31215,9 +31215,9 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isPublic_get() throws -> Bool /* System.Boolean */ {
+	public var isPublic: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -31233,9 +31233,9 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isConstructedGenericMethod_get() throws -> Bool /* System.Boolean */ {
+	public var isConstructedGenericMethod: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -31251,9 +31251,9 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isGenericMethod_get() throws -> Bool /* System.Boolean */ {
+	public var isGenericMethod: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -31269,9 +31269,9 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isGenericMethodDefinition_get() throws -> Bool /* System.Boolean */ {
+	public var isGenericMethodDefinition: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -31287,9 +31287,9 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func containsGenericParameters_get() throws -> Bool /* System.Boolean */ {
+	public var containsGenericParameters: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -31305,9 +31305,9 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func methodHandle_get() throws -> System_RuntimeMethodHandle? /* System.RuntimeMethodHandle */ {
+	public var methodHandle: System_RuntimeMethodHandle? /* System.RuntimeMethodHandle */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -31325,9 +31325,9 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func isSecurityCritical_get() throws -> Bool /* System.Boolean */ {
+	public var isSecurityCritical: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -31343,9 +31343,9 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isSecuritySafeCritical_get() throws -> Bool /* System.Boolean */ {
+	public var isSecuritySafeCritical: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -31361,9 +31361,9 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isSecurityTransparent_get() throws -> Bool /* System.Boolean */ {
+	public var isSecurityTransparent: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -31379,7 +31379,7 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_MethodBase_TypeOf())
@@ -31521,7 +31521,7 @@ public class System_RuntimeMethodHandle /* System.RuntimeMethodHandle */: System
 		return __returnValueC
 		
 	}
-	public func value_get() throws -> Int /* System.IntPtr */ {
+	public var value: Int /* System.IntPtr */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -31537,7 +31537,7 @@ public class System_RuntimeMethodHandle /* System.RuntimeMethodHandle */: System
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_RuntimeMethodHandle_TypeOf())
@@ -31683,7 +31683,7 @@ public class System_RuntimeTypeHandle /* System.RuntimeTypeHandle */: System_Val
 		
 		
 	}
-	public func value_get() throws -> Int /* System.IntPtr */ {
+	public var value: Int /* System.IntPtr */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -31699,7 +31699,7 @@ public class System_RuntimeTypeHandle /* System.RuntimeTypeHandle */: System_Val
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_RuntimeTypeHandle_TypeOf())
@@ -31948,7 +31948,7 @@ public class System_ModuleHandle /* System.ModuleHandle */: System_ValueType {
 		return __returnValue
 		
 	}
-	public func mDStreamVersion_get() throws -> Int32 /* System.Int32 */ {
+	public var mDStreamVersion: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -31964,9 +31964,9 @@ public class System_ModuleHandle /* System.ModuleHandle */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public class func emptyHandle_get() -> System_ModuleHandle? /* System.ModuleHandle */ {
+	public class var emptyHandle: System_ModuleHandle? /* System.ModuleHandle */ { get {
 		
 		
 		let __returnValueC = System_ModuleHandle_EmptyHandle_Get()
@@ -31975,7 +31975,7 @@ public class System_ModuleHandle /* System.ModuleHandle */: System_ValueType {
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_ModuleHandle_TypeOf())
@@ -32122,7 +32122,7 @@ public class System_RuntimeFieldHandle /* System.RuntimeFieldHandle */: System_V
 		
 		
 	}
-	public func value_get() throws -> Int /* System.IntPtr */ {
+	public var value: Int /* System.IntPtr */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -32138,7 +32138,7 @@ public class System_RuntimeFieldHandle /* System.RuntimeFieldHandle */: System_V
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_RuntimeFieldHandle_TypeOf())
@@ -32344,7 +32344,7 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 		return __returnValue
 		
 	}
-	public func attributes_get() throws -> System_Reflection_ParameterAttributes /* System.Reflection.ParameterAttributes */ {
+	public var attributes: System_Reflection_ParameterAttributes /* System.Reflection.ParameterAttributes */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -32362,9 +32362,9 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func member_get() throws -> System_Reflection_MemberInfo? /* System.Reflection.MemberInfo */ {
+	public var member: System_Reflection_MemberInfo? /* System.Reflection.MemberInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -32382,9 +32382,9 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func name_get() throws -> System_String? /* System.String */ {
+	public var name: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -32402,9 +32402,9 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func parameterType_get() throws -> System_Type? /* System.Type */ {
+	public var parameterType: System_Type? /* System.Type */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -32422,9 +32422,9 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func position_get() throws -> Int32 /* System.Int32 */ {
+	public var position: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -32440,9 +32440,9 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isIn_get() throws -> Bool /* System.Boolean */ {
+	public var isIn: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -32458,9 +32458,9 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isLcid_get() throws -> Bool /* System.Boolean */ {
+	public var isLcid: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -32476,9 +32476,9 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isOptional_get() throws -> Bool /* System.Boolean */ {
+	public var isOptional: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -32494,9 +32494,9 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isOut_get() throws -> Bool /* System.Boolean */ {
+	public var isOut: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -32512,9 +32512,9 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isRetval_get() throws -> Bool /* System.Boolean */ {
+	public var isRetval: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -32530,9 +32530,9 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func defaultValue_get() throws -> System_Object? /* System.Object */ {
+	public var defaultValue: System_Object? /* System.Object */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -32550,9 +32550,9 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func rawDefaultValue_get() throws -> System_Object? /* System.Object */ {
+	public var rawDefaultValue: System_Object? /* System.Object */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -32570,9 +32570,9 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func hasDefaultValue_get() throws -> Bool /* System.Boolean */ {
+	public var hasDefaultValue: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -32588,9 +32588,9 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func customAttributes_get() throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.CustomAttributeData> */ {
+	public var customAttributes: System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.CustomAttributeData> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -32608,9 +32608,9 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func metadataToken_get() throws -> Int32 /* System.Int32 */ {
+	public var metadataToken: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -32626,7 +32626,7 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_ParameterInfo_TypeOf())
@@ -32816,7 +32816,7 @@ public class System_Reflection_CustomAttributeData /* System.Reflection.CustomAt
 		return __returnValueC
 		
 	}
-	public func attributeType_get() throws -> System_Type? /* System.Type */ {
+	public var attributeType: System_Type? /* System.Type */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -32834,9 +32834,9 @@ public class System_Reflection_CustomAttributeData /* System.Reflection.CustomAt
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func constructor_get() throws -> System_Reflection_ConstructorInfo? /* System.Reflection.ConstructorInfo */ {
+	public var constructor: System_Reflection_ConstructorInfo? /* System.Reflection.ConstructorInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -32854,9 +32854,9 @@ public class System_Reflection_CustomAttributeData /* System.Reflection.CustomAt
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func constructorArguments_get() throws -> System_Collections_Generic_IList_A1? /* System.Collections.Generic.IList<System.Reflection.CustomAttributeTypedArgument> */ {
+	public var constructorArguments: System_Collections_Generic_IList_A1? /* System.Collections.Generic.IList<System.Reflection.CustomAttributeTypedArgument> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -32874,9 +32874,9 @@ public class System_Reflection_CustomAttributeData /* System.Reflection.CustomAt
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func namedArguments_get() throws -> System_Collections_Generic_IList_A1? /* System.Collections.Generic.IList<System.Reflection.CustomAttributeNamedArgument> */ {
+	public var namedArguments: System_Collections_Generic_IList_A1? /* System.Collections.Generic.IList<System.Reflection.CustomAttributeNamedArgument> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -32894,7 +32894,7 @@ public class System_Reflection_CustomAttributeData /* System.Reflection.CustomAt
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_CustomAttributeData_TypeOf())
@@ -33598,7 +33598,7 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		return __returnValue
 		
 	}
-	public func assembly_get() throws -> System_Reflection_Assembly? /* System.Reflection.Assembly */ {
+	public var assembly: System_Reflection_Assembly? /* System.Reflection.Assembly */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -33616,9 +33616,9 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func fullyQualifiedName_get() throws -> System_String? /* System.String */ {
+	public var fullyQualifiedName: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -33636,9 +33636,9 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func name_get() throws -> System_String? /* System.String */ {
+	public var name: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -33656,9 +33656,9 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func mDStreamVersion_get() throws -> Int32 /* System.Int32 */ {
+	public var mDStreamVersion: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -33674,9 +33674,9 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func moduleVersionId_get() throws -> System_Guid? /* System.Guid */ {
+	public var moduleVersionId: System_Guid? /* System.Guid */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -33694,9 +33694,9 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func scopeName_get() throws -> System_String? /* System.String */ {
+	public var scopeName: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -33714,9 +33714,9 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func moduleHandle_get() throws -> System_ModuleHandle? /* System.ModuleHandle */ {
+	public var moduleHandle: System_ModuleHandle? /* System.ModuleHandle */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -33734,9 +33734,9 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func customAttributes_get() throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.CustomAttributeData> */ {
+	public var customAttributes: System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.CustomAttributeData> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -33754,9 +33754,9 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func metadataToken_get() throws -> Int32 /* System.Int32 */ {
+	public var metadataToken: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -33772,9 +33772,9 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public class func filterTypeName_get() -> System_Reflection_TypeFilter? /* System.Reflection.TypeFilter */ {
+	public class var filterTypeName: System_Reflection_TypeFilter? /* System.Reflection.TypeFilter */ { get {
 		
 		
 		let __returnValueC = System_Reflection_Module_FilterTypeName_Get()
@@ -33783,9 +33783,9 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func filterTypeNameIgnoreCase_get() -> System_Reflection_TypeFilter? /* System.Reflection.TypeFilter */ {
+	public class var filterTypeNameIgnoreCase: System_Reflection_TypeFilter? /* System.Reflection.TypeFilter */ { get {
 		
 		
 		let __returnValueC = System_Reflection_Module_FilterTypeNameIgnoreCase_Get()
@@ -33794,7 +33794,7 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_Module_TypeOf())
@@ -34226,7 +34226,7 @@ public class System_Guid /* System.Guid */: System_ValueType {
 		self.init(handle: __returnValueC)
 		
 	}
-	public class func empty_get() -> System_Guid? /* System.Guid */ {
+	public class var empty: System_Guid? /* System.Guid */ { get {
 		
 		
 		let __returnValueC = System_Guid_Empty_Get()
@@ -34235,7 +34235,7 @@ public class System_Guid /* System.Guid */: System_ValueType {
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Guid_TypeOf())
@@ -34457,7 +34457,7 @@ public class System_Reflection_MethodInfo /* System.Reflection.MethodInfo */: Sy
 		return __returnValueC
 		
 	}
-	public override func memberType_get() throws -> System_Reflection_MemberTypes /* System.Reflection.MemberTypes */ {
+	public override var memberType: System_Reflection_MemberTypes /* System.Reflection.MemberTypes */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -34475,9 +34475,9 @@ public class System_Reflection_MethodInfo /* System.Reflection.MethodInfo */: Sy
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func returnParameter_get() throws -> System_Reflection_ParameterInfo? /* System.Reflection.ParameterInfo */ {
+	public var returnParameter: System_Reflection_ParameterInfo? /* System.Reflection.ParameterInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -34495,9 +34495,9 @@ public class System_Reflection_MethodInfo /* System.Reflection.MethodInfo */: Sy
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func returnType_get() throws -> System_Type? /* System.Type */ {
+	public var returnType: System_Type? /* System.Type */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -34515,9 +34515,9 @@ public class System_Reflection_MethodInfo /* System.Reflection.MethodInfo */: Sy
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func returnTypeCustomAttributes_get() throws -> System_Reflection_ICustomAttributeProvider? /* System.Reflection.ICustomAttributeProvider */ {
+	public var returnTypeCustomAttributes: System_Reflection_ICustomAttributeProvider? /* System.Reflection.ICustomAttributeProvider */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -34535,7 +34535,7 @@ public class System_Reflection_MethodInfo /* System.Reflection.MethodInfo */: Sy
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_MethodInfo_TypeOf())
@@ -34942,7 +34942,7 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 		return __returnValue
 		
 	}
-	public override func memberType_get() throws -> System_Reflection_MemberTypes /* System.Reflection.MemberTypes */ {
+	public override var memberType: System_Reflection_MemberTypes /* System.Reflection.MemberTypes */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -34960,9 +34960,9 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func attributes_get() throws -> System_Reflection_FieldAttributes /* System.Reflection.FieldAttributes */ {
+	public var attributes: System_Reflection_FieldAttributes /* System.Reflection.FieldAttributes */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -34980,9 +34980,9 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func fieldType_get() throws -> System_Type? /* System.Type */ {
+	public var fieldType: System_Type? /* System.Type */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -35000,9 +35000,9 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func isInitOnly_get() throws -> Bool /* System.Boolean */ {
+	public var isInitOnly: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -35018,9 +35018,9 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isLiteral_get() throws -> Bool /* System.Boolean */ {
+	public var isLiteral: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -35036,9 +35036,9 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isNotSerialized_get() throws -> Bool /* System.Boolean */ {
+	public var isNotSerialized: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -35054,9 +35054,9 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isPinvokeImpl_get() throws -> Bool /* System.Boolean */ {
+	public var isPinvokeImpl: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -35072,9 +35072,9 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isSpecialName_get() throws -> Bool /* System.Boolean */ {
+	public var isSpecialName: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -35090,9 +35090,9 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isStatic_get() throws -> Bool /* System.Boolean */ {
+	public var isStatic: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -35108,9 +35108,9 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isAssembly_get() throws -> Bool /* System.Boolean */ {
+	public var isAssembly: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -35126,9 +35126,9 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isFamily_get() throws -> Bool /* System.Boolean */ {
+	public var isFamily: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -35144,9 +35144,9 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isFamilyAndAssembly_get() throws -> Bool /* System.Boolean */ {
+	public var isFamilyAndAssembly: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -35162,9 +35162,9 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isFamilyOrAssembly_get() throws -> Bool /* System.Boolean */ {
+	public var isFamilyOrAssembly: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -35180,9 +35180,9 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isPrivate_get() throws -> Bool /* System.Boolean */ {
+	public var isPrivate: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -35198,9 +35198,9 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isPublic_get() throws -> Bool /* System.Boolean */ {
+	public var isPublic: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -35216,9 +35216,9 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isSecurityCritical_get() throws -> Bool /* System.Boolean */ {
+	public var isSecurityCritical: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -35234,9 +35234,9 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isSecuritySafeCritical_get() throws -> Bool /* System.Boolean */ {
+	public var isSecuritySafeCritical: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -35252,9 +35252,9 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isSecurityTransparent_get() throws -> Bool /* System.Boolean */ {
+	public var isSecurityTransparent: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -35270,9 +35270,9 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func fieldHandle_get() throws -> System_RuntimeFieldHandle? /* System.RuntimeFieldHandle */ {
+	public var fieldHandle: System_RuntimeFieldHandle? /* System.RuntimeFieldHandle */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -35290,7 +35290,7 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_FieldInfo_TypeOf())
@@ -35382,7 +35382,7 @@ public class System_Reflection_ParameterModifier /* System.Reflection.ParameterM
 		self.init(handle: __returnValueC)
 		
 	}
-	public func item_get(_ index: Int32 /* System.Int32 */) throws -> Bool /* System.Boolean */ {
+	public func item(_ index: Int32 /* System.Int32 */) throws -> Bool /* System.Boolean */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -35824,7 +35824,7 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 		return __returnValueC
 		
 	}
-	public override func memberType_get() throws -> System_Reflection_MemberTypes /* System.Reflection.MemberTypes */ {
+	public override var memberType: System_Reflection_MemberTypes /* System.Reflection.MemberTypes */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -35842,9 +35842,9 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func propertyType_get() throws -> System_Type? /* System.Type */ {
+	public var propertyType: System_Type? /* System.Type */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -35862,9 +35862,9 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func attributes_get() throws -> System_Reflection_PropertyAttributes /* System.Reflection.PropertyAttributes */ {
+	public var attributes: System_Reflection_PropertyAttributes /* System.Reflection.PropertyAttributes */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -35882,9 +35882,9 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func isSpecialName_get() throws -> Bool /* System.Boolean */ {
+	public var isSpecialName: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -35900,9 +35900,9 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func canRead_get() throws -> Bool /* System.Boolean */ {
+	public var canRead: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -35918,9 +35918,9 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func canWrite_get() throws -> Bool /* System.Boolean */ {
+	public var canWrite: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -35936,9 +35936,9 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func getMethod_get() throws -> System_Reflection_MethodInfo? /* System.Reflection.MethodInfo */ {
+	public var getMethod: System_Reflection_MethodInfo? /* System.Reflection.MethodInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -35956,9 +35956,9 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func setMethod_get() throws -> System_Reflection_MethodInfo? /* System.Reflection.MethodInfo */ {
+	public var setMethod: System_Reflection_MethodInfo? /* System.Reflection.MethodInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -35976,7 +35976,7 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_PropertyInfo_TypeOf())
@@ -36111,7 +36111,7 @@ public class System_Reflection_ConstructorInfo /* System.Reflection.ConstructorI
 		return __returnValueC
 		
 	}
-	public override func memberType_get() throws -> System_Reflection_MemberTypes /* System.Reflection.MemberTypes */ {
+	public override var memberType: System_Reflection_MemberTypes /* System.Reflection.MemberTypes */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -36129,9 +36129,9 @@ public class System_Reflection_ConstructorInfo /* System.Reflection.ConstructorI
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func constructorName_get() -> System_String? /* System.String */ {
+	public class var constructorName: System_String? /* System.String */ { get {
 		
 		
 		let __returnValueC = System_Reflection_ConstructorInfo_ConstructorName_Get()
@@ -36140,9 +36140,9 @@ public class System_Reflection_ConstructorInfo /* System.Reflection.ConstructorI
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func typeConstructorName_get() -> System_String? /* System.String */ {
+	public class var typeConstructorName: System_String? /* System.String */ { get {
 		
 		
 		let __returnValueC = System_Reflection_ConstructorInfo_TypeConstructorName_Get()
@@ -36151,7 +36151,7 @@ public class System_Reflection_ConstructorInfo /* System.Reflection.ConstructorI
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_ConstructorInfo_TypeOf())
@@ -36289,7 +36289,7 @@ public class System_Reflection_CustomAttributeTypedArgument /* System.Reflection
 		self.init(handle: __returnValueC)
 		
 	}
-	public func argumentType_get() throws -> System_Type? /* System.Type */ {
+	public var argumentType: System_Type? /* System.Type */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -36307,9 +36307,9 @@ public class System_Reflection_CustomAttributeTypedArgument /* System.Reflection
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func value_get() throws -> System_Object? /* System.Object */ {
+	public var value: System_Object? /* System.Object */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -36327,7 +36327,7 @@ public class System_Reflection_CustomAttributeTypedArgument /* System.Reflection
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_CustomAttributeTypedArgument_TypeOf())
@@ -36480,7 +36480,7 @@ public class System_Reflection_CustomAttributeNamedArgument /* System.Reflection
 		self.init(handle: __returnValueC)
 		
 	}
-	public func memberInfo_get() throws -> System_Reflection_MemberInfo? /* System.Reflection.MemberInfo */ {
+	public var memberInfo: System_Reflection_MemberInfo? /* System.Reflection.MemberInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -36498,9 +36498,9 @@ public class System_Reflection_CustomAttributeNamedArgument /* System.Reflection
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func typedValue_get() throws -> System_Reflection_CustomAttributeTypedArgument? /* System.Reflection.CustomAttributeTypedArgument */ {
+	public var typedValue: System_Reflection_CustomAttributeTypedArgument? /* System.Reflection.CustomAttributeTypedArgument */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -36518,9 +36518,9 @@ public class System_Reflection_CustomAttributeNamedArgument /* System.Reflection
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func memberName_get() throws -> System_String? /* System.String */ {
+	public var memberName: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -36538,9 +36538,9 @@ public class System_Reflection_CustomAttributeNamedArgument /* System.Reflection
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func isField_get() throws -> Bool /* System.Boolean */ {
+	public var isField: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -36556,7 +36556,7 @@ public class System_Reflection_CustomAttributeNamedArgument /* System.Reflection
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_CustomAttributeNamedArgument_TypeOf())
@@ -36611,7 +36611,7 @@ public class System_Reflection_MethodBody /* System.Reflection.MethodBody */: Sy
 		return __returnValue
 		
 	}
-	public func localSignatureMetadataToken_get() throws -> Int32 /* System.Int32 */ {
+	public var localSignatureMetadataToken: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -36627,9 +36627,9 @@ public class System_Reflection_MethodBody /* System.Reflection.MethodBody */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func localVariables_get() throws -> System_Collections_Generic_IList_A1? /* System.Collections.Generic.IList<System.Reflection.LocalVariableInfo> */ {
+	public var localVariables: System_Collections_Generic_IList_A1? /* System.Collections.Generic.IList<System.Reflection.LocalVariableInfo> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -36647,9 +36647,9 @@ public class System_Reflection_MethodBody /* System.Reflection.MethodBody */: Sy
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func maxStackSize_get() throws -> Int32 /* System.Int32 */ {
+	public var maxStackSize: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -36665,9 +36665,9 @@ public class System_Reflection_MethodBody /* System.Reflection.MethodBody */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func initLocals_get() throws -> Bool /* System.Boolean */ {
+	public var initLocals: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -36683,9 +36683,9 @@ public class System_Reflection_MethodBody /* System.Reflection.MethodBody */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func exceptionHandlingClauses_get() throws -> System_Collections_Generic_IList_A1? /* System.Collections.Generic.IList<System.Reflection.ExceptionHandlingClause> */ {
+	public var exceptionHandlingClauses: System_Collections_Generic_IList_A1? /* System.Collections.Generic.IList<System.Reflection.ExceptionHandlingClause> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -36703,7 +36703,7 @@ public class System_Reflection_MethodBody /* System.Reflection.MethodBody */: Sy
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_MethodBody_TypeOf())
@@ -36747,7 +36747,7 @@ public class System_Reflection_LocalVariableInfo /* System.Reflection.LocalVaria
 		return __returnValue
 		
 	}
-	public func localType_get() throws -> System_Type? /* System.Type */ {
+	public var localType: System_Type? /* System.Type */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -36765,9 +36765,9 @@ public class System_Reflection_LocalVariableInfo /* System.Reflection.LocalVaria
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func localIndex_get() throws -> Int32 /* System.Int32 */ {
+	public var localIndex: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -36783,9 +36783,9 @@ public class System_Reflection_LocalVariableInfo /* System.Reflection.LocalVaria
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isPinned_get() throws -> Bool /* System.Boolean */ {
+	public var isPinned: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -36801,7 +36801,7 @@ public class System_Reflection_LocalVariableInfo /* System.Reflection.LocalVaria
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_LocalVariableInfo_TypeOf())
@@ -36857,7 +36857,7 @@ public class System_Reflection_ExceptionHandlingClause /* System.Reflection.Exce
 		return __returnValue
 		
 	}
-	public func flags_get() throws -> System_Reflection_ExceptionHandlingClauseOptions /* System.Reflection.ExceptionHandlingClauseOptions */ {
+	public var flags: System_Reflection_ExceptionHandlingClauseOptions /* System.Reflection.ExceptionHandlingClauseOptions */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -36875,9 +36875,9 @@ public class System_Reflection_ExceptionHandlingClause /* System.Reflection.Exce
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func tryOffset_get() throws -> Int32 /* System.Int32 */ {
+	public var tryOffset: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -36893,9 +36893,9 @@ public class System_Reflection_ExceptionHandlingClause /* System.Reflection.Exce
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func tryLength_get() throws -> Int32 /* System.Int32 */ {
+	public var tryLength: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -36911,9 +36911,9 @@ public class System_Reflection_ExceptionHandlingClause /* System.Reflection.Exce
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func handlerOffset_get() throws -> Int32 /* System.Int32 */ {
+	public var handlerOffset: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -36929,9 +36929,9 @@ public class System_Reflection_ExceptionHandlingClause /* System.Reflection.Exce
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func handlerLength_get() throws -> Int32 /* System.Int32 */ {
+	public var handlerLength: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -36947,9 +36947,9 @@ public class System_Reflection_ExceptionHandlingClause /* System.Reflection.Exce
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func filterOffset_get() throws -> Int32 /* System.Int32 */ {
+	public var filterOffset: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -36965,9 +36965,9 @@ public class System_Reflection_ExceptionHandlingClause /* System.Reflection.Exce
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func catchType_get() throws -> System_Type? /* System.Type */ {
+	public var catchType: System_Type? /* System.Type */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -36985,7 +36985,7 @@ public class System_Reflection_ExceptionHandlingClause /* System.Reflection.Exce
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_ExceptionHandlingClause_TypeOf())
@@ -37102,7 +37102,7 @@ public class System_Collections_IDictionary /* System.Collections.IDictionary */
 		
 		
 	}
-	public func item_get(_ key: System_Object? /* System.Object */) throws -> System_Object? /* System.Object */ {
+	public func item(_ key: System_Object? /* System.Object */) throws -> System_Object? /* System.Object */ {
 		let keyC = key?.__handle
 		
 		
@@ -37141,7 +37141,7 @@ public class System_Collections_IDictionary /* System.Collections.IDictionary */
 		
 	}
 	
-	public func keys_get() throws -> System_Collections_ICollection? /* System.Collections.ICollection */ {
+	public var keys: System_Collections_ICollection? /* System.Collections.ICollection */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -37159,9 +37159,9 @@ public class System_Collections_IDictionary /* System.Collections.IDictionary */
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func values_get() throws -> System_Collections_ICollection? /* System.Collections.ICollection */ {
+	public var values: System_Collections_ICollection? /* System.Collections.ICollection */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -37179,9 +37179,9 @@ public class System_Collections_IDictionary /* System.Collections.IDictionary */
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func isReadOnly_get() throws -> Bool /* System.Boolean */ {
+	public var isReadOnly: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -37197,9 +37197,9 @@ public class System_Collections_IDictionary /* System.Collections.IDictionary */
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isFixedSize_get() throws -> Bool /* System.Boolean */ {
+	public var isFixedSize: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -37215,7 +37215,7 @@ public class System_Collections_IDictionary /* System.Collections.IDictionary */
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Collections_IDictionary_TypeOf())
@@ -37232,7 +37232,7 @@ public class System_Collections_IDictionary /* System.Collections.IDictionary */
 public class System_Collections_IDictionaryEnumerator /* System.Collections.IDictionaryEnumerator */: DNObject {
 	public override class var typeName: String { "IDictionaryEnumerator" }
 	public override class var fullTypeName: String { "System.Collections.IDictionaryEnumerator" }
-	public func key_get() throws -> System_Object? /* System.Object */ {
+	public var key: System_Object? /* System.Object */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -37250,9 +37250,9 @@ public class System_Collections_IDictionaryEnumerator /* System.Collections.IDic
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func value_get() throws -> System_Object? /* System.Object */ {
+	public var value: System_Object? /* System.Object */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -37270,9 +37270,9 @@ public class System_Collections_IDictionaryEnumerator /* System.Collections.IDic
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func entry_get() throws -> System_Collections_DictionaryEntry? /* System.Collections.DictionaryEntry */ {
+	public var entry: System_Collections_DictionaryEntry? /* System.Collections.DictionaryEntry */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -37290,7 +37290,7 @@ public class System_Collections_IDictionaryEnumerator /* System.Collections.IDic
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Collections_IDictionaryEnumerator_TypeOf())
@@ -37370,7 +37370,7 @@ public class System_Collections_DictionaryEntry /* System.Collections.Dictionary
 		self.init(handle: __returnValueC)
 		
 	}
-	public func key_get() throws -> System_Object? /* System.Object */ {
+	public var key: System_Object? /* System.Object */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -37388,7 +37388,7 @@ public class System_Collections_DictionaryEntry /* System.Collections.Dictionary
 		
 		return __returnValue
 		
-	}
+	}}
 	public func key_set(_ value: System_Object? /* System.Object */) throws {
 		let valueC = value?.__handle
 		
@@ -37407,7 +37407,7 @@ public class System_Collections_DictionaryEntry /* System.Collections.Dictionary
 		
 	}
 	
-	public func value_get() throws -> System_Object? /* System.Object */ {
+	public var value: System_Object? /* System.Object */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -37425,7 +37425,7 @@ public class System_Collections_DictionaryEntry /* System.Collections.Dictionary
 		
 		return __returnValue
 		
-	}
+	}}
 	public func value_set(_ value: System_Object? /* System.Object */) throws {
 		let valueC = value?.__handle
 		
@@ -38294,7 +38294,7 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		self.init(handle: __returnValueC)
 		
 	}
-	public func id_get() throws -> Int32 /* System.Int32 */ {
+	public var id: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -38310,9 +38310,9 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func exception_get() throws -> System_AggregateException? /* System.AggregateException */ {
+	public var exception: System_AggregateException? /* System.AggregateException */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -38330,9 +38330,9 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func status_get() throws -> System_Threading_Tasks_TaskStatus /* System.Threading.Tasks.TaskStatus */ {
+	public var status: System_Threading_Tasks_TaskStatus /* System.Threading.Tasks.TaskStatus */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -38350,9 +38350,9 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func isCanceled_get() throws -> Bool /* System.Boolean */ {
+	public var isCanceled: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -38368,9 +38368,9 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isCompleted_get() throws -> Bool /* System.Boolean */ {
+	public var isCompleted: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -38386,9 +38386,9 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isCompletedSuccessfully_get() throws -> Bool /* System.Boolean */ {
+	public var isCompletedSuccessfully: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -38404,9 +38404,9 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func creationOptions_get() throws -> System_Threading_Tasks_TaskCreationOptions /* System.Threading.Tasks.TaskCreationOptions */ {
+	public var creationOptions: System_Threading_Tasks_TaskCreationOptions /* System.Threading.Tasks.TaskCreationOptions */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -38424,9 +38424,9 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func asyncState_get() throws -> System_Object? /* System.Object */ {
+	public var asyncState: System_Object? /* System.Object */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -38444,9 +38444,9 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func factory_get() throws -> System_Threading_Tasks_TaskFactory? /* System.Threading.Tasks.TaskFactory */ {
+	public class var factory: System_Threading_Tasks_TaskFactory? /* System.Threading.Tasks.TaskFactory */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -38464,9 +38464,9 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func completedTask_get() throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public class var completedTask: System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -38484,9 +38484,9 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func isFaulted_get() throws -> Bool /* System.Boolean */ {
+	public var isFaulted: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -38502,7 +38502,7 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Threading_Tasks_Task_TypeOf())
@@ -38519,7 +38519,7 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 public class System_IAsyncResult /* System.IAsyncResult */: DNObject {
 	public override class var typeName: String { "IAsyncResult" }
 	public override class var fullTypeName: String { "System.IAsyncResult" }
-	public func isCompleted_get() throws -> Bool /* System.Boolean */ {
+	public var isCompleted: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -38535,9 +38535,9 @@ public class System_IAsyncResult /* System.IAsyncResult */: DNObject {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func asyncWaitHandle_get() throws -> System_Threading_WaitHandle? /* System.Threading.WaitHandle */ {
+	public var asyncWaitHandle: System_Threading_WaitHandle? /* System.Threading.WaitHandle */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -38555,9 +38555,9 @@ public class System_IAsyncResult /* System.IAsyncResult */: DNObject {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func asyncState_get() throws -> System_Object? /* System.Object */ {
+	public var asyncState: System_Object? /* System.Object */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -38575,9 +38575,9 @@ public class System_IAsyncResult /* System.IAsyncResult */: DNObject {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func completedSynchronously_get() throws -> Bool /* System.Boolean */ {
+	public var completedSynchronously: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -38593,7 +38593,7 @@ public class System_IAsyncResult /* System.IAsyncResult */: DNObject {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_IAsyncResult_TypeOf())
@@ -38629,7 +38629,7 @@ public class System_Threading_Tasks_TaskScheduler /* System.Threading.Tasks.Task
 		return __returnValue
 		
 	}
-	public func maximumConcurrencyLevel_get() throws -> Int32 /* System.Int32 */ {
+	public var maximumConcurrencyLevel: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -38645,9 +38645,9 @@ public class System_Threading_Tasks_TaskScheduler /* System.Threading.Tasks.Task
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public class func default_get() throws -> System_Threading_Tasks_TaskScheduler? /* System.Threading.Tasks.TaskScheduler */ {
+	public class var `default`: System_Threading_Tasks_TaskScheduler? /* System.Threading.Tasks.TaskScheduler */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -38665,9 +38665,9 @@ public class System_Threading_Tasks_TaskScheduler /* System.Threading.Tasks.Task
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func current_get() throws -> System_Threading_Tasks_TaskScheduler? /* System.Threading.Tasks.TaskScheduler */ {
+	public class var current: System_Threading_Tasks_TaskScheduler? /* System.Threading.Tasks.TaskScheduler */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -38685,9 +38685,9 @@ public class System_Threading_Tasks_TaskScheduler /* System.Threading.Tasks.Task
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func id_get() throws -> Int32 /* System.Int32 */ {
+	public var id: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -38703,7 +38703,7 @@ public class System_Threading_Tasks_TaskScheduler /* System.Threading.Tasks.Task
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Threading_Tasks_TaskScheduler_TypeOf())
@@ -38937,7 +38937,7 @@ public class System_AggregateException /* System.AggregateException */: System_E
 		self.init(handle: __returnValueC)
 		
 	}
-	public func innerExceptions_get() throws -> System_Collections_ObjectModel_ReadOnlyCollection_A1? /* System.Collections.ObjectModel.ReadOnlyCollection<System.Exception> */ {
+	public var innerExceptions: System_Collections_ObjectModel_ReadOnlyCollection_A1? /* System.Collections.ObjectModel.ReadOnlyCollection<System.Exception> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -38955,9 +38955,9 @@ public class System_AggregateException /* System.AggregateException */: System_E
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public override func message_get() throws -> System_String? /* System.String */ {
+	public override var message: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -38975,7 +38975,7 @@ public class System_AggregateException /* System.AggregateException */: System_E
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_AggregateException_TypeOf())
@@ -39202,7 +39202,7 @@ public class System_Threading_Tasks_TaskFactory /* System.Threading.Tasks.TaskFa
 		self.init(handle: __returnValueC)
 		
 	}
-	public func cancellationToken_get() throws -> System_Threading_CancellationToken? /* System.Threading.CancellationToken */ {
+	public var cancellationToken: System_Threading_CancellationToken? /* System.Threading.CancellationToken */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -39220,9 +39220,9 @@ public class System_Threading_Tasks_TaskFactory /* System.Threading.Tasks.TaskFa
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func scheduler_get() throws -> System_Threading_Tasks_TaskScheduler? /* System.Threading.Tasks.TaskScheduler */ {
+	public var scheduler: System_Threading_Tasks_TaskScheduler? /* System.Threading.Tasks.TaskScheduler */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -39240,9 +39240,9 @@ public class System_Threading_Tasks_TaskFactory /* System.Threading.Tasks.TaskFa
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func creationOptions_get() throws -> System_Threading_Tasks_TaskCreationOptions /* System.Threading.Tasks.TaskCreationOptions */ {
+	public var creationOptions: System_Threading_Tasks_TaskCreationOptions /* System.Threading.Tasks.TaskCreationOptions */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -39260,9 +39260,9 @@ public class System_Threading_Tasks_TaskFactory /* System.Threading.Tasks.TaskFa
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func continuationOptions_get() throws -> System_Threading_Tasks_TaskContinuationOptions /* System.Threading.Tasks.TaskContinuationOptions */ {
+	public var continuationOptions: System_Threading_Tasks_TaskContinuationOptions /* System.Threading.Tasks.TaskContinuationOptions */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -39280,7 +39280,7 @@ public class System_Threading_Tasks_TaskFactory /* System.Threading.Tasks.TaskFa
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Threading_Tasks_TaskFactory_TypeOf())
@@ -39391,7 +39391,7 @@ public class System_Runtime_CompilerServices_TaskAwaiter /* System.Runtime.Compi
 		
 		
 	}
-	public func isCompleted_get() throws -> Bool /* System.Boolean */ {
+	public var isCompleted: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -39407,7 +39407,7 @@ public class System_Runtime_CompilerServices_TaskAwaiter /* System.Runtime.Compi
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Runtime_CompilerServices_TaskAwaiter_TypeOf())
@@ -39572,7 +39572,7 @@ public class System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredT
 		
 		
 	}
-	public func isCompleted_get() throws -> Bool /* System.Boolean */ {
+	public var isCompleted: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -39588,7 +39588,7 @@ public class System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredT
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_TypeOf())
@@ -39689,7 +39689,7 @@ public class System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter /* Syst
 		
 		
 	}
-	public func isCompleted_get() throws -> Bool /* System.Boolean */ {
+	public var isCompleted: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -39705,7 +39705,7 @@ public class System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter /* Syst
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_TypeOf())
@@ -39807,7 +39807,7 @@ public class System_Runtime_CompilerServices_ValueTaskAwaiter /* System.Runtime.
 		
 		
 	}
-	public func isCompleted_get() throws -> Bool /* System.Boolean */ {
+	public var isCompleted: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -39823,7 +39823,7 @@ public class System_Runtime_CompilerServices_ValueTaskAwaiter /* System.Runtime.
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Runtime_CompilerServices_ValueTaskAwaiter_TypeOf())
@@ -39924,7 +39924,7 @@ public class System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_Config
 		
 		
 	}
-	public func isCompleted_get() throws -> Bool /* System.Boolean */ {
+	public var isCompleted: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -39940,7 +39940,7 @@ public class System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_Config
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_TypeOf())
@@ -40053,7 +40053,7 @@ public class Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeH
 		self.init(handle: __returnValueC)
 		
 	}
-	public func isAsync_get() throws -> Bool /* System.Boolean */ {
+	public var isAsync: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -40069,9 +40069,9 @@ public class Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeH
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public override func isInvalid_get() throws -> Bool /* System.Boolean */ {
+	public override var isInvalid: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -40087,7 +40087,7 @@ public class Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeH
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: Microsoft_Win32_SafeHandles_SafeFileHandle_TypeOf())
@@ -40123,7 +40123,7 @@ public class System_IO_FileStreamOptions /* System.IO.FileStreamOptions */: Syst
 		self.init(handle: __returnValueC)
 		
 	}
-	public func mode_get() throws -> System_IO_FileMode /* System.IO.FileMode */ {
+	public var mode: System_IO_FileMode /* System.IO.FileMode */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -40141,7 +40141,7 @@ public class System_IO_FileStreamOptions /* System.IO.FileStreamOptions */: Syst
 		
 		return __returnValue
 		
-	}
+	}}
 	public func mode_set(_ value: System_IO_FileMode /* System.IO.FileMode */) throws {
 		let valueC = value.cValue
 		
@@ -40160,7 +40160,7 @@ public class System_IO_FileStreamOptions /* System.IO.FileStreamOptions */: Syst
 		
 	}
 	
-	public func access_get() throws -> System_IO_FileAccess /* System.IO.FileAccess */ {
+	public var access: System_IO_FileAccess /* System.IO.FileAccess */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -40178,7 +40178,7 @@ public class System_IO_FileStreamOptions /* System.IO.FileStreamOptions */: Syst
 		
 		return __returnValue
 		
-	}
+	}}
 	public func access_set(_ value: System_IO_FileAccess /* System.IO.FileAccess */) throws {
 		let valueC = value.cValue
 		
@@ -40197,7 +40197,7 @@ public class System_IO_FileStreamOptions /* System.IO.FileStreamOptions */: Syst
 		
 	}
 	
-	public func share_get() throws -> System_IO_FileShare /* System.IO.FileShare */ {
+	public var share: System_IO_FileShare /* System.IO.FileShare */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -40215,7 +40215,7 @@ public class System_IO_FileStreamOptions /* System.IO.FileStreamOptions */: Syst
 		
 		return __returnValue
 		
-	}
+	}}
 	public func share_set(_ value: System_IO_FileShare /* System.IO.FileShare */) throws {
 		let valueC = value.cValue
 		
@@ -40234,7 +40234,7 @@ public class System_IO_FileStreamOptions /* System.IO.FileStreamOptions */: Syst
 		
 	}
 	
-	public func options_get() throws -> System_IO_FileOptions /* System.IO.FileOptions */ {
+	public var options: System_IO_FileOptions /* System.IO.FileOptions */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -40252,7 +40252,7 @@ public class System_IO_FileStreamOptions /* System.IO.FileStreamOptions */: Syst
 		
 		return __returnValue
 		
-	}
+	}}
 	public func options_set(_ value: System_IO_FileOptions /* System.IO.FileOptions */) throws {
 		let valueC = value.cValue
 		
@@ -40271,7 +40271,7 @@ public class System_IO_FileStreamOptions /* System.IO.FileStreamOptions */: Syst
 		
 	}
 	
-	public func preallocationSize_get() throws -> Int64 /* System.Int64 */ {
+	public var preallocationSize: Int64 /* System.Int64 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -40287,7 +40287,7 @@ public class System_IO_FileStreamOptions /* System.IO.FileStreamOptions */: Syst
 		
 		return __returnValueC
 		
-	}
+	}}
 	public func preallocationSize_set(_ value: Int64 /* System.Int64 */) throws {
 		
 		
@@ -40305,7 +40305,7 @@ public class System_IO_FileStreamOptions /* System.IO.FileStreamOptions */: Syst
 		
 	}
 	
-	public func bufferSize_get() throws -> Int32 /* System.Int32 */ {
+	public var bufferSize: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -40321,7 +40321,7 @@ public class System_IO_FileStreamOptions /* System.IO.FileStreamOptions */: Syst
 		
 		return __returnValueC
 		
-	}
+	}}
 	public func bufferSize_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -40515,7 +40515,7 @@ public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System
 		return __returnValueC
 		
 	}
-	public func genericTypeParameters_get() throws -> System_Type_Array? /* System.Type[] */ {
+	public var genericTypeParameters: System_Type_Array? /* System.Type[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -40533,9 +40533,9 @@ public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func declaredConstructors_get() throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.ConstructorInfo> */ {
+	public var declaredConstructors: System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.ConstructorInfo> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -40553,9 +40553,9 @@ public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func declaredEvents_get() throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.EventInfo> */ {
+	public var declaredEvents: System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.EventInfo> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -40573,9 +40573,9 @@ public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func declaredFields_get() throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.FieldInfo> */ {
+	public var declaredFields: System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.FieldInfo> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -40593,9 +40593,9 @@ public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func declaredMembers_get() throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.MemberInfo> */ {
+	public var declaredMembers: System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.MemberInfo> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -40613,9 +40613,9 @@ public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func declaredMethods_get() throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.MethodInfo> */ {
+	public var declaredMethods: System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.MethodInfo> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -40633,9 +40633,9 @@ public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func declaredNestedTypes_get() throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.TypeInfo> */ {
+	public var declaredNestedTypes: System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.TypeInfo> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -40653,9 +40653,9 @@ public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func declaredProperties_get() throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.PropertyInfo> */ {
+	public var declaredProperties: System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.PropertyInfo> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -40673,9 +40673,9 @@ public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func implementedInterfaces_get() throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Type> */ {
+	public var implementedInterfaces: System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Type> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -40693,7 +40693,7 @@ public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_TypeInfo_TypeOf())
@@ -40950,7 +40950,7 @@ public class System_Reflection_IReflect /* System.Reflection.IReflect */: DNObje
 		return __returnValue
 		
 	}
-	public func underlyingSystemType_get() throws -> System_Type? /* System.Type */ {
+	public var underlyingSystemType: System_Type? /* System.Type */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -40968,7 +40968,7 @@ public class System_Reflection_IReflect /* System.Reflection.IReflect */: DNObje
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_IReflect_TypeOf())
@@ -41262,7 +41262,7 @@ public class System_Reflection_EventInfo /* System.Reflection.EventInfo */: Syst
 		return __returnValueC
 		
 	}
-	public override func memberType_get() throws -> System_Reflection_MemberTypes /* System.Reflection.MemberTypes */ {
+	public override var memberType: System_Reflection_MemberTypes /* System.Reflection.MemberTypes */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -41280,9 +41280,9 @@ public class System_Reflection_EventInfo /* System.Reflection.EventInfo */: Syst
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func attributes_get() throws -> System_Reflection_EventAttributes /* System.Reflection.EventAttributes */ {
+	public var attributes: System_Reflection_EventAttributes /* System.Reflection.EventAttributes */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -41300,9 +41300,9 @@ public class System_Reflection_EventInfo /* System.Reflection.EventInfo */: Syst
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func isSpecialName_get() throws -> Bool /* System.Boolean */ {
+	public var isSpecialName: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -41318,9 +41318,9 @@ public class System_Reflection_EventInfo /* System.Reflection.EventInfo */: Syst
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func addMethod_get() throws -> System_Reflection_MethodInfo? /* System.Reflection.MethodInfo */ {
+	public var addMethod: System_Reflection_MethodInfo? /* System.Reflection.MethodInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -41338,9 +41338,9 @@ public class System_Reflection_EventInfo /* System.Reflection.EventInfo */: Syst
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func removeMethod_get() throws -> System_Reflection_MethodInfo? /* System.Reflection.MethodInfo */ {
+	public var removeMethod: System_Reflection_MethodInfo? /* System.Reflection.MethodInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -41358,9 +41358,9 @@ public class System_Reflection_EventInfo /* System.Reflection.EventInfo */: Syst
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func raiseMethod_get() throws -> System_Reflection_MethodInfo? /* System.Reflection.MethodInfo */ {
+	public var raiseMethod: System_Reflection_MethodInfo? /* System.Reflection.MethodInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -41378,9 +41378,9 @@ public class System_Reflection_EventInfo /* System.Reflection.EventInfo */: Syst
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func isMulticast_get() throws -> Bool /* System.Boolean */ {
+	public var isMulticast: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -41396,9 +41396,9 @@ public class System_Reflection_EventInfo /* System.Reflection.EventInfo */: Syst
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func eventHandlerType_get() throws -> System_Type? /* System.Type */ {
+	public var eventHandlerType: System_Type? /* System.Type */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -41416,7 +41416,7 @@ public class System_Reflection_EventInfo /* System.Reflection.EventInfo */: Syst
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_EventInfo_TypeOf())
@@ -41463,7 +41463,7 @@ public class System_Reflection_ManifestResourceInfo /* System.Reflection.Manifes
 		self.init(handle: __returnValueC)
 		
 	}
-	public func referencedAssembly_get() throws -> System_Reflection_Assembly? /* System.Reflection.Assembly */ {
+	public var referencedAssembly: System_Reflection_Assembly? /* System.Reflection.Assembly */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -41481,9 +41481,9 @@ public class System_Reflection_ManifestResourceInfo /* System.Reflection.Manifes
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func fileName_get() throws -> System_String? /* System.String */ {
+	public var fileName: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -41501,9 +41501,9 @@ public class System_Reflection_ManifestResourceInfo /* System.Reflection.Manifes
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func resourceLocation_get() throws -> System_Reflection_ResourceLocation /* System.Reflection.ResourceLocation */ {
+	public var resourceLocation: System_Reflection_ResourceLocation /* System.Reflection.ResourceLocation */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -41521,7 +41521,7 @@ public class System_Reflection_ManifestResourceInfo /* System.Reflection.Manifes
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Reflection_ManifestResourceInfo_TypeOf())
@@ -41579,7 +41579,7 @@ public class System_ResolveEventArgs /* System.ResolveEventArgs */: System_Event
 		self.init(handle: __returnValueC)
 		
 	}
-	public func name_get() throws -> System_String? /* System.String */ {
+	public var name: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -41597,9 +41597,9 @@ public class System_ResolveEventArgs /* System.ResolveEventArgs */: System_Event
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func requestingAssembly_get() throws -> System_Reflection_Assembly? /* System.Reflection.Assembly */ {
+	public var requestingAssembly: System_Reflection_Assembly? /* System.Reflection.Assembly */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -41617,7 +41617,7 @@ public class System_ResolveEventArgs /* System.ResolveEventArgs */: System_Event
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_ResolveEventArgs_TypeOf())
@@ -41653,7 +41653,7 @@ public class System_EventArgs /* System.EventArgs */: System_Object {
 		self.init(handle: __returnValueC)
 		
 	}
-	public class func empty_get() -> System_EventArgs? /* System.EventArgs */ {
+	public class var empty: System_EventArgs? /* System.EventArgs */ { get {
 		
 		
 		let __returnValueC = System_EventArgs_Empty_Get()
@@ -41662,7 +41662,7 @@ public class System_EventArgs /* System.EventArgs */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_EventArgs_TypeOf())
@@ -42389,7 +42389,7 @@ public class System_Text_Rune /* System.Text.Rune */: System_ValueType {
 		self.init(handle: __returnValueC)
 		
 	}
-	public func isAscii_get() throws -> Bool /* System.Boolean */ {
+	public var isAscii: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -42405,9 +42405,9 @@ public class System_Text_Rune /* System.Text.Rune */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isBmp_get() throws -> Bool /* System.Boolean */ {
+	public var isBmp: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -42423,9 +42423,9 @@ public class System_Text_Rune /* System.Text.Rune */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func plane_get() throws -> Int32 /* System.Int32 */ {
+	public var plane: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -42441,9 +42441,9 @@ public class System_Text_Rune /* System.Text.Rune */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public class func replacementChar_get() throws -> System_Text_Rune? /* System.Text.Rune */ {
+	public class var replacementChar: System_Text_Rune? /* System.Text.Rune */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -42461,9 +42461,9 @@ public class System_Text_Rune /* System.Text.Rune */: System_ValueType {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func utf16SequenceLength_get() throws -> Int32 /* System.Int32 */ {
+	public var utf16SequenceLength: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -42479,9 +42479,9 @@ public class System_Text_Rune /* System.Text.Rune */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func utf8SequenceLength_get() throws -> Int32 /* System.Int32 */ {
+	public var utf8SequenceLength: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -42497,9 +42497,9 @@ public class System_Text_Rune /* System.Text.Rune */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func value_get() throws -> Int32 /* System.Int32 */ {
+	public var value: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -42515,7 +42515,7 @@ public class System_Text_Rune /* System.Text.Rune */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Text_Rune_TypeOf())
@@ -42610,7 +42610,7 @@ public class System_Globalization_SortKey /* System.Globalization.SortKey */: Sy
 		return __returnValue
 		
 	}
-	public func originalString_get() throws -> System_String? /* System.String */ {
+	public var originalString: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -42628,9 +42628,9 @@ public class System_Globalization_SortKey /* System.Globalization.SortKey */: Sy
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func keyData_get() throws -> System_Byte_Array? /* System.Byte[] */ {
+	public var keyData: System_Byte_Array? /* System.Byte[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -42648,7 +42648,7 @@ public class System_Globalization_SortKey /* System.Globalization.SortKey */: Sy
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Globalization_SortKey_TypeOf())
@@ -42738,7 +42738,7 @@ public class System_Globalization_SortVersion /* System.Globalization.SortVersio
 		self.init(handle: __returnValueC)
 		
 	}
-	public func fullVersion_get() throws -> Int32 /* System.Int32 */ {
+	public var fullVersion: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -42754,9 +42754,9 @@ public class System_Globalization_SortVersion /* System.Globalization.SortVersio
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func sortId_get() throws -> System_Guid? /* System.Guid */ {
+	public var sortId: System_Guid? /* System.Guid */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -42774,7 +42774,7 @@ public class System_Globalization_SortVersion /* System.Globalization.SortVersio
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Globalization_SortVersion_TypeOf())
@@ -42986,7 +42986,7 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 		return __returnValue
 		
 	}
-	public func aNSICodePage_get() throws -> Int32 /* System.Int32 */ {
+	public var aNSICodePage: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43002,9 +43002,9 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func oEMCodePage_get() throws -> Int32 /* System.Int32 */ {
+	public var oEMCodePage: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43020,9 +43020,9 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func macCodePage_get() throws -> Int32 /* System.Int32 */ {
+	public var macCodePage: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43038,9 +43038,9 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func eBCDICCodePage_get() throws -> Int32 /* System.Int32 */ {
+	public var eBCDICCodePage: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43056,9 +43056,9 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func lCID_get() throws -> Int32 /* System.Int32 */ {
+	public var lCID: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43074,9 +43074,9 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func cultureName_get() throws -> System_String? /* System.String */ {
+	public var cultureName: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43094,9 +43094,9 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func isReadOnly_get() throws -> Bool /* System.Boolean */ {
+	public var isReadOnly: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43112,9 +43112,9 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func listSeparator_get() throws -> System_String? /* System.String */ {
+	public var listSeparator: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43132,7 +43132,7 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 		
 		return __returnValue
 		
-	}
+	}}
 	public func listSeparator_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -43151,7 +43151,7 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 		
 	}
 	
-	public func isRightToLeft_get() throws -> Bool /* System.Boolean */ {
+	public var isRightToLeft: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43167,7 +43167,7 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Globalization_TextInfo_TypeOf())
@@ -43282,7 +43282,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		self.init(handle: __returnValueC)
 		
 	}
-	public class func invariantInfo_get() throws -> System_Globalization_NumberFormatInfo? /* System.Globalization.NumberFormatInfo */ {
+	public class var invariantInfo: System_Globalization_NumberFormatInfo? /* System.Globalization.NumberFormatInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43300,9 +43300,9 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func currencyDecimalDigits_get() throws -> Int32 /* System.Int32 */ {
+	public var currencyDecimalDigits: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43318,7 +43318,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 		return __returnValueC
 		
-	}
+	}}
 	public func currencyDecimalDigits_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -43336,7 +43336,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 	}
 	
-	public func currencyDecimalSeparator_get() throws -> System_String? /* System.String */ {
+	public var currencyDecimalSeparator: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43354,7 +43354,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 		return __returnValue
 		
-	}
+	}}
 	public func currencyDecimalSeparator_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -43373,7 +43373,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 	}
 	
-	public func isReadOnly_get() throws -> Bool /* System.Boolean */ {
+	public var isReadOnly: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43389,9 +43389,9 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func currencyGroupSizes_get() throws -> System_Int32_Array? /* System.Int32[] */ {
+	public var currencyGroupSizes: System_Int32_Array? /* System.Int32[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43409,7 +43409,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 		return __returnValue
 		
-	}
+	}}
 	public func currencyGroupSizes_set(_ value: System_Int32_Array? /* System.Int32[] */) throws {
 		let valueC = value?.__handle
 		
@@ -43428,7 +43428,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 	}
 	
-	public func numberGroupSizes_get() throws -> System_Int32_Array? /* System.Int32[] */ {
+	public var numberGroupSizes: System_Int32_Array? /* System.Int32[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43446,7 +43446,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 		return __returnValue
 		
-	}
+	}}
 	public func numberGroupSizes_set(_ value: System_Int32_Array? /* System.Int32[] */) throws {
 		let valueC = value?.__handle
 		
@@ -43465,7 +43465,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 	}
 	
-	public func percentGroupSizes_get() throws -> System_Int32_Array? /* System.Int32[] */ {
+	public var percentGroupSizes: System_Int32_Array? /* System.Int32[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43483,7 +43483,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 		return __returnValue
 		
-	}
+	}}
 	public func percentGroupSizes_set(_ value: System_Int32_Array? /* System.Int32[] */) throws {
 		let valueC = value?.__handle
 		
@@ -43502,7 +43502,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 	}
 	
-	public func currencyGroupSeparator_get() throws -> System_String? /* System.String */ {
+	public var currencyGroupSeparator: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43520,7 +43520,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 		return __returnValue
 		
-	}
+	}}
 	public func currencyGroupSeparator_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -43539,7 +43539,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 	}
 	
-	public func currencySymbol_get() throws -> System_String? /* System.String */ {
+	public var currencySymbol: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43557,7 +43557,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 		return __returnValue
 		
-	}
+	}}
 	public func currencySymbol_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -43576,7 +43576,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 	}
 	
-	public class func currentInfo_get() throws -> System_Globalization_NumberFormatInfo? /* System.Globalization.NumberFormatInfo */ {
+	public class var currentInfo: System_Globalization_NumberFormatInfo? /* System.Globalization.NumberFormatInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43594,9 +43594,9 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func naNSymbol_get() throws -> System_String? /* System.String */ {
+	public var naNSymbol: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43614,7 +43614,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 		return __returnValue
 		
-	}
+	}}
 	public func naNSymbol_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -43633,7 +43633,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 	}
 	
-	public func currencyNegativePattern_get() throws -> Int32 /* System.Int32 */ {
+	public var currencyNegativePattern: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43649,7 +43649,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 		return __returnValueC
 		
-	}
+	}}
 	public func currencyNegativePattern_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -43667,7 +43667,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 	}
 	
-	public func numberNegativePattern_get() throws -> Int32 /* System.Int32 */ {
+	public var numberNegativePattern: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43683,7 +43683,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 		return __returnValueC
 		
-	}
+	}}
 	public func numberNegativePattern_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -43701,7 +43701,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 	}
 	
-	public func percentPositivePattern_get() throws -> Int32 /* System.Int32 */ {
+	public var percentPositivePattern: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43717,7 +43717,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 		return __returnValueC
 		
-	}
+	}}
 	public func percentPositivePattern_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -43735,7 +43735,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 	}
 	
-	public func percentNegativePattern_get() throws -> Int32 /* System.Int32 */ {
+	public var percentNegativePattern: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43751,7 +43751,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 		return __returnValueC
 		
-	}
+	}}
 	public func percentNegativePattern_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -43769,7 +43769,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 	}
 	
-	public func negativeInfinitySymbol_get() throws -> System_String? /* System.String */ {
+	public var negativeInfinitySymbol: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43787,7 +43787,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 		return __returnValue
 		
-	}
+	}}
 	public func negativeInfinitySymbol_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -43806,7 +43806,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 	}
 	
-	public func negativeSign_get() throws -> System_String? /* System.String */ {
+	public var negativeSign: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43824,7 +43824,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 		return __returnValue
 		
-	}
+	}}
 	public func negativeSign_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -43843,7 +43843,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 	}
 	
-	public func numberDecimalDigits_get() throws -> Int32 /* System.Int32 */ {
+	public var numberDecimalDigits: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43859,7 +43859,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 		return __returnValueC
 		
-	}
+	}}
 	public func numberDecimalDigits_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -43877,7 +43877,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 	}
 	
-	public func numberDecimalSeparator_get() throws -> System_String? /* System.String */ {
+	public var numberDecimalSeparator: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43895,7 +43895,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 		return __returnValue
 		
-	}
+	}}
 	public func numberDecimalSeparator_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -43914,7 +43914,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 	}
 	
-	public func numberGroupSeparator_get() throws -> System_String? /* System.String */ {
+	public var numberGroupSeparator: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43932,7 +43932,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 		return __returnValue
 		
-	}
+	}}
 	public func numberGroupSeparator_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -43951,7 +43951,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 	}
 	
-	public func currencyPositivePattern_get() throws -> Int32 /* System.Int32 */ {
+	public var currencyPositivePattern: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43967,7 +43967,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 		return __returnValueC
 		
-	}
+	}}
 	public func currencyPositivePattern_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -43985,7 +43985,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 	}
 	
-	public func positiveInfinitySymbol_get() throws -> System_String? /* System.String */ {
+	public var positiveInfinitySymbol: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -44003,7 +44003,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 		return __returnValue
 		
-	}
+	}}
 	public func positiveInfinitySymbol_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -44022,7 +44022,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 	}
 	
-	public func positiveSign_get() throws -> System_String? /* System.String */ {
+	public var positiveSign: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -44040,7 +44040,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 		return __returnValue
 		
-	}
+	}}
 	public func positiveSign_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -44059,7 +44059,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 	}
 	
-	public func percentDecimalDigits_get() throws -> Int32 /* System.Int32 */ {
+	public var percentDecimalDigits: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -44075,7 +44075,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 		return __returnValueC
 		
-	}
+	}}
 	public func percentDecimalDigits_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -44093,7 +44093,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 	}
 	
-	public func percentDecimalSeparator_get() throws -> System_String? /* System.String */ {
+	public var percentDecimalSeparator: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -44111,7 +44111,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 		return __returnValue
 		
-	}
+	}}
 	public func percentDecimalSeparator_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -44130,7 +44130,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 	}
 	
-	public func percentGroupSeparator_get() throws -> System_String? /* System.String */ {
+	public var percentGroupSeparator: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -44148,7 +44148,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 		return __returnValue
 		
-	}
+	}}
 	public func percentGroupSeparator_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -44167,7 +44167,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 	}
 	
-	public func percentSymbol_get() throws -> System_String? /* System.String */ {
+	public var percentSymbol: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -44185,7 +44185,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 		return __returnValue
 		
-	}
+	}}
 	public func percentSymbol_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -44204,7 +44204,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 	}
 	
-	public func perMilleSymbol_get() throws -> System_String? /* System.String */ {
+	public var perMilleSymbol: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -44222,7 +44222,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 		return __returnValue
 		
-	}
+	}}
 	public func perMilleSymbol_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -44241,7 +44241,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 	}
 	
-	public func nativeDigits_get() throws -> System_String_Array? /* System.String[] */ {
+	public var nativeDigits: System_String_Array? /* System.String[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -44259,7 +44259,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 		return __returnValue
 		
-	}
+	}}
 	public func nativeDigits_set(_ value: System_String_Array? /* System.String[] */) throws {
 		let valueC = value?.__handle
 		
@@ -44278,7 +44278,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 	}
 	
-	public func digitSubstitution_get() throws -> System_Globalization_DigitShapes /* System.Globalization.DigitShapes */ {
+	public var digitSubstitution: System_Globalization_DigitShapes /* System.Globalization.DigitShapes */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -44296,7 +44296,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 		return __returnValue
 		
-	}
+	}}
 	public func digitSubstitution_set(_ value: System_Globalization_DigitShapes /* System.Globalization.DigitShapes */) throws {
 		let valueC = value.cValue
 		
@@ -44639,7 +44639,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		self.init(handle: __returnValueC)
 		
 	}
-	public class func invariantInfo_get() throws -> System_Globalization_DateTimeFormatInfo? /* System.Globalization.DateTimeFormatInfo */ {
+	public class var invariantInfo: System_Globalization_DateTimeFormatInfo? /* System.Globalization.DateTimeFormatInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -44657,9 +44657,9 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func currentInfo_get() throws -> System_Globalization_DateTimeFormatInfo? /* System.Globalization.DateTimeFormatInfo */ {
+	public class var currentInfo: System_Globalization_DateTimeFormatInfo? /* System.Globalization.DateTimeFormatInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -44677,9 +44677,9 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func aMDesignator_get() throws -> System_String? /* System.String */ {
+	public var aMDesignator: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -44697,7 +44697,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 		return __returnValue
 		
-	}
+	}}
 	public func aMDesignator_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -44716,7 +44716,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
-	public func calendar_get() throws -> System_Globalization_Calendar? /* System.Globalization.Calendar */ {
+	public var calendar: System_Globalization_Calendar? /* System.Globalization.Calendar */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -44734,7 +44734,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 		return __returnValue
 		
-	}
+	}}
 	public func calendar_set(_ value: System_Globalization_Calendar? /* System.Globalization.Calendar */) throws {
 		let valueC = value?.__handle
 		
@@ -44753,7 +44753,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
-	public func dateSeparator_get() throws -> System_String? /* System.String */ {
+	public var dateSeparator: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -44771,7 +44771,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 		return __returnValue
 		
-	}
+	}}
 	public func dateSeparator_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -44790,7 +44790,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
-	public func firstDayOfWeek_get() throws -> System_DayOfWeek /* System.DayOfWeek */ {
+	public var firstDayOfWeek: System_DayOfWeek /* System.DayOfWeek */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -44808,7 +44808,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 		return __returnValue
 		
-	}
+	}}
 	public func firstDayOfWeek_set(_ value: System_DayOfWeek /* System.DayOfWeek */) throws {
 		let valueC = value.cValue
 		
@@ -44827,7 +44827,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
-	public func calendarWeekRule_get() throws -> System_Globalization_CalendarWeekRule /* System.Globalization.CalendarWeekRule */ {
+	public var calendarWeekRule: System_Globalization_CalendarWeekRule /* System.Globalization.CalendarWeekRule */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -44845,7 +44845,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 		return __returnValue
 		
-	}
+	}}
 	public func calendarWeekRule_set(_ value: System_Globalization_CalendarWeekRule /* System.Globalization.CalendarWeekRule */) throws {
 		let valueC = value.cValue
 		
@@ -44864,7 +44864,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
-	public func fullDateTimePattern_get() throws -> System_String? /* System.String */ {
+	public var fullDateTimePattern: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -44882,7 +44882,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 		return __returnValue
 		
-	}
+	}}
 	public func fullDateTimePattern_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -44901,7 +44901,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
-	public func longDatePattern_get() throws -> System_String? /* System.String */ {
+	public var longDatePattern: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -44919,7 +44919,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 		return __returnValue
 		
-	}
+	}}
 	public func longDatePattern_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -44938,7 +44938,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
-	public func longTimePattern_get() throws -> System_String? /* System.String */ {
+	public var longTimePattern: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -44956,7 +44956,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 		return __returnValue
 		
-	}
+	}}
 	public func longTimePattern_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -44975,7 +44975,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
-	public func monthDayPattern_get() throws -> System_String? /* System.String */ {
+	public var monthDayPattern: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -44993,7 +44993,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 		return __returnValue
 		
-	}
+	}}
 	public func monthDayPattern_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -45012,7 +45012,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
-	public func pMDesignator_get() throws -> System_String? /* System.String */ {
+	public var pMDesignator: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -45030,7 +45030,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 		return __returnValue
 		
-	}
+	}}
 	public func pMDesignator_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -45049,7 +45049,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
-	public func rFC1123Pattern_get() throws -> System_String? /* System.String */ {
+	public var rFC1123Pattern: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -45067,9 +45067,9 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func shortDatePattern_get() throws -> System_String? /* System.String */ {
+	public var shortDatePattern: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -45087,7 +45087,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 		return __returnValue
 		
-	}
+	}}
 	public func shortDatePattern_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -45106,7 +45106,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
-	public func shortTimePattern_get() throws -> System_String? /* System.String */ {
+	public var shortTimePattern: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -45124,7 +45124,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 		return __returnValue
 		
-	}
+	}}
 	public func shortTimePattern_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -45143,7 +45143,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
-	public func sortableDateTimePattern_get() throws -> System_String? /* System.String */ {
+	public var sortableDateTimePattern: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -45161,9 +45161,9 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func timeSeparator_get() throws -> System_String? /* System.String */ {
+	public var timeSeparator: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -45181,7 +45181,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 		return __returnValue
 		
-	}
+	}}
 	public func timeSeparator_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -45200,7 +45200,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
-	public func universalSortableDateTimePattern_get() throws -> System_String? /* System.String */ {
+	public var universalSortableDateTimePattern: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -45218,9 +45218,9 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func yearMonthPattern_get() throws -> System_String? /* System.String */ {
+	public var yearMonthPattern: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -45238,7 +45238,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 		return __returnValue
 		
-	}
+	}}
 	public func yearMonthPattern_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -45257,7 +45257,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
-	public func abbreviatedDayNames_get() throws -> System_String_Array? /* System.String[] */ {
+	public var abbreviatedDayNames: System_String_Array? /* System.String[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -45275,7 +45275,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 		return __returnValue
 		
-	}
+	}}
 	public func abbreviatedDayNames_set(_ value: System_String_Array? /* System.String[] */) throws {
 		let valueC = value?.__handle
 		
@@ -45294,7 +45294,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
-	public func shortestDayNames_get() throws -> System_String_Array? /* System.String[] */ {
+	public var shortestDayNames: System_String_Array? /* System.String[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -45312,7 +45312,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 		return __returnValue
 		
-	}
+	}}
 	public func shortestDayNames_set(_ value: System_String_Array? /* System.String[] */) throws {
 		let valueC = value?.__handle
 		
@@ -45331,7 +45331,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
-	public func dayNames_get() throws -> System_String_Array? /* System.String[] */ {
+	public var dayNames: System_String_Array? /* System.String[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -45349,7 +45349,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 		return __returnValue
 		
-	}
+	}}
 	public func dayNames_set(_ value: System_String_Array? /* System.String[] */) throws {
 		let valueC = value?.__handle
 		
@@ -45368,7 +45368,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
-	public func abbreviatedMonthNames_get() throws -> System_String_Array? /* System.String[] */ {
+	public var abbreviatedMonthNames: System_String_Array? /* System.String[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -45386,7 +45386,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 		return __returnValue
 		
-	}
+	}}
 	public func abbreviatedMonthNames_set(_ value: System_String_Array? /* System.String[] */) throws {
 		let valueC = value?.__handle
 		
@@ -45405,7 +45405,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
-	public func monthNames_get() throws -> System_String_Array? /* System.String[] */ {
+	public var monthNames: System_String_Array? /* System.String[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -45423,7 +45423,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 		return __returnValue
 		
-	}
+	}}
 	public func monthNames_set(_ value: System_String_Array? /* System.String[] */) throws {
 		let valueC = value?.__handle
 		
@@ -45442,7 +45442,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
-	public func isReadOnly_get() throws -> Bool /* System.Boolean */ {
+	public var isReadOnly: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -45458,9 +45458,9 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func nativeCalendarName_get() throws -> System_String? /* System.String */ {
+	public var nativeCalendarName: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -45478,9 +45478,9 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func abbreviatedMonthGenitiveNames_get() throws -> System_String_Array? /* System.String[] */ {
+	public var abbreviatedMonthGenitiveNames: System_String_Array? /* System.String[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -45498,7 +45498,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 		return __returnValue
 		
-	}
+	}}
 	public func abbreviatedMonthGenitiveNames_set(_ value: System_String_Array? /* System.String[] */) throws {
 		let valueC = value?.__handle
 		
@@ -45517,7 +45517,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
-	public func monthGenitiveNames_get() throws -> System_String_Array? /* System.String[] */ {
+	public var monthGenitiveNames: System_String_Array? /* System.String[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -45535,7 +45535,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 		return __returnValue
 		
-	}
+	}}
 	public func monthGenitiveNames_set(_ value: System_String_Array? /* System.String[] */) throws {
 		let valueC = value?.__handle
 		
@@ -45681,7 +45681,7 @@ public class System_CharEnumerator /* System.CharEnumerator */: System_Object {
 		
 		
 	}
-	public func current_get() throws -> DNChar /* System.Char */ {
+	public var current: DNChar /* System.Char */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -45699,7 +45699,7 @@ public class System_CharEnumerator /* System.CharEnumerator */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_CharEnumerator_TypeOf())
@@ -45752,7 +45752,7 @@ public class System_Text_StringRuneEnumerator /* System.Text.StringRuneEnumerato
 		return __returnValueC
 		
 	}
-	public func current_get() throws -> System_Text_Rune? /* System.Text.Rune */ {
+	public var current: System_Text_Rune? /* System.Text.Rune */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -45770,7 +45770,7 @@ public class System_Text_StringRuneEnumerator /* System.Text.StringRuneEnumerato
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Text_StringRuneEnumerator_TypeOf())
@@ -45833,7 +45833,7 @@ public class System_Text_CompositeFormat /* System.Text.CompositeFormat */: Syst
 		return __returnValueC
 		
 	}
-	public func format_get() throws -> System_String? /* System.String */ {
+	public var format: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -45851,7 +45851,7 @@ public class System_Text_CompositeFormat /* System.Text.CompositeFormat */: Syst
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Text_CompositeFormat_TypeOf())
@@ -46564,7 +46564,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		return __returnValue
 		
 	}
-	public class func default_get() throws -> System_Text_Encoding? /* System.Text.Encoding */ {
+	public class var `default`: System_Text_Encoding? /* System.Text.Encoding */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -46582,9 +46582,9 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func bodyName_get() throws -> System_String? /* System.String */ {
+	public var bodyName: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -46602,9 +46602,9 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func encodingName_get() throws -> System_String? /* System.String */ {
+	public var encodingName: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -46622,9 +46622,9 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func headerName_get() throws -> System_String? /* System.String */ {
+	public var headerName: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -46642,9 +46642,9 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func webName_get() throws -> System_String? /* System.String */ {
+	public var webName: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -46662,9 +46662,9 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func windowsCodePage_get() throws -> Int32 /* System.Int32 */ {
+	public var windowsCodePage: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -46680,9 +46680,9 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isBrowserDisplay_get() throws -> Bool /* System.Boolean */ {
+	public var isBrowserDisplay: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -46698,9 +46698,9 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isBrowserSave_get() throws -> Bool /* System.Boolean */ {
+	public var isBrowserSave: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -46716,9 +46716,9 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isMailNewsDisplay_get() throws -> Bool /* System.Boolean */ {
+	public var isMailNewsDisplay: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -46734,9 +46734,9 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isMailNewsSave_get() throws -> Bool /* System.Boolean */ {
+	public var isMailNewsSave: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -46752,9 +46752,9 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isSingleByte_get() throws -> Bool /* System.Boolean */ {
+	public var isSingleByte: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -46770,9 +46770,9 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func encoderFallback_get() throws -> System_Text_EncoderFallback? /* System.Text.EncoderFallback */ {
+	public var encoderFallback: System_Text_EncoderFallback? /* System.Text.EncoderFallback */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -46790,7 +46790,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	public func encoderFallback_set(_ value: System_Text_EncoderFallback? /* System.Text.EncoderFallback */) throws {
 		let valueC = value?.__handle
 		
@@ -46809,7 +46809,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 	}
 	
-	public func decoderFallback_get() throws -> System_Text_DecoderFallback? /* System.Text.DecoderFallback */ {
+	public var decoderFallback: System_Text_DecoderFallback? /* System.Text.DecoderFallback */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -46827,7 +46827,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	public func decoderFallback_set(_ value: System_Text_DecoderFallback? /* System.Text.DecoderFallback */) throws {
 		let valueC = value?.__handle
 		
@@ -46846,7 +46846,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 	}
 	
-	public func isReadOnly_get() throws -> Bool /* System.Boolean */ {
+	public var isReadOnly: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -46862,9 +46862,9 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public class func aSCII_get() throws -> System_Text_Encoding? /* System.Text.Encoding */ {
+	public class var aSCII: System_Text_Encoding? /* System.Text.Encoding */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -46882,9 +46882,9 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func latin1_get() throws -> System_Text_Encoding? /* System.Text.Encoding */ {
+	public class var latin1: System_Text_Encoding? /* System.Text.Encoding */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -46902,9 +46902,9 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func codePage_get() throws -> Int32 /* System.Int32 */ {
+	public var codePage: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -46920,9 +46920,9 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public class func unicode_get() throws -> System_Text_Encoding? /* System.Text.Encoding */ {
+	public class var unicode: System_Text_Encoding? /* System.Text.Encoding */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -46940,9 +46940,9 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func bigEndianUnicode_get() throws -> System_Text_Encoding? /* System.Text.Encoding */ {
+	public class var bigEndianUnicode: System_Text_Encoding? /* System.Text.Encoding */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -46960,9 +46960,9 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func uTF7_get() throws -> System_Text_Encoding? /* System.Text.Encoding */ {
+	public class var uTF7: System_Text_Encoding? /* System.Text.Encoding */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -46980,9 +46980,9 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func uTF8_get() throws -> System_Text_Encoding? /* System.Text.Encoding */ {
+	public class var uTF8: System_Text_Encoding? /* System.Text.Encoding */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -47000,9 +47000,9 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func uTF32_get() throws -> System_Text_Encoding? /* System.Text.Encoding */ {
+	public class var uTF32: System_Text_Encoding? /* System.Text.Encoding */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -47020,7 +47020,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Text_Encoding_TypeOf())
@@ -47172,7 +47172,7 @@ public class System_Text_EncoderFallback /* System.Text.EncoderFallback */: Syst
 		return __returnValue
 		
 	}
-	public class func replacementFallback_get() throws -> System_Text_EncoderFallback? /* System.Text.EncoderFallback */ {
+	public class var replacementFallback: System_Text_EncoderFallback? /* System.Text.EncoderFallback */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -47190,9 +47190,9 @@ public class System_Text_EncoderFallback /* System.Text.EncoderFallback */: Syst
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func exceptionFallback_get() throws -> System_Text_EncoderFallback? /* System.Text.EncoderFallback */ {
+	public class var exceptionFallback: System_Text_EncoderFallback? /* System.Text.EncoderFallback */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -47210,9 +47210,9 @@ public class System_Text_EncoderFallback /* System.Text.EncoderFallback */: Syst
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func maxCharCount_get() throws -> Int32 /* System.Int32 */ {
+	public var maxCharCount: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -47228,7 +47228,7 @@ public class System_Text_EncoderFallback /* System.Text.EncoderFallback */: Syst
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Text_EncoderFallback_TypeOf())
@@ -47334,7 +47334,7 @@ public class System_Text_EncoderFallbackBuffer /* System.Text.EncoderFallbackBuf
 		
 		
 	}
-	public func remaining_get() throws -> Int32 /* System.Int32 */ {
+	public var remaining: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -47350,7 +47350,7 @@ public class System_Text_EncoderFallbackBuffer /* System.Text.EncoderFallbackBuf
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Text_EncoderFallbackBuffer_TypeOf())
@@ -47386,7 +47386,7 @@ public class System_Text_DecoderFallback /* System.Text.DecoderFallback */: Syst
 		return __returnValue
 		
 	}
-	public class func replacementFallback_get() throws -> System_Text_DecoderFallback? /* System.Text.DecoderFallback */ {
+	public class var replacementFallback: System_Text_DecoderFallback? /* System.Text.DecoderFallback */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -47404,9 +47404,9 @@ public class System_Text_DecoderFallback /* System.Text.DecoderFallback */: Syst
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func exceptionFallback_get() throws -> System_Text_DecoderFallback? /* System.Text.DecoderFallback */ {
+	public class var exceptionFallback: System_Text_DecoderFallback? /* System.Text.DecoderFallback */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -47424,9 +47424,9 @@ public class System_Text_DecoderFallback /* System.Text.DecoderFallback */: Syst
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func maxCharCount_get() throws -> Int32 /* System.Int32 */ {
+	public var maxCharCount: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -47442,7 +47442,7 @@ public class System_Text_DecoderFallback /* System.Text.DecoderFallback */: Syst
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Text_DecoderFallback_TypeOf())
@@ -47529,7 +47529,7 @@ public class System_Text_DecoderFallbackBuffer /* System.Text.DecoderFallbackBuf
 		
 		
 	}
-	public func remaining_get() throws -> Int32 /* System.Int32 */ {
+	public var remaining: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -47545,7 +47545,7 @@ public class System_Text_DecoderFallbackBuffer /* System.Text.DecoderFallbackBuf
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Text_DecoderFallbackBuffer_TypeOf())
@@ -47642,7 +47642,7 @@ public class System_Text_EncodingInfo /* System.Text.EncodingInfo */: System_Obj
 		self.init(handle: __returnValueC)
 		
 	}
-	public func codePage_get() throws -> Int32 /* System.Int32 */ {
+	public var codePage: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -47658,9 +47658,9 @@ public class System_Text_EncodingInfo /* System.Text.EncodingInfo */: System_Obj
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func name_get() throws -> System_String? /* System.String */ {
+	public var name: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -47678,9 +47678,9 @@ public class System_Text_EncodingInfo /* System.Text.EncodingInfo */: System_Obj
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func displayName_get() throws -> System_String? /* System.String */ {
+	public var displayName: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -47698,7 +47698,7 @@ public class System_Text_EncodingInfo /* System.Text.EncodingInfo */: System_Obj
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Text_EncodingInfo_TypeOf())
@@ -47839,7 +47839,7 @@ public class System_Text_Decoder /* System.Text.Decoder */: System_Object {
 		
 		
 	}
-	public func fallback_get() throws -> System_Text_DecoderFallback? /* System.Text.DecoderFallback */ {
+	public var fallback: System_Text_DecoderFallback? /* System.Text.DecoderFallback */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -47857,7 +47857,7 @@ public class System_Text_Decoder /* System.Text.Decoder */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	public func fallback_set(_ value: System_Text_DecoderFallback? /* System.Text.DecoderFallback */) throws {
 		let valueC = value?.__handle
 		
@@ -47876,7 +47876,7 @@ public class System_Text_Decoder /* System.Text.Decoder */: System_Object {
 		
 	}
 	
-	public func fallbackBuffer_get() throws -> System_Text_DecoderFallbackBuffer? /* System.Text.DecoderFallbackBuffer */ {
+	public var fallbackBuffer: System_Text_DecoderFallbackBuffer? /* System.Text.DecoderFallbackBuffer */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -47894,7 +47894,7 @@ public class System_Text_Decoder /* System.Text.Decoder */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Text_Decoder_TypeOf())
@@ -47982,7 +47982,7 @@ public class System_Text_Encoder /* System.Text.Encoder */: System_Object {
 		
 		
 	}
-	public func fallback_get() throws -> System_Text_EncoderFallback? /* System.Text.EncoderFallback */ {
+	public var fallback: System_Text_EncoderFallback? /* System.Text.EncoderFallback */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -48000,7 +48000,7 @@ public class System_Text_Encoder /* System.Text.Encoder */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	public func fallback_set(_ value: System_Text_EncoderFallback? /* System.Text.EncoderFallback */) throws {
 		let valueC = value?.__handle
 		
@@ -48019,7 +48019,7 @@ public class System_Text_Encoder /* System.Text.Encoder */: System_Object {
 		
 	}
 	
-	public func fallbackBuffer_get() throws -> System_Text_EncoderFallbackBuffer? /* System.Text.EncoderFallbackBuffer */ {
+	public var fallbackBuffer: System_Text_EncoderFallbackBuffer? /* System.Text.EncoderFallbackBuffer */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -48037,7 +48037,7 @@ public class System_Text_Encoder /* System.Text.Encoder */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Text_Encoder_TypeOf())
@@ -48336,7 +48336,7 @@ public class System_Runtime_InteropServices_StructLayoutAttribute /* System.Runt
 		self.init(handle: __returnValueC)
 		
 	}
-	public func value_get() throws -> System_Runtime_InteropServices_LayoutKind /* System.Runtime.InteropServices.LayoutKind */ {
+	public var value: System_Runtime_InteropServices_LayoutKind /* System.Runtime.InteropServices.LayoutKind */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -48354,16 +48354,16 @@ public class System_Runtime_InteropServices_StructLayoutAttribute /* System.Runt
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func pack_get() -> Int32 /* System.Int32 */ {
+	public var pack: Int32 /* System.Int32 */ { get {
 		
 		
 		let __returnValueC = System_Runtime_InteropServices_StructLayoutAttribute_Pack_Get(self.__handle)
 		
 		return __returnValueC
 		
-	}
+	}}
 	public func pack_set(_ value: Int32 /* System.Int32 */) {
 		
 		
@@ -48372,14 +48372,14 @@ public class System_Runtime_InteropServices_StructLayoutAttribute /* System.Runt
 		
 	}
 	
-	public func size_get() -> Int32 /* System.Int32 */ {
+	public var size: Int32 /* System.Int32 */ { get {
 		
 		
 		let __returnValueC = System_Runtime_InteropServices_StructLayoutAttribute_Size_Get(self.__handle)
 		
 		return __returnValueC
 		
-	}
+	}}
 	public func size_set(_ value: Int32 /* System.Int32 */) {
 		
 		
@@ -48388,7 +48388,7 @@ public class System_Runtime_InteropServices_StructLayoutAttribute /* System.Runt
 		
 	}
 	
-	public func charSet_get() -> System_Runtime_InteropServices_CharSet /* System.Runtime.InteropServices.CharSet */ {
+	public var charSet: System_Runtime_InteropServices_CharSet /* System.Runtime.InteropServices.CharSet */ { get {
 		
 		
 		let __returnValueC = System_Runtime_InteropServices_StructLayoutAttribute_CharSet_Get(self.__handle)
@@ -48397,7 +48397,7 @@ public class System_Runtime_InteropServices_StructLayoutAttribute /* System.Runt
 		
 		return __returnValue
 		
-	}
+	}}
 	public func charSet_set(_ value: System_Runtime_InteropServices_CharSet /* System.Runtime.InteropServices.CharSet */) {
 		let valueC = value.cValue
 		
@@ -49140,7 +49140,7 @@ public class System_Attribute /* System.Attribute */: System_Object {
 		return __returnValueC
 		
 	}
-	public func typeId_get() throws -> System_Object? /* System.Object */ {
+	public var typeId: System_Object? /* System.Object */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -49158,7 +49158,7 @@ public class System_Attribute /* System.Attribute */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Attribute_TypeOf())
@@ -49227,7 +49227,7 @@ public class System_Reflection_EventInfo_Array /* System.Reflection.EventInfo[] 
 public class System_Reflection_InterfaceMapping /* System.Reflection.InterfaceMapping */: System_ValueType {
 	public override class var typeName: String { "InterfaceMapping" }
 	public override class var fullTypeName: String { "System.Reflection.InterfaceMapping" }
-	public func targetType_get() -> System_Type? /* System.Type */ {
+	public var targetType: System_Type? /* System.Type */ { get {
 		
 		
 		let __returnValueC = System_Reflection_InterfaceMapping_TargetType_Get(self.__handle)
@@ -49236,7 +49236,7 @@ public class System_Reflection_InterfaceMapping /* System.Reflection.InterfaceMa
 		
 		return __returnValue
 		
-	}
+	}}
 	public func targetType_set(_ value: System_Type? /* System.Type */) {
 		let valueC = value?.__handle
 		
@@ -49246,7 +49246,7 @@ public class System_Reflection_InterfaceMapping /* System.Reflection.InterfaceMa
 		
 	}
 	
-	public func interfaceType_get() -> System_Type? /* System.Type */ {
+	public var interfaceType: System_Type? /* System.Type */ { get {
 		
 		
 		let __returnValueC = System_Reflection_InterfaceMapping_InterfaceType_Get(self.__handle)
@@ -49255,7 +49255,7 @@ public class System_Reflection_InterfaceMapping /* System.Reflection.InterfaceMa
 		
 		return __returnValue
 		
-	}
+	}}
 	public func interfaceType_set(_ value: System_Type? /* System.Type */) {
 		let valueC = value?.__handle
 		
@@ -49265,7 +49265,7 @@ public class System_Reflection_InterfaceMapping /* System.Reflection.InterfaceMa
 		
 	}
 	
-	public func targetMethods_get() -> System_Reflection_MethodInfo_Array? /* System.Reflection.MethodInfo[] */ {
+	public var targetMethods: System_Reflection_MethodInfo_Array? /* System.Reflection.MethodInfo[] */ { get {
 		
 		
 		let __returnValueC = System_Reflection_InterfaceMapping_TargetMethods_Get(self.__handle)
@@ -49274,7 +49274,7 @@ public class System_Reflection_InterfaceMapping /* System.Reflection.InterfaceMa
 		
 		return __returnValue
 		
-	}
+	}}
 	public func targetMethods_set(_ value: System_Reflection_MethodInfo_Array? /* System.Reflection.MethodInfo[] */) {
 		let valueC = value?.__handle
 		
@@ -49284,7 +49284,7 @@ public class System_Reflection_InterfaceMapping /* System.Reflection.InterfaceMa
 		
 	}
 	
-	public func interfaceMethods_get() -> System_Reflection_MethodInfo_Array? /* System.Reflection.MethodInfo[] */ {
+	public var interfaceMethods: System_Reflection_MethodInfo_Array? /* System.Reflection.MethodInfo[] */ { get {
 		
 		
 		let __returnValueC = System_Reflection_InterfaceMapping_InterfaceMethods_Get(self.__handle)
@@ -49293,7 +49293,7 @@ public class System_Reflection_InterfaceMapping /* System.Reflection.InterfaceMa
 		
 		return __returnValue
 		
-	}
+	}}
 	public func interfaceMethods_set(_ value: System_Reflection_MethodInfo_Array? /* System.Reflection.MethodInfo[] */) {
 		let valueC = value?.__handle
 		
@@ -52058,23 +52058,23 @@ public class System_Runtime_InteropServices_Marshal /* System.Runtime.InteropSer
 		return __returnValue
 		
 	}
-	public class func systemDefaultCharSize_get() -> Int32 /* System.Int32 */ {
+	public class var systemDefaultCharSize: Int32 /* System.Int32 */ { get {
 		
 		
 		let __returnValueC = System_Runtime_InteropServices_Marshal_SystemDefaultCharSize_Get()
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public class func systemMaxDBCSCharSize_get() -> Int32 /* System.Int32 */ {
+	public class var systemMaxDBCSCharSize: Int32 /* System.Int32 */ { get {
 		
 		
 		let __returnValueC = System_Runtime_InteropServices_Marshal_SystemMaxDBCSCharSize_Get()
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Runtime_InteropServices_Marshal_TypeOf())
@@ -52344,7 +52344,7 @@ public class System_Security_SecureString /* System.Security.SecureString */: Sy
 		self.init(handle: __returnValueC)
 		
 	}
-	public func length_get() throws -> Int32 /* System.Int32 */ {
+	public var length: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -52360,7 +52360,7 @@ public class System_Security_SecureString /* System.Security.SecureString */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Security_SecureString_TypeOf())
@@ -52671,7 +52671,7 @@ public class System_Tuple_A1 /* System.Tuple<> */: System_Object {
 		self.init(handle: __returnValueC)
 		
 	}
-	public func item1_get(_ T1: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func item1(_ T1: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		
 		
@@ -52707,7 +52707,7 @@ public class System_Tuple_A1 /* System.Tuple<> */: System_Object {
 public class System_Runtime_CompilerServices_ITuple /* System.Runtime.CompilerServices.ITuple */: DNObject {
 	public override class var typeName: String { "ITuple" }
 	public override class var fullTypeName: String { "System.Runtime.CompilerServices.ITuple" }
-	public func length_get() throws -> Int32 /* System.Int32 */ {
+	public var length: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -52723,9 +52723,9 @@ public class System_Runtime_CompilerServices_ITuple /* System.Runtime.CompilerSe
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func item_get(_ index: Int32 /* System.Int32 */) throws -> System_Object? /* System.Object */ {
+	public func item(_ index: Int32 /* System.Int32 */) throws -> System_Object? /* System.Object */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -52844,7 +52844,7 @@ public class System_Tuple_A2 /* System.Tuple<,> */: System_Object {
 		self.init(handle: __returnValueC)
 		
 	}
-	public func item1_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func item1(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		
@@ -52866,7 +52866,7 @@ public class System_Tuple_A2 /* System.Tuple<,> */: System_Object {
 		
 	}
 	
-	public func item2_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func item2(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		
@@ -52993,7 +52993,7 @@ public class System_Tuple_A3 /* System.Tuple<,,> */: System_Object {
 		self.init(handle: __returnValueC)
 		
 	}
-	public func item1_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func item1(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -53016,7 +53016,7 @@ public class System_Tuple_A3 /* System.Tuple<,,> */: System_Object {
 		
 	}
 	
-	public func item2_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func item2(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -53039,7 +53039,7 @@ public class System_Tuple_A3 /* System.Tuple<,,> */: System_Object {
 		
 	}
 	
-	public func item3_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func item3(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -53173,7 +53173,7 @@ public class System_Tuple_A4 /* System.Tuple<,,,> */: System_Object {
 		self.init(handle: __returnValueC)
 		
 	}
-	public func item1_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func item1(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -53197,7 +53197,7 @@ public class System_Tuple_A4 /* System.Tuple<,,,> */: System_Object {
 		
 	}
 	
-	public func item2_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func item2(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -53221,7 +53221,7 @@ public class System_Tuple_A4 /* System.Tuple<,,,> */: System_Object {
 		
 	}
 	
-	public func item3_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func item3(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -53245,7 +53245,7 @@ public class System_Tuple_A4 /* System.Tuple<,,,> */: System_Object {
 		
 	}
 	
-	public func item4_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func item4(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -53386,7 +53386,7 @@ public class System_Tuple_A5 /* System.Tuple<,,,,> */: System_Object {
 		self.init(handle: __returnValueC)
 		
 	}
-	public func item1_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func item1(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -53411,7 +53411,7 @@ public class System_Tuple_A5 /* System.Tuple<,,,,> */: System_Object {
 		
 	}
 	
-	public func item2_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func item2(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -53436,7 +53436,7 @@ public class System_Tuple_A5 /* System.Tuple<,,,,> */: System_Object {
 		
 	}
 	
-	public func item3_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func item3(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -53461,7 +53461,7 @@ public class System_Tuple_A5 /* System.Tuple<,,,,> */: System_Object {
 		
 	}
 	
-	public func item4_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func item4(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -53486,7 +53486,7 @@ public class System_Tuple_A5 /* System.Tuple<,,,,> */: System_Object {
 		
 	}
 	
-	public func item5_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func item5(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -53634,7 +53634,7 @@ public class System_Tuple_A6 /* System.Tuple<,,,,,> */: System_Object {
 		self.init(handle: __returnValueC)
 		
 	}
-	public func item1_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func item1(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -53660,7 +53660,7 @@ public class System_Tuple_A6 /* System.Tuple<,,,,,> */: System_Object {
 		
 	}
 	
-	public func item2_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func item2(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -53686,7 +53686,7 @@ public class System_Tuple_A6 /* System.Tuple<,,,,,> */: System_Object {
 		
 	}
 	
-	public func item3_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func item3(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -53712,7 +53712,7 @@ public class System_Tuple_A6 /* System.Tuple<,,,,,> */: System_Object {
 		
 	}
 	
-	public func item4_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func item4(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -53738,7 +53738,7 @@ public class System_Tuple_A6 /* System.Tuple<,,,,,> */: System_Object {
 		
 	}
 	
-	public func item5_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func item5(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -53764,7 +53764,7 @@ public class System_Tuple_A6 /* System.Tuple<,,,,,> */: System_Object {
 		
 	}
 	
-	public func item6_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func item6(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -53919,7 +53919,7 @@ public class System_Tuple_A7 /* System.Tuple<,,,,,,> */: System_Object {
 		self.init(handle: __returnValueC)
 		
 	}
-	public func item1_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func item1(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -53946,7 +53946,7 @@ public class System_Tuple_A7 /* System.Tuple<,,,,,,> */: System_Object {
 		
 	}
 	
-	public func item2_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func item2(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -53973,7 +53973,7 @@ public class System_Tuple_A7 /* System.Tuple<,,,,,,> */: System_Object {
 		
 	}
 	
-	public func item3_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func item3(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -54000,7 +54000,7 @@ public class System_Tuple_A7 /* System.Tuple<,,,,,,> */: System_Object {
 		
 	}
 	
-	public func item4_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func item4(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -54027,7 +54027,7 @@ public class System_Tuple_A7 /* System.Tuple<,,,,,,> */: System_Object {
 		
 	}
 	
-	public func item5_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func item5(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -54054,7 +54054,7 @@ public class System_Tuple_A7 /* System.Tuple<,,,,,,> */: System_Object {
 		
 	}
 	
-	public func item6_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func item6(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -54081,7 +54081,7 @@ public class System_Tuple_A7 /* System.Tuple<,,,,,,> */: System_Object {
 		
 	}
 	
-	public func item7_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func item7(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -54243,7 +54243,7 @@ public class System_Tuple_A8 /* System.Tuple<,,,,,,,> */: System_Object {
 		self.init(handle: __returnValueC)
 		
 	}
-	public func item1_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func item1(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -54271,7 +54271,7 @@ public class System_Tuple_A8 /* System.Tuple<,,,,,,,> */: System_Object {
 		
 	}
 	
-	public func item2_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func item2(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -54299,7 +54299,7 @@ public class System_Tuple_A8 /* System.Tuple<,,,,,,,> */: System_Object {
 		
 	}
 	
-	public func item3_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func item3(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -54327,7 +54327,7 @@ public class System_Tuple_A8 /* System.Tuple<,,,,,,,> */: System_Object {
 		
 	}
 	
-	public func item4_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func item4(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -54355,7 +54355,7 @@ public class System_Tuple_A8 /* System.Tuple<,,,,,,,> */: System_Object {
 		
 	}
 	
-	public func item5_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func item5(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -54383,7 +54383,7 @@ public class System_Tuple_A8 /* System.Tuple<,,,,,,,> */: System_Object {
 		
 	}
 	
-	public func item6_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func item6(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -54411,7 +54411,7 @@ public class System_Tuple_A8 /* System.Tuple<,,,,,,,> */: System_Object {
 		
 	}
 	
-	public func item7_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func item7(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -54439,7 +54439,7 @@ public class System_Tuple_A8 /* System.Tuple<,,,,,,,> */: System_Object {
 		
 	}
 	
-	public func rest_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func rest(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -55125,7 +55125,7 @@ public class System_GC /* System.GC */: System_Object {
 		return __returnValue
 		
 	}
-	public class func maxGeneration_get() throws -> Int32 /* System.Int32 */ {
+	public class var maxGeneration: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -55141,7 +55141,7 @@ public class System_GC /* System.GC */: System_Object {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_GC_TypeOf())
@@ -55158,7 +55158,7 @@ public class System_GC /* System.GC */: System_Object {
 public class System_GCMemoryInfo /* System.GCMemoryInfo */: System_ValueType {
 	public override class var typeName: String { "GCMemoryInfo" }
 	public override class var fullTypeName: String { "System.GCMemoryInfo" }
-	public func highMemoryLoadThresholdBytes_get() throws -> Int64 /* System.Int64 */ {
+	public var highMemoryLoadThresholdBytes: Int64 /* System.Int64 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -55174,9 +55174,9 @@ public class System_GCMemoryInfo /* System.GCMemoryInfo */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func memoryLoadBytes_get() throws -> Int64 /* System.Int64 */ {
+	public var memoryLoadBytes: Int64 /* System.Int64 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -55192,9 +55192,9 @@ public class System_GCMemoryInfo /* System.GCMemoryInfo */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func totalAvailableMemoryBytes_get() throws -> Int64 /* System.Int64 */ {
+	public var totalAvailableMemoryBytes: Int64 /* System.Int64 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -55210,9 +55210,9 @@ public class System_GCMemoryInfo /* System.GCMemoryInfo */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func heapSizeBytes_get() throws -> Int64 /* System.Int64 */ {
+	public var heapSizeBytes: Int64 /* System.Int64 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -55228,9 +55228,9 @@ public class System_GCMemoryInfo /* System.GCMemoryInfo */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func fragmentedBytes_get() throws -> Int64 /* System.Int64 */ {
+	public var fragmentedBytes: Int64 /* System.Int64 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -55246,9 +55246,9 @@ public class System_GCMemoryInfo /* System.GCMemoryInfo */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func index_get() throws -> Int64 /* System.Int64 */ {
+	public var index: Int64 /* System.Int64 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -55264,9 +55264,9 @@ public class System_GCMemoryInfo /* System.GCMemoryInfo */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func generation_get() throws -> Int32 /* System.Int32 */ {
+	public var generation: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -55282,9 +55282,9 @@ public class System_GCMemoryInfo /* System.GCMemoryInfo */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func compacted_get() throws -> Bool /* System.Boolean */ {
+	public var compacted: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -55300,9 +55300,9 @@ public class System_GCMemoryInfo /* System.GCMemoryInfo */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func concurrent_get() throws -> Bool /* System.Boolean */ {
+	public var concurrent: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -55318,9 +55318,9 @@ public class System_GCMemoryInfo /* System.GCMemoryInfo */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func totalCommittedBytes_get() throws -> Int64 /* System.Int64 */ {
+	public var totalCommittedBytes: Int64 /* System.Int64 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -55336,9 +55336,9 @@ public class System_GCMemoryInfo /* System.GCMemoryInfo */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func promotedBytes_get() throws -> Int64 /* System.Int64 */ {
+	public var promotedBytes: Int64 /* System.Int64 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -55354,9 +55354,9 @@ public class System_GCMemoryInfo /* System.GCMemoryInfo */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func pinnedObjectsCount_get() throws -> Int64 /* System.Int64 */ {
+	public var pinnedObjectsCount: Int64 /* System.Int64 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -55372,9 +55372,9 @@ public class System_GCMemoryInfo /* System.GCMemoryInfo */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func finalizationPendingCount_get() throws -> Int64 /* System.Int64 */ {
+	public var finalizationPendingCount: Int64 /* System.Int64 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -55390,9 +55390,9 @@ public class System_GCMemoryInfo /* System.GCMemoryInfo */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func pauseTimePercentage_get() throws -> Double /* System.Double */ {
+	public var pauseTimePercentage: Double /* System.Double */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -55408,7 +55408,7 @@ public class System_GCMemoryInfo /* System.GCMemoryInfo */: System_ValueType {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_GCMemoryInfo_TypeOf())
@@ -55483,7 +55483,7 @@ public class System_WeakReference /* System.WeakReference */: System_Object {
 		self.init(handle: __returnValueC)
 		
 	}
-	public func trackResurrection_get() throws -> Bool /* System.Boolean */ {
+	public var trackResurrection: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -55499,9 +55499,9 @@ public class System_WeakReference /* System.WeakReference */: System_Object {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isAlive_get() throws -> Bool /* System.Boolean */ {
+	public var isAlive: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -55517,9 +55517,9 @@ public class System_WeakReference /* System.WeakReference */: System_Object {
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func target_get() throws -> System_Object? /* System.Object */ {
+	public var target: System_Object? /* System.Object */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -55537,7 +55537,7 @@ public class System_WeakReference /* System.WeakReference */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	public func target_set(_ value: System_Object? /* System.Object */) throws {
 		let valueC = value?.__handle
 		
@@ -57431,32 +57431,32 @@ public class System_Math /* System.Math */: System_Object {
 		return __returnValueC
 		
 	}
-	public class func e_get() -> Double /* System.Double */ {
+	public class var e: Double /* System.Double */ { get {
 		
 		
 		let __returnValueC = System_Math_E_Get()
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public class func pI_get() -> Double /* System.Double */ {
+	public class var pI: Double /* System.Double */ { get {
 		
 		
 		let __returnValueC = System_Math_PI_Get()
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public class func tau_get() -> Double /* System.Double */ {
+	public class var tau: Double /* System.Double */ { get {
 		
 		
 		let __returnValueC = System_Math_Tau_Get()
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Math_TypeOf())
@@ -63190,7 +63190,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		return __returnValue
 		
 	}
-	public class func dBNull_get() -> System_Object? /* System.Object */ {
+	public class var dBNull: System_Object? /* System.Object */ { get {
 		
 		
 		let __returnValueC = System_Convert_DBNull_Get()
@@ -63199,7 +63199,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Convert_TypeOf())
@@ -64386,7 +64386,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		self.init(handle: __returnValueC)
 		
 	}
-	public func managedThreadId_get() throws -> Int32 /* System.Int32 */ {
+	public var managedThreadId: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -64402,9 +64402,9 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isAlive_get() throws -> Bool /* System.Boolean */ {
+	public var isAlive: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -64420,9 +64420,9 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isBackground_get() throws -> Bool /* System.Boolean */ {
+	public var isBackground: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -64438,7 +64438,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 		return __returnValueC
 		
-	}
+	}}
 	public func isBackground_set(_ value: Bool /* System.Boolean */) throws {
 		
 		
@@ -64456,7 +64456,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
-	public func isThreadPoolThread_get() throws -> Bool /* System.Boolean */ {
+	public var isThreadPoolThread: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -64472,9 +64472,9 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func priority_get() throws -> System_Threading_ThreadPriority /* System.Threading.ThreadPriority */ {
+	public var priority: System_Threading_ThreadPriority /* System.Threading.ThreadPriority */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -64492,7 +64492,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 		return __returnValue
 		
-	}
+	}}
 	public func priority_set(_ value: System_Threading_ThreadPriority /* System.Threading.ThreadPriority */) throws {
 		let valueC = value.cValue
 		
@@ -64511,7 +64511,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
-	public func threadState_get() throws -> System_Threading_ThreadState /* System.Threading.ThreadState */ {
+	public var threadState: System_Threading_ThreadState /* System.Threading.ThreadState */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -64529,9 +64529,9 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func currentCulture_get() throws -> System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ {
+	public var currentCulture: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -64549,7 +64549,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 		return __returnValue
 		
-	}
+	}}
 	public func currentCulture_set(_ value: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */) throws {
 		let valueC = value?.__handle
 		
@@ -64568,7 +64568,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
-	public func currentUICulture_get() throws -> System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ {
+	public var currentUICulture: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -64586,7 +64586,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 		return __returnValue
 		
-	}
+	}}
 	public func currentUICulture_set(_ value: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */) throws {
 		let valueC = value?.__handle
 		
@@ -64605,7 +64605,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
-	public class func currentPrincipal_get() throws -> System_Security_Principal_IPrincipal? /* System.Security.Principal.IPrincipal */ {
+	public class var currentPrincipal: System_Security_Principal_IPrincipal? /* System.Security.Principal.IPrincipal */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -64623,7 +64623,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 		return __returnValue
 		
-	}
+	}}
 	public class func currentPrincipal_set(_ value: System_Security_Principal_IPrincipal? /* System.Security.Principal.IPrincipal */) throws {
 		let valueC = value?.__handle
 		
@@ -64642,7 +64642,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
-	public class func currentThread_get() throws -> System_Threading_Thread? /* System.Threading.Thread */ {
+	public class var currentThread: System_Threading_Thread? /* System.Threading.Thread */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -64660,9 +64660,9 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func executionContext_get() throws -> System_Threading_ExecutionContext? /* System.Threading.ExecutionContext */ {
+	public var executionContext: System_Threading_ExecutionContext? /* System.Threading.ExecutionContext */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -64680,9 +64680,9 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func name_get() throws -> System_String? /* System.String */ {
+	public var name: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -64700,7 +64700,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 		return __returnValue
 		
-	}
+	}}
 	public func name_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -64719,7 +64719,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
-	public func apartmentState_get() throws -> System_Threading_ApartmentState /* System.Threading.ApartmentState */ {
+	public var apartmentState: System_Threading_ApartmentState /* System.Threading.ApartmentState */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -64737,7 +64737,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 		return __returnValue
 		
-	}
+	}}
 	public func apartmentState_set(_ value: System_Threading_ApartmentState /* System.Threading.ApartmentState */) throws {
 		let valueC = value.cValue
 		
@@ -64789,7 +64789,7 @@ public class System_Security_Principal_IPrincipal /* System.Security.Principal.I
 		return __returnValueC
 		
 	}
-	public func identity_get() throws -> System_Security_Principal_IIdentity? /* System.Security.Principal.IIdentity */ {
+	public var identity: System_Security_Principal_IIdentity? /* System.Security.Principal.IIdentity */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -64807,7 +64807,7 @@ public class System_Security_Principal_IPrincipal /* System.Security.Principal.I
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Security_Principal_IPrincipal_TypeOf())
@@ -64824,7 +64824,7 @@ public class System_Security_Principal_IPrincipal /* System.Security.Principal.I
 public class System_Security_Principal_IIdentity /* System.Security.Principal.IIdentity */: DNObject {
 	public override class var typeName: String { "IIdentity" }
 	public override class var fullTypeName: String { "System.Security.Principal.IIdentity" }
-	public func name_get() throws -> System_String? /* System.String */ {
+	public var name: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -64842,9 +64842,9 @@ public class System_Security_Principal_IIdentity /* System.Security.Principal.II
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func authenticationType_get() throws -> System_String? /* System.String */ {
+	public var authenticationType: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -64862,9 +64862,9 @@ public class System_Security_Principal_IIdentity /* System.Security.Principal.II
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func isAuthenticated_get() throws -> Bool /* System.Boolean */ {
+	public var isAuthenticated: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -64880,7 +64880,7 @@ public class System_Security_Principal_IIdentity /* System.Security.Principal.II
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Security_Principal_IIdentity_TypeOf())
@@ -66122,7 +66122,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		return __returnValue
 		
 	}
-	public class func currentDomain_get() throws -> System_AppDomain? /* System.AppDomain */ {
+	public class var currentDomain: System_AppDomain? /* System.AppDomain */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -66140,9 +66140,9 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func baseDirectory_get() throws -> System_String? /* System.String */ {
+	public var baseDirectory: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -66160,9 +66160,9 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func relativeSearchPath_get() throws -> System_String? /* System.String */ {
+	public var relativeSearchPath: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -66180,9 +66180,9 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func setupInformation_get() throws -> System_AppDomainSetup? /* System.AppDomainSetup */ {
+	public var setupInformation: System_AppDomainSetup? /* System.AppDomainSetup */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -66200,9 +66200,9 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func permissionSet_get() throws -> System_Security_PermissionSet? /* System.Security.PermissionSet */ {
+	public var permissionSet: System_Security_PermissionSet? /* System.Security.PermissionSet */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -66220,9 +66220,9 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func dynamicDirectory_get() throws -> System_String? /* System.String */ {
+	public var dynamicDirectory: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -66240,9 +66240,9 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func friendlyName_get() throws -> System_String? /* System.String */ {
+	public var friendlyName: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -66260,9 +66260,9 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func id_get() throws -> Int32 /* System.Int32 */ {
+	public var id: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -66278,9 +66278,9 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isFullyTrusted_get() throws -> Bool /* System.Boolean */ {
+	public var isFullyTrusted: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -66296,9 +66296,9 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isHomogenous_get() throws -> Bool /* System.Boolean */ {
+	public var isHomogenous: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -66314,9 +66314,9 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public class func monitoringIsEnabled_get() throws -> Bool /* System.Boolean */ {
+	public class var monitoringIsEnabled: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -66332,7 +66332,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 		return __returnValueC
 		
-	}
+	}}
 	public class func monitoringIsEnabled_set(_ value: Bool /* System.Boolean */) throws {
 		
 		
@@ -66350,7 +66350,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 	}
 	
-	public func monitoringSurvivedMemorySize_get() throws -> Int64 /* System.Int64 */ {
+	public var monitoringSurvivedMemorySize: Int64 /* System.Int64 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -66366,9 +66366,9 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public class func monitoringSurvivedProcessMemorySize_get() throws -> Int64 /* System.Int64 */ {
+	public class var monitoringSurvivedProcessMemorySize: Int64 /* System.Int64 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -66384,9 +66384,9 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func monitoringTotalAllocatedMemorySize_get() throws -> Int64 /* System.Int64 */ {
+	public var monitoringTotalAllocatedMemorySize: Int64 /* System.Int64 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -66402,9 +66402,9 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func shadowCopyFiles_get() throws -> Bool /* System.Boolean */ {
+	public var shadowCopyFiles: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -66420,9 +66420,9 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func monitoringTotalProcessorTime_get() throws -> System_TimeSpan? /* System.TimeSpan */ {
+	public var monitoringTotalProcessorTime: System_TimeSpan? /* System.TimeSpan */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -66440,7 +66440,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public func unhandledException_add(_ value: System_UnhandledExceptionEventHandler? /* System.UnhandledExceptionEventHandler */) {
 		let valueC = value?.__handle
@@ -66593,7 +66593,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 public class System_AppDomainSetup /* System.AppDomainSetup */: System_Object {
 	public override class var typeName: String { "AppDomainSetup" }
 	public override class var fullTypeName: String { "System.AppDomainSetup" }
-	public func applicationBase_get() throws -> System_String? /* System.String */ {
+	public var applicationBase: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -66611,9 +66611,9 @@ public class System_AppDomainSetup /* System.AppDomainSetup */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func targetFrameworkName_get() throws -> System_String? /* System.String */ {
+	public var targetFrameworkName: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -66631,7 +66631,7 @@ public class System_AppDomainSetup /* System.AppDomainSetup */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_AppDomainSetup_TypeOf())
@@ -67124,7 +67124,7 @@ public class System_Security_PermissionSet /* System.Security.PermissionSet */: 
 		self.init(handle: __returnValueC)
 		
 	}
-	public func count_get() throws -> Int32 /* System.Int32 */ {
+	public var count: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -67140,9 +67140,9 @@ public class System_Security_PermissionSet /* System.Security.PermissionSet */: 
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isReadOnly_get() throws -> Bool /* System.Boolean */ {
+	public var isReadOnly: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -67158,9 +67158,9 @@ public class System_Security_PermissionSet /* System.Security.PermissionSet */: 
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isSynchronized_get() throws -> Bool /* System.Boolean */ {
+	public var isSynchronized: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -67176,9 +67176,9 @@ public class System_Security_PermissionSet /* System.Security.PermissionSet */: 
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func syncRoot_get() throws -> System_Object? /* System.Object */ {
+	public var syncRoot: System_Object? /* System.Object */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -67196,7 +67196,7 @@ public class System_Security_PermissionSet /* System.Security.PermissionSet */: 
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Security_PermissionSet_TypeOf())
@@ -67568,7 +67568,7 @@ public class System_Security_SecurityElement /* System.Security.SecurityElement 
 		self.init(handle: __returnValueC)
 		
 	}
-	public func tag_get() throws -> System_String? /* System.String */ {
+	public var tag: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -67586,7 +67586,7 @@ public class System_Security_SecurityElement /* System.Security.SecurityElement 
 		
 		return __returnValue
 		
-	}
+	}}
 	public func tag_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -67605,7 +67605,7 @@ public class System_Security_SecurityElement /* System.Security.SecurityElement 
 		
 	}
 	
-	public func attributes_get() throws -> System_Collections_Hashtable? /* System.Collections.Hashtable */ {
+	public var attributes: System_Collections_Hashtable? /* System.Collections.Hashtable */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -67623,7 +67623,7 @@ public class System_Security_SecurityElement /* System.Security.SecurityElement 
 		
 		return __returnValue
 		
-	}
+	}}
 	public func attributes_set(_ value: System_Collections_Hashtable? /* System.Collections.Hashtable */) throws {
 		let valueC = value?.__handle
 		
@@ -67642,7 +67642,7 @@ public class System_Security_SecurityElement /* System.Security.SecurityElement 
 		
 	}
 	
-	public func text_get() throws -> System_String? /* System.String */ {
+	public var text: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -67660,7 +67660,7 @@ public class System_Security_SecurityElement /* System.Security.SecurityElement 
 		
 		return __returnValue
 		
-	}
+	}}
 	public func text_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -67679,7 +67679,7 @@ public class System_Security_SecurityElement /* System.Security.SecurityElement 
 		
 	}
 	
-	public func children_get() throws -> System_Collections_ArrayList? /* System.Collections.ArrayList */ {
+	public var children: System_Collections_ArrayList? /* System.Collections.ArrayList */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -67697,7 +67697,7 @@ public class System_Security_SecurityElement /* System.Security.SecurityElement 
 		
 		return __returnValue
 		
-	}
+	}}
 	public func children_set(_ value: System_Collections_ArrayList? /* System.Collections.ArrayList */) throws {
 		let valueC = value?.__handle
 		
@@ -68252,7 +68252,7 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 		self.init(handle: __returnValueC)
 		
 	}
-	public func item_get(_ key: System_Object? /* System.Object */) throws -> System_Object? /* System.Object */ {
+	public func item(_ key: System_Object? /* System.Object */) throws -> System_Object? /* System.Object */ {
 		let keyC = key?.__handle
 		
 		
@@ -68291,7 +68291,7 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 		
 	}
 	
-	public func isReadOnly_get() throws -> Bool /* System.Boolean */ {
+	public var isReadOnly: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -68307,9 +68307,9 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isFixedSize_get() throws -> Bool /* System.Boolean */ {
+	public var isFixedSize: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -68325,9 +68325,9 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isSynchronized_get() throws -> Bool /* System.Boolean */ {
+	public var isSynchronized: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -68343,9 +68343,9 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func keys_get() throws -> System_Collections_ICollection? /* System.Collections.ICollection */ {
+	public var keys: System_Collections_ICollection? /* System.Collections.ICollection */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -68363,9 +68363,9 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func values_get() throws -> System_Collections_ICollection? /* System.Collections.ICollection */ {
+	public var values: System_Collections_ICollection? /* System.Collections.ICollection */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -68383,9 +68383,9 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func syncRoot_get() throws -> System_Object? /* System.Object */ {
+	public var syncRoot: System_Object? /* System.Object */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -68403,9 +68403,9 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func count_get() throws -> Int32 /* System.Int32 */ {
+	public var count: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -68421,7 +68421,7 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Collections_Hashtable_TypeOf())
@@ -69286,7 +69286,7 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		self.init(handle: __returnValueC)
 		
 	}
-	public func capacity_get() throws -> Int32 /* System.Int32 */ {
+	public var capacity: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -69302,7 +69302,7 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	public func capacity_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -69320,7 +69320,7 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		
 	}
 	
-	public func count_get() throws -> Int32 /* System.Int32 */ {
+	public var count: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -69336,9 +69336,9 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isFixedSize_get() throws -> Bool /* System.Boolean */ {
+	public var isFixedSize: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -69354,9 +69354,9 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isReadOnly_get() throws -> Bool /* System.Boolean */ {
+	public var isReadOnly: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -69372,9 +69372,9 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func isSynchronized_get() throws -> Bool /* System.Boolean */ {
+	public var isSynchronized: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -69390,9 +69390,9 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func syncRoot_get() throws -> System_Object? /* System.Object */ {
+	public var syncRoot: System_Object? /* System.Object */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -69410,9 +69410,9 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func item_get(_ index: Int32 /* System.Int32 */) throws -> System_Object? /* System.Object */ {
+	public func item(_ index: Int32 /* System.Int32 */) throws -> System_Object? /* System.Object */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -69671,7 +69671,7 @@ public class System_UnhandledExceptionEventArgs /* System.UnhandledExceptionEven
 		self.init(handle: __returnValueC)
 		
 	}
-	public func exceptionObject_get() throws -> System_Object? /* System.Object */ {
+	public var exceptionObject: System_Object? /* System.Object */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -69689,9 +69689,9 @@ public class System_UnhandledExceptionEventArgs /* System.UnhandledExceptionEven
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func isTerminating_get() throws -> Bool /* System.Boolean */ {
+	public var isTerminating: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -69707,7 +69707,7 @@ public class System_UnhandledExceptionEventArgs /* System.UnhandledExceptionEven
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_UnhandledExceptionEventArgs_TypeOf())
@@ -69764,7 +69764,7 @@ public class System_AssemblyLoadEventArgs /* System.AssemblyLoadEventArgs */: Sy
 		self.init(handle: __returnValueC)
 		
 	}
-	public func loadedAssembly_get() throws -> System_Reflection_Assembly? /* System.Reflection.Assembly */ {
+	public var loadedAssembly: System_Reflection_Assembly? /* System.Reflection.Assembly */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -69782,7 +69782,7 @@ public class System_AssemblyLoadEventArgs /* System.AssemblyLoadEventArgs */: Sy
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_AssemblyLoadEventArgs_TypeOf())
@@ -70082,7 +70082,7 @@ public class System_Threading_Timer /* System.Threading.Timer */: System_Marshal
 		self.init(handle: __returnValueC)
 		
 	}
-	public class func activeCount_get() throws -> Int64 /* System.Int64 */ {
+	public class var activeCount: Int64 /* System.Int64 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -70098,7 +70098,7 @@ public class System_Threading_Timer /* System.Threading.Timer */: System_Marshal
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Threading_Timer_TypeOf())
@@ -70351,7 +70351,7 @@ public class System_Threading_CancellationTokenSource /* System.Threading.Cancel
 		self.init(handle: __returnValueC)
 		
 	}
-	public func isCancellationRequested_get() throws -> Bool /* System.Boolean */ {
+	public var isCancellationRequested: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -70367,9 +70367,9 @@ public class System_Threading_CancellationTokenSource /* System.Threading.Cancel
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func token_get() throws -> System_Threading_CancellationToken? /* System.Threading.CancellationToken */ {
+	public var token: System_Threading_CancellationToken? /* System.Threading.CancellationToken */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -70387,7 +70387,7 @@ public class System_Threading_CancellationTokenSource /* System.Threading.Cancel
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Threading_CancellationTokenSource_TypeOf())
@@ -70488,7 +70488,7 @@ public class System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<> */:
 		return __returnValue
 		
 	}
-	public func result_get(_ TResult: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func result(_ TResult: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let TResultC = TResult.__handle
 		
 		
@@ -70755,7 +70755,7 @@ public class System_Random /* System.Random */: System_Object {
 		self.init(handle: __returnValueC)
 		
 	}
-	public class func shared_get() throws -> System_Random? /* System.Random */ {
+	public class var shared: System_Random? /* System.Random */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -70773,7 +70773,7 @@ public class System_Random /* System.Random */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_Random_TypeOf())
@@ -72397,7 +72397,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		self.init(handle: __returnValueC)
 		
 	}
-	public func capacity_get() throws -> Int32 /* System.Int32 */ {
+	public var capacity: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -72413,7 +72413,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 		return __returnValueC
 		
-	}
+	}}
 	public func capacity_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -72431,7 +72431,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func maxCapacity_get() throws -> Int32 /* System.Int32 */ {
+	public var maxCapacity: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -72447,9 +72447,9 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func length_get() throws -> Int32 /* System.Int32 */ {
+	public var length: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -72465,7 +72465,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 		return __returnValueC
 		
-	}
+	}}
 	public func length_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -72483,7 +72483,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func chars_get(_ index: Int32 /* System.Int32 */) throws -> DNChar /* System.Char */ {
+	public func chars(_ index: Int32 /* System.Int32 */) throws -> DNChar /* System.Char */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -73357,7 +73357,7 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 		return __returnValue
 		
 	}
-	public class func directorySeparatorChar_get() -> DNChar /* System.Char */ {
+	public class var directorySeparatorChar: DNChar /* System.Char */ { get {
 		
 		
 		let __returnValueC = System_IO_Path_DirectorySeparatorChar_Get()
@@ -73366,9 +73366,9 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func altDirectorySeparatorChar_get() -> DNChar /* System.Char */ {
+	public class var altDirectorySeparatorChar: DNChar /* System.Char */ { get {
 		
 		
 		let __returnValueC = System_IO_Path_AltDirectorySeparatorChar_Get()
@@ -73377,9 +73377,9 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func volumeSeparatorChar_get() -> DNChar /* System.Char */ {
+	public class var volumeSeparatorChar: DNChar /* System.Char */ { get {
 		
 		
 		let __returnValueC = System_IO_Path_VolumeSeparatorChar_Get()
@@ -73388,9 +73388,9 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func pathSeparator_get() -> DNChar /* System.Char */ {
+	public class var pathSeparator: DNChar /* System.Char */ { get {
 		
 		
 		let __returnValueC = System_IO_Path_PathSeparator_Get()
@@ -73399,9 +73399,9 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func invalidPathChars_get() -> System_Char_Array? /* System.Char[] */ {
+	public class var invalidPathChars: System_Char_Array? /* System.Char[] */ { get {
 		
 		
 		let __returnValueC = System_IO_Path_InvalidPathChars_Get()
@@ -73410,7 +73410,7 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_IO_Path_TypeOf())
@@ -75748,7 +75748,7 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		self.init(handle: __returnValueC)
 		
 	}
-	public func currentEncoding_get() throws -> System_Text_Encoding? /* System.Text.Encoding */ {
+	public var currentEncoding: System_Text_Encoding? /* System.Text.Encoding */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -75766,9 +75766,9 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func baseStream_get() throws -> System_IO_Stream? /* System.IO.Stream */ {
+	public var baseStream: System_IO_Stream? /* System.IO.Stream */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -75786,9 +75786,9 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func endOfStream_get() throws -> Bool /* System.Boolean */ {
+	public var endOfStream: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -75804,9 +75804,9 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public override class func null_get() -> System_IO_StreamReader? /* System.IO.StreamReader */ {
+	public override class var null: System_IO_StreamReader? /* System.IO.StreamReader */ { get {
 		
 		
 		let __returnValueC = System_IO_StreamReader_Null_Get()
@@ -75815,7 +75815,7 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_IO_StreamReader_TypeOf())
@@ -76090,7 +76090,7 @@ public class System_IO_TextReader /* System.IO.TextReader */: System_MarshalByRe
 		return __returnValue
 		
 	}
-	public class func null_get() -> System_IO_TextReader? /* System.IO.TextReader */ {
+	public class var null: System_IO_TextReader? /* System.IO.TextReader */ { get {
 		
 		
 		let __returnValueC = System_IO_TextReader_Null_Get()
@@ -76099,7 +76099,7 @@ public class System_IO_TextReader /* System.IO.TextReader */: System_MarshalByRe
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_IO_TextReader_TypeOf())
@@ -76776,7 +76776,7 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		self.init(handle: __returnValueC)
 		
 	}
-	public func autoFlush_get() throws -> Bool /* System.Boolean */ {
+	public var autoFlush: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -76792,7 +76792,7 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		
 		return __returnValueC
 		
-	}
+	}}
 	public func autoFlush_set(_ value: Bool /* System.Boolean */) throws {
 		
 		
@@ -76810,7 +76810,7 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		
 	}
 	
-	public func baseStream_get() throws -> System_IO_Stream? /* System.IO.Stream */ {
+	public var baseStream: System_IO_Stream? /* System.IO.Stream */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -76828,9 +76828,9 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public override func encoding_get() throws -> System_Text_Encoding? /* System.Text.Encoding */ {
+	public override var encoding: System_Text_Encoding? /* System.Text.Encoding */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -76848,9 +76848,9 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public override class func null_get() -> System_IO_StreamWriter? /* System.IO.StreamWriter */ {
+	public override class var null: System_IO_StreamWriter? /* System.IO.StreamWriter */ { get {
 		
 		
 		let __returnValueC = System_IO_StreamWriter_Null_Get()
@@ -76859,7 +76859,7 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_IO_StreamWriter_TypeOf())
@@ -77831,7 +77831,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		return __returnValue
 		
 	}
-	public func formatProvider_get() throws -> System_IFormatProvider? /* System.IFormatProvider */ {
+	public var formatProvider: System_IFormatProvider? /* System.IFormatProvider */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -77849,9 +77849,9 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func encoding_get() throws -> System_Text_Encoding? /* System.Text.Encoding */ {
+	public var encoding: System_Text_Encoding? /* System.Text.Encoding */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -77869,9 +77869,9 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func newLine_get() throws -> System_String? /* System.String */ {
+	public var newLine: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -77889,7 +77889,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		return __returnValue
 		
-	}
+	}}
 	public func newLine_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -77908,7 +77908,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
-	public class func null_get() -> System_IO_TextWriter? /* System.IO.TextWriter */ {
+	public class var null: System_IO_TextWriter? /* System.IO.TextWriter */ { get {
 		
 		
 		let __returnValueC = System_IO_TextWriter_Null_Get()
@@ -77917,7 +77917,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_IO_TextWriter_TypeOf())
@@ -78059,7 +78059,7 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 		
 		
 	}
-	public func fullName_get() throws -> System_String? /* System.String */ {
+	public var fullName: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -78077,9 +78077,9 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func extension_get() throws -> System_String? /* System.String */ {
+	public var `extension`: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -78097,9 +78097,9 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func name_get() throws -> System_String? /* System.String */ {
+	public var name: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -78117,9 +78117,9 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func exists_get() throws -> Bool /* System.Boolean */ {
+	public var exists: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -78135,9 +78135,9 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func creationTime_get() throws -> System_DateTime? /* System.DateTime */ {
+	public var creationTime: System_DateTime? /* System.DateTime */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -78155,7 +78155,7 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 		
 		return __returnValue
 		
-	}
+	}}
 	public func creationTime_set(_ value: System_DateTime? /* System.DateTime */) throws {
 		let valueC = value?.__handle
 		
@@ -78174,7 +78174,7 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 		
 	}
 	
-	public func creationTimeUtc_get() throws -> System_DateTime? /* System.DateTime */ {
+	public var creationTimeUtc: System_DateTime? /* System.DateTime */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -78192,7 +78192,7 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 		
 		return __returnValue
 		
-	}
+	}}
 	public func creationTimeUtc_set(_ value: System_DateTime? /* System.DateTime */) throws {
 		let valueC = value?.__handle
 		
@@ -78211,7 +78211,7 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 		
 	}
 	
-	public func lastAccessTime_get() throws -> System_DateTime? /* System.DateTime */ {
+	public var lastAccessTime: System_DateTime? /* System.DateTime */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -78229,7 +78229,7 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 		
 		return __returnValue
 		
-	}
+	}}
 	public func lastAccessTime_set(_ value: System_DateTime? /* System.DateTime */) throws {
 		let valueC = value?.__handle
 		
@@ -78248,7 +78248,7 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 		
 	}
 	
-	public func lastAccessTimeUtc_get() throws -> System_DateTime? /* System.DateTime */ {
+	public var lastAccessTimeUtc: System_DateTime? /* System.DateTime */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -78266,7 +78266,7 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 		
 		return __returnValue
 		
-	}
+	}}
 	public func lastAccessTimeUtc_set(_ value: System_DateTime? /* System.DateTime */) throws {
 		let valueC = value?.__handle
 		
@@ -78285,7 +78285,7 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 		
 	}
 	
-	public func lastWriteTime_get() throws -> System_DateTime? /* System.DateTime */ {
+	public var lastWriteTime: System_DateTime? /* System.DateTime */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -78303,7 +78303,7 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 		
 		return __returnValue
 		
-	}
+	}}
 	public func lastWriteTime_set(_ value: System_DateTime? /* System.DateTime */) throws {
 		let valueC = value?.__handle
 		
@@ -78322,7 +78322,7 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 		
 	}
 	
-	public func lastWriteTimeUtc_get() throws -> System_DateTime? /* System.DateTime */ {
+	public var lastWriteTimeUtc: System_DateTime? /* System.DateTime */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -78340,7 +78340,7 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 		
 		return __returnValue
 		
-	}
+	}}
 	public func lastWriteTimeUtc_set(_ value: System_DateTime? /* System.DateTime */) throws {
 		let valueC = value?.__handle
 		
@@ -78359,7 +78359,7 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 		
 	}
 	
-	public func linkTarget_get() throws -> System_String? /* System.String */ {
+	public var linkTarget: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -78377,9 +78377,9 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func unixFileMode_get() throws -> System_IO_UnixFileMode /* System.IO.UnixFileMode */ {
+	public var unixFileMode: System_IO_UnixFileMode /* System.IO.UnixFileMode */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -78397,7 +78397,7 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 		
 		return __returnValue
 		
-	}
+	}}
 	public func unixFileMode_set(_ value: System_IO_UnixFileMode /* System.IO.UnixFileMode */) throws {
 		let valueC = value.cValue
 		
@@ -78416,7 +78416,7 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 		
 	}
 	
-	public func attributes_get() throws -> System_IO_FileAttributes /* System.IO.FileAttributes */ {
+	public var attributes: System_IO_FileAttributes /* System.IO.FileAttributes */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -78434,7 +78434,7 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 		
 		return __returnValue
 		
-	}
+	}}
 	public func attributes_set(_ value: System_IO_FileAttributes /* System.IO.FileAttributes */) throws {
 		let valueC = value.cValue
 		
@@ -78849,7 +78849,7 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		self.init(handle: __returnValueC)
 		
 	}
-	public override func name_get() throws -> System_String? /* System.String */ {
+	public override var name: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -78867,9 +78867,9 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func length_get() throws -> Int64 /* System.Int64 */ {
+	public var length: Int64 /* System.Int64 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -78885,9 +78885,9 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func directoryName_get() throws -> System_String? /* System.String */ {
+	public var directoryName: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -78905,9 +78905,9 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func directory_get() throws -> System_IO_DirectoryInfo? /* System.IO.DirectoryInfo */ {
+	public var directory: System_IO_DirectoryInfo? /* System.IO.DirectoryInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -78925,9 +78925,9 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func isReadOnly_get() throws -> Bool /* System.Boolean */ {
+	public var isReadOnly: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -78943,7 +78943,7 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		
 		return __returnValueC
 		
-	}
+	}}
 	public func isReadOnly_set(_ value: Bool /* System.Boolean */) throws {
 		
 		
@@ -78961,7 +78961,7 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		
 	}
 	
-	public override func exists_get() throws -> Bool /* System.Boolean */ {
+	public override var exists: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -78977,7 +78977,7 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_IO_FileInfo_TypeOf())
@@ -79585,7 +79585,7 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		self.init(handle: __returnValueC)
 		
 	}
-	public override func name_get() throws -> System_String? /* System.String */ {
+	public override var name: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -79603,9 +79603,9 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func parent_get() throws -> System_IO_DirectoryInfo? /* System.IO.DirectoryInfo */ {
+	public var parent: System_IO_DirectoryInfo? /* System.IO.DirectoryInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -79623,9 +79623,9 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func root_get() throws -> System_IO_DirectoryInfo? /* System.IO.DirectoryInfo */ {
+	public var root: System_IO_DirectoryInfo? /* System.IO.DirectoryInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -79643,9 +79643,9 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public override func exists_get() throws -> Bool /* System.Boolean */ {
+	public override var exists: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -79661,7 +79661,7 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: System_IO_DirectoryInfo_TypeOf())
@@ -79717,7 +79717,7 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 		self.init(handle: __returnValueC)
 		
 	}
-	public func recurseSubdirectories_get() throws -> Bool /* System.Boolean */ {
+	public var recurseSubdirectories: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -79733,7 +79733,7 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	public func recurseSubdirectories_set(_ value: Bool /* System.Boolean */) throws {
 		
 		
@@ -79751,7 +79751,7 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 		
 	}
 	
-	public func ignoreInaccessible_get() throws -> Bool /* System.Boolean */ {
+	public var ignoreInaccessible: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -79767,7 +79767,7 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	public func ignoreInaccessible_set(_ value: Bool /* System.Boolean */) throws {
 		
 		
@@ -79785,7 +79785,7 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 		
 	}
 	
-	public func bufferSize_get() throws -> Int32 /* System.Int32 */ {
+	public var bufferSize: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -79801,7 +79801,7 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	public func bufferSize_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -79819,7 +79819,7 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 		
 	}
 	
-	public func attributesToSkip_get() throws -> System_IO_FileAttributes /* System.IO.FileAttributes */ {
+	public var attributesToSkip: System_IO_FileAttributes /* System.IO.FileAttributes */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -79837,7 +79837,7 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 		
 		return __returnValue
 		
-	}
+	}}
 	public func attributesToSkip_set(_ value: System_IO_FileAttributes /* System.IO.FileAttributes */) throws {
 		let valueC = value.cValue
 		
@@ -79856,7 +79856,7 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 		
 	}
 	
-	public func matchType_get() throws -> System_IO_MatchType /* System.IO.MatchType */ {
+	public var matchType: System_IO_MatchType /* System.IO.MatchType */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -79874,7 +79874,7 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 		
 		return __returnValue
 		
-	}
+	}}
 	public func matchType_set(_ value: System_IO_MatchType /* System.IO.MatchType */) throws {
 		let valueC = value.cValue
 		
@@ -79893,7 +79893,7 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 		
 	}
 	
-	public func matchCasing_get() throws -> System_IO_MatchCasing /* System.IO.MatchCasing */ {
+	public var matchCasing: System_IO_MatchCasing /* System.IO.MatchCasing */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -79911,7 +79911,7 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 		
 		return __returnValue
 		
-	}
+	}}
 	public func matchCasing_set(_ value: System_IO_MatchCasing /* System.IO.MatchCasing */) throws {
 		let valueC = value.cValue
 		
@@ -79930,7 +79930,7 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 		
 	}
 	
-	public func maxRecursionDepth_get() throws -> Int32 /* System.Int32 */ {
+	public var maxRecursionDepth: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -79946,7 +79946,7 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	public func maxRecursionDepth_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -79964,7 +79964,7 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 		
 	}
 	
-	public func returnSpecialDirectories_get() throws -> Bool /* System.Boolean */ {
+	public var returnSpecialDirectories: Bool /* System.Boolean */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -79980,7 +79980,7 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 		
 		return __returnValueC
 		
-	}
+	}}
 	public func returnSpecialDirectories_set(_ value: Bool /* System.Boolean */) throws {
 		
 		
@@ -81586,7 +81586,7 @@ public class System_Collections_Generic_List_A1 /* System.Collections.Generic.Li
 		self.init(handle: __returnValueC)
 		
 	}
-	public func capacity_get(_ T: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
+	public func capacity(_ T: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
 		let TC = T.__handle
 		
 		
@@ -81622,7 +81622,7 @@ public class System_Collections_Generic_List_A1 /* System.Collections.Generic.Li
 		
 	}
 	
-	public func count_get(_ T: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
+	public func count(_ T: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
 		let TC = T.__handle
 		
 		
@@ -81641,7 +81641,7 @@ public class System_Collections_Generic_List_A1 /* System.Collections.Generic.Li
 		
 	}
 	
-	public func item_get(_ T: System_Type /* System.Type */, _ index: Int32 /* System.Int32 */) throws -> System_Object? /* System.Object */ {
+	public func item(_ T: System_Type /* System.Type */, _ index: Int32 /* System.Int32 */) throws -> System_Object? /* System.Object */ {
 		let TC = T.__handle
 		
 		
@@ -81752,7 +81752,7 @@ public class System_Collections_Generic_IList_A1 /* System.Collections.Generic.I
 		
 		
 	}
-	public func item_get(_ T: System_Type /* System.Type */, _ index: Int32 /* System.Int32 */) throws -> System_Object? /* System.Object */ {
+	public func item(_ T: System_Type /* System.Type */, _ index: Int32 /* System.Int32 */) throws -> System_Object? /* System.Object */ {
 		let TC = T.__handle
 		
 		
@@ -82110,7 +82110,7 @@ public class System_Collections_Generic_Dictionary_A2 /* System.Collections.Gene
 		self.init(handle: __returnValueC)
 		
 	}
-	public func count_get(_ TKey: System_Type /* System.Type */, _ TValue: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
+	public func count(_ TKey: System_Type /* System.Type */, _ TValue: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
 		let TKeyC = TKey.__handle
 		let TValueC = TValue.__handle
 		
@@ -82130,7 +82130,7 @@ public class System_Collections_Generic_Dictionary_A2 /* System.Collections.Gene
 		
 	}
 	
-	public func item_get(_ TKey: System_Type /* System.Type */, _ TValue: System_Type /* System.Type */, _ key: System_Object? /* System.Object */) throws -> System_Object? /* System.Object */ {
+	public func item(_ TKey: System_Type /* System.Type */, _ TValue: System_Type /* System.Type */, _ key: System_Object? /* System.Object */) throws -> System_Object? /* System.Object */ {
 		let TKeyC = TKey.__handle
 		let TValueC = TValue.__handle
 		let keyC = key?.__handle
@@ -82275,7 +82275,7 @@ public class System_Collections_Generic_IDictionary_A2 /* System.Collections.Gen
 		return __returnValueC
 		
 	}
-	public func item_get(_ TKey: System_Type /* System.Type */, _ TValue: System_Type /* System.Type */, _ key: System_Object? /* System.Object */) throws -> System_Object? /* System.Object */ {
+	public func item(_ TKey: System_Type /* System.Type */, _ TValue: System_Type /* System.Type */, _ key: System_Object? /* System.Object */) throws -> System_Object? /* System.Object */ {
 		let TKeyC = TKey.__handle
 		let TValueC = TValue.__handle
 		let keyC = key?.__handle
@@ -82392,7 +82392,7 @@ public class System_Collections_ObjectModel_ReadOnlyCollection_A1 /* System.Coll
 		return __returnValueC
 		
 	}
-	public class func empty_get(_ T: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public class func empty(_ T: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let TC = T.__handle
 		
 		
@@ -82413,7 +82413,7 @@ public class System_Collections_ObjectModel_ReadOnlyCollection_A1 /* System.Coll
 		
 	}
 	
-	public func count_get(_ T: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
+	public func count(_ T: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
 		let TC = T.__handle
 		
 		
@@ -82432,7 +82432,7 @@ public class System_Collections_ObjectModel_ReadOnlyCollection_A1 /* System.Coll
 		
 	}
 	
-	public func item_get(_ T: System_Type /* System.Type */, _ index: Int32 /* System.Int32 */) throws -> System_Object? /* System.Object */ {
+	public func item(_ T: System_Type /* System.Type */, _ index: Int32 /* System.Int32 */) throws -> System_Object? /* System.Object */ {
 		let TC = T.__handle
 		
 		
@@ -82515,7 +82515,7 @@ public class System_Collections_Generic_IReadOnlyDictionary_A2 /* System.Collect
 		return __returnValueC
 		
 	}
-	public func item_get(_ TKey: System_Type /* System.Type */, _ TValue: System_Type /* System.Type */, _ key: System_Object? /* System.Object */) throws -> System_Object? /* System.Object */ {
+	public func item(_ TKey: System_Type /* System.Type */, _ TValue: System_Type /* System.Type */, _ key: System_Object? /* System.Object */) throws -> System_Object? /* System.Object */ {
 		let TKeyC = TKey.__handle
 		let TValueC = TValue.__handle
 		let keyC = key?.__handle
@@ -82614,7 +82614,7 @@ public class NativeAOT_CodeGeneratorInputSample_Address /* NativeAOT.CodeGenerat
 		self.init(handle: __returnValueC)
 		
 	}
-	public func street_get() throws -> System_String? /* System.String */ {
+	public var street: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -82632,9 +82632,9 @@ public class NativeAOT_CodeGeneratorInputSample_Address /* NativeAOT.CodeGenerat
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func city_get() throws -> System_String? /* System.String */ {
+	public var city: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -82652,7 +82652,7 @@ public class NativeAOT_CodeGeneratorInputSample_Address /* NativeAOT.CodeGenerat
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Address_TypeOf())
@@ -82689,7 +82689,7 @@ public class NativeAOT_CodeGeneratorInputSample_IAnimal /* NativeAOT.CodeGenerat
 		return __returnValue
 		
 	}
-	public func name_get() throws -> System_String? /* System.String */ {
+	public var name: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -82707,7 +82707,7 @@ public class NativeAOT_CodeGeneratorInputSample_IAnimal /* NativeAOT.CodeGenerat
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_IAnimal_TypeOf())
@@ -82785,7 +82785,7 @@ public class NativeAOT_CodeGeneratorInputSample_AnimalFactory /* NativeAOT.CodeG
 		return __returnValue
 		
 	}
-	public class func dEFAULT_CREATOR_get() -> NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate? /* NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate */ {
+	public class var dEFAULT_CREATOR: NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate? /* NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate */ { get {
 		
 		
 		let __returnValueC = NativeAOT_CodeGeneratorInputSample_AnimalFactory_DEFAULT_CREATOR_Get()
@@ -82794,7 +82794,7 @@ public class NativeAOT_CodeGeneratorInputSample_AnimalFactory /* NativeAOT.CodeG
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_AnimalFactory_TypeOf())
@@ -82832,7 +82832,7 @@ public class NativeAOT_CodeGeneratorInputSample_BaseAnimal /* NativeAOT.CodeGene
 		return __returnValue
 		
 	}
-	public func name_get() throws -> System_String? /* System.String */ {
+	public var name: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -82850,7 +82850,7 @@ public class NativeAOT_CodeGeneratorInputSample_BaseAnimal /* NativeAOT.CodeGene
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_BaseAnimal_TypeOf())
@@ -82867,7 +82867,7 @@ public class NativeAOT_CodeGeneratorInputSample_BaseAnimal /* NativeAOT.CodeGene
 public class NativeAOT_CodeGeneratorInputSample_Cat /* NativeAOT.CodeGeneratorInputSample.Cat */: NativeAOT_CodeGeneratorInputSample_BaseAnimal {
 	public override class var typeName: String { "Cat" }
 	public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.Cat" }
-	public override func name_get() throws -> System_String? /* System.String */ {
+	public override var name: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -82885,9 +82885,9 @@ public class NativeAOT_CodeGeneratorInputSample_Cat /* NativeAOT.CodeGeneratorIn
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func catName_get() -> System_String? /* System.String */ {
+	public class var catName: System_String? /* System.String */ { get {
 		
 		
 		let __returnValueC = NativeAOT_CodeGeneratorInputSample_Cat_CatName_Get()
@@ -82896,7 +82896,7 @@ public class NativeAOT_CodeGeneratorInputSample_Cat /* NativeAOT.CodeGeneratorIn
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Cat_TypeOf())
@@ -82913,7 +82913,7 @@ public class NativeAOT_CodeGeneratorInputSample_Cat /* NativeAOT.CodeGeneratorIn
 public class NativeAOT_CodeGeneratorInputSample_Dog /* NativeAOT.CodeGeneratorInputSample.Dog */: NativeAOT_CodeGeneratorInputSample_BaseAnimal {
 	public override class var typeName: String { "Dog" }
 	public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.Dog" }
-	public override func name_get() throws -> System_String? /* System.String */ {
+	public override var name: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -82931,9 +82931,9 @@ public class NativeAOT_CodeGeneratorInputSample_Dog /* NativeAOT.CodeGeneratorIn
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func dogName_get() -> System_String? /* System.String */ {
+	public class var dogName: System_String? /* System.String */ { get {
 		
 		
 		let __returnValueC = NativeAOT_CodeGeneratorInputSample_Dog_DogName_Get()
@@ -82942,7 +82942,7 @@ public class NativeAOT_CodeGeneratorInputSample_Dog /* NativeAOT.CodeGeneratorIn
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Dog_TypeOf())
@@ -82979,7 +82979,7 @@ public class NativeAOT_CodeGeneratorInputSample_GenericAnimal /* NativeAOT.CodeG
 		self.init(handle: __returnValueC)
 		
 	}
-	public override func name_get() throws -> System_String? /* System.String */ {
+	public override var name: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -82997,7 +82997,7 @@ public class NativeAOT_CodeGeneratorInputSample_GenericAnimal /* NativeAOT.CodeG
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_GenericAnimal_TypeOf())
@@ -83104,7 +83104,7 @@ public class NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1 /* NativeAOT
 		self.init(handle: __returnValueC)
 		
 	}
-	public func aProperty_get(_ T: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
+	public func aProperty(_ T: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
 		let TC = T.__handle
 		
 		
@@ -83140,7 +83140,7 @@ public class NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1 /* NativeAOT
 		
 	}
 	
-	public func aField_get(_ T: System_Type /* System.Type */) -> Int32 /* System.Int32 */ {
+	public func aField(_ T: System_Type /* System.Type */) -> Int32 /* System.Int32 */ {
 		let TC = T.__handle
 		
 		
@@ -83241,7 +83241,7 @@ public class NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2 /* NativeAOT
 		self.init(handle: __returnValueC)
 		
 	}
-	public func aProperty_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
+	public func aProperty(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		
@@ -83279,7 +83279,7 @@ public class NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2 /* NativeAOT
 		
 	}
 	
-	public func aField_get(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */) -> Int32 /* System.Int32 */ {
+	public func aField(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */) -> Int32 /* System.Int32 */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		
@@ -83543,7 +83543,7 @@ public class NativeAOT_CodeGeneratorInputSample_GenericTests /* NativeAOT.CodeGe
 		self.init(handle: __returnValueC)
 		
 	}
-	public func listOfStrings_get() throws -> System_Collections_Generic_List_A1? /* System.Collections.Generic.List<System.String> */ {
+	public var listOfStrings: System_Collections_Generic_List_A1? /* System.Collections.Generic.List<System.String> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -83561,7 +83561,7 @@ public class NativeAOT_CodeGeneratorInputSample_GenericTests /* NativeAOT.CodeGe
 		
 		return __returnValue
 		
-	}
+	}}
 	public func listOfStrings_set(_ value: System_Collections_Generic_List_A1? /* System.Collections.Generic.List<System.String> */) throws {
 		let valueC = value?.__handle
 		
@@ -83580,7 +83580,7 @@ public class NativeAOT_CodeGeneratorInputSample_GenericTests /* NativeAOT.CodeGe
 		
 	}
 	
-	public func dictionaryOfStringKeysAndExceptionValues_get() throws -> System_Collections_Generic_Dictionary_A2? /* System.Collections.Generic.Dictionary<System.String,System.Exception> */ {
+	public var dictionaryOfStringKeysAndExceptionValues: System_Collections_Generic_Dictionary_A2? /* System.Collections.Generic.Dictionary<System.String,System.Exception> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -83598,7 +83598,7 @@ public class NativeAOT_CodeGeneratorInputSample_GenericTests /* NativeAOT.CodeGe
 		
 		return __returnValue
 		
-	}
+	}}
 	public func dictionaryOfStringKeysAndExceptionValues_set(_ value: System_Collections_Generic_Dictionary_A2? /* System.Collections.Generic.Dictionary<System.String,System.Exception> */) throws {
 		let valueC = value?.__handle
 		
@@ -83677,7 +83677,7 @@ public class NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair 
 		self.init(handle: __returnValueC)
 		
 	}
-	public func key_get() throws -> System_Object? /* System.Object */ {
+	public var key: System_Object? /* System.Object */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -83695,9 +83695,9 @@ public class NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair 
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func value_get() throws -> System_Object? /* System.Object */ {
+	public var value: System_Object? /* System.Object */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -83715,7 +83715,7 @@ public class NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair 
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_GenericTests_SimpleKeyValuePair_TypeOf())
@@ -83763,7 +83763,7 @@ public class NativeAOT_CodeGeneratorInputSample_IndexerTests /* NativeAOT.CodeGe
 		self.init(handle: __returnValueC)
 		
 	}
-	public func storedString_get() throws -> System_String? /* System.String */ {
+	public var storedString: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -83781,9 +83781,9 @@ public class NativeAOT_CodeGeneratorInputSample_IndexerTests /* NativeAOT.CodeGe
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func storedNumber_get() throws -> Int32 /* System.Int32 */ {
+	public var storedNumber: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -83799,9 +83799,9 @@ public class NativeAOT_CodeGeneratorInputSample_IndexerTests /* NativeAOT.CodeGe
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public func storedGuid_get() throws -> System_Guid? /* System.Guid */ {
+	public var storedGuid: System_Guid? /* System.Guid */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -83819,9 +83819,9 @@ public class NativeAOT_CodeGeneratorInputSample_IndexerTests /* NativeAOT.CodeGe
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func storedValue_get() throws -> System_Object_Array? /* System.Object[] */ {
+	public var storedValue: System_Object_Array? /* System.Object[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -83839,9 +83839,9 @@ public class NativeAOT_CodeGeneratorInputSample_IndexerTests /* NativeAOT.CodeGe
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func item_get(_ aString: System_String? /* System.String */, _ aNumber: Int32 /* System.Int32 */, _ aGuid: System_Guid? /* System.Guid */) throws -> System_Object_Array? /* System.Object[] */ {
+	public func item(_ aString: System_String? /* System.String */, _ aNumber: Int32 /* System.Int32 */, _ aGuid: System_Guid? /* System.Guid */) throws -> System_Object_Array? /* System.Object[] */ {
 		let aStringC = aString?.__handle
 		let aGuidC = aGuid?.__handle
 		
@@ -84063,7 +84063,7 @@ public class NativeAOT_CodeGeneratorInputSample_Person /* NativeAOT.CodeGenerato
 		self.init(handle: __returnValueC)
 		
 	}
-	public func firstName_get() throws -> System_String? /* System.String */ {
+	public var firstName: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -84081,7 +84081,7 @@ public class NativeAOT_CodeGeneratorInputSample_Person /* NativeAOT.CodeGenerato
 		
 		return __returnValue
 		
-	}
+	}}
 	public func firstName_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -84100,7 +84100,7 @@ public class NativeAOT_CodeGeneratorInputSample_Person /* NativeAOT.CodeGenerato
 		
 	}
 	
-	public func lastName_get() throws -> System_String? /* System.String */ {
+	public var lastName: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -84118,7 +84118,7 @@ public class NativeAOT_CodeGeneratorInputSample_Person /* NativeAOT.CodeGenerato
 		
 		return __returnValue
 		
-	}
+	}}
 	public func lastName_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -84137,7 +84137,7 @@ public class NativeAOT_CodeGeneratorInputSample_Person /* NativeAOT.CodeGenerato
 		
 	}
 	
-	public func age_get() throws -> Int32 /* System.Int32 */ {
+	public var age: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -84153,7 +84153,7 @@ public class NativeAOT_CodeGeneratorInputSample_Person /* NativeAOT.CodeGenerato
 		
 		return __returnValueC
 		
-	}
+	}}
 	public func age_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -84171,7 +84171,7 @@ public class NativeAOT_CodeGeneratorInputSample_Person /* NativeAOT.CodeGenerato
 		
 	}
 	
-	public func address_get() throws -> NativeAOT_CodeGeneratorInputSample_Address? /* NativeAOT.CodeGeneratorInputSample.Address */ {
+	public var address: NativeAOT_CodeGeneratorInputSample_Address? /* NativeAOT.CodeGeneratorInputSample.Address */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -84189,7 +84189,7 @@ public class NativeAOT_CodeGeneratorInputSample_Person /* NativeAOT.CodeGenerato
 		
 		return __returnValue
 		
-	}
+	}}
 	public func address_set(_ value: NativeAOT_CodeGeneratorInputSample_Address? /* NativeAOT.CodeGeneratorInputSample.Address */) throws {
 		let valueC = value?.__handle
 		
@@ -84208,7 +84208,7 @@ public class NativeAOT_CodeGeneratorInputSample_Person /* NativeAOT.CodeGenerato
 		
 	}
 	
-	public func children_get() throws -> NativeAOT_CodeGeneratorInputSample_Person_Array? /* NativeAOT.CodeGeneratorInputSample.Person[] */ {
+	public var children: NativeAOT_CodeGeneratorInputSample_Person_Array? /* NativeAOT.CodeGeneratorInputSample.Person[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -84226,7 +84226,7 @@ public class NativeAOT_CodeGeneratorInputSample_Person /* NativeAOT.CodeGenerato
 		
 		return __returnValue
 		
-	}
+	}}
 	public func children_set(_ value: NativeAOT_CodeGeneratorInputSample_Person_Array? /* NativeAOT.CodeGeneratorInputSample.Person[] */) throws {
 		let valueC = value?.__handle
 		
@@ -84245,7 +84245,7 @@ public class NativeAOT_CodeGeneratorInputSample_Person /* NativeAOT.CodeGenerato
 		
 	}
 	
-	public func niceLevel_get() throws -> NativeAOT_CodeGeneratorInputSample_NiceLevels /* NativeAOT.CodeGeneratorInputSample.NiceLevels */ {
+	public var niceLevel: NativeAOT_CodeGeneratorInputSample_NiceLevels /* NativeAOT.CodeGeneratorInputSample.NiceLevels */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -84263,7 +84263,7 @@ public class NativeAOT_CodeGeneratorInputSample_Person /* NativeAOT.CodeGenerato
 		
 		return __returnValue
 		
-	}
+	}}
 	public func niceLevel_set(_ value: NativeAOT_CodeGeneratorInputSample_NiceLevels /* NativeAOT.CodeGeneratorInputSample.NiceLevels */) throws {
 		let valueC = value.cValue
 		
@@ -84282,7 +84282,7 @@ public class NativeAOT_CodeGeneratorInputSample_Person /* NativeAOT.CodeGenerato
 		
 	}
 	
-	public func fullName_get() throws -> System_String? /* System.String */ {
+	public var fullName: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -84300,9 +84300,9 @@ public class NativeAOT_CodeGeneratorInputSample_Person /* NativeAOT.CodeGenerato
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public func numberOfChildren_get() throws -> Int32 /* System.Int32 */ {
+	public var numberOfChildren: Int32 /* System.Int32 */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -84318,7 +84318,7 @@ public class NativeAOT_CodeGeneratorInputSample_Person /* NativeAOT.CodeGenerato
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public func numberOfChildrenChanged_add(_ value: NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate? /* NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate */) {
 		let valueC = value?.__handle
@@ -84337,23 +84337,23 @@ public class NativeAOT_CodeGeneratorInputSample_Person /* NativeAOT.CodeGenerato
 		
 	}
 	
-	public class func aGE_WHEN_BORN_get() -> Int32 /* System.Int32 */ {
+	public class var aGE_WHEN_BORN: Int32 /* System.Int32 */ { get {
 		
 		
 		let __returnValueC = NativeAOT_CodeGeneratorInputSample_Person_AGE_WHEN_BORN_Get()
 		
 		return __returnValueC
 		
-	}
+	}}
 	
-	public class func dEFAULT_AGE_get() -> Int32 /* System.Int32 */ {
+	public class var dEFAULT_AGE: Int32 /* System.Int32 */ { get {
 		
 		
 		let __returnValueC = NativeAOT_CodeGeneratorInputSample_Person_DEFAULT_AGE_Get()
 		
 		return __returnValueC
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Person_TypeOf())
@@ -84465,7 +84465,7 @@ public class NativeAOT_CodeGeneratorInputSample_Book /* NativeAOT.CodeGeneratorI
 		self.init(handle: __returnValueC)
 		
 	}
-	public func name_get() throws -> System_String? /* System.String */ {
+	public var name: System_String? /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -84483,9 +84483,9 @@ public class NativeAOT_CodeGeneratorInputSample_Book /* NativeAOT.CodeGeneratorI
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func donQuixote_get() -> NativeAOT_CodeGeneratorInputSample_Book? /* NativeAOT.CodeGeneratorInputSample.Book */ {
+	public class var donQuixote: NativeAOT_CodeGeneratorInputSample_Book? /* NativeAOT.CodeGeneratorInputSample.Book */ { get {
 		
 		
 		let __returnValueC = NativeAOT_CodeGeneratorInputSample_Book_DonQuixote_Get()
@@ -84494,9 +84494,9 @@ public class NativeAOT_CodeGeneratorInputSample_Book /* NativeAOT.CodeGeneratorI
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func aTaleOfTwoCities_get() -> NativeAOT_CodeGeneratorInputSample_Book? /* NativeAOT.CodeGeneratorInputSample.Book */ {
+	public class var aTaleOfTwoCities: NativeAOT_CodeGeneratorInputSample_Book? /* NativeAOT.CodeGeneratorInputSample.Book */ { get {
 		
 		
 		let __returnValueC = NativeAOT_CodeGeneratorInputSample_Book_ATaleOfTwoCities_Get()
@@ -84505,9 +84505,9 @@ public class NativeAOT_CodeGeneratorInputSample_Book /* NativeAOT.CodeGeneratorI
 		
 		return __returnValue
 		
-	}
+	}}
 	
-	public class func theLordOfTheRings_get() -> NativeAOT_CodeGeneratorInputSample_Book? /* NativeAOT.CodeGeneratorInputSample.Book */ {
+	public class var theLordOfTheRings: NativeAOT_CodeGeneratorInputSample_Book? /* NativeAOT.CodeGeneratorInputSample.Book */ { get {
 		
 		
 		let __returnValueC = NativeAOT_CodeGeneratorInputSample_Book_TheLordOfTheRings_Get()
@@ -84516,7 +84516,7 @@ public class NativeAOT_CodeGeneratorInputSample_Book /* NativeAOT.CodeGeneratorI
 		
 		return __returnValue
 		
-	}
+	}}
 	
 	public override class func typeOf() -> System_Type /* System.Type */ {
 		return System_Type(handle: NativeAOT_CodeGeneratorInputSample_Book_TypeOf())
@@ -84760,7 +84760,7 @@ public class NativeAOT_CodeGeneratorInputSample_TestClass /* NativeAOT.CodeGener
 		self.init(handle: __returnValueC)
 		
 	}
-	public func currentBook_get() -> NativeAOT_CodeGeneratorInputSample_Book? /* NativeAOT.CodeGeneratorInputSample.Book */ {
+	public var currentBook: NativeAOT_CodeGeneratorInputSample_Book? /* NativeAOT.CodeGeneratorInputSample.Book */ { get {
 		
 		
 		let __returnValueC = NativeAOT_CodeGeneratorInputSample_TestClass_CurrentBook_Get(self.__handle)
@@ -84769,7 +84769,7 @@ public class NativeAOT_CodeGeneratorInputSample_TestClass /* NativeAOT.CodeGener
 		
 		return __returnValue
 		
-	}
+	}}
 	public func currentBook_set(_ value: NativeAOT_CodeGeneratorInputSample_Book? /* NativeAOT.CodeGeneratorInputSample.Book */) {
 		let valueC = value?.__handle
 		
@@ -84779,14 +84779,14 @@ public class NativeAOT_CodeGeneratorInputSample_TestClass /* NativeAOT.CodeGener
 		
 	}
 	
-	public func currentIntValue_get() -> Int32 /* System.Int32 */ {
+	public var currentIntValue: Int32 /* System.Int32 */ { get {
 		
 		
 		let __returnValueC = NativeAOT_CodeGeneratorInputSample_TestClass_CurrentIntValue_Get(self.__handle)
 		
 		return __returnValueC
 		
-	}
+	}}
 	public func currentIntValue_set(_ value: Int32 /* System.Int32 */) {
 		
 		
@@ -84907,7 +84907,7 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer /* NativeAOT.CodeGen
 public class NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers /* NativeAOT.CodeGeneratorInputSample.Transformer.BuiltInTransformers */: System_Object {
 	public override class var typeName: String { "BuiltInTransformers" }
 	public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.Transformer.BuiltInTransformers" }
-	public class func uppercaseStringTransformer_get() throws -> NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate? /* NativeAOT.CodeGeneratorInputSample.Transformer.StringTransformerDelegate */ {
+	public class var uppercaseStringTransformer: NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate? /* NativeAOT.CodeGeneratorInputSample.Transformer.StringTransformerDelegate */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -84925,7 +84925,7 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers 
 		
 		return __returnValue
 		
-	}
+	}}
 	public class func uppercaseStringTransformer_set(_ value: NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate? /* NativeAOT.CodeGeneratorInputSample.Transformer.StringTransformerDelegate */) throws {
 		let valueC = value?.__handle
 		
@@ -86625,11 +86625,9 @@ extension NativeAOT_CodeGeneratorInputSample_Person? {
 	public func increaseAge(_ byYears: Int32 /* System.Int32 */) throws {
 		try NativeAOT_CodeGeneratorInputSample_Person_Extensions.increaseAge(self, byYears)
 	}
-	
 	public func tryGetAddress(_ address: inout NativeAOT_CodeGeneratorInputSample_Address? /* NativeAOT.CodeGeneratorInputSample.Address */) throws -> Bool {
 		return try NativeAOT_CodeGeneratorInputSample_Person_Extensions.tryGetAddress(self, &address)
 	}
-	
 	
 }
 
@@ -86637,11 +86635,9 @@ extension NativeAOT_CodeGeneratorInputSample_Person {
 	public func increaseAge(_ byYears: Int32 /* System.Int32 */) throws {
 		try NativeAOT_CodeGeneratorInputSample_Person_Extensions.increaseAge(self, byYears)
 	}
-	
 	public func tryGetAddress(_ address: inout NativeAOT_CodeGeneratorInputSample_Address? /* NativeAOT.CodeGeneratorInputSample.Address */) throws -> Bool {
 		return try NativeAOT_CodeGeneratorInputSample_Person_Extensions.tryGetAddress(self, &address)
 	}
-	
 	
 }
 

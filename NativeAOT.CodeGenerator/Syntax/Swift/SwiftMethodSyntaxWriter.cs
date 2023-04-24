@@ -369,6 +369,24 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             );
 
             fullDecl = decl.ToString();
+        } else if (CanBeGeneratedAsGetOnlyProperty(memberKind, isGeneric, parameters.Any())) {
+            SwiftGetOnlyPropertyDeclaration decl = new(
+                methodNameSwift,
+                onlyWriteSignatureForProtocol
+                    ? SwiftVisibilities.None
+                    : SwiftVisibilities.Public,
+                isStaticMethod
+                    ? SwiftTypeAttachmentKinds.Class
+                    : SwiftTypeAttachmentKinds.Instance,
+                treatAsOverridden,
+                mayThrow,
+                !returnOrSetterOrEventHandlerType.IsVoid()
+                    ? swiftReturnOrSetterTypeNameWithComment
+                    : throw new Exception("A property must have a return type"),
+                funcImpl
+            );
+
+            fullDecl = decl.ToString();
         } else {
             SwiftFuncDeclaration decl = new(
                 methodNameSwift,
@@ -392,6 +410,18 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         #endregion Func Declaration
         
         return fullDecl;
+    }
+
+    private static bool CanBeGeneratedAsGetOnlyProperty(
+        MemberKind memberKind,
+        bool isGeneric,
+        bool hasParameters
+    )
+    {
+        return
+            (memberKind == MemberKind.PropertyGetter || memberKind == MemberKind.FieldGetter) &&
+            !isGeneric &&
+            !hasParameters;
     }
     
     private static string WriteMethodImplementation(
@@ -615,6 +645,8 @@ if let __exceptionC {
         if (typeWhereExtensionIsDeclared is null) {
             return string.Empty;
         }
+        
+        MemberKind memberKind = swiftGeneratedMember.MemberKind;
 
         TypeDescriptor typeDescriptorWhereExtensionIsDeclared = typeWhereExtensionIsDeclared.GetTypeDescriptor(typeDescriptorRegistry);
         string swiftTypeNameWhereExtensionIsDeclared = typeDescriptorWhereExtensionIsDeclared.GetTypeName(CodeLanguage.Swift, false);
@@ -671,26 +703,8 @@ if let __exceptionC {
         );
 
         bool mayThrow = swiftGeneratedMember.MayThrow;
-        
-        SwiftFuncDeclaration decl = new(
-            generatedName,
-            SwiftVisibilities.Public,
-            SwiftTypeAttachmentKinds.Instance,
-            false,
-            parametersString,
-            mayThrow,
-            !returnType.IsVoid()
-                ? swiftReturnTypeName
-                : null,
-            null
-        );
-        
-        string funcSignature = decl.ToString();
 
-        StringBuilder sb = new();
-            
-        sb.AppendLine($"{funcSignature} {{");
-
+        #region Impl
         string toReturnOrNotToReturn = !returnType.IsVoid()
             ? "return "
             : string.Empty;
@@ -718,15 +732,43 @@ if let __exceptionC {
             invocationParametersString = "self, " + invocationParametersString;
         }
 
-        string invocation = $"\t{toReturnOrNotToReturn}{toTryOrNotToTry}{swiftTypeNameWhereExtensionIsDeclared}.{generatedName}({invocationParametersString})";
+        string invocation = $"{toReturnOrNotToReturn}{toTryOrNotToTry}{swiftTypeNameWhereExtensionIsDeclared}.{generatedName}({invocationParametersString})";
+        #endregion Impl
 
-        sb.AppendLine(invocation);
+        string fullDecl;
+
+        if (CanBeGeneratedAsGetOnlyProperty(memberKind, isGeneric, parameters.Any())) {
+            SwiftGetOnlyPropertyDeclaration decl = new(
+                generatedName,
+                SwiftVisibilities.Public,
+                SwiftTypeAttachmentKinds.Instance,
+                false,
+                mayThrow,
+                !returnType.IsVoid()
+                    ? swiftReturnTypeName
+                    : throw new Exception("A property must have a return type"),
+                invocation
+            );
+
+            fullDecl = decl.ToString();
+        } else {
+            SwiftFuncDeclaration decl = new(
+                generatedName,
+                SwiftVisibilities.Public,
+                SwiftTypeAttachmentKinds.Instance,
+                false,
+                parametersString,
+                mayThrow,
+                !returnType.IsVoid()
+                    ? swiftReturnTypeName
+                    : null,
+                invocation
+            );
         
-        sb.AppendLine("}");
+            fullDecl = decl.ToString();   
+        }
 
-        string code = sb.ToString();
-
-        return code;
+        return fullDecl;
     }
     
     internal static string WriteParameters(

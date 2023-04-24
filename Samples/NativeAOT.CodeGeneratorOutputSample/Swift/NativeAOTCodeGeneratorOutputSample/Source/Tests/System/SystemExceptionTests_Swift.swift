@@ -21,7 +21,7 @@ final class SystemExceptionTests_Swift: XCTestCase {
             return
         }
         
-        guard let retrievedExceptionMessage = (try? createdException.message_get())?.string() else {
+        guard let retrievedExceptionMessage = (try? createdException.message)?.string() else {
             XCTFail("System.Exception.Message getter should not throw and return an instance of a C string")
             
             return

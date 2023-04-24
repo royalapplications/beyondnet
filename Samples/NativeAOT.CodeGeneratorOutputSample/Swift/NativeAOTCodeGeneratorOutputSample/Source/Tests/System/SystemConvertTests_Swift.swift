@@ -74,7 +74,7 @@ final class SystemConvertTests_Swift: XCTestCase {
         let text = "Hello World!"
         let textDN = text.dotNETString()
         
-        guard let utf8Encoding = try? System_Text_Encoding.uTF8_get() else {
+        guard let utf8Encoding = try? System_Text_Encoding.uTF8 else {
             XCTFail("System.Text.Encoding.UTF8 getter should not throw and return an instance")
             
             return

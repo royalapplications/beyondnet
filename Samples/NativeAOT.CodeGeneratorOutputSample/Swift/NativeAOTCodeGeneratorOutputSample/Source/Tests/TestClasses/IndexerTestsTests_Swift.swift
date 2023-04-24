@@ -30,15 +30,15 @@ final class IndexerTestsTests_Swift: XCTestCase {
 			return
 		}
 		
-		guard let arrayRet = try? indexerTests.item_get(aStringDN,
-														aNumber,
-														aGuid) else {
+        guard let arrayRet = try? indexerTests.item(aStringDN,
+                                                    aNumber,
+                                                    aGuid) else {
 			XCTFail("IndexerTests[] should not throw and return an instance")
 			
 			return
 		}
 		
-		let arrayLength = (try? arrayRet.length_get()) ?? -1
+		let arrayLength = (try? arrayRet.length) ?? -1
 		XCTAssertEqual(3, arrayLength)
 		
 		guard let item1RetAsString = try? arrayRet.getValue(0 as Int32)?.castAs(System_String.self)?.string() else {
@@ -104,13 +104,13 @@ final class IndexerTestsTests_Swift: XCTestCase {
 												   aGuid,
 												   array.castTo()))
 		
-		guard let arrayRet = try? indexerTests.storedValue_get() else {
+		guard let arrayRet = try? indexerTests.storedValue else {
 			XCTFail("IndexerTests.StoredValue getter should not throw and return an instance")
 			
 			return
 		}
 		
-		let arrayLength = (try? arrayRet.length_get()) ?? -1
+		let arrayLength = (try? arrayRet.length) ?? -1
 		XCTAssertEqual(3, arrayLength)
 		
 		guard let item1RetAsString = try? arrayRet.getValue(0 as Int32)?.castTo(System_String.self).string() else {
@@ -121,7 +121,7 @@ final class IndexerTestsTests_Swift: XCTestCase {
 		
 		XCTAssertEqual(aString, item1RetAsString)
 		
-		guard let storedString = try? indexerTests.storedString_get()?.string() else {
+		guard let storedString = try? indexerTests.storedString?.string() else {
 			XCTFail("IndexerTests.StoredString getter should not throw and return an instance")
 			
 			return
@@ -137,7 +137,7 @@ final class IndexerTestsTests_Swift: XCTestCase {
 		
 		XCTAssertEqual(aNumber, item2RetAsInt32)
 		
-		let storedNumber = (try? indexerTests.storedNumber_get()) ?? -1
+		let storedNumber = (try? indexerTests.storedNumber) ?? -1
 		XCTAssertEqual(aNumber, storedNumber)
 		
 		guard let item3Ret = try? arrayRet.getValue(2 as Int32)?.castTo(System_Guid.self) else {
@@ -149,7 +149,7 @@ final class IndexerTestsTests_Swift: XCTestCase {
 		let guidEqual = aGuid == item3Ret
 		XCTAssertTrue(guidEqual)
 		
-		guard let storedGuid = try? indexerTests.storedGuid_get() else {
+		guard let storedGuid = try? indexerTests.storedGuid else {
 			XCTFail("IndexerTests.StoredGuid getter should not throw and return an instance")
 			
 			return

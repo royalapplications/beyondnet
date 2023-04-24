@@ -44,16 +44,16 @@ final class SystemVersionTests_Swift: XCTestCase {
         }
         
         do {
-            let majorRet = try version.major_get()
+            let majorRet = try version.major
             XCTAssertEqual(major, majorRet)
             
-            let minorRet = try version.minor_get()
+            let minorRet = try version.minor
             XCTAssertEqual(minor, minorRet)
             
-            let buildRet = try version.build_get()
+            let buildRet = try version.build
             XCTAssertEqual(build, buildRet)
             
-            let revisionRet = try version.revision_get()
+            let revisionRet = try version.revision
             XCTAssertEqual(revision, revisionRet)
         } catch {
             XCTFail("None of the System.Version accessors should throw")
@@ -86,16 +86,16 @@ final class SystemVersionTests_Swift: XCTestCase {
         }
         
         do {
-            let majorRet = try version.major_get()
+            let majorRet = try version.major
             XCTAssertEqual(major, majorRet)
             
-            let minorRet = try version.minor_get()
+            let minorRet = try version.minor
             XCTAssertEqual(minor, minorRet)
             
-            let buildRet = try version.build_get()
+            let buildRet = try version.build
             XCTAssertEqual(build, buildRet)
             
-            let revisionRet = try version.revision_get()
+            let revisionRet = try version.revision
             XCTAssertEqual(revision, revisionRet)
         } catch {
             XCTFail("None of the System.Version accessors should throw")
@@ -134,16 +134,16 @@ final class SystemVersionTests_Swift: XCTestCase {
         }
         
         do {
-            let majorRet = try version.major_get()
+            let majorRet = try version.major
             XCTAssertEqual(major, majorRet)
             
-            let minorRet = try version.minor_get()
+            let minorRet = try version.minor
             XCTAssertEqual(minor, minorRet)
             
-            let buildRet = try version.build_get()
+            let buildRet = try version.build
             XCTAssertEqual(build, buildRet)
             
-            let revisionRet = try version.revision_get()
+            let revisionRet = try version.revision
             XCTAssertEqual(revision, revisionRet)
         } catch {
             XCTFail("None of the System.Version accessors should throw")

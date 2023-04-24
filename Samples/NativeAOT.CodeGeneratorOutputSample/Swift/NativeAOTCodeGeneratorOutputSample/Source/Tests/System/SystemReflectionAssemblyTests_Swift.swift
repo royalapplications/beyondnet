@@ -25,7 +25,7 @@ final class SystemReflectionAssemblyTests_Swift: XCTestCase {
             return
         }
         
-        guard let assemblyNameString = try? assemblyName.name_get()?.string() else {
+        guard let assemblyNameString = try? assemblyName.name?.string() else {
             XCTFail("System.Reflection.AssemblyName.Name getter should not throw and return an instance of a C string")
             
             return

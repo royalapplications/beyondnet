@@ -13,7 +13,7 @@ final class SystemStringTests_Swift: XCTestCase {
     }
     
     func testString() {
-        guard let emptyStringDN = System_String.empty_get() else {
+        guard let emptyStringDN = System_String.empty else {
             XCTFail("System.String.Empty should return an empty string")
             
             return
@@ -60,7 +60,7 @@ final class SystemStringTests_Swift: XCTestCase {
             return
         }
         
-        guard (try? split.length_get()) ?? 0 == 2 else {
+        guard (try? split.length) ?? 0 == 2 else {
             XCTFail("System.Array.Length getter should not throw and return 2")
             
             return
@@ -141,7 +141,7 @@ final class SystemStringTests_Swift: XCTestCase {
             return
         }
         
-        let length = (try? split.length_get()) ?? -1
+        let length = (try? split.length) ?? -1
         
         XCTAssertEqual(cleanedComponents.count, .init(length))
         

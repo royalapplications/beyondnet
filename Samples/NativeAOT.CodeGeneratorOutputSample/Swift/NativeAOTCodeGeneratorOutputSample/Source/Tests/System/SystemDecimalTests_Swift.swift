@@ -134,7 +134,7 @@ final class SystemDecimalTests_Swift: XCTestCase {
     }
     
     func testDivisionByZero() {
-        guard let decimalZero = System_Decimal.zero_get() else {
+        guard let decimalZero = System_Decimal.zero else {
             XCTFail("System.Decimal.Zero getter should return an instance")
             
             return

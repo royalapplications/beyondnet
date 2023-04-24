@@ -50,7 +50,7 @@ final class SystemGuidTests_Swift: XCTestCase {
         let equals = guidType == guidTypeFromInstance
         XCTAssertTrue(equals)
         
-        guard let emptyGuid = System_Guid.empty_get() else {
+        guard let emptyGuid = System_Guid.empty else {
             XCTFail("System.Guid.Empty getter should return an instance")
             
             return
@@ -91,7 +91,7 @@ final class SystemGuidTests_Swift: XCTestCase {
     }
     
     func testInvalidSystemGuidParsing() {
-        guard let emptyGuid = System_Guid.empty_get() else {
+        guard let emptyGuid = System_Guid.empty else {
             XCTFail("Failed to get System.Guid.Empty")
             
             return

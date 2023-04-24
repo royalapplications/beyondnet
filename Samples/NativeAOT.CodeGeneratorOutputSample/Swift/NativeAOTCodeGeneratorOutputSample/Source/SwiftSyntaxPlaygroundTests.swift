@@ -23,7 +23,7 @@ final class SwiftSyntaxPlaygroundTests: XCTestCase {
 		
 		XCTAssertNoThrow(try listOfString.add(firstString))
 		
-		guard let firstStringRet = try? listOfString.item_get(0) else {
+		guard let firstStringRet = try? listOfString.item(0) else {
 			XCTFail()
 			
 			return

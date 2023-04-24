@@ -162,13 +162,13 @@ final class TestClassesTests_Swift: XCTestCase {
             return
         }
         
-        guard let originalBook = NativeAOT_CodeGeneratorInputSample_Book.donQuixote_get() else {
+        guard let originalBook = NativeAOT_CodeGeneratorInputSample_Book.donQuixote else {
             XCTFail("Failed to get book")
             
             return
         }
         
-        guard let targetBook = NativeAOT_CodeGeneratorInputSample_Book.theLordOfTheRings_get() else {
+        guard let targetBook = NativeAOT_CodeGeneratorInputSample_Book.theLordOfTheRings else {
             XCTFail("Failed to get book")
             
             return
@@ -193,7 +193,7 @@ final class TestClassesTests_Swift: XCTestCase {
 //            return
 //        }
 //
-//        guard let expectedBook = testClass.currentBook_get() else {
+//        guard let expectedBook = testClass.currentBook else {
 //            XCTFail("Failed to get book")
 //
 //            return

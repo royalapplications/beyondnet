@@ -13,7 +13,7 @@ final class SystemArrayTests_Swift: XCTestCase {
     }
     
     func testSystemArray() {
-        guard let now = try? System_DateTime.now_get() else {
+        guard let now = try? System_DateTime.now else {
             XCTFail("System.DateTime.Now should not throw and return an instance")
             
             return
@@ -50,7 +50,7 @@ final class SystemArrayTests_Swift: XCTestCase {
     }
 	
 	func testSystemArrayConvertedToIList() {
-		guard let now = try? System_DateTime.now_get() else {
+		guard let now = try? System_DateTime.now else {
 			XCTFail("System.DateTime.Now should not throw and return an instance")
 			
 			return
@@ -82,7 +82,7 @@ final class SystemArrayTests_Swift: XCTestCase {
 		XCTAssertNoThrow(try iList.item_set(index,
 											now))
 		
-		guard let retrievedNow = try? iList.item_get(index) else {
+		guard let retrievedNow = try? iList.item(index) else {
 			XCTFail("System.Collections.IList[] should not throw and return an instance")
 			
 			return
@@ -101,7 +101,7 @@ final class SystemArrayTests_Swift: XCTestCase {
             return
         }
 
-        let length = (try? emptyArrayOfString.length_get()) ?? -1
+        let length = (try? emptyArrayOfString.length) ?? -1
         XCTAssertEqual(0, .init(length))
 
         guard let arrayType = try? emptyArrayOfString.getType() else {
@@ -110,7 +110,7 @@ final class SystemArrayTests_Swift: XCTestCase {
             return
         }
 
-        let isArray = (try? arrayType.isArray_get()) ?? false
+        let isArray = (try? arrayType.isArray) ?? false
         XCTAssertTrue(isArray)
 
         guard let arrayElementType = try? arrayType.getElementType() else {
@@ -142,7 +142,7 @@ final class SystemArrayTests_Swift: XCTestCase {
                                                arrayOfString,
                                                stringDN))
 
-        let length = (try? arrayOfString.length_get()) ?? -1
+        let length = (try? arrayOfString.length) ?? -1
         XCTAssertEqual(numberOfElements, length)
 
         for idx in 0..<length {

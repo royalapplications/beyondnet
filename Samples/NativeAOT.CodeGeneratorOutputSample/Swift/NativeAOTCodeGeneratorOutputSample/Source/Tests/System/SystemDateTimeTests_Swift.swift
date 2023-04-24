@@ -41,11 +41,11 @@ final class SystemDateTimeTests_Swift: XCTestCase {
             return
         }
         
-        let year = (try? nowDotNet.year_get()) ?? -1
-        let month = (try? nowDotNet.month_get()) ?? -1
-        let day = (try? nowDotNet.day_get()) ?? -1
-        let hour = (try? nowDotNet.hour_get()) ?? -1
-        let minute = (try? nowDotNet.minute_get()) ?? -1
+        let year = (try? nowDotNet.year) ?? -1
+        let month = (try? nowDotNet.month) ?? -1
+        let day = (try? nowDotNet.day) ?? -1
+        let hour = (try? nowDotNet.hour) ?? -1
+        let minute = (try? nowDotNet.minute) ?? -1
         
         XCTAssertEqual(expectedYear, .init(year))
         XCTAssertEqual(expectedMonth, .init(month))
@@ -103,11 +103,11 @@ final class SystemDateTimeTests_Swift: XCTestCase {
             return
         }
         
-        let year = (try? nowDotNet.year_get()) ?? -1
-        let month = (try? nowDotNet.month_get()) ?? -1
-        let day = (try? nowDotNet.day_get()) ?? -1
-        let hour = (try? nowDotNet.hour_get()) ?? -1
-        let minute = (try? nowDotNet.minute_get()) ?? -1
+        let year = (try? nowDotNet.year) ?? -1
+        let month = (try? nowDotNet.month) ?? -1
+        let day = (try? nowDotNet.day) ?? -1
+        let hour = (try? nowDotNet.hour) ?? -1
+        let minute = (try? nowDotNet.minute) ?? -1
         
         XCTAssertEqual(expectedYear, .init(year))
         XCTAssertEqual(expectedMonth, .init(month))

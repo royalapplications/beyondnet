@@ -45,7 +45,7 @@ final class TypeConversionTests_Swift: XCTestCase {
         XCTAssertFalse(systemObject.is(systemGuidType))
         
         // MARK: - System.String
-        guard let systemString = System_String.empty_get() else {
+        guard let systemString = System_String.empty else {
             XCTFail("System.String.Empty getter should return an instance")
             
             return

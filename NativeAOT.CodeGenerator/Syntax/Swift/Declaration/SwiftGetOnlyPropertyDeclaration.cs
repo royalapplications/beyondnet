@@ -57,6 +57,9 @@ public struct SwiftGetOnlyPropertyDeclaration
         if (hasImplementation) {
             implementation = implementation?.IndentAllLines(1);
         }
+
+        const string openingBrace = "{";
+        const string closingBrace = "}";
         
         string[] signatureComponents = new[] {
             visibilityString,
@@ -64,22 +67,19 @@ public struct SwiftGetOnlyPropertyDeclaration
             typeAttachmentKindString,
             var,
             $"{Name}: {TypeName}",
-            "{",
+            openingBrace,
             get,
             throwsString,
             hasImplementation 
-                ? "{"
-                : "}"
+                ? openingBrace
+                : closingBrace
         };
 
         string signature = SwiftFuncSignatureComponents.ComponentsToString(signatureComponents);
         string decl = signature;
         
         if (hasImplementation) {
-            decl += newLine;
-            decl += implementation;
-            decl += newLine;
-            decl += "}}";
+            decl += $"{newLine}{implementation}{newLine}{closingBrace}{closingBrace}";
         }
         
         return decl;

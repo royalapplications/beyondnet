@@ -26,7 +26,7 @@ final class AddressTests_Swift: XCTestCase {
 			return
 		}
 		
-		guard let retrievedStreet = try? address.street_get()?.string() else {
+		guard let retrievedStreet = try? address.street?.string() else {
 			XCTFail("Address.Street getter should not throw and return an instance")
 			
 			return
@@ -42,7 +42,7 @@ final class AddressTests_Swift: XCTestCase {
 		
 		let expectedAddressTypeFullName = "NativeAOT.CodeGeneratorInputSample.Address"
 		
-		guard let actualAddressFullTypeName = try? addressType.fullName_get()?.string() else {
+		guard let actualAddressFullTypeName = try? addressType.fullName?.string() else {
 			XCTFail("System.Type.FullName getter should not throw and return an instance")
 			
 			return
@@ -96,7 +96,7 @@ final class AddressTests_Swift: XCTestCase {
 			return
 		}
 		
-		guard let retrievedNewStreet = try? newAddress.street_get()?.string() else {
+		guard let retrievedNewStreet = try? newAddress.street?.string() else {
 			XCTFail("Address.Street getter should not throw and return an instance")
 			
 			return
@@ -104,7 +104,7 @@ final class AddressTests_Swift: XCTestCase {
 		
 		XCTAssertEqual(newStreet, retrievedNewStreet)
 
-		guard let retrievedNewCity = try? newAddress.city_get()?.string() else {
+		guard let retrievedNewCity = try? newAddress.city?.string() else {
 			XCTFail("Address.City getter should not throw and return an instance")
 
 			return

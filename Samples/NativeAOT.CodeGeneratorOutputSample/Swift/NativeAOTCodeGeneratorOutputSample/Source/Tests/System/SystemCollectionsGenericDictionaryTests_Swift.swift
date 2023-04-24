@@ -29,7 +29,7 @@ final class SystemCollectionsGenericDictionaryTests_Swift: XCTestCase {
             return
         }
         
-        guard let dictionaryTypeName = try? dictionaryType.fullName_get()?.string() else {
+        guard let dictionaryTypeName = try? dictionaryType.fullName?.string() else {
             XCTFail("System.Type.FullName getter should not throw and return an instance")
             
             return
@@ -68,7 +68,7 @@ final class SystemCollectionsGenericDictionaryTests_Swift: XCTestCase {
             return
         }
         
-        guard let emptyString = System_String.empty_get() else {
+        guard let emptyString = System_String.empty else {
             XCTFail("System.String.Empty should return an instance")
             
             return
@@ -86,9 +86,9 @@ final class SystemCollectionsGenericDictionaryTests_Swift: XCTestCase {
             return
         }
 		
-		guard let valueRet = try? dictionary.item_get(systemStringType,
-													  systemExceptionType,
-													  exceptionMessageDN) else {
+        guard let valueRet = try? dictionary.item(systemStringType,
+                                                  systemExceptionType,
+                                                  exceptionMessageDN) else {
 			XCTFail("System.Collections.Generic.Dictionary<System.String, System.Exception>[] should not throw and return an instance")
 
 			return

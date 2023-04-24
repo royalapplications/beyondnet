@@ -26,10 +26,10 @@ final class PersonTests_Swift: XCTestCase {
         let expectedFullName = "\(firstName) \(lastName)"
         let expectedWelcomeMessage = "Welcome, \(expectedFullName)! You're \(age) years old and \(expectedNiceLevelString)."
         
-        let ageWhenBorn = NativeAOT_CodeGeneratorInputSample_Person.aGE_WHEN_BORN_get()
+        let ageWhenBorn = NativeAOT_CodeGeneratorInputSample_Person.aGE_WHEN_BORN
         XCTAssertEqual(0, ageWhenBorn)
         
-        let defaultAge = NativeAOT_CodeGeneratorInputSample_Person.dEFAULT_AGE_get()
+        let defaultAge = NativeAOT_CodeGeneratorInputSample_Person.dEFAULT_AGE
         XCTAssertEqual(ageWhenBorn, defaultAge)
         
         guard let person = try? NativeAOT_CodeGeneratorInputSample_Person(firstNameDN,
@@ -39,7 +39,7 @@ final class PersonTests_Swift: XCTestCase {
             return
         }
         
-        guard let personAge = try? person.age_get() else {
+        guard let personAge = try? person.age else {
             XCTFail("Person.Age getter should not throw")
             
             return
@@ -49,7 +49,7 @@ final class PersonTests_Swift: XCTestCase {
         
         XCTAssertNoThrow(try person.niceLevel_set(expectedNiceLevel))
         
-        guard let retrievedNiceLevel = try? person.niceLevel_get() else {
+        guard let retrievedNiceLevel = try? person.niceLevel else {
             XCTFail("Person.NiceLevel getter should not throw")
             
             return
@@ -57,7 +57,7 @@ final class PersonTests_Swift: XCTestCase {
         
         XCTAssertEqual(expectedNiceLevel, retrievedNiceLevel)
         
-        guard let retrievedFirstName = try? person.firstName_get()?.string() else {
+        guard let retrievedFirstName = try? person.firstName?.string() else {
             XCTFail("Person.FirstName getter should not throw and return an instance")
             
             return
@@ -65,7 +65,7 @@ final class PersonTests_Swift: XCTestCase {
         
         XCTAssertEqual(firstName, retrievedFirstName)
         
-        guard let retrievedLastName = try? person.lastName_get()?.string() else {
+        guard let retrievedLastName = try? person.lastName?.string() else {
             XCTFail("Person.LastName getter should not throw and return an instance")
             
             return
@@ -73,7 +73,7 @@ final class PersonTests_Swift: XCTestCase {
         
         XCTAssertEqual(lastName, retrievedLastName)
         
-        guard let retrievedFullName = try? person.fullName_get()?.string() else {
+        guard let retrievedFullName = try? person.fullName?.string() else {
             XCTFail("Person.FullName getter should not throw and return an instance")
             
             return
@@ -81,7 +81,7 @@ final class PersonTests_Swift: XCTestCase {
         
         XCTAssertEqual(expectedFullName, retrievedFullName)
         
-        guard let retrievedAge = try? person.age_get() else {
+        guard let retrievedAge = try? person.age else {
             XCTFail("Person.Age getter should not throw")
             
             return
@@ -106,7 +106,7 @@ final class PersonTests_Swift: XCTestCase {
         
         XCTAssertNoThrow(try person.firstName_set(newFirstNameDN))
         
-        guard let newFullName = try? person.fullName_get()?.string() else {
+        guard let newFullName = try? person.fullName?.string() else {
             XCTFail("Person.FullName getter should not throw and return an instance")
             
             return
@@ -114,7 +114,7 @@ final class PersonTests_Swift: XCTestCase {
         
         XCTAssertEqual(expectedNewFullName, newFullName)
         
-        guard let numberOfChildren = try? person.numberOfChildren_get() else {
+        guard let numberOfChildren = try? person.numberOfChildren else {
             XCTFail("Person.NumberOfChildren getter should not throw")
             
             return
@@ -146,7 +146,7 @@ final class PersonTests_Swift: XCTestCase {
         
         XCTAssertNoThrow(try mother.addChild(son))
         
-        guard let numberOfChildren = try? mother.numberOfChildren_get() else {
+        guard let numberOfChildren = try? mother.numberOfChildren else {
             XCTFail("Person.NumberOfChildren should not throw")
             
             return
@@ -199,7 +199,7 @@ final class PersonTests_Swift: XCTestCase {
         
         XCTAssertNoThrow(try mother.addChild(son))
         
-        guard let numberOfChildren = try? mother.numberOfChildren_get() else {
+        guard let numberOfChildren = try? mother.numberOfChildren else {
             XCTFail("Person.NumberOfChildren should not throw")
             
             return
@@ -207,13 +207,13 @@ final class PersonTests_Swift: XCTestCase {
         
         XCTAssertEqual(1, numberOfChildren)
         
-        guard let children = try? mother.children_get() else {
+        guard let children = try? mother.children else {
             XCTFail("Person.ChildrenAsArray should not throw and return an instance")
             
             return
         }
         
-        guard let childrenLength = try? children.length_get() else {
+        guard let childrenLength = try? children.length else {
             XCTFail("System.Array.GetLength should not throw")
             
             return
@@ -251,7 +251,7 @@ final class PersonTests_Swift: XCTestCase {
         
         let expectedAge = initialAge + increaseAgeByYears
         
-        guard let age = try? baby.age_get() else {
+        guard let age = try? baby.age else {
             XCTFail("Person.Age getter should not throw")
             
             return
@@ -311,7 +311,7 @@ final class PersonTests_Swift: XCTestCase {
             return
         }
 
-		let ageAfterCreation = (try? person.age_get()) ?? -1
+		let ageAfterCreation = (try? person.age) ?? -1
         XCTAssertEqual(initialAge, ageAfterCreation)
 
 		guard let newAgeProviderDelegate = NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate({
@@ -324,7 +324,7 @@ final class PersonTests_Swift: XCTestCase {
 
 		XCTAssertNoThrow(try person.changeAge(newAgeProviderDelegate))
 
-		let age = (try? person.age_get()) ?? -1
+		let age = (try? person.age) ?? -1
         XCTAssertEqual(10, age)
     }
     
@@ -355,13 +355,13 @@ final class PersonTests_Swift: XCTestCase {
         
         XCTAssertNoThrow(try person.address_set(address))
         
-        guard let retrievedAddress = try? person.address_get() else {
+        guard let retrievedAddress = try? person.address else {
             XCTFail("Person.Address getter should return an instance and not throw")
             
             return
         }
         
-        guard let retrievedStreet = try? retrievedAddress.street_get()?.string() else {
+        guard let retrievedStreet = try? retrievedAddress.street?.string() else {
             XCTFail("Address.Street getter should return an instance and not throw")
             
             return
@@ -369,7 +369,7 @@ final class PersonTests_Swift: XCTestCase {
         
         XCTAssertEqual(street, retrievedStreet)
         
-        guard let retrievedCity = try? retrievedAddress.city_get()?.string() else {
+        guard let retrievedCity = try? retrievedAddress.city?.string() else {
             XCTFail("Address.City getter should return an instance and not throw")
             
             return
@@ -424,7 +424,7 @@ final class PersonTests_Swift: XCTestCase {
 		
 		XCTAssertNoThrow(try mother.addChild(daugther))
 
-		let numberOfChildren = (try? mother.numberOfChildren_get()) ?? -1
+		let numberOfChildren = (try? mother.numberOfChildren) ?? -1
 
         let expectedNumberOfChildren: Int32 = 2
 
@@ -440,7 +440,7 @@ final class PersonTests_Swift: XCTestCase {
 		XCTAssertNoThrow(try mother.removeChildAt(0))
         XCTAssertEqual(3, numberOfTimesNumberOfChildrenChangedWasCalled)
 
-		let numberOfChildrenAfterRemoval = (try? mother.numberOfChildren_get()) ?? -1
+		let numberOfChildrenAfterRemoval = (try? mother.numberOfChildren) ?? -1
         let expectedNumberOfChildrenAfterRemoval: Int32 = 0
         XCTAssertEqual(expectedNumberOfChildrenAfterRemoval, numberOfChildrenAfterRemoval)
     }
@@ -469,13 +469,13 @@ final class PersonTests_Swift: XCTestCase {
         
         XCTAssertNoThrow(try mother.addChild(son))
         
-        guard let originalChildren = try? mother.children_get() else {
+        guard let originalChildren = try? mother.children else {
             XCTFail("Person.Children getter should not throw and return an instance")
             
             return
         }
         
-        guard let numberOfChildrenBeforeDaugther = try? originalChildren.length_get() else {
+        guard let numberOfChildrenBeforeDaugther = try? originalChildren.length else {
             XCTFail("System.Array.Length getter should not throw")
             
             return
@@ -508,7 +508,7 @@ final class PersonTests_Swift: XCTestCase {
         
         XCTAssertNoThrow(try mother.children_set(newChildren))
         
-        guard let numberOfChildrenAfterDaugther = try? mother.numberOfChildren_get() else {
+        guard let numberOfChildrenAfterDaugther = try? mother.numberOfChildren else {
             XCTFail("Person.NumberOfChildren getter should not throw")
             
             return

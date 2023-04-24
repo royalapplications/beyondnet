@@ -28,7 +28,7 @@ final class GenericTestClassTests_Swift: XCTestCase {
 			return
 		}
 		
-		guard let genericTestClassTypeName = try? genericTestClassType.fullName_get()?.string() else {
+		guard let genericTestClassTypeName = try? genericTestClassType.fullName?.string() else {
 			XCTFail("System.Type.FullName getter should not throw and return an instance")
 			
 			return
@@ -49,7 +49,7 @@ final class GenericTestClassTests_Swift: XCTestCase {
 		
 		XCTAssertNoThrow(try genericTestClass.aProperty_set(systemStringType, value))
 		
-		guard let propValueRet = try? genericTestClass.aProperty_get(systemStringType) else {
+		guard let propValueRet = try? genericTestClass.aProperty(systemStringType) else {
 			XCTFail("Should not throw and return an instance")
 			
 			return
@@ -59,7 +59,7 @@ final class GenericTestClassTests_Swift: XCTestCase {
 		
 		genericTestClass.aField_set(systemStringType, value)
 		
-		let fieldValueRet = genericTestClass.aField_get(systemStringType)
+		let fieldValueRet = genericTestClass.aField(systemStringType)
 		XCTAssertEqual(value, fieldValueRet)
 		
 		let systemArrayType = System_Array.typeOf()
@@ -71,7 +71,7 @@ final class GenericTestClassTests_Swift: XCTestCase {
 			return
 		}
 		
-		let genericArgumentAndMethodTypeLength = (try? genericArgumentAndMethodType.length_get()) ?? -1
+		let genericArgumentAndMethodTypeLength = (try? genericArgumentAndMethodType.length) ?? -1
 		XCTAssertEqual(2, genericArgumentAndMethodTypeLength)
 		
 		guard let genericTypeArgument = try? genericArgumentAndMethodType.getValue(0 as Int32) else {
@@ -157,7 +157,7 @@ final class GenericTestClassTests_Swift: XCTestCase {
 			return
 		}
 		
-		guard let genericTestClassTypeName = try? genericTestClassType.fullName_get()?.string() else {
+		guard let genericTestClassTypeName = try? genericTestClassType.fullName?.string() else {
 			XCTFail("System.Type.FullName getter should not throw and return an instance")
 			
 			return
@@ -173,7 +173,7 @@ final class GenericTestClassTests_Swift: XCTestCase {
 			return
 		}
 		
-		let numberOfGenericArguments = (try? genericArgumentTypes.length_get()) ?? -1
+		let numberOfGenericArguments = (try? genericArgumentTypes.length) ?? -1
 		XCTAssertEqual(2, numberOfGenericArguments)
 		
 		guard let firstGenericArgument = try? genericArgumentTypes.getValue(0 as Int32) else {
@@ -201,8 +201,8 @@ final class GenericTestClassTests_Swift: XCTestCase {
 															value))
 		
 		do {
-			let propValueRet = try genericTestClass.aProperty_get(systemStringType,
-																  systemExceptionType)
+			let propValueRet = try genericTestClass.aProperty(systemStringType,
+                                                              systemExceptionType)
 			
 			XCTAssertEqual(value, propValueRet)
 		} catch {
@@ -215,8 +215,8 @@ final class GenericTestClassTests_Swift: XCTestCase {
 									systemExceptionType,
 									value)
 		
-		let fieldValueRet = genericTestClass.aField_get(systemStringType,
-														systemExceptionType)
+        let fieldValueRet = genericTestClass.aField(systemStringType,
+                                                    systemExceptionType)
 		
 		XCTAssertEqual(value, fieldValueRet)
 		
@@ -230,7 +230,7 @@ final class GenericTestClassTests_Swift: XCTestCase {
 			return
 		}
 		
-		let genericArgumentsAndMethodTypeLength = (try? genericArgumentsAndMethodType.length_get()) ?? -1
+		let genericArgumentsAndMethodTypeLength = (try? genericArgumentsAndMethodType.length) ?? -1
 		XCTAssertEqual(3, genericArgumentsAndMethodTypeLength)
 		
 		guard let firstGenericTypeArgument = try? genericArgumentsAndMethodType.getValue(0 as Int32) else {

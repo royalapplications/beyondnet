@@ -29,12 +29,12 @@ public class System_Collections_Generic_List<T>: System_Collections_Generic_List
 		try super.remove(__typeOfT, item?.castTo())
 	}
 	
-	public func count_get() throws -> Int32 /* System.Int32 */ {
-		try super.count_get(__typeOfT)
+	public func count() throws -> Int32 /* System.Int32 */ {
+		try super.count(__typeOfT)
 	}
 	
-	public func item_get(_ index: Int32 /* System.Int32 */) throws -> T? /* System.Object */ {
-		try super.item_get(__typeOfT, index)?.castTo()
+	public func item(_ index: Int32 /* System.Int32 */) throws -> T? /* System.Object */ {
+		try super.item(__typeOfT, index)?.castTo()
 	}
 	
 	public func item_set(_ index: Int32 /* System.Int32 */, _ value: T? /* System.Object */) throws {

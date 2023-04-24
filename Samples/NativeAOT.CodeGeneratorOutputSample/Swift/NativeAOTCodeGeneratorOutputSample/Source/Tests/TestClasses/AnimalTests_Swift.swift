@@ -13,7 +13,7 @@ final class AnimalTests_Swift: XCTestCase {
 	}
 	
 	func testDog() {
-		guard let dogNameDN = NativeAOT_CodeGeneratorInputSample_Dog.dogName_get() else {
+		guard let dogNameDN = NativeAOT_CodeGeneratorInputSample_Dog.dogName else {
 			XCTFail("Dog.DogName should return an instance")
 			
 			return
@@ -27,7 +27,7 @@ final class AnimalTests_Swift: XCTestCase {
 			return
 		}
 		
-		guard let retrievedDogName = try? dog.name_get()?.string() else {
+		guard let retrievedDogName = try? dog.name?.string() else {
 			XCTFail("Dog.Name getter should not throw and return an instance")
 			
 			return
@@ -50,7 +50,7 @@ final class AnimalTests_Swift: XCTestCase {
 	}
 	
 	func testCat() {
-		guard let catNameDN = NativeAOT_CodeGeneratorInputSample_Cat.catName_get() else {
+		guard let catNameDN = NativeAOT_CodeGeneratorInputSample_Cat.catName else {
 			XCTFail("Cat.CatName should return an instance of a string")
 			
 			return
@@ -64,7 +64,7 @@ final class AnimalTests_Swift: XCTestCase {
 			return
 		}
 		
-		guard let retrievedCatName = try? cat.name_get()?.string() else {
+		guard let retrievedCatName = try? cat.name?.string() else {
 			XCTFail("Cat.Name getter should not throw and return an instance of a string")
 			
 			return
@@ -120,7 +120,7 @@ final class AnimalTests_Swift: XCTestCase {
 			return
 		}
 
-		guard let retrievedAnimalName = try? horse.name_get()?.string() else {
+		guard let retrievedAnimalName = try? horse.name?.string() else {
 			XCTFail()
 
 			return
@@ -130,7 +130,7 @@ final class AnimalTests_Swift: XCTestCase {
 	}
 	
 	func testGettingDefaultAnimalCreator() {
-		guard let defaultCreator = NativeAOT_CodeGeneratorInputSample_AnimalFactory.dEFAULT_CREATOR_get() else {
+		guard let defaultCreator = NativeAOT_CodeGeneratorInputSample_AnimalFactory.dEFAULT_CREATOR else {
 			XCTFail("AnimalFactory.DEFAULT_CREATOR should not return nil")
 
 			return
@@ -145,7 +145,7 @@ final class AnimalTests_Swift: XCTestCase {
 			return
 		}
 
-		guard let dogNameRet = try? dog.name_get()?.string() else {
+		guard let dogNameRet = try? dog.name?.string() else {
 			XCTFail("IAnimal.Name should not throw and return an instance")
 
 			return
@@ -163,7 +163,7 @@ final class AnimalTests_Swift: XCTestCase {
 			return
 		}
 
-		guard let catNameRet = try? cat.name_get()?.string() else {
+		guard let catNameRet = try? cat.name?.string() else {
 			XCTFail("IAnimal.Name should not throw and return an instance")
 
 			return

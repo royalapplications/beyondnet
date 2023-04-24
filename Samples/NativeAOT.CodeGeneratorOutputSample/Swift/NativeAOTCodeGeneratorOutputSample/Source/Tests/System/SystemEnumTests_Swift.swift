@@ -21,7 +21,7 @@ final class SystemEnumTests_Swift: XCTestCase {
             return
         }
 
-        let namesCount = (try? enumNames.length_get()) ?? -1
+        let namesCount = (try? enumNames.length) ?? -1
         XCTAssertEqual(3, namesCount)
 
         var names = [String]()

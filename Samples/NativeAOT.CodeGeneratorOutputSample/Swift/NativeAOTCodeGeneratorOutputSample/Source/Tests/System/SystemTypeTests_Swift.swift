@@ -28,7 +28,7 @@ final class SystemTypeTests_Swift: XCTestCase {
             return
         }
         
-        guard let retrievedSystemObjectTypeName = (try? systemObjectType.fullName_get())?.string() else {
+        guard let retrievedSystemObjectTypeName = (try? systemObjectType.fullName)?.string() else {
             XCTFail("System.Type.FullName getter should not throw and return an instance")
             
             return

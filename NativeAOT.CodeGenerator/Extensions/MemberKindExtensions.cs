@@ -11,7 +11,7 @@ public static class MemberKindExtensions
     )
     {
         const string getterPrefix = "get_";
-        const string getterSuffix = "_get";
+        const string getterSuffix = "";
         
         const string setterPrefix = "set_";
         const string setterSuffix = "_set";

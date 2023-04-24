@@ -25,7 +25,7 @@ final class SystemTupleTests_Swift: XCTestCase {
             return
         }
 
-        guard let stringRetDN = try? tupleOfString.item1_get(systemStringType)?.castAs(System_String.self) else {
+        guard let stringRetDN = try? tupleOfString.item1(systemStringType)?.castAs(System_String.self) else {
             XCTFail("System.Tuple<System.String>.Item1 getter should not throw and return an instance")
 
             return
@@ -57,8 +57,8 @@ final class SystemTupleTests_Swift: XCTestCase {
             return
         }
 
-        guard let stringRetDN = try? tupleOfStringAndException.item1_get(systemStringType,
-                                                                         systemExceptionType)?.castAs(System_String.self) else {
+        guard let stringRetDN = try? tupleOfStringAndException.item1(systemStringType,
+                                                                     systemExceptionType)?.castAs(System_String.self) else {
             XCTFail("System.Tuple<System.String, System.Exception>.Item1 getter should not throw and return an instance")
 
             return
@@ -67,8 +67,8 @@ final class SystemTupleTests_Swift: XCTestCase {
         let stringRet = stringRetDN.string()
         XCTAssertEqual(string, stringRet)
         
-        guard let exceptionRet = try? tupleOfStringAndException.item2_get(systemStringType,
-                                                                          systemExceptionType)?.castAs(System_Exception.self) else {
+        guard let exceptionRet = try? tupleOfStringAndException.item2(systemStringType,
+                                                                      systemExceptionType)?.castAs(System_Exception.self) else {
             XCTFail("System.Tuple<System.String, System.Exception>.Item2 getter should not throw and return an instance")
 
             return

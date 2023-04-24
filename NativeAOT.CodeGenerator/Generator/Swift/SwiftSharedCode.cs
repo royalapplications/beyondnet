@@ -373,7 +373,7 @@ public class DNError: LocalizedError {
     
     public func stackTrace() -> String? {
         do {
-            return try String(dotNETString: exception.stackTrace_get())
+            return try String(dotNETString: exception.stackTrace)
         } catch {
             return nil
         }
@@ -381,7 +381,7 @@ public class DNError: LocalizedError {
     
     public var errorDescription: String? {
         do {
-            return try String(dotNETString: exception.message_get())
+            return try String(dotNETString: exception.message)
         } catch {
             return nil
         }

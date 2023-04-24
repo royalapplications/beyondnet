@@ -120,7 +120,7 @@ private extension PrimitivesBoxingTests_Swift {
             return
         }
         
-        guard let numberObjectTypeName = try? valueObjectType.fullName_get()?.string() else {
+        guard let numberObjectTypeName = try? valueObjectType.fullName?.string() else {
             XCTFail("System.Type.FullName getter should not throw and return an instance")
             
             return
