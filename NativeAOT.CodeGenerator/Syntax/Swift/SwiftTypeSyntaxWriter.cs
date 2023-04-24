@@ -141,7 +141,14 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
         bool isFlagsEnum = type.IsDefined(typeof(FlagsAttribute), false);
 
         if (isFlagsEnum) {
-            sb.AppendLine($"public struct {swiftEnumTypeName}: OptionSet {{");
+            SwiftStructDeclaration structDecl = new(
+                swiftEnumTypeName,
+                "OptionSet",
+                SwiftVisibilities.Public,
+                null
+            );
+            
+            sb.AppendLine($"{structDecl.ToString()} {{");
 
             sb.AppendLine($"\tpublic typealias RawValue = {underlyingSwiftTypeName}");
             sb.AppendLine("\tpublic let rawValue: RawValue");
@@ -151,7 +158,14 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
             sb.AppendLine("\t}");
             sb.AppendLine();
         } else {
-            sb.AppendLine($"public enum {swiftEnumTypeName}: {underlyingSwiftTypeName} {{");
+            SwiftEnumDeclaration enumDecl = new(
+                swiftEnumTypeName,
+                underlyingSwiftTypeName,
+                SwiftVisibilities.Public,
+                null
+            );
+            
+            sb.AppendLine($"{enumDecl.ToString()} {{");
         }
 
         string initUnwrap = isFlagsEnum 
