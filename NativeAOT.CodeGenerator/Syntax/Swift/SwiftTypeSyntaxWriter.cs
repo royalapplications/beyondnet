@@ -161,9 +161,17 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
             sb.AppendLine($"\t{rawValueTypeAliasDecl.ToString()}");
             sb.AppendLine($"\tpublic let rawValue: {rawValueTypeAliasVarName}");
             sb.AppendLine();
-            sb.AppendLine($"\tpublic init(rawValue: {rawValueTypeAliasVarName}) {{");
-            sb.AppendLine("\t\tself.rawValue = rawValue");
-            sb.AppendLine("\t}");
+            
+            SwiftInitDeclaration initRawValueDecl = new(
+                false,
+                false,
+                SwiftVisibilities.Public,
+                $"rawValue: {rawValueTypeAliasVarName}",
+                false,
+                $"self.rawValue = rawValue"
+            );
+            
+            sb.AppendLine(initRawValueDecl.ToString().IndentAllLines(1));
             sb.AppendLine();
         } else {
             SwiftEnumDeclaration enumDecl = new(
@@ -190,9 +198,19 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
         );
 
         sb.AppendLine(initDecl.ToString().IndentAllLines(1));
-
         sb.AppendLine();
-        sb.AppendLine($"\tvar cValue: {cEnumTypeName} {{ {cEnumTypeName}(rawValue: rawValue){initUnwrap} }}");
+
+        SwiftGetOnlyPropertyDeclaration cValuePropDecl = new(
+            "cValue",
+            SwiftVisibilities.None,
+            SwiftTypeAttachmentKinds.Instance,
+            false,
+            false,
+            cEnumTypeName,
+            $"{cEnumTypeName}(rawValue: rawValue){initUnwrap}"
+        );
+
+        sb.AppendLine(cValuePropDecl.ToString().IndentAllLines(1));
         sb.AppendLine();
         
         var caseNames = type.GetEnumNames();
@@ -373,7 +391,7 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
             
             if (syntaxWriter == null) {
                 if (Settings.EmitUnsupported) {
-                    sbMembers.AppendLine($"// TODO: Unsupported Member Type \"{memberType}\"");
+                    sbMembers.AppendLine(new SwiftSingleLineComment($"TODO: Unsupported Member Type \"{memberType}\"").ToString());
                 }
                     
                 continue;

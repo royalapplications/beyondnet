@@ -525,7 +525,9 @@ public enum System_TypeCode: Int32 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: System_TypeCode_t { System_TypeCode_t(rawValue: rawValue)! }
+	var cValue: System_TypeCode_t { get {
+		System_TypeCode_t(rawValue: rawValue)!
+	}}
 
 	case empty = 0
 	case object = 1
@@ -569,7 +571,9 @@ public struct System_Globalization_NumberStyles: OptionSet {
 		self.init(rawValue: cValue.rawValue)
 	}
 
-	var cValue: System_Globalization_NumberStyles_t { System_Globalization_NumberStyles_t(rawValue: rawValue) }
+	var cValue: System_Globalization_NumberStyles_t { get {
+		System_Globalization_NumberStyles_t(rawValue: rawValue)
+	}}
 
 	public static let none = System_Globalization_NumberStyles([])
 	public static let allowLeadingWhite = System_Globalization_NumberStyles(rawValue: 1)
@@ -612,7 +616,9 @@ public struct System_Globalization_CultureTypes: OptionSet {
 		self.init(rawValue: cValue.rawValue)
 	}
 
-	var cValue: System_Globalization_CultureTypes_t { System_Globalization_CultureTypes_t(rawValue: rawValue) }
+	var cValue: System_Globalization_CultureTypes_t { get {
+		System_Globalization_CultureTypes_t(rawValue: rawValue)
+	}}
 
 	public static let neutralCultures = System_Globalization_CultureTypes(rawValue: 1)
 	public static let specificCultures = System_Globalization_CultureTypes(rawValue: 2)
@@ -639,7 +645,9 @@ public enum System_MidpointRounding: Int32 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: System_MidpointRounding_t { System_MidpointRounding_t(rawValue: rawValue)! }
+	var cValue: System_MidpointRounding_t { get {
+		System_MidpointRounding_t(rawValue: rawValue)!
+	}}
 
 	case toEven = 0
 	case awayFromZero = 1
@@ -670,7 +678,9 @@ public struct System_Globalization_TimeSpanStyles: OptionSet {
 		self.init(rawValue: cValue.rawValue)
 	}
 
-	var cValue: System_Globalization_TimeSpanStyles_t { System_Globalization_TimeSpanStyles_t(rawValue: rawValue) }
+	var cValue: System_Globalization_TimeSpanStyles_t { get {
+		System_Globalization_TimeSpanStyles_t(rawValue: rawValue)
+	}}
 
 	public static let none = System_Globalization_TimeSpanStyles([])
 	public static let assumeNegative = System_Globalization_TimeSpanStyles(rawValue: 1)
@@ -691,7 +701,9 @@ public enum System_DateTimeKind: Int32 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: System_DateTimeKind_t { System_DateTimeKind_t(rawValue: rawValue)! }
+	var cValue: System_DateTimeKind_t { get {
+		System_DateTimeKind_t(rawValue: rawValue)!
+	}}
 
 	case unspecified = 0
 	case utc = 1
@@ -713,7 +725,9 @@ public enum System_DayOfWeek: Int32 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: System_DayOfWeek_t { System_DayOfWeek_t(rawValue: rawValue)! }
+	var cValue: System_DayOfWeek_t { get {
+		System_DayOfWeek_t(rawValue: rawValue)!
+	}}
 
 	case sunday = 0
 	case monday = 1
@@ -746,7 +760,9 @@ public struct System_Globalization_DateTimeStyles: OptionSet {
 		self.init(rawValue: cValue.rawValue)
 	}
 
-	var cValue: System_Globalization_DateTimeStyles_t { System_Globalization_DateTimeStyles_t(rawValue: rawValue) }
+	var cValue: System_Globalization_DateTimeStyles_t { get {
+		System_Globalization_DateTimeStyles_t(rawValue: rawValue)
+	}}
 
 	public static let none = System_Globalization_DateTimeStyles([])
 	public static let allowLeadingWhite = System_Globalization_DateTimeStyles(rawValue: 1)
@@ -775,7 +791,9 @@ public enum System_Globalization_CalendarAlgorithmType: Int32 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: System_Globalization_CalendarAlgorithmType_t { System_Globalization_CalendarAlgorithmType_t(rawValue: rawValue)! }
+	var cValue: System_Globalization_CalendarAlgorithmType_t { get {
+		System_Globalization_CalendarAlgorithmType_t(rawValue: rawValue)!
+	}}
 
 	case unknown = 0
 	case solarCalendar = 1
@@ -798,7 +816,9 @@ public enum System_Globalization_CalendarWeekRule: Int32 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: System_Globalization_CalendarWeekRule_t { System_Globalization_CalendarWeekRule_t(rawValue: rawValue)! }
+	var cValue: System_Globalization_CalendarWeekRule_t { get {
+		System_Globalization_CalendarWeekRule_t(rawValue: rawValue)!
+	}}
 
 	case firstDay = 0
 	case firstFullWeek = 1
@@ -827,7 +847,9 @@ public struct System_Runtime_Serialization_StreamingContextStates: OptionSet {
 		self.init(rawValue: cValue.rawValue)
 	}
 
-	var cValue: System_Runtime_Serialization_StreamingContextStates_t { System_Runtime_Serialization_StreamingContextStates_t(rawValue: rawValue) }
+	var cValue: System_Runtime_Serialization_StreamingContextStates_t { get {
+		System_Runtime_Serialization_StreamingContextStates_t(rawValue: rawValue)
+	}}
 
 	public static let crossProcess = System_Runtime_Serialization_StreamingContextStates(rawValue: 1)
 	public static let crossMachine = System_Runtime_Serialization_StreamingContextStates(rawValue: 2)
@@ -855,7 +877,9 @@ public enum System_Reflection_ProcessorArchitecture: Int32 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: System_Reflection_ProcessorArchitecture_t { System_Reflection_ProcessorArchitecture_t(rawValue: rawValue)! }
+	var cValue: System_Reflection_ProcessorArchitecture_t { get {
+		System_Reflection_ProcessorArchitecture_t(rawValue: rawValue)!
+	}}
 
 	case none = 0
 	case mSIL = 1
@@ -880,7 +904,9 @@ public enum System_Reflection_AssemblyContentType: Int32 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: System_Reflection_AssemblyContentType_t { System_Reflection_AssemblyContentType_t(rawValue: rawValue)! }
+	var cValue: System_Reflection_AssemblyContentType_t { get {
+		System_Reflection_AssemblyContentType_t(rawValue: rawValue)!
+	}}
 
 	case `default` = 0
 	case windowsRuntime = 1
@@ -908,7 +934,9 @@ public struct System_Reflection_AssemblyNameFlags: OptionSet {
 		self.init(rawValue: cValue.rawValue)
 	}
 
-	var cValue: System_Reflection_AssemblyNameFlags_t { System_Reflection_AssemblyNameFlags_t(rawValue: rawValue) }
+	var cValue: System_Reflection_AssemblyNameFlags_t { get {
+		System_Reflection_AssemblyNameFlags_t(rawValue: rawValue)
+	}}
 
 	public static let none = System_Reflection_AssemblyNameFlags([])
 	public static let publicKey = System_Reflection_AssemblyNameFlags(rawValue: 1)
@@ -932,7 +960,9 @@ public enum System_Configuration_Assemblies_AssemblyHashAlgorithm: Int32 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: System_Configuration_Assemblies_AssemblyHashAlgorithm_t { System_Configuration_Assemblies_AssemblyHashAlgorithm_t(rawValue: rawValue)! }
+	var cValue: System_Configuration_Assemblies_AssemblyHashAlgorithm_t { get {
+		System_Configuration_Assemblies_AssemblyHashAlgorithm_t(rawValue: rawValue)!
+	}}
 
 	case none = 0
 	case mD5 = 32771
@@ -957,7 +987,9 @@ public enum System_Configuration_Assemblies_AssemblyVersionCompatibility: Int32 
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: System_Configuration_Assemblies_AssemblyVersionCompatibility_t { System_Configuration_Assemblies_AssemblyVersionCompatibility_t(rawValue: rawValue)! }
+	var cValue: System_Configuration_Assemblies_AssemblyVersionCompatibility_t { get {
+		System_Configuration_Assemblies_AssemblyVersionCompatibility_t(rawValue: rawValue)!
+	}}
 
 	case sameMachine = 1
 	case sameProcess = 2
@@ -986,7 +1018,9 @@ public struct System_Reflection_ParameterAttributes: OptionSet {
 		self.init(rawValue: cValue.rawValue)
 	}
 
-	var cValue: System_Reflection_ParameterAttributes_t { System_Reflection_ParameterAttributes_t(rawValue: rawValue) }
+	var cValue: System_Reflection_ParameterAttributes_t { get {
+		System_Reflection_ParameterAttributes_t(rawValue: rawValue)
+	}}
 
 	public static let none = System_Reflection_ParameterAttributes([])
 	public static let `in` = System_Reflection_ParameterAttributes(rawValue: 1)
@@ -1023,7 +1057,9 @@ public struct System_Reflection_PortableExecutableKinds: OptionSet {
 		self.init(rawValue: cValue.rawValue)
 	}
 
-	var cValue: System_Reflection_PortableExecutableKinds_t { System_Reflection_PortableExecutableKinds_t(rawValue: rawValue) }
+	var cValue: System_Reflection_PortableExecutableKinds_t { get {
+		System_Reflection_PortableExecutableKinds_t(rawValue: rawValue)
+	}}
 
 	public static let notAPortableExecutableImage = System_Reflection_PortableExecutableKinds([])
 	public static let iLOnly = System_Reflection_PortableExecutableKinds(rawValue: 1)
@@ -1048,7 +1084,9 @@ public enum System_Reflection_ImageFileMachine: Int32 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: System_Reflection_ImageFileMachine_t { System_Reflection_ImageFileMachine_t(rawValue: rawValue)! }
+	var cValue: System_Reflection_ImageFileMachine_t { get {
+		System_Reflection_ImageFileMachine_t(rawValue: rawValue)!
+	}}
 
 	case i386 = 332
 	case aRM = 452
@@ -1078,7 +1116,9 @@ public struct System_Reflection_MemberTypes: OptionSet {
 		self.init(rawValue: cValue.rawValue)
 	}
 
-	var cValue: System_Reflection_MemberTypes_t { System_Reflection_MemberTypes_t(rawValue: rawValue) }
+	var cValue: System_Reflection_MemberTypes_t { get {
+		System_Reflection_MemberTypes_t(rawValue: rawValue)
+	}}
 
 	public static let constructor = System_Reflection_MemberTypes(rawValue: 1)
 	public static let event = System_Reflection_MemberTypes(rawValue: 2)
@@ -1113,7 +1153,9 @@ public struct System_Reflection_BindingFlags: OptionSet {
 		self.init(rawValue: cValue.rawValue)
 	}
 
-	var cValue: System_Reflection_BindingFlags_t { System_Reflection_BindingFlags_t(rawValue: rawValue) }
+	var cValue: System_Reflection_BindingFlags_t { get {
+		System_Reflection_BindingFlags_t(rawValue: rawValue)
+	}}
 
 	public static let `default` = System_Reflection_BindingFlags([])
 	public static let ignoreCase = System_Reflection_BindingFlags(rawValue: 1)
@@ -1160,7 +1202,9 @@ public struct System_Reflection_FieldAttributes: OptionSet {
 		self.init(rawValue: cValue.rawValue)
 	}
 
-	var cValue: System_Reflection_FieldAttributes_t { System_Reflection_FieldAttributes_t(rawValue: rawValue) }
+	var cValue: System_Reflection_FieldAttributes_t { get {
+		System_Reflection_FieldAttributes_t(rawValue: rawValue)
+	}}
 
 	public static let privateScope = System_Reflection_FieldAttributes([])
 	public static let `private` = System_Reflection_FieldAttributes(rawValue: 1)
@@ -1205,7 +1249,9 @@ public struct System_Reflection_PropertyAttributes: OptionSet {
 		self.init(rawValue: cValue.rawValue)
 	}
 
-	var cValue: System_Reflection_PropertyAttributes_t { System_Reflection_PropertyAttributes_t(rawValue: rawValue) }
+	var cValue: System_Reflection_PropertyAttributes_t { get {
+		System_Reflection_PropertyAttributes_t(rawValue: rawValue)
+	}}
 
 	public static let none = System_Reflection_PropertyAttributes([])
 	public static let specialName = System_Reflection_PropertyAttributes(rawValue: 512)
@@ -1239,7 +1285,9 @@ public struct System_Reflection_CallingConventions: OptionSet {
 		self.init(rawValue: cValue.rawValue)
 	}
 
-	var cValue: System_Reflection_CallingConventions_t { System_Reflection_CallingConventions_t(rawValue: rawValue) }
+	var cValue: System_Reflection_CallingConventions_t { get {
+		System_Reflection_CallingConventions_t(rawValue: rawValue)
+	}}
 
 	public static let standard = System_Reflection_CallingConventions(rawValue: 1)
 	public static let varArgs = System_Reflection_CallingConventions(rawValue: 2)
@@ -1270,7 +1318,9 @@ public struct System_Reflection_MethodAttributes: OptionSet {
 		self.init(rawValue: cValue.rawValue)
 	}
 
-	var cValue: System_Reflection_MethodAttributes_t { System_Reflection_MethodAttributes_t(rawValue: rawValue) }
+	var cValue: System_Reflection_MethodAttributes_t { get {
+		System_Reflection_MethodAttributes_t(rawValue: rawValue)
+	}}
 
 	public static let privateScope = System_Reflection_MethodAttributes([])
 	public static let reuseSlot = System_Reflection_MethodAttributes([])
@@ -1313,7 +1363,9 @@ public enum System_Reflection_MethodImplAttributes: Int32 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: System_Reflection_MethodImplAttributes_t { System_Reflection_MethodImplAttributes_t(rawValue: rawValue)! }
+	var cValue: System_Reflection_MethodImplAttributes_t { get {
+		System_Reflection_MethodImplAttributes_t(rawValue: rawValue)!
+	}}
 
 	case iL = 0
 	public static let managed = System_Reflection_MethodImplAttributes.iL
@@ -1356,7 +1408,9 @@ public struct System_Reflection_ExceptionHandlingClauseOptions: OptionSet {
 		self.init(rawValue: cValue.rawValue)
 	}
 
-	var cValue: System_Reflection_ExceptionHandlingClauseOptions_t { System_Reflection_ExceptionHandlingClauseOptions_t(rawValue: rawValue) }
+	var cValue: System_Reflection_ExceptionHandlingClauseOptions_t { get {
+		System_Reflection_ExceptionHandlingClauseOptions_t(rawValue: rawValue)
+	}}
 
 	public static let clause = System_Reflection_ExceptionHandlingClauseOptions([])
 	public static let filter = System_Reflection_ExceptionHandlingClauseOptions(rawValue: 1)
@@ -1379,7 +1433,9 @@ public enum System_Threading_Tasks_TaskStatus: Int32 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: System_Threading_Tasks_TaskStatus_t { System_Threading_Tasks_TaskStatus_t(rawValue: rawValue)! }
+	var cValue: System_Threading_Tasks_TaskStatus_t { get {
+		System_Threading_Tasks_TaskStatus_t(rawValue: rawValue)!
+	}}
 
 	case created = 0
 	case waitingForActivation = 1
@@ -1413,7 +1469,9 @@ public struct System_Threading_Tasks_TaskCreationOptions: OptionSet {
 		self.init(rawValue: cValue.rawValue)
 	}
 
-	var cValue: System_Threading_Tasks_TaskCreationOptions_t { System_Threading_Tasks_TaskCreationOptions_t(rawValue: rawValue) }
+	var cValue: System_Threading_Tasks_TaskCreationOptions_t { get {
+		System_Threading_Tasks_TaskCreationOptions_t(rawValue: rawValue)
+	}}
 
 	public static let none = System_Threading_Tasks_TaskCreationOptions([])
 	public static let preferFairness = System_Threading_Tasks_TaskCreationOptions(rawValue: 1)
@@ -1446,7 +1504,9 @@ public struct System_Threading_Tasks_TaskContinuationOptions: OptionSet {
 		self.init(rawValue: cValue.rawValue)
 	}
 
-	var cValue: System_Threading_Tasks_TaskContinuationOptions_t { System_Threading_Tasks_TaskContinuationOptions_t(rawValue: rawValue) }
+	var cValue: System_Threading_Tasks_TaskContinuationOptions_t { get {
+		System_Threading_Tasks_TaskContinuationOptions_t(rawValue: rawValue)
+	}}
 
 	public static let none = System_Threading_Tasks_TaskContinuationOptions([])
 	public static let preferFairness = System_Threading_Tasks_TaskContinuationOptions(rawValue: 1)
@@ -1480,7 +1540,9 @@ public enum System_Threading_Tasks_Sources_ValueTaskSourceStatus: Int32 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: System_Threading_Tasks_Sources_ValueTaskSourceStatus_t { System_Threading_Tasks_Sources_ValueTaskSourceStatus_t(rawValue: rawValue)! }
+	var cValue: System_Threading_Tasks_Sources_ValueTaskSourceStatus_t { get {
+		System_Threading_Tasks_Sources_ValueTaskSourceStatus_t(rawValue: rawValue)!
+	}}
 
 	case pending = 0
 	case succeeded = 1
@@ -1510,7 +1572,9 @@ public struct System_Threading_Tasks_Sources_ValueTaskSourceOnCompletedFlags: Op
 		self.init(rawValue: cValue.rawValue)
 	}
 
-	var cValue: System_Threading_Tasks_Sources_ValueTaskSourceOnCompletedFlags_t { System_Threading_Tasks_Sources_ValueTaskSourceOnCompletedFlags_t(rawValue: rawValue) }
+	var cValue: System_Threading_Tasks_Sources_ValueTaskSourceOnCompletedFlags_t { get {
+		System_Threading_Tasks_Sources_ValueTaskSourceOnCompletedFlags_t(rawValue: rawValue)
+	}}
 
 	public static let none = System_Threading_Tasks_Sources_ValueTaskSourceOnCompletedFlags([])
 	public static let useSchedulingContext = System_Threading_Tasks_Sources_ValueTaskSourceOnCompletedFlags(rawValue: 1)
@@ -1532,7 +1596,9 @@ public enum System_IO_SeekOrigin: Int32 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: System_IO_SeekOrigin_t { System_IO_SeekOrigin_t(rawValue: rawValue)! }
+	var cValue: System_IO_SeekOrigin_t { get {
+		System_IO_SeekOrigin_t(rawValue: rawValue)!
+	}}
 
 	case begin = 0
 	case current = 1
@@ -1561,7 +1627,9 @@ public struct System_IO_FileAccess: OptionSet {
 		self.init(rawValue: cValue.rawValue)
 	}
 
-	var cValue: System_IO_FileAccess_t { System_IO_FileAccess_t(rawValue: rawValue) }
+	var cValue: System_IO_FileAccess_t { get {
+		System_IO_FileAccess_t(rawValue: rawValue)
+	}}
 
 	public static let read = System_IO_FileAccess(rawValue: 1)
 	public static let write = System_IO_FileAccess(rawValue: 2)
@@ -1583,7 +1651,9 @@ public enum System_IO_FileMode: Int32 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: System_IO_FileMode_t { System_IO_FileMode_t(rawValue: rawValue)! }
+	var cValue: System_IO_FileMode_t { get {
+		System_IO_FileMode_t(rawValue: rawValue)!
+	}}
 
 	case createNew = 1
 	case create = 2
@@ -1615,7 +1685,9 @@ public struct System_IO_FileShare: OptionSet {
 		self.init(rawValue: cValue.rawValue)
 	}
 
-	var cValue: System_IO_FileShare_t { System_IO_FileShare_t(rawValue: rawValue) }
+	var cValue: System_IO_FileShare_t { get {
+		System_IO_FileShare_t(rawValue: rawValue)
+	}}
 
 	public static let none = System_IO_FileShare([])
 	public static let read = System_IO_FileShare(rawValue: 1)
@@ -1647,7 +1719,9 @@ public struct System_IO_FileOptions: OptionSet {
 		self.init(rawValue: cValue.rawValue)
 	}
 
-	var cValue: System_IO_FileOptions_t { System_IO_FileOptions_t(rawValue: rawValue) }
+	var cValue: System_IO_FileOptions_t { get {
+		System_IO_FileOptions_t(rawValue: rawValue)
+	}}
 
 	public static let none = System_IO_FileOptions([])
 	public static let encrypted = System_IO_FileOptions(rawValue: 16384)
@@ -1680,7 +1754,9 @@ public struct System_Reflection_EventAttributes: OptionSet {
 		self.init(rawValue: cValue.rawValue)
 	}
 
-	var cValue: System_Reflection_EventAttributes_t { System_Reflection_EventAttributes_t(rawValue: rawValue) }
+	var cValue: System_Reflection_EventAttributes_t { get {
+		System_Reflection_EventAttributes_t(rawValue: rawValue)
+	}}
 
 	public static let none = System_Reflection_EventAttributes([])
 	public static let specialName = System_Reflection_EventAttributes(rawValue: 512)
@@ -1710,7 +1786,9 @@ public struct System_Reflection_ResourceLocation: OptionSet {
 		self.init(rawValue: cValue.rawValue)
 	}
 
-	var cValue: System_Reflection_ResourceLocation_t { System_Reflection_ResourceLocation_t(rawValue: rawValue) }
+	var cValue: System_Reflection_ResourceLocation_t { get {
+		System_Reflection_ResourceLocation_t(rawValue: rawValue)
+	}}
 
 	public static let embedded = System_Reflection_ResourceLocation(rawValue: 1)
 	public static let containedInAnotherAssembly = System_Reflection_ResourceLocation(rawValue: 2)
@@ -1732,7 +1810,9 @@ public enum System_Security_SecurityRuleSet: UInt8 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: System_Security_SecurityRuleSet_t { System_Security_SecurityRuleSet_t(rawValue: rawValue)! }
+	var cValue: System_Security_SecurityRuleSet_t { get {
+		System_Security_SecurityRuleSet_t(rawValue: rawValue)!
+	}}
 
 	case none = 0
 	case level1 = 1
@@ -1754,7 +1834,9 @@ public enum System_Buffers_OperationStatus: Int32 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: System_Buffers_OperationStatus_t { System_Buffers_OperationStatus_t(rawValue: rawValue)! }
+	var cValue: System_Buffers_OperationStatus_t { get {
+		System_Buffers_OperationStatus_t(rawValue: rawValue)!
+	}}
 
 	case done = 0
 	case destinationTooSmall = 1
@@ -1777,7 +1859,9 @@ public enum System_Globalization_UnicodeCategory: Int32 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: System_Globalization_UnicodeCategory_t { System_Globalization_UnicodeCategory_t(rawValue: rawValue)! }
+	var cValue: System_Globalization_UnicodeCategory_t { get {
+		System_Globalization_UnicodeCategory_t(rawValue: rawValue)!
+	}}
 
 	case uppercaseLetter = 0
 	case lowercaseLetter = 1
@@ -1833,7 +1917,9 @@ public struct System_Globalization_CompareOptions: OptionSet {
 		self.init(rawValue: cValue.rawValue)
 	}
 
-	var cValue: System_Globalization_CompareOptions_t { System_Globalization_CompareOptions_t(rawValue: rawValue) }
+	var cValue: System_Globalization_CompareOptions_t { get {
+		System_Globalization_CompareOptions_t(rawValue: rawValue)
+	}}
 
 	public static let none = System_Globalization_CompareOptions([])
 	public static let ignoreCase = System_Globalization_CompareOptions(rawValue: 1)
@@ -1861,7 +1947,9 @@ public enum System_Globalization_DigitShapes: Int32 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: System_Globalization_DigitShapes_t { System_Globalization_DigitShapes_t(rawValue: rawValue)! }
+	var cValue: System_Globalization_DigitShapes_t { get {
+		System_Globalization_DigitShapes_t(rawValue: rawValue)!
+	}}
 
 	case context = 0
 	case none = 1
@@ -1883,7 +1971,9 @@ public enum System_StringComparison: Int32 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: System_StringComparison_t { System_StringComparison_t(rawValue: rawValue)! }
+	var cValue: System_StringComparison_t { get {
+		System_StringComparison_t(rawValue: rawValue)!
+	}}
 
 	case currentCulture = 0
 	case currentCultureIgnoreCase = 1
@@ -1908,7 +1998,9 @@ public enum System_Text_NormalizationForm: Int32 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: System_Text_NormalizationForm_t { System_Text_NormalizationForm_t(rawValue: rawValue)! }
+	var cValue: System_Text_NormalizationForm_t { get {
+		System_Text_NormalizationForm_t(rawValue: rawValue)!
+	}}
 
 	case formC = 1
 	case formD = 2
@@ -1938,7 +2030,9 @@ public struct System_StringSplitOptions: OptionSet {
 		self.init(rawValue: cValue.rawValue)
 	}
 
-	var cValue: System_StringSplitOptions_t { System_StringSplitOptions_t(rawValue: rawValue) }
+	var cValue: System_StringSplitOptions_t { get {
+		System_StringSplitOptions_t(rawValue: rawValue)
+	}}
 
 	public static let none = System_StringSplitOptions([])
 	public static let removeEmptyEntries = System_StringSplitOptions(rawValue: 1)
@@ -1967,7 +2061,9 @@ public struct System_Reflection_GenericParameterAttributes: OptionSet {
 		self.init(rawValue: cValue.rawValue)
 	}
 
-	var cValue: System_Reflection_GenericParameterAttributes_t { System_Reflection_GenericParameterAttributes_t(rawValue: rawValue) }
+	var cValue: System_Reflection_GenericParameterAttributes_t { get {
+		System_Reflection_GenericParameterAttributes_t(rawValue: rawValue)
+	}}
 
 	public static let none = System_Reflection_GenericParameterAttributes([])
 	public static let covariant = System_Reflection_GenericParameterAttributes(rawValue: 1)
@@ -2001,7 +2097,9 @@ public struct System_Reflection_TypeAttributes: OptionSet {
 		self.init(rawValue: cValue.rawValue)
 	}
 
-	var cValue: System_Reflection_TypeAttributes_t { System_Reflection_TypeAttributes_t(rawValue: rawValue) }
+	var cValue: System_Reflection_TypeAttributes_t { get {
+		System_Reflection_TypeAttributes_t(rawValue: rawValue)
+	}}
 
 	public static let notPublic = System_Reflection_TypeAttributes([])
 	public static let autoLayout = System_Reflection_TypeAttributes([])
@@ -2052,7 +2150,9 @@ public enum System_Runtime_InteropServices_LayoutKind: Int32 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: System_Runtime_InteropServices_LayoutKind_t { System_Runtime_InteropServices_LayoutKind_t(rawValue: rawValue)! }
+	var cValue: System_Runtime_InteropServices_LayoutKind_t { get {
+		System_Runtime_InteropServices_LayoutKind_t(rawValue: rawValue)!
+	}}
 
 	case sequential = 0
 	case explicit = 2
@@ -2074,7 +2174,9 @@ public enum System_Runtime_InteropServices_CharSet: Int32 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: System_Runtime_InteropServices_CharSet_t { System_Runtime_InteropServices_CharSet_t(rawValue: rawValue)! }
+	var cValue: System_Runtime_InteropServices_CharSet_t { get {
+		System_Runtime_InteropServices_CharSet_t(rawValue: rawValue)!
+	}}
 
 	case none = 1
 	case ansi = 2
@@ -2097,7 +2199,9 @@ public enum System_Runtime_InteropServices_CustomQueryInterfaceMode: Int32 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: System_Runtime_InteropServices_CustomQueryInterfaceMode_t { System_Runtime_InteropServices_CustomQueryInterfaceMode_t(rawValue: rawValue)! }
+	var cValue: System_Runtime_InteropServices_CustomQueryInterfaceMode_t { get {
+		System_Runtime_InteropServices_CustomQueryInterfaceMode_t(rawValue: rawValue)!
+	}}
 
 	case ignore = 0
 	case allow = 1
@@ -2118,7 +2222,9 @@ public enum System_GCKind: Int32 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: System_GCKind_t { System_GCKind_t(rawValue: rawValue)! }
+	var cValue: System_GCKind_t { get {
+		System_GCKind_t(rawValue: rawValue)!
+	}}
 
 	case any = 0
 	case ephemeral = 1
@@ -2141,7 +2247,9 @@ public enum System_GCCollectionMode: Int32 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: System_GCCollectionMode_t { System_GCCollectionMode_t(rawValue: rawValue)! }
+	var cValue: System_GCCollectionMode_t { get {
+		System_GCCollectionMode_t(rawValue: rawValue)!
+	}}
 
 	case `default` = 0
 	case forced = 1
@@ -2164,7 +2272,9 @@ public enum System_GCNotificationStatus: Int32 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: System_GCNotificationStatus_t { System_GCNotificationStatus_t(rawValue: rawValue)! }
+	var cValue: System_GCNotificationStatus_t { get {
+		System_GCNotificationStatus_t(rawValue: rawValue)!
+	}}
 
 	case succeeded = 0
 	case failed = 1
@@ -2195,7 +2305,9 @@ public struct System_Base64FormattingOptions: OptionSet {
 		self.init(rawValue: cValue.rawValue)
 	}
 
-	var cValue: System_Base64FormattingOptions_t { System_Base64FormattingOptions_t(rawValue: rawValue) }
+	var cValue: System_Base64FormattingOptions_t { get {
+		System_Base64FormattingOptions_t(rawValue: rawValue)
+	}}
 
 	public static let none = System_Base64FormattingOptions([])
 	public static let insertLineBreaks = System_Base64FormattingOptions(rawValue: 1)
@@ -2216,7 +2328,9 @@ public enum System_Threading_ThreadPriority: Int32 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: System_Threading_ThreadPriority_t { System_Threading_ThreadPriority_t(rawValue: rawValue)! }
+	var cValue: System_Threading_ThreadPriority_t { get {
+		System_Threading_ThreadPriority_t(rawValue: rawValue)!
+	}}
 
 	case lowest = 0
 	case belowNormal = 1
@@ -2247,7 +2361,9 @@ public struct System_Threading_ThreadState: OptionSet {
 		self.init(rawValue: cValue.rawValue)
 	}
 
-	var cValue: System_Threading_ThreadState_t { System_Threading_ThreadState_t(rawValue: rawValue) }
+	var cValue: System_Threading_ThreadState_t { get {
+		System_Threading_ThreadState_t(rawValue: rawValue)
+	}}
 
 	public static let running = System_Threading_ThreadState([])
 	public static let stopRequested = System_Threading_ThreadState(rawValue: 1)
@@ -2276,7 +2392,9 @@ public enum System_Threading_ApartmentState: Int32 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: System_Threading_ApartmentState_t { System_Threading_ApartmentState_t(rawValue: rawValue)! }
+	var cValue: System_Threading_ApartmentState_t { get {
+		System_Threading_ApartmentState_t(rawValue: rawValue)!
+	}}
 
 	case sTA = 0
 	case mTA = 1
@@ -2298,7 +2416,9 @@ public enum System_Security_Permissions_PermissionState: Int32 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: System_Security_Permissions_PermissionState_t { System_Security_Permissions_PermissionState_t(rawValue: rawValue)! }
+	var cValue: System_Security_Permissions_PermissionState_t { get {
+		System_Security_Permissions_PermissionState_t(rawValue: rawValue)!
+	}}
 
 	case none = 0
 	case unrestricted = 1
@@ -2319,7 +2439,9 @@ public enum System_Security_Principal_PrincipalPolicy: Int32 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: System_Security_Principal_PrincipalPolicy_t { System_Security_Principal_PrincipalPolicy_t(rawValue: rawValue)! }
+	var cValue: System_Security_Principal_PrincipalPolicy_t { get {
+		System_Security_Principal_PrincipalPolicy_t(rawValue: rawValue)!
+	}}
 
 	case unauthenticatedPrincipal = 0
 	case noPrincipal = 1
@@ -2348,7 +2470,9 @@ public struct System_IO_FileAttributes: OptionSet {
 		self.init(rawValue: cValue.rawValue)
 	}
 
-	var cValue: System_IO_FileAttributes_t { System_IO_FileAttributes_t(rawValue: rawValue) }
+	var cValue: System_IO_FileAttributes_t { get {
+		System_IO_FileAttributes_t(rawValue: rawValue)
+	}}
 
 	public static let readOnly = System_IO_FileAttributes(rawValue: 1)
 	public static let hidden = System_IO_FileAttributes(rawValue: 2)
@@ -2390,7 +2514,9 @@ public struct System_IO_UnixFileMode: OptionSet {
 		self.init(rawValue: cValue.rawValue)
 	}
 
-	var cValue: System_IO_UnixFileMode_t { System_IO_UnixFileMode_t(rawValue: rawValue) }
+	var cValue: System_IO_UnixFileMode_t { get {
+		System_IO_UnixFileMode_t(rawValue: rawValue)
+	}}
 
 	public static let none = System_IO_UnixFileMode([])
 	public static let otherExecute = System_IO_UnixFileMode(rawValue: 1)
@@ -2422,7 +2548,9 @@ public enum System_IO_SearchOption: Int32 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: System_IO_SearchOption_t { System_IO_SearchOption_t(rawValue: rawValue)! }
+	var cValue: System_IO_SearchOption_t { get {
+		System_IO_SearchOption_t(rawValue: rawValue)!
+	}}
 
 	case topDirectoryOnly = 0
 	case allDirectories = 1
@@ -2443,7 +2571,9 @@ public enum System_IO_MatchType: Int32 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: System_IO_MatchType_t { System_IO_MatchType_t(rawValue: rawValue)! }
+	var cValue: System_IO_MatchType_t { get {
+		System_IO_MatchType_t(rawValue: rawValue)!
+	}}
 
 	case simple = 0
 	case win32 = 1
@@ -2464,7 +2594,9 @@ public enum System_IO_MatchCasing: Int32 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: System_IO_MatchCasing_t { System_IO_MatchCasing_t(rawValue: rawValue)! }
+	var cValue: System_IO_MatchCasing_t { get {
+		System_IO_MatchCasing_t(rawValue: rawValue)!
+	}}
 
 	case platformDefault = 0
 	case caseSensitive = 1
@@ -2486,7 +2618,9 @@ public enum NativeAOT_CodeGeneratorInputSample_NiceLevels: UInt32 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: NativeAOT_CodeGeneratorInputSample_NiceLevels_t { NativeAOT_CodeGeneratorInputSample_NiceLevels_t(rawValue: rawValue)! }
+	var cValue: NativeAOT_CodeGeneratorInputSample_NiceLevels_t { get {
+		NativeAOT_CodeGeneratorInputSample_NiceLevels_t(rawValue: rawValue)!
+	}}
 
 	case notNice = 0
 	case littleBitNice = 1
@@ -2509,7 +2643,9 @@ public enum NativeAOT_CodeGeneratorInputSample_TestEnum: Int32 {
 		self.init(rawValue: cValue.rawValue)!
 	}
 
-	var cValue: NativeAOT_CodeGeneratorInputSample_TestEnum_t { NativeAOT_CodeGeneratorInputSample_TestEnum_t(rawValue: rawValue)! }
+	var cValue: NativeAOT_CodeGeneratorInputSample_TestEnum_t { get {
+		NativeAOT_CodeGeneratorInputSample_TestEnum_t(rawValue: rawValue)!
+	}}
 
 	case firstCase = 0
 	case secondCase = 1
