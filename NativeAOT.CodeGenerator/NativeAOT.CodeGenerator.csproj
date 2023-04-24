@@ -8,8 +8,5 @@
   </PropertyGroup>
 
   <!-- Project References -->
-  <ItemGroup>
-    <ProjectReference Include="..\NativeAOT.Core\NativeAOT.Core.csproj" />
-  </ItemGroup>
 
 </Project>

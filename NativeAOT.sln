@@ -1,15 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NativeAOT.Core", "NativeAOT.Core\NativeAOT.Core.csproj", "{48CEA4C9-5357-480C-AD47-FAB460C95F0A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NativeAOT.Bindings.System", "NativeAOT.Bindings.System\NativeAOT.Bindings.System.csproj", "{440E5555-7074-4374-9372-BBECF666760B}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{CF88563D-5990-4B38-B18C-4203D57465F9}"
 	ProjectSection(SolutionItems) = preProject
 		Samples\NativeAOTCodeGeneratorSampleConfig.json = Samples\NativeAOTCodeGeneratorSampleConfig.json
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NativeAOTSample", "Samples\NativeAOTSample\NativeAOTSample.csproj", "{859752E4-4834-4673-8735-2229711D4BB8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NativeAOT.CodeGenerator", "NativeAOT.CodeGenerator\NativeAOT.CodeGenerator.csproj", "{CA3E6F4C-C309-4512-968F-504132C39520}"
 EndProject
@@ -25,18 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{48CEA4C9-5357-480C-AD47-FAB460C95F0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{48CEA4C9-5357-480C-AD47-FAB460C95F0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{48CEA4C9-5357-480C-AD47-FAB460C95F0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{48CEA4C9-5357-480C-AD47-FAB460C95F0A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{440E5555-7074-4374-9372-BBECF666760B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{440E5555-7074-4374-9372-BBECF666760B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{440E5555-7074-4374-9372-BBECF666760B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{440E5555-7074-4374-9372-BBECF666760B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{859752E4-4834-4673-8735-2229711D4BB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{859752E4-4834-4673-8735-2229711D4BB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{859752E4-4834-4673-8735-2229711D4BB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{859752E4-4834-4673-8735-2229711D4BB8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CA3E6F4C-C309-4512-968F-504132C39520}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CA3E6F4C-C309-4512-968F-504132C39520}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA3E6F4C-C309-4512-968F-504132C39520}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -55,7 +37,6 @@ Global
 		{916C53D8-9ADB-4092-8DF7-6A7622D9916B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{859752E4-4834-4673-8735-2229711D4BB8} = {CF88563D-5990-4B38-B18C-4203D57465F9}
 		{5B858977-4D1C-49E2-A235-377FCC8B7176} = {CF88563D-5990-4B38-B18C-4203D57465F9}
 		{916C53D8-9ADB-4092-8DF7-6A7622D9916B} = {CF88563D-5990-4B38-B18C-4203D57465F9}
 	EndGlobalSection
