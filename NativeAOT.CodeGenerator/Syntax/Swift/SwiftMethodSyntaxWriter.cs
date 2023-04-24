@@ -371,6 +371,58 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         #endregion Func Signature
 
         #region Func Implementation
+        string funcImplCode = WriteMethodImplementation(
+            cSharpGeneratedMember,
+            cMember,
+            memberInfo,
+            memberKind,
+            cMethodName,
+            isGeneric,
+            isStaticMethod,
+            mayThrow,
+            declaringType,
+            returnOrSetterOrEventHandlerType,
+            returnOrSetterTypeDescriptor,
+            parameters,
+            genericTypeArguments,
+            genericMethodArguments,
+            syntaxWriterConfiguration,
+            typeDescriptorRegistry
+        );
+
+        string funcImpl = funcImplCode.IndentAllLines(1);
+
+        sb.AppendLine(funcImpl);
+        #endregion Func Implementation
+
+        #region Func End
+        sb.AppendLine("}");
+        #endregion Func End
+        
+        generatedName = methodNameSwift;
+        
+        return sb.ToString();
+    }
+    
+    private static string WriteMethodImplementation(
+        GeneratedMember cSharpGeneratedMember,
+        GeneratedMember cMember,
+        MemberInfo? memberInfo,
+        MemberKind memberKind,
+        string cMethodName,
+        bool isGeneric,
+        bool isStaticMethod,
+        bool mayThrow,
+        Type declaringType,
+        Type returnOrSetterOrEventHandlerType,
+        TypeDescriptor returnOrSetterTypeDescriptor,
+        IEnumerable<ParameterInfo> parameters,
+        IEnumerable<Type> genericTypeArguments,
+        IEnumerable<Type> genericMethodArguments,
+        ISyntaxWriterConfiguration? syntaxWriterConfiguration,
+        TypeDescriptorRegistry typeDescriptorRegistry
+    )
+    {
         StringBuilder sbImpl = new();
 
         bool needsRegularImpl = true;
@@ -552,20 +604,9 @@ if let __exceptionC {
             }
         }
 
-        string funcImpl = sbImpl
-            .ToString()
-            .IndentAllLines(1);
+        string funcImpl = sbImpl.ToString();
 
-        sb.AppendLine(funcImpl);
-        #endregion Func Implementation
-
-        #region Func End
-        sb.AppendLine("}");
-        #endregion Func End
-        
-        generatedName = methodNameSwift;
-        
-        return sb.ToString();
+        return funcImpl;
     }
 
     internal static string WriteExtensionMethod(
