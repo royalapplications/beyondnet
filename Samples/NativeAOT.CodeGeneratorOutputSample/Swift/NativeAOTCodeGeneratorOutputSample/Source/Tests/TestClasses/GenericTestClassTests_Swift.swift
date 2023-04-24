@@ -14,7 +14,7 @@ final class GenericTestClassTests_Swift: XCTestCase {
 	}
 	
 	func testWith1GenericArgument() {
-		let systemStringType = System_String.typeOf()
+		let systemStringType = System_String.typeOf
 		
 		guard let genericTestClass = try? NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1(systemStringType) else {
 			XCTFail("GenericTestClass<System.String>.GenericTestClass ctor should not throw and return an instance")
@@ -62,7 +62,7 @@ final class GenericTestClassTests_Swift: XCTestCase {
 		let fieldValueRet = genericTestClass.aField(systemStringType)
 		XCTAssertEqual(value, fieldValueRet)
 		
-		let systemArrayType = System_Array.typeOf()
+		let systemArrayType = System_Array.typeOf
 		
 		guard let genericArgumentAndMethodType = try? NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1.returnGenericClassTypeAndGenericMethodType(systemStringType,
 																																						systemArrayType) else {
@@ -92,8 +92,8 @@ final class GenericTestClassTests_Swift: XCTestCase {
 	}
 	
 	func testExtremeWith1GenericArgument() {
-		let systemStringType = System_String.typeOf()
-		let systemExceptionType = System_Exception.typeOf()
+		let systemStringType = System_String.typeOf
+		let systemExceptionType = System_Exception.typeOf
 		
 		guard let genericTestClass = try? NativeAOT_CodeGeneratorInputSample_GenericTestClass_A1(systemStringType) else {
 			XCTFail("GenericTestClass<System.String>.GenericTestClass ctor should not throw and return an instance")
@@ -141,8 +141,8 @@ final class GenericTestClassTests_Swift: XCTestCase {
 	}
 	
 	func testWith2GenericArguments() {
-		let systemStringType = System_String.typeOf()
-		let systemExceptionType = System_Exception.typeOf()
+		let systemStringType = System_String.typeOf
+		let systemExceptionType = System_Exception.typeOf
 		
 		guard let genericTestClass = try? NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2(systemStringType,
 																								 systemExceptionType) else {
@@ -220,7 +220,7 @@ final class GenericTestClassTests_Swift: XCTestCase {
 		
 		XCTAssertEqual(value, fieldValueRet)
 		
-		let systemArrayType = System_Array.typeOf()
+		let systemArrayType = System_Array.typeOf
 		
 		guard let genericArgumentsAndMethodType = try? NativeAOT_CodeGeneratorInputSample_GenericTestClass_A2.returnGenericClassTypeAndGenericMethodType(systemStringType,
 																																						 systemExceptionType,

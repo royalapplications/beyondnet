@@ -276,12 +276,12 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         #endregion Preparation
 
         #region Func Declaration
-        string? funcImpl;
+        string? memberImpl;
         
         if (onlyWriteSignatureForProtocol) {
-            funcImpl = null;
+            memberImpl = null;
         } else {
-            funcImpl = WriteMethodImplementation(
+            memberImpl = WriteMethodImplementation(
                 cSharpGeneratedMember,
                 cMember,
                 memberInfo,
@@ -325,7 +325,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                     : SwiftVisibilities.Public,
                 methodSignatureParameters,
                 mayThrow,
-                funcImpl
+                memberImpl
             );
 
             fullDecl = decl.ToString();
@@ -340,7 +340,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 methodSignatureParameters,
                 mayThrow,
                 null,
-                funcImpl
+                memberImpl
             );
 
             fullDecl = decl.ToString();
@@ -353,19 +353,18 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 ? SwiftTypeAttachmentKinds.Static
                 : SwiftTypeAttachmentKinds.Class;
             
-            SwiftFuncDeclaration decl = new(
+            SwiftGetOnlyPropertyDeclaration decl = new(
                 methodNameSwift,
                 onlyWriteSignatureForProtocol 
                     ? SwiftVisibilities.None
                     : SwiftVisibilities.Public,
                 attachmentKind,
                 isOverride,
-                methodSignatureParameters,
                 mayThrow,
                 !returnOrSetterOrEventHandlerType.IsVoid()
                     ? swiftReturnOrSetterTypeNameWithComment
-                    : null,
-                funcImpl
+                    : throw new Exception("A property must have a return type"),
+                memberImpl
             );
 
             fullDecl = decl.ToString();
@@ -383,7 +382,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 !returnOrSetterOrEventHandlerType.IsVoid()
                     ? swiftReturnOrSetterTypeNameWithComment
                     : throw new Exception("A property must have a return type"),
-                funcImpl
+                memberImpl
             );
 
             fullDecl = decl.ToString();
@@ -402,7 +401,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 !returnOrSetterOrEventHandlerType.IsVoid()
                     ? swiftReturnOrSetterTypeNameWithComment
                     : null,
-                funcImpl
+                memberImpl
             );
 
             fullDecl = decl.ToString();

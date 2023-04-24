@@ -93,7 +93,7 @@ final class SystemArrayTests_Swift: XCTestCase {
 	}
     
     func testEmptyArrayWithGenerics() {
-        let systemStringType = System_String.typeOf()
+        let systemStringType = System_String.typeOf
 
         guard let emptyArrayOfString = try? System_Array.empty(systemStringType) else {
             XCTFail("System.Array<System.String>.Empty should not throw and return an instance")
@@ -124,7 +124,7 @@ final class SystemArrayTests_Swift: XCTestCase {
     }
     
     func testFillArrayWithGenerics() {
-        let systemStringType = System_String.typeOf()
+        let systemStringType = System_String.typeOf
 
         let numberOfElements: Int32 = 5
 
@@ -157,7 +157,7 @@ final class SystemArrayTests_Swift: XCTestCase {
     }
     
     func testReverseArrayWithGenerics() {
-        let systemStringType = System_String.typeOf()
+        let systemStringType = System_String.typeOf
 
         let strings = [
             "1",

@@ -13,7 +13,7 @@ final class SystemEnumTests_Swift: XCTestCase {
     }
     
     func testSystemEnum() {
-        let systemDateTimeKindType = System_DateTimeKind.typeOf()
+        let systemDateTimeKindType = System_DateTimeKind.typeOf
 
         guard let enumNames = try? systemDateTimeKindType.getEnumNames() else {
             XCTFail("System.Type.GetEnumNames should not throw and return an instance")

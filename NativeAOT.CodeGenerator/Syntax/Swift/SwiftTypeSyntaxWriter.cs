@@ -336,6 +336,7 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
             );
 
             sbMembers.AppendLine(memberCode);
+            sbMembers.AppendLine();
 
             if (member is not null) {
                 generatedMembers.Add(member);
@@ -418,6 +419,7 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
             );
 
             sbMembers.AppendLine(extensionMethod);
+            sbMembers.AppendLine();
         }
 
         sb.AppendLine(sbMembers

@@ -13,7 +13,7 @@ final class GenericTestsTests_Swift: XCTestCase {
 	}
 	
 	func testReturnGenericTypeWithReferenceType() {
-		let genericType = System_String.typeOf()
+		let genericType = System_String.typeOf
 		
 		guard let typeRet = try? NativeAOT_CodeGeneratorInputSample_GenericTests.returnGenericType(genericType) else {
 			XCTFail("ReturnGenericType<System.String> should not throw and return an instance")
@@ -29,7 +29,7 @@ final class GenericTestsTests_Swift: XCTestCase {
 	// It's possible to specifically include these types with a Rd.xml
 	// https://github.com/dotnet/runtime/blob/main/src/coreclr/nativeaot/docs/rd-xml-format.md
 	func testReturnGenericTypeWithValueType() {
-		let genericType = System_Guid.typeOf()
+		let genericType = System_Guid.typeOf
 		
 		do {
 			_ = try NativeAOT_CodeGeneratorInputSample_GenericTests.returnGenericType(genericType)
@@ -39,7 +39,7 @@ final class GenericTestsTests_Swift: XCTestCase {
 	}
 	
 	func testReturnGenericTypeAsOutParameter() {
-		let genericType = System_String.typeOf()
+		let genericType = System_String.typeOf
 		
 		var typeRet: System_Type?
 		
@@ -57,8 +57,8 @@ final class GenericTestsTests_Swift: XCTestCase {
 	}
 	
 	func testReturnGenericTypeAsRefParameter() {
-		let genericType = System_String.typeOf()
-		let systemObjectType = System_Object.typeOf()
+		let genericType = System_String.typeOf
+		let systemObjectType = System_Object.typeOf
 		
 		var typeRet: System_Type? = systemObjectType
 		
@@ -76,8 +76,8 @@ final class GenericTestsTests_Swift: XCTestCase {
 	}
 	
 	func testReturnGenericTypes() {
-		let genericType1 = System_String.typeOf()
-		let genericType2 = System_Array.typeOf()
+		let genericType1 = System_String.typeOf
+		let genericType2 = System_Array.typeOf
 		
 		guard let typesArrayRet = try? NativeAOT_CodeGeneratorInputSample_GenericTests.returnGenericTypes(genericType1,
 																										  genericType2) else {
@@ -115,7 +115,7 @@ final class GenericTestsTests_Swift: XCTestCase {
 	}
 	
 	func testReturnDefaultValueOfGenericType() {
-		let genericType = System_String.typeOf()
+		let genericType = System_String.typeOf
 		
 		do {
 			let defaultValueRet = try NativeAOT_CodeGeneratorInputSample_GenericTests.returnDefaultValueOfGenericType(genericType)
@@ -129,7 +129,7 @@ final class GenericTestsTests_Swift: XCTestCase {
 	}
 	
 	func testReturnArrayOfDefaultValuesOfGenericType() {
-		let genericType = System_String.typeOf()
+		let genericType = System_String.typeOf
 		
 		let numberOfElements: Int32 = 10
 		
@@ -198,9 +198,9 @@ final class GenericTestsTests_Swift: XCTestCase {
 	}
 	
 	func testReturnSimpleKeyValuePair() {
-		let keyType = System_Type.typeOf()
-		let valueType = System_Text_StringBuilder.typeOf()
-		let key = System_Type.typeOf()
+		let keyType = System_Type.typeOf
+		let valueType = System_Text_StringBuilder.typeOf
+		let key = System_Type.typeOf
 		
 		guard let value = try? System_Text_StringBuilder() else {
 			XCTFail("System.Text.StringBuilder ctor should not throw and return an instance")
@@ -250,9 +250,9 @@ final class GenericTestsTests_Swift: XCTestCase {
 	}
 	
 	func testIncorrectParametersInGenericMethod() {
-		let keyType = System_Type.typeOf()
-		let valueType = System_Text_StringBuilder.typeOf()
-		let key = System_Type.typeOf()
+		let keyType = System_Type.typeOf
+		let valueType = System_Text_StringBuilder.typeOf
+		let key = System_Type.typeOf
 		
 		guard let value = try? System_Object() else {
 			XCTFail("System.Object ctor should not throw and return an instance")
@@ -281,7 +281,7 @@ final class GenericTestsTests_Swift: XCTestCase {
 		let separator = ";"
 		let separatorDN = separator.dotNETString()
 		
-		let stringType = System_String.typeOf()
+		let stringType = System_String.typeOf
 
 		guard let arrayOfStrings = try? System_Array.createInstance(stringType,
 																	numberOfElements) else {
@@ -329,9 +329,9 @@ final class GenericTestsTests_Swift: XCTestCase {
 			return
 		}
 		
-		let listType = System_Collections_Generic_List_A1.typeOf()
-		let systemTypeType = System_Type.typeOf()
-		let systemStringType = System_String.typeOf()
+		let listType = System_Collections_Generic_List_A1.typeOf
+		let systemTypeType = System_Type.typeOf
+		let systemStringType = System_String.typeOf
 		
 		guard let typeArguments = try? System_Array.createInstance(systemTypeType,
 																   1) else {

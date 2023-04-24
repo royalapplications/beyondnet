@@ -13,8 +13,8 @@ final class SystemCollectionsGenericDictionaryTests_Swift: XCTestCase {
     }
     
     func testCreate() {
-        let systemStringType = System_String.typeOf()
-        let systemExceptionType = System_Exception.typeOf()
+        let systemStringType = System_String.typeOf
+        let systemExceptionType = System_Exception.typeOf
         
         guard let dictionary = try? System_Collections_Generic_Dictionary_A2(systemStringType,
                                                                              systemExceptionType) else {
@@ -40,8 +40,8 @@ final class SystemCollectionsGenericDictionaryTests_Swift: XCTestCase {
     }
     
     func testUse() {
-        let systemStringType = System_String.typeOf()
-        let systemExceptionType = System_Exception.typeOf()
+        let systemStringType = System_String.typeOf
+        let systemExceptionType = System_Exception.typeOf
         
         guard let dictionary = try? System_Collections_Generic_Dictionary_A2(systemStringType,
                                                                              systemExceptionType) else {

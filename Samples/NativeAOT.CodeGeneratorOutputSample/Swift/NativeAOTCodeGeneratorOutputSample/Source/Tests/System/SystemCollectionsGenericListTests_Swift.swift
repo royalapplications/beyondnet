@@ -13,8 +13,8 @@ final class SystemCollectionsGenericListTests_Swift: XCTestCase {
     }
     
     func testTypeOf() {
-        let systemTypeType = System_Type.typeOf()
-        let type = System_Collections_Generic_List_A1.typeOf()
+        let systemTypeType = System_Type.typeOf
+        let type = System_Collections_Generic_List_A1.typeOf
         
         let isGenericType = (try? type.isGenericType) ?? false
         XCTAssertTrue(isGenericType)
@@ -55,7 +55,7 @@ final class SystemCollectionsGenericListTests_Swift: XCTestCase {
     }
     
     func testCreate() {
-        let systemStringType = System_String.typeOf()
+        let systemStringType = System_String.typeOf
         
         guard let list = try? System_Collections_Generic_List_A1(systemStringType) else {
             XCTFail("System.Collections.Generic.List<System.String> ctor should not throw and return an instance")
@@ -79,7 +79,7 @@ final class SystemCollectionsGenericListTests_Swift: XCTestCase {
     }
     
     func testUse() {
-        let systemStringType = System_String.typeOf()
+        let systemStringType = System_String.typeOf
         
         guard let list = try? System_Collections_Generic_List_A1(systemStringType) else {
             XCTFail("System.Collections.Generic.List<System.String> ctor should not throw and return an instance")

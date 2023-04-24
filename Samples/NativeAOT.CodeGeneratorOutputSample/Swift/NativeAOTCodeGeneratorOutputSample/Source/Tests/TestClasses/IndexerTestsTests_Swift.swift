@@ -86,7 +86,7 @@ final class IndexerTestsTests_Swift: XCTestCase {
 			return
 		}
 		
-		let systemObjectType = System_Object.typeOf()
+		let systemObjectType = System_Object.typeOf
 		
 		guard let array = try? System_Array.createInstance(systemObjectType,
 														   3) else {

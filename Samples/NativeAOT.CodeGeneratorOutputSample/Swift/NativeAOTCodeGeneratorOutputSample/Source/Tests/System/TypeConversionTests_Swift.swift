@@ -14,16 +14,16 @@ final class TypeConversionTests_Swift: XCTestCase {
     
     func testIs() {
         let systemObjectType = System_Object.self
-        let systemObjectTypeDN = systemObjectType.typeOf()
+        let systemObjectTypeDN = systemObjectType.typeOf
         
         let systemStringType = System_String.self
-        let systemStringTypeDN = systemStringType.typeOf()
+        let systemStringTypeDN = systemStringType.typeOf
         
         let systemExceptionType = System_Exception.self
-        let systemExceptionTypeDN = systemExceptionType.typeOf()
+        let systemExceptionTypeDN = systemExceptionType.typeOf
         
         let systemGuidType = System_Guid.self
-        let systemGuidTypeDN = systemGuidType.typeOf()
+        let systemGuidTypeDN = systemGuidType.typeOf
         
         // MARK: - System.Object
         guard let systemObject = try? System_Object() else {

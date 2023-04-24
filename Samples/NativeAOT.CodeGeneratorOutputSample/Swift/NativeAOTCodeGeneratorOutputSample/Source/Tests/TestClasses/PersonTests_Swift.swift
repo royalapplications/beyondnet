@@ -483,7 +483,7 @@ final class PersonTests_Swift: XCTestCase {
         
         XCTAssertEqual(1, numberOfChildrenBeforeDaugther)
         
-        let personType = NativeAOT_CodeGeneratorInputSample_Person.typeOf()
+        let personType = NativeAOT_CodeGeneratorInputSample_Person.typeOf
         
         guard let newChildren = try? System_Array.createInstance(personType,
                                                                  2)?.castAs(NativeAOT_CodeGeneratorInputSample_Person_Array.self) else {

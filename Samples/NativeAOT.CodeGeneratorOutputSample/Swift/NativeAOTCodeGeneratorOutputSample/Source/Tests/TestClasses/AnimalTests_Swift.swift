@@ -174,7 +174,7 @@ final class AnimalTests_Swift: XCTestCase {
 	
 	func testCreatingAnimalThroughGenerics() {
 		// MARK: Cat
-		let catType = NativeAOT_CodeGeneratorInputSample_Cat.typeOf()
+		let catType = NativeAOT_CodeGeneratorInputSample_Cat.typeOf
 		
 		guard let cat = try? NativeAOT_CodeGeneratorInputSample_AnimalFactory.createAnimal(catType) else {
 			XCTFail("CreateAnimal<Cat> should not throw and return an instance")
@@ -192,7 +192,7 @@ final class AnimalTests_Swift: XCTestCase {
 		XCTAssertTrue(catTypesAreEqual)
 		
 		// MARK: Dog
-		let dogType = NativeAOT_CodeGeneratorInputSample_Dog.typeOf()
+		let dogType = NativeAOT_CodeGeneratorInputSample_Dog.typeOf
 		
 		guard let dog = try? NativeAOT_CodeGeneratorInputSample_AnimalFactory.createAnimal(dogType) else {
 			XCTFail("CreateAnimal<Dog> should not throw and return an instance")
@@ -210,7 +210,7 @@ final class AnimalTests_Swift: XCTestCase {
 		XCTAssertTrue(dogTypesAreEqual)
 		
 		// MARK: Invalid Type
-		let stringType = System_String.typeOf()
+		let stringType = System_String.typeOf
 		
 		do {
 			_ = try NativeAOT_CodeGeneratorInputSample_AnimalFactory.createAnimal(stringType)

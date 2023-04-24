@@ -1,12 +1,12 @@
 import Foundation
 
 public class System_Collections_Generic_List<T>: System_Collections_Generic_List_A1 where T: System_Object {
-	internal lazy var __typeOfT: System_Type = {
-		return T.typeOf()
-	}()
+	internal var __typeOfT: System_Type {
+		return T.typeOf
+	}
 	
 	public convenience init?() throws {
-		try self.init(T.typeOf())
+		try self.init(T.typeOf)
 	}
 	
 	public func add(_ item: T? /* System.Object */) throws {

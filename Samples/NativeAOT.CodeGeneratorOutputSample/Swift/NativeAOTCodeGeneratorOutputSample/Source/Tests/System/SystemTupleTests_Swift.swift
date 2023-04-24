@@ -13,7 +13,7 @@ final class SystemTupleTests_Swift: XCTestCase {
     }
     
     func testTupleA1() {
-        let systemStringType = System_String.typeOf()
+        let systemStringType = System_String.typeOf
         
         let string = "Hello World"
         let stringDN = string.dotNETString()
@@ -36,8 +36,8 @@ final class SystemTupleTests_Swift: XCTestCase {
     }
     
     func testTupleA2() {
-        let systemStringType = System_String.typeOf()
-        let systemExceptionType = System_Exception.typeOf()
+        let systemStringType = System_String.typeOf
+        let systemExceptionType = System_Exception.typeOf
         
         let string = "The Exception Message"
         let stringDN = string.dotNETString()

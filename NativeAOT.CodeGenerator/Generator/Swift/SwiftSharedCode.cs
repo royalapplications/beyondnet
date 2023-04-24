@@ -32,7 +32,7 @@ public class DNObject {
 		self.init(handle: handle)
 	}
 
-    public class func typeOf() -> System_Type /* System.Type */ {
+    public class var typeOf: System_Type /* System.Type */ {
         fatalError("Override in subclass")
     }
 
@@ -63,9 +63,9 @@ public extension DNObject {
         let dnType: System_Type
         
         if let type {
-            dnType = type.typeOf()
+            dnType = type.typeOf
         } else {
-            dnType = T.typeOf()
+            dnType = T.typeOf
         }
         
         return DNObjectIs(self.__handle, dnType.__handle)
@@ -75,9 +75,9 @@ public extension DNObject {
         let dnType: System_Type
         
         if let type {
-            dnType = type.typeOf()
+            dnType = type.typeOf
         } else {
-            dnType = T.typeOf()
+            dnType = T.typeOf
         }
         
         guard let castedObjectC = DNObjectCastAs(self.__handle, dnType.__handle) else {
@@ -93,9 +93,9 @@ public extension DNObject {
         let dnType: System_Type
         
         if let type {
-            dnType = type.typeOf()
+            dnType = type.typeOf
         } else {
-            dnType = T.typeOf()
+            dnType = T.typeOf
         }
     
         var exceptionC: System_Exception_t?

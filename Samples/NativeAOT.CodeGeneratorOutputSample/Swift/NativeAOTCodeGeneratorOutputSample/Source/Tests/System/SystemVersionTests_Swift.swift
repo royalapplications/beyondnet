@@ -13,7 +13,7 @@ final class SystemVersionTests_Swift: XCTestCase {
     }
     
     func testSystemVersionFromComponents() {
-        let systemVersionType = System_Version.typeOf()
+        let systemVersionType = System_Version.typeOf
         
         let major: Int32    = 1
         let minor: Int32    = 2
