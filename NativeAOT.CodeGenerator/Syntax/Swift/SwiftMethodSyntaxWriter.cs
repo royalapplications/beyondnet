@@ -71,8 +71,6 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         out string generatedName
     )
     {
-        StringBuilder sb = new();
-        
         #region Preparation
         if (memberInfo == null &&
             memberKind != MemberKind.Destructor &&
@@ -273,9 +271,11 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             swiftReturnOrSetterTypeNameWithComment = $"{swiftReturnOrSetterTypeName} /* {returnOrSetterOrEventHandlerType.GetFullNameOrName()} */";
             setterType = null;
         }
+        
+        generatedName = methodNameSwift;
         #endregion Preparation
 
-        #region Func Implementation
+        #region Func Declaration
         string? funcImpl;
         
         if (onlyWriteSignatureForProtocol) {
@@ -300,9 +300,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 typeDescriptorRegistry
             );   
         }
-        #endregion Func Implementation
-
-        #region Func Signature
+        
         string methodSignatureParameters = WriteParameters(
             memberKind,
             setterType,
@@ -316,7 +314,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             typeDescriptorRegistry
         );
 
-        string funcSignature;
+        string fullDecl;
 
         if (memberKind == MemberKind.Constructor) {
             SwiftInitDeclaration decl = new(
@@ -327,10 +325,10 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                     : SwiftVisibilities.Public,
                 methodSignatureParameters,
                 mayThrow,
-                null
+                funcImpl
             );
 
-            funcSignature = decl.ToString();
+            fullDecl = decl.ToString();
         } else if (memberKind == MemberKind.Destructor) {
             SwiftFuncDeclaration decl = new(
                 methodNameSwift,
@@ -342,10 +340,10 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 methodSignatureParameters,
                 mayThrow,
                 null,
-                null
+                funcImpl
             );
 
-            funcSignature = decl.ToString();
+            fullDecl = decl.ToString();
         } else if (memberKind == MemberKind.TypeOf) {
             bool isEnum = declaringType.IsEnum;
             
@@ -367,10 +365,10 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 !returnOrSetterOrEventHandlerType.IsVoid()
                     ? swiftReturnOrSetterTypeNameWithComment
                     : null,
-                null
+                funcImpl
             );
 
-            funcSignature = decl.ToString();
+            fullDecl = decl.ToString();
         } else {
             SwiftFuncDeclaration decl = new(
                 methodNameSwift,
@@ -386,34 +384,14 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 !returnOrSetterOrEventHandlerType.IsVoid()
                     ? swiftReturnOrSetterTypeNameWithComment
                     : null,
-                null
+                funcImpl
             );
 
-            funcSignature = decl.ToString();
+            fullDecl = decl.ToString();
         }
-
-        if (onlyWriteSignatureForProtocol) {
-            generatedName = methodNameSwift;
-            
-            return funcSignature;
-        }
+        #endregion Func Declaration
         
-        funcSignature += " {";
-
-        sb.AppendLine(funcSignature);
-        #endregion Func Signature
-
-        if (!string.IsNullOrEmpty(funcImpl)) {
-            sb.AppendLine(funcImpl.IndentAllLines(1));
-        }
-
-        #region Func End
-        sb.AppendLine("}");
-        #endregion Func End
-        
-        generatedName = methodNameSwift;
-        
-        return sb.ToString();
+        return fullDecl;
     }
     
     private static string WriteMethodImplementation(
