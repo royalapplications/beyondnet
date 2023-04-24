@@ -1,3 +1,5 @@
+using NativeAOT.CodeGenerator.Extensions;
+
 namespace NativeAOT.CodeGenerator.Syntax.Swift.Declaration;
 
 public struct SwiftFuncDeclaration
@@ -9,6 +11,7 @@ public struct SwiftFuncDeclaration
     public string Parameters { get; }
     public bool Throws { get; }
     public string? ReturnTypeName { get; }
+    public string? Implementation { get; }
     
     public SwiftFuncDeclaration(
         string name,
@@ -17,7 +20,8 @@ public struct SwiftFuncDeclaration
         bool isOverride,
         string parameters,
         bool throws,
-        string? returnTypeName
+        string? returnTypeName,
+        string? implementation
     )
     {
         Name = !string.IsNullOrEmpty(name)
@@ -31,7 +35,11 @@ public struct SwiftFuncDeclaration
         Throws = throws;
 
         ReturnTypeName = !string.IsNullOrEmpty(returnTypeName)
-            ? returnTypeName 
+            ? returnTypeName
+            : null;
+        
+        Implementation = !string.IsNullOrEmpty(implementation)
+            ? implementation
             : null;
     }
 
@@ -66,6 +74,16 @@ public struct SwiftFuncDeclaration
 
         string signature = SwiftFuncSignatureComponents.ComponentsToString(signatureComponents);
 
-        return signature;
+        string fullFunc;
+        
+        if (!string.IsNullOrEmpty(Implementation)) {
+            string indentedImpl = Implementation.IndentAllLines(1);
+            
+            fullFunc = $"{signature} {{\n{indentedImpl}\n}}";
+        } else {
+            fullFunc = signature;
+        }
+
+        return fullFunc;
     }
 }

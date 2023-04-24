@@ -528,7 +528,8 @@ public partial class SwiftTypeSyntaxWriter
             isOverride,
             swiftFuncParameters,
             true,
-            typeInfo.SwiftReturnTypeName
+            typeInfo.SwiftReturnTypeName,
+            null
         );
 
         sb.AppendLine($"{swiftFuncDecl} {{");

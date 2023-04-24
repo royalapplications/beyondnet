@@ -71,6 +71,9 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         out string generatedName
     )
     {
+        StringBuilder sb = new();
+        
+        #region Preparation
         if (memberInfo == null &&
             memberKind != MemberKind.Destructor &&
             memberKind != MemberKind.TypeOf) {
@@ -270,8 +273,30 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             swiftReturnOrSetterTypeNameWithComment = $"{swiftReturnOrSetterTypeName} /* {returnOrSetterOrEventHandlerType.GetFullNameOrName()} */";
             setterType = null;
         }
-        
-        StringBuilder sb = new();
+        #endregion Preparation
+
+        #region Func Implementation
+        string funcImplCode = WriteMethodImplementation(
+            cSharpGeneratedMember,
+            cMember,
+            memberInfo,
+            memberKind,
+            cMethodName,
+            isGeneric,
+            isStaticMethod,
+            mayThrow,
+            declaringType,
+            returnOrSetterOrEventHandlerType,
+            returnOrSetterTypeDescriptor,
+            parameters,
+            genericTypeArguments,
+            genericMethodArguments,
+            syntaxWriterConfiguration,
+            typeDescriptorRegistry
+        );
+
+        string funcImpl = funcImplCode.IndentAllLines(1);
+        #endregion Func Implementation
 
         #region Func Signature
         string methodSignatureParameters = WriteParameters(
@@ -311,6 +336,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 true,
                 methodSignatureParameters,
                 mayThrow,
+                null,
                 null
             );
 
@@ -335,7 +361,8 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 mayThrow,
                 !returnOrSetterOrEventHandlerType.IsVoid()
                     ? swiftReturnOrSetterTypeNameWithComment
-                    : null
+                    : null,
+                null
             );
 
             funcSignature = decl.ToString();
@@ -353,7 +380,8 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 mayThrow,
                 !returnOrSetterOrEventHandlerType.IsVoid()
                     ? swiftReturnOrSetterTypeNameWithComment
-                    : null
+                    : null,
+                null
             );
 
             funcSignature = decl.ToString();
@@ -369,31 +397,8 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
 
         sb.AppendLine(funcSignature);
         #endregion Func Signature
-
-        #region Func Implementation
-        string funcImplCode = WriteMethodImplementation(
-            cSharpGeneratedMember,
-            cMember,
-            memberInfo,
-            memberKind,
-            cMethodName,
-            isGeneric,
-            isStaticMethod,
-            mayThrow,
-            declaringType,
-            returnOrSetterOrEventHandlerType,
-            returnOrSetterTypeDescriptor,
-            parameters,
-            genericTypeArguments,
-            genericMethodArguments,
-            syntaxWriterConfiguration,
-            typeDescriptorRegistry
-        );
-
-        string funcImpl = funcImplCode.IndentAllLines(1);
-
+        
         sb.AppendLine(funcImpl);
-        #endregion Func Implementation
 
         #region Func End
         sb.AppendLine("}");
@@ -691,7 +696,8 @@ if let __exceptionC {
             mayThrow,
             !returnType.IsVoid()
                 ? swiftReturnTypeName
-                : null
+                : null,
+            null
         );
         
         string funcSignature = decl.ToString();
