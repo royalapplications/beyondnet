@@ -276,10 +276,10 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         #endregion Preparation
 
         #region Func Implementation
-        string funcImpl;
+        string? funcImpl;
         
         if (onlyWriteSignatureForProtocol) {
-            funcImpl = string.Empty;
+            funcImpl = null;
         } else {
             funcImpl = WriteMethodImplementation(
                 cSharpGeneratedMember,
@@ -326,7 +326,8 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                     ? SwiftVisibilities.None
                     : SwiftVisibilities.Public,
                 methodSignatureParameters,
-                mayThrow
+                mayThrow,
+                null
             );
 
             funcSignature = decl.ToString();
@@ -401,8 +402,10 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
 
         sb.AppendLine(funcSignature);
         #endregion Func Signature
-        
-        sb.AppendLine(funcImpl.IndentAllLines(1));
+
+        if (!string.IsNullOrEmpty(funcImpl)) {
+            sb.AppendLine(funcImpl.IndentAllLines(1));
+        }
 
         #region Func End
         sb.AppendLine("}");
