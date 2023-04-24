@@ -364,7 +364,18 @@ public partial class SwiftTypeSyntaxWriter
         createCFunctionFuncName = "__createCFunction";
         string innerClosureVarName = "__innerClosure";
 
-        sb.AppendLine($"private static func {createCFunctionFuncName}() -> {cTypeName}_CFunction_t {{");
+        SwiftFuncDeclaration funcDecl = new(
+            createCFunctionFuncName,
+            SwiftVisibilities.Private,
+            SwiftTypeAttachmentKinds.Static,
+            false,
+            string.Empty,
+            false,
+            $"{cTypeName}_CFunction_t",
+            null
+        );
+
+        sb.AppendLine($"{funcDecl.ToString()} {{");
         sb.AppendLine($"\treturn {{ {cFunctionParameters} in");
         sb.AppendLine($"\t\tguard let {innerContextParameterName} else {{ fatalError(\"{fatalErrorMessageIfNoContext}\") }}");
         sb.AppendLine();
@@ -458,8 +469,19 @@ public partial class SwiftTypeSyntaxWriter
         string fatalErrorMessageIfNoContext = "Context is nil";
         
         createCDestructorFunctionFuncName = "__createCDestructorFunction";
+
+        SwiftFuncDeclaration funcDecl = new(
+            createCDestructorFunctionFuncName,
+            SwiftVisibilities.Private,
+            SwiftTypeAttachmentKinds.Static,
+            false,
+            string.Empty,
+            false,
+            $"{cTypeName}_CDestructorFunction_t",
+            null
+        ); 
         
-        sb.AppendLine($"private static func {createCDestructorFunctionFuncName}() -> {cTypeName}_CDestructorFunction_t {{");
+        sb.AppendLine($"{funcDecl.ToString()} {{");
         sb.AppendLine($"\treturn {{ {innerContextParameterName} in");
         sb.AppendLine($"\t\tguard let {innerContextParameterName} else {{ fatalError(\"{fatalErrorMessageIfNoContext}\") }}");
         sb.AppendLine();
@@ -480,8 +502,17 @@ public partial class SwiftTypeSyntaxWriter
     )
     {
         StringBuilder sb = new();
+
+        SwiftInitDeclaration initDecl = new(
+            true,
+            true,
+            SwiftVisibilities.Public,
+            $"_ __closure: @escaping {closureTypeTypeAliasName}",
+            false,
+            null
+        );
         
-        sb.AppendLine($"public convenience init?(_ __closure: @escaping {closureTypeTypeAliasName}) {{");
+        sb.AppendLine($"{initDecl.ToString()} {{");
         sb.AppendLine($"\tlet __cFunction = Self.{createCFunctionFuncName}()");
         sb.AppendLine($"\tlet __cDestructorFunction = Self.{createCDestructorFunctionFuncName}()");
         sb.AppendLine();
