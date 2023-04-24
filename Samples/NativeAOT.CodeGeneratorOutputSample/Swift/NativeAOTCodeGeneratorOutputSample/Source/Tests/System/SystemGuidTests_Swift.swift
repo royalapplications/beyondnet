@@ -113,4 +113,36 @@ final class SystemGuidTests_Swift: XCTestCase {
         let equal = emptyGuid == guid
         XCTAssertTrue(equal)
     }
+    
+    func testSwiftUUIDConversion() {
+        let uuidString = "7F579986-D12F-4889-9A14-FDE340A59E08"
+        
+        var guid: System_Guid?
+        
+        guard (try? System_Guid.tryParse(uuidString.dotNETString(),
+                                         &guid)) ?? false,
+              let guid else {
+            XCTFail("System.Guid.TryParse should not throw, return true and an instance as out parameter")
+            
+            return
+        }
+        
+        guard let guidString = try? guid.toString()?.string() else {
+            XCTFail("System.Guid.ToString should not throw and return an instance")
+            
+            return
+        }
+        
+        XCTAssertEqual(uuidString.lowercased(), guidString.lowercased())
+        
+        guard let uuid = UUID(uuidString: guidString) else {
+            XCTFail("Should be able to form a UUID from a System.Guid's string")
+            
+            return
+        }
+        
+        let uuidStringRet = uuid.uuidString
+        
+        XCTAssertEqual(uuidString.lowercased(), uuidStringRet.lowercased())
+    }
 }
