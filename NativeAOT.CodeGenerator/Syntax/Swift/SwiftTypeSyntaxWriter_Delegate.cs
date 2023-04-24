@@ -166,8 +166,15 @@ public partial class SwiftTypeSyntaxWriter
         }
             
         StringBuilder sb = new();
+
+        SwiftClassDeclaration typeDecl = new(
+            $"{typeInfo.SwiftTypeName} /* {typeInfo.FullTypeName} */",
+            typeInfo.SwiftBaseTypeName,
+            SwiftVisibilities.Public,
+            null
+        );
         
-        sb.AppendLine($"public class {typeInfo.SwiftTypeName} /* {typeInfo.FullTypeName} */: {typeInfo.SwiftBaseTypeName} {{");
+        sb.AppendLine($"{typeDecl.ToString()} {{");
 
         List<string> memberParts = new();
 
