@@ -89382,22 +89382,29 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_BuiltInTransformers 
 
 
 public class System_Action /* System.Action */: System_MulticastDelegate {
-	public override class var typeName: String { "System.Action" }
-	public override class var fullTypeName: String { "System.Action" }
+	public override class var typeName: String { get {
+		"System.Action"
+	}}
+	
+	public override class var fullTypeName: String { get {
+		"System.Action"
+	}}
 	
 	public typealias ClosureType = () -> Void
+	
 	
 	private static func __createCFunction() -> System_Action_CFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			let __innerSwiftContext = NativeBox<ClosureType>.fromPointer(__innerContext)
 			let __innerClosure = __innerSwiftContext.value
-	
+		
 			
 			__innerClosure()
-	
+		
 		}
+		
 	}
 	
 	private static func __createCDestructorFunction() -> System_Action_CDestructorFunction_t {
@@ -89407,6 +89414,7 @@ public class System_Action /* System.Action */: System_MulticastDelegate {
 			NativeBox<ClosureType>.release(__innerContext)
 		}
 	}
+	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
@@ -89419,6 +89427,7 @@ public class System_Action /* System.Action */: System_MulticastDelegate {
 	
 		self.init(handle: __delegateC)
 	}
+	
 	
 	public func invoke() throws -> Void {
 		var __exceptionC: System_Exception_t?
@@ -89453,22 +89462,29 @@ public class System_Action /* System.Action */: System_MulticastDelegate {
 
 
 public class System_MulticastDelegate /* System.MulticastDelegate */: System_Delegate {
-	public override class var typeName: String { "System.MulticastDelegate" }
-	public override class var fullTypeName: String { "System.MulticastDelegate" }
+	public override class var typeName: String { get {
+		"System.MulticastDelegate"
+	}}
+	
+	public override class var fullTypeName: String { get {
+		"System.MulticastDelegate"
+	}}
 	
 	public typealias ClosureType = () -> Void
+	
 	
 	private static func __createCFunction() -> System_MulticastDelegate_CFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			let __innerSwiftContext = NativeBox<ClosureType>.fromPointer(__innerContext)
 			let __innerClosure = __innerSwiftContext.value
-	
+		
 			
 			__innerClosure()
-	
+		
 		}
+		
 	}
 	
 	private static func __createCDestructorFunction() -> System_MulticastDelegate_CDestructorFunction_t {
@@ -89478,6 +89494,7 @@ public class System_MulticastDelegate /* System.MulticastDelegate */: System_Del
 			NativeBox<ClosureType>.release(__innerContext)
 		}
 	}
+	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
@@ -89507,22 +89524,29 @@ public class System_MulticastDelegate /* System.MulticastDelegate */: System_Del
 
 
 public class System_Delegate /* System.Delegate */: System_Object {
-	public override class var typeName: String { "System.Delegate" }
-	public override class var fullTypeName: String { "System.Delegate" }
+	public override class var typeName: String { get {
+		"System.Delegate"
+	}}
+	
+	public override class var fullTypeName: String { get {
+		"System.Delegate"
+	}}
 	
 	public typealias ClosureType = () -> Void
+	
 	
 	private static func __createCFunction() -> System_Delegate_CFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			let __innerSwiftContext = NativeBox<ClosureType>.fromPointer(__innerContext)
 			let __innerClosure = __innerSwiftContext.value
-	
+		
 			
 			__innerClosure()
-	
+		
 		}
+		
 	}
 	
 	private static func __createCDestructorFunction() -> System_Delegate_CDestructorFunction_t {
@@ -89532,6 +89556,7 @@ public class System_Delegate /* System.Delegate */: System_Object {
 			NativeBox<ClosureType>.release(__innerContext)
 		}
 	}
+	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
@@ -89563,25 +89588,32 @@ public class System_Delegate /* System.Delegate */: System_Object {
 // Type "T" was skipped. Reason: It has no full name.
 // Type "T" was skipped. Reason: It has no full name.
 public class System_Reflection_TypeFilter /* System.Reflection.TypeFilter */: System_MulticastDelegate {
-	public override class var typeName: String { "System.Reflection.TypeFilter" }
-	public override class var fullTypeName: String { "System.Reflection.TypeFilter" }
+	public override class var typeName: String { get {
+		"System.Reflection.TypeFilter"
+	}}
+	
+	public override class var fullTypeName: String { get {
+		"System.Reflection.TypeFilter"
+	}}
 	
 	public typealias ClosureType = (_ m: System_Type? /* System.Type */, _ filterCriteria: System_Object? /* System.Object */) -> Bool
+	
 	
 	private static func __createCFunction() -> System_Reflection_TypeFilter_CFunction_t {
 		return { __innerContext, m, filterCriteria in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			let __innerSwiftContext = NativeBox<ClosureType>.fromPointer(__innerContext)
 			let __innerClosure = __innerSwiftContext.value
-	
+		
 			let mSwift = System_Type(handle: m)
 			let filterCriteriaSwift = System_Object(handle: filterCriteria)
 			
 			let __returnValueSwift = __innerClosure(mSwift, filterCriteriaSwift)
-	
+		
 			return __returnValueSwift
 		}
+		
 	}
 	
 	private static func __createCDestructorFunction() -> System_Reflection_TypeFilter_CDestructorFunction_t {
@@ -89591,6 +89623,7 @@ public class System_Reflection_TypeFilter /* System.Reflection.TypeFilter */: Sy
 			NativeBox<ClosureType>.release(__innerContext)
 		}
 	}
+	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
@@ -89603,6 +89636,7 @@ public class System_Reflection_TypeFilter /* System.Reflection.TypeFilter */: Sy
 	
 		self.init(handle: __delegateC)
 	}
+	
 	
 	public func invoke(_ m: System_Type? /* System.Type */, _ filterCriteria: System_Object? /* System.Object */) throws -> Bool {
 		var __exceptionC: System_Exception_t?
@@ -89640,23 +89674,30 @@ public class System_Reflection_TypeFilter /* System.Reflection.TypeFilter */: Sy
 
 
 public class System_AsyncCallback /* System.AsyncCallback */: System_MulticastDelegate {
-	public override class var typeName: String { "System.AsyncCallback" }
-	public override class var fullTypeName: String { "System.AsyncCallback" }
+	public override class var typeName: String { get {
+		"System.AsyncCallback"
+	}}
+	
+	public override class var fullTypeName: String { get {
+		"System.AsyncCallback"
+	}}
 	
 	public typealias ClosureType = (_ ar: System_IAsyncResult? /* System.IAsyncResult */) -> Void
+	
 	
 	private static func __createCFunction() -> System_AsyncCallback_CFunction_t {
 		return { __innerContext, ar in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			let __innerSwiftContext = NativeBox<ClosureType>.fromPointer(__innerContext)
 			let __innerClosure = __innerSwiftContext.value
-	
+		
 			let arSwift = System_IAsyncResult(handle: ar)
 			
 			__innerClosure(arSwift)
-	
+		
 		}
+		
 	}
 	
 	private static func __createCDestructorFunction() -> System_AsyncCallback_CDestructorFunction_t {
@@ -89666,6 +89707,7 @@ public class System_AsyncCallback /* System.AsyncCallback */: System_MulticastDe
 			NativeBox<ClosureType>.release(__innerContext)
 		}
 	}
+	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
@@ -89678,6 +89720,7 @@ public class System_AsyncCallback /* System.AsyncCallback */: System_MulticastDe
 	
 		self.init(handle: __delegateC)
 	}
+	
 	
 	public func invoke(_ ar: System_IAsyncResult? /* System.IAsyncResult */) throws -> Void {
 		var __exceptionC: System_Exception_t?
@@ -89713,28 +89756,35 @@ public class System_AsyncCallback /* System.AsyncCallback */: System_MulticastDe
 
 
 public class System_Reflection_ModuleResolveEventHandler /* System.Reflection.ModuleResolveEventHandler */: System_MulticastDelegate {
-	public override class var typeName: String { "System.Reflection.ModuleResolveEventHandler" }
-	public override class var fullTypeName: String { "System.Reflection.ModuleResolveEventHandler" }
+	public override class var typeName: String { get {
+		"System.Reflection.ModuleResolveEventHandler"
+	}}
+	
+	public override class var fullTypeName: String { get {
+		"System.Reflection.ModuleResolveEventHandler"
+	}}
 	
 	public typealias ClosureType = (_ sender: System_Object? /* System.Object */, _ e: System_ResolveEventArgs? /* System.ResolveEventArgs */) -> System_Reflection_Module?
+	
 	
 	private static func __createCFunction() -> System_Reflection_ModuleResolveEventHandler_CFunction_t {
 		return { __innerContext, sender, e in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			let __innerSwiftContext = NativeBox<ClosureType>.fromPointer(__innerContext)
 			let __innerClosure = __innerSwiftContext.value
-	
+		
 			let senderSwift = System_Object(handle: sender)
 			let eSwift = System_ResolveEventArgs(handle: e)
 			
 			let __returnValueSwift = __innerClosure(senderSwift, eSwift)
-	
+		
 			let __returnValue = __returnValueSwift?.__handle
 			__returnValueSwift?.__skipDestroy = true // Will be destroyed by .NET
-	
+		
 			return __returnValue
 		}
+		
 	}
 	
 	private static func __createCDestructorFunction() -> System_Reflection_ModuleResolveEventHandler_CDestructorFunction_t {
@@ -89744,6 +89794,7 @@ public class System_Reflection_ModuleResolveEventHandler /* System.Reflection.Mo
 			NativeBox<ClosureType>.release(__innerContext)
 		}
 	}
+	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
@@ -89756,6 +89807,7 @@ public class System_Reflection_ModuleResolveEventHandler /* System.Reflection.Mo
 	
 		self.init(handle: __delegateC)
 	}
+	
 	
 	public func invoke(_ sender: System_Object? /* System.Object */, _ e: System_ResolveEventArgs? /* System.ResolveEventArgs */) throws -> System_Reflection_Module? {
 		var __exceptionC: System_Exception_t?
@@ -89795,25 +89847,32 @@ public class System_Reflection_ModuleResolveEventHandler /* System.Reflection.Mo
 
 
 public class System_Reflection_MemberFilter /* System.Reflection.MemberFilter */: System_MulticastDelegate {
-	public override class var typeName: String { "System.Reflection.MemberFilter" }
-	public override class var fullTypeName: String { "System.Reflection.MemberFilter" }
+	public override class var typeName: String { get {
+		"System.Reflection.MemberFilter"
+	}}
+	
+	public override class var fullTypeName: String { get {
+		"System.Reflection.MemberFilter"
+	}}
 	
 	public typealias ClosureType = (_ m: System_Reflection_MemberInfo? /* System.Reflection.MemberInfo */, _ filterCriteria: System_Object? /* System.Object */) -> Bool
+	
 	
 	private static func __createCFunction() -> System_Reflection_MemberFilter_CFunction_t {
 		return { __innerContext, m, filterCriteria in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			let __innerSwiftContext = NativeBox<ClosureType>.fromPointer(__innerContext)
 			let __innerClosure = __innerSwiftContext.value
-	
+		
 			let mSwift = System_Reflection_MemberInfo(handle: m)
 			let filterCriteriaSwift = System_Object(handle: filterCriteria)
 			
 			let __returnValueSwift = __innerClosure(mSwift, filterCriteriaSwift)
-	
+		
 			return __returnValueSwift
 		}
+		
 	}
 	
 	private static func __createCDestructorFunction() -> System_Reflection_MemberFilter_CDestructorFunction_t {
@@ -89823,6 +89882,7 @@ public class System_Reflection_MemberFilter /* System.Reflection.MemberFilter */
 			NativeBox<ClosureType>.release(__innerContext)
 		}
 	}
+	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
@@ -89835,6 +89895,7 @@ public class System_Reflection_MemberFilter /* System.Reflection.MemberFilter */
 	
 		self.init(handle: __delegateC)
 	}
+	
 	
 	public func invoke(_ m: System_Reflection_MemberInfo? /* System.Reflection.MemberInfo */, _ filterCriteria: System_Object? /* System.Object */) throws -> Bool {
 		var __exceptionC: System_Exception_t?
@@ -89872,23 +89933,30 @@ public class System_Reflection_MemberFilter /* System.Reflection.MemberFilter */
 
 
 public class System_Threading_ContextCallback /* System.Threading.ContextCallback */: System_MulticastDelegate {
-	public override class var typeName: String { "System.Threading.ContextCallback" }
-	public override class var fullTypeName: String { "System.Threading.ContextCallback" }
+	public override class var typeName: String { get {
+		"System.Threading.ContextCallback"
+	}}
+	
+	public override class var fullTypeName: String { get {
+		"System.Threading.ContextCallback"
+	}}
 	
 	public typealias ClosureType = (_ state: System_Object? /* System.Object */) -> Void
+	
 	
 	private static func __createCFunction() -> System_Threading_ContextCallback_CFunction_t {
 		return { __innerContext, state in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			let __innerSwiftContext = NativeBox<ClosureType>.fromPointer(__innerContext)
 			let __innerClosure = __innerSwiftContext.value
-	
+		
 			let stateSwift = System_Object(handle: state)
 			
 			__innerClosure(stateSwift)
-	
+		
 		}
+		
 	}
 	
 	private static func __createCDestructorFunction() -> System_Threading_ContextCallback_CDestructorFunction_t {
@@ -89898,6 +89966,7 @@ public class System_Threading_ContextCallback /* System.Threading.ContextCallbac
 			NativeBox<ClosureType>.release(__innerContext)
 		}
 	}
+	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
@@ -89910,6 +89979,7 @@ public class System_Threading_ContextCallback /* System.Threading.ContextCallbac
 	
 		self.init(handle: __delegateC)
 	}
+	
 	
 	public func invoke(_ state: System_Object? /* System.Object */) throws -> Void {
 		var __exceptionC: System_Exception_t?
@@ -89945,24 +90015,31 @@ public class System_Threading_ContextCallback /* System.Threading.ContextCallbac
 
 
 public class System_UnhandledExceptionEventHandler /* System.UnhandledExceptionEventHandler */: System_MulticastDelegate {
-	public override class var typeName: String { "System.UnhandledExceptionEventHandler" }
-	public override class var fullTypeName: String { "System.UnhandledExceptionEventHandler" }
+	public override class var typeName: String { get {
+		"System.UnhandledExceptionEventHandler"
+	}}
+	
+	public override class var fullTypeName: String { get {
+		"System.UnhandledExceptionEventHandler"
+	}}
 	
 	public typealias ClosureType = (_ sender: System_Object? /* System.Object */, _ e: System_UnhandledExceptionEventArgs? /* System.UnhandledExceptionEventArgs */) -> Void
+	
 	
 	private static func __createCFunction() -> System_UnhandledExceptionEventHandler_CFunction_t {
 		return { __innerContext, sender, e in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			let __innerSwiftContext = NativeBox<ClosureType>.fromPointer(__innerContext)
 			let __innerClosure = __innerSwiftContext.value
-	
+		
 			let senderSwift = System_Object(handle: sender)
 			let eSwift = System_UnhandledExceptionEventArgs(handle: e)
 			
 			__innerClosure(senderSwift, eSwift)
-	
+		
 		}
+		
 	}
 	
 	private static func __createCDestructorFunction() -> System_UnhandledExceptionEventHandler_CDestructorFunction_t {
@@ -89972,6 +90049,7 @@ public class System_UnhandledExceptionEventHandler /* System.UnhandledExceptionE
 			NativeBox<ClosureType>.release(__innerContext)
 		}
 	}
+	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
@@ -89984,6 +90062,7 @@ public class System_UnhandledExceptionEventHandler /* System.UnhandledExceptionE
 	
 		self.init(handle: __delegateC)
 	}
+	
 	
 	public func invoke(_ sender: System_Object? /* System.Object */, _ e: System_UnhandledExceptionEventArgs? /* System.UnhandledExceptionEventArgs */) throws -> Void {
 		var __exceptionC: System_Exception_t?
@@ -90020,24 +90099,31 @@ public class System_UnhandledExceptionEventHandler /* System.UnhandledExceptionE
 
 
 public class System_EventHandler /* System.EventHandler */: System_MulticastDelegate {
-	public override class var typeName: String { "System.EventHandler" }
-	public override class var fullTypeName: String { "System.EventHandler" }
+	public override class var typeName: String { get {
+		"System.EventHandler"
+	}}
+	
+	public override class var fullTypeName: String { get {
+		"System.EventHandler"
+	}}
 	
 	public typealias ClosureType = (_ sender: System_Object? /* System.Object */, _ e: System_EventArgs? /* System.EventArgs */) -> Void
+	
 	
 	private static func __createCFunction() -> System_EventHandler_CFunction_t {
 		return { __innerContext, sender, e in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			let __innerSwiftContext = NativeBox<ClosureType>.fromPointer(__innerContext)
 			let __innerClosure = __innerSwiftContext.value
-	
+		
 			let senderSwift = System_Object(handle: sender)
 			let eSwift = System_EventArgs(handle: e)
 			
 			__innerClosure(senderSwift, eSwift)
-	
+		
 		}
+		
 	}
 	
 	private static func __createCDestructorFunction() -> System_EventHandler_CDestructorFunction_t {
@@ -90047,6 +90133,7 @@ public class System_EventHandler /* System.EventHandler */: System_MulticastDele
 			NativeBox<ClosureType>.release(__innerContext)
 		}
 	}
+	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
@@ -90059,6 +90146,7 @@ public class System_EventHandler /* System.EventHandler */: System_MulticastDele
 	
 		self.init(handle: __delegateC)
 	}
+	
 	
 	public func invoke(_ sender: System_Object? /* System.Object */, _ e: System_EventArgs? /* System.EventArgs */) throws -> Void {
 		var __exceptionC: System_Exception_t?
@@ -90095,24 +90183,31 @@ public class System_EventHandler /* System.EventHandler */: System_MulticastDele
 
 
 public class System_AssemblyLoadEventHandler /* System.AssemblyLoadEventHandler */: System_MulticastDelegate {
-	public override class var typeName: String { "System.AssemblyLoadEventHandler" }
-	public override class var fullTypeName: String { "System.AssemblyLoadEventHandler" }
+	public override class var typeName: String { get {
+		"System.AssemblyLoadEventHandler"
+	}}
+	
+	public override class var fullTypeName: String { get {
+		"System.AssemblyLoadEventHandler"
+	}}
 	
 	public typealias ClosureType = (_ sender: System_Object? /* System.Object */, _ args: System_AssemblyLoadEventArgs? /* System.AssemblyLoadEventArgs */) -> Void
+	
 	
 	private static func __createCFunction() -> System_AssemblyLoadEventHandler_CFunction_t {
 		return { __innerContext, sender, args in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			let __innerSwiftContext = NativeBox<ClosureType>.fromPointer(__innerContext)
 			let __innerClosure = __innerSwiftContext.value
-	
+		
 			let senderSwift = System_Object(handle: sender)
 			let argsSwift = System_AssemblyLoadEventArgs(handle: args)
 			
 			__innerClosure(senderSwift, argsSwift)
-	
+		
 		}
+		
 	}
 	
 	private static func __createCDestructorFunction() -> System_AssemblyLoadEventHandler_CDestructorFunction_t {
@@ -90122,6 +90217,7 @@ public class System_AssemblyLoadEventHandler /* System.AssemblyLoadEventHandler 
 			NativeBox<ClosureType>.release(__innerContext)
 		}
 	}
+	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
@@ -90134,6 +90230,7 @@ public class System_AssemblyLoadEventHandler /* System.AssemblyLoadEventHandler 
 	
 		self.init(handle: __delegateC)
 	}
+	
 	
 	public func invoke(_ sender: System_Object? /* System.Object */, _ args: System_AssemblyLoadEventArgs? /* System.AssemblyLoadEventArgs */) throws -> Void {
 		var __exceptionC: System_Exception_t?
@@ -90170,28 +90267,35 @@ public class System_AssemblyLoadEventHandler /* System.AssemblyLoadEventHandler 
 
 
 public class System_ResolveEventHandler /* System.ResolveEventHandler */: System_MulticastDelegate {
-	public override class var typeName: String { "System.ResolveEventHandler" }
-	public override class var fullTypeName: String { "System.ResolveEventHandler" }
+	public override class var typeName: String { get {
+		"System.ResolveEventHandler"
+	}}
+	
+	public override class var fullTypeName: String { get {
+		"System.ResolveEventHandler"
+	}}
 	
 	public typealias ClosureType = (_ sender: System_Object? /* System.Object */, _ args: System_ResolveEventArgs? /* System.ResolveEventArgs */) -> System_Reflection_Assembly?
+	
 	
 	private static func __createCFunction() -> System_ResolveEventHandler_CFunction_t {
 		return { __innerContext, sender, args in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			let __innerSwiftContext = NativeBox<ClosureType>.fromPointer(__innerContext)
 			let __innerClosure = __innerSwiftContext.value
-	
+		
 			let senderSwift = System_Object(handle: sender)
 			let argsSwift = System_ResolveEventArgs(handle: args)
 			
 			let __returnValueSwift = __innerClosure(senderSwift, argsSwift)
-	
+		
 			let __returnValue = __returnValueSwift?.__handle
 			__returnValueSwift?.__skipDestroy = true // Will be destroyed by .NET
-	
+		
 			return __returnValue
 		}
+		
 	}
 	
 	private static func __createCDestructorFunction() -> System_ResolveEventHandler_CDestructorFunction_t {
@@ -90201,6 +90305,7 @@ public class System_ResolveEventHandler /* System.ResolveEventHandler */: System
 			NativeBox<ClosureType>.release(__innerContext)
 		}
 	}
+	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
@@ -90213,6 +90318,7 @@ public class System_ResolveEventHandler /* System.ResolveEventHandler */: System
 	
 		self.init(handle: __delegateC)
 	}
+	
 	
 	public func invoke(_ sender: System_Object? /* System.Object */, _ args: System_ResolveEventArgs? /* System.ResolveEventArgs */) throws -> System_Reflection_Assembly? {
 		var __exceptionC: System_Exception_t?
@@ -90252,22 +90358,29 @@ public class System_ResolveEventHandler /* System.ResolveEventHandler */: System
 
 
 public class System_Threading_ThreadStart /* System.Threading.ThreadStart */: System_MulticastDelegate {
-	public override class var typeName: String { "System.Threading.ThreadStart" }
-	public override class var fullTypeName: String { "System.Threading.ThreadStart" }
+	public override class var typeName: String { get {
+		"System.Threading.ThreadStart"
+	}}
+	
+	public override class var fullTypeName: String { get {
+		"System.Threading.ThreadStart"
+	}}
 	
 	public typealias ClosureType = () -> Void
+	
 	
 	private static func __createCFunction() -> System_Threading_ThreadStart_CFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			let __innerSwiftContext = NativeBox<ClosureType>.fromPointer(__innerContext)
 			let __innerClosure = __innerSwiftContext.value
-	
+		
 			
 			__innerClosure()
-	
+		
 		}
+		
 	}
 	
 	private static func __createCDestructorFunction() -> System_Threading_ThreadStart_CDestructorFunction_t {
@@ -90277,6 +90390,7 @@ public class System_Threading_ThreadStart /* System.Threading.ThreadStart */: Sy
 			NativeBox<ClosureType>.release(__innerContext)
 		}
 	}
+	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
@@ -90289,6 +90403,7 @@ public class System_Threading_ThreadStart /* System.Threading.ThreadStart */: Sy
 	
 		self.init(handle: __delegateC)
 	}
+	
 	
 	public func invoke() throws -> Void {
 		var __exceptionC: System_Exception_t?
@@ -90323,23 +90438,30 @@ public class System_Threading_ThreadStart /* System.Threading.ThreadStart */: Sy
 
 
 public class System_Threading_ParameterizedThreadStart /* System.Threading.ParameterizedThreadStart */: System_MulticastDelegate {
-	public override class var typeName: String { "System.Threading.ParameterizedThreadStart" }
-	public override class var fullTypeName: String { "System.Threading.ParameterizedThreadStart" }
+	public override class var typeName: String { get {
+		"System.Threading.ParameterizedThreadStart"
+	}}
+	
+	public override class var fullTypeName: String { get {
+		"System.Threading.ParameterizedThreadStart"
+	}}
 	
 	public typealias ClosureType = (_ obj: System_Object? /* System.Object */) -> Void
+	
 	
 	private static func __createCFunction() -> System_Threading_ParameterizedThreadStart_CFunction_t {
 		return { __innerContext, obj in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			let __innerSwiftContext = NativeBox<ClosureType>.fromPointer(__innerContext)
 			let __innerClosure = __innerSwiftContext.value
-	
+		
 			let objSwift = System_Object(handle: obj)
 			
 			__innerClosure(objSwift)
-	
+		
 		}
+		
 	}
 	
 	private static func __createCDestructorFunction() -> System_Threading_ParameterizedThreadStart_CDestructorFunction_t {
@@ -90349,6 +90471,7 @@ public class System_Threading_ParameterizedThreadStart /* System.Threading.Param
 			NativeBox<ClosureType>.release(__innerContext)
 		}
 	}
+	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
@@ -90361,6 +90484,7 @@ public class System_Threading_ParameterizedThreadStart /* System.Threading.Param
 	
 		self.init(handle: __delegateC)
 	}
+	
 	
 	public func invoke(_ obj: System_Object? /* System.Object */) throws -> Void {
 		var __exceptionC: System_Exception_t?
@@ -90396,23 +90520,30 @@ public class System_Threading_ParameterizedThreadStart /* System.Threading.Param
 
 
 public class System_Threading_TimerCallback /* System.Threading.TimerCallback */: System_MulticastDelegate {
-	public override class var typeName: String { "System.Threading.TimerCallback" }
-	public override class var fullTypeName: String { "System.Threading.TimerCallback" }
+	public override class var typeName: String { get {
+		"System.Threading.TimerCallback"
+	}}
+	
+	public override class var fullTypeName: String { get {
+		"System.Threading.TimerCallback"
+	}}
 	
 	public typealias ClosureType = (_ state: System_Object? /* System.Object */) -> Void
+	
 	
 	private static func __createCFunction() -> System_Threading_TimerCallback_CFunction_t {
 		return { __innerContext, state in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			let __innerSwiftContext = NativeBox<ClosureType>.fromPointer(__innerContext)
 			let __innerClosure = __innerSwiftContext.value
-	
+		
 			let stateSwift = System_Object(handle: state)
 			
 			__innerClosure(stateSwift)
-	
+		
 		}
+		
 	}
 	
 	private static func __createCDestructorFunction() -> System_Threading_TimerCallback_CDestructorFunction_t {
@@ -90422,6 +90553,7 @@ public class System_Threading_TimerCallback /* System.Threading.TimerCallback */
 			NativeBox<ClosureType>.release(__innerContext)
 		}
 	}
+	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
@@ -90434,6 +90566,7 @@ public class System_Threading_TimerCallback /* System.Threading.TimerCallback */
 	
 		self.init(handle: __delegateC)
 	}
+	
 	
 	public func invoke(_ state: System_Object? /* System.Object */) throws -> Void {
 		var __exceptionC: System_Exception_t?
@@ -90469,28 +90602,35 @@ public class System_Threading_TimerCallback /* System.Threading.TimerCallback */
 
 
 public class NativeAOT_CodeGeneratorInputSample_MoveDelegate /* NativeAOT.CodeGeneratorInputSample.MoveDelegate */: System_MulticastDelegate {
-	public override class var typeName: String { "NativeAOT.CodeGeneratorInputSample.MoveDelegate" }
-	public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.MoveDelegate" }
+	public override class var typeName: String { get {
+		"NativeAOT.CodeGeneratorInputSample.MoveDelegate"
+	}}
+	
+	public override class var fullTypeName: String { get {
+		"NativeAOT.CodeGeneratorInputSample.MoveDelegate"
+	}}
 	
 	public typealias ClosureType = (_ newStreet: System_String? /* System.String */, _ newCity: System_String? /* System.String */) -> NativeAOT_CodeGeneratorInputSample_Address?
+	
 	
 	private static func __createCFunction() -> NativeAOT_CodeGeneratorInputSample_MoveDelegate_CFunction_t {
 		return { __innerContext, newStreet, newCity in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			let __innerSwiftContext = NativeBox<ClosureType>.fromPointer(__innerContext)
 			let __innerClosure = __innerSwiftContext.value
-	
+		
 			let newStreetSwift = System_String(handle: newStreet)
 			let newCitySwift = System_String(handle: newCity)
 			
 			let __returnValueSwift = __innerClosure(newStreetSwift, newCitySwift)
-	
+		
 			let __returnValue = __returnValueSwift?.__handle
 			__returnValueSwift?.__skipDestroy = true // Will be destroyed by .NET
-	
+		
 			return __returnValue
 		}
+		
 	}
 	
 	private static func __createCDestructorFunction() -> NativeAOT_CodeGeneratorInputSample_MoveDelegate_CDestructorFunction_t {
@@ -90500,6 +90640,7 @@ public class NativeAOT_CodeGeneratorInputSample_MoveDelegate /* NativeAOT.CodeGe
 			NativeBox<ClosureType>.release(__innerContext)
 		}
 	}
+	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
@@ -90512,6 +90653,7 @@ public class NativeAOT_CodeGeneratorInputSample_MoveDelegate /* NativeAOT.CodeGe
 	
 		self.init(handle: __delegateC)
 	}
+	
 	
 	public func invoke(_ newStreet: System_String? /* System.String */, _ newCity: System_String? /* System.String */) throws -> NativeAOT_CodeGeneratorInputSample_Address? {
 		var __exceptionC: System_Exception_t?
@@ -90551,27 +90693,34 @@ public class NativeAOT_CodeGeneratorInputSample_MoveDelegate /* NativeAOT.CodeGe
 
 
 public class NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate /* NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate */: System_MulticastDelegate {
-	public override class var typeName: String { "NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate" }
-	public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate" }
+	public override class var typeName: String { get {
+		"NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate"
+	}}
+	
+	public override class var fullTypeName: String { get {
+		"NativeAOT.CodeGeneratorInputSample.AnimalCreatorDelegate"
+	}}
 	
 	public typealias ClosureType = (_ animalName: System_String? /* System.String */) -> NativeAOT_CodeGeneratorInputSample_IAnimal?
+	
 	
 	private static func __createCFunction() -> NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_CFunction_t {
 		return { __innerContext, animalName in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			let __innerSwiftContext = NativeBox<ClosureType>.fromPointer(__innerContext)
 			let __innerClosure = __innerSwiftContext.value
-	
+		
 			let animalNameSwift = System_String(handle: animalName)
 			
 			let __returnValueSwift = __innerClosure(animalNameSwift)
-	
+		
 			let __returnValue = __returnValueSwift?.__handle
 			__returnValueSwift?.__skipDestroy = true // Will be destroyed by .NET
-	
+		
 			return __returnValue
 		}
+		
 	}
 	
 	private static func __createCDestructorFunction() -> NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate_CDestructorFunction_t {
@@ -90581,6 +90730,7 @@ public class NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate /* NativeA
 			NativeBox<ClosureType>.release(__innerContext)
 		}
 	}
+	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
@@ -90593,6 +90743,7 @@ public class NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate /* NativeA
 	
 		self.init(handle: __delegateC)
 	}
+	
 	
 	public func invoke(_ animalName: System_String? /* System.String */) throws -> NativeAOT_CodeGeneratorInputSample_IAnimal? {
 		var __exceptionC: System_Exception_t?
@@ -90631,22 +90782,29 @@ public class NativeAOT_CodeGeneratorInputSample_AnimalCreatorDelegate /* NativeA
 
 
 public class NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate /* NativeAOT.CodeGeneratorInputSample.Person+NumberOfChildrenChangedDelegate */: System_MulticastDelegate {
-	public override class var typeName: String { "NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate" }
-	public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.Person+NumberOfChildrenChangedDelegate" }
+	public override class var typeName: String { get {
+		"NativeAOT.CodeGeneratorInputSample.Person.NumberOfChildrenChangedDelegate"
+	}}
+	
+	public override class var fullTypeName: String { get {
+		"NativeAOT.CodeGeneratorInputSample.Person+NumberOfChildrenChangedDelegate"
+	}}
 	
 	public typealias ClosureType = () -> Void
+	
 	
 	private static func __createCFunction() -> NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_CFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			let __innerSwiftContext = NativeBox<ClosureType>.fromPointer(__innerContext)
 			let __innerClosure = __innerSwiftContext.value
-	
+		
 			
 			__innerClosure()
-	
+		
 		}
+		
 	}
 	
 	private static func __createCDestructorFunction() -> NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDelegate_CDestructorFunction_t {
@@ -90656,6 +90814,7 @@ public class NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDe
 			NativeBox<ClosureType>.release(__innerContext)
 		}
 	}
+	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
@@ -90668,6 +90827,7 @@ public class NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDe
 	
 		self.init(handle: __delegateC)
 	}
+	
 	
 	public func invoke() throws -> Void {
 		var __exceptionC: System_Exception_t?
@@ -90702,23 +90862,30 @@ public class NativeAOT_CodeGeneratorInputSample_Person_NumberOfChildrenChangedDe
 
 
 public class NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate /* NativeAOT.CodeGeneratorInputSample.Person+NewAgeProviderDelegate */: System_MulticastDelegate {
-	public override class var typeName: String { "NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate" }
-	public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.Person+NewAgeProviderDelegate" }
+	public override class var typeName: String { get {
+		"NativeAOT.CodeGeneratorInputSample.Person.NewAgeProviderDelegate"
+	}}
+	
+	public override class var fullTypeName: String { get {
+		"NativeAOT.CodeGeneratorInputSample.Person+NewAgeProviderDelegate"
+	}}
 	
 	public typealias ClosureType = () -> Int32
+	
 	
 	private static func __createCFunction() -> NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			let __innerSwiftContext = NativeBox<ClosureType>.fromPointer(__innerContext)
 			let __innerClosure = __innerSwiftContext.value
-	
+		
 			
 			let __returnValueSwift = __innerClosure()
-	
+		
 			return __returnValueSwift
 		}
+		
 	}
 	
 	private static func __createCDestructorFunction() -> NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate_CDestructorFunction_t {
@@ -90728,6 +90895,7 @@ public class NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate /*
 			NativeBox<ClosureType>.release(__innerContext)
 		}
 	}
+	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
@@ -90740,6 +90908,7 @@ public class NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate /*
 	
 		self.init(handle: __delegateC)
 	}
+	
 	
 	public func invoke() throws -> Int32 {
 		var __exceptionC: System_Exception_t?
@@ -90781,25 +90950,32 @@ public class NativeAOT_CodeGeneratorInputSample_Person_NewAgeProviderDelegate /*
 // TODO: (NativeAOT_CodeGeneratorInputSample_OutParametersDelegate) Unsupported delegate type. Reason: Has by ref or out parameters
 
 public class NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate /* NativeAOT.CodeGeneratorInputSample.CharReturnerDelegate */: System_MulticastDelegate {
-	public override class var typeName: String { "NativeAOT.CodeGeneratorInputSample.CharReturnerDelegate" }
-	public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.CharReturnerDelegate" }
+	public override class var typeName: String { get {
+		"NativeAOT.CodeGeneratorInputSample.CharReturnerDelegate"
+	}}
+	
+	public override class var fullTypeName: String { get {
+		"NativeAOT.CodeGeneratorInputSample.CharReturnerDelegate"
+	}}
 	
 	public typealias ClosureType = () -> DNChar
+	
 	
 	private static func __createCFunction() -> NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_CFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			let __innerSwiftContext = NativeBox<ClosureType>.fromPointer(__innerContext)
 			let __innerClosure = __innerSwiftContext.value
-	
+		
 			
 			let __returnValueSwift = __innerClosure()
-	
+		
 			let __returnValue = __returnValueSwift.cValue
-	
+		
 			return __returnValue
 		}
+		
 	}
 	
 	private static func __createCDestructorFunction() -> NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate_CDestructorFunction_t {
@@ -90809,6 +90985,7 @@ public class NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate /* NativeAO
 			NativeBox<ClosureType>.release(__innerContext)
 		}
 	}
+	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
@@ -90821,6 +90998,7 @@ public class NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate /* NativeAO
 	
 		self.init(handle: __delegateC)
 	}
+	
 	
 	public func invoke() throws -> DNChar {
 		var __exceptionC: System_Exception_t?
@@ -90858,27 +91036,34 @@ public class NativeAOT_CodeGeneratorInputSample_CharReturnerDelegate /* NativeAO
 
 
 public class NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate /* NativeAOT.CodeGeneratorInputSample.Transformer+StringTransformerDelegate */: System_MulticastDelegate {
-	public override class var typeName: String { "NativeAOT.CodeGeneratorInputSample.Transformer.StringTransformerDelegate" }
-	public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.Transformer+StringTransformerDelegate" }
+	public override class var typeName: String { get {
+		"NativeAOT.CodeGeneratorInputSample.Transformer.StringTransformerDelegate"
+	}}
+	
+	public override class var fullTypeName: String { get {
+		"NativeAOT.CodeGeneratorInputSample.Transformer+StringTransformerDelegate"
+	}}
 	
 	public typealias ClosureType = (_ inputString: System_String? /* System.String */) -> System_String?
+	
 	
 	private static func __createCFunction() -> NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate_CFunction_t {
 		return { __innerContext, inputString in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			let __innerSwiftContext = NativeBox<ClosureType>.fromPointer(__innerContext)
 			let __innerClosure = __innerSwiftContext.value
-	
+		
 			let inputStringSwift = System_String(handle: inputString)
 			
 			let __returnValueSwift = __innerClosure(inputStringSwift)
-	
+		
 			let __returnValue = __returnValueSwift?.__handle
 			__returnValueSwift?.__skipDestroy = true // Will be destroyed by .NET
-	
+		
 			return __returnValue
 		}
+		
 	}
 	
 	private static func __createCDestructorFunction() -> NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDelegate_CDestructorFunction_t {
@@ -90888,6 +91073,7 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDel
 			NativeBox<ClosureType>.release(__innerContext)
 		}
 	}
+	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
@@ -90900,6 +91086,7 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDel
 	
 		self.init(handle: __delegateC)
 	}
+	
 	
 	public func invoke(_ inputString: System_String? /* System.String */) throws -> System_String? {
 		var __exceptionC: System_Exception_t?
@@ -90938,23 +91125,30 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_StringTransformerDel
 
 
 public class NativeAOT_CodeGeneratorInputSample_Transformer_DoublesTransformerDelegate /* NativeAOT.CodeGeneratorInputSample.Transformer+DoublesTransformerDelegate */: System_MulticastDelegate {
-	public override class var typeName: String { "NativeAOT.CodeGeneratorInputSample.Transformer.DoublesTransformerDelegate" }
-	public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.Transformer+DoublesTransformerDelegate" }
+	public override class var typeName: String { get {
+		"NativeAOT.CodeGeneratorInputSample.Transformer.DoublesTransformerDelegate"
+	}}
+	
+	public override class var fullTypeName: String { get {
+		"NativeAOT.CodeGeneratorInputSample.Transformer+DoublesTransformerDelegate"
+	}}
 	
 	public typealias ClosureType = (_ number1: Double /* System.Double */, _ number2: Double /* System.Double */) -> Double
+	
 	
 	private static func __createCFunction() -> NativeAOT_CodeGeneratorInputSample_Transformer_DoublesTransformerDelegate_CFunction_t {
 		return { __innerContext, number1, number2 in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			let __innerSwiftContext = NativeBox<ClosureType>.fromPointer(__innerContext)
 			let __innerClosure = __innerSwiftContext.value
-	
+		
 			
 			let __returnValueSwift = __innerClosure(number1, number2)
-	
+		
 			return __returnValueSwift
 		}
+		
 	}
 	
 	private static func __createCDestructorFunction() -> NativeAOT_CodeGeneratorInputSample_Transformer_DoublesTransformerDelegate_CDestructorFunction_t {
@@ -90964,6 +91158,7 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_DoublesTransformerDe
 			NativeBox<ClosureType>.release(__innerContext)
 		}
 	}
+	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
@@ -90976,6 +91171,7 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_DoublesTransformerDe
 	
 		self.init(handle: __delegateC)
 	}
+	
 	
 	public func invoke(_ number1: Double /* System.Double */, _ number2: Double /* System.Double */) throws -> Double {
 		var __exceptionC: System_Exception_t?
@@ -91011,26 +91207,33 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_DoublesTransformerDe
 
 
 public class NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate /* NativeAOT.CodeGeneratorInputSample.Transformer+StringGetterDelegate */: System_MulticastDelegate {
-	public override class var typeName: String { "NativeAOT.CodeGeneratorInputSample.Transformer.StringGetterDelegate" }
-	public override class var fullTypeName: String { "NativeAOT.CodeGeneratorInputSample.Transformer+StringGetterDelegate" }
+	public override class var typeName: String { get {
+		"NativeAOT.CodeGeneratorInputSample.Transformer.StringGetterDelegate"
+	}}
+	
+	public override class var fullTypeName: String { get {
+		"NativeAOT.CodeGeneratorInputSample.Transformer+StringGetterDelegate"
+	}}
 	
 	public typealias ClosureType = () -> System_String?
+	
 	
 	private static func __createCFunction() -> NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate_CFunction_t {
 		return { __innerContext in
 			guard let __innerContext else { fatalError("Context is nil") }
-	
+		
 			let __innerSwiftContext = NativeBox<ClosureType>.fromPointer(__innerContext)
 			let __innerClosure = __innerSwiftContext.value
-	
+		
 			
 			let __returnValueSwift = __innerClosure()
-	
+		
 			let __returnValue = __returnValueSwift?.__handle
 			__returnValueSwift?.__skipDestroy = true // Will be destroyed by .NET
-	
+		
 			return __returnValue
 		}
+		
 	}
 	
 	private static func __createCDestructorFunction() -> NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate_CDestructorFunction_t {
@@ -91040,6 +91243,7 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate
 			NativeBox<ClosureType>.release(__innerContext)
 		}
 	}
+	
 	
 	public convenience init?(_ __closure: @escaping ClosureType) {
 		let __cFunction = Self.__createCFunction()
@@ -91052,6 +91256,7 @@ public class NativeAOT_CodeGeneratorInputSample_Transformer_StringGetterDelegate
 	
 		self.init(handle: __delegateC)
 	}
+	
 	
 	public func invoke() throws -> System_String? {
 		var __exceptionC: System_Exception_t?

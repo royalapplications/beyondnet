@@ -242,7 +242,7 @@ public partial class SwiftTypeSyntaxWriter
         }
         #endregion Invoke
 
-        string memberPartsCode = string.Join('\n', memberParts);
+        string memberPartsCode = string.Join("\n\n", memberParts);
         sb.AppendLine(memberPartsCode.IndentAllLines(1));
 
         #region Other Members
@@ -268,12 +268,27 @@ public partial class SwiftTypeSyntaxWriter
         string fullTypeName
     )
     {
-        StringBuilder sb = new();
+        SwiftGetOnlyPropertyDeclaration typeNameDecl = new(
+            "typeName",
+            SwiftVisibilities.Public,
+            SwiftTypeAttachmentKinds.Class,
+            true,
+            false,
+            "String",
+            $"\"{typeName}\""
+        );
         
-        sb.AppendLine($"public override class var typeName: String {{ \"{typeName}\" }}");
-        sb.AppendLine($"public override class var fullTypeName: String {{ \"{fullTypeName}\" }}");
-
-        string code = sb.ToString();
+        SwiftGetOnlyPropertyDeclaration fullTypeNameDecl = new(
+            "fullTypeName",
+            SwiftVisibilities.Public,
+            SwiftTypeAttachmentKinds.Class,
+            true,
+            false,
+            "String",
+            $"\"{fullTypeName}\""
+        );
+        
+        string code = $"{typeNameDecl.ToString()}\n\n{fullTypeNameDecl.ToString()}";
 
         return code;
     }
@@ -335,8 +350,6 @@ public partial class SwiftTypeSyntaxWriter
         out string createCFunctionFuncName
     )
     {
-        StringBuilder sb = new();
-        
         string cFunctionParameters = SwiftMethodSyntaxWriter.WriteParameters(
             MemberKind.Method,
             null,
@@ -364,23 +377,13 @@ public partial class SwiftTypeSyntaxWriter
         createCFunctionFuncName = "__createCFunction";
         string innerClosureVarName = "__innerClosure";
 
-        SwiftFuncDeclaration funcDecl = new(
-            createCFunctionFuncName,
-            SwiftVisibilities.Private,
-            SwiftTypeAttachmentKinds.Static,
-            false,
-            string.Empty,
-            false,
-            $"{cTypeName}_CFunction_t",
-            null
-        );
-
-        sb.AppendLine($"{funcDecl.ToString()} {{");
-        sb.AppendLine($"\treturn {{ {cFunctionParameters} in");
-        sb.AppendLine($"\t\tguard let {innerContextParameterName} else {{ fatalError(\"{fatalErrorMessageIfNoContext}\") }}");
+        StringBuilder sb = new();
+        
+        sb.AppendLine($"return {{ {cFunctionParameters} in");
+        sb.AppendLine($"\tguard let {innerContextParameterName} else {{ fatalError(\"{fatalErrorMessageIfNoContext}\") }}");
         sb.AppendLine();
-        sb.AppendLine($"\t\tlet {innerSwiftContextVarName} = NativeBox<{closureTypeTypeAliasName}>.fromPointer({innerContextParameterName})");
-        sb.AppendLine($"\t\tlet {innerClosureVarName} = {innerSwiftContextVarName}.value");
+        sb.AppendLine($"\tlet {innerSwiftContextVarName} = NativeBox<{closureTypeTypeAliasName}>.fromPointer({innerContextParameterName})");
+        sb.AppendLine($"\tlet {innerClosureVarName} = {innerSwiftContextVarName}.value");
         sb.AppendLine();
 
         string parameterConversionsToSwift = SwiftMethodSyntaxWriter.WriteParameterConversions(
@@ -399,7 +402,7 @@ public partial class SwiftTypeSyntaxWriter
         );
 
         sb.AppendLine(parameterConversionsToSwift
-            .IndentAllLines(2));
+            .IndentAllLines(1));
         
         string returnValueName = "__returnValueSwift";
             
@@ -411,7 +414,7 @@ public partial class SwiftTypeSyntaxWriter
         
         string invocation = $"{returnValueStorage}{innerClosureVarName}({allParameterNamesString})";
         
-        sb.AppendLine($"\t\t{invocation}");
+        sb.AppendLine($"\t{invocation}");
         sb.AppendLine();
         
         string returnCode = string.Empty;
@@ -431,10 +434,10 @@ public partial class SwiftTypeSyntaxWriter
 
                 string fullReturnTypeConversion = $"let {newReturnValueName} = {string.Format(returnTypeConversion, $"{returnValueName}{returnTypeOptionalString}")}";
     
-                sb.AppendLine($"\t\t{fullReturnTypeConversion}");
+                sb.AppendLine($"\t{fullReturnTypeConversion}");
                 
                 if (!returnTypeIsPrimitive) {
-                    sb.AppendLine($"\t\t{returnValueName}?.__skipDestroy = true // Will be destroyed by .NET");
+                    sb.AppendLine($"\t{returnValueName}?.__skipDestroy = true // Will be destroyed by .NET");
                 }
                 
                 sb.AppendLine();
@@ -446,13 +449,23 @@ public partial class SwiftTypeSyntaxWriter
         }
 
         if (isReturning) {
-            sb.AppendLine($"\t\t{returnCode}");
+            sb.AppendLine($"\t{returnCode}");
         }
         
-        sb.AppendLine("\t}");
         sb.AppendLine("}");
-
-        string code = sb.ToString();
+        
+        SwiftFuncDeclaration funcDecl = new(
+            createCFunctionFuncName,
+            SwiftVisibilities.Private,
+            SwiftTypeAttachmentKinds.Static,
+            false,
+            string.Empty,
+            false,
+            $"{cTypeName}_CFunction_t",
+            sb.ToString()
+        );
+        
+        string code = funcDecl.ToString();
 
         return code;
     }
