@@ -447,19 +447,13 @@ public partial class SwiftTypeSyntaxWriter
         }
         
         sb.AppendLine("}");
-        
-        SwiftFuncDeclaration funcDecl = new(
-            createCFunctionFuncName,
-            SwiftVisibilities.Private,
-            SwiftTypeAttachmentKinds.Static,
-            false,
-            string.Empty,
-            false,
-            $"{cTypeName}_CFunction_t",
-            sb.ToString()
-        );
-        
-        string code = funcDecl.ToString();
+
+        string code = Builder.Func(createCFunctionFuncName)
+            .Private()
+            .Static()
+            .ReturnTypeName($"{cTypeName}_CFunction_t")
+            .Implementation(sb.ToString())
+            .ToString();
 
         return code;
     }
@@ -482,19 +476,13 @@ public partial class SwiftTypeSyntaxWriter
         sb.AppendLine();
         sb.AppendLine($"\tNativeBox<{closureTypeTypeAliasName}>.release({innerContextParameterName})");
         sb.AppendLine("}");
-        
-        SwiftFuncDeclaration funcDecl = new(
-            createCDestructorFunctionFuncName,
-            SwiftVisibilities.Private,
-            SwiftTypeAttachmentKinds.Static,
-            false,
-            string.Empty,
-            false,
-            $"{cTypeName}_CDestructorFunction_t",
-            sb.ToString()
-        );
 
-        string code = funcDecl.ToString();
+        string code = Builder.Func(createCDestructorFunctionFuncName)
+            .Private()
+            .Static()
+            .ReturnTypeName($"{cTypeName}_CDestructorFunction_t")
+            .Implementation(sb.ToString())
+            .ToString();
 
         return code;
     }
@@ -554,16 +542,13 @@ public partial class SwiftTypeSyntaxWriter
 
         bool isOverride = typeInfo.DelegateInvokeMethodMatches(baseTypeDelegateInvokeMethod);
 
-        SwiftFuncDeclaration swiftFuncDecl = new(
-            "invoke",
-            SwiftVisibilities.Public,
-            SwiftTypeAttachmentKinds.Instance,
-            isOverride,
-            swiftFuncParameters,
-            true,
-            typeInfo.SwiftReturnTypeName,
-            null
-        );
+        string swiftFuncDecl = Builder.Func("invoke")
+            .Public()
+            .Override(isOverride)
+            .Parameters(swiftFuncParameters)
+            .Throws()
+            .ReturnTypeName(typeInfo.SwiftReturnTypeName)
+            .ToString();
 
         sb.AppendLine($"{swiftFuncDecl} {{");
 

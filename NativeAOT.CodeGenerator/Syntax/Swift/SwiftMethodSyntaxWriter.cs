@@ -328,20 +328,15 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 .Implementation(memberImpl)
                 .ToString();
         } else if (memberKind == MemberKind.Destructor) {
-            SwiftFuncDeclaration decl = new(
-                methodNameSwift,
-                onlyWriteSignatureForProtocol 
+            fullDecl = Builder.Func(methodNameSwift)
+                .Visibility(onlyWriteSignatureForProtocol
                     ? SwiftVisibilities.None
-                    : SwiftVisibilities.Internal,
-                SwiftTypeAttachmentKinds.Instance,
-                true,
-                methodSignatureParameters,
-                mayThrow,
-                null,
-                memberImpl
-            );
-
-            fullDecl = decl.ToString();
+                    : SwiftVisibilities.Internal)
+                .Override()
+                .Parameters(methodSignatureParameters)
+                .Throws(mayThrow)
+                .Implementation(memberImpl)
+                .ToString();
         } else if (memberKind == MemberKind.TypeOf) {
             bool isEnum = declaringType.IsEnum;
             
@@ -377,24 +372,21 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 .Implementation(memberImpl)
                 .ToString();
         } else {
-            SwiftFuncDeclaration decl = new(
-                methodNameSwift,
-                onlyWriteSignatureForProtocol 
+            fullDecl = Builder.Func(methodNameSwift)
+                .Visibility(onlyWriteSignatureForProtocol 
                     ? SwiftVisibilities.None
-                    : SwiftVisibilities.Public,
-                isStaticMethod 
+                    : SwiftVisibilities.Public)
+                .TypeAttachmentKind(isStaticMethod 
                     ? SwiftTypeAttachmentKinds.Class
-                    : SwiftTypeAttachmentKinds.Instance,
-                treatAsOverridden,
-                methodSignatureParameters,
-                mayThrow,
-                !returnOrSetterOrEventHandlerType.IsVoid()
+                    : SwiftTypeAttachmentKinds.Instance)
+                .Override(treatAsOverridden)
+                .Parameters(methodSignatureParameters)
+                .Throws(mayThrow)
+                .ReturnTypeName(!returnOrSetterOrEventHandlerType.IsVoid()
                     ? swiftReturnOrSetterTypeNameWithComment
-                    : null,
-                memberImpl
-            );
-
-            fullDecl = decl.ToString();
+                    : null)
+                .Implementation(memberImpl)
+                .ToString();
         }
         #endregion Func Declaration
         
@@ -737,20 +729,15 @@ if let __exceptionC {
                 .Implementation(invocation)
                 .ToString();
         } else {
-            SwiftFuncDeclaration decl = new(
-                generatedName,
-                SwiftVisibilities.Public,
-                SwiftTypeAttachmentKinds.Instance,
-                false,
-                parametersString,
-                mayThrow,
-                !returnType.IsVoid()
+            fullDecl = Builder.Func(generatedName)
+                .Public()
+                .Parameters(parametersString)
+                .Throws(mayThrow)
+                .ReturnTypeName(!returnType.IsVoid()
                     ? swiftReturnTypeName
-                    : null,
-                invocation
-            );
-        
-            fullDecl = decl.ToString();   
+                    : null)
+                .Implementation(invocation)
+                .ToString();   
         }
 
         return fullDecl;

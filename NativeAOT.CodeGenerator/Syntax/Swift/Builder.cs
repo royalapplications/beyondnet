@@ -67,6 +67,16 @@ public struct Builder
         );
     }
     
+    public static Builders.Func Func
+    (
+        string name
+    )
+    {
+        return new(
+            name
+        );
+    }
+    
     public static Builders.Initializer Initializer()
     {
         return new();
