@@ -9,7 +9,7 @@ public struct Builder
         string returnType
     )
     {
-        return new GetOnlyProperty(
+        return new(
             name,
             returnType
         );
@@ -21,7 +21,7 @@ public struct Builder
         string originalTypeName
     )
     {
-        return new TypeAlias(
+        return new(
             aliasTypeName,
             originalTypeName
         );
@@ -32,7 +32,7 @@ public struct Builder
         string comment
     )
     {
-        return new SingleLineComment(
+        return new(
             comment
         );
     }
@@ -42,7 +42,7 @@ public struct Builder
         string name
     )
     {
-        return new Class(
+        return new(
             name
         );
     }
@@ -52,13 +52,18 @@ public struct Builder
         string name
     )
     {
-        return new Struct(
+        return new(
             name
         );
     }
     
     public static Initializer Initializer()
     {
-        return new Initializer();
+        return new();
+    }
+    
+    public static Closure Closure()
+    {
+        return new();
     }
 }

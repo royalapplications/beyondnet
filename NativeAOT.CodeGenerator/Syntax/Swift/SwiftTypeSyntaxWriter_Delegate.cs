@@ -312,16 +312,15 @@ public partial class SwiftTypeSyntaxWriter
             false,
             typeDescriptorRegistry
         );
-        
-        SwiftClosureDeclaration swiftClosureDecl = new(
-            swiftFuncParameters,
-            false,
-            swiftReturnTypeName
-        );
+
+        string swiftClosureDecl = Builder.Closure()
+            .Parameters(swiftFuncParameters)
+            .ReturnTypeName(swiftReturnTypeName)
+            .ToString();
 
         closureTypeTypeAliasName = "ClosureType";
 
-        string typeAliasDeclaration = Builder.TypeAlias(closureTypeTypeAliasName, swiftClosureDecl.ToString())
+        string typeAliasDeclaration = Builder.TypeAlias(closureTypeTypeAliasName, swiftClosureDecl)
             .Public()
             .ToString();
 
