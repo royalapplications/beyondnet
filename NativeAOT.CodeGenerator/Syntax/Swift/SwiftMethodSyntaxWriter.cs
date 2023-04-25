@@ -363,23 +363,21 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 .Implementation(memberImpl)
                 .ToString();
         } else if (CanBeGeneratedAsGetOnlyProperty(memberKind, isGeneric, parameters.Any())) {
-            SwiftGetOnlyPropertyDeclaration decl = new(
-                methodNameSwift,
-                onlyWriteSignatureForProtocol
-                    ? SwiftVisibilities.None
-                    : SwiftVisibilities.Public,
-                isStaticMethod
-                    ? SwiftTypeAttachmentKinds.Class
-                    : SwiftTypeAttachmentKinds.Instance,
-                treatAsOverridden,
-                mayThrow,
-                !returnOrSetterOrEventHandlerType.IsVoid()
-                    ? swiftReturnOrSetterTypeNameWithComment
-                    : throw new Exception("A property must have a return type"),
-                memberImpl
-            );
+            string propTypeName = !returnOrSetterOrEventHandlerType.IsVoid()
+                ? swiftReturnOrSetterTypeNameWithComment
+                : throw new Exception("A property must have a return type");
 
-            fullDecl = decl.ToString();
+            fullDecl = Builder.GetOnlyProperty(methodNameSwift, propTypeName)
+                .Visibility(onlyWriteSignatureForProtocol
+                    ? SwiftVisibilities.None
+                    : SwiftVisibilities.Public)
+                .TypeAttachmentKind(isStaticMethod
+                    ? SwiftTypeAttachmentKinds.Class
+                    : SwiftTypeAttachmentKinds.Instance)
+                .Override(treatAsOverridden)
+                .Throws(mayThrow)
+                .Implementation(memberImpl)
+                .ToString();
         } else {
             SwiftFuncDeclaration decl = new(
                 methodNameSwift,
@@ -731,19 +729,15 @@ if let __exceptionC {
         string fullDecl;
 
         if (CanBeGeneratedAsGetOnlyProperty(memberKind, isGeneric, parameters.Any())) {
-            SwiftGetOnlyPropertyDeclaration decl = new(
-                generatedName,
-                SwiftVisibilities.Public,
-                SwiftTypeAttachmentKinds.Instance,
-                false,
-                mayThrow,
-                !returnType.IsVoid()
-                    ? swiftReturnTypeName
-                    : throw new Exception("A property must have a return type"),
-                invocation
-            );
-
-            fullDecl = decl.ToString();
+            string propTypeName = !returnType.IsVoid()
+                ? swiftReturnTypeName
+                : throw new Exception("A property must have a return type");
+            
+            fullDecl = Builder.GetOnlyProperty(generatedName, propTypeName)
+                .Public()
+                .Throws(mayThrow)
+                .Implementation(invocation)
+                .ToString();
         } else {
             SwiftFuncDeclaration decl = new(
                 generatedName,

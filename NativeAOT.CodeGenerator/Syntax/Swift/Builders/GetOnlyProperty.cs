@@ -1,3 +1,4 @@
+using NativeAOT.CodeGenerator.Extensions;
 using NativeAOT.CodeGenerator.Syntax.Swift.Declaration;
 
 namespace NativeAOT.CodeGenerator.Syntax.Swift.Builders;
@@ -120,6 +121,13 @@ public struct GetOnlyProperty
     {
         return Build()
             .ToString();
+    }
+    
+    public string ToIndentedString(int indentationLevel)
+    {
+        return Build()
+            .ToString()
+            .IndentAllLines(indentationLevel);
     }
     #endregion Build
 }

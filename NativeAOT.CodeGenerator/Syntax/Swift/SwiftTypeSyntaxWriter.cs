@@ -200,17 +200,11 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
         sb.AppendLine(initDecl.ToString().IndentAllLines(1));
         sb.AppendLine();
 
-        SwiftGetOnlyPropertyDeclaration cValuePropDecl = new(
-            "cValue",
-            SwiftVisibilities.None,
-            SwiftTypeAttachmentKinds.Instance,
-            false,
-            false,
-            cEnumTypeName,
-            $"{cEnumTypeName}(rawValue: rawValue){initUnwrap}"
-        );
+        string cValuePropDecl = Builder.GetOnlyProperty("cValue", cEnumTypeName)
+            .Implementation($"{cEnumTypeName}(rawValue: rawValue){initUnwrap}")
+            .ToIndentedString(1);
 
-        sb.AppendLine(cValuePropDecl.ToString().IndentAllLines(1));
+        sb.AppendLine(cValuePropDecl);
         sb.AppendLine();
         
         var caseNames = type.GetEnumNames();
@@ -342,30 +336,25 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
             );
             
             sb.AppendLine($"{classDecl.ToString()} {{");
+
+            string typeNameDecl = Builder.GetOnlyProperty("typeName", "String")
+                .Public()
+                .Class()
+                .Override()
+                .Implementation($"\"{typeName}\"")
+                .ToIndentedString(1);
+
+            string fullTypeNameDecl = Builder.GetOnlyProperty("fullTypeName", "String")
+                .Public()
+                .Class()
+                .Override()
+                .Implementation($"\"{fullTypeName}\"")
+                .ToIndentedString(1);
             
-            SwiftGetOnlyPropertyDeclaration typeNameDecl = new(
-                "typeName",
-                SwiftVisibilities.Public,
-                SwiftTypeAttachmentKinds.Class,
-                true,
-                false,
-                "String",
-                $"\"{typeName}\""
-            );
-        
-            SwiftGetOnlyPropertyDeclaration fullTypeNameDecl = new(
-                "fullTypeName",
-                SwiftVisibilities.Public,
-                SwiftTypeAttachmentKinds.Class,
-                true,
-                false,
-                "String",
-                $"\"{fullTypeName}\""
-            );
-            
-            sb.AppendLine($"{typeNameDecl.ToString().IndentAllLines(1)}");
+            sb.AppendLine(typeNameDecl);
             sb.AppendLine();
-            sb.AppendLine($"{fullTypeNameDecl.ToString().IndentAllLines(1)}");
+            
+            sb.AppendLine(fullTypeNameDecl);
             sb.AppendLine();
         }
 

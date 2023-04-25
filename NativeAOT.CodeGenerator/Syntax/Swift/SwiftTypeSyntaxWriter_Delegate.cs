@@ -272,27 +272,21 @@ public partial class SwiftTypeSyntaxWriter
         string fullTypeName
     )
     {
-        SwiftGetOnlyPropertyDeclaration typeNameDecl = new(
-            "typeName",
-            SwiftVisibilities.Public,
-            SwiftTypeAttachmentKinds.Class,
-            true,
-            false,
-            "String",
-            $"\"{typeName}\""
-        );
+        string typeNameDecl = Builder.GetOnlyProperty("typeName", "String")
+            .Public()
+            .Class()
+            .Override()
+            .Implementation($"\"{typeName}\"")
+            .ToString();
+
+        string fullTypeNameDecl = Builder.GetOnlyProperty("fullTypeName", "String")
+            .Public()
+            .Class()
+            .Override()
+            .Implementation($"\"{fullTypeName}\"")
+            .ToString();
         
-        SwiftGetOnlyPropertyDeclaration fullTypeNameDecl = new(
-            "fullTypeName",
-            SwiftVisibilities.Public,
-            SwiftTypeAttachmentKinds.Class,
-            true,
-            false,
-            "String",
-            $"\"{fullTypeName}\""
-        );
-        
-        string code = $"{typeNameDecl.ToString()}\n\n{fullTypeNameDecl.ToString()}";
+        string code = $"{typeNameDecl}\n\n{fullTypeNameDecl}";
 
         return code;
     }

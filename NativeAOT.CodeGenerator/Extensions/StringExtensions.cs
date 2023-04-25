@@ -77,6 +77,10 @@ internal static class StringExtensions
         
     internal static string IndentAllLines(this string text, int indentCount)
     {
+        if (indentCount < 1) {
+            return text;
+        }
+        
         string newLine = Environment.NewLine;
         
         string indentPrefix = string.Empty;
