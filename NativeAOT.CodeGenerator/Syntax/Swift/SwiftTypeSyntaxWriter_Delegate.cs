@@ -254,15 +254,14 @@ public partial class SwiftTypeSyntaxWriter
                 
         sb.AppendLine(membersCode);
         #endregion Other Members
+
+        string typeDecl = Builder.Class($"{typeInfo.SwiftTypeName} /* {typeInfo.FullTypeName} */")
+            .BaseTypeName(typeInfo.SwiftBaseTypeName)
+            .Public()
+            .Implementation(sb.ToString())
+            .ToString();
         
-        SwiftClassDeclaration typeDecl = new(
-            $"{typeInfo.SwiftTypeName} /* {typeInfo.FullTypeName} */",
-            typeInfo.SwiftBaseTypeName,
-            SwiftVisibilities.Public,
-            sb.ToString()
-        );
-        
-        string code = typeDecl.ToString();
+        string code = typeDecl;
 
         return code;
     }

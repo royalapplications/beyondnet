@@ -326,14 +326,12 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
             string swiftBaseTypeName = baseTypeDescriptor?.GetTypeName(CodeLanguage.Swift, false)
                                        ?? "DNObject";
 
-            SwiftClassDeclaration classDecl = new(
-                $"{swiftTypeName} /* {fullTypeName} */",
-                swiftBaseTypeName,
-                SwiftVisibilities.Public,
-                null
-            );
-            
-            sb.AppendLine($"{classDecl.ToString()} {{");
+            string classDecl = Builder.Class($"{swiftTypeName} /* {fullTypeName} */")
+                .BaseTypeName(swiftBaseTypeName)
+                .Public()
+                .ToString();
+
+            sb.AppendLine($"{classDecl} {{");
 
             string typeNameDecl = Builder.GetOnlyProperty("typeName", "String")
                 .Public()

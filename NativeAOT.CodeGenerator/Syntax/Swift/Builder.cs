@@ -36,4 +36,14 @@ public struct Builder
             comment
         );
     }
+    
+    public static Class Class
+    (
+        string name
+    )
+    {
+        return new Class(
+            name
+        );
+    }
 }
