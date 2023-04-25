@@ -456,6 +456,7 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
         StringBuilder sb = new();
 
         sb.AppendLine(codeForOptional);
+        sb.AppendLine();
         sb.AppendLine(codeForNonOptional);
 
         string code = sb.ToString();
@@ -473,21 +474,13 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
         if (generatedMembers.Count <= 0) {
             return string.Empty;
         }
-            
-        StringBuilder sb = new();
-
+        
         TypeDescriptor extendedTypeDescriptor = extendedType.GetTypeDescriptor(typeDescriptorRegistry);
         string extendedTypeSwiftName = extendedTypeDescriptor.GetTypeName(CodeLanguage.Swift, false);
 
         string extendedTypeOptionality = isExtendedTypeOptional
             ? "?"
             : string.Empty;
-
-        string extensionDecl = Builder.Extension($"{extendedTypeSwiftName}{extendedTypeOptionality}")
-            .ToString();
-        
-        string typeExtensionDecl = $"{extensionDecl} {{";
-        sb.AppendLine(typeExtensionDecl);
 
         StringBuilder sbMembers = new();
         
@@ -500,14 +493,10 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
             sbMembers.AppendLine(extensionMethod);
             sbMembers.AppendLine();
         }
-
-        sb.AppendLine(sbMembers
-            .ToString()
-            .IndentAllLines(1));
-
-        sb.AppendLine("}");
         
-        string code = sb.ToString();
+        string code = Builder.Extension($"{extendedTypeSwiftName}{extendedTypeOptionality}")
+            .Implementation(sbMembers.ToString())
+            .ToString();
         
         return code;
     }
