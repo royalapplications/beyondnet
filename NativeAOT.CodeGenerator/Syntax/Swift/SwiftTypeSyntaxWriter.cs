@@ -141,14 +141,12 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
         bool isFlagsEnum = type.IsDefined(typeof(FlagsAttribute), false);
 
         if (isFlagsEnum) {
-            SwiftStructDeclaration structDecl = new(
-                swiftEnumTypeName,
-                "OptionSet",
-                SwiftVisibilities.Public,
-                null
-            );
+            string structDecl = Builder.Struct(swiftEnumTypeName)
+                .ProtocolConformance("OptionSet")
+                .Public()
+                .ToString();
             
-            sb.AppendLine($"{structDecl.ToString()} {{");
+            sb.AppendLine($"{structDecl} {{");
 
             const string rawValueTypeAliasVarName = "RawValue";
 

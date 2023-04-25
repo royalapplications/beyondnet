@@ -46,4 +46,14 @@ public struct Builder
             name
         );
     }
+    
+    public static Struct Struct
+    (
+        string name
+    )
+    {
+        return new Struct(
+            name
+        );
+    }
 }
