@@ -317,18 +317,16 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         string fullDecl;
 
         if (memberKind == MemberKind.Constructor) {
-            SwiftInitDeclaration decl = new(
-                true,
-                true,
-                onlyWriteSignatureForProtocol 
+            fullDecl = Builder.Initializer()
+                .Convenience()
+                .Failable()
+                .Visibility(onlyWriteSignatureForProtocol 
                     ? SwiftVisibilities.None
-                    : SwiftVisibilities.Public,
-                methodSignatureParameters,
-                mayThrow,
-                memberImpl
-            );
-
-            fullDecl = decl.ToString();
+                    : SwiftVisibilities.Public)
+                .Parameters(methodSignatureParameters)
+                .Throws(mayThrow)
+                .Implementation(memberImpl)
+                .ToString();
         } else if (memberKind == MemberKind.Destructor) {
             SwiftFuncDeclaration decl = new(
                 methodNameSwift,

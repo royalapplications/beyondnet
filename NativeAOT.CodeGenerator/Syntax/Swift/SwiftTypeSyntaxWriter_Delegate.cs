@@ -519,16 +519,15 @@ public partial class SwiftTypeSyntaxWriter
         sb.AppendLine();
         sb.AppendLine("self.init(handle: __delegateC)");
 
-        SwiftInitDeclaration initDecl = new(
-            true,
-            true,
-            SwiftVisibilities.Public,
-            $"_ __closure: @escaping {closureTypeTypeAliasName}",
-            false,
-            sb.ToString()
-        );
+        string initDecl = Builder.Initializer()
+            .Public()
+            .Convenience()
+            .Failable()
+            .Parameters($"_ __closure: @escaping {closureTypeTypeAliasName}")
+            .Implementation(sb.ToString())
+            .ToString();
 
-        string code = initDecl.ToString();
+        string code = initDecl;
 
         return code;
     }

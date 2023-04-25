@@ -56,4 +56,9 @@ public struct Builder
             name
         );
     }
+    
+    public static Initializer Initializer()
+    {
+        return new Initializer();
+    }
 }

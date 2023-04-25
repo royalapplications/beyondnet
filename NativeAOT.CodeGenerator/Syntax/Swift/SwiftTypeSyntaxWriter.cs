@@ -157,17 +157,14 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
             sb.AppendLine(rawValueTypeAliasDecl);
             sb.AppendLine($"\tpublic let rawValue: {rawValueTypeAliasVarName}");
             sb.AppendLine();
+
+            string initRawValueDecl = Builder.Initializer()
+                .Public()
+                .Parameters($"rawValue: {rawValueTypeAliasVarName}")
+                .Implementation("self.rawValue = rawValue")
+                .ToIndentedString(1);
             
-            SwiftInitDeclaration initRawValueDecl = new(
-                false,
-                false,
-                SwiftVisibilities.Public,
-                $"rawValue: {rawValueTypeAliasVarName}",
-                false,
-                $"self.rawValue = rawValue"
-            );
-            
-            sb.AppendLine(initRawValueDecl.ToString().IndentAllLines(1));
+            sb.AppendLine(initRawValueDecl);
             sb.AppendLine();
         } else {
             SwiftEnumDeclaration enumDecl = new(
@@ -184,16 +181,12 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
             ? string.Empty
             : "!";
 
-        SwiftInitDeclaration initDecl = new(
-            false,
-            false,
-            SwiftVisibilities.None,
-            $"cValue: {cEnumTypeName}",
-            false,
-            $"self.init(rawValue: cValue.rawValue){initUnwrap}"
-        );
+        string initDecl = Builder.Initializer()
+            .Parameters($"cValue: {cEnumTypeName}")
+            .Implementation($"self.init(rawValue: cValue.rawValue){initUnwrap}")
+            .ToIndentedString(1);
 
-        sb.AppendLine(initDecl.ToString().IndentAllLines(1));
+        sb.AppendLine(initDecl);
         sb.AppendLine();
 
         string cValuePropDecl = Builder.GetOnlyProperty("cValue", cEnumTypeName)
