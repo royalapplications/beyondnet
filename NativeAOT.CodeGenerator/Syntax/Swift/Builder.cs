@@ -14,4 +14,16 @@ public struct Builder
             returnType
         );
     }
+
+    public static TypeAlias TypeAlias
+    (
+        string aliasTypeName,
+        string originalTypeName
+    )
+    {
+        return new TypeAlias(
+            aliasTypeName,
+            originalTypeName
+        );
+    }
 }

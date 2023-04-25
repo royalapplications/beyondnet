@@ -150,15 +150,13 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
             
             sb.AppendLine($"{structDecl.ToString()} {{");
 
-            const string rawValueTypeAliasVarName = "RawValue"; 
+            const string rawValueTypeAliasVarName = "RawValue";
 
-            SwiftTypeAliasDeclaration rawValueTypeAliasDecl = new(
-                rawValueTypeAliasVarName,
-                SwiftVisibilities.Public,
-                underlyingSwiftTypeName
-            );
+            string rawValueTypeAliasDecl = Builder.TypeAlias(rawValueTypeAliasVarName, underlyingSwiftTypeName)
+                .Public()
+                .ToIndentedString(1);
             
-            sb.AppendLine($"\t{rawValueTypeAliasDecl.ToString()}");
+            sb.AppendLine(rawValueTypeAliasDecl);
             sb.AppendLine($"\tpublic let rawValue: {rawValueTypeAliasVarName}");
             sb.AppendLine();
             

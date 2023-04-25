@@ -322,13 +322,11 @@ public partial class SwiftTypeSyntaxWriter
 
         closureTypeTypeAliasName = "ClosureType";
 
-        SwiftTypeAliasDeclaration typeAliasDeclaration = new(
-            closureTypeTypeAliasName,
-            SwiftVisibilities.Public,
-            swiftClosureDecl.ToString()
-        );
+        string typeAliasDeclaration = Builder.TypeAlias(closureTypeTypeAliasName, swiftClosureDecl.ToString())
+            .Public()
+            .ToString();
 
-        sb.AppendLine(typeAliasDeclaration.ToString());
+        sb.AppendLine(typeAliasDeclaration);
 
         string code = sb.ToString();
 
