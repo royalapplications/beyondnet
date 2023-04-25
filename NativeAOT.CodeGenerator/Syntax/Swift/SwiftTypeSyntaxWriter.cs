@@ -1,6 +1,6 @@
 using System.Reflection;
 using System.Text;
-
+using NativeAOT.CodeGenerator.Collectors;
 using NativeAOT.CodeGenerator.Extensions;
 using NativeAOT.CodeGenerator.Generator;
 using NativeAOT.CodeGenerator.Types;
@@ -302,11 +302,8 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
+        Result cResult = state.CResult ?? throw new Exception("No CResult provided");
 
-        if (state.CResult is null) {
-            throw new Exception("No CResult provided");
-        }
-        
         if (type.IsPrimitive ||
             type.IsPointer ||
             type.IsByRef ||
@@ -318,6 +315,8 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
 
             return string.Empty;
         }
+        
+        bool onlyWriteSignatureForProtocol = (configuration as SwiftSyntaxWriterConfiguration)?.OnlyWriteSignatureForProtocol ?? false;
 
         // bool isAbstract = type.IsAbstract;
         
@@ -330,6 +329,8 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
         string fullTypeName = type.GetFullNameOrName();
         TypeDescriptor typeDescriptor = type.GetTypeDescriptor(typeDescriptorRegistry);
         string swiftTypeName =  typeDescriptor.GetTypeName(CodeLanguage.Swift, false);
+        
+        bool isInterface = type.IsInterface;
 
         if (writeTypeDefinition) {
             Type? baseType = type.BaseType;
@@ -338,32 +339,79 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
             string swiftBaseTypeName = baseTypeDescriptor?.GetTypeName(CodeLanguage.Swift, false)
                                        ?? "DNObject";
 
-            string classDecl = Builder.Class($"{swiftTypeName} /* {fullTypeName} */")
-                .BaseTypeName(swiftBaseTypeName)
-                .Public()
-                .ToString();
+            /* List<Type> interfaceTypes = new();
 
-            sb.AppendLine($"{classDecl} {{");
-
-            string typeNameDecl = Builder.GetOnlyProperty("typeName", "String")
-                .Public()
-                .Class()
-                .Override()
-                .Implementation($"\"{typeName}\"")
-                .ToIndentedString(1);
-
-            string fullTypeNameDecl = Builder.GetOnlyProperty("fullTypeName", "String")
-                .Public()
-                .Class()
-                .Override()
-                .Implementation($"\"{fullTypeName}\"")
-                .ToIndentedString(1);
+            if (isInterface &&
+                !onlyWriteSignatureForProtocol) {
+                interfaceTypes.Add(type);
+            }
             
-            sb.AppendLine(typeNameDecl);
-            sb.AppendLine();
+            interfaceTypes.AddRange(type.GetInterfaces());
             
-            sb.AppendLine(fullTypeNameDecl);
-            sb.AppendLine();
+            List<string> swiftProtocolTypeNames = new();
+
+            foreach (var interfaceType in interfaceTypes) {
+                if (!cSharpUnmanagedResult.GeneratedTypes.ContainsKey(interfaceType) ||
+                    !cResult.GeneratedTypes.ContainsKey(interfaceType)) {
+                    continue;
+                }
+                
+                TypeDescriptor interfaceTypeDescriptor = interfaceType.GetTypeDescriptor(typeDescriptorRegistry);
+
+                string swiftProtocolTypeName = interfaceTypeDescriptor.GetTypeName(
+                    CodeLanguage.Swift, 
+                    false
+                ) + "_Protocol";
+                
+                swiftProtocolTypeNames.Add(swiftProtocolTypeName);
+            }
+
+            string protocolConformancesString = string.Join(", ", swiftProtocolTypeNames); */
+
+            string typeDecl;
+
+            if (onlyWriteSignatureForProtocol) {
+                string todoProtocolName = $"{swiftTypeName}_Protocol";
+                string todoFullProtocolName = $"{todoProtocolName} /* {fullTypeName} */";
+
+                typeDecl = Builder.Protocol(todoFullProtocolName)
+                    .BaseTypeName("DNObject")
+                    // .ProtocolConformance(protocolConformancesString)
+                    .Public()
+                    .ToString();
+            } else {
+                string fullSwiftTypeName = $"{swiftTypeName} /* {fullTypeName} */";
+                
+                typeDecl = Builder.Class(fullSwiftTypeName)
+                    .BaseTypeName(swiftBaseTypeName)
+                    // .ProtocolConformance(protocolConformancesString)
+                    .Public()
+                    .ToString();                
+            }
+
+            sb.AppendLine($"{typeDecl} {{");
+
+            if (!onlyWriteSignatureForProtocol) {
+                string typeNameDecl = Builder.GetOnlyProperty("typeName", "String")
+                    .Public()
+                    .Class()
+                    .Override()
+                    .Implementation($"\"{typeName}\"")
+                    .ToIndentedString(1);
+    
+                string fullTypeNameDecl = Builder.GetOnlyProperty("fullTypeName", "String")
+                    .Public()
+                    .Class()
+                    .Override()
+                    .Implementation($"\"{fullTypeName}\"")
+                    .ToIndentedString(1);
+                
+                sb.AppendLine(typeNameDecl);
+                sb.AppendLine();
+                
+                sb.AppendLine(fullTypeNameDecl);
+                sb.AppendLine();
+            }
         }
 
         HashSet<MemberInfo> generatedMembers = new();
@@ -406,6 +454,11 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
 
             if (target == null) {
                 throw new Exception("No target");
+            }
+
+            if (onlyWriteSignatureForProtocol &&
+                (syntaxWriter is IDestructorSyntaxWriter || syntaxWriter is ITypeOfSyntaxWriter)) {
+                continue;
             }
 
             string memberCode = syntaxWriter.Write(

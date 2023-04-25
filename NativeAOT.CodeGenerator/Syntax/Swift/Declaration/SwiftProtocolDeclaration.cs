@@ -5,18 +5,21 @@ namespace NativeAOT.CodeGenerator.Syntax.Swift.Declaration;
 public struct SwiftProtocolDeclaration
 {
     public string Name { get; }
+    public string? BaseTypeName { get; }
     public string? ProtocolConformance { get; }
     public SwiftVisibilities Visibility { get; }
     public string? Implementation { get; }
 
     public SwiftProtocolDeclaration(
         string name,
+        string? baseTypeName,
         string? protocolConformance,
         SwiftVisibilities visibility,
         string? implementation
     )
     {
         Name = name;
+        BaseTypeName = baseTypeName;
         ProtocolConformance = protocolConformance;
         Visibility = visibility;
         Implementation = implementation;
@@ -28,14 +31,20 @@ public struct SwiftProtocolDeclaration
         
         string visibilityString = Visibility.ToSwiftSyntaxString();
 
-        string protocolConformanceDecl = !string.IsNullOrEmpty(ProtocolConformance)
-            ? $": {ProtocolConformance}"
-            : string.Empty; 
+        string baseTypeAndProtocolConformanceDecl = !string.IsNullOrEmpty(BaseTypeName)
+            ? $": {BaseTypeName}"
+            : string.Empty;
+
+        if (!string.IsNullOrEmpty(ProtocolConformance)) {
+            baseTypeAndProtocolConformanceDecl += !string.IsNullOrEmpty(baseTypeAndProtocolConformanceDecl)
+                ? $", {ProtocolConformance}"
+                : $": {ProtocolConformance}";
+        } 
         
         string[] signatureComponents = new[] {
             visibilityString,
             protocol,
-            $"{Name}{protocolConformanceDecl}"
+            $"{Name}{baseTypeAndProtocolConformanceDecl}"
         };
 
         string signature = SwiftFuncSignatureComponents.ComponentsToString(signatureComponents);

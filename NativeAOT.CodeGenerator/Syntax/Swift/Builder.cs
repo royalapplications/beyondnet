@@ -77,6 +77,16 @@ public struct Builder
         );
     }
     
+    public static Builders.Protocol Protocol
+    (
+        string name
+    )
+    {
+        return new(
+            name
+        );
+    }
+    
     public static Builders.Func Func
     (
         string name

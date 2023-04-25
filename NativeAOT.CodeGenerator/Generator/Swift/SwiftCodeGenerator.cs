@@ -77,14 +77,31 @@ public class SwiftCodeGenerator: ICodeGenerator
             // syntaxWriterConfiguration.OnlyWriteSignatureForProtocol = isInterface;
             
             Syntax.State state = new(CSharpUnmanagedResult, CResult);
-
-            string typeCode = typeSyntaxWriter.Write(type, state, syntaxWriterConfiguration);
+            
+            string typeCode = typeSyntaxWriter.Write(
+                type,
+                state,
+                syntaxWriterConfiguration
+            );
+            
             apisSection.Code.AppendLine(typeCode);
 
             result.AddGeneratedType(
                 type,
                 state.GeneratedMembers
             );
+            
+            /* if (isInterface) {
+                syntaxWriterConfiguration.OnlyWriteSignatureForProtocol = false;
+                
+                string typeImplCode = typeSyntaxWriter.Write(
+                    type,
+                    state,
+                    syntaxWriterConfiguration
+                );
+            
+                apisSection.Code.AppendLine(typeImplCode);
+            } */
 
             IEnumerable<GeneratedMember> newExtensionMembers = state.GetGeneratedMembersThatAreExtensions();
 

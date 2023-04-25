@@ -7,6 +7,7 @@ public struct Protocol
 {
     private readonly string m_name;
 
+    private string? m_baseTypeName = null;
     private string? m_protocolConformance = null;
     private SwiftVisibilities m_visibility = SwiftVisibilities.None;
     private string? m_implementation = null;
@@ -17,6 +18,15 @@ public struct Protocol
     {
         m_name = name;
     }
+    
+    #region BaseTypeName
+    public Protocol BaseTypeName(string? baseTypeName = null)
+    {
+        m_baseTypeName = baseTypeName;
+
+        return this;
+    }
+    #endregion BaseTypeName
 
     #region ProtocolConformance
     public Protocol ProtocolConformance(string? protocolConformance = null)
@@ -75,6 +85,7 @@ public struct Protocol
     {
         return new(
             m_name,
+            m_baseTypeName,
             m_protocolConformance,
             m_visibility,
             m_implementation
