@@ -4,7 +4,7 @@ namespace NativeAOT.CodeGenerator.Syntax.Swift;
 
 public struct Builder
 {
-    public static GetOnlyProperty GetOnlyProperty(
+    public static Builders.GetOnlyProperty GetOnlyProperty(
         string name,
         string returnType
     )
@@ -15,7 +15,7 @@ public struct Builder
         );
     }
 
-    public static TypeAlias TypeAlias
+    public static Builders.TypeAlias TypeAlias
     (
         string aliasTypeName,
         string originalTypeName
@@ -27,7 +27,7 @@ public struct Builder
         );
     }
 
-    public static SingleLineComment SingleLineComment
+    public static Builders.SingleLineComment SingleLineComment
     (
         string comment
     )
@@ -37,7 +37,7 @@ public struct Builder
         );
     }
     
-    public static Class Class
+    public static Builders.Class Class
     (
         string name
     )
@@ -47,7 +47,7 @@ public struct Builder
         );
     }
     
-    public static Struct Struct
+    public static Builders.Struct Struct
     (
         string name
     )
@@ -57,12 +57,22 @@ public struct Builder
         );
     }
     
-    public static Initializer Initializer()
+    public static Builders.Enum Enum
+    (
+        string name
+    )
+    {
+        return new(
+            name
+        );
+    }
+    
+    public static Builders.Initializer Initializer()
     {
         return new();
     }
     
-    public static Closure Closure()
+    public static Builders.Closure Closure()
     {
         return new();
     }

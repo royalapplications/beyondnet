@@ -5,19 +5,19 @@ namespace NativeAOT.CodeGenerator.Syntax.Swift.Declaration;
 public struct SwiftEnumDeclaration
 {
     public string Name { get; }
-    public string? UnderlyingTypeName { get; }
+    public string? RawTypeName { get; }
     public SwiftVisibilities Visibility { get; }
     public string? Implementation { get; }
 
     public SwiftEnumDeclaration(
         string name,
-        string? underlyingTypeName,
+        string? rawTypeName,
         SwiftVisibilities visibility,
         string? implementation
     )
     {
         Name = name;
-        UnderlyingTypeName = underlyingTypeName;
+        RawTypeName = rawTypeName;
         Visibility = visibility;
         Implementation = implementation;
     }
@@ -28,14 +28,14 @@ public struct SwiftEnumDeclaration
         
         string visibilityString = Visibility.ToSwiftSyntaxString();
 
-        string underlyingTypeDecl = !string.IsNullOrEmpty(UnderlyingTypeName)
-            ? $": {UnderlyingTypeName}"
+        string rawTypeDecl = !string.IsNullOrEmpty(RawTypeName)
+            ? $": {RawTypeName}"
             : string.Empty; 
         
         string[] signatureComponents = new[] {
             visibilityString,
             @enum,
-            $"{Name}{underlyingTypeDecl}"
+            $"{Name}{rawTypeDecl}"
         };
 
         string signature = SwiftFuncSignatureComponents.ComponentsToString(signatureComponents);

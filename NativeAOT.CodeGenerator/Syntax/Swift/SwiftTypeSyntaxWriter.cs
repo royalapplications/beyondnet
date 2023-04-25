@@ -134,7 +134,7 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
         Type underlyingType = type.GetEnumUnderlyingType();
         TypeDescriptor underlyingTypeDescriptor = underlyingType.GetTypeDescriptor(typeDescriptorRegistry);
 
-        string underlyingSwiftTypeName = underlyingTypeDescriptor.GetTypeName(CodeLanguage.Swift, false);
+        string rawSwiftTypeName = underlyingTypeDescriptor.GetTypeName(CodeLanguage.Swift, false);
         string cEnumTypeName = typeDescriptor.GetTypeName(CodeLanguage.C, false);
         string swiftEnumTypeName = typeDescriptor.GetTypeName(CodeLanguage.Swift, false);
         
@@ -150,7 +150,7 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
 
             const string rawValueTypeAliasVarName = "RawValue";
 
-            string rawValueTypeAliasDecl = Builder.TypeAlias(rawValueTypeAliasVarName, underlyingSwiftTypeName)
+            string rawValueTypeAliasDecl = Builder.TypeAlias(rawValueTypeAliasVarName, rawSwiftTypeName)
                 .Public()
                 .ToIndentedString(1);
             
@@ -167,14 +167,12 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
             sb.AppendLine(initRawValueDecl);
             sb.AppendLine();
         } else {
-            SwiftEnumDeclaration enumDecl = new(
-                swiftEnumTypeName,
-                underlyingSwiftTypeName,
-                SwiftVisibilities.Public,
-                null
-            );
+            string enumDecl = Builder.Enum(swiftEnumTypeName)
+                .Public()
+                .RawTypeName(rawSwiftTypeName)
+                .ToString();
             
-            sb.AppendLine($"{enumDecl.ToString()} {{");
+            sb.AppendLine($"{enumDecl} {{");
         }
 
         string initUnwrap = isFlagsEnum 
