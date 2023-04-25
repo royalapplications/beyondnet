@@ -376,8 +376,15 @@ public partial class SwiftTypeSyntaxWriter
         sb.AppendLine($"return {{ {cFunctionParameters} in");
         sb.AppendLine($"\tguard let {innerContextParameterName} else {{ fatalError(\"{fatalErrorMessageIfNoContext}\") }}");
         sb.AppendLine();
-        sb.AppendLine($"\tlet {innerSwiftContextVarName} = NativeBox<{closureTypeTypeAliasName}>.fromPointer({innerContextParameterName})");
-        sb.AppendLine($"\tlet {innerClosureVarName} = {innerSwiftContextVarName}.value");
+        
+        sb.AppendLine(Builder.Let(innerSwiftContextVarName)
+            .Value($"NativeBox<{closureTypeTypeAliasName}>.fromPointer({innerContextParameterName})")
+            .ToIndentedString(1));
+        
+        sb.AppendLine(Builder.Let(innerClosureVarName)
+            .Value($"{innerSwiftContextVarName}.value")
+            .ToIndentedString(1));
+        
         sb.AppendLine();
 
         string parameterConversionsToSwift = SwiftMethodSyntaxWriter.WriteParameterConversions(
@@ -566,12 +573,18 @@ public partial class SwiftTypeSyntaxWriter
 
         string exceptionCVarName = "__exceptionC";
 
-        sb.AppendLine($"\tvar {exceptionCVarName}: System_Exception_t?");
+        sb.AppendLine(Builder.Var(exceptionCVarName)
+            .TypeName("System_Exception_t?")
+            .ToIndentedString(1));
+        
         sb.AppendLine();
 
         string selfConvertedVarName = "__selfC";
 
-        sb.AppendLine($"\tlet {selfConvertedVarName} = self.__handle");
+        sb.AppendLine(Builder.Let(selfConvertedVarName)
+            .Value("self.__handle")
+            .ToIndentedString(1));
+        
         sb.AppendLine();
 
         string parameterConversions = SwiftMethodSyntaxWriter.WriteParameterConversions(
