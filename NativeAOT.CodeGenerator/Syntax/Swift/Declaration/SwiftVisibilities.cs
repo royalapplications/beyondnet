@@ -4,6 +4,7 @@ public enum SwiftVisibilities
 {
     None,
     Private,
+    FilePrivate,
     Internal,
     Public,
     Open
@@ -18,6 +19,8 @@ public static class SwiftVisibilities_Extensions
                 return string.Empty;
             case SwiftVisibilities.Private:
                 return "private";
+            case SwiftVisibilities.FilePrivate:
+                return "fileprivate";
             case SwiftVisibilities.Internal:
                 return "internal";
             case SwiftVisibilities.Public:

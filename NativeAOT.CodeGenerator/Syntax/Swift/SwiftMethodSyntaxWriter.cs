@@ -347,27 +347,21 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         } else if (memberKind == MemberKind.TypeOf) {
             bool isEnum = declaringType.IsEnum;
             
-            bool isOverride = !isEnum;
-            
-            SwiftTypeAttachmentKinds attachmentKind = isEnum
-                ? SwiftTypeAttachmentKinds.Static
-                : SwiftTypeAttachmentKinds.Class;
-            
-            SwiftGetOnlyPropertyDeclaration decl = new(
-                methodNameSwift,
-                onlyWriteSignatureForProtocol 
-                    ? SwiftVisibilities.None
-                    : SwiftVisibilities.Public,
-                attachmentKind,
-                isOverride,
-                mayThrow,
-                !returnOrSetterOrEventHandlerType.IsVoid()
-                    ? swiftReturnOrSetterTypeNameWithComment
-                    : throw new Exception("A property must have a return type"),
-                memberImpl
-            );
+            string propTypeName = !returnOrSetterOrEventHandlerType.IsVoid()
+                ? swiftReturnOrSetterTypeNameWithComment
+                : throw new Exception("A property must have a return type");
 
-            fullDecl = decl.ToString();
+            fullDecl = Builder.GetOnlyProperty(methodNameSwift, propTypeName)
+                .Visibility(onlyWriteSignatureForProtocol 
+                    ? SwiftVisibilities.None
+                    : SwiftVisibilities.Public)
+                .TypeAttachmentKind(isEnum 
+                    ? SwiftTypeAttachmentKinds.Static
+                    : SwiftTypeAttachmentKinds.Class)
+                .Override(!isEnum)
+                .Throws(mayThrow)
+                .Implementation(memberImpl)
+                .ToString();
         } else if (CanBeGeneratedAsGetOnlyProperty(memberKind, isGeneric, parameters.Any())) {
             SwiftGetOnlyPropertyDeclaration decl = new(
                 methodNameSwift,
