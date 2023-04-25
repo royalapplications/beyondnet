@@ -86,4 +86,30 @@ public struct Builder
     {
         return new();
     }
+    
+    public static Builders.FuncSignatureParameter FuncSignatureParameter
+    (
+        string label,
+        string? name,
+        string typeName
+    )
+    {
+        return new(
+            label,
+            name,
+            typeName
+        );
+    }
+    
+    public static Builders.FuncSignatureParameter FuncSignatureParameter
+    (
+        string label,
+        string typeName
+    )
+    {
+        return new(
+            label,
+            typeName
+        );
+    }
 }

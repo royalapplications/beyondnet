@@ -158,9 +158,12 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
             sb.AppendLine($"\tpublic let rawValue: {rawValueTypeAliasVarName}");
             sb.AppendLine();
 
+            string rawValueParam = Builder.FuncSignatureParameter("rawValue", rawValueTypeAliasVarName)
+                .ToString();
+
             string initRawValueDecl = Builder.Initializer()
                 .Public()
-                .Parameters($"rawValue: {rawValueTypeAliasVarName}")
+                .Parameters(rawValueParam)
                 .Implementation("self.rawValue = rawValue")
                 .ToIndentedString(1);
             
@@ -179,8 +182,11 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
             ? string.Empty
             : "!";
 
+        string cValueParam = Builder.FuncSignatureParameter("cValue", cEnumTypeName)
+            .ToString();
+
         string initDecl = Builder.Initializer()
-            .Parameters($"cValue: {cEnumTypeName}")
+            .Parameters(cValueParam)
             .Implementation($"self.init(rawValue: cValue.rawValue){initUnwrap}")
             .ToIndentedString(1);
 
