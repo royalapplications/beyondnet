@@ -157,7 +157,12 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
                 .ToIndentedString(1);
             
             sb.AppendLine(rawValueTypeAliasDecl);
-            sb.AppendLine($"\tpublic let rawValue: {rawValueTypeAliasVarName}");
+            
+            sb.AppendLine(Builder.Let("rawValue")
+                .Public()
+                .TypeName(rawValueTypeAliasVarName)
+                .ToIndentedString(1));
+            
             sb.AppendLine();
 
             string rawValueParam = Builder.FuncSignatureParameter("rawValue", rawValueTypeAliasVarName)
