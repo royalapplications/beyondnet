@@ -67,6 +67,16 @@ public struct Builder
         );
     }
     
+    public static Builders.Extension Extension
+    (
+        string name
+    )
+    {
+        return new(
+            name
+        );
+    }
+    
     public static Builders.Func Func
     (
         string name

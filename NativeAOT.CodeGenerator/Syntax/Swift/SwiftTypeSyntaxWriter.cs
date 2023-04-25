@@ -3,7 +3,6 @@ using System.Text;
 
 using NativeAOT.CodeGenerator.Extensions;
 using NativeAOT.CodeGenerator.Generator;
-using NativeAOT.CodeGenerator.Syntax.Swift.Declaration;
 using NativeAOT.CodeGenerator.Types;
 
 using Settings = NativeAOT.CodeGenerator.Generator.Swift.Settings;
@@ -58,7 +57,7 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
         string? fullTypeName = type.FullName;
 
         if (fullTypeName == null) {
-            return $"// Type \"{type.Name}\" was skipped. Reason: It has no full name.";
+            return Builder.SingleLineComment($"Type \"{type.Name}\" was skipped. Reason: It has no full name.").ToString();
         }
         
         StringBuilder sb = new();
@@ -97,7 +96,10 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
             string swiftTypeName = type.GetTypeDescriptor(typeDescriptorRegistry)
                 .GetTypeName(CodeLanguage.Swift, false);
 
-            sb.AppendLine($"extension {swiftTypeName} {{");
+            string extensionDecl = Builder.Extension(swiftTypeName)
+                .ToString();
+
+            sb.AppendLine($"{extensionDecl} {{");
         }
 
         if (writeMembers) {
@@ -480,8 +482,11 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
         string extendedTypeOptionality = isExtendedTypeOptional
             ? "?"
             : string.Empty;
+
+        string extensionDecl = Builder.Extension($"{extendedTypeSwiftName}{extendedTypeOptionality}")
+            .ToString();
         
-        string typeExtensionDecl = $"extension {extendedTypeSwiftName}{extendedTypeOptionality} {{";
+        string typeExtensionDecl = $"{extensionDecl} {{";
         sb.AppendLine(typeExtensionDecl);
 
         StringBuilder sbMembers = new();
