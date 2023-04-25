@@ -2,24 +2,21 @@ using NativeAOT.CodeGenerator.Extensions;
 
 namespace NativeAOT.CodeGenerator.Syntax.Swift.Declaration;
 
-public struct SwiftClassDeclaration
+public struct SwiftProtocolDeclaration
 {
     public string Name { get; }
-    public string? BaseTypeName { get; }
     public string? ProtocolConformance { get; }
     public SwiftVisibilities Visibility { get; }
     public string? Implementation { get; }
 
-    public SwiftClassDeclaration(
+    public SwiftProtocolDeclaration(
         string name,
-        string? baseTypeName,
         string? protocolConformance,
         SwiftVisibilities visibility,
         string? implementation
     )
     {
         Name = name;
-        BaseTypeName = baseTypeName;
         ProtocolConformance = protocolConformance;
         Visibility = visibility;
         Implementation = implementation;
@@ -27,24 +24,18 @@ public struct SwiftClassDeclaration
 
     public override string ToString()
     {
-        const string @class = "class";
+        const string protocol = "protocol";
         
         string visibilityString = Visibility.ToSwiftSyntaxString();
 
-        string baseTypeAndProtocolConformanceDecl = !string.IsNullOrEmpty(BaseTypeName)
-            ? $": {BaseTypeName}"
-            : string.Empty;
-
-        if (!string.IsNullOrEmpty(ProtocolConformance)) {
-            baseTypeAndProtocolConformanceDecl += !string.IsNullOrEmpty(baseTypeAndProtocolConformanceDecl)
-                ? $", {ProtocolConformance}"
-                : $": {ProtocolConformance}";
-        }
+        string protocolConformanceDecl = !string.IsNullOrEmpty(ProtocolConformance)
+            ? $": {ProtocolConformance}"
+            : string.Empty; 
         
         string[] signatureComponents = new[] {
             visibilityString,
-            @class,
-            $"{Name}{baseTypeAndProtocolConformanceDecl}"
+            protocol,
+            $"{Name}{protocolConformanceDecl}"
         };
 
         string signature = SwiftFuncSignatureComponents.ComponentsToString(signatureComponents);
