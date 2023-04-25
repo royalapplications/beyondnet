@@ -1,5 +1,3 @@
-using NativeAOT.CodeGenerator.Syntax.Swift.Builders;
-
 namespace NativeAOT.CodeGenerator.Syntax.Swift;
 
 public struct Builder
@@ -111,5 +109,10 @@ public struct Builder
             label,
             typeName
         );
+    }
+    
+    public static Builders.FuncSignatureParameters FuncSignatureParameters()
+    {
+        return new();
     }
 }
