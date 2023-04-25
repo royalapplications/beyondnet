@@ -520,8 +520,10 @@ self.init(handle: {{returnValueName}})
     
                     if (!string.IsNullOrEmpty(returnTypeConversion)) {
                         string newReturnValueName = "__returnValue";
-                        
-                        string fullReturnTypeConversion = $"let {newReturnValueName} = {string.Format(returnTypeConversion, returnValueName)}";
+
+                        string fullReturnTypeConversion = Builder.Let(newReturnValueName)
+                            .Value(string.Format(returnTypeConversion, returnValueName))
+                            .ToString();
     
                         sbImpl.AppendLine(fullReturnTypeConversion);
                         sbImpl.AppendLine();
@@ -923,7 +925,10 @@ if let __exceptionC {
                 string convertedGenericArgumentName = $"{name}{convertedParameterNameSuffix}";
                     
                 string fullTypeConversion = string.Format(systemTypeTypeConversion, name);
-                string typeConversionCode = $"let {convertedGenericArgumentName} = {fullTypeConversion}";
+
+                string typeConversionCode = Builder.Let(convertedGenericArgumentName)
+                    .Value(fullTypeConversion)
+                    .ToString();
     
                 sb.AppendLine(typeConversionCode);
                 
@@ -936,7 +941,10 @@ if let __exceptionC {
                 string convertedGenericArgumentName = $"{name}{convertedParameterNameSuffix}";
                     
                 string fullTypeConversion = string.Format(systemTypeTypeConversion, name);
-                string typeConversionCode = $"let {convertedGenericArgumentName} = {fullTypeConversion}";
+
+                string typeConversionCode = Builder.Let(convertedGenericArgumentName)
+                    .Value(fullTypeConversion)
+                    .ToString();
     
                 sb.AppendLine(typeConversionCode);
                 

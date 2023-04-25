@@ -247,7 +247,11 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
             string caseCode;
 
             if (isFlagsEnum) {
-                string caseCodeDecl = $"public static let {swiftCaseName} = {swiftEnumTypeName}";
+                string caseCodeDecl = Builder.Let(swiftCaseName)
+                    .Public()
+                    .Static()
+                    .Value(swiftEnumTypeName)
+                    .ToString();
                 
                 if (value.Equals(0)) {
                     caseCode = $"{caseCodeDecl}([])";
@@ -258,7 +262,13 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
                 if (duplicateCases.TryGetValue(caseName, out string? caseNameWithEquivalentValue)) {
                     string swiftCaseNameWithEquivalentValue = caseNameWithEquivalentValue.ToSwiftEnumCaseName();
                     
-                    caseCode = $"public static let {swiftCaseName} = {swiftEnumTypeName}.{swiftCaseNameWithEquivalentValue}";
+                    string caseCodeDecl = Builder.Let(swiftCaseName)
+                        .Public()
+                        .Static()
+                        .Value($"{swiftEnumTypeName}.{swiftCaseNameWithEquivalentValue}")
+                        .ToString();
+                    
+                    caseCode = caseCodeDecl;
                 } else {
                     caseCode = $"case {swiftCaseName} = {value}";
                 }

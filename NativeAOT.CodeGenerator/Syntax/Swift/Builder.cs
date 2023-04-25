@@ -115,4 +115,14 @@ public struct Builder
     {
         return new();
     }
+    
+    public static Builders.Let Let
+    (
+        string name
+    )
+    {
+        return new(
+            name
+        );
+    }
 }
