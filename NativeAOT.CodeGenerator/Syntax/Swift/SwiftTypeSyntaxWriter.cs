@@ -378,7 +378,7 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
             
             if (syntaxWriter == null) {
                 if (Settings.EmitUnsupported) {
-                    sbMembers.AppendLine(new SwiftSingleLineComment($"TODO: Unsupported Member Type \"{memberType}\"").ToString());
+                    sbMembers.AppendLine(Builder.SingleLineComment($"TODO: Unsupported Member Type \"{memberType}\"").ToString());
                 }
                     
                 continue;

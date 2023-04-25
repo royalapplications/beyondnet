@@ -26,4 +26,14 @@ public struct Builder
             originalTypeName
         );
     }
+
+    public static SingleLineComment SingleLineComment
+    (
+        string comment
+    )
+    {
+        return new SingleLineComment(
+            comment
+        );
+    }
 }
