@@ -520,8 +520,12 @@ public partial class SwiftTypeSyntaxWriter
             .Value("__outerSwiftContext.retainedPointer()").ToString());
         
         sb.AppendLine();
+
+        string letDelegateC = Builder.Let("__delegateC")
+            .Value($"{cTypeName}_Create(__outerContext, __cFunction, __cDestructorFunction)")
+            .ToString();
         
-        sb.AppendLine($"guard let __delegateC = {cTypeName}_Create(__outerContext, __cFunction, __cDestructorFunction) else {{ return nil }}");
+        sb.AppendLine($"guard let {letDelegateC} else {{ return nil }}");
         sb.AppendLine();
         sb.AppendLine("self.init(handle: __delegateC)");
 
