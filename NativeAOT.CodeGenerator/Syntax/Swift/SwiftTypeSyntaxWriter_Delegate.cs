@@ -426,9 +426,11 @@ public partial class SwiftTypeSyntaxWriter
                     ? "?"
                     : string.Empty;
 
-                string fullReturnTypeConversion = $"let {newReturnValueName} = {string.Format(returnTypeConversion, $"{returnValueName}{returnTypeOptionalString}")}";
+                string fullReturnTypeConversion = Builder.Let(newReturnValueName)
+                    .Value(string.Format(returnTypeConversion, $"{returnValueName}{returnTypeOptionalString}"))
+                    .ToIndentedString(1);
     
-                sb.AppendLine($"\t{fullReturnTypeConversion}");
+                sb.AppendLine(fullReturnTypeConversion);
                 
                 if (!returnTypeIsPrimitive) {
                     sb.AppendLine($"\t{returnValueName}?.__skipDestroy = true // Will be destroyed by .NET");
@@ -496,12 +498,22 @@ public partial class SwiftTypeSyntaxWriter
     {
         StringBuilder sb = new();
 
-        sb.AppendLine($"let __cFunction = Self.{createCFunctionFuncName}()");
-        sb.AppendLine($"let __cDestructorFunction = Self.{createCDestructorFunctionFuncName}()");
+        sb.AppendLine(Builder.Let("__cFunction")
+            .Value($"Self.{createCFunctionFuncName}()").ToString());
+        
+        sb.AppendLine(Builder.Let("__cDestructorFunction")
+            .Value($"Self.{createCDestructorFunctionFuncName}()").ToString());
+        
         sb.AppendLine();
-        sb.AppendLine("let __outerSwiftContext = NativeBox(__closure)");
-        sb.AppendLine("let __outerContext = __outerSwiftContext.retainedPointer()");
+        
+        sb.AppendLine(Builder.Let("__outerSwiftContext")
+            .Value("NativeBox(__closure)").ToString());
+        
+        sb.AppendLine(Builder.Let("__outerContext")
+            .Value("__outerSwiftContext.retainedPointer()").ToString());
+        
         sb.AppendLine();
+        
         sb.AppendLine($"guard let __delegateC = {cTypeName}_Create(__outerContext, __cFunction, __cDestructorFunction) else {{ return nil }}");
         sb.AppendLine();
         sb.AppendLine("self.init(handle: __delegateC)");
@@ -510,7 +522,7 @@ public partial class SwiftTypeSyntaxWriter
             .Public()
             .Convenience()
             .Failable()
-            .Parameters($"_ __closure: @escaping {closureTypeTypeAliasName}")
+            .Parameters(Builder.FuncSignatureParameter("_", "__closure", $"@escaping {closureTypeTypeAliasName}").ToString())
             .Implementation(sb.ToString())
             .ToString();
 
@@ -610,9 +622,11 @@ public partial class SwiftTypeSyntaxWriter
             if (!string.IsNullOrEmpty(returnTypeConversion)) {
                 string newReturnValueName = "__returnValue";
         
-                string fullReturnTypeConversion = $"let {newReturnValueName} = {string.Format(returnTypeConversion, $"{returnValueName}")}";
+                string fullReturnTypeConversion = Builder.Let(newReturnValueName)
+                    .Value(string.Format(returnTypeConversion, $"{returnValueName}"))
+                    .ToIndentedString(1);
         
-                sb.AppendLine($"\t{fullReturnTypeConversion}");
+                sb.AppendLine(fullReturnTypeConversion);
                 sb.AppendLine();
                         
                 returnValueName = newReturnValueName;

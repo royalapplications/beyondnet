@@ -1,3 +1,5 @@
+using NativeAOT.CodeGenerator.Syntax.Swift.Declaration;
+
 namespace NativeAOT.CodeGenerator.Syntax.Swift;
 
 public struct Builder
@@ -116,12 +118,36 @@ public struct Builder
         return new();
     }
     
-    public static Builders.Let Let
+    public static Builders.Variable Variable
     (
+        SwiftVariableKinds variableKind,
         string name
     )
     {
         return new(
+            variableKind,
+            name
+        );
+    }
+    
+    public static Builders.Variable Let
+    (
+        string name
+    )
+    {
+        return Variable(
+            SwiftVariableKinds.Constant,
+            name
+        );
+    }
+    
+    public static Builders.Variable Var
+    (
+        string name
+    )
+    {
+        return Variable(
+            SwiftVariableKinds.Variable,
             name
         );
     }

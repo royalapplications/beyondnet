@@ -3,8 +3,9 @@ using NativeAOT.CodeGenerator.Syntax.Swift.Declaration;
 
 namespace NativeAOT.CodeGenerator.Syntax.Swift.Builders;
 
-public struct Let
+public struct Variable
 {
+    private readonly SwiftVariableKinds m_variableKind;
     private readonly string m_name;
 
     private string? m_typeName = null;
@@ -12,15 +13,17 @@ public struct Let
     private SwiftVisibilities m_visibility = SwiftVisibilities.None;
     private SwiftTypeAttachmentKinds m_typeAttachmentKind = SwiftTypeAttachmentKinds.Instance;
 
-    public Let(
+    public Variable(
+        SwiftVariableKinds variableKind,
         string name
     )
     {
+        m_variableKind = variableKind;
         m_name = name;
     }
 
     #region TypeName
-    public Let TypeName(string? typeName)
+    public Variable TypeName(string? typeName)
     {
         m_typeName = typeName;
 
@@ -29,7 +32,7 @@ public struct Let
     #endregion TypeName
     
     #region Value
-    public Let Value(string? value)
+    public Variable Value(string? value)
     {
         m_value = value;
 
@@ -38,62 +41,63 @@ public struct Let
     #endregion Value
     
     #region Visibility
-    public Let Visibility(SwiftVisibilities visibility)
+    public Variable Visibility(SwiftVisibilities visibility)
     {
         m_visibility = visibility;
         
         return this;
     }
     
-    public Let Open()
+    public Variable Open()
     {
         return Visibility(SwiftVisibilities.Open);
     }
 
-    public Let Public()
+    public Variable Public()
     {
         return Visibility(SwiftVisibilities.Public);
     }
     
-    public Let Internal()
+    public Variable Internal()
     {
         return Visibility(SwiftVisibilities.Internal);
     }
     
-    public Let Private()
+    public Variable Private()
     {
         return Visibility(SwiftVisibilities.Private);
     }
     
-    public Let FilePrivate()
+    public Variable FilePrivate()
     {
         return Visibility(SwiftVisibilities.FilePrivate);
     }
     #endregion Visibility
     
     #region TypeAttachmentKind
-    public Let TypeAttachmentKind(SwiftTypeAttachmentKinds typeAttachmentKind)
+    public Variable TypeAttachmentKind(SwiftTypeAttachmentKinds typeAttachmentKind)
     {
         m_typeAttachmentKind = typeAttachmentKind;
 
         return this;
     }
 
-    public Let Static()
+    public Variable Static()
     {
         return TypeAttachmentKind(SwiftTypeAttachmentKinds.Static);
     }
     
-    public Let Class()
+    public Variable Class()
     {
         return TypeAttachmentKind(SwiftTypeAttachmentKinds.Class);
     }
     #endregion TypeAttachmentKind
     
     #region Build
-    public SwiftLetDeclaration Build()
+    public SwiftVariableDeclaration Build()
     {
         return new(
+            m_variableKind,
             m_name,
             m_typeName,
             m_value,

@@ -1,14 +1,16 @@
 namespace NativeAOT.CodeGenerator.Syntax.Swift.Declaration;
 
-public struct SwiftLetDeclaration
+public struct SwiftVariableDeclaration
 {
+    public SwiftVariableKinds VariableKind { get; }
     public string Name { get; }
     public string? TypeName { get; } = null;
     public string? Value { get; } = null;
     public SwiftVisibilities Visibility { get; } = SwiftVisibilities.None;
     public SwiftTypeAttachmentKinds TypeAttachmentKind { get; } = SwiftTypeAttachmentKinds.Instance;
 
-    public SwiftLetDeclaration(
+    public SwiftVariableDeclaration(
+        SwiftVariableKinds variableKind,
         string name,
         string? typeName,
         string? value,
@@ -16,6 +18,7 @@ public struct SwiftLetDeclaration
         SwiftTypeAttachmentKinds typeAttachmentKind
     )
     {
+        VariableKind = variableKind;
         Name = name;
         TypeName = typeName;
         Value = value;
@@ -30,7 +33,18 @@ public struct SwiftLetDeclaration
 
     public override string ToString()
     {
-        const string let = "let";
+        string variableKindString;
+
+        switch (VariableKind) {
+            case SwiftVariableKinds.Constant:
+                variableKindString = "let";
+                break;
+            case SwiftVariableKinds.Variable:
+                variableKindString = "var";
+                break;
+            default:
+                throw new Exception("Unknown Variable Kind");
+        }
         
         string visibilityString = Visibility.ToSwiftSyntaxString();
         string typeAttachmentKindString = TypeAttachmentKind.ToSwiftSyntaxString();
@@ -48,7 +62,7 @@ public struct SwiftLetDeclaration
         string[] signatureComponents = new[] {
             visibilityString,
             typeAttachmentKindString,
-            let,
+            variableKindString,
             nameAndTypeName,
             valueAssignment
         };

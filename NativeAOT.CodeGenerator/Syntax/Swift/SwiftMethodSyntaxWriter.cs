@@ -469,7 +469,10 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 
                 convertedParameterNames.Add($"&{cExceptionVarName}");
                 
-                sbImpl.AppendLine($"var {cExceptionVarName}: System_Exception_t?");
+                sbImpl.AppendLine(Builder.Var(cExceptionVarName)
+                    .TypeName("System_Exception_t?")
+                    .ToString());
+                
                 sbImpl.AppendLine();
             }
 
@@ -1098,11 +1101,13 @@ if let __exceptionC {
 
             string fullTypeConversion = string.Format(typeConversion, $"{parameterName}{optionalString}");
 
-            string varOrLet = isInOut 
-                ? "var"
-                : "let";
+            SwiftVariableKinds variableKind = isInOut
+                ? SwiftVariableKinds.Variable
+                : SwiftVariableKinds.Constant;
 
-            typeConversionCode = $"{varOrLet} {convertedParameterName} = {fullTypeConversion}";
+            typeConversionCode = Builder.Variable(variableKind, convertedParameterName)
+                .Value(fullTypeConversion)
+                .ToString();
             
             if (isInOut) {
                 convertedParameterName = $"&{convertedParameterName}";
