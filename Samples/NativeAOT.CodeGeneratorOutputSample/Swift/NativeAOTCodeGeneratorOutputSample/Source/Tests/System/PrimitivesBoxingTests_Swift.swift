@@ -15,82 +15,82 @@ final class PrimitivesBoxingTests_Swift: XCTestCase {
     func testBool() {
         boxAndUnbox(value: true,
                     expectedTypeName: "System.Boolean",
-                    boxFunc: { System_Object.fromBool($0) },
+					boxFunc: { $0.dotNETObject() },
                     unboxFunc: { try $0.castToBool() })
         
         boxAndUnbox(value: false,
                     expectedTypeName: "System.Boolean",
-                    boxFunc: { System_Object.fromBool($0) },
+					boxFunc: { $0.dotNETObject() },
                     unboxFunc: { try $0.castToBool() })
     }
     
     func testFloat() {
         boxAndUnbox(value: -123.123 as Float,
                     expectedTypeName: "System.Single",
-                    boxFunc: { System_Object.fromFloat($0) },
+					boxFunc: { $0.dotNETObject() },
                     unboxFunc: { try $0.castToFloat() })
     }
 
     func testDouble() {
         boxAndUnbox(value: -123456789.123456789 as Double,
                     expectedTypeName: "System.Double",
-                    boxFunc: { System_Object.fromDouble($0) },
+					boxFunc: { $0.dotNETObject() },
                     unboxFunc: { try $0.castToDouble() })
     }
 
     func testInt8() {
         boxAndUnbox(value: -123 as Int8,
                     expectedTypeName: "System.SByte",
-                    boxFunc: { System_Object.fromInt8($0) },
+					boxFunc: { $0.dotNETObject() },
                     unboxFunc: { try $0.castToInt8() })
     }
 
     func testUInt8() {
         boxAndUnbox(value: 123 as UInt8,
                     expectedTypeName: "System.Byte",
-                    boxFunc: { System_Object.fromUInt8($0) },
+					boxFunc: { $0.dotNETObject() },
                     unboxFunc: { try $0.castToUInt8() })
     }
 
     func testInt16() {
         boxAndUnbox(value: -1234 as Int16,
                     expectedTypeName: "System.Int16",
-                    boxFunc: { System_Object.fromInt16($0) },
+					boxFunc: { $0.dotNETObject() },
                     unboxFunc: { try $0.castToInt16() })
     }
 
     func testUInt16() {
         boxAndUnbox(value: 1234 as UInt16,
                     expectedTypeName: "System.UInt16",
-                    boxFunc: { System_Object.fromUInt16($0) },
+					boxFunc: { $0.dotNETObject() },
                     unboxFunc: { try $0.castToUInt16() })
     }
 
     func testInt32() {
         boxAndUnbox(value: -123456789 as Int32,
                     expectedTypeName: "System.Int32",
-                    boxFunc: { System_Object.fromInt32($0) },
+					boxFunc: { $0.dotNETObject() },
                     unboxFunc: { try $0.castToInt32() })
     }
 
     func testUInt32() {
         boxAndUnbox(value: 123456789 as UInt32,
                     expectedTypeName: "System.UInt32",
-                    boxFunc: { System_Object.fromUInt32($0) },
+					boxFunc: { $0.dotNETObject() },
                     unboxFunc: { try $0.castToUInt32() })
     }
 
     func testInt64() {
         boxAndUnbox(value: -123456789123456789 as Int64,
                     expectedTypeName: "System.Int64",
-                    boxFunc: { System_Object.fromInt64($0) },
+					boxFunc: { $0.dotNETObject() },
                     unboxFunc: { try $0.castToInt64() })
     }
 
     func testUInt64() {
         boxAndUnbox(value: 123456789123456789 as UInt64,
                     expectedTypeName: "System.UInt64",
-                    boxFunc: { System_Object.fromUInt64($0) },
+					boxFunc: { $0.dotNETObject() },
                     unboxFunc: { try $0.castToUInt64() })
     }
 }

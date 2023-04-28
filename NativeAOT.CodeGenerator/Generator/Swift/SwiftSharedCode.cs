@@ -364,6 +364,72 @@ public extension DNObject {
     }
 }
 
+extension Bool {
+    public func dotNETObject() -> System_Object {
+        return System_Object.fromBool(self)
+    }
+}
+
+extension Float {
+    public func dotNETObject() -> System_Object {
+        return System_Object.fromFloat(self)
+    }
+}
+
+extension Double {
+    public func dotNETObject() -> System_Object {
+        return System_Object.fromDouble(self)
+    }
+}
+
+extension Int8 {
+    public func dotNETObject() -> System_Object {
+        return System_Object.fromInt8(self)
+    }
+}
+
+extension UInt8 {
+    public func dotNETObject() -> System_Object {
+        return System_Object.fromUInt8(self)
+    }
+}
+
+extension Int16 {
+    public func dotNETObject() -> System_Object {
+        return System_Object.fromInt16(self)
+    }
+}
+
+extension UInt16 {
+    public func dotNETObject() -> System_Object {
+        return System_Object.fromUInt16(self)
+    }
+}
+
+extension Int32 {
+    public func dotNETObject() -> System_Object {
+        return System_Object.fromInt32(self)
+    }
+}
+
+extension UInt32 {
+    public func dotNETObject() -> System_Object {
+        return System_Object.fromUInt32(self)
+    }
+}
+
+extension Int64 {
+    public func dotNETObject() -> System_Object {
+        return System_Object.fromInt64(self)
+    }
+}
+
+extension UInt64 {
+    public func dotNETObject() -> System_Object {
+        return System_Object.fromUInt64(self)
+    }
+}
+
 public class DNError: LocalizedError {
     public let exception: System_Exception
     

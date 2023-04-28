@@ -218,7 +218,7 @@ final class SystemArrayTests_Swift: XCTestCase {
 		
 		for idx in 0..<length {
 			let randomInt32 = Int32.random(in: Int32.min..<Int32.max)
-			let randomInt32Obj = System_Object.fromInt32(randomInt32)
+			let randomInt32Obj = randomInt32.dotNETObject()
 			
 			XCTAssertNoThrow(try arrayOfInt32.setValue(randomInt32Obj, idx))
 			
