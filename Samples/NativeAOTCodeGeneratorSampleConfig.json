@@ -32,7 +32,7 @@
 		"System.IO.Directory",
 		"System.IO.DirectoryInfo",
 		"System.Security.SecureString",
-
+		
 		"System.Threading.Tasks.Task`1",
 		"System.Collections.Generic.IEnumerable`1",
 		"System.Collections.Generic.List`1",
@@ -50,9 +50,5 @@
 		"System.Tuple`6",
 		"System.Tuple`7",
 		"System.Tuple`8"
-	],
-
-	"TODO_GENERICS_IncludedTypeNames": [
-		
 	]
 }
