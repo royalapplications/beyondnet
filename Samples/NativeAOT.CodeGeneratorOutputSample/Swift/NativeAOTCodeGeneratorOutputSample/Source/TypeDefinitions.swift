@@ -506,6 +506,7 @@ public extension NativeBox {
         Self.release(pointer)
     }
 }
+
 extension UUID {
     public func dotNETGuid() -> System_Guid? {
         let guidString = self.uuidString
@@ -537,6 +538,70 @@ extension System_Guid {
         return UUID(dotNETGuid: self)
     }
 }
+
+extension System_Array: Collection {
+	public typealias Index = Int32
+	public typealias Element = System_Object?
+	
+	public struct Iterator: IteratorProtocol {
+		private let array: System_Array
+		private var index: Index = 0
+		
+		private var length: Int32 {
+			let arrayLength = (try? self.array.length) ?? 0
+			
+			return arrayLength
+		}
+		
+		init(_ array: System_Array) {
+			self.array = array
+		}
+		
+		public mutating func next() -> Element? {
+			defer { index += 1 }
+			guard index < length else { return nil }
+			
+			let element = try? self.array.getValue(index)
+			
+			return element
+		}
+	}
+	
+	public var startIndex: Index {
+		return 0
+	}
+	
+	public var endIndex: Index {
+		let length = (try? self.length) ?? 0
+		
+		guard length > 0 else {
+			return 0
+		}
+		
+		let theEndIndex = length - 1
+		
+		return theEndIndex
+	}
+	
+	public func index(after i: Index) -> Index {
+		return i + 1
+	}
+	
+	public subscript (position: Index) -> System_Object? {
+		precondition(position >= startIndex && position <= endIndex, "Out of bounds")
+		
+		guard let element = try? self.getValue(position) else {
+			return nil
+		}
+		
+		return element
+	}
+	
+	public func makeIterator() -> Iterator {
+		return Iterator(self)
+	}
+}
+
 
 
 // MARK: - END Utils

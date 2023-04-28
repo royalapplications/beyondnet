@@ -197,4 +197,86 @@ final class SystemArrayTests_Swift: XCTestCase {
             XCTAssertEqual(expectedString, stringElement)
         }
     }
+	
+	func testSystemArrayIterator() {
+		let length: Int32 = 10
+		
+		guard let int32Type = try? System_Type.getType("System.Int32".dotNETString()) else {
+			XCTFail("System.Type.GetType should not throw and return an instance")
+			
+			return
+		}
+		
+		guard let arrayOfInt32 = try? System_Array.createInstance(int32Type,
+																  length) else {
+			XCTFail("System.Array.CreateInstance should not throw and return an instance")
+			
+			return
+		}
+		
+		var int32s = [Int32]()
+		
+		for idx in 0..<length {
+			let randomInt32 = Int32.random(in: Int32.min..<Int32.max)
+			let randomInt32Obj = System_Object.fromInt32(randomInt32)
+			
+			XCTAssertNoThrow(try arrayOfInt32.setValue(randomInt32Obj, idx))
+			
+			int32s.append(randomInt32)
+		}
+		
+		for (idx, int32Obj) in arrayOfInt32.enumerated() {
+			guard let int32Obj else {
+				XCTFail("Failed to retrieve object from array")
+				
+				return
+			}
+			
+			guard let int32 = try? int32Obj.castToInt32() else {
+				XCTFail("Object in array is not a Int32")
+				
+				return
+			}
+			
+			XCTAssertEqual(int32, int32s[idx])
+		}
+	}
+	
+	func testSystemArraySubscript() {
+		let systemStringType = System_String.typeOf
+		
+		let strings = [
+			"Hello",
+			"World"
+		]
+		
+		guard let arrayOfString = try? System_Array.createInstance(systemStringType,
+																   Int32(strings.count)) else {
+			XCTFail("System.Array.CreateInstance should not throw and return an instance")
+			
+			return
+		}
+		
+		for (idx, string) in strings.enumerated() {
+			XCTAssertNoThrow(try arrayOfString.setValue(string.dotNETString(), Int32(idx)))
+		}
+		
+		guard let firstObject = arrayOfString[0],
+			  let firstString = firstObject.castAs(System_String.self)?.string() else {
+			XCTFail("Failed to retrieve first object or cast as string")
+			
+			return
+		}
+		
+		XCTAssertEqual(strings[0], firstString)
+		
+		guard let secondObject = arrayOfString[1],
+			  let secondString = secondObject.castAs(System_String.self)?.string() else {
+			XCTFail("Failed to retrieve second object or cast as string")
+			
+			return
+		}
+		
+		XCTAssertEqual(strings[1], secondString)
+	}
 }

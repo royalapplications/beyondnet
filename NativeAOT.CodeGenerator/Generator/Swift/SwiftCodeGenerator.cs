@@ -44,7 +44,7 @@ public class SwiftCodeGenerator: ICodeGenerator
         string header = GetHeaderCode();
         headerSection.Code.AppendLine(header);
         
-        string utilsCode = GetUtilsCode(types);
+        string utilsCode = GetUtilsCode(types.ToArray());
         utilsSection.Code.AppendLine(utilsCode);
 
         string commonTypes = GetCommonTypesCode();
@@ -160,14 +160,21 @@ import Foundation
 """;
     }
     
-    private string GetUtilsCode(IEnumerable<Type> types)
+    private string GetUtilsCode(Type[] types)
     {
         StringBuilder sb = new();
         
         sb.AppendLine(SwiftSharedCode.SharedCode);
+        sb.AppendLine();
 
         if (types.Contains(typeof(System.Guid))) {
             sb.AppendLine(SwiftSharedCode.GuidExtensions);
+            sb.AppendLine();
+        }
+
+        if (types.Contains(typeof(System.Array))) {
+            sb.AppendLine(SwiftSharedCode.ArrayExtensions);
+            sb.AppendLine();
         }
 
         string code = sb.ToString();

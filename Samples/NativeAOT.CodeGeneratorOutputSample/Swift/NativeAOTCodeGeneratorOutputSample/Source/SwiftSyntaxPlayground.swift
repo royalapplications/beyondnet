@@ -1,37 +1,5 @@
 import Foundation
 
-struct System_Array_Iterator: IteratorProtocol {
-	let array: System_Array
-	
-	private let length: Int32
-	private var currentIndex: Int32 = -1
-	
-	init(_ array: System_Array) {
-		self.length = (try? array.length) ?? 0
-		self.array = array
-	}
-	
-	mutating func next() -> System_Object? {
-		let nextIndex = currentIndex + 1
-		
-		guard nextIndex < length else {
-			return nil
-		}
-		
-		let nextValue = try? self.array.getValue(nextIndex)
-		
-		currentIndex = nextIndex
-		
-		return nextValue
-	}
-}
-
-extension System_Array: Sequence {
-	public func makeIterator() -> some IteratorProtocol {
-		return System_Array_Iterator(self)
-	}
-}
-
 public class System_Collections_Generic_List<T>: System_Collections_Generic_List_A1 where T: System_Object {
 	internal var __typeOfT: System_Type {
 		return T.typeOf
