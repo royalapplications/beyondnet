@@ -1,4 +1,5 @@
 using System.Reflection;
+using System.Text;
 
 using NativeAOT.CodeGenerator.Extensions;
 using NativeAOT.CodeGenerator.SourceCode;
@@ -43,7 +44,7 @@ public class SwiftCodeGenerator: ICodeGenerator
         string header = GetHeaderCode();
         headerSection.Code.AppendLine(header);
         
-        string utilsCode = GetUtilsCode();
+        string utilsCode = GetUtilsCode(types);
         utilsSection.Code.AppendLine(utilsCode);
 
         string commonTypes = GetCommonTypesCode();
@@ -159,9 +160,19 @@ import Foundation
 """;
     }
     
-    private string GetUtilsCode()
+    private string GetUtilsCode(IEnumerable<Type> types)
     {
-        return SwiftSharedCode.SharedCode;
+        StringBuilder sb = new();
+        
+        sb.AppendLine(SwiftSharedCode.SharedCode);
+
+        if (types.Contains(typeof(System.Guid))) {
+            sb.AppendLine(SwiftSharedCode.GuidExtensions);
+        }
+
+        string code = sb.ToString();
+        
+        return code;
     }
 
     private string GetCommonTypesCode()

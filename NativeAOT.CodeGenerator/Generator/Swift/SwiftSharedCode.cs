@@ -503,4 +503,38 @@ public extension NativeBox {
     }
 }
 """;
+    
+    public const string GuidExtensions = """
+extension UUID {
+    public func dotNETGuid() -> System_Guid? {
+        let guidString = self.uuidString
+        let guidStringDN = guidString.dotNETString()
+        
+        var guid: System_Guid?
+        
+        guard (try? System_Guid.tryParse(guidStringDN,
+                                         &guid)) ?? false else {
+            return nil
+        }
+        
+        return guid
+    }
+    
+    public init?(dotNETGuid: System_Guid) {
+        guard let uuidStringDN = try? dotNETGuid.toString() else {
+            return nil
+        }
+        
+        let uuidString = uuidStringDN.string()
+        
+        self.init(uuidString: uuidString)
+    }
+}
+
+extension System_Guid {
+    public func uuid() -> UUID? {
+        return UUID(dotNETGuid: self)
+    }
+}
+""";
 }
