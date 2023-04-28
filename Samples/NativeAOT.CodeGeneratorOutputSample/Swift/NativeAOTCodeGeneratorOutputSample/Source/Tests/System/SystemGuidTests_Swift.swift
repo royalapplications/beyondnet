@@ -145,4 +145,54 @@ final class SystemGuidTests_Swift: XCTestCase {
         
         XCTAssertEqual(uuidString.lowercased(), uuidStringRet.lowercased())
     }
+	
+	func testSwiftUUIDConversionWithExtensions() {
+		let iterations = 100
+		
+		// System.Guid -> UUID
+		for _ in 0..<iterations {
+			guard let newGuid = try? System_Guid.newGuid() else {
+				XCTFail("System.Guid.NewGuid should not throw and return an instance")
+				
+				return
+			}
+			
+			guard let uuidRet = newGuid.uuid() else {
+				XCTFail("Should be able to convert a System.Guid to a Swift UUID")
+				
+				return
+			}
+			
+			guard let newGuidString = try? newGuid.toString()?.string() else {
+				XCTFail("System.Guid.ToString should not throw and return an instance")
+				
+				return
+			}
+			
+			let uuidRetString = uuidRet.uuidString
+			
+			XCTAssertEqual(newGuidString.lowercased(), uuidRetString.lowercased())
+		}
+		
+		// UUID -> System.Guid
+		for _ in 0..<iterations {
+			let newUUID = UUID()
+			
+			guard let guidRet = newUUID.dotNETGuid() else {
+				XCTFail("Should be able to convert a Swift UUID to a System.Guid")
+				
+				return
+			}
+			
+			guard let guidRetString = try? guidRet.toString()?.string() else {
+				XCTFail("System.Guid.ToString should not throw and return an instance")
+				
+				return
+			}
+			
+			let newUUIDString = newUUID.uuidString
+			
+			XCTAssertEqual(newUUIDString.lowercased(), guidRetString.lowercased())
+		}
+	}
 }
