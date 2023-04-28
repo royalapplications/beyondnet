@@ -102,7 +102,14 @@ public partial class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWrit
         State state
     )
     {
-        var memberCollector = new MemberCollector(type);
+        TypeCollectorSettings typeCollectorSettings = (configuration as CSharpUnmanagedSyntaxWriterConfiguration)!.TypeCollectorSettings;
+
+        var typeCollector = new TypeCollector(
+            null,
+            typeCollectorSettings
+        );
+        
+        var memberCollector = new MemberCollector(type, typeCollector);
         var members = memberCollector.Collect(out Dictionary<MemberInfo, string> unsupportedMembers);
 
         if (Settings.EmitUnsupported) {

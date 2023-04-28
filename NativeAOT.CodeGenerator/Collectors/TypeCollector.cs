@@ -6,7 +6,8 @@ namespace NativeAOT.CodeGenerator.Collectors;
 
 public class TypeCollector
 {
-    private readonly Assembly m_assembly;
+    private readonly Assembly? m_assembly;
+    private readonly bool m_enableGenericsSupport;
 
     private static readonly Type[] INCLUDED_TYPES = new [] {
         typeof(System.Object),
@@ -33,15 +34,7 @@ public class TypeCollector
         typeof(System.Delegate),
         typeof(System.MulticastDelegate),
         typeof(System.Enum),
-        typeof(System.Array),
-        typeof(System.Tuple<>),
-        typeof(System.Tuple<,>),
-        typeof(System.Tuple<,,>),
-        typeof(System.Tuple<,,,>),
-        typeof(System.Tuple<,,,,>),
-        typeof(System.Tuple<,,,,,>),
-        typeof(System.Tuple<,,,,,,>),
-        typeof(System.Tuple<,,,,,,,>),
+        typeof(System.Array)
     };
     
     private static readonly Type[] UNSUPPORTED_TYPES = new [] {
@@ -73,21 +66,21 @@ public class TypeCollector
     private readonly Type[] m_excludedTypes;
     
     public TypeCollector(
-        Assembly assembly,
-        Type[] includedTypes,
-        Type[] excludedTypes
+        Assembly? assembly,
+        TypeCollectorSettings settings
     )
     {
         List<Type> whitelist = new(INCLUDED_TYPES);
-        whitelist.AddRange(includedTypes);
+        whitelist.AddRange(settings.IncludedTypes);
         
         List<Type> blacklist = new(UNSUPPORTED_TYPES);
-        blacklist.AddRange(excludedTypes);
+        blacklist.AddRange(settings.ExcludedTypes);
 
         m_includedTypes = whitelist.ToArray();
         m_excludedTypes = blacklist.ToArray();
         
-        m_assembly = assembly ?? throw new ArgumentNullException(nameof(assembly));
+        m_assembly = assembly;
+        m_enableGenericsSupport = settings.EnableGenericsSupport;
     }
 
     public HashSet<Type> Collect(out Dictionary<Type, string> unsupportedTypes)
@@ -97,12 +90,18 @@ public class TypeCollector
 
         List<Type> typesToCollect = new(m_includedTypes);
         
-        var assemblyTypes = m_assembly.ExportedTypes;
-        
-        typesToCollect.AddRange(assemblyTypes);
+        var assemblyTypes = m_assembly?.ExportedTypes;
+
+        if (assemblyTypes is not null) {
+            typesToCollect.AddRange(assemblyTypes);
+        }
 
         foreach (var type in typesToCollect) {
-            CollectType(type, collectedTypes, unsupportedTypes);
+            CollectType(
+                type,
+                collectedTypes,
+                unsupportedTypes
+            );
         }
 
         return collectedTypes;
@@ -317,12 +316,12 @@ public class TypeCollector
         CollectType(parameterType, collectedTypes, unsupportedTypes);
     }
 
-    public static bool IsSupportedType(Type type)
+    public bool IsSupportedType(Type type)
     {
         return IsSupportedType(type, out _);
     }
     
-    public static bool IsSupportedType(
+    public bool IsSupportedType(
         Type type,
         out string? unsupportedReason
     )
@@ -345,6 +344,12 @@ public class TypeCollector
 
         if (!type.IsVisible) {
             unsupportedReason = "Is Not Visible (public)";
+            return false;
+        }
+
+        if (!m_enableGenericsSupport &&
+            (type.IsGenericType || type.IsConstructedGenericType || type.IsGenericTypeDefinition || type.IsGenericParameter)) {
+            unsupportedReason = "Is Generic (disabled by configuration)";
             return false;
         }
 
@@ -390,7 +395,7 @@ public class TypeCollector
             return false;
         }
 
-        if (UNSUPPORTED_TYPES.Contains(type)) {
+        if (m_excludedTypes.Contains(type)) {
             unsupportedReason = "Is unsupported Type";
             return false;
         }

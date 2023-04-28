@@ -56495,2045 +56495,6 @@ public class System_SystemException /* System.SystemException */: System_Excepti
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
-public class System_Tuple_A1 /* System.Tuple<> */: System_Object {
-	public override class var typeName: String { get {
-		"Tuple`1"
-	}}
-
-	public override class var fullTypeName: String { get {
-		"System.Tuple<>"
-	}}
-
-	public func equals(_ T1: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
-		let T1C = T1.__handle
-		let objC = obj?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A1_Equals(self.__handle, T1C, objC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	public func getHashCode(_ T1: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
-		let T1C = T1.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A1_GetHashCode(self.__handle, T1C, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	public func toString(_ T1: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
-		let T1C = T1.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A1_ToString(self.__handle, T1C, &__exceptionC)
-		
-		let __returnValue = System_String(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	public convenience init?(_ T1: System_Type /* System.Type */, _ item1: System_Object? /* System.Object */) throws {
-		let T1C = T1.__handle
-		let item1C = item1?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A1_Create(T1C, item1C, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		guard let __returnValueC else { return nil }
-		
-		self.init(handle: __returnValueC)
-		
-	}
-	
-	public func item1(_ T1: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A1_Item1_Get(self.__handle, T1C, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public override class var typeOf: System_Type /* System.Type */ { get {
-		return System_Type(handle: System_Tuple_A1_TypeOf())
-		
-	}}
-	
-	internal override func destroy() {
-		System_Tuple_A1_Destroy(self.__handle)
-		
-	}
-	
-	
-}
-
-
-public class System_Runtime_CompilerServices_ITuple /* System.Runtime.CompilerServices.ITuple */: DNObject {
-	public override class var typeName: String { get {
-		"ITuple"
-	}}
-
-	public override class var fullTypeName: String { get {
-		"System.Runtime.CompilerServices.ITuple"
-	}}
-
-	public var length: Int32 /* System.Int32 */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Runtime_CompilerServices_ITuple_Length_Get(self.__handle, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}}
-	
-	
-	public func item(_ index: Int32 /* System.Int32 */) throws -> System_Object? /* System.Object */ {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Runtime_CompilerServices_ITuple_Item_Get(self.__handle, index, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public override class var typeOf: System_Type /* System.Type */ { get {
-		return System_Type(handle: System_Runtime_CompilerServices_ITuple_TypeOf())
-		
-	}}
-	
-	internal override func destroy() {
-		System_Runtime_CompilerServices_ITuple_Destroy(self.__handle)
-		
-	}
-	
-	
-}
-
-
-// Type "T1" was skipped. Reason: It has no full name.
-public class System_Tuple_A2 /* System.Tuple<,> */: System_Object {
-	public override class var typeName: String { get {
-		"Tuple`2"
-	}}
-
-	public override class var fullTypeName: String { get {
-		"System.Tuple<,>"
-	}}
-
-	public func equals(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let objC = obj?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A2_Equals(self.__handle, T1C, T2C, objC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	public func getHashCode(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A2_GetHashCode(self.__handle, T1C, T2C, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	public func toString(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A2_ToString(self.__handle, T1C, T2C, &__exceptionC)
-		
-		let __returnValue = System_String(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	public convenience init?(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ item1: System_Object? /* System.Object */, _ item2: System_Object? /* System.Object */) throws {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let item1C = item1?.__handle
-		let item2C = item2?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A2_Create(T1C, T2C, item1C, item2C, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		guard let __returnValueC else { return nil }
-		
-		self.init(handle: __returnValueC)
-		
-	}
-	
-	public func item1(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A2_Item1_Get(self.__handle, T1C, T2C, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public func item2(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A2_Item2_Get(self.__handle, T1C, T2C, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public override class var typeOf: System_Type /* System.Type */ { get {
-		return System_Type(handle: System_Tuple_A2_TypeOf())
-		
-	}}
-	
-	internal override func destroy() {
-		System_Tuple_A2_Destroy(self.__handle)
-		
-	}
-	
-	
-}
-
-
-// Type "T1" was skipped. Reason: It has no full name.
-// Type "T2" was skipped. Reason: It has no full name.
-public class System_Tuple_A3 /* System.Tuple<,,> */: System_Object {
-	public override class var typeName: String { get {
-		"Tuple`3"
-	}}
-
-	public override class var fullTypeName: String { get {
-		"System.Tuple<,,>"
-	}}
-
-	public func equals(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let objC = obj?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A3_Equals(self.__handle, T1C, T2C, T3C, objC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	public func getHashCode(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A3_GetHashCode(self.__handle, T1C, T2C, T3C, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	public func toString(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A3_ToString(self.__handle, T1C, T2C, T3C, &__exceptionC)
-		
-		let __returnValue = System_String(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	public convenience init?(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ item1: System_Object? /* System.Object */, _ item2: System_Object? /* System.Object */, _ item3: System_Object? /* System.Object */) throws {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let item1C = item1?.__handle
-		let item2C = item2?.__handle
-		let item3C = item3?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A3_Create(T1C, T2C, T3C, item1C, item2C, item3C, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		guard let __returnValueC else { return nil }
-		
-		self.init(handle: __returnValueC)
-		
-	}
-	
-	public func item1(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A3_Item1_Get(self.__handle, T1C, T2C, T3C, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public func item2(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A3_Item2_Get(self.__handle, T1C, T2C, T3C, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public func item3(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A3_Item3_Get(self.__handle, T1C, T2C, T3C, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public override class var typeOf: System_Type /* System.Type */ { get {
-		return System_Type(handle: System_Tuple_A3_TypeOf())
-		
-	}}
-	
-	internal override func destroy() {
-		System_Tuple_A3_Destroy(self.__handle)
-		
-	}
-	
-	
-}
-
-
-// Type "T1" was skipped. Reason: It has no full name.
-// Type "T2" was skipped. Reason: It has no full name.
-// Type "T3" was skipped. Reason: It has no full name.
-public class System_Tuple_A4 /* System.Tuple<,,,> */: System_Object {
-	public override class var typeName: String { get {
-		"Tuple`4"
-	}}
-
-	public override class var fullTypeName: String { get {
-		"System.Tuple<,,,>"
-	}}
-
-	public func equals(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let objC = obj?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A4_Equals(self.__handle, T1C, T2C, T3C, T4C, objC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	public func getHashCode(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A4_GetHashCode(self.__handle, T1C, T2C, T3C, T4C, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	public func toString(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A4_ToString(self.__handle, T1C, T2C, T3C, T4C, &__exceptionC)
-		
-		let __returnValue = System_String(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	public convenience init?(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ item1: System_Object? /* System.Object */, _ item2: System_Object? /* System.Object */, _ item3: System_Object? /* System.Object */, _ item4: System_Object? /* System.Object */) throws {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let item1C = item1?.__handle
-		let item2C = item2?.__handle
-		let item3C = item3?.__handle
-		let item4C = item4?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A4_Create(T1C, T2C, T3C, T4C, item1C, item2C, item3C, item4C, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		guard let __returnValueC else { return nil }
-		
-		self.init(handle: __returnValueC)
-		
-	}
-	
-	public func item1(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A4_Item1_Get(self.__handle, T1C, T2C, T3C, T4C, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public func item2(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A4_Item2_Get(self.__handle, T1C, T2C, T3C, T4C, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public func item3(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A4_Item3_Get(self.__handle, T1C, T2C, T3C, T4C, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public func item4(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A4_Item4_Get(self.__handle, T1C, T2C, T3C, T4C, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public override class var typeOf: System_Type /* System.Type */ { get {
-		return System_Type(handle: System_Tuple_A4_TypeOf())
-		
-	}}
-	
-	internal override func destroy() {
-		System_Tuple_A4_Destroy(self.__handle)
-		
-	}
-	
-	
-}
-
-
-// Type "T1" was skipped. Reason: It has no full name.
-// Type "T2" was skipped. Reason: It has no full name.
-// Type "T3" was skipped. Reason: It has no full name.
-// Type "T4" was skipped. Reason: It has no full name.
-public class System_Tuple_A5 /* System.Tuple<,,,,> */: System_Object {
-	public override class var typeName: String { get {
-		"Tuple`5"
-	}}
-
-	public override class var fullTypeName: String { get {
-		"System.Tuple<,,,,>"
-	}}
-
-	public func equals(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		let objC = obj?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A5_Equals(self.__handle, T1C, T2C, T3C, T4C, T5C, objC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	public func getHashCode(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A5_GetHashCode(self.__handle, T1C, T2C, T3C, T4C, T5C, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	public func toString(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A5_ToString(self.__handle, T1C, T2C, T3C, T4C, T5C, &__exceptionC)
-		
-		let __returnValue = System_String(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	public convenience init?(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ item1: System_Object? /* System.Object */, _ item2: System_Object? /* System.Object */, _ item3: System_Object? /* System.Object */, _ item4: System_Object? /* System.Object */, _ item5: System_Object? /* System.Object */) throws {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		let item1C = item1?.__handle
-		let item2C = item2?.__handle
-		let item3C = item3?.__handle
-		let item4C = item4?.__handle
-		let item5C = item5?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A5_Create(T1C, T2C, T3C, T4C, T5C, item1C, item2C, item3C, item4C, item5C, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		guard let __returnValueC else { return nil }
-		
-		self.init(handle: __returnValueC)
-		
-	}
-	
-	public func item1(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A5_Item1_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public func item2(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A5_Item2_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public func item3(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A5_Item3_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public func item4(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A5_Item4_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public func item5(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A5_Item5_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public override class var typeOf: System_Type /* System.Type */ { get {
-		return System_Type(handle: System_Tuple_A5_TypeOf())
-		
-	}}
-	
-	internal override func destroy() {
-		System_Tuple_A5_Destroy(self.__handle)
-		
-	}
-	
-	
-}
-
-
-// Type "T1" was skipped. Reason: It has no full name.
-// Type "T2" was skipped. Reason: It has no full name.
-// Type "T3" was skipped. Reason: It has no full name.
-// Type "T4" was skipped. Reason: It has no full name.
-// Type "T5" was skipped. Reason: It has no full name.
-public class System_Tuple_A6 /* System.Tuple<,,,,,> */: System_Object {
-	public override class var typeName: String { get {
-		"Tuple`6"
-	}}
-
-	public override class var fullTypeName: String { get {
-		"System.Tuple<,,,,,>"
-	}}
-
-	public func equals(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		let T6C = T6.__handle
-		let objC = obj?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A6_Equals(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, objC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	public func getHashCode(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		let T6C = T6.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A6_GetHashCode(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	public func toString(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		let T6C = T6.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A6_ToString(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, &__exceptionC)
-		
-		let __returnValue = System_String(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	public convenience init?(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ item1: System_Object? /* System.Object */, _ item2: System_Object? /* System.Object */, _ item3: System_Object? /* System.Object */, _ item4: System_Object? /* System.Object */, _ item5: System_Object? /* System.Object */, _ item6: System_Object? /* System.Object */) throws {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		let T6C = T6.__handle
-		let item1C = item1?.__handle
-		let item2C = item2?.__handle
-		let item3C = item3?.__handle
-		let item4C = item4?.__handle
-		let item5C = item5?.__handle
-		let item6C = item6?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A6_Create(T1C, T2C, T3C, T4C, T5C, T6C, item1C, item2C, item3C, item4C, item5C, item6C, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		guard let __returnValueC else { return nil }
-		
-		self.init(handle: __returnValueC)
-		
-	}
-	
-	public func item1(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		let T6C = T6.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A6_Item1_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public func item2(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		let T6C = T6.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A6_Item2_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public func item3(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		let T6C = T6.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A6_Item3_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public func item4(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		let T6C = T6.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A6_Item4_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public func item5(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		let T6C = T6.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A6_Item5_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public func item6(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		let T6C = T6.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A6_Item6_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public override class var typeOf: System_Type /* System.Type */ { get {
-		return System_Type(handle: System_Tuple_A6_TypeOf())
-		
-	}}
-	
-	internal override func destroy() {
-		System_Tuple_A6_Destroy(self.__handle)
-		
-	}
-	
-	
-}
-
-
-// Type "T1" was skipped. Reason: It has no full name.
-// Type "T2" was skipped. Reason: It has no full name.
-// Type "T3" was skipped. Reason: It has no full name.
-// Type "T4" was skipped. Reason: It has no full name.
-// Type "T5" was skipped. Reason: It has no full name.
-// Type "T6" was skipped. Reason: It has no full name.
-public class System_Tuple_A7 /* System.Tuple<,,,,,,> */: System_Object {
-	public override class var typeName: String { get {
-		"Tuple`7"
-	}}
-
-	public override class var fullTypeName: String { get {
-		"System.Tuple<,,,,,,>"
-	}}
-
-	public func equals(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		let T6C = T6.__handle
-		let T7C = T7.__handle
-		let objC = obj?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A7_Equals(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, objC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	public func getHashCode(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		let T6C = T6.__handle
-		let T7C = T7.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A7_GetHashCode(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	public func toString(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		let T6C = T6.__handle
-		let T7C = T7.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A7_ToString(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, &__exceptionC)
-		
-		let __returnValue = System_String(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	public convenience init?(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ item1: System_Object? /* System.Object */, _ item2: System_Object? /* System.Object */, _ item3: System_Object? /* System.Object */, _ item4: System_Object? /* System.Object */, _ item5: System_Object? /* System.Object */, _ item6: System_Object? /* System.Object */, _ item7: System_Object? /* System.Object */) throws {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		let T6C = T6.__handle
-		let T7C = T7.__handle
-		let item1C = item1?.__handle
-		let item2C = item2?.__handle
-		let item3C = item3?.__handle
-		let item4C = item4?.__handle
-		let item5C = item5?.__handle
-		let item6C = item6?.__handle
-		let item7C = item7?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A7_Create(T1C, T2C, T3C, T4C, T5C, T6C, T7C, item1C, item2C, item3C, item4C, item5C, item6C, item7C, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		guard let __returnValueC else { return nil }
-		
-		self.init(handle: __returnValueC)
-		
-	}
-	
-	public func item1(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		let T6C = T6.__handle
-		let T7C = T7.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A7_Item1_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public func item2(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		let T6C = T6.__handle
-		let T7C = T7.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A7_Item2_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public func item3(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		let T6C = T6.__handle
-		let T7C = T7.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A7_Item3_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public func item4(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		let T6C = T6.__handle
-		let T7C = T7.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A7_Item4_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public func item5(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		let T6C = T6.__handle
-		let T7C = T7.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A7_Item5_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public func item6(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		let T6C = T6.__handle
-		let T7C = T7.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A7_Item6_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public func item7(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		let T6C = T6.__handle
-		let T7C = T7.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A7_Item7_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public override class var typeOf: System_Type /* System.Type */ { get {
-		return System_Type(handle: System_Tuple_A7_TypeOf())
-		
-	}}
-	
-	internal override func destroy() {
-		System_Tuple_A7_Destroy(self.__handle)
-		
-	}
-	
-	
-}
-
-
-// Type "T1" was skipped. Reason: It has no full name.
-// Type "T2" was skipped. Reason: It has no full name.
-// Type "T3" was skipped. Reason: It has no full name.
-// Type "T4" was skipped. Reason: It has no full name.
-// Type "T5" was skipped. Reason: It has no full name.
-// Type "T6" was skipped. Reason: It has no full name.
-// Type "T7" was skipped. Reason: It has no full name.
-public class System_Tuple_A8 /* System.Tuple<,,,,,,,> */: System_Object {
-	public override class var typeName: String { get {
-		"Tuple`8"
-	}}
-
-	public override class var fullTypeName: String { get {
-		"System.Tuple<,,,,,,,>"
-	}}
-
-	public func equals(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		let T6C = T6.__handle
-		let T7C = T7.__handle
-		let TRestC = TRest.__handle
-		let objC = obj?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A8_Equals(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, TRestC, objC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	public func getHashCode(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		let T6C = T6.__handle
-		let T7C = T7.__handle
-		let TRestC = TRest.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A8_GetHashCode(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, TRestC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	public func toString(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		let T6C = T6.__handle
-		let T7C = T7.__handle
-		let TRestC = TRest.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A8_ToString(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, TRestC, &__exceptionC)
-		
-		let __returnValue = System_String(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	public convenience init?(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */, _ item1: System_Object? /* System.Object */, _ item2: System_Object? /* System.Object */, _ item3: System_Object? /* System.Object */, _ item4: System_Object? /* System.Object */, _ item5: System_Object? /* System.Object */, _ item6: System_Object? /* System.Object */, _ item7: System_Object? /* System.Object */, _ rest: System_Object? /* System.Object */) throws {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		let T6C = T6.__handle
-		let T7C = T7.__handle
-		let TRestC = TRest.__handle
-		let item1C = item1?.__handle
-		let item2C = item2?.__handle
-		let item3C = item3?.__handle
-		let item4C = item4?.__handle
-		let item5C = item5?.__handle
-		let item6C = item6?.__handle
-		let item7C = item7?.__handle
-		let restC = rest?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A8_Create(T1C, T2C, T3C, T4C, T5C, T6C, T7C, TRestC, item1C, item2C, item3C, item4C, item5C, item6C, item7C, restC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		guard let __returnValueC else { return nil }
-		
-		self.init(handle: __returnValueC)
-		
-	}
-	
-	public func item1(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		let T6C = T6.__handle
-		let T7C = T7.__handle
-		let TRestC = TRest.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A8_Item1_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, TRestC, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public func item2(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		let T6C = T6.__handle
-		let T7C = T7.__handle
-		let TRestC = TRest.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A8_Item2_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, TRestC, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public func item3(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		let T6C = T6.__handle
-		let T7C = T7.__handle
-		let TRestC = TRest.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A8_Item3_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, TRestC, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public func item4(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		let T6C = T6.__handle
-		let T7C = T7.__handle
-		let TRestC = TRest.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A8_Item4_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, TRestC, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public func item5(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		let T6C = T6.__handle
-		let T7C = T7.__handle
-		let TRestC = TRest.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A8_Item5_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, TRestC, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public func item6(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		let T6C = T6.__handle
-		let T7C = T7.__handle
-		let TRestC = TRest.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A8_Item6_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, TRestC, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public func item7(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		let T6C = T6.__handle
-		let T7C = T7.__handle
-		let TRestC = TRest.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A8_Item7_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, TRestC, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public func rest(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let T1C = T1.__handle
-		let T2C = T2.__handle
-		let T3C = T3.__handle
-		let T4C = T4.__handle
-		let T5C = T5.__handle
-		let T6C = T6.__handle
-		let T7C = T7.__handle
-		let TRestC = TRest.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Tuple_A8_Rest_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, TRestC, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public override class var typeOf: System_Type /* System.Type */ { get {
-		return System_Type(handle: System_Tuple_A8_TypeOf())
-		
-	}}
-	
-	internal override func destroy() {
-		System_Tuple_A8_Destroy(self.__handle)
-		
-	}
-	
-	
-}
-
-
-// Type "T1" was skipped. Reason: It has no full name.
-// Type "T2" was skipped. Reason: It has no full name.
-// Type "T3" was skipped. Reason: It has no full name.
-// Type "T4" was skipped. Reason: It has no full name.
-// Type "T5" was skipped. Reason: It has no full name.
-// Type "T6" was skipped. Reason: It has no full name.
-// Type "T7" was skipped. Reason: It has no full name.
-// Type "TRest" was skipped. Reason: It has no full name.
 public class System_GC /* System.GC */: System_Object {
 	public override class var typeName: String { get {
 		"GC"
@@ -75533,119 +73494,6 @@ public class System_Threading_CancellationToken_Array /* System.Threading.Cancel
 
 
 
-public class System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<> */: System_Threading_Tasks_Task {
-	public override class var typeName: String { get {
-		"Task`1"
-	}}
-
-	public override class var fullTypeName: String { get {
-		"System.Threading.Tasks.Task<>"
-	}}
-
-	public func waitAsync(_ TResult: System_Type /* System.Type */, _ cancellationToken: System_Threading_CancellationToken? /* System.Threading.CancellationToken */) throws -> System_Object? /* System.Object */ {
-		let TResultC = TResult.__handle
-		let cancellationTokenC = cancellationToken?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Threading_Tasks_Task_A1_WaitAsync(self.__handle, TResultC, cancellationTokenC, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	public func waitAsync(_ TResult: System_Type /* System.Type */, _ timeout: System_TimeSpan? /* System.TimeSpan */) throws -> System_Object? /* System.Object */ {
-		let TResultC = TResult.__handle
-		let timeoutC = timeout?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Threading_Tasks_Task_A1_WaitAsync_1(self.__handle, TResultC, timeoutC, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	public func waitAsync(_ TResult: System_Type /* System.Type */, _ timeout: System_TimeSpan? /* System.TimeSpan */, _ cancellationToken: System_Threading_CancellationToken? /* System.Threading.CancellationToken */) throws -> System_Object? /* System.Object */ {
-		let TResultC = TResult.__handle
-		let timeoutC = timeout?.__handle
-		let cancellationTokenC = cancellationToken?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Threading_Tasks_Task_A1_WaitAsync_2(self.__handle, TResultC, timeoutC, cancellationTokenC, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	public func result(_ TResult: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
-		let TResultC = TResult.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Threading_Tasks_Task_A1_Result_Get(self.__handle, TResultC, &__exceptionC)
-		
-		let __returnValue = System_Object(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-	public override class var typeOf: System_Type /* System.Type */ { get {
-		return System_Type(handle: System_Threading_Tasks_Task_A1_TypeOf())
-		
-	}}
-	
-	internal override func destroy() {
-		System_Threading_Tasks_Task_A1_Destroy(self.__handle)
-		
-	}
-	
-	
-}
-
-
-// Type "TResult" was skipped. Reason: It has no full name.
 public class System_Random /* System.Random */: System_Object {
 	public override class var typeName: String { get {
 		"Random"
@@ -86844,6 +84692,119 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 }
 
 
+public class System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<> */: System_Threading_Tasks_Task {
+	public override class var typeName: String { get {
+		"Task`1"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Threading.Tasks.Task<>"
+	}}
+
+	public func waitAsync(_ TResult: System_Type /* System.Type */, _ cancellationToken: System_Threading_CancellationToken? /* System.Threading.CancellationToken */) throws -> System_Object? /* System.Object */ {
+		let TResultC = TResult.__handle
+		let cancellationTokenC = cancellationToken?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Threading_Tasks_Task_A1_WaitAsync(self.__handle, TResultC, cancellationTokenC, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func waitAsync(_ TResult: System_Type /* System.Type */, _ timeout: System_TimeSpan? /* System.TimeSpan */) throws -> System_Object? /* System.Object */ {
+		let TResultC = TResult.__handle
+		let timeoutC = timeout?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Threading_Tasks_Task_A1_WaitAsync_1(self.__handle, TResultC, timeoutC, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func waitAsync(_ TResult: System_Type /* System.Type */, _ timeout: System_TimeSpan? /* System.TimeSpan */, _ cancellationToken: System_Threading_CancellationToken? /* System.Threading.CancellationToken */) throws -> System_Object? /* System.Object */ {
+		let TResultC = TResult.__handle
+		let timeoutC = timeout?.__handle
+		let cancellationTokenC = cancellationToken?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Threading_Tasks_Task_A1_WaitAsync_2(self.__handle, TResultC, timeoutC, cancellationTokenC, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func result(_ TResult: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let TResultC = TResult.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Threading_Tasks_Task_A1_Result_Get(self.__handle, TResultC, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Threading_Tasks_Task_A1_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Threading_Tasks_Task_A1_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+// Type "TResult" was skipped. Reason: It has no full name.
 public class System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<> */: DNObject {
 	public override class var typeName: String { get {
 		"IEnumerable`1"
@@ -88471,6 +86432,2045 @@ public class System_Collections_Generic_IAsyncEnumerable_A1 /* System.Collection
 }
 
 
+public class System_Tuple_A1 /* System.Tuple<> */: System_Object {
+	public override class var typeName: String { get {
+		"Tuple`1"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Tuple<>"
+	}}
+
+	public func equals(_ T1: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
+		let T1C = T1.__handle
+		let objC = obj?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A1_Equals(self.__handle, T1C, objC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func getHashCode(_ T1: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
+		let T1C = T1.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A1_GetHashCode(self.__handle, T1C, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func toString(_ T1: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
+		let T1C = T1.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A1_ToString(self.__handle, T1C, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public convenience init?(_ T1: System_Type /* System.Type */, _ item1: System_Object? /* System.Object */) throws {
+		let T1C = T1.__handle
+		let item1C = item1?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A1_Create(T1C, item1C, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		guard let __returnValueC else { return nil }
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	public func item1(_ T1: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A1_Item1_Get(self.__handle, T1C, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Tuple_A1_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Tuple_A1_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+public class System_Runtime_CompilerServices_ITuple /* System.Runtime.CompilerServices.ITuple */: DNObject {
+	public override class var typeName: String { get {
+		"ITuple"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Runtime.CompilerServices.ITuple"
+	}}
+
+	public var length: Int32 /* System.Int32 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Runtime_CompilerServices_ITuple_Length_Get(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	
+	
+	public func item(_ index: Int32 /* System.Int32 */) throws -> System_Object? /* System.Object */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Runtime_CompilerServices_ITuple_Item_Get(self.__handle, index, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Runtime_CompilerServices_ITuple_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Runtime_CompilerServices_ITuple_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+// Type "T1" was skipped. Reason: It has no full name.
+public class System_Tuple_A2 /* System.Tuple<,> */: System_Object {
+	public override class var typeName: String { get {
+		"Tuple`2"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Tuple<,>"
+	}}
+
+	public func equals(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let objC = obj?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A2_Equals(self.__handle, T1C, T2C, objC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func getHashCode(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A2_GetHashCode(self.__handle, T1C, T2C, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func toString(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A2_ToString(self.__handle, T1C, T2C, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public convenience init?(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ item1: System_Object? /* System.Object */, _ item2: System_Object? /* System.Object */) throws {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let item1C = item1?.__handle
+		let item2C = item2?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A2_Create(T1C, T2C, item1C, item2C, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		guard let __returnValueC else { return nil }
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	public func item1(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A2_Item1_Get(self.__handle, T1C, T2C, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public func item2(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A2_Item2_Get(self.__handle, T1C, T2C, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Tuple_A2_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Tuple_A2_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+// Type "T1" was skipped. Reason: It has no full name.
+// Type "T2" was skipped. Reason: It has no full name.
+public class System_Tuple_A3 /* System.Tuple<,,> */: System_Object {
+	public override class var typeName: String { get {
+		"Tuple`3"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Tuple<,,>"
+	}}
+
+	public func equals(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let objC = obj?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A3_Equals(self.__handle, T1C, T2C, T3C, objC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func getHashCode(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A3_GetHashCode(self.__handle, T1C, T2C, T3C, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func toString(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A3_ToString(self.__handle, T1C, T2C, T3C, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public convenience init?(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ item1: System_Object? /* System.Object */, _ item2: System_Object? /* System.Object */, _ item3: System_Object? /* System.Object */) throws {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let item1C = item1?.__handle
+		let item2C = item2?.__handle
+		let item3C = item3?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A3_Create(T1C, T2C, T3C, item1C, item2C, item3C, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		guard let __returnValueC else { return nil }
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	public func item1(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A3_Item1_Get(self.__handle, T1C, T2C, T3C, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public func item2(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A3_Item2_Get(self.__handle, T1C, T2C, T3C, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public func item3(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A3_Item3_Get(self.__handle, T1C, T2C, T3C, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Tuple_A3_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Tuple_A3_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+// Type "T1" was skipped. Reason: It has no full name.
+// Type "T2" was skipped. Reason: It has no full name.
+// Type "T3" was skipped. Reason: It has no full name.
+public class System_Tuple_A4 /* System.Tuple<,,,> */: System_Object {
+	public override class var typeName: String { get {
+		"Tuple`4"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Tuple<,,,>"
+	}}
+
+	public func equals(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let objC = obj?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A4_Equals(self.__handle, T1C, T2C, T3C, T4C, objC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func getHashCode(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A4_GetHashCode(self.__handle, T1C, T2C, T3C, T4C, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func toString(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A4_ToString(self.__handle, T1C, T2C, T3C, T4C, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public convenience init?(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ item1: System_Object? /* System.Object */, _ item2: System_Object? /* System.Object */, _ item3: System_Object? /* System.Object */, _ item4: System_Object? /* System.Object */) throws {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let item1C = item1?.__handle
+		let item2C = item2?.__handle
+		let item3C = item3?.__handle
+		let item4C = item4?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A4_Create(T1C, T2C, T3C, T4C, item1C, item2C, item3C, item4C, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		guard let __returnValueC else { return nil }
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	public func item1(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A4_Item1_Get(self.__handle, T1C, T2C, T3C, T4C, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public func item2(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A4_Item2_Get(self.__handle, T1C, T2C, T3C, T4C, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public func item3(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A4_Item3_Get(self.__handle, T1C, T2C, T3C, T4C, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public func item4(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A4_Item4_Get(self.__handle, T1C, T2C, T3C, T4C, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Tuple_A4_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Tuple_A4_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+// Type "T1" was skipped. Reason: It has no full name.
+// Type "T2" was skipped. Reason: It has no full name.
+// Type "T3" was skipped. Reason: It has no full name.
+// Type "T4" was skipped. Reason: It has no full name.
+public class System_Tuple_A5 /* System.Tuple<,,,,> */: System_Object {
+	public override class var typeName: String { get {
+		"Tuple`5"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Tuple<,,,,>"
+	}}
+
+	public func equals(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		let objC = obj?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A5_Equals(self.__handle, T1C, T2C, T3C, T4C, T5C, objC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func getHashCode(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A5_GetHashCode(self.__handle, T1C, T2C, T3C, T4C, T5C, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func toString(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A5_ToString(self.__handle, T1C, T2C, T3C, T4C, T5C, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public convenience init?(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ item1: System_Object? /* System.Object */, _ item2: System_Object? /* System.Object */, _ item3: System_Object? /* System.Object */, _ item4: System_Object? /* System.Object */, _ item5: System_Object? /* System.Object */) throws {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		let item1C = item1?.__handle
+		let item2C = item2?.__handle
+		let item3C = item3?.__handle
+		let item4C = item4?.__handle
+		let item5C = item5?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A5_Create(T1C, T2C, T3C, T4C, T5C, item1C, item2C, item3C, item4C, item5C, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		guard let __returnValueC else { return nil }
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	public func item1(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A5_Item1_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public func item2(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A5_Item2_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public func item3(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A5_Item3_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public func item4(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A5_Item4_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public func item5(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A5_Item5_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Tuple_A5_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Tuple_A5_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+// Type "T1" was skipped. Reason: It has no full name.
+// Type "T2" was skipped. Reason: It has no full name.
+// Type "T3" was skipped. Reason: It has no full name.
+// Type "T4" was skipped. Reason: It has no full name.
+// Type "T5" was skipped. Reason: It has no full name.
+public class System_Tuple_A6 /* System.Tuple<,,,,,> */: System_Object {
+	public override class var typeName: String { get {
+		"Tuple`6"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Tuple<,,,,,>"
+	}}
+
+	public func equals(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		let T6C = T6.__handle
+		let objC = obj?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A6_Equals(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, objC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func getHashCode(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		let T6C = T6.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A6_GetHashCode(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func toString(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		let T6C = T6.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A6_ToString(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public convenience init?(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ item1: System_Object? /* System.Object */, _ item2: System_Object? /* System.Object */, _ item3: System_Object? /* System.Object */, _ item4: System_Object? /* System.Object */, _ item5: System_Object? /* System.Object */, _ item6: System_Object? /* System.Object */) throws {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		let T6C = T6.__handle
+		let item1C = item1?.__handle
+		let item2C = item2?.__handle
+		let item3C = item3?.__handle
+		let item4C = item4?.__handle
+		let item5C = item5?.__handle
+		let item6C = item6?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A6_Create(T1C, T2C, T3C, T4C, T5C, T6C, item1C, item2C, item3C, item4C, item5C, item6C, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		guard let __returnValueC else { return nil }
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	public func item1(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		let T6C = T6.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A6_Item1_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public func item2(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		let T6C = T6.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A6_Item2_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public func item3(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		let T6C = T6.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A6_Item3_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public func item4(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		let T6C = T6.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A6_Item4_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public func item5(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		let T6C = T6.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A6_Item5_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public func item6(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		let T6C = T6.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A6_Item6_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Tuple_A6_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Tuple_A6_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+// Type "T1" was skipped. Reason: It has no full name.
+// Type "T2" was skipped. Reason: It has no full name.
+// Type "T3" was skipped. Reason: It has no full name.
+// Type "T4" was skipped. Reason: It has no full name.
+// Type "T5" was skipped. Reason: It has no full name.
+// Type "T6" was skipped. Reason: It has no full name.
+public class System_Tuple_A7 /* System.Tuple<,,,,,,> */: System_Object {
+	public override class var typeName: String { get {
+		"Tuple`7"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Tuple<,,,,,,>"
+	}}
+
+	public func equals(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		let T6C = T6.__handle
+		let T7C = T7.__handle
+		let objC = obj?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A7_Equals(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, objC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func getHashCode(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		let T6C = T6.__handle
+		let T7C = T7.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A7_GetHashCode(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func toString(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		let T6C = T6.__handle
+		let T7C = T7.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A7_ToString(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public convenience init?(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ item1: System_Object? /* System.Object */, _ item2: System_Object? /* System.Object */, _ item3: System_Object? /* System.Object */, _ item4: System_Object? /* System.Object */, _ item5: System_Object? /* System.Object */, _ item6: System_Object? /* System.Object */, _ item7: System_Object? /* System.Object */) throws {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		let T6C = T6.__handle
+		let T7C = T7.__handle
+		let item1C = item1?.__handle
+		let item2C = item2?.__handle
+		let item3C = item3?.__handle
+		let item4C = item4?.__handle
+		let item5C = item5?.__handle
+		let item6C = item6?.__handle
+		let item7C = item7?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A7_Create(T1C, T2C, T3C, T4C, T5C, T6C, T7C, item1C, item2C, item3C, item4C, item5C, item6C, item7C, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		guard let __returnValueC else { return nil }
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	public func item1(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		let T6C = T6.__handle
+		let T7C = T7.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A7_Item1_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public func item2(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		let T6C = T6.__handle
+		let T7C = T7.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A7_Item2_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public func item3(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		let T6C = T6.__handle
+		let T7C = T7.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A7_Item3_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public func item4(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		let T6C = T6.__handle
+		let T7C = T7.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A7_Item4_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public func item5(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		let T6C = T6.__handle
+		let T7C = T7.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A7_Item5_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public func item6(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		let T6C = T6.__handle
+		let T7C = T7.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A7_Item6_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public func item7(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		let T6C = T6.__handle
+		let T7C = T7.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A7_Item7_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Tuple_A7_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Tuple_A7_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+// Type "T1" was skipped. Reason: It has no full name.
+// Type "T2" was skipped. Reason: It has no full name.
+// Type "T3" was skipped. Reason: It has no full name.
+// Type "T4" was skipped. Reason: It has no full name.
+// Type "T5" was skipped. Reason: It has no full name.
+// Type "T6" was skipped. Reason: It has no full name.
+// Type "T7" was skipped. Reason: It has no full name.
+public class System_Tuple_A8 /* System.Tuple<,,,,,,,> */: System_Object {
+	public override class var typeName: String { get {
+		"Tuple`8"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Tuple<,,,,,,,>"
+	}}
+
+	public func equals(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */, _ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		let T6C = T6.__handle
+		let T7C = T7.__handle
+		let TRestC = TRest.__handle
+		let objC = obj?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A8_Equals(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, TRestC, objC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func getHashCode(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		let T6C = T6.__handle
+		let T7C = T7.__handle
+		let TRestC = TRest.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A8_GetHashCode(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, TRestC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func toString(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		let T6C = T6.__handle
+		let T7C = T7.__handle
+		let TRestC = TRest.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A8_ToString(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, TRestC, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public convenience init?(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */, _ item1: System_Object? /* System.Object */, _ item2: System_Object? /* System.Object */, _ item3: System_Object? /* System.Object */, _ item4: System_Object? /* System.Object */, _ item5: System_Object? /* System.Object */, _ item6: System_Object? /* System.Object */, _ item7: System_Object? /* System.Object */, _ rest: System_Object? /* System.Object */) throws {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		let T6C = T6.__handle
+		let T7C = T7.__handle
+		let TRestC = TRest.__handle
+		let item1C = item1?.__handle
+		let item2C = item2?.__handle
+		let item3C = item3?.__handle
+		let item4C = item4?.__handle
+		let item5C = item5?.__handle
+		let item6C = item6?.__handle
+		let item7C = item7?.__handle
+		let restC = rest?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A8_Create(T1C, T2C, T3C, T4C, T5C, T6C, T7C, TRestC, item1C, item2C, item3C, item4C, item5C, item6C, item7C, restC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		guard let __returnValueC else { return nil }
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	public func item1(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		let T6C = T6.__handle
+		let T7C = T7.__handle
+		let TRestC = TRest.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A8_Item1_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, TRestC, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public func item2(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		let T6C = T6.__handle
+		let T7C = T7.__handle
+		let TRestC = TRest.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A8_Item2_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, TRestC, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public func item3(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		let T6C = T6.__handle
+		let T7C = T7.__handle
+		let TRestC = TRest.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A8_Item3_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, TRestC, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public func item4(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		let T6C = T6.__handle
+		let T7C = T7.__handle
+		let TRestC = TRest.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A8_Item4_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, TRestC, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public func item5(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		let T6C = T6.__handle
+		let T7C = T7.__handle
+		let TRestC = TRest.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A8_Item5_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, TRestC, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public func item6(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		let T6C = T6.__handle
+		let T7C = T7.__handle
+		let TRestC = TRest.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A8_Item6_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, TRestC, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public func item7(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		let T6C = T6.__handle
+		let T7C = T7.__handle
+		let TRestC = TRest.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A8_Item7_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, TRestC, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public func rest(_ T1: System_Type /* System.Type */, _ T2: System_Type /* System.Type */, _ T3: System_Type /* System.Type */, _ T4: System_Type /* System.Type */, _ T5: System_Type /* System.Type */, _ T6: System_Type /* System.Type */, _ T7: System_Type /* System.Type */, _ TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let T1C = T1.__handle
+		let T2C = T2.__handle
+		let T3C = T3.__handle
+		let T4C = T4.__handle
+		let T5C = T5.__handle
+		let T6C = T6.__handle
+		let T7C = T7.__handle
+		let TRestC = TRest.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Tuple_A8_Rest_Get(self.__handle, T1C, T2C, T3C, T4C, T5C, T6C, T7C, TRestC, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Tuple_A8_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Tuple_A8_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+// Type "T1" was skipped. Reason: It has no full name.
+// Type "T2" was skipped. Reason: It has no full name.
+// Type "T3" was skipped. Reason: It has no full name.
+// Type "T4" was skipped. Reason: It has no full name.
+// Type "T5" was skipped. Reason: It has no full name.
+// Type "T6" was skipped. Reason: It has no full name.
+// Type "T7" was skipped. Reason: It has no full name.
+// Type "TRest" was skipped. Reason: It has no full name.
 public class NativeAOT_CodeGeneratorInputSample_Address /* NativeAOT.CodeGeneratorInputSample.Address */: System_Object {
 	public override class var typeName: String { get {
 		"Address"

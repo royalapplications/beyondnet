@@ -5,6 +5,7 @@ namespace NativeAOT.CodeGenerator.Collectors;
 public class MemberCollector
 {
     private readonly Type m_type;
+    private readonly TypeCollector m_typeCollector;
 
     private static readonly Dictionary<Type, string[]> TYPES_TO_UNSUPPORTED_MEMBER_NAMES_MAPPING = new() {
         { typeof(System.Runtime.InteropServices.Marshal), new [] {
@@ -14,21 +15,27 @@ public class MemberCollector
 
     private readonly string[]? m_excludedMemberNames;
 
-    public MemberCollector(Type type)
+    public MemberCollector(
+        Type type,
+        TypeCollector typeCollector
+    )
     {
         m_type = type ?? throw new ArgumentNullException(nameof(type));
+        m_typeCollector = typeCollector ?? throw new ArgumentNullException(nameof(typeCollector));
 
         TYPES_TO_UNSUPPORTED_MEMBER_NAMES_MAPPING.TryGetValue(type, out string[]? unsupportedMemberNames);
         
         m_excludedMemberNames = unsupportedMemberNames;
     }
     
-    public HashSet<MemberInfo> Collect(out Dictionary<MemberInfo, string> unsupportedMembers)
+    public HashSet<MemberInfo> Collect(
+        out Dictionary<MemberInfo, string> unsupportedMembers
+    )
     {
         HashSet<MemberInfo> collectedMembers = new();
         unsupportedMembers = new();
 
-        if (TypeCollector.IsSupportedType(m_type)) {
+        if (m_typeCollector.IsSupportedType(m_type)) {
             BindingFlags flags = BindingFlags.Public | 
                                  BindingFlags.DeclaredOnly |
                                  BindingFlags.Instance |
@@ -143,7 +150,7 @@ public class MemberCollector
 
         Type returnType = methodInfo.ReturnType;
 
-        if (!TypeCollector.IsSupportedType(returnType)) {
+        if (!m_typeCollector.IsSupportedType(returnType)) {
             unsupportedMembers[methodInfo] = "Has unsupported return type";
             
             return;
@@ -176,7 +183,7 @@ public class MemberCollector
     {
         Type propertyType = propertyInfo.PropertyType;
 
-        if (!TypeCollector.IsSupportedType(propertyType)) {
+        if (!m_typeCollector.IsSupportedType(propertyType)) {
             unsupportedMembers[propertyInfo] = "Has unsupported type";
             
             return;
@@ -202,7 +209,7 @@ public class MemberCollector
     {
         Type fieldType = fieldInfo.FieldType;
 
-        if (!TypeCollector.IsSupportedType(fieldType)) {
+        if (!m_typeCollector.IsSupportedType(fieldType)) {
             unsupportedMembers[fieldType] = "Has unsupported type";
             
             return;
@@ -221,7 +228,7 @@ public class MemberCollector
 
         if (eventHandlerType == null) {
             unsupportedMembers[eventInfo] = "Has no event handler type";
-        } else if (!TypeCollector.IsSupportedType(eventHandlerType)) {
+        } else if (!m_typeCollector.IsSupportedType(eventHandlerType)) {
             unsupportedMembers[eventInfo] = "Has unsupported event handler type";
         } else {
             collectedMembers.Add(eventInfo);
@@ -232,7 +239,7 @@ public class MemberCollector
     {
         var parameterType = parameterInfo.ParameterType;
 
-        if (!TypeCollector.IsSupportedType(parameterType)) {
+        if (!m_typeCollector.IsSupportedType(parameterType)) {
             return false;
         }
 

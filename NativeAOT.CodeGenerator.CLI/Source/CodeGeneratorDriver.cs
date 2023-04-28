@@ -21,6 +21,12 @@ internal class CodeGeneratorDriver
 
     internal void Generate()
     {
+        #region Configuration
+        bool emitUnsupported = Configuration.EmitUnsupported ?? false;
+        bool generateTypeCheckedDestroyMethods = Configuration.GenerateTypeCheckedDestroyMethods ?? false;
+        bool enableGenericsSupport = Configuration.EnableGenericsSupport ?? false;
+        #endregion Configuration
+        
         #region Load Assembly
         string assemblyPath = Configuration.AssemblyPath.ExpandTildeAndGetAbsolutePath();
         
@@ -41,20 +47,22 @@ internal class CodeGeneratorDriver
             Configuration.ExcludedTypeNames ?? Array.Empty<string>(),
             assembly
         );
+
+        TypeCollectorSettings typeCollectorSettings = new(
+            enableGenericsSupport,
+            includedTypes,
+            excludedTypes
+        );
         
         var types = CollectTypes(
             assembly,
-            includedTypes,
-            excludedTypes,
+            typeCollectorSettings,
             out Dictionary<Type, string> unsupportedTypes
         );
         #endregion Collect Types
 
         #region Generate Code
         #region C# Unmanaged
-        bool emitUnsupported = Configuration.EmitUnsupported ?? false;
-        bool generateTypeCheckedDestroyMethods = Configuration.GenerateTypeCheckedDestroyMethods ?? false;
-
         const string namespaceForCSharpUnamangedCode = "NativeGeneratedCode";
 
         var cSharpUnmanagedResultObject = GenerateCSharpUnmanagedCode(
@@ -62,7 +70,8 @@ internal class CodeGeneratorDriver
             unsupportedTypes,
             namespaceForCSharpUnamangedCode,
             emitUnsupported,
-            generateTypeCheckedDestroyMethods
+            generateTypeCheckedDestroyMethods,
+            typeCollectorSettings
         );
 
         var cSharpUnmanagedResult = cSharpUnmanagedResultObject.Result;
@@ -74,7 +83,8 @@ internal class CodeGeneratorDriver
             types,
             unsupportedTypes,
             cSharpUnmanagedResult,
-            emitUnsupported
+            emitUnsupported,
+            typeCollectorSettings
         );
 
         var cResult = cResultObject.Result;
@@ -87,7 +97,8 @@ internal class CodeGeneratorDriver
             unsupportedTypes,
             cSharpUnmanagedResult,
             cResult,
-            emitUnsupported
+            emitUnsupported,
+            typeCollectorSettings
         );
 
         var swiftResult = swiftResultObject.Result;
@@ -164,15 +175,13 @@ internal class CodeGeneratorDriver
     
     private HashSet<Type> CollectTypes(
         Assembly assembly,
-        Type[] includedTypes,
-        Type[] excludedTypes,
+        TypeCollectorSettings settings,
         out Dictionary<Type, string> unsupportedTypes
     )
     {
         TypeCollector typeCollector = new(
             assembly,
-            includedTypes,
-            excludedTypes
+            settings
         );
 
         var types = typeCollector.Collect(out unsupportedTypes);
@@ -199,14 +208,16 @@ internal class CodeGeneratorDriver
         Dictionary<Type, string> unsupportedTypes,
         string namespaceForGeneratedCode,
         bool emitUnsupported,
-        bool generateTypeCheckedDestroyMethods
+        bool generateTypeCheckedDestroyMethods,
+        TypeCollectorSettings typeCollectorSettings
     )
     {
         SourceCodeWriter writer = new();
 
         Generator.CSharpUnmanaged.Settings settings = new(namespaceForGeneratedCode) {
             EmitUnsupported = emitUnsupported,
-            GenerateTypeCheckedDestroyMethods = generateTypeCheckedDestroyMethods
+            GenerateTypeCheckedDestroyMethods = generateTypeCheckedDestroyMethods,
+            TypeCollectorSettings = typeCollectorSettings
         };
         
         CSharpUnmanagedCodeGenerator codeGenerator = new(settings);
@@ -243,13 +254,15 @@ internal class CodeGeneratorDriver
         HashSet<Type> types,
         Dictionary<Type, string> unsupportedTypes,
         Result cSharpUnmanagedResult,
-        bool emitUnsupported
+        bool emitUnsupported,
+        TypeCollectorSettings typeCollectorSettings
     )
     {
         SourceCodeWriter writer = new();
         
         Generator.C.Settings settings = new() {
-            EmitUnsupported = emitUnsupported
+            EmitUnsupported = emitUnsupported,
+            TypeCollectorSettings = typeCollectorSettings
         };
         
         CCodeGenerator codeGenerator = new(settings, cSharpUnmanagedResult);
@@ -288,13 +301,15 @@ internal class CodeGeneratorDriver
         Dictionary<Type, string> unsupportedTypes,
         Result cSharpUnmanagedResult,
         Result cResult,
-        bool emitUnsupported
+        bool emitUnsupported,
+        TypeCollectorSettings typeCollectorSettings
     )
     {
         SourceCodeWriter writer = new();
         
         Generator.Swift.Settings settings = new() {
-            EmitUnsupported = emitUnsupported
+            EmitUnsupported = emitUnsupported,
+            TypeCollectorSettings = typeCollectorSettings
         };
         
         SwiftCodeGenerator codeGenerator = new(settings, cSharpUnmanagedResult, cResult);

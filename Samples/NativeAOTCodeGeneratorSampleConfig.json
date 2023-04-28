@@ -7,6 +7,7 @@
 	
 	"EmitUnsupported": false,
 	"GenerateTypeCheckedDestroyMethods": true,
+	"EnableGenericsSupport": true,
 
 	"IncludedTypeNames": [
 		"System.GC",
@@ -21,7 +22,6 @@
 		"System.Threading.CancellationToken",
 		"System.Threading.Tasks.TaskFactory",
 		"System.Threading.Tasks.Task",
-		"System.Threading.Tasks.Task`1",
 		"System.AppDomain",
 		"System.Random",
 		"System.Text.Encoding",
@@ -32,6 +32,8 @@
 		"System.IO.Directory",
 		"System.IO.DirectoryInfo",
 		"System.Security.SecureString",
+
+		"System.Threading.Tasks.Task`1",
 		"System.Collections.Generic.IEnumerable`1",
 		"System.Collections.Generic.List`1",
 		"System.Collections.Generic.IList`1",
@@ -39,6 +41,18 @@
 		"System.Collections.Generic.IDictionary`2",
 		"System.Collections.ObjectModel.ReadOnlyCollection`1",
 		"System.Collections.Generic.IReadOnlyDictionary`2",
-		"System.Collections.Generic.IAsyncEnumerable`1"
+		"System.Collections.Generic.IAsyncEnumerable`1",
+		"System.Tuple`1",
+		"System.Tuple`2",
+		"System.Tuple`3",
+		"System.Tuple`4",
+		"System.Tuple`5",
+		"System.Tuple`6",
+		"System.Tuple`7",
+		"System.Tuple`8"
+	],
+
+	"TODO_GENERICS_IncludedTypeNames": [
+		
 	]
 }

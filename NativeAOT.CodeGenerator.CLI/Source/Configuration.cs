@@ -10,6 +10,7 @@ public struct Configuration
 
     public bool? EmitUnsupported { get; init; }
     public bool? GenerateTypeCheckedDestroyMethods { get; init; }
+    public bool? EnableGenericsSupport { get; init; }
     
     public string[]? IncludedTypeNames { get; init; }
     public string[]? ExcludedTypeNames { get; init; }

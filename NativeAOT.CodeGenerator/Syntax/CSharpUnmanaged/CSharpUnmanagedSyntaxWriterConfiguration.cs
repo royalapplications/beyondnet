@@ -1,6 +1,8 @@
+using NativeAOT.CodeGenerator.Collectors;
+
 namespace NativeAOT.CodeGenerator.Syntax.CSharpUnmanaged;
 
-public class CSharpUnmanagedSyntaxWriterConfiguration: ISyntaxWriterConfiguration
+public record class CSharpUnmanagedSyntaxWriterConfiguration(TypeCollectorSettings TypeCollectorSettings): ISyntaxWriterConfiguration
 {
     
 }

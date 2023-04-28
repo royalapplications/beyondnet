@@ -18,7 +18,7 @@ public class CSharpUnmanagedCodeGenerator: ICodeGenerator
         SourceCodeWriter writer
     )
     {
-        CSharpUnmanagedSyntaxWriterConfiguration? syntaxWriterConfiguration = null;
+        CSharpUnmanagedSyntaxWriterConfiguration? syntaxWriterConfiguration = new(Settings.TypeCollectorSettings!);
         
         SourceCodeSection headerSection = writer.AddSection("Header");
         SourceCodeSection sharedCodeSection = writer.AddSection("Shared Code");

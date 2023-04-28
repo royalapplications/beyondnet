@@ -2730,60 +2730,6 @@ typedef void* System_Numerics_IUnsignedNumber_A1_t;
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
-typedef void* System_Tuple_A1_t;
-
-typedef void* System_Runtime_CompilerServices_ITuple_t;
-
-// Type "T1" was skipped. Reason: It has no full name.
-typedef void* System_Tuple_A2_t;
-
-// Type "T1" was skipped. Reason: It has no full name.
-// Type "T2" was skipped. Reason: It has no full name.
-typedef void* System_Tuple_A3_t;
-
-// Type "T1" was skipped. Reason: It has no full name.
-// Type "T2" was skipped. Reason: It has no full name.
-// Type "T3" was skipped. Reason: It has no full name.
-typedef void* System_Tuple_A4_t;
-
-// Type "T1" was skipped. Reason: It has no full name.
-// Type "T2" was skipped. Reason: It has no full name.
-// Type "T3" was skipped. Reason: It has no full name.
-// Type "T4" was skipped. Reason: It has no full name.
-typedef void* System_Tuple_A5_t;
-
-// Type "T1" was skipped. Reason: It has no full name.
-// Type "T2" was skipped. Reason: It has no full name.
-// Type "T3" was skipped. Reason: It has no full name.
-// Type "T4" was skipped. Reason: It has no full name.
-// Type "T5" was skipped. Reason: It has no full name.
-typedef void* System_Tuple_A6_t;
-
-// Type "T1" was skipped. Reason: It has no full name.
-// Type "T2" was skipped. Reason: It has no full name.
-// Type "T3" was skipped. Reason: It has no full name.
-// Type "T4" was skipped. Reason: It has no full name.
-// Type "T5" was skipped. Reason: It has no full name.
-// Type "T6" was skipped. Reason: It has no full name.
-typedef void* System_Tuple_A7_t;
-
-// Type "T1" was skipped. Reason: It has no full name.
-// Type "T2" was skipped. Reason: It has no full name.
-// Type "T3" was skipped. Reason: It has no full name.
-// Type "T4" was skipped. Reason: It has no full name.
-// Type "T5" was skipped. Reason: It has no full name.
-// Type "T6" was skipped. Reason: It has no full name.
-// Type "T7" was skipped. Reason: It has no full name.
-typedef void* System_Tuple_A8_t;
-
-// Type "T1" was skipped. Reason: It has no full name.
-// Type "T2" was skipped. Reason: It has no full name.
-// Type "T3" was skipped. Reason: It has no full name.
-// Type "T4" was skipped. Reason: It has no full name.
-// Type "T5" was skipped. Reason: It has no full name.
-// Type "T6" was skipped. Reason: It has no full name.
-// Type "T7" was skipped. Reason: It has no full name.
-// Type "TRest" was skipped. Reason: It has no full name.
 typedef void* System_GC_t;
 
 typedef void* System_GCMemoryInfo_t;
@@ -2886,9 +2832,6 @@ typedef void* System_Collections_Generic_IReadOnlyList_A1_t;
 typedef void* System_Collections_Generic_IReadOnlyCollection_A1_t;
 
 
-typedef void* System_Threading_Tasks_Task_A1_t;
-
-// Type "TResult" was skipped. Reason: It has no full name.
 typedef void* System_Random_t;
 
 // Type "T[]" was skipped. Reason: It has no full name.
@@ -3012,6 +2955,9 @@ typedef void* System_Collections_Generic_IReadOnlyCollection_A1_t;
 
 typedef void* System_IO_Directory_t;
 
+typedef void* System_Threading_Tasks_Task_A1_t;
+
+// Type "TResult" was skipped. Reason: It has no full name.
 typedef void* System_Collections_Generic_IEnumerable_A1_t;
 
 typedef void* System_Collections_Generic_List_A1_t;
@@ -3044,6 +2990,60 @@ typedef void* System_Collections_Generic_IReadOnlyDictionary_A2_t;
 
 typedef void* System_Collections_Generic_IAsyncEnumerable_A1_t;
 
+typedef void* System_Tuple_A1_t;
+
+typedef void* System_Runtime_CompilerServices_ITuple_t;
+
+// Type "T1" was skipped. Reason: It has no full name.
+typedef void* System_Tuple_A2_t;
+
+// Type "T1" was skipped. Reason: It has no full name.
+// Type "T2" was skipped. Reason: It has no full name.
+typedef void* System_Tuple_A3_t;
+
+// Type "T1" was skipped. Reason: It has no full name.
+// Type "T2" was skipped. Reason: It has no full name.
+// Type "T3" was skipped. Reason: It has no full name.
+typedef void* System_Tuple_A4_t;
+
+// Type "T1" was skipped. Reason: It has no full name.
+// Type "T2" was skipped. Reason: It has no full name.
+// Type "T3" was skipped. Reason: It has no full name.
+// Type "T4" was skipped. Reason: It has no full name.
+typedef void* System_Tuple_A5_t;
+
+// Type "T1" was skipped. Reason: It has no full name.
+// Type "T2" was skipped. Reason: It has no full name.
+// Type "T3" was skipped. Reason: It has no full name.
+// Type "T4" was skipped. Reason: It has no full name.
+// Type "T5" was skipped. Reason: It has no full name.
+typedef void* System_Tuple_A6_t;
+
+// Type "T1" was skipped. Reason: It has no full name.
+// Type "T2" was skipped. Reason: It has no full name.
+// Type "T3" was skipped. Reason: It has no full name.
+// Type "T4" was skipped. Reason: It has no full name.
+// Type "T5" was skipped. Reason: It has no full name.
+// Type "T6" was skipped. Reason: It has no full name.
+typedef void* System_Tuple_A7_t;
+
+// Type "T1" was skipped. Reason: It has no full name.
+// Type "T2" was skipped. Reason: It has no full name.
+// Type "T3" was skipped. Reason: It has no full name.
+// Type "T4" was skipped. Reason: It has no full name.
+// Type "T5" was skipped. Reason: It has no full name.
+// Type "T6" was skipped. Reason: It has no full name.
+// Type "T7" was skipped. Reason: It has no full name.
+typedef void* System_Tuple_A8_t;
+
+// Type "T1" was skipped. Reason: It has no full name.
+// Type "T2" was skipped. Reason: It has no full name.
+// Type "T3" was skipped. Reason: It has no full name.
+// Type "T4" was skipped. Reason: It has no full name.
+// Type "T5" was skipped. Reason: It has no full name.
+// Type "T6" was skipped. Reason: It has no full name.
+// Type "T7" was skipped. Reason: It has no full name.
+// Type "TRest" was skipped. Reason: It has no full name.
 typedef void* NativeAOT_CodeGeneratorInputSample_Address_t;
 
 typedef void* NativeAOT_CodeGeneratorInputSample_IAnimal_t;
@@ -24333,1002 +24333,6 @@ System_SystemException_Destroy(
 
 
 
-#pragma mark - BEGIN APIs of System.Tuple<>
-bool /* System.Boolean */
-System_Tuple_A1_Equals(
-	System_Tuple_A1_t /* System.Tuple<> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Object_t /* System.Object */ obj,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-int32_t /* System.Int32 */
-System_Tuple_A1_GetHashCode(
-	System_Tuple_A1_t /* System.Tuple<> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_String_t /* System.String */
-System_Tuple_A1_ToString(
-	System_Tuple_A1_t /* System.Tuple<> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_t /* System.Object */
-System_Tuple_A1_Create(
-	System_Type_t /* System.Type */ T1,
-	System_Object_t /* System.Object */ item1,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_t /* System.Object */
-System_Tuple_A1_Item1_Get(
-	System_Tuple_A1_t /* System.Tuple<> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Type_t __nonnull /* System.Type */
-System_Tuple_A1_TypeOf(
-	
-);
-
-void /* System.Void */
-System_Tuple_A1_Destroy(
-	System_Tuple_A1_t /* System.Tuple<> */ self
-);
-
-#pragma mark - END APIs of System.Tuple<>
-
-#pragma mark - BEGIN APIs of System.Runtime.CompilerServices.ITuple
-int32_t /* System.Int32 */
-System_Runtime_CompilerServices_ITuple_Length_Get(
-	System_Runtime_CompilerServices_ITuple_t /* System.Runtime.CompilerServices.ITuple */ self,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Object_t /* System.Object */
-System_Runtime_CompilerServices_ITuple_Item_Get(
-	System_Runtime_CompilerServices_ITuple_t /* System.Runtime.CompilerServices.ITuple */ self,
-	int32_t /* System.Int32 */ index,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Type_t __nonnull /* System.Type */
-System_Runtime_CompilerServices_ITuple_TypeOf(
-	
-);
-
-void /* System.Void */
-System_Runtime_CompilerServices_ITuple_Destroy(
-	System_Runtime_CompilerServices_ITuple_t /* System.Runtime.CompilerServices.ITuple */ self
-);
-
-#pragma mark - END APIs of System.Runtime.CompilerServices.ITuple
-
-
-#pragma mark - BEGIN APIs of System.Tuple<,>
-bool /* System.Boolean */
-System_Tuple_A2_Equals(
-	System_Tuple_A2_t /* System.Tuple<,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Object_t /* System.Object */ obj,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-int32_t /* System.Int32 */
-System_Tuple_A2_GetHashCode(
-	System_Tuple_A2_t /* System.Tuple<,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_String_t /* System.String */
-System_Tuple_A2_ToString(
-	System_Tuple_A2_t /* System.Tuple<,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_t /* System.Object */
-System_Tuple_A2_Create(
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Object_t /* System.Object */ item1,
-	System_Object_t /* System.Object */ item2,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_t /* System.Object */
-System_Tuple_A2_Item1_Get(
-	System_Tuple_A2_t /* System.Tuple<,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Object_t /* System.Object */
-System_Tuple_A2_Item2_Get(
-	System_Tuple_A2_t /* System.Tuple<,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Type_t __nonnull /* System.Type */
-System_Tuple_A2_TypeOf(
-	
-);
-
-void /* System.Void */
-System_Tuple_A2_Destroy(
-	System_Tuple_A2_t /* System.Tuple<,> */ self
-);
-
-#pragma mark - END APIs of System.Tuple<,>
-
-
-
-#pragma mark - BEGIN APIs of System.Tuple<,,>
-bool /* System.Boolean */
-System_Tuple_A3_Equals(
-	System_Tuple_A3_t /* System.Tuple<,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Object_t /* System.Object */ obj,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-int32_t /* System.Int32 */
-System_Tuple_A3_GetHashCode(
-	System_Tuple_A3_t /* System.Tuple<,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_String_t /* System.String */
-System_Tuple_A3_ToString(
-	System_Tuple_A3_t /* System.Tuple<,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_t /* System.Object */
-System_Tuple_A3_Create(
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Object_t /* System.Object */ item1,
-	System_Object_t /* System.Object */ item2,
-	System_Object_t /* System.Object */ item3,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_t /* System.Object */
-System_Tuple_A3_Item1_Get(
-	System_Tuple_A3_t /* System.Tuple<,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Object_t /* System.Object */
-System_Tuple_A3_Item2_Get(
-	System_Tuple_A3_t /* System.Tuple<,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Object_t /* System.Object */
-System_Tuple_A3_Item3_Get(
-	System_Tuple_A3_t /* System.Tuple<,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Type_t __nonnull /* System.Type */
-System_Tuple_A3_TypeOf(
-	
-);
-
-void /* System.Void */
-System_Tuple_A3_Destroy(
-	System_Tuple_A3_t /* System.Tuple<,,> */ self
-);
-
-#pragma mark - END APIs of System.Tuple<,,>
-
-
-
-
-#pragma mark - BEGIN APIs of System.Tuple<,,,>
-bool /* System.Boolean */
-System_Tuple_A4_Equals(
-	System_Tuple_A4_t /* System.Tuple<,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Object_t /* System.Object */ obj,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-int32_t /* System.Int32 */
-System_Tuple_A4_GetHashCode(
-	System_Tuple_A4_t /* System.Tuple<,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_String_t /* System.String */
-System_Tuple_A4_ToString(
-	System_Tuple_A4_t /* System.Tuple<,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_t /* System.Object */
-System_Tuple_A4_Create(
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Object_t /* System.Object */ item1,
-	System_Object_t /* System.Object */ item2,
-	System_Object_t /* System.Object */ item3,
-	System_Object_t /* System.Object */ item4,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_t /* System.Object */
-System_Tuple_A4_Item1_Get(
-	System_Tuple_A4_t /* System.Tuple<,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Object_t /* System.Object */
-System_Tuple_A4_Item2_Get(
-	System_Tuple_A4_t /* System.Tuple<,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Object_t /* System.Object */
-System_Tuple_A4_Item3_Get(
-	System_Tuple_A4_t /* System.Tuple<,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Object_t /* System.Object */
-System_Tuple_A4_Item4_Get(
-	System_Tuple_A4_t /* System.Tuple<,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Type_t __nonnull /* System.Type */
-System_Tuple_A4_TypeOf(
-	
-);
-
-void /* System.Void */
-System_Tuple_A4_Destroy(
-	System_Tuple_A4_t /* System.Tuple<,,,> */ self
-);
-
-#pragma mark - END APIs of System.Tuple<,,,>
-
-
-
-
-
-#pragma mark - BEGIN APIs of System.Tuple<,,,,>
-bool /* System.Boolean */
-System_Tuple_A5_Equals(
-	System_Tuple_A5_t /* System.Tuple<,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Object_t /* System.Object */ obj,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-int32_t /* System.Int32 */
-System_Tuple_A5_GetHashCode(
-	System_Tuple_A5_t /* System.Tuple<,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_String_t /* System.String */
-System_Tuple_A5_ToString(
-	System_Tuple_A5_t /* System.Tuple<,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_t /* System.Object */
-System_Tuple_A5_Create(
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Object_t /* System.Object */ item1,
-	System_Object_t /* System.Object */ item2,
-	System_Object_t /* System.Object */ item3,
-	System_Object_t /* System.Object */ item4,
-	System_Object_t /* System.Object */ item5,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_t /* System.Object */
-System_Tuple_A5_Item1_Get(
-	System_Tuple_A5_t /* System.Tuple<,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Object_t /* System.Object */
-System_Tuple_A5_Item2_Get(
-	System_Tuple_A5_t /* System.Tuple<,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Object_t /* System.Object */
-System_Tuple_A5_Item3_Get(
-	System_Tuple_A5_t /* System.Tuple<,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Object_t /* System.Object */
-System_Tuple_A5_Item4_Get(
-	System_Tuple_A5_t /* System.Tuple<,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Object_t /* System.Object */
-System_Tuple_A5_Item5_Get(
-	System_Tuple_A5_t /* System.Tuple<,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Type_t __nonnull /* System.Type */
-System_Tuple_A5_TypeOf(
-	
-);
-
-void /* System.Void */
-System_Tuple_A5_Destroy(
-	System_Tuple_A5_t /* System.Tuple<,,,,> */ self
-);
-
-#pragma mark - END APIs of System.Tuple<,,,,>
-
-
-
-
-
-
-#pragma mark - BEGIN APIs of System.Tuple<,,,,,>
-bool /* System.Boolean */
-System_Tuple_A6_Equals(
-	System_Tuple_A6_t /* System.Tuple<,,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Type_t /* System.Type */ T6,
-	System_Object_t /* System.Object */ obj,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-int32_t /* System.Int32 */
-System_Tuple_A6_GetHashCode(
-	System_Tuple_A6_t /* System.Tuple<,,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Type_t /* System.Type */ T6,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_String_t /* System.String */
-System_Tuple_A6_ToString(
-	System_Tuple_A6_t /* System.Tuple<,,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Type_t /* System.Type */ T6,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_t /* System.Object */
-System_Tuple_A6_Create(
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Type_t /* System.Type */ T6,
-	System_Object_t /* System.Object */ item1,
-	System_Object_t /* System.Object */ item2,
-	System_Object_t /* System.Object */ item3,
-	System_Object_t /* System.Object */ item4,
-	System_Object_t /* System.Object */ item5,
-	System_Object_t /* System.Object */ item6,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_t /* System.Object */
-System_Tuple_A6_Item1_Get(
-	System_Tuple_A6_t /* System.Tuple<,,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Type_t /* System.Type */ T6,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Object_t /* System.Object */
-System_Tuple_A6_Item2_Get(
-	System_Tuple_A6_t /* System.Tuple<,,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Type_t /* System.Type */ T6,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Object_t /* System.Object */
-System_Tuple_A6_Item3_Get(
-	System_Tuple_A6_t /* System.Tuple<,,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Type_t /* System.Type */ T6,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Object_t /* System.Object */
-System_Tuple_A6_Item4_Get(
-	System_Tuple_A6_t /* System.Tuple<,,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Type_t /* System.Type */ T6,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Object_t /* System.Object */
-System_Tuple_A6_Item5_Get(
-	System_Tuple_A6_t /* System.Tuple<,,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Type_t /* System.Type */ T6,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Object_t /* System.Object */
-System_Tuple_A6_Item6_Get(
-	System_Tuple_A6_t /* System.Tuple<,,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Type_t /* System.Type */ T6,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Type_t __nonnull /* System.Type */
-System_Tuple_A6_TypeOf(
-	
-);
-
-void /* System.Void */
-System_Tuple_A6_Destroy(
-	System_Tuple_A6_t /* System.Tuple<,,,,,> */ self
-);
-
-#pragma mark - END APIs of System.Tuple<,,,,,>
-
-
-
-
-
-
-
-#pragma mark - BEGIN APIs of System.Tuple<,,,,,,>
-bool /* System.Boolean */
-System_Tuple_A7_Equals(
-	System_Tuple_A7_t /* System.Tuple<,,,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Type_t /* System.Type */ T6,
-	System_Type_t /* System.Type */ T7,
-	System_Object_t /* System.Object */ obj,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-int32_t /* System.Int32 */
-System_Tuple_A7_GetHashCode(
-	System_Tuple_A7_t /* System.Tuple<,,,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Type_t /* System.Type */ T6,
-	System_Type_t /* System.Type */ T7,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_String_t /* System.String */
-System_Tuple_A7_ToString(
-	System_Tuple_A7_t /* System.Tuple<,,,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Type_t /* System.Type */ T6,
-	System_Type_t /* System.Type */ T7,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_t /* System.Object */
-System_Tuple_A7_Create(
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Type_t /* System.Type */ T6,
-	System_Type_t /* System.Type */ T7,
-	System_Object_t /* System.Object */ item1,
-	System_Object_t /* System.Object */ item2,
-	System_Object_t /* System.Object */ item3,
-	System_Object_t /* System.Object */ item4,
-	System_Object_t /* System.Object */ item5,
-	System_Object_t /* System.Object */ item6,
-	System_Object_t /* System.Object */ item7,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_t /* System.Object */
-System_Tuple_A7_Item1_Get(
-	System_Tuple_A7_t /* System.Tuple<,,,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Type_t /* System.Type */ T6,
-	System_Type_t /* System.Type */ T7,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Object_t /* System.Object */
-System_Tuple_A7_Item2_Get(
-	System_Tuple_A7_t /* System.Tuple<,,,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Type_t /* System.Type */ T6,
-	System_Type_t /* System.Type */ T7,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Object_t /* System.Object */
-System_Tuple_A7_Item3_Get(
-	System_Tuple_A7_t /* System.Tuple<,,,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Type_t /* System.Type */ T6,
-	System_Type_t /* System.Type */ T7,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Object_t /* System.Object */
-System_Tuple_A7_Item4_Get(
-	System_Tuple_A7_t /* System.Tuple<,,,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Type_t /* System.Type */ T6,
-	System_Type_t /* System.Type */ T7,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Object_t /* System.Object */
-System_Tuple_A7_Item5_Get(
-	System_Tuple_A7_t /* System.Tuple<,,,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Type_t /* System.Type */ T6,
-	System_Type_t /* System.Type */ T7,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Object_t /* System.Object */
-System_Tuple_A7_Item6_Get(
-	System_Tuple_A7_t /* System.Tuple<,,,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Type_t /* System.Type */ T6,
-	System_Type_t /* System.Type */ T7,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Object_t /* System.Object */
-System_Tuple_A7_Item7_Get(
-	System_Tuple_A7_t /* System.Tuple<,,,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Type_t /* System.Type */ T6,
-	System_Type_t /* System.Type */ T7,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Type_t __nonnull /* System.Type */
-System_Tuple_A7_TypeOf(
-	
-);
-
-void /* System.Void */
-System_Tuple_A7_Destroy(
-	System_Tuple_A7_t /* System.Tuple<,,,,,,> */ self
-);
-
-#pragma mark - END APIs of System.Tuple<,,,,,,>
-
-
-
-
-
-
-
-
-#pragma mark - BEGIN APIs of System.Tuple<,,,,,,,>
-bool /* System.Boolean */
-System_Tuple_A8_Equals(
-	System_Tuple_A8_t /* System.Tuple<,,,,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Type_t /* System.Type */ T6,
-	System_Type_t /* System.Type */ T7,
-	System_Type_t /* System.Type */ TRest,
-	System_Object_t /* System.Object */ obj,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-int32_t /* System.Int32 */
-System_Tuple_A8_GetHashCode(
-	System_Tuple_A8_t /* System.Tuple<,,,,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Type_t /* System.Type */ T6,
-	System_Type_t /* System.Type */ T7,
-	System_Type_t /* System.Type */ TRest,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_String_t /* System.String */
-System_Tuple_A8_ToString(
-	System_Tuple_A8_t /* System.Tuple<,,,,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Type_t /* System.Type */ T6,
-	System_Type_t /* System.Type */ T7,
-	System_Type_t /* System.Type */ TRest,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_t /* System.Object */
-System_Tuple_A8_Create(
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Type_t /* System.Type */ T6,
-	System_Type_t /* System.Type */ T7,
-	System_Type_t /* System.Type */ TRest,
-	System_Object_t /* System.Object */ item1,
-	System_Object_t /* System.Object */ item2,
-	System_Object_t /* System.Object */ item3,
-	System_Object_t /* System.Object */ item4,
-	System_Object_t /* System.Object */ item5,
-	System_Object_t /* System.Object */ item6,
-	System_Object_t /* System.Object */ item7,
-	System_Object_t /* System.Object */ rest,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_t /* System.Object */
-System_Tuple_A8_Item1_Get(
-	System_Tuple_A8_t /* System.Tuple<,,,,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Type_t /* System.Type */ T6,
-	System_Type_t /* System.Type */ T7,
-	System_Type_t /* System.Type */ TRest,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Object_t /* System.Object */
-System_Tuple_A8_Item2_Get(
-	System_Tuple_A8_t /* System.Tuple<,,,,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Type_t /* System.Type */ T6,
-	System_Type_t /* System.Type */ T7,
-	System_Type_t /* System.Type */ TRest,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Object_t /* System.Object */
-System_Tuple_A8_Item3_Get(
-	System_Tuple_A8_t /* System.Tuple<,,,,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Type_t /* System.Type */ T6,
-	System_Type_t /* System.Type */ T7,
-	System_Type_t /* System.Type */ TRest,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Object_t /* System.Object */
-System_Tuple_A8_Item4_Get(
-	System_Tuple_A8_t /* System.Tuple<,,,,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Type_t /* System.Type */ T6,
-	System_Type_t /* System.Type */ T7,
-	System_Type_t /* System.Type */ TRest,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Object_t /* System.Object */
-System_Tuple_A8_Item5_Get(
-	System_Tuple_A8_t /* System.Tuple<,,,,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Type_t /* System.Type */ T6,
-	System_Type_t /* System.Type */ T7,
-	System_Type_t /* System.Type */ TRest,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Object_t /* System.Object */
-System_Tuple_A8_Item6_Get(
-	System_Tuple_A8_t /* System.Tuple<,,,,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Type_t /* System.Type */ T6,
-	System_Type_t /* System.Type */ T7,
-	System_Type_t /* System.Type */ TRest,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Object_t /* System.Object */
-System_Tuple_A8_Item7_Get(
-	System_Tuple_A8_t /* System.Tuple<,,,,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Type_t /* System.Type */ T6,
-	System_Type_t /* System.Type */ T7,
-	System_Type_t /* System.Type */ TRest,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Object_t /* System.Object */
-System_Tuple_A8_Rest_Get(
-	System_Tuple_A8_t /* System.Tuple<,,,,,,,> */ self,
-	System_Type_t /* System.Type */ T1,
-	System_Type_t /* System.Type */ T2,
-	System_Type_t /* System.Type */ T3,
-	System_Type_t /* System.Type */ T4,
-	System_Type_t /* System.Type */ T5,
-	System_Type_t /* System.Type */ T6,
-	System_Type_t /* System.Type */ T7,
-	System_Type_t /* System.Type */ TRest,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Type_t __nonnull /* System.Type */
-System_Tuple_A8_TypeOf(
-	
-);
-
-void /* System.Void */
-System_Tuple_A8_Destroy(
-	System_Tuple_A8_t /* System.Tuple<,,,,,,,> */ self
-);
-
-#pragma mark - END APIs of System.Tuple<,,,,,,,>
-
-
-
-
-
-
-
-
-
 #pragma mark - BEGIN APIs of System.GC
 System_GCMemoryInfo_t /* System.GCMemoryInfo */
 System_GC_GetGCMemoryInfo(
@@ -31376,53 +30380,6 @@ System_Threading_CancellationTokenSource_Destroy(
 
 
 
-#pragma mark - BEGIN APIs of System.Threading.Tasks.Task<>
-System_Object_t /* System.Object */
-System_Threading_Tasks_Task_A1_WaitAsync(
-	System_Threading_Tasks_Task_A1_t /* System.Threading.Tasks.Task<> */ self,
-	System_Type_t /* System.Type */ TResult,
-	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_t /* System.Object */
-System_Threading_Tasks_Task_A1_WaitAsync_1(
-	System_Threading_Tasks_Task_A1_t /* System.Threading.Tasks.Task<> */ self,
-	System_Type_t /* System.Type */ TResult,
-	System_TimeSpan_t /* System.TimeSpan */ timeout,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_t /* System.Object */
-System_Threading_Tasks_Task_A1_WaitAsync_2(
-	System_Threading_Tasks_Task_A1_t /* System.Threading.Tasks.Task<> */ self,
-	System_Type_t /* System.Type */ TResult,
-	System_TimeSpan_t /* System.TimeSpan */ timeout,
-	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-System_Object_t /* System.Object */
-System_Threading_Tasks_Task_A1_Result_Get(
-	System_Threading_Tasks_Task_A1_t /* System.Threading.Tasks.Task<> */ self,
-	System_Type_t /* System.Type */ TResult,
-	System_Exception_t* /* System.Exception */ outException
-);
-
-
-System_Type_t __nonnull /* System.Type */
-System_Threading_Tasks_Task_A1_TypeOf(
-	
-);
-
-void /* System.Void */
-System_Threading_Tasks_Task_A1_Destroy(
-	System_Threading_Tasks_Task_A1_t /* System.Threading.Tasks.Task<> */ self
-);
-
-#pragma mark - END APIs of System.Threading.Tasks.Task<>
-
-
 #pragma mark - BEGIN APIs of System.Random
 int32_t /* System.Int32 */
 System_Random_Next(
@@ -35521,6 +34478,53 @@ System_IO_Directory_Destroy(
 
 #pragma mark - END APIs of System.IO.Directory
 
+#pragma mark - BEGIN APIs of System.Threading.Tasks.Task<>
+System_Object_t /* System.Object */
+System_Threading_Tasks_Task_A1_WaitAsync(
+	System_Threading_Tasks_Task_A1_t /* System.Threading.Tasks.Task<> */ self,
+	System_Type_t /* System.Type */ TResult,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Threading_Tasks_Task_A1_WaitAsync_1(
+	System_Threading_Tasks_Task_A1_t /* System.Threading.Tasks.Task<> */ self,
+	System_Type_t /* System.Type */ TResult,
+	System_TimeSpan_t /* System.TimeSpan */ timeout,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Threading_Tasks_Task_A1_WaitAsync_2(
+	System_Threading_Tasks_Task_A1_t /* System.Threading.Tasks.Task<> */ self,
+	System_Type_t /* System.Type */ TResult,
+	System_TimeSpan_t /* System.TimeSpan */ timeout,
+	System_Threading_CancellationToken_t /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Threading_Tasks_Task_A1_Result_Get(
+	System_Threading_Tasks_Task_A1_t /* System.Threading.Tasks.Task<> */ self,
+	System_Type_t /* System.Type */ TResult,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t __nonnull /* System.Type */
+System_Threading_Tasks_Task_A1_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Threading_Tasks_Task_A1_Destroy(
+	System_Threading_Tasks_Task_A1_t /* System.Threading.Tasks.Task<> */ self
+);
+
+#pragma mark - END APIs of System.Threading.Tasks.Task<>
+
+
 #pragma mark - BEGIN APIs of System.Collections.Generic.IEnumerable<>
 System_Type_t __nonnull /* System.Type */
 System_Collections_Generic_IEnumerable_A1_TypeOf(
@@ -36252,6 +35256,1002 @@ System_Collections_Generic_IAsyncEnumerable_A1_Destroy(
 );
 
 #pragma mark - END APIs of System.Collections.Generic.IAsyncEnumerable<>
+
+#pragma mark - BEGIN APIs of System.Tuple<>
+bool /* System.Boolean */
+System_Tuple_A1_Equals(
+	System_Tuple_A1_t /* System.Tuple<> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Object_t /* System.Object */ obj,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Tuple_A1_GetHashCode(
+	System_Tuple_A1_t /* System.Tuple<> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_String_t /* System.String */
+System_Tuple_A1_ToString(
+	System_Tuple_A1_t /* System.Tuple<> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Tuple_A1_Create(
+	System_Type_t /* System.Type */ T1,
+	System_Object_t /* System.Object */ item1,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Tuple_A1_Item1_Get(
+	System_Tuple_A1_t /* System.Tuple<> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t __nonnull /* System.Type */
+System_Tuple_A1_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Tuple_A1_Destroy(
+	System_Tuple_A1_t /* System.Tuple<> */ self
+);
+
+#pragma mark - END APIs of System.Tuple<>
+
+#pragma mark - BEGIN APIs of System.Runtime.CompilerServices.ITuple
+int32_t /* System.Int32 */
+System_Runtime_CompilerServices_ITuple_Length_Get(
+	System_Runtime_CompilerServices_ITuple_t /* System.Runtime.CompilerServices.ITuple */ self,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_Runtime_CompilerServices_ITuple_Item_Get(
+	System_Runtime_CompilerServices_ITuple_t /* System.Runtime.CompilerServices.ITuple */ self,
+	int32_t /* System.Int32 */ index,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t __nonnull /* System.Type */
+System_Runtime_CompilerServices_ITuple_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Runtime_CompilerServices_ITuple_Destroy(
+	System_Runtime_CompilerServices_ITuple_t /* System.Runtime.CompilerServices.ITuple */ self
+);
+
+#pragma mark - END APIs of System.Runtime.CompilerServices.ITuple
+
+
+#pragma mark - BEGIN APIs of System.Tuple<,>
+bool /* System.Boolean */
+System_Tuple_A2_Equals(
+	System_Tuple_A2_t /* System.Tuple<,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Object_t /* System.Object */ obj,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Tuple_A2_GetHashCode(
+	System_Tuple_A2_t /* System.Tuple<,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_String_t /* System.String */
+System_Tuple_A2_ToString(
+	System_Tuple_A2_t /* System.Tuple<,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Tuple_A2_Create(
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Object_t /* System.Object */ item1,
+	System_Object_t /* System.Object */ item2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Tuple_A2_Item1_Get(
+	System_Tuple_A2_t /* System.Tuple<,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_Tuple_A2_Item2_Get(
+	System_Tuple_A2_t /* System.Tuple<,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t __nonnull /* System.Type */
+System_Tuple_A2_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Tuple_A2_Destroy(
+	System_Tuple_A2_t /* System.Tuple<,> */ self
+);
+
+#pragma mark - END APIs of System.Tuple<,>
+
+
+
+#pragma mark - BEGIN APIs of System.Tuple<,,>
+bool /* System.Boolean */
+System_Tuple_A3_Equals(
+	System_Tuple_A3_t /* System.Tuple<,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Object_t /* System.Object */ obj,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Tuple_A3_GetHashCode(
+	System_Tuple_A3_t /* System.Tuple<,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_String_t /* System.String */
+System_Tuple_A3_ToString(
+	System_Tuple_A3_t /* System.Tuple<,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Tuple_A3_Create(
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Object_t /* System.Object */ item1,
+	System_Object_t /* System.Object */ item2,
+	System_Object_t /* System.Object */ item3,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Tuple_A3_Item1_Get(
+	System_Tuple_A3_t /* System.Tuple<,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_Tuple_A3_Item2_Get(
+	System_Tuple_A3_t /* System.Tuple<,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_Tuple_A3_Item3_Get(
+	System_Tuple_A3_t /* System.Tuple<,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t __nonnull /* System.Type */
+System_Tuple_A3_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Tuple_A3_Destroy(
+	System_Tuple_A3_t /* System.Tuple<,,> */ self
+);
+
+#pragma mark - END APIs of System.Tuple<,,>
+
+
+
+
+#pragma mark - BEGIN APIs of System.Tuple<,,,>
+bool /* System.Boolean */
+System_Tuple_A4_Equals(
+	System_Tuple_A4_t /* System.Tuple<,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Object_t /* System.Object */ obj,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Tuple_A4_GetHashCode(
+	System_Tuple_A4_t /* System.Tuple<,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_String_t /* System.String */
+System_Tuple_A4_ToString(
+	System_Tuple_A4_t /* System.Tuple<,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Tuple_A4_Create(
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Object_t /* System.Object */ item1,
+	System_Object_t /* System.Object */ item2,
+	System_Object_t /* System.Object */ item3,
+	System_Object_t /* System.Object */ item4,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Tuple_A4_Item1_Get(
+	System_Tuple_A4_t /* System.Tuple<,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_Tuple_A4_Item2_Get(
+	System_Tuple_A4_t /* System.Tuple<,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_Tuple_A4_Item3_Get(
+	System_Tuple_A4_t /* System.Tuple<,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_Tuple_A4_Item4_Get(
+	System_Tuple_A4_t /* System.Tuple<,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t __nonnull /* System.Type */
+System_Tuple_A4_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Tuple_A4_Destroy(
+	System_Tuple_A4_t /* System.Tuple<,,,> */ self
+);
+
+#pragma mark - END APIs of System.Tuple<,,,>
+
+
+
+
+
+#pragma mark - BEGIN APIs of System.Tuple<,,,,>
+bool /* System.Boolean */
+System_Tuple_A5_Equals(
+	System_Tuple_A5_t /* System.Tuple<,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Object_t /* System.Object */ obj,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Tuple_A5_GetHashCode(
+	System_Tuple_A5_t /* System.Tuple<,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_String_t /* System.String */
+System_Tuple_A5_ToString(
+	System_Tuple_A5_t /* System.Tuple<,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Tuple_A5_Create(
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Object_t /* System.Object */ item1,
+	System_Object_t /* System.Object */ item2,
+	System_Object_t /* System.Object */ item3,
+	System_Object_t /* System.Object */ item4,
+	System_Object_t /* System.Object */ item5,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Tuple_A5_Item1_Get(
+	System_Tuple_A5_t /* System.Tuple<,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_Tuple_A5_Item2_Get(
+	System_Tuple_A5_t /* System.Tuple<,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_Tuple_A5_Item3_Get(
+	System_Tuple_A5_t /* System.Tuple<,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_Tuple_A5_Item4_Get(
+	System_Tuple_A5_t /* System.Tuple<,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_Tuple_A5_Item5_Get(
+	System_Tuple_A5_t /* System.Tuple<,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t __nonnull /* System.Type */
+System_Tuple_A5_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Tuple_A5_Destroy(
+	System_Tuple_A5_t /* System.Tuple<,,,,> */ self
+);
+
+#pragma mark - END APIs of System.Tuple<,,,,>
+
+
+
+
+
+
+#pragma mark - BEGIN APIs of System.Tuple<,,,,,>
+bool /* System.Boolean */
+System_Tuple_A6_Equals(
+	System_Tuple_A6_t /* System.Tuple<,,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Type_t /* System.Type */ T6,
+	System_Object_t /* System.Object */ obj,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Tuple_A6_GetHashCode(
+	System_Tuple_A6_t /* System.Tuple<,,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Type_t /* System.Type */ T6,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_String_t /* System.String */
+System_Tuple_A6_ToString(
+	System_Tuple_A6_t /* System.Tuple<,,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Type_t /* System.Type */ T6,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Tuple_A6_Create(
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Type_t /* System.Type */ T6,
+	System_Object_t /* System.Object */ item1,
+	System_Object_t /* System.Object */ item2,
+	System_Object_t /* System.Object */ item3,
+	System_Object_t /* System.Object */ item4,
+	System_Object_t /* System.Object */ item5,
+	System_Object_t /* System.Object */ item6,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Tuple_A6_Item1_Get(
+	System_Tuple_A6_t /* System.Tuple<,,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Type_t /* System.Type */ T6,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_Tuple_A6_Item2_Get(
+	System_Tuple_A6_t /* System.Tuple<,,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Type_t /* System.Type */ T6,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_Tuple_A6_Item3_Get(
+	System_Tuple_A6_t /* System.Tuple<,,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Type_t /* System.Type */ T6,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_Tuple_A6_Item4_Get(
+	System_Tuple_A6_t /* System.Tuple<,,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Type_t /* System.Type */ T6,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_Tuple_A6_Item5_Get(
+	System_Tuple_A6_t /* System.Tuple<,,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Type_t /* System.Type */ T6,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_Tuple_A6_Item6_Get(
+	System_Tuple_A6_t /* System.Tuple<,,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Type_t /* System.Type */ T6,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t __nonnull /* System.Type */
+System_Tuple_A6_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Tuple_A6_Destroy(
+	System_Tuple_A6_t /* System.Tuple<,,,,,> */ self
+);
+
+#pragma mark - END APIs of System.Tuple<,,,,,>
+
+
+
+
+
+
+
+#pragma mark - BEGIN APIs of System.Tuple<,,,,,,>
+bool /* System.Boolean */
+System_Tuple_A7_Equals(
+	System_Tuple_A7_t /* System.Tuple<,,,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Type_t /* System.Type */ T6,
+	System_Type_t /* System.Type */ T7,
+	System_Object_t /* System.Object */ obj,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Tuple_A7_GetHashCode(
+	System_Tuple_A7_t /* System.Tuple<,,,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Type_t /* System.Type */ T6,
+	System_Type_t /* System.Type */ T7,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_String_t /* System.String */
+System_Tuple_A7_ToString(
+	System_Tuple_A7_t /* System.Tuple<,,,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Type_t /* System.Type */ T6,
+	System_Type_t /* System.Type */ T7,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Tuple_A7_Create(
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Type_t /* System.Type */ T6,
+	System_Type_t /* System.Type */ T7,
+	System_Object_t /* System.Object */ item1,
+	System_Object_t /* System.Object */ item2,
+	System_Object_t /* System.Object */ item3,
+	System_Object_t /* System.Object */ item4,
+	System_Object_t /* System.Object */ item5,
+	System_Object_t /* System.Object */ item6,
+	System_Object_t /* System.Object */ item7,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Tuple_A7_Item1_Get(
+	System_Tuple_A7_t /* System.Tuple<,,,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Type_t /* System.Type */ T6,
+	System_Type_t /* System.Type */ T7,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_Tuple_A7_Item2_Get(
+	System_Tuple_A7_t /* System.Tuple<,,,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Type_t /* System.Type */ T6,
+	System_Type_t /* System.Type */ T7,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_Tuple_A7_Item3_Get(
+	System_Tuple_A7_t /* System.Tuple<,,,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Type_t /* System.Type */ T6,
+	System_Type_t /* System.Type */ T7,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_Tuple_A7_Item4_Get(
+	System_Tuple_A7_t /* System.Tuple<,,,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Type_t /* System.Type */ T6,
+	System_Type_t /* System.Type */ T7,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_Tuple_A7_Item5_Get(
+	System_Tuple_A7_t /* System.Tuple<,,,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Type_t /* System.Type */ T6,
+	System_Type_t /* System.Type */ T7,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_Tuple_A7_Item6_Get(
+	System_Tuple_A7_t /* System.Tuple<,,,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Type_t /* System.Type */ T6,
+	System_Type_t /* System.Type */ T7,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_Tuple_A7_Item7_Get(
+	System_Tuple_A7_t /* System.Tuple<,,,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Type_t /* System.Type */ T6,
+	System_Type_t /* System.Type */ T7,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t __nonnull /* System.Type */
+System_Tuple_A7_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Tuple_A7_Destroy(
+	System_Tuple_A7_t /* System.Tuple<,,,,,,> */ self
+);
+
+#pragma mark - END APIs of System.Tuple<,,,,,,>
+
+
+
+
+
+
+
+
+#pragma mark - BEGIN APIs of System.Tuple<,,,,,,,>
+bool /* System.Boolean */
+System_Tuple_A8_Equals(
+	System_Tuple_A8_t /* System.Tuple<,,,,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Type_t /* System.Type */ T6,
+	System_Type_t /* System.Type */ T7,
+	System_Type_t /* System.Type */ TRest,
+	System_Object_t /* System.Object */ obj,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Tuple_A8_GetHashCode(
+	System_Tuple_A8_t /* System.Tuple<,,,,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Type_t /* System.Type */ T6,
+	System_Type_t /* System.Type */ T7,
+	System_Type_t /* System.Type */ TRest,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_String_t /* System.String */
+System_Tuple_A8_ToString(
+	System_Tuple_A8_t /* System.Tuple<,,,,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Type_t /* System.Type */ T6,
+	System_Type_t /* System.Type */ T7,
+	System_Type_t /* System.Type */ TRest,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Tuple_A8_Create(
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Type_t /* System.Type */ T6,
+	System_Type_t /* System.Type */ T7,
+	System_Type_t /* System.Type */ TRest,
+	System_Object_t /* System.Object */ item1,
+	System_Object_t /* System.Object */ item2,
+	System_Object_t /* System.Object */ item3,
+	System_Object_t /* System.Object */ item4,
+	System_Object_t /* System.Object */ item5,
+	System_Object_t /* System.Object */ item6,
+	System_Object_t /* System.Object */ item7,
+	System_Object_t /* System.Object */ rest,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+System_Object_t /* System.Object */
+System_Tuple_A8_Item1_Get(
+	System_Tuple_A8_t /* System.Tuple<,,,,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Type_t /* System.Type */ T6,
+	System_Type_t /* System.Type */ T7,
+	System_Type_t /* System.Type */ TRest,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_Tuple_A8_Item2_Get(
+	System_Tuple_A8_t /* System.Tuple<,,,,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Type_t /* System.Type */ T6,
+	System_Type_t /* System.Type */ T7,
+	System_Type_t /* System.Type */ TRest,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_Tuple_A8_Item3_Get(
+	System_Tuple_A8_t /* System.Tuple<,,,,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Type_t /* System.Type */ T6,
+	System_Type_t /* System.Type */ T7,
+	System_Type_t /* System.Type */ TRest,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_Tuple_A8_Item4_Get(
+	System_Tuple_A8_t /* System.Tuple<,,,,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Type_t /* System.Type */ T6,
+	System_Type_t /* System.Type */ T7,
+	System_Type_t /* System.Type */ TRest,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_Tuple_A8_Item5_Get(
+	System_Tuple_A8_t /* System.Tuple<,,,,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Type_t /* System.Type */ T6,
+	System_Type_t /* System.Type */ T7,
+	System_Type_t /* System.Type */ TRest,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_Tuple_A8_Item6_Get(
+	System_Tuple_A8_t /* System.Tuple<,,,,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Type_t /* System.Type */ T6,
+	System_Type_t /* System.Type */ T7,
+	System_Type_t /* System.Type */ TRest,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_Tuple_A8_Item7_Get(
+	System_Tuple_A8_t /* System.Tuple<,,,,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Type_t /* System.Type */ T6,
+	System_Type_t /* System.Type */ T7,
+	System_Type_t /* System.Type */ TRest,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Object_t /* System.Object */
+System_Tuple_A8_Rest_Get(
+	System_Tuple_A8_t /* System.Tuple<,,,,,,,> */ self,
+	System_Type_t /* System.Type */ T1,
+	System_Type_t /* System.Type */ T2,
+	System_Type_t /* System.Type */ T3,
+	System_Type_t /* System.Type */ T4,
+	System_Type_t /* System.Type */ T5,
+	System_Type_t /* System.Type */ T6,
+	System_Type_t /* System.Type */ T7,
+	System_Type_t /* System.Type */ TRest,
+	System_Exception_t* /* System.Exception */ outException
+);
+
+
+System_Type_t __nonnull /* System.Type */
+System_Tuple_A8_TypeOf(
+	
+);
+
+void /* System.Void */
+System_Tuple_A8_Destroy(
+	System_Tuple_A8_t /* System.Tuple<,,,,,,,> */ self
+);
+
+#pragma mark - END APIs of System.Tuple<,,,,,,,>
+
+
+
+
+
+
+
+
 
 #pragma mark - BEGIN APIs of NativeAOT.CodeGeneratorInputSample.Address
 NativeAOT_CodeGeneratorInputSample_Address_t /* NativeAOT.CodeGeneratorInputSample.Address */
