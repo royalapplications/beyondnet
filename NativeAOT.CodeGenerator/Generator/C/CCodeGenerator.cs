@@ -90,6 +90,7 @@ public class CCodeGenerator: ICodeGenerator
 
 #import <stdlib.h>
 #import <stdbool.h>
+#import <stdint.h>
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wnullability-completeness"
