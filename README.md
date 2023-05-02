@@ -97,6 +97,31 @@ There are several other optional options that control the behavior of the genera
 - IncludedTypeNames (Array of Strings): Use this to provide a list of types that should be included even if they are not used by the target assembly.
 
 
+# Exception Handling
+
+While .NET has exceptions, C does not. And so, since C is the basis for all other language bindings we have to get creative to support catching exceptions in C.
+
+Because pretty much everything in .NET can throw and there are no guarantees about what can and what can't throw this is actually a pretty big deal.
+
+The way we solved it is to have an "out" parameter (double pointer in C) appended to almost every .NET API that we generate bindings for. Then, in the implementation, we wrap the actual method call in a try/catch block and set the exception parameter to the caught exception or null if the method did not throw.
+
+Currently, the only exceptions (pun intended) are field getters and setters. As far as I'm aware, these can never throw.
+
+So here's an example of how that looks in practice:
+
+**C#:**
+```
+static void WriteLine(string text)
+```
+
+**C:**
+```
+void Namespace_WriteLine(System_String_t text, System_Exception_t* exception)
+```
+
+When calling the `WriteLine` method from C, you should provide a reference to a `System_Exception_t` object which, after the method call will either be null or contain a value which indicates the method did throw.
+
+
 ## Memory Management
 
 While .NET's memory management model is based on Garbage Collection (GC), C uses manual memory management. That means, everything that is allocated on the heap must be manually freed to not cause a memory leak.
