@@ -22,30 +22,62 @@ Since new C# code is generated as part of the language bindings, it's required t
 
 ## Quick Start Guide
 
+### Prerequisites
 - Make sure [.NET 8](https://dotnet.microsoft.com/download/dotnet/8.0) is installed.
 - On macOS, make sure [Xcode](https://developer.apple.com/xcode/) is installed.
+
+### Generator Executable
 - Either clone the Beyond.NET repository or download one of the pre-built generator executables for your platform.
 - If you do not have a pre-compiled executable of the generator, compile it by either running `dotnet publish` within its directory or use one of our provided publish scripts like `publish_macos_universal` for compiling a universal macOS binary.
 - Open a terminal and execute the generator (`./beyonddotnetgen`).
 - Since you've provided no arguments, the generator should show its usage screen.
+
+### Configuration
 - Currently, the generator takes a single required argument: `PathToConfig.json`.
 - Create a config file. See [Generator Config](#generator-config) for an example and the supported config values.
 - Run the generator with the path to the config file as the first and only argument (`./beyonddotnetgen /Path/To/Config.json`).
 - If the generator was successful it will exit with 0 as exit code and not print anything to stdout or stderr.
 - If errors were encountered they'll appear in terminal.
 
+### Build a native version of the target .NET assembly
+- Let's assume the assembly you're creating native bindings for is called `MyLib` (`MyLib.dll`).
+- Create a new .NET class lib project (ie. `mkdir MyLibNative && cd MyLibNative && dotnet new classlib`).
+- Either copy the generated .cs file containing the unmanaged C# bindings to the new project's directory or adjust the path in the generator config file to point to your new project's path.
+- Open `MyLibNative.csproj` in a text editor.
+- Make sure `TargetFramework` is set to `net8.0`.
+- Set `AllowUnsafeBlocks` to `true` as the generated bindings use unsafe code (ie. `<AllowUnsafeBlocks>true</AllowUnsafeBlocks>`).
+- Add a project reference to the original .NET assembly (ie. `<ProjectReference Include="..\MyLib.csproj" />`).
+- Set `PublishAot` to `true` (ie. `<PublishAot>true</PublishAot>`).
+- Set `RuntimeIdentifier` or `RuntimeIdentifiers` to the platforms you're targeting (ie. `<RuntimeIdentifiers>osx-x64;osx-arm64</RuntimeIdentifiers>`).
+- Note that .NET does not support multi-architecture builds out of the box. If you want to create a universal macOS dylib, you will need to do two separate builds, then merge them using the `lipo` CLI tool.
+- Also, the install name of dylibs created by .NET's NativeAOT compiler needs to adjusted from `/usr/lib/MyLibNative.dylib` to `@rpath/MyLibNative.dylib`.
+- There's a sample publish script which does all of this in the repository called `publish_macos_universal`. You can use this as the basis for your build. Just make sure to adjust the `OUTPUT_FILE_NAME` variable to match your compiled dylib's name.
+- Run the publish script (ie. `./publish_macos_universal`).
+- On macOS this will produce a `MyNativeLib.dylib` in the bin directory under `bin/Release/net8.0/osx-universal/publish`.
 
-## Generator Config
+### Use generated bindings from Swift
+- Create a macOS App Xcode project.
+- Add the generated C bindings header file (ie. `Output.h`) and the generated Swift bindings file (ie. `Output.swift`) to the project.
+- Create an Objective-C bridging header.
+  - You can either just add a temporary ObjC class (you can delete it later) to trigger the creation of the bridging header or create an empty header file and adjust the "Objective-C Bridging Header" build setting of the Xcode project to point to that header file.
+- In the briding header import the generated C bindings header file (ie. `#import "Output.h"`).
+- You're now ready to call any of the APIs that bindings were generated for.
+- Please note that since Swift does not have support for namespaces, all generated types will have their namespace prefixed. `System.Guid.NewGuid` for instance gets generated as `System_Guid.newGuid` in Swift and `System_Guid_NewGuid` in C.
+
+
+## Generator Configuration
+
+The generator currently uses a configuration file where all of its options are specified.
 
 **Minimal example:**
 
 ```
 {
-	"AssemblyPath": "/Path/To/Target/.NET/Assembly.dll",
+  "AssemblyPath": "/Path/To/Target/.NET/Assembly.dll",
 
-	"CSharpUnmanagedOutputPath": "/Path/To/Generated/CSharpUnmanaged/Output.cs",
-	"COutputPath": "/Path/To/Generated/C/Output.h",
-	"SwiftOutputPath": "/Path/To/Generated/Swift/Output.swift"
+  "CSharpUnmanagedOutputPath": "/Path/To/Generated/CSharpUnmanaged/Output.cs",
+  "COutputPath": "/Path/To/Generated/C/Output.h",
+  "SwiftOutputPath": "/Path/To/Generated/Swift/Output.swift"
 }
 ```
 
@@ -60,6 +92,7 @@ There are several other optional options that control the behavior of the genera
 - EmitUnsupported (Boolean; false by default): If enabled (true), comments will be generated in the output files explaining why a binding for a certain type or API was not generated.
 - GenerateTypeCheckedDestroyMethods (Boolean; false by default): If enabled (true), the generated `*_Destroy` methods will check the type of the passed in object. If the type does not match, an unhandled(!) exception will be thrown. Use this to detect memory management bugs in your code. Since it introduces overhead, it's disabled by default. Also, there's no need for manual memory management in higher level languages like Swift so this is unnecessary.
 - EnableGenericsSupport (Boolean; false by default): Generics support is currently experimental and disabled by default. If you want to test the current state though or work on improving generics support, enable this by setting it to `true`.
+- IncludedTypeNames (Array of Strings): Use this to provide a list of types that should be included even if they are not used by the target assembly.
 
 
 ## Memory Management
