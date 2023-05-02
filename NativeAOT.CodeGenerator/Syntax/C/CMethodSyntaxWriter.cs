@@ -209,7 +209,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         bool returnTypeIsNonNull = memberKind == MemberKind.TypeOf;
         
         string returnTypeNullabilitySpecifier = returnTypeIsNonNull
-            ? " __nonnull"
+            ? " _Nonnull"
             : string.Empty;
         
         string cReturnOrSetterTypeNameWithComment;
