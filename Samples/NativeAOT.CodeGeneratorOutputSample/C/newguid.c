@@ -1,5 +1,5 @@
-#import <stdio.h>
-#import "TypeDefinitions.h"
+#include <stdio.h>
+#include "TypeDefinitions.h"
 
 int main(void) {
 	System_Exception_t exception;
