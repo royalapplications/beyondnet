@@ -29,7 +29,7 @@ Since new C# code is generated as part of the language bindings, it's required t
 - Open a terminal and execute the generator (`./beyonddotnetgen`).
 - Since you've provided no arguments, the generator should show its usage screen.
 - Currently, the generator takes a single required argument: `PathToConfig.json`.
-- Create a config file. See [Generator Config](#generator-config) for an example.
+- Create a config file. See [Generator Config](#generator-config) for an example and the supported config values.
 - Run the generator with the path to the config file as the first and only argument (`./beyonddotnetgen /Path/To/Config.json`).
 - If the generator was successful it will exit with 0 as exit code and not print anything to stdout or stderr.
 - If errors were encountered they'll appear in terminal.
@@ -57,9 +57,9 @@ Since new C# code is generated as part of the language bindings, it's required t
 
 There are several other optional options that control the behavior of the generator:
 
-- EmitUnsupported (Boolean)
-- GenerateTypeCheckedDestroyMethods (Boolean)
-- EnableGenericsSupport (Boolean)
+- EmitUnsupported (Boolean; false by default): If enabled (true), comments will be generated in the output files explaining why a binding for a certain type or API was not generated.
+- GenerateTypeCheckedDestroyMethods (Boolean; false by default): If enabled (true), the generated `*_Destroy` methods will check the type of the passed in object. If the type does not match, an unhandled(!) exception will be thrown. Use this to detect memory management bugs in your code. Since it introduces overhead, it's disabled by default. Also, there's no need for manual memory management in higher level languages like Swift so this is unnecessary.
+- EnableGenericsSupport (Boolean; false by default): Generics support is currently experimental and disabled by default. If you want to test the current state though or work on improving generics support, enable this by setting it to `true`.
 
 
 ## Memory Management
