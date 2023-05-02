@@ -15,7 +15,51 @@ Unfortunately, there are many [restrictions](https://learn.microsoft.com/dotnet/
 This is where the code generator, that is at the core of Beyond.NET comes in.
 The generator can target any compiled .NET assembly and generate native code bindings for all public types and APIs contained within it. It does this by loading the targeted assembly and reflecting over all of its types. Next, wrapper functions for all publicly available APIs are generated and decorated with the `UnmanagedCallersOnly` attribute which makes them callable from native code.
 From there, bindings for other languages can be generated. Which language bindings are generated can be controlled by various settings but the C bindings form the basis for all other languages.
-So if you're, for instance targeting Swift the call tree looks like this: Swift -> C -> C# APIs marked with the `UnmanagedCallersOnly` attribute -> Original C# API.
+So if you're, for instance targeting Swift the call tree looks like this: Swift -> C -> .NET APIs marked with the `UnmanagedCallersOnly` attribute -> Original .NET API.
+
+Since new C# code is generated as part of the language bindings, it's required to either include the single generated C# source code file in the existing .NET project you're targeting or create a new project soley for the purpose of compiling a native version of the assembly. We recommend the latter as you will need to compile your project using NativeAOT to actually take advantage of the generated bindings and that way, the original assembly stays unmodified.
+
+
+## Quick Start Guide
+
+- Make sure [.NET 8](https://dotnet.microsoft.com/download/dotnet/8.0) is installed.
+- On macOS, make sure [Xcode](https://developer.apple.com/xcode/) is installed.
+- Either clone the Beyond.NET repository or download one of the pre-built generator executables for your platform.
+- If you do not have a pre-compiled executable of the generator, compile it by either running `dotnet publish` within its directory or use one of our provided publish scripts like `publish_macos_universal` for compiling a universal macOS binary.
+- Open a terminal and execute the generator (`./beyonddotnetgen`).
+- Since you've provided no arguments, the generator should show its usage screen.
+- Currently, the generator takes a single required argument: `PathToConfig.json`.
+- Create a [config file](#generator-config).
+- Run the generator with the path to the config file as the first and only argument (`./beyonddotnetgen /Path/To/Config.json`).
+- If the generator was successful it will exit with 0 as exit code and not print anything to stdout or stderr.
+- If errors were encountered they'll appear in terminal.
+
+
+## Generator Config
+
+**Minimal example:**
+
+```
+{
+	"AssemblyPath": "/Path/To/Target/.NET/Assembly.dll",
+
+	"CSharpUnmanagedOutputPath": "/Path/To/Generated/CSharpUnmanaged/Output.cs",
+	"COutputPath": "/Path/To/Generated/C/Output.h",
+	"SwiftOutputPath": "/Path/To/Generated/Swift/Output.swift"
+}
+```
+
+- `AssemblyPath`: Enter the path to the compiled .NET assembly you want to generate native bindings for. (Required)
+- `CSharpUnmanagedOutputPath`: The generator will use this path to write the generated file containing the C# wrapper methods. (Required)
+- `COutputPath`: The generator will use this path to write the generated C bindings header file. (Required)
+- `SwiftOutputPath`: The generator will use this path to write the generated Swift bindings file. (Optional)
+- All paths can either be absolute or relative to the config file.
+
+There are several other optional options that control the behavior of the generator:
+
+- EmitUnsupported (Boolean)
+- GenerateTypeCheckedDestroyMethods (Boolean)
+- EnableGenericsSupport (Boolean)
 
 
 ## Memory Management
