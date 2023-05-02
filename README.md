@@ -19,6 +19,8 @@ So if you're, for instance targeting Swift the call tree looks like this: Swift 
 
 Since new C# code is generated as part of the language bindings, it's required to either include the single generated C# source code file in the existing .NET project you're targeting or create a new project soley for the purpose of compiling a native version of the assembly. We recommend the latter as you will need to compile your project using NativeAOT to actually take advantage of the generated bindings and that way, the original assembly stays unmodified.
 
+It's important to note that while Beyond.NET generates code for you, it doesn't compile it. You'll have to do that yourself.
+
 
 ## Quick Start Guide
 
