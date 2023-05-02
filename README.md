@@ -29,7 +29,7 @@ Since new C# code is generated as part of the language bindings, it's required t
 - Open a terminal and execute the generator (`./beyonddotnetgen`).
 - Since you've provided no arguments, the generator should show its usage screen.
 - Currently, the generator takes a single required argument: `PathToConfig.json`.
-- Create a [config file](#generator-config).
+- Create a config file. See [Generator Config](#generator-config) for an example.
 - Run the generator with the path to the config file as the first and only argument (`./beyonddotnetgen /Path/To/Config.json`).
 - If the generator was successful it will exit with 0 as exit code and not print anything to stdout or stderr.
 - If errors were encountered they'll appear in terminal.
