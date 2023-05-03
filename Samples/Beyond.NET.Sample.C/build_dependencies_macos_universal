@@ -9,12 +9,12 @@ DOTNET_VERSION_MAJOR_AND_MINOR=${DOTNET_VERSION:0:3}
 cd "../Beyond.NET.Sample.Managed"
 ./publish_managed
 
-cd "../../NativeAOT.CodeGenerator.CLI"
+cd "../../Generator/Beyond.NET.CodeGenerator.CLI"
 ./publish_macos_universal
 
-cd "../Samples"
+cd "../../Samples"
 echo "Generating .NET Native Bindings"
-../NativeAOT.CodeGenerator.CLI/bin/Release/net${DOTNET_VERSION_MAJOR_AND_MINOR}/osx-universal/publish/NativeAOT.CodeGenerator.CLI "Beyond.NET.Sample_Config.json"
+../Generator/Beyond.NET.CodeGenerator.CLI/bin/Release/net${DOTNET_VERSION_MAJOR_AND_MINOR}/osx-universal/publish/Beyond.NET.CodeGenerator.CLI "Beyond.NET.Sample_Config.json"
 
 cd "Beyond.NET.Sample.Native"
 ./publish_macos_universal

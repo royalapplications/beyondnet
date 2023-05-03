@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <PublishSelfContained>true</PublishSelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+<!--    <PublishTrimmed>true</PublishTrimmed>-->
+  </PropertyGroup>
+
+  <!-- Strip Symbols in Release Builds -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <StripSymbols>true</StripSymbols>
+  </PropertyGroup>
+  
+  <!-- Project References -->
+  <ItemGroup>
+    <ProjectReference Include="..\Beyond.NET.CodeGenerator\Beyond.NET.CodeGenerator.csproj" />
+  </ItemGroup>
+
+</Project>

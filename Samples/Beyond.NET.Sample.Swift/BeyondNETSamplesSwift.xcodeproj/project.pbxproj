@@ -394,7 +394,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E70D116429BF9F2600B4E738 /* Build configuration list for PBXNativeTarget "BeyondNETSamplesSwift" */;
 			buildPhases = (
-				E79340DD29F681EC003337B9 /* Build .NET CodeGenerator.CLI */,
+				E79340DD29F681EC003337B9 /* Build Beyond.NET.CodeGenerator.CLI */,
 				E79340DC29F68045003337B9 /* Build .NET Sample Managed */,
 				E79340DE29F6838A003337B9 /* Generate .NET Native Bindings */,
 				E736639229BFCA1300B6DEE2 /* Build .NET Sample Native */,
@@ -526,7 +526,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\n# Make sure .NET path is on the PATH\nDOTNET_PATH=\"/usr/local/share/dotnet\"\nexport PATH=${DOTNET_PATH}${PATH:+:${PATH}}\n\n# Important: This variable is set by Xcode but messes with msbuild/dotnet publish \nTARGETNAME=\"\"\n\ncd \"${PROJECT_DIR}/../Beyond.NET.Sample.Managed\"\n\n./publish_managed\n";
 		};
-		E79340DD29F681EC003337B9 /* Build .NET CodeGenerator.CLI */ = {
+		E79340DD29F681EC003337B9 /* Build Beyond.NET.CodeGenerator.CLI */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -536,14 +536,14 @@
 			);
 			inputPaths = (
 			);
-			name = "Build .NET CodeGenerator.CLI";
+			name = "Build Beyond.NET.CodeGenerator.CLI";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\n\n# Make sure .NET path is on the PATH\nDOTNET_PATH=\"/usr/local/share/dotnet\"\nexport PATH=${DOTNET_PATH}${PATH:+:${PATH}}\n\n# Important: This variable is set by Xcode but messes with msbuild/dotnet publish \nTARGETNAME=\"\"\n\ncd \"${PROJECT_DIR}/../../NativeAOT.CodeGenerator.CLI\"\n\n./publish_macos_universal\n";
+			shellScript = "set -e\n\n# Make sure .NET path is on the PATH\nDOTNET_PATH=\"/usr/local/share/dotnet\"\nexport PATH=${DOTNET_PATH}${PATH:+:${PATH}}\n\n# Important: This variable is set by Xcode but messes with msbuild/dotnet publish \nTARGETNAME=\"\"\n\ncd \"${PROJECT_DIR}/../../Generator/Beyond.NET.CodeGenerator.CLI\"\n\n./publish_macos_universal\n";
 		};
 		E79340DE29F6838A003337B9 /* Generate .NET Native Bindings */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -562,7 +562,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd \"${PROJECT_DIR}/..\"\n\necho \"Generating .NET Native Bindings\"\n\n../NativeAOT.CodeGenerator.CLI/bin/Release/net8.0/osx-universal/publish/NativeAOT.CodeGenerator.CLI \"Beyond.NET.Sample_Config.json\"\n";
+			shellScript = "set -e\n\n# Make sure .NET path is on the PATH\nDOTNET_PATH=\"/usr/local/share/dotnet\"\nexport PATH=${DOTNET_PATH}${PATH:+:${PATH}}\n\nDOTNET_VERSION=`dotnet --version`\nDOTNET_VERSION_MAJOR_AND_MINOR=${DOTNET_VERSION:0:3}\n\ncd \"${PROJECT_DIR}/..\"\n\necho \"Generating .NET Native Bindings\"\n\n../Generator/Beyond.NET.CodeGenerator.CLI/bin/Release/net${DOTNET_VERSION_MAJOR_AND_MINOR}/osx-universal/publish/Beyond.NET.CodeGenerator.CLI \"Beyond.NET.Sample_Config.json\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
