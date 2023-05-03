@@ -53,16 +53,16 @@ It's important to note that while Beyond.NET generates code for you, it doesn't 
 - Set `RuntimeIdentifier` or `RuntimeIdentifiers` to the platforms you're targeting (ie. `<RuntimeIdentifiers>osx-x64;osx-arm64</RuntimeIdentifiers>`).
 - Note that .NET does not support multi-architecture builds out of the box. If you want to create a universal macOS dylib, you will need to do two separate builds, then merge them using the `lipo` CLI tool.
 - Also, the install name of dylibs created by .NET's NativeAOT compiler needs to adjusted from `/usr/lib/MyLibNative.dylib` to `@rpath/MyLibNative.dylib`.
-- There's a sample publish script which does all of this in the repository called `publish_macos_universal`. You can use this as the basis for your build. Just make sure to adjust the `OUTPUT_FILE_NAME` variable to match your compiled dylib's name.
+- There's a sample publish script which does all of this in the repository called `publish_macos_universal`. You can use this as the basis for your build. Just make sure to adjust the `OUTPUT_PRODUCT_NAME` variable to match the assembly name of your .NET library (`MyLib`).
 - Run the publish script (ie. `./publish_macos_universal`).
 - On macOS this will produce a `MyNativeLib.dylib` in the bin directory under `bin/Release/net8.0/osx-universal/publish`.
 
 ### Use generated bindings from Swift
 - Create a macOS App Xcode project.
-- Add the generated C bindings header file (ie. `Output.h`) and the generated Swift bindings file (ie. `Output.swift`) to the project.
+- Add the generated C bindings header file (ie. `Output_C.h`) and the generated Swift bindings file (ie. `Output_Swift.swift`) to the project.
 - Create an Objective-C bridging header.
   - You can either just add a temporary ObjC class (you can delete it later) to trigger the creation of the bridging header or create an empty header file and adjust the "Objective-C Bridging Header" build setting of the Xcode project to point to that header file.
-- In the briding header import the generated C bindings header file (ie. `#import "Output.h"`).
+- In the briding header import the generated C bindings header file (ie. `#import "Output_C.h"`).
 - You're now ready to call any of the APIs that bindings were generated for.
 - Please note that since Swift does not have support for namespaces, all generated types will have their namespace prefixed. `System.Guid.NewGuid` for instance gets generated as `System_Guid.newGuid` in Swift and `System_Guid_NewGuid` in C.
 
@@ -77,9 +77,9 @@ The generator currently uses a configuration file where all of its options are s
 {
   "AssemblyPath": "/Path/To/Target/.NET/Assembly.dll",
 
-  "CSharpUnmanagedOutputPath": "/Path/To/Generated/CSharpUnmanaged/Output.cs",
-  "COutputPath": "/Path/To/Generated/C/Output.h",
-  "SwiftOutputPath": "/Path/To/Generated/Swift/Output.swift"
+  "CSharpUnmanagedOutputPath": "/Path/To/Generated/CSharpUnmanaged/Output_CS.cs",
+  "COutputPath": "/Path/To/Generated/C/Output_C.h",
+  "SwiftOutputPath": "/Path/To/Generated/Swift/Output_Swift.swift"
 }
 ```
 
