@@ -29,17 +29,17 @@ X64_FILE_PATH="${X64_BUILD_DIR}/${OUTPUT_FILE_NAME}"
 ARM64_FILE_PATH="${ARM64_BUILD_DIR}/${OUTPUT_FILE_NAME}"
 UNIVERSAL_FILE_PATH="${UNIVERSAL_BUILD_DIR}/${OUTPUT_FILE_NAME}"
 
-echo "Building for x64"
+echo "Building ${OUTPUT_PRODUCT_NAME} for x64"
 ${DOTNET_PATH} publish -r ${RUNTIME_IDENTIFIER_X64} -v "${VERBOSITY_LEVEL}"
 
-echo "Building for ARM64"
+echo "Building ${OUTPUT_PRODUCT_NAME} for ARM64"
 ${DOTNET_PATH} publish -r ${RUNTIME_IDENTIFIER_ARM64} -v "${VERBOSITY_LEVEL}"
 
-echo "Making directory for universal build"
+echo "Making directory for universal ${OUTPUT_PRODUCT_NAME} build"
 mkdir -p "${UNIVERSAL_BUILD_DIR}"
 
-echo "Making universal build"
+echo "Making universal ${OUTPUT_PRODUCT_NAME} build"
 lipo -create "${X64_FILE_PATH}" "${ARM64_FILE_PATH}" -output "${UNIVERSAL_FILE_PATH}"
 
-echo "Changing install name of universal build"
+echo "Changing install name of universal ${OUTPUT_PRODUCT_NAME} build"
 install_name_tool -id "@rpath/${OUTPUT_FILE_NAME}" "${UNIVERSAL_FILE_PATH}"

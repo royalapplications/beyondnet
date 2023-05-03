@@ -554,7 +554,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd \"${PROJECT_DIR}/../../../\"\n\n../NativeAOT.CodeGenerator.CLI/bin/Release/net8.0/osx-universal/publish/NativeAOT.CodeGenerator.CLI NativeAOTCodeGeneratorSampleConfig.json\n";
+			shellScript = "cd \"${PROJECT_DIR}/../../../\"\n\necho \"Generating .NET Native Bindings\"\n\n../NativeAOT.CodeGenerator.CLI/bin/Release/net8.0/osx-universal/publish/NativeAOT.CodeGenerator.CLI \"NativeAOTCodeGeneratorSampleConfig.json\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
