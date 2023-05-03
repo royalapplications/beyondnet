@@ -92,7 +92,7 @@
 			containerPortal = E70D115429BF9F2600B4E738 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = E70D115C29BF9F2600B4E738;
-			remoteInfo = NativeAOTCodeGeneratorOutputSample;
+			remoteInfo = BeyondNETSamplesSwift;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -409,7 +409,7 @@
 			dependencies = (
 			);
 			name = BeyondNETSamplesSwift;
-			productName = NativeAOTCodeGeneratorOutputSample;
+			productName = BeyondNETSamplesSwift;
 			productReference = E70D115D29BF9F2600B4E738 /* BeyondNETSamplesSwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
@@ -428,7 +428,7 @@
 				E70D117829BF9FEC00B4E738 /* PBXTargetDependency */,
 			);
 			name = BeyondNETSamplesSwiftTests;
-			productName = NativeAOTCodeGeneratorOutputSampleTests;
+			productName = BeyondNETSamplesSwiftTests;
 			productReference = E70D117229BF9FEC00B4E738 /* BeyondNETSamplesSwiftTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
