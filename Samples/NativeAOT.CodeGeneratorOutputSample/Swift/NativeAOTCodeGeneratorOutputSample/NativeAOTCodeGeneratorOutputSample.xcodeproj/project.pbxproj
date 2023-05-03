@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E70A1FAD29C3652100843CD0 /* SystemTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A1FAC29C3652100843CD0 /* SystemTypeTests.swift */; };
 		E70D116129BF9F2600B4E738 /* NativeAOTCodeGeneratorOutputSample.h in Headers */ = {isa = PBXBuildFile; fileRef = E70D116029BF9F2600B4E738 /* NativeAOTCodeGeneratorOutputSample.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E70D116929BF9F8000B4E738 /* TypeDefinitions.h in Headers */ = {isa = PBXBuildFile; fileRef = E70D116829BF9F7E00B4E738 /* TypeDefinitions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E70D116B29BF9FCD00B4E738 /* libNativeAOTCodeGeneratorOutputSample.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E70D116A29BF9FCC00B4E738 /* libNativeAOTCodeGeneratorOutputSample.dylib */; };
 		E70D117629BF9FEC00B4E738 /* NativeAOTCodeGeneratorOutputSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E70D115D29BF9F2600B4E738 /* NativeAOTCodeGeneratorOutputSample.framework */; };
 		E70D117D29BFA01300B4E738 /* TestClassesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70D117429BF9FEC00B4E738 /* TestClassesTests.swift */; };
@@ -50,7 +49,6 @@
 		E790C0DD29E6B1B80054AA4B /* SystemCollectionsGenericListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E790C0DC29E6B1B80054AA4B /* SystemCollectionsGenericListTests.swift */; };
 		E790C0DF29E6B2500054AA4B /* SystemCollectionsGenericDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E790C0DE29E6B2500054AA4B /* SystemCollectionsGenericDictionaryTests.swift */; };
 		E79335A629E98D3D0035FCEB /* SwiftSyntaxPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79335A529E98D3D0035FCEB /* SwiftSyntaxPlayground.swift */; };
-		E795257029ED8FDC0075166B /* TypeDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E779611C29E9524B00140279 /* TypeDefinitions.swift */; };
 		E79B376529E002E700118C35 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B376429E002E700118C35 /* StringExtensions.swift */; };
 		E7A3E6D029EECD9800447BF2 /* SystemGuidTests_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A3E6CF29EECD9800447BF2 /* SystemGuidTests_Swift.swift */; };
 		E7A3E6D229EECEF800447BF2 /* SystemDateTimeTests_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A3E6D129EECEF800447BF2 /* SystemDateTimeTests_Swift.swift */; };
@@ -74,6 +72,8 @@
 		E7C8CF0B29C1FE5800C4230F /* SystemArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0A29C1FE5800C4230F /* SystemArrayTests.swift */; };
 		E7C8CF0D29C2139B00C4230F /* PersonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0C29C2139B00C4230F /* PersonTests.swift */; };
 		E7C8CF0F29C2180200C4230F /* AnimalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0E29C2180200C4230F /* AnimalTests.swift */; };
+		E7E7491D2A026A1C009590A8 /* Generated_C.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E7491B2A026A1C009590A8 /* Generated_C.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7E7491E2A026A1C009590A8 /* Generated_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E7491C2A026A1C009590A8 /* Generated_Swift.swift */; };
 		E7EB338629C8879100392F3D /* AddressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EB338529C8879100392F3D /* AddressTests.swift */; };
 		E7ED7A1829D35DF4008C96E0 /* SystemVersionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED7A1729D35DF4008C96E0 /* SystemVersionTests.swift */; };
 		E7ED7A1A29D445C8008C96E0 /* SystemActionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED7A1929D445C8008C96E0 /* SystemActionTests.swift */; };
@@ -125,7 +125,6 @@
 		E70A1FAC29C3652100843CD0 /* SystemTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemTypeTests.swift; sourceTree = "<group>"; };
 		E70D115D29BF9F2600B4E738 /* NativeAOTCodeGeneratorOutputSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NativeAOTCodeGeneratorOutputSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E70D116029BF9F2600B4E738 /* NativeAOTCodeGeneratorOutputSample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeAOTCodeGeneratorOutputSample.h; sourceTree = "<group>"; };
-		E70D116829BF9F7E00B4E738 /* TypeDefinitions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TypeDefinitions.h; sourceTree = "<group>"; };
 		E70D116A29BF9FCC00B4E738 /* libNativeAOTCodeGeneratorOutputSample.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libNativeAOTCodeGeneratorOutputSample.dylib; sourceTree = "<group>"; };
 		E70D117229BF9FEC00B4E738 /* NativeAOTCodeGeneratorOutputSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NativeAOTCodeGeneratorOutputSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E70D117429BF9FEC00B4E738 /* TestClassesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClassesTests.swift; sourceTree = "<group>"; };
@@ -149,7 +148,6 @@
 		E75FFBAB29E83C70006904BA /* SystemTupleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemTupleTests.swift; sourceTree = "<group>"; };
 		E763998629E5537300C2541B /* TypeConversionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeConversionTests.swift; sourceTree = "<group>"; };
 		E763998829E55EC600C2541B /* PrimitivesBoxingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimitivesBoxingTests.swift; sourceTree = "<group>"; };
-		E779611C29E9524B00140279 /* TypeDefinitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeDefinitions.swift; sourceTree = "<group>"; };
 		E779630129DC54E300E1E70B /* SystemThreadingTasksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemThreadingTasksTests.swift; sourceTree = "<group>"; };
 		E77A85B129DD7EF9000CA09E /* GenericTestsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTestsTests.swift; sourceTree = "<group>"; };
 		E7808CE929DEFB2600F50203 /* NativeAOTCodeGeneratorOutputSample.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = NativeAOTCodeGeneratorOutputSample.xctestplan; sourceTree = SOURCE_ROOT; };
@@ -188,6 +186,8 @@
 		E7C8CF0A29C1FE5800C4230F /* SystemArrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemArrayTests.swift; sourceTree = "<group>"; };
 		E7C8CF0C29C2139B00C4230F /* PersonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTests.swift; sourceTree = "<group>"; };
 		E7C8CF0E29C2180200C4230F /* AnimalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTests.swift; sourceTree = "<group>"; };
+		E7E7491B2A026A1C009590A8 /* Generated_C.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Generated_C.h; path = ../../../../Generated/Generated_C.h; sourceTree = "<group>"; };
+		E7E7491C2A026A1C009590A8 /* Generated_Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Generated_Swift.swift; path = ../../../../Generated/Generated_Swift.swift; sourceTree = "<group>"; };
 		E7EB338529C8879100392F3D /* AddressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTests.swift; sourceTree = "<group>"; };
 		E7ED7A1729D35DF4008C96E0 /* SystemVersionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemVersionTests.swift; sourceTree = "<group>"; };
 		E7ED7A1929D445C8008C96E0 /* SystemActionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemActionTests.swift; sourceTree = "<group>"; };
@@ -228,7 +228,6 @@
 				E70D116A29BF9FCC00B4E738 /* libNativeAOTCodeGeneratorOutputSample.dylib */,
 				E70D115F29BF9F2600B4E738 /* Source */,
 				E70D115E29BF9F2600B4E738 /* Products */,
-				E70D117E29C0593C00B4E738 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -245,20 +244,11 @@
 			isa = PBXGroup;
 			children = (
 				E7C8CF0129C1FA6C00C4230F /* Tests */,
-				E70D116829BF9F7E00B4E738 /* TypeDefinitions.h */,
-				E779611C29E9524B00140279 /* TypeDefinitions.swift */,
+				E7E749192A0269AB009590A8 /* Playground */,
+				E7E7491A2A0269DD009590A8 /* Generated */,
 				E70D116029BF9F2600B4E738 /* NativeAOTCodeGeneratorOutputSample.h */,
-				E79335A529E98D3D0035FCEB /* SwiftSyntaxPlayground.swift */,
-				E7F90B6329F2B664005B0C67 /* SwiftSyntaxPlaygroundTests.swift */,
 			);
 			path = Source;
-			sourceTree = "<group>";
-		};
-		E70D117E29C0593C00B4E738 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		E720931E29CE187C0071B5B3 /* SwiftSupport */ = {
@@ -367,6 +357,24 @@
 			path = TestClasses;
 			sourceTree = "<group>";
 		};
+		E7E749192A0269AB009590A8 /* Playground */ = {
+			isa = PBXGroup;
+			children = (
+				E79335A529E98D3D0035FCEB /* SwiftSyntaxPlayground.swift */,
+				E7F90B6329F2B664005B0C67 /* SwiftSyntaxPlaygroundTests.swift */,
+			);
+			path = Playground;
+			sourceTree = "<group>";
+		};
+		E7E7491A2A0269DD009590A8 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				E7E7491B2A026A1C009590A8 /* Generated_C.h */,
+				E7E7491C2A026A1C009590A8 /* Generated_Swift.swift */,
+			);
+			name = Generated;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -374,7 +382,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E70D116929BF9F8000B4E738 /* TypeDefinitions.h in Headers */,
+				E7E7491D2A026A1C009590A8 /* Generated_C.h in Headers */,
 				E70D116129BF9F2600B4E738 /* NativeAOTCodeGeneratorOutputSample.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -563,8 +571,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E795257029ED8FDC0075166B /* TypeDefinitions.swift in Sources */,
 				E79335A629E98D3D0035FCEB /* SwiftSyntaxPlayground.swift in Sources */,
+				E7E7491E2A026A1C009590A8 /* Generated_Swift.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

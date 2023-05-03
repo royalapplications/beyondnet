@@ -19,7 +19,7 @@ mkdir -p "${BUILD_DIR}"
 
 OUTPUT_FILE_PATH_X64="${OUTPUT_PRODUCT_NAME}"
 
-C_HEADER_FILE_NAME="TypeDefinitions.h"
+C_HEADER_FILE_NAME="Generated_C.h"
 
 ./build_dependencies_linux_x64
 
@@ -29,7 +29,7 @@ echo "Copying native library"
 cp "../../bin/Release/${DOTNET_TARGET_FRAMEWORK}/linux-x64/publish/${LIBRARY_FILE_NAME}" "${LIBRARY_FILE_NAME}"
 
 echo "Copying C header file"
-cp "../../Swift/NativeAOTCodeGeneratorOutputSample/Source/${C_HEADER_FILE_NAME}" "${C_HEADER_FILE_NAME}"
+cp "../../../Generated/${C_HEADER_FILE_NAME}" "${C_HEADER_FILE_NAME}"
 
 echo "Copying C file"
 cp "../${C_FILE_NAME}" "${C_FILE_NAME}"

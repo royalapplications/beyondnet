@@ -169,6 +169,13 @@ internal class CodeGeneratorDriver
         if (string.IsNullOrEmpty(outputPath)) {
             return;
         }
+
+        string? dirPath = Path.GetDirectoryName(outputPath);
+
+        if (!string.IsNullOrEmpty(dirPath) &&
+            !Directory.Exists(dirPath)) {
+            Directory.CreateDirectory(dirPath);
+        }
     
         File.WriteAllText(outputPath, code);
     }

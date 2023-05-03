@@ -20,7 +20,7 @@
 
   <!-- Item Excludes -->
   <PropertyGroup>
-    <DefaultItemExcludes>$(DefaultItemExcludes);Swift\**\*;.gitignore;*.h;*.sln.DotSettings;</DefaultItemExcludes>
+    <DefaultItemExcludes>$(DefaultItemExcludes);Swift\**\*;C\**\*;.gitignore;*.h;*.sln.DotSettings;</DefaultItemExcludes>
   </PropertyGroup>
 
   <!-- Project References -->

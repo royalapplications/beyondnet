@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "TypeDefinitions.h"
+#include "Generated_C.h"
 
 int main(int argc, char *argv[]) {
 	int numGuids = 1;

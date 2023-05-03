@@ -8,4 +8,4 @@ FOUNDATION_EXPORT const unsigned char NativeAOTCodeGeneratorOutputSampleVersionS
 
 // In this header, you should import all the public headers of your framework using statements like #import <NativeAOTCodeGeneratorOutputSample/PublicHeader.h>
 
-#import <NativeAOTCodeGeneratorOutputSample/TypeDefinitions.h>
+#import <NativeAOTCodeGeneratorOutputSample/Generated_C.h>

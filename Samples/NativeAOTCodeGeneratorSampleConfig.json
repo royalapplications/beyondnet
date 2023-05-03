@@ -1,9 +1,9 @@
 {
 	"AssemblyPath": "NativeAOT.CodeGeneratorInputSample/bin/Release/net8.0/publish/NativeAOT.CodeGeneratorInputSample.dll",
 	
-	"CSharpUnmanagedOutputPath": "NativeAOT.CodeGeneratorOutputSample/UnmanagedGenerated.cs",
-	"COutputPath": "NativeAOT.CodeGeneratorOutputSample/Swift/NativeAOTCodeGeneratorOutputSample/Source/TypeDefinitions.h",
-	"SwiftOutputPath": "NativeAOT.CodeGeneratorOutputSample/Swift/NativeAOTCodeGeneratorOutputSample/Source/TypeDefinitions.swift",
+	"CSharpUnmanagedOutputPath": "Generated/Generated_CS.cs",
+	"COutputPath": "Generated/Generated_C.h",
+	"SwiftOutputPath": "Generated/Generated_Swift.swift",
 	
 	"EmitUnsupported": false,
 	"GenerateTypeCheckedDestroyMethods": true,
