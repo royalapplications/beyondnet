@@ -1,5 +1,5 @@
 import XCTest
-import NativeAOTCodeGeneratorOutputSample
+import BeyondNETSamplesSwift
 
 final class IndexerTestsTests_Swift: XCTestCase {
 	@MainActor

@@ -1,5 +1,5 @@
 import XCTest
-import NativeAOTCodeGeneratorOutputSample
+import BeyondNETSamplesSwift
 
 final class PrimitivesBoxingTests_Swift: XCTestCase {
     @MainActor

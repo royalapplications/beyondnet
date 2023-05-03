@@ -1,5 +1,5 @@
 import XCTest
-import NativeAOTCodeGeneratorOutputSample
+import BeyondNETSamplesSwift
 
 final class AddressTests_Swift: XCTestCase {
 	@MainActor

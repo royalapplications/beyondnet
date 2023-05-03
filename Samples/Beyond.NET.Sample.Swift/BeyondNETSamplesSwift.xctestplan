@@ -17,13 +17,10 @@
   },
   "testTargets" : [
     {
-      "skippedTests" : [
-        "SystemThreadingTasksTests"
-      ],
       "target" : {
-        "containerPath" : "container:NativeAOTCodeGeneratorOutputSample.xcodeproj",
+        "containerPath" : "container:BeyondNETSamplesSwift.xcodeproj",
         "identifier" : "E70D117129BF9FEC00B4E738",
-        "name" : "NativeAOTCodeGeneratorOutputSampleTests"
+        "name" : "BeyondNETSamplesSwiftTests"
       }
     }
   ],

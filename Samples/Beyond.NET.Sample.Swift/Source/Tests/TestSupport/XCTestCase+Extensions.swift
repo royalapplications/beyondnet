@@ -1,6 +1,6 @@
 import Foundation
 import XCTest
-import NativeAOTCodeGeneratorOutputSample
+import BeyondNETSamplesSwift
 
 fileprivate class UnhandledExceptionHandlerStorage {
 	static var unhandledExceptionHandler: System_UnhandledExceptionEventHandler_t?

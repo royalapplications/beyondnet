@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E70D115C29BF9F2600B4E738"
-               BuildableName = "NativeAOTCodeGeneratorOutputSample.framework"
-               BlueprintName = "NativeAOTCodeGeneratorOutputSample"
-               ReferencedContainer = "container:NativeAOTCodeGeneratorOutputSample.xcodeproj">
+               BuildableName = "BeyondNETSamplesSwift.framework"
+               BlueprintName = "BeyondNETSamplesSwift"
+               ReferencedContainer = "container:BeyondNETSamplesSwift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,7 +29,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:NativeAOTCodeGeneratorOutputSample.xctestplan"
+            reference = "container:BeyondNETSamplesSwift.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>
@@ -39,9 +39,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E70D117129BF9FEC00B4E738"
-               BuildableName = "NativeAOTCodeGeneratorOutputSampleTests.xctest"
-               BlueprintName = "NativeAOTCodeGeneratorOutputSampleTests"
-               ReferencedContainer = "container:NativeAOTCodeGeneratorOutputSample.xcodeproj">
+               BuildableName = "BeyondNETSamplesSwiftTests.xctest"
+               BlueprintName = "BeyondNETSamplesSwiftTests"
+               ReferencedContainer = "container:BeyondNETSamplesSwift.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -67,9 +67,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E70D115C29BF9F2600B4E738"
-            BuildableName = "NativeAOTCodeGeneratorOutputSample.framework"
-            BlueprintName = "NativeAOTCodeGeneratorOutputSample"
-            ReferencedContainer = "container:NativeAOTCodeGeneratorOutputSample.xcodeproj">
+            BuildableName = "BeyondNETSamplesSwift.framework"
+            BlueprintName = "BeyondNETSamplesSwift"
+            ReferencedContainer = "container:BeyondNETSamplesSwift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

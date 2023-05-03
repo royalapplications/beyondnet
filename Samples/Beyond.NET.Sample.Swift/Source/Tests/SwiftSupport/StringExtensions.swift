@@ -1,5 +1,5 @@
 import Foundation
-import NativeAOTCodeGeneratorOutputSample
+import BeyondNETSamplesSwift
 
 public extension String {
 	func cDotNETString() -> System_String_t {

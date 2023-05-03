@@ -1,5 +1,5 @@
 import XCTest
-import NativeAOTCodeGeneratorOutputSample
+import BeyondNETSamplesSwift
 
 // TODO: I think we have an issue here but I can't currently see it so this test is disabled for now
 final class SystemThreadingTasksTests: XCTestCase {

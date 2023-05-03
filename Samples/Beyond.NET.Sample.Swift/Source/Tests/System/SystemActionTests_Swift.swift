@@ -1,5 +1,5 @@
 import XCTest
-import NativeAOTCodeGeneratorOutputSample
+import BeyondNETSamplesSwift
 
 // TODO
 final class SystemActionTests_Swift: XCTestCase {
