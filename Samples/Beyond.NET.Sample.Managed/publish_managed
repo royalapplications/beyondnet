@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -e
+
+OUTPUT_PRODUCT_NAME="Beyond.NET.Sample.Managed"
+
+DOTNET_PATH=`which dotnet`
+
+VERBOSITY_LEVEL="normal"
+
+echo "Building ${OUTPUT_PRODUCT_NAME} managed"
+${DOTNET_PATH} publish -v "${VERBOSITY_LEVEL}"
