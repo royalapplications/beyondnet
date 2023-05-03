@@ -2,7 +2,7 @@
 
 set -e
 
-DOTNET_PATH="/usr/local/share/dotnet/dotnet"
+DOTNET_PATH=`which dotnet`
 
 VERBOSITY_LEVEL="normal"
 
