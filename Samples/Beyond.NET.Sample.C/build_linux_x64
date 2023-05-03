@@ -26,10 +26,10 @@ C_HEADER_FILE_NAME="Generated_C.h"
 cd "${BUILD_DIR}"
 
 echo "Copying native library"
-cp "../../bin/Release/${DOTNET_TARGET_FRAMEWORK}/linux-x64/publish/${LIBRARY_FILE_NAME}" "${LIBRARY_FILE_NAME}"
+cp "../../Beyond.NET.Sample.Native/bin/Release/${DOTNET_TARGET_FRAMEWORK}/linux-x64/publish/${LIBRARY_FILE_NAME}" "${LIBRARY_FILE_NAME}"
 
 echo "Copying C header file"
-cp "../../../Generated/${C_HEADER_FILE_NAME}" "${C_HEADER_FILE_NAME}"
+cp "../../Generated/${C_HEADER_FILE_NAME}" "${C_HEADER_FILE_NAME}"
 
 echo "Copying C file"
 cp "../${C_FILE_NAME}" "${C_FILE_NAME}"

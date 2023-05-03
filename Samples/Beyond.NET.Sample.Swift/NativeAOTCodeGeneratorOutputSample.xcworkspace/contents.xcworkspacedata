@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:NativeAOTCodeGeneratorOutputSample/NativeAOTCodeGeneratorOutputSample.xcodeproj">
+      location = "group:NativeAOTCodeGeneratorOutputSample.xcodeproj">
    </FileRef>
 </Workspace>

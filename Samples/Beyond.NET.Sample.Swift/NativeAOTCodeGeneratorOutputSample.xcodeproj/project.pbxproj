@@ -186,8 +186,8 @@
 		E7C8CF0A29C1FE5800C4230F /* SystemArrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemArrayTests.swift; sourceTree = "<group>"; };
 		E7C8CF0C29C2139B00C4230F /* PersonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTests.swift; sourceTree = "<group>"; };
 		E7C8CF0E29C2180200C4230F /* AnimalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTests.swift; sourceTree = "<group>"; };
-		E7E7491B2A026A1C009590A8 /* Generated_C.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Generated_C.h; path = ../../../../Generated/Generated_C.h; sourceTree = "<group>"; };
-		E7E7491C2A026A1C009590A8 /* Generated_Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Generated_Swift.swift; path = ../../../../Generated/Generated_Swift.swift; sourceTree = "<group>"; };
+		E7E7491B2A026A1C009590A8 /* Generated_C.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Generated_C.h; path = ../../Generated/Generated_C.h; sourceTree = "<group>"; };
+		E7E7491C2A026A1C009590A8 /* Generated_Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Generated_Swift.swift; path = ../../Generated/Generated_Swift.swift; sourceTree = "<group>"; };
 		E7EB338529C8879100392F3D /* AddressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTests.swift; sourceTree = "<group>"; };
 		E7ED7A1729D35DF4008C96E0 /* SystemVersionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemVersionTests.swift; sourceTree = "<group>"; };
 		E7ED7A1929D445C8008C96E0 /* SystemActionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemActionTests.swift; sourceTree = "<group>"; };
@@ -505,7 +505,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\n\n# Make sure .NET path is on the PATH\nDOTNET_PATH=\"/usr/local/share/dotnet\"\nexport PATH=${DOTNET_PATH}${PATH:+:${PATH}}\n\n# Important: This variable is set by Xcode but messes with msbuild/dotnet publish \nTARGETNAME=\"\"\n\ncd \"${PROJECT_DIR}/../../\"\n\n./publish_macos_universal\n";
+			shellScript = "set -e\n\n# Make sure .NET path is on the PATH\nDOTNET_PATH=\"/usr/local/share/dotnet\"\nexport PATH=${DOTNET_PATH}${PATH:+:${PATH}}\n\n# Important: This variable is set by Xcode but messes with msbuild/dotnet publish \nTARGETNAME=\"\"\n\ncd \"${PROJECT_DIR}/../Beyond.NET.Sample.Native\"\n\n./publish_macos_universal\n";
 		};
 		E79340DC29F68045003337B9 /* Build .NET Sample Managed */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -524,7 +524,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\n\n# Make sure .NET path is on the PATH\nDOTNET_PATH=\"/usr/local/share/dotnet\"\nexport PATH=${DOTNET_PATH}${PATH:+:${PATH}}\n\n# Important: This variable is set by Xcode but messes with msbuild/dotnet publish \nTARGETNAME=\"\"\n\ncd \"${PROJECT_DIR}/../../../Beyond.NET.Sample.Managed\"\n\n./publish_managed\n";
+			shellScript = "set -e\n\n# Make sure .NET path is on the PATH\nDOTNET_PATH=\"/usr/local/share/dotnet\"\nexport PATH=${DOTNET_PATH}${PATH:+:${PATH}}\n\n# Important: This variable is set by Xcode but messes with msbuild/dotnet publish \nTARGETNAME=\"\"\n\ncd \"${PROJECT_DIR}/../Beyond.NET.Sample.Managed\"\n\n./publish_managed\n";
 		};
 		E79340DD29F681EC003337B9 /* Build .NET CodeGenerator.CLI */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -543,7 +543,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\n\n# Make sure .NET path is on the PATH\nDOTNET_PATH=\"/usr/local/share/dotnet\"\nexport PATH=${DOTNET_PATH}${PATH:+:${PATH}}\n\n# Important: This variable is set by Xcode but messes with msbuild/dotnet publish \nTARGETNAME=\"\"\n\ncd \"${PROJECT_DIR}/../../../../NativeAOT.CodeGenerator.CLI\"\n\n./publish_macos_universal\n";
+			shellScript = "set -e\n\n# Make sure .NET path is on the PATH\nDOTNET_PATH=\"/usr/local/share/dotnet\"\nexport PATH=${DOTNET_PATH}${PATH:+:${PATH}}\n\n# Important: This variable is set by Xcode but messes with msbuild/dotnet publish \nTARGETNAME=\"\"\n\ncd \"${PROJECT_DIR}/../../NativeAOT.CodeGenerator.CLI\"\n\n./publish_macos_universal\n";
 		};
 		E79340DE29F6838A003337B9 /* Generate .NET Native Bindings */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -562,7 +562,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd \"${PROJECT_DIR}/../../../\"\n\necho \"Generating .NET Native Bindings\"\n\n../NativeAOT.CodeGenerator.CLI/bin/Release/net8.0/osx-universal/publish/NativeAOT.CodeGenerator.CLI \"Beyond.NET.Sample_Config.json\"\n";
+			shellScript = "cd \"${PROJECT_DIR}/..\"\n\necho \"Generating .NET Native Bindings\"\n\n../NativeAOT.CodeGenerator.CLI/bin/Release/net8.0/osx-universal/publish/NativeAOT.CodeGenerator.CLI \"Beyond.NET.Sample_Config.json\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
