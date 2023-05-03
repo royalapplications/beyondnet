@@ -43,6 +43,6 @@ final class SystemReflectionAssemblyTests: XCTestCase {
 			return
 		}
 		
-		XCTAssertEqual("NativeAOT.CodeGeneratorOutputSample", assemblyNameString)
+		XCTAssertEqual("libNativeAOTCodeGeneratorOutputSample", assemblyNameString)
 	}
 }

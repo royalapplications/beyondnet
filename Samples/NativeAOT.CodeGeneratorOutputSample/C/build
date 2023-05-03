@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -e
+
+LIBRARY_NAME="NativeAOTCodeGeneratorOutputSample"
+OUTPUT_EXECUTABLE_NAME="newguid"
+C_FILE_NAME="newguid.c"
+
+clang -Wl,-rpath,. -L. -l${LIBRARY_NAME} -o "${OUTPUT_EXECUTABLE_NAME}" "${C_FILE_NAME}"

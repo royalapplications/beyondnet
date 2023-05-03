@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-set -e
-
-clang -Wl,-rpath,. -o "newguid" NativeAOT.CodeGeneratorOutputSample.so "newguid.c"
