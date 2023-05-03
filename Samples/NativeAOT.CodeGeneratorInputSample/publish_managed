@@ -6,5 +6,5 @@ DOTNET_PATH=`which dotnet`
 
 VERBOSITY_LEVEL="normal"
 
-echo "Building"
+echo "Building managed"
 ${DOTNET_PATH} publish -v "${VERBOSITY_LEVEL}"
