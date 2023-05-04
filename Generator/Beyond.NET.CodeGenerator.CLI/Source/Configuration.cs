@@ -14,4 +14,6 @@ public struct Configuration
     
     public string[]? IncludedTypeNames { get; init; }
     public string[]? ExcludedTypeNames { get; init; }
+    
+    public string[]? AssemblySearchPaths { get; init; }
 }

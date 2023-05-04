@@ -10,7 +10,7 @@ internal class AssemblyLoader: IDisposable
     
     internal AssemblyLoader(IEnumerable<string> searchPaths)
     {
-        SearchPaths = searchPaths;
+        SearchPaths = GetAssemblySearchPaths(searchPaths);
         
         AppDomain.CurrentDomain.AssemblyResolve += AppDomain_OnAssemblyResolve;
     }
@@ -39,9 +39,7 @@ internal class AssemblyLoader: IDisposable
         try {
             return Assembly.LoadFrom(assemblyName);
         } catch {
-            var searchPaths = GetAssemblySearchPaths();
-
-            foreach (var searchPath in searchPaths) {
+            foreach (var searchPath in SearchPaths) {
                 string potentialAssemblyPath = Path.Combine(
                     searchPath,
                     assemblyName
@@ -58,9 +56,15 @@ internal class AssemblyLoader: IDisposable
         return null;
     }
     
-    private IEnumerable<string> GetAssemblySearchPaths()
+    private static IEnumerable<string> GetAssemblySearchPaths(IEnumerable<string> configuredSearchPaths)
     {
-        List<string> searchPaths = SearchPaths.ToList();
+        List<string> searchPaths = new();
+
+        foreach (string searchPath in configuredSearchPaths) {
+            string expandedSearchPath = searchPath.ExpandTildeAndGetAbsolutePath();
+            
+            searchPaths.Add(expandedSearchPath);
+        }
 
         searchPaths.Add(Environment.CurrentDirectory);
 

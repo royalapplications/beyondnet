@@ -25,16 +25,17 @@ internal class CodeGeneratorDriver
         bool emitUnsupported = Configuration.EmitUnsupported ?? false;
         bool generateTypeCheckedDestroyMethods = Configuration.GenerateTypeCheckedDestroyMethods ?? false;
         bool enableGenericsSupport = Configuration.EnableGenericsSupport ?? false;
+        string[] assemblySearchPaths = Configuration.AssemblySearchPaths ?? Array.Empty<string>();
         #endregion Configuration
+
+        #region Assembly Loader
+        AssemblyLoader assemblyLoader = new(assemblySearchPaths);
+        #endregion Assembly Loader
         
         #region Load Assembly
         string assemblyPath = Configuration.AssemblyPath.ExpandTildeAndGetAbsolutePath();
         
-        Assembly assembly;
-        
-        using (AssemblyLoader assemblyLoader = new()) {
-            assembly = assemblyLoader.LoadFrom(assemblyPath);
-        }
+        Assembly assembly = assemblyLoader.LoadFrom(assemblyPath);
         #endregion Load Assembly
 
         #region Collect Types
@@ -134,6 +135,10 @@ internal class CodeGeneratorDriver
             swiftOutputPath
         );
         #endregion Write Output to Files
+
+        #region Cleanup
+        assemblyLoader.Dispose();
+        #endregion Cleanup
     }
     
     private static Type[] TypesFromTypeNames(
