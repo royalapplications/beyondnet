@@ -4,23 +4,51 @@ namespace Beyond.NET.CodeGenerator.CLI;
 
 internal class AssemblyLoader: IDisposable
 {
-    internal IEnumerable<string> SearchPaths { get; }
+    private readonly List<string> m_searchPaths = new();
 
     internal AssemblyLoader() : this(Array.Empty<string>()) { }
     
     internal AssemblyLoader(IEnumerable<string> searchPaths)
     {
-        SearchPaths = GetAssemblySearchPaths(searchPaths);
+        m_searchPaths.AddRange(GetAssemblySearchPaths(searchPaths));
         
         AppDomain.CurrentDomain.AssemblyResolve += AppDomain_OnAssemblyResolve;
     }
 
     internal Assembly LoadFrom(string assemblyPath)
     {
+        string? assemblyDirectoryPath = Path.GetDirectoryName(assemblyPath);
+
+        if (!string.IsNullOrEmpty(assemblyDirectoryPath) &&
+            !m_searchPaths.Contains(assemblyDirectoryPath)) {
+            m_searchPaths.Add(assemblyDirectoryPath);
+        }
+        
         Assembly assembly = Assembly.LoadFrom(assemblyPath);
 
         return assembly;
     }
+    
+    /* internal IEnumerable<Assembly> LoadReferences(Assembly assembly)
+    {
+        HashSet<Assembly> references = new();
+        
+        var referencedAssemblies = assembly.GetReferencedAssemblies();
+
+        foreach (var referencedAssemblyNameObject in referencedAssemblies) {
+            Assembly referencedAssembly = Assembly.Load(referencedAssemblyNameObject);
+
+            references.Add(referencedAssembly);
+
+            var recursiveReferences = LoadReferences(referencedAssembly);
+
+            foreach (var recursiveReference in recursiveReferences) {
+                references.Add(recursiveReference);
+            }
+        }
+
+        return references;
+    } */
     
     private Assembly? AppDomain_OnAssemblyResolve(object? sender, ResolveEventArgs args)
     {
@@ -37,16 +65,20 @@ internal class AssemblyLoader: IDisposable
         }
         
         try {
-            return Assembly.LoadFrom(assemblyName);
+            Assembly assembly = Assembly.LoadFrom(assemblyName);
+
+            return assembly;
         } catch {
-            foreach (var searchPath in SearchPaths) {
+            foreach (var searchPath in m_searchPaths) {
                 string potentialAssemblyPath = Path.Combine(
                     searchPath,
                     assemblyName
                 );
 
                 try {
-                    return Assembly.LoadFrom(potentialAssemblyPath);
+                    Assembly assembly = Assembly.LoadFrom(potentialAssemblyPath);
+
+                    return assembly;
                 } catch {
                     // ignored
                 }

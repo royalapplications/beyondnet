@@ -13,6 +13,20 @@ namespace Beyond.NET.CodeGenerator.CLI;
 internal class CodeGeneratorDriver
 {
     internal Configuration Configuration { get; }
+
+    private AssemblyLoader? m_assemblyLoader;
+    private AssemblyLoader AssemblyLoader
+    {
+        get {
+            if (m_assemblyLoader is null) {
+                string[] assemblySearchPaths = Configuration.AssemblySearchPaths ?? Array.Empty<string>();
+
+                m_assemblyLoader = new(assemblySearchPaths);
+            }
+
+            return m_assemblyLoader;
+        }
+    }
     
     internal CodeGeneratorDriver(Configuration configuration)
     {
@@ -25,17 +39,12 @@ internal class CodeGeneratorDriver
         bool emitUnsupported = Configuration.EmitUnsupported ?? false;
         bool generateTypeCheckedDestroyMethods = Configuration.GenerateTypeCheckedDestroyMethods ?? false;
         bool enableGenericsSupport = Configuration.EnableGenericsSupport ?? false;
-        string[] assemblySearchPaths = Configuration.AssemblySearchPaths ?? Array.Empty<string>();
         #endregion Configuration
 
-        #region Assembly Loader
-        AssemblyLoader assemblyLoader = new(assemblySearchPaths);
-        #endregion Assembly Loader
-        
         #region Load Assembly
         string assemblyPath = Configuration.AssemblyPath.ExpandTildeAndGetAbsolutePath();
         
-        Assembly assembly = assemblyLoader.LoadFrom(assemblyPath);
+        Assembly assembly = AssemblyLoader.LoadFrom(assemblyPath);
         #endregion Load Assembly
 
         #region Collect Types
@@ -135,10 +144,6 @@ internal class CodeGeneratorDriver
             swiftOutputPath
         );
         #endregion Write Output to Files
-
-        #region Cleanup
-        assemblyLoader.Dispose();
-        #endregion Cleanup
     }
     
     private static Type[] TypesFromTypeNames(
@@ -157,7 +162,7 @@ internal class CodeGeneratorDriver
                 type = Type.GetType(typeName, true);
             }
 
-            if (type != null) {
+            if (type is not null) {
                 types.Add(type);
             }
         }
