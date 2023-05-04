@@ -14,7 +14,7 @@ cd "../../Generator/Beyond.NET.CodeGenerator.CLI"
 
 cd "../../Samples"
 echo "Generating .NET Native Bindings"
-../Generator/Beyond.NET.CodeGenerator.CLI/bin/Release/net${DOTNET_VERSION_MAJOR_AND_MINOR}/linux-x64/publish/Beyond.NET.CodeGenerator.CLI "Beyond.NET.Sample_Config.json"
+../Generator/Beyond.NET.CodeGenerator.CLI/bin/Release/net${DOTNET_VERSION_MAJOR_AND_MINOR}/linux-x64/publish/beyondnetgen "Beyond.NET.Sample_Config.json"
 
 cd "Beyond.NET.Sample.Native"
 ./publish_linux_x64
