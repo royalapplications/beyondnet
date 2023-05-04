@@ -9,4 +9,4 @@ DOTNET_PATH=`which dotnet`
 VERBOSITY_LEVEL="normal"
 
 echo "Building ${OUTPUT_PRODUCT_NAME} managed"
-${DOTNET_PATH} publish -v "${VERBOSITY_LEVEL}"
+${DOTNET_PATH} publish -v "${VERBOSITY_LEVEL}" /p:Configuration=Release
