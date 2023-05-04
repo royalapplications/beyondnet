@@ -71,10 +71,10 @@ public static class MethodInfoExtensions
                 }
 
                 var baseParameters = baseBaseMethodInfo.GetParameters();
-                // var baseReturnType = baseBaseMethodInfo.ReturnType;
+                var baseReturnType = baseBaseMethodInfo.ReturnType;
 
-                if (methodInfo.GetParameters() == baseParameters /*&&
-                    methodInfo.ReturnType == baseReturnType*/) {
+                if (methodInfo.GetParameters() == baseParameters &&
+                    methodInfo.ReturnType == baseReturnType) {
                     return true;
                 }
             }
