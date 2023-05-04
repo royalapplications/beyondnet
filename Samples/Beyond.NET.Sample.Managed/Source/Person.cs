@@ -12,6 +12,7 @@ public class Person
     public string LastName { get; set; }
     public int Age { get; set; }
     public Address? Address { get; set; }
+    public Uri? Website { get; set; }
 
     private Person[] m_children = Array.Empty<Person>();
 

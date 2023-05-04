@@ -148,15 +148,17 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
 
         if (isGeneric) {
             foreach (var parameter in parameters) {
-                bool isOutOrByRef = parameter.IsOut || parameter.ParameterType.IsByRef;
+                bool isOutOrInOrByRef = parameter.IsOut ||
+                                        parameter.IsIn ||
+                                        parameter.ParameterType.IsByRef;
 
-                if (isOutOrByRef) {
+                if (isOutOrInOrByRef) {
                     Type nonByRefParameterType = parameter.ParameterType.GetNonByRefType();
 
                     if (nonByRefParameterType.IsArray) {
                         generatedName = string.Empty;
                         
-                        return "// TODO: Generic Methods with out/ref parameters that are arrays are not supported";    
+                        return "// TODO: Generic Methods with out/in/ref parameters that are arrays are not supported";    
                     }
                 }
             }
@@ -255,7 +257,8 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             true,
             returnTypeIsOptional,
             false,
-            returnOrSetterOrEventHandlerTypeIsByRef
+            returnOrSetterOrEventHandlerTypeIsByRef,
+            false
         );
         
         string swiftReturnOrSetterTypeNameWithComment;
@@ -544,9 +547,11 @@ self.init(handle: {{returnValueName}})
                 Type parameterType = parameter.ParameterType;
 
                 bool isOutParameter = parameter.IsOut;
+                bool isInParameter = parameter.IsIn;
                 bool isByRefParameter = parameterType.IsByRef;
                 
                 if (!isOutParameter &&
+                    !isInParameter &&
                     !isByRefParameter) {
                     continue;
                 }
@@ -685,7 +690,8 @@ if let __exceptionC {
             true,
             returnTypeIsOptional,
             false,
-            returnTypeIsByRef
+            returnTypeIsByRef,
+            false
         );
 
         bool mayThrow = swiftGeneratedMember.MayThrow;
@@ -787,6 +793,7 @@ if let __exceptionC {
         
         foreach (var parameter in parameters) {
             bool isOutParameter = parameter.IsOut;
+            bool isInParameter = parameter.IsIn;
             
             Type parameterType = parameter.ParameterType;
             
@@ -824,7 +831,8 @@ if let __exceptionC {
                 true,
                 isOptional,
                 isOutParameter,
-                isByRefParameter
+                isByRefParameter,
+                isInParameter
             );
 
             string? parameterName = parameter.Name
@@ -965,6 +973,7 @@ if let __exceptionC {
             
             Type parameterType = parameter.ParameterType;
             bool isOutParameter = parameter.IsOut;
+            bool isInParameter = parameter.IsIn;
             
             WriteParameterConversion(
                 sourceLanguage,
@@ -972,6 +981,7 @@ if let __exceptionC {
                 parameterName,
                 parameterType,
                 isOutParameter,
+                isInParameter,
                 isGeneric,
                 typeDescriptorRegistry,
                 out string? typeConversionCode,
@@ -992,6 +1002,7 @@ if let __exceptionC {
             string parameterName = "value";
             Type parameterType = setterOrEventHandlerType ?? throw new Exception("No setter or event handler type");
             const bool isOutParameter = false;
+            const bool isInParameter = false;
             
             WriteParameterConversion(
                 sourceLanguage,
@@ -999,6 +1010,7 @@ if let __exceptionC {
                 parameterName,
                 parameterType,
                 isOutParameter,
+                isInParameter,
                 isGeneric,
                 typeDescriptorRegistry,
                 out string? typeConversionCode,
@@ -1021,6 +1033,7 @@ if let __exceptionC {
         string parameterName,
         Type parameterType,
         bool isOutParameter,
+        bool isInParameter,
         bool isGeneric,
         TypeDescriptorRegistry typeDescriptorRegistry,
         out string? typeConversionCode,
@@ -1045,7 +1058,7 @@ if let __exceptionC {
         
         bool isByRefParameter = parameterType.IsByRef;
         bool isArrayType = parameterType.IsArray;
-        bool isInOut = isOutParameter || isByRefParameter;
+        bool isInOut = isOutParameter || isInParameter || isByRefParameter;
 
         if (isByRefParameter) {
             parameterType = parameterType.GetNonByRefType();
@@ -1116,6 +1129,7 @@ if let __exceptionC {
             typeConversionCode = null;
             
             if (isOutParameter ||
+                isInParameter ||
                 isByRefParameter) {
                 convertedParameterName = $"&{parameterName}";
             } else {

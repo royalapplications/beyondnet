@@ -87,6 +87,7 @@ public class TypeDescriptor
             includeModifiers,
             isOptional,
             false,
+            false,
             false
         );
     }
@@ -96,7 +97,8 @@ public class TypeDescriptor
         bool includeModifiers,
         bool isOptional,
         bool isOutParameter,
-        bool isByRefParameter
+        bool isByRefParameter,
+        bool isInParameter
     )
     {
         string typeName;
@@ -115,7 +117,8 @@ public class TypeDescriptor
                 language,
                 isOptional,
                 isOutParameter,
-                isByRefParameter
+                isByRefParameter,
+                isInParameter
             );
         }
 
@@ -127,12 +130,14 @@ public class TypeDescriptor
         CodeLanguage language,
         bool isOptional,
         bool isOutParameter,
-        bool isByRefParameter
+        bool isByRefParameter,
+        bool isInParameter
     )
     {
         if (!RequiresNativePointer &&
             !isOutParameter &&
-            !isByRefParameter) {
+            !isByRefParameter &&
+            !isInParameter) {
             return typeName;
         }
 
@@ -142,6 +147,8 @@ public class TypeDescriptor
             case CodeLanguage.CSharp:
                 if (isOutParameter) {
                     return $"out {typeName}";
+                } else if (isInParameter) {
+                    return typeName; // $"in {typeName}";
                 } else if (isByRefParameter) {
                     return $"ref {typeName}";
                 } else {
@@ -149,7 +156,7 @@ public class TypeDescriptor
                 }
             case CodeLanguage.CSharpUnmanaged:
                 if (RequiresNativePointer && 
-                    (isOutParameter || isByRefParameter)) {
+                    (isOutParameter || isByRefParameter || isInParameter)) {
                     typeNameWithModifiers = $"{typeName}**";
                 } else {
                     typeNameWithModifiers = $"{typeName}*";
@@ -157,7 +164,7 @@ public class TypeDescriptor
                 
                 break;
             case CodeLanguage.C:
-                if (isOutParameter || isByRefParameter) {
+                if (isOutParameter || isByRefParameter || isInParameter) {
                     typeNameWithModifiers = $"{typeName}*";
                 } else {
                     typeNameWithModifiers = $"{typeName}";
@@ -165,7 +172,7 @@ public class TypeDescriptor
                 
                 break;
             case CodeLanguage.Swift:
-                if (isOutParameter || isByRefParameter) {
+                if (isOutParameter || isByRefParameter || isInParameter) {
                     typeNameWithModifiers = $"inout {typeName}";
                 } else {
                     typeNameWithModifiers = $"{typeName}";

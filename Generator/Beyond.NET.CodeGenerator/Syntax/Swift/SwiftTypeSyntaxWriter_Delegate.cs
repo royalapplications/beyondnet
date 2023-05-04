@@ -74,6 +74,7 @@ public partial class SwiftTypeSyntaxWriter
                 true,
                 ReturnTypeIsOptional,
                 false,
+                false,
                 false
             );
             
@@ -81,8 +82,9 @@ public partial class SwiftTypeSyntaxWriter
             
             foreach (var parameter in parameterInfos) {
                 if (parameter.IsOut ||
+                    parameter.IsIn ||
                     parameter.ParameterType.IsByRef) {
-                    throw new Exception($"// TODO: ({SwiftTypeName}) Unsupported delegate type. Reason: Has by ref or out parameters");
+                    throw new Exception($"// TODO: ({SwiftTypeName}) Unsupported delegate type. Reason: Has by ref or out or in parameters");
                 }
             }
 

@@ -126,9 +126,11 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
         if (isGeneric) {
             foreach (var parameter in parameters) {
-                bool isOutOrByRef = parameter.IsOut || parameter.ParameterType.IsByRef;
+                bool isOutOrInOrByRef = parameter.IsOut ||
+                                        parameter.IsIn ||
+                                        parameter.ParameterType.IsByRef;
 
-                if (isOutOrByRef) {
+                if (isOutOrInOrByRef) {
                     Type nonByRefParameterType = parameter.ParameterType.GetNonByRefType();
 
                     if (nonByRefParameterType.IsArray) {
@@ -278,7 +280,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             true,
             true,
             false,
-            isReturnOrSetterOrEventHandlerTypeByRef
+            isReturnOrSetterOrEventHandlerTypeByRef,
+            false
         );
         
         string unmanagedReturnOrSetterOrEventHandlerTypeNameWithComment;
@@ -373,7 +376,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 true,
                 true,
                 false,
-                isReturnOrSetterOrEventHandlerTypeByRef
+                isReturnOrSetterOrEventHandlerTypeByRef,
+                false
             ).Replace("&", string.Empty);
 
             string callPrefix = isReturnOrSetterOrEventHandlerTypeByRef
@@ -775,9 +779,11 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 Type parameterType = parameter.ParameterType;
 
                 bool isOutParameter = parameter.IsOut;
+                bool isInParameter = parameter.IsIn;
                 bool isByRefParameter = parameterType.IsByRef;
                 
                 if (!isOutParameter &&
+                    !isInParameter &&
                     !isByRefParameter) {
                     continue;
                 }
@@ -806,7 +812,9 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 } else {
                     parameterPrefix = isOutParameter 
                         ? "out "
-                        : "ref ";                    
+                        : isInParameter 
+                            ? string.Empty
+                            : "ref ";                    
                 }
 
                 string fullParameterName = $"{parameterPrefix}{convertedParameterName}";
@@ -1004,6 +1012,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
                 bool isByRefParameter = parameterType.IsByRef;
                 bool isOutParameter = parameter.IsOut;
+                bool isInParameter = parameter.IsIn;
 
                 if (isByRefParameter) {
                     parameterType = parameterType.GetNonByRefType();
@@ -1016,7 +1025,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                     true,
                     true,
                     isOutParameter,
-                    isByRefParameter
+                    isByRefParameter,
+                    isInParameter
                 );
                 
                 string parameterString = $"{unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */ {parameterNamePrefix}{parameter.Name}{parameterNameSuffix}";
@@ -1048,7 +1058,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 true,
                 true,
                 true,
-                true
+                true,
+                false
             );
             
             string outExceptionParameterName = "__outException";
@@ -1123,6 +1134,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             
             Type parameterType = parameter.ParameterType;
             bool isOutParameter = parameter.IsOut;
+            bool isInParameter = parameter.IsIn;
             bool isByRefParameter = parameterType.IsByRef;
             bool isArrayType = parameterType.IsArray;
 
@@ -1132,8 +1144,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             
             bool isGenericParameterType = parameterType.IsGenericParameter || parameterType.IsGenericMethodParameter;
 
-            if (!isByRefParameter &&
-                isOutParameter) {
+            if (isOutParameter &&
+                !isByRefParameter) {
                 throw new Exception("Parameter is out but not by ref, that's impossible");
             } else if (isGenericParameterType) {
                 parameterType = typeof(object);
@@ -1207,15 +1219,47 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 sb.AppendLine();
 
                 if (!isGeneric) {
-                    convertedParameterName = $"ref {convertedParameterName}";
+                    if (!isInParameter) {
+                        convertedParameterName = $"ref {convertedParameterName}";
+                    }
                 }
+            } else if (isInParameter) { // In but not by ref
+                convertedParameterName = $"{parameterName}Converted";
+
+                string parameterTypeName = parameterType.GetFullNameOrName()
+                    .Replace("&", string.Empty);
+
+                string typeConversionCode;
+                
+                if (!string.IsNullOrEmpty(typeConversion)) {
+                    string fullTypeConversion = string.Format(typeConversion, $"(*{parameterName})");
+                    typeConversionCode = $"{convertedParameterName} = {fullTypeConversion};";
+                } else {
+                    typeConversionCode = $"{convertedParameterName} = *{parameterName};";
+                }
+
+                sb.AppendLine($"\t{parameterTypeName} {convertedParameterName};");
+
+                sb.AppendLine();
+                
+                sb.AppendLine($"\tif ({parameterName} is not null) {{");
+                sb.AppendLine($"\t\t{typeConversionCode}");
+                sb.AppendLine("\t} else {");
+                
+                string defaultValue = $"default({parameterType.GetFullNameOrName()})";
+                
+                sb.AppendLine($"\t\t{convertedParameterName} = {defaultValue};");
+                sb.AppendLine("\t}");
+
+                sb.AppendLine();
             } else if (typeConversion != null) {
                 string parameterTypeName = parameterTypeDescriptor.GetTypeName(
                     targetLanguage,
                     true,
                     true,
                     isOutParameter,
-                    isByRefParameter
+                    isByRefParameter,
+                    isInParameter
                 );
                 
                 convertedParameterName = $"{parameterName}Converted";
@@ -1228,14 +1272,20 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 if (!isGeneric) {
                     if (isOutParameter) {
                         convertedParameterName = $"out {convertedParameterName}";
+                    } else if (isInParameter) {
+                        // convertedParameterName = $"in {convertedParameterName}";
                     } else if (isByRefParameter) {
                         convertedParameterName = $"ref {convertedParameterName}";
                     }
                 }
             } else {
                 if (!isGeneric &&
-                    isOutParameter) {
-                    convertedParameterName = $"out {parameterName}";
+                    (isOutParameter || isInParameter)) {
+                    if (isOutParameter) {
+                        convertedParameterName = $"out {parameterName}";
+                    } else { // In
+                        convertedParameterName = parameterName;
+                    }
                 } else if (!isGeneric &&
                            isByRefParameter) {
                     convertedParameterName = $"ref {parameterName}";

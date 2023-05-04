@@ -128,15 +128,17 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
 
         if (isGeneric) {
             foreach (var parameter in parameters) {
-                bool isOutOrByRef = parameter.IsOut || parameter.ParameterType.IsByRef;
+                bool isOutOrInOrByRef = parameter.IsOut ||
+                                        parameter.IsIn ||
+                                        parameter.ParameterType.IsByRef;
 
-                if (isOutOrByRef) {
+                if (isOutOrInOrByRef) {
                     Type nonByRefParameterType = parameter.ParameterType.GetNonByRefType();
 
                     if (nonByRefParameterType.IsArray) {
                         generatedName = string.Empty;
                         
-                        return "// TODO: Generic Methods with out/ref parameters that are arrays are not supported";    
+                        return "// TODO: Generic Methods with out/in/ref parameters that are arrays are not supported";    
                     }
                 }
             }
@@ -203,7 +205,8 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             true,
             true,
             false,
-            returnOrSetterOrEventHandlerTypeIsByRef
+            returnOrSetterOrEventHandlerTypeIsByRef,
+            false
         );
 
         bool returnTypeIsNonNull = memberKind == MemberKind.TypeOf;
@@ -289,6 +292,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         
         foreach (var parameter in parameters) {
             bool isOutParameter = parameter.IsOut;
+            bool isInParameter = parameter.IsIn;
                 
             Type parameterType = parameter.ParameterType;
                 
@@ -324,7 +328,8 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
                 true,
                 true,
                 isOutParameter,
-                isByRefParameter
+                isByRefParameter,
+                isInParameter
             );
 
             string parameterString = $"{unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */ {parameter.Name}";
@@ -356,7 +361,8 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
                 true,
                 true,
                 true,
-                true
+                true,
+                false
             );
             
             string outExceptionParameterName = "outException";

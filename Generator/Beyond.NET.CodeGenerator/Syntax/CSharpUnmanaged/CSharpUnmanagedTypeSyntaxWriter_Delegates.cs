@@ -31,6 +31,12 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
                 
                 return;
             }
+            
+            if (parameter.IsIn) {
+                sb.AppendLine("\t// TODO: Unsupported delegate type. Reason: Has in parameters");
+                
+                return;
+            }
 
             Type parameterType = parameter.ParameterType;
             

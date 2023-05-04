@@ -113,8 +113,9 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         
         foreach (var parameter in parameterInfos) {
             if (parameter.IsOut ||
+                parameter.IsIn ||
                 parameter.ParameterType.IsByRef) {
-                return $"// TODO: ({cTypeName}) Unsupported delegate type. Reason: Has by ref or out parameters";
+                return $"// TODO: ({cTypeName}) Unsupported delegate type. Reason: Has by ref or out or in parameters";
             }
         }
 
@@ -357,6 +358,12 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         foreach (var parameter in parameterInfos) {
             if (parameter.IsOut) {
                 sb.AppendLine($"// TODO: ({cTypeName}) Unsupported delegate type. Reason: Has out parameters");
+                
+                return;
+            }
+            
+            if (parameter.IsIn) {
+                sb.AppendLine($"// TODO: ({cTypeName}) Unsupported delegate type. Reason: Has in parameters");
                 
                 return;
             }
