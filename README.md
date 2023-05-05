@@ -27,6 +27,7 @@ It's important to note that while Beyond.NET generates code for you, it doesn't 
 ### Prerequisites
 - Make sure [.NET 8](https://dotnet.microsoft.com/download/dotnet/8.0) is installed.
 - On macOS, make sure [Xcode](https://developer.apple.com/xcode/) is installed.
+- On Linux, make sure clang is installed
 
 ### Generator Executable
 - Either clone the Beyond.NET repository or download one of the pre-built generator executables for your platform.
