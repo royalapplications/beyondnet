@@ -1,6 +1,7 @@
 import XCTest
 import BeyondNETSamplesSwift
 
+// TODO: Missing C Test
 final class SystemUriTests_Swift: XCTestCase {
 	@MainActor
 	override class func setUp() {
@@ -29,26 +30,26 @@ final class SystemUriTests_Swift: XCTestCase {
 		
 		XCTAssertTrue(type == typeRet)
 		
-		// TODO: Currently fails. Why?
-//		let value = true
-//
-//		do {
-//			try creationOptions.dangerousDisablePathAndQueryCanonicalization_set(value)
-//		} catch {
-//			XCTFail("System.UriCreationOptions.DangerousDisablePathAndQueryCanonicalization setter should not throw")
-//
-//			return
-//		}
-//
-//		do {
-//			let valueRet = try creationOptions.dangerousDisablePathAndQueryCanonicalization
-//
-//			XCTAssertEqual(value, valueRet)
-//		} catch {
-//			XCTFail("System.UriCreationOptions.DangerousDisablePathAndQueryCanonicalization getter should not throw")
-//
-//			return
-//		}
+		// TODO: Currently fails. Structs broken?!
+		let value = true
+
+		do {
+			try creationOptions.dangerousDisablePathAndQueryCanonicalization_set(value)
+		} catch {
+			XCTFail("System.UriCreationOptions.DangerousDisablePathAndQueryCanonicalization setter should not throw")
+
+			return
+		}
+
+		do {
+			let valueRet = try creationOptions.dangerousDisablePathAndQueryCanonicalization
+
+			XCTAssertEqual(value, valueRet)
+		} catch {
+			XCTFail("System.UriCreationOptions.DangerousDisablePathAndQueryCanonicalization getter should not throw")
+
+			return
+		}
 	}
 	
 	func testTryCreateUriWithInParameter() {
