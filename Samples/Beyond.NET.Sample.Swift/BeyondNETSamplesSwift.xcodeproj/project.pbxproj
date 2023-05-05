@@ -66,6 +66,7 @@
 		E7A3E6EC29EEEB0800447BF2 /* TestClassesTests_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A3E6EB29EEEB0800447BF2 /* TestClassesTests_Swift.swift */; };
 		E7A3E6EE29EEEDB100447BF2 /* PersonTests_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A3E6ED29EEEDB100447BF2 /* PersonTests_Swift.swift */; };
 		E7AC3D8C29E0391200C5609B /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AC3D8A29E038E000C5609B /* XCTestCase+Extensions.swift */; };
+		E7B93FA92A050D8300D8BAF1 /* SystemUriTests_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B93FA82A050D8300D8BAF1 /* SystemUriTests_Swift.swift */; };
 		E7C8CF0529C1FA9500C4230F /* SystemGuidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0429C1FA9500C4230F /* SystemGuidTests.swift */; };
 		E7C8CF0729C1FABA00C4230F /* SystemStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0629C1FABA00C4230F /* SystemStringTests.swift */; };
 		E7C8CF0929C1FB0800C4230F /* SystemDateTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0829C1FB0800C4230F /* SystemDateTimeTests.swift */; };
@@ -180,6 +181,7 @@
 		E7A3E6EB29EEEB0800447BF2 /* TestClassesTests_Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClassesTests_Swift.swift; sourceTree = "<group>"; };
 		E7A3E6ED29EEEDB100447BF2 /* PersonTests_Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTests_Swift.swift; sourceTree = "<group>"; };
 		E7AC3D8A29E038E000C5609B /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
+		E7B93FA82A050D8300D8BAF1 /* SystemUriTests_Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemUriTests_Swift.swift; sourceTree = "<group>"; };
 		E7C8CF0429C1FA9500C4230F /* SystemGuidTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemGuidTests.swift; sourceTree = "<group>"; };
 		E7C8CF0629C1FABA00C4230F /* SystemStringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemStringTests.swift; sourceTree = "<group>"; };
 		E7C8CF0829C1FB0800C4230F /* SystemDateTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemDateTimeTests.swift; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 				E7A3E6E729EEE38F00447BF2 /* SystemCollectionsGenericDictionaryTests_Swift.swift */,
 				E75FFBAB29E83C70006904BA /* SystemTupleTests.swift */,
 				E7A3E6E929EEE4B100447BF2 /* SystemTupleTests_Swift.swift */,
+				E7B93FA82A050D8300D8BAF1 /* SystemUriTests_Swift.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -638,6 +641,7 @@
 				E7A3E6D229EECEF800447BF2 /* SystemDateTimeTests_Swift.swift in Sources */,
 				E7C8CF0D29C2139B00C4230F /* PersonTests.swift in Sources */,
 				E73EE8F429DAEC1A00C57A71 /* SystemThreadingTimerTest.swift in Sources */,
+				E7B93FA92A050D8300D8BAF1 /* SystemUriTests_Swift.swift in Sources */,
 				E790C0DD29E6B1B80054AA4B /* SystemCollectionsGenericListTests.swift in Sources */,
 				E7A3E6D029EECD9800447BF2 /* SystemGuidTests_Swift.swift in Sources */,
 				E70D117D29BFA01300B4E738 /* TestClassesTests.swift in Sources */,

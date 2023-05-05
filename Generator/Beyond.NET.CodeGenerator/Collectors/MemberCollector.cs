@@ -1,4 +1,5 @@
 using System.Reflection;
+using Beyond.NET.CodeGenerator.Extensions;
 
 namespace Beyond.NET.CodeGenerator.Collectors;
 
@@ -35,12 +36,16 @@ public class MemberCollector
         HashSet<MemberInfo> collectedMembers = new();
         unsupportedMembers = new();
 
+
         if (m_typeCollector.IsSupportedType(m_type)) {
+            bool isStruct = m_type.IsStruct();
+            bool foundParameterlessStructConstructor = false;
+            
             BindingFlags flags = BindingFlags.Public | 
                                  BindingFlags.DeclaredOnly |
                                  BindingFlags.Instance |
                                  BindingFlags.Static;
-            
+
             var memberInfos = m_type.GetMembers(flags);
             
             foreach (var memberInfo in memberInfos) {
@@ -54,6 +59,25 @@ public class MemberCollector
                 
                 CollectMember(
                     memberInfo,
+                    collectedMembers,
+                    unsupportedMembers
+                );
+
+                if (isStruct &&
+                    memberInfo is ConstructorInfo constructorInfo &&
+                    constructorInfo.GetParameters().Length == 0) {
+                    foundParameterlessStructConstructor = true;
+                }
+            }
+
+            if (isStruct &&
+                !foundParameterlessStructConstructor) {
+                // Must create a "fake" parameterless constructor
+
+                var parameterlessStructConstructor = new ParameterlessStructConstructorInfo(m_type);
+                
+                CollectMember(
+                    parameterlessStructConstructor,
                     collectedMembers,
                     unsupportedMembers
                 );
