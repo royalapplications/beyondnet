@@ -125,6 +125,18 @@ public class TypeCollector
             return;
         }
 
+        if (type.IsConstructedGenericType) {
+            Type nonConstructedGenericType = type.GetGenericTypeDefinition();
+
+            if (nonConstructedGenericType != type) {
+                CollectType(
+                    nonConstructedGenericType,
+                    collectedTypes,
+                    unsupportedTypes
+                );
+            }
+        }
+
         if (type.IsByRef) {
             Type nonByRefType = type.GetNonByRefType();
 
