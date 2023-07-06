@@ -70,11 +70,39 @@ public static class MethodInfoExtensions
                     continue;
                 }
 
-                var baseParameters = baseBaseMethodInfo.GetParameters();
                 var baseReturnType = baseBaseMethodInfo.ReturnType;
 
-                if (methodInfo.GetParameters() == baseParameters &&
-                    methodInfo.ReturnType == baseReturnType) {
+                if (!methodInfo.ReturnType.IsAssignableTo(baseReturnType)) {
+                    continue;
+                }
+
+                var parameters = methodInfo.GetParameters();
+                var baseParameters = baseBaseMethodInfo.GetParameters();
+
+                if (parameters.Length != baseParameters.Length) {
+                    continue;
+                }
+                
+                bool parameterTypesMatch = true;
+                int parameterIdx = 0;
+
+                foreach (var parameter in parameters) {
+                    var baseParameter = baseParameters[parameterIdx];
+                    
+                    // if (!parameter.ParameterType.IsAssignableTo(baseParameter.ParameterType)) {
+                    //     parameterTypesMatch = false;
+                    //     break;
+                    // }
+
+                    if (parameter.ParameterType != baseParameter.ParameterType) {
+                        parameterTypesMatch = false;
+                        break;
+                    }
+                
+                    parameterIdx++;
+                }
+
+                if (parameterTypesMatch) {
                     return true;
                 }
             }
