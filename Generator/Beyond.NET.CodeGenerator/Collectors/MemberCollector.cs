@@ -36,7 +36,6 @@ public class MemberCollector
         HashSet<MemberInfo> collectedMembers = new();
         unsupportedMembers = new();
 
-
         if (m_typeCollector.IsSupportedType(m_type)) {
             bool isStruct = m_type.IsStruct();
             bool foundParameterlessStructConstructor = false;
@@ -53,6 +52,12 @@ public class MemberCollector
 
                 if (m_excludedMemberNames?.Contains(memberName) ?? false) {
                     unsupportedMembers[memberInfo] = "Excluded";
+                    
+                    continue;
+                }
+
+                if (memberInfo.IsObsoleteWithError()) {
+                    unsupportedMembers[memberInfo] = "Obsolete with Error";
                     
                     continue;
                 }
