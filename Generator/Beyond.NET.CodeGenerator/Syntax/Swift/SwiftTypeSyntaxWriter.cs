@@ -260,7 +260,13 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
                     .Value(swiftEnumTypeName)
                     .ToString();
                 
-                if (value.Equals(0)) {
+                if (value.Equals(0) ||
+                    value.Equals((uint)0) ||
+                    value.Equals((byte)0) ||
+                    value.Equals((short)0) ||
+                    value.Equals((ushort)0) ||
+                    value.Equals((long)0) ||
+                    value.Equals((ulong)0)) {
                     caseCode = $"{caseCodeDecl}([])";
                 } else {
                     caseCode = $"{caseCodeDecl}(rawValue: {value})";
