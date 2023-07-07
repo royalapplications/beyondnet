@@ -186,3 +186,12 @@ So we can't generate a binding for every single specialization. Especially when 
 Instead, we need to use a more dynamic approach to support generating bindings for .NET generics in other languages, including the most restricted language, C which acts as the basis for all other language bindings.
 
 The only viable way I found was to use reflection and, unfortunately this has many downsides.
+
+
+## Debugging with LLDB
+
+While debugging code with LLDB you might run into situations where the .NET code raises signals which would cause the debugger to halt program execution although it's perfectly fine to continue.
+To handle that, you can add a symbolic breakpoint in Xcode and configure it like this:
+* Symbol: NSApplicationMain
+* Action: Debugger Command: `process handle SIGUSR1 -n true -p true -s false`
+Also see this [StackOverflow post](https://stackoverflow.com/questions/10431579/permanently-configuring-lldb-in-xcode-4-3-2-not-to-stop-on-signals).
