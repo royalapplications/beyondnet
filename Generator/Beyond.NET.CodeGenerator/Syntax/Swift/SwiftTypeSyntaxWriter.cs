@@ -496,13 +496,19 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
     )
     {
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
+
+        string? codeForOptional;
         
-        string codeForOptional = GetTypeExtensionsCode(
-            extendedType,
-            true,
-            generatedMembers,
-            typeDescriptorRegistry
-        );
+        if (!extendedType.IsEnum) {
+            codeForOptional = GetTypeExtensionsCode(
+                extendedType,
+                true,
+                generatedMembers,
+                typeDescriptorRegistry
+            );
+        } else {
+            codeForOptional = null;
+        }
             
         string codeForNonOptional = GetTypeExtensionsCode(
             extendedType,
@@ -513,8 +519,11 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
 
         StringBuilder sb = new();
 
-        sb.AppendLine(codeForOptional);
-        sb.AppendLine();
+        if (codeForOptional is not null) {
+            sb.AppendLine(codeForOptional);
+            sb.AppendLine();
+        }
+        
         sb.AppendLine(codeForNonOptional);
 
         string code = sb.ToString();
