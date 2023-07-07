@@ -56,8 +56,26 @@ public static class MethodInfoExtensions
             if (declaringTypeIsGeneric != baseTypeIsGeneric) {
                 return false;
             }
-            
-            MemberInfo[] baseMembers = baseType.GetMember(methodInfo.Name);
+
+            string name = methodInfo.Name;
+            bool isStatic = methodInfo.IsStatic;
+            bool isPublic = methodInfo.IsPublic;
+
+            BindingFlags flags = BindingFlags.FlattenHierarchy;
+
+            if (isStatic) {
+                flags |= BindingFlags.Static;
+            } else {
+                flags |= BindingFlags.Instance;
+            }
+
+            if (isPublic) {
+                flags |= BindingFlags.Public;
+            } else {
+                flags |= BindingFlags.NonPublic;
+            }
+
+            MemberInfo[] baseMembers = baseType.GetMember(name, flags);
 
             foreach (var baseMember in baseMembers) {
                 if (baseMember is not MethodInfo baseBaseMethodInfo) {
