@@ -460,6 +460,17 @@ public extension System_Exception {
     }
 }
 
+public enum DNSystemError: LocalizedError {
+    case unexpectedNull
+    
+    public var errorDescription: String? {
+        switch self {
+            case .unexpectedNull:
+                return "Unexpectedly found null"
+        }
+    }
+}
+
 public extension String {
 	func dotNETString() -> System_String {
 		let dotNetStringHandle = DNStringFromC(self)
@@ -488,6 +499,52 @@ public extension System_String {
     }
 }
 
+extension [String] {
+    /// Converts a Swift String Array into a .NET System.String Array
+    func dotNETStringArray() throws -> System_String_Array {
+        guard let arr = try System_String_Array.createInstance(System_String.typeOf,
+                                                               .init(count)) else {
+            throw DNSystemError.unexpectedNull
+        }
+        
+        for (idx, el) in self.enumerated() {
+            let elDN = el.dotNETString()
+            
+            try arr.setValue(elDN, Int32(idx))
+        }
+        
+        let strArr: System_String_Array = try arr.castTo()
+        
+        return strArr
+    }
+}
+
+extension System_String_Array {
+    /// Converts a .NET System.String Array into a Swift String Array
+    func array() throws -> [String] {
+        let len = try self.length
+        
+        guard len > 0 else {
+            return .init()
+        }
+        
+        var arr = [String]()
+        
+        for idx in 0..<len {
+            guard let el = try self.getValue(idx) else {
+                throw DNSystemError.unexpectedNull
+            }
+            
+            let elDNStr: System_String = try el.castTo()
+            let elStr = elDNStr.string()
+            
+            arr.append(elStr)
+        }
+        
+        return arr
+    }
+}
+
 extension System_Object: Equatable {
     public static func == (lhs: System_Object,
                            rhs: System_Object) -> Bool {
@@ -497,6 +554,55 @@ extension System_Object: Equatable {
     public static func === (lhs: System_Object,
                             rhs: System_Object) -> Bool {
         return (try? Self.referenceEquals(lhs, rhs)) ?? false
+    }
+}
+
+public extension Data {
+    /// WARNING: This is not optimized!
+    /// Creates a .NET byte array by copying the data from the Swift Data object
+    func dotNETByteArray() throws -> System_Byte_Array {
+        guard let systemByteType = try? System_Type.getType("System.Byte".dotNETString()) else {
+            throw DNSystemError.unexpectedNull
+        }
+        
+        guard let arr = try System_Byte_Array.createInstance(systemByteType,
+                                                             .init(count)) else {
+            throw DNSystemError.unexpectedNull
+        }
+        
+        for (idx, el) in self.enumerated() {
+            try arr.setValue(el.dotNETObject(), Int32(idx))
+        }
+        
+        let byteArr: System_Byte_Array = try arr.castTo()
+        
+        return byteArr
+    }
+}
+
+public extension System_Byte_Array {
+    /// WARNING: This is not optimized!
+    /// Creates a Swift Data object by copying the data from the .NET byte array
+    func data() throws -> Data {
+        let len = try self.length
+        
+        guard len > 0 else {
+            return .init()
+        }
+        
+        var data = Data(count: .init(len))
+        
+        for idx in 0..<len {
+            guard let el = try self.getValue(idx) else {
+                throw DNSystemError.unexpectedNull
+            }
+            
+            let elByte = try el.castToUInt8()
+            
+            data[.init(idx)] = elByte
+        }
+        
+        return data
     }
 }
 
