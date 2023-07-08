@@ -301,11 +301,15 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         sb.AppendLine($"internal static {unmanagedReturnOrSetterOrEventHandlerTypeNameWithComment} {methodNameC}({methodSignatureParameters})");
         sb.AppendLine("{");
 
+        Type? selfType = null;
+
         string? convertedSelfParameterName = null;
 
         if (!isStaticMethod &&
             memberKind != MemberKind.Destructor &&
             memberKind != MemberKind.TypeOf) {
+            selfType = declaringType;
+            
             string selfConversionCode = WriteSelfConversion(
                 declaringType,
                 typeDescriptorRegistry,
@@ -891,8 +895,26 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 sb.AppendLine($"{implPrefix}return {returnValue};");
             }
             
+            sb.AppendLine("\t} finally {");
+            
+            sb.AppendLine(WriteStructInstanceReplacement(
+                selfType,
+                "__self",
+                convertedSelfParameterName,
+                parameters,
+                convertedParameterNames
+            ).IndentAllLines(2));
+            
             sb.AppendLine("\t}");
         } else {
+            sb.AppendLine(WriteStructInstanceReplacement(
+                selfType,
+                "__self",
+                convertedSelfParameterName,
+                parameters,
+                convertedParameterNames
+            ).IndentAllLines(1));
+            
             if (isReturning) {
                 if (!string.IsNullOrEmpty(returnValueBoxing)) {
                     sb.AppendLine($"\t{returnValueBoxing}");
@@ -904,6 +926,47 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         }
 
         sb.AppendLine("}");
+
+        return sb.ToString();
+    }
+
+    protected string WriteStructInstanceReplacement(
+        Type? selfType,
+        string? selfParameterName,
+        string? convertedSelfParameterName,
+        IEnumerable<ParameterInfo> parameters,
+        List<string> convertedParameterNames
+    )
+    {
+        StringBuilder sb = new();
+
+        if (selfType is not null &&
+            selfType.IsStruct() &&
+            !string.IsNullOrEmpty(selfParameterName) &&
+            !string.IsNullOrEmpty(convertedSelfParameterName)) {
+            sb.AppendLine($"if ({selfParameterName} is not null) {{");
+            sb.AppendLine($"\tInteropUtils.ReplaceInstance({selfParameterName}, {convertedSelfParameterName});");
+            sb.AppendLine("}");
+            sb.AppendLine();
+        }
+        
+        int paramIdx = -1;
+        
+        foreach (var parameter in parameters) {
+            paramIdx++;
+                
+            if (!parameter.ParameterType.IsStruct()) {
+                continue;
+            }
+                
+            string parameterName = parameter.Name ?? throw new Exception("Parameter has no name");
+            string convertedParameterName = convertedParameterNames[paramIdx] ??  throw new Exception("Parameter has no converted name");
+                
+            sb.AppendLine($"if ({parameterName} is not null) {{");
+            sb.AppendLine($"\tInteropUtils.ReplaceInstance({parameterName}, {convertedParameterName});");
+            sb.AppendLine("}");
+            sb.AppendLine();
+        }
 
         return sb.ToString();
     }
