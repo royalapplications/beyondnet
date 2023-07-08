@@ -568,7 +568,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\n\n# Make sure .NET path is on the PATH\nDOTNET_PATH=\"/usr/local/share/dotnet\"\nexport PATH=${DOTNET_PATH}${PATH:+:${PATH}}\n\nDOTNET_VERSION=`dotnet --version`\nDOTNET_VERSION_MAJOR_AND_MINOR=${DOTNET_VERSION:0:3}\n\ncd \"${PROJECT_DIR}/..\"\n\necho \"Generating .NET Native Bindings\"\n\n../Generator/Beyond.NET.CodeGenerator.CLI/bin/Release/net${DOTNET_VERSION_MAJOR_AND_MINOR}/osx-universal/publish/beyondnetgen \"Beyond.NET.Sample_Config.json\"\n";
+			shellScript = "set -e\n\n# Make sure .NET path is on the PATH\nDOTNET_PATH=\"/usr/local/share/dotnet\"\nexport PATH=${DOTNET_PATH}${PATH:+:${PATH}}\n\n# Important: This variable is set by Xcode but messes with msbuild/dotnet publish \nTARGETNAME=\"\"\n\ncd \"${PROJECT_DIR}/..\"\n\n./generate_macos\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

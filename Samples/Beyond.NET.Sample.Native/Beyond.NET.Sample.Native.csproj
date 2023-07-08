@@ -12,6 +12,7 @@
     <PublishAot>true</PublishAot>
     <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
     <RuntimeIdentifiers>osx-x64;osx-arm64;linux-x64</RuntimeIdentifiers>
+    <EnablePreviewFeatures>true</EnablePreviewFeatures>
   </PropertyGroup>
 
   <!-- Strip Symbols in Release Builds -->
