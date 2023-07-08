@@ -30,7 +30,6 @@ final class SystemUriTests_Swift: XCTestCase {
 		
 		XCTAssertTrue(type == typeRet)
 		
-		// TODO: Currently fails. Structs broken?!
 		let value = true
 
 		do {

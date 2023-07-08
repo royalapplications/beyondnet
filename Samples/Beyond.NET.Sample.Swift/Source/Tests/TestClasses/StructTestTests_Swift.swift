@@ -39,7 +39,6 @@ final class StructTestTests_Swift: XCTestCase {
 			return
 		}
 		
-		// TODO: Currently fails. Structs broken?!
 		XCTAssertEqual(nameNew, nameNewRet)
 	}
 }
