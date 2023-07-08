@@ -40,7 +40,7 @@ It's important to note that while Beyond.NET generates code for you, it doesn't 
 - Create a config file. See [Generator Config](#generator-config) for an example and the supported config values.
 - Run the generator with the path to the config file as the first and only argument (`./beyondnetgen /Path/To/Config.json`).
 - If the generator was successful it will exit with 0 as exit code and not print anything to stdout or stderr.
-- If errors were encountered they'll appear in terminal.
+- If errors were encountered they'll appear in the terminal.
 
 ### Build a native version of the target .NET assembly
 - Let's assume the assembly you're creating native bindings for is called `MyLib` (`MyLib.dll`).
@@ -122,6 +122,8 @@ void Namespace_WriteLine(System_String_t text, System_Exception_t* exception)
 
 When calling the `WriteLine` method from C, you should provide a reference to a `System_Exception_t` object which, after the method call will either be null or contain a value which indicates the method did throw.
 
+The code generator for Swift produces APIs annotated with the throws keyword so you can use Swift's native error handling when calling into .NET.
+
 
 ## Memory Management
 
@@ -137,7 +139,7 @@ The generator creates destructor methods for every exposed .NET type. For instan
 
 So if you, for instance obtain a reference to a System.Guid object by calling the generated binding for `System.Guid.Empty` you must at some point call the destructor, otherwise you're leaking memory.
 
-Structs or other value types and delegates are no exception to this rule. Again, the only exception are primitive and enums. Also, it doesn't matter if you obtain an object by calling its constructor (`*_Create` functions in C) or through other means, you always have to destroy them at some point.
+Structs or other value types and delegates are no exception to this rule. Again, the only exceptions are primitive and enums. Also, it doesn't matter if you obtain an object by calling its constructor (`*_Create` functions in C) or through other means, you always have to destroy them at some point.
 
 When using the generated bindings for Swift, there's no need to deal with any of that. Instead we handle allocation and deallocation transparently and the standard Swift memory management rules apply. That means you can just treat .NET objects like regular Swift objects. That includes .NET delegates which are mapped to Swift closures.
 
@@ -187,6 +189,7 @@ Instead, we need to use a more dynamic approach to support generating bindings f
 
 The only viable way I found was to use reflection and, unfortunately this has many downsides.
 
+**To-do**: Expand on generics...
 
 ## Debugging with LLDB
 
