@@ -140,6 +140,19 @@ internal static unsafe class InteropUtils
 
         return instance;
     }
+
+    internal static void ReplaceInstance(void* handleAddress, object? newInstance)
+    {
+        GCHandle? maybeHandle = GetGCHandle(handleAddress);
+
+        if (!maybeHandle.HasValue) {
+            return;
+        }
+
+        GCHandle handle = maybeHandle.Value;
+        
+        handle.Target = newInstance;
+    }
     #endregion Handle Address/GCHandle <-> Object Conversion
 
     #region Type Conversion
