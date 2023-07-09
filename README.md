@@ -101,6 +101,7 @@ There are several other optional options that control the behavior of the genera
 # Opaque types
 
 Every .NET type that is not a primitive or an enum gets exposed as an "opaque type" in C. That means that a typealias for void* is generated for .NET classes and structs.
+
 By itself, those opaque types are pretty useless. To actually access instance properties, call methods or do anything useful with them, you need to call one of the generated methods and pass the instance as the first (self) parameter.
 
 
