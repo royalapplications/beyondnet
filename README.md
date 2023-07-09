@@ -98,6 +98,12 @@ There are several other optional options that control the behavior of the genera
 - IncludedTypeNames (Array of Strings): Use this to provide a list of types that should be included even if they are not used by the target assembly.
 
 
+# Opaque types
+
+Every .NET type that is not a primitive or an enum gets exposed as an "opaque type" in C. That means that a typealias for void* is generated for .NET classes and structs.
+By itself, those opaque types are pretty useless. To actually access instance properties, call methods or do anything useful with them, you need to call one of the generated methods and pass the instance as the first (self) parameter.
+
+
 # Exception Handling
 
 While .NET has exceptions, C does not. And so, since C is the basis for all other language bindings we have to get creative to support catching exceptions in C.
