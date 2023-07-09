@@ -104,6 +104,8 @@ Every .NET type that is not a primitive or an enum gets exposed as an "opaque ty
 
 By itself, those opaque types are pretty useless. To actually access instance properties, call methods or do anything useful with them, you need to call one of the generated methods and pass the instance as the first (self) parameter.
 
+In the Swift bindings, these opaque types are also used under the hood but not exposed to the consumer. So you can treat them as an implementation detail and use the generated APIs like regular Swift types.
+
 
 # Exception Handling
 
