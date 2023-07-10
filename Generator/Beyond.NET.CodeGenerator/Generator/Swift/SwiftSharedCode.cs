@@ -557,6 +557,81 @@ extension System_Object: Equatable {
     }
 }
 
+extension System_DateTime {
+    public enum Errors: LocalizedError {
+        case dateTimeKindIsUnspecified
+        case dateFromCalendarReturnedNil
+        
+        public var errorDescription: String? {
+            switch self {
+                case .dateTimeKindIsUnspecified:
+                    return "DateTimeKind.Unspecified cannot be safely converted"
+                case .dateFromCalendarReturnedNil:
+                    return "Failed to get date from calendar"
+            }
+        }
+    }
+    
+    private var calendarForDateTimeToSwiftDateConversions: Calendar {
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = .gmt
+        
+        return calendar
+    }
+    
+    private func dateComponents(fromSystemDateTime dateTime: System_DateTime) throws -> DateComponents {
+        let nanoSecsPerTicks: Int64 = 100
+        
+        let ticks = try dateTime.ticks
+        let ticksPerSecond = System.TimeSpan.ticksPerSecond
+        
+        // Compute the sub-second fraction of nanoseconds.
+        let subsecondTicks = ticks % ticksPerSecond
+        let nanoseconds = subsecondTicks * nanoSecsPerTicks
+        
+        let day = try dateTime.day
+        let month = try dateTime.month
+        let year = try dateTime.year
+        let hour = try dateTime.hour
+        let minute = try dateTime.minute
+        let second = try dateTime.second
+        
+        var dateComponents = DateComponents()
+        dateComponents.day = Int(day)
+        dateComponents.month = Int(month)
+        dateComponents.year = Int(year)
+        dateComponents.hour = Int(hour)
+        dateComponents.minute = Int(minute)
+        dateComponents.second = Int(second)
+        dateComponents.nanosecond = Int(nanoseconds)
+        
+        return dateComponents
+    }
+    
+    public func swiftDate() throws -> Date {
+        let dateTimeKind = try self.kind
+        
+        guard dateTimeKind != .unspecified else {
+            throw Errors.dateTimeKindIsUnspecified
+        }
+        
+        guard let universalDateTime = try self.toUniversalTime() else {
+            throw DNSystemError.unexpectedNull
+        }
+        
+        let dateComponents = try dateComponents(fromSystemDateTime: universalDateTime)
+        let calendar = calendarForDateTimeToSwiftDateConversions
+        
+        guard let retDate = calendar.date(from: dateComponents) else {
+            throw Errors.dateFromCalendarReturnedNil
+        }
+        
+        return retDate
+    }
+}
+
+// TODO: Add extension for converting from Swift Date to .NET DateTime
+
 public extension Data {
     /// WARNING: This is not optimized!
     /// Creates a .NET byte array by copying the data from the Swift Data object

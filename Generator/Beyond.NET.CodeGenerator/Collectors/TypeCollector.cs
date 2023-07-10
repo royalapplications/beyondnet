@@ -13,6 +13,7 @@ public class TypeCollector
         typeof(System.Object),
         typeof(System.Type),
         typeof(System.String),
+        typeof(System.DateTime),
         typeof(System.Runtime.InteropServices.Marshal),
         typeof(System.Exception),
         typeof(System.NullReferenceException),
