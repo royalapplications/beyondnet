@@ -208,107 +208,94 @@ public class SwiftCodeGenerator: ICodeGenerator
         
         string name = namespaceNode.Name;
         
-        if (namespaceNode.IsDeepestNode) {
-            string parentNames = namespaceNode.CompoundParentNames;
-            string fullNamespaceName = namespaceNode.FullName;
-            var typesInNamespace = result.GetTypesInNamespace(fullNamespaceName);
+        string parentNames = namespaceNode.CompoundParentNames;
+        string fullNamespaceName = namespaceNode.FullName;
+        var typesInNamespace = result.GetTypesInNamespace(fullNamespaceName);
 
-            Dictionary<string, string> typeAliases = new();
+        Dictionary<string, string> typeAliases = new();
 
-            foreach (var type in typesInNamespace) {
-                Type nonByRefType = type.GetNonByRefType();
-                
-                if (nonByRefType.IsGenericType || 
-                    nonByRefType.IsConstructedGenericType ||
-                    nonByRefType.IsGenericTypeDefinition ||
-                    nonByRefType.IsGenericParameter) {
-                    continue;
-                }
+        foreach (var type in typesInNamespace) {
+            Type nonByRefType = type.GetNonByRefType();
 
-                if (nonByRefType.HasElementType) {
-                    Type? elementType = nonByRefType.GetElementType();
+            if (nonByRefType.IsPrimitive) {
+                continue;
+            }
+            
+            if (nonByRefType.IsGenericType || 
+                nonByRefType.IsConstructedGenericType ||
+                nonByRefType.IsGenericTypeDefinition ||
+                nonByRefType.IsGenericParameter) {
+                continue;
+            }
 
-                    if (elementType is not null) {
-                        if (elementType.IsGenericType || 
-                            elementType.IsConstructedGenericType ||
-                            elementType.IsGenericTypeDefinition ||
-                            elementType.IsGenericParameter) {
-                            continue;
-                        }
+            if (nonByRefType.HasElementType) {
+                Type? elementType = nonByRefType.GetElementType();
+
+                if (elementType is not null) {
+                    if (elementType.IsGenericType || 
+                        elementType.IsConstructedGenericType ||
+                        elementType.IsGenericTypeDefinition ||
+                        elementType.IsGenericParameter) {
+                        continue;
                     }
                 }
-                
-                string swiftTypeName = nonByRefType.GetTypeDescriptor(typeDescriptorRegistry).GetTypeName(
-                    CodeLanguage.Swift,
-                    false
-                );
-
-                string swiftNamespacePrefix = fullNamespaceName.Replace('.', '_') + "_";
-                string swiftTypeNameWithoutNamespace = swiftTypeName.Replace(swiftNamespacePrefix, string.Empty);
-
-                typeAliases[swiftTypeName] = swiftTypeNameWithoutNamespace;
             }
-
-            StringBuilder sbTypeAliases = new();
-
-            foreach (var kvp in typeAliases) {
-                string swiftTypeName = kvp.Key;
-                string swiftTypeNameWithoutNamespace = kvp.Value;
-                
-                string typeAlias = $"typealias {swiftTypeNameWithoutNamespace} = {swiftTypeName}";
-                
-                sbTypeAliases.AppendLine(typeAlias);
-            }
-
-            string typeAliasesCode = sbTypeAliases.ToString();
             
-            string nodeCode;
+            string swiftTypeName = nonByRefType.GetTypeDescriptor(typeDescriptorRegistry).GetTypeName(
+                CodeLanguage.Swift,
+                false
+            );
+
+            string swiftNamespacePrefix = fullNamespaceName.Replace('.', '_') + "_";
             
-            if (string.IsNullOrEmpty(parentNames)) {
-                nodeCode = $@"
+            string swiftTypeNameWithoutNamespace = swiftTypeName
+                .Replace(swiftNamespacePrefix, string.Empty)
+                .EscapedSwiftTypeAliasTypeName();
+
+            typeAliases[swiftTypeName] = swiftTypeNameWithoutNamespace;
+        }
+
+        StringBuilder sbTypeAliases = new();
+
+        foreach (var kvp in typeAliases) {
+            string swiftTypeName = kvp.Key;
+            string swiftTypeNameWithoutNamespace = kvp.Value;
+            
+            string typeAlias = $"typealias {swiftTypeNameWithoutNamespace} = {swiftTypeName}";
+            
+            sbTypeAliases.AppendLine(typeAlias);
+        }
+
+        string typeAliasesCode = sbTypeAliases.ToString();
+        
+        string nodeCode;
+            
+        if (string.IsNullOrEmpty(parentNames)) {
+            nodeCode = $@"
 struct {name} {{
 {typeAliasesCode.IndentAllLines(1)}
 }}
 ";
-            } else {
-                nodeCode = $@"
+        } else {
+            nodeCode = $@"
 extension {parentNames} {{
     struct {name} {{
 {typeAliasesCode.IndentAllLines(2)}
     }}
 }}
 ";
-            }
+        }
 
-            sb.AppendLine(nodeCode);
-        } else {
-            string nodeCode;
-            
-            if (namespaceNode.HasParent) {
-                string parentNames = namespaceNode.CompoundParentNames;
+        sb.AppendLine(nodeCode);
+        
+        foreach (var subNode in namespaceNode.Children) {
+            string subNodeCode = GetNamespaceCode(
+                subNode,
+                result,
+                typeDescriptorRegistry
+            );
                 
-                nodeCode = $@"
-extension {parentNames} {{
-    struct {name} {{ }}
-}}
-";
-            } else {
-                nodeCode = $@"
-struct {name} {{ }}
-";              
-            }
-
-            sb.AppendLine(nodeCode);
-
-            foreach (var subNode in namespaceNode.Children) {
-                string subNodeCode = GetNamespaceCode(
-                    subNode,
-                    result,
-                    typeDescriptorRegistry
-                );
-                
-                sb.AppendLine(subNodeCode);
-            }   
+            sb.AppendLine(subNodeCode);
         }
 
         string allCode = sb.ToString();

@@ -5,7 +5,18 @@ public class NamespaceNode
     public bool IsTreeRoot { get; }
     public string Name { get; }
 
-    public string FullName => $"{CompoundParentNames}.{Name}";
+    public string FullName
+    {
+        get {
+            string compoundParentNames = CompoundParentNames;
+
+            if (!string.IsNullOrEmpty(compoundParentNames)) {
+                return $"{CompoundParentNames}.{Name}";
+            } else {
+                return Name;
+            }
+        }
+    }
 
     private List<NamespaceNode> m_children = new();
 

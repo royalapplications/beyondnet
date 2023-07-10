@@ -1,5 +1,3 @@
-using System.Text;
-
 namespace Beyond.NET.CodeGenerator.Extensions;
 
 internal static class StringExtensions
@@ -74,6 +72,10 @@ internal static class StringExtensions
         "willSet",
         "unowned"
     };
+
+    private static readonly string[] SWIFT_RESERVED_TYPE_NAMES = new[] {
+        "Type"
+    };
         
     internal static string IndentAllLines(this string text, int indentCount)
     {
@@ -138,9 +140,25 @@ internal static class StringExtensions
         return SWIFT_KEYWORDS.Contains(input);
     }
 
+    internal static bool IsReservedSwiftTypeName(this string input)
+    {
+        return SWIFT_RESERVED_TYPE_NAMES.Contains(input);
+    }
+
     internal static string EscapedSwiftName(this string input)
     {
         if (!input.IsSwiftKeyword()) {
+            return input;
+        }
+        
+        string output = $"`{input}`";
+
+        return output;
+    }
+    
+    internal static string EscapedSwiftTypeAliasTypeName(this string input)
+    {
+        if (!input.IsReservedSwiftTypeName()) {
             return input;
         }
         
