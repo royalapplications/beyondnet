@@ -201,6 +201,13 @@ The only viable way I found was to use reflection and, unfortunately this has ma
 **TODO**: Expand on generics support.
 
 
+## Stable ABI/Breaking changes
+
+We're far from the point where we can ensure that the generated code will be binary compatible from one version of the generator to the next. At least during the alpha phase, things will certainly break when upgrading from one version to the next. At a later stage of development we might introduce ABI compatibility guarantees.
+
+Right now, expect things to break!
+
+
 ## Debugging with LLDB
 
 While debugging code with LLDB you might run into situations where the .NET code raises signals which would cause the debugger to halt program execution although it's perfectly fine to continue.
@@ -210,3 +217,13 @@ To handle that, you can add a symbolic breakpoint in Xcode and configure it like
 * Action: Debugger Command: `process handle SIGUSR1 -n true -p true -s false`
 * Enable: `Automatically continue after evaluating actions`
 Also see this [StackOverflow post](https://stackoverflow.com/questions/10431579/permanently-configuring-lldb-in-xcode-4-3-2-not-to-stop-on-signals).
+
+
+## License
+
+The project is licensed under the [MIT license](LICENSE).
+
+
+## Contributions
+
+Needless to say, any kind of contribution to this project is very welcome!
