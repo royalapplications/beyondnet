@@ -14,13 +14,13 @@ final class SystemUriTests_Swift: XCTestCase {
 	}
 	
 	func testUriCreationOptions() {
-		guard let creationOptions = try? System_UriCreationOptions() else {
+        guard let creationOptions = try? System.UriCreationOptions() else {
 			XCTFail("System.UriCreationOptions ctor should not throw and return an instance")
 			
 			return
 		}
 		
-		let type = System_UriCreationOptions.typeOf
+        let type = System.UriCreationOptions.typeOf
 		
 		guard let typeRet = try? creationOptions.getType() else {
 			XCTFail("System.UriCreationOptions.GetType should not throw and return an instance")
@@ -54,12 +54,12 @@ final class SystemUriTests_Swift: XCTestCase {
 	func testTryCreateUriWithInParameter() {
 		let urlString = "https://royalapps.com/"
 		
-		var creationOptions = try? System_UriCreationOptions()
+        var creationOptions = try? System.UriCreationOptions()
 		
 		var uriRet: System_Uri?
 		
 		do {
-			let success = try System_Uri.tryCreate(urlString.dotNETString(),
+            let success = try System.Uri.tryCreate(urlString.dotNETString(),
 												   &creationOptions,
 												   &uriRet)
 			

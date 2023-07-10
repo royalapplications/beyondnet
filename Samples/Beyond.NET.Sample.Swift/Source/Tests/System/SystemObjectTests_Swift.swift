@@ -13,9 +13,9 @@ final class SystemObjectTests_Swift: XCTestCase {
     }
     
     func testSystemObject() {
-        let systemObjectType = System_Object.typeOf
+        let systemObjectType = System.Object.typeOf
         
-        guard let object1 = try? System_Object() else {
+        guard let object1 = try? System.Object() else {
             XCTFail("System.Object ctor should not throw and return an instance")
             
             return
@@ -33,7 +33,7 @@ final class SystemObjectTests_Swift: XCTestCase {
             return
         }
         
-        guard let object2 = try? System_Object() else {
+        guard let object2 = try? System.Object() else {
             XCTFail("System.Object ctor should not throw and return an instance")
             
             return
@@ -57,7 +57,7 @@ final class SystemObjectTests_Swift: XCTestCase {
             let numberOfObjects = 10_000
 
             for _ in 0..<numberOfObjects {
-                guard let _ = try? System_Object() else {
+                guard let _ = try? System.Object() else {
                     XCTFail("System.Object ctor should not throw and return an instance")
 
                     return
@@ -65,7 +65,7 @@ final class SystemObjectTests_Swift: XCTestCase {
             }
             
             do {
-                try System_GC.collect()
+                try System.GC.collect()
             } catch {
                 XCTFail("System.GC.Collect should not throw")
                 
@@ -80,7 +80,7 @@ final class SystemObjectTests_Swift: XCTestCase {
 
             for _ in 0..<numberOfObjects {
                 {
-                    guard let _ = try? System_Object() else {
+                    guard let _ = try? System.Object() else {
                         XCTFail("System.Object ctor should not throw and return an instance")
                         
                         return
@@ -88,7 +88,7 @@ final class SystemObjectTests_Swift: XCTestCase {
                 }()
                 
                 do {
-                    try System_GC.collect()
+                    try System.GC.collect()
                 } catch {
                     XCTFail("System.GC.Collect should not throw")
                     
@@ -96,7 +96,7 @@ final class SystemObjectTests_Swift: XCTestCase {
                 }
                 
                 do {
-                    try System_GC.waitForPendingFinalizers()
+                    try System.GC.waitForPendingFinalizers()
                 } catch {
                     XCTFail("System.GC.WaitForPendingFinalizers should not throw")
                     

@@ -98,8 +98,8 @@ final class PrimitivesBoxingTests_Swift: XCTestCase {
 private extension PrimitivesBoxingTests_Swift {
     func boxAndUnbox<T>(value: T,
                         expectedTypeName: String,
-                        boxFunc: (_ input: T) -> System_Object?,
-                        unboxFunc: (_ input: System_Object) throws -> T?) where T: Equatable {
+                        boxFunc: (_ input: T) -> System.Object?,
+                        unboxFunc: (_ input: System.Object) throws -> T?) where T: Equatable {
         let valueTypeName = expectedTypeName.dotNETString()
         
         guard let valueType = try? System_Type.getType(valueTypeName) else {
@@ -140,7 +140,7 @@ private extension PrimitivesBoxingTests_Swift {
         
         XCTAssertEqual(value, valueRet)
         
-        guard let systemObject = try? System_Object() else {
+        guard let systemObject = try? System.Object() else {
             XCTFail("System.Object ctor should return an instance")
             
             return
@@ -156,7 +156,7 @@ private extension PrimitivesBoxingTests_Swift {
         
         let arrayLength: Int32 = 1
         
-        guard let array = try? System_Array.createInstance(valueType,
+        guard let array = try? System.Array.createInstance(valueType,
                                                            arrayLength) else {
             XCTFail("System.Array.CreateInstance should not throw and return an instance")
             

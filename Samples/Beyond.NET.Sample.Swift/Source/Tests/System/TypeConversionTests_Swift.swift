@@ -13,20 +13,20 @@ final class TypeConversionTests_Swift: XCTestCase {
     }
     
     func testIs() {
-        let systemObjectType = System_Object.self
+        let systemObjectType = System.Object.self
         let systemObjectTypeDN = systemObjectType.typeOf
         
-        let systemStringType = System_String.self
+        let systemStringType = System.String.self
         let systemStringTypeDN = systemStringType.typeOf
         
-        let systemExceptionType = System_Exception.self
+        let systemExceptionType = System.Exception.self
         let systemExceptionTypeDN = systemExceptionType.typeOf
         
-        let systemGuidType = System_Guid.self
+        let systemGuidType = System.Guid.self
         let systemGuidTypeDN = systemGuidType.typeOf
         
         // MARK: - System.Object
-        guard let systemObject = try? System_Object() else {
+        guard let systemObject = try? System.Object() else {
             XCTFail("System.Object ctor should not throw and return an instance")
             
             return
@@ -45,7 +45,7 @@ final class TypeConversionTests_Swift: XCTestCase {
         XCTAssertFalse(systemObject.is(systemGuidType))
         
         // MARK: - System.String
-        guard let systemString = System_String.empty else {
+        guard let systemString = System.String.empty else {
             XCTFail("System.String.Empty getter should return an instance")
             
             return
@@ -64,7 +64,7 @@ final class TypeConversionTests_Swift: XCTestCase {
         XCTAssertFalse(systemString.is(systemGuidType))
         
         // MARK: - System.Exception
-        guard let systemException = try? System_Exception() else {
+        guard let systemException = try? System.Exception() else {
             XCTFail("System.Exception ctor should not throw and return an instance")
             
             return
@@ -83,7 +83,7 @@ final class TypeConversionTests_Swift: XCTestCase {
         XCTAssertFalse(systemException.is(systemGuidType))
         
         // MARK: - System.Guid
-        guard let systemGuid = try? System_Guid.newGuid() else {
+        guard let systemGuid = try? System.Guid.newGuid() else {
             XCTFail("System.Guid.NewGuid should not throw and return an instance")
             
             return
@@ -103,76 +103,76 @@ final class TypeConversionTests_Swift: XCTestCase {
     }
     
     func testCastAs() {
-        guard let systemObject = try? System_Object() else {
+        guard let systemObject = try? System.Object() else {
             XCTFail("System.Object ctor should not throw and return an instance")
 
             return
         }
 
-        guard let systemGuid = try? System_Guid.newGuid() else {
+        guard let systemGuid = try? System.Guid.newGuid() else {
             XCTFail("System.Guid.NewGuid should not throw and return an instance")
 
             return
         }
 
-        guard let systemException = try? System_Exception() else {
+        guard let systemException = try? System.Exception() else {
             XCTFail("System.Exception ctor should not throw and return an instance")
 
             return
         }
 
-        guard let systemNullReferenceException = try? System_NullReferenceException() else {
+        guard let systemNullReferenceException = try? System.NullReferenceException() else {
             XCTFail("System.NullReferenceException ctor should not throw and return an instance")
 
             return
         }
 
-        let systemObjectCastToSystemObject: System_Object? = systemObject.castAs()
+        let systemObjectCastToSystemObject: System.Object? = systemObject.castAs()
         XCTAssertNotNil(systemObjectCastToSystemObject)
 
-        let systemObjectCastToSystemGuid: System_Guid? = systemObject.castAs()
+        let systemObjectCastToSystemGuid: System.Guid? = systemObject.castAs()
         XCTAssertNil(systemObjectCastToSystemGuid)
 
-        let systemGuidCastToSystemGuid: System_Guid? = systemGuid.castAs()
+        let systemGuidCastToSystemGuid: System.Guid? = systemGuid.castAs()
         XCTAssertNotNil(systemGuidCastToSystemGuid)
 
-        let systemGuidCastToSystemObject: System_Object? = systemGuid.castAs()
+        let systemGuidCastToSystemObject: System.Object? = systemGuid.castAs()
         XCTAssertNotNil(systemGuidCastToSystemObject)
 
-        let systemExceptionCastToSystemNullReferenceException = systemException.castAs(System_NullReferenceException.self)
+        let systemExceptionCastToSystemNullReferenceException = systemException.castAs(System.NullReferenceException.self)
         XCTAssertNil(systemExceptionCastToSystemNullReferenceException)
 
-        let systemNullReferenceExceptionCastToSystemException = systemNullReferenceException.castAs(System_Exception.self)
+        let systemNullReferenceExceptionCastToSystemException = systemNullReferenceException.castAs(System.Exception.self)
         XCTAssertNotNil(systemNullReferenceExceptionCastToSystemException)
     }
     
     func testCastTo() {
-        guard let systemObject = try? System_Object() else {
+        guard let systemObject = try? System.Object() else {
             XCTFail("System.Object ctor should not throw and return an instance")
 
             return
         }
 
-        guard let systemGuid = try? System_Guid.newGuid() else {
+        guard let systemGuid = try? System.Guid.newGuid() else {
             XCTFail("System.Guid.NewGuid should not throw and return an instance")
 
             return
         }
 
-        guard let systemException = try? System_Exception() else {
+        guard let systemException = try? System.Exception() else {
             XCTFail("System.Exception ctor should not throw and return an instance")
 
             return
         }
 
-        guard let systemNullReferenceException = try? System_NullReferenceException() else {
+        guard let systemNullReferenceException = try? System.NullReferenceException() else {
             XCTFail("System.NullReferenceException ctor should not throw and return an instance")
 
             return
         }
 
         do {
-            let systemObjectCastToSystemObject = try systemObject.castTo(System_Object.self)
+            let systemObjectCastToSystemObject = try systemObject.castTo(System.Object.self)
             XCTAssertNotNil(systemObjectCastToSystemObject)
         } catch {
             XCTFail("Should not throw")
@@ -180,14 +180,14 @@ final class TypeConversionTests_Swift: XCTestCase {
         }
 
         do {
-            let _: System_Guid = try systemObject.castTo()
+            let _: System.Guid = try systemObject.castTo()
 
             XCTFail("Should throw")
             return
         } catch { }
 
         do {
-            let systemGuidCastToSystemGuid = try systemGuid.castTo(System_Guid.self)
+            let systemGuidCastToSystemGuid = try systemGuid.castTo(System.Guid.self)
             XCTAssertNotNil(systemGuidCastToSystemGuid)
         } catch {
             XCTFail("Should not throw")
@@ -195,7 +195,7 @@ final class TypeConversionTests_Swift: XCTestCase {
         }
 
         do {
-            let systemGuidCastToSystemObject = try systemGuid.castTo(System_Object.self)
+            let systemGuidCastToSystemObject = try systemGuid.castTo(System.Object.self)
             XCTAssertNotNil(systemGuidCastToSystemObject)
         } catch {
             XCTFail("Should not throw")
@@ -203,14 +203,14 @@ final class TypeConversionTests_Swift: XCTestCase {
         }
 
         do {
-            let _: System_NullReferenceException = try systemException.castTo()
+            let _: System.NullReferenceException = try systemException.castTo()
 
             XCTFail("Should throw")
             return
         } catch { }
 
         do {
-            let systemNullReferenceExceptionCastToSystemException = try systemNullReferenceException.castTo(System_Exception.self)
+            let systemNullReferenceExceptionCastToSystemException = try systemNullReferenceException.castTo(System.Exception.self)
             XCTAssertNotNil(systemNullReferenceExceptionCastToSystemException)
         } catch {
             XCTFail("Should not throw")
