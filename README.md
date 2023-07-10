@@ -17,7 +17,7 @@ The generator can target any compiled .NET assembly and generate native code bin
 From there, bindings for other languages can be generated. Which language bindings are generated can be controlled by various settings but the C bindings form the basis for all other languages.
 So if you're, for instance targeting Swift the call tree looks like this: Swift -> C -> .NET APIs marked with the `UnmanagedCallersOnly` attribute -> Original .NET API.
 
-Since new C# code is generated as part of the language bindings, it's required to either include the single generated C# source code file in the existing .NET project you're targeting or create a new project soley for the purpose of compiling a native version of the assembly. We recommend the latter as you will need to compile your project using NativeAOT to actually take advantage of the generated bindings and that way, the original assembly stays unmodified.
+Since new C# code is generated as part of the language bindings, it's required to either include the single generated C# source code file in the existing .NET project you're targeting or create a new project soley for the purpose of compiling a native version of the assembly. We recommend the latter as you currently need to compile your project using NativeAOT to actually take advantage of the generated bindings and that way, the original assembly stays unmodified.
 
 It's important to note that while Beyond.NET generates code for you, it doesn't compile it. You'll have to do that yourself.
 
@@ -32,7 +32,7 @@ It's important to note that while Beyond.NET generates code for you, it doesn't 
 ### Generator Executable
 - Either clone the Beyond.NET repository or download one of the pre-built generator executables for your platform.
 - If you do not have a pre-compiled executable of the generator, compile it by either running `dotnet publish` within its directory or use one of our provided publish scripts like `publish_macos_universal` for compiling a universal macOS binary.
-- Open a terminal and execute the generator (`./beyondnetgen`).
+- Open a terminal, switch to the directory containing the built executable and execute the generator (`./beyondnetgen`).
 - Since you've provided no arguments, the generator should show its usage screen.
 
 ### Configuration
@@ -56,14 +56,14 @@ It's important to note that while Beyond.NET generates code for you, it doesn't 
 - Also, the install name of dylibs created by .NET's NativeAOT compiler needs to adjusted from `/usr/lib/MyLibNative.dylib` to `@rpath/MyLibNative.dylib`.
 - There's a sample publish script which does all of this in the repository called `publish_macos_universal`. You can use this as the basis for your build. Just make sure to adjust the `OUTPUT_PRODUCT_NAME` variable to match the assembly name of your .NET library (`MyLib`).
 - Run the publish script (ie. `./publish_macos_universal`).
-- On macOS this will produce a `MyNativeLib.dylib` in the bin directory under `bin/Release/net8.0/osx-universal/publish`.
+- On macOS this will produce a universal `MyNativeLib.dylib` in the bin directory under `bin/Release/net8.0/osx-universal/publish`.
 
 ### Use generated bindings from Swift
 - Create a macOS App Xcode project.
 - Add the generated C bindings header file (ie. `Output_C.h`) and the generated Swift bindings file (ie. `Output_Swift.swift`) to the project.
 - Create an Objective-C bridging header.
-  - You can either just add a temporary ObjC class (you can delete it later) to trigger the creation of the bridging header or create an empty header file and adjust the "Objective-C Bridging Header" build setting of the Xcode project to point to that header file.
-- In the briding header import the generated C bindings header file (ie. `#import "Output_C.h"`).
+  - You can either just add a temporary Objective-C class (you can delete it later) to trigger the creation of the bridging header or create an empty header file and adjust the "Objective-C Bridging Header" build setting of the Xcode project to point to that header file.
+- In the briding header, import the generated C bindings header file (ie. `#import "Output_C.h"`).
 - You're now ready to call any of the APIs that bindings were generated for.
 - Please note that since Swift does not have support for namespaces, all generated types will have their namespace prefixed. `System.Guid.NewGuid` for instance gets generated as `System_Guid.newGuid` in Swift and `System_Guid_NewGuid` in C.
 
@@ -72,7 +72,7 @@ It's important to note that while Beyond.NET generates code for you, it doesn't 
 
 The generator currently uses a configuration file where all of its options are specified.
 
-**Minimal example:**
+**Minimal Example:**
 
 ```
 {
@@ -98,16 +98,16 @@ There are several other optional options that control the behavior of the genera
 - IncludedTypeNames (Array of Strings): Use this to provide a list of types that should be included even if they are not used by the target assembly.
 
 
-# Opaque types
+## Opaque types
 
-Every .NET type that is not a primitive or an enum gets exposed as an "opaque type" in C. That means that a typealias for void* is generated for .NET classes and structs.
+Every .NET type that is not a primitive or an enum gets exposed as an "opaque type" in C. That means that a typealias for `void*` is generated for .NET classes and structs.
 
-By itself, those opaque types are pretty useless. To actually access instance properties, call methods or do anything useful with them, you need to call one of the generated methods and pass the instance as the first (self) parameter.
+By itself, those opaque types are pretty useless. To actually access instance properties, call methods or do anything useful with them, you need to call one of the generated methods and pass the instance as the first (`self`) parameter.
 
 In the Swift bindings, these opaque types are also used under the hood but not exposed to the consumer. So you can treat them as an implementation detail and use the generated APIs like regular Swift types.
 
 
-# Exception Handling
+## Exception Handling
 
 While .NET has exceptions, C does not. And so, since C is the basis for all other language bindings we have to get creative to support catching exceptions in C.
 
@@ -131,7 +131,7 @@ void Namespace_WriteLine(System_String_t text, System_Exception_t* exception)
 
 When calling the `WriteLine` method from C, you should provide a reference to a `System_Exception_t` object which, after the method call will either be null or contain a value which indicates the method did throw.
 
-The code generator for Swift produces APIs annotated with the throws keyword so you can use Swift's native error handling when calling into .NET.
+The code generator for Swift produces APIs annotated with the `throws` keyword so you can use Swift's native error handling when calling into .NET.
 
 
 ## Memory Management
@@ -146,7 +146,7 @@ The only exception to this rule are primitive types like integers, booleans, etc
 
 The generator creates destructor methods for every exposed .NET type. For instance, the signature of the destructor for the `System.Guid` type looks like this: `void System_Guid_Destroy(System_Guid_t self)`.
 
-So if you, for instance obtain a reference to a System.Guid object by calling the generated binding for `System.Guid.Empty` you must at some point call the destructor, otherwise you're leaking memory.
+So if you, for instance obtain a reference to a `System.Guid` object by calling the generated binding for `System.Guid.Empty` you must at some point call the destructor, otherwise you're leaking memory.
 
 Structs or other value types and delegates are no exception to this rule. Again, the only exceptions are primitive and enums. Also, it doesn't matter if you obtain an object by calling its constructor (`*_Create` functions in C) or through other means, you always have to destroy them at some point.
 
@@ -198,7 +198,8 @@ Instead, we need to use a more dynamic approach to support generating bindings f
 
 The only viable way I found was to use reflection and, unfortunately this has many downsides.
 
-**To-do**: Expand on generics...
+**TODO**: Expand on generics support.
+
 
 ## Debugging with LLDB
 
