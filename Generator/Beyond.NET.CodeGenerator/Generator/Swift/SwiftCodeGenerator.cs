@@ -261,7 +261,7 @@ public class SwiftCodeGenerator: ICodeGenerator
             string swiftTypeName = kvp.Key;
             string swiftTypeNameWithoutNamespace = kvp.Value;
             
-            string typeAlias = $"typealias {swiftTypeNameWithoutNamespace} = {swiftTypeName}";
+            string typeAlias = $"public typealias {swiftTypeNameWithoutNamespace} = {swiftTypeName}";
             
             sbTypeAliases.AppendLine(typeAlias);
         }
@@ -272,13 +272,13 @@ public class SwiftCodeGenerator: ICodeGenerator
             
         if (string.IsNullOrEmpty(parentNames)) {
             nodeCode = $@"
-struct {name} {{
+public struct {name} {{
 {typeAliasesCode.IndentAllLines(1)}
 }}
 ";
         } else {
             nodeCode = $@"
-extension {parentNames} {{
+public extension {parentNames} {{
     struct {name} {{
 {typeAliasesCode.IndentAllLines(2)}
     }}
