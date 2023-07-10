@@ -9,14 +9,11 @@ public class State
     public Settings? Settings { get; init; }
     
     private List<GeneratedMember> m_generatedMembers = new();
-
-    public IEnumerable<GeneratedMember> GeneratedMembers
-    {
-        get {
-            return m_generatedMembers;
-        }
-    }
+    public IEnumerable<GeneratedMember> GeneratedMembers => m_generatedMembers;
     
+    private List<Type> m_skippedTypes = new();
+    public IEnumerable<Type> SkippedTypes => m_skippedTypes;
+
     public Result? CSharpUnmanagedResult { get; }
     public Result? CResult { get; }
 
@@ -70,6 +67,11 @@ public class State
         generatedMember.SetGeneratedName(generatedName, generatedNameLanguage);
         
         return generatedMember;
+    }
+
+    public void AddSkippedType(Type type)
+    {
+        m_skippedTypes.Add(type);
     }
 
     public string UniqueGeneratedName(string proposedName, CodeLanguage language)

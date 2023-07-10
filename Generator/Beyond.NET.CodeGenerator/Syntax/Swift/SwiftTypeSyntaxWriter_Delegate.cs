@@ -154,6 +154,8 @@ public partial class SwiftTypeSyntaxWriter
                 typeDescriptorRegistry
             );
         } catch (Exception ex) {
+            state.AddSkippedType(type);
+            
             return ex.Message;
         }
         

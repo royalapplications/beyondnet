@@ -5,6 +5,7 @@ using Beyond.NET.CodeGenerator.Extensions;
 using Beyond.NET.CodeGenerator.SourceCode;
 using Beyond.NET.CodeGenerator.Syntax;
 using Beyond.NET.CodeGenerator.Syntax.Swift;
+using Beyond.NET.CodeGenerator.Types;
 
 namespace Beyond.NET.CodeGenerator.Generator.Swift;
 
@@ -39,6 +40,7 @@ public class SwiftCodeGenerator: ICodeGenerator
         SourceCodeSection unsupportedTypesSection = writer.AddSection("Unsupported Types");
         SourceCodeSection apisSection = writer.AddSection("APIs");
         SourceCodeSection extensionsSection = writer.AddSection("API Extensions");
+        SourceCodeSection namespacesSection = writer.AddSection("Namespaces");
         SourceCodeSection footerSection = writer.AddSection("Footer");
         
         string header = GetHeaderCode();
@@ -87,11 +89,15 @@ public class SwiftCodeGenerator: ICodeGenerator
             
             apisSection.Code.AppendLine(typeCode);
 
+            if (state.SkippedTypes.Contains(type)) {
+                continue;
+            }
+            
             result.AddGeneratedType(
                 type,
                 state.GeneratedMembers
-            );
-            
+            );                
+
             /* if (isInterface) {
                 syntaxWriterConfiguration.OnlyWriteSignatureForProtocol = false;
                 
@@ -147,10 +153,167 @@ public class SwiftCodeGenerator: ICodeGenerator
             extensionsSection.Code.AppendLine(code);
         }
 
+        if (Settings.GenerateSwiftNestedTypeAliases) {
+            string namespacesCode = GetNamespacesCode(
+                result,
+                TypeDescriptorRegistry.Shared
+            );
+            
+            namespacesSection.Code.AppendLine(namespacesCode);
+        } else {
+            namespacesSection.Code.AppendLine("// Omitted due to settings");
+        }
+        
         string footerCode = GetFooterCode();
         footerSection.Code.AppendLine(footerCode);
 
         return result;
+    }
+
+    private string GetNamespacesCode(
+        Result result,
+        TypeDescriptorRegistry typeDescriptorRegistry
+    )
+    {
+        StringBuilder sb = new();
+        
+        var namespaceTree = result.GetNamespaceTreeOfGeneratedTypes();
+        
+        foreach (var node in namespaceTree.Children) {
+            string nodeCode = GetNamespaceCode(
+                node,
+                result,
+                typeDescriptorRegistry
+            );
+
+            sb.AppendLine(nodeCode);
+        }
+
+        string allCode = sb.ToString();
+
+        return allCode;
+    }
+
+    private string GetNamespaceCode(
+        NamespaceNode namespaceNode,
+        Result result,
+        TypeDescriptorRegistry typeDescriptorRegistry
+    )
+    {
+        if (namespaceNode.IsTreeRoot) { // Should never happen
+            return string.Empty;
+        }
+
+        StringBuilder sb = new();
+        
+        string name = namespaceNode.Name;
+        
+        if (namespaceNode.IsDeepestNode) {
+            string parentNames = namespaceNode.CompoundParentNames;
+            string fullNamespaceName = namespaceNode.FullName;
+            var typesInNamespace = result.GetTypesInNamespace(fullNamespaceName);
+
+            Dictionary<string, string> typeAliases = new();
+
+            foreach (var type in typesInNamespace) {
+                Type nonByRefType = type.GetNonByRefType();
+                
+                if (nonByRefType.IsGenericType || 
+                    nonByRefType.IsConstructedGenericType ||
+                    nonByRefType.IsGenericTypeDefinition ||
+                    nonByRefType.IsGenericParameter) {
+                    continue;
+                }
+
+                if (nonByRefType.HasElementType) {
+                    Type? elementType = nonByRefType.GetElementType();
+
+                    if (elementType is not null) {
+                        if (elementType.IsGenericType || 
+                            elementType.IsConstructedGenericType ||
+                            elementType.IsGenericTypeDefinition ||
+                            elementType.IsGenericParameter) {
+                            continue;
+                        }
+                    }
+                }
+                
+                string swiftTypeName = nonByRefType.GetTypeDescriptor(typeDescriptorRegistry).GetTypeName(
+                    CodeLanguage.Swift,
+                    false
+                );
+
+                string swiftNamespacePrefix = fullNamespaceName.Replace('.', '_') + "_";
+                string swiftTypeNameWithoutNamespace = swiftTypeName.Replace(swiftNamespacePrefix, string.Empty);
+
+                typeAliases[swiftTypeName] = swiftTypeNameWithoutNamespace;
+            }
+
+            StringBuilder sbTypeAliases = new();
+
+            foreach (var kvp in typeAliases) {
+                string swiftTypeName = kvp.Key;
+                string swiftTypeNameWithoutNamespace = kvp.Value;
+                
+                string typeAlias = $"typealias {swiftTypeNameWithoutNamespace} = {swiftTypeName}";
+                
+                sbTypeAliases.AppendLine(typeAlias);
+            }
+
+            string typeAliasesCode = sbTypeAliases.ToString();
+            
+            string nodeCode;
+            
+            if (string.IsNullOrEmpty(parentNames)) {
+                nodeCode = $@"
+struct {name} {{
+{typeAliasesCode.IndentAllLines(1)}
+}}
+";
+            } else {
+                nodeCode = $@"
+extension {parentNames} {{
+    struct {name} {{
+{typeAliasesCode.IndentAllLines(2)}
+    }}
+}}
+";
+            }
+
+            sb.AppendLine(nodeCode);
+        } else {
+            string nodeCode;
+            
+            if (namespaceNode.HasParent) {
+                string parentNames = namespaceNode.CompoundParentNames;
+                
+                nodeCode = $@"
+extension {parentNames} {{
+    struct {name} {{ }}
+}}
+";
+            } else {
+                nodeCode = $@"
+struct {name} {{ }}
+";              
+            }
+
+            sb.AppendLine(nodeCode);
+
+            foreach (var subNode in namespaceNode.Children) {
+                string subNodeCode = GetNamespaceCode(
+                    subNode,
+                    result,
+                    typeDescriptorRegistry
+                );
+                
+                sb.AppendLine(subNodeCode);
+            }   
+        }
+
+        string allCode = sb.ToString();
+
+        return allCode;
     }
 
     private string GetHeaderCode()

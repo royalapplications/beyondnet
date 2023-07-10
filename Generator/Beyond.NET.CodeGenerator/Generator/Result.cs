@@ -1,4 +1,5 @@
 using System.Reflection;
+
 using Beyond.NET.CodeGenerator.Syntax;
 
 namespace Beyond.NET.CodeGenerator.Generator;
@@ -100,5 +101,21 @@ public class Result
         }
 
         return null;
+    }
+
+    public IEnumerable<Type> GetTypesInNamespace(string @namespace)
+    {
+        IEnumerable<Type> typesInNamespace = GeneratedTypes.Keys.Where(t => t.Namespace == @namespace);
+
+        return typesInNamespace;
+    }
+
+    public NamespaceNode GetNamespaceTreeOfGeneratedTypes()
+    {
+        var types = GeneratedTypes.Keys;
+
+        var tree = NamespaceNode.FromTypes(types);
+
+        return tree;
     }
 }
