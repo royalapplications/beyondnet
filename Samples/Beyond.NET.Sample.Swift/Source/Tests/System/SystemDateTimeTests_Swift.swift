@@ -230,4 +230,133 @@ final class SystemDateTimeTests_Swift: XCTestCase {
     }
     
     // TODO: Add extension and tests for converting from Swift Date to .NET DateTime
+    
+    func testSwiftDateToSystemDateTime() {
+        let nanoSecsPerTick = 100
+        let nanoSecsPerMicrosec = 1000
+        let nanoSecsPerMillisec = 1000000
+        
+        let referenceSwiftDate = Date(timeIntervalSince1970: 0)
+        
+        let components: Set<Calendar.Component> = [
+            .era,
+            .year,
+            .month,
+            .day,
+            .hour,
+            .minute,
+            .second,
+            .nanosecond,
+            .calendar
+        ]
+        
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = .gmt
+        
+        let calComponents = calendar.dateComponents(components,
+                                                    from: referenceSwiftDate)
+        
+        // DateTime doesn't support dates starting with year 10.000.
+        // Except for the year 10.000 on the dot: we convert it to DateTime.MaxValue.
+        //
+        // DateTime.MaxValue is actually one tick before year 10.000. This
+        // means that when we convert DateTime.MaxValue to NSDate, we
+        // actually end up with a date in year 10.000 due to precision
+        // differences. In order to be able to roundtrip a
+        // DateTime.MaxValue value, we hardcode the corresponding
+        // NSDate.SecondsSinceReferenceDate here.
+        // TODO: Use this in extension
+//        if (calComponents.Year >= 10000) {
+//            if (d.SecondsSinceReferenceDate == 252423993600)
+//                return DateTime.SpecifyKind (DateTime.MaxValue, DateTimeKind.Utc);
+//            throw new ArgumentOutOfRangeException (nameof (d), d, $"The date is outside the range of DateTime: {d.SecondsSinceReferenceDate}");
+//        }
+        
+        // DateTime doesn't support BC dates (AD dates have Era = 1)
+        // TODO: Use this in extension
+//        if (calComponents.Era != 1)
+//            throw new ArgumentOutOfRangeException (nameof (d), d, "The date is outside the range of DateTime.");
+        
+        // NSCalendar gives us the number of nanoseconds corresponding
+        // with the fractional second. DateTime's constructor wants
+        // milliseconds and microseconds separately, where microseconds is
+        // the fractional number of milliseconds. That doesn't count for
+        // any remaining ticks, so add that at the end manually. This
+        // means we need to do some math here, to split the sub-second
+        // number of nanoseconds into milliseconds, microseconds and
+        // ticks.
+        guard var nanosecondsLeft = calComponents.nanosecond else {
+            XCTFail("Failed to get nanoseconds from calendar components")
+            
+            return
+        }
+        
+        let milliseconds = nanosecondsLeft / nanoSecsPerMillisec
+        nanosecondsLeft -= milliseconds * nanoSecsPerMillisec
+        let microseconds = nanosecondsLeft / nanoSecsPerMicrosec
+        nanosecondsLeft -= microseconds * nanoSecsPerMicrosec
+        let ticks = nanosecondsLeft / nanoSecsPerTick
+        
+        guard let year = calComponents.year else {
+            XCTFail("Failed to get year from calendar components")
+            
+            return
+        }
+        
+        guard let month = calComponents.month else {
+            XCTFail("Failed to get month from calendar components")
+            
+            return
+        }
+        
+        guard let day = calComponents.day else {
+            XCTFail("Failed to get day from calendar components")
+            
+            return
+        }
+        
+        guard let hour = calComponents.hour else {
+            XCTFail("Failed to get hour from calendar components")
+            
+            return
+        }
+        
+        guard let minute = calComponents.minute else {
+            XCTFail("Failed to get minute from calendar components")
+            
+            return
+        }
+        
+        guard let second = calComponents.second else {
+            XCTFail("Failed to get second from calendar components")
+            
+            return
+        }
+        
+        guard var retDate = try? System.DateTime(Int32(year),
+                                                 Int32(month),
+                                                 Int32(day),
+                                                 Int32(hour),
+                                                 Int32(minute),
+                                                 Int32(second),
+                                                 Int32(milliseconds),
+                                                 Int32(microseconds),
+                                                 .utc) else {
+            XCTFail("System.DateTime ctor should not throw and return an instance")
+            
+            return
+        }
+        
+        if ticks > 0 {
+            guard let adjustedRetDate = try? retDate.addTicks(.init(ticks)) else {
+                XCTFail("System.DateTime.AddTicks should not throw and return an instance")
+                
+                return
+            }
+            
+            retDate = adjustedRetDate
+        }
+        
+        // TODO: Compare
+    }
 }
