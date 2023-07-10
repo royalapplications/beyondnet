@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+set -e
+
+echo "WARNING: This is not supported as of .NET 8 Preview 5"
+echo "Press any key to continue anyway"
+
+read -n 1
+
+OUTPUT_PRODUCT_NAME="libBeyondDotNETSampleNative"
+BUILD_CONFIGURATION="Release"
+
+OUTPUT_FILE_NAME="${OUTPUT_PRODUCT_NAME}.dylib"
+
+DOTNET_PATH=`which dotnet`
+DOTNET_VERSION=`${DOTNET_PATH} --version`
+DOTNET_VERSION_MAJOR_AND_MINOR=${DOTNET_VERSION:0:3}
+
+VERBOSITY_LEVEL="normal"
+
+RUNTIME_IDENTIFIER_ARM64="ios-arm64"
+
+BIN_DIR="bin"
+PUBLISH_DIR="publish"
+DOTNET_TARGET_FRAMEWORK="net${DOTNET_VERSION_MAJOR_AND_MINOR}"
+
+ARM64_BUILD_DIR="${BIN_DIR}/${BUILD_CONFIGURATION}/${DOTNET_TARGET_FRAMEWORK}/${RUNTIME_IDENTIFIER_ARM64}/${PUBLISH_DIR}"
+ARM64_FILE_PATH="${ARM64_BUILD_DIR}/${OUTPUT_FILE_NAME}"
+
+echo "Cleaning ${OUTPUT_PRODUCT_NAME}"
+${DOTNET_PATH} clean /p:Configuration=Release
+
+echo "Building ${OUTPUT_PRODUCT_NAME} for iOS ARM64"
+${DOTNET_PATH} publish -r ${RUNTIME_IDENTIFIER_ARM64} -v "${VERBOSITY_LEVEL}"
+
+echo "Changing install name of universal ${OUTPUT_PRODUCT_NAME} build"
+install_name_tool -id "@rpath/${OUTPUT_FILE_NAME}" "${ARM64_FILE_PATH}"
