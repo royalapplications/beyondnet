@@ -177,6 +177,13 @@ Direct casts are exposed through the `DNObjectCastTo` method. It works the same 
 
 In the Swift bindings, we have extension methods on `DNObject` (the base type for all generated class and struct bindings) which makes type checking/casting much easier.
 
+
+# Method overloads, Member overrides, shadowed members
+
+Since C doesn't have a concept of inheritance, overridden and shadowed members are just redeclared for subclasses. (**TODO**: Is that actually true?!)
+Likewise, C doesn't support method overloading but in this case, the "fix" is not that easy.
+
+
 ## .NET Object boxing
 
 **TODO**
