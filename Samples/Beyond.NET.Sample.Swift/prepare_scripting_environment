@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+set -e
+
+# Cache some variables
+PREV_HOME=$HOME
+PREV_LC_CTYPE=$LC_CTYPE
+PREV_LOGNAME=$LOGNAME
+PREV_PWD=$PWD
+PREV_SHELL=$SHELL
+PREV_TERM=$TERM
+PREV_TMPDIR=$TMPDIR
+PREV_USER=$USER
+PREV_PROJECT_DIR=$PROJECT_DIR
+
+# Unset all variables
+for ENV in $(env | awk -F "=" '{print $1}'); do unset $ENV; done
+
+# Restore values of cached variables
+export HOME=$PREV_HOME
+export LC_CTYPE=$PREV_LC_CTYPE
+export LOGNAME=$PREV_LOGNAME
+export PWD=$PREV_PWD
+export SHELL=$PREV_SHELL
+export TERM=$PREV_TERM
+export TMPDIR=$PREV_TMPDIR
+export USER=$PREV_USER
+export PROJECT_DIR=$PREV_PROJECT_DIR
+
+# Make sure .NET path is on the PATH
+DOTNET_PATH="/usr/local/share/dotnet"
+export PATH="${DOTNET_PATH}:/usr/local/bin:/usr/bin:/bin:/bin:/usr/sbin:/sbin"
