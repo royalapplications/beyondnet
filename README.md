@@ -65,7 +65,7 @@ It's important to note that while Beyond.NET generates code for you, it doesn't 
   - You can either just add a temporary Objective-C class (you can delete it later) to trigger the creation of the bridging header or create an empty header file and adjust the "Objective-C Bridging Header" build setting of the Xcode project to point to that header file.
 - In the briding header, import the generated C bindings header file (ie. `#import "Output_C.h"`).
 - You're now ready to call any of the APIs that bindings were generated for.
-- Please note that since Swift does not have support for namespaces, all generated types will have their namespace prefixed. `System.Guid.NewGuid` for instance gets generated as `System_Guid.newGuid` in Swift and `System_Guid_NewGuid` in C.
+- Please note that since C and Swift do not have support for namespaces, all generated types will have their namespace prefixed. `System.Guid.NewGuid` for instance gets generated as `System_Guid.newGuid` in Swift and `System_Guid_NewGuid` in C. However, by default, the Swift code generator will also produces typealiases in nested types that basically restore the .NET namespaces by emulating them using nested types in Swift. So you can in fact use `System.Guid.newGuid` in Swift. Hooray!
 
 
 ## Generator Configuration
@@ -92,10 +92,13 @@ The generator currently uses a configuration file where all of its options are s
 
 There are several other optional options that control the behavior of the generator:
 
-- EmitUnsupported (Boolean; false by default): If enabled (true), comments will be generated in the output files explaining why a binding for a certain type or API was not generated.
-- GenerateTypeCheckedDestroyMethods (Boolean; false by default): If enabled (true), the generated `*_Destroy` methods will check the type of the passed in object. If the type does not match, an unhandled(!) exception will be thrown. Use this to detect memory management bugs in your code. Since it introduces overhead, it's disabled by default. Also, there's no need for manual memory management in higher level languages like Swift so this is unnecessary.
-- EnableGenericsSupport (Boolean; false by default): Generics support is currently experimental and disabled by default. If you want to test the current state though or work on improving generics support, enable this by setting it to `true`.
-- IncludedTypeNames (Array of Strings): Use this to provide a list of types that should be included even if they are not used by the target assembly.
+- `EmitUnsupported` (Boolean; `false` by default): If enabled (`true`), comments will be generated in the output files explaining why a binding for a certain type or API was not generated.
+- `GenerateTypeCheckedDestroyMethods` (Boolean; `false` by default): If enabled (`true`), the generated `*_Destroy` methods will check the type of the passed in object. If the type does not match, an unhandled(!) exception will be thrown. Use this to detect memory management bugs in your code. Since it introduces overhead, it's disabled by default. Also, there's no need for manual memory management in higher level languages like Swift so this is unnecessary.
+- `DoNotGenerateSwiftNestedTypeAliases` (Boolean; `false` by default): If set to `true`, no typealiases matching the .NET namespaces of the generated types will be emitted. That means, for example that instead of `System.String.empty` you'd have to use `System_String.empty`.
+- `EnableGenericsSupport` (Boolean; `false` by default): Generics support is currently experimental and disabled by default. If you want to test the current state though or work on improving generics support, enable this by setting it to `true`.
+- `IncludedTypeNames` (Array of Strings): Use this to provide a list of types that should be included even if they are not used by the target assembly.
+- `ExcludedTypeNames` (Array of Strings): Use this to provide a list of types that should be excluded.
+- `AssemblySearchPaths` (Array of Strings): Use this to provide a list of file system paths that are included when searching for assembly references.
 
 
 ## Opaque types
