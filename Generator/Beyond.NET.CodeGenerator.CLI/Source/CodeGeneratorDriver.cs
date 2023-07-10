@@ -39,7 +39,7 @@ internal class CodeGeneratorDriver
         bool emitUnsupported = Configuration.EmitUnsupported ?? false;
         bool generateTypeCheckedDestroyMethods = Configuration.GenerateTypeCheckedDestroyMethods ?? false;
         bool enableGenericsSupport = Configuration.EnableGenericsSupport ?? false;
-        bool generateSwiftNestedTypeAliases = Configuration.GenerateSwiftNestedTypeAliases ?? false;
+        bool doNotGenerateSwiftNestedTypeAliases = Configuration.DoNotGenerateSwiftNestedTypeAliases ?? false;
         #endregion Configuration
 
         #region Load Assembly
@@ -109,7 +109,7 @@ internal class CodeGeneratorDriver
             cSharpUnmanagedResult,
             cResult,
             emitUnsupported,
-            generateSwiftNestedTypeAliases,
+            doNotGenerateSwiftNestedTypeAliases,
             typeCollectorSettings
         );
 
@@ -321,7 +321,7 @@ internal class CodeGeneratorDriver
         Result cSharpUnmanagedResult,
         Result cResult,
         bool emitUnsupported,
-        bool generateSwiftNestedTypeAliases,
+        bool doNotGenerateSwiftNestedTypeAliases,
         TypeCollectorSettings typeCollectorSettings
     )
     {
@@ -330,7 +330,7 @@ internal class CodeGeneratorDriver
         Generator.Swift.Settings settings = new() {
             EmitUnsupported = emitUnsupported,
             TypeCollectorSettings = typeCollectorSettings,
-            GenerateSwiftNestedTypeAliases = generateSwiftNestedTypeAliases
+            DoNotGenerateSwiftNestedTypeAliases = doNotGenerateSwiftNestedTypeAliases
         };
         
         SwiftCodeGenerator codeGenerator = new(settings, cSharpUnmanagedResult, cResult);

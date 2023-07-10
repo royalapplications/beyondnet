@@ -10,7 +10,7 @@ public struct Configuration
 
     public bool? EmitUnsupported { get; init; }
     public bool? GenerateTypeCheckedDestroyMethods { get; init; }
-    public bool? GenerateSwiftNestedTypeAliases { get; init; }
+    public bool? DoNotGenerateSwiftNestedTypeAliases { get; init; }
     public bool? EnableGenericsSupport { get; init; }
     
     public string[]? IncludedTypeNames { get; init; }

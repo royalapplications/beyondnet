@@ -8,7 +8,6 @@
 	"EmitUnsupported": false,
 	"GenerateTypeCheckedDestroyMethods": true,
 	"EnableGenericsSupport": true,
-	"GenerateSwiftNestedTypeAliases": true,
 
 	"IncludedTypeNames": [
 		"System.GC",

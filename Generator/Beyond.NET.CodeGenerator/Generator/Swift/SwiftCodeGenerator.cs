@@ -153,7 +153,7 @@ public class SwiftCodeGenerator: ICodeGenerator
             extensionsSection.Code.AppendLine(code);
         }
 
-        if (Settings.GenerateSwiftNestedTypeAliases) {
+        if (!Settings.DoNotGenerateSwiftNestedTypeAliases) {
             string namespacesCode = GetNamespacesCode(
                 result,
                 TypeDescriptorRegistry.Shared
