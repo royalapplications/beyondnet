@@ -15,7 +15,9 @@ static class Program
         }
 
         ConfigurationSerializer serializer = new();
-        Configuration configuration = serializer.DeserializeFromJsonFilePath(configFilePath) ?? throw new Exception("Error while parsing configuration file.");
+        
+        Configuration configuration = serializer.DeserializeFromJsonFilePath(configFilePath) 
+                                      ?? throw new Exception("Error while parsing configuration file.");
 
         CodeGeneratorDriver driver = new(configuration);
         
@@ -26,8 +28,17 @@ static class Program
     
     private static void ShowUsage()
     {
-        string usageText = """
-Usage: Beyond.NET.CodeGenerator.CLI <PathToConfig.json>
+        var assemblyInfo = typeof(Program).Assembly.GetName();
+
+        const string productName = "Beyond.NET";
+        string assemblyName = assemblyInfo.Name ?? "beyondnetgen";
+        
+        Version? version = assemblyInfo.Version;
+        string versionString = version?.ToString() ?? "N/A";
+        
+        string usageText = $"""
+{productName} Version {versionString}
+Usage: {assemblyName} <PathToConfig.json>
 """;
         
         Console.WriteLine(usageText);    
