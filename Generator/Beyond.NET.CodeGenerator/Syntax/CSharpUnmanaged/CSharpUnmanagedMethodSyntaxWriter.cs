@@ -937,22 +937,24 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
     }
 
     protected string WriteMutableStructInstanceReplacement(
-        Type selfType,
-        string selfParameterName,
-        string convertedSelfParameterName
+        Type? selfType,
+        string? selfParameterName,
+        string? convertedSelfParameterName
     )
     {
+        if (selfType is null ||
+            !selfType.IsStruct() ||
+            string.IsNullOrEmpty(selfParameterName) ||
+            string.IsNullOrEmpty(convertedSelfParameterName)) {
+            return string.Empty;
+        }
+        
         StringBuilder sb = new();
 
-        if (selfType is not null &&
-            selfType.IsStruct() &&
-            !string.IsNullOrEmpty(selfParameterName) &&
-            !string.IsNullOrEmpty(convertedSelfParameterName)) {
-            sb.AppendLine($"if ({selfParameterName} is not null) {{");
-            sb.AppendLine($"\tInteropUtils.ReplaceInstance({selfParameterName}, {convertedSelfParameterName});");
-            sb.AppendLine("}");
-            sb.AppendLine();
-        }
+        sb.AppendLine($"if ({selfParameterName} is not null) {{");
+        sb.AppendLine($"\tInteropUtils.ReplaceInstance({selfParameterName}, {convertedSelfParameterName});");
+        sb.AppendLine("}");
+        sb.AppendLine();
 
         return sb.ToString();
     }

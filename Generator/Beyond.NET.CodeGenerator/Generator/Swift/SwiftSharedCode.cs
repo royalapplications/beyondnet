@@ -557,8 +557,17 @@ extension System_Object: Equatable {
     }
 }
 
+fileprivate struct DNDateTimeUtils {
+    static var calendarForDateTimeToSwiftDateConversions: Calendar {
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = .gmt
+        
+        return calendar
+    }
+}
+
 extension System_DateTime {
-    public enum Errors: LocalizedError {
+    public enum DNSystemDateTimeErrors: LocalizedError {
         case dateTimeKindIsUnspecified
         case dateFromCalendarReturnedNil
         
@@ -570,13 +579,6 @@ extension System_DateTime {
                     return "Failed to get date from calendar"
             }
         }
-    }
-    
-    private var calendarForDateTimeToSwiftDateConversions: Calendar {
-        var calendar = Calendar(identifier: .gregorian)
-        calendar.timeZone = .gmt
-        
-        return calendar
     }
     
     private func dateComponents(fromSystemDateTime dateTime: System_DateTime) throws -> DateComponents {
@@ -612,7 +614,7 @@ extension System_DateTime {
         let dateTimeKind = try self.kind
         
         guard dateTimeKind != .unspecified else {
-            throw Errors.dateTimeKindIsUnspecified
+            throw DNSystemDateTimeErrors.dateTimeKindIsUnspecified
         }
         
         guard let universalDateTime = try self.toUniversalTime() else {
@@ -620,17 +622,138 @@ extension System_DateTime {
         }
         
         let dateComponents = try dateComponents(fromSystemDateTime: universalDateTime)
-        let calendar = calendarForDateTimeToSwiftDateConversions
+        let calendar = DNDateTimeUtils.calendarForDateTimeToSwiftDateConversions
         
         guard let retDate = calendar.date(from: dateComponents) else {
-            throw Errors.dateFromCalendarReturnedNil
+            throw DNSystemDateTimeErrors.dateFromCalendarReturnedNil
         }
         
         return retDate
     }
 }
 
-// TODO: Add extension for converting from Swift Date to .NET DateTime
+extension Date {
+    public enum DNDateErrors: LocalizedError {
+        case dateComponentReturnedNil(_ component: String)
+        case dateOutsideOfSystemDateTimeRange(_ secondsSinceReferenceDate: TimeInterval? = nil)
+
+        public var errorDescription: String? {
+            switch self {
+                case .dateComponentReturnedNil(let component):
+                    return "Failed to get \(component) from calendar components"
+                case .dateOutsideOfSystemDateTimeRange(let secondsSinceReferenceDate):
+                    let baseDescription = "The date is outside the range of System.DateTime"
+
+                    if let secondsSinceReferenceDate {
+                        return "\(baseDescription): \(secondsSinceReferenceDate)"
+                    } else {
+                        return baseDescription
+                    }
+            }
+        }
+    }
+
+    public func dotNETDateTime() throws -> System_DateTime {
+        let nanoSecsPerTick = 100
+        let nanoSecsPerMicrosec = 1000
+        let nanoSecsPerMillisec = 1000000
+
+        let referenceSwiftDate = Date(timeIntervalSince1970: 0)
+
+        let components: Set<Calendar.Component> = [
+            .era,
+            .year,
+            .month,
+            .day,
+            .hour,
+            .minute,
+            .second,
+            .nanosecond,
+            .calendar
+        ]
+
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = .gmt
+
+        let calComponents = calendar.dateComponents(components,
+                                                    from: referenceSwiftDate)
+
+        if let year = calComponents.year,
+           year >= 10_000 {
+            if self.timeIntervalSinceReferenceDate == 252423993600 {
+                guard let dateTime = try System_DateTime.specifyKind(.maxValue,
+                                                                     .utc) else {
+                    throw DNSystemError.unexpectedNull
+                }
+
+                return dateTime
+            } else {
+                throw DNDateErrors.dateOutsideOfSystemDateTimeRange(self.timeIntervalSinceReferenceDate)
+            }
+        }
+
+        if let era = calComponents.era,
+           era != 1 {
+            throw DNDateErrors.dateOutsideOfSystemDateTimeRange()
+        }
+
+        guard var nanosecondsLeft = calComponents.nanosecond else {
+            throw DNDateErrors.dateComponentReturnedNil("nanosencond")
+        }
+
+        let milliseconds = nanosecondsLeft / nanoSecsPerMillisec
+        nanosecondsLeft -= milliseconds * nanoSecsPerMillisec
+        let microseconds = nanosecondsLeft / nanoSecsPerMicrosec
+        nanosecondsLeft -= microseconds * nanoSecsPerMicrosec
+        let ticks = nanosecondsLeft / nanoSecsPerTick
+
+        guard let year = calComponents.year else {
+            throw DNDateErrors.dateComponentReturnedNil("year")
+        }
+
+        guard let month = calComponents.month else {
+            throw DNDateErrors.dateComponentReturnedNil("month")
+        }
+
+        guard let day = calComponents.day else {
+            throw DNDateErrors.dateComponentReturnedNil("day")
+        }
+
+        guard let hour = calComponents.hour else {
+            throw DNDateErrors.dateComponentReturnedNil("hour")
+        }
+
+        guard let minute = calComponents.minute else {
+            throw DNDateErrors.dateComponentReturnedNil("minute")
+        }
+
+        guard let second = calComponents.second else {
+            throw DNDateErrors.dateComponentReturnedNil("second")
+        }
+
+        guard var retDate = try System.DateTime(Int32(year),
+                                                Int32(month),
+                                                Int32(day),
+                                                Int32(hour),
+                                                Int32(minute),
+                                                Int32(second),
+                                                Int32(milliseconds),
+                                                Int32(microseconds),
+                                                .utc) else {
+            throw DNSystemError.unexpectedNull
+        }
+
+        if ticks > 0 {
+            guard let adjustedRetDate = try retDate.addTicks(.init(ticks)) else {
+                throw DNSystemError.unexpectedNull
+            }
+
+            retDate = adjustedRetDate
+        }
+
+        return retDate
+    }
+}
 
 public extension Data {
     /// WARNING: This is not optimized!
