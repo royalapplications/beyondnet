@@ -1,4 +1,4 @@
-namespace Beyond.NET.Sample.Source;
+namespace Beyond.NET.Sample;
 
 public static class OverloadTests
 {

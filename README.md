@@ -284,6 +284,9 @@ let numberRet = try numberObj.castToInt32()
 
 .NET Delegates and Events are mapped to C function pointers and Swift closures with some infrastructure around them to allow for proper memory management.
 
+
+### Delegates
+
 Here's a C# class that declares a delegate which takes and returns a string. The delegate handler can do some transformation, like uppercasing a string and return the uppercased variant.
 
 ```csharp
@@ -333,6 +336,67 @@ There are still some things worth noting here:
 - Memory management is handled transparently because behind the scenes we know when the .NET GC collects the delegate and can in turn deallocate our C and Swift wrappers when that time comes.
 
 We won't go into the details of how that whole process works in the C bindings because we think the sample in the repository is well enough documented. In case you still find there to not be enough information on the subject, please feel free to file a Github issue.
+
+
+### Events
+
+Events work pretty much the same as delegates, except that additional APIs are generated to add and remove event handlers.
+
+Here's a C# example using events:
+
+```csharp
+public class EventTests
+{
+    public delegate void ValueChangedDelegate(object sender, int newValue);
+
+    public event ValueChangedDelegate? ValueChanged;
+
+    private int m_value;
+    public int Value
+    {
+        get => m_value;
+        set {
+            m_value = value;
+            ValueChanged?.Invoke(this, value);
+        }
+    }
+}
+```
+
+So we have a `ValueChanged` event which fires every time the `Value` property setter is called. The new (`int`) value is passed in to the event handler.
+
+In Swift, this is how we can consume that event:
+
+```swift
+// Create an instance of Beyond.NET.Sample.EventTests
+let eventTest = try! Beyond.NET.Sample.EventTests()!
+
+// Create a variable that will hold the last value passed in to our event handler
+var lastValuePassedIntoEventHandler: Int32 = 0
+
+// Create an event handler
+let eventHandler = Beyond.NET.Sample.EventTests_ValueChangedDelegate { sender, newValue in
+    // Remember the last value passed in here
+    lastValuePassedIntoEventHandler = newValue
+}
+
+// Add the event handler
+eventTest.valueChanged_add(eventHandler)
+
+// Set a new value (our event handler will be called for this one)
+try! eventTest.value_set(5)
+
+// Remove the event handler
+eventTest.valueChanged_remove(eventHandler)
+
+// Set a another new value (our event handler will NOT be called for this one because we already removed the event handler)
+try! eventTest.value_set(10)
+
+// Prints "5"
+print(lastValuePassedIntoEventHandler)
+```
+
+I guess this is pretty self explanatory. Regular Swift memory management rules apply here. Most of the time you'll likely want to create an event handler, store it as a variable outside of the function's scope and unsubscribe from the event in your class's deinitializer.
 
 
 
