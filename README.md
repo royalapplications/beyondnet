@@ -174,7 +174,7 @@ When using the generated bindings for Swift, there's no need to deal with any of
 
 ## Equality
 
-When using the C bindings, don't ever compare two pointers to .NET objects. Because of the way `GCHandle` works, you might hold two different pointers even if they actually point to the very same object.
+When using the C bindings, don't ever compare two pointers to .NET objects! Because of the way `GCHandle` works, you might hold two different pointers even if they actually point to the very same object.
 
 Instead, use the bindings for `System.Object.Equals` or `System.Object.ReferenceEquals` depending on the use case.
 
@@ -213,13 +213,35 @@ func favoriteNumber_set(_ value: Int32) throws
 
 You can check if an instance of an object is of a certain type in C# by using the `is` keyword (ie. `if (myObj is string) ...`). Since this is implemented at the language level there's no easy way to wrap this in the generated code. Instead, we use `System.Type.IsAssignableTo` to implement a wrapper for the `is` keyword.
 
-In C, this is exposed as the `DNObjectIs` method. As the first argument, you pass it the object you want to check and as the second argument you provide a `System.Type` object you want to compare against. The function then returns true or false depending on the result of the type check.
+In C, this is exposed as the `DNObjectIs` method. As the first argument, you pass it the object you want to check and as the second argument you provide a `System.Type` object you want to compare against. The function then returns `true` or `false` depending on the result of the type check.
 
 The same concept applies to casting using the C# `as` keyword and direct casts (ie. `var aString = (string)someObject`). In C the `as` keyword is exposed through the `DNObjectCastAs` method. Again, you call it by providing an object you want to safely cast and as the second argument you provide the type you want to cast to. If the cast succeeds, a `System.Object` of the specified type is returned or null if the cast did not succeed.
 
 Direct casts are exposed through the `DNObjectCastTo` method. It works the same as `DNObjectCastAs` but has a third argument which might hold a `System.Exception` object if the cast failed.
 
-In the Swift bindings, we have extension methods on `DNObject` (the base type for all generated class and struct bindings) which makes type checking/casting much easier.
+In the Swift bindings, we have extension methods on `DNObject` (the base type for all generated class and struct bindings) which makes type checking/casting much easier:
+
+```
+let string = System.String.empty!
+
+if string.is(System.String.typeOf) {
+    print("Hooray, it's a System.String.")
+}
+
+if !string.is(System.Guid.typeOf) {
+    print("Yes, it's certainly not a Sytem.Guid.")
+}
+
+if let object: System.Object = string.castAs() {
+    print("Hooray, a System.String is also a System.Object so the cast succeeded.")
+}
+
+if let guid: System.Guid = string.castAs() {
+    print("Oh no, a System.String should not be convertible to a System.Guid. This is an error!")
+}
+```
+
+There are also extensions for direct casts called `castTo`. These work the same as `castAs` but throw an error if the cast fails.
 
 
 
