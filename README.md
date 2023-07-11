@@ -301,9 +301,9 @@ public static class Transformer {
 }
 ```
 
-The full C# type declaration is [available in the repository](blob/main/Samples/Beyond.NET.Sample.Managed/Source/Transformer.cs).
+The full C# type declaration is [available in the repository](Samples/Beyond.NET.Sample.Managed/Source/Transformer.cs).
 
-Because calling this from C is quite involved, instead of listing the required code here, [here's a link](blob/main/Samples/Beyond.NET.Sample.C/transform.c) to a full C program that makes use of this API.
+Because calling this from C is quite involved, instead of listing the required code here, [here's a link](Samples/Beyond.NET.Sample.C/transform.c) to a full C program that makes use of this API.
 
 The Swift bindings for this allow for much simpler usage:
 
