@@ -279,6 +279,7 @@ let numberRet = try numberObj.castToInt32()
 ```
 
 
+
 ## Delegates and Events
 
 .NET Delegates and Events are mapped to C function pointers and Swift closures with some infrastructure around them to allow for proper memory management.
@@ -303,21 +304,36 @@ public static class Transformer {
 
 The full C# type declaration is [available in the repository](Samples/Beyond.NET.Sample.Managed/Source/Transformer.cs).
 
-Because calling this from C is quite involved, instead of listing the required code here, [here's a link](Samples/Beyond.NET.Sample.C/transform.c) to a full C program that makes use of this API.
+Because calling this from C is quite involved, instead of listing the required code here, [here's a link](Samples/Beyond.NET.Sample.C/transform.c) to a full (commented) C program that makes use of this API.
 
 The Swift bindings for this allow for much simpler usage:
 
 ```swift
+// Create an input string and convert it to a .NET System.String
 let inputString = "Hello World".dotNETString()
 
-let outputString = try! Beyond.NET.Sample.Transformer.transformString(inputString, .init({
-    try! $0!.toUpper()
-}))!.string()
+// Call Beyond.NET.Sample.Transformer.transformString by:
+// - Providing the input string as the first argument
+// - Initializing an instance of Beyond_NET_Sample_Transformer_StringTransformerDelegate by passing it a closure that matches the .NET delegate as its sole parameter
+let outputString = try! Beyond.NET.Sample.Transformer.transformString(inputString, .init({ stringToTransform in
+    // Take the string that should be transformed, call System.String.ToUpper on it and return it
+    return try! stringToTransform!.toUpper()
+}))!.string() // Convert the returned System.String to a Swift String
 
-print(outputString) // Prints "HELLO WORLD!"
+// Prints "HELLO WORLD!"
+print(outputString)
 ```
 
 Yes, we omitted any kind of error handling and just force unwrap optionals in this example for brevity. The point here is that it's quite easy to call .NET APIs that use delegates and the whole memory management story is being taken care of by the generated bindings.
+
+There are still some things worth noting here:
+- There's a wrapper object involved for any exposed .NET delegate.
+- You can keep a reference of this wrapper object around and assign or use it somewhere else. Also, when using event handlers you need it to be able to remove an event handler at a later point in time and that's when you need the delegate wrapper object.
+- That's why we call `.init` as the second parameter of `transformString` instead of just passing in the closure.
+- Memory management is handled transparently because behind the scenes we know when the .NET GC collects the delegate and can in turn deallocate our C and Swift wrappers when that time comes.
+
+We won't go into the details of how that whole process works in the C bindings because we think the sample in the repository is well enough documented. In case you still find there to not be enough information on the subject, please feel free to file a Github issue.
+
 
 
 ## Converting between .NET and Swift types

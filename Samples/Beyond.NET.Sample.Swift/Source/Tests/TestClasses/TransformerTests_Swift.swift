@@ -12,15 +12,21 @@ final class TransformerTests_Swift: XCTestCase {
         Self.sharedTearDown()
     }
     
-//    func testStringTransformerAsInDocs() {
-//        let inputString = "Hello World".dotNETString()
-//        
-//        let outputString = try! Beyond.NET.Sample.Transformer.transformString(inputString, .init({
-//            try! $0!.toUpper()
-//        }))!.string()
-//        
-//        print(outputString) // Prints "HELLO WORLD!"
-//    }
+    /* func testStringTransformerAsInDocs() {
+        // Create an input string and convert it to a .NET System.String
+        let inputString = "Hello World".dotNETString()
+        
+        // Call Beyond.NET.Sample.Transformer.transformString by:
+        // - Providing the input string as the first argument
+        // - Initializing an instance of Beyond_NET_Sample_Transformer_StringTransformerDelegate by passing it a closure that matches the .NET delegate as its sole parameter
+        let outputString = try! Beyond.NET.Sample.Transformer.transformString(inputString, .init({ stringToTransform in
+            // Take the string that should be transformed, call System.String.ToUpper on it and return it
+            return try! stringToTransform!.toUpper()
+        }))!.string() // Convert the returned System.String to a Swift String
+        
+        // Prints "HELLO WORLD!"
+        print(outputString)
+    } */
     
     func testStringTransformer() {
         guard let uppercaser = createUppercaser() else {
