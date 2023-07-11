@@ -7,6 +7,7 @@ Conceptually, think of it like the reverse of the Xamarin tools.
 Currently, C and Swift are the supported output languages. But any language that has C interoperability can use the generated bindings.
 
 
+
 ## How does it work?
 
 Beyond.NET makes use of the fact that .NET methods can be decorated with the [`UnmanagedCallersOnly`](https://learn.microsoft.com/dotnet/api/system.runtime.interopservices.unmanagedcallersonlyattribute) attribute which makes the targeted API callable from native code.
@@ -22,6 +23,7 @@ Since new C# code is generated as part of the language bindings, it's required t
 It's important to note that while Beyond.NET generates code for you, it doesn't compile it. You'll have to do that yourself.
 
 
+
 ## Quick Start Guide
 
 ### Prerequisites
@@ -29,11 +31,13 @@ It's important to note that while Beyond.NET generates code for you, it doesn't 
 - On macOS, make sure [Xcode](https://developer.apple.com/xcode/) is installed.
 - On Linux, make sure clang and zlib are installed
 
+
 ### Generator Executable
 - Either clone the Beyond.NET repository or download one of the pre-built generator executables for your platform.
 - If you do not have a pre-compiled executable of the generator, compile it by either running `dotnet publish` within its directory or use one of our provided publish scripts like `publish_macos_universal` for compiling a universal macOS binary.
 - Open a terminal, switch to the directory containing the built executable and execute the generator (`./beyondnetgen`).
 - Since you've provided no arguments, the generator should show its usage screen.
+
 
 ### Configuration
 - Currently, the generator takes a single required argument: `PathToConfig.json`.
@@ -41,6 +45,7 @@ It's important to note that while Beyond.NET generates code for you, it doesn't 
 - Run the generator with the path to the config file as the first and only argument (`./beyondnetgen /Path/To/Config.json`).
 - If the generator was successful it will exit with 0 as exit code and not print anything to stdout or stderr.
 - If errors were encountered they'll appear in the terminal.
+
 
 ### Build a native version of the target .NET assembly
 - Let's assume the assembly you're creating native bindings for is called `MyLib` (`MyLib.dll`).
@@ -58,6 +63,7 @@ It's important to note that while Beyond.NET generates code for you, it doesn't 
 - Run the publish script (ie. `./publish_macos_universal`).
 - On macOS this will produce a universal `MyNativeLib.dylib` in the bin directory under `bin/Release/net8.0/osx-universal/publish`.
 
+
 ### Use generated bindings from Swift
 - Create a macOS App Xcode project.
 - Add the generated C bindings header file (ie. `Output_C.h`) and the generated Swift bindings file (ie. `Output_Swift.swift`) to the project.
@@ -66,6 +72,7 @@ It's important to note that while Beyond.NET generates code for you, it doesn't 
 - In the briding header, import the generated C bindings header file (ie. `#import "Output_C.h"`).
 - You're now ready to call any of the APIs that bindings were generated for.
 - Please note that since C and Swift do not have support for namespaces, all generated types will have their namespace prefixed. `System.Guid.NewGuid` for instance gets generated as `System_Guid.newGuid` in Swift and `System_Guid_NewGuid` in C. However, by default, the Swift code generator will also produces typealiases in nested types that basically restore the .NET namespaces by emulating them using nested types in Swift. So you can in fact use `System.Guid.newGuid` in Swift. Hooray!
+
 
 
 ## Generator Configuration
@@ -101,6 +108,7 @@ There are several other optional options that control the behavior of the genera
 - `AssemblySearchPaths` (Array of Strings): Use this to provide a list of file system paths that are included when searching for assembly references.
 
 
+
 ## Opaque types
 
 Every .NET type that is not a primitive or an enum gets exposed as an "opaque type" in C. That means that a typealias for `void*` is generated for .NET classes and structs.
@@ -108,6 +116,7 @@ Every .NET type that is not a primitive or an enum gets exposed as an "opaque ty
 By itself, those opaque types are pretty useless. To actually access instance properties, call methods or do anything useful with them, you need to call one of the generated methods and pass the instance as the first (`self`) parameter.
 
 In the Swift bindings, these opaque types are also used under the hood but not exposed to the consumer. So you can treat them as an implementation detail and use the generated APIs like regular Swift types.
+
 
 
 ## Exception Handling
@@ -137,6 +146,7 @@ When calling the `WriteLine` method from C, you should provide a reference to a 
 The code generator for Swift produces APIs annotated with the `throws` keyword so you can use Swift's native error handling when calling into .NET.
 
 
+
 ## Memory Management
 
 While .NET's memory management model is based on Garbage Collection (GC), C uses manual memory management. That means, everything that is allocated on the heap must be manually freed to not cause a memory leak.
@@ -156,6 +166,7 @@ Structs or other value types and delegates are no exception to this rule. Again,
 When using the generated bindings for Swift, there's no need to deal with any of that. Instead we handle allocation and deallocation transparently and the standard Swift memory management rules apply. That means you can just treat .NET objects like regular Swift objects. That includes .NET delegates which are mapped to Swift closures.
 
 
+
 ## Equality
 
 When using the C bindings, don't ever compare two pointers to .NET objects. Because of the way `GCHandle` works, you might hold two different pointers even if they actually point to the very same object.
@@ -163,6 +174,7 @@ When using the C bindings, don't ever compare two pointers to .NET objects. Beca
 Instead, use the bindings for `System.Object.Equals` or `System.Object.ReferenceEquals` depending on the use case.
 
 In Swift, the `==` and `===` operators are overridden for .NET objects and call those functions respectively. So feel free to compare .NET objects in Swift like regular Swift objects.
+
 
 
 ## Properties
@@ -191,6 +203,7 @@ func favoriteNumber_set(_ value: Int32) throws
 ```
 
 
+
 ## Type checking/casting
 
 You can check if an instance of an object is of a certain type in C# by using the `is` keyword (ie. `if (myObj is string) ...`). Since this is implemented at the language level there's no easy way to wrap this in the generated code. Instead, we use `System.Type.IsAssignableTo` to implement a wrapper for the `is` keyword.
@@ -204,7 +217,8 @@ Direct casts are exposed through the `DNObjectCastTo` method. It works the same 
 In the Swift bindings, we have extension methods on `DNObject` (the base type for all generated class and struct bindings) which makes type checking/casting much easier.
 
 
-# Method overloads, Member overrides, shadowed members
+
+## Method overloads, Member overrides, shadowed members
 
 Since C doesn't have the concept of inheritance, overridden and shadowed members are just redeclared for subclasses.
 In Swift, overridden or shadowed members are actually generated using the `override` keyword.
@@ -242,6 +256,7 @@ class func print(_ value: System_String?) throws
 The same rules apply to shadowed members.
 
 
+
 ## .NET Object boxing
 
 Sometimes you need to box primitives in .NET to use them in a more "generic" context. For instance, if you have an array of `System.Object`'s (`object[]`) and want to store integers (`int`, `long`, etc.) in it you need to box them. In C# this is handled transparently or explicitly if you cast for example, an `int` to an `object` (`var intAsObj = (object)5`).
@@ -264,6 +279,12 @@ let numberRet = try numberObj.castToInt32()
 ```
 
 
+## Delegates
+
+**TODO**
+
+
+
 ## Converting between .NET and Swift types
 
 For very common types we provide convenience extensions to convert between the two worlds.
@@ -276,6 +297,7 @@ let systemString = System.String.empty!
 let swiftString = systemString.string()
 let systemStringRet = swiftString.dotNETString()
 ```
+
 
 
 ## A word (or two) about generics
@@ -317,11 +339,13 @@ The only viable way I found was to use reflection and, unfortunately this has ma
 **TODO**: Expand on generics support.
 
 
+
 ## Stable ABI/Breaking changes
 
 We're far from the point where we can ensure that the generated code will be binary compatible from one version of the generator to the next. At least during the alpha phase, things will certainly break when upgrading from one version to the next. At a later stage of development we might introduce ABI compatibility guarantees.
 
 Right now, expect things to break!
+
 
 
 ## Debugging with LLDB
@@ -335,9 +359,11 @@ To handle that, you can add a symbolic breakpoint in Xcode and configure it like
 Also see this [StackOverflow post](https://stackoverflow.com/questions/10431579/permanently-configuring-lldb-in-xcode-4-3-2-not-to-stop-on-signals).
 
 
+
 ## License
 
 The project is licensed under the [MIT license](LICENSE).
+
 
 
 ## Contributions
