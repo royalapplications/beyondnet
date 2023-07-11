@@ -81,7 +81,7 @@ The generator currently uses a configuration file where all of its options are s
 
 **Minimal Example:**
 
-```
+```json
 {
   "AssemblyPath": "/Path/To/Target/.NET/Assembly.dll",
 
@@ -132,12 +132,12 @@ Currently, the only exceptions (pun intended) are field getters and setters. As 
 So here's an example of how that looks in practice:
 
 **C#:**
-```
+```csharp
 static void WriteLine(string text)
 ```
 
 **C:**
-```
+```c
 void Namespace_WriteLine(System_String_t text, System_Exception_t* exception)
 ```
 
@@ -182,7 +182,7 @@ In Swift, the `==` and `===` operators are overridden for .NET objects and call 
 Because C doesn't have properties, we expose them as regular methods suffixed with `_Get` and/or `_Set`.
 Here's an example in C#:
 
-```
+```csharp
 public class PropertyTests {
     public int FavoriteNumber { get; set; }
 }
@@ -190,14 +190,14 @@ public class PropertyTests {
 
 The generated C accessors for this property look like this:
 
-```
+```c
 int32_t PropertyTests_FavoriteNumber_Get(PropertyTests_t self, System_Exception_t* outException);
 void PropertyTests_FavoriteNumber_Set(PropertyTests_t self, int32_t value, System_Exception_t*  outException);
 ```
 
 In Swift, we can generate a "proper" property for the getter but since setters can't currently be marked as throwing the setter is exposed as a function suffixed with `_set`:
 
-```
+```swift
 var favoriteNumber: Int32 { get throws }
 func favoriteNumber_set(_ value: Int32) throws
 ```
@@ -226,7 +226,7 @@ In Swift, overridden or shadowed members are actually generated using the `overr
 Also, C doesn't support method overloading but in this case, the "fix" is not that easy.
 Take the following C# type for instance:
 
-```
+```csharp
 public static class OverloadTests
 {
     public static void Print(int value) { }
@@ -239,7 +239,7 @@ We have three methods with the same name, the same number of arguments and even 
 
 In C, we basically add a counter as a suffix to every overloaded method so the resulting C interfaces look like this:
 
-```
+```c
 void OverloadTests_Print(int32_t value, System_Exception_t* outException);
 void OverloadTests_Print_1(System_DateTime_t value, System_Exception_t* outException);
 void OverloadTests_Print_2(System_String_t value, System_Exception_t* outException);
@@ -247,7 +247,7 @@ void OverloadTests_Print_2(System_String_t value, System_Exception_t* outExcepti
 
 In Swift, we fortunately can do overloads just like in C# and so the Swift signatures for those functions look like this:
 
-```
+```swift
 class func print(_ value: Int32) throws
 class func print(_ value: System_DateTime?) throws
 class func print(_ value: System_String?) throws
@@ -264,7 +264,7 @@ Sometimes you need to box primitives in .NET to use them in a more "generic" con
 In the generated bindings, you always have to do this explicitly and we provide helper functions in C and Swift for that task.
 For instance, to convert a C `int32_t` to a `System_Object_t` and back again you can do this:
 
-```
+```c
 int32_t number = 5;
 System_Object_t numberObj = DNObjectFromInt32(number);
 int32_t numberRet = DNObjectCastToInt32(numberObj, NULL); // TODO: Error handling
@@ -272,7 +272,7 @@ int32_t numberRet = DNObjectCastToInt32(numberObj, NULL); // TODO: Error handlin
 
 In Swift we provide extension methods to convert back and forth between primitives and .NET objects. The same task can be achieved like this in Swift:
 
-```
+```swift
 let number: Int32 = 5
 let numberObj = number.dotNETObject()
 let numberRet = try numberObj.castToInt32()
@@ -285,7 +285,7 @@ let numberRet = try numberObj.castToInt32()
 
 Here's a C# class that declares a delegate which takes and returns a string. The delegate handler can do some transformation, like uppercasing a string and return the uppercased variant.
 
-```
+```csharp
 public static class Transformer {
   public delegate string StringTransformerDelegate(string inputString);
 
@@ -307,7 +307,7 @@ Because calling this from C is quite involved, instead of listing the required c
 
 The Swift bindings for this allow for much simpler usage:
 
-```
+```swift
 let inputString = "Hello World".dotNETString()
 
 let outputString = try! Beyond.NET.Sample.Transformer.transformString(inputString, .init({
@@ -317,7 +317,7 @@ let outputString = try! Beyond.NET.Sample.Transformer.transformString(inputStrin
 print(outputString) // Prints "HELLO WORLD!"
 ```
 
-Yes, we omitted any kind of error handling and just force unwrap everything in this example for brevity. The point here is that it's quite easy to call .NET APIs that use delegates and the whole memory management story is being taken care of by the generated bindings.
+Yes, we omitted any kind of error handling and just force unwrap optionals in this example for brevity. The point here is that it's quite easy to call .NET APIs that use delegates and the whole memory management story is being taken care of by the generated bindings.
 
 
 ## Converting between .NET and Swift types
@@ -327,7 +327,7 @@ That includes strings, dates, byte arrays (Swift `Data` objects), etc.
 
 Here's an example that converts a `System.String` to a Swift `String` and back again:
 
-```
+```swift
 let systemString = System.String.empty!
 let swiftString = systemString.string()
 let systemStringRet = swiftString.dotNETString()
@@ -351,7 +351,7 @@ There are basically two kinds of generics in .NET:
 Let's start with generic methods.
 Here's a simple example of a generic method in a non-generic class:
 
-```
+```csharp
 class GenericTests
 {
   T ReturnDefaultValue<T>()
