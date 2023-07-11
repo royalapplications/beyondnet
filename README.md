@@ -165,6 +165,32 @@ Instead, use the bindings for `System.Object.Equals` or `System.Object.Reference
 In Swift, the `==` and `===` operators are overridden for .NET objects and call those functions respectively. So feel free to compare .NET objects in Swift like regular Swift objects.
 
 
+## Properties
+
+Because C doesn't have properties, we expose them as regular methods suffixed with `_Get` and/or `_Set`.
+Here's an example in C#:
+
+```
+public class PropertyTests {
+    public int FavoriteNumber { get; set; }
+}
+```
+
+The generated C accessors for this property look like this:
+
+```
+int32_t PropertyTests_FavoriteNumber_Get(PropertyTests_t self, System_Exception_t* outException);
+void PropertyTests_FavoriteNumber_Set(PropertyTests_t self, int32_t value, System_Exception_t*  outException);
+```
+
+In Swift, we can generate a "proper" property for the getter but since setters can't currently be marked as throwing the setter is exposed as a function suffixed with `_set`:
+
+```
+var favoriteNumber: Int32 { get throws }
+func favoriteNumber_set(_ value: Int32) throws
+```
+
+
 ## Type checking/casting
 
 You can check if an instance of an object is of a certain type in C# by using the `is` keyword (ie. `if (myObj is string) ...`). Since this is implemented at the language level there's no easy way to wrap this in the generated code. Instead, we use `System.Type.IsAssignableTo` to implement a wrapper for the `is` keyword.
@@ -235,6 +261,20 @@ In Swift we provide extension methods to convert back and forth between primitiv
 let number: Int32 = 5
 let numberObj = number.dotNETObject()
 let numberRet = try numberObj.castToInt32()
+```
+
+
+## Converting between .NET and Swift types
+
+For very common types we provide convenience extensions to convert between the two worlds.
+That includes strings, dates, byte arrays (Swift `Data` objects), etc.
+
+Here's an example that converts a `System.String` to a Swift `String` and back again:
+
+```
+let systemString = System.String.empty!
+let swiftString = systemString.string()
+let systemStringRet = swiftString.dotNETString()
 ```
 
 
