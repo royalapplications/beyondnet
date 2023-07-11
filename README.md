@@ -180,8 +180,40 @@ In the Swift bindings, we have extension methods on `DNObject` (the base type fo
 
 # Method overloads, Member overrides, shadowed members
 
-Since C doesn't have a concept of inheritance, overridden and shadowed members are just redeclared for subclasses. (**TODO**: Is that actually true?!)
-Likewise, C doesn't support method overloading but in this case, the "fix" is not that easy.
+Since C doesn't have the concept of inheritance, overridden and shadowed members are just redeclared for subclasses.
+In Swift, overridden or shadowed members are actually generated using the `override` keyword.
+
+Also, C doesn't support method overloading but in this case, the "fix" is not that easy.
+Take the following C# type for instance:
+
+```
+public static class OverloadTests
+{
+    public static void Print(int value) { }
+    public static void Print(DateTime value) { }
+    public static void Print(string value) { }
+}
+```
+
+We have three methods with the same name, the same number of arguments and even the same argument name. The only difference between them is the argument type.
+
+In C, we basically add a counter as a suffix to every overloaded method so the resulting C interfaces look like this:
+
+```
+void OverloadTests_Print(int32_t value, System_Exception_t* outException);
+void OverloadTests_Print_1(System_DateTime_t value, System_Exception_t* outException);
+void OverloadTests_Print_2(System_String_t value, System_Exception_t* outException);
+```
+
+In Swift, we fortunately can do overloads just like in C# and so the Swift signatures for those functions look like this:
+
+```
+class func print(_ value: Int32) throws
+class func print(_ value: System_DateTime?) throws
+class func print(_ value: System_String?) throws
+```
+
+The same rules apply to shadowed members.
 
 
 ## .NET Object boxing
