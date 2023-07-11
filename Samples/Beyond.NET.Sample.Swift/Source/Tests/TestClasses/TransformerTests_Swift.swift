@@ -12,6 +12,16 @@ final class TransformerTests_Swift: XCTestCase {
         Self.sharedTearDown()
     }
     
+//    func testStringTransformerAsInDocs() {
+//        let inputString = "Hello World".dotNETString()
+//        
+//        let outputString = try! Beyond.NET.Sample.Transformer.transformString(inputString, .init({
+//            try! $0!.toUpper()
+//        }))!.string()
+//        
+//        print(outputString) // Prints "HELLO WORLD!"
+//    }
+    
     func testStringTransformer() {
         guard let uppercaser = createUppercaser() else {
             XCTFail("Failed to create uppercaser")

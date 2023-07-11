@@ -279,10 +279,45 @@ let numberRet = try numberObj.castToInt32()
 ```
 
 
-## Delegates
+## Delegates and Events
 
-**TODO**
+.NET Delegates and Events are mapped to C function pointers and Swift closures with some infrastructure around them to allow for proper memory management.
 
+Here's a C# class that declares a delegate which takes and returns a string. The delegate handler can do some transformation, like uppercasing a string and return the uppercased variant.
+
+```
+public static class Transformer {
+  public delegate string StringTransformerDelegate(string inputString);
+
+  public static string TransformString(
+      string inputString,
+      StringTransformerDelegate stringTransformer
+  )
+  {
+      string outputString = stringTransformer(inputString);
+
+      return outputString;
+  }
+}
+```
+
+The full C# type declaration is [available in the repository](blob/main/Samples/Beyond.NET.Sample.Managed/Source/Transformer.cs).
+
+Because calling this from C is quite involved, instead of listing the required code here, [here's a link](blob/main/Samples/Beyond.NET.Sample.C/transform.c) to a full C program that makes use of this API.
+
+The Swift bindings for this allow for much simpler usage:
+
+```
+let inputString = "Hello World".dotNETString()
+
+let outputString = try! Beyond.NET.Sample.Transformer.transformString(inputString, .init({
+    try! $0!.toUpper()
+}))!.string()
+
+print(outputString) // Prints "HELLO WORLD!"
+```
+
+Yes, we omitted any kind of error handling and just force unwrap everything in this example for brevity. The point here is that it's quite easy to call .NET APIs that use delegates and the whole memory management story is being taken care of by the generated bindings.
 
 
 ## Converting between .NET and Swift types
