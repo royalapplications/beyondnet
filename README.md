@@ -221,7 +221,7 @@ Direct casts are exposed through the `DNObjectCastTo` method. It works the same 
 
 In the Swift bindings, we have extension methods on `DNObject` (the base type for all generated class and struct bindings) which makes type checking/casting much easier:
 
-```
+```swift
 let string = System.String.empty!
 
 if string.is(System.String.typeOf) {
@@ -288,7 +288,7 @@ The same rules apply to shadowed members.
 
 Sometimes you need to box primitives in .NET to use them in a more "generic" context. For instance, if you have an array of `System.Object`'s (`object[]`) and want to store integers (`int`, `long`, etc.) in it you need to box them. In C# this is handled transparently or explicitly if you cast for example, an `int` to an `object` (`var intAsObj = (object)5`).
 
-In the generated bindings, you always have to do this explicitly and we provide helper functions in C and Swift for that task.
+In the generated bindings, you always have to do this explicitly and we provide helper functions in C and Swift for exactly that task.
 For instance, to convert a C `int32_t` to a `System_Object_t` and back again you can do this:
 
 ```c
@@ -499,6 +499,22 @@ To handle that, you can add a symbolic breakpoint in Xcode and configure it like
 * Action: Debugger Command: `process handle SIGUSR1 -n true -p true -s false`
 * Enable: `Automatically continue after evaluating actions`
 Also see this [StackOverflow post](https://stackoverflow.com/questions/10431579/permanently-configuring-lldb-in-xcode-4-3-2-not-to-stop-on-signals).
+
+
+
+## Unit Tests
+
+We've got quite an extensive suite of unit tests. All of them are written in Swift but some target the generated C bindings while others target the Swift API surface.
+
+To run them, open [BeyondNETSamplesSwift.xcworkspace](Samples/Beyond.NET.Sample.Swift/BeyondNETSamplesSwift.xcworkspace) in Xcode and go to `Product -> Test`.
+
+Building this in Xcode will take care of the following:
+- It compiles the code generator CLI app using NativeAOT
+- It compiles the .NET sample project
+- It compiles the sample project's generated bindings using NativeAOT
+- It compiles a macOS framework containing the generated C and Swift bindings
+
+So this is all automatic if you just open the Xcode workspace and build it or run the tests. The individual steps are implemented as build phases in the Xcode project.
 
 
 
