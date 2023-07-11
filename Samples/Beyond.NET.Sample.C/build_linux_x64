@@ -2,10 +2,10 @@
 
 set -e
 
-OUTPUT_PRODUCT_NAME="newguid"
+OUTPUT_PRODUCT_NAME="transform"
 LIBRARY_NAME="BeyondDotNETSampleNative"
 LIBRARY_FILE_NAME="lib${LIBRARY_NAME}.so"
-C_FILE_NAME="newguid.c"
+C_FILE_NAME="transform.c"
 
 BUILD_DIR="bin"
 
