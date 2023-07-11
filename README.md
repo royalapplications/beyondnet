@@ -218,7 +218,24 @@ The same rules apply to shadowed members.
 
 ## .NET Object boxing
 
-**TODO**
+Sometimes you need to box primitives in .NET to use them in a more "generic" context. For instance, if you have an array of `System.Object`'s (`object[]`) and want to store integers (`int`, `long`, etc.) in it you need to box them. In C# this is handled transparently or explicitly if you cast for example, an `int` to an `object` (`var intAsObj = (object)5`).
+
+In the generated bindings, you always have to do this explicitly and we provide helper functions in C and Swift for that task.
+For instance, to convert a C `int32_t` to a `System_Object_t` and back again you can do this:
+
+```
+int32_t number = 5;
+System_Object_t numberObj = DNObjectFromInt32(number);
+int32_t numberRet = DNObjectCastToInt32(numberObj, NULL); // TODO: Error handling
+```
+
+In Swift we provide extension methods to convert back and forth between primitives and .NET objects. The same task can be achieved like this in Swift:
+
+```
+let number: Int32 = 5
+let numberObj = number.dotNETObject()
+let numberRet = try numberObj.castToInt32()
+```
 
 
 ## A word (or two) about generics
