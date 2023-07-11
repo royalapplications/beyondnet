@@ -37,6 +37,7 @@ It's important to note that while Beyond.NET generates code for you, it doesn't 
 - If you do not have a pre-compiled executable of the generator, compile it by either running `dotnet publish` within its directory or use one of our provided publish scripts like `publish_macos_universal` for compiling a universal macOS binary.
 - Open a terminal, switch to the directory containing the built executable and execute the generator (`./beyondnetgen`).
 - Since you've provided no arguments, the generator should show its usage screen.
+- Optionally, symlink the generator executable to be somewhere on your path (ie. `ln -s ~/Path/To/beyondnetgen /usr/local/bin/beyondnetgen`)
 
 
 ### Configuration
