@@ -33,7 +33,7 @@ It's important to note that while Beyond.NET generates code for you, it doesn't 
 
 
 ### Generator Executable
-- Either clone the Beyond.NET repository or download one of the pre-built generator executables for your platform.
+- Either clone the Beyond.NET repository or [download](https://github.com/royalapplications/beyondnet/releases/latest) one of the pre-built generator executables for your platform.
 - If you do not have a pre-compiled executable of the generator, compile it by either running `dotnet publish` within its directory or use one of our provided publish scripts like `publish_macos_universal` for compiling a universal macOS binary.
 - Open a terminal, switch to the directory containing the built executable and execute the generator (`./beyondnetgen`).
 - Since you've provided no arguments, the generator should show its usage screen.
