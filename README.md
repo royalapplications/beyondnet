@@ -138,12 +138,17 @@ static void WriteLine(string text)
 
 **C:**
 ```c
-void Namespace_WriteLine(System_String_t text, System_Exception_t* exception)
+void WriteLine(System_String_t text, System_Exception_t* exception)
 ```
 
 When calling the `WriteLine` method from C, you should provide a reference to a `System_Exception_t` object which, after the method call will either be null or contain a value which indicates the method did throw.
 
 The code generator for Swift produces APIs annotated with the `throws` keyword so you can use Swift's native error handling when calling into .NET.
+
+**Swift:**
+```swift
+func writeLine(_ text: System_String) throws
+```
 
 
 
