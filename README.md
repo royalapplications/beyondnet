@@ -396,7 +396,7 @@ try! eventTest.value_set(10)
 print(lastValuePassedIntoEventHandler)
 ```
 
-I guess this is pretty self explanatory. Regular Swift memory management rules apply here. Most of the time you'll likely want to create an event handler, store it as a variable outside of the function's scope and unsubscribe from the event in your class's deinitializer.
+I guess this is pretty self explanatory. Again, for brevity we omitted error handling here. Regular Swift memory management rules apply here. Most of the time you'll likely want to create an event handler, store it as a variable outside of the function's scope and unsubscribe from the event in your class's deinitializer.
 
 
 
