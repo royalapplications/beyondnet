@@ -514,7 +514,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\n\ncd \"${PROJECT_DIR}\"\nsource prepare_scripting_environment\n\ncd \"${PROJECT_DIR}/../Beyond.NET.Sample.Native\"\n./publish_macos_universal\n";
+			shellScript = "set -e\n\ncd \"${PROJECT_DIR}\"\nsource \"../prepare_xcode_scripting_environment\"\n\ncd \"${PROJECT_DIR}/../Beyond.NET.Sample.Native\"\n./publish_macos_universal\n";
 		};
 		E79340DC29F68045003337B9 /* Build .NET Sample Managed */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -533,7 +533,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\n\ncd \"${PROJECT_DIR}\"\nsource prepare_scripting_environment\n\ncd \"${PROJECT_DIR}/../Beyond.NET.Sample.Managed\"\n./publish_managed\n";
+			shellScript = "set -e\n\ncd \"${PROJECT_DIR}\"\nsource \"../prepare_xcode_scripting_environment\"\n\ncd \"${PROJECT_DIR}/../Beyond.NET.Sample.Managed\"\n./publish_managed\n";
 		};
 		E79340DD29F681EC003337B9 /* Build Beyond.NET.CodeGenerator.CLI */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -552,7 +552,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\n\ncd \"${PROJECT_DIR}\"\nsource prepare_scripting_environment\n\ncd \"${PROJECT_DIR}/../../Generator/Beyond.NET.CodeGenerator.CLI\"\n./publish_macos_universal\n";
+			shellScript = "set -e\n\ncd \"${PROJECT_DIR}\"\nsource \"../prepare_xcode_scripting_environment\"\n\ncd \"${PROJECT_DIR}/../../Generator/Beyond.NET.CodeGenerator.CLI\"\n./publish_macos_universal\n";
 		};
 		E79340DE29F6838A003337B9 /* Generate .NET Native Bindings */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -571,7 +571,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\n\ncd \"${PROJECT_DIR}\"\nsource prepare_scripting_environment\n\ncd \"${PROJECT_DIR}/..\"\n./generate_macos\n";
+			shellScript = "set -e\n\ncd \"${PROJECT_DIR}\"\nsource \"../prepare_xcode_scripting_environment\"\n\ncd \"${PROJECT_DIR}/..\"\n./generate_macos\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
