@@ -71,7 +71,16 @@ It's important to note that while Beyond.NET generates code for you, it doesn't 
 - Create an Objective-C bridging header.
   - You can either just add a temporary Objective-C class (you can delete it later) to trigger the creation of the bridging header or create an empty header file and adjust the "Objective-C Bridging Header" build setting of the Xcode project to point to that header file.
 - In the briding header, import the generated C bindings header file (ie. `#import "Output_C.h"`).
+- Open the project settings and in the "General" tab, under "Frameworks, Libraries and Embedded Content" click the "+" button
+    - Select "Add other... - Add files..." and select the native dylib (ie. `MyNativeLib.dylib`)
+- Try to build the project. If it fails, you might need to adjust either your header or library search paths in the project settings.
+    - If Xcode complains about being unable to find the generated C header, adjust "Build Settings - Header Search Paths" to point to the path where the generated header is located.
+        - For example, if your header is one level below your Xcode project in a folder called "Generated" use this: `$(PROJECT_DIR)/../Generated`
+    - If Xcode fails to link the native dylib (the error looks something like this: `Library not found for -lMyNativeLib`) you need to adjust "Build Settings - Header Search Paths" in you project settings to point to the path where the library is located.
+        - For example, if you the native library is located one level below your Xcode project in a folder called "MyLibNative/bin/Release/net8.0/osx-universal/publish" use this: `$(PROJECT_DIR)/../MyLibNative/bin/Release/net8.0/osx-universal/publish`)
 - You're now ready to call any of the APIs that bindings were generated for.
+- As a simple test, open `AppDelegate.swift` and in `applicationDidFinishLaunching` add this code: `print((try? System.DateTime.now?.toString()?.string()) ?? "Error")`
+    - When you run the app, you should see the current date and time printed to the console.
 - Please note that since C and Swift do not have support for namespaces, all generated types will have their namespace prefixed. `System.Guid.NewGuid` for instance gets generated as `System_Guid.newGuid` in Swift and `System_Guid_NewGuid` in C. However, by default, the Swift code generator will also produces typealiases in nested types that basically restore the .NET namespaces by emulating them using nested types in Swift. So you can in fact use `System.Guid.newGuid` in Swift. Hooray!
 
 
