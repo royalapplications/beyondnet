@@ -20,7 +20,6 @@ PUBLISH_DIR="publish"
 DOTNET_TARGET_FRAMEWORK="net${DOTNET_VERSION_MAJOR_AND_MINOR}"
 
 ARM64_BUILD_DIR="${BIN_DIR}/${BUILD_CONFIGURATION}/${DOTNET_TARGET_FRAMEWORK}/${RUNTIME_IDENTIFIER_ARM64}/${PUBLISH_DIR}"
-
 ARM64_FILE_PATH="${ARM64_BUILD_DIR}/${OUTPUT_FILE_NAME}"
 
 echo "Cleaning ${OUTPUT_PRODUCT_NAME}"
@@ -35,5 +34,5 @@ ${DOTNET_PATH} publish -r ${RUNTIME_IDENTIFIER_ARM64} -v "${VERBOSITY_LEVEL}"
 # echo "Making universal ${OUTPUT_PRODUCT_NAME} build"
 # lipo -create "${X64_FILE_PATH}" "${ARM64_FILE_PATH}" -output "${UNIVERSAL_FILE_PATH}"
 
-# echo "Changing install name of universal ${OUTPUT_PRODUCT_NAME} build"
-# install_name_tool -id "@rpath/${OUTPUT_FILE_NAME}" "${UNIVERSAL_FILE_PATH}"
+echo "Changing install name of universal ${OUTPUT_PRODUCT_NAME} build"
+install_name_tool -id "@rpath/${OUTPUT_FILE_NAME}" "${ARM64_FILE_PATH}"
