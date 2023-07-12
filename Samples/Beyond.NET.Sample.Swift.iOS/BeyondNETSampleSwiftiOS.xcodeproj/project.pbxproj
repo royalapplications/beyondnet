@@ -184,8 +184,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E741A4472A5ED78F000523D5 /* BeyondNETSampleSwiftiOS */,
 				E7519E0E2A5EF0520048D98E /* Build .NET Stuff */,
+				E741A4472A5ED78F000523D5 /* BeyondNETSampleSwiftiOS */,
 			);
 		};
 /* End PBXProject section */
