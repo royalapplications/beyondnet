@@ -6,15 +6,42 @@
 	objectVersion = 56;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		E7519E0E2A5EF0520048D98E /* Build .NET Stuff */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = E7519E0F2A5EF0520048D98E /* Build configuration list for PBXAggregateTarget "Build .NET Stuff" */;
+			buildPhases = (
+				E7519E122A5EF05B0048D98E /* Build Beyond.NET.CodeGenerator.CLI */,
+				E7519E132A5EF0660048D98E /* Build .NET Sample Managed */,
+				E7519E142A5EF06E0048D98E /* Generate .NET Native Bindings */,
+				E7519E152A5EF0810048D98E /* Build .NET Sample Native */,
+			);
+			dependencies = (
+			);
+			name = "Build .NET Stuff";
+			productName = "Build .NET Stuff";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		E78B9EC02A5ED80200352EEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E78B9EBD2A5ED80100352EEE /* Assets.xcassets */; };
 		E78B9EC12A5ED80200352EEE /* BeyondNETSampleSwiftiOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B9EBE2A5ED80200352EEE /* BeyondNETSampleSwiftiOSApp.swift */; };
 		E78B9EC22A5ED80200352EEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B9EBF2A5ED80200352EEE /* ContentView.swift */; };
 		E78B9EC62A5ED8B800352EEE /* Generated_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B9EC52A5ED8B800352EEE /* Generated_Swift.swift */; };
 		E78B9ED52A5EDD8C00352EEE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E78B9ED42A5EDD8C00352EEE /* README.md */; };
-		E78B9ED72A5EED7C00352EEE /* libBeyondDotNETSampleNativeiOS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E78B9ED62A5EED7C00352EEE /* libBeyondDotNETSampleNativeiOS.xcframework */; };
+		E78B9ED72A5EED7C00352EEE /* libBeyondDotNETSampleNativeiOS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E78B9ED62A5EED7C00352EEE /* libBeyondDotNETSampleNativeiOS.xcframework */; settings = {ATTRIBUTES = (Required, ); }; };
 		E78B9ED82A5EED7C00352EEE /* libBeyondDotNETSampleNativeiOS.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E78B9ED62A5EED7C00352EEE /* libBeyondDotNETSampleNativeiOS.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E7519E162A5EF0880048D98E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E741A4402A5ED78F000523D5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E7519E0E2A5EF0520048D98E;
+			remoteInfo = "Build .NET Stuff";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		E78B9ED92A5EED7C00352EEE /* Embed Frameworks */ = {
@@ -110,10 +137,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E741A4562A5ED790000523D5 /* Build configuration list for PBXNativeTarget "BeyondNETSampleSwiftiOS" */;
 			buildPhases = (
-				E78B9ED02A5EDBB600352EEE /* Build Beyond.NET.CodeGenerator.CLI */,
-				E78B9ED12A5EDBC800352EEE /* Build .NET Sample Managed */,
-				E78B9ED22A5EDBD500352EEE /* Generate .NET Native Bindings */,
-				E78B9ED32A5EDBE200352EEE /* Build .NET Sample Native */,
 				E741A4442A5ED78F000523D5 /* Sources */,
 				E741A4452A5ED78F000523D5 /* Frameworks */,
 				E741A4462A5ED78F000523D5 /* Resources */,
@@ -122,6 +145,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				E7519E172A5EF0880048D98E /* PBXTargetDependency */,
 			);
 			name = BeyondNETSampleSwiftiOS;
 			productName = BeyondNETSampleSwiftiOS;
@@ -142,6 +166,9 @@
 						CreatedOnToolsVersion = 14.3.1;
 						LastSwiftMigration = 1430;
 					};
+					E7519E0E2A5EF0520048D98E = {
+						CreatedOnToolsVersion = 15.0;
+					};
 				};
 			};
 			buildConfigurationList = E741A4432A5ED78F000523D5 /* Build configuration list for PBXProject "BeyondNETSampleSwiftiOS" */;
@@ -158,6 +185,7 @@
 			projectRoot = "";
 			targets = (
 				E741A4472A5ED78F000523D5 /* BeyondNETSampleSwiftiOS */,
+				E7519E0E2A5EF0520048D98E /* Build .NET Stuff */,
 			);
 		};
 /* End PBXProject section */
@@ -175,7 +203,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		E78B9ED02A5EDBB600352EEE /* Build Beyond.NET.CodeGenerator.CLI */ = {
+		E7519E122A5EF05B0048D98E /* Build Beyond.NET.CodeGenerator.CLI */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -194,7 +222,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\ncd \"${PROJECT_DIR}\"\nsource \"../prepare_xcode_scripting_environment\"\n\ncd \"${PROJECT_DIR}/../../Generator/Beyond.NET.CodeGenerator.CLI\"\n./publish_macos_universal\n";
 		};
-		E78B9ED12A5EDBC800352EEE /* Build .NET Sample Managed */ = {
+		E7519E132A5EF0660048D98E /* Build .NET Sample Managed */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -213,7 +241,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\ncd \"${PROJECT_DIR}\"\nsource \"../prepare_xcode_scripting_environment\"\n\ncd \"${PROJECT_DIR}/../Beyond.NET.Sample.Managed\"\n./publish_managed\n";
 		};
-		E78B9ED22A5EDBD500352EEE /* Generate .NET Native Bindings */ = {
+		E7519E142A5EF06E0048D98E /* Generate .NET Native Bindings */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -232,7 +260,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\ncd \"${PROJECT_DIR}\"\nsource \"../prepare_xcode_scripting_environment\"\n\ncd \"${PROJECT_DIR}/..\"\n./generate_macos\n";
 		};
-		E78B9ED32A5EDBE200352EEE /* Build .NET Sample Native */ = {
+		E7519E152A5EF0810048D98E /* Build .NET Sample Native */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -265,6 +293,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E7519E172A5EF0880048D98E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E7519E0E2A5EF0520048D98E /* Build .NET Stuff */;
+			targetProxy = E7519E162A5EF0880048D98E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		E741A4542A5ED790000523D5 /* Debug */ = {
@@ -448,6 +484,22 @@
 			};
 			name = Release;
 		};
+		E7519E102A5EF0520048D98E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E7519E112A5EF0520048D98E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -465,6 +517,15 @@
 			buildConfigurations = (
 				E741A4572A5ED790000523D5 /* Debug */,
 				E741A4582A5ED790000523D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E7519E0F2A5EF0520048D98E /* Build configuration list for PBXAggregateTarget "Build .NET Stuff" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7519E102A5EF0520048D98E /* Debug */,
+				E7519E112A5EF0520048D98E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
