@@ -363,7 +363,7 @@ public class TypeCollector
         }
 
         if (!m_enableGenericsSupport &&
-            (type.IsGenericType || type.IsConstructedGenericType || type.IsGenericTypeDefinition || type.IsGenericParameter)) {
+            type.IsGenericInAnyWay(true)) {
             unsupportedReason = "Is Generic (disabled by configuration)";
             return false;
         }

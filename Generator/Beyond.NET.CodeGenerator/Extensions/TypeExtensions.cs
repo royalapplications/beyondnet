@@ -133,6 +133,32 @@ internal static class TypeExtensions
     {
         return type.IsAssignableTo(typeof(Delegate));
     }
+
+    internal static bool IsGenericInAnyWay(this Type type, bool includeBaseTypes)
+    {
+        bool isGeneric = type.IsGenericType || 
+                         type.IsConstructedGenericType || 
+                         type.IsGenericTypeDefinition || 
+                         type.IsGenericParameter;
+
+        if (isGeneric) {
+            return true;
+        }
+
+        if (!includeBaseTypes) {
+            return false;
+        }
+
+        Type? baseType = type.BaseType;
+
+        if (baseType is null) {
+            return false;
+        }
+
+        bool isAnyBaseTypeGeneric = baseType.IsGenericInAnyWay(true);
+
+        return isAnyBaseTypeGeneric;
+    }
     
     internal static bool IsStruct(this Type type)
     {
