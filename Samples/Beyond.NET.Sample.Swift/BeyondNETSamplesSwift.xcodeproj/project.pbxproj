@@ -533,6 +533,9 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"$(PROJECT_DIR)/../Generated/Generated_C.h",
+				"$(PROJECT_DIR)/../Generated/Generated_Swift.swift",
+				"$(PROJECT_DIR)/../Beyond.NET.Sample.Native/bin/Release/net8.0/osx-universal/publish/libBeyondDotNETSampleNative.dylib",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
