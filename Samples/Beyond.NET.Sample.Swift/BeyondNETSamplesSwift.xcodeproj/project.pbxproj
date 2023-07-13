@@ -22,13 +22,15 @@
 
 /* Begin PBXBuildFile section */
 		E70A1FAD29C3652100843CD0 /* SystemTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A1FAC29C3652100843CD0 /* SystemTypeTests.swift */; };
-		E70D116129BF9F2600B4E738 /* BeyondNETSamplesSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = E70D116029BF9F2600B4E738 /* BeyondNETSamplesSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E70D116B29BF9FCD00B4E738 /* libBeyondDotNETSampleNative.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E70D116A29BF9FCC00B4E738 /* libBeyondDotNETSampleNative.dylib */; };
-		E70D117629BF9FEC00B4E738 /* BeyondNETSamplesSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E70D115D29BF9F2600B4E738 /* BeyondNETSamplesSwift.framework */; };
 		E70D117D29BFA01300B4E738 /* TestClassesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70D117429BF9FEC00B4E738 /* TestClassesTests.swift */; };
-		E70D117F29C0593C00B4E738 /* libBeyondDotNETSampleNative.dylib in Copy Libraries */ = {isa = PBXBuildFile; fileRef = E70D116A29BF9FCC00B4E738 /* libBeyondDotNETSampleNative.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		E70D118129C0598F00B4E738 /* libBeyondDotNETSampleNative.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E70D116A29BF9FCC00B4E738 /* libBeyondDotNETSampleNative.dylib */; };
-		E736639329BFCB2600B6DEE2 /* libBeyondDotNETSampleNative.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = E70D116A29BF9FCC00B4E738 /* libBeyondDotNETSampleNative.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		E71E41F12A60035A0075FE5F /* libBeyondDotNETSampleNative.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E71E41EF2A6003560075FE5F /* libBeyondDotNETSampleNative.xcframework */; };
+		E71E41F22A60035A0075FE5F /* libBeyondDotNETSampleNative.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E71E41EF2A6003560075FE5F /* libBeyondDotNETSampleNative.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E71E41F52A6003EA0075FE5F /* Generated_C.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E7491B2A026A1C009590A8 /* Generated_C.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E71E41F62A6003F30075FE5F /* Generated_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E7491C2A026A1C009590A8 /* Generated_Swift.swift */; };
+		E71E41FA2A600FE10075FE5F /* BeyondNETSamplesSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = E70D116029BF9F2600B4E738 /* BeyondNETSamplesSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E71E41FB2A6010970075FE5F /* SwiftSyntaxPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79335A529E98D3D0035FCEB /* SwiftSyntaxPlayground.swift */; };
+		E71E41FE2A6012340075FE5F /* BeyondNETSamplesSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E71E41E62A60030F0075FE5F /* BeyondNETSamplesSwift.framework */; };
+		E71E41FF2A6013B60075FE5F /* libBeyondDotNETSampleNative.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E71E41EF2A6003560075FE5F /* libBeyondDotNETSampleNative.xcframework */; };
 		E73EE8F229DAEA0500C57A71 /* SystemThreadingThreadTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73EE8F129DAEA0500C57A71 /* SystemThreadingThreadTest.swift */; };
 		E73EE8F429DAEC1A00C57A71 /* SystemThreadingTimerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73EE8F329DAEC1A00C57A71 /* SystemThreadingTimerTest.swift */; };
 		E73EE8F629DAF09D00C57A71 /* SystemMathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73EE8F529DAF09D00C57A71 /* SystemMathTests.swift */; };
@@ -62,7 +64,6 @@
 		E790C0DB29E6ABC70054AA4B /* GenericTestClassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E790C0DA29E6ABC70054AA4B /* GenericTestClassTests.swift */; };
 		E790C0DD29E6B1B80054AA4B /* SystemCollectionsGenericListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E790C0DC29E6B1B80054AA4B /* SystemCollectionsGenericListTests.swift */; };
 		E790C0DF29E6B2500054AA4B /* SystemCollectionsGenericDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E790C0DE29E6B2500054AA4B /* SystemCollectionsGenericDictionaryTests.swift */; };
-		E79335A629E98D3D0035FCEB /* SwiftSyntaxPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79335A529E98D3D0035FCEB /* SwiftSyntaxPlayground.swift */; };
 		E79B376529E002E700118C35 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B376429E002E700118C35 /* StringExtensions.swift */; };
 		E7A3E6D029EECD9800447BF2 /* SystemGuidTests_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A3E6CF29EECD9800447BF2 /* SystemGuidTests_Swift.swift */; };
 		E7A3E6D229EECEF800447BF2 /* SystemDateTimeTests_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A3E6D129EECEF800447BF2 /* SystemDateTimeTests_Swift.swift */; };
@@ -89,8 +90,6 @@
 		E7C8CF0B29C1FE5800C4230F /* SystemArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0A29C1FE5800C4230F /* SystemArrayTests.swift */; };
 		E7C8CF0D29C2139B00C4230F /* PersonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0C29C2139B00C4230F /* PersonTests.swift */; };
 		E7C8CF0F29C2180200C4230F /* AnimalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0E29C2180200C4230F /* AnimalTests.swift */; };
-		E7E7491D2A026A1C009590A8 /* Generated_C.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E7491B2A026A1C009590A8 /* Generated_C.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E7E7491E2A026A1C009590A8 /* Generated_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E7491C2A026A1C009590A8 /* Generated_Swift.swift */; };
 		E7EB338629C8879100392F3D /* AddressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EB338529C8879100392F3D /* AddressTests.swift */; };
 		E7ED7A1829D35DF4008C96E0 /* SystemVersionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED7A1729D35DF4008C96E0 /* SystemVersionTests.swift */; };
 		E7ED7A1A29D445C8008C96E0 /* SystemActionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED7A1929D445C8008C96E0 /* SystemActionTests.swift */; };
@@ -103,23 +102,6 @@
 		E7F90B6429F2B664005B0C67 /* SwiftSyntaxPlaygroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F90B6329F2B664005B0C67 /* SwiftSyntaxPlaygroundTests.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		E70D117729BF9FEC00B4E738 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E70D115429BF9F2600B4E738 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E70D115C29BF9F2600B4E738;
-			remoteInfo = BeyondNETSamplesSwift;
-		};
-		E7B491D82A5FDBF700A7C75D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E70D115429BF9F2600B4E738 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E7B491D32A5FDBD900A7C75D;
-			remoteInfo = "Build .NET Stuff";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		E70D118029C0597200B4E738 /* Copy Libraries */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -127,31 +109,31 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E70D117F29C0593C00B4E738 /* libBeyondDotNETSampleNative.dylib in Copy Libraries */,
 			);
 			name = "Copy Libraries";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E736639429BFCB2600B6DEE2 /* Embed Libraries */ = {
+		E71E41F32A60035A0075FE5F /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E736639329BFCB2600B6DEE2 /* libBeyondDotNETSampleNative.dylib in Embed Libraries */,
+				E71E41F22A60035A0075FE5F /* libBeyondDotNETSampleNative.xcframework in Embed Frameworks */,
 			);
-			name = "Embed Libraries";
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E70A1FAC29C3652100843CD0 /* SystemTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemTypeTests.swift; sourceTree = "<group>"; };
-		E70D115D29BF9F2600B4E738 /* BeyondNETSamplesSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BeyondNETSamplesSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E70D116029BF9F2600B4E738 /* BeyondNETSamplesSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeyondNETSamplesSwift.h; sourceTree = "<group>"; };
-		E70D116A29BF9FCC00B4E738 /* libBeyondDotNETSampleNative.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libBeyondDotNETSampleNative.dylib; sourceTree = "<group>"; };
 		E70D117229BF9FEC00B4E738 /* BeyondNETSamplesSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeyondNETSamplesSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E70D117429BF9FEC00B4E738 /* TestClassesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClassesTests.swift; sourceTree = "<group>"; };
+		E71E41E62A60030F0075FE5F /* BeyondNETSamplesSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BeyondNETSamplesSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E71E41EF2A6003560075FE5F /* libBeyondDotNETSampleNative.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = libBeyondDotNETSampleNative.xcframework; sourceTree = "<group>"; };
+		E71E41FC2A60116A0075FE5F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E73EE8F129DAEA0500C57A71 /* SystemThreadingThreadTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemThreadingThreadTest.swift; sourceTree = "<group>"; };
 		E73EE8F329DAEC1A00C57A71 /* SystemThreadingTimerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemThreadingTimerTest.swift; sourceTree = "<group>"; };
 		E73EE8F529DAF09D00C57A71 /* SystemMathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemMathTests.swift; sourceTree = "<group>"; };
@@ -229,20 +211,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E70D115A29BF9F2600B4E738 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E70D116B29BF9FCD00B4E738 /* libBeyondDotNETSampleNative.dylib in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E70D116F29BF9FEC00B4E738 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E70D117629BF9FEC00B4E738 /* BeyondNETSamplesSwift.framework in Frameworks */,
-				E70D118129C0598F00B4E738 /* libBeyondDotNETSampleNative.dylib in Frameworks */,
+				E71E41FE2A6012340075FE5F /* BeyondNETSamplesSwift.framework in Frameworks */,
+				E71E41FF2A6013B60075FE5F /* libBeyondDotNETSampleNative.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E71E41E32A60030F0075FE5F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E71E41F12A60035A0075FE5F /* libBeyondDotNETSampleNative.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,19 +234,21 @@
 		E70D115329BF9F2600B4E738 = {
 			isa = PBXGroup;
 			children = (
+				E71E41FC2A60116A0075FE5F /* README.md */,
 				E7808CE929DEFB2600F50203 /* BeyondNETSamplesSwift.xctestplan */,
 				E7B491E12A5FE3F300A7C75D /* PreBuildOutputFiles.xcfilelist */,
-				E70D116A29BF9FCC00B4E738 /* libBeyondDotNETSampleNative.dylib */,
+				E71E41EF2A6003560075FE5F /* libBeyondDotNETSampleNative.xcframework */,
 				E70D115F29BF9F2600B4E738 /* Source */,
 				E70D115E29BF9F2600B4E738 /* Products */,
+				E71E41FD2A6012340075FE5F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		E70D115E29BF9F2600B4E738 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E70D115D29BF9F2600B4E738 /* BeyondNETSamplesSwift.framework */,
 				E70D117229BF9FEC00B4E738 /* BeyondNETSamplesSwiftTests.xctest */,
+				E71E41E62A60030F0075FE5F /* BeyondNETSamplesSwift.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -278,6 +262,13 @@
 				E70D116029BF9F2600B4E738 /* BeyondNETSamplesSwift.h */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		E71E41FD2A6012340075FE5F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		E720931E29CE187C0071B5B3 /* SwiftSupport */ = {
@@ -410,38 +401,18 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		E70D115829BF9F2600B4E738 /* Headers */ = {
+		E71E41E12A60030F0075FE5F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7E7491D2A026A1C009590A8 /* Generated_C.h in Headers */,
-				E70D116129BF9F2600B4E738 /* BeyondNETSamplesSwift.h in Headers */,
+				E71E41FA2A600FE10075FE5F /* BeyondNETSamplesSwift.h in Headers */,
+				E71E41F52A6003EA0075FE5F /* Generated_C.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		E70D115C29BF9F2600B4E738 /* BeyondNETSamplesSwift */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E70D116429BF9F2600B4E738 /* Build configuration list for PBXNativeTarget "BeyondNETSamplesSwift" */;
-			buildPhases = (
-				E70D115829BF9F2600B4E738 /* Headers */,
-				E70D115929BF9F2600B4E738 /* Sources */,
-				E70D115A29BF9F2600B4E738 /* Frameworks */,
-				E70D115B29BF9F2600B4E738 /* Resources */,
-				E736639429BFCB2600B6DEE2 /* Embed Libraries */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E7B491D92A5FDBF700A7C75D /* PBXTargetDependency */,
-			);
-			name = BeyondNETSamplesSwift;
-			productName = BeyondNETSamplesSwift;
-			productReference = E70D115D29BF9F2600B4E738 /* BeyondNETSamplesSwift.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		E70D117129BF9FEC00B4E738 /* BeyondNETSamplesSwiftTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E70D117929BF9FEC00B4E738 /* Build configuration list for PBXNativeTarget "BeyondNETSamplesSwiftTests" */;
@@ -454,12 +425,30 @@
 			buildRules = (
 			);
 			dependencies = (
-				E70D117829BF9FEC00B4E738 /* PBXTargetDependency */,
 			);
 			name = BeyondNETSamplesSwiftTests;
 			productName = BeyondNETSamplesSwiftTests;
 			productReference = E70D117229BF9FEC00B4E738 /* BeyondNETSamplesSwiftTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E71E41E52A60030F0075FE5F /* BeyondNETSamplesSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E71E41EC2A60030F0075FE5F /* Build configuration list for PBXNativeTarget "BeyondNETSamplesSwift" */;
+			buildPhases = (
+				E71E41E12A60030F0075FE5F /* Headers */,
+				E71E41E22A60030F0075FE5F /* Sources */,
+				E71E41E32A60030F0075FE5F /* Frameworks */,
+				E71E41E42A60030F0075FE5F /* Resources */,
+				E71E41F32A60035A0075FE5F /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BeyondNETSamplesSwift;
+			productName = BeyondNETSamplesSwiftMulti;
+			productReference = E71E41E62A60030F0075FE5F /* BeyondNETSamplesSwift.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -471,12 +460,11 @@
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					E70D115C29BF9F2600B4E738 = {
-						CreatedOnToolsVersion = 14.2;
-						LastSwiftMigration = 1430;
-					};
 					E70D117129BF9FEC00B4E738 = {
 						CreatedOnToolsVersion = 14.2;
+					};
+					E71E41E52A60030F0075FE5F = {
+						CreatedOnToolsVersion = 14.3.1;
 					};
 					E7B491D32A5FDBD900A7C75D = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -496,7 +484,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E70D115C29BF9F2600B4E738 /* BeyondNETSamplesSwift */,
+				E71E41E52A60030F0075FE5F /* BeyondNETSamplesSwift */,
 				E70D117129BF9FEC00B4E738 /* BeyondNETSamplesSwiftTests */,
 				E7B491D32A5FDBD900A7C75D /* Build .NET Stuff */,
 			);
@@ -504,14 +492,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		E70D115B29BF9F2600B4E738 /* Resources */ = {
+		E70D117029BF9FEC00B4E738 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E70D117029BF9FEC00B4E738 /* Resources */ = {
+		E71E41E42A60030F0075FE5F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -544,15 +532,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		E70D115929BF9F2600B4E738 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E79335A629E98D3D0035FCEB /* SwiftSyntaxPlayground.swift in Sources */,
-				E7E7491E2A026A1C009590A8 /* Generated_Swift.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E70D116E29BF9FEC00B4E738 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -631,20 +610,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E71E41E22A60030F0075FE5F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E71E41F62A6003F30075FE5F /* Generated_Swift.swift in Sources */,
+				E71E41FB2A6010970075FE5F /* SwiftSyntaxPlayground.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		E70D117829BF9FEC00B4E738 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E70D115C29BF9F2600B4E738 /* BeyondNETSamplesSwift */;
-			targetProxy = E70D117729BF9FEC00B4E738 /* PBXContainerItemProxy */;
-		};
-		E7B491D92A5FDBF700A7C75D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E7B491D32A5FDBD900A7C75D /* Build .NET Stuff */;
-			targetProxy = E7B491D82A5FDBF700A7C75D /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		E70D116229BF9F2600B4E738 /* Debug */ = {
@@ -770,83 +745,6 @@
 			};
 			name = Release;
 		};
-		E70D116529BF9F2600B4E738 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = VXP8K9EDP6;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_MODULE_VERIFIER = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				MARKETING_VERSION = 1.0;
-				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
-				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.royalapps.Beyond.NET.Samples.Swift;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		E70D116629BF9F2600B4E738 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = VXP8K9EDP6;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_MODULE_VERIFIER = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				MARKETING_VERSION = 1.0;
-				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
-				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.royalapps.Beyond.NET.Samples.Swift;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 		E70D117A29BF9FEC00B4E738 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -854,18 +752,24 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = VXP8K9EDP6;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_APP_SANDBOX = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.royalapps.Beyond.NET.Samples.Swift.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -876,18 +780,98 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = VXP8K9EDP6;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_APP_SANDBOX = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.royalapps.Beyond.NET.Samples.Swift.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E71E41EA2A60030F0075FE5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.royalapps.BeyondNETSamplesSwiftMulti;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E71E41EB2A60030F0075FE5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.royalapps.BeyondNETSamplesSwiftMulti;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -919,20 +903,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E70D116429BF9F2600B4E738 /* Build configuration list for PBXNativeTarget "BeyondNETSamplesSwift" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E70D116529BF9F2600B4E738 /* Debug */,
-				E70D116629BF9F2600B4E738 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		E70D117929BF9FEC00B4E738 /* Build configuration list for PBXNativeTarget "BeyondNETSamplesSwiftTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E70D117A29BF9FEC00B4E738 /* Debug */,
 				E70D117B29BF9FEC00B4E738 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E71E41EC2A60030F0075FE5F /* Build configuration list for PBXNativeTarget "BeyondNETSamplesSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E71E41EA2A60030F0075FE5F /* Debug */,
+				E71E41EB2A60030F0075FE5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1500"
+   LastUpgradeVersion = "1430"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E70D115C29BF9F2600B4E738"
+               BlueprintIdentifier = "E71E41E52A60030F0075FE5F"
                BuildableName = "BeyondNETSamplesSwift.framework"
                BlueprintName = "BeyondNETSamplesSwift"
                ReferencedContainer = "container:BeyondNETSamplesSwift.xcodeproj">
@@ -33,18 +33,6 @@
             default = "YES">
          </TestPlanReference>
       </TestPlans>
-      <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E70D117129BF9FEC00B4E738"
-               BuildableName = "BeyondNETSamplesSwiftTests.xctest"
-               BlueprintName = "BeyondNETSamplesSwiftTests"
-               ReferencedContainer = "container:BeyondNETSamplesSwift.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -66,7 +54,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E70D115C29BF9F2600B4E738"
+            BlueprintIdentifier = "E71E41E52A60030F0075FE5F"
             BuildableName = "BeyondNETSamplesSwift.framework"
             BlueprintName = "BeyondNETSamplesSwift"
             ReferencedContainer = "container:BeyondNETSamplesSwift.xcodeproj">

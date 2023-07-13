@@ -18,7 +18,21 @@
     <!-- <RuntimeIdentifiers>osx-x64;osx-arm64;linux-x64;ios-arm64;iossimulator-arm64;iossimulator-x64</RuntimeIdentifiers> -->
   </PropertyGroup>
 
-  <!-- TODO: Temporary workarounds for iOS support -->
+  <PropertyGroup>
+    <MacOSMinVersion>13.0</MacOSMinVersion>
+    <iOSMinVersion>16.0</iOSMinVersion>
+  </PropertyGroup>
+
+  <!-- Set min macOS version -->
+  <Choose>
+    <When Condition="$(RuntimeIdentifier.Contains('osx'))">
+      <ItemGroup>
+        <LinkerArg Include="-mmacosx-version-min=$(MacOSMinVersion)" />
+      </ItemGroup>
+    </When>
+  </Choose>
+
+  <!-- TODO: Temporary workarounds for iOS/iOS Simulator support -->
   <Choose>
     <When Condition="$(RuntimeIdentifier.Contains('ios'))">
       <PropertyGroup>
@@ -28,12 +42,14 @@
     </When>
   </Choose>
 
-  <!-- TODO: Temporary workarounds for iOS support -->
   <Choose>
     <When Condition="$(RuntimeIdentifier.Contains('iossimulator'))">
       <ItemGroup>
+        <!-- TODO: Temporary workaround for iOS Simulator support -->
         <LinkerArg Include="-isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk" />
-        <LinkerArg Include="-mios-simulator-version-min=16.0" />
+
+        <!-- Set min iOS version -->
+        <LinkerArg Include="-mios-simulator-version-min=$(iOSMinVersion)" />
       </ItemGroup>
     </When>
   </Choose>
@@ -42,8 +58,11 @@
   <Choose>
     <When Condition="$(RuntimeIdentifier.Contains('ios-'))">
       <ItemGroup>
+        <!-- TODO: Temporary workaround for iOS support -->
         <LinkerArg Include="-isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk" />
-        <LinkerArg Include="-mios-version-min=16.0" />
+
+        <!-- Set min iOS version -->
+        <LinkerArg Include="-mios-version-min=$(iOSMinVersion)" />
       </ItemGroup>
     </When>
   </Choose>
