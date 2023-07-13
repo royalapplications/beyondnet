@@ -5,6 +5,9 @@
       location = "group:/Users/fx/Development/DotNET/beyondnet/Samples/Beyond.NET.Sample.Swift/BeyondNETSampleSwift.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:BeyondNETSampleSwiftMacOSApp/BeyondNETSampleSwiftMacOSApp.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:BeyondNETSampleSwiftiOSApp/BeyondNETSampleSwiftiOSApp.xcodeproj">
    </FileRef>
 </Workspace>

@@ -7,25 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E71E420D2A6015C80075FE5F /* BeyondNETSampleSwiftiOSAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71E420C2A6015C80075FE5F /* BeyondNETSampleSwiftiOSAppApp.swift */; };
-		E71E420F2A6015C80075FE5F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71E420E2A6015C80075FE5F /* ContentView.swift */; };
-		E71E42112A6015C90075FE5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E71E42102A6015C90075FE5F /* Assets.xcassets */; };
-		E71E42242A6017710075FE5F /* libBeyondDotNETSampleNative.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E71E42232A6017710075FE5F /* libBeyondDotNETSampleNative.xcframework */; };
-		E71E42252A6017710075FE5F /* libBeyondDotNETSampleNative.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E71E42232A6017710075FE5F /* libBeyondDotNETSampleNative.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E71E422E2A6032A30075FE5F /* icudt.dat in Resources */ = {isa = PBXBuildFile; fileRef = E71E422A2A6030820075FE5F /* icudt.dat */; };
-		E71E424B2A603E030075FE5F /* BeyondNETSampleSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E71E424A2A603E030075FE5F /* BeyondNETSampleSwift.framework */; };
-		E71E424C2A603E030075FE5F /* BeyondNETSampleSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E71E424A2A603E030075FE5F /* BeyondNETSampleSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E71E423C2A603D830075FE5F /* BeyondNETSampleSwiftMacOSAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71E423B2A603D830075FE5F /* BeyondNETSampleSwiftMacOSAppApp.swift */; };
+		E71E423E2A603D830075FE5F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71E423D2A603D830075FE5F /* ContentView.swift */; };
+		E71E42402A603D840075FE5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E71E423F2A603D840075FE5F /* Assets.xcassets */; };
+		E71E424F2A603E0A0075FE5F /* BeyondNETSampleSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E71E424E2A603E0A0075FE5F /* BeyondNETSampleSwift.framework */; };
+		E71E42502A603E0A0075FE5F /* BeyondNETSampleSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E71E424E2A603E0A0075FE5F /* BeyondNETSampleSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		E71E421F2A6017000075FE5F /* Embed Frameworks */ = {
+		E71E42512A603E0A0075FE5F /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E71E42252A6017710075FE5F /* libBeyondDotNETSampleNative.xcframework in Embed Frameworks */,
-				E71E424C2A603E030075FE5F /* BeyondNETSampleSwift.framework in Embed Frameworks */,
+				E71E42502A603E0A0075FE5F /* BeyondNETSampleSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -33,61 +29,60 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E71E42092A6015C80075FE5F /* BeyondNETSampleSwiftiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeyondNETSampleSwiftiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E71E420C2A6015C80075FE5F /* BeyondNETSampleSwiftiOSAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeyondNETSampleSwiftiOSAppApp.swift; sourceTree = "<group>"; };
-		E71E420E2A6015C80075FE5F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		E71E42102A6015C90075FE5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E71E42232A6017710075FE5F /* libBeyondDotNETSampleNative.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libBeyondDotNETSampleNative.xcframework; path = ../libBeyondDotNETSampleNative.xcframework; sourceTree = "<group>"; };
-		E71E422A2A6030820075FE5F /* icudt.dat */ = {isa = PBXFileReference; lastKnownFileType = file; name = icudt.dat; path = ../icudt.dat; sourceTree = "<group>"; };
-		E71E424A2A603E030075FE5F /* BeyondNETSampleSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BeyondNETSampleSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E71E42382A603D830075FE5F /* BeyondNETSampleSwiftMacOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeyondNETSampleSwiftMacOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E71E423B2A603D830075FE5F /* BeyondNETSampleSwiftMacOSAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeyondNETSampleSwiftMacOSAppApp.swift; sourceTree = "<group>"; };
+		E71E423D2A603D830075FE5F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E71E423F2A603D840075FE5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E71E42442A603D840075FE5F /* BeyondNETSampleSwiftMacOSApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BeyondNETSampleSwiftMacOSApp.entitlements; sourceTree = "<group>"; };
+		E71E424E2A603E0A0075FE5F /* BeyondNETSampleSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BeyondNETSampleSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E71E42522A603E110075FE5F /* libBeyondDotNETSampleNative.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libBeyondDotNETSampleNative.xcframework; path = "../../Beyond.NET.Sample.Native/bin/Release/net8.0/apple-universal/publish/libBeyondDotNETSampleNative.xcframework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E71E42062A6015C80075FE5F /* Frameworks */ = {
+		E71E42352A603D830075FE5F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E71E42242A6017710075FE5F /* libBeyondDotNETSampleNative.xcframework in Frameworks */,
-				E71E424B2A603E030075FE5F /* BeyondNETSampleSwift.framework in Frameworks */,
+				E71E424F2A603E0A0075FE5F /* BeyondNETSampleSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E71E42002A6015C80075FE5F = {
+		E71E422F2A603D830075FE5F = {
 			isa = PBXGroup;
 			children = (
-				E71E422A2A6030820075FE5F /* icudt.dat */,
-				E71E420B2A6015C80075FE5F /* Source */,
-				E71E420A2A6015C80075FE5F /* Products */,
-				E71E421A2A6016040075FE5F /* Frameworks */,
+				E71E423A2A603D830075FE5F /* Source */,
+				E71E42392A603D830075FE5F /* Products */,
+				E71E424D2A603E0A0075FE5F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		E71E420A2A6015C80075FE5F /* Products */ = {
+		E71E42392A603D830075FE5F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E71E42092A6015C80075FE5F /* BeyondNETSampleSwiftiOSApp.app */,
+				E71E42382A603D830075FE5F /* BeyondNETSampleSwiftMacOSApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E71E420B2A6015C80075FE5F /* Source */ = {
+		E71E423A2A603D830075FE5F /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				E71E420E2A6015C80075FE5F /* ContentView.swift */,
-				E71E420C2A6015C80075FE5F /* BeyondNETSampleSwiftiOSAppApp.swift */,
-				E71E42102A6015C90075FE5F /* Assets.xcassets */,
+				E71E423D2A603D830075FE5F /* ContentView.swift */,
+				E71E423B2A603D830075FE5F /* BeyondNETSampleSwiftMacOSAppApp.swift */,
+				E71E423F2A603D840075FE5F /* Assets.xcassets */,
+				E71E42442A603D840075FE5F /* BeyondNETSampleSwiftMacOSApp.entitlements */,
 			);
 			path = Source;
 			sourceTree = "<group>";
 		};
-		E71E421A2A6016040075FE5F /* Frameworks */ = {
+		E71E424D2A603E0A0075FE5F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E71E424A2A603E030075FE5F /* BeyondNETSampleSwift.framework */,
-				E71E42232A6017710075FE5F /* libBeyondDotNETSampleNative.xcframework */,
+				E71E42522A603E110075FE5F /* libBeyondDotNETSampleNative.xcframework */,
+				E71E424E2A603E0A0075FE5F /* BeyondNETSampleSwift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -95,40 +90,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E71E42082A6015C80075FE5F /* BeyondNETSampleSwiftiOSApp */ = {
+		E71E42372A603D830075FE5F /* BeyondNETSampleSwiftMacOSApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E71E42172A6015C90075FE5F /* Build configuration list for PBXNativeTarget "BeyondNETSampleSwiftiOSApp" */;
+			buildConfigurationList = E71E42472A603D840075FE5F /* Build configuration list for PBXNativeTarget "BeyondNETSampleSwiftMacOSApp" */;
 			buildPhases = (
-				E71E42052A6015C80075FE5F /* Sources */,
-				E71E42062A6015C80075FE5F /* Frameworks */,
-				E71E42072A6015C80075FE5F /* Resources */,
-				E71E421F2A6017000075FE5F /* Embed Frameworks */,
+				E71E42342A603D830075FE5F /* Sources */,
+				E71E42352A603D830075FE5F /* Frameworks */,
+				E71E42362A603D830075FE5F /* Resources */,
+				E71E42512A603E0A0075FE5F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = BeyondNETSampleSwiftiOSApp;
-			productName = BeyondNETSampleSwiftiOSApp;
-			productReference = E71E42092A6015C80075FE5F /* BeyondNETSampleSwiftiOSApp.app */;
+			name = BeyondNETSampleSwiftMacOSApp;
+			productName = BeyondNETSampleSwiftMacOSApp;
+			productReference = E71E42382A603D830075FE5F /* BeyondNETSampleSwiftMacOSApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		E71E42012A6015C80075FE5F /* Project object */ = {
+		E71E42302A603D830075FE5F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
-					E71E42082A6015C80075FE5F = {
+					E71E42372A603D830075FE5F = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
 				};
 			};
-			buildConfigurationList = E71E42042A6015C80075FE5F /* Build configuration list for PBXProject "BeyondNETSampleSwiftiOSApp" */;
+			buildConfigurationList = E71E42332A603D830075FE5F /* Build configuration list for PBXProject "BeyondNETSampleSwiftMacOSApp" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -136,42 +131,41 @@
 				en,
 				Base,
 			);
-			mainGroup = E71E42002A6015C80075FE5F;
-			productRefGroup = E71E420A2A6015C80075FE5F /* Products */;
+			mainGroup = E71E422F2A603D830075FE5F;
+			productRefGroup = E71E42392A603D830075FE5F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E71E42082A6015C80075FE5F /* BeyondNETSampleSwiftiOSApp */,
+				E71E42372A603D830075FE5F /* BeyondNETSampleSwiftMacOSApp */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		E71E42072A6015C80075FE5F /* Resources */ = {
+		E71E42362A603D830075FE5F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E71E42112A6015C90075FE5F /* Assets.xcassets in Resources */,
-				E71E422E2A6032A30075FE5F /* icudt.dat in Resources */,
+				E71E42402A603D840075FE5F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		E71E42052A6015C80075FE5F /* Sources */ = {
+		E71E42342A603D830075FE5F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E71E420F2A6015C80075FE5F /* ContentView.swift in Sources */,
-				E71E420D2A6015C80075FE5F /* BeyondNETSampleSwiftiOSAppApp.swift in Sources */,
+				E71E423E2A603D830075FE5F /* ContentView.swift in Sources */,
+				E71E423C2A603D830075FE5F /* BeyondNETSampleSwiftMacOSAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		E71E42152A6015C90075FE5F /* Debug */ = {
+		E71E42452A603D840075FE5F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -221,17 +215,17 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
+				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		E71E42162A6015C90075FE5F /* Release */ = {
+		E71E42462A603D840075FE5F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -275,94 +269,85 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				SDKROOT = iphoneos;
+				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		E71E42182A6015C90075FE5F /* Debug */ = {
+		E71E42482A603D840075FE5F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Source/BeyondNETSampleSwiftMacOSApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
+					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.royalapps.BeyondNETSampleSwiftiOSApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.royalapps.BeyondNETSampleSwiftMacOSApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		E71E42192A6015C90075FE5F /* Release */ = {
+		E71E42492A603D840075FE5F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Source/BeyondNETSampleSwiftMacOSApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
+					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.royalapps.BeyondNETSampleSwiftiOSApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.royalapps.BeyondNETSampleSwiftMacOSApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E71E42042A6015C80075FE5F /* Build configuration list for PBXProject "BeyondNETSampleSwiftiOSApp" */ = {
+		E71E42332A603D830075FE5F /* Build configuration list for PBXProject "BeyondNETSampleSwiftMacOSApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E71E42152A6015C90075FE5F /* Debug */,
-				E71E42162A6015C90075FE5F /* Release */,
+				E71E42452A603D840075FE5F /* Debug */,
+				E71E42462A603D840075FE5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E71E42172A6015C90075FE5F /* Build configuration list for PBXNativeTarget "BeyondNETSampleSwiftiOSApp" */ = {
+		E71E42472A603D840075FE5F /* Build configuration list for PBXNativeTarget "BeyondNETSampleSwiftMacOSApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E71E42182A6015C90075FE5F /* Debug */,
-				E71E42192A6015C90075FE5F /* Release */,
+				E71E42482A603D840075FE5F /* Debug */,
+				E71E42492A603D840075FE5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = E71E42012A6015C80075FE5F /* Project object */;
+	rootObject = E71E42302A603D830075FE5F /* Project object */;
 }
