@@ -2,7 +2,7 @@
 
 set -e
 
-OUTPUT_PRODUCT_NAME="libBeyondDotNETSampleNativeiOS"
+OUTPUT_PRODUCT_NAME="libBeyondDotNETSampleNative"
 BUILD_CONFIGURATION="Release"
 
 OUTPUT_FILE_NAME="${OUTPUT_PRODUCT_NAME}.dylib"

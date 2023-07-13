@@ -11,9 +11,43 @@
     <PublishTrimmed>true</PublishTrimmed>
     <PublishAot>true</PublishAot>
     <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
-    <RuntimeIdentifiers>osx-x64;osx-arm64;linux-x64</RuntimeIdentifiers>
     <EnablePreviewFeatures>true</EnablePreviewFeatures>
+    <!-- Seems to not be required as long as we're providing the RuntimeIdentifier when calling dotnet publish/build -->
+    <!-- <RuntimeIdentifiers>osx-x64;osx-arm64;linux-x64;ios-arm64;iossimulator-arm64;iossimulator-x64</RuntimeIdentifiers> -->
   </PropertyGroup>
+
+  <!-- TODO: This is a temporary workaround for iOS support -->
+  <Choose>
+    <When Condition="$(RuntimeIdentifier.Contains('ios'))">
+      <PropertyGroup>
+        <!-- TODO: This is a temporary workaround for iOS support - see https://devblogs.microsoft.com/dotnet/announcing-dotnet-8-preview-6/ -->
+        <PublishAotUsingRuntimePack>true</PublishAotUsingRuntimePack>
+
+        <!-- TODO: This is a temporary workaround for iOS support -->
+        <_IsAppleMobileLibraryMode>false</_IsAppleMobileLibraryMode>
+      </PropertyGroup>
+    </When>
+  </Choose>
+
+  <!-- TODO: This is a temporary workaround for iOS support -->
+  <Choose>
+    <When Condition="$(RuntimeIdentifier.Contains('iossimulator'))">
+      <ItemGroup>
+        <LinkerArg Include="-isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk" />
+        <LinkerArg Include="-mios-simulator-version-min=16.0" />
+      </ItemGroup>
+    </When>
+  </Choose>
+
+  <!-- TODO: This is a temporary workaround for iOS support -->
+  <Choose>
+    <When Condition="$(RuntimeIdentifier.Contains('ios-'))">
+      <ItemGroup>
+        <LinkerArg Include="-isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk" />
+        <LinkerArg Include="-mios-version-min=16.0" />
+      </ItemGroup>
+    </When>
+  </Choose>
 
   <!-- Strip Symbols in Release Builds -->
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
