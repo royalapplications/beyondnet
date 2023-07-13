@@ -32,6 +32,15 @@
     </When>
   </Choose>
 
+  <!-- Culture stuff for iOS Support -->
+  <Choose>
+    <When Condition="$(RuntimeIdentifier.Contains('ios'))">
+      <PropertyGroup>
+        <InvariantGlobalization>true</InvariantGlobalization>
+      </PropertyGroup>
+    </When>
+  </Choose>
+
   <!-- TODO: Temporary workarounds for iOS/iOS Simulator support -->
   <Choose>
     <When Condition="$(RuntimeIdentifier.Contains('ios'))">
