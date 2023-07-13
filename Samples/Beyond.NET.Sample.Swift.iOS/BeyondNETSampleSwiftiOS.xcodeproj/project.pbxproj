@@ -26,8 +26,8 @@
 		E78B9EC22A5ED80200352EEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B9EBF2A5ED80200352EEE /* ContentView.swift */; };
 		E78B9EC62A5ED8B800352EEE /* Generated_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B9EC52A5ED8B800352EEE /* Generated_Swift.swift */; };
 		E78B9ED52A5EDD8C00352EEE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E78B9ED42A5EDD8C00352EEE /* README.md */; };
-		E78B9ED72A5EED7C00352EEE /* libBeyondDotNETSampleNativeiOS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E78B9ED62A5EED7C00352EEE /* libBeyondDotNETSampleNativeiOS.xcframework */; settings = {ATTRIBUTES = (Required, ); }; };
-		E78B9ED82A5EED7C00352EEE /* libBeyondDotNETSampleNativeiOS.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E78B9ED62A5EED7C00352EEE /* libBeyondDotNETSampleNativeiOS.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E7B491DE2A5FE12200A7C75D /* libBeyondDotNETSampleNativeiOS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7B491DC2A5FE11E00A7C75D /* libBeyondDotNETSampleNativeiOS.xcframework */; settings = {ATTRIBUTES = (Required, ); }; };
+		E7B491DF2A5FE12200A7C75D /* libBeyondDotNETSampleNativeiOS.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7B491DC2A5FE11E00A7C75D /* libBeyondDotNETSampleNativeiOS.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,13 +41,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		E78B9ED92A5EED7C00352EEE /* Embed Frameworks */ = {
+		E7B491E02A5FE12200A7C75D /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E78B9ED82A5EED7C00352EEE /* libBeyondDotNETSampleNativeiOS.xcframework in Embed Frameworks */,
+				E7B491DF2A5FE12200A7C75D /* libBeyondDotNETSampleNativeiOS.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -62,9 +62,8 @@
 		E78B9EC42A5ED8B800352EEE /* Generated_C.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Generated_C.h; path = ../../Generated/Generated_C.h; sourceTree = "<group>"; };
 		E78B9EC52A5ED8B800352EEE /* Generated_Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Generated_Swift.swift; path = ../../Generated/Generated_Swift.swift; sourceTree = "<group>"; };
 		E78B9EC72A5ED91B00352EEE /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		E78B9ECC2A5EDA3100352EEE /* libBeyondDotNETSampleNativeiOS.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libBeyondDotNETSampleNativeiOS.dylib; path = "../Beyond.NET.Sample.Native.iOS/bin/Release/net8.0/ios-arm64/publish/libBeyondDotNETSampleNativeiOS.dylib"; sourceTree = "<group>"; };
 		E78B9ED42A5EDD8C00352EEE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		E78B9ED62A5EED7C00352EEE /* libBeyondDotNETSampleNativeiOS.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libBeyondDotNETSampleNativeiOS.xcframework; path = "../Beyond.NET.Sample.Native.iOS/bin/Release/net8.0/ios-universal/publish/libBeyondDotNETSampleNativeiOS.xcframework"; sourceTree = "<group>"; };
+		E7B491DC2A5FE11E00A7C75D /* libBeyondDotNETSampleNativeiOS.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = libBeyondDotNETSampleNativeiOS.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E78B9ED72A5EED7C00352EEE /* libBeyondDotNETSampleNativeiOS.xcframework in Frameworks */,
+				E7B491DE2A5FE12200A7C75D /* libBeyondDotNETSampleNativeiOS.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,9 +82,9 @@
 			isa = PBXGroup;
 			children = (
 				E78B9ED42A5EDD8C00352EEE /* README.md */,
+				E7B491DC2A5FE11E00A7C75D /* libBeyondDotNETSampleNativeiOS.xcframework */,
 				E78B9EBB2A5ED7E700352EEE /* Source */,
 				E741A4492A5ED78F000523D5 /* Products */,
-				E78B9ECB2A5EDA3100352EEE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,15 +117,6 @@
 			name = Generated;
 			sourceTree = "<group>";
 		};
-		E78B9ECB2A5EDA3100352EEE /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E78B9ED62A5EED7C00352EEE /* libBeyondDotNETSampleNativeiOS.xcframework */,
-				E78B9ECC2A5EDA3100352EEE /* libBeyondDotNETSampleNativeiOS.dylib */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,7 +127,7 @@
 				E741A4442A5ED78F000523D5 /* Sources */,
 				E741A4452A5ED78F000523D5 /* Frameworks */,
 				E741A4462A5ED78F000523D5 /* Resources */,
-				E78B9ED92A5EED7C00352EEE /* Embed Frameworks */,
+				E7B491E02A5FE12200A7C75D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -214,6 +204,10 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"$(PROJECT_DIR)/../Generated/Generated_C.h",
+				"$(PROJECT_DIR)/../Generated/Generated_Swift.swift",
+				"$(PROJECT_DIR)/../Beyond.NET.Sample.Native.iOS/bin/Release/net8.0/ios-universal/publish/libBeyondDotNETSampleNativeiOS.xcframework",
+				"$(PROJECT_DIR)/../libBeyondDotNETSampleNativeiOS.xcframework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
