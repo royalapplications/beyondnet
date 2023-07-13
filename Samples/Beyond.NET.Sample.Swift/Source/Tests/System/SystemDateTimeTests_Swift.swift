@@ -55,7 +55,7 @@ final class SystemDateTimeTests_Swift: XCTestCase {
         XCTAssertEqual(expectedMinute, .init(minute))
     }
     
-    // TODO: Test fails on iOS Simulator: System.Globalization.CultureInfo.Create
+    // TODO: Test fails on iOS Simulator: System.Globalization.CultureInfo ctor
     func testSystemDateTimeParse() {
         let nowSwift = Date()
         let calendar = Calendar.current

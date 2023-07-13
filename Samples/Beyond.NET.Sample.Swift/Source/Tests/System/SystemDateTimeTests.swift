@@ -80,7 +80,7 @@ final class SystemDateTimeTests: XCTestCase {
         XCTAssertEqual(expectedMinute, .init(minute))
     }
 	
-    // TODO: Test fails on iOS Simulator: System.Globalization.CultureInfo.Create
+    // TODO: Test fails on iOS Simulator: System.Globalization.CultureInfo ctor
 	func testSystemDateTimeParse() {
 		var exception: System_Exception_t?
 		
