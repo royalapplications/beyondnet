@@ -1,5 +1,5 @@
 import XCTest
-import BeyondNETSamplesSwift
+import BeyondNETSampleSwift
 
 final class TestClassesTests_Swift: XCTestCase {
     @MainActor

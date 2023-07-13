@@ -5,5 +5,5 @@ To run the test you need to:
 - Make sure the "Build .NET Stuff" scheme is selected
 - Go to "Product - Build"
 - Wait for it to complete successfully
-- Switch to the "BeyondNETSamplesSwift" scheme
+- Switch to the "BeyondNETSampleSwift" scheme
 - Go to "Product - Test"

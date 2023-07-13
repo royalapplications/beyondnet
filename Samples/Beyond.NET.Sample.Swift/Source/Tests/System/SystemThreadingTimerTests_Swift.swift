@@ -1,5 +1,5 @@
 import XCTest
-import BeyondNETSamplesSwift
+import BeyondNETSampleSwift
 
 final class SystemThreadingTimerTests_Swift: XCTestCase {
 	@MainActor

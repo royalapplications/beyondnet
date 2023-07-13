@@ -1,6 +1,6 @@
 import Foundation
 import XCTest
-import BeyondNETSamplesSwift
+import BeyondNETSampleSwift
 
 fileprivate class UnhandledExceptionHandlerStorage {
 	static var unhandledExceptionHandler: System_UnhandledExceptionEventHandler_t?

@@ -1,5 +1,5 @@
 import XCTest
-import BeyondNETSamplesSwift
+import BeyondNETSampleSwift
 
 // TODO: Missing C Test
 final class EventTestTests_Swift: XCTestCase {

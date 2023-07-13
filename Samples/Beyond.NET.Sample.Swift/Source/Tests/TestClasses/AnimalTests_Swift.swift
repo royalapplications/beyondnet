@@ -1,5 +1,5 @@
 import XCTest
-import BeyondNETSamplesSwift
+import BeyondNETSampleSwift
 
 final class AnimalTests_Swift: XCTestCase {
 	@MainActor

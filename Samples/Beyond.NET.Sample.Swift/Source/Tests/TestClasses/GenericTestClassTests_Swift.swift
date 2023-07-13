@@ -1,5 +1,5 @@
 import XCTest
-import BeyondNETSamplesSwift
+import BeyondNETSampleSwift
 
 // TODO
 final class GenericTestClassTests_Swift: XCTestCase {

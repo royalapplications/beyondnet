@@ -1,5 +1,5 @@
 import Foundation
-import BeyondNETSamplesSwift
+import BeyondNETSampleSwift
 
 public extension String {
 	func cDotNETString() -> System_String_t {
