@@ -1,7 +1,6 @@
 import XCTest
 import BeyondNETSampleSwift
 
-// TODO: Tests fail on iOS Simulator
 final class SystemGuidTests_Swift: XCTestCase {
     @MainActor
     override class func setUp() {
@@ -13,6 +12,7 @@ final class SystemGuidTests_Swift: XCTestCase {
         Self.sharedTearDown()
     }
     
+    // TODO: Test fails on iOS Simulator: System.Type.GetType
     func testSystemGuid() {
         let uuid = UUID()
         

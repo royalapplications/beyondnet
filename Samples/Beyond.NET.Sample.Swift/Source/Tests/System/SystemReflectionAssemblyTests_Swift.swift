@@ -1,7 +1,6 @@
 import XCTest
 import BeyondNETSampleSwift
 
-// TODO: Tests fail on iOS Simulator
 final class SystemReflectionAssemblyTests_Swift: XCTestCase {
     @MainActor
     override class func setUp() {
@@ -13,6 +12,7 @@ final class SystemReflectionAssemblyTests_Swift: XCTestCase {
         Self.sharedTearDown()
     }
     
+    // TODO: Test fails on iOS Simulator: System.Reflection.Assembly.GetName
     func testAssembly() {
         guard let assembly = try? System_Reflection_Assembly.getExecutingAssembly() else {
             XCTFail("System.Reflection.Assembly.GetExecutingAssembly should not throw and return an instance")

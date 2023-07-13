@@ -1,7 +1,6 @@
 import XCTest
 import BeyondNETSampleSwift
 
-// TODO: Tests fail on iOS Simulator
 final class SystemDateTimeTests: XCTestCase {
 	@MainActor
 	override class func setUp() {
@@ -81,6 +80,7 @@ final class SystemDateTimeTests: XCTestCase {
         XCTAssertEqual(expectedMinute, .init(minute))
     }
 	
+    // TODO: Test fails on iOS Simulator: System.Globalization.CultureInfo.Create
 	func testSystemDateTimeParse() {
 		var exception: System_Exception_t?
 		

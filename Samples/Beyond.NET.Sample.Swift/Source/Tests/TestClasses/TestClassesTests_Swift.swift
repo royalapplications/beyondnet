@@ -1,7 +1,6 @@
 import XCTest
 import BeyondNETSampleSwift
 
-// TODO: Tests fail on iOS Simulator
 final class TestClassesTests_Swift: XCTestCase {
     @MainActor
     override class func setUp() {
@@ -13,6 +12,7 @@ final class TestClassesTests_Swift: XCTestCase {
         Self.sharedTearDown()
     }
     
+    // TODO: Test fails on iOS Simulator: System.Type.GetType
     func testTestClass() {
         guard let testClass = try? Beyond_NET_Sample_TestClass() else {
             XCTFail("TestClass ctor should not throw")

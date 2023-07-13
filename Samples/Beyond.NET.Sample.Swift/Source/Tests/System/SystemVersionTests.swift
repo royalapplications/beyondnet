@@ -1,7 +1,6 @@
 import XCTest
 import BeyondNETSampleSwift
 
-// TODO: Tests fail on iOS Simulator
 final class SystemVersionTests: XCTestCase {
 	@MainActor
 	override class func setUp() {
@@ -94,6 +93,7 @@ final class SystemVersionTests: XCTestCase {
         XCTAssertEqual(versionString, versionStringRet)
     }
     
+    // TODO: Test fails on iOS Simulator: System.Version ctor
     func testSystemVersionFromString() {
         var exception: System_Exception_t?
         
@@ -152,6 +152,7 @@ final class SystemVersionTests: XCTestCase {
         XCTAssertEqual(versionString, versionStringRet)
     }
 	
+    // TODO: Test fails on iOS Simulator: System.Version.TryParse
 	func testSystemVersionParse() {
 		var exception: System_Exception_t?
 		

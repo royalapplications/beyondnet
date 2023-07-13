@@ -1,7 +1,6 @@
 import XCTest
 import BeyondNETSampleSwift
 
-// TODO: Tests fail on iOS Simulator
 final class SystemReflectionAssemblyTests: XCTestCase {
 	@MainActor
 	override class func setUp() {
@@ -13,6 +12,7 @@ final class SystemReflectionAssemblyTests: XCTestCase {
 		Self.sharedTearDown()
 	}
 	
+    // TODO: Test fails on iOS Simulator: System.Reflection.Assembly.GetName
 	func testAssembly() {
 		var exception: System_Exception_t?
 		

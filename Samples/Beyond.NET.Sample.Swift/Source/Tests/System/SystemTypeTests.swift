@@ -1,7 +1,6 @@
 import XCTest
 import BeyondNETSampleSwift
 
-// TODO: Tests fail on iOS Simulator
 final class SystemTypeTests: XCTestCase {
 	@MainActor
 	override class func setUp() {
@@ -13,6 +12,7 @@ final class SystemTypeTests: XCTestCase {
 		Self.sharedTearDown()
 	}
 	
+    // TODO: Test fails on iOS Simulator: System.Type.GetType
 	func testSystemType() {
 		var exception: System_Exception_t?
 		
@@ -56,6 +56,7 @@ final class SystemTypeTests: XCTestCase {
 		XCTAssertEqual(systemObjectTypeName, retrievedSystemObjectTypeName)
 	}
 	
+    // TODO: Test fails on iOS Simulator: System.Type.GetType
 	func testInvalidType() {
 		var exception: System_Exception_t?
 		

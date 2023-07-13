@@ -1,7 +1,6 @@
 import XCTest
 import BeyondNETSampleSwift
 
-// TODO: Tests fail on iOS Simulator
 final class SystemArrayTests_Swift: XCTestCase {
     @MainActor
     override class func setUp() {
@@ -13,6 +12,7 @@ final class SystemArrayTests_Swift: XCTestCase {
         Self.sharedTearDown()
     }
     
+    // TODO: Test fails on iOS Simulator: System.DateTime.Now
     func testSystemArray() {
         guard let now = try? System_DateTime.now else {
             XCTFail("System.DateTime.Now should not throw and return an instance")
@@ -50,6 +50,7 @@ final class SystemArrayTests_Swift: XCTestCase {
         XCTAssertTrue(equals)
     }
 	
+    // TODO: Test fails on iOS Simulator: System.DateTime.Now
 	func testSystemArrayConvertedToIList() {
 		guard let now = try? System_DateTime.now else {
 			XCTFail("System.DateTime.Now should not throw and return an instance")
@@ -199,6 +200,7 @@ final class SystemArrayTests_Swift: XCTestCase {
         }
     }
 	
+    // TODO: Test fails on iOS Simulator: System.Type.GetType
 	func testSystemArrayIterator() {
 		let length: Int32 = 10
 		

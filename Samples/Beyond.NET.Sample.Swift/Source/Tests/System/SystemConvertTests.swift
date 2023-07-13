@@ -1,7 +1,6 @@
 import XCTest
 import BeyondNETSampleSwift
 
-// TODO: Tests fail on iOS Simulator
 final class SystemConvertTests: XCTestCase {
 	@MainActor
 	override class func setUp() {
@@ -35,13 +34,14 @@ final class SystemConvertTests: XCTestCase {
 		XCTAssertNotNil(exception)
 	}
 	
+    // TODO: Test fails on iOS Simulator: System.Convert.ToInt32
 	func testIntegerConversion() {
 		var exception: System_Exception_t?
 		
 		let number1: Int32 = 123456789
 		let number1StringDN = "\(number1)".cDotNETString()
 		defer { System_String_Destroy(number1StringDN) }
-		
+        
 		XCTAssertEqual(number1,
 					   System_Convert_ToInt32_15(number1StringDN, &exception))
 		XCTAssertNil(exception)
