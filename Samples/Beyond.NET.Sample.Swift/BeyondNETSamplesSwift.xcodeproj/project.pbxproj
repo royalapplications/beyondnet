@@ -205,6 +205,7 @@
 		E7A3E6ED29EEEDB100447BF2 /* PersonTests_Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTests_Swift.swift; sourceTree = "<group>"; };
 		E7AC3D8A29E038E000C5609B /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
 		E7AF01D82A5D6F9300A4C080 /* EventTestsTests_Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTestsTests_Swift.swift; sourceTree = "<group>"; };
+		E7B491E12A5FE3F300A7C75D /* PreBuildOutputFiles.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = PreBuildOutputFiles.xcfilelist; sourceTree = "<group>"; };
 		E7B93FA82A050D8300D8BAF1 /* SystemUriTests_Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemUriTests_Swift.swift; sourceTree = "<group>"; };
 		E7B93FAA2A05259500D8BAF1 /* StructTestTests_Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructTestTests_Swift.swift; sourceTree = "<group>"; };
 		E7C8CF0429C1FA9500C4230F /* SystemGuidTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemGuidTests.swift; sourceTree = "<group>"; };
@@ -252,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				E7808CE929DEFB2600F50203 /* BeyondNETSamplesSwift.xctestplan */,
+				E7B491E12A5FE3F300A7C75D /* PreBuildOutputFiles.xcfilelist */,
 				E70D116A29BF9FCC00B4E738 /* libBeyondDotNETSampleNative.dylib */,
 				E70D115F29BF9F2600B4E738 /* Source */,
 				E70D115E29BF9F2600B4E738 /* Products */,
@@ -531,11 +533,9 @@
 			);
 			name = "Build Dependencies";
 			outputFileListPaths = (
+				"$(PROJECT_DIR)/PreBuildOutputFiles.xcfilelist",
 			);
 			outputPaths = (
-				"$(PROJECT_DIR)/../Generated/Generated_C.h",
-				"$(PROJECT_DIR)/../Generated/Generated_Swift.swift",
-				"$(PROJECT_DIR)/../Beyond.NET.Sample.Native/bin/Release/net8.0/osx-universal/publish/libBeyondDotNETSampleNative.dylib",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

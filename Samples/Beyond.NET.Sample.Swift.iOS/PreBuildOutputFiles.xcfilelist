@@ -1,0 +1,4 @@
+$(PROJECT_DIR)/../Generated/Generated_C.h
+$(PROJECT_DIR)/../Generated/Generated_Swift.swift
+$(PROJECT_DIR)/../Beyond.NET.Sample.Native.iOS/bin/Release/net8.0/ios-universal/publish/libBeyondDotNETSampleNativeiOS.xcframework
+$(PROJECT_DIR)/libBeyondDotNETSampleNativeiOS.xcframework
