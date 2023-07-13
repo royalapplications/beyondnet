@@ -12,7 +12,6 @@ final class PrimitivesBoxingTests: XCTestCase {
 		Self.sharedTearDown()
 	}
 	
-    // TODO: Test fails on iOS Simulator: System.Type.GetType
 	func testBool() {
 		boxAndUnbox(value: true,
 					expectedTypeName: "System.Boolean",
@@ -25,7 +24,6 @@ final class PrimitivesBoxingTests: XCTestCase {
 					unboxFunc: { DNObjectCastToBool($0, &$1) })
 	}
 	
-    // TODO: Test fails on iOS Simulator: System.Type.GetType
 	func testFloat() {
 		boxAndUnbox(value: -123.123 as Float,
 					expectedTypeName: "System.Single",
@@ -33,7 +31,6 @@ final class PrimitivesBoxingTests: XCTestCase {
 					unboxFunc: { DNObjectCastToFloat($0, &$1) })
 	}
 	
-    // TODO: Test fails on iOS Simulator: System.Type.GetType
 	func testDouble() {
 		boxAndUnbox(value: -123456789.123456789 as Double,
 					expectedTypeName: "System.Double",
@@ -41,7 +38,6 @@ final class PrimitivesBoxingTests: XCTestCase {
 					unboxFunc: { DNObjectCastToDouble($0, &$1) })
 	}
 	
-    // TODO: Test fails on iOS Simulator: System.Type.GetType
 	func testInt8() {
 		boxAndUnbox(value: -123 as Int8,
 					expectedTypeName: "System.SByte",
@@ -49,7 +45,6 @@ final class PrimitivesBoxingTests: XCTestCase {
 					unboxFunc: { DNObjectCastToInt8($0, &$1) })
 	}
 	
-    // TODO: Test fails on iOS Simulator: System.Type.GetType
 	func testUInt8() {
 		boxAndUnbox(value: 123 as UInt8,
 					expectedTypeName: "System.Byte",
@@ -57,7 +52,6 @@ final class PrimitivesBoxingTests: XCTestCase {
 					unboxFunc: { DNObjectCastToUInt8($0, &$1) })
 	}
 	
-    // TODO: Test fails on iOS Simulator: System.Type.GetType
 	func testInt16() {
 		boxAndUnbox(value: -1234 as Int16,
 					expectedTypeName: "System.Int16",
@@ -65,7 +59,6 @@ final class PrimitivesBoxingTests: XCTestCase {
 					unboxFunc: { DNObjectCastToInt16($0, &$1) })
 	}
 	
-    // TODO: Test fails on iOS Simulator: System.Type.GetType
 	func testUInt16() {
 		boxAndUnbox(value: 1234 as UInt16,
 					expectedTypeName: "System.UInt16",
@@ -73,7 +66,6 @@ final class PrimitivesBoxingTests: XCTestCase {
 					unboxFunc: { DNObjectCastToUInt16($0, &$1) })
 	}
 	
-    // TODO: Test fails on iOS Simulator: System.Type.GetType
 	func testInt32() {
 		boxAndUnbox(value: -123456789 as Int32,
 					expectedTypeName: "System.Int32",
@@ -81,7 +73,6 @@ final class PrimitivesBoxingTests: XCTestCase {
 					unboxFunc: { DNObjectCastToInt32($0, &$1) })
 	}
 	
-    // TODO: Test fails on iOS Simulator: System.Type.GetType
 	func testUInt32() {
 		boxAndUnbox(value: 123456789 as UInt32,
 					expectedTypeName: "System.UInt32",
@@ -89,7 +80,6 @@ final class PrimitivesBoxingTests: XCTestCase {
 					unboxFunc: { DNObjectCastToUInt32($0, &$1) })
 	}
 	
-    // TODO: Test fails on iOS Simulator: System.Type.GetType
 	func testInt64() {
 		boxAndUnbox(value: -123456789123456789 as Int64,
 					expectedTypeName: "System.Int64",
@@ -97,7 +87,6 @@ final class PrimitivesBoxingTests: XCTestCase {
 					unboxFunc: { DNObjectCastToInt64($0, &$1) })
 	}
 	
-    // TODO: Test fails on iOS Simulator: System.Type.GetType
 	func testUInt64() {
 		boxAndUnbox(value: 123456789123456789 as UInt64,
 					expectedTypeName: "System.UInt64",

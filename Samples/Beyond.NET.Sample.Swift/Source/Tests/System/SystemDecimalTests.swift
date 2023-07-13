@@ -12,7 +12,6 @@ final class SystemDecimalTests: XCTestCase {
 		Self.sharedTearDown()
 	}
 	
-    // TODO: Test fails on iOS Simulator: System.Decimal.TryParse
 	func testDecimalParse() {
 		var exception: System_Exception_t?
 		

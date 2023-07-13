@@ -55,7 +55,7 @@ final class SystemDateTimeTests_Swift: XCTestCase {
         XCTAssertEqual(expectedMinute, .init(minute))
     }
     
-    // TODO: Test fails on iOS Simulator: System.Globalization.CultureInfo ctor
+    // TODO: Test fails on iOS: We currently don't reference an icudt.dat file because of https://github.com/royalapplications/beyondnet/issues/53
     func testSystemDateTimeParse() {
         let nowSwift = Date()
         let calendar = Calendar.current

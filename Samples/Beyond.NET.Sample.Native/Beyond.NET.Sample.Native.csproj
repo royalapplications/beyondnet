@@ -38,6 +38,11 @@
       <PropertyGroup>
         <InvariantGlobalization>true</InvariantGlobalization>
       </PropertyGroup>
+
+      <!-- Currently disabled because we can't make it work in an XCTest bundle, see https://github.com/royalapplications/beyondnet/issues/53 -->
+      <!-- ItemGroup>
+        <RuntimeHostConfigurationOption Include="ICU_DAT_FILE_PATH" Value="icudt.dat" />
+      </ItemGroup -->
     </When>
   </Choose>
 

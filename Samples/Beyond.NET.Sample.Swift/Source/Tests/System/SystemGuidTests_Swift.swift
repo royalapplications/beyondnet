@@ -12,7 +12,6 @@ final class SystemGuidTests_Swift: XCTestCase {
         Self.sharedTearDown()
     }
     
-    // TODO: Test fails on iOS Simulator: System.Type.GetType
     func testSystemGuid() {
         let uuid = UUID()
         

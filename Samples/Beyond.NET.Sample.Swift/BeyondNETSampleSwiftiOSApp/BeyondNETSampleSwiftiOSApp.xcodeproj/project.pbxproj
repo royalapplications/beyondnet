@@ -14,6 +14,7 @@
 		E71E421E2A6017000075FE5F /* BeyondNETSampleSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E71E421B2A6016040075FE5F /* BeyondNETSampleSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E71E42242A6017710075FE5F /* libBeyondDotNETSampleNative.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E71E42232A6017710075FE5F /* libBeyondDotNETSampleNative.xcframework */; };
 		E71E42252A6017710075FE5F /* libBeyondDotNETSampleNative.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E71E42232A6017710075FE5F /* libBeyondDotNETSampleNative.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E71E422E2A6032A30075FE5F /* icudt.dat in Resources */ = {isa = PBXBuildFile; fileRef = E71E422A2A6030820075FE5F /* icudt.dat */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +40,7 @@
 		E71E421B2A6016040075FE5F /* BeyondNETSampleSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BeyondNETSampleSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E71E42202A6017210075FE5F /* libBeyondDotNETSampleNative.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libBeyondDotNETSampleNative.xcframework; path = "../../../../../../.Trash/bin copy 3/Release/net8.0/apple-universal/publish/libBeyondDotNETSampleNative.xcframework"; sourceTree = "<group>"; };
 		E71E42232A6017710075FE5F /* libBeyondDotNETSampleNative.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libBeyondDotNETSampleNative.xcframework; path = ../libBeyondDotNETSampleNative.xcframework; sourceTree = "<group>"; };
+		E71E422A2A6030820075FE5F /* icudt.dat */ = {isa = PBXFileReference; lastKnownFileType = file; name = icudt.dat; path = ../icudt.dat; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 		E71E42002A6015C80075FE5F = {
 			isa = PBXGroup;
 			children = (
+				E71E422A2A6030820075FE5F /* icudt.dat */,
 				E71E420B2A6015C80075FE5F /* Source */,
 				E71E420A2A6015C80075FE5F /* Products */,
 				E71E421A2A6016040075FE5F /* Frameworks */,
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E71E42112A6015C90075FE5F /* Assets.xcassets in Resources */,
+				E71E422E2A6032A30075FE5F /* icudt.dat in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -31,6 +31,7 @@
 		E71E41FB2A6010970075FE5F /* SwiftSyntaxPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79335A529E98D3D0035FCEB /* SwiftSyntaxPlayground.swift */; };
 		E71E41FE2A6012340075FE5F /* BeyondNETSampleSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E71E41E62A60030F0075FE5F /* BeyondNETSampleSwift.framework */; };
 		E71E41FF2A6013B60075FE5F /* libBeyondDotNETSampleNative.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E71E41EF2A6003560075FE5F /* libBeyondDotNETSampleNative.xcframework */; };
+		E71E42292A6030760075FE5F /* icudt.dat in Resources */ = {isa = PBXBuildFile; fileRef = E71E42282A6030760075FE5F /* icudt.dat */; };
 		E73EE8F229DAEA0500C57A71 /* SystemThreadingThreadTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73EE8F129DAEA0500C57A71 /* SystemThreadingThreadTest.swift */; };
 		E73EE8F429DAEC1A00C57A71 /* SystemThreadingTimerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73EE8F329DAEC1A00C57A71 /* SystemThreadingTimerTest.swift */; };
 		E73EE8F629DAF09D00C57A71 /* SystemMathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73EE8F529DAF09D00C57A71 /* SystemMathTests.swift */; };
@@ -134,6 +135,7 @@
 		E71E41E62A60030F0075FE5F /* BeyondNETSampleSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BeyondNETSampleSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E71E41EF2A6003560075FE5F /* libBeyondDotNETSampleNative.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = libBeyondDotNETSampleNative.xcframework; sourceTree = "<group>"; };
 		E71E41FC2A60116A0075FE5F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E71E42282A6030760075FE5F /* icudt.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = icudt.dat; sourceTree = "<group>"; };
 		E73EE8F129DAEA0500C57A71 /* SystemThreadingThreadTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemThreadingThreadTest.swift; sourceTree = "<group>"; };
 		E73EE8F329DAEC1A00C57A71 /* SystemThreadingTimerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemThreadingTimerTest.swift; sourceTree = "<group>"; };
 		E73EE8F529DAF09D00C57A71 /* SystemMathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemMathTests.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				E7808CE929DEFB2600F50203 /* BeyondNETSampleSwift.xctestplan */,
 				E7B491E12A5FE3F300A7C75D /* PreBuildOutputFiles.xcfilelist */,
 				E71E41EF2A6003560075FE5F /* libBeyondDotNETSampleNative.xcframework */,
+				E71E42282A6030760075FE5F /* icudt.dat */,
 				E70D115F29BF9F2600B4E738 /* Source */,
 				E70D115E29BF9F2600B4E738 /* Products */,
 				E71E41FD2A6012340075FE5F /* Frameworks */,
@@ -496,6 +499,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E71E42292A6030760075FE5F /* icudt.dat in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

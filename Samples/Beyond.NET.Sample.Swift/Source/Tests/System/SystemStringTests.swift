@@ -12,7 +12,6 @@ final class SystemStringTests: XCTestCase {
 		Self.sharedTearDown()
 	}
 	
-    // TODO: Test fails on iOS Simulator: System.String.IndexOf
     func testString() {
         var exception: System_Exception_t?
         
@@ -154,7 +153,6 @@ final class SystemStringTests: XCTestCase {
 		XCTAssertEqual(expectedString, replacedString)
 	}
 	
-    // TODO: Test fails on iOS Simulator: System.String.IndexOf
 	func testStringSubstring() {
 		var exception: System_Exception_t?
 		

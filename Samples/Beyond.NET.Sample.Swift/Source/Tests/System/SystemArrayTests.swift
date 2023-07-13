@@ -12,7 +12,6 @@ final class SystemArrayTests: XCTestCase {
 		Self.sharedTearDown()
 	}
 	
-    // TODO: Test fails on iOS Simulator: System.DateTime.Now
     func testSystemArray() {
         var exception: System_Exception_t?
         
@@ -76,7 +75,6 @@ final class SystemArrayTests: XCTestCase {
         XCTAssertTrue(equals)
     }
 	
-    // TODO: Test fails on iOS Simulator: System.DateTime.Now
 	func testSystemArrayConvertedToIList() {
 		var exception: System_Exception_t?
 		

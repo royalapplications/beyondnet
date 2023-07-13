@@ -12,7 +12,6 @@ final class TestClassesTests: XCTestCase {
 		Self.sharedTearDown()
 	}
 	
-    // TODO: Test fails on iOS Simulator: System.Type.GetType
     func testTestClass() {
         var exception: System_Exception_t?
         

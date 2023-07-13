@@ -12,7 +12,6 @@ final class SystemStringTests_Swift: XCTestCase {
         Self.sharedTearDown()
     }
     
-    // TODO: Test fails on iOS Simulator: System.String.IndexOf
     func testString() {
         guard let emptyStringDN = System_String.empty else {
             XCTFail("System.String.Empty should return an empty string")
@@ -92,7 +91,6 @@ final class SystemStringTests_Swift: XCTestCase {
         XCTAssertEqual(expectedString, replacedString)
     }
     
-    // TODO: Test fails on iOS Simulator: System.String.IndexOf
     func testStringSubstring() {
         let string = "Hello World 😀"
         let needle = "World"

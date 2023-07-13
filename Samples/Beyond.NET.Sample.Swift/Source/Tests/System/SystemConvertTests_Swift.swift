@@ -44,7 +44,6 @@ final class SystemConvertTests_Swift: XCTestCase {
         } catch { }
     }
     
-    // TODO: Test fails on iOS Simulator: System.Convert.ToInt32
     func testIntegerConversion() {
         let number1: Int32 = 123456789
         let number1StringDN = "\(number1)".dotNETString()

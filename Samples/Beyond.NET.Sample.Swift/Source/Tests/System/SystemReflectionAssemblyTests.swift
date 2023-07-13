@@ -12,7 +12,6 @@ final class SystemReflectionAssemblyTests: XCTestCase {
 		Self.sharedTearDown()
 	}
 	
-    // TODO: Test fails on iOS Simulator: System.Reflection.Assembly.GetName
 	func testAssembly() {
 		var exception: System_Exception_t?
 		

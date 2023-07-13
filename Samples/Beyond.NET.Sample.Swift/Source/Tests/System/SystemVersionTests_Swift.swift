@@ -70,7 +70,6 @@ final class SystemVersionTests_Swift: XCTestCase {
         XCTAssertEqual(versionString, versionStringRet)
     }
     
-    // TODO: Test fails on iOS Simulator: System.Version ctor
     func testSystemVersionFromString() {
         let major: Int32    = 123
         let minor: Int32    = 234
@@ -113,7 +112,6 @@ final class SystemVersionTests_Swift: XCTestCase {
         XCTAssertEqual(versionString, versionStringRet)
     }
     
-    // TODO: Test fails on iOS Simulator: System.Version.TryParse
     func testSystemVersionParse() {
         let major: Int32    = 123
         let minor: Int32    = 234

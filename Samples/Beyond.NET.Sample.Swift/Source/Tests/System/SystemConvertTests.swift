@@ -34,7 +34,6 @@ final class SystemConvertTests: XCTestCase {
 		XCTAssertNotNil(exception)
 	}
 	
-    // TODO: Test fails on iOS Simulator: System.Convert.ToInt32
 	func testIntegerConversion() {
 		var exception: System_Exception_t?
 		
