@@ -21,8 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		E71E41DB2A5FF9A20075FE5F /* libBeyondDotNETSampleNative.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E71E41D92A5FF99F0075FE5F /* libBeyondDotNETSampleNative.xcframework */; };
-		E71E41DC2A5FF9A20075FE5F /* libBeyondDotNETSampleNative.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E71E41D92A5FF99F0075FE5F /* libBeyondDotNETSampleNative.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E71E41DF2A6000AB0075FE5F /* libBeyondDotNETSampleNative.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E71E41DD2A60009A0075FE5F /* libBeyondDotNETSampleNative.xcframework */; };
+		E71E41E02A6000AB0075FE5F /* libBeyondDotNETSampleNative.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E71E41DD2A60009A0075FE5F /* libBeyondDotNETSampleNative.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E78B9EC02A5ED80200352EEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E78B9EBD2A5ED80100352EEE /* Assets.xcassets */; };
 		E78B9EC12A5ED80200352EEE /* BeyondNETSampleSwiftiOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B9EBE2A5ED80200352EEE /* BeyondNETSampleSwiftiOSApp.swift */; };
 		E78B9EC22A5ED80200352EEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B9EBF2A5ED80200352EEE /* ContentView.swift */; };
@@ -47,7 +47,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E71E41DC2A5FF9A20075FE5F /* libBeyondDotNETSampleNative.xcframework in Embed Frameworks */,
+				E71E41E02A6000AB0075FE5F /* libBeyondDotNETSampleNative.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,7 +55,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E71E41D92A5FF99F0075FE5F /* libBeyondDotNETSampleNative.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = libBeyondDotNETSampleNative.xcframework; sourceTree = "<group>"; };
+		E71E41DD2A60009A0075FE5F /* libBeyondDotNETSampleNative.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = libBeyondDotNETSampleNative.xcframework; sourceTree = "<group>"; };
 		E741A4482A5ED78F000523D5 /* BeyondNETSampleSwiftiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeyondNETSampleSwiftiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E78B9EBD2A5ED80100352EEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E78B9EBE2A5ED80200352EEE /* BeyondNETSampleSwiftiOSApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeyondNETSampleSwiftiOSApp.swift; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E71E41DB2A5FF9A20075FE5F /* libBeyondDotNETSampleNative.xcframework in Frameworks */,
+				E71E41DF2A6000AB0075FE5F /* libBeyondDotNETSampleNative.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,7 +84,7 @@
 			children = (
 				E78B9ED42A5EDD8C00352EEE /* README.md */,
 				E7B491E22A5FE4C700A7C75D /* PreBuildOutputFiles.xcfilelist */,
-				E71E41D92A5FF99F0075FE5F /* libBeyondDotNETSampleNative.xcframework */,
+				E71E41DD2A60009A0075FE5F /* libBeyondDotNETSampleNative.xcframework */,
 				E78B9EBB2A5ED7E700352EEE /* Source */,
 				E741A4492A5ED78F000523D5 /* Products */,
 			);

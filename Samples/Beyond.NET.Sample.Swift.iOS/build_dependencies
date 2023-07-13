@@ -26,4 +26,4 @@ cd "${ORIG_PWD}"
 
 # Build .NET Sample Native
 cd "../Beyond.NET.Sample.Native"
-./publish_ios
+./publish_apple_universal

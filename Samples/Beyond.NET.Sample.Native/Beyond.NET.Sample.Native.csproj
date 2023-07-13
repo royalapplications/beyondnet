@@ -5,31 +5,30 @@
     <OutputType>Library</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <LangVersion>latest</LangVersion>
-    <!-- TODO: Disabled for now to get faster build times -->
-    <Nullable>disable</Nullable>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <PublishTrimmed>true</PublishTrimmed>
     <PublishAot>true</PublishAot>
     <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
     <EnablePreviewFeatures>true</EnablePreviewFeatures>
+
+    <!-- TODO: Disabled for now to get faster build times -->
+    <Nullable>disable</Nullable>
+    
     <!-- Seems to not be required as long as we're providing the RuntimeIdentifier when calling dotnet publish/build -->
     <!-- <RuntimeIdentifiers>osx-x64;osx-arm64;linux-x64;ios-arm64;iossimulator-arm64;iossimulator-x64</RuntimeIdentifiers> -->
   </PropertyGroup>
 
-  <!-- TODO: This is a temporary workaround for iOS support -->
+  <!-- TODO: Temporary workarounds for iOS support -->
   <Choose>
     <When Condition="$(RuntimeIdentifier.Contains('ios'))">
       <PropertyGroup>
-        <!-- TODO: This is a temporary workaround for iOS support - see https://devblogs.microsoft.com/dotnet/announcing-dotnet-8-preview-6/ -->
         <PublishAotUsingRuntimePack>true</PublishAotUsingRuntimePack>
-
-        <!-- TODO: This is a temporary workaround for iOS support -->
         <_IsAppleMobileLibraryMode>false</_IsAppleMobileLibraryMode>
       </PropertyGroup>
     </When>
   </Choose>
 
-  <!-- TODO: This is a temporary workaround for iOS support -->
+  <!-- TODO: Temporary workarounds for iOS support -->
   <Choose>
     <When Condition="$(RuntimeIdentifier.Contains('iossimulator'))">
       <ItemGroup>
@@ -39,7 +38,7 @@
     </When>
   </Choose>
 
-  <!-- TODO: This is a temporary workaround for iOS support -->
+  <!-- TODO: Temporary workarounds for iOS support -->
   <Choose>
     <When Condition="$(RuntimeIdentifier.Contains('ios-'))">
       <ItemGroup>
