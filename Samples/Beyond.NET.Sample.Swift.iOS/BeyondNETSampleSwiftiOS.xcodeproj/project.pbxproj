@@ -11,10 +11,7 @@
 			isa = PBXAggregateTarget;
 			buildConfigurationList = E7519E0F2A5EF0520048D98E /* Build configuration list for PBXAggregateTarget "Build .NET Stuff" */;
 			buildPhases = (
-				E7519E122A5EF05B0048D98E /* Build Beyond.NET.CodeGenerator.CLI */,
-				E7519E132A5EF0660048D98E /* Build .NET Sample Managed */,
-				E7519E142A5EF06E0048D98E /* Generate .NET Native Bindings */,
-				E7519E152A5EF0810048D98E /* Build .NET Sample Native */,
+				E7519E122A5EF05B0048D98E /* Build Dependencies */,
 			);
 			dependencies = (
 			);
@@ -203,7 +200,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		E7519E122A5EF05B0048D98E /* Build Beyond.NET.CodeGenerator.CLI */ = {
+		E7519E122A5EF05B0048D98E /* Build Dependencies */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -213,71 +210,14 @@
 			);
 			inputPaths = (
 			);
-			name = "Build Beyond.NET.CodeGenerator.CLI";
+			name = "Build Dependencies";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\n\ncd \"${PROJECT_DIR}\"\nsource \"../prepare_xcode_scripting_environment\"\n\ncd \"${PROJECT_DIR}/../../Generator/Beyond.NET.CodeGenerator.CLI\"\n./publish_macos_universal\n";
-		};
-		E7519E132A5EF0660048D98E /* Build .NET Sample Managed */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Build .NET Sample Managed";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "set -e\n\ncd \"${PROJECT_DIR}\"\nsource \"../prepare_xcode_scripting_environment\"\n\ncd \"${PROJECT_DIR}/../Beyond.NET.Sample.Managed\"\n./publish_managed\n";
-		};
-		E7519E142A5EF06E0048D98E /* Generate .NET Native Bindings */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Generate .NET Native Bindings";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "set -e\n\ncd \"${PROJECT_DIR}\"\nsource \"../prepare_xcode_scripting_environment\"\n\ncd \"${PROJECT_DIR}/..\"\n./generate_macos\n";
-		};
-		E7519E152A5EF0810048D98E /* Build .NET Sample Native */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Build .NET Sample Native";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "set -e\n\ncd \"${PROJECT_DIR}\"\nsource \"../prepare_xcode_scripting_environment\"\n\ncd \"${PROJECT_DIR}/../Beyond.NET.Sample.Native.iOS\"\n./publish_ios\n";
+			shellScript = "set -e\n\ncd \"${PROJECT_DIR}\"\n./build_dependencies\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

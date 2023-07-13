@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+set -e
+
+ORIG_PWD=$PWD
+
+source "../prepare_xcode_scripting_environment"
+
+# Build Beyond.NET.CodeGenerator.CLI
+cd "../../Generator/Beyond.NET.CodeGenerator.CLI"
+./publish_macos_universal
+
+cd "${ORIG_PWD}"
+
+# Build .NET Sample Managed
+cd "../Beyond.NET.Sample.Managed"
+./publish_managed
+
+cd "${ORIG_PWD}"
+
+# Generate .NET Native Bindings
+cd ".."
+./generate_macos
+
+cd "${ORIG_PWD}"
+
+# Build .NET Sample Native
+cd "../Beyond.NET.Sample.Native.iOS"
+./publish_ios
