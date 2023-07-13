@@ -18,9 +18,9 @@
   "testTargets" : [
     {
       "target" : {
-        "containerPath" : "container:BeyondNETSamplesSwift.xcodeproj",
+        "containerPath" : "container:BeyondNETSampleSwift.xcodeproj",
         "identifier" : "E70D117129BF9FEC00B4E738",
-        "name" : "BeyondNETSamplesSwiftTests"
+        "name" : "BeyondNETSampleSwiftTests"
       }
     }
   ],

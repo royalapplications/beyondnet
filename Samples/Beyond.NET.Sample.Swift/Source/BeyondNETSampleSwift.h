@@ -7,4 +7,4 @@ FOUNDATION_EXPORT double BeyondNETSamplesSwiftVersionNumber;
 FOUNDATION_EXPORT const unsigned char BeyondNETSamplesSwiftVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <BeyondNETSamplesSwift/PublicHeader.h>
-#import <BeyondNETSamplesSwift/Generated_C.h>
+#import <BeyondNETSampleSwift/Generated_C.h>

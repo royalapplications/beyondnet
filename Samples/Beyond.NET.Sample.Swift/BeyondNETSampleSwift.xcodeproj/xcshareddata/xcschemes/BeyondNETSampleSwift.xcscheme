@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E71E41E52A60030F0075FE5F"
-               BuildableName = "BeyondNETSamplesSwift.framework"
-               BlueprintName = "BeyondNETSamplesSwift"
-               ReferencedContainer = "container:BeyondNETSamplesSwift.xcodeproj">
+               BuildableName = "BeyondNETSampleSwift.framework"
+               BlueprintName = "BeyondNETSampleSwift"
+               ReferencedContainer = "container:BeyondNETSampleSwift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,7 +29,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:BeyondNETSamplesSwift.xctestplan"
+            reference = "container:BeyondNETSampleSwift.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E71E41E52A60030F0075FE5F"
-            BuildableName = "BeyondNETSamplesSwift.framework"
-            BlueprintName = "BeyondNETSamplesSwift"
-            ReferencedContainer = "container:BeyondNETSamplesSwift.xcodeproj">
+            BuildableName = "BeyondNETSampleSwift.framework"
+            BlueprintName = "BeyondNETSampleSwift"
+            ReferencedContainer = "container:BeyondNETSampleSwift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
