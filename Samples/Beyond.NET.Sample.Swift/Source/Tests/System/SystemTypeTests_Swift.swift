@@ -1,6 +1,7 @@
 import XCTest
 import BeyondNETSampleSwift
 
+// TODO: Tests fail on iOS Simulator
 final class SystemTypeTests_Swift: XCTestCase {
     @MainActor
     override class func setUp() {
