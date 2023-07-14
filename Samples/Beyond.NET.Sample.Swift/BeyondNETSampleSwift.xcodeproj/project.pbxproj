@@ -91,6 +91,8 @@
 		E7C8CF0B29C1FE5800C4230F /* SystemArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0A29C1FE5800C4230F /* SystemArrayTests.swift */; };
 		E7C8CF0D29C2139B00C4230F /* PersonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0C29C2139B00C4230F /* PersonTests.swift */; };
 		E7C8CF0F29C2180200C4230F /* AnimalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF0E29C2180200C4230F /* AnimalTests.swift */; };
+		E7CB97C62A612A8A0086CF43 /* icudt.dat in Resources */ = {isa = PBXBuildFile; fileRef = E71E42282A6030760075FE5F /* icudt.dat */; };
+		E7CB97CE2A612BE30086CF43 /* __LibraryInit.m in Sources */ = {isa = PBXBuildFile; fileRef = E7CB97CC2A612BE30086CF43 /* __LibraryInit.m */; };
 		E7EB338629C8879100392F3D /* AddressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EB338529C8879100392F3D /* AddressTests.swift */; };
 		E7ED7A1829D35DF4008C96E0 /* SystemVersionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED7A1729D35DF4008C96E0 /* SystemVersionTests.swift */; };
 		E7ED7A1A29D445C8008C96E0 /* SystemActionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED7A1929D445C8008C96E0 /* SystemActionTests.swift */; };
@@ -198,6 +200,7 @@
 		E7C8CF0A29C1FE5800C4230F /* SystemArrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemArrayTests.swift; sourceTree = "<group>"; };
 		E7C8CF0C29C2139B00C4230F /* PersonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTests.swift; sourceTree = "<group>"; };
 		E7C8CF0E29C2180200C4230F /* AnimalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTests.swift; sourceTree = "<group>"; };
+		E7CB97CC2A612BE30086CF43 /* __LibraryInit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = __LibraryInit.m; sourceTree = "<group>"; };
 		E7E7491B2A026A1C009590A8 /* Generated_C.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Generated_C.h; path = ../../Generated/Generated_C.h; sourceTree = "<group>"; };
 		E7E7491C2A026A1C009590A8 /* Generated_Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Generated_Swift.swift; path = ../../Generated/Generated_Swift.swift; sourceTree = "<group>"; };
 		E7EB338529C8879100392F3D /* AddressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTests.swift; sourceTree = "<group>"; };
@@ -261,6 +264,7 @@
 			children = (
 				E7C8CF0129C1FA6C00C4230F /* Tests */,
 				E7E749192A0269AB009590A8 /* Playground */,
+				E7CB97CA2A612BC10086CF43 /* LibraryInit */,
 				E7E7491A2A0269DD009590A8 /* Generated */,
 				E70D116029BF9F2600B4E738 /* BeyondNETSampleSwift.h */,
 			);
@@ -383,6 +387,14 @@
 			path = TestClasses;
 			sourceTree = "<group>";
 		};
+		E7CB97CA2A612BC10086CF43 /* LibraryInit */ = {
+			isa = PBXGroup;
+			children = (
+				E7CB97CC2A612BE30086CF43 /* __LibraryInit.m */,
+			);
+			path = LibraryInit;
+			sourceTree = "<group>";
+		};
 		E7E749192A0269AB009590A8 /* Playground */ = {
 			isa = PBXGroup;
 			children = (
@@ -468,6 +480,7 @@
 					};
 					E71E41E52A60030F0075FE5F = {
 						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1430;
 					};
 					E7B491D32A5FDBD900A7C75D = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -507,6 +520,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7CB97C62A612A8A0086CF43 /* icudt.dat in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,6 +634,7 @@
 			files = (
 				E71E41F62A6003F30075FE5F /* Generated_Swift.swift in Sources */,
 				E71E41FB2A6010970075FE5F /* SwiftSyntaxPlayground.swift in Sources */,
+				E7CB97CE2A612BE30086CF43 /* __LibraryInit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -808,6 +823,7 @@
 		E71E41EA2A60030F0075FE5F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -837,6 +853,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -845,6 +862,7 @@
 		E71E41EB2A60030F0075FE5F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;

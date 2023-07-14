@@ -37,7 +37,8 @@ public class TypeCollector
         typeof(System.Enum),
         typeof(System.Array),
         typeof(byte[]),
-        typeof(string[])
+        typeof(string[]),
+        typeof(System.AppContext)
     };
     
     private static readonly Type[] UNSUPPORTED_TYPES = new [] {
