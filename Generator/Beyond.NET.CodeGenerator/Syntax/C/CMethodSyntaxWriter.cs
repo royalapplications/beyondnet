@@ -242,6 +242,10 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         );
         
         StringBuilder sb = new();
+
+        if (string.IsNullOrEmpty(methodSignatureParameters)) {
+            methodSignatureParameters = "void";
+        }
         
         sb.AppendLine($"{cReturnOrSetterTypeNameWithComment}\n{methodNameC}(\n\t{methodSignatureParameters}\n);");
 
