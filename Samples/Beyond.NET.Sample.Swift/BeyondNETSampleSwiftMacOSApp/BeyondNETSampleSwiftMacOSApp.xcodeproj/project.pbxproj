@@ -35,7 +35,7 @@
 		E71E423F2A603D840075FE5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E71E42442A603D840075FE5F /* BeyondNETSampleSwiftMacOSApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BeyondNETSampleSwiftMacOSApp.entitlements; sourceTree = "<group>"; };
 		E71E424E2A603E0A0075FE5F /* BeyondNETSampleSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BeyondNETSampleSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E71E42522A603E110075FE5F /* libBeyondDotNETSampleNative.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libBeyondDotNETSampleNative.xcframework; path = "../../Beyond.NET.Sample.Native/bin/Release/net8.0/apple-universal/publish/libBeyondDotNETSampleNative.xcframework"; sourceTree = "<group>"; };
+		E71E42522A603E110075FE5F /* BeyondDotNETSampleNative.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BeyondDotNETSampleNative.xcframework; path = "../../Beyond.NET.Sample.Native/bin/Release/net8.0/apple-universal/publish/BeyondDotNETSampleNative.xcframework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +81,7 @@
 		E71E424D2A603E0A0075FE5F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E71E42522A603E110075FE5F /* libBeyondDotNETSampleNative.xcframework */,
+				E71E42522A603E110075FE5F /* BeyondDotNETSampleNative.xcframework */,
 				E71E424E2A603E0A0075FE5F /* BeyondNETSampleSwift.framework */,
 			);
 			name = Frameworks;

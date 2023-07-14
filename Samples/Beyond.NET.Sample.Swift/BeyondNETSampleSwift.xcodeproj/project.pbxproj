@@ -23,14 +23,14 @@
 /* Begin PBXBuildFile section */
 		E70A1FAD29C3652100843CD0 /* SystemTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A1FAC29C3652100843CD0 /* SystemTypeTests.swift */; };
 		E70D117D29BFA01300B4E738 /* TestClassesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70D117429BF9FEC00B4E738 /* TestClassesTests.swift */; };
-		E71E41F12A60035A0075FE5F /* libBeyondDotNETSampleNative.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E71E41EF2A6003560075FE5F /* libBeyondDotNETSampleNative.xcframework */; };
-		E71E41F22A60035A0075FE5F /* libBeyondDotNETSampleNative.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E71E41EF2A6003560075FE5F /* libBeyondDotNETSampleNative.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E71E41F12A60035A0075FE5F /* BeyondDotNETSampleNative.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E71E41EF2A6003560075FE5F /* BeyondDotNETSampleNative.xcframework */; };
+		E71E41F22A60035A0075FE5F /* BeyondDotNETSampleNative.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E71E41EF2A6003560075FE5F /* BeyondDotNETSampleNative.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E71E41F52A6003EA0075FE5F /* Generated_C.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E7491B2A026A1C009590A8 /* Generated_C.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E71E41F62A6003F30075FE5F /* Generated_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E7491C2A026A1C009590A8 /* Generated_Swift.swift */; };
 		E71E41FA2A600FE10075FE5F /* BeyondNETSampleSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = E70D116029BF9F2600B4E738 /* BeyondNETSampleSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E71E41FB2A6010970075FE5F /* SwiftSyntaxPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79335A529E98D3D0035FCEB /* SwiftSyntaxPlayground.swift */; };
 		E71E41FE2A6012340075FE5F /* BeyondNETSampleSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E71E41E62A60030F0075FE5F /* BeyondNETSampleSwift.framework */; };
-		E71E41FF2A6013B60075FE5F /* libBeyondDotNETSampleNative.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E71E41EF2A6003560075FE5F /* libBeyondDotNETSampleNative.xcframework */; };
+		E71E41FF2A6013B60075FE5F /* BeyondDotNETSampleNative.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E71E41EF2A6003560075FE5F /* BeyondDotNETSampleNative.xcframework */; };
 		E71E42292A6030760075FE5F /* icudt.dat in Resources */ = {isa = PBXBuildFile; fileRef = E71E42282A6030760075FE5F /* icudt.dat */; };
 		E73EE8F229DAEA0500C57A71 /* SystemThreadingThreadTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73EE8F129DAEA0500C57A71 /* SystemThreadingThreadTest.swift */; };
 		E73EE8F429DAEC1A00C57A71 /* SystemThreadingTimerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73EE8F329DAEC1A00C57A71 /* SystemThreadingTimerTest.swift */; };
@@ -122,7 +122,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E71E41F22A60035A0075FE5F /* libBeyondDotNETSampleNative.xcframework in Embed Frameworks */,
+				E71E41F22A60035A0075FE5F /* BeyondDotNETSampleNative.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,7 +135,7 @@
 		E70D117229BF9FEC00B4E738 /* BeyondNETSampleSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeyondNETSampleSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E70D117429BF9FEC00B4E738 /* TestClassesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClassesTests.swift; sourceTree = "<group>"; };
 		E71E41E62A60030F0075FE5F /* BeyondNETSampleSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BeyondNETSampleSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E71E41EF2A6003560075FE5F /* libBeyondDotNETSampleNative.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = libBeyondDotNETSampleNative.xcframework; sourceTree = "<group>"; };
+		E71E41EF2A6003560075FE5F /* BeyondDotNETSampleNative.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = BeyondDotNETSampleNative.xcframework; sourceTree = "<group>"; };
 		E71E41FC2A60116A0075FE5F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E71E42282A6030760075FE5F /* icudt.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = icudt.dat; sourceTree = "<group>"; };
 		E73EE8F129DAEA0500C57A71 /* SystemThreadingThreadTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemThreadingThreadTest.swift; sourceTree = "<group>"; };
@@ -221,7 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E71E41FE2A6012340075FE5F /* BeyondNETSampleSwift.framework in Frameworks */,
-				E71E41FF2A6013B60075FE5F /* libBeyondDotNETSampleNative.xcframework in Frameworks */,
+				E71E41FF2A6013B60075FE5F /* BeyondDotNETSampleNative.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,7 +229,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E71E41F12A60035A0075FE5F /* libBeyondDotNETSampleNative.xcframework in Frameworks */,
+				E71E41F12A60035A0075FE5F /* BeyondDotNETSampleNative.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,7 +242,7 @@
 				E71E41FC2A60116A0075FE5F /* README.md */,
 				E7808CE929DEFB2600F50203 /* BeyondNETSampleSwift.xctestplan */,
 				E7B491E12A5FE3F300A7C75D /* PreBuildOutputFiles.xcfilelist */,
-				E71E41EF2A6003560075FE5F /* libBeyondDotNETSampleNative.xcframework */,
+				E71E41EF2A6003560075FE5F /* BeyondDotNETSampleNative.xcframework */,
 				E71E42282A6030760075FE5F /* icudt.dat */,
 				E70D115F29BF9F2600B4E738 /* Source */,
 				E70D115E29BF9F2600B4E738 /* Products */,
