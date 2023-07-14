@@ -1,0 +1,22 @@
+{
+  "version": 0,
+  "case-sensitive": "false",
+  "roots": [
+    {
+      "contents": [
+        {
+          "external-contents": "Generated_C.h",
+          "name": "Generated_C.h",
+          "type": "file"
+        },
+        {
+          "external-contents": "module.modulemap",
+          "name": "module.modulemap",
+          "type": "file"
+        }
+      ],
+      "name": "/Users/fx/Development/DotNET/beyondnet/Samples/Generated",
+      "type": "directory"
+    }
+  ]
+}

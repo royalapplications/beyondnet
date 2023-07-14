@@ -7,14 +7,14 @@ OUTPUT_PRODUCT_NAME="lib${PRODUCT_NAME}"
 
 GENERATED_HEADER_FILE_NAME="Generated_C.h"
 GENERATED_SWIFT_FILE_NAME="Generated_Swift.swift"
-UMBRELLA_HEADER_FILE_NAME="BeyondDotNETSampleNative.modulemap"
-MODULEMAP_FILE_NAME="BeyondDotNETSampleNative.modulemap"
+MODULEMAP_FILE_NAME="module.modulemap"
+HEADERS_FILE_NAME=headers.yaml
 
 echo "Copying Modulemap"
 cp -f "${MODULEMAP_FILE_NAME}" "Generated/${MODULEMAP_FILE_NAME}"
 
-echo "Copying Umbrella Header"
-cp -f "${UMBRELLA_HEADER_FILE_NAME}" "Generated/${UMBRELLA_HEADER_FILE_NAME}"
+echo "Copying Headers"
+cp -f "${HEADERS_FILE_NAME}" "Generated/${HEADERS_FILE_NAME}"
 
 cd "Generated"
 
@@ -94,7 +94,7 @@ build_object() {
 		-target "${TARGET_TRIPLE}" \
 		-working-directory . \
 		-I . \
-		-Xcc -I. \
+		-Xcc -ivfsoverlay -Xcc "headers.yaml" \
 		-F . \
 		-O \
 		-save-temps \
@@ -104,7 +104,6 @@ build_object() {
 		-enable-bare-slash-regex \
 		-parse-as-library \
 		-j24 \
-		-Xcc -fmodule-map-file="${MODULEMAP_FILE_NAME}" \
 		-module-name "${PRODUCT_NAME}" \
 		-emit-dependencies \
 		-emit-module -emit-module-path "${OUTPUT_PATH_APPLEMODULE}/${TARGET_DOUBLE}.${SWIFTMODULE_FILE_EXTENSION}" \

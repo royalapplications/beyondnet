@@ -1,8 +1,0 @@
-framework module BeyondDotNETSampleNative {
-    umbrella header "BeyondDotNETSampleNative.h"
-
-    private header "Generated_C.h"
-
-    export *
-    module * { export * }
-}

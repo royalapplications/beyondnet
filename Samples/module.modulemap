@@ -1,0 +1,3 @@
+module BeyondDotNETSampleNative {
+    private header "Generated_C.h"
+}
