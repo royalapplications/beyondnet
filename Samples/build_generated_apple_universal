@@ -76,7 +76,7 @@ mkdir -p "${OUTPUT_PATH_IOS_ARM64}"
 mkdir -p "${OUTPUT_PATH_IOSSIMULATOR_ARM64}"
 mkdir -p "${OUTPUT_PATH_IOSSIMULATOR_X64}"
 
-build_object() {
+swift_compile() {
 	local SDK=$1
 	local TARGET_IDENTIFIER=$2
 	local PLATFORM_IDENTIFIER=$3
@@ -89,7 +89,8 @@ build_object() {
 
 	echo "Building for ${TARGET_TRIPLE}"
 
-	xcrun swiftc \
+	xcrun \
+		swiftc \
 		-sdk "${SDK}" \
 		-target "${TARGET_TRIPLE}" \
 		-working-directory . \
@@ -103,14 +104,13 @@ build_object() {
 		-enforce-exclusivity=checked \
 		-enable-bare-slash-regex \
 		-parse-as-library \
-		-j24 \
 		-module-name "${PRODUCT_NAME}" \
-		-emit-dependencies \
-		-emit-module -emit-module-path "${OUTPUT_PATH_APPLEMODULE}/${TARGET_DOUBLE}.${SWIFTMODULE_FILE_EXTENSION}" \
+		-module-link-name "${PRODUCT_NAME}" \
+		-static \
+		-emit-library \
 		-emit-module-interface-path "${OUTPUT_PATH_APPLEMODULE}/${TARGET_DOUBLE}.${SWIFTINTERFACE_FILE_EXTENSION}" \
 		-emit-private-module-interface-path "${OUTPUT_PATH_APPLEMODULE}/${TARGET_DOUBLE}.private.${SWIFTINTERFACE_FILE_EXTENSION}" \
-		-emit-object \
-		-o "${OUTPUT_PATH}/${OUTPUT_PRODUCT_NAME}.o" \
+		-o "${OUTPUT_PATH}/${OUTPUT_PRODUCT_NAME}.a" \
 		-emit-objc-header \
 		-emit-objc-header-path "${OUTPUT_PATH}/${OUTPUT_PRODUCT_NAME}-Swift.h" \
 		-swift-version "${SWIFT_VERSION}" \
@@ -118,10 +118,15 @@ build_object() {
 		-experimental-emit-module-separately \
 		-disable-cmo \
 		-c "${GENERATED_SWIFT_FILE_NAME}"
+
+	nm \
+		-g \
+		-U \
+		"${OUTPUT_PATH}/${OUTPUT_PRODUCT_NAME}.a" | awk '!/(_associated conformance |_symbolic )/ {print $3}' > "${OUTPUT_PATH}/${OUTPUT_PRODUCT_NAME}.exports"
 }
 
-build_object "${SDK_PATH_MACOS}" "${TARGET_IDENTIFIER_ARM64}" "${PLATFORM_IDENTIFIER_MACOS}" "" "${DEPLOYMENT_TARGET_MACOS}" "${OUTPUT_PATH_MACOS_ARM64}"
-build_object "${SDK_PATH_MACOS}" "${TARGET_IDENTIFIER_X64}" "${PLATFORM_IDENTIFIER_MACOS}" "" "${DEPLOYMENT_TARGET_MACOS}" "${OUTPUT_PATH_MACOS_X64}"
-build_object "${SDK_PATH_IOS}" "${TARGET_IDENTIFIER_ARM64}" "${PLATFORM_IDENTIFIER_IOS}" "" "${DEPLOYMENT_TARGET_IOS}" "${OUTPUT_PATH_IOS_ARM64}"
-build_object "${SDK_PATH_IOSSIMULATOR}" "${TARGET_IDENTIFIER_ARM64}" "${PLATFORM_IDENTIFIER_IOS}" "${PLATFORM_SUFFIX_IOSSIMULATOR}" "${DEPLOYMENT_TARGET_IOS}" "${OUTPUT_PATH_IOSSIMULATOR_ARM64}"
-build_object "${SDK_PATH_IOSSIMULATOR}" "${TARGET_IDENTIFIER_X64}" "${PLATFORM_IDENTIFIER_IOS}" "${PLATFORM_SUFFIX_IOSSIMULATOR}" "${DEPLOYMENT_TARGET_IOS}" "${OUTPUT_PATH_IOSSIMULATOR_X64}"
+swift_compile "${SDK_PATH_MACOS}" "${TARGET_IDENTIFIER_ARM64}" "${PLATFORM_IDENTIFIER_MACOS}" "" "${DEPLOYMENT_TARGET_MACOS}" "${OUTPUT_PATH_MACOS_ARM64}"
+swift_compile "${SDK_PATH_MACOS}" "${TARGET_IDENTIFIER_X64}" "${PLATFORM_IDENTIFIER_MACOS}" "" "${DEPLOYMENT_TARGET_MACOS}" "${OUTPUT_PATH_MACOS_X64}"
+swift_compile "${SDK_PATH_IOS}" "${TARGET_IDENTIFIER_ARM64}" "${PLATFORM_IDENTIFIER_IOS}" "" "${DEPLOYMENT_TARGET_IOS}" "${OUTPUT_PATH_IOS_ARM64}"
+swift_compile "${SDK_PATH_IOSSIMULATOR}" "${TARGET_IDENTIFIER_ARM64}" "${PLATFORM_IDENTIFIER_IOS}" "${PLATFORM_SUFFIX_IOSSIMULATOR}" "${DEPLOYMENT_TARGET_IOS}" "${OUTPUT_PATH_IOSSIMULATOR_ARM64}"
+swift_compile "${SDK_PATH_IOSSIMULATOR}" "${TARGET_IDENTIFIER_X64}" "${PLATFORM_IDENTIFIER_IOS}" "${PLATFORM_SUFFIX_IOSSIMULATOR}" "${DEPLOYMENT_TARGET_IOS}" "${OUTPUT_PATH_IOSSIMULATOR_X64}"
