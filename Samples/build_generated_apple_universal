@@ -8,10 +8,14 @@ OUTPUT_PRODUCT_NAME="lib${PRODUCT_NAME}"
 GENERATED_HEADER_FILE_NAME="Generated_C.h"
 GENERATED_SWIFT_FILE_NAME="Generated_Swift.swift"
 MODULEMAP_FILE_NAME="module.modulemap"
+MODULEMAP_CLANG_FILE_NAME="module_clang.modulemap"
 HEADERS_FILE_NAME=headers.yaml
 
-echo "Copying Modulemap"
+echo "Copying Swift Modulemap"
 cp -f "${MODULEMAP_FILE_NAME}" "Generated/${MODULEMAP_FILE_NAME}"
+
+echo "Copying Clang Modulemap"
+cp -f "${MODULEMAP_CLANG_FILE_NAME}" "Generated/${MODULEMAP_CLANG_FILE_NAME}"
 
 echo "Copying Headers"
 cp -f "${HEADERS_FILE_NAME}" "Generated/${HEADERS_FILE_NAME}"
@@ -50,8 +54,6 @@ SWIFTINTERFACE_FILE_EXTENSION="swiftinterface"
 OUTPUT_PATH_ROOT="bin"
 OUTPUT_PATH_APPLE="${OUTPUT_PATH_ROOT}/apple"
 
-OUTPUT_PATH_APPLEMODULE="${OUTPUT_PATH_APPLE}/${PRODUCT_NAME}.${SWIFTMODULE_FILE_EXTENSION}"
-
 OUTPUT_PATH_MACOS_ARM64="${OUTPUT_PATH_APPLE}/${PLATFORM_IDENTIFIER_MACOS_DN}-${RUNTIME_IDENTIFIER_ARM64}"
 OUTPUT_PATH_MACOS_X64="${OUTPUT_PATH_APPLE}/${PLATFORM_IDENTIFIER_MACOS_DN}-${RUNTIME_IDENTIFIER_X64}"
 
@@ -66,8 +68,6 @@ then
 fi
 
 echo "Making output directories"
-mkdir -p "${OUTPUT_PATH_APPLEMODULE}"
-
 mkdir -p "${OUTPUT_PATH_MACOS_ARM64}"
 mkdir -p "${OUTPUT_PATH_MACOS_X64}"
 
@@ -108,8 +108,7 @@ swift_compile() {
 		-module-link-name "${PRODUCT_NAME}" \
 		-static \
 		-emit-library \
-		-emit-module-interface-path "${OUTPUT_PATH_APPLEMODULE}/${TARGET_DOUBLE}.${SWIFTINTERFACE_FILE_EXTENSION}" \
-		-emit-private-module-interface-path "${OUTPUT_PATH_APPLEMODULE}/${TARGET_DOUBLE}.private.${SWIFTINTERFACE_FILE_EXTENSION}" \
+		-emit-module-interface-path "${OUTPUT_PATH}/${TARGET_DOUBLE}.${SWIFTINTERFACE_FILE_EXTENSION}" \
 		-o "${OUTPUT_PATH}/${OUTPUT_PRODUCT_NAME}.a" \
 		-emit-objc-header \
 		-emit-objc-header-path "${OUTPUT_PATH}/${OUTPUT_PRODUCT_NAME}-Swift.h" \
