@@ -4,6 +4,10 @@ static class Program
 {
     public static int Main(string[] args)
     {
+        // TODO: Just for testing
+        // string macOSSDKPath = Builder.XCRun.SDK.GetSDKPath(Builder.XCRun.SDK.macOSName);
+        // Console.WriteLine($"macOS SDK Path: {macOSSDKPath}");
+        
         string? configFilePath = args.Length == 1
             ? args[0]
             : null;

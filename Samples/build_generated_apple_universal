@@ -12,6 +12,7 @@ SWIFT_VERSION="5"
 
 GENERATED_HEADER_FILE_NAME="Generated_C.h"
 GENERATED_SWIFT_FILE_NAME="Generated_Swift.swift"
+
 MODULEMAP_FILE_NAME="module.modulemap"
 MODULEMAP_CLANG_FILE_NAME="module_clang.modulemap"
 HEADERS_FILE_NAME=headers.yaml

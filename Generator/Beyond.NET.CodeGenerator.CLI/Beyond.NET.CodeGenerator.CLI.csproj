@@ -20,6 +20,7 @@
   
   <!-- Project References -->
   <ItemGroup>
+    <ProjectReference Include="..\..\Builder\Beyond.NET.Builder\Beyond.NET.Builder.csproj" />
     <ProjectReference Include="..\Beyond.NET.CodeGenerator\Beyond.NET.CodeGenerator.csproj" />
   </ItemGroup>
 
