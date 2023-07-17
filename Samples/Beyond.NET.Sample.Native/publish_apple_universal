@@ -9,11 +9,15 @@ BUILD_CONFIGURATION="Release"
 OUTPUT_FILE_NAME="${OUTPUT_PRODUCT_NAME}.dylib"
 UNIVERSAL_FILE_NAME="${PRODUCT_NAME}.xcframework"
 
+VERBOSITY_LEVEL="normal"
+
+# WIP/Experimental (0 == false; 1 == true)
+MIXIN_SWIFT=1
+
+
 DOTNET_PATH=`which dotnet`
 DOTNET_VERSION=`${DOTNET_PATH} --version`
 DOTNET_VERSION_MAJOR_AND_MINOR=${DOTNET_VERSION:0:3}
-
-VERBOSITY_LEVEL="normal"
 
 RUNTIME_IDENTIFIER_MACOS_X64="osx-x64"
 RUNTIME_IDENTIFIER_MACOS_ARM64="osx-arm64"
@@ -55,6 +59,15 @@ MACOS_UNIVERSAL_FILE_PATH="${MACOS_UNIVERSAL_BUILD_DIR}/${OUTPUT_FILE_NAME}"
 
 APPLE_UNIVERSAL_FILE_PATH="${APPLE_UNIVERSAL_BUILD_DIR}/${UNIVERSAL_FILE_NAME}"
 
+DONET_PUBLISH_ADDITIONAL_ARGS=""
+
+if [ $MIXIN_SWIFT -eq 1 ]
+then
+	DONET_PUBLISH_ADDITIONAL_ARGS="/p:MixInSwift=true"
+fi
+
+
+
 echo "Cleaning ${OUTPUT_PRODUCT_NAME}"
 ${DOTNET_PATH} clean /p:Configuration=Release
 
@@ -62,10 +75,10 @@ ${DOTNET_PATH} clean /p:Configuration=Release
 # Compile for macOS
 
 echo "Building ${OUTPUT_PRODUCT_NAME} for macOS x64"
-${DOTNET_PATH} publish -r ${RUNTIME_IDENTIFIER_MACOS_X64} -v "${VERBOSITY_LEVEL}"
+${DOTNET_PATH} publish -r ${RUNTIME_IDENTIFIER_MACOS_X64} -v "${VERBOSITY_LEVEL}" ${DONET_PUBLISH_ADDITIONAL_ARGS}
 
 echo "Building ${OUTPUT_PRODUCT_NAME} for macOS ARM64"
-${DOTNET_PATH} publish -r ${RUNTIME_IDENTIFIER_MACOS_ARM64} -v "${VERBOSITY_LEVEL}"
+${DOTNET_PATH} publish -r ${RUNTIME_IDENTIFIER_MACOS_ARM64} -v "${VERBOSITY_LEVEL}" ${DONET_PUBLISH_ADDITIONAL_ARGS}
 
 echo "Making directory for universal ${OUTPUT_PRODUCT_NAME} macOS build"
 mkdir -p "${MACOS_UNIVERSAL_BUILD_DIR}"
@@ -80,19 +93,19 @@ install_name_tool -id "@rpath/${OUTPUT_FILE_NAME}" "${MACOS_UNIVERSAL_FILE_PATH}
 # Compile for iOS
 
 echo "Building ${OUTPUT_PRODUCT_NAME} for iOS ARM64"
-${DOTNET_PATH} publish -r "${RUNTIME_IDENTIFIER_IOS_ARM64}" -v "${VERBOSITY_LEVEL}"
+${DOTNET_PATH} publish -r "${RUNTIME_IDENTIFIER_IOS_ARM64}" -v "${VERBOSITY_LEVEL}" ${DONET_PUBLISH_ADDITIONAL_ARGS}
 
 echo "Changing install name of iOS ARM64 ${OUTPUT_PRODUCT_NAME} build"
 install_name_tool -id "@rpath/${OUTPUT_FILE_NAME}" "${IOS_ARM64_FILE_PATH}"
 
 echo "Building ${OUTPUT_PRODUCT_NAME} for iOS Simulator ARM64"
-${DOTNET_PATH} publish -r "${RUNTIME_IDENTIFIER_IOS_SIMULATOR_ARM64}" -v "${VERBOSITY_LEVEL}"
+${DOTNET_PATH} publish -r "${RUNTIME_IDENTIFIER_IOS_SIMULATOR_ARM64}" -v "${VERBOSITY_LEVEL}" ${DONET_PUBLISH_ADDITIONAL_ARGS}
 
 echo "Changing install name of iOS Simulator ARM64 ${OUTPUT_PRODUCT_NAME} build"
 install_name_tool -id "@rpath/${OUTPUT_FILE_NAME}" "${IOS_SIMULATOR_ARM64_FILE_PATH}"
 
 echo "Building ${OUTPUT_PRODUCT_NAME} for iOS Simulator x64"
-${DOTNET_PATH} publish -r "${RUNTIME_IDENTIFIER_IOS_SIMULATOR_X64}" -v "${VERBOSITY_LEVEL}"
+${DOTNET_PATH} publish -r "${RUNTIME_IDENTIFIER_IOS_SIMULATOR_X64}" -v "${VERBOSITY_LEVEL}" ${DONET_PUBLISH_ADDITIONAL_ARGS}
 
 echo "Changing install name of iOS Simulator x64 ${OUTPUT_PRODUCT_NAME} build"
 install_name_tool -id "@rpath/${OUTPUT_FILE_NAME}" "${IOS_SIMULATOR_X64_FILE_PATH}"
@@ -116,7 +129,10 @@ then
 fi
 
 echo "Making universal iOS xcframework for ${OUTPUT_PRODUCT_NAME}"
-xcodebuild -create-xcframework -library "${IOS_SIMULATOR_UNIVERSAL_FILE_PATH}" -library "${IOS_ARM64_FILE_PATH}" -output "${IOS_UNIVERSAL_FILE_PATH}"
+xcodebuild -create-xcframework \
+	-library "${IOS_SIMULATOR_UNIVERSAL_FILE_PATH}" \
+	-library "${IOS_ARM64_FILE_PATH}" \
+	-output "${IOS_UNIVERSAL_FILE_PATH}"
 
 
 # Compile for Apple Universal
@@ -131,4 +147,65 @@ then
 fi
 
 echo "Making universal Apple xcframework for ${OUTPUT_PRODUCT_NAME}"
-xcodebuild -create-xcframework -library "${MACOS_UNIVERSAL_FILE_PATH}" -library "${IOS_SIMULATOR_UNIVERSAL_FILE_PATH}" -library "${IOS_ARM64_FILE_PATH}" -output "${APPLE_UNIVERSAL_FILE_PATH}"
+xcodebuild -create-xcframework \
+	-library "${MACOS_UNIVERSAL_FILE_PATH}" \
+	-library "${IOS_SIMULATOR_UNIVERSAL_FILE_PATH}" \
+	-library "${IOS_ARM64_FILE_PATH}" \
+	-output "${APPLE_UNIVERSAL_FILE_PATH}"
+
+if [ $MIXIN_SWIFT -eq 1 ]
+then
+	echo "Copying Swift stuff into XCframework"
+else
+	exit 0
+fi
+
+# Copy generated Swift stuff into xcframework
+
+SWIFTINTERFACE_FILE_EXTENSION="swiftinterface"
+SWIFTMODULE_FILE_EXTENSION="swiftmodule"
+GENERATED_APPLE_PATH="../Generated/bin/apple"
+GENERATED_MODULEMAP_PATH="../Generated/module_clang.modulemap"
+MODULEMAP_FILE_NAME="module.modulemap"
+
+
+APPLE_MACOS_UNIVERSAL_SWIFTMODULE_PATH="${APPLE_UNIVERSAL_FILE_PATH}/macos-arm64_x86_64/${PRODUCT_NAME}.${SWIFTMODULE_FILE_EXTENSION}"
+
+echo "Making Swiftmodule directory for macOS Universal"
+mkdir "${APPLE_MACOS_UNIVERSAL_SWIFTMODULE_PATH}"
+
+echo "Copying module.modulemap for macOS Universal"
+cp "${GENERATED_MODULEMAP_PATH}" "${APPLE_MACOS_UNIVERSAL_SWIFTMODULE_PATH}/${MODULEMAP_FILE_NAME}"
+
+echo "Copying Swiftinterface for macOS ARM64"
+cp "${GENERATED_APPLE_PATH}/${RUNTIME_IDENTIFIER_MACOS_ARM64}/arm64-apple-macos.${SWIFTINTERFACE_FILE_EXTENSION}" "${APPLE_MACOS_UNIVERSAL_SWIFTMODULE_PATH}"
+
+echo "Copying Swiftinterface for macOS x64"
+cp "${GENERATED_APPLE_PATH}/${RUNTIME_IDENTIFIER_MACOS_X64}/x86_64-apple-macos.${SWIFTINTERFACE_FILE_EXTENSION}" "${APPLE_MACOS_UNIVERSAL_SWIFTMODULE_PATH}"
+
+
+APPLE_IOS_ARM64_SWIFTMODULE_PATH="${APPLE_UNIVERSAL_FILE_PATH}/ios-arm64/${PRODUCT_NAME}.${SWIFTMODULE_FILE_EXTENSION}"
+
+echo "Making Swiftmodule directory for iOS ARM64"
+mkdir "${APPLE_IOS_ARM64_SWIFTMODULE_PATH}"
+
+echo "Copying module.modulemap for iOS ARM64"
+cp "${GENERATED_MODULEMAP_PATH}" "${APPLE_IOS_ARM64_SWIFTMODULE_PATH}/${MODULEMAP_FILE_NAME}"
+
+echo "Copying Swiftinterface for iOS ARM64"
+cp "${GENERATED_APPLE_PATH}/${RUNTIME_IDENTIFIER_IOS_ARM64}/arm64-apple-ios.swiftinterface" "${APPLE_IOS_ARM64_SWIFTMODULE_PATH}"
+
+
+APPLE_IOSSIMULATOR_UNIVERSAL_SWIFTMODULE_PATH="${APPLE_UNIVERSAL_FILE_PATH}/ios-arm64_x86_64-simulator/${PRODUCT_NAME}.${SWIFTMODULE_FILE_EXTENSION}"
+
+echo "Making Swiftmodule directory for iOS Simulator Universal"
+mkdir "${APPLE_IOSSIMULATOR_UNIVERSAL_SWIFTMODULE_PATH}"
+
+echo "Copying module.modulemap for iOS Simulator Universal"
+cp "${GENERATED_MODULEMAP_PATH}" "${APPLE_IOSSIMULATOR_UNIVERSAL_SWIFTMODULE_PATH}/${MODULEMAP_FILE_NAME}"
+
+echo "Copying Swiftinterface for iOS Simulator ARM64"
+cp "${GENERATED_APPLE_PATH}/${RUNTIME_IDENTIFIER_IOS_SIMULATOR_ARM64}/arm64-apple-ios.swiftinterface" "${APPLE_IOSSIMULATOR_UNIVERSAL_SWIFTMODULE_PATH}"
+
+echo "Copying Swiftinterface for iOS Simulator x64"
+cp "${GENERATED_APPLE_PATH}/${RUNTIME_IDENTIFIER_IOS_SIMULATOR_X64}/x86_64-apple-ios.swiftinterface" "${APPLE_IOSSIMULATOR_UNIVERSAL_SWIFTMODULE_PATH}"

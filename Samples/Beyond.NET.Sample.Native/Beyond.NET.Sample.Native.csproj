@@ -16,6 +16,9 @@
     
     <!-- Seems to not be required as long as we're providing the RuntimeIdentifier when calling dotnet publish/build -->
     <!-- <RuntimeIdentifiers>osx-x64;osx-arm64;linux-x64;ios-arm64;iossimulator-arm64;iossimulator-x64</RuntimeIdentifiers> -->
+
+    <!-- WIP: Experimental -->
+    <MixInSwift>false</MixInSwift>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -25,10 +28,21 @@
   
   <!-- Compiler Customization -->
   <!-- TODO / WIP -->
-  <!-- Include pre-compiled Apple-specific object file -->
-  <!-- <ItemGroup>
-    <LinkerArg Include="../Generated/bin/apple/$(RuntimeIdentifier)/$(AssemblyName).o" />
-  </ItemGroup> -->
+  <!-- Include pre-compiled Swift stuff -->
+  <Choose>
+    <When Condition="$(MixInSwift) And ($(RuntimeIdentifier.Contains('osx')) Or $(RuntimeIdentifier.Contains('ios')))">
+<!--      <PropertyGroup>-->
+<!--         <ExportsFile>/Users/fx/Development/DotNET/beyondnet/Samples/Generated/bin/apple/osx-arm64/libBeyondDotNETSampleNative.exports</ExportsFile> -->
+<!--      </PropertyGroup>-->
+
+      <ItemGroup>
+        <LinkerArg Include="-Wl,-force_load,../Generated/bin/apple/$(RuntimeIdentifier)/$(AssemblyName).a" />
+        <LinkerArg Include="-fmodules -fmodule-map-file=../Generated/module_clang.modulemap" />
+
+        <LinkerArg Include="-exported_symbols_list ../Generated/bin/apple/$(RuntimeIdentifier)/$(AssemblyName).exports" />
+      </ItemGroup>
+    </When>
+  </Choose>
 
   <!-- Set min macOS version -->
   <Choose>
