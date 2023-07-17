@@ -122,7 +122,7 @@ swift_compile() {
 	nm \
 		-g \
 		-U \
-		"${OUTPUT_PATH}/${OUTPUT_PRODUCT_NAME}.a" | awk '!/(_associated conformance |_symbolic )/ {print $3}' > "${OUTPUT_PATH}/${OUTPUT_PRODUCT_NAME}.exports"
+		"${OUTPUT_PATH}/${OUTPUT_PRODUCT_NAME}.a" | awk '!/(_associated conformance |_symbolic |__swift_FORCE_LOAD_)/ {print $3}' > "${OUTPUT_PATH}/${OUTPUT_PRODUCT_NAME}.exports"
 }
 
 swift_compile "${SDK_PATH_MACOS}" "${TARGET_IDENTIFIER_ARM64}" "${PLATFORM_IDENTIFIER_MACOS}" "" "${DEPLOYMENT_TARGET_MACOS}" "${OUTPUT_PATH_MACOS_ARM64}"
