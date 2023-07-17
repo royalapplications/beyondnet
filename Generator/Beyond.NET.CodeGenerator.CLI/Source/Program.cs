@@ -31,6 +31,13 @@ static class Program
 
     private static void RunBuilderTests()
     {
+        Console.WriteLine($"Target Triple: {Builder.SwiftC.TargetTriple.Make(
+            Builder.SwiftC.TargetIdentifier.ARM64,
+            Builder.SwiftC.PlatformIdentifier.iOS,
+            "16.0",
+            Builder.SwiftC.PlatformIdentifier.iOSSimulatorSuffix
+        )}");
+        
         string macOSSDKPath = Builder.XCRun.SDK.GetSDKPath(Builder.XCRun.SDK.macOSName);
         Console.WriteLine($"macOS SDK Path: {macOSSDKPath}");
 
