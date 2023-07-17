@@ -68,6 +68,16 @@ static class Program
         string json = serializer.SerializeToJson(headerFile);
         
         Console.WriteLine($"Clang VFS Overlay Header file:\n{json}");
+
+        var moduleMap = new Builder.Clang.ModuleMap("BeyondDotNETSampleNative") {
+            Headers = new [] {
+                new Builder.Clang.ModuleMap.Header("Generated_C.h") {
+                    Type = Builder.Clang.ModuleMap.Header.Types.Private
+                }
+            }
+        };
+        
+        Console.WriteLine($"Clang Module Map:\n{moduleMap}");
     }
     
     private static void ShowUsage()
