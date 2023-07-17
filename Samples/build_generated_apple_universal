@@ -5,6 +5,11 @@ set -e
 PRODUCT_NAME="BeyondDotNETSampleNative"
 OUTPUT_PRODUCT_NAME="lib${PRODUCT_NAME}"
 
+DEPLOYMENT_TARGET_MACOS="13.0"
+DEPLOYMENT_TARGET_IOS="16.0"
+
+SWIFT_VERSION="5"
+
 GENERATED_HEADER_FILE_NAME="Generated_C.h"
 GENERATED_SWIFT_FILE_NAME="Generated_Swift.swift"
 MODULEMAP_FILE_NAME="module.modulemap"
@@ -21,11 +26,6 @@ echo "Copying Headers"
 cp -f "${HEADERS_FILE_NAME}" "Generated/${HEADERS_FILE_NAME}"
 
 cd "Generated"
-
-DEPLOYMENT_TARGET_MACOS="13.0"
-DEPLOYMENT_TARGET_IOS="16.0"
-
-SWIFT_VERSION="5"
 
 SDK_PATH_IOS=`xcrun --sdk iphoneos --show-sdk-path`
 SDK_PATH_IOSSIMULATOR=`xcrun --sdk iphonesimulator --show-sdk-path`
