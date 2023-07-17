@@ -5,9 +5,8 @@ static class Program
     public static int Main(string[] args)
     {
         // TODO: Just for testing
-        // string macOSSDKPath = Builder.XCRun.SDK.GetSDKPath(Builder.XCRun.SDK.macOSName);
-        // Console.WriteLine($"macOS SDK Path: {macOSSDKPath}");
-        
+        // RunBuilderTests();
+
         string? configFilePath = args.Length == 1
             ? args[0]
             : null;
@@ -28,6 +27,40 @@ static class Program
         driver.Generate();
 
         return 0;
+    }
+
+    private static void RunBuilderTests()
+    {
+        string macOSSDKPath = Builder.XCRun.SDK.GetSDKPath(Builder.XCRun.SDK.macOSName);
+        Console.WriteLine($"macOS SDK Path: {macOSSDKPath}");
+
+        Builder.Clang.VFSOverlay.HeaderFile headerFile = new() {
+            Version = 0,
+            CaseSensitive = false,
+            Roots = new [] {
+                new Builder.Clang.VFSOverlay.HeaderFileRoot() {
+                    Name = ".",
+                    Type = "directory",
+                    Contents = new [] {
+                        new Builder.Clang.VFSOverlay.HeaderFileContent() {
+                            Name = "Generated_C.h",
+                            Type = "file",
+                            ExternalContents = "Generated_C.h"
+                        },
+                        new Builder.Clang.VFSOverlay.HeaderFileContent() {
+                            Name = "module.modulemap",
+                            Type = "file",
+                            ExternalContents = "module.modulemap"
+                        }
+                    }
+                }
+            }
+        };
+
+        var serializer = new Builder.Clang.VFSOverlay.HeaderFileSerializer();
+        string json = serializer.SerializeToJson(headerFile);
+        
+        Console.WriteLine($"Clang VFS Overlay Header file:\n{json}");
     }
     
     private static void ShowUsage()
