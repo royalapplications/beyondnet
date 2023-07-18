@@ -1,4 +1,4 @@
-namespace Beyond.NET.Builder.SwiftC;
+namespace Beyond.NET.Builder.XCRun.SwiftC;
 
 public static class TargetTriple
 {

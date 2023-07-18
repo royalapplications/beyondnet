@@ -5,7 +5,7 @@ static class Program
     public static int Main(string[] args)
     {
         // TODO: Just for testing
-        // RunBuilderTests();
+        RunBuilderTests();
 
         string? configFilePath = args.Length == 1
             ? args[0]
@@ -31,11 +31,11 @@ static class Program
 
     private static void RunBuilderTests()
     {
-        Console.WriteLine($"Target Triple: {Builder.SwiftC.TargetTriple.Make(
-            Builder.SwiftC.TargetIdentifier.ARM64,
-            Builder.SwiftC.PlatformIdentifier.iOS,
+        Console.WriteLine($"Target Triple: {Builder.XCRun.SwiftC.TargetTriple.Make(
+            Builder.XCRun.SwiftC.TargetIdentifier.ARM64,
+            Builder.XCRun.SwiftC.PlatformIdentifier.iOS,
             "16.0",
-            Builder.SwiftC.PlatformIdentifier.iOSSimulatorSuffix
+            Builder.XCRun.SwiftC.PlatformIdentifier.iOSSimulatorSuffix
         )}");
         
         string macOSSDKPath = Builder.XCRun.SDK.GetSDKPath(Builder.XCRun.SDK.macOSName);
