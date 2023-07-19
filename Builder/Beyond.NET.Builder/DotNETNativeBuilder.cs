@@ -106,7 +106,7 @@ public class DotNETNativeBuilder
         string iOSSimulatorUniversalFilePath = Path.Combine(iOSSimulatorUniversalBuildPath, OutputProductFileName);
 
         string iOSUniversalBuildPath = Path.Combine(tempDirectoryPath, iOSUniversalBuildDir);
-        string iOSUniversalFilePath = Path.Combine(iOSUniversalBuildPath, OutputProductFileName);
+        string iOSUniversalXCFrameworkFilePath = Path.Combine(iOSUniversalBuildPath, UniversalOutputProductFileName);
 
         string macOSARM64BuildPath = Path.Combine(tempDirectoryPath, macOSARM64BuildDir);
         string macOSARM64FilePath = Path.Combine(macOSARM64BuildPath, OutputProductFileName);
@@ -118,7 +118,7 @@ public class DotNETNativeBuilder
         string macOSUniversalFilePath = Path.Combine(macOSUniversalBuildPath, OutputProductFileName);
 
         string appleUniversalBuildPath = Path.Combine(tempDirectoryPath, appleUniversalBuildDir);
-        string appleUniversalFilePath = Path.Combine(appleUniversalBuildPath, UniversalOutputProductFileName);
+        string appleUniversalXCFrameworkFilePath = Path.Combine(appleUniversalBuildPath, UniversalOutputProductFileName);
 
         string libraryId = $"@rpath/{OutputProductFileName}";
         #endregion Prepare File Paths
@@ -169,7 +169,7 @@ public class DotNETNativeBuilder
                 iOSSimulatorUniversalFilePath,
                 iOSARM64FilePath
             },
-            iOSUniversalFilePath
+            iOSUniversalXCFrameworkFilePath
         );
         #endregion iOS
 
@@ -182,7 +182,7 @@ public class DotNETNativeBuilder
                 iOSSimulatorUniversalFilePath,
                 iOSARM64FilePath
             },
-            appleUniversalFilePath
+            appleUniversalXCFrameworkFilePath
         );
         #endregion Apple Universal
         
