@@ -12,7 +12,7 @@ UNIVERSAL_FILE_NAME="${PRODUCT_NAME}.xcframework"
 VERBOSITY_LEVEL="normal"
 
 # WIP/Experimental (0 == false; 1 == true)
-MIXIN_SWIFT=1
+MIXIN_SWIFT=0
 
 
 DOTNET_PATH=`which dotnet`
