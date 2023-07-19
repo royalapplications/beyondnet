@@ -1,16 +1,16 @@
-using Beyond.NET.Core;
-
 namespace Beyond.NET.Builder.Apple.XCRun.SwiftC;
 
 public class App
 {
+    private const string COMMAND_SWIFTC = "swiftc";
+    
     public const string ARGUMENT_SDK = "-sdk";
     public const string ARGUMENT_TARGET = "-target";
     public const string ARGUMENT_WORKING_DIRECTORY = "-working-directory";
     public const string ARGUMENT_IMPORT_SEARCH_PATH = "-I";
     public const string ARGUMENT_FRAMEWORK_SEARCH_PATH = "-F";
     public const string FLAG_OPTIMIZATIONS = "-O";
-    public const string ARGUMENT_VFSOverlay = "-vfsoverlay";
+    public const string ARGUMENT_VFSOVERLAY = "-vfsoverlay";
     public const string FLAG_SAVE_TEMPS = "-save-temps";
     public const string FLAG_PARSE_AS_LIBRARY = "-parse-as-library";
     public const string FLAG_ENABLE_TESTING = "-enable-testing";
@@ -33,10 +33,28 @@ public class App
     public const string FLAG_DISABLE_CROSS_MODULE_OPTIMIZATION = "-disable-cmo";
     public const string ARGUMENT_COMPILE = "-c";
     
-    public static CLIApp.Result Run(string[] arguments)
+    public static string Run(
+        string workingDirectory,
+        string[] arguments
+    )
     {
-        var result = XCRun.App.XCRunApp.Launch(arguments);
+        List<string> finalArguments = new(new[] {
+            COMMAND_SWIFTC
+        });
+        
+        finalArguments.AddRange(arguments);
+        
+        var result = XCRun.App.XCRunApp.Launch(
+            finalArguments.ToArray(),
+            workingDirectory
+        );
 
-        return result;
+        Exception? failure = result.FailureAsException;
+
+        if (failure is not null) {
+            throw failure;
+        }
+
+        return result.StandardOut ?? string.Empty;
     }
 }

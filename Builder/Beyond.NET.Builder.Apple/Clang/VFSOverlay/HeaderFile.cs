@@ -4,6 +4,9 @@ namespace Beyond.NET.Builder.Apple.Clang.VFSOverlay;
 
 public class HeaderFile
 {
+    public const string TYPE_DIRECTORY = "directory";
+    public const string TYPE_FILE = "file";
+    
     [JsonPropertyName("version")]
     public int Version { get; set; }
     
@@ -12,6 +15,14 @@ public class HeaderFile
     
     [JsonPropertyName("roots")]
     public HeaderFileRoot[]? Roots { get; set; }
+
+    public override string ToString()
+    {
+        HeaderFileSerializer serializer = new();
+        string json = serializer.SerializeToJson(this);
+
+        return json;
+    }
 }
 
 public class HeaderFileRoot
