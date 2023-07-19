@@ -1,4 +1,6 @@
-﻿namespace Beyond.NET.CodeGenerator.CLI;
+﻿using Beyond.NET.Builder;
+
+namespace Beyond.NET.CodeGenerator.CLI;
 
 static class Program
 {
@@ -31,55 +33,19 @@ static class Program
 
     private static void RunBuilderTests()
     {
-        Console.WriteLine($"Major and Minor .NET Version: {Builder.DotNET.Version.GetMajorAndMinorVersion()}");
+        SwiftBuilder.BuilderConfiguration config = new(
+            "BeyondDotNETSampleNative",
+            "~/Development/DotNET/beyondnet/Samples/Generated/Generated_C.h".ExpandTildeAndGetAbsolutePath(),
+            "~/Development/DotNET/beyondnet/Samples/Generated/Generated_Swift.swift".ExpandTildeAndGetAbsolutePath(),
+            "13.0",
+            "16.0"
+        );
         
-        Console.WriteLine($"Target Triple: {Builder.Apple.XCRun.SwiftC.TargetTriple.Make(
-            Builder.Apple.XCRun.SwiftC.TargetIdentifier.ARM64,
-            Builder.Apple.XCRun.SwiftC.PlatformIdentifier.iOS,
-            "16.0",
-            Builder.Apple.XCRun.SwiftC.PlatformIdentifier.iOSSimulatorSuffix
-        )}");
+        SwiftBuilder swiftBuilder = new(config);
         
-        string macOSSDKPath = Builder.Apple.XCRun.SDK.GetSDKPath(Builder.Apple.XCRun.SDK.macOSName);
-        Console.WriteLine($"macOS SDK Path: {macOSSDKPath}");
-
-        Builder.Apple.Clang.VFSOverlay.HeaderFile headerFile = new() {
-            Version = 0,
-            CaseSensitive = false,
-            Roots = new [] {
-                new Builder.Apple.Clang.VFSOverlay.HeaderFileRoot() {
-                    Name = ".",
-                    Type = "directory",
-                    Contents = new [] {
-                        new Builder.Apple.Clang.VFSOverlay.HeaderFileContent() {
-                            Name = "Generated_C.h",
-                            Type = "file",
-                            ExternalContents = "Generated_C.h"
-                        },
-                        new Builder.Apple.Clang.VFSOverlay.HeaderFileContent() {
-                            Name = "module.modulemap",
-                            Type = "file",
-                            ExternalContents = "module.modulemap"
-                        }
-                    }
-                }
-            }
-        };
-
-        var serializer = new Builder.Apple.Clang.VFSOverlay.HeaderFileSerializer();
-        string json = serializer.SerializeToJson(headerFile);
+        var result = swiftBuilder.Build();
         
-        Console.WriteLine($"Clang VFS Overlay Header file:\n{json}");
-
-        var moduleMap = new Builder.Apple.Clang.ModuleMap("BeyondDotNETSampleNative") {
-            Headers = new [] {
-                new Builder.Apple.Clang.ModuleMap.Header("Generated_C.h") {
-                    Type = Builder.Apple.Clang.ModuleMap.Header.Types.Private
-                }
-            }
-        };
-        
-        Console.WriteLine($"Clang Module Map:\n{moduleMap}");
+        Console.WriteLine($"Built in: {result.OutputRootPath}");
     }
     
     private static void ShowUsage()
