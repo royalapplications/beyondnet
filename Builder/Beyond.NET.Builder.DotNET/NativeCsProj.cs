@@ -17,6 +17,8 @@ public class NativeCsProj
     public string ProductName { get; }
     public string TargetProjectFilePath { get; }
     public AppleSpecificSettings? AppleSettings { get; }
+    
+    private string OutputProductName => $"lib{ProductName}";
 
     public NativeCsProj(
         string targetFramework,
@@ -59,7 +61,7 @@ public class NativeCsProj
         }
 
         string expandedTemplate = CSPROJ_TEMPLATE
-            .Replace(TOKEN_ASSEMBLY_NAME, ProductName)
+            .Replace(TOKEN_ASSEMBLY_NAME, OutputProductName)
             .Replace(TOKEN_TARGET_FRAMEWORK, TargetFramework)
             .Replace(TOKEN_NULLABLE, nullable)
             .Replace(TOKEN_TARGET_PROJECT_FILE_PATH, TargetProjectFilePath)
