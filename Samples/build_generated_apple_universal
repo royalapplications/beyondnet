@@ -108,7 +108,9 @@ swift_compile() {
 		-import-underlying-module \
 		-static \
 		-emit-library \
+		-emit-module \
 		-emit-module-interface-path "${OUTPUT_PATH}/${TARGET_DOUBLE}.${SWIFTINTERFACE_FILE_EXTENSION}" \
+		-emit-module-path "${OUTPUT_PATH}/${TARGET_DOUBLE}.${SWIFTMODULE_FILE_EXTENSION}" \
 		-o "${OUTPUT_PATH}/${OUTPUT_PRODUCT_NAME}.a" \
 		-c "${GENERATED_SWIFT_FILE_NAME}"
 
