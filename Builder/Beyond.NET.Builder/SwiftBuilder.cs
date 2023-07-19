@@ -1,4 +1,6 @@
-﻿namespace Beyond.NET.Builder;
+﻿using Beyond.NET.Core;
+
+namespace Beyond.NET.Builder;
 
 public class SwiftBuilder
 {
@@ -61,11 +63,9 @@ public class SwiftBuilder
         const string clangModuleMapFileName = "module_clang.modulemap";
         const string headerMapFileName = "headers.yaml";
 
-        string sanitizedProductName = productName
-            .Replace(' ', '_')
-            .Replace('.', '_');
-        
+        string sanitizedProductName = productName.SanitizedProductNameForTempDirectory();
         string tempDirectoryPrefix = $"BeyondNETBuilderSwiftBuilder_{sanitizedProductName}_";
+        
         string tempDirectoryPath = Directory.CreateTempSubdirectory(tempDirectoryPrefix).FullName;
 
         string moduleMapFilePath = Path.Combine(tempDirectoryPath, moduleMapFileName);
@@ -126,8 +126,8 @@ public class SwiftBuilder
         string targetIdentifierARM64 = Apple.XCRun.SwiftC.TargetIdentifier.ARM64;
         string targetIdentifierX64 = Apple.XCRun.SwiftC.TargetIdentifier.x64;
 
-        string runtimeIdentifierARM64 = DotNET.RuntimeIdentifier.ARM64;
-        string runtimeIdentifierX64 = DotNET.RuntimeIdentifier.x64;
+        string targetIdentifierARM64DN = DotNET.TargetIdentifier.ARM64;
+        string targetIdentifierX64DN = DotNET.TargetIdentifier.x64;
 
         string platformIdentifierMacOS = Apple.XCRun.SwiftC.PlatformIdentifier.macOS;
         string platformIdentifierMacOSDN = DotNET.PlatformIdentifier.macOS;
@@ -135,7 +135,7 @@ public class SwiftBuilder
         string platformIdentifieriOS = Apple.XCRun.SwiftC.PlatformIdentifier.iOS;
         string platformIdentifieriOSDN = DotNET.PlatformIdentifier.iOS;
 
-        string platformIdentifieriOSSimulator = "apple-ios-simulator";
+        // string platformIdentifieriOSSimulator = "apple-ios-simulator";
         string platformIdentifieriOSSimulatorDN = DotNET.PlatformIdentifier.iOSSimulator;
 
         string platformSuffixiOSSimulator = Apple.XCRun.SwiftC.PlatformIdentifier.iOSSimulatorSuffix;
@@ -143,12 +143,12 @@ public class SwiftBuilder
         string outputPathRoot = Path.Combine(tempDirectoryPath, "bin");
         string outputPathApple = Path.Combine(outputPathRoot, "apple");
 
-        string outputPathMacOSARM64 = Path.Combine(outputPathApple, $"{platformIdentifierMacOSDN}-{runtimeIdentifierARM64}");
-        string outputPathMacOSX64 = Path.Combine(outputPathApple, $"{platformIdentifierMacOSDN}-{runtimeIdentifierX64}");
+        string outputPathMacOSARM64 = Path.Combine(outputPathApple, $"{platformIdentifierMacOSDN}-{targetIdentifierARM64DN}");
+        string outputPathMacOSX64 = Path.Combine(outputPathApple, $"{platformIdentifierMacOSDN}-{targetIdentifierX64DN}");
 
-        string outputPathiOSARM64 = Path.Combine(outputPathApple, $"{platformIdentifieriOSDN}-{runtimeIdentifierARM64}");
-        string outputPathiOSSimulatorARM64 = Path.Combine(outputPathApple, $"{platformIdentifieriOSSimulatorDN}-{runtimeIdentifierARM64}");
-        string outputPathiOSSimulatorX64 = Path.Combine(outputPathApple, $"{platformIdentifieriOSSimulatorDN}-{runtimeIdentifierX64}");
+        string outputPathiOSARM64 = Path.Combine(outputPathApple, $"{platformIdentifieriOSDN}-{targetIdentifierARM64DN}");
+        string outputPathiOSSimulatorARM64 = Path.Combine(outputPathApple, $"{platformIdentifieriOSSimulatorDN}-{targetIdentifierARM64DN}");
+        string outputPathiOSSimulatorX64 = Path.Combine(outputPathApple, $"{platformIdentifieriOSSimulatorDN}-{targetIdentifierX64DN}");
 
         Directory.CreateDirectory(outputPathMacOSARM64);
         Directory.CreateDirectory(outputPathMacOSX64);
@@ -166,6 +166,7 @@ public class SwiftBuilder
             headerMapFileName
         );
 
+        #region macOS
         var macOSARM64Result = compiler.Compile(
             sdkPathMacOS,
             targetIdentifierARM64,
@@ -183,7 +184,9 @@ public class SwiftBuilder
             deploymentTargetMacOS,
             outputPathMacOSX64
         );
-        
+        #endregion macOS
+
+        #region iOS
         var iOSARM64Result = compiler.Compile(
             sdkPathiOS,
             targetIdentifierARM64,
@@ -192,7 +195,9 @@ public class SwiftBuilder
             deploymentTargetiOS,
             outputPathiOSARM64
         );
-        
+        #endregion iOS
+
+        #region iOS Simulator
         var iOSSimulatorARM64Result = compiler.Compile(
             sdkPathiOSSimulator,
             targetIdentifierARM64,
@@ -210,7 +215,8 @@ public class SwiftBuilder
             deploymentTargetiOS,
             outputPathiOSSimulatorX64
         );
-
+        #endregion iOS Simulator
+        
         string libraryOutputPathFormat = Path.Combine(
             outputPathApple,
             "{0}", // Runtime Identifier

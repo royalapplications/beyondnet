@@ -34,15 +34,26 @@ static class Program
     private static void RunBuilderTests()
     {
         string productName = "BeyondDotNETSampleNative";
-        string targetCsProjPath = "~/Development/DotNET/beyondnet/Samples/Beyond.NET.Sample.Managed/Beyond.NET.Sample.Managed.csproj".ExpandTildeAndGetAbsolutePath();
+        
+        string targetCsProjFilePath = "~/Development/DotNET/beyondnet/Samples/Beyond.NET.Sample.Managed/Beyond.NET.Sample.Managed.csproj"
+            .ExpandTildeAndGetAbsolutePath();
+        
+        string generatedCSharpFilePath = "~/Development/DotNET/beyondnet/Samples/Generated/Generated_CS.cs"
+            .ExpandTildeAndGetAbsolutePath();
+        
+        string generatedCHeaderFilePath = "~/Development/DotNET/beyondnet/Samples/Generated/Generated_C.h"
+            .ExpandTildeAndGetAbsolutePath();
+        
+        string generatedSwiftFilePath = "~/Development/DotNET/beyondnet/Samples/Generated/Generated_Swift.swift"
+            .ExpandTildeAndGetAbsolutePath();
         
         string macOSDeploymentTarget = "13.0";
         string iOSDeploymentTarget = "16.0";
         
         SwiftBuilder.BuilderConfiguration config = new(
             productName,
-            "~/Development/DotNET/beyondnet/Samples/Generated/Generated_C.h".ExpandTildeAndGetAbsolutePath(),
-            "~/Development/DotNET/beyondnet/Samples/Generated/Generated_Swift.swift".ExpandTildeAndGetAbsolutePath(),
+            generatedCHeaderFilePath,
+            generatedSwiftFilePath,
             macOSDeploymentTarget,
             iOSDeploymentTarget
         );
@@ -63,7 +74,8 @@ static class Program
         var dnNativeBuilder = new DotNETNativeBuilder(
             targetFramework,
             productName,
-            targetCsProjPath,
+            targetCsProjFilePath,
+            generatedCSharpFilePath,
             swiftBuildResult
         );
         
