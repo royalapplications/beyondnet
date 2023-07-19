@@ -76,8 +76,23 @@ public class CLIApp
 
     public Result Launch(string[]? arguments)
     {
+        return Launch(
+            arguments,
+            null
+        );
+    }
+    
+    public Result Launch(
+        string[]? arguments,
+        string? workingDirectory
+    )
+    {
         string invocationString = MakeInvocationString(arguments);
-        var startInfo = MakeStartInfo(arguments);
+        
+        var startInfo = MakeStartInfo(
+            arguments,
+            workingDirectory
+        );
         
         try {
             using var process = Process.Start(startInfo);
@@ -133,14 +148,21 @@ public class CLIApp
         return invocationString;
     }
 
-    private ProcessStartInfo MakeStartInfo(string[]? arguments)
+    private ProcessStartInfo MakeStartInfo(
+        string[]? arguments,
+        string? workingDirectory
+    )
     {
         ProcessStartInfo startInfo = new(Command, arguments ?? Array.Empty<string>()) {
             UseShellExecute = false,
-            
+
             RedirectStandardOutput = true,
             RedirectStandardError = true
         };
+
+        if (!string.IsNullOrEmpty(workingDirectory)) {
+            startInfo.WorkingDirectory = workingDirectory;
+        }
 
         return startInfo;
     }
