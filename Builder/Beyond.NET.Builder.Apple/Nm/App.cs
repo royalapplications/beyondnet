@@ -10,7 +10,7 @@ public class App
     private const string FLAG_ONLY_EXTERNAL_SYMBOLS = "-g";
     private const string FLAG_EXCLUDE_UNDEFINED_SYMBOLS = "-U";
     
-    public static string GetSymbols(
+    private static string GetSymbolsList(
         string targetPath,
         bool onlyExternalSymbols,
         bool excludeUndefinedSymbols
@@ -43,5 +43,18 @@ public class App
         ) ?? string.Empty;
 
         return trimmedStandardOut;
+    }
+
+    public static string[] GetRelevantSymbols(string targetPath)
+    {
+        string symbolList = GetSymbolsList(
+            targetPath,
+            true,
+            true
+        );
+
+        var symbols = Parser.GetAllRelevantSymbols(symbolList);
+
+        return symbols;
     }
 }
