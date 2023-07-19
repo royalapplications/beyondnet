@@ -97,26 +97,19 @@ swift_compile() {
 		-working-directory . \
 		-I . \
 		-Xcc -ivfsoverlay -Xcc "headers.yaml" \
-		-F . \
 		-O \
-		-save-temps \
+		-swift-version "${SWIFT_VERSION}" \
+		-disable-cmo \
 		-enable-testing \
 		-enable-library-evolution \
-		-enforce-exclusivity=checked \
-		-enable-bare-slash-regex \
 		-parse-as-library \
 		-module-name "${PRODUCT_NAME}" \
 		-module-link-name "${PRODUCT_NAME}" \
+		-import-underlying-module \
 		-static \
 		-emit-library \
 		-emit-module-interface-path "${OUTPUT_PATH}/${TARGET_DOUBLE}.${SWIFTINTERFACE_FILE_EXTENSION}" \
 		-o "${OUTPUT_PATH}/${OUTPUT_PRODUCT_NAME}.a" \
-		-emit-objc-header \
-		-emit-objc-header-path "${OUTPUT_PATH}/${OUTPUT_PRODUCT_NAME}-Swift.h" \
-		-swift-version "${SWIFT_VERSION}" \
-		-import-underlying-module \
-		-experimental-emit-module-separately \
-		-disable-cmo \
 		-c "${GENERATED_SWIFT_FILE_NAME}"
 
 	nm \
