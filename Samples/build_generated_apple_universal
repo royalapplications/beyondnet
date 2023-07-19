@@ -96,7 +96,7 @@ swift_compile() {
 		-target "${TARGET_TRIPLE}" \
 		-working-directory . \
 		-I . \
-		-Xcc -ivfsoverlay -Xcc "headers.yaml" \
+		-vfsoverlay "headers.yaml" \
 		-O \
 		-swift-version "${SWIFT_VERSION}" \
 		-disable-cmo \

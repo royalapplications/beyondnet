@@ -10,9 +10,7 @@ public class App
     public const string ARGUMENT_IMPORT_SEARCH_PATH = "-I";
     public const string ARGUMENT_FRAMEWORK_SEARCH_PATH = "-F";
     public const string FLAG_OPTIMIZATIONS = "-O";
-    public const string ARGUMENT_CLANGARG = "-Xcc";
-    public const string ARGUMENT_CLANG_IVFSOverlay = "-ivfsoverlay";
-    public const string ARGUMENT_LINKERARG = "-Xlinker";
+    public const string ARGUMENT_VFSOverlay = "-vfsoverlay";
     public const string FLAG_SAVE_TEMPS = "-save-temps";
     public const string FLAG_PARSE_AS_LIBRARY = "-parse-as-library";
     public const string FLAG_ENABLE_TESTING = "-enable-testing";
