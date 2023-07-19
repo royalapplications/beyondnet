@@ -31,6 +31,8 @@ static class Program
 
     private static void RunBuilderTests()
     {
+        Console.WriteLine($"Major and Minor .NET Version: {Builder.DotNET.Version.GetMajorAndMinorVersion()}");
+        
         Console.WriteLine($"Target Triple: {Builder.Apple.XCRun.SwiftC.TargetTriple.Make(
             Builder.Apple.XCRun.SwiftC.TargetIdentifier.ARM64,
             Builder.Apple.XCRun.SwiftC.PlatformIdentifier.iOS,
