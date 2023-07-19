@@ -11,13 +11,19 @@ public class App
     public const string ARGUMENT_FRAMEWORK_SEARCH_PATH = "-F";
     public const string FLAG_OPTIMIZATIONS = "-O";
     public const string ARGUMENT_CLANGARG = "-Xcc";
+    public const string ARGUMENT_CLANG_IVFSOverlay = "-ivfsoverlay";
     public const string ARGUMENT_LINKERARG = "-Xlinker";
     public const string FLAG_SAVE_TEMPS = "-save-temps";
     public const string FLAG_PARSE_AS_LIBRARY = "-parse-as-library";
+    public const string FLAG_ENABLE_TESTING = "-enable-testing";
     public const string FLAG_ENABLE_LIBRARY_EVOLUTION = "-enable-library-evolution";
+    public const string FLAG_ENABLE_BARE_SLASH_REGEX = "-enable-bare-slash-regex";
     public const string ARGUMENT_MODULE_NAME = "-module-name";
+    public const string ARGUMENT_MODULE_LINK_NAME = "-module-link-name";
+    public const string FLAG_STATIC = "-static";
     public const string FLAG_EMIT_DEPENDENCIES = "-emit-dependencies";
     public const string FLAG_EMIT_MODULE = "-emit-module";
+    public const string FLAG_EMIT_LIBRARY = "-emit-library";
     public const string FLAG_EMIT_OBJC_HEADER = "-emit-objc-header";
     public const string ARGUMENT_EMIT_OBJC_HEADER_PATH = "-emit-objc-header-path";
     public const string ARGUMENT_EMIT_MODULE_PATH = "-emit-module-path";
@@ -26,7 +32,7 @@ public class App
     public const string ARGUMENT_SWIFT_VERSION = "-swift-version";
     public const string FLAG_IMPORT_UNDERLYING_MODULE = "-import-underlying-module";
     public const string FLAG_EXPERIMENTAL_EMIT_MODULE_SEPARATELY = "-experimental-emit-module-separately";
-    public const string FLAG_DISABLE_CMO = "-disable-cmo";
+    public const string FLAG_DISABLE_CROSS_MODULE_OPTIMIZATION = "-disable-cmo";
     public const string ARGUMENT_COMPILE = "-c";
     
     public static CLIApp.Result Run(string[] arguments)
