@@ -4,8 +4,8 @@ namespace Beyond.NET.Builder.Apple.Lipo;
 
 public class App
 {
-    private const string LipoPath = "/usr/bin/lipo";
-    internal static readonly CLIApp LipoApp = new(LipoPath);
+    private static string LipoPath => Which.GetAbsoluteCommandPath("lipo");
+    private static CLIApp LipoApp => new(LipoPath);
     
     private const string ARGUMENT_CREATE = "-create";
     private const string ARGUMENT_OUTPUT = "-output";

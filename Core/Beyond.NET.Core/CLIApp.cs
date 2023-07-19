@@ -89,6 +89,8 @@ public class CLIApp
             using StreamReader stdOutReader = process.StandardOutput;
             using StreamReader stdErrReader = process.StandardError;
 
+            process.WaitForExit();
+            
             var standardOut = stdOutReader.ReadToEnd();
             var standardError = stdErrReader.ReadToEnd();
 

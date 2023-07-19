@@ -4,10 +4,10 @@ namespace Beyond.NET.Builder.Apple.InstallNameTool;
 
 public class App
 {
-    private const string InstallNameToolPath = "/usr/bin/install_name_tool";
-    private const string ARGUMENT_ID = "-id";
+    private static string InstallNameToolPath => Which.GetAbsoluteCommandPath("install_name_tool");
+    private static CLIApp InstallNameToolApp => new(InstallNameToolPath);
     
-    internal static readonly CLIApp InstallNameToolApp = new(InstallNameToolPath);
+    private const string ARGUMENT_ID = "-id";
 
     public static void ChangeId(
         string targetPath,

@@ -4,7 +4,6 @@ namespace Beyond.NET.Builder.Apple.Xcodebuild;
 
 public class App
 {
-    private const string XcodeBuildPath = "/usr/bin/xcodebuild";
-    
-    internal static readonly CLIApp XcodeBuildApp = new(XcodeBuildPath);
+    private static string XcodeBuildPath => Which.GetAbsoluteCommandPath("xcodebuild");
+    internal static CLIApp XcodeBuildApp => new(XcodeBuildPath);
 }
