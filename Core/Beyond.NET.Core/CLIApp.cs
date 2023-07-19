@@ -87,41 +87,77 @@ public class CLIApp
         string? workingDirectory
     )
     {
+        int timeout = int.MaxValue;
+        
         string invocationString = MakeInvocationString(arguments);
         
         var startInfo = MakeStartInfo(
             arguments,
             workingDirectory
         );
-        
+
         try {
-            using var process = Process.Start(startInfo);
+            using var process = new Process() {
+                StartInfo = startInfo
+            };
 
             if (process is null) {
                 throw new Exception("An unknown error occurred while starting the process");
             }
-        
-            using StreamReader stdOutReader = process.StandardOutput;
-            using StreamReader stdErrReader = process.StandardError;
 
-            process.WaitForExit();
+            StringBuilder sbStdOut = new();
+            StringBuilder sbStdErr = new();
+
+            using var stdOutWaitHandle = new AutoResetEvent(false);
+            using var stdErrWaitHandle = new AutoResetEvent(false);
             
-            var standardOut = stdOutReader.ReadToEnd();
-            var standardError = stdErrReader.ReadToEnd();
+            process.OutputDataReceived += (_, e) => {
+                if (e.Data is null) {
+                    stdOutWaitHandle.Set();
+                } else {
+                    sbStdOut.AppendLine(e.Data);
+                }
+            };
 
-            var exitCode = process.ExitCode;
+            process.ErrorDataReceived += (_, e) => {
+                if (e.Data is null) {
+                    stdErrWaitHandle.Set();
+                } else {
+                    sbStdErr.AppendLine(e.Data);
+                }
+            };
 
-            if (TreatNonZeroExitCodeAsGenericError &&
+            process.Start();
+
+            process.BeginOutputReadLine();
+            process.BeginErrorReadLine();
+
+            Exception? timeoutException = null;
+            int exitCode = -1;
+
+            if (process.WaitForExit(timeout) &&
+                stdOutWaitHandle.WaitOne(timeout) &&
+                stdErrWaitHandle.WaitOne(timeout)) {
+                exitCode = process.ExitCode;
+            } else {
+                timeoutException = new TimeoutException();
+            }
+
+            string stdOut = sbStdOut.ToString();
+            string stdErr = sbStdErr.ToString();
+            
+            if (timeoutException is null &&
+                TreatNonZeroExitCodeAsGenericError &&
                 exitCode != 0 &&
-                string.IsNullOrEmpty(standardError)) {
-                standardError = $"Process exited with exit code {exitCode}";
+                string.IsNullOrEmpty(stdErr)) {
+                stdErr = $"Process exited with exit code {exitCode}";
             }
 
             return new(
                 invocationString,
                 exitCode,
-                standardOut,
-                standardError
+                stdOut,
+                stdErr
             );
         } catch (Exception ex) {
             return new(
@@ -155,6 +191,7 @@ public class CLIApp
     {
         ProcessStartInfo startInfo = new(Command, arguments ?? Array.Empty<string>()) {
             UseShellExecute = false,
+            CreateNoWindow = true,
 
             RedirectStandardOutput = true,
             RedirectStandardError = true
