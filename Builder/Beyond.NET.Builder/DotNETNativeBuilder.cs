@@ -186,7 +186,71 @@ public class DotNETNativeBuilder
         );
         #endregion Apple Universal
         
-        Console.WriteLine("TODO: Done");
+        // TODO: Copy Swift module into Apple Universal XCFramework
+        Console.WriteLine("TODO: Copy Swift module into Apple Universal XCFramework");
+
+        /*
+# Copy Swift module into xcframework
+
+SWIFTINTERFACE_FILE_EXTENSION="swiftinterface"
+SWIFTMODULE_FILE_EXTENSION="swiftmodule"
+SWIFTDOC_FILE_EXTENSION="swiftdoc"
+SWIFTABI_FILE_EXTENSION="abi.json"
+
+GENERATED_APPLE_PATH="../Generated/bin/apple"
+GENERATED_MODULEMAP_PATH="../Generated/module_clang.modulemap"
+MODULEMAP_FILE_NAME="module.modulemap"
+
+swift_copy_modulemap_files() {
+	local RUNTIME_IDENTIFIER=$1
+	local TARGET_DOUBLE=$2
+	local TARGET_SWIFTMODULE_PATH=$3
+
+	echo "Copying module.modulemap"
+	cp "${GENERATED_MODULEMAP_PATH}" "${TARGET_SWIFTMODULE_PATH}/${MODULEMAP_FILE_NAME}"
+
+	echo "Copying Swiftinterface"
+	cp "${GENERATED_APPLE_PATH}/${RUNTIME_IDENTIFIER}/${TARGET_DOUBLE}.${SWIFTINTERFACE_FILE_EXTENSION}" "${TARGET_SWIFTMODULE_PATH}"
+
+	echo "Copying Swiftmodule"
+	cp "${GENERATED_APPLE_PATH}/${RUNTIME_IDENTIFIER}/${TARGET_DOUBLE}.${SWIFTMODULE_FILE_EXTENSION}" "${TARGET_SWIFTMODULE_PATH}"
+
+	echo "Copying Swiftdoc"
+	cp "${GENERATED_APPLE_PATH}/${RUNTIME_IDENTIFIER}/${TARGET_DOUBLE}.${SWIFTDOC_FILE_EXTENSION}" "${TARGET_SWIFTMODULE_PATH}"
+
+	echo "Copying Swiftabi"
+	cp "${GENERATED_APPLE_PATH}/${RUNTIME_IDENTIFIER}/${TARGET_DOUBLE}.${SWIFTABI_FILE_EXTENSION}" "${TARGET_SWIFTMODULE_PATH}"
+}
+
+
+# macOS
+APPLE_MACOS_UNIVERSAL_SWIFTMODULE_PATH="${APPLE_UNIVERSAL_FILE_PATH}/macos-arm64_x86_64/${PRODUCT_NAME}.${SWIFTMODULE_FILE_EXTENSION}"
+
+echo "Making Swiftmodule directory for macOS Universal"
+mkdir "${APPLE_MACOS_UNIVERSAL_SWIFTMODULE_PATH}"
+
+swift_copy_modulemap_files "${RUNTIME_IDENTIFIER_MACOS_ARM64}" "arm64-apple-macos" "${APPLE_MACOS_UNIVERSAL_SWIFTMODULE_PATH}"
+swift_copy_modulemap_files "${RUNTIME_IDENTIFIER_MACOS_X64}" "x86_64-apple-macos" "${APPLE_MACOS_UNIVERSAL_SWIFTMODULE_PATH}"
+
+
+# iOS
+APPLE_IOS_ARM64_SWIFTMODULE_PATH="${APPLE_UNIVERSAL_FILE_PATH}/ios-arm64/${PRODUCT_NAME}.${SWIFTMODULE_FILE_EXTENSION}"
+
+echo "Making Swiftmodule directory for iOS ARM64"
+mkdir "${APPLE_IOS_ARM64_SWIFTMODULE_PATH}"
+
+swift_copy_modulemap_files "${RUNTIME_IDENTIFIER_IOS_ARM64}" "arm64-apple-ios" "${APPLE_IOS_ARM64_SWIFTMODULE_PATH}"
+
+
+# iOS Simulator
+APPLE_IOSSIMULATOR_UNIVERSAL_SWIFTMODULE_PATH="${APPLE_UNIVERSAL_FILE_PATH}/ios-arm64_x86_64-simulator/${PRODUCT_NAME}.${SWIFTMODULE_FILE_EXTENSION}"
+
+echo "Making Swiftmodule directory for iOS Simulator Universal"
+mkdir "${APPLE_IOSSIMULATOR_UNIVERSAL_SWIFTMODULE_PATH}"
+
+swift_copy_modulemap_files "${RUNTIME_IDENTIFIER_IOS_SIMULATOR_ARM64}" "arm64-apple-ios" "${APPLE_IOSSIMULATOR_UNIVERSAL_SWIFTMODULE_PATH}"
+swift_copy_modulemap_files "${RUNTIME_IDENTIFIER_IOS_SIMULATOR_X64}" "x86_64-apple-ios" "${APPLE_IOSSIMULATOR_UNIVERSAL_SWIFTMODULE_PATH}"
+         */
     }
 
     private void DotNETPublish(
