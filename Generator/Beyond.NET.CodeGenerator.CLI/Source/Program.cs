@@ -31,30 +31,30 @@ static class Program
 
     private static void RunBuilderTests()
     {
-        Console.WriteLine($"Target Triple: {Builder.XCRun.SwiftC.TargetTriple.Make(
-            Builder.XCRun.SwiftC.TargetIdentifier.ARM64,
-            Builder.XCRun.SwiftC.PlatformIdentifier.iOS,
+        Console.WriteLine($"Target Triple: {Builder.Apple.XCRun.SwiftC.TargetTriple.Make(
+            Builder.Apple.XCRun.SwiftC.TargetIdentifier.ARM64,
+            Builder.Apple.XCRun.SwiftC.PlatformIdentifier.iOS,
             "16.0",
-            Builder.XCRun.SwiftC.PlatformIdentifier.iOSSimulatorSuffix
+            Builder.Apple.XCRun.SwiftC.PlatformIdentifier.iOSSimulatorSuffix
         )}");
         
-        string macOSSDKPath = Builder.XCRun.SDK.GetSDKPath(Builder.XCRun.SDK.macOSName);
+        string macOSSDKPath = Builder.Apple.XCRun.SDK.GetSDKPath(Builder.Apple.XCRun.SDK.macOSName);
         Console.WriteLine($"macOS SDK Path: {macOSSDKPath}");
 
-        Builder.Clang.VFSOverlay.HeaderFile headerFile = new() {
+        Builder.Apple.Clang.VFSOverlay.HeaderFile headerFile = new() {
             Version = 0,
             CaseSensitive = false,
             Roots = new [] {
-                new Builder.Clang.VFSOverlay.HeaderFileRoot() {
+                new Builder.Apple.Clang.VFSOverlay.HeaderFileRoot() {
                     Name = ".",
                     Type = "directory",
                     Contents = new [] {
-                        new Builder.Clang.VFSOverlay.HeaderFileContent() {
+                        new Builder.Apple.Clang.VFSOverlay.HeaderFileContent() {
                             Name = "Generated_C.h",
                             Type = "file",
                             ExternalContents = "Generated_C.h"
                         },
-                        new Builder.Clang.VFSOverlay.HeaderFileContent() {
+                        new Builder.Apple.Clang.VFSOverlay.HeaderFileContent() {
                             Name = "module.modulemap",
                             Type = "file",
                             ExternalContents = "module.modulemap"
@@ -64,15 +64,15 @@ static class Program
             }
         };
 
-        var serializer = new Builder.Clang.VFSOverlay.HeaderFileSerializer();
+        var serializer = new Builder.Apple.Clang.VFSOverlay.HeaderFileSerializer();
         string json = serializer.SerializeToJson(headerFile);
         
         Console.WriteLine($"Clang VFS Overlay Header file:\n{json}");
 
-        var moduleMap = new Builder.Clang.ModuleMap("BeyondDotNETSampleNative") {
+        var moduleMap = new Builder.Apple.Clang.ModuleMap("BeyondDotNETSampleNative") {
             Headers = new [] {
-                new Builder.Clang.ModuleMap.Header("Generated_C.h") {
-                    Type = Builder.Clang.ModuleMap.Header.Types.Private
+                new Builder.Apple.Clang.ModuleMap.Header("Generated_C.h") {
+                    Type = Builder.Apple.Clang.ModuleMap.Header.Types.Private
                 }
             }
         };

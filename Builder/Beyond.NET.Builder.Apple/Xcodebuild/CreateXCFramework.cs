@@ -1,4 +1,4 @@
-namespace Beyond.NET.Builder.Xcodebuild;
+namespace Beyond.NET.Builder.Apple.Xcodebuild;
 
 public class CreateXCFramework
 {

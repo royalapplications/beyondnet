@@ -1,6 +1,6 @@
-using Beyond.NET.Builder.Helpers;
+using Beyond.NET.Core;
 
-namespace Beyond.NET.Builder.XCRun;
+namespace Beyond.NET.Builder.Apple.XCRun;
 
 internal class App
 {

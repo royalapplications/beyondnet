@@ -1,6 +1,6 @@
-using Beyond.NET.Builder.Helpers;
+using Beyond.NET.Core;
 
-namespace Beyond.NET.Builder.XCRun.SwiftC;
+namespace Beyond.NET.Builder.Apple.XCRun.SwiftC;
 
 public class App
 {

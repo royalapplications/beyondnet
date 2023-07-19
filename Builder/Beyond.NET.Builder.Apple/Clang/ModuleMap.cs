@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace Beyond.NET.Builder.Clang;
+namespace Beyond.NET.Builder.Apple.Clang;
 
 public class ModuleMap
 {

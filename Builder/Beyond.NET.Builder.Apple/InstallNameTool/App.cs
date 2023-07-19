@@ -1,6 +1,6 @@
-using Beyond.NET.Builder.Helpers;
+using Beyond.NET.Core;
 
-namespace Beyond.NET.Builder.InstallNameTool;
+namespace Beyond.NET.Builder.Apple.InstallNameTool;
 
 public class App
 {

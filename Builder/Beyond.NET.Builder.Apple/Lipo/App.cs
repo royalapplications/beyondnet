@@ -1,6 +1,6 @@
-using Beyond.NET.Builder.Helpers;
+using Beyond.NET.Core;
 
-namespace Beyond.NET.Builder.Lipo;
+namespace Beyond.NET.Builder.Apple.Lipo;
 
 public class App
 {

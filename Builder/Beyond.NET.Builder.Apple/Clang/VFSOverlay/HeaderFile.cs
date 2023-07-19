@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace Beyond.NET.Builder.Clang.VFSOverlay;
+namespace Beyond.NET.Builder.Apple.Clang.VFSOverlay;
 
 public class HeaderFile
 {

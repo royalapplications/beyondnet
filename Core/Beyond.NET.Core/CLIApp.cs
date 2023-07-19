@@ -1,7 +1,7 @@
 using System.Diagnostics;
 using System.Text;
 
-namespace Beyond.NET.Builder.Helpers;
+namespace Beyond.NET.Core;
 
 public class CLIApp
 {

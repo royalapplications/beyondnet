@@ -1,4 +1,4 @@
-namespace Beyond.NET.Builder.XCRun.SwiftC;
+namespace Beyond.NET.Builder.Apple.XCRun.SwiftC;
 
 public static class FileExtensions
 {

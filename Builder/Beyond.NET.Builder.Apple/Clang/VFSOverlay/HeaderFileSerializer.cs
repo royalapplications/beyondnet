@@ -1,7 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Beyond.NET.Builder.Clang.VFSOverlay;
+namespace Beyond.NET.Builder.Apple.Clang.VFSOverlay;
 
 [JsonSerializable(typeof(HeaderFile))]
 [JsonSourceGenerationOptions(GenerationMode = JsonSourceGenerationMode.Metadata, WriteIndented = true)]

@@ -8,8 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\Core\Beyond.NET.Core\Beyond.NET.Core.csproj" />
-      <ProjectReference Include="..\Beyond.NET.Builder.Apple\Beyond.NET.Builder.Apple.csproj" />
+        <ProjectReference Include="..\..\Core\Beyond.NET.Core\Beyond.NET.Core.csproj" />
     </ItemGroup>
 
 </Project>

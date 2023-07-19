@@ -1,6 +1,6 @@
-using Beyond.NET.Builder.Helpers;
+using Beyond.NET.Core;
 
-namespace Beyond.NET.Builder.Xcodebuild;
+namespace Beyond.NET.Builder.Apple.Xcodebuild;
 
 public class App
 {

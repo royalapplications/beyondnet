@@ -1,4 +1,4 @@
-namespace Beyond.NET.Builder.XCRun;
+namespace Beyond.NET.Builder.Apple.XCRun;
 
 public static class SDK
 {
