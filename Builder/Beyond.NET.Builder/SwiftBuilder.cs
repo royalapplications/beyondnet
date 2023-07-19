@@ -12,7 +12,14 @@ public class SwiftBuilder
     
     public record BuildResult(
         string OutputRootPath,
+        
+        string LibraryOutputPathFormat,
+        string SymbolsOutputPathFormat,
+        
         string OutputClangModuleMapFilePath,
+        string macOSDeploymentTarget,
+        string iOSDeploymentTarget,
+        
         PartialCompileResult MacOSARM64Result,
         PartialCompileResult MacOSX64Result,
         PartialCompileResult iOSARM64Result,
@@ -204,9 +211,25 @@ public class SwiftBuilder
             outputPathiOSSimulatorX64
         );
 
+        string libraryOutputPathFormat = Path.Combine(
+            outputPathApple,
+            "{0}", // Runtime Identifier
+            $"lib{productName}.a"
+        );
+        
+        string symbolsOutputPathFormat = Path.Combine(
+            outputPathApple,
+            "{0}", // Runtime Identifier
+            $"lib{productName}.export"
+        );
+
         BuildResult result = new(
             tempDirectoryPath,
+            libraryOutputPathFormat,
+            symbolsOutputPathFormat,
             clangModuleMapFilePath,
+            deploymentTargetMacOS,
+            deploymentTargetiOS,
             macOSARM64Result,
             macOSX64Result,
             iOSARM64Result,
