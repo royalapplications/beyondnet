@@ -5,7 +5,7 @@ static class Program
     public static int Main(string[] args)
     {
         // TODO: Just for testing
-        RunBuilderTests();
+        // RunBuilderTests();
 
         string? configFilePath = args.Length == 1
             ? args[0]
