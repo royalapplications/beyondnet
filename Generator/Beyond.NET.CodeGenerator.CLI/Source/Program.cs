@@ -33,19 +33,43 @@ static class Program
 
     private static void RunBuilderTests()
     {
+        string productName = "BeyondDotNETSampleNative";
+        string targetCsProjPath = "~/Development/DotNET/beyondnet/Samples/Beyond.NET.Sample.Managed/Beyond.NET.Sample.Managed.csproj".ExpandTildeAndGetAbsolutePath();
+        
+        string macOSDeploymentTarget = "13.0";
+        string iOSDeploymentTarget = "16.0";
+        
         SwiftBuilder.BuilderConfiguration config = new(
-            "BeyondDotNETSampleNative",
+            productName,
             "~/Development/DotNET/beyondnet/Samples/Generated/Generated_C.h".ExpandTildeAndGetAbsolutePath(),
             "~/Development/DotNET/beyondnet/Samples/Generated/Generated_Swift.swift".ExpandTildeAndGetAbsolutePath(),
-            "13.0",
-            "16.0"
+            macOSDeploymentTarget,
+            iOSDeploymentTarget
         );
+        
+        Console.WriteLine("Building Swift bindings...");
         
         SwiftBuilder swiftBuilder = new(config);
         
-        var result = swiftBuilder.Build();
+        var swiftBuildResult = swiftBuilder.Build();
         
-        Console.WriteLine($"Built in: {result.OutputRootPath}");
+        Console.WriteLine($"Swift bindings built in: {swiftBuildResult.OutputRootPath}");
+
+        string dnVersion = Builder.DotNET.Version.GetMajorAndMinorVersion();
+        string targetFramework = $"net{dnVersion}";
+        
+        Console.WriteLine("Building .NET Native stuff...");
+
+        var dnNativeBuilder = new DotNETNativeBuilder(
+            targetFramework,
+            productName,
+            targetCsProjPath,
+            swiftBuildResult
+        );
+        
+        dnNativeBuilder.Build();
+        
+        Console.WriteLine(".NET Native stuff built");
     }
     
     private static void ShowUsage()
