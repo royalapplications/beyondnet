@@ -3,6 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{CF88563D-5990-4B38-B18C-4203D57465F9}"
 	ProjectSection(SolutionItems) = preProject
 		Samples\Beyond.NET.Sample_Config.json = Samples\Beyond.NET.Sample_Config.json
+		Samples\Beyond.NET.Sample_BuildConfig.json = Samples\Beyond.NET.Sample_BuildConfig.json
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beyond.NET.CodeGenerator", "Generator\Beyond.NET.CodeGenerator\Beyond.NET.CodeGenerator.csproj", "{CA3E6F4C-C309-4512-968F-504132C39520}"
