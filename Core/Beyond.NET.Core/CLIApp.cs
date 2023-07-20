@@ -8,6 +8,7 @@ public class CLIApp
     public class Result
     {
         public string Invocation { get; init; }
+        public string? WorkingDirectory { get; init; }
         public int ExitCode { get; init; }
         public Exception? LaunchException { get; init; }
         
@@ -29,8 +30,16 @@ public class CLIApp
                     return null;
                 }
 
+                string msg;
+
+                if (string.IsNullOrEmpty(WorkingDirectory)) {
+                    msg = $"An error occurred while running command \"{Invocation}\"";
+                } else {
+                    msg = $"An error occurred while running command \"{Invocation}\" in directory \"{WorkingDirectory}\"";
+                }
+
                 var ex = new Exception(
-                    $"An error occurred while running command \"{Invocation}\"", 
+                    msg, 
                     innerException
                 );
 
@@ -40,21 +49,25 @@ public class CLIApp
 
         public Result(
             string invocation,
+            string? workingDirectory,
             int exitCode
         )
         {
             Invocation = invocation;
+            WorkingDirectory = workingDirectory;
             ExitCode = exitCode;
         }
         
         public Result(
             string invocation,
+            string? workingDirectory,
             int exitCode,
             string? standardOut,
             string? standardError
         )
         {
             Invocation = invocation;
+            WorkingDirectory = workingDirectory;
             ExitCode = exitCode;
             StandardOut = standardOut;
             StandardError = standardError;
@@ -62,10 +75,12 @@ public class CLIApp
         
         public Result(
             string invocation,
+            string? workingDirectory,
             Exception launchException
         )
         {
             Invocation = invocation;
+            WorkingDirectory = workingDirectory;
             ExitCode = 1;
             LaunchException = launchException;
         }
@@ -160,6 +175,7 @@ public class CLIApp
 
             return new(
                 invocationString,
+                workingDirectory,
                 exitCode,
                 stdOut,
                 stdErr
@@ -167,6 +183,7 @@ public class CLIApp
         } catch (Exception ex) {
             return new(
                 invocationString,
+                workingDirectory,
                 ex
             );
         }
