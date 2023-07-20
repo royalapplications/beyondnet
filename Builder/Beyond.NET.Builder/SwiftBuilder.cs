@@ -34,7 +34,9 @@ public class SwiftBuilder
         string LibraryOutputFilePath,
         string ModuleInterfaceOutputFilePath,
         string ModuleOutputFilePath,
-        string SymbolsOutputFilePath
+        string SymbolsOutputFilePath,
+        string? SwiftDocOutputFilePath,
+        string? SwiftABIOutputFilePath
     );
     
     public BuilderConfiguration Configuration { get; }
@@ -346,13 +348,27 @@ public class SwiftBuilder
             var symbolsString = string.Join('\n', symbols);
             
             File.WriteAllText(symbolsOutputFilePath, symbolsString);
+ 
+            string? swiftDocOutputFilePath = Path.Combine(outputPath, $"{targetDouble}.{Apple.XCRun.SwiftC.FileExtensions.SwiftDoc}");
+
+            if (!File.Exists(swiftDocOutputFilePath)) {
+                swiftDocOutputFilePath = null;
+            }
+            
+            string? swiftABIOutputFilePath = Path.Combine(outputPath, $"{targetDouble}.{Apple.XCRun.SwiftC.FileExtensions.SwiftABI}");
+
+            if (!File.Exists(swiftABIOutputFilePath)) {
+                swiftABIOutputFilePath = null;
+            }
 
             var result = new PartialCompileResult(
                 standardOutput,
                 libraryOutputFilePath,
                 moduleInterfaceOutputFilePath,
                 moduleOutputFilePath,
-                symbolsOutputFilePath
+                symbolsOutputFilePath,
+                swiftDocOutputFilePath,
+                swiftABIOutputFilePath
             );
 
             return result;
