@@ -79,9 +79,9 @@ static class Program
             swiftBuildResult
         );
         
-        dnNativeBuilder.Build();
+        var result = dnNativeBuilder.Build();
         
-        Console.WriteLine(".NET Native stuff built");
+        Console.WriteLine($"Final product built in: {result.OutputDirectoryPath}");
     }
     
     private static void ShowUsage()

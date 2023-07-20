@@ -5,6 +5,10 @@ namespace Beyond.NET.Builder;
 
 public class DotNETNativeBuilder
 {
+    public record BuildResult(
+        string OutputDirectoryPath
+    );
+    
     public string TargetFramework { get; }
     public string ProductName { get; }
     public string TargetProjectFilePath { get; }
@@ -33,7 +37,7 @@ public class DotNETNativeBuilder
         SwiftBuildResult = swiftBuildResult;
     }
 
-    public void Build()
+    public BuildResult Build()
     {
         #region Generate CSProj
         NativeCsProj.AppleSpecificSettings? appleSettings;
@@ -80,8 +84,9 @@ public class DotNETNativeBuilder
 
         File.Copy(GeneratedCSharpFilePath, Path.Combine(tempDirectoryPath, generatedCSharpFileName));
         #endregion Copy Material to Temp Dir
-
+        
         if (swiftBuildResult is not null) {
+            #region Build for Apple Universal
             #region Prepare File Paths
             const string binDirName = "bin";
             const string publishDirName = "publish";
@@ -234,6 +239,14 @@ public class DotNETNativeBuilder
             );
             #endregion iOS
             #endregion Copy Swift module into Apple Universal XCFramework
+
+            return new(
+                appleUniversalBuildPath
+            );
+            #endregion Build for Apple Universal
+        } else {
+            // TODO: Currently only apple universal builds are supported
+            throw new Exception("No swift build result");
         }
     }
 
