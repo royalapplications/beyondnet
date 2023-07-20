@@ -1,12 +1,13 @@
 using System.Reflection;
 using System.Text;
-
+using Beyond.NET.Builder;
 using Beyond.NET.CodeGenerator.Collectors;
 using Beyond.NET.CodeGenerator.Generator;
 using Beyond.NET.CodeGenerator.Generator.C;
 using Beyond.NET.CodeGenerator.Generator.CSharpUnmanaged;
 using Beyond.NET.CodeGenerator.Generator.Swift;
 using Beyond.NET.CodeGenerator.SourceCode;
+using Beyond.NET.Core;
 
 namespace Beyond.NET.CodeGenerator.CLI;
 
@@ -35,119 +36,317 @@ internal class CodeGeneratorDriver
 
     internal void Generate()
     {
-        #region Configuration
-        bool emitUnsupported = Configuration.EmitUnsupported ?? false;
-        bool generateTypeCheckedDestroyMethods = Configuration.GenerateTypeCheckedDestroyMethods ?? false;
-        bool enableGenericsSupport = Configuration.EnableGenericsSupport ?? false;
-        bool doNotGenerateSwiftNestedTypeAliases = Configuration.DoNotGenerateSwiftNestedTypeAliases ?? false;
-        #endregion Configuration
-
-        #region Load Assembly
-        string assemblyPath = Configuration.AssemblyPath.ExpandTildeAndGetAbsolutePath();
+        HashSet<string> tempDirPaths = new();
         
-        Assembly assembly = AssemblyLoader.LoadFrom(assemblyPath);
-        #endregion Load Assembly
-
-        #region Collect Types
-        Type[] includedTypes = TypesFromTypeNames(
-            Configuration.IncludedTypeNames ?? Array.Empty<string>(),
-            assembly
-        );
-        
-        Type[] excludedTypes = TypesFromTypeNames(
-            Configuration.ExcludedTypeNames ?? Array.Empty<string>(),
-            assembly
-        );
-
-        TypeCollectorSettings typeCollectorSettings = new(
-            enableGenericsSupport,
-            includedTypes,
-            excludedTypes
-        );
-        
-        var types = CollectTypes(
-            assembly,
-            typeCollectorSettings,
-            out Dictionary<Type, string> unsupportedTypes
-        );
-        #endregion Collect Types
-
-        #region Generate Code
-        #region C# Unmanaged
-        const string namespaceForCSharpUnamangedCode = "NativeGeneratedCode";
-
-        var cSharpUnmanagedResultObject = GenerateCSharpUnmanagedCode(
-            types,
-            unsupportedTypes,
-            namespaceForCSharpUnamangedCode,
-            emitUnsupported,
-            generateTypeCheckedDestroyMethods,
-            typeCollectorSettings
-        );
-
-        var cSharpUnmanagedResult = cSharpUnmanagedResultObject.Result;
-        var cSharpUnmanagedCode = cSharpUnmanagedResultObject.GeneratedCode;
-        #endregion C# Unmanaged
-
-        #region C
-        var cResultObject = GenerateCCode(
-            types,
-            unsupportedTypes,
-            cSharpUnmanagedResult,
-            emitUnsupported,
-            typeCollectorSettings
-        );
-
-        var cResult = cResultObject.Result;
-        var cCode = cResultObject.GeneratedCode;
-        #endregion C
-
-        #region Swift
-        var swiftResultObject = GenerateSwiftCode(
-            types,
-            unsupportedTypes,
-            cSharpUnmanagedResult,
-            cResult,
-            emitUnsupported,
-            doNotGenerateSwiftNestedTypeAliases,
-            typeCollectorSettings
-        );
-
-        var swiftResult = swiftResultObject.Result;
-        var swiftCode = swiftResultObject.GeneratedCode;
-        #endregion Swift
-        #endregion Generate Code
-        
-        #region Write Output to Files
-        string? cSharpUnmanagedOutputPath = Configuration.CSharpUnmanagedOutputPath?
-            .ExpandTildeAndGetAbsolutePath();
-
-        WriteCodeToFileOrPrintToConsole(
-            "C#",
-            cSharpUnmanagedCode,
-            cSharpUnmanagedOutputPath
-        );
-        
-        string? cOutputPath = Configuration.COutputPath?
-            .ExpandTildeAndGetAbsolutePath();
-        
-        WriteCodeToFileOrPrintToConsole(
-            "C",
-            cCode,
-            cOutputPath
-        );
-        
-        string? swiftOutputPath = Configuration.SwiftOutputPath?
-            .ExpandTildeAndGetAbsolutePath();
-        
-        WriteCodeToFileOrPrintToConsole(
-            "Swift",
-            swiftCode,
-            swiftOutputPath
-        );
-        #endregion Write Output to Files
-    }
+        try {
+            #region Configuration
+            bool emitUnsupported = Configuration.EmitUnsupported ?? false;
+            bool generateTypeCheckedDestroyMethods = Configuration.GenerateTypeCheckedDestroyMethods ?? false;
+            bool enableGenericsSupport = Configuration.EnableGenericsSupport ?? false;
+            bool doNotGenerateSwiftNestedTypeAliases = Configuration.DoNotGenerateSwiftNestedTypeAliases ?? false;
     
+            BuildConfiguration? buildConfig = Configuration.Build;
+    
+            bool buildEnabled = false;
+            string? buildTarget = null;
+            string? buildProductName = null;
+            string? buildProductOutputPath = null;
+            string? buildMacOSDeploymentTarget = null;
+            string? buildiOSDeploymentTarget = null;
+    
+            if (buildConfig is not null) {
+                buildEnabled = true;
+                
+                buildTarget = buildConfig.Target;
+                
+                if (buildTarget != BuildTargets.APPLE_UNIVERSAL) {
+                    throw new Exception($"Only \"{BuildTargets.APPLE_UNIVERSAL}\" is currently supported as \"{nameof(buildConfig.Target)}\"");
+                }
+    
+                buildProductName = buildConfig.ProductName;
+    
+                if (string.IsNullOrEmpty(buildProductName)) {
+                    throw new Exception($"A build \"{nameof(BuildConfiguration.ProductName)}\" must be provided");
+                }
+    
+                buildProductOutputPath = buildConfig.ProductOutputPath;
+    
+                if (string.IsNullOrEmpty(buildProductOutputPath)) {
+                    throw new Exception($"A build \"{nameof(BuildConfiguration.ProductOutputPath)}\" must be provided");
+                }
+    
+                buildMacOSDeploymentTarget = buildConfig.MacOSDeploymentTarget;
+    
+                if (string.IsNullOrEmpty(buildMacOSDeploymentTarget)) {
+                    buildMacOSDeploymentTarget = AppleDeploymentTargets.MACOS_DEFAULT;
+                }
+    
+                buildiOSDeploymentTarget = buildConfig.iOSDeploymentTarget;
+    
+                if (string.IsNullOrEmpty(buildiOSDeploymentTarget)) {
+                    buildiOSDeploymentTarget = AppleDeploymentTargets.IOS_DEFAULT;
+                }
+            }
+            #endregion Configuration
+    
+            #region Load Assembly
+            string assemblyPath = Configuration.AssemblyPath.ExpandTildeAndGetAbsolutePath();
+            
+            Assembly assembly = AssemblyLoader.LoadFrom(assemblyPath);
+            #endregion Load Assembly
+    
+            #region Collect Types
+            Type[] includedTypes = TypesFromTypeNames(
+                Configuration.IncludedTypeNames ?? Array.Empty<string>(),
+                assembly
+            );
+            
+            Type[] excludedTypes = TypesFromTypeNames(
+                Configuration.ExcludedTypeNames ?? Array.Empty<string>(),
+                assembly
+            );
+    
+            TypeCollectorSettings typeCollectorSettings = new(
+                enableGenericsSupport,
+                includedTypes,
+                excludedTypes
+            );
+            
+            var types = CollectTypes(
+                assembly,
+                typeCollectorSettings,
+                out Dictionary<Type, string> unsupportedTypes
+            );
+            #endregion Collect Types
+    
+            #region Generate Code
+            #region C# Unmanaged
+            const string namespaceForCSharpUnamangedCode = "NativeGeneratedCode";
+    
+            var cSharpUnmanagedResultObject = GenerateCSharpUnmanagedCode(
+                types,
+                unsupportedTypes,
+                namespaceForCSharpUnamangedCode,
+                emitUnsupported,
+                generateTypeCheckedDestroyMethods,
+                typeCollectorSettings
+            );
+    
+            var cSharpUnmanagedResult = cSharpUnmanagedResultObject.Result;
+            var cSharpUnmanagedCode = cSharpUnmanagedResultObject.GeneratedCode;
+            #endregion C# Unmanaged
+    
+            #region C
+            var cResultObject = GenerateCCode(
+                types,
+                unsupportedTypes,
+                cSharpUnmanagedResult,
+                emitUnsupported,
+                typeCollectorSettings
+            );
+    
+            var cResult = cResultObject.Result;
+            var cCode = cResultObject.GeneratedCode;
+            #endregion C
+    
+            #region Swift
+            var swiftResultObject = GenerateSwiftCode(
+                types,
+                unsupportedTypes,
+                cSharpUnmanagedResult,
+                cResult,
+                emitUnsupported,
+                doNotGenerateSwiftNestedTypeAliases,
+                typeCollectorSettings
+            );
+    
+            var swiftResult = swiftResultObject.Result;
+            var swiftCode = swiftResultObject.GeneratedCode;
+            #endregion Swift
+            #endregion Generate Code
+            
+            #region Write Generated Code Output to Files
+            string? cSharpUnmanagedOutputPath = Configuration.CSharpUnmanagedOutputPath?
+                .ExpandTildeAndGetAbsolutePath();
+            
+            string? cOutputPath = Configuration.COutputPath?
+                .ExpandTildeAndGetAbsolutePath();
+            
+            string? swiftOutputPath = Configuration.SwiftOutputPath?
+                .ExpandTildeAndGetAbsolutePath();
+            
+            // If the user doesn't provide output paths for generated code files but build is enabled, we can use temporary paths
+            string? temporaryGeneratedCodeDirPath = null;
+    
+            if (buildEnabled &&
+                !string.IsNullOrEmpty(buildProductName) &&
+                (string.IsNullOrEmpty(cSharpUnmanagedOutputPath) ||
+                 string.IsNullOrEmpty(cOutputPath) ||
+                 string.IsNullOrEmpty(swiftOutputPath))) {
+                string sanitizedProductName = buildProductName.SanitizedProductNameForTempDirectory();
+                string tempDirectoryPrefix = $"BeyondNETCodeGenerator_{sanitizedProductName}_";
+    
+                temporaryGeneratedCodeDirPath = Directory.CreateTempSubdirectory(tempDirectoryPrefix).FullName;
+
+                tempDirPaths.Add(temporaryGeneratedCodeDirPath);
+    
+                if (string.IsNullOrEmpty(cSharpUnmanagedOutputPath)) {
+                    cSharpUnmanagedOutputPath = Path.Combine(temporaryGeneratedCodeDirPath, "Generated_CS.cs");
+                }
+                
+                if (string.IsNullOrEmpty(cOutputPath)) {
+                    cOutputPath = Path.Combine(temporaryGeneratedCodeDirPath, "Generated_C.h");
+                }
+                
+                if (string.IsNullOrEmpty(swiftOutputPath)) {
+                    swiftOutputPath = Path.Combine(temporaryGeneratedCodeDirPath, "Generated_Swift.swift");
+                }
+            }
+     
+            WriteCodeToFileOrPrintToConsole(
+                "C#",
+                cSharpUnmanagedCode,
+                cSharpUnmanagedOutputPath
+            );
+            
+            WriteCodeToFileOrPrintToConsole(
+                "C",
+                cCode,
+                cOutputPath
+            );
+    
+            WriteCodeToFileOrPrintToConsole(
+                "Swift",
+                swiftCode,
+                swiftOutputPath
+            );
+            #endregion Write Generated Code Output to Files
+    
+            #region Build
+            if (buildEnabled) {
+                if (string.IsNullOrEmpty(buildProductName) ||
+                    string.IsNullOrEmpty(buildProductOutputPath) ||
+                    string.IsNullOrEmpty(cSharpUnmanagedOutputPath) ||
+                    string.IsNullOrEmpty(cOutputPath) ||
+                    string.IsNullOrEmpty(swiftOutputPath) ||
+                    string.IsNullOrEmpty(buildMacOSDeploymentTarget) ||
+                    string.IsNullOrEmpty(buildiOSDeploymentTarget)) {
+                    // We checked all of these above so we shouldn't get here but just in case...
+                    throw new Exception("Invalid build configuration");
+                }
+                
+                SwiftBuilder.BuilderConfiguration config = new(
+                    buildProductName,
+                    cOutputPath,
+                    swiftOutputPath,
+                    buildMacOSDeploymentTarget,
+                    buildiOSDeploymentTarget
+                );
+            
+                // TODO: Logging
+                Console.WriteLine("Building Swift bindings...");
+            
+                SwiftBuilder swiftBuilder = new(config);
+            
+                var swiftBuildResult = swiftBuilder.Build();
+                
+                if (!Directory.Exists(swiftBuildResult.OutputRootPath)) {
+                    throw new Exception($"Swift product directory does not exist at \"{swiftBuildResult.OutputRootPath}\"");
+                }
+                
+                tempDirPaths.Add(swiftBuildResult.OutputRootPath);
+            
+                // TODO: Logging
+                Console.WriteLine($"Swift bindings built at \"{swiftBuildResult.OutputRootPath}\"");
+
+                string dnVersion = Builder.DotNET.Version.GetMajorAndMinorVersion();
+                string targetFramework = $"net{dnVersion}";
+            
+                // TODO: Logging
+                Console.WriteLine("Building .NET Native stuff...");
+    
+                var dnNativeBuilder = new DotNETNativeBuilder(
+                    targetFramework,
+                    buildProductName,
+                    assemblyPath,
+                    cSharpUnmanagedOutputPath,
+                    swiftBuildResult
+                );
+            
+                var result = dnNativeBuilder.Build();
+                
+                if (!Directory.Exists(result.OutputDirectoryPath)) {
+                    throw new Exception($"Final product directory does not exist at \"{result.OutputDirectoryPath}\"");
+                }
+                
+                tempDirPaths.Add(result.OutputDirectoryPath);
+            
+                // TODO: Logging
+                Console.WriteLine($"Final product built at \"{result.OutputDirectoryPath}\"");
+                
+                Console.WriteLine($"Copying product to \"{buildProductOutputPath}\"");
+                
+                CopyDirectory(
+                    result.OutputDirectoryPath,
+                    buildProductOutputPath,
+                    true
+                );
+            }
+            #endregion Build
+        } finally {
+            bool shouldDeleteTempDirs = !Configuration.DoNotDeleteTemporaryDirectories;
+            
+            if (shouldDeleteTempDirs) {
+                // Clean up temporary directories
+                foreach (var tempDirPath in tempDirPaths) {
+                    if (Directory.Exists(tempDirPath)) {
+                        // TODO: Logging
+                        Console.WriteLine($"Removing temporary directory \"{tempDirPath}\"");
+                    
+                        Directory.Delete(tempDirPath, true);
+                    }
+                }
+            }
+        }
+    }
+
+    private static void CopyDirectory(
+        string sourceDir,
+        string destinationDir,
+        bool recursive
+    )
+    {
+        // Get information about the source directory
+        var dir = new DirectoryInfo(sourceDir);
+
+        // Check if the source directory exists
+        if (!dir.Exists) {
+            throw new DirectoryNotFoundException($"Source directory not found: {dir.FullName}");
+        }
+
+        // Cache directories before we start copying
+        DirectoryInfo[] dirs = dir.GetDirectories();
+
+        if (!Directory.Exists(destinationDir)) {
+            // Create the destination directory
+            Directory.CreateDirectory(destinationDir);
+        }
+
+        // Get the files in the source directory and copy to the destination directory
+        foreach (FileInfo file in dir.GetFiles()) {
+            string targetFilePath = Path.Combine(destinationDir, file.Name);
+            file.CopyTo(targetFilePath);
+        }
+
+        // If recursive and copying subdirectories, recursively call this method
+        if (recursive) {
+            foreach (DirectoryInfo subDir in dirs) {
+                string newDestinationDir = Path.Combine(destinationDir, subDir.Name);
+                CopyDirectory(subDir.FullName, newDestinationDir, true);
+            }
+        }
+    }
+
     private static Type[] TypesFromTypeNames(
         IEnumerable<string> typeNames,
         Assembly assembly

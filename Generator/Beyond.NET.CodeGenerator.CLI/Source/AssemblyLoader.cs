@@ -1,5 +1,7 @@
 using System.Reflection;
 
+using Beyond.NET.Core;
+
 namespace Beyond.NET.CodeGenerator.CLI;
 
 internal class AssemblyLoader: IDisposable

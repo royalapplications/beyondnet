@@ -15,7 +15,7 @@ public class NativeCsProj
     
     public string TargetFramework { get; }
     public string ProductName { get; }
-    public string TargetProjectFilePath { get; }
+    public string TargetAssemblyFilePath { get; }
     public AppleSpecificSettings? AppleSettings { get; }
     
     private string OutputProductName => $"lib{ProductName}";
@@ -23,13 +23,13 @@ public class NativeCsProj
     public NativeCsProj(
         string targetFramework,
         string productName,
-        string targetProjectFilePath,
+        string targetAssemblyFilePath,
         AppleSpecificSettings? appleSettings
     )
     {
         TargetFramework = targetFramework;
         ProductName = productName;
-        TargetProjectFilePath = targetProjectFilePath;
+        TargetAssemblyFilePath = targetAssemblyFilePath;
         AppleSettings = appleSettings;
     }
 
@@ -64,7 +64,7 @@ public class NativeCsProj
             .Replace(TOKEN_ASSEMBLY_NAME, OutputProductName)
             .Replace(TOKEN_TARGET_FRAMEWORK, TargetFramework)
             .Replace(TOKEN_NULLABLE, nullable)
-            .Replace(TOKEN_TARGET_PROJECT_FILE_PATH, TargetProjectFilePath)
+            .Replace(TOKEN_TARGET_ASSEMBLY_FILE_PATH, TargetAssemblyFilePath)
             .Replace(TOKEN_MIX_IN_SWIFT, mixInSwift ? "true" : "false")
             .Replace(TOKEN_MIN_MACOS_VERSION, minMacOSVersion)
             .Replace(TOKEN_MIN_IOS_VERSION, miniOSVersion)
@@ -81,7 +81,7 @@ public class NativeCsProj
     private const string TOKEN_ASSEMBLY_NAME = $"{TOKEN}AssemblyName{TOKEN}";
     private const string TOKEN_TARGET_FRAMEWORK = $"{TOKEN}TargetFramework{TOKEN}";
     private const string TOKEN_NULLABLE = $"{TOKEN}Nullable{TOKEN}";
-    private const string TOKEN_TARGET_PROJECT_FILE_PATH = $"{TOKEN}TargetProjectFilePath{TOKEN}";
+    private const string TOKEN_TARGET_ASSEMBLY_FILE_PATH = $"{TOKEN}TargetAssemblyFilePath{TOKEN}";
     
     private const string TOKEN_MIX_IN_SWIFT = $"{TOKEN}MixInSwift{TOKEN}";
     private const string TOKEN_MIN_MACOS_VERSION = $"{TOKEN}MinMacOSVersion{TOKEN}";
@@ -209,9 +209,9 @@ public class NativeCsProj
     <DefaultItemExcludes>$(DefaultItemExcludes);.gitignore;*.sln.DotSettings;</DefaultItemExcludes>
   </PropertyGroup>
 
-  <!-- Project References -->
+  <!-- References -->
   <ItemGroup>
-    <ProjectReference Include="{TOKEN_TARGET_PROJECT_FILE_PATH}" />
+    <Reference Include="{TOKEN_TARGET_ASSEMBLY_FILE_PATH}" />
   </ItemGroup>
 
 </Project>

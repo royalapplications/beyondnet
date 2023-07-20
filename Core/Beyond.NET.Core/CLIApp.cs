@@ -17,19 +17,24 @@ public class CLIApp
         public Exception? FailureAsException
         {
             get {
+                Exception innerException;
+                
                 if (LaunchException is not null) {
-                    return LaunchException;
+                    innerException = LaunchException;
+                } else if (!string.IsNullOrEmpty(StandardError)) {
+                    innerException = new Exception(StandardError);
+                } else if (ExitCode != 0) {
+                    innerException = new Exception($"Process exited with exit code {ExitCode}");
+                } else {
+                    return null;
                 }
 
-                if (!string.IsNullOrEmpty(StandardError)) {
-                    return new Exception(StandardError);
-                }
+                var ex = new Exception(
+                    $"An error occurred while running command \"{Invocation}\"", 
+                    innerException
+                );
 
-                if (ExitCode != 0) {
-                    return new Exception($"Process exited with exit code {ExitCode}");
-                }
-
-                return null;
+                return ex;
             }
         }
 

@@ -1,20 +1,23 @@
 namespace Beyond.NET.CodeGenerator.CLI;
 
-public struct Configuration
-{
-    public string AssemblyPath { get; init; }
+public record Configuration(
+    string AssemblyPath,
     
-    public string? CSharpUnmanagedOutputPath { get; init; }
-    public string? COutputPath { get; init; }
-    public string? SwiftOutputPath { get; init; }
-
-    public bool? EmitUnsupported { get; init; }
-    public bool? GenerateTypeCheckedDestroyMethods { get; init; }
-    public bool? DoNotGenerateSwiftNestedTypeAliases { get; init; }
-    public bool? EnableGenericsSupport { get; init; }
+    BuildConfiguration? Build,
     
-    public string[]? IncludedTypeNames { get; init; }
-    public string[]? ExcludedTypeNames { get; init; }
+    string? CSharpUnmanagedOutputPath,
+    string? COutputPath,
+    string? SwiftOutputPath,
     
-    public string[]? AssemblySearchPaths { get; init; }
-}
+    bool? EmitUnsupported,
+    bool? GenerateTypeCheckedDestroyMethods,
+    bool? DoNotGenerateSwiftNestedTypeAliases,
+    bool? EnableGenericsSupport,
+    
+    string[]? IncludedTypeNames,
+    string[]? ExcludedTypeNames,
+    
+    string[]? AssemblySearchPaths,
+    
+    bool DoNotDeleteTemporaryDirectories
+);

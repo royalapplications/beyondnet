@@ -11,7 +11,7 @@ public class DotNETNativeBuilder
     
     public string TargetFramework { get; }
     public string ProductName { get; }
-    public string TargetProjectFilePath { get; }
+    public string TargetAssemblyFilePath { get; }
     public string GeneratedCSharpFilePath { get; }
     public SwiftBuilder.BuildResult? SwiftBuildResult { get; }
 
@@ -25,14 +25,14 @@ public class DotNETNativeBuilder
     public DotNETNativeBuilder(
         string targetFramework,
         string productName,
-        string targetProjectFilePath,
+        string targetAssemblyFilePath,
         string generatedCSharpFilePath,
         SwiftBuilder.BuildResult? swiftBuildResult
     )
     {
         TargetFramework = targetFramework;
         ProductName = productName;
-        TargetProjectFilePath = targetProjectFilePath;
+        TargetAssemblyFilePath = targetAssemblyFilePath;
         GeneratedCSharpFilePath = generatedCSharpFilePath;
         SwiftBuildResult = swiftBuildResult;
     }
@@ -59,7 +59,7 @@ public class DotNETNativeBuilder
         var nativeCsProj = new NativeCsProj(
             TargetFramework,
             ProductName,
-            TargetProjectFilePath,
+            TargetAssemblyFilePath,
             appleSettings
         );
 
