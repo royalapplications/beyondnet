@@ -62,6 +62,13 @@ public class MemberCollector
                     continue;
                 }
                 
+                // See https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/record#nondestructive-mutation
+                if (memberInfo.IsVirtualCloneMethod()) {
+                    unsupportedMembers[memberInfo] = "Virtual Record Clone Method";
+                    
+                    continue;
+                }
+                
                 CollectMember(
                     memberInfo,
                     collectedMembers,
