@@ -6,6 +6,7 @@ namespace Beyond.NET.Builder;
 public class DotNETNativeBuilder
 {
     public record BuildResult(
+        string TemporaryDirectoryPath,
         string OutputDirectoryPath
     );
     
@@ -241,6 +242,7 @@ public class DotNETNativeBuilder
             #endregion Copy Swift module into Apple Universal XCFramework
 
             return new(
+                tempDirectoryPath,
                 appleUniversalBuildPath
             );
             #endregion Build for Apple Universal

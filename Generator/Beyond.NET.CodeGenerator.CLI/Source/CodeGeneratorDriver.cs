@@ -279,8 +279,10 @@ internal class CodeGeneratorDriver
                     throw new Exception($"Final product directory does not exist at \"{result.OutputDirectoryPath}\"");
                 }
                 
-                tempDirPaths.Add(result.OutputDirectoryPath);
-            
+                if (Directory.Exists(result.TemporaryDirectoryPath)) {
+                    tempDirPaths.Add(result.TemporaryDirectoryPath);
+                }
+
                 // TODO: Logging
                 Console.WriteLine($"Final product built at \"{result.OutputDirectoryPath}\"");
                 
