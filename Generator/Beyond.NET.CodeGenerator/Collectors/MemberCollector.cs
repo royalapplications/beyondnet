@@ -149,6 +149,15 @@ public class MemberCollector
             
             return;
         }
+
+        var declaringType = constructorInfo.DeclaringType;
+
+        if (declaringType is not null &&
+            declaringType.HasRequiredMembers()) {
+            unsupportedMembers[constructorInfo] = "Type has required fields or properties";
+            
+            return;
+        }
             
         var parameterInfos = constructorInfo.GetParameters();
 

@@ -1,4 +1,5 @@
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using Beyond.NET.CodeGenerator.Types;
 
 namespace Beyond.NET.CodeGenerator.Extensions;
@@ -215,5 +216,13 @@ internal static class TypeExtensions
         }
 
         return false;
+    }
+
+    internal static bool HasRequiredMembers(this Type type)
+    {
+        var attr = type.GetCustomAttribute<RequiredMemberAttribute>();
+        bool hasIt = attr is not null;
+
+        return hasIt;
     }
 }

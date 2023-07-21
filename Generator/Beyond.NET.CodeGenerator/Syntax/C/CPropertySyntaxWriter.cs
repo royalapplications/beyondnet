@@ -1,6 +1,6 @@
 using System.Reflection;
 using System.Text;
-
+using Beyond.NET.CodeGenerator.Extensions;
 using Beyond.NET.CodeGenerator.Generator;
 using Beyond.NET.CodeGenerator.Types;
 
@@ -40,7 +40,7 @@ public class CPropertySyntaxWriter: CMethodSyntaxWriter, IPropertySyntaxWriter
         Type propertyType = property.PropertyType;
 
         MethodInfo? getterMethod = property.GetGetMethod(false);
-        MethodInfo? setterMethod = property.GetSetMethod(false);
+        MethodInfo? setterMethod = property.GetPublicAndNonInitSetMethod();
 
         if (getterMethod is not null &&
             generatedMemberGetter is not null) {
