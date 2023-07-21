@@ -7,9 +7,9 @@ public class CLIApp
 {
     public class Result
     {
-        public string Invocation { get; init; }
-        public string? WorkingDirectory { get; init; }
-        public int ExitCode { get; init; }
+        public string Invocation { get; }
+        public string? WorkingDirectory { get; }
+        public int ExitCode { get; }
         public Exception? LaunchException { get; init; }
         
         public string? StandardOut { get; init; }
@@ -25,7 +25,11 @@ public class CLIApp
                 } else if (!string.IsNullOrEmpty(StandardError)) {
                     innerException = new Exception(StandardError);
                 } else if (ExitCode != 0) {
-                    innerException = new Exception($"Process exited with exit code {ExitCode}");
+                    if (!string.IsNullOrEmpty(StandardOut)) {
+                        innerException = new Exception(StandardOut);    
+                    } else {
+                        innerException = new Exception("Unknown Error");
+                    }
                 } else {
                     return null;
                 }
@@ -33,9 +37,9 @@ public class CLIApp
                 string msg;
 
                 if (string.IsNullOrEmpty(WorkingDirectory)) {
-                    msg = $"An error occurred while running command \"{Invocation}\"";
+                    msg = $"The Command \"{Invocation}\" exited with exit code {ExitCode}";
                 } else {
-                    msg = $"An error occurred while running command \"{Invocation}\" in directory \"{WorkingDirectory}\"";
+                    msg = $"The Command \"{Invocation}\" in directory \"{WorkingDirectory}\" exited with exit code {ExitCode}";
                 }
 
                 var ex = new Exception(
@@ -87,34 +91,35 @@ public class CLIApp
     }
     
     public string Command { get; init; }
-    public bool TreatNonZeroExitCodeAsGenericError { get; init; } = true;
 
     public CLIApp(string command)
     {
         Command = command;
     }
-
-    public Result Launch(string[]? arguments)
-    {
-        return Launch(
-            arguments,
-            null
-        );
-    }
     
     public Result Launch(
         string[]? arguments,
-        string? workingDirectory
+        string? workingDirectory = null
     )
     {
         int timeout = int.MaxValue;
         
-        string invocationString = MakeInvocationString(arguments);
-        
         var startInfo = MakeStartInfo(
             arguments,
-            workingDirectory
+            workingDirectory,
+            out string invocationString
         );
+        
+        string logMsg;
+
+        if (!string.IsNullOrEmpty(workingDirectory)) {
+            logMsg = $"Running command \"{invocationString}\" in directory \"{workingDirectory}\"";
+        } else {
+            logMsg = $"Running command \"{invocationString}\"";
+        }
+        
+        // TODO: Logging
+        Console.WriteLine(logMsg);
 
         try {
             using var process = new Process() {
@@ -165,12 +170,9 @@ public class CLIApp
 
             string stdOut = sbStdOut.ToString();
             string stdErr = sbStdErr.ToString();
-            
-            if (timeoutException is null &&
-                TreatNonZeroExitCodeAsGenericError &&
-                exitCode != 0 &&
-                string.IsNullOrEmpty(stdErr)) {
-                stdErr = $"Process exited with exit code {exitCode}";
+
+            if (timeoutException is not null) {
+                stdErr = timeoutException.ToString();
             }
 
             return new(
@@ -208,7 +210,8 @@ public class CLIApp
 
     private ProcessStartInfo MakeStartInfo(
         string[]? arguments,
-        string? workingDirectory
+        string? workingDirectory,
+        out string invocationString
     )
     {
         ProcessStartInfo startInfo = new(Command, arguments ?? Array.Empty<string>()) {
@@ -222,6 +225,8 @@ public class CLIApp
         if (!string.IsNullOrEmpty(workingDirectory)) {
             startInfo.WorkingDirectory = workingDirectory;
         }
+
+        invocationString = MakeInvocationString(arguments);
 
         return startInfo;
     }
