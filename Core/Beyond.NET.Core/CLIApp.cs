@@ -89,6 +89,8 @@ public class CLIApp
             LaunchException = launchException;
         }
     }
+
+    private ILogger Logger => Services.Shared.LoggerService;
     
     public string Command { get; init; }
 
@@ -118,8 +120,7 @@ public class CLIApp
             logMsg = $"Running command \"{invocationString}\"";
         }
         
-        // TODO: Logging
-        Console.WriteLine(logMsg);
+        Logger.LogDebug(logMsg);
 
         try {
             using var process = new Process() {

@@ -1,5 +1,6 @@
 using System.Reflection;
 using System.Text;
+
 using Beyond.NET.Builder;
 using Beyond.NET.CodeGenerator.Collectors;
 using Beyond.NET.CodeGenerator.Generator;
@@ -13,6 +14,8 @@ namespace Beyond.NET.CodeGenerator.CLI;
 
 internal class CodeGeneratorDriver
 {
+    private ILogger Logger => Services.Shared.LoggerService;
+    
     internal Configuration Configuration { get; }
 
     private AssemblyLoader? m_assemblyLoader;
@@ -243,8 +246,7 @@ internal class CodeGeneratorDriver
                     buildiOSDeploymentTarget
                 );
             
-                // TODO: Logging
-                Console.WriteLine("Building Swift bindings...");
+                Logger.LogInformation("Building Swift bindings...");
             
                 SwiftBuilder swiftBuilder = new(config);
             
@@ -256,14 +258,12 @@ internal class CodeGeneratorDriver
                 
                 tempDirPaths.Add(swiftBuildResult.OutputRootPath);
             
-                // TODO: Logging
-                Console.WriteLine($"Swift bindings built at \"{swiftBuildResult.OutputRootPath}\"");
+                Logger.LogInformation($"Swift bindings built at \"{swiftBuildResult.OutputRootPath}\"");
 
                 string dnVersion = Builder.DotNET.Version.GetMajorAndMinorVersion();
                 string targetFramework = $"net{dnVersion}";
             
-                // TODO: Logging
-                Console.WriteLine("Building .NET Native stuff...");
+                Logger.LogInformation("Building .NET Native stuff...");
     
                 var dnNativeBuilder = new DotNETNativeBuilder(
                     targetFramework,
@@ -283,10 +283,8 @@ internal class CodeGeneratorDriver
                     tempDirPaths.Add(result.TemporaryDirectoryPath);
                 }
 
-                // TODO: Logging
-                Console.WriteLine($"Final product built at \"{result.OutputDirectoryPath}\"");
-                
-                Console.WriteLine($"Copying product to \"{buildProductOutputPath}\"");
+                Logger.LogInformation($"Final product built at \"{result.OutputDirectoryPath}\"");
+                Logger.LogInformation($"Copying product to \"{buildProductOutputPath}\"");
                 
                 CopyDirectory(
                     result.OutputDirectoryPath,
@@ -302,8 +300,7 @@ internal class CodeGeneratorDriver
                 // Clean up temporary directories
                 foreach (var tempDirPath in tempDirPaths) {
                     if (Directory.Exists(tempDirPath)) {
-                        // TODO: Logging
-                        Console.WriteLine($"Removing temporary directory \"{tempDirPath}\"");
+                        Logger.LogInformation($"Removing temporary directory \"{tempDirPath}\"");
                     
                         Directory.Delete(tempDirPath, true);
                     }
