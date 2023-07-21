@@ -23,3 +23,5 @@ public record struct TestRecordStruct(int anInt)
         
     }
 }
+
+public readonly record struct TestReadOnlyRecordStruct(int anInt);

@@ -42,4 +42,22 @@ final class TestRecordTests_Swift: XCTestCase {
         
         XCTAssertEqual(expectedString, deconstructedString)
     }
+    
+    func testReadOnlyRecordStruct() {
+        let expectedInt: Int32 = .max
+        
+        guard let aRecord = try? Beyond.NET.Sample.TestReadOnlyRecordStruct(expectedInt) else {
+            XCTFail("Beyond.NET.Sample.TestReadOnlyRecordStruct ctor should not throw and return an instance")
+            
+            return
+        }
+        
+        guard let retInt = try? aRecord.anInt else {
+            XCTFail("Beyond.NET.Sample.TestReadOnlyRecordStruct AnInt getter should not throw and return a string")
+            
+            return
+        }
+        
+        XCTAssertEqual(expectedInt, retInt)
+    }
 }
