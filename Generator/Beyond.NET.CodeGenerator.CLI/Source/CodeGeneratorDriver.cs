@@ -95,6 +95,8 @@ internal class CodeGeneratorDriver
             #region Load Assembly
             string assemblyPath = Configuration.AssemblyPath.ExpandTildeAndGetAbsolutePath();
             
+            Logger.LogInformation($"Loading assembly from \"{assemblyPath}\"");
+            
             Assembly assembly = AssemblyLoader.LoadFrom(assemblyPath);
             #endregion Load Assembly
     
@@ -115,6 +117,8 @@ internal class CodeGeneratorDriver
                 excludedTypes
             );
             
+            Logger.LogInformation($"Collecting types in assembly");
+            
             var types = CollectTypes(
                 assembly,
                 typeCollectorSettings,
@@ -126,6 +130,8 @@ internal class CodeGeneratorDriver
             #region C# Unmanaged
             const string namespaceForCSharpUnamangedCode = "NativeGeneratedCode";
     
+            Logger.LogInformation("Generating C# Code");
+            
             var cSharpUnmanagedResultObject = GenerateCSharpUnmanagedCode(
                 types,
                 unsupportedTypes,
@@ -140,6 +146,8 @@ internal class CodeGeneratorDriver
             #endregion C# Unmanaged
     
             #region C
+            Logger.LogInformation("Generating C Code");
+            
             var cResultObject = GenerateCCode(
                 types,
                 unsupportedTypes,
@@ -153,6 +161,8 @@ internal class CodeGeneratorDriver
             #endregion C
     
             #region Swift
+            Logger.LogInformation("Generating Swift Code");
+            
             var swiftResultObject = GenerateSwiftCode(
                 types,
                 unsupportedTypes,
@@ -246,7 +256,7 @@ internal class CodeGeneratorDriver
                     buildiOSDeploymentTarget
                 );
             
-                Logger.LogInformation("Building Swift bindings...");
+                Logger.LogInformation("Building Swift bindings");
             
                 SwiftBuilder swiftBuilder = new(config);
             
@@ -263,7 +273,7 @@ internal class CodeGeneratorDriver
                 string dnVersion = Builder.DotNET.Version.GetMajorAndMinorVersion();
                 string targetFramework = $"net{dnVersion}";
             
-                Logger.LogInformation("Building .NET Native stuff...");
+                Logger.LogInformation("Building .NET Native stuff");
     
                 var dnNativeBuilder = new DotNETNativeBuilder(
                     targetFramework,
@@ -395,6 +405,8 @@ internal class CodeGeneratorDriver
             !Directory.Exists(dirPath)) {
             Directory.CreateDirectory(dirPath);
         }
+        
+        Logger.LogInformation($"Writing generated {languageName} code to \"{outputPath}\"");
     
         File.WriteAllText(outputPath, code);
     }

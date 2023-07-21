@@ -38,6 +38,8 @@ public class SwiftBuilder
         string? SwiftDocOutputFilePath,
         string? SwiftABIOutputFilePath
     );
+
+    private ILogger Logger => Services.Shared.LoggerService;
     
     public BuilderConfiguration Configuration { get; }
 
@@ -68,7 +70,11 @@ public class SwiftBuilder
         string sanitizedProductName = productName.SanitizedProductNameForTempDirectory();
         string tempDirectoryPrefix = $"BeyondNETBuilderSwiftBuilder_{sanitizedProductName}_";
         
+        Logger.LogDebug("Creating temporary directory for Swift build");
+        
         string tempDirectoryPath = Directory.CreateTempSubdirectory(tempDirectoryPrefix).FullName;
+        
+        Logger.LogDebug($"Temporary directory for Swift build created at \"{tempDirectoryPath}\"");
 
         string moduleMapFilePath = Path.Combine(tempDirectoryPath, moduleMapFileName);
         string clangModuleMapFilePath = Path.Combine(tempDirectoryPath, clangModuleMapFileName);
@@ -113,16 +119,31 @@ public class SwiftBuilder
         string moduleMapString = moduleMap.ToString();
         string clangModuleMapString = clangModuleMap.ToString();
         string headerMapString = headerFile.ToString();
-
+        
+        Logger.LogDebug($"Writing Swift module map file to \"{moduleMapFilePath}\"");
         File.WriteAllText(moduleMapFilePath, moduleMapString);
+        
+        Logger.LogDebug($"Writing Clang module map file to \"{clangModuleMapFilePath}\"");
         File.WriteAllText(clangModuleMapFilePath, clangModuleMapString);
+        
+        Logger.LogDebug($"Writing Header map file to \"{headerMapFilePath}\"");
         File.WriteAllText(headerMapFilePath, headerMapString);
         
-        File.Copy(generatedCHeaderFilePath, Path.Combine(tempDirectoryPath, generatedCHeaderFileName));
-        File.Copy(generatedSwiftFilePath, Path.Combine(tempDirectoryPath, generatedSwiftFileName));
+        string generatedCHeaderDestinationFilePath = Path.Combine(tempDirectoryPath, generatedCHeaderFileName);
+        Logger.LogDebug($"Copying generated C header file to \"{generatedCHeaderDestinationFilePath}\"");
+        File.Copy(generatedCHeaderFilePath, generatedCHeaderDestinationFilePath);
 
+        string generatedSwiftDestinationFilePath = Path.Combine(tempDirectoryPath, generatedSwiftFileName);
+        Logger.LogDebug($"Copying generated Swift file to \"{generatedSwiftDestinationFilePath}\"");
+        File.Copy(generatedSwiftFilePath, generatedSwiftDestinationFilePath);
+
+        Logger.LogDebug($"Getting macOS SDK Path");
         var sdkPathMacOS = Apple.XCRun.SDK.GetSDKPath(Apple.XCRun.SDK.macOSName);
+        
+        Logger.LogDebug($"Getting iOS SDK Path");
         var sdkPathiOS = Apple.XCRun.SDK.GetSDKPath(Apple.XCRun.SDK.iOSName);
+        
+        Logger.LogDebug($"Getting iOS Simulator SDK Path");
         var sdkPathiOSSimulator = Apple.XCRun.SDK.GetSDKPath(Apple.XCRun.SDK.iOSSimulatorName);
 
         string targetIdentifierARM64 = Apple.XCRun.SwiftC.TargetIdentifier.ARM64;
@@ -152,12 +173,19 @@ public class SwiftBuilder
         string outputPathiOSSimulatorARM64 = Path.Combine(outputPathApple, $"{platformIdentifieriOSSimulatorDN}-{targetIdentifierARM64DN}");
         string outputPathiOSSimulatorX64 = Path.Combine(outputPathApple, $"{platformIdentifieriOSSimulatorDN}-{targetIdentifierX64DN}");
 
+        Logger.LogDebug($"Creating macOS ARM64 Output Path at \"{outputPathMacOSARM64}\"");
         Directory.CreateDirectory(outputPathMacOSARM64);
+        
+        Logger.LogDebug($"Creating macOS x64 Output Path at \"{outputPathMacOSX64}\"");
         Directory.CreateDirectory(outputPathMacOSX64);
 
+        Logger.LogDebug($"Creating iOS ARM64 Output Path at \"{outputPathMacOSX64}\"");
         Directory.CreateDirectory(outputPathiOSARM64);
 
+        Logger.LogDebug($"Creating iOS Simulator ARM64 Output Path at \"{outputPathMacOSX64}\"");
         Directory.CreateDirectory(outputPathiOSSimulatorARM64);
+        
+        Logger.LogDebug($"Creating iOS Simulator x64 Output Path at \"{outputPathMacOSX64}\"");
         Directory.CreateDirectory(outputPathiOSSimulatorX64);
 
         SwiftCompiler compiler = new(
