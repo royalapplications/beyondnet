@@ -1,5 +1,7 @@
 import XCTest
+
 import BeyondNETSampleSwift
+import BeyondDotNETSampleNative
 
 final class IndexerTestsTests: XCTestCase {
 	@MainActor
@@ -13,209 +15,115 @@ final class IndexerTestsTests: XCTestCase {
 	}
 	
 	func testGetIndexedPropertyWith3Parameters() {
-		var exception: System_Exception_t?
-		
-		guard let indexerTests = Beyond_NET_Sample_IndexerTests_Create(&exception),
-			  exception == nil else {
+		guard let indexerTests = try? Beyond_NET_Sample_IndexerTests() else {
 			XCTFail("IndexerTests ctor should not throw and return an instance")
 			
 			return
 		}
 		
-		defer { Beyond_NET_Sample_IndexerTests_Destroy(indexerTests) }
-		
 		let aString = "A String"
-		let aStringDN = aString.cDotNETString()
-		defer { System_String_Destroy(aStringDN) }
+		let aStringDN = aString.dotNETString()
 		
 		let aNumber: Int32 = 123456
 		
-		guard let aGuid = System_Guid_NewGuid(&exception),
-			  exception == nil else {
+		guard let aGuid = try? System_Guid.newGuid() else {
 			XCTFail("System.Guid.NewGuid should not throw and return an instance")
 			
 			return
 		}
 		
-		defer { System_Guid_Destroy(aGuid) }
-		
-		guard let arrayRet = Beyond_NET_Sample_IndexerTests_Item_Get(indexerTests,
-																					  aStringDN,
-																					  aNumber,
-																					  aGuid,
-																					  &exception),
-			  exception == nil else {
+        guard let arrayRet = try? indexerTests.item(aStringDN,
+                                                    aNumber,
+                                                    aGuid) else {
 			XCTFail("IndexerTests[] should not throw and return an instance")
 			
 			return
 		}
 		
-		defer { System_Array_Destroy(arrayRet) }
-		
-		let arrayLength = System_Array_Length_Get(arrayRet,
-												  &exception)
-		
-		XCTAssertNil(exception)
+		let arrayLength = (try? arrayRet.length) ?? -1
 		XCTAssertEqual(3, arrayLength)
 		
-		guard let item1Ret = System_Array_GetValue_1(arrayRet,
-													 0,
-													 &exception),
-			  exception == nil else {
+		guard let item1RetAsString = try? arrayRet.getValue(0 as Int32)?.castAs(System_String.self)?.string() else {
 			XCTFail("System.Array.GetValue should not throw and return an instance")
 			
 			return
 		}
-		
-		let item1RetAsString = String(cDotNETString: item1Ret,
-									  destroyDotNETString: true)
 		
 		XCTAssertEqual(aString, item1RetAsString)
 		
-		guard let item2Ret = System_Array_GetValue_1(arrayRet,
-													 1,
-													 &exception),
-			  exception == nil else {
+		guard let item2RetAsInt32 = try? arrayRet.getValue(1 as Int32)?.castToInt32() else {
 			XCTFail("System.Array.GetValue should not throw and return an instance")
 			
 			return
 		}
 		
-		defer { System_Object_Destroy(item2Ret) }
-		
-		let item2RetAsInt32 = DNObjectCastToInt32(item2Ret,
-												  &exception)
-		
-		XCTAssertNil(exception)
 		XCTAssertEqual(aNumber, item2RetAsInt32)
 		
-		guard let item3Ret = System_Array_GetValue_1(arrayRet,
-													 2,
-													 &exception),
-			  exception == nil else {
+		guard let item3Ret = try? arrayRet.getValue(2 as Int32)?.castTo(System_Guid.self) else {
 			XCTFail("System.Array.GetValue should not throw and return an instance")
 			
 			return
 		}
 		
-		defer { System_Object_Destroy(item3Ret) }
+		let guidEqual = aGuid == item3Ret
 		
-		let guidEqual = System_Object_Equals(aGuid,
-											 item3Ret,
-											 &exception)
-		
-		XCTAssertNil(exception)
 		XCTAssertTrue(guidEqual)
 	}
 	
 	func testSetIndexedPropertyWith3Parameters() {
-		var exception: System_Exception_t?
-		
-		guard let indexerTests = Beyond_NET_Sample_IndexerTests_Create(&exception),
-			  exception == nil else {
+		guard let indexerTests = try? Beyond_NET_Sample_IndexerTests() else {
 			XCTFail("IndexerTests ctor should not throw and return an instance")
 			
 			return
 		}
 		
-		defer { Beyond_NET_Sample_IndexerTests_Destroy(indexerTests) }
-		
 		let aString = "A String"
-		let aStringDN = aString.cDotNETString()
-		defer { System_String_Destroy(aStringDN) }
+		let aStringDN = aString.dotNETString()
 		
 		let aNumber: Int32 = 123456
 		
-		guard let aGuid = System_Guid_NewGuid(&exception),
-			  exception == nil else {
+		guard let aGuid = try? System_Guid.newGuid() else {
 			XCTFail("System.Guid.NewGuid should not throw and return an instance")
 			
 			return
 		}
 		
-		defer { System_Guid_Destroy(aGuid) }
+		let systemObjectType = System_Object.typeOf
 		
-		let systemObjectType = System_Object_TypeOf()
-		defer { System_Type_Destroy(systemObjectType) }
-		
-		guard let array = System_Array_CreateInstance(systemObjectType,
-													  3,
-													  &exception),
-			  exception == nil else {
+		guard let array = try? System_Array.createInstance(systemObjectType,
+														   3) else {
 			XCTFail("System.Array.CreateInstance should not throw and return an instance")
 			
 			return
 		}
 		
-		defer { System_Array_Destroy(array) }
+		XCTAssertNoThrow(try array.setValue(aStringDN, 0 as Int32))
+		XCTAssertNoThrow(try array.setValue(DNObject.fromInt32(aNumber), 1 as Int32))
+		XCTAssertNoThrow(try array.setValue(aGuid, 2 as Int32))
 		
-		System_Array_SetValue(array,
-							  aStringDN,
-							  0,
-							  &exception)
+		XCTAssertNoThrow(try indexerTests.item_set(aStringDN,
+												   aNumber,
+												   aGuid,
+												   array.castTo()))
 		
-		XCTAssertNil(exception)
-		
-		let aNumberDN = DNObjectFromInt32(aNumber)
-		defer { System_Object_Destroy(aNumberDN) }
-		
-		System_Array_SetValue(array,
-							  aNumberDN,
-							  1,
-							  &exception)
-		
-		XCTAssertNil(exception)
-		
-		System_Array_SetValue(array,
-							  aGuid,
-							  2,
-							  &exception)
-		
-		XCTAssertNil(exception)
-		
-		Beyond_NET_Sample_IndexerTests_Item_Set(indexerTests,
-																 aStringDN,
-																 aNumber,
-																 aGuid,
-																 array,
-																 &exception)
-		
-		XCTAssertNil(exception)
-		
-		guard let arrayRet = Beyond_NET_Sample_IndexerTests_StoredValue_Get(indexerTests,
-																							 &exception),
-			  exception == nil else {
+		guard let arrayRet = try? indexerTests.storedValue else {
 			XCTFail("IndexerTests.StoredValue getter should not throw and return an instance")
 			
 			return
 		}
 		
-		defer { System_Array_Destroy(arrayRet) }
-		
-		let arrayLength = System_Array_Length_Get(arrayRet,
-												  &exception)
-		
-		XCTAssertNil(exception)
+		let arrayLength = (try? arrayRet.length) ?? -1
 		XCTAssertEqual(3, arrayLength)
 		
-		guard let item1Ret = System_Array_GetValue_1(arrayRet,
-													 0,
-													 &exception),
-			  exception == nil else {
+		guard let item1RetAsString = try? arrayRet.getValue(0 as Int32)?.castTo(System_String.self).string() else {
 			XCTFail("System.Array.GetValue should not throw and return an instance")
 			
 			return
 		}
 		
-		let item1RetAsString = String(cDotNETString: item1Ret,
-									  destroyDotNETString: true)
-		
 		XCTAssertEqual(aString, item1RetAsString)
 		
-		guard let storedString = String(cDotNETString: Beyond_NET_Sample_IndexerTests_StoredString_Get(indexerTests,
-																														&exception),
-										destroyDotNETString: true),
-			  exception == nil else {
+		guard let storedString = try? indexerTests.storedString?.string() else {
 			XCTFail("IndexerTests.StoredString getter should not throw and return an instance")
 			
 			return
@@ -223,62 +131,33 @@ final class IndexerTestsTests: XCTestCase {
 		
 		XCTAssertEqual(aString, storedString)
 		
-		guard let item2Ret = System_Array_GetValue_1(arrayRet,
-													 1,
-													 &exception),
-			  exception == nil else {
+		guard let item2RetAsInt32 = try? arrayRet.getValue(1 as Int32)?.castToInt32() else {
 			XCTFail("System.Array.GetValue should not throw and return an instance")
 			
 			return
 		}
 		
-		defer { System_Object_Destroy(item2Ret) }
-		
-		let item2RetAsInt32 = DNObjectCastToInt32(item2Ret,
-												  &exception)
-		
-		XCTAssertNil(exception)
 		XCTAssertEqual(aNumber, item2RetAsInt32)
 		
-		let storedNumber = Beyond_NET_Sample_IndexerTests_StoredNumber_Get(indexerTests,
-																							&exception)
-		
-		XCTAssertNil(exception)
+		let storedNumber = (try? indexerTests.storedNumber) ?? -1
 		XCTAssertEqual(aNumber, storedNumber)
 		
-		guard let item3Ret = System_Array_GetValue_1(arrayRet,
-													 2,
-													 &exception),
-			  exception == nil else {
+		guard let item3Ret = try? arrayRet.getValue(2 as Int32)?.castTo(System_Guid.self) else {
 			XCTFail("System.Array.GetValue should not throw and return an instance")
 			
 			return
 		}
 		
-		defer { System_Object_Destroy(item3Ret) }
-		
-		let guidEqual = System_Object_Equals(aGuid,
-											 item3Ret,
-											 &exception)
-		
-		XCTAssertNil(exception)
+		let guidEqual = aGuid == item3Ret
 		XCTAssertTrue(guidEqual)
 		
-		guard let storedGuid = Beyond_NET_Sample_IndexerTests_StoredGuid_Get(indexerTests,
-																							  &exception),
-			  exception == nil else {
+		guard let storedGuid = try? indexerTests.storedGuid else {
 			XCTFail("IndexerTests.StoredGuid getter should not throw and return an instance")
 			
 			return
 		}
 		
-		defer { System_Guid_Destroy(storedGuid) }
-		
-		let storedGuidEqual = System_Object_Equals(aGuid,
-												   storedGuid,
-												   &exception)
-		   
-		XCTAssertNil(exception)
+		let storedGuidEqual = aGuid == storedGuid
 		XCTAssertTrue(storedGuidEqual)
 	}
 }

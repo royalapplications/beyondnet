@@ -1,8 +1,9 @@
 import XCTest
-import BeyondNETSampleSwift
 
-// TODO: Missing C Test
-final class StructTestTests_Swift: XCTestCase {
+import BeyondNETSampleSwift
+import BeyondDotNETSampleNative
+
+final class StructTestTests: XCTestCase {
 	@MainActor
 	override class func setUp() {
 		Self.sharedSetUp()

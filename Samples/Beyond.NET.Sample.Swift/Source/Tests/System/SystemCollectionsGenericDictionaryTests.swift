@@ -1,147 +1,102 @@
 import XCTest
+
 import BeyondNETSampleSwift
+import BeyondDotNETSampleNative
 
 final class SystemCollectionsGenericDictionaryTests: XCTestCase {
-	@MainActor
-	override class func setUp() {
-		Self.sharedSetUp()
-	}
-	
-	@MainActor
-	override class func tearDown() {
-		Self.sharedTearDown()
-	}
-	
-	func testCreate() {
-		var exception: System_Exception_t?
-		
-		let systemStringType = System_String_TypeOf()
-		defer { System_Type_Destroy(systemStringType) }
-		
-		let systemExceptionType = System_Exception_TypeOf()
-		defer { System_Type_Destroy(systemExceptionType) }
-		
-		guard let dictionary = System_Collections_Generic_Dictionary_A2_Create(systemStringType,
-																			   systemExceptionType,
-																			   &exception),
-			  exception == nil else {
-			XCTFail("System.Collections.Generic.Dictionary<System.String, System.Exception> ctor should not throw and return an instance")
-			
-			return
-		}
-		
-		defer { System_Collections_Generic_Dictionary_A2_Destroy(dictionary) }
-		
-		guard let dictionaryType = System_Object_GetType(dictionary,
-															&exception),
-			  exception == nil else {
-			XCTFail("System.Object.GetType should not throw and return an instance")
-			
-			return
-		}
-		
-		defer { System_Type_Destroy(dictionaryType) }
-		
-		guard let dictionaryTypeName = String(cDotNETString: System_Type_FullName_Get(dictionaryType,
-																					 &exception),
-										destroyDotNETString: true),
-			  exception == nil else {
-			XCTFail("System.Type.FullName getter should not throw and return an instance")
-			
-			return
-		}
-		
-		XCTAssertTrue(dictionaryTypeName.contains("System.Collections.Generic.Dictionary`2[[System.String"))
-		XCTAssertTrue(dictionaryTypeName.contains(",[System.Exception"))
-	}
-	
-	func testUse() {
-		var exception: System_Exception_t?
-
-		let systemStringType = System_String_TypeOf()
-		defer { System_Type_Destroy(systemStringType) }
-
-		let systemExceptionType = System_Exception_TypeOf()
-		defer { System_Type_Destroy(systemExceptionType) }
-
-		guard let dictionary = System_Collections_Generic_Dictionary_A2_Create(systemStringType,
-																			   systemExceptionType,
-																			   &exception),
-			  exception == nil else {
-			XCTFail("System.Collections.Generic.Dictionary<System.String, System.Exception> ctor should not throw and return an instance")
-
-			return
-		}
-
-		defer { System_Collections_Generic_Dictionary_A2_Destroy(dictionary) }
-
-		let exceptionMessage = "My Exception Message"
+    @MainActor
+    override class func setUp() {
+        Self.sharedSetUp()
+    }
+    
+    @MainActor
+    override class func tearDown() {
+        Self.sharedTearDown()
+    }
+    
+    func testCreate() {
+        let systemStringType = System_String.typeOf
+        let systemExceptionType = System_Exception.typeOf
         
-        let exceptionMessageDN = exceptionMessage.cDotNETString()
-        defer { System_String_Destroy(exceptionMessageDN) }
+        guard let dictionary = try? System_Collections_Generic_Dictionary_A2(systemStringType,
+                                                                             systemExceptionType) else {
+            XCTFail("System.Collections.Generic.Dictionary<System.String, System.Exception> ctor should not throw and return an instance")
+            
+            return
+        }
         
-        guard let exceptionValue = System_Exception_Create_1(exceptionMessageDN,
-                                                             &exception) else {
+        guard let dictionaryType = try? dictionary.getType() else {
+            XCTFail("System.Object.GetType should not throw and return an instance")
+            
+            return
+        }
+        
+        guard let dictionaryTypeName = try? dictionaryType.fullName?.string() else {
+            XCTFail("System.Type.FullName getter should not throw and return an instance")
+            
+            return
+        }
+        
+        XCTAssertTrue(dictionaryTypeName.contains("System.Collections.Generic.Dictionary`2[[System.String"))
+        XCTAssertTrue(dictionaryTypeName.contains(",[System.Exception"))
+    }
+    
+    func testUse() {
+        let systemStringType = System_String.typeOf
+        let systemExceptionType = System_Exception.typeOf
+        
+        guard let dictionary = try? System_Collections_Generic_Dictionary_A2(systemStringType,
+                                                                             systemExceptionType) else {
+            XCTFail("System.Collections.Generic.Dictionary<System.String, System.Exception> ctor should not throw and return an instance")
+
+            return
+        }
+
+        let exceptionMessage = "My Exception Message"
+        let exceptionMessageDN = exceptionMessage.dotNETString()
+        
+        guard let exceptionValue = try? System_Exception(exceptionMessageDN) else {
             XCTFail("System.Exception ctor should not throw and return an instance")
             
             return
         }
         
-        defer { System_Exception_Destroy(exceptionValue) }
-        
-        guard System_Collections_Generic_Dictionary_A2_TryAdd(dictionary,
-                                                              systemStringType,
-                                                              systemExceptionType,
-                                                              exceptionMessageDN,
-                                                              exceptionValue,
-                                                              &exception),
-              exception == nil else {
+        guard (try? dictionary.tryAdd(systemStringType,
+                                      systemExceptionType,
+                                      exceptionMessageDN,
+                                      exceptionValue)) ?? false else {
             XCTFail("System.Collections.Generic.Dictionary<System.String, System.Exception>.TryAdd should not throw and return true")
             
             return
         }
         
-        guard let emptyString = System_String_Empty_Get() else {
+        guard let emptyString = System_String.empty else {
             XCTFail("System.String.Empty should return an instance")
             
             return
         }
         
-        defer { System_String_Destroy(emptyString) }
-        
-        var valueForEmptyString: System_Object_t?
+        var valueForEmptyString: System_Object?
 
-        guard !System_Collections_Generic_Dictionary_A2_TryGetValue(dictionary,
-                                                                    systemStringType,
-                                                                    systemExceptionType,
-                                                                    emptyString,
-                                                                    &valueForEmptyString,
-                                                                    &exception),
-              exception == nil,
+        guard !((try? dictionary.tryGetValue(systemStringType,
+                                             systemExceptionType,
+                                             emptyString,
+                                             &valueForEmptyString)) ?? true),
               valueForEmptyString == nil else {
             XCTFail("System.Collections.Generic.Dictionary<System.String, System.Exception>.TryGetValue should not throw and return false")
 
             return
         }
 		
-		guard let valueRet = System_Collections_Generic_Dictionary_A2_Item_Get(dictionary,
-																			   systemStringType,
-																			   systemExceptionType,
-																			   exceptionMessageDN,
-																			   &exception),
-			  exception == nil else {
+        guard let valueRet = try? dictionary.item(systemStringType,
+                                                  systemExceptionType,
+                                                  exceptionMessageDN) else {
 			XCTFail("System.Collections.Generic.Dictionary<System.String, System.Exception>[] should not throw and return an instance")
-			
+
 			return
 		}
-		
-		defer { System_Object_Destroy(valueRet) }
 
-        let equal = System_Object_Equals(exceptionValue,
-                                         valueRet,
-                                         &exception)
-
-        XCTAssertNil(exception)
+        let equal = exceptionValue == valueRet
         XCTAssertTrue(equal)
-	}
+    }
 }

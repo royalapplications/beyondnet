@@ -1,22 +1,21 @@
 import XCTest
+
 import BeyondNETSampleSwift
+import BeyondDotNETSampleNative
 
 final class SystemVersionTests: XCTestCase {
-	@MainActor
-	override class func setUp() {
-		Self.sharedSetUp()
-	}
-	
-	@MainActor
-	override class func tearDown() {
-		Self.sharedTearDown()
-	}
-	
+    @MainActor
+    override class func setUp() {
+        Self.sharedSetUp()
+    }
+    
+    @MainActor
+    override class func tearDown() {
+        Self.sharedTearDown()
+    }
+    
     func testSystemVersionFromComponents() {
-        var exception: System_Exception_t?
-        
-        let systemVersionType = System_Version_TypeOf()
-        defer { System_Type_Destroy(systemVersionType) }
+        let systemVersionType = System_Version.typeOf
         
         let major: Int32    = 1
         let minor: Int32    = 2
@@ -25,66 +24,46 @@ final class SystemVersionTests: XCTestCase {
         
         let versionString = "\(major).\(minor).\(build).\(revision)"
         
-        guard let version = System_Version_Create(major,
-                                                  minor,
-                                                  build,
-                                                  revision,
-                                                  &exception),
-              exception == nil else {
+        guard let version = try? System_Version(major,
+                                                minor,
+                                                build,
+                                                revision) else {
             XCTFail("System.Version ctor should not throw and return an instance")
             
             return
         }
         
-        defer { System_Version_Destroy(version) }
-        
-        guard let versionFromComponentsType = System_Object_GetType(version,
-                                                                    &exception),
-              exception == nil else {
+        guard let versionFromComponentsType = try? version.getType() else {
             XCTFail("System.Object.GetType should not throw and return an instance")
             
             return
         }
         
-        defer { System_Type_Destroy(versionFromComponentsType) }
-        
-        guard System_Object_Equals(systemVersionType,
-                                   versionFromComponentsType,
-                                   &exception),
-              exception == nil else {
+        guard systemVersionType == versionFromComponentsType else {
             XCTFail("System.Object.Equals should not throw and return true")
             
             return
         }
         
-        let majorRet = System_Version_Major_Get(version,
-                                                &exception)
+        do {
+            let majorRet = try version.major
+            XCTAssertEqual(major, majorRet)
+            
+            let minorRet = try version.minor
+            XCTAssertEqual(minor, minorRet)
+            
+            let buildRet = try version.build
+            XCTAssertEqual(build, buildRet)
+            
+            let revisionRet = try version.revision
+            XCTAssertEqual(revision, revisionRet)
+        } catch {
+            XCTFail("None of the System.Version accessors should throw")
+            
+            return
+        }
         
-        XCTAssertNil(exception)
-        XCTAssertEqual(major, majorRet)
-        
-        let minorRet = System_Version_Minor_Get(version,
-                                                &exception)
-        
-        XCTAssertNil(exception)
-        XCTAssertEqual(minor, minorRet)
-        
-        let buildRet = System_Version_Build_Get(version,
-                                                &exception)
-        
-        XCTAssertNil(exception)
-        XCTAssertEqual(build, buildRet)
-        
-        let revisionRet = System_Version_Revision_Get(version,
-                                                      &exception)
-        
-        XCTAssertNil(exception)
-        XCTAssertEqual(revision, revisionRet)
-        
-        guard let versionStringRet = String(cDotNETString: System_Version_ToString(version,
-																				  &exception),
-											destroyDotNETString: true),
-              exception == nil else {
+        guard let versionStringRet = (try? version.toString())?.string() else {
             XCTFail("System.Version.ToString should not throw and return an instance of a C string")
             
             return
@@ -94,55 +73,39 @@ final class SystemVersionTests: XCTestCase {
     }
     
     func testSystemVersionFromString() {
-        var exception: System_Exception_t?
-        
         let major: Int32    = 123
         let minor: Int32    = 234
         let build: Int32    = 345
         let revision: Int32 = 456
         
         let versionString = "\(major).\(minor).\(build).\(revision)"
-		let versionStringDN = versionString.cDotNETString()
-		defer { System_String_Destroy(versionStringDN) }
+        let versionStringDN = versionString.dotNETString()
         
-		guard let version = System_Version_Create_3(versionStringDN,
-													&exception),
-			  exception == nil else {
-			XCTFail("System.Version ctor should not throw and return an instance")
-			
-			return
-		}
+        guard let version = try? System_Version(versionStringDN) else {
+            XCTFail("System.Version ctor should not throw and return an instance")
+            
+            return
+        }
         
-        defer { System_Version_Destroy(version) }
+        do {
+            let majorRet = try version.major
+            XCTAssertEqual(major, majorRet)
+            
+            let minorRet = try version.minor
+            XCTAssertEqual(minor, minorRet)
+            
+            let buildRet = try version.build
+            XCTAssertEqual(build, buildRet)
+            
+            let revisionRet = try version.revision
+            XCTAssertEqual(revision, revisionRet)
+        } catch {
+            XCTFail("None of the System.Version accessors should throw")
+            
+            return
+        }
         
-        let majorRet = System_Version_Major_Get(version,
-                                                &exception)
-        
-        XCTAssertNil(exception)
-        XCTAssertEqual(major, majorRet)
-        
-        let minorRet = System_Version_Minor_Get(version,
-                                                &exception)
-        
-        XCTAssertNil(exception)
-        XCTAssertEqual(minor, minorRet)
-        
-        let buildRet = System_Version_Build_Get(version,
-                                                &exception)
-        
-        XCTAssertNil(exception)
-        XCTAssertEqual(build, buildRet)
-        
-        let revisionRet = System_Version_Revision_Get(version,
-                                                      &exception)
-        
-        XCTAssertNil(exception)
-        XCTAssertEqual(revision, revisionRet)
-        
-        guard let versionStringRet = String(cDotNETString: System_Version_ToString(version,
-																				  &exception),
-											destroyDotNETString: true),
-              exception == nil else {
+        guard let versionStringRet = (try? version.toString())?.string() else {
             XCTFail("System.Version.ToString should not throw and return an instance of a C string")
             
             return
@@ -150,68 +113,52 @@ final class SystemVersionTests: XCTestCase {
         
         XCTAssertEqual(versionString, versionStringRet)
     }
-	
-	func testSystemVersionParse() {
-		var exception: System_Exception_t?
-		
-		let major: Int32    = 123
-		let minor: Int32    = 234
-		let build: Int32    = 345
-		let revision: Int32 = 456
-		
-		let versionString = "\(major).\(minor).\(build).\(revision)"
-		let versionStringDN = versionString.cDotNETString()
-		defer { System_String_Destroy(versionStringDN) }
-		
-		var version: System_Version_t?
-		
-		let parseSuccess = System_Version_TryParse(versionStringDN,
-												   &version,
-												   &exception)
-		
-		guard parseSuccess,
-			  let version,
-			  exception == nil else {
-			XCTFail("System.Version.TryParse should not throw, return true and return an instance as out parameter")
-			
-			return
-		}
-		
-		defer { System_Version_Destroy(version) }
-		
-		let majorRet = System_Version_Major_Get(version,
-												&exception)
-		
-		XCTAssertNil(exception)
-		XCTAssertEqual(major, majorRet)
-		
-		let minorRet = System_Version_Minor_Get(version,
-												&exception)
-		
-		XCTAssertNil(exception)
-		XCTAssertEqual(minor, minorRet)
-		
-		let buildRet = System_Version_Build_Get(version,
-												&exception)
-		
-		XCTAssertNil(exception)
-		XCTAssertEqual(build, buildRet)
-		
-		let revisionRet = System_Version_Revision_Get(version,
-													  &exception)
-		
-		XCTAssertNil(exception)
-		XCTAssertEqual(revision, revisionRet)
-		
-		guard let versionStringRet = String(cDotNETString: System_Version_ToString(version,
-																				  &exception),
-											destroyDotNETString: true),
-			  exception == nil else {
-			XCTFail("System.Version.ToString should not throw and return an instance of a C string")
-			
-			return
-		}
-		
-		XCTAssertEqual(versionString, versionStringRet)
-	}
+    
+    func testSystemVersionParse() {
+        let major: Int32    = 123
+        let minor: Int32    = 234
+        let build: Int32    = 345
+        let revision: Int32 = 456
+        
+        let versionString = "\(major).\(minor).\(build).\(revision)"
+        let versionStringDN = versionString.dotNETString()
+        
+        var version: System_Version?
+        
+        let parseSuccess = (try? System_Version.tryParse(versionStringDN,
+                                                         &version)) ?? false
+        
+        guard parseSuccess,
+              let version else {
+            XCTFail("System.Version.TryParse should not throw, return true and return an instance as out parameter")
+            
+            return
+        }
+        
+        do {
+            let majorRet = try version.major
+            XCTAssertEqual(major, majorRet)
+            
+            let minorRet = try version.minor
+            XCTAssertEqual(minor, minorRet)
+            
+            let buildRet = try version.build
+            XCTAssertEqual(build, buildRet)
+            
+            let revisionRet = try version.revision
+            XCTAssertEqual(revision, revisionRet)
+        } catch {
+            XCTFail("None of the System.Version accessors should throw")
+            
+            return
+        }
+        
+        guard let versionStringRet = (try? version.toString())?.string() else {
+            XCTFail("System.Version.ToString should not throw and return an instance of a C string")
+            
+            return
+        }
+        
+        XCTAssertEqual(versionString, versionStringRet)
+    }
 }

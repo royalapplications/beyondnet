@@ -1,258 +1,181 @@
 import XCTest
+
 import BeyondNETSampleSwift
+import BeyondDotNETSampleNative
 
 final class SystemStringTests: XCTestCase {
-	@MainActor
-	override class func setUp() {
-		Self.sharedSetUp()
-	}
-	
-	@MainActor
-	override class func tearDown() {
-		Self.sharedTearDown()
-	}
-	
+    @MainActor
+    override class func setUp() {
+        Self.sharedSetUp()
+    }
+    
+    @MainActor
+    override class func tearDown() {
+        Self.sharedTearDown()
+    }
+    
     func testString() {
-        var exception: System_Exception_t?
-        
-        guard let emptyStringDN = System_String_Empty_Get() else {
+        guard let emptyStringDN = System_String.empty else {
             XCTFail("System.String.Empty should return an empty string")
             
             return
         }
         
-        defer { System_String_Destroy(emptyStringDN) }
-        
-		guard let emptyString = String(cDotNETString: emptyStringDN) else {
-			XCTFail("Failed to convert string")
-			
-			return
-		}
-		
+        let emptyString = String(dotNETString: emptyStringDN)
         XCTAssertTrue(emptyString.isEmpty)
         
-        let isNullOrEmpty = System_String_IsNullOrEmpty(emptyStringDN,
-                                                        &exception)
-        
-        guard exception == nil else {
-            XCTFail("System.String.IsNullOrEmpty should not throw")
-            
-            return
-        }
-        
+        let isNullOrEmpty = (try? System_String.isNullOrEmpty(emptyStringDN)) ?? true
         XCTAssertTrue(isNullOrEmpty)
         
-        let isNullOrWhiteSpace = System_String_IsNullOrWhiteSpace(emptyStringDN,
-                                                                  &exception)
-        
-        guard exception == nil else {
-            XCTFail("System.String.IsNullOrWhiteSpace should not throw")
-            
-            return
-        }
-        
+        let isNullOrWhiteSpace = (try? System_String.isNullOrWhiteSpace(emptyStringDN)) ?? true
         XCTAssertTrue(isNullOrWhiteSpace)
         
         let nonEmptyString = "Hello World!"
-		let nonEmptyStringDN = nonEmptyString.cDotNETString()
-		
-		defer { System_String_Destroy(nonEmptyStringDN) }
+        let nonEmptyStringDN = nonEmptyString.dotNETString()
         
-        let isNonEmptyStringNullOrEmpty = System_String_IsNullOrEmpty(nonEmptyStringDN,
-																	  &exception)
+        let isNonEmptyStringNullOrEmpty = (try? System_String.isNullOrEmpty(nonEmptyStringDN)) ?? true
+        XCTAssertFalse(isNonEmptyStringNullOrEmpty)
         
-		XCTAssertNil(exception)
-		XCTAssertFalse(isNonEmptyStringNullOrEmpty)
-		
-		let stringForTrimmingDN = " \(nonEmptyString) ".cDotNETString()
-		
-		defer { System_String_Destroy(stringForTrimmingDN) }
-		
-		guard let trimmedString = String(cDotNETString: System_String_Trim(stringForTrimmingDN,
-																		  &exception),
-										 destroyDotNETString: true),
-			  exception == nil else {
-			XCTFail("System.String.Trim should not throw and return an instance")
-			
-			return
-		}
-		
-		XCTAssertEqual(nonEmptyString, trimmedString)
-		
-		let worldDN = "World".cDotNETString()
-		
-		defer { System_String_Destroy(worldDN) }
-		
-		let expectedIndexOfWorld: Int32 = 6
-		
-		let indexOfWorld = System_String_IndexOf_4(nonEmptyStringDN,
-												   worldDN,
-												   &exception)
-		
-		XCTAssertNil(exception)
-		XCTAssertEqual(expectedIndexOfWorld, indexOfWorld)
-		
-		let splitOptions: System_StringSplitOptions_t = [ .removeEmptyEntries, .trimEntries ]
-		
-		let blankDN = " ".cDotNETString()
-		
-		defer { System_String_Destroy(blankDN) }
-		
-		guard let split = System_String_Split_6(nonEmptyStringDN,
-												blankDN,
-												splitOptions,
-												&exception),
-			  exception == nil else {
-			XCTFail("System.String.Split should not throw and return an instance")
-			
-			return
-		}
-		
-		defer { System_Array_Destroy(split) }
-		
-		guard System_Array_Length_Get(split,
-									  &exception) == 2,
-			  exception == nil else {
-			XCTFail("System.Array.Length getter should not throw and return 2")
-			
-			return
-		}
+        let stringForTrimmingDN = " \(nonEmptyString) ".dotNETString()
+        
+        guard let trimmedString = try? stringForTrimmingDN.trim()?.string() else {
+            XCTFail("System.String.Trim should not throw and return an instance")
+            
+            return
+        }
+        
+        XCTAssertEqual(nonEmptyString, trimmedString)
+        
+        let worldDN = "World".dotNETString()
+        let expectedIndexOfWorld: Int32 = 6
+        
+        let indexOfWorld = (try? nonEmptyStringDN.indexOf(worldDN)) ?? -1
+        XCTAssertEqual(expectedIndexOfWorld, indexOfWorld)
+        
+        let splitOptions: System_StringSplitOptions = [ .removeEmptyEntries, .trimEntries ]
+        
+        let blankDN = " ".dotNETString()
+        
+        guard let split = try? nonEmptyStringDN.split(blankDN, splitOptions) else {
+            XCTFail("System.String.Split should not throw and return an instance")
+            
+            return
+        }
+        
+        guard (try? split.length) ?? 0 == 2 else {
+            XCTFail("System.Array.Length getter should not throw and return 2")
+            
+            return
+        }
     }
-	
-	func testStringReplace() {
-		var exception: System_Exception_t?
-		
-		let hello = "Hello"
-		let otherPart = " World 😀"
-		let originalString = "\(hello)\(otherPart)"
-		let emptyString = ""
-		
-		let expectedString = originalString.replacingOccurrences(of: hello,
-																 with: emptyString)
-		
-		let originalStringDN = originalString.cDotNETString()
-		defer { System_String_Destroy(originalStringDN) }
-		
-		let helloDN = hello.cDotNETString()
-		defer { System_String_Destroy(helloDN) }
-		
-		let emptyStringDN = emptyString.cDotNETString()
-		defer { System_String_Destroy(emptyStringDN) }
-		
-		guard let replacedString = String(cDotNETString: System_String_Replace_3(originalStringDN,
-																				helloDN,
-																				emptyStringDN,
-																				&exception),
-										  destroyDotNETString: true),
-			  exception == nil else {
-			XCTFail("System.String.Replace should not throw and return an instance")
-			
-			return
-		}
-		
-		XCTAssertEqual(expectedString, replacedString)
-	}
-	
-	func testStringSubstring() {
-		var exception: System_Exception_t?
-		
-		let string = "Hello World 😀"
-		let needle = "World"
-		
-		let stringDN = string.cDotNETString()
-		defer { System_String_Destroy(stringDN) }
-		
-		let needleDN = needle.cDotNETString()
-		defer { System_String_Destroy(needleDN) }
-		
-		let expectedIndex: Int32 = 6
-		
-		let index = System_String_IndexOf_4(stringDN,
-											needleDN,
-											&exception)
-		
-		XCTAssertNil(exception)
-		XCTAssertEqual(expectedIndex, index)
-	}
-	
-	func testStringSplitAndJoin() {
-		var exception: System_Exception_t?
-		
-		let components = [
-			"1. First",
-			" 2. Second",
-			"",
-			"3. Third "
-		]
-		
-		var cleanedComponents = [String]()
-		
-		for component in components {
-			let trimmedComponent = component.trimmingCharacters(in: .whitespacesAndNewlines)
-			
-			guard !trimmedComponent.isEmpty else {
-				continue
-			}
-			
-			cleanedComponents.append(trimmedComponent)
-		}
-		
-		let separator = ";"
-		let separatorDN = separator.cDotNETString()
-		defer { System_String_Destroy(separatorDN) }
-		
-		let joined = components.joined(separator: separator)
-		let joinedDN = joined.cDotNETString()
-		defer { System_String_Destroy(joinedDN) }
-		
-		let cleanedJoined = cleanedComponents.joined(separator: separator)
-		
-		let splitOptions: System_StringSplitOptions_t = [ .removeEmptyEntries, .trimEntries ]
-		
-		guard let split = System_String_Split_6(joinedDN,
-												separatorDN,
-												splitOptions,
-												&exception),
-			  exception == nil else {
-			XCTFail("System.String.Split should not throw and return an instance")
-			
-			return
-		}
-		
-		defer { System_Array_Destroy(split) }
-		
-		let length = System_Array_Length_Get(split,
-											 &exception)
-		
-		XCTAssertNil(exception)
-		XCTAssertEqual(cleanedComponents.count, .init(length))
-		
-		for (idx, component) in cleanedComponents.enumerated() {
-			guard let componentRetObj = System_Array_GetValue_1(split,
-																.init(idx),
-																&exception),
-				  exception == nil else {
-				XCTFail("System.Array.GetValue should not throw and return an instance")
-				
-				return
-			}
-			
-			let componentRet = String(cDotNETString: componentRetObj,
-									  destroyDotNETString: true)
-			
-			XCTAssertEqual(component, componentRet)
-		}
-		
-		guard let joinedRet = String(cDotNETString: System_String_Join_1(separatorDN,
-																		split,
-																		&exception),
-									 destroyDotNETString: true),
-			  exception == nil else {
-			XCTFail("System.String.Join should not throw and return an instance")
-			
-			return
-		}
-		
-		XCTAssertEqual(cleanedJoined, joinedRet)
-	}
+    
+    func testStringReplace() {
+        let hello = "Hello"
+        let otherPart = " World 😀"
+        let originalString = "\(hello)\(otherPart)"
+        let emptyString = ""
+        
+        let expectedString = originalString.replacingOccurrences(of: hello,
+                                                                 with: emptyString)
+        
+        let originalStringDN = originalString.dotNETString()
+        let helloDN = hello.dotNETString()
+        let emptyStringDN = emptyString.dotNETString()
+        
+        
+        
+        guard let replacedString = try? originalStringDN.replace(helloDN, emptyStringDN)?.string() else {
+            XCTFail("System.String.Replace should not throw and return an instance")
+            
+            return
+        }
+        
+        XCTAssertEqual(expectedString, replacedString)
+    }
+    
+    func testStringSubstring() {
+        let string = "Hello World 😀"
+        let needle = "World"
+        
+        let stringDN = string.dotNETString()
+        let needleDN = needle.dotNETString()
+        
+        let expectedIndex: Int32 = 6
+        
+        let index = (try? stringDN.indexOf(needleDN)) ?? -1
+        
+        XCTAssertEqual(expectedIndex, index)
+    }
+    
+    func testStringSplitAndJoin() {
+        let components = [
+            "1. First",
+            " 2. Second",
+            "",
+            "3. Third "
+        ]
+        
+        var cleanedComponents = [String]()
+        
+        for component in components {
+            let trimmedComponent = component.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            guard !trimmedComponent.isEmpty else {
+                continue
+            }
+            
+            cleanedComponents.append(trimmedComponent)
+        }
+        
+        let separator = ";"
+        let separatorDN = separator.dotNETString()
+        
+        let joined = components.joined(separator: separator)
+        let joinedDN = joined.dotNETString()
+        
+        let cleanedJoined = cleanedComponents.joined(separator: separator)
+        
+        let splitOptions: System_StringSplitOptions = [ .removeEmptyEntries, .trimEntries ]
+        
+        guard let split = try? joinedDN.split(separatorDN, splitOptions) else {
+            XCTFail("System.String.Split should not throw and return an instance")
+            
+            return
+        }
+        
+        let length = (try? split.length) ?? -1
+        
+        XCTAssertEqual(cleanedComponents.count, .init(length))
+        
+        for (idx, component) in cleanedComponents.enumerated() {
+            guard let componentRetObj = try? split.getValue(Int32(idx)) else {
+                XCTFail("System.Array.GetValue should not throw and return an instance")
+                
+                return
+            }
+            
+            let componentRetDN: System_String
+            
+            do {
+                componentRetDN = try componentRetObj.castTo()
+            } catch {
+                XCTFail("castTo should not throw")
+                
+                return
+            }
+            
+            let componentRet = componentRetDN.string()
+
+            XCTAssertEqual(component, componentRet)
+        }
+        
+        guard let joinedRet = try? System_String.join(separatorDN,
+                                                      split)?.string() else {
+            XCTFail("System.String.Join should not throw and return an instance")
+            
+            return
+        }
+        
+        XCTAssertEqual(cleanedJoined, joinedRet)
+    }
 }

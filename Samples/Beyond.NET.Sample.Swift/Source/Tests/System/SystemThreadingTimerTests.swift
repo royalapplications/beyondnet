@@ -1,7 +1,9 @@
 import XCTest
-import BeyondNETSampleSwift
 
-final class SystemThreadingTimerTests_Swift: XCTestCase {
+import BeyondNETSampleSwift
+import BeyondDotNETSampleNative
+
+final class SystemThreadingTimerTests: XCTestCase {
 	@MainActor
 	override class func setUp() {
 		Self.sharedSetUp()

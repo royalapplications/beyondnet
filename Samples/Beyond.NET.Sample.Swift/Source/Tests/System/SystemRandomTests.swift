@@ -1,42 +1,43 @@
 import XCTest
+
 import BeyondNETSampleSwift
+import BeyondDotNETSampleNative
 
 final class SystemRandomTests: XCTestCase {
-	@MainActor
-	override class func setUp() {
-		Self.sharedSetUp()
-	}
-	
-	@MainActor
-	override class func tearDown() {
-		Self.sharedTearDown()
-	}
-	
-	func testRandom() {
-		var exception: System_Exception_t?
-		
-		guard let random = System_Random_Create(&exception),
-			  exception == nil else {
-			XCTFail("System.Random ctor should not throw and return an instance")
-			
-			return
-		}
-		
-		defer { System_Random_Destroy(random) }
-		
-		let minValue: Int32 = 5
-		let maxValue: Int32 = 15
-		
-		for _ in 0..<200 {
-			let value = System_Random_Next_2(random,
-											 minValue,
-											 maxValue,
-											 &exception)
-			
-			XCTAssertNil(exception)
-			
-			XCTAssertGreaterThanOrEqual(value, minValue)
-			XCTAssertLessThan(value, maxValue)
-		}
-	}
+    @MainActor
+    override class func setUp() {
+        Self.sharedSetUp()
+    }
+    
+    @MainActor
+    override class func tearDown() {
+        Self.sharedTearDown()
+    }
+    
+    func testRandom() {
+        guard let random = try? System_Random() else {
+            XCTFail("System.Random ctor should not throw and return an instance")
+            
+            return
+        }
+        
+        let minValue: Int32 = 5
+        let maxValue: Int32 = 15
+        
+        for _ in 0..<200 {
+            let value: Int32
+            
+            do {
+                value = try random.next(minValue,
+                                        maxValue)
+            } catch {
+                XCTFail("System.Random.Next should not throw")
+                
+                return
+            }
+            
+            XCTAssertGreaterThanOrEqual(value, minValue)
+            XCTAssertLessThan(value, maxValue)
+        }
+    }
 }

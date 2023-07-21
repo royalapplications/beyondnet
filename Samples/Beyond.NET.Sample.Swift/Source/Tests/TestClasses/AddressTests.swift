@@ -1,5 +1,7 @@
 import XCTest
+
 import BeyondNETSampleSwift
+import BeyondDotNETSampleNative
 
 final class AddressTests: XCTestCase {
 	@MainActor
@@ -13,31 +15,20 @@ final class AddressTests: XCTestCase {
 	}
 	
 	func testAddress() {
-		var exception: System_Exception_t?
-		
 		let street = "Schwedenplatz"
-		let streetDN = street.cDotNETString()
-		defer { System_String_Destroy(streetDN) }
+		let streetDN = street.dotNETString()
 		
 		let city = "Vienna"
-		let cityDN = city.cDotNETString()
-		defer { System_String_Destroy(cityDN) }
+		let cityDN = city.dotNETString()
 		
-		guard let address = Beyond_NET_Sample_Address_Create(streetDN,
-																			  cityDN,
-																			  &exception),
-			  exception == nil else {
+		guard let address = try? Beyond_NET_Sample_Address(streetDN,
+																			cityDN) else {
 			XCTFail("Address is nil but should not")
 			
 			return
 		}
 		
-		defer { Beyond_NET_Sample_Address_Destroy(address) }
-		
-		guard let retrievedStreet = String(cDotNETString: Beyond_NET_Sample_Address_Street_Get(address,
-																											   &exception),
-										   destroyDotNETString: true),
-			  exception == nil else {
+		guard let retrievedStreet = try? address.street?.string() else {
 			XCTFail("Address.Street getter should not throw and return an instance")
 			
 			return
@@ -45,24 +36,15 @@ final class AddressTests: XCTestCase {
 		
 		XCTAssertEqual(street, retrievedStreet)
 		
-		let addressType = System_Object_GetType(address,
-												&exception)
-		
-		guard let addressType,
-			  exception == nil else {
+		guard let addressType = try? address.getType() else {
 			XCTFail("System.Object.GetType should not throw and return an instance")
 			
 			return
 		}
 		
-		defer { System_Type_Destroy(addressType) }
-		
 		let expectedAddressTypeFullName = "Beyond.NET.Sample.Address"
 		
-		guard let actualAddressFullTypeName = String(cDotNETString: System_Type_FullName_Get(addressType,
-																							&exception),
-													 destroyDotNETString: true),
-			  exception == nil else {
+		guard let actualAddressFullTypeName = try? addressType.fullName?.string() else {
 			XCTFail("System.Type.FullName getter should not throw and return an instance")
 			
 			return
@@ -72,57 +54,28 @@ final class AddressTests: XCTestCase {
 	}
 	
 	func testAddressMover() {
-		var exception: System_Exception_t?
-		
 		let originalStreet = "Schwedenplatz"
-		let originalStreetDN = originalStreet.cDotNETString()
-		defer { System_String_Destroy(originalStreetDN) }
+		let originalStreetDN = originalStreet.dotNETString()
 		
 		let newStreet = "Stephansplatz"
-		let newStreetDN = newStreet.cDotNETString()
-		defer { System_String_Destroy(newStreetDN) }
+		let newStreetDN = newStreet.dotNETString()
 
 		let originalCity = "Vienna"
-		let originalCityDN = originalCity.cDotNETString()
-		defer { System_String_Destroy(originalCityDN) }
+		let originalCityDN = originalCity.dotNETString()
 		
 		let newCity = "Wien"
-		let newCityDN = newCity.cDotNETString()
-		defer { System_String_Destroy(newCityDN) }
+		let newCityDN = newCity.dotNETString()
 
-		guard let originalAddress = Beyond_NET_Sample_Address_Create(originalStreetDN,
-																					  originalCityDN,
-																					  &exception),
-			  exception == nil else {
+		guard let originalAddress = try? Beyond_NET_Sample_Address(originalStreetDN,
+																					originalCityDN) else {
 			XCTFail("Address is nil but should not")
 
 			return
 		}
 
-		let moverFunc: Beyond_NET_Sample_MoveDelegate_CFunction_t = { context, newStreetInnerDN, newCityInnerDN in
-			guard let context else {
-				XCTFail("Context is nil but should not")
-
-				return nil
-			}
-
-			var innerException: System_Exception_t?
-
-			guard let originalStreetInner = String(cDotNETString: Beyond_NET_Sample_Address_Street_Get(context,
-																													   &innerException),
-												   destroyDotNETString: true),
-				  innerException == nil else {
-				XCTFail("Original Street is nil but should not")
-
-				return nil
-			}
-
-			XCTAssertEqual("Schwedenplatz", originalStreetInner)
-
-			guard let newAddress = Beyond_NET_Sample_Address_Create(newStreetInnerDN,
-																					 newCityInnerDN,
-																					 &innerException),
-				  innerException == nil else {
+		let moverFunc: Beyond_NET_Sample_MoveDelegate.ClosureType = { newStreetInnerDN, newCityInnerDN in
+			guard let newAddress = try? Beyond_NET_Sample_Address(newStreetInnerDN,
+																				   newCityInnerDN) else {
 				XCTFail("Address ctor should not throw and return an instance")
 				
 				return nil
@@ -131,35 +84,21 @@ final class AddressTests: XCTestCase {
 			return newAddress
 		}
 
-		let moverDelegate = Beyond_NET_Sample_MoveDelegate_Create(originalAddress,
-																				   moverFunc,
-																				   nil)
-
-		guard let moverDelegate else {
+		guard let moverDelegate = Beyond_NET_Sample_MoveDelegate(moverFunc) else {
 			XCTFail("Delegate should not be nil")
 
 			return
 		}
 
-		defer { Beyond_NET_Sample_MoveDelegate_Destroy(moverDelegate) }
-
-		guard let newAddress = Beyond_NET_Sample_Address_Move(originalAddress,
-																			   moverDelegate,
-																			   newStreetDN,
-																			   newCityDN,
-																			   &exception),
-			  exception == nil else {
+		guard let newAddress = try? originalAddress.move(moverDelegate,
+														 newStreetDN,
+														 newCityDN) else {
 			XCTFail("Address.Move should not throw and return an instance")
 
 			return
 		}
 		
-		defer { Beyond_NET_Sample_Address_Destroy(newAddress) }
-
-		guard let retrievedNewStreet = String(cDotNETString: Beyond_NET_Sample_Address_Street_Get(newAddress,
-																												  &exception),
-											  destroyDotNETString: true),
-			  exception == nil else {
+		guard let retrievedNewStreet = try? newAddress.street?.string() else {
 			XCTFail("Address.Street getter should not throw and return an instance")
 			
 			return
@@ -167,10 +106,7 @@ final class AddressTests: XCTestCase {
 		
 		XCTAssertEqual(newStreet, retrievedNewStreet)
 
-		guard let retrievedNewCity = String(cDotNETString: Beyond_NET_Sample_Address_City_Get(newAddress,
-																											  &exception),
-											destroyDotNETString: true),
-			  exception == nil else {
+		guard let retrievedNewCity = try? newAddress.city?.string() else {
 			XCTFail("Address.City getter should not throw and return an instance")
 
 			return

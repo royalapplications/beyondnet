@@ -1,8 +1,9 @@
 import XCTest
-import BeyondNETSampleSwift
 
-// TODO: Missing C Test
-final class SystemUriTests_Swift: XCTestCase {
+import BeyondNETSampleSwift
+import BeyondDotNETSampleNative
+
+final class SystemUriTests: XCTestCase {
 	@MainActor
 	override class func setUp() {
 		Self.sharedSetUp()

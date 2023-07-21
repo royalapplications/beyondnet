@@ -1,5 +1,7 @@
 import XCTest
+
 import BeyondNETSampleSwift
+import BeyondDotNETSampleNative
 
 final class TransformerTests: XCTestCase {
     @MainActor
@@ -12,28 +14,36 @@ final class TransformerTests: XCTestCase {
         Self.sharedTearDown()
     }
     
-    func testStringTransformer() {
-        var exception: System_Exception_t?
+    /* func testStringTransformerAsInDocs() {
+        // Create an input string and convert it to a .NET System.String
+        let inputString = "Hello World".dotNETString()
         
+        // Call Beyond.NET.Sample.Transformer.transformString by:
+        // - Providing the input string as the first argument
+        // - Initializing an instance of Beyond_NET_Sample_Transformer_StringTransformerDelegate by passing it a closure that matches the .NET delegate as its sole parameter
+        let outputString = try! Beyond.NET.Sample.Transformer.transformString(inputString, .init({ stringToTransform in
+            // Take the string that should be transformed, call System.String.ToUpper on it and return it
+            return try! stringToTransform!.toUpper()
+        }))!.string() // Convert the returned System.String to a Swift String
+        
+        // Prints "HELLO WORLD!"
+        print(outputString)
+    } */
+    
+    func testStringTransformer() {
         guard let uppercaser = createUppercaser() else {
             XCTFail("Failed to create uppercaser")
             
             return
         }
         
-        defer { Beyond_NET_Sample_Transformer_StringTransformerDelegate_Destroy(uppercaser) }
-        
         let inputString = "Hello"
-        let inputStringDN = inputString.cDotNETString()
-        defer { System_String_Destroy(inputStringDN) }
+        let inputStringDN = inputString.dotNETString()
         
         let expectedOutputString = inputString.uppercased()
         
-        guard let outputString = String(cDotNETString: Beyond_NET_Sample_Transformer_TransformString(inputStringDN,
-                                                                                                     uppercaser,
-                                                                                                     &exception),
-                                        destroyDotNETString: true),
-              exception == nil else {
+        guard let outputString = try? Beyond_NET_Sample_Transformer.transformString(inputStringDN,
+                                                                                    uppercaser)?.string() else {
             XCTFail("Transformer.TransformString should not throw and return an instance of a c string")
             
             return
@@ -43,15 +53,11 @@ final class TransformerTests: XCTestCase {
     }
     
     func testStringGetterAndTransformer() {
-        var exception: System_Exception_t?
-        
         guard let fixedStringProvider = createFixedStringProvider() else {
             XCTFail("Failed to create random string provider")
             
             return
         }
-        
-        defer { Beyond_NET_Sample_Transformer_StringGetterDelegate_Destroy(fixedStringProvider) }
         
         guard let uppercaser = createUppercaser() else {
             XCTFail("Failed to create uppercaser")
@@ -59,13 +65,8 @@ final class TransformerTests: XCTestCase {
             return
         }
         
-        defer { Beyond_NET_Sample_Transformer_StringTransformerDelegate_Destroy(uppercaser) }
-        
-        guard let outputString = String(cDotNETString: Beyond_NET_Sample_Transformer_GetAndTransformString(fixedStringProvider,
-                                                                                                           uppercaser,
-                                                                                                           &exception),
-                                        destroyDotNETString: true),
-              exception == nil else {
+        guard let outputString = try? Beyond_NET_Sample_Transformer.getAndTransformString(fixedStringProvider,
+                                                                                          uppercaser)?.string() else {
             XCTFail("Transformer.GetAndTransformString should not throw and return an instance")
             
             return
@@ -75,65 +76,51 @@ final class TransformerTests: XCTestCase {
     }
     
     func testDoublesTransformer() {
-        var exception: System_Exception_t?
-        
-        let multiplier: Beyond_NET_Sample_Transformer_DoublesTransformerDelegate_CFunction_t = { _, number1, number2 in
+        let multiplier: Beyond_NET_Sample_Transformer_DoublesTransformerDelegate.ClosureType = { number1, number2 in
             let result = number1 * number2
             
             return result
         }
         
-        guard let doublesTransformerDelegate = Beyond_NET_Sample_Transformer_DoublesTransformerDelegate_Create(nil,
-                                                                                                               multiplier,
-                                                                                                               nil) else {
+        guard let doublesTransformerDelegate = Beyond_NET_Sample_Transformer_DoublesTransformerDelegate(multiplier) else {
             XCTFail("DoublesTransformerDelegate ctor should return an instance")
             
             return
         }
-        
-        defer { Beyond_NET_Sample_Transformer_DoublesTransformerDelegate_Destroy(doublesTransformerDelegate) }
         
         let inputNumber1: Double = 2.5
         let inputNumber2: Double = 3.5
         
         let expectedResult = inputNumber1 * inputNumber2
         
-        let result = Beyond_NET_Sample_Transformer_TransformDoubles(inputNumber1,
-                                                                    inputNumber2,
-                                                                    doublesTransformerDelegate,
-                                                                    &exception)
-        
-        XCTAssertNil(exception)
-        
-        XCTAssertEqual(expectedResult, result)
+        do {
+            let result = try Beyond_NET_Sample_Transformer.transformDoubles(inputNumber1,
+                                                                            inputNumber2,
+                                                                            doublesTransformerDelegate)
+            
+            XCTAssertEqual(expectedResult, result)
+        } catch {
+            XCTFail("Should not throw")
+            
+            return
+        }
     }
     
     func testUppercaserThatActuallyLowercases() {
-        var exception: System_Exception_t?
-        
         guard let lowercaser = createLowercaser() else {
             XCTFail("Failed to create lowercaser")
             
             return
         }
         
-        defer { Beyond_NET_Sample_Transformer_StringTransformerDelegate_Destroy(lowercaser) }
-        
-        Beyond_NET_Sample_Transformer_BuiltInTransformers_UppercaseStringTransformer_Set(lowercaser,
-                                                                                         &exception)
-        
-        XCTAssertNil(exception)
+        XCTAssertNoThrow(try Beyond_NET_Sample_Transformer_BuiltInTransformers.uppercaseStringTransformer_set(lowercaser))
         
         let inputString = "Hello"
-        let inputStringDN = inputString.cDotNETString()
-        defer { System_String_Destroy(inputStringDN) }
+        let inputStringDN = inputString.dotNETString()
         
         let expectedOutputString = inputString.lowercased()
         
-        guard let outputString = String(cDotNETString: Beyond_NET_Sample_Transformer_UppercaseString(inputStringDN,
-                                                                                                     &exception),
-                                        destroyDotNETString: true),
-              exception == nil else {
+        guard let outputString = try? Beyond_NET_Sample_Transformer.uppercaseString(inputStringDN)?.string() else {
             XCTFail("Transformer.UppercaseString should not throw and return an instance of a c string")
             
             return
@@ -144,17 +131,15 @@ final class TransformerTests: XCTestCase {
 }
 
 private extension TransformerTests {
-    func createFixedStringProvider() -> Beyond_NET_Sample_Transformer_StringGetterDelegate_t? {
-        let fixedStringProvider: Beyond_NET_Sample_Transformer_StringGetterDelegate_CFunction_t = { _ in
+    func createFixedStringProvider() -> Beyond_NET_Sample_Transformer_StringGetterDelegate? {
+        let fixedStringProvider: Beyond_NET_Sample_Transformer_StringGetterDelegate.ClosureType = {
             let outputString = "Fixed String"
-            let outputStringDN = outputString.cDotNETString()
+            let outputStringDN = outputString.dotNETString()
             
             return outputStringDN
         }
         
-        guard let stringGetterDelegate = Beyond_NET_Sample_Transformer_StringGetterDelegate_Create(nil,
-                                                                                                   fixedStringProvider,
-                                                                                                   nil) else {
+        guard let stringGetterDelegate = Beyond_NET_Sample_Transformer_StringGetterDelegate(fixedStringProvider) else {
             XCTFail("StringGetterDelegate ctor should return an instance")
             
             return nil
@@ -163,28 +148,19 @@ private extension TransformerTests {
         return stringGetterDelegate
     }
     
-    func createUppercaser() -> Beyond_NET_Sample_Transformer_StringTransformerDelegate_t? {
-        let caser: Beyond_NET_Sample_Transformer_StringTransformerDelegate_CFunction_t = { innerContext, inputStringDN in
+    func createUppercaser() -> Beyond_NET_Sample_Transformer_StringTransformerDelegate? {
+        let caser: Beyond_NET_Sample_Transformer_StringTransformerDelegate.ClosureType = { inputStringDN in
             guard let inputStringDN else { return nil }
             
-            // We need to release any reference types that are given to us through the delegate
-            defer { System_String_Destroy(inputStringDN) }
-            
-            guard let inputString = String(cDotNETString: inputStringDN) else {
-                XCTFail("Failed to convert string")
-                
-                return nil
-            }
+            let inputString = inputStringDN.string()
             
             let outputString = inputString.uppercased()
-            let outputStringDN = outputString.cDotNETString()
+            let outputStringDN = outputString.dotNETString()
             
             return outputStringDN
         }
         
-        guard let stringTransformerDelegate = Beyond_NET_Sample_Transformer_StringTransformerDelegate_Create(nil,
-                                                                                                             caser,
-                                                                                                             nil) else {
+        guard let stringTransformerDelegate = Beyond_NET_Sample_Transformer_StringTransformerDelegate(caser) else {
             XCTFail("StringTransformerDelegate ctor should return an instance")
             
             return nil
@@ -193,28 +169,19 @@ private extension TransformerTests {
         return stringTransformerDelegate
     }
     
-    func createLowercaser() -> Beyond_NET_Sample_Transformer_StringTransformerDelegate_t? {
-        let caser: Beyond_NET_Sample_Transformer_StringTransformerDelegate_CFunction_t = { innerContext, inputStringDN in
+    func createLowercaser() -> Beyond_NET_Sample_Transformer_StringTransformerDelegate? {
+        let caser: Beyond_NET_Sample_Transformer_StringTransformerDelegate.ClosureType = { inputStringDN in
             guard let inputStringDN else { return nil }
             
-            // We need to release any reference types that are given to us through the delegate
-            defer { System_String_Destroy(inputStringDN) }
-            
-            guard let inputString = String(cDotNETString: inputStringDN) else {
-                XCTFail("Failed to convert string")
-                
-                return nil
-            }
+            let inputString = inputStringDN.string()
             
             let outputString = inputString.lowercased()
-            let outputStringDN = outputString.cDotNETString()
+            let outputStringDN = outputString.dotNETString()
             
             return outputStringDN
         }
         
-        guard let stringTransformerDelegate = Beyond_NET_Sample_Transformer_StringTransformerDelegate_Create(nil,
-                                                                                                             caser,
-                                                                                                             nil) else {
+        guard let stringTransformerDelegate = Beyond_NET_Sample_Transformer_StringTransformerDelegate(caser) else {
             XCTFail("StringTransformerDelegate ctor should return an instance")
             
             return nil

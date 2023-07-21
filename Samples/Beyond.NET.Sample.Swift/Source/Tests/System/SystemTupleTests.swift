@@ -1,5 +1,7 @@
 import XCTest
+
 import BeyondNETSampleSwift
+import BeyondDotNETSampleNative
 
 final class SystemTupleTests: XCTestCase {
     @MainActor
@@ -13,38 +15,67 @@ final class SystemTupleTests: XCTestCase {
     }
     
     func testTupleA1() {
-        var exception: System_Exception_t?
-
-        let systemStringType = System_String_TypeOf()
-        defer { System_Type_Destroy(systemStringType) }
-
+        let systemStringType = System_String.typeOf
+        
         let string = "Hello World"
-        let stringDN = string.cDotNETString()
-        defer { System_String_Destroy(stringDN) }
+        let stringDN = string.dotNETString()
 
-        guard let tupleOfString = System_Tuple_A1_Create(systemStringType,
-                                                         stringDN,
-                                                         &exception),
-              exception == nil else {
+        guard let tupleOfString = try? System_Tuple_A1(systemStringType,
+                                                       stringDN) else {
             XCTFail("System.Tuple<System.String> ctor should not throw and return an instance")
 
             return
         }
 
-        defer { System_Tuple_A1_Destroy(tupleOfString) }
-
-        guard let stringRetDN = System_Tuple_A1_Item1_Get(tupleOfString,
-                                                          systemStringType,
-                                                          &exception),
-              exception == nil else {
+        guard let stringRetDN = try? tupleOfString.item1(systemStringType)?.castAs(System_String.self) else {
             XCTFail("System.Tuple<System.String>.Item1 getter should not throw and return an instance")
 
             return
         }
 
-        let stringRet = String(cDotNETString: stringRetDN,
-                               destroyDotNETString: true)
-
+        let stringRet = stringRetDN.string()
         XCTAssertEqual(string, stringRet)
+    }
+    
+    func testTupleA2() {
+        let systemStringType = System_String.typeOf
+        let systemExceptionType = System_Exception.typeOf
+        
+        let string = "The Exception Message"
+        let stringDN = string.dotNETString()
+        
+        guard let exception = try? System_Exception(stringDN) else {
+            XCTFail("System.Exception ctor should not throw and return an instance")
+            
+            return
+        }
+
+        guard let tupleOfStringAndException = try? System_Tuple_A2(systemStringType,
+                                                                   systemExceptionType,
+                                                                   stringDN,
+                                                                   exception) else {
+            XCTFail("System.Tuple<System.String, System.Exception> ctor should not throw and return an instance")
+
+            return
+        }
+
+        guard let stringRetDN = try? tupleOfStringAndException.item1(systemStringType,
+                                                                     systemExceptionType)?.castAs(System_String.self) else {
+            XCTFail("System.Tuple<System.String, System.Exception>.Item1 getter should not throw and return an instance")
+
+            return
+        }
+
+        let stringRet = stringRetDN.string()
+        XCTAssertEqual(string, stringRet)
+        
+        guard let exceptionRet = try? tupleOfStringAndException.item2(systemStringType,
+                                                                      systemExceptionType)?.castAs(System_Exception.self) else {
+            XCTFail("System.Tuple<System.String, System.Exception>.Item2 getter should not throw and return an instance")
+
+            return
+        }
+
+        XCTAssertTrue(exception == exceptionRet)
     }
 }
