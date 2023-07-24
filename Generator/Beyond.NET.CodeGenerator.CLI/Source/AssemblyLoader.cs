@@ -4,9 +4,29 @@ using Beyond.NET.Core;
 
 namespace Beyond.NET.CodeGenerator.CLI;
 
+internal class AssemblyResolvedEventArgs: EventArgs
+{
+    internal Assembly Assembly { get; }
+    internal string AssemblyPath { get; }
+
+    internal AssemblyResolvedEventArgs(
+        Assembly assembly,
+        string assemblyPath
+    )
+    {
+        Assembly = assembly ?? throw new ArgumentNullException(nameof(assembly));
+        
+        AssemblyPath = !string.IsNullOrEmpty(assemblyPath) 
+            ? assemblyPath
+            : throw new ArgumentOutOfRangeException(nameof(assemblyPath));
+    }
+}
+
 internal class AssemblyLoader: IDisposable
 {
     private readonly List<string> m_searchPaths = new();
+
+    internal event EventHandler<AssemblyResolvedEventArgs>? AssemblyResolved;
 
     internal AssemblyLoader() : this(Array.Empty<string>()) { }
     
@@ -79,6 +99,11 @@ internal class AssemblyLoader: IDisposable
 
                 try {
                     Assembly assembly = Assembly.LoadFrom(potentialAssemblyPath);
+                    
+                    AssemblyResolved?.Invoke(this, new(
+                        assembly,
+                        potentialAssemblyPath
+                    ));
 
                     return assembly;
                 } catch {

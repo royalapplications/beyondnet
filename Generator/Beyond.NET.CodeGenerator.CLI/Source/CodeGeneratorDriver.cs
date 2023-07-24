@@ -22,16 +22,24 @@ internal class CodeGeneratorDriver
     private AssemblyLoader AssemblyLoader
     {
         get {
-            if (m_assemblyLoader is null) {
+            var loader = m_assemblyLoader;
+            
+            if (loader is null) {
                 string[] assemblySearchPaths = Configuration.AssemblySearchPaths ?? Array.Empty<string>();
 
-                m_assemblyLoader = new(assemblySearchPaths);
+                loader = new(assemblySearchPaths);
+                
+                loader.AssemblyResolved += AssemblyLoader_OnAssemblyResolved;
+                
+                m_assemblyLoader = loader;
             }
 
-            return m_assemblyLoader;
+            return loader;
         }
     }
-    
+
+    private readonly Dictionary<Assembly, string> m_resolvedAssemblyPaths = new();
+
     internal CodeGeneratorDriver(Configuration configuration)
     {
         Configuration = configuration;
@@ -274,11 +282,16 @@ internal class CodeGeneratorDriver
                 string targetFramework = $"net{dnVersion}";
             
                 Logger.LogInformation("Building .NET Native stuff");
-    
+
+                string[] assemblyReferences = m_resolvedAssemblyPaths
+                    .Values
+                    .ToArray();
+
                 var dnNativeBuilder = new DotNETNativeBuilder(
                     targetFramework,
                     buildProductName,
                     assemblyPath,
+                    assemblyReferences,
                     cSharpUnmanagedOutputPath,
                     swiftBuildResult
                 );
@@ -581,5 +594,15 @@ internal class CodeGeneratorDriver
         }
 
         return new(result, sb.ToString());
+    }
+    
+    private void AssemblyLoader_OnAssemblyResolved(
+        object? sender,
+        AssemblyResolvedEventArgs e
+    )
+    {
+        m_resolvedAssemblyPaths[e.Assembly] = e.AssemblyPath;
+        
+        Logger.LogDebug($"Assembly \"{e.Assembly.GetName().FullName}\" resolved at path \"{e.AssemblyPath}\"");
     }
 }

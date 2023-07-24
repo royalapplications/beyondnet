@@ -13,6 +13,7 @@ public class DotNETNativeBuilder
     public string TargetFramework { get; }
     public string ProductName { get; }
     public string TargetAssemblyFilePath { get; }
+    public string[] AssemblyReferences { get; }
     public string GeneratedCSharpFilePath { get; }
     public SwiftBuilder.BuildResult? SwiftBuildResult { get; }
 
@@ -27,6 +28,7 @@ public class DotNETNativeBuilder
         string targetFramework,
         string productName,
         string targetAssemblyFilePath,
+        string[] assemblyReferences,
         string generatedCSharpFilePath,
         SwiftBuilder.BuildResult? swiftBuildResult
     )
@@ -34,6 +36,7 @@ public class DotNETNativeBuilder
         TargetFramework = targetFramework;
         ProductName = productName;
         TargetAssemblyFilePath = targetAssemblyFilePath;
+        AssemblyReferences = assemblyReferences;
         GeneratedCSharpFilePath = generatedCSharpFilePath;
         SwiftBuildResult = swiftBuildResult;
     }
@@ -61,6 +64,7 @@ public class DotNETNativeBuilder
             TargetFramework,
             ProductName,
             TargetAssemblyFilePath,
+            AssemblyReferences,
             appleSettings
         );
 
