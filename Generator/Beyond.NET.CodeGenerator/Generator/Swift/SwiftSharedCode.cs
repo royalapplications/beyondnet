@@ -499,7 +499,7 @@ public extension System_String {
     }
 }
 
-extension [String] {
+public extension [String] {
     /// Converts a Swift String Array into a .NET System.String Array
     func dotNETStringArray() throws -> System_String_Array {
         guard let arr = try System_String_Array.createInstance(System_String.typeOf,
@@ -519,7 +519,7 @@ extension [String] {
     }
 }
 
-extension System_String_Array {
+public extension System_String_Array {
     /// Converts a .NET System.String Array into a Swift String Array
     func array() throws -> [String] {
         let len = try self.length
