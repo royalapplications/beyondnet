@@ -21,7 +21,7 @@ public class NativeCsProj
     public string[] AssemblyReferences { get; }
     public AppleSpecificSettings? AppleSettings { get; }
     
-    private string OutputProductName => $"lib{ProductName}";
+    private string OutputProductName => ProductName;
 
     public NativeCsProj(
         string targetFramework,

@@ -2,48 +2,100 @@ namespace Beyond.NET.Core;
 
 public static class FileSystemUtils
 {
-    public static void CopyDirectory(
-        string sourceDir,
-        string destinationDir,
+    public static void CopyDirectoryContents(
+        string sourceDirectoryPath,
+        string destinationDirectoryPath,
         bool recursive
     )
     {
+        CopyDirectoryContents(
+            sourceDirectoryPath,
+            destinationDirectoryPath,
+            recursive,
+            true
+        );
+    }
+    
+    private static void CopyDirectoryContents(
+        string sourceDirectoryPath,
+        string destinationDirectoryPath,
+        bool recursive,
+        bool isFirstLevel
+    )
+    {
         // Get information about the source directory
-        var dir = new DirectoryInfo(sourceDir);
-
+        var sourceDirectory = new DirectoryInfo(sourceDirectoryPath);
+        
         // Check if the source directory exists
-        if (!dir.Exists) {
-            throw new DirectoryNotFoundException($"Source directory not found: {dir.FullName}");
+        if (!sourceDirectory.Exists) {
+            throw new DirectoryNotFoundException($"Source directory not found: {sourceDirectory.FullName}");
         }
-
+        
         // Cache directories before we start copying
-        DirectoryInfo[] dirs = dir.GetDirectories();
-
-        if (!Directory.Exists(destinationDir)) {
-            // Create the destination directory
-            Directory.CreateDirectory(destinationDir);
+        var sourceDirectories = sourceDirectory.GetDirectories();
+        
+        if (!Directory.Exists(destinationDirectoryPath)) {
+            // Destination directory does not exist, create it
+            Directory.CreateDirectory(destinationDirectoryPath);
         }
 
         // Get the files in the source directory and copy to the destination directory
-        foreach (FileInfo file in dir.GetFiles()) {
-            string targetFilePath = Path.Combine(destinationDir, file.Name);
-            
-            file.CopyTo(
-                targetFilePath,
-                true
-            );
+        foreach (FileInfo sourceFile in sourceDirectory.GetFiles()) {
+            var targetFilePath = Path.Combine(destinationDirectoryPath, sourceFile.Name);
+
+            var linkTarget = sourceFile.LinkTarget;
+
+            if (linkTarget is not null) { // Link
+                var targetFile = new FileInfo(targetFilePath);
+
+                if (targetFile.Exists) {
+                    // Target file already exists, delete it
+                    targetFile.Delete();
+                }
+                
+                // Re-create link
+                targetFile.CreateAsSymbolicLink(linkTarget);
+            } else { // Regular file
+                // Copy file
+                sourceFile.CopyTo(
+                    targetFilePath,
+                    true
+                );
+            }
         }
 
         // If recursive and copying subdirectories, recursively call this method
         if (recursive) {
-            foreach (DirectoryInfo subDir in dirs) {
-                string newDestinationDir = Path.Combine(destinationDir, subDir.Name);
+            foreach (DirectoryInfo sourceSubDirectory in sourceDirectories) {
+                var destinationSubDirectoryPath = Path.Combine(destinationDirectoryPath, sourceSubDirectory.Name);
                 
-                CopyDirectory(
-                    subDir.FullName,
-                    newDestinationDir,
-                    true
-                );
+                var targetSubDirectory = new DirectoryInfo(destinationSubDirectoryPath);
+
+                var linkTarget = sourceSubDirectory.LinkTarget;
+
+                if (linkTarget is not null) { // Link
+                    if (targetSubDirectory.Exists) {
+                        // Target directory already exists, delete it
+                        targetSubDirectory.Delete();
+                    }
+                
+                    // Re-create link
+                    targetSubDirectory.CreateAsSymbolicLink(linkTarget);
+                } else { // Regular directory
+                    if (isFirstLevel &&
+                        targetSubDirectory.Exists) {
+                        // On the first level, delete any existing directories
+                        targetSubDirectory.Delete(true);
+                    }
+                    
+                    // Copy directory
+                    CopyDirectoryContents(
+                        sourceSubDirectory.FullName,
+                        destinationSubDirectoryPath,
+                        true,
+                        false
+                    );
+                }
             }
         }
     }

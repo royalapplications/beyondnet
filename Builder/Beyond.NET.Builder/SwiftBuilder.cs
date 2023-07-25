@@ -250,13 +250,13 @@ public class SwiftBuilder
         string libraryOutputPathFormat = Path.Combine(
             outputPathApple,
             "{0}", // Runtime Identifier
-            $"lib{productName}.a"
+            $"{productName}.a"
         );
         
         string symbolsOutputPathFormat = Path.Combine(
             outputPathApple,
             "{0}", // Runtime Identifier
-            $"lib{productName}.export"
+            $"{productName}.export"
         );
 
         BuildResult result = new(
@@ -324,7 +324,8 @@ public class SwiftBuilder
         {
             string targetDouble = Apple.XCRun.SwiftC.TargetDouble.Make(
                 targetIdentifier,
-                platformIdentifier
+                platformIdentifier,
+                platformSuffix
             );
 
             string targetTriple = Apple.XCRun.SwiftC.TargetTriple.Make(
@@ -334,7 +335,7 @@ public class SwiftBuilder
                 platformSuffix
             );
             
-            string outputProductName = $"lib{productName}";
+            string outputProductName = productName;
 
             string libraryOutputFilePath = Path.Combine(outputPath, $"{outputProductName}.a");
 

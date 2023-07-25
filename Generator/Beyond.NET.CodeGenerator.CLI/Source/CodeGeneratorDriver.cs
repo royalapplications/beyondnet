@@ -309,7 +309,7 @@ internal class CodeGeneratorDriver
                 Logger.LogInformation($"Final product built at \"{result.OutputDirectoryPath}\"");
                 Logger.LogInformation($"Copying product to \"{buildProductOutputPath}\"");
                 
-                FileSystemUtils.CopyDirectory(
+                FileSystemUtils.CopyDirectoryContents(
                     result.OutputDirectoryPath,
                     buildProductOutputPath,
                     true

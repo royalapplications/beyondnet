@@ -11,7 +11,8 @@ public static class TargetTriple
     {
         string targetDouble = TargetDouble.Make(
             targetIdentifier,
-            platformIdentifier
+            platformIdentifier,
+            string.Empty
         );
         
         string targetTriple = $"{targetDouble}{deploymentTarget}{platformSuffix}";

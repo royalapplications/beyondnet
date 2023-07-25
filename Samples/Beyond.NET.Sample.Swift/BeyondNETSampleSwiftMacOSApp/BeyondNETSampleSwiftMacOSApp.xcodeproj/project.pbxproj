@@ -10,18 +10,18 @@
 		E71E423C2A603D830075FE5F /* BeyondNETSampleSwiftMacOSAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71E423B2A603D830075FE5F /* BeyondNETSampleSwiftMacOSAppApp.swift */; };
 		E71E423E2A603D830075FE5F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71E423D2A603D830075FE5F /* ContentView.swift */; };
 		E71E42402A603D840075FE5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E71E423F2A603D840075FE5F /* Assets.xcassets */; };
-		E71E424F2A603E0A0075FE5F /* BeyondNETSampleSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E71E424E2A603E0A0075FE5F /* BeyondNETSampleSwift.framework */; };
-		E71E42502A603E0A0075FE5F /* BeyondNETSampleSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E71E424E2A603E0A0075FE5F /* BeyondNETSampleSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E7C1BBC42A6FEE92000AA607 /* BeyondDotNETSampleNative.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7C1BBC32A6FEE92000AA607 /* BeyondDotNETSampleNative.xcframework */; };
+		E7C1BBC52A6FEE92000AA607 /* BeyondDotNETSampleNative.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7C1BBC32A6FEE92000AA607 /* BeyondDotNETSampleNative.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		E71E42512A603E0A0075FE5F /* Embed Frameworks */ = {
+		E7C1BBC62A6FEE92000AA607 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E71E42502A603E0A0075FE5F /* BeyondNETSampleSwift.framework in Embed Frameworks */,
+				E7C1BBC52A6FEE92000AA607 /* BeyondDotNETSampleNative.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -36,6 +36,7 @@
 		E71E42442A603D840075FE5F /* BeyondNETSampleSwiftMacOSApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BeyondNETSampleSwiftMacOSApp.entitlements; sourceTree = "<group>"; };
 		E71E424E2A603E0A0075FE5F /* BeyondNETSampleSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BeyondNETSampleSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E71E42522A603E110075FE5F /* BeyondDotNETSampleNative.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BeyondDotNETSampleNative.xcframework; path = "../../Beyond.NET.Sample.Native/bin/Release/net8.0/apple-universal/publish/BeyondDotNETSampleNative.xcframework"; sourceTree = "<group>"; };
+		E7C1BBC32A6FEE92000AA607 /* BeyondDotNETSampleNative.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BeyondDotNETSampleNative.xcframework; path = ../../Generated/BeyondDotNETSampleNative.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E71E424F2A603E0A0075FE5F /* BeyondNETSampleSwift.framework in Frameworks */,
+				E7C1BBC42A6FEE92000AA607 /* BeyondDotNETSampleNative.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				E71E42522A603E110075FE5F /* BeyondDotNETSampleNative.xcframework */,
+				E7C1BBC32A6FEE92000AA607 /* BeyondDotNETSampleNative.xcframework */,
 				E71E424E2A603E0A0075FE5F /* BeyondNETSampleSwift.framework */,
 			);
 			name = Frameworks;
@@ -97,7 +99,7 @@
 				E71E42342A603D830075FE5F /* Sources */,
 				E71E42352A603D830075FE5F /* Frameworks */,
 				E71E42362A603D830075FE5F /* Resources */,
-				E71E42512A603E0A0075FE5F /* Embed Frameworks */,
+				E7C1BBC62A6FEE92000AA607 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

@@ -4,10 +4,11 @@ public static class TargetDouble
 {
     public static string Make(
         string targetIdentifier, 
-        string platformIdentifier
+        string platformIdentifier,
+        string platformSuffix
     )
     {
-        string targetDouble = $"{targetIdentifier}-{platformIdentifier}";
+        string targetDouble = $"{targetIdentifier}-{platformIdentifier}{platformSuffix}";
         
         return targetDouble;
     }

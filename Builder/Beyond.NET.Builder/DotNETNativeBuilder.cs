@@ -1,3 +1,4 @@
+using Beyond.NET.Builder.Apple.Framework;
 using Beyond.NET.Builder.DotNET;
 using Beyond.NET.Core;
 
@@ -20,7 +21,7 @@ public class DotNETNativeBuilder
     private const string VERBOSITY_LEVEL = Publish.VERBOSITY_LEVEL_NORMAL;
     private const string BUILD_CONFIGURATION = "Release";
     
-    private string OutputProductName => $"lib{ProductName}";
+    private string OutputProductName => ProductName;
     private string OutputProductFileName => $"{OutputProductName}.dylib";
     private string UniversalOutputProductFileName => $"{ProductName}.xcframework";
 
@@ -104,7 +105,6 @@ public class DotNETNativeBuilder
             string iOSSimulatorARM64BuildDir = $"{binDirName}/{BUILD_CONFIGURATION}/{TargetFramework}/{RuntimeIdentifier.iOS_SIMULATOR_ARM64}/{publishDirName}";
             string iOSSimulatorX64BuildDir = $"{binDirName}/{BUILD_CONFIGURATION}/{TargetFramework}/{RuntimeIdentifier.iOS_SIMULATOR_X64}/{publishDirName}";
             string iOSSimulatorUniversalBuildDir = $"{binDirName}/{BUILD_CONFIGURATION}/{TargetFramework}/{RuntimeIdentifier.iOS_SIMULATOR_UNIVERSAL}/{publishDirName}";
-            string iOSUniversalBuildDir = $"{binDirName}/{BUILD_CONFIGURATION}/{TargetFramework}/{RuntimeIdentifier.iOS_UNIVERSAL}/{publishDirName}";
 
             string appleUniversalBuildDir = $"{binDirName}/{BUILD_CONFIGURATION}/{TargetFramework}/{RuntimeIdentifier.APPLE_UNIVERSAL}/{publishDirName}";
 
@@ -120,9 +120,6 @@ public class DotNETNativeBuilder
             string iOSSimulatorUniversalBuildPath = Path.Combine(tempDirectoryPath, iOSSimulatorUniversalBuildDir);
             string iOSSimulatorUniversalFilePath = Path.Combine(iOSSimulatorUniversalBuildPath, OutputProductFileName);
 
-            string iOSUniversalBuildPath = Path.Combine(tempDirectoryPath, iOSUniversalBuildDir);
-            string iOSUniversalXCFrameworkFilePath = Path.Combine(iOSUniversalBuildPath, UniversalOutputProductFileName);
-
             string macOSARM64BuildPath = Path.Combine(tempDirectoryPath, macOSARM64BuildDir);
             string macOSARM64FilePath = Path.Combine(macOSARM64BuildPath, OutputProductFileName);
 
@@ -135,7 +132,11 @@ public class DotNETNativeBuilder
             string appleUniversalBuildPath = Path.Combine(tempDirectoryPath, appleUniversalBuildDir);
             string appleUniversalXCFrameworkFilePath = Path.Combine(appleUniversalBuildPath, UniversalOutputProductFileName);
 
-            string libraryId = $"@rpath/{OutputProductFileName}";
+            string newLibraryId = $"@rpath/{OutputProductFileName}";
+            string swiftModuleDirName = $"module.{Apple.XCRun.SwiftC.FileExtensions.SwiftModule}";
+            
+            // TODO
+            string frameworkBundleIdentifier = $"com.todomycompany.{ProductName.ToLower()}";
             #endregion Prepare File Paths
 
             #region dotnet publish
@@ -153,18 +154,18 @@ public class DotNETNativeBuilder
                 macOSUniversalFilePath
             );
 
-            Apple.InstallNameTool.App.ChangeId(macOSUniversalFilePath, libraryId);
+            Apple.InstallNameTool.App.ChangeId(macOSUniversalFilePath, newLibraryId);
             #endregion macOS
             
             #region iOS
             DotNETPublish(tempDirectoryPath, RuntimeIdentifier.iOS_ARM64);
-            Apple.InstallNameTool.App.ChangeId(iOSARM64FilePath, libraryId);
+            Apple.InstallNameTool.App.ChangeId(iOSARM64FilePath, newLibraryId);
 
             DotNETPublish(tempDirectoryPath, RuntimeIdentifier.iOS_SIMULATOR_ARM64);
-            Apple.InstallNameTool.App.ChangeId(iOSSimulatorARM64FilePath, libraryId);
+            Apple.InstallNameTool.App.ChangeId(iOSSimulatorARM64FilePath, newLibraryId);
 
             DotNETPublish(tempDirectoryPath, RuntimeIdentifier.iOS_SIMULATOR_X64);
-            Apple.InstallNameTool.App.ChangeId(iOSSimulatorX64FilePath, libraryId);
+            Apple.InstallNameTool.App.ChangeId(iOSSimulatorX64FilePath, newLibraryId);
 
             Directory.CreateDirectory(iOSSimulatorUniversalBuildPath);
 
@@ -176,74 +177,99 @@ public class DotNETNativeBuilder
                 iOSSimulatorUniversalFilePath
             );
 
-            Apple.InstallNameTool.App.ChangeId(iOSSimulatorUniversalFilePath, libraryId);
-
-            Directory.CreateDirectory(iOSUniversalBuildPath);
-
-            Apple.Xcodebuild.CreateXCFramework.Run(
-                new[] {
-                    iOSSimulatorUniversalFilePath,
-                    iOSARM64FilePath
-                },
-                iOSUniversalXCFrameworkFilePath
-            );
+            Apple.InstallNameTool.App.ChangeId(iOSSimulatorUniversalFilePath, newLibraryId);
             #endregion iOS
-
-            #region Apple Universal
-            Directory.CreateDirectory(appleUniversalBuildPath);
-
-            Apple.Xcodebuild.CreateXCFramework.Run(
-                new[] {
-                    macOSUniversalFilePath,
-                    iOSSimulatorUniversalFilePath,
-                    iOSARM64FilePath
-                },
-                appleUniversalXCFrameworkFilePath
-            );
-            #endregion Apple Universal
             #endregion dotnet publish
-
-            #region Copy Swift module into Apple Universal XCFramework
+            
+            #region Create Frameworks for Platforms
             #region macOS
-            var macOSUniversalSwiftModuleDirPath = $"{appleUniversalXCFrameworkFilePath}/macos-arm64_x86_64/{ProductName}.{Apple.XCRun.SwiftC.FileExtensions.SwiftModule}";
+            var macOSUniversalSwiftModuleDirPath = $"{macOSUniversalBuildPath}/{swiftModuleDirName}";
             
             CreateSwiftModule(
-                swiftBuildResult,
                 swiftBuildResult.MacOSARM64Result,
                 macOSUniversalSwiftModuleDirPath
             );
             
             CreateSwiftModule(
-                swiftBuildResult,
                 swiftBuildResult.MacOSX64Result,
                 macOSUniversalSwiftModuleDirPath
             );
+            
+            var macOSUniversalFrameworkBuilder = new FrameworkBuilder(
+                ProductName,
+                frameworkBundleIdentifier,
+                macOSUniversalFilePath,
+                macOSUniversalBuildPath,
+                true,
+                swiftBuildResult.OutputClangModuleMapFilePath,
+                macOSUniversalSwiftModuleDirPath
+            );
+
+            var macOSUniversalFrameworkBundlePath = macOSUniversalFrameworkBuilder.Build()
+                .FrameworkOutputDirectoryPath;
             #endregion macOS
 
             #region iOS
-            var iOSARM64SwiftModuleDirPath = $"{appleUniversalXCFrameworkFilePath}/ios-arm64/{ProductName}.{Apple.XCRun.SwiftC.FileExtensions.SwiftModule}";
+            var iOSARM64SwiftModuleDirPath = $"{iOSARM64BuildPath}/{swiftModuleDirName}";
 
             CreateSwiftModule(
-                swiftBuildResult,
                 swiftBuildResult.iOSARM64Result,
                 iOSARM64SwiftModuleDirPath
             );
+            
+            var iOSARM64FrameworkBuilder = new FrameworkBuilder(
+                ProductName,
+                frameworkBundleIdentifier,
+                iOSARM64FilePath,
+                iOSARM64BuildPath,
+                false,
+                swiftBuildResult.OutputClangModuleMapFilePath,
+                iOSARM64SwiftModuleDirPath
+            );
 
-            var iOSSimulatorUniversalSwiftModuleDirPath = $"{appleUniversalXCFrameworkFilePath}/ios-arm64_x86_64-simulator/{ProductName}.{Apple.XCRun.SwiftC.FileExtensions.SwiftModule}";
+            var iOSARM64FrameworkBundlePath = iOSARM64FrameworkBuilder.Build()
+                .FrameworkOutputDirectoryPath;
+
+            var iOSSimulatorUniversalSwiftModuleDirPath = $"{iOSSimulatorUniversalBuildPath}/{swiftModuleDirName}";
             
             CreateSwiftModule(
-                swiftBuildResult,
                 swiftBuildResult.iOSSimulatorARM64Result,
                 iOSSimulatorUniversalSwiftModuleDirPath
             );
             
             CreateSwiftModule(
-                swiftBuildResult,
                 swiftBuildResult.iOSSimulatorX64Result,
                 iOSSimulatorUniversalSwiftModuleDirPath
             );
+            
+            var iOSSimulatorUniversalFrameworkBuilder = new FrameworkBuilder(
+                ProductName,
+                frameworkBundleIdentifier,
+                iOSSimulatorUniversalFilePath,
+                iOSSimulatorUniversalBuildPath,
+                false,
+                swiftBuildResult.OutputClangModuleMapFilePath,
+                iOSSimulatorUniversalSwiftModuleDirPath
+            );
+
+            var iOSSimulatorUniversalFrameworkBundlePath = iOSSimulatorUniversalFrameworkBuilder.Build()
+                .FrameworkOutputDirectoryPath;
             #endregion iOS
-            #endregion Copy Swift module into Apple Universal XCFramework
+            #endregion Create Frameworks for Platforms
+            
+            #region Apple Universal
+            Directory.CreateDirectory(appleUniversalBuildPath);
+
+            Apple.Xcodebuild.CreateXCFramework.Run(
+                new[] {
+                    macOSUniversalFrameworkBundlePath,
+                    iOSSimulatorUniversalFrameworkBundlePath,
+                    iOSARM64FrameworkBundlePath
+                },
+                null,
+                appleUniversalXCFrameworkFilePath
+            );
+            #endregion Apple Universal
 
             return new(
                 tempDirectoryPath,
@@ -270,7 +296,6 @@ public class DotNETNativeBuilder
     }
 
     private void CreateSwiftModule(
-        SwiftBuilder.BuildResult buildResult,
         SwiftBuilder.PartialCompileResult partialCompileResult,
         string targetSwiftModuleDirPath
     )
@@ -278,17 +303,7 @@ public class DotNETNativeBuilder
         if (!Directory.Exists(targetSwiftModuleDirPath)) {
             Directory.CreateDirectory(targetSwiftModuleDirPath);
         }
-
-        string targetModuleMapFilePath = Path.Combine(targetSwiftModuleDirPath, "module.modulemap");
-
-        if (!File.Exists(targetModuleMapFilePath)) {
-            // Copy .modulemap
-            File.Copy(
-                buildResult.OutputClangModuleMapFilePath,
-                targetModuleMapFilePath
-            );
-        }
-            
+        
         // Copy .swiftinterface
         File.Copy(
             partialCompileResult.ModuleInterfaceOutputFilePath,

@@ -1,3 +1,4 @@
+using Beyond.NET.Builder.Apple.XCRun.SwiftC;
 using Beyond.NET.Core;
 
 namespace Beyond.NET.Builder.Apple.Framework;
@@ -5,21 +6,28 @@ namespace Beyond.NET.Builder.Apple.Framework;
 public record FrameworkBuilder
 (
     string FrameworkName,
+    string FrameworkBundleIdentifier,
     string LibraryFilePath,
     string OutputDirectoryPath,
+    
+    bool BuildForMacOS,
     
     string? ModuleMapFilePath,
     string? SwiftModuleDirectoryPath
 )
 {
+	public record Result(string FrameworkOutputDirectoryPath);
+	
     private static ILogger Logger => Services.Shared.LoggerService;
     
-    public void Build()
+    public Result Build()
     {
-        string bundleName = $"{FrameworkName}.framework"; 
+	    string bundleName = $"{FrameworkName}.framework"; 
         string outputBundlePath = Path.Combine(OutputDirectoryPath, bundleName);
         string libraryName = FrameworkName;
 
+	    Logger.LogDebug($"Creating framework \"{FrameworkName}\" at \"{outputBundlePath}\"");
+	    
         const string versionsDirName = "Versions";
         const string versionsADirName = "A";
         const string versionsCurrentDirName = "Current";
@@ -29,34 +37,81 @@ public record FrameworkBuilder
 
         const string infoPlistFileName = "Info.plist";
         const string moduleMapFileName = "module.modulemap";
+        string swiftModuleDirName = $"{FrameworkName}.{FileExtensions.SwiftModule}";
         
+        // Only relevant for macOS
         string versionsDirectoryPath = Path.Combine(outputBundlePath, versionsDirName);
+        
+        // Only relevant for macOS
         string versionsADirectoryPath = Path.Combine(versionsDirectoryPath, versionsADirName);
+        
+        // Only relevant for macOS
         string versionsCurrentDirectoryPath = Path.Combine(versionsDirectoryPath, versionsCurrentDirName);
         
-        string modulesDirectoryPath = Path.Combine(versionsADirectoryPath, modulesDirName);
-        string resourcesDirectoryPath = Path.Combine(versionsADirectoryPath, resourcesDirName);
-        string infoPlistFilePath = Path.Combine(resourcesDirectoryPath, infoPlistFileName);
+        string modulesDirectoryPath;
 
+        if (BuildForMacOS) {
+			modulesDirectoryPath = Path.Combine(versionsADirectoryPath, modulesDirName);
+        } else {
+	        modulesDirectoryPath = Path.Combine(outputBundlePath, modulesDirName);
+        }
+        
+        // Only relevant for macOS
+        string resourcesDirectoryPath = Path.Combine(versionsADirectoryPath, resourcesDirName);
+
+        string infoPlistFilePath;
+
+        if (BuildForMacOS) {
+			infoPlistFilePath = Path.Combine(resourcesDirectoryPath, infoPlistFileName);
+        } else {
+	        infoPlistFilePath = Path.Combine(outputBundlePath, infoPlistFileName);
+        }
+
+        // Only relevant for macOS
         string modulesLinkDirectoryPath = Path.Combine(outputBundlePath, modulesDirName);
+        
+        // Only relevant for macOS
         string resourcesLinkDirectoryPath = Path.Combine(outputBundlePath, resourcesDirName);
 
-        string frameworkLibraryFilePath = Path.Combine(versionsADirectoryPath, libraryName);
+        string frameworkLibraryFilePath;
+
+        if (BuildForMacOS) {
+			frameworkLibraryFilePath = Path.Combine(versionsADirectoryPath, libraryName);
+        } else {
+	        frameworkLibraryFilePath = Path.Combine(outputBundlePath, libraryName);
+        }
+        
+        // Only relevant for macOS
         string frameworkLibraryFileLinkPath = Path.Combine(outputBundlePath, libraryName);
 
         string frameworkModuleMapFilePath = Path.Combine(modulesDirectoryPath, moduleMapFileName);
+        string frameworkSwiftModuleDirectoryPath = Path.Combine(modulesDirectoryPath, swiftModuleDirName);
+
+        string newFrameworkLibraryID;
+
+        if (BuildForMacOS) {
+	        newFrameworkLibraryID = $"@rpath/{bundleName}/Versions/A/{libraryName}";
+        } else {
+			newFrameworkLibraryID = $"@rpath/{bundleName}/{libraryName}";
+        }
 
         Logger.LogDebug("Creating Framework Directory Structure");
-        Directory.CreateDirectory(outputBundlePath);
-        Directory.CreateDirectory(versionsDirectoryPath);
-        Directory.CreateDirectory(versionsADirectoryPath);
-        Directory.CreateDirectory(modulesDirectoryPath);
-        Directory.CreateDirectory(resourcesDirectoryPath);
-
-        Directory.CreateSymbolicLink(versionsCurrentDirectoryPath, versionsADirName);
-        Directory.CreateSymbolicLink(modulesLinkDirectoryPath, $"{versionsDirName}/{versionsCurrentDirName}/{modulesDirName}");
-        Directory.CreateSymbolicLink(versionsCurrentDirectoryPath, $"{versionsDirName}/{versionsCurrentDirName}/{resourcesDirName}");
         
+        Directory.CreateDirectory(outputBundlePath);
+        
+        if (BuildForMacOS) {
+	        Directory.CreateDirectory(versionsDirectoryPath);
+	        Directory.CreateDirectory(versionsADirectoryPath);
+	        Directory.CreateDirectory(modulesDirectoryPath);
+	        Directory.CreateDirectory(resourcesDirectoryPath);
+
+	        Directory.CreateSymbolicLink(versionsCurrentDirectoryPath, versionsADirName);
+	        Directory.CreateSymbolicLink(modulesLinkDirectoryPath, $"{versionsDirName}/{versionsCurrentDirName}/{modulesDirName}");
+	        Directory.CreateSymbolicLink(resourcesLinkDirectoryPath, $"{versionsDirName}/{versionsCurrentDirName}/{resourcesDirName}");   
+        } else { // iOS-like
+	        Directory.CreateDirectory(modulesDirectoryPath);
+        }
+
         Logger.LogDebug("Creating Framework Info.plist");
         string infoPlistContent = GetInfoPlistContent();
         File.WriteAllText(infoPlistFilePath, infoPlistContent);
@@ -68,9 +123,7 @@ public record FrameworkBuilder
 
         if (!string.IsNullOrEmpty(SwiftModuleDirectoryPath)) {
 	        Logger.LogDebug("Copying Framework Swift module");
-	        string frameworkSwiftModuleDirectoryPath = Path.Combine(modulesDirectoryPath, Path.GetFileName(SwiftModuleDirectoryPath));
-	        
-	        FileSystemUtils.CopyDirectory(
+	        FileSystemUtils.CopyDirectoryContents(
 		        SwiftModuleDirectoryPath,
 		        frameworkSwiftModuleDirectoryPath,
 		        true
@@ -79,19 +132,32 @@ public record FrameworkBuilder
         
         Logger.LogDebug("Copying Framework library");
         File.Copy(LibraryFilePath, frameworkLibraryFilePath);
-        File.CreateSymbolicLink(frameworkLibraryFileLinkPath, $"{versionsDirName}/{versionsCurrentDirName}/{libraryName}");
+
+        if (BuildForMacOS) {
+			File.CreateSymbolicLink(frameworkLibraryFileLinkPath, $"{versionsDirName}/{versionsCurrentDirName}/{libraryName}");
+        }
+        
+        Logger.LogDebug("Changing Framework library ID");
+        InstallNameTool.App.ChangeId(
+	        frameworkLibraryFilePath,
+	        newFrameworkLibraryID
+	    );
+
+        return new(outputBundlePath);
     }
 
     private string GetInfoPlistContent()
     {
 	    string extendedTemplate = INFO_PLIST_TEMPLATE
-		    .Replace(TOKEN_FRAMEWORK_NAME, FrameworkName);
+		    .Replace(TOKEN_FRAMEWORK_NAME, FrameworkName)
+		    .Replace(TOKEN_BUNDLE_IDENTIFIER, FrameworkBundleIdentifier);
 
 	    return extendedTemplate;
     }
 
     private const string TOKEN = "$__BEYOND_TOKEN__$";
     private const string TOKEN_FRAMEWORK_NAME = $"{TOKEN}FrameworkName{TOKEN}";
+    private const string TOKEN_BUNDLE_IDENTIFIER = $"{TOKEN}BundleIdentifier{TOKEN}";
 
     private const string INFO_PLIST_TEMPLATE = $"""
 <?xml version="1.0" encoding="UTF-8"?>
@@ -104,6 +170,8 @@ public record FrameworkBuilder
 	<string>6.0</string>
 	<key>CFBundleName</key>
 	<string>{TOKEN_FRAMEWORK_NAME}</string>
+	<key>CFBundleIdentifier</key>
+	<string>{TOKEN_BUNDLE_IDENTIFIER}</string>
 </dict>
 </plist>
 """;

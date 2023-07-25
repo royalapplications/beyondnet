@@ -33,6 +33,6 @@ final class SystemReflectionAssemblyTests: XCTestCase {
             return
         }
         
-        XCTAssertEqual("libBeyondDotNETSampleNative", assemblyNameString)
+        XCTAssertEqual("BeyondDotNETSampleNative", assemblyNameString)
     }
 }
