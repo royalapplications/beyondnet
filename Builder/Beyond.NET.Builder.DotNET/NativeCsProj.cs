@@ -42,6 +42,8 @@ public class NativeCsProj
     {
         // TODO: Disabled for now to get faster build times
         const string nullable = "disable";
+        
+        const string icudtFileName = "icudt.dat";
 
         string swiftLibraryFilePathFormat = AppleSettings?.SwiftLibraryFilePathFormat ?? string.Empty;
         string symbolsFilePathFormat = AppleSettings?.SymbolsFilePathFormat ?? string.Empty;
@@ -85,6 +87,7 @@ public class NativeCsProj
             .Replace(TOKEN_SWIFT_LIBRARY_FILE_PATH, swiftLibraryFilePath)
             .Replace(TOKEN_SYMBOLS_FILE_PATH, symbolsFilePath)
             .Replace(TOKEN_MODULE_MAP_FILE_PATH, moduleMapFilePath)
+            .Replace(TOKEN_ICUDT_FILE_PATH, icudtFileName)
           ;
 
         return expandedTemplate;
@@ -104,6 +107,7 @@ public class NativeCsProj
     private const string TOKEN_SWIFT_LIBRARY_FILE_PATH = $"{TOKEN}SwiftLibraryFilePath{TOKEN}";
     private const string TOKEN_SYMBOLS_FILE_PATH = $"{TOKEN}SymbolsFilePath{TOKEN}";
     private const string TOKEN_MODULE_MAP_FILE_PATH = $"{TOKEN}ModuleMapFilePath{TOKEN}";
+    private const string TOKEN_ICUDT_FILE_PATH = $"{TOKEN}IcudtFilePath{TOKEN}";
 
     private const string CSPROJ_TEMPLATE = $"""
 <Project Sdk="Microsoft.NET.Sdk">
@@ -165,7 +169,7 @@ public class NativeCsProj
 
       <!-- When this is set, an icudt.dat must be placed in the resulting bundle -->
       <ItemGroup>
-        <RuntimeHostConfigurationOption Include="ICU_DAT_FILE_PATH" Value="icudt.dat" />
+        <RuntimeHostConfigurationOption Include="ICU_DAT_FILE_PATH" Value="{TOKEN_ICUDT_FILE_PATH}" />
       </ItemGroup>
     </When>
   </Choose>
