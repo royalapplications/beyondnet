@@ -29,7 +29,8 @@
     }
     
     System_Exception_t ex = NULL;
-    System_String_t name = DNStringFromC("ICU_DAT_FILE_PATH");
+    const char* icuDatFilePathKey = "ICU_DAT_FILE_PATH";
+    System_String_t name = DNStringFromC(icuDatFilePathKey);
     
     if (!name) {
         return;
@@ -42,6 +43,8 @@
     }
     
     System_String_t icuPathDN = DNStringFromC(icuPath.UTF8String);
+    
+    NSLog(@"Setting AppContext key \"%s\" to \"%@\"", icuDatFilePathKey, icuPath);
     
     System_AppContext_SetData(name,
                               icuPathDN,

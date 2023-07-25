@@ -11,6 +11,8 @@
 		E71E420F2A6015C80075FE5F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71E420E2A6015C80075FE5F /* ContentView.swift */; };
 		E71E42112A6015C90075FE5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E71E42102A6015C90075FE5F /* Assets.xcassets */; };
 		E7E946952A70067800AB148A /* BeyondDotNETSampleNative.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7E946942A70067800AB148A /* BeyondDotNETSampleNative.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E7E9469C2A700A7500AB148A /* BeyondNETSampleSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E9469B2A700A7500AB148A /* BeyondNETSampleSwift.framework */; };
+		E7E9469D2A700A7500AB148A /* BeyondNETSampleSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7E9469B2A700A7500AB148A /* BeyondNETSampleSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -21,6 +23,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				E7E946952A70067800AB148A /* BeyondDotNETSampleNative.xcframework in Embed Frameworks */,
+				E7E9469D2A700A7500AB148A /* BeyondNETSampleSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -33,6 +36,7 @@
 		E71E420E2A6015C80075FE5F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E71E42102A6015C90075FE5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7E946942A70067800AB148A /* BeyondDotNETSampleNative.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BeyondDotNETSampleNative.xcframework; path = ../BeyondDotNETSampleNative.xcframework; sourceTree = "<group>"; };
+		E7E9469B2A700A7500AB148A /* BeyondNETSampleSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BeyondNETSampleSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7E9469C2A700A7500AB148A /* BeyondNETSampleSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +57,7 @@
 				E7E946942A70067800AB148A /* BeyondDotNETSampleNative.xcframework */,
 				E71E420B2A6015C80075FE5F /* Source */,
 				E71E420A2A6015C80075FE5F /* Products */,
+				E7E9469A2A700A7500AB148A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +77,14 @@
 				E71E42102A6015C90075FE5F /* Assets.xcassets */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		E7E9469A2A700A7500AB148A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E7E9469B2A700A7500AB148A /* BeyondNETSampleSwift.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
