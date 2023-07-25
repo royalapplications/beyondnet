@@ -3,6 +3,8 @@
 
 #import <Generated_C.h>
 
+// TODO: This should be in the generated XCframework
+
 @interface __DNLibraryInit : NSObject
 @end
 
@@ -11,7 +13,16 @@
 + (void)load {
 #if TARGET_OS_IOS
     // iOS/iOS Simulator
-    NSBundle* bundle = [NSBundle bundleForClass:__DNLibraryInit.class];
+    NSBundle* currentBundle = [NSBundle bundleForClass:__DNLibraryInit.class];
+    
+    if (!currentBundle) {
+        return;
+    }
+    
+    NSString* frameworksPath = currentBundle.privateFrameworksPath;
+    NSString* beyondDotNETSampleNativeFrameworkPath = [frameworksPath stringByAppendingPathComponent:@"BeyondDotNETSampleNative.framework"];
+    
+    NSBundle* bundle = [NSBundle bundleWithPath:beyondDotNETSampleNativeFrameworkPath];
     
     if (!bundle) {
         return;

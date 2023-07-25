@@ -11,4 +11,8 @@
         <ProjectReference Include="..\..\Core\Beyond.NET.Core\Beyond.NET.Core.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <EmbeddedResource Include="Icu\icudt.dat" LogicalName="Beyond.NET.Builder.Apple.Icu.icudt.dat" />
+    </ItemGroup>
+
 </Project>
