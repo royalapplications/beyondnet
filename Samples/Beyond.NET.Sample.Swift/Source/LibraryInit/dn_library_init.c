@@ -7,11 +7,17 @@
 
 __attribute__((constructor))
 static void __dn_library_init(void) {
-#if TARGET_OS_IOS
+#if TARGET_OS_IOS // iOS/iOS Simulator
+    // TODO: These will need to be dynamically set by the Beyond.NET build system
+    const char* bundleIdentifier = "com.todomycompany.beyonddotnetsamplenative";
+    
+    const char* icuFileName = "icudt";
+    const char* icuFileType = "dat";
+    
+    const char* appContextIcuDatFilePathKey = "ICU_DAT_FILE_PATH";
+    
     const CFStringEncoding stringEncoding = kCFStringEncodingUTF8;
     
-    // iOS/iOS Simulator
-    const char* bundleIdentifier = "com.todomycompany.beyonddotnetsamplenative";
     CFStringRef bundleIdentifierCF = CFStringCreateWithCString(kCFAllocatorDefault,
                                                                bundleIdentifier,
                                                                stringEncoding);
@@ -28,7 +34,7 @@ static void __dn_library_init(void) {
         return;
     }
     
-    const char* resourceName = "icudt";
+    const char* resourceName = icuFileName;
     CFStringRef resourceNameCF = CFStringCreateWithCString(kCFAllocatorDefault,
                                                            resourceName,
                                                            stringEncoding);
@@ -37,7 +43,7 @@ static void __dn_library_init(void) {
         return;
     }
     
-    const char* resourceType = "dat";
+    const char* resourceType = icuFileType;
     CFStringRef resourceTypeCF = CFStringCreateWithCString(kCFAllocatorDefault,
                                                            resourceType,
                                                            stringEncoding);
@@ -94,8 +100,7 @@ static void __dn_library_init(void) {
     System_String_t icuPathDN = DNStringFromC(resourcePath);
     
     System_Exception_t ex = NULL;
-    const char* icuDatFilePathKey = "ICU_DAT_FILE_PATH";
-    System_String_t name = DNStringFromC(icuDatFilePathKey);
+    System_String_t name = DNStringFromC(appContextIcuDatFilePathKey);
     
     if (!name) {
         free(resourcePath); resourcePath = NULL;
@@ -104,7 +109,7 @@ static void __dn_library_init(void) {
     }
     
     printf("Setting AppContext key \"%s\" to \"%s\"\n",
-           icuDatFilePathKey,
+           appContextIcuDatFilePathKey,
            resourcePath);
     
     free(resourcePath); resourcePath = NULL;
@@ -117,11 +122,11 @@ static void __dn_library_init(void) {
     System_String_Destroy(icuPathDN);
     
     if (ex) {
-        printf("Error: Setting icudt.dat path failed\n");
+        printf("Error: Setting %s.%s path failed\n",
+               icuFileName,
+               icuFileType);
     }
-#elif TARGET_OS_MAC && !TARGET_OS_IPHONE
-    // macOS
-#else
-    // Other platform
+#elif TARGET_OS_MAC && !TARGET_OS_IPHONE // macOS
+#else // Other platform
 #endif
 }
