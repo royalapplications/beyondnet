@@ -162,8 +162,8 @@
 			children = (
 				E71E41FC2A60116A0075FE5F /* README.md */,
 				E7808CE929DEFB2600F50203 /* BeyondNETSampleSwift.xctestplan */,
-				E7B491E12A5FE3F300A7C75D /* PreBuildOutputFiles.xcfilelist */,
 				E71E41EF2A6003560075FE5F /* BeyondDotNETSampleNative.xcframework */,
+				E7B491E12A5FE3F300A7C75D /* PreBuildOutputFiles.xcfilelist */,
 				E70D115F29BF9F2600B4E738 /* Source */,
 				E70D115E29BF9F2600B4E738 /* Products */,
 			);
