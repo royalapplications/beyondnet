@@ -3,22 +3,37 @@ namespace Beyond.NET.CodeGenerator.Generator.CSharpUnmanaged;
 public class CSharpUnmanagedSharedCode
 {
     public const string SharedCode = """
-#if NETSTANDARD2_0 ||  NETCOREAPP2_0 ||  NETCOREAPP2_1 ||  NETCOREAPP2_2 || NET45 || NET451 || NET452 || NET46 || NET461 || NET462 || NET47 || NET471 || NET472 || NET48
-public static class ConditionalWeakTable_Extensions
+internal class __BeyondNETNativeModuleInitializer
 {
-    public static void AddOrUpdate<TKey, TValue>(
-        this ConditionalWeakTable<TKey, TValue> conditionalWeakTable,
-        TKey key,
-        TValue value
-    ) 
-        where TKey: class
-        where TValue: class
+    [System.Runtime.CompilerServices.ModuleInitializer]
+    internal static unsafe void BeyondNETNativeModuleInitializer()
     {
-        conditionalWeakTable.Remove(key);
-        conditionalWeakTable.Add(key, value);
+        // TODO: We could probably remove the native implementation if we port it to C# by using DllImport's for CoreFoundation stuff
+         
+        const string dnLibraryInitFuncName = "__DNLibraryInit";
+
+        var selfHandle = System.Runtime.InteropServices.NativeLibrary.GetMainProgramHandle();
+
+        if (selfHandle == IntPtr.Zero) {
+            return;
+        }
+
+        bool getExportSuccess = System.Runtime.InteropServices.NativeLibrary.TryGetExport(
+            selfHandle,
+            dnLibraryInitFuncName,
+            out IntPtr dnLibraryInitSymbol
+        );
+
+        if (!getExportSuccess ||
+            dnLibraryInitSymbol == IntPtr.Zero) {
+            return;
+        }
+    
+        delegate* unmanaged<void> dnLibraryInitFunc = (delegate* unmanaged<void>)dnLibraryInitSymbol;
+
+        dnLibraryInitFunc();
     }
 }
-#endif
 
 internal unsafe class NativeDelegateBox<TDelegateType, TFunctionPointerType>
     where TDelegateType: Delegate

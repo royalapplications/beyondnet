@@ -460,7 +460,10 @@ public class SwiftBuilder
         string icuFileType
     )
     {
+        const string dnLibraryInitFuncName = "__DNLibraryInit";
+        
         string extendedTemplate = LIBRARY_INIT_C_TEMPLATE
+            .Replace(TOKEN_LIBRARY_INIT_FUNC_NAME, dnLibraryInitFuncName)
             .Replace(TOKEN_GENERATED_C_HEADER_FILE_NAME, generatedCHeaderFileName)
             .Replace(TOKEN_BUNDLE_IDENTIFIER, bundleIdentifier)
             .Replace(TOKEN_ICU_FILE_NAME, icuFileName)
@@ -471,6 +474,7 @@ public class SwiftBuilder
     
     private const string TOKEN = "$__BEYOND_TOKEN__$";
 
+    private const string TOKEN_LIBRARY_INIT_FUNC_NAME = $"{TOKEN}LibraryInitFuncName{TOKEN}";
     private const string TOKEN_GENERATED_C_HEADER_FILE_NAME = $"{TOKEN}GeneratedCHeaderFileName{TOKEN}";
     private const string TOKEN_BUNDLE_IDENTIFIER = $"{TOKEN}BundleIdentifier{TOKEN}";
     private const string TOKEN_ICU_FILE_NAME = $"{TOKEN}IcuFileName{TOKEN}";
@@ -482,7 +486,7 @@ public class SwiftBuilder
 
 #import "{{TOKEN_GENERATED_C_HEADER_FILE_NAME}}"
 
-static void _DNLibraryInit(void) {
+void {{TOKEN_LIBRARY_INIT_FUNC_NAME}}(void) {
     const char* bundleIdentifier = "{{TOKEN_BUNDLE_IDENTIFIER}}";
 
     printf("Initializing .NET-based library \"%s\"\n",
@@ -607,14 +611,6 @@ static void _DNLibraryInit(void) {
 #elif TARGET_OS_MAC && !TARGET_OS_IPHONE // macOS
 #else // Other platform
 #endif
-}
-
-void __attribute__((constructor(1000)))
-_DNLibraryConstructor(void) {
-    // TODO: Delaying this works around the issue that any calls to managed code crash at this point but that's a very bad workaround as this will very likely run only after the app actually has started which might be too late 
-    dispatch_async(dispatch_get_main_queue(), ^{
-        _DNLibraryInit();
-    });
 }
 """;
 }
