@@ -1,7 +1,4 @@
-import Foundation
 import XCTest
-
-import BeyondNETSampleSwift
 import BeyondDotNETSampleNative
 
 fileprivate class UnhandledExceptionHandlerStorage {

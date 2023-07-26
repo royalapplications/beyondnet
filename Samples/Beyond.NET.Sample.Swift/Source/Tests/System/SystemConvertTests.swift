@@ -1,6 +1,4 @@
 import XCTest
-
-import BeyondNETSampleSwift
 import BeyondDotNETSampleNative
 
 final class SystemConvertTests: XCTestCase {

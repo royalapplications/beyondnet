@@ -1,6 +1,4 @@
 import XCTest
-
-import BeyondDotNETSampleNative
 import BeyondDotNETSampleNative
 
 final class PersonTests: XCTestCase {
