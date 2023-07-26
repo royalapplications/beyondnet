@@ -164,7 +164,8 @@
 				E7808CE929DEFB2600F50203 /* BeyondNETSampleSwift.xctestplan */,
 				E71E41EF2A6003560075FE5F /* BeyondDotNETSampleNative.xcframework */,
 				E7B491E12A5FE3F300A7C75D /* PreBuildOutputFiles.xcfilelist */,
-				E70D115F29BF9F2600B4E738 /* Source */,
+				E7B57B7F2A6AD801003C96DA /* BeyondNETSampleSwift.h */,
+				E7C8CF0129C1FA6C00C4230F /* Tests */,
 				E70D115E29BF9F2600B4E738 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -176,15 +177,6 @@
 				E71E41E62A60030F0075FE5F /* BeyondNETSampleSwift.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		E70D115F29BF9F2600B4E738 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				E7C8CF0129C1FA6C00C4230F /* Tests */,
-				E7B57B7F2A6AD801003C96DA /* BeyondNETSampleSwift.h */,
-			);
-			path = Source;
 			sourceTree = "<group>";
 		};
 		E7AC3D8929E038CB00C5609B /* TestSupport */ = {
