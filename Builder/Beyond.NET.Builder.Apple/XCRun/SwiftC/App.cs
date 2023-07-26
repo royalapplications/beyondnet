@@ -22,6 +22,7 @@ public class App
     public const string FLAG_EMIT_DEPENDENCIES = "-emit-dependencies";
     public const string FLAG_EMIT_MODULE = "-emit-module";
     public const string FLAG_EMIT_LIBRARY = "-emit-library";
+    public const string FLAG_EMIT_OBJECT = "-emit-object";
     public const string FLAG_EMIT_OBJC_HEADER = "-emit-objc-header";
     public const string ARGUMENT_EMIT_OBJC_HEADER_PATH = "-emit-objc-header-path";
     public const string ARGUMENT_EMIT_MODULE_PATH = "-emit-module-path";

@@ -138,14 +138,20 @@ public class NativeCsProj
   </PropertyGroup>
   
   <!-- Compiler Customization -->
+
+  <!-- Merge exported Symbols List -->
+  <Target Name="MergeExportedSymbolsList" 
+          BeforeTargets="LinkNative"
+          Condition="$(MixInSwift) And ($(RuntimeIdentifier.Contains('osx')) Or $(RuntimeIdentifier.Contains('ios')))">
+    <Exec Command="echo '\n' >> '$(ExportsFile)'; cat '{TOKEN_SYMBOLS_FILE_PATH}' >> '$(ExportsFile)'" />
+  </Target>
+
   <!-- Include pre-compiled Swift stuff -->
   <Choose>
     <When Condition="$(MixInSwift) And ($(RuntimeIdentifier.Contains('osx')) Or $(RuntimeIdentifier.Contains('ios')))">
       <ItemGroup>
         <LinkerArg Include="-Wl,-force_load,{TOKEN_SWIFT_LIBRARY_FILE_PATH}" />
         <LinkerArg Include="-fmodules -fmodule-map-file={TOKEN_MODULE_MAP_FILE_PATH}" />
-
-        <LinkerArg Include="-exported_symbols_list {TOKEN_SYMBOLS_FILE_PATH}" />
       </ItemGroup>
     </When>
   </Choose>

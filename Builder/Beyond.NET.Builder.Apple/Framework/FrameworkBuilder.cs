@@ -97,7 +97,7 @@ public record FrameworkBuilder
         }
 
         // Only relevant for iOS
-        string icudtFilePath = Path.Combine(outputBundlePath, Icudt.FILENAME);
+        string icudtFilePath = Path.Combine(outputBundlePath, Icudt.FULL_FILENAME);
         
         Logger.LogDebug("Creating Framework Directory Structure");
         
@@ -117,7 +117,7 @@ public record FrameworkBuilder
         }
 
         if (!BuildForMacOS) { // iOS-like
-	        Logger.LogDebug($"Copying \"{Icudt.FILENAME}\" to Framework");
+	        Logger.LogDebug($"Copying \"{Icudt.FULL_FILENAME}\" to Framework");
 	        var icudtContent = Icudt.GetContent();
 	        
 	        File.WriteAllBytes(icudtFilePath, icudtContent);

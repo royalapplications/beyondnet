@@ -56,13 +56,11 @@
 		E7A3E6EE29EEEDB100447BF2 /* PersonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A3E6ED29EEEDB100447BF2 /* PersonTests.swift */; };
 		E7AC3D8C29E0391200C5609B /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AC3D8A29E038E000C5609B /* XCTestCase+Extensions.swift */; };
 		E7AF01D92A5D6F9300A4C080 /* EventTestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AF01D82A5D6F9300A4C080 /* EventTestsTests.swift */; };
-		E7B57B7E2A6AD7E8003C96DA /* Generated_C.h in Headers */ = {isa = PBXBuildFile; fileRef = E7B57B7D2A6AD7E8003C96DA /* Generated_C.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7B57B802A6AD801003C96DA /* BeyondNETSampleSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = E7B57B7F2A6AD801003C96DA /* BeyondNETSampleSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7B93FA92A050D8300D8BAF1 /* SystemUriTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B93FA82A050D8300D8BAF1 /* SystemUriTests.swift */; };
 		E7B93FAB2A05259500D8BAF1 /* StructTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B93FAA2A05259500D8BAF1 /* StructTestTests.swift */; };
 		E7C1BBB72A6FD036000AA607 /* BeyondDotNETSampleNative.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E71E41EF2A6003560075FE5F /* BeyondDotNETSampleNative.xcframework */; };
 		E7C1BBB82A6FD036000AA607 /* BeyondDotNETSampleNative.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E71E41EF2A6003560075FE5F /* BeyondDotNETSampleNative.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E7CB97CE2A612BE30086CF43 /* dn_library_init.c in Sources */ = {isa = PBXBuildFile; fileRef = E7CB97CC2A612BE30086CF43 /* dn_library_init.c */; };
 		E7F90B6029F2A324005B0C67 /* GenericTestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F90B5F29F2A324005B0C67 /* GenericTestsTests.swift */; };
 		E7F90B6229F2A340005B0C67 /* GenericTestClassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F90B6129F2A340005B0C67 /* GenericTestClassTests.swift */; };
 /* End PBXBuildFile section */
@@ -131,11 +129,9 @@
 		E7AC3D8A29E038E000C5609B /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
 		E7AF01D82A5D6F9300A4C080 /* EventTestsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTestsTests.swift; sourceTree = "<group>"; };
 		E7B491E12A5FE3F300A7C75D /* PreBuildOutputFiles.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = PreBuildOutputFiles.xcfilelist; sourceTree = "<group>"; };
-		E7B57B7D2A6AD7E8003C96DA /* Generated_C.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Generated_C.h; path = ../../Generated/Generated_C.h; sourceTree = "<group>"; };
 		E7B57B7F2A6AD801003C96DA /* BeyondNETSampleSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeyondNETSampleSwift.h; sourceTree = "<group>"; };
 		E7B93FA82A050D8300D8BAF1 /* SystemUriTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemUriTests.swift; sourceTree = "<group>"; };
 		E7B93FAA2A05259500D8BAF1 /* StructTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructTestTests.swift; sourceTree = "<group>"; };
-		E7CB97CC2A612BE30086CF43 /* dn_library_init.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = dn_library_init.c; sourceTree = "<group>"; };
 		E7F90B5F29F2A324005B0C67 /* GenericTestsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTestsTests.swift; sourceTree = "<group>"; };
 		E7F90B6129F2A340005B0C67 /* GenericTestClassTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTestClassTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -186,8 +182,6 @@
 			isa = PBXGroup;
 			children = (
 				E7C8CF0129C1FA6C00C4230F /* Tests */,
-				E7CB97CA2A612BC10086CF43 /* LibraryInit */,
-				E7B57B7C2A6AD7DD003C96DA /* Generated */,
 				E7B57B7F2A6AD801003C96DA /* BeyondNETSampleSwift.h */,
 			);
 			path = Source;
@@ -199,14 +193,6 @@
 				E7AC3D8A29E038E000C5609B /* XCTestCase+Extensions.swift */,
 			);
 			path = TestSupport;
-			sourceTree = "<group>";
-		};
-		E7B57B7C2A6AD7DD003C96DA /* Generated */ = {
-			isa = PBXGroup;
-			children = (
-				E7B57B7D2A6AD7E8003C96DA /* Generated_C.h */,
-			);
-			name = Generated;
 			sourceTree = "<group>";
 		};
 		E7C8CF0129C1FA6C00C4230F /* Tests */ = {
@@ -269,14 +255,6 @@
 			path = TestClasses;
 			sourceTree = "<group>";
 		};
-		E7CB97CA2A612BC10086CF43 /* LibraryInit */ = {
-			isa = PBXGroup;
-			children = (
-				E7CB97CC2A612BE30086CF43 /* dn_library_init.c */,
-			);
-			path = LibraryInit;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -284,7 +262,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7B57B7E2A6AD7E8003C96DA /* Generated_C.h in Headers */,
 				E7B57B802A6AD801003C96DA /* BeyondNETSampleSwift.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,7 +437,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7CB97CE2A612BE30086CF43 /* dn_library_init.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

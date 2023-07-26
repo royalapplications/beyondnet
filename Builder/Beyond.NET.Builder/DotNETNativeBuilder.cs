@@ -13,6 +13,7 @@ public class DotNETNativeBuilder
     
     public string TargetFramework { get; }
     public string ProductName { get; }
+    public string ProductBundleIdentifier { get; }
     public string TargetAssemblyFilePath { get; }
     public string[] AssemblyReferences { get; }
     public string GeneratedCSharpFilePath { get; }
@@ -28,6 +29,7 @@ public class DotNETNativeBuilder
     public DotNETNativeBuilder(
         string targetFramework,
         string productName,
+        string productBundleIdentifier,
         string targetAssemblyFilePath,
         string[] assemblyReferences,
         string generatedCSharpFilePath,
@@ -36,6 +38,7 @@ public class DotNETNativeBuilder
     {
         TargetFramework = targetFramework;
         ProductName = productName;
+        ProductBundleIdentifier = productBundleIdentifier;
         TargetAssemblyFilePath = targetAssemblyFilePath;
         AssemblyReferences = assemblyReferences;
         GeneratedCSharpFilePath = generatedCSharpFilePath;
@@ -134,9 +137,6 @@ public class DotNETNativeBuilder
 
             string newLibraryId = $"@rpath/{OutputProductFileName}";
             string swiftModuleDirName = $"module.{Apple.XCRun.SwiftC.FileExtensions.SwiftModule}";
-            
-            // TODO
-            string frameworkBundleIdentifier = $"com.todomycompany.{ProductName.ToLower()}";
             #endregion Prepare File Paths
 
             #region dotnet publish
@@ -197,7 +197,7 @@ public class DotNETNativeBuilder
             
             var macOSUniversalFrameworkBuilder = new FrameworkBuilder(
                 ProductName,
-                frameworkBundleIdentifier,
+                ProductBundleIdentifier,
                 macOSUniversalFilePath,
                 macOSUniversalBuildPath,
                 true,
@@ -219,7 +219,7 @@ public class DotNETNativeBuilder
             
             var iOSARM64FrameworkBuilder = new FrameworkBuilder(
                 ProductName,
-                frameworkBundleIdentifier,
+                ProductBundleIdentifier,
                 iOSARM64FilePath,
                 iOSARM64BuildPath,
                 false,
@@ -244,7 +244,7 @@ public class DotNETNativeBuilder
             
             var iOSSimulatorUniversalFrameworkBuilder = new FrameworkBuilder(
                 ProductName,
-                frameworkBundleIdentifier,
+                ProductBundleIdentifier,
                 iOSSimulatorUniversalFilePath,
                 iOSSimulatorUniversalBuildPath,
                 false,

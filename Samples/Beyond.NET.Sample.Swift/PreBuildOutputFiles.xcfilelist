@@ -1,4 +1,2 @@
-$(PROJECT_DIR)/../Generated/Generated_C.h
-$(PROJECT_DIR)/../Generated/Generated_Swift.swift
 $(PROJECT_DIR)/../Generated/BeyondDotNETSampleNative.xcframework
 $(PROJECT_DIR)/BeyondDotNETSampleNative.xcframework

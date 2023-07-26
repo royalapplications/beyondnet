@@ -6,6 +6,7 @@ public class SwiftBuilder
 {
     public record BuilderConfiguration(
         string ProductName,
+        string BundleIdentifier,
         string GeneratedCHeaderFilePath,
         string GeneratedSwiftFilePath,
         string DeploymentTargetMacOS,
@@ -53,6 +54,7 @@ public class SwiftBuilder
         const string swiftVersion = "5";
         
         string productName = Configuration.ProductName;
+        string bundleIdentifier = Configuration.BundleIdentifier;
 
         string deploymentTargetMacOS = Configuration.DeploymentTargetMacOS;
         string deploymentTargetiOS = Configuration.DeploymentTargetiOS;
@@ -192,7 +194,9 @@ public class SwiftBuilder
             tempDirectoryPath,
             swiftVersion,
             productName,
+            bundleIdentifier,
             generatedSwiftFileName,
+            generatedCHeaderFileName,
             headerMapFileName
         );
 
@@ -280,7 +284,9 @@ public class SwiftBuilder
         string WorkingDirectory,
         string SwiftVersion,
         string ProductName,
+        string BundleIdentifier,
         string SwiftFileName,
+        string CHeaderFileName,
         string HeaderMapFileName
     )
     {
@@ -302,7 +308,9 @@ public class SwiftBuilder
                 platformSuffix,
                 deploymentTarget,
                 ProductName,
+                BundleIdentifier,
                 SwiftFileName,
+                CHeaderFileName,
                 HeaderMapFileName,
                 outputPath
             );
@@ -317,7 +325,9 @@ public class SwiftBuilder
             string platformSuffix,
             string deploymentTarget,
             string productName,
+            string bundleIdentifier,
             string swiftFileName,
+            string cHeaderFileName,
             string headerMapFileName,
             string outputPath
         )
@@ -337,7 +347,13 @@ public class SwiftBuilder
             
             string outputProductName = productName;
 
+            string objectOutputFilePath = Path.Combine(outputPath, $"{outputProductName}.o");
             string libraryOutputFilePath = Path.Combine(outputPath, $"{outputProductName}.a");
+
+            string libraryInitFileName = $"libraryinit_{outputProductName}";
+
+            string libraryInitCFilePath = Path.Combine(workingDirectory, $"{libraryInitFileName}.c");
+            string libraryInitObjectOutputFilePath = Path.Combine(outputPath, $"{libraryInitFileName}.o");
 
             string moduleInterfaceOutputFilePath = Path.Combine(outputPath, $"{targetDouble}.{Apple.XCRun.SwiftC.FileExtensions.SwiftInterface}");
             string moduleOutputFilePath = Path.Combine(outputPath, $"{targetDouble}.{Apple.XCRun.SwiftC.FileExtensions.SwiftModule}");
@@ -359,25 +375,21 @@ public class SwiftBuilder
                 Apple.XCRun.SwiftC.App.ARGUMENT_MODULE_NAME, productName,
                 Apple.XCRun.SwiftC.App.ARGUMENT_MODULE_LINK_NAME, productName,
                 Apple.XCRun.SwiftC.App.FLAG_IMPORT_UNDERLYING_MODULE,
-                Apple.XCRun.SwiftC.App.FLAG_STATIC,
-                Apple.XCRun.SwiftC.App.FLAG_EMIT_LIBRARY,
+                // Apple.XCRun.SwiftC.App.FLAG_STATIC,
+                // Apple.XCRun.SwiftC.App.FLAG_EMIT_LIBRARY,
+                Apple.XCRun.SwiftC.App.FLAG_EMIT_OBJECT,
                 Apple.XCRun.SwiftC.App.FLAG_EMIT_MODULE,
                 Apple.XCRun.SwiftC.App.ARGUMENT_EMIT_MODULE_INTERFACE_PATH, moduleInterfaceOutputFilePath,
                 Apple.XCRun.SwiftC.App.ARGUMENT_EMIT_MODULE_PATH, moduleOutputFilePath,
-                Apple.XCRun.SwiftC.App.ARGUMENT_OUTPUT, libraryOutputFilePath,
+                Apple.XCRun.SwiftC.App.ARGUMENT_OUTPUT, objectOutputFilePath,
                 Apple.XCRun.SwiftC.App.ARGUMENT_COMPILE, swiftFileName
             });
 
-            string standardOutput = Apple.XCRun.SwiftC.App.Run(
+            string swiftStandardOutput = Apple.XCRun.SwiftC.App.Run(
                 workingDirectory,
                 args.ToArray()
             );
 
-            var symbols = Apple.Nm.App.GetRelevantSymbols(libraryOutputFilePath);
-            var symbolsString = string.Join('\n', symbols);
-            
-            File.WriteAllText(symbolsOutputFilePath, symbolsString);
- 
             string? swiftDocOutputFilePath = Path.Combine(outputPath, $"{targetDouble}.{Apple.XCRun.SwiftC.FileExtensions.SwiftDoc}");
 
             if (!File.Exists(swiftDocOutputFilePath)) {
@@ -390,8 +402,45 @@ public class SwiftBuilder
                 swiftABIOutputFilePath = null;
             }
 
+            string libraryInitCFileContents = GetLibraryInitCFileContents(
+                cHeaderFileName,
+                bundleIdentifier, 
+                Apple.Icu.Icudt.FILE_NAME,
+                Apple.Icu.Icudt.FILE_TYPE
+            );
+            
+            File.WriteAllText(
+                libraryInitCFilePath,
+                libraryInitCFileContents
+            );
+
+            string libraryInitClangStandardOutput = Apple.Clang.App.Compile(
+                workingDirectory,
+                targetTriple,
+                sdk,
+                true,
+                libraryInitCFilePath,
+                libraryInitObjectOutputFilePath
+            );
+
+            string libToolStandardOutput = Apple.XCRun.Libtool.StaticMerge(
+                workingDirectory,
+                new [] {
+                    objectOutputFilePath,
+                    libraryInitObjectOutputFilePath
+                },
+                libraryOutputFilePath,
+                true // No warning for no symbols
+            );
+            
+            // Extract symbols
+            var symbols = Apple.Nm.App.GetRelevantSymbols(libraryOutputFilePath);
+            var symbolsString = string.Join('\n', symbols);
+            
+            File.WriteAllText(symbolsOutputFilePath, symbolsString);
+
             var result = new PartialCompileResult(
-                standardOutput,
+                swiftStandardOutput,
                 libraryOutputFilePath,
                 moduleInterfaceOutputFilePath,
                 moduleOutputFilePath,
@@ -403,4 +452,169 @@ public class SwiftBuilder
             return result;
         }
     }
+
+    private static string GetLibraryInitCFileContents(
+        string generatedCHeaderFileName,
+        string bundleIdentifier,
+        string icuFileName,
+        string icuFileType
+    )
+    {
+        string extendedTemplate = LIBRARY_INIT_C_TEMPLATE
+            .Replace(TOKEN_GENERATED_C_HEADER_FILE_NAME, generatedCHeaderFileName)
+            .Replace(TOKEN_BUNDLE_IDENTIFIER, bundleIdentifier)
+            .Replace(TOKEN_ICU_FILE_NAME, icuFileName)
+            .Replace(TOKEN_ICU_FILE_TYPE, icuFileType);
+
+        return extendedTemplate;
+    }
+    
+    private const string TOKEN = "$__BEYOND_TOKEN__$";
+
+    private const string TOKEN_GENERATED_C_HEADER_FILE_NAME = $"{TOKEN}GeneratedCHeaderFileName{TOKEN}";
+    private const string TOKEN_BUNDLE_IDENTIFIER = $"{TOKEN}BundleIdentifier{TOKEN}";
+    private const string TOKEN_ICU_FILE_NAME = $"{TOKEN}IcuFileName{TOKEN}";
+    private const string TOKEN_ICU_FILE_TYPE = $"{TOKEN}IcuFileType{TOKEN}";
+
+    private static string LIBRARY_INIT_C_TEMPLATE = $$"""
+#import <CoreFoundation/CoreFoundation.h>
+#import <TargetConditionals.h>
+
+#import "{{TOKEN_GENERATED_C_HEADER_FILE_NAME}}"
+
+static void _DNLibraryInit(void) {
+    const char* bundleIdentifier = "{{TOKEN_BUNDLE_IDENTIFIER}}";
+
+    printf("Initializing .NET-based library \"%s\"\n",
+        bundleIdentifier);
+
+#if TARGET_OS_IOS // iOS/iOS Simulator
+    const char* icuFileName = "{{TOKEN_ICU_FILE_NAME}}";
+    const char* icuFileType = "{{TOKEN_ICU_FILE_TYPE}}";
+
+    const char* appContextIcuDatFilePathKey = "ICU_DAT_FILE_PATH";
+    
+    const CFStringEncoding stringEncoding = kCFStringEncodingUTF8;
+    
+    CFStringRef bundleIdentifierCF = CFStringCreateWithCString(kCFAllocatorDefault,
+                                                               bundleIdentifier,
+                                                               stringEncoding);
+    
+    if (!bundleIdentifierCF) {
+        return;
+    }
+    
+    CFBundleRef bundle = CFBundleGetBundleWithIdentifier(bundleIdentifierCF);
+
+    CFRelease(bundleIdentifierCF); bundleIdentifierCF = NULL;
+    
+    if (!bundle) {
+        return;
+    }
+    
+    const char* resourceName = icuFileName;
+    CFStringRef resourceNameCF = CFStringCreateWithCString(kCFAllocatorDefault,
+                                                           resourceName,
+                                                           stringEncoding);
+
+    if (!resourceNameCF) {
+        return;
+    }
+    
+    const char* resourceType = icuFileType;
+    CFStringRef resourceTypeCF = CFStringCreateWithCString(kCFAllocatorDefault,
+                                                           resourceType,
+                                                           stringEncoding);
+
+    if (!resourceTypeCF) {
+        CFRelease(resourceName); resourceName = NULL;
+        
+        return;
+    }
+    
+    CFURLRef resourceURL = CFBundleCopyResourceURL(bundle,
+                                                   resourceNameCF,
+                                                   resourceTypeCF,
+                                                   NULL);
+
+    CFRelease(resourceNameCF); resourceNameCF = NULL;
+    CFRelease(resourceTypeCF); resourceTypeCF = NULL;
+    
+    if (!resourceURL) {
+        return;
+    }
+    
+    CFStringRef resourcePathCF = CFURLCopyFileSystemPath(resourceURL,
+                                                         kCFURLPOSIXPathStyle);
+    
+    CFRelease(resourceURL); resourceURL = NULL;
+    
+    if (!resourcePathCF) {
+        return;
+    }
+
+    CFIndex resourcePathLength = CFStringGetLength(resourcePathCF);
+    CFIndex resourcePathMaxSize = CFStringGetMaximumSizeForEncoding(resourcePathLength, stringEncoding) + 1;
+    char* resourcePath = (char *)malloc(resourcePathMaxSize);
+    
+    if (!resourcePath) {
+        CFRelease(resourcePathCF); resourcePathCF = NULL;
+        
+        return;
+    }
+
+    if (!CFStringGetCString(resourcePathCF,
+                            resourcePath,
+                            resourcePathMaxSize,
+                            stringEncoding)) {
+        free(resourcePath); resourcePath = NULL;
+        CFRelease(resourcePathCF); resourcePathCF = NULL;
+        
+        return;
+    }
+    
+    CFRelease(resourcePathCF); resourcePathCF = NULL;
+
+    System_String_t icuPathDN = DNStringFromC(resourcePath);
+
+    System_Exception_t ex = NULL;
+    System_String_t name = DNStringFromC(appContextIcuDatFilePathKey);
+
+    if (!name) {
+        free(resourcePath); resourcePath = NULL;
+        
+        return;
+    }
+    
+    printf("Setting AppContext key \"%s\" to \"%s\"\n",
+           appContextIcuDatFilePathKey,
+           resourcePath);
+    
+    free(resourcePath); resourcePath = NULL;
+    
+    System_AppContext_SetData(name,
+                              icuPathDN,
+                              &ex);
+    
+    System_String_Destroy(name);
+    System_String_Destroy(icuPathDN);
+
+    if (ex) {
+        printf("Error: Setting %s.%s path failed\n",
+               icuFileName,
+               icuFileType);
+    }
+#elif TARGET_OS_MAC && !TARGET_OS_IPHONE // macOS
+#else // Other platform
+#endif
+}
+
+void __attribute__((constructor(1000)))
+_DNLibraryConstructor(void) {
+    // TODO: Delaying this works around the issue that any calls to managed code crash at this point but that's a very bad workaround as this will very likely run only after the app actually has started which might be too late 
+    dispatch_async(dispatch_get_main_queue(), ^{
+        _DNLibraryInit();
+    });
+}
+""";
 }

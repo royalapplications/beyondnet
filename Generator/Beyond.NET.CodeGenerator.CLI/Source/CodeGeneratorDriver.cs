@@ -61,6 +61,7 @@ internal class CodeGeneratorDriver
             bool buildEnabled = false;
             string? buildTarget = null;
             string? buildProductName = null;
+            string? buildProductBundleIdentifier = null;
             string? buildProductOutputPath = null;
             string? buildMacOSDeploymentTarget = null;
             string? buildiOSDeploymentTarget = null;
@@ -79,6 +80,9 @@ internal class CodeGeneratorDriver
                 if (string.IsNullOrEmpty(buildProductName)) {
                     throw new Exception($"A build \"{nameof(BuildConfiguration.ProductName)}\" must be provided");
                 }
+
+                // TODO: Make this configurable
+                buildProductBundleIdentifier = $"com.todomycompany.{buildProductName.ToLower()}";
     
                 buildProductOutputPath = buildConfig.ProductOutputPath;
     
@@ -246,6 +250,7 @@ internal class CodeGeneratorDriver
             #region Build
             if (buildEnabled) {
                 if (string.IsNullOrEmpty(buildProductName) ||
+                    string.IsNullOrEmpty(buildProductBundleIdentifier) ||
                     string.IsNullOrEmpty(buildProductOutputPath) ||
                     string.IsNullOrEmpty(cSharpUnmanagedOutputPath) ||
                     string.IsNullOrEmpty(cOutputPath) ||
@@ -258,6 +263,7 @@ internal class CodeGeneratorDriver
                 
                 SwiftBuilder.BuilderConfiguration config = new(
                     buildProductName,
+                    buildProductBundleIdentifier,
                     cOutputPath,
                     swiftOutputPath,
                     buildMacOSDeploymentTarget,
@@ -290,6 +296,7 @@ internal class CodeGeneratorDriver
                 var dnNativeBuilder = new DotNETNativeBuilder(
                     targetFramework,
                     buildProductName,
+                    buildProductBundleIdentifier,
                     assemblyPath,
                     assemblyReferences,
                     cSharpUnmanagedOutputPath,
