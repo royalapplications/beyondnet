@@ -460,7 +460,7 @@ public class SwiftBuilder
         string icuFileType
     )
     {
-        const string dnLibraryInitFuncName = "__DNLibraryInit";
+        const string dnLibraryInitFuncName = "_DNLibraryInit";
         
         string extendedTemplate = LIBRARY_INIT_C_TEMPLATE
             .Replace(TOKEN_LIBRARY_INIT_FUNC_NAME, dnLibraryInitFuncName)

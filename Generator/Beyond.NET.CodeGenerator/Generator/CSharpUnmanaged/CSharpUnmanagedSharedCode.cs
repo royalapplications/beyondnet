@@ -10,7 +10,7 @@ internal class __BeyondNETNativeModuleInitializer
     {
         // TODO: We could probably remove the native implementation if we port it to C# by using DllImport's for CoreFoundation stuff
          
-        const string dnLibraryInitFuncName = "__DNLibraryInit";
+        const string dnLibraryInitFuncName = "_DNLibraryInit";
 
         var selfHandle = System.Runtime.InteropServices.NativeLibrary.GetMainProgramHandle();
 
