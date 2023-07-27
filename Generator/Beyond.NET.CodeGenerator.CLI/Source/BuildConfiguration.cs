@@ -4,7 +4,7 @@ public record BuildConfiguration
 (
     string Target,
     
-    string ProductName,
+    string? ProductName,
     string? ProductBundleIdentifier,
     string ProductOutputPath,
     

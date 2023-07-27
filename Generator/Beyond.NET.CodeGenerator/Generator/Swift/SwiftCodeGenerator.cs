@@ -6,6 +6,7 @@ using Beyond.NET.CodeGenerator.SourceCode;
 using Beyond.NET.CodeGenerator.Syntax;
 using Beyond.NET.CodeGenerator.Syntax.Swift;
 using Beyond.NET.CodeGenerator.Types;
+using Beyond.NET.Core;
 
 namespace Beyond.NET.CodeGenerator.Generator.Swift;
 

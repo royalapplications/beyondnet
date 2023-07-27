@@ -76,34 +76,6 @@ internal static class StringExtensions
     private static readonly string[] SWIFT_RESERVED_TYPE_NAMES = new[] {
         "Type"
     };
-        
-    internal static string IndentAllLines(this string text, int indentCount)
-    {
-        if (indentCount < 1) {
-            return text;
-        }
-        
-        string newLine = Environment.NewLine;
-        
-        string indentPrefix = string.Empty;
-
-        for (int i = 0; i < indentCount; i++) {
-            indentPrefix += "\t";
-        }
-        
-        var lines = text.Split(newLine);
-        List<string> indentedLines = new();
-
-        foreach (var line in lines) {
-            string indentedLine = indentPrefix + line;
-            
-            indentedLines.Add(indentedLine);
-        }
-
-        string indentedText = string.Join(newLine, indentedLines);
-
-        return indentedText;
-    }
 
     internal static string ToSwiftEnumCaseName(this string cSharpCaseName)
     {

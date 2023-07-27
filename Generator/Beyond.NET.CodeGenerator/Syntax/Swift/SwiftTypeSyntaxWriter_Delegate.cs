@@ -2,7 +2,7 @@ using System.Reflection;
 using System.Text;
 
 using Beyond.NET.CodeGenerator.Extensions;
-using Beyond.NET.CodeGenerator.Syntax.Swift.Declaration;
+using Beyond.NET.Core;
 using Beyond.NET.CodeGenerator.Types;
 
 namespace Beyond.NET.CodeGenerator.Syntax.Swift;

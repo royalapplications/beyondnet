@@ -1,4 +1,4 @@
-using Beyond.NET.CodeGenerator.Extensions;
+using Beyond.NET.Core;
 
 namespace Beyond.NET.CodeGenerator.Syntax.Swift.Declaration;
 

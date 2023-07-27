@@ -4,6 +4,7 @@ using System.Text;
 using Beyond.NET.CodeGenerator.Extensions;
 using Beyond.NET.CodeGenerator.Generator;
 using Beyond.NET.CodeGenerator.Types;
+using Beyond.NET.Core;
 
 using Settings = Beyond.NET.CodeGenerator.Generator.C.Settings;
 

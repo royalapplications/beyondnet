@@ -3,6 +3,7 @@ using System.Text;
 
 using Beyond.NET.CodeGenerator.Extensions;
 using Beyond.NET.CodeGenerator.Types;
+using Beyond.NET.Core;
 
 namespace Beyond.NET.CodeGenerator.Syntax.CSharpUnmanaged;
 

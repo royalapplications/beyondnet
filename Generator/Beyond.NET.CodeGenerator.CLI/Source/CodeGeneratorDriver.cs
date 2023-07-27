@@ -51,6 +51,9 @@ internal class CodeGeneratorDriver
         
         try {
             #region Configuration
+            string assemblyPath = Configuration.AssemblyPath
+                .ExpandTildeAndGetAbsolutePath();
+            
             bool emitUnsupported = Configuration.EmitUnsupported ?? false;
             bool generateTypeCheckedDestroyMethods = Configuration.GenerateTypeCheckedDestroyMethods ?? false;
             bool enableGenericsSupport = Configuration.EnableGenericsSupport ?? false;
@@ -74,9 +77,28 @@ internal class CodeGeneratorDriver
                 if (buildTarget != BuildTargets.APPLE_UNIVERSAL) {
                     throw new Exception($"Only \"{BuildTargets.APPLE_UNIVERSAL}\" is currently supported as \"{nameof(buildConfig.Target)}\"");
                 }
+
+                var potentialProductName = buildConfig.ProductName;
+                string productName;
+                
+                string assemblyName = Path.GetFileNameWithoutExtension(assemblyPath)
+                    .Replace('.', '_');
+
+                if (string.IsNullOrEmpty(potentialProductName)) {
+                    // If no product name is provided, let's generate one
+
+                    productName = assemblyName;
+                } else {
+                    productName = potentialProductName;
+                }
     
-                buildProductName = buildConfig.ProductName
-                    ?.Replace('.', '_');
+                buildProductName = productName
+                    .Replace('.', '_');
+
+                if (buildProductName == assemblyName) {
+                    // If the product name matches the assembly name, suffix it with "Kit"
+                    buildProductName = $"{buildProductName}Kit";
+                }
     
                 if (string.IsNullOrEmpty(buildProductName)) {
                     throw new Exception($"A build \"{nameof(BuildConfiguration.ProductName)}\" must be provided");
@@ -110,8 +132,6 @@ internal class CodeGeneratorDriver
             #endregion Configuration
     
             #region Load Assembly
-            string assemblyPath = Configuration.AssemblyPath.ExpandTildeAndGetAbsolutePath();
-            
             Logger.LogInformation($"Loading assembly from \"{assemblyPath}\"");
             
             Assembly assembly = AssemblyLoader.LoadFrom(assemblyPath);

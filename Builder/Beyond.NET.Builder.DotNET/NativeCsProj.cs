@@ -1,4 +1,5 @@
 using System.Text;
+using Beyond.NET.Core;
 
 namespace Beyond.NET.Builder.DotNET;
 
@@ -73,7 +74,9 @@ public class NativeCsProj
             assemblyReferencesXmlSb.AppendLine($"<Reference Include=\"{assemblyReference}\" />");
         }
 
-        string assemblyReferencesXml = assemblyReferencesXmlSb.ToString();
+        string assemblyReferencesXml = assemblyReferencesXmlSb
+          .ToString()
+          .IndentAllLines(2);
 
         string expandedTemplate = CSPROJ_TEMPLATE
             .Replace(TOKEN_ASSEMBLY_NAME, OutputProductName)
@@ -241,7 +244,7 @@ public class NativeCsProj
 
   <!-- Assembly References -->
   <ItemGroup>
-    {TOKEN_ASSEMBLY_REFERENCES}
+{TOKEN_ASSEMBLY_REFERENCES}
   </ItemGroup>
 
 </Project>
