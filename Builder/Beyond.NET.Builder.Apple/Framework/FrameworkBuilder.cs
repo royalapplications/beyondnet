@@ -148,7 +148,8 @@ public record FrameworkBuilder
 			File.CreateSymbolicLink(frameworkLibraryFileLinkPath, $"{versionsDirName}/{versionsCurrentDirName}/{libraryName}");
         }
         
-        Logger.LogDebug("Changing Framework library ID");
+        Logger.LogDebug($"Changing Framework library ID to \"{newFrameworkLibraryID}\"");
+        
         InstallNameTool.App.ChangeId(
 	        frameworkLibraryFilePath,
 	        newFrameworkLibraryID

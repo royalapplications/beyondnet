@@ -70,7 +70,7 @@ public class NativeCsProj
         StringBuilder assemblyReferencesXmlSb = new();
         
         foreach (var assemblyReference in AssemblyReferences) {
-          assemblyReferencesXmlSb.AppendLine($"<Reference Include=\"{assemblyReference}\" />");
+            assemblyReferencesXmlSb.AppendLine($"<Reference Include=\"{assemblyReference}\" />");
         }
 
         string assemblyReferencesXml = assemblyReferencesXmlSb.ToString();

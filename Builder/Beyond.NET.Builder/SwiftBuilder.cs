@@ -290,6 +290,8 @@ public class SwiftBuilder
         string HeaderMapFileName
     )
     {
+        private ILogger Logger => Services.Shared.LoggerService;
+        
         internal PartialCompileResult Compile(
             string sdk,
             string targetIdentifier,
@@ -316,7 +318,7 @@ public class SwiftBuilder
             );
         }
 
-        private static PartialCompileResult Compile(
+        private PartialCompileResult Compile(
             string workingDirectory,
             string swiftVersion,
             string sdk,
@@ -344,7 +346,7 @@ public class SwiftBuilder
                 deploymentTarget,
                 platformSuffix
             );
-            
+
             string outputProductName = productName;
 
             string objectOutputFilePath = Path.Combine(outputPath, $"{outputProductName}.o");
@@ -384,6 +386,8 @@ public class SwiftBuilder
                 Apple.XCRun.SwiftC.App.ARGUMENT_OUTPUT, objectOutputFilePath,
                 Apple.XCRun.SwiftC.App.ARGUMENT_COMPILE, swiftFileName
             });
+            
+            Logger.LogDebug($"Compiling generated Swift code for \"{targetTriple}\"");
 
             string swiftStandardOutput = Apple.XCRun.SwiftC.App.Run(
                 workingDirectory,
@@ -401,6 +405,8 @@ public class SwiftBuilder
             if (!File.Exists(swiftABIOutputFilePath)) {
                 swiftABIOutputFilePath = null;
             }
+            
+            Logger.LogDebug("Generating Library Init C File Contents");
 
             string libraryInitCFileContents = GetLibraryInitCFileContents(
                 cHeaderFileName,
@@ -409,10 +415,14 @@ public class SwiftBuilder
                 Apple.Icu.Icudt.FILE_TYPE
             );
             
+            Logger.LogDebug($"Writing Library Init C File to \"{libraryInitCFilePath}\"");
+            
             File.WriteAllText(
                 libraryInitCFilePath,
                 libraryInitCFileContents
             );
+            
+            Logger.LogDebug("Compiling Library Init C code");
 
             string libraryInitClangStandardOutput = Apple.Clang.App.Compile(
                 workingDirectory,
@@ -422,6 +432,8 @@ public class SwiftBuilder
                 libraryInitCFilePath,
                 libraryInitObjectOutputFilePath
             );
+            
+            Logger.LogDebug($"Merging compiled Swift object file at \"{objectOutputFilePath}\" and compiled C Library Init object file at \"{libraryInitObjectOutputFilePath}\" to static library at \"{libraryOutputFilePath}\"");
 
             string libToolStandardOutput = Apple.XCRun.Libtool.StaticMerge(
                 workingDirectory,
@@ -434,9 +446,12 @@ public class SwiftBuilder
             );
             
             // Extract symbols
+            Logger.LogDebug($"Extracting symbols from \"{libraryOutputFilePath}\"");
+            
             var symbols = Apple.Nm.App.GetRelevantSymbols(libraryOutputFilePath);
             var symbolsString = string.Join('\n', symbols);
             
+            Logger.LogDebug($"Writing symbols file to \"{symbolsOutputFilePath}\"");
             File.WriteAllText(symbolsOutputFilePath, symbolsString);
 
             var result = new PartialCompileResult(

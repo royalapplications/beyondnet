@@ -21,6 +21,8 @@ public class DotNETNativeBuilder
 
     private const string VERBOSITY_LEVEL = Publish.VERBOSITY_LEVEL_NORMAL;
     private const string BUILD_CONFIGURATION = "Release";
+
+    private ILogger Logger => Services.Shared.LoggerService;
     
     private string OutputProductName => ProductName;
     private string OutputProductFileName => $"{OutputProductName}.dylib";
@@ -71,6 +73,8 @@ public class DotNETNativeBuilder
             AssemblyReferences,
             appleSettings
         );
+        
+        Logger.LogDebug("Generating csproj content for NativeAOT build");
 
         string nativeCsProjContents = nativeCsProj.GetCsProjContents();
         #endregion Generate CSProj
@@ -80,18 +84,24 @@ public class DotNETNativeBuilder
         string tempDirectoryPrefix = $"BeyondNETBuilderDotNETNativeBuilder_{sanitizedProductName}_";
 
         string tempDirectoryPath = Directory.CreateTempSubdirectory(tempDirectoryPrefix).FullName;
+        
+        Logger.LogDebug($"Created temp directory for .NET NativeAOT project at \"{tempDirectoryPath}\"");
         #endregion Create Temp Dir
 
         #region Copy Material to Temp Dir
         string nativeCsProjFileName = $"{ProductName}.csproj";
         string nativeCsProjFilePath = Path.Combine(tempDirectoryPath, nativeCsProjFileName);
-
+        
+        Logger.LogDebug($"Writing csproj to \"{nativeCsProjFilePath}\"");
         File.WriteAllText(nativeCsProjFilePath, nativeCsProjContents);
 
         string generatedCSharpFilePath = GeneratedCSharpFilePath;
         string generatedCSharpFileName = Path.GetFileName(generatedCSharpFilePath);
 
-        File.Copy(GeneratedCSharpFilePath, Path.Combine(tempDirectoryPath, generatedCSharpFileName));
+        string generatedCSharpDestinationFilePath = Path.Combine(tempDirectoryPath, generatedCSharpFileName);
+
+        Logger.LogDebug($"Copying generated C# file to \"{generatedCSharpDestinationFilePath}\"");
+        File.Copy(GeneratedCSharpFilePath, generatedCSharpDestinationFilePath);
         #endregion Copy Material to Temp Dir
         
         if (swiftBuildResult is not null) {
@@ -144,8 +154,11 @@ public class DotNETNativeBuilder
             DotNETPublish(tempDirectoryPath, RuntimeIdentifier.MacOS_ARM64);
             DotNETPublish(tempDirectoryPath, RuntimeIdentifier.MacOS_X64);
 
+            Logger.LogDebug($"Creating directory for macOS Universal build at \"{macOSUniversalBuildPath}\"");
             Directory.CreateDirectory(macOSUniversalBuildPath);
 
+            Logger.LogDebug($"Merging macOS ARM64 build at \"{macOSARM64FilePath}\" and macOS x64 build at \"{macOSX64FilePath}\" into macOS Universal build at \"{macOSUniversalFilePath}\"");
+            
             Apple.Lipo.App.Create(
                 new[] {
                     macOSARM64FilePath,
@@ -154,21 +167,28 @@ public class DotNETNativeBuilder
                 macOSUniversalFilePath
             );
 
+            Logger.LogDebug($"Changing library ID of macOS Universal build at \"{macOSUniversalFilePath}\" to \"{newLibraryId}\"");
             Apple.InstallNameTool.App.ChangeId(macOSUniversalFilePath, newLibraryId);
             #endregion macOS
             
             #region iOS
             DotNETPublish(tempDirectoryPath, RuntimeIdentifier.iOS_ARM64);
+            Logger.LogDebug($"Changing library ID of iOS ARM64 build at \"{iOSARM64FilePath}\" to \"{newLibraryId}\"");
             Apple.InstallNameTool.App.ChangeId(iOSARM64FilePath, newLibraryId);
 
             DotNETPublish(tempDirectoryPath, RuntimeIdentifier.iOS_SIMULATOR_ARM64);
+            Logger.LogDebug($"Changing library ID of iOS Simulator ARM64 build at \"{iOSSimulatorARM64FilePath}\" to \"{newLibraryId}\"");
             Apple.InstallNameTool.App.ChangeId(iOSSimulatorARM64FilePath, newLibraryId);
 
             DotNETPublish(tempDirectoryPath, RuntimeIdentifier.iOS_SIMULATOR_X64);
+            Logger.LogDebug($"Changing library ID of iOS Simulator x64 build at \"{iOSSimulatorX64FilePath}\" to \"{newLibraryId}\"");
             Apple.InstallNameTool.App.ChangeId(iOSSimulatorX64FilePath, newLibraryId);
 
+            Logger.LogDebug($"Creating directory for iOS Simulator Universal build at \"{iOSSimulatorUniversalBuildPath}\"");
             Directory.CreateDirectory(iOSSimulatorUniversalBuildPath);
 
+            Logger.LogDebug($"Merging iOS Simulator ARM64 build at \"{iOSSimulatorARM64FilePath}\" and iOS Simulator x64 build at \"{iOSSimulatorX64FilePath}\" into iOS Simulator Universal build at \"{iOSSimulatorUniversalFilePath}\"");
+            
             Apple.Lipo.App.Create(
                 new[] {
                     iOSSimulatorARM64FilePath,
@@ -177,6 +197,7 @@ public class DotNETNativeBuilder
                 iOSSimulatorUniversalFilePath
             );
 
+            Logger.LogDebug($"Changing library ID of iOS Simulator Universal build at \"{iOSSimulatorUniversalFilePath}\" to \"{newLibraryId}\"");
             Apple.InstallNameTool.App.ChangeId(iOSSimulatorUniversalFilePath, newLibraryId);
             #endregion iOS
             #endregion dotnet publish
@@ -258,8 +279,11 @@ public class DotNETNativeBuilder
             #endregion Create Frameworks for Platforms
             
             #region Apple Universal
+            Logger.LogDebug($"Creating directory for Apple Universal build at \"{appleUniversalBuildPath}\"");
             Directory.CreateDirectory(appleUniversalBuildPath);
 
+            Logger.LogDebug($"Building Apple Universal XCFramework at \"{appleUniversalXCFrameworkFilePath}\"");
+            
             Apple.Xcodebuild.CreateXCFramework.Run(
                 new[] {
                     macOSUniversalFrameworkBundlePath,
@@ -287,6 +311,8 @@ public class DotNETNativeBuilder
         string runtimeIdentifier
     )
     {
+        Logger.LogInformation($"Compiling .NET NativeAOT project in \"{workingDirectory}\" with runtime identifier \"{runtimeIdentifier}\"");
+        
         Publish.Run(
             workingDirectory,
             runtimeIdentifier,
@@ -301,34 +327,47 @@ public class DotNETNativeBuilder
     )
     {
         if (!Directory.Exists(targetSwiftModuleDirPath)) {
+            Logger.LogDebug($"Creating swiftmodule directory at \"{targetSwiftModuleDirPath}\"");
             Directory.CreateDirectory(targetSwiftModuleDirPath);
         }
         
         // Copy .swiftinterface
+        string swiftinterfaceDestinationFilePath = Path.Combine(targetSwiftModuleDirPath, Path.GetFileName(partialCompileResult.ModuleInterfaceOutputFilePath));
+        Logger.LogDebug($"Copying .swiftinterface file to \"{swiftinterfaceDestinationFilePath}\"");
+        
         File.Copy(
             partialCompileResult.ModuleInterfaceOutputFilePath,
-            Path.Combine(targetSwiftModuleDirPath, Path.GetFileName(partialCompileResult.ModuleInterfaceOutputFilePath))
+            swiftinterfaceDestinationFilePath
         );
             
         // Copy .swiftmodule
+        string swiftmoduleDestinationFilePath = Path.Combine(targetSwiftModuleDirPath, Path.GetFileName(partialCompileResult.ModuleOutputFilePath));
+        Logger.LogDebug($"Copying .swiftmodule file to \"{swiftmoduleDestinationFilePath}\"");
+        
         File.Copy(
             partialCompileResult.ModuleOutputFilePath,
-            Path.Combine(targetSwiftModuleDirPath, Path.GetFileName(partialCompileResult.ModuleOutputFilePath))
+            swiftmoduleDestinationFilePath
         );
             
         // Copy .swiftdoc
         if (!string.IsNullOrEmpty(partialCompileResult.SwiftDocOutputFilePath)) {
+            string swiftDocDestinationFilePath = Path.Combine(targetSwiftModuleDirPath, Path.GetFileName(partialCompileResult.SwiftDocOutputFilePath));
+            Logger.LogDebug($"Copying .swiftdoc file to \"{swiftDocDestinationFilePath}\"");
+            
             File.Copy(
                 partialCompileResult.SwiftDocOutputFilePath,
-                Path.Combine(targetSwiftModuleDirPath, Path.GetFileName(partialCompileResult.SwiftDocOutputFilePath))
+                swiftDocDestinationFilePath
             );   
         }
 
         // Copy .abi.json
         if (!string.IsNullOrEmpty(partialCompileResult.SwiftABIOutputFilePath)) {
+            string swiftAbiDestinationFilePath = Path.Combine(targetSwiftModuleDirPath, Path.GetFileName(partialCompileResult.SwiftABIOutputFilePath));
+            Logger.LogDebug($"Copying .abi.json file to \"{swiftAbiDestinationFilePath}\"");
+            
             File.Copy(
                 partialCompileResult.SwiftABIOutputFilePath,
-                Path.Combine(targetSwiftModuleDirPath, Path.GetFileName(partialCompileResult.SwiftABIOutputFilePath))
+                swiftAbiDestinationFilePath
             );   
         }
     }
