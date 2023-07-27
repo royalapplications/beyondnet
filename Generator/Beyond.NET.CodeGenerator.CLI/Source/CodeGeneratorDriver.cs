@@ -366,7 +366,8 @@ internal class CodeGeneratorDriver
             }
             #endregion Build
         } finally {
-            bool shouldDeleteTempDirs = !Configuration.DoNotDeleteTemporaryDirectories;
+            bool doNotDeleteTemporaryDirectories = Configuration.DoNotDeleteTemporaryDirectories ?? false; 
+            bool shouldDeleteTempDirs = !doNotDeleteTemporaryDirectories;
             
             if (shouldDeleteTempDirs) {
                 // Clean up temporary directories

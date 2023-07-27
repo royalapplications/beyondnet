@@ -11,13 +11,12 @@ public record Configuration(
     
     bool? EmitUnsupported,
     bool? GenerateTypeCheckedDestroyMethods,
-    bool? DoNotGenerateSwiftNestedTypeAliases,
     bool? EnableGenericsSupport,
+    bool? DoNotGenerateSwiftNestedTypeAliases,
+    bool? DoNotDeleteTemporaryDirectories,
     
     string[]? IncludedTypeNames,
     string[]? ExcludedTypeNames,
     
-    string[]? AssemblySearchPaths,
-    
-    bool DoNotDeleteTemporaryDirectories
+    string[]? AssemblySearchPaths
 );
