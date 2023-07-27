@@ -42,7 +42,7 @@ The generated C# code can then be compiled with .NET NativeAOT which allows the 
 ### Configuring the Generator
 
 - Currently, the generator takes a single required argument: `PathToConfig.json`.
-- Create a config file. See [Generator Config](#generator-config) for supported config values.
+- Create a config file. See [Generator Configuration](#generator-configuration) for supported config values.
 - Run the generator with the path to the config file as the first and only argument (`beyondnetgen /Path/To/Config.json`).
 - If the generator was successful it will exit with 0 as exit code.
 - If errors were encountered they'll appear in the terminal along other log output.
