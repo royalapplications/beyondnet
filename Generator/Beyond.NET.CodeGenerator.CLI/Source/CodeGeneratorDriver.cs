@@ -75,7 +75,8 @@ internal class CodeGeneratorDriver
                     throw new Exception($"Only \"{BuildTargets.APPLE_UNIVERSAL}\" is currently supported as \"{nameof(buildConfig.Target)}\"");
                 }
     
-                buildProductName = buildConfig.ProductName;
+                buildProductName = buildConfig.ProductName
+                    .Replace('.', '_');
     
                 if (string.IsNullOrEmpty(buildProductName)) {
                     throw new Exception($"A build \"{nameof(BuildConfiguration.ProductName)}\" must be provided");
