@@ -585,7 +585,7 @@ extension System_DateTime {
         let nanoSecsPerTicks: Int64 = 100
         
         let ticks = try dateTime.ticks
-        let ticksPerSecond = System.TimeSpan.ticksPerSecond
+        let ticksPerSecond = System_TimeSpan.ticksPerSecond
         
         // Compute the sub-second fraction of nanoseconds.
         let subsecondTicks = ticks % ticksPerSecond
@@ -731,7 +731,7 @@ extension Date {
             throw DNDateErrors.dateComponentReturnedNil("second")
         }
 
-        guard var retDate = try System.DateTime(Int32(year),
+        guard var retDate = try System_DateTime(Int32(year),
                                                 Int32(month),
                                                 Int32(day),
                                                 Int32(hour),
