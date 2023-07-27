@@ -1,5 +1,5 @@
 import XCTest
-import BeyondDotNETSampleNative
+import BeyondDotNETSampleKit
 
 final class SystemDecimalTests: XCTestCase {
     @MainActor

@@ -1,2 +1,2 @@
-$(PROJECT_DIR)/../Generated/BeyondDotNETSampleNative.xcframework
-$(PROJECT_DIR)/BeyondDotNETSampleNative.xcframework
+$(PROJECT_DIR)/../Generated/BeyondDotNETSampleKit.xcframework
+$(PROJECT_DIR)/BeyondDotNETSampleKit.xcframework

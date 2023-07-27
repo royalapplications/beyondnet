@@ -1,6 +1,5 @@
 import SwiftUI
-
-import BeyondDotNETSampleNative
+import BeyondDotNETSampleKit
 
 struct ContentView: View {
     var body: some View {

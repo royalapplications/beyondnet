@@ -1,5 +1,5 @@
 import XCTest
-import BeyondDotNETSampleNative
+import BeyondDotNETSampleKit
 
 final class SystemReflectionAssemblyTests: XCTestCase {
     @MainActor
@@ -31,6 +31,6 @@ final class SystemReflectionAssemblyTests: XCTestCase {
             return
         }
         
-        XCTAssertEqual("BeyondDotNETSampleNative", assemblyNameString)
+        XCTAssertEqual("BeyondDotNETSampleKit", assemblyNameString)
     }
 }

@@ -3,8 +3,8 @@
 	
 	"Build": {
 		"Target": "apple-universal",
-		"ProductName": "BeyondDotNETSampleNative",
-		"ProductBundleIdentifier": "com.royalapps.beyond.net.sample",
+		"ProductName": "BeyondDotNETSampleKit",
+		"ProductBundleIdentifier": "com.royalapps.beyonddotnetsamplekit",
 		"ProductOutputPath": "Generated"
 	},
 	

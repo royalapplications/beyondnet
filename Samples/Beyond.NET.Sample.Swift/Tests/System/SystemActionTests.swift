@@ -1,5 +1,5 @@
 import XCTest
-import BeyondDotNETSampleNative
+import BeyondDotNETSampleKit
 
 // TODO
 final class SystemActionTests: XCTestCase {

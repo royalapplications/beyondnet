@@ -23,7 +23,6 @@
 /* Begin PBXBuildFile section */
 		E70361632A6A8126000EF63C /* TestRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70361622A6A8126000EF63C /* TestRecordTests.swift */; };
 		E71E41FE2A6012340075FE5F /* BeyondNETSampleSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E71E41E62A60030F0075FE5F /* BeyondNETSampleSwift.framework */; };
-		E71E41FF2A6013B60075FE5F /* BeyondDotNETSampleNative.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E71E41EF2A6003560075FE5F /* BeyondDotNETSampleNative.xcframework */; };
 		E74FB7CC29F1341900D41787 /* IndexerTestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74FB7CB29F1341900D41787 /* IndexerTestsTests.swift */; };
 		E756F70D29F1737A00CA039F /* SystemActionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756F70C29F1737A00CA039F /* SystemActionTests.swift */; };
 		E756F70F29F173E500CA039F /* SystemThreadingThreadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756F70E29F173E500CA039F /* SystemThreadingThreadTests.swift */; };
@@ -31,6 +30,8 @@
 		E756F71329F17AA000CA039F /* AnimalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756F71229F17AA000CA039F /* AnimalTests.swift */; };
 		E756F71529F1826500CA039F /* AddressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756F71429F1826500CA039F /* AddressTests.swift */; };
 		E756F71729F183D400CA039F /* TransformerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756F71629F183D400CA039F /* TransformerTests.swift */; };
+		E75873072A726C720078126F /* BeyondDotNETSampleKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E75873062A726C720078126F /* BeyondDotNETSampleKit.xcframework */; };
+		E75873082A726C720078126F /* BeyondDotNETSampleKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E75873062A726C720078126F /* BeyondDotNETSampleKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E787AA8629EDC0BA00601F1A /* SystemObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E787AA8529EDC0BA00601F1A /* SystemObjectTests.swift */; };
 		E787AA8829EDC2C400601F1A /* SystemTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E787AA8729EDC2C400601F1A /* SystemTypeTests.swift */; };
 		E787AA8A29EDC55D00601F1A /* SystemExceptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E787AA8929EDC55D00601F1A /* SystemExceptionTests.swift */; };
@@ -59,8 +60,6 @@
 		E7B57B802A6AD801003C96DA /* BeyondNETSampleSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = E7B57B7F2A6AD801003C96DA /* BeyondNETSampleSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7B93FA92A050D8300D8BAF1 /* SystemUriTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B93FA82A050D8300D8BAF1 /* SystemUriTests.swift */; };
 		E7B93FAB2A05259500D8BAF1 /* StructTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B93FAA2A05259500D8BAF1 /* StructTestTests.swift */; };
-		E7C1BBB72A6FD036000AA607 /* BeyondDotNETSampleNative.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E71E41EF2A6003560075FE5F /* BeyondDotNETSampleNative.xcframework */; };
-		E7C1BBB82A6FD036000AA607 /* BeyondDotNETSampleNative.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E71E41EF2A6003560075FE5F /* BeyondDotNETSampleNative.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E7F90B6029F2A324005B0C67 /* GenericTestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F90B5F29F2A324005B0C67 /* GenericTestsTests.swift */; };
 		E7F90B6229F2A340005B0C67 /* GenericTestClassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F90B6129F2A340005B0C67 /* GenericTestClassTests.swift */; };
 /* End PBXBuildFile section */
@@ -76,13 +75,13 @@
 			name = "Copy Libraries";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E7C1BBB92A6FD036000AA607 /* Embed Frameworks */ = {
+		E75873042A726C350078126F /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E7C1BBB82A6FD036000AA607 /* BeyondDotNETSampleNative.xcframework in Embed Frameworks */,
+				E75873082A726C720078126F /* BeyondDotNETSampleKit.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,7 +92,6 @@
 		E70361622A6A8126000EF63C /* TestRecordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRecordTests.swift; sourceTree = "<group>"; };
 		E70D117229BF9FEC00B4E738 /* BeyondNETSampleSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeyondNETSampleSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E71E41E62A60030F0075FE5F /* BeyondNETSampleSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BeyondNETSampleSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E71E41EF2A6003560075FE5F /* BeyondDotNETSampleNative.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = BeyondDotNETSampleNative.xcframework; sourceTree = "<group>"; };
 		E71E41FC2A60116A0075FE5F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E74FB7CB29F1341900D41787 /* IndexerTestsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexerTestsTests.swift; sourceTree = "<group>"; };
 		E756F70C29F1737A00CA039F /* SystemActionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemActionTests.swift; sourceTree = "<group>"; };
@@ -102,6 +100,7 @@
 		E756F71229F17AA000CA039F /* AnimalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTests.swift; sourceTree = "<group>"; };
 		E756F71429F1826500CA039F /* AddressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTests.swift; sourceTree = "<group>"; };
 		E756F71629F183D400CA039F /* TransformerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerTests.swift; sourceTree = "<group>"; };
+		E75873062A726C720078126F /* BeyondDotNETSampleKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = BeyondDotNETSampleKit.xcframework; sourceTree = "<group>"; };
 		E7808CE929DEFB2600F50203 /* BeyondNETSampleSwift.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = BeyondNETSampleSwift.xctestplan; sourceTree = SOURCE_ROOT; };
 		E787AA8529EDC0BA00601F1A /* SystemObjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemObjectTests.swift; sourceTree = "<group>"; };
 		E787AA8729EDC2C400601F1A /* SystemTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemTypeTests.swift; sourceTree = "<group>"; };
@@ -142,7 +141,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E71E41FE2A6012340075FE5F /* BeyondNETSampleSwift.framework in Frameworks */,
-				E71E41FF2A6013B60075FE5F /* BeyondDotNETSampleNative.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,7 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7C1BBB72A6FD036000AA607 /* BeyondDotNETSampleNative.xcframework in Frameworks */,
+				E75873072A726C720078126F /* BeyondDotNETSampleKit.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,11 +160,11 @@
 			children = (
 				E71E41FC2A60116A0075FE5F /* README.md */,
 				E7808CE929DEFB2600F50203 /* BeyondNETSampleSwift.xctestplan */,
-				E71E41EF2A6003560075FE5F /* BeyondDotNETSampleNative.xcframework */,
 				E7B491E12A5FE3F300A7C75D /* PreBuildOutputFiles.xcfilelist */,
 				E7B57B7F2A6AD801003C96DA /* BeyondNETSampleSwift.h */,
 				E7C8CF0129C1FA6C00C4230F /* Tests */,
 				E70D115E29BF9F2600B4E738 /* Products */,
+				E75873052A726C720078126F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -177,6 +175,14 @@
 				E71E41E62A60030F0075FE5F /* BeyondNETSampleSwift.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E75873052A726C720078126F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E75873062A726C720078126F /* BeyondDotNETSampleKit.xcframework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		E7AC3D8929E038CB00C5609B /* TestSupport */ = {
@@ -287,7 +293,7 @@
 				E71E41E22A60030F0075FE5F /* Sources */,
 				E71E41E32A60030F0075FE5F /* Frameworks */,
 				E71E41E42A60030F0075FE5F /* Resources */,
-				E7C1BBB92A6FD036000AA607 /* Embed Frameworks */,
+				E75873042A726C350078126F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

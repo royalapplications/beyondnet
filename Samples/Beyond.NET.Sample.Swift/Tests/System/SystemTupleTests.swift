@@ -1,5 +1,5 @@
 import XCTest
-import BeyondDotNETSampleNative
+import BeyondDotNETSampleKit
 
 final class SystemTupleTests: XCTestCase {
     @MainActor

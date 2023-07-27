@@ -1,5 +1,5 @@
 import XCTest
-import BeyondDotNETSampleNative
+import BeyondDotNETSampleKit
 
 fileprivate class UnhandledExceptionHandlerStorage {
 	static var unhandledExceptionHandler: System.UnhandledExceptionEventHandler?
