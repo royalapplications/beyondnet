@@ -12,8 +12,8 @@
 	"COutputPath": "Generated/Generated_C.h",
 	"SwiftOutputPath": "Generated/Generated_Swift.swift",
 	
-	"EmitUnsupported": false,
-	"GenerateTypeCheckedDestroyMethods": true,
+	"EmitUnsupported": true,
+	"GenerateTypeCheckedDestroyMethods": false,
 	"EnableGenericsSupport": true,
 
 	"IncludedTypeNames": [
