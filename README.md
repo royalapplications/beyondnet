@@ -17,71 +17,171 @@ This is where the code generator, that is at the core of Beyond.NET comes in.
 The generator can target any compiled .NET assembly and generate native code bindings for all public types and APIs contained within it. It does this by loading the targeted assembly and reflecting over all of its types. Next, wrapper functions for all publicly available APIs are generated and decorated with the `UnmanagedCallersOnly` attribute which makes them callable from native code.
 From there, bindings for other languages can be generated. Which language bindings are generated can be controlled by various settings but the C bindings form the basis for all other languages.
 So if you're, for instance targeting Swift the call tree looks like this: Swift -> C -> .NET APIs marked with the `UnmanagedCallersOnly` attribute -> Original .NET API.
-
-Since new C# code is generated as part of the language bindings, it's required to either include the single generated C# source code file in the existing .NET project you're targeting or create a new project soley for the purpose of compiling a native version of the assembly. We recommend the latter as you currently need to compile your project using NativeAOT to actually take advantage of the generated bindings and that way, the original assembly stays unmodified.
-
-It's important to note that while Beyond.NET generates code for you, it doesn't compile it. You'll have to do that yourself.
+The generated C# code can then be compiled with .NET NativeAOT which allows the resulting library to be called using the generated language bindings.
 
 
 
 ## Quick Start Guide
 
 ### Prerequisites
-- Make sure [.NET 8](https://dotnet.microsoft.com/download/dotnet/8.0) is installed.
-- On macOS, make sure [Xcode](https://developer.apple.com/xcode/) is installed.
+
+- Make sure [.NET 8](https://dotnet.microsoft.com/download/dotnet/8.0) is installed and on your path.
+- On macOS, make sure [Xcode](https://developer.apple.com/xcode/), the macOS and iOS SDKs and the Command Line Tools (`xcode-select --install`) are installed.
 - On Linux, make sure clang and zlib are installed
 
 
 ### Generator Executable
+
 - Either clone the Beyond.NET repository or [download](https://github.com/royalapplications/beyondnet/releases/latest) one of the pre-built generator executables for your platform.
 - If you do not have a pre-compiled executable of the generator, compile it by either running `dotnet publish` within its directory or use one of our provided publish scripts like `publish_macos_universal` for compiling a universal macOS binary.
-- Open a terminal, switch to the directory containing the built executable and execute the generator (`./beyondnetgen`).
+- Open a terminal, switch to the directory containing the built executable and execute the generator (`./beyondnetgen` or just `beyondnetgen` if you have it on your path).
 - Since you've provided no arguments, the generator should show its usage screen.
-- Optionally, symlink the generator executable to be somewhere on your path (ie. `ln -s ~/Path/To/beyondnetgen /usr/local/bin/beyondnetgen`)
+- Optionally, symlink the generator executable to be somewhere on your path (ie. `ln -s ~/Path/To/beyondnetgen /usr/local/bin/beyondnetgen`) if you're not using a pre-built executable.
 
 
-### Configuration
+### Configuring the Generator
+
 - Currently, the generator takes a single required argument: `PathToConfig.json`.
-- Create a config file. See [Generator Config](#generator-config) for an example and the supported config values.
-- Run the generator with the path to the config file as the first and only argument (`./beyondnetgen /Path/To/Config.json`).
-- If the generator was successful it will exit with 0 as exit code and not print anything to stdout or stderr.
-- If errors were encountered they'll appear in the terminal.
+- Create a config file. See [Generator Config](#generator-config) for supported config values.
+- Run the generator with the path to the config file as the first and only argument (`beyondnetgen /Path/To/Config.json`).
+- If the generator was successful it will exit with 0 as exit code.
+- If errors were encountered they'll appear in the terminal along other log output.
 
 
-### Build a native version of the target .NET assembly
-- Let's assume the assembly you're creating native bindings for is called `MyLib` (`MyLib.dll`).
-- Create a new .NET class lib project (ie. `mkdir MyLibNative && cd MyLibNative && dotnet new classlib`).
-- Either copy the generated .cs file containing the unmanaged C# bindings to the new project's directory or adjust the path in the generator config file to point to your new project's path.
-- Open `MyLibNative.csproj` in a text editor.
-- Make sure `TargetFramework` is set to `net8.0`.
-- Set `AllowUnsafeBlocks` to `true` as the generated bindings use unsafe code (ie. `<AllowUnsafeBlocks>true</AllowUnsafeBlocks>`).
-- Add a project reference to the original .NET assembly (ie. `<ProjectReference Include="..\MyLib.csproj" />`).
-- Set `PublishAot` to `true` (ie. `<PublishAot>true</PublishAot>`).
-- Set `RuntimeIdentifier` or `RuntimeIdentifiers` to the platforms you're targeting (ie. `<RuntimeIdentifiers>osx-x64;osx-arm64</RuntimeIdentifiers>`).
-- Note that .NET does not support multi-architecture builds out of the box. If you want to create a universal macOS dylib, you will need to do two separate builds, then merge them using the `lipo` CLI tool.
-- Also, the install name of dylibs created by .NET's NativeAOT compiler needs to adjusted from `/usr/lib/MyLibNative.dylib` to `@rpath/MyLibNative.dylib`.
-- There's a sample publish script which does all of this in the repository called `publish_macos_universal`. You can use this as the basis for your build. Just make sure to adjust the `OUTPUT_PRODUCT_NAME` variable to match the assembly name of your .NET library (`MyLib`).
-- Run the publish script (ie. `./publish_macos_universal`).
-- On macOS this will produce a universal `MyNativeLib.dylib` in the bin directory under `bin/Release/net8.0/osx-universal/publish`.
+### Generator Modes
+
+The generator always generates language bindings (C header file and optionally a Swift source code file) but it can also be configured to automatically compile a native version of the target assembly.
+At the moment, automatic build support is only available on Apple platforms.
+
+If enabled, an [XCFramework](https://developer.apple.com/documentation/xcode/creating-a-multi-platform-binary-framework-bundle) containing compiled binaries for macOS ARM64, macOS x64, iOS ARM64, iOS Simulator ARM64 and iOS Simulator x64 is built. The generated XCFramework is ready to use and can just be dropped into an Xcode project.
+
+We recommend using the automatic build support if possible.
+If you decide to [do things manually](README_MANUAL_BUILD.md), you will have to compile the generated C# file using NativeAOT, then link the resulting dynamic library into your native code and include the generated language bindings to call into it.
 
 
-### Use generated bindings from Swift
-- Create a macOS App Xcode project.
-- Add the generated C bindings header file (ie. `Output_C.h`) and the generated Swift bindings file (ie. `Output_Swift.swift`) to the project.
-- Create an Objective-C bridging header.
-  - You can either just add a temporary Objective-C class (you can delete it later) to trigger the creation of the bridging header or create an empty header file and adjust the "Objective-C Bridging Header" build setting of the Xcode project to point to that header file.
-- In the briding header, import the generated C bindings header file (ie. `#import "Output_C.h"`).
-- Open the project settings and in the "General" tab, under "Frameworks, Libraries and Embedded Content" click the "+" button
-    - Select "Add other... - Add files..." and select the native dylib (ie. `MyNativeLib.dylib`)
-- Try to build the project. If it fails, you might need to adjust either your header or library search paths in the project settings.
-    - If Xcode fails to link the native dylib (the error looks something like this: `Library not found for -lMyNativeLib`) you need to adjust "Build Settings - Library Search Paths" in you project settings to point to the path where the library is located.
-        - For example, if you the native library is located one level below your Xcode project in a folder called "MyLibNative/bin/Release/net8.0/osx-universal/publish" use this: `$(PROJECT_DIR)/../MyLibNative/bin/Release/net8.0/osx-universal/publish`)
-    - If Xcode complains about being unable to find the generated C header, adjust "Build Settings - Header Search Paths" to point to the path where the generated header is located.
-        - For example, if your header is one level below your Xcode project in a folder called "Generated" use this: `$(PROJECT_DIR)/../Generated`
-- You're now ready to call any of the APIs that bindings were generated for.
-- As a simple test, open `AppDelegate.swift` and in `applicationDidFinishLaunching` add this code: `print((try? System.DateTime.now?.toString()?.string()) ?? "Error")`
-    - When you run the app, you should see the current date and time printed to the console.
-- Please note that since C and Swift do not have support for namespaces, all generated types will have their namespace prefixed. `System.Guid.NewGuid` for instance gets generated as `System_Guid.newGuid` in Swift and `System_Guid_NewGuid` in C. However, by default, the Swift code generator will also produces typealiases in nested types that basically restore the .NET namespaces by emulating them using nested types in Swift. So you can in fact use `System.Guid.newGuid` in Swift. Hooray!
+### Creating a native version of a .NET classlib for Apple platforms
+
+Here's a short step by step guide on how to create a new .NET class library, generate Swift bindings and automatically compile an XCFramework for macOS and iOS.
+
+- Open a terminal window.
+- Ensure you have `beyondnetgen` on your path (you can check by running `which beyondnetgen`).
+- Create a new .NET classlib project: `mkdir BeyondDemo && cd BeyondDemo && dotnet new classlib`.
+- Rename the `Class1.cs` file that the `dotnet new` command automatically created to `Hello.cs` (ie. `mv Class1.cs Hello.cs`).
+- Open `Hello.cs` in a text editor.
+- Replace its contents with this:
+
+```csharp
+namespace BeyondDemo;
+
+public class Hello
+{
+    public string Name { get; }
+
+    public Hello(string name)
+    {
+        Name = name;
+    }
+
+    public string GetGreeting()
+    {
+        return $"Hello, {Name}!";
+    }
+}
+```
+
+- Compile the .NET class library: `dotnet publish`.
+- Note the published dll's output path (should be something like this `/Path/To/BeyondDemo/bin/Release/net8.0/publish/BeyondDemo.dll`).
+- Create a config file for Beyond.NET: `touch Config.json`.
+- Open `Config.json` in a text editor.
+- Replace its contents with this:
+
+```json
+{
+    "AssemblyPath": "bin/Release/net8.0/publish/BeyondDemo.dll",
+
+    "Build": {
+        "Target": "apple-universal"
+    }
+}
+```
+
+- Ensure the `AssemblyPath` matches the path where your dll was built.
+- Note that you can enter the path relative to the working directory like in the config example above.
+- Run the generator: `beyondnetgen Config.json`.
+- On a Mac Studio M2 Ultra, this takes a little more than a minute, so it might be worth getting some coffee depending on your hardware.
+- The individual code generation and builds steps are shown in the terminal.
+- The last printed line should include the path where the build output has been written to (ie. `Build Output has been written to "/Path/To/BeyondDemo/bin/Release/net8.0/publish"`).
+- Check the contents of the build output path: `ls bin/Release/net8.0/publish`
+- It should include an XCFramework bundle called `BeyondDemoKit.xcframework`.
+- Congratulations, you now have a fully functional native version of your .NET library that can be consumed by macOS and iOS Xcode projects.
+
+
+### Using the generated XCFramework
+
+Now that we have an XCFramework containing binaries for macOS and iOS, we can integrate it into an Xcode project.
+
+- Open Xcode.
+- Go to `File - New - Project...`.
+- Select the `Multiplatform` tab.
+- Select `App` and click `Next`.
+- Enter `BeyondDemoApp` in the `Product Name` text field and click `Next`.
+- Select the `BeyondDemo` folder that also contains the .NET project.
+- Select the project (`BeyondDemoApp`) in Xcode's project navigator (sidebar).
+- Ensure the `BeyondDemoApp` target is selected under `Targets` in the sidebar.
+- Select the `General` tab.
+- Under `Frameworks, Libraries and Embedded Content`, click the `+` button.
+- Select `Add Other... - Add Files...`.
+- Navigate one level up in the file picker, then go to `bin/Release/net8.0/publish` (depending on your output path).
+- Select `BeyondDemoKit.xcframework`.
+- The XCFramework should now show up and it should already be configured to `Embed & Sign`.
+- Select `ContentView.swift` in the project navigator.
+- Replace the whole contents of the file with this:
+
+```swift
+import SwiftUI
+import BeyondDemoKit
+
+struct ContentView: View {
+    var body: some View {
+        VStack {
+            Text("\(greeting(for: "You"))")
+        }
+    }
+    
+    func greeting(for name: String) -> String {
+        do {
+            // Convert the Swift String into a .NET System.String
+            let nameDN = name.dotNETString()
+            
+            // Create an instance of the .NET class "Hello"
+            guard let hello = try BeyondDemo.Hello(nameDN) else {
+                fatalError("BeyondDemo.Hello ctor returned nil")
+            }
+            
+            // Get a .NET System.String containing the greeting
+            guard let theGreetingDN = try hello.getGreeting() else {
+                fatalError("BeyondDemo.Hello.GetGreeting returned nil")
+            }
+            
+            // Convert the .NET System.String to a Swift String
+            let theGreeting = theGreetingDN.string()
+            
+            // Return the greeting
+            return theGreeting
+        } catch {
+            fatalError("An error occurred: \(error.localizedDescription)")
+        }
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View { ContentView() }
+}
+```
+
+- Now run the app.
+- You should see `Hello, You!` on the screen.
+- If you do, you successfully integrated a natively compiled .NET library into a multiplatform SwiftUI project!
 
 
 
@@ -89,34 +189,71 @@ It's important to note that while Beyond.NET generates code for you, it doesn't 
 
 The generator currently uses a configuration file where all of its options are specified.
 
-**Minimal Example:**
+**Currently supported configuration values:**
 
 ```json
 {
   "AssemblyPath": "/Path/To/Target/.NET/Assembly.dll",
 
+  "Build": {
+      "Target": "apple-universal",
+
+      "ProductName": "AssemblyKit",
+      "ProductBundleIdentifier": "com.mycompany.assemblykit",
+      "ProductOutputPath": "/Path/To/ProductOutput",
+
+      "MacOSDeploymentTarget": "13.0",
+      "iOSDeploymentTarget": "16.0"
+  },
+
   "CSharpUnmanagedOutputPath": "/Path/To/Generated/CSharpUnmanaged/Output_CS.cs",
   "COutputPath": "/Path/To/Generated/C/Output_C.h",
-  "SwiftOutputPath": "/Path/To/Generated/Swift/Output_Swift.swift"
+  "SwiftOutputPath": "/Path/To/Generated/Swift/Output_Swift.swift",
+
+  "EmitUnsupported": false,
+  "GenerateTypeCheckedDestroyMethods": false,
+  "EnableGenericsSupport": false,
+  "DoNotGenerateSwiftNestedTypeAliases": false,
+  "DoNotDeleteTemporaryDirectories": false,
+
+  "IncludedTypeNames": [
+      "IncludedTypeName",
+      "AnotherIncludedTypeName"
+  ],
+
+  "ExcludedTypeNames": [
+      "ExcludedTypeName",
+      "AnotherExcludedTypeName"
+  ],
+
+  "AssemblySearchPaths": [
+      "/Path/To/Assemblies",
+      "/Another/Path/To/Assemblies"
+  ]
 }
 ```
 
-- `AssemblyPath`: Enter the path to the compiled .NET assembly you want to generate native bindings for. (Required)
-- `CSharpUnmanagedOutputPath`: The generator will use this path to write the generated file containing the C# wrapper methods. (Required)
-- `COutputPath`: The generator will use this path to write the generated C bindings header file. (Required)
-- `SwiftOutputPath`: The generator will use this path to write the generated Swift bindings file. (Optional)
-- All paths can either be absolute or relative to the config file.
+- **`AssemblyPath`**: Enter the path to the compiled .NET assembly you want to generate native bindings for. (Required)
+- **`Build`**: Configuration options for automatic build support. (Optional; automatic build is disabled if not provided)
+    - **`Target`**: The platform and architecture to build for. (Required; currently `apple-universal` is the only supported value)
+    - **`ProductName`**: The name of the resulting XCFramework and Swift/Clang module. This must be different than the target assembly name and any namespaces contained within it or its dependencies. (Optional; if not provided the assembly file name suffixed with `Kit` is used)
+    - **`ProductBundleIdentifier`**: The bundle identifier of the resulting frameworks. (Optional; if not provided the bundle identifier is `com.mycompany.` suffixed with the `ProductName`)
+    - **`ProductOutputPath`**: The output path for the resulting XCFramework. (Optional; if not provided, the directory of the `AssemblyPath` is used)
+    - **`MacOSDeploymentTarget`**: The deployment target for the macOS portion of the XCFramework. (Optional; if not provided, `13.0` is used)
+    - **`iOSDeploymentTarget`**: The deployment target for the iOS portion of the XCFramework. (Optional; if not provided, `16.0` is used)
+- **`CSharpUnmanagedOutputPath`**: The generator will use this path to write the file containing the C# wrapper methods. (Required if `Build` is disabled; Optional if `Build` is enabled)
+- **`COutputPath`**: The generator will use this path to write the generated C bindings header file. (Required if `Build` is disabled; Optional if `Build` is enabled)
+- **`SwiftOutputPath`**: The generator will use this path to write the generated Swift bindings file. (Optional)
+- **`EmitUnsupported`** (Boolean; `false` by default): If enabled (`true`), comments will be generated in the output files explaining why a binding for a certain type or API was not generated.
+- **`GenerateTypeCheckedDestroyMethods`** (Boolean; `false` by default): If enabled (`true`), the generated `*_Destroy` methods will check the type of the passed in object. If the type does not match, an unhandled(!) exception will be thrown. Use this to detect memory management bugs in your code. Since it introduces overhead, it's disabled by default. Also, there's no need for manual memory management in higher level languages like Swift so this is unnecessary.
+- **`EnableGenericsSupport`** (Boolean; `false` by default): Generics support is currently experimental and disabled by default. If you want to test the current state though or work on improving generics support, enable this by setting it to `true`.
+- **`DoNotGenerateSwiftNestedTypeAliases`** (Boolean; `false` by default): If set to `true`, no typealiases matching the .NET namespaces of the generated types will be emitted. That means, for example that instead of `System.String.empty` you'd have to use `System_String.empty`.
+- **`DoNotDeleteTemporaryDirectories`** (Boolean; `false` by default): If set to `true`, any temporary directories created during the generation or build process are not deleted automatically.
+- **`IncludedTypeNames`** (Array of Strings): Use this to provide a list of types that should be included even if they are not used by the target assembly.
+- **`ExcludedTypeNames`** (Array of Strings): Use this to provide a list of types that should be excluded.
+- **`AssemblySearchPaths`** (Array of Strings): Use this to provide a list of file system paths that are included when searching for assembly references.
 
-There are several other optional options that control the behavior of the generator:
-
-- `EmitUnsupported` (Boolean; `false` by default): If enabled (`true`), comments will be generated in the output files explaining why a binding for a certain type or API was not generated.
-- `GenerateTypeCheckedDestroyMethods` (Boolean; `false` by default): If enabled (`true`), the generated `*_Destroy` methods will check the type of the passed in object. If the type does not match, an unhandled(!) exception will be thrown. Use this to detect memory management bugs in your code. Since it introduces overhead, it's disabled by default. Also, there's no need for manual memory management in higher level languages like Swift so this is unnecessary.
-- `DoNotGenerateSwiftNestedTypeAliases` (Boolean; `false` by default): If set to `true`, no typealiases matching the .NET namespaces of the generated types will be emitted. That means, for example that instead of `System.String.empty` you'd have to use `System_String.empty`.
-- `EnableGenericsSupport` (Boolean; `false` by default): Generics support is currently experimental and disabled by default. If you want to test the current state though or work on improving generics support, enable this by setting it to `true`.
-- `IncludedTypeNames` (Array of Strings): Use this to provide a list of types that should be included even if they are not used by the target assembly.
-- `ExcludedTypeNames` (Array of Strings): Use this to provide a list of types that should be excluded.
-- `AssemblySearchPaths` (Array of Strings): Use this to provide a list of file system paths that are included when searching for assembly references.
-
+Note that all paths can either be absolute or relative to the working directory.
 
 
 ## Opaque types
@@ -514,17 +651,14 @@ Also see this [StackOverflow post](https://stackoverflow.com/questions/10431579/
 
 ## Unit Tests
 
-We've got quite an extensive suite of unit tests. All of them are written in Swift but some target the generated C bindings while others target the Swift API surface.
+We've got quite an extensive suite of unit tests. All of them are written in Swift.
 
-To run them, open [BeyondNETSamplesSwift.xcworkspace](Samples/Beyond.NET.Sample.Swift/BeyondNETSamplesSwift.xcworkspace) in Xcode and go to `Product -> Test`.
-
-Building this in Xcode will take care of the following:
-- It compiles the code generator CLI app using NativeAOT
-- It compiles the .NET sample project
-- It compiles the sample project's generated bindings using NativeAOT
-- It compiles a macOS framework containing the generated C and Swift bindings
-
-So this is all automatic if you just open the Xcode workspace and build it or run the tests. The individual steps are implemented as build phases in the Xcode project.
+To run them:
+- Open [BeyondNETSamplesSwift.xcworkspace](Samples/Beyond.NET.Sample.Swift/BeyondNETSamplesSwift.xcworkspace) in Xcode.
+- In the scheme selector, choose `Build .NET Stuff` and go to `Product - Build`.
+- Wait until the build finishes.
+- Then open the scheme selector again and this time choose `BeyondNETSampleSwift`.
+- Go to `Product - Test`.
 
 
 
