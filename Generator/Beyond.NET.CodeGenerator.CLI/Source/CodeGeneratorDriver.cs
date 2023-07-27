@@ -76,7 +76,7 @@ internal class CodeGeneratorDriver
                 }
     
                 buildProductName = buildConfig.ProductName
-                    .Replace('.', '_');
+                    ?.Replace('.', '_');
     
                 if (string.IsNullOrEmpty(buildProductName)) {
                     throw new Exception($"A build \"{nameof(BuildConfiguration.ProductName)}\" must be provided");
