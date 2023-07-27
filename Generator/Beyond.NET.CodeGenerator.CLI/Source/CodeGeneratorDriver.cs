@@ -81,8 +81,12 @@ internal class CodeGeneratorDriver
                     throw new Exception($"A build \"{nameof(BuildConfiguration.ProductName)}\" must be provided");
                 }
 
-                // TODO: Make this configurable
-                buildProductBundleIdentifier = $"com.todomycompany.{buildProductName.ToLower()}";
+                buildProductBundleIdentifier = buildConfig.ProductBundleIdentifier;
+
+                if (string.IsNullOrEmpty(buildProductBundleIdentifier)) {
+                    // In case no bundle identifier is specified, generate one
+                    buildProductBundleIdentifier = $"com.mycompany.{buildProductName.ToLower()}";
+                }
     
                 buildProductOutputPath = buildConfig.ProductOutputPath;
     

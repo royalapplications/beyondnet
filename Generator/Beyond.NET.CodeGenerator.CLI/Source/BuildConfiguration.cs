@@ -3,8 +3,11 @@ namespace Beyond.NET.CodeGenerator.CLI;
 public record BuildConfiguration
 (
     string Target,
+    
     string ProductName,
+    string? ProductBundleIdentifier,
     string ProductOutputPath,
+    
     string? MacOSDeploymentTarget,
     string? iOSDeploymentTarget
 );

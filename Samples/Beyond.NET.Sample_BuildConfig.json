@@ -4,6 +4,7 @@
 	"Build": {
 		"Target": "apple-universal",
 		"ProductName": "BeyondDotNETSampleNative",
+		"ProductBundleIdentifier": "com.royalapps.beyond.net.sample",
 		"ProductOutputPath": "Generated"
 	},
 	
