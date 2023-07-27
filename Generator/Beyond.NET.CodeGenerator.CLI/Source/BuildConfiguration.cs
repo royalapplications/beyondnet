@@ -6,7 +6,7 @@ public record BuildConfiguration
     
     string? ProductName,
     string? ProductBundleIdentifier,
-    string ProductOutputPath,
+    string? ProductOutputPath,
     
     string? MacOSDeploymentTarget,
     string? iOSDeploymentTarget

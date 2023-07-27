@@ -48,6 +48,8 @@ internal class CodeGeneratorDriver
     internal void Generate()
     {
         HashSet<string> tempDirPaths = new();
+
+        string? finalBuildOutputPath = null;
         
         try {
             #region Configuration
@@ -110,8 +112,21 @@ internal class CodeGeneratorDriver
                     // In case no bundle identifier is specified, generate one
                     buildProductBundleIdentifier = $"com.mycompany.{buildProductName.ToLower()}";
                 }
+
+                var potentialOutputPath = buildConfig.ProductOutputPath;
+                string? outputPath;
+
+                if (string.IsNullOrEmpty(potentialOutputPath)) {
+                    // If no product output path is provided, use the target assembly's directory path
+                    var assemblyDirectoryPath = Path.GetDirectoryName(assemblyPath);
+
+                    outputPath = assemblyDirectoryPath;
+                } else {
+                    outputPath = potentialOutputPath
+                        .ExpandTildeAndGetAbsolutePath();
+                }
     
-                buildProductOutputPath = buildConfig.ProductOutputPath;
+                buildProductOutputPath = outputPath;
     
                 if (string.IsNullOrEmpty(buildProductOutputPath)) {
                     throw new Exception($"A build \"{nameof(BuildConfiguration.ProductOutputPath)}\" must be provided");
@@ -346,6 +361,8 @@ internal class CodeGeneratorDriver
                     buildProductOutputPath,
                     true
                 );
+
+                finalBuildOutputPath = buildProductOutputPath;
             }
             #endregion Build
         } finally {
@@ -361,6 +378,11 @@ internal class CodeGeneratorDriver
                     }
                 }
             }
+        }
+
+        if (!string.IsNullOrEmpty(finalBuildOutputPath)) {
+            Logger.LogInformation("Code Generation and Build completed successfully");
+            Logger.LogInformation($"Build Output has been written to \"{finalBuildOutputPath}\"");
         }
     }
 
