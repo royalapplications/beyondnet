@@ -35,26 +35,28 @@ struct ExceptionView: View {
     }
     
     var body: some View {
-        VStack {
+        ScrollView {
             VStack {
-                Text("Localized Description:")
-                    .bold()
-                Text(localizedDescription)
-                    .textSelection(.enabled)
-            }.padding(.bottom)
-            
-            VStack {
-                Text("Stack Trace:")
-                    .bold()
-                Text(stackTrace)
-                    .textSelection(.enabled)
-            }.padding(.bottom)
-            
-            VStack {
-                Text("System.Exception.ToString:")
-                    .bold()
-                Text(exceptionToString)
-                    .textSelection(.enabled)
+                VStack {
+                    Text("Localized Description:")
+                        .bold()
+                    Text(localizedDescription)
+                        .textSelection(.enabled)
+                }.padding(.bottom)
+                
+                VStack {
+                    Text("Stack Trace:")
+                        .bold()
+                    Text(stackTrace)
+                        .textSelection(.enabled)
+                }.padding(.bottom)
+                
+                VStack {
+                    Text("System.Exception.ToString:")
+                        .bold()
+                    Text(exceptionToString)
+                        .textSelection(.enabled)
+                }
             }
         }
     }
