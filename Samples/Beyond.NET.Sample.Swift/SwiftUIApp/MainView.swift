@@ -11,6 +11,10 @@ struct MainView: View {
                 .tabItem {
                     Label("Clock", systemImage: "clock.fill")
                 }
+            Base64View()
+                .tabItem {
+                    Label("Base64", systemImage: "number.circle.fill")
+                }
         }
         .padding()
     }
