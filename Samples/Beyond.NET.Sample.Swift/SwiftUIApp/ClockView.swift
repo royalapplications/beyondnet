@@ -48,6 +48,7 @@ private extension ClockView {
             fatalError("Error while converting System.DateTime to Swift Date")
         }
         
+        // Get a formatted date string
         let dateString = dateFormatter.string(from: now)
         
         return dateString
