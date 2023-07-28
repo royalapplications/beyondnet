@@ -7,21 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E71E420D2A6015C80075FE5F /* SampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71E420C2A6015C80075FE5F /* SampleApp.swift */; };
-		E71E420F2A6015C80075FE5F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71E420E2A6015C80075FE5F /* ContentView.swift */; };
-		E71E42112A6015C90075FE5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E71E42102A6015C90075FE5F /* Assets.xcassets */; };
-		E758730F2A726CA70078126F /* BeyondDotNETSampleKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E758730E2A726CA60078126F /* BeyondDotNETSampleKit.xcframework */; };
-		E75873102A726CA70078126F /* BeyondDotNETSampleKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E758730E2A726CA60078126F /* BeyondDotNETSampleKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E774576B2A73AA6300920E39 /* SampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E774576A2A73AA6300920E39 /* SampleApp.swift */; };
+		E774576D2A73AA6300920E39 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E774576C2A73AA6300920E39 /* ContentView.swift */; };
+		E774576F2A73AA6300920E39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E774576E2A73AA6300920E39 /* Assets.xcassets */; };
+		E774577F2A73AC9000920E39 /* BeyondDotNETSampleKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E774577E2A73AC9000920E39 /* BeyondDotNETSampleKit.xcframework */; };
+		E77457802A73AC9000920E39 /* BeyondDotNETSampleKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E774577E2A73AC9000920E39 /* BeyondDotNETSampleKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		E7C1BBBF2A6FEBD5000AA607 /* Embed Frameworks */ = {
+		E77457812A73AC9000920E39 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E75873102A726CA70078126F /* BeyondDotNETSampleKit.xcframework in Embed Frameworks */,
+				E77457802A73AC9000920E39 /* BeyondDotNETSampleKit.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -29,56 +29,58 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E71E42092A6015C80075FE5F /* BeyondNETSampleSwiftiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeyondNETSampleSwiftiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E71E420C2A6015C80075FE5F /* SampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleApp.swift; sourceTree = "<group>"; };
-		E71E420E2A6015C80075FE5F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		E71E42102A6015C90075FE5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E758730E2A726CA60078126F /* BeyondDotNETSampleKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BeyondDotNETSampleKit.xcframework; path = ../BeyondDotNETSampleKit.xcframework; sourceTree = "<group>"; };
+		E77457672A73AA6200920E39 /* BeyondNETSampleSwiftUIApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeyondNETSampleSwiftUIApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E774576A2A73AA6300920E39 /* SampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleApp.swift; sourceTree = "<group>"; };
+		E774576C2A73AA6300920E39 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E774576E2A73AA6300920E39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E77457702A73AA6300920E39 /* BeyondNETSampleSwiftUIApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BeyondNETSampleSwiftUIApp.entitlements; sourceTree = "<group>"; };
+		E774577E2A73AC9000920E39 /* BeyondDotNETSampleKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BeyondDotNETSampleKit.xcframework; path = ../Generated/BeyondDotNETSampleKit.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E71E42062A6015C80075FE5F /* Frameworks */ = {
+		E77457642A73AA6200920E39 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E758730F2A726CA70078126F /* BeyondDotNETSampleKit.xcframework in Frameworks */,
+				E774577F2A73AC9000920E39 /* BeyondDotNETSampleKit.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E71E42002A6015C80075FE5F = {
+		E774575E2A73AA6200920E39 = {
 			isa = PBXGroup;
 			children = (
-				E71E420B2A6015C80075FE5F /* Source */,
-				E71E420A2A6015C80075FE5F /* Products */,
-				E758730D2A726CA60078126F /* Frameworks */,
+				E77457692A73AA6200920E39 /* SwiftUIApp */,
+				E77457682A73AA6200920E39 /* Products */,
+				E77457792A73AB0200920E39 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		E71E420A2A6015C80075FE5F /* Products */ = {
+		E77457682A73AA6200920E39 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E71E42092A6015C80075FE5F /* BeyondNETSampleSwiftiOSApp.app */,
+				E77457672A73AA6200920E39 /* BeyondNETSampleSwiftUIApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E71E420B2A6015C80075FE5F /* Source */ = {
+		E77457692A73AA6200920E39 /* SwiftUIApp */ = {
 			isa = PBXGroup;
 			children = (
-				E71E420E2A6015C80075FE5F /* ContentView.swift */,
-				E71E420C2A6015C80075FE5F /* SampleApp.swift */,
-				E71E42102A6015C90075FE5F /* Assets.xcassets */,
+				E774576C2A73AA6300920E39 /* ContentView.swift */,
+				E774576A2A73AA6300920E39 /* SampleApp.swift */,
+				E774576E2A73AA6300920E39 /* Assets.xcassets */,
+				E77457702A73AA6300920E39 /* BeyondNETSampleSwiftUIApp.entitlements */,
 			);
-			path = Source;
+			path = SwiftUIApp;
 			sourceTree = "<group>";
 		};
-		E758730D2A726CA60078126F /* Frameworks */ = {
+		E77457792A73AB0200920E39 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E758730E2A726CA60078126F /* BeyondDotNETSampleKit.xcframework */,
+				E774577E2A73AC9000920E39 /* BeyondDotNETSampleKit.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -86,40 +88,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E71E42082A6015C80075FE5F /* BeyondNETSampleSwiftiOSApp */ = {
+		E77457662A73AA6200920E39 /* BeyondNETSampleSwiftUIApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E71E42172A6015C90075FE5F /* Build configuration list for PBXNativeTarget "BeyondNETSampleSwiftiOSApp" */;
+			buildConfigurationList = E77457762A73AA6300920E39 /* Build configuration list for PBXNativeTarget "BeyondNETSampleSwiftUIApp" */;
 			buildPhases = (
-				E71E42052A6015C80075FE5F /* Sources */,
-				E71E42062A6015C80075FE5F /* Frameworks */,
-				E71E42072A6015C80075FE5F /* Resources */,
-				E7C1BBBF2A6FEBD5000AA607 /* Embed Frameworks */,
+				E77457632A73AA6200920E39 /* Sources */,
+				E77457642A73AA6200920E39 /* Frameworks */,
+				E77457652A73AA6200920E39 /* Resources */,
+				E77457812A73AC9000920E39 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = BeyondNETSampleSwiftiOSApp;
-			productName = BeyondNETSampleSwiftiOSApp;
-			productReference = E71E42092A6015C80075FE5F /* BeyondNETSampleSwiftiOSApp.app */;
+			name = BeyondNETSampleSwiftUIApp;
+			productName = BeyondNETSampleSwiftUIApp;
+			productReference = E77457672A73AA6200920E39 /* BeyondNETSampleSwiftUIApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		E71E42012A6015C80075FE5F /* Project object */ = {
+		E774575F2A73AA6200920E39 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
-					E71E42082A6015C80075FE5F = {
+					E77457662A73AA6200920E39 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
 				};
 			};
-			buildConfigurationList = E71E42042A6015C80075FE5F /* Build configuration list for PBXProject "BeyondNETSampleSwiftiOSApp" */;
+			buildConfigurationList = E77457622A73AA6200920E39 /* Build configuration list for PBXProject "BeyondNETSampleSwiftUIApp" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -127,41 +129,41 @@
 				en,
 				Base,
 			);
-			mainGroup = E71E42002A6015C80075FE5F;
-			productRefGroup = E71E420A2A6015C80075FE5F /* Products */;
+			mainGroup = E774575E2A73AA6200920E39;
+			productRefGroup = E77457682A73AA6200920E39 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E71E42082A6015C80075FE5F /* BeyondNETSampleSwiftiOSApp */,
+				E77457662A73AA6200920E39 /* BeyondNETSampleSwiftUIApp */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		E71E42072A6015C80075FE5F /* Resources */ = {
+		E77457652A73AA6200920E39 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E71E42112A6015C90075FE5F /* Assets.xcassets in Resources */,
+				E774576F2A73AA6300920E39 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		E71E42052A6015C80075FE5F /* Sources */ = {
+		E77457632A73AA6200920E39 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E71E420F2A6015C80075FE5F /* ContentView.swift in Sources */,
-				E71E420D2A6015C80075FE5F /* SampleApp.swift in Sources */,
+				E774576D2A73AA6300920E39 /* ContentView.swift in Sources */,
+				E774576B2A73AA6300920E39 /* SampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		E71E42152A6015C90075FE5F /* Debug */ = {
+		E77457742A73AA6300920E39 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -212,16 +214,16 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		E71E42162A6015C90075FE5F /* Release */ = {
+		E77457752A73AA6300920E39 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -266,67 +268,78 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		E71E42182A6015C90075FE5F /* Debug */ = {
+		E77457772A73AA6300920E39 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwiftUIApp/BeyondNETSampleSwiftUIApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Beyond.NET Sample";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.royalapps.BeyondNETSampleSwiftiOSApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.royalapps.beyonddotnetsampleswiftuiapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		E71E42192A6015C90075FE5F /* Release */ = {
+		E77457782A73AA6300920E39 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwiftUIApp/BeyondNETSampleSwiftUIApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Beyond.NET Sample";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.royalapps.BeyondNETSampleSwiftiOSApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.royalapps.beyonddotnetsampleswiftuiapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -336,25 +349,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E71E42042A6015C80075FE5F /* Build configuration list for PBXProject "BeyondNETSampleSwiftiOSApp" */ = {
+		E77457622A73AA6200920E39 /* Build configuration list for PBXProject "BeyondNETSampleSwiftUIApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E71E42152A6015C90075FE5F /* Debug */,
-				E71E42162A6015C90075FE5F /* Release */,
+				E77457742A73AA6300920E39 /* Debug */,
+				E77457752A73AA6300920E39 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E71E42172A6015C90075FE5F /* Build configuration list for PBXNativeTarget "BeyondNETSampleSwiftiOSApp" */ = {
+		E77457762A73AA6300920E39 /* Build configuration list for PBXNativeTarget "BeyondNETSampleSwiftUIApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E71E42182A6015C90075FE5F /* Debug */,
-				E71E42192A6015C90075FE5F /* Release */,
+				E77457772A73AA6300920E39 /* Debug */,
+				E77457782A73AA6300920E39 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = E71E42012A6015C80075FE5F /* Project object */;
+	rootObject = E774575F2A73AA6200920E39 /* Project object */;
 }
