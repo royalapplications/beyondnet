@@ -32,7 +32,10 @@
 		"System.IO.Directory",
 		"System.IO.DirectoryInfo",
 		"System.Security.SecureString",
-		
+		"System.WeakReference",
+
+		"System.WeakReference`1",
+		"System.Runtime.CompilerServices.ConditionalWeakTable`2",
 		"System.Threading.Tasks.Task`1",
 		"System.Collections.Generic.IEnumerable`1",
 		"System.Collections.Generic.List`1",
