@@ -2,15 +2,34 @@ import SwiftUI
 import BeyondDotNETSampleKit
 
 struct ContentView: View {
+    @State
+    private var guidString = Self.newGuidString()
+    
     var body: some View {
         VStack {
             Text("Here's a new .NET System.Guid:")
-            Text(newGuidString())
+            
+            Text(guidString)
+                .textSelection(.enabled)
+                .bold()
+                .padding(.bottom)
+            
+            Button {
+                updateGuidString()
+            } label: {
+                Image(systemName: "arrow.clockwise.circle.fill")
+                Text("Generate New")
+            }.buttonStyle(.borderedProminent)
         }
-        .padding()
+    }
+}
+
+private extension ContentView {
+    func updateGuidString() {
+        guidString = Self.newGuidString()
     }
     
-    func newGuidString() -> String {
+    static func newGuidString() -> String {
         guard let guid = try? System.Guid.newGuid() else {
             fatalError("Error while generating new System.Guid")
         }
