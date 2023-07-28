@@ -13,6 +13,7 @@
 		E774577F2A73AC9000920E39 /* BeyondDotNETSampleKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E774577E2A73AC9000920E39 /* BeyondDotNETSampleKit.xcframework */; };
 		E77457802A73AC9000920E39 /* BeyondDotNETSampleKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E774577E2A73AC9000920E39 /* BeyondDotNETSampleKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E77457832A73B40900920E39 /* GuidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77457822A73B40900920E39 /* GuidView.swift */; };
+		E77457852A73B60400920E39 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77457842A73B60400920E39 /* ClockView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +38,7 @@
 		E77457702A73AA6300920E39 /* BeyondNETSampleSwiftUIApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BeyondNETSampleSwiftUIApp.entitlements; sourceTree = "<group>"; };
 		E774577E2A73AC9000920E39 /* BeyondDotNETSampleKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BeyondDotNETSampleKit.xcframework; path = ../Generated/BeyondDotNETSampleKit.xcframework; sourceTree = "<group>"; };
 		E77457822A73B40900920E39 /* GuidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidView.swift; sourceTree = "<group>"; };
+		E77457842A73B60400920E39 /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				E774576A2A73AA6300920E39 /* SampleApp.swift */,
 				E774576C2A73AA6300920E39 /* MainView.swift */,
 				E77457822A73B40900920E39 /* GuidView.swift */,
+				E77457842A73B60400920E39 /* ClockView.swift */,
 				E774576E2A73AA6300920E39 /* Assets.xcassets */,
 				E77457702A73AA6300920E39 /* BeyondNETSampleSwiftUIApp.entitlements */,
 			);
@@ -159,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E77457832A73B40900920E39 /* GuidView.swift in Sources */,
+				E77457852A73B60400920E39 /* ClockView.swift in Sources */,
 				E774576D2A73AA6300920E39 /* MainView.swift in Sources */,
 				E774576B2A73AA6300920E39 /* SampleApp.swift in Sources */,
 			);

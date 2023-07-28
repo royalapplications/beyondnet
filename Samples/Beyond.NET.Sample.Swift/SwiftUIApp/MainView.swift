@@ -7,6 +7,10 @@ struct MainView: View {
                 .tabItem {
                     Label("Guid", systemImage: "lanyardcard.fill")
                 }
+            ClockView()
+                .tabItem {
+                    Label("Clock", systemImage: "clock.fill")
+                }
         }
         .padding()
     }

@@ -30,13 +30,18 @@ private extension GuidView {
     }
     
     static func newGuidString() -> String {
+        // Generate a new System.Guid
         guard let guid = try? System.Guid.newGuid() else {
             fatalError("Error while generating new System.Guid")
         }
         
-        guard let guidString = try? guid.toString()?.string() else {
-            fatalError("Error while converting System.Guid to String")
+        // Convert the System.Guid to a System.String
+        guard let guidStringDN = try? guid.toString() else {
+            fatalError("Error while converting System.Guid to System.String")
         }
+        
+        // Convert the System.String to a Swift String
+        let guidString = guidStringDN.string()
         
         return guidString
     }
