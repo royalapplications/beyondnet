@@ -1,7 +1,7 @@
 import SwiftUI
 import BeyondDotNETSampleKit
 
-struct ContentView: View {
+struct GuidView: View {
     @State
     private var guidString = Self.newGuidString()
     
@@ -24,7 +24,7 @@ struct ContentView: View {
     }
 }
 
-private extension ContentView {
+private extension GuidView {
     func updateGuidString() {
         guidString = Self.newGuidString()
     }
@@ -42,8 +42,8 @@ private extension ContentView {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct GuidView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        GuidView()
     }
 }
