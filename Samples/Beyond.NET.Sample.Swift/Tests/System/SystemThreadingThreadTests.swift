@@ -12,11 +12,6 @@ final class SystemThreadingThreadTests: XCTestCase {
 		Self.sharedTearDown()
 	}
 	
-	class Context {
-		var numberOfTimesCalled = 0
-		var numberOfTimesDestructorCalled = 0
-	}
-	
 	func testThread() {
 		var numberOfTimesCalled = 0
 		

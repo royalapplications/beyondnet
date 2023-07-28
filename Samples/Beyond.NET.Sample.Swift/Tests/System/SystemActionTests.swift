@@ -1,7 +1,6 @@
 import XCTest
 import BeyondDotNETSampleKit
 
-// TODO
 final class SystemActionTests: XCTestCase {
 	@MainActor
 	override class func setUp() {
@@ -11,11 +10,6 @@ final class SystemActionTests: XCTestCase {
 	@MainActor
 	override class func tearDown() {
 		Self.sharedTearDown()
-	}
-	
-	class Context {
-		var numberOfTimesCalled = 0
-		var numberOfTimesDestructorCalled = 0
 	}
 	
 	func testSystemActionType() {
