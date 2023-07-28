@@ -19,6 +19,10 @@ struct MainView: View {
                 .tabItem {
                     Label("Exception", systemImage: "exclamationmark.bubble.fill")
                 }
+            TimerView()
+                .tabItem {
+                    Label("Timer", systemImage: "timer.circle.fill")
+                }
         }
         .padding()
     }
