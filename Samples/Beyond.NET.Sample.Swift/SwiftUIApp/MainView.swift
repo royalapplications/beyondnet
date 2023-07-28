@@ -15,6 +15,10 @@ struct MainView: View {
                 .tabItem {
                     Label("Base64", systemImage: "number.circle.fill")
                 }
+            ExceptionView()
+                .tabItem {
+                    Label("Exception", systemImage: "exclamationmark.bubble.fill")
+                }
         }
         .padding()
     }
