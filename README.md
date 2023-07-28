@@ -108,7 +108,7 @@ public class Hello
 - Ensure the `AssemblyPath` matches the path where your dll was built.
 - Note that you can enter the path relative to the working directory like in the config example above.
 - Run the generator: `beyondnetgen Config.json`.
-- On a Mac Studio M2 Ultra, this takes a little more than a minute, so it might be worth getting some coffee depending on your hardware.
+- On a Mac Studio M2 Ultra, this takes a little more than a minute while on an 8-Core Intel Xeon iMac Pro, it takes around 3 minutes. So it might be worth getting some coffee depending on your hardware.
 - The individual code generation and builds steps are shown in the terminal.
 - The last printed line should include the path where the build output has been written to (ie. `Build Output has been written to "/Path/To/BeyondDemo/bin/Release/net8.0/publish"`).
 - Check the contents of the build output path: `ls bin/Release/net8.0/publish`
