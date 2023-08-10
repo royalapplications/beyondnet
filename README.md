@@ -642,7 +642,7 @@ Right now, expect things to break!
 While debugging code with LLDB you might run into situations where the .NET code raises signals which would cause the debugger to halt program execution although it's perfectly fine to continue.
 To handle that, you can add a symbolic breakpoint in Xcode and configure it like this:
 * Name: `Ignore_SIGUSR1`
-* Symbol: `NSApplicationMain`
+* Symbol: `NSApplicationMain` (macOS) or `UIApplicationMain` (iOS)
 * Action: Debugger Command: `process handle SIGUSR1 -n true -p true -s false`
 * Enable: `Automatically continue after evaluating actions`
 Also see this [StackOverflow post](https://stackoverflow.com/questions/10431579/permanently-configuring-lldb-in-xcode-4-3-2-not-to-stop-on-signals).
