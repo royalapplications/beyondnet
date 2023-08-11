@@ -113,10 +113,20 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         }
         
         foreach (var parameter in parameterInfos) {
-            if (parameter.IsOut ||
-                parameter.IsIn ||
-                parameter.ParameterType.IsByRef) {
-                return $"// TODO: ({cTypeName}) Unsupported delegate type. Reason: Has by ref or out or in parameters";
+            if (parameter.IsOut) {
+                return $"// TODO: ({cTypeName}) Unsupported delegate type. Reason: Has out parameters";
+            }
+            
+            if (parameter.IsIn) {
+                return $"// TODO: ({cTypeName}) Unsupported delegate type. Reason: Has in parameters";
+            }
+
+            if (!ExperimentalFeatureFlags.EnableByRefParametersInDelegates) {
+                Type parameterType = parameter.ParameterType;
+                
+                if (parameterType.IsByRef) {
+                    return $"// TODO: ({cTypeName}) Unsupported delegate type. Reason: Has by ref parameters";
+                }
             }
         }
 
@@ -148,10 +158,27 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
             string parameterName = parameter.Name ?? throw new Exception("Delegate parameter has no name");
         
             Type parameterType = parameter.ParameterType;
+            
+            bool isOutParameter = parameter.IsOut;
+            bool isInParameter = parameter.IsIn;
+                
+            bool isByRefParameter = parameterType.IsByRef;
+
+            if (isByRefParameter) {
+                parameterType = parameterType.GetNonByRefType();
+            }
+            
             TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
 
-            string parameterTypeName = parameterTypeDescriptor.GetTypeName(CodeLanguage.C, true);
-
+            string parameterTypeName = parameterTypeDescriptor.GetTypeName(
+                CodeLanguage.C,
+                true,
+                true,
+                isOutParameter,
+                isByRefParameter,
+                isInParameter
+            );
+                
             parameters.Add($"{parameterTypeName} {parameterName}");
         }
 
@@ -370,11 +397,13 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
             }
 
             Type parameterType = parameter.ParameterType;
-            
-            if (parameterType.IsByRef) {
-                sb.AppendLine($"// TODO: ({cTypeName}) Unsupported delegate type. Reason: Has by ref parameters");
-                
-                return;
+
+            if (!ExperimentalFeatureFlags.EnableByRefParametersInDelegates) {
+                if (parameterType.IsByRef) {
+                    sb.AppendLine($"// TODO: ({cTypeName}) Unsupported delegate type. Reason: Has by ref parameters");
+                    
+                    return;
+                }
             }
             
             if (parameterType.IsGenericParameter ||

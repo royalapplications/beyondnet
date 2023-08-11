@@ -81,10 +81,20 @@ public partial class SwiftTypeSyntaxWriter
             var parameterInfos = delegateInvokeMethod?.GetParameters() ?? Array.Empty<ParameterInfo>();
             
             foreach (var parameter in parameterInfos) {
-                if (parameter.IsOut ||
-                    parameter.IsIn ||
-                    parameter.ParameterType.IsByRef) {
-                    throw new Exception($"// TODO: ({SwiftTypeName}) Unsupported delegate type. Reason: Has by ref or out or in parameters");
+                if (parameter.IsOut) {
+                    throw new Exception($"// TODO: ({SwiftTypeName}) Unsupported delegate type. Reason: Has out parameters");
+                }
+            
+                if (parameter.IsIn) {
+                    throw new Exception($"// TODO: ({SwiftTypeName}) Unsupported delegate type. Reason: Has in parameters");
+                }
+                
+                if (!ExperimentalFeatureFlags.EnableByRefParametersInDelegates) {
+                    Type parameterType = parameter.ParameterType;
+                    
+                    if (parameterType.IsByRef) {
+                        throw new Exception($"// TODO: ({SwiftTypeName}) Unsupported delegate type. Reason: Has by ref parameters");
+                    }
                 }
             }
 
@@ -403,7 +413,8 @@ public partial class SwiftTypeSyntaxWriter
             typeDescriptorRegistry,
             out List<string> convertedParameterNamesToSwift,
             out _,
-            out _
+            out _,
+            out List<string> parameterBackConversionCodes
         );
 
         sb.AppendLine(parameterConversionsToSwift
@@ -421,6 +432,17 @@ public partial class SwiftTypeSyntaxWriter
         
         sb.AppendLine($"\t{invocation}");
         sb.AppendLine();
+
+        if (parameterBackConversionCodes.Count > 0) {
+            foreach (var backConversionCode in parameterBackConversionCodes) {
+                var indentedBackConversionCode = backConversionCode
+                    .IndentAllLines(1);
+
+                sb.AppendLine(indentedBackConversionCode);
+            }
+            
+            sb.AppendLine();
+        }
         
         string returnCode = string.Empty;
 
@@ -606,6 +628,7 @@ public partial class SwiftTypeSyntaxWriter
             Array.Empty<Type>(),
             typeDescriptorRegistry,
             out List<string> convertedParameterNamesToC,
+            out _,
             out _,
             out _
         );

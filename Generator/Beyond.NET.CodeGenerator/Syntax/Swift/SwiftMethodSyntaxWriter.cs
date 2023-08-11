@@ -461,7 +461,8 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 typeDescriptorRegistry,
                 out List<string> convertedParameterNames,
                 out List<string> convertedGenericTypeArgumentNames,
-                out List<string> convertedGenericMethodArgumentNames
+                out List<string> convertedGenericMethodArgumentNames,
+                out _
             );
 
             sbImpl.AppendLine(parameterConversions);
@@ -899,7 +900,8 @@ if let __exceptionC {
         TypeDescriptorRegistry typeDescriptorRegistry,
         out List<string> convertedParameterNames,
         out List<string> convertedGenericTypeArgumentNames,
-        out List<string> convertedGenericMethodArgumentNames
+        out List<string> convertedGenericMethodArgumentNames,
+        out List<string> parameterTypeBackConversionCodes
     )
     {
         string convertedParameterNameSuffix;
@@ -919,6 +921,7 @@ if let __exceptionC {
         convertedParameterNames = new();
         convertedGenericTypeArgumentNames = new();
         convertedGenericMethodArgumentNames = new();
+        parameterTypeBackConversionCodes = new();
 
         if (isGeneric) {
             Type typeOfSystemType = typeof(Type);
@@ -985,7 +988,8 @@ if let __exceptionC {
                 isGeneric,
                 typeDescriptorRegistry,
                 out string? typeConversionCode,
-                out string convertedParameterName
+                out string convertedParameterName,
+                out string? typeBackConversionCode
             );
 
             if (!string.IsNullOrEmpty(typeConversionCode)) {
@@ -993,6 +997,10 @@ if let __exceptionC {
             }
             
             convertedParameterNames.Add(convertedParameterName);
+
+            if (!string.IsNullOrEmpty(typeBackConversionCode)) {
+                parameterTypeBackConversionCodes.Add(typeBackConversionCode);
+            }
         }
 
         if (memberKind == MemberKind.FieldSetter ||
@@ -1014,7 +1022,8 @@ if let __exceptionC {
                 isGeneric,
                 typeDescriptorRegistry,
                 out string? typeConversionCode,
-                out string convertedParameterName
+                out string convertedParameterName,
+                out string? typeBackConversionCode
             );
 
             if (!string.IsNullOrEmpty(typeConversionCode)) {
@@ -1022,6 +1031,10 @@ if let __exceptionC {
             }
             
             convertedParameterNames.Add(convertedParameterName);
+            
+            if (!string.IsNullOrEmpty(typeBackConversionCode)) {
+                parameterTypeBackConversionCodes.Add(typeBackConversionCode);
+            }
         }
 
         return sb.ToString();
@@ -1037,7 +1050,8 @@ if let __exceptionC {
         bool isGeneric,
         TypeDescriptorRegistry typeDescriptorRegistry,
         out string? typeConversionCode,
-        out string convertedParameterName
+        out string convertedParameterName,
+        out string? typeBackConversionCode
     )
     {
         if (string.IsNullOrEmpty(parameterName)) {
@@ -1125,15 +1139,27 @@ if let __exceptionC {
             if (isInOut) {
                 convertedParameterName = $"&{convertedParameterName}";
             }
+
+            typeBackConversionCode = null;
         } else {
-            typeConversionCode = null;
-            
-            if (isOutParameter ||
-                isInParameter ||
-                isByRefParameter) {
-                convertedParameterName = $"&{parameterName}";
+            if (sourceLanguage == CodeLanguage.C &&
+                targetLanguage == CodeLanguage.Swift &&
+                isInOut) {
+                string swiftParameterName = $"__{parameterName}Swift";
+                
+                typeConversionCode = $"var {swiftParameterName} = {parameterName}?.pointee ?? .init()";
+                typeBackConversionCode = $"{parameterName}?.pointee = {swiftParameterName}";
+                
+                convertedParameterName = $"&{swiftParameterName}";
             } else {
-                convertedParameterName = parameterName;
+                typeConversionCode = null;
+                typeBackConversionCode = null;
+                
+                if (isInOut) {
+                    convertedParameterName = $"&{parameterName}";
+                } else {
+                    convertedParameterName = parameterName;
+                }
             }
         }
     }

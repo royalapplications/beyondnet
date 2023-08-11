@@ -40,13 +40,15 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
             }
 
             Type parameterType = parameter.ParameterType;
-            
-            if (parameterType.IsByRef) {
-                sb.AppendLine("\t// TODO: Unsupported delegate type. Reason: Has by ref parameters");
-                
-                return;
+
+            if (!ExperimentalFeatureFlags.EnableByRefParametersInDelegates) {
+                if (parameterType.IsByRef) {
+                    sb.AppendLine("\t// TODO: Unsupported delegate type. Reason: Has by ref parameters");
+
+                    return;
+                }
             }
-            
+
             if (parameterType.IsGenericParameter ||
                 parameterType.IsGenericMethodParameter) {
                 sb.AppendLine("\t// TODO: Unsupported delegate type. Reason: Has generic parameters");
@@ -242,7 +244,8 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
             typeDescriptorRegistry,
             out List<string> convertedParameterNames,
             out _,
-            out _
+            out _,
+            out List<string> managedToNativeConvertedTypeDestructors
         );
 
         sb.AppendLine(
@@ -268,6 +271,17 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
         string invocation = $"CFunction(Context{parameterNamesString})";
 
         sb.AppendLine($"\t\t{invocationPrefix}{invocation};");
+
+        if (managedToNativeConvertedTypeDestructors.Count > 0) {
+            sb.AppendLine();
+        }
+        
+        foreach (var typeDestructor in managedToNativeConvertedTypeDestructors) {
+            var indentedTypeDestructor = typeDestructor
+                .IndentAllLines(1);
+            
+            sb.AppendLine(indentedTypeDestructor);
+        }
 
         if (hasReturnType) {
             string? returnTypeConversion = returnTypeDescriptor.GetTypeConversion(
@@ -352,7 +366,8 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
             typeDescriptorRegistry,
             out List<string> convertedParameterNamesForInvocation,
             out _,
-            out _
+            out _,
+            out List<string> nativeToManagedConvertedTypeDestructors
         );
 
         sb.AppendLine(

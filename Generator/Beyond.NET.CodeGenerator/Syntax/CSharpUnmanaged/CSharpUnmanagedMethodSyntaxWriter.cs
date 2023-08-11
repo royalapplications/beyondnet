@@ -333,7 +333,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             typeDescriptorRegistry,
             out List<string> convertedParameterNames,
             out List<string> convertedGenericTypeArgumentNames,
-            out List<string> convertedGenericMethodArgumentNames
+            out List<string> convertedGenericMethodArgumentNames,
+            out _
         );
 
         sb.AppendLine(parameterConversions);
@@ -938,22 +939,22 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
     }
 
     protected string WriteMutableStructInstanceReplacement(
-        Type? selfType,
-        string? selfParameterName,
-        string? convertedSelfParameterName
+        Type? type,
+        string? parameterName,
+        string? convertedParameterName
     )
     {
-        if (selfType is null ||
-            !selfType.IsStruct() ||
-            string.IsNullOrEmpty(selfParameterName) ||
-            string.IsNullOrEmpty(convertedSelfParameterName)) {
+        if (type is null ||
+            !type.IsStruct() ||
+            string.IsNullOrEmpty(parameterName) ||
+            string.IsNullOrEmpty(convertedParameterName)) {
             return string.Empty;
         }
         
         StringBuilder sb = new();
 
-        sb.AppendLine($"if ({selfParameterName} is not null) {{");
-        sb.AppendLine($"\tInteropUtils.ReplaceInstance({selfParameterName}, {convertedSelfParameterName});");
+        sb.AppendLine($"if ({parameterName} is not null) {{");
+        sb.AppendLine($"\tInteropUtils.ReplaceInstance({parameterName}, {convertedParameterName});");
         sb.AppendLine("}");
         sb.AppendLine();
 
@@ -1135,7 +1136,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         TypeDescriptorRegistry typeDescriptorRegistry,
         out List<string> convertedParameterNames,
         out List<string> convertedGenericTypeArgumentNames,
-        out List<string> convertedGenericMethodArgumentNames
+        out List<string> convertedGenericMethodArgumentNames,
+        out List<string> convertedTypeDestructors // Only used in delegates at the moment
     )
     {
         StringBuilder sb = new();
@@ -1143,6 +1145,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         convertedParameterNames = new();
         convertedGenericTypeArgumentNames = new();
         convertedGenericMethodArgumentNames = new();
+        convertedTypeDestructors = new();
 
         if (isGeneric) {
             Type typeOfSystemType = typeof(Type);
@@ -1246,33 +1249,86 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 string parameterTypeName = parameterType.GetFullNameOrName()
                     .Replace("&", string.Empty);
 
-                string typeConversionCode;
+                if (sourceLanguage == CodeLanguage.CSharpUnmanaged &&
+                    targetLanguage == CodeLanguage.CSharp) {
+                    string typeConversionCode;
                 
-                if (!string.IsNullOrEmpty(typeConversion)) {
-                    string fullTypeConversion = string.Format(typeConversion, $"(*{parameterName})");
-                    typeConversionCode = $"{convertedParameterName} = {fullTypeConversion};";
-                } else {
-                    typeConversionCode = $"{convertedParameterName} = *{parameterName};";
-                }
+                    if (!string.IsNullOrEmpty(typeConversion)) {
+                        string fullTypeConversion = string.Format(typeConversion, $"(*{parameterName})");
+                        typeConversionCode = $"{convertedParameterName} = {fullTypeConversion};";
+                    } else {
+                        typeConversionCode = $"{convertedParameterName} = *{parameterName};";
+                    }
 
-                sb.AppendLine($"\t{parameterTypeName} {convertedParameterName};");
+                    sb.AppendLine($"\t{parameterTypeName} {convertedParameterName};");
 
-                sb.AppendLine();
+                    sb.AppendLine();
                 
-                sb.AppendLine($"\tif ({parameterName} is not null) {{");
-                sb.AppendLine($"\t\t{typeConversionCode}");
-                sb.AppendLine("\t} else {");
+                    sb.AppendLine($"\tif ({parameterName} is not null) {{");
+                    sb.AppendLine($"\t\t{typeConversionCode}");
+                    sb.AppendLine("\t} else {");
                 
-                string defaultValue = $"default({parameterType.GetFullNameOrName()})";
+                    string defaultValue = $"default({parameterType.GetFullNameOrName()})";
                 
-                sb.AppendLine($"\t\t{convertedParameterName} = {defaultValue};");
-                sb.AppendLine("\t}");
+                    sb.AppendLine($"\t\t{convertedParameterName} = {defaultValue};");
+                    sb.AppendLine("\t}");
 
-                sb.AppendLine();
+                    sb.AppendLine();
 
-                if (!isGeneric) {
-                    if (!isInParameter) {
-                        convertedParameterName = $"ref {convertedParameterName}";
+                    if (!isGeneric) {
+                        if (!isInParameter) {
+                            convertedParameterName = $"ref {convertedParameterName}";
+                        }
+                    }
+                } else if (sourceLanguage == CodeLanguage.CSharp &&
+                           targetLanguage == CodeLanguage.CSharpUnmanaged) {
+                    // TODO: Delegates
+                
+                    if (string.IsNullOrEmpty(typeConversion)) {
+                        string convertedParameterTypeName = parameterTypeDescriptor.GetTypeName(
+                            CodeLanguage.CSharpUnmanaged,
+                            true,
+                            true,
+                            isOutParameter,
+                            true,
+                            isInParameter
+                        );
+                    
+                        sb.AppendLine($"\t{convertedParameterTypeName} {convertedParameterName} = ({convertedParameterTypeName})System.Runtime.CompilerServices.Unsafe.AsPointer(ref {parameterName});");
+                    } else {
+                        string convertedParameterTypeName = parameterTypeDescriptor.GetTypeName(
+                            CodeLanguage.CSharpUnmanaged,
+                            true,
+                            true,
+                            isOutParameter,
+                            true,
+                            isInParameter
+                        );
+
+                        var typeConversionFormat = string.Format(typeConversion, parameterName);
+                        sb.AppendLine($"\t{convertedParameterTypeName} {convertedParameterName} = ({convertedParameterTypeName}){typeConversionFormat};");
+
+                        StringBuilder sbDestructor = new();
+
+                        var retrieverFormat = parameterTypeDescriptor.GetTypeConversion(
+                            CodeLanguage.CSharpUnmanaged,
+                            CodeLanguage.CSharp
+                        );
+
+                        if (!string.IsNullOrEmpty(retrieverFormat)) {
+                            sbDestructor.AppendLine($"\t{parameterName} = {string.Format(retrieverFormat, convertedParameterName)};");
+                        }
+
+                        // TODO: I don't know... This kind of looks dangerous
+                        var destructorFormat = parameterTypeDescriptor.GetDestructor(CodeLanguage.CSharpUnmanaged);
+                        
+                        if (!string.IsNullOrEmpty(destructorFormat)) {
+                            sbDestructor.AppendLine($"\t{string.Format(destructorFormat, convertedParameterName)};");
+                        }
+
+                        var destructor = sbDestructor.ToString();
+                        
+                        convertedTypeDestructors.Add(destructor);
                     }
                 }
             } else if (isInParameter) { // In but not by ref
