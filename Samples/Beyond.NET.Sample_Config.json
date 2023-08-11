@@ -6,7 +6,7 @@
 	"SwiftOutputPath": "Generated/Generated_Swift.swift",
 	
 	"EmitUnsupported": true,
-	"GenerateTypeCheckedDestroyMethods": true,
+	"GenerateTypeCheckedDestroyMethods": false,
 	"EnableGenericsSupport": true,
 
 	"IncludedTypeNames": [
