@@ -73,6 +73,9 @@
       <ItemGroup>
         <!-- Link to Swift on iOS (it's automatic when targeting macOS) -->
         <LinkerArg Include="-L/usr/lib/swift" />
+
+        <!-- Temporary workaround for .NET 8 RC1 which seems to have removed -lc++ from its linker flags -->
+        <LinkerArg Include="-lc++" />
       </ItemGroup>
     </When>
   </Choose>
