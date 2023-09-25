@@ -229,6 +229,15 @@ public class NativeCsProj
       </ItemGroup>
     </When>
   </Choose>
+  
+  <!-- TODO: Temporary workaround for Xcode 15 support in combination with .NET 8 RC1 -->
+  <Choose>
+    <When Condition="($(RuntimeIdentifier.Contains('osx')) Or $(RuntimeIdentifier.Contains('ios')))">
+      <ItemGroup>
+        <LinkerArg Include="-ld_classic" />
+      </ItemGroup>
+    </When>
+  </Choose>
 
   <!-- Strip Symbols in Release Builds -->
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
