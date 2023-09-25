@@ -26,7 +26,7 @@ public class CreateXCFramework
             
                 arguments.AddRange(new [] {
                     ARGUMENT_FRAMEWORK,
-                    framework
+                    Temp_XcodeBuild_15_ResolveVarSymlink(framework)
                 });
             }   
         }
@@ -39,14 +39,14 @@ public class CreateXCFramework
             
                 arguments.AddRange(new [] {
                     ARGUMENT_LIBRARY,
-                    library
+                    Temp_XcodeBuild_15_ResolveVarSymlink(library)
                 });
             }   
         }
 
         arguments.AddRange(new [] {
             ARGUMENT_OUTPUT,
-            outputPath
+            Temp_XcodeBuild_15_ResolveVarSymlink(outputPath)
         });
         
         var result = App.XcodeBuildApp.Launch(arguments.ToArray());
@@ -56,5 +56,49 @@ public class CreateXCFramework
         if (failure is not null) {
             throw failure;
         }
+    }
+
+    // `xcodebuild` as of version 15 fails with such a command line:
+    //
+    // ```shell
+    // /usr/bin/xcodebuild -create-xcframework\
+    //   -framework /var/folders/<elided>/osx-universal/publish/SampleKit.framework\
+    //   -framework /var/folders/<elided>/iossimulator-universal/publish/SampleKit.framework\
+    //   -framework /var/folders/<elided>/ios-arm64/publish/SampleKit.framework\
+    //   -output /var/folders/<elided>/apple-universal/publish/SampleKit.xcframework
+    // ```
+    // 
+    // It returns exit code 70 and prints an error message similar to:
+    //
+    // ```
+    // error: cannot compute path of binary
+    //  'Path(str: "/private/var/folders/<elided>/osx-universal/publish/SampleKit.framework/Versions/A/SampleKit")'
+    // relative to that of '/var/folders/<elided>/osx-universal/publish/SampleKit.framework'
+    // ```
+    // 
+    // Note the mismatch between `/private/var` and `/var` -- on OSX,
+    // `/var` is a symlink to `/private/var`.
+    //
+    // `xcodebuild` v15 seems to resolve symlinks for some arguments but not 
+    // others and ends up confused. Unfortunately, .NET APIs do not resolve
+    // symlinks at the *start* of a path, only for the *last* component. 
+    //
+    // Hence, this helper resolves the symlink in the initial `/var`
+    // path segment explicitly, as a workaround until `xcodebuild` is
+    // updated to work correctly with symlinked paths again.
+   
+    private static string Temp_XcodeBuild_15_ResolveVarSymlink(string path)
+    {
+        if (string.IsNullOrEmpty(path) || !path.StartsWith("/var/", StringComparison.Ordinal)) {
+            return path;
+        }
+        
+        FileSystemInfo? linkTarget = Directory.ResolveLinkTarget("/var", returnFinalTarget: true);
+        
+        if (linkTarget is not null) {
+            return linkTarget.FullName + path.Substring("/var".Length);
+        }
+        
+        return path;
     }
 }
