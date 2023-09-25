@@ -24,6 +24,27 @@ public static class StringExtensions
 
         return absolutePath;
     }
+
+    /// <summary>
+    /// This calls [NSString stringByResolvingSymlinksInPath] under the hood which is only available on Apple platforms.
+    /// It's not used at the moment but could be used by Beyond.NET.Builder.Apple.
+    /// </summary>
+    public static string ResolveSymlinks_AppleOnly(this string path)
+    {
+        string resolvedPath;
+		
+        using (NSString unresolvedPathNS = new(path)) {
+            using (NSString? resolvedPathNS = unresolvedPathNS.StringByResolvingSymlinksInPath) {
+                if (resolvedPathNS is null) {
+                    throw new Exception("Failed to resolve path");
+                }
+
+                resolvedPath = resolvedPathNS.UTF8String ?? string.Empty;
+            }
+        }
+
+        return resolvedPath;
+    }
     
     public static string SanitizedProductNameForTempDirectory(this string productName)
     {
