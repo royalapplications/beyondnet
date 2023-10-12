@@ -82,5 +82,15 @@ final class SystemUriTests: XCTestCase {
 		}
 		
 		XCTAssertEqual(urlString, absoluteUriString)
+        
+        guard let url = URL(string: absoluteUriString) else {
+            XCTFail("Should be able to init a Swift URL with a .NET URI String")
+            
+            return
+        }
+        
+        let absoluteURLString = url.absoluteString
+        
+        XCTAssertEqual(absoluteUriString, absoluteURLString)
 	}
 }
