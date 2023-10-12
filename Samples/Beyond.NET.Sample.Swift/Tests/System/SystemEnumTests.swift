@@ -43,5 +43,18 @@ final class SystemEnumTests: XCTestCase {
         XCTAssertEqual(unspecified, names[0])
         XCTAssertEqual(utc, names[1])
         XCTAssertEqual(local, names[2])
+        
+        XCTAssertEqual(System_DateTimeKind.unspecified.rawValue, 0)
+        XCTAssertEqual(System_DateTimeKind.utc.rawValue, 1)
+        XCTAssertEqual(System_DateTimeKind.local.rawValue, 2)
+        
+        XCTAssertEqual(System_DateTimeKind(rawValue: System_DateTimeKind.unspecified.rawValue),
+                       System_DateTimeKind.unspecified)
+        
+        XCTAssertEqual(System_DateTimeKind(rawValue: System_DateTimeKind.utc.rawValue),
+                       System_DateTimeKind.utc)
+        
+        XCTAssertEqual(System_DateTimeKind(rawValue: System_DateTimeKind.local.rawValue),
+                       System_DateTimeKind.local)
     }
 }
