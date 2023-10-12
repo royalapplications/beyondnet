@@ -84,20 +84,20 @@ final class SystemObjectTests: XCTestCase {
         XCTAssertFalse(optionalObject === anotherOptionalObject)
         XCTAssertTrue(optionalObject !== anotherOptionalObject)
         
-        XCTAssertFalse(optionalObject == anotherOptionalObject)
-        XCTAssertTrue(optionalObject != anotherOptionalObject)
-        XCTAssertFalse(optionalObject === anotherOptionalObject)
-        XCTAssertTrue(optionalObject !== anotherOptionalObject)
+        XCTAssertFalse(nonOptionalObject == anotherOptionalObject)
+        XCTAssertTrue(nonOptionalObject != anotherOptionalObject)
+        XCTAssertFalse(nonOptionalObject === anotherOptionalObject)
+        XCTAssertTrue(nonOptionalObject !== anotherOptionalObject)
         
         XCTAssertFalse(optionalObject == anotherNonOptionalObject)
         XCTAssertTrue(optionalObject != anotherNonOptionalObject)
         XCTAssertFalse(optionalObject === anotherNonOptionalObject)
         XCTAssertTrue(optionalObject !== anotherNonOptionalObject)
         
-        XCTAssertFalse(optionalObject == anotherNonOptionalObject)
-        XCTAssertTrue(optionalObject != anotherNonOptionalObject)
-        XCTAssertFalse(optionalObject === anotherNonOptionalObject)
-        XCTAssertTrue(optionalObject !== anotherNonOptionalObject)
+        XCTAssertFalse(nonOptionalObject == anotherNonOptionalObject)
+        XCTAssertTrue(nonOptionalObject != anotherNonOptionalObject)
+        XCTAssertFalse(nonOptionalObject === anotherNonOptionalObject)
+        XCTAssertTrue(nonOptionalObject !== anotherNonOptionalObject)
     }
     
     func testCreatingAndDestroyingManyObjects() {
