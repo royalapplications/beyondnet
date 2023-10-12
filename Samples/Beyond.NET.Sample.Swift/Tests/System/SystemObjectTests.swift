@@ -69,17 +69,35 @@ final class SystemObjectTests: XCTestCase {
             return
         }
         
+        XCTAssertTrue(optionalObject == optionalObject)
+        XCTAssertFalse(optionalObject != optionalObject)
+        XCTAssertTrue(optionalObject === optionalObject)
+        XCTAssertFalse(optionalObject !== optionalObject)
+        
         XCTAssertTrue(optionalObject == nonOptionalObject)
         XCTAssertFalse(optionalObject != nonOptionalObject)
-        
-        XCTAssertFalse(anotherOptionalObject == nonOptionalObject)
-        XCTAssertTrue(anotherOptionalObject != nonOptionalObject)
-        
         XCTAssertTrue(optionalObject === nonOptionalObject)
         XCTAssertFalse(optionalObject !== nonOptionalObject)
         
-        XCTAssertFalse(anotherOptionalObject === nonOptionalObject)
-        XCTAssertTrue(anotherOptionalObject !== nonOptionalObject)
+        XCTAssertFalse(optionalObject == anotherOptionalObject)
+        XCTAssertTrue(optionalObject != anotherOptionalObject)
+        XCTAssertFalse(optionalObject === anotherOptionalObject)
+        XCTAssertTrue(optionalObject !== anotherOptionalObject)
+        
+        XCTAssertFalse(optionalObject == anotherOptionalObject)
+        XCTAssertTrue(optionalObject != anotherOptionalObject)
+        XCTAssertFalse(optionalObject === anotherOptionalObject)
+        XCTAssertTrue(optionalObject !== anotherOptionalObject)
+        
+        XCTAssertFalse(optionalObject == anotherNonOptionalObject)
+        XCTAssertTrue(optionalObject != anotherNonOptionalObject)
+        XCTAssertFalse(optionalObject === anotherNonOptionalObject)
+        XCTAssertTrue(optionalObject !== anotherNonOptionalObject)
+        
+        XCTAssertFalse(optionalObject == anotherNonOptionalObject)
+        XCTAssertTrue(optionalObject != anotherNonOptionalObject)
+        XCTAssertFalse(optionalObject === anotherNonOptionalObject)
+        XCTAssertTrue(optionalObject !== anotherNonOptionalObject)
     }
     
     func testCreatingAndDestroyingManyObjects() {
