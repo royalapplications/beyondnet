@@ -32,9 +32,23 @@ final class SystemWeakReferenceTests: XCTestCase {
         
         XCTAssertTrue(isAlive)
         
-        // TODO: Why does comparison using === not yield the correct result here?
-        // Is our Equatable conformance for System_Object not working?!
-        XCTAssertTrue((try? System.Object.referenceEquals(anObject, target)) ?? false)
+        guard let unwrappedTarget = target else {
+            XCTFail("We should have a target object")
+            
+            return
+        }
+        
+        let isTargetSameAsObject = (try? System.Object.referenceEquals(anObject, target)) ?? false
+        let isUnwrappedTargetSameAsObjectUsingBuiltInComparison = anObject === unwrappedTarget
+        let isUnwrappedTargetNotSameAsObjectUsingBuiltInComparison = anObject !== unwrappedTarget
+        let isTargetSameAsObjectUsingBuiltInComparison = anObject === target
+        let isTargetNotSameAsObjectUsingBuiltInComparison = anObject !== target
+        
+        XCTAssertTrue(isTargetSameAsObject)
+        XCTAssertTrue(isUnwrappedTargetSameAsObjectUsingBuiltInComparison)
+        XCTAssertFalse(isUnwrappedTargetNotSameAsObjectUsingBuiltInComparison)
+        XCTAssertTrue(isTargetSameAsObjectUsingBuiltInComparison)
+        XCTAssertFalse(isTargetNotSameAsObjectUsingBuiltInComparison)
     }
     
     func testWeakReferenceToTemporaryObject() {

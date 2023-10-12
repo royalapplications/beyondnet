@@ -548,13 +548,68 @@ public extension System_String_Array {
 extension System_Object: Equatable {
     public static func == (lhs: System_Object,
                            rhs: System_Object) -> Bool {
-        return (try? Self.equals(lhs, rhs)) ?? false
+        let result: Bool
+        
+        do {
+            result = try System_Object.equals(lhs, rhs)
+        } catch {
+            result = false
+        }
+        
+        return result
+    }
+}
+
+public func == (lhs: System_Object?,
+                rhs: System_Object?) -> Bool {
+    let result: Bool
+    
+    do {
+        result = try System_Object.equals(lhs, rhs)
+    } catch {
+        result = false
     }
     
-    public static func === (lhs: System_Object,
-                            rhs: System_Object) -> Bool {
-        return (try? Self.referenceEquals(lhs, rhs)) ?? false
+    return result
+}
+
+public func != (lhs: System_Object?,
+                rhs: System_Object?) -> Bool {
+    let result: Bool
+    
+    do {
+        result = try System_Object.equals(lhs, rhs)
+    } catch {
+        result = false
     }
+    
+    return !result
+}
+
+public func === (lhs: System_Object?,
+                 rhs: System_Object?) -> Bool {
+    let result: Bool
+    
+    do {
+        result = try System_Object.referenceEquals(lhs, rhs)
+    } catch {
+        result = false
+    }
+    
+    return result
+}
+
+public func !== (lhs: System_Object?,
+                 rhs: System_Object?) -> Bool {
+    let result: Bool
+    
+    do {
+        result = try System_Object.referenceEquals(lhs, rhs)
+    } catch {
+        result = false
+    }
+    
+    return !result
 }
 
 fileprivate struct DNDateTimeUtils {
