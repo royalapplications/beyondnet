@@ -188,9 +188,6 @@ public class NativeCsProj
       <ItemGroup>
         <!-- Link to Swift on iOS (it's automatic when targeting macOS) -->
         <LinkerArg Include="-L/usr/lib/swift" />
-        
-        <!-- Temporary workaround for .NET 8 RC1 which seems to have removed -lc++ from its linker flags -->
-        <LinkerArg Include="-lc++" />
       </ItemGroup>
     </When>
   </Choose>
@@ -230,15 +227,6 @@ public class NativeCsProj
     </When>
   </Choose>
   
-  <!-- TODO: Temporary workaround for Xcode 15 support in combination with .NET 8 RC1 -->
-  <Choose>
-    <When Condition="($(RuntimeIdentifier.Contains('osx')) Or $(RuntimeIdentifier.Contains('ios')))">
-      <ItemGroup>
-        <LinkerArg Include="-ld_classic" />
-      </ItemGroup>
-    </When>
-  </Choose>
-
   <!-- Strip Symbols in Release Builds -->
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <StripSymbols>true</StripSymbols>
