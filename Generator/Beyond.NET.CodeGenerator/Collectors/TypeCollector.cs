@@ -18,6 +18,7 @@ public class TypeCollector
         typeof(System.Exception),
         typeof(System.NullReferenceException),
         typeof(System.AggregateException),
+        typeof(System.PlatformNotSupportedException),
         typeof(System.Boolean),
         typeof(System.Char),
         typeof(System.Double),
