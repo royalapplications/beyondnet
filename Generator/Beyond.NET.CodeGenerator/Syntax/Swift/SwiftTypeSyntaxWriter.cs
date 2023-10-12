@@ -47,8 +47,7 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
             throw new Exception("No CResult provided");
         }
         
-        if (type.IsPrimitive ||
-            type.IsPointer ||
+        if (type.IsPointer ||
             type.IsByRef) {
             // No need to generate Swift code for those kinds of types
 
@@ -311,8 +310,7 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
         Result cResult = state.CResult ?? throw new Exception("No CResult provided");
 
-        if (type.IsPrimitive ||
-            type.IsPointer ||
+        if (type.IsPointer ||
             type.IsByRef ||
             type.IsGenericParameter ||
             type.IsGenericMethodParameter ||
@@ -330,14 +328,22 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
         var cSharpMembers = cSharpUnmanagedResult.GeneratedTypes[type];
         // var cMembers = cResult.GeneratedTypes[type];
 
+        // bool isInterface = type.IsInterface;
+        bool isPrimitive = type.IsPrimitive;
+        
         StringBuilder sb = new();
 
         string typeName = type.Name;
         string fullTypeName = type.GetFullNameOrName();
-        TypeDescriptor typeDescriptor = type.GetTypeDescriptor(typeDescriptorRegistry);
-        string swiftTypeName =  typeDescriptor.GetTypeName(CodeLanguage.Swift, false);
+
+        string swiftTypeName;
         
-        bool isInterface = type.IsInterface;
+        if (isPrimitive) {
+            swiftTypeName = type.CTypeName();            
+        } else {
+            TypeDescriptor typeDescriptor = type.GetTypeDescriptor(typeDescriptorRegistry);
+            swiftTypeName = typeDescriptor.GetTypeName(CodeLanguage.Swift, false);
+        }
 
         if (writeTypeDefinition) {
             Type? baseType = type.BaseType;

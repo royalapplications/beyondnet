@@ -55,4 +55,44 @@ final class SystemTypeTests: XCTestCase {
             XCTAssertTrue(exceptionMessage.contains("The type \'\(invalidTypeName)\' cannot be found"))
         }
     }
+    
+    func testPrimitiveTypes() {
+        verifyTypeFullName(System_Boolean.typeOf, "System.Boolean")
+        verifyTypeFullName(System_Char.typeOf, "System.Char")
+        verifyTypeFullName(System_Double.typeOf, "System.Double")
+        verifyTypeFullName(System_Single.typeOf, "System.Single")
+        verifyTypeFullName(System_SByte.typeOf, "System.SByte")
+        verifyTypeFullName(System_Int16.typeOf, "System.Int16")
+        verifyTypeFullName(System_Int32.typeOf, "System.Int32")
+        verifyTypeFullName(System_Int64.typeOf, "System.Int64")
+        verifyTypeFullName(System_IntPtr.typeOf, "System.IntPtr")
+        verifyTypeFullName(System_Byte.typeOf, "System.Byte")
+        verifyTypeFullName(System_UInt16.typeOf, "System.UInt16")
+        verifyTypeFullName(System_UInt32.typeOf, "System.UInt32")
+        verifyTypeFullName(System_UInt64.typeOf, "System.UInt64")
+        verifyTypeFullName(System_UIntPtr.typeOf, "System.UIntPtr")
+    }
+}
+
+private extension SystemTypeTests {
+    func verifyTypeFullName(_ type: System_Type,
+                            _ expectedFullName: String) {
+        let fullTypeName: String?
+        
+        do {
+            fullTypeName = try type.fullName?.string()
+        } catch {
+            XCTFail("Failed to get type name: \((error as NSError).description)")
+            
+            return
+        }
+        
+        guard let fullTypeName else {
+            XCTFail("Failed to get type name")
+            
+            return
+        }
+        
+        XCTAssertEqual(fullTypeName, expectedFullName)
+    }
 }

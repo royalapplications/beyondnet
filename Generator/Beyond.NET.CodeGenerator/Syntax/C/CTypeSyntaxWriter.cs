@@ -41,8 +41,7 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         
         // Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
         
-        if (type.IsPrimitive ||
-            type.IsPointer ||
+        if (type.IsPointer ||
             type.IsByRef) {
             // No need to generate C code for those kinds of types
 
@@ -59,7 +58,9 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
 
         StringBuilder sb = new();
 
-        if (type.IsEnum) {
+        if (type.IsPrimitive) {
+            // Nothing to do
+        } else if (type.IsEnum) {
             string enumdefCode = WriteEnumDef(
                 type,
                 cTypeName,
@@ -265,8 +266,7 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
         
-        if (type.IsPrimitive ||
-            type.IsPointer ||
+        if (type.IsPointer ||
             type.IsByRef ||
             type.IsGenericParameter ||
             type.IsGenericMethodParameter ||
@@ -282,7 +282,7 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         StringBuilder sb = new();
 
         string fullTypeName = type.GetFullNameOrName();
-        
+
         bool isDelegate = type.IsDelegate();
 
         sb.AppendLine($"#pragma mark - BEGIN APIs of {fullTypeName}");

@@ -35,8 +35,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWrit
     
     public string Write(Type type, State state, ISyntaxWriterConfiguration? configuration)
     {
-        if (type.IsPrimitive ||
-            type.IsPointer ||
+        if (type.IsPointer ||
             type.IsByRef ||
             type.IsArray ||
             type.IsConstructedGenericType) {
@@ -71,6 +70,13 @@ public partial class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWrit
                 fullTypeName,
                 cTypeName,
                 delegateInvokeMethod!,
+                sb,
+                state
+            );
+        } else if (type.IsPrimitive) {
+            WritePrimitiveType(
+                configuration,
+                type,
                 sb,
                 state
             );
@@ -163,6 +169,21 @@ public partial class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWrit
     }
 
     private void WriteEnumType(
+        ISyntaxWriterConfiguration? configuration,
+        Type type,
+        StringBuilder sb,
+        State state
+    )
+    {
+        WriteTypeOf(
+            configuration,
+            type,
+            sb,
+            state
+        );
+    }
+
+    private void WritePrimitiveType(
         ISyntaxWriterConfiguration? configuration,
         Type type,
         StringBuilder sb,
