@@ -52,6 +52,36 @@ final class SystemObjectTests: XCTestCase {
         }
     }
     
+    func testComparisons() {
+        let optionalObject = try? System_Object()
+        
+        guard let nonOptionalObject = optionalObject else {
+            XCTFail("System.Object ctor should not throw and return an instance")
+            
+            return
+        }
+        
+        let anotherOptionalObject = try? System_Object()
+        
+        guard let anotherNonOptionalObject = anotherOptionalObject else {
+            XCTFail("System.Object ctor should not throw and return an instance")
+            
+            return
+        }
+        
+        XCTAssertTrue(optionalObject == nonOptionalObject)
+        XCTAssertFalse(optionalObject != nonOptionalObject)
+        
+        XCTAssertFalse(anotherOptionalObject == nonOptionalObject)
+        XCTAssertTrue(anotherOptionalObject != nonOptionalObject)
+        
+        XCTAssertTrue(optionalObject === nonOptionalObject)
+        XCTAssertFalse(optionalObject !== nonOptionalObject)
+        
+        XCTAssertFalse(anotherOptionalObject === nonOptionalObject)
+        XCTAssertTrue(anotherOptionalObject !== nonOptionalObject)
+    }
+    
     func testCreatingAndDestroyingManyObjects() {
         measure {
             let numberOfObjects = 10_000
