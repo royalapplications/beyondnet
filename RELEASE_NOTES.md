@@ -1,8 +1,10 @@
 # Beyond.NET Release Notes
 
 ## Version 0.3 (Alpha)
-- Workarounds for Xcode 15 support with .NET 8 RC1
-- SwiftUI sample
+- Support for Xcode 15
+- SwiftUI sample project
+- Fixed Swift equivalence operator (==, !=, ===, !==) implementations for optionals
+- typeOf implementations for .NET primitives are now generated
 
 ## Version 0.2 (Alpha)
 - Support for automatically building for Apple platforms
