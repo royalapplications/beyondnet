@@ -176,4 +176,21 @@ final class SystemStringTests: XCTestCase {
         
         XCTAssertEqual(cleanedJoined, joinedRet)
     }
+    
+    func testStringComparison() {
+        let hello = "Hello"
+        let helloDN = hello.dotNETString()
+        
+        let hello2 = "Hello"
+        let hello2DN = hello2.dotNETString()
+        
+        let world = "World"
+        let worldDN = world.dotNETString()
+        
+        XCTAssertTrue(helloDN == hello2DN)
+        XCTAssertFalse(helloDN === hello2DN)
+        
+        XCTAssertFalse(helloDN == worldDN)
+        XCTAssertFalse(helloDN === worldDN)
+    }
 }
