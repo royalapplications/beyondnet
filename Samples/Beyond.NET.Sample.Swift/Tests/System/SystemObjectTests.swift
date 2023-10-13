@@ -52,54 +52,6 @@ final class SystemObjectTests: XCTestCase {
         }
     }
     
-    func testComparisons() {
-        let optionalObject = try? System_Object()
-        
-        guard let nonOptionalObject = optionalObject else {
-            XCTFail("System.Object ctor should not throw and return an instance")
-            
-            return
-        }
-        
-        let anotherOptionalObject = try? System_Object()
-        
-        guard let anotherNonOptionalObject = anotherOptionalObject else {
-            XCTFail("System.Object ctor should not throw and return an instance")
-            
-            return
-        }
-        
-        XCTAssertTrue(optionalObject == optionalObject)
-        XCTAssertFalse(optionalObject != optionalObject)
-        XCTAssertTrue(optionalObject === optionalObject)
-        XCTAssertFalse(optionalObject !== optionalObject)
-        
-        XCTAssertTrue(optionalObject == nonOptionalObject)
-        XCTAssertFalse(optionalObject != nonOptionalObject)
-        XCTAssertTrue(optionalObject === nonOptionalObject)
-        XCTAssertFalse(optionalObject !== nonOptionalObject)
-        
-        XCTAssertFalse(optionalObject == anotherOptionalObject)
-        XCTAssertTrue(optionalObject != anotherOptionalObject)
-        XCTAssertFalse(optionalObject === anotherOptionalObject)
-        XCTAssertTrue(optionalObject !== anotherOptionalObject)
-        
-        XCTAssertFalse(nonOptionalObject == anotherOptionalObject)
-        XCTAssertTrue(nonOptionalObject != anotherOptionalObject)
-        XCTAssertFalse(nonOptionalObject === anotherOptionalObject)
-        XCTAssertTrue(nonOptionalObject !== anotherOptionalObject)
-        
-        XCTAssertFalse(optionalObject == anotherNonOptionalObject)
-        XCTAssertTrue(optionalObject != anotherNonOptionalObject)
-        XCTAssertFalse(optionalObject === anotherNonOptionalObject)
-        XCTAssertTrue(optionalObject !== anotherNonOptionalObject)
-        
-        XCTAssertFalse(nonOptionalObject == anotherNonOptionalObject)
-        XCTAssertTrue(nonOptionalObject != anotherNonOptionalObject)
-        XCTAssertFalse(nonOptionalObject === anotherNonOptionalObject)
-        XCTAssertTrue(nonOptionalObject !== anotherNonOptionalObject)
-    }
-    
     func testCreatingAndDestroyingManyObjects() {
         measure {
             let numberOfObjects = 10_000
