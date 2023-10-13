@@ -2,12 +2,25 @@ import XCTest
 import BeyondDotNETSampleKit
 
 final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
-//    private let performanceTestsByteCount = 50 * 1024 * 1024 // 50 MB
-    private let performanceTestsByteCount = 100 * 1024 * 1024 // 100 MB
-//    private let performanceTestsByteCount = 250 * 1024 * 1024 // 250 MB
-//    private let performanceTestsByteCount = 500 * 1024 * 1024 // 500 MB
-//    private let performanceTestsByteCount = 1 * 1024 * 1024 * 1024 // 1 GB
-//    private let performanceTestsByteCount = Int(1.5 * 1024 * 1024 * 1024) // 1.5 GB
+    struct Bytes {
+        static let kb1      =   1 * 1024
+        static let kb10     =  10 * 1024
+        static let kb100    = 100 * 1024
+        static let kb250    = 250 * 1024
+        static let kb500    = 500 * 1024
+        
+        static let mb1      =   1 * 1024 * 1024
+        static let mb10     =  10 * 1024 * 1024
+        static let mb50     =  50 * 1024 * 1024
+        static let mb100    = 100 * 1024 * 1024
+        static let mb250    = 250 * 1024 * 1024
+        static let mb500    = 500 * 1024 * 1024
+        
+        static let gb1      = 1 * 1024 * 1024 * 1024
+    }
+    
+    private let correctnessTestsByteCount = Bytes.kb1
+    private let performanceTestsByteCount = Bytes.mb100
     
     @MainActor
     override class func setUp() {
@@ -20,8 +33,7 @@ final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
     }
     
     func testSwiftDataToSystemByteArray() {
-        // 1 KB
-        let dataCount = Int32(1 * 1024)
+        let dataCount = Int32(correctnessTestsByteCount)
         
         guard let data = Data.randomData(count: .init(dataCount)) else {
             XCTFail("Failed to generate random data")
@@ -67,7 +79,7 @@ final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
     }
     
     func testSwiftDataToSystemByteArrayWithExtension() {
-        let dataCount = 1 * 1024 // 1 KB
+        let dataCount = correctnessTestsByteCount
         
         guard let data = Data.randomData(count: dataCount) else {
             XCTFail("Failed to generate random data")
@@ -86,7 +98,7 @@ final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
     }
     
     func testPerformanceOfSwiftDataToSystemByteArray() {
-        let dataCount = self.performanceTestsByteCount
+        let dataCount = performanceTestsByteCount
         
         guard let data = Data.randomData(count: dataCount) else {
             XCTFail("Failed to generate random data")
@@ -129,7 +141,7 @@ final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
     }
     
     func testSystemByteArrayToSwiftData() {
-        let bytesCount = 1 * 1024 // 1 KB
+        let bytesCount = correctnessTestsByteCount
         
         guard let systemByteArray = randomSystemByteArray(count: bytesCount) else {
             XCTFail("System.Array should be possible to cast to byte[]")
@@ -173,7 +185,7 @@ final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
     }
     
     func testSystemByteArrayToSwiftDataWithExtension() {
-        let bytesCount = 1 * 1024 // 1 KB
+        let bytesCount = correctnessTestsByteCount
         
         guard let systemByteArray = randomSystemByteArray(count: bytesCount) else {
             XCTFail("System.Array should be possible to cast to byte[]")
@@ -192,7 +204,7 @@ final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
     }
     
     func testPerformanceOfSystemByteArrayToSwiftDataWithExtension() {
-        let bytesCount = self.performanceTestsByteCount
+        let bytesCount = performanceTestsByteCount
         
         guard let systemByteArray = randomSystemByteArray(count: bytesCount) else {
             XCTFail("Failed to create random byte[]")
