@@ -5,7 +5,9 @@ final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
     struct Bytes {
         static let kb1      =   1 * 1024
         static let kb10     =  10 * 1024
+        static let kb50     =  50 * 1024
         static let kb100    = 100 * 1024
+        static let kb200    = 200 * 1024
         static let kb250    = 250 * 1024
         static let kb500    = 500 * 1024
         
@@ -13,6 +15,7 @@ final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
         static let mb10     =  10 * 1024 * 1024
         static let mb50     =  50 * 1024 * 1024
         static let mb100    = 100 * 1024 * 1024
+        static let mb200    = 200 * 1024 * 1024
         static let mb250    = 250 * 1024 * 1024
         static let mb500    = 500 * 1024 * 1024
         
@@ -20,7 +23,10 @@ final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
     }
     
     private let correctnessTestsByteCount = Bytes.kb1
-    private let performanceTestsByteCount = Bytes.mb100
+    
+    // NOTE: Since the .NET runtime likes to raise SIGUSR1 (which makes lldb halt execution) when using higher numbers here, we set it to a relatively number.
+    // Feel free to increase the byte count but don't forget to tell lldb to ignore SIGUSR1 before running the tests (`process handle SIGUSR1 -n true -p true -s false`).
+    private let performanceTestsByteCount = Bytes.kb500
     
     @MainActor
     override class func setUp() {
