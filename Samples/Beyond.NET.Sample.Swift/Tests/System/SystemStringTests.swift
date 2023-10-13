@@ -2,6 +2,21 @@ import XCTest
 import BeyondDotNETSampleKit
 
 final class SystemStringTests: XCTestCase {
+    private lazy var randomStrings: [String] = {
+        let numberOfStrings = 1_000
+        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        
+        let strings: [String] = (0..<numberOfStrings).compactMap({ _ in
+            guard let letter = letters.randomElement() else {
+                return nil
+            }
+            
+            return String(letter)
+        })
+        
+        return strings
+    }()
+    
     @MainActor
     override class func setUp() {
         Self.sharedSetUp()
@@ -163,7 +178,7 @@ final class SystemStringTests: XCTestCase {
             }
             
             let componentRet = componentRetDN.string()
-
+            
             XCTAssertEqual(component, componentRet)
         }
         
@@ -192,5 +207,29 @@ final class SystemStringTests: XCTestCase {
         
         XCTAssertFalse(helloDN == worldDN)
         XCTAssertFalse(helloDN === worldDN)
+    }
+    
+    func testSwiftStringToSystemStringConversionPerformance() {
+        let strings = randomStrings
+        
+        measure {
+            for string in strings {
+                _ = string.dotNETString()
+            }
+        }
+    }
+    
+    func testSystemStringToSwiftStringConversionPerformance() {
+        let strings = randomStrings
+        
+        let dnStrings = strings.map({
+            $0.dotNETString()
+        })
+        
+        measure {
+            for string in dnStrings {
+                _ = string.string()
+            }
+        }
     }
 }
