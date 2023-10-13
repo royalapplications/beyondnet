@@ -218,10 +218,6 @@ public class SwiftCodeGenerator: ICodeGenerator
         foreach (var type in typesInNamespace) {
             Type nonByRefType = type.GetNonByRefType();
 
-            if (nonByRefType.IsPrimitive) {
-                continue;
-            }
-            
             if (nonByRefType.IsGenericType || 
                 nonByRefType.IsConstructedGenericType ||
                 nonByRefType.IsGenericTypeDefinition ||
@@ -241,11 +237,17 @@ public class SwiftCodeGenerator: ICodeGenerator
                     }
                 }
             }
-            
-            string swiftTypeName = nonByRefType.GetTypeDescriptor(typeDescriptorRegistry).GetTypeName(
-                CodeLanguage.Swift,
-                false
-            );
+
+            string swiftTypeName;
+
+            if (nonByRefType.IsPrimitive) {
+                swiftTypeName = nonByRefType.CTypeName();
+            } else {
+                swiftTypeName = nonByRefType.GetTypeDescriptor(typeDescriptorRegistry).GetTypeName(
+                    CodeLanguage.Swift,
+                    false
+                );
+            }
 
             string swiftNamespacePrefix = fullNamespaceName.Replace('.', '_') + "_";
             
