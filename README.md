@@ -639,7 +639,7 @@ Right now, expect things to break!
 
 ## Debugging with LLDB
 
-While debugging code with LLDB you might run into situations where the .NET code raises signals which would cause the debugger to halt program execution although it's perfectly fine to continue.
+While debugging code with LLDB you might run into situations where the [.NET code raises signals](https://github.com/dotnet/runtime/blob/main/docs/workflow/debugging/coreclr/debugging-runtime.md?plain=1#L148) which would cause the debugger to halt program execution although it's perfectly fine to continue.
 To handle that, you can add a symbolic breakpoint in Xcode and configure it like this:
 * Name: `Ignore_SIGUSR1`
 * Symbol: `NSApplicationMain` (macOS) or `UIApplicationMain` (iOS) or `main` (C programs or XCTest bundles)
