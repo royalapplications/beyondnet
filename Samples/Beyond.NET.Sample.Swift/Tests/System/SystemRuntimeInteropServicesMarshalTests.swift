@@ -2,6 +2,11 @@ import XCTest
 import BeyondDotNETSampleKit
 
 final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
+//    private let performanceTestsByteCount = 50 * 1024 * 1024 // 50 MB
+    private let performanceTestsByteCount = 100 * 1024 * 1024 // 100 MB
+//    private let performanceTestsByteCount = 500 * 1024 * 1024 // 500 MB
+//    private let performanceTestsByteCount = 1 * 1024 * 1024 * 1024 // 1 GB
+    
     @MainActor
     override class func setUp() {
         Self.sharedSetUp()
@@ -13,11 +18,16 @@ final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
     }
     
     func testSwiftDataToSystemByteArray() {
-        let bytes: [UInt8] = [ 0, 1, 2, 3 ]
-        let bytesCount = Int32(bytes.count)
-        let data = Data(bytes)
+        // 1 KB
+        let dataCount = Int32(1 * 1024)
         
-        guard let systemArray = try? System.Array.createInstance(System.Byte.typeOf, bytesCount) else {
+        guard let data = Data.randomData(count: .init(dataCount)) else {
+            XCTFail("Failed to generate random data")
+            
+            return
+        }
+        
+        guard let systemArray = try? System.Array.createInstance(System.Byte.typeOf, dataCount) else {
             XCTFail("System.Array.CreateInstance should not throw and return an instance")
             
             return
@@ -42,7 +52,7 @@ final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
                 try System.Runtime.InteropServices.Marshal.copy(unsafeBytesPointerAsInt,
                                                                 systemByteArray,
                                                                 0,
-                                                                bytesCount)
+                                                                dataCount)
             } catch {
                 XCTFail("System.Runtime.InteropServices.Marshal.Copy should not throw")
                 
@@ -55,8 +65,56 @@ final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
     }
     
     func testSwiftDataToSystemByteArrayWithExtension() {
-        let bytes: [UInt8] = [ 0, 1, 2, 3 ]
-        let data = Data(bytes)
+        let dataCount = 1 * 1024 // 1 KB
+        
+        guard let data = Data.randomData(count: dataCount) else {
+            XCTFail("Failed to generate random data")
+            
+            return
+        }
+        
+        guard let systemByteArray = try? data.dotNETByteArray() else {
+            XCTFail("Swift Data.dotNETByteArray should not throw and return an instance")
+            
+            return
+        }
+        
+        validateSystemByteArray(systemByteArray,
+                                matchesData: data)
+    }
+    
+    func testPerformanceOfSwiftDataToSystemByteArray() {
+        let dataCount = self.performanceTestsByteCount
+        
+        guard let data = Data.randomData(count: dataCount) else {
+            XCTFail("Failed to generate random data")
+            
+            return
+        }
+        
+        var systemByteArray: System_Byte_Array?
+        
+        measure {
+            systemByteArray = try? data.dotNETByteArray()
+        }
+        
+        guard let systemByteArray else {
+            XCTFail("Swift Data.dotNETByteArray should not throw and return an instance")
+            
+            return
+        }
+        
+        guard let systemByteArrayLength = try? systemByteArray.length else {
+            XCTFail("byte[].Length should not throw and return an instance")
+            
+            return
+        }
+        
+        XCTAssertEqual(.init(systemByteArrayLength), dataCount)
+    }
+    
+    func testEmptySwiftDataToSystemByteArrayWithExtension() {
+        let data = Data()
         
         guard let systemByteArray = try? data.dotNETByteArray() else {
             XCTFail("Swift Data.dotNETByteArray should not throw and return an instance")
@@ -69,28 +127,9 @@ final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
     }
     
     func testSystemByteArrayToSwiftData() {
-        let bytes: [UInt8] = [ 0, 1, 2, 3 ]
-        let bytesCount = Int32(bytes.count)
+        let bytesCount = 1 * 1024 // 1 KB
         
-        guard let systemArray = try? System.Array.createInstance(System.Byte.typeOf, bytesCount) else {
-            XCTFail("System.Array.CreateInstance should not throw and return an instance")
-            
-            return
-        }
-        
-        for (idx, byte) in bytes.enumerated() {
-            let byteObject = byte.dotNETObject()
-            
-            do {
-                try systemArray.setValue(byteObject, Int32(idx))
-            } catch {
-                XCTFail("System.Array.SetValue should not throw")
-                
-                return
-            }
-        }
-        
-        guard let systemByteArray: System_Byte_Array = systemArray.castAs() else {
+        guard let systemByteArray = randomSystemByteArray(count: bytesCount) else {
             XCTFail("System.Array should be possible to cast to byte[]")
             
             return
@@ -102,7 +141,7 @@ final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
             return
         }
         
-        XCTAssertEqual(systemByteArrayLength, bytesCount)
+        XCTAssertEqual(.init(systemByteArrayLength), bytesCount)
         
         var data = Data(count: .init(systemByteArrayLength))
         
@@ -132,25 +171,61 @@ final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
     }
     
     func testSystemByteArrayToSwiftDataWithExtension() {
-        let bytes: [UInt8] = [ 0, 1, 2, 3 ]
-        let bytesCount = Int32(bytes.count)
+        let bytesCount = 1 * 1024 // 1 KB
         
-        guard let systemArray = try? System.Array.createInstance(System.Byte.typeOf, bytesCount) else {
-            XCTFail("System.Array.CreateInstance should not throw and return an instance")
+        guard let systemByteArray = randomSystemByteArray(count: bytesCount) else {
+            XCTFail("System.Array should be possible to cast to byte[]")
             
             return
         }
         
-        for (idx, byte) in bytes.enumerated() {
-            let byteObject = byte.dotNETObject()
+        guard let data = try? systemByteArray.data() else {
+            XCTFail("System_Byte_Array.data should not throw and return an instance")
             
-            do {
-                try systemArray.setValue(byteObject, Int32(idx))
-            } catch {
-                XCTFail("System.Array.SetValue should not throw")
-                
-                return
-            }
+            return
+        }
+        
+        validateSystemByteArray(systemByteArray,
+                                matchesData: data)
+    }
+    
+    func testPerformanceOfSystemByteArrayToSwiftDataWithExtension() {
+        let bytesCount = self.performanceTestsByteCount
+        
+        guard let systemByteArray = randomSystemByteArray(count: bytesCount) else {
+            XCTFail("Failed to create random byte[]")
+            
+            return
+        }
+        
+        guard let systemByteArrayLength = try? systemByteArray.length else {
+            XCTFail("System.Array.Length should not throw and return an integer")
+            
+            return
+        }
+        
+        var data: Data?
+        
+        measure {
+            data = try? systemByteArray.data()
+        }
+        
+        guard let data else {
+            XCTFail("System_Byte_Array.data should not throw and return an instance")
+            
+            return
+        }
+        
+        let dataCount = data.count
+        
+        XCTAssertEqual(dataCount, .init(systemByteArrayLength))
+    }
+    
+    func testEmptySystemByteArrayToSwiftDataWithExtension() {
+        guard let systemArray = try? System.Array.createInstance(System.Byte.typeOf, 0) else {
+            XCTFail("System.Array.CreateInstance should not throw and return an instance")
+            
+            return
         }
         
         guard let systemByteArray: System_Byte_Array = systemArray.castAs() else {
@@ -179,26 +254,62 @@ private extension SystemRuntimeInteropServicesMarshalTests {
             return
         }
         
-        let bytesCount = Int32(data.count)
+        let dataCount = data.count
         
-        XCTAssertEqual(systemByteArrayLength, bytesCount)
+        XCTAssertEqual(Int(systemByteArrayLength), dataCount)
         
-        for idx in 0..<systemByteArrayLength {
-            guard let byteObject = try? systemByteArray.getValue(idx) else {
+        for idx in 0..<dataCount {
+            guard let idxAsInt32 = Int32(exactly: idx) else {
+                XCTFail("Index doesn't fit in Int32")
+                
+                return
+            }
+            
+            let dataByte = data[idx]
+            
+            guard let systemByteObject = try? systemByteArray.getValue(idxAsInt32) else {
                 XCTFail("System.Array.GetValue should not throw and return an instance")
                 
                 return
             }
             
-            guard let byte = try? byteObject.castToUInt8() else {
+            guard let systemByte = try? systemByteObject.castToUInt8() else {
                 XCTFail("Should get a byte/UInt8 but failed to cast")
                 
                 return
             }
             
-            let expectedByte = data[.init(idx)]
-            
-            XCTAssertEqual(byte, expectedByte)
+            XCTAssertEqual(systemByte, dataByte)
         }
+    }
+    
+    func randomSystemByteArray(count: Int) -> System_Byte_Array? {
+        guard let random = try? System.Random() else {
+            XCTFail("System.Random ctor should not throw and return an instance")
+            
+            return nil
+        }
+        
+        guard let systemArray = try? System.Array.createInstance(System.Byte.typeOf, .init(count)) else {
+            XCTFail("System.Array.CreateInstance should not throw and return an instance")
+            
+            return nil
+        }
+        
+        guard let systemByteArray: System_Byte_Array = systemArray.castAs() else {
+            XCTFail("System.Array should be possible to cast to byte[]")
+            
+            return nil
+        }
+        
+        do {
+            try random.nextBytes(systemByteArray)
+        } catch {
+            XCTFail("System.Random.NextBytes should not throw")
+            
+            return nil
+        }
+        
+        return systemByteArray
     }
 }

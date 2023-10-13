@@ -811,48 +811,61 @@ extension Date {
 }
 
 public extension Data {
-    /// WARNING: This is not optimized!
     /// Creates a .NET byte array by copying the data from the Swift Data object
     func dotNETByteArray() throws -> System_Byte_Array {
-        guard let systemByteType = try? System_Type.getType("System.Byte".dotNETString()) else {
+        let bytesCount = Int32(self.count)
+        
+        let systemArray = try System_Array.createInstance(System_Byte.typeOf, bytesCount)
+        
+        guard let systemArray else {
             throw DNSystemError.unexpectedNull
         }
         
-        guard let arr = try System_Byte_Array.createInstance(systemByteType,
-                                                             .init(count)) else {
-            throw DNSystemError.unexpectedNull
+        let systemByteArray: System_Byte_Array = try systemArray.castTo()
+        
+        guard bytesCount > 0 else {
+            return systemByteArray
         }
         
-        for (idx, el) in self.enumerated() {
-            try arr.setValue(el.dotNETObject(), Int32(idx))
+        try self.withUnsafeBytes {
+            guard let unsafeBytesPointer = $0.baseAddress else {
+                throw DNSystemError.unexpectedNull
+            }
+            
+            let unsafeBytesPointerAsInt = Int(bitPattern: unsafeBytesPointer)
+            
+            try System_Runtime_InteropServices_Marshal.copy(unsafeBytesPointerAsInt,
+                                                            systemByteArray,
+                                                            0,
+                                                            bytesCount)
         }
         
-        let byteArr: System_Byte_Array = try arr.castTo()
-        
-        return byteArr
+        return systemByteArray
     }
 }
 
 public extension System_Byte_Array {
-    /// WARNING: This is not optimized!
     /// Creates a Swift Data object by copying the data from the .NET byte array
     func data() throws -> Data {
-        let len = try self.length
+        let bytesCount = try self.length
         
-        guard len > 0 else {
+        guard bytesCount > 0 else {
             return .init()
         }
         
-        var data = Data(count: .init(len))
+        var data = Data(count: .init(bytesCount))
         
-        for idx in 0..<len {
-            guard let el = try self.getValue(idx) else {
+        try data.withUnsafeMutableBytes {
+            guard let unsafeBytesPointer = $0.baseAddress else {
                 throw DNSystemError.unexpectedNull
             }
             
-            let elByte = try el.castToUInt8()
+            let unsafeBytesPointerAsInt = Int(bitPattern: unsafeBytesPointer)
             
-            data[.init(idx)] = elByte
+            try System.Runtime.InteropServices.Marshal.copy(self,
+                                                            0,
+                                                            unsafeBytesPointerAsInt,
+                                                            bytesCount)
         }
         
         return data
