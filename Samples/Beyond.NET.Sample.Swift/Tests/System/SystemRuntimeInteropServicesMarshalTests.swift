@@ -4,8 +4,10 @@ import BeyondDotNETSampleKit
 final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
 //    private let performanceTestsByteCount = 50 * 1024 * 1024 // 50 MB
     private let performanceTestsByteCount = 100 * 1024 * 1024 // 100 MB
+//    private let performanceTestsByteCount = 250 * 1024 * 1024 // 250 MB
 //    private let performanceTestsByteCount = 500 * 1024 * 1024 // 500 MB
 //    private let performanceTestsByteCount = 1 * 1024 * 1024 * 1024 // 1 GB
+//    private let performanceTestsByteCount = Int(1.5 * 1024 * 1024 * 1024) // 1.5 GB
     
     @MainActor
     override class func setUp() {
