@@ -1,4 +1,6 @@
 using System.Reflection;
+using System.Text;
+
 using Beyond.NET.CodeGenerator.Extensions;
 
 namespace Beyond.NET.CodeGenerator.Collectors;
@@ -162,10 +164,12 @@ public class MemberCollector
         var parameterInfos = constructorInfo.GetParameters();
 
         bool allParametersSupported = true;
+        List<Tuple<ParameterInfo, string?>> unsupportedReasons = new();
 
         foreach (var parameterInfo in parameterInfos) {
-            if (!ValidateParameter(parameterInfo)) {
+            if (!ValidateParameter(parameterInfo, out string? unsupportedReason)) {
                 allParametersSupported = false;
+                unsupportedReasons.Add(new(parameterInfo, unsupportedReason));
                 
                 break;
             }
@@ -174,7 +178,16 @@ public class MemberCollector
         if (allParametersSupported) {
             collectedMembers.Add(constructorInfo);
         } else {
-            unsupportedMembers[constructorInfo] = "Has unsupported parameter(s)";
+            var sb = new StringBuilder("Has unsupported parameter(s): ");
+
+            foreach (var unsupportedReason in unsupportedReasons) {
+                var parameterInfo = unsupportedReason.Item1;
+                var reason = unsupportedReason.Item2 ?? "Unknown Reason";
+
+                sb.Append($"{parameterInfo.Name ?? "N/A"}: {reason}; ");
+            }
+            
+            unsupportedMembers[constructorInfo] = sb.ToString();
         }
     }
 
@@ -204,10 +217,12 @@ public class MemberCollector
         var parameterInfos = methodInfo.GetParameters();
         
         bool allParametersSupported = true;
+        List<Tuple<ParameterInfo, string?>> unsupportedReasons = new();
 
         foreach (var parameterInfo in parameterInfos) {
-            if (!ValidateParameter(parameterInfo)) {
+            if (!ValidateParameter(parameterInfo, out string? unsupportedReason)) {
                 allParametersSupported = false;
+                unsupportedReasons.Add(new(parameterInfo, unsupportedReason));
                 
                 break;
             }
@@ -216,7 +231,16 @@ public class MemberCollector
         if (allParametersSupported) {
             collectedMembers.Add(methodInfo);
         } else {
-            unsupportedMembers[methodInfo] = "Has unsupported parameter(s)";
+            var sb = new StringBuilder("Has unsupported parameter(s): ");
+
+            foreach (var unsupportedReason in unsupportedReasons) {
+                var parameterInfo = unsupportedReason.Item1;
+                var reason = unsupportedReason.Item2 ?? "Unknown Reason";
+
+                sb.Append($"{parameterInfo.Name ?? "N/A"}: {reason}; ");
+            }
+            
+            unsupportedMembers[methodInfo] = sb.ToString();
         }
     }
     
@@ -254,8 +278,8 @@ public class MemberCollector
     {
         Type fieldType = fieldInfo.FieldType;
 
-        if (!m_typeCollector.IsSupportedType(fieldType)) {
-            unsupportedMembers[fieldType] = "Has unsupported type";
+        if (!m_typeCollector.IsSupportedType(fieldType, out string? unsupportedReason)) {
+            unsupportedMembers[fieldType] = $"Has unsupported type: {unsupportedReason ?? "Unknown Reason"}";
             
             return;
         }
@@ -273,18 +297,21 @@ public class MemberCollector
 
         if (eventHandlerType == null) {
             unsupportedMembers[eventInfo] = "Has no event handler type";
-        } else if (!m_typeCollector.IsSupportedType(eventHandlerType)) {
-            unsupportedMembers[eventInfo] = "Has unsupported event handler type";
+        } else if (!m_typeCollector.IsSupportedType(eventHandlerType, out string? unsupportedReason)) {
+            unsupportedMembers[eventInfo] = $"Has unsupported event handler type: {unsupportedReason ?? "Unknown Reason"}";
         } else {
             collectedMembers.Add(eventInfo);
         }
     }
     
-    private bool ValidateParameter(ParameterInfo parameterInfo)
+    private bool ValidateParameter(
+        ParameterInfo parameterInfo, 
+        out string? unsupportedReason
+    )
     {
         var parameterType = parameterInfo.ParameterType;
 
-        if (!m_typeCollector.IsSupportedType(parameterType)) {
+        if (!m_typeCollector.IsSupportedType(parameterType, out unsupportedReason)) {
             return false;
         }
 
