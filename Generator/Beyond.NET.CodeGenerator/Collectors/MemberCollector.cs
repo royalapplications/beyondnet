@@ -208,8 +208,8 @@ public class MemberCollector
 
         Type returnType = methodInfo.ReturnType;
 
-        if (!m_typeCollector.IsSupportedType(returnType)) {
-            unsupportedMembers[methodInfo] = "Has unsupported return type";
+        if (!m_typeCollector.IsSupportedType(returnType, out string? unsupportedTypeReason)) {
+            unsupportedMembers[methodInfo] = $"Has unsupported return type: {unsupportedTypeReason}";
             
             return;
         }
@@ -252,8 +252,8 @@ public class MemberCollector
     {
         Type propertyType = propertyInfo.PropertyType;
 
-        if (!m_typeCollector.IsSupportedType(propertyType)) {
-            unsupportedMembers[propertyInfo] = "Has unsupported type";
+        if (!m_typeCollector.IsSupportedType(propertyType, out string? unsupportedTypeReason)) {
+            unsupportedMembers[propertyInfo] = $"Has unsupported type: {unsupportedTypeReason}";
             
             return;
         }

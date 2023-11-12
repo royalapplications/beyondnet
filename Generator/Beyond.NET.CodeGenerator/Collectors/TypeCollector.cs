@@ -364,6 +364,11 @@ public class TypeCollector
             return false;
         }
 
+        if (type.IsNullableValueType(out Type? nullableValueType)) {
+            unsupportedReason = $"Is Nullable Value Type ({nullableValueType.FullName}?)";
+            return false;
+        }
+
         if (!m_enableGenericsSupport &&
             type.IsGenericInAnyWay(true)) {
             unsupportedReason = "Is Generic (disabled by configuration)";

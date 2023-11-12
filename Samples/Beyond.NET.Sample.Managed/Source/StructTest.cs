@@ -8,4 +8,13 @@ public struct StructTest
     {
         Name = name;
     }
+
+    public static StructTest? GetNullableStructReturnValue(bool returnNull)
+    {
+        if (returnNull) {
+            return null;
+        } else {
+            return new StructTest("Test");
+        }
+    }
 }

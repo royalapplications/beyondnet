@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using Beyond.NET.CodeGenerator.Types;
@@ -159,6 +160,27 @@ internal static class TypeExtensions
         bool isAnyBaseTypeGeneric = baseType.IsGenericInAnyWay(true);
 
         return isAnyBaseTypeGeneric;
+    }
+
+    internal static bool IsNullableValueType(
+        this Type type,
+        [NotNullWhen(true)] out Type? valueType
+    )
+    {
+        if (!type.IsGenericType ||
+            type.GetGenericTypeDefinition() != typeof(Nullable<>)) {
+            valueType = null;
+            
+            return false;
+        }
+
+        valueType = Nullable.GetUnderlyingType(type);
+
+        if (valueType is null) {
+            return false;
+        }
+
+        return true;
     }
     
     internal static bool IsStruct(this Type type)
