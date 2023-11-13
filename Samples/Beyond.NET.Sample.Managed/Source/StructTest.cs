@@ -9,6 +9,12 @@ public struct StructTest
         Name = name;
     }
 
+    // private static StructTest? NullInstanceField = null;
+    public static StructTest? NullInstanceProperty => null;
+
+    // private static StructTest? NonNullInstanceField = new StructTest("Test");
+    public static StructTest? NonNullInstanceProperty => new StructTest("Test");
+
     public static StructTest? GetNullableStructReturnValue(bool returnNull)
     {
         if (returnNull) {

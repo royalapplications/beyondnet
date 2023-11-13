@@ -43,6 +43,22 @@ final class StructTestTests: XCTestCase {
     
     func testNullableValueTypes() {
         do {
+            let nullRetVal = try Beyond_NET_Sample_StructTest.nullInstanceProperty
+            
+            XCTAssertNil(nullRetVal)
+        } catch {
+            XCTFail("StructTest.NullInstanceProperty should not throw")
+        }
+        
+        do {
+            let structRetVal = try Beyond_NET_Sample_StructTest.nonNullInstanceProperty
+            
+            XCTAssertNotNil(structRetVal)
+        } catch {
+            XCTFail("StructTest.NonNullInstanceProperty should not throw")
+        }
+        
+        do {
             let nullRetVal = try Beyond_NET_Sample_StructTest.getNullableStructReturnValue(true)
             
             XCTAssertNil(nullRetVal)
