@@ -17,4 +17,21 @@ public struct StructTest
             return new StructTest("Test");
         }
     }
+    
+    public static void GetNullableStructReturnValueInOutParameter(
+        bool returnNull, 
+        out StructTest? returnValue
+    )
+    {
+        if (returnNull) {
+            returnValue = null;
+        } else {
+            returnValue = new StructTest("Test");
+        }
+    }
+    
+    public static StructTest? GetNullableStructReturnValueOfRefParameter(ref StructTest? returnValue)
+    {
+        return returnValue;
+    }
 }

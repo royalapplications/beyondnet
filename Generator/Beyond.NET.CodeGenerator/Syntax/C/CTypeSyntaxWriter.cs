@@ -42,7 +42,8 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         // Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
         
         if (type.IsPointer ||
-            type.IsByRef) {
+            type.IsByRef ||
+            type.IsNullableValueType(out _)) {
             // No need to generate C code for those kinds of types
 
             return string.Empty;

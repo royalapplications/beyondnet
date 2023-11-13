@@ -84,6 +84,10 @@ internal static class TypeExtensions
     
     internal static string CTypeName(this Type type)
     {
+        if (type.IsNullableValueType(out Type? valueType)) {
+            type = valueType;
+        }
+        
         string fullTypeName = type.GetFullNameOrName();
 
         string cTypeName = fullTypeName

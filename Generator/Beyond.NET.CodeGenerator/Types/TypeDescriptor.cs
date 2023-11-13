@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using Beyond.NET.CodeGenerator.Extensions;
 
 namespace Beyond.NET.CodeGenerator.Types;
@@ -15,7 +16,12 @@ public class TypeDescriptor
     public bool IsVoid => ManagedType.IsVoid();
     public bool IsDelegate => ManagedType.IsDelegate();
     public bool IsManagedPointer => ManagedType.IsPointer;
-    public bool RequiresNativePointer => !IsVoid && !IsEnum && !IsPrimitive && !IsBool; 
+    public bool RequiresNativePointer => !IsVoid && !IsEnum && !IsPrimitive && !IsBool;
+
+    public bool IsNullableValueType([NotNullWhen(true)] out Type? valueType)
+    {
+        return ManagedType.IsNullableValueType(out valueType);
+    }
 
     private readonly Dictionary<CodeLanguage, string> m_typeNames;
     private readonly Dictionary<LanguagePair, string> m_typeConversions;
@@ -284,7 +290,11 @@ public class TypeDescriptor
                 
                 conversion = $"new {cTypeName}({{0}}).AllocateGCHandleAndGetAddress()";
             } else {
-                conversion = "{0}.AllocateGCHandleAndGetAddress()";
+                if (IsNullableValueType(out Type? valueType)) {
+                    conversion = "{0}.HasValue ? {0}.Value.AllocateGCHandleAndGetAddress() : default";
+                } else {
+                    conversion = "{0}.AllocateGCHandleAndGetAddress()";
+                }
             }
 
             return conversion;

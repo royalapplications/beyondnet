@@ -364,12 +364,25 @@ public class TypeCollector
             return false;
         }
 
-        if (type.IsNullableValueType(out Type? nullableValueType)) {
-            unsupportedReason = $"Is Nullable Value Type ({nullableValueType.FullName}?)";
+        bool isNullableValueType = type.IsNullableValueType(out Type? nullableValueType);
+
+        // Only nullable structs, not primitives or enums are currently supported
+        bool isNullableStruct = isNullableValueType &&
+                                (nullableValueType?.IsStruct() ?? false);
+
+        // if (isNullableValueType) {
+        //     unsupportedReason = $"Is Nullable Value Type ({nullableValueType.FullName}?)";
+        //     return false;
+        // }
+        
+        if (isNullableValueType &&
+            !isNullableStruct) {
+            unsupportedReason = $"Is Nullable Value Type, but not a struct ({nullableValueType?.FullName}?)";
             return false;
         }
 
-        if (!m_enableGenericsSupport &&
+        if (!isNullableStruct &&
+            !m_enableGenericsSupport &&
             type.IsGenericInAnyWay(true)) {
             unsupportedReason = "Is Generic (disabled by configuration)";
             return false;
@@ -382,7 +395,8 @@ public class TypeCollector
         }
         
         // TODO: Generic Types as arguments, properties, etc.
-        if (type.IsConstructedGenericType) {
+        if (!isNullableValueType &&
+            type.IsConstructedGenericType) {
             Type genericTypeDefinition = type.GetGenericTypeDefinition();
 
             if (UNSUPPORTED_TYPES.Contains(genericTypeDefinition)) {

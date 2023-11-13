@@ -155,15 +155,21 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
                 CodeLanguage.C
             );
         }
-        
-        bool isGenericReturnType = returnOrSetterOrEventHandlerType.IsGenericParameter ||
-                                   returnOrSetterOrEventHandlerType.IsGenericMethodParameter ||
-                                   returnOrSetterOrEventHandlerType.IsGenericType ||
-                                   returnOrSetterOrEventHandlerType.IsGenericTypeDefinition ||
-                                   returnOrSetterOrEventHandlerType.IsGenericTypeParameter ||
-                                   returnOrSetterOrEventHandlerType.IsConstructedGenericType;
 
-        bool isConstructedGenericReturnType = returnOrSetterOrEventHandlerType.IsConstructedGenericType;
+        bool isNullableValueTypeReturnType = returnOrSetterOrEventHandlerType.IsNullableValueType(out Type? nullableValueReturnType);
+        
+        bool isGenericReturnType = !isNullableValueTypeReturnType &&
+                                   (
+                                       returnOrSetterOrEventHandlerType.IsGenericParameter ||
+                                       returnOrSetterOrEventHandlerType.IsGenericMethodParameter ||
+                                       returnOrSetterOrEventHandlerType.IsGenericType ||
+                                       returnOrSetterOrEventHandlerType.IsGenericTypeDefinition ||
+                                       returnOrSetterOrEventHandlerType.IsGenericTypeParameter ||
+                                       returnOrSetterOrEventHandlerType.IsConstructedGenericType
+                                    );
+
+        bool isConstructedGenericReturnType = !isNullableValueTypeReturnType &&
+                                              returnOrSetterOrEventHandlerType.IsConstructedGenericType;
         
         bool isGenericArrayReturnType = false;
 
@@ -192,10 +198,17 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             }
         }
 
-        bool returnOrSetterOrEventHandlerTypeIsByRef = returnOrSetterOrEventHandlerType.IsByRef;
+        bool returnOrSetterOrEventHandlerTypeIsByRef;
 
-        if (returnOrSetterOrEventHandlerTypeIsByRef) {
-            returnOrSetterOrEventHandlerType = returnOrSetterOrEventHandlerType.GetNonByRefType();
+        if (isNullableValueTypeReturnType) {
+            returnOrSetterOrEventHandlerTypeIsByRef = true;
+            returnOrSetterOrEventHandlerType = nullableValueReturnType ?? returnOrSetterOrEventHandlerType;
+        } else {
+            returnOrSetterOrEventHandlerTypeIsByRef = returnOrSetterOrEventHandlerType.IsByRef;
+
+            if (returnOrSetterOrEventHandlerTypeIsByRef) {
+                returnOrSetterOrEventHandlerType = returnOrSetterOrEventHandlerType.GetNonByRefType();
+            }   
         }
         
         TypeDescriptor returnOrSetterTypeDescriptor = returnOrSetterOrEventHandlerType.GetTypeDescriptor(typeDescriptorRegistry);
