@@ -1,4 +1,4 @@
-namespace Beyond.NET.Sample.Source;
+namespace Beyond.NET.Sample;
 
 public class SpanTest
 {
@@ -22,6 +22,10 @@ public class SpanTest
         Data = dataAsReadOnlySpan.ToArray();
     }
     #endregion Constructor
+
+    #region ReadOnlyBytes
+    public ReadOnlyBytes DataAsReadOnlyBytes => new(DataAsReadOnlySpan);
+    #endregion ReadOnlyBytes
 
     #region Span<byte>
     public Span<byte> DataAsSpan => new(Data);

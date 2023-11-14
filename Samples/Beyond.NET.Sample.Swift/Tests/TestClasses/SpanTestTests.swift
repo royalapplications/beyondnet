@@ -12,7 +12,7 @@ final class SpanTestTests: XCTestCase {
         Self.sharedTearDown()
     }
     
-    func testByteArrayConstructorAndProperty() {
+    func testReadOnlyBytes() {
         let helloString = "Hello"
         
         guard let helloData = helloString.data(using: .utf8) else {
@@ -27,7 +27,7 @@ final class SpanTestTests: XCTestCase {
             return
         }
         
-        guard let spanTest = try? Beyond.NET.Sample.Source.SpanTest(helloByteArray) else {
+        guard let spanTest = try? Beyond.NET.Sample.SpanTest(helloByteArray) else {
             XCTFail("SpanTest ctor should not throw and return an instance")
             
             return
@@ -56,5 +56,19 @@ final class SpanTestTests: XCTestCase {
         }
         
         XCTAssertEqual(helloString, helloStringRet)
+        
+        guard let helloReadOnlyBytes = try? spanTest.dataAsReadOnlyBytes else {
+            XCTFail("SpanTest.DataAsReadOnlyBytes should not throw and return an instance")
+            
+            return
+        }
+        
+        guard let dataRet = try? helloReadOnlyBytes.data() else {
+            XCTFail("ReadOnlyBytes.data() should not throw")
+            
+            return
+        }
+        
+        XCTAssertEqual(helloData, dataRet)
     }
 }
