@@ -21,6 +21,11 @@ public class SpanTest
     {
         Data = dataAsReadOnlySpan.ToArray();
     }
+    
+    public SpanTest(ReadOnlyBytes dataAsReadOnlyBytes)
+    {
+        Data = dataAsReadOnlyBytes.ToArray();
+    }
     #endregion Constructor
 
     #region ReadOnlyBytes

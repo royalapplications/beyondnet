@@ -20,4 +20,22 @@ extension Beyond.NET.Sample.ReadOnlyBytes {
         
         return dataRet
     }
+    
+    static func withData(_ data: Data) throws -> Beyond.NET.Sample.ReadOnlyBytes? {
+        let dataCount = data.count
+        var readOnlyBytes: Beyond.NET.Sample.ReadOnlyBytes?
+        
+        try data.withUnsafeBytes {
+            guard let dataPtr = $0.baseAddress else {
+                throw DNSystemError.unexpectedNull
+            }
+            
+            let unsafeDataPointerAsInt = Int(bitPattern: dataPtr)
+            
+            readOnlyBytes = try Beyond.NET.Sample.ReadOnlyBytes(unsafeDataPointerAsInt,
+                                                                .init(dataCount))
+        }
+        
+        return readOnlyBytes
+    }
 }

@@ -21,13 +21,25 @@ final class SpanTestTests: XCTestCase {
             return
         }
         
+        guard let helloReadOnlyBytes = try? Beyond.NET.Sample.ReadOnlyBytes.withData(helloData) else {
+            XCTFail("Failed to convert Swift Data to ReadOnlyBytes")
+            
+            return
+        }
+        
         guard let helloByteArray = try? helloData.dotNETByteArray() else {
             XCTFail("Failed to convert Swift Data to .NET byte[]")
             
             return
         }
         
-        guard let spanTest = try? Beyond.NET.Sample.SpanTest(helloByteArray) else {
+//        guard let spanTest = try? Beyond.NET.Sample.SpanTest(helloByteArray) else {
+//            XCTFail("SpanTest ctor should not throw and return an instance")
+//            
+//            return
+//        }
+        
+        guard let spanTest = try? Beyond.NET.Sample.SpanTest(helloReadOnlyBytes) else {
             XCTFail("SpanTest ctor should not throw and return an instance")
             
             return
@@ -39,7 +51,7 @@ final class SpanTestTests: XCTestCase {
             return
         }
         
-        XCTAssertEqual(helloByteArray, helloByteArrayRet)
+        XCTAssertTrue(helloByteArray.elementsEqual(helloByteArrayRet))
         
         guard let helloDataRet = try? helloByteArrayRet.data() else {
             XCTFail("Failed to convert .NET byte[] to Swift Data")

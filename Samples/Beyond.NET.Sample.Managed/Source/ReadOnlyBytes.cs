@@ -4,29 +4,67 @@ namespace Beyond.NET.Sample;
 
 public struct ReadOnlyBytes
 {
-    private readonly byte[] _byteArray;
+    private readonly IReadOnlyCollection<byte> _bytes;
 
-    public int Length => _byteArray.Length;
+    public int Length => _bytes.Count;
     
-    internal ReadOnlyBytes(byte[] byteArray)
+    public ReadOnlyBytes(byte[] byteArray)
     {
-        _byteArray = byteArray ?? throw new ArgumentNullException(nameof(byteArray));
+        _bytes = byteArray.AsReadOnly() ?? throw new ArgumentNullException(nameof(byteArray));
     }
     
     public ReadOnlyBytes(ReadOnlySpan<byte> readOnlySpanOfBytes)
     {
-        _byteArray = readOnlySpanOfBytes.ToArray();
+        _bytes = readOnlySpanOfBytes.ToArray() ?? throw new ArgumentNullException(nameof(readOnlySpanOfBytes));
+    }
+    
+    public ReadOnlyBytes(
+        IntPtr source,
+        int length
+    )
+    {
+        if (source == IntPtr.Zero) {
+            throw new ArgumentOutOfRangeException(nameof(source));
+        }
+
+        byte[] bytes;
+
+        if (length > 0) {
+            bytes = new byte[length];
+            
+            Marshal.Copy(
+                source,
+                bytes,
+                0,
+                length
+            );
+        } else { // Empty
+            bytes = Array.Empty<byte>();
+        }
+
+        _bytes = bytes;
     }
 
     public void CopyTo(IntPtr destination)
     {
-        var byteArray = _byteArray;
+        var length = Length;
+
+        if (length <= 0) { // Empty
+            return;
+        }
         
+        var byteArray = ToArray();
+
         Marshal.Copy(
             byteArray,
             0,
             destination,
-            byteArray.Length
+            length
         );
+    }
+
+    public byte[] ToArray()
+    {
+        return _bytes.ToArray();
     }
 }
