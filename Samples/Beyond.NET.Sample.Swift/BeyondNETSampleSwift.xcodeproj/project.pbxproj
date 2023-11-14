@@ -67,6 +67,7 @@
 		E7E517202AD9312700634B3E /* AsyncTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5171F2AD9312700634B3E /* AsyncTestTests.swift */; };
 		E7F90B6029F2A324005B0C67 /* GenericTestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F90B5F29F2A324005B0C67 /* GenericTestsTests.swift */; };
 		E7F90B6229F2A340005B0C67 /* GenericTestClassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F90B6129F2A340005B0C67 /* GenericTestClassTests.swift */; };
+		E7FBD6A52B0365A3006BDB53 /* SpanTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FBD6A42B0365A3006BDB53 /* SpanTestTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -143,6 +144,7 @@
 		E7E5171F2AD9312700634B3E /* AsyncTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncTestTests.swift; sourceTree = "<group>"; };
 		E7F90B5F29F2A324005B0C67 /* GenericTestsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTestsTests.swift; sourceTree = "<group>"; };
 		E7F90B6129F2A340005B0C67 /* GenericTestClassTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTestClassTests.swift; sourceTree = "<group>"; };
+		E7FBD6A42B0365A3006BDB53 /* SpanTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpanTestTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +266,7 @@
 				E70361622A6A8126000EF63C /* TestRecordTests.swift */,
 				E7B905D92A865C6000B5DC75 /* DelegateTestTests.swift */,
 				E7E5171F2AD9312700634B3E /* AsyncTestTests.swift */,
+				E7FBD6A42B0365A3006BDB53 /* SpanTestTests.swift */,
 			);
 			path = TestClasses;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				E74FB7CC29F1341900D41787 /* IndexerTestsTests.swift in Sources */,
 				E756F70F29F173E500CA039F /* SystemThreadingThreadTests.swift in Sources */,
 				E7AC3D8C29E0391200C5609B /* XCTestCase+Extensions.swift in Sources */,
+				E7FBD6A52B0365A3006BDB53 /* SpanTestTests.swift in Sources */,
 				E790871829EE8591001F776F /* PrimitivesBoxingTests.swift in Sources */,
 				E7B905DA2A865C6000B5DC75 /* DelegateTestTests.swift in Sources */,
 				E790871E29EECA06001F776F /* SystemArrayTests.swift in Sources */,

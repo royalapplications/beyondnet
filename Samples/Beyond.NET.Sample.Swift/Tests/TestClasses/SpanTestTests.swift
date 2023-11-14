@@ -1,0 +1,60 @@
+import XCTest
+import BeyondDotNETSampleKit
+
+final class SpanTestTests: XCTestCase {
+    @MainActor
+    override class func setUp() {
+        Self.sharedSetUp()
+    }
+    
+    @MainActor
+    override class func tearDown() {
+        Self.sharedTearDown()
+    }
+    
+    func testByteArrayConstructorAndProperty() {
+        let helloString = "Hello"
+        
+        guard let helloData = helloString.data(using: .utf8) else {
+            XCTFail("Failed to get data of string")
+            
+            return
+        }
+        
+        guard let helloByteArray = try? helloData.dotNETByteArray() else {
+            XCTFail("Failed to convert Swift Data to .NET byte[]")
+            
+            return
+        }
+        
+        guard let spanTest = try? Beyond.NET.Sample.Source.SpanTest(helloByteArray) else {
+            XCTFail("SpanTest ctor should not throw and return an instance")
+            
+            return
+        }
+        
+        guard let helloByteArrayRet = try? spanTest.data else {
+            XCTFail("SpanTest.Data should not throw and return an instance")
+            
+            return
+        }
+        
+        XCTAssertEqual(helloByteArray, helloByteArrayRet)
+        
+        guard let helloDataRet = try? helloByteArrayRet.data() else {
+            XCTFail("Failed to convert .NET byte[] to Swift Data")
+            
+            return
+        }
+        
+        XCTAssertEqual(helloData, helloDataRet)
+        
+        guard let helloStringRet = String(data: helloDataRet, encoding: .utf8) else {
+            XCTFail("Failed to convert Swift Data to Swift String")
+            
+            return
+        }
+        
+        XCTAssertEqual(helloString, helloStringRet)
+    }
+}
