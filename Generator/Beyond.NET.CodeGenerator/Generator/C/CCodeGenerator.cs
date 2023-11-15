@@ -186,6 +186,9 @@ DNObjectCastToUInt64(_Nonnull System_Object_t object, _Nullable System_Exception
 
 _Nonnull System_Object_t
 DNObjectFromUInt64(uint64_t number);
+
+void*
+DNGetPinnedPointerToByteArray(_Nonnull System_Byte_Array_t byteArray, _Nullable System_Runtime_InteropServices_GCHandle_t* outGCHandle, _Nullable System_Exception_t* outException);
 """;
     }
 

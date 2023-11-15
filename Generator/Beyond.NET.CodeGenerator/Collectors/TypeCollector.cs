@@ -39,7 +39,8 @@ public class TypeCollector
         typeof(System.Array),
         typeof(byte[]),
         typeof(string[]),
-        typeof(System.AppContext)
+        typeof(System.AppContext),
+        typeof(System.Runtime.InteropServices.GCHandle)
     };
     
     private static readonly Type[] UNSUPPORTED_TYPES = new [] {

@@ -195,14 +195,23 @@ final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
             return
         }
         
-        guard let data = try? systemByteArray.data() else {
+        guard let copiedData = try? systemByteArray.data() else {
             XCTFail("System_Byte_Array.data should not throw and return an instance")
             
             return
         }
         
         validateSystemByteArray(systemByteArray,
-                                matchesData: data)
+                                matchesData: copiedData)
+        
+        guard let pinnedData = try? systemByteArray.data(noCopy: true) else {
+            XCTFail("System_Byte_Array.data should not throw and return an instance")
+            
+            return
+        }
+        
+        validateSystemByteArray(systemByteArray,
+                                matchesData: pinnedData)
     }
     
     func testPerformanceOfSystemByteArrayToSwiftDataWithExtension() {
@@ -220,21 +229,49 @@ final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
             return
         }
         
-        var data: Data?
+        var copiedData: Data?
         
         measure {
-            data = try? systemByteArray.data()
+            copiedData = try? systemByteArray.data()
         }
         
-        guard let data else {
+        guard let copiedData else {
             XCTFail("System_Byte_Array.data should not throw and return an instance")
             
             return
         }
         
-        let dataCount = data.count
+        XCTAssertEqual(copiedData.count, .init(systemByteArrayLength))
+    }
+    
+    func testPerformanceOfSystemByteArrayToSwiftDataWithExtensionNoCopy() {
+        let bytesCount = performanceTestsByteCount
         
-        XCTAssertEqual(dataCount, .init(systemByteArrayLength))
+        guard let systemByteArray = randomSystemByteArray(count: bytesCount) else {
+            XCTFail("Failed to create random byte[]")
+            
+            return
+        }
+        
+        guard let systemByteArrayLength = try? systemByteArray.length else {
+            XCTFail("System.Array.Length should not throw and return an integer")
+            
+            return
+        }
+        
+        var pinnedData: Data?
+        
+        measure {
+            pinnedData = try? systemByteArray.data(noCopy: true)
+        }
+        
+        guard let pinnedData else {
+            XCTFail("System_Byte_Array.data should not throw and return an instance")
+            
+            return
+        }
+        
+        XCTAssertEqual(pinnedData.count, .init(systemByteArrayLength))
     }
     
     func testEmptySystemByteArrayToSwiftDataWithExtension() {
@@ -250,14 +287,23 @@ final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
             return
         }
         
-        guard let data = try? systemByteArray.data() else {
+        guard let copiedData = try? systemByteArray.data() else {
             XCTFail("System_Byte_Array.data should not throw and return an instance")
             
             return
         }
         
         validateSystemByteArray(systemByteArray,
-                                matchesData: data)
+                                matchesData: copiedData)
+        
+        guard let pinnedData = try? systemByteArray.data(noCopy: true) else {
+            XCTFail("System_Byte_Array.data should not throw and return an instance")
+            
+            return
+        }
+        
+        validateSystemByteArray(systemByteArray,
+                                matchesData: pinnedData)
     }
 }
 

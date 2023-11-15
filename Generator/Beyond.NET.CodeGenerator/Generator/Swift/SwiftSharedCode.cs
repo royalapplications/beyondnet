@@ -843,28 +843,91 @@ public extension Data {
 }
 
 public extension System_Byte_Array {
-    /// Creates a Swift Data object by copying the data from the .NET byte array
-    func data() throws -> Data {
+    /// Creates a Swift Data object by either copying the data from the .NET byte array or getting a pinned pointer to the underlying data in .NET which is freed as soon as the Swift Data object is deallocated. 
+    func data(noCopy: Bool = false) throws -> Data {
         let bytesCount = try self.length
         
         guard bytesCount > 0 else {
             return .init()
         }
         
-        var data = Data(count: .init(bytesCount))
-        
-        try data.withUnsafeMutableBytes {
-            guard let unsafeBytesPointer = $0.baseAddress else {
+        if noCopy {
+            var __exceptionC: System_Exception_t?
+            var __gcHandleC: System_Runtime_InteropServices_GCHandle_t?
+            
+            let ptr = DNGetPinnedPointerToByteArray(self.__handle,
+                                                    &__gcHandleC,
+                                                    &__exceptionC)
+                                                    
+            if let __exceptionC {
+                let __exception = System_Exception(handle: __exceptionC)
+                let __error = __exception.error
+                
+                throw __error
+            }
+            
+            guard let ptr else {
+                if let __gcHandleC {
+                    System_Runtime_InteropServices_GCHandle_Destroy(__gcHandleC)
+                }
+                
                 throw DNSystemError.unexpectedNull
             }
             
-            try System.Runtime.InteropServices.Marshal.copy(self,
-                                                            0,
-                                                            unsafeBytesPointer,
-                                                            bytesCount)
+            guard let __gcHandleC else {
+                  throw DNSystemError.unexpectedNull
+            }
+            
+            let data = Data(bytesNoCopy: .init(mutating: ptr),
+                count: .init(bytesCount),
+                deallocator: .custom({ _ /* ptr */, _ /* count */ in
+                defer {
+                    System_Runtime_InteropServices_GCHandle_Destroy(__gcHandleC)
+                }
+                
+                let isAllocated = System_Runtime_InteropServices_GCHandle_IsAllocated_Get(__gcHandleC,
+                                                                                          nil)
+                
+                guard isAllocated else {
+                    // If the GCHandle is not allocated, there's nothing to do here
+                    return
+                }
+                
+                var __freeExceptionC: System_Exception_t?
+                
+                System_Runtime_InteropServices_GCHandle_Free(__gcHandleC, 
+                                                             &__freeExceptionC)
+                
+                if let __freeExceptionC {
+                    let errorMessage: String
+                    
+                    if let exceptionMessage = System_String(handle: System_Exception_ToString(__freeExceptionC, nil))?.string() {
+                        errorMessage = exceptionMessage
+                    } else {
+                        errorMessage = "N/A"
+                    }
+                    
+                    fatalError("An error occurred while freeing a GCHandle of a pinned pointer to a .NET byte[]: \(errorMessage)")
+                }
+            }))
+            
+            return data
+        } else {
+            var data = Data(count: .init(bytesCount))
+            
+            try data.withUnsafeMutableBytes {
+                guard let unsafeBytesPointer = $0.baseAddress else {
+                    throw DNSystemError.unexpectedNull
+                }
+                
+                try System_Runtime_InteropServices_Marshal.copy(self,
+                                                                0,
+                                                                unsafeBytesPointer,
+                                                                bytesCount)
+            }
+            
+            return data
         }
-        
-        return data
     }
 }
 

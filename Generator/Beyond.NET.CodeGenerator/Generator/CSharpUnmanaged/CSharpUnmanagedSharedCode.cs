@@ -652,6 +652,71 @@ internal static unsafe class InteropUtils
     }
     #endregion UInt64
     #endregion Boxing/Unboxing of primitives
+    
+    #region Byte Conversions
+    [UnmanagedCallersOnly(EntryPoint = "DNGetPinnedPointerToByteArray")]
+    internal static void* DNGetPinnedPointerToByteArray(
+        void* /* byte[] */ byteArray,
+        void** /* out System.Runtime.InteropServices.GCHandle? */ outGCHandle,
+        void** /* out System.Exception */ outException
+    )
+    {
+        byte[] byteArrayConverted = InteropUtils.GetInstance<byte[]>(byteArray);
+        
+        if (byteArrayConverted is null) {
+            if (outGCHandle is not null) {
+                *outGCHandle = null;
+            }
+            
+            if (outException is not null) {
+                *outException = null;
+            }
+            
+            return null;
+        }
+        
+        try {
+            var length = byteArrayConverted.Length;
+            
+            if (length <= 0) {
+                if (outGCHandle is not null) {
+                   *outGCHandle = null;
+                }
+               
+                if (outException is not null) {
+                    *outException = null;
+                }
+                
+                return null;
+            }
+            
+            var gcHandle = System.Runtime.InteropServices.GCHandle.Alloc(byteArrayConverted, GCHandleType.Pinned);
+            var byteArrayConvertedPtr = System.Runtime.CompilerServices.Unsafe.AsPointer(ref byteArrayConverted[0]);
+            
+            if (outGCHandle is not null) {
+                *outGCHandle = gcHandle.AllocateGCHandleAndGetAddress();
+            }
+            
+            if (outException is not null) {
+                *outException = null;
+            }
+            
+            return byteArrayConvertedPtr;
+        } catch (Exception exception) {
+            if (outException is not null) {
+                void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
+                    
+                *outException = exceptionHandleAddress;
+            }
+            
+            if (outGCHandle is not null) {
+                *outGCHandle = null;
+            }
+        
+            return null;
+        }
+    }
+    #endregion Byte Conversions
 }
 """;
 }
