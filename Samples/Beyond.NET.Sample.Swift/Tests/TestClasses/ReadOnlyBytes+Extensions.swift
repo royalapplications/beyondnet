@@ -13,9 +13,7 @@ extension Beyond.NET.Sample.ReadOnlyBytes {
                 throw DNSystemError.unexpectedNull
             }
             
-            let unsafeBytesPointerAsInt = Int(bitPattern: unsafeBytesPtr)
-            
-            try copyTo(unsafeBytesPointerAsInt)
+            try copyTo(unsafeBytesPtr)
         }
         
         return dataRet
@@ -30,9 +28,7 @@ extension Beyond.NET.Sample.ReadOnlyBytes {
                 throw DNSystemError.unexpectedNull
             }
             
-            let unsafeDataPointerAsInt = Int(bitPattern: dataPtr)
-            
-            readOnlyBytes = try Beyond.NET.Sample.ReadOnlyBytes(unsafeDataPointerAsInt,
+            readOnlyBytes = try Beyond.NET.Sample.ReadOnlyBytes(.init(mutating: dataPtr),
                                                                 .init(dataCount))
         }
         

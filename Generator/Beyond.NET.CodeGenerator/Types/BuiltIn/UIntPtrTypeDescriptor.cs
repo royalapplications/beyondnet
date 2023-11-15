@@ -10,8 +10,8 @@ public partial class BuiltInTypeDescriptors
                 "nuint.Zero",
                 new() {
                     { CodeLanguage.CSharpUnmanaged, "nuint" },
-                    { CodeLanguage.C, "unsigned long" },
-                    { CodeLanguage.Swift, "UInt" }
+                    { CodeLanguage.C, "uintptr_t" }, // TODO: This should be void* but then we have issues with overlapping overloads of methods that just differ by parameters that are either IntPtr or UIntPtr in Swift
+                    { CodeLanguage.Swift, "UInt" } // TODO: This should be UnsafeMutableRawPointer? but then we have issues with overlapping overloads of methods that just differ by parameters that are either IntPtr or UIntPtr in Swift
                 }
             );
         

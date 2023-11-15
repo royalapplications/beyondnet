@@ -66,10 +66,8 @@ final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
                 return
             }
             
-            let unsafeBytesPointerAsInt = Int(bitPattern: unsafeBytesPointer)
-            
             do {
-                try System.Runtime.InteropServices.Marshal.copy(unsafeBytesPointerAsInt,
+                try System.Runtime.InteropServices.Marshal.copy(.init(mutating: unsafeBytesPointer),
                                                                 systemByteArray,
                                                                 0,
                                                                 dataCount)
@@ -172,12 +170,10 @@ final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
                 return
             }
             
-            let unsafeBytesPointerAsInt = Int(bitPattern: unsafeBytesPointer)
-            
             do {
                 try System.Runtime.InteropServices.Marshal.copy(systemByteArray,
                                                                 0,
-                                                                unsafeBytesPointerAsInt,
+                                                                unsafeBytesPointer,
                                                                 systemByteArrayLength)
             } catch {
                 XCTFail("System.Runtime.InteropServices.Marshal.Copy should not throw")

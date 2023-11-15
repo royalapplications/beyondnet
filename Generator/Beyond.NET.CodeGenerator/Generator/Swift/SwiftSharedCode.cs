@@ -832,9 +832,7 @@ public extension Data {
                 throw DNSystemError.unexpectedNull
             }
             
-            let unsafeBytesPointerAsInt = Int(bitPattern: unsafeBytesPointer)
-            
-            try System_Runtime_InteropServices_Marshal.copy(unsafeBytesPointerAsInt,
+            try System_Runtime_InteropServices_Marshal.copy(.init(mutating: unsafeBytesPointer),
                                                             systemByteArray,
                                                             0,
                                                             bytesCount)
@@ -860,11 +858,9 @@ public extension System_Byte_Array {
                 throw DNSystemError.unexpectedNull
             }
             
-            let unsafeBytesPointerAsInt = Int(bitPattern: unsafeBytesPointer)
-            
             try System.Runtime.InteropServices.Marshal.copy(self,
                                                             0,
-                                                            unsafeBytesPointerAsInt,
+                                                            unsafeBytesPointer,
                                                             bytesCount)
         }
         

@@ -10,8 +10,8 @@ public partial class BuiltInTypeDescriptors
                 "nint.Zero",
                 new() {
                     { CodeLanguage.CSharpUnmanaged, "nint" },
-                    { CodeLanguage.C, "long" },
-                    { CodeLanguage.Swift, "Int" }
+                    { CodeLanguage.C, "void*" },
+                    { CodeLanguage.Swift, "UnsafeMutableRawPointer?" }
                 }
             );
         

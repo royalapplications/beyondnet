@@ -14,7 +14,7 @@ final class SystemMathTests: XCTestCase {
     
     func testMath() {
         do {
-            let result = try System_Math.abs(-599)
+            let result = try System_Math.abs(Int64(-599))
             XCTAssertEqual(599, result)
         } catch {
             XCTFail("System.Math.Abs should not throw")
@@ -50,7 +50,7 @@ final class SystemMathTests: XCTestCase {
         }
         
         do {
-            let result = try System_Math.clamp(500, 0, 100)
+            let result = try System_Math.clamp(Int64(500), Int64(0), Int64(100))
             XCTAssertEqual(100, result)
         } catch {
             XCTFail("System.Math.Clamp should not throw")
