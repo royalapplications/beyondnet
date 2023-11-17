@@ -51,9 +51,17 @@ final class StructTestTests: XCTestCase {
         }
         
         do {
-            let structRetVal = try Beyond_NET_Sample_StructTest.nonNullInstanceProperty
+            guard let structRetVal = try Beyond_NET_Sample_StructTest.nonNullInstanceProperty else {
+                XCTFail("StructTest.NonNullInstanceProperty should not be nil")
+                
+                return
+            }
             
-            XCTAssertNotNil(structRetVal)
+            XCTAssertEqual(try? structRetVal.name?.string(), "Test")
+            
+            let newName = "NotTest"
+            try structRetVal.name_set(newName.dotNETString())
+            XCTAssertEqual(try? structRetVal.name?.string(), newName)
         } catch {
             XCTFail("StructTest.NonNullInstanceProperty should not throw")
         }
@@ -67,9 +75,17 @@ final class StructTestTests: XCTestCase {
         }
         
         do {
-            let structRetVal = try Beyond_NET_Sample_StructTest.getNullableStructReturnValue(false)
+            guard let structRetVal = try Beyond_NET_Sample_StructTest.getNullableStructReturnValue(false) else {
+                XCTFail("StructTest.GetNullableStructReturnValue should not be nil")
+                
+                return
+            }
             
-            XCTAssertNotNil(structRetVal)
+            XCTAssertEqual(try? structRetVal.name?.string(), "Test")
+            
+            let newName = "NotTest"
+            try structRetVal.name_set(newName.dotNETString())
+            XCTAssertEqual(try? structRetVal.name?.string(), newName)
         } catch {
             XCTFail("StructTest.GetNullableStructReturnValue should not throw")
         }
@@ -91,7 +107,17 @@ final class StructTestTests: XCTestCase {
             try Beyond_NET_Sample_StructTest.getNullableStructReturnValueInOutParameter(false,
                                                                                         &structRetVal)
             
-            XCTAssertNotNil(structRetVal)
+            guard let structRetVal else {
+                XCTFail("StructTest.GetNullableStructReturnValueInOutParameter should not be nil")
+                
+                return
+            }
+            
+            XCTAssertEqual(try? structRetVal.name?.string(), "Test")
+            
+            let newName = "NotTest"
+            try structRetVal.name_set(newName.dotNETString())
+            XCTAssertEqual(try? structRetVal.name?.string(), newName)
         } catch {
             XCTFail("StructTest.GetNullableStructReturnValueInOutParameter should not throw")
         }
@@ -108,12 +134,24 @@ final class StructTestTests: XCTestCase {
         }
         
         do {
-            var structRef = try Beyond_NET_Sample_StructTest("test".dotNETString())
+            let origName = "test"
+            var structRef = try Beyond_NET_Sample_StructTest(origName.dotNETString())
             
             let ret = try Beyond_NET_Sample_StructTest.getNullableStructReturnValueOfRefParameter(&structRef)
             
-            XCTAssertNotNil(ret)
+            guard let ret else {
+                XCTFail("StructTest.GetNullableStructReturnValueOfRefParameter should not be nil")
+                
+                return
+            }
+            
             XCTAssertTrue(structRef == ret)
+            
+            XCTAssertEqual(try? ret.name?.string(), origName)
+            
+            let newName = "NotTest"
+            try ret.name_set(newName.dotNETString())
+            XCTAssertEqual(try? ret.name?.string(), newName)
         } catch {
             XCTFail("StructTest.GetNullableStructReturnValueOfRefParameter should not throw")
         }
