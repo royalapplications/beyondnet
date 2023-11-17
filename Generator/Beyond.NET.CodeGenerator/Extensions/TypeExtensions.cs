@@ -186,6 +186,11 @@ internal static class TypeExtensions
 
         return true;
     }
+
+    internal static bool IsReadOnlySpanOfByte(this Type type)
+    {
+        return type == typeof(ReadOnlySpan<byte>);
+    }
     
     internal static bool IsStruct(this Type type)
     {

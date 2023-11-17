@@ -40,7 +40,8 @@ public class TypeCollector
         typeof(byte[]),
         typeof(string[]),
         typeof(System.AppContext),
-        typeof(System.Runtime.InteropServices.GCHandle)
+        typeof(System.Runtime.InteropServices.GCHandle),
+        typeof(System.ReadOnlySpan<byte>)
     };
     
     private static readonly Type[] UNSUPPORTED_TYPES = new [] {
@@ -66,6 +67,10 @@ public class TypeCollector
         typeof(System.ValueTuple<,,,,,>),
         typeof(System.ValueTuple<,,,,,,>),
         typeof(System.ValueTuple<,,,,,,,>),
+        typeof(System.Numerics.IBinaryInteger<>),
+        typeof(System.ArraySegment<>),
+        typeof(System.IUtf8SpanParsable<>),
+        typeof(System.Numerics.INumberBase<>)
     };
 
     private readonly Type[] m_includedTypes;
@@ -119,7 +124,8 @@ public class TypeCollector
         Dictionary<Type, string> unsupportedTypes
     )
     {
-        if (m_excludedTypes.Contains(type)) {
+        if (m_excludedTypes.Contains(type) &&
+            !m_includedTypes.Contains(type)) {
             unsupportedTypes[type] = "Excluded";
             
             return;
@@ -382,7 +388,10 @@ public class TypeCollector
             return false;
         }
 
+        bool isReadOnlySpanOfByte = type.IsReadOnlySpanOfByte();
+
         if (!isNullableStruct &&
+            !isReadOnlySpanOfByte &&
             !m_enableGenericsSupport &&
             type.IsGenericInAnyWay(true)) {
             unsupportedReason = "Is Generic (disabled by configuration)";
@@ -397,6 +406,7 @@ public class TypeCollector
         
         // TODO: Generic Types as arguments, properties, etc.
         if (!isNullableValueType &&
+            !isReadOnlySpanOfByte &&
             type.IsConstructedGenericType) {
             Type genericTypeDefinition = type.GetGenericTypeDefinition();
 

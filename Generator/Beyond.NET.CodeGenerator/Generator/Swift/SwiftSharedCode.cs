@@ -931,6 +931,66 @@ public extension System_Byte_Array {
     }
 }
 
+fileprivate extension Data {
+    init?(readOnlySpanOfByte: DNReadOnlySpanOfByte) {
+        guard let dataPointer = readOnlySpanOfByte.dataPointer,
+              readOnlySpanOfByte.dataLength > 0 else {
+            return nil
+        }
+
+        let dataLength = Int(readOnlySpanOfByte.dataLength)
+        
+        self.init(bytesNoCopy: .init(mutating: dataPointer),
+                  count: dataLength, 
+                  deallocator: .free)
+    }
+}
+
+extension DNReadOnlySpanOfByte {
+    static let empty = DNReadOnlySpanOfByte(dataPointer: nil,
+                                            dataLength: 0)
+    
+    func data() -> Data? {
+        .init(readOnlySpanOfByte: self)
+    }
+}
+
+extension Data {
+    func readOnlySpanOfByte() -> DNReadOnlySpanOfByte {
+        let length = self.count
+        
+        guard length > 0 else {
+            return .empty
+        }
+        
+        guard let lengthInt32 = Int32(exactly: length) else {
+            fatalError("Data is larger than \(Int32.max) bytes which cannot be represented by .NET")
+        }
+        
+        let bufferPointer = UnsafeMutableBufferPointer<UInt8>.allocate(capacity: length)
+        _ = bufferPointer.initialize(from: self)
+        
+        guard let dataPointer = bufferPointer.baseAddress else {
+            fatalError("Failed to get the baseAddress of a buffer pointer")
+        }
+        
+        let span = DNReadOnlySpanOfByte(dataPointer: dataPointer,
+                                        dataLength: lengthInt32)
+        
+        return span
+    }
+}
+
+extension Data? {
+    func readOnlySpanOfByte() -> DNReadOnlySpanOfByte {
+        guard let self else {
+            return .empty
+        }
+        
+        return self.readOnlySpanOfByte()
+    }
+}
+
 public final class NativeBox<T> {
     public let value: T
     

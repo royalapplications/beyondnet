@@ -718,5 +718,85 @@ internal static unsafe class InteropUtils
     }
     #endregion Byte Conversions
 }
+
+#region DNReadOnlySpanOfByte
+[System.Runtime.InteropServices.StructLayout(System.Runtime.InteropServices.LayoutKind.Sequential)]
+internal readonly unsafe struct DNReadOnlySpanOfByte
+{
+    internal void* DataPointer { get; } = null;
+    internal int DataLength { get; } = 0;
+    
+    internal DNReadOnlySpanOfByte(ReadOnlySpan<byte> span)
+    {
+        var length = span.Length;
+        
+        if (length <= 0) {
+            DataPointer = null;
+            DataLength = 0;
+            
+            return;
+        }
+        
+        // For a no-copy option see: https://www.answeroverflow.com/m/1042197174982811719
+
+        // Console.WriteLine($"[C#] Allocating pointer to buffer of {length} bytes to copy data of ReadOnlySpan<byte> to");
+        var destinationDataPointer = System.Runtime.InteropServices.NativeMemory.Alloc((nuint)length);
+
+        var destinationSpan = new Span<byte>(
+            destinationDataPointer,
+            length
+        );
+        
+        // Console.WriteLine($"[C#] Copying ReadOnlySpan<byte> to native pointer at 0x{(nint)destinationDataPointer:X}");
+        span.CopyTo(destinationSpan);
+        
+        DataPointer = destinationDataPointer;
+        DataLength = length;
+    }
+
+    internal ReadOnlySpan<byte> CopyDataToManagedReadOnlySpanAndFree()
+    {
+        ReadOnlySpan<byte> span;
+
+        var dataLength = DataLength;
+        var dataPointer = DataPointer;
+
+        if (dataPointer is not null) {
+            if (dataLength > 0) {
+                // Console.WriteLine($"[C#] Allocating byte[] of {dataLength} bytes to copy data of native pointer to");
+                var array = new byte[dataLength];
+            
+                // Console.WriteLine($"[C#] Copying data of native pointer at 0x{(nint)dataPointer:X} to byte[]");
+                System.Runtime.InteropServices.Marshal.Copy(
+                    (nint)dataPointer,
+                    array,
+                    0,
+                    dataLength
+                );
+
+                span = array;
+            } else {
+                span = ReadOnlySpan<byte>.Empty;
+            }
+
+            System.Runtime.InteropServices.NativeMemory.Free(dataPointer);
+        } else {
+            span = ReadOnlySpan<byte>.Empty;
+        }
+     
+        return span;
+    }
+    
+    internal static DNReadOnlySpanOfByte Empty => new();
+}
+
+internal static class DNReadOnlySpanOfByte_Extensions
+{
+    internal static DNReadOnlySpanOfByte CopyToNativeReadOnlySpanOfByte(this ReadOnlySpan<byte> span)
+    {
+        return new DNReadOnlySpanOfByte(span);
+    }
+}
+#endregion DNReadOnlySpanOfByte
 """;
 }

@@ -100,7 +100,14 @@ public class CCodeGenerator: ICodeGenerator
 
     private string GetCommonTypesCode()
     {
-        return "typedef const char* CString;";
+        return """
+typedef const char* CString;
+
+typedef struct DNReadOnlySpanOfByte {
+    const void* dataPointer;
+    int32_t dataLength;
+} DNReadOnlySpanOfByte;
+""";
     }
 
     private string GetUtilsCode()

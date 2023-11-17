@@ -8,15 +8,16 @@ public class TypeDescriptor
     public Type ManagedType { get; }
 
     public bool IsPrimitive => ManagedType.IsPrimitive;
-    public bool IsReferenceType => ManagedType.IsReferenceType();
-    public bool IsStruct => ManagedType.IsStruct();
-    public bool IsValueType => ManagedType.IsValueType;
+    public bool IsReferenceType => ManagedType.IsReferenceType() && !IsReadOnlyStructOfByte;
+    public bool IsStruct => ManagedType.IsStruct() || IsReadOnlyStructOfByte;
+    public bool IsValueType => ManagedType.IsValueType || IsReadOnlyStructOfByte;
     public bool IsEnum => ManagedType.IsEnum;
     public bool IsBool => ManagedType.IsBoolean();
     public bool IsVoid => ManagedType.IsVoid();
     public bool IsDelegate => ManagedType.IsDelegate();
     public bool IsManagedPointer => ManagedType.IsPointer;
-    public bool RequiresNativePointer => !IsVoid && !IsEnum && !IsPrimitive && !IsBool;
+    public bool RequiresNativePointer => !IsVoid && !IsEnum && !IsPrimitive && !IsBool && !IsReadOnlyStructOfByte;
+    public bool IsReadOnlyStructOfByte => ManagedType.IsReadOnlySpanOfByte();
 
     public bool IsNullableValueType([NotNullWhen(true)] out Type? valueType)
     {

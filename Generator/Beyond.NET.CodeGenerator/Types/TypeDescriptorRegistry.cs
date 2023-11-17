@@ -65,6 +65,8 @@ public class TypeDescriptorRegistry
             BuiltIn.BuiltInTypeDescriptors.FloatTypeDescriptor,
             BuiltIn.BuiltInTypeDescriptors.DoubleTypeDescriptor,
             
+            BuiltIn.BuiltInTypeDescriptors.ReadOnlySpanOfByteTypeDescriptor,
+            
             // BuiltIn.BuiltInTypeDescriptors.StringTypeDescriptor
         };
 
