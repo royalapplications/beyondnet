@@ -76,8 +76,10 @@ internal class CodeGeneratorDriver
                 
                 buildTarget = buildConfig.Target;
                 
-                if (buildTarget != BuildTargets.APPLE_UNIVERSAL) {
-                    throw new Exception($"Only \"{BuildTargets.APPLE_UNIVERSAL}\" is currently supported as \"{nameof(buildConfig.Target)}\"");
+                if (buildTarget != BuildTargets.APPLE_UNIVERSAL &&
+                    buildTarget != BuildTargets.MACOS_UNIVERSAL &&
+                    buildTarget != BuildTargets.IOS_UNIVERSAL) {
+                    throw new Exception($"Only \"{BuildTargets.APPLE_UNIVERSAL}\", \"{BuildTargets.MACOS_UNIVERSAL}\" and \"{BuildTargets.IOS_UNIVERSAL}\" are currently supported as \"{nameof(buildConfig.Target)}\"");
                 }
 
                 var potentialProductName = buildConfig.ProductName;
@@ -88,7 +90,6 @@ internal class CodeGeneratorDriver
 
                 if (string.IsNullOrEmpty(potentialProductName)) {
                     // If no product name is provided, let's generate one
-
                     productName = assemblyName;
                 } else {
                     productName = potentialProductName;
@@ -300,8 +301,21 @@ internal class CodeGeneratorDriver
                     // We checked all of these above so we shouldn't get here but just in case...
                     throw new Exception("Invalid build configuration");
                 }
+
+                Beyond.NET.Builder.BuildTargets builderBuildTargets;
+
+                if (buildTarget == BuildTargets.APPLE_UNIVERSAL) {
+                    builderBuildTargets = Beyond.NET.Builder.BuildTargets.AppleUniversal;
+                } else if (buildTarget == BuildTargets.MACOS_UNIVERSAL) {
+                    builderBuildTargets = Beyond.NET.Builder.BuildTargets.MacOSUniversal;
+                } else if (buildTarget == BuildTargets.IOS_UNIVERSAL) {
+                    builderBuildTargets = Beyond.NET.Builder.BuildTargets.iOSUniversal;
+                } else {
+                    throw new Exception($"Build Target \"{buildTarget}\" is not a supported target for the SwiftBuilder");
+                }
                 
                 SwiftBuilder.BuilderConfiguration config = new(
+                    builderBuildTargets,
                     buildProductName,
                     buildProductBundleIdentifier,
                     cOutputPath,
@@ -334,6 +348,7 @@ internal class CodeGeneratorDriver
                     .ToArray();
 
                 var dnNativeBuilder = new DotNETNativeBuilder(
+                    builderBuildTargets,
                     targetFramework,
                     buildProductName,
                     buildProductBundleIdentifier,

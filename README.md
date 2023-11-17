@@ -235,7 +235,7 @@ The generator currently uses a configuration file where all of its options are s
 
 - **`AssemblyPath`**: Enter the path to the compiled .NET assembly you want to generate native bindings for. (Required)
 - **`Build`**: Configuration options for automatic build support. (Optional; automatic build is disabled if not provided)
-    - **`Target`**: The platform and architecture to build for. (Required; currently `apple-universal` is the only supported value)
+    - **`Target`**: The platform and architecture to build for. (Required; currently `apple-universal`, `macos-universal` and `ios-universal` are supported)
     - **`ProductName`**: The name of the resulting XCFramework and Swift/Clang module. This must be different than the target assembly name and any namespaces contained within it or its dependencies. (Optional; if not provided the assembly file name suffixed with `Kit` is used)
     - **`ProductBundleIdentifier`**: The bundle identifier of the resulting frameworks. (Optional; if not provided the bundle identifier is `com.mycompany.` suffixed with the `ProductName`)
     - **`ProductOutputPath`**: The output path for the resulting XCFramework. (Optional; if not provided, the directory of the `AssemblyPath` is used)

@@ -5,6 +5,7 @@ namespace Beyond.NET.Builder;
 public class SwiftBuilder
 {
     public record BuilderConfiguration(
+        BuildTargets Targets,
         string ProductName,
         string BundleIdentifier,
         string GeneratedCHeaderFilePath,
@@ -23,11 +24,11 @@ public class SwiftBuilder
         string macOSDeploymentTarget,
         string iOSDeploymentTarget,
         
-        PartialCompileResult MacOSARM64Result,
-        PartialCompileResult MacOSX64Result,
-        PartialCompileResult iOSARM64Result,
-        PartialCompileResult iOSSimulatorARM64Result,
-        PartialCompileResult iOSSimulatorX64Result
+        PartialCompileResult? MacOSARM64Result,
+        PartialCompileResult? MacOSX64Result,
+        PartialCompileResult? iOSARM64Result,
+        PartialCompileResult? iOSSimulatorARM64Result,
+        PartialCompileResult? iOSSimulatorX64Result
     );
     
     public record PartialCompileResult(
@@ -139,14 +140,32 @@ public class SwiftBuilder
         Logger.LogDebug($"Copying generated Swift file to \"{generatedSwiftDestinationFilePath}\"");
         File.Copy(generatedSwiftFilePath, generatedSwiftDestinationFilePath);
 
-        Logger.LogDebug($"Getting macOS SDK Path");
-        var sdkPathMacOS = Apple.XCRun.SDK.GetSDKPath(Apple.XCRun.SDK.macOSName);
+        string? sdkPathMacOS;
+
+        if (Configuration.Targets.ContainsAnyMacOSTarget()) {
+            Logger.LogDebug($"Getting macOS SDK Path");
+            sdkPathMacOS = Apple.XCRun.SDK.GetSDKPath(Apple.XCRun.SDK.macOSName);
+        } else {
+            sdkPathMacOS = null;
+        }
         
-        Logger.LogDebug($"Getting iOS SDK Path");
-        var sdkPathiOS = Apple.XCRun.SDK.GetSDKPath(Apple.XCRun.SDK.iOSName);
+        string? sdkPathiOS;
+
+        if (Configuration.Targets.HasFlag(BuildTargets.iOSArm64)) {
+            Logger.LogDebug($"Getting iOS SDK Path");
+            sdkPathiOS = Apple.XCRun.SDK.GetSDKPath(Apple.XCRun.SDK.iOSName);
+        } else {
+            sdkPathiOS = null;
+        }
         
-        Logger.LogDebug($"Getting iOS Simulator SDK Path");
-        var sdkPathiOSSimulator = Apple.XCRun.SDK.GetSDKPath(Apple.XCRun.SDK.iOSSimulatorName);
+        string? sdkPathiOSSimulator;
+
+        if (Configuration.Targets.ContainsAnyiOSSimulatorTarget()) {
+            Logger.LogDebug($"Getting iOS Simulator SDK Path");
+            sdkPathiOSSimulator = Apple.XCRun.SDK.GetSDKPath(Apple.XCRun.SDK.iOSSimulatorName);
+        } else {
+            sdkPathiOSSimulator = null;
+        }
 
         string targetIdentifierARM64 = Apple.XCRun.SwiftC.TargetIdentifier.ARM64;
         string targetIdentifierX64 = Apple.XCRun.SwiftC.TargetIdentifier.x64;
@@ -168,27 +187,50 @@ public class SwiftBuilder
         string outputPathRoot = Path.Combine(tempDirectoryPath, "bin");
         string outputPathApple = Path.Combine(outputPathRoot, "apple");
 
-        string outputPathMacOSARM64 = Path.Combine(outputPathApple, $"{platformIdentifierMacOSDN}-{targetIdentifierARM64DN}");
-        string outputPathMacOSX64 = Path.Combine(outputPathApple, $"{platformIdentifierMacOSDN}-{targetIdentifierX64DN}");
-
-        string outputPathiOSARM64 = Path.Combine(outputPathApple, $"{platformIdentifieriOSDN}-{targetIdentifierARM64DN}");
-        string outputPathiOSSimulatorARM64 = Path.Combine(outputPathApple, $"{platformIdentifieriOSSimulatorDN}-{targetIdentifierARM64DN}");
-        string outputPathiOSSimulatorX64 = Path.Combine(outputPathApple, $"{platformIdentifieriOSSimulatorDN}-{targetIdentifierX64DN}");
-
-        Logger.LogDebug($"Creating macOS ARM64 Output Path at \"{outputPathMacOSARM64}\"");
-        Directory.CreateDirectory(outputPathMacOSARM64);
+        string? outputPathMacOSARM64 = Configuration.Targets.HasFlag(BuildTargets.MacOSArm64)
+            ? Path.Combine(outputPathApple, $"{platformIdentifierMacOSDN}-{targetIdentifierARM64DN}") 
+            : null;
         
-        Logger.LogDebug($"Creating macOS x64 Output Path at \"{outputPathMacOSX64}\"");
-        Directory.CreateDirectory(outputPathMacOSX64);
+        string? outputPathMacOSX64 = Configuration.Targets.HasFlag(BuildTargets.MacOSX64)
+            ? Path.Combine(outputPathApple, $"{platformIdentifierMacOSDN}-{targetIdentifierX64DN}")
+            : null;
 
-        Logger.LogDebug($"Creating iOS ARM64 Output Path at \"{outputPathMacOSX64}\"");
-        Directory.CreateDirectory(outputPathiOSARM64);
+        string? outputPathiOSARM64 = Configuration.Targets.HasFlag(BuildTargets.iOSArm64)
+            ? Path.Combine(outputPathApple, $"{platformIdentifieriOSDN}-{targetIdentifierARM64DN}")
+            : null;
 
-        Logger.LogDebug($"Creating iOS Simulator ARM64 Output Path at \"{outputPathMacOSX64}\"");
-        Directory.CreateDirectory(outputPathiOSSimulatorARM64);
-        
-        Logger.LogDebug($"Creating iOS Simulator x64 Output Path at \"{outputPathMacOSX64}\"");
-        Directory.CreateDirectory(outputPathiOSSimulatorX64);
+        string? outputPathiOSSimulatorARM64 = Configuration.Targets.HasFlag(BuildTargets.iOSSimulatorArm64)
+            ? Path.Combine(outputPathApple, $"{platformIdentifieriOSSimulatorDN}-{targetIdentifierARM64DN}")
+            : null;
+
+        string? outputPathiOSSimulatorX64 = Configuration.Targets.HasFlag(BuildTargets.iOSSimulatorX64)
+            ? Path.Combine(outputPathApple, $"{platformIdentifieriOSSimulatorDN}-{targetIdentifierX64DN}")
+            : null;
+
+        if (outputPathMacOSARM64 is not null) {
+            Logger.LogDebug($"Creating macOS ARM64 Output Path at \"{outputPathMacOSARM64}\"");
+            Directory.CreateDirectory(outputPathMacOSARM64);
+        }
+
+        if (outputPathMacOSX64 is not null) {
+            Logger.LogDebug($"Creating macOS x64 Output Path at \"{outputPathMacOSX64}\"");
+            Directory.CreateDirectory(outputPathMacOSX64);
+        }
+
+        if (outputPathiOSARM64 is not null) {
+            Logger.LogDebug($"Creating iOS ARM64 Output Path at \"{outputPathMacOSX64}\"");
+            Directory.CreateDirectory(outputPathiOSARM64);
+        }
+
+        if (outputPathiOSSimulatorARM64 is not null) {
+            Logger.LogDebug($"Creating iOS Simulator ARM64 Output Path at \"{outputPathMacOSX64}\"");
+            Directory.CreateDirectory(outputPathiOSSimulatorARM64);
+        }
+
+        if (outputPathiOSSimulatorX64 is not null) {
+            Logger.LogDebug($"Creating iOS Simulator x64 Output Path at \"{outputPathMacOSX64}\"");
+            Directory.CreateDirectory(outputPathiOSSimulatorX64);
+        }
 
         SwiftCompiler compiler = new(
             tempDirectoryPath,
@@ -201,54 +243,84 @@ public class SwiftBuilder
         );
 
         #region macOS
-        var macOSARM64Result = compiler.Compile(
-            sdkPathMacOS,
-            targetIdentifierARM64,
-            platformIdentifierMacOS,
-            string.Empty,
-            deploymentTargetMacOS,
-            outputPathMacOSARM64
-        );
+        PartialCompileResult? macOSARM64Result;
+
+        if (Configuration.Targets.HasFlag(BuildTargets.MacOSArm64)) {
+            macOSARM64Result = compiler.Compile(
+                sdkPathMacOS!,
+                targetIdentifierARM64,
+                platformIdentifierMacOS,
+                string.Empty,
+                deploymentTargetMacOS,
+                outputPathMacOSARM64!
+            );
+        } else {
+            macOSARM64Result = null;
+        }
         
-        var macOSX64Result = compiler.Compile(
-            sdkPathMacOS,
-            targetIdentifierX64,
-            platformIdentifierMacOS,
-            string.Empty,
-            deploymentTargetMacOS,
-            outputPathMacOSX64
-        );
+        PartialCompileResult? macOSX64Result;
+
+        if (Configuration.Targets.HasFlag(BuildTargets.MacOSX64)) {
+            macOSX64Result = compiler.Compile(
+                sdkPathMacOS!,
+                targetIdentifierX64,
+                platformIdentifierMacOS,
+                string.Empty,
+                deploymentTargetMacOS,
+                outputPathMacOSX64!
+            );
+        } else {
+            macOSX64Result = null;
+        }
         #endregion macOS
 
         #region iOS
-        var iOSARM64Result = compiler.Compile(
-            sdkPathiOS,
-            targetIdentifierARM64,
-            platformIdentifieriOS,
-            string.Empty,
-            deploymentTargetiOS,
-            outputPathiOSARM64
-        );
+        PartialCompileResult? iOSARM64Result;
+
+        if (Configuration.Targets.HasFlag(BuildTargets.iOSArm64)) {
+            iOSARM64Result = compiler.Compile(
+                sdkPathiOS!,
+                targetIdentifierARM64,
+                platformIdentifieriOS,
+                string.Empty,
+                deploymentTargetiOS,
+                outputPathiOSARM64!
+            );
+        } else {
+            iOSARM64Result = null;
+        }
         #endregion iOS
 
         #region iOS Simulator
-        var iOSSimulatorARM64Result = compiler.Compile(
-            sdkPathiOSSimulator,
-            targetIdentifierARM64,
-            platformIdentifieriOS,
-            platformSuffixiOSSimulator,
-            deploymentTargetiOS,
-            outputPathiOSSimulatorARM64
-        );
+        PartialCompileResult? iOSSimulatorARM64Result;
+
+        if (Configuration.Targets.HasFlag(BuildTargets.iOSSimulatorArm64)) {
+            iOSSimulatorARM64Result = compiler.Compile(
+                sdkPathiOSSimulator!,
+                targetIdentifierARM64,
+                platformIdentifieriOS,
+                platformSuffixiOSSimulator,
+                deploymentTargetiOS,
+                outputPathiOSSimulatorARM64!
+            );
+        } else {
+            iOSSimulatorARM64Result = null;
+        }
         
-        var iOSSimulatorX64Result = compiler.Compile(
-            sdkPathiOSSimulator,
-            targetIdentifierX64,
-            platformIdentifieriOS,
-            platformSuffixiOSSimulator,
-            deploymentTargetiOS,
-            outputPathiOSSimulatorX64
-        );
+        PartialCompileResult? iOSSimulatorX64Result;
+
+        if (Configuration.Targets.HasFlag(BuildTargets.iOSSimulatorX64)) {
+            iOSSimulatorX64Result = compiler.Compile(
+                sdkPathiOSSimulator!,
+                targetIdentifierX64,
+                platformIdentifieriOS,
+                platformSuffixiOSSimulator,
+                deploymentTargetiOS,
+                outputPathiOSSimulatorX64!
+            );
+        } else {
+            iOSSimulatorX64Result = null;
+        }
         #endregion iOS Simulator
         
         string libraryOutputPathFormat = Path.Combine(

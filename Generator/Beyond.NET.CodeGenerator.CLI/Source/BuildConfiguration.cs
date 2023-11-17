@@ -15,6 +15,8 @@ public record BuildConfiguration
 internal static class BuildTargets
 {
     public const string APPLE_UNIVERSAL = "apple-universal";
+    public const string MACOS_UNIVERSAL = "macos-universal";
+    public const string IOS_UNIVERSAL = "ios-universal";
 }
 
 internal static class AppleDeploymentTargets
