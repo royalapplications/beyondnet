@@ -14,6 +14,8 @@ final class SpanTestTests: XCTestCase {
     
     func testReadOnlySpan() {
         let helloString = "Hello"
+        let goodbyeString = "Goodbye"
+        let hugoString = "Hugo"
         
         guard let helloData = helloString.data(using: .utf8) else {
             XCTFail("Failed to get data of string")
@@ -21,25 +23,42 @@ final class SpanTestTests: XCTestCase {
             return
         }
         
-        guard let helloByteArray = try? helloData.dotNETByteArray() else {
-            XCTFail("Failed to convert Swift Data to .NET byte[]")
+        guard let goodbyeData = goodbyeString.data(using: .utf8) else {
+            XCTFail("Failed to get data of string")
             
             return
         }
         
-        guard let test = try? Beyond.NET.Sample.SpanTest(helloByteArray) else {
+        guard let hugoData = hugoString.data(using: .utf8) else {
+            XCTFail("Failed to get data of string")
+            
+            return
+        }
+        
+        guard let test = try? Beyond.NET.Sample.SpanTest(helloData) else {
             XCTFail("SpanTest ctor should not throw and return an instance")
             
             return
         }
         
+        verifySpanTest(test, matchesData: helloData)
+        
+        XCTAssertNoThrow(try test.setDataAsReadOnlySpan(goodbyeData))
+        verifySpanTest(test, matchesData: goodbyeData)
+        
+        XCTAssertNoThrow(try test.dataAsReadOnlySpan_set(hugoData))
+        verifySpanTest(test, matchesData: hugoData)
+    }
+    
+    func verifySpanTest(_ test: Beyond.NET.Sample.SpanTest,
+                        matchesData expectedData: Data) {
         guard let dataAsReadOnlySpan = try? test.dataAsReadOnlySpan else {
             XCTFail("SpanTest.DataAsReadOnlySpan should not throw and return an instance")
             
             return
         }
         
-        XCTAssertEqual(dataAsReadOnlySpan, helloData)
+        XCTAssertEqual(dataAsReadOnlySpan, expectedData)
         
         guard let getDataAsReadOnlySpan = try? test.getDataAsReadOnlySpan() else {
             XCTFail("SpanTest.GetDataAsReadOnlySpan should not throw and return an instance")
@@ -47,7 +66,7 @@ final class SpanTestTests: XCTestCase {
             return
         }
         
-        XCTAssertEqual(getDataAsReadOnlySpan, helloData)
+        XCTAssertEqual(getDataAsReadOnlySpan, expectedData)
         
         var tryGetDataAsReadOnlySpan: Data?
         
@@ -57,78 +76,6 @@ final class SpanTestTests: XCTestCase {
             return
         }
         
-        XCTAssertEqual(tryGetDataAsReadOnlySpan, helloData)
-    }
-    
-    func testReadOnlyBytes() {
-        let helloString = "Hello"
-        
-        guard let helloData = helloString.data(using: .utf8) else {
-            XCTFail("Failed to get data of string")
-            
-            return
-        }
-        
-        guard let helloReadOnlyBytes = try? Beyond.NET.Sample.ReadOnlyBytes.withData(helloData) else {
-            XCTFail("Failed to convert Swift Data to ReadOnlyBytes")
-            
-            return
-        }
-        
-        guard let helloByteArray = try? helloData.dotNETByteArray() else {
-            XCTFail("Failed to convert Swift Data to .NET byte[]")
-            
-            return
-        }
-        
-//        guard let spanTest = try? Beyond.NET.Sample.SpanTest(helloByteArray) else {
-//            XCTFail("SpanTest ctor should not throw and return an instance")
-//            
-//            return
-//        }
-        
-        guard let spanTest = try? Beyond.NET.Sample.SpanTest(helloReadOnlyBytes) else {
-            XCTFail("SpanTest ctor should not throw and return an instance")
-            
-            return
-        }
-        
-        guard let helloByteArrayRet = try? spanTest.data else {
-            XCTFail("SpanTest.Data should not throw and return an instance")
-            
-            return
-        }
-        
-        XCTAssertTrue(helloByteArray.elementsEqual(helloByteArrayRet))
-        
-        guard let helloDataRet = try? helloByteArrayRet.data() else {
-            XCTFail("Failed to convert .NET byte[] to Swift Data")
-            
-            return
-        }
-        
-        XCTAssertEqual(helloData, helloDataRet)
-        
-        guard let helloStringRet = String(data: helloDataRet, encoding: .utf8) else {
-            XCTFail("Failed to convert Swift Data to Swift String")
-            
-            return
-        }
-        
-        XCTAssertEqual(helloString, helloStringRet)
-        
-        guard let helloReadOnlyBytes = try? spanTest.dataAsReadOnlyBytes else {
-            XCTFail("SpanTest.DataAsReadOnlyBytes should not throw and return an instance")
-            
-            return
-        }
-        
-        guard let dataRet = try? helloReadOnlyBytes.data() else {
-            XCTFail("ReadOnlyBytes.data() should not throw")
-            
-            return
-        }
-        
-        XCTAssertEqual(helloData, dataRet)
+        XCTAssertEqual(tryGetDataAsReadOnlySpan, expectedData)
     }
 }

@@ -3,7 +3,7 @@ namespace Beyond.NET.Sample;
 public class SpanTest
 {
     #region Source Data
-    public byte[] Data { get; }
+    public byte[] Data { get; private set; }
     #endregion Source Data
 
     #region Constructor
@@ -21,16 +21,7 @@ public class SpanTest
     {
         Data = dataAsReadOnlySpan.ToArray();
     }
-    
-    public SpanTest(ReadOnlyBytes dataAsReadOnlyBytes)
-    {
-        Data = dataAsReadOnlyBytes.ToArray();
-    }
     #endregion Constructor
-
-    #region ReadOnlyBytes
-    public ReadOnlyBytes DataAsReadOnlyBytes => new(DataAsReadOnlySpan);
-    #endregion ReadOnlyBytes
 
     #region Span<byte>
     public Span<byte> DataAsSpan => new(Data);
@@ -45,8 +36,19 @@ public class SpanTest
     #endregion Span<byte>
 
     #region ReadOnlySpan<byte>
-    public ReadOnlySpan<byte> DataAsReadOnlySpan => new(Data);
+
+    public ReadOnlySpan<byte> DataAsReadOnlySpan
+    {
+        get {
+            return new(Data);
+        }
+        set {
+            Data = value.ToArray();
+        }
+    }
+    
     public ReadOnlySpan<byte> GetDataAsReadOnlySpan() => DataAsSpan;
+    public void SetDataAsReadOnlySpan(ReadOnlySpan<byte> span) => Data = span.ToArray();
     
     public bool TryGetDataAsReadOnlySpan(out ReadOnlySpan<byte> dataAsReadOnlySpan)
     {
