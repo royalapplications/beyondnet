@@ -27,6 +27,7 @@ public partial class SwiftTypeSyntaxWriter
         internal bool IsReturning { get; }
         internal bool ReturnTypeIsPrimitive { get; }
         internal bool ReturnTypeIsOptional { get; }
+        internal bool ReturnTypeIsReadOnlySpanOfByte { get; }
         internal string SwiftReturnTypeName { get; }
         
         internal ParameterInfo[] ParameterInfos { get; }
@@ -66,7 +67,8 @@ public partial class SwiftTypeSyntaxWriter
             ReturnTypeDescriptor = ReturnType.GetTypeDescriptor(typeDescriptorRegistry);
             
             ReturnTypeIsPrimitive = ReturnType.IsPrimitive;
-            ReturnTypeIsOptional = !ReturnTypeIsPrimitive;
+            ReturnTypeIsReadOnlySpanOfByte = ReturnType.IsReadOnlySpanOfByte();
+            ReturnTypeIsOptional = !ReturnTypeIsPrimitive && !ReturnTypeIsReadOnlySpanOfByte;
             
             // TODO: This generates inout TypeName if the return type is by ref
             SwiftReturnTypeName = ReturnTypeDescriptor.GetTypeName(
@@ -212,6 +214,7 @@ public partial class SwiftTypeSyntaxWriter
             typeInfo.ReturnTypeDescriptor,
             typeInfo.ReturnTypeIsOptional,
             typeInfo.ReturnTypeIsPrimitive,
+            typeInfo.ReturnTypeIsReadOnlySpanOfByte,
             typeDescriptorRegistry,
             out string createCFunctionFuncName
         );
@@ -354,6 +357,7 @@ public partial class SwiftTypeSyntaxWriter
         TypeDescriptor returnTypeDescriptor,
         bool returnTypeIsOptional,
         bool returnTypeIsPrimitive,
+        bool returnValueIsReadOnlySpanOfByte,
         TypeDescriptorRegistry typeDescriptorRegistry,
         out string createCFunctionFuncName
     )
@@ -465,7 +469,8 @@ public partial class SwiftTypeSyntaxWriter
     
                 sb.AppendLine(fullReturnTypeConversion);
                 
-                if (!returnTypeIsPrimitive) {
+                if (!returnTypeIsPrimitive &&
+                    !returnValueIsReadOnlySpanOfByte) {
                     sb.AppendLine($"\t{returnValueName}?.__skipDestroy = true // Will be destroyed by .NET");
                 }
                 

@@ -48,6 +48,39 @@ final class SpanTestTests: XCTestCase {
         
         XCTAssertNoThrow(try test.dataAsReadOnlySpan_set(hugoData))
         verifySpanTest(test, matchesData: hugoData)
+        
+        guard let hugoByteArray = try? test.data else {
+            XCTFail("SpanTest.Data should not throw and return an instance")
+            
+            return
+        }
+        
+        guard let hugoConvertedData = try? test.convertByteArrayToSpan(hugoByteArray, .init({ bytes in
+            try? bytes?.data()
+        })) else {
+            XCTFail("SpanTest.ConvertByteArrayToSpan should not throw and return an instance")
+            
+            return
+        }
+        
+        verifySpanTest(test, matchesData: hugoConvertedData)
+        
+        guard let hugoConvertedByteArray = try? test.convertSpanToByteArray(hugoConvertedData, .init({ span in
+            try? span?.dotNETByteArray()
+        })) else {
+            XCTFail("SpanTest.ConvertSpanToByteArray should not throw and return an instance")
+            
+            return
+        }
+        
+        guard let hugoConvertedByteArrayBackToData = try? hugoConvertedByteArray.data() else {
+            XCTFail("Failed to convert byte[] to Swift Data")
+            
+            return
+        }
+        
+        verifySpanTest(test, matchesData: hugoConvertedByteArrayBackToData)
+        XCTAssertTrue(hugoByteArray.elementsEqual(hugoConvertedByteArray))
     }
     
     func verifySpanTest(_ test: Beyond.NET.Sample.SpanTest,

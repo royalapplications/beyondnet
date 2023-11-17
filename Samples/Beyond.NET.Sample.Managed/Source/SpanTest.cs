@@ -2,6 +2,11 @@ namespace Beyond.NET.Sample;
 
 public class SpanTest
 {
+    #region Delegates
+    public delegate ReadOnlySpan<byte> ByteArrayToSpanDelegate(byte[] bytes);
+    public delegate byte[] SpanToByteArrayDelegate(ReadOnlySpan<byte> span);
+    #endregion Delegates
+    
     #region Source Data
     public byte[] Data { get; private set; }
     #endregion Source Data
@@ -55,6 +60,22 @@ public class SpanTest
         dataAsReadOnlySpan = DataAsReadOnlySpan;
         
         return true;
+    }
+
+    public ReadOnlySpan<byte> ConvertByteArrayToSpan(
+        byte[] bytes,
+        ByteArrayToSpanDelegate converter
+    )
+    {
+        return converter(bytes);
+    }
+    
+    public byte[] ConvertSpanToByteArray(
+        ReadOnlySpan<byte> span,
+        SpanToByteArrayDelegate converter
+    )
+    {
+        return converter(span);
     }
     #endregion ReadOnlySpan<byte>
 }
