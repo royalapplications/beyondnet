@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/fx/Development/DotNET/beyondnet/Samples/Beyond.NET.Sample.Swift/BeyondNETSampleSwift.xcodeproj">
+      location = "group:BeyondNETSampleSwift.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:BeyondNETSampleSwiftUIApp.xcodeproj">
