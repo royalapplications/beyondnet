@@ -203,7 +203,9 @@ The generator currently uses a configuration file where all of its options are s
       "ProductOutputPath": "/Path/To/ProductOutput",
 
       "MacOSDeploymentTarget": "13.0",
-      "iOSDeploymentTarget": "16.0"
+      "iOSDeploymentTarget": "16.0",
+
+      "DisableParallelBuild": false
   },
 
   "CSharpUnmanagedOutputPath": "/Path/To/Generated/CSharpUnmanaged/Output_CS.cs",
@@ -241,6 +243,7 @@ The generator currently uses a configuration file where all of its options are s
     - **`ProductOutputPath`**: The output path for the resulting XCFramework. (Optional; if not provided, the directory of the `AssemblyPath` is used)
     - **`MacOSDeploymentTarget`**: The deployment target for the macOS portion of the XCFramework. (Optional; if not provided, `13.0` is used)
     - **`iOSDeploymentTarget`**: The deployment target for the iOS portion of the XCFramework. (Optional; if not provided, `16.0` is used)
+    - **`DisableParallelBuild`**: Set to `true` to disable building in parallel (ie. for better debugging). (Optional; if not provided, `false` is used)
 - **`CSharpUnmanagedOutputPath`**: The generator will use this path to write the file containing the C# wrapper methods. (Required if `Build` is disabled; Optional if `Build` is enabled)
 - **`COutputPath`**: The generator will use this path to write the generated C bindings header file. (Required if `Build` is disabled; Optional if `Build` is enabled)
 - **`SwiftOutputPath`**: The generator will use this path to write the generated Swift bindings file. (Optional)

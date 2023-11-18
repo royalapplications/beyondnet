@@ -11,7 +11,8 @@ public class SwiftBuilder
         string GeneratedCHeaderFilePath,
         string GeneratedSwiftFilePath,
         string DeploymentTargetMacOS,
-        string DeploymentTargetiOS
+        string DeploymentTargetiOS,
+        bool BuildInParallel
     );
     
     public record BuildResult(
@@ -241,12 +242,12 @@ public class SwiftBuilder
             generatedCHeaderFileName,
             headerMapFileName
         );
-
+        
         #region macOS
-        PartialCompileResult? macOSARM64Result;
+        Func<PartialCompileResult>? macOSARM64Func;
 
         if (Configuration.Targets.HasFlag(BuildTargets.MacOSArm64)) {
-            macOSARM64Result = compiler.Compile(
+            macOSARM64Func = () => compiler.Compile(
                 sdkPathMacOS!,
                 targetIdentifierARM64,
                 platformIdentifierMacOS,
@@ -255,13 +256,13 @@ public class SwiftBuilder
                 outputPathMacOSARM64!
             );
         } else {
-            macOSARM64Result = null;
+            macOSARM64Func = null;
         }
         
-        PartialCompileResult? macOSX64Result;
+        Func<PartialCompileResult>? macOSX64Func;
 
         if (Configuration.Targets.HasFlag(BuildTargets.MacOSX64)) {
-            macOSX64Result = compiler.Compile(
+            macOSX64Func = () => compiler.Compile(
                 sdkPathMacOS!,
                 targetIdentifierX64,
                 platformIdentifierMacOS,
@@ -270,15 +271,15 @@ public class SwiftBuilder
                 outputPathMacOSX64!
             );
         } else {
-            macOSX64Result = null;
+            macOSX64Func = null;
         }
         #endregion macOS
 
         #region iOS
-        PartialCompileResult? iOSARM64Result;
+        Func<PartialCompileResult>? iOSARM64Func;
 
         if (Configuration.Targets.HasFlag(BuildTargets.iOSArm64)) {
-            iOSARM64Result = compiler.Compile(
+            iOSARM64Func = () => compiler.Compile(
                 sdkPathiOS!,
                 targetIdentifierARM64,
                 platformIdentifieriOS,
@@ -287,15 +288,15 @@ public class SwiftBuilder
                 outputPathiOSARM64!
             );
         } else {
-            iOSARM64Result = null;
+            iOSARM64Func = null;
         }
         #endregion iOS
 
         #region iOS Simulator
-        PartialCompileResult? iOSSimulatorARM64Result;
+        Func<PartialCompileResult>? iOSSimulatorARM64Func;
 
         if (Configuration.Targets.HasFlag(BuildTargets.iOSSimulatorArm64)) {
-            iOSSimulatorARM64Result = compiler.Compile(
+            iOSSimulatorARM64Func = () => compiler.Compile(
                 sdkPathiOSSimulator!,
                 targetIdentifierARM64,
                 platformIdentifieriOS,
@@ -304,13 +305,13 @@ public class SwiftBuilder
                 outputPathiOSSimulatorARM64!
             );
         } else {
-            iOSSimulatorARM64Result = null;
+            iOSSimulatorARM64Func = null;
         }
         
-        PartialCompileResult? iOSSimulatorX64Result;
+        Func<PartialCompileResult>? iOSSimulatorX64Func;
 
         if (Configuration.Targets.HasFlag(BuildTargets.iOSSimulatorX64)) {
-            iOSSimulatorX64Result = compiler.Compile(
+            iOSSimulatorX64Func = () => compiler.Compile(
                 sdkPathiOSSimulator!,
                 targetIdentifierX64,
                 platformIdentifieriOS,
@@ -319,7 +320,7 @@ public class SwiftBuilder
                 outputPathiOSSimulatorX64!
             );
         } else {
-            iOSSimulatorX64Result = null;
+            iOSSimulatorX64Func = null;
         }
         #endregion iOS Simulator
         
@@ -334,6 +335,62 @@ public class SwiftBuilder
             "{0}", // Runtime Identifier
             $"{productName}.export"
         );
+
+        PartialCompileResult? macOSARM64Result;
+        PartialCompileResult? macOSX64Result;
+        PartialCompileResult? iOSARM64Result;
+        PartialCompileResult? iOSSimulatorARM64Result;
+        PartialCompileResult? iOSSimulatorX64Result;
+
+        if (Configuration.BuildInParallel) {
+            List<Task> tasks = new();
+
+            Task<PartialCompileResult>? macOSARM64Task = null;
+            if (macOSARM64Func is not null) {
+                macOSARM64Task = Task.Run(macOSARM64Func);
+                tasks.Add(macOSARM64Task);
+            }
+            
+            Task<PartialCompileResult>? macOSX64Task = null;
+            if (macOSX64Func is not null) {
+                macOSX64Task = Task.Run(macOSX64Func);
+                tasks.Add(macOSX64Task);
+            }
+            
+            Task<PartialCompileResult>? iOSARM64Task = null;
+            if (iOSARM64Func is not null) {
+                iOSARM64Task = Task.Run(iOSARM64Func);
+                tasks.Add(iOSARM64Task);
+            }
+            
+            Task<PartialCompileResult>? iOSSimulatorARM64Task = null;
+            if (iOSSimulatorARM64Func is not null) {
+                iOSSimulatorARM64Task = Task.Run(iOSSimulatorARM64Func); 
+                tasks.Add(iOSSimulatorARM64Task);
+            }
+            
+            Task<PartialCompileResult>? iOSSimulatorX64Task = null;
+            if (iOSSimulatorX64Func is not null) {
+                iOSSimulatorX64Task = Task.Run(iOSSimulatorX64Func); 
+                tasks.Add(iOSSimulatorX64Task);
+            }
+            
+            Logger.LogDebug($"Waiting for {tasks.Count} Swift compilation tasks to complete in parallel");
+
+            Task.WaitAll(tasks.ToArray());
+            
+            macOSARM64Result = macOSARM64Task?.Result;
+            macOSX64Result = macOSX64Task?.Result;
+            iOSARM64Result = iOSARM64Task?.Result;
+            iOSSimulatorARM64Result = iOSSimulatorARM64Task?.Result;
+            iOSSimulatorX64Result = iOSSimulatorX64Task?.Result;
+        } else {
+           macOSARM64Result = macOSARM64Func?.Invoke();
+           macOSX64Result = macOSX64Func?.Invoke();
+           iOSARM64Result = iOSARM64Func?.Invoke();
+           iOSSimulatorARM64Result = iOSSimulatorARM64Func?.Invoke();
+           iOSSimulatorX64Result = iOSSimulatorX64Func?.Invoke();
+        }
 
         BuildResult result = new(
             tempDirectoryPath,

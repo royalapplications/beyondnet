@@ -70,6 +70,7 @@ internal class CodeGeneratorDriver
             string? buildProductOutputPath = null;
             string? buildMacOSDeploymentTarget = null;
             string? buildiOSDeploymentTarget = null;
+            bool disableParallelBuild = false;
     
             if (buildConfig is not null) {
                 buildEnabled = true;
@@ -144,6 +145,8 @@ internal class CodeGeneratorDriver
                 if (string.IsNullOrEmpty(buildiOSDeploymentTarget)) {
                     buildiOSDeploymentTarget = AppleDeploymentTargets.IOS_DEFAULT;
                 }
+
+                disableParallelBuild = buildConfig.DisableParallelBuild;
             }
             #endregion Configuration
     
@@ -321,7 +324,8 @@ internal class CodeGeneratorDriver
                     cOutputPath,
                     swiftOutputPath,
                     buildMacOSDeploymentTarget,
-                    buildiOSDeploymentTarget
+                    buildiOSDeploymentTarget,
+                    !disableParallelBuild
                 );
             
                 Logger.LogInformation("Building Swift bindings");
@@ -355,6 +359,7 @@ internal class CodeGeneratorDriver
                     assemblyPath,
                     assemblyReferences,
                     cSharpUnmanagedOutputPath,
+                    !disableParallelBuild,
                     swiftBuildResult
                 );
             
@@ -363,9 +368,11 @@ internal class CodeGeneratorDriver
                 if (!Directory.Exists(result.OutputDirectoryPath)) {
                     throw new Exception($"Final product directory does not exist at \"{result.OutputDirectoryPath}\"");
                 }
-                
-                if (Directory.Exists(result.TemporaryDirectoryPath)) {
-                    tempDirPaths.Add(result.TemporaryDirectoryPath);
+
+                foreach (var tempDirPath in result.TemporaryDirectoryPaths) {
+                    if (Directory.Exists(tempDirPath)) {
+                        tempDirPaths.Add(tempDirPath);
+                    }
                 }
 
                 Logger.LogInformation($"Final product built at \"{result.OutputDirectoryPath}\"");

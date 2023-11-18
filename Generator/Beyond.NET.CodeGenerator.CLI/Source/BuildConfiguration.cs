@@ -9,7 +9,9 @@ public record BuildConfiguration
     string? ProductOutputPath,
     
     string? MacOSDeploymentTarget,
-    string? iOSDeploymentTarget
+    string? iOSDeploymentTarget,
+    
+    bool DisableParallelBuild
 );
 
 internal static class BuildTargets
