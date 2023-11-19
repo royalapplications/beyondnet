@@ -50,11 +50,7 @@ final class SystemGuidTests: XCTestCase {
         let equals = guidType == guidTypeFromInstance
         XCTAssertTrue(equals)
         
-        guard let emptyGuid = System_Guid.empty else {
-            XCTFail("System.Guid.Empty getter should return an instance")
-            
-            return
-        }
+        let emptyGuid = System_Guid.empty
         
         guard let emptyGuidString = try? emptyGuid.toString()?.string() else {
             XCTFail("System.Guid.ToString should not throw and return a string")
@@ -71,11 +67,10 @@ final class SystemGuidTests: XCTestCase {
         let uuidString = uuid.uuidString
         let uuidStringDN = uuidString.dotNETString()
         
-        var guid: System_Guid?
+        var guid = System_Guid.empty
         let success = (try? System_Guid.tryParse(uuidStringDN, &guid)) ?? false
         
-        guard let guid,
-              success else {
+        guard success else {
             XCTFail("System.Guid.TryParse should not throw and return an instance as out parameter")
             
             return
@@ -91,20 +86,15 @@ final class SystemGuidTests: XCTestCase {
     }
     
     func testInvalidSystemGuidParsing() {
-        guard let emptyGuid = System_Guid.empty else {
-            XCTFail("Failed to get System.Guid.Empty")
-            
-            return
-        }
+        let emptyGuid = System_Guid.empty
         
         let uuidString = "nonsense"
         let uuidStringDN = uuidString.dotNETString()
         
-        var guid: System_Guid?
+        var guid = System_Guid.empty
         let success = (try? System_Guid.tryParse(uuidStringDN, &guid)) ?? false
         
-        guard let guid,
-              !success else {
+        guard !success else {
             XCTFail("System.Guid.TryParse should not throw, the return value should be false and the returned instance as out parameter should be an empty System.Guid")
             
             return
@@ -117,11 +107,10 @@ final class SystemGuidTests: XCTestCase {
     func testSwiftUUIDConversion() {
         let uuidString = "7F579986-D12F-4889-9A14-FDE340A59E08"
         
-        var guid: System_Guid?
+        var guid = System_Guid.empty
         
         guard (try? System_Guid.tryParse(uuidString.dotNETString(),
-                                         &guid)) ?? false,
-              let guid else {
+                                         &guid)) ?? false else {
             XCTFail("System.Guid.TryParse should not throw, return true and an instance as out parameter")
             
             return

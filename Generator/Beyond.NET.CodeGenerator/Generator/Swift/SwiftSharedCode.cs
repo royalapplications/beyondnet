@@ -672,9 +672,7 @@ extension System_DateTime {
             throw DNSystemDateTimeErrors.dateTimeKindIsUnspecified
         }
         
-        guard let universalDateTime = try self.toUniversalTime() else {
-            throw DNSystemError.unexpectedNull
-        }
+        let universalDateTime = try self.toUniversalTime()
         
         let dateComponents = try dateComponents(fromSystemDateTime: universalDateTime)
         let calendar = DNDateTimeUtils.calendarForDateTimeToSwiftDateConversions
@@ -736,10 +734,8 @@ extension Date {
         if let year = calComponents.year,
            year >= 10_000 {
             if self.timeIntervalSinceReferenceDate == 252423993600 {
-                guard let dateTime = try System_DateTime.specifyKind(.maxValue,
-                                                                     .utc) else {
-                    throw DNSystemError.unexpectedNull
-                }
+                let dateTime = try System_DateTime.specifyKind(.maxValue,
+                                                               .utc)
 
                 return dateTime
             } else {
@@ -786,23 +782,18 @@ extension Date {
             throw DNDateErrors.dateComponentReturnedNil("second")
         }
 
-        guard var retDate = try System_DateTime(Int32(year),
-                                                Int32(month),
-                                                Int32(day),
-                                                Int32(hour),
-                                                Int32(minute),
-                                                Int32(second),
-                                                Int32(milliseconds),
-                                                Int32(microseconds),
-                                                .utc) else {
-            throw DNSystemError.unexpectedNull
-        }
+        var retDate = try System_DateTime(Int32(year),
+                                          Int32(month),
+                                          Int32(day),
+                                          Int32(hour),
+                                          Int32(minute),
+                                          Int32(second),
+                                          Int32(milliseconds),
+                                          Int32(microseconds),
+                                          .utc)
 
         if ticks > 0 {
-            guard let adjustedRetDate = try retDate.addTicks(.init(ticks)) else {
-                throw DNSystemError.unexpectedNull
-            }
-
+            let adjustedRetDate = try retDate.addTicks(.init(ticks))
             retDate = adjustedRetDate
         }
 
@@ -1067,7 +1058,7 @@ extension UUID {
         let guidString = self.uuidString
         let guidStringDN = guidString.dotNETString()
         
-        var guid: System_Guid?
+        var guid = System_Guid.empty
         
         guard (try? System_Guid.tryParse(guidStringDN,
                                          &guid)) ?? false else {

@@ -53,7 +53,11 @@ final class SystemUriTests: XCTestCase {
 	func testTryCreateUriWithInParameter() {
 		let urlString = "https://royalapps.com/"
 		
-        var creationOptions = try? System.UriCreationOptions()
+        guard var creationOptions = try? System.UriCreationOptions() else {
+            XCTFail("System.UriCreationOptions ctor should not throw and return an instance")
+            
+            return
+        }
 		
 		var uriRet: System_Uri?
 		

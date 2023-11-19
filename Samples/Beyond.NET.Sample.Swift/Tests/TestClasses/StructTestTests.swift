@@ -51,17 +51,13 @@ final class StructTestTests: XCTestCase {
         }
         
         do {
-            guard let structRetVal = try Beyond_NET_Sample_StructTest.nonNullInstanceProperty else {
-                XCTFail("StructTest.NonNullInstanceProperty should not be nil")
-                
-                return
-            }
+            let structRetVal = try Beyond_NET_Sample_StructTest.nonNullInstanceProperty
             
-            XCTAssertEqual(try? structRetVal.name?.string(), "Test")
+            XCTAssertEqual(try? structRetVal?.name?.string(), "Test")
             
             let newName = "NotTest"
-            try structRetVal.name_set(newName.dotNETString())
-            XCTAssertEqual(try? structRetVal.name?.string(), newName)
+            try structRetVal?.name_set(newName.dotNETString())
+            XCTAssertEqual(try? structRetVal?.name?.string(), newName)
         } catch {
             XCTFail("StructTest.NonNullInstanceProperty should not throw")
         }
@@ -75,17 +71,13 @@ final class StructTestTests: XCTestCase {
         }
         
         do {
-            guard let structRetVal = try Beyond_NET_Sample_StructTest.getNullableStructReturnValue(false) else {
-                XCTFail("StructTest.GetNullableStructReturnValue should not be nil")
-                
-                return
-            }
+            let structRetVal = try Beyond_NET_Sample_StructTest.getNullableStructReturnValue(false)
             
-            XCTAssertEqual(try? structRetVal.name?.string(), "Test")
+            XCTAssertEqual(try? structRetVal?.name?.string(), "Test")
             
             let newName = "NotTest"
-            try structRetVal.name_set(newName.dotNETString())
-            XCTAssertEqual(try? structRetVal.name?.string(), newName)
+            try structRetVal?.name_set(newName.dotNETString())
+            XCTAssertEqual(try? structRetVal?.name?.string(), newName)
         } catch {
             XCTFail("StructTest.GetNullableStructReturnValue should not throw")
         }
@@ -135,7 +127,7 @@ final class StructTestTests: XCTestCase {
         
         do {
             let origName = "test"
-            var structRef = try Beyond_NET_Sample_StructTest(origName.dotNETString())
+            var structRef: Beyond_NET_Sample_StructTest? = try Beyond_NET_Sample_StructTest(origName.dotNETString())
             
             let ret = try Beyond_NET_Sample_StructTest.getNullableStructReturnValueOfRefParameter(&structRef)
             

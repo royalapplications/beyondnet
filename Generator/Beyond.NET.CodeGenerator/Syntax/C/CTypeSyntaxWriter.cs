@@ -175,7 +175,7 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
             string parameterTypeName = parameterTypeDescriptor.GetTypeName(
                 CodeLanguage.C,
                 true,
-                Nullability.Nullable,
+                Nullability.NotSpecified,
                 isOutParameter,
                 isByRefParameter,
                 isInParameter

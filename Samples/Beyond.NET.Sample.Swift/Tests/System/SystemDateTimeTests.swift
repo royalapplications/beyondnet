@@ -91,14 +91,13 @@ final class SystemDateTimeTests: XCTestCase {
             return
         }
         
-        var nowDotNet: System_DateTime?
+        var nowDotNet = System_DateTime.minValue
         
         let success = (try? System_DateTime.tryParse(dateStringDN,
                                                      enUSCultureAsIFormatProvider,
                                                      &nowDotNet)) ?? false
         
-        guard success,
-              let nowDotNet else {
+        guard success else {
             XCTFail("System.DateTime.TryParse should return true, an instance as out parameter and not throw")
             
             return
@@ -127,11 +126,7 @@ final class SystemDateTimeTests: XCTestCase {
             return
         }
         
-        guard let dateTimeMinValue = System.DateTime.minValue else {
-            XCTFail("System.DateTime.MinValue should return an instance")
-            
-            return
-        }
+        let dateTimeMinValue = System.DateTime.minValue
         
         guard let retDate = try? dateTime.swiftDate() else {
             XCTFail("System.DateTime.swiftDate should not throw and return an instance")

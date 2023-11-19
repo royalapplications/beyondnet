@@ -17,13 +17,12 @@ final class SystemDecimalTests: XCTestCase {
         let numberString = "\(number)"
         let numberStringDN = numberString.dotNETString()
         
-        var decimal: System_Decimal?
+        var decimal = System_Decimal.minValue
         
         let parseSuccess = (try? System_Decimal.tryParse(numberStringDN,
                                                          &decimal)) ?? false
         
-        guard let decimal,
-              parseSuccess else {
+        guard parseSuccess else {
             XCTFail("System.Decimal.TryParse should not throw, return true and an instance as out parameter")
             
             return
@@ -134,11 +133,7 @@ final class SystemDecimalTests: XCTestCase {
     }
     
     func testDivisionByZero() {
-        guard let decimalZero = System_Decimal.zero else {
-            XCTFail("System.Decimal.Zero getter should return an instance")
-            
-            return
-        }
+        let decimalZero = System_Decimal.zero
         
         let number1: Int32 = 123
         

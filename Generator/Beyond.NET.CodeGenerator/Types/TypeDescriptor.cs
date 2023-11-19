@@ -62,12 +62,10 @@ public class TypeDescriptor
     public Nullability Nullability
     {
         get {
-            if (RequiresNativePointer &&
-                !IsStruct) {
+            if ((RequiresNativePointer && !IsStruct) ||
+                IsNullableValueType(out _)) {
                 return Nullability.Nullable;
-            }
-
-            if (IsStruct) {
+            } else if (IsStruct) {
                 return Nullability.NonNullable;
             }
 
@@ -125,7 +123,7 @@ public class TypeDescriptor
     public string GetTypeName(
         CodeLanguage language,
         bool includeModifiers,
-        Nullability nullability = Nullability.Nullable,
+        Nullability nullability = Nullability.NotSpecified,
         bool isOutParameter = false,
         bool isByRefParameter = false,
         bool isInParameter = false
@@ -198,10 +196,23 @@ public class TypeDescriptor
                 
                 break;
             case CodeLanguage.C:
+                string cNullabilitySpecifier = nullability.GetClangAttribute();
+                
                 if (isOutParameter || isByRefParameter || isInParameter) {
-                    typeNameWithModifiers = $"{typeName}*";
+                    string innerTypeName = typeName;
+                    
+                    if (!string.IsNullOrEmpty(cNullabilitySpecifier) &&
+                        !IsReadOnlyStructOfByte) {
+                        innerTypeName += " " + cNullabilitySpecifier;
+                    }
+                    
+                    typeNameWithModifiers = $"{innerTypeName}*";
                 } else {
                     typeNameWithModifiers = $"{typeName}";
+                }
+                
+                if (!string.IsNullOrEmpty(cNullabilitySpecifier)) {
+                    typeNameWithModifiers += " " + cNullabilitySpecifier;
                 }
                 
                 break;
@@ -212,8 +223,10 @@ public class TypeDescriptor
                     typeNameWithModifiers = $"{typeName}";
                 }
 
-                if (nullability == Nullability.Nullable) {
-                    typeNameWithModifiers += "?";
+                string swiftNullabilitySpecifier = nullability.GetSwiftOptionalitySpecifier();
+
+                if (!string.IsNullOrEmpty(swiftNullabilitySpecifier)) {
+                    typeNameWithModifiers += swiftNullabilitySpecifier;
                 }
                 
                 break;

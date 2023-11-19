@@ -66,16 +66,24 @@ final class DelegateTestTests: XCTestCase {
         }
         
         let result = try? Beyond.NET.Sample.DelegatesTest.transformPoint(original, .init({ p in
-            guard let pX = try? p?.x else {
+            guard let pX = try? p.x else {
                 XCTFail("Beyond.NET.Sample.Point.X should not throw")
                 
-                return nil
+                guard let emptyPoint = try? Beyond.NET.Sample.Point() else {
+                    fatalError("Beyond.NET.Sample.Point ctor should not throw and return an instance")
+                }
+                
+                return emptyPoint
             }
             
-            guard let pY = try? p?.y else {
+            guard let pY = try? p.y else {
                 XCTFail("Beyond.NET.Sample.Point.Y should not throw")
                 
-                return nil
+                guard let emptyPoint = try? Beyond.NET.Sample.Point() else {
+                    fatalError("Beyond.NET.Sample.Point ctor should not throw and return an instance")
+                }
+                
+                return emptyPoint
             }
             
             let newX = pX + valueToAddToX
@@ -84,7 +92,11 @@ final class DelegateTestTests: XCTestCase {
             guard let innerResult = try? Beyond.NET.Sample.Point(newX, newY) else {
                 XCTFail("Beyond.NET.Sample.Point ctor should not throw and return an instance")
 
-                return nil
+                guard let emptyPoint = try? Beyond.NET.Sample.Point() else {
+                    fatalError("Beyond.NET.Sample.Point ctor should not throw and return an instance")
+                }
+                
+                return emptyPoint
             }
             
             return innerResult

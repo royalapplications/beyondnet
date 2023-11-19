@@ -198,6 +198,12 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             }
         }
 
+        Nullability returnOrSetterTypeNullability = Nullability.NotSpecified;
+        
+        if (returnOrSetterOrEventHandlerType.IsNullableValueType(out _)) {
+            returnOrSetterTypeNullability = returnOrSetterOrEventHandlerType.GetTypeDescriptor(typeDescriptorRegistry).Nullability;
+        }
+
         bool returnOrSetterOrEventHandlerTypeIsByRef;
 
         if (isNullableValueTypeReturnType) {
@@ -213,24 +219,16 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         
         TypeDescriptor returnOrSetterTypeDescriptor = returnOrSetterOrEventHandlerType.GetTypeDescriptor(typeDescriptorRegistry);
         
+        bool returnTypeIsNonNull = memberKind == MemberKind.TypeOf;
+        
         string cReturnOrSetterTypeName = returnOrSetterTypeDescriptor.GetTypeName(
             CodeLanguage.C, 
             true,
-            Nullability.Nullable,
+            returnTypeIsNonNull ? Nullability.NonNullable : returnOrSetterTypeNullability,
             false,
             returnOrSetterOrEventHandlerTypeIsByRef,
             false
         );
-
-        bool returnTypeIsNonNull = memberKind == MemberKind.TypeOf;
-        
-        Nullability returnTypeNullability = returnTypeIsNonNull
-            ? Nullability.NonNullable
-            : Nullability.Nullable;
-        
-        string returnTypeNullabilitySpecifier = returnTypeIsNonNull
-            ? $" {returnTypeNullability.GetClangAttribute()}"
-            : string.Empty;
         
         string cReturnOrSetterTypeNameWithComment;
         Type? setterType;
@@ -242,7 +240,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             cReturnOrSetterTypeNameWithComment = "void /* System.Void */";
             setterType = returnOrSetterOrEventHandlerType;
         } else {
-            cReturnOrSetterTypeNameWithComment = $"{cReturnOrSetterTypeName}{returnTypeNullabilitySpecifier} /* {returnOrSetterOrEventHandlerType.GetFullNameOrName()} */";
+            cReturnOrSetterTypeNameWithComment = $"{cReturnOrSetterTypeName} /* {returnOrSetterOrEventHandlerType.GetFullNameOrName()} */";
             setterType = null;
         }
         
@@ -347,7 +345,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(
                 CodeLanguage.C,
                 true,
-                Nullability.Nullable,
+                Nullability.NotSpecified,
                 isOutParameter,
                 isByRefParameter,
                 isInParameter
@@ -380,7 +378,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             string outExceptionTypeName = outExceptionTypeDescriptor.GetTypeName(
                 CodeLanguage.C,
                 true,
-                Nullability.Nullable,
+                Nullability.NotSpecified,
                 true,
                 true,
                 false

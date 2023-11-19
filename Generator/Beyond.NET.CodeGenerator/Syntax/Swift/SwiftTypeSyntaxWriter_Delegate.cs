@@ -68,7 +68,7 @@ public partial class SwiftTypeSyntaxWriter
             
             ReturnTypeIsPrimitive = ReturnType.IsPrimitive;
             ReturnTypeIsReadOnlySpanOfByte = ReturnType.IsReadOnlySpanOfByte();
-            ReturnTypeIsOptional = !ReturnTypeIsPrimitive && !ReturnTypeIsReadOnlySpanOfByte;
+            ReturnTypeIsOptional = ReturnTypeDescriptor.Nullability == Nullability.Nullable;
             
             // TODO: This generates inout TypeName if the return type is by ref
             SwiftReturnTypeName = ReturnTypeDescriptor.GetTypeName(
@@ -471,7 +471,11 @@ public partial class SwiftTypeSyntaxWriter
                 
                 if (!returnTypeIsPrimitive &&
                     !returnValueIsReadOnlySpanOfByte) {
-                    sb.AppendLine($"\t{returnValueName}?.__skipDestroy = true // Will be destroyed by .NET");
+                    string nullabilitySpecifier = returnTypeIsOptional
+                        ? "?"
+                        : string.Empty;
+                    
+                    sb.AppendLine($"\t{returnValueName}{nullabilitySpecifier}.__skipDestroy = true // Will be destroyed by .NET");
                 }
                 
                 sb.AppendLine();

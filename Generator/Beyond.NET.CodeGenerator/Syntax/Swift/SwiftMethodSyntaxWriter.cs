@@ -249,13 +249,11 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         
         TypeDescriptor returnOrSetterTypeDescriptor = returnOrSetterOrEventHandlerType.GetTypeDescriptor(typeDescriptorRegistry);
         
-        bool returnTypeIsOptional = memberKind != MemberKind.TypeOf;
-        
         // TODO: This generates inout TypeName if the return type is by ref
         string swiftReturnOrSetterTypeName = returnOrSetterTypeDescriptor.GetTypeName(
             CodeLanguage.Swift,
             true,
-            returnTypeIsOptional ? Nullability.Nullable : Nullability.NonNullable,
+            memberKind == MemberKind.TypeOf ? Nullability.NonNullable : Nullability.NotSpecified,
             false,
             returnOrSetterOrEventHandlerTypeIsByRef,
             false
@@ -322,7 +320,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         if (memberKind == MemberKind.Constructor) {
             fullDecl = Builder.Initializer()
                 .Convenience()
-                .Failable()
+                .Failable(returnOrSetterTypeDescriptor.Nullability == Nullability.Nullable)
                 .Visibility(onlyWriteSignatureForProtocol 
                     ? SwiftVisibilities.None
                     : SwiftVisibilities.Public)
@@ -514,11 +512,15 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
 
             if (isReturning) {
                 if (memberKind == MemberKind.Constructor) {
-                    returnCode = $$"""
+                    if (returnOrSetterTypeDescriptor.Nullability == Nullability.Nullable) {
+                        returnCode = $$"""
 guard let {{returnValueName}} else { return nil }
 
 self.init(handle: {{returnValueName}})
-""";
+""";    
+                    } else {
+                        returnCode = $"self.init(handle: {returnValueName})";
+                    }
                 } else {
                     string? returnTypeConversion = returnOrSetterTypeDescriptor.GetTypeConversion(
                         CodeLanguage.C,
@@ -687,7 +689,7 @@ if let __exceptionC {
         string swiftReturnTypeName = returnTypeDescriptor.GetTypeName(
             CodeLanguage.Swift,
             true,
-            Nullability.Nullable,
+            Nullability.NotSpecified,
             false,
             returnTypeIsByRef,
             false
@@ -823,12 +825,10 @@ if let __exceptionC {
             
             TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
 
-            bool isOptional = parameterTypeDescriptor.RequiresNativePointer;
-            
             string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(
                 CodeLanguage.Swift,
                 true,
-                isOptional ? Nullability.Nullable : Nullability.NonNullable,
+                Nullability.NotSpecified,
                 isOutParameter,
                 isByRefParameter,
                 isInParameter
@@ -868,8 +868,7 @@ if let __exceptionC {
             
             string cSetterOrEventHandlerTypeName = setterOrEventHandlerTypeDescriptor.GetTypeName(
                 CodeLanguage.Swift,
-                true,
-                Nullability.Nullable
+                true
             );
 
             const string parameterName = "value";
@@ -1115,11 +1114,7 @@ if let __exceptionC {
             
             if (sourceLanguage == CodeLanguage.Swift &&
                 targetLanguage == CodeLanguage.C) {
-                bool isOptional = parameterTypeDescriptor.RequiresNativePointer;
-
-                optionalString = isOptional
-                    ? "?"
-                    : string.Empty;                
+                optionalString = parameterTypeDescriptor.Nullability.GetSwiftOptionalitySpecifier();
             } else {
                 optionalString = string.Empty;
             }
