@@ -74,7 +74,7 @@ public partial class SwiftTypeSyntaxWriter
             SwiftReturnTypeName = ReturnTypeDescriptor.GetTypeName(
                 CodeLanguage.Swift,
                 true,
-                ReturnTypeIsOptional,
+                ReturnTypeIsOptional ? Nullability.Nullable : Nullability.NonNullable,
                 false,
                 false,
                 false

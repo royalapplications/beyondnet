@@ -279,7 +279,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         string unmanagedReturnOrSetterOrEventHandlerTypeName = returnOrSetterOrEventHandlerTypeDescriptor.GetTypeName(
             CodeLanguage.CSharpUnmanaged,
             true,
-            true,
+            Nullability.Nullable,
             false,
             isReturnOrSetterOrEventHandlerTypeByRef,
             false
@@ -380,7 +380,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             string fullReturnTypeName = returnOrSetterOrEventHandlerTypeDescriptor.GetTypeName(
                 CodeLanguage.CSharp,
                 true,
-                true,
+                Nullability.Nullable,
                 false,
                 isReturnOrSetterOrEventHandlerTypeByRef,
                 false
@@ -1076,7 +1076,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(
                     targetLanguage,
                     true,
-                    true,
+                    Nullability.Nullable,
                     isOutParameter,
                     isByRefParameter,
                     isInParameter
@@ -1109,7 +1109,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             string outExceptionTypeName = outExceptionTypeDescriptor.GetTypeName(
                 targetLanguage,
                 true,
-                true,
+                Nullability.Nullable,
                 true,
                 true,
                 false
@@ -1288,7 +1288,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                         string convertedParameterTypeName = parameterTypeDescriptor.GetTypeName(
                             CodeLanguage.CSharpUnmanaged,
                             true,
-                            true,
+                            Nullability.Nullable,
                             isOutParameter,
                             true,
                             isInParameter
@@ -1299,7 +1299,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                         string convertedParameterTypeName = parameterTypeDescriptor.GetTypeName(
                             CodeLanguage.CSharpUnmanaged,
                             true,
-                            true,
+                            Nullability.Nullable,
                             isOutParameter,
                             true,
                             isInParameter
@@ -1364,7 +1364,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 string parameterTypeName = parameterTypeDescriptor.GetTypeName(
                     targetLanguage,
                     true,
-                    true,
+                    Nullability.Nullable,
                     isOutParameter,
                     isByRefParameter,
                     isInParameter

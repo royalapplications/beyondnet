@@ -255,7 +255,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         string swiftReturnOrSetterTypeName = returnOrSetterTypeDescriptor.GetTypeName(
             CodeLanguage.Swift,
             true,
-            returnTypeIsOptional,
+            returnTypeIsOptional ? Nullability.Nullable : Nullability.NonNullable,
             false,
             returnOrSetterOrEventHandlerTypeIsByRef,
             false
@@ -683,13 +683,11 @@ if let __exceptionC {
         
         TypeDescriptor returnTypeDescriptor = returnType.GetTypeDescriptor(typeDescriptorRegistry);
         
-        const bool returnTypeIsOptional = true;
-        
         // TODO: This generates inout TypeName if the return type is by ref
         string swiftReturnTypeName = returnTypeDescriptor.GetTypeName(
             CodeLanguage.Swift,
             true,
-            returnTypeIsOptional,
+            Nullability.Nullable,
             false,
             returnTypeIsByRef,
             false
@@ -778,7 +776,7 @@ if let __exceptionC {
             string nativeSystemTypeTypeName = systemTypeTypeDescriptor.GetTypeName(
                 CodeLanguage.Swift, 
                 true,
-                false
+                Nullability.NonNullable
             );
             
             foreach (var genericArgumentType in genericArguments) {
@@ -830,7 +828,7 @@ if let __exceptionC {
             string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(
                 CodeLanguage.Swift,
                 true,
-                isOptional,
+                isOptional ? Nullability.Nullable : Nullability.NonNullable,
                 isOutParameter,
                 isByRefParameter,
                 isInParameter
@@ -871,7 +869,7 @@ if let __exceptionC {
             string cSetterOrEventHandlerTypeName = setterOrEventHandlerTypeDescriptor.GetTypeName(
                 CodeLanguage.Swift,
                 true,
-                true
+                Nullability.Nullable
             );
 
             const string parameterName = "value";

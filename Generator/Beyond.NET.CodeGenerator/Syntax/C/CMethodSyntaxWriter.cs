@@ -216,7 +216,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         string cReturnOrSetterTypeName = returnOrSetterTypeDescriptor.GetTypeName(
             CodeLanguage.C, 
             true,
-            true,
+            Nullability.Nullable,
             false,
             returnOrSetterOrEventHandlerTypeIsByRef,
             false
@@ -224,8 +224,12 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
 
         bool returnTypeIsNonNull = memberKind == MemberKind.TypeOf;
         
+        Nullability returnTypeNullability = returnTypeIsNonNull
+            ? Nullability.NonNullable
+            : Nullability.Nullable;
+        
         string returnTypeNullabilitySpecifier = returnTypeIsNonNull
-            ? " _Nonnull"
+            ? $" {returnTypeNullability.GetClangAttribute()}"
             : string.Empty;
         
         string cReturnOrSetterTypeNameWithComment;
@@ -343,7 +347,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(
                 CodeLanguage.C,
                 true,
-                true,
+                Nullability.Nullable,
                 isOutParameter,
                 isByRefParameter,
                 isInParameter
@@ -376,7 +380,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             string outExceptionTypeName = outExceptionTypeDescriptor.GetTypeName(
                 CodeLanguage.C,
                 true,
-                true,
+                Nullability.Nullable,
                 true,
                 true,
                 false

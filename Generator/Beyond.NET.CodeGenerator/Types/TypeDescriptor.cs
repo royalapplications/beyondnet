@@ -3,6 +3,41 @@ using Beyond.NET.CodeGenerator.Extensions;
 
 namespace Beyond.NET.CodeGenerator.Types;
 
+public enum Nullability
+{
+    NotSpecified,
+    Nullable,
+    NonNullable
+}
+
+public static class Nullability_Extensions
+{
+    public const string ClangAttributeNullable = "_Nullable";
+    public const string ClangAttributeNonNull = "_Nonnull";
+    
+    public static string GetClangAttribute(this Nullability nullability)
+    {
+        switch (nullability) {
+            case Nullability.Nullable:
+                return ClangAttributeNullable;
+            case Nullability.NonNullable:
+                return ClangAttributeNonNull;
+            default:
+                return string.Empty; 
+        }
+    }
+    
+    public static string GetSwiftOptionalitySpecifier(this Nullability nullability)
+    {
+        switch (nullability) {
+            case Nullability.Nullable:
+                return "?";
+            default:
+                return string.Empty; 
+        }
+    }
+}
+
 public class TypeDescriptor
 {
     public Type ManagedType { get; }
@@ -18,10 +53,26 @@ public class TypeDescriptor
     public bool IsManagedPointer => ManagedType.IsPointer;
     public bool RequiresNativePointer => !IsVoid && !IsEnum && !IsPrimitive && !IsBool && !IsReadOnlyStructOfByte;
     public bool IsReadOnlyStructOfByte => ManagedType.IsReadOnlySpanOfByte();
-
+    
     public bool IsNullableValueType([NotNullWhen(true)] out Type? valueType)
     {
         return ManagedType.IsNullableValueType(out valueType);
+    }
+
+    public Nullability Nullability
+    {
+        get {
+            if (RequiresNativePointer &&
+                !IsStruct) {
+                return Nullability.Nullable;
+            }
+
+            if (IsStruct) {
+                return Nullability.NonNullable;
+            }
+
+            return Nullability.NotSpecified;
+        }
     }
 
     private readonly Dictionary<CodeLanguage, string> m_typeNames;
@@ -73,39 +124,11 @@ public class TypeDescriptor
 
     public string GetTypeName(
         CodeLanguage language,
-        bool includeModifiers
-    )
-    {
-        return GetTypeName(
-            language,
-            includeModifiers,
-            true
-        );
-    }
-    
-    public string GetTypeName(
-        CodeLanguage language,
         bool includeModifiers,
-        bool isOptional
-    )
-    {
-        return GetTypeName(
-            language,
-            includeModifiers,
-            isOptional,
-            false,
-            false,
-            false
-        );
-    }
-    
-    public string GetTypeName(
-        CodeLanguage language,
-        bool includeModifiers,
-        bool isOptional,
-        bool isOutParameter,
-        bool isByRefParameter,
-        bool isInParameter
+        Nullability nullability = Nullability.Nullable,
+        bool isOutParameter = false,
+        bool isByRefParameter = false,
+        bool isInParameter = false
     )
     {
         string typeName;
@@ -122,7 +145,7 @@ public class TypeDescriptor
             typeName = AddModifiersToTypeName(
                 typeName,
                 language,
-                isOptional,
+                nullability,
                 isOutParameter,
                 isByRefParameter,
                 isInParameter
@@ -135,12 +158,16 @@ public class TypeDescriptor
     private string AddModifiersToTypeName(
         string typeName,
         CodeLanguage language,
-        bool isOptional,
+        Nullability nullability,
         bool isOutParameter,
         bool isByRefParameter,
         bool isInParameter
     )
     {
+        if (nullability == Nullability.NotSpecified) {
+            nullability = Nullability;
+        }
+        
         if (!RequiresNativePointer &&
             !isOutParameter &&
             !isByRefParameter &&
@@ -185,7 +212,7 @@ public class TypeDescriptor
                     typeNameWithModifiers = $"{typeName}";
                 }
 
-                if (isOptional) {
+                if (nullability == Nullability.Nullable) {
                     typeNameWithModifiers += "?";
                 }
                 
