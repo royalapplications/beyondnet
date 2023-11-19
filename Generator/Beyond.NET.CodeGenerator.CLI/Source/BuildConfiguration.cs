@@ -11,7 +11,8 @@ public record BuildConfiguration
     string? MacOSDeploymentTarget,
     string? iOSDeploymentTarget,
     
-    bool DisableParallelBuild
+    bool DisableParallelBuild,
+    bool DisableStripDotNETSymbols
 );
 
 internal static class BuildTargets

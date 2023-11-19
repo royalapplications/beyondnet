@@ -17,6 +17,7 @@ public class DotNETNativeBuilder
     public string ProductBundleIdentifier { get; }
     public string TargetAssemblyFilePath { get; }
     public string[] AssemblyReferences { get; }
+    public bool StripSymbols { get; }
     public string GeneratedCSharpFilePath { get; }
     public bool BuildInParallel { get; }
     public SwiftBuilder.BuildResult? SwiftBuildResult { get; }
@@ -37,6 +38,7 @@ public class DotNETNativeBuilder
         string productBundleIdentifier,
         string targetAssemblyFilePath,
         string[] assemblyReferences,
+        bool stripSymbols,
         string generatedCSharpFilePath,
         bool buildInParallel,
         SwiftBuilder.BuildResult? swiftBuildResult
@@ -48,6 +50,7 @@ public class DotNETNativeBuilder
         ProductBundleIdentifier = productBundleIdentifier;
         TargetAssemblyFilePath = targetAssemblyFilePath;
         AssemblyReferences = assemblyReferences;
+        StripSymbols = stripSymbols;
         GeneratedCSharpFilePath = generatedCSharpFilePath;
         BuildInParallel = buildInParallel;
         SwiftBuildResult = swiftBuildResult;
@@ -77,6 +80,7 @@ public class DotNETNativeBuilder
             ProductName,
             TargetAssemblyFilePath,
             AssemblyReferences,
+            StripSymbols,
             appleSettings
         );
         

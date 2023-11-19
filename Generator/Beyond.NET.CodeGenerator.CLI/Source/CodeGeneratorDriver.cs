@@ -71,6 +71,7 @@ internal class CodeGeneratorDriver
             string? buildMacOSDeploymentTarget = null;
             string? buildiOSDeploymentTarget = null;
             bool disableParallelBuild = false;
+            bool disableStripDotNETSymbols = false;
     
             if (buildConfig is not null) {
                 buildEnabled = true;
@@ -147,6 +148,7 @@ internal class CodeGeneratorDriver
                 }
 
                 disableParallelBuild = buildConfig.DisableParallelBuild;
+                disableStripDotNETSymbols = buildConfig.DisableStripDotNETSymbols;
             }
             #endregion Configuration
     
@@ -358,6 +360,7 @@ internal class CodeGeneratorDriver
                     buildProductBundleIdentifier,
                     assemblyPath,
                     assemblyReferences,
+                    !disableStripDotNETSymbols,
                     cSharpUnmanagedOutputPath,
                     !disableParallelBuild,
                     swiftBuildResult

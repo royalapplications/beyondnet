@@ -21,6 +21,7 @@ public class NativeCsProj
     public string TargetAssemblyFilePath { get; }
     public string[] AssemblyReferences { get; }
     public AppleSpecificSettings? AppleSettings { get; }
+    public bool StripSymbols { get; }
     
     private string OutputProductName => ProductName;
 
@@ -29,6 +30,7 @@ public class NativeCsProj
         string productName,
         string targetAssemblyFilePath,
         string[] assemblyReferences,
+        bool stripSymbols,
         AppleSpecificSettings? appleSettings
     )
     {
@@ -36,6 +38,7 @@ public class NativeCsProj
         ProductName = productName;
         TargetAssemblyFilePath = targetAssemblyFilePath;
         AssemblyReferences = assemblyReferences;
+        StripSymbols = stripSymbols;
         AppleSettings = appleSettings;
     }
 
@@ -84,6 +87,7 @@ public class NativeCsProj
             .Replace(TOKEN_NULLABLE, nullable)
             .Replace(TOKEN_TARGET_ASSEMBLY_FILE_PATH, TargetAssemblyFilePath)
             .Replace(TOKEN_ASSEMBLY_REFERENCES, assemblyReferencesXml)
+            .Replace(TOKEN_STRIP_SYMBOLS, StripSymbols ? "true" : "false")
             .Replace(TOKEN_MIX_IN_SWIFT, mixInSwift ? "true" : "false")
             .Replace(TOKEN_MIN_MACOS_VERSION, minMacOSVersion)
             .Replace(TOKEN_MIN_IOS_VERSION, miniOSVersion)
@@ -103,6 +107,7 @@ public class NativeCsProj
     private const string TOKEN_NULLABLE = $"{TOKEN}Nullable{TOKEN}";
     private const string TOKEN_TARGET_ASSEMBLY_FILE_PATH = $"{TOKEN}TargetAssemblyFilePath{TOKEN}";
     private const string TOKEN_ASSEMBLY_REFERENCES = $"{TOKEN}AssemblyReferences{TOKEN}";
+    private const string TOKEN_STRIP_SYMBOLS = $"{TOKEN}StripSymbols{TOKEN}";
     
     private const string TOKEN_MIX_IN_SWIFT = $"{TOKEN}MixInSwift{TOKEN}";
     private const string TOKEN_MIN_MACOS_VERSION = $"{TOKEN}MinMacOSVersion{TOKEN}";
@@ -125,6 +130,8 @@ public class NativeCsProj
     <PublishAot>true</PublishAot>
     <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
     <EnablePreviewFeatures>true</EnablePreviewFeatures>
+    
+    <StripSymbols>{TOKEN_STRIP_SYMBOLS}</StripSymbols>
 
     <!-- TODO: Disabled for now to get faster build times -->
     <Nullable>{TOKEN_NULLABLE}</Nullable>
@@ -227,11 +234,6 @@ public class NativeCsProj
     </When>
   </Choose>
   
-  <!-- Strip Symbols in Release Builds -->
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <StripSymbols>true</StripSymbols>
-  </PropertyGroup>
-
   <!-- Item Excludes -->
   <PropertyGroup>
     <DefaultItemExcludes>$(DefaultItemExcludes);.gitignore;*.sln.DotSettings;</DefaultItemExcludes>
