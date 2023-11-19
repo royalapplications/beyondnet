@@ -1,10 +1,12 @@
+using System.Collections.Concurrent;
+
 namespace Beyond.NET.Core;
 
 public class Which
 {
     private static readonly CLIApp WhichApp = new("which");
 
-    private static Dictionary<string, string> m_cache = new(); 
+    private static ConcurrentDictionary<string, string> m_cache = new(); 
 
     public static string GetAbsoluteCommandPath(string command)
     {
