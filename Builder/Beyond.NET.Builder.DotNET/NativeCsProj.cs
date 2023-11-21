@@ -1,4 +1,5 @@
 using System.Text;
+
 using Beyond.NET.Core;
 
 namespace Beyond.NET.Builder.DotNET;
@@ -7,6 +8,9 @@ public class NativeCsProj
 {
     public record AppleSpecificSettings
     (
+        string iOSSDKPath,
+        string iOSSimulatorSDKPath,
+        
         string MinMacOSVersion,
         string MiniOSVersion,
 
@@ -48,6 +52,9 @@ public class NativeCsProj
         const string nullable = "disable";
         
         const string icudtFileName = "icudt.dat";
+
+        string iOSSDKPath = AppleSettings?.iOSSDKPath ?? string.Empty;
+        string iOSSimulatorSDKPath = AppleSettings?.iOSSimulatorSDKPath ?? string.Empty;
 
         string swiftLibraryFilePathFormat = AppleSettings?.SwiftLibraryFilePathFormat ?? string.Empty;
         string symbolsFilePathFormat = AppleSettings?.SymbolsFilePathFormat ?? string.Empty;
@@ -95,6 +102,8 @@ public class NativeCsProj
             .Replace(TOKEN_SYMBOLS_FILE_PATH, symbolsFilePath)
             .Replace(TOKEN_MODULE_MAP_FILE_PATH, moduleMapFilePath)
             .Replace(TOKEN_ICUDT_FILE_PATH, icudtFileName)
+            .Replace(TOKEN_IOS_SDK_PATH, iOSSDKPath)
+            .Replace(TOKEN_IOS_SIMULATOR_SDK_PATH, iOSSimulatorSDKPath)
           ;
 
         return expandedTemplate;
@@ -116,6 +125,9 @@ public class NativeCsProj
     private const string TOKEN_SYMBOLS_FILE_PATH = $"{TOKEN}SymbolsFilePath{TOKEN}";
     private const string TOKEN_MODULE_MAP_FILE_PATH = $"{TOKEN}ModuleMapFilePath{TOKEN}";
     private const string TOKEN_ICUDT_FILE_PATH = $"{TOKEN}IcudtFilePath{TOKEN}";
+    
+    private const string TOKEN_IOS_SDK_PATH = $"{TOKEN}iOSSDKFilePath{TOKEN}";
+    private const string TOKEN_IOS_SIMULATOR_SDK_PATH = $"{TOKEN}iOSSimulatorSDKFilePath{TOKEN}";
 
     private const string CSPROJ_TEMPLATE = $"""
 <Project Sdk="Microsoft.NET.Sdk">
@@ -213,7 +225,7 @@ public class NativeCsProj
     <When Condition="$(RuntimeIdentifier.Contains('iossimulator'))">
       <ItemGroup>
         <!-- TODO: Temporary workaround for iOS Simulator support -->
-        <LinkerArg Include="-isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk" />
+        <LinkerArg Include="-isysroot {TOKEN_IOS_SIMULATOR_SDK_PATH}" />
 
         <!-- Set min iOS version -->
         <LinkerArg Include="-mios-simulator-version-min=$(iOSMinVersion)" />
@@ -226,7 +238,7 @@ public class NativeCsProj
     <When Condition="$(RuntimeIdentifier.Contains('ios-'))">
       <ItemGroup>
         <!-- TODO: Temporary workaround for iOS support -->
-        <LinkerArg Include="-isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk" />
+        <LinkerArg Include="-isysroot {TOKEN_IOS_SDK_PATH}" />
 
         <!-- Set min iOS version -->
         <LinkerArg Include="-mios-version-min=$(iOSMinVersion)" />

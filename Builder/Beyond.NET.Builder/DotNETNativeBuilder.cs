@@ -1,4 +1,5 @@
 using Beyond.NET.Builder.Apple.Framework;
+using Beyond.NET.Builder.Apple.XCRun;
 using Beyond.NET.Builder.DotNET;
 using Beyond.NET.Core;
 
@@ -63,8 +64,13 @@ public class DotNETNativeBuilder
 
         var swiftBuildResult = SwiftBuildResult;
 
+        string iOSSDKPath = SDK.GetSDKPath(SDK.iOSName);
+        string iOSSimulatorSDKPath = SDK.GetSDKPath(SDK.iOSSimulatorName);
+
         if (swiftBuildResult is not null) {
             appleSettings = new(
+                iOSSDKPath,
+                iOSSimulatorSDKPath,
                 swiftBuildResult.macOSDeploymentTarget,
                 swiftBuildResult.iOSDeploymentTarget,
                 swiftBuildResult.LibraryOutputPathFormat,

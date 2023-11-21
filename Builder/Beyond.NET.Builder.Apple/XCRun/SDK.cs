@@ -3,8 +3,12 @@ namespace Beyond.NET.Builder.Apple.XCRun;
 public static class SDK
 {
     public const string macOSName = "macosx";
+    
     public const string iOSName = "iphoneos";
     public const string iOSSimulatorName = "iphonesimulator";
+    
+    public const string XROSName = "xros";
+    public const string XRSimulatorName = "xrsimulator";
 
     public static string GetSDKPath(string name)
     {

@@ -183,7 +183,7 @@ public class SwiftBuilder
         // string platformIdentifieriOSSimulator = "apple-ios-simulator";
         string platformIdentifieriOSSimulatorDN = DotNET.PlatformIdentifier.iOSSimulator;
 
-        string platformSuffixiOSSimulator = Apple.XCRun.SwiftC.PlatformIdentifier.iOSSimulatorSuffix;
+        string platformSuffixiOSSimulator = Apple.XCRun.SwiftC.PlatformIdentifier.SimulatorSuffix;
 
         string outputPathRoot = Path.Combine(tempDirectoryPath, "bin");
         string outputPathApple = Path.Combine(outputPathRoot, "apple");
