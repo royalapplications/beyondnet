@@ -129,11 +129,11 @@ public class DotNETNativeBuilder
             const string binDirName = "bin";
             const string publishDirName = "publish";
 
-            string? macOSARM64BuildDir = Targets.HasFlag(BuildTargets.MacOSArm64) ? $"{binDirName}/{BUILD_CONFIGURATION}/{TargetFramework}/{RuntimeIdentifier.MacOS_ARM64}/{publishDirName}" : null;
+            string? macOSARM64BuildDir = Targets.HasFlag(BuildTargets.MacOSARM64) ? $"{binDirName}/{BUILD_CONFIGURATION}/{TargetFramework}/{RuntimeIdentifier.MacOS_ARM64}/{publishDirName}" : null;
             string? macOSX64BuildDir = Targets.HasFlag(BuildTargets.MacOSX64) ? $"{binDirName}/{BUILD_CONFIGURATION}/{TargetFramework}/{RuntimeIdentifier.MacOS_X64}/{publishDirName}" : null;
             string? macOSUniversalBuildDir = Targets.HasFlag(BuildTargets.MacOSUniversal) ? $"{binDirName}/{BUILD_CONFIGURATION}/{TargetFramework}/{RuntimeIdentifier.MacOS_UNIVERSAL}/{publishDirName}" : null;
-            string? iOSARM64BuildDir = Targets.HasFlag(BuildTargets.iOSArm64) ? $"{binDirName}/{BUILD_CONFIGURATION}/{TargetFramework}/{RuntimeIdentifier.iOS_ARM64}/{publishDirName}" : null;
-            string? iOSSimulatorARM64BuildDir = Targets.HasFlag(BuildTargets.iOSSimulatorArm64) ? $"{binDirName}/{BUILD_CONFIGURATION}/{TargetFramework}/{RuntimeIdentifier.iOS_SIMULATOR_ARM64}/{publishDirName}" : null;
+            string? iOSARM64BuildDir = Targets.HasFlag(BuildTargets.iOSARM64) ? $"{binDirName}/{BUILD_CONFIGURATION}/{TargetFramework}/{RuntimeIdentifier.iOS_ARM64}/{publishDirName}" : null;
+            string? iOSSimulatorARM64BuildDir = Targets.HasFlag(BuildTargets.iOSSimulatorARM64) ? $"{binDirName}/{BUILD_CONFIGURATION}/{TargetFramework}/{RuntimeIdentifier.iOS_SIMULATOR_ARM64}/{publishDirName}" : null;
             string? iOSSimulatorX64BuildDir = Targets.HasFlag(BuildTargets.iOSSimulatorX64) ? $"{binDirName}/{BUILD_CONFIGURATION}/{TargetFramework}/{RuntimeIdentifier.iOS_SIMULATOR_X64}/{publishDirName}" : null;
             string? iOSSimulatorUniversalBuildDir = Targets.HasFlag(BuildTargets.iOSSimulatorUniversal) ? $"{binDirName}/{BUILD_CONFIGURATION}/{TargetFramework}/{RuntimeIdentifier.iOS_SIMULATOR_UNIVERSAL}/{publishDirName}" : null;
             string appleUniversalBuildDir = $"{binDirName}/{BUILD_CONFIGURATION}/{TargetFramework}/{RuntimeIdentifier.APPLE_UNIVERSAL}/{publishDirName}";
@@ -141,14 +141,14 @@ public class DotNETNativeBuilder
             string iOSARM64TempPath = Directory.CreateTempSubdirectory(tempDirectoryPrefix + "_iOS_ARM64").FullName;
             tempDirPaths.Add(iOSARM64TempPath);
             Logger.LogDebug($"Created temp directory for .NET NativeAOT project at \"{iOSARM64TempPath}\"");
-            string? iOSARM64BuildPath = Targets.HasFlag(BuildTargets.iOSArm64) ? Path.Combine(iOSARM64TempPath, iOSARM64BuildDir!) : null;
-            string? iOSARM64FilePath = Targets.HasFlag(BuildTargets.iOSArm64) ? Path.Combine(iOSARM64BuildPath!, OutputProductFileName) : null;
+            string? iOSARM64BuildPath = Targets.HasFlag(BuildTargets.iOSARM64) ? Path.Combine(iOSARM64TempPath, iOSARM64BuildDir!) : null;
+            string? iOSARM64FilePath = Targets.HasFlag(BuildTargets.iOSARM64) ? Path.Combine(iOSARM64BuildPath!, OutputProductFileName) : null;
 
             string iOSSimulatorARM64TempPath = Directory.CreateTempSubdirectory(tempDirectoryPrefix + "_iOSSimulator_ARM64").FullName;
             tempDirPaths.Add(iOSSimulatorARM64TempPath);
             Logger.LogDebug($"Created temp directory for .NET NativeAOT project at \"{iOSSimulatorARM64TempPath}\"");
-            string? iOSSimulatorARM64BuildPath = Targets.HasFlag(BuildTargets.iOSSimulatorArm64) ? Path.Combine(iOSSimulatorARM64TempPath, iOSSimulatorARM64BuildDir!) : null;
-            string? iOSSimulatorARM64FilePath = Targets.HasFlag(BuildTargets.iOSSimulatorArm64) ? Path.Combine(iOSSimulatorARM64BuildPath!, OutputProductFileName) : null;
+            string? iOSSimulatorARM64BuildPath = Targets.HasFlag(BuildTargets.iOSSimulatorARM64) ? Path.Combine(iOSSimulatorARM64TempPath, iOSSimulatorARM64BuildDir!) : null;
+            string? iOSSimulatorARM64FilePath = Targets.HasFlag(BuildTargets.iOSSimulatorARM64) ? Path.Combine(iOSSimulatorARM64BuildPath!, OutputProductFileName) : null;
 
             string iOSSimulatorX64TempPath = Directory.CreateTempSubdirectory(tempDirectoryPrefix + "_iOSSimulator_X64").FullName;
             tempDirPaths.Add(iOSSimulatorX64TempPath);
@@ -165,8 +165,8 @@ public class DotNETNativeBuilder
             string macOSARM64TempPath = Directory.CreateTempSubdirectory(tempDirectoryPrefix + "_macOS_ARM64").FullName;
             tempDirPaths.Add(macOSARM64TempPath);
             Logger.LogDebug($"Created temp directory for .NET NativeAOT project at \"{macOSARM64TempPath}\"");
-            string? macOSARM64BuildPath = Targets.HasFlag(BuildTargets.MacOSArm64) ? Path.Combine(macOSARM64TempPath, macOSARM64BuildDir!) : null;
-            string? macOSARM64FilePath = Targets.HasFlag(BuildTargets.MacOSArm64) ? Path.Combine(macOSARM64BuildPath!, OutputProductFileName) : null;
+            string? macOSARM64BuildPath = Targets.HasFlag(BuildTargets.MacOSARM64) ? Path.Combine(macOSARM64TempPath, macOSARM64BuildDir!) : null;
+            string? macOSARM64FilePath = Targets.HasFlag(BuildTargets.MacOSARM64) ? Path.Combine(macOSARM64BuildPath!, OutputProductFileName) : null;
 
             string macOSX64TempPath = Directory.CreateTempSubdirectory(tempDirectoryPrefix + "_macOS_X64").FullName;
             tempDirPaths.Add(macOSX64TempPath);
@@ -193,7 +193,7 @@ public class DotNETNativeBuilder
             #region dotnet publish
             #region macOS
             Action? macOSARM64Func = null;
-            if (Targets.HasFlag(BuildTargets.MacOSArm64)) {
+            if (Targets.HasFlag(BuildTargets.MacOSARM64)) {
                 FileSystemUtils.CopyDirectoryContents(
                     tempDirectoryPath,
                     macOSARM64TempPath,
@@ -258,7 +258,7 @@ public class DotNETNativeBuilder
             
             #region iOS
             Action? iOSARM64Func = null;
-            if (Targets.HasFlag(BuildTargets.iOSArm64)) {
+            if (Targets.HasFlag(BuildTargets.iOSARM64)) {
                 iOSARM64Func = () => {
                     FileSystemUtils.CopyDirectoryContents(
                         tempDirectoryPath,
@@ -273,7 +273,7 @@ public class DotNETNativeBuilder
             }
 
             Action? iOSSimulatorARM64Func = null;
-            if (Targets.HasFlag(BuildTargets.iOSSimulatorArm64)) {
+            if (Targets.HasFlag(BuildTargets.iOSSimulatorARM64)) {
                 iOSSimulatorARM64Func = () => {
                     FileSystemUtils.CopyDirectoryContents(
                         tempDirectoryPath,

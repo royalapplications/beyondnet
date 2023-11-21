@@ -152,7 +152,7 @@ public class SwiftBuilder
         
         string? sdkPathiOS;
 
-        if (Configuration.Targets.HasFlag(BuildTargets.iOSArm64)) {
+        if (Configuration.Targets.HasFlag(BuildTargets.iOSARM64)) {
             Logger.LogDebug($"Getting iOS SDK Path");
             sdkPathiOS = Apple.XCRun.SDK.GetSDKPath(Apple.XCRun.SDK.iOSName);
         } else {
@@ -188,7 +188,7 @@ public class SwiftBuilder
         string outputPathRoot = Path.Combine(tempDirectoryPath, "bin");
         string outputPathApple = Path.Combine(outputPathRoot, "apple");
 
-        string? outputPathMacOSARM64 = Configuration.Targets.HasFlag(BuildTargets.MacOSArm64)
+        string? outputPathMacOSARM64 = Configuration.Targets.HasFlag(BuildTargets.MacOSARM64)
             ? Path.Combine(outputPathApple, $"{platformIdentifierMacOSDN}-{targetIdentifierARM64DN}") 
             : null;
         
@@ -196,11 +196,11 @@ public class SwiftBuilder
             ? Path.Combine(outputPathApple, $"{platformIdentifierMacOSDN}-{targetIdentifierX64DN}")
             : null;
 
-        string? outputPathiOSARM64 = Configuration.Targets.HasFlag(BuildTargets.iOSArm64)
+        string? outputPathiOSARM64 = Configuration.Targets.HasFlag(BuildTargets.iOSARM64)
             ? Path.Combine(outputPathApple, $"{platformIdentifieriOSDN}-{targetIdentifierARM64DN}")
             : null;
 
-        string? outputPathiOSSimulatorARM64 = Configuration.Targets.HasFlag(BuildTargets.iOSSimulatorArm64)
+        string? outputPathiOSSimulatorARM64 = Configuration.Targets.HasFlag(BuildTargets.iOSSimulatorARM64)
             ? Path.Combine(outputPathApple, $"{platformIdentifieriOSSimulatorDN}-{targetIdentifierARM64DN}")
             : null;
 
@@ -246,7 +246,7 @@ public class SwiftBuilder
         #region macOS
         Func<PartialCompileResult>? macOSARM64Func;
 
-        if (Configuration.Targets.HasFlag(BuildTargets.MacOSArm64)) {
+        if (Configuration.Targets.HasFlag(BuildTargets.MacOSARM64)) {
             macOSARM64Func = () => compiler.Compile(
                 sdkPathMacOS!,
                 targetIdentifierARM64,
@@ -278,7 +278,7 @@ public class SwiftBuilder
         #region iOS
         Func<PartialCompileResult>? iOSARM64Func;
 
-        if (Configuration.Targets.HasFlag(BuildTargets.iOSArm64)) {
+        if (Configuration.Targets.HasFlag(BuildTargets.iOSARM64)) {
             iOSARM64Func = () => compiler.Compile(
                 sdkPathiOS!,
                 targetIdentifierARM64,
@@ -295,7 +295,7 @@ public class SwiftBuilder
         #region iOS Simulator
         Func<PartialCompileResult>? iOSSimulatorARM64Func;
 
-        if (Configuration.Targets.HasFlag(BuildTargets.iOSSimulatorArm64)) {
+        if (Configuration.Targets.HasFlag(BuildTargets.iOSSimulatorARM64)) {
             iOSSimulatorARM64Func = () => compiler.Compile(
                 sdkPathiOSSimulator!,
                 targetIdentifierARM64,
