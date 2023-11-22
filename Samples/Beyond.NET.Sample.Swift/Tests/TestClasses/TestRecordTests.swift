@@ -12,48 +12,30 @@ final class TestRecordTests: XCTestCase {
         Self.sharedTearDown()
     }
     
-    func testRecords() {
+    func testRecords() throws {
         let expectedString = "Hello 👍"
         
-        guard let aRecord = try? Beyond.NET.Sample.TestRecord(expectedString.dotNETString()) else {
-            XCTFail("Beyond.NET.Sample.TestRecord ctor should not throw and return an instance")
-            
-            return
-        }
+        let aRecord = try Beyond.NET.Sample.TestRecord(expectedString.dotNETString())
         
-        guard let retString = try? aRecord.aString.string() else {
-            XCTFail("Beyond.NET.Sample.TestRecord AString getter should not throw and return a string")
-            
-            return
-        }
-        
+        let retString = try aRecord.aString.string()
         XCTAssertEqual(expectedString, retString)
         
         let emptyStringDN = System.String.empty
         
         var deconstructedStringDN = emptyStringDN
         
-        XCTAssertNoThrow(try aRecord.deconstruct(&deconstructedStringDN))
+        try aRecord.deconstruct(&deconstructedStringDN)
         
         let deconstructedString = deconstructedStringDN.string()
         
         XCTAssertEqual(expectedString, deconstructedString)
     }
     
-    func testReadOnlyRecordStruct() {
+    func testReadOnlyRecordStruct() throws {
         let expectedInt: Int32 = .max
         
-        guard let aRecord = try? Beyond.NET.Sample.TestReadOnlyRecordStruct(expectedInt) else {
-            XCTFail("Beyond.NET.Sample.TestReadOnlyRecordStruct ctor should not throw and return an instance")
-            
-            return
-        }
-        
-        guard let retInt = try? aRecord.anInt else {
-            XCTFail("Beyond.NET.Sample.TestReadOnlyRecordStruct AnInt getter should not throw and return a string")
-            
-            return
-        }
+        let aRecord = try Beyond.NET.Sample.TestReadOnlyRecordStruct(expectedInt)
+        let retInt = try aRecord.anInt
         
         XCTAssertEqual(expectedInt, retInt)
     }

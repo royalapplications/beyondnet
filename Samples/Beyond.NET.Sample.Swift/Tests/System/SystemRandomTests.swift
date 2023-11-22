@@ -12,12 +12,8 @@ final class SystemRandomTests: XCTestCase {
         Self.sharedTearDown()
     }
     
-    func testRandom() {
-        guard let random = try? System_Random() else {
-            XCTFail("System.Random ctor should not throw and return an instance")
-            
-            return
-        }
+    func testRandom() throws {
+        let random = try System_Random()
         
         let minValue: Int32 = 5
         let maxValue: Int32 = 15
@@ -25,14 +21,8 @@ final class SystemRandomTests: XCTestCase {
         for _ in 0..<200 {
             let value: Int32
             
-            do {
-                value = try random.next(minValue,
-                                        maxValue)
-            } catch {
-                XCTFail("System.Random.Next should not throw")
-                
-                return
-            }
+            value = try random.next(minValue,
+                                    maxValue)
             
             XCTAssertGreaterThanOrEqual(value, minValue)
             XCTAssertLessThan(value, maxValue)

@@ -12,30 +12,16 @@ final class SystemConvertTests: XCTestCase {
         Self.sharedTearDown()
     }
     
-    func testBooleanConversion() {
+    func testBooleanConversion() throws {
         let trueStringDN = "true".dotNETString()
         let falseStringDN = "false".dotNETString()
         let nonsenseStringDN = "nonsense".dotNETString()
         
-        do {
-            let result = try System_Convert.toBoolean(trueStringDN)
-            
-            XCTAssertTrue(result)
-        } catch {
-            XCTFail("System.Convert.ToBoolean should not throw")
-            
-            return
-        }
+        let result1 = try System.Convert.toBoolean(trueStringDN)
+        XCTAssertTrue(result1)
         
-        do {
-            let result = try System_Convert.toBoolean(falseStringDN)
-            
-            XCTAssertFalse(result)
-        } catch {
-            XCTFail("System.Convert.ToBoolean should not throw")
-            
-            return
-        }
+        let result2 = try System.Convert.toBoolean(falseStringDN)
+        XCTAssertFalse(result2)
         
         do {
             let _ = try System_Convert.toBoolean(nonsenseStringDN)
@@ -44,54 +30,33 @@ final class SystemConvertTests: XCTestCase {
         } catch { }
     }
     
-    func testIntegerConversion() {
+    func testIntegerConversion() throws {
         let number1: Int32 = 123456789
         let number1StringDN = "\(number1)".dotNETString()
         
         XCTAssertEqual(number1,
-                       (try? System_Convert.toInt32(number1StringDN)) ?? -1)
+                       try System.Convert.toInt32(number1StringDN))
         
         let number2: Int64 = -123456789
         let number2StringDN = "\(number2)".dotNETString()
         
         XCTAssertEqual(number2,
-                       (try? System_Convert.toInt64(number2StringDN)) ?? -1)
+                       try System.Convert.toInt64(number2StringDN))
         
-        let number3: Int64 = -1
         let number3StringDN = "nonsense".dotNETString()
+        XCTAssertThrowsError(try System.Convert.toInt64(number3StringDN))
         
-        XCTAssertEqual(number3,
-                       (try? System_Convert.toInt64(number3StringDN)) ?? -1)
-        
-        let number4: UInt64 = 0
         let number4StringDN = "nonsense".dotNETString()
-        
-        XCTAssertEqual(number4,
-                       (try? System_Convert.toUInt64(number4StringDN)) ?? 0)
+        XCTAssertThrowsError(try System.Convert.toUInt64(number4StringDN))
     }
     
-    func testBase64Conversion() {
+    func testBase64Conversion() throws {
         let text = "Hello World!"
         let textDN = text.dotNETString()
         
-        guard let utf8Encoding = try? System_Text_Encoding.uTF8 else {
-            XCTFail("System.Text.Encoding.UTF8 getter should not throw and return an instance")
-            
-            return
-        }
-        
-        guard let textBytes = try? utf8Encoding.getBytes(textDN) else {
-            XCTFail("System.Text.Encoding.GetBytes should not throw and return an instance")
-            
-            return
-        }
-        
-        guard let textAsBase64StringDN = try? System_Convert.toBase64String(textBytes) else {
-            XCTFail("System.Convert.ToBase64String should not throw and return an instance of a C String")
-            
-            return
-        }
-        
+        let utf8Encoding = try System_Text_Encoding.uTF8
+        let textBytes = try utf8Encoding.getBytes(textDN)
+        let textAsBase64StringDN = try System_Convert.toBase64String(textBytes)
         let textAsBase64String = textAsBase64StringDN.string()
         
         guard let textAsBase64Data = textAsBase64String.data(using: .utf8) else {
@@ -114,18 +79,8 @@ final class SystemConvertTests: XCTestCase {
         
         XCTAssertEqual(text, decodedText)
         
-        guard let textBytesRet = try? System_Convert.fromBase64String(textAsBase64StringDN) else {
-            XCTFail("System.Convert.FromBase64String should not throw and return an instance")
-            
-            return
-        }
-        
-        guard let textRet = (try? utf8Encoding.getString(textBytesRet))?.string() else {
-            XCTFail("System.Text.Encoding.GetString should not throw and return an instance of a C String")
-            
-            return
-        }
-        
+        let textBytesRet = try System_Convert.fromBase64String(textAsBase64StringDN)
+        let textRet = try utf8Encoding.getString(textBytesRet).string()
         XCTAssertEqual(text, textRet)
     }
 }

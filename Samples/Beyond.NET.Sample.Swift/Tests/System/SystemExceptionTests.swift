@@ -12,20 +12,11 @@ final class SystemExceptionTests: XCTestCase {
         Self.sharedTearDown()
     }
     
-    func testSystemException() {
+    func testSystemException() throws {
         let exceptionMessage = "I'm a nice exception"
         
-        guard let createdException = try? System_Exception(exceptionMessage.dotNETString()) else {
-            XCTFail("System.Exception ctor should not throw and return an instance")
-            
-            return
-        }
-        
-        guard let retrievedExceptionMessage = (try? createdException.message)?.string() else {
-            XCTFail("System.Exception.Message getter should not throw and return an instance of a C string")
-            
-            return
-        }
+        let createdException = try System_Exception(exceptionMessage.dotNETString())
+        let retrievedExceptionMessage = try createdException.message.string()
         
         XCTAssertEqual(exceptionMessage, retrievedExceptionMessage)
     }

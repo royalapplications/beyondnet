@@ -12,7 +12,7 @@ final class SystemIOPathTests: XCTestCase {
         Self.sharedTearDown()
     }
     
-    func testPath() {
+    func testPath() throws {
         let dirPath = "/some/path"
         let dirPathDN = dirPath.dotNETString()
         
@@ -25,12 +25,8 @@ final class SystemIOPathTests: XCTestCase {
         let expectedFileExtension = ".\((expectedFilePath as NSString).pathExtension)"
         let expectedFileNameWithoutExtension = (fileName as NSString).deletingPathExtension
         
-        guard let filePathDN = try? System_IO_Path.combine(dirPathDN,
-                                                           fileNameDN) else {
-            XCTFail("System.IO.Path.Combine should not throw and return an instance")
-            
-            return
-        }
+        let filePathDN = try System_IO_Path.combine(dirPathDN,
+                                                    fileNameDN)
         
         let filePath = filePathDN.string()
         XCTAssertEqual(expectedFilePath, filePath)

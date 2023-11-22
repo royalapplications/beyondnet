@@ -12,23 +12,14 @@ final class TestClassesTests: XCTestCase {
         Self.sharedTearDown()
     }
     
-    func testTestClass() {
-        guard let testClass = try? Beyond_NET_Sample_TestClass() else {
-            XCTFail("TestClass ctor should not throw")
-            
-            return
-        }
-        
-        guard let testClassType = try? testClass.getType() else {
-            XCTFail("TestClass.GetType should not throw and return an instance")
-            
-            return
-        }
+    func testTestClass() throws {
+        let testClass = try Beyond_NET_Sample_TestClass()
+        let testClassType = try testClass.getType()
         
         let systemObjectTypeName = "System.Object"
         let systemObjectTypeNameDN = systemObjectTypeName.dotNETString()
         
-        guard let systemObjectType = try? System_Type.getType(systemObjectTypeNameDN,
+        guard let systemObjectType = try System_Type.getType(systemObjectTypeNameDN,
                                                               true,
                                                               false) else {
             XCTFail("System.Type.GetType should not throw and return an instance")
@@ -36,33 +27,23 @@ final class TestClassesTests: XCTestCase {
             return
         }
         
-        guard let retrievedSystemObjectTypeName = try? systemObjectType.toString().string() else {
-            XCTFail("System.Type.ToString should not throw and return an instance")
-            
-            return
-        }
-        
+        let retrievedSystemObjectTypeName = try systemObjectType.toString().string()
         XCTAssertEqual(systemObjectTypeName, retrievedSystemObjectTypeName)
         
-        let isTestClassAssignableToSystemObject = (try? testClassType.isAssignableTo(systemObjectType)) ?? false
+        let isTestClassAssignableToSystemObject = try testClassType.isAssignableTo(systemObjectType)
         XCTAssertTrue(isTestClassAssignableToSystemObject)
         
-        let isSystemObjectAssignableToTestClass = (try? systemObjectType.isAssignableTo(testClassType)) ?? true
+        let isSystemObjectAssignableToTestClass = try systemObjectType.isAssignableTo(testClassType)
         XCTAssertFalse(isSystemObjectAssignableToTestClass)
         
-        XCTAssertNoThrow(try testClass.sayHello())
+        try testClass.sayHello()
         
         let john = "John"
         let johnDN = john.dotNETString()
         
-        XCTAssertNoThrow(try testClass.sayHello(johnDN))
+        try testClass.sayHello(johnDN)
         
-        guard let hello = try? testClass.getHello().string() else {
-            XCTFail("TestClass.GetHello should not throw and return an instance")
-            
-            return
-        }
-        
+        let hello = try testClass.getHello().string()
         XCTAssertEqual("Hello", hello)
         
         let number1: Int32 = 85
@@ -70,69 +51,44 @@ final class TestClassesTests: XCTestCase {
         
         let expectedResult = number1 + number2
         
-        let result = (try? testClass.add(number1,
-                                         number2)) ?? -999
-        
+        let result = try testClass.add(number1, number2)
         XCTAssertEqual(expectedResult, result)
     }
     
-    func testEnum() {
+    func testEnum() throws {
         let enumValue = Beyond_NET_Sample_TestEnum.secondCase
         
-        guard let enumName = try? Beyond_NET_Sample_TestClass.getTestEnumName(enumValue).string() else {
-            XCTFail("TestClass.GetTestEnumName should not throw and return an instance")
-            
-            return
-        }
-        
+        let enumName = try Beyond_NET_Sample_TestClass.getTestEnumName(enumValue).string()
         XCTAssertEqual("SecondCase", enumName)
     }
     
-    func testInt32ByRef() {
-        guard let testClass = try? Beyond_NET_Sample_TestClass() else {
-            XCTFail("TestClass ctor should not throw and return an instance")
-            
-            return
-        }
+    func testInt32ByRef() throws {
+        let testClass = try Beyond_NET_Sample_TestClass()
         
         let originalValue: Int32 = 5
         var valueToModify: Int32 = originalValue
         let targetValue: Int32 = 10
         
-        do {
-            let originalValueRet = try testClass.modifyByRefValueAndReturnOriginalValue(&valueToModify,
-                                                                                        targetValue)
-            
-            XCTAssertEqual(originalValue, originalValueRet)
-            XCTAssertEqual(targetValue, valueToModify)
-        } catch {
-            XCTFail("TestClass.ModifyByRefValueAndReturnOriginalValue should not throw")
-            
-            return
-        }
+        let originalValueRet = try testClass.modifyByRefValueAndReturnOriginalValue(&valueToModify,
+                                                                                    targetValue)
+        
+        XCTAssertEqual(originalValue, originalValueRet)
+        XCTAssertEqual(targetValue, valueToModify)
     }
     
-    func testEnumByRef() {
-        guard let testClass = try? Beyond_NET_Sample_TestClass() else {
-            XCTFail("TestClass ctor should not throw and return an instance")
-            
-            return
-        }
+    func testEnumByRef() throws {
+        let testClass = try Beyond_NET_Sample_TestClass()
         
         let originalValue = Beyond_NET_Sample_TestEnum.firstCase
         var valueToModify = originalValue
         let expectedValue = Beyond_NET_Sample_TestEnum.secondCase
         
-        XCTAssertNoThrow(try testClass.modifyByRefEnum(&valueToModify))
+        try testClass.modifyByRefEnum(&valueToModify)
         XCTAssertEqual(expectedValue, valueToModify)
     }
 	
-	func testDelegateReturningChar() {
-		guard let testClass = try? Beyond_NET_Sample_TestClass() else {
-			XCTFail("TestClass ctor should not throw and return an instance")
-			
-			return
-		}
+	func testDelegateReturningChar() throws {
+		let testClass = try Beyond_NET_Sample_TestClass()
 		
 		let value = DNChar(cValue: 5)
 		
@@ -140,36 +96,22 @@ final class TestClassesTests: XCTestCase {
 			value
 		}
 		
-		guard let retVal = try? testClass.getChar(charReturnerDelegate) else {
-			XCTFail("TestClass.GetChar should not throw and return a char")
-			
-			return
-		}
-		
+		let retVal = try testClass.getChar(charReturnerDelegate)
 		XCTAssertEqual(value, retVal)
 	}
     
-    func testBookByRef() {
-        guard let testClass = try? Beyond_NET_Sample_TestClass() else {
-            XCTFail("TestClass ctor should not throw and return an instance")
-            
-            return
-        }
+    func testBookByRef() throws {
+        let testClass = try Beyond_NET_Sample_TestClass()
         
         let originalBook = Beyond_NET_Sample_Book.donQuixote
         let targetBook = Beyond_NET_Sample_Book.theLordOfTheRings
         
         var bookToModify = originalBook
+        var originalBookRet = try Beyond_NET_Sample_Book()
         
-        guard var originalBookRet = try? Beyond_NET_Sample_Book() else {
-            XCTFail()
-            
-            return
-        }
-        
-        XCTAssertNoThrow(try testClass.modifyByRefBookAndReturnOriginalBookAsOutParameter(&bookToModify,
-                                                                                          targetBook,
-                                                                                          &originalBookRet))
+        try testClass.modifyByRefBookAndReturnOriginalBookAsOutParameter(&bookToModify,
+                                                                         targetBook,
+                                                                         &originalBookRet)
         
         XCTAssertTrue(originalBook == originalBookRet)
         XCTAssertTrue(targetBook == bookToModify)

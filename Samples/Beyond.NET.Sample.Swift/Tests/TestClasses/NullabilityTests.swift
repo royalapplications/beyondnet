@@ -30,9 +30,8 @@ final class NullabilityTests: XCTestCase {
         XCTAssertEqual(try test.methodWithNullableStringReturnValue(), nilString)
     }
     
-    func testConstructor() {
-        let pleaseThrow = true
-        
-        XCTAssertThrowsError(try Beyond.NET.Sample.NullabilityTests(pleaseThrow))
+    func testConstructor() throws {
+        let _ = try Beyond.NET.Sample.NullabilityTests(false) // Should not throw
+        XCTAssertThrowsError(try Beyond.NET.Sample.NullabilityTests(true)) // Should throw
     }
 }

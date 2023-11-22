@@ -12,32 +12,18 @@ final class AsyncTestTests: XCTestCase {
         Self.sharedTearDown()
     }
     
-    func testAddAsync() {
+    func testAddAsync() throws {
         let number1: Int32 = 5
         let number2: Int32 = 10
         let expectedResult = number1 + number2
         
-        guard let asyncTests = try? Beyond.NET.Sample.AsyncTests() else {
-            XCTFail("Beyond.NET.Sample.AsyncTests ctor should not throw and return an instance")
-            
-            return
-        }
+        let asyncTests = try Beyond.NET.Sample.AsyncTests()
         
-        guard let task = try? asyncTests.addAsync(number1, number2) else {
-            XCTFail("Beyond.NET.Sample.AsyncTests.AddAsync should not throw and return an instance of a task")
-            
-            return
-        }
+        let task = try asyncTests.addAsync(number1, number2)
         
-        do {
-            try task.wait()
-        } catch {
-            XCTFail("System.Threading.Tasks.Task.Wait should not throw")
-            
-            return
-        }
+        try task.wait()
         
-        guard let result = try? task.result(TResult: System.Int32.typeOf),
+        guard let result = try task.result(TResult: System.Int32.typeOf),
               let unboxedResult = try? result.castToInt32() else {
             XCTFail("System.Threading.Tasks.Task.Wait should not throw and return an instance")
             
@@ -47,7 +33,7 @@ final class AsyncTestTests: XCTestCase {
         XCTAssertEqual(unboxedResult, expectedResult)
     }
     
-    func testTransformNumbersAsync() {
+    func testTransformNumbersAsync() throws {
         let number1: Int32 = 5
         let number2: Int32 = 10
         
@@ -59,29 +45,17 @@ final class AsyncTestTests: XCTestCase {
         let expectedResult = multiplierFunc(inputNumber1: number1,
                                             inputNumber2: number2)
         
-        guard let asyncTests = try? Beyond.NET.Sample.AsyncTests() else {
-            XCTFail("Beyond.NET.Sample.AsyncTests ctor should not throw and return an instance")
-            
-            return
-        }
+        let asyncTests = try Beyond.NET.Sample.AsyncTests()
         
         let transformerDelegate = Beyond.NET.Sample.AsyncTests_TransformerDelegate(multiplierFunc)
         
-        guard let task = try? asyncTests.transformNumbersAsync(number1, number2, transformerDelegate) else {
-            XCTFail("Beyond.NET.Sample.AsyncTests.TransformNumbersAsync should not throw and return an instance of a task")
-            
-            return
-        }
+        let task = try asyncTests.transformNumbersAsync(number1,
+                                                        number2,
+                                                        transformerDelegate)
         
-        do {
-            try task.wait()
-        } catch {
-            XCTFail("System.Threading.Tasks.Task.Wait should not throw")
-            
-            return
-        }
+        try task.wait()
         
-        guard let result = try? task.result(TResult: System.Int32.typeOf),
+        guard let result = try task.result(TResult: System.Int32.typeOf),
               let unboxedResult = try? result.castToInt32() else {
             XCTFail("System.Threading.Tasks.Task.Wait should not throw and return an instance")
             

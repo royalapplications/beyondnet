@@ -12,19 +12,14 @@ final class SystemActionTests: XCTestCase {
 		Self.sharedTearDown()
 	}
 	
-	func testSystemActionType() {
+	func testSystemActionType() throws {
 		let systemActionType = System_Action.typeOf
 		
-		guard let systemActionFullTypeName = try? systemActionType.fullName?.string() else {
-			XCTFail("System.Type.FullName getter should not throw and return an instance")
-			
-			return
-		}
-		
+		let systemActionFullTypeName = try systemActionType.fullName?.string()
 		XCTAssertEqual("System.Action", systemActionFullTypeName)
 	}
 	
-	func testSystemAction() {
+	func testSystemAction() throws {
 		var numberOfTimesCalled = 0
 		
 		let closure: System_Action.ClosureType = {
@@ -35,12 +30,12 @@ final class SystemActionTests: XCTestCase {
 		
 		XCTAssertEqual(0, numberOfTimesCalled)
 		
-		XCTAssertNoThrow(try action.invoke())
+		try action.invoke()
 		XCTAssertEqual(1, numberOfTimesCalled)
 		
-		XCTAssertNoThrow(try action.invoke())
-		XCTAssertNoThrow(try action.invoke())
-		XCTAssertNoThrow(try action.invoke())
+		try action.invoke()
+		try action.invoke()
+		try action.invoke()
 		XCTAssertEqual(4, numberOfTimesCalled)
 	}
 }

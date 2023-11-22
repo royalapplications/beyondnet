@@ -12,7 +12,7 @@ final class SystemTypeTests: XCTestCase {
         Self.sharedTearDown()
     }
     
-    func testSystemType() {
+    func testSystemType() throws {
         let systemObjectTypeName = System_Object.fullTypeName
         let systemObjectType = System_Object.typeOf
         

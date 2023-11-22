@@ -12,17 +12,13 @@ final class StructTestTests: XCTestCase {
 		Self.sharedTearDown()
 	}
 	
-	func testStructTest() {
+	func testStructTest() throws {
 		let nameOrig = "Joe"
 		let nameNew = "John"
 		
-		guard let structTest = try? Beyond_NET_Sample_StructTest(nameOrig.dotNETString()) else {
-			XCTFail("StructTest ctor should not throw and return an instance")
-			
-			return
-		}
+		let structTest = try Beyond_NET_Sample_StructTest(nameOrig.dotNETString())
 		
-		guard let nameOrigRet = try? structTest.name?.string() else {
+		guard let nameOrigRet = try structTest.name?.string() else {
 			XCTFail("StructTest.Name getter should not throw and return an instance")
 			
 			return
@@ -30,9 +26,9 @@ final class StructTestTests: XCTestCase {
 		
 		XCTAssertEqual(nameOrig, nameOrigRet)
 		
-		XCTAssertNoThrow(try structTest.name_set(nameNew.dotNETString()))
+		try structTest.name_set(nameNew.dotNETString())
 		
-		guard let nameNewRet = try? structTest.name?.string() else {
+		guard let nameNewRet = try structTest.name?.string() else {
 			XCTFail("StructTest.Name getter should not throw and return an instance")
 			
 			return
@@ -41,111 +37,81 @@ final class StructTestTests: XCTestCase {
 		XCTAssertEqual(nameNew, nameNewRet)
 	}
     
-    func testNullableValueTypes() {
-        do {
-            let nullRetVal = try Beyond_NET_Sample_StructTest.nullInstanceProperty
+    func testNullableValueTypes() throws {
+        let nullRetVal = try Beyond_NET_Sample_StructTest.nullInstanceProperty
+        XCTAssertNil(nullRetVal)
+        
+        let structRetVal = try Beyond_NET_Sample_StructTest.nonNullInstanceProperty
+        // TODO: Why is this nullable here
+        XCTAssertEqual(try structRetVal?.name?.string(), "Test")
+        
+        let newName = "NotTest"
+        try structRetVal?.name_set(newName.dotNETString())
+        XCTAssertEqual(try structRetVal?.name?.string(), newName)
+        
+        let nullRetVal2 = try Beyond_NET_Sample_StructTest.getNullableStructReturnValue(true)
+        XCTAssertNil(nullRetVal2)
+        
+        let structRetVal2 = try Beyond_NET_Sample_StructTest.getNullableStructReturnValue(false)
+        // TODO: Why is this nullable here
+        XCTAssertEqual(try structRetVal2?.name?.string(), "Test")
+        
+        let newName2 = "NotTest"
+        try structRetVal2?.name_set(newName2.dotNETString())
+        XCTAssertEqual(try structRetVal2?.name?.string(), newName2)
+        
+        var nullOutRetVal: Beyond_NET_Sample_StructTest?
+        
+        try Beyond_NET_Sample_StructTest.getNullableStructReturnValueInOutParameter(true,
+                                                                                    &nullOutRetVal)
+        
+        XCTAssertNil(nullOutRetVal)
+        
+        
+        
+        var structRetVal3: Beyond_NET_Sample_StructTest?
+        
+        try Beyond_NET_Sample_StructTest.getNullableStructReturnValueInOutParameter(false,
+                                                                                    &structRetVal3)
+        
+        guard let structRetVal3 else {
+            XCTFail("StructTest.GetNullableStructReturnValueInOutParameter should not be nil")
             
-            XCTAssertNil(nullRetVal)
-        } catch {
-            XCTFail("StructTest.NullInstanceProperty should not throw")
+            return
         }
         
-        do {
-            let structRetVal = try Beyond_NET_Sample_StructTest.nonNullInstanceProperty
+        XCTAssertEqual(try structRetVal3.name?.string(), "Test")
+        
+        let newName3 = "NotTest"
+        try structRetVal3.name_set(newName3.dotNETString())
+        XCTAssertEqual(try? structRetVal3.name?.string(), newName3)
+        
+        
+        var nullRef: Beyond_NET_Sample_StructTest?
+        
+        let ret = try Beyond_NET_Sample_StructTest.getNullableStructReturnValueOfRefParameter(&nullRef)
+        
+        XCTAssertNil(ret)
+        XCTAssertTrue(nullRef == ret)
+        
+        
+        let origName = "test"
+        var structRef: Beyond_NET_Sample_StructTest? = try Beyond_NET_Sample_StructTest(origName.dotNETString())
+        
+        let ret2 = try Beyond_NET_Sample_StructTest.getNullableStructReturnValueOfRefParameter(&structRef)
+        
+        guard let ret2 else {
+            XCTFail("StructTest.GetNullableStructReturnValueOfRefParameter should not be nil")
             
-            XCTAssertEqual(try? structRetVal?.name?.string(), "Test")
-            
-            let newName = "NotTest"
-            try structRetVal?.name_set(newName.dotNETString())
-            XCTAssertEqual(try? structRetVal?.name?.string(), newName)
-        } catch {
-            XCTFail("StructTest.NonNullInstanceProperty should not throw")
+            return
         }
         
-        do {
-            let nullRetVal = try Beyond_NET_Sample_StructTest.getNullableStructReturnValue(true)
-            
-            XCTAssertNil(nullRetVal)
-        } catch {
-            XCTFail("StructTest.GetNullableStructReturnValue should not throw")
-        }
+        XCTAssertTrue(structRef == ret2)
         
-        do {
-            let structRetVal = try Beyond_NET_Sample_StructTest.getNullableStructReturnValue(false)
-            
-            XCTAssertEqual(try? structRetVal?.name?.string(), "Test")
-            
-            let newName = "NotTest"
-            try structRetVal?.name_set(newName.dotNETString())
-            XCTAssertEqual(try? structRetVal?.name?.string(), newName)
-        } catch {
-            XCTFail("StructTest.GetNullableStructReturnValue should not throw")
-        }
+        XCTAssertEqual(try ret2.name?.string(), origName)
         
-        do {
-            var nullOutRetVal: Beyond_NET_Sample_StructTest?
-            
-            try Beyond_NET_Sample_StructTest.getNullableStructReturnValueInOutParameter(true,
-                                                                                        &nullOutRetVal)
-            
-            XCTAssertNil(nullOutRetVal)
-        } catch {
-            XCTFail("StructTest.GetNullableStructReturnValueInOutParameter should not throw")
-        }
-        
-        do {
-            var structRetVal: Beyond_NET_Sample_StructTest?
-            
-            try Beyond_NET_Sample_StructTest.getNullableStructReturnValueInOutParameter(false,
-                                                                                        &structRetVal)
-            
-            guard let structRetVal else {
-                XCTFail("StructTest.GetNullableStructReturnValueInOutParameter should not be nil")
-                
-                return
-            }
-            
-            XCTAssertEqual(try? structRetVal.name?.string(), "Test")
-            
-            let newName = "NotTest"
-            try structRetVal.name_set(newName.dotNETString())
-            XCTAssertEqual(try? structRetVal.name?.string(), newName)
-        } catch {
-            XCTFail("StructTest.GetNullableStructReturnValueInOutParameter should not throw")
-        }
-        
-        do {
-            var nullRef: Beyond_NET_Sample_StructTest?
-            
-            let ret = try Beyond_NET_Sample_StructTest.getNullableStructReturnValueOfRefParameter(&nullRef)
-            
-            XCTAssertNil(ret)
-            XCTAssertTrue(nullRef == ret)
-        } catch {
-            XCTFail("StructTest.GetNullableStructReturnValueOfRefParameter should not throw")
-        }
-        
-        do {
-            let origName = "test"
-            var structRef: Beyond_NET_Sample_StructTest? = try Beyond_NET_Sample_StructTest(origName.dotNETString())
-            
-            let ret = try Beyond_NET_Sample_StructTest.getNullableStructReturnValueOfRefParameter(&structRef)
-            
-            guard let ret else {
-                XCTFail("StructTest.GetNullableStructReturnValueOfRefParameter should not be nil")
-                
-                return
-            }
-            
-            XCTAssertTrue(structRef == ret)
-            
-            XCTAssertEqual(try? ret.name?.string(), origName)
-            
-            let newName = "NotTest"
-            try ret.name_set(newName.dotNETString())
-            XCTAssertEqual(try? ret.name?.string(), newName)
-        } catch {
-            XCTFail("StructTest.GetNullableStructReturnValueOfRefParameter should not throw")
-        }
+        let newName4 = "NotTest"
+        try ret2.name_set(newName4.dotNETString())
+        XCTAssertEqual(try ret2.name?.string(), newName4)
     }
 }

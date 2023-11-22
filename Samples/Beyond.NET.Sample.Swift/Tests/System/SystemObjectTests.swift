@@ -12,20 +12,11 @@ final class SystemObjectTests: XCTestCase {
         Self.sharedTearDown()
     }
     
-    func testSystemObject() {
+    func testSystemObject() throws {
         let systemObjectType = System.Object.typeOf
         
-        guard let object1 = try? System.Object() else {
-            XCTFail("System.Object ctor should not throw and return an instance")
-            
-            return
-        }
-        
-        guard let object1Type = try? object1.getType() else {
-            XCTFail("System.Object.GetType should not throw and return an instance")
-            
-            return
-        }
+        let object1 = try System.Object()
+        let object1Type = try object1.getType()
         
         guard systemObjectType == object1Type else {
             XCTFail("System.Object.Equals should not throw and return true")
@@ -33,11 +24,7 @@ final class SystemObjectTests: XCTestCase {
             return
         }
         
-        guard let object2 = try? System.Object() else {
-            XCTFail("System.Object ctor should not throw and return an instance")
-            
-            return
-        }
+        let object2 = try System.Object()
         
         guard object1 != object2 else {
             XCTFail("System.Object.Equals should not throw and return false")

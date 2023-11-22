@@ -12,46 +12,26 @@ final class AddressTests: XCTestCase {
 		Self.sharedTearDown()
 	}
 	
-	func testAddress() {
+	func testAddress() throws {
 		let street = "Schwedenplatz"
 		let streetDN = street.dotNETString()
 		
 		let city = "Vienna"
 		let cityDN = city.dotNETString()
 		
-		guard let address = try? Beyond_NET_Sample_Address(streetDN,
-																			cityDN) else {
-			XCTFail("Address is nil but should not")
-			
-			return
-		}
+        let address = try Beyond_NET_Sample_Address(streetDN,
+                                                    cityDN)
 		
-		guard let retrievedStreet = try? address.street.string() else {
-			XCTFail("Address.Street getter should not throw and return an instance")
-			
-			return
-		}
-		
+		let retrievedStreet = try address.street.string()
 		XCTAssertEqual(street, retrievedStreet)
 		
-		guard let addressType = try? address.getType() else {
-			XCTFail("System.Object.GetType should not throw and return an instance")
-			
-			return
-		}
-		
+		let addressType = try address.getType()
 		let expectedAddressTypeFullName = "Beyond.NET.Sample.Address"
-		
-		guard let actualAddressFullTypeName = try? addressType.fullName?.string() else {
-			XCTFail("System.Type.FullName getter should not throw and return an instance")
-			
-			return
-		}
-		
+		let actualAddressFullTypeName = try addressType.fullName?.string()
 		XCTAssertEqual(expectedAddressTypeFullName, actualAddressFullTypeName)
 	}
 	
-	func testAddressMover() {
+	func testAddressMover() throws {
 		let originalStreet = "Schwedenplatz"
 		let originalStreetDN = originalStreet.dotNETString()
 		
@@ -64,12 +44,8 @@ final class AddressTests: XCTestCase {
 		let newCity = "Wien"
 		let newCityDN = newCity.dotNETString()
 
-		guard let originalAddress = try? Beyond_NET_Sample_Address(originalStreetDN,
-																					originalCityDN) else {
-			XCTFail("Address is nil but should not")
-
-			return
-		}
+        let originalAddress = try Beyond_NET_Sample_Address(originalStreetDN,
+                                                            originalCityDN)
 
 		let moverFunc: Beyond_NET_Sample_MoveDelegate.ClosureType = { newStreetInnerDN, newCityInnerDN in
 			guard let newAddress = try? Beyond_NET_Sample_Address(newStreetInnerDN,
@@ -82,28 +58,14 @@ final class AddressTests: XCTestCase {
 			return newAddress
 		}
 
-        guard let newAddress = try? originalAddress.move(.init(moverFunc),
-														 newStreetDN,
-														 newCityDN) else {
-			XCTFail("Address.Move should not throw and return an instance")
-
-			return
-		}
+        let newAddress = try originalAddress.move(.init(moverFunc),
+                                                  newStreetDN,
+                                                  newCityDN)
 		
-		guard let retrievedNewStreet = try? newAddress.street.string() else {
-			XCTFail("Address.Street getter should not throw and return an instance")
-			
-			return
-		}
-		
+		let retrievedNewStreet = try newAddress.street.string()
 		XCTAssertEqual(newStreet, retrievedNewStreet)
 
-		guard let retrievedNewCity = try? newAddress.city.string() else {
-			XCTFail("Address.City getter should not throw and return an instance")
-
-			return
-		}
-		
+		let retrievedNewCity = try newAddress.city.string()
 		XCTAssertEqual(newCity, retrievedNewCity)
 	}
 }

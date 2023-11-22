@@ -12,7 +12,7 @@ final class SystemTextStringBuilderTests: XCTestCase {
         Self.sharedTearDown()
     }
     
-    func testStringBuilder() {
+    func testStringBuilder() throws {
         let hello = "Hello"
         let helloDN = hello.dotNETString()
         
@@ -23,29 +23,15 @@ final class SystemTextStringBuilderTests: XCTestCase {
         
         let expectedFinalString = "\(hello)\(lineBreak)\(world)"
         
-        guard let sb = try? System_Text_StringBuilder(helloDN) else {
-            XCTFail("System.Text.StringBuilder ctor should not throw and return an instance")
-            
-            return
-        }
-        
-        guard let helloRet = try? sb.toString().string() else {
-            XCTFail("System.Text.StringBuilder.ToString should not throw and return a string")
-            
-            return
-        }
+        let sb = try System_Text_StringBuilder(helloDN)
+        let helloRet = try sb.toString().string()
         
         XCTAssertEqual(hello, helloRet)
         
         XCTAssertNoThrow(try sb.appendLine())
         XCTAssertNoThrow(try sb.append(worldDN))
         
-        guard let finalStringRet = try? sb.toString().string() else {
-            XCTFail("System.Text.StringBuilder.ToString should not throw and return a string")
-            
-            return
-        }
-        
+        let finalStringRet = try sb.toString().string()
         XCTAssertEqual(expectedFinalString, finalStringRet)
     }
 }

@@ -12,12 +12,8 @@ final class SystemWeakReferenceTests: XCTestCase {
         Self.sharedTearDown()
     }
     
-    func testWeakReferenceToLongLivedObject() {
-        guard let anObject = try? System.Object() else {
-            XCTFail("System.Object ctor should not throw and return an instance")
-            
-            return
-        }
+    func testWeakReferenceToLongLivedObject() throws {
+        let anObject = try System.Object()
         
         guard let weakRef = weakReferenceToObject(anObject) else {
             XCTFail("System.WeakReference ctor should not throw and return an instance")
@@ -25,10 +21,10 @@ final class SystemWeakReferenceTests: XCTestCase {
             return
         }
         
-        XCTAssertNoThrow(try System.GC.collect())
+        try System.GC.collect()
         
-        let isAlive = (try? weakRef.isAlive) ?? false
-        let target = try? weakRef.target
+        let isAlive = try weakRef.isAlive
+        let target = try weakRef.target
         
         XCTAssertTrue(isAlive)
         
@@ -38,7 +34,7 @@ final class SystemWeakReferenceTests: XCTestCase {
             return
         }
         
-        let isTargetSameAsObject = (try? System.Object.referenceEquals(anObject, target)) ?? false
+        let isTargetSameAsObject = try System.Object.referenceEquals(anObject, target)
         let isUnwrappedTargetSameAsObjectUsingBuiltInComparison = anObject === unwrappedTarget
         let isUnwrappedTargetNotSameAsObjectUsingBuiltInComparison = anObject !== unwrappedTarget
         let isTargetSameAsObjectUsingBuiltInComparison = anObject === target

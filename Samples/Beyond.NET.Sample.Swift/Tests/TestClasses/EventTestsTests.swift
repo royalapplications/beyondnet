@@ -41,12 +41,8 @@ final class EventTestTests: XCTestCase {
         print(lastValuePassedIntoEventHandler)
     } */
     
-    func testEventTest() {
-        guard let eventTest = try? Beyond.NET.Sample.EventTests() else {
-            XCTFail("Beyond.NET.Sample.EventTests ctor should not throw and return an instance")
-            
-            return
-        }
+    func testEventTest() throws {
+        let eventTest = try Beyond.NET.Sample.EventTests()
         
         let expectedNewValue: Int32 = 5
         var newValuesPassedToValueChangedHandler = [Int32]()
@@ -57,23 +53,11 @@ final class EventTestTests: XCTestCase {
         
         eventTest.valueChanged_add(eventHandler)
         
-        do {
-            try eventTest.value_set(expectedNewValue)
-        } catch {
-            XCTFail("Beyond.NET.Sample.EventTests.value setter should not throw")
-            
-            return
-        }
+        try eventTest.value_set(expectedNewValue)
         
         eventTest.valueChanged_remove(eventHandler)
         
-        do {
-            try eventTest.value_set(10)
-        } catch {
-            XCTFail("Beyond.NET.Sample.EventTests.value setter should not throw")
-            
-            return
-        }
+        try eventTest.value_set(10)
         
         XCTAssertEqual(1, newValuesPassedToValueChangedHandler.count)
         XCTAssertEqual(newValuesPassedToValueChangedHandler[0], expectedNewValue)

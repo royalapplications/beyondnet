@@ -12,79 +12,36 @@ final class SystemUriTests: XCTestCase {
 		Self.sharedTearDown()
 	}
 	
-	func testUriCreationOptions() {
-        guard let creationOptions = try? System.UriCreationOptions() else {
-			XCTFail("System.UriCreationOptions ctor should not throw and return an instance")
-			
-			return
-		}
-		
+	func testUriCreationOptions() throws {
+        let creationOptions = try System.UriCreationOptions()
         let type = System.UriCreationOptions.typeOf
-		
-		guard let typeRet = try? creationOptions.getType() else {
-			XCTFail("System.UriCreationOptions.GetType should not throw and return an instance")
-			
-			return
-		}
-		
+		let typeRet = try creationOptions.getType()
 		XCTAssertTrue(type == typeRet)
 		
 		let value = true
 
-		do {
-			try creationOptions.dangerousDisablePathAndQueryCanonicalization_set(value)
-		} catch {
-			XCTFail("System.UriCreationOptions.DangerousDisablePathAndQueryCanonicalization setter should not throw")
-
-			return
-		}
-
-		do {
-			let valueRet = try creationOptions.dangerousDisablePathAndQueryCanonicalization
-
-			XCTAssertEqual(value, valueRet)
-		} catch {
-			XCTFail("System.UriCreationOptions.DangerousDisablePathAndQueryCanonicalization getter should not throw")
-
-			return
-		}
+        try creationOptions.dangerousDisablePathAndQueryCanonicalization_set(value)
+        let valueRet = try creationOptions.dangerousDisablePathAndQueryCanonicalization
+        XCTAssertEqual(value, valueRet)
 	}
 	
-	func testTryCreateUriWithInParameter() {
+	func testTryCreateUriWithInParameter() throws {
 		let urlString = "https://royalapps.com/"
 		
-        guard var creationOptions = try? System.UriCreationOptions() else {
-            XCTFail("System.UriCreationOptions ctor should not throw and return an instance")
+        var creationOptions = try System.UriCreationOptions()
+		
+		var uriRet: System_Uri?
+        
+        guard try System.Uri.tryCreate(urlString.dotNETString(),
+                                       &creationOptions,
+                                       &uriRet),
+              let uriRet else {
+            XCTFail("System.Uri.TryCreate should not throw, return true and an System.Uri object as out parameter")
             
             return
         }
 		
-		var uriRet: System_Uri?
-		
-		do {
-            let success = try System.Uri.tryCreate(urlString.dotNETString(),
-												   &creationOptions,
-												   &uriRet)
-			
-			XCTAssertTrue(success)
-		} catch {
-			XCTFail("System.Uri.TryCreate should not throw, return true and an System.Uri object as out parameter")
-			
-			return
-		}
-		
-		guard let uriRet else {
-			XCTFail("System.Uri.TryCreate should not throw, return true and an System.Uri object as out parameter")
-			
-			return
-		}
-		
-		guard let absoluteUriString = try? uriRet.absoluteUri.string() else {
-			XCTFail("System.Uri.AbsoluteUri should not throw and return an instance")
-			
-			return
-		}
-		
+		let absoluteUriString = try uriRet.absoluteUri.string()
 		XCTAssertEqual(urlString, absoluteUriString)
         
         guard let url = URL(string: absoluteUriString) else {

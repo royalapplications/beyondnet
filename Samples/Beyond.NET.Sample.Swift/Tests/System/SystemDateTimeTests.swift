@@ -12,7 +12,7 @@ final class SystemDateTimeTests: XCTestCase {
         Self.sharedTearDown()
     }
     
-    func testSystemDateTime() {
+    func testSystemDateTime() throws {
         let nowSwift = Date()
         let calendar = Calendar.current
         
@@ -30,22 +30,18 @@ final class SystemDateTimeTests: XCTestCase {
             return
         }
         
-        guard let nowDotNet = try? System_DateTime(.init(expectedYear),
-                                                   .init(expectedMonth),
-                                                   .init(expectedDay),
-                                                   .init(expectedHour),
-                                                   .init(expectedMinute),
-                                                   .init(expectedSecond)) else {
-            XCTFail("System.DateTime ctor should not throw and return an instance")
-            
-            return
-        }
+        let nowDotNet = try System_DateTime(.init(expectedYear),
+                                            .init(expectedMonth),
+                                            .init(expectedDay),
+                                            .init(expectedHour),
+                                            .init(expectedMinute),
+                                            .init(expectedSecond))
         
-        let year = (try? nowDotNet.year) ?? -1
-        let month = (try? nowDotNet.month) ?? -1
-        let day = (try? nowDotNet.day) ?? -1
-        let hour = (try? nowDotNet.hour) ?? -1
-        let minute = (try? nowDotNet.minute) ?? -1
+        let year = try nowDotNet.year
+        let month = try nowDotNet.month
+        let day = try nowDotNet.day
+        let hour = try nowDotNet.hour
+        let minute = try nowDotNet.minute
         
         XCTAssertEqual(expectedYear, .init(year))
         XCTAssertEqual(expectedMonth, .init(month))
@@ -55,8 +51,7 @@ final class SystemDateTimeTests: XCTestCase {
         XCTAssertEqual(expectedMinute, .init(minute))
     }
     
-    // TODO: Test fails on iOS: We currently don't reference an icudt.dat file because of https://github.com/royalapplications/beyondnet/issues/53
-    func testSystemDateTimeParse() {
+    func testSystemDateTimeParse() throws {
         let nowSwift = Date()
         let calendar = Calendar.current
         
@@ -93,21 +88,19 @@ final class SystemDateTimeTests: XCTestCase {
         
         var nowDotNet = System_DateTime.minValue
         
-        let success = (try? System_DateTime.tryParse(dateStringDN,
-                                                     enUSCultureAsIFormatProvider,
-                                                     &nowDotNet)) ?? false
-        
-        guard success else {
+        guard try System_DateTime.tryParse(dateStringDN,
+                                           enUSCultureAsIFormatProvider,
+                                           &nowDotNet) else {
             XCTFail("System.DateTime.TryParse should return true, an instance as out parameter and not throw")
             
             return
         }
         
-        let year = (try? nowDotNet.year) ?? -1
-        let month = (try? nowDotNet.month) ?? -1
-        let day = (try? nowDotNet.day) ?? -1
-        let hour = (try? nowDotNet.hour) ?? -1
-        let minute = (try? nowDotNet.minute) ?? -1
+        let year = try nowDotNet.year
+        let month = try nowDotNet.month
+        let day = try nowDotNet.day
+        let hour = try nowDotNet.hour
+        let minute = try nowDotNet.minute
         
         XCTAssertEqual(expectedYear, .init(year))
         XCTAssertEqual(expectedMonth, .init(month))
@@ -117,31 +110,19 @@ final class SystemDateTimeTests: XCTestCase {
         XCTAssertEqual(expectedMinute, .init(minute))
     }
     
-    func testDateConversion() {
+    func testDateConversion() throws {
         let referenceSwiftDate = Date(timeIntervalSince1970: 0)
         
-        guard let dateTime = try? System.DateTime(1970, 1, 1, 0, 0, 0, 0, 0, .utc) else {
-            XCTFail("System.DateTime ctor should not throw and return an instance")
-            
-            return
-        }
+        let dateTime = try System.DateTime(1970, 1, 1, 0, 0, 0, 0, 0, .utc)
         
         let dateTimeMinValue = System.DateTime.minValue
         
-        guard let retDate = try? dateTime.swiftDate() else {
-            XCTFail("System.DateTime.swiftDate should not throw and return an instance")
-            
-            return
-        }
+        let retDate = try dateTime.swiftDate()
         
         XCTAssertEqual(retDate, referenceSwiftDate)
         XCTAssertNotEqual(retDate, .init())
         
-        guard let retDateTime = try? retDate.dotNETDateTime() else {
-            XCTFail("Date.dotNETDateTime should not throw and return an instance")
-            
-            return
-        }
+        let retDateTime = try retDate.dotNETDateTime()
         
         XCTAssertTrue(retDateTime == dateTime)
         XCTAssertFalse(retDateTime == dateTimeMinValue)

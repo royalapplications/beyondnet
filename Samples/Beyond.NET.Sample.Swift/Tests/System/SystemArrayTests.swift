@@ -12,151 +12,91 @@ final class SystemArrayTests: XCTestCase {
         Self.sharedTearDown()
     }
     
-    func testSystemArray() {
-        guard let now = try? System_DateTime.now else {
-            XCTFail("System.DateTime.Now should not throw and return an instance")
-            
-            return
-        }
-        
-        guard let dateTimeType = try? now.getType() else {
-            XCTFail("System.Object.GetType should not throw and return an instance")
-            
-            return
-        }
+    func testSystemArray() throws {
+        let now = try System_DateTime.now
+        let dateTimeType = try now.getType()
         
         let arrayLength: Int32 = 1
         
-        guard let arrayOfDateTime = try? System_Array.createInstance(dateTimeType,
-                                                                     arrayLength) else {
-            XCTFail("System.Array.CreateInstance should not fail and return an instance")
-            
-            return
-        }
+        let arrayOfDateTime = try System_Array.createInstance(dateTimeType,
+                                                              arrayLength)
         
         let index: Int32 = 0
         
-        XCTAssertNoThrow(try arrayOfDateTime.setValue(now,
-                                                      index))
+        try arrayOfDateTime.setValue(now, index)
         
-        guard let retrievedNow = try? arrayOfDateTime.getValue(index) else {
-            XCTFail("System.Array.GetValue should not throw and return an instance")
-            
-            return
-        }
+        let retrievedNow = try arrayOfDateTime.getValue(index)
         
         let equals = now == retrievedNow
         XCTAssertTrue(equals)
     }
 	
-	func testSystemArrayConvertedToIList() {
-		guard let now = try? System_DateTime.now else {
-			XCTFail("System.DateTime.Now should not throw and return an instance")
-			
-			return
-		}
-		
-		guard let dateTimeType = try? now.getType() else {
-			XCTFail("System.Object.GetType should not throw and return an instance")
-			
-			return
-		}
+	func testSystemArrayConvertedToIList() throws {
+		let now = try System_DateTime.now
+		let dateTimeType = try now.getType()
 		
 		let arrayLength: Int32 = 1
 		
-		guard let arrayOfDateTime = try? System_Array.createInstance(dateTimeType,
-																	 arrayLength) else {
-			XCTFail("System.Array.CreateInstance should not fail and return an instance")
-			
-			return
-		}
+        let arrayOfDateTime = try System_Array.createInstance(dateTimeType,
+                                                              arrayLength)
 		
-		guard let iList = try? arrayOfDateTime.castTo(System_Collections_IList.self) else {
-			XCTFail("Failed to cast System.Array to System.Collections.IList")
-			
-			return
-		}
+		let iList = try arrayOfDateTime.castTo(System_Collections_IList.self)
 		
 		let index: Int32 = 0
 		
-		XCTAssertNoThrow(try iList.item_set(index,
-											now))
+		try iList.item_set(index, now)
 		
-		guard let retrievedNow = try? iList.item(index) else {
-			XCTFail("System.Collections.IList[] should not throw and return an instance")
-			
-			return
-		}
+		let retrievedNow = try iList.item(index)
 		
 		let equals = now == retrievedNow
 		XCTAssertTrue(equals)
 	}
     
-    func testEmptyArrayWithGenerics() {
+    func testEmptyArrayWithGenerics() throws {
         let systemStringType = System_String.typeOf
 
-        guard let emptyArrayOfString = try? System_Array.empty(T: systemStringType) else {
-            XCTFail("System.Array<System.String>.Empty should not throw and return an instance")
+        let emptyArrayOfString = try System_Array.empty(T: systemStringType)
 
-            return
-        }
-
-        let length = (try? emptyArrayOfString.length) ?? -1
+        let length = try emptyArrayOfString.length
         XCTAssertEqual(0, .init(length))
 
-        guard let arrayType = try? emptyArrayOfString.getType() else {
-            XCTFail("System.Object.GetType should not throw and return an instance")
+        let arrayType = try emptyArrayOfString.getType()
 
-            return
-        }
-
-        let isArray = (try? arrayType.isArray) ?? false
+        let isArray = try arrayType.isArray
         XCTAssertTrue(isArray)
 
-        guard let arrayElementType = try? arrayType.getElementType() else {
-            XCTFail("System.Type.GetElementType should not throw and return an instance")
-
-            return
-        }
+        let arrayElementType = try arrayType.getElementType()
 
         let arrayElementTypeIsSystemString = arrayElementType == systemStringType
         XCTAssertTrue(arrayElementTypeIsSystemString)
     }
     
-    func testFillArrayWithGenerics() {
+    func testFillArrayWithGenerics() throws {
         let systemStringType = System_String.typeOf
 
         let numberOfElements: Int32 = 5
 
-        guard let arrayOfString = try? System_Array.createInstance(systemStringType,
-                                                                   numberOfElements) else {
-            XCTFail("System.Array.CreateInstance should not throw and return an instance")
-
-            return
-        }
+        let arrayOfString = try System_Array.createInstance(systemStringType,
+                                                            numberOfElements)
 
         let string = "Abc"
         let stringDN = string.dotNETString()
         
-        XCTAssertNoThrow(try System_Array.fill(T: systemStringType,
-                                               arrayOfString,
-                                               stringDN))
+        try System_Array.fill(T: systemStringType,
+                              arrayOfString,
+                              stringDN)
 
-        let length = (try? arrayOfString.length) ?? -1
+        let length = try arrayOfString.length
         XCTAssertEqual(numberOfElements, length)
 
         for idx in 0..<length {
-            guard let stringElement = try? arrayOfString.getValue(idx)?.castAs(System_String.self)?.string() else {
-                XCTFail("System.Array.GetValue should not throw and return an instance")
-
-                return
-            }
+            let stringElement = try arrayOfString.getValue(idx)?.castAs(System_String.self)?.string()
 
             XCTAssertEqual(string, stringElement)
         }
     }
     
-    func testReverseArrayWithGenerics() {
+    func testReverseArrayWithGenerics() throws {
         let systemStringType = System_String.typeOf
 
         let strings = [
@@ -166,31 +106,22 @@ final class SystemArrayTests: XCTestCase {
 
         let numberOfElements: Int32 = .init(strings.count)
 
-        guard let arrayOfString = try? System_Array.createInstance(systemStringType,
-                                                                   numberOfElements) else {
-            XCTFail("System.Array.CreateInstance should not throw and return an instance")
-
-            return
-        }
+        let arrayOfString = try System_Array.createInstance(systemStringType,
+                                                            numberOfElements)
 
         for (idx, string) in strings.enumerated() {
             let stringDN = string.dotNETString()
             
-            XCTAssertNoThrow(try arrayOfString.setValue(stringDN,
-                                                        Int32(idx)))
+            try arrayOfString.setValue(stringDN, Int32(idx))
         }
         
-        XCTAssertNoThrow(try System_Array.reverse(T: systemStringType,
-                                                  arrayOfString))
+        try System_Array.reverse(T: systemStringType,
+                                 arrayOfString)
 
         let reversedStrings = [String](strings.reversed())
 
         for idx in 0..<numberOfElements {
-            guard let stringElement = try? arrayOfString.getValue(idx)?.castAs(System_String.self)?.string() else {
-                XCTFail("System.Array.GetValue should not throw and return an instance")
-
-                return
-            }
+            let stringElement = try arrayOfString.getValue(idx)?.castAs(System_String.self)?.string()
 
             let expectedString = reversedStrings[.init(idx)]
 
@@ -198,7 +129,7 @@ final class SystemArrayTests: XCTestCase {
         }
     }
 	
-	func testSystemArrayIterator() {
+	func testSystemArrayIterator() throws {
 		let length: Int32 = 10
 		
 		guard let int32Type = try? System_Type.getType("System.Int32".dotNETString()) else {
@@ -207,12 +138,8 @@ final class SystemArrayTests: XCTestCase {
 			return
 		}
 		
-		guard let arrayOfInt32 = try? System_Array.createInstance(int32Type,
-																  length) else {
-			XCTFail("System.Array.CreateInstance should not throw and return an instance")
-			
-			return
-		}
+		let arrayOfInt32 = try System_Array.createInstance(int32Type,
+                                                           length)
 		
 		var int32s = [Int32]()
 		
@@ -220,7 +147,7 @@ final class SystemArrayTests: XCTestCase {
 			let randomInt32 = Int32.random(in: Int32.min..<Int32.max)
 			let randomInt32Obj = randomInt32.dotNETObject()
 			
-			XCTAssertNoThrow(try arrayOfInt32.setValue(randomInt32Obj, idx))
+			try arrayOfInt32.setValue(randomInt32Obj, idx)
 			
 			int32s.append(randomInt32)
 		}
@@ -242,7 +169,7 @@ final class SystemArrayTests: XCTestCase {
 		}
 	}
 	
-	func testSystemArraySubscript() {
+	func testSystemArraySubscript() throws {
 		let systemStringType = System_String.typeOf
 		
 		let strings = [
@@ -250,15 +177,11 @@ final class SystemArrayTests: XCTestCase {
 			"World"
 		]
 		
-		guard let arrayOfString = try? System_Array.createInstance(systemStringType,
-																   Int32(strings.count)) else {
-			XCTFail("System.Array.CreateInstance should not throw and return an instance")
-			
-			return
-		}
+		let arrayOfString = try System_Array.createInstance(systemStringType,
+                                                            Int32(strings.count))
 		
 		for (idx, string) in strings.enumerated() {
-			XCTAssertNoThrow(try arrayOfString.setValue(string.dotNETString(), Int32(idx)))
+			try arrayOfString.setValue(string.dotNETString(), Int32(idx))
 		}
 		
 		guard let firstObject = arrayOfString[0],

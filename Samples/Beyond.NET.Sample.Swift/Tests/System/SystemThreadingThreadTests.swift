@@ -12,7 +12,7 @@ final class SystemThreadingThreadTests: XCTestCase {
 		Self.sharedTearDown()
 	}
 	
-	func testThread() {
+	func testThread() throws {
 		var numberOfTimesCalled = 0
 		
 		let closure: System_Threading_ThreadStart.ClosureType = {
@@ -22,14 +22,9 @@ final class SystemThreadingThreadTests: XCTestCase {
 		}
 		
         let threadStart = System_Threading_ThreadStart(closure)
+		let thread = try System_Threading_Thread(threadStart)
 		
-		guard let thread = try? System_Threading_Thread(threadStart) else {
-			XCTFail("System.Threading.Thread ctor should not throw and return an instance")
-
-			return
-		}
-		
-		XCTAssertNoThrow(try thread.start())
+		try thread.start()
 
 		while numberOfTimesCalled < 1 {
 			Thread.sleep(forTimeInterval: 0.01)

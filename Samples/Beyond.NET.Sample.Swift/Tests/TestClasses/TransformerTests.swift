@@ -28,7 +28,7 @@ final class TransformerTests: XCTestCase {
         print(outputString)
     } */
     
-    func testStringTransformer() {
+    func testStringTransformer() throws {
         guard let uppercaser = createUppercaser() else {
             XCTFail("Failed to create uppercaser")
             
@@ -40,17 +40,13 @@ final class TransformerTests: XCTestCase {
         
         let expectedOutputString = inputString.uppercased()
         
-        guard let outputString = try? Beyond_NET_Sample_Transformer.transformString(inputStringDN,
-                                                                                    uppercaser).string() else {
-            XCTFail("Transformer.TransformString should not throw and return an instance of a c string")
-            
-            return
-        }
+        let outputString = try Beyond_NET_Sample_Transformer.transformString(inputStringDN,
+                                                                             uppercaser).string()
         
         XCTAssertEqual(expectedOutputString, outputString)
     }
     
-    func testStringGetterAndTransformer() {
+    func testStringGetterAndTransformer() throws {
         guard let fixedStringProvider = createFixedStringProvider() else {
             XCTFail("Failed to create random string provider")
             
@@ -63,17 +59,13 @@ final class TransformerTests: XCTestCase {
             return
         }
         
-        guard let outputString = try? Beyond_NET_Sample_Transformer.getAndTransformString(fixedStringProvider,
-                                                                                          uppercaser).string() else {
-            XCTFail("Transformer.GetAndTransformString should not throw and return an instance")
-            
-            return
-        }
+        let outputString = try Beyond_NET_Sample_Transformer.getAndTransformString(fixedStringProvider,
+                                                                                   uppercaser).string()
         
         XCTAssertEqual("FIXED STRING", outputString)
     }
     
-    func testDoublesTransformer() {
+    func testDoublesTransformer() throws {
         let multiplier: Beyond_NET_Sample_Transformer_DoublesTransformerDelegate.ClosureType = { number1, number2 in
             let result = number1 * number2
             
@@ -87,39 +79,28 @@ final class TransformerTests: XCTestCase {
         
         let expectedResult = inputNumber1 * inputNumber2
         
-        do {
-            let result = try Beyond_NET_Sample_Transformer.transformDoubles(inputNumber1,
-                                                                            inputNumber2,
-                                                                            doublesTransformerDelegate)
-            
-            XCTAssertEqual(expectedResult, result)
-        } catch {
-            XCTFail("Should not throw")
-            
-            return
-        }
+        let result = try Beyond_NET_Sample_Transformer.transformDoubles(inputNumber1,
+                                                                        inputNumber2,
+                                                                        doublesTransformerDelegate)
+        
+        XCTAssertEqual(expectedResult, result)
     }
     
-    func testUppercaserThatActuallyLowercases() {
+    func testUppercaserThatActuallyLowercases() throws {
         guard let lowercaser = createLowercaser() else {
             XCTFail("Failed to create lowercaser")
             
             return
         }
         
-        XCTAssertNoThrow(try Beyond_NET_Sample_Transformer_BuiltInTransformers.uppercaseStringTransformer_set(lowercaser))
+        try Beyond_NET_Sample_Transformer_BuiltInTransformers.uppercaseStringTransformer_set(lowercaser)
         
         let inputString = "Hello"
         let inputStringDN = inputString.dotNETString()
         
         let expectedOutputString = inputString.lowercased()
         
-        guard let outputString = try? Beyond_NET_Sample_Transformer.uppercaseString(inputStringDN).string() else {
-            XCTFail("Transformer.UppercaseString should not throw and return an instance of a c string")
-            
-            return
-        }
-        
+        let outputString = try Beyond_NET_Sample_Transformer.uppercaseString(inputStringDN).string()
         XCTAssertEqual(expectedOutputString, outputString)
     }
 }

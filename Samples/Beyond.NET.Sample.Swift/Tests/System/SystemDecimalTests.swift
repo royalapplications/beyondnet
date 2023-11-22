@@ -12,41 +12,28 @@ final class SystemDecimalTests: XCTestCase {
         Self.sharedTearDown()
     }
     
-    func testDecimalParse() {
+    func testDecimalParse() throws {
         let number = 1234
         let numberString = "\(number)"
         let numberStringDN = numberString.dotNETString()
         
         var decimal = System_Decimal.minValue
         
-        let parseSuccess = (try? System_Decimal.tryParse(numberStringDN,
-                                                         &decimal)) ?? false
-        
-        guard parseSuccess else {
+        guard try System_Decimal.tryParse(numberStringDN,
+                                          &decimal) else {
             XCTFail("System.Decimal.TryParse should not throw, return true and an instance as out parameter")
             
             return
         }
         
-        do {
-            let numberRet = try System_Decimal.toInt64(decimal)
-            XCTAssertEqual(number, .init(numberRet))
-        } catch {
-            XCTFail("System.Decimal.ToInt64 should not throw")
-            
-            return
-        }
+        let numberRet = try System_Decimal.toInt64(decimal)
+        XCTAssertEqual(number, .init(numberRet))
         
-        guard let numberStringRet = try? decimal.toString().string() else {
-            XCTFail("System.Decimal.ToString should not throw and return an instance")
-            
-            return
-        }
-        
+        let numberStringRet = try decimal.toString().string()
         XCTAssertEqual(numberString, numberStringRet)
     }
     
-    func testDecimalCalculations() {
+    func testDecimalCalculations() throws {
         let number1: UInt64 = 123
         let number2: UInt64 = 321
         
@@ -55,93 +42,40 @@ final class SystemDecimalTests: XCTestCase {
         let multiplyResult = number1 * number2
         let divideResult = number2 / number1
         
-        guard let decimal1 = try? System_Decimal(number1) else {
-            XCTFail("System.Decimal ctor should not throw and return an instance")
-            
-            return
-        }
+        let decimal1 = try System_Decimal(number1)
+        let decimal2 = try System_Decimal(number2)
         
-        guard let decimal2 = try? System_Decimal(number2) else {
-            XCTFail("System.Decimal ctor should not throw and return an instance")
-            
-            return
-        }
+        let addResultDecimal = try System_Decimal.add(decimal1,
+                                                      decimal2)
         
-        guard let addResultDecimal = try? System_Decimal.add(decimal1,
-                                                             decimal2) else {
-            XCTFail("System.Decimal.Add should not throw and return an instance")
-            
-            return
-        }
+        let addResultRet = try System_Decimal.toUInt64(addResultDecimal)
+        XCTAssertEqual(addResult, addResultRet)
         
-        do {
-            let addResultRet = try System_Decimal.toUInt64(addResultDecimal)
-            XCTAssertEqual(addResult, addResultRet)
-        } catch {
-            XCTFail("System.Decimal.ToUInt64 should not throw")
-            
-            return
-        }
+        let subtractResultDecimal = try System_Decimal.subtract(decimal2,
+                                                                decimal1)
         
-        guard let subtractResultDecimal = try? System_Decimal.subtract(decimal2,
-                                                                       decimal1) else {
-            XCTFail("System.Decimal.Subtract should not throw and return an instance")
-            
-            return
-        }
+        let subtractResultRet = try System_Decimal.toUInt64(subtractResultDecimal)
+        XCTAssertEqual(subtractResult, subtractResultRet)
         
-        do {
-            let subtractResultRet = try System_Decimal.toUInt64(subtractResultDecimal)
-            XCTAssertEqual(subtractResult, subtractResultRet)
-        } catch {
-            XCTFail("System.Decimal.ToUInt64 should not throw")
-            
-            return
-        }
+        let multiplyResultDecimal = try System_Decimal.multiply(decimal1,
+                                                                decimal2)
         
-        guard let multiplyResultDecimal = try? System_Decimal.multiply(decimal1,
-                                                                       decimal2) else {
-            XCTFail("System.Decimal.Multiply should not throw and return an instance")
-            
-            return
-        }
+        let multiplyResultRet = try System_Decimal.toUInt64(multiplyResultDecimal)
+        XCTAssertEqual(multiplyResult, multiplyResultRet)
         
-        do {
-            let multiplyResultRet = try System_Decimal.toUInt64(multiplyResultDecimal)
-            XCTAssertEqual(multiplyResult, multiplyResultRet)
-        } catch {
-            XCTFail("System.Decimal.ToUInt64 should not throw")
-            
-            return
-        }
+        let divideResultDecimal = try System_Decimal.divide(decimal2,
+                                                             decimal1)
         
-        guard let divideResultDecimal = try? System_Decimal.divide(decimal2,
-                                                                   decimal1) else {
-            XCTFail("System.Decimal.Divide should not throw and return an instance")
-            
-            return
-        }
-        
-        do {
-            let divideResultRet = try System_Decimal.toUInt64(divideResultDecimal)
-            XCTAssertEqual(divideResult, divideResultRet)
-        } catch {
-            XCTFail("System.Decimal.ToUInt64 should not throw")
-            
-            return
-        }
+        let divideResultRet = try System_Decimal.toUInt64(divideResultDecimal)
+        XCTAssertEqual(divideResult, divideResultRet)
     }
     
-    func testDivisionByZero() {
+    func testDivisionByZero() throws {
         let decimalZero = System_Decimal.zero
         
         let number1: Int32 = 123
         
-        guard let decimal1 = try? System_Decimal(number1) else {
-            XCTFail("System.Decimal ctor should not throw and return an instance")
-            
-            return
-        }
+        let decimal1 = try System_Decimal(number1)
         
         do {
             let _ = try System_Decimal.divide(decimal1,

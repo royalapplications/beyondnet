@@ -12,8 +12,8 @@ final class ComparisonTests: XCTestCase {
         Self.sharedTearDown()
     }
     
-    func testObjectComparisons() {
-        let optionalObject = try? System_Object()
+    func testObjectComparisons() throws {
+        let optionalObject: System.Object? = try System.Object()
         
         guard let nonOptionalObject = optionalObject else {
             XCTFail("System.Object ctor should not throw and return an instance")
@@ -21,7 +21,7 @@ final class ComparisonTests: XCTestCase {
             return
         }
         
-        let anotherOptionalObject = try? System_Object()
+        let anotherOptionalObject: System.Object? = try System_Object()
         
         guard let anotherNonOptionalObject = anotherOptionalObject else {
             XCTFail("System.Object ctor should not throw and return an instance")

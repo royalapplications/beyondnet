@@ -12,36 +12,17 @@ final class SystemReflectionAssemblyTests: XCTestCase {
         Self.sharedTearDown()
     }
     
-    func testAssembly() {
-        guard let assembly = try? System_Reflection_Assembly.getExecutingAssembly() else {
-            XCTFail("System.Reflection.Assembly.GetExecutingAssembly should not throw and return an instance")
-            
-            return
-        }
-        
-        guard let assemblyName = try? assembly.getName() else {
-            XCTFail("System.Reflection.Assembly.GetName should not throw and return an instance")
-            
-            return
-        }
-        
-        guard let assemblyNameString = try? assemblyName.name?.string() else {
-            XCTFail("System.Reflection.AssemblyName.Name getter should not throw and return an instance of a C string")
-            
-            return
-        }
+    func testAssembly() throws {
+        let assembly = try System_Reflection_Assembly.getExecutingAssembly()
+        let assemblyName = try assembly.getName()
+        let assemblyNameString = try assemblyName.name?.string()
         
         XCTAssertEqual("BeyondDotNETSampleKit", assemblyNameString)
     }
     
-    func testLoadAssembly() {
+    func testLoadAssembly() throws {
         let data = Data([ 0, 1 ])
-        
-        guard let byteArray = try? data.dotNETByteArray() else {
-            XCTFail("Failed to convert data to byte array")
-            
-            return
-        }
+        let byteArray = try data.dotNETByteArray()
         
         do {
             _ = try System_Reflection_Assembly.load(byteArray)

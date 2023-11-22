@@ -12,12 +12,12 @@ final class DelegateTestTests: XCTestCase {
         Self.sharedTearDown()
     }
     
-    func testTransformInt() {
+    func testTransformInt() throws {
         let original: Int32 = 0
         let valueToAdd: Int32 = 1
         let expectedResult: Int32 = original + valueToAdd
         
-        let result = try? Beyond.NET.Sample.DelegatesTest.transformInt(original, .init({ i in
+        let result = try Beyond.NET.Sample.DelegatesTest.transformInt(original, .init({ i in
             let innerResult = i + valueToAdd
             
             return innerResult
@@ -46,26 +46,17 @@ final class DelegateTestTests: XCTestCase {
 //        XCTAssertEqual(original, 0)
 //    }
     
-    func testTransformPoint() {
+    func testTransformPoint() throws {
         let originalX: Double = 0
         let originalY: Double = 0
         
         let valueToAddToX: Double = 0.1
         let valueToAddToY: Double = 0.2
         
-        guard let original = try? Beyond.NET.Sample.Point(originalX, originalY) else {
-            XCTFail("Beyond.NET.Sample.Point ctor should not throw and return an instance")
-            
-            return
-        }
+        let original = try Beyond.NET.Sample.Point(originalX, originalY)
+        let expectedResult = try Beyond.NET.Sample.Point(originalX + valueToAddToX, originalY + valueToAddToY)
         
-        guard let expectedResult = try? Beyond.NET.Sample.Point(originalX + valueToAddToX, originalY + valueToAddToY) else {
-            XCTFail("Beyond.NET.Sample.Point ctor should not throw and return an instance")
-            
-            return
-        }
-        
-        let result = try? Beyond.NET.Sample.DelegatesTest.transformPoint(original, .init({ p in
+        let result = try Beyond.NET.Sample.DelegatesTest.transformPoint(original, .init({ p in
             guard let pX = try? p.x else {
                 XCTFail("Beyond.NET.Sample.Point.X should not throw")
                 
@@ -102,15 +93,10 @@ final class DelegateTestTests: XCTestCase {
             return innerResult
         }))
         
-        guard let result,
-              let resultX = try? result.x,
-              let resultY = try? result.y,
-              let expectedX = try? expectedResult.x,
-              let expectedY = try? expectedResult.y else {
-            XCTFail("No result")
-            
-            return
-        }
+        let resultX = try result.x
+        let resultY = try result.y
+        let expectedX = try expectedResult.x
+        let expectedY = try expectedResult.y
         
         XCTAssertEqual(resultX, expectedX)
         XCTAssertEqual(resultY, expectedY)

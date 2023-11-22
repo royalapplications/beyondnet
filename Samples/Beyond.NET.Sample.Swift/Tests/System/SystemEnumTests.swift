@@ -12,16 +12,12 @@ final class SystemEnumTests: XCTestCase {
         Self.sharedTearDown()
     }
     
-    func testSystemEnum() {
+    func testSystemEnum() throws {
         let systemDateTimeKindType = System_DateTimeKind.typeOf
 
-        guard let enumNames = try? systemDateTimeKindType.getEnumNames() else {
-            XCTFail("System.Type.GetEnumNames should not throw and return an instance")
+        let enumNames = try systemDateTimeKindType.getEnumNames()
 
-            return
-        }
-
-        let namesCount = (try? enumNames.length) ?? -1
+        let namesCount = try enumNames.length
         XCTAssertEqual(3, namesCount)
 
         var names = [String]()

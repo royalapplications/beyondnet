@@ -12,7 +12,7 @@ final class SystemThreadingTimerTests: XCTestCase {
 		Self.sharedTearDown()
 	}
 	
-	func testTimer() {
+	func testTimer() throws {
 		let maximumNumberOfTimesToCall = 30
 		var numberOfTimesCalled = 0
 		
@@ -40,14 +40,10 @@ final class SystemThreadingTimerTests: XCTestCase {
 			}
 		}
         
-        guard let _timer = try? System_Threading_Timer(.init(closure),
-                                                       nil,
-                                                       50 as Int32,
-                                                       10 as Int32) else {
-            XCTFail("System.Threading.Timer ctor should not throw and return an instance")
-            
-            return
-        }
+        let _timer = try System_Threading_Timer(.init(closure),
+                                                nil,
+                                                50 as Int32,
+                                                10 as Int32)
 		
 		timer = _timer
 		

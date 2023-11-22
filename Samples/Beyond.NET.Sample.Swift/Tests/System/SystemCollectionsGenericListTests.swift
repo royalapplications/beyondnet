@@ -12,23 +12,18 @@ final class SystemCollectionsGenericListTests: XCTestCase {
         Self.sharedTearDown()
     }
     
-    func testTypeOf() {
+    func testTypeOf() throws {
         let systemTypeType = System_Type.typeOf
         let type = System_Collections_Generic_List_A1.typeOf
         
-        let isGenericType = (try? type.isGenericType) ?? false
+        let isGenericType = try type.isGenericType
         XCTAssertTrue(isGenericType)
         
-        let isConstructedGenericType = (try? type.isConstructedGenericType) ?? false
+        let isConstructedGenericType = try type.isConstructedGenericType
         XCTAssertFalse(isConstructedGenericType)
         
-        guard let genericArguments = try? type.getGenericArguments() else {
-            XCTFail("System.Type.GetGenericArguments should not throw and return an instance")
-            
-            return
-        }
-        
-        let numberOfGenericArguments = (try? genericArguments.length) ?? -1
+        let genericArguments = try type.getGenericArguments()
+        let numberOfGenericArguments = try genericArguments.length
         XCTAssertEqual(1, numberOfGenericArguments)
         
         guard let genericArgument = try? genericArguments.getValue(0 as Int32) else {
@@ -45,31 +40,17 @@ final class SystemCollectionsGenericListTests: XCTestCase {
             return
         }
         
-        guard let genericArgumentTypeName = try? genericArgumentType.name.string() else {
-            XCTFail("System.Reflection.MemberInfo.Name getter should not throw and return an instance")
-            
-            return
-        }
-        
+        let genericArgumentTypeName = try genericArgumentType.name.string()
         XCTAssertEqual("T", genericArgumentTypeName)
     }
     
-    func testCreate() {
+    func testCreate() throws {
         let systemStringType = System_String.typeOf
         
-        guard let list = try? System_Collections_Generic_List_A1(T: systemStringType) else {
-            XCTFail("System.Collections.Generic.List<System.String> ctor should not throw and return an instance")
-            
-            return
-        }
+        let list = try System_Collections_Generic_List_A1(T: systemStringType)
+        let listType = try list.getType()
         
-        guard let listType = try? list.getType() else {
-            XCTFail("System.Object.GetType should not throw and return an instance")
-            
-            return
-        }
-        
-        guard let listTypeName = try? listType.fullName?.string() else {
+        guard let listTypeName = try listType.fullName?.string() else {
             XCTFail("System.Type.FullName getter should not throw and return an instance")
             
             return
@@ -78,14 +59,10 @@ final class SystemCollectionsGenericListTests: XCTestCase {
         XCTAssertTrue(listTypeName.contains("System.Collections.Generic.List`1[[System.String"))
     }
     
-    func testUse() {
+    func testUse() throws {
         let systemStringType = System_String.typeOf
         
-        guard let list = try? System_Collections_Generic_List_A1(T: systemStringType) else {
-            XCTFail("System.Collections.Generic.List<System.String> ctor should not throw and return an instance")
-            
-            return
-        }
+        let list = try System_Collections_Generic_List_A1(T: systemStringType)
         
         let strings = [
             "01. A",
@@ -96,11 +73,11 @@ final class SystemCollectionsGenericListTests: XCTestCase {
         for string in strings {
             let stringDN = string.dotNETString()
             
-            XCTAssertNoThrow(try list.add(T: systemStringType,
-                                          stringDN))
+            try list.add(T: systemStringType,
+                         stringDN)
         }
         
-        let listCount = (try? list.count(T: systemStringType)) ?? -1
+        let listCount = try list.count(T: systemStringType)
         XCTAssertEqual(strings.count, .init(listCount))
         
         for idx in 0..<listCount {
@@ -129,15 +106,9 @@ final class SystemCollectionsGenericListTests: XCTestCase {
 		let newStringForIdx1 = "New String"
 		let newStringForIdx1DN = newStringForIdx1.dotNETString()
 		
-		do {
-            try list.item_set(T: systemStringType,
-							  idx1,
-							  newStringForIdx1DN)
-		} catch {
-			XCTFail("System.Collections.Generic.List<System.String>[] setter not throw and return an instance")
-			
-			return
-		}
+        try list.item_set(T: systemStringType,
+                          idx1,
+                          newStringForIdx1DN)
 		
         guard let newElement1String = try? list.item(T: systemStringType,
                                                      idx1)?.castAs(System_String.self)?.string() else {
