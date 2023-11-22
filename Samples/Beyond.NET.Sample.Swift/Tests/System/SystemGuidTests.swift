@@ -24,7 +24,7 @@ final class SystemGuidTests: XCTestCase {
             return
         }
         
-        guard let guidString = try? guid.toString()?.string() else {
+        guard let guidString = try? guid.toString().string() else {
             XCTFail("System_Guid_ToString should not throw and return an instance")
             
             return
@@ -52,7 +52,7 @@ final class SystemGuidTests: XCTestCase {
         
         let emptyGuid = System_Guid.empty
         
-        guard let emptyGuidString = try? emptyGuid.toString()?.string() else {
+        guard let emptyGuidString = try? emptyGuid.toString().string() else {
             XCTFail("System.Guid.ToString should not throw and return a string")
             
             return
@@ -76,7 +76,7 @@ final class SystemGuidTests: XCTestCase {
             return
         }
         
-        guard let uuidStringRet = try? guid.toString()?.string() else {
+        guard let uuidStringRet = try? guid.toString().string() else {
             XCTFail("System.Guid.ToString should not throw and return an instance")
             
             return
@@ -116,7 +116,7 @@ final class SystemGuidTests: XCTestCase {
             return
         }
         
-        guard let guidString = try? guid.toString()?.string() else {
+        guard let guidString = try? guid.toString().string() else {
             XCTFail("System.Guid.ToString should not throw and return an instance")
             
             return
@@ -152,7 +152,7 @@ final class SystemGuidTests: XCTestCase {
 				return
 			}
 			
-			guard let newGuidString = try? newGuid.toString()?.string() else {
+			guard let newGuidString = try? newGuid.toString().string() else {
 				XCTFail("System.Guid.ToString should not throw and return an instance")
 				
 				return
@@ -173,7 +173,7 @@ final class SystemGuidTests: XCTestCase {
 				return
 			}
 			
-			guard let guidRetString = try? guidRet.toString()?.string() else {
+			guard let guidRetString = try? guidRet.toString().string() else {
 				XCTFail("System.Guid.ToString should not throw and return an instance")
 				
 				return

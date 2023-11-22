@@ -45,7 +45,7 @@ final class SystemCollectionsGenericListTests: XCTestCase {
             return
         }
         
-        guard let genericArgumentTypeName = try? genericArgumentType.name?.string() else {
+        guard let genericArgumentTypeName = try? genericArgumentType.name.string() else {
             XCTFail("System.Reflection.MemberInfo.Name getter should not throw and return an instance")
             
             return

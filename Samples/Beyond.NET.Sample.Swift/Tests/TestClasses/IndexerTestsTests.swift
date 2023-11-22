@@ -121,7 +121,7 @@ final class IndexerTestsTests: XCTestCase {
 		
 		XCTAssertEqual(aString, item1RetAsString)
 		
-		guard let storedString = try? indexerTests.storedString?.string() else {
+		guard let storedString = try? indexerTests.storedString.string() else {
 			XCTFail("IndexerTests.StoredString getter should not throw and return an instance")
 			
 			return

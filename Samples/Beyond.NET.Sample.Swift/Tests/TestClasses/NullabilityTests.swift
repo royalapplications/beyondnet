@@ -20,5 +20,13 @@ final class NullabilityTests: XCTestCase {
         
         XCTAssertEqual(try test.methodWithNonNullableStringParameter(helloString), helloString)
         XCTAssertEqual(try test.methodWithNullableStringParameter(nilString), nilString)
+        
+        XCTAssertEqual(try test.nonNullableStringProperty, helloString)
+        XCTAssertEqual(try test.nullableStringProperty, nilString)
+        
+        XCTAssertEqual(try test.methodWithNonNullableStringReturnValue(), helloString)
+        XCTAssertEqual(try test.methodWithNullableStringReturnValue(), nilString)
+        
+        // TODO: Test Fields
     }
 }

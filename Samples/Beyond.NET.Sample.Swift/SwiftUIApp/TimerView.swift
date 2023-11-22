@@ -65,7 +65,7 @@ private extension TimerView {
         }
         
         private func addGuid(_ newGuid: System.Guid) {
-            guard let guidString = try? newGuid.toString()?.string() else {
+            guard let guidString = try? newGuid.toString().string() else {
                 fatalError("Failed to convert System.Guid to string")
             }
             

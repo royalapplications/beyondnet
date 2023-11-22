@@ -249,11 +249,70 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         
         TypeDescriptor returnOrSetterTypeDescriptor = returnOrSetterOrEventHandlerType.GetTypeDescriptor(typeDescriptorRegistry);
         
+        var nullabilityInfoContext = new NullabilityInfoContext();
+        Nullability returnOrSetterTypeNullability = Nullability.NotSpecified;
+        
+        if (memberKind == MemberKind.TypeOf) {
+            returnOrSetterTypeNullability = Nullability.NonNullable;
+        } else if (returnOrSetterOrEventHandlerType.IsNullableValueType(out _)) {
+            returnOrSetterTypeNullability = Nullability.Nullable;
+        } else if (!isGenericReturnType &&
+                   !isConstructedGenericReturnType &&
+                   returnOrSetterOrEventHandlerType.IsReferenceType() &&
+                   !returnOrSetterOrEventHandlerType.IsByRefValueType(out bool nonByRefTypeIsStruct) &&
+                   !nonByRefTypeIsStruct) {
+            if (methodInfo is not null) {
+                var returnParameter = methodInfo.ReturnParameter;
+                var nullabilityInfo = nullabilityInfoContext.Create(returnParameter);
+
+                if (memberKind == MemberKind.PropertyGetter) {
+                    returnOrSetterTypeNullability = nullabilityInfo.ReadState == NullabilityState.NotNull
+                        ? Nullability.NonNullable
+                        : Nullability.NotSpecified;
+                } else if (memberKind == MemberKind.PropertySetter) {
+                    returnOrSetterTypeNullability = nullabilityInfo.WriteState == NullabilityState.NotNull
+                        ? Nullability.NonNullable
+                        : Nullability.NotSpecified;
+                } else if (memberKind == MemberKind.EventHandlerAdder ||
+                           memberKind == MemberKind.EventHandlerRemover) {
+                    if (nullabilityInfo.ReadState == nullabilityInfo.WriteState) {
+                        returnOrSetterTypeNullability = nullabilityInfo.ReadState == NullabilityState.NotNull
+                            ? Nullability.NonNullable
+                            : Nullability.NotSpecified;
+                    }
+                } else { // Method
+                    if (nullabilityInfo.ReadState == nullabilityInfo.WriteState) {
+                        returnOrSetterTypeNullability = nullabilityInfo.ReadState == NullabilityState.NotNull
+                            ? Nullability.NonNullable
+                            : Nullability.NotSpecified;
+                    }
+                }
+            } else if (memberInfo is FieldInfo fieldInfo) {
+                var nullabilityInfo = nullabilityInfoContext.Create(fieldInfo);
+
+                if (memberKind == MemberKind.FieldGetter) {
+                    returnOrSetterTypeNullability = nullabilityInfo.ReadState == NullabilityState.NotNull
+                        ? Nullability.NonNullable
+                        : Nullability.NotSpecified;
+                } else if (memberKind == MemberKind.FieldSetter) {
+                    returnOrSetterTypeNullability = nullabilityInfo.WriteState == NullabilityState.NotNull
+                        ? Nullability.NonNullable
+                        : Nullability.NotSpecified;
+                } else { // Hmm, not sure this can ever happen
+                    if (nullabilityInfo.ReadState == nullabilityInfo.WriteState) {
+                        returnOrSetterTypeNullability = nullabilityInfo.ReadState == NullabilityState.NotNull
+                            ? Nullability.NonNullable
+                            : Nullability.NotSpecified;
+                    }
+                }
+            }
+        }
+        
         // TODO: This generates inout TypeName if the return type is by ref
         string swiftReturnOrSetterTypeName = returnOrSetterTypeDescriptor.GetTypeName(
             CodeLanguage.Swift,
             true,
-            memberKind == MemberKind.TypeOf ? Nullability.NonNullable : Nullability.NotSpecified,
+            returnOrSetterTypeNullability,
             false,
             returnOrSetterOrEventHandlerTypeIsByRef,
             false

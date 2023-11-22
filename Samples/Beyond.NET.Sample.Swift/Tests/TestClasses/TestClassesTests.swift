@@ -36,7 +36,7 @@ final class TestClassesTests: XCTestCase {
             return
         }
         
-        guard let retrievedSystemObjectTypeName = try? systemObjectType.toString()?.string() else {
+        guard let retrievedSystemObjectTypeName = try? systemObjectType.toString().string() else {
             XCTFail("System.Type.ToString should not throw and return an instance")
             
             return
@@ -57,7 +57,7 @@ final class TestClassesTests: XCTestCase {
         
         XCTAssertNoThrow(try testClass.sayHello(johnDN))
         
-        guard let hello = try? testClass.getHello()?.string() else {
+        guard let hello = try? testClass.getHello().string() else {
             XCTFail("TestClass.GetHello should not throw and return an instance")
             
             return
@@ -79,7 +79,7 @@ final class TestClassesTests: XCTestCase {
     func testEnum() {
         let enumValue = Beyond_NET_Sample_TestEnum.secondCase
         
-        guard let enumName = try? Beyond_NET_Sample_TestClass.getTestEnumName(enumValue)?.string() else {
+        guard let enumName = try? Beyond_NET_Sample_TestClass.getTestEnumName(enumValue).string() else {
             XCTFail("TestClass.GetTestEnumName should not throw and return an instance")
             
             return
@@ -156,17 +156,8 @@ final class TestClassesTests: XCTestCase {
             return
         }
         
-        guard let originalBook = Beyond_NET_Sample_Book.donQuixote else {
-            XCTFail("Failed to get book")
-            
-            return
-        }
-        
-        guard let targetBook = Beyond_NET_Sample_Book.theLordOfTheRings else {
-            XCTFail("Failed to get book")
-            
-            return
-        }
+        let originalBook = Beyond_NET_Sample_Book.donQuixote
+        let targetBook = Beyond_NET_Sample_Book.theLordOfTheRings
         
         var bookToModify = originalBook
         

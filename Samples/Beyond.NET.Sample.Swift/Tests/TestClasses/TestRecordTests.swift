@@ -21,7 +21,7 @@ final class TestRecordTests: XCTestCase {
             return
         }
         
-        guard let retString = try? aRecord.aString?.string() else {
+        guard let retString = try? aRecord.aString.string() else {
             XCTFail("Beyond.NET.Sample.TestRecord AString getter should not throw and return a string")
             
             return
@@ -29,11 +29,7 @@ final class TestRecordTests: XCTestCase {
         
         XCTAssertEqual(expectedString, retString)
         
-        guard let emptyStringDN = System.String.empty else {
-            XCTFail("System.String.Empty should return a value")
-            
-            return
-        }
+        let emptyStringDN = System.String.empty
         
         var deconstructedStringDN = emptyStringDN
         

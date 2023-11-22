@@ -16,7 +16,7 @@ struct ExceptionView: View {
     
     private var exceptionToString: String {
         // You also get access to the underlying System.Exception object
-        (try? error.exception.toString()?.string()) ?? ""
+        (try? error.exception.toString().string()) ?? ""
     }
     
     init() {

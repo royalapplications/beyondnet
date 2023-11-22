@@ -13,12 +13,7 @@ final class AnimalTests: XCTestCase {
 	}
 	
 	func testDog() {
-		guard let dogNameDN = Beyond_NET_Sample_Dog.dogName else {
-			XCTFail("Dog.DogName should return an instance")
-			
-			return
-		}
-		
+		let dogNameDN = Beyond_NET_Sample_Dog.dogName
 		let dogName = dogNameDN.string()
 		
 		guard let dog = try? Beyond_NET_Sample_AnimalFactory.createAnimal(dogNameDN) else {
@@ -27,7 +22,7 @@ final class AnimalTests: XCTestCase {
 			return
 		}
 		
-		guard let retrievedDogName = try? dog.name?.string() else {
+		guard let retrievedDogName = try? dog.name.string() else {
 			XCTFail("Dog.Name getter should not throw and return an instance")
 			
 			return
@@ -38,7 +33,7 @@ final class AnimalTests: XCTestCase {
 		let food = "Bone"
 		let foodDN = food.dotNETString()
 		
-		guard let eat = try? dog.eat(foodDN)?.string() else {
+		guard let eat = try? dog.eat(foodDN).string() else {
 			XCTFail("IAnimal.Eat should not throw and return an instance")
 			
 			return
@@ -50,12 +45,7 @@ final class AnimalTests: XCTestCase {
 	}
 	
 	func testCat() {
-		guard let catNameDN = Beyond_NET_Sample_Cat.catName else {
-			XCTFail("Cat.CatName should return an instance of a string")
-			
-			return
-		}
-		
+		let catNameDN = Beyond_NET_Sample_Cat.catName
 		let catName = catNameDN.string()
 		
 		guard let cat = try? Beyond_NET_Sample_AnimalFactory.createAnimal(catNameDN) else {
@@ -64,7 +54,7 @@ final class AnimalTests: XCTestCase {
 			return
 		}
 		
-		guard let retrievedCatName = try? cat.name?.string() else {
+		guard let retrievedCatName = try? cat.name.string() else {
 			XCTFail("Cat.Name getter should not throw and return an instance of a string")
 			
 			return
@@ -75,7 +65,7 @@ final class AnimalTests: XCTestCase {
 		let food = "Catnip"
 		let foodDN = food.dotNETString()
 		
-		guard let eat = try? cat.eat(foodDN)?.string() else {
+		guard let eat = try? cat.eat(foodDN).string() else {
 			XCTFail("IAnimal.Eat should not throw and return an instance of a string")
 			
 			return
@@ -110,7 +100,7 @@ final class AnimalTests: XCTestCase {
             return
         }
         
-        guard let retrievedAnimalName = try? horse.name?.string() else {
+        guard let retrievedAnimalName = try? horse.name.string() else {
             XCTFail()
 
 			return
@@ -120,11 +110,7 @@ final class AnimalTests: XCTestCase {
 	}
 	
 	func testGettingDefaultAnimalCreator() {
-		guard let defaultCreator = Beyond_NET_Sample_AnimalFactory.dEFAULT_CREATOR else {
-			XCTFail("AnimalFactory.DEFAULT_CREATOR should not return nil")
-
-			return
-		}
+		let defaultCreator = Beyond_NET_Sample_AnimalFactory.dEFAULT_CREATOR
 
 		let dogName = "Dog"
 		let dogNameDN = dogName.dotNETString()
@@ -135,7 +121,7 @@ final class AnimalTests: XCTestCase {
 			return
 		}
 
-		guard let dogNameRet = try? dog.name?.string() else {
+		guard let dogNameRet = try? dog.name.string() else {
 			XCTFail("IAnimal.Name should not throw and return an instance")
 
 			return
@@ -153,7 +139,7 @@ final class AnimalTests: XCTestCase {
 			return
 		}
 
-		guard let catNameRet = try? cat.name?.string() else {
+		guard let catNameRet = try? cat.name.string() else {
 			XCTFail("IAnimal.Name should not throw and return an instance")
 
 			return

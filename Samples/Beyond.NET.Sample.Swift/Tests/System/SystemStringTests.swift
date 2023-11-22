@@ -28,11 +28,7 @@ final class SystemStringTests: XCTestCase {
     }
     
     func testString() {
-        guard let emptyStringDN = System_String.empty else {
-            XCTFail("System.String.Empty should return an empty string")
-            
-            return
-        }
+        let emptyStringDN = System_String.empty
         
         let emptyString = String(dotNETString: emptyStringDN)
         XCTAssertTrue(emptyString.isEmpty)
@@ -51,7 +47,7 @@ final class SystemStringTests: XCTestCase {
         
         let stringForTrimmingDN = " \(nonEmptyString) ".dotNETString()
         
-        guard let trimmedString = try? stringForTrimmingDN.trim()?.string() else {
+        guard let trimmedString = try? stringForTrimmingDN.trim().string() else {
             XCTFail("System.String.Trim should not throw and return an instance")
             
             return
@@ -97,7 +93,7 @@ final class SystemStringTests: XCTestCase {
         
         
         
-        guard let replacedString = try? originalStringDN.replace(helloDN, emptyStringDN)?.string() else {
+        guard let replacedString = try? originalStringDN.replace(helloDN, emptyStringDN).string() else {
             XCTFail("System.String.Replace should not throw and return an instance")
             
             return
@@ -183,7 +179,7 @@ final class SystemStringTests: XCTestCase {
         }
         
         guard let joinedRet = try? System_String.join(separatorDN,
-                                                      split)?.string() else {
+                                                      split).string() else {
             XCTFail("System.String.Join should not throw and return an instance")
             
             return

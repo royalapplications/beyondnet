@@ -209,6 +209,24 @@ internal static class TypeExtensions
         return invokeMethod;
     }
 
+    internal static bool IsByRefValueType(
+        this Type type,
+        out bool nonByRefTypeIsStruct
+    )
+    {
+        nonByRefTypeIsStruct = false;
+        
+        if (!type.IsByRef) {
+            return false;
+        }
+
+        Type nonByRefType = type.GetNonByRefType();
+        bool isValueType = nonByRefType.IsValueType;
+        nonByRefTypeIsStruct = nonByRefType.IsStruct();
+
+        return isValueType;
+    }
+
     internal static Type GetNonByRefType(this Type type)
     {
         if (!type.IsByRef) {

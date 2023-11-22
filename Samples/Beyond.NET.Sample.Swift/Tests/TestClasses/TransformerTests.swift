@@ -41,7 +41,7 @@ final class TransformerTests: XCTestCase {
         let expectedOutputString = inputString.uppercased()
         
         guard let outputString = try? Beyond_NET_Sample_Transformer.transformString(inputStringDN,
-                                                                                    uppercaser)?.string() else {
+                                                                                    uppercaser).string() else {
             XCTFail("Transformer.TransformString should not throw and return an instance of a c string")
             
             return
@@ -64,7 +64,7 @@ final class TransformerTests: XCTestCase {
         }
         
         guard let outputString = try? Beyond_NET_Sample_Transformer.getAndTransformString(fixedStringProvider,
-                                                                                          uppercaser)?.string() else {
+                                                                                          uppercaser).string() else {
             XCTFail("Transformer.GetAndTransformString should not throw and return an instance")
             
             return
@@ -114,7 +114,7 @@ final class TransformerTests: XCTestCase {
         
         let expectedOutputString = inputString.lowercased()
         
-        guard let outputString = try? Beyond_NET_Sample_Transformer.uppercaseString(inputStringDN)?.string() else {
+        guard let outputString = try? Beyond_NET_Sample_Transformer.uppercaseString(inputStringDN).string() else {
             XCTFail("Transformer.UppercaseString should not throw and return an instance of a c string")
             
             return

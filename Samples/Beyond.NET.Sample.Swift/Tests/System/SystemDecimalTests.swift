@@ -37,7 +37,7 @@ final class SystemDecimalTests: XCTestCase {
             return
         }
         
-        guard let numberStringRet = try? decimal.toString()?.string() else {
+        guard let numberStringRet = try? decimal.toString().string() else {
             XCTFail("System.Decimal.ToString should not throw and return an instance")
             
             return

@@ -198,10 +198,63 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             }
         }
 
+        var nullabilityInfoContext = new NullabilityInfoContext();
         Nullability returnOrSetterTypeNullability = Nullability.NotSpecified;
-        
-        if (returnOrSetterOrEventHandlerType.IsNullableValueType(out _)) {
-            returnOrSetterTypeNullability = returnOrSetterOrEventHandlerType.GetTypeDescriptor(typeDescriptorRegistry).Nullability;
+
+        if (memberKind == MemberKind.TypeOf) {
+            returnOrSetterTypeNullability = Nullability.NonNullable;
+        } else if (isNullableValueTypeReturnType) {
+            returnOrSetterTypeNullability = Nullability.Nullable;
+        } else if (!isGenericReturnType &&
+                   !isConstructedGenericReturnType &&
+                   returnOrSetterOrEventHandlerType.IsReferenceType() &&
+                   !returnOrSetterOrEventHandlerType.IsByRefValueType(out bool nonByRefTypeIsStruct) &&
+                   !nonByRefTypeIsStruct) {
+            if (memberInfo is MethodInfo methodInfo) {
+                var returnParameter = methodInfo.ReturnParameter;
+                var nullabilityInfo = nullabilityInfoContext.Create(returnParameter);
+
+                if (memberKind == MemberKind.PropertyGetter) {
+                    returnOrSetterTypeNullability = nullabilityInfo.ReadState == NullabilityState.NotNull
+                        ? Nullability.NonNullable
+                        : Nullability.NotSpecified;
+                } else if (memberKind == MemberKind.PropertySetter) {
+                    returnOrSetterTypeNullability = nullabilityInfo.WriteState == NullabilityState.NotNull
+                        ? Nullability.NonNullable
+                        : Nullability.NotSpecified;
+                } else if (memberKind == MemberKind.EventHandlerAdder ||
+                           memberKind == MemberKind.EventHandlerRemover) {
+                    if (nullabilityInfo.ReadState == nullabilityInfo.WriteState) {
+                        returnOrSetterTypeNullability = nullabilityInfo.ReadState == NullabilityState.NotNull
+                            ? Nullability.NonNullable
+                            : Nullability.NotSpecified;
+                    }
+                } else { // Method
+                    if (nullabilityInfo.ReadState == nullabilityInfo.WriteState) {
+                        returnOrSetterTypeNullability = nullabilityInfo.ReadState == NullabilityState.NotNull
+                            ? Nullability.NonNullable
+                            : Nullability.NotSpecified;
+                    }
+                }
+            } else if (memberInfo is FieldInfo fieldInfo) {
+                var nullabilityInfo = nullabilityInfoContext.Create(fieldInfo);
+
+                if (memberKind == MemberKind.FieldGetter) {
+                    returnOrSetterTypeNullability = nullabilityInfo.ReadState == NullabilityState.NotNull
+                        ? Nullability.NonNullable
+                        : Nullability.NotSpecified;
+                } else if (memberKind == MemberKind.FieldSetter) {
+                    returnOrSetterTypeNullability = nullabilityInfo.WriteState == NullabilityState.NotNull
+                        ? Nullability.NonNullable
+                        : Nullability.NotSpecified;
+                } else { // Hmm, not sure this can ever happen
+                    if (nullabilityInfo.ReadState == nullabilityInfo.WriteState) {
+                        returnOrSetterTypeNullability = nullabilityInfo.ReadState == NullabilityState.NotNull
+                            ? Nullability.NonNullable
+                            : Nullability.NotSpecified;
+                    }
+                }
+            }
         }
 
         bool returnOrSetterOrEventHandlerTypeIsByRef;
@@ -219,12 +272,10 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         
         TypeDescriptor returnOrSetterTypeDescriptor = returnOrSetterOrEventHandlerType.GetTypeDescriptor(typeDescriptorRegistry);
         
-        bool returnTypeIsNonNull = memberKind == MemberKind.TypeOf;
-        
         string cReturnOrSetterTypeName = returnOrSetterTypeDescriptor.GetTypeName(
             CodeLanguage.C, 
             true,
-            returnTypeIsNonNull ? Nullability.NonNullable : returnOrSetterTypeNullability,
+            returnOrSetterTypeNullability,
             false,
             returnOrSetterOrEventHandlerTypeIsByRef,
             false

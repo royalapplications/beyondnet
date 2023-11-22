@@ -68,11 +68,7 @@ final class SystemCollectionsGenericDictionaryTests: XCTestCase {
             return
         }
         
-        guard let emptyString = System_String.empty else {
-            XCTFail("System.String.Empty should return an instance")
-            
-            return
-        }
+        let emptyString = System_String.empty
         
         var valueForEmptyString: System_Object?
 

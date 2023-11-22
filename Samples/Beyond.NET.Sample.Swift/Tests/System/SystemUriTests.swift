@@ -79,7 +79,7 @@ final class SystemUriTests: XCTestCase {
 			return
 		}
 		
-		guard let absoluteUriString = try? uriRet.absoluteUri?.string() else {
+		guard let absoluteUriString = try? uriRet.absoluteUri.string() else {
 			XCTFail("System.Uri.AbsoluteUri should not throw and return an instance")
 			
 			return

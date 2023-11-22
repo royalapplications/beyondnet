@@ -26,7 +26,7 @@ final class AddressTests: XCTestCase {
 			return
 		}
 		
-		guard let retrievedStreet = try? address.street?.string() else {
+		guard let retrievedStreet = try? address.street.string() else {
 			XCTFail("Address.Street getter should not throw and return an instance")
 			
 			return
@@ -90,7 +90,7 @@ final class AddressTests: XCTestCase {
 			return
 		}
 		
-		guard let retrievedNewStreet = try? newAddress.street?.string() else {
+		guard let retrievedNewStreet = try? newAddress.street.string() else {
 			XCTFail("Address.Street getter should not throw and return an instance")
 			
 			return
@@ -98,7 +98,7 @@ final class AddressTests: XCTestCase {
 		
 		XCTAssertEqual(newStreet, retrievedNewStreet)
 
-		guard let retrievedNewCity = try? newAddress.city?.string() else {
+		guard let retrievedNewCity = try? newAddress.city.string() else {
 			XCTFail("Address.City getter should not throw and return an instance")
 
 			return

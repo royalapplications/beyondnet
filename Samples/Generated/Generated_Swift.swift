@@ -506,10 +506,8 @@ public extension System_String {
 public extension [String] {
     /// Converts a Swift String Array into a .NET System.String Array
     func dotNETStringArray() throws -> System_String_Array {
-        guard let arr = try System_String_Array.createInstance(System_String.typeOf,
-                                                               .init(count)) else {
-            throw DNSystemError.unexpectedNull
-        }
+        let arr = try System_String_Array.createInstance(System_String.typeOf,
+                                                         .init(count))
         
         for (idx, el) in self.enumerated() {
             let elDN = el.dotNETString()
@@ -811,10 +809,6 @@ public extension Data {
         let bytesCount = Int32(self.count)
         
         let systemArray = try System_Array.createInstance(System_Byte.typeOf, bytesCount)
-        
-        guard let systemArray else {
-            throw DNSystemError.unexpectedNull
-        }
         
         let systemByteArray: System_Byte_Array = try systemArray.castTo()
         
@@ -5465,7 +5459,7 @@ public class System_Object /* System.Object */: DNObject {
 		"System.Object"
 	}}
 
-	public func getType() throws -> System_Type? /* System.Type */ {
+	public func getType() throws -> System_Type /* System.Type */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5709,7 +5703,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public override func getType() throws -> System_Type? /* System.Type */ {
+	public override func getType() throws -> System_Type /* System.Type */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5767,7 +5761,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func getGenericTypeDefinition() throws -> System_Type? /* System.Type */ {
+	public func getGenericTypeDefinition() throws -> System_Type /* System.Type */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5787,7 +5781,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func getGenericArguments() throws -> System_Type_Array? /* System.Type[] */ {
+	public func getGenericArguments() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5807,7 +5801,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func getOptionalCustomModifiers() throws -> System_Type_Array? /* System.Type[] */ {
+	public func getOptionalCustomModifiers() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5827,7 +5821,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func getRequiredCustomModifiers() throws -> System_Type_Array? /* System.Type[] */ {
+	public func getRequiredCustomModifiers() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5847,7 +5841,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func getGenericParameterConstraints() throws -> System_Type_Array? /* System.Type[] */ {
+	public func getGenericParameterConstraints() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5978,7 +5972,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func getConstructors() throws -> System_Reflection_ConstructorInfo_Array? /* System.Reflection.ConstructorInfo[] */ {
+	public func getConstructors() throws -> System_Reflection_ConstructorInfo_Array /* System.Reflection.ConstructorInfo[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5998,7 +5992,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func getConstructors(_ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_ConstructorInfo_Array? /* System.Reflection.ConstructorInfo[] */ {
+	public func getConstructors(_ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_ConstructorInfo_Array /* System.Reflection.ConstructorInfo[] */ {
 		let bindingAttrC = bindingAttr.cValue
 		
 		
@@ -6062,7 +6056,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func getEvents() throws -> System_Reflection_EventInfo_Array? /* System.Reflection.EventInfo[] */ {
+	public func getEvents() throws -> System_Reflection_EventInfo_Array /* System.Reflection.EventInfo[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -6082,7 +6076,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func getEvents(_ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_EventInfo_Array? /* System.Reflection.EventInfo[] */ {
+	public func getEvents(_ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_EventInfo_Array /* System.Reflection.EventInfo[] */ {
 		let bindingAttrC = bindingAttr.cValue
 		
 		
@@ -6146,7 +6140,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func getFields() throws -> System_Reflection_FieldInfo_Array? /* System.Reflection.FieldInfo[] */ {
+	public func getFields() throws -> System_Reflection_FieldInfo_Array /* System.Reflection.FieldInfo[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -6166,7 +6160,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func getFields(_ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_FieldInfo_Array? /* System.Reflection.FieldInfo[] */ {
+	public func getFields(_ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_FieldInfo_Array /* System.Reflection.FieldInfo[] */ {
 		let bindingAttrC = bindingAttr.cValue
 		
 		
@@ -6187,7 +6181,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func getFunctionPointerCallingConventions() throws -> System_Type_Array? /* System.Type[] */ {
+	public func getFunctionPointerCallingConventions() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -6207,7 +6201,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func getFunctionPointerReturnType() throws -> System_Type? /* System.Type */ {
+	public func getFunctionPointerReturnType() throws -> System_Type /* System.Type */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -6227,7 +6221,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func getFunctionPointerParameterTypes() throws -> System_Type_Array? /* System.Type[] */ {
+	public func getFunctionPointerParameterTypes() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -6247,7 +6241,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func getMember(_ name: System_String /* System.String */) throws -> System_Reflection_MemberInfo_Array? /* System.Reflection.MemberInfo[] */ {
+	public func getMember(_ name: System_String /* System.String */) throws -> System_Reflection_MemberInfo_Array /* System.Reflection.MemberInfo[] */ {
 		let nameC = name.__handle
 		
 		
@@ -6268,7 +6262,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func getMember(_ name: System_String /* System.String */, _ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_MemberInfo_Array? /* System.Reflection.MemberInfo[] */ {
+	public func getMember(_ name: System_String /* System.String */, _ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_MemberInfo_Array /* System.Reflection.MemberInfo[] */ {
 		let nameC = name.__handle
 		let bindingAttrC = bindingAttr.cValue
 		
@@ -6290,7 +6284,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func getMember(_ name: System_String /* System.String */, _ type: System_Reflection_MemberTypes /* System.Reflection.MemberTypes */, _ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_MemberInfo_Array? /* System.Reflection.MemberInfo[] */ {
+	public func getMember(_ name: System_String /* System.String */, _ type: System_Reflection_MemberTypes /* System.Reflection.MemberTypes */, _ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_MemberInfo_Array /* System.Reflection.MemberInfo[] */ {
 		let nameC = name.__handle
 		let typeC = type.cValue
 		let bindingAttrC = bindingAttr.cValue
@@ -6313,7 +6307,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func getMembers() throws -> System_Reflection_MemberInfo_Array? /* System.Reflection.MemberInfo[] */ {
+	public func getMembers() throws -> System_Reflection_MemberInfo_Array /* System.Reflection.MemberInfo[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -6333,7 +6327,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func getMemberWithSameMetadataDefinitionAs(_ member: System_Reflection_MemberInfo /* System.Reflection.MemberInfo */) throws -> System_Reflection_MemberInfo? /* System.Reflection.MemberInfo */ {
+	public func getMemberWithSameMetadataDefinitionAs(_ member: System_Reflection_MemberInfo /* System.Reflection.MemberInfo */) throws -> System_Reflection_MemberInfo /* System.Reflection.MemberInfo */ {
 		let memberC = member.__handle
 		
 		
@@ -6354,7 +6348,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func getMembers(_ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_MemberInfo_Array? /* System.Reflection.MemberInfo[] */ {
+	public func getMembers(_ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_MemberInfo_Array /* System.Reflection.MemberInfo[] */ {
 		let bindingAttrC = bindingAttr.cValue
 		
 		
@@ -6633,7 +6627,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func getMethods() throws -> System_Reflection_MethodInfo_Array? /* System.Reflection.MethodInfo[] */ {
+	public func getMethods() throws -> System_Reflection_MethodInfo_Array /* System.Reflection.MethodInfo[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -6653,7 +6647,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func getMethods(_ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_MethodInfo_Array? /* System.Reflection.MethodInfo[] */ {
+	public func getMethods(_ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_MethodInfo_Array /* System.Reflection.MethodInfo[] */ {
 		let bindingAttrC = bindingAttr.cValue
 		
 		
@@ -6717,7 +6711,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func getNestedTypes() throws -> System_Type_Array? /* System.Type[] */ {
+	public func getNestedTypes() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -6737,7 +6731,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func getNestedTypes(_ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Type_Array? /* System.Type[] */ {
+	public func getNestedTypes(_ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Type_Array /* System.Type[] */ {
 		let bindingAttrC = bindingAttr.cValue
 		
 		
@@ -6918,7 +6912,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func getProperties() throws -> System_Reflection_PropertyInfo_Array? /* System.Reflection.PropertyInfo[] */ {
+	public func getProperties() throws -> System_Reflection_PropertyInfo_Array /* System.Reflection.PropertyInfo[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -6938,7 +6932,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func getProperties(_ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_PropertyInfo_Array? /* System.Reflection.PropertyInfo[] */ {
+	public func getProperties(_ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_PropertyInfo_Array /* System.Reflection.PropertyInfo[] */ {
 		let bindingAttrC = bindingAttr.cValue
 		
 		
@@ -6959,7 +6953,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func getDefaultMembers() throws -> System_Reflection_MemberInfo_Array? /* System.Reflection.MemberInfo[] */ {
+	public func getDefaultMembers() throws -> System_Reflection_MemberInfo_Array /* System.Reflection.MemberInfo[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -7000,7 +6994,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public class func getTypeArray(_ args: System_Object_Array /* System.Object[] */) throws -> System_Type_Array? /* System.Type[] */ {
+	public class func getTypeArray(_ args: System_Object_Array /* System.Object[] */) throws -> System_Type_Array /* System.Type[] */ {
 		let argsC = args.__handle
 		
 		
@@ -7335,7 +7329,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func getInterfaces() throws -> System_Type_Array? /* System.Type[] */ {
+	public func getInterfaces() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -7414,7 +7408,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func getEnumUnderlyingType() throws -> System_Type? /* System.Type */ {
+	public func getEnumUnderlyingType() throws -> System_Type /* System.Type */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -7434,7 +7428,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func getEnumValues() throws -> System_Array? /* System.Array */ {
+	public func getEnumValues() throws -> System_Array /* System.Array */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -7454,7 +7448,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func getEnumValuesAsUnderlyingType() throws -> System_Array? /* System.Array */ {
+	public func getEnumValuesAsUnderlyingType() throws -> System_Array /* System.Array */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -7474,7 +7468,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func makeArrayType() throws -> System_Type? /* System.Type */ {
+	public func makeArrayType() throws -> System_Type /* System.Type */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -7494,7 +7488,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func makeArrayType(_ rank: Int32 /* System.Int32 */) throws -> System_Type? /* System.Type */ {
+	public func makeArrayType(_ rank: Int32 /* System.Int32 */) throws -> System_Type /* System.Type */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -7514,7 +7508,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func makeByRefType() throws -> System_Type? /* System.Type */ {
+	public func makeByRefType() throws -> System_Type /* System.Type */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -7534,7 +7528,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func makeGenericType(_ typeArguments: System_Type_Array /* System.Type[] */) throws -> System_Type? /* System.Type */ {
+	public func makeGenericType(_ typeArguments: System_Type_Array /* System.Type[] */) throws -> System_Type /* System.Type */ {
 		let typeArgumentsC = typeArguments.__handle
 		
 		
@@ -7555,7 +7549,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func makePointerType() throws -> System_Type? /* System.Type */ {
+	public func makePointerType() throws -> System_Type /* System.Type */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -7575,7 +7569,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public class func makeGenericSignatureType(_ genericTypeDefinition: System_Type /* System.Type */, _ typeArguments: System_Type_Array /* System.Type[] */) throws -> System_Type? /* System.Type */ {
+	public class func makeGenericSignatureType(_ genericTypeDefinition: System_Type /* System.Type */, _ typeArguments: System_Type_Array /* System.Type[] */) throws -> System_Type /* System.Type */ {
 		let genericTypeDefinitionC = genericTypeDefinition.__handle
 		let typeArgumentsC = typeArguments.__handle
 		
@@ -7597,7 +7591,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public class func makeGenericMethodParameter(_ position: Int32 /* System.Int32 */) throws -> System_Type? /* System.Type */ {
+	public class func makeGenericMethodParameter(_ position: Int32 /* System.Int32 */) throws -> System_Type /* System.Type */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -7617,7 +7611,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -7754,7 +7748,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func getEnumNames() throws -> System_String_Array? /* System.String[] */ {
+	public func getEnumNames() throws -> System_String_Array /* System.String[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -7774,7 +7768,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func findInterfaces(_ filter: System_Reflection_TypeFilter /* System.Reflection.TypeFilter */, _ filterCriteria: System_Object? /* System.Object */) throws -> System_Type_Array? /* System.Type[] */ {
+	public func findInterfaces(_ filter: System_Reflection_TypeFilter /* System.Reflection.TypeFilter */, _ filterCriteria: System_Object? /* System.Object */) throws -> System_Type_Array /* System.Type[] */ {
 		let filterC = filter.__handle
 		let filterCriteriaC = filterCriteria?.__handle
 		
@@ -7796,7 +7790,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
-	public func findMembers(_ memberType: System_Reflection_MemberTypes /* System.Reflection.MemberTypes */, _ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */, _ filter: System_Reflection_MemberFilter? /* System.Reflection.MemberFilter */, _ filterCriteria: System_Object? /* System.Object */) throws -> System_Reflection_MemberInfo_Array? /* System.Reflection.MemberInfo[] */ {
+	public func findMembers(_ memberType: System_Reflection_MemberTypes /* System.Reflection.MemberTypes */, _ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */, _ filter: System_Reflection_MemberFilter? /* System.Reflection.MemberFilter */, _ filterCriteria: System_Object? /* System.Object */) throws -> System_Reflection_MemberInfo_Array /* System.Reflection.MemberInfo[] */ {
 		let memberTypeC = memberType.cValue
 		let bindingAttrC = bindingAttr.cValue
 		let filterC = filter?.__handle
@@ -7961,7 +7955,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
-	public var assembly: System_Reflection_Assembly? /* System.Reflection.Assembly */ { get throws {
+	public var assembly: System_Reflection_Assembly /* System.Reflection.Assembly */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -7982,7 +7976,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
-	public override var module: System_Reflection_Module? /* System.Reflection.Module */ { get throws {
+	public override var module: System_Reflection_Module /* System.Reflection.Module */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -8085,7 +8079,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
-	public var underlyingSystemType: System_Type? /* System.Type */ { get throws {
+	public var underlyingSystemType: System_Type /* System.Type */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -8410,7 +8404,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
-	public var genericTypeArguments: System_Type_Array? /* System.Type[] */ { get throws {
+	public var genericTypeArguments: System_Type_Array /* System.Type[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -9148,7 +9142,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
-	public class var defaultBinder: System_Reflection_Binder? /* System.Reflection.Binder */ { get throws {
+	public class var defaultBinder: System_Reflection_Binder /* System.Reflection.Binder */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -9238,7 +9232,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
-	public class var emptyTypes: System_Type_Array? /* System.Type[] */ { get {
+	public class var emptyTypes: System_Type_Array /* System.Type[] */ { get {
 		
 		
 		let __returnValueC = System_Type_EmptyTypes_Get()
@@ -9250,7 +9244,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
-	public class var missing: System_Object? /* System.Object */ { get {
+	public class var missing: System_Object /* System.Object */ { get {
 		
 		
 		let __returnValueC = System_Type_Missing_Get()
@@ -9262,7 +9256,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
-	public class var filterAttribute: System_Reflection_MemberFilter? /* System.Reflection.MemberFilter */ { get {
+	public class var filterAttribute: System_Reflection_MemberFilter /* System.Reflection.MemberFilter */ { get {
 		
 		
 		let __returnValueC = System_Type_FilterAttribute_Get()
@@ -9274,7 +9268,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
-	public class var filterName: System_Reflection_MemberFilter? /* System.Reflection.MemberFilter */ { get {
+	public class var filterName: System_Reflection_MemberFilter /* System.Reflection.MemberFilter */ { get {
 		
 		
 		let __returnValueC = System_Type_FilterName_Get()
@@ -9286,7 +9280,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
-	public class var filterNameIgnoreCase: System_Reflection_MemberFilter? /* System.Reflection.MemberFilter */ { get {
+	public class var filterNameIgnoreCase: System_Reflection_MemberFilter /* System.Reflection.MemberFilter */ { get {
 		
 		
 		let __returnValueC = System_Type_FilterNameIgnoreCase_Get()
@@ -9359,7 +9353,7 @@ public class System_Reflection_MemberInfo /* System.Reflection.MemberInfo */: Sy
 		
 	}
 	
-	public func getCustomAttributes(_ inherit: Bool /* System.Boolean */) throws -> System_Object_Array? /* System.Object[] */ {
+	public func getCustomAttributes(_ inherit: Bool /* System.Boolean */) throws -> System_Object_Array /* System.Object[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -9379,7 +9373,7 @@ public class System_Reflection_MemberInfo /* System.Reflection.MemberInfo */: Sy
 		
 	}
 	
-	public func getCustomAttributes(_ attributeType: System_Type /* System.Type */, _ inherit: Bool /* System.Boolean */) throws -> System_Object_Array? /* System.Object[] */ {
+	public func getCustomAttributes(_ attributeType: System_Type /* System.Type */, _ inherit: Bool /* System.Boolean */) throws -> System_Object_Array /* System.Object[] */ {
 		let attributeTypeC = attributeType.__handle
 		
 		
@@ -9478,7 +9472,7 @@ public class System_Reflection_MemberInfo /* System.Reflection.MemberInfo */: Sy
 	}}
 	
 	
-	public var name: System_String? /* System.String */ { get throws {
+	public var name: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -9541,7 +9535,7 @@ public class System_Reflection_MemberInfo /* System.Reflection.MemberInfo */: Sy
 	}}
 	
 	
-	public var module: System_Reflection_Module? /* System.Reflection.Module */ { get throws {
+	public var module: System_Reflection_Module /* System.Reflection.Module */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -9644,7 +9638,7 @@ public class System_Reflection_ICustomAttributeProvider /* System.Reflection.ICu
 		"System.Reflection.ICustomAttributeProvider"
 	}}
 
-	public func getCustomAttributes(_ inherit: Bool /* System.Boolean */) throws -> System_Object_Array? /* System.Object[] */ {
+	public func getCustomAttributes(_ inherit: Bool /* System.Boolean */) throws -> System_Object_Array /* System.Object[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -9664,7 +9658,7 @@ public class System_Reflection_ICustomAttributeProvider /* System.Reflection.ICu
 		
 	}
 	
-	public func getCustomAttributes(_ attributeType: System_Type /* System.Type */, _ inherit: Bool /* System.Boolean */) throws -> System_Object_Array? /* System.Object[] */ {
+	public func getCustomAttributes(_ attributeType: System_Type /* System.Type */, _ inherit: Bool /* System.Boolean */) throws -> System_Object_Array /* System.Object[] */ {
 		let attributeTypeC = attributeType.__handle
 		
 		
@@ -9866,7 +9860,7 @@ public class System_Array /* System.Array */: System_Object {
 		
 	}
 	
-	public class func createInstance(_ elementType: System_Type /* System.Type */, _ length: Int32 /* System.Int32 */) throws -> System_Array? /* System.Array */ {
+	public class func createInstance(_ elementType: System_Type /* System.Type */, _ length: Int32 /* System.Int32 */) throws -> System_Array /* System.Array */ {
 		let elementTypeC = elementType.__handle
 		
 		
@@ -9887,7 +9881,7 @@ public class System_Array /* System.Array */: System_Object {
 		
 	}
 	
-	public class func createInstance(_ elementType: System_Type /* System.Type */, _ length1: Int32 /* System.Int32 */, _ length2: Int32 /* System.Int32 */) throws -> System_Array? /* System.Array */ {
+	public class func createInstance(_ elementType: System_Type /* System.Type */, _ length1: Int32 /* System.Int32 */, _ length2: Int32 /* System.Int32 */) throws -> System_Array /* System.Array */ {
 		let elementTypeC = elementType.__handle
 		
 		
@@ -9908,7 +9902,7 @@ public class System_Array /* System.Array */: System_Object {
 		
 	}
 	
-	public class func createInstance(_ elementType: System_Type /* System.Type */, _ length1: Int32 /* System.Int32 */, _ length2: Int32 /* System.Int32 */, _ length3: Int32 /* System.Int32 */) throws -> System_Array? /* System.Array */ {
+	public class func createInstance(_ elementType: System_Type /* System.Type */, _ length1: Int32 /* System.Int32 */, _ length2: Int32 /* System.Int32 */, _ length3: Int32 /* System.Int32 */) throws -> System_Array /* System.Array */ {
 		let elementTypeC = elementType.__handle
 		
 		
@@ -9929,7 +9923,7 @@ public class System_Array /* System.Array */: System_Object {
 		
 	}
 	
-	public class func createInstance(_ elementType: System_Type /* System.Type */, _ lengths: System_Int32_Array /* System.Int32[] */) throws -> System_Array? /* System.Array */ {
+	public class func createInstance(_ elementType: System_Type /* System.Type */, _ lengths: System_Int32_Array /* System.Int32[] */) throws -> System_Array /* System.Array */ {
 		let elementTypeC = elementType.__handle
 		let lengthsC = lengths.__handle
 		
@@ -9951,7 +9945,7 @@ public class System_Array /* System.Array */: System_Object {
 		
 	}
 	
-	public class func createInstance(_ elementType: System_Type /* System.Type */, _ lengths: System_Int32_Array /* System.Int32[] */, _ lowerBounds: System_Int32_Array /* System.Int32[] */) throws -> System_Array? /* System.Array */ {
+	public class func createInstance(_ elementType: System_Type /* System.Type */, _ lengths: System_Int32_Array /* System.Int32[] */, _ lowerBounds: System_Int32_Array /* System.Int32[] */) throws -> System_Array /* System.Array */ {
 		let elementTypeC = elementType.__handle
 		let lengthsC = lengths.__handle
 		let lowerBoundsC = lowerBounds.__handle
@@ -9974,7 +9968,7 @@ public class System_Array /* System.Array */: System_Object {
 		
 	}
 	
-	public class func createInstance(_ elementType: System_Type /* System.Type */, _ lengths: System_Int64_Array /* System.Int64[] */) throws -> System_Array? /* System.Array */ {
+	public class func createInstance(_ elementType: System_Type /* System.Type */, _ lengths: System_Int64_Array /* System.Int64[] */) throws -> System_Array /* System.Array */ {
 		let elementTypeC = elementType.__handle
 		let lengthsC = lengths.__handle
 		
@@ -10398,7 +10392,7 @@ public class System_Array /* System.Array */: System_Object {
 		
 	}
 	
-	public func clone() throws -> System_Object? /* System.Object */ {
+	public func clone() throws -> System_Object /* System.Object */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -11191,7 +11185,7 @@ public class System_Array /* System.Array */: System_Object {
 		
 	}
 	
-	public func getEnumerator() throws -> System_Collections_IEnumerator? /* System.Collections.IEnumerator */ {
+	public func getEnumerator() throws -> System_Collections_IEnumerator /* System.Collections.IEnumerator */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -11268,7 +11262,7 @@ public class System_Array /* System.Array */: System_Object {
 	}}
 	
 	
-	public var syncRoot: System_Object? /* System.Object */ { get throws {
+	public var syncRoot: System_Object /* System.Object */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -11388,7 +11382,7 @@ public class System_ICloneable /* System.ICloneable */: DNObject {
 		"System.ICloneable"
 	}}
 
-	public func clone() throws -> System_Object? /* System.Object */ {
+	public func clone() throws -> System_Object /* System.Object */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -11694,7 +11688,7 @@ public class System_Collections_ICollection /* System.Collections.ICollection */
 	}}
 	
 	
-	public var syncRoot: System_Object? /* System.Object */ { get throws {
+	public var syncRoot: System_Object /* System.Object */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -11757,7 +11751,7 @@ public class System_Collections_IEnumerable /* System.Collections.IEnumerable */
 		"System.Collections.IEnumerable"
 	}}
 
-	public func getEnumerator() throws -> System_Collections_IEnumerator? /* System.Collections.IEnumerator */ {
+	public func getEnumerator() throws -> System_Collections_IEnumerator /* System.Collections.IEnumerator */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -12329,7 +12323,7 @@ public class System_IConvertible /* System.IConvertible */: DNObject {
 		
 	}
 	
-	public func toString(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public func toString(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let providerC = provider?.__handle
 		
 		
@@ -12350,7 +12344,7 @@ public class System_IConvertible /* System.IConvertible */: DNObject {
 		
 	}
 	
-	public func toType(_ conversionType: System_Type /* System.Type */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_Object? /* System.Object */ {
+	public func toType(_ conversionType: System_Type /* System.Type */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_Object /* System.Object */ {
 		let conversionTypeC = conversionType.__handle
 		let providerC = provider?.__handle
 		
@@ -12439,7 +12433,7 @@ public class System_Enum /* System.Enum */: System_ValueType {
 		
 	}
 	
-	public class func getNames(TEnum: System_Type /* System.Type */) throws -> System_String_Array? /* System.String[] */ {
+	public class func getNames(TEnum: System_Type /* System.Type */) throws -> System_String_Array /* System.String[] */ {
 		let TEnumC = TEnum.__handle
 		
 		
@@ -12460,7 +12454,7 @@ public class System_Enum /* System.Enum */: System_ValueType {
 		
 	}
 	
-	public class func getNames(_ enumType: System_Type /* System.Type */) throws -> System_String_Array? /* System.String[] */ {
+	public class func getNames(_ enumType: System_Type /* System.Type */) throws -> System_String_Array /* System.String[] */ {
 		let enumTypeC = enumType.__handle
 		
 		
@@ -12481,7 +12475,7 @@ public class System_Enum /* System.Enum */: System_ValueType {
 		
 	}
 	
-	public class func getUnderlyingType(_ enumType: System_Type /* System.Type */) throws -> System_Type? /* System.Type */ {
+	public class func getUnderlyingType(_ enumType: System_Type /* System.Type */) throws -> System_Type /* System.Type */ {
 		let enumTypeC = enumType.__handle
 		
 		
@@ -12523,7 +12517,7 @@ public class System_Enum /* System.Enum */: System_ValueType {
 		
 	}
 	
-	public class func getValues(_ enumType: System_Type /* System.Type */) throws -> System_Array? /* System.Array */ {
+	public class func getValues(_ enumType: System_Type /* System.Type */) throws -> System_Array /* System.Array */ {
 		let enumTypeC = enumType.__handle
 		
 		
@@ -12544,7 +12538,7 @@ public class System_Enum /* System.Enum */: System_ValueType {
 		
 	}
 	
-	public class func getValuesAsUnderlyingType(TEnum: System_Type /* System.Type */) throws -> System_Array? /* System.Array */ {
+	public class func getValuesAsUnderlyingType(TEnum: System_Type /* System.Type */) throws -> System_Array /* System.Array */ {
 		let TEnumC = TEnum.__handle
 		
 		
@@ -12565,7 +12559,7 @@ public class System_Enum /* System.Enum */: System_ValueType {
 		
 	}
 	
-	public class func getValuesAsUnderlyingType(_ enumType: System_Type /* System.Type */) throws -> System_Array? /* System.Array */ {
+	public class func getValuesAsUnderlyingType(_ enumType: System_Type /* System.Type */) throws -> System_Array /* System.Array */ {
 		let enumTypeC = enumType.__handle
 		
 		
@@ -12645,7 +12639,7 @@ public class System_Enum /* System.Enum */: System_ValueType {
 		
 	}
 	
-	public class func parse(_ enumType: System_Type /* System.Type */, _ value: System_String /* System.String */) throws -> System_Object? /* System.Object */ {
+	public class func parse(_ enumType: System_Type /* System.Type */, _ value: System_String /* System.String */) throws -> System_Object /* System.Object */ {
 		let enumTypeC = enumType.__handle
 		let valueC = value.__handle
 		
@@ -12667,7 +12661,7 @@ public class System_Enum /* System.Enum */: System_ValueType {
 		
 	}
 	
-	public class func parse(_ enumType: System_Type /* System.Type */, _ value: System_String /* System.String */, _ ignoreCase: Bool /* System.Boolean */) throws -> System_Object? /* System.Object */ {
+	public class func parse(_ enumType: System_Type /* System.Type */, _ value: System_String /* System.String */, _ ignoreCase: Bool /* System.Boolean */) throws -> System_Object /* System.Object */ {
 		let enumTypeC = enumType.__handle
 		let valueC = value.__handle
 		
@@ -12885,7 +12879,7 @@ public class System_Enum /* System.Enum */: System_ValueType {
 		
 	}
 	
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -12905,7 +12899,7 @@ public class System_Enum /* System.Enum */: System_ValueType {
 		
 	}
 	
-	public func toString(_ format: System_String? /* System.String */) throws -> System_String? /* System.String */ {
+	public func toString(_ format: System_String? /* System.String */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		
 		
@@ -12926,7 +12920,7 @@ public class System_Enum /* System.Enum */: System_ValueType {
 		
 	}
 	
-	public func toString(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public func toString(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let providerC = provider?.__handle
 		
 		
@@ -12947,7 +12941,7 @@ public class System_Enum /* System.Enum */: System_ValueType {
 		
 	}
 	
-	public func toString(_ format: System_String? /* System.String */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public func toString(_ format: System_String? /* System.String */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		let providerC = provider?.__handle
 		
@@ -12969,7 +12963,7 @@ public class System_Enum /* System.Enum */: System_ValueType {
 		
 	}
 	
-	public class func format(_ enumType: System_Type /* System.Type */, _ value: System_Object /* System.Object */, _ format: System_String /* System.String */) throws -> System_String? /* System.String */ {
+	public class func format(_ enumType: System_Type /* System.Type */, _ value: System_Object /* System.Object */, _ format: System_String /* System.String */) throws -> System_String /* System.String */ {
 		let enumTypeC = enumType.__handle
 		let valueC = value.__handle
 		let formatC = format.__handle
@@ -13012,7 +13006,7 @@ public class System_Enum /* System.Enum */: System_ValueType {
 		
 	}
 	
-	public class func toObject(_ enumType: System_Type /* System.Type */, _ value: System_Object /* System.Object */) throws -> System_Object? /* System.Object */ {
+	public class func toObject(_ enumType: System_Type /* System.Type */, _ value: System_Object /* System.Object */) throws -> System_Object /* System.Object */ {
 		let enumTypeC = enumType.__handle
 		let valueC = value.__handle
 		
@@ -13034,7 +13028,7 @@ public class System_Enum /* System.Enum */: System_ValueType {
 		
 	}
 	
-	public class func toObject(_ enumType: System_Type /* System.Type */, _ value: Int8 /* System.SByte */) throws -> System_Object? /* System.Object */ {
+	public class func toObject(_ enumType: System_Type /* System.Type */, _ value: Int8 /* System.SByte */) throws -> System_Object /* System.Object */ {
 		let enumTypeC = enumType.__handle
 		
 		
@@ -13055,7 +13049,7 @@ public class System_Enum /* System.Enum */: System_ValueType {
 		
 	}
 	
-	public class func toObject(_ enumType: System_Type /* System.Type */, _ value: Int16 /* System.Int16 */) throws -> System_Object? /* System.Object */ {
+	public class func toObject(_ enumType: System_Type /* System.Type */, _ value: Int16 /* System.Int16 */) throws -> System_Object /* System.Object */ {
 		let enumTypeC = enumType.__handle
 		
 		
@@ -13076,7 +13070,7 @@ public class System_Enum /* System.Enum */: System_ValueType {
 		
 	}
 	
-	public class func toObject(_ enumType: System_Type /* System.Type */, _ value: Int32 /* System.Int32 */) throws -> System_Object? /* System.Object */ {
+	public class func toObject(_ enumType: System_Type /* System.Type */, _ value: Int32 /* System.Int32 */) throws -> System_Object /* System.Object */ {
 		let enumTypeC = enumType.__handle
 		
 		
@@ -13097,7 +13091,7 @@ public class System_Enum /* System.Enum */: System_ValueType {
 		
 	}
 	
-	public class func toObject(_ enumType: System_Type /* System.Type */, _ value: UInt8 /* System.Byte */) throws -> System_Object? /* System.Object */ {
+	public class func toObject(_ enumType: System_Type /* System.Type */, _ value: UInt8 /* System.Byte */) throws -> System_Object /* System.Object */ {
 		let enumTypeC = enumType.__handle
 		
 		
@@ -13118,7 +13112,7 @@ public class System_Enum /* System.Enum */: System_ValueType {
 		
 	}
 	
-	public class func toObject(_ enumType: System_Type /* System.Type */, _ value: UInt16 /* System.UInt16 */) throws -> System_Object? /* System.Object */ {
+	public class func toObject(_ enumType: System_Type /* System.Type */, _ value: UInt16 /* System.UInt16 */) throws -> System_Object /* System.Object */ {
 		let enumTypeC = enumType.__handle
 		
 		
@@ -13139,7 +13133,7 @@ public class System_Enum /* System.Enum */: System_ValueType {
 		
 	}
 	
-	public class func toObject(_ enumType: System_Type /* System.Type */, _ value: UInt32 /* System.UInt32 */) throws -> System_Object? /* System.Object */ {
+	public class func toObject(_ enumType: System_Type /* System.Type */, _ value: UInt32 /* System.UInt32 */) throws -> System_Object /* System.Object */ {
 		let enumTypeC = enumType.__handle
 		
 		
@@ -13160,7 +13154,7 @@ public class System_Enum /* System.Enum */: System_ValueType {
 		
 	}
 	
-	public class func toObject(_ enumType: System_Type /* System.Type */, _ value: Int64 /* System.Int64 */) throws -> System_Object? /* System.Object */ {
+	public class func toObject(_ enumType: System_Type /* System.Type */, _ value: Int64 /* System.Int64 */) throws -> System_Object /* System.Object */ {
 		let enumTypeC = enumType.__handle
 		
 		
@@ -13181,7 +13175,7 @@ public class System_Enum /* System.Enum */: System_ValueType {
 		
 	}
 	
-	public class func toObject(_ enumType: System_Type /* System.Type */, _ value: UInt64 /* System.UInt64 */) throws -> System_Object? /* System.Object */ {
+	public class func toObject(_ enumType: System_Type /* System.Type */, _ value: UInt64 /* System.UInt64 */) throws -> System_Object /* System.Object */ {
 		let enumTypeC = enumType.__handle
 		
 		
@@ -13248,7 +13242,7 @@ public class System_IFormattable /* System.IFormattable */: DNObject {
 		"System.IFormattable"
 	}}
 
-	public func toString(_ format: System_String? /* System.String */, _ formatProvider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public func toString(_ format: System_String? /* System.String */, _ formatProvider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		let formatProviderC = formatProvider?.__handle
 		
@@ -13293,7 +13287,7 @@ public class System_String /* System.String */: System_Object {
 		"System.String"
 	}}
 
-	public class func intern(_ str: System_String /* System.String */) throws -> System_String? /* System.String */ {
+	public class func intern(_ str: System_String /* System.String */) throws -> System_String /* System.String */ {
 		let strC = str.__handle
 		
 		
@@ -13913,7 +13907,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func clone() throws -> System_Object? /* System.Object */ {
+	public func clone() throws -> System_Object /* System.Object */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -13933,7 +13927,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public class func copy(_ str: System_String /* System.String */) throws -> System_String? /* System.String */ {
+	public class func copy(_ str: System_String /* System.String */) throws -> System_String /* System.String */ {
 		let strC = str.__handle
 		
 		
@@ -13972,7 +13966,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func toCharArray() throws -> System_Char_Array? /* System.Char[] */ {
+	public func toCharArray() throws -> System_Char_Array /* System.Char[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -13992,7 +13986,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func toCharArray(_ startIndex: Int32 /* System.Int32 */, _ length: Int32 /* System.Int32 */) throws -> System_Char_Array? /* System.Char[] */ {
+	public func toCharArray(_ startIndex: Int32 /* System.Int32 */, _ length: Int32 /* System.Int32 */) throws -> System_Char_Array /* System.Char[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -14050,7 +14044,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -14070,7 +14064,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func toString(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public func toString(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let providerC = provider?.__handle
 		
 		
@@ -14091,7 +14085,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func getEnumerator() throws -> System_CharEnumerator? /* System.CharEnumerator */ {
+	public func getEnumerator() throws -> System_CharEnumerator /* System.CharEnumerator */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -14188,7 +14182,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func normalize() throws -> System_String? /* System.String */ {
+	public func normalize() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -14208,7 +14202,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func normalize(_ normalizationForm: System_Text_NormalizationForm /* System.Text.NormalizationForm */) throws -> System_String? /* System.String */ {
+	public func normalize(_ normalizationForm: System_Text_NormalizationForm /* System.Text.NormalizationForm */) throws -> System_String /* System.String */ {
 		let normalizationFormC = normalizationForm.cValue
 		
 		
@@ -14229,7 +14223,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public class func concat(_ arg0: System_Object? /* System.Object */) throws -> System_String? /* System.String */ {
+	public class func concat(_ arg0: System_Object? /* System.Object */) throws -> System_String /* System.String */ {
 		let arg0C = arg0?.__handle
 		
 		
@@ -14250,7 +14244,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public class func concat(_ arg0: System_Object? /* System.Object */, _ arg1: System_Object? /* System.Object */) throws -> System_String? /* System.String */ {
+	public class func concat(_ arg0: System_Object? /* System.Object */, _ arg1: System_Object? /* System.Object */) throws -> System_String /* System.String */ {
 		let arg0C = arg0?.__handle
 		let arg1C = arg1?.__handle
 		
@@ -14272,7 +14266,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public class func concat(_ arg0: System_Object? /* System.Object */, _ arg1: System_Object? /* System.Object */, _ arg2: System_Object? /* System.Object */) throws -> System_String? /* System.String */ {
+	public class func concat(_ arg0: System_Object? /* System.Object */, _ arg1: System_Object? /* System.Object */, _ arg2: System_Object? /* System.Object */) throws -> System_String /* System.String */ {
 		let arg0C = arg0?.__handle
 		let arg1C = arg1?.__handle
 		let arg2C = arg2?.__handle
@@ -14295,7 +14289,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public class func concat(_ args: System_Object_Array /* System.Object[] */) throws -> System_String? /* System.String */ {
+	public class func concat(_ args: System_Object_Array /* System.Object[] */) throws -> System_String /* System.String */ {
 		let argsC = args.__handle
 		
 		
@@ -14316,7 +14310,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public class func concat(_ values: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.String> */) throws -> System_String? /* System.String */ {
+	public class func concat(_ values: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.String> */) throws -> System_String /* System.String */ {
 		let valuesC = values.__handle
 		
 		
@@ -14337,7 +14331,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public class func concat(_ str0: System_String? /* System.String */, _ str1: System_String? /* System.String */) throws -> System_String? /* System.String */ {
+	public class func concat(_ str0: System_String? /* System.String */, _ str1: System_String? /* System.String */) throws -> System_String /* System.String */ {
 		let str0C = str0?.__handle
 		let str1C = str1?.__handle
 		
@@ -14359,7 +14353,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public class func concat(_ str0: System_String? /* System.String */, _ str1: System_String? /* System.String */, _ str2: System_String? /* System.String */) throws -> System_String? /* System.String */ {
+	public class func concat(_ str0: System_String? /* System.String */, _ str1: System_String? /* System.String */, _ str2: System_String? /* System.String */) throws -> System_String /* System.String */ {
 		let str0C = str0?.__handle
 		let str1C = str1?.__handle
 		let str2C = str2?.__handle
@@ -14382,7 +14376,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public class func concat(_ str0: System_String? /* System.String */, _ str1: System_String? /* System.String */, _ str2: System_String? /* System.String */, _ str3: System_String? /* System.String */) throws -> System_String? /* System.String */ {
+	public class func concat(_ str0: System_String? /* System.String */, _ str1: System_String? /* System.String */, _ str2: System_String? /* System.String */, _ str3: System_String? /* System.String */) throws -> System_String /* System.String */ {
 		let str0C = str0?.__handle
 		let str1C = str1?.__handle
 		let str2C = str2?.__handle
@@ -14406,7 +14400,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public class func concat(_ values: System_String_Array /* System.String[] */) throws -> System_String? /* System.String */ {
+	public class func concat(_ values: System_String_Array /* System.String[] */) throws -> System_String /* System.String */ {
 		let valuesC = values.__handle
 		
 		
@@ -14427,7 +14421,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public class func format(_ format: System_String /* System.String */, _ arg0: System_Object? /* System.Object */) throws -> System_String? /* System.String */ {
+	public class func format(_ format: System_String /* System.String */, _ arg0: System_Object? /* System.Object */) throws -> System_String /* System.String */ {
 		let formatC = format.__handle
 		let arg0C = arg0?.__handle
 		
@@ -14449,7 +14443,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public class func format(_ format: System_String /* System.String */, _ arg0: System_Object? /* System.Object */, _ arg1: System_Object? /* System.Object */) throws -> System_String? /* System.String */ {
+	public class func format(_ format: System_String /* System.String */, _ arg0: System_Object? /* System.Object */, _ arg1: System_Object? /* System.Object */) throws -> System_String /* System.String */ {
 		let formatC = format.__handle
 		let arg0C = arg0?.__handle
 		let arg1C = arg1?.__handle
@@ -14472,7 +14466,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public class func format(_ format: System_String /* System.String */, _ arg0: System_Object? /* System.Object */, _ arg1: System_Object? /* System.Object */, _ arg2: System_Object? /* System.Object */) throws -> System_String? /* System.String */ {
+	public class func format(_ format: System_String /* System.String */, _ arg0: System_Object? /* System.Object */, _ arg1: System_Object? /* System.Object */, _ arg2: System_Object? /* System.Object */) throws -> System_String /* System.String */ {
 		let formatC = format.__handle
 		let arg0C = arg0?.__handle
 		let arg1C = arg1?.__handle
@@ -14496,7 +14490,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public class func format(_ format: System_String /* System.String */, _ args: System_Object_Array /* System.Object[] */) throws -> System_String? /* System.String */ {
+	public class func format(_ format: System_String /* System.String */, _ args: System_Object_Array /* System.Object[] */) throws -> System_String /* System.String */ {
 		let formatC = format.__handle
 		let argsC = args.__handle
 		
@@ -14518,7 +14512,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public class func format(_ provider: System_IFormatProvider? /* System.IFormatProvider */, _ format: System_String /* System.String */, _ arg0: System_Object? /* System.Object */) throws -> System_String? /* System.String */ {
+	public class func format(_ provider: System_IFormatProvider? /* System.IFormatProvider */, _ format: System_String /* System.String */, _ arg0: System_Object? /* System.Object */) throws -> System_String /* System.String */ {
 		let providerC = provider?.__handle
 		let formatC = format.__handle
 		let arg0C = arg0?.__handle
@@ -14541,7 +14535,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public class func format(_ provider: System_IFormatProvider? /* System.IFormatProvider */, _ format: System_String /* System.String */, _ arg0: System_Object? /* System.Object */, _ arg1: System_Object? /* System.Object */) throws -> System_String? /* System.String */ {
+	public class func format(_ provider: System_IFormatProvider? /* System.IFormatProvider */, _ format: System_String /* System.String */, _ arg0: System_Object? /* System.Object */, _ arg1: System_Object? /* System.Object */) throws -> System_String /* System.String */ {
 		let providerC = provider?.__handle
 		let formatC = format.__handle
 		let arg0C = arg0?.__handle
@@ -14565,7 +14559,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public class func format(_ provider: System_IFormatProvider? /* System.IFormatProvider */, _ format: System_String /* System.String */, _ arg0: System_Object? /* System.Object */, _ arg1: System_Object? /* System.Object */, _ arg2: System_Object? /* System.Object */) throws -> System_String? /* System.String */ {
+	public class func format(_ provider: System_IFormatProvider? /* System.IFormatProvider */, _ format: System_String /* System.String */, _ arg0: System_Object? /* System.Object */, _ arg1: System_Object? /* System.Object */, _ arg2: System_Object? /* System.Object */) throws -> System_String /* System.String */ {
 		let providerC = provider?.__handle
 		let formatC = format.__handle
 		let arg0C = arg0?.__handle
@@ -14590,7 +14584,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public class func format(_ provider: System_IFormatProvider? /* System.IFormatProvider */, _ format: System_String /* System.String */, _ args: System_Object_Array /* System.Object[] */) throws -> System_String? /* System.String */ {
+	public class func format(_ provider: System_IFormatProvider? /* System.IFormatProvider */, _ format: System_String /* System.String */, _ args: System_Object_Array /* System.Object[] */) throws -> System_String /* System.String */ {
 		let providerC = provider?.__handle
 		let formatC = format.__handle
 		let argsC = args.__handle
@@ -14613,7 +14607,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public class func format(TArg0: System_Type /* System.Type */, _ provider: System_IFormatProvider? /* System.IFormatProvider */, _ format: System_Text_CompositeFormat? /* System.Text.CompositeFormat */, _ arg0: System_Object? /* System.Object */) throws -> System_String? /* System.String */ {
+	public class func format(TArg0: System_Type /* System.Type */, _ provider: System_IFormatProvider? /* System.IFormatProvider */, _ format: System_Text_CompositeFormat? /* System.Text.CompositeFormat */, _ arg0: System_Object? /* System.Object */) throws -> System_String /* System.String */ {
 		let TArg0C = TArg0.__handle
 		let providerC = provider?.__handle
 		let formatC = format?.__handle
@@ -14637,7 +14631,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public class func format(TArg0: System_Type /* System.Type */, TArg1: System_Type /* System.Type */, _ provider: System_IFormatProvider? /* System.IFormatProvider */, _ format: System_Text_CompositeFormat? /* System.Text.CompositeFormat */, _ arg0: System_Object? /* System.Object */, _ arg1: System_Object? /* System.Object */) throws -> System_String? /* System.String */ {
+	public class func format(TArg0: System_Type /* System.Type */, TArg1: System_Type /* System.Type */, _ provider: System_IFormatProvider? /* System.IFormatProvider */, _ format: System_Text_CompositeFormat? /* System.Text.CompositeFormat */, _ arg0: System_Object? /* System.Object */, _ arg1: System_Object? /* System.Object */) throws -> System_String /* System.String */ {
 		let TArg0C = TArg0.__handle
 		let TArg1C = TArg1.__handle
 		let providerC = provider?.__handle
@@ -14663,7 +14657,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public class func format(TArg0: System_Type /* System.Type */, TArg1: System_Type /* System.Type */, TArg2: System_Type /* System.Type */, _ provider: System_IFormatProvider? /* System.IFormatProvider */, _ format: System_Text_CompositeFormat? /* System.Text.CompositeFormat */, _ arg0: System_Object? /* System.Object */, _ arg1: System_Object? /* System.Object */, _ arg2: System_Object? /* System.Object */) throws -> System_String? /* System.String */ {
+	public class func format(TArg0: System_Type /* System.Type */, TArg1: System_Type /* System.Type */, TArg2: System_Type /* System.Type */, _ provider: System_IFormatProvider? /* System.IFormatProvider */, _ format: System_Text_CompositeFormat? /* System.Text.CompositeFormat */, _ arg0: System_Object? /* System.Object */, _ arg1: System_Object? /* System.Object */, _ arg2: System_Object? /* System.Object */) throws -> System_String /* System.String */ {
 		let TArg0C = TArg0.__handle
 		let TArg1C = TArg1.__handle
 		let TArg2C = TArg2.__handle
@@ -14691,7 +14685,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public class func format(_ provider: System_IFormatProvider? /* System.IFormatProvider */, _ format: System_Text_CompositeFormat /* System.Text.CompositeFormat */, _ args: System_Object_Array /* System.Object[] */) throws -> System_String? /* System.String */ {
+	public class func format(_ provider: System_IFormatProvider? /* System.IFormatProvider */, _ format: System_Text_CompositeFormat /* System.Text.CompositeFormat */, _ args: System_Object_Array /* System.Object[] */) throws -> System_String /* System.String */ {
 		let providerC = provider?.__handle
 		let formatC = format.__handle
 		let argsC = args.__handle
@@ -14714,7 +14708,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func insert(_ startIndex: Int32 /* System.Int32 */, _ value: System_String /* System.String */) throws -> System_String? /* System.String */ {
+	public func insert(_ startIndex: Int32 /* System.Int32 */, _ value: System_String /* System.String */) throws -> System_String /* System.String */ {
 		let valueC = value.__handle
 		
 		
@@ -14735,7 +14729,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public class func join(_ separator: DNChar /* System.Char */, _ value: System_String_Array /* System.String[] */) throws -> System_String? /* System.String */ {
+	public class func join(_ separator: DNChar /* System.Char */, _ value: System_String_Array /* System.String[] */) throws -> System_String /* System.String */ {
 		let separatorC = separator.cValue
 		let valueC = value.__handle
 		
@@ -14757,7 +14751,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public class func join(_ separator: System_String? /* System.String */, _ value: System_String_Array /* System.String[] */) throws -> System_String? /* System.String */ {
+	public class func join(_ separator: System_String? /* System.String */, _ value: System_String_Array /* System.String[] */) throws -> System_String /* System.String */ {
 		let separatorC = separator?.__handle
 		let valueC = value.__handle
 		
@@ -14779,7 +14773,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public class func join(_ separator: DNChar /* System.Char */, _ value: System_String_Array /* System.String[] */, _ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_String? /* System.String */ {
+	public class func join(_ separator: DNChar /* System.Char */, _ value: System_String_Array /* System.String[] */, _ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_String /* System.String */ {
 		let separatorC = separator.cValue
 		let valueC = value.__handle
 		
@@ -14801,7 +14795,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public class func join(_ separator: System_String? /* System.String */, _ value: System_String_Array /* System.String[] */, _ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_String? /* System.String */ {
+	public class func join(_ separator: System_String? /* System.String */, _ value: System_String_Array /* System.String[] */, _ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_String /* System.String */ {
 		let separatorC = separator?.__handle
 		let valueC = value.__handle
 		
@@ -14823,7 +14817,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public class func join(_ separator: System_String? /* System.String */, _ values: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.String> */) throws -> System_String? /* System.String */ {
+	public class func join(_ separator: System_String? /* System.String */, _ values: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.String> */) throws -> System_String /* System.String */ {
 		let separatorC = separator?.__handle
 		let valuesC = values.__handle
 		
@@ -14845,7 +14839,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public class func join(_ separator: DNChar /* System.Char */, _ values: System_Object_Array /* System.Object[] */) throws -> System_String? /* System.String */ {
+	public class func join(_ separator: DNChar /* System.Char */, _ values: System_Object_Array /* System.Object[] */) throws -> System_String /* System.String */ {
 		let separatorC = separator.cValue
 		let valuesC = values.__handle
 		
@@ -14867,7 +14861,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public class func join(_ separator: System_String? /* System.String */, _ values: System_Object_Array /* System.Object[] */) throws -> System_String? /* System.String */ {
+	public class func join(_ separator: System_String? /* System.String */, _ values: System_Object_Array /* System.Object[] */) throws -> System_String /* System.String */ {
 		let separatorC = separator?.__handle
 		let valuesC = values.__handle
 		
@@ -14889,7 +14883,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func padLeft(_ totalWidth: Int32 /* System.Int32 */) throws -> System_String? /* System.String */ {
+	public func padLeft(_ totalWidth: Int32 /* System.Int32 */) throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -14909,7 +14903,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func padLeft(_ totalWidth: Int32 /* System.Int32 */, _ paddingChar: DNChar /* System.Char */) throws -> System_String? /* System.String */ {
+	public func padLeft(_ totalWidth: Int32 /* System.Int32 */, _ paddingChar: DNChar /* System.Char */) throws -> System_String /* System.String */ {
 		let paddingCharC = paddingChar.cValue
 		
 		
@@ -14930,7 +14924,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func padRight(_ totalWidth: Int32 /* System.Int32 */) throws -> System_String? /* System.String */ {
+	public func padRight(_ totalWidth: Int32 /* System.Int32 */) throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -14950,7 +14944,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func padRight(_ totalWidth: Int32 /* System.Int32 */, _ paddingChar: DNChar /* System.Char */) throws -> System_String? /* System.String */ {
+	public func padRight(_ totalWidth: Int32 /* System.Int32 */, _ paddingChar: DNChar /* System.Char */) throws -> System_String /* System.String */ {
 		let paddingCharC = paddingChar.cValue
 		
 		
@@ -14971,7 +14965,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func remove(_ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_String? /* System.String */ {
+	public func remove(_ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -14991,7 +14985,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func remove(_ startIndex: Int32 /* System.Int32 */) throws -> System_String? /* System.String */ {
+	public func remove(_ startIndex: Int32 /* System.Int32 */) throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -15011,7 +15005,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func replace(_ oldValue: System_String /* System.String */, _ newValue: System_String? /* System.String */, _ ignoreCase: Bool /* System.Boolean */, _ culture: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */) throws -> System_String? /* System.String */ {
+	public func replace(_ oldValue: System_String /* System.String */, _ newValue: System_String? /* System.String */, _ ignoreCase: Bool /* System.Boolean */, _ culture: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */) throws -> System_String /* System.String */ {
 		let oldValueC = oldValue.__handle
 		let newValueC = newValue?.__handle
 		let cultureC = culture?.__handle
@@ -15034,7 +15028,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func replace(_ oldValue: System_String /* System.String */, _ newValue: System_String? /* System.String */, _ comparisonType: System_StringComparison /* System.StringComparison */) throws -> System_String? /* System.String */ {
+	public func replace(_ oldValue: System_String /* System.String */, _ newValue: System_String? /* System.String */, _ comparisonType: System_StringComparison /* System.StringComparison */) throws -> System_String /* System.String */ {
 		let oldValueC = oldValue.__handle
 		let newValueC = newValue?.__handle
 		let comparisonTypeC = comparisonType.cValue
@@ -15057,7 +15051,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func replace(_ oldChar: DNChar /* System.Char */, _ newChar: DNChar /* System.Char */) throws -> System_String? /* System.String */ {
+	public func replace(_ oldChar: DNChar /* System.Char */, _ newChar: DNChar /* System.Char */) throws -> System_String /* System.String */ {
 		let oldCharC = oldChar.cValue
 		let newCharC = newChar.cValue
 		
@@ -15079,7 +15073,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func replace(_ oldValue: System_String /* System.String */, _ newValue: System_String? /* System.String */) throws -> System_String? /* System.String */ {
+	public func replace(_ oldValue: System_String /* System.String */, _ newValue: System_String? /* System.String */) throws -> System_String /* System.String */ {
 		let oldValueC = oldValue.__handle
 		let newValueC = newValue?.__handle
 		
@@ -15101,7 +15095,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func replaceLineEndings() throws -> System_String? /* System.String */ {
+	public func replaceLineEndings() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -15121,7 +15115,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func replaceLineEndings(_ replacementText: System_String /* System.String */) throws -> System_String? /* System.String */ {
+	public func replaceLineEndings(_ replacementText: System_String /* System.String */) throws -> System_String /* System.String */ {
 		let replacementTextC = replacementText.__handle
 		
 		
@@ -15142,7 +15136,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func split(_ separator: DNChar /* System.Char */, _ options: System_StringSplitOptions /* System.StringSplitOptions */) throws -> System_String_Array? /* System.String[] */ {
+	public func split(_ separator: DNChar /* System.Char */, _ options: System_StringSplitOptions /* System.StringSplitOptions */) throws -> System_String_Array /* System.String[] */ {
 		let separatorC = separator.cValue
 		let optionsC = options.cValue
 		
@@ -15164,7 +15158,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func split(_ separator: DNChar /* System.Char */, _ count: Int32 /* System.Int32 */, _ options: System_StringSplitOptions /* System.StringSplitOptions */) throws -> System_String_Array? /* System.String[] */ {
+	public func split(_ separator: DNChar /* System.Char */, _ count: Int32 /* System.Int32 */, _ options: System_StringSplitOptions /* System.StringSplitOptions */) throws -> System_String_Array /* System.String[] */ {
 		let separatorC = separator.cValue
 		let optionsC = options.cValue
 		
@@ -15186,7 +15180,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func split(_ separator: System_Char_Array? /* System.Char[] */) throws -> System_String_Array? /* System.String[] */ {
+	public func split(_ separator: System_Char_Array? /* System.Char[] */) throws -> System_String_Array /* System.String[] */ {
 		let separatorC = separator?.__handle
 		
 		
@@ -15207,7 +15201,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func split(_ separator: System_Char_Array? /* System.Char[] */, _ count: Int32 /* System.Int32 */) throws -> System_String_Array? /* System.String[] */ {
+	public func split(_ separator: System_Char_Array? /* System.Char[] */, _ count: Int32 /* System.Int32 */) throws -> System_String_Array /* System.String[] */ {
 		let separatorC = separator?.__handle
 		
 		
@@ -15228,7 +15222,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func split(_ separator: System_Char_Array? /* System.Char[] */, _ options: System_StringSplitOptions /* System.StringSplitOptions */) throws -> System_String_Array? /* System.String[] */ {
+	public func split(_ separator: System_Char_Array? /* System.Char[] */, _ options: System_StringSplitOptions /* System.StringSplitOptions */) throws -> System_String_Array /* System.String[] */ {
 		let separatorC = separator?.__handle
 		let optionsC = options.cValue
 		
@@ -15250,7 +15244,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func split(_ separator: System_Char_Array? /* System.Char[] */, _ count: Int32 /* System.Int32 */, _ options: System_StringSplitOptions /* System.StringSplitOptions */) throws -> System_String_Array? /* System.String[] */ {
+	public func split(_ separator: System_Char_Array? /* System.Char[] */, _ count: Int32 /* System.Int32 */, _ options: System_StringSplitOptions /* System.StringSplitOptions */) throws -> System_String_Array /* System.String[] */ {
 		let separatorC = separator?.__handle
 		let optionsC = options.cValue
 		
@@ -15272,7 +15266,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func split(_ separator: System_String? /* System.String */, _ options: System_StringSplitOptions /* System.StringSplitOptions */) throws -> System_String_Array? /* System.String[] */ {
+	public func split(_ separator: System_String? /* System.String */, _ options: System_StringSplitOptions /* System.StringSplitOptions */) throws -> System_String_Array /* System.String[] */ {
 		let separatorC = separator?.__handle
 		let optionsC = options.cValue
 		
@@ -15294,7 +15288,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func split(_ separator: System_String? /* System.String */, _ count: Int32 /* System.Int32 */, _ options: System_StringSplitOptions /* System.StringSplitOptions */) throws -> System_String_Array? /* System.String[] */ {
+	public func split(_ separator: System_String? /* System.String */, _ count: Int32 /* System.Int32 */, _ options: System_StringSplitOptions /* System.StringSplitOptions */) throws -> System_String_Array /* System.String[] */ {
 		let separatorC = separator?.__handle
 		let optionsC = options.cValue
 		
@@ -15316,7 +15310,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func split(_ separator: System_String_Array? /* System.String[] */, _ options: System_StringSplitOptions /* System.StringSplitOptions */) throws -> System_String_Array? /* System.String[] */ {
+	public func split(_ separator: System_String_Array? /* System.String[] */, _ options: System_StringSplitOptions /* System.StringSplitOptions */) throws -> System_String_Array /* System.String[] */ {
 		let separatorC = separator?.__handle
 		let optionsC = options.cValue
 		
@@ -15338,7 +15332,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func split(_ separator: System_String_Array? /* System.String[] */, _ count: Int32 /* System.Int32 */, _ options: System_StringSplitOptions /* System.StringSplitOptions */) throws -> System_String_Array? /* System.String[] */ {
+	public func split(_ separator: System_String_Array? /* System.String[] */, _ count: Int32 /* System.Int32 */, _ options: System_StringSplitOptions /* System.StringSplitOptions */) throws -> System_String_Array /* System.String[] */ {
 		let separatorC = separator?.__handle
 		let optionsC = options.cValue
 		
@@ -15360,7 +15354,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func substring(_ startIndex: Int32 /* System.Int32 */) throws -> System_String? /* System.String */ {
+	public func substring(_ startIndex: Int32 /* System.Int32 */) throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -15380,7 +15374,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func substring(_ startIndex: Int32 /* System.Int32 */, _ length: Int32 /* System.Int32 */) throws -> System_String? /* System.String */ {
+	public func substring(_ startIndex: Int32 /* System.Int32 */, _ length: Int32 /* System.Int32 */) throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -15400,7 +15394,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func toLower() throws -> System_String? /* System.String */ {
+	public func toLower() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -15420,7 +15414,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func toLower(_ culture: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */) throws -> System_String? /* System.String */ {
+	public func toLower(_ culture: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */) throws -> System_String /* System.String */ {
 		let cultureC = culture?.__handle
 		
 		
@@ -15441,7 +15435,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func toLowerInvariant() throws -> System_String? /* System.String */ {
+	public func toLowerInvariant() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -15461,7 +15455,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func toUpper() throws -> System_String? /* System.String */ {
+	public func toUpper() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -15481,7 +15475,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func toUpper(_ culture: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */) throws -> System_String? /* System.String */ {
+	public func toUpper(_ culture: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */) throws -> System_String /* System.String */ {
 		let cultureC = culture?.__handle
 		
 		
@@ -15502,7 +15496,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func toUpperInvariant() throws -> System_String? /* System.String */ {
+	public func toUpperInvariant() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -15522,7 +15516,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func trim() throws -> System_String? /* System.String */ {
+	public func trim() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -15542,7 +15536,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func trim(_ trimChar: DNChar /* System.Char */) throws -> System_String? /* System.String */ {
+	public func trim(_ trimChar: DNChar /* System.Char */) throws -> System_String /* System.String */ {
 		let trimCharC = trimChar.cValue
 		
 		
@@ -15563,7 +15557,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func trim(_ trimChars: System_Char_Array? /* System.Char[] */) throws -> System_String? /* System.String */ {
+	public func trim(_ trimChars: System_Char_Array? /* System.Char[] */) throws -> System_String /* System.String */ {
 		let trimCharsC = trimChars?.__handle
 		
 		
@@ -15584,7 +15578,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func trimStart() throws -> System_String? /* System.String */ {
+	public func trimStart() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -15604,7 +15598,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func trimStart(_ trimChar: DNChar /* System.Char */) throws -> System_String? /* System.String */ {
+	public func trimStart(_ trimChar: DNChar /* System.Char */) throws -> System_String /* System.String */ {
 		let trimCharC = trimChar.cValue
 		
 		
@@ -15625,7 +15619,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func trimStart(_ trimChars: System_Char_Array? /* System.Char[] */) throws -> System_String? /* System.String */ {
+	public func trimStart(_ trimChars: System_Char_Array? /* System.Char[] */) throws -> System_String /* System.String */ {
 		let trimCharsC = trimChars?.__handle
 		
 		
@@ -15646,7 +15640,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func trimEnd() throws -> System_String? /* System.String */ {
+	public func trimEnd() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -15666,7 +15660,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func trimEnd(_ trimChar: DNChar /* System.Char */) throws -> System_String? /* System.String */ {
+	public func trimEnd(_ trimChar: DNChar /* System.Char */) throws -> System_String /* System.String */ {
 		let trimCharC = trimChar.cValue
 		
 		
@@ -15687,7 +15681,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public func trimEnd(_ trimChars: System_Char_Array? /* System.Char[] */) throws -> System_String? /* System.String */ {
+	public func trimEnd(_ trimChars: System_Char_Array? /* System.Char[] */) throws -> System_String /* System.String */ {
 		let trimCharsC = trimChars?.__handle
 		
 		
@@ -16371,7 +16365,7 @@ public class System_String /* System.String */: System_Object {
 	}}
 	
 	
-	public class var empty: System_String? /* System.String */ { get {
+	public class var empty: System_String /* System.String */ { get {
 		
 		
 		let __returnValueC = System_String_Empty_Get()
@@ -17625,7 +17619,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		"System.Globalization.CultureInfo"
 	}}
 
-	public class func createSpecificCulture(_ name: System_String /* System.String */) throws -> System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ {
+	public class func createSpecificCulture(_ name: System_String /* System.String */) throws -> System_Globalization_CultureInfo /* System.Globalization.CultureInfo */ {
 		let nameC = name.__handle
 		
 		
@@ -17646,7 +17640,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 	}
 	
-	public class func getCultures(_ types: System_Globalization_CultureTypes /* System.Globalization.CultureTypes */) throws -> System_Globalization_CultureInfo_Array? /* System.Globalization.CultureInfo[] */ {
+	public class func getCultures(_ types: System_Globalization_CultureTypes /* System.Globalization.CultureTypes */) throws -> System_Globalization_CultureInfo_Array /* System.Globalization.CultureInfo[] */ {
 		let typesC = types.cValue
 		
 		
@@ -17704,7 +17698,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 	}
 	
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -17762,7 +17756,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 	}
 	
-	public func getConsoleFallbackUICulture() throws -> System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ {
+	public func getConsoleFallbackUICulture() throws -> System_Globalization_CultureInfo /* System.Globalization.CultureInfo */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -17782,7 +17776,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 	}
 	
-	public func clone() throws -> System_Object? /* System.Object */ {
+	public func clone() throws -> System_Object /* System.Object */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -17802,7 +17796,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 	}
 	
-	public class func readOnly(_ ci: System_Globalization_CultureInfo /* System.Globalization.CultureInfo */) throws -> System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ {
+	public class func readOnly(_ ci: System_Globalization_CultureInfo /* System.Globalization.CultureInfo */) throws -> System_Globalization_CultureInfo /* System.Globalization.CultureInfo */ {
 		let ciC = ci.__handle
 		
 		
@@ -17823,7 +17817,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 	}
 	
-	public class func getCultureInfo(_ culture: Int32 /* System.Int32 */) throws -> System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ {
+	public class func getCultureInfo(_ culture: Int32 /* System.Int32 */) throws -> System_Globalization_CultureInfo /* System.Globalization.CultureInfo */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -17843,7 +17837,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 	}
 	
-	public class func getCultureInfo(_ name: System_String /* System.String */) throws -> System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ {
+	public class func getCultureInfo(_ name: System_String /* System.String */) throws -> System_Globalization_CultureInfo /* System.Globalization.CultureInfo */ {
 		let nameC = name.__handle
 		
 		
@@ -17864,7 +17858,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 	}
 	
-	public class func getCultureInfo(_ name: System_String /* System.String */, _ altName: System_String /* System.String */) throws -> System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ {
+	public class func getCultureInfo(_ name: System_String /* System.String */, _ altName: System_String /* System.String */) throws -> System_Globalization_CultureInfo /* System.Globalization.CultureInfo */ {
 		let nameC = name.__handle
 		let altNameC = altName.__handle
 		
@@ -17886,7 +17880,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 	}
 	
-	public class func getCultureInfo(_ name: System_String /* System.String */, _ predefinedOnly: Bool /* System.Boolean */) throws -> System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ {
+	public class func getCultureInfo(_ name: System_String /* System.String */, _ predefinedOnly: Bool /* System.Boolean */) throws -> System_Globalization_CultureInfo /* System.Globalization.CultureInfo */ {
 		let nameC = name.__handle
 		
 		
@@ -17907,7 +17901,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 	}
 	
-	public class func getCultureInfoByIetfLanguageTag(_ name: System_String /* System.String */) throws -> System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ {
+	public class func getCultureInfoByIetfLanguageTag(_ name: System_String /* System.String */) throws -> System_Globalization_CultureInfo /* System.Globalization.CultureInfo */ {
 		let nameC = name.__handle
 		
 		
@@ -18010,7 +18004,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 	}
 	
-	public class var currentCulture: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ { get throws {
+	public class var currentCulture: System_Globalization_CultureInfo /* System.Globalization.CultureInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -18048,7 +18042,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}
 	
 	
-	public class var currentUICulture: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ { get throws {
+	public class var currentUICulture: System_Globalization_CultureInfo /* System.Globalization.CultureInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -18086,7 +18080,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}
 	
 	
-	public class var installedUICulture: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ { get throws {
+	public class var installedUICulture: System_Globalization_CultureInfo /* System.Globalization.CultureInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -18183,7 +18177,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}
 	
 	
-	public class var invariantCulture: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ { get throws {
+	public class var invariantCulture: System_Globalization_CultureInfo /* System.Globalization.CultureInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -18204,7 +18198,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}}
 	
 	
-	public var parent: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ { get throws {
+	public var parent: System_Globalization_CultureInfo /* System.Globalization.CultureInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -18263,7 +18257,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}}
 	
 	
-	public var name: System_String? /* System.String */ { get throws {
+	public var name: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -18284,7 +18278,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}}
 	
 	
-	public var ietfLanguageTag: System_String? /* System.String */ { get throws {
+	public var ietfLanguageTag: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -18305,7 +18299,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}}
 	
 	
-	public var displayName: System_String? /* System.String */ { get throws {
+	public var displayName: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -18326,7 +18320,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}}
 	
 	
-	public var nativeName: System_String? /* System.String */ { get throws {
+	public var nativeName: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -18347,7 +18341,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}}
 	
 	
-	public var englishName: System_String? /* System.String */ { get throws {
+	public var englishName: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -18368,7 +18362,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}}
 	
 	
-	public var twoLetterISOLanguageName: System_String? /* System.String */ { get throws {
+	public var twoLetterISOLanguageName: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -18389,7 +18383,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}}
 	
 	
-	public var threeLetterISOLanguageName: System_String? /* System.String */ { get throws {
+	public var threeLetterISOLanguageName: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -18410,7 +18404,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}}
 	
 	
-	public var threeLetterWindowsLanguageName: System_String? /* System.String */ { get throws {
+	public var threeLetterWindowsLanguageName: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -18431,7 +18425,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}}
 	
 	
-	public var compareInfo: System_Globalization_CompareInfo? /* System.Globalization.CompareInfo */ { get throws {
+	public var compareInfo: System_Globalization_CompareInfo /* System.Globalization.CompareInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -18452,7 +18446,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}}
 	
 	
-	public var textInfo: System_Globalization_TextInfo? /* System.Globalization.TextInfo */ { get throws {
+	public var textInfo: System_Globalization_TextInfo /* System.Globalization.TextInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -18513,7 +18507,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}}
 	
 	
-	public var numberFormat: System_Globalization_NumberFormatInfo? /* System.Globalization.NumberFormatInfo */ { get throws {
+	public var numberFormat: System_Globalization_NumberFormatInfo /* System.Globalization.NumberFormatInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -18551,7 +18545,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}
 	
 	
-	public var dateTimeFormat: System_Globalization_DateTimeFormatInfo? /* System.Globalization.DateTimeFormatInfo */ { get throws {
+	public var dateTimeFormat: System_Globalization_DateTimeFormatInfo /* System.Globalization.DateTimeFormatInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -18589,7 +18583,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}
 	
 	
-	public var calendar: System_Globalization_Calendar? /* System.Globalization.Calendar */ { get throws {
+	public var calendar: System_Globalization_Calendar /* System.Globalization.Calendar */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -18610,7 +18604,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}}
 	
 	
-	public var optionalCalendars: System_Globalization_Calendar_Array? /* System.Globalization.Calendar[] */ { get throws {
+	public var optionalCalendars: System_Globalization_Calendar_Array /* System.Globalization.Calendar[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -19300,7 +19294,7 @@ public class System_Globalization_CompareInfo /* System.Globalization.CompareInf
 		"System.Globalization.CompareInfo"
 	}}
 
-	public class func getCompareInfo(_ culture: Int32 /* System.Int32 */, _ assembly: System_Reflection_Assembly /* System.Reflection.Assembly */) throws -> System_Globalization_CompareInfo? /* System.Globalization.CompareInfo */ {
+	public class func getCompareInfo(_ culture: Int32 /* System.Int32 */, _ assembly: System_Reflection_Assembly /* System.Reflection.Assembly */) throws -> System_Globalization_CompareInfo /* System.Globalization.CompareInfo */ {
 		let assemblyC = assembly.__handle
 		
 		
@@ -19321,7 +19315,7 @@ public class System_Globalization_CompareInfo /* System.Globalization.CompareInf
 		
 	}
 	
-	public class func getCompareInfo(_ name: System_String /* System.String */, _ assembly: System_Reflection_Assembly /* System.Reflection.Assembly */) throws -> System_Globalization_CompareInfo? /* System.Globalization.CompareInfo */ {
+	public class func getCompareInfo(_ name: System_String /* System.String */, _ assembly: System_Reflection_Assembly /* System.Reflection.Assembly */) throws -> System_Globalization_CompareInfo /* System.Globalization.CompareInfo */ {
 		let nameC = name.__handle
 		let assemblyC = assembly.__handle
 		
@@ -19343,7 +19337,7 @@ public class System_Globalization_CompareInfo /* System.Globalization.CompareInf
 		
 	}
 	
-	public class func getCompareInfo(_ culture: Int32 /* System.Int32 */) throws -> System_Globalization_CompareInfo? /* System.Globalization.CompareInfo */ {
+	public class func getCompareInfo(_ culture: Int32 /* System.Int32 */) throws -> System_Globalization_CompareInfo /* System.Globalization.CompareInfo */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -19363,7 +19357,7 @@ public class System_Globalization_CompareInfo /* System.Globalization.CompareInf
 		
 	}
 	
-	public class func getCompareInfo(_ name: System_String /* System.String */) throws -> System_Globalization_CompareInfo? /* System.Globalization.CompareInfo */ {
+	public class func getCompareInfo(_ name: System_String /* System.String */) throws -> System_Globalization_CompareInfo /* System.Globalization.CompareInfo */ {
 		let nameC = name.__handle
 		
 		
@@ -20138,7 +20132,7 @@ public class System_Globalization_CompareInfo /* System.Globalization.CompareInf
 		
 	}
 	
-	public func getSortKey(_ source: System_String /* System.String */, _ options: System_Globalization_CompareOptions /* System.Globalization.CompareOptions */) throws -> System_Globalization_SortKey? /* System.Globalization.SortKey */ {
+	public func getSortKey(_ source: System_String /* System.String */, _ options: System_Globalization_CompareOptions /* System.Globalization.CompareOptions */) throws -> System_Globalization_SortKey /* System.Globalization.SortKey */ {
 		let sourceC = source.__handle
 		let optionsC = options.cValue
 		
@@ -20160,7 +20154,7 @@ public class System_Globalization_CompareInfo /* System.Globalization.CompareInf
 		
 	}
 	
-	public func getSortKey(_ source: System_String /* System.String */) throws -> System_Globalization_SortKey? /* System.Globalization.SortKey */ {
+	public func getSortKey(_ source: System_String /* System.String */) throws -> System_Globalization_SortKey /* System.Globalization.SortKey */ {
 		let sourceC = source.__handle
 		
 		
@@ -20238,7 +20232,7 @@ public class System_Globalization_CompareInfo /* System.Globalization.CompareInf
 		
 	}
 	
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -20258,7 +20252,7 @@ public class System_Globalization_CompareInfo /* System.Globalization.CompareInf
 		
 	}
 	
-	public var name: System_String? /* System.String */ { get throws {
+	public var name: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -20279,7 +20273,7 @@ public class System_Globalization_CompareInfo /* System.Globalization.CompareInf
 	}}
 	
 	
-	public var version: System_Globalization_SortVersion? /* System.Globalization.SortVersion */ { get throws {
+	public var version: System_Globalization_SortVersion /* System.Globalization.SortVersion */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -20383,7 +20377,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		"System.Reflection.Assembly"
 	}}
 
-	public class func load(_ assemblyString: System_String /* System.String */) throws -> System_Reflection_Assembly? /* System.Reflection.Assembly */ {
+	public class func load(_ assemblyString: System_String /* System.String */) throws -> System_Reflection_Assembly /* System.Reflection.Assembly */ {
 		let assemblyStringC = assemblyString.__handle
 		
 		
@@ -20425,7 +20419,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
-	public class func load(_ assemblyRef: System_Reflection_AssemblyName /* System.Reflection.AssemblyName */) throws -> System_Reflection_Assembly? /* System.Reflection.Assembly */ {
+	public class func load(_ assemblyRef: System_Reflection_AssemblyName /* System.Reflection.AssemblyName */) throws -> System_Reflection_Assembly /* System.Reflection.Assembly */ {
 		let assemblyRefC = assemblyRef.__handle
 		
 		
@@ -20446,7 +20440,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
-	public class func getExecutingAssembly() throws -> System_Reflection_Assembly? /* System.Reflection.Assembly */ {
+	public class func getExecutingAssembly() throws -> System_Reflection_Assembly /* System.Reflection.Assembly */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -20466,7 +20460,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
-	public class func getCallingAssembly() throws -> System_Reflection_Assembly? /* System.Reflection.Assembly */ {
+	public class func getCallingAssembly() throws -> System_Reflection_Assembly /* System.Reflection.Assembly */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -20486,7 +20480,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
-	public func getTypes() throws -> System_Type_Array? /* System.Type[] */ {
+	public func getTypes() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -20506,7 +20500,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
-	public func getExportedTypes() throws -> System_Type_Array? /* System.Type[] */ {
+	public func getExportedTypes() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -20526,7 +20520,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
-	public func getForwardedTypes() throws -> System_Type_Array? /* System.Type[] */ {
+	public func getForwardedTypes() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -20567,7 +20561,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
-	public func getManifestResourceNames() throws -> System_String_Array? /* System.String[] */ {
+	public func getManifestResourceNames() throws -> System_String_Array /* System.String[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -20630,7 +20624,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
-	public func getName() throws -> System_Reflection_AssemblyName? /* System.Reflection.AssemblyName */ {
+	public func getName() throws -> System_Reflection_AssemblyName /* System.Reflection.AssemblyName */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -20650,7 +20644,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
-	public func getName(_ copiedName: Bool /* System.Boolean */) throws -> System_Reflection_AssemblyName? /* System.Reflection.AssemblyName */ {
+	public func getName(_ copiedName: Bool /* System.Boolean */) throws -> System_Reflection_AssemblyName /* System.Reflection.AssemblyName */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -20772,7 +20766,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
-	public func getCustomAttributes(_ inherit: Bool /* System.Boolean */) throws -> System_Object_Array? /* System.Object[] */ {
+	public func getCustomAttributes(_ inherit: Bool /* System.Boolean */) throws -> System_Object_Array /* System.Object[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -20792,7 +20786,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
-	public func getCustomAttributes(_ attributeType: System_Type /* System.Type */, _ inherit: Bool /* System.Boolean */) throws -> System_Object_Array? /* System.Object[] */ {
+	public func getCustomAttributes(_ attributeType: System_Type /* System.Type */, _ inherit: Bool /* System.Boolean */) throws -> System_Object_Array /* System.Object[] */ {
 		let attributeTypeC = attributeType.__handle
 		
 		
@@ -20902,7 +20896,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
-	public func getModules() throws -> System_Reflection_Module_Array? /* System.Reflection.Module[] */ {
+	public func getModules() throws -> System_Reflection_Module_Array /* System.Reflection.Module[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -20922,7 +20916,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
-	public func getModules(_ getResourceModules: Bool /* System.Boolean */) throws -> System_Reflection_Module_Array? /* System.Reflection.Module[] */ {
+	public func getModules(_ getResourceModules: Bool /* System.Boolean */) throws -> System_Reflection_Module_Array /* System.Reflection.Module[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -20942,7 +20936,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
-	public func getLoadedModules() throws -> System_Reflection_Module_Array? /* System.Reflection.Module[] */ {
+	public func getLoadedModules() throws -> System_Reflection_Module_Array /* System.Reflection.Module[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -20962,7 +20956,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
-	public func getLoadedModules(_ getResourceModules: Bool /* System.Boolean */) throws -> System_Reflection_Module_Array? /* System.Reflection.Module[] */ {
+	public func getLoadedModules(_ getResourceModules: Bool /* System.Boolean */) throws -> System_Reflection_Module_Array /* System.Reflection.Module[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -20982,7 +20976,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
-	public func getReferencedAssemblies() throws -> System_Reflection_AssemblyName_Array? /* System.Reflection.AssemblyName[] */ {
+	public func getReferencedAssemblies() throws -> System_Reflection_AssemblyName_Array /* System.Reflection.AssemblyName[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -21002,7 +20996,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
-	public func getSatelliteAssembly(_ culture: System_Globalization_CultureInfo /* System.Globalization.CultureInfo */) throws -> System_Reflection_Assembly? /* System.Reflection.Assembly */ {
+	public func getSatelliteAssembly(_ culture: System_Globalization_CultureInfo /* System.Globalization.CultureInfo */) throws -> System_Reflection_Assembly /* System.Reflection.Assembly */ {
 		let cultureC = culture.__handle
 		
 		
@@ -21023,7 +21017,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
-	public func getSatelliteAssembly(_ culture: System_Globalization_CultureInfo /* System.Globalization.CultureInfo */, _ version: System_Version? /* System.Version */) throws -> System_Reflection_Assembly? /* System.Reflection.Assembly */ {
+	public func getSatelliteAssembly(_ culture: System_Globalization_CultureInfo /* System.Globalization.CultureInfo */, _ version: System_Version? /* System.Version */) throws -> System_Reflection_Assembly /* System.Reflection.Assembly */ {
 		let cultureC = culture.__handle
 		let versionC = version?.__handle
 		
@@ -21066,7 +21060,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
-	public func getFiles() throws -> System_IO_FileStream_Array? /* System.IO.FileStream[] */ {
+	public func getFiles() throws -> System_IO_FileStream_Array /* System.IO.FileStream[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -21086,7 +21080,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
-	public func getFiles(_ getResourceModules: Bool /* System.Boolean */) throws -> System_IO_FileStream_Array? /* System.IO.FileStream[] */ {
+	public func getFiles(_ getResourceModules: Bool /* System.Boolean */) throws -> System_IO_FileStream_Array /* System.IO.FileStream[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -21125,7 +21119,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -21182,7 +21176,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
-	public class func createQualifiedName(_ assemblyName: System_String? /* System.String */, _ typeName: System_String? /* System.String */) throws -> System_String? /* System.String */ {
+	public class func createQualifiedName(_ assemblyName: System_String? /* System.String */, _ typeName: System_String? /* System.String */) throws -> System_String /* System.String */ {
 		let assemblyNameC = assemblyName?.__handle
 		let typeNameC = typeName?.__handle
 		
@@ -21245,7 +21239,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
-	public class func load(_ rawAssembly: System_Byte_Array /* System.Byte[] */) throws -> System_Reflection_Assembly? /* System.Reflection.Assembly */ {
+	public class func load(_ rawAssembly: System_Byte_Array /* System.Byte[] */) throws -> System_Reflection_Assembly /* System.Reflection.Assembly */ {
 		let rawAssemblyC = rawAssembly.__handle
 		
 		
@@ -21266,7 +21260,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
-	public class func load(_ rawAssembly: System_Byte_Array /* System.Byte[] */, _ rawSymbolStore: System_Byte_Array? /* System.Byte[] */) throws -> System_Reflection_Assembly? /* System.Reflection.Assembly */ {
+	public class func load(_ rawAssembly: System_Byte_Array /* System.Byte[] */, _ rawSymbolStore: System_Byte_Array? /* System.Byte[] */) throws -> System_Reflection_Assembly /* System.Reflection.Assembly */ {
 		let rawAssemblyC = rawAssembly.__handle
 		let rawSymbolStoreC = rawSymbolStore?.__handle
 		
@@ -21288,7 +21282,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
-	public class func loadFile(_ path: System_String /* System.String */) throws -> System_Reflection_Assembly? /* System.Reflection.Assembly */ {
+	public class func loadFile(_ path: System_String /* System.String */) throws -> System_Reflection_Assembly /* System.Reflection.Assembly */ {
 		let pathC = path.__handle
 		
 		
@@ -21309,7 +21303,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
-	public class func loadFrom(_ assemblyFile: System_String /* System.String */) throws -> System_Reflection_Assembly? /* System.Reflection.Assembly */ {
+	public class func loadFrom(_ assemblyFile: System_String /* System.String */) throws -> System_Reflection_Assembly /* System.Reflection.Assembly */ {
 		let assemblyFileC = assemblyFile.__handle
 		
 		
@@ -21330,7 +21324,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
-	public class func loadFrom(_ assemblyFile: System_String /* System.String */, _ hashValue: System_Byte_Array? /* System.Byte[] */, _ hashAlgorithm: System_Configuration_Assemblies_AssemblyHashAlgorithm /* System.Configuration.Assemblies.AssemblyHashAlgorithm */) throws -> System_Reflection_Assembly? /* System.Reflection.Assembly */ {
+	public class func loadFrom(_ assemblyFile: System_String /* System.String */, _ hashValue: System_Byte_Array? /* System.Byte[] */, _ hashAlgorithm: System_Configuration_Assemblies_AssemblyHashAlgorithm /* System.Configuration.Assemblies.AssemblyHashAlgorithm */) throws -> System_Reflection_Assembly /* System.Reflection.Assembly */ {
 		let assemblyFileC = assemblyFile.__handle
 		let hashValueC = hashValue?.__handle
 		let hashAlgorithmC = hashAlgorithm.cValue
@@ -21353,7 +21347,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
-	public class func unsafeLoadFrom(_ assemblyFile: System_String /* System.String */) throws -> System_Reflection_Assembly? /* System.Reflection.Assembly */ {
+	public class func unsafeLoadFrom(_ assemblyFile: System_String /* System.String */) throws -> System_Reflection_Assembly /* System.Reflection.Assembly */ {
 		let assemblyFileC = assemblyFile.__handle
 		
 		
@@ -21374,7 +21368,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
-	public func loadModule(_ moduleName: System_String /* System.String */, _ rawModule: System_Byte_Array? /* System.Byte[] */) throws -> System_Reflection_Module? /* System.Reflection.Module */ {
+	public func loadModule(_ moduleName: System_String /* System.String */, _ rawModule: System_Byte_Array? /* System.Byte[] */) throws -> System_Reflection_Module /* System.Reflection.Module */ {
 		let moduleNameC = moduleName.__handle
 		let rawModuleC = rawModule?.__handle
 		
@@ -21396,7 +21390,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
-	public func loadModule(_ moduleName: System_String /* System.String */, _ rawModule: System_Byte_Array? /* System.Byte[] */, _ rawSymbolStore: System_Byte_Array? /* System.Byte[] */) throws -> System_Reflection_Module? /* System.Reflection.Module */ {
+	public func loadModule(_ moduleName: System_String /* System.String */, _ rawModule: System_Byte_Array? /* System.Byte[] */, _ rawSymbolStore: System_Byte_Array? /* System.Byte[] */) throws -> System_Reflection_Module /* System.Reflection.Module */ {
 		let moduleNameC = moduleName.__handle
 		let rawModuleC = rawModule?.__handle
 		let rawSymbolStoreC = rawSymbolStore?.__handle
@@ -21419,7 +21413,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
-	public class func reflectionOnlyLoad(_ rawAssembly: System_Byte_Array /* System.Byte[] */) throws -> System_Reflection_Assembly? /* System.Reflection.Assembly */ {
+	public class func reflectionOnlyLoad(_ rawAssembly: System_Byte_Array /* System.Byte[] */) throws -> System_Reflection_Assembly /* System.Reflection.Assembly */ {
 		let rawAssemblyC = rawAssembly.__handle
 		
 		
@@ -21440,7 +21434,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
-	public class func reflectionOnlyLoad(_ assemblyString: System_String /* System.String */) throws -> System_Reflection_Assembly? /* System.Reflection.Assembly */ {
+	public class func reflectionOnlyLoad(_ assemblyString: System_String /* System.String */) throws -> System_Reflection_Assembly /* System.Reflection.Assembly */ {
 		let assemblyStringC = assemblyString.__handle
 		
 		
@@ -21461,7 +21455,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
-	public class func reflectionOnlyLoadFrom(_ assemblyFile: System_String /* System.String */) throws -> System_Reflection_Assembly? /* System.Reflection.Assembly */ {
+	public class func reflectionOnlyLoadFrom(_ assemblyFile: System_String /* System.String */) throws -> System_Reflection_Assembly /* System.Reflection.Assembly */ {
 		let assemblyFileC = assemblyFile.__handle
 		
 		
@@ -21587,7 +21581,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 	}}
 	
 	
-	public var imageRuntimeVersion: System_String? /* System.String */ { get throws {
+	public var imageRuntimeVersion: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -21627,7 +21621,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 	}}
 	
 	
-	public var location: System_String? /* System.String */ { get throws {
+	public var location: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -21726,7 +21720,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 	}}
 	
 	
-	public var escapedCodeBase: System_String? /* System.String */ { get throws {
+	public var escapedCodeBase: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -21747,7 +21741,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 	}}
 	
 	
-	public var manifestModule: System_Reflection_Module? /* System.Reflection.Module */ { get throws {
+	public var manifestModule: System_Reflection_Module /* System.Reflection.Module */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -21949,7 +21943,7 @@ public class System_Runtime_Serialization_SerializationInfo /* System.Runtime.Se
 		
 	}
 	
-	public func getEnumerator() throws -> System_Runtime_Serialization_SerializationInfoEnumerator? /* System.Runtime.Serialization.SerializationInfoEnumerator */ {
+	public func getEnumerator() throws -> System_Runtime_Serialization_SerializationInfoEnumerator /* System.Runtime.Serialization.SerializationInfoEnumerator */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -22622,7 +22616,7 @@ public class System_Runtime_Serialization_SerializationInfo /* System.Runtime.Se
 		
 	}
 	
-	public var fullTypeName: System_String? /* System.String */ { get throws {
+	public var fullTypeName: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -22660,7 +22654,7 @@ public class System_Runtime_Serialization_SerializationInfo /* System.Runtime.Se
 	}
 	
 	
-	public var assemblyName: System_String? /* System.String */ { get throws {
+	public var assemblyName: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -22755,7 +22749,7 @@ public class System_Runtime_Serialization_SerializationInfo /* System.Runtime.Se
 	}}
 	
 	
-	public var objectType: System_Type? /* System.Type */ { get throws {
+	public var objectType: System_Type /* System.Type */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -22855,7 +22849,7 @@ public class System_Runtime_Serialization_SerializationInfoEnumerator /* System.
 	}}
 	
 	
-	public var name: System_String? /* System.String */ { get throws {
+	public var name: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -22897,7 +22891,7 @@ public class System_Runtime_Serialization_SerializationInfoEnumerator /* System.
 	}}
 	
 	
-	public var objectType: System_Type? /* System.Type */ { get throws {
+	public var objectType: System_Type /* System.Type */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -22962,7 +22956,7 @@ public class System_Runtime_Serialization_SerializationEntry /* System.Runtime.S
 	}}
 	
 	
-	public var name: System_String? /* System.String */ { get throws {
+	public var name: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -22983,7 +22977,7 @@ public class System_Runtime_Serialization_SerializationEntry /* System.Runtime.S
 	}}
 	
 	
-	public var objectType: System_Type? /* System.Type */ { get throws {
+	public var objectType: System_Type /* System.Type */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -25918,7 +25912,7 @@ public class System_Decimal /* System.Decimal */: System_ValueType {
 		
 	}
 	
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -25938,7 +25932,7 @@ public class System_Decimal /* System.Decimal */: System_ValueType {
 		
 	}
 	
-	public func toString(_ format: System_String? /* System.String */) throws -> System_String? /* System.String */ {
+	public func toString(_ format: System_String? /* System.String */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		
 		
@@ -25959,7 +25953,7 @@ public class System_Decimal /* System.Decimal */: System_ValueType {
 		
 	}
 	
-	public func toString(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public func toString(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let providerC = provider?.__handle
 		
 		
@@ -25980,7 +25974,7 @@ public class System_Decimal /* System.Decimal */: System_ValueType {
 		
 	}
 	
-	public func toString(_ format: System_String? /* System.String */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public func toString(_ format: System_String? /* System.String */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		let providerC = provider?.__handle
 		
@@ -26161,7 +26155,7 @@ public class System_Decimal /* System.Decimal */: System_ValueType {
 		
 	}
 	
-	public class func getBits(_ d: System_Decimal /* System.Decimal */) throws -> System_Int32_Array? /* System.Int32[] */ {
+	public class func getBits(_ d: System_Decimal /* System.Decimal */) throws -> System_Int32_Array /* System.Int32[] */ {
 		let dC = d.__handle
 		
 		
@@ -28157,7 +28151,7 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 	}
 	
-	public func toLongDateString() throws -> System_String? /* System.String */ {
+	public func toLongDateString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -28177,7 +28171,7 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 	}
 	
-	public func toLongTimeString() throws -> System_String? /* System.String */ {
+	public func toLongTimeString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -28197,7 +28191,7 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 	}
 	
-	public func toShortDateString() throws -> System_String? /* System.String */ {
+	public func toShortDateString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -28217,7 +28211,7 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 	}
 	
-	public func toShortTimeString() throws -> System_String? /* System.String */ {
+	public func toShortTimeString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -28237,7 +28231,7 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 	}
 	
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -28257,7 +28251,7 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 	}
 	
-	public func toString(_ format: System_String? /* System.String */) throws -> System_String? /* System.String */ {
+	public func toString(_ format: System_String? /* System.String */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		
 		
@@ -28278,7 +28272,7 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 	}
 	
-	public func toString(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public func toString(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let providerC = provider?.__handle
 		
 		
@@ -28299,7 +28293,7 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 	}
 	
-	public func toString(_ format: System_String? /* System.String */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public func toString(_ format: System_String? /* System.String */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		let providerC = provider?.__handle
 		
@@ -28482,7 +28476,7 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 	}
 	
-	public func getDateTimeFormats() throws -> System_String_Array? /* System.String[] */ {
+	public func getDateTimeFormats() throws -> System_String_Array /* System.String[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -28502,7 +28496,7 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 	}
 	
-	public func getDateTimeFormats(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String_Array? /* System.String[] */ {
+	public func getDateTimeFormats(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String_Array /* System.String[] */ {
 		let providerC = provider?.__handle
 		
 		
@@ -28523,7 +28517,7 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 	}
 	
-	public func getDateTimeFormats(_ format: DNChar /* System.Char */) throws -> System_String_Array? /* System.String[] */ {
+	public func getDateTimeFormats(_ format: DNChar /* System.Char */) throws -> System_String_Array /* System.String[] */ {
 		let formatC = format.cValue
 		
 		
@@ -28544,7 +28538,7 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 	}
 	
-	public func getDateTimeFormats(_ format: DNChar /* System.Char */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String_Array? /* System.String[] */ {
+	public func getDateTimeFormats(_ format: DNChar /* System.Char */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String_Array /* System.String[] */ {
 		let formatC = format.cValue
 		let providerC = provider?.__handle
 		
@@ -30076,7 +30070,7 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 		
 	}
 	
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -30096,7 +30090,7 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 		
 	}
 	
-	public func toString(_ format: System_String? /* System.String */) throws -> System_String? /* System.String */ {
+	public func toString(_ format: System_String? /* System.String */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		
 		
@@ -30117,7 +30111,7 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 		
 	}
 	
-	public func toString(_ format: System_String? /* System.String */, _ formatProvider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public func toString(_ format: System_String? /* System.String */, _ formatProvider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		let formatProviderC = formatProvider?.__handle
 		
@@ -31235,7 +31229,7 @@ public class System_DateOnly /* System.DateOnly */: System_ValueType {
 		
 	}
 	
-	public func toLongDateString() throws -> System_String? /* System.String */ {
+	public func toLongDateString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -31255,7 +31249,7 @@ public class System_DateOnly /* System.DateOnly */: System_ValueType {
 		
 	}
 	
-	public func toShortDateString() throws -> System_String? /* System.String */ {
+	public func toShortDateString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -31275,7 +31269,7 @@ public class System_DateOnly /* System.DateOnly */: System_ValueType {
 		
 	}
 	
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -31295,7 +31289,7 @@ public class System_DateOnly /* System.DateOnly */: System_ValueType {
 		
 	}
 	
-	public func toString(_ format: System_String? /* System.String */) throws -> System_String? /* System.String */ {
+	public func toString(_ format: System_String? /* System.String */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		
 		
@@ -31316,7 +31310,7 @@ public class System_DateOnly /* System.DateOnly */: System_ValueType {
 		
 	}
 	
-	public func toString(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public func toString(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let providerC = provider?.__handle
 		
 		
@@ -31337,7 +31331,7 @@ public class System_DateOnly /* System.DateOnly */: System_ValueType {
 		
 	}
 	
-	public func toString(_ format: System_String? /* System.String */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public func toString(_ format: System_String? /* System.String */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		let providerC = provider?.__handle
 		
@@ -32300,7 +32294,7 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 		
 	}
 	
-	public func toLongTimeString() throws -> System_String? /* System.String */ {
+	public func toLongTimeString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -32320,7 +32314,7 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 		
 	}
 	
-	public func toShortTimeString() throws -> System_String? /* System.String */ {
+	public func toShortTimeString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -32340,7 +32334,7 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 		
 	}
 	
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -32360,7 +32354,7 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 		
 	}
 	
-	public func toString(_ format: System_String? /* System.String */) throws -> System_String? /* System.String */ {
+	public func toString(_ format: System_String? /* System.String */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		
 		
@@ -32381,7 +32375,7 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 		
 	}
 	
-	public func toString(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public func toString(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let providerC = provider?.__handle
 		
 		
@@ -32402,7 +32396,7 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 		
 	}
 	
-	public func toString(_ format: System_String? /* System.String */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public func toString(_ format: System_String? /* System.String */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		let providerC = provider?.__handle
 		
@@ -32785,7 +32779,7 @@ public class System_Globalization_Calendar /* System.Globalization.Calendar */: 
 		"System.Globalization.Calendar"
 	}}
 
-	public func clone() throws -> System_Object? /* System.Object */ {
+	public func clone() throws -> System_Object /* System.Object */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -32805,7 +32799,7 @@ public class System_Globalization_Calendar /* System.Globalization.Calendar */: 
 		
 	}
 	
-	public class func readOnly(_ calendar: System_Globalization_Calendar /* System.Globalization.Calendar */) throws -> System_Globalization_Calendar? /* System.Globalization.Calendar */ {
+	public class func readOnly(_ calendar: System_Globalization_Calendar /* System.Globalization.Calendar */) throws -> System_Globalization_Calendar /* System.Globalization.Calendar */ {
 		let calendarC = calendar.__handle
 		
 		
@@ -33599,7 +33593,7 @@ public class System_Globalization_Calendar /* System.Globalization.Calendar */: 
 	}}
 	
 	
-	public var eras: System_Int32_Array? /* System.Int32[] */ { get throws {
+	public var eras: System_Int32_Array /* System.Int32[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -33688,7 +33682,7 @@ public class System_Runtime_Serialization_IFormatterConverter /* System.Runtime.
 		"System.Runtime.Serialization.IFormatterConverter"
 	}}
 
-	public func convert(_ value: System_Object /* System.Object */, _ type: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func convert(_ value: System_Object /* System.Object */, _ type: System_Type /* System.Type */) throws -> System_Object /* System.Object */ {
 		let valueC = value.__handle
 		let typeC = type.__handle
 		
@@ -33710,7 +33704,7 @@ public class System_Runtime_Serialization_IFormatterConverter /* System.Runtime.
 		
 	}
 	
-	public func convert(_ value: System_Object /* System.Object */, _ typeCode: System_TypeCode /* System.TypeCode */) throws -> System_Object? /* System.Object */ {
+	public func convert(_ value: System_Object /* System.Object */, _ typeCode: System_TypeCode /* System.TypeCode */) throws -> System_Object /* System.Object */ {
 		let valueC = value.__handle
 		let typeCodeC = typeCode.cValue
 		
@@ -34207,7 +34201,7 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		"System.Reflection.AssemblyName"
 	}}
 
-	public func clone() throws -> System_Object? /* System.Object */ {
+	public func clone() throws -> System_Object /* System.Object */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -34227,7 +34221,7 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		
 	}
 	
-	public class func getAssemblyName(_ assemblyFile: System_String /* System.String */) throws -> System_Reflection_AssemblyName? /* System.Reflection.AssemblyName */ {
+	public class func getAssemblyName(_ assemblyFile: System_String /* System.String */) throws -> System_Reflection_AssemblyName /* System.Reflection.AssemblyName */ {
 		let assemblyFileC = assemblyFile.__handle
 		
 		
@@ -34324,7 +34318,7 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		
 	}
 	
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -34881,7 +34875,7 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 	}
 	
 	
-	public var fullName: System_String? /* System.String */ { get throws {
+	public var fullName: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -34925,7 +34919,7 @@ public class System_Version /* System.Version */: System_Object {
 		"System.Version"
 	}}
 
-	public func clone() throws -> System_Object? /* System.Object */ {
+	public func clone() throws -> System_Object /* System.Object */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -35039,7 +35033,7 @@ public class System_Version /* System.Version */: System_Object {
 		
 	}
 	
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -35059,7 +35053,7 @@ public class System_Version /* System.Version */: System_Object {
 		
 	}
 	
-	public func toString(_ fieldCount: Int32 /* System.Int32 */) throws -> System_String? /* System.String */ {
+	public func toString(_ fieldCount: Int32 /* System.Int32 */) throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -35079,7 +35073,7 @@ public class System_Version /* System.Version */: System_Object {
 		
 	}
 	
-	public class func parse(_ input: System_String /* System.String */) throws -> System_Version? /* System.Version */ {
+	public class func parse(_ input: System_String /* System.String */) throws -> System_Version /* System.Version */ {
 		let inputC = input.__handle
 		
 		
@@ -35429,7 +35423,7 @@ public class System_Reflection_StrongNameKeyPair /* System.Reflection.StrongName
 		
 	}
 	
-	public var publicKey: System_Byte_Array? /* System.Byte[] */ { get throws {
+	public var publicKey: System_Byte_Array /* System.Byte[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -35507,7 +35501,7 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		
 	}
 	
-	public override func flushAsync(_ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public override func flushAsync(_ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let cancellationTokenC = cancellationToken.__handle
 		
 		
@@ -35605,7 +35599,7 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		
 	}
 	
-	public override func writeAsync(_ buffer: System_Byte_Array /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public override func writeAsync(_ buffer: System_Byte_Array /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let bufferC = buffer.__handle
 		let cancellationTokenC = cancellationToken.__handle
 		
@@ -35751,7 +35745,7 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		
 	}
 	
-	public override func copyToAsync(_ destination: System_IO_Stream /* System.IO.Stream */, _ bufferSize: Int32 /* System.Int32 */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public override func copyToAsync(_ destination: System_IO_Stream /* System.IO.Stream */, _ bufferSize: Int32 /* System.Int32 */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let destinationC = destination.__handle
 		let cancellationTokenC = cancellationToken.__handle
 		
@@ -35773,7 +35767,7 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		
 	}
 	
-	public override func beginRead(_ buffer: System_Byte_Array /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ callback: System_AsyncCallback? /* System.AsyncCallback */, _ state: System_Object? /* System.Object */) throws -> System_IAsyncResult? /* System.IAsyncResult */ {
+	public override func beginRead(_ buffer: System_Byte_Array /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ callback: System_AsyncCallback? /* System.AsyncCallback */, _ state: System_Object? /* System.Object */) throws -> System_IAsyncResult /* System.IAsyncResult */ {
 		let bufferC = buffer.__handle
 		let callbackC = callback?.__handle
 		let stateC = state?.__handle
@@ -35815,7 +35809,7 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		
 	}
 	
-	public override func beginWrite(_ buffer: System_Byte_Array /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ callback: System_AsyncCallback? /* System.AsyncCallback */, _ state: System_Object? /* System.Object */) throws -> System_IAsyncResult? /* System.IAsyncResult */ {
+	public override func beginWrite(_ buffer: System_Byte_Array /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ callback: System_AsyncCallback? /* System.AsyncCallback */, _ state: System_Object? /* System.Object */) throws -> System_IAsyncResult /* System.IAsyncResult */ {
 		let bufferC = buffer.__handle
 		let callbackC = callback?.__handle
 		let stateC = state?.__handle
@@ -36246,7 +36240,7 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 	}}
 	
 	
-	public var safeFileHandle: Microsoft_Win32_SafeHandles_SafeFileHandle? /* Microsoft.Win32.SafeHandles.SafeFileHandle */ { get throws {
+	public var safeFileHandle: Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeHandles.SafeFileHandle */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -36267,7 +36261,7 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 	}}
 	
 	
-	public var name: System_String? /* System.String */ { get throws {
+	public var name: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -36439,7 +36433,7 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		
 	}
 	
-	public func copyToAsync(_ destination: System_IO_Stream /* System.IO.Stream */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public func copyToAsync(_ destination: System_IO_Stream /* System.IO.Stream */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let destinationC = destination.__handle
 		
 		
@@ -36460,7 +36454,7 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		
 	}
 	
-	public func copyToAsync(_ destination: System_IO_Stream /* System.IO.Stream */, _ bufferSize: Int32 /* System.Int32 */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public func copyToAsync(_ destination: System_IO_Stream /* System.IO.Stream */, _ bufferSize: Int32 /* System.Int32 */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let destinationC = destination.__handle
 		
 		
@@ -36481,7 +36475,7 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		
 	}
 	
-	public func copyToAsync(_ destination: System_IO_Stream /* System.IO.Stream */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public func copyToAsync(_ destination: System_IO_Stream /* System.IO.Stream */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let destinationC = destination.__handle
 		let cancellationTokenC = cancellationToken.__handle
 		
@@ -36503,7 +36497,7 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		
 	}
 	
-	public func copyToAsync(_ destination: System_IO_Stream /* System.IO.Stream */, _ bufferSize: Int32 /* System.Int32 */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public func copyToAsync(_ destination: System_IO_Stream /* System.IO.Stream */, _ bufferSize: Int32 /* System.Int32 */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let destinationC = destination.__handle
 		let cancellationTokenC = cancellationToken.__handle
 		
@@ -36596,7 +36590,7 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		
 	}
 	
-	public func flushAsync() throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public func flushAsync() throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -36616,7 +36610,7 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		
 	}
 	
-	public func flushAsync(_ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public func flushAsync(_ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let cancellationTokenC = cancellationToken.__handle
 		
 		
@@ -36637,7 +36631,7 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		
 	}
 	
-	public func beginRead(_ buffer: System_Byte_Array /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ callback: System_AsyncCallback? /* System.AsyncCallback */, _ state: System_Object? /* System.Object */) throws -> System_IAsyncResult? /* System.IAsyncResult */ {
+	public func beginRead(_ buffer: System_Byte_Array /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ callback: System_AsyncCallback? /* System.AsyncCallback */, _ state: System_Object? /* System.Object */) throws -> System_IAsyncResult /* System.IAsyncResult */ {
 		let bufferC = buffer.__handle
 		let callbackC = callback?.__handle
 		let stateC = state?.__handle
@@ -36744,7 +36738,7 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		
 	}
 	
-	public func beginWrite(_ buffer: System_Byte_Array /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ callback: System_AsyncCallback? /* System.AsyncCallback */, _ state: System_Object? /* System.Object */) throws -> System_IAsyncResult? /* System.IAsyncResult */ {
+	public func beginWrite(_ buffer: System_Byte_Array /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ callback: System_AsyncCallback? /* System.AsyncCallback */, _ state: System_Object? /* System.Object */) throws -> System_IAsyncResult /* System.IAsyncResult */ {
 		let bufferC = buffer.__handle
 		let callbackC = callback?.__handle
 		let stateC = state?.__handle
@@ -36785,7 +36779,7 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		
 	}
 	
-	public func writeAsync(_ buffer: System_Byte_Array /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public func writeAsync(_ buffer: System_Byte_Array /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let bufferC = buffer.__handle
 		
 		
@@ -36806,7 +36800,7 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		
 	}
 	
-	public func writeAsync(_ buffer: System_Byte_Array /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public func writeAsync(_ buffer: System_Byte_Array /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let bufferC = buffer.__handle
 		let cancellationTokenC = cancellationToken.__handle
 		
@@ -36972,7 +36966,7 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		
 	}
 	
-	public class func synchronized(_ stream: System_IO_Stream /* System.IO.Stream */) throws -> System_IO_Stream? /* System.IO.Stream */ {
+	public class func synchronized(_ stream: System_IO_Stream /* System.IO.Stream */) throws -> System_IO_Stream /* System.IO.Stream */ {
 		let streamC = stream.__handle
 		
 		
@@ -37193,7 +37187,7 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 	}
 	
 	
-	public class var null: System_IO_Stream? /* System.IO.Stream */ { get {
+	public class var null: System_IO_Stream /* System.IO.Stream */ { get {
 		
 		
 		let __returnValueC = System_IO_Stream_Null_Get()
@@ -37228,7 +37222,7 @@ public class System_MarshalByRefObject /* System.MarshalByRefObject */: System_O
 		"System.MarshalByRefObject"
 	}}
 
-	public func getLifetimeService() throws -> System_Object? /* System.Object */ {
+	public func getLifetimeService() throws -> System_Object /* System.Object */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -37248,7 +37242,7 @@ public class System_MarshalByRefObject /* System.MarshalByRefObject */: System_O
 		
 	}
 	
-	public func initializeLifetimeService() throws -> System_Object? /* System.Object */ {
+	public func initializeLifetimeService() throws -> System_Object /* System.Object */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -37432,7 +37426,7 @@ public class System_Threading_Tasks_ValueTask /* System.Threading.Tasks.ValueTas
 		
 	}
 	
-	public func asTask() throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public func asTask() throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -37883,7 +37877,7 @@ public class System_Threading_CancellationToken /* System.Threading.Cancellation
 	}}
 	
 	
-	public var waitHandle: System_Threading_WaitHandle? /* System.Threading.WaitHandle */ { get throws {
+	public var waitHandle: System_Threading_WaitHandle /* System.Threading.WaitHandle */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -38363,7 +38357,7 @@ public class System_Threading_WaitHandle /* System.Threading.WaitHandle */: Syst
 	}
 	
 	
-	public var safeWaitHandle: Microsoft_Win32_SafeHandles_SafeWaitHandle? /* Microsoft.Win32.SafeHandles.SafeWaitHandle */ { get throws {
+	public var safeWaitHandle: Microsoft_Win32_SafeHandles_SafeWaitHandle /* Microsoft.Win32.SafeHandles.SafeWaitHandle */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -38996,7 +38990,7 @@ public class System_Exception /* System.Exception */: System_Object {
 		"System.Exception"
 	}}
 
-	public func getBaseException() throws -> System_Exception? /* System.Exception */ {
+	public func getBaseException() throws -> System_Exception /* System.Exception */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -39035,7 +39029,7 @@ public class System_Exception /* System.Exception */: System_Object {
 		
 	}
 	
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -39055,7 +39049,7 @@ public class System_Exception /* System.Exception */: System_Object {
 		
 	}
 	
-	public override func getType() throws -> System_Type? /* System.Type */ {
+	public override func getType() throws -> System_Type /* System.Type */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -39159,7 +39153,7 @@ public class System_Exception /* System.Exception */: System_Object {
 	}}
 	
 	
-	public var message: System_String? /* System.String */ { get throws {
+	public var message: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -39180,7 +39174,7 @@ public class System_Exception /* System.Exception */: System_Object {
 	}}
 	
 	
-	public var data: System_Collections_IDictionary? /* System.Collections.IDictionary */ { get throws {
+	public var data: System_Collections_IDictionary /* System.Collections.IDictionary */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -39440,7 +39434,7 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 		
 	}
 	
-	public func getParameters() throws -> System_Reflection_ParameterInfo_Array? /* System.Reflection.ParameterInfo[] */ {
+	public func getParameters() throws -> System_Reflection_ParameterInfo_Array /* System.Reflection.ParameterInfo[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -39500,7 +39494,7 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 		
 	}
 	
-	public func getGenericArguments() throws -> System_Type_Array? /* System.Type[] */ {
+	public func getGenericArguments() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -41059,7 +41053,7 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 		
 	}
 	
-	public func getCustomAttributes(_ inherit: Bool /* System.Boolean */) throws -> System_Object_Array? /* System.Object[] */ {
+	public func getCustomAttributes(_ inherit: Bool /* System.Boolean */) throws -> System_Object_Array /* System.Object[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -41079,7 +41073,7 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 		
 	}
 	
-	public func getCustomAttributes(_ attributeType: System_Type /* System.Type */, _ inherit: Bool /* System.Boolean */) throws -> System_Object_Array? /* System.Object[] */ {
+	public func getCustomAttributes(_ attributeType: System_Type /* System.Type */, _ inherit: Bool /* System.Boolean */) throws -> System_Object_Array /* System.Object[] */ {
 		let attributeTypeC = attributeType.__handle
 		
 		
@@ -41100,7 +41094,7 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 		
 	}
 	
-	public func getModifiedParameterType() throws -> System_Type? /* System.Type */ {
+	public func getModifiedParameterType() throws -> System_Type /* System.Type */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -41120,7 +41114,7 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 		
 	}
 	
-	public func getOptionalCustomModifiers() throws -> System_Type_Array? /* System.Type[] */ {
+	public func getOptionalCustomModifiers() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -41140,7 +41134,7 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 		
 	}
 	
-	public func getRequiredCustomModifiers() throws -> System_Type_Array? /* System.Type[] */ {
+	public func getRequiredCustomModifiers() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -41160,7 +41154,7 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 		
 	}
 	
-	public func getRealObject(_ context: System_Runtime_Serialization_StreamingContext /* System.Runtime.Serialization.StreamingContext */) throws -> System_Object? /* System.Object */ {
+	public func getRealObject(_ context: System_Runtime_Serialization_StreamingContext /* System.Runtime.Serialization.StreamingContext */) throws -> System_Object /* System.Object */ {
 		let contextC = context.__handle
 		
 		
@@ -41181,7 +41175,7 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 		
 	}
 	
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -41222,7 +41216,7 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 	}}
 	
 	
-	public var member: System_Reflection_MemberInfo? /* System.Reflection.MemberInfo */ { get throws {
+	public var member: System_Reflection_MemberInfo /* System.Reflection.MemberInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -41264,7 +41258,7 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 	}}
 	
 	
-	public var parameterType: System_Type? /* System.Type */ { get throws {
+	public var parameterType: System_Type /* System.Type */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -41523,7 +41517,7 @@ public class System_Runtime_Serialization_IObjectReference /* System.Runtime.Ser
 		"System.Runtime.Serialization.IObjectReference"
 	}}
 
-	public func getRealObject(_ context: System_Runtime_Serialization_StreamingContext /* System.Runtime.Serialization.StreamingContext */) throws -> System_Object? /* System.Object */ {
+	public func getRealObject(_ context: System_Runtime_Serialization_StreamingContext /* System.Runtime.Serialization.StreamingContext */) throws -> System_Object /* System.Object */ {
 		let contextC = context.__handle
 		
 		
@@ -41655,7 +41649,7 @@ public class System_Reflection_CustomAttributeData /* System.Reflection.CustomAt
 		
 	}
 	
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -41712,7 +41706,7 @@ public class System_Reflection_CustomAttributeData /* System.Reflection.CustomAt
 		
 	}
 	
-	public var attributeType: System_Type? /* System.Type */ { get throws {
+	public var attributeType: System_Type /* System.Type */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -41733,7 +41727,7 @@ public class System_Reflection_CustomAttributeData /* System.Reflection.CustomAt
 	}}
 	
 	
-	public var constructor: System_Reflection_ConstructorInfo? /* System.Reflection.ConstructorInfo */ { get throws {
+	public var constructor: System_Reflection_ConstructorInfo /* System.Reflection.ConstructorInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -41922,7 +41916,7 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 	}
 	
-	public func getCustomAttributes(_ inherit: Bool /* System.Boolean */) throws -> System_Object_Array? /* System.Object[] */ {
+	public func getCustomAttributes(_ inherit: Bool /* System.Boolean */) throws -> System_Object_Array /* System.Object[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -41942,7 +41936,7 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 	}
 	
-	public func getCustomAttributes(_ attributeType: System_Type /* System.Type */, _ inherit: Bool /* System.Boolean */) throws -> System_Object_Array? /* System.Object[] */ {
+	public func getCustomAttributes(_ attributeType: System_Type /* System.Type */, _ inherit: Bool /* System.Boolean */) throws -> System_Object_Array /* System.Object[] */ {
 		let attributeTypeC = attributeType.__handle
 		
 		
@@ -42032,7 +42026,7 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 	}
 	
-	public func getMethods() throws -> System_Reflection_MethodInfo_Array? /* System.Reflection.MethodInfo[] */ {
+	public func getMethods() throws -> System_Reflection_MethodInfo_Array /* System.Reflection.MethodInfo[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -42052,7 +42046,7 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 	}
 	
-	public func getMethods(_ bindingFlags: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_MethodInfo_Array? /* System.Reflection.MethodInfo[] */ {
+	public func getMethods(_ bindingFlags: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_MethodInfo_Array /* System.Reflection.MethodInfo[] */ {
 		let bindingFlagsC = bindingFlags.cValue
 		
 		
@@ -42116,7 +42110,7 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 	}
 	
-	public func getFields() throws -> System_Reflection_FieldInfo_Array? /* System.Reflection.FieldInfo[] */ {
+	public func getFields() throws -> System_Reflection_FieldInfo_Array /* System.Reflection.FieldInfo[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -42136,7 +42130,7 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 	}
 	
-	public func getFields(_ bindingFlags: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_FieldInfo_Array? /* System.Reflection.FieldInfo[] */ {
+	public func getFields(_ bindingFlags: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_FieldInfo_Array /* System.Reflection.FieldInfo[] */ {
 		let bindingFlagsC = bindingFlags.cValue
 		
 		
@@ -42157,7 +42151,7 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 	}
 	
-	public func getTypes() throws -> System_Type_Array? /* System.Type[] */ {
+	public func getTypes() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -42240,7 +42234,7 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 	}
 	
-	public func findTypes(_ filter: System_Reflection_TypeFilter? /* System.Reflection.TypeFilter */, _ filterCriteria: System_Object? /* System.Object */) throws -> System_Type_Array? /* System.Type[] */ {
+	public func findTypes(_ filter: System_Reflection_TypeFilter? /* System.Reflection.TypeFilter */, _ filterCriteria: System_Object? /* System.Object */) throws -> System_Type_Array /* System.Type[] */ {
 		let filterC = filter?.__handle
 		let filterCriteriaC = filterCriteria?.__handle
 		
@@ -42388,7 +42382,7 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 	}
 	
-	public func resolveSignature(_ metadataToken: Int32 /* System.Int32 */) throws -> System_Byte_Array? /* System.Byte[] */ {
+	public func resolveSignature(_ metadataToken: Int32 /* System.Int32 */) throws -> System_Byte_Array /* System.Byte[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -42408,7 +42402,7 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 	}
 	
-	public func resolveString(_ metadataToken: Int32 /* System.Int32 */) throws -> System_String? /* System.String */ {
+	public func resolveString(_ metadataToken: Int32 /* System.Int32 */) throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -42428,7 +42422,7 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 	}
 	
-	public func resolveType(_ metadataToken: Int32 /* System.Int32 */) throws -> System_Type? /* System.Type */ {
+	public func resolveType(_ metadataToken: Int32 /* System.Int32 */) throws -> System_Type /* System.Type */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -42448,7 +42442,7 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 	}
 	
-	public func resolveType(_ metadataToken: Int32 /* System.Int32 */, _ genericTypeArguments: System_Type_Array? /* System.Type[] */, _ genericMethodArguments: System_Type_Array? /* System.Type[] */) throws -> System_Type? /* System.Type */ {
+	public func resolveType(_ metadataToken: Int32 /* System.Int32 */, _ genericTypeArguments: System_Type_Array? /* System.Type[] */, _ genericMethodArguments: System_Type_Array? /* System.Type[] */) throws -> System_Type /* System.Type */ {
 		let genericTypeArgumentsC = genericTypeArguments?.__handle
 		let genericMethodArgumentsC = genericMethodArguments?.__handle
 		
@@ -42526,7 +42520,7 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 	}
 	
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -42546,7 +42540,7 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 	}
 	
-	public var assembly: System_Reflection_Assembly? /* System.Reflection.Assembly */ { get throws {
+	public var assembly: System_Reflection_Assembly /* System.Reflection.Assembly */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -42567,7 +42561,7 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 	}}
 	
 	
-	public var fullyQualifiedName: System_String? /* System.String */ { get throws {
+	public var fullyQualifiedName: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -42588,7 +42582,7 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 	}}
 	
 	
-	public var name: System_String? /* System.String */ { get throws {
+	public var name: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -42649,7 +42643,7 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 	}}
 	
 	
-	public var scopeName: System_String? /* System.String */ { get throws {
+	public var scopeName: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -42731,7 +42725,7 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 	}}
 	
 	
-	public class var filterTypeName: System_Reflection_TypeFilter? /* System.Reflection.TypeFilter */ { get {
+	public class var filterTypeName: System_Reflection_TypeFilter /* System.Reflection.TypeFilter */ { get {
 		
 		
 		let __returnValueC = System_Reflection_Module_FilterTypeName_Get()
@@ -42743,7 +42737,7 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 	}}
 	
 	
-	public class var filterTypeNameIgnoreCase: System_Reflection_TypeFilter? /* System.Reflection.TypeFilter */ { get {
+	public class var filterTypeNameIgnoreCase: System_Reflection_TypeFilter /* System.Reflection.TypeFilter */ { get {
 		
 		
 		let __returnValueC = System_Reflection_Module_FilterTypeNameIgnoreCase_Get()
@@ -42868,7 +42862,7 @@ public class System_Guid /* System.Guid */: System_ValueType {
 		
 	}
 	
-	public func toByteArray() throws -> System_Byte_Array? /* System.Byte[] */ {
+	public func toByteArray() throws -> System_Byte_Array /* System.Byte[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -42888,7 +42882,7 @@ public class System_Guid /* System.Guid */: System_ValueType {
 		
 	}
 	
-	public func toByteArray(_ bigEndian: Bool /* System.Boolean */) throws -> System_Byte_Array? /* System.Byte[] */ {
+	public func toByteArray(_ bigEndian: Bool /* System.Boolean */) throws -> System_Byte_Array /* System.Byte[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43002,7 +42996,7 @@ public class System_Guid /* System.Guid */: System_ValueType {
 		
 	}
 	
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43022,7 +43016,7 @@ public class System_Guid /* System.Guid */: System_ValueType {
 		
 	}
 	
-	public func toString(_ format: System_String? /* System.String */) throws -> System_String? /* System.String */ {
+	public func toString(_ format: System_String? /* System.String */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		
 		
@@ -43043,7 +43037,7 @@ public class System_Guid /* System.Guid */: System_ValueType {
 		
 	}
 	
-	public func toString(_ format: System_String? /* System.String */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public func toString(_ format: System_String? /* System.String */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		let providerC = provider?.__handle
 		
@@ -43326,7 +43320,7 @@ public class System_Reflection_MethodInfo /* System.Reflection.MethodInfo */: Sy
 		"System.Reflection.MethodInfo"
 	}}
 
-	public override func getGenericArguments() throws -> System_Type_Array? /* System.Type[] */ {
+	public override func getGenericArguments() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43346,7 +43340,7 @@ public class System_Reflection_MethodInfo /* System.Reflection.MethodInfo */: Sy
 		
 	}
 	
-	public func getGenericMethodDefinition() throws -> System_Reflection_MethodInfo? /* System.Reflection.MethodInfo */ {
+	public func getGenericMethodDefinition() throws -> System_Reflection_MethodInfo /* System.Reflection.MethodInfo */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43366,7 +43360,7 @@ public class System_Reflection_MethodInfo /* System.Reflection.MethodInfo */: Sy
 		
 	}
 	
-	public func makeGenericMethod(_ typeArguments: System_Type_Array /* System.Type[] */) throws -> System_Reflection_MethodInfo? /* System.Reflection.MethodInfo */ {
+	public func makeGenericMethod(_ typeArguments: System_Type_Array /* System.Type[] */) throws -> System_Reflection_MethodInfo /* System.Reflection.MethodInfo */ {
 		let typeArgumentsC = typeArguments.__handle
 		
 		
@@ -43387,7 +43381,7 @@ public class System_Reflection_MethodInfo /* System.Reflection.MethodInfo */: Sy
 		
 	}
 	
-	public func getBaseDefinition() throws -> System_Reflection_MethodInfo? /* System.Reflection.MethodInfo */ {
+	public func getBaseDefinition() throws -> System_Reflection_MethodInfo /* System.Reflection.MethodInfo */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43407,7 +43401,7 @@ public class System_Reflection_MethodInfo /* System.Reflection.MethodInfo */: Sy
 		
 	}
 	
-	public func createDelegate(_ delegateType: System_Type /* System.Type */) throws -> System_Delegate? /* System.Delegate */ {
+	public func createDelegate(_ delegateType: System_Type /* System.Type */) throws -> System_Delegate /* System.Delegate */ {
 		let delegateTypeC = delegateType.__handle
 		
 		
@@ -43428,7 +43422,7 @@ public class System_Reflection_MethodInfo /* System.Reflection.MethodInfo */: Sy
 		
 	}
 	
-	public func createDelegate(_ delegateType: System_Type /* System.Type */, _ target: System_Object? /* System.Object */) throws -> System_Delegate? /* System.Delegate */ {
+	public func createDelegate(_ delegateType: System_Type /* System.Type */, _ target: System_Object? /* System.Object */) throws -> System_Delegate /* System.Delegate */ {
 		let delegateTypeC = delegateType.__handle
 		let targetC = target?.__handle
 		
@@ -43551,7 +43545,7 @@ public class System_Reflection_MethodInfo /* System.Reflection.MethodInfo */: Sy
 	}}
 	
 	
-	public var returnParameter: System_Reflection_ParameterInfo? /* System.Reflection.ParameterInfo */ { get throws {
+	public var returnParameter: System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43572,7 +43566,7 @@ public class System_Reflection_MethodInfo /* System.Reflection.MethodInfo */: Sy
 	}}
 	
 	
-	public var returnType: System_Type? /* System.Type */ { get throws {
+	public var returnType: System_Type /* System.Type */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43593,7 +43587,7 @@ public class System_Reflection_MethodInfo /* System.Reflection.MethodInfo */: Sy
 	}}
 	
 	
-	public var returnTypeCustomAttributes: System_Reflection_ICustomAttributeProvider? /* System.Reflection.ICustomAttributeProvider */ { get throws {
+	public var returnTypeCustomAttributes: System_Reflection_ICustomAttributeProvider /* System.Reflection.ICustomAttributeProvider */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -43663,7 +43657,7 @@ public class System_Reflection_Binder /* System.Reflection.Binder */: System_Obj
 		"System.Reflection.Binder"
 	}}
 
-	public func bindToField(_ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */, _ match: System_Reflection_FieldInfo_Array /* System.Reflection.FieldInfo[] */, _ value: System_Object /* System.Object */, _ culture: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */) throws -> System_Reflection_FieldInfo? /* System.Reflection.FieldInfo */ {
+	public func bindToField(_ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */, _ match: System_Reflection_FieldInfo_Array /* System.Reflection.FieldInfo[] */, _ value: System_Object /* System.Object */, _ culture: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */) throws -> System_Reflection_FieldInfo /* System.Reflection.FieldInfo */ {
 		let bindingAttrC = bindingAttr.cValue
 		let matchC = match.__handle
 		let valueC = value.__handle
@@ -43687,7 +43681,7 @@ public class System_Reflection_Binder /* System.Reflection.Binder */: System_Obj
 		
 	}
 	
-	public func bindToMethod(_ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */, _ match: System_Reflection_MethodBase_Array /* System.Reflection.MethodBase[] */, _ args: inout System_Object_Array /* System.Object[] */, _ modifiers: System_Reflection_ParameterModifier_Array? /* System.Reflection.ParameterModifier[] */, _ culture: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */, _ names: System_String_Array? /* System.String[] */, _ state: inout System_Object? /* System.Object */) throws -> System_Reflection_MethodBase? /* System.Reflection.MethodBase */ {
+	public func bindToMethod(_ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */, _ match: System_Reflection_MethodBase_Array /* System.Reflection.MethodBase[] */, _ args: inout System_Object_Array /* System.Object[] */, _ modifiers: System_Reflection_ParameterModifier_Array? /* System.Reflection.ParameterModifier[] */, _ culture: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */, _ names: System_String_Array? /* System.String[] */, _ state: inout System_Object? /* System.Object */) throws -> System_Reflection_MethodBase /* System.Reflection.MethodBase */ {
 		let bindingAttrC = bindingAttr.cValue
 		let matchC = match.__handle
 		var argsC = args.__handle
@@ -43719,7 +43713,7 @@ public class System_Reflection_Binder /* System.Reflection.Binder */: System_Obj
 		
 	}
 	
-	public func changeType(_ value: System_Object /* System.Object */, _ type: System_Type /* System.Type */, _ culture: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */) throws -> System_Object? /* System.Object */ {
+	public func changeType(_ value: System_Object /* System.Object */, _ type: System_Type /* System.Type */, _ culture: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */) throws -> System_Object /* System.Object */ {
 		let valueC = value.__handle
 		let typeC = type.__handle
 		let cultureC = culture?.__handle
@@ -43836,7 +43830,7 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 		"System.Reflection.FieldInfo"
 	}}
 
-	public class func getFieldFromHandle(_ handle: System_RuntimeFieldHandle /* System.RuntimeFieldHandle */) throws -> System_Reflection_FieldInfo? /* System.Reflection.FieldInfo */ {
+	public class func getFieldFromHandle(_ handle: System_RuntimeFieldHandle /* System.RuntimeFieldHandle */) throws -> System_Reflection_FieldInfo /* System.Reflection.FieldInfo */ {
 		let handleC = handle.__handle
 		
 		
@@ -43857,7 +43851,7 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 		
 	}
 	
-	public class func getFieldFromHandle(_ handle: System_RuntimeFieldHandle /* System.RuntimeFieldHandle */, _ declaringType: System_RuntimeTypeHandle /* System.RuntimeTypeHandle */) throws -> System_Reflection_FieldInfo? /* System.Reflection.FieldInfo */ {
+	public class func getFieldFromHandle(_ handle: System_RuntimeFieldHandle /* System.RuntimeFieldHandle */, _ declaringType: System_RuntimeTypeHandle /* System.RuntimeTypeHandle */) throws -> System_Reflection_FieldInfo /* System.Reflection.FieldInfo */ {
 		let handleC = handle.__handle
 		let declaringTypeC = declaringType.__handle
 		
@@ -43998,7 +43992,7 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 		
 	}
 	
-	public func getModifiedFieldType() throws -> System_Type? /* System.Type */ {
+	public func getModifiedFieldType() throws -> System_Type /* System.Type */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -44018,7 +44012,7 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 		
 	}
 	
-	public func getOptionalCustomModifiers() throws -> System_Type_Array? /* System.Type[] */ {
+	public func getOptionalCustomModifiers() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -44038,7 +44032,7 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 		
 	}
 	
-	public func getRequiredCustomModifiers() throws -> System_Type_Array? /* System.Type[] */ {
+	public func getRequiredCustomModifiers() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -44100,7 +44094,7 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 	}}
 	
 	
-	public var fieldType: System_Type? /* System.Type */ { get throws {
+	public var fieldType: System_Type /* System.Type */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -44624,7 +44618,7 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 		"System.Reflection.PropertyInfo"
 	}}
 
-	public func getIndexParameters() throws -> System_Reflection_ParameterInfo_Array? /* System.Reflection.ParameterInfo[] */ {
+	public func getIndexParameters() throws -> System_Reflection_ParameterInfo_Array /* System.Reflection.ParameterInfo[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -44644,7 +44638,7 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 		
 	}
 	
-	public func getAccessors() throws -> System_Reflection_MethodInfo_Array? /* System.Reflection.MethodInfo[] */ {
+	public func getAccessors() throws -> System_Reflection_MethodInfo_Array /* System.Reflection.MethodInfo[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -44664,7 +44658,7 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 		
 	}
 	
-	public func getAccessors(_ nonPublic: Bool /* System.Boolean */) throws -> System_Reflection_MethodInfo_Array? /* System.Reflection.MethodInfo[] */ {
+	public func getAccessors(_ nonPublic: Bool /* System.Boolean */) throws -> System_Reflection_MethodInfo_Array /* System.Reflection.MethodInfo[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -44764,7 +44758,7 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 		
 	}
 	
-	public func getModifiedPropertyType() throws -> System_Type? /* System.Type */ {
+	public func getModifiedPropertyType() throws -> System_Type /* System.Type */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -44784,7 +44778,7 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 		
 	}
 	
-	public func getOptionalCustomModifiers() throws -> System_Type_Array? /* System.Type[] */ {
+	public func getOptionalCustomModifiers() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -44804,7 +44798,7 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 		
 	}
 	
-	public func getRequiredCustomModifiers() throws -> System_Type_Array? /* System.Type[] */ {
+	public func getRequiredCustomModifiers() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -45052,7 +45046,7 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 	}}
 	
 	
-	public var propertyType: System_Type? /* System.Type */ { get throws {
+	public var propertyType: System_Type /* System.Type */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -45268,7 +45262,7 @@ public class System_Reflection_ConstructorInfo /* System.Reflection.ConstructorI
 		"System.Reflection.ConstructorInfo"
 	}}
 
-	public func invoke(_ parameters: System_Object_Array? /* System.Object[] */) throws -> System_Object? /* System.Object */ {
+	public func invoke(_ parameters: System_Object_Array? /* System.Object[] */) throws -> System_Object /* System.Object */ {
 		let parametersC = parameters?.__handle
 		
 		
@@ -45289,7 +45283,7 @@ public class System_Reflection_ConstructorInfo /* System.Reflection.ConstructorI
 		
 	}
 	
-	public func invoke(_ invokeAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */, _ binder: System_Reflection_Binder? /* System.Reflection.Binder */, _ parameters: System_Object_Array? /* System.Object[] */, _ culture: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */) throws -> System_Object? /* System.Object */ {
+	public func invoke(_ invokeAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */, _ binder: System_Reflection_Binder? /* System.Reflection.Binder */, _ parameters: System_Object_Array? /* System.Object[] */, _ culture: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */) throws -> System_Object /* System.Object */ {
 		let invokeAttrC = invokeAttr.cValue
 		let binderC = binder?.__handle
 		let parametersC = parameters?.__handle
@@ -45371,7 +45365,7 @@ public class System_Reflection_ConstructorInfo /* System.Reflection.ConstructorI
 	}}
 	
 	
-	public class var constructorName: System_String? /* System.String */ { get {
+	public class var constructorName: System_String /* System.String */ { get {
 		
 		
 		let __returnValueC = System_Reflection_ConstructorInfo_ConstructorName_Get()
@@ -45383,7 +45377,7 @@ public class System_Reflection_ConstructorInfo /* System.Reflection.ConstructorI
 	}}
 	
 	
-	public class var typeConstructorName: System_String? /* System.String */ { get {
+	public class var typeConstructorName: System_String /* System.String */ { get {
 		
 		
 		let __returnValueC = System_Reflection_ConstructorInfo_TypeConstructorName_Get()
@@ -45426,7 +45420,7 @@ public class System_Reflection_CustomAttributeTypedArgument /* System.Reflection
 		"System.Reflection.CustomAttributeTypedArgument"
 	}}
 
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -45541,7 +45535,7 @@ public class System_Reflection_CustomAttributeTypedArgument /* System.Reflection
 		
 	}
 	
-	public var argumentType: System_Type? /* System.Type */ { get throws {
+	public var argumentType: System_Type /* System.Type */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -45652,7 +45646,7 @@ public class System_Reflection_CustomAttributeNamedArgument /* System.Reflection
 		"System.Reflection.CustomAttributeNamedArgument"
 	}}
 
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -45768,7 +45762,7 @@ public class System_Reflection_CustomAttributeNamedArgument /* System.Reflection
 		
 	}
 	
-	public var memberInfo: System_Reflection_MemberInfo? /* System.Reflection.MemberInfo */ { get throws {
+	public var memberInfo: System_Reflection_MemberInfo /* System.Reflection.MemberInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -45810,7 +45804,7 @@ public class System_Reflection_CustomAttributeNamedArgument /* System.Reflection
 	}}
 	
 	
-	public var memberName: System_String? /* System.String */ { get throws {
+	public var memberName: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -46066,7 +46060,7 @@ public class System_Reflection_LocalVariableInfo /* System.Reflection.LocalVaria
 		"System.Reflection.LocalVariableInfo"
 	}}
 
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -46086,7 +46080,7 @@ public class System_Reflection_LocalVariableInfo /* System.Reflection.LocalVaria
 		
 	}
 	
-	public var localType: System_Type? /* System.Type */ { get throws {
+	public var localType: System_Type /* System.Type */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -46194,7 +46188,7 @@ public class System_Reflection_ExceptionHandlingClause /* System.Reflection.Exce
 		"System.Reflection.ExceptionHandlingClause"
 	}}
 
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -46447,7 +46441,7 @@ public class System_Collections_IDictionary /* System.Collections.IDictionary */
 		
 	}
 	
-	public func getEnumerator() throws -> System_Collections_IDictionaryEnumerator? /* System.Collections.IDictionaryEnumerator */ {
+	public func getEnumerator() throws -> System_Collections_IDictionaryEnumerator /* System.Collections.IDictionaryEnumerator */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -46525,7 +46519,7 @@ public class System_Collections_IDictionary /* System.Collections.IDictionary */
 	}
 	
 	
-	public var keys: System_Collections_ICollection? /* System.Collections.ICollection */ { get throws {
+	public var keys: System_Collections_ICollection /* System.Collections.ICollection */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -46546,7 +46540,7 @@ public class System_Collections_IDictionary /* System.Collections.IDictionary */
 	}}
 	
 	
-	public var values: System_Collections_ICollection? /* System.Collections.ICollection */ { get throws {
+	public var values: System_Collections_ICollection /* System.Collections.ICollection */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -46628,7 +46622,7 @@ public class System_Collections_IDictionaryEnumerator /* System.Collections.IDic
 		"System.Collections.IDictionaryEnumerator"
 	}}
 
-	public var key: System_Object? /* System.Object */ { get throws {
+	public var key: System_Object /* System.Object */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -46738,7 +46732,7 @@ public class System_Collections_DictionaryEntry /* System.Collections.Dictionary
 		
 	}
 	
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -46778,7 +46772,7 @@ public class System_Collections_DictionaryEntry /* System.Collections.Dictionary
 		
 	}
 	
-	public var key: System_Object? /* System.Object */ { get throws {
+	public var key: System_Object /* System.Object */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -47174,7 +47168,7 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 	}
 	
-	public func waitAsync(_ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public func waitAsync(_ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let cancellationTokenC = cancellationToken.__handle
 		
 		
@@ -47195,7 +47189,7 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 	}
 	
-	public func waitAsync(_ timeout: System_TimeSpan /* System.TimeSpan */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public func waitAsync(_ timeout: System_TimeSpan /* System.TimeSpan */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let timeoutC = timeout.__handle
 		
 		
@@ -47216,7 +47210,7 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 	}
 	
-	public func waitAsync(_ timeout: System_TimeSpan /* System.TimeSpan */, _ timeProvider: System_TimeProvider /* System.TimeProvider */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public func waitAsync(_ timeout: System_TimeSpan /* System.TimeSpan */, _ timeProvider: System_TimeProvider /* System.TimeProvider */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let timeoutC = timeout.__handle
 		let timeProviderC = timeProvider.__handle
 		
@@ -47238,7 +47232,7 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 	}
 	
-	public func waitAsync(_ timeout: System_TimeSpan /* System.TimeSpan */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public func waitAsync(_ timeout: System_TimeSpan /* System.TimeSpan */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let timeoutC = timeout.__handle
 		let cancellationTokenC = cancellationToken.__handle
 		
@@ -47260,7 +47254,7 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 	}
 	
-	public func waitAsync(_ timeout: System_TimeSpan /* System.TimeSpan */, _ timeProvider: System_TimeProvider /* System.TimeProvider */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public func waitAsync(_ timeout: System_TimeSpan /* System.TimeSpan */, _ timeProvider: System_TimeProvider /* System.TimeProvider */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let timeoutC = timeout.__handle
 		let timeProviderC = timeProvider.__handle
 		let cancellationTokenC = cancellationToken.__handle
@@ -47477,7 +47471,7 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 	}
 	
-	public class func fromException(_ exception: System_Exception /* System.Exception */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public class func fromException(_ exception: System_Exception /* System.Exception */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let exceptionC = exception.__handle
 		
 		
@@ -47498,7 +47492,7 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 	}
 	
-	public class func fromCanceled(_ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public class func fromCanceled(_ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let cancellationTokenC = cancellationToken.__handle
 		
 		
@@ -47519,7 +47513,7 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 	}
 	
-	public class func run(_ action: System_Action /* System.Action */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public class func run(_ action: System_Action /* System.Action */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let actionC = action.__handle
 		
 		
@@ -47540,7 +47534,7 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 	}
 	
-	public class func run(_ action: System_Action /* System.Action */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public class func run(_ action: System_Action /* System.Action */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let actionC = action.__handle
 		let cancellationTokenC = cancellationToken.__handle
 		
@@ -47562,7 +47556,7 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 	}
 	
-	public class func delay(_ delay: System_TimeSpan /* System.TimeSpan */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public class func delay(_ delay: System_TimeSpan /* System.TimeSpan */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let delayC = delay.__handle
 		
 		
@@ -47583,7 +47577,7 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 	}
 	
-	public class func delay(_ delay: System_TimeSpan /* System.TimeSpan */, _ timeProvider: System_TimeProvider /* System.TimeProvider */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public class func delay(_ delay: System_TimeSpan /* System.TimeSpan */, _ timeProvider: System_TimeProvider /* System.TimeProvider */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let delayC = delay.__handle
 		let timeProviderC = timeProvider.__handle
 		
@@ -47605,7 +47599,7 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 	}
 	
-	public class func delay(_ delay: System_TimeSpan /* System.TimeSpan */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public class func delay(_ delay: System_TimeSpan /* System.TimeSpan */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let delayC = delay.__handle
 		let cancellationTokenC = cancellationToken.__handle
 		
@@ -47627,7 +47621,7 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 	}
 	
-	public class func delay(_ delay: System_TimeSpan /* System.TimeSpan */, _ timeProvider: System_TimeProvider /* System.TimeProvider */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public class func delay(_ delay: System_TimeSpan /* System.TimeSpan */, _ timeProvider: System_TimeProvider /* System.TimeProvider */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let delayC = delay.__handle
 		let timeProviderC = timeProvider.__handle
 		let cancellationTokenC = cancellationToken.__handle
@@ -47650,7 +47644,7 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 	}
 	
-	public class func delay(_ millisecondsDelay: Int32 /* System.Int32 */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public class func delay(_ millisecondsDelay: Int32 /* System.Int32 */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -47670,7 +47664,7 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 	}
 	
-	public class func delay(_ millisecondsDelay: Int32 /* System.Int32 */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public class func delay(_ millisecondsDelay: Int32 /* System.Int32 */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let cancellationTokenC = cancellationToken.__handle
 		
 		
@@ -47691,7 +47685,7 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 	}
 	
-	public class func whenAll(_ tasks: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Threading.Tasks.Task> */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public class func whenAll(_ tasks: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Threading.Tasks.Task> */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let tasksC = tasks.__handle
 		
 		
@@ -47712,7 +47706,7 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 	}
 	
-	public class func whenAll(_ tasks: System_Threading_Tasks_Task_Array /* System.Threading.Tasks.Task[] */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public class func whenAll(_ tasks: System_Threading_Tasks_Task_Array /* System.Threading.Tasks.Task[] */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let tasksC = tasks.__handle
 		
 		
@@ -48045,7 +48039,7 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 	}}
 	
 	
-	public class var factory: System_Threading_Tasks_TaskFactory? /* System.Threading.Tasks.TaskFactory */ { get throws {
+	public class var factory: System_Threading_Tasks_TaskFactory /* System.Threading.Tasks.TaskFactory */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -48066,7 +48060,7 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 	}}
 	
 	
-	public class var completedTask: System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ { get throws {
+	public class var completedTask: System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -48148,7 +48142,7 @@ public class System_IAsyncResult /* System.IAsyncResult */: DNObject {
 	}}
 	
 	
-	public var asyncWaitHandle: System_Threading_WaitHandle? /* System.Threading.WaitHandle */ { get throws {
+	public var asyncWaitHandle: System_Threading_WaitHandle /* System.Threading.WaitHandle */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -48232,7 +48226,7 @@ public class System_Threading_Tasks_TaskScheduler /* System.Threading.Tasks.Task
 		"System.Threading.Tasks.TaskScheduler"
 	}}
 
-	public class func fromCurrentSynchronizationContext() throws -> System_Threading_Tasks_TaskScheduler? /* System.Threading.Tasks.TaskScheduler */ {
+	public class func fromCurrentSynchronizationContext() throws -> System_Threading_Tasks_TaskScheduler /* System.Threading.Tasks.TaskScheduler */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -48271,7 +48265,7 @@ public class System_Threading_Tasks_TaskScheduler /* System.Threading.Tasks.Task
 	}}
 	
 	
-	public class var `default`: System_Threading_Tasks_TaskScheduler? /* System.Threading.Tasks.TaskScheduler */ { get throws {
+	public class var `default`: System_Threading_Tasks_TaskScheduler /* System.Threading.Tasks.TaskScheduler */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -48292,7 +48286,7 @@ public class System_Threading_Tasks_TaskScheduler /* System.Threading.Tasks.Task
 	}}
 	
 	
-	public class var current: System_Threading_Tasks_TaskScheduler? /* System.Threading.Tasks.TaskScheduler */ { get throws {
+	public class var current: System_Threading_Tasks_TaskScheduler /* System.Threading.Tasks.TaskScheduler */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -48374,7 +48368,7 @@ public class System_AggregateException /* System.AggregateException */: System_E
 		
 	}
 	
-	public override func getBaseException() throws -> System_Exception? /* System.Exception */ {
+	public override func getBaseException() throws -> System_Exception /* System.Exception */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -48394,7 +48388,7 @@ public class System_AggregateException /* System.AggregateException */: System_E
 		
 	}
 	
-	public func flatten() throws -> System_AggregateException? /* System.AggregateException */ {
+	public func flatten() throws -> System_AggregateException /* System.AggregateException */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -48414,7 +48408,7 @@ public class System_AggregateException /* System.AggregateException */: System_E
 		
 	}
 	
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -48604,7 +48598,7 @@ public class System_AggregateException /* System.AggregateException */: System_E
 	}}
 	
 	
-	public override var message: System_String? /* System.String */ { get throws {
+	public override var message: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -48825,7 +48819,7 @@ public class System_Threading_Tasks_TaskFactory /* System.Threading.Tasks.TaskFa
 		"System.Threading.Tasks.TaskFactory"
 	}}
 
-	public func startNew(_ action: System_Action /* System.Action */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public func startNew(_ action: System_Action /* System.Action */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let actionC = action.__handle
 		
 		
@@ -48846,7 +48840,7 @@ public class System_Threading_Tasks_TaskFactory /* System.Threading.Tasks.TaskFa
 		
 	}
 	
-	public func startNew(_ action: System_Action /* System.Action */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public func startNew(_ action: System_Action /* System.Action */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let actionC = action.__handle
 		let cancellationTokenC = cancellationToken.__handle
 		
@@ -48868,7 +48862,7 @@ public class System_Threading_Tasks_TaskFactory /* System.Threading.Tasks.TaskFa
 		
 	}
 	
-	public func startNew(_ action: System_Action /* System.Action */, _ creationOptions: System_Threading_Tasks_TaskCreationOptions /* System.Threading.Tasks.TaskCreationOptions */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public func startNew(_ action: System_Action /* System.Action */, _ creationOptions: System_Threading_Tasks_TaskCreationOptions /* System.Threading.Tasks.TaskCreationOptions */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let actionC = action.__handle
 		let creationOptionsC = creationOptions.cValue
 		
@@ -48890,7 +48884,7 @@ public class System_Threading_Tasks_TaskFactory /* System.Threading.Tasks.TaskFa
 		
 	}
 	
-	public func startNew(_ action: System_Action /* System.Action */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */, _ creationOptions: System_Threading_Tasks_TaskCreationOptions /* System.Threading.Tasks.TaskCreationOptions */, _ scheduler: System_Threading_Tasks_TaskScheduler /* System.Threading.Tasks.TaskScheduler */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public func startNew(_ action: System_Action /* System.Action */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */, _ creationOptions: System_Threading_Tasks_TaskCreationOptions /* System.Threading.Tasks.TaskCreationOptions */, _ scheduler: System_Threading_Tasks_TaskScheduler /* System.Threading.Tasks.TaskScheduler */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let actionC = action.__handle
 		let cancellationTokenC = cancellationToken.__handle
 		let creationOptionsC = creationOptions.cValue
@@ -49820,7 +49814,7 @@ public class System_TimeProvider /* System.TimeProvider */: System_Object {
 		
 	}
 	
-	public func createTimer(_ callback: System_Threading_TimerCallback /* System.Threading.TimerCallback */, _ state: System_Object? /* System.Object */, _ dueTime: System_TimeSpan /* System.TimeSpan */, _ period: System_TimeSpan /* System.TimeSpan */) throws -> System_Threading_ITimer? /* System.Threading.ITimer */ {
+	public func createTimer(_ callback: System_Threading_TimerCallback /* System.Threading.TimerCallback */, _ state: System_Object? /* System.Object */, _ dueTime: System_TimeSpan /* System.TimeSpan */, _ period: System_TimeSpan /* System.TimeSpan */) throws -> System_Threading_ITimer /* System.Threading.ITimer */ {
 		let callbackC = callback.__handle
 		let stateC = state?.__handle
 		let dueTimeC = dueTime.__handle
@@ -49844,7 +49838,7 @@ public class System_TimeProvider /* System.TimeProvider */: System_Object {
 		
 	}
 	
-	public class var system: System_TimeProvider? /* System.TimeProvider */ { get throws {
+	public class var system: System_TimeProvider /* System.TimeProvider */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -49865,7 +49859,7 @@ public class System_TimeProvider /* System.TimeProvider */: System_Object {
 	}}
 	
 	
-	public var localTimeZone: System_TimeZoneInfo? /* System.TimeZoneInfo */ { get throws {
+	public var localTimeZone: System_TimeZoneInfo /* System.TimeZoneInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -50597,7 +50591,7 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 		
 	}
 	
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -50617,7 +50611,7 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 		
 	}
 	
-	public func toString(_ format: System_String? /* System.String */) throws -> System_String? /* System.String */ {
+	public func toString(_ format: System_String? /* System.String */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		
 		
@@ -50638,7 +50632,7 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 		
 	}
 	
-	public func toString(_ formatProvider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public func toString(_ formatProvider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let formatProviderC = formatProvider?.__handle
 		
 		
@@ -50659,7 +50653,7 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 		
 	}
 	
-	public func toString(_ format: System_String? /* System.String */, _ formatProvider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public func toString(_ format: System_String? /* System.String */, _ formatProvider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		let formatProviderC = formatProvider?.__handle
 		
@@ -51550,7 +51544,7 @@ public class System_TimeZoneInfo /* System.TimeZoneInfo */: System_Object {
 		"System.TimeZoneInfo"
 	}}
 
-	public func getAmbiguousTimeOffsets(_ dateTimeOffset: System_DateTimeOffset /* System.DateTimeOffset */) throws -> System_TimeSpan_Array? /* System.TimeSpan[] */ {
+	public func getAmbiguousTimeOffsets(_ dateTimeOffset: System_DateTimeOffset /* System.DateTimeOffset */) throws -> System_TimeSpan_Array /* System.TimeSpan[] */ {
 		let dateTimeOffsetC = dateTimeOffset.__handle
 		
 		
@@ -51571,7 +51565,7 @@ public class System_TimeZoneInfo /* System.TimeZoneInfo */: System_Object {
 		
 	}
 	
-	public func getAmbiguousTimeOffsets(_ dateTime: System_DateTime /* System.DateTime */) throws -> System_TimeSpan_Array? /* System.TimeSpan[] */ {
+	public func getAmbiguousTimeOffsets(_ dateTime: System_DateTime /* System.DateTime */) throws -> System_TimeSpan_Array /* System.TimeSpan[] */ {
 		let dateTimeC = dateTime.__handle
 		
 		
@@ -51790,7 +51784,7 @@ public class System_TimeZoneInfo /* System.TimeZoneInfo */: System_Object {
 		
 	}
 	
-	public class func findSystemTimeZoneById(_ id: System_String /* System.String */) throws -> System_TimeZoneInfo? /* System.TimeZoneInfo */ {
+	public class func findSystemTimeZoneById(_ id: System_String /* System.String */) throws -> System_TimeZoneInfo /* System.TimeZoneInfo */ {
 		let idC = id.__handle
 		
 		
@@ -52027,7 +52021,7 @@ public class System_TimeZoneInfo /* System.TimeZoneInfo */: System_Object {
 		
 	}
 	
-	public class func fromSerializedString(_ source: System_String /* System.String */) throws -> System_TimeZoneInfo? /* System.TimeZoneInfo */ {
+	public class func fromSerializedString(_ source: System_String /* System.String */) throws -> System_TimeZoneInfo /* System.TimeZoneInfo */ {
 		let sourceC = source.__handle
 		
 		
@@ -52125,7 +52119,7 @@ public class System_TimeZoneInfo /* System.TimeZoneInfo */: System_Object {
 		
 	}
 	
-	public func toSerializedString() throws -> System_String? /* System.String */ {
+	public func toSerializedString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -52145,7 +52139,7 @@ public class System_TimeZoneInfo /* System.TimeZoneInfo */: System_Object {
 		
 	}
 	
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -52165,7 +52159,7 @@ public class System_TimeZoneInfo /* System.TimeZoneInfo */: System_Object {
 		
 	}
 	
-	public class func createCustomTimeZone(_ id: System_String /* System.String */, _ baseUtcOffset: System_TimeSpan /* System.TimeSpan */, _ displayName: System_String? /* System.String */, _ standardDisplayName: System_String? /* System.String */) throws -> System_TimeZoneInfo? /* System.TimeZoneInfo */ {
+	public class func createCustomTimeZone(_ id: System_String /* System.String */, _ baseUtcOffset: System_TimeSpan /* System.TimeSpan */, _ displayName: System_String? /* System.String */, _ standardDisplayName: System_String? /* System.String */) throws -> System_TimeZoneInfo /* System.TimeZoneInfo */ {
 		let idC = id.__handle
 		let baseUtcOffsetC = baseUtcOffset.__handle
 		let displayNameC = displayName?.__handle
@@ -52189,7 +52183,7 @@ public class System_TimeZoneInfo /* System.TimeZoneInfo */: System_Object {
 		
 	}
 	
-	public class func createCustomTimeZone(_ id: System_String /* System.String */, _ baseUtcOffset: System_TimeSpan /* System.TimeSpan */, _ displayName: System_String? /* System.String */, _ standardDisplayName: System_String? /* System.String */, _ daylightDisplayName: System_String? /* System.String */, _ adjustmentRules: System_TimeZoneInfo_AdjustmentRule_Array? /* System.TimeZoneInfo.AdjustmentRule[] */) throws -> System_TimeZoneInfo? /* System.TimeZoneInfo */ {
+	public class func createCustomTimeZone(_ id: System_String /* System.String */, _ baseUtcOffset: System_TimeSpan /* System.TimeSpan */, _ displayName: System_String? /* System.String */, _ standardDisplayName: System_String? /* System.String */, _ daylightDisplayName: System_String? /* System.String */, _ adjustmentRules: System_TimeZoneInfo_AdjustmentRule_Array? /* System.TimeZoneInfo.AdjustmentRule[] */) throws -> System_TimeZoneInfo /* System.TimeZoneInfo */ {
 		let idC = id.__handle
 		let baseUtcOffsetC = baseUtcOffset.__handle
 		let displayNameC = displayName?.__handle
@@ -52215,7 +52209,7 @@ public class System_TimeZoneInfo /* System.TimeZoneInfo */: System_Object {
 		
 	}
 	
-	public class func createCustomTimeZone(_ id: System_String /* System.String */, _ baseUtcOffset: System_TimeSpan /* System.TimeSpan */, _ displayName: System_String? /* System.String */, _ standardDisplayName: System_String? /* System.String */, _ daylightDisplayName: System_String? /* System.String */, _ adjustmentRules: System_TimeZoneInfo_AdjustmentRule_Array? /* System.TimeZoneInfo.AdjustmentRule[] */, _ disableDaylightSavingTime: Bool /* System.Boolean */) throws -> System_TimeZoneInfo? /* System.TimeZoneInfo */ {
+	public class func createCustomTimeZone(_ id: System_String /* System.String */, _ baseUtcOffset: System_TimeSpan /* System.TimeSpan */, _ displayName: System_String? /* System.String */, _ standardDisplayName: System_String? /* System.String */, _ daylightDisplayName: System_String? /* System.String */, _ adjustmentRules: System_TimeZoneInfo_AdjustmentRule_Array? /* System.TimeZoneInfo.AdjustmentRule[] */, _ disableDaylightSavingTime: Bool /* System.Boolean */) throws -> System_TimeZoneInfo /* System.TimeZoneInfo */ {
 		let idC = id.__handle
 		let baseUtcOffsetC = baseUtcOffset.__handle
 		let displayNameC = displayName?.__handle
@@ -52311,7 +52305,7 @@ public class System_TimeZoneInfo /* System.TimeZoneInfo */: System_Object {
 		
 	}
 	
-	public func getAdjustmentRules() throws -> System_TimeZoneInfo_AdjustmentRule_Array? /* System.TimeZoneInfo.AdjustmentRule[] */ {
+	public func getAdjustmentRules() throws -> System_TimeZoneInfo_AdjustmentRule_Array /* System.TimeZoneInfo.AdjustmentRule[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -52331,7 +52325,7 @@ public class System_TimeZoneInfo /* System.TimeZoneInfo */: System_Object {
 		
 	}
 	
-	public var id: System_String? /* System.String */ { get throws {
+	public var id: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -52371,7 +52365,7 @@ public class System_TimeZoneInfo /* System.TimeZoneInfo */: System_Object {
 	}}
 	
 	
-	public var displayName: System_String? /* System.String */ { get throws {
+	public var displayName: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -52392,7 +52386,7 @@ public class System_TimeZoneInfo /* System.TimeZoneInfo */: System_Object {
 	}}
 	
 	
-	public var standardName: System_String? /* System.String */ { get throws {
+	public var standardName: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -52413,7 +52407,7 @@ public class System_TimeZoneInfo /* System.TimeZoneInfo */: System_Object {
 	}}
 	
 	
-	public var daylightName: System_String? /* System.String */ { get throws {
+	public var daylightName: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -52474,7 +52468,7 @@ public class System_TimeZoneInfo /* System.TimeZoneInfo */: System_Object {
 	}}
 	
 	
-	public class var local: System_TimeZoneInfo? /* System.TimeZoneInfo */ { get throws {
+	public class var local: System_TimeZoneInfo /* System.TimeZoneInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -52495,7 +52489,7 @@ public class System_TimeZoneInfo /* System.TimeZoneInfo */: System_Object {
 	}}
 	
 	
-	public class var utc: System_TimeZoneInfo? /* System.TimeZoneInfo */ { get throws {
+	public class var utc: System_TimeZoneInfo /* System.TimeZoneInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -52671,7 +52665,7 @@ public class System_TimeZoneInfo_AdjustmentRule /* System.TimeZoneInfo.Adjustmen
 		
 	}
 	
-	public class func createAdjustmentRule(_ dateStart: System_DateTime /* System.DateTime */, _ dateEnd: System_DateTime /* System.DateTime */, _ daylightDelta: System_TimeSpan /* System.TimeSpan */, _ daylightTransitionStart: System_TimeZoneInfo_TransitionTime /* System.TimeZoneInfo.TransitionTime */, _ daylightTransitionEnd: System_TimeZoneInfo_TransitionTime /* System.TimeZoneInfo.TransitionTime */, _ baseUtcOffsetDelta: System_TimeSpan /* System.TimeSpan */) throws -> System_TimeZoneInfo_AdjustmentRule? /* System.TimeZoneInfo.AdjustmentRule */ {
+	public class func createAdjustmentRule(_ dateStart: System_DateTime /* System.DateTime */, _ dateEnd: System_DateTime /* System.DateTime */, _ daylightDelta: System_TimeSpan /* System.TimeSpan */, _ daylightTransitionStart: System_TimeZoneInfo_TransitionTime /* System.TimeZoneInfo.TransitionTime */, _ daylightTransitionEnd: System_TimeZoneInfo_TransitionTime /* System.TimeZoneInfo.TransitionTime */, _ baseUtcOffsetDelta: System_TimeSpan /* System.TimeSpan */) throws -> System_TimeZoneInfo_AdjustmentRule /* System.TimeZoneInfo.AdjustmentRule */ {
 		let dateStartC = dateStart.__handle
 		let dateEndC = dateEnd.__handle
 		let daylightDeltaC = daylightDelta.__handle
@@ -52697,7 +52691,7 @@ public class System_TimeZoneInfo_AdjustmentRule /* System.TimeZoneInfo.Adjustmen
 		
 	}
 	
-	public class func createAdjustmentRule(_ dateStart: System_DateTime /* System.DateTime */, _ dateEnd: System_DateTime /* System.DateTime */, _ daylightDelta: System_TimeSpan /* System.TimeSpan */, _ daylightTransitionStart: System_TimeZoneInfo_TransitionTime /* System.TimeZoneInfo.TransitionTime */, _ daylightTransitionEnd: System_TimeZoneInfo_TransitionTime /* System.TimeZoneInfo.TransitionTime */) throws -> System_TimeZoneInfo_AdjustmentRule? /* System.TimeZoneInfo.AdjustmentRule */ {
+	public class func createAdjustmentRule(_ dateStart: System_DateTime /* System.DateTime */, _ dateEnd: System_DateTime /* System.DateTime */, _ daylightDelta: System_TimeSpan /* System.TimeSpan */, _ daylightTransitionStart: System_TimeZoneInfo_TransitionTime /* System.TimeZoneInfo.TransitionTime */, _ daylightTransitionEnd: System_TimeZoneInfo_TransitionTime /* System.TimeZoneInfo.TransitionTime */) throws -> System_TimeZoneInfo_AdjustmentRule /* System.TimeZoneInfo.AdjustmentRule */ {
 		let dateStartC = dateStart.__handle
 		let dateEndC = dateEnd.__handle
 		let daylightDeltaC = daylightDelta.__handle
@@ -54493,7 +54487,7 @@ public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System
 		"System.Reflection.TypeInfo"
 	}}
 
-	public func asType() throws -> System_Type? /* System.Type */ {
+	public func asType() throws -> System_Type /* System.Type */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -54658,7 +54652,7 @@ public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System
 		
 	}
 	
-	public var genericTypeParameters: System_Type_Array? /* System.Type[] */ { get throws {
+	public var genericTypeParameters: System_Type_Array /* System.Type[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -54917,7 +54911,7 @@ public class System_Reflection_IReflect /* System.Reflection.IReflect */: DNObje
 		
 	}
 	
-	public func getMethods(_ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_MethodInfo_Array? /* System.Reflection.MethodInfo[] */ {
+	public func getMethods(_ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_MethodInfo_Array /* System.Reflection.MethodInfo[] */ {
 		let bindingAttrC = bindingAttr.cValue
 		
 		
@@ -54960,7 +54954,7 @@ public class System_Reflection_IReflect /* System.Reflection.IReflect */: DNObje
 		
 	}
 	
-	public func getFields(_ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_FieldInfo_Array? /* System.Reflection.FieldInfo[] */ {
+	public func getFields(_ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_FieldInfo_Array /* System.Reflection.FieldInfo[] */ {
 		let bindingAttrC = bindingAttr.cValue
 		
 		
@@ -55029,7 +55023,7 @@ public class System_Reflection_IReflect /* System.Reflection.IReflect */: DNObje
 		
 	}
 	
-	public func getProperties(_ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_PropertyInfo_Array? /* System.Reflection.PropertyInfo[] */ {
+	public func getProperties(_ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_PropertyInfo_Array /* System.Reflection.PropertyInfo[] */ {
 		let bindingAttrC = bindingAttr.cValue
 		
 		
@@ -55050,7 +55044,7 @@ public class System_Reflection_IReflect /* System.Reflection.IReflect */: DNObje
 		
 	}
 	
-	public func getMember(_ name: System_String /* System.String */, _ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_MemberInfo_Array? /* System.Reflection.MemberInfo[] */ {
+	public func getMember(_ name: System_String /* System.String */, _ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_MemberInfo_Array /* System.Reflection.MemberInfo[] */ {
 		let nameC = name.__handle
 		let bindingAttrC = bindingAttr.cValue
 		
@@ -55072,7 +55066,7 @@ public class System_Reflection_IReflect /* System.Reflection.IReflect */: DNObje
 		
 	}
 	
-	public func getMembers(_ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_MemberInfo_Array? /* System.Reflection.MemberInfo[] */ {
+	public func getMembers(_ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_MemberInfo_Array /* System.Reflection.MemberInfo[] */ {
 		let bindingAttrC = bindingAttr.cValue
 		
 		
@@ -55121,7 +55115,7 @@ public class System_Reflection_IReflect /* System.Reflection.IReflect */: DNObje
 		
 	}
 	
-	public var underlyingSystemType: System_Type? /* System.Type */ { get throws {
+	public var underlyingSystemType: System_Type /* System.Type */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -55191,7 +55185,7 @@ public class System_Reflection_IReflectableType /* System.Reflection.IReflectabl
 		"System.Reflection.IReflectableType"
 	}}
 
-	public func getTypeInfo() throws -> System_Reflection_TypeInfo? /* System.Reflection.TypeInfo */ {
+	public func getTypeInfo() throws -> System_Reflection_TypeInfo /* System.Reflection.TypeInfo */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -55234,7 +55228,7 @@ public class System_Reflection_EventInfo /* System.Reflection.EventInfo */: Syst
 		"System.Reflection.EventInfo"
 	}}
 
-	public func getOtherMethods() throws -> System_Reflection_MethodInfo_Array? /* System.Reflection.MethodInfo[] */ {
+	public func getOtherMethods() throws -> System_Reflection_MethodInfo_Array /* System.Reflection.MethodInfo[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -55254,7 +55248,7 @@ public class System_Reflection_EventInfo /* System.Reflection.EventInfo */: Syst
 		
 	}
 	
-	public func getOtherMethods(_ nonPublic: Bool /* System.Boolean */) throws -> System_Reflection_MethodInfo_Array? /* System.Reflection.MethodInfo[] */ {
+	public func getOtherMethods(_ nonPublic: Bool /* System.Boolean */) throws -> System_Reflection_MethodInfo_Array /* System.Reflection.MethodInfo[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -55816,7 +55810,7 @@ public class System_ResolveEventArgs /* System.ResolveEventArgs */: System_Event
 		
 	}
 	
-	public var name: System_String? /* System.String */ { get throws {
+	public var name: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -55901,7 +55895,7 @@ public class System_EventArgs /* System.EventArgs */: System_Object {
 		
 	}
 	
-	public class var empty: System_EventArgs? /* System.EventArgs */ { get {
+	public class var empty: System_EventArgs /* System.EventArgs */ { get {
 		
 		
 		let __returnValueC = System_EventArgs_Empty_Get()
@@ -56196,7 +56190,7 @@ public class System_Text_Rune /* System.Text.Rune */: System_ValueType {
 		
 	}
 	
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -56978,7 +56972,7 @@ public class System_Globalization_SortKey /* System.Globalization.SortKey */: Sy
 		
 	}
 	
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -56998,7 +56992,7 @@ public class System_Globalization_SortKey /* System.Globalization.SortKey */: Sy
 		
 	}
 	
-	public var originalString: System_String? /* System.String */ { get throws {
+	public var originalString: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -57019,7 +57013,7 @@ public class System_Globalization_SortKey /* System.Globalization.SortKey */: Sy
 	}}
 	
 	
-	public var keyData: System_Byte_Array? /* System.Byte[] */ { get throws {
+	public var keyData: System_Byte_Array /* System.Byte[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -57205,7 +57199,7 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 		"System.Globalization.TextInfo"
 	}}
 
-	public func clone() throws -> System_Object? /* System.Object */ {
+	public func clone() throws -> System_Object /* System.Object */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -57225,7 +57219,7 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 		
 	}
 	
-	public class func readOnly(_ textInfo: System_Globalization_TextInfo /* System.Globalization.TextInfo */) throws -> System_Globalization_TextInfo? /* System.Globalization.TextInfo */ {
+	public class func readOnly(_ textInfo: System_Globalization_TextInfo /* System.Globalization.TextInfo */) throws -> System_Globalization_TextInfo /* System.Globalization.TextInfo */ {
 		let textInfoC = textInfo.__handle
 		
 		
@@ -57267,7 +57261,7 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 		
 	}
 	
-	public func toLower(_ str: System_String /* System.String */) throws -> System_String? /* System.String */ {
+	public func toLower(_ str: System_String /* System.String */) throws -> System_String /* System.String */ {
 		let strC = str.__handle
 		
 		
@@ -57309,7 +57303,7 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 		
 	}
 	
-	public func toUpper(_ str: System_String /* System.String */) throws -> System_String? /* System.String */ {
+	public func toUpper(_ str: System_String /* System.String */) throws -> System_String /* System.String */ {
 		let strC = str.__handle
 		
 		
@@ -57367,7 +57361,7 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 		
 	}
 	
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -57387,7 +57381,7 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 		
 	}
 	
-	public func toTitleCase(_ str: System_String /* System.String */) throws -> System_String? /* System.String */ {
+	public func toTitleCase(_ str: System_String /* System.String */) throws -> System_String /* System.String */ {
 		let strC = str.__handle
 		
 		
@@ -57503,7 +57497,7 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 	}}
 	
 	
-	public var cultureName: System_String? /* System.String */ { get throws {
+	public var cultureName: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -57543,7 +57537,7 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 	}}
 	
 	
-	public var listSeparator: System_String? /* System.String */ { get throws {
+	public var listSeparator: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -57623,7 +57617,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		"System.Globalization.NumberFormatInfo"
 	}}
 
-	public class func getInstance(_ formatProvider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_Globalization_NumberFormatInfo? /* System.Globalization.NumberFormatInfo */ {
+	public class func getInstance(_ formatProvider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_Globalization_NumberFormatInfo /* System.Globalization.NumberFormatInfo */ {
 		let formatProviderC = formatProvider?.__handle
 		
 		
@@ -57644,7 +57638,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 	}
 	
-	public func clone() throws -> System_Object? /* System.Object */ {
+	public func clone() throws -> System_Object /* System.Object */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -57685,7 +57679,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 	}
 	
-	public class func readOnly(_ nfi: System_Globalization_NumberFormatInfo /* System.Globalization.NumberFormatInfo */) throws -> System_Globalization_NumberFormatInfo? /* System.Globalization.NumberFormatInfo */ {
+	public class func readOnly(_ nfi: System_Globalization_NumberFormatInfo /* System.Globalization.NumberFormatInfo */) throws -> System_Globalization_NumberFormatInfo /* System.Globalization.NumberFormatInfo */ {
 		let nfiC = nfi.__handle
 		
 		
@@ -57726,7 +57720,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 	}
 	
-	public class var invariantInfo: System_Globalization_NumberFormatInfo? /* System.Globalization.NumberFormatInfo */ { get throws {
+	public class var invariantInfo: System_Globalization_NumberFormatInfo /* System.Globalization.NumberFormatInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -57782,7 +57776,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
-	public var currencyDecimalSeparator: System_String? /* System.String */ { get throws {
+	public var currencyDecimalSeparator: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -57839,7 +57833,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}}
 	
 	
-	public var currencyGroupSizes: System_Int32_Array? /* System.Int32[] */ { get throws {
+	public var currencyGroupSizes: System_Int32_Array /* System.Int32[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -57877,7 +57871,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
-	public var numberGroupSizes: System_Int32_Array? /* System.Int32[] */ { get throws {
+	public var numberGroupSizes: System_Int32_Array /* System.Int32[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -57915,7 +57909,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
-	public var percentGroupSizes: System_Int32_Array? /* System.Int32[] */ { get throws {
+	public var percentGroupSizes: System_Int32_Array /* System.Int32[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -57953,7 +57947,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
-	public var currencyGroupSeparator: System_String? /* System.String */ { get throws {
+	public var currencyGroupSeparator: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -57991,7 +57985,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
-	public var currencySymbol: System_String? /* System.String */ { get throws {
+	public var currencySymbol: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -58029,7 +58023,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
-	public class var currentInfo: System_Globalization_NumberFormatInfo? /* System.Globalization.NumberFormatInfo */ { get throws {
+	public class var currentInfo: System_Globalization_NumberFormatInfo /* System.Globalization.NumberFormatInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -58050,7 +58044,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}}
 	
 	
-	public var naNSymbol: System_String? /* System.String */ { get throws {
+	public var naNSymbol: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -58228,7 +58222,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
-	public var negativeInfinitySymbol: System_String? /* System.String */ { get throws {
+	public var negativeInfinitySymbol: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -58266,7 +58260,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
-	public var negativeSign: System_String? /* System.String */ { get throws {
+	public var negativeSign: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -58339,7 +58333,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
-	public var numberDecimalSeparator: System_String? /* System.String */ { get throws {
+	public var numberDecimalSeparator: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -58377,7 +58371,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
-	public var numberGroupSeparator: System_String? /* System.String */ { get throws {
+	public var numberGroupSeparator: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -58450,7 +58444,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
-	public var positiveInfinitySymbol: System_String? /* System.String */ { get throws {
+	public var positiveInfinitySymbol: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -58488,7 +58482,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
-	public var positiveSign: System_String? /* System.String */ { get throws {
+	public var positiveSign: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -58561,7 +58555,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
-	public var percentDecimalSeparator: System_String? /* System.String */ { get throws {
+	public var percentDecimalSeparator: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -58599,7 +58593,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
-	public var percentGroupSeparator: System_String? /* System.String */ { get throws {
+	public var percentGroupSeparator: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -58637,7 +58631,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
-	public var percentSymbol: System_String? /* System.String */ { get throws {
+	public var percentSymbol: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -58675,7 +58669,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
-	public var perMilleSymbol: System_String? /* System.String */ { get throws {
+	public var perMilleSymbol: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -58713,7 +58707,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
-	public var nativeDigits: System_String_Array? /* System.String[] */ { get throws {
+	public var nativeDigits: System_String_Array /* System.String[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -58812,7 +58806,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		"System.Globalization.DateTimeFormatInfo"
 	}}
 
-	public class func getInstance(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_Globalization_DateTimeFormatInfo? /* System.Globalization.DateTimeFormatInfo */ {
+	public class func getInstance(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_Globalization_DateTimeFormatInfo /* System.Globalization.DateTimeFormatInfo */ {
 		let providerC = provider?.__handle
 		
 		
@@ -58854,7 +58848,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
-	public func clone() throws -> System_Object? /* System.Object */ {
+	public func clone() throws -> System_Object /* System.Object */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -58893,7 +58887,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
-	public func getEraName(_ era: Int32 /* System.Int32 */) throws -> System_String? /* System.String */ {
+	public func getEraName(_ era: Int32 /* System.Int32 */) throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -58913,7 +58907,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
-	public func getAbbreviatedEraName(_ era: Int32 /* System.Int32 */) throws -> System_String? /* System.String */ {
+	public func getAbbreviatedEraName(_ era: Int32 /* System.Int32 */) throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -58933,7 +58927,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
-	public func getAbbreviatedDayName(_ dayofweek: System_DayOfWeek /* System.DayOfWeek */) throws -> System_String? /* System.String */ {
+	public func getAbbreviatedDayName(_ dayofweek: System_DayOfWeek /* System.DayOfWeek */) throws -> System_String /* System.String */ {
 		let dayofweekC = dayofweek.cValue
 		
 		
@@ -58954,7 +58948,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
-	public func getShortestDayName(_ dayOfWeek: System_DayOfWeek /* System.DayOfWeek */) throws -> System_String? /* System.String */ {
+	public func getShortestDayName(_ dayOfWeek: System_DayOfWeek /* System.DayOfWeek */) throws -> System_String /* System.String */ {
 		let dayOfWeekC = dayOfWeek.cValue
 		
 		
@@ -58975,7 +58969,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
-	public func getAllDateTimePatterns() throws -> System_String_Array? /* System.String[] */ {
+	public func getAllDateTimePatterns() throws -> System_String_Array /* System.String[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -58995,7 +58989,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
-	public func getAllDateTimePatterns(_ format: DNChar /* System.Char */) throws -> System_String_Array? /* System.String[] */ {
+	public func getAllDateTimePatterns(_ format: DNChar /* System.Char */) throws -> System_String_Array /* System.String[] */ {
 		let formatC = format.cValue
 		
 		
@@ -59016,7 +59010,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
-	public func getDayName(_ dayofweek: System_DayOfWeek /* System.DayOfWeek */) throws -> System_String? /* System.String */ {
+	public func getDayName(_ dayofweek: System_DayOfWeek /* System.DayOfWeek */) throws -> System_String /* System.String */ {
 		let dayofweekC = dayofweek.cValue
 		
 		
@@ -59037,7 +59031,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
-	public func getAbbreviatedMonthName(_ month: Int32 /* System.Int32 */) throws -> System_String? /* System.String */ {
+	public func getAbbreviatedMonthName(_ month: Int32 /* System.Int32 */) throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -59057,7 +59051,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
-	public func getMonthName(_ month: Int32 /* System.Int32 */) throws -> System_String? /* System.String */ {
+	public func getMonthName(_ month: Int32 /* System.Int32 */) throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -59077,7 +59071,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
-	public class func readOnly(_ dtfi: System_Globalization_DateTimeFormatInfo /* System.Globalization.DateTimeFormatInfo */) throws -> System_Globalization_DateTimeFormatInfo? /* System.Globalization.DateTimeFormatInfo */ {
+	public class func readOnly(_ dtfi: System_Globalization_DateTimeFormatInfo /* System.Globalization.DateTimeFormatInfo */) throws -> System_Globalization_DateTimeFormatInfo /* System.Globalization.DateTimeFormatInfo */ {
 		let dtfiC = dtfi.__handle
 		
 		
@@ -59137,7 +59131,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
-	public class var invariantInfo: System_Globalization_DateTimeFormatInfo? /* System.Globalization.DateTimeFormatInfo */ { get throws {
+	public class var invariantInfo: System_Globalization_DateTimeFormatInfo /* System.Globalization.DateTimeFormatInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -59158,7 +59152,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}}
 	
 	
-	public class var currentInfo: System_Globalization_DateTimeFormatInfo? /* System.Globalization.DateTimeFormatInfo */ { get throws {
+	public class var currentInfo: System_Globalization_DateTimeFormatInfo /* System.Globalization.DateTimeFormatInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -59179,7 +59173,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}}
 	
 	
-	public var aMDesignator: System_String? /* System.String */ { get throws {
+	public var aMDesignator: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -59217,7 +59211,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
-	public var calendar: System_Globalization_Calendar? /* System.Globalization.Calendar */ { get throws {
+	public var calendar: System_Globalization_Calendar /* System.Globalization.Calendar */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -59255,7 +59249,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
-	public var dateSeparator: System_String? /* System.String */ { get throws {
+	public var dateSeparator: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -59369,7 +59363,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
-	public var fullDateTimePattern: System_String? /* System.String */ { get throws {
+	public var fullDateTimePattern: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -59407,7 +59401,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
-	public var longDatePattern: System_String? /* System.String */ { get throws {
+	public var longDatePattern: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -59445,7 +59439,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
-	public var longTimePattern: System_String? /* System.String */ { get throws {
+	public var longTimePattern: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -59483,7 +59477,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
-	public var monthDayPattern: System_String? /* System.String */ { get throws {
+	public var monthDayPattern: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -59521,7 +59515,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
-	public var pMDesignator: System_String? /* System.String */ { get throws {
+	public var pMDesignator: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -59559,7 +59553,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
-	public var rFC1123Pattern: System_String? /* System.String */ { get throws {
+	public var rFC1123Pattern: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -59580,7 +59574,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}}
 	
 	
-	public var shortDatePattern: System_String? /* System.String */ { get throws {
+	public var shortDatePattern: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -59618,7 +59612,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
-	public var shortTimePattern: System_String? /* System.String */ { get throws {
+	public var shortTimePattern: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -59656,7 +59650,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
-	public var sortableDateTimePattern: System_String? /* System.String */ { get throws {
+	public var sortableDateTimePattern: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -59677,7 +59671,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}}
 	
 	
-	public var timeSeparator: System_String? /* System.String */ { get throws {
+	public var timeSeparator: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -59715,7 +59709,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
-	public var universalSortableDateTimePattern: System_String? /* System.String */ { get throws {
+	public var universalSortableDateTimePattern: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -59736,7 +59730,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}}
 	
 	
-	public var yearMonthPattern: System_String? /* System.String */ { get throws {
+	public var yearMonthPattern: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -59774,7 +59768,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
-	public var abbreviatedDayNames: System_String_Array? /* System.String[] */ { get throws {
+	public var abbreviatedDayNames: System_String_Array /* System.String[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -59812,7 +59806,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
-	public var shortestDayNames: System_String_Array? /* System.String[] */ { get throws {
+	public var shortestDayNames: System_String_Array /* System.String[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -59850,7 +59844,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
-	public var dayNames: System_String_Array? /* System.String[] */ { get throws {
+	public var dayNames: System_String_Array /* System.String[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -59888,7 +59882,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
-	public var abbreviatedMonthNames: System_String_Array? /* System.String[] */ { get throws {
+	public var abbreviatedMonthNames: System_String_Array /* System.String[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -59926,7 +59920,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
-	public var monthNames: System_String_Array? /* System.String[] */ { get throws {
+	public var monthNames: System_String_Array /* System.String[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -59983,7 +59977,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}}
 	
 	
-	public var nativeCalendarName: System_String? /* System.String */ { get throws {
+	public var nativeCalendarName: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -60004,7 +59998,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}}
 	
 	
-	public var abbreviatedMonthGenitiveNames: System_String_Array? /* System.String[] */ { get throws {
+	public var abbreviatedMonthGenitiveNames: System_String_Array /* System.String[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -60042,7 +60036,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
-	public var monthGenitiveNames: System_String_Array? /* System.String[] */ { get throws {
+	public var monthGenitiveNames: System_String_Array /* System.String[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -60159,7 +60153,7 @@ public class System_CharEnumerator /* System.CharEnumerator */: System_Object {
 		"System.CharEnumerator"
 	}}
 
-	public func clone() throws -> System_Object? /* System.Object */ {
+	public func clone() throws -> System_Object /* System.Object */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -60379,7 +60373,7 @@ public class System_Text_CompositeFormat /* System.Text.CompositeFormat */: Syst
 		"System.Text.CompositeFormat"
 	}}
 
-	public class func parse(_ format: System_String /* System.String */) throws -> System_Text_CompositeFormat? /* System.Text.CompositeFormat */ {
+	public class func parse(_ format: System_String /* System.String */) throws -> System_Text_CompositeFormat /* System.Text.CompositeFormat */ {
 		let formatC = format.__handle
 		
 		
@@ -60400,7 +60394,7 @@ public class System_Text_CompositeFormat /* System.Text.CompositeFormat */: Syst
 		
 	}
 	
-	public var format: System_String? /* System.String */ { get throws {
+	public var format: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -60469,7 +60463,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		"System.Text.Encoding"
 	}}
 
-	public class func convert(_ srcEncoding: System_Text_Encoding /* System.Text.Encoding */, _ dstEncoding: System_Text_Encoding /* System.Text.Encoding */, _ bytes: System_Byte_Array /* System.Byte[] */) throws -> System_Byte_Array? /* System.Byte[] */ {
+	public class func convert(_ srcEncoding: System_Text_Encoding /* System.Text.Encoding */, _ dstEncoding: System_Text_Encoding /* System.Text.Encoding */, _ bytes: System_Byte_Array /* System.Byte[] */) throws -> System_Byte_Array /* System.Byte[] */ {
 		let srcEncodingC = srcEncoding.__handle
 		let dstEncodingC = dstEncoding.__handle
 		let bytesC = bytes.__handle
@@ -60492,7 +60486,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 	}
 	
-	public class func convert(_ srcEncoding: System_Text_Encoding /* System.Text.Encoding */, _ dstEncoding: System_Text_Encoding /* System.Text.Encoding */, _ bytes: System_Byte_Array /* System.Byte[] */, _ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Byte_Array? /* System.Byte[] */ {
+	public class func convert(_ srcEncoding: System_Text_Encoding /* System.Text.Encoding */, _ dstEncoding: System_Text_Encoding /* System.Text.Encoding */, _ bytes: System_Byte_Array /* System.Byte[] */, _ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Byte_Array /* System.Byte[] */ {
 		let srcEncodingC = srcEncoding.__handle
 		let dstEncodingC = dstEncoding.__handle
 		let bytesC = bytes.__handle
@@ -60533,7 +60527,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 	}
 	
-	public class func getEncoding(_ codepage: Int32 /* System.Int32 */) throws -> System_Text_Encoding? /* System.Text.Encoding */ {
+	public class func getEncoding(_ codepage: Int32 /* System.Int32 */) throws -> System_Text_Encoding /* System.Text.Encoding */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -60553,7 +60547,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 	}
 	
-	public class func getEncoding(_ codepage: Int32 /* System.Int32 */, _ encoderFallback: System_Text_EncoderFallback /* System.Text.EncoderFallback */, _ decoderFallback: System_Text_DecoderFallback /* System.Text.DecoderFallback */) throws -> System_Text_Encoding? /* System.Text.Encoding */ {
+	public class func getEncoding(_ codepage: Int32 /* System.Int32 */, _ encoderFallback: System_Text_EncoderFallback /* System.Text.EncoderFallback */, _ decoderFallback: System_Text_DecoderFallback /* System.Text.DecoderFallback */) throws -> System_Text_Encoding /* System.Text.Encoding */ {
 		let encoderFallbackC = encoderFallback.__handle
 		let decoderFallbackC = decoderFallback.__handle
 		
@@ -60575,7 +60569,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 	}
 	
-	public class func getEncoding(_ name: System_String /* System.String */) throws -> System_Text_Encoding? /* System.Text.Encoding */ {
+	public class func getEncoding(_ name: System_String /* System.String */) throws -> System_Text_Encoding /* System.Text.Encoding */ {
 		let nameC = name.__handle
 		
 		
@@ -60596,7 +60590,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 	}
 	
-	public class func getEncoding(_ name: System_String /* System.String */, _ encoderFallback: System_Text_EncoderFallback /* System.Text.EncoderFallback */, _ decoderFallback: System_Text_DecoderFallback /* System.Text.DecoderFallback */) throws -> System_Text_Encoding? /* System.Text.Encoding */ {
+	public class func getEncoding(_ name: System_String /* System.String */, _ encoderFallback: System_Text_EncoderFallback /* System.Text.EncoderFallback */, _ decoderFallback: System_Text_DecoderFallback /* System.Text.DecoderFallback */) throws -> System_Text_Encoding /* System.Text.Encoding */ {
 		let nameC = name.__handle
 		let encoderFallbackC = encoderFallback.__handle
 		let decoderFallbackC = decoderFallback.__handle
@@ -60619,7 +60613,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 	}
 	
-	public class func getEncodings() throws -> System_Text_EncodingInfo_Array? /* System.Text.EncodingInfo[] */ {
+	public class func getEncodings() throws -> System_Text_EncodingInfo_Array /* System.Text.EncodingInfo[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -60639,7 +60633,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 	}
 	
-	public func getPreamble() throws -> System_Byte_Array? /* System.Byte[] */ {
+	public func getPreamble() throws -> System_Byte_Array /* System.Byte[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -60659,7 +60653,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 	}
 	
-	public func clone() throws -> System_Object? /* System.Object */ {
+	public func clone() throws -> System_Object /* System.Object */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -60755,7 +60749,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 	}
 	
-	public func getBytes(_ chars: System_Char_Array /* System.Char[] */) throws -> System_Byte_Array? /* System.Byte[] */ {
+	public func getBytes(_ chars: System_Char_Array /* System.Char[] */) throws -> System_Byte_Array /* System.Byte[] */ {
 		let charsC = chars.__handle
 		
 		
@@ -60776,7 +60770,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 	}
 	
-	public func getBytes(_ chars: System_Char_Array /* System.Char[] */, _ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Byte_Array? /* System.Byte[] */ {
+	public func getBytes(_ chars: System_Char_Array /* System.Char[] */, _ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Byte_Array /* System.Byte[] */ {
 		let charsC = chars.__handle
 		
 		
@@ -60817,7 +60811,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 	}
 	
-	public func getBytes(_ s: System_String /* System.String */) throws -> System_Byte_Array? /* System.Byte[] */ {
+	public func getBytes(_ s: System_String /* System.String */) throws -> System_Byte_Array /* System.Byte[] */ {
 		let sC = s.__handle
 		
 		
@@ -60838,7 +60832,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 	}
 	
-	public func getBytes(_ s: System_String /* System.String */, _ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Byte_Array? /* System.Byte[] */ {
+	public func getBytes(_ s: System_String /* System.String */, _ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Byte_Array /* System.Byte[] */ {
 		let sC = s.__handle
 		
 		
@@ -60936,7 +60930,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 	}
 	
-	public func getChars(_ bytes: System_Byte_Array /* System.Byte[] */) throws -> System_Char_Array? /* System.Char[] */ {
+	public func getChars(_ bytes: System_Byte_Array /* System.Byte[] */) throws -> System_Char_Array /* System.Char[] */ {
 		let bytesC = bytes.__handle
 		
 		
@@ -60957,7 +60951,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 	}
 	
-	public func getChars(_ bytes: System_Byte_Array /* System.Byte[] */, _ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Char_Array? /* System.Char[] */ {
+	public func getChars(_ bytes: System_Byte_Array /* System.Byte[] */, _ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Char_Array /* System.Char[] */ {
 		let bytesC = bytes.__handle
 		
 		
@@ -60998,7 +60992,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 	}
 	
-	public func getString(_ bytes: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> System_String? /* System.String */ {
+	public func getString(_ bytes: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> System_String /* System.String */ {
 		let bytesC = bytes.readOnlySpanOfByte()
 		
 		
@@ -61056,7 +61050,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 	}
 	
-	public func getDecoder() throws -> System_Text_Decoder? /* System.Text.Decoder */ {
+	public func getDecoder() throws -> System_Text_Decoder /* System.Text.Decoder */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -61076,7 +61070,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 	}
 	
-	public func getEncoder() throws -> System_Text_Encoder? /* System.Text.Encoder */ {
+	public func getEncoder() throws -> System_Text_Encoder /* System.Text.Encoder */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -61132,7 +61126,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 	}
 	
-	public func getString(_ bytes: System_Byte_Array /* System.Byte[] */) throws -> System_String? /* System.String */ {
+	public func getString(_ bytes: System_Byte_Array /* System.Byte[] */) throws -> System_String /* System.String */ {
 		let bytesC = bytes.__handle
 		
 		
@@ -61153,7 +61147,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 	}
 	
-	public func getString(_ bytes: System_Byte_Array /* System.Byte[] */, _ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_String? /* System.String */ {
+	public func getString(_ bytes: System_Byte_Array /* System.Byte[] */, _ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_String /* System.String */ {
 		let bytesC = bytes.__handle
 		
 		
@@ -61211,7 +61205,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 	}
 	
-	public class func createTranscodingStream(_ innerStream: System_IO_Stream /* System.IO.Stream */, _ innerStreamEncoding: System_Text_Encoding /* System.Text.Encoding */, _ outerStreamEncoding: System_Text_Encoding /* System.Text.Encoding */, _ leaveOpen: Bool /* System.Boolean */) throws -> System_IO_Stream? /* System.IO.Stream */ {
+	public class func createTranscodingStream(_ innerStream: System_IO_Stream /* System.IO.Stream */, _ innerStreamEncoding: System_Text_Encoding /* System.Text.Encoding */, _ outerStreamEncoding: System_Text_Encoding /* System.Text.Encoding */, _ leaveOpen: Bool /* System.Boolean */) throws -> System_IO_Stream /* System.IO.Stream */ {
 		let innerStreamC = innerStream.__handle
 		let innerStreamEncodingC = innerStreamEncoding.__handle
 		let outerStreamEncodingC = outerStreamEncoding.__handle
@@ -61234,7 +61228,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 	}
 	
-	public class var `default`: System_Text_Encoding? /* System.Text.Encoding */ { get throws {
+	public class var `default`: System_Text_Encoding /* System.Text.Encoding */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -61276,7 +61270,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}}
 	
 	
-	public var bodyName: System_String? /* System.String */ { get throws {
+	public var bodyName: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -61297,7 +61291,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}}
 	
 	
-	public var encodingName: System_String? /* System.String */ { get throws {
+	public var encodingName: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -61318,7 +61312,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}}
 	
 	
-	public var headerName: System_String? /* System.String */ { get throws {
+	public var headerName: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -61339,7 +61333,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}}
 	
 	
-	public var webName: System_String? /* System.String */ { get throws {
+	public var webName: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -61474,7 +61468,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}}
 	
 	
-	public var encoderFallback: System_Text_EncoderFallback? /* System.Text.EncoderFallback */ { get throws {
+	public var encoderFallback: System_Text_EncoderFallback /* System.Text.EncoderFallback */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -61512,7 +61506,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}
 	
 	
-	public var decoderFallback: System_Text_DecoderFallback? /* System.Text.DecoderFallback */ { get throws {
+	public var decoderFallback: System_Text_DecoderFallback /* System.Text.DecoderFallback */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -61569,7 +61563,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}}
 	
 	
-	public class var aSCII: System_Text_Encoding? /* System.Text.Encoding */ { get throws {
+	public class var aSCII: System_Text_Encoding /* System.Text.Encoding */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -61590,7 +61584,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}}
 	
 	
-	public class var latin1: System_Text_Encoding? /* System.Text.Encoding */ { get throws {
+	public class var latin1: System_Text_Encoding /* System.Text.Encoding */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -61630,7 +61624,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}}
 	
 	
-	public class var unicode: System_Text_Encoding? /* System.Text.Encoding */ { get throws {
+	public class var unicode: System_Text_Encoding /* System.Text.Encoding */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -61651,7 +61645,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}}
 	
 	
-	public class var bigEndianUnicode: System_Text_Encoding? /* System.Text.Encoding */ { get throws {
+	public class var bigEndianUnicode: System_Text_Encoding /* System.Text.Encoding */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -61672,7 +61666,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}}
 	
 	
-	public class var uTF7: System_Text_Encoding? /* System.Text.Encoding */ { get throws {
+	public class var uTF7: System_Text_Encoding /* System.Text.Encoding */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -61693,7 +61687,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}}
 	
 	
-	public class var uTF8: System_Text_Encoding? /* System.Text.Encoding */ { get throws {
+	public class var uTF8: System_Text_Encoding /* System.Text.Encoding */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -61714,7 +61708,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}}
 	
 	
-	public class var uTF32: System_Text_Encoding? /* System.Text.Encoding */ { get throws {
+	public class var uTF32: System_Text_Encoding /* System.Text.Encoding */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -61887,7 +61881,7 @@ public class System_Text_EncoderFallback /* System.Text.EncoderFallback */: Syst
 		"System.Text.EncoderFallback"
 	}}
 
-	public func createFallbackBuffer() throws -> System_Text_EncoderFallbackBuffer? /* System.Text.EncoderFallbackBuffer */ {
+	public func createFallbackBuffer() throws -> System_Text_EncoderFallbackBuffer /* System.Text.EncoderFallbackBuffer */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -61907,7 +61901,7 @@ public class System_Text_EncoderFallback /* System.Text.EncoderFallback */: Syst
 		
 	}
 	
-	public class var replacementFallback: System_Text_EncoderFallback? /* System.Text.EncoderFallback */ { get throws {
+	public class var replacementFallback: System_Text_EncoderFallback /* System.Text.EncoderFallback */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -61928,7 +61922,7 @@ public class System_Text_EncoderFallback /* System.Text.EncoderFallback */: Syst
 	}}
 	
 	
-	public class var exceptionFallback: System_Text_EncoderFallback? /* System.Text.EncoderFallback */ { get throws {
+	public class var exceptionFallback: System_Text_EncoderFallback /* System.Text.EncoderFallback */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -62127,7 +62121,7 @@ public class System_Text_DecoderFallback /* System.Text.DecoderFallback */: Syst
 		"System.Text.DecoderFallback"
 	}}
 
-	public func createFallbackBuffer() throws -> System_Text_DecoderFallbackBuffer? /* System.Text.DecoderFallbackBuffer */ {
+	public func createFallbackBuffer() throws -> System_Text_DecoderFallbackBuffer /* System.Text.DecoderFallbackBuffer */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -62147,7 +62141,7 @@ public class System_Text_DecoderFallback /* System.Text.DecoderFallback */: Syst
 		
 	}
 	
-	public class var replacementFallback: System_Text_DecoderFallback? /* System.Text.DecoderFallback */ { get throws {
+	public class var replacementFallback: System_Text_DecoderFallback /* System.Text.DecoderFallback */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -62168,7 +62162,7 @@ public class System_Text_DecoderFallback /* System.Text.DecoderFallback */: Syst
 	}}
 	
 	
-	public class var exceptionFallback: System_Text_DecoderFallback? /* System.Text.DecoderFallback */ { get throws {
+	public class var exceptionFallback: System_Text_DecoderFallback /* System.Text.DecoderFallback */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -62351,7 +62345,7 @@ public class System_Text_EncodingInfo /* System.Text.EncodingInfo */: System_Obj
 		"System.Text.EncodingInfo"
 	}}
 
-	public func getEncoding() throws -> System_Text_Encoding? /* System.Text.Encoding */ {
+	public func getEncoding() throws -> System_Text_Encoding /* System.Text.Encoding */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -62450,7 +62444,7 @@ public class System_Text_EncodingInfo /* System.Text.EncodingInfo */: System_Obj
 	}}
 	
 	
-	public var name: System_String? /* System.String */ { get throws {
+	public var name: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -62471,7 +62465,7 @@ public class System_Text_EncodingInfo /* System.Text.EncodingInfo */: System_Obj
 	}}
 	
 	
-	public var displayName: System_String? /* System.String */ { get throws {
+	public var displayName: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -62708,7 +62702,7 @@ public class System_Text_Decoder /* System.Text.Decoder */: System_Object {
 	}
 	
 	
-	public var fallbackBuffer: System_Text_DecoderFallbackBuffer? /* System.Text.DecoderFallbackBuffer */ { get throws {
+	public var fallbackBuffer: System_Text_DecoderFallbackBuffer /* System.Text.DecoderFallbackBuffer */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -62865,7 +62859,7 @@ public class System_Text_Encoder /* System.Text.Encoder */: System_Object {
 	}
 	
 	
-	public var fallbackBuffer: System_Text_EncoderFallbackBuffer? /* System.Text.EncoderFallbackBuffer */ { get throws {
+	public var fallbackBuffer: System_Text_EncoderFallbackBuffer /* System.Text.EncoderFallbackBuffer */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -63293,7 +63287,7 @@ public class System_Attribute /* System.Attribute */: System_Object {
 		"System.Attribute"
 	}}
 
-	public class func getCustomAttributes(_ element: System_Reflection_MemberInfo /* System.Reflection.MemberInfo */, _ attributeType: System_Type /* System.Type */) throws -> System_Attribute_Array? /* System.Attribute[] */ {
+	public class func getCustomAttributes(_ element: System_Reflection_MemberInfo /* System.Reflection.MemberInfo */, _ attributeType: System_Type /* System.Type */) throws -> System_Attribute_Array /* System.Attribute[] */ {
 		let elementC = element.__handle
 		let attributeTypeC = attributeType.__handle
 		
@@ -63315,7 +63309,7 @@ public class System_Attribute /* System.Attribute */: System_Object {
 		
 	}
 	
-	public class func getCustomAttributes(_ element: System_Reflection_MemberInfo /* System.Reflection.MemberInfo */, _ attributeType: System_Type /* System.Type */, _ inherit: Bool /* System.Boolean */) throws -> System_Attribute_Array? /* System.Attribute[] */ {
+	public class func getCustomAttributes(_ element: System_Reflection_MemberInfo /* System.Reflection.MemberInfo */, _ attributeType: System_Type /* System.Type */, _ inherit: Bool /* System.Boolean */) throws -> System_Attribute_Array /* System.Attribute[] */ {
 		let elementC = element.__handle
 		let attributeTypeC = attributeType.__handle
 		
@@ -63337,7 +63331,7 @@ public class System_Attribute /* System.Attribute */: System_Object {
 		
 	}
 	
-	public class func getCustomAttributes(_ element: System_Reflection_MemberInfo /* System.Reflection.MemberInfo */) throws -> System_Attribute_Array? /* System.Attribute[] */ {
+	public class func getCustomAttributes(_ element: System_Reflection_MemberInfo /* System.Reflection.MemberInfo */) throws -> System_Attribute_Array /* System.Attribute[] */ {
 		let elementC = element.__handle
 		
 		
@@ -63358,7 +63352,7 @@ public class System_Attribute /* System.Attribute */: System_Object {
 		
 	}
 	
-	public class func getCustomAttributes(_ element: System_Reflection_MemberInfo /* System.Reflection.MemberInfo */, _ inherit: Bool /* System.Boolean */) throws -> System_Attribute_Array? /* System.Attribute[] */ {
+	public class func getCustomAttributes(_ element: System_Reflection_MemberInfo /* System.Reflection.MemberInfo */, _ inherit: Bool /* System.Boolean */) throws -> System_Attribute_Array /* System.Attribute[] */ {
 		let elementC = element.__handle
 		
 		
@@ -63463,7 +63457,7 @@ public class System_Attribute /* System.Attribute */: System_Object {
 		
 	}
 	
-	public class func getCustomAttributes(_ element: System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo */) throws -> System_Attribute_Array? /* System.Attribute[] */ {
+	public class func getCustomAttributes(_ element: System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo */) throws -> System_Attribute_Array /* System.Attribute[] */ {
 		let elementC = element.__handle
 		
 		
@@ -63484,7 +63478,7 @@ public class System_Attribute /* System.Attribute */: System_Object {
 		
 	}
 	
-	public class func getCustomAttributes(_ element: System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo */, _ attributeType: System_Type /* System.Type */) throws -> System_Attribute_Array? /* System.Attribute[] */ {
+	public class func getCustomAttributes(_ element: System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo */, _ attributeType: System_Type /* System.Type */) throws -> System_Attribute_Array /* System.Attribute[] */ {
 		let elementC = element.__handle
 		let attributeTypeC = attributeType.__handle
 		
@@ -63506,7 +63500,7 @@ public class System_Attribute /* System.Attribute */: System_Object {
 		
 	}
 	
-	public class func getCustomAttributes(_ element: System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo */, _ attributeType: System_Type /* System.Type */, _ inherit: Bool /* System.Boolean */) throws -> System_Attribute_Array? /* System.Attribute[] */ {
+	public class func getCustomAttributes(_ element: System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo */, _ attributeType: System_Type /* System.Type */, _ inherit: Bool /* System.Boolean */) throws -> System_Attribute_Array /* System.Attribute[] */ {
 		let elementC = element.__handle
 		let attributeTypeC = attributeType.__handle
 		
@@ -63528,7 +63522,7 @@ public class System_Attribute /* System.Attribute */: System_Object {
 		
 	}
 	
-	public class func getCustomAttributes(_ element: System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo */, _ inherit: Bool /* System.Boolean */) throws -> System_Attribute_Array? /* System.Attribute[] */ {
+	public class func getCustomAttributes(_ element: System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo */, _ inherit: Bool /* System.Boolean */) throws -> System_Attribute_Array /* System.Attribute[] */ {
 		let elementC = element.__handle
 		
 		
@@ -63633,7 +63627,7 @@ public class System_Attribute /* System.Attribute */: System_Object {
 		
 	}
 	
-	public class func getCustomAttributes(_ element: System_Reflection_Module /* System.Reflection.Module */, _ attributeType: System_Type /* System.Type */) throws -> System_Attribute_Array? /* System.Attribute[] */ {
+	public class func getCustomAttributes(_ element: System_Reflection_Module /* System.Reflection.Module */, _ attributeType: System_Type /* System.Type */) throws -> System_Attribute_Array /* System.Attribute[] */ {
 		let elementC = element.__handle
 		let attributeTypeC = attributeType.__handle
 		
@@ -63655,7 +63649,7 @@ public class System_Attribute /* System.Attribute */: System_Object {
 		
 	}
 	
-	public class func getCustomAttributes(_ element: System_Reflection_Module /* System.Reflection.Module */) throws -> System_Attribute_Array? /* System.Attribute[] */ {
+	public class func getCustomAttributes(_ element: System_Reflection_Module /* System.Reflection.Module */) throws -> System_Attribute_Array /* System.Attribute[] */ {
 		let elementC = element.__handle
 		
 		
@@ -63676,7 +63670,7 @@ public class System_Attribute /* System.Attribute */: System_Object {
 		
 	}
 	
-	public class func getCustomAttributes(_ element: System_Reflection_Module /* System.Reflection.Module */, _ inherit: Bool /* System.Boolean */) throws -> System_Attribute_Array? /* System.Attribute[] */ {
+	public class func getCustomAttributes(_ element: System_Reflection_Module /* System.Reflection.Module */, _ inherit: Bool /* System.Boolean */) throws -> System_Attribute_Array /* System.Attribute[] */ {
 		let elementC = element.__handle
 		
 		
@@ -63697,7 +63691,7 @@ public class System_Attribute /* System.Attribute */: System_Object {
 		
 	}
 	
-	public class func getCustomAttributes(_ element: System_Reflection_Module /* System.Reflection.Module */, _ attributeType: System_Type /* System.Type */, _ inherit: Bool /* System.Boolean */) throws -> System_Attribute_Array? /* System.Attribute[] */ {
+	public class func getCustomAttributes(_ element: System_Reflection_Module /* System.Reflection.Module */, _ attributeType: System_Type /* System.Type */, _ inherit: Bool /* System.Boolean */) throws -> System_Attribute_Array /* System.Attribute[] */ {
 		let elementC = element.__handle
 		let attributeTypeC = attributeType.__handle
 		
@@ -63803,7 +63797,7 @@ public class System_Attribute /* System.Attribute */: System_Object {
 		
 	}
 	
-	public class func getCustomAttributes(_ element: System_Reflection_Assembly /* System.Reflection.Assembly */, _ attributeType: System_Type /* System.Type */) throws -> System_Attribute_Array? /* System.Attribute[] */ {
+	public class func getCustomAttributes(_ element: System_Reflection_Assembly /* System.Reflection.Assembly */, _ attributeType: System_Type /* System.Type */) throws -> System_Attribute_Array /* System.Attribute[] */ {
 		let elementC = element.__handle
 		let attributeTypeC = attributeType.__handle
 		
@@ -63825,7 +63819,7 @@ public class System_Attribute /* System.Attribute */: System_Object {
 		
 	}
 	
-	public class func getCustomAttributes(_ element: System_Reflection_Assembly /* System.Reflection.Assembly */, _ attributeType: System_Type /* System.Type */, _ inherit: Bool /* System.Boolean */) throws -> System_Attribute_Array? /* System.Attribute[] */ {
+	public class func getCustomAttributes(_ element: System_Reflection_Assembly /* System.Reflection.Assembly */, _ attributeType: System_Type /* System.Type */, _ inherit: Bool /* System.Boolean */) throws -> System_Attribute_Array /* System.Attribute[] */ {
 		let elementC = element.__handle
 		let attributeTypeC = attributeType.__handle
 		
@@ -63847,7 +63841,7 @@ public class System_Attribute /* System.Attribute */: System_Object {
 		
 	}
 	
-	public class func getCustomAttributes(_ element: System_Reflection_Assembly /* System.Reflection.Assembly */) throws -> System_Attribute_Array? /* System.Attribute[] */ {
+	public class func getCustomAttributes(_ element: System_Reflection_Assembly /* System.Reflection.Assembly */) throws -> System_Attribute_Array /* System.Attribute[] */ {
 		let elementC = element.__handle
 		
 		
@@ -63868,7 +63862,7 @@ public class System_Attribute /* System.Attribute */: System_Object {
 		
 	}
 	
-	public class func getCustomAttributes(_ element: System_Reflection_Assembly /* System.Reflection.Assembly */, _ inherit: Bool /* System.Boolean */) throws -> System_Attribute_Array? /* System.Attribute[] */ {
+	public class func getCustomAttributes(_ element: System_Reflection_Assembly /* System.Reflection.Assembly */, _ inherit: Bool /* System.Boolean */) throws -> System_Attribute_Array /* System.Attribute[] */ {
 		let elementC = element.__handle
 		
 		
@@ -64047,7 +64041,7 @@ public class System_Attribute /* System.Attribute */: System_Object {
 		
 	}
 	
-	public var typeId: System_Object? /* System.Object */ { get throws {
+	public var typeId: System_Object /* System.Object */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -64161,7 +64155,7 @@ public class System_Reflection_InterfaceMapping /* System.Reflection.InterfaceMa
 		"System.Reflection.InterfaceMapping"
 	}}
 
-	public var targetType: System_Type? /* System.Type */ { get {
+	public var targetType: System_Type /* System.Type */ { get {
 		
 		
 		let __returnValueC = System_Reflection_InterfaceMapping_TargetType_Get(self.__handle)
@@ -64181,7 +64175,7 @@ public class System_Reflection_InterfaceMapping /* System.Reflection.InterfaceMa
 	}
 	
 	
-	public var interfaceType: System_Type? /* System.Type */ { get {
+	public var interfaceType: System_Type /* System.Type */ { get {
 		
 		
 		let __returnValueC = System_Reflection_InterfaceMapping_InterfaceType_Get(self.__handle)
@@ -64201,7 +64195,7 @@ public class System_Reflection_InterfaceMapping /* System.Reflection.InterfaceMa
 	}
 	
 	
-	public var targetMethods: System_Reflection_MethodInfo_Array? /* System.Reflection.MethodInfo[] */ { get {
+	public var targetMethods: System_Reflection_MethodInfo_Array /* System.Reflection.MethodInfo[] */ { get {
 		
 		
 		let __returnValueC = System_Reflection_InterfaceMapping_TargetMethods_Get(self.__handle)
@@ -64221,7 +64215,7 @@ public class System_Reflection_InterfaceMapping /* System.Reflection.InterfaceMa
 	}
 	
 	
-	public var interfaceMethods: System_Reflection_MethodInfo_Array? /* System.Reflection.MethodInfo[] */ { get {
+	public var interfaceMethods: System_Reflection_MethodInfo_Array /* System.Reflection.MethodInfo[] */ { get {
 		
 		
 		let __returnValueC = System_Reflection_InterfaceMapping_InterfaceMethods_Get(self.__handle)
@@ -64580,7 +64574,7 @@ public class System_Runtime_InteropServices_Marshal /* System.Runtime.InteropSer
 		
 	}
 	
-	public class func ptrToStringAnsi(_ ptr: UnsafeMutableRawPointer? /* System.IntPtr */, _ len: Int32 /* System.Int32 */) throws -> System_String? /* System.String */ {
+	public class func ptrToStringAnsi(_ ptr: UnsafeMutableRawPointer? /* System.IntPtr */, _ len: Int32 /* System.Int32 */) throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -64620,7 +64614,7 @@ public class System_Runtime_InteropServices_Marshal /* System.Runtime.InteropSer
 		
 	}
 	
-	public class func ptrToStringUni(_ ptr: UnsafeMutableRawPointer? /* System.IntPtr */, _ len: Int32 /* System.Int32 */) throws -> System_String? /* System.String */ {
+	public class func ptrToStringUni(_ ptr: UnsafeMutableRawPointer? /* System.IntPtr */, _ len: Int32 /* System.Int32 */) throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -64660,7 +64654,7 @@ public class System_Runtime_InteropServices_Marshal /* System.Runtime.InteropSer
 		
 	}
 	
-	public class func ptrToStringUTF8(_ ptr: UnsafeMutableRawPointer? /* System.IntPtr */, _ byteLen: Int32 /* System.Int32 */) throws -> System_String? /* System.String */ {
+	public class func ptrToStringUTF8(_ ptr: UnsafeMutableRawPointer? /* System.IntPtr */, _ byteLen: Int32 /* System.Int32 */) throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -65992,7 +65986,7 @@ public class System_Runtime_InteropServices_Marshal /* System.Runtime.InteropSer
 		
 	}
 	
-	public class func getDelegateForFunctionPointer(_ ptr: UnsafeMutableRawPointer? /* System.IntPtr */, _ t: System_Type /* System.Type */) throws -> System_Delegate? /* System.Delegate */ {
+	public class func getDelegateForFunctionPointer(_ ptr: UnsafeMutableRawPointer? /* System.IntPtr */, _ t: System_Type /* System.Type */) throws -> System_Delegate /* System.Delegate */ {
 		let tC = t.__handle
 		
 		
@@ -66212,7 +66206,7 @@ public class System_Runtime_InteropServices_Marshal /* System.Runtime.InteropSer
 		
 	}
 	
-	public class func ptrToStringBSTR(_ ptr: UnsafeMutableRawPointer? /* System.IntPtr */) throws -> System_String? /* System.String */ {
+	public class func ptrToStringBSTR(_ ptr: UnsafeMutableRawPointer? /* System.IntPtr */) throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -66289,7 +66283,7 @@ public class System_Runtime_InteropServices_Marshal /* System.Runtime.InteropSer
 		
 	}
 	
-	public class func getLastPInvokeErrorMessage() throws -> System_String? /* System.String */ {
+	public class func getLastPInvokeErrorMessage() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -66365,7 +66359,7 @@ public class System_Runtime_InteropServices_Marshal /* System.Runtime.InteropSer
 		
 	}
 	
-	public class func bindToMoniker(_ monikerName: System_String /* System.String */) throws -> System_Object? /* System.Object */ {
+	public class func bindToMoniker(_ monikerName: System_String /* System.String */) throws -> System_Object /* System.Object */ {
 		let monikerNameC = monikerName.__handle
 		
 		
@@ -66664,7 +66658,7 @@ public class System_Runtime_InteropServices_Marshal /* System.Runtime.InteropSer
 		
 	}
 	
-	public class func getTypedObjectForIUnknown(_ pUnk: UnsafeMutableRawPointer? /* System.IntPtr */, _ t: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public class func getTypedObjectForIUnknown(_ pUnk: UnsafeMutableRawPointer? /* System.IntPtr */, _ t: System_Type /* System.Type */) throws -> System_Object /* System.Object */ {
 		let tC = t.__handle
 		
 		
@@ -66685,7 +66679,7 @@ public class System_Runtime_InteropServices_Marshal /* System.Runtime.InteropSer
 		
 	}
 	
-	public class func getObjectForIUnknown(_ pUnk: UnsafeMutableRawPointer? /* System.IntPtr */) throws -> System_Object? /* System.Object */ {
+	public class func getObjectForIUnknown(_ pUnk: UnsafeMutableRawPointer? /* System.IntPtr */) throws -> System_Object /* System.Object */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -66746,7 +66740,7 @@ public class System_Runtime_InteropServices_Marshal /* System.Runtime.InteropSer
 		
 	}
 	
-	public class func getObjectsForNativeVariants(_ aSrcNativeVariant: UnsafeMutableRawPointer? /* System.IntPtr */, _ cVars: Int32 /* System.Int32 */) throws -> System_Object_Array? /* System.Object[] */ {
+	public class func getObjectsForNativeVariants(_ aSrcNativeVariant: UnsafeMutableRawPointer? /* System.IntPtr */, _ cVars: Int32 /* System.Int32 */) throws -> System_Object_Array /* System.Object[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -66825,7 +66819,7 @@ public class System_Runtime_InteropServices_Marshal /* System.Runtime.InteropSer
 		
 	}
 	
-	public class func getUniqueObjectForIUnknown(_ unknown: UnsafeMutableRawPointer? /* System.IntPtr */) throws -> System_Object? /* System.Object */ {
+	public class func getUniqueObjectForIUnknown(_ unknown: UnsafeMutableRawPointer? /* System.IntPtr */) throws -> System_Object /* System.Object */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -67159,7 +67153,7 @@ public class System_Runtime_InteropServices_Marshal /* System.Runtime.InteropSer
 		
 	}
 	
-	public class func getPInvokeErrorMessage(_ error: Int32 /* System.Int32 */) throws -> System_String? /* System.String */ {
+	public class func getPInvokeErrorMessage(_ error: Int32 /* System.Int32 */) throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -67364,7 +67358,7 @@ public class System_Security_SecureString /* System.Security.SecureString */: Sy
 		
 	}
 	
-	public func copy() throws -> System_Security_SecureString? /* System.Security.SecureString */ {
+	public func copy() throws -> System_Security_SecureString /* System.Security.SecureString */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -68051,7 +68045,7 @@ public class System_AppContext /* System.AppContext */: System_Object {
 		
 	}
 	
-	public class var baseDirectory: System_String? /* System.String */ { get throws {
+	public class var baseDirectory: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -69714,7 +69708,7 @@ public class System_Collections_Generic_KeyValuePair_A2 /* System.Collections.Ge
 		"System.Collections.Generic.KeyValuePair<,>"
 	}}
 
-	public func toString(TKey: System_Type /* System.Type */, TValue: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
+	public func toString(TKey: System_Type /* System.Type */, TValue: System_Type /* System.Type */) throws -> System_String /* System.String */ {
 		let TKeyC = TKey.__handle
 		let TValueC = TValue.__handle
 		
@@ -76829,7 +76823,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toString(_ value: Bool /* System.Boolean */) throws -> System_String? /* System.String */ {
+	public class func toString(_ value: Bool /* System.Boolean */) throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -76849,7 +76843,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toString(_ value: Bool /* System.Boolean */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public class func toString(_ value: Bool /* System.Boolean */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let providerC = provider?.__handle
 		
 		
@@ -76870,7 +76864,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toString(_ value: DNChar /* System.Char */) throws -> System_String? /* System.String */ {
+	public class func toString(_ value: DNChar /* System.Char */) throws -> System_String /* System.String */ {
 		let valueC = value.cValue
 		
 		
@@ -76891,7 +76885,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toString(_ value: DNChar /* System.Char */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public class func toString(_ value: DNChar /* System.Char */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let valueC = value.cValue
 		let providerC = provider?.__handle
 		
@@ -76913,7 +76907,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toString(_ value: Int8 /* System.SByte */) throws -> System_String? /* System.String */ {
+	public class func toString(_ value: Int8 /* System.SByte */) throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -76933,7 +76927,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toString(_ value: Int8 /* System.SByte */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public class func toString(_ value: Int8 /* System.SByte */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let providerC = provider?.__handle
 		
 		
@@ -76954,7 +76948,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toString(_ value: UInt8 /* System.Byte */) throws -> System_String? /* System.String */ {
+	public class func toString(_ value: UInt8 /* System.Byte */) throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -76974,7 +76968,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toString(_ value: UInt8 /* System.Byte */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public class func toString(_ value: UInt8 /* System.Byte */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let providerC = provider?.__handle
 		
 		
@@ -76995,7 +76989,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toString(_ value: Int16 /* System.Int16 */) throws -> System_String? /* System.String */ {
+	public class func toString(_ value: Int16 /* System.Int16 */) throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -77015,7 +77009,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toString(_ value: Int16 /* System.Int16 */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public class func toString(_ value: Int16 /* System.Int16 */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let providerC = provider?.__handle
 		
 		
@@ -77036,7 +77030,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toString(_ value: UInt16 /* System.UInt16 */) throws -> System_String? /* System.String */ {
+	public class func toString(_ value: UInt16 /* System.UInt16 */) throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -77056,7 +77050,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toString(_ value: UInt16 /* System.UInt16 */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public class func toString(_ value: UInt16 /* System.UInt16 */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let providerC = provider?.__handle
 		
 		
@@ -77077,7 +77071,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toString(_ value: Int32 /* System.Int32 */) throws -> System_String? /* System.String */ {
+	public class func toString(_ value: Int32 /* System.Int32 */) throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -77097,7 +77091,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toString(_ value: Int32 /* System.Int32 */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public class func toString(_ value: Int32 /* System.Int32 */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let providerC = provider?.__handle
 		
 		
@@ -77118,7 +77112,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toString(_ value: UInt32 /* System.UInt32 */) throws -> System_String? /* System.String */ {
+	public class func toString(_ value: UInt32 /* System.UInt32 */) throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -77138,7 +77132,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toString(_ value: UInt32 /* System.UInt32 */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public class func toString(_ value: UInt32 /* System.UInt32 */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let providerC = provider?.__handle
 		
 		
@@ -77159,7 +77153,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toString(_ value: Int64 /* System.Int64 */) throws -> System_String? /* System.String */ {
+	public class func toString(_ value: Int64 /* System.Int64 */) throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -77179,7 +77173,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toString(_ value: Int64 /* System.Int64 */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public class func toString(_ value: Int64 /* System.Int64 */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let providerC = provider?.__handle
 		
 		
@@ -77200,7 +77194,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toString(_ value: UInt64 /* System.UInt64 */) throws -> System_String? /* System.String */ {
+	public class func toString(_ value: UInt64 /* System.UInt64 */) throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -77220,7 +77214,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toString(_ value: UInt64 /* System.UInt64 */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public class func toString(_ value: UInt64 /* System.UInt64 */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let providerC = provider?.__handle
 		
 		
@@ -77241,7 +77235,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toString(_ value: Float /* System.Single */) throws -> System_String? /* System.String */ {
+	public class func toString(_ value: Float /* System.Single */) throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -77261,7 +77255,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toString(_ value: Float /* System.Single */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public class func toString(_ value: Float /* System.Single */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let providerC = provider?.__handle
 		
 		
@@ -77282,7 +77276,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toString(_ value: Double /* System.Double */) throws -> System_String? /* System.String */ {
+	public class func toString(_ value: Double /* System.Double */) throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -77302,7 +77296,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toString(_ value: Double /* System.Double */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public class func toString(_ value: Double /* System.Double */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let providerC = provider?.__handle
 		
 		
@@ -77323,7 +77317,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toString(_ value: System_Decimal /* System.Decimal */) throws -> System_String? /* System.String */ {
+	public class func toString(_ value: System_Decimal /* System.Decimal */) throws -> System_String /* System.String */ {
 		let valueC = value.__handle
 		
 		
@@ -77344,7 +77338,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toString(_ value: System_Decimal /* System.Decimal */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public class func toString(_ value: System_Decimal /* System.Decimal */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let valueC = value.__handle
 		let providerC = provider?.__handle
 		
@@ -77366,7 +77360,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toString(_ value: System_DateTime /* System.DateTime */) throws -> System_String? /* System.String */ {
+	public class func toString(_ value: System_DateTime /* System.DateTime */) throws -> System_String /* System.String */ {
 		let valueC = value.__handle
 		
 		
@@ -77387,7 +77381,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toString(_ value: System_DateTime /* System.DateTime */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public class func toString(_ value: System_DateTime /* System.DateTime */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let valueC = value.__handle
 		let providerC = provider?.__handle
 		
@@ -77604,7 +77598,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toString(_ value: UInt8 /* System.Byte */, _ toBase: Int32 /* System.Int32 */) throws -> System_String? /* System.String */ {
+	public class func toString(_ value: UInt8 /* System.Byte */, _ toBase: Int32 /* System.Int32 */) throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -77624,7 +77618,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toString(_ value: Int16 /* System.Int16 */, _ toBase: Int32 /* System.Int32 */) throws -> System_String? /* System.String */ {
+	public class func toString(_ value: Int16 /* System.Int16 */, _ toBase: Int32 /* System.Int32 */) throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -77644,7 +77638,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toString(_ value: Int32 /* System.Int32 */, _ toBase: Int32 /* System.Int32 */) throws -> System_String? /* System.String */ {
+	public class func toString(_ value: Int32 /* System.Int32 */, _ toBase: Int32 /* System.Int32 */) throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -77664,7 +77658,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toString(_ value: Int64 /* System.Int64 */, _ toBase: Int32 /* System.Int32 */) throws -> System_String? /* System.String */ {
+	public class func toString(_ value: Int64 /* System.Int64 */, _ toBase: Int32 /* System.Int32 */) throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -77684,7 +77678,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toBase64String(_ inArray: System_Byte_Array /* System.Byte[] */) throws -> System_String? /* System.String */ {
+	public class func toBase64String(_ inArray: System_Byte_Array /* System.Byte[] */) throws -> System_String /* System.String */ {
 		let inArrayC = inArray.__handle
 		
 		
@@ -77705,7 +77699,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toBase64String(_ inArray: System_Byte_Array /* System.Byte[] */, _ options: System_Base64FormattingOptions /* System.Base64FormattingOptions */) throws -> System_String? /* System.String */ {
+	public class func toBase64String(_ inArray: System_Byte_Array /* System.Byte[] */, _ options: System_Base64FormattingOptions /* System.Base64FormattingOptions */) throws -> System_String /* System.String */ {
 		let inArrayC = inArray.__handle
 		let optionsC = options.cValue
 		
@@ -77727,7 +77721,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toBase64String(_ inArray: System_Byte_Array /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ length: Int32 /* System.Int32 */) throws -> System_String? /* System.String */ {
+	public class func toBase64String(_ inArray: System_Byte_Array /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ length: Int32 /* System.Int32 */) throws -> System_String /* System.String */ {
 		let inArrayC = inArray.__handle
 		
 		
@@ -77748,7 +77742,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toBase64String(_ inArray: System_Byte_Array /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ length: Int32 /* System.Int32 */, _ options: System_Base64FormattingOptions /* System.Base64FormattingOptions */) throws -> System_String? /* System.String */ {
+	public class func toBase64String(_ inArray: System_Byte_Array /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ length: Int32 /* System.Int32 */, _ options: System_Base64FormattingOptions /* System.Base64FormattingOptions */) throws -> System_String /* System.String */ {
 		let inArrayC = inArray.__handle
 		let optionsC = options.cValue
 		
@@ -77770,7 +77764,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toBase64String(_ bytes: Data? /* System.ReadOnlySpan<System.Byte> */, _ options: System_Base64FormattingOptions /* System.Base64FormattingOptions */) throws -> System_String? /* System.String */ {
+	public class func toBase64String(_ bytes: Data? /* System.ReadOnlySpan<System.Byte> */, _ options: System_Base64FormattingOptions /* System.Base64FormattingOptions */) throws -> System_String /* System.String */ {
 		let bytesC = bytes.readOnlySpanOfByte()
 		let optionsC = options.cValue
 		
@@ -77833,7 +77827,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func fromBase64String(_ s: System_String /* System.String */) throws -> System_Byte_Array? /* System.Byte[] */ {
+	public class func fromBase64String(_ s: System_String /* System.String */) throws -> System_Byte_Array /* System.Byte[] */ {
 		let sC = s.__handle
 		
 		
@@ -77854,7 +77848,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func fromBase64CharArray(_ inArray: System_Char_Array /* System.Char[] */, _ offset: Int32 /* System.Int32 */, _ length: Int32 /* System.Int32 */) throws -> System_Byte_Array? /* System.Byte[] */ {
+	public class func fromBase64CharArray(_ inArray: System_Char_Array /* System.Char[] */, _ offset: Int32 /* System.Int32 */, _ length: Int32 /* System.Int32 */) throws -> System_Byte_Array /* System.Byte[] */ {
 		let inArrayC = inArray.__handle
 		
 		
@@ -77875,7 +77869,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func fromHexString(_ s: System_String /* System.String */) throws -> System_Byte_Array? /* System.Byte[] */ {
+	public class func fromHexString(_ s: System_String /* System.String */) throws -> System_Byte_Array /* System.Byte[] */ {
 		let sC = s.__handle
 		
 		
@@ -77896,7 +77890,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toHexString(_ inArray: System_Byte_Array /* System.Byte[] */) throws -> System_String? /* System.String */ {
+	public class func toHexString(_ inArray: System_Byte_Array /* System.Byte[] */) throws -> System_String /* System.String */ {
 		let inArrayC = inArray.__handle
 		
 		
@@ -77917,7 +77911,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toHexString(_ inArray: System_Byte_Array /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ length: Int32 /* System.Int32 */) throws -> System_String? /* System.String */ {
+	public class func toHexString(_ inArray: System_Byte_Array /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ length: Int32 /* System.Int32 */) throws -> System_String /* System.String */ {
 		let inArrayC = inArray.__handle
 		
 		
@@ -77938,7 +77932,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class func toHexString(_ bytes: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> System_String? /* System.String */ {
+	public class func toHexString(_ bytes: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> System_String /* System.String */ {
 		let bytesC = bytes.readOnlySpanOfByte()
 		
 		
@@ -77959,7 +77953,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
-	public class var dBNull: System_Object? /* System.Object */ { get {
+	public class var dBNull: System_Object /* System.Object */ { get {
 		
 		
 		let __returnValueC = System_Convert_DBNull_Get()
@@ -78342,7 +78336,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
-	public class func allocateDataSlot() throws -> System_LocalDataStoreSlot? /* System.LocalDataStoreSlot */ {
+	public class func allocateDataSlot() throws -> System_LocalDataStoreSlot /* System.LocalDataStoreSlot */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -78362,7 +78356,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
-	public class func allocateNamedDataSlot(_ name: System_String /* System.String */) throws -> System_LocalDataStoreSlot? /* System.LocalDataStoreSlot */ {
+	public class func allocateNamedDataSlot(_ name: System_String /* System.String */) throws -> System_LocalDataStoreSlot /* System.LocalDataStoreSlot */ {
 		let nameC = name.__handle
 		
 		
@@ -78383,7 +78377,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
-	public class func getNamedDataSlot(_ name: System_String /* System.String */) throws -> System_LocalDataStoreSlot? /* System.LocalDataStoreSlot */ {
+	public class func getNamedDataSlot(_ name: System_String /* System.String */) throws -> System_LocalDataStoreSlot /* System.LocalDataStoreSlot */ {
 		let nameC = name.__handle
 		
 		
@@ -78499,7 +78493,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
-	public func getCompressedStack() throws -> System_Threading_CompressedStack? /* System.Threading.CompressedStack */ {
+	public func getCompressedStack() throws -> System_Threading_CompressedStack /* System.Threading.CompressedStack */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -78537,7 +78531,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
-	public class func getDomain() throws -> System_AppDomain? /* System.AppDomain */ {
+	public class func getDomain() throws -> System_AppDomain /* System.AppDomain */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -79383,7 +79377,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	}}
 	
 	
-	public var currentCulture: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ { get throws {
+	public var currentCulture: System_Globalization_CultureInfo /* System.Globalization.CultureInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -79421,7 +79415,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	}
 	
 	
-	public var currentUICulture: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ { get throws {
+	public var currentUICulture: System_Globalization_CultureInfo /* System.Globalization.CultureInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -79497,7 +79491,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	}
 	
 	
-	public class var currentThread: System_Threading_Thread? /* System.Threading.Thread */ { get throws {
+	public class var currentThread: System_Threading_Thread /* System.Threading.Thread */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -79917,7 +79911,7 @@ public class System_Threading_ExecutionContext /* System.Threading.ExecutionCont
 		
 	}
 	
-	public func createCopy() throws -> System_Threading_ExecutionContext? /* System.Threading.ExecutionContext */ {
+	public func createCopy() throws -> System_Threading_ExecutionContext /* System.Threading.ExecutionContext */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -80152,7 +80146,7 @@ public class System_Threading_CompressedStack /* System.Threading.CompressedStac
 		
 	}
 	
-	public class func capture() throws -> System_Threading_CompressedStack? /* System.Threading.CompressedStack */ {
+	public class func capture() throws -> System_Threading_CompressedStack /* System.Threading.CompressedStack */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -80172,7 +80166,7 @@ public class System_Threading_CompressedStack /* System.Threading.CompressedStac
 		
 	}
 	
-	public func createCopy() throws -> System_Threading_CompressedStack? /* System.Threading.CompressedStack */ {
+	public func createCopy() throws -> System_Threading_CompressedStack /* System.Threading.CompressedStack */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -80192,7 +80186,7 @@ public class System_Threading_CompressedStack /* System.Threading.CompressedStac
 		
 	}
 	
-	public class func getCompressedStack() throws -> System_Threading_CompressedStack? /* System.Threading.CompressedStack */ {
+	public class func getCompressedStack() throws -> System_Threading_CompressedStack /* System.Threading.CompressedStack */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -80273,7 +80267,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 	}
 	
-	public func applyPolicy(_ assemblyName: System_String /* System.String */) throws -> System_String? /* System.String */ {
+	public func applyPolicy(_ assemblyName: System_String /* System.String */) throws -> System_String /* System.String */ {
 		let assemblyNameC = assemblyName.__handle
 		
 		
@@ -80294,7 +80288,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 	}
 	
-	public class func createDomain(_ friendlyName: System_String /* System.String */) throws -> System_AppDomain? /* System.AppDomain */ {
+	public class func createDomain(_ friendlyName: System_String /* System.String */) throws -> System_AppDomain /* System.AppDomain */ {
 		let friendlyNameC = friendlyName.__handle
 		
 		
@@ -80511,7 +80505,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 	}
 	
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -80549,7 +80543,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 	}
 	
-	public func load(_ rawAssembly: System_Byte_Array /* System.Byte[] */) throws -> System_Reflection_Assembly? /* System.Reflection.Assembly */ {
+	public func load(_ rawAssembly: System_Byte_Array /* System.Byte[] */) throws -> System_Reflection_Assembly /* System.Reflection.Assembly */ {
 		let rawAssemblyC = rawAssembly.__handle
 		
 		
@@ -80570,7 +80564,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 	}
 	
-	public func load(_ rawAssembly: System_Byte_Array /* System.Byte[] */, _ rawSymbolStore: System_Byte_Array? /* System.Byte[] */) throws -> System_Reflection_Assembly? /* System.Reflection.Assembly */ {
+	public func load(_ rawAssembly: System_Byte_Array /* System.Byte[] */, _ rawSymbolStore: System_Byte_Array? /* System.Byte[] */) throws -> System_Reflection_Assembly /* System.Reflection.Assembly */ {
 		let rawAssemblyC = rawAssembly.__handle
 		let rawSymbolStoreC = rawSymbolStore?.__handle
 		
@@ -80592,7 +80586,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 	}
 	
-	public func load(_ assemblyRef: System_Reflection_AssemblyName /* System.Reflection.AssemblyName */) throws -> System_Reflection_Assembly? /* System.Reflection.Assembly */ {
+	public func load(_ assemblyRef: System_Reflection_AssemblyName /* System.Reflection.AssemblyName */) throws -> System_Reflection_Assembly /* System.Reflection.Assembly */ {
 		let assemblyRefC = assemblyRef.__handle
 		
 		
@@ -80613,7 +80607,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 	}
 	
-	public func load(_ assemblyString: System_String /* System.String */) throws -> System_Reflection_Assembly? /* System.Reflection.Assembly */ {
+	public func load(_ assemblyString: System_String /* System.String */) throws -> System_Reflection_Assembly /* System.Reflection.Assembly */ {
 		let assemblyStringC = assemblyString.__handle
 		
 		
@@ -80634,7 +80628,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 	}
 	
-	public func reflectionOnlyGetAssemblies() throws -> System_Reflection_Assembly_Array? /* System.Reflection.Assembly[] */ {
+	public func reflectionOnlyGetAssemblies() throws -> System_Reflection_Assembly_Array /* System.Reflection.Assembly[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -80777,7 +80771,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 	}
 	
-	public func getAssemblies() throws -> System_Reflection_Assembly_Array? /* System.Reflection.Assembly[] */ {
+	public func getAssemblies() throws -> System_Reflection_Assembly_Array /* System.Reflection.Assembly[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -81121,7 +81115,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 	}
 	
-	public class var currentDomain: System_AppDomain? /* System.AppDomain */ { get throws {
+	public class var currentDomain: System_AppDomain /* System.AppDomain */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -81142,7 +81136,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 	}}
 	
 	
-	public var baseDirectory: System_String? /* System.String */ { get throws {
+	public var baseDirectory: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -81184,7 +81178,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 	}}
 	
 	
-	public var setupInformation: System_AppDomainSetup? /* System.AppDomainSetup */ { get throws {
+	public var setupInformation: System_AppDomainSetup /* System.AppDomainSetup */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -81205,7 +81199,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 	}}
 	
 	
-	public var permissionSet: System_Security_PermissionSet? /* System.Security.PermissionSet */ { get throws {
+	public var permissionSet: System_Security_PermissionSet /* System.Security.PermissionSet */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -81247,7 +81241,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 	}}
 	
 	
-	public var friendlyName: System_String? /* System.String */ { get throws {
+	public var friendlyName: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -81745,7 +81739,7 @@ public class System_Security_PermissionSet /* System.Security.PermissionSet */: 
 		
 	}
 	
-	public class func convertPermissionSet(_ inFormat: System_String /* System.String */, _ inData: System_Byte_Array /* System.Byte[] */, _ outFormat: System_String /* System.String */) throws -> System_Byte_Array? /* System.Byte[] */ {
+	public class func convertPermissionSet(_ inFormat: System_String /* System.String */, _ inData: System_Byte_Array /* System.Byte[] */, _ outFormat: System_String /* System.String */) throws -> System_Byte_Array /* System.Byte[] */ {
 		let inFormatC = inFormat.__handle
 		let inDataC = inData.__handle
 		let outFormatC = outFormat.__handle
@@ -81768,7 +81762,7 @@ public class System_Security_PermissionSet /* System.Security.PermissionSet */: 
 		
 	}
 	
-	public func copy() throws -> System_Security_PermissionSet? /* System.Security.PermissionSet */ {
+	public func copy() throws -> System_Security_PermissionSet /* System.Security.PermissionSet */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -81877,7 +81871,7 @@ public class System_Security_PermissionSet /* System.Security.PermissionSet */: 
 		
 	}
 	
-	public func getEnumerator() throws -> System_Collections_IEnumerator? /* System.Collections.IEnumerator */ {
+	public func getEnumerator() throws -> System_Collections_IEnumerator /* System.Collections.IEnumerator */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -82088,7 +82082,7 @@ public class System_Security_PermissionSet /* System.Security.PermissionSet */: 
 		
 	}
 	
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -82248,7 +82242,7 @@ public class System_Security_PermissionSet /* System.Security.PermissionSet */: 
 	}}
 	
 	
-	public var syncRoot: System_Object? /* System.Object */ { get throws {
+	public var syncRoot: System_Object /* System.Object */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -82409,7 +82403,7 @@ public class System_Security_SecurityElement /* System.Security.SecurityElement 
 		
 	}
 	
-	public func copy() throws -> System_Security_SecurityElement? /* System.Security.SecurityElement */ {
+	public func copy() throws -> System_Security_SecurityElement /* System.Security.SecurityElement */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -82526,7 +82520,7 @@ public class System_Security_SecurityElement /* System.Security.SecurityElement 
 		
 	}
 	
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -82673,7 +82667,7 @@ public class System_Security_SecurityElement /* System.Security.SecurityElement 
 		
 	}
 	
-	public var tag: System_String? /* System.String */ { get throws {
+	public var tag: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -82884,7 +82878,7 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 		
 	}
 	
-	public func clone() throws -> System_Object? /* System.Object */ {
+	public func clone() throws -> System_Object /* System.Object */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -82979,7 +82973,7 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 		
 	}
 	
-	public func getEnumerator() throws -> System_Collections_IDictionaryEnumerator? /* System.Collections.IDictionaryEnumerator */ {
+	public func getEnumerator() throws -> System_Collections_IDictionaryEnumerator /* System.Collections.IDictionaryEnumerator */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -83017,7 +83011,7 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 		
 	}
 	
-	public class func synchronized(_ table: System_Collections_Hashtable /* System.Collections.Hashtable */) throws -> System_Collections_Hashtable? /* System.Collections.Hashtable */ {
+	public class func synchronized(_ table: System_Collections_Hashtable /* System.Collections.Hashtable */) throws -> System_Collections_Hashtable /* System.Collections.Hashtable */ {
 		let tableC = table.__handle
 		
 		
@@ -83493,7 +83487,7 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 	}}
 	
 	
-	public var keys: System_Collections_ICollection? /* System.Collections.ICollection */ { get throws {
+	public var keys: System_Collections_ICollection /* System.Collections.ICollection */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -83514,7 +83508,7 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 	}}
 	
 	
-	public var values: System_Collections_ICollection? /* System.Collections.ICollection */ { get throws {
+	public var values: System_Collections_ICollection /* System.Collections.ICollection */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -83535,7 +83529,7 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 	}}
 	
 	
-	public var syncRoot: System_Object? /* System.Object */ { get throws {
+	public var syncRoot: System_Object /* System.Object */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -83640,7 +83634,7 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		"System.Collections.ArrayList"
 	}}
 
-	public class func adapter(_ list: System_Collections_IList /* System.Collections.IList */) throws -> System_Collections_ArrayList? /* System.Collections.ArrayList */ {
+	public class func adapter(_ list: System_Collections_IList /* System.Collections.IList */) throws -> System_Collections_ArrayList /* System.Collections.ArrayList */ {
 		let listC = list.__handle
 		
 		
@@ -83774,7 +83768,7 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		
 	}
 	
-	public func clone() throws -> System_Object? /* System.Object */ {
+	public func clone() throws -> System_Object /* System.Object */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -83867,7 +83861,7 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		
 	}
 	
-	public class func fixedSize(_ list: System_Collections_IList /* System.Collections.IList */) throws -> System_Collections_IList? /* System.Collections.IList */ {
+	public class func fixedSize(_ list: System_Collections_IList /* System.Collections.IList */) throws -> System_Collections_IList /* System.Collections.IList */ {
 		let listC = list.__handle
 		
 		
@@ -83888,7 +83882,7 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		
 	}
 	
-	public class func fixedSize(_ list: System_Collections_ArrayList /* System.Collections.ArrayList */) throws -> System_Collections_ArrayList? /* System.Collections.ArrayList */ {
+	public class func fixedSize(_ list: System_Collections_ArrayList /* System.Collections.ArrayList */) throws -> System_Collections_ArrayList /* System.Collections.ArrayList */ {
 		let listC = list.__handle
 		
 		
@@ -83909,7 +83903,7 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		
 	}
 	
-	public func getEnumerator() throws -> System_Collections_IEnumerator? /* System.Collections.IEnumerator */ {
+	public func getEnumerator() throws -> System_Collections_IEnumerator /* System.Collections.IEnumerator */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -83929,7 +83923,7 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		
 	}
 	
-	public func getEnumerator(_ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Collections_IEnumerator? /* System.Collections.IEnumerator */ {
+	public func getEnumerator(_ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Collections_IEnumerator /* System.Collections.IEnumerator */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -84099,7 +84093,7 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		
 	}
 	
-	public class func readOnly(_ list: System_Collections_IList /* System.Collections.IList */) throws -> System_Collections_IList? /* System.Collections.IList */ {
+	public class func readOnly(_ list: System_Collections_IList /* System.Collections.IList */) throws -> System_Collections_IList /* System.Collections.IList */ {
 		let listC = list.__handle
 		
 		
@@ -84120,7 +84114,7 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		
 	}
 	
-	public class func readOnly(_ list: System_Collections_ArrayList /* System.Collections.ArrayList */) throws -> System_Collections_ArrayList? /* System.Collections.ArrayList */ {
+	public class func readOnly(_ list: System_Collections_ArrayList /* System.Collections.ArrayList */) throws -> System_Collections_ArrayList /* System.Collections.ArrayList */ {
 		let listC = list.__handle
 		
 		
@@ -84193,7 +84187,7 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		
 	}
 	
-	public class func `repeat`(_ value: System_Object? /* System.Object */, _ count: Int32 /* System.Int32 */) throws -> System_Collections_ArrayList? /* System.Collections.ArrayList */ {
+	public class func `repeat`(_ value: System_Object? /* System.Object */, _ count: Int32 /* System.Int32 */) throws -> System_Collections_ArrayList /* System.Collections.ArrayList */ {
 		let valueC = value?.__handle
 		
 		
@@ -84266,7 +84260,7 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		
 	}
 	
-	public func getRange(_ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Collections_ArrayList? /* System.Collections.ArrayList */ {
+	public func getRange(_ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Collections_ArrayList /* System.Collections.ArrayList */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -84339,7 +84333,7 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		
 	}
 	
-	public class func synchronized(_ list: System_Collections_IList /* System.Collections.IList */) throws -> System_Collections_IList? /* System.Collections.IList */ {
+	public class func synchronized(_ list: System_Collections_IList /* System.Collections.IList */) throws -> System_Collections_IList /* System.Collections.IList */ {
 		let listC = list.__handle
 		
 		
@@ -84360,7 +84354,7 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		
 	}
 	
-	public class func synchronized(_ list: System_Collections_ArrayList /* System.Collections.ArrayList */) throws -> System_Collections_ArrayList? /* System.Collections.ArrayList */ {
+	public class func synchronized(_ list: System_Collections_ArrayList /* System.Collections.ArrayList */) throws -> System_Collections_ArrayList /* System.Collections.ArrayList */ {
 		let listC = list.__handle
 		
 		
@@ -84381,7 +84375,7 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		
 	}
 	
-	public func toArray() throws -> System_Object_Array? /* System.Object[] */ {
+	public func toArray() throws -> System_Object_Array /* System.Object[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -84401,7 +84395,7 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		
 	}
 	
-	public func toArray(_ type: System_Type /* System.Type */) throws -> System_Array? /* System.Array */ {
+	public func toArray(_ type: System_Type /* System.Type */) throws -> System_Array /* System.Array */ {
 		let typeC = type.__handle
 		
 		
@@ -84611,7 +84605,7 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 	}}
 	
 	
-	public var syncRoot: System_Object? /* System.Object */ { get throws {
+	public var syncRoot: System_Object /* System.Object */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -84784,7 +84778,7 @@ public class System_Security_IPermission /* System.Security.IPermission */: DNOb
 		"System.Security.IPermission"
 	}}
 
-	public func copy() throws -> System_Security_IPermission? /* System.Security.IPermission */ {
+	public func copy() throws -> System_Security_IPermission /* System.Security.IPermission */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -84926,7 +84920,7 @@ public class System_UnhandledExceptionEventArgs /* System.UnhandledExceptionEven
 		
 	}
 	
-	public var exceptionObject: System_Object? /* System.Object */ { get throws {
+	public var exceptionObject: System_Object /* System.Object */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -85036,7 +85030,7 @@ public class System_AssemblyLoadEventArgs /* System.AssemblyLoadEventArgs */: Sy
 		
 	}
 	
-	public var loadedAssembly: System_Reflection_Assembly? /* System.Reflection.Assembly */ { get throws {
+	public var loadedAssembly: System_Reflection_Assembly /* System.Reflection.Assembly */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -85461,7 +85455,7 @@ public class System_Threading_CancellationTokenSource /* System.Threading.Cancel
 		
 	}
 	
-	public func cancelAsync() throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public func cancelAsync() throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -85551,7 +85545,7 @@ public class System_Threading_CancellationTokenSource /* System.Threading.Cancel
 		
 	}
 	
-	public class func createLinkedTokenSource(_ token1: System_Threading_CancellationToken /* System.Threading.CancellationToken */, _ token2: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_CancellationTokenSource? /* System.Threading.CancellationTokenSource */ {
+	public class func createLinkedTokenSource(_ token1: System_Threading_CancellationToken /* System.Threading.CancellationToken */, _ token2: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_CancellationTokenSource /* System.Threading.CancellationTokenSource */ {
 		let token1C = token1.__handle
 		let token2C = token2.__handle
 		
@@ -85573,7 +85567,7 @@ public class System_Threading_CancellationTokenSource /* System.Threading.Cancel
 		
 	}
 	
-	public class func createLinkedTokenSource(_ token: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_CancellationTokenSource? /* System.Threading.CancellationTokenSource */ {
+	public class func createLinkedTokenSource(_ token: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_CancellationTokenSource /* System.Threading.CancellationTokenSource */ {
 		let tokenC = token.__handle
 		
 		
@@ -85594,7 +85588,7 @@ public class System_Threading_CancellationTokenSource /* System.Threading.Cancel
 		
 	}
 	
-	public class func createLinkedTokenSource(_ tokens: System_Threading_CancellationToken_Array /* System.Threading.CancellationToken[] */) throws -> System_Threading_CancellationTokenSource? /* System.Threading.CancellationTokenSource */ {
+	public class func createLinkedTokenSource(_ tokens: System_Threading_CancellationToken_Array /* System.Threading.CancellationToken[] */) throws -> System_Threading_CancellationTokenSource /* System.Threading.CancellationTokenSource */ {
 		let tokensC = tokens.__handle
 		
 		
@@ -86030,7 +86024,7 @@ public class System_Random /* System.Random */: System_Object {
 		
 	}
 	
-	public class var shared: System_Random? /* System.Random */ { get throws {
+	public class var shared: System_Random /* System.Random */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -86101,7 +86095,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -86121,7 +86115,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func toString(_ startIndex: Int32 /* System.Int32 */, _ length: Int32 /* System.Int32 */) throws -> System_String? /* System.String */ {
+	public func toString(_ startIndex: Int32 /* System.Int32 */, _ length: Int32 /* System.Int32 */) throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -86141,7 +86135,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func clear() throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func clear() throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -86181,7 +86175,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func append(_ value: DNChar /* System.Char */, _ repeatCount: Int32 /* System.Int32 */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func append(_ value: DNChar /* System.Char */, _ repeatCount: Int32 /* System.Int32 */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let valueC = value.cValue
 		
 		
@@ -86202,7 +86196,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func append(_ value: System_Char_Array? /* System.Char[] */, _ startIndex: Int32 /* System.Int32 */, _ charCount: Int32 /* System.Int32 */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func append(_ value: System_Char_Array? /* System.Char[] */, _ startIndex: Int32 /* System.Int32 */, _ charCount: Int32 /* System.Int32 */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let valueC = value?.__handle
 		
 		
@@ -86223,7 +86217,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func append(_ value: System_String? /* System.String */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func append(_ value: System_String? /* System.String */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let valueC = value?.__handle
 		
 		
@@ -86244,7 +86238,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func append(_ value: System_String? /* System.String */, _ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func append(_ value: System_String? /* System.String */, _ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let valueC = value?.__handle
 		
 		
@@ -86265,7 +86259,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func append(_ value: System_Text_StringBuilder? /* System.Text.StringBuilder */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func append(_ value: System_Text_StringBuilder? /* System.Text.StringBuilder */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let valueC = value?.__handle
 		
 		
@@ -86286,7 +86280,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func append(_ value: System_Text_StringBuilder? /* System.Text.StringBuilder */, _ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func append(_ value: System_Text_StringBuilder? /* System.Text.StringBuilder */, _ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let valueC = value?.__handle
 		
 		
@@ -86307,7 +86301,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func appendLine() throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func appendLine() throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -86327,7 +86321,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func appendLine(_ value: System_String? /* System.String */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func appendLine(_ value: System_String? /* System.String */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let valueC = value?.__handle
 		
 		
@@ -86366,7 +86360,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func insert(_ index: Int32 /* System.Int32 */, _ value: System_String? /* System.String */, _ count: Int32 /* System.Int32 */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func insert(_ index: Int32 /* System.Int32 */, _ value: System_String? /* System.String */, _ count: Int32 /* System.Int32 */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let valueC = value?.__handle
 		
 		
@@ -86387,7 +86381,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func remove(_ startIndex: Int32 /* System.Int32 */, _ length: Int32 /* System.Int32 */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func remove(_ startIndex: Int32 /* System.Int32 */, _ length: Int32 /* System.Int32 */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -86407,7 +86401,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func append(_ value: Bool /* System.Boolean */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func append(_ value: Bool /* System.Boolean */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -86427,7 +86421,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func append(_ value: DNChar /* System.Char */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func append(_ value: DNChar /* System.Char */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let valueC = value.cValue
 		
 		
@@ -86448,7 +86442,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func append(_ value: Int8 /* System.SByte */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func append(_ value: Int8 /* System.SByte */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -86468,7 +86462,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func append(_ value: UInt8 /* System.Byte */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func append(_ value: UInt8 /* System.Byte */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -86488,7 +86482,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func append(_ value: Int16 /* System.Int16 */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func append(_ value: Int16 /* System.Int16 */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -86508,7 +86502,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func append(_ value: Int32 /* System.Int32 */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func append(_ value: Int32 /* System.Int32 */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -86528,7 +86522,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func append(_ value: Int64 /* System.Int64 */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func append(_ value: Int64 /* System.Int64 */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -86548,7 +86542,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func append(_ value: Float /* System.Single */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func append(_ value: Float /* System.Single */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -86568,7 +86562,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func append(_ value: Double /* System.Double */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func append(_ value: Double /* System.Double */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -86588,7 +86582,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func append(_ value: System_Decimal /* System.Decimal */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func append(_ value: System_Decimal /* System.Decimal */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let valueC = value.__handle
 		
 		
@@ -86609,7 +86603,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func append(_ value: UInt16 /* System.UInt16 */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func append(_ value: UInt16 /* System.UInt16 */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -86629,7 +86623,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func append(_ value: UInt32 /* System.UInt32 */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func append(_ value: UInt32 /* System.UInt32 */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -86649,7 +86643,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func append(_ value: UInt64 /* System.UInt64 */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func append(_ value: UInt64 /* System.UInt64 */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -86669,7 +86663,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func append(_ value: System_Object? /* System.Object */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func append(_ value: System_Object? /* System.Object */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let valueC = value?.__handle
 		
 		
@@ -86690,7 +86684,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func append(_ value: System_Char_Array? /* System.Char[] */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func append(_ value: System_Char_Array? /* System.Char[] */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let valueC = value?.__handle
 		
 		
@@ -86711,7 +86705,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func append(_ handler: inout System_Text_StringBuilder_AppendInterpolatedStringHandler /* System.Text.StringBuilder.AppendInterpolatedStringHandler */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func append(_ handler: inout System_Text_StringBuilder_AppendInterpolatedStringHandler /* System.Text.StringBuilder.AppendInterpolatedStringHandler */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		var handlerC = handler.__handle
 		
 		
@@ -86735,7 +86729,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func append(_ provider: System_IFormatProvider? /* System.IFormatProvider */, _ handler: inout System_Text_StringBuilder_AppendInterpolatedStringHandler /* System.Text.StringBuilder.AppendInterpolatedStringHandler */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func append(_ provider: System_IFormatProvider? /* System.IFormatProvider */, _ handler: inout System_Text_StringBuilder_AppendInterpolatedStringHandler /* System.Text.StringBuilder.AppendInterpolatedStringHandler */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let providerC = provider?.__handle
 		var handlerC = handler.__handle
 		
@@ -86760,7 +86754,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func appendLine(_ handler: inout System_Text_StringBuilder_AppendInterpolatedStringHandler /* System.Text.StringBuilder.AppendInterpolatedStringHandler */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func appendLine(_ handler: inout System_Text_StringBuilder_AppendInterpolatedStringHandler /* System.Text.StringBuilder.AppendInterpolatedStringHandler */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		var handlerC = handler.__handle
 		
 		
@@ -86784,7 +86778,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func appendLine(_ provider: System_IFormatProvider? /* System.IFormatProvider */, _ handler: inout System_Text_StringBuilder_AppendInterpolatedStringHandler /* System.Text.StringBuilder.AppendInterpolatedStringHandler */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func appendLine(_ provider: System_IFormatProvider? /* System.IFormatProvider */, _ handler: inout System_Text_StringBuilder_AppendInterpolatedStringHandler /* System.Text.StringBuilder.AppendInterpolatedStringHandler */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let providerC = provider?.__handle
 		var handlerC = handler.__handle
 		
@@ -86809,7 +86803,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func appendJoin(_ separator: System_String? /* System.String */, _ values: System_Object_Array /* System.Object[] */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func appendJoin(_ separator: System_String? /* System.String */, _ values: System_Object_Array /* System.Object[] */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let separatorC = separator?.__handle
 		let valuesC = values.__handle
 		
@@ -86831,7 +86825,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func appendJoin(_ separator: System_String? /* System.String */, _ values: System_String_Array /* System.String[] */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func appendJoin(_ separator: System_String? /* System.String */, _ values: System_String_Array /* System.String[] */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let separatorC = separator?.__handle
 		let valuesC = values.__handle
 		
@@ -86853,7 +86847,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func appendJoin(_ separator: DNChar /* System.Char */, _ values: System_Object_Array /* System.Object[] */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func appendJoin(_ separator: DNChar /* System.Char */, _ values: System_Object_Array /* System.Object[] */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let separatorC = separator.cValue
 		let valuesC = values.__handle
 		
@@ -86875,7 +86869,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func appendJoin(_ separator: DNChar /* System.Char */, _ values: System_String_Array /* System.String[] */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func appendJoin(_ separator: DNChar /* System.Char */, _ values: System_String_Array /* System.String[] */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let separatorC = separator.cValue
 		let valuesC = values.__handle
 		
@@ -86897,7 +86891,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func insert(_ index: Int32 /* System.Int32 */, _ value: System_String? /* System.String */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func insert(_ index: Int32 /* System.Int32 */, _ value: System_String? /* System.String */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let valueC = value?.__handle
 		
 		
@@ -86918,7 +86912,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func insert(_ index: Int32 /* System.Int32 */, _ value: Bool /* System.Boolean */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func insert(_ index: Int32 /* System.Int32 */, _ value: Bool /* System.Boolean */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -86938,7 +86932,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func insert(_ index: Int32 /* System.Int32 */, _ value: Int8 /* System.SByte */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func insert(_ index: Int32 /* System.Int32 */, _ value: Int8 /* System.SByte */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -86958,7 +86952,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func insert(_ index: Int32 /* System.Int32 */, _ value: UInt8 /* System.Byte */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func insert(_ index: Int32 /* System.Int32 */, _ value: UInt8 /* System.Byte */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -86978,7 +86972,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func insert(_ index: Int32 /* System.Int32 */, _ value: Int16 /* System.Int16 */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func insert(_ index: Int32 /* System.Int32 */, _ value: Int16 /* System.Int16 */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -86998,7 +86992,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func insert(_ index: Int32 /* System.Int32 */, _ value: DNChar /* System.Char */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func insert(_ index: Int32 /* System.Int32 */, _ value: DNChar /* System.Char */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let valueC = value.cValue
 		
 		
@@ -87019,7 +87013,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func insert(_ index: Int32 /* System.Int32 */, _ value: System_Char_Array? /* System.Char[] */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func insert(_ index: Int32 /* System.Int32 */, _ value: System_Char_Array? /* System.Char[] */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let valueC = value?.__handle
 		
 		
@@ -87040,7 +87034,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func insert(_ index: Int32 /* System.Int32 */, _ value: System_Char_Array? /* System.Char[] */, _ startIndex: Int32 /* System.Int32 */, _ charCount: Int32 /* System.Int32 */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func insert(_ index: Int32 /* System.Int32 */, _ value: System_Char_Array? /* System.Char[] */, _ startIndex: Int32 /* System.Int32 */, _ charCount: Int32 /* System.Int32 */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let valueC = value?.__handle
 		
 		
@@ -87061,7 +87055,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func insert(_ index: Int32 /* System.Int32 */, _ value: Int32 /* System.Int32 */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func insert(_ index: Int32 /* System.Int32 */, _ value: Int32 /* System.Int32 */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -87081,7 +87075,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func insert(_ index: Int32 /* System.Int32 */, _ value: Int64 /* System.Int64 */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func insert(_ index: Int32 /* System.Int32 */, _ value: Int64 /* System.Int64 */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -87101,7 +87095,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func insert(_ index: Int32 /* System.Int32 */, _ value: Float /* System.Single */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func insert(_ index: Int32 /* System.Int32 */, _ value: Float /* System.Single */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -87121,7 +87115,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func insert(_ index: Int32 /* System.Int32 */, _ value: Double /* System.Double */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func insert(_ index: Int32 /* System.Int32 */, _ value: Double /* System.Double */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -87141,7 +87135,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func insert(_ index: Int32 /* System.Int32 */, _ value: System_Decimal /* System.Decimal */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func insert(_ index: Int32 /* System.Int32 */, _ value: System_Decimal /* System.Decimal */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let valueC = value.__handle
 		
 		
@@ -87162,7 +87156,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func insert(_ index: Int32 /* System.Int32 */, _ value: UInt16 /* System.UInt16 */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func insert(_ index: Int32 /* System.Int32 */, _ value: UInt16 /* System.UInt16 */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -87182,7 +87176,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func insert(_ index: Int32 /* System.Int32 */, _ value: UInt32 /* System.UInt32 */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func insert(_ index: Int32 /* System.Int32 */, _ value: UInt32 /* System.UInt32 */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -87202,7 +87196,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func insert(_ index: Int32 /* System.Int32 */, _ value: UInt64 /* System.UInt64 */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func insert(_ index: Int32 /* System.Int32 */, _ value: UInt64 /* System.UInt64 */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -87222,7 +87216,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func insert(_ index: Int32 /* System.Int32 */, _ value: System_Object? /* System.Object */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func insert(_ index: Int32 /* System.Int32 */, _ value: System_Object? /* System.Object */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let valueC = value?.__handle
 		
 		
@@ -87243,7 +87237,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func appendFormat(_ format: System_String /* System.String */, _ arg0: System_Object? /* System.Object */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func appendFormat(_ format: System_String /* System.String */, _ arg0: System_Object? /* System.Object */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let formatC = format.__handle
 		let arg0C = arg0?.__handle
 		
@@ -87265,7 +87259,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func appendFormat(_ format: System_String /* System.String */, _ arg0: System_Object? /* System.Object */, _ arg1: System_Object? /* System.Object */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func appendFormat(_ format: System_String /* System.String */, _ arg0: System_Object? /* System.Object */, _ arg1: System_Object? /* System.Object */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let formatC = format.__handle
 		let arg0C = arg0?.__handle
 		let arg1C = arg1?.__handle
@@ -87288,7 +87282,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func appendFormat(_ format: System_String /* System.String */, _ arg0: System_Object? /* System.Object */, _ arg1: System_Object? /* System.Object */, _ arg2: System_Object? /* System.Object */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func appendFormat(_ format: System_String /* System.String */, _ arg0: System_Object? /* System.Object */, _ arg1: System_Object? /* System.Object */, _ arg2: System_Object? /* System.Object */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let formatC = format.__handle
 		let arg0C = arg0?.__handle
 		let arg1C = arg1?.__handle
@@ -87312,7 +87306,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func appendFormat(_ format: System_String /* System.String */, _ args: System_Object_Array /* System.Object[] */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func appendFormat(_ format: System_String /* System.String */, _ args: System_Object_Array /* System.Object[] */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let formatC = format.__handle
 		let argsC = args.__handle
 		
@@ -87334,7 +87328,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func appendFormat(_ provider: System_IFormatProvider? /* System.IFormatProvider */, _ format: System_String /* System.String */, _ arg0: System_Object? /* System.Object */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func appendFormat(_ provider: System_IFormatProvider? /* System.IFormatProvider */, _ format: System_String /* System.String */, _ arg0: System_Object? /* System.Object */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let providerC = provider?.__handle
 		let formatC = format.__handle
 		let arg0C = arg0?.__handle
@@ -87357,7 +87351,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func appendFormat(_ provider: System_IFormatProvider? /* System.IFormatProvider */, _ format: System_String /* System.String */, _ arg0: System_Object? /* System.Object */, _ arg1: System_Object? /* System.Object */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func appendFormat(_ provider: System_IFormatProvider? /* System.IFormatProvider */, _ format: System_String /* System.String */, _ arg0: System_Object? /* System.Object */, _ arg1: System_Object? /* System.Object */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let providerC = provider?.__handle
 		let formatC = format.__handle
 		let arg0C = arg0?.__handle
@@ -87381,7 +87375,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func appendFormat(_ provider: System_IFormatProvider? /* System.IFormatProvider */, _ format: System_String /* System.String */, _ arg0: System_Object? /* System.Object */, _ arg1: System_Object? /* System.Object */, _ arg2: System_Object? /* System.Object */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func appendFormat(_ provider: System_IFormatProvider? /* System.IFormatProvider */, _ format: System_String /* System.String */, _ arg0: System_Object? /* System.Object */, _ arg1: System_Object? /* System.Object */, _ arg2: System_Object? /* System.Object */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let providerC = provider?.__handle
 		let formatC = format.__handle
 		let arg0C = arg0?.__handle
@@ -87406,7 +87400,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func appendFormat(_ provider: System_IFormatProvider? /* System.IFormatProvider */, _ format: System_String /* System.String */, _ args: System_Object_Array /* System.Object[] */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func appendFormat(_ provider: System_IFormatProvider? /* System.IFormatProvider */, _ format: System_String /* System.String */, _ args: System_Object_Array /* System.Object[] */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let providerC = provider?.__handle
 		let formatC = format.__handle
 		let argsC = args.__handle
@@ -87429,7 +87423,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func appendFormat(TArg0: System_Type /* System.Type */, _ provider: System_IFormatProvider? /* System.IFormatProvider */, _ format: System_Text_CompositeFormat? /* System.Text.CompositeFormat */, _ arg0: System_Object? /* System.Object */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func appendFormat(TArg0: System_Type /* System.Type */, _ provider: System_IFormatProvider? /* System.IFormatProvider */, _ format: System_Text_CompositeFormat? /* System.Text.CompositeFormat */, _ arg0: System_Object? /* System.Object */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let TArg0C = TArg0.__handle
 		let providerC = provider?.__handle
 		let formatC = format?.__handle
@@ -87453,7 +87447,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func appendFormat(TArg0: System_Type /* System.Type */, TArg1: System_Type /* System.Type */, _ provider: System_IFormatProvider? /* System.IFormatProvider */, _ format: System_Text_CompositeFormat? /* System.Text.CompositeFormat */, _ arg0: System_Object? /* System.Object */, _ arg1: System_Object? /* System.Object */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func appendFormat(TArg0: System_Type /* System.Type */, TArg1: System_Type /* System.Type */, _ provider: System_IFormatProvider? /* System.IFormatProvider */, _ format: System_Text_CompositeFormat? /* System.Text.CompositeFormat */, _ arg0: System_Object? /* System.Object */, _ arg1: System_Object? /* System.Object */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let TArg0C = TArg0.__handle
 		let TArg1C = TArg1.__handle
 		let providerC = provider?.__handle
@@ -87479,7 +87473,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func appendFormat(TArg0: System_Type /* System.Type */, TArg1: System_Type /* System.Type */, TArg2: System_Type /* System.Type */, _ provider: System_IFormatProvider? /* System.IFormatProvider */, _ format: System_Text_CompositeFormat? /* System.Text.CompositeFormat */, _ arg0: System_Object? /* System.Object */, _ arg1: System_Object? /* System.Object */, _ arg2: System_Object? /* System.Object */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func appendFormat(TArg0: System_Type /* System.Type */, TArg1: System_Type /* System.Type */, TArg2: System_Type /* System.Type */, _ provider: System_IFormatProvider? /* System.IFormatProvider */, _ format: System_Text_CompositeFormat? /* System.Text.CompositeFormat */, _ arg0: System_Object? /* System.Object */, _ arg1: System_Object? /* System.Object */, _ arg2: System_Object? /* System.Object */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let TArg0C = TArg0.__handle
 		let TArg1C = TArg1.__handle
 		let TArg2C = TArg2.__handle
@@ -87507,7 +87501,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func appendFormat(_ provider: System_IFormatProvider? /* System.IFormatProvider */, _ format: System_Text_CompositeFormat /* System.Text.CompositeFormat */, _ args: System_Object_Array /* System.Object[] */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func appendFormat(_ provider: System_IFormatProvider? /* System.IFormatProvider */, _ format: System_Text_CompositeFormat /* System.Text.CompositeFormat */, _ args: System_Object_Array /* System.Object[] */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let providerC = provider?.__handle
 		let formatC = format.__handle
 		let argsC = args.__handle
@@ -87530,7 +87524,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func replace(_ oldValue: System_String /* System.String */, _ newValue: System_String? /* System.String */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func replace(_ oldValue: System_String /* System.String */, _ newValue: System_String? /* System.String */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let oldValueC = oldValue.__handle
 		let newValueC = newValue?.__handle
 		
@@ -87571,7 +87565,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func replace(_ oldValue: System_String /* System.String */, _ newValue: System_String? /* System.String */, _ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func replace(_ oldValue: System_String /* System.String */, _ newValue: System_String? /* System.String */, _ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let oldValueC = oldValue.__handle
 		let newValueC = newValue?.__handle
 		
@@ -87593,7 +87587,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func replace(_ oldChar: DNChar /* System.Char */, _ newChar: DNChar /* System.Char */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func replace(_ oldChar: DNChar /* System.Char */, _ newChar: DNChar /* System.Char */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let oldCharC = oldChar.cValue
 		let newCharC = newChar.cValue
 		
@@ -87615,7 +87609,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public func replace(_ oldChar: DNChar /* System.Char */, _ newChar: DNChar /* System.Char */, _ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Text_StringBuilder? /* System.Text.StringBuilder */ {
+	public func replace(_ oldChar: DNChar /* System.Char */, _ newChar: DNChar /* System.Char */, _ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let oldCharC = oldChar.cValue
 		let newCharC = newChar.cValue
 		
@@ -88357,7 +88351,7 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 		
 	}
 	
-	public class func getRandomFileName() throws -> System_String? /* System.String */ {
+	public class func getRandomFileName() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -88415,7 +88409,7 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 		
 	}
 	
-	public class func combine(_ path1: System_String /* System.String */, _ path2: System_String /* System.String */) throws -> System_String? /* System.String */ {
+	public class func combine(_ path1: System_String /* System.String */, _ path2: System_String /* System.String */) throws -> System_String /* System.String */ {
 		let path1C = path1.__handle
 		let path2C = path2.__handle
 		
@@ -88437,7 +88431,7 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 		
 	}
 	
-	public class func combine(_ path1: System_String /* System.String */, _ path2: System_String /* System.String */, _ path3: System_String /* System.String */) throws -> System_String? /* System.String */ {
+	public class func combine(_ path1: System_String /* System.String */, _ path2: System_String /* System.String */, _ path3: System_String /* System.String */) throws -> System_String /* System.String */ {
 		let path1C = path1.__handle
 		let path2C = path2.__handle
 		let path3C = path3.__handle
@@ -88460,7 +88454,7 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 		
 	}
 	
-	public class func combine(_ path1: System_String /* System.String */, _ path2: System_String /* System.String */, _ path3: System_String /* System.String */, _ path4: System_String /* System.String */) throws -> System_String? /* System.String */ {
+	public class func combine(_ path1: System_String /* System.String */, _ path2: System_String /* System.String */, _ path3: System_String /* System.String */, _ path4: System_String /* System.String */) throws -> System_String /* System.String */ {
 		let path1C = path1.__handle
 		let path2C = path2.__handle
 		let path3C = path3.__handle
@@ -88484,7 +88478,7 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 		
 	}
 	
-	public class func combine(_ paths: System_String_Array /* System.String[] */) throws -> System_String? /* System.String */ {
+	public class func combine(_ paths: System_String_Array /* System.String[] */) throws -> System_String /* System.String */ {
 		let pathsC = paths.__handle
 		
 		
@@ -88505,7 +88499,7 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 		
 	}
 	
-	public class func join(_ path1: System_String? /* System.String */, _ path2: System_String? /* System.String */) throws -> System_String? /* System.String */ {
+	public class func join(_ path1: System_String? /* System.String */, _ path2: System_String? /* System.String */) throws -> System_String /* System.String */ {
 		let path1C = path1?.__handle
 		let path2C = path2?.__handle
 		
@@ -88527,7 +88521,7 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 		
 	}
 	
-	public class func join(_ path1: System_String? /* System.String */, _ path2: System_String? /* System.String */, _ path3: System_String? /* System.String */) throws -> System_String? /* System.String */ {
+	public class func join(_ path1: System_String? /* System.String */, _ path2: System_String? /* System.String */, _ path3: System_String? /* System.String */) throws -> System_String /* System.String */ {
 		let path1C = path1?.__handle
 		let path2C = path2?.__handle
 		let path3C = path3?.__handle
@@ -88550,7 +88544,7 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 		
 	}
 	
-	public class func join(_ path1: System_String? /* System.String */, _ path2: System_String? /* System.String */, _ path3: System_String? /* System.String */, _ path4: System_String? /* System.String */) throws -> System_String? /* System.String */ {
+	public class func join(_ path1: System_String? /* System.String */, _ path2: System_String? /* System.String */, _ path3: System_String? /* System.String */, _ path4: System_String? /* System.String */) throws -> System_String /* System.String */ {
 		let path1C = path1?.__handle
 		let path2C = path2?.__handle
 		let path3C = path3?.__handle
@@ -88574,7 +88568,7 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 		
 	}
 	
-	public class func join(_ paths: System_String_Array /* System.String[] */) throws -> System_String? /* System.String */ {
+	public class func join(_ paths: System_String_Array /* System.String[] */) throws -> System_String /* System.String */ {
 		let pathsC = paths.__handle
 		
 		
@@ -88595,7 +88589,7 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 		
 	}
 	
-	public class func getRelativePath(_ relativeTo: System_String /* System.String */, _ path: System_String /* System.String */) throws -> System_String? /* System.String */ {
+	public class func getRelativePath(_ relativeTo: System_String /* System.String */, _ path: System_String /* System.String */) throws -> System_String /* System.String */ {
 		let relativeToC = relativeTo.__handle
 		let pathC = path.__handle
 		
@@ -88617,7 +88611,7 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 		
 	}
 	
-	public class func trimEndingDirectorySeparator(_ path: System_String /* System.String */) throws -> System_String? /* System.String */ {
+	public class func trimEndingDirectorySeparator(_ path: System_String /* System.String */) throws -> System_String /* System.String */ {
 		let pathC = path.__handle
 		
 		
@@ -88657,7 +88651,7 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 		
 	}
 	
-	public class func getInvalidFileNameChars() throws -> System_Char_Array? /* System.Char[] */ {
+	public class func getInvalidFileNameChars() throws -> System_Char_Array /* System.Char[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -88677,7 +88671,7 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 		
 	}
 	
-	public class func getInvalidPathChars() throws -> System_Char_Array? /* System.Char[] */ {
+	public class func getInvalidPathChars() throws -> System_Char_Array /* System.Char[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -88697,7 +88691,7 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 		
 	}
 	
-	public class func getFullPath(_ path: System_String /* System.String */) throws -> System_String? /* System.String */ {
+	public class func getFullPath(_ path: System_String /* System.String */) throws -> System_String /* System.String */ {
 		let pathC = path.__handle
 		
 		
@@ -88718,7 +88712,7 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 		
 	}
 	
-	public class func getFullPath(_ path: System_String /* System.String */, _ basePath: System_String /* System.String */) throws -> System_String? /* System.String */ {
+	public class func getFullPath(_ path: System_String /* System.String */, _ basePath: System_String /* System.String */) throws -> System_String /* System.String */ {
 		let pathC = path.__handle
 		let basePathC = basePath.__handle
 		
@@ -88740,7 +88734,7 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 		
 	}
 	
-	public class func getTempPath() throws -> System_String? /* System.String */ {
+	public class func getTempPath() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -88760,7 +88754,7 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 		
 	}
 	
-	public class func getTempFileName() throws -> System_String? /* System.String */ {
+	public class func getTempFileName() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -88868,7 +88862,7 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 	}}
 	
 	
-	public class var invalidPathChars: System_Char_Array? /* System.Char[] */ { get {
+	public class var invalidPathChars: System_Char_Array /* System.Char[] */ { get {
 		
 		
 		let __returnValueC = System_IO_Path_InvalidPathChars_Get()
@@ -88903,7 +88897,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		"System.IO.File"
 	}}
 
-	public class func openText(_ path: System_String /* System.String */) throws -> System_IO_StreamReader? /* System.IO.StreamReader */ {
+	public class func openText(_ path: System_String /* System.String */) throws -> System_IO_StreamReader /* System.IO.StreamReader */ {
 		let pathC = path.__handle
 		
 		
@@ -88924,7 +88918,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func createText(_ path: System_String /* System.String */) throws -> System_IO_StreamWriter? /* System.IO.StreamWriter */ {
+	public class func createText(_ path: System_String /* System.String */) throws -> System_IO_StreamWriter /* System.IO.StreamWriter */ {
 		let pathC = path.__handle
 		
 		
@@ -88945,7 +88939,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func appendText(_ path: System_String /* System.String */) throws -> System_IO_StreamWriter? /* System.IO.StreamWriter */ {
+	public class func appendText(_ path: System_String /* System.String */) throws -> System_IO_StreamWriter /* System.IO.StreamWriter */ {
 		let pathC = path.__handle
 		
 		
@@ -89004,7 +88998,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func create(_ path: System_String /* System.String */) throws -> System_IO_FileStream? /* System.IO.FileStream */ {
+	public class func create(_ path: System_String /* System.String */) throws -> System_IO_FileStream /* System.IO.FileStream */ {
 		let pathC = path.__handle
 		
 		
@@ -89025,7 +89019,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func create(_ path: System_String /* System.String */, _ bufferSize: Int32 /* System.Int32 */) throws -> System_IO_FileStream? /* System.IO.FileStream */ {
+	public class func create(_ path: System_String /* System.String */, _ bufferSize: Int32 /* System.Int32 */) throws -> System_IO_FileStream /* System.IO.FileStream */ {
 		let pathC = path.__handle
 		
 		
@@ -89046,7 +89040,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func create(_ path: System_String /* System.String */, _ bufferSize: Int32 /* System.Int32 */, _ options: System_IO_FileOptions /* System.IO.FileOptions */) throws -> System_IO_FileStream? /* System.IO.FileStream */ {
+	public class func create(_ path: System_String /* System.String */, _ bufferSize: Int32 /* System.Int32 */, _ options: System_IO_FileOptions /* System.IO.FileOptions */) throws -> System_IO_FileStream /* System.IO.FileStream */ {
 		let pathC = path.__handle
 		let optionsC = options.cValue
 		
@@ -89105,7 +89099,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func `open`(_ path: System_String /* System.String */, _ options: System_IO_FileStreamOptions /* System.IO.FileStreamOptions */) throws -> System_IO_FileStream? /* System.IO.FileStream */ {
+	public class func `open`(_ path: System_String /* System.String */, _ options: System_IO_FileStreamOptions /* System.IO.FileStreamOptions */) throws -> System_IO_FileStream /* System.IO.FileStream */ {
 		let pathC = path.__handle
 		let optionsC = options.__handle
 		
@@ -89127,7 +89121,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func `open`(_ path: System_String /* System.String */, _ mode: System_IO_FileMode /* System.IO.FileMode */) throws -> System_IO_FileStream? /* System.IO.FileStream */ {
+	public class func `open`(_ path: System_String /* System.String */, _ mode: System_IO_FileMode /* System.IO.FileMode */) throws -> System_IO_FileStream /* System.IO.FileStream */ {
 		let pathC = path.__handle
 		let modeC = mode.cValue
 		
@@ -89149,7 +89143,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func `open`(_ path: System_String /* System.String */, _ mode: System_IO_FileMode /* System.IO.FileMode */, _ access: System_IO_FileAccess /* System.IO.FileAccess */) throws -> System_IO_FileStream? /* System.IO.FileStream */ {
+	public class func `open`(_ path: System_String /* System.String */, _ mode: System_IO_FileMode /* System.IO.FileMode */, _ access: System_IO_FileAccess /* System.IO.FileAccess */) throws -> System_IO_FileStream /* System.IO.FileStream */ {
 		let pathC = path.__handle
 		let modeC = mode.cValue
 		let accessC = access.cValue
@@ -89172,7 +89166,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func `open`(_ path: System_String /* System.String */, _ mode: System_IO_FileMode /* System.IO.FileMode */, _ access: System_IO_FileAccess /* System.IO.FileAccess */, _ share: System_IO_FileShare /* System.IO.FileShare */) throws -> System_IO_FileStream? /* System.IO.FileStream */ {
+	public class func `open`(_ path: System_String /* System.String */, _ mode: System_IO_FileMode /* System.IO.FileMode */, _ access: System_IO_FileAccess /* System.IO.FileAccess */, _ share: System_IO_FileShare /* System.IO.FileShare */) throws -> System_IO_FileStream /* System.IO.FileStream */ {
 		let pathC = path.__handle
 		let modeC = mode.cValue
 		let accessC = access.cValue
@@ -89196,7 +89190,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func openHandle(_ path: System_String /* System.String */, _ mode: System_IO_FileMode /* System.IO.FileMode */, _ access: System_IO_FileAccess /* System.IO.FileAccess */, _ share: System_IO_FileShare /* System.IO.FileShare */, _ options: System_IO_FileOptions /* System.IO.FileOptions */, _ preallocationSize: Int64 /* System.Int64 */) throws -> Microsoft_Win32_SafeHandles_SafeFileHandle? /* Microsoft.Win32.SafeHandles.SafeFileHandle */ {
+	public class func openHandle(_ path: System_String /* System.String */, _ mode: System_IO_FileMode /* System.IO.FileMode */, _ access: System_IO_FileAccess /* System.IO.FileAccess */, _ share: System_IO_FileShare /* System.IO.FileShare */, _ options: System_IO_FileOptions /* System.IO.FileOptions */, _ preallocationSize: Int64 /* System.Int64 */) throws -> Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeHandles.SafeFileHandle */ {
 		let pathC = path.__handle
 		let modeC = mode.cValue
 		let accessC = access.cValue
@@ -89861,7 +89855,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func openRead(_ path: System_String /* System.String */) throws -> System_IO_FileStream? /* System.IO.FileStream */ {
+	public class func openRead(_ path: System_String /* System.String */) throws -> System_IO_FileStream /* System.IO.FileStream */ {
 		let pathC = path.__handle
 		
 		
@@ -89882,7 +89876,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func openWrite(_ path: System_String /* System.String */) throws -> System_IO_FileStream? /* System.IO.FileStream */ {
+	public class func openWrite(_ path: System_String /* System.String */) throws -> System_IO_FileStream /* System.IO.FileStream */ {
 		let pathC = path.__handle
 		
 		
@@ -89903,7 +89897,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func readAllText(_ path: System_String /* System.String */) throws -> System_String? /* System.String */ {
+	public class func readAllText(_ path: System_String /* System.String */) throws -> System_String /* System.String */ {
 		let pathC = path.__handle
 		
 		
@@ -89924,7 +89918,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func readAllText(_ path: System_String /* System.String */, _ encoding: System_Text_Encoding /* System.Text.Encoding */) throws -> System_String? /* System.String */ {
+	public class func readAllText(_ path: System_String /* System.String */, _ encoding: System_Text_Encoding /* System.Text.Encoding */) throws -> System_String /* System.String */ {
 		let pathC = path.__handle
 		let encodingC = encoding.__handle
 		
@@ -89985,7 +89979,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func readAllBytes(_ path: System_String /* System.String */) throws -> System_Byte_Array? /* System.Byte[] */ {
+	public class func readAllBytes(_ path: System_String /* System.String */) throws -> System_Byte_Array /* System.Byte[] */ {
 		let pathC = path.__handle
 		
 		
@@ -90025,7 +90019,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func readAllLines(_ path: System_String /* System.String */) throws -> System_String_Array? /* System.String[] */ {
+	public class func readAllLines(_ path: System_String /* System.String */) throws -> System_String_Array /* System.String[] */ {
 		let pathC = path.__handle
 		
 		
@@ -90046,7 +90040,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func readAllLines(_ path: System_String /* System.String */, _ encoding: System_Text_Encoding /* System.Text.Encoding */) throws -> System_String_Array? /* System.String[] */ {
+	public class func readAllLines(_ path: System_String /* System.String */, _ encoding: System_Text_Encoding /* System.Text.Encoding */) throws -> System_String_Array /* System.String[] */ {
 		let pathC = path.__handle
 		let encodingC = encoding.__handle
 		
@@ -90471,7 +90465,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func writeAllTextAsync(_ path: System_String /* System.String */, _ contents: System_String? /* System.String */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public class func writeAllTextAsync(_ path: System_String /* System.String */, _ contents: System_String? /* System.String */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let pathC = path.__handle
 		let contentsC = contents?.__handle
 		let cancellationTokenC = cancellationToken.__handle
@@ -90494,7 +90488,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func writeAllTextAsync(_ path: System_String /* System.String */, _ contents: System_String? /* System.String */, _ encoding: System_Text_Encoding /* System.Text.Encoding */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public class func writeAllTextAsync(_ path: System_String /* System.String */, _ contents: System_String? /* System.String */, _ encoding: System_Text_Encoding /* System.Text.Encoding */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let pathC = path.__handle
 		let contentsC = contents?.__handle
 		let encodingC = encoding.__handle
@@ -90540,7 +90534,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func writeAllBytesAsync(_ path: System_String /* System.String */, _ bytes: System_Byte_Array /* System.Byte[] */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public class func writeAllBytesAsync(_ path: System_String /* System.String */, _ bytes: System_Byte_Array /* System.Byte[] */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let pathC = path.__handle
 		let bytesC = bytes.__handle
 		let cancellationTokenC = cancellationToken.__handle
@@ -90608,7 +90602,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func writeAllLinesAsync(_ path: System_String /* System.String */, _ contents: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.String> */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public class func writeAllLinesAsync(_ path: System_String /* System.String */, _ contents: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.String> */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let pathC = path.__handle
 		let contentsC = contents.__handle
 		let cancellationTokenC = cancellationToken.__handle
@@ -90631,7 +90625,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func writeAllLinesAsync(_ path: System_String /* System.String */, _ contents: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.String> */, _ encoding: System_Text_Encoding /* System.Text.Encoding */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public class func writeAllLinesAsync(_ path: System_String /* System.String */, _ contents: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.String> */, _ encoding: System_Text_Encoding /* System.Text.Encoding */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let pathC = path.__handle
 		let contentsC = contents.__handle
 		let encodingC = encoding.__handle
@@ -90655,7 +90649,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func appendAllTextAsync(_ path: System_String /* System.String */, _ contents: System_String? /* System.String */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public class func appendAllTextAsync(_ path: System_String /* System.String */, _ contents: System_String? /* System.String */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let pathC = path.__handle
 		let contentsC = contents?.__handle
 		let cancellationTokenC = cancellationToken.__handle
@@ -90678,7 +90672,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func appendAllTextAsync(_ path: System_String /* System.String */, _ contents: System_String? /* System.String */, _ encoding: System_Text_Encoding /* System.Text.Encoding */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public class func appendAllTextAsync(_ path: System_String /* System.String */, _ contents: System_String? /* System.String */, _ encoding: System_Text_Encoding /* System.Text.Encoding */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let pathC = path.__handle
 		let contentsC = contents?.__handle
 		let encodingC = encoding.__handle
@@ -90702,7 +90696,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func appendAllLinesAsync(_ path: System_String /* System.String */, _ contents: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.String> */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public class func appendAllLinesAsync(_ path: System_String /* System.String */, _ contents: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.String> */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let pathC = path.__handle
 		let contentsC = contents.__handle
 		let cancellationTokenC = cancellationToken.__handle
@@ -90725,7 +90719,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func appendAllLinesAsync(_ path: System_String /* System.String */, _ contents: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.String> */, _ encoding: System_Text_Encoding /* System.Text.Encoding */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public class func appendAllLinesAsync(_ path: System_String /* System.String */, _ contents: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.String> */, _ encoding: System_Text_Encoding /* System.Text.Encoding */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let pathC = path.__handle
 		let contentsC = contents.__handle
 		let encodingC = encoding.__handle
@@ -90749,7 +90743,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func createSymbolicLink(_ path: System_String /* System.String */, _ pathToTarget: System_String /* System.String */) throws -> System_IO_FileSystemInfo? /* System.IO.FileSystemInfo */ {
+	public class func createSymbolicLink(_ path: System_String /* System.String */, _ pathToTarget: System_String /* System.String */) throws -> System_IO_FileSystemInfo /* System.IO.FileSystemInfo */ {
 		let pathC = path.__handle
 		let pathToTargetC = pathToTarget.__handle
 		
@@ -90904,7 +90898,7 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		
 	}
 	
-	public override func readToEnd() throws -> System_String? /* System.String */ {
+	public override func readToEnd() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -91349,7 +91343,7 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		
 	}
 	
-	public var currentEncoding: System_Text_Encoding? /* System.Text.Encoding */ { get throws {
+	public var currentEncoding: System_Text_Encoding /* System.Text.Encoding */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -91370,7 +91364,7 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 	}}
 	
 	
-	public var baseStream: System_IO_Stream? /* System.IO.Stream */ { get throws {
+	public var baseStream: System_IO_Stream /* System.IO.Stream */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -91410,7 +91404,7 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 	}}
 	
 	
-	public override class var null: System_IO_StreamReader? /* System.IO.StreamReader */ { get {
+	public override class var null: System_IO_StreamReader /* System.IO.StreamReader */ { get {
 		
 		
 		let __returnValueC = System_IO_StreamReader_Null_Get()
@@ -91534,7 +91528,7 @@ public class System_IO_TextReader /* System.IO.TextReader */: System_MarshalByRe
 		
 	}
 	
-	public func readToEnd() throws -> System_String? /* System.String */ {
+	public func readToEnd() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -91696,7 +91690,7 @@ public class System_IO_TextReader /* System.IO.TextReader */: System_MarshalByRe
 		
 	}
 	
-	public class func synchronized(_ reader: System_IO_TextReader /* System.IO.TextReader */) throws -> System_IO_TextReader? /* System.IO.TextReader */ {
+	public class func synchronized(_ reader: System_IO_TextReader /* System.IO.TextReader */) throws -> System_IO_TextReader /* System.IO.TextReader */ {
 		let readerC = reader.__handle
 		
 		
@@ -91717,7 +91711,7 @@ public class System_IO_TextReader /* System.IO.TextReader */: System_MarshalByRe
 		
 	}
 	
-	public class var null: System_IO_TextReader? /* System.IO.TextReader */ { get {
+	public class var null: System_IO_TextReader /* System.IO.TextReader */ { get {
 		
 		
 		let __returnValueC = System_IO_TextReader_Null_Get()
@@ -92062,7 +92056,7 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		
 	}
 	
-	public override func writeAsync(_ value: DNChar /* System.Char */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public override func writeAsync(_ value: DNChar /* System.Char */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let valueC = value.cValue
 		
 		
@@ -92083,7 +92077,7 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		
 	}
 	
-	public override func writeAsync(_ value: System_String? /* System.String */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public override func writeAsync(_ value: System_String? /* System.String */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let valueC = value?.__handle
 		
 		
@@ -92104,7 +92098,7 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		
 	}
 	
-	public override func writeAsync(_ buffer: System_Char_Array /* System.Char[] */, _ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public override func writeAsync(_ buffer: System_Char_Array /* System.Char[] */, _ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let bufferC = buffer.__handle
 		
 		
@@ -92125,7 +92119,7 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		
 	}
 	
-	public override func writeLineAsync() throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public override func writeLineAsync() throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -92145,7 +92139,7 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		
 	}
 	
-	public override func writeLineAsync(_ value: DNChar /* System.Char */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public override func writeLineAsync(_ value: DNChar /* System.Char */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let valueC = value.cValue
 		
 		
@@ -92166,7 +92160,7 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		
 	}
 	
-	public override func writeLineAsync(_ value: System_String? /* System.String */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public override func writeLineAsync(_ value: System_String? /* System.String */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let valueC = value?.__handle
 		
 		
@@ -92187,7 +92181,7 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		
 	}
 	
-	public override func writeLineAsync(_ buffer: System_Char_Array /* System.Char[] */, _ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public override func writeLineAsync(_ buffer: System_Char_Array /* System.Char[] */, _ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let bufferC = buffer.__handle
 		
 		
@@ -92208,7 +92202,7 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		
 	}
 	
-	public override func flushAsync() throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public override func flushAsync() throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -92228,7 +92222,7 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		
 	}
 	
-	public override func flushAsync(_ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public override func flushAsync(_ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let cancellationTokenC = cancellationToken.__handle
 		
 		
@@ -92502,7 +92496,7 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 	}
 	
 	
-	public var baseStream: System_IO_Stream? /* System.IO.Stream */ { get throws {
+	public var baseStream: System_IO_Stream /* System.IO.Stream */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -92523,7 +92517,7 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 	}}
 	
 	
-	public override var encoding: System_Text_Encoding? /* System.Text.Encoding */ { get throws {
+	public override var encoding: System_Text_Encoding /* System.Text.Encoding */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -92544,7 +92538,7 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 	}}
 	
 	
-	public override class var null: System_IO_StreamWriter? /* System.IO.StreamWriter */ { get {
+	public override class var null: System_IO_StreamWriter /* System.IO.StreamWriter */ { get {
 		
 		
 		let __returnValueC = System_IO_StreamWriter_Null_Get()
@@ -93315,7 +93309,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
-	public func writeAsync(_ value: DNChar /* System.Char */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public func writeAsync(_ value: DNChar /* System.Char */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let valueC = value.cValue
 		
 		
@@ -93336,7 +93330,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
-	public func writeAsync(_ value: System_String? /* System.String */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public func writeAsync(_ value: System_String? /* System.String */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let valueC = value?.__handle
 		
 		
@@ -93357,7 +93351,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
-	public func writeAsync(_ value: System_Text_StringBuilder? /* System.Text.StringBuilder */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public func writeAsync(_ value: System_Text_StringBuilder? /* System.Text.StringBuilder */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let valueC = value?.__handle
 		let cancellationTokenC = cancellationToken.__handle
 		
@@ -93379,7 +93373,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
-	public func writeAsync(_ buffer: System_Char_Array? /* System.Char[] */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public func writeAsync(_ buffer: System_Char_Array? /* System.Char[] */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let bufferC = buffer?.__handle
 		
 		
@@ -93400,7 +93394,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
-	public func writeAsync(_ buffer: System_Char_Array /* System.Char[] */, _ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public func writeAsync(_ buffer: System_Char_Array /* System.Char[] */, _ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let bufferC = buffer.__handle
 		
 		
@@ -93421,7 +93415,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
-	public func writeLineAsync(_ value: DNChar /* System.Char */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public func writeLineAsync(_ value: DNChar /* System.Char */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let valueC = value.cValue
 		
 		
@@ -93442,7 +93436,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
-	public func writeLineAsync(_ value: System_String? /* System.String */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public func writeLineAsync(_ value: System_String? /* System.String */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let valueC = value?.__handle
 		
 		
@@ -93463,7 +93457,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
-	public func writeLineAsync(_ value: System_Text_StringBuilder? /* System.Text.StringBuilder */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public func writeLineAsync(_ value: System_Text_StringBuilder? /* System.Text.StringBuilder */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let valueC = value?.__handle
 		let cancellationTokenC = cancellationToken.__handle
 		
@@ -93485,7 +93479,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
-	public func writeLineAsync(_ buffer: System_Char_Array? /* System.Char[] */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public func writeLineAsync(_ buffer: System_Char_Array? /* System.Char[] */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let bufferC = buffer?.__handle
 		
 		
@@ -93506,7 +93500,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
-	public func writeLineAsync(_ buffer: System_Char_Array /* System.Char[] */, _ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public func writeLineAsync(_ buffer: System_Char_Array /* System.Char[] */, _ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let bufferC = buffer.__handle
 		
 		
@@ -93527,7 +93521,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
-	public func writeLineAsync() throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public func writeLineAsync() throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -93547,7 +93541,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
-	public func flushAsync() throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public func flushAsync() throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -93567,7 +93561,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
-	public func flushAsync(_ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task? /* System.Threading.Tasks.Task */ {
+	public func flushAsync(_ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let cancellationTokenC = cancellationToken.__handle
 		
 		
@@ -93588,7 +93582,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
-	public class func synchronized(_ writer: System_IO_TextWriter /* System.IO.TextWriter */) throws -> System_IO_TextWriter? /* System.IO.TextWriter */ {
+	public class func synchronized(_ writer: System_IO_TextWriter /* System.IO.TextWriter */) throws -> System_IO_TextWriter /* System.IO.TextWriter */ {
 		let writerC = writer.__handle
 		
 		
@@ -93609,7 +93603,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
-	public var formatProvider: System_IFormatProvider? /* System.IFormatProvider */ { get throws {
+	public var formatProvider: System_IFormatProvider /* System.IFormatProvider */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -93630,7 +93624,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 	}}
 	
 	
-	public var encoding: System_Text_Encoding? /* System.Text.Encoding */ { get throws {
+	public var encoding: System_Text_Encoding /* System.Text.Encoding */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -93651,7 +93645,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 	}}
 	
 	
-	public var newLine: System_String? /* System.String */ { get throws {
+	public var newLine: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -93689,7 +93683,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 	}
 	
 	
-	public class var null: System_IO_TextWriter? /* System.IO.TextWriter */ { get {
+	public class var null: System_IO_TextWriter /* System.IO.TextWriter */ { get {
 		
 		
 		let __returnValueC = System_IO_TextWriter_Null_Get()
@@ -93887,7 +93881,7 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 		
 	}
 	
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -93924,7 +93918,7 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 		
 	}
 	
-	public var fullName: System_String? /* System.String */ { get throws {
+	public var fullName: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -93945,7 +93939,7 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 	}}
 	
 	
-	public var `extension`: System_String? /* System.String */ { get throws {
+	public var `extension`: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -93966,7 +93960,7 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 	}}
 	
 	
-	public var name: System_String? /* System.String */ { get throws {
+	public var name: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -94354,7 +94348,7 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		"System.IO.FileInfo"
 	}}
 
-	public func `open`(_ options: System_IO_FileStreamOptions /* System.IO.FileStreamOptions */) throws -> System_IO_FileStream? /* System.IO.FileStream */ {
+	public func `open`(_ options: System_IO_FileStreamOptions /* System.IO.FileStreamOptions */) throws -> System_IO_FileStream /* System.IO.FileStream */ {
 		let optionsC = options.__handle
 		
 		
@@ -94375,7 +94369,7 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		
 	}
 	
-	public func openText() throws -> System_IO_StreamReader? /* System.IO.StreamReader */ {
+	public func openText() throws -> System_IO_StreamReader /* System.IO.StreamReader */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -94395,7 +94389,7 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		
 	}
 	
-	public func createText() throws -> System_IO_StreamWriter? /* System.IO.StreamWriter */ {
+	public func createText() throws -> System_IO_StreamWriter /* System.IO.StreamWriter */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -94415,7 +94409,7 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		
 	}
 	
-	public func appendText() throws -> System_IO_StreamWriter? /* System.IO.StreamWriter */ {
+	public func appendText() throws -> System_IO_StreamWriter /* System.IO.StreamWriter */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -94435,7 +94429,7 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		
 	}
 	
-	public func copyTo(_ destFileName: System_String /* System.String */) throws -> System_IO_FileInfo? /* System.IO.FileInfo */ {
+	public func copyTo(_ destFileName: System_String /* System.String */) throws -> System_IO_FileInfo /* System.IO.FileInfo */ {
 		let destFileNameC = destFileName.__handle
 		
 		
@@ -94456,7 +94450,7 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		
 	}
 	
-	public func copyTo(_ destFileName: System_String /* System.String */, _ overwrite: Bool /* System.Boolean */) throws -> System_IO_FileInfo? /* System.IO.FileInfo */ {
+	public func copyTo(_ destFileName: System_String /* System.String */, _ overwrite: Bool /* System.Boolean */) throws -> System_IO_FileInfo /* System.IO.FileInfo */ {
 		let destFileNameC = destFileName.__handle
 		
 		
@@ -94477,7 +94471,7 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		
 	}
 	
-	public func create() throws -> System_IO_FileStream? /* System.IO.FileStream */ {
+	public func create() throws -> System_IO_FileStream /* System.IO.FileStream */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -94514,7 +94508,7 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		
 	}
 	
-	public func `open`(_ mode: System_IO_FileMode /* System.IO.FileMode */) throws -> System_IO_FileStream? /* System.IO.FileStream */ {
+	public func `open`(_ mode: System_IO_FileMode /* System.IO.FileMode */) throws -> System_IO_FileStream /* System.IO.FileStream */ {
 		let modeC = mode.cValue
 		
 		
@@ -94535,7 +94529,7 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		
 	}
 	
-	public func `open`(_ mode: System_IO_FileMode /* System.IO.FileMode */, _ access: System_IO_FileAccess /* System.IO.FileAccess */) throws -> System_IO_FileStream? /* System.IO.FileStream */ {
+	public func `open`(_ mode: System_IO_FileMode /* System.IO.FileMode */, _ access: System_IO_FileAccess /* System.IO.FileAccess */) throws -> System_IO_FileStream /* System.IO.FileStream */ {
 		let modeC = mode.cValue
 		let accessC = access.cValue
 		
@@ -94557,7 +94551,7 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		
 	}
 	
-	public func `open`(_ mode: System_IO_FileMode /* System.IO.FileMode */, _ access: System_IO_FileAccess /* System.IO.FileAccess */, _ share: System_IO_FileShare /* System.IO.FileShare */) throws -> System_IO_FileStream? /* System.IO.FileStream */ {
+	public func `open`(_ mode: System_IO_FileMode /* System.IO.FileMode */, _ access: System_IO_FileAccess /* System.IO.FileAccess */, _ share: System_IO_FileShare /* System.IO.FileShare */) throws -> System_IO_FileStream /* System.IO.FileStream */ {
 		let modeC = mode.cValue
 		let accessC = access.cValue
 		let shareC = share.cValue
@@ -94580,7 +94574,7 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		
 	}
 	
-	public func openRead() throws -> System_IO_FileStream? /* System.IO.FileStream */ {
+	public func openRead() throws -> System_IO_FileStream /* System.IO.FileStream */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -94600,7 +94594,7 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		
 	}
 	
-	public func openWrite() throws -> System_IO_FileStream? /* System.IO.FileStream */ {
+	public func openWrite() throws -> System_IO_FileStream /* System.IO.FileStream */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -94656,7 +94650,7 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		
 	}
 	
-	public func replace(_ destinationFileName: System_String /* System.String */, _ destinationBackupFileName: System_String? /* System.String */) throws -> System_IO_FileInfo? /* System.IO.FileInfo */ {
+	public func replace(_ destinationFileName: System_String /* System.String */, _ destinationBackupFileName: System_String? /* System.String */) throws -> System_IO_FileInfo /* System.IO.FileInfo */ {
 		let destinationFileNameC = destinationFileName.__handle
 		let destinationBackupFileNameC = destinationBackupFileName?.__handle
 		
@@ -94678,7 +94672,7 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		
 	}
 	
-	public func replace(_ destinationFileName: System_String /* System.String */, _ destinationBackupFileName: System_String? /* System.String */, _ ignoreMetadataErrors: Bool /* System.Boolean */) throws -> System_IO_FileInfo? /* System.IO.FileInfo */ {
+	public func replace(_ destinationFileName: System_String /* System.String */, _ destinationBackupFileName: System_String? /* System.String */, _ ignoreMetadataErrors: Bool /* System.Boolean */) throws -> System_IO_FileInfo /* System.IO.FileInfo */ {
 		let destinationFileNameC = destinationFileName.__handle
 		let destinationBackupFileNameC = destinationBackupFileName?.__handle
 		
@@ -94755,7 +94749,7 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		
 	}
 	
-	public override var name: System_String? /* System.String */ { get throws {
+	public override var name: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -94914,7 +94908,7 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		"System.IO.DirectoryInfo"
 	}}
 
-	public func createSubdirectory(_ path: System_String /* System.String */) throws -> System_IO_DirectoryInfo? /* System.IO.DirectoryInfo */ {
+	public func createSubdirectory(_ path: System_String /* System.String */) throws -> System_IO_DirectoryInfo /* System.IO.DirectoryInfo */ {
 		let pathC = path.__handle
 		
 		
@@ -94952,7 +94946,7 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
-	public func getFiles() throws -> System_IO_FileInfo_Array? /* System.IO.FileInfo[] */ {
+	public func getFiles() throws -> System_IO_FileInfo_Array /* System.IO.FileInfo[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -94972,7 +94966,7 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
-	public func getFiles(_ searchPattern: System_String /* System.String */) throws -> System_IO_FileInfo_Array? /* System.IO.FileInfo[] */ {
+	public func getFiles(_ searchPattern: System_String /* System.String */) throws -> System_IO_FileInfo_Array /* System.IO.FileInfo[] */ {
 		let searchPatternC = searchPattern.__handle
 		
 		
@@ -94993,7 +94987,7 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
-	public func getFiles(_ searchPattern: System_String /* System.String */, _ searchOption: System_IO_SearchOption /* System.IO.SearchOption */) throws -> System_IO_FileInfo_Array? /* System.IO.FileInfo[] */ {
+	public func getFiles(_ searchPattern: System_String /* System.String */, _ searchOption: System_IO_SearchOption /* System.IO.SearchOption */) throws -> System_IO_FileInfo_Array /* System.IO.FileInfo[] */ {
 		let searchPatternC = searchPattern.__handle
 		let searchOptionC = searchOption.cValue
 		
@@ -95015,7 +95009,7 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
-	public func getFiles(_ searchPattern: System_String /* System.String */, _ enumerationOptions: System_IO_EnumerationOptions /* System.IO.EnumerationOptions */) throws -> System_IO_FileInfo_Array? /* System.IO.FileInfo[] */ {
+	public func getFiles(_ searchPattern: System_String /* System.String */, _ enumerationOptions: System_IO_EnumerationOptions /* System.IO.EnumerationOptions */) throws -> System_IO_FileInfo_Array /* System.IO.FileInfo[] */ {
 		let searchPatternC = searchPattern.__handle
 		let enumerationOptionsC = enumerationOptions.__handle
 		
@@ -95037,7 +95031,7 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
-	public func getFileSystemInfos() throws -> System_IO_FileSystemInfo_Array? /* System.IO.FileSystemInfo[] */ {
+	public func getFileSystemInfos() throws -> System_IO_FileSystemInfo_Array /* System.IO.FileSystemInfo[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -95057,7 +95051,7 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
-	public func getFileSystemInfos(_ searchPattern: System_String /* System.String */) throws -> System_IO_FileSystemInfo_Array? /* System.IO.FileSystemInfo[] */ {
+	public func getFileSystemInfos(_ searchPattern: System_String /* System.String */) throws -> System_IO_FileSystemInfo_Array /* System.IO.FileSystemInfo[] */ {
 		let searchPatternC = searchPattern.__handle
 		
 		
@@ -95078,7 +95072,7 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
-	public func getFileSystemInfos(_ searchPattern: System_String /* System.String */, _ searchOption: System_IO_SearchOption /* System.IO.SearchOption */) throws -> System_IO_FileSystemInfo_Array? /* System.IO.FileSystemInfo[] */ {
+	public func getFileSystemInfos(_ searchPattern: System_String /* System.String */, _ searchOption: System_IO_SearchOption /* System.IO.SearchOption */) throws -> System_IO_FileSystemInfo_Array /* System.IO.FileSystemInfo[] */ {
 		let searchPatternC = searchPattern.__handle
 		let searchOptionC = searchOption.cValue
 		
@@ -95100,7 +95094,7 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
-	public func getFileSystemInfos(_ searchPattern: System_String /* System.String */, _ enumerationOptions: System_IO_EnumerationOptions /* System.IO.EnumerationOptions */) throws -> System_IO_FileSystemInfo_Array? /* System.IO.FileSystemInfo[] */ {
+	public func getFileSystemInfos(_ searchPattern: System_String /* System.String */, _ enumerationOptions: System_IO_EnumerationOptions /* System.IO.EnumerationOptions */) throws -> System_IO_FileSystemInfo_Array /* System.IO.FileSystemInfo[] */ {
 		let searchPatternC = searchPattern.__handle
 		let enumerationOptionsC = enumerationOptions.__handle
 		
@@ -95122,7 +95116,7 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
-	public func getDirectories() throws -> System_IO_DirectoryInfo_Array? /* System.IO.DirectoryInfo[] */ {
+	public func getDirectories() throws -> System_IO_DirectoryInfo_Array /* System.IO.DirectoryInfo[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -95142,7 +95136,7 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
-	public func getDirectories(_ searchPattern: System_String /* System.String */) throws -> System_IO_DirectoryInfo_Array? /* System.IO.DirectoryInfo[] */ {
+	public func getDirectories(_ searchPattern: System_String /* System.String */) throws -> System_IO_DirectoryInfo_Array /* System.IO.DirectoryInfo[] */ {
 		let searchPatternC = searchPattern.__handle
 		
 		
@@ -95163,7 +95157,7 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
-	public func getDirectories(_ searchPattern: System_String /* System.String */, _ searchOption: System_IO_SearchOption /* System.IO.SearchOption */) throws -> System_IO_DirectoryInfo_Array? /* System.IO.DirectoryInfo[] */ {
+	public func getDirectories(_ searchPattern: System_String /* System.String */, _ searchOption: System_IO_SearchOption /* System.IO.SearchOption */) throws -> System_IO_DirectoryInfo_Array /* System.IO.DirectoryInfo[] */ {
 		let searchPatternC = searchPattern.__handle
 		let searchOptionC = searchOption.cValue
 		
@@ -95185,7 +95179,7 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
-	public func getDirectories(_ searchPattern: System_String /* System.String */, _ enumerationOptions: System_IO_EnumerationOptions /* System.IO.EnumerationOptions */) throws -> System_IO_DirectoryInfo_Array? /* System.IO.DirectoryInfo[] */ {
+	public func getDirectories(_ searchPattern: System_String /* System.String */, _ enumerationOptions: System_IO_EnumerationOptions /* System.IO.EnumerationOptions */) throws -> System_IO_DirectoryInfo_Array /* System.IO.DirectoryInfo[] */ {
 		let searchPatternC = searchPattern.__handle
 		let enumerationOptionsC = enumerationOptions.__handle
 		
@@ -95535,7 +95529,7 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
-	public override var name: System_String? /* System.String */ { get throws {
+	public override var name: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -95577,7 +95571,7 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 	}}
 	
 	
-	public var root: System_IO_DirectoryInfo? /* System.IO.DirectoryInfo */ { get throws {
+	public var root: System_IO_DirectoryInfo /* System.IO.DirectoryInfo */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -96071,7 +96065,7 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 		
 	}
 	
-	public class func createDirectory(_ path: System_String /* System.String */) throws -> System_IO_DirectoryInfo? /* System.IO.DirectoryInfo */ {
+	public class func createDirectory(_ path: System_String /* System.String */) throws -> System_IO_DirectoryInfo /* System.IO.DirectoryInfo */ {
 		let pathC = path.__handle
 		
 		
@@ -96092,7 +96086,7 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 		
 	}
 	
-	public class func createDirectory(_ path: System_String /* System.String */, _ unixCreateMode: System_IO_UnixFileMode /* System.IO.UnixFileMode */) throws -> System_IO_DirectoryInfo? /* System.IO.DirectoryInfo */ {
+	public class func createDirectory(_ path: System_String /* System.String */, _ unixCreateMode: System_IO_UnixFileMode /* System.IO.UnixFileMode */) throws -> System_IO_DirectoryInfo /* System.IO.DirectoryInfo */ {
 		let pathC = path.__handle
 		let unixCreateModeC = unixCreateMode.cValue
 		
@@ -96114,7 +96108,7 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 		
 	}
 	
-	public class func createTempSubdirectory(_ prefix: System_String? /* System.String */) throws -> System_IO_DirectoryInfo? /* System.IO.DirectoryInfo */ {
+	public class func createTempSubdirectory(_ prefix: System_String? /* System.String */) throws -> System_IO_DirectoryInfo /* System.IO.DirectoryInfo */ {
 		let prefixC = prefix?.__handle
 		
 		
@@ -96394,7 +96388,7 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 		
 	}
 	
-	public class func getFiles(_ path: System_String /* System.String */) throws -> System_String_Array? /* System.String[] */ {
+	public class func getFiles(_ path: System_String /* System.String */) throws -> System_String_Array /* System.String[] */ {
 		let pathC = path.__handle
 		
 		
@@ -96415,7 +96409,7 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 		
 	}
 	
-	public class func getFiles(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */) throws -> System_String_Array? /* System.String[] */ {
+	public class func getFiles(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */) throws -> System_String_Array /* System.String[] */ {
 		let pathC = path.__handle
 		let searchPatternC = searchPattern.__handle
 		
@@ -96437,7 +96431,7 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 		
 	}
 	
-	public class func getFiles(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */, _ searchOption: System_IO_SearchOption /* System.IO.SearchOption */) throws -> System_String_Array? /* System.String[] */ {
+	public class func getFiles(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */, _ searchOption: System_IO_SearchOption /* System.IO.SearchOption */) throws -> System_String_Array /* System.String[] */ {
 		let pathC = path.__handle
 		let searchPatternC = searchPattern.__handle
 		let searchOptionC = searchOption.cValue
@@ -96460,7 +96454,7 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 		
 	}
 	
-	public class func getFiles(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */, _ enumerationOptions: System_IO_EnumerationOptions /* System.IO.EnumerationOptions */) throws -> System_String_Array? /* System.String[] */ {
+	public class func getFiles(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */, _ enumerationOptions: System_IO_EnumerationOptions /* System.IO.EnumerationOptions */) throws -> System_String_Array /* System.String[] */ {
 		let pathC = path.__handle
 		let searchPatternC = searchPattern.__handle
 		let enumerationOptionsC = enumerationOptions.__handle
@@ -96483,7 +96477,7 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 		
 	}
 	
-	public class func getDirectories(_ path: System_String /* System.String */) throws -> System_String_Array? /* System.String[] */ {
+	public class func getDirectories(_ path: System_String /* System.String */) throws -> System_String_Array /* System.String[] */ {
 		let pathC = path.__handle
 		
 		
@@ -96504,7 +96498,7 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 		
 	}
 	
-	public class func getDirectories(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */) throws -> System_String_Array? /* System.String[] */ {
+	public class func getDirectories(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */) throws -> System_String_Array /* System.String[] */ {
 		let pathC = path.__handle
 		let searchPatternC = searchPattern.__handle
 		
@@ -96526,7 +96520,7 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 		
 	}
 	
-	public class func getDirectories(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */, _ searchOption: System_IO_SearchOption /* System.IO.SearchOption */) throws -> System_String_Array? /* System.String[] */ {
+	public class func getDirectories(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */, _ searchOption: System_IO_SearchOption /* System.IO.SearchOption */) throws -> System_String_Array /* System.String[] */ {
 		let pathC = path.__handle
 		let searchPatternC = searchPattern.__handle
 		let searchOptionC = searchOption.cValue
@@ -96549,7 +96543,7 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 		
 	}
 	
-	public class func getDirectories(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */, _ enumerationOptions: System_IO_EnumerationOptions /* System.IO.EnumerationOptions */) throws -> System_String_Array? /* System.String[] */ {
+	public class func getDirectories(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */, _ enumerationOptions: System_IO_EnumerationOptions /* System.IO.EnumerationOptions */) throws -> System_String_Array /* System.String[] */ {
 		let pathC = path.__handle
 		let searchPatternC = searchPattern.__handle
 		let enumerationOptionsC = enumerationOptions.__handle
@@ -96572,7 +96566,7 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 		
 	}
 	
-	public class func getFileSystemEntries(_ path: System_String /* System.String */) throws -> System_String_Array? /* System.String[] */ {
+	public class func getFileSystemEntries(_ path: System_String /* System.String */) throws -> System_String_Array /* System.String[] */ {
 		let pathC = path.__handle
 		
 		
@@ -96593,7 +96587,7 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 		
 	}
 	
-	public class func getFileSystemEntries(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */) throws -> System_String_Array? /* System.String[] */ {
+	public class func getFileSystemEntries(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */) throws -> System_String_Array /* System.String[] */ {
 		let pathC = path.__handle
 		let searchPatternC = searchPattern.__handle
 		
@@ -96615,7 +96609,7 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 		
 	}
 	
-	public class func getFileSystemEntries(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */, _ searchOption: System_IO_SearchOption /* System.IO.SearchOption */) throws -> System_String_Array? /* System.String[] */ {
+	public class func getFileSystemEntries(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */, _ searchOption: System_IO_SearchOption /* System.IO.SearchOption */) throws -> System_String_Array /* System.String[] */ {
 		let pathC = path.__handle
 		let searchPatternC = searchPattern.__handle
 		let searchOptionC = searchOption.cValue
@@ -96638,7 +96632,7 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 		
 	}
 	
-	public class func getFileSystemEntries(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */, _ enumerationOptions: System_IO_EnumerationOptions /* System.IO.EnumerationOptions */) throws -> System_String_Array? /* System.String[] */ {
+	public class func getFileSystemEntries(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */, _ enumerationOptions: System_IO_EnumerationOptions /* System.IO.EnumerationOptions */) throws -> System_String_Array /* System.String[] */ {
 		let pathC = path.__handle
 		let searchPatternC = searchPattern.__handle
 		let enumerationOptionsC = enumerationOptions.__handle
@@ -96928,7 +96922,7 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 		
 	}
 	
-	public class func getDirectoryRoot(_ path: System_String /* System.String */) throws -> System_String? /* System.String */ {
+	public class func getDirectoryRoot(_ path: System_String /* System.String */) throws -> System_String /* System.String */ {
 		let pathC = path.__handle
 		
 		
@@ -96949,7 +96943,7 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 		
 	}
 	
-	public class func getCurrentDirectory() throws -> System_String? /* System.String */ {
+	public class func getCurrentDirectory() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -97042,7 +97036,7 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 		
 	}
 	
-	public class func getLogicalDrives() throws -> System_String_Array? /* System.String[] */ {
+	public class func getLogicalDrives() throws -> System_String_Array /* System.String[] */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -97062,7 +97056,7 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 		
 	}
 	
-	public class func createSymbolicLink(_ path: System_String /* System.String */, _ pathToTarget: System_String /* System.String */) throws -> System_IO_FileSystemInfo? /* System.IO.FileSystemInfo */ {
+	public class func createSymbolicLink(_ path: System_String /* System.String */, _ pathToTarget: System_String /* System.String */) throws -> System_IO_FileSystemInfo /* System.IO.FileSystemInfo */ {
 		let pathC = path.__handle
 		let pathToTargetC = pathToTarget.__handle
 		
@@ -98802,7 +98796,7 @@ public class System_Half /* System.Half */: System_ValueType {
 		
 	}
 	
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -98822,7 +98816,7 @@ public class System_Half /* System.Half */: System_ValueType {
 		
 	}
 	
-	public func toString(_ format: System_String? /* System.String */) throws -> System_String? /* System.String */ {
+	public func toString(_ format: System_String? /* System.String */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		
 		
@@ -98843,7 +98837,7 @@ public class System_Half /* System.Half */: System_ValueType {
 		
 	}
 	
-	public func toString(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public func toString(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let providerC = provider?.__handle
 		
 		
@@ -98864,7 +98858,7 @@ public class System_Half /* System.Half */: System_ValueType {
 		
 	}
 	
-	public func toString(_ format: System_String? /* System.String */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public func toString(_ format: System_String? /* System.String */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		let providerC = provider?.__handle
 		
@@ -101125,7 +101119,7 @@ public class System_Int128 /* System.Int128 */: System_ValueType {
 		
 	}
 	
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -101145,7 +101139,7 @@ public class System_Int128 /* System.Int128 */: System_ValueType {
 		
 	}
 	
-	public func toString(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public func toString(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let providerC = provider?.__handle
 		
 		
@@ -101166,7 +101160,7 @@ public class System_Int128 /* System.Int128 */: System_ValueType {
 		
 	}
 	
-	public func toString(_ format: System_String? /* System.String */) throws -> System_String? /* System.String */ {
+	public func toString(_ format: System_String? /* System.String */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		
 		
@@ -101187,7 +101181,7 @@ public class System_Int128 /* System.Int128 */: System_ValueType {
 		
 	}
 	
-	public func toString(_ format: System_String? /* System.String */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public func toString(_ format: System_String? /* System.String */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		let providerC = provider?.__handle
 		
@@ -102251,7 +102245,7 @@ public class System_UInt128 /* System.UInt128 */: System_ValueType {
 		
 	}
 	
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -102271,7 +102265,7 @@ public class System_UInt128 /* System.UInt128 */: System_ValueType {
 		
 	}
 	
-	public func toString(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public func toString(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let providerC = provider?.__handle
 		
 		
@@ -102292,7 +102286,7 @@ public class System_UInt128 /* System.UInt128 */: System_ValueType {
 		
 	}
 	
-	public func toString(_ format: System_String? /* System.String */) throws -> System_String? /* System.String */ {
+	public func toString(_ format: System_String? /* System.String */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		
 		
@@ -102313,7 +102307,7 @@ public class System_UInt128 /* System.UInt128 */: System_ValueType {
 		
 	}
 	
-	public func toString(_ format: System_String? /* System.String */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String? /* System.String */ {
+	public func toString(_ format: System_String? /* System.String */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		let providerC = provider?.__handle
 		
@@ -104731,7 +104725,7 @@ public class System_Tuple_A1 /* System.Tuple<> */: System_Object {
 		
 	}
 	
-	public func toString(T1: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
+	public func toString(T1: System_Type /* System.Type */) throws -> System_String /* System.String */ {
 		let T1C = T1.__handle
 		
 		
@@ -104924,7 +104918,7 @@ public class System_Tuple_A2 /* System.Tuple<,> */: System_Object {
 		
 	}
 	
-	public func toString(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
+	public func toString(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */) throws -> System_String /* System.String */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		
@@ -105084,7 +105078,7 @@ public class System_Tuple_A3 /* System.Tuple<,,> */: System_Object {
 		
 	}
 	
-	public func toString(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
+	public func toString(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */) throws -> System_String /* System.String */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -105276,7 +105270,7 @@ public class System_Tuple_A4 /* System.Tuple<,,,> */: System_Object {
 		
 	}
 	
-	public func toString(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
+	public func toString(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */) throws -> System_String /* System.String */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -105502,7 +105496,7 @@ public class System_Tuple_A5 /* System.Tuple<,,,,> */: System_Object {
 		
 	}
 	
-	public func toString(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
+	public func toString(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */) throws -> System_String /* System.String */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -105764,7 +105758,7 @@ public class System_Tuple_A6 /* System.Tuple<,,,,,> */: System_Object {
 		
 	}
 	
-	public func toString(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
+	public func toString(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */) throws -> System_String /* System.String */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -106064,7 +106058,7 @@ public class System_Tuple_A7 /* System.Tuple<,,,,,,> */: System_Object {
 		
 	}
 	
-	public func toString(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */, T7: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
+	public func toString(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */, T7: System_Type /* System.Type */) throws -> System_String /* System.String */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -106404,7 +106398,7 @@ public class System_Tuple_A8 /* System.Tuple<,,,,,,,> */: System_Object {
 		
 	}
 	
-	public func toString(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */, T7: System_Type /* System.Type */, TRest: System_Type /* System.Type */) throws -> System_String? /* System.String */ {
+	public func toString(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */, T7: System_Type /* System.Type */, TRest: System_Type /* System.Type */) throws -> System_String /* System.String */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -106731,7 +106725,7 @@ public class Beyond_NET_Sample_Address /* Beyond.NET.Sample.Address */: System_O
 		"Beyond.NET.Sample.Address"
 	}}
 
-	public func move(_ mover: Beyond_NET_Sample_MoveDelegate /* Beyond.NET.Sample.MoveDelegate */, _ newStreet: System_String /* System.String */, _ newCity: System_String /* System.String */) throws -> Beyond_NET_Sample_Address? /* Beyond.NET.Sample.Address */ {
+	public func move(_ mover: Beyond_NET_Sample_MoveDelegate /* Beyond.NET.Sample.MoveDelegate */, _ newStreet: System_String /* System.String */, _ newCity: System_String /* System.String */) throws -> Beyond_NET_Sample_Address /* Beyond.NET.Sample.Address */ {
 		let moverC = mover.__handle
 		let newStreetC = newStreet.__handle
 		let newCityC = newCity.__handle
@@ -106776,7 +106770,7 @@ public class Beyond_NET_Sample_Address /* Beyond.NET.Sample.Address */: System_O
 		
 	}
 	
-	public var street: System_String? /* System.String */ { get throws {
+	public var street: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -106797,7 +106791,7 @@ public class Beyond_NET_Sample_Address /* Beyond.NET.Sample.Address */: System_O
 	}}
 	
 	
-	public var city: System_String? /* System.String */ { get throws {
+	public var city: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -106841,7 +106835,7 @@ public class Beyond_NET_Sample_IAnimal /* Beyond.NET.Sample.IAnimal */: DNObject
 		"Beyond.NET.Sample.IAnimal"
 	}}
 
-	public func eat(_ food: System_String /* System.String */) throws -> System_String? /* System.String */ {
+	public func eat(_ food: System_String /* System.String */) throws -> System_String /* System.String */ {
 		let foodC = food.__handle
 		
 		
@@ -106862,7 +106856,7 @@ public class Beyond_NET_Sample_IAnimal /* Beyond.NET.Sample.IAnimal */: DNObject
 		
 	}
 	
-	public var name: System_String? /* System.String */ { get throws {
+	public var name: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -106970,7 +106964,7 @@ public class Beyond_NET_Sample_AnimalFactory /* Beyond.NET.Sample.AnimalFactory 
 		
 	}
 	
-	public class var dEFAULT_CREATOR: Beyond_NET_Sample_AnimalCreatorDelegate? /* Beyond.NET.Sample.AnimalCreatorDelegate */ { get {
+	public class var dEFAULT_CREATOR: Beyond_NET_Sample_AnimalCreatorDelegate /* Beyond.NET.Sample.AnimalCreatorDelegate */ { get {
 		
 		
 		let __returnValueC = Beyond_NET_Sample_AnimalFactory_DEFAULT_CREATOR_Get()
@@ -107006,7 +107000,7 @@ public class Beyond_NET_Sample_BaseAnimal /* Beyond.NET.Sample.BaseAnimal */: Sy
 		"Beyond.NET.Sample.BaseAnimal"
 	}}
 
-	public func eat(_ food: System_String /* System.String */) throws -> System_String? /* System.String */ {
+	public func eat(_ food: System_String /* System.String */) throws -> System_String /* System.String */ {
 		let foodC = food.__handle
 		
 		
@@ -107027,7 +107021,7 @@ public class Beyond_NET_Sample_BaseAnimal /* Beyond.NET.Sample.BaseAnimal */: Sy
 		
 	}
 	
-	public var name: System_String? /* System.String */ { get throws {
+	public var name: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -107071,7 +107065,7 @@ public class Beyond_NET_Sample_Cat /* Beyond.NET.Sample.Cat */: Beyond_NET_Sampl
 		"Beyond.NET.Sample.Cat"
 	}}
 
-	public override var name: System_String? /* System.String */ { get throws {
+	public override var name: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -107092,7 +107086,7 @@ public class Beyond_NET_Sample_Cat /* Beyond.NET.Sample.Cat */: Beyond_NET_Sampl
 	}}
 	
 	
-	public class var catName: System_String? /* System.String */ { get {
+	public class var catName: System_String /* System.String */ { get {
 		
 		
 		let __returnValueC = Beyond_NET_Sample_Cat_CatName_Get()
@@ -107127,7 +107121,7 @@ public class Beyond_NET_Sample_Dog /* Beyond.NET.Sample.Dog */: Beyond_NET_Sampl
 		"Beyond.NET.Sample.Dog"
 	}}
 
-	public override var name: System_String? /* System.String */ { get throws {
+	public override var name: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -107148,7 +107142,7 @@ public class Beyond_NET_Sample_Dog /* Beyond.NET.Sample.Dog */: Beyond_NET_Sampl
 	}}
 	
 	
-	public class var dogName: System_String? /* System.String */ { get {
+	public class var dogName: System_String /* System.String */ { get {
 		
 		
 		let __returnValueC = Beyond_NET_Sample_Dog_DogName_Get()
@@ -107204,7 +107198,7 @@ public class Beyond_NET_Sample_GenericAnimal /* Beyond.NET.Sample.GenericAnimal 
 		
 	}
 	
-	public override var name: System_String? /* System.String */ { get throws {
+	public override var name: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -107268,7 +107262,7 @@ public class Beyond_NET_Sample_Labrador /* Beyond.NET.Sample.Labrador */: Beyond
 		
 	}
 	
-	public override var name: System_String? /* System.String */ { get throws {
+	public override var name: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -107289,7 +107283,7 @@ public class Beyond_NET_Sample_Labrador /* Beyond.NET.Sample.Labrador */: Beyond
 	}}
 	
 	
-	public class var labradorName: System_String? /* System.String */ { get {
+	public class var labradorName: System_String /* System.String */ { get {
 		
 		
 		let __returnValueC = Beyond_NET_Sample_Labrador_LabradorName_Get()
@@ -107408,7 +107402,7 @@ public class Beyond_NET_Sample_Point /* Beyond.NET.Sample.Point */: System_Value
 		"Beyond.NET.Sample.Point"
 	}}
 
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -107685,7 +107679,7 @@ public class Beyond_NET_Sample_GenericTestClass_A1 /* Beyond.NET.Sample.GenericT
 		"Beyond.NET.Sample.GenericTestClass<>"
 	}}
 
-	public func returnGenericClassType(T: System_Type /* System.Type */) throws -> System_Type? /* System.Type */ {
+	public func returnGenericClassType(T: System_Type /* System.Type */) throws -> System_Type /* System.Type */ {
 		let TC = T.__handle
 		
 		
@@ -107706,7 +107700,7 @@ public class Beyond_NET_Sample_GenericTestClass_A1 /* Beyond.NET.Sample.GenericT
 		
 	}
 	
-	public class func returnGenericClassTypeAndGenericMethodType(T: System_Type /* System.Type */, TM: System_Type /* System.Type */) throws -> System_Type_Array? /* System.Type[] */ {
+	public class func returnGenericClassTypeAndGenericMethodType(T: System_Type /* System.Type */, TM: System_Type /* System.Type */) throws -> System_Type_Array /* System.Type[] */ {
 		let TC = T.__handle
 		let TMC = TM.__handle
 		
@@ -107862,7 +107856,7 @@ public class Beyond_NET_Sample_GenericTestClass_A2 /* Beyond.NET.Sample.GenericT
 		"Beyond.NET.Sample.GenericTestClass<,>"
 	}}
 
-	public func returnGenericClassTypes(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */) throws -> System_Type_Array? /* System.Type[] */ {
+	public func returnGenericClassTypes(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */) throws -> System_Type_Array /* System.Type[] */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		
@@ -107884,7 +107878,7 @@ public class Beyond_NET_Sample_GenericTestClass_A2 /* Beyond.NET.Sample.GenericT
 		
 	}
 	
-	public class func returnGenericClassTypeAndGenericMethodType(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, TM: System_Type /* System.Type */) throws -> System_Type_Array? /* System.Type[] */ {
+	public class func returnGenericClassTypeAndGenericMethodType(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, TM: System_Type /* System.Type */) throws -> System_Type_Array /* System.Type[] */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let TMC = TM.__handle
@@ -108012,7 +108006,7 @@ public class Beyond_NET_Sample_GenericTests /* Beyond.NET.Sample.GenericTests */
 		"Beyond.NET.Sample.GenericTests"
 	}}
 
-	public func joinListOfStrings(_ listOfString: System_Collections_Generic_List_A1 /* System.Collections.Generic.List<System.String> */, _ separator: System_String /* System.String */) throws -> System_String? /* System.String */ {
+	public func joinListOfStrings(_ listOfString: System_Collections_Generic_List_A1 /* System.Collections.Generic.List<System.String> */, _ separator: System_String /* System.String */) throws -> System_String /* System.String */ {
 		let listOfStringC = listOfString.__handle
 		let separatorC = separator.__handle
 		
@@ -108034,7 +108028,7 @@ public class Beyond_NET_Sample_GenericTests /* Beyond.NET.Sample.GenericTests */
 		
 	}
 	
-	public class func returnGenericType(T: System_Type /* System.Type */) throws -> System_Type? /* System.Type */ {
+	public class func returnGenericType(T: System_Type /* System.Type */) throws -> System_Type /* System.Type */ {
 		let TC = T.__handle
 		
 		
@@ -108099,7 +108093,7 @@ public class Beyond_NET_Sample_GenericTests /* Beyond.NET.Sample.GenericTests */
 		
 	}
 	
-	public class func returnGenericTypes(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */) throws -> System_Type_Array? /* System.Type[] */ {
+	public class func returnGenericTypes(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */) throws -> System_Type_Array /* System.Type[] */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		
@@ -108209,7 +108203,7 @@ public class Beyond_NET_Sample_GenericTests /* Beyond.NET.Sample.GenericTests */
 		
 	}
 	
-	public class func returnStringOfJoinedArray(T: System_Type /* System.Type */, _ values: System_Array? /* System.Array */, _ separator: System_String? /* System.String */) throws -> System_String? /* System.String */ {
+	public class func returnStringOfJoinedArray(T: System_Type /* System.Type */, _ values: System_Array? /* System.Array */, _ separator: System_String? /* System.String */) throws -> System_String /* System.String */ {
 		let TC = T.__handle
 		let valuesC = values?.__handle
 		let separatorC = separator?.__handle
@@ -108620,7 +108614,7 @@ public class Beyond_NET_Sample_IndexerTests /* Beyond.NET.Sample.IndexerTests */
 		
 	}
 	
-	public var storedString: System_String? /* System.String */ { get throws {
+	public var storedString: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -108681,7 +108675,7 @@ public class Beyond_NET_Sample_IndexerTests /* Beyond.NET.Sample.IndexerTests */
 	}}
 	
 	
-	public var storedValue: System_Object_Array? /* System.Object[] */ { get throws {
+	public var storedValue: System_Object_Array /* System.Object[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -108702,7 +108696,7 @@ public class Beyond_NET_Sample_IndexerTests /* Beyond.NET.Sample.IndexerTests */
 	}}
 	
 	
-	public func item(_ aString: System_String /* System.String */, _ aNumber: Int32 /* System.Int32 */, _ aGuid: System_Guid /* System.Guid */) throws -> System_Object_Array? /* System.Object[] */ {
+	public func item(_ aString: System_String /* System.String */, _ aNumber: Int32 /* System.Int32 */, _ aGuid: System_Guid /* System.Guid */) throws -> System_Object_Array /* System.Object[] */ {
 		let aStringC = aString.__handle
 		let aGuidC = aGuid.__handle
 		
@@ -108767,7 +108761,7 @@ public class Beyond_NET_Sample_NullabilityTests /* Beyond.NET.Sample.Nullability
 		"Beyond.NET.Sample.NullabilityTests"
 	}}
 
-	public func methodWithNonNullableStringReturnValue() throws -> System_String? /* System.String */ {
+	public func methodWithNonNullableStringReturnValue() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -108807,7 +108801,7 @@ public class Beyond_NET_Sample_NullabilityTests /* Beyond.NET.Sample.Nullability
 		
 	}
 	
-	public func methodWithNonNullableStringParameter(_ value: System_String /* System.String */) throws -> System_String? /* System.String */ {
+	public func methodWithNonNullableStringParameter(_ value: System_String /* System.String */) throws -> System_String /* System.String */ {
 		let valueC = value.__handle
 		
 		
@@ -108869,7 +108863,7 @@ public class Beyond_NET_Sample_NullabilityTests /* Beyond.NET.Sample.Nullability
 		
 	}
 	
-	public var nonNullableStringProperty: System_String? /* System.String */ { get throws {
+	public var nonNullableStringProperty: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -108945,7 +108939,7 @@ public class Beyond_NET_Sample_NullabilityTests /* Beyond.NET.Sample.Nullability
 	}
 	
 	
-	public var nonNullableStringField: System_String? /* System.String */ { get {
+	public var nonNullableStringField: System_String /* System.String */ { get {
 		
 		
 		let __returnValueC = Beyond_NET_Sample_NullabilityTests_NonNullableStringField_Get(self.__handle)
@@ -109084,7 +109078,7 @@ public class Beyond_NET_Sample_Person /* Beyond.NET.Sample.Person */: System_Obj
 		"Beyond.NET.Sample.Person"
 	}}
 
-	public func getNiceLevelString() throws -> System_String? /* System.String */ {
+	public func getNiceLevelString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -109104,7 +109098,7 @@ public class Beyond_NET_Sample_Person /* Beyond.NET.Sample.Person */: System_Obj
 		
 	}
 	
-	public func getWelcomeMessage() throws -> System_String? /* System.String */ {
+	public func getWelcomeMessage() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -109177,7 +109171,7 @@ public class Beyond_NET_Sample_Person /* Beyond.NET.Sample.Person */: System_Obj
 		
 	}
 	
-	public func childAt(_ index: Int32 /* System.Int32 */) throws -> Beyond_NET_Sample_Person? /* Beyond.NET.Sample.Person */ {
+	public func childAt(_ index: Int32 /* System.Int32 */) throws -> Beyond_NET_Sample_Person /* Beyond.NET.Sample.Person */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -109259,7 +109253,7 @@ public class Beyond_NET_Sample_Person /* Beyond.NET.Sample.Person */: System_Obj
 		
 	}
 	
-	public var firstName: System_String? /* System.String */ { get throws {
+	public var firstName: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -109297,7 +109291,7 @@ public class Beyond_NET_Sample_Person /* Beyond.NET.Sample.Person */: System_Obj
 	}
 	
 	
-	public var lastName: System_String? /* System.String */ { get throws {
+	public var lastName: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -109446,7 +109440,7 @@ public class Beyond_NET_Sample_Person /* Beyond.NET.Sample.Person */: System_Obj
 	}
 	
 	
-	public var children: Beyond_NET_Sample_Person_Array? /* Beyond.NET.Sample.Person[] */ { get throws {
+	public var children: Beyond_NET_Sample_Person_Array /* Beyond.NET.Sample.Person[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -109522,7 +109516,7 @@ public class Beyond_NET_Sample_Person /* Beyond.NET.Sample.Person */: System_Obj
 	}
 	
 	
-	public var fullName: System_String? /* System.String */ { get throws {
+	public var fullName: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -109644,7 +109638,7 @@ public class System_Uri /* System.Uri */: System_Object {
 		
 	}
 	
-	public func getLeftPart(_ part: System_UriPartial /* System.UriPartial */) throws -> System_String? /* System.String */ {
+	public func getLeftPart(_ part: System_UriPartial /* System.UriPartial */) throws -> System_String /* System.String */ {
 		let partC = part.cValue
 		
 		
@@ -109665,7 +109659,7 @@ public class System_Uri /* System.Uri */: System_Object {
 		
 	}
 	
-	public class func hexEscape(_ character: DNChar /* System.Char */) throws -> System_String? /* System.String */ {
+	public class func hexEscape(_ character: DNChar /* System.Char */) throws -> System_String /* System.String */ {
 		let characterC = character.cValue
 		
 		
@@ -109801,7 +109795,7 @@ public class System_Uri /* System.Uri */: System_Object {
 		
 	}
 	
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -109840,7 +109834,7 @@ public class System_Uri /* System.Uri */: System_Object {
 		
 	}
 	
-	public func makeRelativeUri(_ uri: System_Uri /* System.Uri */) throws -> System_Uri? /* System.Uri */ {
+	public func makeRelativeUri(_ uri: System_Uri /* System.Uri */) throws -> System_Uri /* System.Uri */ {
 		let uriC = uri.__handle
 		
 		
@@ -109861,7 +109855,7 @@ public class System_Uri /* System.Uri */: System_Object {
 		
 	}
 	
-	public func makeRelative(_ toUri: System_Uri /* System.Uri */) throws -> System_String? /* System.String */ {
+	public func makeRelative(_ toUri: System_Uri /* System.Uri */) throws -> System_String /* System.String */ {
 		let toUriC = toUri.__handle
 		
 		
@@ -109980,7 +109974,7 @@ public class System_Uri /* System.Uri */: System_Object {
 		
 	}
 	
-	public func getComponents(_ components: System_UriComponents /* System.UriComponents */, _ format: System_UriFormat /* System.UriFormat */) throws -> System_String? /* System.String */ {
+	public func getComponents(_ components: System_UriComponents /* System.UriComponents */, _ format: System_UriFormat /* System.UriFormat */) throws -> System_String /* System.String */ {
 		let componentsC = components.cValue
 		let formatC = format.cValue
 		
@@ -110063,7 +110057,7 @@ public class System_Uri /* System.Uri */: System_Object {
 		
 	}
 	
-	public class func unescapeDataString(_ stringToUnescape: System_String /* System.String */) throws -> System_String? /* System.String */ {
+	public class func unescapeDataString(_ stringToUnescape: System_String /* System.String */) throws -> System_String /* System.String */ {
 		let stringToUnescapeC = stringToUnescape.__handle
 		
 		
@@ -110084,7 +110078,7 @@ public class System_Uri /* System.Uri */: System_Object {
 		
 	}
 	
-	public class func escapeUriString(_ stringToEscape: System_String /* System.String */) throws -> System_String? /* System.String */ {
+	public class func escapeUriString(_ stringToEscape: System_String /* System.String */) throws -> System_String /* System.String */ {
 		let stringToEscapeC = stringToEscape.__handle
 		
 		
@@ -110105,7 +110099,7 @@ public class System_Uri /* System.Uri */: System_Object {
 		
 	}
 	
-	public class func escapeDataString(_ stringToEscape: System_String /* System.String */) throws -> System_String? /* System.String */ {
+	public class func escapeDataString(_ stringToEscape: System_String /* System.String */) throws -> System_String /* System.String */ {
 		let stringToEscapeC = stringToEscape.__handle
 		
 		
@@ -110300,7 +110294,7 @@ public class System_Uri /* System.Uri */: System_Object {
 		
 	}
 	
-	public var absolutePath: System_String? /* System.String */ { get throws {
+	public var absolutePath: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -110321,7 +110315,7 @@ public class System_Uri /* System.Uri */: System_Object {
 	}}
 	
 	
-	public var absoluteUri: System_String? /* System.String */ { get throws {
+	public var absoluteUri: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -110342,7 +110336,7 @@ public class System_Uri /* System.Uri */: System_Object {
 	}}
 	
 	
-	public var localPath: System_String? /* System.String */ { get throws {
+	public var localPath: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -110363,7 +110357,7 @@ public class System_Uri /* System.Uri */: System_Object {
 	}}
 	
 	
-	public var authority: System_String? /* System.String */ { get throws {
+	public var authority: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -110462,7 +110456,7 @@ public class System_Uri /* System.Uri */: System_Object {
 	}}
 	
 	
-	public var pathAndQuery: System_String? /* System.String */ { get throws {
+	public var pathAndQuery: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -110483,7 +110477,7 @@ public class System_Uri /* System.Uri */: System_Object {
 	}}
 	
 	
-	public var segments: System_String_Array? /* System.String[] */ { get throws {
+	public var segments: System_String_Array /* System.String[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -110523,7 +110517,7 @@ public class System_Uri /* System.Uri */: System_Object {
 	}}
 	
 	
-	public var host: System_String? /* System.String */ { get throws {
+	public var host: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -110563,7 +110557,7 @@ public class System_Uri /* System.Uri */: System_Object {
 	}}
 	
 	
-	public var query: System_String? /* System.String */ { get throws {
+	public var query: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -110584,7 +110578,7 @@ public class System_Uri /* System.Uri */: System_Object {
 	}}
 	
 	
-	public var fragment: System_String? /* System.String */ { get throws {
+	public var fragment: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -110605,7 +110599,7 @@ public class System_Uri /* System.Uri */: System_Object {
 	}}
 	
 	
-	public var scheme: System_String? /* System.String */ { get throws {
+	public var scheme: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -110626,7 +110620,7 @@ public class System_Uri /* System.Uri */: System_Object {
 	}}
 	
 	
-	public var originalString: System_String? /* System.String */ { get throws {
+	public var originalString: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -110647,7 +110641,7 @@ public class System_Uri /* System.Uri */: System_Object {
 	}}
 	
 	
-	public var dnsSafeHost: System_String? /* System.String */ { get throws {
+	public var dnsSafeHost: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -110668,7 +110662,7 @@ public class System_Uri /* System.Uri */: System_Object {
 	}}
 	
 	
-	public var idnHost: System_String? /* System.String */ { get throws {
+	public var idnHost: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -110727,7 +110721,7 @@ public class System_Uri /* System.Uri */: System_Object {
 	}}
 	
 	
-	public var userInfo: System_String? /* System.String */ { get throws {
+	public var userInfo: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -110748,7 +110742,7 @@ public class System_Uri /* System.Uri */: System_Object {
 	}}
 	
 	
-	public class var uriSchemeFile: System_String? /* System.String */ { get {
+	public class var uriSchemeFile: System_String /* System.String */ { get {
 		
 		
 		let __returnValueC = System_Uri_UriSchemeFile_Get()
@@ -110760,7 +110754,7 @@ public class System_Uri /* System.Uri */: System_Object {
 	}}
 	
 	
-	public class var uriSchemeFtp: System_String? /* System.String */ { get {
+	public class var uriSchemeFtp: System_String /* System.String */ { get {
 		
 		
 		let __returnValueC = System_Uri_UriSchemeFtp_Get()
@@ -110772,7 +110766,7 @@ public class System_Uri /* System.Uri */: System_Object {
 	}}
 	
 	
-	public class var uriSchemeSftp: System_String? /* System.String */ { get {
+	public class var uriSchemeSftp: System_String /* System.String */ { get {
 		
 		
 		let __returnValueC = System_Uri_UriSchemeSftp_Get()
@@ -110784,7 +110778,7 @@ public class System_Uri /* System.Uri */: System_Object {
 	}}
 	
 	
-	public class var uriSchemeFtps: System_String? /* System.String */ { get {
+	public class var uriSchemeFtps: System_String /* System.String */ { get {
 		
 		
 		let __returnValueC = System_Uri_UriSchemeFtps_Get()
@@ -110796,7 +110790,7 @@ public class System_Uri /* System.Uri */: System_Object {
 	}}
 	
 	
-	public class var uriSchemeGopher: System_String? /* System.String */ { get {
+	public class var uriSchemeGopher: System_String /* System.String */ { get {
 		
 		
 		let __returnValueC = System_Uri_UriSchemeGopher_Get()
@@ -110808,7 +110802,7 @@ public class System_Uri /* System.Uri */: System_Object {
 	}}
 	
 	
-	public class var uriSchemeHttp: System_String? /* System.String */ { get {
+	public class var uriSchemeHttp: System_String /* System.String */ { get {
 		
 		
 		let __returnValueC = System_Uri_UriSchemeHttp_Get()
@@ -110820,7 +110814,7 @@ public class System_Uri /* System.Uri */: System_Object {
 	}}
 	
 	
-	public class var uriSchemeHttps: System_String? /* System.String */ { get {
+	public class var uriSchemeHttps: System_String /* System.String */ { get {
 		
 		
 		let __returnValueC = System_Uri_UriSchemeHttps_Get()
@@ -110832,7 +110826,7 @@ public class System_Uri /* System.Uri */: System_Object {
 	}}
 	
 	
-	public class var uriSchemeWs: System_String? /* System.String */ { get {
+	public class var uriSchemeWs: System_String /* System.String */ { get {
 		
 		
 		let __returnValueC = System_Uri_UriSchemeWs_Get()
@@ -110844,7 +110838,7 @@ public class System_Uri /* System.Uri */: System_Object {
 	}}
 	
 	
-	public class var uriSchemeWss: System_String? /* System.String */ { get {
+	public class var uriSchemeWss: System_String /* System.String */ { get {
 		
 		
 		let __returnValueC = System_Uri_UriSchemeWss_Get()
@@ -110856,7 +110850,7 @@ public class System_Uri /* System.Uri */: System_Object {
 	}}
 	
 	
-	public class var uriSchemeMailto: System_String? /* System.String */ { get {
+	public class var uriSchemeMailto: System_String /* System.String */ { get {
 		
 		
 		let __returnValueC = System_Uri_UriSchemeMailto_Get()
@@ -110868,7 +110862,7 @@ public class System_Uri /* System.Uri */: System_Object {
 	}}
 	
 	
-	public class var uriSchemeNews: System_String? /* System.String */ { get {
+	public class var uriSchemeNews: System_String /* System.String */ { get {
 		
 		
 		let __returnValueC = System_Uri_UriSchemeNews_Get()
@@ -110880,7 +110874,7 @@ public class System_Uri /* System.Uri */: System_Object {
 	}}
 	
 	
-	public class var uriSchemeNntp: System_String? /* System.String */ { get {
+	public class var uriSchemeNntp: System_String /* System.String */ { get {
 		
 		
 		let __returnValueC = System_Uri_UriSchemeNntp_Get()
@@ -110892,7 +110886,7 @@ public class System_Uri /* System.Uri */: System_Object {
 	}}
 	
 	
-	public class var uriSchemeSsh: System_String? /* System.String */ { get {
+	public class var uriSchemeSsh: System_String /* System.String */ { get {
 		
 		
 		let __returnValueC = System_Uri_UriSchemeSsh_Get()
@@ -110904,7 +110898,7 @@ public class System_Uri /* System.Uri */: System_Object {
 	}}
 	
 	
-	public class var uriSchemeTelnet: System_String? /* System.String */ { get {
+	public class var uriSchemeTelnet: System_String /* System.String */ { get {
 		
 		
 		let __returnValueC = System_Uri_UriSchemeTelnet_Get()
@@ -110916,7 +110910,7 @@ public class System_Uri /* System.Uri */: System_Object {
 	}}
 	
 	
-	public class var uriSchemeNetTcp: System_String? /* System.String */ { get {
+	public class var uriSchemeNetTcp: System_String /* System.String */ { get {
 		
 		
 		let __returnValueC = System_Uri_UriSchemeNetTcp_Get()
@@ -110928,7 +110922,7 @@ public class System_Uri /* System.Uri */: System_Object {
 	}}
 	
 	
-	public class var uriSchemeNetPipe: System_String? /* System.String */ { get {
+	public class var uriSchemeNetPipe: System_String /* System.String */ { get {
 		
 		
 		let __returnValueC = System_Uri_UriSchemeNetPipe_Get()
@@ -110940,7 +110934,7 @@ public class System_Uri /* System.Uri */: System_Object {
 	}}
 	
 	
-	public class var schemeDelimiter: System_String? /* System.String */ { get {
+	public class var schemeDelimiter: System_String /* System.String */ { get {
 		
 		
 		let __returnValueC = System_Uri_SchemeDelimiter_Get()
@@ -111304,7 +111298,7 @@ public class Beyond_NET_Sample_SpanTest /* Beyond.NET.Sample.SpanTest */: System
 		
 	}
 	
-	public func convertSpanToByteArray(_ span: Data? /* System.ReadOnlySpan<System.Byte> */, _ converter: Beyond_NET_Sample_SpanTest_SpanToByteArrayDelegate /* Beyond.NET.Sample.SpanTest.SpanToByteArrayDelegate */) throws -> System_Byte_Array? /* System.Byte[] */ {
+	public func convertSpanToByteArray(_ span: Data? /* System.ReadOnlySpan<System.Byte> */, _ converter: Beyond_NET_Sample_SpanTest_SpanToByteArrayDelegate /* Beyond.NET.Sample.SpanTest.SpanToByteArrayDelegate */) throws -> System_Byte_Array /* System.Byte[] */ {
 		let spanC = span.readOnlySpanOfByte()
 		let converterC = converter.__handle
 		
@@ -111368,7 +111362,7 @@ public class Beyond_NET_Sample_SpanTest /* Beyond.NET.Sample.SpanTest */: System
 		
 	}
 	
-	public var data: System_Byte_Array? /* System.Byte[] */ { get throws {
+	public var data: System_Byte_Array /* System.Byte[] */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -111680,7 +111674,7 @@ public class Beyond_NET_Sample_Book /* Beyond.NET.Sample.Book */: System_Object 
 		
 	}
 	
-	public var name: System_String? /* System.String */ { get throws {
+	public var name: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -111701,7 +111695,7 @@ public class Beyond_NET_Sample_Book /* Beyond.NET.Sample.Book */: System_Object 
 	}}
 	
 	
-	public class var donQuixote: Beyond_NET_Sample_Book? /* Beyond.NET.Sample.Book */ { get {
+	public class var donQuixote: Beyond_NET_Sample_Book /* Beyond.NET.Sample.Book */ { get {
 		
 		
 		let __returnValueC = Beyond_NET_Sample_Book_DonQuixote_Get()
@@ -111713,7 +111707,7 @@ public class Beyond_NET_Sample_Book /* Beyond.NET.Sample.Book */: System_Object 
 	}}
 	
 	
-	public class var aTaleOfTwoCities: Beyond_NET_Sample_Book? /* Beyond.NET.Sample.Book */ { get {
+	public class var aTaleOfTwoCities: Beyond_NET_Sample_Book /* Beyond.NET.Sample.Book */ { get {
 		
 		
 		let __returnValueC = Beyond_NET_Sample_Book_ATaleOfTwoCities_Get()
@@ -111725,7 +111719,7 @@ public class Beyond_NET_Sample_Book /* Beyond.NET.Sample.Book */: System_Object 
 	}}
 	
 	
-	public class var theLordOfTheRings: Beyond_NET_Sample_Book? /* Beyond.NET.Sample.Book */ { get {
+	public class var theLordOfTheRings: Beyond_NET_Sample_Book /* Beyond.NET.Sample.Book */ { get {
 		
 		
 		let __returnValueC = Beyond_NET_Sample_Book_TheLordOfTheRings_Get()
@@ -111816,7 +111810,7 @@ public class Beyond_NET_Sample_TestClass /* Beyond.NET.Sample.TestClass */: Syst
 		
 	}
 	
-	public func getHello() throws -> System_String? /* System.String */ {
+	public func getHello() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -111892,7 +111886,7 @@ public class Beyond_NET_Sample_TestClass /* Beyond.NET.Sample.TestClass */: Syst
 		
 	}
 	
-	public class func getTestEnumName(_ testEnum: Beyond_NET_Sample_TestEnum /* Beyond.NET.Sample.TestEnum */) throws -> System_String? /* System.String */ {
+	public class func getTestEnumName(_ testEnum: Beyond_NET_Sample_TestEnum /* Beyond.NET.Sample.TestEnum */) throws -> System_String /* System.String */ {
 		let testEnumC = testEnum.cValue
 		
 		
@@ -112001,7 +111995,7 @@ public class Beyond_NET_Sample_TestClass /* Beyond.NET.Sample.TestClass */: Syst
 		
 	}
 	
-	public var currentBook: Beyond_NET_Sample_Book? /* Beyond.NET.Sample.Book */ { get {
+	public var currentBook: Beyond_NET_Sample_Book /* Beyond.NET.Sample.Book */ { get {
 		
 		
 		let __returnValueC = Beyond_NET_Sample_TestClass_CurrentBook_Get(self.__handle)
@@ -112080,7 +112074,7 @@ public class Beyond_NET_Sample_TestRecord /* Beyond.NET.Sample.TestRecord */: Sy
 		
 	}
 	
-	public override func toString() throws -> System_String? /* System.String */ {
+	public override func toString() throws -> System_String /* System.String */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -112198,7 +112192,7 @@ public class Beyond_NET_Sample_TestRecord /* Beyond.NET.Sample.TestRecord */: Sy
 		
 	}
 	
-	public var aString: System_String? /* System.String */ { get throws {
+	public var aString: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -112372,7 +112366,7 @@ public class Beyond_NET_Sample_TestRecordStruct /* Beyond.NET.Sample.TestRecordS
 	}
 	
 	
-	public var aString: System_String? /* System.String */ { get throws {
+	public var aString: System_String /* System.String */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -112393,7 +112387,7 @@ public class Beyond_NET_Sample_TestRecordStruct /* Beyond.NET.Sample.TestRecordS
 	}}
 	
 	
-	public var aStringField: System_String? /* System.String */ { get {
+	public var aStringField: System_String /* System.String */ { get {
 		
 		
 		let __returnValueC = Beyond_NET_Sample_TestRecordStruct_AStringField_Get(self.__handle)
@@ -112611,7 +112605,7 @@ public class Beyond_NET_Sample_Transformer /* Beyond.NET.Sample.Transformer */: 
 		"Beyond.NET.Sample.Transformer"
 	}}
 
-	public class func transformString(_ inputString: System_String /* System.String */, _ stringTransformer: Beyond_NET_Sample_Transformer_StringTransformerDelegate /* Beyond.NET.Sample.Transformer.StringTransformerDelegate */) throws -> System_String? /* System.String */ {
+	public class func transformString(_ inputString: System_String /* System.String */, _ stringTransformer: Beyond_NET_Sample_Transformer_StringTransformerDelegate /* Beyond.NET.Sample.Transformer.StringTransformerDelegate */) throws -> System_String /* System.String */ {
 		let inputStringC = inputString.__handle
 		let stringTransformerC = stringTransformer.__handle
 		
@@ -112652,7 +112646,7 @@ public class Beyond_NET_Sample_Transformer /* Beyond.NET.Sample.Transformer */: 
 		
 	}
 	
-	public class func getAndTransformString(_ stringGetter: Beyond_NET_Sample_Transformer_StringGetterDelegate /* Beyond.NET.Sample.Transformer.StringGetterDelegate */, _ stringTransformer: Beyond_NET_Sample_Transformer_StringTransformerDelegate /* Beyond.NET.Sample.Transformer.StringTransformerDelegate */) throws -> System_String? /* System.String */ {
+	public class func getAndTransformString(_ stringGetter: Beyond_NET_Sample_Transformer_StringGetterDelegate /* Beyond.NET.Sample.Transformer.StringGetterDelegate */, _ stringTransformer: Beyond_NET_Sample_Transformer_StringTransformerDelegate /* Beyond.NET.Sample.Transformer.StringTransformerDelegate */) throws -> System_String /* System.String */ {
 		let stringGetterC = stringGetter.__handle
 		let stringTransformerC = stringTransformer.__handle
 		
@@ -112674,7 +112668,7 @@ public class Beyond_NET_Sample_Transformer /* Beyond.NET.Sample.Transformer */: 
 		
 	}
 	
-	public class func uppercaseString(_ inputString: System_String /* System.String */) throws -> System_String? /* System.String */ {
+	public class func uppercaseString(_ inputString: System_String /* System.String */) throws -> System_String /* System.String */ {
 		let inputStringC = inputString.__handle
 		
 		
@@ -112838,7 +112832,7 @@ public class Beyond_NET_Sample_Transformer_BuiltInTransformers /* Beyond.NET.Sam
 		"Beyond.NET.Sample.Transformer.BuiltInTransformers"
 	}}
 
-	public class var uppercaseStringTransformer: Beyond_NET_Sample_Transformer_StringTransformerDelegate? /* Beyond.NET.Sample.Transformer.StringTransformerDelegate */ { get throws {
+	public class var uppercaseStringTransformer: Beyond_NET_Sample_Transformer_StringTransformerDelegate /* Beyond.NET.Sample.Transformer.StringTransformerDelegate */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?

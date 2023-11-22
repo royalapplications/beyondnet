@@ -29,7 +29,7 @@ final class SystemTextStringBuilderTests: XCTestCase {
             return
         }
         
-        guard let helloRet = try? sb.toString()?.string() else {
+        guard let helloRet = try? sb.toString().string() else {
             XCTFail("System.Text.StringBuilder.ToString should not throw and return a string")
             
             return
@@ -40,7 +40,7 @@ final class SystemTextStringBuilderTests: XCTestCase {
         XCTAssertNoThrow(try sb.appendLine())
         XCTAssertNoThrow(try sb.append(worldDN))
         
-        guard let finalStringRet = try? sb.toString()?.string() else {
+        guard let finalStringRet = try? sb.toString().string() else {
             XCTFail("System.Text.StringBuilder.ToString should not throw and return a string")
             
             return

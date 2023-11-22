@@ -240,7 +240,7 @@ final class GenericTestsTests: XCTestCase {
 		let valueEqual = value == valueRet
 		XCTAssertTrue(valueEqual)
 		
-		guard let stringRet = try? valueRet.castTo(System_Text_StringBuilder.self).toString()?.string() else {
+		guard let stringRet = try? valueRet.castTo(System_Text_StringBuilder.self).toString().string() else {
 			XCTFail("System.Text.StringBuilder.ToString should not throw and return an instance of a string")
 			
 			return
@@ -307,7 +307,7 @@ final class GenericTestsTests: XCTestCase {
 
         guard let stringRet = try? Beyond_NET_Sample_GenericTests.returnStringOfJoinedArray(T: stringType,
                                                                                             arrayOfStrings,
-                                                                                            separatorDN)?.string() else {
+                                                                                            separatorDN).string() else {
             XCTFail("ReturnStringOfJoinedArray should not throw and return an instance")
             
             return

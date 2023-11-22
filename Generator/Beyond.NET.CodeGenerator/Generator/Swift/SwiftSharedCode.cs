@@ -502,10 +502,8 @@ public extension System_String {
 public extension [String] {
     /// Converts a Swift String Array into a .NET System.String Array
     func dotNETStringArray() throws -> System_String_Array {
-        guard let arr = try System_String_Array.createInstance(System_String.typeOf,
-                                                               .init(count)) else {
-            throw DNSystemError.unexpectedNull
-        }
+        let arr = try System_String_Array.createInstance(System_String.typeOf,
+                                                         .init(count))
         
         for (idx, el) in self.enumerated() {
             let elDN = el.dotNETString()
@@ -807,10 +805,6 @@ public extension Data {
         let bytesCount = Int32(self.count)
         
         let systemArray = try System_Array.createInstance(System_Byte.typeOf, bytesCount)
-        
-        guard let systemArray else {
-            throw DNSystemError.unexpectedNull
-        }
         
         let systemByteArray: System_Byte_Array = try systemArray.castTo()
         

@@ -45,11 +45,7 @@ final class TypeConversionTests: XCTestCase {
         XCTAssertFalse(systemObject.is(systemGuidType))
         
         // MARK: - System.String
-        guard let systemString = System.String.empty else {
-            XCTFail("System.String.Empty getter should return an instance")
-            
-            return
-        }
+        let systemString = System.String.empty
         
         XCTAssertTrue(systemString.is(systemObjectTypeDN))
         XCTAssertTrue(systemString.is(systemObjectType))

@@ -57,7 +57,7 @@ final class PersonTests: XCTestCase {
         
         XCTAssertEqual(expectedNiceLevel, retrievedNiceLevel)
         
-        guard let retrievedFirstName = try? person.firstName?.string() else {
+        guard let retrievedFirstName = try? person.firstName.string() else {
             XCTFail("Person.FirstName getter should not throw and return an instance")
             
             return
@@ -65,7 +65,7 @@ final class PersonTests: XCTestCase {
         
         XCTAssertEqual(firstName, retrievedFirstName)
         
-        guard let retrievedLastName = try? person.lastName?.string() else {
+        guard let retrievedLastName = try? person.lastName.string() else {
             XCTFail("Person.LastName getter should not throw and return an instance")
             
             return
@@ -73,7 +73,7 @@ final class PersonTests: XCTestCase {
         
         XCTAssertEqual(lastName, retrievedLastName)
         
-        guard let retrievedFullName = try? person.fullName?.string() else {
+        guard let retrievedFullName = try? person.fullName.string() else {
             XCTFail("Person.FullName getter should not throw and return an instance")
             
             return
@@ -91,7 +91,7 @@ final class PersonTests: XCTestCase {
         
         XCTAssertNoThrow(try person.age_set(age))
         
-        guard let retrievedWelcomeMessage = try? person.getWelcomeMessage()?.string() else {
+        guard let retrievedWelcomeMessage = try? person.getWelcomeMessage().string() else {
             XCTFail("Person.GetWelcomeMessage should not throw and return an instance")
             
             return
@@ -106,7 +106,7 @@ final class PersonTests: XCTestCase {
         
         XCTAssertNoThrow(try person.firstName_set(newFirstNameDN))
         
-        guard let newFullName = try? person.fullName?.string() else {
+        guard let newFullName = try? person.fullName.string() else {
             XCTFail("Person.FullName getter should not throw and return an instance")
             
             return
@@ -357,7 +357,7 @@ final class PersonTests: XCTestCase {
             return
         }
         
-        guard let retrievedStreet = try? retrievedAddress.street?.string() else {
+        guard let retrievedStreet = try? retrievedAddress.street.string() else {
             XCTFail("Address.Street getter should return an instance and not throw")
             
             return
@@ -365,7 +365,7 @@ final class PersonTests: XCTestCase {
         
         XCTAssertEqual(street, retrievedStreet)
         
-        guard let retrievedCity = try? retrievedAddress.city?.string() else {
+        guard let retrievedCity = try? retrievedAddress.city.string() else {
             XCTFail("Address.City getter should return an instance and not throw")
             
             return
@@ -478,7 +478,7 @@ final class PersonTests: XCTestCase {
         let personType = Beyond_NET_Sample_Person.typeOf
         
         guard let newChildren = try? System_Array.createInstance(personType,
-                                                                 2)?.castAs(Beyond_NET_Sample_Person_Array.self) else {
+                                                                 2).castAs(Beyond_NET_Sample_Person_Array.self) else {
             XCTFail("System.Array.CreateInstance should not throw and return an instance")
             
             return
