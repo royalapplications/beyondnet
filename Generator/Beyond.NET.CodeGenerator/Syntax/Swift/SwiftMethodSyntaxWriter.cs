@@ -176,15 +176,19 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         bool treatAsOverridden = false;
 
         if (methodInfo is not null) {
-            bool isActuallyOverridden = methodInfo.IsOverridden();
+            bool isActuallyOverridden = methodInfo.IsOverridden(out bool overrideNullabilityIsCompatible);
 
             if (isActuallyOverridden) {
-                treatAsOverridden = true;
+                if (overrideNullabilityIsCompatible) {
+                    treatAsOverridden = true;
+                }
             } else {
-                bool isShadowed = methodInfo.IsShadowed();
+                bool isShadowed = methodInfo.IsShadowed(out bool shadowNullabilityIsCompatible);
 
                 if (isShadowed) {
-                    treatAsOverridden = true;
+                    if (shadowNullabilityIsCompatible) {
+                        treatAsOverridden = true;
+                    }
                 }
             }
         } else if (memberInfo is FieldInfo fieldInfo) {

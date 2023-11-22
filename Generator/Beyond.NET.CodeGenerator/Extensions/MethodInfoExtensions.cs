@@ -1,11 +1,17 @@
 using System.Reflection;
+using System.Reflection.Metadata;
 
 namespace Beyond.NET.CodeGenerator.Extensions;
 
 public static class MethodInfoExtensions
 {
-    public static bool IsOverridden(this MethodInfo methodInfo)
+    public static bool IsOverridden(
+        this MethodInfo methodInfo, 
+        out bool nullabilityIsCompatible
+    )
     {
+        nullabilityIsCompatible = true;
+        
         Type? declaringType = methodInfo.DeclaringType;
 
         if (declaringType is null) {
@@ -33,11 +39,40 @@ public static class MethodInfoExtensions
                             declaringType != baseMethodDeclaringType ||
                             declaringTypeIsGeneric != baseTypeIsGeneric;
 
+        if (!isOverridden) {
+            return false;
+        }
+
+        if (!methodInfo.ReturnParameter.IsNullabilityInfoCompatible(baseMethodInfo.ReturnParameter)) {
+            nullabilityIsCompatible = false;
+            
+            return isOverridden;
+        }
+
+        var methodParameters = methodInfo.GetParameters();
+        var methodParametersBase = baseMethodInfo.GetParameters();
+
+        for (int i = 0; i < methodParameters.Length; i++) {
+            var parameter = methodParameters[i];
+            var parameterBase = methodParametersBase[i];
+
+            if (!parameter.IsNullabilityInfoCompatible(parameterBase)) {
+                nullabilityIsCompatible = false;
+
+                return isOverridden;
+            }
+        }
+
         return isOverridden;
     }
 
-    public static bool IsShadowed(this MethodInfo methodInfo)
+    public static bool IsShadowed(
+        this MethodInfo methodInfo, 
+        out bool nullabilityIsCompatible
+    )
     {
+        nullabilityIsCompatible = true;
+        
         Type? declaringType = methodInfo.DeclaringType;
 
         if (declaringType is null) {
@@ -94,6 +129,13 @@ public static class MethodInfoExtensions
                     continue;
                 }
 
+                var returnParameter = methodInfo.ReturnParameter;
+                var baseReturnParameter = baseBaseMethodInfo.ReturnParameter;
+
+                if (!returnParameter.IsNullabilityInfoCompatible(baseReturnParameter)) {
+                    nullabilityIsCompatible = false;
+                }
+
                 var parameters = methodInfo.GetParameters();
                 var baseParameters = baseBaseMethodInfo.GetParameters();
 
@@ -115,6 +157,10 @@ public static class MethodInfoExtensions
                     if (parameter.ParameterType != baseParameter.ParameterType) {
                         parameterTypesMatch = false;
                         break;
+                    }
+
+                    if (!parameter.IsNullabilityInfoCompatible(baseParameter)) {
+                        nullabilityIsCompatible = false;
                     }
                 
                     parameterIdx++;
