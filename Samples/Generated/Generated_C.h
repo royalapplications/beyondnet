@@ -1,5 +1,5 @@
-// Number of generated types: 1758
-// Number of generated members: 5651
+// Number of generated types: 1757
+// Number of generated members: 5662
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -5517,6 +5517,8 @@ typedef void* Beyond_NET_Sample_GenericTests_SimpleKeyValuePair_t;
 
 typedef void* Beyond_NET_Sample_IndexerTests_t;
 
+typedef void* Beyond_NET_Sample_NullabilityTests_t;
+
 typedef void* Beyond_NET_Sample_OverloadTests_t;
 
 typedef void* Beyond_NET_Sample_Person_t;
@@ -5577,9 +5579,6 @@ typedef void* Beyond_NET_Sample_Transformer_t;
 typedef void* Beyond_NET_Sample_SubclassingTests_MyBaseClass_t;
 
 typedef void* Beyond_NET_Sample_SubclassingTests_MySubClass_t;
-
-typedef void* Beyond_NET_Sample_Source_NullableValueTypeTests_t;
-
 
 typedef void* Beyond_NET_Sample_Transformer_BuiltInTransformers_t;
 
@@ -45311,6 +45310,102 @@ Beyond_NET_Sample_IndexerTests_Destroy(
 
 #pragma mark - END APIs of Beyond.NET.Sample.IndexerTests
 
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.NullabilityTests
+System_String_t _Nullable /* System.String */
+Beyond_NET_Sample_NullabilityTests_MethodWithNonNullableStringReturnValue(
+	Beyond_NET_Sample_NullabilityTests_t _Nullable /* Beyond.NET.Sample.NullabilityTests */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nullable /* System.String */
+Beyond_NET_Sample_NullabilityTests_MethodWithNullableStringReturnValue(
+	Beyond_NET_Sample_NullabilityTests_t _Nullable /* Beyond.NET.Sample.NullabilityTests */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nullable /* System.String */
+Beyond_NET_Sample_NullabilityTests_MethodWithNonNullableStringParameter(
+	Beyond_NET_Sample_NullabilityTests_t _Nullable /* Beyond.NET.Sample.NullabilityTests */ self,
+	System_String_t _Nonnull /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nullable /* System.String */
+Beyond_NET_Sample_NullabilityTests_MethodWithNullableStringParameter(
+	Beyond_NET_Sample_NullabilityTests_t _Nullable /* Beyond.NET.Sample.NullabilityTests */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+Beyond_NET_Sample_NullabilityTests_t _Nullable /* Beyond.NET.Sample.NullabilityTests */
+Beyond_NET_Sample_NullabilityTests_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nullable /* System.String */
+Beyond_NET_Sample_NullabilityTests_NonNullableStringProperty_Get(
+	Beyond_NET_Sample_NullabilityTests_t _Nullable /* Beyond.NET.Sample.NullabilityTests */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_NullabilityTests_NonNullableStringProperty_Set(
+	Beyond_NET_Sample_NullabilityTests_t _Nullable /* Beyond.NET.Sample.NullabilityTests */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+Beyond_NET_Sample_NullabilityTests_NullableStringProperty_Get(
+	Beyond_NET_Sample_NullabilityTests_t _Nullable /* Beyond.NET.Sample.NullabilityTests */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_NullabilityTests_NullableStringProperty_Set(
+	Beyond_NET_Sample_NullabilityTests_t _Nullable /* Beyond.NET.Sample.NullabilityTests */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+Beyond_NET_Sample_NullabilityTests_NonNullableStringField_Get(
+	Beyond_NET_Sample_NullabilityTests_t _Nullable /* Beyond.NET.Sample.NullabilityTests */ self
+);
+
+void /* System.Void */
+Beyond_NET_Sample_NullabilityTests_NonNullableStringField_Set(
+	Beyond_NET_Sample_NullabilityTests_t _Nullable /* Beyond.NET.Sample.NullabilityTests */ self,
+	System_String_t _Nullable /* System.String */ value
+);
+
+
+System_String_t _Nullable /* System.String */
+Beyond_NET_Sample_NullabilityTests_NullableStringField_Get(
+	Beyond_NET_Sample_NullabilityTests_t _Nullable /* Beyond.NET.Sample.NullabilityTests */ self
+);
+
+void /* System.Void */
+Beyond_NET_Sample_NullabilityTests_NullableStringField_Set(
+	Beyond_NET_Sample_NullabilityTests_t _Nullable /* Beyond.NET.Sample.NullabilityTests */ self,
+	System_String_t _Nullable /* System.String */ value
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_NullabilityTests_TypeOf(
+	void
+);
+
+void /* System.Void */
+Beyond_NET_Sample_NullabilityTests_Destroy(
+	Beyond_NET_Sample_NullabilityTests_t _Nullable /* Beyond.NET.Sample.NullabilityTests */ self
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.NullabilityTests
+
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.OverloadTests
 void /* System.Void */
 Beyond_NET_Sample_OverloadTests_Print(
@@ -46779,31 +46874,6 @@ Beyond_NET_Sample_SubclassingTests_MySubClass_Destroy(
 );
 
 #pragma mark - END APIs of Beyond.NET.Sample.SubclassingTests.MySubClass
-
-#pragma mark - BEGIN APIs of Beyond.NET.Sample.Source.NullableValueTypeTests
-Beyond_NET_Sample_Source_NullableValueTypeTests_t _Nullable /* Beyond.NET.Sample.Source.NullableValueTypeTests */
-Beyond_NET_Sample_Source_NullableValueTypeTests_Create(
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-System_Guid_t _Nullable* _Nullable /* System.Guid */
-Beyond_NET_Sample_Source_NullableValueTypeTests_NullGuid_Get(
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-
-System_Type_t _Nonnull /* System.Type */
-Beyond_NET_Sample_Source_NullableValueTypeTests_TypeOf(
-	void
-);
-
-void /* System.Void */
-Beyond_NET_Sample_Source_NullableValueTypeTests_Destroy(
-	Beyond_NET_Sample_Source_NullableValueTypeTests_t _Nullable /* Beyond.NET.Sample.Source.NullableValueTypeTests */ self
-);
-
-#pragma mark - END APIs of Beyond.NET.Sample.Source.NullableValueTypeTests
-
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.Transformer.BuiltInTransformers
 Beyond_NET_Sample_Transformer_StringTransformerDelegate_t _Nullable /* Beyond.NET.Sample.Transformer.StringTransformerDelegate */

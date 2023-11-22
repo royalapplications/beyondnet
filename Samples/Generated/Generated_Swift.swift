@@ -1,5 +1,5 @@
-// Number of generated types: 1755
-// Number of generated members: 5649
+// Number of generated types: 1754
+// Number of generated members: 5660
 
 // MARK: - BEGIN Header
 import Foundation
@@ -108758,6 +108758,247 @@ public class Beyond_NET_Sample_IndexerTests /* Beyond.NET.Sample.IndexerTests */
 }
 
 
+public class Beyond_NET_Sample_NullabilityTests /* Beyond.NET.Sample.NullabilityTests */: System_Object {
+	public override class var typeName: String { get {
+		"NullabilityTests"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"Beyond.NET.Sample.NullabilityTests"
+	}}
+
+	public func methodWithNonNullableStringReturnValue() throws -> System_String? /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = Beyond_NET_Sample_NullabilityTests_MethodWithNonNullableStringReturnValue(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func methodWithNullableStringReturnValue() throws -> System_String? /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = Beyond_NET_Sample_NullabilityTests_MethodWithNullableStringReturnValue(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func methodWithNonNullableStringParameter(_ value: System_String /* System.String */) throws -> System_String? /* System.String */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = Beyond_NET_Sample_NullabilityTests_MethodWithNonNullableStringParameter(self.__handle, valueC, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func methodWithNullableStringParameter(_ value: System_String? /* System.String */) throws -> System_String? /* System.String */ {
+		let valueC = value?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = Beyond_NET_Sample_NullabilityTests_MethodWithNullableStringParameter(self.__handle, valueC, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public convenience init?() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = Beyond_NET_Sample_NullabilityTests_Create(&__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		guard let __returnValueC else { return nil }
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	public var nonNullableStringProperty: System_String? /* System.String */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = Beyond_NET_Sample_NullabilityTests_NonNullableStringProperty_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	public func nonNullableStringProperty_set(_ value: System_String? /* System.String */) throws {
+		let valueC = value?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		Beyond_NET_Sample_NullabilityTests_NonNullableStringProperty_Set(self.__handle, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		
+	}
+	
+	
+	public var nullableStringProperty: System_String? /* System.String */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = Beyond_NET_Sample_NullabilityTests_NullableStringProperty_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	public func nullableStringProperty_set(_ value: System_String? /* System.String */) throws {
+		let valueC = value?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		Beyond_NET_Sample_NullabilityTests_NullableStringProperty_Set(self.__handle, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		
+	}
+	
+	
+	public var nonNullableStringField: System_String? /* System.String */ { get {
+		
+		
+		let __returnValueC = Beyond_NET_Sample_NullabilityTests_NonNullableStringField_Get(self.__handle)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		return __returnValue
+		
+	}}
+	public func nonNullableStringField_set(_ value: System_String? /* System.String */) {
+		let valueC = value?.__handle
+		
+		
+		Beyond_NET_Sample_NullabilityTests_NonNullableStringField_Set(self.__handle, valueC)
+		
+		
+	}
+	
+	
+	public var nullableStringField: System_String? /* System.String */ { get {
+		
+		
+		let __returnValueC = Beyond_NET_Sample_NullabilityTests_NullableStringField_Get(self.__handle)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		return __returnValue
+		
+	}}
+	public func nullableStringField_set(_ value: System_String? /* System.String */) {
+		let valueC = value?.__handle
+		
+		
+		Beyond_NET_Sample_NullabilityTests_NullableStringField_Set(self.__handle, valueC)
+		
+		
+	}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: Beyond_NET_Sample_NullabilityTests_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		Beyond_NET_Sample_NullabilityTests_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
 public class Beyond_NET_Sample_OverloadTests /* Beyond.NET.Sample.OverloadTests */: System_Object {
 	public override class var typeName: String { get {
 		"OverloadTests"
@@ -112588,72 +112829,6 @@ public class Beyond_NET_Sample_SubclassingTests_MySubClass /* Beyond.NET.Sample.
 }
 
 
-public class Beyond_NET_Sample_Source_NullableValueTypeTests /* Beyond.NET.Sample.Source.NullableValueTypeTests */: System_Object {
-	public override class var typeName: String { get {
-		"NullableValueTypeTests"
-	}}
-
-	public override class var fullTypeName: String { get {
-		"Beyond.NET.Sample.Source.NullableValueTypeTests"
-	}}
-
-	public convenience init?() throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = Beyond_NET_Sample_Source_NullableValueTypeTests_Create(&__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		guard let __returnValueC else { return nil }
-		
-		self.init(handle: __returnValueC)
-		
-	}
-	
-	public class var nullGuid: System_Guid? /* System.Nullable<System.Guid> */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = Beyond_NET_Sample_Source_NullableValueTypeTests_NullGuid_Get(&__exceptionC)
-		
-		let __returnValue = System_Guid(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.error
-		    
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}}
-	
-	
-	public override class var typeOf: System_Type /* System.Type */ { get {
-		return System_Type(handle: Beyond_NET_Sample_Source_NullableValueTypeTests_TypeOf())
-		
-	}}
-	
-	internal override func destroy() {
-		Beyond_NET_Sample_Source_NullableValueTypeTests_Destroy(self.__handle)
-		
-	}
-	
-	
-}
-
-
-
-
 public class Beyond_NET_Sample_Transformer_BuiltInTransformers /* Beyond.NET.Sample.Transformer.BuiltInTransformers */: System_Object {
 	public override class var typeName: String { get {
 		"BuiltInTransformers"
@@ -115729,6 +115904,7 @@ public extension Beyond.NET {
 		public typealias GenericTests = Beyond_NET_Sample_GenericTests
 		public typealias GenericTests_SimpleKeyValuePair = Beyond_NET_Sample_GenericTests_SimpleKeyValuePair
 		public typealias IndexerTests = Beyond_NET_Sample_IndexerTests
+		public typealias NullabilityTests = Beyond_NET_Sample_NullabilityTests
 		public typealias OverloadTests = Beyond_NET_Sample_OverloadTests
 		public typealias Person = Beyond_NET_Sample_Person
 		public typealias Person_Array = Beyond_NET_Sample_Person_Array
@@ -115766,15 +115942,6 @@ public extension Beyond.NET.Sample {
     struct SubclassingTests {
 		public typealias MyBaseClass = Beyond_NET_Sample_SubclassingTests_MyBaseClass
 		public typealias MySubClass = Beyond_NET_Sample_SubclassingTests_MySubClass
-		
-    }
-}
-
-
-
-public extension Beyond.NET.Sample {
-    struct Source {
-		public typealias NullableValueTypeTests = Beyond_NET_Sample_Source_NullableValueTypeTests
 		
     }
 }
