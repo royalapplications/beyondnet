@@ -108,7 +108,7 @@ public class Hello
 - Ensure the `AssemblyPath` matches the path where your dll was built.
 - Note that you can enter the path relative to the working directory like in the config example above.
 - Run the generator: `beyondnetgen Config.json`.
-- On a Mac Studio M2 Ultra, this takes a little more than a minute while on an 8-Core Intel Xeon iMac Pro, it takes around 3 minutes. So it might be worth getting some coffee depending on your hardware.
+- On a Mac Studio M2 Ultra, this takes a little more than a minute while on an 8-Core Intel Xeon iMac Pro, it takes around 3 minutes. So it might be worth getting some coffee depending on your hardware. (TODO: Outdated info, as now with parallel building support the times are way better)
 - The individual code generation and builds steps are shown in the terminal.
 - The last printed line should include the path where the build output has been written to (ie. `Build Output has been written to "/Path/To/BeyondDemo/bin/Release/net8.0/publish"`).
 - Check the contents of the build output path: `ls bin/Release/net8.0/publish`
@@ -154,14 +154,10 @@ struct ContentView: View {
             let nameDN = name.dotNETString()
             
             // Create an instance of the .NET class "Hello"
-            guard let hello = try BeyondDemo.Hello(nameDN) else {
-                fatalError("BeyondDemo.Hello ctor returned nil")
-            }
+            let hello = try BeyondDemo.Hello(nameDN)
             
             // Get a .NET System.String containing the greeting
-            guard let theGreetingDN = try hello.getGreeting() else {
-                fatalError("BeyondDemo.Hello.GetGreeting returned nil")
-            }
+            let theGreetingDN = try hello.getGreeting()
             
             // Convert the .NET System.String to a Swift String
             let theGreeting = theGreetingDN.string()
@@ -174,8 +170,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View { ContentView() }
+#Preview {
+    ContentView()
 }
 ```
 
