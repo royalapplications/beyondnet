@@ -42,7 +42,6 @@ final class StructTestTests: XCTestCase {
         XCTAssertNil(nullRetVal)
         
         let structRetVal = try Beyond_NET_Sample_StructTest.nonNullInstanceProperty
-        // TODO: Why is this nullable here
         XCTAssertEqual(try structRetVal?.name?.string(), "Test")
         
         let newName = "NotTest"
@@ -53,7 +52,6 @@ final class StructTestTests: XCTestCase {
         XCTAssertNil(nullRetVal2)
         
         let structRetVal2 = try Beyond_NET_Sample_StructTest.getNullableStructReturnValue(false)
-        // TODO: Why is this nullable here
         XCTAssertEqual(try structRetVal2?.name?.string(), "Test")
         
         let newName2 = "NotTest"
