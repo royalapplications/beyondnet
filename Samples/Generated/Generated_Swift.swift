@@ -1,5 +1,5 @@
 // Number of generated types: 1754
-// Number of generated members: 5660
+// Number of generated members: 5662
 
 // MARK: - BEGIN Header
 import Foundation
@@ -108446,6 +108446,27 @@ public class Beyond_NET_Sample_NullabilityTests /* Beyond.NET.Sample.Nullability
 		
 	}
 	
+	public func methodWithNonNullableStringParameterThatThrows(_ value: System_String /* System.String */) throws -> System_String /* System.String */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = Beyond_NET_Sample_NullabilityTests_MethodWithNonNullableStringParameterThatThrows(self.__handle, valueC, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
 	public func methodWithNullableStringParameter(_ value: System_String? /* System.String */) throws -> System_String? /* System.String */ {
 		let valueC = value?.__handle
 		
@@ -108473,6 +108494,24 @@ public class Beyond_NET_Sample_NullabilityTests /* Beyond.NET.Sample.Nullability
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = Beyond_NET_Sample_NullabilityTests_Create(&__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.error
+		    
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	public convenience init(_ throwAnException: Bool /* System.Boolean */) throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = Beyond_NET_Sample_NullabilityTests_Create_1(throwAnException, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)

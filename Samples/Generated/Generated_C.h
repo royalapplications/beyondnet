@@ -1,5 +1,5 @@
 // Number of generated types: 1757
-// Number of generated members: 5662
+// Number of generated members: 5664
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -45330,6 +45330,13 @@ Beyond_NET_Sample_NullabilityTests_MethodWithNonNullableStringParameter(
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
+System_String_t _Nonnull /* System.String */
+Beyond_NET_Sample_NullabilityTests_MethodWithNonNullableStringParameterThatThrows(
+	Beyond_NET_Sample_NullabilityTests_t _Nullable /* Beyond.NET.Sample.NullabilityTests */ self,
+	System_String_t _Nonnull /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
 System_String_t _Nullable /* System.String */
 Beyond_NET_Sample_NullabilityTests_MethodWithNullableStringParameter(
 	Beyond_NET_Sample_NullabilityTests_t _Nullable /* Beyond.NET.Sample.NullabilityTests */ self,
@@ -45339,6 +45346,12 @@ Beyond_NET_Sample_NullabilityTests_MethodWithNullableStringParameter(
 
 Beyond_NET_Sample_NullabilityTests_t _Nonnull /* Beyond.NET.Sample.NullabilityTests */
 Beyond_NET_Sample_NullabilityTests_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+Beyond_NET_Sample_NullabilityTests_t _Nonnull /* Beyond.NET.Sample.NullabilityTests */
+Beyond_NET_Sample_NullabilityTests_Create_1(
+	bool /* System.Boolean */ throwAnException,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 

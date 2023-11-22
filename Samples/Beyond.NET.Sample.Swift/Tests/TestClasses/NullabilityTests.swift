@@ -12,7 +12,7 @@ final class NullabilityTests: XCTestCase {
         Self.sharedTearDown()
     }
     
-    func testNullability() throws {
+    func testMethodPropertyAndFieldNullability() throws {
         let test = try XCTUnwrap(Beyond.NET.Sample.NullabilityTests())
         
         let helloString = "Hello".dotNETString()
@@ -22,11 +22,17 @@ final class NullabilityTests: XCTestCase {
         XCTAssertEqual(try test.methodWithNullableStringParameter(nilString), nilString)
         
         XCTAssertEqual(try test.nonNullableStringProperty, helloString)
+        XCTAssertEqual(test.nonNullableStringField, helloString)
         XCTAssertEqual(try test.nullableStringProperty, nilString)
+        XCTAssertEqual(test.nullableStringField, nilString)
         
         XCTAssertEqual(try test.methodWithNonNullableStringReturnValue(), helloString)
         XCTAssertEqual(try test.methodWithNullableStringReturnValue(), nilString)
+    }
+    
+    func testConstructor() {
+        let pleaseThrow = true
         
-        // TODO: Test Fields
+        XCTAssertThrowsError(try Beyond.NET.Sample.NullabilityTests(pleaseThrow))
     }
 }
