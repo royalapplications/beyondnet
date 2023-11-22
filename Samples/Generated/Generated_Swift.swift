@@ -5576,7 +5576,7 @@ public class System_Object /* System.Object */: DNObject {
 		
 	}
 	
-	public convenience init?() throws {
+	public convenience init() throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -5589,8 +5589,6 @@ public class System_Object /* System.Object */: DNObject {
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -9394,7 +9392,7 @@ public class System_Reflection_MemberInfo /* System.Reflection.MemberInfo */: Sy
 		
 	}
 	
-	public func getCustomAttributesData() throws -> System_Collections_Generic_IList_A1? /* System.Collections.Generic.IList<System.Reflection.CustomAttributeData> */ {
+	public func getCustomAttributesData() throws -> System_Collections_Generic_IList_A1 /* System.Collections.Generic.IList<System.Reflection.CustomAttributeData> */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -9556,7 +9554,7 @@ public class System_Reflection_MemberInfo /* System.Reflection.MemberInfo */: Sy
 	}}
 	
 	
-	public var customAttributes: System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.CustomAttributeData> */ { get throws {
+	public var customAttributes: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Reflection.CustomAttributeData> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -10572,7 +10570,7 @@ public class System_Array /* System.Array */: System_Object {
 		
 	}
 	
-	public class func empty(T: System_Type /* System.Type */) throws -> System_Array? /* System.Array */ {
+	public class func empty(T: System_Type /* System.Type */) throws -> System_Array /* System.Array */ {
 		let TC = T.__handle
 		
 		
@@ -12496,7 +12494,7 @@ public class System_Enum /* System.Enum */: System_ValueType {
 		
 	}
 	
-	public class func getValues(TEnum: System_Type /* System.Type */) throws -> System_Array? /* System.Array */ {
+	public class func getValues(TEnum: System_Type /* System.Type */) throws -> System_Array /* System.Array */ {
 		let TEnumC = TEnum.__handle
 		
 		
@@ -12683,7 +12681,7 @@ public class System_Enum /* System.Enum */: System_ValueType {
 		
 	}
 	
-	public class func parse(TEnum: System_Type /* System.Type */, _ value: System_String? /* System.String */) throws -> System_Object? /* System.Object */ {
+	public class func parse(TEnum: System_Type /* System.Type */, _ value: System_String? /* System.String */) throws -> System_Object /* System.Object */ {
 		let TEnumC = TEnum.__handle
 		let valueC = value?.__handle
 		
@@ -12705,7 +12703,7 @@ public class System_Enum /* System.Enum */: System_ValueType {
 		
 	}
 	
-	public class func parse(TEnum: System_Type /* System.Type */, _ value: System_String? /* System.String */, _ ignoreCase: Bool /* System.Boolean */) throws -> System_Object? /* System.Object */ {
+	public class func parse(TEnum: System_Type /* System.Type */, _ value: System_String? /* System.String */, _ ignoreCase: Bool /* System.Boolean */) throws -> System_Object /* System.Object */ {
 		let TEnumC = TEnum.__handle
 		let valueC = value?.__handle
 		
@@ -16262,7 +16260,7 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
-	public convenience init?(_ value: System_Char_Array? /* System.Char[] */) throws {
+	public convenience init(_ value: System_Char_Array? /* System.Char[] */) throws {
 		let valueC = value?.__handle
 		
 		
@@ -16277,13 +16275,11 @@ public class System_String /* System.String */: System_Object {
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ value: System_Char_Array /* System.Char[] */, _ startIndex: Int32 /* System.Int32 */, _ length: Int32 /* System.Int32 */) throws {
+	public convenience init(_ value: System_Char_Array /* System.Char[] */, _ startIndex: Int32 /* System.Int32 */, _ length: Int32 /* System.Int32 */) throws {
 		let valueC = value.__handle
 		
 		
@@ -16298,13 +16294,11 @@ public class System_String /* System.String */: System_Object {
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ c: DNChar /* System.Char */, _ count: Int32 /* System.Int32 */) throws {
+	public convenience init(_ c: DNChar /* System.Char */, _ count: Int32 /* System.Int32 */) throws {
 		let cC = c.cValue
 		
 		
@@ -16318,8 +16312,6 @@ public class System_String /* System.String */: System_Object {
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -16643,7 +16635,7 @@ public class System_Numerics_IBinaryNumber_A1 /* System.Numerics.IBinaryNumber<>
 		
 	}
 	
-	public class func log2(TSelf: System_Type /* System.Type */, _ value: System_Object? /* System.Object */) throws -> System_Object? /* System.Object */ {
+	public class func log2(TSelf: System_Type /* System.Type */, _ value: System_Object? /* System.Object */) throws -> System_Object /* System.Object */ {
 		let TSelfC = TSelf.__handle
 		let valueC = value?.__handle
 		
@@ -16665,7 +16657,7 @@ public class System_Numerics_IBinaryNumber_A1 /* System.Numerics.IBinaryNumber<>
 		
 	}
 	
-	public class func allBitsSet(TSelf: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public class func allBitsSet(TSelf: System_Type /* System.Type */) throws -> System_Object /* System.Object */ {
 		let TSelfC = TSelf.__handle
 		
 		
@@ -17339,7 +17331,7 @@ public class System_IParsable_A1 /* System.IParsable<> */: DNObject {
 		"System.IParsable<>"
 	}}
 
-	public class func parse(TSelf: System_Type /* System.Type */, _ s: System_String? /* System.String */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_Object? /* System.Object */ {
+	public class func parse(TSelf: System_Type /* System.Type */, _ s: System_String? /* System.String */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_Object /* System.Object */ {
 		let TSelfC = TSelf.__handle
 		let sC = s?.__handle
 		let providerC = provider?.__handle
@@ -17922,7 +17914,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 	}
 	
-	public convenience init?(_ name: System_String /* System.String */) throws {
+	public convenience init(_ name: System_String /* System.String */) throws {
 		let nameC = name.__handle
 		
 		
@@ -17937,13 +17929,11 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ name: System_String /* System.String */, _ useUserOverride: Bool /* System.Boolean */) throws {
+	public convenience init(_ name: System_String /* System.String */, _ useUserOverride: Bool /* System.Boolean */) throws {
 		let nameC = name.__handle
 		
 		
@@ -17958,13 +17948,11 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ culture: Int32 /* System.Int32 */) throws {
+	public convenience init(_ culture: Int32 /* System.Int32 */) throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -17978,13 +17966,11 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ culture: Int32 /* System.Int32 */, _ useUserOverride: Bool /* System.Boolean */) throws {
+	public convenience init(_ culture: Int32 /* System.Int32 */, _ useUserOverride: Bool /* System.Boolean */) throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -17997,8 +17983,6 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -20746,7 +20730,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
-	public func getCustomAttributesData() throws -> System_Collections_Generic_IList_A1? /* System.Collections.Generic.IList<System.Reflection.CustomAttributeData> */ {
+	public func getCustomAttributesData() throws -> System_Collections_Generic_IList_A1 /* System.Collections.Generic.IList<System.Reflection.CustomAttributeData> */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -21476,7 +21460,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
-	public var definedTypes: System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.TypeInfo> */ { get throws {
+	public var definedTypes: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Reflection.TypeInfo> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -21497,7 +21481,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 	}}
 	
 	
-	public var exportedTypes: System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Type> */ { get throws {
+	public var exportedTypes: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Type> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -21699,7 +21683,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 	}}
 	
 	
-	public var customAttributes: System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.CustomAttributeData> */ { get throws {
+	public var customAttributes: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Reflection.CustomAttributeData> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -21762,7 +21746,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 	}}
 	
 	
-	public var modules: System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.Module> */ { get throws {
+	public var modules: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Reflection.Module> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -22572,7 +22556,7 @@ public class System_Runtime_Serialization_SerializationInfo /* System.Runtime.Se
 		
 	}
 	
-	public convenience init?(_ type: System_Type /* System.Type */, _ converter: System_Runtime_Serialization_IFormatterConverter /* System.Runtime.Serialization.IFormatterConverter */) throws {
+	public convenience init(_ type: System_Type /* System.Type */, _ converter: System_Runtime_Serialization_IFormatterConverter /* System.Runtime.Serialization.IFormatterConverter */) throws {
 		let typeC = type.__handle
 		let converterC = converter.__handle
 		
@@ -22588,13 +22572,11 @@ public class System_Runtime_Serialization_SerializationInfo /* System.Runtime.Se
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ type: System_Type /* System.Type */, _ converter: System_Runtime_Serialization_IFormatterConverter /* System.Runtime.Serialization.IFormatterConverter */, _ requireSameTokenInPartialTrust: Bool /* System.Boolean */) throws {
+	public convenience init(_ type: System_Type /* System.Type */, _ converter: System_Runtime_Serialization_IFormatterConverter /* System.Runtime.Serialization.IFormatterConverter */, _ requireSameTokenInPartialTrust: Bool /* System.Boolean */) throws {
 		let typeC = type.__handle
 		let converterC = converter.__handle
 		
@@ -22609,8 +22591,6 @@ public class System_Runtime_Serialization_SerializationInfo /* System.Runtime.Se
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -23102,7 +23082,7 @@ public class System_Numerics_ISignedNumber_A1 /* System.Numerics.ISignedNumber<>
 		"System.Numerics.ISignedNumber<>"
 	}}
 
-	public class func negativeOne(TSelf: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public class func negativeOne(TSelf: System_Type /* System.Type */) throws -> System_Object /* System.Object */ {
 		let TSelfC = TSelf.__handle
 		
 		
@@ -25064,7 +25044,7 @@ public class System_Numerics_IPowerFunctions_A1 /* System.Numerics.IPowerFunctio
 		"System.Numerics.IPowerFunctions<>"
 	}}
 
-	public class func pow(TSelf: System_Type /* System.Type */, _ x: System_Object? /* System.Object */, _ y: System_Object? /* System.Object */) throws -> System_Object? /* System.Object */ {
+	public class func pow(TSelf: System_Type /* System.Type */, _ x: System_Object? /* System.Object */, _ y: System_Object? /* System.Object */) throws -> System_Object /* System.Object */ {
 		let TSelfC = TSelf.__handle
 		let xC = x?.__handle
 		let yC = y?.__handle
@@ -25113,7 +25093,7 @@ public class System_Numerics_IRootFunctions_A1 /* System.Numerics.IRootFunctions
 		"System.Numerics.IRootFunctions<>"
 	}}
 
-	public class func cbrt(TSelf: System_Type /* System.Type */, _ x: System_Object? /* System.Object */) throws -> System_Object? /* System.Object */ {
+	public class func cbrt(TSelf: System_Type /* System.Type */, _ x: System_Object? /* System.Object */) throws -> System_Object /* System.Object */ {
 		let TSelfC = TSelf.__handle
 		let xC = x?.__handle
 		
@@ -25135,7 +25115,7 @@ public class System_Numerics_IRootFunctions_A1 /* System.Numerics.IRootFunctions
 		
 	}
 	
-	public class func hypot(TSelf: System_Type /* System.Type */, _ x: System_Object? /* System.Object */, _ y: System_Object? /* System.Object */) throws -> System_Object? /* System.Object */ {
+	public class func hypot(TSelf: System_Type /* System.Type */, _ x: System_Object? /* System.Object */, _ y: System_Object? /* System.Object */) throws -> System_Object /* System.Object */ {
 		let TSelfC = TSelf.__handle
 		let xC = x?.__handle
 		let yC = y?.__handle
@@ -25158,7 +25138,7 @@ public class System_Numerics_IRootFunctions_A1 /* System.Numerics.IRootFunctions
 		
 	}
 	
-	public class func rootN(TSelf: System_Type /* System.Type */, _ x: System_Object? /* System.Object */, _ n: Int32 /* System.Int32 */) throws -> System_Object? /* System.Object */ {
+	public class func rootN(TSelf: System_Type /* System.Type */, _ x: System_Object? /* System.Object */, _ n: Int32 /* System.Int32 */) throws -> System_Object /* System.Object */ {
 		let TSelfC = TSelf.__handle
 		let xC = x?.__handle
 		
@@ -25180,7 +25160,7 @@ public class System_Numerics_IRootFunctions_A1 /* System.Numerics.IRootFunctions
 		
 	}
 	
-	public class func sqrt(TSelf: System_Type /* System.Type */, _ x: System_Object? /* System.Object */) throws -> System_Object? /* System.Object */ {
+	public class func sqrt(TSelf: System_Type /* System.Type */, _ x: System_Object? /* System.Object */) throws -> System_Object /* System.Object */ {
 		let TSelfC = TSelf.__handle
 		let xC = x?.__handle
 		
@@ -34395,7 +34375,7 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		
 	}
 	
-	public convenience init?(_ assemblyName: System_String /* System.String */) throws {
+	public convenience init(_ assemblyName: System_String /* System.String */) throws {
 		let assemblyNameC = assemblyName.__handle
 		
 		
@@ -34410,13 +34390,11 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?() throws {
+	public convenience init() throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -34429,8 +34407,6 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -35117,7 +35093,7 @@ public class System_Version /* System.Version */: System_Object {
 		
 	}
 	
-	public convenience init?(_ major: Int32 /* System.Int32 */, _ minor: Int32 /* System.Int32 */, _ build: Int32 /* System.Int32 */, _ revision: Int32 /* System.Int32 */) throws {
+	public convenience init(_ major: Int32 /* System.Int32 */, _ minor: Int32 /* System.Int32 */, _ build: Int32 /* System.Int32 */, _ revision: Int32 /* System.Int32 */) throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -35131,13 +35107,11 @@ public class System_Version /* System.Version */: System_Object {
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ major: Int32 /* System.Int32 */, _ minor: Int32 /* System.Int32 */, _ build: Int32 /* System.Int32 */) throws {
+	public convenience init(_ major: Int32 /* System.Int32 */, _ minor: Int32 /* System.Int32 */, _ build: Int32 /* System.Int32 */) throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -35151,13 +35125,11 @@ public class System_Version /* System.Version */: System_Object {
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ major: Int32 /* System.Int32 */, _ minor: Int32 /* System.Int32 */) throws {
+	public convenience init(_ major: Int32 /* System.Int32 */, _ minor: Int32 /* System.Int32 */) throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -35171,13 +35143,11 @@ public class System_Version /* System.Version */: System_Object {
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ version: System_String /* System.String */) throws {
+	public convenience init(_ version: System_String /* System.String */) throws {
 		let versionC = version.__handle
 		
 		
@@ -35192,13 +35162,11 @@ public class System_Version /* System.Version */: System_Object {
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?() throws {
+	public convenience init() throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -35211,8 +35179,6 @@ public class System_Version /* System.Version */: System_Object {
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -35360,7 +35326,7 @@ public class System_Reflection_StrongNameKeyPair /* System.Reflection.StrongName
 		"System.Reflection.StrongNameKeyPair"
 	}}
 
-	public convenience init?(_ keyPairFile: System_IO_FileStream /* System.IO.FileStream */) throws {
+	public convenience init(_ keyPairFile: System_IO_FileStream /* System.IO.FileStream */) throws {
 		let keyPairFileC = keyPairFile.__handle
 		
 		
@@ -35375,13 +35341,11 @@ public class System_Reflection_StrongNameKeyPair /* System.Reflection.StrongName
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ keyPairArray: System_Byte_Array /* System.Byte[] */) throws {
+	public convenience init(_ keyPairArray: System_Byte_Array /* System.Byte[] */) throws {
 		let keyPairArrayC = keyPairArray.__handle
 		
 		
@@ -35396,13 +35360,11 @@ public class System_Reflection_StrongNameKeyPair /* System.Reflection.StrongName
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ keyPairContainer: System_String /* System.String */) throws {
+	public convenience init(_ keyPairContainer: System_String /* System.String */) throws {
 		let keyPairContainerC = keyPairContainer.__handle
 		
 		
@@ -35416,8 +35378,6 @@ public class System_Reflection_StrongNameKeyPair /* System.Reflection.StrongName
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -35541,7 +35501,7 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		
 	}
 	
-	public override func readAsync(_ buffer: System_Byte_Array /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task_A1? /* System.Threading.Tasks.Task<System.Int32> */ {
+	public override func readAsync(_ buffer: System_Byte_Array /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<System.Int32> */ {
 		let bufferC = buffer.__handle
 		let cancellationTokenC = cancellationToken.__handle
 		
@@ -35869,7 +35829,7 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		
 	}
 	
-	public convenience init?(_ handle: UnsafeMutableRawPointer? /* System.IntPtr */, _ access: System_IO_FileAccess /* System.IO.FileAccess */) throws {
+	public convenience init(_ handle: UnsafeMutableRawPointer? /* System.IntPtr */, _ access: System_IO_FileAccess /* System.IO.FileAccess */) throws {
 		let accessC = access.cValue
 		
 		
@@ -35884,13 +35844,11 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ handle: UnsafeMutableRawPointer? /* System.IntPtr */, _ access: System_IO_FileAccess /* System.IO.FileAccess */, _ ownsHandle: Bool /* System.Boolean */) throws {
+	public convenience init(_ handle: UnsafeMutableRawPointer? /* System.IntPtr */, _ access: System_IO_FileAccess /* System.IO.FileAccess */, _ ownsHandle: Bool /* System.Boolean */) throws {
 		let accessC = access.cValue
 		
 		
@@ -35905,13 +35863,11 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ handle: UnsafeMutableRawPointer? /* System.IntPtr */, _ access: System_IO_FileAccess /* System.IO.FileAccess */, _ ownsHandle: Bool /* System.Boolean */, _ bufferSize: Int32 /* System.Int32 */) throws {
+	public convenience init(_ handle: UnsafeMutableRawPointer? /* System.IntPtr */, _ access: System_IO_FileAccess /* System.IO.FileAccess */, _ ownsHandle: Bool /* System.Boolean */, _ bufferSize: Int32 /* System.Int32 */) throws {
 		let accessC = access.cValue
 		
 		
@@ -35926,13 +35882,11 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ handle: UnsafeMutableRawPointer? /* System.IntPtr */, _ access: System_IO_FileAccess /* System.IO.FileAccess */, _ ownsHandle: Bool /* System.Boolean */, _ bufferSize: Int32 /* System.Int32 */, _ isAsync: Bool /* System.Boolean */) throws {
+	public convenience init(_ handle: UnsafeMutableRawPointer? /* System.IntPtr */, _ access: System_IO_FileAccess /* System.IO.FileAccess */, _ ownsHandle: Bool /* System.Boolean */, _ bufferSize: Int32 /* System.Int32 */, _ isAsync: Bool /* System.Boolean */) throws {
 		let accessC = access.cValue
 		
 		
@@ -35947,13 +35901,11 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ handle: Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeHandles.SafeFileHandle */, _ access: System_IO_FileAccess /* System.IO.FileAccess */) throws {
+	public convenience init(_ handle: Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeHandles.SafeFileHandle */, _ access: System_IO_FileAccess /* System.IO.FileAccess */) throws {
 		let handleC = handle.__handle
 		let accessC = access.cValue
 		
@@ -35969,13 +35921,11 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ handle: Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeHandles.SafeFileHandle */, _ access: System_IO_FileAccess /* System.IO.FileAccess */, _ bufferSize: Int32 /* System.Int32 */) throws {
+	public convenience init(_ handle: Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeHandles.SafeFileHandle */, _ access: System_IO_FileAccess /* System.IO.FileAccess */, _ bufferSize: Int32 /* System.Int32 */) throws {
 		let handleC = handle.__handle
 		let accessC = access.cValue
 		
@@ -35991,13 +35941,11 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ handle: Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeHandles.SafeFileHandle */, _ access: System_IO_FileAccess /* System.IO.FileAccess */, _ bufferSize: Int32 /* System.Int32 */, _ isAsync: Bool /* System.Boolean */) throws {
+	public convenience init(_ handle: Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeHandles.SafeFileHandle */, _ access: System_IO_FileAccess /* System.IO.FileAccess */, _ bufferSize: Int32 /* System.Int32 */, _ isAsync: Bool /* System.Boolean */) throws {
 		let handleC = handle.__handle
 		let accessC = access.cValue
 		
@@ -36013,13 +35961,11 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ path: System_String /* System.String */, _ mode: System_IO_FileMode /* System.IO.FileMode */) throws {
+	public convenience init(_ path: System_String /* System.String */, _ mode: System_IO_FileMode /* System.IO.FileMode */) throws {
 		let pathC = path.__handle
 		let modeC = mode.cValue
 		
@@ -36035,13 +35981,11 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ path: System_String /* System.String */, _ mode: System_IO_FileMode /* System.IO.FileMode */, _ access: System_IO_FileAccess /* System.IO.FileAccess */) throws {
+	public convenience init(_ path: System_String /* System.String */, _ mode: System_IO_FileMode /* System.IO.FileMode */, _ access: System_IO_FileAccess /* System.IO.FileAccess */) throws {
 		let pathC = path.__handle
 		let modeC = mode.cValue
 		let accessC = access.cValue
@@ -36058,13 +36002,11 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ path: System_String /* System.String */, _ mode: System_IO_FileMode /* System.IO.FileMode */, _ access: System_IO_FileAccess /* System.IO.FileAccess */, _ share: System_IO_FileShare /* System.IO.FileShare */) throws {
+	public convenience init(_ path: System_String /* System.String */, _ mode: System_IO_FileMode /* System.IO.FileMode */, _ access: System_IO_FileAccess /* System.IO.FileAccess */, _ share: System_IO_FileShare /* System.IO.FileShare */) throws {
 		let pathC = path.__handle
 		let modeC = mode.cValue
 		let accessC = access.cValue
@@ -36082,13 +36024,11 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ path: System_String /* System.String */, _ mode: System_IO_FileMode /* System.IO.FileMode */, _ access: System_IO_FileAccess /* System.IO.FileAccess */, _ share: System_IO_FileShare /* System.IO.FileShare */, _ bufferSize: Int32 /* System.Int32 */) throws {
+	public convenience init(_ path: System_String /* System.String */, _ mode: System_IO_FileMode /* System.IO.FileMode */, _ access: System_IO_FileAccess /* System.IO.FileAccess */, _ share: System_IO_FileShare /* System.IO.FileShare */, _ bufferSize: Int32 /* System.Int32 */) throws {
 		let pathC = path.__handle
 		let modeC = mode.cValue
 		let accessC = access.cValue
@@ -36106,13 +36046,11 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ path: System_String /* System.String */, _ mode: System_IO_FileMode /* System.IO.FileMode */, _ access: System_IO_FileAccess /* System.IO.FileAccess */, _ share: System_IO_FileShare /* System.IO.FileShare */, _ bufferSize: Int32 /* System.Int32 */, _ useAsync: Bool /* System.Boolean */) throws {
+	public convenience init(_ path: System_String /* System.String */, _ mode: System_IO_FileMode /* System.IO.FileMode */, _ access: System_IO_FileAccess /* System.IO.FileAccess */, _ share: System_IO_FileShare /* System.IO.FileShare */, _ bufferSize: Int32 /* System.Int32 */, _ useAsync: Bool /* System.Boolean */) throws {
 		let pathC = path.__handle
 		let modeC = mode.cValue
 		let accessC = access.cValue
@@ -36130,13 +36068,11 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ path: System_String /* System.String */, _ mode: System_IO_FileMode /* System.IO.FileMode */, _ access: System_IO_FileAccess /* System.IO.FileAccess */, _ share: System_IO_FileShare /* System.IO.FileShare */, _ bufferSize: Int32 /* System.Int32 */, _ options: System_IO_FileOptions /* System.IO.FileOptions */) throws {
+	public convenience init(_ path: System_String /* System.String */, _ mode: System_IO_FileMode /* System.IO.FileMode */, _ access: System_IO_FileAccess /* System.IO.FileAccess */, _ share: System_IO_FileShare /* System.IO.FileShare */, _ bufferSize: Int32 /* System.Int32 */, _ options: System_IO_FileOptions /* System.IO.FileOptions */) throws {
 		let pathC = path.__handle
 		let modeC = mode.cValue
 		let accessC = access.cValue
@@ -36155,13 +36091,11 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ path: System_String /* System.String */, _ options: System_IO_FileStreamOptions /* System.IO.FileStreamOptions */) throws {
+	public convenience init(_ path: System_String /* System.String */, _ options: System_IO_FileStreamOptions /* System.IO.FileStreamOptions */) throws {
 		let pathC = path.__handle
 		let optionsC = options.__handle
 		
@@ -36176,8 +36110,6 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -36673,7 +36605,7 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		
 	}
 	
-	public func readAsync(_ buffer: System_Byte_Array /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Threading_Tasks_Task_A1? /* System.Threading.Tasks.Task<System.Int32> */ {
+	public func readAsync(_ buffer: System_Byte_Array /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<System.Int32> */ {
 		let bufferC = buffer.__handle
 		
 		
@@ -36694,7 +36626,7 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		
 	}
 	
-	public func readAsync(_ buffer: System_Byte_Array /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task_A1? /* System.Threading.Tasks.Task<System.Int32> */ {
+	public func readAsync(_ buffer: System_Byte_Array /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<System.Int32> */ {
 		let bufferC = buffer.__handle
 		let cancellationTokenC = cancellationToken.__handle
 		
@@ -38496,7 +38428,7 @@ public class Microsoft_Win32_SafeHandles_SafeWaitHandle /* Microsoft.Win32.SafeH
 		"Microsoft.Win32.SafeHandles.SafeWaitHandle"
 	}}
 
-	public convenience init?() throws {
+	public convenience init() throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -38510,13 +38442,11 @@ public class Microsoft_Win32_SafeHandles_SafeWaitHandle /* Microsoft.Win32.SafeH
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ existingHandle: UnsafeMutableRawPointer? /* System.IntPtr */, _ ownsHandle: Bool /* System.Boolean */) throws {
+	public convenience init(_ existingHandle: UnsafeMutableRawPointer? /* System.IntPtr */, _ ownsHandle: Bool /* System.Boolean */) throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -38529,8 +38459,6 @@ public class Microsoft_Win32_SafeHandles_SafeWaitHandle /* Microsoft.Win32.SafeH
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -39069,7 +38997,7 @@ public class System_Exception /* System.Exception */: System_Object {
 		
 	}
 	
-	public convenience init?() throws {
+	public convenience init() throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -39083,13 +39011,11 @@ public class System_Exception /* System.Exception */: System_Object {
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ message: System_String? /* System.String */) throws {
+	public convenience init(_ message: System_String? /* System.String */) throws {
 		let messageC = message?.__handle
 		
 		
@@ -39104,13 +39030,11 @@ public class System_Exception /* System.Exception */: System_Object {
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ message: System_String? /* System.String */, _ innerException: System_Exception? /* System.Exception */) throws {
+	public convenience init(_ message: System_String? /* System.String */, _ innerException: System_Exception? /* System.Exception */) throws {
 		let messageC = message?.__handle
 		let innerExceptionC = innerException?.__handle
 		
@@ -39125,8 +39049,6 @@ public class System_Exception /* System.Exception */: System_Object {
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -41033,7 +40955,7 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 		
 	}
 	
-	public func getCustomAttributesData() throws -> System_Collections_Generic_IList_A1? /* System.Collections.Generic.IList<System.Reflection.CustomAttributeData> */ {
+	public func getCustomAttributesData() throws -> System_Collections_Generic_IList_A1 /* System.Collections.Generic.IList<System.Reflection.CustomAttributeData> */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -41454,7 +41376,7 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 	}}
 	
 	
-	public var customAttributes: System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.CustomAttributeData> */ { get throws {
+	public var customAttributes: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Reflection.CustomAttributeData> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -41565,7 +41487,7 @@ public class System_Reflection_CustomAttributeData /* System.Reflection.CustomAt
 		"System.Reflection.CustomAttributeData"
 	}}
 
-	public class func getCustomAttributes(_ target: System_Reflection_MemberInfo /* System.Reflection.MemberInfo */) throws -> System_Collections_Generic_IList_A1? /* System.Collections.Generic.IList<System.Reflection.CustomAttributeData> */ {
+	public class func getCustomAttributes(_ target: System_Reflection_MemberInfo /* System.Reflection.MemberInfo */) throws -> System_Collections_Generic_IList_A1 /* System.Collections.Generic.IList<System.Reflection.CustomAttributeData> */ {
 		let targetC = target.__handle
 		
 		
@@ -41586,7 +41508,7 @@ public class System_Reflection_CustomAttributeData /* System.Reflection.CustomAt
 		
 	}
 	
-	public class func getCustomAttributes(_ target: System_Reflection_Module /* System.Reflection.Module */) throws -> System_Collections_Generic_IList_A1? /* System.Collections.Generic.IList<System.Reflection.CustomAttributeData> */ {
+	public class func getCustomAttributes(_ target: System_Reflection_Module /* System.Reflection.Module */) throws -> System_Collections_Generic_IList_A1 /* System.Collections.Generic.IList<System.Reflection.CustomAttributeData> */ {
 		let targetC = target.__handle
 		
 		
@@ -41607,7 +41529,7 @@ public class System_Reflection_CustomAttributeData /* System.Reflection.CustomAt
 		
 	}
 	
-	public class func getCustomAttributes(_ target: System_Reflection_Assembly /* System.Reflection.Assembly */) throws -> System_Collections_Generic_IList_A1? /* System.Collections.Generic.IList<System.Reflection.CustomAttributeData> */ {
+	public class func getCustomAttributes(_ target: System_Reflection_Assembly /* System.Reflection.Assembly */) throws -> System_Collections_Generic_IList_A1 /* System.Collections.Generic.IList<System.Reflection.CustomAttributeData> */ {
 		let targetC = target.__handle
 		
 		
@@ -41628,7 +41550,7 @@ public class System_Reflection_CustomAttributeData /* System.Reflection.CustomAt
 		
 	}
 	
-	public class func getCustomAttributes(_ target: System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo */) throws -> System_Collections_Generic_IList_A1? /* System.Collections.Generic.IList<System.Reflection.CustomAttributeData> */ {
+	public class func getCustomAttributes(_ target: System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo */) throws -> System_Collections_Generic_IList_A1 /* System.Collections.Generic.IList<System.Reflection.CustomAttributeData> */ {
 		let targetC = target.__handle
 		
 		
@@ -41748,7 +41670,7 @@ public class System_Reflection_CustomAttributeData /* System.Reflection.CustomAt
 	}}
 	
 	
-	public var constructorArguments: System_Collections_Generic_IList_A1? /* System.Collections.Generic.IList<System.Reflection.CustomAttributeTypedArgument> */ { get throws {
+	public var constructorArguments: System_Collections_Generic_IList_A1 /* System.Collections.Generic.IList<System.Reflection.CustomAttributeTypedArgument> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -41769,7 +41691,7 @@ public class System_Reflection_CustomAttributeData /* System.Reflection.CustomAt
 	}}
 	
 	
-	public var namedArguments: System_Collections_Generic_IList_A1? /* System.Collections.Generic.IList<System.Reflection.CustomAttributeNamedArgument> */ { get throws {
+	public var namedArguments: System_Collections_Generic_IList_A1 /* System.Collections.Generic.IList<System.Reflection.CustomAttributeNamedArgument> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -41896,7 +41818,7 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 	}
 	
-	public func getCustomAttributesData() throws -> System_Collections_Generic_IList_A1? /* System.Collections.Generic.IList<System.Reflection.CustomAttributeData> */ {
+	public func getCustomAttributesData() throws -> System_Collections_Generic_IList_A1 /* System.Collections.Generic.IList<System.Reflection.CustomAttributeData> */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -42685,7 +42607,7 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 	}}
 	
 	
-	public var customAttributes: System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.CustomAttributeData> */ { get throws {
+	public var customAttributes: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Reflection.CustomAttributeData> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -45949,7 +45871,7 @@ public class System_Reflection_MethodBody /* System.Reflection.MethodBody */: Sy
 	}}
 	
 	
-	public var localVariables: System_Collections_Generic_IList_A1? /* System.Collections.Generic.IList<System.Reflection.LocalVariableInfo> */ { get throws {
+	public var localVariables: System_Collections_Generic_IList_A1 /* System.Collections.Generic.IList<System.Reflection.LocalVariableInfo> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -46008,7 +45930,7 @@ public class System_Reflection_MethodBody /* System.Reflection.MethodBody */: Sy
 	}}
 	
 	
-	public var exceptionHandlingClauses: System_Collections_Generic_IList_A1? /* System.Collections.Generic.IList<System.Reflection.ExceptionHandlingClause> */ { get throws {
+	public var exceptionHandlingClauses: System_Collections_Generic_IList_A1 /* System.Collections.Generic.IList<System.Reflection.ExceptionHandlingClause> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -47727,7 +47649,7 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 	}
 	
-	public class func whenAny(_ tasks: System_Threading_Tasks_Task_Array /* System.Threading.Tasks.Task[] */) throws -> System_Threading_Tasks_Task_A1? /* System.Threading.Tasks.Task<System.Threading.Tasks.Task> */ {
+	public class func whenAny(_ tasks: System_Threading_Tasks_Task_Array /* System.Threading.Tasks.Task[] */) throws -> System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<System.Threading.Tasks.Task> */ {
 		let tasksC = tasks.__handle
 		
 		
@@ -47748,7 +47670,7 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 	}
 	
-	public class func whenAny(_ task1: System_Threading_Tasks_Task /* System.Threading.Tasks.Task */, _ task2: System_Threading_Tasks_Task /* System.Threading.Tasks.Task */) throws -> System_Threading_Tasks_Task_A1? /* System.Threading.Tasks.Task<System.Threading.Tasks.Task> */ {
+	public class func whenAny(_ task1: System_Threading_Tasks_Task /* System.Threading.Tasks.Task */, _ task2: System_Threading_Tasks_Task /* System.Threading.Tasks.Task */) throws -> System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<System.Threading.Tasks.Task> */ {
 		let task1C = task1.__handle
 		let task2C = task2.__handle
 		
@@ -47770,7 +47692,7 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 	}
 	
-	public class func whenAny(_ tasks: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Threading.Tasks.Task> */) throws -> System_Threading_Tasks_Task_A1? /* System.Threading.Tasks.Task<System.Threading.Tasks.Task> */ {
+	public class func whenAny(_ tasks: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Threading.Tasks.Task> */) throws -> System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<System.Threading.Tasks.Task> */ {
 		let tasksC = tasks.__handle
 		
 		
@@ -47791,7 +47713,7 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 	}
 	
-	public convenience init?(_ action: System_Action /* System.Action */) throws {
+	public convenience init(_ action: System_Action /* System.Action */) throws {
 		let actionC = action.__handle
 		
 		
@@ -47806,13 +47728,11 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ action: System_Action /* System.Action */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws {
+	public convenience init(_ action: System_Action /* System.Action */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws {
 		let actionC = action.__handle
 		let cancellationTokenC = cancellationToken.__handle
 		
@@ -47828,13 +47748,11 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ action: System_Action /* System.Action */, _ creationOptions: System_Threading_Tasks_TaskCreationOptions /* System.Threading.Tasks.TaskCreationOptions */) throws {
+	public convenience init(_ action: System_Action /* System.Action */, _ creationOptions: System_Threading_Tasks_TaskCreationOptions /* System.Threading.Tasks.TaskCreationOptions */) throws {
 		let actionC = action.__handle
 		let creationOptionsC = creationOptions.cValue
 		
@@ -47850,13 +47768,11 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ action: System_Action /* System.Action */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */, _ creationOptions: System_Threading_Tasks_TaskCreationOptions /* System.Threading.Tasks.TaskCreationOptions */) throws {
+	public convenience init(_ action: System_Action /* System.Action */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */, _ creationOptions: System_Threading_Tasks_TaskCreationOptions /* System.Threading.Tasks.TaskCreationOptions */) throws {
 		let actionC = action.__handle
 		let cancellationTokenC = cancellationToken.__handle
 		let creationOptionsC = creationOptions.cValue
@@ -47872,8 +47788,6 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -48428,7 +48342,7 @@ public class System_AggregateException /* System.AggregateException */: System_E
 		
 	}
 	
-	public convenience init?() throws {
+	public convenience init() throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -48442,13 +48356,11 @@ public class System_AggregateException /* System.AggregateException */: System_E
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ message: System_String? /* System.String */) throws {
+	public convenience init(_ message: System_String? /* System.String */) throws {
 		let messageC = message?.__handle
 		
 		
@@ -48463,13 +48375,11 @@ public class System_AggregateException /* System.AggregateException */: System_E
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ message: System_String? /* System.String */, _ innerException: System_Exception /* System.Exception */) throws {
+	public convenience init(_ message: System_String? /* System.String */, _ innerException: System_Exception /* System.Exception */) throws {
 		let messageC = message?.__handle
 		let innerExceptionC = innerException.__handle
 		
@@ -48485,13 +48395,11 @@ public class System_AggregateException /* System.AggregateException */: System_E
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ innerExceptions: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Exception> */) throws {
+	public convenience init(_ innerExceptions: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Exception> */) throws {
 		let innerExceptionsC = innerExceptions.__handle
 		
 		
@@ -48506,13 +48414,11 @@ public class System_AggregateException /* System.AggregateException */: System_E
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ innerExceptions: System_Exception_Array /* System.Exception[] */) throws {
+	public convenience init(_ innerExceptions: System_Exception_Array /* System.Exception[] */) throws {
 		let innerExceptionsC = innerExceptions.__handle
 		
 		
@@ -48527,13 +48433,11 @@ public class System_AggregateException /* System.AggregateException */: System_E
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ message: System_String? /* System.String */, _ innerExceptions: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Exception> */) throws {
+	public convenience init(_ message: System_String? /* System.String */, _ innerExceptions: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Exception> */) throws {
 		let messageC = message?.__handle
 		let innerExceptionsC = innerExceptions.__handle
 		
@@ -48549,13 +48453,11 @@ public class System_AggregateException /* System.AggregateException */: System_E
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ message: System_String? /* System.String */, _ innerExceptions: System_Exception_Array /* System.Exception[] */) throws {
+	public convenience init(_ message: System_String? /* System.String */, _ innerExceptions: System_Exception_Array /* System.Exception[] */) throws {
 		let messageC = message?.__handle
 		let innerExceptionsC = innerExceptions.__handle
 		
@@ -48571,13 +48473,11 @@ public class System_AggregateException /* System.AggregateException */: System_E
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public var innerExceptions: System_Collections_ObjectModel_ReadOnlyCollection_A1? /* System.Collections.ObjectModel.ReadOnlyCollection<System.Exception> */ { get throws {
+	public var innerExceptions: System_Collections_ObjectModel_ReadOnlyCollection_A1 /* System.Collections.ObjectModel.ReadOnlyCollection<System.Exception> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -48701,7 +48601,7 @@ public class System_Collections_ObjectModel_ReadOnlyCollection_A1 /* System.Coll
 		
 	}
 	
-	public class func empty(T: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public class func empty(T: System_Type /* System.Type */) throws -> System_Object /* System.Object */ {
 		let TC = T.__handle
 		
 		
@@ -48908,7 +48808,7 @@ public class System_Threading_Tasks_TaskFactory /* System.Threading.Tasks.TaskFa
 		
 	}
 	
-	public convenience init?() throws {
+	public convenience init() throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -48922,13 +48822,11 @@ public class System_Threading_Tasks_TaskFactory /* System.Threading.Tasks.TaskFa
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws {
+	public convenience init(_ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws {
 		let cancellationTokenC = cancellationToken.__handle
 		
 		
@@ -48943,13 +48841,11 @@ public class System_Threading_Tasks_TaskFactory /* System.Threading.Tasks.TaskFa
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ scheduler: System_Threading_Tasks_TaskScheduler? /* System.Threading.Tasks.TaskScheduler */) throws {
+	public convenience init(_ scheduler: System_Threading_Tasks_TaskScheduler? /* System.Threading.Tasks.TaskScheduler */) throws {
 		let schedulerC = scheduler?.__handle
 		
 		
@@ -48964,13 +48860,11 @@ public class System_Threading_Tasks_TaskFactory /* System.Threading.Tasks.TaskFa
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ creationOptions: System_Threading_Tasks_TaskCreationOptions /* System.Threading.Tasks.TaskCreationOptions */, _ continuationOptions: System_Threading_Tasks_TaskContinuationOptions /* System.Threading.Tasks.TaskContinuationOptions */) throws {
+	public convenience init(_ creationOptions: System_Threading_Tasks_TaskCreationOptions /* System.Threading.Tasks.TaskCreationOptions */, _ continuationOptions: System_Threading_Tasks_TaskContinuationOptions /* System.Threading.Tasks.TaskContinuationOptions */) throws {
 		let creationOptionsC = creationOptions.cValue
 		let continuationOptionsC = continuationOptions.cValue
 		
@@ -48986,13 +48880,11 @@ public class System_Threading_Tasks_TaskFactory /* System.Threading.Tasks.TaskFa
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */, _ creationOptions: System_Threading_Tasks_TaskCreationOptions /* System.Threading.Tasks.TaskCreationOptions */, _ continuationOptions: System_Threading_Tasks_TaskContinuationOptions /* System.Threading.Tasks.TaskContinuationOptions */, _ scheduler: System_Threading_Tasks_TaskScheduler? /* System.Threading.Tasks.TaskScheduler */) throws {
+	public convenience init(_ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */, _ creationOptions: System_Threading_Tasks_TaskCreationOptions /* System.Threading.Tasks.TaskCreationOptions */, _ continuationOptions: System_Threading_Tasks_TaskContinuationOptions /* System.Threading.Tasks.TaskContinuationOptions */, _ scheduler: System_Threading_Tasks_TaskScheduler? /* System.Threading.Tasks.TaskScheduler */) throws {
 		let cancellationTokenC = cancellationToken.__handle
 		let creationOptionsC = creationOptions.cValue
 		let continuationOptionsC = continuationOptions.cValue
@@ -49009,8 +48901,6 @@ public class System_Threading_Tasks_TaskFactory /* System.Threading.Tasks.TaskFa
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -52060,7 +51950,7 @@ public class System_TimeZoneInfo /* System.TimeZoneInfo */: System_Object {
 		
 	}
 	
-	public class func getSystemTimeZones() throws -> System_Collections_ObjectModel_ReadOnlyCollection_A1? /* System.Collections.ObjectModel.ReadOnlyCollection<System.TimeZoneInfo> */ {
+	public class func getSystemTimeZones() throws -> System_Collections_ObjectModel_ReadOnlyCollection_A1 /* System.Collections.ObjectModel.ReadOnlyCollection<System.TimeZoneInfo> */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -52080,7 +51970,7 @@ public class System_TimeZoneInfo /* System.TimeZoneInfo */: System_Object {
 		
 	}
 	
-	public class func getSystemTimeZones(_ skipSorting: Bool /* System.Boolean */) throws -> System_Collections_ObjectModel_ReadOnlyCollection_A1? /* System.Collections.ObjectModel.ReadOnlyCollection<System.TimeZoneInfo> */ {
+	public class func getSystemTimeZones(_ skipSorting: Bool /* System.Boolean */) throws -> System_Collections_ObjectModel_ReadOnlyCollection_A1 /* System.Collections.ObjectModel.ReadOnlyCollection<System.TimeZoneInfo> */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -53176,7 +53066,7 @@ public class System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<> */:
 		"System.Threading.Tasks.Task<>"
 	}}
 
-	public func waitAsync(TResult: System_Type /* System.Type */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Object? /* System.Object */ {
+	public func waitAsync(TResult: System_Type /* System.Type */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Object /* System.Object */ {
 		let TResultC = TResult.__handle
 		let cancellationTokenC = cancellationToken.__handle
 		
@@ -53198,7 +53088,7 @@ public class System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<> */:
 		
 	}
 	
-	public func waitAsync(TResult: System_Type /* System.Type */, _ timeout: System_TimeSpan /* System.TimeSpan */) throws -> System_Object? /* System.Object */ {
+	public func waitAsync(TResult: System_Type /* System.Type */, _ timeout: System_TimeSpan /* System.TimeSpan */) throws -> System_Object /* System.Object */ {
 		let TResultC = TResult.__handle
 		let timeoutC = timeout.__handle
 		
@@ -53220,7 +53110,7 @@ public class System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<> */:
 		
 	}
 	
-	public func waitAsync(TResult: System_Type /* System.Type */, _ timeout: System_TimeSpan /* System.TimeSpan */, _ timeProvider: System_TimeProvider? /* System.TimeProvider */) throws -> System_Object? /* System.Object */ {
+	public func waitAsync(TResult: System_Type /* System.Type */, _ timeout: System_TimeSpan /* System.TimeSpan */, _ timeProvider: System_TimeProvider? /* System.TimeProvider */) throws -> System_Object /* System.Object */ {
 		let TResultC = TResult.__handle
 		let timeoutC = timeout.__handle
 		let timeProviderC = timeProvider?.__handle
@@ -53243,7 +53133,7 @@ public class System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<> */:
 		
 	}
 	
-	public func waitAsync(TResult: System_Type /* System.Type */, _ timeout: System_TimeSpan /* System.TimeSpan */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Object? /* System.Object */ {
+	public func waitAsync(TResult: System_Type /* System.Type */, _ timeout: System_TimeSpan /* System.TimeSpan */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Object /* System.Object */ {
 		let TResultC = TResult.__handle
 		let timeoutC = timeout.__handle
 		let cancellationTokenC = cancellationToken.__handle
@@ -53266,7 +53156,7 @@ public class System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<> */:
 		
 	}
 	
-	public func waitAsync(TResult: System_Type /* System.Type */, _ timeout: System_TimeSpan /* System.TimeSpan */, _ timeProvider: System_TimeProvider? /* System.TimeProvider */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Object? /* System.Object */ {
+	public func waitAsync(TResult: System_Type /* System.Type */, _ timeout: System_TimeSpan /* System.TimeSpan */, _ timeProvider: System_TimeProvider? /* System.TimeProvider */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Object /* System.Object */ {
 		let TResultC = TResult.__handle
 		let timeoutC = timeout.__handle
 		let timeProviderC = timeProvider?.__handle
@@ -53340,7 +53230,7 @@ public class System_Threading_Tasks_TaskFactory_A1 /* System.Threading.Tasks.Tas
 		"System.Threading.Tasks.TaskFactory<>"
 	}}
 
-	public convenience init?(TResult: System_Type /* System.Type */) throws {
+	public convenience init(TResult: System_Type /* System.Type */) throws {
 		let TResultC = TResult.__handle
 		
 		
@@ -53355,13 +53245,11 @@ public class System_Threading_Tasks_TaskFactory_A1 /* System.Threading.Tasks.Tas
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(TResult: System_Type /* System.Type */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws {
+	public convenience init(TResult: System_Type /* System.Type */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws {
 		let TResultC = TResult.__handle
 		let cancellationTokenC = cancellationToken.__handle
 		
@@ -53377,13 +53265,11 @@ public class System_Threading_Tasks_TaskFactory_A1 /* System.Threading.Tasks.Tas
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(TResult: System_Type /* System.Type */, _ scheduler: System_Threading_Tasks_TaskScheduler? /* System.Threading.Tasks.TaskScheduler */) throws {
+	public convenience init(TResult: System_Type /* System.Type */, _ scheduler: System_Threading_Tasks_TaskScheduler? /* System.Threading.Tasks.TaskScheduler */) throws {
 		let TResultC = TResult.__handle
 		let schedulerC = scheduler?.__handle
 		
@@ -53399,13 +53285,11 @@ public class System_Threading_Tasks_TaskFactory_A1 /* System.Threading.Tasks.Tas
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(TResult: System_Type /* System.Type */, _ creationOptions: System_Threading_Tasks_TaskCreationOptions /* System.Threading.Tasks.TaskCreationOptions */, _ continuationOptions: System_Threading_Tasks_TaskContinuationOptions /* System.Threading.Tasks.TaskContinuationOptions */) throws {
+	public convenience init(TResult: System_Type /* System.Type */, _ creationOptions: System_Threading_Tasks_TaskCreationOptions /* System.Threading.Tasks.TaskCreationOptions */, _ continuationOptions: System_Threading_Tasks_TaskContinuationOptions /* System.Threading.Tasks.TaskContinuationOptions */) throws {
 		let TResultC = TResult.__handle
 		let creationOptionsC = creationOptions.cValue
 		let continuationOptionsC = continuationOptions.cValue
@@ -53422,13 +53306,11 @@ public class System_Threading_Tasks_TaskFactory_A1 /* System.Threading.Tasks.Tas
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(TResult: System_Type /* System.Type */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */, _ creationOptions: System_Threading_Tasks_TaskCreationOptions /* System.Threading.Tasks.TaskCreationOptions */, _ continuationOptions: System_Threading_Tasks_TaskContinuationOptions /* System.Threading.Tasks.TaskContinuationOptions */, _ scheduler: System_Threading_Tasks_TaskScheduler? /* System.Threading.Tasks.TaskScheduler */) throws {
+	public convenience init(TResult: System_Type /* System.Type */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */, _ creationOptions: System_Threading_Tasks_TaskCreationOptions /* System.Threading.Tasks.TaskCreationOptions */, _ continuationOptions: System_Threading_Tasks_TaskContinuationOptions /* System.Threading.Tasks.TaskContinuationOptions */, _ scheduler: System_Threading_Tasks_TaskScheduler? /* System.Threading.Tasks.TaskScheduler */) throws {
 		let TResultC = TResult.__handle
 		let cancellationTokenC = cancellationToken.__handle
 		let creationOptionsC = creationOptions.cValue
@@ -53446,8 +53328,6 @@ public class System_Threading_Tasks_TaskFactory_A1 /* System.Threading.Tasks.Tas
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -53656,7 +53536,7 @@ public class System_Runtime_CompilerServices_TaskAwaiter_A1 /* System.Runtime.Co
 	}
 	
 	
-	public convenience init?(TResult: System_Type /* System.Type */) throws {
+	public convenience init(TResult: System_Type /* System.Type */) throws {
 		let TResultC = TResult.__handle
 		
 		
@@ -53670,8 +53550,6 @@ public class System_Runtime_CompilerServices_TaskAwaiter_A1 /* System.Runtime.Co
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -53702,7 +53580,7 @@ public class System_Runtime_CompilerServices_ConfiguredTaskAwaitable_A1 /* Syste
 		"System.Runtime.CompilerServices.ConfiguredTaskAwaitable<>"
 	}}
 
-	public convenience init?(TResult: System_Type /* System.Type */) throws {
+	public convenience init(TResult: System_Type /* System.Type */) throws {
 		let TResultC = TResult.__handle
 		
 		
@@ -53716,8 +53594,6 @@ public class System_Runtime_CompilerServices_ConfiguredTaskAwaitable_A1 /* Syste
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -54117,7 +53993,7 @@ public class Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeH
 		"Microsoft.Win32.SafeHandles.SafeFileHandle"
 	}}
 
-	public convenience init?(_ preexistingHandle: UnsafeMutableRawPointer? /* System.IntPtr */, _ ownsHandle: Bool /* System.Boolean */) throws {
+	public convenience init(_ preexistingHandle: UnsafeMutableRawPointer? /* System.IntPtr */, _ ownsHandle: Bool /* System.Boolean */) throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -54131,13 +54007,11 @@ public class Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeH
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?() throws {
+	public convenience init() throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -54150,8 +54024,6 @@ public class Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeH
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -54218,7 +54090,7 @@ public class System_IO_FileStreamOptions /* System.IO.FileStreamOptions */: Syst
 		"System.IO.FileStreamOptions"
 	}}
 
-	public convenience init?() throws {
+	public convenience init() throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -54231,8 +54103,6 @@ public class System_IO_FileStreamOptions /* System.IO.FileStreamOptions */: Syst
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -54612,7 +54482,7 @@ public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System
 		
 	}
 	
-	public func getDeclaredMethods(_ name: System_String /* System.String */) throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.MethodInfo> */ {
+	public func getDeclaredMethods(_ name: System_String /* System.String */) throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Reflection.MethodInfo> */ {
 		let nameC = name.__handle
 		
 		
@@ -54673,7 +54543,7 @@ public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System
 	}}
 	
 	
-	public var declaredConstructors: System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.ConstructorInfo> */ { get throws {
+	public var declaredConstructors: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Reflection.ConstructorInfo> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -54694,7 +54564,7 @@ public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System
 	}}
 	
 	
-	public var declaredEvents: System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.EventInfo> */ { get throws {
+	public var declaredEvents: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Reflection.EventInfo> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -54715,7 +54585,7 @@ public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System
 	}}
 	
 	
-	public var declaredFields: System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.FieldInfo> */ { get throws {
+	public var declaredFields: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Reflection.FieldInfo> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -54736,7 +54606,7 @@ public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System
 	}}
 	
 	
-	public var declaredMembers: System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.MemberInfo> */ { get throws {
+	public var declaredMembers: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Reflection.MemberInfo> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -54757,7 +54627,7 @@ public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System
 	}}
 	
 	
-	public var declaredMethods: System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.MethodInfo> */ { get throws {
+	public var declaredMethods: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Reflection.MethodInfo> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -54778,7 +54648,7 @@ public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System
 	}}
 	
 	
-	public var declaredNestedTypes: System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.TypeInfo> */ { get throws {
+	public var declaredNestedTypes: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Reflection.TypeInfo> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -54799,7 +54669,7 @@ public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System
 	}}
 	
 	
-	public var declaredProperties: System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Reflection.PropertyInfo> */ { get throws {
+	public var declaredProperties: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Reflection.PropertyInfo> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -54820,7 +54690,7 @@ public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System
 	}}
 	
 	
-	public var implementedInterfaces: System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Type> */ { get throws {
+	public var implementedInterfaces: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Type> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -55658,7 +55528,7 @@ public class System_Reflection_ManifestResourceInfo /* System.Reflection.Manifes
 		"System.Reflection.ManifestResourceInfo"
 	}}
 
-	public convenience init?(_ containingAssembly: System_Reflection_Assembly? /* System.Reflection.Assembly */, _ containingFileName: System_String? /* System.String */, _ resourceLocation: System_Reflection_ResourceLocation /* System.Reflection.ResourceLocation */) throws {
+	public convenience init(_ containingAssembly: System_Reflection_Assembly? /* System.Reflection.Assembly */, _ containingFileName: System_String? /* System.String */, _ resourceLocation: System_Reflection_ResourceLocation /* System.Reflection.ResourceLocation */) throws {
 		let containingAssemblyC = containingAssembly?.__handle
 		let containingFileNameC = containingFileName?.__handle
 		let resourceLocationC = resourceLocation.cValue
@@ -55674,8 +55544,6 @@ public class System_Reflection_ManifestResourceInfo /* System.Reflection.Manifes
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -55767,7 +55635,7 @@ public class System_ResolveEventArgs /* System.ResolveEventArgs */: System_Event
 		"System.ResolveEventArgs"
 	}}
 
-	public convenience init?(_ name: System_String /* System.String */) throws {
+	public convenience init(_ name: System_String /* System.String */) throws {
 		let nameC = name.__handle
 		
 		
@@ -55782,13 +55650,11 @@ public class System_ResolveEventArgs /* System.ResolveEventArgs */: System_Event
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ name: System_String /* System.String */, _ requestingAssembly: System_Reflection_Assembly? /* System.Reflection.Assembly */) throws {
+	public convenience init(_ name: System_String /* System.String */, _ requestingAssembly: System_Reflection_Assembly? /* System.Reflection.Assembly */) throws {
 		let nameC = name.__handle
 		let requestingAssemblyC = requestingAssembly?.__handle
 		
@@ -55803,8 +55669,6 @@ public class System_ResolveEventArgs /* System.ResolveEventArgs */: System_Event
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -55875,7 +55739,7 @@ public class System_EventArgs /* System.EventArgs */: System_Object {
 		"System.EventArgs"
 	}}
 
-	public convenience init?() throws {
+	public convenience init() throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -55888,8 +55752,6 @@ public class System_EventArgs /* System.EventArgs */: System_Object {
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -57113,7 +56975,7 @@ public class System_Globalization_SortVersion /* System.Globalization.SortVersio
 		
 	}
 	
-	public convenience init?(_ fullVersion: Int32 /* System.Int32 */, _ sortId: System_Guid /* System.Guid */) throws {
+	public convenience init(_ fullVersion: Int32 /* System.Int32 */, _ sortId: System_Guid /* System.Guid */) throws {
 		let sortIdC = sortId.__handle
 		
 		
@@ -57127,8 +56989,6 @@ public class System_Globalization_SortVersion /* System.Globalization.SortVersio
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -57700,7 +57560,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 	}
 	
-	public convenience init?() throws {
+	public convenience init() throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -57713,8 +57573,6 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -59111,7 +58969,7 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
-	public convenience init?() throws {
+	public convenience init() throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -59124,8 +58982,6 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -61838,7 +61694,7 @@ public class System_Text_EncodingProvider /* System.Text.EncodingProvider */: Sy
 		
 	}
 	
-	public func getEncodings() throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.Text.EncodingInfo> */ {
+	public func getEncodings() throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Text.EncodingInfo> */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -62402,7 +62258,7 @@ public class System_Text_EncodingInfo /* System.Text.EncodingInfo */: System_Obj
 		
 	}
 	
-	public convenience init?(_ provider: System_Text_EncodingProvider /* System.Text.EncodingProvider */, _ codePage: Int32 /* System.Int32 */, _ name: System_String /* System.String */, _ displayName: System_String /* System.String */) throws {
+	public convenience init(_ provider: System_Text_EncodingProvider /* System.Text.EncodingProvider */, _ codePage: Int32 /* System.Int32 */, _ name: System_String /* System.String */, _ displayName: System_String /* System.String */) throws {
 		let providerC = provider.__handle
 		let nameC = name.__handle
 		let displayNameC = displayName.__handle
@@ -62418,8 +62274,6 @@ public class System_Text_EncodingInfo /* System.Text.EncodingInfo */: System_Obj
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -63148,7 +63002,7 @@ public class System_Runtime_InteropServices_StructLayoutAttribute /* System.Runt
 		"System.Runtime.InteropServices.StructLayoutAttribute"
 	}}
 
-	public convenience init?(_ layoutKind: System_Runtime_InteropServices_LayoutKind /* System.Runtime.InteropServices.LayoutKind */) throws {
+	public convenience init(_ layoutKind: System_Runtime_InteropServices_LayoutKind /* System.Runtime.InteropServices.LayoutKind */) throws {
 		let layoutKindC = layoutKind.cValue
 		
 		
@@ -63163,13 +63017,11 @@ public class System_Runtime_InteropServices_StructLayoutAttribute /* System.Runt
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ layoutKind: Int16 /* System.Int16 */) throws {
+	public convenience init(_ layoutKind: Int16 /* System.Int16 */) throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -63182,8 +63034,6 @@ public class System_Runtime_InteropServices_StructLayoutAttribute /* System.Runt
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -66439,7 +66289,7 @@ public class System_Runtime_InteropServices_Marshal /* System.Runtime.InteropSer
 		
 	}
 	
-	public class func createWrapperOfType(T: System_Type /* System.Type */, TWrapper: System_Type /* System.Type */, _ o: System_Object? /* System.Object */) throws -> System_Object? /* System.Object */ {
+	public class func createWrapperOfType(T: System_Type /* System.Type */, TWrapper: System_Type /* System.Type */, _ o: System_Object? /* System.Object */) throws -> System_Object /* System.Object */ {
 		let TC = T.__handle
 		let TWrapperC = TWrapper.__handle
 		let oC = o?.__handle
@@ -66760,7 +66610,7 @@ public class System_Runtime_InteropServices_Marshal /* System.Runtime.InteropSer
 		
 	}
 	
-	public class func getObjectsForNativeVariants(T: System_Type /* System.Type */, _ aSrcNativeVariant: UnsafeMutableRawPointer? /* System.IntPtr */, _ cVars: Int32 /* System.Int32 */) throws -> System_Array? /* System.Array */ {
+	public class func getObjectsForNativeVariants(T: System_Type /* System.Type */, _ aSrcNativeVariant: UnsafeMutableRawPointer? /* System.IntPtr */, _ cVars: Int32 /* System.Int32 */) throws -> System_Array /* System.Array */ {
 		let TC = T.__handle
 		
 		
@@ -67483,7 +67333,7 @@ public class System_Security_SecureString /* System.Security.SecureString */: Sy
 		
 	}
 	
-	public convenience init?() throws {
+	public convenience init() throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -67496,8 +67346,6 @@ public class System_Security_SecureString /* System.Security.SecureString */: Sy
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -67556,7 +67404,7 @@ public class System_NullReferenceException /* System.NullReferenceException */: 
 		"System.NullReferenceException"
 	}}
 
-	public convenience init?() throws {
+	public convenience init() throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -67570,13 +67418,11 @@ public class System_NullReferenceException /* System.NullReferenceException */: 
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ message: System_String? /* System.String */) throws {
+	public convenience init(_ message: System_String? /* System.String */) throws {
 		let messageC = message?.__handle
 		
 		
@@ -67591,13 +67437,11 @@ public class System_NullReferenceException /* System.NullReferenceException */: 
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ message: System_String? /* System.String */, _ innerException: System_Exception? /* System.Exception */) throws {
+	public convenience init(_ message: System_String? /* System.String */, _ innerException: System_Exception? /* System.Exception */) throws {
 		let messageC = message?.__handle
 		let innerExceptionC = innerException?.__handle
 		
@@ -67612,8 +67456,6 @@ public class System_NullReferenceException /* System.NullReferenceException */: 
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -67642,7 +67484,7 @@ public class System_SystemException /* System.SystemException */: System_Excepti
 		"System.SystemException"
 	}}
 
-	public convenience init?() throws {
+	public convenience init() throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -67656,13 +67498,11 @@ public class System_SystemException /* System.SystemException */: System_Excepti
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ message: System_String? /* System.String */) throws {
+	public convenience init(_ message: System_String? /* System.String */) throws {
 		let messageC = message?.__handle
 		
 		
@@ -67677,13 +67517,11 @@ public class System_SystemException /* System.SystemException */: System_Excepti
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ message: System_String? /* System.String */, _ innerException: System_Exception? /* System.Exception */) throws {
+	public convenience init(_ message: System_String? /* System.String */, _ innerException: System_Exception? /* System.Exception */) throws {
 		let messageC = message?.__handle
 		let innerExceptionC = innerException?.__handle
 		
@@ -67698,8 +67536,6 @@ public class System_SystemException /* System.SystemException */: System_Excepti
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -67728,7 +67564,7 @@ public class System_PlatformNotSupportedException /* System.PlatformNotSupported
 		"System.PlatformNotSupportedException"
 	}}
 
-	public convenience init?() throws {
+	public convenience init() throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -67742,13 +67578,11 @@ public class System_PlatformNotSupportedException /* System.PlatformNotSupported
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ message: System_String? /* System.String */) throws {
+	public convenience init(_ message: System_String? /* System.String */) throws {
 		let messageC = message?.__handle
 		
 		
@@ -67763,13 +67597,11 @@ public class System_PlatformNotSupportedException /* System.PlatformNotSupported
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ message: System_String? /* System.String */, _ inner: System_Exception? /* System.Exception */) throws {
+	public convenience init(_ message: System_String? /* System.String */, _ inner: System_Exception? /* System.Exception */) throws {
 		let messageC = message?.__handle
 		let innerC = inner?.__handle
 		
@@ -67784,8 +67616,6 @@ public class System_PlatformNotSupportedException /* System.PlatformNotSupported
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -67814,7 +67644,7 @@ public class System_NotSupportedException /* System.NotSupportedException */: Sy
 		"System.NotSupportedException"
 	}}
 
-	public convenience init?() throws {
+	public convenience init() throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -67828,13 +67658,11 @@ public class System_NotSupportedException /* System.NotSupportedException */: Sy
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ message: System_String? /* System.String */) throws {
+	public convenience init(_ message: System_String? /* System.String */) throws {
 		let messageC = message?.__handle
 		
 		
@@ -67849,13 +67677,11 @@ public class System_NotSupportedException /* System.NotSupportedException */: Sy
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ message: System_String? /* System.String */, _ innerException: System_Exception? /* System.Exception */) throws {
+	public convenience init(_ message: System_String? /* System.String */, _ innerException: System_Exception? /* System.Exception */) throws {
 		let messageC = message?.__handle
 		let innerExceptionC = innerException?.__handle
 		
@@ -67870,8 +67696,6 @@ public class System_NotSupportedException /* System.NotSupportedException */: Sy
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -68948,7 +68772,7 @@ public class System_GC /* System.GC */: System_Object {
 		
 	}
 	
-	public class func allocateUninitializedArray(T: System_Type /* System.Type */, _ length: Int32 /* System.Int32 */, _ pinned: Bool /* System.Boolean */) throws -> System_Array? /* System.Array */ {
+	public class func allocateUninitializedArray(T: System_Type /* System.Type */, _ length: Int32 /* System.Int32 */, _ pinned: Bool /* System.Boolean */) throws -> System_Array /* System.Array */ {
 		let TC = T.__handle
 		
 		
@@ -68969,7 +68793,7 @@ public class System_GC /* System.GC */: System_Object {
 		
 	}
 	
-	public class func allocateArray(T: System_Type /* System.Type */, _ length: Int32 /* System.Int32 */, _ pinned: Bool /* System.Boolean */) throws -> System_Array? /* System.Array */ {
+	public class func allocateArray(T: System_Type /* System.Type */, _ length: Int32 /* System.Int32 */, _ pinned: Bool /* System.Boolean */) throws -> System_Array /* System.Array */ {
 		let TC = T.__handle
 		
 		
@@ -69010,7 +68834,7 @@ public class System_GC /* System.GC */: System_Object {
 		
 	}
 	
-	public class func getConfigurationVariables() throws -> System_Collections_Generic_IReadOnlyDictionary_A2? /* System.Collections.Generic.IReadOnlyDictionary<System.String,System.Object> */ {
+	public class func getConfigurationVariables() throws -> System_Collections_Generic_IReadOnlyDictionary_A2 /* System.Collections.Generic.IReadOnlyDictionary<System.String,System.Object> */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -69457,7 +69281,7 @@ public class System_WeakReference /* System.WeakReference */: System_Object {
 		
 	}
 	
-	public convenience init?(_ target: System_Object? /* System.Object */) throws {
+	public convenience init(_ target: System_Object? /* System.Object */) throws {
 		let targetC = target?.__handle
 		
 		
@@ -69472,13 +69296,11 @@ public class System_WeakReference /* System.WeakReference */: System_Object {
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ target: System_Object? /* System.Object */, _ trackResurrection: Bool /* System.Boolean */) throws {
+	public convenience init(_ target: System_Object? /* System.Object */, _ trackResurrection: Bool /* System.Boolean */) throws {
 		let targetC = target?.__handle
 		
 		
@@ -69492,8 +69314,6 @@ public class System_WeakReference /* System.WeakReference */: System_Object {
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -69756,7 +69576,7 @@ public class System_Collections_Generic_KeyValuePair_A2 /* System.Collections.Ge
 		
 	}
 	
-	public convenience init?(TKey: System_Type /* System.Type */, TValue: System_Type /* System.Type */, _ key: System_Object? /* System.Object */, _ value: System_Object? /* System.Object */) throws {
+	public convenience init(TKey: System_Type /* System.Type */, TValue: System_Type /* System.Type */, _ key: System_Object? /* System.Object */, _ value: System_Object? /* System.Object */) throws {
 		let TKeyC = TKey.__handle
 		let TValueC = TValue.__handle
 		let keyC = key?.__handle
@@ -69773,8 +69593,6 @@ public class System_Collections_Generic_KeyValuePair_A2 /* System.Collections.Ge
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -69826,7 +69644,7 @@ public class System_Collections_Generic_KeyValuePair_A2 /* System.Collections.Ge
 	}
 	
 	
-	public convenience init?(TKey: System_Type /* System.Type */, TValue: System_Type /* System.Type */) throws {
+	public convenience init(TKey: System_Type /* System.Type */, TValue: System_Type /* System.Type */) throws {
 		let TKeyC = TKey.__handle
 		let TValueC = TValue.__handle
 		
@@ -69841,8 +69659,6 @@ public class System_Collections_Generic_KeyValuePair_A2 /* System.Collections.Ge
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -79142,7 +78958,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
-	public convenience init?(_ start: System_Threading_ThreadStart /* System.Threading.ThreadStart */) throws {
+	public convenience init(_ start: System_Threading_ThreadStart /* System.Threading.ThreadStart */) throws {
 		let startC = start.__handle
 		
 		
@@ -79157,13 +78973,11 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ start: System_Threading_ThreadStart /* System.Threading.ThreadStart */, _ maxStackSize: Int32 /* System.Int32 */) throws {
+	public convenience init(_ start: System_Threading_ThreadStart /* System.Threading.ThreadStart */, _ maxStackSize: Int32 /* System.Int32 */) throws {
 		let startC = start.__handle
 		
 		
@@ -79178,13 +78992,11 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ start: System_Threading_ParameterizedThreadStart /* System.Threading.ParameterizedThreadStart */) throws {
+	public convenience init(_ start: System_Threading_ParameterizedThreadStart /* System.Threading.ParameterizedThreadStart */) throws {
 		let startC = start.__handle
 		
 		
@@ -79199,13 +79011,11 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ start: System_Threading_ParameterizedThreadStart /* System.Threading.ParameterizedThreadStart */, _ maxStackSize: Int32 /* System.Int32 */) throws {
+	public convenience init(_ start: System_Threading_ParameterizedThreadStart /* System.Threading.ParameterizedThreadStart */, _ maxStackSize: Int32 /* System.Int32 */) throws {
 		let startC = start.__handle
 		
 		
@@ -79219,8 +79029,6 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -82143,7 +81951,7 @@ public class System_Security_PermissionSet /* System.Security.PermissionSet */: 
 		
 	}
 	
-	public convenience init?(_ state: System_Security_Permissions_PermissionState /* System.Security.Permissions.PermissionState */) throws {
+	public convenience init(_ state: System_Security_Permissions_PermissionState /* System.Security.Permissions.PermissionState */) throws {
 		let stateC = state.cValue
 		
 		
@@ -82158,13 +81966,11 @@ public class System_Security_PermissionSet /* System.Security.PermissionSet */: 
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ permSet: System_Security_PermissionSet? /* System.Security.PermissionSet */) throws {
+	public convenience init(_ permSet: System_Security_PermissionSet? /* System.Security.PermissionSet */) throws {
 		let permSetC = permSet?.__handle
 		
 		
@@ -82178,8 +81984,6 @@ public class System_Security_PermissionSet /* System.Security.PermissionSet */: 
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -82624,7 +82428,7 @@ public class System_Security_SecurityElement /* System.Security.SecurityElement 
 		
 	}
 	
-	public convenience init?(_ tag: System_String /* System.String */) throws {
+	public convenience init(_ tag: System_String /* System.String */) throws {
 		let tagC = tag.__handle
 		
 		
@@ -82639,13 +82443,11 @@ public class System_Security_SecurityElement /* System.Security.SecurityElement 
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ tag: System_String /* System.String */, _ text: System_String? /* System.String */) throws {
+	public convenience init(_ tag: System_String /* System.String */, _ text: System_String? /* System.String */) throws {
 		let tagC = tag.__handle
 		let textC = text?.__handle
 		
@@ -82660,8 +82462,6 @@ public class System_Security_SecurityElement /* System.Security.SecurityElement 
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -83069,7 +82869,7 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 		
 	}
 	
-	public convenience init?() throws {
+	public convenience init() throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -83083,13 +82883,11 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ capacity: Int32 /* System.Int32 */) throws {
+	public convenience init(_ capacity: Int32 /* System.Int32 */) throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -83103,13 +82901,11 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ capacity: Int32 /* System.Int32 */, _ loadFactor: Float /* System.Single */) throws {
+	public convenience init(_ capacity: Int32 /* System.Int32 */, _ loadFactor: Float /* System.Single */) throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -83123,13 +82919,11 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ capacity: Int32 /* System.Int32 */, _ loadFactor: Float /* System.Single */, _ equalityComparer: System_Collections_IEqualityComparer? /* System.Collections.IEqualityComparer */) throws {
+	public convenience init(_ capacity: Int32 /* System.Int32 */, _ loadFactor: Float /* System.Single */, _ equalityComparer: System_Collections_IEqualityComparer? /* System.Collections.IEqualityComparer */) throws {
 		let equalityComparerC = equalityComparer?.__handle
 		
 		
@@ -83144,13 +82938,11 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ hcp: System_Collections_IHashCodeProvider? /* System.Collections.IHashCodeProvider */, _ comparer: System_Collections_IComparer? /* System.Collections.IComparer */) throws {
+	public convenience init(_ hcp: System_Collections_IHashCodeProvider? /* System.Collections.IHashCodeProvider */, _ comparer: System_Collections_IComparer? /* System.Collections.IComparer */) throws {
 		let hcpC = hcp?.__handle
 		let comparerC = comparer?.__handle
 		
@@ -83166,13 +82958,11 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ equalityComparer: System_Collections_IEqualityComparer? /* System.Collections.IEqualityComparer */) throws {
+	public convenience init(_ equalityComparer: System_Collections_IEqualityComparer? /* System.Collections.IEqualityComparer */) throws {
 		let equalityComparerC = equalityComparer?.__handle
 		
 		
@@ -83187,13 +82977,11 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ capacity: Int32 /* System.Int32 */, _ hcp: System_Collections_IHashCodeProvider? /* System.Collections.IHashCodeProvider */, _ comparer: System_Collections_IComparer? /* System.Collections.IComparer */) throws {
+	public convenience init(_ capacity: Int32 /* System.Int32 */, _ hcp: System_Collections_IHashCodeProvider? /* System.Collections.IHashCodeProvider */, _ comparer: System_Collections_IComparer? /* System.Collections.IComparer */) throws {
 		let hcpC = hcp?.__handle
 		let comparerC = comparer?.__handle
 		
@@ -83209,13 +82997,11 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ capacity: Int32 /* System.Int32 */, _ equalityComparer: System_Collections_IEqualityComparer? /* System.Collections.IEqualityComparer */) throws {
+	public convenience init(_ capacity: Int32 /* System.Int32 */, _ equalityComparer: System_Collections_IEqualityComparer? /* System.Collections.IEqualityComparer */) throws {
 		let equalityComparerC = equalityComparer?.__handle
 		
 		
@@ -83230,13 +83016,11 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ d: System_Collections_IDictionary /* System.Collections.IDictionary */) throws {
+	public convenience init(_ d: System_Collections_IDictionary /* System.Collections.IDictionary */) throws {
 		let dC = d.__handle
 		
 		
@@ -83251,13 +83035,11 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ d: System_Collections_IDictionary /* System.Collections.IDictionary */, _ loadFactor: Float /* System.Single */) throws {
+	public convenience init(_ d: System_Collections_IDictionary /* System.Collections.IDictionary */, _ loadFactor: Float /* System.Single */) throws {
 		let dC = d.__handle
 		
 		
@@ -83272,13 +83054,11 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ d: System_Collections_IDictionary /* System.Collections.IDictionary */, _ hcp: System_Collections_IHashCodeProvider? /* System.Collections.IHashCodeProvider */, _ comparer: System_Collections_IComparer? /* System.Collections.IComparer */) throws {
+	public convenience init(_ d: System_Collections_IDictionary /* System.Collections.IDictionary */, _ hcp: System_Collections_IHashCodeProvider? /* System.Collections.IHashCodeProvider */, _ comparer: System_Collections_IComparer? /* System.Collections.IComparer */) throws {
 		let dC = d.__handle
 		let hcpC = hcp?.__handle
 		let comparerC = comparer?.__handle
@@ -83295,13 +83075,11 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ d: System_Collections_IDictionary /* System.Collections.IDictionary */, _ equalityComparer: System_Collections_IEqualityComparer? /* System.Collections.IEqualityComparer */) throws {
+	public convenience init(_ d: System_Collections_IDictionary /* System.Collections.IDictionary */, _ equalityComparer: System_Collections_IEqualityComparer? /* System.Collections.IEqualityComparer */) throws {
 		let dC = d.__handle
 		let equalityComparerC = equalityComparer?.__handle
 		
@@ -83317,13 +83095,11 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ capacity: Int32 /* System.Int32 */, _ loadFactor: Float /* System.Single */, _ hcp: System_Collections_IHashCodeProvider? /* System.Collections.IHashCodeProvider */, _ comparer: System_Collections_IComparer? /* System.Collections.IComparer */) throws {
+	public convenience init(_ capacity: Int32 /* System.Int32 */, _ loadFactor: Float /* System.Single */, _ hcp: System_Collections_IHashCodeProvider? /* System.Collections.IHashCodeProvider */, _ comparer: System_Collections_IComparer? /* System.Collections.IComparer */) throws {
 		let hcpC = hcp?.__handle
 		let comparerC = comparer?.__handle
 		
@@ -83339,13 +83115,11 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ d: System_Collections_IDictionary /* System.Collections.IDictionary */, _ loadFactor: Float /* System.Single */, _ hcp: System_Collections_IHashCodeProvider? /* System.Collections.IHashCodeProvider */, _ comparer: System_Collections_IComparer? /* System.Collections.IComparer */) throws {
+	public convenience init(_ d: System_Collections_IDictionary /* System.Collections.IDictionary */, _ loadFactor: Float /* System.Single */, _ hcp: System_Collections_IHashCodeProvider? /* System.Collections.IHashCodeProvider */, _ comparer: System_Collections_IComparer? /* System.Collections.IComparer */) throws {
 		let dC = d.__handle
 		let hcpC = hcp?.__handle
 		let comparerC = comparer?.__handle
@@ -83362,13 +83136,11 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ d: System_Collections_IDictionary /* System.Collections.IDictionary */, _ loadFactor: Float /* System.Single */, _ equalityComparer: System_Collections_IEqualityComparer? /* System.Collections.IEqualityComparer */) throws {
+	public convenience init(_ d: System_Collections_IDictionary /* System.Collections.IDictionary */, _ loadFactor: Float /* System.Single */, _ equalityComparer: System_Collections_IEqualityComparer? /* System.Collections.IEqualityComparer */) throws {
 		let dC = d.__handle
 		let equalityComparerC = equalityComparer?.__handle
 		
@@ -83383,8 +83155,6 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -84433,7 +84203,7 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		
 	}
 	
-	public convenience init?() throws {
+	public convenience init() throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -84447,13 +84217,11 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ capacity: Int32 /* System.Int32 */) throws {
+	public convenience init(_ capacity: Int32 /* System.Int32 */) throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -84467,13 +84235,11 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ c: System_Collections_ICollection /* System.Collections.ICollection */) throws {
+	public convenience init(_ c: System_Collections_ICollection /* System.Collections.ICollection */) throws {
 		let cC = c.__handle
 		
 		
@@ -84487,8 +84253,6 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -84899,7 +84663,7 @@ public class System_UnhandledExceptionEventArgs /* System.UnhandledExceptionEven
 		"System.UnhandledExceptionEventArgs"
 	}}
 
-	public convenience init?(_ exception: System_Object /* System.Object */, _ isTerminating: Bool /* System.Boolean */) throws {
+	public convenience init(_ exception: System_Object /* System.Object */, _ isTerminating: Bool /* System.Boolean */) throws {
 		let exceptionC = exception.__handle
 		
 		
@@ -84913,8 +84677,6 @@ public class System_UnhandledExceptionEventArgs /* System.UnhandledExceptionEven
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -85009,7 +84771,7 @@ public class System_AssemblyLoadEventArgs /* System.AssemblyLoadEventArgs */: Sy
 		"System.AssemblyLoadEventArgs"
 	}}
 
-	public convenience init?(_ loadedAssembly: System_Reflection_Assembly /* System.Reflection.Assembly */) throws {
+	public convenience init(_ loadedAssembly: System_Reflection_Assembly /* System.Reflection.Assembly */) throws {
 		let loadedAssemblyC = loadedAssembly.__handle
 		
 		
@@ -85023,8 +84785,6 @@ public class System_AssemblyLoadEventArgs /* System.AssemblyLoadEventArgs */: Sy
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -85094,7 +84854,7 @@ public class System_Runtime_Remoting_ObjectHandle /* System.Runtime.Remoting.Obj
 		
 	}
 	
-	public convenience init?(_ o: System_Object? /* System.Object */) throws {
+	public convenience init(_ o: System_Object? /* System.Object */) throws {
 		let oC = o?.__handle
 		
 		
@@ -85108,8 +84868,6 @@ public class System_Runtime_Remoting_ObjectHandle /* System.Runtime.Remoting.Obj
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -85268,7 +85026,7 @@ public class System_Threading_Timer /* System.Threading.Timer */: System_Marshal
 		
 	}
 	
-	public convenience init?(_ callback: System_Threading_TimerCallback /* System.Threading.TimerCallback */, _ state: System_Object? /* System.Object */, _ dueTime: Int32 /* System.Int32 */, _ period: Int32 /* System.Int32 */) throws {
+	public convenience init(_ callback: System_Threading_TimerCallback /* System.Threading.TimerCallback */, _ state: System_Object? /* System.Object */, _ dueTime: Int32 /* System.Int32 */, _ period: Int32 /* System.Int32 */) throws {
 		let callbackC = callback.__handle
 		let stateC = state?.__handle
 		
@@ -85284,13 +85042,11 @@ public class System_Threading_Timer /* System.Threading.Timer */: System_Marshal
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ callback: System_Threading_TimerCallback /* System.Threading.TimerCallback */, _ state: System_Object? /* System.Object */, _ dueTime: System_TimeSpan /* System.TimeSpan */, _ period: System_TimeSpan /* System.TimeSpan */) throws {
+	public convenience init(_ callback: System_Threading_TimerCallback /* System.Threading.TimerCallback */, _ state: System_Object? /* System.Object */, _ dueTime: System_TimeSpan /* System.TimeSpan */, _ period: System_TimeSpan /* System.TimeSpan */) throws {
 		let callbackC = callback.__handle
 		let stateC = state?.__handle
 		let dueTimeC = dueTime.__handle
@@ -85308,13 +85064,11 @@ public class System_Threading_Timer /* System.Threading.Timer */: System_Marshal
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ callback: System_Threading_TimerCallback /* System.Threading.TimerCallback */, _ state: System_Object? /* System.Object */, _ dueTime: UInt32 /* System.UInt32 */, _ period: UInt32 /* System.UInt32 */) throws {
+	public convenience init(_ callback: System_Threading_TimerCallback /* System.Threading.TimerCallback */, _ state: System_Object? /* System.Object */, _ dueTime: UInt32 /* System.UInt32 */, _ period: UInt32 /* System.UInt32 */) throws {
 		let callbackC = callback.__handle
 		let stateC = state?.__handle
 		
@@ -85330,13 +85084,11 @@ public class System_Threading_Timer /* System.Threading.Timer */: System_Marshal
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ callback: System_Threading_TimerCallback /* System.Threading.TimerCallback */, _ state: System_Object? /* System.Object */, _ dueTime: Int64 /* System.Int64 */, _ period: Int64 /* System.Int64 */) throws {
+	public convenience init(_ callback: System_Threading_TimerCallback /* System.Threading.TimerCallback */, _ state: System_Object? /* System.Object */, _ dueTime: Int64 /* System.Int64 */, _ period: Int64 /* System.Int64 */) throws {
 		let callbackC = callback.__handle
 		let stateC = state?.__handle
 		
@@ -85352,13 +85104,11 @@ public class System_Threading_Timer /* System.Threading.Timer */: System_Marshal
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ callback: System_Threading_TimerCallback /* System.Threading.TimerCallback */) throws {
+	public convenience init(_ callback: System_Threading_TimerCallback /* System.Threading.TimerCallback */) throws {
 		let callbackC = callback.__handle
 		
 		
@@ -85372,8 +85122,6 @@ public class System_Threading_Timer /* System.Threading.Timer */: System_Marshal
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -85609,7 +85357,7 @@ public class System_Threading_CancellationTokenSource /* System.Threading.Cancel
 		
 	}
 	
-	public convenience init?() throws {
+	public convenience init() throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -85623,13 +85371,11 @@ public class System_Threading_CancellationTokenSource /* System.Threading.Cancel
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ delay: System_TimeSpan /* System.TimeSpan */) throws {
+	public convenience init(_ delay: System_TimeSpan /* System.TimeSpan */) throws {
 		let delayC = delay.__handle
 		
 		
@@ -85644,13 +85390,11 @@ public class System_Threading_CancellationTokenSource /* System.Threading.Cancel
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ delay: System_TimeSpan /* System.TimeSpan */, _ timeProvider: System_TimeProvider /* System.TimeProvider */) throws {
+	public convenience init(_ delay: System_TimeSpan /* System.TimeSpan */, _ timeProvider: System_TimeProvider /* System.TimeProvider */) throws {
 		let delayC = delay.__handle
 		let timeProviderC = timeProvider.__handle
 		
@@ -85666,13 +85410,11 @@ public class System_Threading_CancellationTokenSource /* System.Threading.Cancel
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ millisecondsDelay: Int32 /* System.Int32 */) throws {
+	public convenience init(_ millisecondsDelay: Int32 /* System.Int32 */) throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -85685,8 +85427,6 @@ public class System_Threading_CancellationTokenSource /* System.Threading.Cancel
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -85943,7 +85683,7 @@ public class System_Random /* System.Random */: System_Object {
 		
 	}
 	
-	public func getItems(T: System_Type /* System.Type */, _ choices: System_Array? /* System.Array */, _ length: Int32 /* System.Int32 */) throws -> System_Array? /* System.Array */ {
+	public func getItems(T: System_Type /* System.Type */, _ choices: System_Array? /* System.Array */, _ length: Int32 /* System.Int32 */) throws -> System_Array /* System.Array */ {
 		let TC = T.__handle
 		let choicesC = choices?.__handle
 		
@@ -85984,7 +85724,7 @@ public class System_Random /* System.Random */: System_Object {
 		
 	}
 	
-	public convenience init?() throws {
+	public convenience init() throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -85998,13 +85738,11 @@ public class System_Random /* System.Random */: System_Object {
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ Seed: Int32 /* System.Int32 */) throws {
+	public convenience init(_ Seed: Int32 /* System.Int32 */) throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -86017,8 +85755,6 @@ public class System_Random /* System.Random */: System_Object {
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -87631,7 +87367,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
-	public convenience init?() throws {
+	public convenience init() throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -87645,13 +87381,11 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ capacity: Int32 /* System.Int32 */) throws {
+	public convenience init(_ capacity: Int32 /* System.Int32 */) throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -87665,13 +87399,11 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ value: System_String? /* System.String */) throws {
+	public convenience init(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
 		
@@ -87686,13 +87418,11 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ value: System_String? /* System.String */, _ capacity: Int32 /* System.Int32 */) throws {
+	public convenience init(_ value: System_String? /* System.String */, _ capacity: Int32 /* System.Int32 */) throws {
 		let valueC = value?.__handle
 		
 		
@@ -87707,13 +87437,11 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ value: System_String? /* System.String */, _ startIndex: Int32 /* System.Int32 */, _ length: Int32 /* System.Int32 */, _ capacity: Int32 /* System.Int32 */) throws {
+	public convenience init(_ value: System_String? /* System.String */, _ startIndex: Int32 /* System.Int32 */, _ length: Int32 /* System.Int32 */, _ capacity: Int32 /* System.Int32 */) throws {
 		let valueC = value?.__handle
 		
 		
@@ -87728,13 +87456,11 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ capacity: Int32 /* System.Int32 */, _ maxCapacity: Int32 /* System.Int32 */) throws {
+	public convenience init(_ capacity: Int32 /* System.Int32 */, _ maxCapacity: Int32 /* System.Int32 */) throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -87747,8 +87473,6 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -90062,7 +89786,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func readLines(_ path: System_String /* System.String */) throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.String> */ {
+	public class func readLines(_ path: System_String /* System.String */) throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.String> */ {
 		let pathC = path.__handle
 		
 		
@@ -90083,7 +89807,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func readLines(_ path: System_String /* System.String */, _ encoding: System_Text_Encoding /* System.Text.Encoding */) throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.String> */ {
+	public class func readLines(_ path: System_String /* System.String */, _ encoding: System_Text_Encoding /* System.Text.Encoding */) throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.String> */ {
 		let pathC = path.__handle
 		let encodingC = encoding.__handle
 		
@@ -90105,7 +89829,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func readLinesAsync(_ path: System_String /* System.String */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Collections_Generic_IAsyncEnumerable_A1? /* System.Collections.Generic.IAsyncEnumerable<System.String> */ {
+	public class func readLinesAsync(_ path: System_String /* System.String */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Collections_Generic_IAsyncEnumerable_A1 /* System.Collections.Generic.IAsyncEnumerable<System.String> */ {
 		let pathC = path.__handle
 		let cancellationTokenC = cancellationToken.__handle
 		
@@ -90127,7 +89851,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func readLinesAsync(_ path: System_String /* System.String */, _ encoding: System_Text_Encoding /* System.Text.Encoding */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Collections_Generic_IAsyncEnumerable_A1? /* System.Collections.Generic.IAsyncEnumerable<System.String> */ {
+	public class func readLinesAsync(_ path: System_String /* System.String */, _ encoding: System_Text_Encoding /* System.Text.Encoding */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Collections_Generic_IAsyncEnumerable_A1 /* System.Collections.Generic.IAsyncEnumerable<System.String> */ {
 		let pathC = path.__handle
 		let encodingC = encoding.__handle
 		let cancellationTokenC = cancellationToken.__handle
@@ -90420,7 +90144,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func readAllTextAsync(_ path: System_String /* System.String */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task_A1? /* System.Threading.Tasks.Task<System.String> */ {
+	public class func readAllTextAsync(_ path: System_String /* System.String */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<System.String> */ {
 		let pathC = path.__handle
 		let cancellationTokenC = cancellationToken.__handle
 		
@@ -90442,7 +90166,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func readAllTextAsync(_ path: System_String /* System.String */, _ encoding: System_Text_Encoding /* System.Text.Encoding */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task_A1? /* System.Threading.Tasks.Task<System.String> */ {
+	public class func readAllTextAsync(_ path: System_String /* System.String */, _ encoding: System_Text_Encoding /* System.Text.Encoding */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<System.String> */ {
 		let pathC = path.__handle
 		let encodingC = encoding.__handle
 		let cancellationTokenC = cancellationToken.__handle
@@ -90512,7 +90236,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func readAllBytesAsync(_ path: System_String /* System.String */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task_A1? /* System.Threading.Tasks.Task<System.Byte[]> */ {
+	public class func readAllBytesAsync(_ path: System_String /* System.String */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<System.Byte[]> */ {
 		let pathC = path.__handle
 		let cancellationTokenC = cancellationToken.__handle
 		
@@ -90557,7 +90281,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func readAllLinesAsync(_ path: System_String /* System.String */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task_A1? /* System.Threading.Tasks.Task<System.String[]> */ {
+	public class func readAllLinesAsync(_ path: System_String /* System.String */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<System.String[]> */ {
 		let pathC = path.__handle
 		let cancellationTokenC = cancellationToken.__handle
 		
@@ -90579,7 +90303,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		
 	}
 	
-	public class func readAllLinesAsync(_ path: System_String /* System.String */, _ encoding: System_Text_Encoding /* System.Text.Encoding */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task_A1? /* System.Threading.Tasks.Task<System.String[]> */ {
+	public class func readAllLinesAsync(_ path: System_String /* System.String */, _ encoding: System_Text_Encoding /* System.Text.Encoding */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<System.String[]> */ {
 		let pathC = path.__handle
 		let encodingC = encoding.__handle
 		let cancellationTokenC = cancellationToken.__handle
@@ -90957,7 +90681,7 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		
 	}
 	
-	public override func readLineAsync() throws -> System_Threading_Tasks_Task_A1? /* System.Threading.Tasks.Task<System.String> */ {
+	public override func readLineAsync() throws -> System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<System.String> */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -90977,7 +90701,7 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		
 	}
 	
-	public override func readToEndAsync() throws -> System_Threading_Tasks_Task_A1? /* System.Threading.Tasks.Task<System.String> */ {
+	public override func readToEndAsync() throws -> System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<System.String> */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -90997,7 +90721,7 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		
 	}
 	
-	public override func readToEndAsync(_ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task_A1? /* System.Threading.Tasks.Task<System.String> */ {
+	public override func readToEndAsync(_ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<System.String> */ {
 		let cancellationTokenC = cancellationToken.__handle
 		
 		
@@ -91018,7 +90742,7 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		
 	}
 	
-	public override func readAsync(_ buffer: System_Char_Array /* System.Char[] */, _ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Threading_Tasks_Task_A1? /* System.Threading.Tasks.Task<System.Int32> */ {
+	public override func readAsync(_ buffer: System_Char_Array /* System.Char[] */, _ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<System.Int32> */ {
 		let bufferC = buffer.__handle
 		
 		
@@ -91039,7 +90763,7 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		
 	}
 	
-	public override func readBlockAsync(_ buffer: System_Char_Array /* System.Char[] */, _ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Threading_Tasks_Task_A1? /* System.Threading.Tasks.Task<System.Int32> */ {
+	public override func readBlockAsync(_ buffer: System_Char_Array /* System.Char[] */, _ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<System.Int32> */ {
 		let bufferC = buffer.__handle
 		
 		
@@ -91060,7 +90784,7 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		
 	}
 	
-	public convenience init?(_ stream: System_IO_Stream /* System.IO.Stream */) throws {
+	public convenience init(_ stream: System_IO_Stream /* System.IO.Stream */) throws {
 		let streamC = stream.__handle
 		
 		
@@ -91075,13 +90799,11 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ stream: System_IO_Stream /* System.IO.Stream */, _ detectEncodingFromByteOrderMarks: Bool /* System.Boolean */) throws {
+	public convenience init(_ stream: System_IO_Stream /* System.IO.Stream */, _ detectEncodingFromByteOrderMarks: Bool /* System.Boolean */) throws {
 		let streamC = stream.__handle
 		
 		
@@ -91096,13 +90818,11 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ stream: System_IO_Stream /* System.IO.Stream */, _ encoding: System_Text_Encoding /* System.Text.Encoding */) throws {
+	public convenience init(_ stream: System_IO_Stream /* System.IO.Stream */, _ encoding: System_Text_Encoding /* System.Text.Encoding */) throws {
 		let streamC = stream.__handle
 		let encodingC = encoding.__handle
 		
@@ -91118,13 +90838,11 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ stream: System_IO_Stream /* System.IO.Stream */, _ encoding: System_Text_Encoding /* System.Text.Encoding */, _ detectEncodingFromByteOrderMarks: Bool /* System.Boolean */) throws {
+	public convenience init(_ stream: System_IO_Stream /* System.IO.Stream */, _ encoding: System_Text_Encoding /* System.Text.Encoding */, _ detectEncodingFromByteOrderMarks: Bool /* System.Boolean */) throws {
 		let streamC = stream.__handle
 		let encodingC = encoding.__handle
 		
@@ -91140,13 +90858,11 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ stream: System_IO_Stream /* System.IO.Stream */, _ encoding: System_Text_Encoding /* System.Text.Encoding */, _ detectEncodingFromByteOrderMarks: Bool /* System.Boolean */, _ bufferSize: Int32 /* System.Int32 */) throws {
+	public convenience init(_ stream: System_IO_Stream /* System.IO.Stream */, _ encoding: System_Text_Encoding /* System.Text.Encoding */, _ detectEncodingFromByteOrderMarks: Bool /* System.Boolean */, _ bufferSize: Int32 /* System.Int32 */) throws {
 		let streamC = stream.__handle
 		let encodingC = encoding.__handle
 		
@@ -91162,13 +90878,11 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ stream: System_IO_Stream /* System.IO.Stream */, _ encoding: System_Text_Encoding? /* System.Text.Encoding */, _ detectEncodingFromByteOrderMarks: Bool /* System.Boolean */, _ bufferSize: Int32 /* System.Int32 */, _ leaveOpen: Bool /* System.Boolean */) throws {
+	public convenience init(_ stream: System_IO_Stream /* System.IO.Stream */, _ encoding: System_Text_Encoding? /* System.Text.Encoding */, _ detectEncodingFromByteOrderMarks: Bool /* System.Boolean */, _ bufferSize: Int32 /* System.Int32 */, _ leaveOpen: Bool /* System.Boolean */) throws {
 		let streamC = stream.__handle
 		let encodingC = encoding?.__handle
 		
@@ -91184,13 +90898,11 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ path: System_String /* System.String */) throws {
+	public convenience init(_ path: System_String /* System.String */) throws {
 		let pathC = path.__handle
 		
 		
@@ -91205,13 +90917,11 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ path: System_String /* System.String */, _ detectEncodingFromByteOrderMarks: Bool /* System.Boolean */) throws {
+	public convenience init(_ path: System_String /* System.String */, _ detectEncodingFromByteOrderMarks: Bool /* System.Boolean */) throws {
 		let pathC = path.__handle
 		
 		
@@ -91226,13 +90936,11 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ path: System_String /* System.String */, _ encoding: System_Text_Encoding /* System.Text.Encoding */) throws {
+	public convenience init(_ path: System_String /* System.String */, _ encoding: System_Text_Encoding /* System.Text.Encoding */) throws {
 		let pathC = path.__handle
 		let encodingC = encoding.__handle
 		
@@ -91248,13 +90956,11 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ path: System_String /* System.String */, _ encoding: System_Text_Encoding /* System.Text.Encoding */, _ detectEncodingFromByteOrderMarks: Bool /* System.Boolean */) throws {
+	public convenience init(_ path: System_String /* System.String */, _ encoding: System_Text_Encoding /* System.Text.Encoding */, _ detectEncodingFromByteOrderMarks: Bool /* System.Boolean */) throws {
 		let pathC = path.__handle
 		let encodingC = encoding.__handle
 		
@@ -91270,13 +90976,11 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ path: System_String /* System.String */, _ encoding: System_Text_Encoding /* System.Text.Encoding */, _ detectEncodingFromByteOrderMarks: Bool /* System.Boolean */, _ bufferSize: Int32 /* System.Int32 */) throws {
+	public convenience init(_ path: System_String /* System.String */, _ encoding: System_Text_Encoding /* System.Text.Encoding */, _ detectEncodingFromByteOrderMarks: Bool /* System.Boolean */, _ bufferSize: Int32 /* System.Int32 */) throws {
 		let pathC = path.__handle
 		let encodingC = encoding.__handle
 		
@@ -91292,13 +90996,11 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ path: System_String /* System.String */, _ options: System_IO_FileStreamOptions /* System.IO.FileStreamOptions */) throws {
+	public convenience init(_ path: System_String /* System.String */, _ options: System_IO_FileStreamOptions /* System.IO.FileStreamOptions */) throws {
 		let pathC = path.__handle
 		let optionsC = options.__handle
 		
@@ -91314,13 +91016,11 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ path: System_String /* System.String */, _ encoding: System_Text_Encoding /* System.Text.Encoding */, _ detectEncodingFromByteOrderMarks: Bool /* System.Boolean */, _ options: System_IO_FileStreamOptions /* System.IO.FileStreamOptions */) throws {
+	public convenience init(_ path: System_String /* System.String */, _ encoding: System_Text_Encoding /* System.Text.Encoding */, _ detectEncodingFromByteOrderMarks: Bool /* System.Boolean */, _ options: System_IO_FileStreamOptions /* System.IO.FileStreamOptions */) throws {
 		let pathC = path.__handle
 		let encodingC = encoding.__handle
 		let optionsC = options.__handle
@@ -91336,8 +91036,6 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -91587,7 +91285,7 @@ public class System_IO_TextReader /* System.IO.TextReader */: System_MarshalByRe
 		
 	}
 	
-	public func readLineAsync() throws -> System_Threading_Tasks_Task_A1? /* System.Threading.Tasks.Task<System.String> */ {
+	public func readLineAsync() throws -> System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<System.String> */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -91607,7 +91305,7 @@ public class System_IO_TextReader /* System.IO.TextReader */: System_MarshalByRe
 		
 	}
 	
-	public func readToEndAsync() throws -> System_Threading_Tasks_Task_A1? /* System.Threading.Tasks.Task<System.String> */ {
+	public func readToEndAsync() throws -> System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<System.String> */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -91627,7 +91325,7 @@ public class System_IO_TextReader /* System.IO.TextReader */: System_MarshalByRe
 		
 	}
 	
-	public func readToEndAsync(_ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task_A1? /* System.Threading.Tasks.Task<System.String> */ {
+	public func readToEndAsync(_ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<System.String> */ {
 		let cancellationTokenC = cancellationToken.__handle
 		
 		
@@ -91648,7 +91346,7 @@ public class System_IO_TextReader /* System.IO.TextReader */: System_MarshalByRe
 		
 	}
 	
-	public func readAsync(_ buffer: System_Char_Array /* System.Char[] */, _ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Threading_Tasks_Task_A1? /* System.Threading.Tasks.Task<System.Int32> */ {
+	public func readAsync(_ buffer: System_Char_Array /* System.Char[] */, _ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<System.Int32> */ {
 		let bufferC = buffer.__handle
 		
 		
@@ -91669,7 +91367,7 @@ public class System_IO_TextReader /* System.IO.TextReader */: System_MarshalByRe
 		
 	}
 	
-	public func readBlockAsync(_ buffer: System_Char_Array /* System.Char[] */, _ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Threading_Tasks_Task_A1? /* System.Threading.Tasks.Task<System.Int32> */ {
+	public func readBlockAsync(_ buffer: System_Char_Array /* System.Char[] */, _ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<System.Int32> */ {
 		let bufferC = buffer.__handle
 		
 		
@@ -92243,7 +91941,7 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		
 	}
 	
-	public convenience init?(_ stream: System_IO_Stream /* System.IO.Stream */) throws {
+	public convenience init(_ stream: System_IO_Stream /* System.IO.Stream */) throws {
 		let streamC = stream.__handle
 		
 		
@@ -92258,13 +91956,11 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ stream: System_IO_Stream /* System.IO.Stream */, _ encoding: System_Text_Encoding /* System.Text.Encoding */) throws {
+	public convenience init(_ stream: System_IO_Stream /* System.IO.Stream */, _ encoding: System_Text_Encoding /* System.Text.Encoding */) throws {
 		let streamC = stream.__handle
 		let encodingC = encoding.__handle
 		
@@ -92280,13 +91976,11 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ stream: System_IO_Stream /* System.IO.Stream */, _ encoding: System_Text_Encoding /* System.Text.Encoding */, _ bufferSize: Int32 /* System.Int32 */) throws {
+	public convenience init(_ stream: System_IO_Stream /* System.IO.Stream */, _ encoding: System_Text_Encoding /* System.Text.Encoding */, _ bufferSize: Int32 /* System.Int32 */) throws {
 		let streamC = stream.__handle
 		let encodingC = encoding.__handle
 		
@@ -92302,13 +91996,11 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ stream: System_IO_Stream /* System.IO.Stream */, _ encoding: System_Text_Encoding? /* System.Text.Encoding */, _ bufferSize: Int32 /* System.Int32 */, _ leaveOpen: Bool /* System.Boolean */) throws {
+	public convenience init(_ stream: System_IO_Stream /* System.IO.Stream */, _ encoding: System_Text_Encoding? /* System.Text.Encoding */, _ bufferSize: Int32 /* System.Int32 */, _ leaveOpen: Bool /* System.Boolean */) throws {
 		let streamC = stream.__handle
 		let encodingC = encoding?.__handle
 		
@@ -92324,13 +92016,11 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ path: System_String /* System.String */) throws {
+	public convenience init(_ path: System_String /* System.String */) throws {
 		let pathC = path.__handle
 		
 		
@@ -92345,13 +92035,11 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ path: System_String /* System.String */, _ append: Bool /* System.Boolean */) throws {
+	public convenience init(_ path: System_String /* System.String */, _ append: Bool /* System.Boolean */) throws {
 		let pathC = path.__handle
 		
 		
@@ -92366,13 +92054,11 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ path: System_String /* System.String */, _ append: Bool /* System.Boolean */, _ encoding: System_Text_Encoding /* System.Text.Encoding */) throws {
+	public convenience init(_ path: System_String /* System.String */, _ append: Bool /* System.Boolean */, _ encoding: System_Text_Encoding /* System.Text.Encoding */) throws {
 		let pathC = path.__handle
 		let encodingC = encoding.__handle
 		
@@ -92388,13 +92074,11 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ path: System_String /* System.String */, _ append: Bool /* System.Boolean */, _ encoding: System_Text_Encoding /* System.Text.Encoding */, _ bufferSize: Int32 /* System.Int32 */) throws {
+	public convenience init(_ path: System_String /* System.String */, _ append: Bool /* System.Boolean */, _ encoding: System_Text_Encoding /* System.Text.Encoding */, _ bufferSize: Int32 /* System.Int32 */) throws {
 		let pathC = path.__handle
 		let encodingC = encoding.__handle
 		
@@ -92410,13 +92094,11 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ path: System_String /* System.String */, _ options: System_IO_FileStreamOptions /* System.IO.FileStreamOptions */) throws {
+	public convenience init(_ path: System_String /* System.String */, _ options: System_IO_FileStreamOptions /* System.IO.FileStreamOptions */) throws {
 		let pathC = path.__handle
 		let optionsC = options.__handle
 		
@@ -92432,13 +92114,11 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ path: System_String /* System.String */, _ encoding: System_Text_Encoding /* System.Text.Encoding */, _ options: System_IO_FileStreamOptions /* System.IO.FileStreamOptions */) throws {
+	public convenience init(_ path: System_String /* System.String */, _ encoding: System_Text_Encoding /* System.Text.Encoding */, _ options: System_IO_FileStreamOptions /* System.IO.FileStreamOptions */) throws {
 		let pathC = path.__handle
 		let encodingC = encoding.__handle
 		let optionsC = options.__handle
@@ -92454,8 +92134,6 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -94728,7 +94406,7 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		
 	}
 	
-	public convenience init?(_ fileName: System_String /* System.String */) throws {
+	public convenience init(_ fileName: System_String /* System.String */) throws {
 		let fileNameC = fileName.__handle
 		
 		
@@ -94742,8 +94420,6 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -95201,7 +94877,7 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
-	public func enumerateDirectories() throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.IO.DirectoryInfo> */ {
+	public func enumerateDirectories() throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.IO.DirectoryInfo> */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -95221,7 +94897,7 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
-	public func enumerateDirectories(_ searchPattern: System_String /* System.String */) throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.IO.DirectoryInfo> */ {
+	public func enumerateDirectories(_ searchPattern: System_String /* System.String */) throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.IO.DirectoryInfo> */ {
 		let searchPatternC = searchPattern.__handle
 		
 		
@@ -95242,7 +94918,7 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
-	public func enumerateDirectories(_ searchPattern: System_String /* System.String */, _ searchOption: System_IO_SearchOption /* System.IO.SearchOption */) throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.IO.DirectoryInfo> */ {
+	public func enumerateDirectories(_ searchPattern: System_String /* System.String */, _ searchOption: System_IO_SearchOption /* System.IO.SearchOption */) throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.IO.DirectoryInfo> */ {
 		let searchPatternC = searchPattern.__handle
 		let searchOptionC = searchOption.cValue
 		
@@ -95264,7 +94940,7 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
-	public func enumerateDirectories(_ searchPattern: System_String /* System.String */, _ enumerationOptions: System_IO_EnumerationOptions /* System.IO.EnumerationOptions */) throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.IO.DirectoryInfo> */ {
+	public func enumerateDirectories(_ searchPattern: System_String /* System.String */, _ enumerationOptions: System_IO_EnumerationOptions /* System.IO.EnumerationOptions */) throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.IO.DirectoryInfo> */ {
 		let searchPatternC = searchPattern.__handle
 		let enumerationOptionsC = enumerationOptions.__handle
 		
@@ -95286,7 +94962,7 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
-	public func enumerateFiles() throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.IO.FileInfo> */ {
+	public func enumerateFiles() throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.IO.FileInfo> */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -95306,7 +94982,7 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
-	public func enumerateFiles(_ searchPattern: System_String /* System.String */) throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.IO.FileInfo> */ {
+	public func enumerateFiles(_ searchPattern: System_String /* System.String */) throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.IO.FileInfo> */ {
 		let searchPatternC = searchPattern.__handle
 		
 		
@@ -95327,7 +95003,7 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
-	public func enumerateFiles(_ searchPattern: System_String /* System.String */, _ searchOption: System_IO_SearchOption /* System.IO.SearchOption */) throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.IO.FileInfo> */ {
+	public func enumerateFiles(_ searchPattern: System_String /* System.String */, _ searchOption: System_IO_SearchOption /* System.IO.SearchOption */) throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.IO.FileInfo> */ {
 		let searchPatternC = searchPattern.__handle
 		let searchOptionC = searchOption.cValue
 		
@@ -95349,7 +95025,7 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
-	public func enumerateFiles(_ searchPattern: System_String /* System.String */, _ enumerationOptions: System_IO_EnumerationOptions /* System.IO.EnumerationOptions */) throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.IO.FileInfo> */ {
+	public func enumerateFiles(_ searchPattern: System_String /* System.String */, _ enumerationOptions: System_IO_EnumerationOptions /* System.IO.EnumerationOptions */) throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.IO.FileInfo> */ {
 		let searchPatternC = searchPattern.__handle
 		let enumerationOptionsC = enumerationOptions.__handle
 		
@@ -95371,7 +95047,7 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
-	public func enumerateFileSystemInfos() throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.IO.FileSystemInfo> */ {
+	public func enumerateFileSystemInfos() throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.IO.FileSystemInfo> */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -95391,7 +95067,7 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
-	public func enumerateFileSystemInfos(_ searchPattern: System_String /* System.String */) throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.IO.FileSystemInfo> */ {
+	public func enumerateFileSystemInfos(_ searchPattern: System_String /* System.String */) throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.IO.FileSystemInfo> */ {
 		let searchPatternC = searchPattern.__handle
 		
 		
@@ -95412,7 +95088,7 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
-	public func enumerateFileSystemInfos(_ searchPattern: System_String /* System.String */, _ searchOption: System_IO_SearchOption /* System.IO.SearchOption */) throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.IO.FileSystemInfo> */ {
+	public func enumerateFileSystemInfos(_ searchPattern: System_String /* System.String */, _ searchOption: System_IO_SearchOption /* System.IO.SearchOption */) throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.IO.FileSystemInfo> */ {
 		let searchPatternC = searchPattern.__handle
 		let searchOptionC = searchOption.cValue
 		
@@ -95434,7 +95110,7 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
-	public func enumerateFileSystemInfos(_ searchPattern: System_String /* System.String */, _ enumerationOptions: System_IO_EnumerationOptions /* System.IO.EnumerationOptions */) throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.IO.FileSystemInfo> */ {
+	public func enumerateFileSystemInfos(_ searchPattern: System_String /* System.String */, _ enumerationOptions: System_IO_EnumerationOptions /* System.IO.EnumerationOptions */) throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.IO.FileSystemInfo> */ {
 		let searchPatternC = searchPattern.__handle
 		let enumerationOptionsC = enumerationOptions.__handle
 		
@@ -95508,7 +95184,7 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
-	public convenience init?(_ path: System_String /* System.String */) throws {
+	public convenience init(_ path: System_String /* System.String */) throws {
 		let pathC = path.__handle
 		
 		
@@ -95522,8 +95198,6 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -95660,7 +95334,7 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 		"System.IO.EnumerationOptions"
 	}}
 
-	public convenience init?() throws {
+	public convenience init() throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -95673,8 +95347,6 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -96655,7 +96327,7 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 		
 	}
 	
-	public class func enumerateDirectories(_ path: System_String /* System.String */) throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.String> */ {
+	public class func enumerateDirectories(_ path: System_String /* System.String */) throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.String> */ {
 		let pathC = path.__handle
 		
 		
@@ -96676,7 +96348,7 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 		
 	}
 	
-	public class func enumerateDirectories(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */) throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.String> */ {
+	public class func enumerateDirectories(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */) throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.String> */ {
 		let pathC = path.__handle
 		let searchPatternC = searchPattern.__handle
 		
@@ -96698,7 +96370,7 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 		
 	}
 	
-	public class func enumerateDirectories(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */, _ searchOption: System_IO_SearchOption /* System.IO.SearchOption */) throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.String> */ {
+	public class func enumerateDirectories(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */, _ searchOption: System_IO_SearchOption /* System.IO.SearchOption */) throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.String> */ {
 		let pathC = path.__handle
 		let searchPatternC = searchPattern.__handle
 		let searchOptionC = searchOption.cValue
@@ -96721,7 +96393,7 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 		
 	}
 	
-	public class func enumerateDirectories(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */, _ enumerationOptions: System_IO_EnumerationOptions /* System.IO.EnumerationOptions */) throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.String> */ {
+	public class func enumerateDirectories(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */, _ enumerationOptions: System_IO_EnumerationOptions /* System.IO.EnumerationOptions */) throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.String> */ {
 		let pathC = path.__handle
 		let searchPatternC = searchPattern.__handle
 		let enumerationOptionsC = enumerationOptions.__handle
@@ -96744,7 +96416,7 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 		
 	}
 	
-	public class func enumerateFiles(_ path: System_String /* System.String */) throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.String> */ {
+	public class func enumerateFiles(_ path: System_String /* System.String */) throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.String> */ {
 		let pathC = path.__handle
 		
 		
@@ -96765,7 +96437,7 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 		
 	}
 	
-	public class func enumerateFiles(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */) throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.String> */ {
+	public class func enumerateFiles(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */) throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.String> */ {
 		let pathC = path.__handle
 		let searchPatternC = searchPattern.__handle
 		
@@ -96787,7 +96459,7 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 		
 	}
 	
-	public class func enumerateFiles(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */, _ searchOption: System_IO_SearchOption /* System.IO.SearchOption */) throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.String> */ {
+	public class func enumerateFiles(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */, _ searchOption: System_IO_SearchOption /* System.IO.SearchOption */) throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.String> */ {
 		let pathC = path.__handle
 		let searchPatternC = searchPattern.__handle
 		let searchOptionC = searchOption.cValue
@@ -96810,7 +96482,7 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 		
 	}
 	
-	public class func enumerateFiles(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */, _ enumerationOptions: System_IO_EnumerationOptions /* System.IO.EnumerationOptions */) throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.String> */ {
+	public class func enumerateFiles(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */, _ enumerationOptions: System_IO_EnumerationOptions /* System.IO.EnumerationOptions */) throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.String> */ {
 		let pathC = path.__handle
 		let searchPatternC = searchPattern.__handle
 		let enumerationOptionsC = enumerationOptions.__handle
@@ -96833,7 +96505,7 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 		
 	}
 	
-	public class func enumerateFileSystemEntries(_ path: System_String /* System.String */) throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.String> */ {
+	public class func enumerateFileSystemEntries(_ path: System_String /* System.String */) throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.String> */ {
 		let pathC = path.__handle
 		
 		
@@ -96854,7 +96526,7 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 		
 	}
 	
-	public class func enumerateFileSystemEntries(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */) throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.String> */ {
+	public class func enumerateFileSystemEntries(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */) throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.String> */ {
 		let pathC = path.__handle
 		let searchPatternC = searchPattern.__handle
 		
@@ -96876,7 +96548,7 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 		
 	}
 	
-	public class func enumerateFileSystemEntries(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */, _ searchOption: System_IO_SearchOption /* System.IO.SearchOption */) throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.String> */ {
+	public class func enumerateFileSystemEntries(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */, _ searchOption: System_IO_SearchOption /* System.IO.SearchOption */) throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.String> */ {
 		let pathC = path.__handle
 		let searchPatternC = searchPattern.__handle
 		let searchOptionC = searchOption.cValue
@@ -96899,7 +96571,7 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 		
 	}
 	
-	public class func enumerateFileSystemEntries(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */, _ enumerationOptions: System_IO_EnumerationOptions /* System.IO.EnumerationOptions */) throws -> System_Collections_Generic_IEnumerable_A1? /* System.Collections.Generic.IEnumerable<System.String> */ {
+	public class func enumerateFileSystemEntries(_ path: System_String /* System.String */, _ searchPattern: System_String /* System.String */, _ enumerationOptions: System_IO_EnumerationOptions /* System.IO.EnumerationOptions */) throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.String> */ {
 		let pathC = path.__handle
 		let searchPatternC = searchPattern.__handle
 		let enumerationOptionsC = enumerationOptions.__handle
@@ -103202,7 +102874,7 @@ public class System_WeakReference_A1 /* System.WeakReference<> */: System_Object
 		
 	}
 	
-	public convenience init?(T: System_Type /* System.Type */, _ target: System_Object? /* System.Object */) throws {
+	public convenience init(T: System_Type /* System.Type */, _ target: System_Object? /* System.Object */) throws {
 		let TC = T.__handle
 		let targetC = target?.__handle
 		
@@ -103218,13 +102890,11 @@ public class System_WeakReference_A1 /* System.WeakReference<> */: System_Object
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(T: System_Type /* System.Type */, _ target: System_Object? /* System.Object */, _ trackResurrection: Bool /* System.Boolean */) throws {
+	public convenience init(T: System_Type /* System.Type */, _ target: System_Object? /* System.Object */, _ trackResurrection: Bool /* System.Boolean */) throws {
 		let TC = T.__handle
 		let targetC = target?.__handle
 		
@@ -103239,8 +102909,6 @@ public class System_WeakReference_A1 /* System.WeakReference<> */: System_Object
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -103423,7 +103091,7 @@ public class System_Runtime_CompilerServices_ConditionalWeakTable_A2 /* System.R
 		
 	}
 	
-	public convenience init?(TKey: System_Type /* System.Type */, TValue: System_Type /* System.Type */) throws {
+	public convenience init(TKey: System_Type /* System.Type */, TValue: System_Type /* System.Type */) throws {
 		let TKeyC = TKey.__handle
 		let TValueC = TValue.__handle
 		
@@ -103438,8 +103106,6 @@ public class System_Runtime_CompilerServices_ConditionalWeakTable_A2 /* System.R
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -103624,7 +103290,7 @@ public class System_Collections_Generic_List_A1 /* System.Collections.Generic.Li
 		
 	}
 	
-	public func getRange(T: System_Type /* System.Type */, _ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Object? /* System.Object */ {
+	public func getRange(T: System_Type /* System.Type */, _ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Object /* System.Object */ {
 		let TC = T.__handle
 		
 		
@@ -103645,7 +103311,7 @@ public class System_Collections_Generic_List_A1 /* System.Collections.Generic.Li
 		
 	}
 	
-	public func slice(T: System_Type /* System.Type */, _ start: Int32 /* System.Int32 */, _ length: Int32 /* System.Int32 */) throws -> System_Object? /* System.Object */ {
+	public func slice(T: System_Type /* System.Type */, _ start: Int32 /* System.Int32 */, _ length: Int32 /* System.Int32 */) throws -> System_Object /* System.Object */ {
 		let TC = T.__handle
 		
 		
@@ -103915,7 +103581,7 @@ public class System_Collections_Generic_List_A1 /* System.Collections.Generic.Li
 		
 	}
 	
-	public func toArray(T: System_Type /* System.Type */) throws -> System_Array? /* System.Array */ {
+	public func toArray(T: System_Type /* System.Type */) throws -> System_Array /* System.Array */ {
 		let TC = T.__handle
 		
 		
@@ -103954,7 +103620,7 @@ public class System_Collections_Generic_List_A1 /* System.Collections.Generic.Li
 		
 	}
 	
-	public convenience init?(T: System_Type /* System.Type */) throws {
+	public convenience init(T: System_Type /* System.Type */) throws {
 		let TC = T.__handle
 		
 		
@@ -103969,13 +103635,11 @@ public class System_Collections_Generic_List_A1 /* System.Collections.Generic.Li
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(T: System_Type /* System.Type */, _ capacity: Int32 /* System.Int32 */) throws {
+	public convenience init(T: System_Type /* System.Type */, _ capacity: Int32 /* System.Int32 */) throws {
 		let TC = T.__handle
 		
 		
@@ -103989,8 +103653,6 @@ public class System_Collections_Generic_List_A1 /* System.Collections.Generic.Li
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -104393,7 +104055,7 @@ public class System_Collections_Generic_Dictionary_A2 /* System.Collections.Gene
 		
 	}
 	
-	public convenience init?(TKey: System_Type /* System.Type */, TValue: System_Type /* System.Type */) throws {
+	public convenience init(TKey: System_Type /* System.Type */, TValue: System_Type /* System.Type */) throws {
 		let TKeyC = TKey.__handle
 		let TValueC = TValue.__handle
 		
@@ -104409,13 +104071,11 @@ public class System_Collections_Generic_Dictionary_A2 /* System.Collections.Gene
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(TKey: System_Type /* System.Type */, TValue: System_Type /* System.Type */, _ capacity: Int32 /* System.Int32 */) throws {
+	public convenience init(TKey: System_Type /* System.Type */, TValue: System_Type /* System.Type */, _ capacity: Int32 /* System.Int32 */) throws {
 		let TKeyC = TKey.__handle
 		let TValueC = TValue.__handle
 		
@@ -104430,8 +104090,6 @@ public class System_Collections_Generic_Dictionary_A2 /* System.Collections.Gene
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -104746,7 +104404,7 @@ public class System_Tuple_A1 /* System.Tuple<> */: System_Object {
 		
 	}
 	
-	public convenience init?(T1: System_Type /* System.Type */, _ item1: System_Object? /* System.Object */) throws {
+	public convenience init(T1: System_Type /* System.Type */, _ item1: System_Object? /* System.Object */) throws {
 		let T1C = T1.__handle
 		let item1C = item1?.__handle
 		
@@ -104761,8 +104419,6 @@ public class System_Tuple_A1 /* System.Tuple<> */: System_Object {
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -104940,7 +104596,7 @@ public class System_Tuple_A2 /* System.Tuple<,> */: System_Object {
 		
 	}
 	
-	public convenience init?(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, _ item1: System_Object? /* System.Object */, _ item2: System_Object? /* System.Object */) throws {
+	public convenience init(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, _ item1: System_Object? /* System.Object */, _ item2: System_Object? /* System.Object */) throws {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let item1C = item1?.__handle
@@ -104957,8 +104613,6 @@ public class System_Tuple_A2 /* System.Tuple<,> */: System_Object {
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -105101,7 +104755,7 @@ public class System_Tuple_A3 /* System.Tuple<,,> */: System_Object {
 		
 	}
 	
-	public convenience init?(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, _ item1: System_Object? /* System.Object */, _ item2: System_Object? /* System.Object */, _ item3: System_Object? /* System.Object */) throws {
+	public convenience init(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, _ item1: System_Object? /* System.Object */, _ item2: System_Object? /* System.Object */, _ item3: System_Object? /* System.Object */) throws {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -105120,8 +104774,6 @@ public class System_Tuple_A3 /* System.Tuple<,,> */: System_Object {
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -105294,7 +104946,7 @@ public class System_Tuple_A4 /* System.Tuple<,,,> */: System_Object {
 		
 	}
 	
-	public convenience init?(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, _ item1: System_Object? /* System.Object */, _ item2: System_Object? /* System.Object */, _ item3: System_Object? /* System.Object */, _ item4: System_Object? /* System.Object */) throws {
+	public convenience init(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, _ item1: System_Object? /* System.Object */, _ item2: System_Object? /* System.Object */, _ item3: System_Object? /* System.Object */, _ item4: System_Object? /* System.Object */) throws {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -105315,8 +104967,6 @@ public class System_Tuple_A4 /* System.Tuple<,,,> */: System_Object {
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -105521,7 +105171,7 @@ public class System_Tuple_A5 /* System.Tuple<,,,,> */: System_Object {
 		
 	}
 	
-	public convenience init?(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, _ item1: System_Object? /* System.Object */, _ item2: System_Object? /* System.Object */, _ item3: System_Object? /* System.Object */, _ item4: System_Object? /* System.Object */, _ item5: System_Object? /* System.Object */) throws {
+	public convenience init(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, _ item1: System_Object? /* System.Object */, _ item2: System_Object? /* System.Object */, _ item3: System_Object? /* System.Object */, _ item4: System_Object? /* System.Object */, _ item5: System_Object? /* System.Object */) throws {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -105544,8 +105194,6 @@ public class System_Tuple_A5 /* System.Tuple<,,,,> */: System_Object {
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -105784,7 +105432,7 @@ public class System_Tuple_A6 /* System.Tuple<,,,,,> */: System_Object {
 		
 	}
 	
-	public convenience init?(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */, _ item1: System_Object? /* System.Object */, _ item2: System_Object? /* System.Object */, _ item3: System_Object? /* System.Object */, _ item4: System_Object? /* System.Object */, _ item5: System_Object? /* System.Object */, _ item6: System_Object? /* System.Object */) throws {
+	public convenience init(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */, _ item1: System_Object? /* System.Object */, _ item2: System_Object? /* System.Object */, _ item3: System_Object? /* System.Object */, _ item4: System_Object? /* System.Object */, _ item5: System_Object? /* System.Object */, _ item6: System_Object? /* System.Object */) throws {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -105809,8 +105457,6 @@ public class System_Tuple_A6 /* System.Tuple<,,,,,> */: System_Object {
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -106085,7 +105731,7 @@ public class System_Tuple_A7 /* System.Tuple<,,,,,,> */: System_Object {
 		
 	}
 	
-	public convenience init?(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */, T7: System_Type /* System.Type */, _ item1: System_Object? /* System.Object */, _ item2: System_Object? /* System.Object */, _ item3: System_Object? /* System.Object */, _ item4: System_Object? /* System.Object */, _ item5: System_Object? /* System.Object */, _ item6: System_Object? /* System.Object */, _ item7: System_Object? /* System.Object */) throws {
+	public convenience init(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */, T7: System_Type /* System.Type */, _ item1: System_Object? /* System.Object */, _ item2: System_Object? /* System.Object */, _ item3: System_Object? /* System.Object */, _ item4: System_Object? /* System.Object */, _ item5: System_Object? /* System.Object */, _ item6: System_Object? /* System.Object */, _ item7: System_Object? /* System.Object */) throws {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -106112,8 +105758,6 @@ public class System_Tuple_A7 /* System.Tuple<,,,,,,> */: System_Object {
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -106426,7 +106070,7 @@ public class System_Tuple_A8 /* System.Tuple<,,,,,,,> */: System_Object {
 		
 	}
 	
-	public convenience init?(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */, T7: System_Type /* System.Type */, TRest: System_Type /* System.Type */, _ item1: System_Object? /* System.Object */, _ item2: System_Object? /* System.Object */, _ item3: System_Object? /* System.Object */, _ item4: System_Object? /* System.Object */, _ item5: System_Object? /* System.Object */, _ item6: System_Object? /* System.Object */, _ item7: System_Object? /* System.Object */, _ rest: System_Object? /* System.Object */) throws {
+	public convenience init(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */, T7: System_Type /* System.Type */, TRest: System_Type /* System.Type */, _ item1: System_Object? /* System.Object */, _ item2: System_Object? /* System.Object */, _ item3: System_Object? /* System.Object */, _ item4: System_Object? /* System.Object */, _ item5: System_Object? /* System.Object */, _ item6: System_Object? /* System.Object */, _ item7: System_Object? /* System.Object */, _ rest: System_Object? /* System.Object */) throws {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -106455,8 +106099,6 @@ public class System_Tuple_A8 /* System.Tuple<,,,,,,,> */: System_Object {
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -106665,7 +106307,7 @@ public class System_Tuple_A8 /* System.Tuple<,,,,,,,> */: System_Object {
 	}
 	
 	
-	public func rest(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */, T7: System_Type /* System.Type */, TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public func rest(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */, T7: System_Type /* System.Type */, TRest: System_Type /* System.Type */) throws -> System_Object /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		let T3C = T3.__handle
@@ -106748,7 +106390,7 @@ public class Beyond_NET_Sample_Address /* Beyond.NET.Sample.Address */: System_O
 		
 	}
 	
-	public convenience init?(_ street: System_String /* System.String */, _ city: System_String /* System.String */) throws {
+	public convenience init(_ street: System_String /* System.String */, _ city: System_String /* System.String */) throws {
 		let streetC = street.__handle
 		let cityC = city.__handle
 		
@@ -106763,8 +106405,6 @@ public class Beyond_NET_Sample_Address /* Beyond.NET.Sample.Address */: System_O
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -106943,7 +106583,7 @@ public class Beyond_NET_Sample_AnimalFactory /* Beyond.NET.Sample.AnimalFactory 
 		
 	}
 	
-	public class func createAnimal(T: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+	public class func createAnimal(T: System_Type /* System.Type */) throws -> System_Object /* System.Object */ {
 		let TC = T.__handle
 		
 		
@@ -107177,7 +106817,7 @@ public class Beyond_NET_Sample_GenericAnimal /* Beyond.NET.Sample.GenericAnimal 
 		"Beyond.NET.Sample.GenericAnimal"
 	}}
 
-	public convenience init?(_ name: System_String /* System.String */) throws {
+	public convenience init(_ name: System_String /* System.String */) throws {
 		let nameC = name.__handle
 		
 		
@@ -107191,8 +106831,6 @@ public class Beyond_NET_Sample_GenericAnimal /* Beyond.NET.Sample.GenericAnimal 
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -107242,7 +106880,7 @@ public class Beyond_NET_Sample_Labrador /* Beyond.NET.Sample.Labrador */: Beyond
 		"Beyond.NET.Sample.Labrador"
 	}}
 
-	public convenience init?() throws {
+	public convenience init() throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -107255,8 +106893,6 @@ public class Beyond_NET_Sample_Labrador /* Beyond.NET.Sample.Labrador */: Beyond
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -107318,7 +106954,7 @@ public class Beyond_NET_Sample_AsyncTests /* Beyond.NET.Sample.AsyncTests */: Sy
 		"Beyond.NET.Sample.AsyncTests"
 	}}
 
-	public func addAsync(_ number1: Int32 /* System.Int32 */, _ number2: Int32 /* System.Int32 */) throws -> System_Threading_Tasks_Task_A1? /* System.Threading.Tasks.Task<System.Int32> */ {
+	public func addAsync(_ number1: Int32 /* System.Int32 */, _ number2: Int32 /* System.Int32 */) throws -> System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<System.Int32> */ {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -107338,7 +106974,7 @@ public class Beyond_NET_Sample_AsyncTests /* Beyond.NET.Sample.AsyncTests */: Sy
 		
 	}
 	
-	public func transformNumbersAsync(_ number1: Int32 /* System.Int32 */, _ number2: Int32 /* System.Int32 */, _ transformerDelegate: Beyond_NET_Sample_AsyncTests_TransformerDelegate /* Beyond.NET.Sample.AsyncTests.TransformerDelegate */) throws -> System_Threading_Tasks_Task_A1? /* System.Threading.Tasks.Task<System.Int32> */ {
+	public func transformNumbersAsync(_ number1: Int32 /* System.Int32 */, _ number2: Int32 /* System.Int32 */, _ transformerDelegate: Beyond_NET_Sample_AsyncTests_TransformerDelegate /* Beyond.NET.Sample.AsyncTests.TransformerDelegate */) throws -> System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<System.Int32> */ {
 		let transformerDelegateC = transformerDelegate.__handle
 		
 		
@@ -107359,7 +106995,7 @@ public class Beyond_NET_Sample_AsyncTests /* Beyond.NET.Sample.AsyncTests */: Sy
 		
 	}
 	
-	public convenience init?() throws {
+	public convenience init() throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -107372,8 +107008,6 @@ public class Beyond_NET_Sample_AsyncTests /* Beyond.NET.Sample.AsyncTests */: Sy
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -107583,7 +107217,7 @@ public class Beyond_NET_Sample_EventTests /* Beyond.NET.Sample.EventTests */: Sy
 		"Beyond.NET.Sample.EventTests"
 	}}
 
-	public convenience init?() throws {
+	public convenience init() throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -107596,8 +107230,6 @@ public class Beyond_NET_Sample_EventTests /* Beyond.NET.Sample.EventTests */: Sy
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -107752,7 +107384,7 @@ public class Beyond_NET_Sample_GenericTestClass_A1 /* Beyond.NET.Sample.GenericT
 		
 	}
 	
-	public convenience init?(T: System_Type /* System.Type */) throws {
+	public convenience init(T: System_Type /* System.Type */) throws {
 		let TC = T.__handle
 		
 		
@@ -107766,8 +107398,6 @@ public class Beyond_NET_Sample_GenericTestClass_A1 /* Beyond.NET.Sample.GenericT
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -107901,7 +107531,7 @@ public class Beyond_NET_Sample_GenericTestClass_A2 /* Beyond.NET.Sample.GenericT
 		
 	}
 	
-	public convenience init?(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */) throws {
+	public convenience init(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */) throws {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
 		
@@ -107916,8 +107546,6 @@ public class Beyond_NET_Sample_GenericTestClass_A2 /* Beyond.NET.Sample.GenericT
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -108160,7 +107788,7 @@ public class Beyond_NET_Sample_GenericTests /* Beyond.NET.Sample.GenericTests */
 		
 	}
 	
-	public class func returnArrayOfDefaultValuesOfGenericType(T: System_Type /* System.Type */, _ numberOfElements: Int32 /* System.Int32 */) throws -> System_Array? /* System.Array */ {
+	public class func returnArrayOfDefaultValuesOfGenericType(T: System_Type /* System.Type */, _ numberOfElements: Int32 /* System.Int32 */) throws -> System_Array /* System.Array */ {
 		let TC = T.__handle
 		
 		
@@ -108181,7 +107809,7 @@ public class Beyond_NET_Sample_GenericTests /* Beyond.NET.Sample.GenericTests */
 		
 	}
 	
-	public func returnArrayOfRepeatedValues(T: System_Type /* System.Type */, _ value: System_Object? /* System.Object */, _ numberOfElements: Int32 /* System.Int32 */) throws -> System_Array? /* System.Array */ {
+	public func returnArrayOfRepeatedValues(T: System_Type /* System.Type */, _ value: System_Object? /* System.Object */, _ numberOfElements: Int32 /* System.Int32 */) throws -> System_Array /* System.Array */ {
 		let TC = T.__handle
 		let valueC = value?.__handle
 		
@@ -108226,7 +107854,7 @@ public class Beyond_NET_Sample_GenericTests /* Beyond.NET.Sample.GenericTests */
 		
 	}
 	
-	public convenience init?() throws {
+	public convenience init() throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -108240,13 +107868,11 @@ public class Beyond_NET_Sample_GenericTests /* Beyond.NET.Sample.GenericTests */
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public var listOfStrings: System_Collections_Generic_List_A1? /* System.Collections.Generic.List<System.String> */ { get throws {
+	public var listOfStrings: System_Collections_Generic_List_A1 /* System.Collections.Generic.List<System.String> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -108284,7 +107910,7 @@ public class Beyond_NET_Sample_GenericTests /* Beyond.NET.Sample.GenericTests */
 	}
 	
 	
-	public var dictionaryOfStringKeysAndExceptionValues: System_Collections_Generic_Dictionary_A2? /* System.Collections.Generic.Dictionary<System.String,System.Exception> */ { get throws {
+	public var dictionaryOfStringKeysAndExceptionValues: System_Collections_Generic_Dictionary_A2 /* System.Collections.Generic.Dictionary<System.String,System.Exception> */ { get throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -108594,7 +108220,7 @@ public class Beyond_NET_Sample_IndexerTests /* Beyond.NET.Sample.IndexerTests */
 		"Beyond.NET.Sample.IndexerTests"
 	}}
 
-	public convenience init?() throws {
+	public convenience init() throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -108607,8 +108233,6 @@ public class Beyond_NET_Sample_IndexerTests /* Beyond.NET.Sample.IndexerTests */
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -108843,7 +108467,7 @@ public class Beyond_NET_Sample_NullabilityTests /* Beyond.NET.Sample.Nullability
 		
 	}
 	
-	public convenience init?() throws {
+	public convenience init() throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -108856,8 +108480,6 @@ public class Beyond_NET_Sample_NullabilityTests /* Beyond.NET.Sample.Nullability
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -109209,7 +108831,7 @@ public class Beyond_NET_Sample_Person /* Beyond.NET.Sample.Person */: System_Obj
 		
 	}
 	
-	public convenience init?(_ firstName: System_String /* System.String */, _ lastName: System_String /* System.String */, _ age: Int32 /* System.Int32 */) throws {
+	public convenience init(_ firstName: System_String /* System.String */, _ lastName: System_String /* System.String */, _ age: Int32 /* System.Int32 */) throws {
 		let firstNameC = firstName.__handle
 		let lastNameC = lastName.__handle
 		
@@ -109225,13 +108847,11 @@ public class Beyond_NET_Sample_Person /* Beyond.NET.Sample.Person */: System_Obj
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ firstName: System_String /* System.String */, _ lastName: System_String /* System.String */) throws {
+	public convenience init(_ firstName: System_String /* System.String */, _ lastName: System_String /* System.String */) throws {
 		let firstNameC = firstName.__handle
 		let lastNameC = lastName.__handle
 		
@@ -109246,8 +108866,6 @@ public class Beyond_NET_Sample_Person /* Beyond.NET.Sample.Person */: System_Obj
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -110139,7 +109757,7 @@ public class System_Uri /* System.Uri */: System_Object {
 		
 	}
 	
-	public convenience init?(_ uriString: System_String /* System.String */) throws {
+	public convenience init(_ uriString: System_String /* System.String */) throws {
 		let uriStringC = uriString.__handle
 		
 		
@@ -110154,13 +109772,11 @@ public class System_Uri /* System.Uri */: System_Object {
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ uriString: System_String /* System.String */, _ dontEscape: Bool /* System.Boolean */) throws {
+	public convenience init(_ uriString: System_String /* System.String */, _ dontEscape: Bool /* System.Boolean */) throws {
 		let uriStringC = uriString.__handle
 		
 		
@@ -110175,13 +109791,11 @@ public class System_Uri /* System.Uri */: System_Object {
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ baseUri: System_Uri /* System.Uri */, _ relativeUri: System_String? /* System.String */, _ dontEscape: Bool /* System.Boolean */) throws {
+	public convenience init(_ baseUri: System_Uri /* System.Uri */, _ relativeUri: System_String? /* System.String */, _ dontEscape: Bool /* System.Boolean */) throws {
 		let baseUriC = baseUri.__handle
 		let relativeUriC = relativeUri?.__handle
 		
@@ -110197,13 +109811,11 @@ public class System_Uri /* System.Uri */: System_Object {
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ uriString: System_String /* System.String */, _ uriKind: System_UriKind /* System.UriKind */) throws {
+	public convenience init(_ uriString: System_String /* System.String */, _ uriKind: System_UriKind /* System.UriKind */) throws {
 		let uriStringC = uriString.__handle
 		let uriKindC = uriKind.cValue
 		
@@ -110219,13 +109831,11 @@ public class System_Uri /* System.Uri */: System_Object {
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ uriString: System_String /* System.String */, _ creationOptions: inout System_UriCreationOptions /* System.UriCreationOptions */) throws {
+	public convenience init(_ uriString: System_String /* System.String */, _ creationOptions: inout System_UriCreationOptions /* System.UriCreationOptions */) throws {
 		let uriStringC = uriString.__handle
 		var creationOptionsC = creationOptions.__handle
 		
@@ -110244,13 +109854,11 @@ public class System_Uri /* System.Uri */: System_Object {
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ baseUri: System_Uri /* System.Uri */, _ relativeUri: System_String? /* System.String */) throws {
+	public convenience init(_ baseUri: System_Uri /* System.Uri */, _ relativeUri: System_String? /* System.String */) throws {
 		let baseUriC = baseUri.__handle
 		let relativeUriC = relativeUri?.__handle
 		
@@ -110266,13 +109874,11 @@ public class System_Uri /* System.Uri */: System_Object {
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ baseUri: System_Uri /* System.Uri */, _ relativeUri: System_Uri /* System.Uri */) throws {
+	public convenience init(_ baseUri: System_Uri /* System.Uri */, _ relativeUri: System_Uri /* System.Uri */) throws {
 		let baseUriC = baseUri.__handle
 		let relativeUriC = relativeUri.__handle
 		
@@ -110287,8 +109893,6 @@ public class System_Uri /* System.Uri */: System_Object {
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -111138,7 +110742,7 @@ public class Beyond_NET_Sample_PropertyTests /* Beyond.NET.Sample.PropertyTests 
 		"Beyond.NET.Sample.PropertyTests"
 	}}
 
-	public convenience init?() throws {
+	public convenience init() throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -111151,8 +110755,6 @@ public class Beyond_NET_Sample_PropertyTests /* Beyond.NET.Sample.PropertyTests 
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -111320,7 +110922,7 @@ public class Beyond_NET_Sample_SpanTest /* Beyond.NET.Sample.SpanTest */: System
 		
 	}
 	
-	public convenience init?(_ data: System_Byte_Array /* System.Byte[] */) throws {
+	public convenience init(_ data: System_Byte_Array /* System.Byte[] */) throws {
 		let dataC = data.__handle
 		
 		
@@ -111335,13 +110937,11 @@ public class Beyond_NET_Sample_SpanTest /* Beyond.NET.Sample.SpanTest */: System
 		    throw __error
 		}
 		
-		guard let __returnValueC else { return nil }
-		
 		self.init(handle: __returnValueC)
 		
 	}
 	
-	public convenience init?(_ dataAsReadOnlySpan: Data? /* System.ReadOnlySpan<System.Byte> */) throws {
+	public convenience init(_ dataAsReadOnlySpan: Data? /* System.ReadOnlySpan<System.Byte> */) throws {
 		let dataAsReadOnlySpanC = dataAsReadOnlySpan.readOnlySpanOfByte()
 		
 		
@@ -111355,8 +110955,6 @@ public class Beyond_NET_Sample_SpanTest /* Beyond.NET.Sample.SpanTest */: System
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -111653,7 +111251,7 @@ public class Beyond_NET_Sample_Book /* Beyond.NET.Sample.Book */: System_Object 
 		"Beyond.NET.Sample.Book"
 	}}
 
-	public convenience init?(_ name: System_String /* System.String */) throws {
+	public convenience init(_ name: System_String /* System.String */) throws {
 		let nameC = name.__handle
 		
 		
@@ -111667,8 +111265,6 @@ public class Beyond_NET_Sample_Book /* Beyond.NET.Sample.Book */: System_Object 
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -111975,7 +111571,7 @@ public class Beyond_NET_Sample_TestClass /* Beyond.NET.Sample.TestClass */: Syst
 	
 	// TODO: Method with by ref return or setter or event handler type (Beyond_NET_Sample_TestClass_IncreaseAndGetCurrentIntValueByRef)
 	
-	public convenience init?() throws {
+	public convenience init() throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -111988,8 +111584,6 @@ public class Beyond_NET_Sample_TestClass /* Beyond.NET.Sample.TestClass */: Syst
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -112171,7 +111765,7 @@ public class Beyond_NET_Sample_TestRecord /* Beyond.NET.Sample.TestRecord */: Sy
 		
 	}
 	
-	public convenience init?(_ AString: System_String /* System.String */) throws {
+	public convenience init(_ AString: System_String /* System.String */) throws {
 		let AStringC = AString.__handle
 		
 		
@@ -112185,8 +111779,6 @@ public class Beyond_NET_Sample_TestRecord /* Beyond.NET.Sample.TestRecord */: Sy
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -112729,7 +112321,7 @@ public class Beyond_NET_Sample_SubclassingTests_MyBaseClass /* Beyond.NET.Sample
 		
 	}
 	
-	public convenience init?() throws {
+	public convenience init() throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -112742,8 +112334,6 @@ public class Beyond_NET_Sample_SubclassingTests_MyBaseClass /* Beyond.NET.Sample
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		
@@ -112789,7 +112379,7 @@ public class Beyond_NET_Sample_SubclassingTests_MySubClass /* Beyond.NET.Sample.
 		
 	}
 	
-	public convenience init?() throws {
+	public convenience init() throws {
 		
 		
 		var __exceptionC: System_Exception_t?
@@ -112802,8 +112392,6 @@ public class Beyond_NET_Sample_SubclassingTests_MySubClass /* Beyond.NET.Sample.
 		    
 		    throw __error
 		}
-		
-		guard let __returnValueC else { return nil }
 		
 		self.init(handle: __returnValueC)
 		

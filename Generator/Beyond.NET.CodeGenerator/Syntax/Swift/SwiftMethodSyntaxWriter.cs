@@ -256,9 +256,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             returnOrSetterTypeNullability = Nullability.NonNullable;
         } else if (returnOrSetterOrEventHandlerType.IsNullableValueType(out _)) {
             returnOrSetterTypeNullability = Nullability.Nullable;
-        } else if (!isGenericReturnType &&
-                   !isConstructedGenericReturnType &&
-                   returnOrSetterOrEventHandlerType.IsReferenceType() &&
+        } else if (returnOrSetterOrEventHandlerType.IsReferenceType() &&
                    !returnOrSetterOrEventHandlerType.IsByRefValueType(out bool nonByRefTypeIsStruct) &&
                    !nonByRefTypeIsStruct) {
             if (methodInfo is not null) {
@@ -287,6 +285,9 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                             : Nullability.NotSpecified;
                     }
                 }
+            } else if (memberInfo is ConstructorInfo) {
+                // Constructors in C# are never expected to return null
+                returnOrSetterTypeNullability = Nullability.NonNullable;
             } else if (memberInfo is FieldInfo fieldInfo) {
                 var nullabilityInfo = nullabilityInfoContext.Create(fieldInfo);
 
@@ -379,7 +380,6 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         if (memberKind == MemberKind.Constructor) {
             fullDecl = Builder.Initializer()
                 .Convenience()
-                .Failable(returnOrSetterTypeDescriptor.Nullability == Nullability.Nullable)
                 .Visibility(onlyWriteSignatureForProtocol 
                     ? SwiftVisibilities.None
                     : SwiftVisibilities.Public)
@@ -571,15 +571,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
 
             if (isReturning) {
                 if (memberKind == MemberKind.Constructor) {
-                    if (returnOrSetterTypeDescriptor.Nullability == Nullability.Nullable) {
-                        returnCode = $$"""
-guard let {{returnValueName}} else { return nil }
-
-self.init(handle: {{returnValueName}})
-""";    
-                    } else {
-                        returnCode = $"self.init(handle: {returnValueName})";
-                    }
+                    returnCode = $"self.init(handle: {returnValueName})";
                 } else {
                     string? returnTypeConversion = returnOrSetterTypeDescriptor.GetTypeConversion(
                         CodeLanguage.C,

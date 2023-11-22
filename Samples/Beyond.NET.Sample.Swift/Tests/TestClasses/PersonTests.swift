@@ -12,7 +12,7 @@ final class PersonTests: XCTestCase {
         Self.sharedTearDown()
     }
     
-    func testPerson() {
+    func testPerson() throws {
         let firstName = "John"
         let firstNameDN = firstName.dotNETString()
         
@@ -32,71 +32,32 @@ final class PersonTests: XCTestCase {
         let defaultAge = Beyond_NET_Sample_Person.dEFAULT_AGE
         XCTAssertEqual(ageWhenBorn, defaultAge)
         
-        guard let person = try? Beyond_NET_Sample_Person(firstNameDN,
-                                                                          lastNameDN) else {
-            XCTFail("Person initializer should not throw and return an instance")
-            
-            return
-        }
+        let person = try Beyond_NET_Sample_Person(firstNameDN,
+                                                  lastNameDN)
         
-        guard let personAge = try? person.age else {
-            XCTFail("Person.Age getter should not throw")
-            
-            return
-        }
-        
+        let personAge = try person.age
         XCTAssertEqual(defaultAge, personAge)
         
-        XCTAssertNoThrow(try person.niceLevel_set(expectedNiceLevel))
+        try person.niceLevel_set(expectedNiceLevel)
         
-        guard let retrievedNiceLevel = try? person.niceLevel else {
-            XCTFail("Person.NiceLevel getter should not throw")
-            
-            return
-        }
-        
+        let retrievedNiceLevel = try person.niceLevel
         XCTAssertEqual(expectedNiceLevel, retrievedNiceLevel)
         
-        guard let retrievedFirstName = try? person.firstName.string() else {
-            XCTFail("Person.FirstName getter should not throw and return an instance")
-            
-            return
-        }
-        
+        let retrievedFirstName = try person.firstName.string()
         XCTAssertEqual(firstName, retrievedFirstName)
         
-        guard let retrievedLastName = try? person.lastName.string() else {
-            XCTFail("Person.LastName getter should not throw and return an instance")
-            
-            return
-        }
-        
+        let retrievedLastName = try person.lastName.string()
         XCTAssertEqual(lastName, retrievedLastName)
         
-        guard let retrievedFullName = try? person.fullName.string() else {
-            XCTFail("Person.FullName getter should not throw and return an instance")
-            
-            return
-        }
-        
+        let retrievedFullName = try person.fullName.string()
         XCTAssertEqual(expectedFullName, retrievedFullName)
         
-        guard let retrievedAge = try? person.age else {
-            XCTFail("Person.Age getter should not throw")
-            
-            return
-        }
-        
+        let retrievedAge = try person.age
         XCTAssertEqual(defaultAge, retrievedAge)
         
-        XCTAssertNoThrow(try person.age_set(age))
+        try person.age_set(age)
         
-        guard let retrievedWelcomeMessage = try? person.getWelcomeMessage().string() else {
-            XCTFail("Person.GetWelcomeMessage should not throw and return an instance")
-            
-            return
-        }
-        
+        let retrievedWelcomeMessage = try person.getWelcomeMessage().string()
         XCTAssertEqual(expectedWelcomeMessage, retrievedWelcomeMessage)
         
         let newFirstName = "Max 😉"
@@ -104,53 +65,31 @@ final class PersonTests: XCTestCase {
         
         let expectedNewFullName = "\(newFirstName) \(lastName)"
         
-        XCTAssertNoThrow(try person.firstName_set(newFirstNameDN))
+        try person.firstName_set(newFirstNameDN)
         
-        guard let newFullName = try? person.fullName.string() else {
-            XCTFail("Person.FullName getter should not throw and return an instance")
-            
-            return
-        }
-        
+        let newFullName = try person.fullName.string()
         XCTAssertEqual(expectedNewFullName, newFullName)
         
-        guard let numberOfChildren = try? person.numberOfChildren else {
-            XCTFail("Person.NumberOfChildren getter should not throw")
-            
-            return
-        }
-        
+        let numberOfChildren = try person.numberOfChildren
         XCTAssertEqual(0, numberOfChildren)
     }
     
-    func testPersonChildren() {
+    func testPersonChildren() throws {
         let motherFirstNameDN = "Johanna".dotNETString()
         let sonFirstNameDN = "Max".dotNETString()
         let lastNameDN = "Doe".dotNETString()
         
-        guard let mother = try? Beyond_NET_Sample_Person(motherFirstNameDN,
-                                                                          lastNameDN,
-                                                                          40) else {
-            XCTFail("Person ctor should not throw and return an instance")
-            
-            return
-        }
+        let mother = try Beyond_NET_Sample_Person(motherFirstNameDN,
+                                                  lastNameDN,
+                                                  40)
         
-        guard let son = try? Beyond_NET_Sample_Person(sonFirstNameDN,
-                                                                       lastNameDN,
-                                                                       4) else {
-            XCTFail("Person ctor should not throw and return an instance")
-            
-            return
-        }
+        let son = try Beyond_NET_Sample_Person(sonFirstNameDN,
+                                               lastNameDN,
+                                               4)
         
-        XCTAssertNoThrow(try mother.addChild(son))
+        try mother.addChild(son)
         
-        guard let numberOfChildren = try? mother.numberOfChildren else {
-            XCTFail("Person.NumberOfChildren should not throw")
-            
-            return
-        }
+        let numberOfChildren = try mother.numberOfChildren
         
         XCTAssertEqual(1, numberOfChildren)
         
@@ -163,7 +102,7 @@ final class PersonTests: XCTestCase {
         let firstChildEqualsSon = firstChild === son
         XCTAssertTrue(firstChildEqualsSon)
         
-        XCTAssertNoThrow(try mother.removeChild(son))
+        try mother.removeChild(son)
         
         do {
             try mother.removeChildAt(0)
@@ -176,48 +115,28 @@ final class PersonTests: XCTestCase {
         }
     }
     
-    func testPersonChildrenArray() {
+    func testPersonChildrenArray() throws {
         let motherFirstNameDN = "Johanna".dotNETString()
         let sonFirstNameDN = "Max".dotNETString()
         let lastNameDN = "Doe".dotNETString()
         
-        guard let mother = try? Beyond_NET_Sample_Person(motherFirstNameDN,
-                                                                          lastNameDN,
-                                                                          40) else {
-            XCTFail("Person ctor should not throw and return an instance")
-            
-            return
-        }
+        let mother = try Beyond_NET_Sample_Person(motherFirstNameDN,
+                                                  lastNameDN,
+                                                  40)
         
-        guard let son = try? Beyond_NET_Sample_Person(sonFirstNameDN,
-                                                                       lastNameDN,
-                                                                       4) else {
-            XCTFail("Person ctor should not throw and return an instance")
-            
-            return
-        }
+        let son = try Beyond_NET_Sample_Person(sonFirstNameDN,
+                                               lastNameDN,
+                                               4)
         
-        XCTAssertNoThrow(try mother.addChild(son))
+        try mother.addChild(son)
         
-        guard let numberOfChildren = try? mother.numberOfChildren else {
-            XCTFail("Person.NumberOfChildren should not throw")
-            
-            return
-        }
+        let numberOfChildren = try mother.numberOfChildren
         
         XCTAssertEqual(1, numberOfChildren)
         
-        guard let children = try? mother.children else {
-            XCTFail("Person.ChildrenAsArray should not throw and return an instance")
-            
-            return
-        }
+        let children = try mother.children
         
-        guard let childrenLength = try? children.length else {
-            XCTFail("System.Array.GetLength should not throw")
-            
-            return
-        }
+        let childrenLength = try children.length
         
         XCTAssertEqual(numberOfChildren, childrenLength)
         
@@ -231,110 +150,74 @@ final class PersonTests: XCTestCase {
         XCTAssertTrue(firstChildEqualsSon)
     }
     
-    func testPersonExtensionMethods() {
+    func testPersonExtensionMethods() throws {
         let initialAge: Int32 = 0
         
         let firstNameDN = "Johanna".dotNETString()
         let lastNameDN = "Doe".dotNETString()
         
-        guard let baby = try? Beyond_NET_Sample_Person(firstNameDN,
-                                                                        lastNameDN,
-                                                                        0) else {
-            XCTFail("Person ctor should not throw and return an instance")
-            
-            return
-        }
+        let baby = try Beyond_NET_Sample_Person(firstNameDN,
+                                                lastNameDN,
+                                                0)
         
         let increaseAgeByYears: Int32 = 4
         
-        XCTAssertNoThrow(try baby.increaseAge(increaseAgeByYears))
+        try baby.increaseAge(increaseAgeByYears)
         
         let expectedAge = initialAge + increaseAgeByYears
         
-        guard let age = try? baby.age else {
-            XCTFail("Person.Age getter should not throw")
-            
-            return
-        }
+        let age = try baby.age
         
         XCTAssertEqual(expectedAge, age)
 		
 		var nilAddressRet: Beyond_NET_Sample_Address?
-		let nilAddressSuccess: Bool
-		
-		do {
-			nilAddressSuccess = try baby.tryGetAddress(&nilAddressRet)
-		} catch {
-			XCTFail("Person.TryGetAddress should not throw")
-			
-			return
-		}
+		let nilAddressSuccess = try baby.tryGetAddress(&nilAddressRet)
 		
 		XCTAssertFalse(nilAddressSuccess)
 		XCTAssertNil(nilAddressRet)
 		
-		guard let address = try? Beyond_NET_Sample_Address("Street Name".dotNETString(),
-																			"City Name".dotNETString()) else {
-			XCTFail("Address ctor should not throw")
-			
-			return
-		}
+		let address = try Beyond_NET_Sample_Address("Street Name".dotNETString(),
+                                                    "City Name".dotNETString())
 		
-		XCTAssertNoThrow(try baby.address_set(address))
+		try baby.address_set(address)
 		
 		var addressRet: Beyond_NET_Sample_Address?
-		let addressSuccess: Bool
-		
-		do {
-			addressSuccess = try baby.tryGetAddress(&addressRet)
-		} catch {
-			XCTFail("Person.TryGetAddress should not throw")
-			
-			return
-		}
+		let addressSuccess = try baby.tryGetAddress(&addressRet)
 		
 		XCTAssertTrue(addressSuccess)
 		XCTAssertNotNil(addressRet)
     }
     
-    func testPersonChangeAge() {
+    func testPersonChangeAge() throws {
         let initialAge: Int32 = 0
 
         let firstNameDN = "Johanna".dotNETString()
         let lastNameDN = "Doe".dotNETString()
 
-		guard let person = try? Beyond_NET_Sample_Person(firstNameDN,
-																		  lastNameDN,
-																		  initialAge) else {
-            XCTFail("Person ctor should not throw and return an instance")
+        let person = try Beyond_NET_Sample_Person(firstNameDN,
+                                                  lastNameDN,
+                                                  initialAge)
 
-            return
-        }
-
-		let ageAfterCreation = (try? person.age) ?? -1
+		let ageAfterCreation = try person.age
         XCTAssertEqual(initialAge, ageAfterCreation)
 
 		let newAgeProviderDelegate = Beyond_NET_Sample_Person_NewAgeProviderDelegate({
 			10
 		})
 
-		XCTAssertNoThrow(try person.changeAge(newAgeProviderDelegate))
+		try person.changeAge(newAgeProviderDelegate)
 
-		let age = (try? person.age) ?? -1
+		let age = try person.age
         XCTAssertEqual(10, age)
     }
     
-    func testPersonAddress() {
+    func testPersonAddress() throws {
         let firstNameDN = "Johanna".dotNETString()
         let lastNameDN = "Doe".dotNETString()
         
-        guard let person = try? Beyond_NET_Sample_Person(firstNameDN,
-                                                                          lastNameDN,
-                                                                          15) else {
-            XCTFail("Person ctor should not throw and return an instance")
-            
-            return
-        }
+        let person = try Beyond_NET_Sample_Person(firstNameDN,
+                                                  lastNameDN,
+                                                  15)
         
         let street = "Stephansplatz"
         let streetDN = street.dotNETString()
@@ -342,14 +225,10 @@ final class PersonTests: XCTestCase {
         let city = "Vienna"
         let cityDN = city.dotNETString()
         
-        guard let address = try? Beyond_NET_Sample_Address(streetDN,
-                                                                            cityDN) else {
-            XCTFail("Address ctor should return an instance and not throw")
-            
-            return
-        }
+        let address = try Beyond_NET_Sample_Address(streetDN,
+                                                    cityDN)
         
-        XCTAssertNoThrow(try person.address_set(address))
+        try person.address_set(address)
         
         guard let retrievedAddress = try? person.address else {
             XCTFail("Person.Address getter should return an instance and not throw")
@@ -357,24 +236,16 @@ final class PersonTests: XCTestCase {
             return
         }
         
-        guard let retrievedStreet = try? retrievedAddress.street.string() else {
-            XCTFail("Address.Street getter should return an instance and not throw")
-            
-            return
-        }
+        let retrievedStreet = try retrievedAddress.street.string()
         
         XCTAssertEqual(street, retrievedStreet)
         
-        guard let retrievedCity = try? retrievedAddress.city.string() else {
-            XCTFail("Address.City getter should return an instance and not throw")
-            
-            return
-        }
+        let retrievedCity = try retrievedAddress.city.string()
         
         XCTAssertEqual(city, retrievedCity)
     }
     
-    func testPersonEvents() {
+    func testPersonEvents() throws {
         var numberOfTimesNumberOfChildrenChangedWasCalled: Int32 = 0
 
         let motherFirstNameDN = "Johanna".dotNETString()
@@ -382,13 +253,9 @@ final class PersonTests: XCTestCase {
         let daugtherFirstNameDN = "Marie".dotNETString()
         let lastNameDN = "Doe".dotNETString()
 		
-		guard let mother = try? Beyond_NET_Sample_Person(motherFirstNameDN,
-																		  lastNameDN,
-																		  40) else {
-            XCTFail("Person ctor should not throw and return an instance")
-
-            return
-        }
+        let mother = try Beyond_NET_Sample_Person(motherFirstNameDN,
+                                                  lastNameDN,
+                                                  40)
 
 		let numberOfChildrenChangedDelegate = Beyond_NET_Sample_Person_NumberOfChildrenChangedDelegate({
 			numberOfTimesNumberOfChildrenChangedWasCalled += 1
@@ -396,82 +263,58 @@ final class PersonTests: XCTestCase {
 		
 		mother.numberOfChildrenChanged_add(numberOfChildrenChangedDelegate)
 
-		guard let son = try? Beyond_NET_Sample_Person(sonFirstNameDN,
-																	   lastNameDN,
-																	   4) else {
-            XCTFail("Person ctor should not throw and return an instance")
-
-            return
-        }
+        let son = try Beyond_NET_Sample_Person(sonFirstNameDN,
+                                               lastNameDN,
+                                               4)
 		
-		XCTAssertNoThrow(try mother.addChild(son))
+		try mother.addChild(son)
 		
-		guard let daugther = try? Beyond_NET_Sample_Person(daugtherFirstNameDN,
-																			lastNameDN,
-																			10) else {
-            XCTFail("Person ctor should not throw and return an instance")
-
-            return
-        }
+        let daugther = try Beyond_NET_Sample_Person(daugtherFirstNameDN,
+                                                    lastNameDN,
+                                                    10)
 		
-		XCTAssertNoThrow(try mother.addChild(daugther))
+		try mother.addChild(daugther)
 
-		let numberOfChildren = (try? mother.numberOfChildren) ?? -1
+		let numberOfChildren = try mother.numberOfChildren
 
         let expectedNumberOfChildren: Int32 = 2
 
         XCTAssertEqual(expectedNumberOfChildren, numberOfChildren)
         XCTAssertEqual(expectedNumberOfChildren, numberOfTimesNumberOfChildrenChangedWasCalled)
 
-		XCTAssertNoThrow(try mother.removeChild(daugther))
+		try mother.removeChild(daugther)
 
         XCTAssertEqual(3, numberOfTimesNumberOfChildrenChangedWasCalled)
 		
 		mother.numberOfChildrenChanged_remove(numberOfChildrenChangedDelegate)
 		
-		XCTAssertNoThrow(try mother.removeChildAt(0))
+		try mother.removeChildAt(0)
         XCTAssertEqual(3, numberOfTimesNumberOfChildrenChangedWasCalled)
 
-		let numberOfChildrenAfterRemoval = (try? mother.numberOfChildren) ?? -1
+		let numberOfChildrenAfterRemoval = try mother.numberOfChildren
         let expectedNumberOfChildrenAfterRemoval: Int32 = 0
         XCTAssertEqual(expectedNumberOfChildrenAfterRemoval, numberOfChildrenAfterRemoval)
     }
     
-    func testPersonChildrenArrayChange() {
+    func testPersonChildrenArrayChange() throws {
         let motherFirstNameDN = "Johanna".dotNETString()
         let sonFirstNameDN = "Max".dotNETString()
         let daugtherFirstNameDN = "Marie".dotNETString()
         let lastNameDN = "Doe".dotNETString()
         
-        guard let mother = try? Beyond_NET_Sample_Person(motherFirstNameDN,
-                                                                          lastNameDN,
-                                                                          40) else {
-            XCTFail("Person ctor should not throw and return an instance")
-            
-            return
-        }
+        let mother = try Beyond_NET_Sample_Person(motherFirstNameDN,
+                                                  lastNameDN,
+                                                  40)
         
-        guard let son = try? Beyond_NET_Sample_Person(sonFirstNameDN,
-                                                                       lastNameDN,
-                                                                       4) else {
-            XCTFail("Person ctor should not throw and return an instance")
-            
-            return
-        }
+        let son = try Beyond_NET_Sample_Person(sonFirstNameDN,
+                                               lastNameDN,
+                                               4)
         
-        XCTAssertNoThrow(try mother.addChild(son))
+        try mother.addChild(son)
         
-        guard let originalChildren = try? mother.children else {
-            XCTFail("Person.Children getter should not throw and return an instance")
-            
-            return
-        }
+        let originalChildren = try mother.children
         
-        guard let numberOfChildrenBeforeDaugther = try? originalChildren.length else {
-            XCTFail("System.Array.Length getter should not throw")
-            
-            return
-        }
+        let numberOfChildrenBeforeDaugther = try originalChildren.length
         
         XCTAssertEqual(1, numberOfChildrenBeforeDaugther)
         
@@ -484,27 +327,19 @@ final class PersonTests: XCTestCase {
             return
         }
         
-        XCTAssertNoThrow(try System_Array.copy(originalChildren,
-                                               newChildren,
-                                               1 as Int32))
+        try System_Array.copy(originalChildren,
+                              newChildren,
+                              1 as Int32)
         
-        guard let daugther = try? Beyond_NET_Sample_Person(daugtherFirstNameDN,
-                                                                            lastNameDN,
-                                                                            10) else {
-            XCTFail("Person ctor should not throw and return an instance")
-            
-            return
-        }
+        let daugther = try Beyond_NET_Sample_Person(daugtherFirstNameDN,
+                                                    lastNameDN,
+                                                    10)
         
-        XCTAssertNoThrow(try newChildren.setValue(daugther, 1 as Int32))
+        try newChildren.setValue(daugther, 1 as Int32)
         
-        XCTAssertNoThrow(try mother.children_set(newChildren))
+        try mother.children_set(newChildren)
         
-        guard let numberOfChildrenAfterDaugther = try? mother.numberOfChildren else {
-            XCTFail("Person.NumberOfChildren getter should not throw")
-            
-            return
-        }
+        let numberOfChildrenAfterDaugther = try mother.numberOfChildren
         
         XCTAssertEqual(2, numberOfChildrenAfterDaugther)
     }

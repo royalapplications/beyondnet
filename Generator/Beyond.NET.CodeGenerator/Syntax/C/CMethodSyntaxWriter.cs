@@ -205,9 +205,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             returnOrSetterTypeNullability = Nullability.NonNullable;
         } else if (isNullableValueTypeReturnType) {
             returnOrSetterTypeNullability = Nullability.Nullable;
-        } else if (!isGenericReturnType &&
-                   !isConstructedGenericReturnType &&
-                   returnOrSetterOrEventHandlerType.IsReferenceType() &&
+        } else if (returnOrSetterOrEventHandlerType.IsReferenceType() &&
                    !returnOrSetterOrEventHandlerType.IsByRefValueType(out bool nonByRefTypeIsStruct) &&
                    !nonByRefTypeIsStruct) {
             if (memberInfo is MethodInfo methodInfo) {
@@ -236,6 +234,9 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
                             : Nullability.NotSpecified;
                     }
                 }
+            } else if (memberInfo is ConstructorInfo) {
+                // Constructors in C# are never expected to return null
+                returnOrSetterTypeNullability = Nullability.NonNullable;
             } else if (memberInfo is FieldInfo fieldInfo) {
                 var nullabilityInfo = nullabilityInfoContext.Create(fieldInfo);
 
